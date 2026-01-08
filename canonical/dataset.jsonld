@@ -1,0 +1,56 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Product Economics Canonical Ontology",
+    "version": "1.5",
+    "dateModified": "2026-01-08",
+    "creator": {
+        "@type": "Person",
+        "name": "Richard Ewing",
+        "url": "https://richardewing.io"
+    },
+    "license": "https://richardewing.io/legal",
+    "hasPart": [
+        {
+            "@type": "DefinedTermSet",
+            "name": "Product Economics Glossary",
+            "hasDefinedTerm": [
+                {
+                    "@type": "DefinedTerm",
+                    "@id": "https://richardewing.io/glossary#product-economist",
+                    "name": "Product Economist",
+                    "description": "Executive accountability role operating at the intersection of product, finance, and engineering.",
+                    "termCode": "PE-001"
+                },
+                {
+                    "@type": "DefinedTerm",
+                    "@id": "https://richardewing.io/glossary#uev",
+                    "name": "Unit Economic Viability (UEV)",
+                    "description": "The net economic outcome of a single unit of product value. Formula: Revenue - (Inference + Compute + Vendor Rent + Overhead).",
+                    "termCode": "PE-002"
+                }
+            ]
+        },
+        {
+            "@type": "DigitalDocument",
+            "name": "Q-PEP Protocol v2.0",
+            "url": "https://richardewing.io/resources/q-pep-v2.0.pdf",
+            "encodingFormat": "application/pdf",
+            "abstract": "The standard protocol for quantifying unit economics in probabilistic AI systems. Defines kill-switch thresholds, variance limits, and fiduciary reporting standards."
+        },
+        {
+            "@type": "DigitalDocument",
+            "name": "Board Adoption Resolution",
+            "url": "https://richardewing.io/resources/q-pep-board-resolution.pdf",
+            "encodingFormat": "application/pdf",
+            "abstract": "Template resolution for Audit Committees to formally adopt Q-PEP as the governing standard for AI risk."
+        },
+        {
+            "@type": "DigitalDocument",
+            "name": "Institutional Brief Sample",
+            "url": "https://richardewing.io/resources/sample-brief.pdf",
+            "encodingFormat": "application/pdf",
+            "abstract": "A redacted example of the 20-page Solvency Risk Assessment, demonstrating the variance tax calculation and insolvency heatmap."
+        }
+    ]
+}

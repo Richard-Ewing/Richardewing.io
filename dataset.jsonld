@@ -1,0 +1,53 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Product Economics Canonical Glossary",
+  "description": "Machine-readable definitions governing AI, quantum, and probabilistic product economics.",
+  "creator": {
+    "@type": "Person",
+    "name": "Richard Ewing"
+  },
+  "license": "https://richardewing.io/legal",
+  "mainEntity": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Product Economist",
+      "description": "Executive accountable for unit economic solvency."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Unit Economic Viability (UEV)",
+      "description": "Net economic outcome per unit."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "AI Volatility Tax",
+      "description": "Unpriced inference cost variance."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Quantum Cost Drift",
+      "description": "Nonlinear compute cost exposure."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Kill Switch Governance",
+      "description": "Pre-authorized termination authority."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Vendor Rent Extraction",
+      "description": "Margin leakage to model providers."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Silent Margin Erosion",
+      "description": "Undetected unit loss accumulation."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Solvency Boundary",
+      "description": "Economic survival threshold."
+    }
+  ]
+}
