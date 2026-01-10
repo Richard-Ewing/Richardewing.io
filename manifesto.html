@@ -3,26 +3,35 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>The Manifesto | Richard Ewing</title>
+    <title>The Manifesto</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { carbon: '#080808', cyan: '#00F0FF', gold: '#D4AF37' }, fontFamily: { serif: ['Georgia', 'serif'], sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', cyan: '#00F0FF', gold: '#D4AF37' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'], sans: ['Inter', 'system-ui', 'sans-serif'], serif: ['Georgia', 'serif'] } } } }</script>
+    <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
-<body class="bg-carbon text-gray-400 font-sans antialiased selection:bg-gold selection:text-black">
-    <div class="max-w-[1200px] mx-auto min-h-screen border-x border-zinc-900 bg-carbon">
-        <nav
-            class="flex justify-between items-center p-8 border-b border-zinc-800 sticky top-0 bg-carbon/95 backdrop-blur z-50">
-            <a href="/" class="text-white font-bold tracking-tighter text-lg hover:text-cyan transition">RICHARD
-                EWING</a>
-            <div class="hidden md:flex gap-8 text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest"><a
-                    href="/manifesto.html" class="text-white">Manifesto</a><a href="/academy.html"
-                    class="hover:text-white transition">Academy</a><a href="/methodology.html"
-                    class="hover:text-cyan transition">System</a><a href="/advisory.html"
-                    class="hover:text-cyan transition">Advisory</a></div><a href="/advisory.html"
-                class="text-xs font-mono uppercase tracking-widest text-zinc-500 hover:text-white">The Work →</a>
-        </nav>
-        <main class="py-24 px-8 lg:px-32">
+<body class="bg-obsidian text-gray-300 font-sans antialiased">
+    <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
+        <aside
+            class="bg-black border-r border-zinc-800 p-8 lg:p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
+            <div>
+                <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
+                    ECONOMIST</span>
+            </div>
+            <nav class="mt-12 lg:mt-0 flex flex-col gap-4 font-mono text-xs tracking-widest uppercase">
+                <a href="/manifesto.html" class="text-gold transition-colors">01. Manifesto</a>
+                <a href="/academy.html" class="hover:text-white transition-colors">02. Academy</a>
+                <a href="/methodology.html" class="hover:text-white transition-colors">03. System</a>
+                <a href="/advisory.html" class="hover:text-cyan transition-colors">04. Advisory</a>
+                <a href="/board-brief.html" class="hover:text-white transition-colors">05. Briefs</a>
+                <a href="/working-papers.html" class="hover:text-white transition-colors">06. Doctrine</a>
+                <a href="/about.html" class="hover:text-white transition-colors">07. Operator</a>
+                <a href="/book.html" class="hover:text-white transition-colors">08. Book</a>
+            </nav>
+            <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">© 2026 Richard Ewing</div>
+        </aside>
+        <main class="p-8 lg:p-24 max-w-4xl mx-auto">
             <span class="text-gold font-mono text-xs uppercase tracking-widest mb-8 block text-center">The Doctrine of
                 Sovereignty</span>
             <h1 class="text-5xl lg:text-7xl font-serif text-white mb-16 text-center leading-tight">The Era of the
@@ -31,15 +40,15 @@
                 <p
                     class="first-letter:text-7xl first-letter:float-left first-letter:mr-4 first-letter:text-white first-letter:font-serif">
                     For fifteen years, we have been told that the job of a Product Leader is to "empathize." We built
-                    "Feature Factories" disguised as "Agile Squads."</p>
+                    "Feature Factories" disguised as "Agile Squads." We celebrated velocity while our unit economics
+                    quietly decayed.</p>
                 <h3 class="text-white font-serif italic text-3xl mt-12 mb-6">"Innovation without Solvency is just
                     Philanthropy."</h3>
                 <p>The ZIRP era is dead. The Board no longer cares about your "User Journey Maps." They care about
-                    <strong>Yield</strong>.</p>
-                <p>We are not just builders anymore. We are <strong>Architects of Capital</strong>.</p>
-                <div class="mt-16 pt-12 border-t border-zinc-800 text-center"><span
-                        class="font-mono text-xs text-zinc-500 uppercase tracking-widest">Richard Ewing<br>The Product
-                        Economist</span></div>
+                    <strong>Yield</strong>. This is not a demotion; it is an evolution.</p>
+                <p>We are not just builders anymore. We are <strong>Architects of Capital</strong>. We must learn to
+                    speak the language of the P&L, or we will be relegated to the children's table while the CFO makes
+                    the real roadmap decisions.</p>
             </article>
         </main>
     </div>

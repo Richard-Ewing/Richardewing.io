@@ -6,7 +6,7 @@
     <title>About Richard Ewing</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', cyan: '#00F0FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'], sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/scripts.js" defer></script>
 </head>
@@ -19,8 +19,17 @@
                 <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
                     ECONOMIST</span>
             </div>
-            <nav class="mt-12 flex flex-col gap-4 font-mono text-sm"><a href="/index.html" class="hover:text-white">←
-                    HOME</a></nav>
+            <nav class="mt-12 lg:mt-0 flex flex-col gap-4 font-mono text-xs tracking-widest uppercase">
+                <a href="/manifesto.html" class="hover:text-white transition-colors">01. Manifesto</a>
+                <a href="/academy.html" class="hover:text-white transition-colors">02. Academy</a>
+                <a href="/methodology.html" class="hover:text-white transition-colors">03. System</a>
+                <a href="/advisory.html" class="hover:text-cyan transition-colors">04. Advisory</a>
+                <a href="/board-brief.html" class="hover:text-white transition-colors">05. Briefs</a>
+                <a href="/working-papers.html" class="hover:text-white transition-colors">06. Doctrine</a>
+                <a href="/about.html" class="text-cyan transition-colors">07. Operator</a>
+                <a href="/book.html" class="hover:text-white transition-colors">08. Book</a>
+            </nav>
+            <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">© 2026 Richard Ewing</div>
         </aside>
         <main class="p-8 lg:p-24 max-w-4xl flex flex-col gap-16">
             <section>
@@ -31,34 +40,33 @@
                             src="/assets/images/headshot.jpg" class="w-full h-full object-cover grayscale headshot"
                             alt="Richard Ewing"></div>
                     <div>
-                        <p class="text-xl text-white font-medium mb-4">Director of Product Management & Practitioner of
-                            Product Economics.</p>
+                        <p class="text-xl text-white font-medium mb-4">Director of Product | Turnaround Executive |
+                            Operations Head</p>
                         <p class="text-zinc-400 leading-relaxed mb-6">I operate at the intersection of Engineering
                             reality and P&L viability. My approach is built on a simple premise: <strong>Engineering
-                                bandwidth is your most expensive capital. Stop wasting it.</strong></p>
-                        <a href="https://www.linkedin.com/in/richard-ewing-mba/" target="_blank"
+                                bandwidth is your most expensive capital. Stop wasting it.</strong></p><a
+                            href="https://www.linkedin.com/in/richard-ewing-mba/" target="_blank"
                             class="text-cobalt font-bold hover:text-white transition-colors">LinkedIn Profile &rarr;</a>
                     </div>
                 </div>
             </section>
             <section>
                 <h2 class="text-2xl text-white font-bold mb-8">The Track Record</h2>
-                <div class="flex flex-col gap-6">
+                <div class="grid gap-6">
                     <div class="bg-surface p-8 border-l-2 border-white"><strong
                             class="text-white font-mono uppercase block mb-2">0-to-1 Scale ($25M ARR)</strong>
                         <p class="text-zinc-400">Directed product portfolios from $0 to $25M ARR by enforcing strict
-                            unit economics over feature velocity. I treat roadmaps as investment portfolios, not
-                            wishlists.</p>
+                            unit economics over feature velocity.</p>
                     </div>
                     <div class="bg-surface p-8 border-l-2 border-titanium"><strong
-                            class="text-white font-mono uppercase block mb-2">Turnaround</strong>
-                        <p class="text-zinc-400">Specialized in distressed engineering environments. I identify "zombie
-                            code," cut technical debt, and realign stalled roadmaps to revenue outcomes.</p>
+                            class="text-white font-mono uppercase block mb-2">The $20M Turnaround</strong>
+                        <p class="text-zinc-400">As Director of Operations, I consolidated 4 silos and instituted
+                            operational rigor, driving <strong>200% YoY growth to $20M</strong>.</p>
                     </div>
                     <div class="bg-surface p-8 border-l-2 border-cobalt"><strong
-                            class="text-white font-mono uppercase block mb-2">Governance</strong>
-                        <p class="text-zinc-400">Serving as a strategic check against "Model Collapse." Ensuring AI and
-                            automation strategies yield actual margin, not just hype.</p>
+                            class="text-white font-mono uppercase block mb-2">The $5M Cost Optimization</strong>
+                        <p class="text-zinc-400">Orchestrated a complex Azure migration, slashing $5M in operational
+                            costs.</p>
                     </div>
                 </div>
             </section>

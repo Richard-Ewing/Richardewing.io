@@ -3,197 +3,65 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Academy | Tactical Frameworks</title>
-    <meta name="description"
-        content="Tactical education for Product Executives. Learn Financial Conway's Law, AI Economics, and CapEx Strategy.">
+    <title>The Academy</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        carbon: '#080808',
-                        paper: '#111111',
-                        cyan: '#00F0FF',
-                        cobalt: '#0044CC',
-                        gold: '#D4AF37'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                        serif: ['Georgia', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', cyan: '#00F0FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'], sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+    <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
-<body class="bg-carbon text-gray-400 font-sans antialiased selection:bg-cyan selection:text-black">
-    <div class="max-w-[1800px] mx-auto min-h-screen border-x border-zinc-900 bg-carbon relative">
-
-        <nav
-            class="flex flex-col md:flex-row justify-between items-center p-8 border-b border-zinc-800 sticky top-0 bg-carbon/95 backdrop-blur z-50 gap-6 md:gap-0">
-            <a href="/" class="text-white font-bold tracking-tighter text-lg hover:text-cyan transition">RICHARD
-                EWING</a>
-            <div
-                class="flex flex-wrap justify-center gap-6 md:gap-8 text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest">
-                <a href="/manifesto.html" class="hover:text-white transition">Manifesto</a>
-                <a href="/academy.html" class="text-cyan">Academy</a>
-                <a href="/methodology.html" class="hover:text-cyan transition">System</a>
-                <a href="/studio.html" class="hover:text-cyan transition">Studio</a>
-                <a href="/advisory.html" class="hover:text-cyan transition">Advisory</a>
+<body class="bg-obsidian text-gray-300 font-sans antialiased">
+    <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
+        <aside
+            class="bg-black border-r border-zinc-800 p-8 lg:p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
+            <div>
+                <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
+                    ECONOMIST</span>
             </div>
-            <a href="/advisory.html"
-                class="border border-zinc-700 text-white px-5 py-2 text-xs font-bold uppercase tracking-widest hover:border-cyan hover:text-cyan transition hidden md:block">
-                Stop The Bleeding
-            </a>
-        </nav>
-
-        <header class="py-24 px-8 lg:px-24 border-b border-zinc-800 bg-zinc-900/20">
-            <div class="max-w-4xl">
-                <span class="text-cyan font-mono text-xs mb-4 block uppercase tracking-widest">The Curriculum</span>
-                <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">The Academy.</h1>
-                <p class="text-xl text-zinc-400 max-w-2xl leading-relaxed">
-                    Tactical playbooks for the modern Product Executive. Stop guessing. Start modeling.
-                </p>
-            </div>
-        </header>
-
-        <section class="flex flex-col lg:flex-row border-b border-zinc-800">
-            <div class="lg:w-1/4 p-12 border-b lg:border-b-0 lg:border-r border-zinc-800 bg-black/50">
-                <span class="text-cobalt font-mono text-xl block mb-2">101</span>
-                <h3 class="text-3xl text-white font-bold mb-4">Financial<br>Fluency</h3>
-                <p class="text-xs text-zinc-500 font-mono leading-relaxed">
-                    "The CEO does not care about your burn-down chart. They care about the P&L."
-                </p>
-            </div>
-
-            <div class="lg:w-3/4 p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="group block">
-                    <span class="text-zinc-600 font-mono text-xs uppercase mb-2 block">[Theory]</span>
-                    <h4 class="text-xl text-white font-bold mb-3 group-hover:text-cyan transition">Stop Showing
-                        Roadmaps, Show P&L ↗</h4>
-                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed">Most PMs manage velocity. You must manage
-                        <strong>Financial Impact</strong>. Learn to track "Revenue Protected" and "Cost Savings" instead
-                        of story points.</p>
-                    <div class="h-px w-full bg-zinc-800 group-hover:bg-cyan transition"></div>
+            <nav class="mt-12 lg:mt-0 flex flex-col gap-4 font-mono text-xs tracking-widest uppercase">
+                <a href="/manifesto.html" class="hover:text-white transition-colors">01. Manifesto</a>
+                <a href="/academy.html" class="text-cyan transition-colors">02. Academy</a>
+                <a href="/methodology.html" class="hover:text-white transition-colors">03. System</a>
+                <a href="/advisory.html" class="hover:text-cyan transition-colors">04. Advisory</a>
+                <a href="/board-brief.html" class="hover:text-white transition-colors">05. Briefs</a>
+                <a href="/working-papers.html" class="hover:text-white transition-colors">06. Doctrine</a>
+                <a href="/about.html" class="hover:text-white transition-colors">07. Operator</a>
+                <a href="/book.html" class="hover:text-white transition-colors">08. Book</a>
+            </nav>
+            <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">© 2026 Richard Ewing</div>
+        </aside>
+        <main class="p-8 lg:p-24 max-w-6xl">
+            <span class="text-cyan font-mono text-xs mb-4 block uppercase tracking-widest">The Curriculum</span>
+            <h1 class="text-5xl lg:text-7xl font-bold text-white mb-12">The Academy.</h1>
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] border-t border-zinc-800 py-12">
+                <div class="mb-8 lg:mb-0"><span class="text-cobalt font-mono text-xl block mb-2">101</span>
+                    <h3 class="text-2xl text-white font-bold">Financial<br>Fluency</h3>
                 </div>
-                <div class="group block">
-                    <span class="text-zinc-600 font-mono text-xs uppercase mb-2 block">[Framework]</span>
-                    <h4 class="text-xl text-white font-bold mb-3 group-hover:text-cyan transition">CapEx vs. OpEx
-                        Strategy ↗</h4>
-                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed">Treating your engineering team as an
-                        investment portfolio. Are you allocating 60% to Growth (CapEx) or 80% to Maintenance (OpEx)?</p>
-                    <div class="h-px w-full bg-zinc-800 group-hover:bg-cyan transition"></div>
-                </div>
-                <div class="group block">
-                    <span class="text-zinc-600 font-mono text-xs uppercase mb-2 block">[Tactic]</span>
-                    <h4 class="text-xl text-white font-bold mb-3 group-hover:text-cyan transition">How to Read a P&L ↗
-                    </h4>
-                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed"><strong>Revenue Quality</strong> (ARR vs
-                        Service), <strong>COGS Efficiency</strong> (Hosting/API costs), and <strong>OpEx ROI</strong>
-                        (R&D Spend).</p>
-                    <div class="h-px w-full bg-zinc-800 group-hover:bg-cyan transition"></div>
-                </div>
-                <div class="group block">
-                    <span class="text-zinc-600 font-mono text-xs uppercase mb-2 block">[Concept]</span>
-                    <h4 class="text-xl text-white font-bold mb-3 group-hover:text-cyan transition">The Senior PM Trap ↗
-                    </h4>
-                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed">Why high-performers hit a ceiling. You are
-                        technically literate but financially illiterate. Break the ceiling by mastering Unit Economics.
-                    </p>
-                    <div class="h-px w-full bg-zinc-800 group-hover:bg-cyan transition"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="/canonical/capital-allocation-strategy.html" class="group block">
+                        <h4 class="text-white font-bold mb-2 group-hover:text-cyan transition">CapEx vs OpEx Strategy ↗
+                        </h4>
+                        <p class="text-sm text-zinc-500">How to categorize engineering spend to optimize EBITDA.</p>
+                    </a>
+                    <a href="/canonical/innovation-tax.html" class="group block">
+                        <h4 class="text-white font-bold mb-2 group-hover:text-cyan transition">The Innovation Tax ↗</h4>
+                        <p class="text-sm text-zinc-500">Calculating the carrying cost of legacy features.</p>
+                    </a>
                 </div>
             </div>
-        </section>
-
-        <section class="flex flex-col lg:flex-row border-b border-zinc-800 bg-zinc-900/10">
-            <div class="lg:w-1/4 p-12 border-b lg:border-b-0 lg:border-r border-zinc-800 bg-black/50">
-                <span class="text-cobalt font-mono text-xl block mb-2">201</span>
-                <h3 class="text-3xl text-white font-bold mb-4">AI Unit<br>Economics</h3>
-                <p class="text-xs text-zinc-500 font-mono leading-relaxed">
-                    "If you can't monetize AI, you are just paying for compute."
-                </p>
-            </div>
-
-            <div class="lg:w-3/4 p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="group block">
-                    <span class="text-zinc-600 font-mono text-xs uppercase mb-2 block">[Diagnostic]</span>
-                    <h4 class="text-xl text-white font-bold mb-3 group-hover:text-cyan transition">The Financial
-                        Leadership Test ↗</h4>
-                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed">AI isn't a tech problem. It's a P&L test.
-                        Focus on <strong>Automation ROI</strong>: Identifying internal tasks to automate for immediate
-                        efficiency.</p>
-                    <div class="h-px w-full bg-zinc-800 group-hover:bg-cyan transition"></div>
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_3fr] border-t border-zinc-800 py-12">
+                <div class="mb-8 lg:mb-0"><span class="text-cobalt font-mono text-xl block mb-2">201</span>
+                    <h3 class="text-2xl text-white font-bold">AI Unit<br>Economics</h3>
                 </div>
-                <div class="group block">
-                    <span class="text-zinc-600 font-mono text-xs uppercase mb-2 block">[Strategy]</span>
-                    <h4 class="text-xl text-white font-bold mb-3 group-hover:text-cyan transition">The $25M Strategic
-                        Lever ↗</h4>
-                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed">Stop building chatbots. Start solving the
-                        "Crisis of Context." Use AI to automate strategic performance tracking for the C-Suite.</p>
-                    <div class="h-px w-full bg-zinc-800 group-hover:bg-cyan transition"></div>
-                </div>
-                <div class="group block">
-                    <span class="text-zinc-600 font-mono text-xs uppercase mb-2 block">[Warning]</span>
-                    <h4 class="text-xl text-white font-bold mb-3 group-hover:text-cyan transition">The API Gold Mine
-                        Trap ↗</h4>
-                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed">You aren't buying a service; you're paying to
-                        be disrupted. How to weaponize your data moat against OpenAI.</p>
-                    <div class="h-px w-full bg-zinc-800 group-hover:bg-cyan transition"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="/canonical/ai-margin-autopsy.html" class="group block">
+                        <h4 class="text-white font-bold mb-2 group-hover:text-cyan transition">The Margin Autopsy ↗</h4>
+                        <p class="text-sm text-zinc-500">Forensic audit of token costs vs. user willingness-to-pay.</p>
+                    </a>
                 </div>
             </div>
-        </section>
-
-        <section class="flex flex-col lg:flex-row">
-            <div class="lg:w-1/4 p-12 border-b lg:border-b-0 lg:border-r border-zinc-800 bg-black/50">
-                <span class="text-cobalt font-mono text-xl block mb-2">301</span>
-                <h3 class="text-3xl text-white font-bold mb-4">Executive<br>Rigor</h3>
-                <p class="text-xs text-zinc-500 font-mono leading-relaxed">
-                    "Innovation without operation is hallucination."
-                </p>
-            </div>
-
-            <div class="lg:w-3/4 p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="group block">
-                    <span class="text-zinc-600 font-mono text-xs uppercase mb-2 block">[Mindset]</span>
-                    <h4 class="text-xl text-white font-bold mb-3 group-hover:text-cyan transition">The "Busy" Trap ↗
-                    </h4>
-                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed">If your team is exhausted, your leadership is
-                        the weak link. Become a <strong>Master of Clarity</strong>.</p>
-                    <div class="h-px w-full bg-zinc-800 group-hover:bg-cyan transition"></div>
-                </div>
-                <div class="group block">
-                    <span class="text-zinc-600 font-mono text-xs uppercase mb-2 block">[Alignment]</span>
-                    <h4 class="text-xl text-white font-bold mb-3 group-hover:text-cyan transition">Cross-Department
-                        Alignment ↗</h4>
-                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed">Resolve silos with "Radical Transparency."
-                        Create a unified North Star that ties Engineering velocity to Business outcomes.</p>
-                    <div class="h-px w-full bg-zinc-800 group-hover:bg-cyan transition"></div>
-                </div>
-                <div class="group block">
-                    <span class="text-zinc-600 font-mono text-xs uppercase mb-2 block">[Tactics]</span>
-                    <h4 class="text-xl text-white font-bold mb-3 group-hover:text-cyan transition">The One Decision ↗
-                    </h4>
-                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed">In 0-to-1 environments, ambiguity is the
-                        enemy. Define a direction so clear the team wants to rally, even if the data isn't perfect yet.
-                    </p>
-                    <div class="h-px w-full bg-zinc-800 group-hover:bg-cyan transition"></div>
-                </div>
-                <div class="group block">
-                    <span class="text-zinc-600 font-mono text-xs uppercase mb-2 block">[Culture]</span>
-                    <h4 class="text-xl text-white font-bold mb-3 group-hover:text-cyan transition">Leading Under
-                        Pressure ↗</h4>
-                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed">The "Quarterback" Mindset. Staying composed
-                        when the system fails is the difference between a glitch and a crisis.</p>
-                    <div class="h-px w-full bg-zinc-800 group-hover:bg-cyan transition"></div>
-                </div>
-            </div>
-        </section>
+        </main>
     </div>
 </body>
 

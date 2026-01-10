@@ -1,17 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('SURVEILLANCE ENGINE: ACTIVE [v10.2 - Stable]');
-
+    console.log('SURVEILLANCE ENGINE: ACTIVE [v15.0]');
     const trackEvent = (category, action, label) => {
-        // console.log(`[TRACKING] ${category} | ${action} | ${label}`); // Uncomment for debug
         if (typeof gtag !== 'undefined') gtag('event', action, { 'event_category': category, 'event_label': label });
     };
-
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
             if (href && href.endsWith('.pdf')) trackEvent('PDF', 'Download', href.split('/').pop());
             else if (link.innerText.includes('APER')) trackEvent('Conversion', 'APER_Click', href);
-            else if (href && href.startsWith('/')) trackEvent('Navigation', 'Click', link.innerText);
 
             if (href === '#' || href === '') {
                 e.preventDefault();

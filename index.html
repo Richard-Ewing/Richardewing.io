@@ -3,94 +3,78 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Richard Ewing | The Product Economist</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <meta name="description" content="Product Management is Capital Allocation.">
-    <meta property="og:title" content="Richard Ewing | The Product Economist">
-    <meta property="og:image" content="https://richardewing.io/assets/images/headshot.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', danger: '#FF3333' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'], sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', cyan: '#00F0FF', danger: '#FF3333' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'], sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
 <body class="bg-obsidian text-gray-300 font-sans antialiased">
     <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
-
         <aside
             class="bg-black border-r border-zinc-800 p-8 lg:p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
-            <div>
-                <img src="/assets/images/headshot.jpg" alt="Richard Ewing"
+            <div><img src="/assets/images/headshot.jpg" alt="Richard Ewing"
                     class="headshot w-32 h-32 rounded-full border-2 border-zinc-700 mb-6 object-cover">
-                <h3 class="text-white font-bold tracking-tight text-lg">RICHARD EWING</h3>
-                <span class="font-mono text-xs text-titanium block mt-1 tracking-widest">OFFICE OF THE<br>PRODUCT
+                <h3 class="text-white font-bold tracking-tight text-lg">RICHARD EWING</h3><span
+                    class="font-mono text-xs text-titanium block mt-1 tracking-widest">OFFICE OF THE<br>PRODUCT
                     ECONOMIST</span>
             </div>
-            <nav class="mt-12 lg:mt-0 flex flex-col gap-4 font-mono text-sm">
-                <a href="/about.html" class="hover:text-white transition-colors">01. ABOUT ME</a>
-                <a href="/advisory.html" class="hover:text-white transition-colors">02. ADVISORY</a>
-                <a href="/working-papers.html" class="hover:text-white transition-colors">03. DOCTRINE</a>
-                <a href="/board-brief.html" class="hover:text-white transition-colors">04. BRIEFS</a>
-                <a href="/book.html" class="text-cobalt hover:text-white transition-colors">05. THE BOOK</a>
+            <nav class="mt-12 lg:mt-0 flex flex-col gap-4 font-mono text-xs tracking-widest uppercase">
+                <a href="/manifesto.html" class="hover:text-white transition-colors">01. Manifesto</a>
+                <a href="/academy.html" class="hover:text-white transition-colors">02. Academy</a>
+                <a href="/methodology.html" class="hover:text-white transition-colors">03. System</a>
+                <a href="/advisory.html" class="hover:text-cyan transition-colors">04. Advisory</a>
+                <a href="/board-brief.html" class="hover:text-white transition-colors">05. Briefs</a>
+                <a href="/working-papers.html" class="hover:text-white transition-colors">06. Doctrine</a>
+                <a href="/about.html" class="hover:text-white transition-colors">07. Operator</a>
+                <a href="/book.html" class="text-cobalt hover:text-white transition-colors">08. Book</a>
             </nav>
             <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">© 2026 Richard Ewing</div>
         </aside>
-
         <main class="p-8 lg:p-24 max-w-5xl flex flex-col gap-20">
-
             <section id="hero">
                 <div
                     class="inline-block bg-danger/10 text-danger border border-danger/20 px-4 py-2 text-xs font-mono font-bold uppercase tracking-widest mb-6">
                     Warning: Capital Leakage Detected</div>
                 <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-[0.95] tracking-tight mb-8">Product
                     Management is <br>Capital Allocation.</h1>
-                <div class="bg-surface border-l-4 border-white p-8 mb-12">
-                    <strong class="text-white block mb-2 font-mono uppercase text-sm">The Uncomfortable Truth</strong>
+                <div class="bg-surface border-l-4 border-white p-8 mb-12"><strong
+                        class="text-white block mb-2 font-mono uppercase text-sm">The Uncomfortable Truth</strong>
                     <p class="text-zinc-400 m-0">Engineering bandwidth is your most expensive capital. Most companies
                         treat it like infinite inventory. Stop wasting it.</p>
                 </div>
-                <p class="text-xl text-zinc-300 font-light leading-relaxed mb-8 max-w-3xl">I help organizations
-                    transition from <strong>shipping features</strong> to <strong>managing assets</strong>.</p>
-                <div class="flex flex-wrap gap-6 items-center">
-                    <a href="/advisory.html"
-                        class="inline-flex items-center justify-center px-8 py-5 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-titanium transition-colors">Stop
-                        The Bleeding</a>
-                    <span class="text-zinc-500 font-mono text-xs">Analysis in 14 Days. Fixed Price.</span>
-                </div>
+                <div class="flex flex-wrap gap-6 items-center"><a href="/advisory.html"
+                        class="inline-flex items-center justify-center px-8 py-5 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-cyan transition-colors">Stop
+                        The Bleeding</a><span class="text-zinc-500 font-mono text-xs">Analysis in 14 Days. Fixed
+                        Price.</span></div>
             </section>
-
             <section id="evidence" class="border-t border-zinc-800 pt-16">
                 <h2 class="text-2xl text-white font-bold mb-12 flex items-center gap-4"><span
                         class="w-2 h-2 bg-cobalt rounded-full"></span>RECENT INTERVENTIONS</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-surface p-8 border-t-2 border-cobalt">
-                        <span class="font-mono text-xs text-zinc-500 block mb-2">SAAS SCALING</span>
-                        <strong class="text-white text-xl block mb-4">$0 to $25M ARR</strong>
-                        <p class="text-sm text-zinc-400 mb-4">Scaled flagship ERP product by aligning Sales, Marketing,
-                            and Product on unit economics.</p>
+                    <div class="bg-surface p-8 border-t-2 border-cobalt"><strong
+                            class="text-white text-xl block mb-4">$0 to $25M ARR</strong>
+                        <p class="text-sm text-zinc-400 mb-4">Scaled flagship ERP product by enforcing strict unit
+                            economics.</p>
                         <div class="bg-black p-3 text-xs font-mono text-cobalt uppercase">Result: 20% Churn Reduction
                         </div>
                     </div>
-                    <div class="bg-surface p-8 border-t-2 border-white">
-                        <span class="font-mono text-xs text-zinc-500 block mb-2">ENTERPRISE AI</span>
-                        <strong class="text-white text-xl block mb-4">Margin Restored</strong>
-                        <p class="text-sm text-zinc-400 mb-4">GenAI wrapper was costing $0.15 per query with only $0.08
-                            marginal revenue.</p>
-                        <div class="bg-black p-3 text-xs font-mono text-cobalt uppercase">Result: Pricing Model Reset
-                        </div>
-                    </div>
-                    <div class="bg-surface p-8 border-t-2 border-zinc-700">
-                        <span class="font-mono text-xs text-zinc-500 block mb-2">CLOUD OPS</span>
-                        <strong class="text-white text-xl block mb-4">$5M Saved</strong>
+                    <div class="bg-surface p-8 border-t-2 border-white"><strong
+                            class="text-white text-xl block mb-4">$5M Saved</strong>
                         <p class="text-sm text-zinc-400 mb-4">Orchestrated Azure migration and sunsetted redundant
                             legacy applications.</p>
-                        <div class="bg-black p-3 text-xs font-mono text-cobalt uppercase">Result: 20% Efficiency Gain
-                        </div>
+                        <div class="bg-black p-3 text-xs font-mono text-cobalt uppercase">Result: OpEx Reset</div>
+                    </div>
+                    <div class="bg-surface p-8 border-t-2 border-zinc-700"><strong
+                            class="text-white text-xl block mb-4">Margin Restored</strong>
+                        <p class="text-sm text-zinc-400 mb-4">GenAI wrapper was costing $0.15 per query with $0.08
+                            revenue.</p>
+                        <div class="bg-black p-3 text-xs font-mono text-cobalt uppercase">Result: Pricing Fixed</div>
                     </div>
                 </div>
             </section>
-
         </main>
     </div>
 </body>

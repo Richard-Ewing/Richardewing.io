@@ -1,12 +1,7 @@
-/* STRUCTURAL RESET */
 :root {
   --bg: #050505;
   --text: #cccccc;
   --cobalt: #0055FF;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -15,7 +10,25 @@ body {
   overflow-x: hidden;
 }
 
-/* UTILITY OVERRIDES */
+/* PREMIUM CARD (Restored Structure) */
+.card-premium {
+  background: #080808;
+  border: 1px solid #333;
+  position: relative;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-premium:hover {
+  border-color: #00F0FF;
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.1);
+  transform: translateY(-4px);
+}
+
 .headshot {
   filter: grayscale(100%);
   transition: 0.4s;
@@ -23,53 +36,4 @@ body {
 
 .headshot:hover {
   filter: grayscale(0%);
-}
-
-/* PREMIUM CARD (For Advisory/APER) */
-.card-premium {
-  background: #080808;
-  border: 2px solid #fff;
-  position: relative;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-}
-
-.card-premium:hover {
-  border-color: #C0C0C0;
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
-  transform: translateY(-4px);
-}
-
-.scarcity-tag {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-  background: #fff;
-  color: #000;
-  font-family: monospace;
-  font-size: 0.7rem;
-  padding: 4px 12px;
-  font-weight: 800;
-}
-
-/* DOCUMENT TYPOGRAPHY */
-.prose h3 {
-  color: #fff;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.prose p {
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-  color: #a1a1aa;
-}
-
-.prose ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #a1a1aa;
 }

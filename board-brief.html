@@ -6,7 +6,7 @@
     <title>The Board Brief</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', cyan: '#00F0FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'], sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/scripts.js" defer></script>
 </head>
@@ -14,26 +14,78 @@
 <body class="bg-obsidian text-gray-300 font-sans antialiased">
     <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
         <aside
-            class="bg-black border-r border-zinc-800 p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
+            class="bg-black border-r border-zinc-800 p-8 lg:p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
             <div>
                 <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
                     ECONOMIST</span>
             </div>
-            <nav class="mt-12 flex flex-col gap-4 font-mono text-sm"><a href="/index.html" class="hover:text-white">←
-                    HOME</a></nav>
+            <nav class="mt-12 lg:mt-0 flex flex-col gap-4 font-mono text-xs tracking-widest uppercase">
+                <a href="/manifesto.html" class="hover:text-white transition-colors">01. Manifesto</a>
+                <a href="/academy.html" class="hover:text-white transition-colors">02. Academy</a>
+                <a href="/methodology.html" class="hover:text-white transition-colors">03. System</a>
+                <a href="/advisory.html" class="hover:text-white transition-colors">04. Advisory</a>
+                <a href="/board-brief.html" class="text-cyan transition-colors">05. Briefs</a>
+                <a href="/working-papers.html" class="hover:text-white transition-colors">06. Doctrine</a>
+                <a href="/about.html" class="hover:text-white transition-colors">07. Operator</a>
+                <a href="/book.html" class="hover:text-white transition-colors">08. Book</a>
+            </nav>
+            <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">© 2026 Richard Ewing</div>
         </aside>
         <main class="p-8 lg:p-24 max-w-4xl">
             <span class="font-mono text-cobalt text-sm tracking-widest uppercase mb-4 block">The Signal</span>
             <h1 class="text-5xl font-extrabold text-white mb-6">The Board Brief</h1>
-            <p class="text-xl text-zinc-400 mb-12 max-w-2xl">A weekly dispatch on the "Math of Product."</p>
-            <div class="bg-surface border border-zinc-800 p-8 mb-16">
+            <p class="text-xl text-zinc-400 mb-12 max-w-2xl">A weekly dispatch on the "Math of Product." Written for
+                operators who need to bridge the gap between Engineering Reality and Financial Viability.</p>
+            <div class="bg-surface border border-zinc-800 p-10 mb-16 relative overflow-hidden">
+                <div
+                    class="absolute top-0 right-0 bg-white text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
+                    Join 4,000+ Operators</div>
                 <h3 class="text-white font-bold mb-4">Join the Distribution List</h3>
                 <form action="https://formspree.io/f/YOUR_ID" method="POST" class="flex flex-col md:flex-row gap-4">
-                    <input type="email" name="email" placeholder="Enter your email..."
-                        class="bg-black border border-zinc-700 text-white px-6 py-4 flex-grow focus:outline-none focus:border-cobalt transition"><button
-                        type="submit"
-                        class="bg-white text-black font-bold px-8 py-4 uppercase tracking-widest text-xs hover:bg-titanium transition">Subscribe</button>
+                    <input type="email" name="email" placeholder="enter_corporate_email"
+                        class="bg-black border border-zinc-700 text-white px-6 py-4 flex-grow focus:outline-none focus:border-cyan transition">
+                    <button type="submit"
+                        class="bg-white text-black font-bold px-8 py-4 uppercase tracking-widest text-xs hover:bg-cyan transition">Subscribe</button>
                 </form>
+            </div>
+            <h2 class="text-white text-xl font-bold mb-8 border-b border-zinc-800 pb-4">Archive</h2>
+            <div class="space-y-8">
+                <article class="group cursor-pointer">
+                    <div class="flex items-baseline justify-between mb-2">
+                        <h3 class="text-2xl font-bold text-zinc-400 group-hover:text-white transition">The Cost of
+                            "Maybe"</h3>
+                        <span class="font-mono text-xs text-cobalt">VOL. 014</span>
+                    </div>
+                    <p class="text-zinc-500 mb-4">Why indecision is the most expensive item on your roadmap. Calculating
+                        the burn rate of stalled PRs.</p>
+                    <a href="#"
+                        class="text-xs font-mono text-titanium uppercase tracking-widest border-b border-zinc-800 pb-1 group-hover:border-white transition">Read
+                        Brief &rarr;</a>
+                </article>
+                <article class="group cursor-pointer">
+                    <div class="flex items-baseline justify-between mb-2">
+                        <h3 class="text-2xl font-bold text-zinc-400 group-hover:text-white transition">Variance Analysis
+                            for PMs</h3>
+                        <span class="font-mono text-xs text-cobalt">VOL. 013</span>
+                    </div>
+                    <p class="text-zinc-500 mb-4">How to predict roadmap slippage before it kills your quarter. Using
+                        Monte Carlo simulations in Jira.</p>
+                    <a href="#"
+                        class="text-xs font-mono text-titanium uppercase tracking-widest border-b border-zinc-800 pb-1 group-hover:border-white transition">Read
+                        Brief &rarr;</a>
+                </article>
+                <article class="group cursor-pointer">
+                    <div class="flex items-baseline justify-between mb-2">
+                        <h3 class="text-2xl font-bold text-zinc-400 group-hover:text-white transition">The "Zombie
+                            Feature" Audit</h3>
+                        <span class="font-mono text-xs text-cobalt">VOL. 012</span>
+                    </div>
+                    <p class="text-zinc-500 mb-4">A step-by-step guide to identifying code that costs more to maintain
+                        than the revenue it generates.</p>
+                    <a href="#"
+                        class="text-xs font-mono text-titanium uppercase tracking-widest border-b border-zinc-800 pb-1 group-hover:border-white transition">Read
+                        Brief &rarr;</a>
+                </article>
             </div>
         </main>
     </div>
