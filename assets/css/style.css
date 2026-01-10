@@ -1,16 +1,31 @@
-/* BASE OVERRIDES */
+/* STRUCTURAL RESET */
 :root {
   --bg: #050505;
   --text: #cccccc;
   --cobalt: #0055FF;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg);
   color: var(--text);
+  overflow-x: hidden;
 }
 
-/* CUSTOM UTILS */
+/* UTILITY OVERRIDES */
+.headshot {
+  filter: grayscale(100%);
+  transition: 0.4s;
+}
+
+.headshot:hover {
+  filter: grayscale(0%);
+}
+
+/* PREMIUM CARD (For Advisory/APER) */
 .card-premium {
   background: #080808;
   border: 2px solid #fff;
@@ -31,17 +46,30 @@ body {
   right: 20px;
   background: #fff;
   color: #000;
-  font-family: 'Menlo', monospace;
+  font-family: monospace;
   font-size: 0.7rem;
   padding: 4px 12px;
   font-weight: 800;
 }
 
-.headshot {
-  filter: grayscale(100%);
-  transition: 0.4s;
+/* DOCUMENT TYPOGRAPHY */
+.prose h3 {
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
-.headshot:hover {
-  filter: grayscale(0%);
+.prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #a1a1aa;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #a1a1aa;
 }

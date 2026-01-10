@@ -3,32 +3,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Double Funnel</title>
+    <title>Double Funnel Framework</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', danger: '#FF3333', success: '#00CC66' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
-<body class="bg-obsidian text-gray-300 font-sans">
+<body class="bg-obsidian text-gray-300 font-sans antialiased">
     <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
-        <aside class="bg-black border-r border-zinc-800 p-10"><a href="/working-papers.html" class="text-cobalt">←
-                BACK</a></aside>
-        <main class="p-8 lg:p-24 max-w-4xl"><span class="font-mono text-xs uppercase block mb-4">Paper 13</span>
-            <h1 class="text-5xl text-white font-bold mb-8">Double Funnel Framework</h1>
-            <div class="bg-surface border-l-4 border-cobalt p-8 mb-8"><strong
-                    class="text-white block mb-2 font-mono uppercase text-sm">Board Takeaway</strong>
-                <p class="text-zinc-400">Maps customer flows against capital flows.</p>
+        <aside
+            class="bg-black border-r border-zinc-800 p-8 lg:p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
+            <div>
+                <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
+                    ECONOMIST</span>
             </div>
-            <div class="prose prose-invert">
+            <nav class="mt-12 flex flex-col gap-4 font-mono text-sm"><a href="/working-papers.html"
+                    class="hover:text-white">← INDEX</a></nav>
+        </aside>
+        <main class="p-8 lg:p-24 max-w-4xl flex flex-col gap-12">
+            <section>
+                <span class="font-mono text-zinc-500 text-xs uppercase tracking-widest mb-4 block">Canonical
+                    Paper</span>
+                <h1 class="text-5xl font-extrabold text-white mb-8">Double Funnel Framework</h1>
+                <div class="bg-surface border-l-4 border-cobalt p-8"><strong
+                        class="text-white block mb-2 font-mono uppercase text-sm">Board Takeaway</strong>
+                    <p class="text-zinc-400 m-0">Maps customer flows against capital flows.</p>
+                </div>
+            </section>
+            <article class="prose prose-invert prose-lg text-zinc-400">
                 <p>Top Funnel: Open exploration. Bottom Funnel: Prioritized delivery.</p>
                 <div class="bg-black p-6 border border-zinc-800 my-8"><strong
-                        class="text-white block mb-2 font-mono text-sm">CASE</strong>
-                    <p class="italic">Aligned marketing spend with product economics to reduce CAC by 30%.</p>
-                </div><a href="/resources/double-funnel.pdf"
+                        class="text-white block mb-2 font-mono text-sm">APPLIED CASE</strong>
+                    <p class="italic text-sm">Aligned marketing spend with product economics to reduce CAC by 30%.</p>
+                </div>
+            </article>
+            <div class="border-t border-zinc-800 pt-12 flex gap-4">
+                <a href="/resources/double-funnel.pdf"
                     class="inline-block bg-white text-black font-bold px-8 py-4 uppercase text-xs hover:bg-titanium">Download
                     PDF</a>
+                <a href="/advisory.html"
+                    class="inline-block border border-zinc-600 text-white font-bold px-8 py-4 uppercase text-xs hover:bg-surface">Run
+                    APER™</a>
             </div>
         </main>
     </div>

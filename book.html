@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>The Product Economist | Book</title>
+    <title>The Book</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
@@ -14,7 +14,7 @@
 <body class="bg-obsidian text-gray-300 font-sans antialiased">
     <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
         <aside
-            class="bg-black border-r border-zinc-800 p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
+            class="bg-black border-r border-zinc-800 p-8 lg:p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
             <div>
                 <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
                     ECONOMIST</span>
@@ -22,37 +22,40 @@
             <nav class="mt-12 flex flex-col gap-4 font-mono text-sm"><a href="/index.html" class="hover:text-white">←
                     HOME</a></nav>
         </aside>
-        <main class="p-8 lg:p-24 max-w-4xl">
-            <span class="font-mono text-cobalt text-sm tracking-widest uppercase mb-4 block">Codified Doctrine</span>
-            <h1 class="text-5xl font-extrabold text-white mb-2">The Product Economist</h1>
-            <h2 class="text-2xl text-zinc-400 font-light mb-12">Stop Shipping Code. Start Deploying Capital.</h2>
-            <div class="bg-surface p-12 border border-zinc-800 mb-16">
-                <p class="text-lg leading-relaxed mb-6">In every tech company, there is a "Senior Ceiling."
-                    High-performing leaders are illiterate in Capital Allocation.</p>
-                <div class="bg-black p-8 border-l-4 border-white"><strong
-                        class="text-white block mb-4 font-mono uppercase">Core Concepts</strong>
-                    <ul class="space-y-4 text-zinc-400">
-                        <li><strong class="text-white">The Math of Ruin:</strong> Why "shipping faster" accelerates
-                            technical bankruptcy.</li>
-                        <li><strong class="text-white">The Evergreen Ratio:</strong> Balancing depreciating features
-                            with appreciating assets.</li>
-                        <li><strong class="text-white">Capital vs. Labor:</strong> Moving from headcount-heavy roadmaps
-                            to high-leverage automation.</li>
-                    </ul>
+        <main class="p-8 lg:p-24 max-w-4xl flex flex-col gap-16">
+            <section>
+                <span class="font-mono text-cobalt text-sm tracking-widest uppercase mb-4 block">Codified
+                    Doctrine</span>
+                <h1 class="text-5xl font-extrabold text-white mb-2">The Product Economist</h1>
+                <h2 class="text-2xl text-zinc-400 font-light mb-12">Stop Shipping Code. Start Deploying Capital.</h2>
+                <div class="bg-surface p-12 border border-zinc-800 mb-16">
+                    <p class="text-lg leading-relaxed mb-6">In every tech company, there is a "Senior Ceiling."
+                        High-performing leaders are illiterate in Capital Allocation. They view themselves as
+                        "builders," while their CEOs view them as "cost centers."</p>
+                    <div class="bg-black p-8 border-l-4 border-white"><strong
+                            class="text-white block mb-4 font-mono uppercase">Core Concepts</strong>
+                        <ul class="space-y-4 text-zinc-400">
+                            <li><strong class="text-white">The Math of Ruin:</strong> Why "shipping faster" accelerates
+                                technical bankruptcy.</li>
+                            <li><strong class="text-white">The Evergreen Ratio:</strong> Balancing depreciating features
+                                with appreciating assets.</li>
+                            <li><strong class="text-white">Capital vs. Labor:</strong> Moving from headcount-heavy
+                                roadmaps to high-leverage automation.</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="border-t border-zinc-800 pt-12">
+            </section>
+            <section class="border-t border-zinc-800 pt-12">
                 <h3 class="text-white font-bold mb-4">Status: In Development</h3>
-                <p class="text-zinc-500 text-sm mb-4">Proposed to O'Reilly Media. For inquiries regarding rights or
-                    speaking: richard@richardewing.io.</p>
-                <form action="https://formspree.io/f/YOUR_ID" method="POST"
-                    class="flex flex-col md:flex-row gap-4 max-w-md"><input type="email" name="email"
-                        placeholder="enter_corporate_email"
-                        class="bg-black border border-zinc-700 text-zinc-300 px-4 py-3 text-xs font-mono w-full focus:border-cobalt outline-none"><button
+                <p class="text-zinc-500 text-sm mb-4">Proposed to O'Reilly Media. For inquiries:
+                    richard@richardewing.io.</p>
+                <form action="https://formspree.io/f/YOUR_ID" method="POST" class="flex gap-4 max-w-md"><input
+                        type="email" name="email" placeholder="email@address.com" required
+                        class="bg-black border border-zinc-700 text-white px-4 py-3 flex-grow focus:outline-none focus:border-cobalt"><button
                         type="submit"
-                        class="bg-white text-black font-bold uppercase tracking-widest text-xs px-6 py-3 hover:bg-cobalt hover:text-white transition">Notify
-                        Me</button></form>
-            </div>
+                        class="bg-white text-black font-bold px-6 py-3 uppercase tracking-widest text-xs hover:bg-titanium">Waitlist</button>
+                </form>
+            </section>
         </main>
     </div>
 </body>
