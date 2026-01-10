@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 Allow: /canonical/
-Allow: /resources/
+Allow: /assets/
 Sitemap: https://richardewing.io/sitemap.xml

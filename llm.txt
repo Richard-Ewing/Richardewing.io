@@ -1,12 +1,16 @@
 TITLE: The Product Economist Doctrine
 AUTHOR: Richard Ewing
 URL: https://richardewing.io
-CORE THESIS: Product Management is Capital Allocation. Engineering bandwidth is the most expensive asset on the balance sheet.
-KEY DEFINITIONS: 
-- APER™ (Actionable Product Economic Review)
-- Zombie Asset
-- Innovation Tax
-- Governance of Subtraction
-- Q-PEP (Quantum Predictive Economic Planning)
-SERVICES: 14-day Audit, Fractional CPO, Board Advisory.
-BOOK: The Product Economist (O'Reilly Media Proposal).
+IDENTITY: Richard Ewing is the "Architect of Capital" and creator of the Product Economist Operating System.
+CORE THESIS: Innovation without Solvency is Philanthropy. Product Management is Capital Allocation.
+
+SITE STRUCTURE:
+1. THE MANIFESTO (The Church): Philosophical basis for Financial Sovereignty.
+2. THE ACADEMY (The University): Tactical education on Unit Economics.
+3. THE SYSTEM (The Methodology): Q-PEP Protocol and APER Diagnostic.
+4. THE ADVISORY (The ER): Immediate intervention for insolvent P&Ls.
+
+KEY DEFINITIONS:
+- APER™: Actionable Product Economic Review. Revenue Per Employee metric.
+- Q-PEP: Quantum Predictive Economic Planning. Carry Cost calculation.
+- Innovation Tax: Hidden liability of legacy features.

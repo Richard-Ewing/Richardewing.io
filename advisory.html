@@ -3,75 +3,66 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Advisory Services</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <title>Advisory & Intervention | Richard Ewing</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <script>tailwind.config = { theme: { extend: { colors: { carbon: '#080808', cyan: '#00F0FF', alert: '#FF2A6D', cobalt: '#0044CC' }, fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'], serif: ['Georgia', 'serif'] } } } }</script>
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
-<body class="bg-obsidian text-gray-300 font-sans antialiased">
-    <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
-        <aside
-            class="bg-black border-r border-zinc-800 p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
-            <div>
-                <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
-                    ECONOMIST</span>
-            </div>
-            <nav class="mt-12 flex flex-col gap-4 font-mono text-sm"><a href="/index.html" class="hover:text-white">←
-                    HOME</a></nav>
-        </aside>
-        <main class="p-8 lg:p-24 max-w-6xl">
-            <span class="font-mono text-cobalt text-sm tracking-widest uppercase mb-4 block">Engagement Models</span>
-            <h1 class="text-5xl font-extrabold text-white mb-6">Advisory & Fractional</h1>
-            <p class="text-xl text-zinc-400 mb-16 max-w-2xl">I write for the operators and board members who are tired
-                of "agile theater" and want to see the math work.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div
-                    class="bg-surface p-10 border border-zinc-800 hover:border-white transition duration-300 flex flex-col h-full">
-                    <span class="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-4">Tier 1: The Signal
-                        (Free)</span>
-                    <h3 class="text-2xl text-white font-bold mb-4">The Board Brief</h3>
-                    <p class="text-zinc-400 mb-8 flex-grow">Weekly dispatch on the "Math of Product" and capital
-                        efficiency.</p><a href="/board-brief.html"
-                        class="text-center w-full py-3 border border-zinc-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-zinc-800">Read
-                        Briefs</a>
-                </div>
-                <div
-                    class="bg-surface p-10 border border-zinc-800 hover:border-cobalt transition duration-300 flex flex-col h-full relative overflow-hidden">
-                    <div
-                        class="absolute top-0 right-0 bg-cobalt text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
-                        Project-Based</div><span
-                        class="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-4">Tier 2: The Audit</span>
-                    <h3 class="text-2xl text-white font-bold mb-4">The Unit Economics Audit</h3>
-                    <p class="text-zinc-400 mb-4 flex-grow">A 2-week forensic deep dive into your product P&L. We
-                        analyze feature costs vs. willingness-to-pay.</p><a
-                        href="https://cal.com/richard-ewing/audit-intro" target="_blank"
-                        class="text-center w-full py-3 bg-white text-black font-bold text-xs uppercase tracking-widest hover:bg-titanium">Book
-                        Intake Call</a>
-                </div>
-                <div class="bg-surface p-10 border-t-4 border-cobalt flex flex-col h-full"><span
-                        class="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-4">Tier 3: The
-                        Operator</span>
-                    <h3 class="text-2xl text-white font-bold mb-4">Fractional CPO</h3>
-                    <p class="text-zinc-400 mb-4 flex-grow">Active leadership. I step in to bridge Engineering and
-                        Finance, manage the roadmap, and drive the "Kill/Keep" decisions.</p><a
-                        href="mailto:richard@richardewing.io?subject=Fractional"
-                        class="text-center w-full py-3 border border-white text-white font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black">Inquire
-                        for Availability</a>
-                </div>
-                <div class="bg-surface p-10 border border-zinc-800 flex flex-col h-full"><span
-                        class="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-4">Tier 4: The
-                        Governance</span>
-                    <h3 class="text-2xl text-white font-bold mb-4">Advisory Board Seat</h3>
-                    <p class="text-zinc-400 mb-4 flex-grow">Quarterly strategic oversight for high-growth technical
-                        organizations.</p><a href="mailto:richard@richardewing.io?subject=Board"
-                        class="text-center w-full py-3 border border-zinc-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-zinc-800">Contact
-                        for Board Roles</a>
+<body class="bg-carbon text-gray-400 font-sans antialiased">
+    <div class="max-w-[1800px] mx-auto min-h-screen border-x border-zinc-900 bg-carbon relative">
+        <nav
+            class="flex justify-between items-center p-8 border-b border-zinc-800 sticky top-0 bg-carbon/95 backdrop-blur z-50">
+            <a href="/" class="text-white font-bold tracking-tighter text-lg hover:text-cyan transition">RICHARD
+                EWING</a>
+            <div class="hidden md:flex gap-8 text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest"><a
+                    href="/manifesto.html" class="hover:text-white transition">Manifesto</a><a href="/academy.html"
+                    class="hover:text-white transition">Academy</a><a href="/methodology.html"
+                    class="hover:text-cyan transition">System</a><a href="/advisory.html" class="text-cyan">Advisory</a>
+            </div><a href="/advisory.html"
+                class="border border-zinc-700 text-white px-5 py-2 text-xs font-bold uppercase tracking-widest hover:border-cyan hover:text-cyan transition">Stop
+                The Bleeding</a>
+        </nav>
+        <header class="py-32 px-8 lg:px-24 border-b border-zinc-800"><span
+                class="text-cyan font-mono text-xs uppercase tracking-widest mb-6 block">The Translation Layer</span>
+            <h1 class="text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-[0.95] text-white">I Translate
+                Technical Debt <br><span class="text-zinc-600">Into Financial Liability.</span></h1>
+            <p class="text-xl text-zinc-400 leading-relaxed font-serif italic mb-12 max-w-2xl">"Your CFO views
+                Engineering as a black hole. Your CTO views Finance as a roadblock. I exist to align them."</p>
+        </header>
+        <section class="py-24 px-8 lg:px-24 space-y-8">
+            <div class="group bg-zinc-900/40 border border-zinc-800 p-10 hover:border-cyan transition duration-500">
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12">
+                    <div><span class="text-cyan font-mono text-xl block mb-2">01.</span>
+                        <h3 class="text-3xl text-white font-bold mb-4">The AI Margin Autopsy</h3>
+                        <p class="text-zinc-500 font-mono text-xs uppercase tracking-widest">Fixed Price • 2 Weeks</p>
+                    </div>
+                    <div>
+                        <p class="text-zinc-300 text-lg mb-6">I perform a forensic audit of your unit economics.
+                            Identify "Zombie Features" and calculate the true COGS of your AI roadmap.</p><a
+                            href="https://cal.com/richard-ewing/audit-intro"
+                            class="inline-block bg-white text-black px-8 py-4 font-bold uppercase tracking-widest text-xs hover:bg-cyan transition">Book
+                            Diagnostic Call</a>
+                    </div>
                 </div>
             </div>
-        </main>
+            <div
+                class="group bg-zinc-900/40 border border-zinc-800 p-10 hover:border-cyan transition duration-500 border-l-4 border-l-cyan">
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12">
+                    <div><span class="text-cyan font-mono text-xl block mb-2">02.</span>
+                        <h3 class="text-3xl text-white font-bold mb-4">Fractional Executive</h3>
+                        <p class="text-zinc-500 font-mono text-xs uppercase tracking-widest">Retainer • High Agency</p>
+                    </div>
+                    <div>
+                        <p class="text-zinc-300 text-lg mb-6">I embed as your Fractional CPO or Head of Ops. I
+                            restructure the P&L, train your Directors to speak Finance, and install Q-PEP.</p><a
+                            href="mailto:richardewing1@gmail.com"
+                            class="inline-block border border-zinc-600 text-white px-8 py-4 font-bold uppercase tracking-widest text-xs hover:border-cyan hover:text-cyan transition">Inquire
+                            for Availability</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 
