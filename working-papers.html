@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Working Papers</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <script src="/assets/js/scripts.js" defer></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }
+    </script>
 </head>
 
 <body class="bg-obsidian text-gray-300 font-sans antialiased">
@@ -24,71 +23,33 @@
         </aside>
         <main class="p-8 lg:p-24 max-w-6xl">
             <h1 class="text-5xl font-extrabold text-white mb-12">The Doctrine</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <a href="/canonical/aper-diagnostic.html"
                     class="bg-surface p-8 border border-white hover:border-cobalt transition">
                     <h3 class="text-white font-bold mb-2">13. APER™ Diagnostic</h3>
-                    <p class="text-sm text-zinc-500">Board-grade solvency calculator.</p>
+                    <p class="text-sm text-zinc-500">Board-grade solvency calculator. Test your Revenue Per Employee
+                        (RPE).</p>
                 </a>
                 <a href="/canonical/ai-margin-autopsy.html"
                     class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
                     <h3 class="text-white font-bold mb-2">02. AI Margin Autopsy</h3>
-                    <p class="text-sm text-zinc-500">Forensic audit of AI unit economics.</p>
+                    <p class="text-sm text-zinc-500">Forensic audit of AI unit economics and the "AI Tax".</p>
                 </a>
                 <a href="/canonical/innovation-tax.html"
                     class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
                     <h3 class="text-white font-bold mb-2">01. Innovation Tax</h3>
-                    <p class="text-sm text-zinc-500">Quantifying shadow liability.</p>
+                    <p class="text-sm text-zinc-500">Quantifying the shadow liability of legacy code.</p>
                 </a>
-                <a href="/canonical/governance-of-subtraction.html"
-                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
-                    <h3 class="text-white font-bold mb-2">04. Subtraction Governance</h3>
-                    <p class="text-sm text-zinc-500">Retiring low-value assets.</p>
+                <a href="https://hackernoon.com/u/richardewing1" target="_blank"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-white transition">
+                    <h3 class="text-white font-bold mb-2">HackerNoon Profile</h3>
+                    <p class="text-sm text-zinc-500">External publications on product strategy.</p>
                 </a>
-                <a href="/canonical/kill-switch-governance.html"
-                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
-                    <h3 class="text-white font-bold mb-2">05. Kill Switch</h3>
-                    <p class="text-sm text-zinc-500">Automated enforcement.</p>
-                </a>
-                <a href="/canonical/capital-allocation-strategy.html"
-                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
-                    <h3 class="text-white font-bold mb-2">06. Capital Allocation</h3>
-                    <p class="text-sm text-zinc-500">CapEx vs OpEx alignment.</p>
-                </a>
-                <a href="/canonical/financial-conways-law.html"
-                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
-                    <h3 class="text-white font-bold mb-2">07. Financial Conway</h3>
-                    <p class="text-sm text-zinc-500">Funding dictates architecture.</p>
-                </a>
-                <a href="/canonical/senior-ceiling-playbook.html"
-                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
-                    <h3 class="text-white font-bold mb-2">08. Senior Ceiling</h3>
-                    <p class="text-sm text-zinc-500">Bridging the gap to the C-Suite.</p>
-                </a>
-                <a href="/canonical/portfolio-velocity-audit.html"
-                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
-                    <h3 class="text-white font-bold mb-2">09. Velocity Audit</h3>
-                    <p class="text-sm text-zinc-500">Throughput vs Economic Value.</p>
-                </a>
-                <a href="/canonical/code-to-cash-mapping.html"
-                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
-                    <h3 class="text-white font-bold mb-2">10. Code-to-Cash</h3>
-                    <p class="text-sm text-zinc-500">Technical ROI mapping.</p>
-                </a>
-                <a href="/canonical/q-pep-protocol.html"
-                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
-                    <h3 class="text-white font-bold mb-2">11. Q-PEP™ Protocol</h3>
-                    <p class="text-sm text-zinc-500">Probabilistic modeling.</p>
-                </a>
-                <a href="/canonical/double-diamond-framework.html"
-                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
-                    <h3 class="text-white font-bold mb-2">12. Double Diamond</h3>
-                    <p class="text-sm text-zinc-500">Discovery vs Delivery.</p>
-                </a>
-                <a href="/canonical/double-funnel-framework.html"
-                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
-                    <h3 class="text-white font-bold mb-2">13. Double Funnel</h3>
-                    <p class="text-sm text-zinc-500">Customer vs Capital flows.</p>
+                <a href="https://builtin.com/authors/richard-ewing" target="_blank"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-white transition">
+                    <h3 class="text-white font-bold mb-2">Built In Profile</h3>
+                    <p class="text-sm text-zinc-500">Industry analysis and thought leadership.</p>
                 </a>
             </div>
         </main>

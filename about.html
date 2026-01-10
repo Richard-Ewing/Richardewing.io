@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>About Richard Ewing</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }
+    </script>
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
@@ -25,34 +25,39 @@
         <main class="p-8 lg:p-24 max-w-4xl">
             <span class="font-mono text-cobalt text-sm tracking-widest uppercase mb-4 block">The Operator</span>
             <h1 class="text-5xl font-extrabold text-white mb-12">About Richard Ewing</h1>
+
             <div class="flex flex-col md:flex-row gap-8 items-start mb-16 border-b border-zinc-800 pb-16">
-                <div class="w-48 h-48 bg-zinc-800 border-4 border-zinc-800 overflow-hidden"><img
-                        src="/assets/images/headshot.jpg" class="w-full h-full object-cover grayscale headshot"
-                        alt="Richard Ewing"></div>
+                <div class="w-48 h-48 bg-zinc-800 border-4 border-zinc-800 overflow-hidden">
+                    <img src="/assets/headshot.jpg" class="w-full h-full object-cover grayscale" alt="Richard Ewing">
+                </div>
                 <div>
                     <p class="text-xl text-white font-medium mb-4">Principal, Product Economics Consulting & Former
                         Product Executive.</p>
-                    <p class="text-zinc-400 leading-relaxed mb-6">I have spent my career transforming Product Management
-                        from a chaotic "Feature Factory" into a disciplined financial engine. I bridge the dangerous gap
-                        between ground-level execution and the financial expectations of the C-Suite.</p><a
-                        href="https://www.linkedin.com/in/richard-ewing-mba/" target="_blank"
+                    <p class="text-zinc-400 leading-relaxed mb-6">
+                        I have spent my career transforming Product Management from a chaotic "Feature Factory" into a
+                        disciplined financial engine.
+                        I bridge the dangerous gap between ground-level execution and the financial expectations of the
+                        C-Suite.
+                    </p>
+                    <a href="https://www.linkedin.com/in/richard-ewing-mba/" target="_blank"
                         class="text-cobalt font-bold hover:text-white transition-colors">LinkedIn Profile &rarr;</a>
                 </div>
             </div>
+
             <h2 class="text-2xl text-white font-bold mb-8">The Track Record</h2>
             <div class="grid gap-6">
-                <div class="bg-surface p-8 border-l-2 border-white"><strong
-                        class="text-white font-mono uppercase block mb-2">0-to-1 Scale ($25M ARR)</strong>
+                <div class="bg-surface p-8 border-l-2 border-white">
+                    <strong class="text-white font-mono uppercase block mb-2">0-to-1 Scale ($25M ARR)</strong>
                     <p class="text-zinc-400">Led a flagship ERP SaaS product from concept to scale, growing revenue to
                         over $25M ARR while slashing customer churn by 20%.</p>
                 </div>
-                <div class="bg-surface p-8 border-l-2 border-titanium"><strong
-                        class="text-white font-mono uppercase block mb-2">Cost Optimization ($5M+)</strong>
+                <div class="bg-surface p-8 border-l-2 border-titanium">
+                    <strong class="text-white font-mono uppercase block mb-2">Cost Optimization ($5M+)</strong>
                     <p class="text-zinc-400">Orchestrated a $5M+ operational cost reduction by executing strategic cloud
                         migrations (Azure) and sunsetting redundant legacy applications.</p>
                 </div>
-                <div class="bg-surface p-8 border-l-2 border-cobalt"><strong
-                        class="text-white font-mono uppercase block mb-2">Turnaround & Efficiency</strong>
+                <div class="bg-surface p-8 border-l-2 border-cobalt">
+                    <strong class="text-white font-mono uppercase block mb-2">Turnaround & Efficiency</strong>
                     <p class="text-zinc-400">Transformed reactive ops into a high-efficiency engine, driving a 200% YoY
                         revenue increase to $20M at Sechrist Design.</p>
                 </div>
