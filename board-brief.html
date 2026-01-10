@@ -3,29 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Board Brief</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>The Board Brief</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
-<body>
-    <div class="container">
-        <aside>
-            <div><a href="/index.html" style="font-weight:bold; color:#fff;">← BACK HOME</a></div>
+<body class="bg-obsidian text-gray-300 font-sans antialiased">
+    <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
+        <aside
+            class="bg-black border-r border-zinc-800 p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
+            <div>
+                <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
+                    ECONOMIST</span>
+            </div>
+            <nav class="mt-12 flex flex-col gap-4 font-mono text-sm"><a href="/index.html" class="hover:text-white">←
+                    HOME</a></nav>
         </aside>
-        <main><span class="mono">Board Artifact</span>
-            <h1>AI Portfolio Risk Assessment</h1>
-            <div class="artifact">
-                <div
-                    style="border-bottom:2px solid #000; padding-bottom:1rem; margin-bottom:2rem; display:flex; justify-content:space-between;">
-                    <strong>BOARD BRIEFING</strong><span>CLASSIFICATION: PUBLIC EXAMPLE</span></div>
-                <h2>Executive Summary</h2>
-                <p>The objective is not technical compliance, but capital protection.</p>
-                <h3>Risk 1: Economic Drift</h3>
-                <p>AI systems continue operating after marginal value turns negative.</p>
-                <div style="margin-top:4rem; text-align:center; font-style:italic;">"If AI decisions cannot be
-                    economically explained to the board, they should not be automated."</div>
-            </div><a href="/advisory.html" class="btn">Request Full Assessment</a>
+        <main class="p-8 lg:p-24 max-w-4xl">
+            <span class="font-mono text-cobalt text-sm tracking-widest uppercase mb-4 block">The Signal</span>
+            <h1 class="text-5xl font-extrabold text-white mb-6">The Board Brief</h1>
+            <p class="text-xl text-zinc-400 mb-12 max-w-2xl">A weekly dispatch on the "Math of Product."</p>
+            <div class="bg-surface border border-zinc-800 p-8 mb-16">
+                <h3 class="text-white font-bold mb-4">Join the Distribution List</h3>
+                <form action="https://formspree.io/f/YOUR_ID" method="POST" class="flex flex-col md:flex-row gap-4">
+                    <input type="email" name="email" placeholder="Enter your email..."
+                        class="bg-black border border-zinc-700 text-white px-6 py-4 flex-grow focus:outline-none focus:border-cobalt transition"><button
+                        type="submit"
+                        class="bg-white text-black font-bold px-8 py-4 uppercase tracking-widest text-xs hover:bg-titanium transition">Subscribe</button>
+                </form>
+            </div>
         </main>
     </div>
 </body>

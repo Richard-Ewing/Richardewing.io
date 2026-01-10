@@ -1,25 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('SURVEILLANCE ENGINE: ACTIVE [v7.1]');
+
     const trackEvent = (category, action, label) => {
-        console.log(`SURVEILLANCE: ${category} | ${action} | ${label}`);
+        console.log(`[TRACKING] ${category} | ${action} | ${label}`);
         if (typeof gtag !== 'undefined') gtag('event', action, { 'event_category': category, 'event_label': label });
         if (window.dataLayer) window.dataLayer.push({ event: 'custom_event', category, action, label });
     };
 
-    document.querySelectorAll('a[href$=".pdf"]').forEach(pdf => {
-        pdf.addEventListener('click', () => trackEvent('PDF', 'Download', pdf.getAttribute('href').split('/').pop()));
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            // Track PDF
+            if (href && href.endsWith('.pdf')) {
+                trackEvent('PDF', 'Download', href.split('/').pop());
+            }
+            // Track APER
+            else if (link.innerText.includes('APER')) {
+                trackEvent('Conversion', 'APER_Click', href);
+            }
+            // Track Nav
+            else if (href && href.startsWith('/')) {
+                trackEvent('Navigation', 'Click', link.innerText);
+            }
+
+            // Trap Dead Links
+            if (href === '#' || href === '') {
+                e.preventDefault();
+                alert('ACCESS DENIED: This asset is currently classified. Join the Board Brief for release updates.');
+            }
+        });
     });
 
-    document.querySelectorAll('.btn, .btn-outline').forEach(btn => {
-        if (btn.innerText.includes('APER')) btn.addEventListener('click', () => trackEvent('APER™', 'Click', btn.innerText));
-    });
-
-    document.querySelectorAll('.card a').forEach(link => {
-        link.addEventListener('click', () => trackEvent('Related Paper', 'Click', link.href));
-    });
-
+    // Scroll Tracking
     let scrollTracked = { 25: false, 50: false, 75: false, 100: false };
     window.addEventListener('scroll', () => {
-        const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = Math.round((scrollTop / docHeight) * 100);
         [25, 50, 75, 100].forEach(p => {
             if (scrollPercent >= p && !scrollTracked[p]) {
                 scrollTracked[p] = true;
@@ -27,5 +44,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    console.log('SURVEILLANCE ENGINE: ACTIVE');
 });

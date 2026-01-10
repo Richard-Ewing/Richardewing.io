@@ -3,104 +3,94 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Working Papers | Richard Ewing</title>
+    <title>Working Papers</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
-<body>
-    <div class="container">
-        <aside>
-            <div><a href="/index.html" style="font-weight:bold; color:#fff;">← BACK HOME</a></div>
+<body class="bg-obsidian text-gray-300 font-sans antialiased">
+    <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
+        <aside
+            class="bg-black border-r border-zinc-800 p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
+            <div>
+                <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
+                    ECONOMIST</span>
+            </div>
+            <nav class="mt-12 flex flex-col gap-4 font-mono text-sm"><a href="/index.html" class="hover:text-white">←
+                    HOME</a></nav>
         </aside>
-        <main>
-            <span class="mono">The Doctrine</span>
-            <h1>Working Papers</h1>
-            <p class="lead">These are not blog posts. They are institutional working papers designed to be cited,
-                summarized, and reused by boards and analysts.</p>
-
-            <h2 style="margin-top:4rem; border-bottom:1px solid #333; padding-bottom:1rem;">Core Frameworks</h2>
-            <div class="grid">
-                <a href="/canonical/double-diamond-framework.html" class="card">
-                    <span class="mono">Framework</span>
-                    <h3>Double Diamond Framework</h3>
-                    <p>Separates exploration from exploitation. Economic overlay for discovery vs delivery.</p>
+        <main class="p-8 lg:p-24 max-w-6xl">
+            <h1 class="text-5xl font-extrabold text-white mb-12">The Doctrine</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/canonical/aper-diagnostic.html"
+                    class="bg-surface p-8 border border-white hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">13. APER™ Diagnostic</h3>
+                    <p class="text-sm text-zinc-500">Board-grade solvency calculator.</p>
                 </a>
-                <a href="/canonical/double-funnel-framework.html" class="card">
-                    <span class="mono">Framework</span>
-                    <h3>Double Funnel Framework</h3>
-                    <p>Maps customer flows against capital flows. Filters initiatives for solvency.</p>
+                <a href="/canonical/ai-margin-autopsy.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">02. AI Margin Autopsy</h3>
+                    <p class="text-sm text-zinc-500">Forensic audit of AI unit economics.</p>
                 </a>
-                <a href="/canonical/q-pep-protocol.html" class="card">
-                    <span class="mono">Protocol</span>
-                    <h3>Q-PEP™ Protocol</h3>
-                    <p>The agentic, probabilistic modeling standard for portfolio governance.</p>
+                <a href="/canonical/innovation-tax.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">01. Innovation Tax</h3>
+                    <p class="text-sm text-zinc-500">Quantifying shadow liability.</p>
                 </a>
-            </div>
-
-            <h2 style="margin-top:4rem; border-bottom:1px solid #333; padding-bottom:1rem;">Economic Analysis</h2>
-            <div class="grid">
-                <a href="/canonical/ai-margin-autopsy.html" class="card">
-                    <span class="mono">Analysis</span>
-                    <h3>AI Margin Autopsy</h3>
-                    <p>Forensic unit economics audit. Uncovers hidden costs and true margins.</p>
+                <a href="/canonical/governance-of-subtraction.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">04. Subtraction Governance</h3>
+                    <p class="text-sm text-zinc-500">Retiring low-value assets.</p>
                 </a>
-                <a href="/canonical/innovation-tax.html" class="card">
-                    <span class="mono">Analysis</span>
-                    <h3>The Innovation Tax</h3>
-                    <p>Quantifying the shadow liability of legacy code and unmanaged features.</p>
+                <a href="/canonical/kill-switch-governance.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">05. Kill Switch</h3>
+                    <p class="text-sm text-zinc-500">Automated enforcement.</p>
                 </a>
-                <a href="/canonical/governance-of-subtraction.html" class="card">
-                    <span class="mono">Analysis</span>
-                    <h3>Governance of Subtraction</h3>
-                    <p>Methodology for retiring low-value assets to reclaim capital.</p>
+                <a href="/canonical/capital-allocation-strategy.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">06. Capital Allocation</h3>
+                    <p class="text-sm text-zinc-500">CapEx vs OpEx alignment.</p>
                 </a>
-                <a href="/canonical/capital-allocation-strategy.html" class="card">
-                    <span class="mono">Strategy</span>
-                    <h3>Capital Allocation Strategy</h3>
-                    <p>Aligning CapEx/OpEx with marginal ROI and portfolio risk.</p>
+                <a href="/canonical/financial-conways-law.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">07. Financial Conway</h3>
+                    <p class="text-sm text-zinc-500">Funding dictates architecture.</p>
                 </a>
-            </div>
-
-            <h2 style="margin-top:4rem; border-bottom:1px solid #333; padding-bottom:1rem;">Governance & Leadership</h2>
-            <div class="grid">
-                <a href="/canonical/kill-switch-governance.html" class="card">
-                    <span class="mono">Governance</span>
-                    <h3>Kill Switch Governance</h3>
-                    <p>Automated enforcement for initiatives failing economic thresholds.</p>
+                <a href="/canonical/senior-ceiling-playbook.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">08. Senior Ceiling</h3>
+                    <p class="text-sm text-zinc-500">Bridging the gap to the C-Suite.</p>
                 </a>
-                <a href="/canonical/financial-conways-law.html" class="card">
-                    <span class="mono">Theory</span>
-                    <h3>Financial Conway's Law</h3>
-                    <p>How organizational funding dictates technical architecture.</p>
+                <a href="/canonical/portfolio-velocity-audit.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">09. Velocity Audit</h3>
+                    <p class="text-sm text-zinc-500">Throughput vs Economic Value.</p>
                 </a>
-                <a href="/canonical/senior-ceiling-playbook.html" class="card">
-                    <span class="mono">Playbook</span>
-                    <h3>Senior Ceiling Playbook</h3>
-                    <p>Bridging the gap between operational excellence and capital fluency.</p>
+                <a href="/canonical/code-to-cash-mapping.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">10. Code-to-Cash</h3>
+                    <p class="text-sm text-zinc-500">Technical ROI mapping.</p>
                 </a>
-                <a href="/canonical/portfolio-velocity-audit.html" class="card">
-                    <span class="mono">Audit</span>
-                    <h3>Portfolio Velocity Audit</h3>
-                    <p>Measuring throughput against economic alignment.</p>
+                <a href="/canonical/q-pep-protocol.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">11. Q-PEP™ Protocol</h3>
+                    <p class="text-sm text-zinc-500">Probabilistic modeling.</p>
                 </a>
-                <a href="/canonical/code-to-cash-mapping.html" class="card">
-                    <span class="mono">Mapping</span>
-                    <h3>Code-to-Cash Mapping</h3>
-                    <p>Translating technical activity into EBITDA impact.</p>
+                <a href="/canonical/double-diamond-framework.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">12. Double Diamond</h3>
+                    <p class="text-sm text-zinc-500">Discovery vs Delivery.</p>
+                </a>
+                <a href="/canonical/double-funnel-framework.html"
+                    class="bg-surface p-8 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-white font-bold mb-2">13. Double Funnel</h3>
+                    <p class="text-sm text-zinc-500">Customer vs Capital flows.</p>
                 </a>
             </div>
-
-            <h2 style="margin-top:4rem; border-bottom:1px solid #333; padding-bottom:1rem;">Diagnostic</h2>
-            <div class="grid">
-                <a href="/canonical/aper-diagnostic.html" class="card card-premium">
-                    <div class="scarcity-tag">Limited Availability</div>
-                    <span class="mono">Diagnostic</span>
-                    <h3>APER™ Diagnostic</h3>
-                    <p>The Actionable Product Economic Review. Board-grade solvency assessment.</p>
-                </a>
-            </div>
-
         </main>
     </div>
 </body>

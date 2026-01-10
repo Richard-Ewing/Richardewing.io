@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://richardewing.io/</loc><priority>1.0</priority><lastmod>2026-01-08</lastmod></url>
-  <url><loc>https://richardewing.io/about.html</loc><priority>0.9</priority><lastmod>2026-01-08</lastmod></url>
-  <url><loc>https://richardewing.io/briefings.html</loc><priority>0.9</priority><lastmod>2026-01-08</lastmod></url>
-  <url><loc>https://richardewing.io/advisory.html</loc><priority>0.9</priority><lastmod>2026-01-08</lastmod></url>
-  <url><loc>https://richardewing.io/articles.html</loc><priority>0.85</priority><lastmod>2026-01-08</lastmod></url>
-  <url><loc>https://richardewing.io/book.html</loc><priority>0.85</priority><lastmod>2026-01-08</lastmod></url>
-  <url><loc>https://richardewing.io/canonical/dataset.jsonld</loc><priority>0.95</priority><lastmod>2026-01-08</lastmod></url>
-  <url><loc>https://richardewing.io/resources/q-pep-v2.0.pdf</loc><priority>0.8</priority><lastmod>2026-01-08</lastmod></url>
-  <url><loc>https://richardewing.io/resources/fractional-economist.pdf</loc><priority>0.8</priority><lastmod>2026-01-08</lastmod></url>
-  <url><loc>https://richardewing.io/resources/q-pep-board-resolution.pdf</loc><priority>0.8</priority><lastmod>2026-01-08</lastmod></url>
-  <url><loc>https://richardewing.io/resources/sample-brief.pdf</loc><priority>0.8</priority><lastmod>2026-01-08</lastmod></url>
-  <url><loc>https://richardewing.io/resources/preorder.pdf</loc><priority>0.8</priority><lastmod>2026-01-08</lastmod></url>
+  <url><loc>https://richardewing.io/</loc><priority>1.0</priority></url>
+  <url><loc>https://richardewing.io/about.html</loc><priority>0.8</priority></url>
+  <url><loc>https://richardewing.io/advisory.html</loc><priority>0.9</priority></url>
+  <url><loc>https://richardewing.io/working-papers.html</loc><priority>0.9</priority></url>
+  <url><loc>https://richardewing.io/board-brief.html</loc><priority>0.8</priority></url>
+  <url><loc>https://richardewing.io/book.html</loc><priority>0.8</priority></url>
+  <url><loc>https://richardewing.io/canonical/innovation-tax.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/ai-margin-autopsy.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/q-pep-protocol.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/kill-switch-governance.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/capital-allocation-strategy.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/financial-conways-law.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/senior-ceiling-playbook.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/portfolio-velocity-audit.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/code-to-cash-mapping.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/double-diamond-framework.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/double-funnel-framework.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/aper-diagnostic.html</loc><priority>0.7</priority></url>
+  <url><loc>https://richardewing.io/canonical/governance-of-subtraction.html</loc><priority>0.7</priority></url>
 </urlset>

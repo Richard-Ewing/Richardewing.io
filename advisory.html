@@ -4,43 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Advisory</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
-<body>
-    <div class="container">
-        <aside>
-            <div><a href="/index.html" style="font-weight:bold; color:#fff;">← BACK HOME</a></div>
-        </aside>
-        <main><span class="mono">Intervention Models</span>
-            <h1>Advisory & Fractional</h1>
-            <p class="lead">Capacity is strictly limited. Engagements are designed for organizations operating at
-                nine-figure revenue or above.</p>
-            <div style="background:#080808; border-left:4px solid #333; padding:2rem; margin-bottom:4rem;">
-                <h3 style="margin-top:0; color:#888;">Who This Is Not For</h3>
-                <p style="font-size:1rem; color:#666;">If you are looking for Agile Coaching, Delivery Optimization, or
-                    Roadmap Validation, <strong>this is not the right office.</strong></p>
+<body class="bg-obsidian text-gray-300 font-sans antialiased">
+    <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
+        <aside
+            class="bg-black border-r border-zinc-800 p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
+            <div>
+                <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
+                    ECONOMIST</span>
             </div>
-            <div class="grid">
-                <div class="card card-premium">
-                    <div class="scarcity-tag">Limited to 6 / Qtr</div><span class="mono" style="color:#fff;">The Entry
+            <nav class="mt-12 flex flex-col gap-4 font-mono text-sm"><a href="/index.html" class="hover:text-white">←
+                    HOME</a></nav>
+        </aside>
+        <main class="p-8 lg:p-24 max-w-4xl">
+            <span class="font-mono text-cobalt text-sm tracking-widest uppercase mb-4 block">Intervention Models</span>
+            <h1 class="text-5xl font-extrabold text-white mb-6">Advisory & Fractional</h1>
+            <p class="text-xl text-zinc-400 mb-12 max-w-2xl">Capacity is strictly limited. I do not run a consultancy
+                farm. If you engage the Office, you get Richard Ewing.</p>
+            <div class="bg-surface border border-zinc-800 p-2 mb-12 text-xs text-zinc-500 font-mono text-center">NOT
+                ACCEPTING: Agile Coaching, Delivery Optimization, or "Innovation Workshops."</div>
+            <div class="grid grid-cols-1 gap-8">
+                <div class="card-premium p-10">
+                    <div class="scarcity-tag">Limited to 6 / Qtr</div>
+                    <span class="font-mono text-xs text-white uppercase tracking-widest mb-4 block">The Entry
                         Point</span>
-                    <h3>APER™ Diagnostic</h3>
-                    <p><strong>AI Portfolio Economic Risk Assessment.</strong> A 30-day fixed-scope sprint to inventory
-                        capital exposure and define Kill Switch criteria.</p>
-                    <ul style="font-size:0.9rem; color:#ccc; margin-bottom:2rem;">
+                    <h3 class="text-3xl text-white font-bold mb-4">APER™ Diagnostic</h3>
+                    <p class="text-zinc-400 mb-6"><strong>AI Portfolio Economic Risk Assessment.</strong> A 14-day
+                        forensic sprint to inventory capital exposure and define Kill Switch criteria.</p>
+                    <ul class="text-sm text-zinc-500 mb-8 space-y-2">
                         <li>✓ Board-Ready Risk Brief</li>
                         <li>✓ Solvency Heatmap</li>
-                    </ul><a href="mailto:richard@richardewing.io?subject=APER%20Diagnostic" class="btn"
-                        style="width:100%; text-align:center;">Request Diagnostic</a>
+                        <li>✓ Go / Pause / Kill Recommendations</li>
+                    </ul>
+                    <a href="https://cal.com/richard-ewing/audit-intro" target="_blank"
+                        class="block w-full bg-white text-black text-center font-bold uppercase tracking-widest py-4 hover:bg-titanium transition">Book
+                        Intake Call</a>
                 </div>
-                <div class="card" style="border-top: 4px solid #555;"><span class="mono"
-                        style="color:#888;">Governance</span>
-                    <h3 style="color:#ccc;">Fractional Product Economist</h3>
-                    <p style="color:#888;">Ongoing embedded oversight for C-Suite leadership.</p><a
-                        href="mailto:richard@richardewing.io?subject=Fractional" class="btn btn-outline"
-                        style="width:100%; text-align:center;">Inquire for Retainer</a>
+                <div class="bg-surface p-10 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-2xl text-white font-bold mb-2">Fractional Product Economist</h3>
+                    <p class="text-zinc-400 mb-6">Ongoing embedded oversight for C-Suite leadership. I operationalize
+                        the economic governance defined in the diagnostic.</p>
+                    <a href="mailto:richard@richardewing.io?subject=Fractional"
+                        class="text-cobalt text-xs font-bold uppercase">Inquire for Retainer &rarr;</a>
+                </div>
+                <div class="bg-surface p-10 border border-zinc-800 hover:border-cobalt transition">
+                    <h3 class="text-2xl text-white font-bold mb-2">Paid Advisory Board Seat</h3>
+                    <p class="text-zinc-400 mb-6">Strategic governance against "Model Collapse." Ensuring your AI
+                        strategy yields actual margin.</p>
+                    <a href="mailto:richard@richardewing.io?subject=Board"
+                        class="text-cobalt text-xs font-bold uppercase">Inquire &rarr;</a>
                 </div>
             </div>
         </main>

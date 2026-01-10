@@ -4,35 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <title>About Richard Ewing</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
-<body>
-    <div class="container">
-        <aside>
-            <div><a href="/index.html" style="font-weight:bold; color:#fff;">← BACK HOME</a></div>
+<body class="bg-obsidian text-gray-300 font-sans antialiased">
+    <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
+        <aside
+            class="bg-black border-r border-zinc-800 p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
+            <div>
+                <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
+                    ECONOMIST</span>
+            </div>
+            <nav class="mt-12 flex flex-col gap-4 font-mono text-sm"><a href="/index.html" class="hover:text-white">←
+                    HOME</a></nav>
         </aside>
-        <main><span class="mono">The Originator</span>
-            <h1>Richard Ewing</h1>
-            <div style="display:flex; gap:2rem; align-items:flex-start; margin-bottom:3rem;"><img
-                    src="/assets/headshot.jpg" class="headshot"
-                    style="width:240px; height:240px; border-radius:0; border:none;" alt="Richard Ewing">
+        <main class="p-8 lg:p-24 max-w-4xl">
+            <span class="font-mono text-cobalt text-sm tracking-widest uppercase mb-4 block">The Operator</span>
+            <h1 class="text-5xl font-extrabold text-white mb-12">About Richard Ewing</h1>
+            <div class="flex flex-col md:flex-row gap-8 items-start mb-16 border-b border-zinc-800 pb-16">
+                <div class="w-48 h-48 bg-zinc-800 border-4 border-zinc-800 overflow-hidden"><img
+                        src="/assets/images/headshot.jpg" class="w-full h-full object-cover grayscale headshot"
+                        alt="Richard Ewing"></div>
                 <div>
-                    <p class="lead" style="margin-bottom:1rem;">I sit at the uncomfortable table where Finance demands
-                        certainty and Engineering demands freedom.</p>
+                    <p class="text-xl text-white font-medium mb-4">Principal, Product Economics Consulting & Former
+                        Product Executive.</p>
+                    <p class="text-zinc-400 leading-relaxed mb-6">I have spent my career transforming Product Management
+                        from a chaotic "Feature Factory" into a disciplined financial engine. I bridge the dangerous gap
+                        between ground-level execution and the financial expectations of the C-Suite.</p><a
+                        href="https://www.linkedin.com/in/richard-ewing-mba/" target="_blank"
+                        class="text-cobalt font-bold hover:text-white transition-colors">LinkedIn Profile &rarr;</a>
                 </div>
             </div>
-            <div style="margin-bottom:4rem; border-top:1px solid #333; padding-top:2rem;"><strong
-                    style="color:#fff; display:block; margin-bottom:0.5rem;">AUTHORITY SCOPE</strong>
-                <p style="font-size:1rem; color:#888;">I do not advise on model selection or neural architecture. I
-                    advise on capital exposure, solvency risk, and economic governance.</p>
+            <h2 class="text-2xl text-white font-bold mb-8">The Track Record</h2>
+            <div class="grid gap-6">
+                <div class="bg-surface p-8 border-l-2 border-white"><strong
+                        class="text-white font-mono uppercase block mb-2">0-to-1 Scale ($25M ARR)</strong>
+                    <p class="text-zinc-400">Led a flagship ERP SaaS product from concept to scale, growing revenue to
+                        over $25M ARR while slashing customer churn by 20%.</p>
+                </div>
+                <div class="bg-surface p-8 border-l-2 border-titanium"><strong
+                        class="text-white font-mono uppercase block mb-2">Cost Optimization ($5M+)</strong>
+                    <p class="text-zinc-400">Orchestrated a $5M+ operational cost reduction by executing strategic cloud
+                        migrations (Azure) and sunsetting redundant legacy applications.</p>
+                </div>
+                <div class="bg-surface p-8 border-l-2 border-cobalt"><strong
+                        class="text-white font-mono uppercase block mb-2">Turnaround & Efficiency</strong>
+                    <p class="text-zinc-400">Transformed reactive ops into a high-efficiency engine, driving a 200% YoY
+                        revenue increase to $20M at Sechrist Design.</p>
+                </div>
             </div>
-            <h2>The Career Arc</h2>
-            <p>I am an operator who has fixed broken machines at every level. From <strong>Director of
-                    Operations</strong> driving 200% P&L growth to <strong>Director of Product</strong> managing
-                critical infrastructure for 7.7 million users.</p>
-            <div style="margin-top:4rem;"><a href="/advisory.html" class="btn">View Advisory Options</a></div>
         </main>
     </div>
 </body>

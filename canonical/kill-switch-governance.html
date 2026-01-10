@@ -4,26 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Kill Switch Governance</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
-<body>
-    <div class="container">
-        <aside>
-            <div><a href="/working-papers.html" style="font-weight:bold; color:#fff;">← BACK TO LIBRARY</a></div>
-        </aside>
-        <main>
-            <div class="paper-container"><span class="mono">Working Paper 04</span>
-                <h1 class="paper-title">Kill Switch Governance</h1>
-                <div class="stat-box"><strong>Board Takeaway</strong>Automated enforcement. Systems failing economic
-                    thresholds are paused automatically.</div>
-                <div class="paper-body">
-                    <h3>Mechanics</h3>
-                    <p>Predefined thresholds for margin and velocity trigger automated alerts or decommissioning.</p><a
-                        href="/resources/kill-switch-governance.pdf" class="btn pdf-download">Download PDF</a><a
-                        href="/advisory.html" class="btn btn-outline">Run APER™</a>
-                </div>
+<body class="bg-obsidian text-gray-300 font-sans antialiased">
+    <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
+        <aside class="bg-black border-r border-zinc-800 p-10"><a href="/working-papers.html" class="text-cobalt">←
+                BACK</a></aside>
+        <main class="p-8 lg:p-24 max-w-4xl"><span class="font-mono text-xs uppercase block mb-4">Paper 05</span>
+            <h1 class="text-5xl text-white font-bold mb-8">Kill Switch Governance</h1>
+            <div class="bg-surface border-l-4 border-cobalt p-8 mb-8"><strong
+                    class="text-white block mb-2 font-mono uppercase text-sm">Board Takeaway</strong>
+                <p class="text-zinc-400">Automated enforcement. Systems failing economic thresholds are paused
+                    automatically.</p>
+            </div>
+            <div class="prose prose-invert">
+                <p>Predefined thresholds for margin and velocity trigger automated alerts or decommissioning.</p>
+                <div class="bg-black p-6 border border-zinc-800 my-8"><strong
+                        class="text-white block mb-2 font-mono text-sm">CASE</strong>
+                    <p class="italic">Installed Kill Switch on LLM cluster; saved $40k in weekend drift.</p>
+                </div><a href="/resources/kill-switch-governance.pdf"
+                    class="inline-block bg-white text-black font-bold px-8 py-4 uppercase text-xs hover:bg-titanium">Download
+                    PDF</a>
             </div>
         </main>
     </div>
