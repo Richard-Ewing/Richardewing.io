@@ -4,102 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <title>APER™ Diagnostic</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', danger: '#FF3333', success: '#00CC66' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }
-    </script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', danger: '#FF3333', success: '#00CC66' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'] } } } }</script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/scripts.js" defer></script>
 </head>
 
 <body class="bg-obsidian text-gray-300 font-sans antialiased">
     <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
-        <aside
-            class="bg-black border-r border-zinc-800 p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
-            <div>
-                <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
-                    ECONOMIST</span>
-            </div>
-            <nav class="mt-12 flex flex-col gap-4 font-mono text-sm"><a href="/working-papers.html"
-                    class="hover:text-white">← INDEX</a></nav>
-        </aside>
+        <aside class="bg-black border-r border-zinc-800 p-10"><a href="/working-papers.html" class="hover:text-white">←
+                INDEX</a></aside>
         <main class="p-8 lg:p-24 max-w-4xl mx-auto">
             <h1 class="text-4xl lg:text-6xl font-extrabold text-white mb-8">APER™ Diagnostic</h1>
-            <div class="bg-surface border-l-4 border-white p-8 mb-12">
-                <strong class="text-white block mb-2 font-mono uppercase text-sm">Definition</strong>
+            <div class="bg-surface border-l-4 border-white p-8 mb-12"><strong
+                    class="text-white block mb-2 font-mono uppercase text-sm">Definition</strong>
                 <p class="text-zinc-400 m-0">The Actionable Product Economic Review. A forensic assessment of Revenue
                     Per Employee (RPE).</p>
             </div>
-
             <div class="bg-zinc-900/50 border border-zinc-700 p-8 rounded-sm mb-16 shadow-2xl">
-                <h3 class="text-white font-bold mb-6 flex items-center gap-2">
-                    <span class="w-2 h-2 bg-cobalt rounded-full animate-pulse"></span>LIVE DIAGNOSTIC ENGINE
-                </h3>
+                <h3 class="text-white font-bold mb-6 flex items-center gap-2"><span
+                        class="w-2 h-2 bg-cobalt rounded-full animate-pulse"></span>LIVE DIAGNOSTIC ENGINE</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-xs font-mono text-titanium uppercase mb-2">Annual Recurring Revenue
-                            ($)</label>
-                        <input type="number" id="arrInput" placeholder="10000000"
+                    <div><label class="block text-xs font-mono text-titanium uppercase mb-2">ARR ($)</label><input
+                            type="number" id="arrInput" placeholder="10000000"
                             class="w-full bg-black border border-zinc-700 text-white p-4 font-mono focus:border-cobalt outline-none">
                     </div>
-                    <div>
-                        <label class="block text-xs font-mono text-titanium uppercase mb-2">Total Headcount
-                            (FTE)</label>
-                        <input type="number" id="fteInput" placeholder="50"
+                    <div><label class="block text-xs font-mono text-titanium uppercase mb-2">Headcount
+                            (FTE)</label><input type="number" id="fteInput" placeholder="50"
                             class="w-full bg-black border border-zinc-700 text-white p-4 font-mono focus:border-cobalt outline-none">
                     </div>
-                </div>
-                <button onclick="calculateAPER()"
-                    class="w-full bg-white text-black font-bold uppercase tracking-widest py-4 hover:bg-titanium transition text-sm">
-                    Run Protocol
-                </button>
-
+                </div><button onclick="calculateAPER()"
+                    class="w-full bg-white text-black font-bold uppercase tracking-widest py-4 hover:bg-titanium transition text-sm">Run
+                    Protocol</button>
                 <div id="resultsArea" class="hidden mt-8 border-t border-zinc-700 pt-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-                        <div>
-                            <span class="block text-xs font-mono text-zinc-500 uppercase">Revenue Per Head</span>
-                            <span id="rpeOutput" class="text-4xl font-bold text-white block mt-1 font-mono">$0</span>
+                        <div><span class="block text-xs font-mono text-zinc-500 uppercase">Rev Per Head</span><span
+                                id="rpeOutput" class="text-4xl font-bold text-white block mt-1 font-mono">$0</span>
                         </div>
-                        <div>
-                            <span class="block text-xs font-mono text-zinc-500 uppercase">Solvency Verdict</span>
-                            <span id="verdictOutput" class="text-xl font-bold block mt-1 font-mono">WAITING...</span>
+                        <div><span class="block text-xs font-mono text-zinc-500 uppercase">Verdict</span><span
+                                id="verdictOutput" class="text-xl font-bold block mt-1 font-mono">WAITING...</span>
                         </div>
                     </div>
                     <div id="analysisText" class="text-sm text-zinc-400 leading-relaxed border-l-2 border-cobalt pl-4">
                     </div>
                 </div>
             </div>
-
-            <script>
-                function calculateAPER() {
-                    const arr = parseFloat(document.getElementById('arrInput').value);
-                    const fte = parseFloat(document.getElementById('fteInput').value);
-                    const results = document.getElementById('resultsArea');
-                    const rpeDisplay = document.getElementById('rpeOutput');
-                    const verdictDisplay = document.getElementById('verdictOutput');
-                    const analysisDisplay = document.getElementById('analysisText');
-
-                    if (!arr || !fte) return;
-
-                    const rpe = arr / fte;
-                    const formattedRPE = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(rpe);
-
-                    rpeDisplay.innerText = formattedRPE;
-                    results.classList.remove('hidden');
-
-                    if (rpe < 150000) {
-                        verdictDisplay.innerText = "INSOLVENT";
-                        verdictDisplay.className = "text-xl font-bold block mt-1 font-mono text-danger";
-                        analysisDisplay.innerHTML = "<strong>CRITICAL:</strong> You are over-hired. Revenue cannot support headcount. Immediate freeze required.";
-                    } else if (rpe < 300000) {
-                        verdictDisplay.innerText = "LEGACY";
-                        verdictDisplay.className = "text-xl font-bold block mt-1 font-mono text-white";
-                        analysisDisplay.innerHTML = "<strong>WARNING:</strong> Ratio is average for 2021, but vulnerable in the AI efficiency era.";
-                    } else {
-                        verdictDisplay.innerText = "ELITE";
-                        verdictDisplay.className = "text-xl font-bold block mt-1 font-mono text-success";
-                        analysisDisplay.innerHTML = "<strong>OPTIMIZED:</strong> You have effectively decoupled revenue from headcount.";
-                    }
-                }
-            </script>
+            <script>function calculateAPER() { const arr = parseFloat(document.getElementById('arrInput').value); const fte = parseFloat(document.getElementById('fteInput').value); if (!arr || !fte) return; const rpe = arr / fte; const formattedRPE = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(rpe); document.getElementById('rpeOutput').innerText = formattedRPE; document.getElementById('resultsArea').classList.remove('hidden'); if (rpe < 150000) { document.getElementById('verdictOutput').innerText = "INSOLVENT"; document.getElementById('verdictOutput').className = "text-xl font-bold block mt-1 font-mono text-danger"; document.getElementById('analysisText').innerHTML = "<strong>CRITICAL:</strong> Over-hired. Immediate freeze required."; } else if (rpe < 300000) { document.getElementById('verdictOutput').innerText = "LEGACY"; document.getElementById('verdictOutput').className = "text-xl font-bold block mt-1 font-mono text-white"; document.getElementById('analysisText').innerHTML = "<strong>WARNING:</strong> Vulnerable in AI era."; } else { document.getElementById('verdictOutput').innerText = "ELITE"; document.getElementById('verdictOutput').className = "text-xl font-bold block mt-1 font-mono text-success"; document.getElementById('analysisText').innerHTML = "<strong>OPTIMIZED:</strong> Decoupled revenue from headcount."; } }</script>
         </main>
     </div>
 </body>
