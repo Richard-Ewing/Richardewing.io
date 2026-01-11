@@ -67,7 +67,7 @@
                 <a href="javascript:history.back()"
                     class="text-zinc-500 hover:text-white transition-colors block mb-6">← Back</a>
                 <a href="/manifesto.html" class="hover:text-white transition-colors">01. Manifesto</a>
-                <a href="/about.html" class="hover:text-white transition-colors">02. About Me</a>
+                <a href="/about.html" class="hover:text-white transition-colors">02. The Principal</a>
                 <a href="/advisory.html" class="hover:text-white transition-colors">03. Advisory</a>
                 <a href="/working-papers.html" class="hover:text-white transition-colors">04. Doctrine</a>
                 <a href="/methodology.html"
@@ -171,18 +171,24 @@
                         results.classList.remove('hidden');
 
                         // 3. The Verdict Logic
-                        if (rpe < 150000) {
+                        if (rpe < 250000) {
+                            // DISTRESSED
                             verdictDisplay.innerText = "INSOLVENT";
                             verdictDisplay.className = "text-xl font-bold block mt-1 font-mono text-danger drop-shadow-[0_0_10px_rgba(255,42,109,0.8)]";
-                            analysisDisplay.innerHTML = "<strong>CRITICAL FAILURE:</strong> You are over-hired. Your revenue cannot support this headcount structure. Immediate RIF or freeze required to prevent runway collapse.";
-                        } else if (rpe < 300000) {
-                            verdictDisplay.innerText = "LEGACY";
+                            analysisDisplay.innerHTML = "<strong>IMMEDIATE INTERVENTION REQUIRED:</strong> Your headcount costs are outpacing your revenue efficiency. You are bleeding capital.";
+                            updateCTA("INITIATE TURNAROUND ->", "/advisory.html");
+                        } else if (rpe < 500000) {
+                            // HEALTHY (Standard)
+                            verdictDisplay.innerText = "STANDARD";
                             verdictDisplay.className = "text-xl font-bold block mt-1 font-mono text-white";
-                            analysisDisplay.innerHTML = "<strong>VULNERABLE:</strong> This ratio was acceptable in 2021 (ZIRP), but is dangerous in the AI efficiency era. You are carrying 'Zombie Assets'.";
+                            analysisDisplay.innerHTML = "<strong>SOLVENT BUT DEGRADING:</strong> You are keeping the lights on, but efficiency is leaking into legacy maintenance. Margins are at risk.";
+                            updateCTA("OPTIMIZE MARGINS ->", "/advisory.html");
                         } else {
-                            verdictDisplay.innerText = "ELITE";
+                            // ELITE
+                            verdictDisplay.innerText = "OPTIMIZED";
                             verdictDisplay.className = "text-xl font-bold block mt-1 font-mono text-cyan drop-shadow-[0_0_10px_rgba(0,240,255,0.8)]";
-                            analysisDisplay.innerHTML = "<strong>OPTIMIZED:</strong> You have effectively decoupled revenue from headcount. This is the 'Product Economist' standard.";
+                            analysisDisplay.innerHTML = "<strong>ELITE PERFORMANCE:</strong> You have effectively decoupled revenue from headcount. The Board will be pleased.";
+                            updateCTA("READ THE DOCTRINE ->", "/working-papers.html"); // or /briefs.html if preferred
                         }
 
                         // 4. Reset Button
@@ -193,6 +199,12 @@
                         results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
                     }, 600); // 600ms processing delay
+                }
+
+                function updateCTA(text, link) {
+                    const ctaLink = document.querySelector('#resultsArea a');
+                    ctaLink.innerText = text;
+                    ctaLink.href = link;
                 }
             </script>
         </main>

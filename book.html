@@ -23,7 +23,7 @@
                 <a href="javascript:history.back()"
                     class="text-zinc-500 hover:text-white transition-colors block mb-6">← Back</a>
                 <a href="/manifesto.html" class="hover:text-white transition-colors">01. Manifesto</a>
-                <a href="/about.html" class="hover:text-white transition-colors">02. About Me</a>
+                <a href="/about.html" class="hover:text-white transition-colors">02. The Principal</a>
                 <a href="/advisory.html" class="hover:text-white transition-colors">03. Advisory</a>
                 <a href="/working-papers.html" class="hover:text-white transition-colors">04. Doctrine</a>
                 <a href="/methodology.html" class="hover:text-white transition-colors">05. System</a>
@@ -132,9 +132,15 @@
                 <div class="max-w-md mx-auto">
                     <div
                         class="capsule-container rounded-2xl p-2 bg-black/50 border-cobalt/30 flex items-center p-2 pl-6">
-                        <form action="https://formspree.io/f/YOUR_ID" method="POST" class="flex w-full gap-4">
-                            <input type="email" name="email" placeholder="enter_email_for_preview"
-                                class="bg-transparent text-white w-full focus:outline-none placeholder-zinc-600 text-sm">
+                        <form action="https://formsubmit.co/richardewing1@gmail.com" method="POST"
+                            class="flex w-full gap-4">
+                            <input type="hidden" name="_next"
+                                value="https://richardewing.io/resources/senior-ceiling.pdf">
+                            <input type="hidden" name="_subject" value="NEW WAITLIST: The Product Economist Book">
+                            <input type="hidden" name="_captcha" value="false">
+
+                            <input type="email" name="email" placeholder="enter_email_for_preview" required
+                                class="bg-transparent text-white w-full focus:outline-none placeholder-zinc-600 text-sm font-mono uppercase tracking-widest">
                             <button type="submit"
                                 class="bg-cobalt text-white font-bold px-6 py-3 rounded-xl uppercase tracking-widest text-[10px] hover:bg-white hover:text-cobalt transition">Join
                                 Waitlist</button>

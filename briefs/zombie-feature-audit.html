@@ -23,7 +23,7 @@
                 <a href="javascript:history.back()"
                     class="text-zinc-500 hover:text-white transition-colors block mb-6">← Back</a>
                 <a href="/manifesto.html" class="hover:text-white transition-colors">01. Manifesto</a>
-                <a href="/about.html" class="hover:text-white transition-colors">02. About Me</a>
+                <a href="/about.html" class="hover:text-white transition-colors">02. The Principal</a>
                 <a href="/advisory.html" class="hover:text-white transition-colors">03. Advisory</a>
                 <a href="/working-papers.html" class="hover:text-white transition-colors">04. Doctrine</a>
                 <a href="/methodology.html" class="hover:text-white transition-colors">05. System</a>
@@ -56,10 +56,15 @@
                     <h3 class="text-2xl text-white font-bold mb-4">Subscriber Restricted</h3>
                     <p class="text-zinc-500 mb-8 max-w-md mx-auto">This specific brief is part of the deep-dive archive
                         available exclusively to distribution list subscribers.</p>
-                    <form action="https://formspree.io/f/YOUR_ID" method="POST"
+                    <form action="https://formsubmit.co/richardewing1@gmail.com" method="POST"
                         class="max-w-md mx-auto flex flex-col gap-4">
-                        <input type="email" name="email" placeholder="enter_corporate_email"
-                            class="bg-black border border-zinc-700 text-white px-6 py-4 w-full focus:outline-none focus:border-cyan transition">
+                        <input type="hidden" name="_next"
+                            value="https://richardewing.io/resources/kill-switch-governance.pdf">
+                        <input type="hidden" name="_subject" value="DOWNLOAD: Zombie Audit (Brief 012)">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <input type="email" name="email" placeholder="enter_corporate_email" required
+                            class="bg-black border border-zinc-700 text-white px-6 py-4 w-full focus:outline-none focus:border-cyan transition font-mono text-sm uppercase tracking-widest">
                         <button type="submit"
                             class="bg-white text-black font-bold px-8 py-4 uppercase tracking-widest text-xs hover:bg-cyan transition w-full">Unlock
                             Archive</button>
