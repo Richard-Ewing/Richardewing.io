@@ -11,67 +11,95 @@
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 
-<body class="bg-obsidian text-gray-300 font-sans antialiased">
+<body class="bg-obsidian text-gray-300 font-sans antialiased bg-[url('/assets/images/noise.png')]">
     <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
         <aside
-            class="bg-black border-r border-zinc-800 p-8 lg:p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
-            <div><img src="/assets/images/headshot.jpg" alt="Richard Ewing"
-                    class="headshot w-32 h-32 rounded-full border-2 border-zinc-700 mb-6 object-cover">
-                <h3 class="text-white font-bold tracking-tight text-lg">RICHARD EWING</h3><span
-                    class="font-mono text-xs text-titanium block mt-1 tracking-widest">OFFICE OF THE<br>PRODUCT
-                    ECONOMIST</span>
+            class="bg-black/95 backdrop-blur-xl border-r border-white/5 p-8 lg:p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
+            <div>
+                <img src="/assets/images/headshot.jpg" alt="Richard Ewing"
+                    class="headshot w-32 h-32 rounded-full border-2 border-zinc-700 mb-6 object-cover shadow-2xl">
+                <h3 class="text-white font-bold tracking-tight text-xl">RICHARD EWING</h3>
+                <span class="font-mono text-xs text-titanium tracking-widest block mt-1">PRODUCT ECONOMIST</span>
             </div>
             <nav class="mt-12 lg:mt-0 flex flex-col gap-4 font-mono text-xs tracking-widest uppercase">
+                <a href="javascript:history.back()"
+                    class="text-zinc-500 hover:text-white transition-colors block mb-6">← Back</a>
                 <a href="/manifesto.html" class="hover:text-white transition-colors">01. Manifesto</a>
-                <a href="/academy.html" class="hover:text-white transition-colors">02. Academy</a>
-                <a href="/methodology.html" class="hover:text-white transition-colors">03. System</a>
-                <a href="/advisory.html" class="hover:text-cyan transition-colors">04. Advisory</a>
-                <a href="/board-brief.html" class="hover:text-white transition-colors">05. Briefs</a>
-                <a href="/working-papers.html" class="hover:text-white transition-colors">06. Doctrine</a>
-                <a href="/about.html" class="hover:text-white transition-colors">07. Operator</a>
-                <a href="/book.html" class="text-cobalt hover:text-white transition-colors">08. Book</a>
+                <a href="/about.html" class="hover:text-white transition-colors">02. About Me</a>
+                <a href="/advisory.html" class="hover:text-white transition-colors">03. Advisory</a>
+                <a href="/working-papers.html" class="hover:text-white transition-colors">04. Doctrine</a>
+                <a href="/methodology.html" class="hover:text-white transition-colors">05. System</a>
+                <a href="/academy.html" class="hover:text-white transition-colors">06. Academy</a>
+                <a href="/board-brief.html" class="hover:text-white transition-colors">07. Briefs</a>
+                <a href="/book.html" class="hover:text-white transition-colors">08. Book</a>
+                <a href="/legal.html" class="hover:text-white transition-colors">09. Legal</a>
             </nav>
             <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">© 2026 Richard Ewing</div>
         </aside>
-        <main class="p-8 lg:p-24 max-w-5xl flex flex-col gap-20">
-            <section id="hero">
+
+        <main class="p-8 lg:p-24 flex flex-col justify-center min-h-screen relative overflow-hidden">
+            <!-- Ambient Glow -->
+            <div
+                class="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-900/10 rounded-full blur-[128px] pointer-events-none">
+            </div>
+
+            <section id="hero" class="animate-fade-in-up">
                 <div
-                    class="inline-block bg-danger/10 text-danger border border-danger/20 px-4 py-2 text-xs font-mono font-bold uppercase tracking-widest mb-6">
-                    Warning: Capital Leakage Detected</div>
-                <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-[0.95] tracking-tight mb-8">Product
-                    Management is <br>Capital Allocation.</h1>
-                <div class="bg-surface border-l-4 border-white p-8 mb-12"><strong
-                        class="text-white block mb-2 font-mono uppercase text-sm">The Uncomfortable Truth</strong>
-                    <p class="text-zinc-400 m-0">Engineering bandwidth is your most expensive capital. Most companies
-                        treat it like infinite inventory. Stop wasting it.</p>
+                    class="inline-block bg-danger/10 text-danger border border-danger/20 px-4 py-2 text-xs font-mono font-bold uppercase tracking-widest mb-6 rounded-full backdrop-blur-md">
+                    Warning: Capital Leakage Detected
                 </div>
-                <div class="flex flex-wrap gap-6 items-center"><a href="/advisory.html"
-                        class="inline-flex items-center justify-center px-8 py-5 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-cyan transition-colors">Stop
-                        The Bleeding</a><span class="text-zinc-500 font-mono text-xs">Analysis in 14 Days. Fixed
-                        Price.</span></div>
+                <h1 class="text-5xl lg:text-8xl font-extrabold text-white leading-[0.9] tracking-tighter mb-10">
+                    Product<br>Management is <br><span class="text-zinc-500">Capital Allocation.</span></h1>
+
+                <div class="capsule-container p-8 mb-12 border-l-4 border-l-white max-w-2xl rounded-r-3xl">
+                    <strong class="text-white block mb-2 font-mono uppercase text-sm tracking-widest">The Uncomfortable
+                        Truth</strong>
+                    <p class="text-zinc-400 m-0 text-lg">Engineering bandwidth is your most expensive capital. Most
+                        companies treat it like infinite inventory. Stop wasting it.</p>
+                </div>
+
+                <div class="flex flex-wrap gap-6 items-center">
+                    <a href="/advisory.html"
+                        class="inline-flex items-center justify-center px-10 py-5 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-full hover:bg-cyan hover:scale-105 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                        Stop The Bleeding
+                    </a>
+                    <span class="text-zinc-500 font-mono text-xs tracking-widest">Analysis in 14 Days. Fixed
+                        Price.</span>
+                </div>
             </section>
-            <section id="evidence" class="border-t border-zinc-800 pt-16">
-                <h2 class="text-2xl text-white font-bold mb-12 flex items-center gap-4"><span
-                        class="w-2 h-2 bg-cobalt rounded-full"></span>RECENT INTERVENTIONS</h2>
+
+            <section id="evidence" class="mt-32 border-t border-white/5 pt-16 animate-fade-in-up delay-200">
+                <h2 class="text-sm text-zinc-500 font-mono uppercase tracking-[0.3em] mb-12 flex items-center gap-4">
+                    <span class="w-1 h-1 bg-cobalt rounded-full"></span>
+                    Recent Interventions
+                </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-surface p-8 border-t-2 border-cobalt"><strong
-                            class="text-white text-xl block mb-4">$0 to $25M ARR</strong>
-                        <p class="text-sm text-zinc-400 mb-4">Scaled flagship ERP product by enforcing strict unit
+                    <div class="capsule-container p-8 rounded-3xl group hover:-translate-y-2 transition duration-500">
+                        <strong class="text-white text-2xl block mb-4 group-hover:text-cobalt transition">$0 to $25M
+                            ARR</strong>
+                        <p class="text-sm text-zinc-400 mb-6">Scaled flagship ERP product by enforcing strict unit
                             economics.</p>
-                        <div class="bg-black p-3 text-xs font-mono text-cobalt uppercase">Result: 20% Churn Reduction
-                        </div>
+                        <div
+                            class="inline-block bg-black/50 border border-white/5 px-3 py-2 rounded-lg text-[10px] font-mono text-cobalt uppercase">
+                            Result: 20% Churn Reduction</div>
                     </div>
-                    <div class="bg-surface p-8 border-t-2 border-white"><strong
-                            class="text-white text-xl block mb-4">$5M Saved</strong>
-                        <p class="text-sm text-zinc-400 mb-4">Orchestrated Azure migration and sunsetted redundant
+                    <div class="capsule-container p-8 rounded-3xl group hover:-translate-y-2 transition duration-500">
+                        <strong class="text-white text-2xl block mb-4 group-hover:text-white transition">$5M
+                            Saved</strong>
+                        <p class="text-sm text-zinc-400 mb-6">Orchestrated Azure migration and sunsetted redundant
                             legacy applications.</p>
-                        <div class="bg-black p-3 text-xs font-mono text-cobalt uppercase">Result: OpEx Reset</div>
+                        <div
+                            class="inline-block bg-black/50 border border-white/5 px-3 py-2 rounded-lg text-[10px] font-mono text-cobalt uppercase">
+                            Result: OpEx Reset</div>
                     </div>
-                    <div class="bg-surface p-8 border-t-2 border-zinc-700"><strong
-                            class="text-white text-xl block mb-4">Margin Restored</strong>
-                        <p class="text-sm text-zinc-400 mb-4">GenAI wrapper was costing $0.15 per query with $0.08
+                    <div class="capsule-container p-8 rounded-3xl group hover:-translate-y-2 transition duration-500">
+                        <strong class="text-white text-2xl block mb-4 group-hover:text-zinc-400 transition">Margin
+                            Restored</strong>
+                        <p class="text-sm text-zinc-400 mb-6">GenAI wrapper was costing $0.15 per query with $0.08
                             revenue.</p>
-                        <div class="bg-black p-3 text-xs font-mono text-cobalt uppercase">Result: Pricing Fixed</div>
+                        <div
+                            class="inline-block bg-black/50 border border-white/5 px-3 py-2 rounded-lg text-[10px] font-mono text-cobalt uppercase">
+                            Result: Pricing Fixed</div>
                     </div>
                 </div>
             </section>

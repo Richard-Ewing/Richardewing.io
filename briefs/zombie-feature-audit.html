@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zombie Feature Audit | Board Brief</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', cyan: '#00F0FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'], sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/scripts.js" defer></script>
+</head>
+
+<body class="bg-obsidian text-gray-300 font-sans antialiased">
+    <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
+        <aside
+            class="bg-black border-r border-zinc-800 p-8 lg:p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
+            <div>
+                <h3 class="text-white font-bold">RICHARD EWING</h3><span class="font-mono text-xs text-titanium">PRODUCT
+                    ECONOMIST</span>
+            </div>
+            <nav class="mt-12 lg:mt-0 flex flex-col gap-4 font-mono text-xs tracking-widest uppercase">
+                <a href="javascript:history.back()"
+                    class="text-zinc-500 hover:text-white transition-colors block mb-6">← Back</a>
+                <a href="/manifesto.html" class="hover:text-white transition-colors">01. Manifesto</a>
+                <a href="/about.html" class="hover:text-white transition-colors">02. About Me</a>
+                <a href="/advisory.html" class="hover:text-white transition-colors">03. Advisory</a>
+                <a href="/working-papers.html" class="hover:text-white transition-colors">04. Doctrine</a>
+                <a href="/methodology.html" class="hover:text-white transition-colors">05. System</a>
+                <a href="/academy.html" class="hover:text-white transition-colors">06. Academy</a>
+                <a href="/board-brief.html"
+                    class="text-white font-bold pl-2 border-l-2 border-white transition-colors">07. Briefs</a>
+                <a href="/book.html" class="hover:text-white transition-colors">08. Book</a>
+                <a href="/legal.html" class="hover:text-white transition-colors">09. Legal</a>
+            </nav>
+            <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">© 2026 Richard Ewing</div>
+        </aside>
+        <main class="p-8 lg:p-24 max-w-4xl">
+            <div class="mb-8"><a href="/board-brief.html"
+                    class="text-zinc-500 hover:text-white font-mono text-xs uppercase tracking-widest transition">← Back
+                    to Archive</a></div>
+            <span class="font-mono text-cobalt text-sm tracking-widest uppercase mb-4 block">Board Brief Vol. 012</span>
+            <h1 class="text-5xl font-extrabold text-white mb-8">The "Zombie Feature" Audit</h1>
+            <p class="text-xl text-zinc-400 mb-12 leading-relaxed">A step-by-step guide to identifying code that costs
+                more to maintain than the revenue it generates. Techniques for rapid deprecation.</p>
+
+            <div class="bg-surface border border-zinc-800 p-12 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 pointer-events-none"></div>
+                <div class="relative z-10">
+                    <svg class="w-12 h-12 text-titanium mx-auto mb-6" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                        </path>
+                    </svg>
+                    <h3 class="text-2xl text-white font-bold mb-4">Subscriber Restricted</h3>
+                    <p class="text-zinc-500 mb-8 max-w-md mx-auto">This specific brief is part of the deep-dive archive
+                        available exclusively to distribution list subscribers.</p>
+                    <form action="https://formspree.io/f/YOUR_ID" method="POST"
+                        class="max-w-md mx-auto flex flex-col gap-4">
+                        <input type="email" name="email" placeholder="enter_corporate_email"
+                            class="bg-black border border-zinc-700 text-white px-6 py-4 w-full focus:outline-none focus:border-cyan transition">
+                        <button type="submit"
+                            class="bg-white text-black font-bold px-8 py-4 uppercase tracking-widest text-xs hover:bg-cyan transition w-full">Unlock
+                            Archive</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

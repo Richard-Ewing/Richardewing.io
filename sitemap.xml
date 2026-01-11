@@ -10,4 +10,9 @@
   <url><loc>https://richardewing.io/the-operator.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://richardewing.io/book.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://richardewing.io/canonical/aper-diagnostic.html</loc><priority>0.8</priority><changefreq>yearly</changefreq></url>
+  <url>
+    <loc>https://richardewing.io/legal.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
