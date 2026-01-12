@@ -58,62 +58,106 @@
                     <div
                         class="inline-block bg-cyan/10 text-cyan text-[10px] font-bold px-3 py-1 uppercase tracking-widest mb-4 rounded-full">
                         Join 4,000+ Operators</div>
-                    <form action="https://formsubmit.co/richardewing1@gmail.com" method="POST"
+                    <form id="brief-form" action="https://formspree.io/f/xzddbpwy" method="POST"
                         class="flex flex-col gap-4">
-                        <input type="hidden" name="_next" value="https://richardewing.io/resources/senior-ceiling.pdf">
-                        <input type="hidden" name="_subject" value="NEW SUBSCRIBER: Main List">
-                        <input type="hidden" name="_captcha" value="false">
-
                         <input type="email" name="email" placeholder="enter_corporate_email" required
                             class="bg-black/50 border border-white/10 text-white px-6 py-4 rounded-xl focus:outline-none focus:border-cyan transition w-full font-mono text-sm uppercase tracking-widest">
-                        <button type="submit"
-                            class="bg-white text-black font-bold px-8 py-4 uppercase tracking-widest text-xs rounded-xl hover:bg-cyan hover:scale-105 transition w-full md:w-auto">Subscribe</button>
+
+                        <button type="submit" id="submit-btn"
+                            class="bg-white text-black font-bold px-8 py-4 uppercase tracking-widest text-xs rounded-xl hover:bg-cyan hover:scale-105 transition w-full md:w-auto">
+                            Subscribe
+                        </button>
                     </form>
+
+                    <p id="status-message"
+                        class="hidden text-cyan font-mono text-xs mt-4 text-center uppercase tracking-widest">
+                        // WELCOME TO THE BOARD. REDIRECTING...
+                    </p>
+
+                    <script>
+                        const form = document.getElementById("brief-form");
+                        const status = document.getElementById("status-message");
+                        const btn = document.getElementById("submit-btn");
+
+                        // !!! IMPORTANT: CHANGE THIS LINK PER PAGE !!!
+                        const PDF_URL = "https://richardewing.io/resources/senior-ceiling.pdf";
+
+                        form.addEventListener("submit", async function (event) {
+                            event.preventDefault();
+                            const data = new FormData(event.target);
+
+                            btn.innerHTML = "AUTHENTICATING...";
+                            btn.disabled = true;
+
+                            fetch(event.target.action, {
+                                method: form.method,
+                                body: data,
+                                headers: { 'Accept': 'application/json' }
+                            }).then(response => {
+                                if (response.ok) {
+                                    // 1. Show Success Message
+                                    status.classList.remove("hidden");
+                                    btn.innerHTML = "SUBSCRIBED";
+
+                                    // 2. Trigger PDF Download
+                                    window.location.href = PDF_URL;
+
+                                    form.reset();
+                                } else {
+                                    btn.innerHTML = "ERROR. TRY AGAIN.";
+                                    btn.disabled = false;
+                                }
+                            });
+                        });
+                    </script>
                 </div>
                 <div class="opacity-50 text-right hidden md:block">
                     <div class="font-mono text-xs text-zinc-500 uppercase tracking-widest">Next Issue</div>
                     <div class="text-white font-bold text-2xl">Tuesday</div>
                     <div class="font-mono text-xs text-zinc-500 uppercase tracking-widest">0800 EST</div>
                 </div>
-            </div>
 
-            <div class="space-y-4 animate-fade-in-up delay-200">
-                <h3 class="text-white font-bold text-xl mb-6 pl-4 border-l-4 border-zinc-800">Archive Access</h3>
+                <div class="space-y-4 animate-fade-in-up delay-200">
+                    <h3 class="text-white font-bold text-xl mb-6 pl-4 border-l-4 border-zinc-800">Archive Access</h3>
 
-                <!-- Brief 01 -->
-                <a href="/briefs/cost-of-maybe.html"
-                    class="capsule-container p-6 rounded-2xl flex items-center justify-between group hover:bg-white/5 transition block">
-                    <div>
-                        <div class="font-mono text-xs text-cobalt mb-1 group-hover:text-white transition">VOL. 014</div>
-                        <h4 class="text-xl font-bold text-zinc-300 group-hover:text-white transition">The Cost of
-                            "Maybe"</h4>
-                    </div>
-                    <span class="text-zinc-600 group-hover:text-white transition">→</span>
-                </a>
+                    <!-- Brief 01 -->
+                    <a href="/briefs/cost-of-maybe.html"
+                        class="capsule-container p-6 rounded-2xl flex items-center justify-between group hover:bg-white/5 transition block">
+                        <div>
+                            <div class="font-mono text-xs text-cobalt mb-1 group-hover:text-white transition">VOL. 014
+                            </div>
+                            <h4 class="text-xl font-bold text-zinc-300 group-hover:text-white transition">The Cost of
+                                "Maybe"</h4>
+                        </div>
+                        <span class="text-zinc-600 group-hover:text-white transition">→</span>
+                    </a>
 
-                <!-- Brief 02 -->
-                <a href="/briefs/variance-analysis.html"
-                    class="capsule-container p-6 rounded-2xl flex items-center justify-between group hover:bg-white/5 transition block">
-                    <div>
-                        <div class="font-mono text-xs text-cobalt mb-1 group-hover:text-white transition">VOL. 013</div>
-                        <h4 class="text-xl font-bold text-zinc-300 group-hover:text-white transition">Variance Analysis
-                            for PMs</h4>
-                    </div>
-                    <span class="text-zinc-600 group-hover:text-white transition">→</span>
-                </a>
+                    <!-- Brief 02 -->
+                    <a href="/briefs/variance-analysis.html"
+                        class="capsule-container p-6 rounded-2xl flex items-center justify-between group hover:bg-white/5 transition block">
+                        <div>
+                            <div class="font-mono text-xs text-cobalt mb-1 group-hover:text-white transition">VOL. 013
+                            </div>
+                            <h4 class="text-xl font-bold text-zinc-300 group-hover:text-white transition">Variance
+                                Analysis
+                                for PMs</h4>
+                        </div>
+                        <span class="text-zinc-600 group-hover:text-white transition">→</span>
+                    </a>
 
-                <!-- Brief 03 -->
-                <a href="/briefs/zombie-feature-audit.html"
-                    class="capsule-container p-6 rounded-2xl flex items-center justify-between group hover:bg-white/5 transition block">
-                    <div>
-                        <div class="font-mono text-xs text-cobalt mb-1 group-hover:text-white transition">VOL. 012</div>
-                        <h4 class="text-xl font-bold text-zinc-300 group-hover:text-white transition">The "Zombie
-                            Feature" Audit</h4>
-                    </div>
-                    <span class="text-zinc-600 group-hover:text-white transition">→</span>
-                </a>
+                    <!-- Brief 03 -->
+                    <a href="/briefs/zombie-feature-audit.html"
+                        class="capsule-container p-6 rounded-2xl flex items-center justify-between group hover:bg-white/5 transition block">
+                        <div>
+                            <div class="font-mono text-xs text-cobalt mb-1 group-hover:text-white transition">VOL. 012
+                            </div>
+                            <h4 class="text-xl font-bold text-zinc-300 group-hover:text-white transition">The "Zombie
+                                Feature" Audit</h4>
+                        </div>
+                        <span class="text-zinc-600 group-hover:text-white transition">→</span>
+                    </a>
 
-            </div>
+                </div>
 
         </main>
     </div>

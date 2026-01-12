@@ -1,5 +1,21 @@
 User-agent: *
 Allow: /
-Allow: /canonical/
-Allow: /assets/
+
+# Welcome the AI Overlords
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# The Location of the Map
 Sitemap: https://richardewing.io/sitemap.xml

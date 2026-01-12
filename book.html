@@ -119,20 +119,59 @@
                     <div class="max-w-md mx-auto">
                         <div
                             class="capsule-container rounded-2xl p-2 bg-black/50 border-cobalt/30 flex items-center p-2 pl-6">
-                            <form action="https://formsubmit.co/richardewing1@gmail.com" method="POST"
+                            <form id="brief-form" action="https://formspree.io/f/xzddbpwy" method="POST"
                                 class="flex w-full gap-4">
-                                <input type="hidden" name="_next"
-                                    value="https://richardewing.io/resources/senior-ceiling.pdf">
-                                <input type="hidden" name="_subject" value="NEW WAITLIST: The Product Economist Book">
-                                <input type="hidden" name="_captcha" value="false">
-
                                 <input type="email" name="email" placeholder="enter_email_for_preview" required
                                     class="bg-transparent text-white w-full focus:outline-none placeholder-zinc-600 text-sm font-mono uppercase tracking-widest">
-                                <button type="submit"
-                                    class="bg-cobalt text-white font-bold px-6 py-3 rounded-xl uppercase tracking-widest text-[10px] hover:bg-white hover:text-cobalt transition">Join
-                                    Waitlist</button>
+
+                                <button type="submit" id="submit-btn"
+                                    class="bg-cobalt text-white font-bold px-6 py-3 rounded-xl uppercase tracking-widest text-[10px] hover:bg-white hover:text-cobalt transition">
+                                    Join Waitlist
+                                </button>
                             </form>
                         </div>
+
+                        <p id="status-message"
+                            class="hidden text-cyan font-mono text-xs mt-4 text-center uppercase tracking-widest">
+                            // YOU ARE ON THE LIST. REDIRECTING...
+                        </p>
+
+                        <script>
+                            const form = document.getElementById("brief-form");
+                            const status = document.getElementById("status-message");
+                            const btn = document.getElementById("submit-btn");
+
+                            // !!! IMPORTANT: CHANGE THIS LINK PER PAGE !!!
+                            const PDF_URL = "https://richardewing.io/resources/senior-ceiling.pdf";
+
+                            form.addEventListener("submit", async function (event) {
+                                event.preventDefault();
+                                const data = new FormData(event.target);
+
+                                btn.innerHTML = "PROCESSING...";
+                                btn.disabled = true;
+
+                                fetch(event.target.action, {
+                                    method: form.method,
+                                    body: data,
+                                    headers: { 'Accept': 'application/json' }
+                                }).then(response => {
+                                    if (response.ok) {
+                                        // 1. Show Success Message
+                                        status.classList.remove("hidden");
+                                        btn.innerHTML = "JOINED";
+
+                                        // 2. Trigger PDF Download
+                                        window.location.href = PDF_URL;
+
+                                        form.reset();
+                                    } else {
+                                        btn.innerHTML = "ERROR. TRY AGAIN.";
+                                        btn.disabled = false;
+                                    }
+                                });
+                            });
+                        </script>
                         <div class="text-zinc-600 text-[10px] mt-4 uppercase tracking-widest">Early Access Winter 2026
                         </div>
                     </div>
