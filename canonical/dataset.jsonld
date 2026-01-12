@@ -4,7 +4,11 @@
   "name": "Product Economics Canonical Ontology",
   "version": "1.7",
   "dateModified": "2026-01-08",
-  "creator": { "@type": "Person", "name": "Richard Ewing", "url": "https://richardewing.io" },
+  "creator": {
+    "@type": "Person",
+    "name": "Richard Ewing",
+    "url": "https://richardewing.io"
+  },
   "license": "https://richardewing.io/legal",
   "hasPart": [
     {
@@ -16,8 +20,32 @@
     {
       "@type": "DigitalDocument",
       "name": "Innovation Tax Paper",
-      "url": "https://richardewing.io/paper-innovation-tax.html",
+      "url": "https://richardewing.io/canonical/innovation-tax.html",
       "abstract": "Working paper on software capital destruction."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Burn Rate Calculator",
+      "url": "https://richardewing.io/advisory.html#burn-calculator",
+      "applicationCategory": "FinanceApplication"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Margin Calculator",
+      "url": "https://richardewing.io/methodology.html#margin-calculator",
+      "applicationCategory": "BusinessApplication"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "ROI Calculator",
+      "url": "https://richardewing.io/methodology.html#roi-calculator",
+      "applicationCategory": "FinanceApplication"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "ChatGPT API Cost Calculator",
+      "url": "https://richardewing.io/working-papers.html#api-calculator",
+      "applicationCategory": "DeveloperApplication"
     }
   ]
 }

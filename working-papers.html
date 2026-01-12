@@ -86,6 +86,87 @@
 
             </div>
 
+            <!-- API Calculator -->
+            <section id="api-calculator" class="py-12 border border-cyan/20 bg-cyan/5 rounded-xl my-8">
+                <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ChatGPT API Cost Calculator",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0" }
+  }
+  </script>
+
+                <div class="px-8">
+                    <h2 class="text-2xl font-bold text-white mb-2">ChatGPT API Cost Calculator</h2>
+                    <p class="font-mono text-xs text-cyan uppercase tracking-widest mb-6">// ESTIMATE TOKEN COSTS &
+                        MARGINS</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                        <div>
+                            <label class="text-xs font-mono text-zinc-400 block mb-1">User Price ($/mo)</label>
+                            <input type="number" id="ai-price" value="20"
+                                class="w-full bg-black border border-white/20 rounded p-2 text-white text-sm">
+                        </div>
+                        <div>
+                            <label class="text-xs font-mono text-zinc-400 block mb-1">Queries / User / Mo</label>
+                            <input type="number" id="ai-queries" value="500"
+                                class="w-full bg-black border border-white/20 rounded p-2 text-white text-sm">
+                        </div>
+                        <div>
+                            <label class="text-xs font-mono text-zinc-400 block mb-1">Avg Tokens / Query</label>
+                            <input type="number" id="ai-tokens" value="1000"
+                                class="w-full bg-black border border-white/20 rounded p-2 text-white text-sm">
+                        </div>
+                        <div>
+                            <label class="text-xs font-mono text-zinc-400 block mb-1">Cost Per 1k Tokens ($)</label>
+                            <input type="number" id="ai-cost" value="0.03" step="0.001"
+                                class="w-full bg-black border border-white/20 rounded p-2 text-white text-sm">
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-center border-t border-cyan/20 pt-4 gap-4">
+                        <div>
+                            <div class="text-xs font-mono uppercase text-zinc-500">Gross Margin</div>
+                            <div class="text-3xl font-bold text-white" id="ai-margin">--%</div>
+                        </div>
+                        <a href="/canonical/innovation-tax.html"
+                            class="px-4 py-2 bg-cyan/10 text-cyan border border-cyan/50 font-bold uppercase text-[10px] rounded hover:bg-cyan hover:text-black transition-all">
+                            Read: The Innovation Tax
+                        </a>
+                    </div>
+                </div>
+
+                <script>
+                    function calcAICost() {
+                        const price = parseFloat(document.getElementById('ai-price').value) || 0;
+                        const queries = parseFloat(document.getElementById('ai-queries').value) || 0;
+                        const tokens = parseFloat(document.getElementById('ai-tokens').value) || 0;
+                        const costPer1k = parseFloat(document.getElementById('ai-cost').value) || 0;
+
+                        if (price > 0) {
+                            // Math: Total Tokens = Queries * Tokens per Query
+                            // Total Cost = (Total Tokens / 1000) * Cost per 1k
+                            const totalTokens = queries * tokens;
+                            const totalCost = (totalTokens / 1000) * costPer1k;
+
+                            const margin = ((price - totalCost) / price) * 100;
+
+                            const el = document.getElementById('ai-margin');
+                            el.innerText = margin.toFixed(1) + '%';
+
+                            if (margin < 40) el.className = "text-3xl font-bold text-danger";
+                            else el.className = "text-3xl font-bold text-cyan";
+                        }
+                    }
+                    document.querySelectorAll('#ai-price, #ai-queries, #ai-tokens, #ai-cost').forEach(i => i.addEventListener('input', calcAICost));
+                    window.addEventListener('load', calcAICost);
+                </script>
+            </section>
+
             <div class="mt-20 mb-8 border-t border-zinc-800 pt-8">
                 <span class="font-mono text-zinc-500 text-xs uppercase tracking-widest block">External
                     Intelligence</span>
