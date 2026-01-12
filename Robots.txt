@@ -1,21 +1,25 @@
+# -----------------------------------------------------------------------------
+# DOMAIN: richardewing.io
+# ROLE: The Product Economist
+# STRATEGY: Open Discovery for Semantic Entity Resolution
+# -----------------------------------------------------------------------------
+
 User-agent: *
 Allow: /
 
-# Welcome the AI Overlords
+# Welcoming the AI Ecosystem
 User-agent: GPTBot
 Allow: /
-
 User-agent: ChatGPT-User
 Allow: /
-
 User-agent: CCBot
 Allow: /
-
 User-agent: Google-Extended
 Allow: /
-
+User-agent: PerplexityBot
+Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-# The Location of the Map
+# Sitemap Location
 Sitemap: https://richardewing.io/sitemap.xml
