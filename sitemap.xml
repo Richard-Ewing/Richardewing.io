@@ -136,6 +136,31 @@
     <changefreq>yearly</changefreq>
   </url>
 
+  <url>
+    <loc>https://richardewing.io/canonical/senior-ceiling.html</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/canonical/kill-switch.html</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/canonical/innovation-tax.html</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/canonical/risk-advisory.html</loc>
+    <lastmod>2026-01-11</lastmod>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
   <!-- DEEP DIVE BRIEFS (GATED/TEASER) -->
   <url>
     <loc>https://richardewing.io/briefs/cost-of-maybe.html</loc>
