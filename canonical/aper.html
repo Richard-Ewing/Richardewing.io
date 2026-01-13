@@ -27,6 +27,7 @@
                 <h3 class="text-white font-bold tracking-tight text-xl">RICHARD EWING</h3>
                 <span class="font-mono text-xs text-titanium tracking-widest block mt-1">PRODUCT ECONOMIST</span>
             </a>
+
             <div class="mt-12">
                 <span class="font-mono text-[10px] text-cyan uppercase tracking-widest mb-4 block">// SYSTEM:
                     DIAGNOSTIC</span>
@@ -38,18 +39,30 @@
                     class="w-full block text-center bg-white text-black font-bold px-6 py-4 uppercase tracking-widest text-xs hover:bg-cyan transition mb-4">
                     Download PDF
                 </a>
-                class="text-xs font-mono text-cyan uppercase border border-cyan px-3 py-1">Download</a>
             </div>
+        </div>
 
-            <main class="flex-grow h-full bg-zinc-900 relative">
-                <iframe src="/resources/aper-diagnostic.pdf#toolbar=0&view=FitH" width="100%" height="100%"
-                    class="w-full h-full">
-                    <div class="flex flex-col items-center justify-center h-full text-zinc-500">
-                        <p class="mb-4">Your browser does not support PDF embedding.</p>
-                        <a href="/resources/aper-diagnostic.pdf" class="text-cyan underline">Click here to download.</a>
-                    </div>
-                </iframe>
-            </main>
+        <div class="font-mono text-[10px] text-zinc-600">
+            <a href="/" class="hover:text-white transition">&larr; EXIT VIEWER</a>
+        </div>
+    </aside>
+
+    <div class="lg:hidden p-4 bg-black border-b border-white/10 flex justify-between items-center">
+        <span class="font-bold text-white">APER Diagnostic</span>
+        <a href="/resources/aper-diagnostic.pdf"
+            class="text-xs font-mono text-cyan uppercase border border-cyan px-3 py-1">Download</a>
+    </div>
+
+    <main class="flex-grow h-full bg-zinc-900 relative">
+        <iframe src="/resources/aper-diagnostic.pdf#toolbar=0&view=FitH" width="100%" height="100%"
+            class="w-full h-full">
+            <div class="flex flex-col items-center justify-center h-full text-zinc-500">
+                <p class="mb-4">Your browser does not support PDF embedding.</p>
+                <a href="/resources/aper-diagnostic.pdf" class="text-cyan underline">Click here to download.</a>
+            </div>
+        </iframe>
+    </main>
+
 </body>
 
 </html>
