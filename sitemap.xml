@@ -26,20 +26,20 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://richardewing.io/advisory.html</loc>
-    <lastmod>2026-01-11</lastmod>
-    <priority>1.0</priority>
+    <loc>https://richardewing.io/03-advisory.html</loc>
+    <lastmod>2026-01-12</lastmod>
+    <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://richardewing.io/working-papers.html</loc>
     <lastmod>2026-01-11</lastmod>
-    <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://richardewing.io/methodology.html</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://richardewing.io/05-system.html</loc>
+    <lastmod>2026-01-12</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -50,8 +50,8 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://richardewing.io/board-brief.html</loc>
-    <lastmod>2026-01-11</lastmod>
+    <loc>https://richardewing.io/07-briefs.html</loc>
+    <lastmod>2026-01-12</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
