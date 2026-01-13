@@ -51,33 +51,73 @@
                 <h3 class="text-white font-bold tracking-tight text-xl">RICHARD EWING</h3>
                 <span class="font-mono text-xs text-titanium tracking-widest block mt-1">PRODUCT ECONOMIST</span>
             </div>
-            <nav class="mt-12 lg:mt-0 flex flex-col gap-4 font-mono text-xs tracking-widest uppercase">
-                <a href="/" class="text-zinc-500 hover:text-white transition-colors mb-4">â† Home</a>
-                <a href="/manifesto.html" class="hover:text-white transition-colors">01. Manifesto</a>
-                <a href="/about.html" class="hover:text-white transition-colors">02. The Principal</a>
-                <a href="/03-advisory.html" class="hover:text-white transition-colors">03. Advisory</a>
-                <a href="/working-papers.html" class="hover:text-white transition-colors">04. Doctrine</a>
-                <a href="/05-system.html" class="text-white font-bold border-l-2 border-cyan pl-2">05. System</a>
-                <a href="/academy.html" class="hover:text-white transition-colors">06. Academy</a>
-                <a href="/07-briefs.html" class="hover:text-white transition-colors">07. Briefs</a>
-                <a href="/book.html" class="hover:text-white transition-colors">08. Book</a>
+            <nav class="space-y-8 mt-10">
+
+                <div>
+                    <div class="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Identity</div>
+                    <div class="space-y-1">
+                        <a href="index.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">Home</a>
+                        <a href="01-manifesto.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">01.
+                            Manifesto</a>
+                        <a href="02-principal.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">02.
+                            The Principal</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="text-[9px] font-mono text-danger uppercase mb-3 ml-3 tracking-widest">Intervention</div>
+                    <a href="03-advisory.html"
+                        class="block text-white font-bold text-xs py-3 px-3 border-l-2 border-danger bg-danger/5 hover:bg-danger/10 transition-all">
+                        03. ADVISORY
+                    </a>
+                </div>
+
+                <div>
+                    <div class="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Intelligence
+                    </div>
+                    <div class="space-y-1">
+                        <a href="05-system.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">04.
+                            System</a>
+                        <a href="working-papers.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">05.
+                            Doctrine</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Signal</div>
+                    <a href="07-briefs.html"
+                        class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">06.
+                        Briefs</a>
+                </div>
+
             </nav>
-            <div class="font-mono text-[10px] text-zinc-600">Â© 2026 Richard Ewing</div>
+            <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">© 2026 Richard Ewing</div>
         </aside>
 
-        <main class="p-8 lg:p-24 max-w-5xl">
-            <header class="mb-20">
-                <div
-                    class="inline-block bg-white/5 border border-white/10 px-4 py-2 text-xs font-mono uppercase tracking-widest mb-6 rounded-full text-cyan">
-                    The Operating System
-                </div>
-                <h1 class="text-5xl lg:text-7xl font-bold text-white tracking-tighter mb-8">
-                    Algorithmic <br><span class="text-zinc-600">Solvency.</span>
-                </h1>
-                <p class="text-xl text-zinc-400 max-w-2xl leading-relaxed">
-                    Most product organizations are black boxes of capital consumption. The Product Economist uses two
-                    proprietary frameworks to force financial transparency.
-                </p>
+        <main class="p-8 lg:p-24 flex flex-col justify-center min-h-screen relative overflow-hidden">
+            <div class="mb-8 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-zinc-400">Intelligence</span>
+                <span>/</span>
+                <span class="text-white font-bold">System</span>
+            </div>
+            <div
+                class="inline-block bg-white/5 border border-white/10 px-4 py-2 text-xs font-mono uppercase tracking-widest mb-6 rounded-full text-cyan">
+                The Operating System
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-bold text-white tracking-tighter mb-8">
+                Algorithmic <br><span class="text-zinc-600">Solvency.</span>
+            </h1>
+            <p class="text-xl text-zinc-400 max-w-2xl leading-relaxed">
+                Most product organizations are black boxes of capital consumption. The Product Economist uses two
+                proprietary frameworks to force financial transparency.
+            </p>
             </header>
 
             <section id="aper" class="mb-32">
@@ -204,28 +244,25 @@
                 class="py-24 border-t border-white/5 bg-zinc-900/20 rounded-3xl my-12 relative overflow-hidden">
                 <div class="px-8 md:px-12 relative z-10">
                     <div
-                        class="inline-block bg-red-900/20 border border-red-500/30 px-3 py-1 rounded-full text-[10px] font-mono text-red-500 uppercase mb-6 tracking-widest">
+                        class="inline-block bg-danger/10 border border-danger/30 px-3 py-1 rounded-full text-[10px] font-mono text-danger uppercase mb-6 tracking-widest">
                         Diagnostic Standard: PDI-2026
                     </div>
-
-                    <h2 <h2 class="text-3xl md:text-5xl font-bold text-white mb-2 tracking-tighter">Product Debt Index™
-                    </h2>>Product Debt Indexâ„¢</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tighter">Product Debt Index™</h2>
                     <p class="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-10">// QUANTIFYING CAPITAL
                         MISALLOCATION</p>
 
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <div class="space-y-6">
                             <p class="text-zinc-400 text-sm leading-relaxed font-mono">
-                                Most roadmaps are cemeteries for dead capital. Paste your recent backlog items, Jira
-                                tickets, or roadmap initiatives below. The engine classifies them by economic intent to
-                                detect your "Maintenance Tax."
+                                Paste your recent backlog items. The engine classifies them by economic intent to detect
+                                "Maintenance Tax."
                             </p>
                             <div class="bg-black border border-white/10 rounded-2xl p-2 shadow-2xl">
                                 <textarea id="pdi-input"
-                                    placeholder="e.g., Refactored login flow, New API for Enterprise tier, Fixed CSS bug, Database migration, Q4 Board Deck prep..."
+                                    placeholder="e.g., Refactored login flow, Fixed CSS bug, Database migration, Q4 Board Deck prep..."
                                     class="w-full h-48 bg-transparent p-6 text-zinc-300 font-mono text-sm focus:outline-none placeholder:text-zinc-700 resize-none"></textarea>
                                 <button onclick="calculatePDI()"
-                                    class="w-full py-4 bg-white text-black font-bold uppercase tracking-widest text-[10px] md:text-xs hover:bg-red-600 hover:text-white transition-all rounded-xl mt-2 min-h-[44px]">
+                                    class="w-full py-4 bg-white text-black font-bold uppercase tracking-widest text-xs hover:bg-danger hover:text-white transition-all rounded-xl mt-2">
                                     Generate PDI Score
                                 </button>
                             </div>
@@ -236,25 +273,23 @@
                             <div>
                                 <div class="text-[10px] font-mono text-zinc-500 uppercase mb-2">Index Score</div>
                                 <div class="flex items-baseline gap-4 mb-6">
-                                    <div id="pdi-score"
-                                        class="text-6xl md:text-7xl font-bold text-white tracking-tighter">--</div>
-                                    <div id="pdi-label" class="text-xs font-mono uppercase tracking-widest">--</div>
+                                    <div id="pdi-score" class="text-7xl font-bold text-white tracking-tighter">--</div>
+                                    <div id="pdi-label" class="text-xs font-mono uppercase tracking-widest text-danger">
+                                        --</div>
                                 </div>
-
                                 <div class="space-y-4 mb-8 border-t border-white/10 pt-6">
                                     <div class="flex justify-between">
-                                        <span class="text-[10px] font-mono text-zinc-500 uppercase">Maintenance Tax
-                                            Load</span>
+                                        <span class="text-[10px] font-mono text-zinc-500 uppercase">Maintenance
+                                            Tax</span>
                                         <span id="pdi-tax" class="text-xs font-mono text-white">--%</span>
                                     </div>
                                     <div id="pdi-verdict"
-                                        class="text-xs md:text-sm text-zinc-300 italic leading-relaxed font-mono"></div>
+                                        class="text-xs text-zinc-300 italic leading-relaxed font-mono"></div>
                                 </div>
                             </div>
-
                             <a href="/03-advisory.html"
-                                class="block w-full text-center bg-red-600 text-white font-bold uppercase text-[10px] py-4 rounded tracking-widest hover:bg-white hover:text-black transition-all">
-                                Download Board-Ready Report
+                                class="block w-full text-center bg-danger text-white font-bold uppercase text-[10px] py-4 rounded tracking-widest hover:bg-white hover:text-black transition-all">
+                                Review Results with The Principal
                             </a>
                         </div>
                     </div>
@@ -263,41 +298,43 @@
                 <script>
                     function calculatePDI() {
                         const input = document.getElementById('pdi-input').value.toLowerCase();
-                        if (!input) return;
+                        if (!input) return; // Don't do anything if empty
 
-                        const maintenanceKeywords = /fix|bug|refactor|update|maintenance|css|polish|cleanup|migration|debt|patch|compliance|security|infra|meeting|prep|admin/g;
-                        const revenueKeywords = /new|enterprise|tier|upsell|revenue|client|sale|conversion|onboarding|market|launch|growth|feature|expansion|pricing/g;
+                        // EXPANDED REGEX FOR ACCURACY
+                        const maintenanceKeywords = /fix|bug|refactor|update|maintenance|css|polish|cleanup|migration|debt|patch|compliance|security|infra|admin|meeting/g;
+                        const revenueKeywords = /new|enterprise|tier|upsell|revenue|client|sale|conversion|onboarding|market|launch|growth|feature|pricing/g;
 
                         const maintCount = (input.match(maintenanceKeywords) || []).length;
                         const revCount = (input.match(revenueKeywords) || []).length;
 
+                        // PREVENT DIVIDE BY ZERO
                         const totalSignals = maintCount + revCount || 1;
 
                         const pdi = Math.round((revCount / totalSignals) * 100);
                         const tax = Math.round((maintCount / totalSignals) * 100);
 
+                        // UI REVEAL
                         const box = document.getElementById('pdi-result-box');
-                        const scoreEl = document.getElementById('pdi-score');
+                        box.classList.remove('hidden');
+
+                        document.getElementById('pdi-score').innerText = pdi;
+                        document.getElementById('pdi-tax').innerText = tax + "%";
+
                         const labelEl = document.getElementById('pdi-label');
                         const verdictEl = document.getElementById('pdi-verdict');
-                        const taxEl = document.getElementById('pdi-tax');
-
-                        box.classList.remove('hidden');
-                        scoreEl.innerText = pdi;
-                        taxEl.innerText = tax + "%";
 
                         if (pdi < 40) {
                             labelEl.innerText = "CAPITAL DESTRUCTIVE";
-                            labelEl.className = "text-xs font-mono uppercase tracking-widest text-red-500";
-                            verdictEl.innerText = "Your PDI indicates critical misallocation. At your current burn, approx. " + tax + "% of spend is preserving existing revenue, not compounding it. You are running a Feature Factory.";
+                            labelEl.className = "text-xs font-mono uppercase tracking-widest text-danger";
+                            verdictEl.innerText = "Critical misallocation detected. " + tax + "% of spend is 'Maintenance Tax'. You are running a Feature Factory.";
                         } else if (pdi < 65) {
                             labelEl.innerText = "AT RISK";
                             labelEl.className = "text-xs font-mono uppercase tracking-widest text-yellow-500";
-                            verdictEl.innerText = "Product governance is deteriorating. Your Maintenance Tax (" + tax + "%) is eroding your capacity for strategic initiatives.";
+                            verdictEl.innerText = "Governance deteriorating. Maintenance Tax (" + tax + "%) is eroding strategic capacity.";
                         } else {
                             labelEl.innerText = "STRATEGIC ASSET";
-                            labelEl.className = "text-xs font-mono uppercase tracking-widest text-cyan-400";
-                            verdictEl.innerText = "Capital is flowing toward high-leverage outcomes. You are in the top quartile for product efficiency.";
+                            labelEl.className = "text-xs font-mono uppercase tracking-widest text-cyan";
+                            verdictEl.innerText = "Top quartile efficiency. Capital flowing to high-leverage outcomes.";
                         }
                     }
                 </script>
@@ -307,7 +344,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-8">
                     <div class="text-4xl font-mono text-zinc-700 font-bold">02</div>
                     <div>
-                        <h2 class="text-3xl font-bold text-white mb-6">Q-PEPâ„¢ Protocol</h2>
+                        <h2 class="text-3xl font-bold text-white mb-6">Q-PEP™ Protocol</h2>
                         <p class="font-mono text-xs text-cobalt tracking-widest uppercase mb-8">//
                             QUALITATIVE-PROFITABILITY EFFICIENCY PROTOCOL</p>
 
@@ -344,4 +381,3 @@
 </body>
 
 </html>
-

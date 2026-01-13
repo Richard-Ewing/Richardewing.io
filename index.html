@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta charset="UTF-8">
   <title>Richard Ewing | The Product Economist</title>
   <link rel="canonical" href="https://richardewing.io/" />
@@ -292,17 +292,51 @@
       <nav class="mt-12 lg:mt-0 flex flex-col gap-4 font-mono text-xs tracking-widest uppercase">
         <a href="javascript:history.back()" class="text-zinc-500 hover:text-white transition-colors block mb-6">â†
           Back</a>
-        <a href="/manifesto.html" class="hover:text-white transition-colors">01. Manifesto</a>
-        <a href="/about.html" class="hover:text-white transition-colors">02. The Principal</a>
-        <a href="/03-advisory.html" class="hover:text-white transition-colors">03. Advisory</a>
-        <a href="/working-papers.html" class="hover:text-white transition-colors">04. Doctrine</a>
-        <a href="/05-system.html" class="hover:text-white transition-colors">05. System</a>
-        <a href="/academy.html" class="hover:text-white transition-colors">06. Academy</a>
-        <a href="/07-briefs.html" class="hover:text-white transition-colors">07. Briefs</a>
-        <a href="/book.html" class="hover:text-white transition-colors">08. Book</a>
-        <a href="/legal.html" class="hover:text-white transition-colors">09. Legal</a>
-      </nav>
-      <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">Â© 2026 Richard Ewing</div>
+        <nav class="space-y-8 mt-10">
+
+          <div>
+            <div class="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Identity</div>
+            <div class="space-y-1">
+              <a href="index.html"
+                class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">Home</a>
+              <a href="01-manifesto.html"
+                class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">01.
+                Manifesto</a>
+              <a href="02-principal.html"
+                class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">02.
+                The Principal</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-[9px] font-mono text-danger uppercase mb-3 ml-3 tracking-widest">Intervention</div>
+            <a href="03-advisory.html"
+              class="block text-white font-bold text-xs py-3 px-3 border-l-2 border-danger bg-danger/5 hover:bg-danger/10 transition-all">
+              03. ADVISORY
+            </a>
+          </div>
+
+          <div>
+            <div class="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Intelligence</div>
+            <div class="space-y-1">
+              <a href="05-system.html"
+                class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">04.
+                System</a>
+              <a href="working-papers.html"
+                class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">05.
+                Doctrine</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Signal</div>
+            <a href="07-briefs.html"
+              class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">06.
+              Briefs</a>
+          </div>
+
+        </nav>
+        <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">Â© 2026 Richard Ewing</div>
     </aside>
 
     <main class="p-8 lg:p-24 flex flex-col justify-center min-h-screen relative overflow-hidden">
@@ -311,30 +345,45 @@
         class="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-900/10 rounded-full blur-[128px] pointer-events-none">
       </div>
 
-      <section id="hero" class="animate-fade-in-up">
-        <div
-          class="inline-block bg-danger/10 text-danger border border-danger/20 px-4 py-2 text-xs font-mono font-bold uppercase tracking-widest mb-6 rounded-full backdrop-blur-md">
-          Warning: Capital Leakage Detected
-        </div>
-        <h1 class="text-5xl lg:text-8xl font-extrabold text-white leading-[0.9] tracking-tighter mb-10">
-          Product<br>Management is <br><span class="text-zinc-500">Capital Allocation.</span></h1>
+      <div class="mt-20 mb-24">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter leading-[0.9]">
+          Product Management is <br>
+          <span class="text-danger">Capital Allocation.</span>
+        </h1>
 
-        <div class="capsule-container p-8 mb-12 border-l-4 border-l-white max-w-2xl rounded-r-3xl">
-          <strong class="text-white block mb-2 font-mono uppercase text-sm tracking-widest">The Uncomfortable
-            Truth</strong>
-          <p class="text-zinc-400 m-0 text-lg">Engineering bandwidth is your most expensive capital. Most
-            companies treat it like infinite inventory. Stop wasting it.</p>
-        </div>
+        <p class="text-zinc-400 text-lg md:text-xl mb-12 max-w-2xl leading-relaxed font-light">
+          Most engineering teams are functionally insolvent. They treat bandwidth like infinite inventory. Stop managing
+          tickets. Start managing liquidity.
+        </p>
 
-        <div class="flex flex-wrap gap-6 items-center">
-          <a href="/03-advisory.html"
-            class="inline-flex items-center justify-center px-10 py-5 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-full hover:bg-cyan hover:scale-105 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-            Stop The Bleeding
+        <div class="flex flex-col md:flex-row gap-6">
+
+          <a href="03-advisory.html"
+            class="group relative px-8 py-5 bg-white overflow-hidden rounded-xl w-full md:w-auto text-center">
+            <div class="absolute inset-0 w-3 bg-danger transition-all duration-[250ms] ease-out group-hover:w-full">
+            </div>
+            <span
+              class="relative text-black font-bold uppercase tracking-widest text-xs group-hover:text-white transition-colors">
+              Stop The Bleeding (Book Audit)
+            </span>
           </a>
-          <span class="text-zinc-500 font-mono text-xs tracking-widest">Analysis in 14 Days. Fixed
-            Price.</span>
+
+          <a href="05-system.html"
+            class="px-8 py-5 border border-white/20 rounded-xl hover:border-cyan hover:bg-cyan/5 transition-all w-full md:w-auto text-center">
+            <span class="text-white font-bold uppercase tracking-widest text-xs">
+              Run Diagnostic (Free)
+            </span>
+          </a>
+
         </div>
-      </section>
+
+        <div class="mt-8 flex items-center gap-2">
+          <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <p class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+            Status: Accepting Q1 Advisory Retainers
+          </p>
+        </div>
+      </div>
 
       <section id="evidence" class="mt-32 border-t border-white/5 pt-16 animate-fade-in-up delay-200">
         <h2 class="text-sm text-zinc-500 font-mono uppercase tracking-[0.3em] mb-12 flex items-center gap-4">
@@ -376,4 +425,3 @@
 </body>
 
 </html>
-
