@@ -202,4 +202,52 @@
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
+  <url>
+    <loc>https://richardewing.io/briefings.html</loc>
+    <lastmod>2026-01-14</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/cite.html</loc>
+    <lastmod>2026-01-14</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/paper-innovation-tax.html</loc>
+    <lastmod>2026-01-14</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/recognition.html</loc>
+    <lastmod>2026-01-14</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/studio.html</loc>
+    <lastmod>2026-01-14</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/llm/</loc>
+    <lastmod>2026-01-14</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/resources/sample-memo.html</loc>
+    <lastmod>2026-01-14</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/robots/</loc>
+    <lastmod>2026-01-14</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
 </urlset>
