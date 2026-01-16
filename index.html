@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Richard Ewing | Office of the Product Economist</title>
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', cyan: '#00F0FF', gold: '#D4AF37' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'], sans: ['Inter', 'system-ui', 'sans-serif'], serif: ['Georgia', 'serif'] } } } }</script>
   <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.js"></script>
   <script src="/assets/js/scripts.js" defer></script>
 </head>
 
@@ -32,10 +33,10 @@
           <div class="space-y-1">
             <a href="index.html"
               class="block text-white font-bold text-xs py-3 px-3 border-l-2 border-white bg-white/5 transition-all">Home</a>
-            <a href="01-manifesto.html"
+            <a href="manifesto.html"
               class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">01.
               Manifesto</a>
-            <a href="02-principal.html"
+            <a href="principal.html"
               class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">02.
               The Principal</a>
           </div>
@@ -43,19 +44,20 @@
 
         <div>
           <div class="text-[9px] font-mono text-danger uppercase mb-3 ml-3 tracking-widest">Intervention</div>
-          <a href="03-advisory.html"
-            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">03.
-            ADVISORY</a>
+          <a href="advisory.html"
+            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">
+            03. ADVISORY
+          </a>
         </div>
 
         <div>
           <div class="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Intelligence
           </div>
           <div class="space-y-1">
-            <a href="05-system.html"
+            <a href="system.html"
               class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">04.
               System</a>
-            <a href="06-doctrine.html"
+            <a href="doctrine.html"
               class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">05.
               Doctrine</a>
           </div>
@@ -64,7 +66,7 @@
         <div>
           <div class="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Signal</div>
           <div class="space-y-1">
-            <a href="07-briefs.html"
+            <a href="briefings.html"
               class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">06.
               Briefs</a>
             <a href="book.html"
@@ -93,13 +95,13 @@
 
         <div class="flex gap-6 mb-12 border-b border-white/10 pb-8 animate-fade-in-up delay-100">
           <span class="font-mono text-xs text-zinc-500 uppercase tracking-widest mt-1">FEATURED IN:</span>
-          <a href="https://builtin.com/articles/ai-product-business-test" target="_blank"
+          <a href="https://builtin.com/articles/ai-product-business-test" target="_blank" rel="noopener noreferrer"
             class="text-sm text-zinc-400 hover:text-white border-b border-white/20 hover:border-white transition pb-0.5">Built
             In</a>
-          <a href="https://foundry.com" target="_blank"
+          <a href="https://foundry.com" target="_blank" rel="noopener noreferrer"
             class="text-sm text-zinc-400 hover:text-white border-b border-white/20 hover:border-white transition pb-0.5">Foundry</a>
-          <a href="https://hackernoon.com/the-best-ai-product-i-ever-led-had-zero-customers" target="_blank"
-            class="text-sm text-zinc-400 hover:text-white border-b border-white/20 hover:border-white transition pb-0.5">HackerNoon</a>
+          <a href="https://techcrunch.com" target="_blank" rel="noopener noreferrer"
+            class="text-sm text-zinc-400 hover:text-white border-b border-white/20 hover:border-white transition pb-0.5">TechCrunch</a>
         </div>
 
         <div class="animate-fade-in-up delay-200">
