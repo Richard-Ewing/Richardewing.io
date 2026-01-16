@@ -7,6 +7,27 @@
     <title>The System | Richard Ewing</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#050505',
+                        surface: '#0f0f0f',
+                        titanium: '#C0C0C0',
+                        cobalt: '#0055FF',
+                        cyan: '#00F0FF',
+                        danger: '#FF3333'
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'SF Mono', 'Menlo', 'monospace'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -45,103 +66,243 @@
             <div class="nav-footer">&copy; 2026 Richard Ewing</div>
         </aside>
 
-        <main>
-            <div class="capsule-container blur-in">
-                <span class="mono">The Operating System</span>
-                <h1>Algorithmic Solvency.</h1>
-
-                <p class="lead">Most product organizations are black boxes of capital consumption. The Product Economist
-                    uses two proprietary frameworks to force financial transparency.</p>
-
-                <h2>01. APER&trade; Diagnostic</h2>
-                <p>A 14-day forensic audit of your engineering throughput. We do not look at Jira points. We look at the
-                    "Cost of Goods Sold" (COGS) relative to feature adoption.</p>
-
-                <div class="card" style="margin-top:2rem;">
-                    <h3>Margin Calculator</h3>
-                    <p class="mono" style="font-size:0.7rem; color:var(--text-muted);">ESTIMATE SAAS GROSS MARGINS</p>
-
-                    <label class="mono" style="font-size:0.7rem;">TOTAL REVENUE ($)</label>
-                    <input type="number" id="margin-rev" placeholder="1000000">
-
-                    <label class="mono" style="font-size:0.7rem;">HOSTING/AWS COSTS ($)</label>
-                    <input type="number" id="margin-cogs" placeholder="150000">
-
-                    <label class="mono" style="font-size:0.7rem; color:var(--danger);">SUPPORT & MAINT SALARIES
-                        ($)</label>
-                    <input type="number" id="margin-ppl" placeholder="300000" style="border-color:var(--danger);">
-
-                    <div style="margin-top:1rem; border-top:1px solid #333; padding-top:1rem;">
-                        <span class="mono">GROSS MARGIN: </span>
-                        <span id="margin-result" style="font-size:2rem; font-weight:bold; color:var(--cyan);">--%</span>
-                    </div>
-                </div>
-
-                <h2>02. Product Debt Index&trade;</h2>
-                <p>Calculate your "Maintenance Tax". Paste your backlog items below to see if you are running a Feature
-                    Factory.</p>
-
-                <div class="card">
-                    <textarea id="pdi-input" rows="6"
-                        placeholder="Paste backlog items (e.g. 'Refactor login', ' Fix CSS bug', 'New Enterprise Tier')..."></textarea>
-                    <button onclick="calculatePDI()" class="btn">Generate Score</button>
-
-                    <div id="pdi-result"
-                        style="display:none; margin-top:2rem; border-top:1px solid #333; padding-top:1rem;">
-                        <div style="font-size:3rem; font-weight:bold; color:#fff;" id="pdi-score">0</div>
-                        <span class="mono" id="pdi-label">--</span>
-                        <p id="pdi-verdict" style="font-size:0.9rem; margin-top:1rem;"></p>
-                    </div>
-                </div>
-
-                <script>
-                    // Margin Logic
-                    function calcMargin() {
-                        const rev = parseFloat(document.getElementById('margin-rev').value) || 0;
-                        const cogs = parseFloat(document.getElementById('margin-cogs').value) || 0;
-                        const ppl = parseFloat(document.getElementById('margin-ppl').value) || 0;
-                        if (rev > 0) {
-                            const trueMargin = ((rev - (cogs + ppl)) / rev) * 100;
-                            const resultEl = document.getElementById('margin-result');
-                            resultEl.innerText = trueMargin.toFixed(1) + '%';
-                            resultEl.style.color = trueMargin < 60 ? 'var(--danger)' : 'var(--cyan)';
-                        }
-                    }
-                    document.querySelectorAll('#margin-rev, #margin-cogs, #margin-ppl').forEach(i => i.addEventListener('input', calcMargin));
-
-                    // PDI Logic
-                    function calculatePDI() {
-                        const input = document.getElementById('pdi-input').value.toLowerCase();
-                        if (!input) return;
-                        const maintKw = /fix|bug|refactor|update|maintenance|css|polish|cleanup|patch/g;
-                        const revKw = /new|enterprise|tier|upsell|revenue|client|sale|launch/g;
-
-                        const maintCount = (input.match(maintKw) || []).length;
-                        const revCount = (input.match(revKw) || []).length;
-                        const total = maintCount + revCount || 1;
-
-                        const score = Math.round((revCount / total) * 100);
-
-                        document.getElementById('pdi-result').style.display = 'block';
-                        document.getElementById('pdi-score').innerText = score;
-                        const label = document.getElementById('pdi-label');
-                        const verdict = document.getElementById('pdi-verdict');
-
-                        if (score < 40) {
-                            label.innerText = "CAPITAL DESTRUCTIVE";
-                            label.style.color = "var(--danger)";
-                            verdict.innerText = "You are spending most of your capital on maintenance.";
-                        } else {
-                            label.innerText = "STRATEGIC ASSET";
-                            label.style.color = "var(--cyan)";
-                            verdict.innerText = "Good balance of innovation vs maintenance.";
-                        }
-                    }
-                </script>
+        <main class="p-8 lg:p-24 flex flex-col justify-center min-h-screen relative overflow-hidden text-zinc-300">
+            <div class="mb-8 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-zinc-400">Intelligence</span>
+                <span>/</span>
+                <span class="text-white font-bold">System</span>
             </div>
+            <div
+                class="inline-block bg-white/5 border border-white/10 px-4 py-2 text-xs font-mono uppercase tracking-widest mb-6 rounded-full text-cyan">
+                The Operating System
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-bold text-white tracking-tighter mb-8">
+                Algorithmic <br><span class="text-zinc-600">Solvency.</span>
+            </h1>
+            <p class="text-xl text-zinc-400 max-w-2xl leading-relaxed">
+                Most product organizations are black boxes of capital consumption. The Product Economist uses two
+                proprietary frameworks to force financial transparency.
+            </p>
+
+            <section id="aper" class="mb-32 mt-16">
+                <div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-8">
+                    <div class="text-4xl font-mono text-zinc-700 font-bold">01</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-6">APER&trade; Diagnostic</h2>
+                        <p class="font-mono text-xs text-cyan tracking-widest uppercase mb-8">// ACTIONABLE PRODUCT
+                            ECONOMIC REVIEW</p>
+
+                        <p class="text-zinc-400 mb-8 text-lg">
+                            A 14-day forensic audit of your engineering throughput. We do not look at Jira points. We
+                            look at the "Cost of Goods Sold" (COGS) relative to feature adoption.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                            <div class="bg-surface border border-white/10 p-6 rounded-xl">
+                                <div class="text-white font-bold mb-2">Revenue Per Employee</div>
+                                <div class="text-xs text-zinc-500">The North Star metric. If this is flat while
+                                    headcount grows, you are dying.</div>
+                            </div>
+                            <div class="bg-surface border border-white/10 p-6 rounded-xl">
+                                <div class="text-white font-bold mb-2">Feature ROI</div>
+                                <div class="text-xs text-zinc-500">Connecting AWS costs directly to specific product
+                                    features.</div>
+                            </div>
+                            <div class="bg-surface border border-white/10 p-6 rounded-xl">
+                                <div class="text-white font-bold mb-2">The Zombie Index</div>
+                                <div class="text-xs text-zinc-500">Identifying code that consumes maintenance capital
+                                    but generates zero revenue.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Margin Calculator -->
+            <section id="margin-calculator" class="py-12 bg-zinc-900/50 border border-white/5 rounded-xl my-8">
+                <div class="px-8">
+                    <h2 class="text-3xl font-bold text-white mb-2">Margin Calculator</h2>
+                    <p class="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-8">// SAAS GROSS MARGINS
+                        (WITH R&D COSTS)</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div>
+                            <label class="block text-[10px] font-mono text-zinc-400 uppercase mb-2">Total Revenue
+                                ($)</label>
+                            <input type="number" id="margin-rev" placeholder="1000000"
+                                class="w-full bg-black border border-white/20 rounded p-3 text-white font-mono focus:border-cyan outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-mono text-zinc-400 uppercase mb-2">Hosting/AWS Costs
+                                ($)</label>
+                            <input type="number" id="margin-cogs" placeholder="150000"
+                                class="w-full bg-black border border-white/20 rounded p-3 text-white font-mono focus:border-cyan outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-mono text-danger uppercase mb-2">Support & Maint.
+                                Salaries ($)</label>
+                            <input type="number" id="margin-ppl" placeholder="300000"
+                                class="w-full bg-black border border-danger/50 rounded p-3 text-white font-mono focus:border-danger outline-none">
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-black p-6 rounded-lg border border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div class="text-center md:text-left">
+                            <div class="text-xs font-mono text-zinc-500 uppercase">Gross Margin</div>
+                            <div class="text-4xl font-bold text-white" id="margin-result">--%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PDI Engine -->
+            <section id="pdi-engine"
+                class="py-24 border-t border-white/5 bg-zinc-900/20 rounded-3xl my-12 relative overflow-hidden">
+                <div class="px-8 md:px-12 relative z-10">
+                    <div
+                        class="inline-block bg-danger/10 border border-danger/30 px-3 py-1 rounded-full text-[10px] font-mono text-danger uppercase mb-6 tracking-widest">
+                        Diagnostic Standard: PDI-2026
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tighter">Product Debt Index™</h2>
+                    <p class="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-10">// QUANTIFYING CAPITAL
+                        MISALLOCATION</p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div class="space-y-6">
+                            <p class="text-zinc-400 text-sm leading-relaxed font-mono">
+                                Paste your recent backlog items. The engine classifies them by economic intent to detect
+                                "Maintenance Tax."
+                            </p>
+                            <div class="bg-black border border-white/10 rounded-2xl p-2 shadow-2xl">
+                                <textarea id="pdi-input"
+                                    placeholder="e.g., Refactored login flow, Fixed CSS bug, Database migration, Q4 Board Deck prep..."
+                                    class="w-full h-48 bg-transparent p-6 text-zinc-300 font-mono text-sm focus:outline-none placeholder:text-zinc-700 resize-none"></textarea>
+                                <button onclick="calculatePDI()"
+                                    class="w-full py-4 bg-white text-black font-bold uppercase tracking-widest text-xs hover:bg-danger hover:text-white transition-all rounded-xl mt-2">
+                                    Generate PDI Score
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="pdi-result-box"
+                            class="hidden flex flex-col justify-between p-8 border border-white/10 bg-black/60 rounded-2xl backdrop-blur-md">
+                            <div>
+                                <div class="text-[10px] font-mono text-zinc-500 uppercase mb-2">Index Score</div>
+                                <div class="flex items-baseline gap-4 mb-6">
+                                    <div id="pdi-score" class="text-7xl font-bold text-white tracking-tighter">--</div>
+                                    <div id="pdi-label" class="text-xs font-mono uppercase tracking-widest text-danger">
+                                        --</div>
+                                </div>
+                                <div class="space-y-4 mb-8 border-t border-white/10 pt-6">
+                                    <div class="flex justify-between">
+                                        <span class="text-[10px] font-mono text-zinc-500 uppercase">Maintenance
+                                            Tax</span>
+                                        <span id="pdi-tax" class="text-xs font-mono text-white">--%</span>
+                                    </div>
+                                    <div id="pdi-verdict"
+                                        class="text-xs text-zinc-300 italic leading-relaxed font-mono"></div>
+                                </div>
+                            </div>
+                            <a href="/03-advisory.html"
+                                class="block w-full text-center bg-danger text-white font-bold uppercase text-[10px] py-4 rounded tracking-widest hover:bg-white hover:text-black transition-all">
+                                Review Results with The Principal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="qpep" class="mb-32 border-t border-white/5 pt-20">
+                <div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-8">
+                    <div class="text-4xl font-mono text-zinc-700 font-bold">02</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-6">Q-PEP™ Protocol</h2>
+                        <p class="font-mono text-xs text-cobalt tracking-widest uppercase mb-8">//
+                            QUALITATIVE-PROFITABILITY EFFICIENCY PROTOCOL</p>
+
+                        <p class="text-zinc-400 mb-8 text-lg">
+                            The framework for turnaround. Once leakage is identified (APER), Q-PEP is the surgery. It
+                            restructures the "Product Org" into an "Investment Portfolio."
+                        </p>
+
+                        <ul class="space-y-4 mb-8 font-mono text-xs tracking-wide text-zinc-300">
+                            <li class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-cobalt rounded-full"></span>
+                                PHASE 1: Kill the "Maybe" Features (Inventory Flush)
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-cobalt rounded-full"></span>
+                                PHASE 2: CapEx vs. OpEx Re-Classification
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-cobalt rounded-full"></span>
+                                PHASE 3: The "Win Locker" Implementation
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
         </main>
     </div>
     <script src="/assets/js/scripts.js"></script>
+    <script>
+        // Inline script for calculators
+        function calcMargin() {
+            const rev = parseFloat(document.getElementById('margin-rev').value) || 0;
+            const cogs = parseFloat(document.getElementById('margin-cogs').value) || 0;
+            const ppl = parseFloat(document.getElementById('margin-ppl').value) || 0;
+
+            if (rev > 0) {
+                const trueMargin = ((rev - (cogs + ppl)) / rev) * 100;
+                const resultEl = document.getElementById('margin-result');
+                resultEl.innerText = trueMargin.toFixed(1) + '%';
+                if (trueMargin < 60) {
+                    resultEl.classList.add('text-danger');
+                    resultEl.classList.remove('text-cyan');
+                } else {
+                    resultEl.classList.add('text-cyan');
+                    resultEl.classList.remove('text-danger');
+                }
+            }
+        }
+        document.querySelectorAll('#margin-rev, #margin-cogs, #margin-ppl').forEach(i => i.addEventListener('input', calcMargin));
+
+        function calculatePDI() {
+            const input = document.getElementById('pdi-input').value.toLowerCase();
+            if (!input) return;
+            const maintKw = /fix|bug|refactor|update|maintenance|css|polish|cleanup|patch|migration/g;
+            const revKw = /new|enterprise|tier|upsell|revenue|client|sale|launch/g;
+
+            const maintCount = (input.match(maintKw) || []).length;
+            const revCount = (input.match(revKw) || []).length;
+            const total = maintCount + revCount || 1;
+
+            const pdi = Math.round((revCount / total) * 100);
+            const tax = Math.round((maintCount / total) * 100);
+
+            const box = document.getElementById('pdi-result-box');
+            box.classList.remove('hidden');
+            document.getElementById('pdi-score').innerText = pdi;
+            document.getElementById('pdi-tax').innerText = tax + "%";
+
+            const labelEl = document.getElementById('pdi-label');
+            const verdictEl = document.getElementById('pdi-verdict');
+
+            if (pdi < 40) {
+                labelEl.innerText = "CAPITAL DESTRUCTIVE";
+                labelEl.className = "text-xs font-mono uppercase tracking-widest text-danger";
+                verdictEl.innerText = "Critical misallocation detected. " + tax + "% of spend is 'Maintenance Tax'.";
+            } else {
+                labelEl.innerText = "STRATEGIC ASSET";
+                labelEl.className = "text-xs font-mono uppercase tracking-widest text-cyan";
+                verdictEl.innerText = "Top quartile efficiency.";
+            }
+        }
+    </script>
 </body>
 
 </html>

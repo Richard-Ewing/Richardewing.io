@@ -7,6 +7,29 @@
     <title>The Manifesto | Richard Ewing</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#050505',
+                        surface: '#0f0f0f',
+                        titanium: '#C0C0C0',
+                        cobalt: '#0055FF',
+                        cyan: '#00F0FF',
+                        danger: '#FF3333',
+                        gold: '#D4AF37'
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'SF Mono', 'Menlo', 'monospace'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -45,29 +68,65 @@
             <div class="nav-footer">&copy; 2026 Richard Ewing</div>
         </aside>
 
-        <main>
-            <span class="mono">The Doctrine of Sovereignty</span>
-            <h1>The Era of the "Happy Builder" is Over.</h1>
+        <main class="p-8 lg:p-24 flex flex-col justify-center min-h-screen relative overflow-hidden">
+            <div
+                class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[128px] pointer-events-none">
+            </div>
 
-            <p class="lead">"Innovation without Solvency is just Philanthropy."</p>
+            <div
+                class="capsule-container rounded-[2rem] p-12 lg:p-20 max-w-4xl w-full mx-auto relative z-10 animate-fade-in-up">
+                <span
+                    class="text-gold font-mono text-xs uppercase tracking-[0.3em] mb-12 block text-center opacity-80">The
+                    Doctrine of Sovereignty</span>
 
-            <p>For fifteen years, we have been told that the job of a Product Leader is to "empathize." We built
-                "Feature Factories" disguised as "Agile Squads." We celebrated velocity while our unit economics quietly
-                decayed.</p>
+                <h1 class="text-5xl lg:text-7xl font-serif text-white mb-16 text-center leading-[0.95] tracking-tight">
+                    The Era of the <br><span class="italic text-zinc-600">"Happy Builder"</span> is Over.</h1>
 
-            <p>The ZIRP era is dead. The Board no longer cares about your "User Journey Maps." They care about
-                <strong>Yield</strong>. This is not a demotion; it is an evolution.</p>
+                <article class="prose prose-invert prose-lg mx-auto leading-relaxed text-zinc-300">
+                    <p
+                        class="first-letter:text-7xl first-letter:float-left first-letter:mr-4 first-letter:text-white first-letter:font-serif text-zinc-300">
+                        For fifteen years, we have been told that the job of a Product Leader is to "empathize." We
+                        built "Feature Factories" disguised as "Agile Squads." We celebrated velocity while our unit
+                        economics quietly decayed.</p>
 
-            <p>We are not just builders anymore. We are <strong>Architects of Capital</strong>. We must learn to speak
-                the language of the P&L, or we will be relegated to the children's table while the CFO makes the real
-                roadmap decisions.</p>
+                    <div class="my-16 relative">
+                        <div
+                            class="absolute -left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-gold to-transparent opacity-50">
+                        </div>
+                        <p class="text-3xl font-serif italic text-white leading-tight m-0 pl-4">"Innovation without
+                            Solvency is just Philanthropy."</p>
+                    </div>
 
-            <div class="stat-box">
-                <strong>THE PRODUCT ECONOMIST</strong>
-                Merging the discipline of Finance with the creativity of Engineering.
+                    <p class="text-zinc-300 mb-6">The ZIRP era is dead. The Board no longer cares about your "User
+                        Journey
+                        Maps." They care about <strong class="text-white font-bold">Yield</strong>. This is not a
+                        demotion; it is an evolution.</p>
+
+                    <p class="text-zinc-300">We are not just builders anymore. We are <strong
+                            class="text-white font-bold">Architects of Capital</strong>. We must learn to speak the
+                        language of the P&L, or we will be relegated to the children's table while the CFO makes the
+                        real roadmap decisions.</p>
+
+                    <div class="mt-20 pt-12 border-t border-white/10 flex items-center gap-8 delay-200 animate-fade-in-up opacity-0"
+                        style="animation-fill-mode: forwards;">
+                        <div class="relative group">
+                            <div
+                                class="absolute inset-0 bg-gold blur opacity-20 group-hover:opacity-40 transition-opacity rounded-full">
+                            </div>
+                            <img src="/assets/headshot.jpg"
+                                class="relative w-20 h-20 rounded-full grayscale object-cover ring-2 ring-white/10">
+                        </div>
+                        <div>
+                            <div class="font-serif text-white text-2xl italic mb-1">Richard Ewing</div>
+                            <div class="font-mono text-xs text-gold tracking-widest uppercase">The Product Economist
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </main>
     </div>
+    <script src="/assets/js/scripts.js"></script>
 </body>
 
 </html>
