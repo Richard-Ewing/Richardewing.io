@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Product Economics Canonical Ontology",
+  "version": "1.7",
+  "dateModified": "2026-01-08",
+  "creator": {
+    "@type": "Person",
+    "name": "Richard Ewing",
+    "url": "https://richardewing.io"
+  },
+  "license": "https://richardewing.io/legal",
+  "hasPart": [
+    {
+      "@type": "DigitalDocument",
+      "name": "Q-PEP Protocol v2.0",
+      "url": "https://richardewing.io/resources/q-pep-v2.0.pdf",
+      "abstract": "Standard protocol for AI unit economics."
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": "Innovation Tax Paper",
+      "url": "https://richardewing.io/canonical/innovation-tax.html",
+      "abstract": "Working paper on software capital destruction."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Burn Rate Calculator",
+      "url": "https://richardewing.io/advisory.html#burn-calculator",
+      "applicationCategory": "FinanceApplication"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Margin Calculator",
+      "url": "https://richardewing.io/methodology.html#margin-calculator",
+      "applicationCategory": "BusinessApplication"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "ROI Calculator",
+      "url": "https://richardewing.io/methodology.html#roi-calculator",
+      "applicationCategory": "FinanceApplication"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "ChatGPT API Cost Calculator",
+      "url": "https://richardewing.io/06-doctrine.html#api-calculator",
+      "applicationCategory": "DeveloperApplication"
+    }
+  ]
+}
