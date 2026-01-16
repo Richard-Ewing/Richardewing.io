@@ -15,10 +15,14 @@
   --mono: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Courier New', monospace;
   --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  /* Fluid Spacing */
-  --space-sm: clamp(1rem, 2vw, 1.5rem);
-  --space-md: clamp(2rem, 4vw, 3rem);
-  --space-lg: clamp(4rem, 8vw, 6rem);
+  /* Fluid Spacing - TIghtened */
+  --space-sm: clamp(0.75rem, 1.5vw, 1rem);
+  --space-md: clamp(1.5rem, 3vw, 2rem);
+  --space-lg: clamp(2.5rem, 5vw, 4rem);
+}
+
+.hidden {
+  display: none !important;
 }
 
 * {
@@ -248,39 +252,55 @@ p {
 }
 
 /* BUTTONS */
+/* BUTTONS */
 .btn {
   display: inline-flex;
-  padding: 1.2rem 2.5rem;
-  background: #E5E5E5;
+  padding: 1rem 2.5rem;
+  background: #fff;
   color: #000;
   font-weight: 800;
   text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  border: 1px solid #E5E5E5;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  border: 1px solid #fff;
   cursor: pointer;
   margin-right: 1.5rem;
   margin-top: 1rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  border-radius: 4px;
+  border-radius: 8px;
+  text-decoration: none;
 }
 
 .btn:hover {
-  background: #fff;
+  background: var(--cobalt);
+  color: #fff;
+  border-color: var(--cobalt);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 85, 255, 0.4);
 }
 
 .btn-outline {
+  display: inline-flex;
+  padding: 1rem 2.5rem;
   background: transparent;
   color: #fff;
-  border: 1px solid var(--border);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 8px;
+  text-decoration: none;
 }
 
 .btn-outline:hover {
   border-color: #fff;
-  color: #fff;
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+  color: #000;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
 /* CARDS & GRID */
@@ -420,5 +440,3 @@ textarea:focus {
   min-width: 200px;
   /* Prevent layout shift */
 }
-
-
