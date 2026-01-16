@@ -440,3 +440,41 @@ textarea:focus {
   min-width: 200px;
   /* Prevent layout shift */
 }
+
+/* STAT CARDS / SOCIAL PROOF */
+.stat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--cobalt);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(0, 85, 255, 0.2);
+}
+
+.stat-value {
+  font-family: var(--mono);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--titanium);
+  margin-bottom: 1rem;
+  display: block;
+}
