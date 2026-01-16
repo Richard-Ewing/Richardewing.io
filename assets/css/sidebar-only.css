@@ -1,0 +1,148 @@
+/* 
+   SIDEBAR-ONLY.CSS
+   Purpose: Provides "Titanium" Sidebar styling WITHOUT affecting the main content area.
+   This allows Tailwind CSS to have full control over the layout of the legacy pages.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    --sidebar-bg: rgba(0, 0, 0, 0.95);
+    --sidebar-border: rgba(255, 255, 255, 0.05);
+    --sidebar-width: 320px;
+    --highlight: #C0C0C0;
+    --danger: #FF3333;
+    --mono: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Courier New', monospace;
+    --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Base reset ONLY for layout container, not global */
+body {
+    margin: 0;
+    padding: 0;
+    background: #050505;
+    /* Fallback */
+    font-family: var(--sans);
+    /* Default font, Tailwind will override in main */
+}
+
+/* LAYOUT CONTAINER */
+/* We use a flex container for the sidebar + main content structure */
+.layout-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* SIDEBAR - TITANIUM STANDARD */
+aside {
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    padding: 2.5rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    z-index: 50;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.brand {
+    margin-bottom: 2rem;
+}
+
+.brand h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+    font-family: var(--sans);
+}
+
+.nav-headshot {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin-bottom: 1.5rem;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.nav-headshot:hover {
+    filter: grayscale(0%);
+    border-color: var(--highlight);
+}
+
+.nav-group {
+    margin-bottom: 2.5rem;
+}
+
+.nav-header {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 0.75rem;
+    margin-left: 0.75rem;
+}
+
+nav a {
+    display: block;
+    color: #888;
+    padding: 0.4rem 0.75rem;
+    border-left: 1px solid transparent;
+    transition: all 0.2s;
+    font-size: 0.8rem;
+    text-decoration: none;
+    font-family: var(--sans);
+}
+
+nav a:hover {
+    color: #fff;
+    border-left-color: #fff;
+    padding-left: 1rem;
+}
+
+.active-red {
+    color: #fff !important;
+    font-weight: 700;
+    border-left: 2px solid var(--danger) !important;
+    background: rgba(255, 51, 51, 0.05);
+}
+
+.nav-footer {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: #444;
+}
+
+/* MOBILE RESPONSIVE for SIDEBAR */
+@media (max-width: 1024px) {
+    .layout-wrapper {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--sidebar-border);
+        border-right: none;
+    }
+
+    .nav-headshot {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+}
