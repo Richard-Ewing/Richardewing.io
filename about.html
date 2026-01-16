@@ -2,98 +2,204 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Principal | Richard Ewing</title>
+    <title>About Me | Richard Ewing</title>
+    <link rel="canonical" href="https://richardewing.io/02-principal.html" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { obsidian: '#050505', surface: '#0f0f0f', titanium: '#C0C0C0', cobalt: '#0055FF', cyan: '#00F0FF' }, fontFamily: { mono: ['SF Mono', 'Menlo', 'monospace'], sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <script src="/assets/js/scripts.js" defer></script>
 </head>
 
-<body>
-    <div class="container">
-        <aside>
+<body class="overflow-x-hidden bg-obsidian text-gray-300 font-sans antialiased bg-[url('/assets/images/noise.png')]">
+    <div class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
+        <aside
+            class="bg-black/95 backdrop-blur-xl border-r border-white/5 p-8 lg:p-10 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between z-50">
             <div>
-                <div class="brand">
-                    <img src="/assets/headshot.jpg" class="nav-headshot" alt="Richard Ewing">
-                    <h3>RICHARD EWING</h3>
-                    <span class="mono">PRODUCT ECONOMIST</span>
-                </div>
-                <nav>
-                    <div class="nav-group">
-                        <span class="nav-header">IDENTITY</span>
-                        <a href="/index.html">Home</a>
-                        <a href="/manifesto.html">01. Manifesto</a>
-                        <a href="/about.html">02. The Principal</a>
-                    </div>
-                    <div class="nav-group">
-                        <span class="nav-header">INTERVENTION</span>
-                        <a href="/advisory.html" class="active-red">03. ADVISORY</a>
-                    </div>
-                    <div class="nav-group">
-                        <span class="nav-header">INTELLIGENCE</span>
-                        <a href="/system.html">04. System</a>
-                        <a href="/doctrine.html">05. Doctrine</a>
-                    </div>
-                    <div class="nav-group">
-                        <span class="nav-header">SIGNAL</span>
-                        <a href="/briefings.html">06. Briefs</a>
-                        <a href="/book.html">07. Book</a>
-                        <a href="/legal.html">08. Legal</a>
-                    </div>
-                </nav>
+                <h3 class="text-white font-bold tracking-tight text-xl">RICHARD EWING</h3>
+                <span class="font-mono text-xs text-titanium tracking-widest block mt-1">PRODUCT ECONOMIST</span>
             </div>
-            <div class="nav-footer">&copy; 2026 Richard Ewing</div>
+            <nav class="space-y-8 mt-10">
+                <div>
+                    <div class="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Identity</div>
+                    <div class="space-y-1">
+                        <a href="index.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">Home</a>
+                        <a href="01-manifesto.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">01.
+                            Manifesto</a>
+                        <a href="02-principal.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">02.
+                            The Principal</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-[9px] font-mono text-danger uppercase mb-3 ml-3 tracking-widest">Intervention</div>
+                    <a href="03-advisory.html"
+                        class="block text-white font-bold text-xs py-3 px-3 border-l-2 border-danger bg-danger/5 hover:bg-danger/10 transition-all">03.
+                        ADVISORY</a>
+                </div>
+                <div>
+                    <div class="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Intelligence
+                    </div>
+                    <div class="space-y-1">
+                        <a href="05-system.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">04.
+                            System</a>
+                        <a href="06-doctrine.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">05.
+                            Doctrine</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Signal</div>
+                    <div class="space-y-1">
+                        <a href="07-briefs.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">06.
+                            Briefs</a>
+                        <a href="book.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">07.
+                            Book</a>
+                        <a href="legal.html"
+                            class="block text-zinc-400 hover:text-white text-xs py-1.5 px-3 border-l border-transparent hover:border-white transition-all">08.
+                            Legal</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">&copy; 2026 Richard Ewing</div>
         </aside>
 
-        <main>
-            <div class="capsule-container blur-in">
-                <span class="mono">The Principal</span>
-                <h1>Richard Ewing</h1>
+        <main class="p-8 lg:p-24 flex flex-col justify-center min-h-screen relative overflow-hidden">
+            <div
+                class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-cobalt/5 rounded-full blur-[128px] pointer-events-none">
+            </div>
 
-                <div style="display:flex; gap:2rem; align-items:flex-start; margin-bottom:3rem;">
-                    <div>
-                        <p class="lead">I sit at the uncomfortable table where Finance demands certainty and Engineering
-                            demands freedom.</p>
+            <div
+                class="capsule-container rounded-[2rem] p-12 w-full mb-8 animate-fade-in-up flex flex-col lg:flex-row gap-12 items-center">
+                <div class="relative flex-shrink-0">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-cobalt to-cyan blur-2xl opacity-20 rounded-full">
                     </div>
+                    <img src="/assets/images/headshot.jpg"
+                        class="relative w-48 h-48 rounded-full border-4 border-obsidian shadow-2xl grayscale hover:grayscale-0 transition duration-700">
                 </div>
-
-                <div class="stat-box">
-                    <strong>THE OPERATING THESIS</strong>
-                    "You cannot govern a roadmap if you do not own the budget. Innovation without operation is
-                    hallucination."
+                <div>
+                    <span class="font-mono text-cobalt text-xs uppercase tracking-widest mb-4 block">The
+                        Principal</span>
+                    <h1 class="text-4xl lg:text-5xl font-bold text-white mb-6">The Office of the <br><span
+                            class="text-white">Product Economist.</span></h1>
+                    <p class="text-xl text-zinc-400 max-w-2xl leading-relaxed">
+                        Product Management is not an art form; it is <strong>Capital Allocation</strong>.
+                        <br><br>
+                        Richard Ewing is the Principal of Product Economics Consulting. He bridges the gap between
+                        "Agile Theater" and the financial reality of the C-Suite, helping operators transition from
+                        Ticket Managers to P&L Owners.
+                    </p>
                 </div>
+            </div>
 
-                <h2>The Career Arc</h2>
-                <p>I did not start as a theorist. I am an operator who has fixed broken machines at every level of the
-                    enterprise.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in-up delay-100">
+                <div class="capsule-container p-8 rounded-3xl backdrop-blur-md">
+                    <div class="font-mono text-zinc-500 text-[10px] uppercase tracking-widest mb-2">Track Record</div>
+                    <div class="text-4xl font-bold text-white mb-1">$2B+</div>
+                    <div class="text-sm text-zinc-400">Market Cap Created</div>
+                </div>
+                <div class="capsule-container p-8 rounded-3xl backdrop-blur-md">
+                    <div class="font-mono text-zinc-500 text-[10px] uppercase tracking-widest mb-2">Experience</div>
+                    <div class="text-4xl font-bold text-white mb-1">15y</div>
+                    <div class="text-sm text-zinc-400">Product & Engineering</div>
+                </div>
+                <div class="capsule-container p-8 rounded-3xl backdrop-blur-md">
+                    <div class="font-mono text-zinc-500 text-[10px] uppercase tracking-widest mb-2">Specialty</div>
+                    <div class="text-4xl font-bold text-white mb-1">B2B</div>
+                    <div class="text-sm text-zinc-400">Enterprise SaaS</div>
+                </div>
+                <div class="capsule-container p-8 rounded-3xl backdrop-blur-md">
+                    <div class="font-mono text-zinc-500 text-[10px] uppercase tracking-widest mb-2">Focus</div>
+                    <div class="text-4xl font-bold text-white mb-1">ROI</div>
+                    <div class="text-sm text-zinc-400">Capital Efficiency</div>
+                </div>
+            </div>
 
-                <h3>Phase 1: The Operator (Director of Operations)</h3>
-                <p>Before I led Product, I led P&Ls. As a Director of Operations and Chief of Staff for a mid-market
-                    firm, I didn't just ship features—I owned the bottom line. I inherited a stagnant P&L and fractured
-                    silos. By instituting operational rigor and consolidating disjointed teams, I drove <strong>200%
-                        year-over-year growth to $20M</strong>.</p>
+            <div class="mt-8 capsule-container p-12 rounded-[2rem] animate-fade-in-up delay-200">
+                <h3 class="text-white font-bold mb-8 flex items-center gap-3">
+                    <span class="w-1 h-6 bg-cobalt rounded-full"></span>
+                    Career Arc
+                </h3>
+                <div class="space-y-12 border-l border-zinc-800 ml-3 pl-8 relative">
 
-                <h3>Phase 2: The Scaler (Director of Product)</h3>
-                <p>I transitioned to product leadership with a mandate to fix "broken velocity." At a major enterprise
-                    firm, I inherited a paralyzing 200-item backlog and a team shipping nothing. I installed a
-                    <strong>"Quantified Prioritization System"</strong> that doubled output and slashed a $5M
-                    operational cost via a complex Azure cloud migration.</p>
-                <p>In the public sector, I managed critical infrastructure for <strong>7.7 million users</strong>,
-                    delivering a massive technology overhaul with 98% on-time delivery in a zero-fail environment.</p>
+                    <!-- Role 1 -->
+                    <div class="relative group">
+                        <span
+                            class="absolute -left-[39px] top-2 w-3 h-3 bg-cobalt rounded-full ring-4 ring-obsidian group-hover:scale-125 transition duration-300"></span>
+                        <h4 class="text-white font-bold text-lg">Director of Product Operations</h4>
+                        <span class="font-mono text-xs text-zinc-500 mb-2 block">2025 - Present â€¢ High-Growth AI
+                            Startup</span>
+                        <p class="text-zinc-400 text-sm max-w-2xl leading-relaxed">
+                            Established the Product Management function from scratch. Pivoted strategy to an AI-centric
+                            platform and successfully delivered an MVP conversational agent, driving radical efficiency
+                            across Finance & Ops.
+                        </p>
+                    </div>
 
-                <h3>Phase 3: The Board Advisor (Product Economist)</h3>
-                <p>Today, I serve on Advisory Boards and function as a Fractional Executive. I bridged the gap between
-                    code and capital for "Entrepreneurs of Tomorrow" and act as a Contributing Expert for Foundry.</p>
+                    <!-- Role 2 -->
+                    <div class="relative group">
+                        <span
+                            class="absolute -left-[39px] top-2 w-3 h-3 bg-zinc-800 rounded-full ring-4 ring-obsidian group-hover:bg-white transition duration-300"></span>
+                        <h4 class="text-zinc-300 font-bold text-lg">Group Product Manager</h4>
+                        <span class="font-mono text-xs text-zinc-500 mb-2 block">2022 - 2024 â€¢ Top 10 Consulting
+                            Firm</span>
+                        <p class="text-zinc-400 text-sm max-w-2xl leading-relaxed">
+                            Led a strategic On-Prem to Azure migration, securing a <strong>$5M cost reduction</strong>.
+                            Operationalized a 16-person org, doubling development velocity and clearing a 200-item
+                            backlog.
+                        </p>
+                    </div>
 
-                <div style="margin-top:4rem;">
-                    <a href="/advisory.html" class="btn">View Advisory Options</a>
-                    <a href="https://www.linkedin.com/in/richard-ewing-mba/" class="btn btn-outline"
-                        target="_blank">LinkedIn Profile</a>
+                    <!-- Role 3 -->
+                    <div class="relative group">
+                        <span
+                            class="absolute -left-[39px] top-2 w-3 h-3 bg-zinc-800 rounded-full ring-4 ring-obsidian group-hover:bg-white transition duration-300"></span>
+                        <h4 class="text-zinc-300 font-bold text-lg">Product Manager</h4>
+                        <span class="font-mono text-xs text-zinc-500 mb-2 block">2021 - 2022 â€¢ Public Sector</span>
+                        <p class="text-zinc-400 text-sm max-w-2xl leading-relaxed">
+                            Managed critical services for <strong>7.7M users</strong>. Achieved 98% on-time delivery for
+                            a massive tech overhaul throughout a high-risk cloud migration.
+                        </p>
+                    </div>
+
+                    <!-- Role 4 -->
+                    <div class="relative group">
+                        <span
+                            class="absolute -left-[39px] top-2 w-3 h-3 bg-zinc-800 rounded-full ring-4 ring-obsidian group-hover:bg-white transition duration-300"></span>
+                        <h4 class="text-zinc-300 font-bold text-lg">Director of Operations</h4>
+                        <span class="font-mono text-xs text-zinc-500 mb-2 block">2014 - 2017 â€¢ Design &
+                            Manufacturing</span>
+                        <p class="text-zinc-400 text-sm max-w-2xl leading-relaxed">
+                            Turnaround Executive role. Drove <strong>200% YoY growth</strong> to $20M revenue by
+                            restructuring the P&L and installing high-speed delivery protocols.
+                        </p>
+                    </div>
+
+                    <!-- Role 5 -->
+                    <div class="relative group">
+                        <span
+                            class="absolute -left-[39px] top-2 w-3 h-3 bg-zinc-800 rounded-full ring-4 ring-obsidian group-hover:bg-white transition duration-300"></span>
+                        <h4 class="text-zinc-300 font-bold text-lg">Principal Product Manager</h4>
+                        <span class="font-mono text-xs text-zinc-500 mb-2 block">2008 - 2014 â€¢ Enterprise ERP
+                            SaaS</span>
+                        <p class="text-zinc-400 text-sm max-w-2xl leading-relaxed">
+                            Owned the 0-to-1 lifecycle, scaling a flagship SaaS product to <strong>$25M ARR</strong>.
+                            Slashed churn by 20% through a strategic GTM pivot.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </main>
     </div>
-    <script src="/assets/js/scripts.js"></script>
 </body>
 
 </html>

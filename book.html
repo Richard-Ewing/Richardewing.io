@@ -3,65 +3,53 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Book | Richard Ewing</title>
+    <title>The Product Economist - Book</title>
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
 </head>
 
 <body>
     <div class="container">
         <aside>
-            <div>
-                <div class="brand">
-                    <img src="/assets/headshot.jpg" class="nav-headshot" alt="Richard Ewing">
-                    <h3>RICHARD EWING</h3>
-                    <span class="mono">PRODUCT ECONOMIST</span>
-                </div>
-                <nav>
-                    <div class="nav-group">
-                        <span class="nav-header">IDENTITY</span>
-                        <a href="/index.html">Home</a>
-                        <a href="/manifesto.html">01. Manifesto</a>
-                        <a href="/about.html">02. The Principal</a>
-                    </div>
-                    <div class="nav-group">
-                        <span class="nav-header">INTERVENTION</span>
-                        <a href="/advisory.html" class="active-red">03. ADVISORY</a>
-                    </div>
-                    <div class="nav-group">
-                        <span class="nav-header">INTELLIGENCE</span>
-                        <a href="/system.html">04. System</a>
-                        <a href="/doctrine.html">05. Doctrine</a>
-                    </div>
-                    <div class="nav-group">
-                        <span class="nav-header">SIGNAL</span>
-                        <a href="/briefings.html">06. Briefs</a>
-                        <a href="/book.html">07. Book</a>
-                        <a href="/legal.html">08. Legal</a>
-                    </div>
-                </nav>
-            </div>
-            <div class="nav-footer">&copy; 2026 Richard Ewing</div>
+            <div style="font-weight:bold; color:#fff; margin-bottom: 2rem;">RICHARD EWING</div>
+            <a href="/about.html" style="display:block; margin-bottom:1rem; color:var(--text);">01. ABOUT ME</a>
+            <a href="/advisory.html" style="display:block; margin-bottom:1rem; color:var(--text);">02. ADVISORY</a>
+            <a href="/briefings.html" style="display:block; margin-bottom:1rem; color:var(--text);">03. BOARD BRIEFS</a>
+            <a href="/articles.html" style="display:block; margin-bottom:1rem; color:var(--text);">04. ARTICLES</a>
+            <a href="/book.html" style="display:block; margin-bottom:1rem; color:var(--text);">05. THE BOOK</a>
         </aside>
-
         <main>
-            <div class="capsule-container blur-in">
-                <span class="mono">Upcoming Work</span>
-                <h1>The Product Economist</h1>
-                <p class="lead">Financial Fluency, AI Unit Economics, and Capital Allocation for Aspiring Executives.
-                </p>
+            <span class="mono">Upcoming Work</span>
+            <h1>The Product Economist</h1>
+            <p class="lead">Financial Fluency, AI Unit Economics, and Capital Allocation for Aspiring Executives.</p>
+
+            <div style="background:#111; padding:3rem; border:1px solid #333; margin-bottom:4rem;">
+                <h3>The Premise</h3>
+                <p>In every tech company, there is a "Senior Ceiling." High-performing leaders in Engineering and
+                    Product hit a wall. They are elite at shipping code, but illiterate in Capital Allocation.</p>
+                <p>They view themselves as "builders," while their CEOs view them as "cost centers."</p>
+                <p><strong>This book is the manual for crossing that chasm.</strong> It argues that the language of the
+                    C-Suite is not Python, Jira, or Figma—it is Finance.</p>
 
                 <div class="stat-box">
-                    <h3>The Premise</h3>
-                    <p>In every tech company, there is a "Senior Ceiling." High-performing leaders in Engineering and
-                        Product hit a wall. They are elite at shipping code, but illiterate in Capital Allocation.</p>
-                    <p><strong>This book is the manual for crossing that chasm.</strong></p>
+                    <strong>KEY CONCEPTS</strong>
+                    • The Specialization Trap: Why you were trained to ignore money.<br>
+                    • Financial Conway's Law: Architecture mirrors funding models.<br>
+                    • The AI Tax: Modeling the unit economics of GenAI.
                 </div>
+
+                <form name="book-waitlist" method="POST" data-netlify="true" style="margin-top:2rem;">
+                    <input type="hidden" name="form-name" value="book-waitlist" />
+                    <p class="hidden"><label>Bot Field: <input name="bot-field" /></label></p>
+                    <label>Notify me when published</label>
+                    <div style="display:flex; gap:1rem;">
+                        <input type="email" name="email" placeholder="email@address.com" required
+                            style="margin-bottom:0;">
+                        <button type="submit" class="btn" style="margin:0;">Join Waitlist</button>
+                    </div>
+                </form>
             </div>
         </main>
     </div>
-    <script src="/assets/js/scripts.js"></script>
 </body>
 
 </html>
