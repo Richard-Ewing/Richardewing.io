@@ -1,22 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('SURVEILLANCE ENGINE: ACTIVE [v15.0]');
-    const trackEvent = (category, action, label) => {
-        if (typeof gtag !== 'undefined') gtag('event', action, { 'event_category': category, 'event_label': label });
-    };
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href && href.endsWith('.pdf')) trackEvent('PDF', 'Download', href.split('/').pop());
-            else if (link.innerText.includes('APER')) trackEvent('Conversion', 'APER_Click', href);
 
-            if (href === '#' || href === '') {
-                e.preventDefault();
-                const toast = document.createElement('div');
-                toast.innerText = 'ACCESS DENIED: CLEARANCE REQUIRED';
-                toast.style.cssText = `position: fixed; bottom: 20px; right: 20px; background: #FF3333; color: white; padding: 12px 24px; font-family: monospace; font-weight: bold; border: 1px solid white; z-index: 9999;`;
-                document.body.appendChild(toast);
-                setTimeout(() => toast.remove(), 3000);
-            }
+    // --- 1. MOBILE MENU TOGGLE ---
+    const aside = document.querySelector('aside');
+    const nav = document.querySelector('nav');
+
+    // Create HAMBURGER button dynamically if it doesn't exist
+    if (window.innerWidth <= 1024) {
+        const toggleBtn = document.createElement('button');
+        toggleBtn.innerHTML = '☰ MENU';
+        toggleBtn.style.cssText = `
+            background: transparent; 
+            border: 1px solid #333; 
+            color: #fff; 
+            padding: 0.5rem 1rem; 
+            font-family: var(--mono); 
+            font-size: 0.7rem; 
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+        `;
+
+        toggleBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            toggleBtn.innerHTML = nav.classList.contains('active') ? '✕ CLOSE' : '☰ MENU';
+        });
+
+        // Insert after brand
+        const brand = document.querySelector('.brand');
+        if (brand) brand.appendChild(toggleBtn);
+    }
+
+    // --- 2. WORD ROTATE EFFECT ---
+    const rotateElements = document.querySelectorAll('.word-rotate');
+    rotateElements.forEach(el => {
+        const words = JSON.parse(el.getAttribute('data-words') || '[]');
+        if (words.length === 0) return;
+
+        let index = 0;
+        setInterval(() => {
+            index = (index + 1) % words.length;
+            el.style.opacity = '0';
+            setTimeout(() => {
+                el.innerText = words[index];
+                el.style.opacity = '1';
+            }, 300);
+        }, 3000);
+    });
+
+    // --- 3. BORDER SHINE HOVER EFFECT ---
+    const cards = document.querySelectorAll('.card, .capsule-container');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
         });
     });
+
 });
