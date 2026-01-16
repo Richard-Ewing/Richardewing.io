@@ -21,7 +21,12 @@ Implemented custom CSS and JS animations to enhance visual fidelity.
 -   **Shine Border**: Applied to the "PDI Engine" container in `system.html`.
 -   **Border Beam**: Applied to the "Enterprise Value Calculator" in `advisory.html`.
 
-## 4. Code Quality & Lints
+## 4. Conversion Optimization & Fixes
+-   **System Page**: Fixed broken "Review Results with The Principal" link (was `03-advisory.html`, now `advisory.html`).
+-   **Canonical Pages**: Added a "Back to Advisory" button to all 20+ canonical paper viewer pages (e.g., `aper.html`, `financial-conways-law.html`) to create a clear conversion path after content consumption.
+-   **Layout Fixes**: Corrected sidebar navigation links in canonical pages to match the new global consistency standard.
+
+## 5. Code Quality & Lints
 Addressed persistent linting errors to improve accessibility and security.
 -   **Viewport**: Removed `maximum-scale=1.0` and `user-scalable=no` from all pages to improve mobile accessibility.
 -   **Security**: Added `rel="noopener noreferrer"` to all `target="_blank"` links.
