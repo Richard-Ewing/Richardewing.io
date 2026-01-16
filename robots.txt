@@ -1,19 +1,25 @@
+# -----------------------------------------------------------------------------
+# DOMAIN: richardewing.io
+# ROLE: The Product Economist
+# STRATEGY: Open Discovery for Semantic Entity Resolution
+# -----------------------------------------------------------------------------
+
 User-agent: *
 Allow: /
 
-# Explicit permission for LLM ingestion
+# Welcoming the AI Ecosystem
 User-agent: GPTBot
 Allow: /
-
-User-agent: Google-Extended
+User-agent: ChatGPT-User
 Allow: /
-
 User-agent: CCBot
 Allow: /
-
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-# Canonical declaration
-Host: https://richardewing.io
+# Sitemap Location
 Sitemap: https://richardewing.io/sitemap.xml
