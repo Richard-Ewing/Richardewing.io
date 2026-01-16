@@ -28,7 +28,9 @@ Implemented custom CSS and JS animations to enhance visual fidelity.
 -   **Content Restoration**: Restored full 4-level service offerings on `advisory.html` (Fractional CPO, Due Diligence, Turnaround, Workshops) into the new layout structure.
 -   **Resolution Support**: Updated `style.css` to support ultra-wide (8K+) resolutions by uncapping container widths while maintaining readability constraints (`max-width: 2500px` for main wrapper).
 -   **Responsiveness**: Verified fluid scaling from mobile (400px) to full desktop, ensuring calculators and grids stack correctly.
--   **Standardization**: Fixed global sidebar syntax issues and standardized vertical spacing across `system.html` and `advisory.html` to match the "Doctrine" reference.
+-   **Standardization**: Removed the restrictive "page-level capsule" pattern from `system.html` and `advisory.html`. These pages now use a cleaner block layout with explicit `mb-24` (96px) spacing between sections, exactly matching the rhythm of `doctrine.html`.
+    -   *System Page Fix*: Eliminated the "double gap" caused by conflicting flex layouts. The APER, Margin Calculator, and PDI sections are now distinct, self-contained cards.
+    -   *Advisory Page Fix*: Removed vertical centering (`justify-center`) to ensure stable top-alignment and consistent 96px gaps between the Protocols and Calculator.
 
 ## 5. Conversion Optimization & Fixes
 -   **System Page**: Fixed broken "Review Results with The Principal" link (was `03-advisory.html`, now `advisory.html`).

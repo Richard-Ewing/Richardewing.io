@@ -108,7 +108,7 @@
             <div class="font-mono text-[10px] text-zinc-600 mt-12 lg:mt-0">&copy; 2026 Richard Ewing</div>
         </aside>
 
-        <main class="p-8 lg:p-24 flex flex-col justify-start min-h-screen relative overflow-hidden gap-12">
+        <main class="p-8 lg:p-24 w-full relative overflow-hidden">
             <div class="mb-8 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
                 <a href="index.html" class="hover:text-white transition-colors">Home</a>
                 <span>/</span>
@@ -121,9 +121,8 @@
                 class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[128px] pointer-events-none">
             </div>
 
-            <div
-                class="capsule-container rounded-[2rem] p-8 lg:p-12 border border-white/10 bg-surface/50 backdrop-blur-md relative z-10 animate-fade-in-up">
-
+            <!-- Intro / APER Section -->
+            <div class="mb-24 animate-fade-in-up">
                 <header class="mb-16">
                     <div
                         class="inline-block bg-white/5 border border-white/10 px-4 py-2 text-xs font-mono uppercase tracking-widest mb-6 rounded-full text-cyan">
@@ -139,7 +138,7 @@
                     </p>
                 </header>
 
-                <section id="aper" class="mb-12 scroll-reveal">
+                <section id="aper" class="scroll-reveal">
                     <div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-8">
                         <div class="text-4xl font-mono text-zinc-700 font-bold">01</div>
                         <div>
@@ -178,235 +177,241 @@
                         </div>
                     </div>
                 </section>
-
-                <!-- Margin Calculator -->
-                <section id="margin-calculator" class="py-12 bg-black/40 border border-white/5 rounded-xl my-8">
-                    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Margin Calculator",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "offers": { "@type": "Offer", "price": "0" }
-      }
-      </script>
-
-                    <div class="px-8">
-                        <h2 class="text-3xl font-bold text-white mb-2">Margin Calculator</h2>
-                        <p class="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-8">// SAAS GROSS MARGINS
-                            (WITH R&D COSTS)</p>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                            <div>
-                                <label class="block text-[10px] font-mono text-zinc-400 uppercase mb-2">Total Revenue
-                                    ($)</label>
-                                <input type="number" id="margin-rev" placeholder="1000000"
-                                    class="w-full bg-black border border-white/20 rounded p-3 text-white font-mono focus:border-cyan outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] font-mono text-zinc-400 uppercase mb-2">Hosting/AWS
-                                    Costs
-                                    ($)</label>
-                                <input type="number" id="margin-cogs" placeholder="150000"
-                                    class="w-full bg-black border border-white/20 rounded p-3 text-white font-mono focus:border-cyan outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] font-mono text-danger uppercase mb-2">Support & Maint.
-                                    Salaries ($)</label>
-                                <input type="number" id="margin-ppl" placeholder="300000"
-                                    class="w-full bg-black border border-danger/50 rounded p-3 text-white font-mono focus:border-danger outline-none">
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-black p-6 rounded-lg border border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                            <div class="text-center md:text-left">
-                                <div class="text-xs font-mono text-zinc-500 uppercase">Gross Margin</div>
-                                <div class="text-4xl font-bold text-white" id="margin-result">--%</div>
-                            </div>
-                            <a id="margin-cta" href="/canonical/aper.html"
-                                class="hidden px-6 py-3 bg-danger text-white font-bold text-xs uppercase tracking-widest rounded hover:bg-red-600 transition-all">
-                                Fix Your Margins (Download APER) &rarr;
-                            </a>
-                        </div>
-                    </div>
-
-                    <script>
-                        function calcMargin() {
-                            const rev = parseFloat(document.getElementById('margin-rev').value) || 0;
-                            const cogs = parseFloat(document.getElementById('margin-cogs').value) || 0;
-                            const ppl = parseFloat(document.getElementById('margin-ppl').value) || 0;
-
-                            if (rev > 0) {
-                                const trueMargin = ((rev - (cogs + ppl)) / rev) * 100;
-                                const resultEl = document.getElementById('margin-result');
-                                const ctaEl = document.getElementById('margin-cta');
-
-                                resultEl.innerText = trueMargin.toFixed(1) + '%';
-
-                                if (trueMargin < 60) {
-                                    resultEl.classList.add('text-danger');
-                                    resultEl.classList.remove('text-cyan');
-                                    ctaEl.classList.remove('hidden');
-                                } else {
-                                    resultEl.classList.add('text-cyan');
-                                    resultEl.classList.remove('text-danger');
-                                    ctaEl.classList.add('hidden');
-                                }
-                            }
-                        }
-                        document.querySelectorAll('#margin-rev, #margin-cogs, #margin-ppl').forEach(i => i.addEventListener('input', calcMargin));
-                    </script>
-                </section>
-
-                <!-- PDI Engine -->
-                <section id="pdi-engine"
-                    class="py-12 border-t border-white/5 bg-zinc-900/20 rounded-3xl my-8 relative overflow-hidden shine-border scroll-reveal">
-                    <div class="px-8 md:px-12 relative z-10">
-                        <div
-                            class="inline-block bg-danger/10 border border-danger/30 px-3 py-1 rounded-full text-[10px] font-mono text-danger uppercase mb-6 tracking-widest">
-                            Diagnostic Standard: PDI-2026
-                        </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tighter">Product Debt Index™
-                        </h2>
-                        <p class="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-10">// QUANTIFYING
-                            CAPITAL
-                            MISALLOCATION</p>
-
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                            <div class="space-y-6">
-                                <p class="text-zinc-400 text-sm leading-relaxed font-mono">
-                                    Paste your recent backlog items. The engine classifies them by economic intent to
-                                    detect
-                                    "Maintenance Tax."
-                                </p>
-                                <div class="bg-black border border-white/10 rounded-2xl p-2 shadow-2xl">
-                                    <textarea id="pdi-input"
-                                        placeholder="e.g., Refactored login flow, Fixed CSS bug, Database migration, Q4 Board Deck prep..."
-                                        class="w-full h-48 bg-transparent p-6 text-zinc-300 font-mono text-sm focus:outline-none placeholder:text-zinc-700 resize-none"></textarea>
-                                    <button onclick="calculatePDI()"
-                                        class="w-full py-4 bg-white text-black font-bold uppercase tracking-widest text-xs hover:bg-danger hover:text-white transition-all rounded-xl mt-2">
-                                        Generate PDI Score
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div id="pdi-result-box"
-                                class="hidden flex flex-col justify-between p-8 border border-white/10 bg-black/60 rounded-2xl backdrop-blur-md">
-                                <div>
-                                    <div class="text-[10px] font-mono text-zinc-500 uppercase mb-2">Index Score</div>
-                                    <div class="flex items-baseline gap-4 mb-6">
-                                        <div id="pdi-score"
-                                            class="text-7xl font-bold text-white tracking-tighter number-ticker"
-                                            data-target="0">--
-                                        </div>
-                                        <div id="pdi-label"
-                                            class="text-xs font-mono uppercase tracking-widest text-danger">
-                                            --</div>
-                                    </div>
-                                    <div class="space-y-4 mb-8 border-t border-white/10 pt-6">
-                                        <div class="flex justify-between">
-                                            <span class="text-[10px] font-mono text-zinc-500 uppercase">Maintenance
-                                                Tax</span>
-                                            <span id="pdi-tax" class="text-xs font-mono text-white">--%</span>
-                                        </div>
-                                        <div id="pdi-verdict"
-                                            class="text-xs text-zinc-300 italic leading-relaxed font-mono"></div>
-                                    </div>
-                                </div>
-                                <a href="advisory.html"
-                                    class="block w-full text-center bg-danger text-white font-bold uppercase text-[10px] py-4 rounded tracking-widest hover:bg-white hover:text-black transition-all">
-                                    Review Results with The Principal
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <script>
-                        function calculatePDI() {
-                            const input = document.getElementById('pdi-input').value.toLowerCase();
-                            if (!input) return; // Don't do anything if empty
-
-                            // EXPANDED REGEX FOR ACCURACY
-                            const maintenanceKeywords = /fix|bug|refactor|update|maintenance|css|polish|cleanup|migration|debt|patch|compliance|security|infra|admin|meeting/g;
-                            const revenueKeywords = /new|enterprise|tier|upsell|revenue|client|sale|conversion|onboarding|market|launch|growth|feature|pricing/g;
-
-                            const maintCount = (input.match(maintenanceKeywords) || []).length;
-                            const revCount = (input.match(revenueKeywords) || []).length;
-
-                            // PREVENT DIVIDE BY ZERO
-                            const totalSignals = maintCount + revCount || 1;
-
-                            const pdi = Math.round((revCount / totalSignals) * 100);
-                            const tax = Math.round((maintCount / totalSignals) * 100);
-
-                            // UI REVEAL
-                            const box = document.getElementById('pdi-result-box');
-                            box.classList.remove('hidden');
-
-                            document.getElementById('pdi-score').innerText = pdi;
-                            document.getElementById('pdi-tax').innerText = tax + "%";
-
-                            const labelEl = document.getElementById('pdi-label');
-                            const verdictEl = document.getElementById('pdi-verdict');
-
-                            if (pdi < 40) {
-                                labelEl.innerText = "CAPITAL DESTRUCTIVE";
-                                labelEl.className = "text-xs font-mono uppercase tracking-widest text-danger";
-                                verdictEl.innerText = "Critical misallocation detected. " + tax + "% of spend is 'Maintenance Tax'. You are running a Feature Factory.";
-                            } else if (pdi < 65) {
-                                labelEl.innerText = "AT RISK";
-                                labelEl.className = "text-xs font-mono uppercase tracking-widest text-yellow-500";
-                                verdictEl.innerText = "Governance deteriorating. Maintenance Tax (" + tax + "%) is eroding strategic capacity.";
-                            } else {
-                                labelEl.innerText = "STRATEGIC ASSET";
-                                labelEl.className = "text-xs font-mono uppercase tracking-widest text-cyan";
-                                verdictEl.innerText = "Top quartile efficiency. Capital flowing to high-leverage outcomes.";
-                            }
-                        }
-                    </script>
-                </section>
-
-                <section id="qpep" class="mb-20 border-t border-white/5 pt-20">
-                    <div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-8">
-                        <div class="text-4xl font-mono text-zinc-700 font-bold">02</div>
-                        <div>
-                            <h2 class="text-3xl font-bold text-white mb-6">Q-PEP™ Protocol</h2>
-                            <p class="font-mono text-xs text-cobalt tracking-widest uppercase mb-8">//
-                                QUALITATIVE-PROFITABILITY EFFICIENCY PROTOCOL</p>
-
-                            <p class="text-zinc-400 mb-8 text-lg">
-                                The framework for turnaround. Once leakage is identified (APER), Q-PEP is the surgery.
-                                It
-                                restructures the "Product Org" into an "Investment Portfolio."
-                            </p>
-
-                            <ul class="space-y-4 mb-8 font-mono text-xs tracking-wide text-zinc-300">
-                                <li class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-cobalt rounded-full"></span>
-                                    PHASE 1: Kill the "Maybe" Features (Inventory Flush)
-                                </li>
-                                <li class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-cobalt rounded-full"></span>
-                                    PHASE 2: CapEx vs. OpEx Re-Classification
-                                </li>
-                                <li class="flex items-center gap-4">
-                                    <span class="w-2 h-2 bg-cobalt rounded-full"></span>
-                                    PHASE 3: The "Win Locker" Implementation
-                                </li>
-                            </ul>
-
-                            <a href="/canonical/q-pep.html"
-                                class="inline-flex items-center text-sm font-mono uppercase tracking-widest text-white hover:text-cobalt transition-colors border-b border-white/20 pb-1">
-                                View the Implementation Guide &rarr;
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
             </div>
 
+            <!-- Margin Calculator -->
+            <section id="margin-calculator"
+                class="mb-24 py-12 px-8 bg-black/40 border border-white/5 rounded-3xl relative overflow-hidden backdrop-blur-sm scroll-reveal">
+                <div class="absolute top-0 right-0 p-4 opacity-50">
+                    <svg class="w-8 h-8 text-zinc-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                </div>
+
+                <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Margin Calculator",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0" }
+  }
+  </script>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">Margin Calculator</h2>
+                    <p class="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-8">// SAAS GROSS MARGINS
+                        (WITH R&D COSTS)</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div>
+                            <label class="block text-[10px] font-mono text-zinc-400 uppercase mb-2">Total Revenue
+                                ($)</label>
+                            <input type="number" id="margin-rev" placeholder="1000000"
+                                class="w-full bg-black border border-white/20 rounded p-3 text-white font-mono focus:border-cyan outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-mono text-zinc-400 uppercase mb-2">Hosting/AWS
+                                Costs
+                                ($)</label>
+                            <input type="number" id="margin-cogs" placeholder="150000"
+                                class="w-full bg-black border border-white/20 rounded p-3 text-white font-mono focus:border-cyan outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-mono text-danger uppercase mb-2">Support & Maint.
+                                Salaries ($)</label>
+                            <input type="number" id="margin-ppl" placeholder="300000"
+                                class="w-full bg-black border border-danger/50 rounded p-3 text-white font-mono focus:border-danger outline-none">
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-black p-6 rounded-lg border border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div class="text-center md:text-left">
+                            <div class="text-xs font-mono text-zinc-500 uppercase">Gross Margin</div>
+                            <div class="text-4xl font-bold text-white output-ticker" id="margin-result">--%</div>
+                        </div>
+                        <a id="margin-cta" href="/canonical/aper.html"
+                            class="hidden px-6 py-3 bg-danger text-white font-bold text-xs uppercase tracking-widest rounded hover:bg-red-600 transition-all">
+                            Fix Your Margins (Download APER) &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <script>
+                    function calcMargin() {
+                        const rev = parseFloat(document.getElementById('margin-rev').value) || 0;
+                        const cogs = parseFloat(document.getElementById('margin-cogs').value) || 0;
+                        const ppl = parseFloat(document.getElementById('margin-ppl').value) || 0;
+
+                        if (rev > 0) {
+                            const trueMargin = ((rev - (cogs + ppl)) / rev) * 100;
+                            const resultEl = document.getElementById('margin-result');
+                            const ctaEl = document.getElementById('margin-cta');
+
+                            resultEl.innerText = trueMargin.toFixed(1) + '%';
+
+                            if (trueMargin < 60) {
+                                resultEl.classList.add('text-danger');
+                                resultEl.classList.remove('text-cyan');
+                                ctaEl.classList.remove('hidden');
+                            } else {
+                                resultEl.classList.add('text-cyan');
+                                resultEl.classList.remove('text-danger');
+                                ctaEl.classList.add('hidden');
+                            }
+                        }
+                    }
+                    document.querySelectorAll('#margin-rev, #margin-cogs, #margin-ppl').forEach(i => i.addEventListener('input', calcMargin));
+                </script>
+            </section>
+
+            <!-- PDI Engine -->
+            <section id="pdi-engine"
+                class="mb-24 py-12 px-8 border-t border-white/5 bg-zinc-900/20 rounded-3xl relative overflow-hidden shine-border scroll-reveal">
+                <div class="relative z-10">
+                    <div
+                        class="inline-block bg-danger/10 border border-danger/30 px-3 py-1 rounded-full text-[10px] font-mono text-danger uppercase mb-6 tracking-widest">
+                        Diagnostic Standard: PDI-2026
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tighter">Product Debt Index™
+                    </h2>
+                    <p class="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-10">// QUANTIFYING
+                        CAPITAL
+                        MISALLOCATION</p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div class="space-y-6">
+                            <p class="text-zinc-400 text-sm leading-relaxed font-mono">
+                                Paste your recent backlog items. The engine classifies them by economic intent to
+                                detect
+                                "Maintenance Tax."
+                            </p>
+                            <div class="bg-black border border-white/10 rounded-2xl p-2 shadow-2xl">
+                                <textarea id="pdi-input"
+                                    placeholder="e.g., Refactored login flow, Fixed CSS bug, Database migration, Q4 Board Deck prep..."
+                                    class="w-full h-48 bg-transparent p-6 text-zinc-300 font-mono text-sm focus:outline-none placeholder:text-zinc-700 resize-none"></textarea>
+                                <button onclick="calculatePDI()"
+                                    class="w-full py-4 bg-white text-black font-bold uppercase tracking-widest text-xs hover:bg-danger hover:text-white transition-all rounded-xl mt-2">
+                                    Generate PDI Score
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="pdi-result-box"
+                            class="hidden flex flex-col justify-between p-8 border border-white/10 bg-black/60 rounded-2xl backdrop-blur-md">
+                            <div>
+                                <div class="text-[10px] font-mono text-zinc-500 uppercase mb-2">Index Score</div>
+                                <div class="flex items-baseline gap-4 mb-6">
+                                    <div id="pdi-score"
+                                        class="text-7xl font-bold text-white tracking-tighter number-ticker"
+                                        data-target="0">--
+                                    </div>
+                                    <div id="pdi-label" class="text-xs font-mono uppercase tracking-widest text-danger">
+                                        --</div>
+                                </div>
+                                <div class="space-y-4 mb-8 border-t border-white/10 pt-6">
+                                    <div class="flex justify-between">
+                                        <span class="text-[10px] font-mono text-zinc-500 uppercase">Maintenance
+                                            Tax</span>
+                                        <span id="pdi-tax" class="text-xs font-mono text-white">--%</span>
+                                    </div>
+                                    <div id="pdi-verdict"
+                                        class="text-xs text-zinc-300 italic leading-relaxed font-mono"></div>
+                                </div>
+                            </div>
+                            <a href="advisory.html"
+                                class="block w-full text-center bg-danger text-white font-bold uppercase text-[10px] py-4 rounded tracking-widest hover:bg-white hover:text-black transition-all">
+                                Review Results with The Principal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function calculatePDI() {
+                        const input = document.getElementById('pdi-input').value.toLowerCase();
+                        if (!input) return; // Don't do anything if empty
+
+                        // EXPANDED REGEX FOR ACCURACY
+                        const maintenanceKeywords = /fix|bug|refactor|update|maintenance|css|polish|cleanup|migration|debt|patch|compliance|security|infra|admin|meeting/g;
+                        const revenueKeywords = /new|enterprise|tier|upsell|revenue|client|sale|conversion|onboarding|market|launch|growth|feature|pricing/g;
+
+                        const maintCount = (input.match(maintenanceKeywords) || []).length;
+                        const revCount = (input.match(revenueKeywords) || []).length;
+
+                        // PREVENT DIVIDE BY ZERO
+                        const totalSignals = maintCount + revCount || 1;
+
+                        const pdi = Math.round((revCount / totalSignals) * 100);
+                        const tax = Math.round((maintCount / totalSignals) * 100);
+
+                        // UI REVEAL
+                        const box = document.getElementById('pdi-result-box');
+                        box.classList.remove('hidden');
+
+                        document.getElementById('pdi-score').innerText = pdi;
+                        document.getElementById('pdi-tax').innerText = tax + "%";
+
+                        const labelEl = document.getElementById('pdi-label');
+                        const verdictEl = document.getElementById('pdi-verdict');
+
+                        if (pdi < 40) {
+                            labelEl.innerText = "CAPITAL DESTRUCTIVE";
+                            labelEl.className = "text-xs font-mono uppercase tracking-widest text-danger";
+                            verdictEl.innerText = "Critical misallocation detected. " + tax + "% of spend is 'Maintenance Tax'. You are running a Feature Factory.";
+                        } else if (pdi < 65) {
+                            labelEl.innerText = "AT RISK";
+                            labelEl.className = "text-xs font-mono uppercase tracking-widest text-yellow-500";
+                            verdictEl.innerText = "Governance deteriorating. Maintenance Tax (" + tax + "%) is eroding strategic capacity.";
+                        } else {
+                            labelEl.innerText = "STRATEGIC ASSET";
+                            labelEl.className = "text-xs font-mono uppercase tracking-widest text-cyan";
+                            verdictEl.innerText = "Top quartile efficiency. Capital flowing to high-leverage outcomes.";
+                        }
+                    }
+                </script>
+            </section>
+
+            <section id="qpep" class="mb-24 border-t border-white/5 pt-12 scroll-reveal">
+                <div class="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-8">
+                    <div class="text-4xl font-mono text-zinc-700 font-bold">02</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-6">Q-PEP™ Protocol</h2>
+                        <p class="font-mono text-xs text-cobalt tracking-widest uppercase mb-8">//
+                            QUALITATIVE-PROFITABILITY EFFICIENCY PROTOCOL</p>
+
+                        <p class="text-zinc-400 mb-8 text-lg">
+                            The framework for turnaround. Once leakage is identified (APER), Q-PEP is the surgery.
+                            It
+                            restructures the "Product Org" into an "Investment Portfolio."
+                        </p>
+
+                        <ul class="space-y-4 mb-8 font-mono text-xs tracking-wide text-zinc-300">
+                            <li class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-cobalt rounded-full"></span>
+                                PHASE 1: Kill the "Maybe" Features (Inventory Flush)
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-cobalt rounded-full"></span>
+                                PHASE 2: CapEx vs. OpEx Re-Classification
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <span class="w-2 h-2 bg-cobalt rounded-full"></span>
+                                PHASE 3: The "Win Locker" Implementation
+                            </li>
+                        </ul>
+
+                        <a href="/canonical/q-pep.html"
+                            class="inline-flex items-center text-sm font-mono uppercase tracking-widest text-white hover:text-cobalt transition-colors border-b border-white/20 pb-1">
+                            View the Implementation Guide &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
 
         </main>
     </div>
