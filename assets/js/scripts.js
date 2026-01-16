@@ -81,8 +81,66 @@ document.addEventListener('DOMContentLoaded', () => {
     // Example: new WordRotate(document.querySelector('.hero-rotate'), ['A', 'B']);
 
 
-    // --- 3. BORDER SHINE HOVER EFFECT ---
-    const cards = document.querySelectorAll('.card, .capsule-container');
+    // --- 3. SCROLL REVEAL (MAGIC UI) ---
+    // Target elements: .scroll-reveal, .capsule-container
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optional: Stop observing once revealed
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const scrollElements = document.querySelectorAll('.scroll-reveal, .capsule-container');
+    scrollElements.forEach(el => revealOnScroll.observe(el));
+
+
+    // --- 4. NUMBER TICKER (MAGIC UI) ---
+    // Usage: <span class="number-ticker" data-target="1000">0</span>
+    const tickerObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target') || '0', 10);
+                animateValue(el, 0, target, 2000);
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.number-ticker').forEach(el => tickerObserver.observe(el));
+
+    // Expose for dynamic usage (Calculators)
+    window.animateValue = function (obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            // EaseOutExpo or similar
+            const easeProgress = 1 - Math.pow(2, -10 * progress);
+
+            const value = Math.floor(easeProgress * (end - start) + start);
+            obj.innerHTML = value.toLocaleString(); // Add commas
+
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            } else {
+                obj.innerHTML = end.toLocaleString(); // Ensure final value is exact
+            }
+        };
+        window.requestAnimationFrame(step);
+    };
+
+
+    // --- 5. BORDER SHINE HOVER EFFECT ---
+    const cards = document.querySelectorAll('.card, .capsule-container, .bento-item, .btn-outline');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();

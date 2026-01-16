@@ -157,22 +157,64 @@ nav a:hover {
 /* MAIN CONTENT */
 main {
   padding: var(--space-lg);
-  max-width: 1600px;
+  max-width: 2500px;
+  /* Cap content width for readability on 8K, but allow wide layout */
   width: 100%;
+  margin: 0 auto;
+}
+
+/* BENTO GRID */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.bento-grid-lg {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.bento-item {
+  background: rgba(15, 15, 15, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-item:hover {
+  transform: translateY(-4px) scale(1.01);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 }
 
 /* MAGIC UI & CAPSULES */
 .capsule-container {
-  background: rgba(15, 15, 15, 0.4);
+  background: rgba(15, 15, 15, 0.6);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 2rem;
-  padding: var(--space-lg);
+  padding: clamp(2rem, 5vw, 4rem);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
-  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  /* Scroll Reveal Default State */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.capsule-container.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .capsule-container::before {
@@ -189,7 +231,7 @@ main {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
 
   to {
@@ -202,13 +244,13 @@ main {
   from {
     opacity: 0;
     filter: blur(10px);
-    transform: translateY(10px);
+    transform: scale(0.98);
   }
 
   to {
     opacity: 1;
     filter: blur(0);
-    transform: translateY(0);
+    transform: scale(1);
   }
 }
 
@@ -232,6 +274,18 @@ main {
   50% {
     offset-distance: 100%;
   }
+}
+
+/* SCROLL REVEAL UTILITY */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Utility Classes */
