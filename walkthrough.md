@@ -25,8 +25,10 @@ Implemented custom CSS and JS animations to enhance visual fidelity.
 -   **Animations**: Implemented Vanilla JS versions of "Scroll Reveal" (fading/sliding into view) and "Number Ticker" (counting up stats).
     -   *Evidence*: The "Product Debt Index" and "Enterprise Value Simulator" now animate their numeric outputs.
 -   **Layouts**: Converted standard grids to **Bento Grids** (asymmetrical, card-based layouts) on `system.html`, `advisory.html`, and `doctrine.html` for a modern, dashboard-like feel.
+-   **Content Restoration**: Restored full 4-level service offerings on `advisory.html` (Fractional CPO, Due Diligence, Turnaround, Workshops) into the new layout structure.
 -   **Resolution Support**: Updated `style.css` to support ultra-wide (8K+) resolutions by uncapping container widths while maintaining readability constraints (`max-width: 2500px` for main wrapper).
 -   **Responsiveness**: Verified fluid scaling from mobile (400px) to full desktop, ensuring calculators and grids stack correctly.
+-   **Standardization**: Fixed global sidebar syntax issues and standardized vertical spacing across `system.html` and `advisory.html` to match the "Doctrine" reference.
 
 ## 5. Conversion Optimization & Fixes
 -   **System Page**: Fixed broken "Review Results with The Principal" link (was `03-advisory.html`, now `advisory.html`).
