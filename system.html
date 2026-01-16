@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The System | Richard Ewing</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div>
+                <div class="brand">
+                    <img src="/assets/headshot.jpg" class="nav-headshot" alt="Richard Ewing">
+                    <h3>RICHARD EWING</h3>
+                    <span class="mono">PRODUCT ECONOMIST</span>
+                </div>
+                <nav>
+                    <div class="nav-group">
+                        <span class="nav-header">IDENTITY</span>
+                        <a href="/index.html">Home</a>
+                        <a href="/manifesto.html">01. Manifesto</a>
+                        <a href="/about.html">02. The Principal</a>
+                    </div>
+                    <div class="nav-group">
+                        <span class="nav-header">INTERVENTION</span>
+                        <a href="/advisory.html" class="active-red">03. ADVISORY</a>
+                    </div>
+                    <div class="nav-group">
+                        <span class="nav-header">INTELLIGENCE</span>
+                        <a href="/system.html">04. System</a>
+                        <a href="/doctrine.html">05. Doctrine</a>
+                    </div>
+                    <div class="nav-group">
+                        <span class="nav-header">SIGNAL</span>
+                        <a href="/briefings.html">06. Briefs</a>
+                        <a href="/book.html">07. Book</a>
+                        <a href="/legal.html">08. Legal</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="nav-footer">&copy; 2026 Richard Ewing</div>
+        </aside>
+
+        <main>
+            <span class="mono">The Operating System</span>
+            <h1>Algorithmic Solvency.</h1>
+
+            <p class="lead">Most product organizations are black boxes of capital consumption. The Product Economist
+                uses two proprietary frameworks to force financial transparency.</p>
+
+            <h2>01. APER&trade; Diagnostic</h2>
+            <p>A 14-day forensic audit of your engineering throughput. We do not look at Jira points. We look at the
+                "Cost of Goods Sold" (COGS) relative to feature adoption.</p>
+
+            <div class="card" style="margin-top:2rem;">
+                <h3>Margin Calculator</h3>
+                <p class="mono" style="font-size:0.7rem; color:var(--text-muted);">ESTIMATE SAAS GROSS MARGINS</p>
+
+                <label class="mono" style="font-size:0.7rem;">TOTAL REVENUE ($)</label>
+                <input type="number" id="margin-rev" placeholder="1000000">
+
+                <label class="mono" style="font-size:0.7rem;">HOSTING/AWS COSTS ($)</label>
+                <input type="number" id="margin-cogs" placeholder="150000">
+
+                <label class="mono" style="font-size:0.7rem; color:var(--danger);">SUPPORT & MAINT SALARIES ($)</label>
+                <input type="number" id="margin-ppl" placeholder="300000" style="border-color:var(--danger);">
+
+                <div style="margin-top:1rem; border-top:1px solid #333; padding-top:1rem;">
+                    <span class="mono">GROSS MARGIN: </span>
+                    <span id="margin-result" style="font-size:2rem; font-weight:bold; color:var(--cyan);">--%</span>
+                </div>
+            </div>
+
+            <h2>02. Product Debt Index&trade;</h2>
+            <p>Calculate your "Maintenance Tax". Paste your backlog items below to see if you are running a Feature
+                Factory.</p>
+
+            <div class="card">
+                <textarea id="pdi-input" rows="6"
+                    placeholder="Paste backlog items (e.g. 'Refactor login', ' Fix CSS bug', 'New Enterprise Tier')..."></textarea>
+                <button onclick="calculatePDI()" class="btn">Generate Score</button>
+
+                <div id="pdi-result"
+                    style="display:none; margin-top:2rem; border-top:1px solid #333; padding-top:1rem;">
+                    <div style="font-size:3rem; font-weight:bold; color:#fff;" id="pdi-score">0</div>
+                    <span class="mono" id="pdi-label">--</span>
+                    <p id="pdi-verdict" style="font-size:0.9rem; margin-top:1rem;"></p>
+                </div>
+            </div>
+
+            <script>
+                // Margin Logic
+                function calcMargin() {
+                    const rev = parseFloat(document.getElementById('margin-rev').value) || 0;
+                    const cogs = parseFloat(document.getElementById('margin-cogs').value) || 0;
+                    const ppl = parseFloat(document.getElementById('margin-ppl').value) || 0;
+                    if (rev > 0) {
+                        const trueMargin = ((rev - (cogs + ppl)) / rev) * 100;
+                        const resultEl = document.getElementById('margin-result');
+                        resultEl.innerText = trueMargin.toFixed(1) + '%';
+                        resultEl.style.color = trueMargin < 60 ? 'var(--danger)' : 'var(--cyan)';
+                    }
+                }
+                document.querySelectorAll('#margin-rev, #margin-cogs, #margin-ppl').forEach(i => i.addEventListener('input', calcMargin));
+
+                // PDI Logic
+                function calculatePDI() {
+                    const input = document.getElementById('pdi-input').value.toLowerCase();
+                    if (!input) return;
+                    const maintKw = /fix|bug|refactor|update|maintenance|css|polish|cleanup|patch/g;
+                    const revKw = /new|enterprise|tier|upsell|revenue|client|sale|launch/g;
+
+                    const maintCount = (input.match(maintKw) || []).length;
+                    const revCount = (input.match(revKw) || []).length;
+                    const total = maintCount + revCount || 1;
+
+                    const score = Math.round((revCount / total) * 100);
+
+                    document.getElementById('pdi-result').style.display = 'block';
+                    document.getElementById('pdi-score').innerText = score;
+                    const label = document.getElementById('pdi-label');
+                    const verdict = document.getElementById('pdi-verdict');
+
+                    if (score < 40) {
+                        label.innerText = "CAPITAL DESTRUCTIVE";
+                        label.style.color = "var(--danger)";
+                        verdict.innerText = "You are spending most of your capital on maintenance.";
+                    } else {
+                        label.innerText = "STRATEGIC ASSET";
+                        label.style.color = "var(--cyan)";
+                        verdict.innerText = "Good balance of innovation vs maintenance.";
+                    }
+                }
+            </script>
+
+        </main>
+    </div>
+</body>
+
+</html>
