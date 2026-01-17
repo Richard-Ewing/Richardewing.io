@@ -63,12 +63,18 @@ interface Results {
     };
     financials: {
         waste: number;
+        wastePerSprint: number;
+        debtReductionROI: number;
     };
     categorized?: Array<{
         ticket: string;
         category: string;
         reasoning: string;
     }>;
+    // Enhanced metrics
+    debtVelocity: number; // tickets per sprint going to debt
+    burnDownWeeks: number; // estimated weeks to clear if dedicated
+    ticketCount: number;
 }
 
 export default function PDITool() {
@@ -80,6 +86,8 @@ export default function PDITool() {
     const [teamSize, setTeamSize] = useState('20');
     const [salary, setSalary] = useState('240000');
     const [roadmapHorizon, setRoadmapHorizon] = useState('Q4');
+    const [sprintLength, setSprintLength] = useState('2');
+    const [avgTicketAge, setAvgTicketAge] = useState('30');
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState<Results | null>(null);
 
@@ -108,6 +116,22 @@ export default function PDITool() {
             // PDI Score = 100 - Maintenance %
             const score = Math.round(100 - ((maint / total) * 100));
 
+            // Enhanced calculations
+            const teamNum = parseInt(teamSize) || 1;
+            const salaryNum = parseInt(salary) || 0;
+            const sprintWeeks = parseInt(sprintLength) || 2;
+            const sprintsPerYear = 52 / sprintWeeks;
+            const waste = teamNum * salaryNum * (maint / total);
+            const wastePerSprint = waste / sprintsPerYear;
+            const debtTickets = maint;
+            const ticketsPerSprint = total / sprintsPerYear;
+            const debtVelocity = Math.round((maint / total) * ticketsPerSprint);
+            // If we dedicated the team to debt reduction, how long to clear?
+            const burnDownWeeks = Math.ceil(maint / (teamNum * 0.5)); // ~0.5 tickets per engineer per sprint
+            // ROI: cost of 1 sprint of dedicated debt reduction vs annual savings
+            const sprintCost = (teamNum * salaryNum) / sprintsPerYear;
+            const debtReductionROI = waste / sprintCost;
+
             setResults({
                 score,
                 metrics: {
@@ -116,9 +140,14 @@ export default function PDITool() {
                     maintenance: Math.round((maint / total) * 100),
                 },
                 financials: {
-                    waste: (parseInt(teamSize) * parseInt(salary)) * (maint / total),
+                    waste,
+                    wastePerSprint,
+                    debtReductionROI,
                 },
                 categorized: data.categorized,
+                debtVelocity,
+                burnDownWeeks,
+                ticketCount: total,
             });
         } catch {
             alert("Audit failed. Ensure you pasted valid text and the API is configured.");
@@ -241,8 +270,8 @@ export default function PDITool() {
                                         key={p.id}
                                         onClick={() => setPersona(p.id)}
                                         className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id
-                                                ? 'bg-red-500/10 border-red-500 text-red-400'
-                                                : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
+                                            ? 'bg-red-500/10 border-red-500 text-red-400'
+                                            : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
                                             }`}
                                     >
                                         <p.icon size={14} />
@@ -314,6 +343,34 @@ Migrate to new database"
                                         <option value="H1">H1 (6 Months)</option>
                                         <option value="FY">FY (Full Year)</option>
                                     </select>
+                                </div>
+                            </div>
+
+                            {/* Advanced Options */}
+                            <div className="grid grid-cols-2 gap-4 p-4 bg-black/20 rounded-xl border border-white/5">
+                                <div>
+                                    <label htmlFor="sprintLength" className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2 block">
+                                        Sprint Length (weeks)
+                                    </label>
+                                    <input
+                                        id="sprintLength"
+                                        type="number"
+                                        value={sprintLength}
+                                        onChange={e => setSprintLength(e.target.value)}
+                                        className="w-full bg-black/50 border border-white/10 rounded-lg p-2 text-white font-mono text-sm focus:border-cyan-500 focus:outline-none"
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="ticketAge" className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2 block">
+                                        Avg Ticket Age (days)
+                                    </label>
+                                    <input
+                                        id="ticketAge"
+                                        type="number"
+                                        value={avgTicketAge}
+                                        onChange={e => setAvgTicketAge(e.target.value)}
+                                        className="w-full bg-black/50 border border-white/10 rounded-lg p-2 text-white font-mono text-sm focus:border-cyan-500 focus:outline-none"
+                                    />
                                 </div>
                             </div>
 
@@ -406,6 +463,33 @@ Migrate to new database"
                         </div>
                     </ScrollReveal>
 
+                    {/* Enhanced Metrics */}
+                    <ScrollReveal delay={150}>
+                        <div className="capsule-container rounded-2xl p-6 mb-6">
+                            <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Debt Dynamics</div>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div className="bg-black/30 rounded-xl p-4">
+                                    <div className="text-xs text-zinc-500 mb-1">Waste per Sprint</div>
+                                    <div className="text-xl font-bold text-red-400">{formatMoney(results.financials.wastePerSprint)}</div>
+                                </div>
+                                <div className="bg-black/30 rounded-xl p-4">
+                                    <div className="text-xs text-zinc-500 mb-1">Debt Velocity</div>
+                                    <div className="text-xl font-bold text-orange-400">{results.debtVelocity} tickets/sprint</div>
+                                </div>
+                                <div className="bg-black/30 rounded-xl p-4">
+                                    <div className="text-xs text-zinc-500 mb-1">Clear Backlog In</div>
+                                    <div className="text-xl font-bold text-yellow-400">{results.burnDownWeeks} weeks</div>
+                                    <div className="text-[10px] text-zinc-600">if dedicated</div>
+                                </div>
+                                <div className="bg-black/30 rounded-xl p-4">
+                                    <div className="text-xs text-zinc-500 mb-1">Debt Reduction ROI</div>
+                                    <div className="text-xl font-bold text-emerald-400">{results.financials.debtReductionROI.toFixed(1)}x</div>
+                                    <div className="text-[10px] text-zinc-600">per sprint invested</div>
+                                </div>
+                            </div>
+                        </div>
+                    </ScrollReveal>
+
                     {/* Breakdown Chart */}
                     <ScrollReveal delay={150}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -464,8 +548,8 @@ Migrate to new database"
                                         <button
                                             type="submit"
                                             className={`w-full px-6 py-3 font-bold uppercase tracking-widest text-xs rounded-xl flex items-center justify-center gap-2 transition-all ${results.score < 50
-                                                    ? 'bg-red-600 hover:bg-red-500 text-white'
-                                                    : 'bg-white hover:bg-cyan-400 text-black'
+                                                ? 'bg-red-600 hover:bg-red-500 text-white'
+                                                : 'bg-white hover:bg-cyan-400 text-black'
                                                 }`}
                                         >
                                             Get Debt Analysis <ArrowRight className="w-4 h-4" />
@@ -492,8 +576,8 @@ Migrate to new database"
                                     {results.categorized.map((item, i) => (
                                         <div key={i} className="flex items-start gap-3 p-3 bg-black/30 rounded-lg">
                                             <span className={`px-2 py-0.5 rounded text-[10px] font-mono uppercase ${item.category === 'growth' ? 'bg-cyan-500/20 text-cyan-400' :
-                                                    item.category === 'retention' ? 'bg-purple-500/20 text-purple-400' :
-                                                        'bg-red-500/20 text-red-400'
+                                                item.category === 'retention' ? 'bg-purple-500/20 text-purple-400' :
+                                                    'bg-red-500/20 text-red-400'
                                                 }`}>
                                                 {item.category}
                                             </span>
@@ -513,8 +597,8 @@ Migrate to new database"
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t border-white/10">
                             <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Audit</button>
                             <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.score < 50
-                                    ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
-                                    : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)]'
+                                ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
+                                : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)]'
                                 }`}>
                                 {results.score < 50 ? '🚨 Start Debt Burn-Down' : 'Optimize My Roadmap'} →
                             </Link>
