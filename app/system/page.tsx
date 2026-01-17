@@ -1,83 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+
 import Link from 'next/link';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
 import { ShineBorder } from '../components/magicui/shine-border';
 
-const MarginCalculator = () => {
-    const [rev, setRev] = useState('');
-    const [cogs, setCogs] = useState('');
-    const [ppl, setPpl] = useState('');
-    const [margin, setMargin] = useState<number | null>(null);
 
-    const calculate = () => {
-        const r = parseFloat(rev) || 0;
-        const c = parseFloat(cogs) || 0;
-        const p = parseFloat(ppl) || 0;
-        if (r > 0) {
-            setMargin(((r - (c + p)) / r) * 100);
-        }
-    };
-
-    return (
-        <section className="capsule-container rounded-2xl p-6 sm:p-8 mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Margin Calculator</h2>
-            <p className="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-6">// SAAS GROSS MARGINS (WITH R&D COSTS)</p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                <div>
-                    <label htmlFor="rev" className="block text-[10px] font-mono text-zinc-400 uppercase mb-2">Total Revenue ($)</label>
-                    <input
-                        id="rev"
-                        type="number"
-                        value={rev}
-                        placeholder="100000"
-                        onChange={(e) => { setRev(e.target.value); calculate(); }}
-                        className="w-full bg-black border border-white/20 rounded-lg p-3 text-white font-mono focus:border-cyan-400 outline-none transition-colors"
-                    />
-                </div>
-                <div>
-                    <label htmlFor="cogs" className="block text-[10px] font-mono text-zinc-400 uppercase mb-2">Hosting/AWS Costs ($)</label>
-                    <input
-                        id="cogs"
-                        type="number"
-                        value={cogs}
-                        placeholder="10000"
-                        onChange={(e) => { setCogs(e.target.value); calculate(); }}
-                        className="w-full bg-black border border-white/20 rounded-lg p-3 text-white font-mono focus:border-cyan-400 outline-none transition-colors"
-                    />
-                </div>
-                <div>
-                    <label htmlFor="ppl" className="block text-[10px] font-mono text-red-500 uppercase mb-2">Support & Maint. ($)</label>
-                    <input
-                        id="ppl"
-                        type="number"
-                        value={ppl}
-                        placeholder="50000"
-                        onChange={(e) => { setPpl(e.target.value); calculate(); }}
-                        className="w-full bg-black border border-red-900/50 rounded-lg p-3 text-white font-mono focus:border-red-500 outline-none transition-colors"
-                    />
-                </div>
-            </div>
-
-            <div className="bg-black p-4 sm:p-6 rounded-lg border border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <div className="text-center sm:text-left">
-                    <div className="text-xs font-mono text-zinc-500 uppercase">Gross Margin</div>
-                    <div className={`text-3xl sm:text-4xl font-bold font-mono ${margin !== null && margin < 60 ? 'text-red-500' : 'text-cyan-400'}`}>
-                        {margin !== null ? margin.toFixed(1) + '%' : '--%'}
-                    </div>
-                </div>
-                {margin !== null && margin < 60 && (
-                    <Link href="/advisory" className="px-6 py-3 bg-red-600 text-white font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-red-500 transition-all">
-                        Fix Your Margins →
-                    </Link>
-                )}
-            </div>
-        </section>
-    );
-};
 
 export default function SystemPage() {
     return (
@@ -183,10 +112,7 @@ export default function SystemPage() {
                 </div>
             </ScrollReveal>
 
-            {/* Margin Calculator */}
-            <ScrollReveal delay={100}>
-                <MarginCalculator />
-            </ScrollReveal>
+
 
             {/* Q-PEP Section */}
             <ScrollReveal delay={200}>
