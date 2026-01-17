@@ -139,14 +139,17 @@ export default function AdvisoryPage() {
                             <p className="text-zinc-400 text-sm mt-2">Run a free audit on your backlog or valuation scenarios.</p>
                         </div>
                         <div className="flex flex-wrap gap-3">
-                            <Link href="/tools/pdi" className="px-4 py-2 bg-red-600/20 border border-red-600/40 text-red-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-red-600/30 transition">
-                                PDI Engine →
+                            <Link href="/tools" className="px-4 py-2 bg-white/10 border border-white/20 text-white text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-white/20 transition">
+                                All Tools →
                             </Link>
-                            <Link href="/tools/ev-se" className="px-4 py-2 bg-cyan-500/20 border border-cyan-500/40 text-cyan-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-cyan-500/30 transition">
-                                EV-SE Engine →
+                            <Link href="/tools/pdi" className="px-4 py-2 bg-red-600/20 border border-red-600/40 text-red-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-red-600/30 transition">
+                                Debt Audit →
                             </Link>
                             <Link href="/tools/aueb" className="px-4 py-2 bg-violet-500/20 border border-violet-500/40 text-violet-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-violet-500/30 transition">
-                                AUEB Engine →
+                                AI Costs →
+                            </Link>
+                            <Link href="/tools/aper" className="px-4 py-2 bg-yellow-500/20 border border-yellow-500/40 text-yellow-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-yellow-500/30 transition">
+                                Team Efficiency →
                             </Link>
                         </div>
                     </div>

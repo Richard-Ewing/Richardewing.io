@@ -73,22 +73,30 @@ export default function LegalPage() {
                             <p className="text-zinc-400 leading-relaxed text-sm sm:text-base mb-4">
                                 The following are registered trademarks and proprietary intellectual property of Richard Ewing:
                             </p>
-                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                 <div className="p-3 border border-white/10 rounded-lg text-center hover:border-cyan-500/30 transition">
                                     <div className="text-white font-bold text-sm">APER™</div>
-                                    <div className="text-zinc-600 text-[10px]">Diagnostic</div>
-                                </div>
-                                <div className="p-3 border border-white/10 rounded-lg text-center hover:border-cobalt/30 transition">
-                                    <div className="text-white font-bold text-sm">Q-PEP™</div>
-                                    <div className="text-zinc-600 text-[10px]">Protocol</div>
+                                    <div className="text-zinc-600 text-[10px]">Team Efficiency Diagnostic</div>
                                 </div>
                                 <div className="p-3 border border-white/10 rounded-lg text-center hover:border-red-500/30 transition">
+                                    <div className="text-white font-bold text-sm">AUEB™</div>
+                                    <div className="text-zinc-600 text-[10px]">AI Unit Economics Benchmark</div>
+                                </div>
+                                <div className="p-3 border border-white/10 rounded-lg text-center hover:border-emerald-500/30 transition">
                                     <div className="text-white font-bold text-sm">PDI™</div>
                                     <div className="text-zinc-600 text-[10px]">Product Debt Index</div>
                                 </div>
+                                <div className="p-3 border border-white/10 rounded-lg text-center hover:border-purple-500/30 transition">
+                                    <div className="text-white font-bold text-sm">EV-SE™</div>
+                                    <div className="text-zinc-600 text-[10px]">Valuation Scenario Engine</div>
+                                </div>
+                                <div className="p-3 border border-white/10 rounded-lg text-center hover:border-cobalt/30 transition">
+                                    <div className="text-white font-bold text-sm">Q-PEP™</div>
+                                    <div className="text-zinc-600 text-[10px]">Quarterly Protocol</div>
+                                </div>
                                 <div className="p-3 border border-white/10 rounded-lg text-center hover:border-gold/30 transition">
-                                    <div className="text-white font-bold text-sm">Product QB™</div>
-                                    <div className="text-zinc-600 text-[10px]">Methodology</div>
+                                    <div className="text-white font-bold text-sm">The Product Economist™</div>
+                                    <div className="text-zinc-600 text-[10px]">Methodology & Brand</div>
                                 </div>
                             </div>
                             <p className="text-zinc-500 text-xs mt-4">
