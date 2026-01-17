@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { GatewayCard } from '../components/gateway-card';
+import Link from 'next/link';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
+import { ShineBorder } from '../components/magicui/shine-border';
 
 const MarginCalculator = () => {
     const [rev, setRev] = useState('');
@@ -21,7 +22,7 @@ const MarginCalculator = () => {
     };
 
     return (
-        <section className="capsule-container rounded-2xl p-6 sm:p-8 mb-12">
+        <section className="capsule-container rounded-2xl p-6 sm:p-8 mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Margin Calculator</h2>
             <p className="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-6">// SAAS GROSS MARGINS (WITH R&D COSTS)</p>
 
@@ -69,9 +70,9 @@ const MarginCalculator = () => {
                     </div>
                 </div>
                 {margin !== null && margin < 60 && (
-                    <a href="/advisory" className="px-6 py-3 bg-red-600 text-white font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-red-500 transition-all">
+                    <Link href="/advisory" className="px-6 py-3 bg-red-600 text-white font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-red-500 transition-all">
                         Fix Your Margins →
-                    </a>
+                    </Link>
                 )}
             </div>
         </section>
@@ -81,26 +82,60 @@ const MarginCalculator = () => {
 export default function SystemPage() {
     return (
         <div className="max-w-4xl w-full relative z-10">
+            {/* Background FX */}
+            <div className="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
+
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
                 <span>Intelligence</span><span>/</span><span className="text-white font-bold">System</span>
             </div>
 
             <ScrollReveal>
-                <div className="mb-12">
+                <div className="mb-8">
                     <header className="mb-8">
                         <div className="inline-block bg-cyan-500/10 border border-cyan-500/20 px-4 py-2 text-xs font-mono uppercase tracking-widest mb-4 rounded-full text-cyan-400">
                             The Operating System
                         </div>
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-6">
-                            Algorithmic <br /><span className="text-zinc-600">Solvency.</span>
+                            Algorithmic <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-zinc-600">Solvency.</span>
                         </h1>
                         <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl leading-relaxed">
-                            Most product organizations are black boxes of capital consumption. The Product Economist uses two proprietary frameworks to force financial transparency.
+                            Most product organizations are black boxes of capital consumption. The Product Economist uses proprietary frameworks to force <span className="text-white font-bold">financial transparency</span>.
                         </p>
                     </header>
 
+                    {/* Tool Cards - AI-Powered */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <GlowCard className="p-6" glowColor="danger">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                                <span className="font-mono text-[10px] text-red-400 uppercase tracking-widest">AI-Powered</span>
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-2">PDI 2.0 Engine</h3>
+                            <p className="text-zinc-500 text-sm mb-4">Product Debt Index. Forensic audit of your backlog to quantify capital leakage.</p>
+                            <ShineBorder borderColor="rgba(220, 38, 38, 0.6)" duration={2}>
+                                <Link href="/tools/pdi" className="block w-full text-center bg-red-600 text-white font-bold text-xs uppercase tracking-widest py-3 hover:bg-red-500 transition">
+                                    Launch PDI →
+                                </Link>
+                            </ShineBorder>
+                        </GlowCard>
+
+                        <GlowCard className="p-6" glowColor="cyan">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_#22d3ee]" />
+                                <span className="font-mono text-[10px] text-cyan-400 uppercase tracking-widest">Valuation</span>
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-2">EV-SE Engine</h3>
+                            <p className="text-zinc-500 text-sm mb-4">Enterprise Value Scenario Engine. Quantify how execution risk destroys valuation.</p>
+                            <ShineBorder borderColor="rgba(34, 211, 238, 0.6)" duration={2}>
+                                <Link href="/tools/ev-se" className="block w-full text-center bg-cyan-500 text-black font-bold text-xs uppercase tracking-widest py-3 hover:bg-cyan-400 transition">
+                                    Launch EV-SE →
+                                </Link>
+                            </ShineBorder>
+                        </GlowCard>
+                    </div>
+
                     {/* APER Section */}
-                    <section id="aper" className="mb-12">
+                    <section id="aper" className="mb-8 pt-6 border-t border-white/10">
                         <div className="grid grid-cols-1 md:grid-cols-[80px_1fr] gap-4 sm:gap-6">
                             <div className="text-3xl sm:text-4xl font-mono text-zinc-700 font-bold">01</div>
                             <div>
@@ -126,8 +161,7 @@ export default function SystemPage() {
                                 </div>
 
                                 <div className="flex flex-wrap gap-3">
-                                    <a href="/canonical/aper.html" className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-cyan-500/20 transition">View PDF →</a>
-                                    <a href="/canonical/aper-diagnostic.html" className="px-4 py-2 bg-zinc-900/50 border border-white/10 text-zinc-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:text-white transition">Interactive Engine</a>
+                                    <Link href="/canonical/aper.html" className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-cyan-500/20 transition">View Framework →</Link>
                                 </div>
                             </div>
                         </div>
@@ -140,44 +174,41 @@ export default function SystemPage() {
                 <MarginCalculator />
             </ScrollReveal>
 
-            {/* PDI Engine Gateway */}
-            <ScrollReveal delay={200}>
-                <section className="mb-12 py-6 border-t border-white/5">
-                    <div className="flex items-center gap-4 mb-6">
-                        <div className="text-3xl sm:text-4xl font-mono text-zinc-700 font-bold">02</div>
-                        <div>
-                            <h2 className="text-2xl sm:text-3xl font-bold text-white">Product Debt Index™</h2>
-                            <p className="font-mono text-xs text-red-500 tracking-widest uppercase mt-1">// PDI-2026 STANDARD</p>
-                        </div>
-                    </div>
-                    <GatewayCard
-                        title="Launch PDI Forensic Engine"
-                        href="/tools/pdi"
-                        color="red"
-                        description="Quantify Technical Debt"
-                    />
-                </section>
-            </ScrollReveal>
-
             {/* Q-PEP Section */}
-            <ScrollReveal delay={300}>
-                <section id="qpep" className="mb-12 border-t border-white/5 pt-8">
+            <ScrollReveal delay={200}>
+                <section id="qpep" className="mb-8 border-t border-white/10 pt-8">
                     <div className="grid grid-cols-1 md:grid-cols-[80px_1fr] gap-4 sm:gap-6">
-                        <div className="text-3xl sm:text-4xl font-mono text-zinc-700 font-bold">03</div>
+                        <div className="text-3xl sm:text-4xl font-mono text-zinc-700 font-bold">02</div>
                         <div>
                             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Q-PEP™ Protocol</h2>
                             <p className="font-mono text-xs text-cobalt tracking-widest uppercase mb-6">// QUALITATIVE-PROFITABILITY EFFICIENCY PROTOCOL</p>
                             <p className="text-zinc-400 mb-6 text-base sm:text-lg">
                                 The framework for turnaround. Once leakage is identified (APER), Q-PEP is the surgery. It restructures the "Product Org" into an "Investment Portfolio."
                             </p>
-                            <ul className="space-y-3 font-mono text-xs sm:text-sm tracking-wide text-zinc-300">
+                            <ul className="space-y-3 font-mono text-xs sm:text-sm tracking-wide text-zinc-300 mb-6">
                                 <li className="flex items-center gap-3"><span className="w-2 h-2 bg-cobalt rounded-full" />PHASE 1: Kill the "Maybe" Features</li>
                                 <li className="flex items-center gap-3"><span className="w-2 h-2 bg-cobalt rounded-full" />PHASE 2: CapEx vs. OpEx Re-Classification</li>
                                 <li className="flex items-center gap-3"><span className="w-2 h-2 bg-cobalt rounded-full" />PHASE 3: The "Win Locker" Implementation</li>
                             </ul>
+                            <Link href="/canonical/q-pep.html" className="px-4 py-2 bg-cobalt/10 border border-cobalt/30 text-cobalt text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-cobalt/20 transition">View Framework →</Link>
                         </div>
                     </div>
                 </section>
+            </ScrollReveal>
+
+            {/* CTA */}
+            <ScrollReveal delay={300}>
+                <div className="text-center py-8 border-t border-white/10">
+                    <p className="text-zinc-400 mb-6">Ready to install financial transparency?</p>
+                    <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
+                        <Link
+                            href="/advisory"
+                            className="inline-block bg-white text-black font-bold uppercase text-sm px-10 py-4 tracking-widest hover:bg-cyan-400 transition-colors"
+                        >
+                            Book an Intervention →
+                        </Link>
+                    </ShineBorder>
+                </div>
             </ScrollReveal>
         </div>
     );

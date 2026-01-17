@@ -10,8 +10,8 @@ const NavItem = ({ href, children, isActive = false, onClick }: { href: string; 
         href={href}
         onClick={onClick}
         className={`block text-sm py-2 px-4 border-l-2 transition-all ${isActive
-                ? 'text-white border-cyan-400 bg-cyan-400/5'
-                : 'text-zinc-400 border-transparent hover:text-white hover:border-white/50'
+            ? 'text-white border-cyan-400 bg-cyan-400/5'
+            : 'text-zinc-400 border-transparent hover:text-white hover:border-white/50'
             }`}
     >
         {children}
@@ -41,6 +41,12 @@ export function Sidebar() {
             label: 'Intelligence', items: [
                 { href: '/system', label: '04. System' },
                 { href: '/doctrine', label: '05. Doctrine' },
+            ]
+        },
+        {
+            label: 'Tools', labelClass: 'text-cyan-400', items: [
+                { href: '/tools/pdi', label: 'PDI Engine', highlight: true },
+                { href: '/tools/ev-se', label: 'EV-SE Engine' },
             ]
         },
         {
