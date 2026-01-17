@@ -41,9 +41,8 @@ export default function ManifestoPage() {
                     <div className="mt-20 pt-12 border-t border-white/10 flex items-center gap-8">
                         <div className="relative group">
                             <div className="absolute inset-0 bg-[#D4AF37] blur opacity-20 group-hover:opacity-40 transition-opacity rounded-full" />
-                            {/* Placeholder for Headshot */}
                             <div className="w-20 h-20 rounded-full bg-zinc-800 border-2 border-white/10 overflow-hidden relative">
-                                {/* Use Image component if asset available, else blank */}
+                                <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" fill className="object-cover grayscale group-hover:grayscale-0 transition duration-500" />
                             </div>
                         </div>
                         <div>

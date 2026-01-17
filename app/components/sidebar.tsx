@@ -43,8 +43,7 @@ export function Sidebar() {
                 <Link href="/" className="block">
                     {/* Placeholder for Headshot - usually local asset. Using a div fallback if image missing or standard placeholder */}
                     <div className="w-20 h-20 rounded-full border-2 border-[#333] mb-6 grayscale hover:grayscale-0 hover:border-[#C0C0C0] transition duration-300 overflow-hidden bg-zinc-800">
-                        {/* Assuming we move assets/images/headshot.jpg to public/assets/images/headshot.jpg */}
-                        {/* <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" width={80} height={80} /> */}
+                        <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" width={80} height={80} className="object-cover" />
                     </div>
                     <h3 className="text-white font-bold tracking-tight text-xl">RICHARD EWING</h3>
                     <span className="font-mono text-xs text-titanium tracking-widest block mt-1">PRODUCT ECONOMIST</span>
@@ -57,7 +56,6 @@ export function Sidebar() {
                     <div className="space-y-1">
                         <NavItem href="/" isActive={pathname === '/'}>Home</NavItem>
                         <NavItem href="/manifesto" isActive={pathname === '/manifesto'}>01. Manifesto</NavItem>
-                        {/* Principal page skipped for MVP/Placeholder */}
                         <NavItem href="/principal" isActive={pathname === '/principal'}>02. The Principal</NavItem>
                     </div>
                 </div>
@@ -79,7 +77,6 @@ export function Sidebar() {
                     <div className="text-[9px] font-mono text-zinc-600 uppercase mb-3 ml-3 tracking-widest">Signal</div>
                     <div className="space-y-1">
                         <NavItem href="/briefings" isActive={pathname === '/briefings'}>06. Briefs</NavItem>
-                        {/* Book and Legal placeholders */}
                         <NavItem href="/book" isActive={pathname === '/book'}>07. Book</NavItem>
                         <NavItem href="/legal" isActive={pathname === '/legal'}>08. Legal</NavItem>
                     </div>

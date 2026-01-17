@@ -113,8 +113,8 @@ export default function SystemPage() {
             <MarginCalculator />
 
             {/* PDI Engine Gateway */}
-            <section className="mb-24 py-12 px-8 border-t border-white/5">
-                <div className="flex items-center gap-4 mb-8">
+            <section className="mb-12 py-8 px-6 border-t border-white/5">
+                <div className="flex items-center gap-4 mb-6">
                     <div className="text-4xl font-mono text-zinc-700 font-bold">02</div>
                     <div>
                         <h2 className="text-3xl font-bold text-white">Product Debt Index™</h2>
@@ -131,7 +131,7 @@ export default function SystemPage() {
             </section>
 
             {/* Q-PEP Section */}
-            <section id="qpep" className="mb-24 border-t border-white/5 pt-12">
+            <section id="qpep" className="mb-12 border-t border-white/5 pt-8">
                 <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-8">
                     <div className="text-4xl font-mono text-zinc-700 font-bold">03</div>
                     <div>
