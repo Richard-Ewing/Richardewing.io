@@ -32,9 +32,9 @@ export default function DoctrinePage() {
                         02
                     </div>
                     <div className="relative">
-                        <h3 className="text-white font-bold text-xl mb-4">The Truth is in the P&L</h3>
+                        <h3 className="text-white font-bold text-xl mb-4">The Truth is in the P&amp;L</h3>
                         <p className="text-zinc-400 text-sm leading-relaxed">
-                            Users lie. Net Promoter Scores (NPS) lie. Roadmaps lie. The <strong>Profit & Loss statement</strong> tells the only truth that matters. If the unit economics of a product are upside down, no amount of "user empathy" will save it.
+                            Users lie. Net Promoter Scores (NPS) lie. Roadmaps lie. The <strong>Profit &amp; Loss statement</strong> tells the only truth that matters. If the unit economics of a product are upside down, no amount of &quot;user empathy&quot; will save it.
                         </p>
                     </div>
                 </div>

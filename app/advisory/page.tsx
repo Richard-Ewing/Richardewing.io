@@ -10,7 +10,7 @@ export default function AdvisoryPage() {
                 <span>Intervention</span><span>/</span><span className="text-white font-bold">Advisory</span>
             </div>
 
-            <div className="capsule-container rounded-[2rem] p-12 border border-white/10 bg-zinc-900/40 backdrop-blur-md relative z-10 mb-24">
+            <div className="capsule-container rounded-[2rem] p-8 border border-white/10 bg-zinc-900/40 backdrop-blur-md relative z-10 mb-12">
                 <span className="font-mono text-titanium text-xs uppercase tracking-[0.3em] mb-4 block">Access Levels</span>
                 <h1 className="text-5xl font-bold text-white tracking-tight leading-none mb-12">
                     Intervention<br />Protocols
@@ -88,7 +88,7 @@ export default function AdvisoryPage() {
             </div>
 
             {/* EVSE Gateway */}
-            <section className="mb-24 py-12 px-8 border-t border-white/5">
+            <section className="mb-12 py-8 px-6 border-t border-white/5">
                 <div className="flex items-center gap-4 mb-8">
                     <div className="h-px bg-white/10 w-16"></div>
                     <div>
@@ -106,7 +106,7 @@ export default function AdvisoryPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="mt-24 border-t border-white/5 pt-12">
+            <section className="mt-12 border-t border-white/5 pt-8">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
                     <div>
                         <span className="font-mono text-cyan-500 text-xs uppercase tracking-widest mb-2 block">Direct Line</span>

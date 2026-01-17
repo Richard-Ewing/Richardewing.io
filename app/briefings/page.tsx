@@ -30,7 +30,7 @@ export default function BriefingsPage() {
                 <span>Signal</span><span>/</span><span className="text-white font-bold">Briefs</span>
             </div>
 
-            <div className="mb-24">
+            <div className="mb-12">
                 <span className="font-mono text-cyan-400 text-xs uppercase tracking-[0.3em] mb-4 block">The Signal from the Noise</span>
                 <h1 className="text-5xl font-bold text-white tracking-tight leading-none mb-12">
                     Executive<br />Briefings
@@ -44,7 +44,7 @@ export default function BriefingsPage() {
             </div>
 
             {/* AUEB Calculator Gateway */}
-            <section className="mt-24 border-t border-white/5 pt-12">
+            <section className="mt-12 border-t border-white/5 pt-8">
                 <div className="flex items-center gap-4 mb-8">
                     <div className="h-px bg-white/10 w-16"></div>
                     <div>

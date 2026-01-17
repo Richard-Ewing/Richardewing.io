@@ -24,9 +24,9 @@ export default function Home() {
 
       <div className="flex gap-6 mb-12 border-b border-white/10 pb-8 animate-fade-in-up delay-100">
         <span className="font-mono text-xs text-zinc-500 uppercase tracking-widest mt-1">FEATURED IN:</span>
-        <a href="https://builtin.com" target="_blank" className="text-sm text-zinc-400 hover:text-white border-b border-white/20 hover:border-white transition pb-0.5">Built In</a>
-        <a href="https://foundry.com" target="_blank" className="text-sm text-zinc-400 hover:text-white border-b border-white/20 hover:border-white transition pb-0.5">Foundry</a>
-        <a href="https://techcrunch.com" target="_blank" className="text-sm text-zinc-400 hover:text-white border-b border-white/20 hover:border-white transition pb-0.5">TechCrunch</a>
+        <a href="https://builtin.com/articles/ai-product-business-test" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-white/20 hover:border-white transition pb-0.5">Built In</a>
+        <a href="https://foundry.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-white/20 hover:border-white transition pb-0.5">Foundry</a>
+        <a href="https://techcrunch.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-white/20 hover:border-white transition pb-0.5">TechCrunch</a>
       </div>
 
       <div className="animate-fade-in-up delay-200">
