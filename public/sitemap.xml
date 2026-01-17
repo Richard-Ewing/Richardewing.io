@@ -155,6 +155,36 @@
     <priority>0.7</priority>
     <changefreq>yearly</changefreq>
   </url>
+  <url>
+    <loc>https://richardewing.io/canonical/capital-allocation-strategy.html</loc>
+    <lastmod>2026-01-17</lastmod>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/canonical/code-to-cash-mapping.html</loc>
+    <lastmod>2026-01-17</lastmod>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/canonical/double-funnel-framework.html</loc>
+    <lastmod>2026-01-17</lastmod>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/canonical/portfolio-velocity-audit.html</loc>
+    <lastmod>2026-01-17</lastmod>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://richardewing.io/canonical/risk-advisory.html</loc>
+    <lastmod>2026-01-17</lastmod>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
 
   <!-- MACHINE PROTOCOL FILES -->
   <url>

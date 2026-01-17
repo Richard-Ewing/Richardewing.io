@@ -145,6 +145,9 @@ export default function AdvisoryPage() {
                             <Link href="/tools/ev-se" className="px-4 py-2 bg-cyan-500/20 border border-cyan-500/40 text-cyan-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-cyan-500/30 transition">
                                 EV-SE Engine →
                             </Link>
+                            <Link href="/tools/aueb" className="px-4 py-2 bg-violet-500/20 border border-violet-500/40 text-violet-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-violet-500/30 transition">
+                                AUEB Engine →
+                            </Link>
                         </div>
                     </div>
                 </div>

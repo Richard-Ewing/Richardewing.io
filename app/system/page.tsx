@@ -132,6 +132,20 @@ export default function SystemPage() {
                                 </Link>
                             </ShineBorder>
                         </GlowCard>
+
+                        <GlowCard className="p-6 sm:col-span-2" glowColor="cobalt">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="w-2 h-2 bg-violet-500 rounded-full animate-pulse shadow-[0_0_10px_#8b5cf6]" />
+                                <span className="font-mono text-[10px] text-violet-400 uppercase tracking-widest">Unit Economics</span>
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-2">AUEB Engine</h3>
+                            <p className="text-zinc-500 text-sm mb-4">AI Unit Economics Benchmark. Calculate your margin collapse point with model arbitrage analysis.</p>
+                            <ShineBorder borderColor="rgba(139, 92, 246, 0.6)" duration={2}>
+                                <Link href="/tools/aueb" className="block w-full text-center bg-violet-600 text-white font-bold text-xs uppercase tracking-widest py-3 hover:bg-violet-500 transition">
+                                    Launch AUEB →
+                                </Link>
+                            </ShineBorder>
+                        </GlowCard>
                     </div>
 
                     {/* APER Section */}
