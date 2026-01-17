@@ -167,7 +167,13 @@ export default function APERTool() {
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
 
                             {/* HERO SCORE */}
-                            <div className="text-center mb-16 pt-8">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, ease: "easeOut" }}
+                                className="capsule-container rounded-2xl sm:rounded-[2rem] p-8 text-center mb-8"
+                            >
                                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">REVENUE PER ENGINEER (APER)</div>
                                 <div className={`text-8xl font-bold tracking-tighter ${getStatus(results.aper).color}`}>
                                     <NumberTicker value={results.aper} prefix="$" />
@@ -176,10 +182,16 @@ export default function APERTool() {
                                     <span className={`font-bold uppercase tracking-widest text-sm ${getStatus(results.aper).color}`}>{getStatus(results.aper).label}</span>
                                 </div>
                                 <p className="mt-6 text-zinc-400 max-w-xl mx-auto">{getStatus(results.aper).desc}</p>
-                            </div>
+                            </motion.div>
 
                             {/* METRICS GRID */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                                className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
+                            >
                                 <BentoCard title="Engineering Cost" icon={DollarSign}>
                                     <div className="text-3xl font-bold text-red-600">
                                         <NumberTicker value={results.totalEngCost} prefix="$" />
@@ -200,10 +212,15 @@ export default function APERTool() {
                                     </div>
                                     <div className="text-zinc-500 text-xs mt-2">Revenue generated per $1 of eng salary</div>
                                 </BentoCard>
-                            </div>
+                            </motion.div>
 
                             {/* BENCHMARK CHART */}
-                            <div className="grid grid-cols-1 gap-6">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                            >
                                 <BentoCard title="Industry Benchmarks" icon={TrendingUp}>
                                     <div className="text-center mb-4">
                                         <div className="text-sm text-zinc-500">How you compare to industry standards</div>
@@ -227,56 +244,69 @@ export default function APERTool() {
                                         </ResponsiveContainer>
                                     </div>
                                 </BentoCard>
-                            </div>
+                            </motion.div>
 
                             {/* INTERPRETATION */}
-                            <BentoCard title="What This Means" icon={AlertTriangle} className="border-yellow-500/20">
-                                <div className="space-y-4">
-                                    {results.aper >= 600000 && (
-                                        <div className="text-zinc-300">
-                                            <p className="mb-3">You are operating at <strong className="text-cyan-400">elite efficiency</strong>. Your revenue per engineer of <strong>{formatMoney(results.aper)}</strong> puts you in the top decile of SaaS companies.</p>
-                                            <p><strong className="text-white">Recommendation:</strong> You have room to hire aggressively. Your current team demonstrates exceptional leverage.</p>
-                                        </div>
-                                    )}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                            >
+                                <BentoCard title="What This Means" icon={AlertTriangle} className="border-yellow-500/20">
+                                    <div className="space-y-4">
+                                        {results.aper >= 600000 && (
+                                            <div className="text-zinc-300">
+                                                <p className="mb-3">You are operating at <strong className="text-cyan-400">elite efficiency</strong>. Your revenue per engineer of <strong>{formatMoney(results.aper)}</strong> puts you in the top decile of SaaS companies.</p>
+                                                <p><strong className="text-white">Recommendation:</strong> You have room to hire aggressively. Your current team demonstrates exceptional leverage.</p>
+                                            </div>
+                                        )}
 
-                                    {results.aper >= 400000 && results.aper < 600000 && (
-                                        <div className="text-zinc-300">
-                                            <p className="mb-3">You are at <strong className="text-yellow-400">healthy efficiency</strong>. Your APER of <strong>{formatMoney(results.aper)}</strong> is within industry standards for growth-stage SaaS.</p>
-                                            <p><strong className="text-white">Recommendation:</strong> Focus on improving leverage through better tooling, processes, and architectural decisions before scaling headcount.</p>
-                                        </div>
-                                    )}
+                                        {results.aper >= 400000 && results.aper < 600000 && (
+                                            <div className="text-zinc-300">
+                                                <p className="mb-3">You are at <strong className="text-yellow-400">healthy efficiency</strong>. Your APER of <strong>{formatMoney(results.aper)}</strong> is within industry standards for growth-stage SaaS.</p>
+                                                <p><strong className="text-white">Recommendation:</strong> Focus on improving leverage through better tooling, processes, and architectural decisions before scaling headcount.</p>
+                                            </div>
+                                        )}
 
-                                    {results.aper >= 200000 && results.aper < 400000 && (
-                                        <div className="text-zinc-300">
-                                            <p className="mb-3">You are showing signs of <strong className="text-orange-500">coordination overhead</strong>. At <strong>{formatMoney(results.aper)}</strong> per engineer, you may be overstaffed relative to your revenue.</p>
-                                            <p><strong className="text-white">Recommendation:</strong> Freeze hiring immediately. Focus on increasing output from your existing team through better prioritization and technical debt reduction.</p>
-                                        </div>
-                                    )}
+                                        {results.aper >= 200000 && results.aper < 400000 && (
+                                            <div className="text-zinc-300">
+                                                <p className="mb-3">You are showing signs of <strong className="text-orange-500">coordination overhead</strong>. At <strong>{formatMoney(results.aper)}</strong> per engineer, you may be overstaffed relative to your revenue.</p>
+                                                <p><strong className="text-white">Recommendation:</strong> Freeze hiring immediately. Focus on increasing output from your existing team through better prioritization and technical debt reduction.</p>
+                                            </div>
+                                        )}
 
-                                    {results.aper < 200000 && (
-                                        <div className="text-zinc-300">
-                                            <p className="mb-3">You have <strong className="text-red-600">critical inefficiency</strong>. At <strong>{formatMoney(results.aper)}</strong> per engineer, your burn rate is outpacing value creation.</p>
-                                            <p><strong className="text-white">Recommendation:</strong> This requires immediate action. Consider a reduction in force (RIF), significant pivot, or focus on revenue acceleration. The current trajectory is unsustainable.</p>
-                                        </div>
-                                    )}
+                                        {results.aper < 200000 && (
+                                            <div className="text-zinc-300">
+                                                <p className="mb-3">You have <strong className="text-red-600">critical inefficiency</strong>. At <strong>{formatMoney(results.aper)}</strong> per engineer, your burn rate is outpacing value creation.</p>
+                                                <p><strong className="text-white">Recommendation:</strong> This requires immediate action. Consider a reduction in force (RIF), significant pivot, or focus on revenue acceleration. The current trajectory is unsustainable.</p>
+                                            </div>
+                                        )}
 
-                                    <div className="mt-6 pt-6 border-t border-white/10">
-                                        <div className="text-sm text-zinc-500 mb-2">Industry Context:</div>
-                                        <ul className="text-sm text-zinc-400 space-y-1 list-disc list-inside">
-                                            <li><strong className="text-cyan-400">$600K+/engineer:</strong> Elite (Stripe, Figma, Linear)</li>
-                                            <li><strong className="text-yellow-400">$400-600K/engineer:</strong> Healthy (Most successful SaaS)</li>
-                                            <li><strong className="text-orange-500">$200-400K/engineer:</strong> Concerning (Coordination tax visible)</li>
-                                            <li><strong className="text-red-600">&lt;$200K/engineer:</strong> Critical (Immediate action required)</li>
-                                        </ul>
+                                        <div className="mt-6 pt-6 border-t border-white/10">
+                                            <div className="text-sm text-zinc-500 mb-2">Industry Context:</div>
+                                            <ul className="text-sm text-zinc-400 space-y-1 list-disc list-inside">
+                                                <li><strong className="text-cyan-400">$600K+/engineer:</strong> Elite (Stripe, Figma, Linear)</li>
+                                                <li><strong className="text-yellow-400">$400-600K/engineer:</strong> Healthy (Most successful SaaS)</li>
+                                                <li><strong className="text-orange-500">$200-400K/engineer:</strong> Concerning (Coordination tax visible)</li>
+                                                <li><strong className="text-red-600">&lt;$200K/engineer:</strong> Critical (Immediate action required)</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                            </BentoCard>
+                                </BentoCard>
+                            </motion.div>
 
                             {/* ACTION FOOTER */}
-                            <div className="border-t border-white/10 pt-12 flex justify-center gap-4">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                                className="border-t border-white/10 pt-12 flex justify-center gap-4"
+                            >
                                 <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline">← New Analysis</button>
                                 <Link href="/advisory" className="px-8 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold uppercase rounded-xl transition-all">Fix My Efficiency →</Link>
-                            </div>
+                            </motion.div>
 
                         </motion.div>
                     )}

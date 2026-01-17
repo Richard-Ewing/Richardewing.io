@@ -239,7 +239,13 @@ export default function AUEBTool() {
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
 
                             {/* GAUGE HERO */}
-                            <div className="text-center mb-16 pt-8">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, ease: "easeOut" }}
+                                className="capsule-container rounded-2xl sm:rounded-[2rem] p-8 text-center mb-8"
+                            >
                                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-8">GROSS MARGIN HEALTH</div>
                                 <GaugeChart value={results.grossMargin} />
                                 <div className={`mt-12 text-4xl font-bold tracking-tight ${getMarginStatus(results.grossMargin).color}`}>
@@ -250,10 +256,16 @@ export default function AUEBTool() {
                                         CRITICAL: Your unit economics are upside down. You are paying users to use your product.
                                     </div>
                                 )}
-                            </div>
+                            </motion.div>
 
                             {/* METRICS GRID */}
-                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                                className="grid grid-cols-1 md:grid-cols-4 gap-6"
+                            >
                                 <BentoCard title="Monthly Revenue" icon={DollarSign}>
                                     <div className="text-3xl font-bold text-cyan-400"><NumberTicker value={results.monthlyRevenue} prefix="$" /></div>
                                 </BentoCard>
@@ -269,58 +281,78 @@ export default function AUEBTool() {
                                     <div className="text-3xl font-bold text-yellow-400"><NumberTicker value={results.insolvencyPoint} suffix="x" /></div>
                                     <div className="text-zinc-500 text-xs mt-2">Max queries before loss</div>
                                 </BentoCard>
-                            </div>
+                            </motion.div>
 
                             {/* MODEL COMPARISON TABLE */}
-                            <BentoCard title="Model Arbitrage" icon={Zap} className="col-span-full">
-                                <div className="overflow-x-auto">
-                                    <table className="w-full text-sm">
-                                        <thead>
-                                            <tr className="border-b border-zinc-800 text-zinc-500 font-mono text-xs uppercase">
-                                                <th className="text-left py-3">Model</th>
-                                                <th className="text-right py-3">Cost/User</th>
-                                                <th className="text-right py-3">Margin</th>
-                                                <th className="text-right py-3">Impact</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {results.models.map((model: ModelData, i: number) => {
-                                                const savings = ((model.margin - results.grossMargin) / 100) * results.monthlyRevenue;
-                                                return (
-                                                    <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30">
-                                                        <td className="py-3 font-semibold text-white">{model.model}</td>
-                                                        <td className="py-3 text-right text-zinc-400">{formatMoney(model.costPerUser)}</td>
-                                                        <td className={`py-3 text-right font-bold ${model.margin >= 60 ? 'text-emerald-400' : 'text-red-500'}`}>{model.margin.toFixed(1)}%</td>
-                                                        <td className="py-3 text-right text-emerald-400">{savings > 0 ? `+${formatMoney(savings)}` : '-'}</td>
-                                                    </tr>
-                                                );
-                                            })}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </BentoCard>
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                            >
+                                <BentoCard title="Model Arbitrage" icon={Zap} className="col-span-full">
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full text-sm">
+                                            <thead>
+                                                <tr className="border-b border-zinc-800 text-zinc-500 font-mono text-xs uppercase">
+                                                    <th className="text-left py-3">Model</th>
+                                                    <th className="text-right py-3">Cost/User</th>
+                                                    <th className="text-right py-3">Margin</th>
+                                                    <th className="text-right py-3">Impact</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {results.models.map((model: ModelData, i: number) => {
+                                                    const savings = ((model.margin - results.grossMargin) / 100) * results.monthlyRevenue;
+                                                    return (
+                                                        <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30">
+                                                            <td className="py-3 font-semibold text-white">{model.model}</td>
+                                                            <td className="py-3 text-right text-zinc-400">{formatMoney(model.costPerUser)}</td>
+                                                            <td className={`py-3 text-right font-bold ${model.margin >= 60 ? 'text-emerald-400' : 'text-red-500'}`}>{model.margin.toFixed(1)}%</td>
+                                                            <td className="py-3 text-right text-emerald-400">{savings > 0 ? `+${formatMoney(savings)}` : '-'}</td>
+                                                        </tr>
+                                                    );
+                                                })}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </BentoCard>
+                            </motion.div>
 
                             {/* GROWTH CHART */}
-                            <BentoCard title="The Insolvency Curve" icon={Activity}>
-                                <div className="h-64 w-full mt-4">
-                                    <ResponsiveContainer width="100%" height="100%">
-                                        <AreaChart data={results.growthData}>
-                                            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-                                            <XAxis dataKey="month" stroke="#666" fontSize={12} />
-                                            <YAxis stroke="#666" fontSize={12} tickFormatter={(val) => `$${val}k`} />
-                                            <Tooltip contentStyle={{ backgroundColor: '#111', border: '1px solid #333' }} formatter={(val) => val !== undefined ? `$${Number(val).toFixed(0)}k` : ''} />
-                                            <Area type="monotone" dataKey="revenue" stackId="1" stroke="#22d3ee" fill="#22d3ee" fillOpacity={0.2} />
-                                            <Area type="monotone" dataKey="cost" stackId="2" stroke="#dc2626" fill="#dc2626" fillOpacity={0.2} />
-                                        </AreaChart>
-                                    </ResponsiveContainer>
-                                </div>
-                            </BentoCard>
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                            >
+                                <BentoCard title="The Insolvency Curve" icon={Activity}>
+                                    <div className="h-64 w-full mt-4">
+                                        <ResponsiveContainer width="100%" height="100%">
+                                            <AreaChart data={results.growthData}>
+                                                <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+                                                <XAxis dataKey="month" stroke="#666" fontSize={12} />
+                                                <YAxis stroke="#666" fontSize={12} tickFormatter={(val) => `$${val}k`} />
+                                                <Tooltip contentStyle={{ backgroundColor: '#111', border: '1px solid #333' }} formatter={(val) => val !== undefined ? `$${Number(val).toFixed(0)}k` : ''} />
+                                                <Area type="monotone" dataKey="revenue" stackId="1" stroke="#22d3ee" fill="#22d3ee" fillOpacity={0.2} />
+                                                <Area type="monotone" dataKey="cost" stackId="2" stroke="#dc2626" fill="#dc2626" fillOpacity={0.2} />
+                                            </AreaChart>
+                                        </ResponsiveContainer>
+                                    </div>
+                                </BentoCard>
+                            </motion.div>
 
                             {/* ACTION FOOTER */}
-                            <div className="border-t border-white/10 pt-12 flex justify-center gap-4">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                                className="border-t border-white/10 pt-12 flex justify-center gap-4"
+                            >
                                 <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline">← New Analysis</button>
                                 <Link href="/advisory" className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-xl transition-all">Fix My Margins →</Link>
-                            </div>
+                            </motion.div>
 
                         </motion.div>
                     )}
