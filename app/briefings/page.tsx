@@ -80,6 +80,25 @@ export default function BriefingsPage() {
                 </div>
             </ScrollReveal>
 
+            {/* AUEB Tool Gateway */}
+            <ScrollReveal delay={150}>
+                <div className="mb-8 border border-violet-500/20 rounded-2xl p-6 bg-gradient-to-br from-violet-500/5 via-transparent to-transparent">
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <div className="flex items-center gap-2 mb-2">
+                                <div className="w-2 h-2 bg-violet-500 rounded-full animate-pulse" />
+                                <span className="font-mono text-xs text-violet-400 uppercase tracking-widest">Interactive Tool</span>
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-1">AI Unit Economics Benchmark™</h3>
+                            <p className="text-zinc-400 text-sm">Generative AI introduces linear costs to zero-margin software. Calculate your insolvency horizon.</p>
+                        </div>
+                        <Link href="/tools/aueb" className="px-6 py-3 bg-violet-600 hover:bg-violet-500 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition whitespace-nowrap">
+                            Launch AUEB →
+                        </Link>
+                    </div>
+                </div>
+            </ScrollReveal>
+
             {/* Subscribe CTA */}
             <ScrollReveal delay={200}>
                 <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10">

@@ -1,30 +1,67 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { TrendingDown, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame } from 'lucide-react';
 import Link from 'next/link';
-import { ScrollReveal } from '../../components/magicui/scroll-reveal';
-import { GlowCard } from '../../components/magicui/glow-card';
-import { ShineBorder } from '../../components/magicui/shine-border';
-import { NumberTicker } from '../../components/magicui/number-ticker';
 
-// Gauge Chart Component
+// --- MAGIC UI COMPONENTS ---
+
+const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
+    const [display, setDisplay] = useState(0);
+    useEffect(() => {
+        const start = 0;
+        const end = value;
+        const duration = 1500;
+        const startTime = performance.now();
+
+        const animate = (currentTime: number) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = start + (end - start) * easeOut;
+            setDisplay(current);
+
+            if (progress < 1) requestAnimationFrame(animate);
+        };
+        requestAnimationFrame(animate);
+    }, [value]);
+
+    return <span className="tabular-nums">{prefix}{display.toLocaleString('en-US', { maximumFractionDigits: suffix === '%' ? 1 : 0 })}{suffix}</span>;
+};
+
+const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: React.ReactNode; title: string; icon?: React.ComponentType<{ size?: number }>; className?: string }) => (
+    <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 p-6 backdrop-blur-md ${className}`}>
+        <div className="flex items-center gap-2 mb-4 text-zinc-500">
+            {Icon && <Icon size={14} />}
+            <span className="text-[10px] font-mono uppercase tracking-widest">{title}</span>
+        </div>
+        {children}
+    </div>
+);
+
+// Improved Gauge Chart
 const GaugeChart = ({ value }: { value: number }) => {
     const percentage = Math.min(100, Math.max(0, value));
     const rotation = (percentage / 100) * 180 - 90;
 
     const getColor = () => {
-        if (value >= 70) return '#22c55e';
-        if (value >= 50) return '#eab308';
-        if (value >= 30) return '#f97316';
-        return '#dc2626';
+        if (value >= 70) return '#22c55e'; // Green
+        if (value >= 50) return '#eab308'; // Yellow
+        if (value >= 30) return '#f97316'; // Orange
+        return '#dc2626'; // Red
     };
 
     return (
         <div className="relative w-full max-w-[280px] mx-auto aspect-[2/1]">
             <div className="absolute inset-0 flex items-end justify-center">
                 <svg viewBox="0 0 200 100" className="w-full h-full overflow-visible">
+                    {/* Track */}
                     <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#27272a" strokeWidth="12" strokeLinecap="round" />
+                    {/* Fill */}
                     <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke={getColor()} strokeWidth="12" strokeLinecap="round" strokeDasharray={`${percentage * 2.51} 251`} className="transition-all duration-1000 ease-out" />
+                    {/* Needle */}
                     <g transform={`rotate(${rotation} 100 100)`} className="transition-transform duration-1000 ease-out">
                         <line x1="100" y1="100" x2="100" y2="35" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
                         <circle cx="100" cy="100" r="6" fill="#fff" />
@@ -38,78 +75,20 @@ const GaugeChart = ({ value }: { value: number }) => {
     );
 };
 
-// Simple Area Chart Component
-const InsolvencyCurve = ({ data }: { data: { month: string; revenue: number; cost: number }[] }) => {
-    const maxValue = Math.max(...data.map(d => Math.max(d.revenue, d.cost)));
-    const height = 200;
-    const width = 100;
+// --- MAIN APPLICATION ---
 
-    const revenuePoints = data.map((d, i) => {
-        const x = (i / (data.length - 1)) * width;
-        const y = height - (d.revenue / maxValue) * height;
-        return `${x},${y}`;
-    }).join(' ');
+interface ModelData {
+    model: string;
+    cost: number;
+    margin: number;
+    costPerUser: number;
+}
 
-    const costPoints = data.map((d, i) => {
-        const x = (i / (data.length - 1)) * width;
-        const y = height - (d.cost / maxValue) * height;
-        return `${x},${y}`;
-    }).join(' ');
-
-    return (
-        <div className="w-full h-64 mt-4">
-            <svg viewBox={`0 0 ${width} ${height + 20}`} className="w-full h-full" preserveAspectRatio="none">
-                {/* Grid lines */}
-                {[0, 25, 50, 75, 100].map(p => (
-                    <line key={p} x1="0" y1={height - (p / 100) * height} x2={width} y2={height - (p / 100) * height} stroke="#333" strokeDasharray="2,2" />
-                ))}
-
-                {/* Revenue area */}
-                <polygon
-                    points={`0,${height} ${revenuePoints} ${width},${height}`}
-                    fill="url(#revenueGradient)"
-                />
-                <polyline points={revenuePoints} fill="none" stroke="#22d3ee" strokeWidth="0.5" />
-
-                {/* Cost area */}
-                <polygon
-                    points={`0,${height} ${costPoints} ${width},${height}`}
-                    fill="url(#costGradient)"
-                />
-                <polyline points={costPoints} fill="none" stroke="#dc2626" strokeWidth="0.5" />
-
-                {/* Gradients */}
-                <defs>
-                    <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.3" />
-                        <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.05" />
-                    </linearGradient>
-                    <linearGradient id="costGradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#dc2626" stopOpacity="0.3" />
-                        <stop offset="100%" stopColor="#dc2626" stopOpacity="0.05" />
-                    </linearGradient>
-                </defs>
-
-                {/* X-axis labels */}
-                {data.filter((_, i) => i % 3 === 0).map((d, i) => (
-                    <text key={i} x={(i * 3 / (data.length - 1)) * width} y={height + 15} fill="#666" fontSize="3" textAnchor="middle">{d.month}</text>
-                ))}
-            </svg>
-
-            {/* Legend */}
-            <div className="flex justify-center gap-6 mt-4">
-                <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-cyan-400" />
-                    <span className="text-xs text-zinc-500">Revenue</span>
-                </div>
-                <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-600" />
-                    <span className="text-xs text-zinc-500">AI Costs</span>
-                </div>
-            </div>
-        </div>
-    );
-};
+interface GrowthData {
+    month: string;
+    revenue: number;
+    cost: number;
+}
 
 interface Results {
     grossMargin: number;
@@ -119,8 +98,8 @@ interface Results {
     profitPerUser: number;
     costPerUser: number;
     insolvencyPoint: number;
-    models: { model: string; cost: number; margin: number; costPerUser: number }[];
-    growthData: { month: string; revenue: number; cost: number }[];
+    models: ModelData[];
+    growthData: GrowthData[];
     price: number;
     queries: number;
     users: number;
@@ -152,7 +131,7 @@ export default function AUEBTool() {
             const monthlyProfit = monthlyRevenue - monthlyCost;
             const insolvencyPoint = Math.floor(priceNum / costNum);
 
-            const models = [
+            const models: ModelData[] = [
                 { model: 'GPT-4', cost: 0.03 },
                 { model: 'GPT-4o', cost: 0.015 },
                 { model: 'GPT-4o-mini', cost: 0.001 },
@@ -165,7 +144,7 @@ export default function AUEBTool() {
                 costPerUser: queriesNum * m.cost
             })).sort((a, b) => b.margin - a.margin);
 
-            const growthData = Array.from({ length: 12 }, (_, i) => {
+            const growthData: GrowthData[] = Array.from({ length: 12 }, (_, i) => {
                 const month = i + 1;
                 const monthUsers = usersNum * Math.pow(1.15, i);
                 return {
@@ -194,225 +173,159 @@ export default function AUEBTool() {
     };
 
     return (
-        <div className="max-w-4xl w-full relative z-10">
-            {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                <Link href="/system" className="hover:text-white transition">Intelligence</Link>
-                <span>/</span>
-                <span className="text-red-400 font-bold">AUEB Engine</span>
-            </div>
+        <div className="min-h-screen bg-[#050505] text-zinc-200 selection:bg-cyan-500/30 font-sans">
 
-            {!results ? (
-                /* --- INPUT STATE --- */
-                <ScrollReveal>
-                    <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8">
-                        {/* Status Badge */}
-                        <div className="flex items-center gap-2 mb-6">
-                            <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_#dc2626]" />
-                            <span className="font-mono text-xs text-red-400 uppercase tracking-widest">AUEB | AI Unit Economics Benchmark</span>
-                        </div>
-
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-4">
-                            Calculate Your <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">Collapse Point.</span>
-                        </h1>
-                        <p className="text-lg sm:text-xl text-zinc-400 mb-8">
-                            AI reintroduces COGS to software. Are you scaling into bankruptcy?
-                        </p>
-
-                        {/* Input Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                            <div>
-                                <label htmlFor="price" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3 block">
-                                    Price/User/Month ($)
-                                </label>
-                                <input
-                                    id="price"
-                                    type="number"
-                                    step="0.01"
-                                    value={price}
-                                    onChange={e => setPrice(e.target.value)}
-                                    placeholder="20"
-                                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white font-mono focus:border-cyan-500 focus:outline-none transition-colors"
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="queries" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3 block">
-                                    Queries/User/Month
-                                </label>
-                                <input
-                                    id="queries"
-                                    type="number"
-                                    value={queries}
-                                    onChange={e => setQueries(e.target.value)}
-                                    placeholder="100"
-                                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white font-mono focus:border-cyan-500 focus:outline-none transition-colors"
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="costPerQuery" className="text-xs font-mono text-red-400 uppercase tracking-widest mb-3 block">
-                                    Cost/Query ($)
-                                </label>
-                                <input
-                                    id="costPerQuery"
-                                    type="number"
-                                    step="0.001"
-                                    value={costPerQuery}
-                                    onChange={e => setCostPerQuery(e.target.value)}
-                                    placeholder="0.03"
-                                    className="w-full bg-black/50 border border-red-900/30 rounded-xl p-3 text-white font-mono focus:border-red-500 focus:outline-none transition-colors"
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="users" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3 block">
-                                    Active Users
-                                </label>
-                                <input
-                                    id="users"
-                                    type="number"
-                                    value={users}
-                                    onChange={e => setUsers(e.target.value)}
-                                    placeholder="10000"
-                                    className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white font-mono focus:border-cyan-500 focus:outline-none transition-colors"
-                                />
-                            </div>
-                        </div>
-
-                        <ShineBorder borderColor="rgba(220, 38, 38, 0.6)" duration={2}>
-                            <button
-                                onClick={calculate}
-                                disabled={loading || !price}
-                                className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
-                            >
-                                {loading ? (
-                                    <>
-                                        <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                                        CALCULATING...
-                                    </>
-                                ) : (
-                                    "RUN MARGIN AUDIT →"
-                                )}
-                            </button>
-                        </ShineBorder>
+            {/* HEADER */}
+            <nav className="border-b border-white/5 bg-black/50 backdrop-blur-xl sticky top-0 z-50">
+                <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_#dc2626]" />
+                        <span className="font-bold tracking-tight text-lg">AUEB <span className="text-zinc-600 font-normal">| Margin Audit</span></span>
                     </div>
-                </ScrollReveal>
-            ) : (
-                /* --- RESULTS STATE --- */
-                <>
-                    {/* Gauge Hero */}
-                    <ScrollReveal>
-                        <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6">
-                            <div className="text-center">
-                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-8">Gross Margin Health</div>
+                    <Link href="/advisory" className="flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white transition-colors uppercase tracking-widest">
+                        <Lock size={12} />
+                        Get Expert Help
+                    </Link>
+                </div>
+            </nav>
+
+            <main className="max-w-7xl mx-auto px-6 py-12">
+                <AnimatePresence mode="wait">
+                    {!results ? (
+                        /* --- INPUT STATE --- */
+                        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl mx-auto">
+                            <div className="text-center mb-12">
+                                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">
+                                    Calculate Your<br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">Collapse Point.</span>
+                                </h1>
+                                <p className="text-xl text-zinc-500">AI reintroduces COGS to software. Are you scaling into bankruptcy?</p>
+                            </div>
+
+                            <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8">
+                                <div className="grid grid-cols-2 gap-6">
+                                    <div>
+                                        <label htmlFor="price" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Price/User/Month</label>
+                                        <input id="price" type="number" step="0.01" value={price} onChange={e => setPrice(e.target.value)}
+                                            className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white font-mono focus:border-cyan-500 focus:outline-none" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="queries" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Queries/User/Month</label>
+                                        <input id="queries" type="number" value={queries} onChange={e => setQueries(e.target.value)}
+                                            className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white font-mono focus:border-cyan-500 focus:outline-none" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="costPerQuery" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Cost/Query ($)</label>
+                                        <input id="costPerQuery" type="number" step="0.001" value={costPerQuery} onChange={e => setCostPerQuery(e.target.value)}
+                                            className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white font-mono focus:border-cyan-500 focus:outline-none" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="users" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Active Users</label>
+                                        <input id="users" type="number" value={users} onChange={e => setUsers(e.target.value)}
+                                            className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white font-mono focus:border-cyan-500 focus:outline-none" />
+                                    </div>
+                                </div>
+
+                                <button
+                                    onClick={calculate} disabled={loading || !price}
+                                    className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-red-500 hover:text-white hover:scale-[1.01] transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                                >
+                                    {loading ? <span className="animate-pulse">CALCULATING...</span> : "RUN MARGIN AUDIT"}
+                                </button>
+                            </div>
+                        </motion.div>
+                    ) : (
+                        /* --- RESULTS STATE --- */
+                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
+
+                            {/* GAUGE HERO */}
+                            <div className="text-center mb-16 pt-8">
+                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-8">GROSS MARGIN HEALTH</div>
                                 <GaugeChart value={results.grossMargin} />
-                                <div className={`mt-12 text-3xl sm:text-4xl font-bold tracking-tight ${getMarginStatus(results.grossMargin).color}`}>
+                                <div className={`mt-12 text-4xl font-bold tracking-tight ${getMarginStatus(results.grossMargin).color}`}>
                                     {getMarginStatus(results.grossMargin).text}
                                 </div>
                                 {results.grossMargin < 30 && (
                                     <div className="mt-6 text-red-400 text-sm max-w-xl mx-auto bg-red-950/30 p-4 rounded-lg border border-red-900/50">
-                                        ⚠️ CRITICAL: Your unit economics are upside down. You are paying users to use your product.
+                                        CRITICAL: Your unit economics are upside down. You are paying users to use your product.
                                     </div>
                                 )}
                             </div>
-                        </div>
-                    </ScrollReveal>
 
-                    {/* Metrics Grid */}
-                    <ScrollReveal delay={100}>
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-                            <GlowCard className="p-4 sm:p-6" glowColor="cyan">
-                                <div className="text-[10px] font-mono text-zinc-500 uppercase mb-2">Monthly Revenue</div>
-                                <div className="text-xl sm:text-2xl font-bold text-cyan-400">
-                                    <NumberTicker value={Math.round(results.monthlyRevenue / 1000)} prefix="$" suffix="K" />
-                                </div>
-                            </GlowCard>
-                            <GlowCard className="p-4 sm:p-6" glowColor="danger">
-                                <div className="text-[10px] font-mono text-zinc-500 uppercase mb-2">AI Costs</div>
-                                <div className="text-xl sm:text-2xl font-bold text-red-600">
-                                    <NumberTicker value={Math.round(results.monthlyCost / 1000)} prefix="$" suffix="K" />
-                                </div>
-                            </GlowCard>
-                            <GlowCard className="p-4 sm:p-6" glowColor={results.monthlyProfit >= 0 ? 'cyan' : 'danger'}>
-                                <div className="text-[10px] font-mono text-zinc-500 uppercase mb-2">Monthly Profit</div>
-                                <div className={`text-xl sm:text-2xl font-bold ${results.monthlyProfit >= 0 ? 'text-emerald-400' : 'text-red-600'}`}>
-                                    <NumberTicker value={Math.round(results.monthlyProfit / 1000)} prefix="$" suffix="K" />
-                                </div>
-                            </GlowCard>
-                            <GlowCard className="p-4 sm:p-6" glowColor="gold">
-                                <div className="text-[10px] font-mono text-zinc-500 uppercase mb-2">Insolvency Point</div>
-                                <div className="text-xl sm:text-2xl font-bold text-yellow-400">
-                                    <NumberTicker value={results.insolvencyPoint} suffix=" queries" />
-                                </div>
-                            </GlowCard>
-                        </div>
-                    </ScrollReveal>
-
-                    {/* Model Comparison */}
-                    <ScrollReveal delay={200}>
-                        <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-6">
-                            <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Model Arbitrage</div>
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-sm">
-                                    <thead>
-                                        <tr className="border-b border-zinc-800 text-zinc-500 font-mono text-xs uppercase">
-                                            <th className="text-left py-3">Model</th>
-                                            <th className="text-right py-3">Cost/User</th>
-                                            <th className="text-right py-3">Margin</th>
-                                            <th className="text-right py-3">Monthly Savings</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {results.models.map((model, i) => {
-                                            const savings = ((model.margin - results.grossMargin) / 100) * results.monthlyRevenue;
-                                            return (
-                                                <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition">
-                                                    <td className="py-3 font-semibold text-white">{model.model}</td>
-                                                    <td className="py-3 text-right text-zinc-400 font-mono">{formatMoney(model.costPerUser)}</td>
-                                                    <td className={`py-3 text-right font-bold ${model.margin >= 60 ? 'text-emerald-400' : model.margin >= 30 ? 'text-yellow-400' : 'text-red-500'}`}>
-                                                        {model.margin.toFixed(1)}%
-                                                    </td>
-                                                    <td className="py-3 text-right text-emerald-400 font-mono">
-                                                        {savings > 0 ? `+${formatMoney(savings)}` : '-'}
-                                                    </td>
-                                                </tr>
-                                            );
-                                        })}
-                                    </tbody>
-                                </table>
+                            {/* METRICS GRID */}
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                <BentoCard title="Monthly Revenue" icon={DollarSign}>
+                                    <div className="text-3xl font-bold text-cyan-400"><NumberTicker value={results.monthlyRevenue} prefix="$" /></div>
+                                </BentoCard>
+                                <BentoCard title="Monthly AI Costs" icon={Flame} className="border-red-500/20">
+                                    <div className="text-3xl font-bold text-red-600"><NumberTicker value={results.monthlyCost} prefix="$" /></div>
+                                </BentoCard>
+                                <BentoCard title="Monthly Profit" icon={TrendingDown}>
+                                    <div className={`text-3xl font-bold ${results.monthlyProfit >= 0 ? 'text-emerald-400' : 'text-red-600'}`}>
+                                        <NumberTicker value={results.monthlyProfit} prefix="$" />
+                                    </div>
+                                </BentoCard>
+                                <BentoCard title="Insolvency Point" icon={AlertTriangle} className="border-yellow-500/20">
+                                    <div className="text-3xl font-bold text-yellow-400"><NumberTicker value={results.insolvencyPoint} suffix="x" /></div>
+                                    <div className="text-zinc-500 text-xs mt-2">Max queries before loss</div>
+                                </BentoCard>
                             </div>
-                        </div>
-                    </ScrollReveal>
 
-                    {/* Insolvency Curve */}
-                    <ScrollReveal delay={300}>
-                        <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-6">
-                            <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">The Insolvency Curve</div>
-                            <p className="text-sm text-zinc-400 mb-4">12-month projection at 15% MoM growth</p>
-                            <InsolvencyCurve data={results.growthData} />
-                        </div>
-                    </ScrollReveal>
+                            {/* MODEL COMPARISON TABLE */}
+                            <BentoCard title="Model Arbitrage" icon={Zap} className="col-span-full">
+                                <div className="overflow-x-auto">
+                                    <table className="w-full text-sm">
+                                        <thead>
+                                            <tr className="border-b border-zinc-800 text-zinc-500 font-mono text-xs uppercase">
+                                                <th className="text-left py-3">Model</th>
+                                                <th className="text-right py-3">Cost/User</th>
+                                                <th className="text-right py-3">Margin</th>
+                                                <th className="text-right py-3">Impact</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {results.models.map((model: ModelData, i: number) => {
+                                                const savings = ((model.margin - results.grossMargin) / 100) * results.monthlyRevenue;
+                                                return (
+                                                    <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30">
+                                                        <td className="py-3 font-semibold text-white">{model.model}</td>
+                                                        <td className="py-3 text-right text-zinc-400">{formatMoney(model.costPerUser)}</td>
+                                                        <td className={`py-3 text-right font-bold ${model.margin >= 60 ? 'text-emerald-400' : 'text-red-500'}`}>{model.margin.toFixed(1)}%</td>
+                                                        <td className="py-3 text-right text-emerald-400">{savings > 0 ? `+${formatMoney(savings)}` : '-'}</td>
+                                                    </tr>
+                                                );
+                                            })}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </BentoCard>
 
-                    {/* CTA */}
-                    <ScrollReveal delay={400}>
-                        <div className="flex flex-col sm:flex-row justify-center gap-4 pt-6 border-t border-white/10">
-                            <button
-                                onClick={() => setResults(null)}
-                                className="px-6 py-3 text-zinc-500 hover:text-white text-sm font-mono uppercase tracking-widest transition"
-                            >
-                                ← New Analysis
-                            </button>
-                            <ShineBorder borderColor="rgba(220, 38, 38, 0.6)" duration={2}>
-                                <Link
-                                    href="/advisory"
-                                    className="block px-8 py-3 bg-red-600 hover:bg-red-500 text-white font-bold uppercase tracking-widest transition-colors text-center"
-                                >
-                                    Fix My Margins →
-                                </Link>
-                            </ShineBorder>
-                        </div>
-                    </ScrollReveal>
-                </>
-            )}
+                            {/* GROWTH CHART */}
+                            <BentoCard title="The Insolvency Curve" icon={Activity}>
+                                <div className="h-64 w-full mt-4">
+                                    <ResponsiveContainer width="100%" height="100%">
+                                        <AreaChart data={results.growthData}>
+                                            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+                                            <XAxis dataKey="month" stroke="#666" fontSize={12} />
+                                            <YAxis stroke="#666" fontSize={12} tickFormatter={(val) => `$${val}k`} />
+                                            <Tooltip contentStyle={{ backgroundColor: '#111', border: '1px solid #333' }} formatter={(val) => val !== undefined ? `$${Number(val).toFixed(0)}k` : ''} />
+                                            <Area type="monotone" dataKey="revenue" stackId="1" stroke="#22d3ee" fill="#22d3ee" fillOpacity={0.2} />
+                                            <Area type="monotone" dataKey="cost" stackId="2" stroke="#dc2626" fill="#dc2626" fillOpacity={0.2} />
+                                        </AreaChart>
+                                    </ResponsiveContainer>
+                                </div>
+                            </BentoCard>
+
+                            {/* ACTION FOOTER */}
+                            <div className="border-t border-white/10 pt-12 flex justify-center gap-4">
+                                <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline">← New Analysis</button>
+                                <Link href="/advisory" className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-xl transition-all">Fix My Margins →</Link>
+                            </div>
+
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </main>
         </div>
     );
 }
