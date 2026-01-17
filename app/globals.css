@@ -1,12 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: #050505;
-  /* Obsidian Black */
-  --foreground: #e4e4e7;
-  /* Zinc 200 */
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-serif: "Playfair Display", serif;
 
   --color-obsidian: #050505;
   --color-surface: #0f0f0f;
@@ -14,12 +11,18 @@
   --color-cobalt: #0055FF;
   --color-cyan: #00F0FF;
   --color-danger: #FF3333;
+  --color-gold: #D4AF37;
+}
+
+:root {
+  --background: #050505;
+  --foreground: #e4e4e7;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
