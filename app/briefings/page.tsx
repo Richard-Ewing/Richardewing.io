@@ -1,68 +1,128 @@
 'use client';
 
 import Link from 'next/link';
-import { GatewayCard } from '../components/gateway-card';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
+import { ShineBorder } from '../components/magicui/shine-border';
 
-const BriefCard = ({ number, title, date, slug }: { number: string, title: string, date: string, slug: string }) => (
-    <Link href={`/briefs/${slug}`} className="block group">
-        <GlowCard className="p-6 sm:p-8 h-full flex flex-col justify-between" glowColor="cyan">
-            <div>
-                <div className="flex justify-between items-start mb-4 pb-3 border-b border-white/5">
-                    <span className="font-mono text-zinc-500 text-xs">NO. {number}</span>
-                    <span className="font-mono text-zinc-600 text-xs">{date}</span>
+interface BriefCardProps {
+    number: string;
+    title: string;
+    subtitle: string;
+    href: string;
+    isNew?: boolean;
+}
+
+const BriefCard = ({ number, title, subtitle, href, isNew }: BriefCardProps) => (
+    <GlowCard className="p-5 sm:p-6 relative" glowColor="cyan">
+        {isNew && (
+            <div className="absolute top-0 right-0 bg-emerald-500/20 text-emerald-400 px-2 py-1 text-[8px] font-mono uppercase tracking-widest rounded-bl-lg">
+                New
+            </div>
+        )}
+        <a href={href} className="block group">
+            <div className="flex items-start gap-4">
+                <div className="text-2xl sm:text-3xl font-mono text-zinc-700 font-bold shrink-0">{number}</div>
+                <div className="flex-1">
+                    <h3 className="text-white font-bold text-base sm:text-lg group-hover:text-cyan-400 transition mb-1">{title}</h3>
+                    <p className="text-zinc-500 text-xs sm:text-sm leading-relaxed">{subtitle}</p>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{title}</h3>
+                <span className="text-zinc-600 group-hover:text-cyan-400 transition text-lg">→</span>
             </div>
-            <div className="mt-6 pt-3 border-t border-white/5 flex justify-between items-center text-xs font-mono uppercase tracking-widest text-zinc-500">
-                <span>Read Brief</span>
-                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-            </div>
-        </GlowCard>
-    </Link>
+        </a>
+    </GlowCard>
 );
 
 export default function BriefingsPage() {
+    const briefs = [
+        { number: '01', title: 'The AI Volatility Tax', subtitle: 'Why AI features are destroying your gross margins', href: '/canonical/innovation-tax.html', isNew: true },
+        { number: '02', title: 'The Senior Ceiling', subtitle: 'Breaking through the IC-to-Executive transition', href: '/canonical/senior-ceiling.html' },
+        { number: '03', title: 'Financial Conway\'s Law', subtitle: 'Why architecture mirrors your funding model', href: '/canonical/financial-conways-law.html' },
+        { number: '04', title: 'The Governance of Subtraction', subtitle: 'Why deleting code is higher leverage than writing it', href: '/canonical/governance-of-subtraction.html' },
+        { number: '05', title: 'Kill Switch Protocol', subtitle: 'The framework for ruthless feature deprecation', href: '/canonical/kill-switch.html' },
+        { number: '06', title: 'Q-PEP Fundamentals', subtitle: 'Qualitative-Profitability Efficiency Protocol', href: '/canonical/q-pep.html' },
+    ];
+
     return (
         <div className="max-w-4xl w-full relative z-10">
-            {/* Breadcrumbs */}
+            {/* Background FX */}
+            <div className="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
+
+            {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                <span>Signal</span><span>/</span><span className="text-white font-bold">Briefs</span>
+                <span>Signal</span><span>/</span><span className="text-white font-bold">Briefings</span>
             </div>
 
             <ScrollReveal>
-                <div className="mb-12">
-                    <span className="font-mono text-cyan-400 text-xs uppercase tracking-[0.3em] mb-4 block">The Signal from the Noise</span>
-                    <h1 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight mb-8">
-                        Executive<br />Briefings
-                    </h1>
+                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent pointer-events-none" />
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                        <BriefCard number="001" title='The High Cost of "Maybe"' date="OCT 2025" slug="cost-of-maybe" />
-                        <BriefCard number="002" title="Zombie Feature Audit" date="NOV 2025" slug="zombie-feature-audit" />
-                        <BriefCard number="003" title="Variance Analysis: AI vs Humans" date="DEC 2025" slug="variance-analysis" />
+                    <div className="relative">
+                        <span className="font-mono text-cyan-400 text-xs uppercase tracking-[0.3em] mb-4 block">The Canon</span>
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4">
+                            Executive<br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Briefings.</span>
+                        </h1>
+                        <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl leading-relaxed">
+                            Dense, actionable intelligence for leaders who don't have time for "thought leadership."
+                            <span className="text-white font-bold"> Read time: 5-10 minutes each.</span>
+                        </p>
                     </div>
                 </div>
             </ScrollReveal>
 
-            {/* AUEB Calculator Gateway */}
+            {/* Brief Cards */}
             <ScrollReveal delay={100}>
-                <section className="border-t border-white/5 pt-8">
-                    <div className="flex items-center gap-4 mb-6">
-                        <div className="h-px bg-cyan-500/30 w-12" />
-                        <div>
-                            <h2 className="text-xl sm:text-2xl font-bold text-white">AI Unit Economics</h2>
-                            <p className="font-mono text-[10px] text-cyan-400 uppercase tracking-widest mt-1">// MARGIN FORENSICS</p>
-                        </div>
+                <div className="space-y-4 mb-8">
+                    {briefs.map((brief, i) => (
+                        <BriefCard key={i} {...brief} />
+                    ))}
+                </div>
+            </ScrollReveal>
+
+            {/* Subscribe CTA */}
+            <ScrollReveal delay={200}>
+                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10">
+                    <div className="flex items-center gap-3 mb-6">
+                        <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse" />
+                        <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest">Monthly Dispatch</span>
                     </div>
-                    <GatewayCard
-                        title="AUEB Calculator™"
-                        href="/tools/aueb"
-                        color="cyan"
-                        description="Launch Unit Economics Model"
-                    />
-                </section>
+                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">Get New Briefs First</h2>
+                    <p className="text-zinc-400 text-sm mb-6">One email per month. No spam. Unsubscribe anytime.</p>
+
+                    <form name="briefs-subscribe" method="POST" className="max-w-lg">
+                        <div className="flex flex-col sm:flex-row gap-3">
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="your@email.com"
+                                required
+                                className="flex-1 bg-black/50 border border-zinc-800 text-white px-4 py-3 rounded-xl focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50 outline-none font-mono text-sm transition-all placeholder:text-zinc-700"
+                            />
+                            <ShineBorder borderColor="rgba(34, 211, 238, 0.6)" duration={2}>
+                                <button
+                                    type="submit"
+                                    className="bg-white text-black font-bold uppercase text-xs px-6 py-3 tracking-widest hover:bg-cyan-400 transition-colors w-full"
+                                >
+                                    Subscribe →
+                                </button>
+                            </ShineBorder>
+                        </div>
+                    </form>
+                </div>
+            </ScrollReveal>
+
+            {/* External Publications */}
+            <ScrollReveal delay={300}>
+                <div className="mt-8 pt-8 border-t border-white/10">
+                    <div className="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-6">Also Published On</div>
+                    <div className="flex flex-wrap gap-4">
+                        <a href="https://builtin.com/authors/richard-ewing" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Built In →</a>
+                        <a href="https://www.cio.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Foundry →</a>
+                        <a href="https://hackernoon.com/u/richardewing1" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">HackerNoon →</a>
+                        <a href="https://www.mindtheproduct.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Mind the Product →</a>
+                    </div>
+                </div>
             </ScrollReveal>
         </div>
     );
