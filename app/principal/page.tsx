@@ -8,6 +8,32 @@ import { GlowCard } from '../components/magicui/glow-card';
 import { ShineBorder } from '../components/magicui/shine-border';
 import Link from 'next/link';
 
+// Simple markdown renderer for AI responses
+const renderAIResponse = (text: string) => {
+    return text.split('\n').map((line, i) => {
+        // Bold text: **text**
+        const boldRegex = /\*\*(.+?)\*\*/g;
+        let formattedLine = line.replace(boldRegex, '<strong class="text-white font-bold">$1</strong>');
+
+        // Bullet points: • or -
+        if (line.trim().startsWith('•') || line.trim().startsWith('-')) {
+            const bulletContent = line.trim().replace(/^[•-]\s*/, '');
+            return (
+                <div key={i} className="flex items-start gap-2 mb-2">
+                    <span className="text-cyan-400 mt-0.5 shrink-0">•</span>
+                    <span dangerouslySetInnerHTML={{ __html: bulletContent.replace(boldRegex, '<strong class="text-white font-bold">$1</strong>') }} />
+                </div>
+            );
+        }
+
+        // Empty lines
+        if (!line.trim()) return <div key={i} className="h-2" />;
+
+        // Regular lines with bold parsing
+        return <p key={i} className="mb-2" dangerouslySetInnerHTML={{ __html: formattedLine }} />;
+    });
+};
+
 // AI Expandable Card Component
 const AIExpandCard = ({
     icon,
@@ -84,7 +110,7 @@ const AIExpandCard = ({
 
                     {expanded && aiResponse && (
                         <div className="mt-4 pt-4 border-t border-white/10 text-sm text-zinc-300 leading-relaxed animate-fade-in-up">
-                            {aiResponse}
+                            {renderAIResponse(aiResponse)}
                         </div>
                     )}
                 </div>
