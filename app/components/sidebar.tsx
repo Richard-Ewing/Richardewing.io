@@ -44,11 +44,12 @@ export function Sidebar() {
             ]
         },
         {
-            label: 'Tools', labelClass: 'text-cyan-400', items: [
-                { href: '/tools/pdi', label: 'PDI Engine', highlight: true },
-                { href: '/tools/ev-se', label: 'EV-SE Engine' },
-                { href: '/tools/aueb', label: 'AUEB Engine' },
-                { href: '/tools/aper', label: 'APER Diagnostic' },
+            label: 'Free Tools', labelClass: 'text-cyan-400', items: [
+                { href: '/tools', label: 'All Tools →' },
+                { href: '/tools/pdi', label: 'Product Debt Audit', highlight: true },
+                { href: '/tools/ev-se', label: 'Valuation Calculator' },
+                { href: '/tools/aueb', label: 'AI Costs Calculator' },
+                { href: '/tools/aper', label: 'Team Efficiency' },
             ]
         },
         {
