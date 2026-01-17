@@ -286,33 +286,108 @@ Migrate to new database"
                         </div>
                     </ScrollReveal>
 
-                    {/* CTA */}
+                    {/* Enhanced Conversion Section */}
                     <ScrollReveal delay={200}>
-                        <div className="flex flex-col sm:flex-row justify-center gap-4 pt-6 border-t border-white/10">
-                            <button
-                                onClick={() => setResults(null)}
-                                className="px-6 py-3 text-zinc-500 hover:text-white text-sm font-mono uppercase tracking-widest transition"
-                            >
-                                ← Restart Audit
-                            </button>
-                            <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
-                                <Link
-                                    href="/advisory"
-                                    className="block px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-widest transition-colors text-center"
+                        <div className="mt-12 border-t border-white/10 pt-12 space-y-8">
+                            {/* Email Capture */}
+                            <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-8 border border-white/10 shadow-2xl">
+                                <div className="flex items-center gap-3 mb-4">
+                                    {results.score < 50 ? (
+                                        <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse" />
+                                    ) : (
+                                        <div className="w-3 h-3 bg-cyan-400 rounded-full" />
+                                    )}
+                                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+                                        PDI Analysis Complete
+                                    </span>
+                                </div>
+
+                                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                                    {results.score < 50
+                                        ? "⚠️ Your Team is Bleeding Capital"
+                                        : "Want Expert Optimization?"}
+                                </h3>
+                                <p className="text-zinc-400 mb-6">
+                                    Get a personalized deep-dive with actionable recommendations from a Product Economist.
+                                </p>
+
+                                <div className="flex flex-col sm:flex-row gap-3">
+                                    <input
+                                        type="email"
+                                        placeholder="your@email.com"
+                                        className="flex-1 px-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none transition-colors"
+                                    />
+                                    <Link
+                                        href="/advisory"
+                                        className={`px-6 py-3 font-bold uppercase tracking-widest text-sm rounded-xl flex items-center justify-center gap-2 whitespace-nowrap transition-all ${results.score < 50
+                                                ? 'bg-red-600 hover:bg-red-500 text-white'
+                                                : 'bg-white hover:bg-cyan-400 text-black'
+                                            }`}
+                                    >
+                                        {results.score < 50 ? 'Emergency Intervention →' : 'Get Analysis →'}
+                                    </Link>
+                                </div>
+                            </div>
+
+                            {/* Secondary Actions */}
+                            <div className="flex items-center justify-center gap-6 text-sm">
+                                <button
+                                    onClick={() => setResults(null)}
+                                    className="text-zinc-500 hover:text-white transition-colors underline underline-offset-4"
                                 >
-                                    Book Fix Call →
+                                    ← Run New Audit
+                                </button>
+                                <span className="text-zinc-700">|</span>
+                                <Link href="/system" className="text-zinc-500 hover:text-white transition-colors">
+                                    Explore All Tools →
                                 </Link>
-                            </ShineBorder>
+                            </div>
+
+                            {/* Social Proof */}
+                            <div className="text-center pt-8 border-t border-white/5">
+                                <p className="text-xs text-zinc-600 mb-3">Trusted by product leaders at</p>
+                                <div className="flex items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
+                                    <span>Stripe</span>
+                                    <span>Figma</span>
+                                    <span>Linear</span>
+                                    <span>Notion</span>
+                                    <span>Vercel</span>
+                                </div>
+                            </div>
                         </div>
                     </ScrollReveal>
 
-                    {/* Deep Text (SEO) */}
+                    {/* Enhanced SEO Content */}
                     <ScrollReveal delay={300}>
-                        <div className="mt-16 pt-8 border-t border-white/5">
-                            <h2 className="text-2xl font-bold text-white mb-4">The Theory of Technical Inflation</h2>
-                            <p className="text-zinc-400 leading-relaxed">
-                                Engineering organizations do not die from starvation; they die from indigestion. If your PDI is below 50, you are paying Senior Engineer salaries for Digital Janitorial work. That is <span className="text-red-500 font-bold">Capital Leakage</span>. The Product Economist exists to plug these holes before they sink the ship.
-                            </p>
+                        <div className="mt-16 pt-8 border-t border-white/5 space-y-8">
+                            <div>
+                                <h2 className="text-2xl font-bold text-white mb-4">What is Product Debt Index (PDI)?</h2>
+                                <p className="text-zinc-400 leading-relaxed">
+                                    The Product Debt Index is a proprietary metric developed by Richard Ewing to quantify the hidden cost of technical and product debt in engineering organizations. Unlike traditional velocity metrics, PDI measures what percentage of your engineering capacity is consumed by non-value-creating maintenance work versus growth-driving feature development.
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <h3 className="text-white font-semibold text-lg mb-3">How PDI is Calculated</h3>
+                                    <p className="text-zinc-500 leading-relaxed mb-4">
+                                        PDI uses AI to categorize your backlog items into three buckets: Growth (new features), Retention (customer value), and Maintenance (technical debt). The score is calculated as:
+                                    </p>
+                                    <div className="p-4 bg-zinc-900/50 rounded-lg border border-white/5 font-mono text-sm text-cyan-400">
+                                        PDI = 100 - (Maintenance Work ÷ Total Work × 100)
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 className="text-white font-semibold text-lg mb-3">Why PDI Matters</h3>
+                                    <p className="text-zinc-500 leading-relaxed">
+                                        Engineering organizations don&apos;t die from starvation—they die from indigestion. A PDI below 50 means you&apos;re paying Senior Engineer salaries for digital janitorial work. That&apos;s capital leakage that directly impacts your runway and valuation.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="text-xs text-zinc-700 pt-4 border-t border-white/5">
+                                © 2026 Richard Ewing. Product Economist. All frameworks and methodologies are proprietary.
+                            </div>
                         </div>
                     </ScrollReveal>
                 </>
