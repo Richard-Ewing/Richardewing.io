@@ -1,116 +1,110 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import { ScrollReveal } from '../components/magicui/scroll-reveal';
+import { NumberTicker } from '../components/magicui/number-ticker';
+import { GlowCard } from '../components/magicui/glow-card';
 
 export default function PrincipalPage() {
     return (
-        <main className="p-8 lg:p-24 flex flex-col justify-center min-h-screen relative overflow-hidden">
-            <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-cobalt/5 rounded-full blur-[128px] pointer-events-none"></div>
+        <div className="max-w-4xl w-full relative z-10">
+            <div className="absolute top-0 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-cobalt/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="capsule-container rounded-[2rem] p-12 w-full mb-8 animate-fade-in-up flex flex-col lg:flex-row gap-12 items-center">
-                <div className="relative flex-shrink-0">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-cobalt to-cyan blur-2xl opacity-20 rounded-full"></div>
-                    <Image
-                        src="/assets/images/headshot.jpg"
-                        alt="Richard Ewing"
-                        width={192}
-                        height={192}
-                        className="relative w-48 h-48 rounded-full border-4 border-obsidian shadow-2xl grayscale hover:grayscale-0 transition duration-700"
-                    />
-                </div>
-                <div>
-                    <span className="font-mono text-cobalt text-xs uppercase tracking-widest mb-4 block">The Principal</span>
-                    <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                        The Office of the <br />
-                        <span className="text-white">Product Economist.</span>
-                    </h1>
-                    <p className="text-xl text-zinc-400 max-w-2xl leading-relaxed animate-fade-in-up delay-200">
-                        Product Management is not an art form; it is <strong>Capital Allocation</strong>.
-                        <br />
-                        <br />
-                        Richard Ewing is the Principal of Product Economics Consulting. He bridges the gap between &quot;Agile Theater&quot; and the financial reality of the C-Suite, helping operators transition from Ticket Managers to P&L Owners.
-                    </p>
-                </div>
-            </div>
+            <ScrollReveal>
+                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 lg:p-12 mb-8">
+                    <span className="font-mono text-cobalt text-xs uppercase tracking-[0.3em] mb-6 block">The Principal</span>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in-up delay-100">
-                <div className="capsule-container p-8 rounded-3xl backdrop-blur-md">
-                    <div className="font-mono text-zinc-500 text-[10px] uppercase tracking-widest mb-2">Track Record</div>
-                    <div className="text-4xl font-bold text-white mb-1">$2B+</div>
-                    <div className="text-sm text-zinc-400">Market Cap Created</div>
-                </div>
-                <div className="capsule-container p-8 rounded-3xl backdrop-blur-md">
-                    <div className="font-mono text-zinc-500 text-[10px] uppercase tracking-widest mb-2">Experience</div>
-                    <div className="text-4xl font-bold text-white mb-1">15y</div>
-                    <div className="text-sm text-zinc-400">Product & Engineering</div>
-                </div>
-                <div className="capsule-container p-8 rounded-3xl backdrop-blur-md">
-                    <div className="font-mono text-zinc-500 text-[10px] uppercase tracking-widest mb-2">Specialty</div>
-                    <div className="text-4xl font-bold text-white mb-1">B2B</div>
-                    <div className="text-sm text-zinc-400">Enterprise SaaS</div>
-                </div>
-                <div className="capsule-container p-8 rounded-3xl backdrop-blur-md">
-                    <div className="font-mono text-zinc-500 text-[10px] uppercase tracking-widest mb-2">Focus</div>
-                    <div className="text-4xl font-bold text-white mb-1">ROI</div>
-                    <div className="text-sm text-zinc-400">Capital Efficiency</div>
-                </div>
-            </div>
-
-            <div className="mt-8 capsule-container p-12 rounded-[2rem] animate-fade-in-up delay-200">
-                <h3 className="text-white font-bold mb-8 flex items-center gap-3">
-                    <span className="w-1 h-6 bg-cobalt rounded-full"></span>
-                    Career Arc
-                </h3>
-                <div className="space-y-12 border-l border-zinc-800 ml-3 pl-8 relative">
-                    {/* Role 1 */}
-                    <div className="relative group">
-                        <span className="absolute -left-[39px] top-2 w-3 h-3 bg-cobalt rounded-full ring-4 ring-obsidian group-hover:scale-125 transition duration-300"></span>
-                        <h4 className="text-white font-bold text-lg">Director of Product Operations</h4>
-                        <span className="font-mono text-xs text-zinc-500 mb-2 block">2025 - Present &bull; High-Growth AI Startup</span>
-                        <p className="text-zinc-400 text-sm max-w-2xl leading-relaxed">
-                            Established the Product Management function from scratch. Pivoted strategy to an AI-centric platform and successfully delivered an MVP conversational agent, driving radical efficiency across Finance & Ops.
-                        </p>
+                    <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 items-start mb-8">
+                        <div className="relative group shrink-0">
+                            <div className="absolute inset-0 bg-cobalt blur opacity-20 group-hover:opacity-40 transition-opacity rounded-2xl" />
+                            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-zinc-800 border-2 border-white/10 overflow-hidden relative">
+                                <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" fill className="object-cover grayscale group-hover:grayscale-0 transition duration-500" />
+                            </div>
+                        </div>
+                        <div>
+                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Richard Ewing</h1>
+                            <div className="font-mono text-sm text-zinc-500 uppercase tracking-widest mb-4">Product Economist • Seattle, WA</div>
+                            <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
+                                I help boards stop bleeding money on AI they don't understand. 15 years of shipping code and managing P&Ls across enterprise, government, and startups.
+                            </p>
+                        </div>
                     </div>
 
-                    {/* Role 2 */}
-                    <div className="relative group">
-                        <span className="absolute -left-[39px] top-2 w-3 h-3 bg-zinc-800 rounded-full ring-4 ring-obsidian group-hover:bg-white transition duration-300"></span>
-                        <h4 className="text-zinc-300 font-bold text-lg">Group Product Manager</h4>
-                        <span className="font-mono text-xs text-zinc-500 mb-2 block">2022 - 2024 &bull; Top 10 Consulting Firm</span>
-                        <p className="text-zinc-400 text-sm max-w-2xl leading-relaxed">
-                            Led a strategic On-Prem to Azure migration, securing a <strong>$5M cost reduction</strong>. Operationalized a 16-person org, doubling development velocity and clearing a 200-item backlog.
-                        </p>
-                    </div>
-
-                    {/* Role 3 */}
-                    <div className="relative group">
-                        <span className="absolute -left-[39px] top-2 w-3 h-3 bg-zinc-800 rounded-full ring-4 ring-obsidian group-hover:bg-white transition duration-300"></span>
-                        <h4 className="text-zinc-300 font-bold text-lg">Product Manager</h4>
-                        <span className="font-mono text-xs text-zinc-500 mb-2 block">2021 - 2022 &bull; Public Sector</span>
-                        <p className="text-zinc-400 text-sm max-w-2xl leading-relaxed">
-                            Managed critical services for <strong>7.7M users</strong>. Achieved 98% on-time delivery for a massive tech overhaul throughout a high-risk cloud migration.
-                        </p>
-                    </div>
-
-                    {/* Role 4 */}
-                    <div className="relative group">
-                        <span className="absolute -left-[39px] top-2 w-3 h-3 bg-zinc-800 rounded-full ring-4 ring-obsidian group-hover:bg-white transition duration-300"></span>
-                        <h4 className="text-zinc-300 font-bold text-lg">Director of Operations</h4>
-                        <span className="font-mono text-xs text-zinc-500 mb-2 block">2014 - 2017 &bull; Design & Manufacturing</span>
-                        <p className="text-zinc-400 text-sm max-w-2xl leading-relaxed">
-                            Turnaround Executive role. Drove <strong>200% YoY growth</strong> to $20M revenue by restructuring the P&L and installing high-speed delivery protocols.
-                        </p>
-                    </div>
-
-                    {/* Role 5 */}
-                    <div className="relative group">
-                        <span className="absolute -left-[39px] top-2 w-3 h-3 bg-zinc-800 rounded-full ring-4 ring-obsidian group-hover:bg-white transition duration-300"></span>
-                        <h4 className="text-zinc-300 font-bold text-lg">Principal Product Manager</h4>
-                        <span className="font-mono text-xs text-zinc-500 mb-2 block">2008 - 2014 &bull; Enterprise ERP SaaS</span>
-                        <p className="text-zinc-400 text-sm max-w-2xl leading-relaxed">
-                            Owned the 0-to-1 lifecycle, scaling a flagship SaaS product to <strong>$25M ARR</strong>. Slashed churn by 20% through a strategic GTM pivot.
-                        </p>
+                    {/* Stats */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-white/10 pt-6">
+                        <div className="text-center">
+                            <div className="text-2xl sm:text-3xl font-bold text-white"><NumberTicker value={15} suffix="y" /></div>
+                            <div className="text-[10px] sm:text-xs font-mono text-zinc-500 uppercase">Experience</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-2xl sm:text-3xl font-bold text-white"><NumberTicker value={7} suffix="M+" /></div>
+                            <div className="text-[10px] sm:text-xs font-mono text-zinc-500 uppercase">Users Migrated</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-2xl sm:text-3xl font-bold text-cobalt"><NumberTicker value={2} prefix="$" suffix="B+" /></div>
+                            <div className="text-[10px] sm:text-xs font-mono text-zinc-500 uppercase">Waste ID'd</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-2xl sm:text-3xl font-bold text-white">MBA</div>
+                            <div className="text-[10px] sm:text-xs font-mono text-zinc-500 uppercase">Finance</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
+            </ScrollReveal>
+
+            {/* Timeline */}
+            <ScrollReveal delay={100}>
+                <div className="mb-8">
+                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                        <span className="w-8 h-0.5 bg-cobalt" /> Career Timeline
+                    </h2>
+
+                    <div className="space-y-4">
+                        <GlowCard className="p-5 sm:p-6" glowColor="cobalt">
+                            <div className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-3">
+                                <h3 className="text-white font-bold text-base sm:text-lg">Product Economist</h3>
+                                <span className="font-mono text-xs text-cobalt">2020 - Present</span>
+                            </div>
+                            <p className="text-zinc-400 text-sm leading-relaxed">Independent advisory practice serving PE firms, enterprise turnarounds, and AI due diligence.</p>
+                        </GlowCard>
+
+                        <GlowCard className="p-5 sm:p-6" glowColor="cyan">
+                            <div className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-3">
+                                <h3 className="text-white font-bold text-base sm:text-lg">State of Washington</h3>
+                                <span className="font-mono text-xs text-zinc-500">2015 - 2020</span>
+                            </div>
+                            <p className="text-zinc-400 text-sm leading-relaxed">Led digital transformation for DOL. Migrated 7.7M users to cloud with zero downtime. Governor's Award recipient.</p>
+                        </GlowCard>
+
+                        <GlowCard className="p-5 sm:p-6" glowColor="white">
+                            <div className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-3">
+                                <h3 className="text-white font-bold text-base sm:text-lg">Enterprise & Startups</h3>
+                                <span className="font-mono text-xs text-zinc-500">2009 - 2015</span>
+                            </div>
+                            <p className="text-zinc-400 text-sm leading-relaxed">Product leadership roles at various enterprise software and fintech startups. Shipped products to millions of users.</p>
+                        </GlowCard>
+                    </div>
+                </div>
+            </ScrollReveal>
+
+            {/* Education & Credentials */}
+            <ScrollReveal delay={200}>
+                <div className="capsule-container rounded-2xl p-6 sm:p-8">
+                    <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                        <span className="w-8 h-0.5 bg-gold" /> Education & Credentials
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="border border-white/10 rounded-xl p-4">
+                            <div className="font-mono text-xs text-gold uppercase mb-2">MBA - Finance</div>
+                            <div className="text-white font-bold">Western Governors University</div>
+                        </div>
+                        <div className="border border-white/10 rounded-xl p-4">
+                            <div className="font-mono text-xs text-zinc-500 uppercase mb-2">Certifications</div>
+                            <div className="text-white text-sm">CSM, CSPO, PMP, ITIL, Six Sigma</div>
+                        </div>
+                    </div>
+                </div>
+            </ScrollReveal>
+        </div>
     );
 }
