@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050505;
+  /* Obsidian Black */
+  --foreground: #e4e4e7;
+  /* Zinc 200 */
+
+  --color-obsidian: #050505;
+  --color-surface: #0f0f0f;
+  --color-titanium: #C0C0C0;
+  --color-cobalt: #0055FF;
+  --color-cyan: #00F0FF;
+  --color-danger: #FF3333;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scroll Reveal Base State */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Magic UI Utilities */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
