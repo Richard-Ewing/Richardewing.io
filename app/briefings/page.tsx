@@ -35,12 +35,12 @@ const BriefCard = ({ number, title, subtitle, href, isNew }: BriefCardProps) => 
 
 export default function BriefingsPage() {
     const briefs = [
-        { number: '01', title: 'The AI Volatility Tax', subtitle: 'Why AI features are destroying your gross margins', href: '/canonical/innovation-tax.html', isNew: true },
-        { number: '02', title: 'The Senior Ceiling', subtitle: 'Breaking through the IC-to-Executive transition', href: '/canonical/senior-ceiling.html' },
+        { number: '01', title: 'The AI Volatility Tax', subtitle: 'Why AI features are destroying your gross margins', href: '/canonical/ai-margin-autopsy.html', isNew: true },
+        { number: '02', title: 'The Senior Ceiling', subtitle: 'Breaking through the IC-to-Executive transition', href: '/canonical/senior-ceiling-playbook.html' },
         { number: '03', title: 'Financial Conway\'s Law', subtitle: 'Why architecture mirrors your funding model', href: '/canonical/financial-conways-law.html' },
         { number: '04', title: 'The Governance of Subtraction', subtitle: 'Why deleting code is higher leverage than writing it', href: '/canonical/governance-of-subtraction.html' },
-        { number: '05', title: 'Kill Switch Protocol', subtitle: 'The framework for ruthless feature deprecation', href: '/canonical/kill-switch.html' },
-        { number: '06', title: 'Q-PEP Fundamentals', subtitle: 'Qualitative-Profitability Efficiency Protocol', href: '/canonical/q-pep.html' },
+        { number: '05', title: 'Kill Switch Protocol', subtitle: 'The framework for ruthless feature deprecation', href: '/canonical/kill-switch-governance.html' },
+        { number: '06', title: 'Q-PEP Fundamentals', subtitle: 'Qualitative-Profitability Efficiency Protocol', href: '/canonical/q-pep-protocol.html' },
     ];
 
     return (
