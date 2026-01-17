@@ -47,6 +47,7 @@ export function Sidebar() {
             label: 'Tools', labelClass: 'text-cyan-400', items: [
                 { href: '/tools/pdi', label: 'PDI Engine', highlight: true },
                 { href: '/tools/ev-se', label: 'EV-SE Engine' },
+                { href: '/tools/aueb', label: 'AUEB Engine' },
             ]
         },
         {
