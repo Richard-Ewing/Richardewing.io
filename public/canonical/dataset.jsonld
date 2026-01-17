@@ -20,6 +20,7 @@
   "keywords": [
     "Product Economics",
     "Product Economist",
+    "The Product Economist",
     "Q-PEP",
     "APER",
     "PDI",
@@ -27,15 +28,23 @@
     "EV-SE",
     "AI Unit Economics",
     "Technical Debt",
-    "Product Debt"
+    "Product Debt",
+    "AI Cost Calculator",
+    "Engineering Efficiency"
   ],
   "hasPart": [
+    {
+      "@type": "WebPage",
+      "name": "Free AI Diagnostic Tools",
+      "url": "https://richardewing.io/tools",
+      "description": "Collection of free diagnostic tools for product and engineering leaders"
+    },
     {
       "@type": "SoftwareApplication",
       "name": "Product Debt Index Engine (PDI)",
       "url": "https://richardewing.io/tools/pdi",
       "applicationCategory": "BusinessApplication",
-      "description": "AI-powered forensic backlog audit to quantify capital leakage",
+      "description": "AI-powered forensic backlog audit with debt velocity, burn-down projections, and ROI analysis",
       "operatingSystem": "Web Browser"
     },
     {
@@ -51,7 +60,7 @@
       "name": "AI Unit Economics Benchmark (AUEB)",
       "url": "https://richardewing.io/tools/aueb",
       "applicationCategory": "FinanceApplication",
-      "description": "Calculate AI margin collapse point with model arbitrage analysis",
+      "description": "Calculate AI margin collapse with multi-API cost analysis, hosting costs, and cost forensics dashboard",
       "operatingSystem": "Web Browser"
     },
     {
@@ -59,7 +68,7 @@
       "name": "APER Diagnostic",
       "url": "https://richardewing.io/tools/aper",
       "applicationCategory": "BusinessApplication",
-      "description": "Revenue Per Engineer calculator for detecting overstaffing and coordination overhead",
+      "description": "Revenue Per Engineer calculator with team health dashboard, productivity index, and new hire ramp cost analysis",
       "operatingSystem": "Web Browser"
     },
     {
