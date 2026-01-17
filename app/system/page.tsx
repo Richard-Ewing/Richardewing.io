@@ -77,35 +77,23 @@ export default function SystemPage() {
                         </GlowCard>
                     </div>
 
-                    {/* APER Section */}
+                    {/* APER Diagnostic Tool Gateway */}
                     <section id="aper" className="mb-8 pt-6 border-t border-white/10">
-                        <div className="grid grid-cols-1 md:grid-cols-[80px_1fr] gap-4 sm:gap-6">
-                            <div className="text-3xl sm:text-4xl font-mono text-zinc-700 font-bold">01</div>
-                            <div>
-                                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">APER™ Diagnostic</h2>
-                                <p className="font-mono text-xs text-cyan-400 tracking-widest uppercase mb-6">// ACTIONABLE PRODUCT ECONOMIC REVIEW</p>
-                                <p className="text-zinc-400 mb-6 text-base sm:text-lg">
-                                    A 14-day forensic audit of your engineering throughput. We do not look at Jira points. We look at the "Cost of Goods Sold" (COGS) relative to feature adoption.
-                                </p>
-
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-                                    <GlowCard className="p-4" glowColor="cyan">
-                                        <div className="text-white font-bold mb-2 text-sm">Revenue Per Employee</div>
-                                        <div className="text-xs text-zinc-500">The North Star metric. If this is flat while headcount grows, you are dying.</div>
-                                    </GlowCard>
-                                    <GlowCard className="p-4" glowColor="cyan">
-                                        <div className="text-white font-bold mb-2 text-sm">Feature ROI</div>
-                                        <div className="text-xs text-zinc-500">Connecting AWS costs directly to specific product features.</div>
-                                    </GlowCard>
-                                    <GlowCard className="p-4" glowColor="cyan">
-                                        <div className="text-white font-bold mb-2 text-sm">The Zombie Index</div>
-                                        <div className="text-xs text-zinc-500">Identifying code that consumes maintenance capital but generates zero revenue.</div>
-                                    </GlowCard>
+                        <div className="border border-yellow-500/20 rounded-2xl p-6 bg-gradient-to-br from-yellow-500/5 via-transparent to-transparent">
+                            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div>
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse shadow-[0_0_10px_#eab308]" />
+                                        <span className="font-mono text-xs text-yellow-400 uppercase tracking-widest">Interactive Tool</span>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-white mb-1">APER™ Diagnostic</h3>
+                                    <p className="text-zinc-400 text-sm">The &quot;Revenue Per Engineer&quot; efficiency engine. Detect overstaffing and coordination overhead instantly.</p>
                                 </div>
-
-                                <div className="flex flex-wrap gap-3">
-                                    <Link href="/canonical/aper.html" className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-cyan-500/20 transition">View Framework →</Link>
-                                </div>
+                                <ShineBorder borderColor="rgba(234, 179, 8, 0.6)" duration={2}>
+                                    <Link href="/tools/aper" className="block px-6 py-3 bg-yellow-500 text-black font-bold text-xs uppercase tracking-widest hover:bg-yellow-400 transition whitespace-nowrap">
+                                        Launch APER →
+                                    </Link>
+                                </ShineBorder>
                             </div>
                         </div>
                     </section>

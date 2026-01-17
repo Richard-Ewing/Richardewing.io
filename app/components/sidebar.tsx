@@ -48,6 +48,7 @@ export function Sidebar() {
                 { href: '/tools/pdi', label: 'PDI Engine', highlight: true },
                 { href: '/tools/ev-se', label: 'EV-SE Engine' },
                 { href: '/tools/aueb', label: 'AUEB Engine' },
+                { href: '/tools/aper', label: 'APER Diagnostic' },
             ]
         },
         {
