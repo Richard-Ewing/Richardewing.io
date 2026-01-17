@@ -36,33 +36,54 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
     );
 };
 
-// Slider component with accessibility
+// Slider component with enhanced UX
 const RiskSlider = ({ label, value, onChange, description }: {
     label: string;
     value: number;
     onChange: (v: number) => void;
     description: string;
-}) => (
-    <div className="space-y-2">
-        <div className="flex justify-between text-xs font-mono">
-            <span className="text-zinc-400">{label}</span>
-            <span className={value > 50 ? 'text-red-400' : value > 25 ? 'text-yellow-400' : 'text-emerald-400'}>
-                {value}% Risk
-            </span>
+}) => {
+    const getRiskLabel = (v: number) => {
+        if (v <= 15) return { emoji: '✓', text: 'Low', color: 'text-emerald-400' };
+        if (v <= 35) return { emoji: '◐', text: 'Moderate', color: 'text-yellow-400' };
+        if (v <= 60) return { emoji: '⚠', text: 'High', color: 'text-orange-400' };
+        return { emoji: '⛔', text: 'Critical', color: 'text-red-400' };
+    };
+    const risk = getRiskLabel(value);
+
+    return (
+        <div className="space-y-3 p-4 bg-zinc-900/50 rounded-xl border border-white/5">
+            <div className="flex justify-between items-center">
+                <span className="text-sm text-white font-medium">{label}</span>
+                <div className={`flex items-center gap-2 px-2 py-1 rounded-lg bg-black/30 ${risk.color}`}>
+                    <span>{risk.emoji}</span>
+                    <span className="text-xs font-mono">{value}% {risk.text}</span>
+                </div>
+            </div>
+            <div className="relative">
+                <div className="absolute inset-0 h-2 rounded-lg bg-gradient-to-r from-emerald-500/30 via-yellow-500/30 to-red-500/30" />
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={value}
+                    onChange={e => onChange(parseInt(e.target.value))}
+                    aria-label={label}
+                    title={label}
+                    className="relative w-full h-2 bg-transparent rounded-lg appearance-none cursor-pointer z-10"
+                    style={{
+                        background: `linear-gradient(to right, #22c55e ${value}%, transparent ${value}%)`,
+                    }}
+                />
+            </div>
+            <div className="flex justify-between text-[10px] text-zinc-600">
+                <span>Low Risk</span>
+                <span>High Risk</span>
+            </div>
+            <p className="text-xs text-zinc-500">{description}</p>
         </div>
-        <input
-            type="range"
-            min="0"
-            max="100"
-            value={value}
-            onChange={e => onChange(parseInt(e.target.value))}
-            aria-label={label}
-            title={label}
-            className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-red-500"
-        />
-        <div className="text-[10px] text-zinc-600">{description}</div>
-    </div>
-);
+    );
+};
 
 // --- PERSONA TYPES ---
 type Persona = 'Founder' | 'CPO' | 'VP Eng' | 'CFO';
@@ -272,8 +293,8 @@ export default function EVSETool() {
                                         key={p.id}
                                         onClick={() => setPersona(p.id)}
                                         className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id
-                                                ? 'bg-purple-500/10 border-purple-500 text-purple-400'
-                                                : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
+                                            ? 'bg-purple-500/10 border-purple-500 text-purple-400'
+                                            : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
                                             }`}
                                     >
                                         <p.icon size={14} />
@@ -540,8 +561,8 @@ export default function EVSETool() {
                                         <button
                                             type="submit"
                                             className={`w-full px-6 py-3 font-bold uppercase tracking-widest text-xs rounded-xl flex items-center justify-center gap-2 transition-all ${results.adjustedConfidence < 60
-                                                    ? 'bg-red-600 hover:bg-red-500 text-white'
-                                                    : 'bg-white hover:bg-purple-400 text-black'
+                                                ? 'bg-red-600 hover:bg-red-500 text-white'
+                                                : 'bg-white hover:bg-purple-400 text-black'
                                                 }`}
                                         >
                                             Get Scenario Deck <ArrowRight className="w-4 h-4" />
@@ -564,8 +585,8 @@ export default function EVSETool() {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t border-white/10">
                             <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← New Scenario</button>
                             <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.adjustedConfidence < 60
-                                    ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
-                                    : 'bg-purple-500 hover:bg-purple-400 text-white shadow-[0_0_30px_rgba(168,85,247,0.3)]'
+                                ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
+                                : 'bg-purple-500 hover:bg-purple-400 text-white shadow-[0_0_30px_rgba(168,85,247,0.3)]'
                                 }`}>
                                 {results.adjustedConfidence < 60 ? '🚨 Risk Mitigation Session' : 'Defend My Valuation'} →
                             </Link>

@@ -22,9 +22,9 @@ export function ShineBorder({
             className={`relative overflow-hidden rounded-xl ${className}`}
             style={{
                 padding: borderWidth,
-                background: `linear-gradient(90deg, transparent, ${borderColor}, transparent)`,
+                background: `linear-gradient(90deg, transparent, ${borderColor.replace('0.5', '0.3').replace('0.6', '0.3')}, transparent)`,
                 backgroundSize: '200% 100%',
-                animation: `shine ${duration}s linear infinite`,
+                animation: `shine ${duration * 2}s linear infinite`,
             }}
         >
             <div className="relative bg-obsidian rounded-xl h-full w-full">

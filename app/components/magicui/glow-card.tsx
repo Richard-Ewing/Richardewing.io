@@ -22,7 +22,7 @@ export function GlowCard({ children, className = '', glowColor = 'cyan' }: GlowC
             className={`
         border border-white/10 bg-zinc-900/30 backdrop-blur-sm rounded-2xl
         transition-all duration-500 ease-out
-        hover:scale-[1.02] hover:shadow-2xl
+        hover:scale-[1.01] hover:shadow-lg
         ${colorMap[glowColor] || colorMap.cyan}
         ${className}
       `}

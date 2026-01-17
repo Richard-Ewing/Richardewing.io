@@ -275,7 +275,7 @@ export default function PrincipalPage() {
                         </div>
                         <div className="p-5 border border-white/10 rounded-xl hover:border-gold/30 transition group">
                             <div className="font-mono text-xs text-gold uppercase mb-2">Framework 04</div>
-                            <h3 className="text-white font-bold mb-2 group-hover:text-gold transition">Product Quarterback™</h3>
+                            <h3 className="text-white font-bold mb-2 group-hover:text-gold transition">The Product Economist™</h3>
                             <p className="text-zinc-500 text-sm">15+ years of methodology distilled into an executive playbook. <span className="italic">O'Reilly book in progress.</span></p>
                         </div>
                     </div>
