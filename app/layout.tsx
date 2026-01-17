@@ -16,15 +16,46 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Richard Ewing | Product Economist',
+  metadataBase: new URL('https://richardewing.io'),
+  title: {
+    default: 'Richard Ewing | Product Economist',
+    template: '%s | Richard Ewing'
+  },
   description: 'I help boards stop bleeding money on AI they don\'t understand. Forensic product audits, capital allocation strategy, and AI unit economics.',
-  keywords: ['Product Economist', 'AI Audit', 'Product Management', 'Capital Allocation', 'Tech Due Diligence'],
-  authors: [{ name: 'Richard Ewing' }],
+  keywords: ['Product Economist', 'AI Audit', 'Product Management', 'Capital Allocation', 'Tech Due Diligence', 'AI Unit Economics', 'Product Debt'],
+  authors: [{ name: 'Richard Ewing', url: 'https://richardewing.io' }],
+  creator: 'Richard Ewing',
+  publisher: 'Richard Ewing',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Richard Ewing | Product Economist',
     description: 'I help boards stop bleeding money on AI they don\'t understand.',
     type: 'website',
     locale: 'en_US',
+    url: 'https://richardewing.io',
+    siteName: 'Richard Ewing - Product Economist',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Richard Ewing | Product Economist',
+    description: 'Forensic product audits and AI unit economics for boards.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add your Google Search Console verification code here
+    // google: 'your-verification-code',
   },
 };
 
