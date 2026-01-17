@@ -78,6 +78,12 @@ interface Results {
     optimalHeadcount: number;
     overheadCost: number;
     teamBreakdown: TeamBreakdown;
+    // Enhanced metrics
+    productivityIndex: number; // 0-100 score
+    newHireRampCost: number; // Cost of onboarding a new hire
+    teamHealthScore: number; // Overall team health 0-100
+    revenueGap: number; // ARR needed to reach elite APER
+    leverageRatio: number; // Revenue per $ of eng spend
 }
 
 export default function APERTool() {
@@ -138,6 +144,29 @@ export default function APERTool() {
             const optimalAper = 500000; // Target $500K/engineer
             const optimalHeadcount = Math.floor(arrNum / optimalAper);
 
+            // Enhanced metrics
+            // Productivity Index: weighted score based on APER, tenure, and team composition
+            const aperScore = Math.min(aper / 600000 * 40, 40); // Max 40 points
+            const tenureScore = Math.min(tenureNum / 24 * 30, 30); // Max 30 points for 2+ years
+            const stabilityScore = Math.max(0, 30 - (hiringNum / engNum * 100)); // Lower hiring velocity = higher score
+            const productivityIndex = Math.round(aperScore + tenureScore + stabilityScore);
+
+            // New hire ramp cost: 3 months to productivity + opportunity cost
+            const rampMonths = 3;
+            const newHireRampCost = (costNum / 12 * rampMonths) + (aper / 12 * rampMonths * 0.5); // Salary + 50% lost productivity
+
+            // Team health score
+            const balanceScore = 100 - Math.abs(50 - (teamBreakdown.frontend + teamBreakdown.backend)) * 2; // Penalty for imbalance
+            const infrastructureBonus = teamBreakdown.infra >= 15 ? 10 : 0; // Bonus for proper infra investment
+            const teamHealthScore = Math.round((productivityIndex * 0.6) + (balanceScore * 0.3) + (infrastructureBonus * 0.1));
+
+            // Revenue gap to reach elite status
+            const eliteAper = 600000;
+            const revenueGap = Math.max(0, (eliteAper * engNum) - arrNum);
+
+            // Leverage ratio
+            const leverageRatio = arrNum / totalEngCost;
+
             const benchmarks: BenchmarkData[] = [
                 { name: 'Your Company', value: aper, color: aper >= 600000 ? '#22d3ee' : aper >= 400000 ? '#facc15' : aper >= 200000 ? '#f97316' : '#dc2626' },
                 { name: 'Elite SaaS', value: 650000, color: '#22d3ee' },
@@ -148,7 +177,8 @@ export default function APERTool() {
             setResults({
                 aper, engineeringMargin, multiplier, benchmarks, totalEngCost,
                 engineers: engNum, costPerEng: costNum, coordinationTax,
-                optimalHeadcount, overheadCost, teamBreakdown
+                optimalHeadcount, overheadCost, teamBreakdown,
+                productivityIndex, newHireRampCost, teamHealthScore, revenueGap, leverageRatio
             });
             setLoading(false);
         }, 800);
@@ -266,8 +296,8 @@ export default function APERTool() {
                                             key={p.id}
                                             onClick={() => setPersona(p.id)}
                                             className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id
-                                                    ? 'bg-yellow-500/10 border-yellow-500 text-yellow-400'
-                                                    : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
+                                                ? 'bg-yellow-500/10 border-yellow-500 text-yellow-400'
+                                                : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
                                                 }`}
                                         >
                                             <p.icon size={14} />
@@ -445,6 +475,48 @@ export default function APERTool() {
                                 </BentoCard>
                             </motion.div>
 
+                            {/* TEAM HEALTH DASHBOARD */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+                            >
+                                <div className="capsule-container rounded-2xl p-6">
+                                    <div className="flex items-center justify-between mb-6">
+                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Team Health Dashboard</div>
+                                        <div className={`px-3 py-1 rounded-full text-xs font-bold ${results.teamHealthScore >= 75 ? 'bg-emerald-500/20 text-emerald-400' :
+                                                results.teamHealthScore >= 50 ? 'bg-yellow-500/20 text-yellow-400' :
+                                                    'bg-red-500/20 text-red-400'
+                                            }`}>
+                                            Health Score: {results.teamHealthScore}/100
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                        <div className="bg-black/30 rounded-xl p-4">
+                                            <div className="text-xs text-zinc-500 mb-1">Productivity Index</div>
+                                            <div className="text-2xl font-bold text-emerald-400">{results.productivityIndex}/100</div>
+                                            <div className="text-[10px] text-zinc-600 mt-1">APER + tenure + stability</div>
+                                        </div>
+                                        <div className="bg-black/30 rounded-xl p-4">
+                                            <div className="text-xs text-zinc-500 mb-1">New Hire Ramp Cost</div>
+                                            <div className="text-2xl font-bold text-yellow-400">{formatMoney(results.newHireRampCost)}</div>
+                                            <div className="text-[10px] text-zinc-600 mt-1">3-month productivity loss</div>
+                                        </div>
+                                        <div className="bg-black/30 rounded-xl p-4">
+                                            <div className="text-xs text-zinc-500 mb-1">Gap to Elite APER</div>
+                                            <div className="text-2xl font-bold text-cyan-400">{results.revenueGap > 0 ? formatMoney(results.revenueGap) : '✓ Elite'}</div>
+                                            <div className="text-[10px] text-zinc-600 mt-1">ARR needed for $600K/eng</div>
+                                        </div>
+                                        <div className="bg-black/30 rounded-xl p-4">
+                                            <div className="text-xs text-zinc-500 mb-1">Leverage Ratio</div>
+                                            <div className="text-2xl font-bold text-purple-400">{results.leverageRatio.toFixed(1)}x</div>
+                                            <div className="text-[10px] text-zinc-600 mt-1">Revenue per $ eng spend</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+
                             {/* BENCHMARK CHART */}
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
@@ -529,8 +601,8 @@ export default function APERTool() {
                                                         <button
                                                             type="submit"
                                                             className={`w-full px-6 py-3 font-bold uppercase tracking-widest text-sm rounded-xl flex items-center justify-center gap-2 transition-all ${results.aper < 400000
-                                                                    ? 'bg-orange-600 hover:bg-orange-500 text-white'
-                                                                    : 'bg-white hover:bg-yellow-400 text-black'
+                                                                ? 'bg-orange-600 hover:bg-orange-500 text-white'
+                                                                : 'bg-white hover:bg-yellow-400 text-black'
                                                                 }`}
                                                         >
                                                             Get Team Analysis <ArrowRight className="w-4 h-4" />
@@ -561,8 +633,8 @@ export default function APERTool() {
                             >
                                 <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Analysis</button>
                                 <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.aper < 400000
-                                        ? 'bg-orange-600 hover:bg-orange-500 text-white shadow-[0_0_30px_rgba(249,115,22,0.4)]'
-                                        : 'bg-yellow-500 hover:bg-yellow-400 text-black shadow-[0_0_30px_rgba(234,179,8,0.3)]'
+                                    ? 'bg-orange-600 hover:bg-orange-500 text-white shadow-[0_0_30px_rgba(249,115,22,0.4)]'
+                                    : 'bg-yellow-500 hover:bg-yellow-400 text-black shadow-[0_0_30px_rgba(234,179,8,0.3)]'
                                     }`}>
                                     {results.aper < 400000 ? '⚠️ Workforce Optimization Session' : 'Maximize My Efficiency'} →
                                 </Link>
