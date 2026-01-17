@@ -31,6 +31,7 @@ Implemented custom CSS and JS animations to enhance visual fidelity.
 -   **Standardization**: Removed the restrictive "page-level capsule" pattern from `system.html` and `advisory.html`. These pages now use a cleaner block layout with explicit `mb-24` (96px) spacing between sections, exactly matching the rhythm of `doctrine.html`.
     -   *System Page Fix*: Eliminated the "double gap" caused by conflicting flex layouts. The APER, Margin Calculator, and PDI sections are now distinct, self-contained cards.
     -   *Advisory Page Fix*: Removed vertical centering (`justify-center`) to ensure stable top-alignment and consistent 96px gaps between the Protocols and Calculator.
+    -   *Advisory Grid*: Refactored the "Intervention Protocols" section to uses a strict 2x2 grid layout (`grid-cols-2`) on desktop, replacing the flexible bento behavior to ensure a balanced 4-item display.
     -   *Canonical Navigation*: Standardized the "Back to Advisory" button across all 14 canonical PDF viewer pages (e.g., `senior-ceiling.html`). Removed duplicates and applied a high-visibility "Red/Magic UI" style to the unified button.
     -   *Content Visibility*: Fixed a `scroll-reveal` issue on `system.html` that was hiding the APER Diagnostic and Bento Grid text; confirmed full visibility of all "System" content.
 
