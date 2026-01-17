@@ -40,12 +40,13 @@ export default function Home() {
           I run forensic audits that find the capital leaks inside your AI investments—then I help you plug them.
         </p>
 
-        {/* Social Proof - Psychology: Authority + Social Validation */}
-        <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-8 pb-8 border-b border-white/10">
-          <span className="font-mono text-xs text-zinc-500 uppercase tracking-widest">Featured in:</span>
-          <a href="https://builtin.com/articles/ai-product-business-test" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white transition">Built In</a>
-          <a href="https://foundry.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white transition">Foundry</a>
-          <a href="https://techcrunch.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white transition">TechCrunch</a>
+        {/* Social Proof - Psychology: Authority + External Validation */}
+        <div className="flex flex-wrap items-center gap-3 sm:gap-6 mb-8 pb-8 border-b border-white/10">
+          <span className="font-mono text-xs text-zinc-500 uppercase tracking-widest">Published in:</span>
+          <a href="https://builtin.com/authors/richard-ewing" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Built In</a>
+          <a href="https://www.cio.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Foundry</a>
+          <a href="https://hackernoon.com/u/richardewing1" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">HackerNoon</a>
+          <a href="https://www.mindtheproduct.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Mind the Product</a>
         </div>
 
         {/* Stats Bar - Psychology: Specific numbers build credibility */}
