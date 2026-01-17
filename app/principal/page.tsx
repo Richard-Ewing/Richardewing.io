@@ -1,11 +1,97 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { NumberTicker } from '../components/magicui/number-ticker';
 import { GlowCard } from '../components/magicui/glow-card';
 import { ShineBorder } from '../components/magicui/shine-border';
 import Link from 'next/link';
+
+// AI Expandable Card Component
+const AIExpandCard = ({
+    icon,
+    label,
+    labelColor,
+    title,
+    description,
+    glowColor,
+    topic
+}: {
+    icon: string;
+    label: string;
+    labelColor: string;
+    title: string;
+    description: React.ReactNode;
+    glowColor: 'cyan' | 'cobalt' | 'gold' | 'danger';
+    topic: string;
+}) => {
+    const [expanded, setExpanded] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [aiResponse, setAiResponse] = useState('');
+
+    const askAI = async () => {
+        if (aiResponse) {
+            setExpanded(!expanded);
+            return;
+        }
+
+        setLoading(true);
+        try {
+            const res = await fetch('/api/expand', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ topic: title, context: topic })
+            });
+            const data = await res.json();
+            if (data.response) {
+                setAiResponse(data.response);
+                setExpanded(true);
+            }
+        } catch (e) {
+            console.error('AI expand failed');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <GlowCard className="p-6" glowColor={glowColor}>
+            <div className="flex items-start gap-4">
+                <div className="text-3xl">{icon}</div>
+                <div className="flex-1">
+                    <div className={`font-mono text-[10px] ${labelColor} uppercase tracking-widest mb-1`}>{label}</div>
+                    <h3 className="text-white font-bold text-lg mb-2">{title}</h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-3">{description}</p>
+
+                    <button
+                        onClick={askAI}
+                        disabled={loading}
+                        className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-400 hover:text-white transition group"
+                    >
+                        {loading ? (
+                            <>
+                                <div className="w-3 h-3 border border-cyan-400 border-t-transparent rounded-full animate-spin" />
+                                Thinking...
+                            </>
+                        ) : (
+                            <>
+                                <span className="w-4 h-4 rounded-full bg-cyan-500/20 flex items-center justify-center text-[8px] group-hover:bg-cyan-500/40 transition">✦</span>
+                                {expanded ? 'Hide Details' : 'Ask AI →'}
+                            </>
+                        )}
+                    </button>
+
+                    {expanded && aiResponse && (
+                        <div className="mt-4 pt-4 border-t border-white/10 text-sm text-zinc-300 leading-relaxed animate-fade-in-up">
+                            {aiResponse}
+                        </div>
+                    )}
+                </div>
+            </div>
+        </GlowCard>
+    );
+};
 
 export default function PrincipalPage() {
     return (
@@ -40,7 +126,7 @@ export default function PrincipalPage() {
                             </div>
                         </div>
 
-                        {/* Power Stats - Psychology: Massive numbers = instant credibility */}
+                        {/* Power Stats */}
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 border-t border-white/10 pt-8">
                             <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
                                 <div className="text-3xl sm:text-4xl font-bold text-cyan-400">
@@ -71,7 +157,7 @@ export default function PrincipalPage() {
                 </div>
             </ScrollReveal>
 
-            {/* The Thesis - Psychology: Bold positioning statement */}
+            {/* The Thesis */}
             <ScrollReveal delay={50}>
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-cyan-500">
                     <div className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-3">The Thesis</div>
@@ -85,74 +171,59 @@ export default function PrincipalPage() {
                 </div>
             </ScrollReveal>
 
-            {/* Domain Expertise - No company names, just prestige */}
+            {/* Domain Expertise with AI Expand */}
             <ScrollReveal delay={100}>
                 <div className="mb-8">
                     <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-3">
                         <span className="w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-cobalt" /> Domain Expertise
+                        <span className="ml-auto text-[10px] font-mono text-cyan-400/50 uppercase">✦ AI-Enhanced</span>
                     </h2>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <GlowCard className="p-6" glowColor="cyan">
-                            <div className="flex items-start gap-4">
-                                <div className="text-3xl">🏛️</div>
-                                <div>
-                                    <div className="font-mono text-[10px] text-cyan-400 uppercase tracking-widest mb-1">Public Sector</div>
-                                    <h3 className="text-white font-bold text-lg mb-2">Government-Scale Digital Transformation</h3>
-                                    <p className="text-zinc-400 text-sm leading-relaxed">
-                                        Led infrastructure overhaul serving <span className="text-white font-bold">7.7 million citizens</span>.
-                                        Zero-downtime cloud migration. <span className="text-gold">Governor's Award Recipient</span>.
-                                    </p>
-                                </div>
-                            </div>
-                        </GlowCard>
+                        <AIExpandCard
+                            icon="🏛️"
+                            label="Public Sector"
+                            labelColor="text-cyan-400"
+                            title="Government-Scale Digital Transformation"
+                            description={<>Led infrastructure overhaul serving <span className="text-white font-bold">7.7 million citizens</span>. Zero-downtime cloud migration. <span className="text-gold">Governor's Award Recipient</span>.</>}
+                            glowColor="cyan"
+                            topic="Richard Ewing's experience leading digital transformation for state government serving millions of citizens, including cloud migration and receiving the Governor's Award."
+                        />
 
-                        <GlowCard className="p-6" glowColor="cobalt">
-                            <div className="flex items-start gap-4">
-                                <div className="text-3xl">💼</div>
-                                <div>
-                                    <div className="font-mono text-[10px] text-cobalt uppercase tracking-widest mb-1">Professional Services</div>
-                                    <h3 className="text-white font-bold text-lg mb-2">Top-10 Accounting Firm Modernization</h3>
-                                    <p className="text-zinc-400 text-sm leading-relaxed">
-                                        Orchestrated <span className="text-white font-bold">$5M strategic cost reduction</span> via Azure migration.
-                                        Built 16-person product org from ground up. Doubled velocity.
-                                    </p>
-                                </div>
-                            </div>
-                        </GlowCard>
+                        <AIExpandCard
+                            icon="💼"
+                            label="Professional Services"
+                            labelColor="text-cobalt"
+                            title="Top-10 Accounting Firm Modernization"
+                            description={<>Orchestrated <span className="text-white font-bold">$5M strategic cost reduction</span> via Azure migration. Built 16-person product org from ground up. Doubled velocity.</>}
+                            glowColor="cobalt"
+                            topic="Richard Ewing's experience as Group Product Manager at a Top-10 accounting firm, driving $5M cost reduction through Azure cloud migration and building a high-performance product organization."
+                        />
 
-                        <GlowCard className="p-6" glowColor="gold">
-                            <div className="flex items-start gap-4">
-                                <div className="text-3xl">🚀</div>
-                                <div>
-                                    <div className="font-mono text-[10px] text-gold uppercase tracking-widest mb-1">Venture-Backed Startups</div>
-                                    <h3 className="text-white font-bold text-lg mb-2">0-to-1 Product Leadership</h3>
-                                    <p className="text-zinc-400 text-sm leading-relaxed">
-                                        Scaled ERP SaaS from <span className="text-white font-bold">$0 to $25M ARR</span>.
-                                        Slashed churn 20%. Defined industry standard for enterprise utility platforms.
-                                    </p>
-                                </div>
-                            </div>
-                        </GlowCard>
+                        <AIExpandCard
+                            icon="🚀"
+                            label="Venture-Backed Startups"
+                            labelColor="text-gold"
+                            title="0-to-1 Product Leadership"
+                            description={<>Scaled ERP SaaS from <span className="text-white font-bold">$0 to $25M ARR</span>. Slashed churn 20%. Defined industry standard for enterprise utility platforms.</>}
+                            glowColor="gold"
+                            topic="Richard Ewing's experience scaling enterprise SaaS products from zero to $25M ARR, reducing churn, and defining product governance standards."
+                        />
 
-                        <GlowCard className="p-6" glowColor="danger">
-                            <div className="flex items-start gap-4">
-                                <div className="text-3xl">🔥</div>
-                                <div>
-                                    <div className="font-mono text-[10px] text-red-400 uppercase tracking-widest mb-1">Turnaround Operations</div>
-                                    <h3 className="text-white font-bold text-lg mb-2">Revenue Resurrection Specialist</h3>
-                                    <p className="text-zinc-400 text-sm leading-relaxed">
-                                        Inherited stagnant P&L, drove <span className="text-white font-bold">200% YoY growth to $20M</span>.
-                                        Consolidated 4 siloed teams. Improved retention 40%.
-                                    </p>
-                                </div>
-                            </div>
-                        </GlowCard>
+                        <AIExpandCard
+                            icon="🔥"
+                            label="Turnaround Operations"
+                            labelColor="text-red-400"
+                            title="Revenue Resurrection Specialist"
+                            description={<>Inherited stagnant P&L, drove <span className="text-white font-bold">200% YoY growth to $20M</span>. Consolidated 4 siloed teams. Improved retention 40%.</>}
+                            glowColor="danger"
+                            topic="Richard Ewing's experience as a turnaround executive, taking over stagnant P&Ls and driving 200% revenue growth through operational restructuring."
+                        />
                     </div>
                 </div>
             </ScrollReveal>
 
-            {/* The Secret Weapon - Psychology: Unique methodology = differentiation */}
+            {/* The Methodology */}
             <ScrollReveal delay={150}>
                 <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8">
                     <div className="flex items-center gap-3 mb-6">
@@ -161,31 +232,31 @@ export default function PrincipalPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div className="p-5 border border-white/10 rounded-xl hover:border-cyan-500/30 transition">
+                        <div className="p-5 border border-white/10 rounded-xl hover:border-cyan-500/30 transition group">
                             <div className="font-mono text-xs text-cyan-400 uppercase mb-2">Framework 01</div>
-                            <h3 className="text-white font-bold mb-2">APER™ Diagnostic</h3>
+                            <h3 className="text-white font-bold mb-2 group-hover:text-cyan-400 transition">APER™ Diagnostic</h3>
                             <p className="text-zinc-500 text-sm">Actionable Product Economic Review. Forensic audit of engineering throughput vs. revenue impact.</p>
                         </div>
-                        <div className="p-5 border border-white/10 rounded-xl hover:border-cobalt/30 transition">
+                        <div className="p-5 border border-white/10 rounded-xl hover:border-cobalt/30 transition group">
                             <div className="font-mono text-xs text-cobalt uppercase mb-2">Framework 02</div>
-                            <h3 className="text-white font-bold mb-2">Q-PEP™ Protocol</h3>
+                            <h3 className="text-white font-bold mb-2 group-hover:text-cobalt transition">Q-PEP™ Protocol</h3>
                             <p className="text-zinc-500 text-sm">Qualitative-Profitability Efficiency Protocol. Surgery for unit-economic insolvency.</p>
                         </div>
-                        <div className="p-5 border border-white/10 rounded-xl hover:border-red-500/30 transition">
+                        <div className="p-5 border border-white/10 rounded-xl hover:border-red-500/30 transition group">
                             <div className="font-mono text-xs text-red-400 uppercase mb-2">Framework 03</div>
-                            <h3 className="text-white font-bold mb-2">Product Debt Index™</h3>
+                            <h3 className="text-white font-bold mb-2 group-hover:text-red-400 transition">Product Debt Index™</h3>
                             <p className="text-zinc-500 text-sm">AI-powered forensic engine to quantify capital leakage in your backlog.</p>
                         </div>
-                        <div className="p-5 border border-white/10 rounded-xl hover:border-gold/30 transition">
+                        <div className="p-5 border border-white/10 rounded-xl hover:border-gold/30 transition group">
                             <div className="font-mono text-xs text-gold uppercase mb-2">Framework 04</div>
-                            <h3 className="text-white font-bold mb-2">Product Quarterback™</h3>
+                            <h3 className="text-white font-bold mb-2 group-hover:text-gold transition">Product Quarterback™</h3>
                             <p className="text-zinc-500 text-sm">15+ years of methodology distilled into an executive playbook. <span className="italic">O'Reilly book in progress.</span></p>
                         </div>
                     </div>
                 </div>
             </ScrollReveal>
 
-            {/* Education - Minimal, prestigious */}
+            {/* Credentials */}
             <ScrollReveal delay={200}>
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8">
                     <h2 className="text-lg font-bold text-white mb-6 flex items-center gap-3">
@@ -206,7 +277,7 @@ export default function PrincipalPage() {
                 </div>
             </ScrollReveal>
 
-            {/* CTA - Psychology: Clear next step */}
+            {/* CTA */}
             <ScrollReveal delay={250}>
                 <div className="text-center py-8 border-t border-white/10">
                     <p className="text-zinc-400 mb-4">Ready to work with a Product Economist?</p>

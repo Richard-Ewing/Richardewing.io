@@ -1,12 +1,13 @@
 'use client';
 
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
+import { GlowCard } from '../components/magicui/glow-card';
 import Link from 'next/link';
 
 export default function LegalPage() {
     return (
         <div className="max-w-4xl w-full relative z-10">
-            <div className="absolute bottom-0 left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-white/5 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-white/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -25,7 +26,10 @@ export default function LegalPage() {
 
                     <div className="space-y-8 max-w-4xl">
                         <section>
-                            <h2 className="text-xl sm:text-2xl text-white font-bold mb-4">Terms of Service</h2>
+                            <h2 className="text-xl sm:text-2xl text-white font-bold mb-4 flex items-center gap-3">
+                                <span className="w-6 h-0.5 bg-cyan-400" />
+                                Terms of Service
+                            </h2>
                             <p className="text-zinc-400 leading-relaxed text-sm sm:text-base mb-4">
                                 By accessing this website, you agree to be bound by these Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.
                             </p>
@@ -35,56 +39,100 @@ export default function LegalPage() {
                         </section>
 
                         <section>
-                            <h2 className="text-xl sm:text-2xl text-white font-bold mb-4">Privacy Policy</h2>
+                            <h2 className="text-xl sm:text-2xl text-white font-bold mb-4 flex items-center gap-3">
+                                <span className="w-6 h-0.5 bg-emerald-400" />
+                                Privacy Policy
+                            </h2>
                             <p className="text-zinc-400 leading-relaxed text-sm sm:text-base mb-4">
                                 Your privacy is critical. We do not sell your data. Any information collected via the "Briefs" subscription, "Book Waitlist," or "Advisory" inquiry forms is used solely for the purpose of communication regarding Richard Ewing's services and publications.
                             </p>
-                            <ul className="list-disc list-inside text-zinc-400 text-sm space-y-2">
-                                <li>Email addresses are stored securely and never shared with third parties</li>
-                                <li>No tracking cookies beyond essential site functionality</li>
-                                <li>You may request deletion of your data at any time via email</li>
-                            </ul>
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+                                <GlowCard className="p-4" glowColor="cyan">
+                                    <div className="text-cyan-400 text-lg mb-2">🔒</div>
+                                    <div className="text-white font-bold text-sm mb-1">Secure Storage</div>
+                                    <div className="text-zinc-500 text-xs">Email addresses stored securely, never shared</div>
+                                </GlowCard>
+                                <GlowCard className="p-4" glowColor="cobalt">
+                                    <div className="text-cobalt text-lg mb-2">🚫</div>
+                                    <div className="text-white font-bold text-sm mb-1">No Tracking</div>
+                                    <div className="text-zinc-500 text-xs">No cookies beyond essential functionality</div>
+                                </GlowCard>
+                                <GlowCard className="p-4" glowColor="gold">
+                                    <div className="text-gold text-lg mb-2">✉️</div>
+                                    <div className="text-white font-bold text-sm mb-1">Data Deletion</div>
+                                    <div className="text-zinc-500 text-xs">Request deletion anytime via email</div>
+                                </GlowCard>
+                            </div>
                         </section>
 
                         <section>
-                            <h2 className="text-xl sm:text-2xl text-white font-bold mb-4">Intellectual Property</h2>
+                            <h2 className="text-xl sm:text-2xl text-white font-bold mb-4 flex items-center gap-3">
+                                <span className="w-6 h-0.5 bg-gold" />
+                                Intellectual Property
+                            </h2>
                             <p className="text-zinc-400 leading-relaxed text-sm sm:text-base mb-4">
-                                The content on this website, including but not limited to:
+                                The following are registered trademarks and proprietary intellectual property of Richard Ewing:
                             </p>
-                            <ul className="list-disc list-inside text-zinc-400 text-sm space-y-2 mb-4">
-                                <li><strong className="text-white">APER™ Diagnostic</strong> (Actionable Product Economic Review)</li>
-                                <li><strong className="text-white">Q-PEP™ Protocol</strong> (Qualitative-Profitability Efficiency Protocol)</li>
-                                <li><strong className="text-white">Product Debt Index™</strong></li>
-                                <li><strong className="text-white">Product Quarterback™ Methodology</strong></li>
-                            </ul>
-                            <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                                ...is the intellectual property of Richard Ewing. Unauthorized reproduction or commercial use without express written consent is prohibited.
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                <div className="p-3 border border-white/10 rounded-lg text-center hover:border-cyan-500/30 transition">
+                                    <div className="text-white font-bold text-sm">APER™</div>
+                                    <div className="text-zinc-600 text-[10px]">Diagnostic</div>
+                                </div>
+                                <div className="p-3 border border-white/10 rounded-lg text-center hover:border-cobalt/30 transition">
+                                    <div className="text-white font-bold text-sm">Q-PEP™</div>
+                                    <div className="text-zinc-600 text-[10px]">Protocol</div>
+                                </div>
+                                <div className="p-3 border border-white/10 rounded-lg text-center hover:border-red-500/30 transition">
+                                    <div className="text-white font-bold text-sm">PDI™</div>
+                                    <div className="text-zinc-600 text-[10px]">Product Debt Index</div>
+                                </div>
+                                <div className="p-3 border border-white/10 rounded-lg text-center hover:border-gold/30 transition">
+                                    <div className="text-white font-bold text-sm">Product QB™</div>
+                                    <div className="text-zinc-600 text-[10px]">Methodology</div>
+                                </div>
+                            </div>
+                            <p className="text-zinc-500 text-xs mt-4">
+                                Unauthorized reproduction or commercial use without express written consent is prohibited.
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-xl sm:text-2xl text-white font-bold mb-4">Advisory Disclaimer</h2>
+                            <h2 className="text-xl sm:text-2xl text-white font-bold mb-4 flex items-center gap-3">
+                                <span className="w-6 h-0.5 bg-red-400" />
+                                Advisory Disclaimer
+                            </h2>
                             <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
                                 The information provided on this website and through advisory services is for general informational purposes only. It does not constitute legal, financial, or professional advice. Clients should consult with qualified professionals for specific business decisions.
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-xl sm:text-2xl text-white font-bold mb-4">Limitation of Liability</h2>
+                            <h2 className="text-xl sm:text-2xl text-white font-bold mb-4 flex items-center gap-3">
+                                <span className="w-6 h-0.5 bg-zinc-500" />
+                                Limitation of Liability
+                            </h2>
                             <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                                The materials on Richard Ewing's website are provided "as is." Richard Ewing makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property.
+                                The materials on this website are provided "as is." Richard Ewing makes no warranties, expressed or implied, and hereby disclaims all other warranties without limitation.
                             </p>
                         </section>
 
-                        <section>
-                            <h2 className="text-xl sm:text-2xl text-white font-bold mb-4">Contact</h2>
-                            <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                                For any questions regarding these terms, please contact: <a href="mailto:richardewing1@gmail.com" className="text-cyan-400 hover:text-white transition">richardewing1@gmail.com</a>
+                        <section className="capsule-container p-6 rounded-xl">
+                            <h2 className="text-lg text-white font-bold mb-4">Contact</h2>
+                            <p className="text-zinc-400 text-sm mb-4">
+                                For questions regarding these terms:
                             </p>
+                            <a
+                                href="mailto:richardewing1@gmail.com"
+                                className="inline-flex items-center gap-2 text-cyan-400 hover:text-white transition font-mono text-sm"
+                            >
+                                <span className="w-2 h-2 bg-cyan-400 rounded-full" />
+                                richardewing1@gmail.com
+                            </a>
                         </section>
 
-                        <div className="pt-8 border-t border-white/10 text-zinc-500 text-xs sm:text-sm font-mono">
-                            Last Updated: January 2026
+                        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-zinc-500 text-xs sm:text-sm font-mono">
+                            <span>Last Updated: January 2026</span>
+                            <span>© 2026 Richard Ewing. All rights reserved.</span>
                         </div>
                     </div>
                 </div>

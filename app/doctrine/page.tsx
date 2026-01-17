@@ -2,116 +2,135 @@
 
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
+import { ShineBorder } from '../components/magicui/shine-border';
+import Link from 'next/link';
 
 export default function DoctrinePage() {
     return (
         <div className="max-w-4xl w-full relative z-10">
-            <div className="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
             <ScrollReveal>
-                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8">
-                    <span className="font-mono text-emerald-500 text-xs uppercase tracking-widest mb-4 block">The Doctrine</span>
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                        Sovereignty in <br />
-                        <span className="text-emerald-400">Product Economics.</span>
-                    </h1>
-                    <p className="text-lg sm:text-xl text-zinc-400 max-w-3xl leading-relaxed border-l-2 border-emerald-500/50 pl-6">
-                        The following principles govern the methodology of the Product Economist. They are not suggestions; they are the immutable laws of software solvency.
-                    </p>
+                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent pointer-events-none" />
+
+                    <div className="relative">
+                        <span className="font-mono text-emerald-400 text-xs uppercase tracking-widest mb-4 block">The Doctrine</span>
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                            Sovereignty in <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Product Economics.</span>
+                        </h1>
+                        <p className="text-lg sm:text-xl text-zinc-400 max-w-3xl leading-relaxed border-l-4 border-emerald-500 pl-6">
+                            The following principles govern the methodology of the Product Economist. They are not suggestions; they are the <span className="text-white font-bold">immutable laws</span> of software solvency.
+                        </p>
+                    </div>
                 </div>
             </ScrollReveal>
 
-            {/* 2x2 Grid - Clean without background numbers */}
+            {/* 2x2 Grid - Clean and prestigious */}
             <ScrollReveal delay={100}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
                     <GlowCard className="p-6 sm:p-8" glowColor="cyan">
-                        <h3 className="text-white font-bold text-lg sm:text-xl mb-4">Capital Allocation &gt; Agile Theater</h3>
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-bold">01</div>
+                            <h3 className="text-white font-bold text-lg sm:text-xl">Capital Allocation &gt; Agile Theater</h3>
+                        </div>
                         <p className="text-zinc-400 text-sm leading-relaxed">
-                            We do not measure success by velocity, story points, or features shipped. We measure success by <strong className="text-white">Return on Invested Capital (ROIC)</strong>. Every sprint is a deployment of capital. If a feature does not generate revenue or reduce risk, it is waste.
+                            We do not measure success by velocity, story points, or features shipped. We measure success by <span className="text-white font-bold">Return on Invested Capital (ROIC)</span>. Every sprint is a deployment of capital. If a feature doesn't generate revenue or reduce risk, it is waste.
                         </p>
                     </GlowCard>
 
-                    <GlowCard className="p-6 sm:p-8" glowColor="cyan">
-                        <h3 className="text-white font-bold text-lg sm:text-xl mb-4">The Truth is in the P&amp;L</h3>
+                    <GlowCard className="p-6 sm:p-8" glowColor="cobalt">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 rounded-lg bg-cobalt/10 flex items-center justify-center text-cobalt font-bold">02</div>
+                            <h3 className="text-white font-bold text-lg sm:text-xl">The Truth is in the P&amp;L</h3>
+                        </div>
                         <p className="text-zinc-400 text-sm leading-relaxed">
-                            Users lie. Net Promoter Scores (NPS) lie. Roadmaps lie. The <strong className="text-white">Profit &amp; Loss statement</strong> tells the only truth that matters. If the unit economics of a product are upside down, no amount of "user empathy" will save it.
+                            Users lie. NPS lies. Roadmaps lie. The <span className="text-white font-bold">Profit &amp; Loss statement</span> tells the only truth that matters. If the unit economics are upside down, no amount of "user empathy" will save you.
                         </p>
                     </GlowCard>
 
-                    <GlowCard className="p-6 sm:p-8" glowColor="cyan">
-                        <h3 className="text-white font-bold text-lg sm:text-xl mb-4">Kill Zombies Ruthlessly</h3>
+                    <GlowCard className="p-6 sm:p-8" glowColor="danger">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 font-bold">03</div>
+                            <h3 className="text-white font-bold text-lg sm:text-xl">Kill Zombies Ruthlessly</h3>
+                        </div>
                         <p className="text-zinc-400 text-sm leading-relaxed">
-                            A "Zombie Feature" is code that requires maintenance (Cost) but generates zero incremental value (Revenue). We identify these features and execute the <strong className="text-white">Kill Switch Protocol</strong>. Deprecation is the highest form of optimization.
+                            A "Zombie Feature" is code that requires maintenance (Cost) but generates zero incremental value (Revenue). We identify these and execute the <span className="text-white font-bold">Kill Switch Protocol</span>. Deprecation is the highest form of optimization.
                         </p>
                     </GlowCard>
 
-                    <GlowCard className="p-6 sm:p-8" glowColor="cyan">
-                        <h3 className="text-white font-bold text-lg sm:text-xl mb-4">Sovereignty Over Dependency</h3>
+                    <GlowCard className="p-6 sm:p-8" glowColor="gold">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center text-gold font-bold">04</div>
+                            <h3 className="text-white font-bold text-lg sm:text-xl">Sovereignty Over Dependency</h3>
+                        </div>
                         <p className="text-zinc-400 text-sm leading-relaxed">
-                            Do not build your house on rented land. Minimize dependency on third-party APIs, platforms, and bloated frameworks that you cannot control. Own your core IP. Build small, sharp tools that do one thing perfectly.
+                            Do not build your house on rented land. Minimize dependency on third-party APIs, platforms, and bloated frameworks. <span className="text-white font-bold">Own your core IP.</span> Build small, sharp tools that do one thing perfectly.
                         </p>
                     </GlowCard>
                 </div>
             </ScrollReveal>
 
-            {/* Recognition - Real publication credits */}
+            {/* Recognition & Publications */}
             <ScrollReveal delay={200}>
-                <div className="capsule-container p-6 sm:p-10 rounded-2xl sm:rounded-[2rem]">
+                <div className="capsule-container p-6 sm:p-10 rounded-2xl sm:rounded-[2rem] mb-8">
                     <h3 className="text-white font-bold text-xl sm:text-2xl mb-6 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-500 rounded-full" />
+                        <span className="w-1 h-8 bg-gradient-to-b from-emerald-400 to-cyan-400 rounded-full" />
                         Recognition &amp; Publications
                     </h3>
 
-                    {/* Publications Grid - Psychology: External validation builds trust */}
+                    {/* Publication Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                         <a href="https://builtin.com/authors/richard-ewing" target="_blank" rel="noopener noreferrer" className="group">
                             <GlowCard className="p-5 h-full" glowColor="cobalt">
-                                <div className="flex items-start justify-between mb-3">
+                                <div className="flex items-start justify-between mb-2">
                                     <div className="text-[10px] font-mono text-cobalt uppercase tracking-widest">Expert Contributor</div>
-                                    <span className="text-zinc-500 group-hover:text-white transition">→</span>
+                                    <span className="text-zinc-600 group-hover:text-white transition">→</span>
                                 </div>
-                                <div className="text-lg font-bold text-white mb-2">Built In</div>
+                                <div className="text-lg font-bold text-white mb-1 group-hover:text-cobalt transition">Built In</div>
                                 <p className="text-xs text-zinc-400 leading-relaxed">
-                                    Monthly columnist. January 2026 article featured in Editor's Newsletter: <span className="text-zinc-300">"AI Product Business Test"</span>
+                                    Monthly columnist. Jan 2026 article featured in <span className="text-zinc-300">Editor's Newsletter</span>.
                                 </p>
                             </GlowCard>
                         </a>
 
                         <a href="https://www.mindtheproduct.com" target="_blank" rel="noopener noreferrer" className="group">
                             <GlowCard className="p-5 h-full" glowColor="cyan">
-                                <div className="flex items-start justify-between mb-3">
+                                <div className="flex items-start justify-between mb-2">
                                     <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest">Contributor</div>
-                                    <span className="text-zinc-500 group-hover:text-white transition">→</span>
+                                    <span className="text-zinc-600 group-hover:text-white transition">→</span>
                                 </div>
-                                <div className="text-lg font-bold text-white mb-2">Mind the Product</div>
+                                <div className="text-lg font-bold text-white mb-1 group-hover:text-cyan-400 transition">Mind the Product</div>
                                 <p className="text-xs text-zinc-400 leading-relaxed">
-                                    February 2026 article. Featured in their newsletter.
+                                    Feb 2026 article. Newsletter feature.
                                 </p>
                             </GlowCard>
                         </a>
 
                         <a href="https://www.cio.com" target="_blank" rel="noopener noreferrer" className="group">
                             <GlowCard className="p-5 h-full" glowColor="gold">
-                                <div className="flex items-start justify-between mb-3">
+                                <div className="flex items-start justify-between mb-2">
                                     <div className="text-[10px] font-mono text-gold uppercase tracking-widest">Expert Contributor</div>
-                                    <span className="text-zinc-500 group-hover:text-white transition">→</span>
+                                    <span className="text-zinc-600 group-hover:text-white transition">→</span>
                                 </div>
-                                <div className="text-lg font-bold text-white mb-2">Foundry (CIO.com)</div>
+                                <div className="text-lg font-bold text-white mb-1 group-hover:text-gold transition">Foundry (CIO.com)</div>
                                 <p className="text-xs text-zinc-400 leading-relaxed">
-                                    Monthly columnist for enterprise technology network. February 2026 debut.
+                                    Monthly columnist for enterprise technology network.
                                 </p>
                             </GlowCard>
                         </a>
 
                         <a href="https://hackernoon.com/u/richardewing1" target="_blank" rel="noopener noreferrer" className="group">
                             <GlowCard className="p-5 h-full" glowColor="cyan">
-                                <div className="flex items-start justify-between mb-3">
+                                <div className="flex items-start justify-between mb-2">
                                     <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest">Published</div>
-                                    <span className="text-zinc-500 group-hover:text-white transition">→</span>
+                                    <span className="text-zinc-600 group-hover:text-white transition">→</span>
                                 </div>
-                                <div className="text-lg font-bold text-white mb-2">HackerNoon</div>
+                                <div className="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition">HackerNoon</div>
                                 <p className="text-xs text-zinc-400 leading-relaxed">
-                                    Technology publication reaching 4M+ monthly readers.
+                                    4M+ monthly readers.
                                 </p>
                             </GlowCard>
                         </a>
@@ -119,28 +138,33 @@ export default function DoctrinePage() {
 
                     {/* Awards */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <GlowCard className="p-5 relative" glowColor="cobalt">
-                            <div className="absolute top-0 right-0 bg-cobalt/10 px-3 py-1 rounded-bl-xl text-[10px] font-mono text-cobalt uppercase tracking-tighter">
-                                Innovation Award
-                            </div>
-                            <div className="text-[10px] font-mono text-zinc-400 uppercase mb-2 mt-4">Public Sector</div>
-                            <div className="text-base sm:text-lg font-bold text-white mb-2 leading-tight">Digital Transformation Excellence</div>
-                            <p className="text-xs text-zinc-400 leading-relaxed">
-                                Migration of 7.7M users to modern cloud infrastructure with zero downtime.
-                            </p>
-                        </GlowCard>
+                        <div className="p-5 border border-white/10 rounded-xl bg-cobalt/5 hover:border-cobalt/30 transition">
+                            <div className="text-[10px] font-mono text-cobalt uppercase tracking-widest mb-2">Innovation Award</div>
+                            <div className="text-lg font-bold text-white mb-1">Digital Transformation Excellence</div>
+                            <p className="text-xs text-zinc-500">7.7M user migration. Zero downtime.</p>
+                        </div>
 
-                        <GlowCard className="p-5 relative" glowColor="cyan">
-                            <div className="absolute top-0 right-0 bg-emerald-500/10 px-3 py-1 rounded-bl-xl text-[10px] font-mono text-emerald-400 uppercase tracking-tighter">
-                                Governor's Award
-                            </div>
-                            <div className="text-[10px] font-mono text-zinc-400 uppercase mb-2 mt-4">Washington State</div>
-                            <div className="text-base sm:text-lg font-bold text-white mb-2 leading-tight">The Extra Mile Award</div>
-                            <p className="text-xs text-zinc-400 leading-relaxed">
-                                Selected by Gov. Jay Inslee for exceptional cross-functional collaboration.
-                            </p>
-                        </GlowCard>
+                        <div className="p-5 border border-white/10 rounded-xl bg-emerald-500/5 hover:border-emerald-500/30 transition">
+                            <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-2">Governor's Award</div>
+                            <div className="text-lg font-bold text-white mb-1">The Extra Mile Award</div>
+                            <p className="text-xs text-zinc-500">Washington State. Gov. Jay Inslee.</p>
+                        </div>
                     </div>
+                </div>
+            </ScrollReveal>
+
+            {/* CTA */}
+            <ScrollReveal delay={300}>
+                <div className="text-center py-8 border-t border-white/10">
+                    <p className="text-zinc-400 mb-6">Apply these principles to your organization.</p>
+                    <ShineBorder borderColor="rgba(16, 185, 129, 0.6)" duration={2}>
+                        <Link
+                            href="/advisory"
+                            className="inline-block bg-white text-black font-bold uppercase text-sm px-10 py-4 tracking-widest hover:bg-emerald-400 transition-colors"
+                        >
+                            Book an Intervention →
+                        </Link>
+                    </ShineBorder>
                 </div>
             </ScrollReveal>
         </div>

@@ -18,26 +18,32 @@ export default function Home() {
 
       {/* Hero Section - Above the Fold */}
       <section className="flex-1 flex flex-col justify-center max-w-4xl relative z-10 py-8 sm:py-12">
-        {/* Status Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-mono uppercase tracking-widest mb-6 w-fit">
-          <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse" />
-          Available for Q1 2026
+        {/* Status Badge - Psychology: Scarcity + Urgency */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-mono uppercase tracking-widest mb-6 w-fit animate-pulse">
+          <span className="w-2 h-2 bg-cyan-400 rounded-full" />
+          Now Accepting Q1 2026 Engagements
         </div>
 
         {/* Main Headline - Psychology: Loss aversion is 2x more powerful than gains */}
-        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-4">
-          Stop Bleeding Money on
+        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.05] mb-4">
+          Your AI Investment is<br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Bleeding Cash.</span>
         </h1>
-        <WordRotate
-          words={["AI They Don't Understand.", "Features Nobody Uses.", "Headcount Without ROI.", "Zombie Infrastructure."]}
-          className="text-3xl sm:text-5xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt tracking-tight leading-[1.1] mb-8"
-          duration={3000}
-        />
+
+        <div className="mb-8">
+          <span className="text-zinc-500 text-xl sm:text-2xl">I find the leaks in </span>
+          <WordRotate
+            words={["AI they don't understand.", "Features nobody uses.", "Headcount without ROI.", "Zombie Infrastructure."]}
+            className="text-xl sm:text-2xl font-bold text-white"
+            duration={3000}
+          />
+        </div>
 
         {/* Value Proposition - Clear, specific, benefit-focused */}
         <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-8">
-          I'm Richard Ewing, a <span className="text-white font-semibold">Product Economist</span>.
+          I'm <span className="text-white font-bold">Richard Ewing</span>, a Product Economist.
           I run forensic audits that find the capital leaks inside your AI investments—then I help you plug them.
+          <span className="text-cyan-400"> No consulting theater. Just hard numbers.</span>
         </p>
 
         {/* Social Proof - Psychology: Authority + External Validation */}
@@ -49,25 +55,25 @@ export default function Home() {
           <a href="https://www.mindtheproduct.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Mind the Product</a>
         </div>
 
-        {/* Stats Bar - Psychology: Specific numbers build credibility */}
+        {/* Stats Bar - Psychology: Specific numbers build instant credibility */}
         <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-10">
-          <div className="text-center sm:text-left">
-            <div className="text-2xl sm:text-4xl font-bold text-white">
-              <NumberTicker value={2} prefix="$" suffix="B+" />
+          <div className="text-center sm:text-left p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
+            <div className="text-2xl sm:text-4xl font-bold text-cyan-400">
+              <NumberTicker value={25} prefix="$" suffix="M" />
             </div>
-            <div className="text-xs sm:text-sm text-zinc-500 font-mono uppercase tracking-widest">Waste Identified</div>
+            <div className="text-[10px] sm:text-xs text-zinc-500 font-mono uppercase tracking-widest">ARR Scaled</div>
           </div>
-          <div className="text-center sm:text-left">
+          <div className="text-center sm:text-left p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
             <div className="text-2xl sm:text-4xl font-bold text-white">
-              <NumberTicker value={15} suffix="y" />
+              <NumberTicker value={15} suffix="+" />
             </div>
-            <div className="text-xs sm:text-sm text-zinc-500 font-mono uppercase tracking-widest">Experience</div>
+            <div className="text-[10px] sm:text-xs text-zinc-500 font-mono uppercase tracking-widest">Years Experience</div>
           </div>
-          <div className="text-center sm:text-left">
-            <div className="text-2xl sm:text-4xl font-bold text-white">
-              <NumberTicker value={100} suffix="+" />
+          <div className="text-center sm:text-left p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
+            <div className="text-2xl sm:text-4xl font-bold text-gold">
+              <NumberTicker value={7} suffix="M+" />
             </div>
-            <div className="text-xs sm:text-sm text-zinc-500 font-mono uppercase tracking-widest">Audits Done</div>
+            <div className="text-[10px] sm:text-xs text-zinc-500 font-mono uppercase tracking-widest">Users Scaled</div>
           </div>
         </div>
 
@@ -93,7 +99,7 @@ export default function Home() {
       {/* Below the Fold - Proof Points */}
       <ScrollReveal className="max-w-4xl relative z-10">
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 flex items-center gap-4">
-          <span className="w-8 h-0.5 bg-cyan-400" />
+          <span className="w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-cobalt" />
           Signature Interventions
         </h2>
 
@@ -107,7 +113,7 @@ export default function Home() {
             </div>
             <div className="text-xs text-zinc-400 uppercase tracking-widest mb-4">Annualized Savings</div>
             <p className="text-sm text-zinc-400 leading-relaxed">
-              Implemented Q-PEP™ Kill Switch for an enterprise insurer. Token costs exceeded human labor by 40% due to retry loops. Capped variance at 15%.
+              Enterprise insurer. AI token costs exceeded human labor by 40% due to retry loops. Implemented Q-PEP™ Kill Switch. <span className="text-white font-semibold">Capped variance at 15%.</span>
             </p>
           </GlowCard>
 
@@ -115,24 +121,25 @@ export default function Home() {
             <div className="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-4 pb-2 border-b border-white/10">
               Case B • The M&amp;A Mirage
             </div>
-            <div className="text-3xl sm:text-4xl font-bold text-cobalt mb-2">12%</div>
+            <div className="text-3xl sm:text-4xl font-bold text-red-500 mb-2">12%</div>
             <div className="text-xs text-zinc-400 uppercase tracking-widest mb-4">Real Margin (vs 80% Claimed)</div>
             <p className="text-sm text-zinc-400 leading-relaxed">
-              Forensic UEV audit for a PE firm acquiring a vertical SaaS AI company. Revealed inference costs were subsidized by VC cash.
+              PE firm acquiring vertical SaaS AI company. Forensic UEV audit revealed inference costs were VC-subsidized. <span className="text-white font-semibold">Saved them from a catastrophic acquisition.</span>
             </p>
           </GlowCard>
         </div>
       </ScrollReveal>
 
-      {/* Trust Section */}
+      {/* The Uncomfortable Truth - Capsule */}
       <ScrollReveal delay={200} className="max-w-4xl relative z-10 mt-16 mb-8">
-        <div className="bg-zinc-900/30 border border-white/10 rounded-2xl p-6 sm:p-8">
+        <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 border-l-4 border-cyan-500">
           <div className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-4">The Uncomfortable Truth</div>
-          <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed mb-6">
-            Most AI programs don't fail because the models are wrong. They fail because <span className="text-white font-semibold">no one owns the economic truth</span> of probabilistic systems.
+          <p className="text-xl sm:text-2xl text-white font-bold leading-relaxed mb-6">
+            Most AI programs don't fail because the models are wrong.
           </p>
-          <p className="text-sm text-zinc-500 italic">
-            I don't optimize models. I don't run "Innovation Workshops." I diagnose which initiatives are quietly destroying value—and which ones should be shut down immediately.
+          <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed">
+            They fail because <span className="text-red-500 font-bold">no one owns the economic truth</span> of probabilistic systems.
+            I don't optimize models. I don't run "Innovation Workshops." I diagnose which initiatives are quietly destroying value—and which ones should be <span className="text-white font-bold">shut down immediately.</span>
           </p>
         </div>
       </ScrollReveal>
@@ -140,14 +147,16 @@ export default function Home() {
       {/* Final CTA - Psychology: Repeat the call to action */}
       <ScrollReveal delay={300} className="max-w-4xl relative z-10 py-12 border-t border-white/10 mt-8">
         <div className="text-center">
-          <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Ready to Find the Leaks?</h3>
-          <p className="text-zinc-400 mb-6">Book a free 30-minute diagnostic call.</p>
-          <Link
-            href="/advisory"
-            className="inline-block bg-white text-black font-bold uppercase text-sm px-10 py-4 rounded-xl hover:bg-cyan-400 transition-colors tracking-widest"
-          >
-            Start Your Audit →
-          </Link>
+          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Ready to Find the Leaks?</h3>
+          <p className="text-zinc-400 mb-6 max-w-md mx-auto">Book a free 30-minute diagnostic call. I'll tell you exactly where you're bleeding—no pitch deck, no upsell.</p>
+          <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
+            <Link
+              href="/advisory"
+              className="inline-block bg-white text-black font-bold uppercase text-sm px-12 py-4 tracking-widest hover:bg-cyan-400 transition-colors"
+            >
+              Start Your Audit →
+            </Link>
+          </ShineBorder>
         </div>
       </ScrollReveal>
     </div>
