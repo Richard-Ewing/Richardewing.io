@@ -75,6 +75,12 @@
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://richardewing.io/tools/aper</loc>
+    <lastmod>2026-01-17</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
   <!-- CANONICAL PAPERS (DOCTRINE) -->
   <url>

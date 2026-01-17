@@ -55,6 +55,14 @@
       "operatingSystem": "Web Browser"
     },
     {
+      "@type": "SoftwareApplication",
+      "name": "APER Diagnostic",
+      "url": "https://richardewing.io/tools/aper",
+      "applicationCategory": "BusinessApplication",
+      "description": "Revenue Per Engineer calculator for detecting overstaffing and coordination overhead",
+      "operatingSystem": "Web Browser"
+    },
+    {
       "@type": "DigitalDocument",
       "name": "Q-PEP Protocol v2.0",
       "url": "https://richardewing.io/canonical/q-pep-protocol.html",
