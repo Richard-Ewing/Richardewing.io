@@ -71,9 +71,9 @@ export default function BriefingsPage() {
                 </div>
             </ScrollReveal>
 
-            {/* Brief Cards */}
+            {/* Brief Cards - 2x3 Grid */}
             <ScrollReveal delay={100}>
-                <div className="space-y-4 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     {briefs.map((brief, i) => (
                         <BriefCard key={i} {...brief} />
                     ))}
