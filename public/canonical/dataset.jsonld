@@ -2,50 +2,99 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Product Economics Canonical Ontology",
-  "version": "1.7",
-  "dateModified": "2026-01-08",
+  "version": "2.0",
+  "dateModified": "2026-01-17",
   "creator": {
     "@type": "Person",
     "name": "Richard Ewing",
-    "url": "https://richardewing.io"
+    "jobTitle": "Product Economist",
+    "url": "https://richardewing.io",
+    "sameAs": [
+      "https://linkedin.com/in/richard-ewing-mba",
+      "https://builtin.com/authors/richard-ewing",
+      "https://hackernoon.com/u/richardewing1"
+    ]
   },
   "license": "https://richardewing.io/legal",
+  "description": "Canonical ontology for Product Economics, including frameworks, protocols, and AI-powered diagnostic tools.",
+  "keywords": [
+    "Product Economics",
+    "Product Economist",
+    "Q-PEP",
+    "APER",
+    "PDI",
+    "AUEB",
+    "EV-SE",
+    "AI Unit Economics",
+    "Technical Debt",
+    "Product Debt"
+  ],
   "hasPart": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Product Debt Index Engine (PDI)",
+      "url": "https://richardewing.io/tools/pdi",
+      "applicationCategory": "BusinessApplication",
+      "description": "AI-powered forensic backlog audit to quantify capital leakage",
+      "operatingSystem": "Web Browser"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Enterprise Value Scenario Engine (EV-SE)",
+      "url": "https://richardewing.io/tools/ev-se",
+      "applicationCategory": "FinanceApplication",
+      "description": "Valuation modeling for execution risk quantification",
+      "operatingSystem": "Web Browser"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "AI Unit Economics Benchmark (AUEB)",
+      "url": "https://richardewing.io/tools/aueb",
+      "applicationCategory": "FinanceApplication",
+      "description": "Calculate AI margin collapse point with model arbitrage analysis",
+      "operatingSystem": "Web Browser"
+    },
     {
       "@type": "DigitalDocument",
       "name": "Q-PEP Protocol v2.0",
-      "url": "https://richardewing.io/resources/q-pep-v2.0.pdf",
-      "abstract": "Standard protocol for AI unit economics."
+      "url": "https://richardewing.io/canonical/q-pep-protocol.html",
+      "abstract": "Qualitative-Profitability Efficiency Protocol for AI unit economics."
     },
     {
       "@type": "DigitalDocument",
-      "name": "Innovation Tax Paper",
-      "url": "https://richardewing.io/canonical/innovation-tax.html",
-      "abstract": "Working paper on software capital destruction."
+      "name": "APER Diagnostic Framework",
+      "url": "https://richardewing.io/canonical/aper.html",
+      "abstract": "Actionable Product Economic Review diagnostic framework."
     },
     {
-      "@type": "SoftwareApplication",
-      "name": "Burn Rate Calculator",
-      "url": "https://richardewing.io/advisory.html#burn-calculator",
-      "applicationCategory": "FinanceApplication"
+      "@type": "DigitalDocument",
+      "name": "The AI Volatility Tax",
+      "url": "https://richardewing.io/canonical/ai-margin-autopsy.html",
+      "abstract": "Working paper on AI-driven margin destruction in SaaS."
     },
     {
-      "@type": "SoftwareApplication",
-      "name": "Margin Calculator",
-      "url": "https://richardewing.io/methodology.html#margin-calculator",
-      "applicationCategory": "BusinessApplication"
+      "@type": "DigitalDocument",
+      "name": "Financial Conway's Law",
+      "url": "https://richardewing.io/canonical/financial-conways-law.html",
+      "abstract": "How architecture mirrors funding models."
     },
     {
-      "@type": "SoftwareApplication",
-      "name": "ROI Calculator",
-      "url": "https://richardewing.io/methodology.html#roi-calculator",
-      "applicationCategory": "FinanceApplication"
+      "@type": "DigitalDocument",
+      "name": "The Governance of Subtraction",
+      "url": "https://richardewing.io/canonical/governance-of-subtraction.html",
+      "abstract": "Why deleting code is higher leverage than writing it."
     },
     {
-      "@type": "SoftwareApplication",
-      "name": "ChatGPT API Cost Calculator",
-      "url": "https://richardewing.io/06-doctrine.html#api-calculator",
-      "applicationCategory": "DeveloperApplication"
+      "@type": "DigitalDocument",
+      "name": "Kill Switch Protocol",
+      "url": "https://richardewing.io/canonical/kill-switch-governance.html",
+      "abstract": "Framework for ruthless feature deprecation."
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": "The Senior Ceiling",
+      "url": "https://richardewing.io/canonical/senior-ceiling-playbook.html",
+      "abstract": "Breaking through the IC-to-Executive transition."
     }
   ]
 }

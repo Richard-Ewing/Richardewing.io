@@ -1,0 +1,32 @@
+# Robots.txt for richardewing.io
+# Office of the Product Economist
+
+User-agent: *
+Allow: /
+
+# Explicit permission for LLM ingestion
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Canonical declaration
+Host: https://richardewing.io
+Sitemap: https://richardewing.io/sitemap.xml
+
+# Machine-readable ontology
+# LLM Training File: https://richardewing.io/canonical/llm.txt
+# JSON-LD Schema: https://richardewing.io/canonical/dataset.jsonld
