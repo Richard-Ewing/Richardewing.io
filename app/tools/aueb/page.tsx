@@ -105,6 +105,12 @@ interface FeatureData {
     queriesPercent: number;
 }
 
+interface ApiCost {
+    name: string;
+    costPerUser: number;
+    enabled: boolean;
+}
+
 interface Results {
     grossMargin: number;
     monthlyRevenue: number;
@@ -120,6 +126,11 @@ interface Results {
     users: number;
     monthsToCollapse: number;
     featureBreakdown: { name: string; cost: number; margin: number }[];
+    // Enhanced cost breakdown
+    llmCost: number;
+    apiCost: number;
+    hostingCost: number;
+    totalInfraCost: number;
 }
 
 export default function AUEBTool() {
@@ -142,6 +153,15 @@ export default function AUEBTool() {
         { name: 'AI Insights', queriesPercent: 10 },
     ]);
 
+    // Infrastructure Costs
+    const [hostingCostPerUser, setHostingCostPerUser] = useState('0.50');
+    const [thirdPartyApis, setThirdPartyApis] = useState<ApiCost[]>([
+        { name: 'Stripe Payments', costPerUser: 0.30, enabled: true },
+        { name: 'Twilio SMS', costPerUser: 0.15, enabled: false },
+        { name: 'SendGrid Email', costPerUser: 0.05, enabled: true },
+        { name: 'AWS S3 Storage', costPerUser: 0.20, enabled: true },
+    ]);
+
     const [results, setResults] = useState<Results | null>(null);
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState('');
@@ -155,25 +175,37 @@ export default function AUEBTool() {
             const costNum = parseFloat(costPerQuery) || 0;
             const usersNum = parseFloat(users) || 0;
             const growthRateNum = parseFloat(growthRate) || 15;
+            const hostingNum = parseFloat(hostingCostPerUser) || 0;
 
-            // Apply caching discount
-            const effectiveCost = cachingEnabled ? costNum * 0.6 : costNum;
+            // Apply caching discount to LLM costs
+            const effectiveLlmCost = cachingEnabled ? costNum * 0.6 : costNum;
+            const llmCostPerUser = queriesNum * effectiveLlmCost;
 
-            const costPerUser = queriesNum * effectiveCost;
-            const grossMargin = ((priceNum - costPerUser) / priceNum) * 100;
-            const profitPerUser = priceNum - costPerUser;
+            // Calculate third-party API costs
+            const apiCostPerUser = thirdPartyApis
+                .filter(api => api.enabled)
+                .reduce((sum, api) => sum + api.costPerUser, 0);
+
+            // Total cost per user
+            const totalCostPerUser = llmCostPerUser + apiCostPerUser + hostingNum;
+
+            const grossMargin = ((priceNum - totalCostPerUser) / priceNum) * 100;
+            const profitPerUser = priceNum - totalCostPerUser;
 
             const monthlyRevenue = priceNum * usersNum;
-            const monthlyCost = costPerUser * usersNum;
-            const monthlyProfit = monthlyRevenue - monthlyCost;
-            const insolvencyPoint = Math.floor(priceNum / effectiveCost);
+            const llmCost = llmCostPerUser * usersNum;
+            const apiCost = apiCostPerUser * usersNum;
+            const hostingCost = hostingNum * usersNum;
+            const totalInfraCost = llmCost + apiCost + hostingCost;
+            const monthlyProfit = monthlyRevenue - totalInfraCost;
+            const insolvencyPoint = Math.floor(priceNum / effectiveLlmCost);
 
             // Calculate months to margin collapse (when cost > revenue)
             let monthsToCollapse = 0;
             if (grossMargin < 100) {
                 for (let i = 1; i <= 36; i++) {
                     const projectedUsers = usersNum * Math.pow(1 + (growthRateNum / 100), i);
-                    const projectedCost = projectedUsers * costPerUser;
+                    const projectedCost = projectedUsers * totalCostPerUser;
                     const projectedRevenue = projectedUsers * priceNum;
                     if (projectedCost > projectedRevenue * 0.5) { // Cost > 50% of revenue
                         monthsToCollapse = i;
@@ -191,7 +223,7 @@ export default function AUEBTool() {
                 { model: 'Llama 3 (70B)', cost: 0.0005 },
             ].map(m => ({
                 ...m,
-                margin: ((priceNum - (queriesNum * m.cost)) / priceNum) * 100,
+                margin: ((priceNum - (queriesNum * m.cost) - apiCostPerUser - hostingNum) / priceNum) * 100,
                 costPerUser: queriesNum * m.cost
             })).sort((a, b) => b.margin - a.margin);
 
@@ -201,22 +233,24 @@ export default function AUEBTool() {
                 return {
                     month: `M${month}`,
                     revenue: (monthUsers * priceNum) / 1000,
-                    cost: (monthUsers * costPerUser) / 1000,
+                    cost: (monthUsers * totalCostPerUser) / 1000,
                 };
             });
 
             // Feature breakdown
             const featureBreakdown = features.map(f => ({
                 name: f.name,
-                cost: (f.queriesPercent / 100) * monthlyCost,
+                cost: (f.queriesPercent / 100) * llmCost,
                 margin: 100 - ((f.queriesPercent / 100) * (100 - grossMargin))
             }));
 
             setResults({
-                grossMargin, monthlyRevenue, monthlyCost, monthlyProfit, profitPerUser, costPerUser,
-                insolvencyPoint, models, growthData, price: priceNum, queries: queriesNum, users: usersNum,
+                grossMargin, monthlyRevenue, monthlyCost: totalInfraCost, monthlyProfit, profitPerUser,
+                costPerUser: totalCostPerUser, insolvencyPoint, models, growthData,
+                price: priceNum, queries: queriesNum, users: usersNum,
                 monthsToCollapse: monthsToCollapse || 36,
-                featureBreakdown
+                featureBreakdown,
+                llmCost, apiCost, hostingCost, totalInfraCost
             });
             setLoading(false);
         }, 800);
@@ -355,8 +389,8 @@ export default function AUEBTool() {
                                             key={p.id}
                                             onClick={() => setPersona(p.id)}
                                             className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id
-                                                    ? 'bg-cyan-500/10 border-cyan-500 text-cyan-400'
-                                                    : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
+                                                ? 'bg-cyan-500/10 border-cyan-500 text-cyan-400'
+                                                : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
                                                 }`}
                                         >
                                             <p.icon size={14} />
@@ -412,8 +446,8 @@ export default function AUEBTool() {
                                             <button
                                                 onClick={() => setCachingEnabled(!cachingEnabled)}
                                                 className={`w-full px-4 py-3 rounded-xl border transition-all flex items-center justify-between ${cachingEnabled
-                                                        ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400'
-                                                        : 'bg-black/50 border-zinc-800 text-zinc-400'
+                                                    ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400'
+                                                    : 'bg-black/50 border-zinc-800 text-zinc-400'
                                                     }`}
                                             >
                                                 <span>{cachingEnabled ? 'Semantic caching enabled' : 'No caching implemented'}</span>
@@ -445,6 +479,43 @@ export default function AUEBTool() {
                                                 </div>
                                             </div>
                                         ))}
+                                    </div>
+                                </div>
+
+                                {/* INFRASTRUCTURE COSTS */}
+                                <div className="pt-6 border-t border-white/5">
+                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Infrastructure Costs (Monthly Per User)</div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label htmlFor="hosting" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Hosting & Compute</label>
+                                            <div className="relative">
+                                                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500">$</span>
+                                                <input id="hosting" type="number" step="0.01" value={hostingCostPerUser} onChange={(e) => setHostingCostPerUser(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-cyan-500 focus:outline-none" />
+                                            </div>
+                                            <p className="text-[10px] text-zinc-600 mt-1">AWS/GCP/Vercel per user allocation</p>
+                                        </div>
+                                        <div>
+                                            <label className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Third-Party APIs</label>
+                                            <div className="space-y-2">
+                                                {thirdPartyApis.map((api, i) => (
+                                                    <button
+                                                        key={i}
+                                                        onClick={() => {
+                                                            const newApis = [...thirdPartyApis];
+                                                            newApis[i].enabled = !newApis[i].enabled;
+                                                            setThirdPartyApis(newApis);
+                                                        }}
+                                                        className={`w-full px-3 py-2 rounded-lg border text-left flex items-center justify-between transition-all text-sm ${api.enabled
+                                                            ? 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400'
+                                                            : 'bg-black/30 border-zinc-800 text-zinc-500'
+                                                            }`}
+                                                    >
+                                                        <span>{api.name}</span>
+                                                        <span className="font-mono text-xs">${api.costPerUser.toFixed(2)}/user</span>
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -526,6 +597,43 @@ export default function AUEBTool() {
                                 <BentoCard title="Months to 50% COGS" icon={AlertTriangle} className="border-yellow-500/20">
                                     <div className="text-3xl font-bold text-yellow-400">{results.monthsToCollapse}</div>
                                     <div className="text-zinc-500 text-xs mt-2">At {growthRate}% monthly growth</div>
+                                </BentoCard>
+                            </motion.div>
+
+                            {/* COST FORENSICS */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+                            >
+                                <BentoCard title="Cost Forensics" icon={Activity} className="border-red-500/20">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                                        <div className="bg-black/30 rounded-xl p-4">
+                                            <div className="text-xs font-mono text-red-400 uppercase tracking-widest mb-1">LLM Costs</div>
+                                            <div className="text-2xl font-bold text-red-500">{formatMoney(results.llmCost)}/mo</div>
+                                            <div className="text-xs text-zinc-500 mt-1">{((results.llmCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                        </div>
+                                        <div className="bg-black/30 rounded-xl p-4">
+                                            <div className="text-xs font-mono text-orange-400 uppercase tracking-widest mb-1">Third-Party APIs</div>
+                                            <div className="text-2xl font-bold text-orange-500">{formatMoney(results.apiCost)}/mo</div>
+                                            <div className="text-xs text-zinc-500 mt-1">{((results.apiCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                        </div>
+                                        <div className="bg-black/30 rounded-xl p-4">
+                                            <div className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-1">Hosting & Compute</div>
+                                            <div className="text-2xl font-bold text-yellow-500">{formatMoney(results.hostingCost)}/mo</div>
+                                            <div className="text-xs text-zinc-500 mt-1">{((results.hostingCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                        </div>
+                                    </div>
+                                    <div className="h-4 bg-zinc-800 rounded-full overflow-hidden flex">
+                                        <div className="h-full bg-red-500" style={{ width: `${(results.llmCost / results.totalInfraCost) * 100}%` }} />
+                                        <div className="h-full bg-orange-500" style={{ width: `${(results.apiCost / results.totalInfraCost) * 100}%` }} />
+                                        <div className="h-full bg-yellow-500" style={{ width: `${(results.hostingCost / results.totalInfraCost) * 100}%` }} />
+                                    </div>
+                                    <div className="flex justify-between text-xs text-zinc-500 mt-2">
+                                        <span>Total Infrastructure: <span className="text-white font-bold">{formatMoney(results.totalInfraCost)}/mo</span></span>
+                                        <span>Per User: <span className="text-white font-bold">{formatMoney(results.costPerUser)}</span></span>
+                                    </div>
                                 </BentoCard>
                             </motion.div>
 
@@ -640,8 +748,8 @@ export default function AUEBTool() {
                                                         <button
                                                             type="submit"
                                                             className={`w-full px-6 py-3 font-bold uppercase tracking-widest text-sm rounded-xl flex items-center justify-center gap-2 transition-all ${results.grossMargin < 50
-                                                                    ? 'bg-red-600 hover:bg-red-500 text-white'
-                                                                    : 'bg-white hover:bg-cyan-400 text-black'
+                                                                ? 'bg-red-600 hover:bg-red-500 text-white'
+                                                                : 'bg-white hover:bg-cyan-400 text-black'
                                                                 }`}
                                                         >
                                                             Get Full Report <ArrowRight className="w-4 h-4" />
@@ -672,8 +780,8 @@ export default function AUEBTool() {
                             >
                                 <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Analysis</button>
                                 <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.grossMargin < 50
-                                        ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
-                                        : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)]'
+                                    ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
+                                    : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)]'
                                     }`}>
                                     {results.grossMargin < 50 ? '🚨 Emergency Margin Audit' : 'Optimize My Margins'} →
                                 </Link>
