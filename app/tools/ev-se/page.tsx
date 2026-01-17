@@ -242,9 +242,17 @@ export default function EVSETool() {
         }
     };
 
-    const handleEmailSubmit = (e: React.FormEvent) => {
+    const handleEmailSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Lead captured:', email, 'Persona:', persona);
+        try {
+            await fetch('https://formspree.io/f/xzddbpwy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, persona, tool: 'EV-SE', riskAdjustedValue: results?.riskedValue }),
+            });
+        } catch (err) {
+            console.error('Form submission error:', err);
+        }
         setEmailSubmitted(true);
         setTimeout(() => {
             window.location.href = '/advisory';
@@ -609,6 +617,37 @@ export default function EVSETool() {
                     </ScrollReveal>
                 </>
             )}
+
+            {/* AUTHORITY CONTENT: EV-SE */}
+            <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
+                <div className="prose prose-invert prose-lg max-w-none">
+                    <h2 className="text-4xl font-bold text-white mb-8">The Myth of the &quot;10x Multiple&quot;</h2>
+                    <p className="text-zinc-400 leading-relaxed">
+                        Founders love to quote top-decile public market multiples. &quot;Datadog trades at 15x, so I trade at 15x.&quot; This is a delusion. Valuation is not just a function of Growth Rate; it is a function of <strong>Predictability</strong>.
+                    </p>
+                    <p className="text-zinc-400 leading-relaxed">
+                        The <strong>EV-SE Engine™</strong> (Enterprise Value Scenario Engine) introduces the concept of the <strong>Certainty Premium</strong>. Investors pay for certainty. If your roadmap has a high probability of failure (due to technical risk, scope creep, or talent gaps), your effective valuation is discounted—often by 30-50%—before you even enter the boardroom.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="bg-zinc-900/50 p-8 rounded-2xl border border-white/5">
+                        <h3 className="text-xl font-bold text-white mb-4">The &quot;Haircut&quot; Protocol</h3>
+                        <ul className="space-y-3 text-zinc-400 text-sm">
+                            <li className="flex gap-2"><span className="text-red-500">→</span> <strong>Scope Creep:</strong> -15% Valuation Impact</li>
+                            <li className="flex gap-2"><span className="text-red-500">→</span> <strong>Key Person Risk:</strong> -20% Valuation Impact</li>
+                            <li className="flex gap-2"><span className="text-red-500">→</span> <strong>Tech Debt:</strong> -10% Valuation Impact</li>
+                        </ul>
+                        <p className="mt-4 text-xs text-zinc-500">This tool forces you to confront these discounts upfront.</p>
+                    </div>
+                    <div>
+                        <h3 className="text-2xl font-bold text-yellow-400 mb-4">Defending the Downside</h3>
+                        <p className="text-zinc-400 text-sm leading-relaxed">
+                            The most valuable thing a Product Leader can do is not &quot;ideation&quot;—it is <strong>Risk Adjustment</strong>. By using this calculator to model &quot;Worst Case,&quot; &quot;Base Case,&quot; and &quot;Blue Sky,&quot; you transform your roadmap from a lottery ticket into a bankable bond. This is how you defend your budget in a downturn.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

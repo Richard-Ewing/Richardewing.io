@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'EV-SE Engine | Enterprise Value Scenario Calculator | Richard Ewing',
-    description: 'Quantify how execution risk destroys enterprise value. Calculate the Wealth Destruction Gap and defend your valuation with data-driven scenarios.',
-    keywords: ['enterprise value', 'valuation', 'execution risk', 'SaaS valuation', 'wealth destruction', 'scenario planning', 'EV calculator'],
+    title: 'SaaS Valuation Calculator | Risk-Adjusted Revenue Multiples',
+    description: 'Calculate your true Enterprise Value (EV). Adjust SaaS revenue multiples for churn risk, scope creep, and execution confidence. The EV-SE Engine™.',
+    keywords: ['SaaS valuation calculator', 'revenue multiple calculator', 'SaaS exit calculator', 'ARR multiples 2025', 'startup valuation model', 'private equity due diligence', 'enterprise value calculator'],
     openGraph: {
-        title: 'EV-SE Engine - Defend Your Valuation',
-        description: 'See how execution risk discounts your company. Calculate your Wealth Destruction Gap.',
+        title: 'SaaS Valuation Calculator | Risk-Adjusted Multiples',
+        description: 'Calculate risk-adjusted enterprise value. See your Wealth Destruction Gap.',
         type: 'website',
         url: 'https://richardewing.io/tools/ev-se',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'EV-SE Engine | Enterprise Value Scenario Calculator',
-        description: 'Quantify how execution risk destroys enterprise value.',
+        title: 'SaaS Valuation Calculator | EV-SE Engine™',
+        description: 'Calculate risk-adjusted SaaS revenue multiples for exit planning.',
     },
     alternates: {
         canonical: 'https://richardewing.io/tools/ev-se',

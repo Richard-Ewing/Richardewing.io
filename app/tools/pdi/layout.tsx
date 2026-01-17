@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'PDI Engine | Product Debt Index Calculator | Richard Ewing',
-    description: 'AI-powered forensic audit of your engineering backlog. Calculate capital leakage from maintenance debt and optimize your Product Debt Index for maximum ROI.',
-    keywords: ['product debt', 'technical debt', 'backlog audit', 'engineering efficiency', 'capital leakage', 'PDI calculator', 'maintenance cost'],
+    title: 'Technical Debt Calculator | The Product Debt Index™ (PDI)',
+    description: 'Forensic technical debt calculator. Quantify the financial cost of legacy code, refactoring vs. features, and engineering insolvency. Stop capital leakage.',
+    keywords: ['technical debt calculator', 'cost of technical debt', 'refactoring ROI', 'engineering velocity metrics', 'legacy code audit', 'software maintenance costs', 'tech debt ratio', 'product debt'],
     openGraph: {
-        title: 'PDI Engine - Quantify Hidden Product Debt',
-        description: 'Paste your Jira tickets and discover how much capital you are burning on maintenance. AI-powered analysis.',
+        title: 'Technical Debt Calculator | Product Debt Index™',
+        description: 'Forensic calculator to quantify the financial cost of technical debt. See your engineering insolvency horizon.',
         type: 'website',
         url: 'https://richardewing.io/tools/pdi',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'PDI Engine | Product Debt Index Calculator',
-        description: 'AI-powered forensic audit of your engineering backlog.',
+        title: 'Technical Debt Calculator | PDI™',
+        description: 'Quantify the financial cost of legacy code and maintenance burden.',
     },
     alternates: {
         canonical: 'https://richardewing.io/tools/pdi',

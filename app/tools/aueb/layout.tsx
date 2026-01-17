@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'AUEB Engine | AI Unit Economics Benchmark | Richard Ewing',
-    description: 'Calculate your AI feature margins and insolvency point. Benchmark against GPT-4, Claude, and open-source LLMs to optimize unit economics.',
-    keywords: ['AI margins', 'unit economics', 'LLM costs', 'GPT-4 pricing', 'AI profitability', 'margin calculator', 'SaaS AI costs'],
+    title: 'LLM Cost Calculator & AI Unit Economics Benchmark',
+    description: 'Calculate your AI insolvency horizon. Compare GPT-4, Claude 3.5, and Llama 3 pricing. Prevent margin collapse with the AI Unit Economics Benchmark™.',
+    keywords: ['LLM cost calculator', 'AI token pricing', 'GPT-4 api cost', 'AI margin analysis', 'generative AI unit economics', 'LLM pricing comparison', 'token cost estimator', 'AI COGS calculator'],
     openGraph: {
-        title: 'AUEB Engine - AI Unit Economics Benchmark',
-        description: 'Are you scaling into bankruptcy? Calculate your AI margin collapse point.',
+        title: 'LLM Cost Calculator | AI Unit Economics Benchmark',
+        description: 'Calculate your AI margin collapse point. Compare GPT-4, Claude, and open-source LLM costs.',
         type: 'website',
         url: 'https://richardewing.io/tools/aueb',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AUEB Engine | AI Unit Economics Benchmark',
-        description: 'Calculate your AI feature margins and insolvency point.',
+        title: 'LLM Cost Calculator | AUEB™',
+        description: 'Calculate GPT-4, Claude, and LLM costs. Prevent AI margin collapse.',
     },
     alternates: {
         canonical: 'https://richardewing.io/tools/aueb',

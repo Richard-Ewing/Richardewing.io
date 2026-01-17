@@ -248,9 +248,17 @@ export default function APERTool() {
         }
     };
 
-    const handleEmailSubmit = (e: React.FormEvent) => {
+    const handleEmailSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Lead captured:', email, 'Persona:', persona);
+        try {
+            await fetch('https://formspree.io/f/xzddbpwy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, persona, tool: 'APER', aper: results?.aper }),
+            });
+        } catch (err) {
+            console.error('Form submission error:', err);
+        }
         setEmailSubmitted(true);
         setTimeout(() => {
             window.location.href = '/advisory';
@@ -486,8 +494,8 @@ export default function APERTool() {
                                     <div className="flex items-center justify-between mb-6">
                                         <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Team Health Dashboard</div>
                                         <div className={`px-3 py-1 rounded-full text-xs font-bold ${results.teamHealthScore >= 75 ? 'bg-emerald-500/20 text-emerald-400' :
-                                                results.teamHealthScore >= 50 ? 'bg-yellow-500/20 text-yellow-400' :
-                                                    'bg-red-500/20 text-red-400'
+                                            results.teamHealthScore >= 50 ? 'bg-yellow-500/20 text-yellow-400' :
+                                                'bg-red-500/20 text-red-400'
                                             }`}>
                                             Health Score: {results.teamHealthScore}/100
                                         </div>
@@ -663,6 +671,36 @@ export default function APERTool() {
                     )}
                 </AnimatePresence>
             </main>
+
+            {/* AUTHORITY CONTENT: APER */}
+            <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
+                <div className="prose prose-invert prose-lg max-w-none">
+                    <h2 className="text-4xl font-bold text-white mb-8">The Most Dangerous Number in SaaS</h2>
+                    <p className="text-zinc-400 leading-relaxed">
+                        <strong>Revenue Per Employee (RPE)</strong> is the ultimate truth serum. In High-Leverage SaaS (the &quot;Elite&quot; zone), one engineer generates over $600k in ARR. In Low-Leverage SaaS (the &quot;Danger&quot; zone), one engineer generates less than $200k.
+                    </p>
+                    <p className="text-zinc-400 leading-relaxed">
+                        The <strong>APER™ Diagnostic</strong> (Algorithmic Product Engineering Ratio) strips away the excuses. It ignores &quot;story points completed&quot; and &quot;lines of code written.&quot; It asks one question: <em>Is this organization converting human intelligence into capital efficiently?</em>
+                    </p>
+                </div>
+
+                <div className="bg-gradient-to-r from-zinc-900 to-black p-8 rounded-xl border border-cyan-500/20">
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-4">The Coordination Tax</h3>
+                    <p className="text-zinc-300 mb-6">
+                        Why does adding engineers often slow you down? <strong>Brooks&apos; Law.</strong>
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                        <div>
+                            <h4 className="font-bold text-white mb-2">Small Team (Elite)</h4>
+                            <p className="text-zinc-500">Communication is implicit. Decisions are instant. Architecture is unified. High APER.</p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-white mb-2">Large Team (Bloated)</h4>
+                            <p className="text-zinc-500">Communication is scheduled. Decisions require committees. Architecture is fragmented. Low APER.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

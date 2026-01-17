@@ -341,9 +341,17 @@ export default function AUEBTool() {
         }
     };
 
-    const handleEmailSubmit = (e: React.FormEvent) => {
+    const handleEmailSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Lead captured:', email, 'Persona:', persona);
+        try {
+            await fetch('https://formspree.io/f/xzddbpwy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, persona, tool: 'AUEB', grossMargin: results?.grossMargin }),
+            });
+        } catch (err) {
+            console.error('Form submission error:', err);
+        }
         setEmailSubmitted(true);
         setTimeout(() => {
             window.location.href = '/advisory';
@@ -810,6 +818,29 @@ export default function AUEBTool() {
                     )}
                 </AnimatePresence>
             </main>
+
+            {/* AUTHORITY CONTENT: AUEB */}
+            <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
+                <div className="prose prose-invert prose-lg max-w-none">
+                    <h2 className="text-4xl font-bold text-white mb-8">The Linear Cost Trap of Generative AI</h2>
+                    <p className="text-zinc-400 leading-relaxed">
+                        For 20 years, SaaS enjoyed <strong>Zero Marginal Cost</strong>. Once you wrote the code, the millionth user cost you nothing. Generative AI breaks this physics. It reintroduces <strong>COGS</strong> (Cost of Goods Sold) into software. Every query has a compute cost. Every prompt burns cash.
+                    </p>
+                    <p className="text-zinc-400 leading-relaxed">
+                        The <strong>AI Unit Economics Benchmark (AUEB)</strong> is designed to detect the &quot;Insolvency Horizon.&quot; Many AI startups are essentially Ponzi schemes where Series A capital is used to subsidize OpenAI&apos;s server bills. If your Gross Margin is below 60%, you are not building a software company—you are building a reselling agency with bad margins.
+                    </p>
+                </div>
+
+                <div className="border-l-4 border-red-600 pl-8">
+                    <h3 className="text-2xl font-bold text-white mb-4">The &quot;Token Tax&quot;</h3>
+                    <p className="text-zinc-400 text-lg">
+                        Stop asking &quot;What can AI do?&quot; and start asking &quot;What does the query cost?&quot;
+                    </p>
+                    <p className="text-zinc-500 mt-4 text-sm">
+                        If a user pays you $20/month, and they run 500 queries at $0.03/query (GPT-4), your cost is $15. Your margin is $5 (25%). After server costs and stripe fees, you are losing money on every customer. This calculator exposes that math instantly.
+                    </p>
+                </div>
+            </div>
         </div>
     );
 }

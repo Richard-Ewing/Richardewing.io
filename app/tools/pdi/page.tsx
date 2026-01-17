@@ -223,9 +223,17 @@ export default function PDITool() {
         }
     };
 
-    const handleEmailSubmit = (e: React.FormEvent) => {
+    const handleEmailSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Lead captured:', email, 'Persona:', persona);
+        try {
+            await fetch('https://formspree.io/f/xzddbpwy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, persona, tool: 'PDI', score: results?.score }),
+            });
+        } catch (err) {
+            console.error('Form submission error:', err);
+        }
         setEmailSubmitted(true);
         setTimeout(() => {
             window.location.href = '/advisory';
@@ -621,6 +629,34 @@ Migrate to new database"
                     </ScrollReveal>
                 </>
             )}
+
+            {/* AUTHORITY CONTENT: PDI */}
+            <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
+                <div className="prose prose-invert prose-lg max-w-none">
+                    <h2 className="text-4xl font-bold text-white mb-8">Why Standard Technical Debt Calculators Fail</h2>
+                    <p className="text-zinc-400 leading-relaxed">
+                        Most engineering metrics are vanity signals. Counting &quot;cyclomatic complexity&quot; or &quot;TODO comments&quot; does not tell a CFO whether to approve a budget. The <strong>Product Debt Index™ (PDI)</strong> is different. It is a forensic accounting tool that converts &quot;bad code&quot; into &quot;wasted salary dollars.&quot;
+                    </p>
+                    <p className="text-zinc-400 leading-relaxed">
+                        When your PDI drops below 50, you have crossed the <strong>Insolvency Threshold</strong>. You are no longer a software company; you are a digital nursing home. You are paying senior engineer salaries to change bedpans (maintenance) instead of building skyscrapers (growth).
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 className="text-2xl font-bold text-cyan-400 mb-4">The &quot;Compound Interest&quot; of Bad Code</h3>
+                        <p className="text-zinc-400 text-sm leading-relaxed">
+                            Technical debt is financial debt with variable interest rates. A &quot;quick hack&quot; to ship a feature for Q3 earnings is a loan taken out against Q4 velocity. If you do not pay down the principal (refactoring), the interest payments (maintenance work) will eventually consume 100% of your available capacity. This calculator quantifies that interest payment in real-time.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="text-2xl font-bold text-red-500 mb-4">CapEx vs. OpEx Trap</h3>
+                        <p className="text-zinc-400 text-sm leading-relaxed">
+                            Private Equity firms love this metric. They use it to detect if an engineering team is capitalizing expenses (claiming maintenance work as &quot;R&amp;D&quot;) to inflate EBITDA. The PDI exposes the truth: are you building assets, or just servicing liabilities?
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
