@@ -28,6 +28,31 @@ const nextConfig: NextConfig = {
         destination: '/briefings',
         permanent: true,
       },
+      {
+        source: '/the-operator.html',
+        destination: '/principal',
+        permanent: true,
+      },
+      {
+        source: '/q-pep-product-economics-protocol',
+        destination: '/system',
+        permanent: true,
+      },
+      {
+        source: '/canonical/kill-switch.html',
+        destination: '/briefings',
+        permanent: true,
+      },
+      {
+        source: '/canonical/capital-allocation-strategy.html',
+        destination: '/briefings',
+        permanent: true,
+      },
+      {
+        source: '/studio.html',
+        destination: '/advisory',
+        permanent: true,
+      },
     ];
   },
 };

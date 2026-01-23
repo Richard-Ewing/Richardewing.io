@@ -16,7 +16,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://richardewing.io'),
+  metadataBase: new URL('https://www.richardewing.io'),
   title: {
     default: 'Richard Ewing | Product Economist',
     template: '%s | Richard Ewing'
@@ -26,9 +26,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Richard Ewing', url: 'https://richardewing.io' }],
   creator: 'Richard Ewing',
   publisher: 'Richard Ewing',
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     title: 'Richard Ewing | Product Economist',
     description: 'I help boards stop bleeding money on AI they don\'t understand.',

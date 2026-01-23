@@ -149,8 +149,9 @@ export default function PDITool() {
                 burnDownWeeks,
                 ticketCount: total,
             });
-        } catch {
-            alert("Audit failed. Ensure you pasted valid text and the API is configured.");
+        } catch (error: any) {
+            console.error(error);
+            alert(`Audit failed: ${error.message || "Unknown error"}`);
         }
         finally { setLoading(false); }
     };

@@ -32,12 +32,23 @@ CLASSIFICATION RULES (IMMUTABLE):
    - Logic: If it directly drives Net New ARR, it is Growth.
 
 OUTPUT INSTRUCTION:
-Return a JSON object with a "categorized" array. Be ruthless.
+Return a JSON object with a "categorized" array. Each item MUST have these exact keys:
+- "ticket": The original ticket text.
+- "category": Exactly one of "Maintenance", "Retention", or "Growth".
+- "reasoning": A short explanation (1 sentence).
 `;
 
 export async function POST(req: Request) {
     try {
         const { tickets } = await req.json();
+
+        if (!process.env.OPENAI_API_KEY) {
+            console.error('Configuration Error: OPENAI_API_KEY is missing');
+            return NextResponse.json(
+                { error: 'Server configuration error: OpenAI API Key is missing. Please check .env.local.' },
+                { status: 500 }
+            );
+        }
 
         if (!tickets || !Array.isArray(tickets) || tickets.length === 0) {
             return NextResponse.json(
