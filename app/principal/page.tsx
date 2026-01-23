@@ -74,8 +74,10 @@ const AIExpandCard = ({
                 setAiResponse(data.response);
                 setExpanded(true);
             }
-        } catch (e) {
-            console.error('AI expand failed');
+        } catch (e: any) {
+            console.error('AI expand failed', e);
+            // Optionally alert if it's a configuration error
+            alert("AI Error: " + (e.message || "Failed to connect to AI service."));
         } finally {
             setLoading(false);
         }

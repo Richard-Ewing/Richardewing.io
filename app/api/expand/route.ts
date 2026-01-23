@@ -23,6 +23,14 @@ export async function POST(req: Request) {
     try {
         const { topic, context } = await req.json();
 
+        if (!process.env.OPENAI_API_KEY) {
+            console.error('Configuration Error: OPENAI_API_KEY is missing');
+            return NextResponse.json(
+                { error: 'Server configuration error: OpenAI API Key is missing.' },
+                { status: 500 }
+            );
+        }
+
         if (!topic) {
             return NextResponse.json({ error: 'Topic required' }, { status: 400 });
         }
