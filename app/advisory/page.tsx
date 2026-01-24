@@ -151,7 +151,7 @@ export default function AdvisoryPage() {
                             <Link href="/tools/aper" className="px-4 py-2 bg-yellow-500/20 border border-yellow-500/40 text-yellow-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-yellow-500/30 transition">
                                 Team Efficiency →
                             </Link>
-                            <Link href="/tools/scoring" className="px-4 py-2 bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-emerald-500/30 transition">
+                            <Link href="/tools/audit-interview" className="px-4 py-2 bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-emerald-500/30 transition">
                                 Audit Interview →
                             </Link>
                         </div>

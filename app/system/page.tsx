@@ -84,7 +84,7 @@ export default function SystemPage() {
                             <h3 className="text-xl font-bold text-white mb-2">Audit Interview</h3>
                             <p className="text-zinc-500 text-sm mb-4">Quantify candidate judgment. Move beyond code syntax to measure capital stewardship and architectural reasoning.</p>
                             <ShineBorder borderColor="rgba(16, 185, 129, 0.6)" duration={2}>
-                                <Link href="/tools/scoring" className="block w-full text-center bg-emerald-600 text-white font-bold text-xs uppercase tracking-widest py-3 hover:bg-emerald-500 transition">
+                                <Link href="/tools/audit-interview" className="block w-full text-center bg-emerald-600 text-white font-bold text-xs uppercase tracking-widest py-3 hover:bg-emerald-500 transition">
                                     Launch Audit Interview →
                                 </Link>
                             </ShineBorder>

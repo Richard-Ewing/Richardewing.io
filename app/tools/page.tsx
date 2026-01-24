@@ -51,7 +51,7 @@ const tools = [
         seoKeywords: 'startup valuation calculator, execution risk, valuation scenario',
     },
     {
-        id: 'scoring',
+        id: 'audit-interview',
         name: 'Audit Interview',
         acronym: 'AUDIT',
         tagline: 'Quantify candidate judgment and risk.',

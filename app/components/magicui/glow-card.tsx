@@ -1,19 +1,19 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, HTMLAttributes } from 'react';
 
-interface GlowCardProps {
+interface GlowCardProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;
-    className?: string;
     glowColor?: string;
 }
 
-export function GlowCard({ children, className = '', glowColor = 'cyan' }: GlowCardProps) {
+export function GlowCard({ children, className = '', glowColor = 'cyan', ...props }: GlowCardProps) {
     const colorMap: Record<string, string> = {
         cyan: 'hover:border-cyan-500/50 hover:shadow-cyan-500/20',
         cobalt: 'hover:border-cobalt/50 hover:shadow-cobalt/20',
         gold: 'hover:border-gold/50 hover:shadow-gold/20',
         danger: 'hover:border-danger/50 hover:shadow-danger/20',
+        emerald: 'hover:border-emerald-500/50 hover:shadow-emerald-500/20',
         white: 'hover:border-white/50 hover:shadow-white/10',
     };
 
@@ -26,6 +26,7 @@ export function GlowCard({ children, className = '', glowColor = 'cyan' }: GlowC
         ${colorMap[glowColor] || colorMap.cyan}
         ${className}
       `}
+            {...props}
         >
             {children}
         </div>
