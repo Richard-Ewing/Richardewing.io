@@ -120,6 +120,9 @@ export default function BookPage() {
                             <Link href="/tools/pdi" className="text-sm text-red-400 hover:text-white border-b border-red-400/30 hover:border-white transition">
                                 Try PDI Tool →
                             </Link>
+                            <Link href="/tools/scoring" className="text-sm text-emerald-400 hover:text-white border-b border-emerald-400/30 hover:border-white transition">
+                                Try Audit Interview →
+                            </Link>
                             <Link href="/advisory" className="text-sm text-gold hover:text-white border-b border-gold/30 hover:border-white transition">
                                 Book Advisory →
                             </Link>

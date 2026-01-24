@@ -75,6 +75,20 @@ export default function SystemPage() {
                                 </Link>
                             </ShineBorder>
                         </GlowCard>
+
+                        <GlowCard className="p-6 sm:col-span-2" glowColor="emerald">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_#10b981]" />
+                                <span className="font-mono text-[10px] text-emerald-400 uppercase tracking-widest">Human Capital Audit</span>
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-2">Audit Interview</h3>
+                            <p className="text-zinc-500 text-sm mb-4">Quantify candidate judgment. Move beyond code syntax to measure capital stewardship and architectural reasoning.</p>
+                            <ShineBorder borderColor="rgba(16, 185, 129, 0.6)" duration={2}>
+                                <Link href="/tools/scoring" className="block w-full text-center bg-emerald-600 text-white font-bold text-xs uppercase tracking-widest py-3 hover:bg-emerald-500 transition">
+                                    Launch Audit Interview →
+                                </Link>
+                            </ShineBorder>
+                        </GlowCard>
                     </div>
 
                     {/* APER Diagnostic Tool Gateway */}

@@ -5,12 +5,11 @@ import { z } from 'zod';
 // Schema for input validation
 const ScoreRequestSchema = z.object({
     role: z.enum(['engineering', 'pm']),
-    candidate_id: z.string().optional(),
     scores: z.object({
-        constraint_recognition: z.number().min(0).max(3),
-        tradeoff_articulation: z.number().min(0).max(3),
+        verification_depth: z.number().min(0).max(3),
+        architectural_reasoning: z.number().min(0).max(3),
         economic_awareness: z.number().min(0).max(3),
-        failure_anticipation: z.number().min(0).max(3),
+        ai_interrogation: z.number().min(0).max(3),
     }),
     observations: z.array(z.string()),
     outcome: z.string(),
@@ -48,26 +47,29 @@ export async function POST(req: Request) {
         Act as 'The Product Economist'. Write a hiring defense memo for a ${role} candidate.
         
         SCORES (0-3 scale):
-        - Constraint Recognition: ${scores.constraint_recognition}
-        - Tradeoff Articulation: ${scores.tradeoff_articulation}
+        - Verification Depth: ${scores.verification_depth}
+        - Architectural Reasoning: ${scores.architectural_reasoning}
         - Economic Awareness: ${scores.economic_awareness}
-        - Failure Anticipation: ${scores.failure_anticipation}
+        - AI Interrogation: ${scores.ai_interrogation}
         
-        OUTCOME: ${outcome}
-        CORE RATIONALE: ${rationale}
+        VERDICT: ${outcome}
+        RATIONALE: ${rationale}
         
-        OBSERVATIONS:
+        INTERVIEWER NOTES:
         ${observations.join("; ")}
         
         INSTRUCTIONS:
-        Write a concise, 4-sentence paragraph explaining WHY this candidate received this grade.
-        Focus on 'Judgment', 'Capital Risk', and 'Leverage'.
-        Do not use fluff.
+        Write a concise, 4-sentence paragraph explaining the hiring decision.
+        Use terms like "Capital Risk," "Leverage," "Technical Insolvency," and "Judgment."
+        Do not use HR fluff. Be ruthless and direct.
         `;
 
         const completion = await openai.chat.completions.create({
             model: 'gpt-4o',
-            messages: [{ role: 'user', content: prompt }],
+            messages: [
+                { role: 'system', content: 'You are a high-agency executive advisor.' },
+                { role: 'user', content: prompt }
+            ],
             temperature: 0.7,
         });
 
@@ -76,7 +78,7 @@ export async function POST(req: Request) {
         return NextResponse.json({ memo });
 
     } catch (error) {
-        console.error('Scoring Engine Error:', error);
+        console.error('Audit Engine Error:', error);
         return NextResponse.json(
             { error: 'Failed to generate memo', message: error instanceof Error ? error.message : 'Unknown error' },
             { status: 500 }

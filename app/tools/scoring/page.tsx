@@ -5,22 +5,22 @@ import Link from 'next/link';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
 import { ShineBorder } from '../../components/magicui/shine-border';
-import { ArrowRight, AlertTriangle, CheckCircle2, Target, Brain, TrendingUp, AlertOctagon } from 'lucide-react';
+import { ArrowRight, Search, Target, Brain, TrendingUp, Cpu, BarChart3 } from 'lucide-react';
 
 type Role = 'engineering' | 'pm';
 
 interface Scores {
-    constraint_recognition: number;
-    tradeoff_articulation: number;
+    verification_depth: number;
+    architectural_reasoning: number;
     economic_awareness: number;
-    failure_anticipation: number;
+    ai_interrogation: number;
 }
 
 interface Observations {
-    constraint_recognition: string;
-    tradeoff_articulation: string;
+    verification_depth: string;
+    architectural_reasoning: string;
     economic_awareness: string;
-    failure_anticipation: string;
+    ai_interrogation: string;
 }
 
 interface Outcome {
@@ -31,44 +31,96 @@ interface Outcome {
 
 const DIMENSIONS = [
     {
-        id: 'constraint_recognition',
-        label: 'Constraint Recognition',
-        icon: Target,
-        desc: 'Ability to identify cost drivers and system limits.'
+        id: 'verification_depth',
+        label: 'Verification Depth',
+        icon: Search,
+        desc: 'Did they verify assumptions or just trust the input?',
+        color: '#22d3ee' // Cyan
     },
     {
-        id: 'tradeoff_articulation',
-        label: 'Tradeoff Articulation',
+        id: 'architectural_reasoning',
+        label: 'Architectural Reasoning',
         icon: Brain,
-        desc: 'Explicitly prioritizing stability/cost over features.'
+        desc: 'Can they structure a system under constraints?',
+        color: '#8b5cf6' // Violet
     },
     {
         id: 'economic_awareness',
         label: 'Economic Awareness',
         icon: TrendingUp,
-        desc: 'Understanding of capital efficiency and leverage.'
+        desc: 'Do they understand cost/value trade-offs?',
+        color: '#ef4444' // Red
     },
     {
-        id: 'failure_anticipation',
-        label: 'Failure Anticipation',
-        icon: AlertOctagon,
-        desc: 'Spotting risks before they become incidents.'
+        id: 'ai_interrogation',
+        label: 'AI Interrogation',
+        icon: Cpu,
+        desc: 'Can they force the AI to produce high-quality code?',
+        color: '#eab308' // Gold
     }
 ] as const;
 
-export default function ScoringEngine() {
+// Simple Radar Chart Component
+const RadarChart = ({ scores }: { scores: Scores }) => {
+    // Normalize scores (0-3) to radius (10-90)
+    const scale = (val: number) => 10 + (val / 3) * 80;
+
+    const points = [
+        { angle: 0, val: scores.verification_depth, label: 'Verification' },
+        { angle: 90, val: scores.architectural_reasoning, label: 'Architecture' },
+        { angle: 180, val: scores.economic_awareness, label: 'Economics' },
+        { angle: 270, val: scores.ai_interrogation, label: 'AI' },
+    ];
+
+    const polyPoints = points.map(p => {
+        const rad = (p.angle - 90) * (Math.PI / 180);
+        const r = scale(p.val);
+        return `${100 + r * Math.cos(rad)},${100 + r * Math.sin(rad)}`;
+    }).join(' ');
+
+    return (
+        <svg viewBox="0 0 200 200" className="w-full h-full">
+            {/* Grid */}
+            {[20, 40, 60, 80].map(r => (
+                <circle key={r} cx="100" cy="100" r={r} fill="none" stroke="#333" strokeOpacity="0.5" />
+            ))}
+            <line x1="100" y1="20" x2="100" y2="180" stroke="#333" strokeOpacity="0.5" />
+            <line x1="20" y1="100" x2="180" y2="100" stroke="#333" strokeOpacity="0.5" />
+
+            {/* Data Polygon */}
+            <polygon points={polyPoints} fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" strokeWidth="2" />
+
+            {/* Points */}
+            {points.map((p, i) => {
+                const rad = (p.angle - 90) * (Math.PI / 180);
+                const r = scale(p.val);
+                const x = 100 + r * Math.cos(rad);
+                const y = 100 + r * Math.sin(rad);
+                return <circle key={i} cx={x} cy={y} r="4" fill="#10b981" />
+            })}
+
+            {/* Labels */}
+            <text x="100" y="15" textAnchor="middle" fill="#9ca3af" fontSize="10" className="uppercase font-mono">Verification</text>
+            <text x="190" y="105" textAnchor="middle" fill="#9ca3af" fontSize="10" className="uppercase font-mono">Architecture</text>
+            <text x="100" y="195" textAnchor="middle" fill="#9ca3af" fontSize="10" className="uppercase font-mono">Economics</text>
+            <text x="10" y="105" textAnchor="middle" fill="#9ca3af" fontSize="10" className="uppercase font-mono">AI</text>
+        </svg>
+    );
+};
+
+export default function AuditInterview() {
     const [role, setRole] = useState<Role>('engineering');
     const [scores, setScores] = useState<Scores>({
-        constraint_recognition: 0,
-        tradeoff_articulation: 0,
+        verification_depth: 0,
+        architectural_reasoning: 0,
         economic_awareness: 0,
-        failure_anticipation: 0
+        ai_interrogation: 0
     });
     const [observations, setObservations] = useState<Observations>({
-        constraint_recognition: '',
-        tradeoff_articulation: '',
+        verification_depth: '',
+        architectural_reasoning: '',
         economic_awareness: '',
-        failure_anticipation: ''
+        ai_interrogation: ''
     });
 
     const [outcome, setOutcome] = useState<Outcome | null>(null);
@@ -83,27 +135,31 @@ export default function ScoringEngine() {
         setObservations(prev => ({ ...prev, [id]: val }));
     };
 
-    const calculateOutcome = () => {
+    const calculateVerdict = () => {
         const total = Object.values(scores).reduce((a, b) => a + b, 0);
         let verdict = '';
         let rationale = '';
 
         if (total <= 4) {
             verdict = "Strong No Hire";
-            rationale = "Candidate avoids decisions and optimizes for narrative over judgment.";
+            rationale = "Candidate optimizes for narrative/syntax over judgment. High capital risk.";
         } else if (total <= 7) {
             verdict = "No Hire";
-            rationale = "Candidate identifies issues but avoids ownership and hard constraints.";
+            rationale = "Identifies issues but avoids ownership and hard trade-offs.";
         } else if (total <= 10) {
             verdict = "Hire";
-            rationale = "Demonstrates sound judgment with manageable gaps in economic framing.";
+            rationale = "Demonstrates sound judgment. Can act as a capital steward.";
         } else {
             verdict = "Strong Hire";
-            rationale = "Candidate consistently prioritizes constraints, trade-offs, and capital efficiency.";
+            rationale = "Exceptional judgment. Prioritizes constraints and economic efficiency.";
         }
 
         setOutcome({ total, verdict, rationale });
         setMemo(null); // Reset memo on new calculation
+        // Scroll to results
+        setTimeout(() => {
+            document.getElementById('results-dashboard')?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
     };
 
     const generateMemo = async () => {
@@ -112,7 +168,7 @@ export default function ScoringEngine() {
 
         const obsList = Object.entries(observations)
             .filter(([_, val]) => val.trim().length > 0)
-            .map(([key, val]) => `${key.replace('_', ' ')} scored ${scores[key as keyof Scores]}: ${val}`);
+            .map(([key, val]) => `[${key.toUpperCase()}] ${val}`);
 
         try {
             const res = await fetch('/api/scoring', {
@@ -139,164 +195,199 @@ export default function ScoringEngine() {
         }
     };
 
+    const SCORE_LABELS = ['Critical Fail', 'Weak', 'Competent', 'Senior/Strong'];
+
     return (
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-white transition">Intelligence</Link>
                 <span>/</span>
-                <span className="text-white font-bold">Scoring Engine</span>
+                <span className="text-white font-bold">Audit Interview</span>
             </div>
 
-            <ScrollReveal>
-                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8">
-                    {/* Status Badge */}
-                    <div className="flex items-center gap-2 mb-6">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                        <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest">Human Capital Ledger</span>
-                    </div>
-
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-4">
-                        The Scoring <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Engine.</span>
-                    </h1>
-                    <p className="text-lg sm:text-xl text-zinc-400 mb-8">
-                        Standardized evaluation framework for Engineering and Product talent. Quantify judgment, not just coding ability.
-                    </p>
-
-                    {/* Role Selector */}
-                    <div className="flex gap-4 mb-8 border-b border-white/10 pb-8">
-                        {['engineering', 'pm'].map((r) => (
-                            <button
-                                key={r}
-                                onClick={() => setRole(r as Role)}
-                                className={`px-4 py-2 rounded-lg border uppercase font-mono text-xs tracking-widest transition-all ${role === r
-                                        ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400'
-                                        : 'bg-zinc-900/50 border-white/10 text-zinc-500 hover:border-white/30'
-                                    }`}
-                            >
-                                {r === 'pm' ? 'Product Manager' : 'Engineer'}
-                            </button>
-                        ))}
-                    </div>
-
-                    {/* Scoring Grid */}
-                    <div className="space-y-8">
-                        {DIMENSIONS.map((dim) => (
-                            <div key={dim.id} className="bg-black/20 rounded-xl p-4 sm:p-6 border border-white/5">
-                                <div className="flex items-start gap-3 mb-4">
-                                    <div className="p-2 bg-zinc-900 rounded-lg text-zinc-400">
-                                        <dim.icon size={20} />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-lg font-bold text-white">{dim.label}</h3>
-                                        <p className="text-sm text-zinc-500">{dim.desc}</p>
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6">
-                                    {/* Component: Score Selector */}
-                                    <div className="flex flex-col gap-2">
-                                        <div className="flex gap-1 bg-black/50 p-1 rounded-lg border border-white/10">
-                                            {[0, 1, 2, 3].map(val => (
-                                                <button
-                                                    key={val}
-                                                    onClick={() => handleScoreChange(dim.id as keyof Scores, val)}
-                                                    className={`flex-1 py-2 text-sm font-mono font-bold rounded-md transition-all ${scores[dim.id as keyof Scores] === val
-                                                            ? 'bg-emerald-600 text-white'
-                                                            : 'hover:bg-white/10 text-zinc-500'
-                                                        }`}
-                                                >
-                                                    {val}
-                                                </button>
-                                            ))}
-                                        </div>
-                                        <div className="flex justify-between text-[10px] text-zinc-600 font-mono uppercase px-1">
-                                            <span>Abysmal</span>
-                                            <span>Elite</span>
-                                        </div>
-                                    </div>
-
-                                    {/* Observation Input */}
-                                    <textarea
-                                        value={observations[dim.id as keyof Observations]}
-                                        onChange={(e) => handleObservationChange(dim.id as keyof Observations, e.target.value)}
-                                        placeholder={`Evidence for ${dim.label.toLowerCase()} score...`}
-                                        className="w-full bg-black/50 border border-white/10 rounded-lg p-3 text-sm text-zinc-300 focus:border-emerald-500 focus:outline-none transition-all placeholder:text-zinc-700 h-20 resize-none"
-                                    />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="mt-8">
-                        <ShineBorder borderColor="rgba(16, 185, 129, 0.6)" duration={2}>
-                            <button
-                                onClick={calculateOutcome}
-                                className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-emerald-400 transition-all flex items-center justify-center gap-3"
-                            >
-                                Calculate Outcome <ArrowRight size={16} />
-                            </button>
-                        </ShineBorder>
-                    </div>
-                </div>
-            </ScrollReveal>
-
-            {/* Application Feedback - Only show if outcome exists */}
-            {outcome && (
+            {!outcome ? (
+                /* --- INPUT STATE --- */
                 <ScrollReveal>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-                        {/* Score Card */}
-                        <GlowCard className="p-8 flex flex-col items-center justify-center text-center h-full" glowColor={outcome.total > 7 ? "emerald" : "danger"}>
-                            <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Total Score</div>
-                            <div className={`text-7xl font-bold tracking-tighter mb-4 ${outcome.total > 7 ? 'text-emerald-400' : 'text-red-500'}`}>
-                                {outcome.total}<span className="text-2xl text-zinc-600">/12</span>
-                            </div>
-                            <div className={`px-4 py-2 rounded-full border text-sm font-bold uppercase tracking-widest ${outcome.total > 7
-                                    ? 'bg-emerald-900/30 border-emerald-500/50 text-emerald-400'
-                                    : 'bg-red-900/30 border-red-500/50 text-red-400'
-                                }`}>
-                                {outcome.verdict}
-                            </div>
-                        </GlowCard>
+                    <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8">
+                        {/* Status Badge */}
+                        <div className="flex items-center gap-2 mb-6">
+                            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                            <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest">Product Economist | Audit Suite</span>
+                        </div>
 
-                        {/* Rationale & Memo Action */}
-                        <div className="lg:col-span-2 space-y-6">
-                            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl p-6">
-                                <h3 className="text-lg font-bold text-white mb-2">Core Rationale</h3>
-                                <p className="text-zinc-400 leading-relaxed">
-                                    {outcome.rationale}
-                                </p>
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-4">
+                            Audit <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Interview.</span>
+                        </h1>
+                        <p className="text-lg sm:text-xl text-zinc-400 mb-8">
+                            The "Product Economist" framework for technical auditing. Quantify judgment, capital risk, and leverage.
+                        </p>
+
+                        {/* Role Selector */}
+                        <div className="flex gap-4 mb-8 border-b border-white/10 pb-8">
+                            {['engineering', 'pm'].map((r) => (
+                                <button
+                                    key={r}
+                                    onClick={() => setRole(r as Role)}
+                                    className={`px-4 py-2 rounded-lg border uppercase font-mono text-xs tracking-widest transition-all ${role === r
+                                            ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400'
+                                            : 'bg-zinc-900/50 border-white/10 text-zinc-500 hover:border-white/30'
+                                        }`}
+                                >
+                                    {r === 'pm' ? 'Product Manager' : 'Engineer'}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Scoring Grid */}
+                        <div className="space-y-8">
+                            {DIMENSIONS.map((dim) => (
+                                <div key={dim.id} className="bg-black/20 rounded-xl p-4 sm:p-6 border border-white/5">
+                                    <div className="flex items-start gap-3 mb-4">
+                                        <div className="p-2 bg-zinc-900 rounded-lg text-zinc-400">
+                                            <dim.icon size={20} />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-lg font-bold text-white">{dim.label}</h3>
+                                            <p className="text-sm text-zinc-500">{dim.desc}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6">
+                                        {/* Component: Score Selector */}
+                                        <div className="flex flex-col gap-2">
+                                            <div className="flex gap-1 bg-black/50 p-1 rounded-lg border border-white/10">
+                                                {[0, 1, 2, 3].map(val => (
+                                                    <button
+                                                        key={val}
+                                                        onClick={() => handleScoreChange(dim.id as keyof Scores, val)}
+                                                        className={`flex-1 py-2 text-sm font-mono font-bold rounded-md transition-all ${scores[dim.id as keyof Scores] === val
+                                                                ? 'bg-emerald-600 text-white'
+                                                                : 'hover:bg-white/10 text-zinc-500'
+                                                            }`}
+                                                    >
+                                                        {val}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                            <div className="text-center text-[10px] text-zinc-400 font-mono uppercase mt-1">
+                                                {SCORE_LABELS[scores[dim.id as keyof Scores]]}
+                                            </div>
+                                        </div>
+
+                                        {/* Observation Input */}
+                                        <textarea
+                                            value={observations[dim.id as keyof Observations]}
+                                            onChange={(e) => handleObservationChange(dim.id as keyof Observations, e.target.value)}
+                                            placeholder={`Notes on ${dim.label.toLowerCase()}...`}
+                                            className="w-full bg-black/50 border border-white/10 rounded-lg p-3 text-sm text-zinc-300 focus:border-emerald-500 focus:outline-none transition-all placeholder:text-zinc-700 h-20 resize-none"
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="mt-8">
+                            <ShineBorder borderColor="rgba(16, 185, 129, 0.6)" duration={2}>
+                                <button
+                                    onClick={calculateVerdict}
+                                    className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-emerald-400 transition-all flex items-center justify-center gap-3"
+                                >
+                                    Calculate Verdict <ArrowRight size={16} />
+                                </button>
+                            </ShineBorder>
+                        </div>
+                    </div>
+                </ScrollReveal>
+            ) : (
+                /* --- DASHBOARD STATE --- */
+                <ScrollReveal>
+                    <div id="results-dashboard">
+                        {/* Dashboard Header */}
+                        <div className="flex items-center justify-between mb-8">
+                            <div>
+                                <h1 className="text-3xl font-bold text-white mb-2">Interview Dashboard</h1>
+                                <p className="text-zinc-400 text-sm">Session Complete • Protocol {role.toUpperCase()}-092</p>
+                            </div>
+                            <button onClick={() => setOutcome(null)} className="px-4 py-2 border border-white/10 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
+                                <Search size={14} /> New Audit
+                            </button>
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+                            {/* Left Col: Verdict Card */}
+                            <GlowCard className="p-8 flex flex-col items-center justify-center text-center h-full" glowColor={outcome.total > 7 ? "emerald" : "danger"}>
+                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
+                                <div className={`text-6xl sm:text-7xl font-bold tracking-tighter mb-4 ${outcome.total > 7 ? 'text-emerald-400' : 'text-red-500'}`}>
+                                    {outcome.verdict}
+                                </div>
+                                <div className="flex items-center gap-3 text-sm font-mono border-t border-white/10 pt-4 mt-4 w-full justify-center">
+                                    <span className="text-zinc-400">Total Score:</span>
+                                    <span className="text-white font-bold">{outcome.total}/12</span>
+                                </div>
+                            </GlowCard>
+
+                            {/* Middle Col: Radar Chart */}
+                            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden">
+                                <span className="absolute top-4 left-4 text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Attribute Geometry</span>
+                                <div className="w-64 h-64">
+                                    <RadarChart scores={scores} />
+                                </div>
+                            </div>
+
+                            {/* Right Col: Breakdown List */}
+                            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl p-6 space-y-4">
+                                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-4">Dimension Audit</span>
+                                {DIMENSIONS.map(dim => (
+                                    <div key={dim.id} className="flex justify-between items-center">
+                                        <div className="flex items-center gap-2">
+                                            <dim.icon size={14} className="text-zinc-400" />
+                                            <span className="text-sm text-zinc-300">{dim.label}</span>
+                                        </div>
+                                        <div className={`text-sm font-mono font-bold ${scores[dim.id as keyof Scores] === 3 ? 'text-emerald-400' :
+                                                scores[dim.id as keyof Scores] === 0 ? 'text-red-500' : 'text-white'
+                                            }`}>
+                                            {scores[dim.id as keyof Scores]}/3
+                                        </div>
+                                    </div>
+                                ))}
+                                <div className="border-t border-white/10 pt-4 mt-4">
+                                    <p className="text-xs text-zinc-400 leading-relaxed italic">
+                                        "{outcome.rationale}"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Executive Memo Section */}
+                        <div className="capsule-container rounded-2xl p-8 mb-12">
+                            <div className="flex items-center gap-2 mb-6">
+                                <TrendingUp size={18} className="text-emerald-500" />
+                                <h2 className="text-xl font-bold text-white">Executive Defense Memo</h2>
                             </div>
 
                             {!memo ? (
-                                <button
-                                    onClick={generateMemo}
-                                    disabled={loading}
-                                    className="w-full py-4 rounded-xl border border-white/10 bg-black/50 text-zinc-400 hover:text-white hover:border-emerald-500/50 transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-xs font-bold disabled:opacity-50"
-                                >
-                                    {loading ? (
-                                        <>
-                                            <div className="w-4 h-4 border-2 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin" />
-                                            Writing Defense Memo...
-                                        </>
-                                    ) : (
-                                        <>
-                                            <Brain size={14} /> Generate Defense Memo
-                                        </>
-                                    )}
-                                </button>
+                                <div className="text-center py-12 border-2 border-dashed border-white/10 rounded-xl">
+                                    <p className="text-zinc-500 mb-6 max-w-md mx-auto">
+                                        Generate a high-agency defense memo to justify this hiring decision to the Investment Committee.
+                                    </p>
+                                    <button
+                                        onClick={generateMemo}
+                                        disabled={loading}
+                                        className="px-8 py-3 bg-white text-black font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-emerald-400 transition-colors disabled:opacity-50"
+                                    >
+                                        {loading ? "Drafting Memo..." : "Generate Memo"}
+                                    </button>
+                                </div>
                             ) : (
-                                <div className="bg-zinc-900/50 border border-emerald-500/30 rounded-2xl p-6 relative overflow-hidden">
-                                    <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500" />
-                                    <div className="flex items-center gap-2 mb-4">
-                                        <Brain size={16} className="text-emerald-500" />
-                                        <span className="text-xs font-mono text-emerald-500 uppercase tracking-widest">AI Generated Memo</span>
+                                <div className="prose prose-invert prose-lg max-w-none bg-black/30 p-8 rounded-xl border-l-4 border-emerald-500">
+                                    <div className="flex justify-between items-start mb-4">
+                                        <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest">Confidential // Internal Only</span>
+                                        <button onClick={() => navigator.clipboard.writeText(memo)} className="text-[10px] font-mono text-zinc-500 hover:text-white uppercase">Copy</button>
                                     </div>
-                                    <div className="prose prose-invert prose-sm max-w-none">
-                                        <p className="text-zinc-300 leading-loose italic">
-                                            &quot;{memo}&quot;
-                                        </p>
-                                    </div>
+                                    <p className="text-zinc-200 leading-loose whitespace-pre-wrap font-serif">
+                                        {memo}
+                                    </p>
                                 </div>
                             )}
                         </div>

@@ -52,14 +52,14 @@ const tools = [
     },
     {
         id: 'scoring',
-        name: 'The Scoring Engine',
-        acronym: 'SCORE',
+        name: 'Audit Interview',
+        acronym: 'AUDIT',
         tagline: 'Quantify candidate judgment and risk.',
-        description: 'Production-ready logic for scoring candidates. Evaluate constraint recognition, tradeoff articulation, and economic awareness.',
+        description: 'Production-ready logic for auditing candidates. Evaluate verification depth, architectural reasoning, and economic awareness.',
         color: 'emerald',
         icon: Brain,
-        metrics: ['Hiring Verdict', 'Capital Risk', 'Defense Memo'],
-        seoKeywords: 'hiring scoring engine, engineering interview rubric, product economist',
+        metrics: ['Hiring Verdict', 'Capital Risk', 'Executive Memo'],
+        seoKeywords: 'hiring audit engine, engineering interview rubric, product economist',
     },
 ];
 

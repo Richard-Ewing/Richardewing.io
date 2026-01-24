@@ -1,19 +1,22 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'The Scoring Engine | Hiring Decision Framework',
-    description: 'A production-ready logic tool for scoring candidates based on constraint recognition, tradeoff articulation, economic awareness, and failure anticipation.',
+    title: 'Audit Interview | Product Economist',
+    description: 'Production-ready logic for auditing candidates. Evaluate verification depth, architectural reasoning, and economic awareness.',
     keywords: [
-        'hiring scoring engine',
+        'hiring audit interview',
         'engineering interview rubric',
         'product economist',
         'candidate evaluation',
         'technical interview scoring'
     ],
     openGraph: {
-        title: 'The Scoring Engine | Hiring Decision Framework',
+        title: 'Audit Interview | Product Economist',
         description: 'Quantify candidate judgment and capital risk.',
         type: 'website',
+    },
+    alternates: {
+        canonical: '/tools/scoring',
     },
 };
 

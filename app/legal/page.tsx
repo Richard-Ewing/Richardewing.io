@@ -95,8 +95,11 @@ export default function LegalPage() {
                                     <div className="text-zinc-600 text-[10px]">Quarterly Protocol</div>
                                 </div>
                                 <div className="p-3 border border-white/10 rounded-lg text-center hover:border-gold/30 transition">
-                                    <div className="text-white font-bold text-sm">The Product Economist™</div>
                                     <div className="text-zinc-600 text-[10px]">Methodology & Brand</div>
+                                </div>
+                                <div className="p-3 border border-white/10 rounded-lg text-center hover:border-emerald-500/30 transition">
+                                    <div className="text-white font-bold text-sm">AUDIT™</div>
+                                    <div className="text-zinc-600 text-[10px]">Audit Interview Protocol</div>
                                 </div>
                             </div>
                             <p className="text-zinc-500 text-xs mt-4">
