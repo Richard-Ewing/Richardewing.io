@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
-import { Calculator, Zap, Users, TrendingUp, ArrowRight, Star } from 'lucide-react';
+import { Calculator, Zap, Users, TrendingUp, ArrowRight, Star, Brain } from 'lucide-react';
 
 const tools = [
     {
@@ -50,6 +50,17 @@ const tools = [
         metrics: ['Potential Value', 'Risk-Adjusted Value', 'Wealth Gap $'],
         seoKeywords: 'startup valuation calculator, execution risk, valuation scenario',
     },
+    {
+        id: 'scoring',
+        name: 'The Scoring Engine',
+        acronym: 'SCORE',
+        tagline: 'Quantify candidate judgment and risk.',
+        description: 'Production-ready logic for scoring candidates. Evaluate constraint recognition, tradeoff articulation, and economic awareness.',
+        color: 'emerald',
+        icon: Brain,
+        metrics: ['Hiring Verdict', 'Capital Risk', 'Defense Memo'],
+        seoKeywords: 'hiring scoring engine, engineering interview rubric, product economist',
+    },
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; glow: 'cyan' | 'danger' | 'gold' | 'cobalt' }> = {
@@ -57,6 +68,7 @@ const colorMap: Record<string, { bg: string; text: string; border: string; glow:
     yellow: { bg: 'bg-yellow-500/10', text: 'text-yellow-400', border: 'border-yellow-500/30', glow: 'gold' },
     cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-400', border: 'border-cyan-500/30', glow: 'cyan' },
     purple: { bg: 'bg-purple-500/10', text: 'text-purple-400', border: 'border-purple-500/30', glow: 'cobalt' },
+    emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-400', border: 'border-emerald-500/30', glow: 'cyan' },
 };
 
 export default function ToolsPage() {
