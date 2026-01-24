@@ -1,10 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 import { SCENARIOS, Role } from './question-bank';
 
-const DB_PATH = path.join(process.cwd(), 'data', 'hiring_db.json');
+const DB_PATH = path.join(os.tmpdir(), 'hiring_db.json');
 
-// Ensure data directory exists
+// Ensure data directory exists (tmp always exists, but good practice if nested)
 if (!fs.existsSync(path.dirname(DB_PATH))) {
     fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
 }

@@ -25,10 +25,19 @@ export default function AuditInterviewLanding() {
                     interviewerId: 'INT-001'
                 })
             });
+
+            if (!res.ok) {
+                const text = await res.text();
+                throw new Error(`API Error ${res.status}: ${text}`);
+            }
+
             const session = await res.json();
+            if (!session.session_id) throw new Error('Invalid session response');
+
             router.push(`/tools/audit-interview/${session.session_id}`);
-        } catch (error) {
-            alert('Failed to start session');
+        } catch (error: any) {
+            console.error(error);
+            alert(`Failed to start session: ${error.message}`);
             setLoading(false);
         }
     };
