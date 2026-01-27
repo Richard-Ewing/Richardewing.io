@@ -134,43 +134,32 @@ export const HiringStore = {
     analyzeSession: (sessionId: string) => {
         const db = readDB();
         const scores = db.scores.filter(s => s.session_id === sessionId);
+        const session = db.sessions[sessionId];
 
         let total = 0;
         scores.forEach(s => {
-            // If score is 0 (manual text entry mode), calculate heuristic based on length
-            // Heuristic: > 50 words = 3 points (Strong), > 20 words = 2 points, else 1
-            if (s.score === 0 && s.rationale) {
-                const words = s.rationale.split(' ').length;
-                if (words > 50) total += 3;
-                else if (words > 20) total += 2;
-                else total += 1;
-            } else {
-                total += s.score;
-            }
+            total += s.score;
         });
 
-        // Max score is typically 9-12 depending on phase count.
-        // We will adapt the Python verdict logic:
-        // <= 4: Strong No Hire
-        // <= 6: No Hire
-        // <= 8: Hire
-        // > 8: Strong Hire
+        // 5 Phases * (3-7 Score) = 15-35 Range
 
         let verdict = "";
         let rationale = "";
+        const roleTitle = session?.role === 'engineering' ? 'ENGINEER' : 'PRODUCT MANAGER';
 
-        if (total <= 4) {
-            verdict = "Strong No Hire";
-            rationale = "Candidate optimizes for narrative/syntax over judgment. High capital risk.";
-        } else if (total <= 7) {
-            verdict = "No Hire";
-            rationale = "Identifies issues but avoids ownership and hard trade-offs.";
-        } else if (total <= 10) {
-            verdict = "Hire";
-            rationale = "Demonstrates sound judgment. Can act as a capital steward.";
+        // Calibration Bands
+        if (total < 20) {
+            verdict = `L3: JUNIOR ${roleTitle}`;
+            rationale = "Focuses on execution and syntax. Lacks broader system awareness. \"Code Monkey\" mode.";
+        } else if (total < 25) {
+            verdict = `L4: ${roleTitle}`;
+            rationale = "Competent execution but trade-offs are local, not systemic. Misses second-order effects.";
+        } else if (total < 30) {
+            verdict = `L5: SENIOR ${roleTitle}`;
+            rationale = "Demonstrates system ownership and understands maintenance liability. Good default hire.";
         } else {
-            verdict = "Strong Hire";
-            rationale = "Exceptional judgment. Prioritizes constraints and economic efficiency.";
+            verdict = `L6: STAFF ${roleTitle}`;
+            rationale = "Exceptional capital stewardship. Prioritizes ROI, Leverage, and Capital Efficiency.";
         }
 
         return {

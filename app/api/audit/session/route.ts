@@ -1,58 +1,115 @@
 import { NextResponse } from 'next/server';
 import { HiringStore } from '../../../lib/hiring-store';
 import { QUESTION_BANK, SCENARIOS, Role, Question } from '../../../lib/question-bank';
+import { model } from '@/app/lib/gemini';
 
-export async function POST(req: Request) {
+const evaluateAnswer = async (question: Question, answer: string, role: string) => {
+    if (!question.grading) return { score: 1, feedback: "No rubric available." };
+
     try {
-        const body = await req.json();
-        const { action, sessionId } = body;
+        const prompt = `
+System: You are a Bar Raiser at a top-tier tech company (Netflix/Stripe level). 
+You are interviewing a candidate for a ${role === 'engineering' ? 'Senior Software Engineer' : 'Product Manager'} role.
+Your goal is to assess their "Altitude" of judgment.
+
+Scoring Scale:
+3 = L3 (Junior): Focuses on syntax, immediate fixes, or surface-level metrics. "Code Monkey".
+4 = L4 (Mid): Competent execution but lacks broader system awareness.
+5 = L5 (Senior): Considers system health, maintenance costs, and trade-offs.
+6 = L6 (Staff/Principal): Focuses on Capital Efficiency, ROI, Leverage, and Second-Order effects. "Financial Steward".
+7 = L7 (Distinguished): Enterprise Strategy shift.
+
+Question: "${question.prompt}"
+
+L3 Answer Example (Low Altitude): "${question.grading.l3_example}"
+L6 Answer Example (High Altitude): "${question.grading.l6_example}"
+Rubric: "${question.grading.rubric}"
+
+Candidate Answer: "${answer}"
+
+Task: Evaluate the candidate. Be critical. Short answers are fine if they hit the L6 key points (Capital/Leverage).
+Return valid JSON only: { "score": number (3-7), "rationale": "One sentence explanation of why they got this score, referencing the specific missing/present signal." }
+        `;
+
+        const result = await model.generateContent({
+            contents: [{ role: 'user', parts: [{ text: prompt }] }],
+            generationConfig: {
+                responseMimeType: "application/json",
+            },
+        });
+
+        const response = result.response;
+        const text = response.text();
+
+        // Parse JSON safely
+        const json = JSON.parse(text);
+        return { score: json.score, feedback: json.rationale };
+
+    } catch (e) {
+        console.error("Gemini Error:", e);
+        // Fallback for when API fails/quota exceeded
+        return { score: 3, feedback: "Automated scoring unavailable. Baseline score assigned." };
+    }
+};
+
+export async function POST(request: Request) {
+    try {
+        const body = await request.json();
+        const { action } = body;
+
+        console.log(`[AUDIT] Action: ${action} | Session: ${body.sessionId}`);
 
         // --- NEW SESSION ---
-        if (!action) {
-            const { role = 'engineering', candidateId = 'CANDIDATE-001' } = body;
+        if (action === 'START_SESSION') {
+            const { role, candidateId, interviewerId } = body;
 
-            // UNIVERSAL PROTOCOL: Load the fixed 5-phase gauntlet
-            const questions = QUESTION_BANK[role as Role];
+            // 1. Get Questions
+            // Universal Protocol: Load ALL 5 phases for the role
+            const scenarios = QUESTION_BANK[role as Role];
+            if (!scenarios) return NextResponse.json({ error: 'Invalid role' }, { status: 400 });
 
-            const newSession = {
-                session_id: crypto.randomUUID(),
-                candidate_id: candidateId,
-                role,
-                created_at: new Date().toISOString(),
-                current_phase: questions[0].title, // "The Signal" etc.
-                phases: [], // Populated below
-                finalized: false,
-                scores: [],
-                questions_map: {}
-            };
+            const phases = scenarios.map(q => q.title);
+            const questionsMap = scenarios.reduce((acc, q) => {
+                acc[q.title] = q.id;
+                return acc;
+            }, {} as Record<string, string>);
 
-            const questionsMap: Record<string, string> = {};
-            const phaseNames = questions.map((q) => {
-                questionsMap[q.title] = q.id;
-                return q.title;
-            });
-
-            // HiringStore now expects phases array
-            HiringStore.createSession(
-                newSession.session_id,
-                candidateId,
-                'AI',
+            // 2. Create Session
+            const session = HiringStore.createSession(
+                crypto.randomUUID(),
+                candidateId || 'anon',
+                interviewerId || 'system',
                 role as Role,
-                phaseNames,
+                phases,
                 questionsMap
             );
 
-            return NextResponse.json({
-                sessionId: newSession.session_id
-            });
+            return NextResponse.json({ sessionId: session.session_id });
         }
 
+        // --- SUBMIT FINDINGS (SCORING) ---
         if (action === 'SUBMIT_SCORE') {
-            const { sessionId, phase, dimension, score, rationale } = body;
-            HiringStore.logScore(sessionId, phase, dimension, score, rationale);
-            return NextResponse.json({ success: true });
+            const { sessionId, phase, dimension, rationale } = body; // Score is calculated server-side now
+
+            const session = HiringStore.getSession(sessionId);
+            if (!session) return NextResponse.json({ error: 'Session not found' }, { status: 404 });
+
+            const questionId = session.questions_map[phase];
+            const roleBank = QUESTION_BANK[session.role as Role];
+            const question = roleBank.find(q => q.id === questionId);
+
+            if (!question) return NextResponse.json({ error: 'Question not found' }, { status: 404 });
+
+            // 3. LLM Eval
+            const { score, feedback } = await evaluateAnswer(question, rationale, session.role);
+
+            // Log the LLM score
+            HiringStore.logScore(sessionId, phase, dimension, score, feedback);
+
+            return NextResponse.json({ success: true, evaluation: feedback, score });
         }
 
+        // --- ADVANCE PHASE ---
         if (action === 'ADVANCE_PHASE') {
             const { sessionId } = body;
             const nextPhase = HiringStore.advancePhase(sessionId);
@@ -61,9 +118,9 @@ export async function POST(req: Request) {
 
         return NextResponse.json({ error: 'Invalid action' }, { status: 400 });
 
-    } catch (error: any) {
-        console.error('Audit API Error:', error);
-        return NextResponse.json({ error: error.message }, { status: 500 });
+    } catch (error) {
+        console.error('API Error:', error);
+        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }
 
