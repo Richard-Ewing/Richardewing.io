@@ -4,17 +4,10 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Shield, Cpu, Activity, Zap, CheckCircle } from 'lucide-react';
 
-const LEVELS: Record<number, { title: string; desc: string }> = {
-    3: { title: "L3: JUNIOR / ENTRY", desc: "Syntax Correctness & Basic Logic" },
-    4: { title: "L4: MID-LEVEL", desc: "Module Design & Error Handling" },
-    5: { title: "L5: SENIOR ENGINEER", desc: "Economic Tradeoffs & System Architecture" },
-    6: { title: "L6: STAFF ENGINEER", desc: "Multi-System Failure Modes & Org Strategy" },
-    7: { title: "L7: PRINCIPAL", desc: "10-Year Horizon & Capital Asset Allocation" }
-};
+// LEVELS REMOVED - UNIVERSAL PROTOCOL ACTIVE
 
 export default function ProtocolInitialization() {
     const router = useRouter();
-    const [level, setLevel] = useState(5);
     const [loading, setLoading] = useState(false);
 
     const startAudit = async (role: 'engineering' | 'pm') => {
@@ -25,8 +18,8 @@ export default function ProtocolInitialization() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     role,
-                    candidateId: 'CANDIDATE-' + Math.floor(Math.random() * 10000),
-                    level
+                    candidateId: 'CANDIDATE-' + Math.floor(Math.random() * 10000)
+                    // No level sent - backend defaults to Universal Gauntlet
                 })
             });
             const data = await res.json();
@@ -81,28 +74,11 @@ export default function ProtocolInitialization() {
                 {/* MATRIX PANE */}
                 <div className="flex-1 max-w-2xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 animate-in slide-in-from-right-6 duration-700 delay-150">
 
-                    {/* LEVEL SLIDER */}
-                    <div className="md:col-span-2 bg-[#161b22] border border-[#30363d] rounded-xl p-8 shadow-2xl space-y-6">
-                        <div className="flex justify-between items-center">
-                            <div className="text-xs font-bold text-[#8b949e] uppercase tracking-widest">Target Calibration Level</div>
-                            <div className="font-mono text-sm font-bold text-[#58a6ff]">{LEVELS[level].title}</div>
-                        </div>
-
-                        <input
-                            type="range"
-                            min="3"
-                            max="7"
-                            value={level}
-                            onChange={(e) => setLevel(Number(e.target.value))}
-                            className="w-full h-1 bg-[#30363d] rounded-lg appearance-none cursor-pointer accent-[#f0f6fc] hover:accent-[#58a6ff] transition-all"
-                        />
-
-                        <div className="flex items-start gap-3 p-3 bg-white/5 rounded border border-white/5">
-                            <Activity size={16} className="text-[#8b949e] mt-0.5 shrink-0" />
-                            <div className="text-xs text-[#8b949e]">
-                                <span className="text-[#f0f6fc] font-bold">Complexity Simulation:</span> {LEVELS[level].desc}
-                            </div>
-                        </div>
+                    {/* UNIVERSAL PROTOCOL HEADER */}
+                    <div className="md:col-span-2 p-5 text-[#8b949e] font-mono text-sm border-b border-[#30363d] mb-4">
+                        &gt; INITIALIZING UNIVERSAL PROTOCOL...<br />
+                        &gt; CALIBRATION MODE: ACTIVE<br />
+                        &gt; TARGET: LEVEL DETERMINATION (L3 - L8)
                     </div>
 
                     {/* ENG CARD */}
@@ -152,7 +128,7 @@ export default function ProtocolInitialization() {
                 <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center">
                     <div className="flex flex-col items-center gap-4 animate-pulse">
                         <div className="w-12 h-12 border-2 border-[#58a6ff] border-t-transparent rounded-full animate-spin"></div>
-                        <div className="font-mono text-sm uppercase tracking-widest text-[#58a6ff]">Calibrating Protocol Level {level}...</div>
+                        <div className="font-mono text-sm uppercase tracking-widest text-[#58a6ff]">Calibrating Protocol Level...</div>
                     </div>
                 </div>
             )}

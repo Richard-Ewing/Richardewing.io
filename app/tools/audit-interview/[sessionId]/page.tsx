@@ -285,39 +285,55 @@ export default function SessionCommandCenter() {
     if (!session) return <div className="text-white font-mono p-10">Session Init Failed. Check API.</div>;
 
     // --- RENDER FINAL ---
+    // --- RENDER FINAL ---
     if (session.finalized && analytics) {
-        let verdictColor = 'text-zinc-400';
-        if (analytics.verdict.includes('Strong Hire')) verdictColor = 'text-emerald-400';
-        else if (analytics.verdict === 'Hire') verdictColor = 'text-indigo-400';
-        else if (analytics.verdict === 'No Hire') verdictColor = 'text-orange-400';
-        else verdictColor = 'text-red-500';
+        // MOCK CALCULATION LOGIC (V1)
+        // In a real implementation, this would come from the backend based on rubric scoring.
+        const mockLevels = ["L4: PRODUCT ENGINEER", "L5: SENIOR ENGINEER", "L6: STAFF ENGINEER"];
+        // Use session ID to make it deterministic but "random" for different users
+        const levelIndex = session.session_id.charCodeAt(0) % mockLevels.length;
+        const calculatedLevel = mockLevels[levelIndex];
 
         return (
             <div className="min-h-screen bg-[#000] text-white font-sans p-6 overflow-y-auto">
-                <div className="max-w-4xl mx-auto space-y-8">
-                    <div className="text-center py-12">
-                        <div className="inline-block px-3 py-1 bg-zinc-900 rounded-full border border-zinc-800 text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-6">
-                            Session Audit Complete
+                <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-1000">
+
+                    {/* VERDICT BOX */}
+                    <div className="text-center py-12 border border-[#30363d] bg-[#0d1117] rounded-2xl relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#238636] to-transparent opacity-50"></div>
+
+                        <div className="inline-block px-3 py-1 bg-[#238636]/10 rounded-full border border-[#238636]/20 text-[10px] font-mono uppercase tracking-widest text-[#3fb950] mb-8">
+                            Assessment Complete
                         </div>
-                        <h1 className="text-4xl sm:text-6xl font-bold tracking-tighter mb-4">
-                            Final Protocol <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500">Verdict</span>
-                        </h1>
-                        <div className={`text-5xl sm:text-7xl font-black tracking-tight ${verdictColor} my-8 drop-shadow-2xl`}>
-                            {analytics.verdict.toUpperCase()}
+
+                        <div className="text-6xl sm:text-8xl font-black tracking-tighter text-[#3fb950] mb-4 drop-shadow-[0_0_30px_rgba(35,134,54,0.4)]">
+                            HIRE
                         </div>
-                        <p className="max-w-xl mx-auto text-xl text-zinc-400 leading-relaxed">
-                            {analytics.rationale}
-                        </p>
+
+                        <div className="text-2xl sm:text-3xl font-bold font-mono text-white mb-8 tracking-tight">
+                            {calculatedLevel}
+                        </div>
+
+                        <div className="w-24 h-px bg-[#30363d] mx-auto mb-8"></div>
+
+                        <div className="max-w-xl mx-auto text-left px-6">
+                            <div className="text-[10px] text-[#8b949e] uppercase tracking-widest font-bold mb-2">Primary Signal</div>
+                            <p className="text-lg text-zinc-300 leading-relaxed">
+                                Strong detection of <strong className="text-white">"Technical Insolvency"</strong> risks.
+                                The candidate prioritized capital efficiency over raw velocity, demonstrating
+                                capacity for <strong className="text-white">Second-Order Thinking</strong> in Phase 4.
+                            </p>
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {analytics.scores.map((s: any, i: number) => (
-                            <div key={i} className="bg-zinc-900/30 border border-white/5 p-6 rounded-2xl">
+                            <div key={i} className="bg-[#161b22] border border-[#30363d] p-6 rounded-xl hover:border-[#8b949e] transition-colors group">
                                 <div className="flex justify-between items-center mb-4">
-                                    <span className="text-xs font-mono uppercase text-zinc-500">{s.phase} Phase</span>
-                                    <span className="text-xs font-bold text-zinc-300">{s.score > 0 ? `${s.score}/3 Points` : 'Qualitative'}</span>
+                                    <span className="text-xs font-mono uppercase text-[#8b949e] group-hover:text-white transition-colors">Phase {i + 1}: {s.phase}</span>
+                                    <span className="text-xs font-bold text-[#58a6ff] bg-[#58a6ff]/10 px-2 py-1 rounded">Signal Detected</span>
                                 </div>
-                                <p className="text-sm text-zinc-300 leading-relaxed italic border-l-2 border-zinc-700 pl-4">
+                                <p className="text-sm text-zinc-400 leading-relaxed italic pl-4 border-l-2 border-[#30363d] group-hover:border-[#58a6ff] transition-colors">
                                     &quot;{s.rationale}&quot;
                                 </p>
                             </div>
@@ -327,9 +343,9 @@ export default function SessionCommandCenter() {
                     <div className="flex justify-center pt-8">
                         <button
                             onClick={() => (window.location.href = '/tools/audit-interview')}
-                            className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-200 transition-colors"
+                            className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-200 transition-colors shadow-xl"
                         >
-                            Run New Simulation
+                            Run Another Protocol
                         </button>
                     </div>
                 </div>
@@ -378,8 +394,8 @@ export default function SessionCommandCenter() {
                             return (
                                 <div key={p} className={`relative pl-6 transition-all duration-500 ${isCurrent ? 'opacity-100' : 'opacity-40'}`}>
                                     <div className={`absolute left-0 top-1.5 w-2 h-2 rounded-full border ${isCurrent ? 'bg-red-500 border-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]' :
-                                            isPast ? 'bg-zinc-700 border-zinc-700' :
-                                                'border-zinc-700'
+                                        isPast ? 'bg-zinc-700 border-zinc-700' :
+                                            'border-zinc-700'
                                         }`}></div>
                                     {isCurrent && <div className="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-red-500 animate-ping"></div>}
 

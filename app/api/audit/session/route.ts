@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { HiringStore } from '../../../lib/hiring-store';
-import { QUESTION_BANK_LEVELS, SCENARIOS, Role, Question } from '../../../lib/question-bank';
+import { QUESTION_BANK, SCENARIOS, Role, Question } from '../../../lib/question-bank';
 
 export async function POST(req: Request) {
     try {
@@ -9,58 +9,41 @@ export async function POST(req: Request) {
 
         // --- NEW SESSION ---
         if (!action) {
-            const { role = 'engineering', candidateId = 'CANDIDATE-001', level = 5 } = body;
+            const { role = 'engineering', candidateId = 'CANDIDATE-001' } = body;
 
-            // LEVELING LOGIC: Select questions based on level
-            // Default to 5 (Senior) if level not found
-            // Cast level to number just in case
-            const targetLevel = Number(level);
-            const validLevel = [3, 5, 7].includes(targetLevel) ? targetLevel : 5;
-
-            const roleBank = QUESTION_BANK_LEVELS[role as Role];
-            const questions = roleBank[validLevel] || roleBank[5];
+            // UNIVERSAL PROTOCOL: Load the fixed 5-phase gauntlet
+            const questions = QUESTION_BANK[role as Role];
 
             const newSession = {
                 session_id: crypto.randomUUID(),
                 candidate_id: candidateId,
                 role,
-                level: validLevel,
                 created_at: new Date().toISOString(),
-                current_phase: 'Detection', // Phase 1 Name
-                phases_completed: [],
+                current_phase: questions[0].title, // "The Signal" etc.
+                phases: [], // Populated below
                 finalized: false,
-                scores: []
+                scores: [],
+                questions_map: {}
             };
 
-            // Map questions to phases (Phase 1, Phase 2, ...)
-            // We use generic names or derived from question title if needed
-            // But UI expects a list of phases.
-            // Let's define the phase names based on the Question types or just generic
             const questionsMap: Record<string, string> = {};
-            const phaseNames = questions.map((q, i) => {
-                let name = `Phase ${i + 1}`;
-                if (i === 0) name = 'Detection';
-                else if (i === 1) name = 'Correction';
-                else if (i === 2) name = 'Defense';
-
-                questionsMap[name] = q.id;
-                return name;
+            const phaseNames = questions.map((q) => {
+                questionsMap[q.title] = q.id;
+                return q.title;
             });
 
-            // Store session
+            // HiringStore now expects phases array
             HiringStore.createSession(
                 newSession.session_id,
                 candidateId,
                 'AI',
                 role as Role,
                 phaseNames,
-                questionsMap,
-                validLevel
+                questionsMap
             );
 
             return NextResponse.json({
-                sessionId: newSession.session_id,
-                level: validLevel
+                sessionId: newSession.session_id
             });
         }
 
@@ -97,22 +80,17 @@ export async function GET(req: Request) {
         if (!session) return NextResponse.json({ error: 'Session not found' }, { status: 404 });
 
         // Get Current Scenario
-        // Get Current Scenario
         let currentScenario = null;
         if (!session.finalized && session.questions_map) {
             const questionId = session.questions_map[session.current_phase];
             if (questionId) {
-                const level = session.level || 5;
-                // @ts-ignore
-                const roleBank = QUESTION_BANK_LEVELS[session.role as Role];
-                // @ts-ignore
-                const levelQuestions = roleBank[level] || roleBank[5];
-                // @ts-ignore
-                currentScenario = levelQuestions.find(q => q.id === questionId);
+                const roleBank = QUESTION_BANK[session.role as Role];
+                currentScenario = roleBank.find(q => q.id === questionId);
             }
         }
 
         // Calculate time remaining
+        // Use generic 600s if specific phase missing
         const roleConfig: any = SCENARIOS[session.role];
         const phaseTimeLimit = roleConfig.time_limits[session.current_phase] || 600;
         // This is simple relative time since session start would be overall, 
@@ -130,7 +108,8 @@ export async function GET(req: Request) {
             analytics = HiringStore.analyzeSession(sessionId);
         }
 
-        const allPhases = SCENARIOS[session.role].phases;
+        // Use stored phases if available
+        const allPhases = session.phases || SCENARIOS[session.role].phases;
 
         return NextResponse.json({
             session,
