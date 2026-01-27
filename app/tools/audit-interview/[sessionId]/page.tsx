@@ -145,6 +145,7 @@ export default function SessionCommandCenter() {
 
     const renderChart = () => {
         if (!scenario?.chart_type || !scenario?.chart_data) return null;
+        if (!scenario.chart_data.labels || !scenario.chart_data.datasets) return null;
 
         const options = {
             responsive: true,
@@ -183,6 +184,9 @@ export default function SessionCommandCenter() {
         if (!scenario) return null;
 
         if (scenario.chart_type === 'code_snippet') {
+            if (!scenario.chart_data?.code) {
+                return <div className="p-4 text-red-400 font-mono text-xs">Error: Code artifact missing.</div>;
+            }
             return (
                 <div className="w-full h-full bg-[#0d1117] p-6 rounded-lg border border-[#30363d] overflow-auto font-mono text-sm text-[#a5d6ff] whitespace-pre-wrap">
                     {scenario.chart_data.code}
@@ -191,6 +195,9 @@ export default function SessionCommandCenter() {
         }
 
         if (scenario.chart_type === 'table_backlog') {
+            if (!scenario.chart_data?.items || !Array.isArray(scenario.chart_data.items)) {
+                return <div className="p-4 text-red-400 font-mono text-xs">Error: Table data missing.</div>;
+            }
             return (
                 <div className="w-full h-full overflow-auto">
                     <table className="w-full text-left text-sm text-[#c9d1d9]">
@@ -205,10 +212,10 @@ export default function SessionCommandCenter() {
                         <tbody>
                             {scenario.chart_data.items.map((item: any, i: number) => (
                                 <tr key={i} className="border-b border-[#222] hover:bg-white/5">
-                                    <td className="p-3 font-bold">{item.name}</td>
-                                    <td className="p-3">{item.sponsor}</td>
-                                    <td className={`p-3 ${item.roi.includes('-') ? 'text-[#da3633]' : 'text-[#238636]'}`}>{item.roi}</td>
-                                    <td className="p-3">{item.cost}</td>
+                                    <td className="p-3 font-bold">{item.name || 'Unknown'}</td>
+                                    <td className="p-3">{item.sponsor || '-'}</td>
+                                    <td className={`p-3 ${item.roi?.includes?.('-') ? 'text-[#da3633]' : 'text-[#238636]'}`}>{item.roi || '-'}</td>
+                                    <td className="p-3">{item.cost || '-'}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -217,7 +224,15 @@ export default function SessionCommandCenter() {
             );
         }
 
-        return <div className="w-full h-full flex items-center justify-center pt-4">{renderChart()}</div>;
+        // Catch-all for charts
+        if (['line', 'bar', 'bar_stacked'].includes(scenario.chart_type)) {
+            if (!scenario.chart_data?.labels || !scenario.chart_data?.datasets) {
+                return <div className="p-4 text-red-400 font-mono text-xs">Error: Chart data malformed.</div>;
+            }
+            return <div className="w-full h-full flex items-center justify-center pt-4">{renderChart()}</div>;
+        }
+
+        return <div className="p-4 text-zinc-500 font-mono text-xs">Artifact ready. waiting for data...</div>;
     };
 
     // --- LOADING & FINAL STATES ---
