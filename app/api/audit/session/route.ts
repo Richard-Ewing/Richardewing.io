@@ -99,16 +99,28 @@ export async function POST(request: Request) {
 
         // --- SUBMIT FINDINGS (SCORING) ---
         if (action === 'SUBMIT_SCORE') {
-            const { sessionId, phase, dimension, rationale } = body; // Score is calculated server-side now
+            const { sessionId, phase, dimension, rationale } = body;
+            console.log(`[AUDIT_DEBUG] Scoring Request: hash=${sessionId.slice(0, 4)} phase="${phase}" len=${rationale.length}`);
 
             const session = HiringStore.getSession(sessionId);
-            if (!session) return NextResponse.json({ error: 'Session not found' }, { status: 404 });
+            if (!session) {
+                console.error(`[AUDIT_ERROR] Session not found: ${sessionId}`);
+                return NextResponse.json({ error: 'Session not found' }, { status: 404 });
+            }
 
             const questionId = session.questions_map[phase];
-            const roleBank = QUESTION_BANK[session.role as Role];
-            const question = roleBank.find(q => q.id === questionId);
+            if (!questionId) {
+                console.error(`[AUDIT_ERROR] No question ID map for phase: "${phase}". Keys: ${Object.keys(session.questions_map).join(', ')}`);
+                return NextResponse.json({ error: `Phase map missing: ${phase}` }, { status: 404 });
+            }
 
-            if (!question) return NextResponse.json({ error: 'Question not found' }, { status: 404 });
+            const roleBank = QUESTION_BANK[session.role as Role];
+            const question = roleBank?.find(q => q.id === questionId);
+
+            if (!question) {
+                console.error(`[AUDIT_ERROR] Question obj not found for ID: ${questionId}`);
+                return NextResponse.json({ error: 'Question object not found' }, { status: 404 });
+            }
 
             // 3. LLM Eval
             const { score, feedback } = await evaluateAnswer(question, rationale, session.role);

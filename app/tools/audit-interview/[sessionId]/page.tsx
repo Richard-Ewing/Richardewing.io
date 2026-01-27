@@ -113,7 +113,10 @@ export default function SessionCommandCenter() {
                 })
             });
 
-            if (!scoreRes.ok) throw new Error("Scoring failed");
+            if (!scoreRes.ok) {
+                const errData = await scoreRes.json().catch(() => ({}));
+                throw new Error(errData.error || `Scoring failed (${scoreRes.status})`);
+            }
 
             // 2. Advance
             const advanceRes = await fetch('/api/audit/session', {
@@ -123,6 +126,7 @@ export default function SessionCommandCenter() {
             });
 
             const data = await advanceRes.json();
+            if (data.error) throw new Error(data.error); // Catch advance errors too
 
             if (data.nextPhase === 'FINALIZED') {
                 await fetchSession();
@@ -131,9 +135,9 @@ export default function SessionCommandCenter() {
                 await fetchSession();
             }
 
-        } catch (error) {
+        } catch (error: any) {
             console.error(error);
-            alert('Protocol Error: Failed to save findings. Please try again.');
+            alert(`Protocol Error: ${error.message || "Failed to save findings"}`);
             setLoading(false); // Ensure we stop loading on error
         }
         // Note: fetchSession sets loading(false) on success, so we rely on it or the catch block.

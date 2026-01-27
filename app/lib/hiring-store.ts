@@ -110,19 +110,25 @@ export const HiringStore = {
         const session = db.sessions[sessionId];
         if (session?.finalized) throw new Error("Session locked");
 
-        // Check duplicate
-        const exists = db.scores.find(s => s.session_id === sessionId && s.phase === phase && s.dimension === dimension);
-        if (exists) throw new Error("Score already logged for this phase/dimension");
+        // Check duplicate - UPSERT behavior (Overwrite if exists)
+        const existingIdx = db.scores.findIndex(s => s.session_id === sessionId && s.phase === phase && s.dimension === dimension);
 
-        db.scores.push({
+        const newScore: Score = {
             session_id: sessionId,
             phase,
             dimension,
             score,
             rationale,
             timestamp: Date.now(),
-            time_taken: 0 // Simplification for now
-        });
+            time_taken: 0
+        };
+
+        if (existingIdx >= 0) {
+            db.scores[existingIdx] = newScore;
+        } else {
+            db.scores.push(newScore);
+        }
+
         writeDB(db);
     },
 
