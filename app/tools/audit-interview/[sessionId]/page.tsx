@@ -305,33 +305,32 @@ export default function SessionCommandCenter() {
     // --- RENDER FINAL ---
     if (session.finalized && analytics) {
         // Use real analytics from backend
+        // Fallback logic in case 'decision' is missing from old session data
+        const isHire = analytics.decision === 'HIRE' || (!analytics.decision && (Array.isArray(analytics.scores) ? analytics.total >= 25 : false));
+        const decisionText = analytics.decision || (isHire ? 'HIRE' : 'NO HIRE');
+
+        const statusColor = isHire ? 'text-emerald-500' : 'text-red-500';
+        const statusBorder = isHire ? 'border-emerald-500/20' : 'border-red-500/20';
+        const statusBg = isHire ? 'bg-emerald-500/10' : 'bg-red-500/10';
+
         return (
             <div className="min-h-screen bg-[#000] text-white font-sans p-6 overflow-y-auto">
                 <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-1000">
 
                     {/* VERDICT BOX */}
-                    <div className="text-center py-12 border border-[#30363d] bg-[#0d1117] rounded-2xl relative overflow-hidden">
-                        <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${theme.primary.replace('text-', '')} to-transparent opacity-50`}></div>
+                    <div className="text-center py-16 border border-[#30363d] bg-[#0d1117] rounded-2xl relative overflow-hidden">
+                        <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${isHire ? 'emerald-500' : 'red-500'} to-transparent opacity-50`}></div>
 
-                        <div className={`inline-block px-3 py-1 ${theme.bg} rounded-full border ${theme.border} text-[10px] font-mono uppercase tracking-widest ${theme.primary} mb-8`}>
+                        <div className={`inline-block px-4 py-1 rounded-full border ${statusBorder} ${statusBg} ${statusColor} text-[10px] font-mono uppercase tracking-widest mb-8`}>
                             Assessment Complete
                         </div>
 
-                        <div className={`text-6xl sm:text-8xl font-black tracking-tighter ${theme.primary} mb-4 drop-shadow-2xl`}>
-                            HIRE
+                        <div className={`text-7xl sm:text-9xl font-black tracking-tighter ${statusColor} mb-6 drop-shadow-2xl`}>
+                            {decisionText}
                         </div>
 
-                        <div className="text-2xl sm:text-3xl font-bold font-mono text-white mb-8 tracking-tight">
+                        <div className="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight">
                             {analytics.verdict}
-                        </div>
-
-                        <div className="w-24 h-px bg-[#30363d] mx-auto mb-8"></div>
-
-                        <div className="max-w-xl mx-auto text-left px-6">
-                            <div className="text-[10px] text-[#8b949e] uppercase tracking-widest font-bold mb-2">Primary Signal</div>
-                            <p className="text-lg text-zinc-300 leading-relaxed">
-                                {analytics.rationale}
-                            </p>
                         </div>
                     </div>
 
@@ -340,10 +339,10 @@ export default function SessionCommandCenter() {
                             <div key={i} className="bg-[#161b22] border border-[#30363d] p-6 rounded-xl hover:border-[#8b949e] transition-colors group">
                                 <div className="flex justify-between items-center mb-4">
                                     <span className="text-xs font-mono uppercase text-[#8b949e] group-hover:text-white transition-colors">Phase {i + 1}: {s.phase}</span>
-                                    <span className={`text-xs font-bold ${theme.primary} ${theme.bg} px-2 py-1 rounded`}>Score: {s.score}/7</span>
+                                    <span className={`text-xs font-bold ${s.score >= 5 ? 'text-emerald-400' : 'text-red-400'} bg-white/5 px-2 py-1 rounded`}>Score: {s.score}/7</span>
                                 </div>
                                 <p className={`text-sm text-zinc-400 leading-relaxed italic pl-4 border-l-2 border-[#30363d] group-hover:${theme.border.replace('border-', 'border-')} transition-colors`}>
-                                    &quot;{s.rationale}&quot;
+                                    &quot;{s.evaluation || s.rationale}&quot;
                                 </p>
                             </div>
                         ))}
