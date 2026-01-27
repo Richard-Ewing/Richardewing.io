@@ -61,6 +61,12 @@ export default function SessionCommandCenter() {
             const res = await fetch(`/api/audit/session?sessionId=${sessionId}`);
             const data = await res.json();
 
+            if (!res.ok || data.error) {
+                console.error("Session fetch error:", data.error);
+                // Optionally set an error state here to show user
+                return;
+            }
+
             if (data.analytics) {
                 setAnalytics(data.analytics);
                 setSession(data.session);
@@ -70,15 +76,11 @@ export default function SessionCommandCenter() {
 
             setSession(data.session);
             setScenario(data.currentScenario);
-            setAllPhases(data.phases);
+            setAllPhases(data.phases || []);
 
             // Only set time if we haven't started (or strict server sync needed)
-            // For now, reset time on phase change implicitly by checking if scenario changed (simplified)
-            // Ideally we track 'phase_started_at' but for this demo logic, we'll just set it if it's 0 or we just loaded.
-            // Actually, let's just use the server limit as the "base" and count down locally. 
-            // Real implementation would sync with server start time.
-            if (loading) {
-                setTimeLeft(data.phaseTimeLimit || 600);
+            if (loading && data.phaseTimeLimit) {
+                setTimeLeft(data.phaseTimeLimit);
             }
 
             setLoading(false);
