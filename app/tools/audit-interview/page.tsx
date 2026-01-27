@@ -194,7 +194,7 @@ export default function ProtocolInitialization() {
                     <div className="py-20 border-t border-white/5">
                         <div className="text-center mb-12">
                             <h3 className="text-2xl font-bold text-white mb-2">Universal Leveling Matrix (L3 - L8)</h3>
-                            <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest">Google-grade Assessment Standard</p>
+                            <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest">Enterprise-Grade Assessment Standard</p>
                         </div>
 
                         <div className="overflow-x-auto">

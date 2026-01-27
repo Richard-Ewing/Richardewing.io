@@ -68,6 +68,7 @@ export default function SessionCommandCenter() {
 
             if (!res.ok || data.error) {
                 console.error("Session fetch error:", data.error);
+                setLoading(false); // FIXED: Ensure loading stops on error
                 return;
             }
 
@@ -82,6 +83,7 @@ export default function SessionCommandCenter() {
             setScenario(data.currentScenario);
             setAllPhases(data.phases || []);
 
+            // Only set time on first load or manual updates, timer handles ticks
             if (loading && data.phaseTimeLimit) {
                 setTimeLeft(data.phaseTimeLimit);
             }
@@ -89,6 +91,7 @@ export default function SessionCommandCenter() {
             setLoading(false);
         } catch (error) {
             console.error('Failed to fetch session', error);
+            setLoading(false); // FIXED: Ensure loading stops on error
         }
     };
 
@@ -97,8 +100,8 @@ export default function SessionCommandCenter() {
 
         setLoading(true);
         try {
-            // 1. Log Findings
-            await fetch('/api/audit/session', {
+            // 1. Log Findings with simplified error handling
+            const scoreRes = await fetch('/api/audit/session', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -106,29 +109,34 @@ export default function SessionCommandCenter() {
                     sessionId,
                     phase: session.current_phase,
                     dimension: 'analysis_log',
-                    rationale: rationale // Server handles scoring via LLM
+                    rationale: rationale
                 })
             });
 
+            if (!scoreRes.ok) throw new Error("Scoring failed");
+
             // 2. Advance
-            const res = await fetch('/api/audit/session', {
+            const advanceRes = await fetch('/api/audit/session', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ action: 'ADVANCE_PHASE', sessionId })
             });
-            const data = await res.json();
+
+            const data = await advanceRes.json();
 
             if (data.nextPhase === 'FINALIZED') {
-                fetchSession();
+                await fetchSession();
             } else {
                 setRationale("");
-                fetchSession();
+                await fetchSession();
             }
 
         } catch (error) {
-            alert('Failed to advance');
-            setLoading(false);
+            console.error(error);
+            alert('Protocol Error: Failed to save findings. Please try again.');
+            setLoading(false); // Ensure we stop loading on error
         }
+        // Note: fetchSession sets loading(false) on success, so we rely on it or the catch block.
     };
 
     // --- HELPER --
