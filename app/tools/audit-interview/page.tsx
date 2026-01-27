@@ -72,9 +72,11 @@ export default function ProtocolInitialization() {
                                 <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform duration-500">
                                     <Cpu className="text-emerald-400" size={24} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Engineering Audit</h3>
+                                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Engineering</h3>
                                 <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                                    Assess for <strong>Verification Depth</strong> and <strong>Capital Efficiency</strong>. Can they prevent insolvency at scale?
+                                    <strong>For Senior+ Engineers & Architects.</strong><br /><br />
+                                    Evaluates system design judgment, technical leadership, and ability to balance <strong>Capital Efficiency</strong> vs. <strong>Maintenance Liability</strong>.
+                                    Can they prevent technical insolvency at scale?
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {['ARCHITECTURE', 'SYSTEMS', 'COST'].map(tag => (
@@ -104,9 +106,11 @@ export default function ProtocolInitialization() {
                                 <div className="w-12 h-12 bg-indigo-500/10 rounded-xl flex items-center justify-center mb-6 border border-indigo-500/20 group-hover:scale-110 transition-transform duration-500">
                                     <Target className="text-indigo-400" size={24} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Value Audit</h3>
+                                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Product Management</h3>
                                 <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                                    Assess for <strong>Unit Economics</strong> and <strong>Strategic Governance</strong>. Do they understand where value comes from?
+                                    <strong>For PMs, Group PMs, and Directors.</strong><br /><br />
+                                    Assess for <strong>Unit Economics</strong>, <strong>Strategic Governance</strong>, and product sense.
+                                    Do they understand where value really comes from, or are they just shipping features?
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {['STRATEGY', 'ECONOMICS', 'LEVERAGE'].map(tag => (
