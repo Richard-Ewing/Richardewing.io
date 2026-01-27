@@ -46,7 +46,17 @@ Return valid JSON only: { "score": number (3-7), "rationale": "One sentence expl
         return { score: json.score, feedback: json.rationale };
 
     } catch (e) {
-        console.error("Gemini Error:", e);
+        console.error("Gemini Critical Failure:", e);
+        // @ts-ignore
+        if (e.response) {
+            // @ts-ignore
+            console.error("Gemini Data:", JSON.stringify(e.response, null, 2));
+        }
+
+        // Debug Config
+        const key = process.env.GEMINI_API_KEY;
+        console.error("API Key Status:", key ? `Present (${key.substring(0, 4)}...)` : "MISSING");
+
         // Fallback for when API fails/quota exceeded
         return { score: 3, feedback: "Automated scoring unavailable. Baseline score assigned." };
     }

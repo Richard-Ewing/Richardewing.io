@@ -148,23 +148,30 @@ export const HiringStore = {
         const roleTitle = session?.role === 'engineering' ? 'ENGINEER' : 'PRODUCT MANAGER';
 
         // Calibration Bands
+        // Calibration Bands
+        let decision = "NO HIRE";
         if (total < 20) {
             verdict = `L3: JUNIOR ${roleTitle}`;
             rationale = "Focuses on execution and syntax. Lacks broader system awareness. \"Code Monkey\" mode.";
+            decision = "NO HIRE";
         } else if (total < 25) {
             verdict = `L4: ${roleTitle}`;
             rationale = "Competent execution but trade-offs are local, not systemic. Misses second-order effects.";
+            decision = "NO HIRE";
         } else if (total < 30) {
             verdict = `L5: SENIOR ${roleTitle}`;
             rationale = "Demonstrates system ownership and understands maintenance liability. Good default hire.";
+            decision = "HIRE";
         } else {
             verdict = `L6: STAFF ${roleTitle}`;
             rationale = "Exceptional capital stewardship. Prioritizes ROI, Leverage, and Capital Efficiency.";
+            decision = "HIRE";
         }
 
         return {
             total,
             verdict,
+            decision, // NEW field
             rationale,
             scores
         };
