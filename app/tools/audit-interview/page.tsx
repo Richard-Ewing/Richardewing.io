@@ -1,109 +1,161 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ScrollReveal } from '../../components/magicui/scroll-reveal';
-import { GlowCard } from '../../components/magicui/glow-card';
-import { ShineBorder } from '../../components/magicui/shine-border';
-import { ArrowRight, Brain, Briefcase, Search } from 'lucide-react';
+import { Shield, Cpu, Activity, Zap, CheckCircle } from 'lucide-react';
 
-export default function AuditInterviewLanding() {
+const LEVELS: Record<number, { title: string; desc: string }> = {
+    3: { title: "L3: JUNIOR / ENTRY", desc: "Syntax Correctness & Basic Logic" },
+    4: { title: "L4: MID-LEVEL", desc: "Module Design & Error Handling" },
+    5: { title: "L5: SENIOR ENGINEER", desc: "Economic Tradeoffs & System Architecture" },
+    6: { title: "L6: STAFF ENGINEER", desc: "Multi-System Failure Modes & Org Strategy" },
+    7: { title: "L7: PRINCIPAL", desc: "10-Year Horizon & Capital Asset Allocation" }
+};
+
+export default function ProtocolInitialization() {
     const router = useRouter();
+    const [level, setLevel] = useState(5);
     const [loading, setLoading] = useState(false);
 
-    const startSession = async (role: 'engineering' | 'pm') => {
+    const startAudit = async (role: 'engineering' | 'pm') => {
         setLoading(true);
         try {
             const res = await fetch('/api/audit/session', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    action: 'CREATE_SESSION',
                     role,
-                    candidateId: `CAND-${Math.floor(Math.random() * 1000)}`, // Sim
-                    interviewerId: 'INT-001'
+                    candidateId: 'CANDIDATE-' + Math.floor(Math.random() * 10000),
+                    level
                 })
             });
-
-            if (!res.ok) {
-                const text = await res.text();
-                throw new Error(`API Error ${res.status}: ${text}`);
+            const data = await res.json();
+            if (data.sessionId) {
+                router.push(`/tools/audit-interview/${data.sessionId}`);
             }
-
-            const session = await res.json();
-            if (!session.session_id) throw new Error('Invalid session response');
-
-            router.push(`/tools/audit-interview/${session.session_id}`);
-        } catch (error: any) {
-            console.error(error);
-            alert(`Failed to start session: ${error.message}`);
+        } catch (e) {
+            console.error(e);
             setLoading(false);
         }
     };
 
     return (
-        <div className="max-w-4xl w-full relative z-10 mx-auto px-4 py-12">
-            <ScrollReveal>
-                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-12">
-                    {/* Status Badge */}
-                    <div className="flex items-center gap-2 mb-6">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                        <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest">Product Economist | Protocol V2</span>
-                    </div>
+        <div className="min-h-screen bg-[#0a0c10] text-[#f0f6fc] font-sans selection:bg-[#58a6ff]/30 flex flex-col">
 
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-6">
-                        Audit <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Interview System.</span>
+            {/* HEADER */}
+            <div className="px-10 py-5 border-b border-[#30363d] flex justify-between items-center bg-[#0a0c10]/80 backdrop-blur-md sticky top-0 z-50">
+                <div className="font-mono font-bold tracking-tight text-lg">
+                    PRODUCT ECONOMIST <span className="text-[#58a6ff]">// PROTOCOL</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1 bg-[#238636]/10 border border-[#238636]/20 rounded-full">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#238636] animate-pulse"></div>
+                    <span className="text-[10px] font-bold text-[#3fb950] tracking-widest">SYSTEM OPERATIONAL</span>
+                </div>
+            </div>
+
+            {/* STAGE */}
+            <main className="flex-1 flex flex-col lg:flex-row items-center justify-center p-10 gap-20 max-w-7xl mx-auto w-full">
+
+                {/* CONTEXT PANE */}
+                <div className="flex-1 max-w-lg space-y-8 animate-in slide-in-from-left-6 duration-700">
+                    <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-transparent bg-clip-text bg-gradient-to-b from-white to-[#8b949e]">
+                        Assess<br />Judgment,<br />Not Syntax.
                     </h1>
-                    <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl leading-relaxed">
-                        A governed execution engine for technical hiring. Quantify judgment, enforce constraints, and generate defensible hiring artifacts.
+                    <p className="text-[#8b949e] text-lg leading-relaxed">
+                        The industry standard for auditing <strong className="text-[#f0f6fc]">Technical & Capital Judgment</strong> in the age of AI.
+                        Select a protocol to begin the calibration.
                     </p>
-                </div>
-            </ScrollReveal>
 
-            <ScrollReveal delay={100}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 px-2">
-                    <GlowCard className="p-8 cursor-pointer group" glowColor="cyan" onClick={() => startSession('engineering')}>
-                        <div className="flex justify-between items-start mb-6">
-                            <div className="p-3 bg-zinc-900 rounded-xl text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-colors">
-                                <Search size={24} />
-                            </div>
-                            <span className="font-mono text-xs text-zinc-500 uppercase tracking-widest">Track 01</span>
+                    <div className="flex gap-12 pt-4 border-t border-[#30363d]/50">
+                        <div>
+                            <div className="font-mono text-3xl font-bold text-[#f0f6fc]">12,408</div>
+                            <div className="text-[10px] text-[#8b949e] uppercase tracking-widest font-bold mt-1">Audits Run</div>
                         </div>
-                        <h2 className="text-2xl font-bold text-white mb-2">Engineering Audit</h2>
-                        <p className="text-zinc-400 text-sm mb-6">
-                            Test verification depth, system architecture, and economic awareness under failure conditions.
-                        </p>
-                        <div className="flex items-center gap-2 text-cyan-400 font-bold text-sm uppercase tracking-widest group-hover:translate-x-2 transition-transform">
-                            Initialize Protocol <ArrowRight size={14} />
-                        </div>
-                    </GlowCard>
-
-                    <GlowCard className="p-8 cursor-pointer group" glowColor="cobalt" onClick={() => startSession('pm')}>
-                        <div className="flex justify-between items-start mb-6">
-                            <div className="p-3 bg-zinc-900 rounded-xl text-cobalt group-hover:bg-cobalt group-hover:text-white transition-colors">
-                                <Briefcase size={24} />
-                            </div>
-                            <span className="font-mono text-xs text-zinc-500 uppercase tracking-widest">Track 02</span>
-                        </div>
-                        <h2 className="text-2xl font-bold text-white mb-2">Product Management</h2>
-                        <p className="text-zinc-400 text-sm mb-6">
-                            Test constraint identification, metric sacrifice, and "willingness to disappoint" stakeholders.
-                        </p>
-                        <div className="flex items-center gap-2 text-cobalt font-bold text-sm uppercase tracking-widest group-hover:translate-x-2 transition-transform">
-                            Initialize Protocol <ArrowRight size={14} />
-                        </div>
-                    </GlowCard>
-                </div>
-
-                {loading && (
-                    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-                        <div className="text-emerald-400 font-mono text-xl animate-pulse">
-                            Initializing Session Database...
+                        <div>
+                            <div className="font-mono text-3xl font-bold text-[#f0f6fc]">$4.2B</div>
+                            <div className="text-[10px] text-[#8b949e] uppercase tracking-widest font-bold mt-1">Capital Risk Detected</div>
                         </div>
                     </div>
-                )}
-            </ScrollReveal>
+                </div>
+
+                {/* MATRIX PANE */}
+                <div className="flex-1 max-w-2xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 animate-in slide-in-from-right-6 duration-700 delay-150">
+
+                    {/* LEVEL SLIDER */}
+                    <div className="md:col-span-2 bg-[#161b22] border border-[#30363d] rounded-xl p-8 shadow-2xl space-y-6">
+                        <div className="flex justify-between items-center">
+                            <div className="text-xs font-bold text-[#8b949e] uppercase tracking-widest">Target Calibration Level</div>
+                            <div className="font-mono text-sm font-bold text-[#58a6ff]">{LEVELS[level].title}</div>
+                        </div>
+
+                        <input
+                            type="range"
+                            min="3"
+                            max="7"
+                            value={level}
+                            onChange={(e) => setLevel(Number(e.target.value))}
+                            className="w-full h-1 bg-[#30363d] rounded-lg appearance-none cursor-pointer accent-[#f0f6fc] hover:accent-[#58a6ff] transition-all"
+                        />
+
+                        <div className="flex items-start gap-3 p-3 bg-white/5 rounded border border-white/5">
+                            <Activity size={16} className="text-[#8b949e] mt-0.5 shrink-0" />
+                            <div className="text-xs text-[#8b949e]">
+                                <span className="text-[#f0f6fc] font-bold">Complexity Simulation:</span> {LEVELS[level].desc}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* ENG CARD */}
+                    <button
+                        onClick={() => startAudit('engineering')}
+                        disabled={loading}
+                        className="group relative bg-[#161b22] border border-[#30363d] rounded-xl p-8 hover:-translate-y-1 hover:border-[#238636] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all text-left disabled:opacity-50 disabled:pointer-events-none"
+                    >
+                        <div className="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">⚙️</div>
+                        <h3 className="text-xl font-bold mb-3 group-hover:text-[#238636] transition-colors">Engineering Audit</h3>
+                        <p className="text-sm text-[#8b949e] leading-relaxed mb-6">
+                            Test for Verification Depth and Capital Efficiency in AI-generated codebases.
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                            {['VERIFICATION', 'ARCHITECTURE', 'COST'].map(tag => (
+                                <span key={tag} className="px-2 py-1 bg-white/5 rounded text-[10px] font-mono text-[#8b949e] border border-transparent group-hover:border-[#238636]/30 group-hover:bg-[#238636]/10 group-hover:text-[#3fb950] transition-all">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </button>
+
+                    {/* PM CARD */}
+                    <button
+                        onClick={() => startAudit('pm')}
+                        disabled={loading}
+                        className="group relative bg-[#161b22] border border-[#30363d] rounded-xl p-8 hover:-translate-y-1 hover:border-[#a371f7] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all text-left disabled:opacity-50 disabled:pointer-events-none"
+                    >
+                        <div className="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">📊</div>
+                        <h3 className="text-xl font-bold mb-3 group-hover:text-[#a371f7] transition-colors">Value Audit</h3>
+                        <p className="text-sm text-[#8b949e] leading-relaxed mb-6">
+                            Test for Unit Economics, Roadmap Governance, and "Willingness to Kill."
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                            {['ECONOMICS', 'STRATEGY', 'LEVERAGE'].map(tag => (
+                                <span key={tag} className="px-2 py-1 bg-white/5 rounded text-[10px] font-mono text-[#8b949e] border border-transparent group-hover:border-[#a371f7]/30 group-hover:bg-[#a371f7]/10 group-hover:text-[#d2a8ff] transition-all">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </button>
+
+                </div>
+            </main>
+
+            {loading && (
+                <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center">
+                    <div className="flex flex-col items-center gap-4 animate-pulse">
+                        <div className="w-12 h-12 border-2 border-[#58a6ff] border-t-transparent rounded-full animate-spin"></div>
+                        <div className="font-mono text-sm uppercase tracking-widest text-[#58a6ff]">Calibrating Protocol Level {level}...</div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

@@ -1,35 +1,67 @@
 import { NextResponse } from 'next/server';
 import { HiringStore } from '../../../lib/hiring-store';
-import { QUESTION_BANK, SCENARIOS, Role } from '../../../lib/question-bank';
+import { QUESTION_BANK_LEVELS, SCENARIOS, Role, Question } from '../../../lib/question-bank';
 
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { action } = body;
+        const { action, sessionId } = body;
 
-        if (action === 'CREATE_SESSION') {
-            const { candidateId, interviewerId, role } = body as { candidateId: string, interviewerId: string, role: Role };
+        // --- NEW SESSION ---
+        if (!action) {
+            const { role = 'engineering', candidateId = 'CANDIDATE-001', level = 5 } = body;
 
-            if (!role || !['engineering', 'pm'].includes(role)) {
-                return NextResponse.json({ error: 'Invalid role' }, { status: 400 });
-            }
+            // LEVELING LOGIC: Select questions based on level
+            // Default to 5 (Senior) if level not found
+            // Cast level to number just in case
+            const targetLevel = Number(level);
+            const validLevel = [3, 5, 7].includes(targetLevel) ? targetLevel : 5;
 
-            const sessionId = Math.random().toString(36).substring(7);
+            const roleBank = QUESTION_BANK_LEVELS[role as Role];
+            const questions = roleBank[validLevel] || roleBank[5];
 
-            // Randomize Scenarios
-            const phases = SCENARIOS[role].phases;
+            const newSession = {
+                session_id: crypto.randomUUID(),
+                candidate_id: candidateId,
+                role,
+                level: validLevel,
+                created_at: new Date().toISOString(),
+                current_phase: 'Detection', // Phase 1 Name
+                phases_completed: [],
+                finalized: false,
+                scores: []
+            };
+
+            // Map questions to phases (Phase 1, Phase 2, ...)
+            // We use generic names or derived from question title if needed
+            // But UI expects a list of phases.
+            // Let's define the phase names based on the Question types or just generic
             const questionsMap: Record<string, string> = {};
+            const phaseNames = questions.map((q, i) => {
+                let name = `Phase ${i + 1}`;
+                if (i === 0) name = 'Detection';
+                else if (i === 1) name = 'Correction';
+                else if (i === 2) name = 'Defense';
 
-            phases.forEach(phase => {
-                const options = QUESTION_BANK[role][phase];
-                if (options && options.length > 0) {
-                    const randomQ = options[Math.floor(Math.random() * options.length)];
-                    questionsMap[phase] = randomQ.id;
-                }
+                questionsMap[name] = q.id;
+                return name;
             });
 
-            const session = HiringStore.createSession(sessionId, candidateId || 'anon', interviewerId || 'anon', role, questionsMap);
-            return NextResponse.json(session);
+            // Store session
+            HiringStore.createSession(
+                newSession.session_id,
+                candidateId,
+                'AI',
+                role as Role,
+                phaseNames,
+                questionsMap,
+                validLevel
+            );
+
+            return NextResponse.json({
+                sessionId: newSession.session_id,
+                level: validLevel
+            });
         }
 
         if (action === 'SUBMIT_SCORE') {
@@ -65,19 +97,18 @@ export async function GET(req: Request) {
         if (!session) return NextResponse.json({ error: 'Session not found' }, { status: 404 });
 
         // Get Current Scenario
+        // Get Current Scenario
         let currentScenario = null;
-        if (!session.finalized) {
-            const questionId = session.questions_map?.[session.current_phase];
+        if (!session.finalized && session.questions_map) {
+            const questionId = session.questions_map[session.current_phase];
             if (questionId) {
-                // Find question in bank (search all phases for role)
-                const phases = SCENARIOS[session.role].phases;
-                for (const p of phases) {
-                    const found = QUESTION_BANK[session.role][p]?.find(q => q.id === questionId);
-                    if (found) {
-                        currentScenario = found;
-                        break;
-                    }
-                }
+                const level = session.level || 5;
+                // @ts-ignore
+                const roleBank = QUESTION_BANK_LEVELS[session.role as Role];
+                // @ts-ignore
+                const levelQuestions = roleBank[level] || roleBank[5];
+                // @ts-ignore
+                currentScenario = levelQuestions.find(q => q.id === questionId);
             }
         }
 

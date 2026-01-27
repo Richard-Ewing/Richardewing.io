@@ -23,6 +23,8 @@ interface Session {
     role: Role;
     current_phase: string;
     start_time: number;
+    phases: string[]; // NEW: Store specific phases for this session
+    level?: number; // NEW: Store caliber level
     questions_map: Record<string, string>;
     finalized: boolean;
 }
@@ -57,17 +59,20 @@ function writeDB(data: DB) {
 }
 
 export const HiringStore = {
-    createSession: (sessionId: string, candidateId: string, interviewerId: string, role: Role, questionsMap: Record<string, string>) => {
+    createSession: (sessionId: string, candidateId: string, interviewerId: string, role: Role, phases: string[], questionsMap: Record<string, string>, level?: number) => {
         const db = readDB();
         db.sessions[sessionId] = {
             session_id: sessionId,
             candidate_id: candidateId,
             interviewer_id: interviewerId,
             role,
-            current_phase: SCENARIOS[role].phases[0],
+            current_phase: phases[0],
+            phases, // Store dynamic phases
             start_time: Date.now(),
             finalized: false,
-            questions_map: questionsMap
+            questions_map: questionsMap,
+            // @ts-ignore - straightforward extension
+            level: level || 5
         };
         writeDB(db);
         return db.sessions[sessionId];
@@ -84,7 +89,8 @@ export const HiringStore = {
         if (!session) throw new Error("Session not found");
         if (session.finalized) return "FINALIZED";
 
-        const phases = SCENARIOS[session.role].phases;
+        // Use stored phases if available, else fallback (legacy support)
+        const phases = session.phases || SCENARIOS[session.role].phases;
         const currentIdx = phases.indexOf(session.current_phase);
 
         if (currentIdx === phases.length - 1) {
@@ -97,6 +103,7 @@ export const HiringStore = {
         writeDB(db);
         return session.current_phase;
     },
+    // ...
 
     logScore: (sessionId: string, phase: string, dimension: string, score: number, rationale: string) => {
         const db = readDB();
