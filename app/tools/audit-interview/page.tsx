@@ -19,23 +19,31 @@ export default function ProtocolInitialization() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
+                    action: 'START_SESSION', // FIXED: Added missing action
                     role,
                     candidateId: 'CANDIDATE-' + Math.floor(Math.random() * 10000)
-                    // Universal Gauntlet active
                 })
             });
             const data = await res.json();
+
+            if (data.error) {
+                alert("Protocol Init Error: " + data.error);
+                setLoading(false);
+                return;
+            }
+
             if (data.sessionId) {
                 router.push(`/tools/audit-interview/${data.sessionId}`);
             }
         } catch (e) {
             console.error(e);
+            alert("Network Error: Failed to reach Audit Core.");
             setLoading(false);
         }
     };
 
     return (
-        <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
+        <div className="max-w-6xl w-full relative z-10 mx-auto px-4 pb-24">
 
             {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
@@ -45,7 +53,7 @@ export default function ProtocolInitialization() {
             </div>
 
             <ScrollReveal>
-                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8">
+                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 overflow-hidden">
 
                     {/* STATUS BADGE */}
                     <div className="flex items-center gap-2 mb-6">
@@ -58,13 +66,13 @@ export default function ProtocolInitialization() {
                         Assess <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-indigo-500">Judgment, Not Syntax.</span>
                     </h1>
-                    <p className="text-lg sm:text-xl text-zinc-400 mb-8 max-w-2xl">
+                    <p className="text-lg sm:text-xl text-zinc-400 mb-12 max-w-2xl leading-relaxed">
                         The industry standard for auditing <strong>Technical & Capital Judgment</strong> in the age of AI.
                         Select a track to initialize the Universal Calibration Gauntlet.
                     </p>
 
                     {/* TRACK SELECTION */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
 
                         {/* ENGINEERING TRACK */}
                         <GlowCard className="p-8 h-full flex flex-col justify-between group cursor-default" glowColor="cyan">
@@ -136,19 +144,90 @@ export default function ProtocolInitialization() {
 
                     </div>
 
+
+                    {/* --- SYSTEM DOCTRINE (Why Now) --- */}
+                    <div className="py-20 border-t border-white/5 relative">
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-[#0a0a0a] text-zinc-500 font-mono text-xs uppercase tracking-[0.2em]">System Doctrine</div>
+
+                        <div className="max-w-3xl mx-auto text-center space-y-8">
+                            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">The Signal Has Collapsed.</h2>
+                            <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
+                                AI generates syntax for free. LeetCode measures memorization. Traditional interviews are optimizing for a commodity.
+                            </p>
+                            <div className="p-6 bg-white/5 border border-white/10 rounded-xl text-left">
+                                <p className="text-zinc-300 leading-relaxed font-mono text-sm md:text-base">
+                                    We must stop testing for <strong className="text-white">Construction</strong> (writing code) and start testing for <strong className="text-white">Verification</strong> (auditing code).
+                                    <br /><br />
+                                    The Fiduciary Protocol™ measures the only three signals that remain scarce: <span className="text-emerald-400 border-b border-emerald-500/50">Skepticism</span>, <span className="text-emerald-400 border-b border-emerald-500/50">System Thinking</span>, and <span className="text-emerald-400 border-b border-emerald-500/50">Capital Stewardship</span>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {/* --- THE GAUNTLET (Methodology) --- */}
+                    <div className="py-20 border-t border-white/5">
+                        <div className="text-center mb-12">
+                            <h3 className="text-2xl font-bold text-white mb-2">The 5-Phase Calibration Standard</h3>
+                            <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest">Every candidate runs the same simulation</p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                            {[
+                                { id: '01', title: 'The Signal', desc: 'Detect ambiguity in metrics before touching code.', color: 'emerald' },
+                                { id: '02', title: 'The Audit', desc: 'Verify AI artifacts for "Subprime" debt and toxicity.', color: 'cyan' },
+                                { id: '03', title: 'The Triage', desc: 'Prioritize "Uptime" vs "Revenue" under fire.', color: 'indigo' },
+                                { id: '04', title: 'The Arch.', desc: 'Predict second-order effects of architectural changes.', color: 'violet' },
+                                { id: '05', title: 'The Defense', desc: 'Defend capital allocation against hostile stakeholders.', color: 'rose' },
+                            ].map((phase) => (
+                                <div key={phase.id} className="p-6 bg-[#0f1115] border border-white/10 rounded-xl hover:border-white/20 transition-all hover:-translate-y-1 group">
+                                    <div className={`text-4xl font-mono font-bold text-white/10 mb-4 group-hover:text-${phase.color}-500/20 transition-colors`}>{phase.id}</div>
+                                    <div className="text-sm font-bold text-white uppercase tracking-wider mb-2">{phase.title}</div>
+                                    <div className="text-xs text-zinc-500 leading-relaxed h-16">{phase.desc}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+
+                    {/* --- UNIVERSAL LEVELING MATRIX (Outcome) --- */}
+                    <div className="py-20 border-t border-white/5">
+                        <div className="text-center mb-12">
+                            <h3 className="text-2xl font-bold text-white mb-2">Universal Leveling Matrix (L3 - L8)</h3>
+                            <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest">Google-grade Assessment Standard</p>
+                        </div>
+
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left font-mono text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b border-white/10 text-zinc-500 text-xs uppercase tracking-widest">
+                                        <th className="py-4 px-6">Level</th>
+                                        <th className="py-4 px-6">Designation</th>
+                                        <th className="py-4 px-6">Primary Signal Detected</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-white/5">
+                                    {[
+                                        { l: 'L3', d: 'Associate', s: 'Syntax Logic. Can they identify why the code is broken?' },
+                                        { l: 'L4', d: 'Product Eng.', s: 'Feature Scope. Can they ship without breaking UX?' },
+                                        { l: 'L5', d: 'Senior', s: 'Unit Economics. Can they prevent "Cloud Shock"?' },
+                                        { l: 'L6', d: 'Staff', s: 'System Solvency. Can they prevent collapse at scale?' },
+                                        { l: 'L8', d: 'Principal', s: 'Capital Governance. Can they align engineering with EV?' },
+                                    ].map((row, i) => (
+                                        <tr key={i} className="hover:bg-white/5 transition-colors group">
+                                            <td className="py-4 px-6 font-bold text-white group-hover:text-emerald-400 transition-colors">{row.l}</td>
+                                            <td className="py-4 px-6 text-zinc-300">{row.d}</td>
+                                            <td className="py-4 px-6 text-zinc-400">{row.s}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
                 </div>
             </ScrollReveal>
-
-            {/* AUTHORITY CONTENT */}
-            <div className="max-w-3xl mx-auto mt-24 mb-24 text-center">
-                <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-6">Universal Calibration Standard</p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
-                    {/* Just keeping simple text placeholders for 'logos' to keep it clean */}
-                    {['Google', 'Amazon', 'Stripe', 'Anthropic'].map(corp => (
-                        <div key={corp} className="text-zinc-400 font-bold text-lg">{corp}</div>
-                    ))}
-                </div>
-            </div>
 
             {loading && (
                 <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center">
