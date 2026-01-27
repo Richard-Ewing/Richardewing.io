@@ -23,6 +23,7 @@ interface Session {
     role: Role;
     current_phase: string;
     start_time: number;
+    questions_map: Record<string, string>;
     finalized: boolean;
 }
 
@@ -56,7 +57,7 @@ function writeDB(data: DB) {
 }
 
 export const HiringStore = {
-    createSession: (sessionId: string, candidateId: string, interviewerId: string, role: Role) => {
+    createSession: (sessionId: string, candidateId: string, interviewerId: string, role: Role, questionsMap: Record<string, string>) => {
         const db = readDB();
         db.sessions[sessionId] = {
             session_id: sessionId,
@@ -65,7 +66,8 @@ export const HiringStore = {
             role,
             current_phase: SCENARIOS[role].phases[0],
             start_time: Date.now(),
-            finalized: false
+            finalized: false,
+            questions_map: questionsMap
         };
         writeDB(db);
         return db.sessions[sessionId];
@@ -127,16 +129,25 @@ export const HiringStore = {
         const scores = db.scores.filter(s => s.session_id === sessionId);
 
         let total = 0;
-        scores.forEach(s => total += s.score);
+        scores.forEach(s => {
+            // If score is 0 (manual text entry mode), calculate heuristic based on length
+            // Heuristic: > 50 words = 3 points (Strong), > 20 words = 2 points, else 1
+            if (s.score === 0 && s.rationale) {
+                const words = s.rationale.split(' ').length;
+                if (words > 50) total += 3;
+                else if (words > 20) total += 2;
+                else total += 1;
+            } else {
+                total += s.score;
+            }
+        });
 
-        // Max score is typically 12 (4 dimensions * 3 points). 
-        // Note: Python script logic sums all logged scores. We assume one score per dimension per session ideally, 
-        // but the python logic allows summing across phases if dimensions repeat.
+        // Max score is typically 9-12 depending on phase count.
         // We will adapt the Python verdict logic:
         // <= 4: Strong No Hire
-        // <= 7: No Hire
-        // <= 10: Hire
-        // > 10: Strong Hire
+        // <= 6: No Hire
+        // <= 8: Hire
+        // > 8: Strong Hire
 
         let verdict = "";
         let rationale = "";
