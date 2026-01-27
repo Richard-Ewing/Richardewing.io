@@ -16,79 +16,44 @@ export const QUESTION_BANK: Record<Role, Record<string, Question[]>> = {
         orientation: [
             {
                 id: "ENG-O1",
-                title: "The Cloud Bill Spike",
-                prompt: "Cloud costs increased 40% last month. Traffic is flat. No new features shipped. The CFO is threatening to freeze hiring. What is your Day 1 hypothesis, and what one dashboard do you open first?",
-                expected_signal: "Constraint recognition before action",
+                title: "The Success Disaster",
+                prompt: "Since we gave every engineer GitHub Copilot, our deployment frequency doubled. However, our AWS bill tripled and P99 latency is up 400%. The CEO calls this a 'success' because velocity is up. What is your diagnosis?",
+                expected_signal: "Efficiency Collapse detection",
                 chart_type: "line",
                 chart_data: {
                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
                     datasets: [
-                        { label: "Traffic", data: [100, 102, 98, 105, 101, 100], borderColor: "#58a6ff" },
-                        { label: "Cost", data: [5000, 5200, 5100, 5300, 5200, 8400], borderColor: "#da3633" }
+                        { label: "Deploy Frequency", data: [10, 12, 15, 25, 40, 45], borderColor: "#238636" }, // Green (Good?)
+                        { label: "AWS Bill ($)", data: [5000, 5200, 6000, 8500, 12000, 15000], borderColor: "#da3633" }, // Red (Bad)
+                        { label: "P99 Latency (ms)", data: [200, 210, 250, 400, 650, 800], borderColor: "#58a6ff" } // Blue
                     ]
                 }
             },
             {
                 id: "ENG-O2",
-                title: "The Latency Creep",
-                prompt: "Our P99 latency has drifted from 200ms to 900ms over the last quarter. We just onboarded 10 junior engineers using Copilot. What is the correlation, and how do you prove it?",
-                expected_signal: "Correlation vs Causation",
-                chart_type: "line",
+                title: "The Zombie Logs",
+                prompt: "Our observability bill (Datadog/Splunk) is now higher than our payroll. The team says they need 'debug' logs to verify AI-generated code in production. You cannot increase the budget. What do you do?",
+                expected_signal: "Sampling Strategy / Capital Allocation",
+                chart_type: "bar_stacked",
                 chart_data: {
-                    labels: ["W1", "W2", "W3", "W4", "W5", "W6"],
+                    labels: ["Payroll", "Cloud Infra", "Observability"],
                     datasets: [
-                        { label: "P99 Latency (ms)", data: [210, 230, 280, 450, 700, 920], borderColor: "#da3633" },
-                        { label: "PRs Merged", data: [15, 18, 25, 40, 60, 85], borderColor: "#58a6ff" }
+                        { label: "Q1 Cost", data: [150000, 20000, 10000], backgroundColor: "#58a6ff" },
+                        { label: "Q2 Cost", data: [150000, 25000, 160000], backgroundColor: "#da3633" }
                     ]
                 }
             },
             {
                 id: "ENG-O3",
-                title: "The Deployment Freeze",
-                prompt: "Deploy times have gone from 15 minutes to 4 hours. The team says 'tests are slow.' You are not allowed to buy more CI/CD runners. How do you fix the velocity constraint?",
-                expected_signal: "Process optimization under constraint",
+                title: "The Dependency Trap",
+                prompt: "The security dashboard shows 400 new vulnerabilities this month. The team says, 'The AI auto-imported these libraries to solve the tasks.' We don't have enough staff to patch them all. What is the constraint?",
+                expected_signal: "Supply Chain Insolvency",
                 chart_type: "bar",
                 chart_data: {
                     labels: ["Jan", "Feb", "Mar", "Apr"],
-                    datasets: [{ label: "Deploy Time (min)", data: [15, 22, 90, 240], backgroundColor: "#da3633" }]
-                }
-            },
-            {
-                id: "ENG-O4",
-                title: "The 'Works on My Machine'",
-                prompt: "Production incidents are up 300%. The team swears 'it worked in staging.' Staging data is 1% of Prod volume. What is the systemic failure here?",
-                expected_signal: "Environment parity awareness",
-                chart_type: "bar_stacked",
-                chart_data: {
-                    labels: ["Q1", "Q2", "Q3", "Q4"],
                     datasets: [
-                        { label: "Staging Incidents", data: [2, 1, 3, 2], backgroundColor: "#238636" },
-                        { label: "Prod Incidents", data: [5, 4, 12, 38], backgroundColor: "#da3633" }
-                    ]
-                }
-            },
-            {
-                id: "ENG-O5",
-                title: "The Vendor Lock-In",
-                prompt: "We are spending $50k/month on a proprietary vector database. We use 5% of its features. The contract renews in 30 days. Do we migrate or pay? How do you decide?",
-                expected_signal: "Build vs Buy Economics",
-                chart_type: "bar",
-                chart_data: {
-                    labels: ["Licensing", "Hosting", "Support", "Features Used"],
-                    datasets: [{ label: "Cost Allocation", data: [45000, 3000, 2000, 5], backgroundColor: "#da3633" }]
-                }
-            },
-            {
-                id: "ENG-O6",
-                title: "The Zombie Services",
-                prompt: "We have 40 microservices for 12 engineers. 15 of them haven't been deployed in 6 months but are consuming compute. The original authors have left. What is your containment strategy?",
-                expected_signal: "Operational efficiency",
-                chart_type: "line",
-                chart_data: {
-                    labels: ["2022", "2023", "2024", "2025"],
-                    datasets: [
-                        { label: "Engineers", data: [8, 10, 14, 12], borderColor: "#58a6ff" },
-                        { label: "Microservices", data: [12, 25, 45, 40], borderColor: "#da3633" }
+                        { label: "Patched Vulnerabilities", data: [20, 25, 20, 22], backgroundColor: "#238636" },
+                        { label: "New Ingested Vulns", data: [5, 10, 150, 400], backgroundColor: "#da3633" }
                     ]
                 }
             }
@@ -96,128 +61,59 @@ export const QUESTION_BANK: Record<Role, Record<string, Question[]>> = {
         audit: [
             {
                 id: "ENG-A1",
-                title: "The N+1 Hallucination",
-                prompt: "This AI-generated GraphQL resolver passes all functional tests. However, it will bankrupt us at scale. Find the loop that triggers exponential DB reads.",
-                expected_signal: "Verification depth",
+                title: "The Memory Grenade",
+                prompt: "This script processes a large CSV export using file.read() and json.loads(). It runs perfectly on test data (100 rows). In production (1M rows), it triggers an OOM Kill. The AI failed to use a Generator. Fix the stability liability.",
+                expected_signal: "OOM / Stability Audit",
                 chart_type: "code_snippet",
                 chart_data: {
-                    code: `async function getRides(users) {\n  return await Promise.all(users.map(async user => {\n    const rides = await db.query(\n      "SELECT * FROM rides WHERE user_id = ?",\n      [user.id]\n    );\n    return { ...user, rides };\n  }));\n}`
+                    code: `def process_large_export(file_path):\n    # Copilot: Read file and parse\n    with open(file_path, 'r') as f:\n        data = f.read()  # <--- THE TRAP\n        records = json.loads(data)\n        \n    for record in records:\n        enrich_data(record)\n        \n    return records`
                 }
             },
             {
                 id: "ENG-A2",
-                title: "The Memory Leak",
-                prompt: "This data-processing script runs perfectly on a 10MB CSV. It will crash the container on a 5GB CSV. Identify the line where the AI failed to stream the data.",
-                expected_signal: "Performance scaling intuition",
+                title: "The 'Silent' N+1",
+                prompt: "The AI created an N+1 Query loop. For 1,000 orders, it makes 1,001 database calls. This will DDoS our own database when traffic spikes. It’s financially negligent coding. Find it.",
+                expected_signal: "Database Efficiency Audit",
                 chart_type: "code_snippet",
                 chart_data: {
-                    code: `def process_data(file_blob):\n    # Download entire blob to memory\n    data = file_blob.download_as_string()\n    lines = data.split('\\n')\n    \n    results = []\n    for line in lines:\n        results.append(transform(line))\n        \n    return results`
+                    code: `# Copilot: Get user names for orders\norders = Order.objects.filter(status='pending')\n\nfor order in orders:\n    # THE TRAP: Lazy load in loop\n    print(f"Processing {order.user.name}") \n    process_order(order)`
                 }
             },
             {
                 id: "ENG-A3",
-                title: "The Security Blindspot",
-                prompt: "Copilot wrote this authentication middleware. It validates the JWT correctly. But it misses a critical 'rate limit' check that leaves us open to a brute-force attack. Find it.",
-                expected_signal: "Security constraint awareness",
+                title: "The Hallucinated API",
+                prompt: "This code will crash immediately. The AI hallucinated a library method based on naming conventions. Verify the dependency rather than assuming the AI 'knows' the documentation.",
+                expected_signal: "Dependency Verification",
                 chart_type: "code_snippet",
                 chart_data: {
-                    code: `app.post('/login', async (req, res) => {\n  const { user, pass } = req.body;\n  // AI: Validate credentials\n  const valid = await checkCreds(user, pass);\n  if (!valid) return res.status(401).send();\n  \n  const token = signJwt(user);\n  res.json({ token });\n});`
-                }
-            },
-            {
-                id: "ENG-A4",
-                title: "The Dependency Bomb",
-                prompt: "The AI imported a library to solve a simple math problem. That library is 40MB and hasn't been updated since 2019. Why is this a capital risk, not just a technical one?",
-                expected_signal: "Supply chain risk",
-                chart_type: "code_snippet",
-                chart_data: {
-                    code: `package.json:\n{\n  "dependencies": {\n    "left-pad": "^1.3.0",\n    "math-legacy-solver": "^0.1.2", // Last updated: 4 years ago\n    "react": "^18.2.0"\n  }\n}`
-                }
-            },
-            {
-                id: "ENG-A5",
-                title: "The Retry Storm",
-                prompt: "This service retries failed requests. The AI implemented a 'while loop' for retries without exponential backoff. Explain what happens to our downstream dependencies during a partial outage.",
-                expected_signal: "Distributed systems failure modes",
-                chart_type: "code_snippet",
-                chart_data: {
-                    code: `while (attempts < 5) {\n  try {\n    response = await api.call();\n    break;\n  } catch (e) {\n    console.log("Retrying...");\n    // AI: Retry immediately for speed\n    attempts++;\n  }\n}`
-                }
-            },
-            {
-                id: "ENG-A6",
-                title: "The Costly Query",
-                prompt: "This SQL query returns the correct user data. But it scans the entire 'Events' table because the AI forgot to index the timestamp. Fix the economics of the query, not the logic.",
-                expected_signal: "Database performance economics",
-                chart_type: "code_snippet",
-                chart_data: {
-                    code: `SELECT * FROM events\nWHERE created_at > NOW() - INTERVAL '7 days'\nORDER BY created_at DESC;\n\n-- Schema:\n-- id: uuid (PK)\n-- event_data: jsonb\n-- created_at: timestamp (No Index)`
+                    code: `import stripe\n\ndef get_all_charges():\n    # Copilot: Fetch all charges\n    # Does this method exist?\n    return stripe.charges.list_all(limit=100)`
                 }
             }
         ],
         defense: [
             {
                 id: "ENG-D1",
-                title: "Speed vs. Stability",
-                prompt: "We can ship the AI feature for the conference demo (Revenue opportunity), but we have to bypass the security review (Reputation risk). You own the decision. Yes or No?",
-                expected_signal: "Risk ownership",
-                chart_type: "bar",
+                title: "Rewrite vs. Refactor",
+                prompt: "The monolith is slow. The team wants to stop features for 6 months to rewrite it in Go (CapEx). Sales says we miss the year if we do. Defend your choice to Refactor instead of Rewrite.",
+                expected_signal: "Insolvency Defense",
+                chart_type: "line",
                 chart_data: {
-                    labels: ["Rev Potential", "Reputation Value"],
-                    datasets: [{ label: "Value ($)", data: [50000, 5000000], backgroundColor: ["#238636", "#da3633"] }]
+                    labels: ["Month 1", "Month 3", "Month 6", "Month 12"],
+                    datasets: [
+                        { label: "Feature Velocity (Rewrite)", data: [0, 0, 0, 80], borderColor: "#da3633" },
+                        { label: "Feature Velocity (Refactor)", data: [40, 50, 60, 70], borderColor: "#238636" }
+                    ]
                 }
             },
             {
                 id: "ENG-D2",
-                title: "The Rewrite",
-                prompt: "The legacy billing system is slowing us down. A rewrite will take 6 months of zero feature work. Sales says we will miss the yearly target if we pause. Do you Rewrite or Refactor? Defend the P&L impact.",
-                expected_signal: "Strategic technical debt management",
-                chart_type: "line",
-                chart_data: {
-                    labels: ["Q1", "Q2", "Q3", "Q4"],
-                    datasets: [
-                        { label: "Velocity (Refactor)", data: [50, 60, 70, 80], borderColor: "#58a6ff" },
-                        { label: "Velocity (Rewrite)", data: [0, 0, 10, 150], borderColor: "#da3633" }
-                    ]
-                }
-            },
-            {
-                id: "ENG-D3",
-                title: "The SaaS Buy",
-                prompt: "The team wants to build a custom CMS because 'it's easy with AI.' You know maintenance will kill them in Year 2. A vendor costs $50k/year. Convince the CTO to spend the cash (CapEx) instead of the time (OpEx).",
-                expected_signal: "Buy vs Build articulation",
-                chart_type: "bar_stacked",
-                chart_data: {
-                    labels: ["Year 1", "Year 2", "Year 3"],
-                    datasets: [
-                        { label: "Buy Cost", data: [50, 50, 50], backgroundColor: "#238636" },
-                        { label: "Build Cost (Maint)", data: [20, 150, 200], backgroundColor: "#da3633" }
-                    ]
-                }
-            },
-            {
-                id: "ENG-D4",
-                title: "The Layoff Shield",
-                prompt: "You have to cut cloud spend by 20% to save a headcount. What do you turn off: The staging environment (slower dev speed) or the data warehouse retention (less analytics history)?",
-                expected_signal: "Crisis resource management",
+                title: "The Security Block",
+                prompt: "You blocked a launch because the AI-generated code wasn't auditable. The CEO is furious. Defend the delay: 'The cost of a 2-day delay is less than the cost of an unfixable outage.'",
+                expected_signal: "Liability Defense",
                 chart_type: "bar",
                 chart_data: {
-                    labels: ["Staging", "Warehouse", "Eng Salary"],
-                    datasets: [{ label: "Cost Savings ($)", data: [3000, 2500, 12000], backgroundColor: "#da3633" }]
-                }
-            },
-            {
-                id: "ENG-D5",
-                title: "The Technical Bankruptcy",
-                prompt: "We are technically insolvent. We spend 100% of time on bugs. To fix it, we must fire our lowest-performing customer to reduce support load. Which customer segment do you fire?",
-                expected_signal: "Ruthless prioritization",
-                chart_type: "bar",
-                chart_data: {
-                    labels: ["Enterprise", "Mid-Market", "SMB"],
-                    datasets: [
-                        { label: "Revenue", data: [80, 15, 5], backgroundColor: "#238636" },
-                        { label: "Support Vol", data: [20, 30, 50], backgroundColor: "#da3633" }
-                    ]
+                    labels: ["Cost of Delay", "Cost of Breach"],
+                    datasets: [{ label: "Financial Impact ($)", data: [50000, 2500000], backgroundColor: ["#58a6ff", "#da3633"] }]
                 }
             }
         ]
@@ -226,68 +122,44 @@ export const QUESTION_BANK: Record<Role, Record<string, Question[]>> = {
         diagnosis: [
             {
                 id: "PM-D1",
-                title: "The Vanity Growth",
-                prompt: "Signups are at an all-time high. Revenue is flat. Support costs are doubling. Diagnose the disease in our business model.",
-                expected_signal: "Unit economics literacy",
+                title: "The Velocity Trap",
+                prompt: "Engineering shipped 15 new features last quarter (a record). Yet, Net Revenue Retention (NRR) dropped to 85% and Support Ticket volume doubled. Diagnose the Complexity Debt.",
+                expected_signal: "Feature Bloat Diagnosis",
                 chart_type: "line",
                 chart_data: {
-                    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+                    labels: ["Q1", "Q2", "Q3", "Q4"],
                     datasets: [
-                        { label: "Signups", data: [1000, 2000, 5000, 10000, 20000], borderColor: "#58a6ff" },
-                        { label: "Revenue", data: [5000, 5100, 5050, 5200, 5150], borderColor: "#da3633" }
+                        { label: "Features Shipped", data: [4, 6, 10, 15], borderColor: "#58a6ff" },
+                        { label: "Support Tickets", data: [100, 120, 200, 450], borderColor: "#da3633" },
+                        { label: "NRR %", data: [110, 105, 95, 85], borderColor: "#c9d1d9", borderDash: [5, 5] }
                     ]
                 }
             },
             {
                 id: "PM-D2",
-                title: "The Churn Spike",
-                prompt: "We shipped 10 new features this quarter. NPS dropped 15 points. Enterprise churn is rising. What did we break?",
-                expected_signal: "Feature bloat recognition",
-                chart_type: "line",
+                title: "The 'Free' Feature",
+                prompt: "Sales wants a custom integration. 'The AI can write it in 1 hour, so it costs nothing.' Explain Total Cost of Ownership (TCO) and why building it creates a negative asset.",
+                expected_signal: "TCO/Maintenance Awareness",
+                chart_type: "bar_stacked",
                 chart_data: {
-                    labels: ["Q1", "Q2", "Q3", "Q4"],
+                    labels: ["Build (Yr 1)", "Support (Yr 1)", "Maint (Yr 2)", "Maint (Yr 3)"],
                     datasets: [
-                        { label: "Features", data: [5, 8, 15, 25], borderColor: "#58a6ff" },
-                        { label: "NPS", data: [60, 58, 45, 30], borderColor: "#da3633" }
+                        { label: "Dev Cost", data: [100, 0, 0, 0], backgroundColor: "#238636" }, // Tiny build cost
+                        { label: "Hidden OpEx", data: [0, 2000, 3000, 4000], backgroundColor: "#da3633" } // Massive accumulating cost
                     ]
                 }
             },
             {
                 id: "PM-D3",
-                title: "The CAC Trap",
-                prompt: "Our LTV is $5,000. Our CAC just hit $6,000 because we are bidding on competitive keywords. Marketing wants to keep spending to hit the 'Growth Goal.' Stop them using math.",
-                expected_signal: "LTV:CAC discipline",
-                chart_type: "bar",
-                chart_data: {
-                    labels: ["Jan", "Feb", "Mar", "Apr"],
-                    datasets: [
-                        { label: "LTV", data: [5000, 5000, 5000, 5000], backgroundColor: "#238636" },
-                        { label: "CAC", data: [2000, 3500, 4800, 6000], backgroundColor: "#da3633" }
-                    ]
-                }
-            },
-            {
-                id: "PM-D4",
                 title: "The Zombie Freemium",
-                prompt: "We have 100,000 free users. Conversion to paid is 0.5%. Server costs for free users are consuming 20% of our runway. What is the hard decision you need to make?",
-                expected_signal: "Freemium economics",
+                prompt: "We have 100k free users. They generate 0 revenue but consume 30% of our AI token budget. Conversion to paid is 0.1%. Marketing wants to 'optimize the funnel.' Stop the BLEED.",
+                expected_signal: "Capital Allocation",
                 chart_type: "bar",
                 chart_data: {
-                    labels: ["Paid Rev", "Free Costs"],
-                    datasets: [{ label: "Monthly ($)", data: [10000, 25000], backgroundColor: ["#238636", "#da3633"] }]
-                }
-            },
-            {
-                id: "PM-D5",
-                title: "The Upsell Fail",
-                prompt: "We launched an 'Enterprise Tier.' 90% of customers downgraded to it because it was cheaper than their usage-based plan. How did we misprice this?",
-                expected_signal: "Pricing strategy alignment",
-                chart_type: "bar",
-                chart_data: {
-                    labels: ["Usage Rev", "Tier Rev"],
+                    labels: ["Paid Users", "Free Users"],
                     datasets: [
-                        { label: "Pre-Launch", data: [100, 0], backgroundColor: "#58a6ff" },
-                        { label: "Post-Launch", data: [10, 60], backgroundColor: "#da3633" }
+                        { label: "Revenue ($)", data: [50000, 0], backgroundColor: "#238636" },
+                        { label: "Compute Cost ($)", data: [5000, 25000], backgroundColor: "#da3633" }
                     ]
                 }
             }
@@ -295,134 +167,70 @@ export const QUESTION_BANK: Record<Role, Record<string, Question[]>> = {
         funeral: [
             {
                 id: "PM-F1",
-                title: "The CEO's Pet Project",
-                prompt: "The CEO wants 'Blockchain' integration. It has zero customer demand. It will consume 20% of engineering. Kill it. Write the memo explaining the 'Opportunity Cost' to the CEO.",
-                expected_signal: "Executive management",
-                chart_type: "table_backlog",
+                title: "The 'AI Wrapper' Feature",
+                prompt: "Add 'Chat with PDF' feature. Estimated Dev Time: 2 Days. It destroys Gross Margins. If we don't pass API costs to the user, this is Margin Insolvency. KILL IT.",
+                expected_signal: "Margin Insolvency Detection",
+                chart_type: "bar",
                 chart_data: {
-                    items: [
-                        { name: "Blockchain Init", sponsor: "CEO", roi: "-50%", cost: "20%" },
-                        { name: "SSO Fix", sponsor: "Customers", roi: "+200%", cost: "5%" },
-                        { name: "Mobile App", sponsor: "Product", roi: "+150%", cost: "15%" }
-                    ]
+                    labels: ["Sub Price", "Est. API Cost (Power User)"],
+                    datasets: [{ label: "Monthly Unit Economics ($)", data: [20, 45], backgroundColor: ["#58a6ff", "#da3633"] }]
                 }
             },
             {
                 id: "PM-F2",
-                title: "The Feature Bloat",
-                prompt: "We have 5 'nice to have' features that are used by 2% of users but generate 50% of support tickets. Deprecate them. Handle the angry tweet from the one vocal user.",
-                expected_signal: "Product hygiene",
-                chart_type: "bar_stacked",
+                title: "The 'CEO's Pet' Blockchain",
+                prompt: "CEO wants Crypto Wallet Connect. 10 customers asked for it. It requires specialized security audits. The ROI is negative. Kill the Distraction Asset.",
+                expected_signal: "Opportunity Cost Analysis",
+                chart_type: "table_backlog",
                 chart_data: {
-                    labels: ["Feature A", "Feature B", "Feature C"],
-                    datasets: [
-                        { label: "Usage %", data: [2, 1, 3], backgroundColor: "#238636" },
-                        { label: "Tickets %", data: [15, 20, 15], backgroundColor: "#da3633" }
+                    items: [
+                        { name: "Crypto Wallet", sponsor: "CEO", roi: "-90%", cost: "$150k (Audit)" },
+                        { name: "Core Perf Fix", sponsor: "Eng", roi: "+300%", cost: "$20k" },
+                        { name: "New Onboarding", sponsor: "Product", roi: "+150%", cost: "$50k" }
                     ]
                 }
             },
             {
                 id: "PM-F3",
-                title: "The Platform Migration",
-                prompt: "Engineering needs 3 months to migrate the database or the site goes down. You have to kill the 'Q4 Launch' to fund it. Sales has already sold the Q4 launch. Write the email to the Sales VP.",
-                expected_signal: "Stakeholder conflict resolution",
+                title: "The One-Off Hack",
+                prompt: "Sales wants to hardcode a report format for a big client. 'Dev time: 30 mins.' This creates Architectural Debt and a 'Forked Reality.' Kill it or Refactor.",
+                expected_signal: "Anti-Consultancy / Standardization",
                 chart_type: "line",
                 chart_data: {
-                    labels: ["Q3", "Q4 (Proj)", "Q1 (Proj)"],
+                    labels: ["Today", "1 Year"],
                     datasets: [
-                        { label: "Uptime w/o Mig", data: [99.9, 85.0, 50.0], borderColor: "#da3633" },
-                        { label: "Sales Goal", data: [100, 150, 200], borderColor: "#58a6ff" }
+                        { label: "Codebase Complexity (Standard)", data: [100, 120], borderColor: "#58a6ff" },
+                        { label: "Codebase Complexity (w/ Hacks)", data: [100, 500], borderColor: "#da3633" }
                     ]
-                }
-            },
-            {
-                id: "PM-F4",
-                title: "The Market Exit",
-                prompt: "We are losing money in the Europe market due to GDPR compliance costs. It's 10% of revenue but 30% of legal/compliance spend. Do we exit Europe? Justify the revenue loss.",
-                expected_signal: "Geographic P&L analysis",
-                chart_type: "bar",
-                chart_data: {
-                    labels: ["US", "EU", "APAC"],
-                    datasets: [
-                        { label: "Revenue", data: [70, 10, 20], backgroundColor: "#238636" },
-                        { label: "Cost", data: [40, 25, 10], backgroundColor: "#da3633" }
-                    ]
-                }
-            },
-            {
-                id: "PM-F5",
-                title: "The Legacy Customer",
-                prompt: "Our oldest customer is on a legacy version that requires a dedicated server. They pay $10k/year. It costs $15k/year to maintain that server. Fire the customer.",
-                expected_signal: "Firing bad revenue",
-                chart_type: "bar",
-                chart_data: {
-                    labels: ["Legacy Rev", "Legacy Cost"],
-                    datasets: [{ label: "Annual ($)", data: [10000, 15000], backgroundColor: ["#58a6ff", "#da3633"] }]
                 }
             }
         ],
         board: [
             {
                 id: "PM-B1",
-                title: "The R&D Audit",
-                prompt: "The Board says we spend too much on R&D for too little growth. Prove that our recent 'invisible' investments (platform stability) are actually creating future Asset Value.",
-                expected_signal: "Asset value articulation",
+                title: "The 'No AI' Defense",
+                prompt: "The Board asks why we don't have an 'AI Assistant' like our competitor. Defend your decision: We are 'Fast Followers,' not 'First Victims' of high inference costs.",
+                expected_signal: "Strategic Patience / Fast Follower",
                 chart_type: "line",
                 chart_data: {
-                    labels: ["2023", "2024", "2025 (Proj)"],
+                    labels: ["Q1", "Q2", "Q3", "Q4"],
                     datasets: [
-                        { label: "R&D Spend", data: [10, 15, 20], borderColor: "#58a6ff" },
-                        { label: "Growth Rate", data: [50, 40, 80], borderColor: "#238636" }
+                        { label: "Competitor Margin (AI Heavy)", data: [70, 40, 30, 15], borderColor: "#da3633" },
+                        { label: "Our Margin (Wait & See)", data: [75, 76, 75, 78], borderColor: "#238636" }
                     ]
                 }
             },
             {
                 id: "PM-B2",
-                title: "The AI Hype",
-                prompt: "Investors want us to add 'GenAI' to the product to boost the valuation. You know it will destroy our gross margins (API costs). Defend your refusal to build it.",
-                expected_signal: "Margin protection",
-                chart_type: "bar",
-                chart_data: {
-                    labels: ["Current Margin", "AI Margin"],
-                    datasets: [{ label: "Gross Margin %", data: [80, 45], backgroundColor: ["#238636", "#da3633"] }]
-                }
-            },
-            {
-                id: "PM-B3",
-                title: "The Pricing Increase",
-                prompt: "You raised prices 20%. Churn went up 5%. The Board is panicked. Explain why this is actually good for the long-term health of the business (shedding bad revenue).",
-                expected_signal: "Pricing power defense",
-                chart_type: "line",
-                chart_data: {
-                    labels: ["Pre-Price", "Post-Price"],
-                    datasets: [
-                        { label: "Customer Count", data: [1000, 950], borderColor: "#da3633" },
-                        { label: "Total Revenue", data: [100000, 114000], borderColor: "#238636" }
-                    ]
-                }
-            },
-            {
-                id: "PM-B4",
-                title: "The Headcount Freeze",
-                prompt: "You asked for 5 more PMs. The CFO said no. Explain how you will achieve the same revenue target with your existing team by cutting scope, not adding people.",
-                expected_signal: "Efficiency under constraint",
-                chart_type: "bar",
-                chart_data: {
-                    labels: ["Target Rev", "Current Headcount"],
-                    datasets: [{ label: "Value", data: [5000000, 5], backgroundColor: "#58a6ff" }]
-                }
-            },
-            {
-                id: "PM-B5",
-                title: "The Buy vs. Build",
-                prompt: "We want to acquire a smaller competitor for $5M instead of building their feature set. Convince the CFO that the acquisition is cheaper than the 'Maintenance Liability' of building it ourselves.",
-                expected_signal: "M&A economics",
+                title: "The Churn Defense",
+                prompt: "You raised prices and churn went up 5%. The Board is panicked. Explain 'Revenue Quality': We shed Bad Revenue (High OpEx). Profitability actually went UP.",
+                expected_signal: "Revenue Quality Defense",
                 chart_type: "bar_stacked",
                 chart_data: {
-                    labels: ["Year 1", "Year 2"],
+                    labels: ["Pre-hike", "Post-hike"],
                     datasets: [
-                        { label: "Acquisition Cost", data: [5000000, 0], backgroundColor: "#58a6ff" },
-                        { label: "Build + Maint Cost", data: [2000000, 2000000], backgroundColor: "#da3633" }
+                        { label: "Profitable Rev", data: [80, 110], backgroundColor: "#238636" },
+                        { label: "Unprofitable Rev (Churned)", data: [20, 0], backgroundColor: "#da3633" }
                     ]
                 }
             }
