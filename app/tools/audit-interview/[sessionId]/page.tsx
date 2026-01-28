@@ -33,6 +33,7 @@ ChartJS.register(
 
 // ... imports
 import { Trophy, Target, Cpu } from 'lucide-react';
+import { QUESTION_BANK, SCENARIOS, Role } from '../../../lib/question-bank';
 
 export default function SessionCommandCenter() {
     const params = useParams();
@@ -62,36 +63,66 @@ export default function SessionCommandCenter() {
     }, [timeLeft]);
 
     const fetchSession = async () => {
+        setLoading(true);
         try {
-            const res = await fetch(`/api/audit/session?sessionId=${sessionId}`);
-            const data = await res.json();
-
-            if (!res.ok || data.error) {
-                console.error("Session fetch error:", data.error);
-                setLoading(false); // FIXED: Ensure loading stops on error
-                return;
-            }
-
-            if (data.analytics) {
-                setAnalytics(data.analytics);
-                setSession(data.session);
+            // STATELESS: Read from LocalStorage
+            const storedSession = localStorage.getItem(`audit_session_${sessionId}`);
+            if (!storedSession) {
+                console.error("Session not found in LocalStorage");
                 setLoading(false);
                 return;
             }
 
-            setSession(data.session);
-            setScenario(data.currentScenario);
-            setAllPhases(data.phases || []);
+            const parsedSession = JSON.parse(storedSession);
+            setSession(parsedSession);
 
-            // Reset time on every fetch (new phase) if data provided
-            if (data.phaseTimeLimit) {
-                setTimeLeft(data.phaseTimeLimit);
+            // Resolve Scenario Locally
+            let currentScenario = null;
+            if (!parsedSession.finalized && parsedSession.questions_map) {
+                const questionId = parsedSession.questions_map[parsedSession.current_phase];
+                if (questionId) {
+                    const roleBank = QUESTION_BANK[parsedSession.role as Role];
+                    currentScenario = roleBank.find(q => q.id === questionId);
+                }
+            }
+            setScenario(currentScenario);
+            setAllPhases(parsedSession.phases || SCENARIOS[parsedSession.role as Role].phases);
+
+            // Timer (Static reset based on SCENARIOS config)
+            const roleConfig: any = SCENARIOS[parsedSession.role as Role];
+            const limit = roleConfig.time_limits[parsedSession.current_phase] || 600;
+            if (!parsedSession.finalized) {
+                setTimeLeft(limit);
+            }
+
+            // If Finalized, Load Analytics
+            if (parsedSession.finalized) {
+                const storedScores = localStorage.getItem(`audit_scores_${sessionId}`);
+                if (storedScores) {
+                    // Check if we already have analytics in local storage? 
+                    // Or just re-fetch analysis from stateless API
+                    const scores = JSON.parse(storedScores);
+
+                    const anaRes = await fetch('/api/audit/session', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            action: 'ANALYZE_SESSION',
+                            scores,
+                            role: parsedSession.role
+                        })
+                    });
+                    const anaData = await anaRes.json();
+                    if (anaData.analytics) {
+                        setAnalytics(anaData.analytics);
+                    }
+                }
             }
 
             setLoading(false);
         } catch (error) {
-            console.error('Failed to fetch session', error);
-            setLoading(false); // FIXED: Ensure loading stops on error
+            console.error('Failed to load session', error);
+            setLoading(false);
         }
     };
 
@@ -100,47 +131,59 @@ export default function SessionCommandCenter() {
 
         setLoading(true);
         try {
-            // 1. Log Findings with simplified error handling
-            const scoreRes = await fetch('/api/audit/session', {
+            // 1. Grade Answer (Stateless API)
+            const gradeRes = await fetch('/api/audit/session', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    action: 'SUBMIT_SCORE',
-                    sessionId,
+                    action: 'GRADE_ANSWER',
+                    role: session.role,
                     phase: session.current_phase,
-                    dimension: 'analysis_log',
-                    rationale: rationale
+                    answer: rationale
                 })
             });
+            const gradeData = await gradeRes.json();
 
-            if (!scoreRes.ok) {
-                const errData = await scoreRes.json().catch(() => ({}));
-                throw new Error(errData.error || `Scoring failed (${scoreRes.status})`);
-            }
+            // 2. Update Local State
+            const newScore = {
+                session_id: sessionId,
+                phase: session.current_phase,
+                dimension: 'analysis_log',
+                score: gradeData.score || 3,
+                rationale: gradeData.evaluation || rationale, // Fallback
+                evaluation: gradeData.evaluation, // explicitly store for UI
+                timestamp: Date.now()
+            };
 
-            // 2. Advance
-            const advanceRes = await fetch('/api/audit/session', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ action: 'ADVANCE_PHASE', sessionId })
-            });
+            // Append to Scores
+            const storedScores = JSON.parse(localStorage.getItem(`audit_scores_${sessionId}`) || '[]');
+            storedScores.push(newScore);
+            localStorage.setItem(`audit_scores_${sessionId}`, JSON.stringify(storedScores));
 
-            const data = await advanceRes.json();
-            if (data.error) throw new Error(data.error); // Catch advance errors too
+            // 3. Advance Phase Locally
+            const phases = session.phases || SCENARIOS[session.role as Role].phases;
+            const currentIdx = phases.indexOf(session.current_phase);
 
-            if (data.nextPhase === 'FINALIZED') {
-                await fetchSession();
+            const updatedSession = { ...session };
+            if (currentIdx === phases.length - 1) {
+                updatedSession.finalized = true;
             } else {
-                setRationale("");
-                await fetchSession();
+                updatedSession.current_phase = phases[currentIdx + 1];
             }
+
+            // Save Session Update
+            localStorage.setItem(`audit_session_${sessionId}`, JSON.stringify(updatedSession));
+            setSession(updatedSession);
+
+            // 4. Reload (will trigger fetchSession -> next scenario or analytics)
+            setRationale("");
+            await fetchSession();
 
         } catch (error: any) {
             console.error(error);
             alert(`Protocol Error: ${error.message || "Failed to save findings"}`);
-            setLoading(false); // Ensure we stop loading on error
+            setLoading(false);
         }
-        // Note: fetchSession sets loading(false) on success, so we rely on it or the catch block.
     };
 
     // --- HELPER --

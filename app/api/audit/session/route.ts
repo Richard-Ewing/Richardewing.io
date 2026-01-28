@@ -47,17 +47,6 @@ Return valid JSON only: { "score": number (3-7), "rationale": "One sentence expl
 
     } catch (e) {
         console.error("Gemini Critical Failure:", e);
-        // @ts-ignore
-        if (e.response) {
-            // @ts-ignore
-            console.error("Gemini Data:", JSON.stringify(e.response, null, 2));
-        }
-
-        // Debug Config
-        const key = process.env.GEMINI_API_KEY;
-        console.error("API Key Status:", key ? `Present (${key.substring(0, 4)}...)` : "MISSING");
-
-        // Fallback for when API fails/quota exceeded
         return { score: 3, feedback: "Automated scoring unavailable. Baseline score assigned." };
     }
 };
@@ -69,7 +58,7 @@ export async function POST(request: Request) {
 
         console.log(`[AUDIT] Action: ${action} | Session: ${body.sessionId}`);
 
-        // --- NEW SESSION ---
+        // --- NEW SESSION (STATELESS) ---
         if (action === 'START_SESSION') {
             const { role, candidateId, interviewerId } = body;
 
@@ -84,8 +73,8 @@ export async function POST(request: Request) {
                 return acc;
             }, {} as Record<string, string>);
 
-            // 2. Create Session
-            const session = HiringStore.createSession(
+            // 2. Generate Session Object (No DB save)
+            const session = HiringStore.generateSession(
                 crypto.randomUUID(),
                 candidateId || 'anon',
                 interviewerId || 'system',
@@ -94,48 +83,37 @@ export async function POST(request: Request) {
                 questionsMap
             );
 
-            return NextResponse.json({ sessionId: session.session_id });
+            return NextResponse.json({ session });
         }
 
-        // --- SUBMIT FINDINGS (SCORING) ---
-        if (action === 'SUBMIT_SCORE') {
-            const { sessionId, phase, dimension, rationale } = body;
-            console.log(`[AUDIT_DEBUG] Scoring Request: hash=${sessionId.slice(0, 4)} phase="${phase}" len=${rationale.length}`);
+        // --- GRADE ANSWER (STATELESS) ---
+        if (action === 'GRADE_ANSWER') {
+            const { role, phase, answer } = body;
 
-            const session = HiringStore.getSession(sessionId);
-            if (!session) {
-                console.error(`[AUDIT_ERROR] Session not found: ${sessionId}`);
-                return NextResponse.json({ error: 'Session not found' }, { status: 404 });
-            }
-
-            const questionId = session.questions_map[phase];
-            if (!questionId) {
-                console.error(`[AUDIT_ERROR] No question ID map for phase: "${phase}". Keys: ${Object.keys(session.questions_map).join(', ')}`);
-                return NextResponse.json({ error: `Phase map missing: ${phase}` }, { status: 404 });
-            }
-
-            const roleBank = QUESTION_BANK[session.role as Role];
-            const question = roleBank?.find(q => q.id === questionId);
+            // Need to lookup question ID from strict maps since we don't trust client to send question ID directly?
+            // Actually, client has questions_map. But safer to look up from Role + Phase Name.
+            const roleBank = QUESTION_BANK[role as Role];
+            const question = roleBank?.find(q => q.title === phase);
 
             if (!question) {
-                console.error(`[AUDIT_ERROR] Question obj not found for ID: ${questionId}`);
-                return NextResponse.json({ error: 'Question object not found' }, { status: 404 });
+                return NextResponse.json({ error: 'Question object not found for phase' }, { status: 404 });
             }
 
-            // 3. LLM Eval
-            const { score, feedback } = await evaluateAnswer(question, rationale, session.role);
-
-            // Log the LLM score
-            HiringStore.logScore(sessionId, phase, dimension, score, feedback);
+            // LLM Eval
+            const { score, feedback } = await evaluateAnswer(question, answer, role);
 
             return NextResponse.json({ success: true, evaluation: feedback, score });
         }
 
-        // --- ADVANCE PHASE ---
-        if (action === 'ADVANCE_PHASE') {
-            const { sessionId } = body;
-            const nextPhase = HiringStore.advancePhase(sessionId);
-            return NextResponse.json({ nextPhase });
+        // --- ANALYZE SESSION (STATELESS) ---
+        if (action === 'ANALYZE_SESSION') {
+            const { scores, role } = body;
+            if (!scores || !Array.isArray(scores)) {
+                return NextResponse.json({ error: 'Invalid scores' }, { status: 400 });
+            }
+
+            const analytics = HiringStore.analyzeSession(scores, role as Role);
+            return NextResponse.json({ analytics });
         }
 
         return NextResponse.json({ error: 'Invalid action' }, { status: 400 });
@@ -143,62 +121,5 @@ export async function POST(request: Request) {
     } catch (error) {
         console.error('API Error:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
-    }
-}
-
-export async function GET(req: Request) {
-    const { searchParams } = new URL(req.url);
-    const sessionId = searchParams.get('sessionId');
-
-    if (!sessionId) {
-        return NextResponse.json({ error: 'Session ID required' }, { status: 400 });
-    }
-
-    try {
-        const session = HiringStore.getSession(sessionId);
-        if (!session) return NextResponse.json({ error: 'Session not found' }, { status: 404 });
-
-        // Get Current Scenario
-        let currentScenario = null;
-        if (!session.finalized && session.questions_map) {
-            const questionId = session.questions_map[session.current_phase];
-            if (questionId) {
-                const roleBank = QUESTION_BANK[session.role as Role];
-                currentScenario = roleBank.find(q => q.id === questionId);
-            }
-        }
-
-        // Calculate time remaining
-        // Use generic 600s if specific phase missing
-        const roleConfig: any = SCENARIOS[session.role];
-        const phaseTimeLimit = roleConfig.time_limits[session.current_phase] || 600;
-        // This is simple relative time since session start would be overall, 
-        // ideally we track start time PER PHASE. 
-        // For now, let's just return the limit constant and let frontend handle countdown or assume "session start" is "phase start" (simplification).
-        // A better approach: The store should track `phase_start_time`. 
-        // But for this robust update, I'll return the limit and let the frontend just count down from a static value for the phase duration,
-        // OR calculate remaining based on session start if the whole session has a limit.
-        // User's prompt implies "Ominous Countdown Timer: Pulses red when time is critical". 
-        // Let's assume per-phase timer. I'll just return the limit.
-
-        // If finalized, return analytics
-        let analytics = null;
-        if (session.finalized) {
-            analytics = HiringStore.analyzeSession(sessionId);
-        }
-
-        // Use stored phases if available
-        const allPhases = session.phases || SCENARIOS[session.role].phases;
-
-        return NextResponse.json({
-            session,
-            currentScenario,
-            analytics,
-            phaseTimeLimit,
-            phases: allPhases
-        });
-
-    } catch (error: any) {
-        return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }

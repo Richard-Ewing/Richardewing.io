@@ -19,7 +19,7 @@ export default function ProtocolInitialization() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    action: 'START_SESSION', // FIXED: Added missing action
+                    action: 'START_SESSION',
                     role,
                     candidateId: 'CANDIDATE-' + Math.floor(Math.random() * 10000)
                 })
@@ -32,8 +32,13 @@ export default function ProtocolInitialization() {
                 return;
             }
 
-            if (data.sessionId) {
-                router.push(`/tools/audit-interview/${data.sessionId}`);
+            if (data.session) {
+                // STATELESS: Save session to LocalStorage
+                localStorage.setItem(`audit_session_${data.session.session_id}`, JSON.stringify(data.session));
+                // Initialize empty scores array
+                localStorage.setItem(`audit_scores_${data.session.session_id}`, JSON.stringify([]));
+
+                router.push(`/tools/audit-interview/${data.session.session_id}`);
             }
         } catch (e) {
             console.error(e);
