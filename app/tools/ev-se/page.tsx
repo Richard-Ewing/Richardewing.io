@@ -7,6 +7,7 @@ import { GlowCard } from '../../components/magicui/glow-card';
 import { ShineBorder } from '../../components/magicui/shine-border';
 import { NumberTicker } from '../../components/magicui/number-ticker';
 import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle } from 'lucide-react';
+import { NewsletterForm } from '../../components/newsletter-form';
 
 // Simple Bar Chart component (no external dependency)
 const WaterfallChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
@@ -133,8 +134,7 @@ export default function EVSETool() {
 
     const [results, setResults] = useState<Results | null>(null);
     const [loading, setLoading] = useState(false);
-    const [email, setEmail] = useState('');
-    const [emailSubmitted, setEmailSubmitted] = useState(false);
+
 
     const formatMoney = (num: number) => {
         if (num >= 1000000) return '$' + (num / 1000000).toFixed(1) + 'M';
@@ -242,22 +242,7 @@ export default function EVSETool() {
         }
     };
 
-    const handleEmailSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        try {
-            await fetch('https://formspree.io/f/xzddbpwy', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, persona, tool: 'EV-SE', riskAdjustedValue: results?.riskedValue }),
-            });
-        } catch (err) {
-            console.error('Form submission error:', err);
-        }
-        setEmailSubmitted(true);
-        setTimeout(() => {
-            window.location.href = '/advisory';
-        }, 2000);
-    };
+
 
     const waterfallData = results ? [
         { name: 'Potential', value: results.perfectValue, color: '#22d3ee' },
@@ -552,38 +537,17 @@ export default function EVSETool() {
                                     </div>
                                 </div>
 
-                                {!emailSubmitted ? (
-                                    <form onSubmit={handleEmailSubmit} className="space-y-3">
-                                        <div className="text-sm text-white font-semibold mb-2">Get investor-ready scenario deck:</div>
-                                        <div className="relative">
-                                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
-                                            <input
-                                                type="email"
-                                                value={email}
-                                                onChange={(e) => setEmail(e.target.value)}
-                                                placeholder="your@email.com"
-                                                required
-                                                className="w-full pl-11 pr-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-zinc-600 focus:border-purple-500 focus:outline-none text-sm"
-                                            />
-                                        </div>
-                                        <button
-                                            type="submit"
-                                            className={`w-full px-6 py-3 font-bold uppercase tracking-widest text-xs rounded-xl flex items-center justify-center gap-2 transition-all ${results.adjustedConfidence < 60
-                                                ? 'bg-red-600 hover:bg-red-500 text-white'
-                                                : 'bg-white hover:bg-purple-400 text-black'
-                                                }`}
-                                        >
-                                            Get Scenario Deck <ArrowRight className="w-4 h-4" />
-                                        </button>
-                                    </form>
-                                ) : (
-                                    <div className="text-center py-2">
-                                        <div className="w-10 h-10 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                                            <span className="text-xl">✓</span>
-                                        </div>
-                                        <p className="text-sm text-zinc-400">Redirecting...</p>
-                                    </div>
-                                )}
+                                <div className="space-y-3">
+                                    <div className="text-sm text-white font-semibold mb-2">Get investor-ready scenario deck:</div>
+                                    <NewsletterForm
+                                        buttonText="Get Scenario Deck"
+                                        extraData={{
+                                            tool: 'EV-SE',
+                                            persona,
+                                            riskAdjustedValue: results.riskedValue
+                                        }}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </ScrollReveal>

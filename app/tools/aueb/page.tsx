@@ -5,8 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { TrendingDown, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Users, Target, Mail, ArrowRight, Cpu } from 'lucide-react';
 import Link from 'next/link';
-
-// --- MAGIC UI COMPONENTS ---
+import { NewsletterForm } from '../../components/newsletter-form';
 
 const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
     const [display, setDisplay] = useState(0);
@@ -164,8 +163,7 @@ export default function AUEBTool() {
 
     const [results, setResults] = useState<Results | null>(null);
     const [loading, setLoading] = useState(false);
-    const [email, setEmail] = useState('');
-    const [emailSubmitted, setEmailSubmitted] = useState(false);
+
 
     const calculate = () => {
         setLoading(true);
@@ -341,22 +339,7 @@ export default function AUEBTool() {
         }
     };
 
-    const handleEmailSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        try {
-            await fetch('https://formspree.io/f/xzddbpwy', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, persona, tool: 'AUEB', grossMargin: results?.grossMargin }),
-            });
-        } catch (err) {
-            console.error('Form submission error:', err);
-        }
-        setEmailSubmitted(true);
-        setTimeout(() => {
-            window.location.href = '/advisory';
-        }, 2000);
-    };
+
 
     return (
         <div className="min-h-screen bg-[#050505] text-zinc-200 selection:bg-cyan-500/30 font-sans">
@@ -737,42 +720,18 @@ export default function AUEBTool() {
                                         </div>
 
                                         <div className="border-l border-white/10 pl-8">
-                                            {!emailSubmitted ? (
-                                                <>
-                                                    <h3 className="text-xl font-bold text-white mb-2">Want the Full Analysis?</h3>
-                                                    <p className="text-zinc-400 text-sm mb-4">Get a personalized deep-dive with model migration roadmap and feature P&L breakdown.</p>
-                                                    <form onSubmit={handleEmailSubmit} className="space-y-3">
-                                                        <div className="relative">
-                                                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
-                                                            <input
-                                                                type="email"
-                                                                value={email}
-                                                                onChange={(e) => setEmail(e.target.value)}
-                                                                placeholder="your@email.com"
-                                                                required
-                                                                className="w-full pl-11 pr-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none"
-                                                            />
-                                                        </div>
-                                                        <button
-                                                            type="submit"
-                                                            className={`w-full px-6 py-3 font-bold uppercase tracking-widest text-sm rounded-xl flex items-center justify-center gap-2 transition-all ${results.grossMargin < 50
-                                                                ? 'bg-red-600 hover:bg-red-500 text-white'
-                                                                : 'bg-white hover:bg-cyan-400 text-black'
-                                                                }`}
-                                                        >
-                                                            Get Full Report <ArrowRight className="w-4 h-4" />
-                                                        </button>
-                                                    </form>
-                                                </>
-                                            ) : (
-                                                <div className="text-center py-4">
-                                                    <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                                        <span className="text-2xl">✓</span>
-                                                    </div>
-                                                    <h3 className="text-xl font-bold text-white mb-2">Request Received</h3>
-                                                    <p className="text-zinc-400">Redirecting to book your session...</p>
-                                                </div>
-                                            )}
+                                            <div className="mb-4">
+                                                <h3 className="text-xl font-bold text-white mb-2">Want the Full Analysis?</h3>
+                                                <p className="text-zinc-400 text-sm">Get a personalized deep-dive with model migration roadmap and feature P&L breakdown.</p>
+                                            </div>
+                                            <NewsletterForm
+                                                buttonText="Get Full Report"
+                                                extraData={{
+                                                    tool: 'AUEB',
+                                                    persona,
+                                                    grossMargin: results.grossMargin
+                                                }}
+                                            />
                                         </div>
                                     </div>
                                 </div>

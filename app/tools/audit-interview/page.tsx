@@ -83,11 +83,11 @@ export default function ProtocolInitialization() {
                                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Engineering</h3>
                                 <p className="text-zinc-400 text-sm leading-relaxed mb-6">
                                     <strong>For Senior+ Engineers & Architects.</strong><br /><br />
-                                    Evaluates system design judgment, technical leadership, and ability to balance <strong>Capital Efficiency</strong> vs. <strong>Maintenance Liability</strong>.
-                                    Can they prevent technical insolvency at scale?
+                                    Evaluates ability to <strong>review AI-generated code</strong>, assess scale, and balance <strong>Capital Efficiency</strong> vs. <strong>Maintenance Liability</strong>.
+                                    Can they prevent technical insolvency?
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-8">
-                                    {['ARCHITECTURE', 'SYSTEMS', 'COST'].map(tag => (
+                                    {['AUDIT', 'SCALE', 'COST'].map(tag => (
                                         <span key={tag} className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded text-[10px] font-mono text-emerald-400">
                                             {tag}
                                         </span>
@@ -117,8 +117,8 @@ export default function ProtocolInitialization() {
                                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Product Management</h3>
                                 <p className="text-zinc-400 text-sm leading-relaxed mb-6">
                                     <strong>For PMs, Group PMs, and Directors.</strong><br /><br />
-                                    Assess for <strong>Unit Economics</strong>, <strong>Strategic Governance</strong>, and product sense.
-                                    Do they understand where value really comes from, or are they just shipping features?
+                                    Assess ability to leverage <strong>AI-Assisted Engineering</strong>. Focus on <strong>Unit Economics</strong> and <strong>Strategic Governance</strong>, not rote memorization.
+                                    Can they drive value with new tools?
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {['STRATEGY', 'ECONOMICS', 'LEVERAGE'].map(tag => (
@@ -145,7 +145,8 @@ export default function ProtocolInitialization() {
                     </div>
 
 
-                    {/* --- SYSTEM DOCTRINE (Why Now) --- */}
+
+                    {/* SYSTEM DOCTRINE (Why Now) */}
                     <div className="py-20 border-t border-white/5 relative">
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-[#0a0a0a] text-zinc-500 font-mono text-xs uppercase tracking-[0.2em]">System Doctrine</div>
 
@@ -156,8 +157,9 @@ export default function ProtocolInitialization() {
                             </p>
                             <div className="p-6 bg-white/5 border border-white/10 rounded-xl text-left">
                                 <p className="text-zinc-300 leading-relaxed font-mono text-sm md:text-base">
-                                    We must stop testing for <strong className="text-white">Construction</strong> (writing code) and start testing for <strong className="text-white">Verification</strong> (auditing code).
+                                    We must stop testing for <strong className="text-white">Construction</strong> (writing code/product specs) and start testing for <strong className="text-white">Verification</strong> (auditing outcomes).
                                     <br /><br />
+                                    Engineering is now about reviewing AI-generated code for scale and solvency. Product Management is no longer about rote product sense, but leveraging AI-assisted engineering to drive value.
                                     The Fiduciary Protocol™ measures the only three signals that remain scarce: <span className="text-emerald-400 border-b border-emerald-500/50">Skepticism</span>, <span className="text-emerald-400 border-b border-emerald-500/50">System Thinking</span>, and <span className="text-emerald-400 border-b border-emerald-500/50">Capital Stewardship</span>.
                                 </p>
                             </div>
@@ -165,7 +167,7 @@ export default function ProtocolInitialization() {
                     </div>
 
 
-                    {/* --- THE GAUNTLET (Methodology) --- */}
+                    {/* THE GAUNTLET (Methodology) */}
                     <div className="py-20 border-t border-white/5">
                         <div className="text-center mb-12">
                             <h3 className="text-2xl font-bold text-white mb-2">The 5-Phase Calibration Standard</h3>
@@ -190,7 +192,7 @@ export default function ProtocolInitialization() {
                     </div>
 
 
-                    {/* --- UNIVERSAL LEVELING MATRIX (Outcome) --- */}
+                    {/* UNIVERSAL LEVELING MATRIX (Outcome) */}
                     <div className="py-20 border-t border-white/5">
                         <div className="text-center mb-12">
                             <h3 className="text-2xl font-bold text-white mb-2">Universal Leveling Matrix (L3 - L8)</h3>
@@ -202,17 +204,18 @@ export default function ProtocolInitialization() {
                                 <thead>
                                     <tr className="border-b border-white/10 text-zinc-500 text-xs uppercase tracking-widest">
                                         <th className="py-4 px-6">Level</th>
-                                        <th className="py-4 px-6">Designation</th>
+                                        <th className="py-4 px-6">Designation (Eng / PM)</th>
                                         <th className="py-4 px-6">Primary Signal Detected</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-white/5">
                                     {[
-                                        { l: 'L3', d: 'Associate', s: 'Syntax Logic. Can they identify why the code is broken?' },
-                                        { l: 'L4', d: 'Product Eng.', s: 'Feature Scope. Can they ship without breaking UX?' },
-                                        { l: 'L5', d: 'Senior', s: 'Unit Economics. Can they prevent "Cloud Shock"?' },
-                                        { l: 'L6', d: 'Staff', s: 'System Solvency. Can they prevent collapse at scale?' },
-                                        { l: 'L8', d: 'Principal', s: 'Capital Governance. Can they align engineering with EV?' },
+                                        { l: 'L3', d: 'Associate / APM', s: 'Syntax Logic. Can they identify why the code is broken?' },
+                                        { l: 'L4', d: 'Mid-Level / PM', s: 'Feature Scope. Can they ship without breaking UX?' },
+                                        { l: 'L5', d: 'Senior / SPM', s: 'Unit Economics. Can they prevent "Cloud Shock"?' },
+                                        { l: 'L6', d: 'Staff / GPM', s: 'System Solvency. Can they prevent collapse at scale?' },
+                                        { l: 'L7', d: 'Principal / Director', s: 'Strategy Shift. Can they realign the entire org?' }, // Added L7
+                                        { l: 'L8', d: 'Distinguished / VP', s: 'Capital Governance. Can they align engineering with EV?' }, // Shifted/Refined L8
                                     ].map((row, i) => (
                                         <tr key={i} className="hover:bg-white/5 transition-colors group">
                                             <td className="py-4 px-6 font-bold text-white group-hover:text-emerald-400 transition-colors">{row.l}</td>

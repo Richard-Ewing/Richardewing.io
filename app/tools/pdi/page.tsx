@@ -7,6 +7,7 @@ import { GlowCard } from '../../components/magicui/glow-card';
 import { ShineBorder } from '../../components/magicui/shine-border';
 import { NumberTicker } from '../../components/magicui/number-ticker';
 import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle } from 'lucide-react';
+import { NewsletterForm } from '../../components/newsletter-form';
 
 // Simple Pie Chart component (no external dependency)
 const PieChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
@@ -92,8 +93,7 @@ export default function PDITool() {
     const [results, setResults] = useState<Results | null>(null);
 
     // Email capture
-    const [email, setEmail] = useState('');
-    const [emailSubmitted, setEmailSubmitted] = useState(false);
+
 
     const analyze = async () => {
         setLoading(true);
@@ -224,22 +224,7 @@ export default function PDITool() {
         }
     };
 
-    const handleEmailSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        try {
-            await fetch('https://formspree.io/f/xzddbpwy', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, persona, tool: 'PDI', score: results?.score }),
-            });
-        } catch (err) {
-            console.error('Form submission error:', err);
-        }
-        setEmailSubmitted(true);
-        setTimeout(() => {
-            window.location.href = '/advisory';
-        }, 2000);
-    };
+
 
     const COLORS = { growth: '#22d3ee', retention: '#8b5cf6', maintenance: '#dc2626' };
 
@@ -540,38 +525,17 @@ Migrate to new database"
                                     </li>
                                 </ul>
 
-                                {!emailSubmitted ? (
-                                    <form onSubmit={handleEmailSubmit} className="space-y-3">
-                                        <div className="text-sm text-white font-semibold mb-2">Get the full debt burn-down plan:</div>
-                                        <div className="relative">
-                                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
-                                            <input
-                                                type="email"
-                                                value={email}
-                                                onChange={(e) => setEmail(e.target.value)}
-                                                placeholder="your@email.com"
-                                                required
-                                                className="w-full pl-11 pr-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-zinc-600 focus:border-red-500 focus:outline-none text-sm"
-                                            />
-                                        </div>
-                                        <button
-                                            type="submit"
-                                            className={`w-full px-6 py-3 font-bold uppercase tracking-widest text-xs rounded-xl flex items-center justify-center gap-2 transition-all ${results.score < 50
-                                                ? 'bg-red-600 hover:bg-red-500 text-white'
-                                                : 'bg-white hover:bg-cyan-400 text-black'
-                                                }`}
-                                        >
-                                            Get Debt Analysis <ArrowRight className="w-4 h-4" />
-                                        </button>
-                                    </form>
-                                ) : (
-                                    <div className="text-center py-2">
-                                        <div className="w-10 h-10 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                                            <span className="text-xl">✓</span>
-                                        </div>
-                                        <p className="text-sm text-zinc-400">Redirecting...</p>
-                                    </div>
-                                )}
+                                <div className="space-y-3">
+                                    <div className="text-sm text-white font-semibold mb-2">Get the full debt burn-down plan:</div>
+                                    <NewsletterForm
+                                        buttonText="Get Debt Analysis"
+                                        extraData={{
+                                            tool: 'PDI',
+                                            persona,
+                                            score: results.score
+                                        }}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </ScrollReveal>

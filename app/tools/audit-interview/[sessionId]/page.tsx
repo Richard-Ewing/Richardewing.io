@@ -83,8 +83,8 @@ export default function SessionCommandCenter() {
             setScenario(data.currentScenario);
             setAllPhases(data.phases || []);
 
-            // Only set time on first load or manual updates, timer handles ticks
-            if (loading && data.phaseTimeLimit) {
+            // Reset time on every fetch (new phase) if data provided
+            if (data.phaseTimeLimit) {
                 setTimeLeft(data.phaseTimeLimit);
             }
 

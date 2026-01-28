@@ -2,7 +2,7 @@
 
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
-import { ShineBorder } from '../components/magicui/shine-border';
+import { NewsletterForm } from '../components/newsletter-form';
 import Link from 'next/link';
 
 export default function BookPage() {
@@ -83,32 +83,15 @@ export default function BookPage() {
                                 <span className="text-zinc-600 text-xs">|</span>
                                 <span className="text-zinc-500 text-xs">Get exclusive chapter previews</span>
                             </div>
-                            <form name="book-waitlist" method="POST" className="max-w-lg">
-                                <div className="flex flex-col sm:flex-row gap-3">
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        placeholder="your@email.com"
-                                        required
-                                        className="flex-1 bg-black/50 border border-zinc-800 text-white px-4 py-3 rounded-xl focus:border-cobalt focus:ring-1 focus:ring-cobalt/50 outline-none font-mono text-sm transition-all placeholder:text-zinc-700"
-                                    />
-                                    <ShineBorder borderColor="rgba(0, 85, 255, 0.6)" duration={2}>
-                                        <button
-                                            type="submit"
-                                            className="bg-white text-black font-bold uppercase text-xs px-6 py-3 tracking-widest hover:bg-cobalt hover:text-white transition-colors w-full"
-                                        >
-                                            Join Waitlist →
-                                        </button>
-                                    </ShineBorder>
-                                </div>
-                            </form>
+                            <NewsletterForm buttonText="Join Waitlist" />
                         </div>
                     </div>
                 </div>
             </ScrollReveal>
 
+
             {/* Additional Value */}
-            <ScrollReveal delay={200}>
+            < ScrollReveal delay={200} >
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mt-8">
                     <div className="text-center">
                         <div className="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-4">While You Wait</div>
@@ -129,7 +112,7 @@ export default function BookPage() {
                         </div>
                     </div>
                 </div>
-            </ScrollReveal>
-        </div>
+            </ScrollReveal >
+        </div >
     );
 }

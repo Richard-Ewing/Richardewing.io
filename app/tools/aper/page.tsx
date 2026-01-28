@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { TrendingUp, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building } from 'lucide-react';
 import Link from 'next/link';
+import { NewsletterForm } from '../../components/newsletter-form';
 
 // --- MAGIC UI COMPONENTS ---
 
@@ -108,8 +109,7 @@ export default function APERTool() {
 
     const [results, setResults] = useState<Results | null>(null);
     const [loading, setLoading] = useState(false);
-    const [email, setEmail] = useState('');
-    const [emailSubmitted, setEmailSubmitted] = useState(false);
+
 
     const formatMoney = (num: number) => {
         if (num >= 1000000) return '$' + (num / 1000000).toFixed(1) + 'M';
@@ -248,22 +248,7 @@ export default function APERTool() {
         }
     };
 
-    const handleEmailSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        try {
-            await fetch('https://formspree.io/f/xzddbpwy', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, persona, tool: 'APER', aper: results?.aper }),
-            });
-        } catch (err) {
-            console.error('Form submission error:', err);
-        }
-        setEmailSubmitted(true);
-        setTimeout(() => {
-            window.location.href = '/advisory';
-        }, 2000);
-    };
+
 
     return (
         <div className="min-h-screen bg-[#050505] text-zinc-200 selection:bg-cyan-500/30 font-sans">
@@ -590,42 +575,18 @@ export default function APERTool() {
                                         </div>
 
                                         <div className="border-l border-white/10 pl-8">
-                                            {!emailSubmitted ? (
-                                                <>
-                                                    <h3 className="text-xl font-bold text-white mb-2">Want the Full Analysis?</h3>
-                                                    <p className="text-zinc-400 text-sm mb-4">Get a team topology review and optimal headcount roadmap.</p>
-                                                    <form onSubmit={handleEmailSubmit} className="space-y-3">
-                                                        <div className="relative">
-                                                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
-                                                            <input
-                                                                type="email"
-                                                                value={email}
-                                                                onChange={(e) => setEmail(e.target.value)}
-                                                                placeholder="your@email.com"
-                                                                required
-                                                                className="w-full pl-11 pr-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-zinc-600 focus:border-yellow-500 focus:outline-none"
-                                                            />
-                                                        </div>
-                                                        <button
-                                                            type="submit"
-                                                            className={`w-full px-6 py-3 font-bold uppercase tracking-widest text-sm rounded-xl flex items-center justify-center gap-2 transition-all ${results.aper < 400000
-                                                                ? 'bg-orange-600 hover:bg-orange-500 text-white'
-                                                                : 'bg-white hover:bg-yellow-400 text-black'
-                                                                }`}
-                                                        >
-                                                            Get Team Analysis <ArrowRight className="w-4 h-4" />
-                                                        </button>
-                                                    </form>
-                                                </>
-                                            ) : (
-                                                <div className="text-center py-4">
-                                                    <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                                        <span className="text-2xl">✓</span>
-                                                    </div>
-                                                    <h3 className="text-xl font-bold text-white mb-2">Request Received</h3>
-                                                    <p className="text-zinc-400">Redirecting to book your session...</p>
-                                                </div>
-                                            )}
+                                            <div className="mb-4">
+                                                <h3 className="text-xl font-bold text-white mb-2">Want the Full Analysis?</h3>
+                                                <p className="text-zinc-400 text-sm">Get a team topology review and optimal headcount roadmap.</p>
+                                            </div>
+                                            <NewsletterForm
+                                                buttonText="Get Team Analysis"
+                                                extraData={{
+                                                    tool: 'APER',
+                                                    persona,
+                                                    aper: results.aper
+                                                }}
+                                            />
                                         </div>
                                     </div>
                                 </div>

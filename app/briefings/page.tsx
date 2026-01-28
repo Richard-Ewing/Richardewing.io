@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
 import { ShineBorder } from '../components/magicui/shine-border';
+import { NewsletterForm } from '../components/newsletter-form';
 
 interface BriefCardProps {
     number: string;
@@ -109,25 +110,7 @@ export default function BriefingsPage() {
                     <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">Get New Briefs First</h2>
                     <p className="text-zinc-400 text-sm mb-6">One email per month. No spam. Unsubscribe anytime.</p>
 
-                    <form name="briefs-subscribe" method="POST" className="max-w-lg">
-                        <div className="flex flex-col sm:flex-row gap-3">
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="your@email.com"
-                                required
-                                className="flex-1 bg-black/50 border border-zinc-800 text-white px-4 py-3 rounded-xl focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50 outline-none font-mono text-sm transition-all placeholder:text-zinc-700"
-                            />
-                            <ShineBorder borderColor="rgba(34, 211, 238, 0.6)" duration={2}>
-                                <button
-                                    type="submit"
-                                    className="bg-white text-black font-bold uppercase text-xs px-6 py-3 tracking-widest hover:bg-cyan-400 transition-colors w-full"
-                                >
-                                    Subscribe →
-                                </button>
-                            </ShineBorder>
-                        </div>
-                    </form>
+                    <NewsletterForm buttonText="Subscribe" />
                 </div>
             </ScrollReveal>
 

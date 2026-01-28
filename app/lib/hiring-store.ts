@@ -147,37 +147,62 @@ export const HiringStore = {
             total += s.score;
         });
 
-        // 5 Phases * (3-7 Score) = 15-35 Range
+        // Limit Max Score assumption: 5 questions * 7 = 35 points
 
         let verdict = "";
         let rationale = "";
-        const roleTitle = session?.role === 'engineering' ? 'ENGINEER' : 'PRODUCT MANAGER';
-
-        // Calibration Bands
-        // Calibration Bands
         let decision = "NO HIRE";
+        const roleTitle = session?.role === 'engineering' ? 'ENGINEER' : 'PRODUCT MANAGER';
+        const isEng = session?.role === 'engineering';
+
+        // Calibration Bands (Extended for L3-L8)
         if (total < 20) {
             verdict = `L3: JUNIOR ${roleTitle}`;
-            rationale = "Focuses on execution and syntax. Lacks broader system awareness. \"Code Monkey\" mode.";
+            if (isEng) {
+                rationale = "Focuses on execution and syntax. Lacks broader system awareness. \"Code Monkey\" mode.";
+            } else {
+                rationale = "Focuses on rote feature lists. Lacks strategic depth or economic awareness.";
+            }
             decision = "NO HIRE";
         } else if (total < 25) {
             verdict = `L4: ${roleTitle}`;
-            rationale = "Competent execution but trade-offs are local, not systemic. Misses second-order effects.";
-            decision = "NO HIRE";
-        } else if (total < 30) {
+            if (isEng) {
+                rationale = "Competent execution but trade-offs are limited to local scope. Misses second-order effects.";
+            } else {
+                rationale = "Can manage a backlog but lacks capital governance or rigorous prioritization frameworks.";
+            }
+            decision = session?.role === 'engineering' ? "NO HIRE" : "NO HIRE"; // Strict bar
+        } else if (total < 28) {
             verdict = `L5: SENIOR ${roleTitle}`;
-            rationale = "Demonstrates system ownership and understands maintenance liability. Good default hire.";
+            if (isEng) {
+                rationale = "Demonstrates system ownership and understands maintenance liability. Good default hire.";
+            } else {
+                rationale = "Understand Unit Economics and can prioritize based on ROI. Solid operator.";
+            }
+            decision = "HIRE";
+        } else if (total < 32) {
+            verdict = `L6: STAFF ${roleTitle}`; // PM equivalent: Group PM
+            if (isEng) {
+                rationale = "Exceptional capital stewardship. Prioritizes ROI, Leverage, and Capital Efficiency.";
+            } else {
+                rationale = "Drives portfolio-level strategy. Aligns engineering efforts with Enterprise Value.";
+            }
             decision = "HIRE";
         } else {
-            verdict = `L6: STAFF ${roleTitle}`;
-            rationale = "Exceptional capital stewardship. Prioritizes ROI, Leverage, and Capital Efficiency.";
+            // High score > 32
+            verdict = `L7/L8: PRINCIPAL ${roleTitle}`; // PM equivalent: Director/VP
+            if (isEng) {
+                rationale = "Visionary technical governance. Realigns entire organizations towards solvency and leverage.";
+            } else {
+                rationale = "Executive-grade strategic foresight. defines the market and capital allocation strategy.";
+            }
             decision = "HIRE";
         }
 
         return {
             total,
             verdict,
-            decision, // NEW field
+            decision,
             rationale,
             scores
         };

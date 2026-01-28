@@ -56,21 +56,10 @@ const UrgencyIcon = ({ urgency }: { urgency: string }) => {
     }
 };
 
-export function ConversionPanel({ toolName, score, scoreType, headline, onReset }: ConversionPanelProps) {
-    const [email, setEmail] = useState('');
-    const [submitted, setSubmitted] = useState(false);
-    const contextCTA = getContextualCTA(scoreType, score);
+import { NewsletterForm } from './newsletter-form';
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // In production, this would send to your email service
-        console.log('Lead captured:', email, toolName);
-        setSubmitted(true);
-        // Redirect to advisory after brief delay
-        setTimeout(() => {
-            window.location.href = '/advisory';
-        }, 2000);
-    };
+export function ConversionPanel({ toolName, score, scoreType, headline, onReset }: ConversionPanelProps) {
+    const contextCTA = getContextualCTA(scoreType, score);
 
     return (
         <div className="mt-12 border-t border-white/10 pt-12 space-y-8">
@@ -83,46 +72,18 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                     </span>
                 </div>
 
-                {!submitted ? (
-                    <>
-                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                            {headline || 'Want a Board-Ready Analysis?'}
-                        </h3>
-                        <p className="text-zinc-400 mb-6">
-                            Get a personalized deep-dive with actionable recommendations from a Product Economist.
-                        </p>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                    {headline || 'Want a Board-Ready Analysis?'}
+                </h3>
+                <p className="text-zinc-400 mb-6">
+                    Get a personalized deep-dive with actionable recommendations from a Product Economist.
+                </p>
 
-                        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-                            <div className="relative flex-1">
-                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
-                                <input
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="your@email.com"
-                                    required
-                                    className="w-full pl-11 pr-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none transition-colors"
-                                />
-                            </div>
-                            <button
-                                type="submit"
-                                className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-xl hover:bg-cyan-400 transition-all flex items-center justify-center gap-2 whitespace-nowrap"
-                            >
-                                Get Analysis <ArrowRight className="w-4 h-4" />
-                            </button>
-                        </form>
+                <NewsletterForm buttonText="Get Analysis" />
 
-                        <p className="text-xs text-zinc-600 mt-3">
-                            No spam. Unsubscribe anytime. Your data is secure.
-                        </p>
-                    </>
-                ) : (
-                    <div className="text-center py-4">
-                        <CheckCircle className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
-                        <h3 className="text-xl font-bold text-white mb-2">Analysis Request Received</h3>
-                        <p className="text-zinc-400">Redirecting you to book your session...</p>
-                    </div>
-                )}
+                <p className="text-xs text-zinc-600 mt-3">
+                    No spam. Unsubscribe anytime. Your data is secure.
+                </p>
             </div>
 
             {/* Primary CTA */}
@@ -132,10 +93,10 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                     <Link
                         href="/advisory"
                         className={`group relative inline-flex items-center gap-3 px-10 py-4 font-bold uppercase tracking-widest text-sm rounded-xl transition-all transform hover:scale-105 ${contextCTA.urgency === 'critical'
-                                ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
-                                : contextCTA.urgency === 'warning'
-                                    ? 'bg-yellow-500 hover:bg-yellow-400 text-black shadow-[0_0_30px_rgba(234,179,8,0.4)]'
-                                    : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)]'
+                            ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
+                            : contextCTA.urgency === 'warning'
+                                ? 'bg-yellow-500 hover:bg-yellow-400 text-black shadow-[0_0_30px_rgba(234,179,8,0.4)]'
+                                : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)]'
                             }`}
                     >
                         {contextCTA.cta}
