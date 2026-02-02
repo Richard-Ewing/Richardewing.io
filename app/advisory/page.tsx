@@ -152,6 +152,39 @@ export default function AdvisoryPage() {
                     </div>
                 </div>
             </ScrollReveal>
+            {/* Board & Fractional Leadership */}
+            <ScrollReveal delay={300} className="mt-16 border-t border-white/10 pt-16 mb-20">
+                <div className="bg-gradient-to-br from-zinc-900 to-black p-8 sm:p-12 rounded-2xl border border-white/10 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-[80px] pointer-events-none" />
+
+                    <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
+                        <div className="flex-1 text-center md:text-left">
+                            <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Board & Fractional Leadership</h2>
+                            <p className="text-zinc-400 leading-relaxed mb-6">
+                                For Series B+ companies requiring sustained intervention. I serve as a fractional CPO or Independent Board Director to oversee the implementation of capital efficiency protocols and AI governance.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                                <a href="mailto:richard@richardewing.io?subject=Board%20Inquiry" className="inline-flex items-center justify-center px-8 py-4 bg-gold text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-white transition-all">
+                                    Request Board Bio
+                                </a>
+                                <Link href="/manifesto" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-all">
+                                    Read Operating Principles
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="w-full md:w-1/3">
+                            <GlowCard className="p-6 bg-black/50" glowColor="gold">
+                                <div className="text-xs font-mono text-gold uppercase tracking-widest mb-2">Capacity</div>
+                                <div className="text-3xl font-bold text-white font-grotesk mb-1">1 Slot</div>
+                                <div className="text-sm text-zinc-500 mb-4">Remaining for Q1 2026</div>
+                                <div className="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+                                    <div className="w-2/3 h-full bg-gold rounded-full" />
+                                </div>
+                            </GlowCard>
+                        </div>
+                    </div>
+                </div>
+            </ScrollReveal>
         </div>
     );
 }
