@@ -17,6 +17,7 @@ import { Line, Bar } from 'react-chartjs-2';
 import { ScrollReveal } from '../../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../../components/magicui/glow-card';
 import { ShineBorder } from '../../../components/magicui/shine-border';
+import { NewsletterForm } from '../../../components/newsletter-form';
 import Link from 'next/link';
 
 // Register ChartJS
@@ -421,21 +422,45 @@ export default function SessionCommandCenter() {
                             <p className="text-zinc-400 text-sm mb-6 max-w-lg mx-auto">
                                 This tool demonstrates the methodology. In a live audit, I evaluate the <strong>hesitation</strong>—where candidates pause signals judgment.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-left">
+                                <div className="space-y-4 border-r border-white/5 pr-4">
+                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">Revenue Path</div>
+                                    <h5 className="text-white font-bold mb-2">Deploy the Protocol</h5>
+                                    <p className="text-xs text-zinc-400 mb-4">Book a live forensic hiring audit for your next VP/Director candidate.</p>
+                                    <a
+                                        href="https://richardewing.io/advisory"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block w-full py-3 bg-white text-black text-center font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-emerald-400 transition-colors shadow-lg hover:shadow-emerald-500/20"
+                                    >
+                                        Book Audit ($2,500)
+                                    </a>
+                                </div>
+
+                                <div className="space-y-4 pl-4">
+                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">Education Path</div>
+                                    <h5 className="text-white font-bold mb-2">Steal the Questions</h5>
+                                    <p className="text-xs text-zinc-400 mb-4">Get the complete PDF of my specialized interview questions for Product & Eng.</p>
+                                    <NewsletterForm
+                                        buttonText="Get Protocol PDF"
+                                        placeholder="Email for PDF..."
+                                        extraData={{
+                                            tool: 'Audit Interview',
+                                            verdict: analytics.verdict,
+                                            role: session.role
+                                        }}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="mt-8 pt-6 border-t border-white/5">
                                 <button
                                     onClick={() => (window.location.href = '/tools/audit-interview')}
-                                    className="px-6 py-3 bg-zinc-800 text-white font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-zinc-700 transition-colors"
+                                    className="text-zinc-500 text-xs uppercase tracking-widest hover:text-white transition-colors"
                                 >
-                                    Run Another Proto
+                                    ← Run Another Simulation
                                 </button>
-                                <a
-                                    href="https://richardewing.io/advisory"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-emerald-400 transition-colors shadow-lg hover:shadow-emerald-500/20"
-                                >
-                                    Book Hiring Audit ($2,500)
-                                </a>
                             </div>
                         </div>
                     </div>

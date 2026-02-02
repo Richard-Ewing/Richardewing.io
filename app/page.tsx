@@ -134,7 +134,7 @@ export default function Home() {
             </h2>
             <h3 className="text-xl font-mono text-purple-400 mb-4 uppercase tracking-widest">Active Development</h3>
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              I don't just advise. I build. <strong className="text-white">Mnemosyne</strong> is my active research into AI memory systems and long-context reasoning.
+              I don't just advise. I build. <strong className="text-white">Exogram</strong> is my active research into AI memory systems and long-context reasoning.
               It is the engine that powers my own agency.
             </p>
             <Link href="/exogram" className="inline-flex items-center gap-2 text-purple-400 font-bold uppercase tracking-widest hover:text-purple-300 transition-colors">
@@ -144,7 +144,7 @@ export default function Home() {
           <div className="flex-1 w-full">
             <GlowCard className="p-8 h-full bg-purple-900/10 border-purple-500/20" glowColor="purple">
               <div className="flex justify-between items-start mb-6">
-                <div className="text-2xl font-bold text-white font-grotesk">Mnemosyne</div>
+                <div className="text-2xl font-bold text-white font-grotesk">Exogram</div>
                 <div className="px-3 py-1 bg-green-500/20 text-green-400 text-[10px] font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                   Online

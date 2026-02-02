@@ -30,7 +30,7 @@ export default function ExogramPage() {
             {/* Main Dashboard Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-                {/* Primary Project: Mnemosyne */}
+                {/* Primary Project: Exogram */}
                 <div className="lg:col-span-2 space-y-8">
                     <ScrollReveal>
                         <div className="relative group">
@@ -39,7 +39,7 @@ export default function ExogramPage() {
                                 <div className="flex justify-between items-start mb-8">
                                     <div>
                                         <div className="flex items-center gap-3 mb-2">
-                                            <h2 className="text-2xl font-bold text-white font-grotesk">Mnemosyne</h2>
+                                            <h2 className="text-2xl font-bold text-white font-grotesk">Exogram</h2>
                                             <div className="px-3 py-1 bg-green-500/20 text-green-400 text-[10px] font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                                                 Online
@@ -148,7 +148,7 @@ export default function ExogramPage() {
                                 <div className="pl-6 relative">
                                     <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-purple-500 ring-4 ring-black" />
                                     <div className="text-xs text-purple-400 font-mono mb-1">Today, 09:42 AM</div>
-                                    <div className="text-white font-bold text-sm">Mnemosyne v1.0.4</div>
+                                    <div className="text-white font-bold text-sm">Exogram v1.0.4</div>
                                     <p className="text-xs text-zinc-500 mt-1">Improved context retrieval algorithms and semantic index.</p>
                                 </div>
                                 <div className="pl-6 relative">
