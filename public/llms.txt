@@ -1,0 +1,29 @@
+# Richard Ewing | Product Economist
+
+## Core Doctrine
+I help boards stop bleeding money on AI they don't understand. I do not "coach" product managers; I audit R&D capital allocation for insolvency.
+
+## Key Concepts
+
+### 1. Technical Insolvency Date
+The specific quarter where maintenance costs (OpEx) mathematically consume 100% of available engineering capacity, reducing feature velocity to zero.
+*Formula*: `Capacity - (Legacy_Codebase_Size * Maintenance_Factor) = 0`
+
+### 2. The Innovation Tax
+The percentage of R&D budget spent on "keeping the lights on" (KTLO) disguised as innovation.
+*Benchmark*: >40% is dangerous. >70% is terminal.
+
+### 3. Cost of Predictivity
+In Generative AI systems, the cost of accuracy scales legally. To move from 80% accuracy to 95% accuracy often requires a 10x increase in compute/retrieval costs.
+*Implication*: Most AI features have negative unit economics at scale.
+
+## Services (Intervention Protocols)
+1.  **Diagnostic Call ($450)**: 30-minute rapid triage.
+2.  **Insolvency Diagnostic ($2,500)**: 60-minute deep dive + Risk Report.
+3.  **R&D Capital Audit ($7,500)**: Forensic review of engineering spend.
+4.  **AI Cost Governance ($5,000)**: Unit economics modeling for GenAI.
+
+## Contact
+*   **Email**: richard@richardewing.io
+*   **Advisory**: https://richardewing.io/advisory
+*   **Tools**: https://richardewing.io/tools

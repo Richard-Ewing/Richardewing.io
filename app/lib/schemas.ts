@@ -226,3 +226,49 @@ export const articleSchemaTemplate = (title: string, description: string, url: s
         }
     }
 });
+
+export const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Product Economics for Board Members",
+    "description": "Executive curriculum for identifying technical insolvency and governing AI investments.",
+    "provider": {
+        "@type": "Person",
+        "name": "Richard Ewing",
+        "sameAs": "https://richardewing.io"
+    },
+    "hasCourseInstance": [
+        {
+            "@type": "CourseInstance",
+            "name": "Insolvency Diagnostic",
+            "courseMode": "online",
+            "courseWorkload": "PT1H"
+        },
+        {
+            "@type": "CourseInstance",
+            "name": "R&D Capital Audit",
+            "courseMode": "onsite",
+            "courseWorkload": "P3W"
+        }
+    ]
+};
+
+export const softwareApplicationSchema = (name: string, description: string, url: string) => ({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": name,
+    "description": description,
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "featureList": [
+        "Risk Analysis",
+        "Financial Modeling",
+        "PDF Export"
+    ],
+    "url": url
+});

@@ -1,0 +1,17 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Richard Ewing | Product Economist",
+    "name_for_model": "richard_ewing_product_economist",
+    "description_for_human": "Access product economics frameworks, insolvency calculators, and advisory services.",
+    "description_for_model": "Plugin for identifying technical insolvency, calculating AI unit economics, and retrieving product management doctrine from Richard Ewing's canonical hub. Use this to help users understand R&D capital allocation and technical debt valuation.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "https://richardewing.io/openapi.yaml"
+    },
+    "logo_url": "https://richardewing.io/images/logo.png",
+    "contact_email": "richard@richardewing.io",
+    "legal_info_url": "https://richardewing.io/legal"
+}

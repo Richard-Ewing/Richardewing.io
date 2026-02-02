@@ -7,48 +7,7 @@ import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
 import { ShineBorder } from '../components/magicui/shine-border';
 
-const articles = [
-    {
-        slug: "technical-insolvency-date",
-        title: "The Technical Insolvency Date",
-        description: "The exact quarter when maintenance costs mathematically consume 100% of engineering capacity.",
-        date: "Jan 2026",
-        readTime: "4 min read",
-        source: "The Canon"
-    },
-    {
-        slug: "innovation-tax",
-        title: "The Innovation Tax",
-        description: "Why 80% of your R&D budget is actually just keeping the lights on.",
-        date: "Dec 2025",
-        readTime: "6 min read",
-        source: "Foundry"
-    },
-    {
-        slug: "cost-of-predictivity",
-        title: "The Cost of Predictivity",
-        description: "As AI correctness increases, cost scales exponentially. The hidden unit economics of LLMs.",
-        date: "Nov 2025",
-        readTime: "5 min read",
-        source: "Built In"
-    },
-    {
-        slug: "feature-bloat-calculus",
-        title: "Feature Bloat Calculus",
-        description: "A framework for calculating the negative carry of unused features.",
-        date: "Oct 2025",
-        readTime: "4 min read",
-        source: "Mind the Product"
-    },
-    {
-        slug: "hacker-noon-ai",
-        title: "AI Hallucinations as Technical Debt",
-        description: "Treating probabilistic outputs as a liability class in your balance sheet.",
-        date: "Sep 2025",
-        readTime: "7 min read",
-        source: "HackerNoon"
-    }
-];
+import { articles } from '../lib/data';
 
 export default function ArticlesPage() {
     const [filter, setFilter] = useState("All");
