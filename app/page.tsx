@@ -1,12 +1,16 @@
 'use client';
 
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { WordRotate } from './components/magicui/word-rotate';
 import { NumberTicker } from './components/magicui/number-ticker';
 import { ShineBorder } from './components/magicui/shine-border';
 import { Meteors } from './components/magicui/meteors';
 import { ScrollReveal } from './components/magicui/scroll-reveal';
 import { GlowCard } from './components/magicui/glow-card';
+import { PathSelector } from './components/path-selector';
+import { NewsletterForm } from './components/newsletter-form';
+import { StatsBar } from './components/ui/stats-bar';
 
 export default function Home() {
   return (
@@ -17,7 +21,7 @@ export default function Home() {
       <div className="absolute top-1/4 left-0 w-[200px] sm:w-[400px] h-[200px] sm:h-[400px] bg-cobalt/5 rounded-full blur-[80px] sm:blur-[100px] pointer-events-none" />
 
       {/* Hero Section */}
-      <section className="flex-1 flex flex-col justify-center max-w-4xl relative z-10 py-12 sm:py-20">
+      <section className="flex-1 flex flex-col justify-center max-w-5xl mx-auto relative z-10 py-12 sm:py-20 px-4 sm:px-6">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-mono uppercase tracking-widest mb-8 w-fit animate-pulse">
           <span className="w-2 h-2 bg-cyan-400 rounded-full" />
           Now Accepting Q1 2026 Engagements
@@ -37,54 +41,37 @@ export default function Home() {
           />
         </div>
 
-        <p className="text-lg sm:text-xl text-gray-400 max-w-2xl leading-relaxed mb-10 font-sans">
+        <p className="text-lg sm:text-xl text-gray-400 max-w-2xl leading-relaxed mb-12 font-sans">
           I'm <span className="text-white font-bold">Richard Ewing</span>, a Product Economist.
           I run forensic audits that find the capital leaks inside your AI investments—then I help you plug them.
           <span className="text-cyan-400"> No consulting theater. Just hard numbers.</span>
         </p>
 
-        {/* Call To Action */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
-            <Link
-              href="/advisory"
-              className="block bg-gradient-to-br from-red-600 to-red-800 text-white font-grotesk font-bold uppercase text-sm px-8 py-4 tracking-widest text-center hover:brightness-110 transition-all rounded-md shadow-lg shadow-red-900/20"
-            >
-              Get Your Free Audit →
-            </Link>
-          </ShineBorder>
-          <Link
-            href="/manifesto"
-            className="bg-transparent border border-cyan-500/30 text-cyan-400 font-grotesk font-bold uppercase text-sm px-8 py-4 rounded-md hover:bg-cyan-950/30 transition-all tracking-widest text-center"
-          >
-            Read My Manifesto
-          </Link>
+        {/* Path Selector (Replaces Standard Buttons) */}
+        <div className="mb-16">
+          <h3 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-6">Choose Your Path</h3>
+          <PathSelector />
         </div>
 
+        {/* Authority Stats Bar */}
+        <StatsBar
+          stats={[
+            { value: <><NumberTicker value={25} prefix="$" suffix="M" /></>, label: "ARR Scaled" },
+            { value: <><NumberTicker value={15} suffix="+" /></>, label: "Years Exp." },
+            { value: <><NumberTicker value={7} suffix="M+" /></>, label: "Users Impacted" },
+            { value: <span className="text-gold"><NumberTicker value={100} suffix="%" /></span>, label: "Independence" }
+          ]}
+          className="mb-8"
+        />
+
         {/* Social Proof */}
-        <div className="border-t border-white/10 pt-8 mb-12">
+        <div className="pt-8">
           <p className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-4">Authority Established In</p>
           <div className="flex flex-wrap items-center gap-6 opacity-60 hover:opacity-100 transition-opacity">
             <span className="text-lg font-bold text-white">CIO</span>
             <span className="text-lg font-bold text-white">Built In</span>
             <span className="text-lg font-bold text-white">Mind the Product</span>
             <span className="text-lg font-bold text-white">HackerNoon</span>
-          </div>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 border-y border-white/10 py-8">
-          <div className="text-center sm:text-left">
-            <div className="text-3xl sm:text-4xl font-grotesk font-bold text-cyan-400 mb-1"><NumberTicker value={25} prefix="$" suffix="M" /></div>
-            <div className="text-xs text-gray-500 uppercase tracking-widest font-mono">ARR Scaled</div>
-          </div>
-          <div className="text-center sm:text-left">
-            <div className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-1"><NumberTicker value={15} suffix="+" /></div>
-            <div className="text-xs text-gray-500 uppercase tracking-widest font-mono">Years Exp.</div>
-          </div>
-          <div className="text-center sm:text-left">
-            <div className="text-3xl sm:text-4xl font-grotesk font-bold text-gold mb-1"><NumberTicker value={7} suffix="M+" /></div>
-            <div className="text-xs text-gray-500 uppercase tracking-widest font-mono">Users Impacted</div>
           </div>
         </div>
       </section>
@@ -137,6 +124,51 @@ export default function Home() {
         </div>
       </ScrollReveal>
 
+      {/* Section: The Exogram (What I'm Building) */}
+      <ScrollReveal delay={100} className="relative z-10 py-20 border-t border-white/5">
+        <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="flex-1">
+            <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-6 flex items-center gap-4">
+              <span className="w-12 h-1 bg-purple-500"></span>
+              The Exogram
+            </h2>
+            <h3 className="text-xl font-mono text-purple-400 mb-4 uppercase tracking-widest">Active Development</h3>
+            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+              I don't just advise. I build. <strong className="text-white">Mnemosyne</strong> is my active research into AI memory systems and long-context reasoning.
+              It is the engine that powers my own agency.
+            </p>
+            <Link href="/exogram" className="inline-flex items-center gap-2 text-purple-400 font-bold uppercase tracking-widest hover:text-purple-300 transition-colors">
+              View Project Status <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <div className="flex-1 w-full">
+            <GlowCard className="p-8 h-full bg-purple-900/10 border-purple-500/20" glowColor="purple">
+              <div className="flex justify-between items-start mb-6">
+                <div className="text-2xl font-bold text-white font-grotesk">Mnemosyne</div>
+                <div className="px-3 py-1 bg-green-500/20 text-green-400 text-[10px] font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  Online
+                </div>
+              </div>
+              <div className="space-y-4 font-mono text-sm text-gray-400">
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span>System Load</span>
+                  <span className="text-white">42%</span>
+                </div>
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span>Memory Nodes</span>
+                  <span className="text-white">14,205</span>
+                </div>
+                <div className="flex justify-between border-b border-white/5 pb-2">
+                  <span>Last Ingestion</span>
+                  <span className="text-white">Just now</span>
+                </div>
+              </div>
+            </GlowCard>
+          </div>
+        </div>
+      </ScrollReveal>
+
       {/* Section: Governance Tiers */}
       <ScrollReveal delay={200} className="relative z-10 py-20 border-t border-white/5">
         <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-12 flex items-center gap-4">
@@ -173,15 +205,9 @@ export default function Home() {
             No fluff. Just weekly analysis of why products fail and how to fix them.
             Join 2,500+ board members and product leaders.
           </p>
-          {/* Newsletter Form placeholder - assumed component exists or inline */}
+          {/* Newsletter Form */}
           <div className="max-w-md mx-auto">
-            {/* Re-using existing NewsletterForm or a simple input for now */}
-            {/* Need to import NewsletterForm if I use it. */}
-            {/* I will use the imported component if I add the import at the top. I haven't added it yet. */}
-            {/* I will inline a simple form or link for now, or add import. */}
-            <Link href="/briefings" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-md hover:bg-cyan-400 transition-colors">
-              View Briefings & Subscribe
-            </Link>
+            <NewsletterForm buttonText="Subscribe" />
           </div>
         </div>
       </ScrollReveal>

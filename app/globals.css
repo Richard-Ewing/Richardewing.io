@@ -7,16 +7,20 @@
   --font-serif: "Playfair Display", serif;
 
   --color-obsidian: #0A0A0A;
-  --color-graphite: #1A1A1A;
+  --color-graphite: #141414;
+  /* Slightly darker for cards */
   --color-steel: #2A2A2A;
-  --color-ash: #888888;
-  --color-bone: #F5F5F5;
+  --color-ash: #B0B0B0;
+  /* Brighter secondary text */
+  --color-bone: #FFFFFF;
+  /* Pure white for primary text */
   --color-cyan: #00D4FF;
-  --color-crimson: #FF3333;
+  --color-crimson: #FF4444;
+  /* Brighter crimson */
   --color-gold: #FFD700;
 
-  --background-image-gradient-cta: linear-gradient(135deg, #FF3333, #CC0000);
-  --background-image-gradient-card: linear-gradient(180deg, #1A1A1A, #0A0A0A);
+  --background-image-gradient-cta: linear-gradient(135deg, #FF4444, #CC0000);
+  --background-image-gradient-card: linear-gradient(180deg, #141414, #0A0A0A);
 }
 
 :root {
@@ -29,29 +33,31 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  line-height: 1.7;
+  /* Increased line-height */
   overflow-x: hidden;
 }
 
-/* Responsive Typography */
+/* Responsive Typography - Base 18px */
 html {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 @media (min-width: 640px) {
   html {
-    font-size: 15px;
+    font-size: 19px;
   }
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 
 @media (min-width: 1536px) {
   html {
-    font-size: 17px;
+    font-size: 21px;
   }
 }
 
@@ -157,6 +163,37 @@ html {
   outline: 2px solid var(--color-cyan);
   outline-offset: 2px;
 }
+
+/* High Contrast Utility Classes */
+.card-primary {
+  background: var(--color-graphite);
+  border: 1px solid var(--color-steel);
+  color: var(--color-bone);
+}
+
+.card-secondary {
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-ash);
+}
+
+.cta-primary {
+  background-image: var(--background-image-gradient-cta);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cta-secondary {
+  background: transparent;
+  border: 1px solid var(--color-cyan);
+  color: var(--color-cyan);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 
 /* Mobile Touch Improvements */
 @media (hover: none) {

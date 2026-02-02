@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Space_Grotesk, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { Sidebar } from './components/sidebar';
+import { Footer } from './components/footer';
 import { personSchema, professionalServiceSchema } from './lib/schemas';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
@@ -78,6 +79,7 @@ export default function RootLayout({
           <Sidebar />
           <main className="p-4 sm:p-6 md:p-8 lg:p-16 xl:p-24 relative overflow-hidden min-h-screen">
             {children}
+            <Footer />
           </main>
         </div>
       </body>

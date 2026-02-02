@@ -41,7 +41,8 @@ export function Sidebar() {
             label: 'Intelligence', items: [
                 { href: '/system', label: '04. System' },
                 { href: '/doctrine', label: '05. Doctrine' },
-                { href: '/articles', label: '06. Canonical Hub', highlight: true },
+                { href: '/exogram', label: '06. Exogram', highlight: true },
+                { href: '/articles', label: '07. Canonical Hub' },
             ]
         },
         {
@@ -56,9 +57,9 @@ export function Sidebar() {
         },
         {
             label: 'Signal', items: [
-                { href: '/briefings', label: '07. Briefs' },
-                { href: '/book', label: '08. Book' },
-                { href: '/legal', label: '09. Legal' },
+                { href: '/briefings', label: '08. Briefs' },
+                { href: '/book', label: '09. Book' },
+                { href: '/legal', label: '10. Legal' },
             ]
         },
     ];

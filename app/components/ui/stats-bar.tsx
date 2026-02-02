@@ -3,7 +3,7 @@ import { cn } from '@/app/lib/utils';
 
 interface StatsBarProps extends HTMLAttributes<HTMLDivElement> {
     stats: {
-        value: string;
+        value: React.ReactNode;
         label: string;
     }[];
 }
