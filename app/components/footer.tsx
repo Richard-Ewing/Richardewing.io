@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { NewsletterForm } from './newsletter-form';
 
 export function Footer() {
     return (
         <footer className="border-t border-white/10 pt-16 pb-8 mt-20">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
                 <div>
                     <h4 className="font-mono text-xs text-white uppercase tracking-widest mb-6">Identity</h4>
                     <ul className="space-y-4 text-sm text-zinc-500 font-grotesk">
@@ -38,6 +39,18 @@ export function Footer() {
                         <li><Link href="/tools/aueb" className="hover:text-white transition-colors">AI Unit Economics</Link></li>
                         <li><Link href="/tools/audit-interview" className="hover:text-white transition-colors">Audit Interview</Link></li>
                     </ul>
+                </div>
+                <div className="col-span-2 md:col-span-2">
+                    <h4 className="font-mono text-xs text-emerald-400 uppercase tracking-widest mb-6">Stay Calibrated</h4>
+                    <p className="text-xs text-zinc-500 mb-4">
+                        Weekly analysis of why products fail and how to fix them.
+                    </p>
+                    <NewsletterForm
+                        placeholder="email@company.com"
+                        buttonText="Sub"
+                        className="flex-col gap-2"
+                        extraData={{ source: 'footer' }}
+                    />
                 </div>
             </div>
 

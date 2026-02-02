@@ -80,7 +80,15 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                     Get a personalized deep-dive with actionable recommendations from a Product Economist.
                 </p>
 
-                <NewsletterForm buttonText="Get Analysis" />
+                <NewsletterForm
+                    buttonText="Get Analysis"
+                    extraData={{
+                        tool_name: toolName,
+                        score: score,
+                        urgency: contextCTA.urgency,
+                        source: 'conversion_panel'
+                    }}
+                />
 
                 <p className="text-xs text-zinc-600 mt-3">
                     No spam. Unsubscribe anytime. Your data is secure.
