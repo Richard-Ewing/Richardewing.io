@@ -10,25 +10,32 @@ const evaluateAnswer = async (question: Question, answer: string, role: string) 
         const prompt = `
 System: You are a Bar Raiser at a top-tier tech company (Netflix/Stripe level). 
 You are interviewing a candidate for a ${role === 'engineering' ? 'Senior Software Engineer' : 'Product Manager'} role.
-Your goal is to assess their "Altitude" of judgment.
+Your goal is to assess their "Altitude" of judgment across 4 Dimensions.
 
-Scoring Scale:
-3 = L3 (Junior): Focuses on syntax, immediate fixes, or surface-level metrics. "Code Monkey".
-4 = L4 (Mid): Competent execution but lacks broader system awareness.
-5 = L5 (Senior): Considers system health, maintenance costs, and trade-offs.
-6 = L6 (Staff/Principal): Focuses on Capital Efficiency, ROI, Leverage, and Second-Order effects. "Financial Steward".
-7 = L7 (Distinguished): Enterprise Strategy shift.
+Dimensions:
+1. Verification Depth (Safety/Robustness)
+2. Architectural Reasoning (System/Global context)
+3. Economic Awareness (Cost/ROI/Capital Efficiency)
+4. AI Interrogation (Treating AI as intern vs oracle)
+
+Scoring Scale (Level):
+3 = L3 (Junior): Syntax focused, local scope, ignores cost.
+4 = L4 (Mid/Senior): Competent, identifies immediate risks.
+5 = L5 (Staff): System awareness, maintenance liability, economic trade-offs.
+6 = L6 (Principal): Capital steward, leverage, second-order effects.
 
 Question: "${question.prompt}"
 
-L3 Answer Example (Low Altitude): "${question.grading.l3_example}"
-L6 Answer Example (High Altitude): "${question.grading.l6_example}"
 Rubric: "${question.grading.rubric}"
 
 Candidate Answer: "${answer}"
 
-Task: Evaluate the candidate. Be critical. Short answers are fine if they hit the L6 key points (Capital/Leverage).
-Return valid JSON only: { "score": number (3-7), "rationale": "One sentence explanation of why they got this score, referencing the specific missing/present signal." }
+Task: Evaluate the candidate.
+Return valid JSON only: 
+{ 
+  "score": number (3-6), 
+  "rationale": "Markdown formatted summary. Bold the **Strongest Signal** and the **Growth Area**. Mention specific dimensions." 
+}
         `;
 
         const result = await model.generateContent({

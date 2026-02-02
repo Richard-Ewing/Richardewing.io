@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono, Playfair_Display } from 'next/font/google';
+import { Inter, Space_Grotesk, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { Sidebar } from './components/sidebar';
+import { personSchema, professionalServiceSchema } from './lib/schemas';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk' });
 const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 const serif = Playfair_Display({ subsets: ['latin'], variable: '--font-serif' });
 
@@ -62,8 +64,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable} ${serif.variable}`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${mono.variable} ${serif.variable}`}>
       <body className="overflow-x-hidden bg-obsidian text-gray-300 font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
+        />
         <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
           <Sidebar />
           <main className="p-4 sm:p-6 md:p-8 lg:p-16 xl:p-24 relative overflow-hidden min-h-screen">

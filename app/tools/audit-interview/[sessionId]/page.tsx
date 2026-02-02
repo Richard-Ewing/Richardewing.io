@@ -352,9 +352,9 @@ export default function SessionCommandCenter() {
     // --- RENDER FINAL ---
     if (session.finalized && analytics) {
         // Use real analytics from backend
-        // Fallback logic in case 'decision' is missing from old session data
-        const isHire = analytics.decision === 'HIRE' || (!analytics.decision && (Array.isArray(analytics.scores) ? analytics.total >= 25 : false));
-        const decisionText = analytics.decision || (isHire ? 'HIRE' : 'NO HIRE');
+        // Fallback or legacy handling
+        const isHire = analytics.decision === 'HIRE';
+        const decisionText = analytics.decision;
 
         const statusColor = isHire ? 'text-emerald-500' : 'text-red-500';
         const statusBorder = isHire ? 'border-emerald-500/20' : 'border-red-500/20';
@@ -372,36 +372,72 @@ export default function SessionCommandCenter() {
                             Assessment Complete
                         </div>
 
-                        <div className={`text-7xl sm:text-9xl font-black tracking-tighter ${statusColor} mb-6 drop-shadow-2xl`}>
-                            {decisionText}
+                        <div className={`text-6xl sm:text-8xl font-black tracking-tighter ${statusColor} mb-6 drop-shadow-2xl`}>
+                            {analytics.verdict.split(':')[0]}
                         </div>
 
-                        <div className="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight">
-                            {analytics.verdict}
+                        <div className="text-xl sm:text-2xl font-bold font-mono text-white tracking-tight">
+                            {analytics.verdict.split(':')[1]}
                         </div>
                     </div>
 
+                    {/* DIMENSIONS */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {analytics.scores.map((s: any, i: number) => (
-                            <div key={i} className="bg-[#161b22] border border-[#30363d] p-6 rounded-xl hover:border-[#8b949e] transition-colors group">
-                                <div className="flex justify-between items-center mb-4">
-                                    <span className="text-xs font-mono uppercase text-[#8b949e] group-hover:text-white transition-colors">Phase {i + 1}: {s.phase}</span>
-                                    <span className={`text-xs font-bold ${s.score >= 5 ? 'text-emerald-400' : 'text-red-400'} bg-white/5 px-2 py-1 rounded`}>Score: {s.score}/7</span>
-                                </div>
-                                <p className={`text-sm text-zinc-400 leading-relaxed italic pl-4 border-l-2 border-[#30363d] group-hover:${theme.border.replace('border-', 'border-')} transition-colors`}>
-                                    &quot;{s.evaluation || s.rationale}&quot;
-                                </p>
+                        <div className="bg-[#161b22] border border-[#30363d] p-6 rounded-xl">
+                            <h3 className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Phase Breakdown</h3>
+                            <div className="space-y-4">
+                                {analytics.scores.map((s: any, i: number) => (
+                                    <div key={i} className="flex justify-between items-center border-b border-white/5 pb-2 last:border-0">
+                                        <span className="text-sm font-mono text-zinc-300">{s.phase}</span>
+                                        <span className={`text-xs font-bold ${s.score >= 5 ? 'text-emerald-400' : 'text-zinc-400'} bg-white/5 px-2 py-1 rounded`}>
+                                            L{s.score}
+                                        </span>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+
+                        <div className="bg-[#161b22] border border-[#30363d] p-6 rounded-xl">
+                            <h3 className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Judgment Signal</h3>
+                            <p className="text-sm text-zinc-400 leading-relaxed italic">
+                                "{analytics.rationale}"
+                            </p>
+                            <div className="mt-4 pt-4 border-t border-white/5">
+                                <span className="text-xs text-emerald-400 uppercase tracking-widest">Strengths Detected:</span>
+                                <div className="flex flex-wrap gap-2 mt-2">
+                                    {['System', 'Verification', 'Economics'].map(tag => (
+                                        <span key={tag} className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] rounded">{tag}</span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="flex justify-center pt-8">
-                        <button
-                            onClick={() => (window.location.href = '/tools/audit-interview')}
-                            className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-200 transition-colors shadow-xl"
-                        >
-                            Run Another Protocol
-                        </button>
+                    <div className="flex flex-col items-center pt-8 gap-6">
+                        {/* REVISED CTA */}
+                        <div className="w-full max-w-2xl bg-[#0f1115] border border-emerald-500/30 rounded-xl p-8 text-center relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-cyan-500"></div>
+                            <h4 className="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-2">⚠ The Protocol, Not The Assessment</h4>
+                            <p className="text-zinc-400 text-sm mb-6 max-w-lg mx-auto">
+                                This tool demonstrates the methodology. In a live audit, I evaluate the <strong>hesitation</strong>—where candidates pause signals judgment.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button
+                                    onClick={() => (window.location.href = '/tools/audit-interview')}
+                                    className="px-6 py-3 bg-zinc-800 text-white font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-zinc-700 transition-colors"
+                                >
+                                    Run Another Proto
+                                </button>
+                                <a
+                                    href="https://richardewing.io/advisory"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-emerald-400 transition-colors shadow-lg hover:shadow-emerald-500/20"
+                                >
+                                    Book Hiring Audit ($2,500)
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -433,7 +469,7 @@ export default function SessionCommandCenter() {
                     <div className="h-1 w-full bg-zinc-900 mt-4 rounded-full overflow-hidden">
                         <div
                             className={`h-full transition-all duration-1000 ${timeLeft < 60 ? 'bg-red-500' : 'bg-zinc-500'}`}
-                            style={{ width: `${(timeLeft / 600) * 100}%` }}
+                            style={{ width: `${(timeLeft / 1200) * 100}%` }}
                         ></div>
                     </div>
                 </div>
@@ -457,7 +493,7 @@ export default function SessionCommandCenter() {
                                         {p}
                                     </h3>
                                     <div className="text-[10px] font-mono text-zinc-600 mt-0.5">
-                                        Scenario {String(i + 1).padStart(2, '0')}
+                                        Phase {String(i + 1).padStart(2, '0')}
                                     </div>
                                 </div>
                             );
@@ -479,19 +515,47 @@ export default function SessionCommandCenter() {
                                     <span className={`w-1.5 h-1.5 rounded-full bg-current animate-pulse`}></span>
                                     Active Protocol
                                 </div>
-                                <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 tracking-tight leading-tight">
-                                    {scenario ? scenario.title : "Loading Scenario..."}
+                                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight leading-tight">
+                                    {scenario ? scenario.prompt.split('\n')[0] : "Loading..."}
                                 </h2>
-                                <p className="text-zinc-400 text-lg leading-relaxed whitespace-pre-wrap">
+                                <div className="text-zinc-400 text-lg leading-relaxed whitespace-pre-wrap bg-white/5 p-6 rounded-lg border border-white/5">
                                     {scenario ? scenario.prompt : "Decrypting mission parameters..."}
-                                </p>
+                                </div>
                             </div>
 
                             {/* ARTIFACT DISPLAY */}
                             {scenario && (
-                                <GlowCard className="bg-[#0a0a0a]/50 backdrop-blur-sm" glowColor={theme.glow as any}>
-                                    {renderArtifact()}
-                                </GlowCard>
+                                <div className="space-y-6">
+                                    {scenario.chart_type === 'code_snippet' && (
+                                        <div className="w-full bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden font-mono text-xs sm:text-sm relative group">
+                                            <div className="flex items-center px-4 py-2 border-b border-[#30363d] bg-[#161b22]">
+                                                <div className="text-zinc-500 text-[10px] uppercase tracking-widest">src/processor.py</div>
+                                            </div>
+                                            <pre className="p-4 overflow-x-auto text-zinc-300">
+                                                <code>{scenario.code}</code>
+                                            </pre>
+                                        </div>
+                                    )}
+
+                                    {scenario.chart_type === 'dashboard' && scenario.chart_data && (
+                                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                                            {scenario.chart_data.metrics.map((m: any, i: number) => (
+                                                <div key={i} className="bg-[#161b22] border border-white/10 p-4 rounded-lg">
+                                                    <div className="text-[10px] text-zinc-500 uppercase tracking-widest mb-1">{m.label}</div>
+                                                    <div className={`text-xl font-mono font-bold ${m.trend === 'up' && m.label.includes('Cost') ? 'text-red-500' :
+                                                        m.trend === 'down' && m.label.includes('Margin') ? 'text-red-500' : 'text-white'
+                                                        }`}>
+                                                        {m.value}
+                                                    </div>
+                                                    <div className="text-[10px] text-zinc-600 mt-1">{m.context}</div>
+                                                </div>
+                                            ))}
+                                            <div className="col-span-full mt-2 text-center text-xs text-zinc-500 font-mono bg-white/5 p-2 rounded">
+                                                STATUS: {scenario.chart_data.status}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                             )}
 
                             {/* INTERACTION AREA */}

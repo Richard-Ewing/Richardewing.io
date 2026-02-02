@@ -15,7 +15,7 @@ export default function AdvisoryPage() {
 
             {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                <span>Intervention</span><span>/</span><span className="text-danger font-bold">Advisory</span>
+                <span>Intervention</span><span>/</span><span className="text-crimson font-bold">Advisory</span>
             </div>
 
             {/* Hero */}
@@ -26,31 +26,31 @@ export default function AdvisoryPage() {
                     <div className="relative">
                         {/* Urgency Badge */}
                         <div className="flex items-center gap-2 mb-6">
-                            <div className="w-2 h-2 bg-danger rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-danger uppercase tracking-widest">Limited Availability • Q1 2026</span>
+                            <div className="w-2 h-2 bg-crimson rounded-full animate-pulse" />
+                            <span className="font-mono text-xs text-crimson uppercase tracking-widest">Limited Availability • Q1 2026</span>
                         </div>
 
                         <span className="font-mono text-zinc-500 text-xs uppercase tracking-[0.3em] mb-4 block">Access Levels</span>
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4">
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-grotesk font-bold text-white tracking-tight leading-tight mb-4">
                             Intervention<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Protocols.</span>
                         </h1>
                         <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-8">
-                            I don't do "consulting theater." These are surgical interventions designed to stop the bleeding and install permanent capital discipline.
+                            I sell truth, not hours. These are surgical interventions designed to stop the bleeding and install permanent capital discipline.
                         </p>
 
                         {/* Stats */}
                         <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
                             <div className="text-center">
-                                <div className="text-2xl sm:text-3xl font-bold text-cyan-400"><NumberTicker value={200} suffix="%" /></div>
+                                <div className="text-2xl sm:text-3xl font-bold text-cyan-400 tabular-nums"><NumberTicker value={200} suffix="%" /></div>
                                 <div className="text-[10px] font-mono text-zinc-500 uppercase">Avg Revenue Lift</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl sm:text-3xl font-bold text-white"><NumberTicker value={14} /></div>
+                                <div className="text-2xl sm:text-3xl font-bold text-white tabular-nums"><NumberTicker value={14} /></div>
                                 <div className="text-[10px] font-mono text-zinc-500 uppercase">Days to Diagnosis</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl sm:text-3xl font-bold text-gold"><NumberTicker value={9} suffix="x" /></div>
+                                <div className="text-2xl sm:text-3xl font-bold text-gold tabular-nums"><NumberTicker value={9} suffix="x" /></div>
                                 <div className="text-[10px] font-mono text-zinc-500 uppercase">Avg ROI</div>
                             </div>
                         </div>
@@ -60,143 +60,97 @@ export default function AdvisoryPage() {
 
             {/* Service Levels */}
             <ScrollReveal delay={100}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
-                    {/* Level 01 */}
-                    <GlowCard className="p-6 relative overflow-hidden" glowColor="cyan">
-                        <div className="absolute top-0 right-0 bg-cyan-500/10 text-cyan-400 px-3 py-1 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg">
-                            Most Popular
+                <div className="grid grid-cols-1 gap-6 mb-12">
+
+                    {/* Level 1: Diagnostic Call */}
+                    <GlowCard className="p-6 sm:p-8" glowColor="cyan">
+                        <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
+                            <h3 className="text-xl font-bold text-white font-grotesk">Diagnostic Call</h3>
+                            <span className="text-2xl font-bold text-cyan-400 font-mono">$450</span>
                         </div>
-                        <div className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-3 pb-2 border-b border-white/10 mt-4">
-                            Level 01 • Retainer
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-2">Fractional CPO</h3>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                            Embed as interim Chief Product Officer. Restructure org chart, roadmap governance, and capital allocation.
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
+                            30-Minute Rapid Assessment. You describe the situation, I tell you if it's on fire. No pitch, just triage.
                         </p>
-                        <div className="flex items-end gap-2">
-                            <span className="text-3xl font-bold text-white">$25k</span>
-                            <span className="text-zinc-600 text-xs uppercase tracking-widest mb-1">/ Month</span>
-                        </div>
+                        <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
+                            Book Diagnostic
+                        </a>
                     </GlowCard>
 
-                    {/* Level 02 */}
-                    <GlowCard className="p-6" glowColor="cobalt">
-                        <div className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-3 pb-2 border-b border-white/10">
-                            Level 02 • Audit
+                    {/* Level 2: Insolvency Diagnostic */}
+                    <GlowCard className="p-6 sm:p-8 relative overflow-hidden" glowColor="red">
+                        <div className="absolute top-0 right-0 bg-red-600 text-white px-3 py-1 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg">
+                            Most Critical
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-2">Due Diligence</h3>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                            Technical and economic audit of software assets for PE/VC investors pre-deal. The "Truth Report."
+                        <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
+                            <h3 className="text-xl font-bold text-white font-grotesk">Insolvency Diagnostic</h3>
+                            <span className="text-2xl font-bold text-red-500 font-mono">$2,500</span>
+                        </div>
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
+                            60-minute deep dive. Includes written Risk Exposure Report detailing red/yellow/green flags across 5 failure modes.
                         </p>
-                        <div className="flex items-end gap-2">
-                            <span className="text-3xl font-bold text-white">$15k</span>
-                            <span className="text-zinc-600 text-xs uppercase tracking-widest mb-1">/ Week</span>
-                        </div>
+                        <a href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-red-600 text-white font-bold uppercase text-xs py-3 rounded hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                            Schedule Deep Dive
+                        </a>
                     </GlowCard>
 
-                    {/* Level 03 */}
-                    <GlowCard className="p-6 relative overflow-hidden" glowColor="danger">
-                        <div className="absolute top-0 right-0 bg-red-500/10 text-red-400 px-3 py-1 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg">
-                            Highest Impact
+                    {/* Level 3: R&D Capital Audit */}
+                    <GlowCard className="p-6 sm:p-8" glowColor="cobalt">
+                        <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
+                            <h3 className="text-xl font-bold text-white font-grotesk">R&D Capital Audit</h3>
+                            <span className="text-2xl font-bold text-white font-mono">$7,500</span>
                         </div>
-                        <div className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-3 pb-2 border-b border-white/10 mt-4">
-                            Level 03 • Surgery
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-2">Turnaround</h3>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                            Full Q-PEP implementation to reverse unit-economic insolvency. The "Kill Switch" protocol.
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
+                            Full forensic review of engineering spend vs. ROI. 2-3 week engagement delivering a complete Audit Package and Turnaround Plan.
                         </p>
-                        <div className="flex items-end gap-2">
-                            <span className="text-3xl font-bold text-white">$40k</span>
-                            <span className="text-zinc-600 text-xs uppercase tracking-widest mb-1">/ Month</span>
-                        </div>
+                        <a href="https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-white/5 border border-white/10 text-white font-bold uppercase text-xs py-3 rounded hover:bg-white/10 transition-all">
+                            Commission Audit
+                        </a>
                     </GlowCard>
 
-                    {/* Level 04 */}
-                    <GlowCard className="p-6" glowColor="gold">
-                        <div className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-3 pb-2 border-b border-white/10">
-                            Level 04 • Syllabus
+                    {/* Level 4: AI Cost Governance */}
+                    <GlowCard className="p-6 sm:p-8" glowColor="cyan">
+                        <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
+                            <h3 className="text-xl font-bold text-white font-grotesk">AI Cost Governance</h3>
+                            <span className="text-2xl font-bold text-cyan-400 font-mono">$5,000</span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-2">Private Workshops</h3>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                            Two-day intensive workshop for your exec team. "How to stop burning cash and start printing it."
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
+                            Dedicated AI economics analysis. Unit economics model, collapse point calculation, and margin protection framework.
                         </p>
-                        <div className="flex items-end gap-2">
-                            <span className="text-3xl font-bold text-white">$15k</span>
-                            <span className="text-zinc-600 text-xs uppercase tracking-widest mb-1">Per Session</span>
+                        <a href="https://buy.stripe.com/9B64gs4YK070dS57W02B201" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
+                            Secure Governance
+                        </a>
+                    </GlowCard>
+
+                    {/* Level 5: Retainer */}
+                    <GlowCard className="p-6 sm:p-8" glowColor="gold">
+                        <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
+                            <h3 className="text-xl font-bold text-white font-grotesk">Independent Oversight</h3>
+                            <span className="text-2xl font-bold text-gold font-mono">$5,000<span className="text-sm text-zinc-500">/mo</span></span>
                         </div>
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
+                            Board-level economic sanity checks. Asynchronous access for critical buy/build/kill decisions. Minimum 3-month commitment.
+                        </p>
+                        <a href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gold/10 border border-gold/20 text-gold font-bold uppercase text-xs py-3 rounded hover:bg-gold/20 transition-all">
+                            Initialize Retainer
+                        </a>
                     </GlowCard>
                 </div>
             </ScrollReveal>
 
-            {/* Tools CTA */}
+            {/* Tools CTA Cross-sell */}
             <ScrollReveal delay={200}>
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-cyan-500">
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                         <div>
-                            <div className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-2">Free Diagnostic Tools</div>
-                            <h3 className="text-xl font-bold text-white">Try Before You Buy</h3>
-                            <p className="text-zinc-400 text-sm mt-2">Run a free audit on your backlog or valuation scenarios.</p>
+                            <div className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-2">Not Ready for Paid?</div>
+                            <h3 className="text-xl font-bold text-white font-grotesk">Run a Free Self-Audit</h3>
+                            <p className="text-zinc-400 text-sm mt-2">Use my diagnostic tools to generate your own risk report.</p>
                         </div>
-                        <div className="flex flex-wrap gap-3">
-                            <Link href="/tools" className="px-4 py-2 bg-white/10 border border-white/20 text-white text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-white/20 transition">
-                                All Tools →
-                            </Link>
-                            <Link href="/tools/pdi" className="px-4 py-2 bg-red-600/20 border border-red-600/40 text-red-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-red-600/30 transition">
-                                Debt Audit →
-                            </Link>
-                            <Link href="/tools/aueb" className="px-4 py-2 bg-violet-500/20 border border-violet-500/40 text-violet-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-violet-500/30 transition">
-                                AI Costs →
-                            </Link>
-                            <Link href="/tools/aper" className="px-4 py-2 bg-yellow-500/20 border border-yellow-500/40 text-yellow-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-yellow-500/30 transition">
-                                Team Efficiency →
-                            </Link>
-                            <Link href="/tools/audit-interview" className="px-4 py-2 bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-emerald-500/30 transition">
-                                Audit Interview →
-                            </Link>
-                        </div>
+                        <Link href="/tools" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-cyan-400 transition-colors">
+                            Access Tools
+                        </Link>
                     </div>
                 </div>
-            </ScrollReveal>
-
-            {/* Contact Section */}
-            <ScrollReveal delay={300}>
-                <section className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10">
-                    <div className="text-center mb-8">
-                        <span className="font-mono text-cyan-500 text-xs uppercase tracking-widest mb-2 block">Direct Line</span>
-                        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Initiate Protocol</h2>
-                        <p className="text-zinc-400">Schedule a 30-minute diagnostic call. No pitch deck, no upsell.</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                        <a href="mailto:richardewing1@gmail.com" className="p-4 border border-white/10 rounded-xl text-center hover:border-cyan-500/30 hover:bg-cyan-500/5 transition group">
-                            <div className="text-2xl mb-2">✉️</div>
-                            <div className="text-white font-bold text-sm group-hover:text-cyan-400 transition">Email</div>
-                            <div className="text-zinc-500 text-xs font-mono mt-1">richardewing1@gmail.com</div>
-                        </a>
-                        <a href="tel:+13604806052" className="p-4 border border-white/10 rounded-xl text-center hover:border-cyan-500/30 hover:bg-cyan-500/5 transition group">
-                            <div className="text-2xl mb-2">📞</div>
-                            <div className="text-white font-bold text-sm group-hover:text-cyan-400 transition">Phone</div>
-                            <div className="text-zinc-500 text-xs font-mono mt-1">(360) 480-6052</div>
-                        </a>
-                        <a href="https://www.linkedin.com/in/richard-ewing-mba" target="_blank" rel="noopener noreferrer" className="p-4 border border-white/10 rounded-xl text-center hover:border-cyan-500/30 hover:bg-cyan-500/5 transition group">
-                            <div className="text-2xl mb-2">💼</div>
-                            <div className="text-white font-bold text-sm group-hover:text-cyan-400 transition">LinkedIn</div>
-                            <div className="text-zinc-500 text-xs font-mono mt-1">Connect</div>
-                        </a>
-                    </div>
-
-                    <div className="text-center">
-                        <ShineBorder borderColor="rgba(220, 38, 38, 0.6)" duration={2}>
-                            <a
-                                href="mailto:richardewing1@gmail.com?subject=Advisory%20Inquiry"
-                                className="inline-block bg-danger text-white font-bold uppercase text-sm px-10 py-4 tracking-widest hover:bg-red-600 transition-colors"
-                            >
-                                Request Intervention →
-                            </a>
-                        </ShineBorder>
-                    </div>
-                </section>
             </ScrollReveal>
         </div>
     );

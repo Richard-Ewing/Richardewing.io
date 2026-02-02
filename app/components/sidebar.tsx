@@ -41,6 +41,7 @@ export function Sidebar() {
             label: 'Intelligence', items: [
                 { href: '/system', label: '04. System' },
                 { href: '/doctrine', label: '05. Doctrine' },
+                { href: '/articles', label: '06. Canonical Hub', highlight: true },
             ]
         },
         {
@@ -55,9 +56,9 @@ export function Sidebar() {
         },
         {
             label: 'Signal', items: [
-                { href: '/briefings', label: '06. Briefs' },
-                { href: '/book', label: '07. Book' },
-                { href: '/legal', label: '08. Legal' },
+                { href: '/briefings', label: '07. Briefs' },
+                { href: '/book', label: '08. Book' },
+                { href: '/legal', label: '09. Legal' },
             ]
         },
     ];

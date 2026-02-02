@@ -2,21 +2,26 @@
 
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
+  --font-grotesk: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   --font-serif: "Playfair Display", serif;
 
-  --color-obsidian: #050505;
-  --color-surface: #0f0f0f;
-  --color-titanium: #C0C0C0;
-  --color-cobalt: #0055FF;
-  --color-cyan: #00F0FF;
-  --color-danger: #FF3333;
-  --color-gold: #D4AF37;
+  --color-obsidian: #0A0A0A;
+  --color-graphite: #1A1A1A;
+  --color-steel: #2A2A2A;
+  --color-ash: #888888;
+  --color-bone: #F5F5F5;
+  --color-cyan: #00D4FF;
+  --color-crimson: #FF3333;
+  --color-gold: #FFD700;
+
+  --background-image-gradient-cta: linear-gradient(135deg, #FF3333, #CC0000);
+  --background-image-gradient-card: linear-gradient(180deg, #1A1A1A, #0A0A0A);
 }
 
 :root {
-  --background: #050505;
-  --foreground: #e4e4e7;
+  --background: var(--color-obsidian);
+  --foreground: var(--color-bone);
 }
 
 /* Base Styles */

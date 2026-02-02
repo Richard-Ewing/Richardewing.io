@@ -50,7 +50,7 @@ export default function BriefingsPage() {
             <div className="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
 
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-gray-600 uppercase tracking-widest">
                 <span>Signal</span><span>/</span><span className="text-white font-bold">Briefings</span>
             </div>
 
@@ -60,11 +60,11 @@ export default function BriefingsPage() {
 
                     <div className="relative">
                         <span className="font-mono text-cyan-400 text-xs uppercase tracking-[0.3em] mb-4 block">The Canon</span>
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4">
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-grotesk font-bold text-white tracking-tight leading-tight mb-4">
                             Executive<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Briefings.</span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl leading-relaxed">
+                        <p className="text-lg sm:text-xl text-gray-400 max-w-2xl leading-relaxed">
                             Dense, actionable intelligence for leaders who don't have time for "thought leadership."
                             <span className="text-white font-bold"> Read time: 5-10 minutes each.</span>
                         </p>

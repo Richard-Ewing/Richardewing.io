@@ -175,22 +175,20 @@ export default function ProtocolInitialization() {
                     {/* THE GAUNTLET (Methodology) */}
                     <div className="py-20 border-t border-white/5">
                         <div className="text-center mb-12">
-                            <h3 className="text-2xl font-bold text-white mb-2">The 5-Phase Calibration Standard</h3>
+                            <h3 className="text-2xl font-bold text-white mb-2">The 3-Phase Protocol</h3>
                             <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest">Every candidate runs the same simulation</p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {[
-                                { id: '01', title: 'The Signal', desc: 'Detect ambiguity in metrics before touching code.', color: 'emerald' },
-                                { id: '02', title: 'The Audit', desc: 'Verify AI artifacts for "Subprime" debt and toxicity.', color: 'cyan' },
-                                { id: '03', title: 'The Triage', desc: 'Prioritize "Uptime" vs "Revenue" under fire.', color: 'indigo' },
-                                { id: '04', title: 'The Arch.', desc: 'Predict second-order effects of architectural changes.', color: 'violet' },
-                                { id: '05', title: 'The Defense', desc: 'Defend capital allocation against hostile stakeholders.', color: 'rose' },
+                                { id: '01', title: 'Orientation', desc: 'Identify the primary constraint before touching code.', color: 'emerald' },
+                                { id: '02', title: 'The Audit', desc: 'Verify AI logic for "Memory Bombs" and hidden debt.', color: 'cyan' },
+                                { id: '03', title: 'The Defense', desc: 'Prioritize one fix and explicitly defer the rest.', color: 'indigo' },
                             ].map((phase) => (
                                 <div key={phase.id} className="p-6 bg-[#0f1115] border border-white/10 rounded-xl hover:border-white/20 transition-all hover:-translate-y-1 group">
                                     <div className={`text-4xl font-mono font-bold text-white/10 mb-4 group-hover:text-${phase.color}-500/20 transition-colors`}>{phase.id}</div>
                                     <div className="text-sm font-bold text-white uppercase tracking-wider mb-2">{phase.title}</div>
-                                    <div className="text-xs text-zinc-500 leading-relaxed h-16">{phase.desc}</div>
+                                    <div className="text-xs text-zinc-500 leading-relaxed">{phase.desc}</div>
                                 </div>
                             ))}
                         </div>
@@ -200,7 +198,7 @@ export default function ProtocolInitialization() {
                     {/* UNIVERSAL LEVELING MATRIX (Outcome) */}
                     <div className="py-20 border-t border-white/5">
                         <div className="text-center mb-12">
-                            <h3 className="text-2xl font-bold text-white mb-2">Universal Leveling Matrix (L3 - L8)</h3>
+                            <h3 className="text-2xl font-bold text-white mb-2">Universal Leveling Matrix (L3 - L6)</h3>
                             <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest">Enterprise-Grade Assessment Standard</p>
                         </div>
 
@@ -215,12 +213,10 @@ export default function ProtocolInitialization() {
                                 </thead>
                                 <tbody className="divide-y divide-white/5">
                                     {[
-                                        { l: 'L3', d: 'Associate / APM', s: 'Syntax Logic. Can they identify why the code is broken?' },
-                                        { l: 'L4', d: 'Mid-Level / PM', s: 'Feature Scope. Can they ship without breaking UX?' },
-                                        { l: 'L5', d: 'Senior / SPM', s: 'Unit Economics. Can they prevent "Cloud Shock"?' },
-                                        { l: 'L6', d: 'Staff / GPM', s: 'System Solvency. Can they prevent collapse at scale?' },
-                                        { l: 'L7', d: 'Principal / Director', s: 'Strategy Shift. Can they realign the entire org?' }, // Added L7
-                                        { l: 'L8', d: 'Distinguished / VP', s: 'Capital Governance. Can they align engineering with EV?' }, // Shifted/Refined L8
+                                        { l: 'L3', d: 'Senior Engineer / Senior PM', s: 'Local Scope. Can they identify the core liability?' },
+                                        { l: 'L4', d: 'Staff Engineer / Principal PM', s: 'System Scope. Can they prevent failure at scale?' },
+                                        { l: 'L5', d: 'Principal Engineer / Director', s: 'Economic Scope. Can they maximize Capital Efficiency?' },
+                                        { l: 'L6', d: 'Distinguished / VP', s: 'Visionary Scope. Can they align strategy with solvency?' },
                                     ].map((row, i) => (
                                         <tr key={i} className="hover:bg-white/5 transition-colors group">
                                             <td className="py-4 px-6 font-bold text-white group-hover:text-emerald-400 transition-colors">{row.l}</td>

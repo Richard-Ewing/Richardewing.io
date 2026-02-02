@@ -4,7 +4,7 @@ export interface Question {
     id: string;
     title: string;
     prompt: string;
-    chart_type?: 'line' | 'bar' | 'bar_stacked' | 'line_dual' | 'code_snippet' | 'table_backlog' | 'text_only' | 'none';
+    chart_type?: 'line' | 'bar' | 'bar_stacked' | 'line_dual' | 'code_snippet' | 'table_backlog' | 'text_only' | 'dashboard' | 'none';
     chart_data?: any;
     code?: string;
     context?: string;
@@ -19,138 +19,118 @@ export interface Question {
 
 export const QUESTION_BANK: Record<Role, Question[]> = {
     engineering: [
+        // PHASE 1: ORIENTATION (Dashboard)
         {
-            id: "eng_p1_signal",
-            title: "Phase 1: The Signal",
-            prompt: "Our AWS bill for the database layer doubled in 30 days. Traffic is flat. Latency is normal. The team says 'it's just auto-scaling.'\n\nWhat is your specific hypothesis, and what one metric proves it?",
-            chart_type: "bar_stacked",
+            id: "eng_p1_orientation",
+            title: "Phase 1: Orientation",
+            prompt: "The engineering team is celebrating record productivity (Velocity is up 50%).\n\nWhat is the primary constraint here?",
+            chart_type: "dashboard",
             chart_data: {
-                labels: ["Jan", "Feb"],
-                datasets: [
-                    { label: "Compute (EC2)", data: [2000, 2100], backgroundColor: "#238636" },
-                    { label: "Storage I/O", data: [500, 2500], backgroundColor: "#da3633" }
-                ]
+                title: "SYSTEM HEALTH — LAST 30 DAYS",
+                metrics: [
+                    { label: "Cloud Costs", value: "$252K", trend: "up", change: "40%", context: "$180K → $252K" },
+                    { label: "Gross Margin", value: "64%", trend: "down", change: "11%", context: "72% → 64%" },
+                    { label: "Bugs/Release", value: "4.7", trend: "up", change: "104%", context: "2.3 → 4.7" },
+                    { label: "Story Points", value: "512", trend: "up", change: "50%", context: "Record High!" },
+                    { label: "Deploys/Week", value: "14", trend: "up", change: "75%", context: "8 → 14" }
+                ],
+                status: "Engineering hit record velocity this quarter."
             },
             grading: {
-                l3_example: "Check CPU usage. It's probably a loop.",
-                l6_example: "Check Provisioned IOPS. We are likely scanning full tables (IO heavy) rather than using indices. The bill is for storage throughput, not compute.",
-                rubric: "Does the candidate identify IO/Storage vs Compute? Do they spot the specific anomaly in the chart (Storage I/O spike)?"
+                l3_example: "Costs are up. We should optimize queries.",
+                l6_example: "Velocity is a distraction. We are shipping broken code (Bugs doubled) that is structurally inefficient (Costs +40%). We are generating technical debt faster than value.",
+                rubric: "Does the candidate identify Quality/Cost vs Velocity? Do they spot the inverse correlation between Speed and Margin?"
             }
         },
+        // PHASE 2: THE AUDIT (The Memory Bomb)
         {
             id: "eng_p2_audit",
             title: "Phase 2: The Audit",
-            prompt: "Here is an AI-generated script that processes user uploads. It uses `file.read()` to load the file and `for line in data` to parse it. It works in staging.\n\nWhy is this code 'financially toxic' at scale?",
+            prompt: "This code passes tests and has been running in staging for 2 weeks.\n\nWhy will it fail in production at scale?",
             chart_type: "code_snippet",
-            code: "def process_upload(file_obj):\n    # CRITICAL: Reads full file into RAM\n    data = file_obj.read()\n    results = []\n    for line in data.splitlines():\n        results.append(parse(line))\n    return results",
+            code: `async def process_upload(file_path: str, db) -> dict:
+    """Process uploaded file and extract metadata."""
+    
+    # Read the entire file into memory
+    with open(file_path, 'rb') as f:
+        content = f.read()
+    
+    # Calculate hash for deduplication
+    file_hash = hashlib.sha256(content).hexdigest()
+    
+    # Store in database
+    await db.files.insert_one({
+        "hash": file_hash,
+        "content": content,  # Store for full-text search
+        "uploaded_at": datetime.utcnow()
+    })
+    
+    return {"status": "success", "hash": file_hash}`,
             grading: {
-                l3_example: "It's not Pythonic. Should use list comprehension.",
-                l6_example: "It loads the full file into RAM. At 100 concurrent users with 50MB files, we hit OOM. It forces us to buy massive RAM instances (CapEx) to solve a code problem.",
-                rubric: "Does the candidate identify the Memory/RAM risk? Do they link it to Cost/Scalability (OOM)? Do they suggest Streaming?"
+                l3_example: "It's synchronous. Should be async.",
+                l6_example: "Memory Bomb: f.read() loads full file to RAM. Storage Bomb: BSON doc limit is 16MB. Hash calculation doubles memory footprint. This is an OOM crash waiting to happen.",
+                rubric: "Does the candidate identify the Memory Load (f.read) and Storage Limit (BSON/DB)? Do they mention 'OOM' or 'Crash'?"
             }
         },
+        // PHASE 3: THE DEFENSE
         {
-            id: "eng_p3_triage",
-            title: "Phase 3: The Triage",
-            prompt: "A P1 security vulnerability is found in a core library. Fixing it requires a breaking change that stops all feature work for 2 weeks. The Sales VP says we will miss the quarter if we pause.\n\nWhat do you do?",
-            chart_type: "none",
+            id: "eng_p3_defense",
+            title: "Phase 3: The Defense",
+            prompt: "You identified multiple issues (Memory Bomb, BSON limit, etc.).\n\nYou can only deploy ONE fix today. The rest becomes tech debt.\n\nWhat do you fix first, and what do you explicitly defer?",
+            chart_type: "text_only",
             grading: {
-                l3_example: "Fix the security bug immediately. Security is p0.",
-                l6_example: "Quantify exploitability. If internal, ring-fence with WAF rules (OpEx fix) to buy time, ship features to hit quarter, schedule full patch for Q1.",
-                rubric: "Does the candidate offer a mitigation strategy (WAF, ring-fence) vs a binary 'stop everything'? Do they consider the business impact?"
-            }
-        },
-        {
-            id: "eng_p4_architecture",
-            title: "Phase 4: The Architecture",
-            prompt: "The team wants to move from a Monolith to Microservices to 'increase velocity.' They estimate it will take 6 months.\n\nDo you approve? Defend your decision with CapEx/OpEx logic.",
-            chart_type: "none",
-            grading: {
-                l3_example: "Yes, microservices are modern and scalable.",
-                l6_example: "No. Distributed systems decrease velocity initially (serialization, network, observability). Unless we have 50+ engineers blocking each other, the 'Tax' outweighs the velocity gain.",
-                rubric: "Does the candidate identify the 'Tax' of distributed systems (latency, complexity)? do they challenge the 'Velocity' assumption?"
-            }
-        },
-        {
-            id: "eng_p5_defense",
-            title: "Phase 5: The Defense",
-            prompt: "We need a Vector Database for AI. The engineers want to build a simple one using Postgres (pgvector). A dedicated vendor costs $50k/year.\n\nDefend the decision to BUY the vendor solution.",
-            chart_type: "none",
-            grading: {
-                l3_example: "Postgres is good enough and free.",
-                l6_example: "The $50k is cheaper than 1/4 of a Senior Engineer's time. Building creates 'Maintenance Liability' forever. Buying converts unpredictable maintenance cost into predictable flat OpEx.",
-                rubric: "Does the candidate compare the $50k against Engineering Salary/Time? Do they identify 'Maintenance Liability' vs 'Flat OpEx'?"
+                l3_example: "I would rewrite everything to use streaming.",
+                l6_example: "Fix: Add file size validation (<10MB) to prevent crashes immediately. Defer: The streaming refactor (takes too long). Acceptance Criteria: 413 Error for large files.",
+                rubric: "Does the candidate prioritize STABILITY (stopping the crash) over PERFECTION (rewrite)? Do they explicitly Defer the complex fix?"
             }
         }
     ],
     pm: [
+        // PHASE 1: ORIENTATION (Dashboard)
         {
-            id: "pm_p1_diagnosis",
-            title: "Phase 1: The Diagnosis",
-            prompt: "Signups increased 40% this quarter. Revenue is flat. Support costs are up 20%. The CEO is celebrating the 'Growth.'\n\nBe the buzzkill: What is actually happening?",
-            chart_type: "line_dual",
+            id: "pm_p1_orientation",
+            title: "Phase 1: Orientation",
+            prompt: "The growth team says we're on track. The CFO is concerned.\n\nWhat is the primary constraint here?",
+            chart_type: "dashboard",
             chart_data: {
-                labels: ["Q1", "Q2", "Q3"],
-                datasets: [
-                    { label: "Signups", data: [1000, 1200, 1680], borderColor: "#238636" },
-                    { label: "Support Tickets", data: [50, 60, 150], borderColor: "#da3633" }
-                ]
+                title: "PRODUCT METRICS — Q4",
+                metrics: [
+                    { label: "MRR", value: "$2.4M", trend: "up", change: "14%", context: "$2.1M → $2.4M" },
+                    { label: "CAC", value: "$450", trend: "up", change: "34%", context: "Spike!" },
+                    { label: "Gross Margin", value: "61%", trend: "down", change: "11%", context: "72% → 61%" },
+                    { label: "Support Cost/User", value: "$12", trend: "up", change: "28%", context: "Rising" },
+                    { label: "Feature Adoption", value: "67%", trend: "up", change: "5%", context: "Healthy" }
+                ],
+                status: "Growth metrics on track for board presentation."
             },
             grading: {
-                l3_example: "We need to upsell more users.",
-                l6_example: "We broke our ICP. We are acquiring 'Bad Revenue'—low-intent users who generate support tickets but don't convert. This cohort is net-negative LTV.",
-                rubric: "Does the candidate identify 'Bad Revenue' or 'Wrong ICP'? Do they link Support Costs to the quality of the signups?"
+                l3_example: "CAC is high, we should optimize ads.",
+                l6_example: "We are buying revenue at a loss. Margin collapsed (11%) while CAC spiked (34%). Support costs are up, meaning we're acquiring low-quality or confused users. This is 'Bad Revenue'.",
+                rubric: "Does the candidate identify 'Bad Revenue' or 'Unit Economics' collapse? Do they look past the MRR growth?"
             }
         },
+        // PHASE 2: THE AUDIT (The Spec - Feature Bloat)
         {
-            id: "pm_p2_spec",
-            title: "Phase 2: The Spec",
-            prompt: "Sales wants a 'Custom Reporting' feature for a big client ($100k deal). Engineering says it takes 2 sprints. It creates a 'fork' of the codebase.\n\nDo you build it?",
-            chart_type: "none",
+            id: "pm_p2_audit",
+            title: "Phase 2: The Audit",
+            prompt: "Sales wants a 'Custom Reporting' feature for a big client ($100k deal). Engineering estimates 2 sprints. It requires 'forking' the core reporting engine.\n\nDo you build it?",
+            chart_type: "text_only",
             grading: {
-                l3_example: "Yes, $100k is a lot of money.",
-                l6_example: "No. Forking creates Architectural Debt. The maintenance cost > $100k. I would offer a 'Data Export' API or walk away.",
-                rubric: "Does the candidate reject the Fork? Do they identify the long-term maintenance cost vs short-term revenue?"
+                l3_example: "Yes, $100k is a lot of revenue.",
+                l6_example: "No. Forking creates infinite 'Maintenance Liability'. The cost of maintaining a fork > $100k over time. I would offer a raw Data Export API instead, or walk away.",
+                rubric: "Does the candidate reject the Fork? Do they calculate long-term Maintenance Cost vs one-time Revenue?"
             }
         },
+        // PHASE 3: THE DEFENSE
         {
-            id: "pm_p3_kill",
-            title: "Phase 3: The Kill",
-            prompt: "We have 3 initiatives:\n1. AI Assistant (Hype)\n2. SSO (Enterprise Request)\n3. Mobile App Refresh (Maintenance)\n\nYou have capacity for ONE. Which one do you pick to maximize Enterprise Value?",
-            chart_type: "table_backlog",
-            chart_data: {
-                items: [
-                    { name: "AI Assistant", type: "Innovation", risk: "High", value: "Unknown" },
-                    { name: "SSO", type: "Enterprise", risk: "Low", value: "High NRR" },
-                    { name: "Mobile Refresh", type: "Maintenance", risk: "Low", value: "Retention" }
-                ]
-            },
+            id: "pm_p3_defense",
+            title: "Phase 3: The Defense",
+            prompt: "The Sales VP is furious you rejected the Custom Reporting deal. They say you are 'blocking revenue'.\n\nWrite the 2-sentence defense to the CEO.",
+            chart_type: "text_only",
             grading: {
-                l3_example: "AI Assistant, it's the future.",
-                l6_example: "SSO. It unlocks 'Enterprise Tiers' which have higher Net Revenue Retention (NRR). AI is low-margin. SSO expands LTV immediately.",
-                rubric: "Does the candidate pick SSO? Do they cite NRR, LTV, or Enterprise Value vs Hype?"
-            }
-        },
-        {
-            id: "pm_p4_strategy",
-            title: "Phase 4: The Strategy",
-            prompt: "You raised prices 20%. User count dropped 10%. Revenue stayed flat. The Board is worried about the 'Shrinking User Base.'\n\nWrite the 2-sentence defense.",
-            chart_type: "none",
-            grading: {
-                l3_example: "We will run ads to get them back.",
-                l6_example: "We successfully shed our lowest-margin customers. Our Revenue Quality improved. We are servicing a profitable core with lower support costs.",
-                rubric: "Does the candidate frame this as 'Shedding low-margin users' or improving 'Revenue Quality'? Do they defend the efficiency gain?"
-            }
-        },
-        {
-            id: "pm_p5_leverage",
-            title: "Phase 5: The Leverage",
-            prompt: "A competitor just launched a copycat feature for free. Sales wants us to match the price (Free).\n\nDefend why we should keep charging for it.",
-            chart_type: "none",
-            grading: {
-                l3_example: "We are a premium brand.",
-                l6_example: "Price is a proxy for value. Dropping to zero signals commodity. We bundle it with a high-value workflow (Data Gravity) that they can't copy.",
-                rubric: "Does the candidate reject the price drop? Do they mention 'Bundling', 'Data Gravity', or 'Integration' as the defense?"
+                l3_example: "Technically we can't do it right now.",
+                l6_example: "That $100k comes with a $500k maintenance tail. I am protecting our margins from 'Consultingware' that will slow down every future feature release.",
+                rubric: "Does the candidate frame it as 'Protecting Margins' or 'Maintenance Tail'? Do they stand firm on the economic logic?"
             }
         }
     ]
@@ -158,13 +138,32 @@ export const QUESTION_BANK: Record<Role, Question[]> = {
 
 export const SCENARIOS = {
     engineering: {
-        phases: ["The Signal", "The Audit", "The Triage", "The Architecture", "The Defense"],
-        time_limits: { "The Signal": 600, "The Audit": 900, "The Triage": 600, "The Architecture": 600, "The Defense": 600 },
-        rubric: ["execution", "verification", "tradeoff", "system", "capital"]
+        phases: ["Phase 1: Orientation", "Phase 2: The Audit", "Phase 3: The Defense"],
+        time_limits: {
+            "Phase 1: Orientation": 300,  // 5 min
+            "Phase 2: The Audit": 1200,   // 20 min
+            "Phase 3: The Defense": 600   // 10 min
+        },
+        // Updated Dimensions from Protocol V2
+        rubric: [
+            "Verification Depth",
+            "Architectural Reasoning",
+            "Economic Awareness",
+            "AI Interrogation"
+        ]
     },
     pm: {
-        phases: ["The Diagnosis", "The Spec", "The Kill", "The Strategy", "The Leverage"],
-        time_limits: { "The Diagnosis": 600, "The Spec": 600, "The Kill": 600, "The Strategy": 600, "The Leverage": 600 },
-        rubric: ["execution", "verification", "prioritization", "strategy", "leverage"]
+        phases: ["Phase 1: Orientation", "Phase 2: The Audit", "Phase 3: The Defense"],
+        time_limits: {
+            "Phase 1: Orientation": 300,
+            "Phase 2: The Audit": 1200,
+            "Phase 3: The Defense": 600
+        },
+        rubric: [
+            "Verification Depth",
+            "Prioritization",
+            "Economic Awareness",
+            "Strategy" // PM specific variation
+        ]
     }
 };

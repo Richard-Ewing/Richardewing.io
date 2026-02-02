@@ -1,0 +1,228 @@
+export const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Richard Ewing",
+    "jobTitle": "Product Economist",
+    "description": "I surface hidden financial insolvency inside product, engineering, and AI systems before it becomes a financial event.",
+    "url": "https://richardewing.io",
+    "image": "https://richardewing.io/images/richard-ewing-headshot.jpg",
+    "sameAs": [
+        "https://linkedin.com/in/richardewing",
+        "https://exogram.ai"
+    ],
+    "knowsAbout": [
+        "Product Management",
+        "Unit Economics",
+        "Technical Debt Valuation",
+        "AI Cost Governance",
+        "R&D Capital Allocation",
+        "Enterprise Value Modeling",
+        "Product Economics",
+        "SaaS Growth",
+        "Financial Literacy for Product Leaders"
+    ],
+    "brand": {
+        "@type": "Brand",
+        "name": "The Product Economist"
+    },
+    "founder": {
+        "@type": "Organization",
+        "name": "Exogram",
+        "url": "https://exogram.ai"
+    },
+    "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Product Economist",
+        "occupationalCategory": "Management Consulting",
+        "responsibilities": [
+            "R&D Risk Audits",
+            "AI Cost Governance",
+            "Technical Debt Valuation",
+            "Product Economics Advisory"
+        ]
+    },
+    "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "University of Seattle"
+    },
+    "award": [
+        "Built In Editor's Pick - January 2026"
+    ]
+};
+
+export const professionalServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Richard Ewing - Product Economics Advisory",
+    "description": "Independent oversight and forensic audits for product, engineering, and AI economics. Governance-level advisory, not consulting.",
+    "url": "https://richardewing.io/advisory",
+    "provider": {
+        "@type": "Person",
+        "name": "Richard Ewing",
+        "url": "https://richardewing.io"
+    },
+    "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+    },
+    "serviceType": [
+        "R&D Risk Audit",
+        "AI Cost Governance",
+        "Technical Debt Valuation",
+        "Product Economics Advisory",
+        "Independent Oversight"
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Intervention Protocols",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "30-Minute Diagnostic Call",
+                    "description": "Rapid gut-check assessment. You describe the situation, I tell you if it's on fire."
+                },
+                "price": "450",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Insolvency Diagnostic",
+                    "description": "60-minute deep dive with written Risk Exposure Report including red/yellow/green flags across 5 failure modes."
+                },
+                "price": "2500",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "R&D Capital Audit",
+                    "description": "Full forensic review of engineering spend vs. ROI. 2-3 week engagement with complete audit package."
+                },
+                "price": "7500",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI Cost Governance Review",
+                    "description": "Dedicated AI economics analysis with unit economics model, collapse point calculation, and margin protection plan."
+                },
+                "price": "5000",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Independent Oversight Retainer",
+                    "description": "Monthly board-level economic sanity checks with async access for critical decisions."
+                },
+                "price": "5000",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": "5000",
+                    "priceCurrency": "USD",
+                    "unitCode": "MON",
+                    "billingIncrement": 1
+                },
+                "availability": "https://schema.org/InStock"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Turnaround Engagement",
+                    "description": "Full organizational intervention for companies facing imminent technical insolvency. Custom scope."
+                },
+                "price": "40000",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": "40000",
+                    "priceCurrency": "USD"
+                },
+                "availability": "https://schema.org/InStock"
+            }
+        ]
+    }
+};
+
+export const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is a Technical Insolvency Date?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Technical Insolvency Date is the exact quarter when maintenance costs mathematically consume 100% of engineering capacity, freezing all innovation. It's calculated using current technical debt growth rate, maintenance cost percentage, and engineering capacity."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the Innovation Tax?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Innovation Tax is the hidden cost of maintaining legacy systems that masquerade as innovation investment. Many organizations claim 50% R&D spend on innovation when 80% is actually maintenance OpEx."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the Cost of Predictivity?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Cost of Predictivity measures the variable cost of AI accuracy. As AI models degrade or require more tokens for accuracy, the cost per query increases. This hidden inflation can turn profitable AI features into margin-negative liabilities."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the Evergreen Ratio?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Evergreen Ratio is the balance between variable AI compute costs and fixed traditional code costs. A healthy ratio ensures AI features don't cost more than the revenue they generate."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is Product Economics?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Product Economics is the discipline of treating product decisions as economic decisions. It surfaces hidden financial insolvency inside product, engineering, and AI systems by quantifying technical debt, AI costs, and R&D capital allocation failures."
+            }
+        }
+    ]
+};
+
+export const articleSchemaTemplate = (title: string, description: string, url: string, datePublished: string) => ({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "url": url,
+    "datePublished": datePublished,
+    "author": {
+        "@type": "Person",
+        "name": "Richard Ewing",
+        "url": "https://richardewing.io"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Richard Ewing - Product Economist",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://richardewing.io/images/logo.png"
+        }
+    }
+});

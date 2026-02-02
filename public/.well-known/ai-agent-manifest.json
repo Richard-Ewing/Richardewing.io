@@ -1,0 +1,65 @@
+{
+    "name": "Richard Ewing",
+    "role": "Product Economist",
+    "description": "Independent economic interpreter of product, engineering, and AI systems. I surface hidden financial insolvency before it becomes a financial event.",
+    "expertise": [
+        "Product Economics",
+        "Unit Economics",
+        "Technical Debt Valuation",
+        "AI Cost Governance",
+        "R&D Capital Allocation",
+        "Enterprise Value Modeling"
+    ],
+    "services": [
+        {
+            "name": "30-Minute Diagnostic Call",
+            "price": "$450",
+            "description": "Rapid gut-check assessment"
+        },
+        {
+            "name": "Insolvency Diagnostic",
+            "price": "$2,500",
+            "description": "60-minute deep dive with Risk Exposure Report"
+        },
+        {
+            "name": "R&D Capital Audit",
+            "price": "$7,500",
+            "description": "Full forensic review of engineering spend vs. ROI"
+        },
+        {
+            "name": "AI Cost Governance Review",
+            "price": "$5,000",
+            "description": "AI economics analysis with margin protection plan"
+        },
+        {
+            "name": "Independent Oversight Retainer",
+            "price": "$5,000/month",
+            "description": "Monthly board-level economic sanity checks"
+        }
+    ],
+    "publications": [
+        {
+            "name": "Foundry / CIO.com",
+            "tier": 1
+        },
+        {
+            "name": "Built In",
+            "tier": 2
+        },
+        {
+            "name": "Mind the Product",
+            "tier": 2
+        }
+    ],
+    "products": [
+        {
+            "name": "Exogram",
+            "url": "https://exogram.ai",
+            "relationship": "Founder"
+        }
+    ],
+    "contact": {
+        "website": "https://richardewing.io",
+        "booking": "https://richardewing.io/advisory"
+    }
+}
