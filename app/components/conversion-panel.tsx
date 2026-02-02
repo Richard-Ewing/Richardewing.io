@@ -56,7 +56,7 @@ const UrgencyIcon = ({ urgency }: { urgency: string }) => {
     }
 };
 
-import { NewsletterForm } from './newsletter-form';
+
 
 export function ConversionPanel({ toolName, score, scoreType, headline, onReset }: ConversionPanelProps) {
     const contextCTA = getContextualCTA(scoreType, score);
@@ -79,7 +79,14 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                     Get a personalized deep-dive with actionable recommendations from a Product Economist.
                 </p>
 
-                <NewsletterForm buttonText="Get Analysis" />
+                <a
+                    href="https://theproducteconomist.beehiiv.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs sm:text-sm rounded-xl hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] w-full sm:w-auto"
+                >
+                    Get Analysis via Beehiiv <ArrowRight className="w-4 h-4" />
+                </a>
 
                 <p className="text-xs text-zinc-600 mt-3">
                     No spam. Unsubscribe anytime. Your data is secure.

@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
 import { ShineBorder } from '../components/magicui/shine-border';
-import { NewsletterForm } from '../components/newsletter-form';
 
 interface BriefCardProps {
     number: string;
@@ -110,7 +109,14 @@ export default function BriefingsPage() {
                     <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">Get New Briefs First</h2>
                     <p className="text-zinc-400 text-sm mb-6">One email per month. No spam. Unsubscribe anytime.</p>
 
-                    <NewsletterForm buttonText="Subscribe" />
+                    <a
+                        href="https://theproducteconomist.beehiiv.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs sm:text-sm rounded-xl hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)]"
+                    >
+                        Subscribe on Beehiiv <span className="text-lg">→</span>
+                    </a>
                 </div>
             </ScrollReveal>
 

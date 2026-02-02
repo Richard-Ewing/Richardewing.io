@@ -2,7 +2,6 @@
 
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
-import { NewsletterForm } from '../components/newsletter-form';
 import Link from 'next/link';
 
 export default function BookPage() {
@@ -83,7 +82,14 @@ export default function BookPage() {
                                 <span className="text-zinc-600 text-xs">|</span>
                                 <span className="text-zinc-500 text-xs">Get exclusive chapter previews</span>
                             </div>
-                            <NewsletterForm buttonText="Join Waitlist" />
+                            <a
+                                href="https://theproducteconomist.beehiiv.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs sm:text-sm rounded-xl hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(52,211,153,0.5)]"
+                            >
+                                Join Waitlist on Beehiiv <span className="text-lg">→</span>
+                            </a>
                         </div>
                     </div>
                 </div>
