@@ -89,28 +89,7 @@ export default function ExogramPage() {
                         </div>
                     </ScrollReveal>
 
-                    {/* Secondary Project: Antigravity */}
-                    <ScrollReveal delay={100}>
-                        <GlowCard className="p-8" glowColor="cyan">
-                            <div className="flex justify-between items-start mb-6">
-                                <div>
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <h2 className="text-xl font-bold text-white font-grotesk">Antigravity</h2>
-                                        <div className="px-3 py-1 bg-blue-500/20 text-blue-400 text-[10px] font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
-                                            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                                            Active
-                                        </div>
-                                    </div>
-                                    <p className="text-zinc-500 text-sm font-mono uppercase tracking-widest">Next.js + AI Design System</p>
-                                </div>
-                                <Activity className="w-6 h-6 text-cyan-400" />
-                            </div>
-                            <div className="flex gap-4">
-                                <div className="text-xs font-mono text-zinc-400"><GitCommit className="w-3 h-3 inline mr-1" /> v2.0.4 Deploying</div>
-                                <div className="text-xs font-mono text-zinc-400"><Server className="w-3 h-3 inline mr-1" /> Vercel Edge</div>
-                            </div>
-                        </GlowCard>
-                    </ScrollReveal>
+
                 </div>
 
                 {/* Sidebar / Changelog */}
@@ -154,7 +133,7 @@ export default function ExogramPage() {
                                 <div className="pl-6 relative">
                                     <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-cyan-500 ring-4 ring-black" />
                                     <div className="text-xs text-cyan-400 font-mono mb-1">Yesterday</div>
-                                    <div className="text-white font-bold text-sm">Antigravity UI Update</div>
+                                    <div className="text-white font-bold text-sm">System UI Update</div>
                                     <p className="text-xs text-zinc-500 mt-1">Deployed High Contrast theme and new stats components.</p>
                                 </div>
                                 <div className="pl-6 relative">
