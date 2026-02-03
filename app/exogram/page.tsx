@@ -3,7 +3,7 @@
 import React from 'react';
 import BlurIn from '@/components/magicui/blur-in';
 import { BorderBeam } from '@/components/magicui/border-beam';
-import { Meteors } from '@/components/magicui/meteors';
+import Meteors from '@/components/magicui/meteors';
 
 export default function ExogramPage() {
     return (

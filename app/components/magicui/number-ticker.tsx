@@ -8,9 +8,17 @@ interface NumberTickerProps {
     suffix?: string;
     className?: string;
     duration?: number;
+    decimalPlaces?: number;
 }
 
-export function NumberTicker({ value, prefix = '', suffix = '', className = '', duration = 2000 }: NumberTickerProps) {
+export default function NumberTicker({
+    value,
+    prefix = '',
+    suffix = '',
+    className = '',
+    duration = 2000,
+    decimalPlaces = 0
+}: NumberTickerProps) {
     const [displayValue, setDisplayValue] = useState(0);
     const ref = useRef<HTMLSpanElement>(null);
     const [hasAnimated, setHasAnimated] = useState(false);
@@ -26,7 +34,7 @@ export function NumberTicker({ value, prefix = '', suffix = '', className = '', 
                         const progress = Math.min(elapsed / duration, 1);
                         // Easing: ease-out cubic
                         const eased = 1 - Math.pow(1 - progress, 3);
-                        setDisplayValue(Math.floor(eased * value));
+                        setDisplayValue(eased * value);
                         if (progress < 1) requestAnimationFrame(animate);
                     };
                     requestAnimationFrame(animate);
@@ -41,7 +49,10 @@ export function NumberTicker({ value, prefix = '', suffix = '', className = '', 
 
     return (
         <span ref={ref} className={`tabular-nums ${className}`}>
-            {prefix}{displayValue.toLocaleString()}{suffix}
+            {prefix}{displayValue.toLocaleString(undefined, {
+                minimumFractionDigits: decimalPlaces,
+                maximumFractionDigits: decimalPlaces,
+            })}{suffix}
         </span>
     );
 }

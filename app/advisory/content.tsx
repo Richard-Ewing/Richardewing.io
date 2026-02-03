@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
-import { ShineBorder } from '../components/magicui/shine-border';
-import { NumberTicker } from '../components/magicui/number-ticker';
+import ShineBorder from '../components/magicui/shine-border';
+import NumberTicker from '../components/magicui/number-ticker';
 
 export default function AdvisoryContent() {
     return (

@@ -3,9 +3,9 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { ScrollReveal } from './magicui/scroll-reveal';
-import { NumberTicker } from './magicui/number-ticker';
+import NumberTicker from './magicui/number-ticker';
 import { GlowCard } from './magicui/glow-card';
-import { ShineBorder } from './magicui/shine-border';
+import ShineBorder from './magicui/shine-border';
 import Link from 'next/link';
 
 // Simple markdown renderer for AI responses

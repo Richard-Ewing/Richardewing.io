@@ -16,7 +16,7 @@ import {
 import { Line, Bar } from 'react-chartjs-2';
 import { ScrollReveal } from '../../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../../components/magicui/glow-card';
-import { ShineBorder } from '../../../components/magicui/shine-border';
+import ShineBorder from '../../../components/magicui/shine-border';
 import { NewsletterForm } from '../../../components/newsletter-form';
 import Link from 'next/link';
 

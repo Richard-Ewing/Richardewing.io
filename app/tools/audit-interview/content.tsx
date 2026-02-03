@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Shield, Cpu, Activity, Zap, CheckCircle, TrendingUp, Target, ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
-import { ShineBorder } from '../../components/magicui/shine-border';
+import ShineBorder from '../../components/magicui/shine-border';
 
 export default function ProtocolInitialization() {
     const router = useRouter();

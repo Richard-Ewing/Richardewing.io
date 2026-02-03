@@ -7,25 +7,33 @@ interface ShineBorderProps {
     className?: string;
     classNameOverlay?: string;
     borderColor?: string;
+    color?: string[]; // Added support for array
     borderWidth?: number;
     duration?: number;
 }
 
-export function ShineBorder({
+export default function ShineBorder({
     children,
     className = '',
     classNameOverlay = '',
     borderColor = 'rgba(0, 240, 255, 0.5)',
+    color = [], // Default to empty array
     borderWidth = 1,
     duration = 3,
 }: ShineBorderProps) {
+    // Determine the color to use. If color array is provided, use it to create a gradient string.
+    // Otherwise use borderColor.
+    const backgroundStyle = color.length > 0
+        ? `linear-gradient(90deg, transparent, ${color.join(', ')}, transparent)`
+        : `linear-gradient(90deg, transparent, ${borderColor.replace('0.5', '0.3').replace('0.6', '0.3')}, transparent)`;
+
     return (
         <div className={`relative overflow-hidden rounded-xl ${className}`}>
             <div
                 className="absolute inset-0 w-full h-full pointer-events-none"
                 style={{
                     padding: borderWidth,
-                    background: `linear-gradient(90deg, transparent, ${borderColor.replace('0.5', '0.3').replace('0.6', '0.3')}, transparent)`,
+                    background: backgroundStyle,
                     backgroundSize: '200% 100%',
                     animation: `shine ${duration * 2}s linear infinite`,
                     mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
@@ -39,7 +47,7 @@ export function ShineBorder({
                 className={`absolute inset-0 w-full h-full pointer-events-none shine-overlay transition-opacity duration-300 ${classNameOverlay}`}
                 style={{
                     padding: borderWidth,
-                    background: `linear-gradient(90deg, transparent, ${borderColor.replace('0.5', '0.3').replace('0.6', '0.3')}, transparent)`,
+                    background: backgroundStyle,
                     backgroundSize: '200% 100%',
                     animation: `shine ${duration * 2}s linear infinite`,
                 }}

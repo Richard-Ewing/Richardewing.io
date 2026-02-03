@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
-import { ShineBorder } from '../components/magicui/shine-border';
+import ShineBorder from '../components/magicui/shine-border';
 import Link from 'next/link';
 
 export default function ManifestoPage() {

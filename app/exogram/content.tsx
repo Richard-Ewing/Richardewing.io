@@ -2,8 +2,8 @@
 
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
-import { NumberTicker } from '../components/magicui/number-ticker';
-import { ShineBorder } from '../components/magicui/shine-border';
+import NumberTicker from '../components/magicui/number-ticker';
+import ShineBorder from '../components/magicui/shine-border';
 import { Activity, Cpu, Database, GitCommit, Server, Shield } from 'lucide-react';
 
 export default function ExogramPage() {

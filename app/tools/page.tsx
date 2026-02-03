@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ShineBorder } from '@/components/magicui/shine-border';
+import ShineBorder from '@/components/magicui/shine-border';
 
 export default function ToolsPage() {
   return (

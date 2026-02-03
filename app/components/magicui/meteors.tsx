@@ -13,7 +13,7 @@ interface MeteorsProps {
   count?: number;
 }
 
-export function Meteors({ count = 20 }: MeteorsProps) {
+export default function Meteors({ count = 20 }: MeteorsProps) {
   const [meteors, setMeteors] = useState<Meteor[]>([]);
 
   useEffect(() => {

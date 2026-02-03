@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
-import { ShineBorder } from '../../components/magicui/shine-border';
+import ShineBorder from '../../components/magicui/shine-border';
 import { ArrowRight, Search, Target, Brain, TrendingUp, Cpu, BarChart3 } from 'lucide-react';
 
 type Role = 'engineering' | 'pm';
@@ -230,8 +230,8 @@ export default function AuditInterview() {
                                     key={r}
                                     onClick={() => setRole(r as Role)}
                                     className={`px-4 py-2 rounded-lg border uppercase font-mono text-xs tracking-widest transition-all ${role === r
-                                            ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400'
-                                            : 'bg-zinc-900/50 border-white/10 text-zinc-500 hover:border-white/30'
+                                        ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400'
+                                        : 'bg-zinc-900/50 border-white/10 text-zinc-500 hover:border-white/30'
                                         }`}
                                 >
                                     {r === 'pm' ? 'Product Manager' : 'Engineer'}
@@ -262,8 +262,8 @@ export default function AuditInterview() {
                                                         key={val}
                                                         onClick={() => handleScoreChange(dim.id as keyof Scores, val)}
                                                         className={`flex-1 py-2 text-sm font-mono font-bold rounded-md transition-all ${scores[dim.id as keyof Scores] === val
-                                                                ? 'bg-emerald-600 text-white'
-                                                                : 'hover:bg-white/10 text-zinc-500'
+                                                            ? 'bg-emerald-600 text-white'
+                                                            : 'hover:bg-white/10 text-zinc-500'
                                                             }`}
                                                     >
                                                         {val}
@@ -345,7 +345,7 @@ export default function AuditInterview() {
                                             <span className="text-sm text-zinc-300">{dim.label}</span>
                                         </div>
                                         <div className={`text-sm font-mono font-bold ${scores[dim.id as keyof Scores] === 3 ? 'text-emerald-400' :
-                                                scores[dim.id as keyof Scores] === 0 ? 'text-red-500' : 'text-white'
+                                            scores[dim.id as keyof Scores] === 0 ? 'text-red-500' : 'text-white'
                                             }`}>
                                             {scores[dim.id as keyof Scores]}/3
                                         </div>

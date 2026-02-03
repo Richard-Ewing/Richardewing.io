@@ -3,7 +3,7 @@
 
 import { motion } from 'framer-motion';
 
-export const BlurIn = ({ word, className, delay = 0 }: { word: string, className?: string, delay?: number }) => {
+const BlurIn = ({ word, className, delay = 0 }: { word: string, className?: string, delay?: number }) => {
     return (
         <motion.h1
             initial={{ filter: 'blur(20px)', opacity: 0 }}
@@ -15,3 +15,5 @@ export const BlurIn = ({ word, className, delay = 0 }: { word: string, className
         </motion.h1>
     );
 };
+
+export default BlurIn;

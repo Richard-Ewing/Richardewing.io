@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
-import { ShineBorder } from '../components/magicui/shine-border';
+import ShineBorder from '../components/magicui/shine-border';
 
 import { articles } from '../lib/data';
 

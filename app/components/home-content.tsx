@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { WordRotate } from './magicui/word-rotate';
-import { NumberTicker } from './magicui/number-ticker';
-import { ShineBorder } from './magicui/shine-border';
-import { Meteors } from './magicui/meteors';
+import WordRotate from './magicui/word-rotate';
+import NumberTicker from './magicui/number-ticker';
+import ShineBorder from './magicui/shine-border';
+import Meteors from './magicui/meteors';
 import { ScrollReveal } from './magicui/scroll-reveal';
 import { GlowCard } from './magicui/glow-card';
 import { PathSelector } from './path-selector';
