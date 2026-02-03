@@ -19,7 +19,7 @@ export function StatsBar({ stats, className, ...props }: StatsBarProps) {
         >
             {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                    <div className="font-grotesk text-3xl font-bold text-cyan sm:text-4xl tabular-nums">
+                    <div className="font-grotesk text-3xl font-bold sm:text-4xl tabular-nums">
                         {stat.value}
                     </div>
                     <div className="mt-1 text-xs uppercase tracking-[0.1em] text-gray-500 font-grotesk">
