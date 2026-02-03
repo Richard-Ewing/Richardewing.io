@@ -86,7 +86,7 @@ export default function RootLayout({
         <link rel="author" href="https://richardewing.io/principal" />
         <link rel="me" href="https://linkedin.com/in/richardewing" />
       </head>
-      <body className="overflow-x-hidden bg-[var(--bg-primary)] text-[var(--text-secondary)] font-sans antialiased min-h-screen flex flex-col">
+      <body className="bg-[var(--bg-primary)] text-[var(--text-secondary)] font-sans antialiased min-h-screen flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
@@ -99,7 +99,7 @@ export default function RootLayout({
         <Navigation />
 
         {/* Main content with top padding for fixed nav */}
-        <main className="flex-grow pt-24 relative overflow-hidden">
+        <main className="flex-grow pt-24 relative">
           {children}
         </main>
 
