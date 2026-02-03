@@ -207,6 +207,7 @@ h3 {
   border-radius: 12px;
   padding: 24px;
   transition: all 0.2s ease;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -222,6 +223,7 @@ h3 {
   border-radius: 12px;
   padding: 24px;
   transition: all 0.2s ease;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 

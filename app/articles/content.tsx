@@ -27,15 +27,17 @@ export default function ArticlesPage() {
             </div>
 
             <ScrollReveal>
-                <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
-                    The Canonical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">Hub.</span>
-                </h1>
-                <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed mb-8">
-                    Core doctrine and economic frameworks. This is the source code for the Governance Conversion Engine.
-                </p>
+                <div className="text-center max-w-2xl mx-auto">
+                    <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
+                        The Canonical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">Hub.</span>
+                    </h1>
+                    <p className="text-lg text-zinc-400 leading-relaxed mb-8">
+                        Core doctrine and economic frameworks. This is the source code for the Governance Conversion Engine.
+                    </p>
+                </div>
 
                 {/* Filter Pills */}
-                <div className="flex flex-wrap gap-2 mb-12">
+                <div className="flex flex-wrap justify-center gap-2 mb-12">
                     {filters.map((f) => (
                         <button
                             key={f}

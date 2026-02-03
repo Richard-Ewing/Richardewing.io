@@ -54,16 +54,16 @@ export default function BriefingsPage() {
             </div>
 
             <ScrollReveal>
-                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 overflow-hidden relative">
+                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 overflow-hidden relative text-center">
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent pointer-events-none" />
 
-                    <div className="relative">
+                    <div className="relative max-w-3xl mx-auto">
                         <span className="font-mono text-cyan-400 text-xs uppercase tracking-[0.3em] mb-4 block">The Canon</span>
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-grotesk font-bold text-white tracking-tight leading-tight mb-4">
                             Executive<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Briefings.</span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-gray-400 max-w-2xl leading-relaxed">
+                        <p className="text-lg sm:text-xl text-gray-400 leading-relaxed">
                             Dense, actionable intelligence for leaders who don't have time for "thought leadership."
                             <span className="text-white font-bold"> Read time: 5-10 minutes each.</span>
                         </p>
