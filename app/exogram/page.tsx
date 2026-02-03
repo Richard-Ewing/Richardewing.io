@@ -123,13 +123,7 @@ export default function ExogramPage() {
 
                         <div className="mt-16 mb-4">
                             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                                LLMs generate language.
-                                <WordRotate
-                                    words={["Exogram maintains reality.", "Exogram maintains truth.", "Exogram maintains context."]}
-                                    className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-bold"
-                                    containerClassName="inline-flex py-0 align-bottom h-[1.5em]"
-                                    duration={3000}
-                                />
+                                LLMs generate language. <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-bold">Exogram maintains reality.</span>
                             </p>
                             <p className="text-lg md:text-xl text-gray-400 mt-4 leading-relaxed max-w-3xl mx-auto">
                                 Together, they enable intelligence that remembers, reasons, and can be trusted.
