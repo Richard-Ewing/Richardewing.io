@@ -48,7 +48,7 @@ export default function NumberTicker({
     }, [value, duration, hasAnimated]);
 
     return (
-        <span ref={ref} className={`tabular-nums ${className}`}>
+        <span ref={ref} className={`inline-block tabular-nums tracking-tighter ${className}`}>
             {prefix}{displayValue.toLocaleString(undefined, {
                 minimumFractionDigits: decimalPlaces,
                 maximumFractionDigits: decimalPlaces,

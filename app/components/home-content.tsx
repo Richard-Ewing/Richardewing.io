@@ -36,7 +36,7 @@ export default function HomeContent() {
                     <span className="text-gray-500 text-xl sm:text-2xl font-grotesk">I find the leaks in </span>
                     <WordRotate
                         words={["AI they don't understand.", "Features nobody uses.", "Headcount without ROI.", "Zombie Infrastructure."]}
-                        className="text-xl sm:text-2xl font-grotesk font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500"
+                        className="text-xl sm:text-2xl font-grotesk font-extrabold text-gradient-cyan"
                         duration={3000}
                     />
                 </div>
@@ -56,10 +56,10 @@ export default function HomeContent() {
                 {/* Authority Stats Bar */}
                 <StatsBar
                     stats={[
-                        { value: <><NumberTicker value={25} prefix="$" suffix="M" className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 font-bold" /></>, label: "ARR Scaled" },
-                        { value: <><NumberTicker value={15} suffix="+" className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 font-bold" /></>, label: "Years Exp." },
-                        { value: <><NumberTicker value={7} suffix="M+" className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 font-bold" /></>, label: "Users Impacted" },
-                        { value: <span className="text-gold"><NumberTicker value={100} suffix="%" className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 font-bold" /></span>, label: "Independence" }
+                        { value: <><NumberTicker value={25} prefix="$" suffix="M" className="text-gradient-cyan font-bold" /></>, label: "ARR Scaled" },
+                        { value: <><NumberTicker value={15} suffix="+" className="text-gradient-cyan font-bold" /></>, label: "Years Exp." },
+                        { value: <><NumberTicker value={7} suffix="M+" className="text-gradient-cyan font-bold" /></>, label: "Users Impacted" },
+                        { value: <span className="text-gold"><NumberTicker value={100} suffix="%" className="text-gradient-cyan font-bold" /></span>, label: "Independence" }
                     ]}
                     className="mb-8"
                 />
