@@ -2,7 +2,7 @@
 
 const FourHorsemen = () => {
     return (
-        <section className="section bg-black/30">
+        <section className="section-sm bg-black/30">
             <div className="page-container">
 
                 <div className="section-header text-center">

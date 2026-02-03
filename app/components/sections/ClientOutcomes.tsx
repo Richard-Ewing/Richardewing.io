@@ -2,7 +2,7 @@
 
 const ClientOutcomes = () => {
     return (
-        <section className="section">
+        <section className="section-sm">
             <div className="page-container">
 
                 <div className="section-header text-center">
