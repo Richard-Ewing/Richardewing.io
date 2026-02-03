@@ -2,7 +2,6 @@
 
 import React from 'react';
 import BlurIn from '@/components/magicui/blur-in';
-import WordRotate from '@/components/magicui/word-rotate';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import Meteors from '@/components/magicui/meteors';
 
