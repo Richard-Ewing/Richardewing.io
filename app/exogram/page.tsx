@@ -2,6 +2,7 @@
 
 import React from 'react';
 import BlurIn from '@/components/magicui/blur-in';
+import { BorderBeam } from '@/components/magicui/border-beam';
 
 export default function ExogramPage() {
     return (
@@ -42,9 +43,10 @@ export default function ExogramPage() {
 
                         {/* CTA - Left aligned on desktop */}
                         <div className="flex justify-center md:justify-start w-full">
-                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-between px-5 h-[52px] w-[260px] rounded-xl bg-purple-600/10 border border-purple-500/50 text-white hover:bg-purple-600 hover:border-purple-500 transition-all group">
-                                <span className="font-semibold text-sm">Visit Exogram.ai</span>
-                                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="relative overflow-hidden inline-flex items-center justify-between px-5 h-[52px] w-[260px] rounded-xl bg-purple-600/10 text-white hover:bg-purple-600/20 transition-all group border border-transparent">
+                                <span className="font-semibold text-sm z-10">Visit Exogram.ai</span>
+                                <span className="group-hover:translate-x-1 transition-transform z-10">→</span>
+                                <BorderBeam size={60} duration={4} delay={2} borderWidth={1.5} colorFrom="#A855F7" colorTo="#00D4FF" />
                             </a>
                         </div>
                     </div>

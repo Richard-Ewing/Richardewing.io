@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import NumberTicker from '@/components/magicui/number-ticker';
+import WordRotate from '@/components/magicui/word-rotate';
 
 const Hero = () => {
     return (
@@ -14,13 +15,16 @@ const Hero = () => {
                     <span className="text-sm text-gray-300">Independent R&D Oversight</span>
                 </div>
 
-                {/* Headline */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                    I audit engineering spend and surface the capital risks your{' '}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-red-400">
-                        metrics don't show.
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight flex flex-col items-center">
+                    <span>I audit engineering spend and</span>
+                    <span className="flex flex-wrap justify-center gap-x-3">
+                        show the capital risks your
+                        <WordRotate
+                            className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-red-400"
+                            words={["metrics don't show.", "board won't see.", "CFO can't find.", "team won't tell you."]}
+                        />
                     </span>
-                </h1>
+                </div>
 
                 {/* Credibility line */}
                 <p className="text-gray-400 mb-10 text-lg">
