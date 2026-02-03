@@ -58,7 +58,6 @@ export default function AdvisoryPage() {
                                 <li>✓ 60-minute deep dive session</li>
                                 <li>✓ Written Risk Exposure Report</li>
                                 <li>✓ 15-min follow-up call</li>
-                                <li>✓ $50K guarantee</li>
                             </ul>
 
                             <a href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203" className="block w-full py-3 text-center rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
@@ -142,25 +141,6 @@ export default function AdvisoryPage() {
                             <a href="https://buy.stripe.com/9B64gs4YK070dS57W02B201" className="text-xs text-purple-400 hover:text-white">Book Analysis →</a>
                         </div>
 
-                    </div>
-                </section>
-
-                {/* Guarantee */}
-                <section className="section">
-                    <div className="max-w-2xl mx-auto">
-                        <div className="card text-center p-8">
-                            <h3 className="text-xl font-bold text-white mb-4">The $50,000 Guarantee</h3>
-                            <p className="text-gray-400 mb-4">
-                                Every Insolvency Diagnostic I've conducted has surfaced at least $50,000
-                                in hidden capital risk or misallocation.
-                            </p>
-                            <p className="text-gray-400 mb-4">
-                                If yours doesn't, I'll refund the full $2,500.
-                            </p>
-                            <p className="text-purple-400 font-semibold">
-                                In 12 audits, I've never had to.
-                            </p>
-                        </div>
                     </div>
                 </section>
 
