@@ -1,5 +1,6 @@
 "use client";
 
+import Link from 'next/link';
 import { useScrollAnimation } from '@/app/hooks/useScrollAnimation';
 
 const NewsletterSection = () => {
@@ -37,21 +38,21 @@ const NewsletterSection = () => {
                                 Get Checklist →
                             </button>
                         </form>
+                        <p className="mt-8 text-sm text-gray-500">
+                            Monthly. No fluff. 2,000+ executives read before they decide.
+                        </p>
 
-                        Monthly. No fluff. 2,000+ executives read before they decide.
-                    </p>
-
-                    <div className="mt-6 border-t border-white/10 pt-6">
-                        <Link href="/tools" className="text-xs text-gray-500 hover:text-white uppercase tracking-widest transition-colors flex items-center justify-center gap-2 group">
-                            Or try my free tools
-                            <span className="group-hover:translate-x-1 transition-transform">→</span>
-                        </Link>
+                        <div className="mt-6 border-t border-white/10 pt-6">
+                            <Link href="/tools" className="text-xs text-gray-500 hover:text-white uppercase tracking-widest transition-colors flex items-center justify-center gap-2 group">
+                                Or try my free tools
+                                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-        </section >
+            </div>
+        </section>
     );
 };
 
