@@ -3,7 +3,6 @@
 import React from 'react';
 import BlurIn from '@/components/magicui/blur-in';
 import { BorderBeam } from '@/components/magicui/border-beam';
-import TextRevealByWord from '@/components/magicui/text-reveal';
 
 export default function ExogramPage() {
     return (
@@ -122,6 +121,11 @@ export default function ExogramPage() {
                                 <span className="text-gray-500 ml-4">→ Agents, Copilots, SaaS</span>
                             </div>
                         </div>
+
+                        <p className="text-gray-400 mt-12">
+                            LLMs generate language. <span className="text-white">Exogram maintains reality.</span><br />
+                            Together, they enable intelligence that remembers, reasons, and can be trusted.
+                        </p>
                     </div>
                 </section>
 

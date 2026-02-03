@@ -86,7 +86,7 @@ export default function RootLayout({
         <link rel="author" href="https://richardewing.io/principal" />
         <link rel="me" href="https://linkedin.com/in/richardewing" />
       </head>
-      <body className="bg-[var(--bg-primary)] text-[var(--text-secondary)] font-sans antialiased min-h-screen flex flex-col">
+      <body className="overflow-x-hidden bg-[var(--bg-primary)] text-[var(--text-secondary)] font-sans antialiased min-h-screen flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
