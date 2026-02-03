@@ -73,8 +73,7 @@ export function Footer() {
 
                     <div className="flex flex-wrap justify-center gap-6">
                         <Link href="/legal" className="text-xs text-zinc-600 hover:text-white transition-colors uppercase tracking-wider">Legal & Privacy</Link>
-                        <Link href="https://twitter.com/richardewing" target="_blank" className="text-xs text-zinc-600 hover:text-white transition-colors uppercase tracking-wider">X / Twitter</Link>
-                        <Link href="https://linkedin.com/in/richardewing" target="_blank" className="text-xs text-zinc-600 hover:text-white transition-colors uppercase tracking-wider">LinkedIn</Link>
+                        <Link href="https://www.linkedin.com/in/richard-ewing-mba/" target="_blank" className="text-xs text-zinc-600 hover:text-white transition-colors uppercase tracking-wider">LinkedIn</Link>
                     </div>
                 </div>
             </div>

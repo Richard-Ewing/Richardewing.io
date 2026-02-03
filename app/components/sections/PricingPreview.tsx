@@ -15,7 +15,7 @@ const PricingPreview = () => {
 
                 <div className="grid-4 max-w-5xl mx-auto">
 
-                    {/* Free */}
+                    {/* Free Tier - Dual Action */}
                     <div className="card text-center flex flex-col justify-between h-full">
                         <div>
                             <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">Free</div>

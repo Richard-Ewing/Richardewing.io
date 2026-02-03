@@ -39,10 +39,10 @@ const ExogramSection = () => {
                         </p>
 
                         {/* Founder & CTAs Container - Side by Side on Desktop */}
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full border-t border-white/10 pt-8 mt-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full border-t border-white/10 pt-8 mt-4 items-center">
 
-                            {/* Founder Attribution */}
-                            <div className="flex items-center gap-4 h-12">
+                            {/* Founder Attribution - Right Aligned on Desktop to kiss the center line */}
+                            <div className="flex items-center justify-center md:justify-end gap-4 h-12">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover shadow-sm" />
                                 <div className="text-left flex flex-col justify-center h-full">
@@ -54,9 +54,9 @@ const ExogramSection = () => {
                                 </div>
                             </div>
 
-                            {/* CTAs */}
-                            <div className="flex items-center h-12">
-                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] h-10 self-center">
+                            {/* CTAs - Left Aligned on Desktop to kiss the center line */}
+                            <div className="flex items-center justify-center md:justify-start h-12">
+                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] h-10">
                                     Visit Exogram.ai →
                                 </a>
                             </div>
