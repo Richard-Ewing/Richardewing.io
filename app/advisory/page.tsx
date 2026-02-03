@@ -3,6 +3,7 @@
 import React from 'react';
 import BlurIn from '@/components/magicui/blur-in';
 import ShineBorder from '@/components/magicui/shine-border';
+import { BorderBeam } from '@/components/magicui/border-beam';
 
 export default function AdvisoryPage() {
     return (
@@ -53,8 +54,9 @@ export default function AdvisoryPage() {
                         </div>
 
                         {/* START HERE - $2,500 */}
-                        <ShineBorder className="card-featured relative p-0" color={["#A855F7", "#00D4FF"]}>
-                            <div className="p-6">
+                        <ShineBorder className="card-featured relative p-0 overflow-hidden" color={["#A855F7", "#00D4FF"]}>
+                            <BorderBeam size={300} duration={12} delay={9} borderWidth={2} />
+                            <div className="p-6 relative z-10">
                                 <div className="text-xs text-purple-400 uppercase tracking-wide mb-4">★ Start Here</div>
                                 <div className="text-3xl font-bold text-white mb-2">$2,500</div>
                                 <div className="text-gray-400 mb-6">Insolvency Diagnostic</div>

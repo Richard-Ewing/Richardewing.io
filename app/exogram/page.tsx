@@ -3,6 +3,7 @@
 import React from 'react';
 import BlurIn from '@/components/magicui/blur-in';
 import { BorderBeam } from '@/components/magicui/border-beam';
+import TextRevealByWord from '@/components/magicui/text-reveal';
 
 export default function ExogramPage() {
     return (
@@ -86,14 +87,17 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
-                {/* The Solution */}
-                <section className="section bg-black/30">
+                {/* The Solution - Cinematic Reveal */}
+                <div className="min-h-screen flex items-center justify-center bg-black">
+                    <TextRevealByWord text="LLMs generate language. Exogram maintains reality. Together, they enable intelligence that remembers, reasons, and can be trusted." />
+                </div>
+
+                <section className="section bg-black/30 pt-0">
                     <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-2xl font-bold text-white mb-8">The Solution</h2>
+                        <h2 className="text-2xl font-bold text-white mb-8">The Stack</h2>
                         <p className="text-xl text-gray-300 mb-12">
                             Exogram is the missing layer in the AI stack.
                         </p>
-
                         {/* Stack diagram */}
                         <div className="space-y-4 max-w-md mx-auto">
                             <div className="px-6 py-4 rounded-lg bg-white/5 border border-white/10 text-left">
@@ -117,11 +121,6 @@ export default function ExogramPage() {
                                 <span className="text-gray-500 ml-4">→ Agents, Copilots, SaaS</span>
                             </div>
                         </div>
-
-                        <p className="text-gray-400 mt-12">
-                            LLMs generate language. <span className="text-white">Exogram maintains reality.</span><br />
-                            Together, they enable intelligence that remembers, reasons, and can be trusted.
-                        </p>
                     </div>
                 </section>
 
