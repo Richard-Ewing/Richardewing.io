@@ -91,6 +91,12 @@ export default function AdvisoryContent() {
                         <a href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-red-600 text-white font-bold uppercase text-xs py-3 rounded hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)]">
                             Schedule Deep Dive
                         </a>
+                        <div className="mt-4 pt-3 border-t border-white/10 text-center">
+                            <span className="text-zinc-500 text-[10px] uppercase tracking-wide block mb-1">Not ready for deep dive?</span>
+                            <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" target="_blank" rel="noopener noreferrer" className="text-xs text-red-400 hover:text-white transition-colors underline decoration-dotted">
+                                Start with a 30-min Gut-Check ($450) →
+                            </a>
+                        </div>
                     </GlowCard>
 
                     {/* Level 3: R&D Capital Audit */}
@@ -129,6 +135,8 @@ export default function AdvisoryContent() {
                         </div>
                         <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
                             Board-level economic sanity checks. Asynchronous access for critical buy/build/kill decisions. Minimum 3-month commitment.
+                            <br /><br />
+                            <span className="text-gold/80 italic text-xs">Engagements are scoped against measurable capital outcomes.</span>
                         </p>
                         <a href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gold/10 border border-gold/20 text-gold font-bold uppercase text-xs py-3 rounded hover:bg-gold/20 transition-all">
                             Initialize Retainer
@@ -168,8 +176,8 @@ export default function AdvisoryContent() {
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                         <div>
                             <div className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-2">Not Ready for Paid?</div>
-                            <h3 className="text-xl font-bold text-white font-grotesk">Run a Free Self-Audit</h3>
-                            <p className="text-zinc-400 text-sm mt-2">Use my diagnostic tools to generate your own risk report.</p>
+                            <h3 className="text-xl font-bold text-white font-grotesk">Run a Free Self-Diagnostic</h3>
+                            <p className="text-zinc-400 text-sm mt-2">(Newsletter + Tools)</p>
                         </div>
                         <div className="flex gap-4">
                             <Link href="/briefings" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-cyan-400 transition-colors">
