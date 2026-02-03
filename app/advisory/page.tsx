@@ -31,7 +31,7 @@ export default function AdvisoryPage() {
                 <section className="section">
                     <div className="grid-4 max-w-6xl mx-auto">
 
-                        {/* FREE */}
+                        {/* Free Tier - Dual Action */}
                         <div className="card">
                             <div className="text-xs text-gray-500 uppercase tracking-wide mb-4">Free</div>
                             <div className="text-3xl font-bold text-white mb-2">$0</div>
@@ -43,9 +43,14 @@ export default function AdvisoryPage() {
                                 <li>✓ R&D Audit Checklist PDF</li>
                             </ul>
 
-                            <a href="/briefings" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5">
-                                Run a Free Self-Diagnostic
-                            </a>
+                            <div className="flex flex-col gap-2">
+                                <a href="https://producteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-2 rounded hover:bg-cyan-500/20 transition-all">
+                                    Subscribe Free
+                                </a>
+                                <a href="/tools" className="block w-full text-center bg-white/5 border border-white/10 text-white font-bold uppercase text-xs py-2 rounded hover:bg-white/10 transition-all">
+                                    All Tools
+                                </a>
+                            </div>
                         </div>
 
                         {/* START HERE - $2,500 */}
