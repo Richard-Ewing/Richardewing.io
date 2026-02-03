@@ -39,27 +39,24 @@ const ExogramSection = () => {
                         </p>
 
                         {/* Founder & CTAs Container - Side by Side on Desktop */}
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full border-t border-white/10 pt-8 mt-4">
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full border-t border-white/10 pt-8 mt-4">
 
                             {/* Founder Attribution */}
                             <div className="flex items-center gap-4">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover" />
+                                <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover shadow-sm" />
                                 <div className="text-left">
                                     <p className="text-white font-semibold leading-tight">Founded by Richard Ewing</p>
-                                    <div className="flex items-center gap-2">
+                                    <div className="flex items-center gap-2 mt-0.5">
                                         <p className="text-gray-400 text-xs">Product Economist</p>
-                                        <span className="text-emerald-500 text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-500/10 rounded">Live</span>
+                                        <span className="text-emerald-500 text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-500/10 rounded border border-emerald-500/20">Live</span>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Divider (Hidden on mobile) */}
-                            <div className="hidden md:block w-px h-10 bg-white/10" />
-
                             {/* CTAs */}
-                            <div className="flex items-center gap-4">
-                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+                            <div className="flex items-center">
+                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]">
                                     Visit Exogram.ai →
                                 </a>
                             </div>

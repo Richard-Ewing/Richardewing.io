@@ -171,9 +171,14 @@ export default function AdvisoryContent() {
                             <h3 className="text-xl font-bold text-white font-grotesk">Run a Free Self-Audit</h3>
                             <p className="text-zinc-400 text-sm mt-2">Use my diagnostic tools to generate your own risk report.</p>
                         </div>
-                        <Link href="/tools" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-cyan-400 transition-colors">
-                            Access Tools
-                        </Link>
+                        <div className="flex gap-4">
+                            <Link href="/briefings" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-cyan-400 transition-colors">
+                                Get Briefings
+                            </Link>
+                            <Link href="/tools" className="px-6 py-3 bg-transparent border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-colors">
+                                Access Tools
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </ScrollReveal>
