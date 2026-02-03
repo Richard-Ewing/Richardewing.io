@@ -117,25 +117,38 @@ export default function ExogramPage() {
 
                 {/* Connection */}
                 <section className="section">
-                    <div className="max-w-2xl mx-auto text-center">
-                        <blockquote className="card p-8">
-                            <p className="text-xl text-white italic mb-6">
-                                "I write about why AI systems fail economically through my Product Economist work.
-                                Exogram is what I'm building to fix it."
+                    <div className="max-w-3xl mx-auto">
+                        <div className="card p-10 flex flex-col items-center text-center space-y-8">
+                            <p className="text-xl md:text-2xl text-white leading-relaxed max-w-2xl">
+                                "I write about why AI systems fail economically through my Product Economist work.<br />
+                                <span className="text-purple-400">Exogram is what I'm building to fix it."</span>
                             </p>
-                            <div className="flex items-center justify-center gap-4">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover" />
-                                <div className="text-left">
-                                    <p className="text-white font-semibold">Richard Ewing</p>
-                                    <p className="text-purple-400 text-sm">Founder, Exogram</p>
-                                </div>
-                            </div>
-                        </blockquote>
 
-                        <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-block mt-8 px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
-                            Visit Exogram.ai →
-                        </a>
+                            {/* Founder & CTAs Container - Side by Side on Desktop */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full border-t border-white/10 pt-8 mt-4 items-center">
+
+                                {/* Founder Attribution - Right Aligned on Desktop to kiss the center line */}
+                                <div className="flex items-center justify-center md:justify-end gap-4 h-12">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover shadow-sm" />
+                                    <div className="text-left flex flex-col justify-center h-full">
+                                        <p className="text-white font-semibold leading-none mb-1">Founded by Richard Ewing</p>
+                                        <div className="flex items-center gap-2">
+                                            <p className="text-gray-400 text-xs leading-none">Product Economist</p>
+                                            <span className="text-emerald-500 text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-500/10 rounded border border-emerald-500/20 leading-none flex items-center h-4">Live</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* CTAs - Left Aligned on Desktop to kiss the center line */}
+                                <div className="flex items-center justify-center md:justify-start h-12">
+                                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] h-10">
+                                        Visit Exogram.ai →
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </section>
 
