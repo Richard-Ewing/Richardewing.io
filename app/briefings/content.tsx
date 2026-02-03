@@ -42,6 +42,7 @@ export default function BriefingsPage() {
         { number: '05', title: 'Kill Switch Protocol', subtitle: 'The framework for ruthless feature deprecation', href: '/canonical/kill-switch-governance.html' },
         { number: '06', title: 'Q-PEP Fundamentals', subtitle: 'Qualitative-Profitability Efficiency Protocol', href: '/canonical/q-pep-protocol.html' },
         { number: '07', title: 'The AI Product Business Test', subtitle: 'Built In Editor\'s Pick: Validating AI unit economics before writing code', href: 'https://builtin.com/articles/ai-product-business-test', isNew: true },
+        { number: '08', title: 'The Best AI Product I Ever Led Had Zero Customers', subtitle: 'HackerNoon: Why technical excellence doesn\'t guarantee adoption', href: 'https://hackernoon.com/the-best-ai-product-i-ever-led-had-zero-customers', isNew: true },
     ];
 
     return (

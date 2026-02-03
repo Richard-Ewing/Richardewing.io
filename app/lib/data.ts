@@ -42,13 +42,13 @@ export const articles = [
         legacyUrl: "/canonical/governance-of-subtraction.html"
     },
     {
-        slug: "hacker-noon-ai",
-        title: "AI Hallucinations as Technical Debt",
-        description: "Treating probabilistic outputs as a liability class in your balance sheet.",
+        slug: "best-ai-product-zero-customers",
+        title: "The Best AI Product I Ever Led Had Zero Customers",
+        description: "A retrospective on why technical excellence doesn't guarantee product-market fit.",
         date: "Sep 2025",
         readTime: "7 min read",
         source: "HackerNoon",
-        legacyUrl: "/canonical/risk-advisory.html"
+        externalUrl: "https://hackernoon.com/the-best-ai-product-i-ever-led-had-zero-customers"
     },
     {
         slug: "ai-product-business-test",
