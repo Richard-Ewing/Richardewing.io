@@ -45,6 +45,11 @@ const Navigation = () => {
                         {/* Desktop Nav */}
                         <div className="hidden md:flex items-center gap-6 lg:gap-8">
 
+                            <Dropdown label="Advisory">
+                                <DropdownItem href="/advisory">Advisory Services</DropdownItem>
+                                <DropdownItem href="/principal">The Principal</DropdownItem>
+                            </Dropdown>
+
                             <Dropdown label="Learn">
                                 <DropdownItem href="/doctrine">Doctrine (Framework)</DropdownItem>
                                 <DropdownItem href="/manifesto">Manifesto (Philosophy)</DropdownItem>
@@ -58,11 +63,6 @@ const Navigation = () => {
                                 <DropdownItem href="/tools/aueb">AUEB — AI Unit Economics</DropdownItem>
                                 <DropdownItem href="/tools/aper">APER — Engineering Ratio</DropdownItem>
                                 <DropdownItem href="/tools/audit-interview">Audit Interview</DropdownItem>
-                            </Dropdown>
-
-                            <Dropdown label="Advisory">
-                                <DropdownItem href="/advisory">Advisory Services</DropdownItem>
-                                <DropdownItem href="/principal">The Principal</DropdownItem>
                             </Dropdown>
 
                             <Link href="/exogram" className="text-gray-300 hover:text-white transition-colors relative group">
