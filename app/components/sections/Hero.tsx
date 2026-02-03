@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Hero = () => {
     return (
-        <section className="min-h-[80vh] flex items-center justify-center py-20">
+        <section className="min-h-[70vh] flex items-center justify-center py-12">
             <div className="page-container text-center">
 
                 {/* Eyebrow pill */}

@@ -23,23 +23,31 @@ export default function ExogramPage() {
                         The Verification Infrastructure for AI
                     </p>
 
-                    {/* Founder card */}
-                    <div className="inline-flex items-center gap-4 px-6 py-4 rounded-xl bg-white/5 border border-white/10 mb-8">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover" />
-                        <div className="text-left">
-                            <p className="text-white font-semibold">Founded by Richard Ewing</p>
-                            <p className="text-gray-400 text-sm">Product Economist</p>
+                    {/* Hero Actions - Grid Aligned */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto items-center mt-8 mb-12">
+
+                        {/* Founder Badge - Right aligned on desktop */}
+                        <div className="flex justify-center md:justify-end">
+                            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-xl bg-white/5 border border-white/10">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-10 h-10 rounded-full object-cover" />
+                                <div className="text-left">
+                                    <p className="text-white font-semibold text-sm">Founded by Richard Ewing</p>
+                                    <div className="flex items-center gap-2">
+                                        <p className="text-gray-400 text-xs text-[10px]">Product Economist</p>
+                                        <span className="text-green-400 text-[10px] uppercase font-mono tracking-wider px-1.5 bg-green-500/10 rounded border border-green-500/20">Live</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="pl-4 border-l border-white/10">
-                            <p className="text-xs text-gray-500">Status</p>
-                            <p className="text-green-400 text-sm">Live</p>
+
+                        {/* CTA - Left aligned on desktop */}
+                        <div className="flex justify-center md:justify-start">
+                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)]">
+                                Visit Exogram.ai →
+                            </a>
                         </div>
                     </div>
-
-                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
-                        Visit Exogram.ai →
-                    </a>
 
                 </section>
 
