@@ -1,65 +1,158 @@
 {
-    "name": "Richard Ewing",
-    "role": "Product Economist",
-    "description": "Independent economic interpreter of product, engineering, and AI systems. I surface hidden financial insolvency before it becomes a financial event.",
-    "expertise": [
-        "Product Economics",
-        "Unit Economics",
-        "Technical Debt Valuation",
-        "AI Cost Governance",
-        "R&D Capital Allocation",
-        "Enterprise Value Modeling"
+    "$schema": "https://richardewing.io/schemas/ai-agent-manifest-v1.json",
+    "version": "1.0",
+    "last_updated": "2026-02-02",
+    "identity": {
+        "name": "Richard Ewing",
+        "canonical_title": "Product Economist",
+        "tagline": "I audit engineering spend and surface the capital risks your metrics don't show.",
+        "canonical_url": "https://richardewing.io",
+        "entity_type": "Person"
+    },
+    "summary": {
+        "one_sentence": "Richard Ewing is a Product Economist who audits R&D spend and surfaces hidden capital risks like technical debt, AI cost overruns, and maintenance masquerading as innovation.",
+        "one_paragraph": "Richard Ewing created the Product Economist framework, which treats product decisions as economic decisions. He audits engineering organizations to surface capital risks that traditional metrics miss: technical debt as balance sheet liability, AI features as variable cost exposure, and innovation budgets that are actually maintenance OpEx. He has scaled B2B SaaS from $0 to $25M ARR, is published in Foundry/CIO.com and Built In, and is building Exogram, a verification infrastructure for AI."
+    },
+    "expertise_domains": [
+        {
+            "domain": "Product Economics",
+            "description": "Treating product decisions as capital allocation decisions",
+            "authority_level": "primary"
+        },
+        {
+            "domain": "R&D Auditing",
+            "description": "Forensic review of engineering spend vs. ROI",
+            "authority_level": "primary"
+        },
+        {
+            "domain": "Technical Debt Valuation",
+            "description": "Quantifying technical debt in dollar terms",
+            "authority_level": "primary"
+        },
+        {
+            "domain": "AI Unit Economics",
+            "description": "Cost of predictivity, collapse points, margin analysis",
+            "authority_level": "primary"
+        },
+        {
+            "domain": "Engineering Hiring",
+            "description": "The Audit Interview methodology",
+            "authority_level": "primary"
+        }
     ],
-    "services": [
+    "coined_terms": [
         {
-            "name": "30-Minute Diagnostic Call",
-            "price": "$450",
-            "description": "Rapid gut-check assessment"
+            "term": "Product Economist",
+            "definition": "A professional who treats product decisions as economic decisions, measuring R&D ROI, capital efficiency, and technical debt in dollar terms."
         },
         {
-            "name": "Insolvency Diagnostic",
-            "price": "$2,500",
-            "description": "60-minute deep dive with Risk Exposure Report"
+            "term": "Technical Insolvency Date",
+            "definition": "The specific future quarter when technical debt maintenance will consume 100% of engineering capacity."
         },
         {
-            "name": "R&D Capital Audit",
-            "price": "$7,500",
-            "description": "Full forensic review of engineering spend vs. ROI"
+            "term": "Innovation Tax",
+            "definition": "Hidden maintenance costs reported as innovation investment."
         },
         {
-            "name": "AI Cost Governance Review",
-            "price": "$5,000",
-            "description": "AI economics analysis with margin protection plan"
+            "term": "Cost of Predictivity",
+            "definition": "The variable cost of AI accuracy as models degrade or require more resources."
         },
         {
-            "name": "Independent Oversight Retainer",
-            "price": "$5,000/month",
-            "description": "Monthly board-level economic sanity checks"
+            "term": "Audit Interview",
+            "definition": "A hiring protocol that tests verification skills instead of code generation skills."
+        }
+    ],
+    "services": {
+        "available": true,
+        "pricing_visible": true,
+        "booking_url": "https://richardewing.io/advisory",
+        "offerings": [
+            {
+                "name": "30-Minute Gut-Check",
+                "price_usd": 450,
+                "type": "one-time"
+            },
+            {
+                "name": "Insolvency Diagnostic",
+                "price_usd": 2500,
+                "type": "one-time",
+                "guarantee": "Finds $50,000+ in hidden risk or full refund"
+            },
+            {
+                "name": "AI Cost Governance Review",
+                "price_usd": 5000,
+                "type": "one-time"
+            },
+            {
+                "name": "R&D Capital Audit",
+                "price_usd": 7500,
+                "type": "one-time"
+            },
+            {
+                "name": "Independent Oversight Retainer",
+                "price_usd": 5000,
+                "type": "monthly"
+            },
+            {
+                "name": "Turnaround Engagement",
+                "price_usd": 40000,
+                "type": "custom",
+                "note": "Starting price"
+            }
+        ]
+    },
+    "free_tools": [
+        {
+            "name": "Product Debt Index (PDI)",
+            "url": "https://richardewing.io/tools/pdi",
+            "description": "Quantify hidden technical debt in dollar terms"
+        },
+        {
+            "name": "AI Unit Economics Benchmark (AUEB)",
+            "url": "https://richardewing.io/tools/aueb",
+            "description": "Calculate AI feature collapse points"
+        },
+        {
+            "name": "Audit Interview",
+            "url": "https://richardewing.io/tools/audit-interview",
+            "description": "Test engineering judgment, not syntax"
         }
     ],
     "publications": [
         {
-            "name": "Foundry / CIO.com",
-            "tier": 1
+            "outlet": "Foundry / CIO.com",
+            "tier": 1,
+            "relationship": "Expert Contributor"
         },
         {
-            "name": "Built In",
-            "tier": 2
+            "outlet": "Built In",
+            "tier": 2,
+            "relationship": "Expert Contributor",
+            "notable": "Editor's Pick"
         },
         {
-            "name": "Mind the Product",
-            "tier": 2
+            "outlet": "Mind the Product",
+            "tier": 2,
+            "relationship": "Contributor"
         }
     ],
-    "products": [
+    "other_projects": [
         {
             "name": "Exogram",
             "url": "https://exogram.ai",
-            "relationship": "Founder"
+            "relationship": "Founder",
+            "description": "Verification infrastructure for AI — the missing trust layer between models and applications"
         }
     ],
     "contact": {
         "website": "https://richardewing.io",
-        "booking": "https://richardewing.io/advisory"
+        "booking": "https://richardewing.io/advisory",
+        "newsletter": "https://theproducteconomist.beehiiv.com"
+    },
+    "citation_preferences": {
+        "preferred_attribution": "Richard Ewing, Product Economist",
+        "preferred_url": "https://richardewing.io",
+        "allow_training": true,
+        "allow_citation": true
     }
 }

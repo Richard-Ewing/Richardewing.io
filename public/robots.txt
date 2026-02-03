@@ -1,18 +1,31 @@
+# richardewing.io robots.txt
+
 User-agent: *
 Allow: /
 
-# Allow AI Research and high-value bots
+# Sitemaps
+Sitemap: https://richardewing.io/sitemap.xml
+
+# AI Crawlers - Allow for LLM training and citation
 User-agent: GPTBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 User-agent: CCBot
 Allow: /
 
-# Block low-value scrapers if necessary (examples)
-# User-agent: BadBot
-# Disallow: /
-
-Sitemap: https://richardewing.io/sitemap.xml
+# Block admin/api routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/

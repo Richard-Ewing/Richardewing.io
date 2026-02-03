@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Space_Grotesk, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 import './globals.css';
-import { Sidebar } from './components/sidebar';
+import Navigation from './components/Navigation';
 import { Footer } from './components/footer';
 import { personSchema, professionalServiceSchema } from './lib/schemas';
 
@@ -15,33 +15,41 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: '#050505',
+  themeColor: '#0A0A12', // Updated to match bg-primary
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.richardewing.io'),
+  metadataBase: new URL('https://richardewing.io'),
   title: {
-    default: 'Richard Ewing | Product Economist',
+    default: 'Richard Ewing — Product Economist | R&D Audits & Capital Risk Assessment',
     template: '%s | Richard Ewing'
   },
-  description: 'I help boards stop bleeding money on AI they don\'t understand. Forensic product audits, capital allocation strategy, and AI unit economics.',
-  keywords: ['Product Economist', 'AI Audit', 'Product Management', 'Capital Allocation', 'Tech Due Diligence', 'AI Unit Economics', 'Product Debt'],
+  description: 'I audit engineering spend and surface the capital risks your metrics don\'t show. Independent R&D oversight for CFOs, CTOs, and boards. $25M ARR scaled. Published in Foundry & Built In.',
+  keywords: ['product economist', 'R&D audit', 'technical debt valuation', 'AI cost governance', 'engineering ROI', 'capital allocation'],
   authors: [{ name: 'Richard Ewing', url: 'https://richardewing.io' }],
   creator: 'Richard Ewing',
   publisher: 'Richard Ewing',
+
+  // Open Graph
   openGraph: {
-    title: 'Richard Ewing | Product Economist',
-    description: 'I help boards stop bleeding money on AI they don\'t understand.',
+    title: 'Richard Ewing — Product Economist',
+    description: 'I audit engineering spend and surface the capital risks your metrics don\'t show.',
+    url: 'https://richardewing.io',
+    siteName: 'Richard Ewing',
     type: 'website',
     locale: 'en_US',
-    url: 'https://richardewing.io',
-    siteName: 'Richard Ewing - Product Economist',
+    images: [{ url: 'https://richardewing.io/og-image-home.png' }],
   },
+
+  // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'Richard Ewing | Product Economist',
-    description: 'Forensic product audits and AI unit economics for boards.',
+    title: 'Richard Ewing — Product Economist',
+    description: 'I audit engineering spend and surface the capital risks your metrics don\'t show.',
+    images: ['https://richardewing.io/og-image-home.png'],
   },
+
+  // Robots
   robots: {
     index: true,
     follow: true,
@@ -53,9 +61,16 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+
+  // AI Identity & Verification
+  other: {
+    'ai-content-declaration': 'original',
+    'ai-training-allowed': 'yes',
+    'ai-citation-preferred': 'yes',
+  },
+
   verification: {
-    // Add your Google Search Console verification code here
-    // google: 'your-verification-code',
+    // google: 'verification_code',
   },
 };
 
@@ -66,7 +81,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${mono.variable} ${serif.variable}`}>
-      <body className="overflow-x-hidden bg-obsidian text-gray-300 font-sans antialiased">
+      <head>
+        <link rel="ai-agent-manifest" href="/.well-known/ai-agent-manifest.json" />
+        <link rel="author" href="https://richardewing.io/principal" />
+        <link rel="me" href="https://linkedin.com/in/richardewing" />
+      </head>
+      <body className="overflow-x-hidden bg-[var(--bg-primary)] text-[var(--text-secondary)] font-sans antialiased min-h-screen flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
@@ -75,13 +95,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
         />
-        <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-[320px_1fr] min-h-screen">
-          <Sidebar />
-          <main className="p-4 sm:p-6 md:p-8 lg:p-16 xl:p-24 relative overflow-hidden min-h-screen">
-            {children}
-            <Footer />
-          </main>
-        </div>
+
+        <Navigation />
+
+        {/* Main content with top padding for fixed nav */}
+        <main className="flex-grow pt-24 relative overflow-hidden">
+          {children}
+        </main>
+
+        <Footer />
       </body>
     </html>
   );
