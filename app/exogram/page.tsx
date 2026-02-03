@@ -24,27 +24,28 @@ export default function ExogramPage() {
                     </p>
 
                     {/* Hero Actions - Grid Aligned */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto items-center mt-8 mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto items-center mt-8 mb-12">
 
                         {/* Founder Badge - Right aligned on desktop */}
-                        <div className="flex justify-center md:justify-end">
-                            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-xl bg-white/5 border border-white/10">
+                        <div className="flex justify-center md:justify-end w-full">
+                            <div className="inline-flex items-center gap-3 px-5 h-[52px] w-[260px] rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-10 h-10 rounded-full object-cover" />
-                                <div className="text-left">
-                                    <p className="text-white font-semibold text-sm">Founded by Richard Ewing</p>
-                                    <div className="flex items-center gap-2">
-                                        <p className="text-gray-400 text-xs text-[10px]">Product Economist</p>
-                                        <span className="text-green-400 text-[10px] uppercase font-mono tracking-wider px-1.5 bg-green-500/10 rounded border border-green-500/20">Live</span>
-                                    </div>
+                                <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-8 h-8 rounded-full object-cover grayscale opacity-80" />
+                                <div className="text-left flex-1">
+                                    <p className="text-white font-semibold text-xs leading-tight">Founded by Richard Ewing</p>
+                                    <p className="text-gray-500 text-[10px] leading-tight">Product Economist</p>
+                                </div>
+                                <div className="pl-3 border-l border-white/10 h-6 flex items-center">
+                                    <span className="text-green-500 text-[10px] font-mono tracking-wider">LIVE</span>
                                 </div>
                             </div>
                         </div>
 
                         {/* CTA - Left aligned on desktop */}
-                        <div className="flex justify-center md:justify-start">
-                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)]">
-                                Visit Exogram.ai →
+                        <div className="flex justify-center md:justify-start w-full">
+                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-between px-5 h-[52px] w-[260px] rounded-xl bg-purple-600/10 border border-purple-500/50 text-white hover:bg-purple-600 hover:border-purple-500 transition-all group">
+                                <span className="font-semibold text-sm">Visit Exogram.ai</span>
+                                <span className="group-hover:translate-x-1 transition-transform">→</span>
                             </a>
                         </div>
                     </div>
