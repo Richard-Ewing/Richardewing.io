@@ -86,12 +86,6 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
-                {/* The Solution - Cinematic Reveal */}
-                {/* The Solution - Cinematic Reveal */}
-                <div className="relative bg-black">
-                    <TextRevealByWord text="LLMs generate language. Exogram maintains reality. Together, they enable intelligence that remembers, reasons, and can be trusted." className="text-white" />
-                </div>
-
                 <section className="section bg-black/30 pt-0">
                     <div className="max-w-3xl mx-auto text-center">
                         <h2 className="text-2xl font-bold text-white mb-8">The Stack</h2>
