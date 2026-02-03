@@ -88,8 +88,9 @@ export default function ExogramPage() {
                 </section>
 
                 {/* The Solution - Cinematic Reveal */}
-                <div className="min-h-screen flex items-center justify-center bg-black">
-                    <TextRevealByWord text="LLMs generate language. Exogram maintains reality. Together, they enable intelligence that remembers, reasons, and can be trusted." />
+                {/* The Solution - Cinematic Reveal */}
+                <div className="relative bg-black">
+                    <TextRevealByWord text="LLMs generate language. Exogram maintains reality. Together, they enable intelligence that remembers, reasons, and can be trusted." className="text-white" />
                 </div>
 
                 <section className="section bg-black/30 pt-0">
