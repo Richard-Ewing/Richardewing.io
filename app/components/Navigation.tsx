@@ -60,6 +60,11 @@ const Navigation = () => {
                                 <DropdownItem href="/tools/audit-interview">Audit Interview</DropdownItem>
                             </Dropdown>
 
+                            <Link href="/advisory" className="text-gray-300 hover:text-white transition-colors relative group">
+                                Advisory
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            </Link>
+
                             <Link href="/exogram" className="text-gray-300 hover:text-white transition-colors relative group">
                                 Exogram
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />

@@ -61,13 +61,13 @@ export default function AdvisoryPage() {
                                 <li>✓ $50K guarantee</li>
                             </ul>
 
-                            <a href="#book-diagnostic" className="block w-full py-3 text-center rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
+                            <a href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203" className="block w-full py-3 text-center rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
                                 Book Diagnostic
                             </a>
 
                             {/* Gut Check Upsell */}
                             <div className="mt-4 pt-4 border-t border-white/10 text-center">
-                                <a href="#gut-check" className="text-gray-400 hover:text-white text-xs block">
+                                <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" className="text-gray-400 hover:text-white text-xs block">
                                     Not ready for a full diagnostic?<br />
                                     Start with a 30-minute Gut-Check → $450
                                 </a>
@@ -87,7 +87,7 @@ export default function AdvisoryPage() {
                                 <li>✓ Remediation roadmap</li>
                             </ul>
 
-                            <a href="#book-audit" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5">
+                            <a href="https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5">
                                 Book Audit
                             </a>
                         </div>
@@ -95,18 +95,18 @@ export default function AdvisoryPage() {
                         {/* ENTERPRISE */}
                         <div className="card">
                             <div className="text-xs text-gray-500 uppercase tracking-wide mb-4">Enterprise</div>
-                            <div className="text-3xl font-bold text-white mb-2">$5K+</div>
-                            <div className="text-gray-400 mb-6">Retainer / Turnaround</div>
+                            <div className="text-3xl font-bold text-white mb-2">$5K/mo</div>
+                            <div className="text-gray-400 mb-6">Independent Oversight</div>
 
                             <ul className="space-y-3 mb-6 text-sm text-gray-400">
                                 <li>✓ $5K/mo oversight retainer</li>
-                                <li>✓ $40K+ turnaround engagements</li>
-                                <li>✓ Board & fractional roles</li>
-                                <li>✓ Custom scope</li>
+                                <li>✓ Board-level economic sanity checks</li>
+                                <li>✓ Asynchronous access</li>
+                                <li>✓ Min. 3-month commitment</li>
                             </ul>
 
-                            <a href="#inquire" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5 mb-4">
-                                Inquire
+                            <a href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5 mb-4">
+                                Subscribe
                             </a>
 
                             <p className="text-gray-500 text-xs text-center px-2">
@@ -129,7 +129,8 @@ export default function AdvisoryPage() {
                                 <h3 className="font-semibold text-white">30-Min Gut-Check</h3>
                                 <span className="text-cyan-400 font-bold">$450</span>
                             </div>
-                            <p className="text-gray-400 text-sm">Not sure if you have a problem? You describe the situation, I tell you if it's on fire.</p>
+                            <p className="text-gray-400 text-sm mb-4">Not sure if you have a problem? You describe the situation, I tell you if it's on fire.</p>
+                            <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" className="text-xs text-purple-400 hover:text-white">Book Now →</a>
                         </div>
 
                         <div className="card">
@@ -137,7 +138,8 @@ export default function AdvisoryPage() {
                                 <h3 className="font-semibold text-white">AI Cost Governance</h3>
                                 <span className="text-cyan-400 font-bold">$5,000</span>
                             </div>
-                            <p className="text-gray-400 text-sm">Dedicated analysis of your AI unit economics. Find your collapse point before you hit it.</p>
+                            <p className="text-gray-400 text-sm mb-4">Dedicated analysis of your AI unit economics. Find your collapse point before you hit it.</p>
+                            <a href="https://buy.stripe.com/9B64gs4YK070dS57W02B201" className="text-xs text-purple-400 hover:text-white">Book Analysis →</a>
                         </div>
 
                     </div>
