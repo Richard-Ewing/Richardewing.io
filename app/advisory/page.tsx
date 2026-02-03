@@ -1,18 +1,17 @@
 "use client";
 
 import React from 'react';
+import BlurIn from '@/components/magicui/blur-in';
+import ShineBorder from '@/components/magicui/shine-border';
 
 export default function AdvisoryPage() {
     return (
         <main className="pt-20">
             <div className="page-container">
 
-                {/* Hero */}
                 <section className="section-lg text-center">
                     <div className="text-xs text-purple-400 uppercase tracking-wide mb-4">Advisory Services</div>
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Intervention Protocols.
-                    </h1>
+                    <BlurIn word="Intervention Protocols." className="text-4xl md:text-5xl font-bold text-white mb-6" />
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
                         I don't do "consulting." These are surgical interventions designed to
                         stop the bleeding and install permanent capital discipline.
@@ -54,29 +53,31 @@ export default function AdvisoryPage() {
                         </div>
 
                         {/* START HERE - $2,500 */}
-                        <div className="card-featured relative">
-                            <div className="text-xs text-purple-400 uppercase tracking-wide mb-4">★ Start Here</div>
-                            <div className="text-3xl font-bold text-white mb-2">$2,500</div>
-                            <div className="text-gray-400 mb-6">Insolvency Diagnostic</div>
+                        <ShineBorder className="card-featured relative p-0" color={["#A855F7", "#00D4FF"]}>
+                            <div className="p-6">
+                                <div className="text-xs text-purple-400 uppercase tracking-wide mb-4">★ Start Here</div>
+                                <div className="text-3xl font-bold text-white mb-2">$2,500</div>
+                                <div className="text-gray-400 mb-6">Insolvency Diagnostic</div>
 
-                            <ul className="space-y-3 mb-6 text-sm text-gray-300">
-                                <li>✓ 60-minute deep dive session</li>
-                                <li>✓ Written Risk Exposure Report</li>
-                                <li>✓ 15-min follow-up call</li>
-                            </ul>
+                                <ul className="space-y-3 mb-6 text-sm text-gray-300">
+                                    <li>✓ 60-minute deep dive session</li>
+                                    <li>✓ Written Risk Exposure Report</li>
+                                    <li>✓ 15-min follow-up call</li>
+                                </ul>
 
-                            <a href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203" className="block w-full py-3 text-center rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
-                                Book Diagnostic
-                            </a>
-
-                            {/* Gut Check Upsell */}
-                            <div className="mt-4 pt-4 border-t border-white/10 text-center">
-                                <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" className="text-gray-400 hover:text-white text-xs block">
-                                    Not ready for a full diagnostic?<br />
-                                    Start with a 30-minute Gut-Check → $450
+                                <a href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203" className="block w-full py-3 text-center rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
+                                    Book Diagnostic
                                 </a>
+
+                                {/* Gut Check Upsell */}
+                                <div className="mt-4 pt-4 border-t border-white/10 text-center">
+                                    <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" className="text-gray-400 hover:text-white text-xs block">
+                                        Not ready for a full diagnostic?<br />
+                                        Start with a 30-minute Gut-Check → $450
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        </ShineBorder>
 
                         {/* AUDIT - $7,500 */}
                         <div className="card">

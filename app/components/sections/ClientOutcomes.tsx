@@ -1,5 +1,7 @@
 "use client";
 
+import NumberTicker from '@/components/magicui/number-ticker';
+
 const ClientOutcomes = () => {
     return (
         <section className="section-sm">
@@ -14,7 +16,7 @@ const ClientOutcomes = () => {
                     {/* Finding 1 */}
                     <div className="card">
                         <div className="text-xs text-purple-400 uppercase tracking-wide mb-2">Series C Platform</div>
-                        <div className="text-3xl font-bold text-white mb-2">$1.2M</div>
+                        <div className="text-3xl font-bold text-white mb-2">$<NumberTicker value={1.2} decimalPlaces={1} />M</div>
                         <p className="text-gray-400 text-sm">maintenance costs reported as "innovation"</p>
                         <p className="text-gray-500 text-xs mt-4">73% of "new features" were debt payments</p>
                     </div>
@@ -22,7 +24,7 @@ const ClientOutcomes = () => {
                     {/* Finding 2 */}
                     <div className="card">
                         <div className="text-xs text-cyan-400 uppercase tracking-wide mb-2">B2B SaaS</div>
-                        <div className="text-3xl font-bold text-white mb-2">34%</div>
+                        <div className="text-3xl font-bold text-white mb-2"><NumberTicker value={34} />%</div>
                         <p className="text-gray-400 text-sm">AI cost reduction achieved</p>
                         <p className="text-gray-500 text-xs mt-4">Output maintained, CFO now requires framework</p>
                     </div>

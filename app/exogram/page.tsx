@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import BlurIn from '@/components/magicui/blur-in';
 
 export default function ExogramPage() {
     return (
@@ -16,9 +17,7 @@ export default function ExogramPage() {
                         <img src="/images/exogram/logo-main.png" alt="Exogram Logo" className="w-full h-full object-contain" />
                     </div>
 
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                        Exogram
-                    </h1>
+                    <BlurIn word="Exogram" className="text-4xl md:text-5xl font-bold text-white mb-4" />
                     <p className="text-xl text-purple-400 mb-8">
                         The Verification Infrastructure for AI
                     </p>

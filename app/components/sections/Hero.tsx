@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import NumberTicker from '@/components/magicui/number-ticker';
 
 const Hero = () => {
     return (
@@ -23,7 +24,7 @@ const Hero = () => {
 
                 {/* Credibility line */}
                 <p className="text-gray-400 mb-10 text-lg">
-                    Richard Ewing, Product Economist · $25M ARR scaled · Published in Foundry & Built In
+                    Richard Ewing, Product Economist · $<NumberTicker value={25} />M ARR scaled · Published in Foundry & Built In
                 </p>
 
                 {/* Path selector - 3 cards */}

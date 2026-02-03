@@ -261,3 +261,25 @@ html {
   background: rgba(168, 85, 247, 0.3);
   color: white;
 }
+
+@keyframes shine {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  to {
+    background-position: 0% 0%;
+  }
+}
+
+.animate-shine {
+  animation: shine var(--duration) linear infinite;
+}
+
+.bg-shine-size {
+  background-size: 300% 300%;
+}
