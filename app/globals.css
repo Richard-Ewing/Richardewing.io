@@ -130,18 +130,18 @@ h3 {
 
 /* Standardized Section Spacing */
 .section {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .section-sm {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .section-lg {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 /* Section headers */

@@ -39,7 +39,7 @@ const ExogramSection = () => {
                         </p>
 
                         {/* Founder & CTAs Container - Side by Side on Desktop */}
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full border-t border-white/10 pt-8 mt-4">
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full border-t border-white/10 pt-8 mt-4">
 
                             {/* Founder Attribution */}
                             <div className="flex items-center gap-4 h-12">
@@ -56,7 +56,7 @@ const ExogramSection = () => {
 
                             {/* CTAs */}
                             <div className="flex items-center h-12">
-                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] h-10 my-auto">
+                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] h-10 self-center">
                                     Visit Exogram.ai →
                                 </a>
                             </div>
