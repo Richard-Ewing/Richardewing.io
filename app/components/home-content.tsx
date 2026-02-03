@@ -56,10 +56,10 @@ export default function HomeContent() {
                 {/* Authority Stats Bar */}
                 <StatsBar
                     stats={[
-                        { value: <><NumberTicker value={25} prefix="$" suffix="M" /></>, label: "ARR Scaled" },
-                        { value: <><NumberTicker value={15} suffix="+" /></>, label: "Years Exp." },
-                        { value: <><NumberTicker value={7} suffix="M+" /></>, label: "Users Impacted" },
-                        { value: <span className="text-gold"><NumberTicker value={100} suffix="%" /></span>, label: "Independence" }
+                        { value: <><NumberTicker value={25} prefix="$" suffix="M" className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-bold" /></>, label: "ARR Scaled" },
+                        { value: <><NumberTicker value={15} suffix="+" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 font-bold" /></>, label: "Years Exp." },
+                        { value: <><NumberTicker value={7} suffix="M+" className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-red-500 font-bold" /></>, label: "Users Impacted" },
+                        { value: <span className="text-gold"><NumberTicker value={100} suffix="%" className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-500 font-bold" /></span>, label: "Independence" }
                     ]}
                     className="mb-8"
                 />

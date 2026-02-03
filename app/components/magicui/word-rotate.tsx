@@ -8,10 +8,12 @@ export default function WordRotate({
     words,
     duration = 2500,
     className,
+    containerClassName, // Added containerClassName
 }: {
     words: string[];
     duration?: number;
-    className?: string;
+    className?: string; // Applied to the text (h1)
+    containerClassName?: string; // Applied to the wrapper (div)
 }) {
     const [index, setIndex] = useState(0);
 
@@ -23,7 +25,7 @@ export default function WordRotate({
     }, [words, duration]);
 
     return (
-        <div className={`overflow-hidden py-2 ${className}`}>
+        <div className={`overflow-hidden py-2 ${containerClassName || ''}`}>
             <AnimatePresence mode="wait">
                 <motion.h1
                     key={words[index]}

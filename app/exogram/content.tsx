@@ -54,15 +54,15 @@ export default function ExogramPage() {
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
                                     <div className="p-4 bg-white/5 rounded-lg border border-white/5">
                                         <div className="text-xs text-zinc-500 font-mono uppercase mb-1">Context Window</div>
-                                        <div className="text-xl font-bold text-white font-grotesk"><NumberTicker value={200} suffix="k" /></div>
+                                        <div className="text-xl font-bold text-white font-grotesk"><NumberTicker value={200} suffix="k" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400" /></div>
                                     </div>
                                     <div className="p-4 bg-white/5 rounded-lg border border-white/5">
                                         <div className="text-xs text-zinc-500 font-mono uppercase mb-1">Memory Nodes</div>
-                                        <div className="text-xl font-bold text-white font-grotesk"><NumberTicker value={14205} /></div>
+                                        <div className="text-xl font-bold text-white font-grotesk"><NumberTicker value={14205} className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400" /></div>
                                     </div>
                                     <div className="p-4 bg-white/5 rounded-lg border border-white/5">
                                         <div className="text-xs text-zinc-500 font-mono uppercase mb-1">Daily Inops</div>
-                                        <div className="text-xl font-bold text-white font-grotesk"><NumberTicker value={140} /></div>
+                                        <div className="text-xl font-bold text-white font-grotesk"><NumberTicker value={140} className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400" /></div>
                                     </div>
                                     <div className="p-4 bg-white/5 rounded-lg border border-white/5">
                                         <div className="text-xs text-zinc-500 font-mono uppercase mb-1">Uptime</div>
