@@ -56,7 +56,9 @@ export default function PrincipalPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
             />
-            <PrincipalContent />
+            <main className="pt-24 pb-20 flex justify-center">
+                <PrincipalContent />
+            </main>
         </>
     );
 }

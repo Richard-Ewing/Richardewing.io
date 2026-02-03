@@ -60,10 +60,10 @@ const Navigation = () => {
                                 <DropdownItem href="/tools/audit-interview">Audit Interview</DropdownItem>
                             </Dropdown>
 
-                            <Link href="/advisory" className="text-gray-300 hover:text-white transition-colors relative group">
-                                Advisory
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
-                            </Link>
+                            <Dropdown label="Advisory">
+                                <DropdownItem href="/advisory">Advisory Services</DropdownItem>
+                                <DropdownItem href="/principal">The Principal</DropdownItem>
+                            </Dropdown>
 
                             <Link href="/exogram" className="text-gray-300 hover:text-white transition-colors relative group">
                                 Exogram
@@ -170,7 +170,10 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                 <div className="p-6 space-y-8 pb-20">
 
                     <MobileSection title="ADVISORY" href="/advisory" onClick={onClose}>
-                        <div className="text-gray-400">Book an R&D audit</div>
+                        <div className="text-gray-400 mb-4">Book an R&D audit</div>
+                        <MobileLink href="/principal" onClick={onClose} className="border-l-2 border-[var(--accent-purple)]">
+                            The Principal (Bio)
+                        </MobileLink>
                     </MobileSection>
 
                     <div className="w-full h-px bg-white/10" />
