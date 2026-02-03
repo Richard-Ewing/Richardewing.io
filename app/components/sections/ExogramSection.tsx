@@ -16,7 +16,10 @@ const ExogramSection = () => {
 
                         {/* Header with logo */}
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="w-12 h-12 rounded-lg bg-purple-600 flex items-center justify-center text-white font-bold">E</div>
+                            <div className="w-12 h-12 flex items-center justify-center">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img src="/images/exogram/logo-main.png" alt="Exogram Logo" className="w-full h-full object-contain" />
+                            </div>
                             <div>
                                 <h3 className="text-xl font-bold text-white">Exogram</h3>
                                 <p className="text-purple-400 text-sm">The Verification Infrastructure for AI</p>

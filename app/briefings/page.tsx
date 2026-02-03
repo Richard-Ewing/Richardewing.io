@@ -12,5 +12,11 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return <BriefingsPage />;
+    return (
+        <main className="pt-20">
+            <div className="page-container">
+                <BriefingsPage />
+            </div>
+        </main>
+    );
 }

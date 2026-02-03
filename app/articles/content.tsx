@@ -18,7 +18,7 @@ export default function ArticlesPage() {
         : articles.filter(article => article.source === filter);
 
     return (
-        <div className="max-w-4xl w-full relative z-10">
+        <div className="max-w-4xl w-full relative z-10 mx-auto">
             {/* Background FX */}
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 

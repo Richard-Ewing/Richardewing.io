@@ -11,8 +11,9 @@ export default function ExogramPage() {
                 <section className="section-lg text-center">
 
                     {/* Logo */}
-                    <div className="w-16 h-16 rounded-2xl bg-purple-600 flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
-                        E
+                    <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/images/exogram/logo-main.png" alt="Exogram Logo" className="w-full h-full object-contain" />
                     </div>
 
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
