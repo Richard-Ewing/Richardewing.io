@@ -8,7 +8,8 @@ import NewsletterSection from './components/sections/NewsletterSection';
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-0">
+    <main className="pt-20">
+      {/* Note: Components have their own sections/containers as per spec */}
       <Hero />
       <ClientOutcomes />
       <FourHorsemen />
@@ -16,6 +17,6 @@ export default function Home() {
       <ExogramSection />
       <PricingPreview />
       <NewsletterSection />
-    </div>
+    </main>
   );
 }

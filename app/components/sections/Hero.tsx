@@ -1,101 +1,56 @@
 "use client";
 
 import Link from 'next/link';
-import { useScrollAnimation } from '@/app/hooks/useScrollAnimation';
 
 const Hero = () => {
-    const { ref, isVisible } = useScrollAnimation();
-
     return (
-        <section ref={ref} className={`min-h-[90vh] flex items-center justify-center px-6 py-24 relative overflow-hidden transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+        <section className="min-h-[80vh] flex items-center justify-center py-20">
+            <div className="page-container text-center">
 
-            {/* Background gradients or effects can go here */}
-            <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent opacity-50 pointer-events-none" />
-
-            <div className="max-w-5xl mx-auto text-center relative z-10">
-
-                {/* Eyebrow */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--accent-purple)]/10 border border-[var(--accent-purple)]/30 mb-8 animate-fade-in-up">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                {/* Eyebrow pill */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 mb-6">
+                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
                     <span className="text-sm text-gray-300">Independent R&D Oversight</span>
                 </div>
 
                 {/* Headline */}
-                <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight animate-fade-in-up delay-100">
-                    <span className="text-white">I audit engineering spend and surface the capital risks your </span>
-                    <span className="gradient-text">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    I audit engineering spend and surface the capital risks your{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-red-400">
                         metrics don't show.
                     </span>
                 </h1>
 
                 {/* Credibility line */}
-                <div className="flex flex-wrap items-center justify-center gap-4 mb-16 text-gray-400 animate-fade-in-up delay-200">
-                    <span>Richard Ewing, Product Economist</span>
-                    <span className="hidden md:inline">•</span>
-                    <span>$25M ARR scaled</span>
-                    <span className="hidden md:inline">•</span>
-                    <span>Published in Foundry & Built In</span>
-                </div>
+                <p className="text-gray-400 mb-10 text-lg">
+                    Richard Ewing, Product Economist · $25M ARR scaled · Published in Foundry & Built In
+                </p>
 
-                {/* Path Selector - 3 columns */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up delay-300">
+                {/* Path selector - 3 cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
 
-                    <PathCard
-                        icon="📊"
-                        title="Get an Audit"
-                        description="Diagnose my R&D economics"
-                        href="/advisory"
-                        variant="primary"
-                    />
+                    <Link href="/advisory" className="card text-left hover:border-purple-500/50 group block">
+                        <div className="text-2xl mb-3">📊</div>
+                        <h3 className="font-semibold text-white mb-2 group-hover:text-purple-400">Get an Audit</h3>
+                        <p className="text-sm text-gray-400">Diagnose my R&D economics</p>
+                    </Link>
 
-                    <PathCard
-                        icon="📖"
-                        title="Learn the Framework"
-                        description="Read the doctrine"
-                        href="/doctrine"
-                        variant="secondary"
-                    />
+                    <Link href="/doctrine" className="card text-left hover:border-cyan-500/50 group block">
+                        <div className="text-2xl mb-3">📖</div>
+                        <h3 className="font-semibold text-white mb-2 group-hover:text-cyan-400">Learn the Framework</h3>
+                        <p className="text-sm text-gray-400">Read the doctrine</p>
+                    </Link>
 
-                    <PathCard
-                        icon="🔧"
-                        title="See What I Build"
-                        description="Explore Exogram"
-                        href="/exogram"
-                        variant="secondary"
-                    />
+                    <Link href="/exogram" className="card text-left hover:border-purple-500/50 group block">
+                        <div className="text-2xl mb-3">🔧</div>
+                        <h3 className="font-semibold text-white mb-2 group-hover:text-purple-400">See What I Build</h3>
+                        <p className="text-sm text-gray-400">Explore Exogram</p>
+                    </Link>
 
                 </div>
 
             </div>
         </section>
-    );
-};
-
-const PathCard = ({ icon, title, description, href, variant }: { icon: string, title: string, description: string, href: string, variant: 'primary' | 'secondary' }) => {
-    const isPrimary = variant === 'primary';
-
-    return (
-        <Link
-            href={href}
-            className={`group relative p-8 rounded-2xl border transition-all duration-300 flex flex-col items-center text-center
-        ${isPrimary
-                    ? 'bg-[var(--glass-bg)] border-[var(--accent-crimson)] hover:bg-[var(--accent-crimson)]/10 shadow-[0_0_20px_rgba(255,68,68,0.1)] hover:shadow-[0_0_30px_rgba(255,68,68,0.2)]'
-                    : 'bg-[var(--glass-bg)] border-white/10 hover:border-[var(--accent-purple)] hover:bg-white/5'
-                }
-      `}
-        >
-            <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform">{icon}</div>
-            <h3 className={`text-xl font-bold mb-2 ${isPrimary ? 'text-white' : 'text-gray-200 group-hover:text-white'}`}>
-                {title}
-            </h3>
-            <p className="text-sm text-gray-400 group-hover:text-gray-300">
-                {description}
-            </p>
-
-            {isPrimary && (
-                <div className="absolute inset-x-0 bottom-0 h-1 bg-[var(--accent-crimson)] rounded-b-2xl opacity-50 group-hover:opacity-100 transition-opacity" />
-            )}
-        </Link>
     );
 };
 

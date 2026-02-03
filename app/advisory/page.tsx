@@ -1,214 +1,187 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
-import { useScrollAnimation } from '@/app/hooks/useScrollAnimation';
 
 export default function AdvisoryPage() {
-    const { ref, isVisible } = useScrollAnimation();
-
     return (
-        <div className="min-h-screen pb-24">
+        <main className="pt-20">
+            <div className="page-container">
 
-            {/* Header */}
-            <section className="pt-12 pb-12 px-6 text-center">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4">Intervention Protocols</h1>
-                <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-                    I don't do "consulting." These are surgical interventions.
-                </p>
-                <div className="inline-block py-2 px-4 rounded-full bg-[var(--bg-secondary)] border border-white/10 text-sm font-mono text-[var(--accent-purple)]">
-                    Q2 2026 AVAILABILITY: 4 diagnostic slots • 2 audit slots remaining
-                </div>
-            </section>
-
-            {/* Pricing Grid */}
-            <section ref={ref} className={`px-6 max-w-7xl mx-auto mb-24 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                    {/* Free Tier */}
-                    <PricingCard
-                        title="FREE"
-                        price="$0"
-                        description="Perfect for: Learning the framework"
-                        features={[
-                            "Newsletter",
-                            "5 Free Tools",
-                            "R&D Audit Checklist"
-                        ]}
-                        ctaText="SUBSCRIBE"
-                        ctaHref="#newsletter"
-                        variant="neutral"
-                    />
-
-                    {/* Start Here - Featured */}
-                    <PricingCard
-                        title="★ START HERE"
-                        price="$2,500"
-                        subtitle="INSOLVENCY DIAGNOSTIC"
-                        description="✓ 60-min deep dive\n✓ Risk Report\n✓ $50K guarantee"
-                        features={[
-                            "Confidential Review",
-                            "Metric Analysis",
-                            "Immediate Savings"
-                        ]}
-                        ctaText="BOOK NOW"
-                        ctaHref="https://buy.stripe.com/placeholder"
-                        variant="featured"
-                    />
-
-                    {/* Professional */}
-                    <PricingCard
-                        title="PROFESSIONAL"
-                        price="$7,500"
-                        subtitle="R&D CAPITAL AUDIT"
-                        description="✓ Full 2-3 week review\n✓ Stakeholder interviews\n✓ Board-ready deliverable"
-                        features={[
-                            "Full Access Review",
-                            "Detailed Roadmap",
-                            "Executive Presentation"
-                        ]}
-                        ctaText="BOOK AUDIT"
-                        ctaHref="https://cal.com/richardewing/audit-intro"
-                        variant="neutral"
-                    />
-
-                </div>
-            </section>
-
-            {/* Add-ons Grid */}
-            <section className="px-6 max-w-5xl mx-auto mb-24">
-                <h3 className="text-xl font-bold mb-8 text-center text-gray-500 uppercase tracking-widest">Enterprise & Add-ons</h3>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <AddOnCard
-                        title="GUT-CHECK CALL"
-                        price="$450"
-                        desc="30-min rapid assessment. Is it on fire? Yes/No."
-                        cta="BOOK →"
-                    />
-                    <AddOnCard
-                        title="AI COST GOVERNANCE"
-                        price="$5,000"
-                        desc="Dedicated AI economics review. Find collapse points."
-                        cta="BOOK →"
-                    />
-                    <AddOnCard
-                        title="OVERSIGHT RETAINER"
-                        price="$5,000/month"
-                        desc="Monthly board-level economic sanity checks."
-                        cta="START RETAINER →"
-                    />
-                    <AddOnCard
-                        title="TURNAROUND"
-                        price="$40,000+"
-                        desc="Full organizational intervention. Custom scope."
-                        cta="INQUIRE →"
-                    />
-                </div>
-            </section>
-
-            {/* Board & Fractional */}
-            <section className="px-6 max-w-4xl mx-auto mb-24">
-                <div className="p-8 rounded-2xl bg-[var(--bg-secondary)] border border-white/10 text-center">
-                    <h3 className="text-2xl font-bold mb-4">Board & Fractional Leadership</h3>
-                    <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-                        For Series B+ companies requiring sustained intervention.
-                        I serve as a Fractional CPO or Independent Board Director.
+                {/* Hero */}
+                <section className="section-lg text-center">
+                    <div className="text-xs text-purple-400 uppercase tracking-wide mb-4">Advisory Services</div>
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                        Intervention Protocols.
+                    </h1>
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
+                        I don't do "consulting." These are surgical interventions designed to
+                        stop the bleeding and install permanent capital discipline.
                     </p>
-                    <p className="text-[var(--accent-purple)] mb-8 font-mono text-sm">
-                        Currently accepting: 1 slot available for Q2 2026
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="mailto:richard@richardewing.io" className="px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors">
-                            Inquire about Board Roles →
-                        </Link>
-                        <Link href="/manifesto" className="px-6 py-3 rounded-lg border border-white/10 hover:bg-white/5 text-gray-300 transition-colors">
-                            Read Operating Principles →
-                        </Link>
-                    </div>
-                </div>
-            </section>
 
-            {/* Guarantee */}
-            <section className="px-6 max-w-3xl mx-auto text-center">
-                <div className="p-1 rounded-2xl bg-gradient-to-r from-[var(--accent-purple)] to-[var(--accent-crimson)]">
-                    <div className="bg-[var(--bg-primary)] rounded-xl p-8 md:p-12">
-                        <h3 className="text-2xl font-bold mb-6">The $50,000 Guarantee</h3>
-                        <p className="text-lg text-gray-300 mb-6">
-                            Every Insolvency Diagnostic I've conducted has surfaced at least <strong className="text-white">$50,000</strong> in hidden capital risk or misallocation.
-                        </p>
-                        <p className="text-lg text-gray-300 mb-6">
-                            If yours doesn't, I'll refund the full <strong className="text-white">$2,500</strong>.
-                        </p>
-                        <p className="text-[var(--accent-cyan)] font-bold">
-                            In 12 audits, I've never had to.
-                        </p>
+                    {/* Availability banner */}
+                    <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-white/5 border border-white/10">
+                        <span className="text-gray-400">Q2 2026 Availability:</span>
+                        <span className="text-white">4 diagnostic slots</span>
+                        <span className="text-gray-500">•</span>
+                        <span className="text-white">2 audit slots</span>
                     </div>
-                </div>
-            </section>
+                </section>
 
-        </div>
+                {/* Main pricing grid - 4 columns */}
+                <section className="section">
+                    <div className="grid-4 max-w-6xl mx-auto">
+
+                        {/* FREE */}
+                        <div className="card">
+                            <div className="text-xs text-gray-500 uppercase tracking-wide mb-4">Free</div>
+                            <div className="text-3xl font-bold text-white mb-2">$0</div>
+                            <div className="text-gray-400 mb-6">Newsletter + Tools</div>
+
+                            <ul className="space-y-3 mb-6 text-sm text-gray-400">
+                                <li>✓ Executive Briefings newsletter</li>
+                                <li>✓ All 5 diagnostic tools</li>
+                                <li>✓ R&D Audit Checklist PDF</li>
+                            </ul>
+
+                            <a href="/briefings" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5">
+                                Subscribe Free
+                            </a>
+                        </div>
+
+                        {/* START HERE - $2,500 */}
+                        <div className="card-featured">
+                            <div className="text-xs text-purple-400 uppercase tracking-wide mb-4">★ Start Here</div>
+                            <div className="text-3xl font-bold text-white mb-2">$2,500</div>
+                            <div className="text-gray-400 mb-6">Insolvency Diagnostic</div>
+
+                            <ul className="space-y-3 mb-6 text-sm text-gray-300">
+                                <li>✓ 60-minute deep dive session</li>
+                                <li>✓ Written Risk Exposure Report</li>
+                                <li>✓ 15-min follow-up call</li>
+                                <li>✓ $50K guarantee</li>
+                            </ul>
+
+                            <a href="#book-diagnostic" className="block w-full py-3 text-center rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
+                                Book Diagnostic
+                            </a>
+                        </div>
+
+                        {/* AUDIT - $7,500 */}
+                        <div className="card">
+                            <div className="text-xs text-gray-500 uppercase tracking-wide mb-4">Professional</div>
+                            <div className="text-3xl font-bold text-white mb-2">$7,500</div>
+                            <div className="text-gray-400 mb-6">R&D Capital Audit</div>
+
+                            <ul className="space-y-3 mb-6 text-sm text-gray-400">
+                                <li>✓ Full 2-3 week forensic review</li>
+                                <li>✓ Stakeholder interviews</li>
+                                <li>✓ Board-ready deliverable</li>
+                                <li>✓ Remediation roadmap</li>
+                            </ul>
+
+                            <a href="#book-audit" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5">
+                                Book Audit
+                            </a>
+                        </div>
+
+                        {/* ENTERPRISE */}
+                        <div className="card">
+                            <div className="text-xs text-gray-500 uppercase tracking-wide mb-4">Enterprise</div>
+                            <div className="text-3xl font-bold text-white mb-2">$5K+</div>
+                            <div className="text-gray-400 mb-6">Retainer / Turnaround</div>
+
+                            <ul className="space-y-3 mb-6 text-sm text-gray-400">
+                                <li>✓ $5K/mo oversight retainer</li>
+                                <li>✓ $40K+ turnaround engagements</li>
+                                <li>✓ Board & fractional roles</li>
+                                <li>✓ Custom scope</li>
+                            </ul>
+
+                            <a href="#inquire" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5">
+                                Inquire
+                            </a>
+                        </div>
+
+                    </div>
+                </section>
+
+                {/* Add-ons grid */}
+                <section className="section-sm">
+                    <div className="section-header text-center">
+                        <h2>Additional Services</h2>
+                    </div>
+
+                    <div className="grid-2 max-w-3xl mx-auto">
+
+                        <div className="card">
+                            <div className="flex justify-between items-start mb-4">
+                                <h3 className="font-semibold text-white">30-Min Gut-Check</h3>
+                                <span className="text-cyan-400 font-bold">$450</span>
+                            </div>
+                            <p className="text-gray-400 text-sm">Not sure if you have a problem? You describe the situation, I tell you if it's on fire.</p>
+                        </div>
+
+                        <div className="card">
+                            <div className="flex justify-between items-start mb-4">
+                                <h3 className="font-semibold text-white">AI Cost Governance</h3>
+                                <span className="text-cyan-400 font-bold">$5,000</span>
+                            </div>
+                            <p className="text-gray-400 text-sm">Dedicated analysis of your AI unit economics. Find your collapse point before you hit it.</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                {/* Guarantee */}
+                <section className="section">
+                    <div className="max-w-2xl mx-auto">
+                        <div className="card text-center p-8">
+                            <h3 className="text-xl font-bold text-white mb-4">The $50,000 Guarantee</h3>
+                            <p className="text-gray-400 mb-4">
+                                Every Insolvency Diagnostic I've conducted has surfaced at least $50,000
+                                in hidden capital risk or misallocation.
+                            </p>
+                            <p className="text-gray-400 mb-4">
+                                If yours doesn't, I'll refund the full $2,500.
+                            </p>
+                            <p className="text-purple-400 font-semibold">
+                                In 12 audits, I've never had to.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Board roles */}
+                <section className="section-sm">
+                    <div className="max-w-3xl mx-auto">
+                        <div className="card p-8">
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <h3 className="text-xl font-bold text-white mb-2">Board & Fractional Leadership</h3>
+                                    <p className="text-gray-400 mb-4">
+                                        For Series B+ companies requiring sustained intervention. I serve as a
+                                        Fractional CPO or Independent Board Director.
+                                    </p>
+                                    <div className="flex gap-4">
+                                        <a href="#inquire-board" className="px-4 py-2 rounded-lg bg-purple-600 text-white text-sm hover:bg-purple-500">
+                                            Inquire About Board Roles
+                                        </a>
+                                        <a href="/principal" className="px-4 py-2 rounded-lg border border-white/20 text-white text-sm hover:bg-white/5">
+                                            Read Operating Principles
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="text-right">
+                                    <div className="text-xs text-purple-400 uppercase">Availability</div>
+                                    <div className="text-2xl font-bold text-white">1 Slot</div>
+                                    <div className="text-gray-500 text-sm">Q2 2026</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
     );
 }
-
-const PricingCard = ({ title, price, subtitle, description, features, ctaText, ctaHref, variant }: any) => { // Using any for quick proto, usually interface
-    const isFeatured = variant === 'featured';
-    return (
-        <div className={`relative flex flex-col p-8 rounded-2xl border transition-all duration-300
-        ${isFeatured
-                ? 'bg-[var(--glass-bg)] border-[var(--accent-purple)] shadow-[0_0_30px_rgba(168,85,247,0.15)] transform md:-translate-y-4'
-                : 'bg-[var(--bg-primary)] border-white/10'
-            }
-    `}>
-            {isFeatured && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--accent-purple)] text-white px-4 py-1 rounded-full text-xs font-bold tracking-widest shadow-lg">
-                    MOST POPULAR
-                </div>
-            )}
-
-            <div className="mb-6 text-center">
-                <h3 className={`font-bold mb-2 ${isFeatured ? 'text-[var(--accent-purple)]' : 'text-gray-400'}`}>{title}</h3>
-                <div className="text-4xl font-bold text-white mb-2">{price}</div>
-                {subtitle && <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">{subtitle}</div>}
-            </div>
-
-            <div className="mb-8 space-y-4 min-h-[100px] whitespace-pre-line text-center text-gray-300">
-                {description}
-            </div>
-
-            <div className="space-y-3 mb-8 border-t border-white/10 pt-8 flex-grow">
-                {features.map((f: string, i: number) => (
-                    <div key={i} className="flex items-start gap-3 text-sm text-gray-400">
-                        <span className="text-[var(--accent-cyan)] font-bold">✓</span>
-                        {f}
-                    </div>
-                ))}
-            </div>
-
-            <Link
-                href={ctaHref}
-                className={`block w-full py-3 rounded-lg font-bold text-center transition-all
-                ${isFeatured
-                        ? 'bg-[var(--accent-purple)] text-white hover:bg-[var(--accent-purple)]/90 shadow-lg'
-                        : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
-                    }
-            `}
-            >
-                {ctaText}
-            </Link>
-        </div>
-    );
-}
-
-const AddOnCard = ({ title, price, desc, cta }: any) => (
-    <div className="p-6 rounded-xl bg-[var(--glass-bg)] border border-white/10 hover:border-white/20 transition-all flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-        <div className="flex-grow">
-            <h4 className="font-bold text-white text-lg">{title}</h4>
-            <div className="text-[var(--accent-cyan)] font-mono mb-2">{price}</div>
-            <p className="text-sm text-gray-400">{desc}</p>
-        </div>
-        <button className="px-4 py-2 rounded border border-white/20 hover:bg-white/5 text-sm font-bold whitespace-nowrap">
-            {cta}
-        </button>
-    </div>
-);
