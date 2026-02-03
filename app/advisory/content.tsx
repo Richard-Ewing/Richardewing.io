@@ -172,7 +172,7 @@ export default function AdvisoryContent() {
 
             {/* Tools CTA Cross-sell */}
             <ScrollReveal delay={200}>
-                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-cyan-500">
+                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-6 border-l-4 border-cyan-500">
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                         <div>
                             <div className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-2">Not Ready for Paid?</div>
@@ -180,9 +180,9 @@ export default function AdvisoryContent() {
                             <p className="text-zinc-400 text-sm mt-2">(Newsletter + Tools)</p>
                         </div>
                         <div className="flex gap-4">
-                            <Link href="/briefings" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-cyan-400 transition-colors">
-                                Get Briefings
-                            </Link>
+                            <a href="https://producteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-cyan-400 transition-colors">
+                                Subscribe Free
+                            </a>
                             <Link href="/tools" className="px-6 py-3 bg-transparent border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-colors">
                                 Access Tools
                             </Link>

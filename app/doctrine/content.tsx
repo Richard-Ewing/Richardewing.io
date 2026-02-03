@@ -201,12 +201,12 @@ export default function DoctrineContent() {
                         </Link>
                     </ShineBorder>
 
-                    <div className="mt-12 pt-8 border-t border-white/10">
+                    <div className="mt-8 pt-6 border-t border-white/10">
                         <p className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Not Ready for intervention?</p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <Link href="/briefings" className="px-6 py-3 border border-white/20 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-white">
-                                Read Briefings
-                            </Link>
+                            <a href="https://producteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-white/20 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-white">
+                                Subscribe Free
+                            </a>
                             <Link href="/tools" className="px-6 py-3 border border-white/20 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-white">
                                 Try Free Tools
                             </Link>

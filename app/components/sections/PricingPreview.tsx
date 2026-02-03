@@ -15,11 +15,20 @@ const PricingPreview = () => {
                 <div className="grid-4 max-w-5xl mx-auto">
 
                     {/* Free */}
-                    <div className="card text-center">
-                        <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">Free</div>
-                        <div className="text-2xl font-bold text-white mb-2">$0</div>
-                        <p className="text-gray-400 text-sm mb-4">Newsletter + Tools</p>
-                        <Link href="/briefings" className="text-cyan-400 text-sm hover:underline">Run a Free Self-Diagnostic →</Link>
+                    <div className="card text-center flex flex-col justify-between h-full">
+                        <div>
+                            <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">Free</div>
+                            <div className="text-2xl font-bold text-white mb-2">$0</div>
+                            <p className="text-gray-400 text-sm mb-4">Newsletter + Tools</p>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <a href="https://producteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-2 rounded hover:bg-cyan-500/20 transition-all">
+                                Subscribe Free
+                            </a>
+                            <Link href="/tools" className="block w-full text-center bg-white/5 border border-white/10 text-white font-bold uppercase text-xs py-2 rounded hover:bg-white/10 transition-all">
+                                All Tools
+                            </Link>
+                        </div>
                     </div>
 
                     {/* Start Here - Featured */}
