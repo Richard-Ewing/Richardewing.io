@@ -41,6 +41,7 @@ export default function BriefingsPage() {
         { number: '04', title: 'The Governance of Subtraction', subtitle: 'Why deleting code is higher leverage than writing it', href: '/canonical/governance-of-subtraction.html' },
         { number: '05', title: 'Kill Switch Protocol', subtitle: 'The framework for ruthless feature deprecation', href: '/canonical/kill-switch-governance.html' },
         { number: '06', title: 'Q-PEP Fundamentals', subtitle: 'Qualitative-Profitability Efficiency Protocol', href: '/canonical/q-pep-protocol.html' },
+        { number: '07', title: 'The AI Product Business Test', subtitle: 'Built In Editor\'s Pick: Validating AI unit economics before writing code', href: 'https://builtin.com/articles/ai-product-business-test', isNew: true },
     ];
 
     return (
@@ -126,9 +127,9 @@ export default function BriefingsPage() {
                     <div className="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-6">Also Published On</div>
                     <div className="flex flex-wrap gap-4">
                         <a href="https://builtin.com/authors/richard-ewing" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Built In →</a>
-                        <a href="https://www.cio.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Foundry →</a>
                         <a href="https://hackernoon.com/u/richardewing1" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">HackerNoon →</a>
-                        <a href="https://www.mindtheproduct.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Mind the Product →</a>
+                        {/* <a href="https://www.cio.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Foundry →</a> */}
+                        {/* <a href="https://www.mindtheproduct.com" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-white border-b border-transparent hover:border-white transition">Mind the Product →</a> */}
                     </div>
                 </div>
             </ScrollReveal>
