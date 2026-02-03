@@ -6,6 +6,7 @@ import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
 import { ShineBorder } from '../../components/magicui/shine-border';
 import { NumberTicker } from '../../components/magicui/number-ticker';
+import { BorderBeam } from '../../components/magicui/border-beam';
 import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 
@@ -448,11 +449,12 @@ export default function EVSETool() {
                 <>
                     <ScrollReveal>
                         {/* Score Header */}
-                        <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
+                            <BorderBeam size={300} duration={12} delay={9} borderWidth={1.5} colorFrom="#FF4444" colorTo="#A855F7" />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                 <div>
                                     <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Wealth Destruction Gap</div>
-                                    <div className="text-6xl sm:text-8xl font-bold text-red-500 tracking-tighter leading-none">
+                                    <div className="text-6xl sm:text-8xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-600">
                                         $<NumberTicker value={results.wealthGap / 1000000} />M
                                     </div>
                                     <div className="mt-4">

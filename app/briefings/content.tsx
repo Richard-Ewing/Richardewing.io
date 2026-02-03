@@ -110,7 +110,7 @@ export default function BriefingsPage() {
                     <p className="text-zinc-400 text-sm mb-6">One email per month. No spam. Unsubscribe anytime.</p>
 
                     <a
-                        href="https://theproducteconomist.beehiiv.com/"
+                        href="https://theproducteconomist.beehiiv.com/subscribe"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs sm:text-sm rounded-xl hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)]"

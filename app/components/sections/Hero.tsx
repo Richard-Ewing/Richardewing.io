@@ -20,7 +20,7 @@ const Hero = () => {
                     <span className="flex flex-wrap justify-center gap-x-3">
                         show the capital risks your
                         <WordRotate
-                            className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-red-400"
+                            className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 font-extrabold"
                             words={["metrics don't show.", "board won't see.", "CFO can't find.", "team won't tell you."]}
                         />
                     </span>

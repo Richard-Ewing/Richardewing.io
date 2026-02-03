@@ -36,7 +36,7 @@ export default function HomeContent() {
                     <span className="text-gray-500 text-xl sm:text-2xl font-grotesk">I find the leaks in </span>
                     <WordRotate
                         words={["AI they don't understand.", "Features nobody uses.", "Headcount without ROI.", "Zombie Infrastructure."]}
-                        className="text-xl sm:text-2xl font-grotesk font-bold text-white"
+                        className="text-xl sm:text-2xl font-grotesk font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500"
                         duration={3000}
                     />
                 </div>

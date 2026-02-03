@@ -283,3 +283,9 @@ html {
 .bg-shine-size {
   background-size: 300% 300%;
 }
+
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}

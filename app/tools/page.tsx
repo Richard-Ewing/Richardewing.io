@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { ShineBorder } from '@/components/magicui/shine-border';
 
 export default function ToolsPage() {
   return (
@@ -25,59 +26,69 @@ export default function ToolsPage() {
         <section className="section">
           <div className="grid-2 max-w-4xl mx-auto">
 
-            <Link href="/tools/pdi" className="card hover:border-purple-500/50 group">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center text-purple-400 font-bold">01</div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-400">Product Debt Index</h3>
-                  <p className="text-gray-400 text-sm mb-3">Quantify hidden technical debt in dollar terms.</p>
-                  <span className="text-purple-400 text-sm">Try Now →</span>
+            <Link href="/tools/pdi" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center text-purple-400 font-bold">01</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-400">Product Debt Index</h3>
+                    <p className="text-gray-400 text-sm mb-3">Quantify hidden technical debt in dollar terms.</p>
+                    <span className="text-purple-400 text-sm">Try Now →</span>
+                  </div>
                 </div>
-              </div>
+              </ShineBorder>
             </Link>
 
-            <Link href="/tools/ev-se" className="card hover:border-cyan-500/50 group">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-cyan-600/20 flex items-center justify-center text-cyan-400 font-bold">02</div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400">Valuation Scenario Engine</h3>
-                  <p className="text-gray-400 text-sm mb-3">Model how technical decisions impact enterprise value.</p>
-                  <span className="text-cyan-400 text-sm">Try Now →</span>
+            <Link href="/tools/ev-se" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#22d3ee", "#8b5cf6", "#f472b6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-cyan-600/20 flex items-center justify-center text-cyan-400 font-bold">02</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400">Valuation Scenario Engine</h3>
+                    <p className="text-gray-400 text-sm mb-3">Model how technical decisions impact enterprise value.</p>
+                    <span className="text-cyan-400 text-sm">Try Now →</span>
+                  </div>
                 </div>
-              </div>
+              </ShineBorder>
             </Link>
 
-            <Link href="/tools/aueb" className="card hover:border-purple-500/50 group">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center text-purple-400 font-bold">03</div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-400">AI Unit Economics Benchmark</h3>
-                  <p className="text-gray-400 text-sm mb-3">Calculate your AI collapse point before you hit it.</p>
-                  <span className="text-purple-400 text-sm">Try Now →</span>
+            <Link href="/tools/aueb" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center text-purple-400 font-bold">03</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-400">AI Unit Economics Benchmark</h3>
+                    <p className="text-gray-400 text-sm mb-3">Calculate your AI collapse point before you hit it.</p>
+                    <span className="text-purple-400 text-sm">Try Now →</span>
+                  </div>
                 </div>
-              </div>
+              </ShineBorder>
             </Link>
 
-            <Link href="/tools/aper" className="card hover:border-cyan-500/50 group">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-cyan-600/20 flex items-center justify-center text-cyan-400 font-bold">04</div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400">Engineering Ratio (APER)</h3>
-                  <p className="text-gray-400 text-sm mb-3">Assess if you're overstaffed or understaffed for your stage.</p>
-                  <span className="text-cyan-400 text-sm">Try Now →</span>
+            <Link href="/tools/aper" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#22d3ee", "#8b5cf6", "#f472b6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-cyan-600/20 flex items-center justify-center text-cyan-400 font-bold">04</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400">Engineering Ratio (APER)</h3>
+                    <p className="text-gray-400 text-sm mb-3">Assess if you're overstaffed or understaffed for your stage.</p>
+                    <span className="text-cyan-400 text-sm">Try Now →</span>
+                  </div>
                 </div>
-              </div>
+              </ShineBorder>
             </Link>
 
-            <Link href="/tools/audit-interview" className="card hover:border-purple-500/50 group col-span-1 md:col-span-2">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center text-purple-400 font-bold">05</div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-400">Audit Interview Protocol</h3>
-                  <p className="text-gray-400 text-sm mb-3">The hiring methodology for the AI age. Test judgment, not syntax.</p>
-                  <span className="text-purple-400 text-sm">Try Now →</span>
+            <Link href="/tools/audit-interview" className="group block col-span-1 md:col-span-2">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center text-purple-400 font-bold">05</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-400">Audit Interview Protocol</h3>
+                    <p className="text-gray-400 text-sm mb-3">The hiring methodology for the AI age. Test judgment, not syntax.</p>
+                    <span className="text-purple-400 text-sm">Try Now →</span>
+                  </div>
                 </div>
-              </div>
+              </ShineBorder>
             </Link>
 
           </div>

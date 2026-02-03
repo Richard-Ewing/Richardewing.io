@@ -44,7 +44,7 @@ export default function AdvisoryPage() {
                             </ul>
 
                             <div className="flex flex-col gap-2">
-                                <a href="https://producteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-2 rounded hover:bg-cyan-500/20 transition-all">
+                                <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-2 rounded hover:bg-cyan-500/20 transition-all">
                                     Subscribe Free
                                 </a>
                                 <a href="/tools" className="block w-full text-center bg-white/5 border border-white/10 text-white font-bold uppercase text-xs py-2 rounded hover:bg-white/10 transition-all">

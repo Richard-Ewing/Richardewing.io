@@ -3,6 +3,7 @@
 import React from 'react';
 import BlurIn from '@/components/magicui/blur-in';
 import { BorderBeam } from '@/components/magicui/border-beam';
+import { Meteors } from '@/components/magicui/meteors';
 
 export default function ExogramPage() {
     return (
@@ -10,44 +11,47 @@ export default function ExogramPage() {
             <div className="page-container">
 
                 {/* Hero */}
-                <section className="section-lg text-center">
+                <section className="section-lg text-center relative overflow-hidden">
+                    <Meteors count={20} />
 
-                    {/* Logo */}
-                    <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src="/images/exogram/logo-main.png" alt="Exogram Logo" className="w-full h-full object-contain" />
-                    </div>
-
-                    <BlurIn word="Exogram" className="text-4xl md:text-5xl font-bold text-white mb-4" />
-                    <p className="text-xl text-purple-400 mb-8">
-                        The Verification Infrastructure for AI
-                    </p>
-
-                    {/* Hero Actions - Grid Aligned */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto items-center mt-8 mb-12">
-
-                        {/* Founder Badge - Right aligned on desktop */}
-                        <div className="flex justify-center md:justify-end w-full">
-                            <div className="inline-flex items-center gap-3 px-5 h-[52px] w-[260px] rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-8 h-8 rounded-full object-cover grayscale opacity-80" />
-                                <div className="text-left flex-1">
-                                    <p className="text-white font-semibold text-xs leading-tight">Founded by Richard Ewing</p>
-                                    <p className="text-gray-500 text-[10px] leading-tight">Product Economist</p>
-                                </div>
-                                <div className="pl-3 border-l border-white/10 h-6 flex items-center">
-                                    <span className="text-green-500 text-[10px] font-mono tracking-wider">LIVE</span>
-                                </div>
-                            </div>
+                    <div className="relative z-10">
+                        {/* Logo */}
+                        <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src="/images/exogram/logo-main.png" alt="Exogram Logo" className="w-full h-full object-contain" />
                         </div>
 
-                        {/* CTA - Left aligned on desktop */}
-                        <div className="flex justify-center md:justify-start w-full">
-                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="relative overflow-hidden inline-flex items-center justify-between px-5 h-[52px] w-[260px] rounded-xl bg-purple-600/10 text-white hover:bg-purple-600/20 transition-all group border border-transparent">
-                                <span className="font-semibold text-sm z-10">Visit Exogram.ai</span>
-                                <span className="group-hover:translate-x-1 transition-transform z-10">→</span>
-                                <BorderBeam size={60} duration={4} delay={2} borderWidth={1.5} colorFrom="#A855F7" colorTo="#00D4FF" />
-                            </a>
+                        <BlurIn word="Exogram" className="text-4xl md:text-5xl font-bold text-white mb-4" />
+                        <p className="text-xl text-purple-400 mb-8">
+                            The Verification Infrastructure for AI
+                        </p>
+
+                        {/* Hero Actions - Grid Aligned */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto items-center mt-8 mb-12">
+
+                            {/* Founder Badge - Right aligned on desktop */}
+                            <div className="flex justify-center md:justify-end w-full">
+                                <div className="inline-flex items-center gap-3 px-5 h-[52px] w-[260px] rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-8 h-8 rounded-full object-cover grayscale opacity-80" />
+                                    <div className="text-left flex-1">
+                                        <p className="text-white font-semibold text-xs leading-tight">Founded by Richard Ewing</p>
+                                        <p className="text-gray-500 text-[10px] leading-tight">Product Economist</p>
+                                    </div>
+                                    <div className="pl-3 border-l border-white/10 h-6 flex items-center">
+                                        <span className="text-green-500 text-[10px] font-mono tracking-wider">LIVE</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* CTA - Left aligned on desktop */}
+                            <div className="flex justify-center md:justify-start w-full">
+                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="relative overflow-hidden inline-flex items-center justify-between px-5 h-[52px] w-[260px] rounded-xl bg-purple-600/10 text-white hover:bg-purple-600/20 transition-all group border border-transparent">
+                                    <span className="font-semibold text-sm z-10">Visit Exogram.ai</span>
+                                    <span className="group-hover:translate-x-1 transition-transform z-10">→</span>
+                                    <BorderBeam size={60} duration={4} delay={2} borderWidth={1.5} colorFrom="#A855F7" colorTo="#00D4FF" />
+                                </a>
+                            </div>
                         </div>
                     </div>
 

@@ -6,6 +6,7 @@ import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
 import { ShineBorder } from '../../components/magicui/shine-border';
 import { NumberTicker } from '../../components/magicui/number-ticker';
+import { BorderBeam } from '../../components/magicui/border-beam';
 import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 
@@ -390,13 +391,15 @@ Migrate to new database"
             ) : (
                 /* --- RESULTS STATE --- */
                 <>
+
                     <ScrollReveal>
                         {/* Score Header */}
-                        <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
+                            <BorderBeam size={300} duration={12} delay={9} borderWidth={1.5} />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                 <div>
                                     <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Capital Efficiency Score</div>
-                                    <div className={`text-7xl sm:text-9xl font-bold tracking-tighter leading-none ${results.score < 50 ? 'text-red-600' : 'text-cyan-400'}`}>
+                                    <div className={`text-7xl sm:text-9xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.score < 50 ? 'from-red-500 to-orange-600' : 'from-cyan-400 to-blue-500'}`}>
                                         <NumberTicker value={results.score} />
                                     </div>
                                     <div className="mt-4">
@@ -593,7 +596,8 @@ Migrate to new database"
                         </div>
                     </ScrollReveal>
                 </>
-            )}
+            )
+            }
 
             {/* AUTHORITY CONTENT: PDI */}
             <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
@@ -622,6 +626,6 @@ Migrate to new database"
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
