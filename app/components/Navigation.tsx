@@ -34,7 +34,7 @@ const Navigation = () => {
                             {/* Using a placeholder avatar if image not available, or the actual image path */}
                             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--accent-purple)] relative">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src="/avatar.jpg" alt="Richard Ewing" className="w-full h-full object-cover" />
+                                <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-full h-full object-cover" />
                             </div>
                             <div>
                                 <div className="font-semibold text-white group-hover:text-[var(--accent-purple)] transition-colors">Richard Ewing</div>

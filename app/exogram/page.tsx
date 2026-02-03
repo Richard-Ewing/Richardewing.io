@@ -26,7 +26,7 @@ export default function ExogramPage() {
                     {/* Founder card */}
                     <div className="inline-flex items-center gap-4 px-6 py-4 rounded-xl bg-white/5 border border-white/10 mb-8">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src="/avatar.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover" />
+                        <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover" />
                         <div className="text-left">
                             <p className="text-white font-semibold">Founded by Richard Ewing</p>
                             <p className="text-gray-400 text-sm">Product Economist</p>
@@ -125,7 +125,7 @@ export default function ExogramPage() {
                             </p>
                             <div className="flex items-center justify-center gap-4">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src="/avatar.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover" />
+                                <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover" />
                                 <div className="text-left">
                                     <p className="text-white font-semibold">Richard Ewing</p>
                                     <p className="text-purple-400 text-sm">Founder, Exogram</p>
