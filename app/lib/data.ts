@@ -48,6 +48,15 @@ export const articles = [
         date: "Sep 2025",
         readTime: "7 min read",
         source: "HackerNoon",
-        legacyUrl: "/canonical/risk-advisory.html" // Mapping best guess
+        legacyUrl: "/canonical/risk-advisory.html"
+    },
+    {
+        slug: "ai-product-business-test",
+        title: "The AI Product Business Test",
+        description: "Validating AI unit economics before writing code. (Editor's Pick)",
+        date: "Feb 2026",
+        readTime: "6 min read",
+        source: "Built In",
+        externalUrl: "https://builtin.com/articles/ai-product-business-test"
     }
 ];

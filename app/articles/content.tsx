@@ -55,8 +55,14 @@ export default function ArticlesPage() {
 
             <ScrollReveal delay={100}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {filteredArticles.map((article, i) => (
-                        <Link key={article.slug} href={`/articles/${article.slug}`} className="group block h-full">
+                    {filteredArticles.map((article: any, i) => (
+                        <Link
+                            key={article.slug}
+                            href={article.externalUrl || `/articles/${article.slug}`}
+                            target={article.externalUrl ? "_blank" : undefined}
+                            rel={article.externalUrl ? "noopener noreferrer" : undefined}
+                            className="group block h-full"
+                        >
                             <GlowCard className="p-8 h-full flex flex-col justify-between hover:bg-white/5 transition-colors" glowColor={i % 2 === 0 ? "cyan" : "cobalt"}>
                                 <div>
                                     <div className="flex justify-between items-center mb-4">
