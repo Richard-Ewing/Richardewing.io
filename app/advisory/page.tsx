@@ -44,12 +44,12 @@ export default function AdvisoryPage() {
                             </ul>
 
                             <a href="/briefings" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5">
-                                Subscribe Free
+                                Run a Free Self-Diagnostic
                             </a>
                         </div>
 
                         {/* START HERE - $2,500 */}
-                        <div className="card-featured">
+                        <div className="card-featured relative">
                             <div className="text-xs text-purple-400 uppercase tracking-wide mb-4">★ Start Here</div>
                             <div className="text-3xl font-bold text-white mb-2">$2,500</div>
                             <div className="text-gray-400 mb-6">Insolvency Diagnostic</div>
@@ -64,6 +64,14 @@ export default function AdvisoryPage() {
                             <a href="#book-diagnostic" className="block w-full py-3 text-center rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
                                 Book Diagnostic
                             </a>
+
+                            {/* Gut Check Upsell */}
+                            <div className="mt-4 pt-4 border-t border-white/10 text-center">
+                                <a href="#gut-check" className="text-gray-400 hover:text-white text-xs block">
+                                    Not ready for a full diagnostic?<br />
+                                    Start with a 30-minute Gut-Check → $450
+                                </a>
+                            </div>
                         </div>
 
                         {/* AUDIT - $7,500 */}
@@ -97,11 +105,14 @@ export default function AdvisoryPage() {
                                 <li>✓ Custom scope</li>
                             </ul>
 
-                            <a href="#inquire" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5">
+                            <a href="#inquire" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5 mb-4">
                                 Inquire
                             </a>
-                        </div>
 
+                            <p className="text-gray-500 text-xs text-center px-2">
+                                Engagements are scoped against measurable capital outcomes.
+                            </p>
+                        </div>
                     </div>
                 </section>
 
@@ -113,7 +124,7 @@ export default function AdvisoryPage() {
 
                     <div className="grid-2 max-w-3xl mx-auto">
 
-                        <div className="card">
+                        <div className="card" id="gut-check">
                             <div className="flex justify-between items-start mb-4">
                                 <h3 className="font-semibold text-white">30-Min Gut-Check</h3>
                                 <span className="text-cyan-400 font-bold">$450</span>

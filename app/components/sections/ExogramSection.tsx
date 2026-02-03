@@ -38,7 +38,7 @@ const ExogramSection = () => {
                         {/* CRITICAL: Founder attribution */}
                         <div className="flex items-center gap-4 py-4 border-t border-white/10 mb-6">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src="/avatar.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full" />
+                            <img src="/avatar.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover" />
                             <div>
                                 <p className="text-white font-semibold">Founded by Richard Ewing</p>
                                 <p className="text-gray-400 text-sm">Status: Live / Active Development</p>
