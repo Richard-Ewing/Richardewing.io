@@ -1,5 +1,14 @@
 export const articles = [
     {
+        slug: "shipping-faster-wont-get-you-promoted",
+        title: "Hey, senior PMs: Shipping faster won’t get you promoted",
+        description: "Shipping fast felt great — until margins tanked, and I learned that real product leadership means understanding how features make or lose money.",
+        date: "Feb 2026",
+        readTime: "6 min read",
+        source: "Foundry",
+        externalUrl: "https://www.cio.com/article/4128139/hey-senior-pms-shipping-faster-wont-get-you-promoted.html"
+    },
+    {
         slug: "technical-insolvency-date",
         title: "The Technical Insolvency Date",
         description: "The exact quarter when maintenance costs mathematically consume 100% of engineering capacity.",
