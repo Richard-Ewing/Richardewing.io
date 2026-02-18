@@ -60,7 +60,7 @@ export const AsSeenIn = () => {
                                 alt={pub.name}
                                 width={pub.width}
                                 height={pub.height}
-                                className="h-6 md:h-8 w-auto object-contain brightness-0 invert"
+                                className="h-6 md:h-8 w-auto object-contain"
                             />
                         </a>
                     ))}
