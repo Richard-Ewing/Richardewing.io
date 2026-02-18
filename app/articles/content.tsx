@@ -154,16 +154,18 @@ export default function ArticlesPage() {
                             <button
                                 key={pub.name}
                                 onClick={() => handlePublicationClick(pub.name)}
-                                className={`card p-6 flex flex-col items-center justify-center text-center transition-all group relative overflow-hidden ${selectedPublication === pub.name ? 'border-cyan-500 ring-1 ring-cyan-500 bg-cyan-500/10' : 'hover:bg-white/5'}`}
+                                className={`card p-6 flex flex-col items-center justify-center text-center transition-all group relative overflow-hidden w-full ${selectedPublication === pub.name ? 'border-cyan-500 ring-1 ring-cyan-500 bg-cyan-500/10' : 'hover:bg-white/5'}`}
                             >
-                                <Image
-                                    src={pub.logo}
-                                    alt={pub.name}
-                                    width={100}
-                                    height={30}
-                                    className={`h-6 w-auto mb-4 transition-all brightness-0 invert ${selectedPublication === pub.name ? 'opacity-100' : 'opacity-50 group-hover:opacity-100'}`}
-                                />
-                                <div className={`text-xs font-mono uppercase tracking-widest transition-colors ${selectedPublication === pub.name ? 'text-cyan-400' : 'text-zinc-500 group-hover:text-zinc-400'}`}>
+                                <div className="flex-1 flex items-center justify-center mb-4 w-full">
+                                    <Image
+                                        src={pub.logo}
+                                        alt={pub.name}
+                                        width={120}
+                                        height={40}
+                                        className={`h-6 w-auto object-contain transition-all brightness-0 invert mx-auto ${selectedPublication === pub.name ? 'opacity-100' : 'opacity-50 group-hover:opacity-100'}`}
+                                    />
+                                </div>
+                                <div className={`text-xs font-mono uppercase tracking-widest transition-colors w-full text-center ${selectedPublication === pub.name ? 'text-cyan-400' : 'text-zinc-500 group-hover:text-zinc-400'}`}>
                                     {selectedPublication === pub.name ? 'Viewing' : 'Filter'}
                                 </div>
                             </button>
