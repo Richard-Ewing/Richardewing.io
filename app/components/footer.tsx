@@ -1,81 +1,104 @@
 'use client';
 
 import Link from 'next/link';
-import { NewsletterForm } from './newsletter-form';
+import { NewsletterSignup } from './NewsletterSignup';
+import Image from 'next/image';
 
 export function Footer() {
     return (
         <footer className="border-t border-white/10 pt-16 pb-12 mt-20 bg-black/20 backdrop-blur-sm">
             <div className="page-container">
-                <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-16 justify-items-center text-center md:text-left md:justify-items-start">
 
-                    {/* Column 1: Identity */}
-                    <div className="flex flex-col items-center md:items-start">
-                        <h4 className="font-mono text-xs text-white uppercase tracking-widest mb-6">Identity</h4>
-                        <ul className="space-y-4 text-sm text-zinc-500 font-grotesk">
-                            <li><Link href="/" className="hover:text-cyan-400 transition-colors">Home</Link></li>
-                            <li><Link href="/manifesto" className="hover:text-cyan-400 transition-colors">Manifesto</Link></li>
-                            <li><Link href="/principal" className="hover:text-cyan-400 transition-colors">The Principal</Link></li>
-                        </ul>
-                    </div>
+                {/* Main footer grid */}
+                <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
 
-                    {/* Column 2: Intervention */}
-                    <div className="flex flex-col items-center md:items-start">
-                        <h4 className="font-mono text-xs text-white uppercase tracking-widest mb-6">Intervention</h4>
-                        <ul className="space-y-4 text-sm text-zinc-500 font-grotesk">
-                            <li><Link href="/advisory" className="hover:text-cyan-400 transition-colors">Advisory Services</Link></li>
-                            <li><Link href="/briefings" className="hover:text-cyan-400 transition-colors">Briefings</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Column 3: Intelligence */}
-                    <div className="flex flex-col items-center md:items-start">
-                        <h4 className="font-mono text-xs text-white uppercase tracking-widest mb-6">Intelligence</h4>
-                        <ul className="space-y-4 text-sm text-zinc-500 font-grotesk">
-                            <li><Link href="/system" className="hover:text-cyan-400 transition-colors">System</Link></li>
-                            <li><Link href="/doctrine" className="hover:text-cyan-400 transition-colors">Doctrine</Link></li>
-                            <li><Link href="/exogram" className="hover:text-cyan-400 transition-colors">Exogram (Active)</Link></li>
-                            <li><Link href="/articles" className="hover:text-cyan-400 transition-colors">Canonical Hub</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Column 4: Free Tools */}
-                    <div className="flex flex-col items-center md:items-start">
-                        <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6">Free Tools</h4>
-                        <ul className="space-y-4 text-sm text-zinc-500 font-grotesk">
-                            <li><Link href="/tools/pdi" className="hover:text-white transition-colors">Product Debt Index</Link></li>
-                            <li><Link href="/tools/ev-se" className="hover:text-white transition-colors">Valuation Simulator</Link></li>
-                            <li><Link href="/tools/aueb" className="hover:text-white transition-colors">AI Unit Economics</Link></li>
-                            <li><Link href="/tools/audit-interview" className="hover:text-white transition-colors">Audit Interview</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Column 5: Newsletter */}
-                    <div className="col-span-2 lg:col-span-1 w-full max-w-sm mx-auto lg:mx-0">
-                        <h4 className="font-mono text-xs text-emerald-400 uppercase tracking-widest mb-6 text-center md:text-left">Stay Calibrated</h4>
-                        <p className="text-xs text-zinc-500 mb-4 text-center md:text-left">
-                            Weekly analysis of why products fail and how to fix them.
+                    {/* Identity */}
+                    <div className="col-span-2 md:col-span-1">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center overflow-hidden">
+                                <span className="text-xl">RE</span>
+                            </div>
+                            <div>
+                                <div className="font-semibold text-white font-grotesk">Richard Ewing</div>
+                                <div className="text-xs text-gray-500 font-mono">Product Economist</div>
+                            </div>
+                        </div>
+                        <p className="text-gray-500 text-sm">
+                            I audit engineering spend and surface capital risks.
                         </p>
-                        <NewsletterForm
-                            placeholder="email@company.com"
-                            buttonText="Sub"
-                            className="flex-col gap-2"
-                            extraData={{ source: 'footer' }}
-                        />
+                    </div>
+
+                    {/* Intervention */}
+                    <div>
+                        <h4 className="text-xs text-gray-500 uppercase tracking-wide mb-4 font-mono">Intervention</h4>
+                        <ul className="space-y-2 text-sm font-grotesk">
+                            <li><Link href="/advisory" className="text-gray-400 hover:text-white transition-colors">Advisory Services</Link></li>
+                            <li><Link href="/briefings" className="text-gray-400 hover:text-white transition-colors">Briefings</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Intelligence */}
+                    <div>
+                        <h4 className="text-xs text-gray-500 uppercase tracking-wide mb-4 font-mono">Intelligence</h4>
+                        <ul className="space-y-2 text-sm font-grotesk">
+                            <li><Link href="/doctrine" className="text-gray-400 hover:text-white transition-colors">Doctrine</Link></li>
+                            <li><Link href="/articles" className="text-gray-400 hover:text-white transition-colors">Canonical Hub</Link></li>
+                            <li><Link href="/exogram" className="text-gray-400 hover:text-white transition-colors">Exogram (Active)</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Free Tools */}
+                    <div>
+                        <h4 className="text-xs text-cyan-400 uppercase tracking-wide mb-4 font-mono">Free Tools</h4>
+                        <ul className="space-y-2 text-sm font-grotesk">
+                            <li><Link href="/tools/pdi" className="text-gray-400 hover:text-white transition-colors">Product Debt Index</Link></li>
+                            <li><Link href="/tools/aueb" className="text-gray-400 hover:text-white transition-colors">AI Unit Economics</Link></li>
+                            <li><Link href="/tools/audit-interview" className="text-gray-400 hover:text-white transition-colors">Audit Interview</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Stay Current */}
+                    <div className="col-span-2 lg:col-span-1">
+                        <h4 className="text-xs text-purple-400 uppercase tracking-wide mb-4 font-mono">Stay Current</h4>
+                        <p className="text-gray-400 text-sm mb-4">
+                            Monthly analysis of why products fail economically.
+                        </p>
+                        <NewsletterSignup variant="compact" />
+                    </div>
+
+                </div>
+
+                {/* As Seen In */}
+                <div className="py-8 border-y border-white/5 mb-8">
+                    <p className="text-xs text-gray-500 uppercase tracking-widest text-center mb-6 font-mono">
+                        Published In
+                    </p>
+                    <div className="flex items-center justify-center gap-8 flex-wrap">
+                        <a href="https://www.cio.com/author/richard-ewing/" target="_blank" rel="noopener noreferrer" aria-label="CIO.com" className="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
+                            <Image src="/logos/cio-logo.svg" alt="CIO.com" width={60} height={20} className="h-6 w-auto" />
+                        </a>
+                        <a href="https://builtin.com/authors/richard-ewing" target="_blank" rel="noopener noreferrer" aria-label="Built In" className="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
+                            <Image src="/logos/builtin-logo.svg" alt="Built In" width={80} height={20} className="h-6 w-auto" />
+                        </a>
+                        <a href="https://www.mindtheproduct.com/author/richard-ewing/" target="_blank" rel="noopener noreferrer" aria-label="Mind the Product" className="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
+                            <Image src="/logos/mindtheproduct-logo.svg" alt="Mind the Product" width={50} height={20} className="h-6 w-auto" />
+                        </a>
+                        <a href="https://hackernoon.com/u/richardewing" target="_blank" rel="noopener noreferrer" aria-label="HackerNoon" className="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
+                            <Image src="/logos/hackernoon-logo.svg" alt="HackerNoon" width={100} height={20} className="h-6 w-auto" />
+                        </a>
                     </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
-                    <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
-                        <span className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">System Operational</span>
-                    </div>
-
-                    <div className="flex flex-wrap justify-center gap-6">
-                        <Link href="/legal" className="text-xs text-zinc-600 hover:text-white transition-colors uppercase tracking-wider">Legal & Privacy</Link>
-                        <Link href="https://www.linkedin.com/in/richard-ewing-mba/" target="_blank" className="text-xs text-zinc-600 hover:text-white transition-colors uppercase tracking-wider">LinkedIn</Link>
+                {/* Bottom bar */}
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+                    <p>© 2026 Richard Ewing. All rights reserved.</p>
+                    <div className="flex items-center gap-6">
+                        <Link href="/legal" className="hover:text-white transition-colors">Legal & Privacy</Link>
+                        <Link href="https://linkedin.com/in/richardewing" target="_blank" className="hover:text-white transition-colors">LinkedIn</Link>
+                        <Link href="/exogram" className="hover:text-white transition-colors">Exogram System</Link>
                     </div>
                 </div>
+
             </div>
         </footer>
     );

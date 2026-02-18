@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import NumberTicker from '@/components/magicui/number-ticker';
 import WordRotate from '@/components/magicui/word-rotate';
+import { AsSeenIn } from '@/components/AsSeenIn';
 
 const Hero = () => {
     return (
@@ -27,12 +28,15 @@ const Hero = () => {
                 </div>
 
                 {/* Credibility line */}
-                <p className="text-gray-400 mb-10 text-lg">
-                    Richard Ewing, Product Economist · $<NumberTicker value={25} />M ARR scaled · Published in Foundry & Built In
+                <p className="text-gray-400 mb-6 text-lg">
+                    Richard Ewing, Product Economist · $<NumberTicker value={25} />M ARR scaled
                 </p>
 
+                {/* As Seen In */}
+                <AsSeenIn />
+
                 {/* Path selector - 3 cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
 
                     <Link href="/advisory" className="card text-left hover:border-purple-500/50 group block">
                         <div className="text-2xl mb-3">📊</div>

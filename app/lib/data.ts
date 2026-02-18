@@ -69,3 +69,84 @@ export const articles = [
         externalUrl: "https://builtin.com/articles/ai-product-business-test"
     }
 ];
+
+export const frameworks = [
+    {
+        slug: 'technical-insolvency-date',
+        name: 'Technical Insolvency Date',
+        definition: 'The Technical Insolvency Date is the specific future quarter when an organization\'s technical debt maintenance will consume 100% of engineering capacity, leaving zero time for new development. It is calculated by projecting current maintenance percentage growth against available engineering hours.',
+        whyItMatters: 'Most organizations track technical debt qualitatively ("we have some debt") rather than quantitatively ("we are 8 quarters from insolvency"). The Technical Insolvency Date makes the risk concrete and actionable.',
+        howToCalculate: [
+            'Measure current maintenance percentage (% of eng time on bugs, debt, maintenance)',
+            'Track growth rate quarter-over-quarter',
+            'Project forward until maintenance = 100%',
+            'That quarter is your Technical Insolvency Date'
+        ],
+        relatedArticles: [
+            { title: 'Why Your CFO Hates Agile', publication: 'CIO.com', date: 'Feb 2026', url: 'https://www.cio.com' },
+            { title: 'The Four Horsemen of Technical Insolvency', publication: 'Built In', date: 'Jan 2026', url: 'https://builtin.com' }
+        ],
+        relatedTool: { name: 'PDI Tool', url: '/tools/pdi' }
+    },
+    {
+        slug: 'innovation-tax',
+        name: 'Innovation Tax',
+        definition: 'Innovation Tax is the hidden cost of maintenance work that gets reported as innovation investment in financial and board reporting. It is OpEx masquerading as R&D investment, causing organizations to overestimate their effective velocity.',
+        whyItMatters: 'When a team reports "65% of time on new features" but the actual number is 23%, the 42-point gap is the Innovation Tax. This gap causes CFOs and boards to dramatically overestimate R&D productivity.',
+        relatedArticles: [
+            { title: 'The Innovation Tax', publication: 'CIO.com', date: 'Jan 2026', url: 'https://www.cio.com' }
+        ],
+        relatedTool: { name: 'PDI Tool', url: '/tools/pdi' }
+    },
+    {
+        slug: 'cost-of-predictivity',
+        name: 'Cost of Predictivity',
+        definition: 'The Cost of Predictivity measures the variable cost of AI accuracy. As AI models degrade, require more tokens to maintain quality, or need retraining, the cost per useful output increases. This creates margin compression that traditional engineering metrics don\'t capture.',
+        whyItMatters: 'Unlike traditional code (fixed development cost, near-zero marginal cost), AI features have variable costs that scale with usage. Success makes you poorer unless you track Cost of Predictivity.',
+        howToCalculate: [
+            'Total AI compute cost (monthly)',
+            'Divided by useful outputs generated',
+            'Equals Cost of Predictivity per output'
+        ],
+        relatedArticles: [
+            { title: 'The AI Volatility Tax', publication: 'Built In', date: 'Feb 2026', url: 'https://builtin.com' }
+        ],
+        relatedTool: { name: 'AUEB Tool', url: '/tools/aueb' }
+    },
+    {
+        slug: 'audit-interview',
+        name: 'Audit Interview',
+        definition: 'The Audit Interview is a hiring protocol that tests verification skills instead of code generation skills. Candidates are given AI-generated code with hidden flaws and asked to identify the problems. This approach recognizes that AI can generate code, but catching AI mistakes is a scarce human skill.',
+        whyItMatters: 'Traditional syntax interviews test a skill AI now performs better than humans. When Anthropic revealed candidates were using Claude to cheat on coding interviews, it proved the test was measuring the wrong thing.',
+        howToCalculate: [
+            'Present AI-generated code with 3-5 hidden bugs',
+            'Candidate has 10 minutes to find issues',
+            'Score based on bugs found and severity ranking',
+            'Follow up with "what would you ship?" judgment call'
+        ],
+        relatedArticles: [
+            { title: 'The Death of the Syntax Interview', publication: 'Built In', date: 'Jan 2026', url: 'https://builtin.com' }
+        ],
+        relatedTool: { name: 'Audit Interview Tool', url: '/tools/audit-interview' }
+    },
+    {
+        slug: 'kill-switch-protocol',
+        name: 'Kill Switch Protocol',
+        definition: 'The Kill Switch Protocol is a framework for identifying and deprecating "Zombie Features" — code that requires ongoing maintenance but generates zero incremental value. It provides criteria for when to kill a feature and how to execute the deprecation.',
+        whyItMatters: 'Most organizations add features but never remove them. Over time, 40-60% of a codebase becomes maintenance burden with no corresponding value. The Kill Switch Protocol provides the discipline to subtract.',
+        relatedArticles: [
+            { title: 'Kill Switch Protocol', publication: 'Mind the Product', date: 'Feb 2026', url: 'https://www.mindtheproduct.com' }
+        ],
+        relatedTool: { name: 'PDI Tool', url: '/tools/pdi' }
+    },
+    {
+        slug: 'feature-bloat-calculus',
+        name: 'Feature Bloat Calculus',
+        definition: 'Feature Bloat Calculus is the economic formula for determining when a feature\'s maintenance cost exceeds its value contribution. It factors in direct maintenance hours, opportunity cost of those hours, and the compounding effect on system complexity.',
+        whyItMatters: 'Every feature you add makes every future feature harder. Feature Bloat Calculus quantifies this hidden tax so you can make rational keep/kill decisions.',
+        relatedArticles: [
+            { title: 'The Governance of Subtraction', publication: 'CIO.com', date: 'Feb 2026', url: 'https://www.cio.com' }
+        ],
+        relatedTool: { name: 'PDI Tool', url: '/tools/pdi' }
+    }
+];
