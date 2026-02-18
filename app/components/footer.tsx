@@ -74,17 +74,17 @@ export function Footer() {
                         Published In
                     </p>
                     <div className="flex items-center justify-center gap-8 flex-wrap">
-                        <a href="https://www.cio.com/author/richard-ewing/" target="_blank" rel="noopener noreferrer" aria-label="CIO.com" className="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
-                            <Image src="/logos/cio-logo.svg" alt="CIO.com" width={60} height={20} className="h-6 w-auto" />
+                        <a href="https://www.cio.com/author/richard-ewing/" target="_blank" rel="noopener noreferrer" aria-label="CIO.com" className="opacity-50 hover:opacity-100 transition-all">
+                            <Image src="/logos/cio-logo.svg" alt="CIO.com" width={60} height={20} className="h-6 w-auto brightness-0 invert" />
                         </a>
-                        <a href="https://builtin.com/authors/richard-ewing" target="_blank" rel="noopener noreferrer" aria-label="Built In" className="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
-                            <Image src="/logos/builtin-logo.svg" alt="Built In" width={80} height={20} className="h-6 w-auto" />
+                        <a href="https://builtin.com/authors/richard-ewing" target="_blank" rel="noopener noreferrer" aria-label="Built In" className="opacity-50 hover:opacity-100 transition-all">
+                            <Image src="/logos/builtin-logo.svg" alt="Built In" width={80} height={20} className="h-6 w-auto brightness-0 invert" />
                         </a>
-                        <a href="https://www.mindtheproduct.com/author/richard-ewing/" target="_blank" rel="noopener noreferrer" aria-label="Mind the Product" className="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
-                            <Image src="/logos/mindtheproduct-logo.svg" alt="Mind the Product" width={50} height={20} className="h-6 w-auto" />
+                        <a href="https://www.mindtheproduct.com/author/richard-ewing/" target="_blank" rel="noopener noreferrer" aria-label="Mind the Product" className="opacity-50 hover:opacity-100 transition-all">
+                            <Image src="/logos/mindtheproduct-logo.svg" alt="Mind the Product" width={50} height={20} className="h-6 w-auto brightness-0 invert" />
                         </a>
-                        <a href="https://hackernoon.com/u/richardewing" target="_blank" rel="noopener noreferrer" aria-label="HackerNoon" className="opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
-                            <Image src="/logos/hackernoon-logo.svg" alt="HackerNoon" width={100} height={20} className="h-6 w-auto" />
+                        <a href="https://hackernoon.com/u/richardewing" target="_blank" rel="noopener noreferrer" aria-label="HackerNoon" className="opacity-50 hover:opacity-100 transition-all">
+                            <Image src="/logos/hackernoon-logo.svg" alt="HackerNoon" width={100} height={20} className="h-6 w-auto brightness-0 invert" />
                         </a>
                     </div>
                 </div>

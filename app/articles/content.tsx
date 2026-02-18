@@ -27,12 +27,12 @@ export default function ArticlesPage() {
     // 7. Browse by Theme (we don't have theme data explicitly in data.ts yet, so we'll simulate or skip for now)
 
     const featuredArticle = {
-        title: "The Death of the Syntax Interview",
+        title: "The AI Product Business Test",
         publication: "Built In",
-        date: "January 2026",
+        date: "Jan 2026",
         badge: "Editor's Pick",
-        description: "AI can generate code. The scarce skill is catching what AI gets wrong. This article introduces the Audit Interview...",
-        url: "https://builtin.com/articles/death-of-syntax-interview" // Hypothetical or real
+        description: "Before writing code, validate the unit economics of your AI feature. This editor's pick from Built In explores why most AI products fail on margin contribution, not technical feasibility.",
+        url: "https://builtin.com/articles/ai-product-business-test"
     };
 
     return (

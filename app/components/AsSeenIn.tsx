@@ -52,7 +52,7 @@ export const AsSeenIn = () => {
                             href={pub.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                            className="opacity-50 hover:opacity-100 transition-opacity"
                             title={`${pub.relationship} at ${pub.name}`}
                         >
                             <Image
@@ -60,7 +60,7 @@ export const AsSeenIn = () => {
                                 alt={pub.name}
                                 width={pub.width}
                                 height={pub.height}
-                                className="h-6 md:h-8 w-auto object-contain"
+                                className="h-6 md:h-8 w-auto object-contain brightness-0 invert"
                             />
                         </a>
                     ))}

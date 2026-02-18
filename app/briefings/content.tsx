@@ -35,13 +35,12 @@ const BriefCard = ({ number, title, subtitle, href, isNew, date }: BriefCardProp
 
 export default function BriefingsPage() {
     const briefs = [
-        { number: '07', title: 'The AI Product Business Test', subtitle: 'Validating AI unit economics before writing code.', href: 'https://builtin.com/articles/ai-product-business-test', isNew: true, date: 'Feb 2026' },
-        { number: '01', title: 'The AI Volatility Tax', subtitle: 'Why AI features are destroying your gross margins.', href: '#', isNew: false, date: 'Feb 2026' },
+        { number: '09', title: 'The 3 Financial Metrics Every PM Needs', subtitle: 'Moving beyond vanity metrics to measure true economic impact.', href: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/', isNew: true, date: 'Feb 2026' },
+        { number: '08', title: 'Reimagining the Coding Interview', subtitle: 'AI can generate code. The scarce skill is catching what AI gets wrong.', href: 'https://builtin.com/articles/reimagining-coding-interview', isNew: true, date: 'Feb 2026' },
+        { number: '07', title: 'The AI Product Business Test', subtitle: 'Validating AI unit economics before writing code.', href: 'https://builtin.com/articles/ai-product-business-test', isNew: true, date: 'Jan 2026' },
+        { number: '01', title: 'The AI Volatility Tax', subtitle: 'Why AI features are destroying your gross margins.', href: '#', date: 'Feb 2026' },
         { number: '02', title: 'The Senior Ceiling', subtitle: 'Breaking through the IC-to-Executive transition.', href: '#', date: 'Feb 2026' },
         { number: '03', title: 'Financial Conway\'s Law', subtitle: 'Why architecture mirrors your funding model.', href: '#', date: 'Jan 2026' },
-        { number: '04', title: 'The Governance of Subtraction', subtitle: 'Why deleting code is higher leverage than writing it.', href: '#', date: 'Jan 2026' },
-        { number: '05', title: 'Kill Switch Protocol', subtitle: 'The framework for ruthless feature deprecation.', href: '#', date: 'Dec 2025' },
-        { number: '06', title: 'Q-PEP Fundamentals', subtitle: 'Quantitative-Profitability Efficiency Protocol.', href: '#', date: 'Dec 2025' },
     ];
 
     return (
@@ -71,6 +70,7 @@ export default function BriefingsPage() {
                     <a
                         href="https://theproducteconomist.beehiiv.com/subscribe"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors shadow-lg shadow-purple-900/20"
                     >
                         Subscribe on Beehiiv →
@@ -129,6 +129,7 @@ export default function BriefingsPage() {
                     <a
                         href="https://theproducteconomist.beehiiv.com"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-500/30 hover:border-purple-400"
                     >
                         theproducteconomist.beehiiv.com →

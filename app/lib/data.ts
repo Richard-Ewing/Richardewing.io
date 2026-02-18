@@ -1,12 +1,39 @@
 export const articles = [
     {
+        slug: "financial-metrics-scorecard",
+        title: "The 3 Financial Metrics Every PM Needs on Their Scorecard",
+        description: "Moving beyond vanity metrics to measure the true economic impact of product decisions.",
+        date: "Feb 2026",
+        readTime: "5 min read",
+        source: "Mind the Product",
+        externalUrl: "https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/"
+    },
+    {
+        slug: "reimagining-coding-interview",
+        title: "Reimagining the Coding Interview",
+        description: "AI can generate code. The scarce skill is catching what AI gets wrong. This article introduces the Audit Interview.",
+        date: "Feb 2026",
+        readTime: "6 min read",
+        source: "Built In",
+        externalUrl: "https://builtin.com/articles/reimagining-coding-interview"
+    },
+    {
         slug: "shipping-faster-wont-get-you-promoted",
         title: "Hey, senior PMs: Shipping faster won’t get you promoted",
         description: "Shipping fast felt great — until margins tanked, and I learned that real product leadership means understanding how features make or lose money.",
         date: "Feb 2026",
         readTime: "6 min read",
-        source: "Foundry",
+        source: "CIO.com",
         externalUrl: "https://www.cio.com/article/4128139/hey-senior-pms-shipping-faster-wont-get-you-promoted.html"
+    },
+    {
+        slug: "ai-product-business-test",
+        title: "The AI Product Business Test",
+        description: "Validating AI unit economics before writing code. (Editor's Pick)",
+        date: "Jan 2026",
+        readTime: "6 min read",
+        source: "Built In",
+        externalUrl: "https://builtin.com/articles/ai-product-business-test"
     },
     {
         slug: "technical-insolvency-date",
@@ -15,7 +42,7 @@ export const articles = [
         date: "Jan 2026",
         readTime: "4 min read",
         source: "The Canon",
-        legacyUrl: "/canonical/technical-insolvency.html", // Hypothetical
+        legacyUrl: "/canonical/technical-insolvency.html",
         content: `
             <p>The Technical Insolvency Date (TID) is the theoretical point where a software organization's maintenance burden consumes 100% of its available engineering capacity.</p>
             <h3>The Mathematics of Stagnation</h3>
@@ -29,7 +56,7 @@ export const articles = [
         description: "Why 80% of your R&D budget is actually just keeping the lights on.",
         date: "Dec 2025",
         readTime: "6 min read",
-        source: "Foundry",
+        source: "CIO.com",
         legacyUrl: "/canonical/innovation-tax.html"
     },
     {
@@ -58,15 +85,6 @@ export const articles = [
         readTime: "7 min read",
         source: "HackerNoon",
         externalUrl: "https://hackernoon.com/the-best-ai-product-i-ever-led-had-zero-customers"
-    },
-    {
-        slug: "ai-product-business-test",
-        title: "The AI Product Business Test",
-        description: "Validating AI unit economics before writing code. (Editor's Pick)",
-        date: "Feb 2026",
-        readTime: "6 min read",
-        source: "Built In",
-        externalUrl: "https://builtin.com/articles/ai-product-business-test"
     }
 ];
 
