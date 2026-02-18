@@ -9,22 +9,20 @@ import { articles, frameworks } from '../lib/data';
 import { NewsletterSignup } from '../components/NewsletterSignup';
 
 export default function ArticlesPage() {
-    const [filter, setFilter] = useState("All");
-    const filters = ["All", "CIO.com", "Built In", "Mind the Product", "HackerNoon"];
+    // Filter state
+    const [selectedPublication, setSelectedPublication] = useState<string | null>(null);
 
-    // Mapping source names from data.ts to filter names if they differ
-    // In data.ts: "Foundry", "The Canon", "Built In", "Mind the Product", "HackerNoon"
-    // "Foundry" maps to "CIO.com" for display in filters usually, but let's keep it simple
-    // The spec asks for "BY PUBLICATION" section, so filters might be less emphasized or moved.
-
-    // Spec Structure:
-    // 1. Hero "The Canonical Hub"
-    // 2. Featured Article
-    // 3. Frameworks Grid
-    // 4. Recent Articles
-    // 5. Newsletter Signup
-    // 6. By Publication
-    // 7. Browse by Theme (we don't have theme data explicitly in data.ts yet, so we'll simulate or skip for now)
+    // Filtered articles logic
+    const displayedArticles = selectedPublication
+        ? articles.filter(article => {
+            // Mapping UI names to data.ts source names if needed
+            if (selectedPublication === 'CIO.com' && (article.source === 'CIO.com' || article.source === 'Foundry')) return true;
+            if (selectedPublication === 'Built In' && article.source === 'Built In') return true;
+            if (selectedPublication === 'Mind the Product' && article.source === 'Mind the Product') return true;
+            if (selectedPublication === 'HackerNoon' && article.source === 'HackerNoon') return true;
+            return false;
+        })
+        : articles.slice(0, 4); // Show recent 4 by default if no filter
 
     const featuredArticle = {
         title: "The AI Product Business Test",
@@ -33,6 +31,19 @@ export default function ArticlesPage() {
         badge: "Editor's Pick",
         description: "Before writing code, validate the unit economics of your AI feature. This editor's pick from Built In explores why most AI products fail on margin contribution, not technical feasibility.",
         url: "https://builtin.com/articles/ai-product-business-test"
+    };
+
+    const handlePublicationClick = (pubName: string) => {
+        if (selectedPublication === pubName) {
+            setSelectedPublication(null); // Toggle off
+        } else {
+            setSelectedPublication(pubName);
+        }
+        // Scroll to list
+        const listElement = document.getElementById('article-list');
+        if (listElement) {
+            listElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     };
 
     return (
@@ -76,20 +87,20 @@ export default function ArticlesPage() {
 
                         <div className="relative z-10">
                             <div className="flex items-center gap-3 mb-4 text-xs font-mono text-zinc-400 uppercase tracking-widest">
-                                <span className="text-white">Built In</span>
+                                <span className="text-white">{featuredArticle.publication}</span>
                                 <span>•</span>
-                                <span>Jan 2026</span>
+                                <span>{featuredArticle.date}</span>
                             </div>
 
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-grotesk group-hover:text-purple-400 transition-colors">
-                                The Death of the Syntax Interview
+                                {featuredArticle.title}
                             </h2>
 
                             <p className="text-lg text-zinc-300 mb-8 max-w-2xl">
-                                AI can generate code. The scarce skill is catching what AI gets wrong. This article introduces the Audit Interview—a new protocol for hiring engineers in the age of LLMs.
+                                {featuredArticle.description}
                             </p>
 
-                            <a href="#" className="inline-flex items-center gap-2 text-purple-400font-bold uppercase tracking-widest text-xs hover:text-white transition-colors">
+                            <a href={featuredArticle.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-purple-400 font-bold uppercase tracking-widest text-xs hover:text-white transition-colors">
                                 Read Article <span className="text-lg">→</span>
                             </a>
                         </div>
@@ -129,77 +140,101 @@ export default function ArticlesPage() {
                 </div>
             </ScrollReveal>
 
-            {/* Recent Articles */}
+            {/* By Publication (Filters) */}
             <ScrollReveal delay={300}>
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 font-grotesk">Recent Articles</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {articles.slice(0, 4).map((article, i) => (
-                            <Link
-                                key={article.slug}
-                                href={article.externalUrl || '#'}
-                                target={article.externalUrl ? "_blank" : undefined}
-                                rel={article.externalUrl ? "noopener noreferrer" : undefined}
-                                className="group block"
+                <div id="publications" className="mb-12">
+                    <h2 className="text-2xl font-bold text-white mb-8 font-grotesk">Browse By Publication</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {[
+                            { name: 'CIO.com', logo: '/logos/cio-logo.svg' },
+                            { name: 'Built In', logo: '/logos/builtin-logo.svg' },
+                            { name: 'Mind the Product', logo: '/logos/mindtheproduct-logo.svg' },
+                            { name: 'HackerNoon', logo: '/logos/hackernoon-logo.svg' }
+                        ].map((pub) => (
+                            <button
+                                key={pub.name}
+                                onClick={() => handlePublicationClick(pub.name)}
+                                className={`card p-6 flex flex-col items-center justify-center text-center transition-all group relative overflow-hidden ${selectedPublication === pub.name ? 'border-cyan-500 ring-1 ring-cyan-500 bg-cyan-500/10' : 'hover:bg-white/5'}`}
                             >
-                                <GlowCard className="p-6 h-full flex flex-col justify-between hover:bg-white/5 transition-colors" glowColor={i % 2 === 0 ? "cyan" : "purple"}>
-                                    <div>
-                                        <div className="flex justify-between items-center mb-4">
-                                            <div className="flex items-center gap-2">
-                                                <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest border border-white/10 px-2 py-0.5 rounded-full">{article.source}</span>
-                                            </div>
-                                            <span className="font-mono text-xs text-zinc-600 uppercase tracking-widest">{article.date}</span>
-                                        </div>
-                                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors font-grotesk">{article.title}</h3>
-                                        <p className="text-zinc-500 text-sm leading-relaxed mb-4 line-clamp-2">{article.description}</p>
-                                    </div>
-                                    <div className="text-xs font-bold uppercase tracking-widest text-zinc-500 group-hover:text-white transition-colors">
-                                        Read
-                                    </div>
-                                </GlowCard>
-                            </Link>
+                                <Image
+                                    src={pub.logo}
+                                    alt={pub.name}
+                                    width={100}
+                                    height={30}
+                                    className={`h-6 w-auto mb-4 transition-all brightness-0 invert ${selectedPublication === pub.name ? 'opacity-100' : 'opacity-50 group-hover:opacity-100'}`}
+                                />
+                                <div className={`text-xs font-mono uppercase tracking-widest transition-colors ${selectedPublication === pub.name ? 'text-cyan-400' : 'text-zinc-500 group-hover:text-zinc-400'}`}>
+                                    {selectedPublication === pub.name ? 'Viewing' : 'Filter'}
+                                </div>
+                            </button>
                         ))}
                     </div>
-                    <div className="mt-8 text-center">
-                        <button className="px-6 py-3 border border-white/10 rounded-lg text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-white hover:border-white/30 transition-all">
-                            View All Articles
-                        </button>
+                </div>
+            </ScrollReveal>
+
+            {/* Recent/Filtered Articles */}
+            <ScrollReveal delay={400}>
+                <div id="article-list" className="mb-20">
+                    <div className="flex items-center justify-between mb-8">
+                        <h2 className="text-2xl font-bold text-white font-grotesk">
+                            {selectedPublication ? `Articles in ${selectedPublication}` : 'Recent Articles'}
+                        </h2>
+                        {selectedPublication && (
+                            <button onClick={() => setSelectedPublication(null)} className="text-xs text-red-400 hover:text-red-300 uppercase tracking-widest font-bold">
+                                Clear Filter ✕
+                            </button>
+                        )}
                     </div>
+
+                    {displayedArticles.length > 0 ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {displayedArticles.map((article, i) => (
+                                <Link
+                                    key={article.slug}
+                                    href={article.externalUrl || '#'}
+                                    target={article.externalUrl ? "_blank" : undefined}
+                                    rel={article.externalUrl ? "noopener noreferrer" : undefined}
+                                    className="group block"
+                                >
+                                    <GlowCard className="p-6 h-full flex flex-col justify-between hover:bg-white/5 transition-colors" glowColor={i % 2 === 0 ? "cyan" : "purple"}>
+                                        <div>
+                                            <div className="flex justify-between items-center mb-4">
+                                                <div className="flex items-center gap-2">
+                                                    <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest border border-white/10 px-2 py-0.5 rounded-full">{article.source}</span>
+                                                </div>
+                                                <span className="font-mono text-xs text-zinc-600 uppercase tracking-widest">{article.date}</span>
+                                            </div>
+                                            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors font-grotesk">{article.title}</h3>
+                                            <p className="text-zinc-500 text-sm leading-relaxed mb-4 line-clamp-2">{article.description}</p>
+                                        </div>
+                                        <div className="text-xs font-bold uppercase tracking-widest text-zinc-500 group-hover:text-white transition-colors">
+                                            Read
+                                        </div>
+                                    </GlowCard>
+                                </Link>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="text-center py-20 border border-dashed border-zinc-800 rounded-2xl">
+                            <p className="text-zinc-500">No articles found for this filter.</p>
+                            <button onClick={() => setSelectedPublication(null)} className="mt-4 text-cyan-400 hover:text-cyan-300 text-sm">Clear Filters</button>
+                        </div>
+                    )}
+
+                    {!selectedPublication && (
+                        <div className="mt-8 text-center">
+                            <button className="px-6 py-3 border border-white/10 rounded-lg text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-white hover:border-white/30 transition-all">
+                                View Full Archive
+                            </button>
+                        </div>
+                    )}
                 </div>
             </ScrollReveal>
 
             {/* Newsletter CTA */}
-            <ScrollReveal delay={400}>
+            <ScrollReveal delay={500}>
                 <div className="mb-20">
                     <NewsletterSignup variant="full" />
-                </div>
-            </ScrollReveal>
-
-            {/* By Publication */}
-            <ScrollReveal delay={500}>
-                <div id="publications" className="mb-12">
-                    <h2 className="text-2xl font-bold text-white mb-8 font-grotesk">By Publication</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {[
-                            { name: 'CIO.com', count: '12 articles', logo: '/logos/cio-logo.svg', url: 'https://www.cio.com/author/richard-ewing/' },
-                            { name: 'Built In', count: '8 articles', logo: '/logos/builtin-logo.svg', url: 'https://builtin.com/authors/richard-ewing' },
-                            { name: 'Mind the Product', count: '4 articles', logo: '/logos/mindtheproduct-logo.svg', url: 'https://www.mindtheproduct.com/author/richard-ewing/' },
-                            { name: 'HackerNoon', count: '6 articles', logo: '/logos/hackernoon-logo.svg', url: 'https://hackernoon.com/u/richardewing' }
-                        ].map((pub) => (
-                            <a
-                                key={pub.name}
-                                href={pub.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="card p-6 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-colors group"
-                            >
-                                <Image src={pub.logo} alt={pub.name} width={100} height={30} className="h-6 w-auto mb-4 opacity-50 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all" />
-                                <div className="text-xs text-zinc-500 font-mono uppercase tracking-widest group-hover:text-zinc-400 transition-colors">
-                                    {pub.count}
-                                </div>
-                            </a>
-                        ))}
-                    </div>
                 </div>
             </ScrollReveal>
 
