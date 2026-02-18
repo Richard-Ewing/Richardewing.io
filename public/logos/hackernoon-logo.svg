@@ -1,3 +1,3 @@
-<svg viewBox="0 0 140 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <text x="0" y="20" font-family="Courier, monospace" font-size="18" font-weight="700">HackerNoon</text>
+<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M4 4h4v4H4V4zm0 4h4v4H4V8zm0 4h4v4H4v-4zm0 4h4v4H4v-4zm4-4h4v4H8v-4zm4 0h4v4h-4v-4zm4-8h4v4h-4V4zm0 4h4v4h-4V8zm0 4h4v4h-4v-4zm0 4h4v4h-4v-4z" />
 </svg>
