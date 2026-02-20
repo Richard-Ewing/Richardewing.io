@@ -2,7 +2,7 @@ export const articles = [
     {
         slug: "financial-metrics-scorecard",
         title: "The 3 Financial Metrics Every PM Needs on Their Scorecard",
-        description: "Moving beyond vanity metrics to measure the true economic impact of product decisions.",
+        description: "Selected for the Mind the Product Newsletter. This article on product P&L ownership and capital efficiency was featured in Mind the Product’s curated newsletter.",
         date: "Feb 2026",
         readTime: "5 min read",
         source: "Mind the Product",
