@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import PDITool from './content';
-import ToolGate from '../../components/tool-gate';
 
 export const metadata: Metadata = {
     title: 'Product Debt Index Calculator | Quantify Hidden Technical Debt',
@@ -16,9 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return (
-        <ToolGate toolName="the Product Debt Index">
-            <PDITool />
-        </ToolGate>
-    );
+    return <PDITool />;
 }

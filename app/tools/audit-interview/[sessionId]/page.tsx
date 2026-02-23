@@ -18,6 +18,7 @@ import { ScrollReveal } from '../../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../../components/magicui/glow-card';
 import ShineBorder from '../../../components/magicui/shine-border';
 import { NewsletterForm } from '../../../components/newsletter-form';
+import ToolGate from '../../../components/tool-gate';
 import Link from 'next/link';
 
 // Register ChartJS
@@ -364,106 +365,108 @@ export default function SessionCommandCenter() {
         return (
             <div className="min-h-screen bg-[#000] text-white font-sans p-6 overflow-y-auto">
                 <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-1000">
+                    <ToolGate toolName="the Audit Interview Protocol Results">
 
-                    {/* VERDICT BOX */}
-                    <div className="text-center py-16 border border-[#30363d] bg-[#0d1117] rounded-2xl relative overflow-hidden">
-                        <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${isHire ? 'emerald-500' : 'red-500'} to-transparent opacity-50`}></div>
+                        {/* VERDICT BOX */}
+                        <div className="text-center py-16 border border-[#30363d] bg-[#0d1117] rounded-2xl relative overflow-hidden">
+                            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${isHire ? 'emerald-500' : 'red-500'} to-transparent opacity-50`}></div>
 
-                        <div className={`inline-block px-4 py-1 rounded-full border ${statusBorder} ${statusBg} ${statusColor} text-[10px] font-mono uppercase tracking-widest mb-8`}>
-                            Assessment Complete
-                        </div>
+                            <div className={`inline-block px-4 py-1 rounded-full border ${statusBorder} ${statusBg} ${statusColor} text-[10px] font-mono uppercase tracking-widest mb-8`}>
+                                Assessment Complete
+                            </div>
 
-                        <div className={`text-6xl sm:text-8xl font-black tracking-tighter ${statusColor} mb-6 drop-shadow-2xl`}>
-                            {analytics.verdict.split(':')[0]}
-                        </div>
+                            <div className={`text-6xl sm:text-8xl font-black tracking-tighter ${statusColor} mb-6 drop-shadow-2xl`}>
+                                {analytics.verdict.split(':')[0]}
+                            </div>
 
-                        <div className="text-xl sm:text-2xl font-bold font-mono text-white tracking-tight">
-                            {analytics.verdict.split(':')[1]}
-                        </div>
-                    </div>
-
-                    {/* DIMENSIONS */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="bg-[#161b22] border border-[#30363d] p-6 rounded-xl">
-                            <h3 className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Phase Breakdown</h3>
-                            <div className="space-y-4">
-                                {analytics.scores.map((s: any, i: number) => (
-                                    <div key={i} className="flex justify-between items-center border-b border-white/5 pb-2 last:border-0">
-                                        <span className="text-sm font-mono text-zinc-300">{s.phase}</span>
-                                        <span className={`text-xs font-bold ${s.score >= 5 ? 'text-emerald-400' : 'text-zinc-400'} bg-white/5 px-2 py-1 rounded`}>
-                                            L{s.score}
-                                        </span>
-                                    </div>
-                                ))}
+                            <div className="text-xl sm:text-2xl font-bold font-mono text-white tracking-tight">
+                                {analytics.verdict.split(':')[1]}
                             </div>
                         </div>
 
-                        <div className="bg-[#161b22] border border-[#30363d] p-6 rounded-xl">
-                            <h3 className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Judgment Signal</h3>
-                            <p className="text-sm text-zinc-400 leading-relaxed italic">
-                                "{analytics.rationale}"
-                            </p>
-                            <div className="mt-4 pt-4 border-t border-white/5">
-                                <span className="text-xs text-emerald-400 uppercase tracking-widest">Strengths Detected:</span>
-                                <div className="flex flex-wrap gap-2 mt-2">
-                                    {['System', 'Verification', 'Economics'].map(tag => (
-                                        <span key={tag} className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] rounded">{tag}</span>
+                        {/* DIMENSIONS */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="bg-[#161b22] border border-[#30363d] p-6 rounded-xl">
+                                <h3 className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Phase Breakdown</h3>
+                                <div className="space-y-4">
+                                    {analytics.scores.map((s: any, i: number) => (
+                                        <div key={i} className="flex justify-between items-center border-b border-white/5 pb-2 last:border-0">
+                                            <span className="text-sm font-mono text-zinc-300">{s.phase}</span>
+                                            <span className={`text-xs font-bold ${s.score >= 5 ? 'text-emerald-400' : 'text-zinc-400'} bg-white/5 px-2 py-1 rounded`}>
+                                                L{s.score}
+                                            </span>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
+
+                            <div className="bg-[#161b22] border border-[#30363d] p-6 rounded-xl">
+                                <h3 className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Judgment Signal</h3>
+                                <p className="text-sm text-zinc-400 leading-relaxed italic">
+                                    "{analytics.rationale}"
+                                </p>
+                                <div className="mt-4 pt-4 border-t border-white/5">
+                                    <span className="text-xs text-emerald-400 uppercase tracking-widest">Strengths Detected:</span>
+                                    <div className="flex flex-wrap gap-2 mt-2">
+                                        {['System', 'Verification', 'Economics'].map(tag => (
+                                            <span key={tag} className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] rounded">{tag}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="flex flex-col items-center pt-8 gap-6">
-                        {/* REVISED CTA */}
-                        <div className="w-full max-w-2xl bg-[#0f1115] border border-emerald-500/30 rounded-xl p-8 text-center relative overflow-hidden">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-cyan-500"></div>
-                            <h4 className="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-2">⚠ The Protocol, Not The Assessment</h4>
-                            <p className="text-zinc-400 text-sm mb-6 max-w-lg mx-auto">
-                                This tool demonstrates the methodology. In a live audit, I evaluate the <strong>hesitation</strong>—where candidates pause signals judgment.
-                            </p>
+                        <div className="flex flex-col items-center pt-8 gap-6">
+                            {/* REVISED CTA */}
+                            <div className="w-full max-w-2xl bg-[#0f1115] border border-emerald-500/30 rounded-xl p-8 text-center relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-cyan-500"></div>
+                                <h4 className="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-2">⚠ The Protocol, Not The Assessment</h4>
+                                <p className="text-zinc-400 text-sm mb-6 max-w-lg mx-auto">
+                                    This tool demonstrates the methodology. In a live audit, I evaluate the <strong>hesitation</strong>—where candidates pause signals judgment.
+                                </p>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-left">
-                                <div className="space-y-4 border-r border-white/5 pr-4">
-                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">Revenue Path</div>
-                                    <h5 className="text-white font-bold mb-2">Deploy the Protocol</h5>
-                                    <p className="text-xs text-zinc-400 mb-4">Book a live forensic hiring audit for your next VP/Director candidate.</p>
-                                    <a
-                                        href="https://richardewing.io/advisory"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block w-full py-3 bg-white text-black text-center font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-emerald-400 transition-colors shadow-lg hover:shadow-emerald-500/20"
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-left">
+                                    <div className="space-y-4 border-r border-white/5 pr-4">
+                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">Revenue Path</div>
+                                        <h5 className="text-white font-bold mb-2">Deploy the Protocol</h5>
+                                        <p className="text-xs text-zinc-400 mb-4">Book a live forensic hiring audit for your next VP/Director candidate.</p>
+                                        <a
+                                            href="https://richardewing.io/advisory"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block w-full py-3 bg-white text-black text-center font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-emerald-400 transition-colors shadow-lg hover:shadow-emerald-500/20"
+                                        >
+                                            Book Audit ($2,500)
+                                        </a>
+                                    </div>
+
+                                    <div className="space-y-4 pl-4">
+                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">Education Path</div>
+                                        <h5 className="text-white font-bold mb-2">Steal the Questions</h5>
+                                        <p className="text-xs text-zinc-400 mb-4">Get the complete PDF of my specialized interview questions for Product & Eng.</p>
+                                        <NewsletterForm
+                                            buttonText="Get Protocol PDF"
+                                            placeholder="Email for PDF..."
+                                            extraData={{
+                                                tool: 'Audit Interview',
+                                                verdict: analytics.verdict,
+                                                role: session.role
+                                            }}
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="mt-8 pt-6 border-t border-white/5">
+                                    <button
+                                        onClick={() => (window.location.href = '/tools/audit-interview')}
+                                        className="text-zinc-500 text-xs uppercase tracking-widest hover:text-white transition-colors"
                                     >
-                                        Book Audit ($2,500)
-                                    </a>
+                                        ← Run Another Simulation
+                                    </button>
                                 </div>
-
-                                <div className="space-y-4 pl-4">
-                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">Education Path</div>
-                                    <h5 className="text-white font-bold mb-2">Steal the Questions</h5>
-                                    <p className="text-xs text-zinc-400 mb-4">Get the complete PDF of my specialized interview questions for Product & Eng.</p>
-                                    <NewsletterForm
-                                        buttonText="Get Protocol PDF"
-                                        placeholder="Email for PDF..."
-                                        extraData={{
-                                            tool: 'Audit Interview',
-                                            verdict: analytics.verdict,
-                                            role: session.role
-                                        }}
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="mt-8 pt-6 border-t border-white/5">
-                                <button
-                                    onClick={() => (window.location.href = '/tools/audit-interview')}
-                                    className="text-zinc-500 text-xs uppercase tracking-widest hover:text-white transition-colors"
-                                >
-                                    ← Run Another Simulation
-                                </button>
                             </div>
                         </div>
-                    </div>
+                    </ToolGate>
                 </div>
             </div>
         );

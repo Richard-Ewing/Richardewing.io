@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import AUEBTool from './content';
-import ToolGate from '../../components/tool-gate';
 
 export const metadata: Metadata = {
     title: 'AI Unit Economics Benchmark | Calculate Your AI Collapse Point',
@@ -16,9 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return (
-        <ToolGate toolName="the AI Unit Economics Benchmark">
-            <AUEBTool />
-        </ToolGate>
-    );
+    return <AUEBTool />;
 }

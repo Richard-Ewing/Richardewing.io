@@ -36,7 +36,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic" }: Too
 
     if (!hasCheckedState) {
         return (
-            <div className="min-h-screen bg-[#050505] flex items-center justify-center">
+            <div className="w-full h-64 flex items-center justify-center">
                 <div className="w-8 h-8 rounded-full border-t-2 border-cyan-500 animate-spin"></div>
             </div>
         );
@@ -47,9 +47,9 @@ export default function ToolGate({ children, toolName = "This Diagnostic" }: Too
     }
 
     return (
-        <div className="min-h-screen bg-[#050505] text-white flex flex-col items-center justify-center p-6 relative overflow-hidden">
+        <div className="w-full bg-zinc-900/30 border border-white/10 rounded-3xl text-white flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden my-8 shadow-2xl backdrop-blur-sm">
             {/* Background effects */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.03),transparent_50%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.05),transparent_70%)] pointer-events-none" />
             <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
 
             <motion.div

@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import AuditInterviewLanding from './content';
-import ToolGate from '../../components/tool-gate';
 
 export const metadata: Metadata = {
     title: 'The Audit Interview | Assess Engineering Judgment, Not Syntax',
@@ -16,9 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return (
-        <ToolGate toolName="the Audit Interview Protocol">
-            <AuditInterviewLanding />
-        </ToolGate>
-    );
+    return <AuditInterviewLanding />;
 }

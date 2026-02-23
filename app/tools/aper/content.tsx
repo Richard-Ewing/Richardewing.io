@@ -6,6 +6,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 
 import { TrendingUp, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building } from 'lucide-react';
 import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
+import ToolGate from '../../components/tool-gate';
 
 // --- MAGIC UI COMPONENTS ---
 
@@ -390,245 +391,247 @@ export default function APERTool() {
                         </motion.div>
                     ) : (
                         /* --- RESULTS STATE --- */
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
+                        <ToolGate toolName="the APER Efficiency Diagnostic">
+                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
 
-                            {/* HERO SCORE */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, ease: "easeOut" }}
-                                className="capsule-container rounded-2xl sm:rounded-[2rem] p-8 text-center mb-8"
-                            >
-                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">REVENUE PER ENGINEER (APER)</div>
-                                <div className={`text-7xl md:text-8xl font-bold tracking-tighter ${getStatus(results.aper).color}`}>
-                                    <NumberTicker value={results.aper} prefix="$" />
-                                </div>
-                                <div className={`mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full border ${getStatus(results.aper).color.replace('text-', 'border-').replace('400', '500/30')} bg-white/5`}>
-                                    <span className={`font-bold uppercase tracking-widest text-sm ${getStatus(results.aper).color}`}>{getStatus(results.aper).label}</span>
-                                </div>
-                                <p className="mt-6 text-zinc-400 max-w-xl mx-auto">{getStatus(results.aper).desc}</p>
-                            </motion.div>
-
-                            {/* PERSONA-SPECIFIC INSIGHT */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
-                            >
-                                <BentoCard title={`Insight for ${persona}`} icon={Target} className="border-yellow-500/20 bg-gradient-to-br from-yellow-500/5 to-transparent">
-                                    <div className="space-y-4">
-                                        <h3 className="text-2xl font-bold text-white">{getPersonaInsight(results).headline}</h3>
-                                        <p className="text-zinc-400 leading-relaxed">{getPersonaInsight(results).detail}</p>
-                                        <p className="text-yellow-400 font-semibold">{getPersonaInsight(results).action}</p>
+                                {/* HERO SCORE */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, ease: "easeOut" }}
+                                    className="capsule-container rounded-2xl sm:rounded-[2rem] p-8 text-center mb-8"
+                                >
+                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">REVENUE PER ENGINEER (APER)</div>
+                                    <div className={`text-7xl md:text-8xl font-bold tracking-tighter ${getStatus(results.aper).color}`}>
+                                        <NumberTicker value={results.aper} prefix="$" />
                                     </div>
-                                </BentoCard>
-                            </motion.div>
-
-                            {/* METRICS GRID */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                                className="grid grid-cols-1 md:grid-cols-4 gap-6"
-                            >
-                                <BentoCard title="Engineering Cost" icon={DollarSign}>
-                                    <div className="text-3xl font-bold text-red-600">
-                                        <NumberTicker value={results.totalEngCost} prefix="$" />
+                                    <div className={`mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full border ${getStatus(results.aper).color.replace('text-', 'border-').replace('400', '500/30')} bg-white/5`}>
+                                        <span className={`font-bold uppercase tracking-widest text-sm ${getStatus(results.aper).color}`}>{getStatus(results.aper).label}</span>
                                     </div>
-                                    <div className="text-zinc-500 text-xs mt-2">{results.engineers} engineers × {formatMoney(results.costPerEng)}</div>
-                                </BentoCard>
+                                    <p className="mt-6 text-zinc-400 max-w-xl mx-auto">{getStatus(results.aper).desc}</p>
+                                </motion.div>
 
-                                <BentoCard title="Engineering Margin" icon={TrendingUp}>
-                                    <div className={`text-3xl font-bold ${results.engineeringMargin >= 70 ? 'text-emerald-400' : results.engineeringMargin >= 50 ? 'text-yellow-400' : 'text-red-600'}`}>
-                                        <NumberTicker value={results.engineeringMargin} suffix="%" />
-                                    </div>
-                                    <div className="text-zinc-500 text-xs mt-2">Revenue after engineering</div>
-                                </BentoCard>
-
-                                <BentoCard title="Coordination Tax" icon={Clock} className="border-orange-500/20">
-                                    <div className="text-3xl font-bold text-orange-400">
-                                        {results.coordinationTax.toFixed(0)}%
-                                    </div>
-                                    <div className="text-zinc-500 text-xs mt-2">{formatMoney(results.overheadCost)}/yr lost</div>
-                                </BentoCard>
-
-                                <BentoCard title="Optimal Headcount" icon={Users} className="border-cyan-500/20">
-                                    <div className="text-3xl font-bold text-cyan-400">
-                                        {results.optimalHeadcount}
-                                    </div>
-                                    <div className="text-zinc-500 text-xs mt-2">
-                                        {results.engineers > results.optimalHeadcount
-                                            ? `${results.engineers - results.optimalHeadcount} over optimal`
-                                            : `${results.optimalHeadcount - results.engineers} capacity available`
-                                        }
-                                    </div>
-                                </BentoCard>
-                            </motion.div>
-
-                            {/* TEAM HEALTH DASHBOARD */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-                            >
-                                <div className="capsule-container rounded-2xl p-6">
-                                    <div className="flex items-center justify-between mb-6">
-                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Team Health Dashboard</div>
-                                        <div className={`px-3 py-1 rounded-full text-xs font-bold ${results.teamHealthScore >= 75 ? 'bg-emerald-500/20 text-emerald-400' :
-                                            results.teamHealthScore >= 50 ? 'bg-yellow-500/20 text-yellow-400' :
-                                                'bg-red-500/20 text-red-400'
-                                            }`}>
-                                            Health Score: {results.teamHealthScore}/100
+                                {/* PERSONA-SPECIFIC INSIGHT */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
+                                >
+                                    <BentoCard title={`Insight for ${persona}`} icon={Target} className="border-yellow-500/20 bg-gradient-to-br from-yellow-500/5 to-transparent">
+                                        <div className="space-y-4">
+                                            <h3 className="text-2xl font-bold text-white">{getPersonaInsight(results).headline}</h3>
+                                            <p className="text-zinc-400 leading-relaxed">{getPersonaInsight(results).detail}</p>
+                                            <p className="text-yellow-400 font-semibold">{getPersonaInsight(results).action}</p>
                                         </div>
-                                    </div>
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                        <div className="bg-black/30 rounded-xl p-4">
-                                            <div className="text-xs text-zinc-500 mb-1">Productivity Index</div>
-                                            <div className="text-2xl font-bold text-emerald-400">{results.productivityIndex}/100</div>
-                                            <div className="text-[10px] text-zinc-600 mt-1">APER + tenure + stability</div>
-                                        </div>
-                                        <div className="bg-black/30 rounded-xl p-4">
-                                            <div className="text-xs text-zinc-500 mb-1">New Hire Ramp Cost</div>
-                                            <div className="text-2xl font-bold text-yellow-400">{formatMoney(results.newHireRampCost)}</div>
-                                            <div className="text-[10px] text-zinc-600 mt-1">3-month productivity loss</div>
-                                        </div>
-                                        <div className="bg-black/30 rounded-xl p-4">
-                                            <div className="text-xs text-zinc-500 mb-1">Gap to Elite APER</div>
-                                            <div className="text-2xl font-bold text-cyan-400">{results.revenueGap > 0 ? formatMoney(results.revenueGap) : '✓ Elite'}</div>
-                                            <div className="text-[10px] text-zinc-600 mt-1">ARR needed for $600K/eng</div>
-                                        </div>
-                                        <div className="bg-black/30 rounded-xl p-4">
-                                            <div className="text-xs text-zinc-500 mb-1">Leverage Ratio</div>
-                                            <div className="text-2xl font-bold text-purple-400">{results.leverageRatio.toFixed(1)}x</div>
-                                            <div className="text-[10px] text-zinc-600 mt-1">Revenue per $ eng spend</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
+                                    </BentoCard>
+                                </motion.div>
 
-                            {/* BENCHMARK CHART */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                            >
-                                <BentoCard title="Industry Benchmarks" icon={TrendingUp}>
-                                    <div className="text-center mb-4">
-                                        <div className="text-sm text-zinc-500">How you compare to industry standards</div>
-                                    </div>
-                                    <div className="h-64 w-full mt-4">
-                                        <ResponsiveContainer width="100%" height="100%">
-                                            <BarChart data={results.benchmarks} layout="vertical" margin={{ left: 20 }}>
-                                                <XAxis type="number" hide />
-                                                <YAxis dataKey="name" type="category" width={120} tick={{ fill: '#71717a', fontSize: 11 }} />
-                                                <Tooltip
-                                                    cursor={{ fill: 'transparent' }}
-                                                    contentStyle={{ backgroundColor: '#18181b', border: '1px solid #3f3f46', borderRadius: '8px' }}
-                                                    formatter={(val) => val !== undefined ? formatMoney(Number(val)) : ''}
-                                                />
-                                                <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={32}>
-                                                    {results.benchmarks.map((entry: BenchmarkData, index: number) => (
-                                                        <Cell key={`cell-${index}`} fill={entry.color} />
-                                                    ))}
-                                                </Bar>
-                                            </BarChart>
-                                        </ResponsiveContainer>
-                                    </div>
-                                </BentoCard>
-                            </motion.div>
-
-                            {/* EXECUTIVE SUMMARY + EMAIL CAPTURE */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                            >
-                                <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-8 border border-white/10">
-                                    <div className="flex items-center gap-3 mb-6">
-                                        <div className={`w-3 h-3 rounded-full animate-pulse ${results.aper < 400000 ? 'bg-orange-500' : 'bg-cyan-400'}`} />
-                                        <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">Executive Summary</span>
-                                    </div>
-
-                                    <div className="grid md:grid-cols-2 gap-8">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-white mb-4">📊 Board-Ready Insights</h3>
-                                            <ul className="space-y-3 text-zinc-400">
-                                                <li className="flex items-start gap-2">
-                                                    <span className="text-yellow-400 mt-1">•</span>
-                                                    <span>APER of <strong className="text-white">{formatMoney(results.aper)}</strong>/engineer is {results.aper >= 500000 ? 'above' : 'below'} the $500K SaaS benchmark.</span>
-                                                </li>
-                                                <li className="flex items-start gap-2">
-                                                    <span className="text-yellow-400 mt-1">•</span>
-                                                    <span>Coordination tax of <strong className="text-white">{results.coordinationTax.toFixed(0)}%</strong> costs <strong className="text-red-400">{formatMoney(results.overheadCost)}/year</strong> in lost productivity.</span>
-                                                </li>
-                                                <li className="flex items-start gap-2">
-                                                    <span className="text-yellow-400 mt-1">•</span>
-                                                    <span>Optimal headcount is <strong className="text-white">{results.optimalHeadcount}</strong> engineers. You are {results.engineers > results.optimalHeadcount ? <strong className="text-orange-400">{results.engineers - results.optimalHeadcount} over</strong> : <strong className="text-cyan-400">{results.optimalHeadcount - results.engineers} under</strong>} optimal.</span>
-                                                </li>
-                                            </ul>
+                                {/* METRICS GRID */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                                    className="grid grid-cols-1 md:grid-cols-4 gap-6"
+                                >
+                                    <BentoCard title="Engineering Cost" icon={DollarSign}>
+                                        <div className="text-3xl font-bold text-red-600">
+                                            <NumberTicker value={results.totalEngCost} prefix="$" />
                                         </div>
+                                        <div className="text-zinc-500 text-xs mt-2">{results.engineers} engineers × {formatMoney(results.costPerEng)}</div>
+                                    </BentoCard>
 
-                                        <div className="border-l border-white/10 pl-8">
-                                            <div className="mb-4">
-                                                <h3 className="text-xl font-bold text-white mb-2">Want the Full Analysis?</h3>
-                                                <p className="text-zinc-400 text-sm">Get a team topology review and optimal headcount roadmap.</p>
+                                    <BentoCard title="Engineering Margin" icon={TrendingUp}>
+                                        <div className={`text-3xl font-bold ${results.engineeringMargin >= 70 ? 'text-emerald-400' : results.engineeringMargin >= 50 ? 'text-yellow-400' : 'text-red-600'}`}>
+                                            <NumberTicker value={results.engineeringMargin} suffix="%" />
+                                        </div>
+                                        <div className="text-zinc-500 text-xs mt-2">Revenue after engineering</div>
+                                    </BentoCard>
+
+                                    <BentoCard title="Coordination Tax" icon={Clock} className="border-orange-500/20">
+                                        <div className="text-3xl font-bold text-orange-400">
+                                            {results.coordinationTax.toFixed(0)}%
+                                        </div>
+                                        <div className="text-zinc-500 text-xs mt-2">{formatMoney(results.overheadCost)}/yr lost</div>
+                                    </BentoCard>
+
+                                    <BentoCard title="Optimal Headcount" icon={Users} className="border-cyan-500/20">
+                                        <div className="text-3xl font-bold text-cyan-400">
+                                            {results.optimalHeadcount}
+                                        </div>
+                                        <div className="text-zinc-500 text-xs mt-2">
+                                            {results.engineers > results.optimalHeadcount
+                                                ? `${results.engineers - results.optimalHeadcount} over optimal`
+                                                : `${results.optimalHeadcount - results.engineers} capacity available`
+                                            }
+                                        </div>
+                                    </BentoCard>
+                                </motion.div>
+
+                                {/* TEAM HEALTH DASHBOARD */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+                                >
+                                    <div className="capsule-container rounded-2xl p-6">
+                                        <div className="flex items-center justify-between mb-6">
+                                            <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Team Health Dashboard</div>
+                                            <div className={`px-3 py-1 rounded-full text-xs font-bold ${results.teamHealthScore >= 75 ? 'bg-emerald-500/20 text-emerald-400' :
+                                                results.teamHealthScore >= 50 ? 'bg-yellow-500/20 text-yellow-400' :
+                                                    'bg-red-500/20 text-red-400'
+                                                }`}>
+                                                Health Score: {results.teamHealthScore}/100
                                             </div>
-                                            <NewsletterForm
-                                                buttonText="Get Team Analysis"
-                                                extraData={{
-                                                    tool: 'APER',
-                                                    persona,
-                                                    aper: results.aper
-                                                }}
-                                            />
+                                        </div>
+                                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                            <div className="bg-black/30 rounded-xl p-4">
+                                                <div className="text-xs text-zinc-500 mb-1">Productivity Index</div>
+                                                <div className="text-2xl font-bold text-emerald-400">{results.productivityIndex}/100</div>
+                                                <div className="text-[10px] text-zinc-600 mt-1">APER + tenure + stability</div>
+                                            </div>
+                                            <div className="bg-black/30 rounded-xl p-4">
+                                                <div className="text-xs text-zinc-500 mb-1">New Hire Ramp Cost</div>
+                                                <div className="text-2xl font-bold text-yellow-400">{formatMoney(results.newHireRampCost)}</div>
+                                                <div className="text-[10px] text-zinc-600 mt-1">3-month productivity loss</div>
+                                            </div>
+                                            <div className="bg-black/30 rounded-xl p-4">
+                                                <div className="text-xs text-zinc-500 mb-1">Gap to Elite APER</div>
+                                                <div className="text-2xl font-bold text-cyan-400">{results.revenueGap > 0 ? formatMoney(results.revenueGap) : '✓ Elite'}</div>
+                                                <div className="text-[10px] text-zinc-600 mt-1">ARR needed for $600K/eng</div>
+                                            </div>
+                                            <div className="bg-black/30 rounded-xl p-4">
+                                                <div className="text-xs text-zinc-500 mb-1">Leverage Ratio</div>
+                                                <div className="text-2xl font-bold text-purple-400">{results.leverageRatio.toFixed(1)}x</div>
+                                                <div className="text-[10px] text-zinc-600 mt-1">Revenue per $ eng spend</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </motion.div>
+                                </motion.div>
 
-                            {/* ACTION FOOTER */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                                className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 border-t border-white/10"
-                            >
-                                <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Analysis</button>
-                                <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.aper < 400000
-                                    ? 'bg-orange-600 hover:bg-orange-500 text-white shadow-[0_0_30px_rgba(249,115,22,0.4)]'
-                                    : 'bg-yellow-500 hover:bg-yellow-400 text-black shadow-[0_0_30px_rgba(234,179,8,0.3)]'
-                                    }`}>
-                                    {results.aper < 400000 ? '⚠️ Workforce Optimization Session' : 'Maximize My Efficiency'} →
-                                </Link>
-                                <Link href="/system" className="text-zinc-500 text-sm hover:text-white">Explore All Tools →</Link>
-                            </motion.div>
+                                {/* BENCHMARK CHART */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                                >
+                                    <BentoCard title="Industry Benchmarks" icon={TrendingUp}>
+                                        <div className="text-center mb-4">
+                                            <div className="text-sm text-zinc-500">How you compare to industry standards</div>
+                                        </div>
+                                        <div className="h-64 w-full mt-4">
+                                            <ResponsiveContainer width="100%" height="100%">
+                                                <BarChart data={results.benchmarks} layout="vertical" margin={{ left: 20 }}>
+                                                    <XAxis type="number" hide />
+                                                    <YAxis dataKey="name" type="category" width={120} tick={{ fill: '#71717a', fontSize: 11 }} />
+                                                    <Tooltip
+                                                        cursor={{ fill: 'transparent' }}
+                                                        contentStyle={{ backgroundColor: '#18181b', border: '1px solid #3f3f46', borderRadius: '8px' }}
+                                                        formatter={(val) => val !== undefined ? formatMoney(Number(val)) : ''}
+                                                    />
+                                                    <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={32}>
+                                                        {results.benchmarks.map((entry: BenchmarkData, index: number) => (
+                                                            <Cell key={`cell-${index}`} fill={entry.color} />
+                                                        ))}
+                                                    </Bar>
+                                                </BarChart>
+                                            </ResponsiveContainer>
+                                        </div>
+                                    </BentoCard>
+                                </motion.div>
 
-                            {/* SOCIAL PROOF */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.5 }}
-                                className="text-center pt-8"
-                            >
-                                <p className="text-xs text-zinc-600 mb-3">Trusted by product leaders at</p>
-                                <div className="flex items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
-                                    <span>Stripe</span>
-                                    <span>Figma</span>
-                                    <span>Linear</span>
-                                    <span>Notion</span>
-                                    <span>Vercel</span>
-                                </div>
-                            </motion.div>
+                                {/* EXECUTIVE SUMMARY + EMAIL CAPTURE */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                                >
+                                    <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-8 border border-white/10">
+                                        <div className="flex items-center gap-3 mb-6">
+                                            <div className={`w-3 h-3 rounded-full animate-pulse ${results.aper < 400000 ? 'bg-orange-500' : 'bg-cyan-400'}`} />
+                                            <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">Executive Summary</span>
+                                        </div>
 
-                        </motion.div>
+                                        <div className="grid md:grid-cols-2 gap-8">
+                                            <div>
+                                                <h3 className="text-xl font-bold text-white mb-4">📊 Board-Ready Insights</h3>
+                                                <ul className="space-y-3 text-zinc-400">
+                                                    <li className="flex items-start gap-2">
+                                                        <span className="text-yellow-400 mt-1">•</span>
+                                                        <span>APER of <strong className="text-white">{formatMoney(results.aper)}</strong>/engineer is {results.aper >= 500000 ? 'above' : 'below'} the $500K SaaS benchmark.</span>
+                                                    </li>
+                                                    <li className="flex items-start gap-2">
+                                                        <span className="text-yellow-400 mt-1">•</span>
+                                                        <span>Coordination tax of <strong className="text-white">{results.coordinationTax.toFixed(0)}%</strong> costs <strong className="text-red-400">{formatMoney(results.overheadCost)}/year</strong> in lost productivity.</span>
+                                                    </li>
+                                                    <li className="flex items-start gap-2">
+                                                        <span className="text-yellow-400 mt-1">•</span>
+                                                        <span>Optimal headcount is <strong className="text-white">{results.optimalHeadcount}</strong> engineers. You are {results.engineers > results.optimalHeadcount ? <strong className="text-orange-400">{results.engineers - results.optimalHeadcount} over</strong> : <strong className="text-cyan-400">{results.optimalHeadcount - results.engineers} under</strong>} optimal.</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div className="border-l border-white/10 pl-8">
+                                                <div className="mb-4">
+                                                    <h3 className="text-xl font-bold text-white mb-2">Want the Full Analysis?</h3>
+                                                    <p className="text-zinc-400 text-sm">Get a team topology review and optimal headcount roadmap.</p>
+                                                </div>
+                                                <NewsletterForm
+                                                    buttonText="Get Team Analysis"
+                                                    extraData={{
+                                                        tool: 'APER',
+                                                        persona,
+                                                        aper: results.aper
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+
+                                {/* ACTION FOOTER */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                                    className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 border-t border-white/10"
+                                >
+                                    <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Analysis</button>
+                                    <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.aper < 400000
+                                        ? 'bg-orange-600 hover:bg-orange-500 text-white shadow-[0_0_30px_rgba(249,115,22,0.4)]'
+                                        : 'bg-yellow-500 hover:bg-yellow-400 text-black shadow-[0_0_30px_rgba(234,179,8,0.3)]'
+                                        }`}>
+                                        {results.aper < 400000 ? '⚠️ Workforce Optimization Session' : 'Maximize My Efficiency'} →
+                                    </Link>
+                                    <Link href="/system" className="text-zinc-500 text-sm hover:text-white">Explore All Tools →</Link>
+                                </motion.div>
+
+                                {/* SOCIAL PROOF */}
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.5 }}
+                                    className="text-center pt-8"
+                                >
+                                    <p className="text-xs text-zinc-600 mb-3">Trusted by product leaders at</p>
+                                    <div className="flex items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
+                                        <span>Stripe</span>
+                                        <span>Figma</span>
+                                        <span>Linear</span>
+                                        <span>Notion</span>
+                                        <span>Vercel</span>
+                                    </div>
+                                </motion.div>
+
+                            </motion.div>
+                        </ToolGate>
                     )}
                 </AnimatePresence>
             </main>

@@ -6,6 +6,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { TrendingDown, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Users, Target, Mail, ArrowRight, Cpu } from 'lucide-react';
 import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
+import ToolGate from '../../components/tool-gate';
 
 const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
     const [display, setDisplay] = useState(0);
@@ -528,252 +529,253 @@ export default function AUEBTool() {
                         </motion.div>
                     ) : (
                         /* --- RESULTS STATE --- */
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
+                        <ToolGate toolName="the AI Unit Economics Benchmark">
+                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
 
-                            {/* GAUGE HERO */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, ease: "easeOut" }}
-                                className="capsule-container rounded-2xl sm:rounded-[2rem] p-8 text-center mb-8"
-                            >
-                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-8">GROSS MARGIN HEALTH</div>
-                                <GaugeChart value={results.grossMargin} />
-                                <div className={`mt-12 text-4xl font-bold tracking-tight ${getMarginStatus(results.grossMargin).color}`}>
-                                    {getMarginStatus(results.grossMargin).text}
-                                </div>
-                                {results.grossMargin < 30 && (
-                                    <div className="mt-6 text-red-400 text-sm max-w-xl mx-auto bg-red-950/30 p-4 rounded-lg border border-red-900/50">
-                                        CRITICAL: Your unit economics are upside down. You are paying users to use your product.
+                                {/* GAUGE HERO */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, ease: "easeOut" }}
+                                    className="capsule-container rounded-2xl sm:rounded-[2rem] p-8 text-center mb-8"
+                                >
+                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-8">GROSS MARGIN HEALTH</div>
+                                    <GaugeChart value={results.grossMargin} />
+                                    <div className={`mt-12 text-4xl font-bold tracking-tight ${getMarginStatus(results.grossMargin).color}`}>
+                                        {getMarginStatus(results.grossMargin).text}
                                     </div>
-                                )}
-                            </motion.div>
-
-                            {/* PERSONA-SPECIFIC INSIGHT */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
-                            >
-                                <BentoCard title={`Insight for ${persona}`} icon={Target} className="border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent">
-                                    <div className="space-y-4">
-                                        <h3 className="text-2xl font-bold text-white">{getPersonaInsight(results).headline}</h3>
-                                        <p className="text-zinc-400 leading-relaxed">{getPersonaInsight(results).detail}</p>
-                                        <p className="text-cyan-400 font-semibold">{getPersonaInsight(results).action}</p>
-                                    </div>
-                                </BentoCard>
-                            </motion.div>
-
-                            {/* METRICS GRID */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                                className="grid grid-cols-1 md:grid-cols-4 gap-6"
-                            >
-                                <BentoCard title="Monthly Revenue" icon={DollarSign}>
-                                    <div className="text-3xl font-bold text-cyan-400"><NumberTicker value={results.monthlyRevenue} prefix="$" /></div>
-                                </BentoCard>
-                                <BentoCard title="Monthly AI Costs" icon={Flame} className="border-red-500/20">
-                                    <div className="text-3xl font-bold text-red-600"><NumberTicker value={results.monthlyCost} prefix="$" /></div>
-                                </BentoCard>
-                                <BentoCard title="Monthly Profit" icon={TrendingDown}>
-                                    <div className={`text-3xl font-bold ${results.monthlyProfit >= 0 ? 'text-emerald-400' : 'text-red-600'}`}>
-                                        <NumberTicker value={results.monthlyProfit} prefix="$" />
-                                    </div>
-                                </BentoCard>
-                                <BentoCard title="Months to 50% COGS" icon={AlertTriangle} className="border-yellow-500/20">
-                                    <div className="text-3xl font-bold text-yellow-400">{results.monthsToCollapse}</div>
-                                    <div className="text-zinc-500 text-xs mt-2">At {growthRate}% monthly growth</div>
-                                </BentoCard>
-                            </motion.div>
-
-                            {/* COST FORENSICS */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-                            >
-                                <BentoCard title="Cost Forensics" icon={Activity} className="border-red-500/20">
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                                        <div className="bg-black/30 rounded-xl p-4">
-                                            <div className="text-xs font-mono text-red-400 uppercase tracking-widest mb-1">LLM Costs</div>
-                                            <div className="text-2xl font-bold text-red-500">{formatMoney(results.llmCost)}/mo</div>
-                                            <div className="text-xs text-zinc-500 mt-1">{((results.llmCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                    {results.grossMargin < 30 && (
+                                        <div className="mt-6 text-red-400 text-sm max-w-xl mx-auto bg-red-950/30 p-4 rounded-lg border border-red-900/50">
+                                            CRITICAL: Your unit economics are upside down. You are paying users to use your product.
                                         </div>
-                                        <div className="bg-black/30 rounded-xl p-4">
-                                            <div className="text-xs font-mono text-orange-400 uppercase tracking-widest mb-1">Third-Party APIs</div>
-                                            <div className="text-2xl font-bold text-orange-500">{formatMoney(results.apiCost)}/mo</div>
-                                            <div className="text-xs text-zinc-500 mt-1">{((results.apiCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                    )}
+                                </motion.div>
+
+                                {/* PERSONA-SPECIFIC INSIGHT */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
+                                >
+                                    <BentoCard title={`Insight for ${persona}`} icon={Target} className="border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent">
+                                        <div className="space-y-4">
+                                            <h3 className="text-2xl font-bold text-white">{getPersonaInsight(results).headline}</h3>
+                                            <p className="text-zinc-400 leading-relaxed">{getPersonaInsight(results).detail}</p>
+                                            <p className="text-cyan-400 font-semibold">{getPersonaInsight(results).action}</p>
                                         </div>
-                                        <div className="bg-black/30 rounded-xl p-4">
-                                            <div className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-1">Hosting & Compute</div>
-                                            <div className="text-2xl font-bold text-yellow-500">{formatMoney(results.hostingCost)}/mo</div>
-                                            <div className="text-xs text-zinc-500 mt-1">{((results.hostingCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                    </BentoCard>
+                                </motion.div>
+
+                                {/* METRICS GRID */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                                    className="grid grid-cols-1 md:grid-cols-4 gap-6"
+                                >
+                                    <BentoCard title="Monthly Revenue" icon={DollarSign}>
+                                        <div className="text-3xl font-bold text-cyan-400"><NumberTicker value={results.monthlyRevenue} prefix="$" /></div>
+                                    </BentoCard>
+                                    <BentoCard title="Monthly AI Costs" icon={Flame} className="border-red-500/20">
+                                        <div className="text-3xl font-bold text-red-600"><NumberTicker value={results.monthlyCost} prefix="$" /></div>
+                                    </BentoCard>
+                                    <BentoCard title="Monthly Profit" icon={TrendingDown}>
+                                        <div className={`text-3xl font-bold ${results.monthlyProfit >= 0 ? 'text-emerald-400' : 'text-red-600'}`}>
+                                            <NumberTicker value={results.monthlyProfit} prefix="$" />
                                         </div>
-                                    </div>
-                                    <div className="h-4 bg-zinc-800 rounded-full overflow-hidden flex">
-                                        <div className="h-full bg-red-500" style={{ width: `${(results.llmCost / results.totalInfraCost) * 100}%` }} />
-                                        <div className="h-full bg-orange-500" style={{ width: `${(results.apiCost / results.totalInfraCost) * 100}%` }} />
-                                        <div className="h-full bg-yellow-500" style={{ width: `${(results.hostingCost / results.totalInfraCost) * 100}%` }} />
-                                    </div>
-                                    <div className="flex justify-between text-xs text-zinc-500 mt-2">
-                                        <span>Total Infrastructure: <span className="text-white font-bold">{formatMoney(results.totalInfraCost)}/mo</span></span>
-                                        <span>Per User: <span className="text-white font-bold">{formatMoney(results.costPerUser)}</span></span>
-                                    </div>
-                                </BentoCard>
-                            </motion.div>
+                                    </BentoCard>
+                                    <BentoCard title="Months to 50% COGS" icon={AlertTriangle} className="border-yellow-500/20">
+                                        <div className="text-3xl font-bold text-yellow-400">{results.monthsToCollapse}</div>
+                                        <div className="text-zinc-500 text-xs mt-2">At {growthRate}% monthly growth</div>
+                                    </BentoCard>
+                                </motion.div>
 
-                            {/* MODEL COMPARISON TABLE */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                            >
-                                <BentoCard title="Model Arbitrage" icon={Zap} className="col-span-full">
-                                    <div className="overflow-x-auto">
-                                        <table className="w-full text-sm">
-                                            <thead>
-                                                <tr className="border-b border-zinc-800 text-zinc-500 font-mono text-xs uppercase">
-                                                    <th className="text-left py-3">Model</th>
-                                                    <th className="text-right py-3">Cost/User</th>
-                                                    <th className="text-right py-3">Margin</th>
-                                                    <th className="text-right py-3">Monthly Savings</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {results.models.map((model: ModelData, i: number) => {
-                                                    const savings = ((model.margin - results.grossMargin) / 100) * results.monthlyRevenue;
-                                                    return (
-                                                        <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30">
-                                                            <td className="py-3 font-semibold text-white">{model.model}</td>
-                                                            <td className="py-3 text-right text-zinc-400">{formatMoney(model.costPerUser)}</td>
-                                                            <td className={`py-3 text-right font-bold ${model.margin >= 60 ? 'text-emerald-400' : 'text-red-500'}`}>{model.margin.toFixed(1)}%</td>
-                                                            <td className="py-3 text-right text-emerald-400">{savings > 0 ? `+${formatMoney(savings)}` : '-'}</td>
-                                                        </tr>
-                                                    );
-                                                })}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </BentoCard>
-                            </motion.div>
-
-                            {/* GROWTH CHART */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                            >
-                                <BentoCard title="12-Month Runway Projection" icon={Activity}>
-                                    <div className="h-64 w-full mt-4">
-                                        <ResponsiveContainer width="100%" height="100%">
-                                            <AreaChart data={results.growthData}>
-                                                <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-                                                <XAxis dataKey="month" stroke="#666" fontSize={12} />
-                                                <YAxis stroke="#666" fontSize={12} tickFormatter={(val) => `$${val}k`} />
-                                                <Tooltip contentStyle={{ backgroundColor: '#111', border: '1px solid #333' }} formatter={(val) => val !== undefined ? `$${Number(val).toFixed(0)}k` : ''} />
-                                                <Area type="monotone" dataKey="revenue" stackId="1" stroke="#22d3ee" fill="#22d3ee" fillOpacity={0.2} />
-                                                <Area type="monotone" dataKey="cost" stackId="2" stroke="#dc2626" fill="#dc2626" fillOpacity={0.2} />
-                                            </AreaChart>
-                                        </ResponsiveContainer>
-                                    </div>
-                                </BentoCard>
-                            </motion.div>
-
-                            {/* EXECUTIVE SUMMARY + EMAIL CAPTURE */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                            >
-                                <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-8 border border-white/10">
-                                    <div className="flex items-center gap-3 mb-6">
-                                        <div className={`w-3 h-3 rounded-full animate-pulse ${results.grossMargin < 50 ? 'bg-red-500' : 'bg-cyan-400'}`} />
-                                        <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">Executive Summary</span>
-                                    </div>
-
-                                    <div className="grid md:grid-cols-2 gap-8">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-white mb-4">📊 Board-Ready Insights</h3>
-                                            <ul className="space-y-3 text-zinc-400">
-                                                <li className="flex items-start gap-2">
-                                                    <span className="text-cyan-400 mt-1">•</span>
-                                                    <span>Gross margin of <strong className="text-white">{results.grossMargin.toFixed(0)}%</strong> is {results.grossMargin >= 60 ? 'sustainable' : results.grossMargin >= 40 ? 'concerning' : 'critical'} for AI-native products.</span>
-                                                </li>
-                                                <li className="flex items-start gap-2">
-                                                    <span className="text-cyan-400 mt-1">•</span>
-                                                    <span>At <strong className="text-white">{growthRate}% monthly growth</strong>, AI costs will exceed 50% of revenue in <strong className="text-yellow-400">{results.monthsToCollapse} months</strong>.</span>
-                                                </li>
-                                                <li className="flex items-start gap-2">
-                                                    <span className="text-cyan-400 mt-1">•</span>
-                                                    <span>Switching to <strong className="text-white">{results.models[0]?.model}</strong> could save <strong className="text-emerald-400">{formatMoney(((results.models[0]?.margin || 0) - results.grossMargin) / 100 * results.monthlyRevenue)}/month</strong>.</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div className="border-l border-white/10 pl-8">
-                                            <div className="mb-4">
-                                                <h3 className="text-xl font-bold text-white mb-2">Want the Full Analysis?</h3>
-                                                <p className="text-zinc-400 text-sm">Get a personalized deep-dive with model migration roadmap and feature P&L breakdown.</p>
+                                {/* COST FORENSICS */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+                                >
+                                    <BentoCard title="Cost Forensics" icon={Activity} className="border-red-500/20">
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                                            <div className="bg-black/30 rounded-xl p-4">
+                                                <div className="text-xs font-mono text-red-400 uppercase tracking-widest mb-1">LLM Costs</div>
+                                                <div className="text-2xl font-bold text-red-500">{formatMoney(results.llmCost)}/mo</div>
+                                                <div className="text-xs text-zinc-500 mt-1">{((results.llmCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
                                             </div>
-                                            <NewsletterForm
-                                                buttonText="Get Full Report"
-                                                extraData={{
-                                                    tool: 'AUEB',
-                                                    persona,
-                                                    grossMargin: results.grossMargin
-                                                }}
-                                            />
+                                            <div className="bg-black/30 rounded-xl p-4">
+                                                <div className="text-xs font-mono text-orange-400 uppercase tracking-widest mb-1">Third-Party APIs</div>
+                                                <div className="text-2xl font-bold text-orange-500">{formatMoney(results.apiCost)}/mo</div>
+                                                <div className="text-xs text-zinc-500 mt-1">{((results.apiCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                            </div>
+                                            <div className="bg-black/30 rounded-xl p-4">
+                                                <div className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-1">Hosting & Compute</div>
+                                                <div className="text-2xl font-bold text-yellow-500">{formatMoney(results.hostingCost)}/mo</div>
+                                                <div className="text-xs text-zinc-500 mt-1">{((results.hostingCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                            </div>
+                                        </div>
+                                        <div className="h-4 bg-zinc-800 rounded-full overflow-hidden flex">
+                                            <div className="h-full bg-red-500" style={{ width: `${(results.llmCost / results.totalInfraCost) * 100}%` }} />
+                                            <div className="h-full bg-orange-500" style={{ width: `${(results.apiCost / results.totalInfraCost) * 100}%` }} />
+                                            <div className="h-full bg-yellow-500" style={{ width: `${(results.hostingCost / results.totalInfraCost) * 100}%` }} />
+                                        </div>
+                                        <div className="flex justify-between text-xs text-zinc-500 mt-2">
+                                            <span>Total Infrastructure: <span className="text-white font-bold">{formatMoney(results.totalInfraCost)}/mo</span></span>
+                                            <span>Per User: <span className="text-white font-bold">{formatMoney(results.costPerUser)}</span></span>
+                                        </div>
+                                    </BentoCard>
+                                </motion.div>
+
+                                {/* MODEL COMPARISON TABLE */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                                >
+                                    <BentoCard title="Model Arbitrage" icon={Zap} className="col-span-full">
+                                        <div className="overflow-x-auto">
+                                            <table className="w-full text-sm">
+                                                <thead>
+                                                    <tr className="border-b border-zinc-800 text-zinc-500 font-mono text-xs uppercase">
+                                                        <th className="text-left py-3">Model</th>
+                                                        <th className="text-right py-3">Cost/User</th>
+                                                        <th className="text-right py-3">Margin</th>
+                                                        <th className="text-right py-3">Monthly Savings</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {results.models.map((model: ModelData, i: number) => {
+                                                        const savings = ((model.margin - results.grossMargin) / 100) * results.monthlyRevenue;
+                                                        return (
+                                                            <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30">
+                                                                <td className="py-3 font-semibold text-white">{model.model}</td>
+                                                                <td className="py-3 text-right text-zinc-400">{formatMoney(model.costPerUser)}</td>
+                                                                <td className={`py-3 text-right font-bold ${model.margin >= 60 ? 'text-emerald-400' : 'text-red-500'}`}>{model.margin.toFixed(1)}%</td>
+                                                                <td className="py-3 text-right text-emerald-400">{savings > 0 ? `+${formatMoney(savings)}` : '-'}</td>
+                                                            </tr>
+                                                        );
+                                                    })}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </BentoCard>
+                                </motion.div>
+
+                                {/* GROWTH CHART */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                                >
+                                    <BentoCard title="12-Month Runway Projection" icon={Activity}>
+                                        <div className="h-64 w-full mt-4">
+                                            <ResponsiveContainer width="100%" height="100%">
+                                                <AreaChart data={results.growthData}>
+                                                    <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+                                                    <XAxis dataKey="month" stroke="#666" fontSize={12} />
+                                                    <YAxis stroke="#666" fontSize={12} tickFormatter={(val) => `$${val}k`} />
+                                                    <Tooltip contentStyle={{ backgroundColor: '#111', border: '1px solid #333' }} formatter={(val) => val !== undefined ? `$${Number(val).toFixed(0)}k` : ''} />
+                                                    <Area type="monotone" dataKey="revenue" stackId="1" stroke="#22d3ee" fill="#22d3ee" fillOpacity={0.2} />
+                                                    <Area type="monotone" dataKey="cost" stackId="2" stroke="#dc2626" fill="#dc2626" fillOpacity={0.2} />
+                                                </AreaChart>
+                                            </ResponsiveContainer>
+                                        </div>
+                                    </BentoCard>
+                                </motion.div>
+
+                                {/* EXECUTIVE SUMMARY + EMAIL CAPTURE */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                                >
+                                    <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-8 border border-white/10">
+                                        <div className="flex items-center gap-3 mb-6">
+                                            <div className={`w-3 h-3 rounded-full animate-pulse ${results.grossMargin < 50 ? 'bg-red-500' : 'bg-cyan-400'}`} />
+                                            <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">Executive Summary</span>
+                                        </div>
+
+                                        <div className="grid md:grid-cols-2 gap-8">
+                                            <div>
+                                                <h3 className="text-xl font-bold text-white mb-4">📊 Board-Ready Insights</h3>
+                                                <ul className="space-y-3 text-zinc-400">
+                                                    <li className="flex items-start gap-2">
+                                                        <span className="text-cyan-400 mt-1">•</span>
+                                                        <span>Gross margin of <strong className="text-white">{results.grossMargin.toFixed(0)}%</strong> is {results.grossMargin >= 60 ? 'sustainable' : results.grossMargin >= 40 ? 'concerning' : 'critical'} for AI-native products.</span>
+                                                    </li>
+                                                    <li className="flex items-start gap-2">
+                                                        <span className="text-cyan-400 mt-1">•</span>
+                                                        <span>At <strong className="text-white">{growthRate}% monthly growth</strong>, AI costs will exceed 50% of revenue in <strong className="text-yellow-400">{results.monthsToCollapse} months</strong>.</span>
+                                                    </li>
+                                                    <li className="flex items-start gap-2">
+                                                        <span className="text-cyan-400 mt-1">•</span>
+                                                        <span>Switching to <strong className="text-white">{results.models[0]?.model}</strong> could save <strong className="text-emerald-400">{formatMoney(((results.models[0]?.margin || 0) - results.grossMargin) / 100 * results.monthlyRevenue)}/month</strong>.</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div className="border-l border-white/10 pl-8">
+                                                <div className="mb-4">
+                                                    <h3 className="text-xl font-bold text-white mb-2">Want the Full Analysis?</h3>
+                                                    <p className="text-zinc-400 text-sm">Get a personalized deep-dive with model migration roadmap and feature P&L breakdown.</p>
+                                                </div>
+                                                <NewsletterForm
+                                                    buttonText="Get Full Report"
+                                                    extraData={{
+                                                        tool: 'AUEB',
+                                                        persona,
+                                                        grossMargin: results.grossMargin
+                                                    }}
+                                                />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </motion.div>
+                                </motion.div>
 
-                            {/* ACTION FOOTER */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-                                className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 border-t border-white/10"
-                            >
-                                <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Analysis</button>
-                                <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.grossMargin < 50
-                                    ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
-                                    : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)]'
-                                    }`}>
-                                    {results.grossMargin < 50 ? '🚨 Emergency Margin Audit' : 'Optimize My Margins'} →
-                                </Link>
-                                <Link href="/system" className="text-zinc-500 text-sm hover:text-white">Explore All Tools →</Link>
-                            </motion.div>
+                                {/* ACTION FOOTER */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                                    className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 border-t border-white/10"
+                                >
+                                    <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Analysis</button>
+                                    <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.grossMargin < 50
+                                        ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
+                                        : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)]'
+                                        }`}>
+                                        {results.grossMargin < 50 ? '🚨 Emergency Margin Audit' : 'Optimize My Margins'} →
+                                    </Link>
+                                    <Link href="/system" className="text-zinc-500 text-sm hover:text-white">Explore All Tools →</Link>
+                                </motion.div>
 
-                            {/* SOCIAL PROOF */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.6 }}
-                                className="text-center pt-8"
-                            >
-                                <p className="text-xs text-zinc-600 mb-3">Trusted by product leaders at</p>
-                                <div className="flex items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
-                                    <span>Stripe</span>
-                                    <span>Figma</span>
-                                    <span>Linear</span>
-                                    <span>Notion</span>
-                                    <span>Vercel</span>
-                                </div>
+                                {/* SOCIAL PROOF */}
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.6 }}
+                                    className="text-center pt-8"
+                                >
+                                    <p className="text-xs text-zinc-600 mb-3">Trusted by product leaders at</p>
+                                    <div className="flex items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
+                                        <span>Stripe</span>
+                                        <span>Figma</span>
+                                        <span>Linear</span>
+                                        <span>Notion</span>
+                                        <span>Vercel</span>
+                                    </div>
+                                </motion.div>
                             </motion.div>
-
-                        </motion.div>
+                        </ToolGate>
                     )}
                 </AnimatePresence>
             </main>
