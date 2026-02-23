@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import APERTool from './content';
+import ToolGate from '../../components/tool-gate';
 
 export const metadata: Metadata = {
     title: 'APER Efficiency Diagnostic | Richard Ewing',
@@ -12,5 +13,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return <APERTool />;
+    return (
+        <ToolGate toolName="the APER Diagnostic">
+            <APERTool />
+        </ToolGate>
+    );
 }

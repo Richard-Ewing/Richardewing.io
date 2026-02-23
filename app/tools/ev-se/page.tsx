@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import EVSETool from './content';
+import ToolGate from '../../components/tool-gate';
 
 export const metadata: Metadata = {
     title: 'EV-SE Valuation Engine | Richard Ewing',
@@ -12,5 +13,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return <EVSETool />;
+    return (
+        <ToolGate toolName="the EV-SE Valuation Engine">
+            <EVSETool />
+        </ToolGate>
+    );
 }
