@@ -9,7 +9,7 @@ import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
-import ToolGate, { isToolUnlocked } from '../../components/tool-gate';
+import ToolGate from '../../components/tool-gate';
 
 // Simple Bar Chart component (no external dependency)
 const WaterfallChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
@@ -429,13 +429,7 @@ export default function EVSETool() {
 
                             <ShineBorder borderColor="rgba(168, 85, 247, 0.6)" duration={2}>
                                 <button
-                                    onClick={() => {
-                                        if (isToolUnlocked()) {
-                                            calculate();
-                                        } else {
-                                            setShowGate(true);
-                                        }
-                                    }}
+                                    onClick={() => setShowGate(true)}
                                     disabled={loading}
                                     className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-purple-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                                 >
@@ -450,7 +444,7 @@ export default function EVSETool() {
                                 </button>
                             </ShineBorder>
 
-                            {showGate && !isToolUnlocked() && (
+                            {showGate && (
                                 <div className="mt-6">
                                     <ToolGate toolName="the Enterprise Value Scenario Engine" onUnlock={() => { setShowGate(false); calculate(); }}>
                                         <></>

@@ -18,7 +18,7 @@ import { ScrollReveal } from '../../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../../components/magicui/glow-card';
 import ShineBorder from '../../../components/magicui/shine-border';
 import { NewsletterForm } from '../../../components/newsletter-form';
-import ToolGate, { isToolUnlocked } from '../../../components/tool-gate';
+import ToolGate from '../../../components/tool-gate';
 import Link from 'next/link';
 
 // Register ChartJS
@@ -605,7 +605,7 @@ export default function SessionCommandCenter() {
                                                 const phases = session.phases || SCENARIOS[session.role as Role].phases;
                                                 const currentIdx = phases.indexOf(session.current_phase);
                                                 const isLastPhase = currentIdx === phases.length - 1;
-                                                if (isLastPhase && !isToolUnlocked()) {
+                                                if (isLastPhase) {
                                                     setShowGate(true);
                                                 } else {
                                                     submitFindings();
@@ -618,7 +618,7 @@ export default function SessionCommandCenter() {
                                         </button>
                                     </ShineBorder>
 
-                                    {showGate && !isToolUnlocked() && (
+                                    {showGate && (
                                         <div className="mt-6">
                                             <ToolGate toolName="the Audit Interview Protocol" onUnlock={() => { setShowGate(false); submitFindings(); }}>
                                                 <></>

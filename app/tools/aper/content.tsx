@@ -6,7 +6,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 
 import { TrendingUp, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building } from 'lucide-react';
 import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
-import ToolGate, { isToolUnlocked } from '../../components/tool-gate';
+import ToolGate from '../../components/tool-gate';
 
 // --- MAGIC UI COMPONENTS ---
 
@@ -375,13 +375,7 @@ export default function APERTool() {
                                 </div>
 
                                 <button
-                                    onClick={() => {
-                                        if (isToolUnlocked()) {
-                                            calculate();
-                                        } else {
-                                            setShowGate(true);
-                                        }
-                                    }}
+                                    onClick={() => setShowGate(true)}
                                     disabled={loading}
                                     className="w-full py-4 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-black font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2"
                                 >
@@ -395,7 +389,7 @@ export default function APERTool() {
                                     )}
                                 </button>
 
-                                {showGate && !isToolUnlocked() && (
+                                {showGate && (
                                     <div className="mt-6">
                                         <ToolGate toolName="the APER Efficiency Diagnostic" onUnlock={() => { setShowGate(false); calculate(); }}>
                                             <></>

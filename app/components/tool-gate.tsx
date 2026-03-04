@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { Mail, ArrowRight, Loader2, Lock, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -8,19 +8,12 @@ import { motion } from 'framer-motion';
 interface ToolGateProps {
     children: React.ReactNode;
     toolName?: string;
-    /** If provided, called when the user successfully unlocks. Use this to trigger the tool's calculation. */
+    /** Called when the user successfully submits their email. Use this to trigger the tool's calculation. */
     onUnlock?: () => void;
-}
-
-/** Check if tools are unlocked (reads localStorage). Safe to call in event handlers. */
-export function isToolUnlocked(): boolean {
-    if (typeof window === 'undefined') return false;
-    return localStorage.getItem('richardewing_tools_unlocked') === 'true';
 }
 
 export default function ToolGate({ children, toolName = "This Diagnostic", onUnlock }: ToolGateProps) {
     const [isUnlocked, setIsUnlocked] = useState(false);
-    const [hasCheckedState, setHasCheckedState] = useState(false);
     const [validationError, setValidationError] = useState('');
     const [isValidating, setIsValidating] = useState(false);
     const [email, setEmail] = useState('');
@@ -30,18 +23,9 @@ export default function ToolGate({ children, toolName = "This Diagnostic", onUnl
     const formId = "xzddbpwy";
     const [state, handleFormspreeSubmit] = useForm(formId);
 
-    useEffect(() => {
-        // Check local storage on component mount
-        const unlockStatus = localStorage.getItem('richardewing_tools_unlocked');
-        if (unlockStatus === 'true') {
-            setIsUnlocked(true);
-        }
-        setHasCheckedState(true);
-    }, []);
-
-    useEffect(() => {
+    // When Formspree submission succeeds, unlock and trigger callback
+    React.useEffect(() => {
         if (state.succeeded) {
-            localStorage.setItem('richardewing_tools_unlocked', 'true');
             setIsUnlocked(true);
             onUnlock?.();
         }
@@ -77,13 +61,13 @@ export default function ToolGate({ children, toolName = "This Diagnostic", onUnl
         }
         setIsValidating(false);
 
-        // Step 2: Submit to Formspree using FormData (avoids stale event issue)
+        // Step 2: Submit to Formspree using FormData (tracks every tool use for funnel analytics)
         const formData = new FormData();
         formData.append('email', email);
         formData.append('source', `${toolName} Gate`);
         handleFormspreeSubmit(formData);
 
-        // Step 3: Fire-and-forget to Beehiiv
+        // Step 3: Fire-and-forget to Beehiiv (Beehiiv handles dedup automatically)
         try {
             fetch('/api/beehiiv', {
                 method: 'POST',
@@ -96,14 +80,6 @@ export default function ToolGate({ children, toolName = "This Diagnostic", onUnl
             // Ignore Beehiiv errors
         }
     };
-
-    if (!hasCheckedState) {
-        return (
-            <div className="w-full h-64 flex items-center justify-center">
-                <div className="w-8 h-8 rounded-full border-t-2 border-cyan-500 animate-spin"></div>
-            </div>
-        );
-    }
 
     if (isUnlocked) {
         return <>{children}</>;
@@ -126,11 +102,11 @@ export default function ToolGate({ children, toolName = "This Diagnostic", onUnl
                 </div>
 
                 <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tighter">
-                    Access Restricted
+                    Enter Email to Continue
                 </h1>
 
                 <p className="text-zinc-400 text-lg mb-8 max-w-md mx-auto">
-                    Enter your email to unlock {toolName} and all other board-room ready diagnostics.
+                    Enter your email to access {toolName} results.
                 </p>
 
                 <div className="bg-white/5 border border-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-md">
@@ -179,7 +155,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", onUnl
                                 <Loader2 className="w-5 h-5 animate-spin" />
                             ) : (
                                 <>
-                                    Unlock Diagnostics <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                    Unlock Results <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </>
                             )}
                         </button>
