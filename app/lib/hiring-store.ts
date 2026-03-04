@@ -45,8 +45,12 @@ export const HiringStore = {
             total += s.score;
         });
 
-        // Limit Max Score assumption: 3 questions * 6 = 18 points (L6 avg)
-        // L3 avg = 9. L4 avg = 12. L5 avg = 15.
+        // 3 phases scored 3-6, total range is 9-18
+        // Adjusted bands for better calibration:
+        // L3 (9-10): Consistently weak, surface-level answers
+        // L4 (11-12): Some competence, local scope thinking
+        // L5 (13-15): Strong system-level thinking
+        // L6+ (16-18): Exceptional capital stewardship
 
         let verdict = "";
         let rationale = "";
@@ -54,8 +58,7 @@ export const HiringStore = {
         const roleTitle = role === 'engineering' ? 'ENGINEER' : 'PRODUCT MANAGER';
         const isEng = role === 'engineering';
 
-        // Calibration Bands (Adjusted for 3 Phase Protocol)
-        if (total < 12) { // Avg < 4 (L3s)
+        if (total <= 10) {
             verdict = `L3: JUNIOR ${roleTitle}`;
             if (isEng) {
                 rationale = "Focuses on execution and syntax. Lacks broader system awareness. \"Code Monkey\" mode.";
@@ -63,7 +66,7 @@ export const HiringStore = {
                 rationale = "Focuses on rote feature lists. Lacks strategic depth or economic awareness.";
             }
             decision = "NO HIRE";
-        } else if (total < 14) { // Avg 4.x (Solid L4)
+        } else if (total <= 12) {
             verdict = `L4: ${roleTitle}`;
             if (isEng) {
                 rationale = "Competent execution but trade-offs are limited to local scope. Misses second-order effects.";
@@ -71,7 +74,7 @@ export const HiringStore = {
                 rationale = "Can manage a backlog but lacks capital governance or rigorous prioritization frameworks.";
             }
             decision = "NO HIRE"; // Strict bar
-        } else if (total < 16) { // Avg 5.x (L5)
+        } else if (total <= 15) {
             verdict = `L5: SENIOR ${roleTitle}`;
             if (isEng) {
                 rationale = "Demonstrates system ownership and understands maintenance liability. Good default hire.";
@@ -79,7 +82,7 @@ export const HiringStore = {
                 rationale = "Understand Unit Economics and can prioritize based on ROI. Solid operator.";
             }
             decision = "HIRE";
-        } else if (total < 18) { // Avg ~6 (L6)
+        } else if (total <= 17) {
             verdict = `L6: STAFF ${roleTitle}`;
             if (isEng) {
                 rationale = "Exceptional capital stewardship. Prioritizes ROI, Leverage, and Capital Efficiency.";
@@ -88,7 +91,7 @@ export const HiringStore = {
             }
             decision = "HIRE";
         } else {
-            // High score >= 18 (Consistent L6/L7 performance)
+            // High score >= 18 (Consistent L6 performance)
             verdict = `L7/L8: PRINCIPAL ${roleTitle}`;
             if (isEng) {
                 rationale = "Visionary technical governance. Realigns entire organizations towards solvency and leverage.";

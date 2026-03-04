@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { Mail, ArrowRight, Loader2, Lock } from 'lucide-react';
+import { Mail, ArrowRight, Loader2, Lock, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface ToolGateProps {
@@ -13,10 +13,14 @@ interface ToolGateProps {
 export default function ToolGate({ children, toolName = "This Diagnostic" }: ToolGateProps) {
     const [isUnlocked, setIsUnlocked] = useState(false);
     const [hasCheckedState, setHasCheckedState] = useState(false);
+    const [validationError, setValidationError] = useState('');
+    const [isValidating, setIsValidating] = useState(false);
+    const [email, setEmail] = useState('');
+    const formRef = useRef<HTMLFormElement>(null);
 
     // Using the same form ID as the newsletter form for consistent tracking
     const formId = "xzddbpwy";
-    const [state, handleSubmit] = useForm(formId);
+    const [state, handleFormspreeSubmit] = useForm(formId);
 
     useEffect(() => {
         // Check local storage on component mount
@@ -33,6 +37,56 @@ export default function ToolGate({ children, toolName = "This Diagnostic" }: Too
             setIsUnlocked(true);
         }
     }, [state.succeeded]);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setValidationError('');
+
+        if (!email) {
+            setValidationError('Please enter your email address.');
+            return;
+        }
+
+        // Step 1: Validate email via our API
+        setIsValidating(true);
+        try {
+            const res = await fetch('/api/validate-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            });
+            const data = await res.json();
+
+            if (!data.valid) {
+                setValidationError(data.reason || 'Please enter a valid email address.');
+                setIsValidating(false);
+                return;
+            }
+        } catch {
+            // If validation API fails, allow submission (don't block users)
+            console.warn('Email validation API unavailable, proceeding with submission.');
+        }
+        setIsValidating(false);
+
+        // Step 2: Submit to Formspree using FormData (avoids stale event issue)
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('source', `${toolName} Gate`);
+        handleFormspreeSubmit(formData);
+
+        // Step 3: Fire-and-forget to Beehiiv
+        try {
+            fetch('/api/beehiiv', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, source: `${toolName} Gate` }),
+            }).catch(() => {
+                // Non-blocking — Beehiiv failure doesn't affect user experience
+            });
+        } catch {
+            // Ignore Beehiiv errors
+        }
+    };
 
     if (!hasCheckedState) {
         return (
@@ -71,7 +125,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic" }: Too
                 </p>
 
                 <div className="bg-white/5 border border-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-md">
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                    <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
                         <input type="hidden" name="source" value={`${toolName} Gate`} />
 
                         <div className="relative">
@@ -82,7 +136,9 @@ export default function ToolGate({ children, toolName = "This Diagnostic" }: Too
                                 name="email"
                                 placeholder="name@company.com"
                                 required
-                                disabled={state.submitting}
+                                disabled={state.submitting || isValidating}
+                                value={email}
+                                onChange={(e) => { setEmail(e.target.value); setValidationError(''); }}
                                 className="w-full pl-12 pr-4 py-4 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all font-mono"
                             />
                             <ValidationError
@@ -93,12 +149,24 @@ export default function ToolGate({ children, toolName = "This Diagnostic" }: Too
                             />
                         </div>
 
+                        {/* Validation error display */}
+                        {validationError && (
+                            <motion.div
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="flex items-center gap-2 p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm"
+                            >
+                                <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                                <span>{validationError}</span>
+                            </motion.div>
+                        )}
+
                         <button
                             type="submit"
-                            disabled={state.submitting}
+                            disabled={state.submitting || isValidating}
                             className="mt-2 w-full py-4 bg-white hover:bg-cyan-400 text-black font-bold uppercase tracking-widest text-sm rounded-xl transition-all flex items-center justify-center gap-2 group disabled:opacity-70"
                         >
-                            {state.submitting ? (
+                            {(state.submitting || isValidating) ? (
                                 <Loader2 className="w-5 h-5 animate-spin" />
                             ) : (
                                 <>

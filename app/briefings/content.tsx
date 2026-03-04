@@ -35,9 +35,11 @@ const BriefCard = ({ number, title, subtitle, href, isNew, date }: BriefCardProp
 
 export default function BriefingsPage() {
     const briefs = [
+        { number: '11', title: 'Real Innovation Requires Deleting Code', subtitle: 'An expert analysis of how to audit for zombie features and execute the Sunset Protocol.', href: 'https://builtin.com/articles/innovation-requires-deleting-code', isNew: true, date: 'Feb 2026' },
+        { number: '10', title: 'The Audit Interview Scorecard', subtitle: 'When AI writes the code, what are employers actually hiring for? The 4 Dimensions of Engineering Judgment.', href: 'https://builtin.com/articles/audit-interview-scorecard', isNew: true, date: 'Feb 2026' },
         { number: '09', title: 'The 3 Financial Metrics Every PM Needs', subtitle: 'Selected for the Mind the Product Newsletter.', href: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/', isNew: true, date: 'Feb 2026' },
-        { number: '08', title: 'Reimagining the Coding Interview', subtitle: 'AI can generate code. The scarce skill is catching what AI gets wrong.', href: 'https://builtin.com/articles/reimagining-coding-interview', isNew: true, date: 'Feb 2026' },
-        { number: '07', title: 'The AI Product Business Test', subtitle: 'Validating AI unit economics before writing code.', href: 'https://builtin.com/articles/ai-product-business-test', isNew: true, date: 'Jan 2026' },
+        { number: '08', title: 'Reimagining the Coding Interview', subtitle: 'AI can generate code. The scarce skill is catching what AI gets wrong.', href: 'https://builtin.com/articles/reimagining-coding-interview', isNew: false, date: 'Feb 2026' },
+        { number: '07', title: 'The AI Product Business Test', subtitle: 'Validating AI unit economics before writing code.', href: 'https://builtin.com/articles/ai-product-business-test', isNew: false, date: 'Jan 2026' },
         { number: '01', title: 'The AI Volatility Tax', subtitle: 'Why AI features are destroying your gross margins.', href: '#', date: 'Feb 2026' },
         { number: '02', title: 'The Senior Ceiling', subtitle: 'Breaking through the IC-to-Executive transition.', href: '#', date: 'Feb 2026' },
         { number: '03', title: 'Financial Conway\'s Law', subtitle: 'Why architecture mirrors your funding model.', href: '#', date: 'Jan 2026' },

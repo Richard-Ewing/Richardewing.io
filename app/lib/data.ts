@@ -1,5 +1,23 @@
 export const articles = [
     {
+        slug: "innovation-requires-deleting-code",
+        title: "Real Innovation Requires Deleting Code, Not Writing It",
+        description: "An expert analysis of how to audit for features you can deprecate and how to delete them. Introduces the Sunset Protocol for governing subtraction.",
+        date: "Feb 2026",
+        readTime: "6 min read",
+        source: "Built In",
+        externalUrl: "https://builtin.com/articles/innovation-requires-deleting-code"
+    },
+    {
+        slug: "audit-interview-scorecard",
+        title: "When AI Writes the Code, What Are Employers Hiring For?",
+        description: "An expert discussion of how to conduct better software engineering interviews in the age of AI. Introduces the 4 Dimensions of Engineering Judgment scorecard.",
+        date: "Feb 2026",
+        readTime: "7 min read",
+        source: "Built In",
+        externalUrl: "https://builtin.com/articles/audit-interview-scorecard"
+    },
+    {
         slug: "financial-metrics-scorecard",
         title: "The 3 Financial Metrics Every PM Needs on Their Scorecard",
         description: "Selected for the Mind the Product Newsletter. This article on product P&L ownership and capital efficiency was featured in Mind the Product’s curated newsletter.",
