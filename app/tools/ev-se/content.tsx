@@ -9,7 +9,7 @@ import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
-import ToolGate from '../../components/tool-gate';
+import ToolGate, { isToolUnlocked } from '../../components/tool-gate';
 
 // Simple Bar Chart component (no external dependency)
 const WaterfallChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
@@ -136,6 +136,7 @@ export default function EVSETool() {
 
     const [results, setResults] = useState<Results | null>(null);
     const [loading, setLoading] = useState(false);
+    const [showGate, setShowGate] = useState(false);
 
 
     const formatMoney = (num: number) => {
@@ -428,7 +429,13 @@ export default function EVSETool() {
 
                             <ShineBorder borderColor="rgba(168, 85, 247, 0.6)" duration={2}>
                                 <button
-                                    onClick={calculate}
+                                    onClick={() => {
+                                        if (isToolUnlocked()) {
+                                            calculate();
+                                        } else {
+                                            setShowGate(true);
+                                        }
+                                    }}
                                     disabled={loading}
                                     className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-purple-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                                 >
@@ -442,12 +449,20 @@ export default function EVSETool() {
                                     )}
                                 </button>
                             </ShineBorder>
+
+                            {showGate && !isToolUnlocked() && (
+                                <div className="mt-6">
+                                    <ToolGate toolName="the Enterprise Value Scenario Engine" onUnlock={() => { setShowGate(false); calculate(); }}>
+                                        <></>
+                                    </ToolGate>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </ScrollReveal>
             ) : (
                 /* --- RESULTS STATE --- */
-                <ToolGate toolName="the Enterprise Value Scenario Engine">
+                <>
                     <ScrollReveal>
                         {/* Score Header */}
                         <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
@@ -582,7 +597,7 @@ export default function EVSETool() {
                             </div>
                         </div>
                     </ScrollReveal>
-                </ToolGate>
+                </>
             )}
 
             {/* AUTHORITY CONTENT: EV-SE */}

@@ -9,7 +9,7 @@ import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
-import ToolGate from '../../components/tool-gate';
+import ToolGate, { isToolUnlocked } from '../../components/tool-gate';
 
 // Simple Pie Chart component (no external dependency)
 const PieChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
@@ -93,6 +93,7 @@ export default function PDITool() {
     const [avgTicketAge, setAvgTicketAge] = useState('30');
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState<Results | null>(null);
+    const [showGate, setShowGate] = useState(false);
 
     // Email capture
 
@@ -372,7 +373,13 @@ Migrate to new database"
 
                             <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
                                 <button
-                                    onClick={analyze}
+                                    onClick={() => {
+                                        if (isToolUnlocked()) {
+                                            analyze();
+                                        } else {
+                                            setShowGate(true);
+                                        }
+                                    }}
                                     disabled={loading || !tickets.trim()}
                                     className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-cyan-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                                 >
@@ -386,42 +393,51 @@ Migrate to new database"
                                     )}
                                 </button>
                             </ShineBorder>
+
+                            {showGate && !isToolUnlocked() && (
+                                <div className="mt-6">
+                                    <ToolGate toolName="the Product Debt Index" onUnlock={() => { setShowGate(false); analyze(); }}>
+                                        <></>
+                                    </ToolGate>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </ScrollReveal>
             ) : (
                 /* --- RESULTS STATE --- */
-                <ToolGate toolName="the Product Debt Index">                    <ScrollReveal>
-                    {/* Score Header */}
-                    <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
-                        <BorderBeam size={300} duration={12} delay={9} borderWidth={1.5} />
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
-                            <div>
-                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Capital Efficiency Score</div>
-                                <div className={`text-7xl sm:text-9xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.score < 50 ? 'from-red-500 to-orange-600' : 'from-cyan-400 to-blue-500'}`}>
-                                    <NumberTicker value={results.score} />
+                <>
+                    <ScrollReveal>
+                        {/* Score Header */}
+                        <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
+                            <BorderBeam size={300} duration={12} delay={9} borderWidth={1.5} />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
+                                <div>
+                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Capital Efficiency Score</div>
+                                    <div className={`text-7xl sm:text-9xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.score < 50 ? 'from-red-500 to-orange-600' : 'from-cyan-400 to-blue-500'}`}>
+                                        <NumberTicker value={results.score} />
+                                    </div>
+                                    <div className="mt-4">
+                                        {results.score < 50 ? (
+                                            <span className="px-3 py-1.5 rounded-full bg-red-900/30 text-red-400 border border-red-900/50 text-xs font-bold uppercase tracking-widest">
+                                                ⚠ INSOLVENT
+                                            </span>
+                                        ) : (
+                                            <span className="px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-400 border border-cyan-900/50 text-xs font-bold uppercase tracking-widest">
+                                                ✓ HIGH LEVERAGE
+                                            </span>
+                                        )}
+                                    </div>
                                 </div>
-                                <div className="mt-4">
-                                    {results.score < 50 ? (
-                                        <span className="px-3 py-1.5 rounded-full bg-red-900/30 text-red-400 border border-red-900/50 text-xs font-bold uppercase tracking-widest">
-                                            ⚠ INSOLVENT
-                                        </span>
-                                    ) : (
-                                        <span className="px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-400 border border-cyan-900/50 text-xs font-bold uppercase tracking-widest">
-                                            ✓ HIGH LEVERAGE
-                                        </span>
-                                    )}
+                                <div>
+                                    <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed">
+                                        Based on your backlog, <strong className="text-white">{results.metrics.maintenance}% of your capacity</strong> is consumed by non-accretive work.
+                                        You are burning <span className="text-red-500 font-bold font-mono">${(results.financials.waste / 1000000).toFixed(1)}M</span> annually on maintenance.
+                                    </p>
                                 </div>
-                            </div>
-                            <div>
-                                <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed">
-                                    Based on your backlog, <strong className="text-white">{results.metrics.maintenance}% of your capacity</strong> is consumed by non-accretive work.
-                                    You are burning <span className="text-red-500 font-bold font-mono">${(results.financials.waste / 1000000).toFixed(1)}M</span> annually on maintenance.
-                                </p>
                             </div>
                         </div>
-                    </div>
-                </ScrollReveal>
+                    </ScrollReveal>
 
                     {/* PERSONA-SPECIFIC INSIGHT */}
                     <ScrollReveal delay={50}>
@@ -594,7 +610,7 @@ Migrate to new database"
                             </div>
                         </div>
                     </ScrollReveal>
-                </ToolGate>
+                </>
             )
             }
 

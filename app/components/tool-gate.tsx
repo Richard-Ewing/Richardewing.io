@@ -8,9 +8,17 @@ import { motion } from 'framer-motion';
 interface ToolGateProps {
     children: React.ReactNode;
     toolName?: string;
+    /** If provided, called when the user successfully unlocks. Use this to trigger the tool's calculation. */
+    onUnlock?: () => void;
 }
 
-export default function ToolGate({ children, toolName = "This Diagnostic" }: ToolGateProps) {
+/** Check if tools are unlocked (reads localStorage). Safe to call in event handlers. */
+export function isToolUnlocked(): boolean {
+    if (typeof window === 'undefined') return false;
+    return localStorage.getItem('richardewing_tools_unlocked') === 'true';
+}
+
+export default function ToolGate({ children, toolName = "This Diagnostic", onUnlock }: ToolGateProps) {
     const [isUnlocked, setIsUnlocked] = useState(false);
     const [hasCheckedState, setHasCheckedState] = useState(false);
     const [validationError, setValidationError] = useState('');
@@ -35,8 +43,9 @@ export default function ToolGate({ children, toolName = "This Diagnostic" }: Too
         if (state.succeeded) {
             localStorage.setItem('richardewing_tools_unlocked', 'true');
             setIsUnlocked(true);
+            onUnlock?.();
         }
-    }, [state.succeeded]);
+    }, [state.succeeded, onUnlock]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

@@ -6,7 +6,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { TrendingDown, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Users, Target, Mail, ArrowRight, Cpu } from 'lucide-react';
 import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
-import ToolGate from '../../components/tool-gate';
+import ToolGate, { isToolUnlocked } from '../../components/tool-gate';
 
 const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
     const [display, setDisplay] = useState(0);
@@ -164,6 +164,7 @@ export default function AUEBTool() {
 
     const [results, setResults] = useState<Results | null>(null);
     const [loading, setLoading] = useState(false);
+    const [showGate, setShowGate] = useState(false);
 
 
     const calculate = () => {
@@ -512,7 +513,13 @@ export default function AUEBTool() {
                                 </div>
 
                                 <button
-                                    onClick={calculate}
+                                    onClick={() => {
+                                        if (isToolUnlocked()) {
+                                            calculate();
+                                        } else {
+                                            setShowGate(true);
+                                        }
+                                    }}
                                     disabled={loading}
                                     className="w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2"
                                 >
@@ -525,11 +532,19 @@ export default function AUEBTool() {
                                         'Calculate My Collapse Point →'
                                     )}
                                 </button>
+
+                                {showGate && !isToolUnlocked() && (
+                                    <div className="mt-6">
+                                        <ToolGate toolName="the AI Unit Economics Benchmark" onUnlock={() => { setShowGate(false); calculate(); }}>
+                                            <></>
+                                        </ToolGate>
+                                    </div>
+                                )}
                             </div>
                         </motion.div>
                     ) : (
                         /* --- RESULTS STATE --- */
-                        <ToolGate toolName="the AI Unit Economics Benchmark">
+                        <>
                             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
 
                                 {/* GAUGE HERO */}
@@ -775,7 +790,7 @@ export default function AUEBTool() {
                                     </div>
                                 </motion.div>
                             </motion.div>
-                        </ToolGate>
+                        </>
                     )}
                 </AnimatePresence>
             </main>
