@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { Mail, ArrowRight, CheckCircle, Loader2 } from 'lucide-react';
 
@@ -20,6 +20,29 @@ export function NewsletterForm({
     extraData
 }: NewsletterFormProps) {
     const [state, handleSubmit] = useForm(id);
+    const lastSubmittedEmailRef = useRef<string>('');
+
+    // Fire-and-forget to Beehiiv when Formspree succeeds
+    useEffect(() => {
+        if (state.succeeded && lastSubmittedEmailRef.current) {
+            const email = lastSubmittedEmailRef.current;
+            const source = extraData?.tool ? String(extraData.tool) : 'newsletter_form';
+            fetch('/api/beehiiv', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, source }),
+            }).catch(() => {
+                // Non-blocking — Beehiiv failure doesn't affect user experience
+            });
+        }
+    }, [state.succeeded]);
+
+    // Wrap handleSubmit to capture the email before submission
+    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        const formData = new FormData(e.currentTarget);
+        lastSubmittedEmailRef.current = formData.get('email') as string || '';
+        handleSubmit(e);
+    };
 
     if (state.succeeded) {
         return (
@@ -32,7 +55,7 @@ export function NewsletterForm({
     }
 
     return (
-        <form onSubmit={handleSubmit} className={`flex flex-col sm:flex-row gap-3 ${className}`}>
+        <form onSubmit={handleFormSubmit} className={`flex flex-col sm:flex-row gap-3 ${className}`}>
             {extraData && Object.entries(extraData).map(([key, value]) => (
                 value !== undefined && <input key={key} type="hidden" name={key} value={value} />
             ))}
