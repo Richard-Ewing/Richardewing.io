@@ -82,10 +82,11 @@ Return valid JSON only:
         console.warn("Gemini eval attempt 1 failed, retrying...", e1);
         try {
             return await doEval();
-        } catch (e2) {
+        } catch (e2: any) {
             console.error("Gemini Critical Failure (both attempts):", e2);
+            const errMsg = e2?.message || String(e2);
             // Default to L4 (neutral mid-range) instead of L3 on failure
-            return { score: 4, feedback: "Automated scoring temporarily unavailable. Neutral score assigned. Your actual performance may differ." };
+            return { score: 4, feedback: `Automated scoring temporarily unavailable. Error: ${errMsg.slice(0, 200)}` };
         }
     }
 };
