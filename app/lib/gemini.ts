@@ -8,4 +8,4 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || 'dummy_key');
 
 // Export the model for use in API routes
 // Using 'gemini-1.5-flash' for speed and efficiency
-export const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+export const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
