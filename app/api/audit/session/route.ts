@@ -12,24 +12,27 @@ const evaluateAnswer = async (question: Question, answer: string, role: string) 
         const prompt = `
 System: You are a CALIBRATED Bar Raiser at a top-tier tech company (Netflix/Stripe level). 
 You are interviewing a candidate for a ${role === 'engineering' ? 'Senior Software Engineer' : 'Product Manager'} role.
-Your job is to PRECISELY assess their "Altitude" of judgment.
+Your job is to PRECISELY assess their "Altitude" of judgment across an L3-L8 scale.
 
 CRITICAL CALIBRATION RULES:
-- You MUST differentiate between levels. Do NOT default to L3.
-- Read the answer carefully. If it shows ANY system-level or economic thinking, it is AT LEAST L4.
+- You MUST differentiate between levels. Do NOT default to L3 or L4.
+- Read the answer carefully. If it shows ANY system-level or economic thinking, it is AT LEAST L5.
 - Score based on the STRONGEST signal in their answer, not the weakest.
+- A truly exceptional answer that reframes the problem or shows portfolio-level thinking MUST be scored L7 or L8.
 
 Scoring Dimensions:
 1. Verification Depth: Do they question assumptions? Do they look beyond the surface?
 2. Architectural Reasoning: Do they consider system-wide effects? Scale? Dependencies?
 3. Economic Awareness: Do they think about cost, ROI, capital efficiency, maintenance liability?
-4. AI Interrogation: Do they treat outputs skeptically? Test edge cases?
+4. Strategic Altitude: Do they connect decisions to org-level, market-level, or enterprise-value implications?
 
-Level Definitions (BE PRECISE):
+Level Definitions (BE PRECISE — USE THE FULL L3-L8 RANGE):
 - L3 (Score 3): ONLY if the answer is purely superficial. They restate the obvious, suggest trivial fixes, or miss the core issue entirely. Example: "${grading.l3_example}"
-- L4 (Score 4): The answer identifies the right problem area but stays local in scope. They see immediate risks but miss second-order effects or economic implications.
-- L5 (Score 5): The answer demonstrates system-level thinking. They identify maintenance liability, scalability concerns, or economic trade-offs. They can prioritize and defer intelligently.
-- L6 (Score 6): ONLY for exceptional answers that show capital stewardship, leverage thinking, and second-order strategic effects. Example: "${grading.l6_example}"
+- L4 (Score 4): The answer identifies the right problem area but stays local in scope. They see immediate risks but miss second-order effects or economic implications. Shows competence but not depth.
+- L5 (Score 5): Demonstrates system-level thinking. Identifies maintenance liability, scalability concerns, or economic trade-offs. Can prioritize and defer intelligently. This is a solid senior-level answer.
+- L6 (Score 6): Exceptional answers showing capital stewardship, leverage thinking, and second-order strategic effects. Quantifies impact, proposes concrete solutions with acceptance criteria. Example: "${grading.l6_example}"
+- L7 (Score 7): Portfolio-level strategic thinking. Connects the specific issue to broader organizational patterns, market positioning, or enterprise value. Proposes frameworks that prevent entire classes of problems, not just this one.
+- L8 (Score 8): Executive-grade foresight. Reframes the entire problem, identifies industry-wide patterns, articulates how this decision affects capital allocation at the org level. Demonstrates the ability to realign teams and strategy around fundamental truths.
 
 Question: "${question.prompt}"
 
@@ -40,13 +43,18 @@ Candidate Answer: "${answer}"
 INSTRUCTIONS:
 1. First, identify the STRONGEST signal in the answer (quote it).
 2. Map that signal to the scoring dimensions above.
-3. Assign a score 3-6 based on the level definitions.
-4. If the answer mentions trade-offs, deferral, or economic impact → score at LEAST 4.
-5. If the answer mentions system-wide effects, maintenance liability, or capital efficiency → score at LEAST 5.
+3. Assign a score 3-8 based on the level definitions.
+4. SCORING GUIDELINES:
+   - Answer only restates the problem or suggests obvious fixes → L3
+   - Answer identifies the right area but stays local → L4
+   - Answer mentions trade-offs, deferral, or economic impact → AT LEAST L5
+   - Answer mentions system-wide effects, maintenance liability, or capital efficiency → AT LEAST L6
+   - Answer connects to org-level patterns, proposes preventive frameworks → L7
+   - Answer reframes the problem, shows executive-level strategic foresight → L8
 
 Return valid JSON only: 
 { 
-  "score": number (3-6), 
+  "score": number (3-8), 
   "rationale": "Markdown formatted. Bold the **Strongest Signal** and the **Growth Area**. Reference specific dimensions." 
 }
         `;
@@ -62,8 +70,8 @@ Return valid JSON only:
         const text = response.text();
         const json = JSON.parse(text);
 
-        // Clamp score to valid range
-        const score = Math.max(3, Math.min(6, json.score));
+        // Clamp score to valid L3-L8 range
+        const score = Math.max(3, Math.min(8, json.score));
         return { score, feedback: json.rationale };
     };
 
@@ -119,12 +127,22 @@ export async function POST(request: Request) {
 
         // --- GRADE ANSWER (STATELESS) ---
         if (action === 'GRADE_ANSWER') {
-            const { role, phase, answer } = body;
+            const { role, phase, answer, questionId } = body;
 
-            // Need to lookup question ID from strict maps since we don't trust client to send question ID directly?
-            // Actually, client has questions_map. But safer to look up from Role + Phase Name.
+            // Lookup by question ID (preferred) or fallback to phase title match
             const roleBank = QUESTION_BANK[role as Role];
-            const question = roleBank?.find(q => q.title === phase);
+            let question: Question | undefined;
+
+            if (questionId) {
+                // Use exact ID match — this ensures the correct rubric is used
+                // even when multiple variants share the same phase title
+                question = roleBank?.find(q => q.id === questionId);
+            }
+
+            // Fallback: lookup by phase title (legacy behavior)
+            if (!question) {
+                question = roleBank?.find(q => q.title === phase);
+            }
 
             if (!question) {
                 return NextResponse.json({ error: 'Question object not found for phase' }, { status: 404 });

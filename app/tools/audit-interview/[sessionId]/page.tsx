@@ -142,6 +142,7 @@ export default function SessionCommandCenter() {
                     action: 'GRADE_ANSWER',
                     role: session.role,
                     phase: session.current_phase,
+                    questionId: session.questions_map?.[session.current_phase],
                     answer: rationale
                 })
             });
