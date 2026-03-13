@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { model } from '@/app/lib/gemini';
 import { z } from 'zod';
 
 // Schema for input validation
@@ -34,42 +34,41 @@ export async function POST(req: Request) {
         if (!process.env.GOOGLE_API_KEY) {
             console.error('Configuration Error: GOOGLE_API_KEY is missing');
             return NextResponse.json(
-                { error: 'Server configuration error: Google API Key is missing.' },
+                { error: 'Server configuration error: API Key is missing.' },
                 { status: 500 }
             );
         }
 
-        const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
-        const model = genAI.getGenerativeModel({
-            model: 'gemini-2.0-flash',
+        const prompt = `
+System: You are a high-agency executive advisor.
+
+Act as 'The Product Economist'. Write a hiring defense memo for a ${role} candidate.
+
+SCORES (0-3 scale):
+- Verification Depth: ${scores.verification_depth}
+- Architectural Reasoning: ${scores.architectural_reasoning}
+- Economic Awareness: ${scores.economic_awareness}
+- AI Interrogation: ${scores.ai_interrogation}
+
+VERDICT: ${outcome}
+RATIONALE: ${rationale}
+
+INTERVIEWER NOTES:
+${observations.join("; ")}
+
+INSTRUCTIONS:
+Write a concise, 4-sentence paragraph explaining the hiring decision.
+Use terms like "Capital Risk," "Leverage," "Technical Insolvency," and "Judgment."
+Do not use HR fluff. Be ruthless and direct.
+`;
+
+        const result = await model.generateContent({
+            contents: [{ role: 'user', parts: [{ text: prompt }] }],
             generationConfig: {
                 temperature: 0.7,
             },
-            systemInstruction: 'You are a high-agency executive advisor.',
         });
 
-        const prompt = `
-        Act as 'The Product Economist'. Write a hiring defense memo for a ${role} candidate.
-        
-        SCORES (0-3 scale):
-        - Verification Depth: ${scores.verification_depth}
-        - Architectural Reasoning: ${scores.architectural_reasoning}
-        - Economic Awareness: ${scores.economic_awareness}
-        - AI Interrogation: ${scores.ai_interrogation}
-        
-        VERDICT: ${outcome}
-        RATIONALE: ${rationale}
-        
-        INTERVIEWER NOTES:
-        ${observations.join("; ")}
-        
-        INSTRUCTIONS:
-        Write a concise, 4-sentence paragraph explaining the hiring decision.
-        Use terms like "Capital Risk," "Leverage," "Technical Insolvency," and "Judgment."
-        Do not use HR fluff. Be ruthless and direct.
-        `;
-
-        const result = await model.generateContent(prompt);
         const memo = result.response.text();
 
         return NextResponse.json({ memo });

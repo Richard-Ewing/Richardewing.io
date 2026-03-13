@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { model } from '@/app/lib/gemini';
 
 const SYSTEM_PROMPT = `You are Richard Ewing, The Product Economist. You speak with authority, precision, and a hint of ruthlessness.
 
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
         if (!process.env.GOOGLE_API_KEY) {
             console.error('Configuration Error: GOOGLE_API_KEY is missing');
             return NextResponse.json(
-                { error: 'Server configuration error: Google API Key is missing.' },
+                { error: 'Server configuration error: API Key is missing.' },
                 { status: 500 }
             );
         }
@@ -35,19 +35,16 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Topic required' }, { status: 400 });
         }
 
-        const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
-        const model = genAI.getGenerativeModel({
-            model: 'gemini-2.0-flash',
+        const result = await model.generateContent({
+            contents: [{ role: 'user', parts: [
+                { text: SYSTEM_PROMPT },
+                { text: `Expand on this expertise area with specific examples and insights: "${topic}". Context: ${context || "General inquiry about Richard Ewing's experience."}` },
+            ]}],
             generationConfig: {
                 temperature: 0.7,
                 maxOutputTokens: 300,
             },
-            systemInstruction: SYSTEM_PROMPT,
         });
-
-        const result = await model.generateContent(
-            `Expand on this expertise area with specific examples and insights: "${topic}". Context: ${context || "General inquiry about Richard Ewing's experience."}`
-        );
 
         const response = result.response.text();
 

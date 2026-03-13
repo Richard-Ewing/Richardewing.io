@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { model } from '@/app/lib/gemini';
 import { z } from 'zod';
 
 // Zod Schema for strict typing
@@ -45,7 +45,7 @@ export async function POST(req: Request) {
         if (!process.env.GOOGLE_API_KEY) {
             console.error('Configuration Error: GOOGLE_API_KEY is missing');
             return NextResponse.json(
-                { error: 'Server configuration error: Google API Key is missing. Please check .env.local.' },
+                { error: 'Server configuration error: API Key is missing. Please check environment variables.' },
                 { status: 500 }
             );
         }
@@ -57,19 +57,18 @@ export async function POST(req: Request) {
             );
         }
 
-        const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
-        const model = genAI.getGenerativeModel({
-            model: 'gemini-2.0-flash',
+        const result = await model.generateContent({
+            contents: [
+                { role: 'user', parts: [
+                    { text: SYSTEM_PROMPT },
+                    { text: `AUDIT THIS BACKLOG:\n${tickets.join('\n')}` },
+                ]},
+            ],
             generationConfig: {
                 temperature: 0.1,
                 responseMimeType: 'application/json',
             },
         });
-
-        const result = await model.generateContent([
-            { text: SYSTEM_PROMPT },
-            { text: `AUDIT THIS BACKLOG:\n${tickets.join('\n')}` },
-        ]);
 
         const rawResponse = result.response.text();
 
