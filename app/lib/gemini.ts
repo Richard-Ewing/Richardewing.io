@@ -10,5 +10,5 @@ if (!apiKey) {
 const genAI = new GoogleGenerativeAI(apiKey || 'dummy_key');
 
 // Export the model for use in API routes
-// Using 'gemini-2.0-flash' for speed and efficiency
-export const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+// Using 'gemini-2.5-flash' for speed and efficiency
+export const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
