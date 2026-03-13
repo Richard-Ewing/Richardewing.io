@@ -1,5 +1,32 @@
 export const articles = [
     {
+        slug: "why-your-cfo-hates-your-agile-transformation",
+        title: "Why Your CFO Hates Your Agile Transformation",
+        description: "CIOs speak in sprints; CFOs speak in quarters. That language barrier is the number one reason R&D budgets get slashed. This article introduces the Capitalization Matrix for bridging the gap between engineering velocity and financial governance.",
+        date: "Mar 2026",
+        readTime: "8 min read",
+        source: "CIO.com",
+        externalUrl: "https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html"
+    },
+    {
+        slug: "vibe-coding-era-software-engineering-role",
+        title: "In the Vibe Coding Era, What Does a Software Engineer Even Do?",
+        description: "An expert analysis of the changing nature of software development work. Introduces the 4 Laws of Probabilistic Software Development and the new role of the Systems Governor.",
+        date: "Mar 2026",
+        readTime: "9 min read",
+        source: "Built In",
+        externalUrl: "https://builtin.com/articles/vibe-coding-era-software-engineering-role"
+    },
+    {
+        slug: "agentic-ai-scientific-economic-analysis",
+        title: "AI Agents Won't Crash the Economy. Bad Governance Might.",
+        description: "An expert analysis of the AI science and economics behind the Citrini Research report on agentic AI. Examines the liability gradient, macro regression loops, and the variable cost of intelligence.",
+        date: "Mar 2026",
+        readTime: "9 min read",
+        source: "Built In",
+        externalUrl: "https://builtin.com/articles/agentic-ai-scientific-economic-analysis"
+    },
+    {
         slug: "innovation-requires-deleting-code",
         title: "Real Innovation Requires Deleting Code, Not Writing It",
         description: "An expert analysis of how to audit for features you can deprecate and how to delete them. Introduces the Sunset Protocol for governing subtraction.",
