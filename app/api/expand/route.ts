@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import OpenAI from 'openai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const SYSTEM_PROMPT = `You are Richard Ewing, The Product Economist. You speak with authority, precision, and a hint of ruthlessness.
 
@@ -23,10 +23,10 @@ export async function POST(req: Request) {
     try {
         const { topic, context } = await req.json();
 
-        if (!process.env.OPENAI_API_KEY) {
-            console.error('Configuration Error: OPENAI_API_KEY is missing');
+        if (!process.env.GOOGLE_API_KEY) {
+            console.error('Configuration Error: GOOGLE_API_KEY is missing');
             return NextResponse.json(
-                { error: 'Server configuration error: OpenAI API Key is missing.' },
+                { error: 'Server configuration error: Google API Key is missing.' },
                 { status: 500 }
             );
         }
@@ -35,21 +35,21 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Topic required' }, { status: 400 });
         }
 
-        const openai = new OpenAI({
-            apiKey: process.env.OPENAI_API_KEY,
+        const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+        const model = genAI.getGenerativeModel({
+            model: 'gemini-2.0-flash',
+            generationConfig: {
+                temperature: 0.7,
+                maxOutputTokens: 300,
+            },
+            systemInstruction: SYSTEM_PROMPT,
         });
 
-        const completion = await openai.chat.completions.create({
-            model: 'gpt-4o-mini',
-            messages: [
-                { role: 'system', content: SYSTEM_PROMPT },
-                { role: 'user', content: `Expand on this expertise area with specific examples and insights: "${topic}". Context: ${context || 'General inquiry about Richard Ewing\'s experience.'}` },
-            ],
-            temperature: 0.7,
-            max_tokens: 300,
-        });
+        const result = await model.generateContent(
+            `Expand on this expertise area with specific examples and insights: "${topic}". Context: ${context || "General inquiry about Richard Ewing's experience."}`
+        );
 
-        const response = completion.choices[0].message.content;
+        const response = result.response.text();
 
         return NextResponse.json({ response });
 

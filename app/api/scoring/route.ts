@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import OpenAI from 'openai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { z } from 'zod';
 
 // Schema for input validation
@@ -31,16 +31,21 @@ export async function POST(req: Request) {
 
         const { role, scores, observations, outcome, rationale } = validated.data;
 
-        if (!process.env.OPENAI_API_KEY) {
-            console.error('Configuration Error: OPENAI_API_KEY is missing');
+        if (!process.env.GOOGLE_API_KEY) {
+            console.error('Configuration Error: GOOGLE_API_KEY is missing');
             return NextResponse.json(
-                { error: 'Server configuration error: OpenAI API Key is missing.' },
+                { error: 'Server configuration error: Google API Key is missing.' },
                 { status: 500 }
             );
         }
 
-        const openai = new OpenAI({
-            apiKey: process.env.OPENAI_API_KEY,
+        const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+        const model = genAI.getGenerativeModel({
+            model: 'gemini-2.0-flash',
+            generationConfig: {
+                temperature: 0.7,
+            },
+            systemInstruction: 'You are a high-agency executive advisor.',
         });
 
         const prompt = `
@@ -64,16 +69,8 @@ export async function POST(req: Request) {
         Do not use HR fluff. Be ruthless and direct.
         `;
 
-        const completion = await openai.chat.completions.create({
-            model: 'gpt-4o',
-            messages: [
-                { role: 'system', content: 'You are a high-agency executive advisor.' },
-                { role: 'user', content: prompt }
-            ],
-            temperature: 0.7,
-        });
-
-        const memo = completion.choices[0].message.content;
+        const result = await model.generateContent(prompt);
+        const memo = result.response.text();
 
         return NextResponse.json({ memo });
 

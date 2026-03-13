@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import OpenAI from 'openai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { z } from 'zod';
 
 // Zod Schema for strict typing
@@ -42,10 +42,10 @@ export async function POST(req: Request) {
     try {
         const { tickets } = await req.json();
 
-        if (!process.env.OPENAI_API_KEY) {
-            console.error('Configuration Error: OPENAI_API_KEY is missing');
+        if (!process.env.GOOGLE_API_KEY) {
+            console.error('Configuration Error: GOOGLE_API_KEY is missing');
             return NextResponse.json(
-                { error: 'Server configuration error: OpenAI API Key is missing. Please check .env.local.' },
+                { error: 'Server configuration error: Google API Key is missing. Please check .env.local.' },
                 { status: 500 }
             );
         }
@@ -57,26 +57,24 @@ export async function POST(req: Request) {
             );
         }
 
-        // Lazy load OpenAI to prevent build failures
-        const openai = new OpenAI({
-            apiKey: process.env.OPENAI_API_KEY,
+        const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+        const model = genAI.getGenerativeModel({
+            model: 'gemini-2.0-flash',
+            generationConfig: {
+                temperature: 0.1,
+                responseMimeType: 'application/json',
+            },
         });
 
-        // Call OpenAI
-        const completion = await openai.chat.completions.create({
-            model: 'gpt-4o-mini',
-            messages: [
-                { role: 'system', content: SYSTEM_PROMPT },
-                { role: 'user', content: `AUDIT THIS BACKLOG:\n${tickets.join('\n')}` },
-            ],
-            temperature: 0.1,
-            response_format: { type: 'json_object' },
-        });
+        const result = await model.generateContent([
+            { text: SYSTEM_PROMPT },
+            { text: `AUDIT THIS BACKLOG:\n${tickets.join('\n')}` },
+        ]);
 
-        const rawResponse = completion.choices[0].message.content;
+        const rawResponse = result.response.text();
 
         if (!rawResponse) {
-            throw new Error('Empty response from OpenAI');
+            throw new Error('Empty response from Gemini');
         }
 
         // Parse and validate response
