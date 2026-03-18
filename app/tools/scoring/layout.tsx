@@ -1,22 +1,31 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Audit Interview | Product Economist',
-    description: 'Production-ready logic for auditing candidates. Evaluate verification depth, architectural reasoning, and economic awareness.',
+    title: 'Audit Interview Scoring | Committee Review System',
+    description: 'Production-ready scoring logic for the Audit Interview. Evaluate verification depth, architectural reasoning, economic awareness, and capital stewardship. By Richard Ewing, Product Economist.',
     keywords: [
-        'hiring audit interview',
+        'audit interview scoring',
         'engineering interview rubric',
         'product economist',
         'candidate evaluation',
-        'technical interview scoring'
+        'technical interview scoring',
+        'committee review',
+        'engineering judgment assessment',
+        'verification skills scoring',
     ],
     openGraph: {
-        title: 'Audit Interview | Product Economist',
-        description: 'Quantify candidate judgment and capital risk.',
+        title: 'Audit Interview Scoring | Product Economist',
+        description: 'Quantify candidate judgment and capital risk awareness with the Audit Interview committee review.',
         type: 'website',
+        url: 'https://richardewing.io/tools/scoring',
+    },
+    twitter: {
+        card: 'summary',
+        title: 'Audit Interview Scoring | Richard Ewing',
+        description: 'Committee review scoring for engineering judgment assessment.',
     },
     alternates: {
-        canonical: '/tools/scoring',
+        canonical: 'https://richardewing.io/tools/scoring',
     },
 };
 

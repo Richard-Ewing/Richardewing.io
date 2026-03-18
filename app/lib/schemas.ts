@@ -2,8 +2,8 @@ export const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Richard Ewing",
-    "jobTitle": "Product Economist",
-    "description": "I surface hidden financial insolvency inside product, engineering, and AI systems before it becomes a financial event.",
+    "jobTitle": ["Product Economist", "AI Capital Auditor"],
+    "description": "Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram, the verification infrastructure for AI.",
     "url": "https://richardewing.io",
     "image": "https://richardewing.io/images/richard-ewing-headshot.jpg",
     "sameAs": [
@@ -19,7 +19,14 @@ export const personSchema = {
         "Enterprise Value Modeling",
         "Product Economics",
         "SaaS Growth",
-        "Financial Literacy for Product Leaders"
+        "Financial Literacy for Product Leaders",
+        "AI Hallucination Debt",
+        "Zombie Infrastructure",
+        "Deterministic AI Infrastructure",
+        "Subprime Code Crisis",
+        "AI Capital Auditing",
+        "Gross Margin Preservation",
+        "Cost of Goods Sold Efficiency"
     ],
     "brand": {
         "@type": "Brand",
@@ -53,8 +60,8 @@ export const personSchema = {
 export const professionalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Richard Ewing - Product Economics Advisory",
-    "description": "Independent oversight and forensic audits for product, engineering, and AI economics. Governance-level advisory, not consulting.",
+    "name": "Richard Ewing - Product Economics & AI Capital Advisory",
+    "description": "Independent oversight and forensic audits for product, engineering, and AI economics. Specializing in AI hallucination debt, zombie infrastructure, and the subprime code crisis. Governance-level advisory, not consulting.",
     "url": "https://richardewing.io/advisory",
     "provider": {
         "@type": "Person",
@@ -92,7 +99,7 @@ export const professionalServiceSchema = {
                 "itemOffered": {
                     "@type": "Service",
                     "name": "Insolvency Diagnostic",
-                    "description": "60-minute deep dive with written Risk Exposure Report including red/yellow/green flags across 5 failure modes."
+                    "description": "60-minute Capital Exposure Assessment with written Risk Exposure Report including red/yellow/green flags across 5 failure modes."
                 },
                 "price": "2500",
                 "priceCurrency": "USD",
@@ -103,7 +110,7 @@ export const professionalServiceSchema = {
                 "itemOffered": {
                     "@type": "Service",
                     "name": "R&D Capital Audit",
-                    "description": "Full forensic review of engineering spend vs. ROI. 2-3 week engagement with complete audit package."
+                    "description": "Full 3-week forensic review of R&D capital allocation and AI inference costs. Board-ready deliverable with complete audit package."
                 },
                 "price": "7500",
                 "priceCurrency": "USD",

@@ -23,6 +23,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: `${article.title} | Richard Ewing`,
         description: article.description,
+        keywords: [
+            'Richard Ewing',
+            'product economist',
+            article.source.toLowerCase(),
+            'engineering economics',
+            'R&D capital',
+        ],
         alternates: {
             canonical: article.externalUrl || `https://richardewing.io/articles/${article.slug}`,
         },
@@ -30,8 +37,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title: article.title,
             description: article.description,
             type: 'article',
-            publishedTime: article.date, // Note: strictly should be ISO date, passing string for now
+            publishedTime: article.date,
             authors: ['Richard Ewing'],
+            url: `https://richardewing.io/articles/${article.slug}`,
+        },
+        twitter: {
+            card: 'summary',
+            title: `${article.title} | Richard Ewing`,
+            description: article.description,
         },
     };
 }

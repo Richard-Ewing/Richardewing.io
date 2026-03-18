@@ -29,10 +29,18 @@ export default function APERLayout({ children }: { children: React.ReactNode }) 
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'SoftwareApplication',
-                        name: 'APER Diagnostic',
+                        name: 'APER™ Revenue Per Engineer Diagnostic',
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
-                        description: 'Revenue Per Engineer calculator for detecting overstaffing and optimizing engineering efficiency.',
+                        url: 'https://richardewing.io/tools/aper',
+                        description: 'Calculate your Revenue Per Engineer and benchmark against elite SaaS companies (Stripe, Figma, Linear). Diagnose organizational bloat and engineering efficiency. By Richard Ewing, Product Economist.',
+                        featureList: [
+                            'Revenue Per Engineer Calculation',
+                            'Elite SaaS Benchmarking (Stripe, Figma, Linear)',
+                            'Organizational Bloat Detection',
+                            'Engineering Efficiency Scoring',
+                            'PDF Report Export',
+                        ],
                         offers: {
                             '@type': 'Offer',
                             price: '0',
@@ -40,6 +48,7 @@ export default function APERLayout({ children }: { children: React.ReactNode }) 
                         },
                         creator: {
                             '@type': 'Person',
+                            '@id': 'https://richardewing.io/#person',
                             name: 'Richard Ewing',
                             jobTitle: 'Product Economist',
                             url: 'https://richardewing.io',

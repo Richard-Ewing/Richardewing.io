@@ -13,9 +13,12 @@ export default function AdvisoryPage() {
                 <section className="section-lg text-center">
                     <div className="text-xs text-purple-400 uppercase tracking-wide mb-4">Advisory Services</div>
                     <BlurIn word="Intervention Protocols." className="text-4xl md:text-5xl font-bold text-white mb-6" />
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-4">
                         I don't do "consulting." These are surgical interventions designed to
                         stop the bleeding and install permanent capital discipline.
+                    </p>
+                    <p className="text-gray-500 text-sm max-w-2xl mx-auto mb-8">
+                        Specializing in the identification and remediation of <span className="text-purple-400">AI Hallucination Debt</span>, <span className="text-cyan-400">Zombie Infrastructure</span>, and the <span className="text-red-400">Subprime Code Crisis</span>.
                     </p>
 
                     {/* Availability banner */}
@@ -62,7 +65,7 @@ export default function AdvisoryPage() {
                                 <div className="text-gray-400 mb-6">Insolvency Diagnostic</div>
 
                                 <ul className="space-y-3 mb-6 text-sm text-gray-300">
-                                    <li>✓ 60-minute deep dive session</li>
+                                    <li>✓ 60-minute Capital Exposure Assessment</li>
                                     <li>✓ Written Risk Exposure Report</li>
                                     <li>✓ 15-min follow-up call</li>
                                 </ul>
@@ -88,7 +91,7 @@ export default function AdvisoryPage() {
                             <div className="text-gray-400 mb-6">R&D Capital Audit</div>
 
                             <ul className="space-y-3 mb-6 text-sm text-gray-400">
-                                <li>✓ Full 2-3 week forensic review</li>
+                                <li>✓ Full 3-week forensic review of R&D capital allocation and AI inference costs</li>
                                 <li>✓ Stakeholder interviews</li>
                                 <li>✓ Board-ready deliverable</li>
                                 <li>✓ Remediation roadmap</li>

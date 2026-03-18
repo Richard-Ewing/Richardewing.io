@@ -149,8 +149,8 @@ export default function PrincipalContent() {
                                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">Richard Ewing</h1>
                                 <div className="font-mono text-sm text-cyan-400 uppercase tracking-widest mb-4">Product Economist</div>
                                 <p className="text-zinc-300 leading-relaxed text-base sm:text-lg">
-                                    The executive who <span className="text-white font-bold">turns bleeding product organizations into profit engines</span>.
-                                    I don't manage backlogs—I manage P&Ls. I don't ship features—I ship ROI.
+                                    Founder of <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition">Exogram</a> and the executive who <span className="text-white font-bold">turns bleeding product organizations into profit engines</span>.
+                                    I do not manage backlogs. I manage P&Ls. I do not ship features. I ship ROI.
                                 </p>
                             </div>
                         </div>
@@ -210,33 +210,33 @@ export default function PrincipalContent() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <AIExpandCard
-                            icon="🏛️"
-                            label="Public Sector"
+                            icon="🎯"
+                            label="Capital Auditing"
                             labelColor="text-cyan-400"
-                            title="Government-Scale Digital Transformation"
-                            description={<>Led infrastructure overhaul serving <span className="text-white font-bold">7.7 million citizens</span>. Zero-downtime cloud migration. <span className="text-gold">Governor's Award Recipient</span>.</>}
+                            title="AI Unit Economics & Capital Auditing"
+                            description={<>Identifying and eliminating <span className="text-white font-bold">AI hallucination debt</span>, zombie infrastructure, and structural margin collapse in B2B SaaS environments.</>}
                             glowColor="cyan"
-                            topic="Richard Ewing's experience leading digital transformation for state government serving millions of citizens, including cloud migration and receiving the Governor's Award."
+                            topic="Richard Ewing's methodology for auditing AI unit economics, identifying hallucination debt as a capital liability, and preventing structural margin collapse in enterprise SaaS."
                         />
 
                         <AIExpandCard
-                            icon="💼"
-                            label="Professional Services"
+                            icon="🛡️"
+                            label="Infrastructure"
                             labelColor="text-cobalt"
-                            title="Top-10 Accounting Firm Modernization"
-                            description={<>Orchestrated <span className="text-white font-bold">$5M strategic cost reduction</span> via Azure migration. Built 16-person product org from ground up. Doubled velocity.</>}
+                            title="Deterministic AI Infrastructure"
+                            description={<>Architecting <span className="text-white font-bold">admissibility control planes</span> and state-hashing commit enforcement to prevent autonomous agent liability.</>}
                             glowColor="cobalt"
-                            topic="Richard Ewing's experience as Group Product Manager at a Top-10 accounting firm, driving $5M cost reduction through Azure cloud migration and building a high-performance product organization."
+                            topic="Richard Ewing's work on deterministic AI infrastructure through Exogram, building verification layers that prevent hallucination propagation and ensure admissible AI outputs."
                         />
 
                         <AIExpandCard
-                            icon="🚀"
-                            label="Venture-Backed Startups"
+                            icon="📉"
+                            label="R&D Efficiency"
                             labelColor="text-gold"
-                            title="0-to-1 Product Leadership"
-                            description={<>Scaled ERP SaaS from <span className="text-white font-bold">$0 to $25M ARR</span>. Slashed churn 20%. Defined industry standard for enterprise utility platforms.</>}
+                            title="The Math of Ruin (R&D Efficiency)"
+                            description={<>Shifting engineering metrics from shipping velocity to <span className="text-white font-bold">Cost of Goods Sold efficiency</span> and gross margin preservation.</>}
                             glowColor="gold"
-                            topic="Richard Ewing's experience scaling enterprise SaaS products from zero to $25M ARR, reducing churn, and defining product governance standards."
+                            topic="Richard Ewing's framework for measuring engineering productivity through COGS efficiency rather than velocity metrics, preventing the math of ruin in R&D organizations."
                         />
 
                         <AIExpandCard
@@ -244,9 +244,9 @@ export default function PrincipalContent() {
                             label="Turnaround Operations"
                             labelColor="text-red-400"
                             title="Revenue Resurrection Specialist"
-                            description={<>Inherited stagnant P&L, drove <span className="text-white font-bold">200% YoY growth to $20M</span>. Consolidated 4 siloed teams. Improved retention 40%.</>}
+                            description={<>Inherited stagnant P&L, drove <span className="text-white font-bold">200% YoY growth to $20M</span>. Scaled SaaS from $0 to $25M ARR. <span className="text-gold">$5M cost reduction</span>.</>}
                             glowColor="danger"
-                            topic="Richard Ewing's experience as a turnaround executive, taking over stagnant P&Ls and driving 200% revenue growth through operational restructuring."
+                            topic="Richard Ewing's track record as a turnaround executive: scaling B2B SaaS from zero to $25M ARR, driving 200% revenue growth, and executing $5M in strategic cost reductions."
                         />
                     </div>
                 </div>

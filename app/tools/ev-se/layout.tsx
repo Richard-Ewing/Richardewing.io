@@ -29,10 +29,17 @@ export default function EVSELayout({ children }: { children: React.ReactNode }) 
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'SoftwareApplication',
-                        name: 'EV-SE Engine',
+                        name: 'Enterprise Value Scenario Engine™ (EV-SE)',
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
-                        description: 'Enterprise Value Scenario Engine for valuation defense and execution risk quantification.',
+                        url: 'https://richardewing.io/tools/ev-se',
+                        description: 'Calculate risk-adjusted enterprise value. SaaS valuation calculator with revenue multiple adjustments for churn risk, scope creep, and execution confidence. By Richard Ewing, Product Economist.',
+                        featureList: [
+                            'Risk-Adjusted Revenue Multiple Calculator',
+                            'Wealth Destruction Gap Analysis',
+                            'Churn & Scope Creep Impact Modeling',
+                            'PDF Report Export',
+                        ],
                         offers: {
                             '@type': 'Offer',
                             price: '0',
@@ -40,6 +47,7 @@ export default function EVSELayout({ children }: { children: React.ReactNode }) 
                         },
                         creator: {
                             '@type': 'Person',
+                            '@id': 'https://richardewing.io/#person',
                             name: 'Richard Ewing',
                             jobTitle: 'Product Economist',
                             url: 'https://richardewing.io',

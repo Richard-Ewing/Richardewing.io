@@ -96,12 +96,20 @@ export default function ToolsPage() {
 
         {/* CTA */}
         <section className="section-sm text-center">
-          <p className="text-gray-400 mb-6">
-            If the results concern you, let's talk.
+          <p className="text-gray-400 mb-3">
+            If the results concern you, the diagnosis is only the first step.
           </p>
-          <a href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
-            Book an Audit →
-          </a>
+          <p className="text-gray-500 text-sm mb-8 max-w-xl mx-auto">
+            Your tools diagnosed the disease. Now choose your cure.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
+              Book a $2,500 Insolvency Diagnostic →
+            </a>
+            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/5">
+              Implement Deterministic Routing →
+            </a>
+          </div>
         </section>
 
       </div>

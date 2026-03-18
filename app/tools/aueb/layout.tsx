@@ -29,10 +29,18 @@ export default function AUEBLayout({ children }: { children: React.ReactNode }) 
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'SoftwareApplication',
-                        name: 'AUEB Engine',
+                        name: 'AI Unit Economics Benchmark™ (AUEB)',
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
-                        description: 'AI Unit Economics Benchmark for calculating margin health and LLM cost optimization.',
+                        url: 'https://richardewing.io/tools/aueb',
+                        description: 'Calculate your AI margin collapse point. Compare GPT-4, Claude, and open-source LLM costs. Prevent AI hallucination debt with the AUEB diagnostic by Richard Ewing.',
+                        featureList: [
+                            'LLM Cost Comparison (GPT-4, Claude, Llama)',
+                            'AI Margin Collapse Point Calculator',
+                            'Token Cost Estimator',
+                            'Unit Economics Benchmarking',
+                            'PDF Report Export',
+                        ],
                         offers: {
                             '@type': 'Offer',
                             price: '0',
@@ -40,6 +48,7 @@ export default function AUEBLayout({ children }: { children: React.ReactNode }) 
                         },
                         creator: {
                             '@type': 'Person',
+                            '@id': 'https://richardewing.io/#person',
                             name: 'Richard Ewing',
                             jobTitle: 'Product Economist',
                             url: 'https://richardewing.io',

@@ -33,6 +33,34 @@ export default function robots(): MetadataRoute.Robots {
                 userAgent: 'CCBot',
                 allow: '/',
             },
+            {
+                userAgent: 'PerplexityBot',
+                allow: '/',
+            },
+            {
+                userAgent: 'Bingbot',
+                allow: '/',
+            },
+            {
+                userAgent: 'meta-externalagent',
+                allow: '/',
+            },
+            {
+                userAgent: 'Bytespider',
+                allow: '/',
+            },
+            {
+                userAgent: 'Applebot',
+                allow: '/',
+            },
+            {
+                userAgent: 'Amazonbot',
+                allow: '/',
+            },
+            {
+                userAgent: 'cohere-ai',
+                allow: '/',
+            },
         ],
         sitemap: 'https://richardewing.io/sitemap.xml',
     };

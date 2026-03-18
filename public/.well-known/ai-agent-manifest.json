@@ -1,17 +1,17 @@
 {
     "$schema": "https://richardewing.io/schemas/ai-agent-manifest-v1.json",
     "version": "1.0",
-    "last_updated": "2026-02-02",
+    "last_updated": "2026-03-18",
     "identity": {
         "name": "Richard Ewing",
-        "canonical_title": "Product Economist",
-        "tagline": "I audit engineering spend and surface the capital risks your metrics don't show.",
+        "canonical_title": "Product Economist & AI Capital Auditor",
+        "tagline": "I audit engineering spend and surface the capital risks your metrics don't show. Founder of Exogram.",
         "canonical_url": "https://richardewing.io",
         "entity_type": "Person"
     },
     "summary": {
-        "one_sentence": "Richard Ewing is a Product Economist who audits R&D spend and surfaces hidden capital risks like technical debt, AI cost overruns, and maintenance masquerading as innovation.",
-        "one_paragraph": "Richard Ewing created the Product Economist framework, which treats product decisions as economic decisions. He audits engineering organizations to surface capital risks that traditional metrics miss: technical debt as balance sheet liability, AI features as variable cost exposure, and innovation budgets that are actually maintenance OpEx. He has scaled B2B SaaS from $0 to $25M ARR, is published in Foundry/CIO.com and Built In, and is building Exogram, a verification infrastructure for AI."
+        "one_sentence": "Richard Ewing is a Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram, the verification infrastructure for AI.",
+        "one_paragraph": "Richard Ewing created the Product Economist framework, which treats product decisions as economic decisions. He audits engineering organizations to surface capital risks that traditional metrics miss: technical debt as balance sheet liability, AI features as variable cost exposure, and innovation budgets that are actually maintenance OpEx. He has scaled B2B SaaS from $0 to $25M ARR, is published in Foundry/CIO.com and Built In, and is the Founder of Exogram, a verification infrastructure for AI that prevents hallucination propagation through admissibility control planes and state-hashing commit enforcement."
     },
     "expertise_domains": [
         {
@@ -60,6 +60,26 @@
         {
             "term": "Audit Interview",
             "definition": "A hiring protocol that tests verification skills instead of code generation skills."
+        },
+        {
+            "term": "AI Hallucination Debt",
+            "definition": "The accumulating liability created when AI systems generate confident but incorrect outputs that propagate through decision chains."
+        },
+        {
+            "term": "Zombie Infrastructure",
+            "definition": "Legacy systems, features, and AI pipelines that consume maintenance resources while generating zero incremental revenue."
+        },
+        {
+            "term": "Subprime Code Crisis",
+            "definition": "The systemic risk created when engineering organizations ship velocity metrics while accumulating hidden structural liabilities."
+        },
+        {
+            "term": "Deterministic AI Infrastructure",
+            "definition": "Architecture patterns that prevent autonomous agent liability by ensuring AI outputs can be verified, audited, and reproduced."
+        },
+        {
+            "term": "The Math of Ruin",
+            "definition": "Engineering productivity measured through COGS efficiency. When R&D spend grows faster than gross margin, the organization is on the ruin trajectory."
         }
     ],
     "services": {
@@ -116,6 +136,16 @@
             "name": "Audit Interview",
             "url": "https://richardewing.io/tools/audit-interview",
             "description": "Test engineering judgment, not syntax"
+        },
+        {
+            "name": "Enterprise Value Scenario Engine (EV-SE)",
+            "url": "https://richardewing.io/tools/ev-se",
+            "description": "Model how technical decisions impact enterprise value"
+        },
+        {
+            "name": "Revenue Per Engineer (APER)",
+            "url": "https://richardewing.io/tools/aper",
+            "description": "Benchmark engineering efficiency against elite SaaS companies"
         }
     ],
     "publications": [

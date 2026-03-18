@@ -29,10 +29,17 @@ export default function PDILayout({ children }: { children: React.ReactNode }) {
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'SoftwareApplication',
-                        name: 'PDI Engine',
+                        name: 'Product Debt Index™ (PDI)',
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
-                        description: 'AI-powered Product Debt Index calculator for engineering backlog audits.',
+                        url: 'https://richardewing.io/tools/pdi',
+                        description: 'Forensic technical debt calculator. Quantify the financial cost of legacy code, refactoring vs. features, and engineering insolvency. A proprietary financial calculator authored by Richard Ewing, Product Economist.',
+                        featureList: [
+                            'Technical Debt Dollar Quantification',
+                            'Engineering Insolvency Horizon Calculation',
+                            'Refactoring vs. Features ROI Analysis',
+                            'PDF Report Export',
+                        ],
                         offers: {
                             '@type': 'Offer',
                             price: '0',
@@ -40,6 +47,7 @@ export default function PDILayout({ children }: { children: React.ReactNode }) {
                         },
                         creator: {
                             '@type': 'Person',
+                            '@id': 'https://richardewing.io/#person',
                             name: 'Richard Ewing',
                             jobTitle: 'Product Economist',
                             url: 'https://richardewing.io',

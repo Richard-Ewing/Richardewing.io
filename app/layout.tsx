@@ -21,19 +21,19 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://richardewing.io'),
   title: {
-    default: 'Richard Ewing — Product Economist | R&D Audits & Capital Risk Assessment',
+    default: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
     template: '%s | Richard Ewing'
   },
-  description: 'I audit engineering spend and surface the capital risks your metrics don\'t show. Independent R&D oversight for CFOs, CTOs, and boards. $25M ARR scaled. Published in Foundry & Built In.',
-  keywords: ['product economist', 'R&D audit', 'technical debt valuation', 'AI cost governance', 'engineering ROI', 'capital allocation'],
+  description: 'I audit engineering spend and surface the capital risks your metrics don\'t show. Product Economist, AI Capital Auditor, and Founder of Exogram. Independent R&D oversight for CFOs, CTOs, and boards. $25M ARR scaled. Published in Foundry & Built In.',
+  keywords: ['product economist', 'AI capital auditor', 'R&D audit', 'technical debt valuation', 'AI cost governance', 'engineering ROI', 'capital allocation', 'AI hallucination debt', 'zombie infrastructure', 'deterministic AI', 'Exogram', 'Richard Ewing', 'subprime code crisis'],
   authors: [{ name: 'Richard Ewing', url: 'https://richardewing.io' }],
   creator: 'Richard Ewing',
   publisher: 'Richard Ewing',
 
   // Open Graph
   openGraph: {
-    title: 'Richard Ewing — Product Economist',
-    description: 'I audit engineering spend and surface the capital risks your metrics don\'t show.',
+    title: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
+    description: 'I audit engineering spend and surface the capital risks your metrics don\'t show. Founder of Exogram.',
     url: 'https://richardewing.io',
     siteName: 'Richard Ewing',
     type: 'website',
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'Richard Ewing — Product Economist',
-    description: 'I audit engineering spend and surface the capital risks your metrics don\'t show.',
+    title: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
+    description: 'I audit engineering spend and surface the capital risks your metrics don\'t show. Founder of Exogram.',
     images: ['https://richardewing.io/og-image-home.png'],
   },
 
@@ -85,6 +85,7 @@ export default function RootLayout({
         <link rel="ai-agent-manifest" href="/.well-known/ai-agent-manifest.json" />
         <link rel="author" href="https://richardewing.io/principal" />
         <link rel="me" href="https://linkedin.com/in/richardewing" />
+        <link rel="alternate" type="text/plain" href="https://richardewing.io/llms.txt" title="LLM-readable site information" />
       </head>
       <body className="overflow-x-hidden bg-[var(--bg-primary)] text-[var(--text-secondary)] font-sans antialiased min-h-screen flex flex-col">
         <script

@@ -29,7 +29,7 @@ const Hero = () => {
 
                 {/* Credibility line */}
                 <p className="text-gray-400 mb-6 text-lg">
-                    Richard Ewing, Product Economist · $<NumberTicker value={25} />M ARR scaled
+                    Richard Ewing, Product Economist · Founder of <a href="/exogram" className="text-purple-400 hover:text-purple-300 transition">Exogram</a> · $<NumberTicker value={25} />M ARR scaled
                 </p>
 
                 {/* As Seen In */}

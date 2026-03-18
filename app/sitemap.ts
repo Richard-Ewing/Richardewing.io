@@ -79,7 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}/exogram`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
-            priority: 0.7,
+            priority: 0.8,
         },
         {
             url: `${baseUrl}/manifesto`,
@@ -90,8 +90,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: `${baseUrl}/principal`,
             lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.6,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/book`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.5,
+        },
+        {
+            url: `${baseUrl}/profiles`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.5,
+        },
+        {
+            url: `${baseUrl}/system`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.5,
         },
 
         // Legal

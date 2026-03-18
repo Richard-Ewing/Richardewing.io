@@ -2,16 +2,23 @@ import type { Metadata } from 'next';
 import PrincipalContent from '../components/principal-content';
 
 export const metadata: Metadata = {
-    title: 'Richard Ewing — The Product Economist | Principal Profile',
-    description: 'Product Economist who audits R&D spend and surfaces capital risks. Creator of the Product Economist Framework. Founder of Exogram. $25M ARR Scaled.',
+    title: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
+    description: 'Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse. Founder of Exogram. Creator of the Product Economist Framework. $25M ARR Scaled. Published in CIO.com & Built In.',
+    keywords: ['product economist', 'AI capital auditor', 'Richard Ewing', 'Exogram founder', 'AI hallucination debt', 'zombie infrastructure', 'R&D audit', 'technical debt valuation', 'deterministic AI infrastructure', 'subprime code crisis', 'AI unit economics'],
     alternates: {
         canonical: 'https://richardewing.io/principal',
     },
     openGraph: {
-        title: 'Richard Ewing — The Product Economist',
-        description: 'Product Economist who audits R&D spend and surfaces capital risks. Creator of the Product Economist Framework.',
+        title: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
+        description: 'I identify AI hallucination debt, zombie infrastructure, and structural margin collapse before they become financial events. Founder of Exogram.',
         url: 'https://richardewing.io/principal',
         images: [{ url: 'https://richardewing.io/assets/images/headshot.jpg' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Richard Ewing — Product Economist & AI Capital Auditor',
+        description: 'Founder of Exogram. I audit R&D spend and surface the capital risks your metrics don\'t show.',
+        images: ['https://richardewing.io/assets/images/headshot.jpg'],
     },
 };
 
@@ -20,8 +27,8 @@ const personSchema = {
     "@type": "Person",
     "@id": "https://richardewing.io/#person",
     "name": "Richard Ewing",
-    "jobTitle": "Product Economist",
-    "description": "Product Economist who audits R&D spend and surfaces capital risks that engineering metrics don't show. Creator of the Product Economist Framework.",
+    "jobTitle": ["Product Economist", "AI Capital Auditor"],
+    "description": "Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram, the verification infrastructure for AI.",
     "url": "https://richardewing.io",
     "image": "https://richardewing.io/assets/images/headshot.jpg",
     "sameAs": [
@@ -34,14 +41,34 @@ const personSchema = {
         "R&D Auditing",
         "Technical Debt Valuation",
         "AI Unit Economics",
+        "AI Capital Auditing",
         "Capital Allocation",
-        "Engineering ROI"
+        "Engineering ROI",
+        "AI Hallucination Debt",
+        "Zombie Infrastructure",
+        "Deterministic AI Infrastructure",
+        "Subprime Code Crisis",
+        "AI Cost Governance",
+        "Gross Margin Preservation"
     ],
-    "hasOccupation": {
-        "@type": "Occupation",
-        "name": "Product Economist",
-        "description": "Audits R&D spend and surfaces capital risks that engineering metrics don't show"
+    "founder": {
+        "@type": "Organization",
+        "name": "Exogram",
+        "url": "https://exogram.ai",
+        "description": "Verification infrastructure for AI — the missing trust layer between models and applications"
     },
+    "hasOccupation": [
+        {
+            "@type": "Occupation",
+            "name": "Product Economist",
+            "description": "Audits R&D spend and surfaces capital risks that engineering metrics don't show"
+        },
+        {
+            "@type": "Occupation",
+            "name": "AI Capital Auditor",
+            "description": "Identifies and eliminates AI hallucination debt, zombie infrastructure, and structural margin collapse"
+        }
+    ],
     "brand": {
         "@type": "Brand",
         "name": "The Product Economist",
