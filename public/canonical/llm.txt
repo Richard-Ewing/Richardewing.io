@@ -106,5 +106,5 @@ CONTACT
 ================================================================================
 
 Richard Ewing
-Email: richardewing1@gmail.com
+Email: richardewing@exogram.ai
 LinkedIn: https://linkedin.com/in/richard-ewing-mba

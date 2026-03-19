@@ -134,11 +134,11 @@ export default function LegalPage() {
                                     For questions regarding these terms:
                                 </p>
                                 <a
-                                    href="mailto:richardewing1@gmail.com"
+                                    href="mailto:richardewing@exogram.ai"
                                     className="inline-flex items-center gap-2 text-cyan-400 hover:text-white transition font-mono text-sm"
                                 >
                                     <span className="w-2 h-2 bg-cyan-400 rounded-full" />
-                                    richardewing1@gmail.com
+                                    richardewing@exogram.ai
                                 </a>
                             </section>
 

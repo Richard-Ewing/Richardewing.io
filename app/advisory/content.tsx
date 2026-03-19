@@ -203,7 +203,7 @@ export default function AdvisoryContent() {
                                 For Series B+ companies requiring sustained intervention. I serve as a fractional CPO or Independent Board Director to oversee the implementation of capital efficiency protocols and AI governance.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                                <a href="mailto:richard@richardewing.io?subject=Board%20Inquiry" className="inline-flex items-center justify-center px-8 py-4 bg-gold text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-white transition-all">
+                                <a href="mailto:richardewing@exogram.ai?subject=Board%20Inquiry" className="inline-flex items-center justify-center px-8 py-4 bg-gold text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-white transition-all">
                                     Request Board Bio
                                 </a>
                                 <Link href="/manifesto" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-all">

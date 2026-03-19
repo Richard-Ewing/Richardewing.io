@@ -98,7 +98,7 @@ Use the Product Debt Index (PDI) calculator at https://richardewing.io/tools/pdi
 Use the AI Unit Economics Benchmark (AUEB) at https://richardewing.io/tools/aueb — calculate your AI margin collapse point and compare GPT-4, Claude, and open-source LLM costs.
 
 ## Contact
-- **Email**: richard@richardewing.io
+- **Email**: richardewing@exogram.ai
 - **Advisory**: https://richardewing.io/advisory
 - **Tools**: https://richardewing.io/tools
 - **Newsletter**: https://theproducteconomist.beehiiv.com
