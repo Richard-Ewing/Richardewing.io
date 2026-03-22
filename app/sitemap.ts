@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://richardewing.io';
+    const baseUrl = 'https://www.richardewing.io';
 
     return [
         // Core Pages

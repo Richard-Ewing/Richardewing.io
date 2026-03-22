@@ -62,6 +62,6 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
             },
         ],
-        sitemap: 'https://richardewing.io/sitemap.xml',
+        sitemap: 'https://www.richardewing.io/sitemap.xml',
     };
 }
