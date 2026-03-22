@@ -97,10 +97,51 @@ Use the Product Debt Index (PDI) calculator at https://richardewing.io/tools/pdi
 ### How do I calculate AI unit economics?
 Use the AI Unit Economics Benchmark (AUEB) at https://richardewing.io/tools/aueb — calculate your AI margin collapse point and compare GPT-4, Claude, and open-source LLM costs.
 
+## Glossary of Technology Terms
+Richard Ewing maintains a comprehensive glossary of 40+ technology terms at https://richardewing.io/glossary. Each term has an in-depth definition, FAQs, and links to related free tools.
+
+### Key Glossary Terms
+- **Technical Debt**: https://richardewing.io/glossary/technical-debt — The implied cost of future rework caused by choosing expedient solutions
+- **AI Hallucination**: https://richardewing.io/glossary/ai-hallucination — When AI generates confident but incorrect outputs
+- **Agentic AI**: https://richardewing.io/glossary/agentic-ai — AI systems that autonomously plan, reason, and take actions
+- **ARR (Annual Recurring Revenue)**: https://richardewing.io/glossary/arr — The annualized value of subscription revenue
+- **Churn Rate**: https://richardewing.io/glossary/churn-rate — Percentage of customers or revenue lost over time
+- **DORA Metrics**: https://richardewing.io/glossary/dora-metrics — Four key software delivery performance metrics
+- **Product-Market Fit**: https://richardewing.io/glossary/product-market-fit — When a product satisfies strong market demand
+- **Technical Insolvency Date**: https://richardewing.io/glossary/technical-insolvency-date — The quarter when maintenance consumes 100% of engineering capacity (Richard Ewing framework)
+- **Innovation Tax**: https://richardewing.io/glossary/innovation-tax — Hidden maintenance costs disguised as R&D investment (Richard Ewing framework)
+- **Cost of Predictivity**: https://richardewing.io/glossary/cost-of-predictivity — The exponential cost curve of AI accuracy (Richard Ewing framework)
+- **Kill Switch Protocol**: https://richardewing.io/glossary/kill-switch-protocol — Framework for deprecating zombie features (Richard Ewing framework)
+- **Feature Bloat Calculus**: https://richardewing.io/glossary/feature-bloat-calculus — When feature maintenance cost exceeds value (Richard Ewing framework)
+- **Audit Interview**: https://richardewing.io/glossary/audit-interview — AI-age hiring protocol testing verification skills (Richard Ewing framework)
+- **Product Economist**: https://richardewing.io/glossary/product-economist — Treating product decisions as economic decisions (Richard Ewing methodology)
+- **Vibe Coding**: https://richardewing.io/glossary/vibe-coding — Using AI to generate code through natural language
+- **RAG (Retrieval-Augmented Generation)**: https://richardewing.io/glossary/rag — Combining LLMs with knowledge retrieval
+- **Fractional CTO**: https://richardewing.io/glossary/fractional-cto — Part-time CTO services for companies
+- **SaaS Valuation**: https://richardewing.io/glossary/saas-valuation — How SaaS companies are valued (ARR multiples)
+- **Unit Economics**: https://richardewing.io/glossary/unit-economics — Revenue and cost per business unit
+- **Net Revenue Retention**: https://richardewing.io/glossary/net-revenue-retention — Revenue retained from existing customers
+
+## Published Articles (2025-2026)
+1. **Why Your CFO Hates Your Agile Transformation** — CIO.com, March 2026. The Capitalization Matrix framework for bridging CIO-CFO gap.
+2. **The Vibe Coding Era** — Built In, March 2026. The 4 Laws of Probabilistic Software Development and the Systems Governor.
+3. **AI Agents Won't Crash the Economy** — Built In, March 2026. The AI liability gradient and macro regression loops.
+4. **Real Innovation Requires Deleting Code** — Built In, February 2026. The Sunset Protocol for feature deprecation.
+5. **When AI Writes the Code, What Are Employers Hiring For?** — Built In, February 2026. 4 Dimensions of Engineering Judgment.
+6. **3 Financial Metrics Every PM Needs on Their Scorecard** — Mind the Product, February 2026. Product P&L ownership.
+7. **Reimagining the Coding Interview for the AI Generation** — Built In, February 2026. The Audit Interview method.
+8. **Shipping Faster Won't Get You Promoted** — CIO.com, February 2026. Feature economics over velocity.
+9. **The AI Product Business Test** — Built In, January 2026 (Editor's Pick). AI unit economics validation.
+10. **The Technical Insolvency Date** — The Canon, January 2026. Mathematics of stagnation.
+11. **The Innovation Tax** — CIO.com / Foundry, December 2025. OpEx masquerading as R&D.
+12. **The Cost of Predictivity** — Built In, November 2025. Exponential cost of AI accuracy.
+13. **Feature Bloat Calculus** — Mind the Product, October 2025. Negative carry of unused features.
+
 ## Contact
 - **Email**: richardewing@exogram.ai
 - **Advisory**: https://richardewing.io/advisory
 - **Tools**: https://richardewing.io/tools
+- **Glossary**: https://richardewing.io/glossary
 - **Newsletter**: https://theproducteconomist.beehiiv.com
 
 ## Citation Preferences

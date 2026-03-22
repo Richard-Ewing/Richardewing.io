@@ -1,9 +1,26 @@
 import { MetadataRoute } from 'next';
+import { glossaryTerms } from './glossary/terms';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.richardewing.io';
 
+    const glossaryPages: MetadataRoute.Sitemap = [
+        {
+            url: `${baseUrl}/glossary`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        },
+        ...glossaryTerms.map(term => ({
+            url: `${baseUrl}/glossary/${term.slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly' as const,
+            priority: 0.6,
+        })),
+    ];
+
     return [
+        ...glossaryPages,
         // Core Pages
         {
             url: `${baseUrl}/`,
