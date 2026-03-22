@@ -15,12 +15,12 @@ export const metadata: Metadata = {
         'engineering productivity metric',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/tools/aper',
+        canonical: 'https://www.richardewing.io/tools/aper',
     },
     openGraph: {
         title: 'APER Diagnostic | Revenue Per Engineer Calculator',
         description: 'The most dangerous number in SaaS. Calculate your true workforce efficiency.',
-        url: 'https://richardewing.io/tools/aper',
+        url: 'https://www.richardewing.io/tools/aper',
         type: 'website',
     },
     twitter: {

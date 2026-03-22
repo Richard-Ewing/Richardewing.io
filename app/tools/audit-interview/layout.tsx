@@ -14,12 +14,12 @@ export const metadata: Metadata = {
         'technical interview alternative',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/tools/audit-interview',
+        canonical: 'https://www.richardewing.io/tools/audit-interview',
     },
     openGraph: {
         title: 'The Audit Interview | War-Time Leadership Assessment',
         description: 'The hiring protocol for the AI age. Test judgment, not syntax. AI-powered simulation by Richard Ewing.',
-        url: 'https://richardewing.io/tools/audit-interview',
+        url: 'https://www.richardewing.io/tools/audit-interview',
         type: 'website',
     },
     twitter: {
@@ -42,7 +42,7 @@ export default function AuditInterviewLayout({ children }: { children: React.Rea
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
                         description: 'AI-powered engineering judgment assessment. Tests verification depth, architectural reasoning, and economic awareness — not syntax memorization.',
-                        url: 'https://richardewing.io/tools/audit-interview',
+                        url: 'https://www.richardewing.io/tools/audit-interview',
                         offers: {
                             '@type': 'Offer',
                             price: '0',
@@ -59,7 +59,7 @@ export default function AuditInterviewLayout({ children }: { children: React.Rea
                             '@type': 'Person',
                             name: 'Richard Ewing',
                             jobTitle: 'Product Economist',
-                            url: 'https://richardewing.io',
+                            url: 'https://www.richardewing.io',
                         },
                     }),
                 }}

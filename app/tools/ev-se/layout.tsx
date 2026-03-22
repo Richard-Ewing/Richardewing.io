@@ -8,7 +8,7 @@ export const metadata: Metadata = {
         title: 'SaaS Valuation Calculator | Risk-Adjusted Multiples',
         description: 'Calculate risk-adjusted enterprise value. See your Wealth Destruction Gap.',
         type: 'website',
-        url: 'https://richardewing.io/tools/ev-se',
+        url: 'https://www.richardewing.io/tools/ev-se',
     },
     twitter: {
         card: 'summary_large_image',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         description: 'Calculate risk-adjusted SaaS revenue multiples for exit planning.',
     },
     alternates: {
-        canonical: 'https://richardewing.io/tools/ev-se',
+        canonical: 'https://www.richardewing.io/tools/ev-se',
     },
 };
 
@@ -32,7 +32,7 @@ export default function EVSELayout({ children }: { children: React.ReactNode }) 
                         name: 'Enterprise Value Scenario Engine™ (EV-SE)',
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
-                        url: 'https://richardewing.io/tools/ev-se',
+                        url: 'https://www.richardewing.io/tools/ev-se',
                         description: 'Calculate risk-adjusted enterprise value. SaaS valuation calculator with revenue multiple adjustments for churn risk, scope creep, and execution confidence. By Richard Ewing, Product Economist.',
                         featureList: [
                             'Risk-Adjusted Revenue Multiple Calculator',
@@ -47,10 +47,10 @@ export default function EVSELayout({ children }: { children: React.ReactNode }) 
                         },
                         creator: {
                             '@type': 'Person',
-                            '@id': 'https://richardewing.io/#person',
+                            '@id': 'https://www.richardewing.io/#person',
                             name: 'Richard Ewing',
                             jobTitle: 'Product Economist',
-                            url: 'https://richardewing.io',
+                            url: 'https://www.richardewing.io',
                         },
                     }),
                 }}

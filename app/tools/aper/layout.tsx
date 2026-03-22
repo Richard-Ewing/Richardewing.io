@@ -8,7 +8,7 @@ export const metadata: Metadata = {
         title: 'Revenue Per Engineer Benchmark | APER™',
         description: 'Calculate your Revenue Per Engineer and compare against elite SaaS companies.',
         type: 'website',
-        url: 'https://richardewing.io/tools/aper',
+        url: 'https://www.richardewing.io/tools/aper',
     },
     twitter: {
         card: 'summary_large_image',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         description: 'Calculate engineering efficiency. Compare against Stripe, Figma, Linear.',
     },
     alternates: {
-        canonical: 'https://richardewing.io/tools/aper',
+        canonical: 'https://www.richardewing.io/tools/aper',
     },
 };
 
@@ -32,7 +32,7 @@ export default function APERLayout({ children }: { children: React.ReactNode }) 
                         name: 'APER™ Revenue Per Engineer Diagnostic',
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
-                        url: 'https://richardewing.io/tools/aper',
+                        url: 'https://www.richardewing.io/tools/aper',
                         description: 'Calculate your Revenue Per Engineer and benchmark against elite SaaS companies (Stripe, Figma, Linear). Diagnose organizational bloat and engineering efficiency. By Richard Ewing, Product Economist.',
                         featureList: [
                             'Revenue Per Engineer Calculation',
@@ -48,10 +48,10 @@ export default function APERLayout({ children }: { children: React.ReactNode }) 
                         },
                         creator: {
                             '@type': 'Person',
-                            '@id': 'https://richardewing.io/#person',
+                            '@id': 'https://www.richardewing.io/#person',
                             name: 'Richard Ewing',
                             jobTitle: 'Product Economist',
-                            url: 'https://richardewing.io',
+                            url: 'https://www.richardewing.io',
                         },
                     }),
                 }}

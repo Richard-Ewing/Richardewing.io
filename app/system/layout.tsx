@@ -15,12 +15,12 @@ export const metadata: Metadata = {
         'capital leakage',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/system',
+        canonical: 'https://www.richardewing.io/system',
     },
     openGraph: {
         title: 'The Operating System | Algorithmic Solvency',
         description: 'AI-powered diagnostic tools from the Product Economist. Force financial transparency in your product organization.',
-        url: 'https://richardewing.io/system',
+        url: 'https://www.richardewing.io/system',
         type: 'website',
     },
     twitter: {

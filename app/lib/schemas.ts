@@ -4,8 +4,8 @@ export const personSchema = {
     "name": "Richard Ewing",
     "jobTitle": ["Product Economist", "AI Capital Auditor"],
     "description": "Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram, the verification infrastructure for AI.",
-    "url": "https://richardewing.io",
-    "image": "https://richardewing.io/images/richard-ewing-headshot.jpg",
+    "url": "https://www.richardewing.io",
+    "image": "https://www.richardewing.io/images/richard-ewing-headshot.jpg",
     "sameAs": [
         "https://linkedin.com/in/richardewing",
         "https://exogram.ai"
@@ -62,11 +62,11 @@ export const professionalServiceSchema = {
     "@type": "ProfessionalService",
     "name": "Richard Ewing - Product Economics & AI Capital Advisory",
     "description": "Independent oversight and forensic audits for product, engineering, and AI economics. Specializing in AI hallucination debt, zombie infrastructure, and the subprime code crisis. Governance-level advisory, not consulting.",
-    "url": "https://richardewing.io/advisory",
+    "url": "https://www.richardewing.io/advisory",
     "provider": {
         "@type": "Person",
         "name": "Richard Ewing",
-        "url": "https://richardewing.io"
+        "url": "https://www.richardewing.io"
     },
     "areaServed": {
         "@type": "Place",
@@ -222,14 +222,14 @@ export const articleSchemaTemplate = (title: string, description: string, url: s
     "author": {
         "@type": "Person",
         "name": "Richard Ewing",
-        "url": "https://richardewing.io"
+        "url": "https://www.richardewing.io"
     },
     "publisher": {
         "@type": "Organization",
         "name": "Richard Ewing - Product Economist",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://richardewing.io/images/logo.png"
+            "url": "https://www.richardewing.io/images/logo.png"
         }
     }
 });
@@ -242,7 +242,7 @@ export const courseSchema = {
     "provider": {
         "@type": "Person",
         "name": "Richard Ewing",
-        "sameAs": "https://richardewing.io"
+        "sameAs": "https://www.richardewing.io"
     },
     "hasCourseInstance": [
         {

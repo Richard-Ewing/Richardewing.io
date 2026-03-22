@@ -27,15 +27,15 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
         "inDefinedTermSet": {
             "@type": "DefinedTermSet",
             "name": "Product Economist Framework",
-            "url": "https://richardewing.io/articles/frameworks"
+            "url": "https://www.richardewing.io/articles/frameworks"
         },
         "creator": {
             "@type": "Person",
             "name": "Richard Ewing",
             "jobTitle": "Product Economist",
-            "url": "https://richardewing.io"
+            "url": "https://www.richardewing.io"
         },
-        "url": `https://richardewing.io/articles/frameworks/${framework.slug}`
+        "url": `https://www.richardewing.io/articles/frameworks/${framework.slug}`
     };
 
     return (
@@ -149,7 +149,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                             <p className="text-gray-500 text-xs mb-4 uppercase">To cite this definition:</p>
                             <p className="text-gray-300 font-mono text-sm break-all">
                                 Ewing, R. (2026). "{framework.name}." richardewing.io.<br />
-                                https://richardewing.io/articles/frameworks/{framework.slug}
+                                https://www.richardewing.io/articles/frameworks/{framework.slug}
                             </p>
                         </div>
                     </div>

@@ -16,12 +16,12 @@ export const metadata: Metadata = {
         'AI cost governance tool',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/tools/aueb',
+        canonical: 'https://www.richardewing.io/tools/aueb',
     },
     openGraph: {
         title: 'AI Unit Economics Benchmark | Protect Your Margins',
         description: 'Don\'t let the API bills kill your company. Model your AI feature costs before you ship.',
-        url: 'https://richardewing.io/tools/aueb',
+        url: 'https://www.richardewing.io/tools/aueb',
         type: 'website',
     },
     twitter: {

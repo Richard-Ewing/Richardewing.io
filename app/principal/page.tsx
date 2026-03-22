@@ -6,31 +6,31 @@ export const metadata: Metadata = {
     description: 'Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse. Founder of Exogram. Creator of the Product Economist Framework. $25M ARR Scaled. Published in CIO.com & Built In.',
     keywords: ['product economist', 'AI capital auditor', 'Richard Ewing', 'Exogram founder', 'AI hallucination debt', 'zombie infrastructure', 'R&D audit', 'technical debt valuation', 'deterministic AI infrastructure', 'subprime code crisis', 'AI unit economics'],
     alternates: {
-        canonical: 'https://richardewing.io/principal',
+        canonical: 'https://www.richardewing.io/principal',
     },
     openGraph: {
         title: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
         description: 'I identify AI hallucination debt, zombie infrastructure, and structural margin collapse before they become financial events. Founder of Exogram.',
-        url: 'https://richardewing.io/principal',
-        images: [{ url: 'https://richardewing.io/assets/images/headshot.jpg' }],
+        url: 'https://www.richardewing.io/principal',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Richard Ewing — Product Economist & AI Capital Auditor',
         description: 'Founder of Exogram. I audit R&D spend and surface the capital risks your metrics don\'t show.',
-        images: ['https://richardewing.io/assets/images/headshot.jpg'],
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };
 
 const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://richardewing.io/#person",
+    "@id": "https://www.richardewing.io/#person",
     "name": "Richard Ewing",
     "jobTitle": ["Product Economist", "AI Capital Auditor"],
     "description": "Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram, the verification infrastructure for AI.",
-    "url": "https://richardewing.io",
-    "image": "https://richardewing.io/assets/images/headshot.jpg",
+    "url": "https://www.richardewing.io",
+    "image": "https://www.richardewing.io/assets/images/headshot.jpg",
     "sameAs": [
         "https://linkedin.com/in/richardewing",
         "https://twitter.com/richardewing",
@@ -72,7 +72,7 @@ const personSchema = {
     "brand": {
         "@type": "Brand",
         "name": "The Product Economist",
-        "url": "https://richardewing.io"
+        "url": "https://www.richardewing.io"
     }
 };
 

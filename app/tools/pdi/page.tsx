@@ -14,12 +14,12 @@ export const metadata: Metadata = {
         'free technical debt tool',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/tools/pdi',
+        canonical: 'https://www.richardewing.io/tools/pdi',
     },
     openGraph: {
         title: 'Product Debt Index | Quantify Hidden Tech Debt',
         description: 'Are you building assets or just servicing liabilities? Calculate your true engineering ROI.',
-        url: 'https://richardewing.io/tools/pdi',
+        url: 'https://www.richardewing.io/tools/pdi',
         type: 'website',
     },
     twitter: {

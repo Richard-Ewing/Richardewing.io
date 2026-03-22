@@ -15,12 +15,12 @@ export const metadata: Metadata = {
         'churn impact valuation',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/tools/ev-se',
+        canonical: 'https://www.richardewing.io/tools/ev-se',
     },
     openGraph: {
         title: 'EV-SE Valuation Engine | Model Execution Risk',
         description: 'Calculate the cost of uncertainty in your valuation. Defend your multiple.',
-        url: 'https://richardewing.io/tools/ev-se',
+        url: 'https://www.richardewing.io/tools/ev-se',
         type: 'website',
     },
     twitter: {

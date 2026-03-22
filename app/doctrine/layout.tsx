@@ -16,12 +16,12 @@ export const metadata: Metadata = {
         'kill switch protocol',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/doctrine',
+        canonical: 'https://www.richardewing.io/doctrine',
     },
     openGraph: {
         title: 'The Doctrine of Product Economics | Richard Ewing',
         description: 'The immutable laws of software solvency. Strategic definitions that govern R&D capital allocation and engineering accountability.',
-        url: 'https://richardewing.io/doctrine',
+        url: 'https://www.richardewing.io/doctrine',
         type: 'website',
     },
     twitter: {

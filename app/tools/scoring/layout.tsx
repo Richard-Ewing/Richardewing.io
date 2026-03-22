@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         title: 'Audit Interview Scoring | Product Economist',
         description: 'Quantify candidate judgment and capital risk awareness with the Audit Interview committee review.',
         type: 'website',
-        url: 'https://richardewing.io/tools/scoring',
+        url: 'https://www.richardewing.io/tools/scoring',
     },
     twitter: {
         card: 'summary',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         description: 'Committee review scoring for engineering judgment assessment.',
     },
     alternates: {
-        canonical: 'https://richardewing.io/tools/scoring',
+        canonical: 'https://www.richardewing.io/tools/scoring',
     },
 };
 

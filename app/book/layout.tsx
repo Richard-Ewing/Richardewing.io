@@ -12,12 +12,12 @@ export const metadata: Metadata = {
         'engineering economics',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/book',
+        canonical: 'https://www.richardewing.io/book',
     },
     openGraph: {
         title: 'The Product Economist — Book by Richard Ewing',
         description: 'The definitive guide to R&D capital allocation and technical debt valuation. Coming soon.',
-        url: 'https://richardewing.io/book',
+        url: 'https://www.richardewing.io/book',
         type: 'book',
     },
     twitter: {

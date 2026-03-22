@@ -4,7 +4,7 @@ export const metadata: Metadata = {
     title: 'Legal & Terms of Use',
     description: 'Terms of service, privacy policy, intellectual property, and advisory disclaimers for richardewing.io.',
     alternates: {
-        canonical: 'https://richardewing.io/legal',
+        canonical: 'https://www.richardewing.io/legal',
     },
     robots: {
         index: true,

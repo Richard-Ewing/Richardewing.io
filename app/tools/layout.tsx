@@ -16,12 +16,12 @@ export const metadata: Metadata = {
         'LLM cost comparison',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/tools',
+        canonical: 'https://www.richardewing.io/tools',
     },
     openGraph: {
         title: 'Free Diagnostic Tools | Product Economist',
         description: 'Quantify technical debt, AI costs, enterprise value risk, and engineering efficiency. Five free diagnostic tools.',
-        url: 'https://richardewing.io/tools',
+        url: 'https://www.richardewing.io/tools',
         type: 'website',
     },
     twitter: {

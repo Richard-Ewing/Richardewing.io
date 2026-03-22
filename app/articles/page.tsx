@@ -16,12 +16,12 @@ export const metadata: Metadata = {
         'forensic engineering',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/articles',
+        canonical: 'https://www.richardewing.io/articles',
     },
     openGraph: {
         title: 'Forensic Engineering Research & Articles | Richard Ewing',
         description: 'The canonical hub for frameworks and research used by top PE firms. Published in CIO.com, Built In, Mind the Product, and HackerNoon.',
-        url: 'https://richardewing.io/articles',
+        url: 'https://www.richardewing.io/articles',
         type: 'website',
     },
     twitter: {

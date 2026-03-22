@@ -14,12 +14,12 @@ export const metadata: Metadata = {
         'Richard Ewing',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/manifesto',
+        canonical: 'https://www.richardewing.io/manifesto',
     },
     openGraph: {
         title: 'The Product Economist Manifesto',
         description: 'The era of the "Happy Builder" is over. Innovation without solvency is just philanthropy.',
-        url: 'https://richardewing.io/manifesto',
+        url: 'https://www.richardewing.io/manifesto',
         type: 'article',
     },
     twitter: {

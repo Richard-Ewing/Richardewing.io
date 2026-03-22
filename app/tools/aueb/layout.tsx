@@ -8,7 +8,7 @@ export const metadata: Metadata = {
         title: 'LLM Cost Calculator | AI Unit Economics Benchmark',
         description: 'Calculate your AI margin collapse point. Compare GPT-4, Claude, and open-source LLM costs.',
         type: 'website',
-        url: 'https://richardewing.io/tools/aueb',
+        url: 'https://www.richardewing.io/tools/aueb',
     },
     twitter: {
         card: 'summary_large_image',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         description: 'Calculate GPT-4, Claude, and LLM costs. Prevent AI margin collapse.',
     },
     alternates: {
-        canonical: 'https://richardewing.io/tools/aueb',
+        canonical: 'https://www.richardewing.io/tools/aueb',
     },
 };
 
@@ -32,7 +32,7 @@ export default function AUEBLayout({ children }: { children: React.ReactNode }) 
                         name: 'AI Unit Economics Benchmark™ (AUEB)',
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
-                        url: 'https://richardewing.io/tools/aueb',
+                        url: 'https://www.richardewing.io/tools/aueb',
                         description: 'Calculate your AI margin collapse point. Compare GPT-4, Claude, and open-source LLM costs. Prevent AI hallucination debt with the AUEB diagnostic by Richard Ewing.',
                         featureList: [
                             'LLM Cost Comparison (GPT-4, Claude, Llama)',
@@ -48,10 +48,10 @@ export default function AUEBLayout({ children }: { children: React.ReactNode }) 
                         },
                         creator: {
                             '@type': 'Person',
-                            '@id': 'https://richardewing.io/#person',
+                            '@id': 'https://www.richardewing.io/#person',
                             name: 'Richard Ewing',
                             jobTitle: 'Product Economist',
-                            url: 'https://richardewing.io',
+                            url: 'https://www.richardewing.io',
                         },
                     }),
                 }}

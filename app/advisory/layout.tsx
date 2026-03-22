@@ -18,12 +18,12 @@ export const metadata: Metadata = {
         'fractional CPO',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/advisory',
+        canonical: 'https://www.richardewing.io/advisory',
     },
     openGraph: {
         title: 'Intervention Protocols | R&D Audit & AI Cost Governance',
         description: 'Surgical interventions for AI hallucination debt, zombie infrastructure, and structural margin collapse. From $450 to $7,500 forensic audits.',
-        url: 'https://richardewing.io/advisory',
+        url: 'https://www.richardewing.io/advisory',
         type: 'website',
     },
     twitter: {

@@ -15,12 +15,12 @@ export const metadata: Metadata = {
         'AI volatility tax',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/briefings',
+        canonical: 'https://www.richardewing.io/briefings',
     },
     openGraph: {
         title: 'Executive Briefings | War-Time Leadership Support',
         description: 'High-signal intelligence on engineering economics, AI cost governance, and the subprime code crisis.',
-        url: 'https://richardewing.io/briefings',
+        url: 'https://www.richardewing.io/briefings',
         type: 'website',
     },
     twitter: {

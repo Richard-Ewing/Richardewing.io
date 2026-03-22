@@ -15,12 +15,12 @@ export const metadata: Metadata = {
         'R&D audit thought leadership',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/profiles',
+        canonical: 'https://www.richardewing.io/profiles',
     },
     openGraph: {
         title: 'Published Profiles & Media | Richard Ewing',
         description: 'Expert contributor at CIO.com, Built In, Mind the Product, and HackerNoon. Read Richard Ewing\'s published work on product economics and AI strategy.',
-        url: 'https://richardewing.io/profiles',
+        url: 'https://www.richardewing.io/profiles',
         type: 'website',
     },
     twitter: {

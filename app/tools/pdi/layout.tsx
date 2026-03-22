@@ -8,7 +8,7 @@ export const metadata: Metadata = {
         title: 'Technical Debt Calculator | Product Debt Index™',
         description: 'Forensic calculator to quantify the financial cost of technical debt. See your engineering insolvency horizon.',
         type: 'website',
-        url: 'https://richardewing.io/tools/pdi',
+        url: 'https://www.richardewing.io/tools/pdi',
     },
     twitter: {
         card: 'summary_large_image',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         description: 'Quantify the financial cost of legacy code and maintenance burden.',
     },
     alternates: {
-        canonical: 'https://richardewing.io/tools/pdi',
+        canonical: 'https://www.richardewing.io/tools/pdi',
     },
 };
 
@@ -32,7 +32,7 @@ export default function PDILayout({ children }: { children: React.ReactNode }) {
                         name: 'Product Debt Index™ (PDI)',
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
-                        url: 'https://richardewing.io/tools/pdi',
+                        url: 'https://www.richardewing.io/tools/pdi',
                         description: 'Forensic technical debt calculator. Quantify the financial cost of legacy code, refactoring vs. features, and engineering insolvency. A proprietary financial calculator authored by Richard Ewing, Product Economist.',
                         featureList: [
                             'Technical Debt Dollar Quantification',
@@ -47,10 +47,10 @@ export default function PDILayout({ children }: { children: React.ReactNode }) {
                         },
                         creator: {
                             '@type': 'Person',
-                            '@id': 'https://richardewing.io/#person',
+                            '@id': 'https://www.richardewing.io/#person',
                             name: 'Richard Ewing',
                             jobTitle: 'Product Economist',
-                            url: 'https://richardewing.io',
+                            url: 'https://www.richardewing.io',
                         },
                     }),
                 }}

@@ -16,12 +16,12 @@ export const metadata: Metadata = {
         'autonomous agent liability',
     ],
     alternates: {
-        canonical: 'https://richardewing.io/exogram',
+        canonical: 'https://www.richardewing.io/exogram',
     },
     openGraph: {
         title: 'Exogram — The Verification Infrastructure for AI',
         description: 'LLMs generate language. Exogram maintains reality. The missing trust layer between models and applications.',
-        url: 'https://richardewing.io/exogram',
+        url: 'https://www.richardewing.io/exogram',
         type: 'website',
     },
     twitter: {
@@ -49,10 +49,10 @@ export default function ExogramLayout({
                         description: 'Verification infrastructure for AI. The missing trust layer between models and applications. Prevents hallucination propagation with deterministic control planes.',
                         founder: {
                             '@type': 'Person',
-                            '@id': 'https://richardewing.io/#person',
+                            '@id': 'https://www.richardewing.io/#person',
                             name: 'Richard Ewing',
                             jobTitle: 'Product Economist',
-                            url: 'https://richardewing.io',
+                            url: 'https://www.richardewing.io',
                         },
                         foundingDate: '2025',
                         knowsAbout: [
