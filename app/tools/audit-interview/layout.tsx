@@ -1,24 +1,10 @@
 import type { Metadata } from 'next';
+import { auditInterviewKeywords } from '../../lib/keywords';
 
 export const metadata: Metadata = {
     title: 'The Audit Interview | Engineering Judgment Assessment for the AI Age',
     description: 'The hiring protocol for the AI age. Test verification skills, not generation skills. AI-powered simulation based on the methodology from Built In\'s "Death of the Syntax Interview." Created by Richard Ewing.',
-    keywords: [
-        'audit interview', 'engineering hiring assessment',
-        'AI age interview', 'verification skills test',
-        'product economist hiring', 'war-time leadership assessment',
-        'engineering judgment test', 'technical interview alternative',
-        // Everyday hiring and interview terms
-        'how to hire engineers', 'engineering interview questions',
-        'best technical interview methods', 'hire better engineers',
-        'engineering leadership interview', 'CTO hiring assessment',
-        'senior engineer assessment', 'AI-powered hiring tool',
-        'free engineering assessment', 'developer skills test',
-        'coding interview alternative', 'stop whiteboard interviews',
-        'assess engineering judgment', 'hire for problem solving',
-        'engineering culture fit assessment', 'technical screening tool',
-        'behavioral interview for engineers', 'product manager assessment',
-    ],
+    keywords: auditInterviewKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/tools/audit-interview',
     },

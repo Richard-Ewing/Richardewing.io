@@ -1,25 +1,10 @@
 import type { Metadata } from 'next';
+import { doctrineKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
     title: 'The Doctrine of Product Economics | Operational Principles',
     description: 'The immutable laws of software solvency. Capital allocation over agile theater. Technical Insolvency Date. The Innovation Tax. Strategic definitions that govern the Product Economist methodology.',
-    keywords: [
-        'product economics doctrine', 'technical insolvency date',
-        'innovation tax', 'capital allocation', 'agile theater',
-        'product economist', 'software solvency', 'R&D capital efficiency',
-        'technical debt valuation', 'kill switch protocol',
-        // Everyday terms
-        'engineering management principles', 'capital allocation strategy',
-        'how to prioritize engineering work', 'build vs buy decision framework',
-        'R&D budgeting best practices', 'engineering leadership principles',
-        'product management frameworks', 'software economics',
-        'engineering OKRs', 'product strategy frameworks 2026',
-        'technical leadership best practices', 'CTO playbook',
-        'when to kill a product', 'feature factory problem',
-        'agile is broken', 'beyond scrum', 'post-agile engineering',
-        'engineering accountability framework', 'R&D governance',
-        'product-led growth metrics', 'engineering excellence framework',
-    ],
+    keywords: doctrineKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/doctrine',
     },

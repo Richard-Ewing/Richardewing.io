@@ -1,24 +1,10 @@
 import type { Metadata } from 'next';
+import { aperKeywords } from '../../lib/keywords';
 
 export const metadata: Metadata = {
     title: 'Revenue Per Engineer Benchmark | Engineering Efficiency Calculator',
     description: 'Are you overstaffed? Calculate your Revenue Per Engineer (APER™) and compare against elite SaaS benchmarks (Stripe, Figma). Diagnose organizational bloat.',
-    keywords: [
-        'revenue per engineer', 'engineering efficiency metrics',
-        'developer productivity benchmark', 'SaaS headcount ratios',
-        'APER diagnostic', 'engineering roi calculator', 'team efficiency benchmark',
-        // High-volume everyday terms
-        'how many engineers do I need', 'engineering team size calculator',
-        'average revenue per developer', 'software engineer cost calculator',
-        'developer productivity metrics', 'engineering headcount planning',
-        'is my engineering team too big', 'engineering cost benchmarks',
-        'cost per developer', 'engineering team size benchmark',
-        'how to measure developer productivity', 'DORA metrics',
-        'engineering velocity', 'developer output metrics',
-        'how productive are my engineers', 'engineering spend ratio',
-        'Stripe revenue per engineer', 'Figma engineering efficiency',
-        'engineering organizational bloat', 'right-sizing engineering team',
-    ],
+    keywords: aperKeywords,
     openGraph: {
         title: 'Revenue Per Engineer Benchmark | APER™',
         description: 'Calculate your Revenue Per Engineer and compare against elite SaaS companies.',

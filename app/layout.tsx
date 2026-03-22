@@ -4,6 +4,7 @@ import './globals.css';
 import Navigation from './components/Navigation';
 import { Footer } from './components/footer';
 import { personSchema, professionalServiceSchema } from './lib/schemas';
+import { homepageKeywords } from './lib/keywords';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk' });
@@ -25,32 +26,7 @@ export const metadata: Metadata = {
     template: '%s | Richard Ewing'
   },
   description: 'I audit engineering spend and surface the capital risks your metrics don\'t show. Product Economist, AI Capital Auditor, and Founder of Exogram. Independent R&D oversight for CFOs, CTOs, and boards. $25M ARR scaled. Published in Foundry & Built In.',
-  keywords: [
-    // Core identity
-    'product economist', 'AI capital auditor', 'Richard Ewing', 'Exogram',
-    // High-volume everyday terms
-    'how to reduce engineering costs', 'AI ROI calculator', 'is AI worth the cost',
-    'startup burn rate optimization', 'engineering budget audit', 'CTO consulting',
-    'how to cut software development costs', 'reduce cloud spending',
-    'AI implementation cost', 'GPT-4 cost per query', 'LLM pricing 2026',
-    'SaaS unit economics', 'engineering team productivity', 'developer cost optimization',
-    // B2B decision-maker terms
-    'R&D audit', 'technical debt valuation', 'AI cost governance',
-    'engineering ROI', 'capital allocation', 'independent technology audit',
-    'fractional CTO', 'fractional CPO', 'board-level technology advisory',
-    'due diligence technology assessment', 'private equity tech audit',
-    // Problem-aware terms
-    'AI hallucination debt', 'zombie infrastructure', 'subprime code crisis',
-    'technical debt crisis', 'engineering overspending', 'AI cost overrun',
-    'software maintenance costs too high', 'legacy code migration cost',
-    'AI spending out of control', 'engineering team too big',
-    // Industry terms 2026
-    'AI cost optimization 2026', 'generative AI costs', 'AI governance framework',
-    'AI agent costs', 'LLM token pricing', 'AI inference costs',
-    'SaaS gross margin', 'usage-based pricing model', 'vertical SaaS metrics',
-    'engineering management consulting', 'technology risk assessment',
-    'deterministic AI', 'AI verification', 'AI trust layer',
-  ],
+  keywords: homepageKeywords,
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
   publisher: 'Richard Ewing',

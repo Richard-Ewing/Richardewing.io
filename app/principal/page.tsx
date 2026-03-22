@@ -1,24 +1,11 @@
 import type { Metadata } from 'next';
+import { principalKeywords } from '../lib/keywords';
 import PrincipalContent from '../components/principal-content';
 
 export const metadata: Metadata = {
     title: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
     description: 'Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse. Founder of Exogram. Creator of the Product Economist Framework. $25M ARR Scaled. Published in CIO.com & Built In.',
-    keywords: [
-        'product economist', 'AI capital auditor', 'Richard Ewing', 'Exogram founder',
-        'AI hallucination debt', 'zombie infrastructure', 'R&D audit',
-        'technical debt valuation', 'deterministic AI infrastructure',
-        'subprime code crisis', 'AI unit economics',
-        // Discovery terms
-        'who is Richard Ewing', 'product economist consultant',
-        'AI advisor for executives', 'technology thought leader',
-        'engineering cost expert', 'AI spending expert',
-        'fractional CTO', 'independent board advisor technology',
-        'SaaS growth expert', 'startup scaling advisor',
-        'CIO.com contributor', 'Built In contributor',
-        'AI governance expert', 'technical debt expert',
-        'engineering audit expert', 'R&D capital expert',
-    ],
+    keywords: principalKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/principal',
     },

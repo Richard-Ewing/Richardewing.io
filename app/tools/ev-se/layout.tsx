@@ -1,24 +1,10 @@
 import type { Metadata } from 'next';
+import { evseKeywords } from '../../lib/keywords';
 
 export const metadata: Metadata = {
     title: 'SaaS Valuation Calculator | Risk-Adjusted Revenue Multiples',
     description: 'Calculate your true Enterprise Value (EV). Adjust SaaS revenue multiples for churn risk, scope creep, and execution confidence. The EV-SE Engine™.',
-    keywords: [
-        'SaaS valuation calculator', 'revenue multiple calculator',
-        'SaaS exit calculator', 'ARR multiples 2026', 'startup valuation model',
-        'private equity due diligence', 'enterprise value calculator',
-        // High-volume everyday terms
-        'how to value a SaaS company', 'what is my company worth',
-        'SaaS revenue multiples 2026', 'startup valuation calculator',
-        'how much is my SaaS business worth', 'ARR valuation multiple',
-        'NRR calculator', 'net revenue retention calculator',
-        'SaaS exit strategy', 'SaaS acquisition valuation',
-        'rule of 40 calculator', 'SaaS metrics dashboard',
-        'software company valuation', 'B2B SaaS benchmarks',
-        'MRR to ARR calculator', 'churn rate impact on valuation',
-        'SaaS company worth calculator', 'free startup valuation tool',
-        'venture capital valuation model', 'pre-money post-money calculator',
-    ],
+    keywords: evseKeywords,
     openGraph: {
         title: 'SaaS Valuation Calculator | Risk-Adjusted Multiples',
         description: 'Calculate risk-adjusted enterprise value. See your Wealth Destruction Gap.',

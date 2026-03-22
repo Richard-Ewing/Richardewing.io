@@ -1,24 +1,10 @@
 import type { Metadata } from 'next';
+import { pdiKeywords } from '../../lib/keywords';
 
 export const metadata: Metadata = {
     title: 'Technical Debt Calculator | The Product Debt Index™ (PDI)',
     description: 'Forensic technical debt calculator. Quantify the financial cost of legacy code, refactoring vs. features, and engineering insolvency. Stop capital leakage.',
-    keywords: [
-        'technical debt calculator', 'cost of technical debt', 'refactoring ROI',
-        'engineering velocity metrics', 'legacy code audit', 'software maintenance costs',
-        'tech debt ratio', 'product debt',
-        // High-volume everyday terms
-        'how to measure technical debt', 'technical debt examples',
-        'what is technical debt', 'technical debt cost calculator',
-        'how to calculate refactoring cost', 'code quality metrics',
-        'legacy system migration cost', 'software modernization calculator',
-        'engineering capacity calculator', 'development velocity calculator',
-        'how to prioritize refactoring', 'maintenance vs new features',
-        'tech debt management tool', 'free engineering tools',
-        'software development cost estimator', 'code maintenance cost',
-        'application modernization cost estimator', 'DORA metrics calculator',
-        'engineering time spent on maintenance', 'technical debt dashboard',
-    ],
+    keywords: pdiKeywords,
     openGraph: {
         title: 'Technical Debt Calculator | Product Debt Index™',
         description: 'Forensic calculator to quantify the financial cost of technical debt. See your engineering insolvency horizon.',
