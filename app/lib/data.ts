@@ -137,79 +137,116 @@ export const frameworks = [
     {
         slug: 'technical-insolvency-date',
         name: 'Technical Insolvency Date',
-        definition: 'The Technical Insolvency Date is the specific future quarter when an organization\'s technical debt maintenance will consume 100% of engineering capacity, leaving zero time for new development. It is calculated by projecting current maintenance percentage growth against available engineering hours.',
-        whyItMatters: 'Most organizations track technical debt qualitatively ("we have some debt") rather than quantitatively ("we are 8 quarters from insolvency"). The Technical Insolvency Date makes the risk concrete and actionable.',
+        definition: `The Technical Insolvency Date (TID) is the specific future quarter when an organization's technical debt maintenance will consume 100% of engineering capacity, leaving zero time for new feature development.\n\nEvery software organization accumulates technical debt over time — shortcuts taken under deadline pressure, aging infrastructure, deprecated dependencies, and code that nobody understands anymore. This debt isn't free. It requires ongoing maintenance hours: bug fixes, security patches, dependency updates, and workarounds for architectural limitations.\n\nThe critical insight is that maintenance burden grows faster than most leaders realize. If your team currently spends 40% of its time on maintenance and that percentage is growing 3% per quarter, you can calculate the exact quarter when maintenance reaches 100%. That quarter is your Technical Insolvency Date.\n\nAt the TID, your engineering team is fully consumed by keeping existing systems alive. Feature velocity drops to zero. No new capabilities. No competitive response. No innovation. Your R&D investment becomes pure maintenance spend — you're paying innovation-era salaries for maintenance-era output.\n\nThe concept draws from financial insolvency: the point where a company's liabilities exceed its assets and it cannot meet its obligations. Technical insolvency is the same idea applied to engineering capacity — the point where your maintenance obligations exceed your available engineering hours.\n\nMost organizations don't realize they're approaching the TID because they track technical debt qualitatively rather than quantitatively. Telling a board "we have technical debt" gets deprioritized. Telling a board "we are 8 quarters from technical insolvency — the point where we can no longer ship any new features" gets immediate action and budget allocation.`,
+        whyItMatters: `The TID transforms technical debt from a vague engineering concern into a concrete, dated financial risk that CFOs and board members can understand and act on.\n\nFor investors performing due diligence, the TID is a red flag indicator. A company approaching its TID is a company whose product will stop evolving — making it a poor acquisition target and an increasingly risky investment.\n\nFor CFOs, the TID provides a clear ROI framework for technical debt remediation. If $500K of refactoring investment extends the TID by 8 quarters, that investment is preserving $2M+ of annual feature development capacity.\n\nFor engineering leaders, the TID is the most powerful communication tool for securing refactoring budget. It converts abstract technical concerns into business-critical timeline risks that executives understand.`,
         howToCalculate: [
-            'Measure current maintenance percentage (% of eng time on bugs, debt, maintenance)',
-            'Track growth rate quarter-over-quarter',
-            'Project forward until maintenance = 100%',
-            'That quarter is your Technical Insolvency Date'
+            'Measure current maintenance percentage (% of engineering time on bugs, debt, maintenance, keeping-the-lights-on)',
+            'Track growth rate quarter-over-quarter for at least 2-3 quarters',
+            'Project forward: current maintenance % + (growth rate × quarters) = 100%',
+            'That quarter is your Technical Insolvency Date',
+            'Calculate the dollar value: maintenance hours × fully-loaded engineer cost = annual maintenance spend',
+            'Use the Product Debt Index (PDI) calculator at richardewing.io/tools/pdi for automated calculation'
         ],
         relatedArticles: [
-            { title: 'Why Your CFO Hates Agile', publication: 'CIO.com', date: 'Feb 2026', url: 'https://www.cio.com' },
-            { title: 'The Four Horsemen of Technical Insolvency', publication: 'Built In', date: 'Jan 2026', url: 'https://builtin.com' }
+            { title: 'Why Your CFO Hates Agile', publication: 'CIO.com', date: 'Mar 2026', url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html' },
+            { title: 'The Technical Insolvency Date', publication: 'The Canon', date: 'Jan 2026', url: '/articles/technical-insolvency-date' }
         ],
-        relatedTool: { name: 'PDI Tool', url: '/tools/pdi' }
+        relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }
     },
     {
         slug: 'innovation-tax',
         name: 'Innovation Tax',
-        definition: 'Innovation Tax is the hidden cost of maintenance work that gets reported as innovation investment in financial and board reporting. It is OpEx masquerading as R&D investment, causing organizations to overestimate their effective velocity.',
-        whyItMatters: 'When a team reports "65% of time on new features" but the actual number is 23%, the 42-point gap is the Innovation Tax. This gap causes CFOs and boards to dramatically overestimate R&D productivity.',
-        relatedArticles: [
-            { title: 'The Innovation Tax', publication: 'CIO.com', date: 'Jan 2026', url: 'https://www.cio.com' }
+        definition: `The Innovation Tax is the hidden cost of maintenance work that gets reported as innovation investment. It is OpEx masquerading as R&D investment, causing organizations to dramatically overestimate their effective engineering velocity and R&D productivity.\n\nHere's how it works: A VP of Engineering reports to the CEO that "65% of engineering time is spent on new features." The actual breakdown, when forensically audited, reveals that only 23% of engineering time produces genuine new capabilities. The remaining 42% is maintenance work embedded within feature sprints — bug fixes bundled into feature stories, infrastructure upgrades coded as dependencies, and refactoring disguised as feature prerequisites.\n\nThis 42-point gap between reported and actual innovation investment is the Innovation Tax. It's not fraud — it's systematic self-deception enabled by the way agile teams organize work. When a sprint contains 10 stories and 4 of them are technical debt cleanup dressed as "tech stories" within a feature epic, the team genuinely believes they're spending 100% on features.\n\nThe Innovation Tax is insidious because it compounds. As the maintenance burden grows quarter-over-quarter, the tax increases. But because teams don't measure it, CFOs and boards continue to believe R&D spending is generating proportional innovation output. By the time the gap becomes visible (missed deadlines, slow feature delivery, competitive lag), the organization is often approaching the Technical Insolvency Date.\n\nBenchmarks from Richard Ewing's audits show that most engineering organizations have an Innovation Tax between 30-50%. Organizations with Innovation Tax above 40% are in dangerous territory. Above 70% is terminal — the organization is approaching technical insolvency within 4-6 quarters.`,
+        whyItMatters: `The Innovation Tax explains the disconnect executives feel when engineering teams report high velocity but competitive position erodes. "We shipped 200 features last year!" doesn't matter if 150 of those "features" were maintenance work relabeled.\n\nFor CFOs, the Innovation Tax reveals that R&D capitalization may be overstated. If maintenance work is being capitalized as R&D, the company's financials may not accurately reflect its true operating costs.\n\nFor boards evaluating management performance, the Innovation Tax is a leading indicator of organizational health. An Innovation Tax trending upward means the company is slowly losing its ability to innovate — even if revenue metrics look healthy today.\n\nThe Innovation Tax is the first metric Richard Ewing calculates in every R&D Capital Audit engagement. It sets the baseline for all subsequent analysis.`,
+        howToCalculate: [
+            'Audit 3 months of completed sprints by categorizing every story/ticket',
+            'Categories: genuine new capability, maintenance/bugs, tech debt reduction, infrastructure, dependencies',
+            'Calculate: reported innovation % minus actual new capability % = Innovation Tax',
+            'Express in dollars: Innovation Tax % × total R&D spend = wasted "innovation" spend',
+            'Benchmark: <30% healthy, 30-50% concerning, 50-70% dangerous, >70% terminal'
         ],
-        relatedTool: { name: 'PDI Tool', url: '/tools/pdi' }
+        relatedArticles: [
+            { title: 'The Innovation Tax', publication: 'CIO.com / Foundry', date: 'Dec 2025', url: '/articles/innovation-tax' },
+            { title: 'Why Your CFO Hates Your Agile Transformation', publication: 'CIO.com', date: 'Mar 2026', url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html' }
+        ],
+        relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }
     },
     {
         slug: 'cost-of-predictivity',
         name: 'Cost of Predictivity',
-        definition: 'The Cost of Predictivity measures the variable cost of AI accuracy. As AI models degrade, require more tokens to maintain quality, or need retraining, the cost per useful output increases. This creates margin compression that traditional engineering metrics don\'t capture.',
-        whyItMatters: 'Unlike traditional code (fixed development cost, near-zero marginal cost), AI features have variable costs that scale with usage. Success makes you poorer unless you track Cost of Predictivity.',
+        definition: `The Cost of Predictivity measures the variable cost of AI accuracy. Unlike traditional software with near-zero marginal costs, AI features have significant variable costs that scale with both usage AND accuracy requirements. As AI correctness increases, cost scales exponentially — not linearly.\n\nThis is the fundamental economic challenge of AI products. Traditional software follows a simple cost model: high fixed development cost, near-zero marginal cost per user. Build the feature once, serve it to millions for pennies. AI products break this model entirely.\n\nEvery AI query costs compute. Every inference requires GPU cycles. Every improvement in accuracy requires either more sophisticated prompts (more tokens = more cost), retrieval-augmented generation (vector DB queries + embedding generation), or fine-tuned models (massive training costs amortized over queries). The cost structure looks more like a manufacturing business than a software business.\n\nThe exponential curve is the killer. Moving from 80% accuracy to 90% accuracy might cost 2x. Moving from 90% to 95% might cost 5x. Moving from 95% to 99% often costs 10-20x. This is because the easy cases are solved by the base model, and each additional percentage point of accuracy requires increasingly sophisticated (and expensive) techniques to handle edge cases.\n\nThis creates what Richard Ewing calls the AI Margin Collapse Point: the usage volume at which AI feature costs exceed the revenue they generate. Many AI features that work beautifully in prototype (low volume, don't need high accuracy) become economically devastating in production (high volume, users demand high accuracy).\n\nThe AI Unit Economics Benchmark (AUEB) calculator at richardewing.io/tools/aueb helps companies calculate their Cost of Predictivity and identify their specific margin collapse point before it hits their P&L.`,
+        whyItMatters: `Most AI products fail on economics, not technology. The product works — it just costs more to run than it generates in revenue. The Cost of Predictivity explains why: success makes you poorer unless you understand the exponential relationship between accuracy and cost.\n\nFor product leaders, the Cost of Predictivity should be calculated BEFORE building AI features, not after launching them. Many teams discover the economics are unworkable only after they've committed to an AI-first architecture.\n\nFor investors, the Cost of Predictivity is a due diligence essential. "What's your cost per useful AI output, and how does it change as you scale?" separates AI companies with viable economics from those that are quietly burning cash on inference costs.\n\nFor CFOs, AI costs are often buried in cloud compute bills rather than attributed to specific features. The Cost of Predictivity framework forces feature-level cost attribution — revealing which AI features are profitable and which are margin destroyers.`,
         howToCalculate: [
-            'Total AI compute cost (monthly)',
-            'Divided by useful outputs generated',
-            'Equals Cost of Predictivity per output'
+            'Total AI compute cost per month (API calls + inference + embedding generation + vector DB)',
+            'Divided by useful outputs generated (outputs that users actually accepted/used)',
+            'Equals Cost of Predictivity per useful output',
+            'Track this metric at different accuracy thresholds to see the exponential curve',
+            'Calculate your AI Margin Collapse Point: the volume where AI costs exceed feature revenue',
+            'Use the AUEB calculator at richardewing.io/tools/aueb for automated benchmarking'
         ],
         relatedArticles: [
-            { title: 'The AI Volatility Tax', publication: 'Built In', date: 'Feb 2026', url: 'https://builtin.com' }
+            { title: 'The Cost of Predictivity', publication: 'Built In', date: 'Nov 2025', url: '/articles/cost-of-predictivity' },
+            { title: 'The AI Product Business Test', publication: 'Built In (Editor\'s Pick)', date: 'Jan 2026', url: 'https://builtin.com/articles/ai-product-business-test' }
         ],
-        relatedTool: { name: 'AUEB Tool', url: '/tools/aueb' }
+        relatedTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }
     },
     {
         slug: 'audit-interview',
         name: 'Audit Interview',
-        definition: 'The Audit Interview is a hiring protocol that tests verification skills instead of code generation skills. Candidates are given AI-generated code with hidden flaws and asked to identify the problems. This approach recognizes that AI can generate code, but catching AI mistakes is a scarce human skill.',
-        whyItMatters: 'Traditional syntax interviews test a skill AI now performs better than humans. When Anthropic revealed candidates were using Claude to cheat on coding interviews, it proved the test was measuring the wrong thing.',
+        definition: `The Audit Interview is a hiring protocol that tests verification skills instead of code generation skills. In the AI age, the scarce human skill is not writing code — it's catching what AI gets wrong.\n\nTraditional coding interviews ask candidates to write algorithms on a whiteboard or in a shared editor. This was a reasonable proxy for engineering skill when humans wrote all the code. But in 2026, AI tools like GitHub Copilot, Cursor, and Claude generate code faster and often more correctly than human candidates under interview pressure.\n\nWhen Anthropic discovered that candidates were using Claude to pass their own coding interviews, it proved that traditional interviews are testing the wrong thing. They're testing a skill that AI performs better than humans under artificial conditions.\n\nThe Audit Interview flips the model. Instead of asking candidates to generate code, it presents them with AI-generated code that contains hidden flaws — security vulnerabilities, logic errors, performance anti-patterns, edge case failures, and architectural problems. The candidate's job is to find the bugs, rank them by severity, and make a ship/no-ship recommendation.\n\nThe protocol works like this: candidates receive a realistic code review scenario (500-1000 lines of AI-generated code with 3-5 hidden flaws). They have 10 minutes to review the code, identify issues, and present their findings. The evaluation scores 4 dimensions of engineering judgment:\n\n1. Verification: How many bugs did they find? Did they catch the security vulnerability?\n2. Prioritization: Did they correctly rank issues by severity?\n3. Communication: Can they explain the risk to a non-technical stakeholder?\n4. Judgment: Would they ship this code? Under what conditions? With what caveats?\n\nThe free Audit Interview tool at richardewing.io/tools/audit-interview generates realistic AI-written code with calibrated flaws for interviewers to use immediately.`,
+        whyItMatters: `When AI writes the code, employers need to hire for judgment, not syntax. The Audit Interview tests the skills that actually matter in AI-age engineering: finding problems, assessing risk, and making informed ship decisions.\n\nFor hiring managers, the Audit Interview provides a more realistic assessment of how candidates will perform on the job. Modern engineers spend more time reviewing AI-generated code than writing code from scratch.\n\nFor engineering leaders building interview processes, the Audit Interview is resistant to AI cheating — you can't use AI to find problems in AI-generated code as effectively as an experienced engineer can. The nuanced judgment calls (Is this a P0 security issue or a P3 style issue?) require human experience.\n\nFor candidates, the Audit Interview is actually more humane than traditional coding interviews. It reduces anxiety (you're not writing code under pressure) and it tests practical skills that candidates use daily.`,
         howToCalculate: [
-            'Present AI-generated code with 3-5 hidden bugs',
-            'Candidate has 10 minutes to find issues',
-            'Score based on bugs found and severity ranking',
-            'Follow up with "what would you ship?" judgment call'
+            'Present AI-generated code with 3-5 hidden bugs of varying severity',
+            'Give candidate 10 minutes to review and identify issues',
+            'Score Verification: bugs found ÷ total bugs (weighted by severity)',
+            'Score Prioritization: correct severity ranking (P0/P1/P2/P3)',
+            'Score Communication: clarity of risk explanation',
+            'Score Judgment: quality of ship/no-ship recommendation and reasoning',
+            'Try it free at richardewing.io/tools/audit-interview'
         ],
         relatedArticles: [
-            { title: 'The Death of the Syntax Interview', publication: 'Built In', date: 'Jan 2026', url: 'https://builtin.com' }
+            { title: 'When AI Writes the Code, What Are Employers Hiring For?', publication: 'Built In', date: 'Feb 2026', url: 'https://builtin.com/articles/audit-interview-scorecard' },
+            { title: 'Reimagining the Coding Interview for the AI Generation', publication: 'Built In', date: 'Feb 2026', url: 'https://builtin.com/articles/reimagining-coding-interview' }
         ],
         relatedTool: { name: 'Audit Interview Tool', url: '/tools/audit-interview' }
     },
     {
         slug: 'kill-switch-protocol',
         name: 'Kill Switch Protocol',
-        definition: 'The Kill Switch Protocol is a framework for identifying and deprecating "Zombie Features" — code that requires ongoing maintenance but generates zero incremental value. It provides criteria for when to kill a feature and how to execute the deprecation.',
-        whyItMatters: 'Most organizations add features but never remove them. Over time, 40-60% of a codebase becomes maintenance burden with no corresponding value. The Kill Switch Protocol provides the discipline to subtract.',
-        relatedArticles: [
-            { title: 'Kill Switch Protocol', publication: 'Mind the Product', date: 'Feb 2026', url: 'https://www.mindtheproduct.com' }
+        definition: `The Kill Switch Protocol is a structured framework for identifying and deprecating "Zombie Features" — code that requires ongoing maintenance but generates zero incremental business value.\n\nMost software organizations have a dangerous bias: they add features but never remove them. Product teams celebrate launches. Nobody celebrates deletions. Over time, this creates what Richard Ewing calls "feature gravity" — a constantly growing codebase where 40-60% of the code serves no active users and generates no measurable revenue, yet still consumes engineering maintenance hours.\n\nZombie features come in several varieties:\n\n- **Ghost Features**: features that were built, launched, and never adopted. They sit in the codebase, requiring maintenance, but have near-zero usage.\n- **Legacy Bridges**: compatibility layers, deprecated API versions, and backward-compatible code paths that serve a tiny percentage of users but add complexity to every future change.\n- **Vanity Features**: features built because a senior stakeholder wanted them, not because users needed them. Often protected by organizational politics rather than business merit.\n- **Abandoned Experiments**: A/B test variants that were never cleaned up, prototypes that became permanent, and "temporary" solutions that became load-bearing.\n\nThe Kill Switch Protocol provides a systematic approach to identification, evaluation, and deprecation:\n\n1. **Identify**: Flag features with less than 5% of peak usage, zero revenue attribution, or maintenance cost exceeding 10% of the feature's value contribution.\n2. **Quantify**: Calculate the total cost of keeping each zombie alive (maintenance hours × fully-loaded engineer cost × opportunity cost multiplier).\n3. **Assess Risk**: Evaluate deprecation risk — what breaks if this feature is removed? What customers are affected?\n4. **Sunset Timeline**: Create a communication plan and graduated deprecation (warning → deprecation notice → feature flag → removal).\n5. **Execute**: Remove the code with rollback capability. Monitor for unexpected breakage.\n\nThe typical Kill Switch audit reveals that 30-50% of maintenance burden comes from zombie features. Removing them frees up 15-25% of engineering capacity for actual innovation.`,
+        whyItMatters: `Every feature you keep makes every future feature harder. The Kill Switch Protocol provides the organizational discipline to subtract — which is harder politically than adding but often creates more value.\n\nFor product leaders, the Kill Switch Protocol is the economic argument for saying "no" to feature preservation. When you can show that keeping a feature costs $180K/year in maintenance and generates $0 in attributable revenue, the kill decision becomes obvious.\n\nFor engineering leaders, the Kill Switch Protocol frees up capacity trapped in maintenance. A team that reclaims 20% of its capacity from zombie features effectively gets 20% more engineering headcount without any new hires.\n\nFor CFOs and boards, zombie features represent pure waste — capital spent maintaining things that don't generate value. The Kill Switch Protocol turns that waste into available capacity.`,
+        howToCalculate: [
+            'Inventory all features and map to usage metrics (DAU, MAU, revenue attribution)',
+            'Flag features below 5% of peak usage or $0 revenue attribution',
+            'Calculate maintenance cost per feature: maintenance hours × fully-loaded engineer cost',
+            'Calculate opportunity cost: what else could those engineers build?',
+            'Rank zombies by maintenance cost (highest cost = kill first)',
+            'Execute sunset protocol: communicate → deprecate → remove → monitor'
         ],
-        relatedTool: { name: 'PDI Tool', url: '/tools/pdi' }
+        relatedArticles: [
+            { title: 'Real Innovation Requires Deleting Code, Not Writing It', publication: 'Built In', date: 'Feb 2026', url: 'https://builtin.com/articles/innovation-requires-deleting-code' },
+            { title: 'Feature Bloat Calculus', publication: 'Mind the Product', date: 'Oct 2025', url: '/articles/feature-bloat-calculus' }
+        ],
+        relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }
     },
     {
         slug: 'feature-bloat-calculus',
         name: 'Feature Bloat Calculus',
-        definition: 'Feature Bloat Calculus is the economic formula for determining when a feature\'s maintenance cost exceeds its value contribution. It factors in direct maintenance hours, opportunity cost of those hours, and the compounding effect on system complexity.',
-        whyItMatters: 'Every feature you add makes every future feature harder. Feature Bloat Calculus quantifies this hidden tax so you can make rational keep/kill decisions.',
-        relatedArticles: [
-            { title: 'The Governance of Subtraction', publication: 'CIO.com', date: 'Feb 2026', url: 'https://www.cio.com' }
+        definition: `Feature Bloat Calculus is the economic formula for determining when a feature's maintenance cost exceeds its value contribution. It quantifies the hidden tax of feature accumulation — the compounding cost that makes every new feature harder and more expensive to build.\n\nThe formula considers three cost components:\n\n1. **Direct Maintenance Cost**: The engineering hours spent maintaining the feature (bug fixes, compatibility updates, dependency management, test maintenance). This is typically 2-5% of original development cost per quarter.\n\n2. **Opportunity Cost**: What else could those maintenance engineers be building? If 3 engineers spend 20% of their time maintaining a low-value feature, that's 0.6 FTE that could be building high-value new capabilities.\n\n3. **Complexity Tax**: This is the compounding factor that most organizations miss entirely. Every feature in the codebase makes every other feature harder to maintain and every new feature harder to build. Adding feature #101 to a system doesn't just add feature #101's maintenance cost — it increases the maintenance cost of features #1-100.\n\nThe Complexity Tax follows a roughly quadratic curve. A system with 50 features has approximately 1,225 potential interaction points (n × (n-1) / 2). A system with 100 features has 4,950 potential interaction points. Doubling features doesn't double complexity — it quadruples it.\n\nFeature Bloat Calculus quantifies this by comparing a feature's total cost (direct + opportunity + complexity) against its value contribution (revenue attribution, user engagement, strategic importance). When total cost exceeds value, the feature has "negative carry" — it's costing more to keep than it's worth.\n\nFeatures with negative carry should be evaluated through the Kill Switch Protocol for potential deprecation. The highest-negative-carry features should be killed first, as they free up the most capacity per removal.`,
+        whyItMatters: `Feature Bloat Calculus quantifies what every experienced engineer feels intuitively: "the system is getting harder and harder to work with." It provides the economic argument for subtraction over addition.\n\nFor product managers who want to build new features, Feature Bloat Calculus provides the answer to "what should we remove to make room?" Every new feature should be paired with a deprecation candidate.\n\nFor engineering teams feeling overwhelmed by maintenance, Feature Bloat Calculus provides data-driven evidence that the problem isn't team performance — it's feature accumulation. A team that's 30% slower than last year isn't failing; it's losing to complexity compounding.\n\nFor executives considering "just add more engineers" as a solution, Feature Bloat Calculus shows why adding headcount has diminishing returns when the root cause is feature bloat. Brooks's Law meets feature economics.`,
+        howToCalculate: [
+            'For each feature, calculate Direct Maintenance Cost: maintenance hours × fully-loaded cost',
+            'Calculate Opportunity Cost: maintenance hours × revenue-per-engineering-hour for your top-performing features',
+            'Estimate Complexity Tax: number of integration points with other features × average interaction maintenance cost',
+            'Total Feature Cost = Direct + Opportunity + Complexity Tax',
+            'Compare to Feature Value: revenue attribution + strategic importance score',
+            'Negative Carry = Total Cost > Feature Value (feature costs more than it earns)',
+            'Use the PDI calculator at richardewing.io/tools/pdi to benchmark your overall feature portfolio'
         ],
-        relatedTool: { name: 'PDI Tool', url: '/tools/pdi' }
+        relatedArticles: [
+            { title: 'Feature Bloat Calculus', publication: 'Mind the Product', date: 'Oct 2025', url: '/articles/feature-bloat-calculus' },
+            { title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publication: 'Mind the Product', date: 'Feb 2026', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
+        ],
+        relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }
     }
 ];

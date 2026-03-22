@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '../terms';
+import RelatedContent from '../../components/RelatedContent';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -169,6 +170,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                         Book Advisory Call →
                     </Link>
                 </section>
+
+                <RelatedContent currentPath={`/glossary/${slug}`} category={term.category} />
             </article>
         </div>
     );
