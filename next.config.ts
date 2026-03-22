@@ -53,6 +53,27 @@ const nextConfig: NextConfig = {
         destination: '/advisory',
         permanent: true,
       },
+      // Legacy 404s reported by GSC
+      {
+        source: '/methodology.html',
+        destination: '/system',
+        permanent: true,
+      },
+      {
+        source: '/working-papers.html',
+        destination: '/doctrine',
+        permanent: true,
+      },
+      {
+        source: '/briefs/:slug*',
+        destination: '/briefings',
+        permanent: true,
+      },
+      {
+        source: '/robots/',
+        destination: '/robots.txt',
+        permanent: true,
+      },
     ];
   },
 };
