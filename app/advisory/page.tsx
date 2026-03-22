@@ -155,33 +155,82 @@ export default function AdvisoryPage() {
                     </div>
                 </section>
 
-                {/* Board roles */}
+                {/* Expanded Advisory Roles */}
                 <section className="section-sm">
-                    <div className="max-w-3xl mx-auto">
-                        <div className="card p-8">
-                            <div className="flex justify-between items-start">
-                                <div>
-                                    <h3 className="text-xl font-bold text-white mb-2">Board & Fractional Leadership</h3>
-                                    <p className="text-gray-400 mb-4">
-                                        For Series B+ companies requiring sustained intervention. I serve as a
-                                        Fractional CPO or Independent Board Director.
-                                    </p>
-                                    <div className="flex gap-4">
-                                        <a href="#inquire-board" className="px-4 py-2 rounded-lg bg-purple-600 text-white text-sm hover:bg-purple-500">
-                                            Inquire About Board Roles
-                                        </a>
-                                        <a href="/principal" className="px-4 py-2 rounded-lg border border-white/20 text-white text-sm hover:bg-white/5">
-                                            Read Operating Principles
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="text-right">
-                                    <div className="text-xs text-purple-400 uppercase">Availability</div>
-                                    <div className="text-2xl font-bold text-white">1 Slot</div>
-                                    <div className="text-gray-500 text-sm">Q2 2026</div>
-                                </div>
-                            </div>
+                    <div className="section-header text-center">
+                        <h2>Board & Fractional Leadership</h2>
+                        <p className="text-gray-400 text-sm mt-2">For Series B+ companies requiring sustained intervention.</p>
+                    </div>
+
+                    <div className="grid-3 max-w-5xl mx-auto">
+                        <div className="card p-6">
+                            <div className="text-xs text-purple-400 uppercase tracking-wide mb-3 font-mono">Fractional CPO</div>
+                            <div className="text-3xl font-bold text-white mb-1">$10-15K<span className="text-lg text-zinc-500">/mo</span></div>
+                            <p className="text-gray-400 text-sm mb-4">6-month minimum commitment</p>
+                            <ul className="space-y-2 mb-6 text-sm text-gray-400">
+                                <li>✓ 2-3 days/week embedded</li>
+                                <li>✓ Product strategy & roadmap ownership</li>
+                                <li>✓ Engineering economics oversight</li>
+                                <li>✓ Board-level reporting</li>
+                                <li>✓ Hiring/team architecture</li>
+                            </ul>
+                            <a href="mailto:richardewing@exogram.ai?subject=Fractional%20CPO%20Inquiry" className="block w-full py-3 text-center rounded-lg border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 font-bold text-sm transition-all">
+                                Inquire →
+                            </a>
                         </div>
+
+                        <div className="card p-6">
+                            <div className="text-xs text-cyan-400 uppercase tracking-wide mb-3 font-mono">Due Diligence Partner</div>
+                            <div className="text-3xl font-bold text-white mb-1">$15K<span className="text-lg text-zinc-500">/deal</span></div>
+                            <p className="text-gray-400 text-sm mb-4">PE/VC tech due diligence</p>
+                            <ul className="space-y-2 mb-6 text-sm text-gray-400">
+                                <li>✓ Pre-acquisition technical assessment</li>
+                                <li>✓ Hidden liability identification</li>
+                                <li>✓ Engineering team evaluation</li>
+                                <li>✓ Technical debt quantification</li>
+                                <li>✓ Investment committee deliverable</li>
+                            </ul>
+                            <a href="mailto:richardewing@exogram.ai?subject=Due%20Diligence%20Partner%20Inquiry" className="block w-full py-3 text-center rounded-lg border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 font-bold text-sm transition-all">
+                                Inquire →
+                            </a>
+                        </div>
+
+                        <div className="card p-6">
+                            <div className="text-xs text-emerald-400 uppercase tracking-wide mb-3 font-mono">Board Observer</div>
+                            <div className="text-3xl font-bold text-white mb-1">$2,500<span className="text-lg text-zinc-500">/mo</span></div>
+                            <p className="text-gray-400 text-sm mb-4">Quarterly board meeting attendance</p>
+                            <ul className="space-y-2 mb-6 text-sm text-gray-400">
+                                <li>✓ Attend quarterly board meetings</li>
+                                <li>✓ Independent technical oversight</li>
+                                <li>✓ Pre-meeting briefing prep</li>
+                                <li>✓ Written technical assessment</li>
+                                <li>✓ Async advisory access</li>
+                            </ul>
+                            <a href="mailto:richardewing@exogram.ai?subject=Board%20Observer%20Inquiry" className="block w-full py-3 text-center rounded-lg border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 font-bold text-sm transition-all">
+                                Inquire →
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Links to other service pages */}
+                <section className="section-sm max-w-3xl mx-auto">
+                    <div className="grid-3">
+                        <a href="/workshops" className="card p-5 hover:border-rose-500/30 transition-all text-center group">
+                            <div className="text-2xl mb-2">🎤</div>
+                            <div className="text-sm font-bold text-white group-hover:text-rose-400 transition-colors">Workshops & Speaking</div>
+                            <div className="text-xs text-zinc-500 mt-1">From $5,000</div>
+                        </a>
+                        <a href="/advisory/licensing" className="card p-5 hover:border-purple-500/30 transition-all text-center group">
+                            <div className="text-2xl mb-2">🏢</div>
+                            <div className="text-sm font-bold text-white group-hover:text-purple-400 transition-colors">White-Label Licensing</div>
+                            <div className="text-xs text-zinc-500 mt-1">From $1,500/mo</div>
+                        </a>
+                        <a href="/certification" className="card p-5 hover:border-amber-500/30 transition-all text-center group">
+                            <div className="text-2xl mb-2">🎓</div>
+                            <div className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors">Get Certified (CPE)</div>
+                            <div className="text-xs text-zinc-500 mt-1">$1,500</div>
+                        </a>
                     </div>
                 </section>
 

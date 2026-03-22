@@ -48,12 +48,17 @@ const Navigation = () => {
                             <Dropdown label="Advisory">
                                 <DropdownItem href="/advisory">Advisory Services</DropdownItem>
                                 <DropdownItem href="/principal">The Principal</DropdownItem>
+                                <DropdownItem href="/workshops">Workshops & Speaking</DropdownItem>
+                                <DropdownItem href="/advisory/licensing">White-Label Licensing</DropdownItem>
+                                <DropdownItem href="/certification">Certification (CPE)</DropdownItem>
                             </Dropdown>
 
                             <Dropdown label="Learn">
                                 <DropdownItem href="/doctrine">Doctrine (Framework)</DropdownItem>
                                 <DropdownItem href="/manifesto">Manifesto (Philosophy)</DropdownItem>
                                 <DropdownItem href="/articles">Articles (Publications)</DropdownItem>
+                                <DropdownItem href="/glossary">Glossary (40+ Definitions)</DropdownItem>
+                                <DropdownItem href="/benchmark">Benchmark Report (Free)</DropdownItem>
                                 <DropdownItem href="/briefings">Briefings (Newsletter)</DropdownItem>
                             </Dropdown>
 
@@ -174,6 +179,9 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/principal" onClick={onClose} className="border-l-2 border-[var(--accent-purple)]">
                             The Principal (Bio)
                         </MobileLink>
+                        <MobileLink href="/workshops" onClick={onClose}>Workshops & Speaking</MobileLink>
+                        <MobileLink href="/advisory/licensing" onClick={onClose}>White-Label Licensing</MobileLink>
+                        <MobileLink href="/certification" onClick={onClose}>Certification (CPE)</MobileLink>
                     </MobileSection>
 
                     <div className="w-full h-px bg-white/10" />
@@ -183,6 +191,8 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/doctrine" onClick={onClose}>Doctrine</MobileLink>
                         <MobileLink href="/manifesto" onClick={onClose}>Manifesto</MobileLink>
                         <MobileLink href="/articles" onClick={onClose}>Articles</MobileLink>
+                        <MobileLink href="/glossary" onClick={onClose}>Glossary</MobileLink>
+                        <MobileLink href="/benchmark" onClick={onClose}>Benchmark Report</MobileLink>
                         <MobileLink href="/briefings" onClick={onClose}>Briefings</MobileLink>
                     </div>
 

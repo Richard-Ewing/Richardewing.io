@@ -101,7 +101,9 @@ export default async function GlossaryTermPage({ params }: Props) {
                 <section className="mb-12">
                     <div className="prose prose-invert prose-lg max-w-none">
                         {term.definition.split('\n\n').map((p, i) => (
-                            <p key={i} className="text-zinc-300 leading-relaxed mb-4">{p}</p>
+                            <p key={i} className="text-zinc-300 leading-relaxed mb-4"
+                               dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>') }}
+                            />
                         ))}
                     </div>
                 </section>
