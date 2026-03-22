@@ -3,7 +3,22 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'LLM Cost Calculator & AI Unit Economics Benchmark',
     description: 'Calculate your AI insolvency horizon. Compare GPT-4, Claude 3.5, and Llama 3 pricing. Prevent margin collapse with the AI Unit Economics Benchmark™.',
-    keywords: ['LLM cost calculator', 'AI token pricing', 'GPT-4 api cost', 'AI margin analysis', 'generative AI unit economics', 'LLM pricing comparison', 'token cost estimator', 'AI COGS calculator'],
+    keywords: [
+        'LLM cost calculator', 'AI token pricing', 'GPT-4 api cost',
+        'AI margin analysis', 'generative AI unit economics',
+        'LLM pricing comparison', 'token cost estimator', 'AI COGS calculator',
+        // High-volume everyday AI terms 2026
+        'how much does GPT-4 cost', 'ChatGPT API pricing', 'Claude API cost',
+        'AI cost per query', 'LLM cost comparison 2026', 'cheapest AI API',
+        'AI infrastructure costs', 'generative AI pricing',
+        'how to reduce AI costs', 'AI ROI calculator', 'AI cost optimization',
+        'is AI profitable', 'AI implementation cost estimate',
+        'OpenAI pricing calculator', 'Anthropic pricing calculator',
+        'Google Gemini API cost', 'AI token calculator', 'cost per AI inference',
+        'enterprise AI budget', 'AI spending calculator', 'LLM cost estimator',
+        'Llama vs GPT cost', 'open source vs proprietary AI cost',
+        'AI model hosting cost', 'GPU cost calculator', 'AI cloud costs',
+    ],
     openGraph: {
         title: 'LLM Cost Calculator | AI Unit Economics Benchmark',
         description: 'Calculate your AI margin collapse point. Compare GPT-4, Claude, and open-source LLM costs.',
