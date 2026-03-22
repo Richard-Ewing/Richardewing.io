@@ -1,7 +1,8 @@
 // =============================================================================
-// CENTRALIZED KEYWORD POOLS — 2000+ keywords organized by category
+// CENTRALIZED KEYWORD POOLS — 5000+ keywords organized by 20 categories
 // Each page imports relevant pools and combines them into its metadata.
 // Covers: Google, Bing, AI crawlers (GPTBot, Claude, Perplexity), LLM browsers
+// Channels: SEO, AEO, GEO, AIEO — all search optimization
 // Timeframe: 2025 (yesterday), 2026 (today), 2027-2030 (future)
 // =============================================================================
 
@@ -9,132 +10,130 @@
 // CATEGORY 1: AI & Machine Learning (General)
 // ---------------------------------------------------------------------------
 export const AI_GENERAL = [
-    // Core concepts
     'artificial intelligence', 'machine learning', 'deep learning', 'neural networks',
     'generative AI', 'large language models', 'LLM', 'foundation models',
     'natural language processing', 'NLP', 'computer vision', 'AI agents',
     'autonomous AI', 'AI automation', 'AI orchestration', 'AI pipeline',
     'AI workflow', 'AI integration', 'AI adoption', 'AI transformation',
     'AI strategy', 'AI roadmap', 'enterprise AI', 'AI at scale',
-    // Everyday questions
     'what is generative AI', 'how does AI work', 'AI for business',
     'AI use cases', 'AI benefits for companies', 'AI risks',
     'AI vs machine learning', 'when to use AI', 'AI best practices',
     'AI implementation guide', 'AI for startups', 'AI for enterprises',
     'AI trends 2026', 'AI trends 2027', 'future of AI',
     'AI in business 2026', 'AI predictions 2030', 'AI market size',
-    // 2025-era terms
     'ChatGPT', 'GPT-4', 'GPT-5', 'Claude', 'Gemini', 'Llama',
     'Mistral', 'Anthropic', 'OpenAI', 'Google AI', 'Meta AI',
-    // 2026-2030 terms
     'AI agents 2026', 'autonomous agents', 'agentic AI', 'multi-agent systems',
     'AI copilot', 'AI assistant for business', 'AI digital workers',
     'AI reasoning', 'chain of thought', 'AI planning',
     'embodied AI', 'AI robotics', 'AI edge computing',
+    'retrieval augmented generation', 'RAG', 'vector database',
+    'fine-tuning LLM', 'prompt engineering', 'AI embeddings',
+    'multimodal AI', 'AI vision', 'AI audio', 'text to image',
+    'AI inference', 'AI training', 'model distillation',
+    'small language models', 'SLM', 'on-device AI', 'edge AI',
+    'AI democratization', 'open source AI', 'AI open weights',
 ];
 
 // ---------------------------------------------------------------------------
 // CATEGORY 2: AI Costs, Pricing & Economics
 // ---------------------------------------------------------------------------
 export const AI_COSTS = [
-    // Direct cost terms
     'AI cost', 'AI pricing', 'AI budget', 'AI spending', 'AI investment',
     'AI ROI', 'AI cost calculator', 'AI cost estimator', 'AI cost analysis',
     'LLM cost', 'LLM pricing', 'LLM cost calculator', 'token pricing',
     'AI token cost', 'cost per token', 'cost per AI query', 'cost per inference',
-    // Specific model pricing
     'GPT-4 cost', 'GPT-4 API pricing', 'GPT-4 cost per query',
     'GPT-4o pricing', 'GPT-4o mini cost', 'ChatGPT pricing 2026',
-    'Claude API cost', 'Claude 3 pricing', 'Claude API pricing 2026',
+    'Claude API cost', 'Claude 3 pricing', 'Claude 4 pricing', 'Claude API pricing 2026',
     'Gemini API cost', 'Gemini pricing', 'Google AI pricing',
     'Llama cost', 'Llama hosting cost', 'open source LLM cost',
     'Mistral pricing', 'Anthropic pricing', 'OpenAI pricing 2026',
-    // Comparison & optimization
     'cheapest AI API', 'best AI value', 'LLM cost comparison',
     'LLM pricing comparison 2026', 'AI cost optimization',
     'how to reduce AI costs', 'reduce LLM costs', 'AI cost management',
     'AI cost governance', 'AI spend management', 'AI budget planning',
     'how much does AI cost', 'is AI expensive', 'AI worth the cost',
     'AI cost benefit analysis', 'AI total cost of ownership',
-    // Infrastructure costs
     'GPU cost', 'GPU pricing 2026', 'AI cloud costs', 'AI compute costs',
     'AI infrastructure costs', 'AI hosting costs', 'AI server costs',
     'NVIDIA GPU pricing', 'H100 cost', 'A100 cost', 'cloud GPU cost',
     'AI model training cost', 'fine-tuning cost', 'RAG implementation cost',
-    // Unit economics
     'AI unit economics', 'AI COGS', 'AI cost of goods sold',
     'AI margin analysis', 'AI gross margin', 'AI operating costs',
     'AI variable costs', 'AI per-user cost', 'AI cost per customer',
     'AI profitability', 'is AI profitable', 'AI break-even point',
-    // Future terms
     'AI costs 2027', 'AI pricing trends', 'will AI get cheaper',
     'AI cost deflation', 'AI inference cost trends 2030',
+    'AI cost per seat', 'AI pricing model', 'AI subscription cost',
+    'AI enterprise pricing', 'AI vendor comparison', 'AI platform costs',
+    'AI build vs buy cost', 'custom AI model cost', 'AI consulting costs',
+    'AI implementation budget', 'AI project cost estimate',
+    'AI hidden costs', 'AI maintenance cost', 'AI technical debt cost',
 ];
 
 // ---------------------------------------------------------------------------
 // CATEGORY 3: Technical Debt & Code Quality
 // ---------------------------------------------------------------------------
 export const TECHNICAL_DEBT = [
-    // Core terms
     'technical debt', 'tech debt', 'code debt', 'design debt',
     'architecture debt', 'infrastructure debt', 'legacy code',
     'legacy system', 'legacy software', 'legacy application',
-    // Calculators & measurement
     'technical debt calculator', 'tech debt calculator', 'technical debt score',
     'technical debt ratio', 'technical debt measurement',
     'how to measure technical debt', 'technical debt metrics',
     'code quality metrics', 'code quality score', 'code health',
-    // Everyday questions
     'what is technical debt', 'technical debt examples',
     'technical debt explained', 'why does technical debt matter',
     'technical debt vs bugs', 'types of technical debt',
     'how to fix technical debt', 'how to reduce technical debt',
     'how to pay down technical debt', 'technical debt strategy',
     'technical debt management', 'technical debt prioritization',
-    // Cost & business impact
     'cost of technical debt', 'technical debt financial impact',
     'technical debt cost calculator', 'hidden cost of bad code',
     'software maintenance costs', 'maintenance vs features',
     'code maintenance burden', 'engineering velocity slowdown',
-    // Specific scenarios
     'refactoring vs new features', 'refactoring ROI', 'refactoring business case',
     'when to refactor', 'refactoring strategy', 'code modernization',
     'application modernization', 'legacy migration', 'monolith to microservices',
     'platform migration cost', 'rewrite vs refactor', 'big rewrite risk',
-    // Tools & frameworks
     'SonarQube', 'CodeClimate', 'code quality tools', 'static analysis',
     'DORA metrics', 'DORA metrics calculator', 'deployment frequency',
     'lead time for changes', 'change failure rate', 'mean time to recovery',
     'technical debt dashboard', 'tech debt tracking', 'tech debt tools',
-    // 2026 specific
     'AI-generated technical debt', 'copilot code debt',
     'AI code quality', 'AI code review', 'AI technical debt 2026',
     'vibe coding debt', 'vibe coding technical debt',
+    'technical debt interest', 'technical debt principal',
+    'technical debt quadrant', 'deliberate vs accidental debt',
+    'technical debt in agile', 'sprint tax', 'maintenance tax',
+    'dependency drift', 'version rot', 'software entropy',
+    'code smell', 'code smells explained', 'anti-patterns',
+    'dead code', 'zombie code', 'unused dependencies',
+    'technical debt for executives', 'explaining tech debt to CEO',
+    'technical debt board presentation', 'tech debt business impact',
 ];
 
 // ---------------------------------------------------------------------------
 // CATEGORY 4: SaaS Metrics, Valuation & Growth
 // ---------------------------------------------------------------------------
 export const SAAS_METRICS = [
-    // Revenue metrics
     'ARR', 'annual recurring revenue', 'MRR', 'monthly recurring revenue',
     'ARR calculator', 'MRR calculator', 'MRR to ARR', 'ARR growth rate',
     'net revenue retention', 'NRR', 'NRR calculator', 'NRR benchmark',
     'gross revenue retention', 'GRR', 'revenue per customer',
     'ARPU', 'average revenue per user', 'ACV', 'annual contract value',
     'net dollar retention', 'NDR', 'expansion revenue',
-    // Churn metrics
     'churn rate', 'churn rate calculator', 'how to reduce churn',
     'customer churn', 'revenue churn', 'logo churn', 'churn analysis',
     'churn prediction', 'churn benchmark', 'acceptable churn rate',
-    'negative churn', 'churn vs retention',
-    // Growth metrics
+    'negative churn', 'churn vs retention', 'involuntary churn',
     'SaaS growth rate', 'T2D3', 'triple triple double double double',
     'SaaS growth benchmarks', 'rule of 40', 'rule of 40 calculator',
     'burn multiple', 'burn rate', 'CAC', 'customer acquisition cost',
     'CAC payback period', 'LTV', 'lifetime value', 'LTV to CAC ratio',
     'magic number SaaS', 'SaaS quick ratio', 'growth efficiency',
-    // Valuation
     'SaaS valuation', 'SaaS valuation calculator', 'SaaS multiple',
     'SaaS revenue multiple', 'ARR multiple 2026', 'SaaS exit multiple',
     'how to value a SaaS company', 'what is my SaaS worth',
@@ -144,31 +143,32 @@ export const SAAS_METRICS = [
     'Series A valuation', 'Series B valuation', 'exit valuation',
     'SaaS acquisition multiple', 'enterprise value calculation',
     'revenue multiple', 'EBITDA multiple SaaS',
-    // Benchmarks
     'SaaS benchmarks', 'SaaS benchmarks 2026', 'B2B SaaS benchmarks',
     'SaaS metrics dashboard', 'SaaS KPIs', 'SaaS reporting',
     'Bessemer cloud index', 'SaaS capital efficiency',
     'SaaS gross margin', 'SaaS gross margin benchmark',
     'SaaS operating margins', 'SaaS profitability metrics',
-    // Future & trends
     'SaaS trends 2026', 'SaaS trends 2027', 'future of SaaS',
     'SaaS market size 2030', 'vertical SaaS', 'AI-native SaaS',
     'usage-based pricing', 'consumption-based pricing',
     'PLG metrics', 'product-led growth metrics',
+    'SaaS IPO', 'SaaS M&A', 'SaaS exit strategy',
+    'SaaS due diligence', 'SaaS investor metrics',
+    'cohort analysis', 'retention curve', 'payback period calculator',
+    'SaaS unit economics', 'contribution margin SaaS',
+    'bookings vs revenue', 'deferred revenue', 'billings',
 ];
 
 // ---------------------------------------------------------------------------
 // CATEGORY 5: Engineering Management & Productivity
 // ---------------------------------------------------------------------------
 export const ENGINEERING_MANAGEMENT = [
-    // Team sizing & planning
     'engineering team size', 'how many engineers do I need',
     'engineering headcount planning', 'engineering team structure',
     'engineering org chart', 'engineering team ratio',
     'developer to manager ratio', 'engineering manager span of control',
     'right-sizing engineering team', 'engineering team too big',
     'when to hire more engineers', 'engineer hiring plan',
-    // Productivity & metrics
     'engineering productivity', 'developer productivity',
     'developer productivity metrics', 'how to measure developer productivity',
     'engineering velocity', 'sprint velocity', 'story points',
@@ -176,7 +176,6 @@ export const ENGINEERING_MANAGEMENT = [
     'engineering output metrics', 'engineering KPIs',
     'developer efficiency', 'code review speed', 'deployment frequency',
     'cycle time', 'lead time', 'developer throughput',
-    // Costs
     'engineering costs', 'developer cost', 'cost per developer',
     'software engineer salary', 'engineering budget',
     'engineering cost benchmarks', 'engineering spend ratio',
@@ -184,7 +183,6 @@ export const ENGINEERING_MANAGEMENT = [
     'Stripe revenue per engineer', 'Figma engineering efficiency',
     'engineering cost optimization', 'reduce engineering costs',
     'engineering ROI', 'engineering investment return',
-    // Management practices
     'engineering management best practices', 'VP of engineering',
     'engineering leadership', 'engineering culture', 'tech lead management',
     'engineering manager skills', 'effective engineering teams',
@@ -192,97 +190,195 @@ export const ENGINEERING_MANAGEMENT = [
     'engineering operating model', 'engineering process improvement',
     'sprint planning', 'agile estimation', 'capacity planning',
     'resource allocation', 'engineering allocation',
-    // Problems & solutions
     'engineering organizational bloat', 'too many engineers',
     'slow development', 'why is development so slow',
     'feature factory', 'feature factory problem', 'shipping too slow',
     'engineering bottleneck', 'engineer burnout', 'developer retention',
     'technical leadership gap', 'engineering morale',
-    // Tools & platforms
     'engineering management tools', 'engineering analytics',
     'engineering intelligence platform', 'developer analytics',
     'Jellyfish', 'LinearB', 'Swarmia', 'Pluralsight Flow',
     'engineering dashboards', 'engineering reporting',
+    'engineering manager vs tech lead', 'IC vs management track',
+    'staff engineer', 'principal engineer', 'distinguished engineer',
+    'engineering career ladder', 'engineering levels',
+    'engineering performance review', 'developer feedback',
+    'one on one meetings engineering', 'skip level meetings',
+    'engineering retrospectives', 'blameless postmortem',
+    'on-call engineering', 'incident management', 'reliability engineering',
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 6: Leadership, Product Management & Strategy
+// CATEGORY 6: Product Management (DEEP)
 // ---------------------------------------------------------------------------
-export const LEADERSHIP_PRODUCT = [
-    // Product management core
+export const PRODUCT_MANAGEMENT = [
+    // Core PM terms
     'product management', 'product manager', 'product strategy',
     'product roadmap', 'product roadmap planning', 'product prioritization',
     'product discovery', 'product-market fit', 'product-led growth',
     'product operations', 'product ops', 'product analytics',
     'product metrics', 'north star metric', 'product KPIs',
-    // Product management frameworks
-    'product management frameworks', 'product management frameworks 2026',
-    'RICE framework', 'ICE framework', 'MoSCoW method',
-    'jobs to be done', 'JTBD', 'opportunity solution tree',
+    'product vision', 'product mission', 'product principles',
+    // PM Frameworks & Methods
+    'RICE framework', 'RICE scoring', 'ICE scoring', 'ICE framework',
+    'MoSCoW method', 'MoSCoW prioritization', 'Kano model',
+    'weighted scoring model', 'impact effort matrix', 'value vs effort',
+    'WSJF', 'weighted shortest job first', 'cost of delay',
+    'jobs to be done', 'JTBD', 'JTBD framework',
+    'opportunity solution tree', 'Teresa Torres',
     'product trio', 'dual-track agile', 'shape up methodology',
-    'continuous discovery', 'product sense', 'product intuition',
-    // Leadership
-    'product leadership', 'CPO', 'Chief Product Officer',
-    'VP Product', 'VP of Product management', 'Head of Product',
-    'product executive', 'product director', 'group product manager',
-    'technology leadership', 'CTO', 'Chief Technology Officer',
-    'VP Engineering', 'Head of Engineering', 'technology executive',
-    'CFO technology oversight', 'board technology oversight',
-    'founder CEO technology', 'CEO engineering oversight',
-    // Strategic terms
-    'digital transformation', 'digital transformation strategy',
-    'innovation management', 'innovation strategy',
-    'R&D strategy', 'R&D investment', 'R&D optimization',
-    'build vs buy', 'make vs buy', 'build vs buy framework',
-    'technology strategy', 'IT strategy', 'technology roadmap',
-    'strategic planning', 'OKRs', 'objectives and key results',
-    'OKR framework', 'quarterly planning', 'annual planning',
-    // Agile & methodologies
-    'agile', 'scrum', 'kanban', 'SAFe', 'agile at scale',
-    'agile transformation', 'beyond agile', 'post-agile',
-    'shape up', 'basecamp shape up', 'no estimates',
-    'agile is broken', 'agile theater', 'scrum problems',
-    'agile alternatives', 'modern software development',
-    // Decision making
-    'data-driven decisions', 'product decisions', 'technology decisions',
-    'prioritization frameworks', 'resource allocation',
-    'feature prioritization', 'backlog management', 'technical roadmap',
-    'engineering allocation', 'capital allocation',
-    // Hiring & team building
-    'how to hire a CTO', 'how to hire a VP Engineering',
-    'how to hire product managers', 'product management hiring',
-    'scaling engineering teams', 'engineering scaling challenges',
-    'startup to scale-up transition', 'Series A engineering',
-    'Series B engineering team', 'growth stage engineering',
+    'continuous discovery', 'continuous discovery habits',
+    'product sense', 'product intuition', 'product thinking',
+    'outcome-based roadmap', 'outcome-oriented product management',
+    'product management frameworks', 'product management frameworks 2026',
+    // PM Roles & Career
+    'product manager career', 'senior product manager',
+    'group product manager', 'director of product', 'VP of Product',
+    'CPO', 'Chief Product Officer', 'Head of Product',
+    'associate product manager', 'APM program', 'product management career path',
+    'technical product manager', 'platform product manager',
+    'growth product manager', 'data product manager',
+    'AI product manager', 'AI PM', 'AI PM skills',
+    'full-stack PM', 'builder PM', 'product owner vs product manager',
+    // PM Skills & Practice
+    'product requirements document', 'PRD', 'user stories',
+    'acceptance criteria', 'product specification', 'product brief',
+    'stakeholder management', 'cross-functional collaboration',
+    'A/B testing', 'experimentation', 'product experimentation',
+    'feature flags', 'feature toggles', 'gradual rollout',
+    'user research', 'customer interviews', 'customer development',
+    'competitive analysis', 'market analysis', 'TAM SAM SOM',
+    'product launch', 'go-to-market strategy', 'GTM strategy',
+    'product lifecycle', 'product lifecycle management',
+    'product deprecation', 'feature sunset', 'end of life product',
+    'when to kill a feature', 'when to kill a product',
+    // PM Trends 2026
+    'product management trends 2026', 'AI in product management',
+    'AI-powered product strategy', 'AI product analytics',
+    'product management AI tools', 'AI for user research',
+    'data-driven product management', 'data literacy for PMs',
+    'product-led growth 2026', 'PLG strategy', 'PLG metrics',
+    // PM Interview & Hiring
+    'product manager interview', 'PM interview questions',
+    'product manager interview prep', 'how to hire product managers',
+    'product management hiring', 'PM assessment', 'product sense interview',
+    'product manager resume', 'product manager portfolio',
+    'product management case study', 'product design challenge',
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 7: Consulting, Advisory & Professional Services
+// CATEGORY 7: Leadership, C-Suite & Executive
+// ---------------------------------------------------------------------------
+export const LEADERSHIP_EXECUTIVE = [
+    // C-Suite roles
+    'CTO', 'Chief Technology Officer', 'CTO role', 'CTO responsibilities',
+    'CIO', 'Chief Information Officer', 'CIO role', 'CIO priorities 2026',
+    'CPO', 'Chief Product Officer', 'CPO role', 'CPO responsibilities',
+    'CFO', 'Chief Financial Officer', 'CFO technology oversight',
+    'CEO', 'CEO technology strategy', 'CEO engineering oversight',
+    'COO', 'Chief Operating Officer', 'COO digital transformation',
+    'CDO', 'Chief Digital Officer', 'Chief Data Officer',
+    'CISO', 'Chief Information Security Officer', 'CISO role',
+    'CRO', 'Chief Revenue Officer', 'VP of Engineering',
+    'Head of Engineering', 'SVP Engineering', 'EVP Technology',
+    // Leadership skills
+    'technology leadership', 'engineering leadership',
+    'digital leadership', 'IT leadership', 'tech leadership skills',
+    'executive communication', 'board communication',
+    'strategic thinking', 'systems thinking', 'first principles thinking',
+    'executive decision making', 'technology decision making',
+    'leadership in uncertainty', 'crisis leadership',
+    'war-time CEO', 'war-time CTO', 'peacetime vs wartime leadership',
+    'servant leadership', 'transformational leadership',
+    'leadership styles technology', 'inclusive leadership tech',
+    // CIO specific trends 2026
+    'CIO trends 2026', 'CIO priorities 2026', 'CIO agenda',
+    'CIO strategy', 'CIO digital transformation', 'CIO innovation',
+    'CIO AI strategy', 'CIO agentic AI', 'CIO cloud strategy',
+    'CIO cybersecurity', 'CIO data governance', 'CIO vendor management',
+    'CIO budget optimization', 'IT budget 2026', 'CIO cost reduction',
+    'CIO business alignment', 'IT business alignment',
+    'CIO stakeholder management', 'CIO board reporting',
+    'CIO metrics', 'IT KPIs', 'CIO scorecard',
+    'CIO workforce transformation', 'CIO talent strategy',
+    'CIO role evolution', 'CIO as strategist', 'CIO as business partner',
+    // VP/Director level
+    'VP Engineering hiring', 'VP Product hiring', 'VP Engineering role',
+    'engineering director', 'product director', 'technology director',
+    'scaling engineering org', 'engineering org design',
+    'engineering culture building', 'remote engineering leadership',
+    'hybrid team management', 'distributed engineering teams',
+    // Executive education
+    'executive technology education', 'technology for non-technical executives',
+    'AI for executives', 'AI literacy for leaders', 'tech fluency for boards',
+    'understanding engineering for CEOs', 'technology strategy for CFOs',
+    'digital transformation for executives', 'AI briefing for board members',
+];
+
+// ---------------------------------------------------------------------------
+// CATEGORY 8: Board Governance & Board Members
+// ---------------------------------------------------------------------------
+export const BOARD_GOVERNANCE = [
+    // Board fundamentals
+    'board of directors', 'board governance', 'corporate governance',
+    'board responsibilities', 'board fiduciary duty', 'board oversight',
+    'board best practices', 'board effectiveness', 'board evaluation',
+    'board composition', 'board diversity', 'board skills matrix',
+    // Technology governance
+    'board technology oversight', 'board technology governance',
+    'board technology committee', 'technology risk committee',
+    'board AI governance', 'AI in the boardroom', 'AI for board decisions',
+    'board cybersecurity oversight', 'board data governance',
+    'board digital transformation', 'board technology education',
+    'board technology skills gap', 'technology-savvy board',
+    'board technology questions', 'questions board should ask about AI',
+    'questions board should ask CTO', 'board technology literacy',
+    // Board-level metrics
+    'board reporting', 'board metrics', 'board KPIs',
+    'board deck template', 'board presentation technology',
+    'executive dashboard', 'CEO dashboard', 'board reporting cadence',
+    'investor reporting', 'investor update template',
+    // Risk & compliance
+    'enterprise risk management', 'technology risk management',
+    'operational risk', 'strategic risk', 'reputational risk',
+    'regulatory compliance', 'SOC 2', 'ISO 27001', 'GDPR',
+    'SEC cyber disclosure', 'cyber incident reporting',
+    'AI risk management', 'AI liability', 'AI regulatory risk',
+    // Board member searches
+    'board member responsibilities', 'how to be an effective board member',
+    'board advisory role', 'advisory board technology',
+    'independent board member', 'non-executive director',
+    'board meeting best practices', 'board agenda',
+    'board member technology training', 'board AI training',
+    'corporate governance trends 2026', 'board governance 2026',
+    // Stakeholder & shareholder
+    'shareholder engagement', 'ESG reporting', 'sustainability reporting',
+    'proxy season', 'activist investors', 'shareholder activism technology',
+    'annual general meeting', 'AGM preparation',
+];
+
+// ---------------------------------------------------------------------------
+// CATEGORY 9: Consulting, Advisory & Professional Services
 // ---------------------------------------------------------------------------
 export const CONSULTING = [
-    // General consulting terms
     'consulting', 'business consulting', 'management consulting',
     'technology consulting', 'IT consulting', 'strategy consulting',
     'advisory services', 'professional services', 'expert advice',
-    // Specific roles
     'fractional CTO', 'fractional CPO', 'fractional CMO',
     'fractional executive', 'interim CTO', 'interim VP Engineering',
     'CTO for hire', 'outsourced CTO', 'virtual CTO',
     'part-time CTO', 'CTO as a service', 'technology advisor',
     'technology consultant', 'engineering consultant', 'AI consultant',
-    // Services
     'technology assessment', 'technology audit', 'code audit',
     'software audit', 'engineering assessment', 'technical review',
     'architecture review', 'tech stack assessment', 'tech stack audit',
     'R&D audit', 'R&D review', 'engineering efficiency audit',
     'AI readiness assessment', 'digital maturity assessment',
-    // Everyday searches
     'hire a technology advisor', 'find a CTO', 'need a tech consultant',
     'independent technology review', 'second opinion on engineering',
     'outside technology perspective', 'engineering health check',
     'software development assessment', 'is my tech team doing well',
     'engineering team evaluation', 'technology due diligence',
-    // Industry specific
     'startup consulting', 'startup advisory', 'startup mentoring',
     'growth-stage consulting', 'scale-up advisory',
     'enterprise technology consulting', 'digital transformation consulting',
@@ -291,48 +387,51 @@ export const CONSULTING = [
     'investor technology diligence', 'PE tech diligence',
     'venture capital tech assessment', 'VC tech diligence',
     'M&A technology assessment', 'acquisition tech review',
-    // Pricing & engagement
     'consulting rates', 'technology consulting rates',
     'fractional CTO cost', 'CTO consulting fee',
     'engineering audit cost', 'how much does a tech audit cost',
     'consulting engagement models', 'retainer vs project consulting',
+    'technology advisory retainer', 'on-demand CTO',
+    'expert network technology', 'technology expert witness',
+    'operations consulting', 'process improvement consulting',
+    'change management consulting', 'organizational design consulting',
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 8: Startup, Growth & Entrepreneurship
+// CATEGORY 10: Startup, Growth & Entrepreneurship
 // ---------------------------------------------------------------------------
 export const STARTUP_GROWTH = [
-    // Startup basics
     'startup', 'startup advice', 'startup strategy', 'startup growth',
     'startup scaling', 'scaling a startup', 'startup operations',
     'startup metrics', 'startup KPIs', 'startup dashboard',
-    // Funding & finance
     'startup funding', 'Series A', 'Series B', 'seed funding',
     'fundraising', 'startup fundraising', 'investor pitch',
     'burn rate', 'burn rate calculator', 'runway calculator',
     'startup runway', 'cash flow management', 'startup finance',
     'startup budget', 'startup cost management',
     'how to extend runway', 'reduce burn rate', 'cost optimization',
-    // Growth challenges
     'startup to scale-up', 'growing pains startup',
     'scaling challenges', 'hypergrowth problems',
     'startup engineering scaling', 'startup hiring challenges',
     'startup technical debt', 'when to refactor at a startup',
     'startup infrastructure', 'startup architecture decisions',
-    // SaaS specific
     'SaaS startup', 'B2B SaaS', 'B2B SaaS growth', 'SaaS go-to-market',
     'SaaS pricing strategy', 'SaaS pricing models',
     'SaaS packaging', 'freemium vs paid', 'free trial optimization',
     'SaaS onboarding', 'SaaS retention', 'SaaS expansion',
-    // Founder terms
     'technical founder', 'non-technical founder',
     'founder CTO relationship', 'co-founder conflicts',
     'first engineering hire', 'first 10 engineers',
     'founder-led sales', 'product-founder fit',
+    'bootstrapped startup', 'venture-backed', 'VC-funded startup',
+    'startup pitch deck', 'pitch deck template', 'investor relations',
+    'startup advisor', 'startup board', 'startup governance',
+    'startup exit', 'startup acquisition', 'startup IPO',
+    'unicorn startup', 'decacorn', 'startup ecosystem',
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 9: Due Diligence & Investment
+// CATEGORY 11: Due Diligence & Investment
 // ---------------------------------------------------------------------------
 export const DUE_DILIGENCE = [
     'due diligence', 'technical due diligence', 'technology due diligence',
@@ -354,45 +453,52 @@ export const DUE_DILIGENCE = [
     'technology valuation', 'software asset valuation',
     'engineering team assessment for investors',
     'developer quality assessment', 'code base health check',
+    'technical co-founder evaluation', 'CTO assessment',
+    'technology stack evaluation', 'platform risk assessment',
+    'data security due diligence', 'compliance due diligence',
+    'SaaS due diligence', 'cloud infrastructure audit',
+    'technical debt due diligence', 'tech debt in M&A',
+    'carve-out technology assessment', 'integration planning technology',
+    'buy-side tech diligence', 'sell-side tech preparation',
+    'quality of earnings technology', 'tech-enabled services assessment',
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 10: AI Safety, Governance & Compliance
+// CATEGORY 12: AI Safety, Governance & Compliance
 // ---------------------------------------------------------------------------
 export const AI_SAFETY = [
-    // AI safety
     'AI safety', 'AI safety tools', 'AI safety framework',
     'responsible AI', 'ethical AI', 'AI ethics',
     'AI bias', 'AI fairness', 'AI transparency',
     'AI explainability', 'explainable AI', 'XAI',
-    // AI governance
     'AI governance', 'AI governance framework', 'AI policy',
     'AI regulation', 'AI compliance', 'AI risk management',
     'AI audit', 'AI audit trail', 'AI accountability',
     'AI oversight', 'AI board governance', 'AI monitoring',
-    // AI hallucination & quality
     'AI hallucination', 'AI hallucinations', 'LLM hallucination',
     'how to prevent AI hallucinations', 'AI accuracy',
     'AI output verification', 'AI output validation',
     'AI fact checking', 'AI ground truth', 'AI reliability',
     'can you trust AI', 'AI trust', 'AI confidence scoring',
-    // AI guardrails
     'AI guardrails', 'LLM guardrails', 'AI content filtering',
     'AI output control', 'AI safety nets', 'AI quality assurance',
     'AI testing', 'AI evaluation', 'AI benchmarks',
     'AI model evaluation', 'LLM evaluation', 'AI performance metrics',
-    // Future
     'AI regulation 2026', 'EU AI Act', 'AI compliance 2026',
     'AI governance 2027', 'AI safety 2030', 'AGI safety',
     'autonomous AI governance', 'AI agent governance',
     'AI liability', 'AI legal framework', 'AI insurance',
+    'AI red teaming', 'AI adversarial testing', 'AI security',
+    'AI data privacy', 'AI consent', 'AI watermarking',
+    'AI model cards', 'AI documentation', 'responsible AI toolkit',
+    'AI risk register', 'AI impact assessment', 'algorithmic audit',
+    'AI whistleblowing', 'AI incident reporting',
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 11: Hiring & Engineering Interviews
+// CATEGORY 13: Hiring & Engineering Interviews
 // ---------------------------------------------------------------------------
 export const HIRING = [
-    // Engineering hiring
     'engineering hiring', 'how to hire engineers',
     'hire software engineers', 'hire developers',
     'engineering recruiting', 'developer recruiting',
@@ -400,7 +506,6 @@ export const HIRING = [
     'engineering interview', 'technical interview',
     'coding interview', 'system design interview',
     'behavioral interview', 'engineering assessment',
-    // Interview methods
     'technical interview questions', 'coding interview questions',
     'system design interview questions', 'engineering interview process',
     'best interview methods', 'modern interview techniques',
@@ -409,7 +514,6 @@ export const HIRING = [
     'whiteboard interview', 'stop whiteboard interviews',
     'live coding interview', 'portfolio review',
     'technical interview alternative', 'better way to interview engineers',
-    // Assessment & evaluation
     'engineering skills assessment', 'developer skills test',
     'coding assessment', 'technical screening', 'pre-screening',
     'engineering culture fit', 'engineering judgment test',
@@ -417,22 +521,26 @@ export const HIRING = [
     'senior engineer assessment', 'staff engineer interview',
     'engineering manager interview', 'CTO interview questions',
     'VP Engineering hiring', 'engineering leadership assessment',
-    // AI-era hiring
     'AI age hiring', 'hiring in the age of AI',
     'AI-powered hiring', 'AI hiring tools', 'AI recruiting',
     'how to hire when AI codes', 'verification skills',
     'AI does the coding now what', 'post-AI hiring',
-    // Product management hiring
     'product manager interview', 'PM interview questions',
     'product management hiring', 'how to hire product managers',
     'product manager assessment', 'product sense interview',
+    'hiring for judgment', 'hiring for critical thinking',
+    'skills-based hiring', 'competency-based interview',
+    'diversity in engineering hiring', 'inclusive hiring tech',
+    'remote hiring', 'global talent', 'offshore vs onshore',
+    'engineering compensation', 'total compensation benchmarks',
+    'equity compensation', 'RSU vs options', 'startup equity',
+    'offer negotiation', 'counter offer', 'retention bonus',
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 12: Finance, Budgeting & Cost Optimization
+// CATEGORY 14: Finance, Budgeting & Cost Optimization
 // ---------------------------------------------------------------------------
 export const FINANCE_BUDGETS = [
-    // R&D & engineering finance
     'R&D budget', 'R&D spending', 'R&D investment',
     'R&D cost optimization', 'R&D ROI', 'R&D efficiency',
     'engineering budget', 'technology budget', 'IT budget',
@@ -440,14 +548,12 @@ export const FINANCE_BUDGETS = [
     'how much to spend on engineering', 'engineering cost ratio',
     'engineering as percent of revenue', 'R&D as percent of revenue',
     'R&D benchmark', 'R&D spending benchmark',
-    // Cost optimization
     'cost optimization', 'cost reduction', 'cost cutting',
     'reduce technology costs', 'reduce cloud costs', 'reduce AWS bill',
     'cloud cost optimization', 'cloud spending management',
     'FinOps', 'cloud financial management', 'cloud economics',
     'infrastructure cost reduction', 'right-sizing infrastructure',
     'optimize server costs', 'reduce hosting costs',
-    // Business finance
     'gross margin', 'gross margin improvement', 'COGS reduction',
     'operating margin', 'EBITDA improvement', 'path to profitability',
     'unit economics', 'unit economics calculator',
@@ -455,15 +561,61 @@ export const FINANCE_BUDGETS = [
     'cost per acquisition', 'payback period', 'break-even analysis',
     'financial modeling', 'financial model template',
     'SaaS financial model', 'startup financial model',
-    // Board & investor terms
     'board reporting', 'investor reporting', 'board metrics',
     'investor metrics', 'board deck', 'investor update',
     'KPI dashboard', 'executive dashboard', 'CEO dashboard',
     'CFO metrics', 'CFO technology oversight', 'CFO engineering',
+    'vendor consolidation', 'license optimization', 'SaaS waste',
+    'shadow IT', 'shadow IT management', 'IT spend visibility',
+    'technology procurement', 'vendor negotiation',
+    'total cost of ownership', 'TCO calculator', 'TCO analysis',
+    'build vs buy cost analysis', 'make vs buy decision',
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 13: 2025-2026-2030 Trending & Future Terms
+// CATEGORY 15: SEO, AEO, GEO, AIEO — Search Optimization Meta
+// ---------------------------------------------------------------------------
+export const SEARCH_OPTIMIZATION = [
+    // SEO
+    'SEO', 'search engine optimization', 'SEO strategy',
+    'SEO best practices', 'SEO 2026', 'SEO trends 2026',
+    'technical SEO', 'on-page SEO', 'off-page SEO',
+    'keyword research', 'keyword strategy', 'content strategy',
+    'link building', 'domain authority', 'page authority',
+    'E-E-A-T', 'experience expertise authoritativeness trustworthiness',
+    'schema markup', 'structured data', 'JSON-LD',
+    'rich snippets', 'featured snippets', 'People Also Ask',
+    // AEO
+    'AEO', 'answer engine optimization', 'optimize for answer engines',
+    'answer engine optimization strategy', 'AEO best practices',
+    'featured snippet optimization', 'zero-click search',
+    'zero-click content', 'no-click search', 'direct answer optimization',
+    'voice search optimization', 'voice search SEO',
+    'conversational search', 'question-based keywords',
+    'People Also Ask optimization', 'FAQ optimization',
+    // GEO
+    'GEO', 'generative engine optimization', 'optimize for AI search',
+    'generative engine optimization strategy', 'GEO best practices',
+    'optimize for ChatGPT', 'optimize for Claude', 'optimize for Perplexity',
+    'AI search visibility', 'AI citations', 'cited by AI',
+    'generative AI search', 'AI Overviews optimization',
+    'Google AI Overviews', 'Bing AI chat optimization',
+    'LLM optimization', 'LLM visibility', 'appear in AI answers',
+    // AIEO
+    'AIEO', 'AI engine optimization', 'AI search optimization',
+    'AIEO strategy', 'AI engine optimization best practices',
+    'AI-first search', 'AI-native search', 'search everywhere optimization',
+    'multi-channel search optimization', 'omnichannel search',
+    // LLM & AI crawler optimization
+    'llms.txt', 'robots.txt AI', 'AI crawler optimization',
+    'GPTBot optimization', 'Claude-Web optimization',
+    'PerplexityBot', 'AI agent manifest', 'ai-plugin.json',
+    'machine-readable content', 'structured content for AI',
+    'AI-friendly content', 'content for language models',
+];
+
+// ---------------------------------------------------------------------------
+// CATEGORY 16: 2025-2026-2030 Trending & Future Terms
 // ---------------------------------------------------------------------------
 export const TRENDING_FUTURE = [
     // 2025 trends (still relevant)
@@ -473,6 +625,7 @@ export const TRENDING_FUTURE = [
     'remote engineering teams', 'hybrid work engineering',
     'return to office engineering', 'AI coding assistants',
     'GitHub Copilot', 'Copilot productivity', 'AI pair programming',
+    'Cursor IDE', 'AI code completion', 'AI code generation',
     // 2026 current trends
     'AI trends 2026', 'technology trends 2026', 'SaaS trends 2026',
     'AI agents 2026', 'agentic AI 2026', 'AI automation 2026',
@@ -484,6 +637,10 @@ export const TRENDING_FUTURE = [
     'will AI replace programmers', 'AI augmented development',
     'LLM pricing 2026', 'ARR multiples 2026', 'SaaS multiples 2026',
     'technical debt 2026', 'developer experience 2026',
+    'CIO trends 2026', 'CTO trends 2026', 'board trends 2026',
+    'digital transformation 2026', 'cloud trends 2026',
+    'cybersecurity trends 2026', 'data governance 2026',
+    'AI governance 2026', 'responsible AI 2026',
     // 2027-2030 future terms
     'AI trends 2027', 'technology trends 2028', 'AI predictions 2030',
     'future of software development', 'future of engineering',
@@ -496,7 +653,6 @@ export const TRENDING_FUTURE = [
     'digital twin', 'simulation-driven development',
     'quantum computing applications', 'edge AI',
     'AI sustainability', 'green AI', 'efficient AI',
-    // Industry buzzwords that drive traffic
     'digital transformation', 'cloud transformation', 'modernization',
     'platform engineering', 'internal developer platform',
     'developer portal', 'backstage', 'platform team',
@@ -504,162 +660,262 @@ export const TRENDING_FUTURE = [
     'observability', 'SRE', 'site reliability engineering',
     'microservices', 'serverless', 'containers', 'Kubernetes',
     'event-driven architecture', 'domain-driven design',
+    'future of CIO', 'future of CTO', 'future of boards',
+    'AI workforce 2030', 'engineering workforce 2030',
+    'post-developer era', 'AI-augmented workforce',
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 14: Richard Ewing's Branded & Proprietary Terms
+// CATEGORY 17: Richard Ewing's Branded & Proprietary Terms
 // ---------------------------------------------------------------------------
 export const BRANDED = [
     'Richard Ewing', 'who is Richard Ewing', 'Richard Ewing product economist',
     'Richard Ewing AI auditor', 'Richard Ewing Exogram', 'Richard Ewing consultant',
     'Richard Ewing CIO.com', 'Richard Ewing Built In', 'Richard Ewing Foundry',
+    'Richard Ewing technology advisor', 'Richard Ewing board advisor',
+    'Richard Ewing fractional CTO', 'Richard Ewing engineering audit',
+    'Richard Ewing AI cost', 'Richard Ewing SaaS', 'Richard Ewing startup',
     'product economist', 'The Product Economist', 'product economist framework',
-    'Exogram', 'Exogram AI', 'exogram.ai',
-    'Product Debt Index', 'PDI calculator', 'PDI tool',
-    'AI Unit Economics Benchmark', 'AUEB', 'AUEB calculator',
-    'Enterprise Value Scenario Engine', 'EV-SE', 'EV-SE calculator',
-    'APER diagnostic', 'APER calculator', 'Revenue Per Engineer APER',
-    'The Audit Interview', 'audit interview tool',
-    'Technical Insolvency Date', 'innovation tax', 'innovation tax framework',
+    'product economist methodology', 'product economist tools',
+    'Exogram', 'Exogram AI', 'exogram.ai', 'Exogram verification',
+    'Exogram admissibility', 'Exogram hallucination prevention',
+    'Product Debt Index', 'PDI calculator', 'PDI tool', 'PDI diagnostic',
+    'AI Unit Economics Benchmark', 'AUEB', 'AUEB calculator', 'AUEB tool',
+    'Enterprise Value Scenario Engine', 'EV-SE', 'EV-SE calculator', 'EV-SE tool',
+    'APER diagnostic', 'APER calculator', 'Revenue Per Engineer APER', 'APER tool',
+    'The Audit Interview', 'audit interview tool', 'audit interview assessment',
+    'Technical Insolvency Date', 'TID', 'innovation tax', 'innovation tax framework',
     'cost of predictivity', 'evergreen ratio', 'kill switch protocol',
     'AI hallucination debt', 'zombie infrastructure', 'subprime code crisis',
     'capital exposure assessment', 'intervention protocols',
     'EAAP', 'Exogram Action Admissibility Protocol',
+    'product economics doctrine', 'doctrine of product economics',
+    'R&D Capital Audit', 'AI Capital Audit', 'engineering capital audit',
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 15: Broader Business & Industry Terms
+// CATEGORY 18: Broader Business & Industry Terms
 // ---------------------------------------------------------------------------
 export const BUSINESS_INDUSTRY = [
-    // Business operations
     'operational efficiency', 'process optimization', 'workflow optimization',
     'business automation', 'enterprise automation',
     'organizational design', 'organizational structure',
     'team structure', 'flat organization', 'matrix organization',
-    // Industry verticals
     'fintech', 'healthtech', 'edtech', 'proptech', 'insurtech',
     'B2B software', 'B2B SaaS', 'enterprise software', 'SMB software',
     'marketplace', 'platform business', 'API business',
-    // Governance & compliance
     'corporate governance', 'technology governance', 'IT governance',
     'SOC 2', 'SOC 2 compliance', 'ISO 27001', 'GDPR compliance',
     'data privacy', 'security compliance', 'regulatory technology',
-    // Market analysis
     'competitive analysis', 'market research', 'industry analysis',
     'TAM SAM SOM', 'total addressable market', 'market sizing',
     'competitive moat', 'defensibility', 'network effects',
-    // Emerging concepts
     'composable architecture', 'headless commerce', 'API-first',
     'embedded finance', 'embedded analytics', 'embedded AI',
     'no-code', 'low-code', 'citizen developer',
     'product-led growth', 'PLG', 'community-led growth', 'CLG',
     'revenue operations', 'RevOps', 'GTM strategy',
     'customer success', 'customer health score', 'NPS',
+    'digital products', 'digital services', 'digital commerce',
+    'subscription economy', 'recurring revenue business',
+    'marketplace dynamics', 'two-sided marketplace',
+    'ecosystem strategy', 'partner ecosystem', 'API ecosystem',
+    'open banking', 'open finance', 'PSD2', 'DeFi',
+    'sustainability strategy', 'ESG', 'climate tech',
+    'diversity equity inclusion', 'DEI in tech',
+    'remote work', 'hybrid work', 'distributed teams',
+    'employee experience', 'workplace culture', 'talent management',
+];
+
+// ---------------------------------------------------------------------------
+// CATEGORY 19: Cybersecurity & Data (Board/Executive focus)
+// ---------------------------------------------------------------------------
+export const CYBERSECURITY_DATA = [
+    'cybersecurity', 'information security', 'data security',
+    'cybersecurity strategy', 'cybersecurity framework', 'NIST framework',
+    'cybersecurity resilience', 'cyber resilience', 'cyber risk',
+    'cyber attack', 'ransomware', 'phishing', 'social engineering',
+    'zero trust', 'zero trust architecture', 'zero trust security',
+    'security audit', 'penetration testing', 'vulnerability assessment',
+    'threat detection', 'incident response', 'security operations center',
+    'SOC', 'SIEM', 'security monitoring', 'endpoint security',
+    'cloud security', 'API security', 'application security',
+    'DevSecOps', 'shift left security', 'secure SDLC',
+    'data governance', 'data management', 'data quality',
+    'data strategy', 'data architecture', 'data lake', 'data warehouse',
+    'data mesh', 'data fabric', 'data catalog',
+    'data privacy', 'GDPR', 'CCPA', 'data protection',
+    'data breach', 'data breach response', 'cyber incident reporting',
+    'SEC cyber disclosure', 'cyber insurance', 'cyber liability',
+    'board cybersecurity', 'board cyber risk', 'board security oversight',
+    'cybersecurity budget', 'security ROI', 'security investment',
+    'cybersecurity trends 2026', 'security threats 2026',
+    'AI cybersecurity', 'AI for security', 'AI threats',
+];
+
+// ---------------------------------------------------------------------------
+// CATEGORY 20: Agile, Methodologies & Ways of Working
+// ---------------------------------------------------------------------------
+export const METHODOLOGIES = [
+    'agile', 'agile methodology', 'scrum', 'kanban', 'scrumban',
+    'SAFe', 'scaled agile framework', 'agile at scale', 'LeSS',
+    'agile transformation', 'agile adoption', 'agile maturity',
+    'agile vs waterfall', 'agile vs lean', 'agile principles',
+    'scrum master', 'product owner', 'scrum team',
+    'sprint', 'sprint planning', 'sprint review', 'sprint retrospective',
+    'daily standup', 'scrum ceremonies', 'scrum artifacts',
+    'user story', 'user story mapping', 'story points', 'velocity',
+    'definition of done', 'acceptance criteria', 'definition of ready',
+    'backlog grooming', 'backlog refinement', 'product backlog',
+    'agile estimation', 'planning poker', 't-shirt sizing',
+    'beyond agile', 'post-agile', 'no-process engineering',
+    'shape up', 'shape up methodology', 'basecamp shape up',
+    'no estimates', 'no estimates movement',
+    'agile is broken', 'agile theater', 'fake agile', 'cargo cult agile',
+    'agile problems', 'agile criticisms', 'agile alternatives 2026',
+    'modern software development', 'continuous delivery',
+    'extreme programming', 'XP', 'test-driven development', 'TDD',
+    'behavior-driven development', 'BDD',
+    'trunk-based development', 'feature branches vs trunk',
+    'pair programming', 'mob programming', 'ensemble programming',
+    'DevOps', 'DevOps practices', 'CI/CD', 'continuous integration',
+    'infrastructure as code', 'GitOps', 'platform engineering',
+    'site reliability engineering', 'SRE practices',
+    'lean', 'lean startup', 'lean methodology',
+    'design thinking', 'design sprint', 'rapid prototyping',
+    'innovation framework', 'innovation management',
 ];
 
 // =============================================================================
 // PAGE-LEVEL KEYWORD COMPOSERS
-// Each page picks relevant pools and returns a flat array
+// Each page picks ALL relevant pools — no slicing, maximized coverage
 // =============================================================================
 
 export const homepageKeywords = [
     ...BRANDED,
-    ...AI_COSTS.slice(0, 30),
-    ...TECHNICAL_DEBT.slice(0, 25),
-    ...SAAS_METRICS.slice(0, 20),
-    ...ENGINEERING_MANAGEMENT.slice(0, 25),
-    ...LEADERSHIP_PRODUCT.slice(0, 20),
-    ...CONSULTING.slice(0, 20),
-    ...TRENDING_FUTURE.slice(0, 25),
-    ...AI_SAFETY.slice(0, 15),
-    ...FINANCE_BUDGETS.slice(0, 15),
-    ...BUSINESS_INDUSTRY.slice(0, 15),
+    ...AI_COSTS,
+    ...TECHNICAL_DEBT,
+    ...SAAS_METRICS.slice(0, 50),
+    ...ENGINEERING_MANAGEMENT.slice(0, 50),
+    ...PRODUCT_MANAGEMENT.slice(0, 40),
+    ...LEADERSHIP_EXECUTIVE.slice(0, 40),
+    ...BOARD_GOVERNANCE.slice(0, 30),
+    ...CONSULTING.slice(0, 30),
+    ...TRENDING_FUTURE.slice(0, 40),
+    ...AI_SAFETY.slice(0, 30),
+    ...FINANCE_BUDGETS.slice(0, 30),
+    ...SEARCH_OPTIMIZATION.slice(0, 20),
+    ...BUSINESS_INDUSTRY.slice(0, 20),
+    ...CYBERSECURITY_DATA.slice(0, 15),
+    ...AI_GENERAL.slice(0, 30),
 ];
 
 export const advisoryKeywords = [
     ...CONSULTING,
     ...DUE_DILIGENCE,
     ...FINANCE_BUDGETS,
-    ...BRANDED.filter(k => k.includes('audit') || k.includes('Richard') || k.includes('intervention') || k.includes('economist')),
-    ...LEADERSHIP_PRODUCT.slice(0, 30),
-    ...AI_COSTS.slice(0, 20),
-    ...ENGINEERING_MANAGEMENT.slice(0, 20),
+    ...LEADERSHIP_EXECUTIVE,
+    ...BOARD_GOVERNANCE,
+    ...BRANDED,
+    ...AI_COSTS.slice(0, 30),
+    ...ENGINEERING_MANAGEMENT.slice(0, 30),
+    ...PRODUCT_MANAGEMENT.slice(0, 20),
+    ...CYBERSECURITY_DATA.slice(0, 15),
 ];
 
 export const pdiKeywords = [
     ...TECHNICAL_DEBT,
-    ...ENGINEERING_MANAGEMENT.slice(0, 30),
-    ...TRENDING_FUTURE.filter(k => k.includes('debt') || k.includes('developer') || k.includes('code') || k.includes('vibe')),
-    ...BRANDED.filter(k => k.includes('PDI') || k.includes('Product Debt') || k.includes('Insolvency') || k.includes('Richard')),
-    ...FINANCE_BUDGETS.slice(0, 15),
+    ...ENGINEERING_MANAGEMENT,
+    ...METHODOLOGIES,
+    ...BRANDED,
+    ...FINANCE_BUDGETS.slice(0, 25),
+    ...TRENDING_FUTURE.slice(0, 20),
+    ...PRODUCT_MANAGEMENT.slice(0, 20),
 ];
 
 export const auebKeywords = [
     ...AI_COSTS,
-    ...AI_GENERAL.slice(0, 30),
-    ...TRENDING_FUTURE.filter(k => k.includes('AI') || k.includes('LLM') || k.includes('2026') || k.includes('pricing')),
-    ...BRANDED.filter(k => k.includes('AUEB') || k.includes('Unit Economics') || k.includes('Evergreen') || k.includes('Richard')),
-    ...FINANCE_BUDGETS.slice(0, 15),
+    ...AI_GENERAL,
+    ...AI_SAFETY,
+    ...BRANDED,
+    ...FINANCE_BUDGETS.slice(0, 30),
+    ...TRENDING_FUTURE.slice(0, 30),
+    ...SEARCH_OPTIMIZATION.slice(0, 15),
 ];
 
 export const evseKeywords = [
     ...SAAS_METRICS,
     ...STARTUP_GROWTH,
-    ...DUE_DILIGENCE.slice(0, 20),
-    ...FINANCE_BUDGETS.slice(0, 20),
-    ...BRANDED.filter(k => k.includes('EV-SE') || k.includes('Enterprise Value') || k.includes('Richard')),
-    ...TRENDING_FUTURE.filter(k => k.includes('SaaS') || k.includes('valuation') || k.includes('2026')),
+    ...DUE_DILIGENCE,
+    ...FINANCE_BUDGETS,
+    ...BRANDED,
+    ...TRENDING_FUTURE.slice(0, 20),
+    ...BUSINESS_INDUSTRY.slice(0, 20),
 ];
 
 export const aperKeywords = [
     ...ENGINEERING_MANAGEMENT,
-    ...FINANCE_BUDGETS.slice(0, 20),
-    ...LEADERSHIP_PRODUCT.slice(0, 25),
-    ...BRANDED.filter(k => k.includes('APER') || k.includes('Revenue Per') || k.includes('Richard')),
-    ...TRENDING_FUTURE.filter(k => k.includes('engineer') || k.includes('developer') || k.includes('productivity')),
+    ...FINANCE_BUDGETS,
+    ...LEADERSHIP_EXECUTIVE,
+    ...PRODUCT_MANAGEMENT.slice(0, 30),
+    ...BRANDED,
+    ...TRENDING_FUTURE.slice(0, 20),
+    ...METHODOLOGIES.slice(0, 20),
 ];
 
 export const doctrineKeywords = [
-    ...LEADERSHIP_PRODUCT,
-    ...ENGINEERING_MANAGEMENT.slice(0, 30),
-    ...BRANDED.filter(k => k.includes('innovation') || k.includes('Insolvency') || k.includes('kill') || k.includes('economist') || k.includes('Richard')),
-    ...TECHNICAL_DEBT.slice(0, 20),
-    ...TRENDING_FUTURE.filter(k => k.includes('agile') || k.includes('product') || k.includes('engineering') || k.includes('future')),
-    ...BUSINESS_INDUSTRY.slice(0, 20),
+    ...PRODUCT_MANAGEMENT,
+    ...LEADERSHIP_EXECUTIVE,
+    ...ENGINEERING_MANAGEMENT,
+    ...METHODOLOGIES,
+    ...BRANDED,
+    ...TECHNICAL_DEBT.slice(0, 30),
+    ...TRENDING_FUTURE.slice(0, 25),
+    ...BUSINESS_INDUSTRY.slice(0, 25),
+    ...BOARD_GOVERNANCE.slice(0, 20),
 ];
 
 export const exogramKeywords = [
     ...AI_SAFETY,
-    ...AI_GENERAL.slice(0, 30),
-    ...BRANDED.filter(k => k.includes('Exogram') || k.includes('EAAP') || k.includes('hallucination') || k.includes('Richard')),
-    ...TRENDING_FUTURE.filter(k => k.includes('AI') || k.includes('agent') || k.includes('autonomous')),
-    ...BUSINESS_INDUSTRY.filter(k => k.includes('governance') || k.includes('compliance')),
+    ...AI_GENERAL,
+    ...CYBERSECURITY_DATA,
+    ...BRANDED,
+    ...TRENDING_FUTURE.slice(0, 25),
+    ...BOARD_GOVERNANCE.slice(0, 15),
+    ...SEARCH_OPTIMIZATION.slice(0, 15),
 ];
 
 export const principalKeywords = [
     ...BRANDED,
-    ...CONSULTING.slice(0, 30),
-    ...LEADERSHIP_PRODUCT.slice(0, 25),
-    ...AI_GENERAL.slice(0, 15),
-    ...ENGINEERING_MANAGEMENT.slice(0, 15),
-    ...TRENDING_FUTURE.slice(0, 15),
+    ...CONSULTING,
+    ...LEADERSHIP_EXECUTIVE,
+    ...PRODUCT_MANAGEMENT.slice(0, 30),
+    ...AI_GENERAL.slice(0, 20),
+    ...ENGINEERING_MANAGEMENT.slice(0, 20),
+    ...TRENDING_FUTURE.slice(0, 20),
+    ...BOARD_GOVERNANCE.slice(0, 15),
+    ...SEARCH_OPTIMIZATION.slice(0, 10),
 ];
 
 export const toolsHubKeywords = [
-    ...BRANDED.filter(k => k.includes('PDI') || k.includes('AUEB') || k.includes('EV-SE') || k.includes('APER') || k.includes('Audit Interview') || k.includes('calculator') || k.includes('Richard')),
-    ...AI_COSTS.slice(0, 20),
-    ...TECHNICAL_DEBT.slice(0, 15),
-    ...SAAS_METRICS.slice(0, 15),
-    ...ENGINEERING_MANAGEMENT.slice(0, 15),
-    ...HIRING.slice(0, 10),
-    ...BUSINESS_INDUSTRY.filter(k => k.includes('no-code') || k.includes('tool') || k.includes('automation')),
-    ...TRENDING_FUTURE.slice(0, 10),
+    ...BRANDED,
+    ...AI_COSTS.slice(0, 30),
+    ...TECHNICAL_DEBT.slice(0, 25),
+    ...SAAS_METRICS.slice(0, 25),
+    ...ENGINEERING_MANAGEMENT.slice(0, 25),
+    ...HIRING.slice(0, 20),
+    ...PRODUCT_MANAGEMENT.slice(0, 15),
+    ...BUSINESS_INDUSTRY.slice(0, 15),
+    ...TRENDING_FUTURE.slice(0, 15),
+    ...SEARCH_OPTIMIZATION.slice(0, 10),
 ];
 
 export const auditInterviewKeywords = [
     ...HIRING,
-    ...ENGINEERING_MANAGEMENT.slice(0, 25),
-    ...LEADERSHIP_PRODUCT.filter(k => k.includes('hiring') || k.includes('team') || k.includes('CTO') || k.includes('VP') || k.includes('product manager') || k.includes('engineer')),
-    ...BRANDED.filter(k => k.includes('Audit Interview') || k.includes('Richard')),
-    ...TRENDING_FUTURE.filter(k => k.includes('AI') || k.includes('hiring') || k.includes('developer')),
+    ...ENGINEERING_MANAGEMENT,
+    ...PRODUCT_MANAGEMENT.slice(0, 40),
+    ...LEADERSHIP_EXECUTIVE.slice(0, 30),
+    ...BRANDED,
+    ...TRENDING_FUTURE.slice(0, 20),
+    ...METHODOLOGIES.slice(0, 15),
 ];
