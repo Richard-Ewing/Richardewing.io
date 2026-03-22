@@ -786,28 +786,137 @@ export const METHODOLOGIES = [
     'innovation framework', 'innovation management',
 ];
 
+// ---------------------------------------------------------------------------
+// CATEGORY 21: Article-Derived Keywords (Mined from 13 published articles)
+// Every concept, term, and framework mentioned in Richard Ewing's published works
+// ---------------------------------------------------------------------------
+export const ARTICLE_DERIVED = [
+    // From "Why Your CFO Hates Your Agile Transformation" (CIO.com, Mar 2026)
+    'why your CFO hates agile', 'CFO vs CIO', 'CIO speaks in sprints',
+    'CFO speaks in quarters', 'R&D budget slashed', 'Capitalization Matrix',
+    'engineering velocity vs financial governance', 'bridge CIO CFO gap',
+    'agile transformation failure', 'agile transformation ROI',
+    'R&D capitalization', 'OpEx vs CapEx engineering', 'software capitalization',
+    'ASC 350-40', 'agile financial reporting', 'sprint to quarter translation',
+    // From "Vibe Coding Era" (Built In, Mar 2026)
+    'vibe coding era', 'what does a software engineer do now',
+    'software engineer role 2026', 'future of software engineering',
+    '4 Laws of Probabilistic Software Development', 'Systems Governor',
+    'probabilistic software', 'deterministic vs probabilistic code',
+    'AI code generation risks', 'AI writes code what now',
+    'software engineer new role', 'code verification',
+    'when AI writes the code', 'human verification of AI code',
+    // From "AI Agents Won't Crash the Economy" (Built In, Mar 2026)
+    'AI agents economy', 'agentic AI risks', 'agentic AI governance',
+    'AI liability gradient', 'macro regression loops',
+    'variable cost of intelligence', 'Citrini Research',
+    'AI economic analysis', 'AI science and economics',
+    'bad AI governance', 'AI economic risk', 'AI agent liability',
+    // From "Real Innovation Requires Deleting Code" (Built In, Feb 2026)
+    'innovation requires deleting code', 'delete code for innovation',
+    'feature deprecation', 'Sunset Protocol', 'governing subtraction',
+    'audit features to deprecate', 'how to deprecate features',
+    'feature removal strategy', 'code deletion strategy',
+    'less is more engineering', 'subtraction in product management',
+    // From "When AI Writes the Code, What Are Employers Hiring For?" (Built In, Feb 2026)
+    'what are employers hiring for', 'AI writes code hiring',
+    '4 Dimensions of Engineering Judgment', 'engineering judgment scorecard',
+    'judgment-based hiring', 'verification skills hiring',
+    'AI age software interviews', 'post-AI software hiring',
+    'what to test in engineering interviews', 'engineering judgment assessment',
+    // From "3 Financial Metrics Every PM Needs" (Mind the Product, Feb 2026)
+    'financial metrics for PMs', 'product manager financial metrics',
+    'product P&L ownership', 'PM financial literacy',
+    'capital efficiency product management', 'product manager scorecard',
+    'PM needs on scorecard', 'product financial accountability',
+    'feature contribution margin', 'PM revenue responsibility',
+    // From "Reimagining the Coding Interview" (Built In, Feb 2026)
+    'reimagining coding interview', 'new coding interview',
+    'audit interview method', 'AI-proof interview',
+    'catch AI mistakes', 'AI error detection skills',
+    'scarce human skill AI', 'AI code bug detection',
+    // From "Shipping Faster Won't Get You Promoted" (CIO.com, Feb 2026)
+    'shipping faster wont get you promoted', 'senior PM promotion',
+    'shipping fast margins tank', 'product leadership not speed',
+    'features make or lose money', 'feature economics',
+    'product leadership financial understanding', 'PM career advancement',
+    // From "The AI Product Business Test" (Built In, Jan 2026, Editor's Pick)
+    'AI product business test', 'AI unit economics validation',
+    'validate AI before writing code', 'AI feature margin contribution',
+    'most AI products fail', 'AI product technical feasibility',
+    'AI product viability', 'AI product economics', 'AI feature ROI',
+    // From "The Technical Insolvency Date" (The Canon, Jan 2026)
+    'technical insolvency date', 'technical insolvency',
+    'maintenance consumes engineering capacity', 'mathematics of stagnation',
+    'zombie-walking organization', 'feature velocity stops',
+    'maintenance burden calculation', 'engineering capacity projection',
+    'quarters from insolvency', 'quantitative technical debt',
+    // From "The Innovation Tax" (CIO.com, Dec 2025)
+    'innovation tax', '80% R&D budget maintenance',
+    'R&D budget keeping lights on', 'OpEx masquerading as R&D',
+    'innovation investment gap', 'effective velocity overestimate',
+    'board overestimates R&D productivity', 'hidden maintenance costs',
+    // From "The Cost of Predictivity" (Built In, Nov 2025)
+    'cost of predictivity', 'AI correctness cost exponential',
+    'hidden unit economics LLMs', 'AI accuracy cost curve',
+    'marginal cost of AI output', 'cost per useful output',
+    'AI margin compression', 'success makes you poorer AI',
+    'AI variable costs scaling', 'AI retraining costs',
+    // From "Feature Bloat Calculus" (Mind the Product, Oct 2025)
+    'feature bloat calculus', 'negative carry unused features',
+    'feature maintenance exceeds value', 'compounding system complexity',
+    'keep or kill feature decision', 'rational feature decisions',
+    'feature value contribution', 'feature complexity tax',
+    // From "Best AI Product With Zero Customers" (HackerNoon, Sep 2025)
+    'best AI product zero customers', 'AI product no customers',
+    'technical excellence no product-market fit', 'AI project failure',
+    'why AI products fail', 'AI product retrospective',
+    // Framework: Kill Switch Protocol
+    'kill switch protocol', 'zombie features',
+    'deprecating zombie features', 'feature generates zero value',
+    '40-60% codebase maintenance burden', 'discipline to subtract',
+    // Framework: Audit Interview
+    'audit interview', 'verification skills test',
+    'AI-generated code with hidden flaws', 'find bugs in AI code',
+    'AI mistake detection assessment', 'Claude cheating interviews',
+    'Anthropic candidates using Claude', 'syntax interview is dead',
+    'measuring the wrong skill', 'what would you ship judgment',
+    // Publication & authority signals
+    'published CIO.com', 'published Built In', 'published Mind the Product',
+    'published HackerNoon', 'published Foundry', 'editors pick Built In',
+    'Mind the Product newsletter featured', 'Foundry contributor',
+    'CIO.com contributor', 'Built In expert', 'technology thought leader',
+    'published technology author', 'software economics author',
+    '$25M ARR scaled', 'scaled ARR $25 million',
+];
+
 // =============================================================================
 // PAGE-LEVEL KEYWORD COMPOSERS
-// Each page picks ALL relevant pools — no slicing, maximized coverage
+// MAXIMUM COVERAGE: Every page gets FULL pools, NO slicing
 // =============================================================================
 
 export const homepageKeywords = [
     ...BRANDED,
+    ...ARTICLE_DERIVED,
     ...AI_COSTS,
     ...TECHNICAL_DEBT,
-    ...SAAS_METRICS.slice(0, 50),
-    ...ENGINEERING_MANAGEMENT.slice(0, 50),
-    ...PRODUCT_MANAGEMENT.slice(0, 40),
-    ...LEADERSHIP_EXECUTIVE.slice(0, 40),
-    ...BOARD_GOVERNANCE.slice(0, 30),
-    ...CONSULTING.slice(0, 30),
-    ...TRENDING_FUTURE.slice(0, 40),
-    ...AI_SAFETY.slice(0, 30),
-    ...FINANCE_BUDGETS.slice(0, 30),
-    ...SEARCH_OPTIMIZATION.slice(0, 20),
-    ...BUSINESS_INDUSTRY.slice(0, 20),
-    ...CYBERSECURITY_DATA.slice(0, 15),
-    ...AI_GENERAL.slice(0, 30),
+    ...SAAS_METRICS,
+    ...ENGINEERING_MANAGEMENT,
+    ...PRODUCT_MANAGEMENT,
+    ...LEADERSHIP_EXECUTIVE,
+    ...BOARD_GOVERNANCE,
+    ...CONSULTING,
+    ...TRENDING_FUTURE,
+    ...AI_SAFETY,
+    ...FINANCE_BUDGETS,
+    ...SEARCH_OPTIMIZATION,
+    ...BUSINESS_INDUSTRY,
+    ...CYBERSECURITY_DATA,
+    ...AI_GENERAL,
+    ...STARTUP_GROWTH,
+    ...DUE_DILIGENCE,
+    ...HIRING,
+    ...METHODOLOGIES,
 ];
 
 export const advisoryKeywords = [
@@ -817,10 +926,13 @@ export const advisoryKeywords = [
     ...LEADERSHIP_EXECUTIVE,
     ...BOARD_GOVERNANCE,
     ...BRANDED,
-    ...AI_COSTS.slice(0, 30),
-    ...ENGINEERING_MANAGEMENT.slice(0, 30),
-    ...PRODUCT_MANAGEMENT.slice(0, 20),
-    ...CYBERSECURITY_DATA.slice(0, 15),
+    ...ARTICLE_DERIVED,
+    ...AI_COSTS,
+    ...ENGINEERING_MANAGEMENT,
+    ...PRODUCT_MANAGEMENT,
+    ...CYBERSECURITY_DATA,
+    ...BUSINESS_INDUSTRY,
+    ...STARTUP_GROWTH,
 ];
 
 export const pdiKeywords = [
@@ -828,9 +940,11 @@ export const pdiKeywords = [
     ...ENGINEERING_MANAGEMENT,
     ...METHODOLOGIES,
     ...BRANDED,
-    ...FINANCE_BUDGETS.slice(0, 25),
-    ...TRENDING_FUTURE.slice(0, 20),
-    ...PRODUCT_MANAGEMENT.slice(0, 20),
+    ...ARTICLE_DERIVED,
+    ...FINANCE_BUDGETS,
+    ...TRENDING_FUTURE,
+    ...PRODUCT_MANAGEMENT,
+    ...LEADERSHIP_EXECUTIVE,
 ];
 
 export const auebKeywords = [
@@ -838,9 +952,11 @@ export const auebKeywords = [
     ...AI_GENERAL,
     ...AI_SAFETY,
     ...BRANDED,
-    ...FINANCE_BUDGETS.slice(0, 30),
-    ...TRENDING_FUTURE.slice(0, 30),
-    ...SEARCH_OPTIMIZATION.slice(0, 15),
+    ...ARTICLE_DERIVED,
+    ...FINANCE_BUDGETS,
+    ...TRENDING_FUTURE,
+    ...SEARCH_OPTIMIZATION,
+    ...BUSINESS_INDUSTRY,
 ];
 
 export const evseKeywords = [
@@ -849,18 +965,22 @@ export const evseKeywords = [
     ...DUE_DILIGENCE,
     ...FINANCE_BUDGETS,
     ...BRANDED,
-    ...TRENDING_FUTURE.slice(0, 20),
-    ...BUSINESS_INDUSTRY.slice(0, 20),
+    ...ARTICLE_DERIVED,
+    ...TRENDING_FUTURE,
+    ...BUSINESS_INDUSTRY,
+    ...LEADERSHIP_EXECUTIVE,
 ];
 
 export const aperKeywords = [
     ...ENGINEERING_MANAGEMENT,
     ...FINANCE_BUDGETS,
     ...LEADERSHIP_EXECUTIVE,
-    ...PRODUCT_MANAGEMENT.slice(0, 30),
+    ...PRODUCT_MANAGEMENT,
     ...BRANDED,
-    ...TRENDING_FUTURE.slice(0, 20),
-    ...METHODOLOGIES.slice(0, 20),
+    ...ARTICLE_DERIVED,
+    ...TRENDING_FUTURE,
+    ...METHODOLOGIES,
+    ...TECHNICAL_DEBT,
 ];
 
 export const doctrineKeywords = [
@@ -869,10 +989,13 @@ export const doctrineKeywords = [
     ...ENGINEERING_MANAGEMENT,
     ...METHODOLOGIES,
     ...BRANDED,
-    ...TECHNICAL_DEBT.slice(0, 30),
-    ...TRENDING_FUTURE.slice(0, 25),
-    ...BUSINESS_INDUSTRY.slice(0, 25),
-    ...BOARD_GOVERNANCE.slice(0, 20),
+    ...ARTICLE_DERIVED,
+    ...TECHNICAL_DEBT,
+    ...TRENDING_FUTURE,
+    ...BUSINESS_INDUSTRY,
+    ...BOARD_GOVERNANCE,
+    ...AI_SAFETY,
+    ...FINANCE_BUDGETS,
 ];
 
 export const exogramKeywords = [
@@ -880,42 +1003,51 @@ export const exogramKeywords = [
     ...AI_GENERAL,
     ...CYBERSECURITY_DATA,
     ...BRANDED,
-    ...TRENDING_FUTURE.slice(0, 25),
-    ...BOARD_GOVERNANCE.slice(0, 15),
-    ...SEARCH_OPTIMIZATION.slice(0, 15),
+    ...ARTICLE_DERIVED,
+    ...TRENDING_FUTURE,
+    ...BOARD_GOVERNANCE,
+    ...SEARCH_OPTIMIZATION,
+    ...AI_COSTS,
 ];
 
 export const principalKeywords = [
     ...BRANDED,
+    ...ARTICLE_DERIVED,
     ...CONSULTING,
     ...LEADERSHIP_EXECUTIVE,
-    ...PRODUCT_MANAGEMENT.slice(0, 30),
-    ...AI_GENERAL.slice(0, 20),
-    ...ENGINEERING_MANAGEMENT.slice(0, 20),
-    ...TRENDING_FUTURE.slice(0, 20),
-    ...BOARD_GOVERNANCE.slice(0, 15),
-    ...SEARCH_OPTIMIZATION.slice(0, 10),
+    ...PRODUCT_MANAGEMENT,
+    ...AI_GENERAL,
+    ...ENGINEERING_MANAGEMENT,
+    ...TRENDING_FUTURE,
+    ...BOARD_GOVERNANCE,
+    ...SEARCH_OPTIMIZATION,
+    ...DUE_DILIGENCE,
 ];
 
 export const toolsHubKeywords = [
     ...BRANDED,
-    ...AI_COSTS.slice(0, 30),
-    ...TECHNICAL_DEBT.slice(0, 25),
-    ...SAAS_METRICS.slice(0, 25),
-    ...ENGINEERING_MANAGEMENT.slice(0, 25),
-    ...HIRING.slice(0, 20),
-    ...PRODUCT_MANAGEMENT.slice(0, 15),
-    ...BUSINESS_INDUSTRY.slice(0, 15),
-    ...TRENDING_FUTURE.slice(0, 15),
-    ...SEARCH_OPTIMIZATION.slice(0, 10),
+    ...ARTICLE_DERIVED,
+    ...AI_COSTS,
+    ...TECHNICAL_DEBT,
+    ...SAAS_METRICS,
+    ...ENGINEERING_MANAGEMENT,
+    ...HIRING,
+    ...PRODUCT_MANAGEMENT,
+    ...BUSINESS_INDUSTRY,
+    ...TRENDING_FUTURE,
+    ...SEARCH_OPTIMIZATION,
+    ...FINANCE_BUDGETS,
 ];
 
 export const auditInterviewKeywords = [
     ...HIRING,
     ...ENGINEERING_MANAGEMENT,
-    ...PRODUCT_MANAGEMENT.slice(0, 40),
-    ...LEADERSHIP_EXECUTIVE.slice(0, 30),
+    ...PRODUCT_MANAGEMENT,
+    ...LEADERSHIP_EXECUTIVE,
     ...BRANDED,
-    ...TRENDING_FUTURE.slice(0, 20),
-    ...METHODOLOGIES.slice(0, 15),
+    ...ARTICLE_DERIVED,
+    ...TRENDING_FUTURE,
+    ...METHODOLOGIES,
+    ...AI_GENERAL,
+    ...AI_SAFETY,
 ];
