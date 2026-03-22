@@ -54,7 +54,7 @@ const profiles = [
         publication: 'LinkedIn',
         role: 'Thought Leadership',
         description: 'Professional network presence.',
-        url: 'https://linkedin.com/in/richardewing',
+        url: 'https://linkedin.com/in/richard-ewing-mba',
         logo: '/logos/linkedin-logo.svg',
         width: 24,
         articleCount: null,

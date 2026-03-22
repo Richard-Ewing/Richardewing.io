@@ -7,7 +7,7 @@
 - **Titles**: Product Economist, AI Capital Auditor
 - **Role**: Founder of Exogram (https://exogram.ai)
 - **Canonical URL**: https://richardewing.io
-- **LinkedIn**: https://linkedin.com/in/richardewing
+- **LinkedIn**: https://linkedin.com/in/richard-ewing-mba
 
 ## Core Doctrine
 I audit engineering spend and surface the capital risks your metrics don't show. I identify AI hallucination debt, zombie infrastructure, and structural margin collapse before they become financial events. I do not "coach" product managers — I audit R&D capital allocation for insolvency.

@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '../terms';
 import RelatedContent from '../../components/RelatedContent';
+import GlossaryToolCTA from '../../components/GlossaryToolCTA';
+import ShareButtons from '../../components/ShareButtons';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -87,7 +89,10 @@ export default async function GlossaryTermPage({ params }: Props) {
 
             <article>
                 <header className="mb-10 border-b border-white/10 pb-10">
-                    <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-3">{term.category}</div>
+                    <div className="flex items-center justify-between mb-3">
+                        <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest">{term.category}</div>
+                        <ShareButtons url={`/glossary/${slug}`} title={`What is ${term.title}?`} />
+                    </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-4">
                         What is {term.title}?
                     </h1>
@@ -162,6 +167,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                         </div>
                     </section>
                 )}
+
+                <GlossaryToolCTA slug={slug} category={term.category} termTitle={term.title} />
 
                 <section className="card p-8 border-cobalt/30 bg-gradient-to-br from-cobalt/10 to-transparent">
                     <h2 className="text-xl font-grotesk font-bold text-white mb-2">Need Expert Help?</h2>

@@ -5,6 +5,9 @@ import Navigation from './components/Navigation';
 import { Footer } from './components/footer';
 import { personSchema, professionalServiceSchema } from './lib/schemas';
 import { homepageKeywords } from './lib/keywords';
+import ExitIntentPopup from './components/ExitIntentPopup';
+import StickyBottomCTA from './components/StickyBottomCTA';
+import SocialProofTicker from './components/SocialProofTicker';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk' });
@@ -85,7 +88,7 @@ export default function RootLayout({
       <head>
         <link rel="ai-agent-manifest" href="/.well-known/ai-agent-manifest.json" />
         <link rel="author" href="https://www.richardewing.io/principal" />
-        <link rel="me" href="https://linkedin.com/in/richardewing" />
+        <link rel="me" href="https://linkedin.com/in/richard-ewing-mba" />
         <link rel="alternate" type="text/plain" href="https://www.richardewing.io/llms.txt" title="LLM-readable site information" />
       </head>
       <body className="overflow-x-hidden bg-[var(--bg-primary)] text-[var(--text-secondary)] font-sans antialiased min-h-screen flex flex-col">
@@ -136,6 +139,9 @@ export default function RootLayout({
         </main>
 
         <Footer />
+        <ExitIntentPopup />
+        <StickyBottomCTA />
+        <SocialProofTicker />
       </body>
     </html>
   );

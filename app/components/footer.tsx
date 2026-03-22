@@ -94,7 +94,7 @@ export function Footer() {
                     <p>© 2026 Richard Ewing. All rights reserved.</p>
                     <div className="flex items-center gap-6">
                         <Link href="/legal" className="hover:text-white transition-colors">Legal & Privacy</Link>
-                        <Link href="https://linkedin.com/in/richardewing" target="_blank" className="hover:text-white transition-colors">LinkedIn</Link>
+                        <Link href="https://linkedin.com/in/richard-ewing-mba" target="_blank" className="hover:text-white transition-colors">LinkedIn</Link>
                         <Link href="/exogram" className="hover:text-white transition-colors">Exogram System</Link>
                     </div>
                 </div>

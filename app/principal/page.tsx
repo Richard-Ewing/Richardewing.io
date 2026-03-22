@@ -33,7 +33,7 @@ const personSchema = {
     "url": "https://www.richardewing.io",
     "image": "https://www.richardewing.io/assets/images/headshot.jpg",
     "sameAs": [
-        "https://linkedin.com/in/richardewing",
+        "https://linkedin.com/in/richard-ewing-mba",
         "https://twitter.com/richardewing",
         "https://exogram.ai"
     ],

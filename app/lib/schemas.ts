@@ -7,7 +7,7 @@ export const personSchema = {
     "url": "https://www.richardewing.io",
     "image": "https://www.richardewing.io/images/richard-ewing-headshot.jpg",
     "sameAs": [
-        "https://linkedin.com/in/richardewing",
+        "https://linkedin.com/in/richard-ewing-mba",
         "https://exogram.ai"
     ],
     "knowsAbout": [
