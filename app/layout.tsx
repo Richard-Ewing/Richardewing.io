@@ -22,10 +22,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.richardewing.io'),
   title: {
-    default: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
+    default: 'Richard Ewing — Product Economist & AI Auditor',
     template: '%s | Richard Ewing'
   },
-  description: 'I audit engineering spend and surface the capital risks your metrics don\'t show. Product Economist, AI Capital Auditor, and Founder of Exogram. Independent R&D oversight for CFOs, CTOs, and boards. $25M ARR scaled. Published in Foundry & Built In.',
+  description: 'Product Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram. Free tools, frameworks, and advisory services.',
   keywords: homepageKeywords,
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
 
   // Open Graph
   openGraph: {
-    title: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
-    description: 'I audit engineering spend and surface the capital risks your metrics don\'t show. Founder of Exogram.',
+    title: 'Richard Ewing — Product Economist & AI Auditor',
+    description: 'Product Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram.',
     url: 'https://www.richardewing.io',
     siteName: 'Richard Ewing',
     type: 'website',
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
-    description: 'I audit engineering spend and surface the capital risks your metrics don\'t show. Founder of Exogram.',
+    title: 'Richard Ewing — Product Economist & AI Auditor',
+    description: 'Product Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram.',
     images: ['https://www.richardewing.io/og-image-home.png'],
   },
 
