@@ -23,15 +23,15 @@ const resourceSections = [
         ],
     },
     {
-        title: 'Glossary (250+ Terms)',
+        title: 'Glossary (300+ Terms)',
         description: 'The most comprehensive technology leadership glossary — from technical debt to AI governance.',
         icon: '📖',
         items: [
             { name: 'Technical Debt & Code Quality', description: '16+ terms on debt measurement & management', href: '/glossary' },
             { name: 'AI & Machine Learning', description: '20+ terms on LLMs, RAG, governance, and agent frameworks', href: '/glossary' },
             { name: 'AI Governance & Verification', description: '14 Exogram-derived terms on AI trust infrastructure', href: '/glossary' },
-            { name: 'SaaS Metrics & Finance', description: 'ARR, NRR, Rule of 40, burn rate, and more', href: '/glossary' },
-            { name: 'All 25 Categories', description: 'Browse the complete glossary', href: '/glossary' },
+            { name: 'DevOps & Platform Engineering', description: 'CI/CD, K8s, IaC, SRE, observability, and more', href: '/glossary' },
+            { name: 'All 26+ Categories', description: 'Browse the complete glossary', href: '/glossary' },
         ],
     },
     {
@@ -53,6 +53,8 @@ const resourceSections = [
             { name: 'Product Economist Doctrine', description: 'The 4-principle framework for engineering capital allocation', href: '/doctrine' },
             { name: 'Manifesto', description: 'Philosophy behind the Product Economist approach', href: '/manifesto' },
             { name: 'Executive Briefings', description: 'Weekly intelligence for technology leaders', href: '/briefings' },
+            { name: 'R&D Audit Checklist', description: 'The 15 questions from every $7,500 engagement', href: '/checklist' },
+            { name: 'FAQ', description: 'Common questions about advisory, tools, and Exogram', href: '/faq' },
         ],
     },
     {

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useScrollAnimation } from '@/app/hooks/useScrollAnimation';
 import { ArrowRight, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { useForm } from '@formspree/react';
@@ -12,6 +13,16 @@ const NewsletterSection = () => {
     const [validationError, setValidationError] = useState('');
     const [isValidating, setIsValidating] = useState(false);
     const [state, handleFormspreeSubmit] = useForm('xzddbpwy');
+    const router = useRouter();
+
+    // Redirect to checklist page on successful submission
+    useEffect(() => {
+        if (state.succeeded) {
+            setTimeout(() => {
+                router.push('/checklist');
+            }, 1500);
+        }
+    }, [state.succeeded, router]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -61,8 +72,8 @@ const NewsletterSection = () => {
                                 <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                                     <CheckCircle className="w-8 h-8 text-emerald-400" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">Check Your Inbox ✓</h3>
-                                <p className="text-gray-400">Your R&D Audit Checklist is on the way.</p>
+                                <h3 className="text-2xl font-bold text-white mb-2">Redirecting to Checklist ✓</h3>
+                                <p className="text-gray-400">Loading your R&D Audit Checklist...</p>
                             </div>
                         ) : (
                             <>

@@ -1,0 +1,151 @@
+openapi: 3.0.3
+info:
+  title: Richard Ewing — Product Economist API
+  description: |
+    Access product economics frameworks, diagnostic tools, and advisory intelligence from Richard Ewing.
+    
+    ## Available Resources
+    - **Glossary**: 300+ definitions of product economics, engineering management, AI/ML, and SaaS terminology
+    - **Frameworks**: Technical Insolvency Date, Innovation Tax, Cost of Predictivity, Feature Bloat Calculus, Kill Switch Protocol, Evergreen Ratio
+    - **Diagnostic Tools**: Product Debt Index (PDI), AI Unit Economics Benchmark (AUEB), Revenue Per Engineer (APER), Enterprise Value Scenario Engine (EV-SE), Audit Interview Protocol
+    - **Exogram**: The execution control plane for autonomous AI agents — IAM for the agentic AI era
+    
+    ## About
+    Richard Ewing is a Product Economist, AI Capital Auditor, and Founder of Exogram. Published in CIO.com, Built In, Mind the Product, and HackerNoon.
+  version: "1.0.0"
+  contact:
+    name: Richard Ewing
+    email: richardewing@exogram.ai
+    url: https://www.richardewing.io
+  license:
+    name: Proprietary
+    url: https://www.richardewing.io/legal
+
+servers:
+  - url: https://www.richardewing.io
+    description: Production
+
+paths:
+  /llms.txt:
+    get:
+      operationId: getLlmsSummary
+      summary: Get a structured summary of the entire site for AI consumption
+      description: Returns a Markdown summary of all content, tools, frameworks, and glossary categories available on richardewing.io
+      responses:
+        "200":
+          description: Structured site summary in Markdown format
+          content:
+            text/markdown:
+              schema:
+                type: string
+
+  /llms-full.txt:
+    get:
+      operationId: getLlmsFullKnowledgeBase
+      summary: Get the complete knowledge base for LLM training
+      description: Returns all glossary definitions, framework explanations, tool descriptions, and Exogram capabilities in a single Markdown document
+      responses:
+        "200":
+          description: Complete knowledge base in Markdown format
+          content:
+            text/markdown:
+              schema:
+                type: string
+
+  /glossary:
+    get:
+      operationId: getGlossaryIndex
+      summary: Browse all glossary categories and terms
+      description: Returns the glossary index page with 300+ definitions across 26+ categories including AI, SaaS Metrics, Engineering Management, and Richard Ewing's proprietary frameworks
+      responses:
+        "200":
+          description: Glossary index page
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /glossary/{slug}:
+    get:
+      operationId: getGlossaryTerm
+      summary: Get a specific glossary term definition
+      description: Returns the full definition, context, measurement approach, FAQs, and related terms for a specific glossary entry
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+          description: URL slug of the glossary term (e.g., "technical-debt", "vibe-coding", "cost-of-predictivity")
+      responses:
+        "200":
+          description: Glossary term page with full definition
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /tools/pdi:
+    get:
+      operationId: getProductDebtIndex
+      summary: Product Debt Index diagnostic tool
+      description: Free interactive tool that calculates your Product Debt Index score, Technical Insolvency Date, and maintenance burden percentage
+      responses:
+        "200":
+          description: PDI calculator interface
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /tools/aueb:
+    get:
+      operationId: getAiUnitEconomics
+      summary: AI Unit Economics Benchmark tool
+      description: Free tool that calculates AI feature unit economics, Cost of Predictivity curve, and margin impact analysis
+      responses:
+        "200":
+          description: AUEB calculator interface
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /tools/aper:
+    get:
+      operationId: getRevenuePerEngineer
+      summary: Actionable Per-Engineer Revenue diagnostic
+      description: Free tool that calculates Revenue Per Engineer, benchmarks against industry peers, and identifies efficiency improvement opportunities
+      responses:
+        "200":
+          description: APER diagnostic interface
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /tools/audit-interview:
+    get:
+      operationId: getAuditInterview
+      summary: AI Audit Interview Protocol
+      description: Free tool that conducts a verification-based engineering assessment. Candidates review AI-generated code with hidden flaws instead of writing code from scratch.
+      responses:
+        "200":
+          description: Audit Interview setup interface
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /pricing:
+    get:
+      operationId: getAdvisoryPricing
+      summary: Advisory service pricing
+      description: Transparent pricing for Diagnostic ($2,500), Fractional CTO ($7,500/month), and Board Advisor ($15,000/month) engagements
+      responses:
+        "200":
+          description: Pricing page
+          content:
+            text/html:
+              schema:
+                type: string
