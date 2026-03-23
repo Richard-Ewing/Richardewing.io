@@ -65,6 +65,22 @@ const verticals = [
         color: 'amber',
         icon: '🛒',
     },
+    {
+        title: 'Cybersecurity',
+        subtitle: 'Security Products',
+        description: 'Security debt compounds faster than any other form of technical debt. AI detection costs, zero-day response, and compliance overhead create unique economics.',
+        href: '/industries/cybersecurity',
+        color: 'red',
+        icon: '🛡️',
+    },
+    {
+        title: 'Logistics & Supply Chain',
+        subtitle: 'Real-Time Systems',
+        description: 'Real-time tracking, IoT infrastructure, AI forecasting, and carrier integrations create layered technical debt at massive scale.',
+        href: '/industries/logistics',
+        color: 'lime',
+        icon: '📦',
+    },
 ];
 
 const colorMap: Record<string, string> = {
@@ -75,8 +91,10 @@ const colorMap: Record<string, string> = {
     sky: 'border-sky-500/20 hover:border-sky-500/50',
     pink: 'border-pink-500/20 hover:border-pink-500/50',
     amber: 'border-amber-500/20 hover:border-amber-500/50',
+    red: 'border-red-500/20 hover:border-red-500/50',
+    lime: 'border-lime-500/20 hover:border-lime-500/50',
 };
-const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400', violet: 'text-violet-400', sky: 'text-sky-400', pink: 'text-pink-400', amber: 'text-amber-400' };
+const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400', violet: 'text-violet-400', sky: 'text-sky-400', pink: 'text-pink-400', amber: 'text-amber-400', red: 'text-red-400', lime: 'text-lime-400' };
 
 export default function IndustriesPage() {
     return (

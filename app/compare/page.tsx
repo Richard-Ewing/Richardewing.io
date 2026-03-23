@@ -37,6 +37,20 @@ const comparisons = [
         href: '/compare/audit-interview-vs-hackerrank',
         color: 'emerald',
     },
+    {
+        title: 'EV-SE vs Jellyfish',
+        subtitle: 'Economics vs Metrics',
+        description: 'Jellyfish tracks engineering activity. EV-SE tells you whether that activity creates lasting economic value.',
+        href: '/compare/ev-se-vs-jellyfish',
+        color: 'cyan',
+    },
+    {
+        title: 'PDI vs CodeClimate',
+        subtitle: 'Prognosis vs Symptoms',
+        description: 'CodeClimate grades code quality. PDI calculates when technical debt will bankrupt your engineering capacity — in dollars.',
+        href: '/compare/pdi-vs-codeclimate',
+        color: 'purple',
+    },
 ];
 
 export default function ComparePage() {

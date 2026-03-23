@@ -33,6 +33,7 @@ import { finopsBusinessTerms } from './finops-business';
 import { orphanFixTerms } from './orphan-fix-batch';
 import { trendingTerms2026 } from './trending-2026';
 import { trendingTermsBatch2 } from './trending-2026-batch2';
+import { trendingTermsBatch3 } from './trending-2026-batch3';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -71,6 +72,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...trendingTerms2026,
     // Trending batch 2
     ...trendingTermsBatch2,
+    // Trending batch 3
+    ...trendingTermsBatch3,
 ];
 
 export const allGlossaryCategories = [
