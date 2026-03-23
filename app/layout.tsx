@@ -159,6 +159,31 @@ export default function RootLayout({
             ],
           }) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Richard Ewing Advisory',
+            url: 'https://www.richardewing.io',
+            logo: 'https://www.richardewing.io/assets/headshot.jpg',
+            description: 'Product Economics advisory firm specializing in R&D capital audits, technical debt diagnostics, and AI unit economics.',
+            founder: {
+              '@type': 'Person',
+              name: 'Richard Ewing',
+              jobTitle: 'Product Economist',
+              url: 'https://www.richardewing.io/principal',
+            },
+            sameAs: [
+              'https://linkedin.com/in/richard-ewing-mba',
+              'https://www.cio.com/author/richard-ewing/',
+              'https://builtin.com/authors/richard-ewing',
+              'https://hackernoon.com/u/richardewing',
+              'https://www.mindtheproduct.com/author/richard-ewing/',
+              'https://github.com/Richard-Ewing',
+            ],
+          }) }}
+        />
 
         <Navigation />
 

@@ -6,6 +6,7 @@ import RelatedContent from '../../components/RelatedContent';
 import GlossaryToolCTA from '../../components/GlossaryToolCTA';
 import ShareButtons from '../../components/ShareButtons';
 import RetroTerminal from '../../components/RetroTerminal';
+import GlossaryQuiz from '../../components/GlossaryQuiz';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,7 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         keywords: [
             term.title.toLowerCase(), `what is ${term.title.toLowerCase()}`,
             `${term.title.toLowerCase()} definition`, `${term.title.toLowerCase()} explained`,
-            `${term.title.toLowerCase()} guide`, 'Richard Ewing', 'Product Economist',
+            `${term.title.toLowerCase()} guide`, `${term.title.toLowerCase()} checklist`,
+            `how to apply ${term.title.toLowerCase()}`, 'Richard Ewing', 'Product Economist',
             ...term.relatedTerms.map(r => r.replace(/-/g, ' ')),
         ],
         alternates: { canonical: `https://www.richardewing.io/glossary/${slug}` },
@@ -34,6 +36,64 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             type: 'article',
         },
     };
+}
+
+// Auto-generate checklist based on category for terms without explicit checklist
+function autoChecklist(category: string, title: string): string[] {
+    const checklists: Record<string, string[]> = {
+        'Technical Debt & Code Quality': [
+            `Identify current ${title} instances in your codebase`,
+            `Quantify the monetary impact using PDI framework`,
+            `Create a prioritized remediation backlog`,
+            `Set measurable reduction targets per quarter`,
+            `Report results to leadership using financial language`,
+        ],
+        'AI & Machine Learning': [
+            `Calculate per-request ${title} cost at current volume`,
+            `Project costs at 10x and 100x scale`,
+            `Identify optimization opportunities (caching, batching, model selection)`,
+            `Add monitoring for ${title}-related metrics`,
+            `Establish cost alerting thresholds`,
+        ],
+        'Cloud & Infrastructure': [
+            `Audit current ${title} configuration and usage`,
+            `Document any technical debt in ${title} implementation`,
+            `Benchmark against industry best practices`,
+            `Create runbook for ${title}-related incidents`,
+            `Schedule quarterly review of ${title} setup`,
+        ],
+        'Security & Compliance': [
+            `Assess current ${title} posture against industry standards`,
+            `Identify gaps in ${title} coverage`,
+            `Create remediation plan with timelines`,
+            `Implement monitoring and alerting for ${title}`,
+            `Schedule annual ${title} audit`,
+        ],
+        'Product Management': [
+            `Define success metrics for ${title}`,
+            `Map ${title} impact to business outcomes`,
+            `Create framework for evaluating ${title} decisions`,
+            `Build team alignment around ${title} priorities`,
+            `Track and report ${title} metrics monthly`,
+        ],
+    };
+    return checklists[category] || [
+        `Assess your organization's current ${title} maturity`,
+        `Identify quick wins for ${title} improvement`,
+        `Create a 90-day ${title} action plan`,
+        `Assign ownership for ${title} initiatives`,
+        `Measure and report progress quarterly`,
+    ];
+}
+
+// Auto-generate how-to-apply based on category
+function autoHowToApply(category: string, title: string): string {
+    const guides: Record<string, string> = {
+        'Technical Debt & Code Quality': `**Step 1: Audit** — Identify where ${title} exists in your systems using static analysis tools and code reviews.\n\n**Step 2: Quantify** — Use the Product Debt Index framework to attach dollar values to each instance of ${title}.\n\n**Step 3: Prioritize** — Rank remediation items by economic impact, not just technical severity.\n\n**Step 4: Execute** — Allocate 15-20% of sprint capacity to addressing ${title} issues.\n\n**Step 5: Measure** — Track improvement over time using the same metrics established in Step 2.`,
+        'AI & Machine Learning': `**Step 1: Understand** — Map how ${title} fits into your AI product architecture and cost structure.\n\n**Step 2: Measure** — Use the AUEB calculator to quantify ${title}-related costs per user, per request, and per feature.\n\n**Step 3: Optimize** — Apply common optimization patterns (caching, batching, model downsizing) to reduce ${title} costs.\n\n**Step 4: Monitor** — Set up dashboards tracking ${title} costs in real-time. Alert on anomalies.\n\n**Step 5: Scale** — Ensure your ${title} approach remains economically viable at 10x and 100x current volume.`,
+        'SaaS & Metrics': `**Step 1: Define** — Establish clear ${title} measurement methodology across your organization.\n\n**Step 2: Benchmark** — Compare your ${title} against industry standards and top-quartile performers.\n\n**Step 3: Analyze** — Identify the levers that most impact ${title} in your specific business.\n\n**Step 4: Improve** — Create initiatives targeting the highest-impact levers for ${title} improvement.\n\n**Step 5: Report** — Build ${title} into your monthly/quarterly reporting cadence for leadership and investors.`,
+    };
+    return guides[category] || `**Step 1: Assess** — Evaluate your organization's current relationship with ${title}. Where is it strong? Where are the gaps?\n\n**Step 2: Define Goals** — Set specific, measurable targets for ${title} improvement aligned with business outcomes.\n\n**Step 3: Build Plan** — Create a phased implementation plan with clear milestones and ownership.\n\n**Step 4: Execute** — Implement changes incrementally. Start with high-impact, low-risk improvements.\n\n**Step 5: Iterate** — Measure results, learn from outcomes, and continuously refine your approach to ${title}.`;
 }
 
 export default async function GlossaryTermPage({ params }: Props) {
@@ -48,12 +108,10 @@ export default async function GlossaryTermPage({ params }: Props) {
     // Auto-link: convert glossary term mentions in text to clickable links
     function autoLink(text: string, currentSlug: string): string {
         let result = text;
-        // Sort by title length descending to match longer terms first
         const sortedTerms = [...glossaryTerms]
             .filter(t => t.slug !== currentSlug && t.title.length > 3)
             .sort((a, b) => b.title.length - a.title.length);
         for (const t of sortedTerms) {
-            // Only replace whole-word matches, case-insensitive, first occurrence only
             const escaped = t.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const regex = new RegExp(`\\b(${escaped})\\b`, 'i');
             if (regex.test(result)) {
@@ -64,11 +122,15 @@ export default async function GlossaryTermPage({ params }: Props) {
     }
 
     // Reading time estimate
-    const wordCount = (term.definition + ' ' + term.whyItMatters + ' ' + (term.howToMeasure || '')).split(/\s+/).length;
-    const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+    const wordCount = (term.definition + ' ' + term.whyItMatters + ' ' + (term.howToMeasure || '') + ' ' + (term.howToApply || '')).split(/\s+/).length;
+    const readingTime = Math.max(2, Math.ceil(wordCount / 200));
 
     // TL;DR — first sentence of definition
     const tldr = term.definition.split(/[.!?]\s/)[0] + '.';
+
+    // Get checklist and how-to-apply (explicit or auto-generated)
+    const checklist = term.checklist || autoChecklist(term.category, term.title);
+    const howToApply = term.howToApply || autoHowToApply(term.category, term.title);
 
     const faqSchema = {
         '@context': 'https://schema.org',
@@ -85,10 +147,12 @@ export default async function GlossaryTermPage({ params }: Props) {
         '@type': 'Article',
         headline: `What is ${term.title}?`,
         description: term.definition.slice(0, 155).replace(/\n/g, ' '),
-        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal' },
+        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal', jobTitle: 'Product Economist', sameAs: ['https://linkedin.com/in/richard-ewing-mba', 'https://www.cio.com/author/richard-ewing/'] },
         publisher: { '@type': 'Person', name: 'Richard Ewing' },
         url: `https://www.richardewing.io/glossary/${slug}`,
         mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.richardewing.io/glossary/${slug}` },
+        datePublished: '2025-01-01',
+        dateModified: new Date().toISOString().split('T')[0],
     };
 
     const definedTermSchema = {
@@ -114,17 +178,28 @@ export default async function GlossaryTermPage({ params }: Props) {
         ],
     };
 
-    // Speakable schema — tells AI voice assistants (Google Assistant, Alexa, Siri)
-    // which content section to read aloud. Critical AIEO signal for AI citation.
     const speakableSchema = {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
         name: `What is ${term.title}?`,
         speakable: {
             '@type': 'SpeakableSpecification',
-            cssSelector: ['article header h1', 'section.mb-10.p-6', 'article section h2', 'article section h3'],
+            cssSelector: ['article header h1', 'section.tldr-box', 'article section h2', 'article section h3'],
         },
         url: `https://www.richardewing.io/glossary/${slug}`,
+    };
+
+    // HowTo schema for the how-to-apply section
+    const howToSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: `How to Apply ${term.title}`,
+        description: `A practical guide to applying ${term.title} in your organization.`,
+        step: howToApply.split('\n\n').filter(s => s.startsWith('**Step')).map((s, i) => ({
+            '@type': 'HowToStep',
+            position: i + 1,
+            text: s.replace(/\*\*/g, ''),
+        })),
     };
 
     return (
@@ -134,6 +209,7 @@ export default async function GlossaryTermPage({ params }: Props) {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
 
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
                 <Link href="/glossary" className="hover:text-cyan-400">Glossary</Link>
@@ -158,13 +234,30 @@ export default async function GlossaryTermPage({ params }: Props) {
                 </header>
 
                 {/* TL;DR Box — LLM-citation-friendly summary */}
-                <section className="mb-10 p-6 rounded-xl bg-cyan-500/5 border border-cyan-500/20">
+                <section className="tldr-box mb-10 p-6 rounded-xl bg-cyan-500/5 border border-cyan-500/20">
                     <div className="flex items-center gap-2 mb-2">
                         <span className="text-xs font-mono font-bold text-cyan-500 uppercase tracking-widest">TL;DR</span>
                     </div>
                     <p className="text-zinc-200 leading-relaxed text-lg">{tldr}</p>
                 </section>
 
+                {/* Key Metrics Dashboard */}
+                {term.keyMetrics && term.keyMetrics.length > 0 && (
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-6">📊 Key Metrics</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {term.keyMetrics.map((m, i) => (
+                                <div key={i} className="rounded-xl border border-white/10 bg-white/[0.02] p-5 text-center">
+                                    <div className="text-3xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">{m.value}</div>
+                                    <div className="text-sm font-bold text-white mt-2">{m.label}</div>
+                                    <div className="text-xs text-zinc-500 mt-1">{m.description}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* Full Definition */}
                 <section className="mb-12">
                     <div className="prose prose-invert prose-lg max-w-none">
                         {term.definition.split('\n\n').map((p, i) => (
@@ -175,8 +268,9 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
+                {/* Why It Matters */}
                 <section className="mb-12 card p-8 border-cyan-500/20">
-                    <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Why It Matters</h2>
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-4">💡 Why It Matters</h2>
                     <div className="prose prose-invert max-w-none">
                         {term.whyItMatters.split('\n\n').map((p, i) => (
                             <p key={i} className="text-zinc-300 leading-relaxed mb-4">{p}</p>
@@ -184,9 +278,10 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
+                {/* How to Measure (if explicit) */}
                 {term.howToMeasure && (
                     <section className="mb-12 card p-8 border-emerald-500/20">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">How to Measure</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">📏 How to Measure</h2>
                         <div className="prose prose-invert max-w-none">
                             {term.howToMeasure.split('\n').map((line, i) => (
                                 <p key={i} className="text-zinc-300 leading-relaxed mb-2">{line}</p>
@@ -195,9 +290,95 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </section>
                 )}
 
+                {/* How to Apply — always rendered */}
+                <section className="mb-12 card p-8 border-violet-500/20">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-6">🛠️ How to Apply {term.title}</h2>
+                    <div className="prose prose-invert max-w-none">
+                        {howToApply.split('\n\n').map((p, i) => (
+                            <p key={i} className="text-zinc-300 leading-relaxed mb-4"
+                               dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>') }}
+                            />
+                        ))}
+                    </div>
+                </section>
+
+                {/* Actionable Checklist — always rendered */}
+                <section className="mb-12 card p-8 border-emerald-500/20">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-6">✅ {term.title} Checklist</h2>
+                    <div className="space-y-3">
+                        {checklist.map((item, i) => (
+                            <label key={i} className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 transition-colors cursor-pointer group">
+                                <input type="checkbox" className="mt-1 accent-emerald-500 w-4 h-4 rounded" />
+                                <span className="text-zinc-300 group-hover:text-white transition-colors">{item}</span>
+                            </label>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Maturity Model */}
+                {term.maturityLevels && term.maturityLevels.length > 0 && (
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-6">📈 Maturity Model</h2>
+                        <div className="space-y-3">
+                            {term.maturityLevels.map((level, i) => (
+                                <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+                                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-white/10 flex items-center justify-center">
+                                        <span className="text-sm font-bold text-white">{i + 1}</span>
+                                    </div>
+                                    <div>
+                                        <div className="text-sm font-bold text-white">{level.level}</div>
+                                        <div className="text-xs text-zinc-500 mt-0.5">{level.description}</div>
+                                    </div>
+                                    <div className="flex-1 h-2 rounded-full bg-white/5 ml-auto max-w-[120px]">
+                                        <div className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-violet-500" style={{ width: `${((i + 1) / term.maturityLevels!.length) * 100}%` }} />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* Comparison Table */}
+                {term.comparisons && term.comparisons.length > 0 && (
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-6">⚔️ Comparisons</h2>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-sm">
+                                <thead>
+                                    <tr className="border-b border-white/10">
+                                        <th className="text-left py-3 px-4 text-zinc-500 font-mono uppercase tracking-widest text-xs">{term.title} vs.</th>
+                                        <th className="text-left py-3 px-4 text-emerald-400 font-mono uppercase tracking-widest text-xs">{term.title} Advantage</th>
+                                        <th className="text-left py-3 px-4 text-amber-400 font-mono uppercase tracking-widest text-xs">Other Advantage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {term.comparisons.map((c, i) => (
+                                        <tr key={i} className="border-b border-white/5">
+                                            <td className="py-3 px-4 text-white font-medium">{c.vs}</td>
+                                            <td className="py-3 px-4 text-emerald-400">{c.advantage}</td>
+                                            <td className="py-3 px-4 text-amber-400">{c.disadvantage}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                )}
+
+                {/* Diagram / Visual */}
+                {term.diagram && (
+                    <section className="mb-12 card p-8 border-violet-500/20">
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🔄 How It Works</h2>
+                        <div className="bg-black/30 rounded-xl p-6 font-mono text-sm text-zinc-400 whitespace-pre-line">
+                            {term.diagram}
+                        </div>
+                    </section>
+                )}
+
+                {/* FAQs */}
                 {term.faqs.length > 0 && (
                     <section className="mb-12">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-6">Frequently Asked Questions</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-6">❓ Frequently Asked Questions</h2>
                         <div className="space-y-6">
                             {term.faqs.map((faq, i) => (
                                 <div key={i} className="card p-6">
@@ -209,9 +390,33 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </section>
                 )}
 
+                {/* Interactive Quiz */}
+                {term.quiz && term.quiz.length > 0 && (
+                    <GlossaryQuiz quiz={term.quiz} title={term.title} />
+                )}
+
+                {/* External Resources */}
+                {term.resources && term.resources.length > 0 && (
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">📚 Resources</h2>
+                        <div className="space-y-2">
+                            {term.resources.map((r, i) => (
+                                <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-cyan-500/30 transition-colors group">
+                                    <div>
+                                        <div className="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">{r.title}</div>
+                                        <div className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest mt-1">{r.type}</div>
+                                    </div>
+                                    <span className="text-xs text-cyan-500">→</span>
+                                </a>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* Related Tools */}
                 {term.relatedTools && term.relatedTools.length > 0 && (
                     <section className="mb-12">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Free Tools</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🔧 Free Tools</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {term.relatedTools.map(tool => (
                                 <Link key={tool.url} href={tool.url} className="card p-5 hover:border-cyan-500/50 transition-all group">
@@ -223,9 +428,10 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </section>
                 )}
 
+                {/* Related Terms */}
                 {relatedTermObjects.length > 0 && (
                     <section className="mb-12">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Related Terms</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🔗 Related Terms</h2>
                         <div className="flex flex-wrap gap-3">
                             {relatedTermObjects.map(rt => rt && (
                                 <Link key={rt.slug} href={`/glossary/${rt.slug}`}
@@ -252,3 +458,4 @@ export default async function GlossaryTermPage({ params }: Props) {
         </div>
     );
 }
+
