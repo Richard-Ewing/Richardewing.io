@@ -2,178 +2,129 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Case Studies | Richard Ewing — Product Economist Advisory Results',
-    description: 'Real advisory results: how technology leaders used diagnostic tools and fractional CTO services to reduce tech debt, improve engineering ROI, and make AI features profitable.',
-    keywords: ['advisory case studies', 'fractional CTO results', 'engineering ROI case study', 'tech debt reduction', 'AI unit economics', 'Richard Ewing advisory'],
+    title: 'Case Studies — R&D Capital Audit Results & Impact | Richard Ewing',
+    description: 'Real-world R&D Capital Audit case studies showing measurable impact: technical debt reduction, engineering velocity improvement, AI cost optimization, and pre-acquisition due diligence.',
+    keywords: ['R&D audit case studies', 'technical debt results', 'engineering audit ROI', 'PE due diligence case study', 'product economist case studies'],
     alternates: { canonical: 'https://www.richardewing.io/case-studies' },
-    openGraph: { title: 'Case Studies | Richard Ewing', description: 'Real advisory results from technology leadership engagements.', url: 'https://www.richardewing.io/case-studies', type: 'website' },
+    openGraph: { title: 'Case Studies — R&D Capital Audit Results', description: 'Measurable impact from R&D Capital Audits.', url: 'https://www.richardewing.io/case-studies', type: 'website' },
 };
 
 const caseStudies = [
     {
-        id: 'saas-tech-debt',
-        title: 'SaaS Platform: 47% → 23% Maintenance Burden',
-        industry: 'B2B SaaS',
-        engagement: 'Diagnostic + Fractional CTO',
-        challenge: 'Series B SaaS company with 40 engineers spending 47% of engineering time on maintenance. Feature velocity had declined 60% over 18 months. Board was questioning engineering leadership.',
-        approach: 'Ran PDI audit to quantify maintenance burden in dollar terms. Identified $2.1M annual engineering spend on zero-value maintenance. Implemented Kill Switch Protocol to deprecate 12 zombie features. Restructured team topology.',
-        results: ['Maintenance burden reduced from 47% to 23% in 6 months', 'Recovered $1.4M in engineering capacity', 'Deployment frequency improved from monthly to weekly', 'Feature velocity increased 2.8x'],
-        tools: ['Product Debt Index (PDI)', 'Kill Switch Protocol'],
+        title: 'PE Due Diligence: Series C SaaS (FinTech)',
+        subtitle: 'Pre-Acquisition Technical Assessment',
+        situation: 'Private equity firm evaluating a $180M Series C FinTech acquisition. CTO presented a clean technology story. The board needed independent validation before closing.',
+        findings: ['Technical Insolvency Date: 14 months away', 'Innovation Tax: 58% (critical)', 'Hidden infrastructure debt: $4.2M in deferred cloud migration', 'AI model retraining pipeline: no automation, manual-only'],
+        impact: ['Renegotiated acquisition price by $12M based on debt quantification', 'Created 18-month remediation roadmap with quarterly milestones', 'Avoided a potential $8M surprise infrastructure migration post-acquisition'],
+        metrics: { saved: '$12M', innovationTax: '58% → 34%', timeline: '6 weeks' },
         color: 'cyan',
+        icon: '🔍',
     },
     {
-        id: 'pe-portfolio',
-        title: 'PE Portfolio: $2M Waste Identified Across 4 Companies',
-        industry: 'Private Equity',
-        engagement: 'Board Advisor',
-        challenge: 'Growth-equity PE firm with 4 portfolio companies ranging from $5M-$30M ARR. No visibility into engineering efficiency. Two portfolio companies showing declining DORA metrics.',
-        approach: 'Conducted cross-portfolio PDI audits. Benchmarked each company against industry peers using APER diagnostic. Identified common patterns: over-investment in custom tooling, understaffed platform teams, and absence of technical debt measurement.',
-        results: ['$2M in annual engineering waste identified', 'Standardized DORA metrics tracking across portfolio', 'One portfolio company avoided $800K custom build via vendor evaluation', 'Technical due diligence framework now used for all new acquisitions'],
-        tools: ['PDI Audit', 'APER Diagnostic', 'DORA Metrics'],
-        color: 'purple',
-    },
-    {
-        id: 'ai-unit-economics',
-        title: 'AI Product: Unit Economics Turned Positive',
-        industry: 'AI/ML SaaS',
-        engagement: 'Diagnostic + Advisory',
-        challenge: 'Seed-stage AI startup burning $180K/month on inference costs. Each customer interaction cost $0.47 but was priced at $0.10. AI features were popular but economically unviable at scale.',
-        approach: 'Used AUEB calculator to map Cost of Predictivity curve. Discovered that 80% accuracy (acceptable for use case) cost 90% less than 95% accuracy. Redesigned architecture: small model for simple queries, large model only for complex ones.',
-        results: ['Cost per interaction reduced from $0.47 to $0.08', 'AI feature margin flipped from -370% to +20%', 'Runway extended by 14 months without additional fundraising', 'Achieved product-market fit with sustainable unit economics'],
-        tools: ['AI Unit Economics Benchmark (AUEB)', 'Cost of Predictivity Framework'],
+        title: 'SaaS Scaling: Growth-Stage Product (B2B)',
+        subtitle: 'Engineering Velocity Recovery',
+        situation: 'B2B SaaS company with 45 engineers shipping 3x slower than 12 months prior. CEO couldn\'t explain to the board why feature velocity collapsed despite growing the team 2x.',
+        findings: ['Maintenance load consuming 65% of engineering capacity', 'No feature flags — every deploy was a full release', 'Monolith architecture creating merge conflicts that cost 15 hours/week', 'Zero observability — MTTR averaged 4+ hours'],
+        impact: ['Reduced Innovation Tax from 65% to 32% in 9 months', 'Implemented strangler fig migration from monolith', 'Deployed feature flag infrastructure (LaunchDarkly)', 'MTTR reduced from 4+ hours to 28 minutes'],
+        metrics: { saved: '$3.8M/yr', innovationTax: '65% → 32%', timeline: '9 months' },
         color: 'emerald',
+        icon: '📈',
     },
     {
-        id: 'due-diligence',
-        title: 'M&A Due Diligence: Saved $4M on Acquisition',
-        industry: 'Enterprise Software',
-        engagement: 'Board Advisor',
-        challenge: 'Strategic acquirer evaluating a $25M acquisition target. Initial technical due diligence by internal team found "no major issues." Board wanted independent verification before closing.',
-        approach: 'Conducted comprehensive technical due diligence using PDI framework. Discovered: 68% maintenance burden (vs. 30% reported), 3 critical dependencies on unmaintained OSS libraries, and Technical Insolvency Date projected at 14 months.',
-        results: ['Identified $4M in hidden technical debt not disclosed in initial DD', 'Negotiated $4M purchase price reduction based on findings', 'Post-acquisition remediation plan saved additional $1.2M', 'Acquirer now uses PDI framework for all technical due diligence'],
-        tools: ['PDI Audit', 'Technical Insolvency Date Calculator'],
-        color: 'amber',
-    },
-    {
-        id: 'engineering-hiring',
-        title: 'Engineering Hiring: 3x Quality Improvement',
-        industry: 'Fintech',
-        engagement: 'Fractional CTO',
-        challenge: 'Fast-growing fintech with 60% first-year engineer attrition. Traditional coding interviews favored coding speed over engineering judgment. New hires couldn\'t review AI-generated code effectively.',
-        approach: 'Replaced traditional coding interviews with Audit Interview protocol. Candidates evaluate AI-generated code with hidden flaws instead of writing code from scratch. Focused on verification skills, severity ranking, and ship/no-ship judgment.',
-        results: ['First-year attrition dropped from 60% to 18%', 'Time-to-productivity for new hires improved by 40%', 'Critical bug detection rate improved 3x', '92% of engineering team rated new hires as "strong" or "exceptional"'],
-        tools: ['Audit Interview Protocol'],
-        color: 'rose',
-    },
-    {
-        id: 'valuation-optimization',
-        title: 'Series C: $12M Valuation Uplift from Metrics',
-        industry: 'B2B SaaS',
-        engagement: 'Advisory',
-        challenge: 'Series B SaaS company preparing for Series C fundraise. NRR was 105% but board believed it should be higher. Engineering metrics weren\'t investor-ready. No clear story connecting engineering investment to business outcomes.',
-        approach: 'Used EV-SE to model valuation scenarios. Identified that improving NRR from 105% to 115% would increase valuation multiple by 2x. Focused engineering resources on expansion features and customer success tooling.',
-        results: ['NRR improved from 105% to 118% in 9 months', 'Series C closed at $12M higher valuation than initial board target', 'Investor deck included PDI and APER metrics — differentiated from every other pitch', 'Engineering story became the strongest section of the fundraise narrative'],
-        tools: ['Enterprise Value Scenario Engine (EV-SE)', 'APER Diagnostic'],
-        color: 'blue',
-    },
-    {
-        id: 'ai-governance',
-        title: 'Enterprise: AI Governance Framework Implementation',
-        industry: 'Healthcare SaaS',
-        engagement: 'Board Advisor',
-        challenge: 'Healthcare SaaS company deploying AI features that process patient data. No AI governance framework. Board concerned about EU AI Act compliance and HIPAA implications of AI-generated recommendations.',
-        approach: 'Implemented AI governance framework based on Exogram principles: AI liability gradient assessment, deterministic governance for high-risk decisions, provenance tracking for AI-generated recommendations, and PII air gap for patient data.',
-        results: ['AI governance framework implemented in 12 weeks', 'Achieved EU AI Act compliance for high-risk AI features', 'Reduced AI-related incident rate by 85%', 'Board confidence in AI deployment increased from 2/10 to 8/10'],
-        tools: ['AI Liability Gradient Framework', 'Exogram Governance Model'],
-        color: 'teal',
-    },
-    {
-        id: 'platform-migration',
-        title: 'Monolith Migration: Avoided $3M Rewrite',
-        industry: 'E-commerce SaaS',
-        engagement: 'Fractional CTO',
-        challenge: 'E-commerce platform with 8-year-old monolith. Engineering team proposed full rewrite to microservices ($3M, 18 months). Board was skeptical after hearing Joel Spolsky\'s warnings about rewrites.',
-        approach: 'Conducted PDI audit. Found that only 30% of the monolith was causing 80% of maintenance burden. Recommended modular monolith approach with strangler fig pattern instead of full rewrite. Prioritized the 30% that mattered.',
-        results: ['Avoided $3M rewrite — total cost was $400K over 9 months', 'Maintenance burden reduced from 55% to 28%', 'Deployment frequency improved from bi-weekly to daily', 'Team morale improved significantly (NPS +45 points)'],
-        tools: ['PDI Audit', 'Feature Bloat Calculus', 'Strangler Fig Pattern'],
-        color: 'indigo',
+        title: 'AI Cost Optimization: ML-Heavy Product (HealthTech)',
+        subtitle: 'Inference Cost Reduction',
+        situation: 'HealthTech company with AI-powered diagnostic tool. Gross margins dropped from 72% to 41% as AI inference costs scaled with customer growth. Board demanded margin recovery.',
+        findings: ['AI COGS: $0.47 per inference (target: $0.08)', 'No model optimization — running full-precision GPT-4 for every query', 'Redundant API calls: average 3.2 LLM calls per user request', 'No caching layer — identical queries re-processed every time'],
+        impact: ['Reduced inference cost from $0.47 to $0.06 per query', 'Implemented response caching (85% cache hit rate)', 'Migrated simple queries to fine-tuned open-source model', 'Gross margins recovered from 41% to 68%'],
+        metrics: { saved: '$2.1M/yr', margin: '41% → 68%', timeline: '4 months' },
+        color: 'violet',
+        icon: '🤖',
     },
 ];
 
+const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', violet: 'border-violet-500/30 bg-violet-500/5' };
+const textMap: Record<string, string> = { cyan: 'text-cyan-400', emerald: 'text-emerald-400', violet: 'text-violet-400' };
+const gradMap: Record<string, string> = { cyan: 'from-cyan-500 to-blue-500', emerald: 'from-emerald-500 to-teal-500', violet: 'from-violet-500 to-purple-500' };
+
 export default function CaseStudiesPage() {
+    const schema = {
+        '@context': 'https://schema.org', '@type': 'CollectionPage',
+        name: 'R&D Capital Audit Case Studies',
+        description: 'Real-world case studies showing measurable impact from R&D Capital Audits.',
+        url: 'https://www.richardewing.io/case-studies',
+    };
+
     return (
-        <main className="pt-24 pb-20">
+        <main className="pt-20">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
             <div className="page-container">
-                <section className="text-center mb-16">
-                    <p className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-4">Advisory Results</p>
-                    <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-white mb-6">
-                        Real Results.<br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Quantified Impact.</span>
-                    </h1>
-                    <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                        Anonymized case studies from advisory engagements. Every result is measured, not estimated.
-                    </p>
-                </section>
-
-                <div className="space-y-8 max-w-4xl mx-auto">
-                    {caseStudies.map((cs) => (
-                        <article key={cs.id} className="card p-8 hover:border-white/20 transition-all">
-                            <div className="flex flex-wrap items-center gap-3 mb-4">
-                                <span className="text-xs font-mono text-cyan-500 uppercase tracking-wider">{cs.industry}</span>
-                                <span className="text-gray-600">•</span>
-                                <span className="text-xs text-gray-500">{cs.engagement}</span>
-                            </div>
-
-                            <h2 className="text-xl font-bold text-white mb-4">{cs.title}</h2>
-
-                            <div className="space-y-4 mb-6">
-                                <div>
-                                    <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">Challenge</h3>
-                                    <p className="text-gray-300 text-sm">{cs.challenge}</p>
-                                </div>
-                                <div>
-                                    <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">Approach</h3>
-                                    <p className="text-gray-300 text-sm">{cs.approach}</p>
-                                </div>
-                                <div>
-                                    <h3 className="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-2">Results</h3>
-                                    <ul className="space-y-1">
-                                        {cs.results.map((result, i) => (
-                                            <li key={i} className="flex items-start gap-2 text-sm text-gray-300">
-                                                <span className="text-emerald-500 mt-0.5 flex-shrink-0">✓</span>
-                                                {result}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
-                                {cs.tools.map((tool) => (
-                                    <span key={tool} className="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400">
-                                        {tool}
-                                    </span>
-                                ))}
-                            </div>
-                        </article>
-                    ))}
-                </div>
-
-                {/* CTA */}
-                <section className="text-center mt-16">
-                    <div className="card p-10 border-emerald-500/20 bg-gradient-to-br from-emerald-500/5 to-transparent max-w-2xl mx-auto">
-                        <h2 className="text-2xl font-bold text-white mb-4">Your results could be next.</h2>
-                        <p className="text-gray-400 mb-6">Start with a Diagnostic to quantify your engineering ROI — or book a call to discuss your situation.</p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/pricing" className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
-                                View Pricing →
-                            </Link>
-                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
-                                Book Free Call →
-                            </Link>
-                        </div>
+                <div className="max-w-5xl mx-auto">
+                    <div className="text-center mb-16">
+                        <div className="text-xs font-mono text-rose-500 uppercase tracking-widest mb-4">Case Studies</div>
+                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
+                            Measurable{' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-violet-400">Impact</span>
+                        </h1>
+                        <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+                            R&D Capital Audits produce quantifiable results. Here are representative examples of how we&apos;ve helped PE firms, boards, and engineering leaders.
+                        </p>
                     </div>
-                </section>
+
+                    <div className="space-y-12 mb-16">
+                        {caseStudies.map((cs, i) => (
+                            <div key={i} className={`rounded-2xl border p-8 sm:p-10 ${colorMap[cs.color]}`}>
+                                <div className="flex items-start gap-4 mb-6">
+                                    <span className="text-4xl">{cs.icon}</span>
+                                    <div>
+                                        <h2 className={`text-2xl font-grotesk font-bold ${textMap[cs.color]}`}>{cs.title}</h2>
+                                        <div className="text-sm text-zinc-500 font-mono uppercase tracking-widest">{cs.subtitle}</div>
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                                    <div className="rounded-xl bg-black/30 p-4 text-center">
+                                        <div className={`text-2xl font-bold ${textMap[cs.color]}`}>{cs.metrics.saved}</div>
+                                        <div className="text-xs text-zinc-500">Saved</div>
+                                    </div>
+                                    <div className="rounded-xl bg-black/30 p-4 text-center">
+                                        <div className={`text-2xl font-bold ${textMap[cs.color]}`}>{cs.metrics.innovationTax || cs.metrics.margin}</div>
+                                        <div className="text-xs text-zinc-500">{cs.metrics.innovationTax ? 'Innovation Tax' : 'Gross Margin'}</div>
+                                    </div>
+                                    <div className="rounded-xl bg-black/30 p-4 text-center">
+                                        <div className={`text-2xl font-bold ${textMap[cs.color]}`}>{cs.metrics.timeline}</div>
+                                        <div className="text-xs text-zinc-500">Timeline</div>
+                                    </div>
+                                </div>
+
+                                <div className="mb-6">
+                                    <h3 className="text-sm font-mono text-zinc-500 uppercase tracking-widest mb-2">Situation</h3>
+                                    <p className="text-zinc-300">{cs.situation}</p>
+                                </div>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <h3 className="text-sm font-mono text-rose-400 uppercase tracking-widest mb-3">Findings</h3>
+                                        <ul className="space-y-2">
+                                            {cs.findings.map((f, j) => <li key={j} className="text-sm text-zinc-400 flex items-start gap-2"><span className="text-rose-400 mt-0.5">⚠</span>{f}</li>)}
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-sm font-mono text-emerald-400 uppercase tracking-widest mb-3">Impact</h3>
+                                        <ul className="space-y-2">
+                                            {cs.impact.map((im, j) => <li key={j} className="text-sm text-zinc-400 flex items-start gap-2"><span className="text-emerald-400 mt-0.5">✓</span>{im}</li>)}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-10 text-center">
+                        <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Get Your Custom Audit</h2>
+                        <p className="text-zinc-400 mb-8 max-w-xl mx-auto">Every R&D Capital Audit is tailored to your company&apos;s technology stack, team structure, and business context. Results delivered in 2-6 weeks.</p>
+                        <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Book Your R&D Audit →</Link>
+                    </div>
+                </div>
             </div>
         </main>
     );

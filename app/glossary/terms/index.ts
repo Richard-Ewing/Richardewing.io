@@ -41,6 +41,7 @@ import { gapFillTerms } from './gap-fill-terms';
 import { fifteenthPassTerms } from './fifteenth-pass';
 import { sixteenthPassTerms } from './sixteenth-pass';
 import { seventeenthPassTerms } from './seventeenth-pass';
+import { eighteenthPassTerms } from './eighteenth-pass';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -95,6 +96,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...sixteenthPassTerms,
     // Seventeenth pass
     ...seventeenthPassTerms,
+    // Eighteenth pass
+    ...eighteenthPassTerms,
 ];
 
 export const allGlossaryCategories = [

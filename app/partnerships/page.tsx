@@ -1,0 +1,109 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+    title: 'Partnerships — Advisory, Licensing & Integration Partners | Richard Ewing',
+    description: 'Partner with Richard Ewing: advisory referrals, white-label licensing, tool integrations, consulting firm partnerships, and PE deal flow. Expand your service offering with product economics frameworks.',
+    keywords: ['Richard Ewing partnerships', 'R&D audit partnerships', 'consulting firm partnership', 'white-label technical debt', 'PE advisory partner'],
+    alternates: { canonical: 'https://www.richardewing.io/partnerships' },
+    openGraph: { title: 'Partnerships — Advisory & Licensing', description: 'Partner with Richard Ewing for R&D Capital Audits.', url: 'https://www.richardewing.io/partnerships', type: 'website' },
+};
+
+const partnerTypes = [
+    {
+        title: 'Management Consulting Firms',
+        description: 'Add R&D Capital Audits to your technology practice. White-label our frameworks for your clients. We provide the methodology; you deliver the engagement.',
+        benefits: ['White-label PDI and APER tools for your clients', 'Co-branded case studies and thought leadership', 'Training for your consultants on audit methodology', 'Revenue share on referred engagements'],
+        icon: '🏢',
+        color: 'cyan',
+    },
+    {
+        title: 'PE & VC Firms',
+        description: 'Embed R&D Capital Audits into your due diligence process. Get a standing advisory relationship for your portfolio.',
+        benefits: ['Preferred pricing for portfolio-wide audits', 'Pre-negotiated retainer for deal flow due diligence', 'Board-ready deliverables tailored to your LP reporting', 'Quarterly portfolio health monitoring'],
+        icon: '💼',
+        color: 'emerald',
+    },
+    {
+        title: 'Technology Platforms',
+        description: 'Integrate our frameworks into your developer platform. Offer PDI scoring, Innovation Tax tracking, or APER benchmarking as product features.',
+        benefits: ['API access to scoring algorithms', 'Co-marketing and integration documentation', 'Joint webinars and thought leadership', 'Featured in our tools ecosystem'],
+        icon: '⚙️',
+        color: 'violet',
+    },
+    {
+        title: 'Executive Recruiters',
+        description: 'Use the Audit Interview to assess CTO, VP Engineering, and technical leadership candidates. Standardized, bias-reduced evaluation.',
+        benefits: ['Bulk Audit Interview licenses', 'Custom assessment tracks for executive roles', 'Data-driven candidate comparison reports', 'Reduced mis-hire rates for technical leadership'],
+        icon: '🎯',
+        color: 'amber',
+    },
+];
+
+const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', violet: 'border-violet-500/30 bg-violet-500/5', amber: 'border-amber-500/30 bg-amber-500/5' };
+const textMap: Record<string, string> = { cyan: 'text-cyan-400', emerald: 'text-emerald-400', violet: 'text-violet-400', amber: 'text-amber-400' };
+
+export default function PartnershipsPage() {
+    return (
+        <main className="pt-20">
+            <div className="page-container">
+                <div className="max-w-5xl mx-auto">
+                    <div className="text-center mb-16">
+                        <div className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-4">Partnerships</div>
+                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
+                            Grow With{' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Product Economics</span>
+                        </h1>
+                        <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+                            Embed R&D Capital Audits into your practice, platform, or portfolio. Our frameworks are designed for scale — from individual audits to enterprise-wide deployment.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
+                        {partnerTypes.map((pt, i) => (
+                            <div key={i} className={`rounded-2xl border p-8 ${colorMap[pt.color]}`}>
+                                <span className="text-3xl mb-4 block">{pt.icon}</span>
+                                <h2 className={`text-xl font-grotesk font-bold mb-3 ${textMap[pt.color]}`}>{pt.title}</h2>
+                                <p className="text-zinc-400 mb-4 text-sm">{pt.description}</p>
+                                <ul className="space-y-2">
+                                    {pt.benefits.map((b, j) => (
+                                        <li key={j} className="text-sm text-zinc-500 flex items-start gap-2">
+                                            <span className={textMap[pt.color]}>→</span>{b}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-10 text-center mb-16">
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-6">Partnership Tiers</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            <div className="rounded-xl border border-white/10 p-6">
+                                <h3 className="text-lg font-bold text-zinc-300 mb-2">Referral Partner</h3>
+                                <p className="text-sm text-zinc-500 mb-4">Refer clients for R&D audits. Earn referral fees.</p>
+                                <div className="text-sm text-zinc-600">Revenue share on referred deals</div>
+                            </div>
+                            <div className="rounded-xl border border-cyan-500/30 p-6">
+                                <h3 className="text-lg font-bold text-cyan-400 mb-2">Licensed Partner</h3>
+                                <p className="text-sm text-zinc-500 mb-4">White-label frameworks for your consulting practice.</p>
+                                <div className="text-sm text-zinc-600">Annual license + training</div>
+                            </div>
+                            <div className="rounded-xl border border-emerald-500/30 p-6">
+                                <h3 className="text-lg font-bold text-emerald-400 mb-2">Strategic Partner</h3>
+                                <p className="text-sm text-zinc-500 mb-4">Deep integration. Co-branded. Joint go-to-market.</p>
+                                <div className="text-sm text-zinc-600">Custom partnership agreement</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-10 text-center">
+                        <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Become a Partner</h2>
+                        <p className="text-zinc-400 mb-8 max-w-xl mx-auto">Whether you&apos;re a consulting firm, PE fund, platform, or recruiter — there&apos;s a partnership model that works.</p>
+                        <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Discuss Partnership →</Link>
+                    </div>
+                </div>
+            </div>
+        </main>
+    );
+}

@@ -435,6 +435,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
 
+        // Methodology + Social Proof
+        {
+            url: `${baseUrl}/methodology`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/testimonials`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/partnerships`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/curriculum/tracks`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+
         // Legal
         {
             url: `${baseUrl}/legal`,

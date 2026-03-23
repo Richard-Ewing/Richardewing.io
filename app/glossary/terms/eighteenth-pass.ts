@@ -1,0 +1,98 @@
+import { GlossaryTerm } from '../types';
+
+// =============================================================================
+// EIGHTEENTH PASS: Niche AI terms + searched-for terms
+// =============================================================================
+
+export const eighteenthPassTerms: GlossaryTerm[] = [
+    {
+        title: 'LangChain',
+        slug: 'langchain',
+        definition: `LangChain is an open-source framework for building applications powered by large language models (LLMs). It provides abstractions for chaining LLM calls, connecting to external data sources, and implementing agentic workflows.\n\n**Core components:**\n- **Chains:** Sequential or branching LLM call workflows\n- **Agents:** LLMs that decide which tools to use and when\n- **RAG (Retrieval-Augmented Generation):** Connect LLMs to your data via vector databases\n- **Memory:** Maintain conversation context across interactions\n- **Tools:** Integrations with APIs, databases, and external services\n\n**LangChain alternatives:** LlamaIndex (data-focused), Semantic Kernel (Microsoft), Haystack (NLP-focused), CrewAI (multi-agent).\n\n**Criticism:** LangChain is often over-abstracted for simple use cases. For basic LLM calls, direct API usage is simpler and more debuggable.`,
+        whyItMatters: 'LangChain is the most popular LLM orchestration framework, making it critical to understand for AI product architecture decisions. Its abstraction choices directly impact inference costs and debugging complexity.',
+        category: 'AI Tools & Frameworks',
+        relatedTerms: ['ai-orchestration', 'agentic-workflow', 'rag', 'large-language-model'],
+        faqs: [{ question: 'Should I use LangChain for my AI project?', answer: 'For complex agentic workflows or RAG applications: yes, it saves development time. For simple API calls or straightforward chatbots: no, direct API usage is simpler. Evaluate the complexity trade-off.' }],
+    },
+    {
+        title: 'CrewAI',
+        slug: 'crewai',
+        definition: `CrewAI is an open-source multi-agent orchestration framework that enables teams of AI agents to collaborate on complex tasks. Each agent has a defined role, goal, and backstory — creating specialized AI "crew members" that work together.\n\n**Key concepts:**\n- **Agents:** Specialized AI entities with defined roles (e.g., "Researcher", "Writer", "Reviewer")\n- **Tasks:** Specific work items assigned to agents\n- **Crew:** A team of agents working toward a shared goal\n- **Process:** Sequential or hierarchical task execution\n\n**Use cases:** Content generation pipelines, research automation, code review workflows, customer support triage.\n\n**Economics:** Each agent in a CrewAI crew makes independent LLM calls. A 5-agent crew processing one request may cost 5-15x a single LLM call. This is the Orchestration Debt Richard Ewing's framework addresses.`,
+        whyItMatters: 'CrewAI represents the emerging multi-agent architecture pattern. Understanding its economics — especially the multiplicative cost of multi-agent workflows — is critical for product leaders building AI features.',
+        category: 'AI Tools & Frameworks',
+        relatedTerms: ['ai-orchestration', 'agentic-workflow', 'langchain', 'orchestration-debt'],
+        faqs: [{ question: 'How is CrewAI different from LangChain?', answer: 'LangChain is a general LLM orchestration framework (chains, RAG, agents). CrewAI specifically focuses on multi-agent collaboration — multiple AI agents with distinct roles working together on complex tasks.' }],
+    },
+    {
+        title: 'OpenTelemetry',
+        slug: 'opentelemetry',
+        definition: `OpenTelemetry (OTel) is an open-source observability framework for generating, collecting, and exporting telemetry data — traces, metrics, and logs — from applications and infrastructure.\n\n**Three pillars:**\n- **Traces:** Request flows across distributed services (who called what, how long)\n- **Metrics:** Quantitative measurements (request count, error rate, latency)\n- **Logs:** Textual records of events and state changes\n\n**Why OpenTelemetry matters:**\n- **Vendor-neutral:** Instrument once, send to any backend (Datadog, Grafana, New Relic)\n- **CNCF project:** Industry standard backed by Google, Microsoft, and others\n- **Auto-instrumentation:** Libraries that automatically capture telemetry from popular frameworks\n\n**OpenTelemetry replaces:** Vendor-specific instrumentation (Datadog APM, New Relic agents) with a single, portable standard.`,
+        whyItMatters: 'Observability is table stakes for modern engineering. OpenTelemetry prevents vendor lock-in on monitoring — the same instrumentation works with any backend. This is crucial for managing observability infrastructure debt.',
+        category: 'DevOps & Infrastructure',
+        relatedTerms: ['observability', 'service-level-objectives', 'incident-response'],
+        faqs: [{ question: 'Should I adopt OpenTelemetry?', answer: 'If you\'re starting fresh with observability: absolutely. If you have existing vendor instrumentation (Datadog, New Relic): migrate incrementally. The vendor-neutrality alone justifies the investment.' }],
+    },
+    {
+        title: 'AI Guardrails',
+        slug: 'ai-guardrails',
+        definition: `AI guardrails are safety mechanisms that constrain AI model behavior within acceptable bounds — preventing harmful, inaccurate, or policy-violating outputs. Guardrails are the practical implementation of AI alignment in production.\n\n**Types of guardrails:**\n- **Input guardrails:** Filter dangerous prompts before they reach the model (prompt injection detection, topic filtering)\n- **Output guardrails:** Validate model responses before returning to users (content moderation, factual verification, PII detection)\n- **Behavioral guardrails:** Constrain the model's action space (EAAP Protocol — what actions the AI is allowed to take)\n\n**Guardrail tools:** NVIDIA NeMo Guardrails, Guardrails AI, LangChain output parsers, custom validation layers.\n\n**The guardrail tax:** Every guardrail adds latency and cost. A typical production AI system has 3-5 guardrail layers. Each adds 50-200ms latency and requires its own model call (for ML-based guardrails).`,
+        whyItMatters: 'AI guardrails are the difference between a demo and a production-ready AI product. Insufficient guardrails create safety and liability risks. Excessive guardrails create latency and cost overhead.',
+        category: 'AI & Machine Learning',
+        relatedTerms: ['ai-alignment', 'agentic-governance', 'eaap-protocol', 'ai-red-teaming'],
+        faqs: [{ question: 'How many guardrails does a production AI system need?', answer: '3-5 is typical: input validation, output content filter, PII redaction, factual grounding check, and policy compliance. Each adds cost and latency. Design guardrails around your specific risk profile.' }],
+    },
+    {
+        title: 'RAG (Retrieval-Augmented Generation)',
+        slug: 'rag',
+        definition: `RAG (Retrieval-Augmented Generation) is an AI architecture pattern that enhances LLM responses by first retrieving relevant documents from a knowledge base, then using those documents as context for the model's response.\n\n**RAG pipeline:**\n1. **Index:** Chunk documents, generate embeddings, store in vector database\n2. **Retrieve:** Find the most relevant documents for a given query (semantic search)\n3. **Augment:** Insert retrieved documents into the LLM prompt as context\n4. **Generate:** LLM produces a response grounded in the retrieved documents\n\n**Why RAG over fine-tuning:**\n- Cheaper: No expensive retraining needed\n- Fresher: Update knowledge by updating the document store\n- Traceable: Can cite sources for every response\n- Controllable: Limit responses to your data\n\n**RAG challenges:** Chunking strategy, retrieval quality, context window limits, hallucination despite retrieved context.`,
+        whyItMatters: 'RAG is the dominant architecture for enterprise AI applications because it grounds LLM responses in company-specific data. Understanding RAG economics (embedding storage, retrieval compute, context window costs) prevents AI COGS surprises.',
+        category: 'AI & Machine Learning',
+        relatedTerms: ['embeddings', 'large-language-model', 'ai-inference', 'langchain'],
+        faqs: [{ question: 'When should I use RAG vs. fine-tuning?', answer: 'RAG when: your data changes frequently, you need citation/sourcing, or your knowledge base is large. Fine-tuning when: you need to change model behavior/style, data is stable, or you need the fastest inference.' }],
+    },
+    {
+        title: 'Technical Debt Quadrant',
+        slug: 'technical-debt-quadrant',
+        definition: `The Technical Debt Quadrant is a classification framework (created by Martin Fowler) that categorizes technical debt along two dimensions: deliberate vs. inadvertent, and reckless vs. prudent.\n\n**Four quadrants:**\n1. **Reckless + Deliberate:** "We don't have time for design" — knowingly shipping bad code\n2. **Reckless + Inadvertent:** "What's layering?" — shipping bad code without knowing it's bad\n3. **Prudent + Deliberate:** "We must ship now and deal with consequences" — conscious trade-offs\n4. **Prudent + Inadvertent:** "Now we know how we should have done it" — learning-driven debt\n\n**Quadrant 3 (Prudent + Deliberate) is the only acceptable form of intentional debt.** It represents conscious, documented trade-offs with a plan to repay.\n\nRichard Ewing's Product Debt Index extends this framework by attaching dollar values to each quadrant — making the economic impact of each debt type visible to finance and leadership.`,
+        whyItMatters: 'Not all technical debt is equal. The quadrant framework helps engineering leaders communicate WHY debt exists — which determines how urgently it should be addressed.',
+        category: 'Technical Debt & Code Quality',
+        relatedTerms: ['technical-debt', 'technical-debt-ratio-metric', 'innovation-tax', 'architecture-debt'],
+        faqs: [{ question: 'Which quadrant is worst?', answer: 'Reckless + Inadvertent (Quadrant 2). The team doesn\'t know what they don\'t know — they\'re creating debt without realizing it. This is the most dangerous because it compounds invisibly until it\'s a crisis.' }],
+    },
+    {
+        title: 'NeMo Guardrails',
+        slug: 'nemo-guardrails',
+        definition: `NeMo Guardrails is an open-source toolkit by NVIDIA for adding programmable guardrails to LLM-based applications. It allows developers to define conversation flows, topical constraints, and safety policies using a simple configuration language called Colang.\n\n**Capabilities:**\n- **Topical guardrails:** Prevent AI from discussing off-topic subjects\n- **Safety guardrails:** Block harmful, biased, or inappropriate responses\n- **Hallucination reduction:** Fact-checking responses against known data\n- **Input filtering:** Detect and block prompt injection attacks\n- **Custom policies:** Define application-specific behavior constraints\n\n**Colang example:** A simple configuration that says "if user asks about competitors, redirect to our product features" — all without modifying the LLM itself.\n\nNeMo Guardrails is part of NVIDIA's broader AI Enterprise platform and integrates with LangChain, LlamaIndex, and direct API usage.`,
+        whyItMatters: 'NeMo Guardrails represents the shift from "hoping AI behaves" to "enforcing AI behavior." For product leaders, guardrails are a required investment — shipped without them, AI features become liability risks.',
+        category: 'AI Tools & Frameworks',
+        relatedTerms: ['ai-guardrails', 'ai-alignment', 'ai-red-teaming', 'eaap-protocol'],
+        faqs: [{ question: 'Is NeMo Guardrails production-ready?', answer: 'Yes — NVIDIA actively maintains it and uses it in production AI Enterprise deployments. It adds 50-200ms latency per guardrail check, which is acceptable for most conversational AI applications.' }],
+    },
+    {
+        title: 'AI Red Teaming',
+        slug: 'ai-red-teaming',
+        definition: `AI red teaming is the practice of adversarially testing AI systems to discover safety vulnerabilities, harmful behaviors, and failure modes before deployment. Red teamers try to make AI systems misbehave.\n\n**Red team attack types:**\n- **Prompt injection:** Trick the model into ignoring instructions\n- **Jailbreaking:** Bypass safety filters to get prohibited outputs\n- **Data extraction:** Get the model to reveal training data or system prompts\n- **Bias probing:** Find discriminatory or biased responses\n- **Factuality testing:** Identify confident hallucinations\n\n**Red teaming process:**\n1. Define the attack surface and scope\n2. Assemble red team (ideally diverse backgrounds and perspectives)\n3. Run structured attack scenarios\n4. Document findings with severity ratings\n5. Implement mitigations and guardrails\n6. Retest to verify fixes\n\nGoogle, OpenAI, Anthropic, and Meta all run extensive red team programs before model releases.`,
+        whyItMatters: 'AI red teaming is the quality assurance practice for AI safety. Without red teaming, AI products ship with unknown vulnerabilities that become public failures. The cost of a pre-launch red team is tiny compared to a post-launch AI safety incident.',
+        category: 'AI & Machine Learning',
+        relatedTerms: ['ai-guardrails', 'ai-alignment', 'nemo-guardrails', 'chaos-engineering'],
+        faqs: [{ question: 'How often should we red team our AI systems?', answer: 'Before every major release, after every model change, and quarterly for ongoing monitoring. LLM providers release new versions frequently — each update can change the attack surface.' }],
+    },
+    {
+        title: 'Product-Led Growth (PLG)',
+        slug: 'product-led-growth',
+        definition: `Product-Led Growth (PLG) is a go-to-market strategy where the product itself is the primary driver of customer acquisition, conversion, and expansion. Users discover, adopt, and pay for the product with minimal sales involvement.\n\n**PLG flywheel:**\n1. **Free tier / freemium:** Users start for free\n2. **Self-serve onboarding:** Users get value without talking to sales\n3. **Usage triggers:** Natural upgrade moments ("you've reached your limit")\n4. **Virality:** Users invite colleagues and teams\n5. **Expansion:** Individual use becomes team/enterprise adoption\n\n**PLG examples:** Slack, Figma, Notion, Calendly, Loom, Datadog.\n\n**PLG metrics:** Time to value, product-qualified leads (PQLs), free-to-paid conversion rate, natural rate of revenue growth (NRG).\n\nRichardEwing.io uses PLG: free tools (PDI, APER, AUEB, Audit Interview) → advisory conversion.`,
+        whyItMatters: 'PLG reduces customer acquisition cost by making the product the sales team. Understanding PLG economics — CAC vs. COGS of free users — determines whether free tiers are growth engines or cost centers.',
+        category: 'Product Management',
+        relatedTerms: ['freemium-model', 'customer-acquisition-cost', 'net-revenue-retention', 'product-market-fit'],
+        faqs: [{ question: 'Can PLG work for enterprise products?', answer: 'Yes — Slack, Datadog, and Figma all started as PLG and moved upmarket. The pattern is "land with individuals/teams, expand to enterprise." Bottom-up adoption is often more durable than top-down sales.' }],
+    },
+    {
+        title: 'Net Revenue Retention (NRR)',
+        slug: 'net-revenue-retention',
+        definition: `Net Revenue Retention (NRR) measures how much revenue you retain from existing customers over a period, including expansion, contraction, and churn. NRR > 100% means you're growing even without acquiring new customers.\n\n**Formula:** NRR = (Starting Revenue + Expansion - Contraction - Churn) / Starting Revenue × 100%\n\n**Benchmarks:**\n- **Elite:** 130%+ (Datadog: 130%, Snowflake: 131%)\n- **Great:** 120-130% (Twilio: 123%)\n- **Good:** 110-120%\n- **Concerning:** 100-110%\n- **Trouble:** < 100% (revenue is shrinking without new customers)\n\n**Why NRR matters more than new ARR:** If NRR < 100%, you're filling a leaky bucket. Every dollar of new revenue is offset by churning revenue. Fixing retention is almost always higher ROI than increasing acquisition.`,
+        whyItMatters: 'NRR is the single most important SaaS metric for understanding business health. A 120% NRR means the business almost doubles revenue from existing customers every 4 years — without a single new customer.',
+        category: 'SaaS & Metrics',
+        relatedTerms: ['unit-economics', 'product-led-growth', 'customer-acquisition-cost', 'annual-recurring-revenue'],
+        faqs: [{ question: 'What is a good NRR for a startup?', answer: 'Above 100% immediately. Target 110%+ by Series A, 120%+ by Series B. Below 100% is a red flag for investors because it means the customer base is shrinking without new acquisition.' }],
+    },
+];
