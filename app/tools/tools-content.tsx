@@ -94,6 +94,45 @@ export default function ToolsContent() {
           </div>
         </section>
 
+        {/* AI Courses Cross-link */}
+        <section className="section">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <div className="text-xs text-purple-400 uppercase tracking-wide mb-2">Free Training</div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                Level Up Your <span className="text-purple-400">AI Skills</span>
+              </h2>
+              <p className="text-gray-400 text-sm max-w-lg mx-auto">
+                Anthropic Academy courses — free, self-paced, with certificates. Curated by Richard Ewing.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { name: 'AI Fluency', desc: 'For leaders making AI decisions', url: 'https://anthropic.skilljar.com/ai-fluency-framework-foundations', color: 'cyan' },
+                { name: 'Building with Claude API', desc: 'For developers shipping AI features', url: 'https://anthropic.skilljar.com/claude-with-the-anthropic-api', color: 'purple' },
+                { name: 'Intro to MCP', desc: 'For architects connecting AI to tools', url: 'https://anthropic.skilljar.com/introduction-to-model-context-protocol', color: 'cyan' },
+              ].map((course) => (
+                <a
+                  key={course.name}
+                  href={course.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group block p-5 rounded-xl bg-white/[0.03] border border-${course.color === 'cyan' ? 'cyan' : 'purple'}-500/20 hover:bg-white/[0.06] transition-all text-center`}
+                >
+                  <h3 className={`font-bold text-white mb-1 group-hover:text-${course.color === 'cyan' ? 'cyan' : 'purple'}-400 transition-colors`}>{course.name}</h3>
+                  <p className="text-xs text-zinc-500">{course.desc}</p>
+                  <span className={`text-${course.color === 'cyan' ? 'cyan' : 'purple'}-400 text-xs mt-2 inline-block`}>Free Course ↗</span>
+                </a>
+              ))}
+            </div>
+            <div className="text-center mt-4">
+              <Link href="/resources/ai-courses" className="text-xs text-zinc-500 hover:text-white transition-colors uppercase tracking-widest">
+                View all 15 curated courses →
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="section-sm text-center">
           <p className="text-gray-400 mb-3">

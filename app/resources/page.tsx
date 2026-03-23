@@ -45,6 +45,17 @@ const resourceSections = [
         ],
     },
     {
+        title: 'AI Training (Anthropic Academy)',
+        description: 'Free, self-paced AI courses from Anthropic — curated by Richard Ewing with editorial commentary.',
+        icon: '🤖',
+        items: [
+            { name: 'All 15 Curated Courses', description: 'Full catalog grouped by audience with Richard\'s editorial take', href: '/resources/ai-courses' },
+            { name: 'Claude 101', description: 'Learn how to use Claude for everyday work', href: 'https://anthropic.skilljar.com/claude-101' },
+            { name: 'Building with Claude API', description: 'Integrate Claude into your applications', href: 'https://anthropic.skilljar.com/claude-with-the-anthropic-api' },
+            { name: 'Intro to MCP', description: 'Build MCP servers and clients from scratch', href: 'https://anthropic.skilljar.com/introduction-to-model-context-protocol' },
+        ],
+    },
+    {
         title: 'Articles & Publications',
         description: 'Published insights on product economics, AI, and engineering leadership.',
         icon: '📝',

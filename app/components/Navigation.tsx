@@ -66,6 +66,7 @@ const Navigation = () => {
                                 <DropdownItem href="/curriculum/tracks">Curriculum Tracks (4 Paths)</DropdownItem>
                                 <DropdownItem href="/benchmark">Benchmark Report (Free)</DropdownItem>
                                 <DropdownItem href="/briefings">Briefings (Newsletter)</DropdownItem>
+                                <DropdownItem href="/resources/ai-courses">AI Courses (Free)</DropdownItem>
                             </Dropdown>
 
                             <Dropdown label="Tools">
@@ -216,6 +217,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/guides" onClick={onClose}>Guides</MobileLink>
                         <MobileLink href="/benchmark" onClick={onClose}>Benchmark Report</MobileLink>
                         <MobileLink href="/briefings" onClick={onClose}>Briefings</MobileLink>
+                        <MobileLink href="/resources/ai-courses" onClick={onClose}>AI Courses (Free)</MobileLink>
                     </div>
 
                     <div className="space-y-4">

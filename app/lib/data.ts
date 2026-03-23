@@ -1,5 +1,14 @@
 export const articles = [
     {
+        slug: "anthropic-academy-ai-courses-curated",
+        title: "Anthropic Just Made AI Education Free — Here's What Leaders Should Take",
+        description: "A curated walkthrough of all 15 Anthropic Academy courses, grouped by audience — leaders, builders, architects, and educators — with editorial commentary on which ones matter and why.",
+        date: "Mar 2026",
+        readTime: "5 min read",
+        source: "The Canon",
+        externalUrl: "/resources/ai-courses"
+    },
+    {
         slug: "why-your-cfo-hates-your-agile-transformation",
         title: "Why Your CFO Hates Your Agile Transformation",
         description: "CIOs speak in sprints; CFOs speak in quarters. That language barrier is the number one reason R&D budgets get slashed. This article introduces the Capitalization Matrix for bridging the gap between engineering velocity and financial governance.",

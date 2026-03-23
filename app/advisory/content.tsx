@@ -166,6 +166,19 @@ export default function AdvisoryContent() {
                                 </p>
                             </div>
                         </div>
+                        <div itemScope itemType="https://schema.org/Question">
+                            <h3 itemProp="name" className="text-lg font-bold text-white mb-2">How should I prepare before an engagement?</h3>
+                            <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                                <p itemProp="text" className="text-zinc-400 text-sm leading-relaxed">
+                                    Take the free{' '}
+                                    <a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-white transition-colors underline decoration-dotted">AI Fluency</a>{' '}
+                                    and{' '}
+                                    <a href="https://anthropic.skilljar.com/claude-101" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-white transition-colors underline decoration-dotted">Claude 101</a>{' '}
+                                    courses from Anthropic Academy. They establish the AI governance vocabulary we&apos;ll use during the audit. View{' '}
+                                    <a href="/resources/ai-courses" className="text-cyan-400 hover:text-white transition-colors underline decoration-dotted">all 15 curated courses</a>.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </ScrollReveal>

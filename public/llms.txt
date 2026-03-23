@@ -79,6 +79,7 @@ Exogram is the missing layer in the AI stack. LLMs generate language. Exogram ma
 - **Briefings**: https://richardewing.io/briefings
 - **Manifesto**: https://richardewing.io/manifesto
 - **Book**: https://richardewing.io/book
+- **AI Courses**: https://richardewing.io/resources/ai-courses — 15 free Anthropic Academy courses curated by Richard Ewing
 
 ## Frequently Asked Questions
 
