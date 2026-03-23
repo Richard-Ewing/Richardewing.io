@@ -77,7 +77,7 @@ export default function ExitIntentPopup() {
     return (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" onClick={handleDismiss}>
             <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-            <div className="relative w-full max-w-md bg-zinc-900 border border-white/10 rounded-2xl p-8 shadow-2xl animate-in fade-in zoom-in duration-300" onClick={(e) => e.stopPropagation()}>
+            <div className="relative w-full max-w-lg bg-zinc-900 border border-white/10 rounded-2xl p-8 shadow-2xl animate-in fade-in zoom-in duration-300" onClick={(e) => e.stopPropagation()}>
                 <button onClick={handleDismiss} className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors" aria-label="Close popup">
                     <X className="w-5 h-5" />
                 </button>
@@ -92,14 +92,34 @@ export default function ExitIntentPopup() {
                     </div>
                 ) : (
                     <>
-                        <div className="w-14 h-14 bg-purple-500/10 border border-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <div className="w-14 h-14 bg-purple-500/10 border border-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-5">
                             <Gift className="w-7 h-7 text-purple-400" />
                         </div>
 
                         <h3 className="text-2xl font-bold text-white text-center mb-2">Wait — Free R&D Audit Checklist</h3>
-                        <p className="text-zinc-400 text-center text-sm mb-6">
-                            The 15 questions I ask in every <span className="text-white font-semibold">$7,500 engagement</span>. Yours free.
+                        <p className="text-zinc-400 text-center text-sm mb-4">
+                            The same <span className="text-white font-semibold">39 questions across 6 domains</span> used in every <span className="text-white font-semibold">$7,500 engagement</span>.
                         </p>
+
+                        {/* What You Get */}
+                        <div className="bg-white/[0.03] border border-white/5 rounded-xl p-4 mb-5 space-y-2">
+                            <div className="flex items-start gap-2 text-xs text-zinc-300">
+                                <span className="text-emerald-400 mt-0.5">✓</span> Traffic-light scoring rubrics for every question
+                            </div>
+                            <div className="flex items-start gap-2 text-xs text-zinc-300">
+                                <span className="text-emerald-400 mt-0.5">✓</span> Actionable remediation steps — not just diagnosis
+                            </div>
+                            <div className="flex items-start gap-2 text-xs text-zinc-300">
+                                <span className="text-emerald-400 mt-0.5">✓</span> Benchmark thresholds so you know where you stand
+                            </div>
+                        </div>
+
+                        {/* Domain Preview */}
+                        <div className="flex flex-wrap gap-1.5 mb-5 justify-center">
+                            {['⚡ Velocity', '🏗️ Tech Debt', '🤖 AI Economics', '💰 Revenue', '👥 People', '📊 Strategic'].map((d, i) => (
+                                <span key={i} className="text-[10px] px-2 py-1 rounded-full bg-white/5 border border-white/10 text-zinc-400 font-mono">{d}</span>
+                            ))}
+                        </div>
 
                         <form onSubmit={handleSubmit} className="space-y-3">
                             <input
@@ -119,11 +139,16 @@ export default function ExitIntentPopup() {
                                 type="submit" disabled={state.submitting || isValidating}
                                 className="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold uppercase tracking-widest text-xs rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70"
                             >
-                                {(state.submitting || isValidating) ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Get Checklist <ArrowRight className="w-3 h-3" /></>}
+                                {(state.submitting || isValidating) ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Get Free Checklist <ArrowRight className="w-3 h-3" /></>}
                             </button>
                         </form>
 
-                        <p className="text-[10px] text-zinc-600 text-center mt-4">Zero spam. Used by 2,000+ executives.</p>
+                        <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/5">
+                            <p className="text-[10px] text-zinc-600">Zero spam · Used by 2,000+ executives</p>
+                            <a href="/tools" className="text-[10px] text-zinc-500 hover:text-cyan-400 transition-colors">
+                                Or try free tools →
+                            </a>
+                        </div>
                     </>
                 )}
             </div>

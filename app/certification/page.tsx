@@ -98,7 +98,7 @@ export default function CertificationPage() {
                         <p className="text-zinc-500 text-sm mb-6">Per certification · Payment plans available</p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a
-                                href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203"
+                                href="/api/buy/certification"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold uppercase tracking-widest text-sm rounded-xl transition-all"

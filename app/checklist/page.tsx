@@ -243,6 +243,30 @@ export default function ChecklistPage() {
                                             </div>
                                         ))}
                                     </div>
+
+                                    {/* Between-domain conversion CTAs */}
+                                    {di === 1 && (
+                                        <div className="mt-8 p-5 rounded-xl border border-amber-500/20 bg-amber-500/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                            <div>
+                                                <div className="text-sm font-bold text-white mb-1">Scored red on 3+ questions so far?</div>
+                                                <p className="text-xs text-zinc-400">A 30-minute Gut-Check call identifies whether you have a real problem — or just technical anxiety.</p>
+                                            </div>
+                                            <a href="/api/buy/gut_check" className="shrink-0 px-5 py-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-widest hover:bg-amber-500/20 transition-all">
+                                                Gut-Check — $450 →
+                                            </a>
+                                        </div>
+                                    )}
+                                    {di === 3 && (
+                                        <div className="mt-8 p-5 rounded-xl border border-red-500/20 bg-red-500/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                            <div>
+                                                <div className="text-sm font-bold text-white mb-1">Multiple red scores across domains?</div>
+                                                <p className="text-xs text-zinc-400">The Insolvency Diagnostic quantifies your exposure and delivers a written Risk Report with prioritized remediation.</p>
+                                            </div>
+                                            <a href="/api/buy/insolvency_diagnostic" className="shrink-0 px-5 py-2.5 rounded-lg bg-red-600 text-white text-xs font-bold uppercase tracking-widest hover:bg-red-500 transition-all">
+                                                Full Diagnostic — $2,500 →
+                                            </a>
+                                        </div>
+                                    )}
                                 </section>
                             );
                         })}
@@ -281,10 +305,10 @@ export default function ChecklistPage() {
                         <h2 className="text-2xl font-bold text-white mb-4">Want These Questions Answered Professionally?</h2>
                         <p className="text-zinc-400 mb-8 max-w-lg mx-auto">Book a diagnostic engagement and get a written executive summary with quantified findings, benchmarks, and a prioritized remediation roadmap.</p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
+                            <a href="/api/buy/strategy_session" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                                 Book Strategy Session →
                             </a>
-                            <a href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203" target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
+                            <a href="/api/buy/full_audit" target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
                                 Full R&amp;D Audit ($7,500) →
                             </a>
                         </div>

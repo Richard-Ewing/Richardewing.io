@@ -212,7 +212,7 @@ export default function CurriculumPage() {
 
                         <div className="flex flex-wrap items-center gap-4 mt-8">
                             <a
-                                href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200"
+                                href="/api/buy/full_curriculum"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-lg text-white font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity shadow-lg"
@@ -336,33 +336,69 @@ export default function CurriculumPage() {
                         );
                     })}
 
-                    {/* Bottom CTA */}
-                    <div className="text-center py-20 border-t border-white/10">
-                        <h2 className="text-3xl font-grotesk font-bold text-white mb-4">
-                            Unlock the Full Curriculum.
+                    {/* Pricing Tiers */}
+                    <div className="py-20 border-t border-white/10">
+                        <h2 className="text-3xl font-grotesk font-bold text-white mb-4 text-center">
+                            Choose Your Access Level.
                         </h2>
-                        <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
-                            24 modules. 80+ lessons. 5 diagnostic tools. Certificate of completion.
-                            <br /><span className="text-white">One subscription — everything included.</span>
+                        <p className="text-zinc-400 mb-12 max-w-xl mx-auto text-center">
+                            Start with a single module or unlock the complete library with certificate.
                         </p>
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <a
-                                href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-lg text-white font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity shadow-lg"
-                            >
-                                Unlock All Modules — $199/yr
-                            </a>
-                            <Link
-                                href="/tools/pdi"
-                                className="px-8 py-4 border border-white/20 rounded-lg text-white font-bold uppercase tracking-widest text-sm hover:border-white/40 transition-colors"
-                            >
-                                Try Free PDI Tool First
-                            </Link>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                            {/* Tier 1: Single Module */}
+                            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex flex-col">
+                                <div className="text-xs text-zinc-500 uppercase tracking-widest font-mono mb-3">Starter</div>
+                                <div className="text-3xl font-bold text-white mb-1">$49</div>
+                                <div className="text-sm text-zinc-500 mb-6">One-time · 1 module</div>
+                                <ul className="space-y-2 mb-6 flex-1">
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-emerald-400 mt-0.5">✓</span> Access to 1 complete module</li>
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-emerald-400 mt-0.5">✓</span> All lessons &amp; assessments</li>
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-emerald-400 mt-0.5">✓</span> Lifetime access</li>
+                                </ul>
+                                <a href="/api/buy/single_module" className="block text-center py-3 rounded-lg border border-white/20 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/5 transition-all">
+                                    Buy Module — $49
+                                </a>
+                            </div>
+
+                            {/* Tier 2: 3-Module Bundle */}
+                            <div className="rounded-2xl border border-violet-500/30 bg-violet-500/5 p-6 flex flex-col relative">
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-violet-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">Best Value</div>
+                                <div className="text-xs text-violet-400 uppercase tracking-widest font-mono mb-3">Bundle</div>
+                                <div className="text-3xl font-bold text-white mb-1">$119</div>
+                                <div className="text-sm text-zinc-500 mb-1">One-time · 3 modules</div>
+                                <div className="text-xs text-violet-400 mb-6">~$40/module — save 18%</div>
+                                <ul className="space-y-2 mb-6 flex-1">
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-violet-400 mt-0.5">✓</span> Choose any 3 tracks</li>
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-violet-400 mt-0.5">✓</span> All lessons &amp; assessments</li>
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-violet-400 mt-0.5">✓</span> Lifetime access</li>
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-violet-400 mt-0.5">✓</span> Related tool access</li>
+                                </ul>
+                                <a href="/api/buy/module_bundle_3" className="block text-center py-3 rounded-lg bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold text-sm uppercase tracking-widest hover:opacity-90 transition-opacity shadow-lg">
+                                    Get 3 Modules — $119
+                                </a>
+                            </div>
+
+                            {/* Tier 3: Full Curriculum */}
+                            <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-6 flex flex-col">
+                                <div className="text-xs text-cyan-400 uppercase tracking-widest font-mono mb-3">Complete</div>
+                                <div className="text-3xl font-bold text-white mb-1">$199<span className="text-lg text-zinc-500">/yr</span></div>
+                                <div className="text-sm text-zinc-500 mb-1">All 24 modules</div>
+                                <div className="text-xs text-cyan-400 mb-6">~$8/module · Cancel anytime</div>
+                                <ul className="space-y-2 mb-6 flex-1">
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> All 24 modules, all tracks</li>
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> 5 diagnostic tool access</li>
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> Certificate of completion</li>
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> New modules as released</li>
+                                </ul>
+                                <a href="/api/buy/full_curriculum" className="block text-center py-3 rounded-lg border border-cyan-500/30 text-cyan-400 font-bold text-sm uppercase tracking-widest hover:bg-cyan-500/10 transition-all">
+                                    Unlock Everything — $199/yr
+                                </a>
+                            </div>
                         </div>
-                        <p className="text-zinc-600 text-xs mt-4">
-                            That&apos;s ~$8 per module. Cancel anytime.
+
+                        <p className="text-zinc-600 text-xs mt-6 text-center">
+                            All plans include access to free tools. Not sure? <Link href="/tools/pdi" className="text-cyan-400 hover:text-cyan-300 underline">Try the free PDI calculator</Link> first.
                         </p>
                     </div>
                 </div>

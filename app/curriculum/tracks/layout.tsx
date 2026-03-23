@@ -26,7 +26,7 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                             📚 Glossary
                         </Link>
                         <a
-                            href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200"
+                            href="/api/buy/full_curriculum"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold text-xs hover:opacity-90 transition-opacity"

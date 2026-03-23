@@ -310,7 +310,7 @@ export default function GuidesPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-3">All Premium Guides Bundle — $99</h2>
                         <p className="text-zinc-400 mb-6 max-w-lg mx-auto text-sm">Get all 5 premium guides for the price of 3. Plus access to future premium guides at no extra cost.</p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:opacity-90 transition-opacity">
+                            <a href="/api/buy/premium_bundle" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:opacity-90 transition-opacity">
                                 Get All Premium Guides — $99 →
                             </a>
                         </div>
@@ -345,10 +345,10 @@ export default function GuidesPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Want Personalized Application?</h2>
                         <p className="text-zinc-400 mb-6 max-w-lg mx-auto text-sm">These guides teach the frameworks. A live engagement applies them to your specific organization, team, and challenges.</p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
+                            <a href="/api/buy/strategy_session" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                                 Book Strategy Session ($500) →
                             </a>
-                            <a href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
+                            <a href="/api/buy/full_audit" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
                                 Full R&amp;D Audit ($7,500) →
                             </a>
                         </div>

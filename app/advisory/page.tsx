@@ -70,13 +70,13 @@ export default function AdvisoryPage() {
                                     <li>✓ 15-min follow-up call</li>
                                 </ul>
 
-                                <a href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203" className="block w-full py-3 text-center rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
+                                <a href="/api/buy/insolvency_diagnostic" className="block w-full py-3 text-center rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
                                     Book Diagnostic
                                 </a>
 
                                 {/* Gut Check Upsell */}
                                 <div className="mt-4 pt-4 border-t border-white/10 text-center">
-                                    <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" className="text-gray-400 hover:text-white text-xs block">
+                                    <a href="/api/buy/gut_check" className="text-gray-400 hover:text-white text-xs block">
                                         Not ready for a full diagnostic?<br />
                                         Start with a 30-minute Gut-Check → $450
                                     </a>
@@ -97,7 +97,7 @@ export default function AdvisoryPage() {
                                 <li>✓ Remediation roadmap</li>
                             </ul>
 
-                            <a href="https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5">
+                            <a href="/api/buy/full_audit" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5">
                                 Book Audit
                             </a>
                         </div>
@@ -115,7 +115,7 @@ export default function AdvisoryPage() {
                                 <li>✓ Min. 3-month commitment</li>
                             </ul>
 
-                            <a href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5 mb-4">
+                            <a href="/api/buy/retainer" className="block w-full py-3 text-center rounded-lg border border-white/20 text-white hover:bg-white/5 mb-4">
                                 Subscribe
                             </a>
 
@@ -140,7 +140,7 @@ export default function AdvisoryPage() {
                                 <span className="text-cyan-400 font-bold">$450</span>
                             </div>
                             <p className="text-gray-400 text-sm mb-4">Not sure if you have a problem? You describe the situation, I tell you if it's on fire.</p>
-                            <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" className="text-xs text-purple-400 hover:text-white">Book Now →</a>
+                            <a href="/api/buy/gut_check" className="text-xs text-purple-400 hover:text-white">Book Now →</a>
                         </div>
 
                         <div className="card">
@@ -149,7 +149,7 @@ export default function AdvisoryPage() {
                                 <span className="text-cyan-400 font-bold">$5,000</span>
                             </div>
                             <p className="text-gray-400 text-sm mb-4">Dedicated analysis of your AI unit economics. Find your collapse point before you hit it.</p>
-                            <a href="https://buy.stripe.com/9B64gs4YK070dS57W02B201" className="text-xs text-purple-400 hover:text-white">Book Analysis →</a>
+                            <a href="/api/buy/ai_cost_governance" className="text-xs text-purple-400 hover:text-white">Book Analysis →</a>
                         </div>
 
                     </div>

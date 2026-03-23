@@ -71,7 +71,7 @@ export default function AdvisoryContent() {
                         <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
                             30-Minute Rapid Assessment. You describe the situation, I tell you if it's on fire. No pitch, just triage.
                         </p>
-                        <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
+                        <a href="/api/buy/gut_check" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
                             Book Diagnostic
                         </a>
                     </GlowCard>
@@ -88,12 +88,12 @@ export default function AdvisoryContent() {
                         <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
                             60-minute deep dive. Includes written Risk Exposure Report detailing red/yellow/green flags across 5 failure modes.
                         </p>
-                        <a href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-red-600 text-white font-bold uppercase text-xs py-3 rounded hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                        <a href="/api/buy/insolvency_diagnostic" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-red-600 text-white font-bold uppercase text-xs py-3 rounded hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)]">
                             Schedule Deep Dive
                         </a>
                         <div className="mt-4 pt-3 border-t border-white/10 text-center">
                             <span className="text-zinc-500 text-[10px] uppercase tracking-wide block mb-1">Not ready for deep dive?</span>
-                            <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" target="_blank" rel="noopener noreferrer" className="text-xs text-red-400 hover:text-white transition-colors underline decoration-dotted">
+                            <a href="/api/buy/gut_check" target="_blank" rel="noopener noreferrer" className="text-xs text-red-400 hover:text-white transition-colors underline decoration-dotted">
                                 Start with a 30-min Gut-Check ($450) →
                             </a>
                         </div>
@@ -108,7 +108,7 @@ export default function AdvisoryContent() {
                         <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
                             Full forensic review of engineering spend vs. ROI. 2-3 week engagement delivering a complete Audit Package and Turnaround Plan.
                         </p>
-                        <a href="https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-white/5 border border-white/10 text-white font-bold uppercase text-xs py-3 rounded hover:bg-white/10 transition-all">
+                        <a href="/api/buy/full_audit" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-white/5 border border-white/10 text-white font-bold uppercase text-xs py-3 rounded hover:bg-white/10 transition-all">
                             Commission Audit
                         </a>
                     </GlowCard>
@@ -122,7 +122,7 @@ export default function AdvisoryContent() {
                         <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
                             Dedicated AI economics analysis. Unit economics model, collapse point calculation, and margin protection framework.
                         </p>
-                        <a href="https://buy.stripe.com/9B64gs4YK070dS57W02B201" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
+                        <a href="/api/buy/ai_cost_governance" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
                             Secure Governance
                         </a>
                     </GlowCard>
@@ -138,7 +138,7 @@ export default function AdvisoryContent() {
                             <br /><br />
                             <span className="text-gold/80 italic text-xs">Engagements are scoped against measurable capital outcomes.</span>
                         </p>
-                        <a href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gold/10 border border-gold/20 text-gold font-bold uppercase text-xs py-3 rounded hover:bg-gold/20 transition-all">
+                        <a href="/api/buy/retainer" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gold/10 border border-gold/20 text-gold font-bold uppercase text-xs py-3 rounded hover:bg-gold/20 transition-all">
                             Initialize Retainer
                         </a>
                     </GlowCard>

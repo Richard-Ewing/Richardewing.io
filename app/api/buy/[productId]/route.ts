@@ -5,24 +5,25 @@ import { PRODUCTS } from '@/lib/products';
 function getStripe() {
     const key = process.env.STRIPE_SECRET_KEY;
     if (!key) {
-        throw new Error('STRIPE_SECRET_KEY is not set. Add it to .env.local to enable checkout.');
+        throw new Error('STRIPE_SECRET_KEY is not set.');
     }
     return new Stripe(key);
 }
 
-export async function POST(request: Request) {
+export async function GET(
+    request: Request,
+    { params }: { params: Promise<{ productId: string }> }
+) {
     try {
-        const stripe = getStripe();
-        const { productId, moduleId, returnUrl } = await request.json();
-
+        const { productId } = await params;
         const product = PRODUCTS[productId];
+
         if (!product) {
-            return NextResponse.json({ error: 'Invalid product ID' }, { status: 400 });
+            return NextResponse.redirect(new URL('/advisory', request.url));
         }
 
+        const stripe = getStripe();
         const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.richardewing.io';
-        const successUrl = returnUrl ? `${baseUrl}${returnUrl}?success=true` : `${baseUrl}/curriculum/tracks?success=true`;
-        const cancelUrl = returnUrl ? `${baseUrl}${returnUrl}` : `${baseUrl}/curriculum/tracks`;
 
         const lineItem: Stripe.Checkout.SessionCreateParams.LineItem = {
             price_data: {
@@ -44,19 +45,19 @@ export async function POST(request: Request) {
             payment_method_types: ['card'],
             line_items: [lineItem],
             mode: product.mode,
-            success_url: successUrl,
-            cancel_url: cancelUrl,
-            metadata: {
-                productId,
-                ...(moduleId && { moduleId }),
-            },
+            success_url: `${baseUrl}/?checkout=success&product=${productId}`,
+            cancel_url: `${baseUrl}/?checkout=cancelled`,
+            metadata: { productId },
             allow_promotion_codes: true,
         });
 
-        return NextResponse.json({ url: session.url });
-    } catch (error: unknown) {
-        console.error('Stripe checkout error:', error);
-        const message = error instanceof Error ? error.message : 'Failed to create checkout session';
-        return NextResponse.json({ error: message }, { status: 500 });
+        if (!session.url) {
+            return NextResponse.redirect(new URL('/advisory', request.url));
+        }
+
+        return NextResponse.redirect(session.url);
+    } catch (error) {
+        console.error('Buy route error:', error);
+        return NextResponse.redirect(new URL('/advisory', request.url));
     }
 }

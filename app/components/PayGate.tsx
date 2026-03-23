@@ -38,17 +38,17 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
             } else {
                 // Fallback to existing Stripe Payment Links
                 if (productId === 'single_module') {
-                    window.open('https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203', '_blank');
+                    window.open('/api/buy/single_module', '_blank');
                 } else {
-                    window.open('https://buy.stripe.com/14AdR24YK3jc15j4JO2B200', '_blank');
+                    window.open('/api/buy/full_curriculum', '_blank');
                 }
             }
         } catch {
             // Fallback to existing links
             if (productId === 'single_module') {
-                window.open('https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203', '_blank');
+                window.open('/api/buy/single_module', '_blank');
             } else {
-                window.open('https://buy.stripe.com/14AdR24YK3jc15j4JO2B200', '_blank');
+                window.open('/api/buy/full_curriculum', '_blank');
             }
         } finally {
             setLoading(null);
