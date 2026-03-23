@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '../terms';
-import { autoKeyMetrics, autoMaturityLevels, autoComparisons, autoQuiz, autoDiagram } from '../auto-enrich';
+import { autoKeyMetrics, autoMaturityLevels, autoComparisons, autoQuiz, autoDiagram, autoCommonMistakes, autoBestPractices, autoIndustryBenchmarks } from '../auto-enrich';
 import RelatedContent from '../../components/RelatedContent';
 import GlossaryToolCTA from '../../components/GlossaryToolCTA';
 import ShareButtons from '../../components/ShareButtons';
@@ -137,6 +137,9 @@ export default async function GlossaryTermPage({ params }: Props) {
     const comparisons = term.comparisons && term.comparisons.length > 0 ? term.comparisons : autoComparisons(term.category, term.title);
     const quiz = term.quiz && term.quiz.length > 0 ? term.quiz : autoQuiz(term.category, term.title);
     const diagram = term.diagram || autoDiagram(term.category, term.title);
+    const commonMistakes = autoCommonMistakes(term.category, term.title);
+    const bestPractices = autoBestPractices(term.category, term.title);
+    const industryBenchmarks = autoIndustryBenchmarks(term.category, term.title);
 
     const faqSchema = {
         '@context': 'https://schema.org',
@@ -384,6 +387,75 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🔄 How It Works</h2>
                     <div className="bg-black/30 rounded-xl p-6 font-mono text-sm text-zinc-400 whitespace-pre-line">
                         {diagram}
+                    </div>
+                </section>
+
+                {/* Common Mistakes — always rendered */}
+                <section className="mb-12">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-6">🚫 Common Mistakes to Avoid</h2>
+                    <div className="space-y-4">
+                        {commonMistakes.map((m, i) => (
+                            <div key={i} className="rounded-xl border border-red-500/10 bg-red-500/[0.02] p-5">
+                                <div className="flex items-start gap-3">
+                                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                                        <span className="text-xs font-bold text-red-400">{i + 1}</span>
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="text-sm font-bold text-white mb-1">{m.mistake}</div>
+                                        <div className="text-xs text-red-400/80 mb-2">⚠️ Consequence: {m.consequence}</div>
+                                        <div className="text-xs text-emerald-400/80">✅ Fix: {m.fix}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Best Practices — always rendered */}
+                <section className="mb-12">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-6">🏆 Best Practices</h2>
+                    <div className="space-y-3">
+                        {bestPractices.map((bp, i) => (
+                            <div key={i} className="flex items-start gap-4 p-4 rounded-xl border border-emerald-500/10 bg-emerald-500/[0.02]">
+                                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+                                    <span className="text-xs font-bold text-emerald-400">✓</span>
+                                </div>
+                                <div>
+                                    <div className="text-sm font-bold text-white">{bp.practice}</div>
+                                    <div className="text-xs text-zinc-500 mt-1">Impact: {bp.impact}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Industry Benchmarks — always rendered */}
+                <section className="mb-12">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-6">📊 Industry Benchmarks</h2>
+                    <p className="text-zinc-400 text-sm mb-4">How does your organization compare? Use these benchmarks to identify where you stand and where to invest.</p>
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                            <thead>
+                                <tr className="border-b border-white/10">
+                                    <th className="text-left py-3 px-4 text-zinc-500 font-mono uppercase tracking-widest text-xs">Industry</th>
+                                    <th className="text-left py-3 px-4 text-zinc-500 font-mono uppercase tracking-widest text-xs">Metric</th>
+                                    <th className="text-left py-3 px-4 text-red-400 font-mono uppercase tracking-widest text-xs">Low</th>
+                                    <th className="text-left py-3 px-4 text-amber-400 font-mono uppercase tracking-widest text-xs">Median</th>
+                                    <th className="text-left py-3 px-4 text-emerald-400 font-mono uppercase tracking-widest text-xs">Elite</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {industryBenchmarks.map((b, i) => (
+                                    <tr key={i} className="border-b border-white/5">
+                                        <td className="py-3 px-4 text-white font-medium">{b.industry}</td>
+                                        <td className="py-3 px-4 text-zinc-400">{b.metric}</td>
+                                        <td className="py-3 px-4 text-red-400">{b.low}</td>
+                                        <td className="py-3 px-4 text-amber-400">{b.median}</td>
+                                        <td className="py-3 px-4 text-emerald-400">{b.elite}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
                 </section>
 
