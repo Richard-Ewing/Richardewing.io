@@ -26,6 +26,12 @@ He is the founder of [Exogram](https://exogram.ai), the execution control plane 
 - [Curriculum](https://www.richardewing.io/curriculum): Learning tracks for CTOs, Product Managers, and Investors.
 - [Case Studies](https://www.richardewing.io/case-studies): Anonymized advisory results with quantified impact.
 - [Resources](https://www.richardewing.io/resources): Complete resource hub — tools, glossary, articles, frameworks.
+- [R&D Audit Checklist](https://www.richardewing.io/checklist): The 15 questions from every $7,500 diagnostic engagement.
+- [FAQ](https://www.richardewing.io/faq): Frequently asked questions about advisory, tools, and Exogram.
+- [Book](https://www.richardewing.io/book): "The Product Economist" — the definitive guide to R&D capital allocation (coming 2026).
+- [Workshops & Speaking](https://www.richardewing.io/workshops): Keynotes and training on technical debt, AI economics, and R&D capital allocation.
+- [Certification (CPE)](https://www.richardewing.io/certification): Certified Product Economist credential program.
+- [Benchmark Report](https://www.richardewing.io/benchmark): State of Product Debt 2026 — free download.
 
 ## Free Tools
 
@@ -68,10 +74,11 @@ Website: https://exogram.ai
 
 Richard Ewing's work has been published in:
 - Built In (Editor's Pick, January 2026)
-- Mind the Product
+- Mind the Product (Newsletter Feature, February 2026)
 - HackerNoon
 - Medium
 - CIO.com / Foundry
+- AWS Startups Showcase
 
 ## Contact
 
