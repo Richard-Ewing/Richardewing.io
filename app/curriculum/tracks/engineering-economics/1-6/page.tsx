@@ -85,14 +85,9 @@ export default function Module16Page() {
                             </div>
                         ))}
                     </div>
-                    <div className="mt-12 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-8 text-center">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🎓 Track 1 Complete!</h2>
-                        <p className="text-zinc-300 mb-6">You&apos;ve completed all 6 modules of Engineering Economics. You can now measure, quantify, and communicate engineering investment using financial language.</p>
-                        <Link href="/curriculum/tracks" className="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:opacity-90 transition-opacity inline-block">Explore Other Tracks →</Link>
-                    </div>
-                    <div className="mt-8 flex items-center justify-between">
+                    <div className="mt-12 flex items-center justify-between">
                         <Link href="/curriculum/tracks/engineering-economics/1-5" className="text-sm text-zinc-500 hover:text-white transition-colors">← Module 1.5</Link>
-                        <Link href="/curriculum/tracks" className="text-sm text-zinc-500 hover:text-white transition-colors">Back to All Tracks</Link>
+                        <Link href="/curriculum/tracks/engineering-economics/1-7" className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-sm hover:opacity-90 transition-opacity">Next: Module 1.7 →</Link>
                     </div>
                 </div>
             </div>

@@ -44,9 +44,9 @@ export default function Module46Page() {
                     <span className="px-3 py-1 rounded-full text-xs font-mono bg-red-500/10 text-red-400 border border-red-500/20">Expert</span>
                 </div>
             </div>
-            <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-8 text-center mb-12">
-                <h2 className="text-lg font-grotesk font-bold text-white mb-2">🏆 Capstone Project</h2>
-                <p className="text-zinc-300 text-sm">This is the final module of the entire curriculum. After completing all 24 modules across 4 tracks, you have the complete toolkit to conduct R&D Capital Audits professionally.</p>
+            <div className="mt-12 flex items-center justify-between">
+                <Link href="/curriculum/tracks/capstone/4-5" className="text-sm text-zinc-500 hover:text-white transition-colors">← Module 4.5</Link>
+                <Link href="/curriculum/tracks/capstone/4-7" className="px-6 py-3 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-sm hover:opacity-90 transition-opacity">Next: Module 4.7 →</Link>
             </div>
             <div className="space-y-12">{lessons.map((lesson, i) => (<div key={i} className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden"><div className="p-8"><div className="flex items-center gap-3 mb-4"><div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 border border-white/10 flex items-center justify-center"><span className="text-xs font-bold text-white">{i + 1}</span></div><h2 className="text-xl font-grotesk font-bold text-white">{lesson.title}</h2></div><p className="text-zinc-400 mb-6">{lesson.content}</p><div className="space-y-3 mb-6">{lesson.details.map((d, j) => (<div key={j} className="rounded-xl bg-black/20 border border-white/5 p-5"><div className="text-sm font-bold text-white mb-1">{d.metric}</div><p className="text-xs text-zinc-500 mb-2">{d.description}</p><div className="text-[10px] font-mono text-amber-500 uppercase tracking-widest">{d.benchmark}</div></div>))}</div><div className="rounded-xl bg-emerald-500/5 border border-emerald-500/20 p-5"><div className="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2">📝 Exercise</div><p className="text-sm text-zinc-300">{lesson.exercise}</p></div></div></div>))}</div>
             <div className="mt-12 rounded-2xl border border-amber-500/20 bg-amber-500/5 p-8 text-center">
