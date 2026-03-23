@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Start Here — Your Guide to Product Economics | Richard Ewing',
-    description: 'New to product economics? Start here. Free diagnostic tools, 350+ glossary terms, learning tracks, and advisory services — a guided path from diagnosis to action.',
+    description: 'New to product economics? Start here. Free diagnostic tools, 370+ glossary terms, learning tracks, and advisory services — a guided path from diagnosis to action.',
     keywords: [
         'product economics start', 'technical debt guide', 'CTO resources',
         'engineering economics introduction', 'Richard Ewing start here',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/start-here' },
     openGraph: {
         title: 'Start Here — Your Guide to Product Economics',
-        description: 'New here? Start with a free diagnostic, explore 350+ terms, and take the first step toward R&D capital efficiency.',
+        description: 'New here? Start with a free diagnostic, explore 370+ terms, and take the first step toward R&D capital efficiency.',
         url: 'https://www.richardewing.io/start-here',
         type: 'website',
     },
@@ -36,9 +36,9 @@ const steps = [
         number: '02',
         title: 'Learn',
         subtitle: 'Understand the frameworks behind the numbers',
-        description: 'Explore 350+ glossary terms, structured learning tracks for CTOs, PMs, and Investors, and published frameworks on technical debt, AI economics, and R&D capital allocation.',
+        description: 'Explore 370+ glossary terms, structured learning tracks for CTOs, PMs, and Investors, and published frameworks on technical debt, AI economics, and R&D capital allocation.',
         links: [
-            { label: 'Glossary (350+ Terms)', href: '/glossary', primary: true },
+            { label: 'Glossary (370+ Terms)', href: '/glossary', primary: true },
             { label: 'Curriculum', href: '/curriculum' },
             { label: 'Product Economist Doctrine', href: '/doctrine' },
             { label: 'Articles & Frameworks', href: '/articles' },
@@ -85,7 +85,7 @@ export default function StartHerePage() {
                             </span>
                         </h1>
                         <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl">
-                            Three steps from diagnosis to action. Free tools, 350+ definitions,
+                            Three steps from diagnosis to action. Free tools, 370+ definitions,
                             structured learning — everything you need to treat engineering as a capital function.
                         </p>
                     </div>

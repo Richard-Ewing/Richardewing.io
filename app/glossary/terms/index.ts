@@ -35,6 +35,7 @@ import { trendingTerms2026 } from './trending-2026';
 import { trendingTermsBatch2 } from './trending-2026-batch2';
 import { trendingTermsBatch3 } from './trending-2026-batch3';
 import { highVolumeTerms } from './high-volume';
+import { aiToolsTerms } from './ai-tools';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -77,6 +78,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...trendingTermsBatch3,
     // High-volume search terms
     ...highVolumeTerms,
+    // AI tools & frameworks
+    ...aiToolsTerms,
 ];
 
 export const allGlossaryCategories = [

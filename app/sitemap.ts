@@ -325,6 +325,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
 
+        // Guides / Content Hubs
+        {
+            url: `${baseUrl}/guides`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/guides/technical-debt`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/guides/ai-economics`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+
         // Legal
         {
             url: `${baseUrl}/legal`,
