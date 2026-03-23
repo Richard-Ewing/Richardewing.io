@@ -242,8 +242,35 @@ export default function AiCoursesPage() {
                     ))}
                 </div>
 
+                {/* Newsletter Capture */}
+                <section className="mt-16 max-w-2xl mx-auto">
+                    <div className="card p-8 text-center border-purple-500/30 bg-purple-900/10">
+                        <div className="text-xs text-purple-400 uppercase tracking-wide mb-4 font-mono">
+                            AI Course Companion
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4 font-grotesk">
+                            Get Richard&apos;s AI Course Notes
+                        </h3>
+                        <p className="text-gray-400 mb-6 max-w-md mx-auto">
+                            Which sections to skip. What to focus on. How each course maps to real capital decisions.
+                            <br /><span className="text-white">One email. No spam.</span>
+                        </p>
+                        <a
+                            href="https://theproducteconomist.beehiiv.com/subscribe"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 mb-4 transition-colors font-grotesk"
+                        >
+                            Subscribe for Course Notes →
+                        </a>
+                        <p className="text-gray-500 text-sm">
+                            Join 2,000+ executives. Monthly briefings + course companion notes.
+                        </p>
+                    </div>
+                </section>
+
                 {/* Cross-sell CTA */}
-                <section className="mt-20 max-w-3xl mx-auto">
+                <section className="mt-12 max-w-3xl mx-auto">
                     <div className="card p-10 border-purple-500/20 bg-gradient-to-br from-purple-500/5 via-transparent to-cyan-500/5 text-center">
                         <p className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-4">After the Courses</p>
                         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 font-grotesk">
