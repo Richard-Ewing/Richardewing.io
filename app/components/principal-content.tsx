@@ -186,6 +186,33 @@ export default function PrincipalContent() {
                 </div>
             </ScrollReveal>
 
+            {/* Published In / Authority Badges */}
+            <ScrollReveal delay={25}>
+                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8">
+                    <div className="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-4 text-center">Published In & Featured By</div>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        {[
+                            { name: 'Built In', note: "Editor's Pick", href: 'https://builtin.com/authors/richard-ewing', color: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/5' },
+                            { name: 'Mind the Product', note: 'Featured Author', href: 'https://www.mindtheproduct.com/profile/richard-ewing', color: 'text-purple-400 border-purple-500/30 bg-purple-500/5' },
+                            { name: 'HackerNoon', note: 'Contributing Author', href: 'https://hackernoon.com/u/richardewing', color: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/5' },
+                            { name: 'Medium', note: 'Author', href: 'https://medium.com/@richardewing', color: 'text-white border-white/20 bg-white/5' },
+                            { name: 'Amazon', note: 'Published Author', href: 'https://www.amazon.com/author/richardewing', color: 'text-amber-400 border-amber-500/30 bg-amber-500/5' },
+                        ].map(pub => (
+                            <a
+                                key={pub.name}
+                                href={pub.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`inline-flex flex-col items-center px-5 py-3 rounded-xl border transition-all hover:scale-105 ${pub.color}`}
+                            >
+                                <span className="font-bold text-sm">{pub.name}</span>
+                                <span className="text-[10px] font-mono uppercase tracking-wider opacity-60 mt-0.5">{pub.note}</span>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </ScrollReveal>
+
             {/* The Thesis */}
             <ScrollReveal delay={50}>
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-cyan-500">

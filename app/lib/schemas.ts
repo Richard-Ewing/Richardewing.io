@@ -11,7 +11,11 @@ export const personSchema = {
         "https://exogram.ai",
         "https://builtin.com/authors/richard-ewing",
         "https://www.mindtheproduct.com/profile/richard-ewing",
-        "https://github.com/Richard-Ewing"
+        "https://github.com/Richard-Ewing",
+        "https://medium.com/@richardewing",
+        "https://hackernoon.com/u/richardewing",
+        "https://substack.com/@richardewing",
+        "https://www.amazon.com/author/richardewing"
     ],
     "knowsAbout": [
         "Product Management",

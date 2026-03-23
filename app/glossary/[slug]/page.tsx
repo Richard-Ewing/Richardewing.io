@@ -45,6 +45,31 @@ export default async function GlossaryTermPage({ params }: Props) {
         .map(r => glossaryTerms.find(t => t.slug === r))
         .filter(Boolean);
 
+    // Auto-link: convert glossary term mentions in text to clickable links
+    function autoLink(text: string, currentSlug: string): string {
+        let result = text;
+        // Sort by title length descending to match longer terms first
+        const sortedTerms = [...glossaryTerms]
+            .filter(t => t.slug !== currentSlug && t.title.length > 3)
+            .sort((a, b) => b.title.length - a.title.length);
+        for (const t of sortedTerms) {
+            // Only replace whole-word matches, case-insensitive, first occurrence only
+            const escaped = t.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`\\b(${escaped})\\b`, 'i');
+            if (regex.test(result)) {
+                result = result.replace(regex, `<a href="/glossary/${t.slug}" class="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 decoration-cyan-500/30 transition-colors">$1</a>`);
+            }
+        }
+        return result;
+    }
+
+    // Reading time estimate
+    const wordCount = (term.definition + ' ' + term.whyItMatters + ' ' + (term.howToMeasure || '')).split(/\s+/).length;
+    const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+
+    // TL;DR — first sentence of definition
+    const tldr = term.definition.split(/[.!?]\s/)[0] + '.';
+
     const faqSchema = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
@@ -108,18 +133,29 @@ export default async function GlossaryTermPage({ params }: Props) {
                 <header className="mb-10 border-b border-white/10 pb-10">
                     <div className="flex items-center justify-between mb-3">
                         <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest">{term.category}</div>
-                        <ShareButtons url={`/glossary/${slug}`} title={`What is ${term.title}?`} />
+                        <div className="flex items-center gap-3">
+                            <span className="text-xs text-gray-500 font-mono">{readingTime} min read</span>
+                            <ShareButtons url={`/glossary/${slug}`} title={`What is ${term.title}?`} />
+                        </div>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-4">
                         What is {term.title}?
                     </h1>
                 </header>
 
+                {/* TL;DR Box — LLM-citation-friendly summary */}
+                <section className="mb-10 p-6 rounded-xl bg-cyan-500/5 border border-cyan-500/20">
+                    <div className="flex items-center gap-2 mb-2">
+                        <span className="text-xs font-mono font-bold text-cyan-500 uppercase tracking-widest">TL;DR</span>
+                    </div>
+                    <p className="text-zinc-200 leading-relaxed text-lg">{tldr}</p>
+                </section>
+
                 <section className="mb-12">
                     <div className="prose prose-invert prose-lg max-w-none">
                         {term.definition.split('\n\n').map((p, i) => (
                             <p key={i} className="text-zinc-300 leading-relaxed mb-4"
-                               dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>') }}
+                               dangerouslySetInnerHTML={{ __html: autoLink(p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>'), slug) }}
                             />
                         ))}
                     </div>
