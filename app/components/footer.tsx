@@ -33,9 +33,15 @@ export function Footer() {
                         <ul className="space-y-2 text-sm font-grotesk">
                             <li><Link href="/start-here" className="text-cyan-400 hover:text-white transition-colors font-bold">→ Start Here</Link></li>
                             <li><Link href="/advisory" className="text-gray-400 hover:text-white transition-colors">Advisory Services</Link></li>
+                            <li><Link href="/methodology" className="text-gray-400 hover:text-white transition-colors">Methodology</Link></li>
                             <li><Link href="/pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</Link></li>
                             <li><Link href="/case-studies" className="text-gray-400 hover:text-white transition-colors">Case Studies</Link></li>
-                            <li><Link href="/briefings" className="text-gray-400 hover:text-white transition-colors">Briefings</Link></li>
+                            <li><Link href="/testimonials" className="text-gray-400 hover:text-white transition-colors">Testimonials</Link></li>
+                            <li><Link href="/partnerships" className="text-gray-400 hover:text-white transition-colors">Partnerships</Link></li>
+                            <li><Link href="/for-investors" className="text-gray-400 hover:text-white transition-colors">For Investors</Link></li>
+                            <li><Link href="/for-boards" className="text-gray-400 hover:text-white transition-colors">For Boards</Link></li>
+                            <li><Link href="/for-ctos" className="text-gray-400 hover:text-white transition-colors">For CTOs</Link></li>
+                            <li><Link href="/roi" className="text-gray-400 hover:text-white transition-colors">ROI Calculator</Link></li>
                         </ul>
                     </div>
 
@@ -46,7 +52,10 @@ export function Footer() {
                             <li><Link href="/articles" className="text-gray-400 hover:text-white transition-colors">Canonical Hub</Link></li>
                             <li><Link href="/glossary" className="text-gray-400 hover:text-white transition-colors">Glossary (400+)</Link></li>
                             <li><Link href="/curriculum" className="text-gray-400 hover:text-white transition-colors">Curriculum</Link></li>
+                            <li><Link href="/curriculum/tracks" className="text-gray-400 hover:text-white transition-colors">Curriculum Tracks</Link></li>
+                            <li><Link href="/guides" className="text-gray-400 hover:text-white transition-colors">Guides</Link></li>
                             <li><Link href="/resources" className="text-gray-400 hover:text-white transition-colors">Resource Hub</Link></li>
+                            <li><Link href="/briefings" className="text-gray-400 hover:text-white transition-colors">Briefings</Link></li>
                             <li><Link href="/exogram" className="text-gray-400 hover:text-white transition-colors">Exogram</Link></li>
                         </ul>
                     </div>
@@ -60,8 +69,8 @@ export function Footer() {
                             <li><Link href="/tools/aper" className="text-gray-400 hover:text-white transition-colors">APER Diagnostic</Link></li>
                             <li><Link href="/tools/ev-se" className="text-gray-400 hover:text-white transition-colors">Evergreen Ratio</Link></li>
                             <li><Link href="/checklist" className="text-gray-400 hover:text-white transition-colors">R&D Audit Checklist</Link></li>
-                            <li><Link href="/compare" className="text-gray-400 hover:text-white transition-colors">Tool Comparisons</Link></li>
-                            <li><Link href="/industries" className="text-gray-400 hover:text-white transition-colors">Industry Verticals</Link></li>
+                            <li><Link href="/compare" className="text-gray-400 hover:text-white transition-colors">Tool Comparisons (10)</Link></li>
+                            <li><Link href="/industries" className="text-gray-400 hover:text-white transition-colors">Industries (14)</Link></li>
                             <li><Link href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
                         </ul>
                     </div>

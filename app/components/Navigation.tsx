@@ -47,10 +47,12 @@ const Navigation = () => {
 
                             <Dropdown label="Advisory">
                                 <DropdownItem href="/advisory">Advisory Services</DropdownItem>
+                                <DropdownItem href="/methodology">Methodology (How It Works)</DropdownItem>
                                 <DropdownItem href="/principal">The Principal</DropdownItem>
                                 <DropdownItem href="/workshops">Workshops & Speaking</DropdownItem>
                                 <DropdownItem href="/advisory/licensing">White-Label Licensing</DropdownItem>
                                 <DropdownItem href="/certification">Certification (CPE)</DropdownItem>
+                                <DropdownItem href="/partnerships">Partnerships</DropdownItem>
                             </Dropdown>
 
                             <Dropdown label="Learn">
@@ -58,7 +60,9 @@ const Navigation = () => {
                                 <DropdownItem href="/manifesto">Manifesto (Philosophy)</DropdownItem>
                                 <DropdownItem href="/articles">Articles (Publications)</DropdownItem>
                                 <DropdownItem href="/glossary">Glossary (400+ Definitions)</DropdownItem>
-                                <DropdownItem href="/curriculum">Curriculum (Learning Tracks)</DropdownItem>
+                                <DropdownItem href="/curriculum">Curriculum (Overview)</DropdownItem>
+                                <DropdownItem href="/curriculum/tracks">Curriculum Tracks (3 Paths)</DropdownItem>
+                                <DropdownItem href="/guides">Guides (Deep Dives)</DropdownItem>
                                 <DropdownItem href="/benchmark">Benchmark Report (Free)</DropdownItem>
                                 <DropdownItem href="/briefings">Briefings (Newsletter)</DropdownItem>
                             </Dropdown>
@@ -69,11 +73,18 @@ const Navigation = () => {
                                 <DropdownItem href="/tools/aueb">AUEB — AI Unit Economics</DropdownItem>
                                 <DropdownItem href="/tools/aper">APER — Engineering Ratio</DropdownItem>
                                 <DropdownItem href="/tools/audit-interview">Audit Interview</DropdownItem>
+                                <DropdownItem href="/compare">Compare Tools</DropdownItem>
+                                <DropdownItem href="/roi">ROI Calculator</DropdownItem>
                             </Dropdown>
 
                             <Dropdown label="Engage">
+                                <DropdownItem href="/for-investors">For Investors (PE/VC)</DropdownItem>
+                                <DropdownItem href="/for-boards">For Board Directors</DropdownItem>
+                                <DropdownItem href="/for-ctos">For CTOs</DropdownItem>
                                 <DropdownItem href="/pricing">Advisory Pricing</DropdownItem>
                                 <DropdownItem href="/case-studies">Case Studies</DropdownItem>
+                                <DropdownItem href="/testimonials">Testimonials</DropdownItem>
+                                <DropdownItem href="/industries">Industries (14)</DropdownItem>
                                 <DropdownItem href="/resources">Resource Hub</DropdownItem>
                             </Dropdown>
 
@@ -198,32 +209,47 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/doctrine" onClick={onClose}>Doctrine</MobileLink>
                         <MobileLink href="/manifesto" onClick={onClose}>Manifesto</MobileLink>
                         <MobileLink href="/articles" onClick={onClose}>Articles</MobileLink>
-                        <MobileLink href="/glossary" onClick={onClose}>Glossary</MobileLink>
+                        <MobileLink href="/glossary" onClick={onClose}>Glossary (400+)</MobileLink>
                         <MobileLink href="/curriculum" onClick={onClose}>Curriculum</MobileLink>
+                        <MobileLink href="/curriculum/tracks" onClick={onClose}>Curriculum Tracks</MobileLink>
+                        <MobileLink href="/guides" onClick={onClose}>Guides</MobileLink>
                         <MobileLink href="/benchmark" onClick={onClose}>Benchmark Report</MobileLink>
                         <MobileLink href="/briefings" onClick={onClose}>Briefings</MobileLink>
                     </div>
 
                     <div className="space-y-4">
-                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Tools</h3>
+                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Free Tools</h3>
                         <MobileLink href="/tools/pdi" onClick={onClose}>Product Debt Index</MobileLink>
                         <MobileLink href="/tools/ev-se" onClick={onClose}>EV-SE Valuation</MobileLink>
                         <MobileLink href="/tools/aueb" onClick={onClose}>AI Unit Economics</MobileLink>
                         <MobileLink href="/tools/aper" onClick={onClose}>APER Ratio</MobileLink>
                         <MobileLink href="/tools/audit-interview" onClick={onClose}>Audit Interview</MobileLink>
+                        <MobileLink href="/compare" onClick={onClose}>Compare Tools</MobileLink>
+                        <MobileLink href="/roi" onClick={onClose}>ROI Calculator</MobileLink>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h3 className="text-xs font-bold text-cyan-400 uppercase tracking-widest pl-2">For You</h3>
+                        <MobileLink href="/for-investors" onClick={onClose}>For Investors (PE/VC)</MobileLink>
+                        <MobileLink href="/for-boards" onClick={onClose}>For Board Directors</MobileLink>
+                        <MobileLink href="/for-ctos" onClick={onClose}>For CTOs</MobileLink>
+                        <MobileLink href="/industries" onClick={onClose}>Industries (14)</MobileLink>
                     </div>
 
                     <div className="space-y-4">
                         <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Engage</h3>
                         <MobileLink href="/pricing" onClick={onClose}>Advisory Pricing</MobileLink>
+                        <MobileLink href="/methodology" onClick={onClose}>Methodology</MobileLink>
                         <MobileLink href="/case-studies" onClick={onClose}>Case Studies</MobileLink>
+                        <MobileLink href="/testimonials" onClick={onClose}>Testimonials</MobileLink>
+                        <MobileLink href="/partnerships" onClick={onClose}>Partnerships</MobileLink>
                         <MobileLink href="/resources" onClick={onClose}>Resource Hub</MobileLink>
                     </div>
 
                     <div className="space-y-4">
                         <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Exogram</h3>
                         <MobileLink href="/exogram" onClick={onClose} className="text-[var(--accent-purple)]">
-                            What I'm Building
+                            What I&apos;m Building
                         </MobileLink>
                     </div>
 
