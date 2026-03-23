@@ -28,6 +28,7 @@ export const glossaryCategories = [
     'Pricing & Packaging',
     'Compliance & Regulation',
     'Open Source',
+    'AI Governance & Verification',
 ] as const;
 
 const _baseGlossaryTerms: GlossaryTerm[] = [

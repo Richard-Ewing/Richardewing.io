@@ -8,7 +8,10 @@ export const personSchema = {
     "image": "https://www.richardewing.io/images/richard-ewing-headshot.jpg",
     "sameAs": [
         "https://linkedin.com/in/richard-ewing-mba",
-        "https://exogram.ai"
+        "https://exogram.ai",
+        "https://builtin.com/authors/richard-ewing",
+        "https://www.mindtheproduct.com/profile/richard-ewing",
+        "https://github.com/Richard-Ewing"
     ],
     "knowsAbout": [
         "Product Management",
@@ -26,7 +29,14 @@ export const personSchema = {
         "Subprime Code Crisis",
         "AI Capital Auditing",
         "Gross Margin Preservation",
-        "Cost of Goods Sold Efficiency"
+        "Cost of Goods Sold Efficiency",
+        "AI Agent Governance",
+        "Execution Control Plane",
+        "Truth Ledger Architecture",
+        "Action Admissibility",
+        "Fractional CTO Advisory",
+        "PE/VC Technical Due Diligence",
+        "Platform Engineering Strategy"
     ],
     "brand": {
         "@type": "Brand",

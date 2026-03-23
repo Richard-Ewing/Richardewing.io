@@ -71,6 +71,12 @@ const Navigation = () => {
                                 <DropdownItem href="/tools/audit-interview">Audit Interview</DropdownItem>
                             </Dropdown>
 
+                            <Dropdown label="Engage">
+                                <DropdownItem href="/pricing">Advisory Pricing</DropdownItem>
+                                <DropdownItem href="/case-studies">Case Studies</DropdownItem>
+                                <DropdownItem href="/resources">Resource Hub</DropdownItem>
+                            </Dropdown>
+
                             <Link href="/exogram" className="text-gray-300 hover:text-white transition-colors relative group">
                                 Exogram
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
@@ -205,6 +211,13 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/tools/aueb" onClick={onClose}>AI Unit Economics</MobileLink>
                         <MobileLink href="/tools/aper" onClick={onClose}>APER Ratio</MobileLink>
                         <MobileLink href="/tools/audit-interview" onClick={onClose}>Audit Interview</MobileLink>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Engage</h3>
+                        <MobileLink href="/pricing" onClick={onClose}>Advisory Pricing</MobileLink>
+                        <MobileLink href="/case-studies" onClick={onClose}>Case Studies</MobileLink>
+                        <MobileLink href="/resources" onClick={onClose}>Resource Hub</MobileLink>
                     </div>
 
                     <div className="space-y-4">

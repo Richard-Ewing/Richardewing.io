@@ -5,6 +5,7 @@ import { glossaryTerms } from '../terms';
 import RelatedContent from '../../components/RelatedContent';
 import GlossaryToolCTA from '../../components/GlossaryToolCTA';
 import ShareButtons from '../../components/ShareButtons';
+import RetroTerminal from '../../components/RetroTerminal';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -65,6 +66,19 @@ export default async function GlossaryTermPage({ params }: Props) {
         mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.richardewing.io/glossary/${slug}` },
     };
 
+    const definedTermSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTerm',
+        name: term.title,
+        description: term.definition.slice(0, 300).replace(/\n/g, ' '),
+        inDefinedTermSet: {
+            '@type': 'DefinedTermSet',
+            name: 'Richard Ewing Technology Leadership Glossary',
+            url: 'https://www.richardewing.io/glossary',
+        },
+        url: `https://www.richardewing.io/glossary/${slug}`,
+    };
+
     const breadcrumbSchema = {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
@@ -79,6 +93,7 @@ export default async function GlossaryTermPage({ params }: Props) {
         <div className="max-w-4xl w-full relative z-10 mx-auto">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
@@ -86,6 +101,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                 <span>/</span>
                 <span className="text-cyan-400 font-bold">{term.title}</span>
             </div>
+
+            <RetroTerminal title={term.title} category={term.category} definition={term.definition} whyItMatters={term.whyItMatters} />
 
             <article>
                 <header className="mb-10 border-b border-white/10 pb-10">

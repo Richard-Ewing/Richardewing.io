@@ -26,6 +26,7 @@ import { architecturePatternsTerms } from './architecture-patterns';
 import { pricingPackagingTerms } from './pricing-packaging';
 import { complianceRegulationTerms } from './compliance-regulation';
 import { openSourceTerms } from './open-source';
+import { exogramAiGovernanceTerms } from './exogram-ai-governance';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -54,6 +55,7 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...pricingPackagingTerms,
     ...complianceRegulationTerms,
     ...openSourceTerms,
+    ...exogramAiGovernanceTerms,
 ];
 
 export const allGlossaryCategories = [
@@ -82,4 +84,5 @@ export const allGlossaryCategories = [
     'Pricing & Packaging',
     'Compliance & Regulation',
     'Open Source',
+    'AI Governance & Verification',
 ] as const;
