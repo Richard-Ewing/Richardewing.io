@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics Curriculum — 18 Modules, 3 Tracks | Richard Ewing',
-    description: 'Three curriculum tracks for mastering product economics: Engineering Economics, AI Product Economics, and R&D Capital Management. 18 comprehensive modules with exercises, assessments, and tools.',
+    title: 'Product Economics Curriculum — 24 Modules, 4 Tracks | Richard Ewing',
+    description: 'Four curriculum tracks for mastering product economics: Engineering Economics, AI Product Economics, R&D Capital Management, and Capstone Applied Practice. 24 comprehensive modules.',
     keywords: ['product economics curriculum', 'engineering economics course', 'AI economics training', 'R&D capital management', 'technical debt certification', 'engineering leadership course'],
     alternates: { canonical: 'https://www.richardewing.io/curriculum/tracks' },
-    openGraph: { title: 'Product Economics Curriculum — 18 Modules', description: 'Master product economics across three specialized tracks.', url: 'https://www.richardewing.io/curriculum/tracks', type: 'website' },
+    openGraph: { title: 'Product Economics Curriculum — 24 Modules', description: 'Master product economics across four specialized tracks.', url: 'https://www.richardewing.io/curriculum/tracks', type: 'website' },
 };
 
 const tracks = [
@@ -61,10 +61,27 @@ const tracks = [
         glossaryTerms: ['product-debt-index', 'ev-se', 'vc-due-diligence', 'architecture-review-board', 'vendor-lock-in', 'capex-vs-opex'],
         tools: [{ name: 'EV-SE Calculator', href: '/tools/ev-se' }, { name: 'Audit Interview', href: '/tools/audit-interview' }],
     },
+    {
+        title: 'Capstone & Applied Practice',
+        subtitle: 'Track 4 — Capstone',
+        description: 'Applied practice modules covering startup economics, platform engineering, org scaling, cloud FinOps, SaaS metrics, and the full R&D Capital Audit capstone project.',
+        modules: [
+            { id: '4-1', name: '4.1 Startup Engineering Economics', topics: 'Runway-Aware Engineering, MVP Economics, Series A Positioning', href: '/curriculum/tracks/capstone/4-1' },
+            { id: '4-2', name: '4.2 Enterprise Platform Economics', topics: 'Platform Tax, Developer Experience ROI, Platform Team Economics', href: '/curriculum/tracks/capstone/4-2' },
+            { id: '4-3', name: '4.3 Engineering Org Scaling', topics: 'Scaling Laws, Hiring Economics, Span of Control, Conway\'s Law', href: '/curriculum/tracks/capstone/4-3' },
+            { id: '4-4', name: '4.4 Cloud FinOps & Infrastructure', topics: 'Cloud Cost Anatomy, Reservation Strategy, FinOps Culture', href: '/curriculum/tracks/capstone/4-4' },
+            { id: '4-5', name: '4.5 SaaS Metrics Deep Dive', topics: 'NRR, CAC:LTV, Unit Economics, Rule of 40, Engineering Efficiency', href: '/curriculum/tracks/capstone/4-5' },
+            { id: '4-6', name: '4.6 Capstone: Full R&D Capital Audit', topics: 'Complete Audit Project, Board-Ready Document, Investment Roadmap', href: '/curriculum/tracks/capstone/4-6' },
+        ],
+        color: 'amber',
+        icon: '🏆',
+        glossaryTerms: ['burn-rate', 'cac', 'arr', 'finops', 'developer-experience', 'cost-per-hire'],
+        tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }, { name: 'APER Calculator', href: '/tools/aper' }, { name: 'AUEB Calculator', href: '/tools/aueb' }, { name: 'EV-SE Calculator', href: '/tools/ev-se' }],
+    },
 ];
 
-const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5' };
-const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400' };
+const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5' };
+const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400', amber: 'text-amber-400' };
 
 export default function CurriculumTracksPage() {
     return (
@@ -72,21 +89,21 @@ export default function CurriculumTracksPage() {
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-violet-500 uppercase tracking-widest mb-4">Curriculum — 18 Modules</div>
+                        <div className="text-xs font-mono text-violet-500 uppercase tracking-widest mb-4">Curriculum — 24 Modules</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
-                            Three Paths to{' '}
+                            Four Paths to{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Mastery</span>
                         </h1>
                         <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-                            From engineering metrics to AI economics to R&D capital management. 18 modules, 60+ lessons, each with hands-on exercises and real-world tools. 420+ glossary definitions underpin every module.
+                            From engineering metrics to AI economics to capital management to applied practice. 24 modules, 80+ lessons, each with hands-on exercises and tools. 420+ glossary definitions underpin every module.
                         </p>
                         <div className="flex items-center justify-center gap-6 mt-6 flex-wrap">
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">18</div>
+                                <div className="text-2xl font-grotesk font-bold text-white">24</div>
                                 <div className="text-xs text-zinc-500">Modules</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">60+</div>
+                                <div className="text-2xl font-grotesk font-bold text-white">80+</div>
                                 <div className="text-xs text-zinc-500">Lessons</div>
                             </div>
                             <div className="text-center">

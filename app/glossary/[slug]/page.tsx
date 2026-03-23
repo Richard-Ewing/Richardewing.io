@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '../terms';
+import { autoKeyMetrics, autoMaturityLevels, autoComparisons, autoQuiz, autoDiagram } from '../auto-enrich';
 import RelatedContent from '../../components/RelatedContent';
 import GlossaryToolCTA from '../../components/GlossaryToolCTA';
 import ShareButtons from '../../components/ShareButtons';
@@ -131,6 +132,11 @@ export default async function GlossaryTermPage({ params }: Props) {
     // Get checklist and how-to-apply (explicit or auto-generated)
     const checklist = term.checklist || autoChecklist(term.category, term.title);
     const howToApply = term.howToApply || autoHowToApply(term.category, term.title);
+    const keyMetrics = term.keyMetrics && term.keyMetrics.length > 0 ? term.keyMetrics : autoKeyMetrics(term.category, term.title);
+    const maturityLevels = term.maturityLevels && term.maturityLevels.length > 0 ? term.maturityLevels : autoMaturityLevels(term.category, term.title);
+    const comparisons = term.comparisons && term.comparisons.length > 0 ? term.comparisons : autoComparisons(term.category, term.title);
+    const quiz = term.quiz && term.quiz.length > 0 ? term.quiz : autoQuiz(term.category, term.title);
+    const diagram = term.diagram || autoDiagram(term.category, term.title);
 
     const faqSchema = {
         '@context': 'https://schema.org',
@@ -241,21 +247,32 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <p className="text-zinc-200 leading-relaxed text-lg">{tldr}</p>
                 </section>
 
-                {/* Key Metrics Dashboard */}
-                {term.keyMetrics && term.keyMetrics.length > 0 && (
-                    <section className="mb-12">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-6">📊 Key Metrics</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {term.keyMetrics.map((m, i) => (
-                                <div key={i} className="rounded-xl border border-white/10 bg-white/[0.02] p-5 text-center">
-                                    <div className="text-3xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">{m.value}</div>
-                                    <div className="text-sm font-bold text-white mt-2">{m.label}</div>
-                                    <div className="text-xs text-zinc-500 mt-1">{m.description}</div>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-                )}
+                {/* At a Glance — Quick Reference Card */}
+                <section className="mb-12 rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-violet-500/5 p-8">
+                    <h2 className="text-xl font-grotesk font-bold text-white mb-4">⚡ {term.title} at a Glance</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                        <div className="flex items-start gap-2"><span className="text-cyan-400 font-bold">📂</span><div><span className="text-zinc-500">Category:</span> <span className="text-white">{term.category}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-cyan-400 font-bold">⏱️</span><div><span className="text-zinc-500">Read Time:</span> <span className="text-white">{readingTime} min</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-cyan-400 font-bold">🔗</span><div><span className="text-zinc-500">Related Terms:</span> <span className="text-white">{term.relatedTerms.length}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-cyan-400 font-bold">❓</span><div><span className="text-zinc-500">FAQs Answered:</span> <span className="text-white">{term.faqs.length}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-cyan-400 font-bold">✅</span><div><span className="text-zinc-500">Checklist Items:</span> <span className="text-white">{checklist.length}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-cyan-400 font-bold">🧪</span><div><span className="text-zinc-500">Quiz Questions:</span> <span className="text-white">{quiz.length}</span></div></div>
+                    </div>
+                </section>
+
+                {/* Key Metrics Dashboard — always rendered */}
+                <section className="mb-12">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-6">📊 Key Metrics &amp; Benchmarks</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        {keyMetrics.map((m, i) => (
+                            <div key={i} className="rounded-xl border border-white/10 bg-white/[0.02] p-5 text-center">
+                                <div className="text-3xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">{m.value}</div>
+                                <div className="text-sm font-bold text-white mt-2">{m.label}</div>
+                                <div className="text-xs text-zinc-500 mt-1">{m.description}</div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
 
                 {/* Full Definition */}
                 <section className="mb-12">
@@ -315,65 +332,60 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
-                {/* Maturity Model */}
-                {term.maturityLevels && term.maturityLevels.length > 0 && (
-                    <section className="mb-12">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-6">📈 Maturity Model</h2>
-                        <div className="space-y-3">
-                            {term.maturityLevels.map((level, i) => (
-                                <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02]">
-                                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-white/10 flex items-center justify-center">
-                                        <span className="text-sm font-bold text-white">{i + 1}</span>
-                                    </div>
-                                    <div>
-                                        <div className="text-sm font-bold text-white">{level.level}</div>
-                                        <div className="text-xs text-zinc-500 mt-0.5">{level.description}</div>
-                                    </div>
-                                    <div className="flex-1 h-2 rounded-full bg-white/5 ml-auto max-w-[120px]">
-                                        <div className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-violet-500" style={{ width: `${((i + 1) / term.maturityLevels!.length) * 100}%` }} />
-                                    </div>
+                {/* Maturity Model — always rendered */}
+                <section className="mb-12">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-6">📈 {term.title} Maturity Model</h2>
+                    <p className="text-zinc-400 text-sm mb-4">Where does your organization stand? Use this model to assess your current level and identify the next milestone.</p>
+                    <div className="space-y-3">
+                        {maturityLevels.map((level, i) => (
+                            <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+                                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-white/10 flex items-center justify-center">
+                                    <span className="text-sm font-bold text-white">{i + 1}</span>
                                 </div>
-                            ))}
-                        </div>
-                    </section>
-                )}
+                                <div className="flex-1">
+                                    <div className="text-sm font-bold text-white">{level.level}</div>
+                                    <div className="text-xs text-zinc-500 mt-0.5">{level.description}</div>
+                                </div>
+                                <div className="flex-shrink-0 w-24 h-2 rounded-full bg-white/5">
+                                    <div className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-violet-500" style={{ width: `${((i + 1) / maturityLevels.length) * 100}%` }} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
 
-                {/* Comparison Table */}
-                {term.comparisons && term.comparisons.length > 0 && (
-                    <section className="mb-12">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-6">⚔️ Comparisons</h2>
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-sm">
-                                <thead>
-                                    <tr className="border-b border-white/10">
-                                        <th className="text-left py-3 px-4 text-zinc-500 font-mono uppercase tracking-widest text-xs">{term.title} vs.</th>
-                                        <th className="text-left py-3 px-4 text-emerald-400 font-mono uppercase tracking-widest text-xs">{term.title} Advantage</th>
-                                        <th className="text-left py-3 px-4 text-amber-400 font-mono uppercase tracking-widest text-xs">Other Advantage</th>
+                {/* Comparison Table — always rendered */}
+                <section className="mb-12">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-6">⚔️ Comparisons</h2>
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                            <thead>
+                                <tr className="border-b border-white/10">
+                                    <th className="text-left py-3 px-4 text-zinc-500 font-mono uppercase tracking-widest text-xs">{term.title} vs.</th>
+                                    <th className="text-left py-3 px-4 text-emerald-400 font-mono uppercase tracking-widest text-xs">{term.title} Advantage</th>
+                                    <th className="text-left py-3 px-4 text-amber-400 font-mono uppercase tracking-widest text-xs">Other Approach</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {comparisons.map((c, i) => (
+                                    <tr key={i} className="border-b border-white/5">
+                                        <td className="py-3 px-4 text-white font-medium">{c.vs}</td>
+                                        <td className="py-3 px-4 text-emerald-400">{c.advantage}</td>
+                                        <td className="py-3 px-4 text-amber-400">{c.disadvantage}</td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    {term.comparisons.map((c, i) => (
-                                        <tr key={i} className="border-b border-white/5">
-                                            <td className="py-3 px-4 text-white font-medium">{c.vs}</td>
-                                            <td className="py-3 px-4 text-emerald-400">{c.advantage}</td>
-                                            <td className="py-3 px-4 text-amber-400">{c.disadvantage}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-                )}
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
-                {/* Diagram / Visual */}
-                {term.diagram && (
-                    <section className="mb-12 card p-8 border-violet-500/20">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🔄 How It Works</h2>
-                        <div className="bg-black/30 rounded-xl p-6 font-mono text-sm text-zinc-400 whitespace-pre-line">
-                            {term.diagram}
-                        </div>
-                    </section>
-                )}
+                {/* Visual Diagram — always rendered */}
+                <section className="mb-12 card p-8 border-violet-500/20">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🔄 How It Works</h2>
+                    <div className="bg-black/30 rounded-xl p-6 font-mono text-sm text-zinc-400 whitespace-pre-line">
+                        {diagram}
+                    </div>
+                </section>
 
                 {/* FAQs */}
                 {term.faqs.length > 0 && (
@@ -390,10 +402,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </section>
                 )}
 
-                {/* Interactive Quiz */}
-                {term.quiz && term.quiz.length > 0 && (
-                    <GlossaryQuiz quiz={term.quiz} title={term.title} />
-                )}
+                {/* Interactive Quiz — always rendered */}
+                <GlossaryQuiz quiz={quiz} title={term.title} />
 
                 {/* External Resources */}
                 {term.resources && term.resources.length > 0 && (
