@@ -28,6 +28,8 @@ import { complianceRegulationTerms } from './compliance-regulation';
 import { openSourceTerms } from './open-source';
 import { exogramAiGovernanceTerms } from './exogram-ai-governance';
 import { articleDerivedTerms } from './article-derived-expansion';
+import { devopsPlatformTerms } from './devops-platform';
+import { finopsBusinessTerms } from './finops-business';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -58,6 +60,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...openSourceTerms,
     ...exogramAiGovernanceTerms,
     ...articleDerivedTerms,
+    ...devopsPlatformTerms,
+    ...finopsBusinessTerms,
 ];
 
 export const allGlossaryCategories = [

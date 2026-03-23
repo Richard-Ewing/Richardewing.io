@@ -28,32 +28,38 @@ export function Footer() {
                         </p>
                     </div>
 
-                    {/* Intervention */}
                     <div>
                         <h4 className="text-xs text-gray-500 uppercase tracking-wide mb-4 font-mono">Intervention</h4>
                         <ul className="space-y-2 text-sm font-grotesk">
                             <li><Link href="/advisory" className="text-gray-400 hover:text-white transition-colors">Advisory Services</Link></li>
+                            <li><Link href="/pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</Link></li>
+                            <li><Link href="/case-studies" className="text-gray-400 hover:text-white transition-colors">Case Studies</Link></li>
                             <li><Link href="/briefings" className="text-gray-400 hover:text-white transition-colors">Briefings</Link></li>
                         </ul>
                     </div>
 
-                    {/* Intelligence */}
                     <div>
                         <h4 className="text-xs text-gray-500 uppercase tracking-wide mb-4 font-mono">Intelligence</h4>
                         <ul className="space-y-2 text-sm font-grotesk">
                             <li><Link href="/doctrine" className="text-gray-400 hover:text-white transition-colors">Doctrine</Link></li>
                             <li><Link href="/articles" className="text-gray-400 hover:text-white transition-colors">Canonical Hub</Link></li>
-                            <li><Link href="/exogram" className="text-gray-400 hover:text-white transition-colors">Exogram (Active)</Link></li>
+                            <li><Link href="/glossary" className="text-gray-400 hover:text-white transition-colors">Glossary (300+)</Link></li>
+                            <li><Link href="/curriculum" className="text-gray-400 hover:text-white transition-colors">Curriculum</Link></li>
+                            <li><Link href="/resources" className="text-gray-400 hover:text-white transition-colors">Resource Hub</Link></li>
+                            <li><Link href="/exogram" className="text-gray-400 hover:text-white transition-colors">Exogram</Link></li>
                         </ul>
                     </div>
 
-                    {/* Free Tools */}
                     <div>
                         <h4 className="text-xs text-cyan-400 uppercase tracking-wide mb-4 font-mono">Free Tools</h4>
                         <ul className="space-y-2 text-sm font-grotesk">
                             <li><Link href="/tools/pdi" className="text-gray-400 hover:text-white transition-colors">Product Debt Index</Link></li>
                             <li><Link href="/tools/aueb" className="text-gray-400 hover:text-white transition-colors">AI Unit Economics</Link></li>
                             <li><Link href="/tools/audit-interview" className="text-gray-400 hover:text-white transition-colors">Audit Interview</Link></li>
+                            <li><Link href="/tools/aper" className="text-gray-400 hover:text-white transition-colors">APER Diagnostic</Link></li>
+                            <li><Link href="/tools/ev-se" className="text-gray-400 hover:text-white transition-colors">Evergreen Ratio</Link></li>
+                            <li><Link href="/checklist" className="text-gray-400 hover:text-white transition-colors">R&D Audit Checklist</Link></li>
+                            <li><Link href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
                         </ul>
                     </div>
 

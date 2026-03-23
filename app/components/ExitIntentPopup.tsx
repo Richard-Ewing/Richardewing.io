@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { X, Gift, ArrowRight, Loader2, AlertCircle } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
+import { useRouter } from 'next/navigation';
 
 export default function ExitIntentPopup() {
     const [show, setShow] = useState(false);
@@ -11,40 +12,42 @@ export default function ExitIntentPopup() {
     const [validationError, setValidationError] = useState('');
     const [isValidating, setIsValidating] = useState(false);
     const [state, handleFormspreeSubmit] = useForm('xzddbpwy');
+    const router = useRouter();
+
+    // Redirect to checklist page on successful submission
+    useEffect(() => {
+        if (state.succeeded) {
+            setTimeout(() => {
+                setShow(false);
+                router.push('/checklist');
+            }, 1000);
+        }
+    }, [state.succeeded, router]);
 
     const triggerPopup = useCallback(() => {
         if (dismissed) return;
         const seen = sessionStorage.getItem('exit-intent-shown');
         if (seen) return;
-        // Don't show on advisory page (that's the conversion page)
         if (window.location.pathname.includes('/advisory')) return;
         sessionStorage.setItem('exit-intent-shown', 'true');
         setShow(true);
     }, [dismissed]);
 
     useEffect(() => {
-        // Desktop: mouse leaves viewport
         const handleMouseLeave = (e: MouseEvent) => {
             if (e.clientY <= 0) triggerPopup();
         };
         document.addEventListener('mouseleave', handleMouseLeave);
-
-        // Delay before enabling (don't trigger on immediate bounces)
         const timer = setTimeout(() => {
             document.addEventListener('mouseleave', handleMouseLeave);
         }, 5000);
-
-        return () => {
-            clearTimeout(timer);
-            document.removeEventListener('mouseleave', handleMouseLeave);
-        };
+        return () => { clearTimeout(timer); document.removeEventListener('mouseleave', handleMouseLeave); };
     }, [triggerPopup]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setValidationError('');
         if (!email) { setValidationError('Please enter your email.'); return; }
-
         setIsValidating(true);
         try {
             const res = await fetch('/api/validate-email', {
@@ -55,12 +58,10 @@ export default function ExitIntentPopup() {
             if (!data.valid) { setValidationError(data.reason || 'Please enter a valid email.'); setIsValidating(false); return; }
         } catch { /* allow if API fails */ }
         setIsValidating(false);
-
         const formData = new FormData();
         formData.append('email', email);
         formData.append('source', 'Exit Intent Popup');
         handleFormspreeSubmit(formData);
-
         try {
             fetch('/api/beehiiv', {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -75,14 +76,8 @@ export default function ExitIntentPopup() {
 
     return (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" onClick={handleDismiss}>
-            {/* Backdrop */}
             <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-
-            {/* Modal */}
-            <div
-                className="relative w-full max-w-md bg-zinc-900 border border-white/10 rounded-2xl p-8 shadow-2xl animate-in fade-in zoom-in duration-300"
-                onClick={(e) => e.stopPropagation()}
-            >
+            <div className="relative w-full max-w-md bg-zinc-900 border border-white/10 rounded-2xl p-8 shadow-2xl animate-in fade-in zoom-in duration-300" onClick={(e) => e.stopPropagation()}>
                 <button onClick={handleDismiss} className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors" aria-label="Close popup">
                     <X className="w-5 h-5" />
                 </button>
@@ -92,8 +87,8 @@ export default function ExitIntentPopup() {
                         <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                             <Gift className="w-8 h-8 text-emerald-400" />
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-2">Check Your Inbox ✓</h3>
-                        <p className="text-zinc-400">Your R&D Audit Checklist is on the way.</p>
+                        <h3 className="text-2xl font-bold text-white mb-2">Redirecting to Checklist ✓</h3>
+                        <p className="text-zinc-400">Loading your R&D Audit Checklist...</p>
                     </div>
                 ) : (
                     <>
