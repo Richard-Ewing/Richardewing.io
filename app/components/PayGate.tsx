@@ -9,15 +9,51 @@ interface PayGateProps {
     moduleId: string;
     trackName: string;
     totalLessons: number;
-    previewLessonIndex?: number; // Which lesson to show as preview (default: 0 = first)
-    children: React.ReactNode; // The full lesson content
+    previewLessonIndex?: number;
+    children: React.ReactNode;
 }
 
 export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, children }: PayGateProps) {
     const [showPricing, setShowPricing] = useState(false);
+    const [loading, setLoading] = useState<string | null>(null);
     const childArray = Array.isArray(children) ? children : [children];
     const previewContent = childArray[previewLessonIndex];
     const lockedContent = childArray.filter((_, i) => i !== previewLessonIndex);
+
+    const handleCheckout = async (productId: string) => {
+        setLoading(productId);
+        try {
+            const res = await fetch('/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    productId,
+                    moduleId,
+                    returnUrl: `/curriculum/tracks/${trackName}/${moduleId}`,
+                }),
+            });
+            const data = await res.json();
+            if (data.url) {
+                window.location.href = data.url;
+            } else {
+                // Fallback to existing Stripe Payment Links
+                if (productId === 'single_module') {
+                    window.open('https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203', '_blank');
+                } else {
+                    window.open('https://buy.stripe.com/14AdR24YK3jc15j4JO2B200', '_blank');
+                }
+            }
+        } catch {
+            // Fallback to existing links
+            if (productId === 'single_module') {
+                window.open('https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203', '_blank');
+            } else {
+                window.open('https://buy.stripe.com/14AdR24YK3jc15j4JO2B200', '_blank');
+            }
+        } finally {
+            setLoading(null);
+        }
+    };
 
     return (
         <div>
@@ -33,7 +69,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
             {/* Pay Gate Barrier */}
             <div className="relative">
                 {/* Blurred preview of locked content */}
-                <div className="relative overflow-hidden rounded-2xl" style={{ maxHeight: '300px' }}>
+                <div className="relative overflow-hidden rounded-2xl max-h-[300px]">
                     <div className="blur-[6px] opacity-40 pointer-events-none select-none" aria-hidden="true">
                         {lockedContent[0]}
                     </div>
@@ -70,7 +106,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                 </div>
                             </div>
 
-                            {/* Pricing */}
+                            {/* Pricing Toggle */}
                             <button
                                 onClick={() => setShowPricing(!showPricing)}
                                 className="flex items-center justify-center gap-2 w-full mb-4 text-xs text-zinc-500 hover:text-white transition-colors"
@@ -81,15 +117,14 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
 
                             {showPricing && (
                                 <div className="space-y-3 mb-6 animate-in slide-in-from-top-2 duration-200">
-                                    <a
-                                        href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block rounded-xl border border-violet-500/20 bg-violet-500/5 p-4 hover:border-violet-500/40 transition-all group"
+                                    <button
+                                        onClick={() => handleCheckout('single_module')}
+                                        disabled={loading === 'single_module'}
+                                        className="w-full text-left rounded-xl border border-violet-500/20 bg-violet-500/5 p-4 hover:border-violet-500/40 transition-all disabled:opacity-50"
                                     >
                                         <div className="flex items-center justify-between">
-                                            <div className="text-left">
-                                                <div className="text-sm font-bold text-white">Single Module</div>
+                                            <div>
+                                                <div className="text-sm font-bold text-white">{loading === 'single_module' ? 'Redirecting...' : 'Single Module'}</div>
                                                 <div className="text-xs text-zinc-500">Access to {moduleTitle}</div>
                                             </div>
                                             <div className="text-right">
@@ -97,38 +132,36 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                                 <div className="text-[10px] text-zinc-600">one-time</div>
                                             </div>
                                         </div>
-                                    </a>
-                                    <a
-                                        href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block rounded-xl border border-cyan-500/20 bg-cyan-500/5 p-4 hover:border-cyan-500/40 transition-all group relative overflow-hidden"
+                                    </button>
+                                    <button
+                                        onClick={() => handleCheckout('full_curriculum')}
+                                        disabled={loading === 'full_curriculum'}
+                                        className="w-full text-left rounded-xl border border-cyan-500/20 bg-cyan-500/5 p-4 hover:border-cyan-500/40 transition-all relative overflow-hidden disabled:opacity-50"
                                     >
                                         <div className="absolute top-2 right-2 bg-cyan-500 text-black text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">Best Value</div>
                                         <div className="flex items-center justify-between">
-                                            <div className="text-left">
-                                                <div className="text-sm font-bold text-white">All 24 Modules</div>
-                                                <div className="text-xs text-zinc-500">Full curriculum access + tools</div>
+                                            <div>
+                                                <div className="text-sm font-bold text-white">{loading === 'full_curriculum' ? 'Redirecting...' : 'All 24 Modules'}</div>
+                                                <div className="text-xs text-zinc-500">Full curriculum + tools</div>
                                             </div>
                                             <div className="text-right">
                                                 <div className="text-lg font-bold text-cyan-400">$199<span className="text-xs text-zinc-500">/yr</span></div>
                                                 <div className="text-[10px] text-zinc-600">~$8/module</div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </button>
                                 </div>
                             )}
 
                             {/* Primary CTA */}
-                            <a
-                                href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold text-sm hover:opacity-90 transition-opacity"
+                            <button
+                                onClick={() => handleCheckout('full_curriculum')}
+                                disabled={!!loading}
+                                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold text-sm hover:opacity-90 transition-opacity disabled:opacity-50"
                             >
                                 <Sparkles className="w-4 h-4" />
-                                Unlock All Modules — $199/year
-                            </a>
+                                {loading ? 'Redirecting to Checkout...' : 'Unlock All Modules — $199/year'}
+                            </button>
 
                             <p className="text-[10px] text-zinc-600 mt-3">
                                 Includes all 24 modules • 80+ lessons • 5 tools • Certificate of completion

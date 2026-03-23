@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Framework Comparisons — Head-to-Head Analysis | Richard Ewing',
+    title: 'Framework Comparisons — 10 Head-to-Head Analyses | Richard Ewing',
     description: 'Side-by-side comparisons of engineering frameworks, metrics, and methodologies. PDI vs DORA, Build vs Buy, Agile vs Kanban, and more. Data-driven analysis by a Product Economist.',
-    keywords: ['PDI vs DORA', 'build vs buy', 'agile vs kanban', 'framework comparison', 'engineering metrics comparison'],
+    keywords: ['PDI vs DORA', 'build vs buy', 'agile vs kanban', 'framework comparison', 'engineering metrics comparison', 'technical debt types'],
     alternates: { canonical: 'https://www.richardewing.io/comparisons' },
 };
 
@@ -12,7 +12,7 @@ const comparisons = [
     {
         slug: 'pdi-vs-dora',
         title: 'PDI vs. DORA Metrics',
-        subtitle: 'Which Framework Measures What Matters?',
+        subtitle: 'Financial Health vs. Delivery Speed',
         left: { name: 'PDI', color: 'cyan' },
         right: { name: 'DORA', color: 'violet' },
         description: 'DORA measures delivery speed. PDI measures technology capital health. Both are essential — here\'s when to use each and how they complement each other.',
@@ -24,16 +24,16 @@ const comparisons = [
             { dimension: 'Frequency', left: 'Quarterly or at investment events', right: 'Continuous monitoring' },
             { dimension: 'Blind Spot', left: 'Doesn\'t measure delivery velocity', right: 'Doesn\'t quantify economic impact' },
         ],
-        verdict: 'Use both. PDI tells you WHERE to invest. DORA tells you IF your investment is improving delivery. Together they give a complete picture of engineering health.',
+        verdict: 'Use both. PDI tells you WHERE to invest. DORA tells you IF your investment is improving delivery. Together they give a complete picture.',
         tools: ['/tools/pdi', '/tools/aper'],
     },
     {
         slug: 'build-vs-buy',
         title: 'Build vs. Buy',
-        subtitle: 'The $500K Decision Most CTOs Get Wrong',
+        subtitle: 'The $500K Decision Framework',
         left: { name: 'Build', color: 'emerald' },
         right: { name: 'Buy', color: 'amber' },
-        description: 'Building in-house gives control but costs 3-5x the initial estimate. Buying is faster but creates vendor lock-in. Here\'s the TCO framework that reveals the true cost.',
+        description: 'Building in-house gives control but costs 3-5x the initial estimate. Buying is faster but creates vendor lock-in. Here\'s the TCO framework.',
         rows: [
             { dimension: 'Time to Value', left: '3-12 months', right: '1-4 weeks' },
             { dimension: 'Year 1 Cost', left: '$200K-$1M+ (development)', right: '$12K-$100K (license)' },
@@ -48,31 +48,31 @@ const comparisons = [
     {
         slug: 'revenue-per-engineer',
         title: 'Revenue Per Engineer Benchmarks',
-        subtitle: 'How Elite Companies Compare',
+        subtitle: 'Elite ($1M+) vs. Average ($200-500K)',
         left: { name: 'Elite ($1M+)', color: 'cyan' },
-        right: { name: 'Average ($200-500K)', color: 'zinc' },
+        right: { name: 'Average', color: 'zinc' },
         description: 'Revenue per engineer varies 10x between elite and average companies. Here\'s what drives the gap and how to close it.',
         rows: [
-            { dimension: 'Example Companies', left: 'Stripe ($3.2M), Figma ($2.8M)', right: 'Most growth-stage SaaS' },
+            { dimension: 'RPE', left: 'Stripe $3.2M, Figma $2.8M', right: '$200-500K (most growth SaaS)' },
             { dimension: 'Team Size', left: 'Lean, senior-heavy', right: 'Growing, mixed levels' },
-            { dimension: 'Tech Debt Ratio', left: '<20% Innovation Tax', right: '40-60% Innovation Tax' },
+            { dimension: 'Innovation Tax', left: '<20%', right: '40-60%' },
             { dimension: 'Feature Usage', left: '>50% features used monthly', right: '20-30% features used' },
             { dimension: 'Automation', left: 'Everything automated', right: 'Manual processes persist' },
-            { dimension: 'Platform Strategy', left: 'Strong internal platform', right: 'Teams duplicate work' },
+            { dimension: 'Platform', left: 'Strong internal platform', right: 'Teams duplicate work' },
         ],
-        verdict: 'RPE is not about cutting engineers — it\'s about maximizing the value each engineer creates. The gap is almost always due to organizational friction, not individual skill.',
+        verdict: 'RPE is not about cutting engineers — it\'s about maximizing the value each engineer creates. The gap is organizational friction, not individual skill.',
         tools: ['/tools/aper', '/tools/ev-se'],
     },
     {
         slug: 'technical-debt-types',
         title: 'Technical Debt Classification',
-        subtitle: 'Not All Debt Is Created Equal',
-        left: { name: 'Prudent Debt', color: 'emerald' },
-        right: { name: 'Reckless Debt', color: 'red' },
-        description: 'Some technical debt is strategic (shipping faster to capture market). Some is negligent (no one noticed). Here\'s how to classify and prioritize.',
+        subtitle: 'Prudent vs. Reckless — Not All Debt Is Equal',
+        left: { name: 'Prudent', color: 'emerald' },
+        right: { name: 'Reckless', color: 'red' },
+        description: 'Some technical debt is strategic. Some is negligent. The difference determines whether debt helps or kills your organization.',
         rows: [
             { dimension: 'Intent', left: 'Deliberate trade-off', right: 'Accidental or ignorant' },
-            { dimension: 'Documentation', left: 'Logged with remediation plan', right: 'Unknown until it breaks' },
+            { dimension: 'Documentation', left: 'Logged with plan', right: 'Unknown until it breaks' },
             { dimension: 'ROI', left: 'Positive (speed to market)', right: 'Negative (pure liability)' },
             { dimension: 'Priority', left: 'Scheduled remediation', right: 'Emergency triage' },
             { dimension: 'Board Impact', left: 'Explainable investment', right: 'Hidden liability' },
@@ -80,6 +80,114 @@ const comparisons = [
         ],
         verdict: 'Prudent debt is a tool. Reckless debt is a cancer. The difference is documentation, intent, and a remediation timeline.',
         tools: ['/tools/pdi', '/tools/scoring'],
+    },
+    {
+        slug: 'agile-vs-kanban',
+        title: 'Scrum vs. Kanban',
+        subtitle: 'Sprint-Based vs. Flow-Based Delivery',
+        left: { name: 'Scrum', color: 'cyan' },
+        right: { name: 'Kanban', color: 'emerald' },
+        description: 'Scrum works great for teams that need structure. Kanban works for teams that need flow. Neither is universally better.',
+        rows: [
+            { dimension: 'Cadence', left: 'Fixed sprints (1-4 weeks)', right: 'Continuous flow' },
+            { dimension: 'Planning', left: 'Sprint planning ceremony', right: 'Just-in-time execution' },
+            { dimension: 'WIP Limits', left: 'Sprint capacity', right: 'Explicit per-column limits' },
+            { dimension: 'Best For', left: 'Feature development, new teams', right: 'Operations, experienced teams' },
+            { dimension: 'Metrics', left: 'Velocity, sprint burndown', right: 'Cycle time, throughput' },
+            { dimension: 'Overhead', left: 'High (ceremonies, roles)', right: 'Low (board-driven)' },
+        ],
+        verdict: 'Scrum for feature teams that need predictability. Kanban for operations teams that need flow. ScrumBan for teams that outgrow Scrum.',
+        tools: ['/tools/aper'],
+    },
+    {
+        slug: 'monolith-vs-microservices',
+        title: 'Monolith vs. Microservices',
+        subtitle: 'The Architecture Decision That Costs $2M to Reverse',
+        left: { name: 'Monolith', color: 'amber' },
+        right: { name: 'Microservices', color: 'violet' },
+        description: 'Every startup should start with a monolith. Most know when to split. Few know the true cost of premature decomposition.',
+        rows: [
+            { dimension: 'Team Size', left: 'Up to 20 engineers', right: '20+ with domain ownership' },
+            { dimension: 'Deployment', left: 'Single deploy (simple)', right: 'Independent deploys (complex)' },
+            { dimension: 'Latency', left: 'In-process calls (fast)', right: 'Network calls (overhead)' },
+            { dimension: 'Debugging', left: 'Single codebase (easy)', right: 'Distributed tracing (hard)' },
+            { dimension: 'Cost', left: 'Lower infrastructure', right: '2-5x infrastructure cost' },
+            { dimension: 'Scaling', left: 'Vertical (limited)', right: 'Horizontal (unlimited)' },
+        ],
+        verdict: 'Start monolith, extract when Conway\'s Law demands it. The worst outcome is premature microservices — high cost, high complexity, low benefit.',
+        tools: ['/tools/aueb', '/tools/pdi'],
+    },
+    {
+        slug: 'fine-tuning-vs-rag',
+        title: 'Fine-Tuning vs. RAG',
+        subtitle: 'Which AI Strategy Actually Makes Economic Sense?',
+        left: { name: 'Fine-Tuning', color: 'violet' },
+        right: { name: 'RAG', color: 'cyan' },
+        description: 'Fine-tuning gives model-level customization but costs $10K-$500K per training run. RAG gives context-level customization at a fraction of the cost.',
+        rows: [
+            { dimension: 'Setup Cost', left: '$10K-$500K per run', right: '$1K-$10K (once)' },
+            { dimension: 'Latency', left: 'Same as base model', right: '+200-500ms (retrieval)' },
+            { dimension: 'Data Freshness', left: 'Frozen at training time', right: 'Real-time updates' },
+            { dimension: 'Accuracy', left: 'High for style/behavior', right: 'High for factual recall' },
+            { dimension: 'Maintenance', left: 'Re-train for updates', right: 'Update knowledge base' },
+            { dimension: 'Use Case', left: 'Tone, format, reasoning', right: 'Knowledge retrieval' },
+        ],
+        verdict: 'Use RAG for knowledge. Use fine-tuning for behavior. Use both when your use case demands it. For most products, start with RAG — it\'s cheaper, faster, and updateable.',
+        tools: ['/tools/aueb'],
+    },
+    {
+        slug: 'staff-augmentation-vs-delivery',
+        title: 'Staff Augmentation vs. Managed Delivery',
+        subtitle: 'Outsourcing Models — Which Burns Less Cash?',
+        left: { name: 'Staff Aug', color: 'amber' },
+        right: { name: 'Managed', color: 'emerald' },
+        description: 'Staff augmentation gives you bodies. Managed delivery gives you outcomes. The wrong choice costs 40% more and delivers 50% less.',
+        rows: [
+            { dimension: 'Control', left: 'You manage the team', right: 'Vendor manages delivery' },
+            { dimension: 'Cost', left: '$150-250/hr per person', right: 'Fixed bid or milestone' },
+            { dimension: 'Risk', left: 'On your P&L', right: 'Shared with vendor' },
+            { dimension: 'Hiring Speed', left: '2-4 weeks', right: '4-8 weeks (team ramp)' },
+            { dimension: 'Knowledge', left: 'Stays with your team', right: 'Risk of vendor lock-in' },
+            { dimension: 'Best For', left: 'Known work, capacity gap', right: 'Unknown scope, outcome needed' },
+        ],
+        verdict: 'Staff aug for capacity gaps with known work. Managed delivery for outcomes you can\'t staff internally. Never use staff aug for innovation — you\'re paying for hours, not ideas.',
+        tools: ['/tools/aper', '/tools/ev-se'],
+    },
+    {
+        slug: 'platform-team-vs-sres',
+        title: 'Platform Engineering vs. SRE',
+        subtitle: 'Two Approaches to Developer Productivity',
+        left: { name: 'Platform Eng', color: 'cyan' },
+        right: { name: 'SRE', color: 'violet' },
+        description: 'Platform engineering builds internal developer tools. SRE keeps systems running. Both reduce friction, but from different angles.',
+        rows: [
+            { dimension: 'Focus', left: 'Developer experience', right: 'System reliability' },
+            { dimension: 'Output', left: 'Internal tools, abstractions', right: 'SLOs, incident response' },
+            { dimension: 'Metrics', left: 'Developer satisfaction, MTTR', right: 'SLO compliance, MTTR' },
+            { dimension: 'Team Size', left: '2-5% of engineering org', right: '5-10% of engineering org' },
+            { dimension: 'ROI Horizon', left: '6-12 months', right: '3-6 months' },
+            { dimension: 'Risk of Not Having', left: 'Tooling sprawl, slow onboarding', right: 'Outages, alert fatigue' },
+        ],
+        verdict: 'Start with SRE (you need reliability first). Add platform engineering when tool sprawl becomes the bottleneck. Best orgs have both.',
+        tools: ['/tools/aper'],
+    },
+    {
+        slug: 'capex-vs-opex',
+        title: 'CapEx vs. OpEx in R&D',
+        subtitle: 'How Engineering Costs Hit the Financial Statements',
+        left: { name: 'CapEx', color: 'emerald' },
+        right: { name: 'OpEx', color: 'amber' },
+        description: 'Whether engineering work gets capitalized (CapEx) or expensed (OpEx) changes your EBITDA, tax implications, and how investors value your company.',
+        rows: [
+            { dimension: 'Accounting', left: 'Capitalized as an asset', right: 'Expensed immediately' },
+            { dimension: 'Impact', left: 'Improves EBITDA', right: 'Reduces EBITDA' },
+            { dimension: 'Example', left: 'New feature development', right: 'Bug fixes, maintenance' },
+            { dimension: 'Valuation', left: 'Increases asset base', right: 'Reduces reported profitability' },
+            { dimension: 'PE Impact', left: 'Scrutinized in due diligence', right: 'Expected line item' },
+            { dimension: 'Ratio Target', left: '60-70% of R&D', right: '30-40% of R&D' },
+        ],
+        verdict: 'The CapEx/OpEx ratio reveals engineering health. If less than 50% of R&D is capitalizable, you\'re spending most of your budget keeping the lights on — not innovating.',
+        tools: ['/tools/ev-se', '/tools/pdi'],
     },
 ];
 
@@ -93,19 +201,13 @@ const colorMap: Record<string, string> = {
 };
 
 const textColor: Record<string, string> = {
-    cyan: 'text-cyan-400',
-    violet: 'text-violet-400',
-    emerald: 'text-emerald-400',
-    amber: 'text-amber-400',
-    red: 'text-red-400',
-    zinc: 'text-zinc-400',
+    cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400',
+    amber: 'text-amber-400', red: 'text-red-400', zinc: 'text-zinc-400',
 };
 
 const toolNames: Record<string, string> = {
-    '/tools/pdi': 'PDI Calculator',
-    '/tools/aper': 'APER Calculator',
-    '/tools/aueb': 'AUEB Calculator',
-    '/tools/ev-se': 'EV-SE Calculator',
+    '/tools/pdi': 'PDI Calculator', '/tools/aper': 'APER Calculator',
+    '/tools/aueb': 'AUEB Calculator', '/tools/ev-se': 'EV-SE Calculator',
     '/tools/scoring': 'Scoring Tool',
 };
 
@@ -116,7 +218,7 @@ export default function ComparisonsPage() {
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
                         <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
-                            <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">Head-to-Head Analysis</span>
+                            <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">{comparisons.length} Head-to-Head Analyses</span>
                         </div>
                         <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
                             Framework <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Comparisons</span>
@@ -126,25 +228,28 @@ export default function ComparisonsPage() {
                         </p>
                     </div>
 
-                    <div className="space-y-12 mb-16">
+                    {/* Jump Links */}
+                    <div className="flex flex-wrap gap-2 mb-12 justify-center">
+                        {comparisons.map(c => (
+                            <a key={c.slug} href={`#${c.slug}`} className="text-[10px] font-mono px-3 py-1.5 rounded-lg border border-white/5 text-zinc-500 hover:text-cyan-400 hover:border-cyan-500/20 transition-all">
+                                {c.left.name} vs {c.right.name}
+                            </a>
+                        ))}
+                    </div>
+
+                    <div className="space-y-10 mb-16">
                         {comparisons.map((comp) => (
                             <section key={comp.slug} id={comp.slug} className="scroll-mt-24">
                                 <div className="card p-6 sm:p-8 border-white/10">
-                                    {/* Header */}
                                     <div className="flex items-center gap-3 mb-2">
-                                        <span className={`px-3 py-1 rounded-full border text-[10px] font-mono uppercase tracking-widest ${colorMap[comp.left.color]}`}>
-                                            {comp.left.name}
-                                        </span>
+                                        <span className={`px-3 py-1 rounded-full border text-[10px] font-mono uppercase tracking-widest ${colorMap[comp.left.color]}`}>{comp.left.name}</span>
                                         <span className="text-zinc-600 text-xs">vs</span>
-                                        <span className={`px-3 py-1 rounded-full border text-[10px] font-mono uppercase tracking-widest ${colorMap[comp.right.color]}`}>
-                                            {comp.right.name}
-                                        </span>
+                                        <span className={`px-3 py-1 rounded-full border text-[10px] font-mono uppercase tracking-widest ${colorMap[comp.right.color]}`}>{comp.right.name}</span>
                                     </div>
                                     <h2 className="text-2xl font-grotesk font-bold text-white mb-1">{comp.title}</h2>
                                     <p className="text-sm font-mono text-zinc-500 mb-3">{comp.subtitle}</p>
                                     <p className="text-zinc-400 text-sm leading-relaxed mb-6">{comp.description}</p>
 
-                                    {/* Comparison Table */}
                                     <div className="overflow-x-auto mb-6">
                                         <table className="w-full text-sm">
                                             <thead>
@@ -166,13 +271,11 @@ export default function ComparisonsPage() {
                                         </table>
                                     </div>
 
-                                    {/* Verdict */}
                                     <div className="rounded-xl bg-white/[0.02] border border-white/5 p-5 mb-4">
                                         <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-2">⚖️ Verdict</div>
                                         <p className="text-zinc-300 text-sm">{comp.verdict}</p>
                                     </div>
 
-                                    {/* Tool Links */}
                                     <div className="flex flex-wrap items-center gap-3">
                                         <span className="text-[10px] text-zinc-500">Run the analysis:</span>
                                         {comp.tools.map((tool) => (
@@ -190,31 +293,41 @@ export default function ComparisonsPage() {
                     </div>
 
                     {/* Cross-Links */}
-                    <div className="grid sm:grid-cols-3 gap-4 mb-12">
-                        <Link href="/glossary" className="card p-5 text-center hover:border-cyan-500/20 transition-all group">
-                            <div className="text-2xl mb-2">📚</div>
-                            <div className="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">Glossary</div>
-                            <div className="text-[10px] text-zinc-500">420+ terms</div>
+                    <div className="grid sm:grid-cols-4 gap-3 mb-12">
+                        <Link href="/glossary" className="card p-4 text-center hover:border-cyan-500/20 transition-all group">
+                            <div className="text-xl mb-1">📚</div>
+                            <div className="text-xs font-bold text-white group-hover:text-cyan-400 transition-colors">Glossary</div>
+                            <div className="text-[9px] text-zinc-600">420+ terms</div>
                         </Link>
-                        <Link href="/guides" className="card p-5 text-center hover:border-violet-500/20 transition-all group">
-                            <div className="text-2xl mb-2">📖</div>
-                            <div className="text-sm font-bold text-white group-hover:text-violet-400 transition-colors">Guides</div>
-                            <div className="text-[10px] text-zinc-500">Definitive playbooks</div>
+                        <Link href="/guides" className="card p-4 text-center hover:border-violet-500/20 transition-all group">
+                            <div className="text-xl mb-1">📖</div>
+                            <div className="text-xs font-bold text-white group-hover:text-violet-400 transition-colors">Guides</div>
+                            <div className="text-[9px] text-zinc-600">10 playbooks</div>
                         </Link>
-                        <Link href="/curriculum/tracks" className="card p-5 text-center hover:border-emerald-500/20 transition-all group">
-                            <div className="text-2xl mb-2">🎓</div>
-                            <div className="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">Curriculum</div>
-                            <div className="text-[10px] text-zinc-500">24 modules</div>
+                        <Link href="/curriculum/tracks" className="card p-4 text-center hover:border-emerald-500/20 transition-all group">
+                            <div className="text-xl mb-1">🎓</div>
+                            <div className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">Curriculum</div>
+                            <div className="text-[9px] text-zinc-600">24 modules</div>
+                        </Link>
+                        <Link href="/tools" className="card p-4 text-center hover:border-amber-500/20 transition-all group">
+                            <div className="text-xl mb-1">🛠️</div>
+                            <div className="text-xs font-bold text-white group-hover:text-amber-400 transition-colors">Free Tools</div>
+                            <div className="text-[9px] text-zinc-600">5 calculators</div>
                         </Link>
                     </div>
 
                     {/* CTA */}
                     <div className="card p-8 text-center border-violet-500/20 mb-12">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Need a Custom Comparison for Your Org?</h2>
-                        <p className="text-zinc-400 mb-6 max-w-lg mx-auto">Book a strategy session for a framework comparison tailored to your stack, team, and business model.</p>
-                        <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:opacity-90 transition-opacity">
-                            Book Strategy Session →
-                        </a>
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Need a Custom Framework Analysis?</h2>
+                        <p className="text-zinc-400 mb-6 max-w-lg mx-auto text-sm">Book a strategy session for a comparison tailored to your stack, team, and business model.</p>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <a href="https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:opacity-90 transition-opacity">
+                                Book Strategy Session →
+                            </a>
+                            <Link href="/guides" className="px-6 py-3 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
+                                Browse All Guides →
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
