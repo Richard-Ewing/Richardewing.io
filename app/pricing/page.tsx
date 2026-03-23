@@ -24,9 +24,10 @@ const tiers = [
             'Benchmark comparison against industry peers',
         ],
         cta: 'Book Diagnostic',
-        href: '/advisory',
+        href: 'https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203',
         highlight: false,
         badge: null,
+        external: true,
     },
     {
         name: 'Fractional CTO',
@@ -44,9 +45,10 @@ const tiers = [
             'Monthly executive dashboard & reporting',
         ],
         cta: 'Start Conversation',
-        href: '/advisory',
+        href: 'https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202',
         highlight: true,
         badge: 'Most Popular',
+        external: true,
     },
     {
         name: 'Board Advisor',
@@ -65,9 +67,10 @@ const tiers = [
             'Direct board communication & reporting',
         ],
         cta: 'Discuss Engagement',
-        href: '/advisory',
+        href: 'mailto:richardewing@exogram.ai?subject=Board%20Advisor%20Inquiry',
         highlight: false,
         badge: 'Enterprise',
+        external: true,
     },
 ];
 
@@ -135,8 +138,10 @@ export default function PricingPage() {
                                 ))}
                             </ul>
 
-                            <Link
+                            <a
                                 href={tier.href}
+                                target={tier.href.startsWith('mailto:') ? undefined : '_blank'}
+                                rel={tier.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                                 className={`block text-center py-3 px-6 rounded-lg font-semibold text-sm transition-all ${
                                     tier.highlight
                                         ? 'bg-gradient-to-r from-cyan-500 to-cobalt text-white hover:opacity-90 shadow-lg'
@@ -144,7 +149,7 @@ export default function PricingPage() {
                                 }`}
                             >
                                 {tier.cta} →
-                            </Link>
+                            </a>
                         </div>
                     ))}
                 </section>

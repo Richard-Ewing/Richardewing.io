@@ -209,6 +209,18 @@ export default function CurriculumPage() {
                                 Master the frameworks, tools, and metrics that separate gut-feel from data-driven technology leadership.
                             </span>
                         </p>
+
+                        <div className="flex flex-wrap items-center gap-4 mt-8">
+                            <a
+                                href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-lg text-white font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity shadow-lg"
+                            >
+                                Unlock All 24 Modules — $199/yr
+                            </a>
+                            <span className="text-zinc-600 text-sm">~$8/module · Cancel anytime</span>
+                        </div>
                     </div>
 
                     {/* Track Selection Header */}
@@ -327,26 +339,31 @@ export default function CurriculumPage() {
                     {/* Bottom CTA */}
                     <div className="text-center py-20 border-t border-white/10">
                         <h2 className="text-3xl font-grotesk font-bold text-white mb-4">
-                            Not sure which track?
+                            Unlock the Full Curriculum.
                         </h2>
                         <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
-                            Start with the <Link href="/tools/pdi" className="text-cyan-400 hover:text-cyan-300 underline">Product Debt Index calculator</Link> — it takes 2 minutes
-                            and tells you exactly where to focus.
+                            24 modules. 80+ lessons. 5 diagnostic tools. Certificate of completion.
+                            <br /><span className="text-white">One subscription — everything included.</span>
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
+                            <a
+                                href="https://buy.stripe.com/14AdR24YK3jc15j4JO2B200"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-lg text-white font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity shadow-lg"
+                            >
+                                Unlock All Modules — $199/yr
+                            </a>
                             <Link
                                 href="/tools/pdi"
-                                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-cobalt rounded-lg text-white font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
-                            >
-                                Run Free PDI Assessment
-                            </Link>
-                            <Link
-                                href="/glossary"
                                 className="px-8 py-4 border border-white/20 rounded-lg text-white font-bold uppercase tracking-widest text-sm hover:border-white/40 transition-colors"
                             >
-                                Browse Full Glossary
+                                Try Free PDI Tool First
                             </Link>
                         </div>
+                        <p className="text-zinc-600 text-xs mt-4">
+                            That&apos;s ~$8 per module. Cancel anytime.
+                        </p>
                     </div>
                 </div>
             </div>

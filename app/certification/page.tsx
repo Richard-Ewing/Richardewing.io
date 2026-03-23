@@ -96,15 +96,25 @@ export default function CertificationPage() {
                     <div className="card p-8 md:p-12 border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-transparent text-center">
                         <div className="text-3xl font-bold text-white mb-2">$1,500</div>
                         <p className="text-zinc-500 text-sm mb-6">Per certification · Payment plans available</p>
-                        <a
-                            href="https://theproducteconomist.beehiiv.com/subscribe"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold uppercase tracking-widest text-sm rounded-xl transition-all"
-                        >
-                            Join Waitlist <ArrowRight className="w-4 h-4" />
-                        </a>
-                        <p className="text-[10px] text-zinc-600 mt-4">Be first to know when enrollment opens.</p>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <a
+                                href="https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold uppercase tracking-widest text-sm rounded-xl transition-all"
+                            >
+                                Reserve Your Spot — $1,500 <ArrowRight className="w-4 h-4" />
+                            </a>
+                            <a
+                                href="https://theproducteconomist.beehiiv.com/subscribe"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-6 py-3 border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"
+                            >
+                                Just Join Waitlist
+                            </a>
+                        </div>
+                        <p className="text-[10px] text-zinc-600 mt-4">Cohort 1 opens Q3 2026. Pay now to secure priority enrollment.</p>
                     </div>
                 </section>
 
