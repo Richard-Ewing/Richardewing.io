@@ -49,6 +49,22 @@ const verticals = [
         color: 'sky',
         icon: '🏛️',
     },
+    {
+        title: 'EdTech',
+        subtitle: 'Education Technology',
+        description: 'Content delivery at scale, AI tutor governance, FERPA/COPPA compliance, and accessibility requirements create complex engineering economics.',
+        href: '/industries/edtech',
+        color: 'pink',
+        icon: '📚',
+    },
+    {
+        title: 'E-Commerce',
+        subtitle: 'Online Retail & Marketplaces',
+        description: 'Platform complexity, AI personalization costs, peak traffic scaling, and payment compliance create compounding technical debt.',
+        href: '/industries/ecommerce',
+        color: 'amber',
+        icon: '🛒',
+    },
 ];
 
 const colorMap: Record<string, string> = {
@@ -57,8 +73,10 @@ const colorMap: Record<string, string> = {
     orange: 'border-orange-500/20 hover:border-orange-500/50',
     violet: 'border-violet-500/20 hover:border-violet-500/50',
     sky: 'border-sky-500/20 hover:border-sky-500/50',
+    pink: 'border-pink-500/20 hover:border-pink-500/50',
+    amber: 'border-amber-500/20 hover:border-amber-500/50',
 };
-const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400', violet: 'text-violet-400', sky: 'text-sky-400' };
+const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400', violet: 'text-violet-400', sky: 'text-sky-400', pink: 'text-pink-400', amber: 'text-amber-400' };
 
 export default function IndustriesPage() {
     return (

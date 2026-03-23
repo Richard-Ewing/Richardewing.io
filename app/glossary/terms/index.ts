@@ -32,6 +32,7 @@ import { devopsPlatformTerms } from './devops-platform';
 import { finopsBusinessTerms } from './finops-business';
 import { orphanFixTerms } from './orphan-fix-batch';
 import { trendingTerms2026 } from './trending-2026';
+import { trendingTermsBatch2 } from './trending-2026-batch2';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -68,6 +69,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...orphanFixTerms,
     // Trending 2025-2026 terms
     ...trendingTerms2026,
+    // Trending batch 2
+    ...trendingTermsBatch2,
 ];
 
 export const allGlossaryCategories = [
