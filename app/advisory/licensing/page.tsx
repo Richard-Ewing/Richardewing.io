@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { Building2, Shield, BarChart3, ArrowRight, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'White-Label Tool Licensing | Product Economics for Consulting Firms | Richard Ewing',
-    description: 'License Richard Ewing\'s proprietary diagnostic tools (PDI, AUEB, EV-SE, APER) under your brand. Built for consulting firms, PE due diligence teams, and advisory practices.',
+    title: 'White-Label Tool Licensing | Richard Ewing',
+    description: 'License proprietary R&D diagnostic tools (PDI, AUEB, EV-SE, APER) under your brand. For consulting firms, PE teams, and advisory practices.',
     keywords: [
         'white label saas tools', 'consulting firm diagnostic tools', 'PE due diligence tools',
         'technical debt calculator licensing', 'engineering audit tools', 'product economics tools',

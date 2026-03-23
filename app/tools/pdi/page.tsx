@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import PDITool from './content';
 
 export const metadata: Metadata = {
-    title: 'Product Debt Index Calculator | Quantify Hidden Technical Debt in Dollars',
+    title: 'Product Debt Index Calculator | Richard Ewing',
     description: 'Calculate your Product Debt Index and quantify hidden technical debt in dollar terms. Free forensic diagnostic tool from Richard Ewing, Product Economist & AI Capital Auditor.',
     keywords: [
         'product debt index',

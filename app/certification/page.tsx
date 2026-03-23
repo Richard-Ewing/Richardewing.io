@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { GraduationCap, BookOpen, Award, Users, ArrowRight, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Certified Product Economist | Professional Certification Program | Richard Ewing',
-    description: 'Earn the Certified Product Economist (CPE) credential. Master R&D capital allocation, technical debt measurement, AI unit economics, and enterprise valuation. The only certification in product economics.',
+    title: 'Certified Product Economist (CPE) | Richard Ewing',
+    description: 'Earn the CPE credential. Master R&D capital allocation, technical debt measurement, AI unit economics, and enterprise valuation.',
     keywords: [
         'product economist certification', 'technical debt certification', 'CPE certification',
         'product management certification 2026', 'R&D audit certification', 'engineering economics course',

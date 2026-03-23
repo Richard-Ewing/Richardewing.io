@@ -1,15 +1,6 @@
-export interface GlossaryTerm {
-    slug: string;
-    title: string;
-    category: string;
-    definition: string;
-    whyItMatters: string;
-    howToMeasure?: string;
-    faqs: { question: string; answer: string }[];
-    relatedTerms: string[];
-    relatedTools?: { name: string; url: string }[];
-    relatedArticles?: { title: string; url: string }[];
-}
+import { allGlossaryTerms } from './terms/index';
+export type { GlossaryTerm } from './types';
+import type { GlossaryTerm } from './types';
 
 export const glossaryCategories = [
     'Technical Debt & Code Quality',
@@ -19,9 +10,16 @@ export const glossaryCategories = [
     'Engineering Management',
     'Leadership & Governance',
     'Richard Ewing Frameworks',
+    'Cloud & Infrastructure',
+    'Data & Analytics',
+    'Security & Compliance',
+    'Startup & Venture Capital',
+    'Design & UX',
+    'Agile & Delivery',
+    'Finance & Accounting',
 ] as const;
 
-export const glossaryTerms: GlossaryTerm[] = [
+const _baseGlossaryTerms: GlossaryTerm[] = [
     // =========================================================================
     // TECHNICAL DEBT & CODE QUALITY
     // =========================================================================
@@ -696,3 +694,8 @@ The decision to migrate should be driven by economics, not fashion. If your mono
         relatedTools: [{ name: 'Product Debt Index (PDI)', url: '/tools/pdi' }],
     },
 ];
+
+// Merge new category file terms with existing terms, deduplicating by slug
+const existingSlugs = new Set(_baseGlossaryTerms.map(t => t.slug));
+const newTerms = allGlossaryTerms.filter(t => !existingSlugs.has(t.slug));
+export const glossaryTerms: GlossaryTerm[] = [..._baseGlossaryTerms, ...newTerms];

@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { Mic, Users, Lightbulb, Clock, ArrowRight, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Workshops & Speaking | Technical Debt, AI Economics, R&D Audit | Richard Ewing',
-    description: 'Book Richard Ewing for keynotes, workshops, and executive briefings on technical debt, AI unit economics, R&D capital allocation, and product economics. Published in CIO.com, Built In, Mind the Product.',
+    title: 'Workshops & Speaking | Richard Ewing',
+    description: 'Book Richard Ewing for keynotes and workshops on technical debt, AI unit economics, and R&D capital allocation. Published in CIO.com and Built In.',
     keywords: [
         'technical debt keynote speaker', 'AI economics speaker', 'product economics workshop',
         'engineering leadership speaker', 'CTO conference speaker', 'R&D audit workshop',

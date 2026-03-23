@@ -3,14 +3,14 @@ import { principalKeywords } from '../lib/keywords';
 import PrincipalContent from '../components/principal-content';
 
 export const metadata: Metadata = {
-    title: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
-    description: 'Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse. Founder of Exogram. Creator of the Product Economist Framework. $25M ARR Scaled. Published in CIO.com & Built In.',
+    title: 'Richard Ewing — Product Economist | Exogram',
+    description: 'Product Economist and AI Capital Auditor. I audit R&D spend, surface capital risks, and identify hidden technical debt. Founder of Exogram.',
     keywords: principalKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/principal',
     },
     openGraph: {
-        title: 'Richard Ewing — Product Economist & AI Capital Auditor | Founder of Exogram',
+        title: 'Richard Ewing — Product Economist | Exogram',
         description: 'I identify AI hallucination debt, zombie infrastructure, and structural margin collapse before they become financial events. Founder of Exogram.',
         url: 'https://www.richardewing.io/principal',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],

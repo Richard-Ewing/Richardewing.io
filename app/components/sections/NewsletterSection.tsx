@@ -1,10 +1,46 @@
 "use client";
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { useScrollAnimation } from '@/app/hooks/useScrollAnimation';
+import { ArrowRight, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { useForm } from '@formspree/react';
 
 const NewsletterSection = () => {
     const { ref, isVisible } = useScrollAnimation();
+    const [email, setEmail] = useState('');
+    const [validationError, setValidationError] = useState('');
+    const [isValidating, setIsValidating] = useState(false);
+    const [state, handleFormspreeSubmit] = useForm('xzddbpwy');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setValidationError('');
+        if (!email) { setValidationError('Please enter your email.'); return; }
+
+        setIsValidating(true);
+        try {
+            const res = await fetch('/api/validate-email', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            });
+            const data = await res.json();
+            if (!data.valid) { setValidationError(data.reason || 'Please enter a valid email.'); setIsValidating(false); return; }
+        } catch { /* allow if API fails */ }
+        setIsValidating(false);
+
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('source', 'Newsletter Section');
+        handleFormspreeSubmit(formData);
+
+        try {
+            fetch('/api/beehiiv', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, source: 'Newsletter Section' }),
+            }).catch(() => {});
+        } catch {}
+    };
 
     return (
         <section ref={ref} className={`py-24 px-6 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
@@ -20,24 +56,47 @@ const NewsletterSection = () => {
 
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">The Product Economist Newsletter</h2>
 
-                        <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                            Subscribe and get the <strong className="text-white">R&D Audit Checklist</strong> — The 15 questions I ask in every $7,500 engagement.
-                        </p>
+                        {state.succeeded ? (
+                            <div className="py-4">
+                                <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                    <CheckCircle className="w-8 h-8 text-emerald-400" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-2">Check Your Inbox ✓</h3>
+                                <p className="text-gray-400">Your R&D Audit Checklist is on the way.</p>
+                            </div>
+                        ) : (
+                            <>
+                                <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+                                    Subscribe and get the <strong className="text-white">R&D Audit Checklist</strong> — The 15 questions I ask in every $7,500 engagement.
+                                </p>
 
-                        <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="flex-grow px-6 py-4 rounded-lg bg-[var(--bg-primary)] border border-white/10 text-white focus:outline-none focus:border-[var(--accent-cyan)] transition-colors"
-                                required
-                            />
-                            <button
-                                type="submit"
-                                className="px-8 py-4 rounded-lg bg-white text-black font-bold hover:bg-gray-200 transition-colors whitespace-nowrap"
-                            >
-                                Get Checklist →
-                            </button>
-                        </form>
+                                <form onSubmit={handleSubmit} className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => { setEmail(e.target.value); setValidationError(''); }}
+                                        placeholder="Enter your email"
+                                        className="flex-grow px-6 py-4 rounded-lg bg-[var(--bg-primary)] border border-white/10 text-white focus:outline-none focus:border-[var(--accent-cyan)] transition-colors"
+                                        required
+                                        disabled={state.submitting || isValidating}
+                                    />
+                                    <button
+                                        type="submit"
+                                        disabled={state.submitting || isValidating}
+                                        className="px-8 py-4 rounded-lg bg-white text-black font-bold hover:bg-gray-200 transition-colors whitespace-nowrap disabled:opacity-70 flex items-center justify-center gap-2"
+                                    >
+                                        {(state.submitting || isValidating) ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Get Checklist <ArrowRight className="w-3 h-3" /></>}
+                                    </button>
+                                </form>
+
+                                {validationError && (
+                                    <div className="max-w-md mx-auto mt-3 flex items-center gap-2 p-2 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-xs">
+                                        <AlertCircle className="w-3 h-3" /><span>{validationError}</span>
+                                    </div>
+                                )}
+                            </>
+                        )}
+
                         <p className="mt-8 text-sm text-gray-500">
                             Monthly. No fluff. 2,000+ executives read before they decide.
                         </p>

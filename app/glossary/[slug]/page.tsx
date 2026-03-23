@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const term = glossaryTerms.find(t => t.slug === slug);
     if (!term) return {};
     return {
-        title: `What is ${term.title}? | Definition & Guide | Richard Ewing`,
+        title: `What is ${term.title}? | Richard Ewing`,
         description: term.definition.slice(0, 155).replace(/\n/g, ' ') + '...',
         keywords: [
             term.title.toLowerCase(), `what is ${term.title.toLowerCase()}`,

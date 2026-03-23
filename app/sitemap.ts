@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { glossaryTerms } from './glossary/terms';
+import { frameworks } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.richardewing.io';
@@ -19,8 +20,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         })),
     ];
 
+    const frameworkPages: MetadataRoute.Sitemap = frameworks.map(f => ({
+        url: `${baseUrl}/articles/frameworks/${f.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }));
+
     return [
         ...glossaryPages,
+        ...frameworkPages,
         // Core Pages
         {
             url: `${baseUrl}/`,
@@ -33,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/advisory/licensing`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
         },
         {
             url: `${baseUrl}/doctrine`,
@@ -77,6 +92,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/tools/scoring`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.5,
         },
 
         // Content Pages
@@ -129,6 +150,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.5,
         },
 
+        // Monetization Pages
+        {
+            url: `${baseUrl}/benchmark`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/certification`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/workshops`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/curriculum`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+
         // Legal
         {
             url: `${baseUrl}/legal`,
@@ -138,3 +185,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     ];
 }
+
