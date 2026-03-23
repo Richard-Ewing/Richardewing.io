@@ -20,6 +20,7 @@ He is the founder of [Exogram](https://exogram.ai), the execution control plane 
 ## Docs
 
 - [Advisory Services](https://www.richardewing.io/advisory): Independent oversight and forensic audits for product, engineering, and AI economics.
+- [Start Here](https://www.richardewing.io/start-here): Guided onboarding — diagnose, learn, act. The recommended entry point for new visitors.
 - [Pricing](https://www.richardewing.io/pricing): Transparent advisory pricing — Diagnostic ($2,500), Fractional CTO ($7,500/mo), Board Advisor ($15,000/mo).
 - [Doctrine](https://www.richardewing.io/doctrine): The 4-principle Product Economist framework.
 - [Manifesto](https://www.richardewing.io/manifesto): Philosophy behind the Product Economist approach.

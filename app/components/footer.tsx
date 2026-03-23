@@ -31,6 +31,7 @@ export function Footer() {
                     <div>
                         <h4 className="text-xs text-gray-500 uppercase tracking-wide mb-4 font-mono">Intervention</h4>
                         <ul className="space-y-2 text-sm font-grotesk">
+                            <li><Link href="/start-here" className="text-cyan-400 hover:text-white transition-colors font-bold">→ Start Here</Link></li>
                             <li><Link href="/advisory" className="text-gray-400 hover:text-white transition-colors">Advisory Services</Link></li>
                             <li><Link href="/pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</Link></li>
                             <li><Link href="/case-studies" className="text-gray-400 hover:text-white transition-colors">Case Studies</Link></li>

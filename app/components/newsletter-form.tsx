@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm, ValidationError } from '@formspree/react';
 import { Mail, ArrowRight, CheckCircle, Loader2 } from 'lucide-react';
 
@@ -10,19 +11,22 @@ interface NewsletterFormProps {
     buttonText?: string;
     className?: string;
     extraData?: Record<string, string | number | undefined>;
+    redirectTo?: string;
 }
 
 export function NewsletterForm({
-    id = "xzddbpwy", // Default to user's provided ID
+    id = "xzddbpwy",
     placeholder = "your@email.com",
     buttonText = "Get Updates",
     className = "",
-    extraData
+    extraData,
+    redirectTo = "/checklist"
 }: NewsletterFormProps) {
     const [state, handleSubmit] = useForm(id);
     const lastSubmittedEmailRef = useRef<string>('');
+    const router = useRouter();
 
-    // Fire-and-forget to Beehiiv when Formspree succeeds
+    // Fire-and-forget to Beehiiv when Formspree succeeds, then redirect
     useEffect(() => {
         if (state.succeeded && lastSubmittedEmailRef.current) {
             const email = lastSubmittedEmailRef.current;
@@ -31,9 +35,13 @@ export function NewsletterForm({
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, source }),
-            }).catch(() => {
-                // Non-blocking — Beehiiv failure doesn't affect user experience
-            });
+            }).catch(() => {});
+
+            // Redirect after brief success flash
+            if (redirectTo) {
+                const timer = setTimeout(() => router.push(redirectTo), 1500);
+                return () => clearTimeout(timer);
+            }
         }
     }, [state.succeeded]);
 
