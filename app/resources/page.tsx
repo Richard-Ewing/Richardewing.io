@@ -23,7 +23,7 @@ const resourceSections = [
         ],
     },
     {
-        title: 'Glossary (310+ Terms)',
+        title: 'Glossary (320+ Terms)',
         description: 'The most comprehensive technology leadership glossary — from technical debt to AI governance.',
         icon: '📖',
         items: [

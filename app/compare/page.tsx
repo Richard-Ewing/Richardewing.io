@@ -23,6 +23,20 @@ const comparisons = [
         href: '/compare/audit-interview-vs-leetcode',
         color: 'purple',
     },
+    {
+        title: 'AUEB vs AWS Cost Explorer',
+        subtitle: 'AI Economics vs Cloud Billing',
+        description: 'AWS tracks cloud spend. AUEB tells you whether your AI features will ever make money. Cloud billing ≠ AI economics.',
+        href: '/compare/aueb-vs-aws-cost-explorer',
+        color: 'orange',
+    },
+    {
+        title: 'Audit Interview vs HackerRank',
+        subtitle: 'Judgment vs Puzzles',
+        description: 'HackerRank tests algorithmic puzzles that GPT-4 can pass. The Audit Interview tests judgment AI can\'t replicate.',
+        href: '/compare/audit-interview-vs-hackerrank',
+        color: 'emerald',
+    },
 ];
 
 export default function ComparePage() {
@@ -40,11 +54,11 @@ export default function ComparePage() {
                     <div className="space-y-6">
                         {comparisons.map((c) => (
                             <Link key={c.href} href={c.href} className="group block">
-                                <div className={`rounded-2xl border ${c.color === 'cyan' ? 'border-cyan-500/20 hover:border-cyan-500/50' : 'border-purple-500/20 hover:border-purple-500/50'} p-8 transition-all hover:bg-white/[0.02]`}>
-                                    <div className={`text-xs font-mono uppercase tracking-widest mb-2 ${c.color === 'cyan' ? 'text-cyan-400' : 'text-purple-400'}`}>{c.subtitle}</div>
+                                <div className={`rounded-2xl border ${c.color === 'cyan' ? 'border-cyan-500/20 hover:border-cyan-500/50' : c.color === 'purple' ? 'border-purple-500/20 hover:border-purple-500/50' : c.color === 'orange' ? 'border-orange-500/20 hover:border-orange-500/50' : 'border-emerald-500/20 hover:border-emerald-500/50'} p-8 transition-all hover:bg-white/[0.02]`}>
+                                    <div className={`text-xs font-mono uppercase tracking-widest mb-2 ${c.color === 'cyan' ? 'text-cyan-400' : c.color === 'purple' ? 'text-purple-400' : c.color === 'orange' ? 'text-orange-400' : 'text-emerald-400'}`}>{c.subtitle}</div>
                                     <h2 className="text-2xl font-grotesk font-bold text-white mb-3 group-hover:text-white">{c.title}</h2>
                                     <p className="text-zinc-400 mb-4">{c.description}</p>
-                                    <span className={`text-sm font-bold uppercase tracking-widest ${c.color === 'cyan' ? 'text-cyan-400' : 'text-purple-400'}`}>Read Comparison →</span>
+                                    <span className={`text-sm font-bold uppercase tracking-widest ${c.color === 'cyan' ? 'text-cyan-400' : c.color === 'purple' ? 'text-purple-400' : c.color === 'orange' ? 'text-orange-400' : 'text-emerald-400'}`}>Read Comparison →</span>
                                 </div>
                             </Link>
                         ))}

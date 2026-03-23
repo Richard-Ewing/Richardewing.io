@@ -44,7 +44,7 @@ export function Footer() {
                         <ul className="space-y-2 text-sm font-grotesk">
                             <li><Link href="/doctrine" className="text-gray-400 hover:text-white transition-colors">Doctrine</Link></li>
                             <li><Link href="/articles" className="text-gray-400 hover:text-white transition-colors">Canonical Hub</Link></li>
-                            <li><Link href="/glossary" className="text-gray-400 hover:text-white transition-colors">Glossary (310+)</Link></li>
+                            <li><Link href="/glossary" className="text-gray-400 hover:text-white transition-colors">Glossary (320+)</Link></li>
                             <li><Link href="/curriculum" className="text-gray-400 hover:text-white transition-colors">Curriculum</Link></li>
                             <li><Link href="/resources" className="text-gray-400 hover:text-white transition-colors">Resource Hub</Link></li>
                             <li><Link href="/exogram" className="text-gray-400 hover:text-white transition-colors">Exogram</Link></li>

@@ -31,6 +31,7 @@ import { articleDerivedTerms } from './article-derived-expansion';
 import { devopsPlatformTerms } from './devops-platform';
 import { finopsBusinessTerms } from './finops-business';
 import { orphanFixTerms } from './orphan-fix-batch';
+import { trendingTerms2026 } from './trending-2026';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -65,6 +66,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...finopsBusinessTerms,
     // Orphan fix + Exogram terms
     ...orphanFixTerms,
+    // Trending 2025-2026 terms
+    ...trendingTerms2026,
 ];
 
 export const allGlossaryCategories = [

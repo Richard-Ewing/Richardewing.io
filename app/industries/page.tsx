@@ -33,14 +33,32 @@ const verticals = [
         color: 'orange',
         icon: '🤖',
     },
+    {
+        title: 'SaaS & B2B',
+        subtitle: 'Multi-Tenant Platforms',
+        description: 'Technical debt attacks ARR growth, gross margin, and feature velocity simultaneously. The economic chain reaction is measurable and preventable.',
+        href: '/industries/saas',
+        color: 'violet',
+        icon: '☁️',
+    },
+    {
+        title: 'GovTech & Public Sector',
+        subtitle: 'Government Technology',
+        description: 'Legacy mainframes from the 1970s, FedRAMP compliance costs, and citizen-facing reliability requirements create unique engineering economics.',
+        href: '/industries/govtech',
+        color: 'sky',
+        icon: '🏛️',
+    },
 ];
 
 const colorMap: Record<string, string> = {
     emerald: 'border-emerald-500/20 hover:border-emerald-500/50',
     blue: 'border-blue-500/20 hover:border-blue-500/50',
     orange: 'border-orange-500/20 hover:border-orange-500/50',
+    violet: 'border-violet-500/20 hover:border-violet-500/50',
+    sky: 'border-sky-500/20 hover:border-sky-500/50',
 };
-const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400' };
+const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400', violet: 'text-violet-400', sky: 'text-sky-400' };
 
 export default function IndustriesPage() {
     return (
