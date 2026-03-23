@@ -353,6 +353,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
 
+        // Blog Recap Pages
+        {
+            url: `${baseUrl}/articles/recap/cio-com`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/articles/recap/built-in`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/articles/recap/hackernoon`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+
+        // Additional Comparison Pages
+        {
+            url: `${baseUrl}/compare/audit-interview-vs-traditional`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+
         // Legal
         {
             url: `${baseUrl}/legal`,

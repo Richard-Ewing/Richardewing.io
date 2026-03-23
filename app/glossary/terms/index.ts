@@ -38,6 +38,7 @@ import { highVolumeTerms } from './high-volume';
 import { aiToolsTerms } from './ai-tools';
 import { moreTerms } from './more-terms';
 import { gapFillTerms } from './gap-fill-terms';
+import { fifteenthPassTerms } from './fifteenth-pass';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -86,6 +87,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...moreTerms,
     // Category gap fill
     ...gapFillTerms,
+    // Fifteenth pass
+    ...fifteenthPassTerms,
 ];
 
 export const allGlossaryCategories = [
