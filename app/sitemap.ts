@@ -481,6 +481,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
 
+        // Curriculum Module Pages
+        {
+            url: `${baseUrl}/curriculum/tracks/engineering-economics/1-1`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/curriculum/tracks/engineering-economics/1-2`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/curriculum/tracks/ai-product-economics/2-1`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/curriculum/tracks/rd-capital-management/3-1`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+
         // Legal
         {
             url: `${baseUrl}/legal`,
