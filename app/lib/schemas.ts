@@ -15,7 +15,8 @@ export const personSchema = {
         "https://medium.com/@richardewing",
         "https://hackernoon.com/u/richardewing",
         "https://substack.com/@richardewing",
-        "https://www.amazon.com/author/richardewing"
+        "https://www.amazon.com/author/richardewing",
+        "https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5"
     ],
     "knowsAbout": [
         "Product Management",

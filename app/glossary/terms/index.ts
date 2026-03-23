@@ -27,6 +27,7 @@ import { pricingPackagingTerms } from './pricing-packaging';
 import { complianceRegulationTerms } from './compliance-regulation';
 import { openSourceTerms } from './open-source';
 import { exogramAiGovernanceTerms } from './exogram-ai-governance';
+import { articleDerivedTerms } from './article-derived-expansion';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -56,6 +57,7 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...complianceRegulationTerms,
     ...openSourceTerms,
     ...exogramAiGovernanceTerms,
+    ...articleDerivedTerms,
 ];
 
 export const allGlossaryCategories = [

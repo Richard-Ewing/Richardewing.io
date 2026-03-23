@@ -197,6 +197,7 @@ export default function PrincipalContent() {
                             { name: 'HackerNoon', note: 'Contributing Author', href: 'https://hackernoon.com/u/richardewing', color: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/5' },
                             { name: 'Medium', note: 'Author', href: 'https://medium.com/@richardewing', color: 'text-white border-white/20 bg-white/5' },
                             { name: 'Amazon', note: 'Published Author', href: 'https://www.amazon.com/author/richardewing', color: 'text-amber-400 border-amber-500/30 bg-amber-500/5' },
+                            { name: 'AWS Startups', note: 'Showcase Company', href: 'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5', color: 'text-orange-400 border-orange-500/30 bg-orange-500/5' },
                         ].map(pub => (
                             <a
                                 key={pub.name}
