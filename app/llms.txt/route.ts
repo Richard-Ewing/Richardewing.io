@@ -21,6 +21,8 @@ He is the founder of [Exogram](https://exogram.ai), the execution control plane 
 
 - [Advisory Services](https://www.richardewing.io/advisory): Independent oversight and forensic audits for product, engineering, and AI economics.
 - [Start Here](https://www.richardewing.io/start-here): Guided onboarding — diagnose, learn, act. The recommended entry point for new visitors.
+- [Compare Tools](https://www.richardewing.io/compare): PDI vs SonarQube, Audit Interview vs LeetCode — how Richard Ewing's tools compare to alternatives.
+- [Industries](https://www.richardewing.io/industries): Product economics advisory by vertical — FinTech, HealthTech, AI-First companies.
 - [Pricing](https://www.richardewing.io/pricing): Transparent advisory pricing — Diagnostic ($2,500), Fractional CTO ($7,500/mo), Board Advisor ($15,000/mo).
 - [Doctrine](https://www.richardewing.io/doctrine): The 4-principle Product Economist framework.
 - [Manifesto](https://www.richardewing.io/manifesto): Philosophy behind the Product Economist approach.

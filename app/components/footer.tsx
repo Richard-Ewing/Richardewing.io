@@ -44,7 +44,7 @@ export function Footer() {
                         <ul className="space-y-2 text-sm font-grotesk">
                             <li><Link href="/doctrine" className="text-gray-400 hover:text-white transition-colors">Doctrine</Link></li>
                             <li><Link href="/articles" className="text-gray-400 hover:text-white transition-colors">Canonical Hub</Link></li>
-                            <li><Link href="/glossary" className="text-gray-400 hover:text-white transition-colors">Glossary (300+)</Link></li>
+                            <li><Link href="/glossary" className="text-gray-400 hover:text-white transition-colors">Glossary (310+)</Link></li>
                             <li><Link href="/curriculum" className="text-gray-400 hover:text-white transition-colors">Curriculum</Link></li>
                             <li><Link href="/resources" className="text-gray-400 hover:text-white transition-colors">Resource Hub</Link></li>
                             <li><Link href="/exogram" className="text-gray-400 hover:text-white transition-colors">Exogram</Link></li>
@@ -60,6 +60,8 @@ export function Footer() {
                             <li><Link href="/tools/aper" className="text-gray-400 hover:text-white transition-colors">APER Diagnostic</Link></li>
                             <li><Link href="/tools/ev-se" className="text-gray-400 hover:text-white transition-colors">Evergreen Ratio</Link></li>
                             <li><Link href="/checklist" className="text-gray-400 hover:text-white transition-colors">R&D Audit Checklist</Link></li>
+                            <li><Link href="/compare" className="text-gray-400 hover:text-white transition-colors">Tool Comparisons</Link></li>
+                            <li><Link href="/industries" className="text-gray-400 hover:text-white transition-colors">Industry Verticals</Link></li>
                             <li><Link href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
                         </ul>
                     </div>

@@ -130,6 +130,35 @@ export default function RootLayout({
             ],
           }) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['h1', 'h2', '.speakable'],
+              xpath: ['/html/head/meta[@name="description"]/@content'],
+            },
+          }) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Free Diagnostic Tools by Richard Ewing',
+            description: 'Boardroom-ready diagnostic instruments used in $7,500 engagements. Try them free.',
+            numberOfItems: 5,
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Product Debt Index (PDI)', url: 'https://www.richardewing.io/tools/pdi', description: 'Quantify technical debt in dollar terms and calculate your Technical Insolvency Date.' },
+              { '@type': 'ListItem', position: 2, name: 'AI Unit Economics Benchmark (AUEB)', url: 'https://www.richardewing.io/tools/aueb', description: 'Calculate AI feature profitability per interaction before and after launch.' },
+              { '@type': 'ListItem', position: 3, name: 'Enterprise Value Scenario Engine (EV-SE)', url: 'https://www.richardewing.io/tools/ev-se', description: 'Model how technical decisions impact enterprise valuation.' },
+              { '@type': 'ListItem', position: 4, name: 'Revenue Per Engineer (APER)', url: 'https://www.richardewing.io/tools/aper', description: 'Assess engineering headcount efficiency for your stage and vertical.' },
+              { '@type': 'ListItem', position: 5, name: 'Audit Interview Protocol', url: 'https://www.richardewing.io/tools/audit-interview', description: 'The hiring methodology for the AI age. Test judgment, not syntax.' },
+            ],
+          }) }}
+        />
 
         <Navigation />
 
