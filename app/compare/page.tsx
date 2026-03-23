@@ -51,6 +51,13 @@ const comparisons = [
         href: '/compare/pdi-vs-codeclimate',
         color: 'purple',
     },
+    {
+        title: 'APER vs LinearB',
+        subtitle: 'Judgment vs Activity',
+        description: 'LinearB tracks how fast engineers move. APER evaluates whether they make economically sound decisions.',
+        href: '/compare/aper-vs-linearb',
+        color: 'orange',
+    },
 ];
 
 export default function ComparePage() {
