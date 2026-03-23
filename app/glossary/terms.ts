@@ -17,6 +17,17 @@ export const glossaryCategories = [
     'Design & UX',
     'Agile & Delivery',
     'Finance & Accounting',
+    // Phase 3 expansion
+    'Platform Engineering',
+    'Growth & Marketing',
+    'People & Culture',
+    'Due Diligence & M&A',
+    'API & Integration',
+    'Testing & QA',
+    'Architecture Patterns',
+    'Pricing & Packaging',
+    'Compliance & Regulation',
+    'Open Source',
 ] as const;
 
 const _baseGlossaryTerms: GlossaryTerm[] = [

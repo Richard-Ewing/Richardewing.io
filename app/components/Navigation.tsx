@@ -57,7 +57,8 @@ const Navigation = () => {
                                 <DropdownItem href="/doctrine">Doctrine (Framework)</DropdownItem>
                                 <DropdownItem href="/manifesto">Manifesto (Philosophy)</DropdownItem>
                                 <DropdownItem href="/articles">Articles (Publications)</DropdownItem>
-                                <DropdownItem href="/glossary">Glossary (40+ Definitions)</DropdownItem>
+                                <DropdownItem href="/glossary">Glossary (250+ Definitions)</DropdownItem>
+                                <DropdownItem href="/curriculum">Curriculum (Learning Tracks)</DropdownItem>
                                 <DropdownItem href="/benchmark">Benchmark Report (Free)</DropdownItem>
                                 <DropdownItem href="/briefings">Briefings (Newsletter)</DropdownItem>
                             </Dropdown>
@@ -192,6 +193,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/manifesto" onClick={onClose}>Manifesto</MobileLink>
                         <MobileLink href="/articles" onClick={onClose}>Articles</MobileLink>
                         <MobileLink href="/glossary" onClick={onClose}>Glossary</MobileLink>
+                        <MobileLink href="/curriculum" onClick={onClose}>Curriculum</MobileLink>
                         <MobileLink href="/benchmark" onClick={onClose}>Benchmark Report</MobileLink>
                         <MobileLink href="/briefings" onClick={onClose}>Briefings</MobileLink>
                     </div>

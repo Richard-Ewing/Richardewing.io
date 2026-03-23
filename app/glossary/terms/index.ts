@@ -14,6 +14,18 @@ import { startupVentureTerms } from './startup-venture';
 import { designUxTerms } from './design-ux';
 import { agileDeliveryTerms } from './agile-delivery';
 import { financeAccountingTerms } from './finance-accounting';
+// Phase 3 expansion categories
+import { richardEwingArticleTerms } from './richard-ewing-articles';
+import { platformEngineeringTerms } from './platform-engineering';
+import { growthMarketingTerms } from './growth-marketing';
+import { peopleCultureTerms } from './people-culture';
+import { dueDiligenceTerms } from './due-diligence';
+import { apiIntegrationTerms } from './api-integration';
+import { testingQaTerms } from './testing-qa';
+import { architecturePatternsTerms } from './architecture-patterns';
+import { pricingPackagingTerms } from './pricing-packaging';
+import { complianceRegulationTerms } from './compliance-regulation';
+import { openSourceTerms } from './open-source';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -30,6 +42,18 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...designUxTerms,
     ...agileDeliveryTerms,
     ...financeAccountingTerms,
+    // Phase 3 expansion
+    ...richardEwingArticleTerms,
+    ...platformEngineeringTerms,
+    ...growthMarketingTerms,
+    ...peopleCultureTerms,
+    ...dueDiligenceTerms,
+    ...apiIntegrationTerms,
+    ...testingQaTerms,
+    ...architecturePatternsTerms,
+    ...pricingPackagingTerms,
+    ...complianceRegulationTerms,
+    ...openSourceTerms,
 ];
 
 export const allGlossaryCategories = [
@@ -47,4 +71,15 @@ export const allGlossaryCategories = [
     'Design & UX',
     'Agile & Delivery',
     'Finance & Accounting',
+    // Phase 3 expansion
+    'Platform Engineering',
+    'Growth & Marketing',
+    'People & Culture',
+    'Due Diligence & M&A',
+    'API & Integration',
+    'Testing & QA',
+    'Architecture Patterns',
+    'Pricing & Packaging',
+    'Compliance & Regulation',
+    'Open Source',
 ] as const;
