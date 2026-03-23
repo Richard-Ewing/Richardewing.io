@@ -89,6 +89,22 @@ const verticals = [
         color: 'yellow',
         icon: '🏦',
     },
+    {
+        title: 'PropTech',
+        subtitle: 'Real Estate Technology',
+        description: 'Property data integration debt, AI valuation model economics, legacy MLS systems, and smart building IoT infrastructure create unique R&D challenges.',
+        href: '/industries/proptech',
+        color: 'indigo',
+        icon: '🏠',
+    },
+    {
+        title: 'LegalTech',
+        subtitle: 'Legal Technology',
+        description: 'Document processing AI costs, jurisdictional regulatory data maintenance, contract analytics model drift, and highest-tier security requirements.',
+        href: '/industries/legaltech',
+        color: 'fuchsia',
+        icon: '⚖️',
+    },
 ];
 
 const colorMap: Record<string, string> = {
@@ -102,8 +118,10 @@ const colorMap: Record<string, string> = {
     red: 'border-red-500/20 hover:border-red-500/50',
     lime: 'border-lime-500/20 hover:border-lime-500/50',
     yellow: 'border-yellow-500/20 hover:border-yellow-500/50',
+    indigo: 'border-indigo-500/20 hover:border-indigo-500/50',
+    fuchsia: 'border-fuchsia-500/20 hover:border-fuchsia-500/50',
 };
-const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400', violet: 'text-violet-400', sky: 'text-sky-400', pink: 'text-pink-400', amber: 'text-amber-400', red: 'text-red-400', lime: 'text-lime-400', yellow: 'text-yellow-400' };
+const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400', violet: 'text-violet-400', sky: 'text-sky-400', pink: 'text-pink-400', amber: 'text-amber-400', red: 'text-red-400', lime: 'text-lime-400', yellow: 'text-yellow-400', indigo: 'text-indigo-400', fuchsia: 'text-fuchsia-400' };
 
 export default function IndustriesPage() {
     return (

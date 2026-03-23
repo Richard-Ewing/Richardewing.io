@@ -381,6 +381,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
 
+        // Audience Funnel Pages
+        {
+            url: `${baseUrl}/for-investors`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/for-boards`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/for-ctos`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/roi`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+
+        // Additional Industry Verticals
+        {
+            url: `${baseUrl}/industries/proptech`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/industries/legaltech`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+
         // Legal
         {
             url: `${baseUrl}/legal`,
