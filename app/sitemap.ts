@@ -327,6 +327,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
         // Guides / Content Hubs
         {
+            url: `${baseUrl}/industries/insurtech`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+
+        // Guides / Content Hubs
+        {
             url: `${baseUrl}/guides`,
             lastModified: new Date(),
             changeFrequency: 'monthly',

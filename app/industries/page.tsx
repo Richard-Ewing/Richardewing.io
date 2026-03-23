@@ -81,6 +81,14 @@ const verticals = [
         color: 'lime',
         icon: '📦',
     },
+    {
+        title: 'InsurTech',
+        subtitle: 'Insurance Technology',
+        description: 'Legacy core systems from the 1980s, state-by-state regulatory compliance, AI underwriting economics, and claims processing debt that nobody fully understands.',
+        href: '/industries/insurtech',
+        color: 'yellow',
+        icon: '🏦',
+    },
 ];
 
 const colorMap: Record<string, string> = {
@@ -93,8 +101,9 @@ const colorMap: Record<string, string> = {
     amber: 'border-amber-500/20 hover:border-amber-500/50',
     red: 'border-red-500/20 hover:border-red-500/50',
     lime: 'border-lime-500/20 hover:border-lime-500/50',
+    yellow: 'border-yellow-500/20 hover:border-yellow-500/50',
 };
-const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400', violet: 'text-violet-400', sky: 'text-sky-400', pink: 'text-pink-400', amber: 'text-amber-400', red: 'text-red-400', lime: 'text-lime-400' };
+const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400', violet: 'text-violet-400', sky: 'text-sky-400', pink: 'text-pink-400', amber: 'text-amber-400', red: 'text-red-400', lime: 'text-lime-400', yellow: 'text-yellow-400' };
 
 export default function IndustriesPage() {
     return (

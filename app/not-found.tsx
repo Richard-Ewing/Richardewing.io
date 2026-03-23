@@ -38,7 +38,7 @@ export default function NotFound() {
                     >
                         <div className="text-xs font-mono text-purple-500 uppercase mb-1">Knowledge</div>
                         <div className="font-bold text-white group-hover:text-purple-400 transition-colors">
-                            Glossary (370+ Terms)
+                            Glossary (380+ Terms)
                         </div>
                         <div className="text-gray-500 text-xs">Technical debt to AI governance</div>
                     </Link>
