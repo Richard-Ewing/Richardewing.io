@@ -30,6 +30,7 @@ import { exogramAiGovernanceTerms } from './exogram-ai-governance';
 import { articleDerivedTerms } from './article-derived-expansion';
 import { devopsPlatformTerms } from './devops-platform';
 import { finopsBusinessTerms } from './finops-business';
+import { orphanFixTerms } from './orphan-fix-batch';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -62,6 +63,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...articleDerivedTerms,
     ...devopsPlatformTerms,
     ...finopsBusinessTerms,
+    // Orphan fix + Exogram terms
+    ...orphanFixTerms,
 ];
 
 export const allGlossaryCategories = [
