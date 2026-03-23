@@ -117,6 +117,30 @@ export const PRODUCTS: Record<string, Product> = {
         price: 500000,
         mode: 'payment',
     },
+    workshop_rd_masterclass: {
+        name: 'R&D Capital Allocation Masterclass',
+        description: '4-hour hands-on workshop (10-30 people). Teams learn to measure technical debt, calculate refactoring ROI, and build the business case.',
+        price: 800000,
+        mode: 'payment',
+    },
+    workshop_board_reporting: {
+        name: 'Board-Ready Technical Reporting',
+        description: '2-hour executive session (5-15 people). CTOs learn to present tech metrics in financial language; boards learn what to ask.',
+        price: 500000,
+        mode: 'payment',
+    },
+    workshop_ai_governance: {
+        name: 'AI Cost Governance Workshop',
+        description: '4-hour workshop (10-25 people). Map AI spend, identify collapse points, build cost governance frameworks.',
+        price: 800000,
+        mode: 'payment',
+    },
+    keynote_speaking: {
+        name: 'Keynote Speaking Engagement',
+        description: '45-60 minute keynote on technical debt, AI unit economics, or the subprime code crisis. Includes Q&A.',
+        price: 500000,
+        mode: 'payment',
+    },
     white_label: {
         name: 'White-Label Tool Licensing — Monthly',
         description: 'License Richard Ewing diagnostic tools (PDI, AUEB, APER, EV-SE) for your organization under your own brand.',
@@ -124,4 +148,46 @@ export const PRODUCTS: Record<string, Product> = {
         mode: 'subscription',
         interval: 'month',
     },
+
+    // --- PARTNERSHIPS ---
+    partner_licensed: {
+        name: 'Licensed Partner — Monthly',
+        description: 'White-label frameworks for your consulting practice. Includes training, co-branded case studies, and tools access.',
+        price: 250000,
+        mode: 'subscription',
+        interval: 'month',
+    },
+
+    // --- INDIVIDUAL PREMIUM GUIDES ---
+    guide_ai_economics: {
+        name: 'The AI Economics Deep Dive',
+        description: 'The most comprehensive AI economics guide: token economics, model routing, Cost of Predictivity, RAG optimization, hallucination cost quantification.',
+        price: 2900,
+        mode: 'payment',
+    },
+    guide_pe_due_diligence: {
+        name: 'PE Technology Due Diligence Guide',
+        description: 'Insider PE due diligence guide: 15 red flags, valuation impact, technical debt methodology, deal-killer case studies.',
+        price: 2900,
+        mode: 'payment',
+    },
+    guide_vc_assessment: {
+        name: 'VC Technology Assessment Framework',
+        description: 'Technology risk evaluation before investing: technical founder assessment, velocity indicators, 10-minute diligence checklist.',
+        price: 2900,
+        mode: 'payment',
+    },
+    guide_saas_metrics: {
+        name: 'SaaS Metrics Masterclass',
+        description: 'Bridge engineering metrics and SaaS financials: Rule of 40, NRR improvement, CAC payback, engineering ROI.',
+        price: 2900,
+        mode: 'payment',
+    },
+    guide_cloud_finops: {
+        name: 'Cloud FinOps & Infrastructure Economics',
+        description: 'Cloud cost optimization: right-sizing, reserved instances, spot architecture, FinOps team structure, 12-week savings program.',
+        price: 2900,
+        mode: 'payment',
+    },
 };
+

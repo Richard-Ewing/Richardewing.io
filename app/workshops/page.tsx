@@ -62,6 +62,7 @@ const workshops = [
         participants: '10-30 people',
         desc: 'Hands-on workshop where teams learn to measure their own technical debt, calculate ROI on refactoring, and build the business case that gets funding approved.',
         price: '$8,000',
+        productId: 'workshop_rd_masterclass',
     },
     {
         title: 'Board-Ready Technical Reporting',
@@ -69,6 +70,7 @@ const workshops = [
         participants: '5-15 people',
         desc: 'Teach your engineering leaders how to present technical metrics in financial language. CTOs learn to communicate with boards; boards learn what to ask their CTOs.',
         price: '$5,000',
+        productId: 'workshop_board_reporting',
     },
     {
         title: 'AI Cost Governance Workshop',
@@ -76,6 +78,7 @@ const workshops = [
         participants: '10-25 people',
         desc: 'Map your AI spend, identify collapse points, and build cost governance frameworks that prevent runaway inference costs.',
         price: '$8,000',
+        productId: 'workshop_ai_governance',
     },
 ];
 
@@ -140,15 +143,22 @@ export default function WorkshopsPage() {
                                 <h3 className="text-lg font-bold text-white mb-2">{w.title}</h3>
                                 <p className="text-zinc-500 text-xs font-mono mb-1">{w.format} · {w.participants}</p>
                                 <p className="text-zinc-400 text-sm mb-4 flex-1">{w.desc}</p>
-                                <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                                <div className="flex items-center justify-between pt-4 border-t border-white/10 mb-4">
                                     <span className="text-xl font-bold text-white">{w.price}</span>
                                     <span className="text-xs text-zinc-500">+ travel</span>
                                 </div>
+                                <a
+                                    href={`/api/buy/${w.productId}`}
+                                    className="block text-center py-3 rounded-lg bg-gradient-to-r from-rose-500 to-purple-500 text-white font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-opacity"
+                                >
+                                    Book Workshop →
+                                </a>
                             </div>
                         ))}
                     </div>
                 </section>
 
+                {/* Keynote Booking */}
                 <section className="section max-w-3xl mx-auto text-center">
                     <div className="card p-8 md:p-12 border-rose-500/20 bg-gradient-to-br from-rose-500/5 to-transparent">
                         <h2 className="text-2xl font-bold text-white mb-4 font-grotesk">Book a Speaking Engagement</h2>
@@ -156,12 +166,20 @@ export default function WorkshopsPage() {
                             Keynote fees start at $5,000. Workshop fees start at $5,000.
                             Travel and accommodations are additional.
                         </p>
-                        <a
-                            href="mailto:richardewing@exogram.ai?subject=Speaking%20Engagement%20Inquiry"
-                            className="inline-flex items-center gap-2 px-8 py-3 bg-rose-500 hover:bg-rose-400 text-white font-bold uppercase tracking-widest text-sm rounded-xl transition-all"
-                        >
-                            Inquire About Speaking <ArrowRight className="w-4 h-4" />
-                        </a>
+                        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                            <a
+                                href="/api/buy/keynote_speaking"
+                                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-rose-500 hover:bg-rose-400 text-white font-bold uppercase tracking-widest text-sm rounded-xl transition-all"
+                            >
+                                Book Keynote — $5,000 <ArrowRight className="w-4 h-4" />
+                            </a>
+                            <a
+                                href="mailto:richardewing@exogram.ai?subject=Speaking%20Engagement%20Inquiry"
+                                className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-white/20 text-white font-bold uppercase tracking-widest text-sm rounded-xl hover:bg-white/5 transition-all"
+                            >
+                                Custom Inquiry →
+                            </a>
+                        </div>
                     </div>
                 </section>
             </div>

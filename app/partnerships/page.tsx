@@ -79,20 +79,33 @@ export default function PartnershipsPage() {
                     <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-10 text-center mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-6">Partnership Tiers</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                            <div className="rounded-xl border border-white/10 p-6">
+                            <div className="rounded-xl border border-white/10 p-6 flex flex-col">
                                 <h3 className="text-lg font-bold text-zinc-300 mb-2">Referral Partner</h3>
-                                <p className="text-sm text-zinc-500 mb-4">Refer clients for R&D audits. Earn referral fees.</p>
-                                <div className="text-sm text-zinc-600">Revenue share on referred deals</div>
+                                <p className="text-sm text-zinc-500 mb-4 flex-1">Refer clients for R&D audits. Earn referral fees on closed deals.</p>
+                                <div className="text-2xl font-bold text-white mb-1">Free</div>
+                                <div className="text-xs text-zinc-600 mb-4">Revenue share on referred deals</div>
+                                <a href="mailto:richardewing@exogram.ai?subject=Referral%20Partner%20Application" className="block text-center py-3 rounded-lg border border-white/20 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/5 transition-all">
+                                    Apply →
+                                </a>
                             </div>
-                            <div className="rounded-xl border border-cyan-500/30 p-6">
+                            <div className="rounded-xl border border-cyan-500/30 bg-cyan-500/5 p-6 relative flex flex-col">
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-cyan-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">Most Popular</div>
                                 <h3 className="text-lg font-bold text-cyan-400 mb-2">Licensed Partner</h3>
-                                <p className="text-sm text-zinc-500 mb-4">White-label frameworks for your consulting practice.</p>
-                                <div className="text-sm text-zinc-600">Annual license + training</div>
+                                <p className="text-sm text-zinc-500 mb-4 flex-1">White-label frameworks for your consulting practice. Includes training and co-branded case studies.</p>
+                                <div className="text-2xl font-bold text-white mb-1">$2,500<span className="text-lg text-zinc-500">/mo</span></div>
+                                <div className="text-xs text-zinc-600 mb-4">Annual license + quarterly training</div>
+                                <a href="/api/buy/partner_licensed" className="block text-center py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-opacity">
+                                    Start Licensed Partnership →
+                                </a>
                             </div>
-                            <div className="rounded-xl border border-emerald-500/30 p-6">
+                            <div className="rounded-xl border border-emerald-500/30 p-6 flex flex-col">
                                 <h3 className="text-lg font-bold text-emerald-400 mb-2">Strategic Partner</h3>
-                                <p className="text-sm text-zinc-500 mb-4">Deep integration. Co-branded. Joint go-to-market.</p>
-                                <div className="text-sm text-zinc-600">Custom partnership agreement</div>
+                                <p className="text-sm text-zinc-500 mb-4 flex-1">Deep integration. Co-branded. Joint go-to-market. Custom SLA.</p>
+                                <div className="text-2xl font-bold text-white mb-1">Custom</div>
+                                <div className="text-xs text-zinc-600 mb-4">Custom partnership agreement</div>
+                                <a href="mailto:richardewing@exogram.ai?subject=Strategic%20Partnership%20Inquiry" className="block text-center py-3 rounded-lg border border-emerald-500/30 text-emerald-400 font-bold text-xs uppercase tracking-widest hover:bg-emerald-500/10 transition-all">
+                                    Schedule Discussion →
+                                </a>
                             </div>
                         </div>
                     </div>

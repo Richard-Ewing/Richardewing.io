@@ -75,8 +75,8 @@ export default function LicensingPage() {
                                 <div className="text-xs text-purple-400 uppercase mb-2 font-mono">Standard</div>
                                 <div className="text-3xl font-bold text-white mb-1">$1,500<span className="text-lg text-zinc-500">/mo</span></div>
                                 <p className="text-zinc-500 text-sm mb-4">3 tools, 1 team seat, quarterly updates</p>
-                                <a href="mailto:richardewing@exogram.ai?subject=White-Label%20Licensing%20Inquiry%20(Standard)" className="block w-full py-3 text-center rounded-lg border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 font-bold text-sm transition-all">
-                                    Inquire →
+                                <a href="/api/buy/white_label" className="block w-full py-3 text-center rounded-lg border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 font-bold text-sm transition-all">
+                                    Start Standard License →
                                 </a>
                             </div>
                             <div className="bg-zinc-900/50 border border-purple-500/30 rounded-xl p-6">
@@ -84,7 +84,7 @@ export default function LicensingPage() {
                                 <div className="text-3xl font-bold text-white mb-1">$3,000<span className="text-lg text-zinc-500">/mo</span></div>
                                 <p className="text-zinc-500 text-sm mb-4">All 5 tools, unlimited seats, custom integrations</p>
                                 <a href="mailto:richardewing@exogram.ai?subject=White-Label%20Licensing%20Inquiry%20(Enterprise)" className="block w-full py-3 text-center rounded-lg bg-purple-600 text-white hover:bg-purple-500 font-bold text-sm transition-all">
-                                    Inquire →
+                                    Contact for Enterprise →
                                 </a>
                             </div>
                         </div>
