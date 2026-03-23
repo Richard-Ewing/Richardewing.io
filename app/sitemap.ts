@@ -481,31 +481,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
 
-        // Curriculum Module Pages
-        {
-            url: `${baseUrl}/curriculum/tracks/engineering-economics/1-1`,
+        // Curriculum Module Pages — 18 modules across 3 tracks
+        ...['1-1','1-2','1-3','1-4','1-5','1-6'].map(m => ({
+            url: `${baseUrl}/curriculum/tracks/engineering-economics/${m}`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/curriculum/tracks/engineering-economics/1-2`,
+        })),
+        ...['2-1','2-2','2-3','2-4','2-5','2-6'].map(m => ({
+            url: `${baseUrl}/curriculum/tracks/ai-product-economics/${m}`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/curriculum/tracks/ai-product-economics/2-1`,
+        })),
+        ...['3-1','3-2','3-3','3-4','3-5','3-6'].map(m => ({
+            url: `${baseUrl}/curriculum/tracks/rd-capital-management/${m}`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/curriculum/tracks/rd-capital-management/3-1`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.6,
-        },
+        })),
 
         // Legal
         {
