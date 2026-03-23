@@ -340,20 +340,27 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <h2 className="text-2xl font-grotesk font-bold text-white mb-6">📈 {term.title} Maturity Model</h2>
                     <p className="text-zinc-400 text-sm mb-4">Where does your organization stand? Use this model to assess your current level and identify the next milestone.</p>
                     <div className="space-y-3">
-                        {maturityLevels.map((level, i) => (
-                            <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+                        {maturityLevels.map((level, i) => {
+                            const pct = Math.round(((i + 1) / maturityLevels.length) * 100);
+                            const barColor = i < 2 ? 'from-red-500 to-red-400' : i < 4 ? 'from-amber-500 to-yellow-400' : i < 6 ? 'from-emerald-500 to-cyan-400' : 'from-violet-500 to-purple-400';
+                            return (
+                            <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.03] transition-all">
                                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-white/10 flex items-center justify-center">
                                     <span className="text-sm font-bold text-white">{i + 1}</span>
                                 </div>
                                 <div className="flex-1">
-                                    <div className="text-sm font-bold text-white">{level.level}</div>
-                                    <div className="text-xs text-zinc-500 mt-0.5">{level.description}</div>
-                                </div>
-                                <div className="flex-shrink-0 w-24 h-2 rounded-full bg-white/5">
-                                    <div className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-violet-500" style={{ width: `${((i + 1) / maturityLevels.length) * 100}%` }} />
+                                    <div className="flex items-center justify-between mb-1">
+                                        <div className="text-sm font-bold text-white">{level.level}</div>
+                                        <div className="text-[10px] font-mono text-zinc-600">{pct}%</div>
+                                    </div>
+                                    <div className="w-full h-1.5 rounded-full bg-white/5 mb-1.5">
+                                        <div className={`h-full rounded-full bg-gradient-to-r ${barColor} transition-all`} style={{ width: `${pct}%` }} />
+                                    </div>
+                                    <div className="text-xs text-zinc-500">{level.description}</div>
                                 </div>
                             </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </section>
 
@@ -383,10 +390,20 @@ export default async function GlossaryTermPage({ params }: Props) {
                 </section>
 
                 {/* Visual Diagram — always rendered */}
-                <section className="mb-12 card p-8 border-violet-500/20">
-                    <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🔄 How It Works</h2>
-                    <div className="bg-black/30 rounded-xl p-6 font-mono text-sm text-zinc-400 whitespace-pre-line">
-                        {diagram}
+                <section className="mb-12 rounded-2xl border border-violet-500/20 bg-gradient-to-br from-violet-500/[0.03] to-cyan-500/[0.03] overflow-hidden">
+                    <div className="px-8 pt-6 pb-4 border-b border-white/5 flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+                            <span className="text-sm">🔄</span>
+                        </div>
+                        <div>
+                            <h2 className="text-lg font-grotesk font-bold text-white">How It Works</h2>
+                            <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">Visual Framework Diagram</p>
+                        </div>
+                    </div>
+                    <div className="p-6">
+                        <div className="bg-black/40 rounded-xl p-6 font-mono text-sm text-zinc-400 whitespace-pre-line border border-white/5 overflow-x-auto">
+                            {diagram}
+                        </div>
                     </div>
                 </section>
 
