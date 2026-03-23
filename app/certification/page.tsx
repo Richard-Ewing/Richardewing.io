@@ -26,7 +26,13 @@ const modules = [
     { num: '03', title: 'AI Unit Economics', desc: 'Understand cost per useful AI output, hallucination rates as economic risk, and inference cost governance. When to build vs. buy AI capabilities.', hours: '3 hours' },
     { num: '04', title: 'Enterprise Valuation Impact', desc: 'How technical decisions affect ARR multiples, gross margin, and enterprise valuation. The financial language boards and investors use.', hours: '3 hours' },
     { num: '05', title: 'Forensic Audit Methodology', desc: 'The complete audit process: stakeholder interviews, code-level assessment, financial modeling, and board-ready deliverable creation.', hours: '4 hours' },
-    { num: '06', title: 'Capstone: Live Audit Simulation', desc: 'Apply all frameworks to a realistic case study. Present findings and remediation roadmap. Peer-reviewed by Richard Ewing.', hours: '4 hours' },
+    { num: '06', title: 'AI Governance & Cost Control', desc: 'Build inference cost governance frameworks, set up model routing economics, establish AI budget allocation models, and implement Cost of Predictivity tracking.', hours: '4 hours' },
+    { num: '07', title: 'PE/VC Due Diligence Practice', desc: 'Conduct technology due diligence for investors: 15 red flags, valuation adjustment methodology, quality of technology reporting, and investment committee presentations.', hours: '4 hours' },
+    { num: '08', title: 'Portfolio Monitoring & Benchmarking', desc: 'Continuous PDI monitoring across portfolio companies, DORA metrics benchmarking, Innovation Tax trending, and quarterly board report generation.', hours: '4 hours' },
+    { num: '09', title: 'Advanced Diagnostic Tools', desc: 'Deep mastery of all Richard Ewing tools: PDI Calculator, APER, AUEB, EV-SE, and the AI-powered Audit Interview engine. Build custom scoring models.', hours: '4 hours' },
+    { num: '10', title: 'Client Communication & Storytelling', desc: 'Present technical findings in financial language. Board slide creation, executive summary writing, and the art of translating code-level issues into dollar impact.', hours: '4 hours' },
+    { num: '11', title: 'Building Your Practice', desc: 'Launch and scale a product economics consulting practice: pricing models, engagement structures, proposal templates, and client acquisition strategies.', hours: '4 hours' },
+    { num: '12', title: 'Capstone: Live Audit Simulation', desc: 'Apply all frameworks to a realistic multi-company case study. Present findings and remediation roadmap. Peer-reviewed by Richard Ewing with personalized feedback.', hours: '6 hours' },
 ];
 
 export default function CertificationPage() {
@@ -44,7 +50,7 @@ export default function CertificationPage() {
                         Master the methodology. Earn the title.
                     </p>
                     <p className="text-zinc-600 text-sm max-w-lg mx-auto mb-8">
-                        22 hours of instruction · 6 modules · Live capstone review · Credential valid for 2 years
+                        48 hours of instruction · 12 modules · Live capstone review · Credential valid for 2 years
                     </p>
 
                     <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-amber-500/10 border border-amber-500/20">

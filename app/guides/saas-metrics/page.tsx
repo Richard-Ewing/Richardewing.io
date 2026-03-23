@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
+import PremiumGuideCTA from '@/app/components/PremiumGuideCTA';
 
 export const metadata: Metadata = {
     title: 'SaaS Metrics Masterclass — From ARR to Engineering ROI | Richard Ewing',
@@ -77,9 +78,7 @@ export default function SaaSMetricsGuidePage() {
                         Connect engineering investment to business outcomes. Rule of 40 with engineering cost decomposition, NRR improvement through engineering investment, and board slides that connect sprint velocity to ARR.
                     </p>
                     <p className="text-sm text-zinc-500 mb-4">40+ linked glossary terms · 55 min read · For SaaS Leaders, CFOs, Board Members</p>
-                    <a href="/api/buy/guide_saas_metrics" className="inline-block mb-12 px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-violet-500 text-white font-bold text-sm uppercase tracking-widest hover:opacity-90 transition-opacity">
-                        Unlock Full Guide — $29
-                    </a>
+                    <PremiumGuideCTA guideSlug="saas-metrics" guideName="SaaS Metrics Masterclass" />
 
                     <div className="space-y-8 mb-16">
                         {sections.map((section, i) => (

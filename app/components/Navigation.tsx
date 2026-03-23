@@ -80,14 +80,14 @@ const Navigation = () => {
                             </Dropdown>
 
                             <Dropdown label="Engage">
-                                <DropdownItem href="/for-investors">For Investors (PE/VC)</DropdownItem>
-                                <DropdownItem href="/for-boards">For Board Directors</DropdownItem>
-                                <DropdownItem href="/for-ctos">For CTOs</DropdownItem>
-                                <DropdownItem href="/pricing">Advisory Pricing</DropdownItem>
-                                <DropdownItem href="/case-studies">Case Studies</DropdownItem>
-                                <DropdownItem href="/testimonials">Testimonials</DropdownItem>
-                                <DropdownItem href="/industries">Industries (14)</DropdownItem>
-                                <DropdownItem href="/resources">Resource Hub</DropdownItem>
+                                <DropdownItem href="/for-investors" description="Due diligence, portfolio monitoring, technology risk">💼 For Investors (PE/VC)</DropdownItem>
+                                <DropdownItem href="/for-boards" description="Technical oversight, board reporting, governance">🏛️ For Board Directors</DropdownItem>
+                                <DropdownItem href="/for-ctos" description="R&D economics, team scaling, technical debt">⚡ For CTOs</DropdownItem>
+                                <DropdownItem href="/pricing" description="Engagements from $450 to retained advisory">💰 Advisory Pricing</DropdownItem>
+                                <DropdownItem href="/case-studies" description="Real results from real engagements">📊 Case Studies</DropdownItem>
+                                <DropdownItem href="/testimonials" description="What clients and partners say">⭐ Testimonials</DropdownItem>
+                                <DropdownItem href="/industries" description="14 verticals from SaaS to HealthTech">🏭 Industries (14)</DropdownItem>
+                                <DropdownItem href="/resources" description="Guides, tools, AI courses, frameworks">📚 Resource Hub</DropdownItem>
                             </Dropdown>
 
                             <Link href="/exogram" className="text-gray-300 hover:text-white transition-colors relative group">
@@ -164,13 +164,14 @@ const Dropdown = ({ label, children }: { label: string, children: React.ReactNod
     );
 };
 
-const DropdownItem = ({ href, children }: { href: string, children: React.ReactNode }) => {
+const DropdownItem = ({ href, children, description }: { href: string, children: React.ReactNode, description?: string }) => {
     return (
         <Link
             href={href}
             className="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
         >
-            {children}
+            <span className="block">{children}</span>
+            {description && <span className="block text-[10px] text-zinc-600 mt-0.5">{description}</span>}
         </Link>
     );
 };

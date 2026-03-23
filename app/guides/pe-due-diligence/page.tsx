@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
+import PremiumGuideCTA from '@/app/components/PremiumGuideCTA';
 
 export const metadata: Metadata = {
     title: 'PE Technology Due Diligence Guide — What PE Firms Actually Evaluate | Richard Ewing',
@@ -80,9 +81,7 @@ export default function PEDueDiligenceGuidePage() {
                     </p>
                     <p className="text-sm text-zinc-500 mb-4">50+ linked glossary terms · 60 min read · For PE Operating Partners, CTOs (pre-exit)</p>
 
-                    <a href="/api/buy/guide_pe_due_diligence" className="inline-block mb-12 px-8 py-3 rounded-lg bg-gradient-to-r from-amber-500 to-rose-500 text-white font-bold text-sm uppercase tracking-widest hover:opacity-90 transition-opacity">
-                        Unlock Full Guide — $29
-                    </a>
+                    <PremiumGuideCTA guideSlug="pe-due-diligence" guideName="PE Technology Due Diligence Guide" />
 
                     <div className="space-y-8 mb-16">
                         {sections.map((section, i) => (

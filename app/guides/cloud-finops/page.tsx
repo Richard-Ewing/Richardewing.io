@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
+import PremiumGuideCTA from '@/app/components/PremiumGuideCTA';
 
 export const metadata: Metadata = {
     title: 'Cloud FinOps & Infrastructure Economics — Stop Wasting 35% of Cloud Spend | Richard Ewing',
@@ -77,9 +78,7 @@ export default function CloudFinOpsGuidePage() {
                         Stop wasting 35% of your cloud spend. Right-sizing methodology, reserved instance strategy, spot architecture, FinOps team structure, and the 12-week cloud cost reduction program.
                     </p>
                     <p className="text-sm text-zinc-500 mb-4">30+ linked glossary terms · 50 min read · For DevOps, Platform Teams, CFOs</p>
-                    <a href="/api/buy/guide_cloud_finops" className="inline-block mb-12 px-8 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-emerald-500 text-white font-bold text-sm uppercase tracking-widest hover:opacity-90 transition-opacity">
-                        Unlock Full Guide — $29
-                    </a>
+                    <PremiumGuideCTA guideSlug="cloud-finops" guideName="Cloud FinOps & Infrastructure Economics" />
 
                     <div className="space-y-8 mb-16">
                         {sections.map((section, i) => (

@@ -25,6 +25,8 @@ const comparisons = [
             { dimension: 'Blind Spot', left: 'Doesn\'t measure delivery velocity', right: 'Doesn\'t quantify economic impact' },
         ],
         verdict: 'Use both. PDI tells you WHERE to invest. DORA tells you IF your investment is improving delivery. Together they give a complete picture.',
+        economicImpact: 'Organizations using only DORA often miss $500K-$2M in hidden technical debt. Adding PDI to your DORA dashboard reveals the financial exposure behind velocity metrics.',
+        decisionGuide: 'Run DORA continuously for operations. Run PDI quarterly for strategy. Present DORA to engineering leadership; present PDI to the board.',
         tools: ['/tools/pdi', '/tools/aper'],
     },
     {
@@ -43,6 +45,8 @@ const comparisons = [
             { dimension: 'Core Competency', left: 'When the capability IS your product', right: 'When it\'s infrastructure' },
         ],
         verdict: 'Build your differentiation. Buy your infrastructure. The line between them is where most CTOs make expensive mistakes.',
+        economicImpact: 'The average build-vs-buy mistake costs $1.2M over 3 years. Most overruns come from underestimating maintenance costs: each custom system requires 20-30% of original build cost annually to maintain.',
+        decisionGuide: 'Decision matrix: Build if (core differentiator + >5 engineers + >12 months runway). Buy if (commodity capability + <5 engineers + need value in <4 weeks).',
         tools: ['/tools/aueb', '/tools/ev-se'],
     },
     {
@@ -61,6 +65,8 @@ const comparisons = [
             { dimension: 'Platform', left: 'Strong internal platform', right: 'Teams duplicate work' },
         ],
         verdict: 'RPE is not about cutting engineers — it\'s about maximizing the value each engineer creates. The gap is organizational friction, not individual skill.',
+        economicImpact: 'Moving from $400K to $800K RPE typically requires reducing Innovation Tax from 50% to 20%, consolidating tooling, and implementing platform engineering — not reducing headcount.',
+        decisionGuide: 'Track RPE quarterly. Below $300K at Series B+: investigate organizational friction. Above $1M: you’re elite — protect the culture and systems that got you there.',
         tools: ['/tools/aper', '/tools/ev-se'],
     },
     {
@@ -79,6 +85,8 @@ const comparisons = [
             { dimension: 'Example', left: 'Hardcoded config for launch', right: 'Copy-paste code everywhere' },
         ],
         verdict: 'Prudent debt is a tool. Reckless debt is a cancer. The difference is documentation, intent, and a remediation timeline.',
+        economicImpact: 'Reckless debt costs 3-5x more to remediate than prudent debt because discovery is the bottleneck: you can\'t fix what you don\'t know about.',
+        decisionGuide: 'Before incurring any debt: document it, estimate remediation cost, set a timeline. If you can\'t do all three, you\'re likely being reckless.',
         tools: ['/tools/pdi', '/tools/scoring'],
     },
     {
@@ -97,6 +105,8 @@ const comparisons = [
             { dimension: 'Overhead', left: 'High (ceremonies, roles)', right: 'Low (board-driven)' },
         ],
         verdict: 'Scrum for feature teams that need predictability. Kanban for operations teams that need flow. ScrumBan for teams that outgrow Scrum.',
+        economicImpact: 'Wrong methodology costs 15-25% of team velocity. Common mistake: forcing Scrum on ops teams (ceremony overhead) or Kanban on junior teams (insufficient structure).',
+        decisionGuide: 'New team (<6 months)? Start with Scrum. Experienced team with predictable work? Try Kanban. Team doing both features and maintenance? ScrumBan.',
         tools: ['/tools/aper'],
     },
     {
@@ -115,6 +125,8 @@ const comparisons = [
             { dimension: 'Scaling', left: 'Vertical (limited)', right: 'Horizontal (unlimited)' },
         ],
         verdict: 'Start monolith, extract when Conway\'s Law demands it. The worst outcome is premature microservices — high cost, high complexity, low benefit.',
+        economicImpact: 'Premature microservices add $500K-$2M in infrastructure and coordination costs per year. The break-even point is typically 20+ engineers with clear domain boundaries.',
+        decisionGuide: 'Under 20 engineers? Monolith. 20-50 with clear domains? Start extracting. Over 50? You probably already need microservices.',
         tools: ['/tools/aueb', '/tools/pdi'],
     },
     {
@@ -133,6 +145,8 @@ const comparisons = [
             { dimension: 'Use Case', left: 'Tone, format, reasoning', right: 'Knowledge retrieval' },
         ],
         verdict: 'Use RAG for knowledge. Use fine-tuning for behavior. Use both when your use case demands it. For most products, start with RAG — it\'s cheaper, faster, and updateable.',
+        economicImpact: 'Starting with fine-tuning when RAG would suffice wastes $50K-$500K upfront. RAG prototypes can validate AI features in days; fine-tuning takes weeks to months.',
+        decisionGuide: 'Need current knowledge retrieval? RAG. Need consistent tone/format? Fine-tuning. Need both? RAG first, fine-tune the base model second.',
         tools: ['/tools/aueb'],
     },
     {
@@ -151,6 +165,8 @@ const comparisons = [
             { dimension: 'Best For', left: 'Known work, capacity gap', right: 'Unknown scope, outcome needed' },
         ],
         verdict: 'Staff aug for capacity gaps with known work. Managed delivery for outcomes you can\'t staff internally. Never use staff aug for innovation — you\'re paying for hours, not ideas.',
+        economicImpact: 'Using staff augmentation for innovation/R&D typically costs 40% more and delivers 50% less than managed delivery or internal teams, because you pay for hours regardless of outcomes.',
+        decisionGuide: 'Known scope + temporary gap? Staff aug. Unknown scope + specific outcome needed? Managed delivery. Core IP? Always internal.',
         tools: ['/tools/aper', '/tools/ev-se'],
     },
     {
@@ -169,6 +185,8 @@ const comparisons = [
             { dimension: 'Risk of Not Having', left: 'Tooling sprawl, slow onboarding', right: 'Outages, alert fatigue' },
         ],
         verdict: 'Start with SRE (you need reliability first). Add platform engineering when tool sprawl becomes the bottleneck. Best orgs have both.',
+        economicImpact: 'Platform engineering ROI takes 6-12 months to materialize. SRE pays back in 3-6 months through reduced incidents. Invest in SRE first to free up time, then invest in platform eng.',
+        decisionGuide: 'Frequent outages? SRE first. Slow onboarding + tool sprawl? Platform engineering. Both? You need both — separate teams, shared metrics.',
         tools: ['/tools/aper'],
     },
     {
@@ -187,6 +205,8 @@ const comparisons = [
             { dimension: 'Ratio Target', left: '60-70% of R&D', right: '30-40% of R&D' },
         ],
         verdict: 'The CapEx/OpEx ratio reveals engineering health. If less than 50% of R&D is capitalizable, you\'re spending most of your budget keeping the lights on — not innovating.',
+        economicImpact: 'Improving CapEx ratio from 40% to 65% on a $5M R&D budget adds $1.25M to your asset base annually, improving EBITDA and potentially adding 0.5-1x to revenue multiples.',
+        decisionGuide: 'Track CapEx ratio monthly. Below 50%? Investigate maintenance load. Above 70%? Verify you\'re not under-investing in bug fixes and stability.',
         tools: ['/tools/ev-se', '/tools/pdi'],
     },
 ];
@@ -276,6 +296,20 @@ export default function ComparisonsPage() {
                                         <p className="text-zinc-300 text-sm">{comp.verdict}</p>
                                     </div>
 
+                                    {(comp as { economicImpact?: string }).economicImpact && (
+                                        <div className="rounded-xl bg-emerald-500/5 border border-emerald-500/20 p-5 mb-4">
+                                            <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-2">💰 Economic Impact</div>
+                                            <p className="text-zinc-300 text-sm">{(comp as { economicImpact?: string }).economicImpact}</p>
+                                        </div>
+                                    )}
+
+                                    {(comp as { decisionGuide?: string }).decisionGuide && (
+                                        <div className="rounded-xl bg-amber-500/5 border border-amber-500/20 p-5 mb-4">
+                                            <div className="text-[10px] font-mono text-amber-400 uppercase tracking-widest mb-2">🧭 Decision Guide</div>
+                                            <p className="text-zinc-300 text-sm">{(comp as { decisionGuide?: string }).decisionGuide}</p>
+                                        </div>
+                                    )}
+
                                     <div className="flex flex-wrap items-center gap-3">
                                         <span className="text-[10px] text-zinc-500">Run the analysis:</span>
                                         {comp.tools.map((tool) => (
@@ -307,7 +341,7 @@ export default function ComparisonsPage() {
                         <Link href="/curriculum/tracks" className="card p-4 text-center hover:border-emerald-500/20 transition-all group">
                             <div className="text-xl mb-1">🎓</div>
                             <div className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">Curriculum</div>
-                            <div className="text-[9px] text-zinc-600">24 modules</div>
+                            <div className="text-[9px] text-zinc-600">60 modules</div>
                         </Link>
                         <Link href="/tools" className="card p-4 text-center hover:border-amber-500/20 transition-all group">
                             <div className="text-xl mb-1">🛠️</div>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
+import PremiumGuideCTA from '@/app/components/PremiumGuideCTA';
 
 export const metadata: Metadata = {
     title: 'VC Technology Assessment Framework — Evaluate Before You Invest | Richard Ewing',
@@ -77,9 +78,7 @@ export default function VCTechnologyAssessmentGuidePage() {
                         For VCs who want to evaluate technology risk before writing a check. Technical founder assessment, velocity indicators, the 10-minute diligence checklist you can run from your phone.
                     </p>
                     <p className="text-sm text-zinc-500 mb-4">35+ linked glossary terms · 45 min read · For VCs, Angel Investors, Board Members</p>
-                    <a href="/api/buy/guide_vc_assessment" className="inline-block mb-12 px-8 py-3 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-bold text-sm uppercase tracking-widest hover:opacity-90 transition-opacity">
-                        Unlock Full Guide — $29
-                    </a>
+                    <PremiumGuideCTA guideSlug="vc-technology-assessment" guideName="VC Technology Assessment Framework" />
 
                     <div className="space-y-8 mb-16">
                         {sections.map((section, i) => (

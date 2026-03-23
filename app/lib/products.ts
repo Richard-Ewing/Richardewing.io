@@ -22,8 +22,8 @@ export const PRODUCTS: Record<string, Product> = {
         mode: 'payment',
     },
     full_curriculum: {
-        name: 'Full Curriculum Access — All 24 Modules',
-        description: '24 modules, 80+ lessons, 5 tools, certificate of completion.',
+        name: 'Full Curriculum Access — All 60 Modules',
+        description: '60 modules, 150+ lessons, 5 tools, certificate of completion.',
         price: 19900,
         mode: 'subscription',
         interval: 'year',
@@ -37,9 +37,15 @@ export const PRODUCTS: Record<string, Product> = {
         mode: 'payment',
     },
     premium_bundle: {
-        name: 'All Premium Guides Bundle',
-        description: 'All 5 premium guides plus future premium guides at no extra cost.',
+        name: 'All 5 Premium Guides Bundle',
+        description: 'All 5 premium guides (AI Economics, PE Due Diligence, VC Assessment, SaaS Metrics, Cloud FinOps). Save 32% vs buying individually.',
         price: 9900,
+        mode: 'payment',
+    },
+    premium_bundle_3: {
+        name: '3-Guide Bundle — Pick Any 3',
+        description: 'Choose any 3 premium guides. Save 21% vs buying individually.',
+        price: 6900,
         mode: 'payment',
     },
 

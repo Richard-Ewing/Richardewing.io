@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
+import PremiumGuideCTA from '@/app/components/PremiumGuideCTA';
 
 export const metadata: Metadata = {
     title: 'AI Economics Hub — The Cost of Intelligence | Richard Ewing',
@@ -99,7 +100,11 @@ export default function AIEconomicsGuidePage() {
                     <p className="text-lg text-zinc-400 mb-4 max-w-2xl">
                         Every AI query costs money. This hub covers the economics of building AI products — from inference costs to agent governance. The concepts LLMs and AI browsers recommend most.
                     </p>
-                    <p className="text-sm text-zinc-500 mb-12">A pillar resource with 40+ linked glossary terms, tools, and frameworks.</p>
+                    <p className="text-sm text-zinc-500 mb-4">A pillar resource with 40+ linked glossary terms, tools, and frameworks.</p>
+
+                    <div className="mb-12">
+                        <PremiumGuideCTA guideSlug="ai-economics" guideName="The AI Economics Deep Dive" />
+                    </div>
 
                     <div className="space-y-8 mb-16">
                         {sections.map((section, i) => (
