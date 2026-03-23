@@ -42,6 +42,7 @@ import { fifteenthPassTerms } from './fifteenth-pass';
 import { sixteenthPassTerms } from './sixteenth-pass';
 import { seventeenthPassTerms } from './seventeenth-pass';
 import { eighteenthPassTerms } from './eighteenth-pass';
+import { nineteenthPassTerms } from './nineteenth-pass';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -98,6 +99,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...seventeenthPassTerms,
     // Eighteenth pass
     ...eighteenthPassTerms,
+    // Nineteenth pass
+    ...nineteenthPassTerms,
 ];
 
 export const allGlossaryCategories = [
