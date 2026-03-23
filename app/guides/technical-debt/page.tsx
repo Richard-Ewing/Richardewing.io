@@ -55,8 +55,38 @@ const textColorMap: Record<string, string> = {
 };
 
 export default function TechnicalDebtGuidePage() {
+    const articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: 'The Complete Guide to Technical Debt — Economic Framework',
+        description: 'The definitive hub for technical debt: what it is, how to measure it in dollars and quarters, how to manage it, and when to pay it down.',
+        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal' },
+        publisher: { '@type': 'Person', name: 'Richard Ewing' },
+        url: 'https://www.richardewing.io/guides/technical-debt',
+        mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.richardewing.io/guides/technical-debt' },
+    };
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+            { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://www.richardewing.io/guides' },
+            { '@type': 'ListItem', position: 3, name: 'Technical Debt', item: 'https://www.richardewing.io/guides/technical-debt' },
+        ],
+    };
+    const speakableSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'The Complete Guide to Technical Debt',
+        speakable: { '@type': 'SpeakableSpecification', cssSelector: ['main h1', 'main p'] },
+        url: 'https://www.richardewing.io/guides/technical-debt',
+    };
+
     return (
         <main className="pt-20">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">

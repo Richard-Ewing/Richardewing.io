@@ -37,6 +37,7 @@ import { trendingTermsBatch3 } from './trending-2026-batch3';
 import { highVolumeTerms } from './high-volume';
 import { aiToolsTerms } from './ai-tools';
 import { moreTerms } from './more-terms';
+import { gapFillTerms } from './gap-fill-terms';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -83,6 +84,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...aiToolsTerms,
     // More terms batch
     ...moreTerms,
+    // Category gap fill
+    ...gapFillTerms,
 ];
 
 export const allGlossaryCategories = [
@@ -112,4 +115,8 @@ export const allGlossaryCategories = [
     'Compliance & Regulation',
     'Open Source',
     'AI Governance & Verification',
+    // Phase 4 expansion
+    'AI Tools & Frameworks',
+    'DevOps & Infrastructure',
+    'Quality & Testing',
 ] as const;

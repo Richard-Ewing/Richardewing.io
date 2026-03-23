@@ -55,8 +55,38 @@ const textColorMap: Record<string, string> = {
 };
 
 export default function AIEconomicsGuidePage() {
+    const articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: 'AI Economics Hub — The Cost of Intelligence',
+        description: 'The definitive hub for AI product economics: inference costs, AI COGS, hallucination costs, agent governance, and unit economics frameworks.',
+        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal' },
+        publisher: { '@type': 'Person', name: 'Richard Ewing' },
+        url: 'https://www.richardewing.io/guides/ai-economics',
+        mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.richardewing.io/guides/ai-economics' },
+    };
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+            { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://www.richardewing.io/guides' },
+            { '@type': 'ListItem', position: 3, name: 'AI Economics', item: 'https://www.richardewing.io/guides/ai-economics' },
+        ],
+    };
+    const speakableSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'AI Economics Hub — The Cost of Intelligence',
+        speakable: { '@type': 'SpeakableSpecification', cssSelector: ['main h1', 'main p'] },
+        url: 'https://www.richardewing.io/guides/ai-economics',
+    };
+
     return (
         <main className="pt-20">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">

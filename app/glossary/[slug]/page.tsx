@@ -114,12 +114,26 @@ export default async function GlossaryTermPage({ params }: Props) {
         ],
     };
 
+    // Speakable schema — tells AI voice assistants (Google Assistant, Alexa, Siri)
+    // which content section to read aloud. Critical AIEO signal for AI citation.
+    const speakableSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: `What is ${term.title}?`,
+        speakable: {
+            '@type': 'SpeakableSpecification',
+            cssSelector: ['article header h1', 'section.mb-10.p-6', 'article section h2', 'article section h3'],
+        },
+        url: `https://www.richardewing.io/glossary/${slug}`,
+    };
+
     return (
         <div className="max-w-4xl w-full relative z-10 mx-auto">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
 
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
                 <Link href="/glossary" className="hover:text-cyan-400">Glossary</Link>

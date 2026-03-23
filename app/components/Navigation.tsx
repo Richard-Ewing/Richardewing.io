@@ -57,7 +57,7 @@ const Navigation = () => {
                                 <DropdownItem href="/doctrine">Doctrine (Framework)</DropdownItem>
                                 <DropdownItem href="/manifesto">Manifesto (Philosophy)</DropdownItem>
                                 <DropdownItem href="/articles">Articles (Publications)</DropdownItem>
-                                <DropdownItem href="/glossary">Glossary (380+ Definitions)</DropdownItem>
+                                <DropdownItem href="/glossary">Glossary (400+ Definitions)</DropdownItem>
                                 <DropdownItem href="/curriculum">Curriculum (Learning Tracks)</DropdownItem>
                                 <DropdownItem href="/benchmark">Benchmark Report (Free)</DropdownItem>
                                 <DropdownItem href="/briefings">Briefings (Newsletter)</DropdownItem>
