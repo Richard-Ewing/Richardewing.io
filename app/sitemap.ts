@@ -421,6 +421,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
 
+        // More Industry + Comparison
+        {
+            url: `${baseUrl}/industries/agritech`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/compare/pdi-vs-waydev`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+
         // Legal
         {
             url: `${baseUrl}/legal`,

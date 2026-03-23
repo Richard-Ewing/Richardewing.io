@@ -105,6 +105,14 @@ const verticals = [
         color: 'fuchsia',
         icon: '⚖️',
     },
+    {
+        title: 'AgriTech',
+        subtitle: 'Agriculture Technology',
+        description: 'Precision agriculture AI costs, IoT sensor infrastructure debt at massive scale, satellite imagery processing economics, and farm-to-fork supply chain traceability.',
+        href: '/industries/agritech',
+        color: 'teal',
+        icon: '🌾',
+    },
 ];
 
 const colorMap: Record<string, string> = {
@@ -120,8 +128,9 @@ const colorMap: Record<string, string> = {
     yellow: 'border-yellow-500/20 hover:border-yellow-500/50',
     indigo: 'border-indigo-500/20 hover:border-indigo-500/50',
     fuchsia: 'border-fuchsia-500/20 hover:border-fuchsia-500/50',
+    teal: 'border-teal-500/20 hover:border-teal-500/50',
 };
-const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400', violet: 'text-violet-400', sky: 'text-sky-400', pink: 'text-pink-400', amber: 'text-amber-400', red: 'text-red-400', lime: 'text-lime-400', yellow: 'text-yellow-400', indigo: 'text-indigo-400', fuchsia: 'text-fuchsia-400' };
+const textMap: Record<string, string> = { emerald: 'text-emerald-400', blue: 'text-blue-400', orange: 'text-orange-400', violet: 'text-violet-400', sky: 'text-sky-400', pink: 'text-pink-400', amber: 'text-amber-400', red: 'text-red-400', lime: 'text-lime-400', yellow: 'text-yellow-400', indigo: 'text-indigo-400', fuchsia: 'text-fuchsia-400', teal: 'text-teal-400' };
 
 export default function IndustriesPage() {
     return (
