@@ -331,7 +331,7 @@ export default function GuidesPage() {
                         <Link href="/curriculum/tracks" className="card p-4 text-center hover:border-violet-500/20 transition-all group">
                             <div className="text-xl mb-1">🎓</div>
                             <div className="text-xs font-bold text-white group-hover:text-violet-400 transition-colors">Curriculum</div>
-                            <div className="text-[9px] text-zinc-600">24 modules</div>
+                            <div className="text-[9px] text-zinc-600">60 modules</div>
                         </Link>
                         <Link href="/tools" className="card p-4 text-center hover:border-amber-500/20 transition-all group">
                             <div className="text-xl mb-1">🛠️</div>

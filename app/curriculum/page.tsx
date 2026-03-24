@@ -217,9 +217,9 @@ export default function CurriculumPage() {
                                 rel="noopener noreferrer"
                                 className="px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-lg text-white font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity shadow-lg"
                             >
-                                Unlock All 24 Modules — $199/yr
+                                Unlock All 60 Modules — $199/yr
                             </a>
-                            <span className="text-zinc-600 text-sm">~$8/module · Cancel anytime</span>
+                            <span className="text-zinc-600 text-sm">~$3/module · Cancel anytime</span>
                         </div>
                     </div>
 
@@ -383,10 +383,10 @@ export default function CurriculumPage() {
                             <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-6 flex flex-col">
                                 <div className="text-xs text-cyan-400 uppercase tracking-widest font-mono mb-3">Complete</div>
                                 <div className="text-3xl font-bold text-white mb-1">$199<span className="text-lg text-zinc-500">/yr</span></div>
-                                <div className="text-sm text-zinc-500 mb-1">All 24 modules</div>
-                                <div className="text-xs text-cyan-400 mb-6">~$8/module · Cancel anytime</div>
+                                <div className="text-sm text-zinc-500 mb-1">All 60 modules</div>
+                                <div className="text-xs text-cyan-400 mb-6">~$3/module · Cancel anytime</div>
                                 <ul className="space-y-2 mb-6 flex-1">
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> All 24 modules, all tracks</li>
+                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> All 60 modules, all tracks</li>
                                     <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> 5 diagnostic tool access</li>
                                     <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> Certificate of completion</li>
                                     <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> New modules as released</li>

@@ -15,7 +15,7 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                         </div>
                         <div className="hidden sm:block">
                             <div className="text-xs font-bold text-white">Premium Curriculum</div>
-                            <div className="text-[10px] text-zinc-500">24 modules • 80+ lessons • Certificate</div>
+                            <div className="text-[10px] text-zinc-500">60 modules • 150+ lessons • Certificate</div>
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
