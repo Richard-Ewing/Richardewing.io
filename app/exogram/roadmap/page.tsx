@@ -1,0 +1,148 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+    title: 'Exogram Roadmap — AI Verification Infrastructure Roadmap',
+    description: 'The Exogram product roadmap: what we\'ve built, what we\'re building, and where AI verification is headed.',
+    alternates: { canonical: 'https://www.richardewing.io/exogram/roadmap' },
+};
+
+const phases = [
+    {
+        status: 'complete',
+        label: 'Shipped',
+        color: 'emerald',
+        quarter: 'Q4 2025',
+        title: 'Foundation',
+        items: [
+            'Schema Integrity Engine v1.0 — JSON output validation',
+            'MCP Server integration for Claude ecosystem',
+            'REST API for universal integration',
+            'EAAP Protocol RFC published on GitHub',
+            'Basic threat detection (prompt injection, PII)',
+            'Encrypted memory storage with source attribution',
+            'Audit logging infrastructure',
+        ],
+    },
+    {
+        status: 'current',
+        label: 'In Progress',
+        color: 'purple',
+        quarter: 'Q1 2026',
+        title: 'Enterprise Readiness',
+        items: [
+            'Schema Integrity v2.0 — multi-format support (Protocol Buffers, Avro)',
+            'Boundary Control Protocol — agent action admissibility',
+            'Advanced threat prevention — adversarial input classification',
+            'SOC 2 Type 1 certification preparation',
+            'Self-hosted deployment option',
+            'Dashboard for verification analytics',
+            'Webhook integrations for alerting',
+        ],
+    },
+    {
+        status: 'planned',
+        label: 'Planned',
+        color: 'cyan',
+        quarter: 'Q2 2026',
+        title: 'Multi-Model & Scale',
+        items: [
+            'Multi-model verification — validate outputs across GPT, Claude, Gemini, Llama',
+            'Federated verification for multi-agent systems',
+            'Streaming output verification (validate tokens as they arrive)',
+            'Python SDK (pip install exogram)',
+            'TypeScript/JavaScript SDK',
+            'Compliance reporting modules (HIPAA, SOX, GDPR)',
+            'Verification-as-a-Service API (managed cloud)',
+        ],
+    },
+    {
+        status: 'future',
+        label: 'Future',
+        color: 'zinc',
+        quarter: 'Q3-Q4 2026',
+        title: 'Intelligence Layer',
+        items: [
+            'Predictive verification — flag likely hallucinations before generation completes',
+            'Cross-session memory consistency across organizations',
+            'Industry-specific verification modules (healthcare, finance, legal)',
+            'Verification marketplace — community-contributed schemas and rules',
+            'On-device verification for edge AI',
+            'Formal verification proofs for safety-critical applications',
+        ],
+    },
+];
+
+export default function ExogramRoadmapPage() {
+    return (
+        <main className="pt-24 pb-20">
+            <div className="page-container max-w-4xl mx-auto">
+                <div className="text-xs text-zinc-500 mb-8">
+                    <Link href="/exogram" className="hover:text-white transition-colors">Exogram</Link>
+                    <span className="mx-2">→</span>
+                    <span className="text-zinc-400">Roadmap</span>
+                </div>
+
+                <section className="text-center mb-16">
+                    <p className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-4">Product Direction</p>
+                    <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-white mb-6">
+                        Product <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Roadmap.</span>
+                    </h1>
+                    <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+                        Where AI verification is going. Built in public, driven by real-world enterprise needs.
+                    </p>
+                </section>
+
+                <div className="relative">
+                    {/* Timeline line */}
+                    <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500 via-purple-500 to-zinc-800 hidden md:block" />
+
+                    <div className="space-y-12">
+                        {phases.map(phase => (
+                            <section key={phase.quarter} className="relative md:pl-16">
+                                {/* Timeline dot */}
+                                <div className={`hidden md:flex absolute left-4 top-2 w-5 h-5 rounded-full border-2 border-${phase.color}-500 bg-${phase.color}-500/${phase.status === 'current' ? '50' : '20'} items-center justify-center`}>
+                                    {phase.status === 'complete' && <span className="text-emerald-400 text-xs">✓</span>}
+                                    {phase.status === 'current' && <span className={`w-2 h-2 rounded-full bg-${phase.color}-400 animate-pulse`} />}
+                                </div>
+
+                                <div className={`rounded-2xl border border-${phase.color}-500/20 bg-${phase.color}-500/5 p-8`}>
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <span className={`text-[10px] font-mono text-${phase.color}-400 px-2 py-1 rounded-full border border-${phase.color}-500/30 bg-${phase.color}-500/10 uppercase tracking-widest`}>
+                                            {phase.label}
+                                        </span>
+                                        <span className="text-xs text-zinc-600 font-mono">{phase.quarter}</span>
+                                    </div>
+                                    <h2 className="text-xl font-grotesk font-bold text-white mb-4">{phase.title}</h2>
+                                    <ul className="space-y-2">
+                                        {phase.items.map(item => (
+                                            <li key={item} className="flex items-start gap-2 text-sm text-zinc-400">
+                                                <span className={`text-${phase.color}-400 mt-0.5`}>{phase.status === 'complete' ? '✓' : '→'}</span>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </section>
+                        ))}
+                    </div>
+                </div>
+
+                <section className="mt-16 text-center">
+                    <div className="card p-8 border-purple-500/20">
+                        <h3 className="text-xl font-grotesk font-bold text-white mb-3">Shape the Roadmap</h3>
+                        <p className="text-zinc-400 text-sm mb-6">Exogram&apos;s roadmap is shaped by real enterprise needs. If you&apos;re deploying AI at scale, your requirements drive our priorities.</p>
+                        <div className="flex justify-center gap-4">
+                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
+                                Visit Exogram.ai →
+                            </a>
+                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                                Discuss Integration →
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    );
+}
