@@ -90,6 +90,11 @@ const Navigation = () => {
                                 <DropdownItem href="/resources" description="Guides, tools, AI courses, frameworks">📚 Resource Hub</DropdownItem>
                             </Dropdown>
 
+                            <Link href="/blog" className="text-gray-300 hover:text-white transition-colors relative group">
+                                Blog
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all group-hover:w-full" />
+                            </Link>
+
                             <Link href="/exogram" className="text-gray-300 hover:text-white transition-colors relative group">
                                 Exogram
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
@@ -219,6 +224,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/benchmark" onClick={onClose}>Benchmark Report</MobileLink>
                         <MobileLink href="/briefings" onClick={onClose}>Briefings</MobileLink>
                         <MobileLink href="/resources/ai-courses" onClick={onClose}>AI Courses (Free)</MobileLink>
+                        <MobileLink href="/blog" onClick={onClose}>Blog</MobileLink>
                     </div>
 
                     <div className="space-y-4">
