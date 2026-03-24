@@ -54,12 +54,48 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/eVq6oA76SaLE15jfos2B20t',
     },
     full_curriculum: {
-        name: 'Full Curriculum Access — All 60 Modules',
-        description: '60 modules, 150+ lessons, 5 tools, certificate of completion.',
+        name: 'Full Curriculum Access — All 150 Modules',
+        description: '150 modules across 10 tracks, 400+ lessons, 5 tools, certificate of completion.',
         price: 19900,
         mode: 'subscription',
         interval: 'year',
         paymentLink: 'https://buy.stripe.com/eVq00cdvgcTMeW91xC2B209',
+    },
+    module_devops: {
+        name: 'DevOps & Platform Economics — Single Module',
+        description: 'Lifetime access to one DevOps & Platform Economics module (Track 5).',
+        price: 2900, mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
+    },
+    module_product_mgmt: {
+        name: 'Product Management Economics — Single Module',
+        description: 'Lifetime access to one Product Management Economics module (Track 6).',
+        price: 2900, mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
+    },
+    module_security: {
+        name: 'Security & Compliance Economics — Single Module',
+        description: 'Lifetime access to one Security & Compliance Economics module (Track 7).',
+        price: 2900, mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
+    },
+    module_data: {
+        name: 'Data & Analytics Economics — Single Module',
+        description: 'Lifetime access to one Data & Analytics Economics module (Track 8).',
+        price: 2900, mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
+    },
+    module_leadership: {
+        name: 'Engineering Leadership — Single Module',
+        description: 'Lifetime access to one Engineering Leadership module (Track 9).',
+        price: 2900, mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
+    },
+    module_startup: {
+        name: 'Startup Economics — Single Module',
+        description: 'Lifetime access to one Startup Economics module (Track 10).',
+        price: 2900, mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
     },
 
     // --- GUIDES ---
