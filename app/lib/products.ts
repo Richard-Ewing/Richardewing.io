@@ -1,10 +1,12 @@
 // Shared product catalog — single source of truth for all Stripe checkout flows
+// Each product has a paymentLink that points directly to a buy.stripe.com URL
 export interface Product {
     name: string;
     description: string;
     price: number; // in cents
     mode: 'payment' | 'subscription';
     interval?: 'month' | 'year';
+    paymentLink: string; // Direct Stripe Payment Link URL
 }
 
 export const PRODUCTS: Record<string, Product> = {
@@ -14,12 +16,14 @@ export const PRODUCTS: Record<string, Product> = {
         description: 'Access to one complete curriculum module with all lessons, exercises, and assessments.',
         price: 4900,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
     },
     module_bundle_3: {
         name: '3-Module Curriculum Bundle',
         description: 'Access to any 3 curriculum modules. Choose your tracks after purchase.',
         price: 11900,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/6oU8wIcrcbPIdS53FK2B208',
     },
     full_curriculum: {
         name: 'Full Curriculum Access — All 60 Modules',
@@ -27,6 +31,7 @@ export const PRODUCTS: Record<string, Product> = {
         price: 19900,
         mode: 'subscription',
         interval: 'year',
+        paymentLink: 'https://buy.stripe.com/eVq00cdvgcTMeW91xC2B209',
     },
 
     // --- GUIDES ---
@@ -35,18 +40,21 @@ export const PRODUCTS: Record<string, Product> = {
         description: 'Access to one premium guide: AI Economics, PE Due Diligence, SaaS Metrics, VC Assessment, or Cloud FinOps.',
         price: 2900,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/3cI7sE1My1b44hvccg2B20a',
     },
     premium_bundle: {
         name: 'All 5 Premium Guides Bundle',
         description: 'All 5 premium guides (AI Economics, PE Due Diligence, VC Assessment, SaaS Metrics, Cloud FinOps). Save 32% vs buying individually.',
         price: 9900,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/fZu5kw0IucTM3drdgk2B20c',
     },
     premium_bundle_3: {
         name: '3-Guide Bundle — Pick Any 3',
         description: 'Choose any 3 premium guides. Save 21% vs buying individually.',
         price: 6900,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/8x200c8aWf1UaFT0ty2B20b',
     },
 
     // --- ADVISORY (CORE TIERS) ---
@@ -55,30 +63,35 @@ export const PRODUCTS: Record<string, Product> = {
         description: 'Rapid-fire diagnostic: you describe the situation, I tell you if it\'s on fire. 30-minute call.',
         price: 45000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204',
     },
     insolvency_diagnostic: {
         name: 'Insolvency Diagnostic',
         description: '60-minute Capital Exposure Assessment + Written Risk Exposure Report + 15-minute follow-up call.',
         price: 250000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203',
     },
     ai_cost_governance: {
         name: 'AI Cost Governance',
         description: 'Dedicated AI economics analysis with unit economics model, collapse point calculation, and margin protection plan.',
         price: 500000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/9B64gs4YK070dS57W02B201',
     },
     strategy_session: {
         name: '1-on-1 Strategy Session',
         description: '60-minute live strategy session with Richard Ewing, Product Economist.',
         price: 50000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm6oAbn8bPIdS5gsw2B20j',
     },
     full_audit: {
         name: 'Full R&D Capital Audit',
         description: 'Complete 3-week forensic review of R&D capital allocation and AI inference costs. Board-ready deliverable with remediation roadmap.',
         price: 750000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202',
     },
     retainer: {
         name: 'Independent Oversight — Monthly',
@@ -86,6 +99,7 @@ export const PRODUCTS: Record<string, Product> = {
         price: 500000,
         mode: 'subscription',
         interval: 'month',
+        paymentLink: 'https://buy.stripe.com/14AdR24YK3jc15j4JO2B200',
     },
 
     // --- BOARD & FRACTIONAL LEADERSHIP ---
@@ -95,12 +109,14 @@ export const PRODUCTS: Record<string, Product> = {
         price: 250000,
         mode: 'subscription',
         interval: 'month',
+        paymentLink: 'https://buy.stripe.com/cNibIUbn80709BP9042B20k',
     },
     due_diligence: {
         name: 'PE/VC Due Diligence Partner',
         description: 'Pre-acquisition technical assessment, hidden liability identification, engineering team evaluation, investment committee deliverable.',
         price: 1500000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/00w5kwfDoaLEbJXb8c2B20l',
     },
     fractional_cpo: {
         name: 'Fractional CPO — Monthly',
@@ -108,44 +124,51 @@ export const PRODUCTS: Record<string, Product> = {
         price: 1000000,
         mode: 'subscription',
         interval: 'month',
+        paymentLink: 'https://buy.stripe.com/4gMcMY9f0070eW95NS2B20m',
     },
 
     // --- CERTIFICATION & WORKSHOPS ---
     certification: {
         name: 'Product Economist Certification (CPE)',
-        description: 'Professional certification in product economics methodology. Exam + curriculum access + digital certificate.',
+        description: 'Professional certification in product economics methodology. 12 modules, 48 hours, exam + curriculum access + digital certificate.',
         price: 150000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/aFa28k1My2f8g0ddgk2B20d',
     },
     workshop: {
         name: 'Workshop / Speaking Engagement',
         description: 'Half-day or full-day workshop on engineering economics, AI cost governance, or technical debt quantification.',
         price: 500000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/6oUbIUbn88DweW9gsw2B20i',
     },
     workshop_rd_masterclass: {
         name: 'R&D Capital Allocation Masterclass',
         description: '4-hour hands-on workshop (10-30 people). Teams learn to measure technical debt, calculate refactoring ROI, and build the business case.',
         price: 800000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/eVqdR2ezk0709BP5NS2B20e',
     },
     workshop_board_reporting: {
         name: 'Board-Ready Technical Reporting',
         description: '2-hour executive session (5-15 people). CTOs learn to present tech metrics in financial language; boards learn what to ask.',
         price: 500000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/8x24gs2QCdXQ29n6RW2B20f',
     },
     workshop_ai_governance: {
         name: 'AI Cost Governance Workshop',
         description: '4-hour workshop (10-25 people). Map AI spend, identify collapse points, build cost governance frameworks.',
         price: 800000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/aFadR2dvgf1UaFT6RW2B20g',
     },
     keynote_speaking: {
         name: 'Keynote Speaking Engagement',
         description: '45-60 minute keynote on technical debt, AI unit economics, or the subprime code crisis. Includes Q&A.',
         price: 500000,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/bJe8wIdvgf1UcO15NS2B20h',
     },
     white_label: {
         name: 'White-Label Tool Licensing — Monthly',
@@ -153,6 +176,7 @@ export const PRODUCTS: Record<string, Product> = {
         price: 150000,
         mode: 'subscription',
         interval: 'month',
+        paymentLink: 'https://buy.stripe.com/cNiaEQfDodXQ15j7W02B20n',
     },
 
     // --- PARTNERSHIPS ---
@@ -162,38 +186,43 @@ export const PRODUCTS: Record<string, Product> = {
         price: 250000,
         mode: 'subscription',
         interval: 'month',
+        paymentLink: 'https://buy.stripe.com/8x26oA62O6vo4hvgsw2B20o',
     },
 
-    // --- INDIVIDUAL PREMIUM GUIDES ---
+    // --- INDIVIDUAL PREMIUM GUIDES (all use generic premium_guide link) ---
     guide_ai_economics: {
         name: 'The AI Economics Deep Dive',
         description: 'The most comprehensive AI economics guide: token economics, model routing, Cost of Predictivity, RAG optimization, hallucination cost quantification.',
         price: 2900,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/3cI7sE1My1b44hvccg2B20a',
     },
     guide_pe_due_diligence: {
         name: 'PE Technology Due Diligence Guide',
         description: 'Insider PE due diligence guide: 15 red flags, valuation impact, technical debt methodology, deal-killer case studies.',
         price: 2900,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/3cI7sE1My1b44hvccg2B20a',
     },
     guide_vc_assessment: {
         name: 'VC Technology Assessment Framework',
         description: 'Technology risk evaluation before investing: technical founder assessment, velocity indicators, 10-minute diligence checklist.',
         price: 2900,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/3cI7sE1My1b44hvccg2B20a',
     },
     guide_saas_metrics: {
         name: 'SaaS Metrics Masterclass',
         description: 'Bridge engineering metrics and SaaS financials: Rule of 40, NRR improvement, CAC payback, engineering ROI.',
         price: 2900,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/3cI7sE1My1b44hvccg2B20a',
     },
     guide_cloud_finops: {
         name: 'Cloud FinOps & Infrastructure Economics',
         description: 'Cloud cost optimization: right-sizing, reserved instances, spot architecture, FinOps team structure, 12-week savings program.',
         price: 2900,
         mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/3cI7sE1My1b44hvccg2B20a',
     },
 };
-

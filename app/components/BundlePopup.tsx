@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { X, Gift, Sparkles, ArrowRight } from 'lucide-react';
+import { PRODUCTS } from '@/lib/products';
 
 interface BundlePopupProps {
     isOpen: boolean;
@@ -18,22 +18,12 @@ const PREMIUM_GUIDES = [
 ];
 
 export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePopupProps) {
-    const [loading, setLoading] = useState<string | null>(null);
-
     if (!isOpen) return null;
 
-    const handleCheckout = async (productId: string) => {
-        setLoading(productId);
-        try {
-            const res = await fetch('/api/checkout', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ productId, returnUrl: `/guides/${currentGuide}` }),
-            });
-            const data = await res.json();
-            if (data.url) window.location.href = data.url;
-        } catch {
-            setLoading(null);
+    const handleCheckout = (productId: string) => {
+        const product = PRODUCTS[productId];
+        if (product?.paymentLink) {
+            window.open(product.paymentLink, '_blank');
         }
     };
 
@@ -65,7 +55,7 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                     {/* Single Guide */}
                     <button
                         onClick={() => handleCheckout(PREMIUM_GUIDES.find(g => g.slug === currentGuide)?.id || 'premium_guide')}
-                        disabled={!!loading}
+                        disabled={false}
                         className="w-full flex items-center justify-between p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-white/20 transition-all group text-left"
                     >
                         <div>
@@ -81,7 +71,7 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                     {/* 3-Guide Bundle — RECOMMENDED */}
                     <button
                         onClick={() => handleCheckout('premium_bundle_3')}
-                        disabled={!!loading}
+                        disabled={false}
                         className="w-full flex items-center justify-between p-4 rounded-xl border-2 border-violet-500/40 bg-violet-500/5 hover:border-violet-500/60 transition-all group text-left relative"
                     >
                         <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full bg-violet-500 text-[10px] font-bold text-white uppercase tracking-widest flex items-center gap-1">
@@ -106,7 +96,7 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                     {/* All 5 Bundle */}
                     <button
                         onClick={() => handleCheckout('premium_bundle')}
-                        disabled={!!loading}
+                        disabled={false}
                         className="w-full flex items-center justify-between p-4 rounded-xl border border-cyan-500/30 bg-cyan-500/5 hover:border-cyan-500/50 transition-all group text-left"
                     >
                         <div>

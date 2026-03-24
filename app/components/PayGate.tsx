@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Lock, BookOpen, Sparkles, ChevronDown, Award } from 'lucide-react';
+import { PRODUCTS } from '@/lib/products';
 
 interface PayGateProps {
     moduleTitle: string;
@@ -20,39 +21,13 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
     const previewContent = childArray[previewLessonIndex];
     const lockedContent = childArray.filter((_, i) => i !== previewLessonIndex);
 
-    const handleCheckout = async (productId: string) => {
+    const handleCheckout = (productId: string) => {
         setLoading(productId);
-        try {
-            const res = await fetch('/api/checkout', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    productId,
-                    moduleId,
-                    returnUrl: `/curriculum/tracks/${trackName}/${moduleId}`,
-                }),
-            });
-            const data = await res.json();
-            if (data.url) {
-                window.location.href = data.url;
-            } else {
-                // Fallback to existing Stripe Payment Links
-                if (productId === 'single_module') {
-                    window.open('/api/buy/single_module', '_blank');
-                } else {
-                    window.open('/api/buy/full_curriculum', '_blank');
-                }
-            }
-        } catch {
-            // Fallback to existing links
-            if (productId === 'single_module') {
-                window.open('/api/buy/single_module', '_blank');
-            } else {
-                window.open('/api/buy/full_curriculum', '_blank');
-            }
-        } finally {
-            setLoading(null);
+        const product = PRODUCTS[productId];
+        if (product?.paymentLink) {
+            window.open(product.paymentLink, '_blank');
         }
+        setTimeout(() => setLoading(null), 1000);
     };
 
     return (
@@ -146,7 +121,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                             </div>
                                             <div className="text-right">
                                                 <div className="text-lg font-bold text-cyan-400">$199<span className="text-xs text-zinc-500">/yr</span></div>
-                                                <div className="text-[10px] text-zinc-600">~$8/module</div>
+                                                <div className="text-[10px] text-zinc-600">~$3/module</div>
                                             </div>
                                         </div>
                                     </button>
