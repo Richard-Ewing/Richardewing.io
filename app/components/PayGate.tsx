@@ -103,8 +103,8 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                                 <div className="text-xs text-zinc-500">Access to {moduleTitle}</div>
                                             </div>
                                             <div className="text-right">
-                                                <div className="text-lg font-bold text-violet-400">$49</div>
-                                                <div className="text-[10px] text-zinc-600">one-time</div>
+                                                <div className="text-lg font-bold text-violet-400">$29</div>
+                                                <div className="text-[10px] text-zinc-600">lifetime access</div>
                                             </div>
                                         </div>
                                     </button>

@@ -8,9 +8,9 @@
   --color-obsidian: #0A0A12;
 
   /* Readability boost: lighten zinc text on dark backgrounds */
-  --color-zinc-400: #b4b4be;  /* was #a1a1aa — body text */
-  --color-zinc-500: #8e8e9a;  /* was #71717a — muted labels */
-  --color-zinc-600: #6e6e7a;  /* was #52525b — subtle text */
+  --color-zinc-400: #c8c8d0;  /* was #b4b4be — body text — lightened 2 more notches */
+  --color-zinc-500: #a4a4b0;  /* was #8e8e9a — muted labels — lightened 2 more notches */
+  --color-zinc-600: #858590;  /* was #6e6e7a — subtle text — lightened 2 more notches */
 }
 
 :root {
@@ -32,7 +32,7 @@
   --text-primary: #FFFFFF;
   --text-secondary: #E0E0E0;
   /* INCREASED from gray */
-  --text-muted: #A0A0A0;
+  --text-muted: #BCBCBC;
   --text-gradient: linear-gradient(135deg, #FFFFFF 0%, #C0C0FF 100%);
 
   /* ══════════════════════════════════════════════════════════ */
@@ -167,7 +167,7 @@ h3 {
 
 .section-header p {
   font-size: 18px;
-  color: #a0a0a0;
+  color: #bcbcbc;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
