@@ -1,62 +1,16 @@
 import { NextResponse } from 'next/server';
-import Stripe from 'stripe';
-import { PRODUCTS } from '@/lib/products';
 
-function getStripe() {
-    const key = process.env.STRIPE_SECRET_KEY;
-    if (!key) {
-        throw new Error('STRIPE_SECRET_KEY is not set. Add it to .env.local to enable checkout.');
-    }
-    return new Stripe(key);
-}
-
-export async function POST(request: Request) {
-    try {
-        const stripe = getStripe();
-        const { productId, moduleId, returnUrl } = await request.json();
-
-        const product = PRODUCTS[productId];
-        if (!product) {
-            return NextResponse.json({ error: 'Invalid product ID' }, { status: 400 });
-        }
-
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.richardewing.io';
-        const successUrl = returnUrl ? `${baseUrl}${returnUrl}?success=true` : `${baseUrl}/curriculum/tracks?success=true`;
-        const cancelUrl = returnUrl ? `${baseUrl}${returnUrl}` : `${baseUrl}/curriculum/tracks`;
-
-        const lineItem: Stripe.Checkout.SessionCreateParams.LineItem = {
-            price_data: {
-                currency: 'usd',
-                product_data: {
-                    name: product.name,
-                    description: product.description,
-                },
-                unit_amount: product.price,
-            },
-            quantity: 1,
-        };
-
-        if (product.mode === 'subscription' && product.interval) {
-            lineItem.price_data!.recurring = { interval: product.interval };
-        }
-
-        const session = await stripe.checkout.sessions.create({
-            payment_method_types: ['card'],
-            line_items: [lineItem],
-            mode: product.mode,
-            success_url: successUrl,
-            cancel_url: cancelUrl,
-            metadata: {
-                productId,
-                ...(moduleId && { moduleId }),
-            },
-            allow_promotion_codes: true,
-        });
-
-        return NextResponse.json({ url: session.url });
-    } catch (error: unknown) {
-        console.error('Stripe checkout error:', error);
-        const message = error instanceof Error ? error.message : 'Failed to create checkout session';
-        return NextResponse.json({ error: message }, { status: 500 });
-    }
+/**
+ * Legacy checkout route — kept as a redirect to advisory page.
+ * All payments now use direct Stripe Payment Links (buy.stripe.com).
+ * See app/lib/products.ts for the active payment link configuration.
+ */
+export async function POST() {
+    return NextResponse.json(
+        {
+            error: 'This checkout endpoint has been deprecated. All payments now use direct Stripe Payment Links.',
+            redirect: 'https://www.richardewing.io/advisory',
+        },
+        { status: 410 }
+    );
 }

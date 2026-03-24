@@ -1,77 +1,40 @@
 import Link from 'next/link';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-    title: 'Page Not Found | Richard Ewing',
-    description: 'The page you were looking for does not exist. Explore free diagnostic tools, the glossary, or book an advisory session.',
-};
 
 export default function NotFound() {
     return (
-        <main className="min-h-[70vh] flex items-center justify-center px-6">
-            <div className="text-center max-w-xl">
-                <div className="text-8xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-4">
-                    404
+        <main className="pt-24 pb-20 min-h-[80vh] flex items-center justify-center">
+            <div className="page-container max-w-2xl mx-auto text-center">
+                <div className="relative">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
+                    <div className="relative">
+                        <p className="text-8xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-4">404</p>
+                        <h1 className="text-2xl font-grotesk font-bold text-white mb-4">Page Not Found</h1>
+                        <p className="text-zinc-400 mb-8 max-w-md mx-auto">
+                            The page you&apos;re looking for doesn&apos;t exist or has been moved. Here are some places to start:
+                        </p>
+                        <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto mb-8">
+                            <Link href="/blog" className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-500/30 transition-colors">
+                                <p className="text-white font-semibold text-sm">Blog</p>
+                                <p className="text-[11px] text-zinc-500">100+ articles</p>
+                            </Link>
+                            <Link href="/articles" className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-500/30 transition-colors">
+                                <p className="text-white font-semibold text-sm">Articles</p>
+                                <p className="text-[11px] text-zinc-500">Published work</p>
+                            </Link>
+                            <Link href="/tools/pdi" className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-500/30 transition-colors">
+                                <p className="text-white font-semibold text-sm">Free Tools</p>
+                                <p className="text-[11px] text-zinc-500">PDI, APER, AUEB</p>
+                            </Link>
+                            <Link href="/advisory" className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-500/30 transition-colors">
+                                <p className="text-white font-semibold text-sm">Advisory</p>
+                                <p className="text-[11px] text-zinc-500">Book a session</p>
+                            </Link>
+                        </div>
+                        <Link href="/" className="text-sm text-cyan-400 hover:underline">
+                            ← Back to Home
+                        </Link>
+                    </div>
                 </div>
-                <h1 className="text-3xl font-bold text-white mb-4 font-grotesk">
-                    Page Not Found
-                </h1>
-                <p className="text-gray-400 mb-8 text-lg">
-                    This page doesn&apos;t exist — but there&apos;s plenty that does.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                    <Link
-                        href="/tools/pdi"
-                        className="card p-4 hover:border-cyan-500/30 transition-all group text-left"
-                    >
-                        <div className="text-xs font-mono text-cyan-500 uppercase mb-1">Free Tool</div>
-                        <div className="font-bold text-white group-hover:text-cyan-400 transition-colors">
-                            Product Debt Index
-                        </div>
-                        <div className="text-gray-500 text-xs">Calculate your tech debt in $</div>
-                    </Link>
-
-                    <Link
-                        href="/glossary"
-                        className="card p-4 hover:border-purple-500/30 transition-all group text-left"
-                    >
-                        <div className="text-xs font-mono text-purple-500 uppercase mb-1">Knowledge</div>
-                        <div className="font-bold text-white group-hover:text-purple-400 transition-colors">
-                            Glossary (400+ Terms)
-                        </div>
-                        <div className="text-gray-500 text-xs">Technical debt to AI governance</div>
-                    </Link>
-
-                    <Link
-                        href="/advisory"
-                        className="card p-4 hover:border-emerald-500/30 transition-all group text-left"
-                    >
-                        <div className="text-xs font-mono text-emerald-500 uppercase mb-1">Services</div>
-                        <div className="font-bold text-white group-hover:text-emerald-400 transition-colors">
-                            Advisory Services
-                        </div>
-                        <div className="text-gray-500 text-xs">Book a free introductory call</div>
-                    </Link>
-
-                    <Link
-                        href="/articles"
-                        className="card p-4 hover:border-amber-500/30 transition-all group text-left"
-                    >
-                        <div className="text-xs font-mono text-amber-500 uppercase mb-1">Publications</div>
-                        <div className="font-bold text-white group-hover:text-amber-400 transition-colors">
-                            Articles & Frameworks
-                        </div>
-                        <div className="text-gray-500 text-xs">Published in Built In, CIO.com</div>
-                    </Link>
-                </div>
-
-                <Link
-                    href="/"
-                    className="text-sm text-gray-500 hover:text-white transition-colors uppercase tracking-widest font-mono"
-                >
-                    ← Return Home
-                </Link>
             </div>
         </main>
     );

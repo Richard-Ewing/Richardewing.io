@@ -9,11 +9,10 @@ export const metadata: Metadata = {
 
 const phases = [
     {
-        status: 'complete',
-        label: 'Shipped',
-        color: 'emerald',
-        quarter: 'Q4 2025',
-        title: 'Foundation',
+        status: 'complete' as const, label: 'Shipped', quarter: 'Q4 2025', title: 'Foundation',
+        sectionClass: 'rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-8',
+        badgeClass: 'text-[10px] font-mono text-emerald-400 px-2 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 uppercase tracking-widest',
+        dotClass: 'hidden md:flex absolute left-4 top-2 w-5 h-5 rounded-full border-2 border-emerald-500 bg-emerald-500/20 items-center justify-center',
         items: [
             'Schema Integrity Engine v1.0 — JSON output validation',
             'MCP Server integration for Claude ecosystem',
@@ -25,11 +24,10 @@ const phases = [
         ],
     },
     {
-        status: 'current',
-        label: 'In Progress',
-        color: 'purple',
-        quarter: 'Q1 2026',
-        title: 'Enterprise Readiness',
+        status: 'current' as const, label: 'In Progress', quarter: 'Q1 2026', title: 'Enterprise Readiness',
+        sectionClass: 'rounded-2xl border border-purple-500/20 bg-purple-500/5 p-8',
+        badgeClass: 'text-[10px] font-mono text-purple-400 px-2 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 uppercase tracking-widest',
+        dotClass: 'hidden md:flex absolute left-4 top-2 w-5 h-5 rounded-full border-2 border-purple-500 bg-purple-500/50 items-center justify-center',
         items: [
             'Schema Integrity v2.0 — multi-format support (Protocol Buffers, Avro)',
             'Boundary Control Protocol — agent action admissibility',
@@ -41,11 +39,10 @@ const phases = [
         ],
     },
     {
-        status: 'planned',
-        label: 'Planned',
-        color: 'cyan',
-        quarter: 'Q2 2026',
-        title: 'Multi-Model & Scale',
+        status: 'planned' as const, label: 'Planned', quarter: 'Q2 2026', title: 'Multi-Model & Scale',
+        sectionClass: 'rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-8',
+        badgeClass: 'text-[10px] font-mono text-cyan-400 px-2 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 uppercase tracking-widest',
+        dotClass: 'hidden md:flex absolute left-4 top-2 w-5 h-5 rounded-full border-2 border-cyan-500 bg-cyan-500/20 items-center justify-center',
         items: [
             'Multi-model verification — validate outputs across GPT, Claude, Gemini, Llama',
             'Federated verification for multi-agent systems',
@@ -57,11 +54,10 @@ const phases = [
         ],
     },
     {
-        status: 'future',
-        label: 'Future',
-        color: 'zinc',
-        quarter: 'Q3-Q4 2026',
-        title: 'Intelligence Layer',
+        status: 'future' as const, label: 'Future', quarter: 'Q3-Q4 2026', title: 'Intelligence Layer',
+        sectionClass: 'rounded-2xl border border-zinc-500/20 bg-zinc-500/5 p-8',
+        badgeClass: 'text-[10px] font-mono text-zinc-400 px-2 py-1 rounded-full border border-zinc-500/30 bg-zinc-500/10 uppercase tracking-widest',
+        dotClass: 'hidden md:flex absolute left-4 top-2 w-5 h-5 rounded-full border-2 border-zinc-500 bg-zinc-500/20 items-center justify-center',
         items: [
             'Predictive verification — flag likely hallucinations before generation completes',
             'Cross-session memory consistency across organizations',
@@ -94,30 +90,26 @@ export default function ExogramRoadmapPage() {
                 </section>
 
                 <div className="relative">
-                    {/* Timeline line */}
                     <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500 via-purple-500 to-zinc-800 hidden md:block" />
 
                     <div className="space-y-12">
                         {phases.map(phase => (
                             <section key={phase.quarter} className="relative md:pl-16">
-                                {/* Timeline dot */}
-                                <div className={`hidden md:flex absolute left-4 top-2 w-5 h-5 rounded-full border-2 border-${phase.color}-500 bg-${phase.color}-500/${phase.status === 'current' ? '50' : '20'} items-center justify-center`}>
+                                <div className={phase.dotClass}>
                                     {phase.status === 'complete' && <span className="text-emerald-400 text-xs">✓</span>}
-                                    {phase.status === 'current' && <span className={`w-2 h-2 rounded-full bg-${phase.color}-400 animate-pulse`} />}
+                                    {phase.status === 'current' && <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />}
                                 </div>
 
-                                <div className={`rounded-2xl border border-${phase.color}-500/20 bg-${phase.color}-500/5 p-8`}>
+                                <div className={phase.sectionClass}>
                                     <div className="flex items-center gap-3 mb-4">
-                                        <span className={`text-[10px] font-mono text-${phase.color}-400 px-2 py-1 rounded-full border border-${phase.color}-500/30 bg-${phase.color}-500/10 uppercase tracking-widest`}>
-                                            {phase.label}
-                                        </span>
+                                        <span className={phase.badgeClass}>{phase.label}</span>
                                         <span className="text-xs text-zinc-600 font-mono">{phase.quarter}</span>
                                     </div>
                                     <h2 className="text-xl font-grotesk font-bold text-white mb-4">{phase.title}</h2>
                                     <ul className="space-y-2">
                                         {phase.items.map(item => (
                                             <li key={item} className="flex items-start gap-2 text-sm text-zinc-400">
-                                                <span className={`text-${phase.color}-400 mt-0.5`}>{phase.status === 'complete' ? '✓' : '→'}</span>
+                                                <span className={phase.status === 'complete' ? 'text-emerald-400 mt-0.5' : 'text-zinc-500 mt-0.5'}>{phase.status === 'complete' ? '✓' : '→'}</span>
                                                 {item}
                                             </li>
                                         ))}

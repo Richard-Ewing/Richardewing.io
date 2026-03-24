@@ -90,6 +90,7 @@ export default function RootLayout({
         <link rel="author" href="https://www.richardewing.io/principal" />
         <link rel="me" href="https://linkedin.com/in/richard-ewing-mba" />
         <link rel="alternate" type="text/plain" href="https://www.richardewing.io/llms.txt" title="LLM-readable site information" />
+        <link rel="alternate" type="application/rss+xml" href="https://www.richardewing.io/feed.xml" title="Richard Ewing — Engineering Economics Blog" />
       </head>
       <body className="overflow-x-hidden bg-[var(--bg-primary)] text-[var(--text-secondary)] font-sans antialiased min-h-screen flex flex-col">
         <script

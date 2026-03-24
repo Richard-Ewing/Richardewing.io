@@ -1,0 +1,182 @@
+'use client';
+
+import { useState, useMemo } from 'react';
+import Link from 'next/link';
+import { getSortedArticles, getCategories } from '@/lib/blog-data';
+import { categoryColors } from '@/lib/blog-types';
+
+export default function BlogContent() {
+    const [search, setSearch] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+    const allArticles = useMemo(() => getSortedArticles(), []);
+    const categories = useMemo(() => getCategories(), []);
+
+    const filtered = useMemo(() => {
+        let result = allArticles;
+        if (selectedCategory) result = result.filter(a => a.category === selectedCategory);
+        if (search.trim()) {
+            const q = search.toLowerCase();
+            result = result.filter(a =>
+                a.title.toLowerCase().includes(q) ||
+                a.excerpt.toLowerCase().includes(q) ||
+                a.category.toLowerCase().includes(q)
+            );
+        }
+        return result;
+    }, [allArticles, selectedCategory, search]);
+
+    const featured = filtered.filter(a => a.featured);
+    const regular = filtered.filter(a => !a.featured);
+
+    return (
+        <main className="pt-24 pb-20">
+            <div className="page-container">
+                {/* Hero */}
+                <section className="text-center mb-12 relative">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
+                    <div className="relative">
+                        <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-4">The Product Economist</p>
+                        <h1 className="text-4xl md:text-6xl font-grotesk font-bold text-white mb-6">
+                            Engineering Economics <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Blog.</span>
+                        </h1>
+                        <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-8">
+                            {allArticles.length} articles on engineering economics, technical debt quantification, AI cost analysis,
+                            R&D capital allocation, and the economics nobody else is talking about.
+                        </p>
+
+                        {/* Search */}
+                        <div className="max-w-md mx-auto relative">
+                            <input
+                                type="text"
+                                placeholder="Search articles…"
+                                value={search}
+                                onChange={e => setSearch(e.target.value)}
+                                className="w-full px-5 py-3 bg-white/[0.05] border border-white/10 rounded-xl text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-cyan-500/50 transition-colors"
+                            />
+                            {search && (
+                                <button onClick={() => setSearch('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-white text-xs">✕</button>
+                            )}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Category Filter */}
+                <section className="max-w-5xl mx-auto mb-12">
+                    <div className="flex flex-wrap gap-2 justify-center">
+                        <button
+                            onClick={() => setSelectedCategory(null)}
+                            className={`text-[10px] font-mono px-2.5 py-1 rounded-full border transition-colors ${!selectedCategory ? 'text-cyan-400 bg-cyan-500/20 border-cyan-500/40' : 'text-zinc-500 bg-zinc-500/5 border-zinc-500/20 hover:text-zinc-300'}`}
+                        >
+                            All ({allArticles.length})
+                        </button>
+                        {categories.map(cat => (
+                            <button
+                                key={cat.name}
+                                onClick={() => setSelectedCategory(selectedCategory === cat.name ? null : cat.name)}
+                                className={`text-[10px] font-mono px-2.5 py-1 rounded-full border transition-colors ${selectedCategory === cat.name ? 'text-cyan-400 bg-cyan-500/20 border-cyan-500/40' : categoryColors[cat.name] || 'text-zinc-400 bg-zinc-500/10 border-zinc-500/20'} hover:opacity-80`}
+                            >
+                                {cat.name} ({cat.count})
+                            </button>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Results count */}
+                {(search || selectedCategory) && (
+                    <div className="text-center mb-8">
+                        <p className="text-xs text-zinc-500">
+                            {filtered.length} article{filtered.length !== 1 ? 's' : ''} found
+                            {selectedCategory && <span> in <span className="text-white">{selectedCategory}</span></span>}
+                            {search && <span> matching &quot;<span className="text-white">{search}</span>&quot;</span>}
+                        </p>
+                    </div>
+                )}
+
+                {/* Featured */}
+                {featured.length > 0 && (
+                    <section className="mb-16 max-w-5xl mx-auto">
+                        <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-6">Featured</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {featured.map(article => (
+                                <Link key={article.slug} href={`/blog/${article.slug}`}
+                                    className="group block rounded-2xl border border-white/10 bg-white/[0.03] p-8 hover:border-cyan-500/30 hover:bg-white/[0.05] transition-all">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <span className={`text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-full border ${categoryColors[article.category]}`}>{article.category}</span>
+                                        <span className="text-[10px] text-zinc-600">{article.readTime} read</span>
+                                    </div>
+                                    <h3 className="text-xl font-grotesk font-bold text-white group-hover:text-cyan-300 transition-colors mb-3">{article.title}</h3>
+                                    <p className="text-sm text-zinc-400 leading-relaxed mb-4">{article.excerpt}</p>
+                                    <div className="flex items-center justify-between">
+                                        <span className="text-xs text-zinc-600">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                                        <span className="text-xs text-cyan-400 group-hover:text-cyan-300">Read →</span>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* All Articles */}
+                <section className="max-w-5xl mx-auto">
+                    <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-6">
+                        {featured.length > 0 ? `All ${regular.length} Articles` : `${filtered.length} Articles`}
+                    </h2>
+                    {regular.length === 0 && filtered.length === 0 ? (
+                        <div className="text-center py-20 border border-dashed border-zinc-800 rounded-2xl">
+                            <p className="text-zinc-500 mb-4">No articles match your search.</p>
+                            <button onClick={() => { setSearch(''); setSelectedCategory(null); }} className="text-cyan-400 hover:underline text-sm">Clear filters</button>
+                        </div>
+                    ) : (
+                        <div className="space-y-4">
+                            {regular.map(article => (
+                                <Link key={article.slug} href={`/blog/${article.slug}`}
+                                    className="group flex items-start gap-6 p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04] transition-all">
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-3 mb-2">
+                                            <span className={`text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border ${categoryColors[article.category] || 'text-zinc-400 bg-zinc-500/10 border-zinc-500/20'}`}>{article.category}</span>
+                                            <span className="text-[10px] text-zinc-600">{article.readTime}</span>
+                                            <span className="text-[10px] text-zinc-700">·</span>
+                                            <span className="text-[10px] text-zinc-600">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                                        </div>
+                                        <h3 className="text-lg font-grotesk font-bold text-white group-hover:text-cyan-300 transition-colors mb-1">{article.title}</h3>
+                                        <p className="text-sm text-zinc-500 leading-relaxed">{article.excerpt}</p>
+                                    </div>
+                                    <span className="text-zinc-600 group-hover:text-cyan-400 transition-colors mt-4 shrink-0">→</span>
+                                </Link>
+                            ))}
+                        </div>
+                    )}
+                </section>
+
+                {/* Cross-link to Published Articles */}
+                <section className="mt-16 max-w-5xl mx-auto">
+                    <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
+                        <div className="flex items-center gap-4 mb-4">
+                            <span className="text-xs font-mono text-purple-400 uppercase tracking-widest">Tier 1 Publications</span>
+                        </div>
+                        <h3 className="text-xl font-grotesk font-bold text-white mb-2">Looking for my published articles?</h3>
+                        <p className="text-sm text-zinc-400 mb-4">These blog posts expand on ideas from my articles in CIO.com, Built In, Mind the Product, and HackerNoon.</p>
+                        <Link href="/articles" className="text-sm text-purple-400 hover:text-purple-300 transition-colors">
+                            View all published articles →
+                        </Link>
+                    </div>
+                </section>
+
+                {/* Newsletter CTA */}
+                <section className="mt-8 max-w-2xl mx-auto">
+                    <div className="card p-8 text-center border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 via-transparent to-violet-500/5">
+                        <h3 className="text-2xl font-grotesk font-bold text-white mb-3">Get the Weekly Briefing</h3>
+                        <p className="text-zinc-400 text-sm mb-6 max-w-md mx-auto">
+                            One email per week with the engineering economics analysis nobody else is doing. Join 2,000+ executives and engineering leaders.
+                        </p>
+                        <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
+                            className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-violet-600 text-white font-bold text-sm hover:opacity-90 transition-opacity">
+                            Subscribe Free →
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    );
+}

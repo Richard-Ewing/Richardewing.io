@@ -137,15 +137,15 @@ export default function ExogramPage() {
                         <p className="text-zinc-400 text-center mb-12 max-w-xl mx-auto">Four independent verification layers. Adopt incrementally. Each one reduces AI risk measurably.</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {[
-                                { name: 'Schema Integrity Engine', desc: 'Validates every AI output against structural contracts. Catches hallucinated fields, missing data, and type mismatches in <5ms.', color: 'cyan', metric: '<5ms validation' },
-                                { name: 'Boundary Control Protocol', desc: 'Enforces operational scope for AI agents using the EAAP protocol. Prevents unauthorized actions and scope creep.', color: 'purple', metric: 'EAAP v1.0' },
-                                { name: 'Threat Prevention Layer', desc: 'Detects prompt injections, data exfiltration, PII leaks, and adversarial inputs with 99.2% accuracy.', color: 'red', metric: '99.2% detection' },
-                                { name: 'Memory Integrity System', desc: 'Cryptographic verification of AI memory. Prevents memory hallucinations and maintains cross-session consistency.', color: 'emerald', metric: 'Encrypted' },
+                                { name: 'Schema Integrity Engine', desc: 'Validates every AI output against structural contracts. Catches hallucinated fields, missing data, and type mismatches in <5ms.', metric: '<5ms validation', cardClass: 'p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5', badgeClass: 'text-[10px] font-mono text-cyan-400 px-2 py-0.5 rounded border border-cyan-500/30' },
+                                { name: 'Boundary Control Protocol', desc: 'Enforces operational scope for AI agents using the EAAP protocol. Prevents unauthorized actions and scope creep.', metric: 'EAAP v1.0', cardClass: 'p-6 rounded-xl border border-purple-500/20 bg-purple-500/5', badgeClass: 'text-[10px] font-mono text-purple-400 px-2 py-0.5 rounded border border-purple-500/30' },
+                                { name: 'Threat Prevention Layer', desc: 'Detects prompt injections, data exfiltration, PII leaks, and adversarial inputs with 99.2% accuracy.', metric: '99.2% detection', cardClass: 'p-6 rounded-xl border border-red-500/20 bg-red-500/5', badgeClass: 'text-[10px] font-mono text-red-400 px-2 py-0.5 rounded border border-red-500/30' },
+                                { name: 'Memory Integrity System', desc: 'Cryptographic verification of AI memory. Prevents memory hallucinations and maintains cross-session consistency.', metric: 'Encrypted', cardClass: 'p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5', badgeClass: 'text-[10px] font-mono text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30' },
                             ].map(layer => (
-                                <div key={layer.name} className={`p-6 rounded-xl border border-${layer.color}-500/20 bg-${layer.color}-500/5`}>
+                                <div key={layer.name} className={layer.cardClass}>
                                     <div className="flex items-center justify-between mb-3">
                                         <h3 className="text-white font-bold">{layer.name}</h3>
-                                        <span className={`text-[10px] font-mono text-${layer.color}-400 px-2 py-0.5 rounded border border-${layer.color}-500/30`}>{layer.metric}</span>
+                                        <span className={layer.badgeClass}>{layer.metric}</span>
                                     </div>
                                     <p className="text-sm text-zinc-400 leading-relaxed">{layer.desc}</p>
                                 </div>

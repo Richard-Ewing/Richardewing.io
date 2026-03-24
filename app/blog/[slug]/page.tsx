@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { allArticles } from '@/lib/blog-data';
+import { allArticles, getSortedArticles } from '@/lib/blog-data';
 import { categoryColors } from '@/lib/blog-types';
 
 export async function generateStaticParams() {
@@ -20,12 +20,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
 }
 
+function getRelatedArticles(currentSlug: string, category: string, count: number = 3) {
+    return getSortedArticles()
+        .filter(a => a.slug !== currentSlug && a.category === category)
+        .slice(0, count);
+}
+
 export default async function BlogArticlePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const article = allArticles[slug];
     if (!article) notFound();
 
     const catColor = categoryColors[article.category] || 'text-zinc-400 bg-zinc-500/10 border-zinc-500/20';
+    const related = getRelatedArticles(slug, article.category);
 
     return (
         <main className="pt-24 pb-20">
@@ -67,7 +74,44 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                     <div dangerouslySetInnerHTML={{ __html: article.content }} />
                 </article>
 
-                <div className="mt-16 p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
+                {/* Inline Newsletter CTA */}
+                <div className="my-12 p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5 text-center">
+                    <p className="text-white font-semibold mb-2">Like this analysis?</p>
+                    <p className="text-sm text-zinc-400 mb-4">Get the weekly engineering economics briefing — one email, every Monday.</p>
+                    <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
+                        className="inline-block px-6 py-2.5 rounded-lg bg-gradient-to-r from-cyan-600 to-violet-600 text-white font-bold text-sm hover:opacity-90 transition-opacity">
+                        Subscribe Free →
+                    </a>
+                </div>
+
+                {/* Related Articles */}
+                {related.length > 0 && (
+                    <section className="mb-12">
+                        <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-6">More in {article.category}</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            {related.map(r => (
+                                <Link key={r.slug} href={`/blog/${r.slug}`}
+                                    className="group p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:border-white/15 transition-all">
+                                    <h3 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">{r.title}</h3>
+                                    <p className="text-xs text-zinc-500 line-clamp-2">{r.excerpt}</p>
+                                    <span className="text-[10px] text-zinc-600 mt-2 block">{r.readTime}</span>
+                                </Link>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* Cross-link to Published Articles */}
+                <div className="mb-12 p-6 rounded-xl border border-purple-500/20 bg-purple-500/5">
+                    <p className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2">Published Work</p>
+                    <p className="text-sm text-zinc-400">
+                        This article expands on ideas from my published work in <strong className="text-white">CIO.com</strong>, <strong className="text-white">Built In</strong>, <strong className="text-white">Mind the Product</strong>, and <strong className="text-white">HackerNoon</strong>.{' '}
+                        <Link href="/articles" className="text-purple-400 hover:underline">View published articles →</Link>
+                    </p>
+                </div>
+
+                {/* Author Box */}
+                <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
                     <div className="flex items-start gap-6">
                         <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-white/10 flex items-center justify-center shrink-0">
                             <span className="text-2xl">📊</span>

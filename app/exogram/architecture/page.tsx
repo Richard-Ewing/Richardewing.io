@@ -11,8 +11,10 @@ const layers = [
     {
         name: 'Schema Integrity Engine',
         tag: 'Layer 1',
-        color: 'cyan',
         description: 'Validates that every AI output conforms to predefined structural contracts. Catches hallucinated fields, missing required data, and type mismatches before they reach your application.',
+        sectionClass: 'rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-8',
+        badgeClass: 'text-xs font-mono text-cyan-400 px-2 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10',
+        arrowClass: 'text-cyan-400 mt-0.5',
         features: [
             'JSON Schema validation with custom AI-aware extensions',
             'Recursive nested object verification',
@@ -29,8 +31,10 @@ const layers = [
     {
         name: 'Boundary Control Protocol',
         tag: 'Layer 2',
-        color: 'purple',
         description: 'Enforces operational boundaries on AI behavior. Prevents scope creep, unauthorized actions, and ensures AI systems operate within their defined mandate.',
+        sectionClass: 'rounded-2xl border border-purple-500/20 bg-purple-500/5 p-8',
+        badgeClass: 'text-xs font-mono text-purple-400 px-2 py-1 rounded-full border border-purple-500/30 bg-purple-500/10',
+        arrowClass: 'text-purple-400 mt-0.5',
         features: [
             'Action admissibility verification (EAAP protocol)',
             'Scope boundary enforcement for agents',
@@ -47,8 +51,10 @@ const layers = [
     {
         name: 'Threat Prevention Layer',
         tag: 'Layer 3',
-        color: 'red',
         description: 'Detects and blocks adversarial inputs, prompt injections, and data exfiltration attempts. The immune system for AI applications.',
+        sectionClass: 'rounded-2xl border border-red-500/20 bg-red-500/5 p-8',
+        badgeClass: 'text-xs font-mono text-red-400 px-2 py-1 rounded-full border border-red-500/30 bg-red-500/10',
+        arrowClass: 'text-red-400 mt-0.5',
         features: [
             'Prompt injection detection (99.2% accuracy)',
             'Data exfiltration prevention',
@@ -65,8 +71,10 @@ const layers = [
     {
         name: 'Memory Integrity System',
         tag: 'Layer 4',
-        color: 'emerald',
         description: 'Ensures AI systems maintain consistent, verified memory across sessions. Prevents "memory hallucinations" where AI systems fabricate or corrupt stored context.',
+        sectionClass: 'rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-8',
+        badgeClass: 'text-xs font-mono text-emerald-400 px-2 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10',
+        arrowClass: 'text-emerald-400 mt-0.5',
         features: [
             'Cryptographic memory verification',
             'Cross-session consistency checks',
@@ -103,12 +111,11 @@ export default function ExogramArchitecturePage() {
                     </p>
                 </section>
 
-                {/* Architecture Stack */}
                 <div className="space-y-8 mb-16">
                     {layers.map((layer, i) => (
-                        <section key={layer.name} className={`rounded-2xl border border-${layer.color}-500/20 bg-${layer.color}-500/5 p-8`}>
+                        <section key={layer.name} className={layer.sectionClass}>
                             <div className="flex items-center gap-4 mb-6">
-                                <span className={`text-xs font-mono text-${layer.color}-400 px-2 py-1 rounded-full border border-${layer.color}-500/30 bg-${layer.color}-500/10`}>{layer.tag}</span>
+                                <span className={layer.badgeClass}>{layer.tag}</span>
                                 <h2 className="text-2xl font-grotesk font-bold text-white">{layer.name}</h2>
                             </div>
                             <p className="text-zinc-400 mb-6 max-w-3xl">{layer.description}</p>
@@ -119,7 +126,7 @@ export default function ExogramArchitecturePage() {
                                     <ul className="space-y-2">
                                         {layer.features.map(f => (
                                             <li key={f} className="flex items-start gap-2 text-sm text-zinc-400">
-                                                <span className={`text-${layer.color}-400 mt-0.5`}>→</span>
+                                                <span className={layer.arrowClass}>→</span>
                                                 {f}
                                             </li>
                                         ))}
@@ -146,7 +153,6 @@ export default function ExogramArchitecturePage() {
                     ))}
                 </div>
 
-                {/* Integration */}
                 <section className="text-center mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Integration</h2>
                     <p className="text-zinc-400 max-w-2xl mx-auto mb-8">Exogram integrates via MCP (Model Context Protocol), REST API, or SDK. Drop it into your existing AI pipeline with zero architecture changes.</p>
