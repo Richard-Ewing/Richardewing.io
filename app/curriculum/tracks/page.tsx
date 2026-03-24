@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics Curriculum — 60 Modules, 4 Tracks | Richard Ewing',
-    description: 'Four curriculum tracks for mastering product economics: Engineering Economics, AI Product Economics, R&D Capital Management, and Capstone Applied Practice. 60 comprehensive modules.',
-    keywords: ['product economics curriculum', 'engineering economics course', 'AI economics training', 'R&D capital management', 'technical debt certification', 'engineering leadership course'],
+    title: 'Product Economics Curriculum — 150 Modules, 10 Tracks | Richard Ewing',
+    description: 'Ten curriculum tracks for mastering product economics: Engineering Economics, AI Product Economics, R&D Capital Management, Capstone, DevOps, Product Management, Security, Data, Leadership, and Startup Economics. 150 comprehensive modules.',
+    keywords: ['product economics curriculum', 'engineering economics course', 'AI economics training', 'R&D capital management', 'technical debt certification', 'engineering leadership course', 'DevOps economics', 'security economics'],
     alternates: { canonical: 'https://www.richardewing.io/curriculum/tracks' },
-    openGraph: { title: 'Product Economics Curriculum — 60 Modules', description: 'Master product economics across four specialized tracks.', url: 'https://www.richardewing.io/curriculum/tracks', type: 'website' },
+    openGraph: { title: 'Product Economics Curriculum — 150 Modules, 10 Tracks', description: 'Master product economics across ten specialized tracks.', url: 'https://www.richardewing.io/curriculum/tracks', type: 'website' },
 };
 
 const tracks = [
@@ -114,10 +114,166 @@ const tracks = [
         glossaryTerms: ['burn-rate', 'cac', 'arr', 'finops', 'developer-experience', 'cost-per-hire'],
         tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }, { name: 'APER Calculator', href: '/tools/aper' }, { name: 'AUEB Calculator', href: '/tools/aueb' }, { name: 'EV-SE Calculator', href: '/tools/ev-se' }],
     },
+    {
+        title: 'DevOps & Platform Economics',
+        subtitle: 'Track 5 — Infrastructure',
+        description: 'The economics of DevOps transformation, CI/CD pipelines, platform engineering, observability investment, and infrastructure cost optimization.',
+        modules: [
+            { id: '5-1', name: '5.1 CI/CD Pipeline Economics', topics: 'Pipeline ROI, Build Time Costs, Deployment Frequency Impact', href: '/curriculum/tracks/devops-economics/5-1' },
+            { id: '5-2', name: '5.2 Observability Investment', topics: 'Monitoring ROI, MTTR Reduction, Alert Fatigue Economics', href: '/curriculum/tracks/devops-economics/5-2' },
+            { id: '5-3', name: '5.3 Infrastructure as Code ROI', topics: 'IaC Adoption Costs, Drift Prevention, Configuration Debt', href: '/curriculum/tracks/devops-economics/5-3' },
+            { id: '5-4', name: '5.4 Incident Management Economics', topics: 'Incident Costs, On-Call Economics, Post-Mortem Value', href: '/curriculum/tracks/devops-economics/5-4' },
+            { id: '5-5', name: '5.5 Container & Kubernetes Economics', topics: 'Container Overhead, K8s Cluster Costs, Right-Sizing Pods', href: '/curriculum/tracks/devops-economics/5-5' },
+            { id: '5-6', name: '5.6 Release Engineering', topics: 'Release Cost Analysis, Feature Flags ROI, Canary Deployments', href: '/curriculum/tracks/devops-economics/5-6' },
+            { id: '5-7', name: '5.7 Site Reliability Economics', topics: 'SRE Team Sizing, Error Budgets, Toil Elimination', href: '/curriculum/tracks/devops-economics/5-7' },
+            { id: '5-8', name: '5.8 Service Mesh & Networking', topics: 'Mesh Overhead, Service Discovery Costs, mTLS Performance', href: '/curriculum/tracks/devops-economics/5-8' },
+            { id: '5-9', name: '5.9 Database Operations Economics', topics: 'DBA Costs, Migration Economics, Sharding vs Scaling', href: '/curriculum/tracks/devops-economics/5-9' },
+            { id: '5-10', name: '5.10 Multi-Cloud Strategy', topics: 'Multi-Cloud Premium, Egress Costs, Vendor Diversification', href: '/curriculum/tracks/devops-economics/5-10' },
+            { id: '5-11', name: '5.11 DevSecOps Integration', topics: 'Shift-Left Economics, SAST/DAST Costs, Vulnerability SLAs', href: '/curriculum/tracks/devops-economics/5-11' },
+            { id: '5-12', name: '5.12 Platform Team Economics', topics: 'Internal Platform ROI, Developer Experience Metrics, Golden Paths', href: '/curriculum/tracks/devops-economics/5-12' },
+            { id: '5-13', name: '5.13 Edge Computing Economics', topics: 'Edge vs Cloud, CDN ROI, Latency Cost Analysis', href: '/curriculum/tracks/devops-economics/5-13' },
+            { id: '5-14', name: '5.14 Serverless Economics', topics: 'Cold Start Costs, Serverless vs Containers, Pay-per-Use Modeling', href: '/curriculum/tracks/devops-economics/5-14' },
+            { id: '5-15', name: '5.15 DevOps Maturity Synthesis', topics: 'DevOps Maturity Model, ROI Dashboard, Executive Reporting', href: '/curriculum/tracks/devops-economics/5-15' },
+        ],
+        color: 'orange',
+        icon: '🔧',
+        glossaryTerms: ['dora-metrics', 'sre', 'toil', 'error-budget', 'infrastructure-as-code'],
+        tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }],
+    },
+    {
+        title: 'Product Management Economics',
+        subtitle: 'Track 6 — Product',
+        description: 'Product economics for PMs and CPOs: feature prioritization using economic models, pricing strategy, churn economics, and the bridge between product and finance.',
+        modules: [
+            { id: '6-1', name: '6.1 Feature Prioritization Economics', topics: 'RICE vs WSJF, Opportunity Cost, Stack Ranking by Dollar Value', href: '/curriculum/tracks/product-economics/6-1' },
+            { id: '6-2', name: '6.2 Pricing & Packaging Strategy', topics: 'Value-Based Pricing, Tiering, Usage Pricing, Price Elasticity', href: '/curriculum/tracks/product-economics/6-2' },
+            { id: '6-3', name: '6.3 Churn & Retention Economics', topics: 'Churn Waterfall, LTV Modeling, Retention ROI, Cohort Analysis', href: '/curriculum/tracks/product-economics/6-3' },
+            { id: '6-4', name: '6.4 Feature Bloat Calculus', topics: 'Feature Cost Decay, Maintenance Drag, Sunset Economics', href: '/curriculum/tracks/product-economics/6-4' },
+            { id: '6-5', name: '6.5 Product-Led Growth Economics', topics: 'PLG Funnel Costs, Free Tier Economics, Conversion Optimization', href: '/curriculum/tracks/product-economics/6-5' },
+            { id: '6-6', name: '6.6 Competitive Moat Analysis', topics: 'Switching Cost Quantification, Network Effects, Data Moats', href: '/curriculum/tracks/product-economics/6-6' },
+            { id: '6-7', name: '6.7 A/B Testing Economics', topics: 'Experimentation ROI, Test Duration Costs, Statistical Significance', href: '/curriculum/tracks/product-economics/6-7' },
+            { id: '6-8', name: '6.8 Product Operations', topics: 'ProductOps ROI, Tool Costs, Process Automation', href: '/curriculum/tracks/product-economics/6-8' },
+            { id: '6-9', name: '6.9 Customer Acquisition Economics', topics: 'CAC Payback, Channel Economics, Blended CAC', href: '/curriculum/tracks/product-economics/6-9' },
+            { id: '6-10', name: '6.10 Marketplace Economics', topics: 'Platform Take Rate, Network Economics, Liquidity Metrics', href: '/curriculum/tracks/product-economics/6-10' },
+            { id: '6-11', name: '6.11 Product Analytics ROI', topics: 'Analytics Stack Costs, Insight-to-Action, Data Warehouse ROI', href: '/curriculum/tracks/product-economics/6-11' },
+            { id: '6-12', name: '6.12 Technical Product Management', topics: 'TPM Economics, API Monetization, Dev Tool Pricing', href: '/curriculum/tracks/product-economics/6-12' },
+            { id: '6-13', name: '6.13 Product Roadmap Economics', topics: 'Opportunity Cost of Roadmaps, Pivot Costs, Feature Debt', href: '/curriculum/tracks/product-economics/6-13' },
+            { id: '6-14', name: '6.14 Product-Finance Partnership', topics: 'PM Scorecards, Revenue Attribution, Unit Economics Reporting', href: '/curriculum/tracks/product-economics/6-14' },
+            { id: '6-15', name: '6.15 Product Economics Synthesis', topics: 'Complete Product Economic Model, Portfolio View, Board Report', href: '/curriculum/tracks/product-economics/6-15' },
+        ],
+        color: 'pink',
+        icon: '📱',
+        glossaryTerms: ['feature-bloat-calculus', 'cost-of-delay', 'cac', 'arr', 'product-led-growth'],
+        tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }, { name: 'APER Calculator', href: '/tools/aper' }],
+    },
+    {
+        title: 'Security & Compliance Economics',
+        subtitle: 'Track 7 — Risk',
+        description: 'The economics of security investment: breach cost modeling, compliance ROI, security debt quantification, and risk-based capital allocation.',
+        modules: [
+            { id: '7-1', name: '7.1 Breach Cost Modeling', topics: 'IBM Breach Cost Framework, Industry Benchmarks, Notification Costs', href: '/curriculum/tracks/security-economics/7-1' },
+            { id: '7-2', name: '7.2 Compliance ROI', topics: 'SOC 2 Costs, HIPAA Economics, GDPR Investment, ISO 27001', href: '/curriculum/tracks/security-economics/7-2' },
+            { id: '7-3', name: '7.3 Security Debt Quantification', topics: 'Vulnerability Cost, CVSS Economics, Remediation Prioritization', href: '/curriculum/tracks/security-economics/7-3' },
+            { id: '7-4', name: '7.4 Identity & Access Economics', topics: 'IAM Costs, SSO ROI, MFA Implementation Economics', href: '/curriculum/tracks/security-economics/7-4' },
+            { id: '7-5', name: '7.5 Application Security Investment', topics: 'SAST/DAST ROI, Bug Bounty Economics, Pen Test Value', href: '/curriculum/tracks/security-economics/7-5' },
+            { id: '7-6', name: '7.6 Security Operations Center', topics: 'SOC Costs, SIEM ROI, MDR vs In-House, Alert Economics', href: '/curriculum/tracks/security-economics/7-6' },
+            { id: '7-7', name: '7.7 Cloud Security Economics', topics: 'CSPM Costs, Cloud IAM, Encryption Overhead, Zero Trust', href: '/curriculum/tracks/security-economics/7-7' },
+            { id: '7-8', name: '7.8 Supply Chain Security', topics: 'SBOM Costs, Dependency Risk, Third-Party Assessment', href: '/curriculum/tracks/security-economics/7-8' },
+            { id: '7-9', name: '7.9 Data Protection Economics', topics: 'DLP Costs, Encryption ROI, Data Classification', href: '/curriculum/tracks/security-economics/7-9' },
+            { id: '7-10', name: '7.10 Incident Response Economics', topics: 'IR Team Costs, Tabletop Exercise ROI, Recovery Time', href: '/curriculum/tracks/security-economics/7-10' },
+            { id: '7-11', name: '7.11 Cyber Insurance Analysis', topics: 'Premium Modeling, Coverage Gaps, Risk Transfer vs Retain', href: '/curriculum/tracks/security-economics/7-11' },
+            { id: '7-12', name: '7.12 Security Awareness Training', topics: 'Training ROI, Phishing Simulation, Culture Change Costs', href: '/curriculum/tracks/security-economics/7-12' },
+            { id: '7-13', name: '7.13 Privacy Program Economics', topics: 'DPO Costs, DSAR Processing, Privacy by Design ROI', href: '/curriculum/tracks/security-economics/7-13' },
+            { id: '7-14', name: '7.14 Security Board Reporting', topics: 'CISO Board Presentations, Risk Quantification, Budget Justification', href: '/curriculum/tracks/security-economics/7-14' },
+            { id: '7-15', name: '7.15 Security Economics Synthesis', topics: 'Complete Security Investment Model, Portfolio Risk View', href: '/curriculum/tracks/security-economics/7-15' },
+        ],
+        color: 'red',
+        icon: '🛡️',
+        glossaryTerms: ['security-debt', 'compliance-cost', 'breach-cost', 'zero-trust'],
+        tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }],
+    },
+    {
+        title: 'Data & Analytics Economics',
+        subtitle: 'Track 8 — Data',
+        description: 'The economics of data infrastructure: warehouse costs, data quality ROI, analytics team sizing, ML pipeline economics, and data governance investment.',
+        modules: [
+            { id: '8-1', name: '8.1 Data Warehouse Economics', topics: 'Snowflake vs Databricks, Compute Costs, Storage Optimization', href: '/curriculum/tracks/data-economics/8-1' },
+            { id: '8-2', name: '8.2 Data Quality ROI', topics: 'Data Quality Costs, Five Dimensions, Remediation Economics', href: '/curriculum/tracks/data-economics/8-2' },
+            { id: '8-3', name: '8.3 Analytics Team Economics', topics: 'Analyst Costs, BI Tool ROI, Self-Service Analytics', href: '/curriculum/tracks/data-economics/8-3' },
+            { id: '8-4', name: '8.4 Data Pipeline Economics', topics: 'ETL vs ELT Costs, Orchestration Tools, Pipeline Maintenance', href: '/curriculum/tracks/data-economics/8-4' },
+            { id: '8-5', name: '8.5 ML Pipeline & MLOps', topics: 'Model Training Costs, Experiment Tracking, Model Serving', href: '/curriculum/tracks/data-economics/8-5' },
+            { id: '8-6', name: '8.6 Data Governance Investment', topics: 'Catalog Costs, Lineage Tools, Access Control, Metadata', href: '/curriculum/tracks/data-economics/8-6' },
+            { id: '8-7', name: '8.7 Real-Time Analytics', topics: 'Streaming Costs, Kafka Economics, Event-Driven Architecture', href: '/curriculum/tracks/data-economics/8-7' },
+            { id: '8-8', name: '8.8 Data Lake Strategy', topics: 'Lake vs Warehouse, Lakehouse ROI, Schema-on-Read Costs', href: '/curriculum/tracks/data-economics/8-8' },
+            { id: '8-9', name: '8.9 Business Intelligence ROI', topics: 'BI Platform Costs, Dashboard Proliferation, Decision Impact', href: '/curriculum/tracks/data-economics/8-9' },
+            { id: '8-10', name: '8.10 Customer Data Platform', topics: 'CDP Costs, Identity Resolution, Unification Economics', href: '/curriculum/tracks/data-economics/8-10' },
+            { id: '8-11', name: '8.11 Data Engineering Productivity', topics: 'dbt ROI, Transformation Costs, Testing Automation', href: '/curriculum/tracks/data-economics/8-11' },
+            { id: '8-12', name: '8.12 Feature Store Economics', topics: 'Feature Engineering Costs, Store ROI, Team Productivity', href: '/curriculum/tracks/data-economics/8-12' },
+            { id: '8-13', name: '8.13 Data Privacy & Compliance', topics: 'GDPR Data Costs, Anonymization, Right to Deletion', href: '/curriculum/tracks/data-economics/8-13' },
+            { id: '8-14', name: '8.14 Data Monetization', topics: 'Data-as-Product, API Monetization, Revenue Attribution', href: '/curriculum/tracks/data-economics/8-14' },
+            { id: '8-15', name: '8.15 Data Economics Synthesis', topics: 'Complete Data Investment Model, TCO Dashboard, Board Report', href: '/curriculum/tracks/data-economics/8-15' },
+        ],
+        color: 'sky',
+        icon: '📊',
+        glossaryTerms: ['data-quality', 'data-governance', 'mlops', 'feature-store'],
+        tools: [{ name: 'AUEB Calculator', href: '/tools/aueb' }],
+    },
+    {
+        title: 'Engineering Leadership',
+        subtitle: 'Track 9 — Leadership',
+        description: 'Economics for VPs and CTOs: headcount optimization, reorg economics, architecture decision records, and engineering culture as an economic asset.',
+        modules: [
+            { id: '9-1', name: '9.1 CTO Economics', topics: 'CTO vs VP Eng, Technical Leadership Costs, Board Relationship', href: '/curriculum/tracks/engineering-leadership/9-1' },
+            { id: '9-2', name: '9.2 Headcount Planning', topics: 'Hiring Economics, Backfill Costs, Team Sizing Models', href: '/curriculum/tracks/engineering-leadership/9-2' },
+            { id: '9-3', name: '9.3 Reorg Economics', topics: 'Reorganization Costs, Productivity Dip, Change Management', href: '/curriculum/tracks/engineering-leadership/9-3' },
+            { id: '9-4', name: '9.4 Architecture Decision Records', topics: 'ADR Economics, Decision Costs, Reversibility Analysis', href: '/curriculum/tracks/engineering-leadership/9-4' },
+            { id: '9-5', name: '9.5 Engineering Culture Economics', topics: 'Culture as Investment, Toxicity Costs, Psychological Safety ROI', href: '/curriculum/tracks/engineering-leadership/9-5' },
+            { id: '9-6', name: '9.6 Technical Strategy', topics: 'Technology Radar, Build vs Buy, Strategic Architecture', href: '/curriculum/tracks/engineering-leadership/9-6' },
+            { id: '9-7', name: '9.7 Talent Retention Economics', topics: 'Attrition Costs, Retention Investment, Comp Strategy', href: '/curriculum/tracks/engineering-leadership/9-7' },
+            { id: '9-8', name: '9.8 Performance Management Economics', topics: 'Review Costs, OKR Programs, Performance Improvement ROI', href: '/curriculum/tracks/engineering-leadership/9-8' },
+            { id: '9-9', name: '9.9 Mentorship & Growth Programs', topics: 'Mentorship ROI, IC Growth Tracks, Career Ladder Economics', href: '/curriculum/tracks/engineering-leadership/9-9' },
+            { id: '9-10', name: '9.10 Distributed Team Economics', topics: 'Remote Work Costs, Timezone Overlap, Tooling Investment', href: '/curriculum/tracks/engineering-leadership/9-10' },
+            { id: '9-11', name: '9.11 Innovation Programs', topics: 'Hackathon ROI, Innovation Sprint Economics, Intrapreneurship', href: '/curriculum/tracks/engineering-leadership/9-11' },
+            { id: '9-12', name: '9.12 Engineering Brand', topics: 'Employer Brand ROI, Tech Blog Economics, OSS Strategy', href: '/curriculum/tracks/engineering-leadership/9-12' },
+            { id: '9-13', name: '9.13 Exec Communication', topics: 'Board Reporting, Stakeholder Management, Technical Storytelling', href: '/curriculum/tracks/engineering-leadership/9-13' },
+            { id: '9-14', name: '9.14 Engineering M&A', topics: 'Due Diligence Leadership, Integration Playbook, Talent Retention', href: '/curriculum/tracks/engineering-leadership/9-14' },
+            { id: '9-15', name: '9.15 Leadership Economics Synthesis', topics: 'CTO Dashboard, Quarterly Reviews, Long-Term Capital Planning', href: '/curriculum/tracks/engineering-leadership/9-15' },
+        ],
+        color: 'indigo',
+        icon: '🎯',
+        glossaryTerms: ['span-of-control', 'conways-law', 'cost-per-hire', 'attrition-rate'],
+        tools: [{ name: 'APER Calculator', href: '/tools/aper' }, { name: 'Audit Interview', href: '/tools/audit-interview' }],
+    },
+    {
+        title: 'Startup Economics',
+        subtitle: 'Track 10 — Founding',
+        description: 'Engineering economics for startup founders: runway optimization, MVP economics, fundraising engineering metrics, and scaling economics from seed to Series C.',
+        modules: [
+            { id: '10-1', name: '10.1 Runway & Burn Rate', topics: 'Burn Rate Analysis, Runway Calculation, Zero-Cash Date', href: '/curriculum/tracks/startup-economics/10-1' },
+            { id: '10-2', name: '10.2 MVP Economics', topics: 'MVP Costs, Lean Development, Build-Measure-Learn Economics', href: '/curriculum/tracks/startup-economics/10-2' },
+            { id: '10-3', name: '10.3 Technical Co-Founder Economics', topics: 'CTO Equity, Technical Hiring, Early Architecture Decisions', href: '/curriculum/tracks/startup-economics/10-3' },
+            { id: '10-4', name: '10.4 Series A Engineering Metrics', topics: 'Engineering Metrics VCs Want, APER Targets, Velocity Proof', href: '/curriculum/tracks/startup-economics/10-4' },
+            { id: '10-5', name: '10.5 Scaling Engineering 1→10', topics: 'First 10 Engineers, Role Specialization, Architecture Scaling', href: '/curriculum/tracks/startup-economics/10-5' },
+            { id: '10-6', name: '10.6 Technical Debt in Startups', topics: 'Intentional Debt, Speed vs Quality, Debt-Equity Tradeoffs', href: '/curriculum/tracks/startup-economics/10-6' },
+            { id: '10-7', name: '10.7 Vendor & Tool Selection', topics: 'Startup Tool Stack Costs, Free Tier Strategy, Upgrade Triggers', href: '/curriculum/tracks/startup-economics/10-7' },
+            { id: '10-8', name: '10.8 Outsourcing Economics', topics: 'Agency vs In-House, Contractor Management, Knowledge Transfer', href: '/curriculum/tracks/startup-economics/10-8' },
+            { id: '10-9', name: '10.9 Fundraising Engineering Story', topics: 'Tech Pitch Deck, Engineering Metrics for VCs, Demo Economics', href: '/curriculum/tracks/startup-economics/10-9' },
+            { id: '10-10', name: '10.10 Scaling 10→50 Engineers', topics: 'Middle Management, Process Introduction, Culture Preservation', href: '/curriculum/tracks/startup-economics/10-10' },
+            { id: '10-11', name: '10.11 Platform vs Product Investment', topics: 'Platform Tax, Developer Tools, Internal Infrastructure', href: '/curriculum/tracks/startup-economics/10-11' },
+            { id: '10-12', name: '10.12 Acquisition Readiness', topics: 'Clean Room Prep, Technical Due Diligence, IP Documentation', href: '/curriculum/tracks/startup-economics/10-12' },
+            { id: '10-13', name: '10.13 Competition & Moat', topics: 'Technical Moat Valuation, Feature Parity Costs, Speed to Market', href: '/curriculum/tracks/startup-economics/10-13' },
+            { id: '10-14', name: '10.14 International Expansion', topics: 'Localization Costs, Multi-Region Architecture, Compliance', href: '/curriculum/tracks/startup-economics/10-14' },
+            { id: '10-15', name: '10.15 Startup Economics Synthesis', topics: 'Complete Startup Financial Model, Board Dashboard, Exit Planning', href: '/curriculum/tracks/startup-economics/10-15' },
+        ],
+        color: 'rose',
+        icon: '🚀',
+        glossaryTerms: ['burn-rate', 'arr', 'cac', 'mvp', 'product-market-fit'],
+        tools: [{ name: 'EV-SE Calculator', href: '/tools/ev-se' }, { name: 'PDI Calculator', href: '/tools/pdi' }],
+    },
 ];
 
-const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5' };
-const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400', amber: 'text-amber-400' };
+const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5' };
+const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400', amber: 'text-amber-400', orange: 'text-orange-400', pink: 'text-pink-400', red: 'text-red-400', sky: 'text-sky-400', indigo: 'text-indigo-400', rose: 'text-rose-400' };
 
 export default function CurriculumTracksPage() {
     return (
@@ -125,21 +281,21 @@ export default function CurriculumTracksPage() {
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-violet-500 uppercase tracking-widest mb-4">Curriculum — 60 Modules</div>
+                        <div className="text-xs font-mono text-violet-500 uppercase tracking-widest mb-4">Curriculum — 150 Modules</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
-                            Four Paths to{' '}
+                            Ten Paths to{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Mastery</span>
                         </h1>
                         <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-                            From engineering metrics to AI economics to capital management to applied practice. 60 modules, 150+ lessons, each with hands-on exercises and tools. 420+ glossary definitions underpin every module.
+                            From engineering metrics to AI economics to security to startup economics. 150 modules, 400+ lessons, each with hands-on exercises and tools. 420+ glossary definitions underpin every module.
                         </p>
                         <div className="flex items-center justify-center gap-6 mt-6 flex-wrap">
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">60</div>
+                                <div className="text-2xl font-grotesk font-bold text-white">150</div>
                                 <div className="text-xs text-zinc-500">Modules</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">150+</div>
+                                <div className="text-2xl font-grotesk font-bold text-white">400+</div>
                                 <div className="text-xs text-zinc-500">Lessons</div>
                             </div>
                             <div className="text-center">
