@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
+import RelatedContent from '@/components/RelatedContent';
 
 export const metadata: Metadata = {
     title: 'The Executive\'s Guide to Technology Investment | Richard Ewing',
@@ -114,8 +115,9 @@ export default function ExecutiveTechnologyGuidePage() {
                         <p className="text-zinc-300 mb-6">Richard Ewing provides board-level technical oversight and delivers R&D Capital Audit reports in language your board and investors understand.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-bold hover:opacity-90 transition-opacity">Book a Board-Ready Audit →</Link>
                     </div>
+                <RelatedContent currentSlug="executive-technology-guide" type="guide" count={3} />
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
     );
 }

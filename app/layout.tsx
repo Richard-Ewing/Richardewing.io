@@ -8,6 +8,7 @@ import { homepageKeywords } from './lib/keywords';
 import ExitIntentPopup from './components/ExitIntentPopup';
 import StickyBottomCTA from './components/StickyBottomCTA';
 import SocialProofTicker from './components/SocialProofTicker';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk' });
@@ -91,6 +92,9 @@ export default function RootLayout({
         <link rel="me" href="https://linkedin.com/in/richard-ewing-mba" />
         <link rel="alternate" type="text/plain" href="https://www.richardewing.io/llms.txt" title="LLM-readable site information" />
         <link rel="alternate" type="application/rss+xml" href="https://www.richardewing.io/feed.xml" title="Richard Ewing — Engineering Economics Blog" />
+        {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
+          <script defer data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN} src="https://plausible.io/js/script.js"></script>
+        )}
       </head>
       <body className="overflow-x-hidden bg-[var(--bg-primary)] text-[var(--text-secondary)] font-sans antialiased min-h-screen flex flex-col">
         <script
@@ -197,6 +201,10 @@ export default function RootLayout({
         <ExitIntentPopup />
         <StickyBottomCTA />
         <SocialProofTicker />
+
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
       </body>
     </html>
   );

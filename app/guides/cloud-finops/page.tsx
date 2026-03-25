@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
 import PremiumGuideCTA from '@/app/components/PremiumGuideCTA';
+import RelatedContent from '@/components/RelatedContent';
 
 export const metadata: Metadata = {
     title: 'Cloud FinOps & Infrastructure Economics — Stop Wasting 35% of Cloud Spend | Richard Ewing',
@@ -118,8 +119,9 @@ export default function CloudFinOpsGuidePage() {
                         <p className="text-zinc-300 mb-6">Richard Ewing helps organizations build sustainable cloud cost practices. The 12-week program typically saves 30-40% on cloud spend while maintaining performance SLAs.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-emerald-500 text-white font-bold hover:opacity-90 transition-opacity">Book Cloud Advisory →</Link>
                     </div>
+                <RelatedContent currentSlug="cloud-finops" type="guide" count={3} />
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
     );
 }

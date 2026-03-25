@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
 import PremiumGuideCTA from '@/app/components/PremiumGuideCTA';
+import RelatedContent from '@/components/RelatedContent';
 
 export const metadata: Metadata = {
     title: 'SaaS Metrics Masterclass — From ARR to Engineering ROI | Richard Ewing',
@@ -118,8 +119,9 @@ export default function SaaSMetricsGuidePage() {
                         <p className="text-zinc-300 mb-6">Richard Ewing helps SaaS companies connect engineering investment to financial outcomes. Board-ready analysis that shows exactly how engineering drives ARR, NRR, and exit multiples.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-violet-500 text-white font-bold hover:opacity-90 transition-opacity">Book SaaS Advisory →</Link>
                     </div>
+                <RelatedContent currentSlug="saas-metrics" type="guide" count={3} />
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
     );
 }

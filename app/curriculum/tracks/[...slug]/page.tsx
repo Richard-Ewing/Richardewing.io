@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getModule, getAllModuleSlugs, type CurriculumModule } from '@/lib/curriculum-data';
+import ModuleCompleteButton from '@/app/components/ModuleCompleteButton';
 
 export async function generateStaticParams() {
     return getAllModuleSlugs().map(s => ({ slug: s.split('/') }));
@@ -82,12 +83,7 @@ function ModuleCard({ mod }: { mod: CurriculumModule }) {
                         ))}
                     </div>
 
-                    <div className="mt-12 flex items-center justify-between">
-                        <Link href="/curriculum/tracks" className="text-sm text-zinc-500 hover:text-white transition-colors">← Back to Tracks</Link>
-                        {mod.nextHref && (
-                            <Link href={mod.nextHref} className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-sm hover:opacity-90 transition-opacity">Next Module →</Link>
-                        )}
-                    </div>
+                    <ModuleCompleteButton nextHref={mod.nextHref} moduleTitle={`${mod.moduleId}: ${mod.title}`} />
                 </div>
             </div>
         </main>
@@ -100,3 +96,4 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
     if (!mod) notFound();
     return <ModuleCard mod={mod} />;
 }
+

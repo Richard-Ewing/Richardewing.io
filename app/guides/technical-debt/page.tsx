@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
+import RelatedContent from '@/components/RelatedContent';
 
 export const metadata: Metadata = {
     title: 'The Complete Guide to Technical Debt — Economic Framework | Richard Ewing',
@@ -139,8 +140,9 @@ export default function TechnicalDebtGuidePage() {
                         <p className="text-zinc-300 mb-6">Richard Ewing advises CTOs, CFOs, and boards on technical debt economics. R&D Capital Audits quantify your debt in dollars and quarters.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-amber-500 text-white font-bold hover:opacity-90 transition-opacity">Book an R&D Capital Audit →</Link>
                     </div>
+                <RelatedContent currentSlug="technical-debt" type="guide" count={3} />
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
     );
 }

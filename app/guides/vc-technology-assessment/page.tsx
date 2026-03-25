@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
 import PremiumGuideCTA from '@/app/components/PremiumGuideCTA';
+import RelatedContent from '@/components/RelatedContent';
 
 export const metadata: Metadata = {
     title: 'VC Technology Assessment Framework — Evaluate Before You Invest | Richard Ewing',
@@ -118,8 +119,9 @@ export default function VCTechnologyAssessmentGuidePage() {
                         <p className="text-zinc-300 mb-6">PE/VC firms engage Richard Ewing as a standing due diligence partner. Get pre-negotiated rates for deal-flow technical assessments and portfolio monitoring.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-bold hover:opacity-90 transition-opacity">Discuss VC Partnership →</Link>
                     </div>
+                <RelatedContent currentSlug="vc-technology-assessment" type="guide" count={3} />
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
     );
 }

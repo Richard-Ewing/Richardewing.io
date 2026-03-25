@@ -7,6 +7,7 @@ import { TrendingUp, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, 
 import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
+import ToolCelebration from '../../components/ToolCelebration';
 
 // --- MAGIC UI COMPONENTS ---
 
@@ -254,6 +255,7 @@ export default function APERTool() {
 
     return (
         <div className="min-h-screen bg-[#050505] text-zinc-200 selection:bg-cyan-500/30 font-sans">
+            <ToolCelebration show={!!results} toolName="APER" />
 
             {/* HEADER */}
             <nav className="border-b border-white/5 bg-black/50 backdrop-blur-xl sticky top-0 z-50">

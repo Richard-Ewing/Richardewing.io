@@ -1,4 +1,5 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next';import { exogramDocs } from '@/lib/exogram-docs';
+
 import { glossaryTerms } from './glossary/terms';
 import { frameworks } from '@/lib/data';
 
@@ -524,6 +525,101 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         })),
+        // --- DYNAMICALLY INJECTED 50/50 MILESTONE AND EXOGRAM DOCS ---
+        ...[
+            'rust-vs-go',
+            'kafka-vs-rabbitmq',
+            'redis-vs-memcached',
+            'docker-swarm-vs-kubernetes',
+            'grpc-vs-trpc',
+            'cypress-vs-playwright',
+            'cloudflare-vs-fastly',
+            'snowflake-vs-redshift',
+            'auth0-vs-clerk',
+            'tailwind-vs-css-in-js',
+            'pdi-vs-dora',
+            'build-vs-buy',
+            'graphql-vs-rest',
+            'terraform-vs-pulumi',
+            'datadog-vs-grafana',
+            'revenue-per-engineer',
+            'technical-debt-types',
+            'agile-vs-kanban',
+            'monolith-vs-microservices',
+            'fine-tuning-vs-rag',
+            'staff-augmentation-vs-delivery',
+            'platform-team-vs-sres',
+            'capex-vs-opex',
+            'dora-vs-space',
+            'aws-vs-gcp-vs-azure',
+            'copilot-vs-cursor',
+            'react-spa-vs-nextjs',
+            'postgresql-vs-mongodb',
+            'build-ai-vs-buy-ai',
+            'soc2-vs-iso27001',
+            'scrum-vs-safe',
+            'okrs-vs-kpis',
+            'feature-flags-vs-branching',
+            'self-hosted-ai-vs-ai-saas',
+            'tech-debt-vs-design-debt',
+            'offshore-vs-nearshore',
+            'unit-tests-vs-integration-tests',
+            'clickhouse-vs-bigquery',
+            'vertical-ai-vs-horizontal-ai',
+            'aper-vs-rpe',
+            'langchain-vs-llamaindex',
+            'openai-vs-anthropic',
+            'vercel-vs-netlify',
+            'datadog-vs-newrelic',
+            'github-actions-vs-gitlab-ci',
+            'snowflake-vs-databricks',
+            'kubernetes-vs-serverless',
+            'linear-vs-jira',
+            'supabase-vs-firebase',
+            'dbt-vs-airflow'
+        ].map(slug => ({
+            url: `${baseUrl}/comparisons/${slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+        })),
+
+        ...[
+            'technical-debt',
+            'engineering-efficiency',
+            'executive-technology-guide',
+            'product-economics',
+            'engineering-leadership-handbook',
+            'multi-agent-orchestration',
+            'cto-to-ctro',
+            'ai-native-development-teams',
+            'post-quantum-migration',
+            'hybrid-ai-infrastructure',
+            'ai-economics',
+            'pe-due-diligence',
+            'vc-technology-assessment',
+            'saas-metrics',
+            'cloud-finops',
+            'ai-agent-compliance-framework',
+            'confidential-computing-playbook',
+            'gpu-finops-supercomputing',
+            'ai-security-posture-2026',
+            'spatial-computing-economics'
+        ].map(slug => ({
+            url: `${baseUrl}/guides/${slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+        })),
+
+        ...exogramDocs.map(doc => ({
+            url: `${baseUrl}/exogram/docs/${doc.slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly' as const,
+            priority: 0.8,
+        })),
+
+
 
         // Legal
         {

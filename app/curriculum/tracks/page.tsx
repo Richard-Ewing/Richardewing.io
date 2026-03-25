@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics Curriculum — 150 Modules, 10 Tracks | Richard Ewing',
-    description: 'Ten curriculum tracks for mastering product economics: Engineering Economics, AI Product Economics, R&D Capital Management, Capstone, DevOps, Product Management, Security, Data, Leadership, and Startup Economics. 150 comprehensive modules.',
-    keywords: ['product economics curriculum', 'engineering economics course', 'AI economics training', 'R&D capital management', 'technical debt certification', 'engineering leadership course', 'DevOps economics', 'security economics'],
+    title: 'Product Economics Curriculum — 190 Modules, 14 Tracks | Richard Ewing',
+    description: 'Fourteen curriculum tracks for mastering product economics: Engineering Economics, AI Product Economics, R&D Capital Management, Capstone, DevOps, Product Management, Security, Data, Leadership, Startup, AI Operations, Enterprise Architecture, AI Agents, and Cloud FinOps. 190 comprehensive modules.',
+    keywords: ['product economics curriculum', 'engineering economics course', 'AI economics training', 'R&D capital management', 'technical debt certification', 'engineering leadership course', 'DevOps economics', 'security economics', 'cloud finops', 'AI agent economics'],
     alternates: { canonical: 'https://www.richardewing.io/curriculum/tracks' },
-    openGraph: { title: 'Product Economics Curriculum — 150 Modules, 10 Tracks', description: 'Master product economics across ten specialized tracks.', url: 'https://www.richardewing.io/curriculum/tracks', type: 'website' },
+    openGraph: { title: 'Product Economics Curriculum — 190 Modules, 14 Tracks', description: 'Master product economics across fourteen specialized tracks.', url: 'https://www.richardewing.io/curriculum/tracks', type: 'website' },
 };
 
 const tracks = [
@@ -270,10 +270,94 @@ const tracks = [
         glossaryTerms: ['burn-rate', 'arr', 'cac', 'mvp', 'product-market-fit'],
         tools: [{ name: 'EV-SE Calculator', href: '/tools/ev-se' }, { name: 'PDI Calculator', href: '/tools/pdi' }],
     },
+    {
+        title: 'AI Operations & Governance',
+        subtitle: 'Track 11 — AI Ops',
+        description: 'The economics of deploying, governing, and scaling AI systems: model selection, prompt engineering ROI, AI compliance, and vendor comparison.',
+        modules: [
+            { id: '11-1', name: '11.1 AI Model Selection Economics', topics: 'Foundation Model Costs, Inference Pricing, Quality-Cost Tradeoffs', href: '/curriculum/tracks/ai-operations/11-1' },
+            { id: '11-2', name: '11.2 Prompt Engineering ROI', topics: 'Prompt Library Economics, Testing Costs, Prompt Infrastructure', href: '/curriculum/tracks/ai-operations/11-2' },
+            { id: '11-3', name: '11.3 AI Testing & Evaluation', topics: 'Eval Suite Costs, Benchmark Design, Quality Gate Economics', href: '/curriculum/tracks/ai-operations/11-3' },
+            { id: '11-4', name: '11.4 Hallucination Cost Modeling', topics: 'Detection Costs, Business Impact, Guardrail Investment', href: '/curriculum/tracks/ai-operations/11-4' },
+            { id: '11-5', name: '11.5 RAG Architecture Economics', topics: 'Embedding Costs, Vector DB Pricing, Chunking Strategy', href: '/curriculum/tracks/ai-operations/11-5' },
+            { id: '11-6', name: '11.6 AI Agent Economics', topics: 'Agent Orchestration, Tool-Use Pricing, Multi-Agent Systems', href: '/curriculum/tracks/ai-operations/11-6' },
+            { id: '11-7', name: '11.7 AI Compliance & Audit', topics: 'EU AI Act, NIST AI RMF, Model Cards, Governance Committees', href: '/curriculum/tracks/ai-operations/11-7' },
+            { id: '11-8', name: '11.8 AI Vendor Comparison', topics: 'OpenAI vs Anthropic vs Google, TCO, Switching Costs', href: '/curriculum/tracks/ai-operations/11-8' },
+            { id: '11-9', name: '11.9 AI Team Building', topics: 'ML Engineer Compensation, Skill Gap, Training Investment', href: '/curriculum/tracks/ai-operations/11-9' },
+            { id: '11-10', name: '11.10 AI Operations Synthesis', topics: 'Complete AI Economic Model, GPU Forecasting, Strategy', href: '/curriculum/tracks/ai-operations/11-10' },
+        ],
+        color: 'teal',
+        icon: '🧠',
+        glossaryTerms: ['ai-inference', 'rag', 'guardrails', 'token-ai', 'ai-cogs'],
+        tools: [{ name: 'AUEB Calculator', href: '/tools/aueb' }, { name: 'AI Scoring', href: '/tools/scoring' }],
+    },
+    {
+        title: 'Enterprise Architecture Economics',
+        subtitle: 'Track 12 — Architecture',
+        description: 'The economics of designing, evolving, and governing enterprise systems: ARB costs, API gateways, event-driven architecture, and legacy modernization.',
+        modules: [
+            { id: '12-1', name: '12.1 Architecture Review Board', topics: 'ARB Costs, Decision Throughput, Governance Overhead', href: '/curriculum/tracks/enterprise-architecture/12-1' },
+            { id: '12-2', name: '12.2 API Gateway & Integration', topics: 'Gateway Licensing, Integration Patterns, API Lifecycle', href: '/curriculum/tracks/enterprise-architecture/12-2' },
+            { id: '12-3', name: '12.3 Event-Driven Architecture', topics: 'Event Bus Costs, CQRS Economics, Event Sourcing ROI', href: '/curriculum/tracks/enterprise-architecture/12-3' },
+            { id: '12-4', name: '12.4 Legacy Modernization ROI', topics: 'Strangler Fig Economics, Big Bang vs Incremental', href: '/curriculum/tracks/enterprise-architecture/12-4' },
+            { id: '12-5', name: '12.5 Domain-Driven Design', topics: 'DDD Implementation, Bounded Contexts, Strategic Design', href: '/curriculum/tracks/enterprise-architecture/12-5' },
+            { id: '12-6', name: '12.6 High Availability & DR', topics: 'HA Infrastructure Costs, RPO/RTO Economics, DR Testing', href: '/curriculum/tracks/enterprise-architecture/12-6' },
+            { id: '12-7', name: '12.7 Service Mesh & Zero Trust', topics: 'Mesh Overhead, mTLS Impact, Identity-Aware Proxies', href: '/curriculum/tracks/enterprise-architecture/12-7' },
+            { id: '12-8', name: '12.8 Database Strategy', topics: 'Polyglot Persistence, Read Replica Economics, Migration', href: '/curriculum/tracks/enterprise-architecture/12-8' },
+            { id: '12-9', name: '12.9 Architecture Decision Records', topics: 'ADR Program Costs, Decision Tracking, Governance', href: '/curriculum/tracks/enterprise-architecture/12-9' },
+            { id: '12-10', name: '12.10 Enterprise Architecture Synthesis', topics: 'EA Model, Technology Radar, Architecture Health', href: '/curriculum/tracks/enterprise-architecture/12-10' },
+        ],
+        color: 'lime',
+        icon: '🏗️',
+        glossaryTerms: ['architecture-review-board', 'conways-law', 'vendor-lock-in', 'infrastructure-as-code'],
+        tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }],
+    },
+    {
+        title: 'AI Agent & Automation Economics',
+        subtitle: 'Track 13 — Agents',
+        description: 'The economics of building, deploying, and operating agentic AI systems: build vs buy, RAG pipelines, multi-agent orchestration, and AI safety.',
+        modules: [
+            { id: '13-1', name: '13.1 Agentic AI Fundamentals', topics: 'Agent Architecture Costs, Token Economics, Inference Spending', href: '/curriculum/tracks/ai-agent-economics/13-1' },
+            { id: '13-2', name: '13.2 AI Agent Build vs Buy', topics: 'AutoGPT, CrewAI, LangGraph, Vendor Pricing, Customization ROI', href: '/curriculum/tracks/ai-agent-economics/13-2' },
+            { id: '13-3', name: '13.3 RAG Pipeline Optimization', topics: 'Embedding Costs, Vector DB Pricing, Chunking Economics', href: '/curriculum/tracks/ai-agent-economics/13-3' },
+            { id: '13-4', name: '13.4 LLM Inference Cost Modeling', topics: 'GPU Costs (H100, L40S), Cloud Pricing, Batching, Caching', href: '/curriculum/tracks/ai-agent-economics/13-4' },
+            { id: '13-5', name: '13.5 AI Agent Monitoring', topics: 'LangSmith, Arize, Cost Per Query, Drift Detection', href: '/curriculum/tracks/ai-agent-economics/13-5' },
+            { id: '13-6', name: '13.6 Multi-Agent Systems', topics: 'Orchestration Overhead, Agent Communication, Scaling', href: '/curriculum/tracks/ai-agent-economics/13-6' },
+            { id: '13-7', name: '13.7 AI Workflow Automation', topics: 'RPA vs AI Agents, Human-in-the-Loop, Automation Maturity', href: '/curriculum/tracks/ai-agent-economics/13-7' },
+            { id: '13-8', name: '13.8 Prompt Engineering at Scale', topics: 'Prompt Library, A/B Testing, Versioning, Prompt-as-Code', href: '/curriculum/tracks/ai-agent-economics/13-8' },
+            { id: '13-9', name: '13.9 AI Safety & Guardrails', topics: 'Content Filtering, Output Validation, Safety-Performance', href: '/curriculum/tracks/ai-agent-economics/13-9' },
+            { id: '13-10', name: '13.10 AI Maturity Assessment', topics: 'AI Maturity Models, Readiness Scoring, Total AI TCO', href: '/curriculum/tracks/ai-agent-economics/13-10' },
+        ],
+        color: 'fuchsia',
+        icon: '🤖',
+        glossaryTerms: ['ai-inference', 'rag', 'guardrails', 'orchestration-debt', 'ai-cogs'],
+        tools: [{ name: 'AUEB Calculator', href: '/tools/aueb' }],
+    },
+    {
+        title: 'Cloud FinOps & Infrastructure',
+        subtitle: 'Track 14 — FinOps',
+        description: 'The economics of cloud cost management, optimization, and FinOps practice: cost allocation, reserved instances, K8s cost management, and multi-cloud arbitrage.',
+        modules: [
+            { id: '14-1', name: '14.1 FinOps Fundamentals', topics: 'FinOps Maturity, Stakeholder Alignment, Team Sizing', href: '/curriculum/tracks/cloud-finops/14-1' },
+            { id: '14-2', name: '14.2 Cloud Cost Allocation', topics: 'Tagging Strategies, Showback Dashboards, Chargeback', href: '/curriculum/tracks/cloud-finops/14-2' },
+            { id: '14-3', name: '14.3 Reserved Instances & Savings Plans', topics: 'RI vs Savings Plans, Coverage Analysis, Break-Even', href: '/curriculum/tracks/cloud-finops/14-3' },
+            { id: '14-4', name: '14.4 Kubernetes Cost Management', topics: 'K8s Right-Sizing, Namespace Budgets, Cluster Allocation', href: '/curriculum/tracks/cloud-finops/14-4' },
+            { id: '14-5', name: '14.5 Serverless vs Container Economics', topics: 'Lambda vs ECS vs EKS, Cold Start, Workload Fit', href: '/curriculum/tracks/cloud-finops/14-5' },
+            { id: '14-6', name: '14.6 Multi-Cloud Arbitrage', topics: 'Cross-Cloud Pricing, Egress Management, Negotiation', href: '/curriculum/tracks/cloud-finops/14-6' },
+            { id: '14-7', name: '14.7 Cloud Migration ROI', topics: 'Lift-and-Shift vs Refactor, Timeline, Post-Migration', href: '/curriculum/tracks/cloud-finops/14-7' },
+            { id: '14-8', name: '14.8 Data Transfer & Egress', topics: 'CDN Economics, Edge Caching, Bandwidth, Data Locality', href: '/curriculum/tracks/cloud-finops/14-8' },
+            { id: '14-9', name: '14.9 FinOps Team & Governance', topics: 'FinOps Roles, KPI Frameworks, Executive Reporting', href: '/curriculum/tracks/cloud-finops/14-9' },
+            { id: '14-10', name: '14.10 Infrastructure Synthesis', topics: 'Cloud Economic Model, Optimization Dashboard, Strategy', href: '/curriculum/tracks/cloud-finops/14-10' },
+        ],
+        color: 'blue',
+        icon: '☁️',
+        glossaryTerms: ['finops', 'infrastructure-as-code', 'cloud-cost-optimization'],
+        tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }, { name: 'AUEB Calculator', href: '/tools/aueb' }],
+    },
 ];
 
-const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5' };
-const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400', amber: 'text-amber-400', orange: 'text-orange-400', pink: 'text-pink-400', red: 'text-red-400', sky: 'text-sky-400', indigo: 'text-indigo-400', rose: 'text-rose-400' };
+const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5', teal: 'border-teal-500/30 bg-teal-500/5', lime: 'border-lime-500/30 bg-lime-500/5', fuchsia: 'border-fuchsia-500/30 bg-fuchsia-500/5', blue: 'border-blue-500/30 bg-blue-500/5' };
+const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400', amber: 'text-amber-400', orange: 'text-orange-400', pink: 'text-pink-400', red: 'text-red-400', sky: 'text-sky-400', indigo: 'text-indigo-400', rose: 'text-rose-400', teal: 'text-teal-400', lime: 'text-lime-400', fuchsia: 'text-fuchsia-400', blue: 'text-blue-400' };
 
 export default function CurriculumTracksPage() {
     return (
@@ -281,21 +365,21 @@ export default function CurriculumTracksPage() {
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-violet-500 uppercase tracking-widest mb-4">Curriculum — 150 Modules</div>
+                        <div className="text-xs font-mono text-violet-500 uppercase tracking-widest mb-4">Curriculum — 190 Modules</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
-                            Ten Paths to{' '}
+                            Fourteen Paths to{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Mastery</span>
                         </h1>
                         <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-                            From engineering metrics to AI economics to security to startup economics. 150 modules, 400+ lessons, each with hands-on exercises and tools. 420+ glossary definitions underpin every module.
+                            From engineering metrics to AI economics to security to startup economics. 190 modules, 500+ lessons, each with hands-on exercises and tools. 420+ glossary definitions underpin every module.
                         </p>
                         <div className="flex items-center justify-center gap-6 mt-6 flex-wrap">
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">150</div>
+                                <div className="text-2xl font-grotesk font-bold text-white">190</div>
                                 <div className="text-xs text-zinc-500">Modules</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">400+</div>
+                                <div className="text-2xl font-grotesk font-bold text-white">500+</div>
                                 <div className="text-xs text-zinc-500">Lessons</div>
                             </div>
                             <div className="text-center">

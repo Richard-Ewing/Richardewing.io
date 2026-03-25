@@ -10,6 +10,7 @@ import { BorderBeam } from '../../components/magicui/border-beam';
 import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
+import ToolCelebration from '../../components/ToolCelebration';
 
 // Simple Bar Chart component (no external dependency)
 const WaterfallChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
@@ -255,6 +256,7 @@ export default function EVSETool() {
 
     return (
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
+            <ToolCelebration show={!!results} toolName="EV-SE" />
             {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-white transition">Intelligence</Link>

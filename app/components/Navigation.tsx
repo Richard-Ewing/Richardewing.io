@@ -42,58 +42,41 @@ const Navigation = () => {
                             </div>
                         </Link>
 
-                        {/* Desktop Nav */}
+                        {/* Desktop Nav — Simplified: 3 dropdowns + Start Here */}
                         <div className="hidden md:flex items-center gap-6 lg:gap-8">
 
-                            <Dropdown label="Advisory">
-                                <DropdownItem href="/advisory">Advisory Services</DropdownItem>
-                                <DropdownItem href="/methodology">Methodology (How It Works)</DropdownItem>
-                                <DropdownItem href="/principal">The Principal</DropdownItem>
-                                <DropdownItem href="/workshops">Workshops & Speaking</DropdownItem>
-                                <DropdownItem href="/advisory/licensing">White-Label Licensing</DropdownItem>
-                                <DropdownItem href="/certification">Certification (CPE)</DropdownItem>
-                                <DropdownItem href="/partnerships">Partnerships</DropdownItem>
-                            </Dropdown>
+                            {/* Start Here — the golden path for new visitors */}
+                            <Link href="/doctrine" className="text-emerald-400 hover:text-emerald-300 transition-colors relative group font-semibold">
+                                ✦ Start Here
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
+                            </Link>
 
                             <Dropdown label="Learn">
-                                <DropdownItem href="/doctrine">Doctrine (Framework)</DropdownItem>
-                                <DropdownItem href="/manifesto">Manifesto (Philosophy)</DropdownItem>
-                                <DropdownItem href="/articles">Articles (Publications)</DropdownItem>
-                                <DropdownItem href="/glossary">Glossary (420+ Definitions)</DropdownItem>
-                                <DropdownItem href="/guides">Guides (10 Playbooks)</DropdownItem>
-                                <DropdownItem href="/comparisons">Comparisons (10 Analyses)</DropdownItem>
-                                <DropdownItem href="/curriculum">Curriculum (Overview)</DropdownItem>
-                                <DropdownItem href="/curriculum/tracks">Curriculum Tracks (4 Paths)</DropdownItem>
-                                <DropdownItem href="/benchmark">Benchmark Report (Free)</DropdownItem>
-                                <DropdownItem href="/briefings">Briefings (Newsletter)</DropdownItem>
-                                <DropdownItem href="/resources/ai-courses">AI Courses (Free)</DropdownItem>
+                                <DropdownItem href="/guides" description="50 free & premium playbooks">Guides</DropdownItem>
+                                <DropdownItem href="/comparisons" description="50 Gartner-grade analyses">Comparisons</DropdownItem>
+                                <DropdownItem href="/curriculum" description="190 modules across 14 tracks">Curriculum</DropdownItem>
+                                <DropdownItem href="/glossary" description="420+ engineering economics terms">Glossary</DropdownItem>
+                                <DropdownItem href="/blog" description="105 articles on engineering economics">Blog</DropdownItem>
+                                <DropdownItem href="/resources/ai-courses" description="Free AI & engineering courses">AI Courses</DropdownItem>
                             </Dropdown>
 
                             <Dropdown label="Tools">
-                                <DropdownItem href="/tools/pdi">PDI — Product Debt Index</DropdownItem>
-                                <DropdownItem href="/tools/ev-se">EV-SE — Valuation Engine</DropdownItem>
-                                <DropdownItem href="/tools/aueb">AUEB — AI Unit Economics</DropdownItem>
-                                <DropdownItem href="/tools/aper">APER — Engineering Ratio</DropdownItem>
-                                <DropdownItem href="/tools/audit-interview">Audit Interview</DropdownItem>
-                                <DropdownItem href="/compare">Compare Tools</DropdownItem>
-                                <DropdownItem href="/roi">ROI Calculator</DropdownItem>
+                                <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">PDI — Product Debt Index</DropdownItem>
+                                <DropdownItem href="/tools/ev-se" description="Model enterprise value per engineer">EV-SE — Valuation Engine</DropdownItem>
+                                <DropdownItem href="/tools/aueb" description="Calculate AI unit economics">AUEB — AI Unit Economics</DropdownItem>
+                                <DropdownItem href="/tools/aper" description="Measure adjusted productivity ratio">APER — Engineering Ratio</DropdownItem>
+                                <DropdownItem href="/tools/audit-interview" description="Structured technical assessment">Audit Interview</DropdownItem>
                             </Dropdown>
 
-                            <Dropdown label="Engage">
-                                <DropdownItem href="/for-investors" description="Due diligence, portfolio monitoring, technology risk">💼 For Investors (PE/VC)</DropdownItem>
-                                <DropdownItem href="/for-boards" description="Technical oversight, board reporting, governance">🏛️ For Board Directors</DropdownItem>
-                                <DropdownItem href="/for-ctos" description="R&D economics, team scaling, technical debt">⚡ For CTOs</DropdownItem>
-                                <DropdownItem href="/pricing" description="Engagements from $450 to retained advisory">💰 Advisory Pricing</DropdownItem>
-                                <DropdownItem href="/case-studies" description="Real results from real engagements">📊 Case Studies</DropdownItem>
-                                <DropdownItem href="/testimonials" description="What clients and partners say">⭐ Testimonials</DropdownItem>
-                                <DropdownItem href="/industries" description="14 verticals from SaaS to HealthTech">🏭 Industries (14)</DropdownItem>
-                                <DropdownItem href="/resources" description="Guides, tools, AI courses, frameworks">📚 Resource Hub</DropdownItem>
+                            <Dropdown label="Advisory">
+                                <DropdownItem href="/advisory" description="R&D Capital Audits & fractional CTO">Advisory Services</DropdownItem>
+                                <DropdownItem href="/pricing" description="Engagements from $450+">Pricing</DropdownItem>
+                                <DropdownItem href="/for-ctos" description="R&D economics, team scaling">For CTOs</DropdownItem>
+                                <DropdownItem href="/for-investors" description="Due diligence, portfolio monitoring">For Investors</DropdownItem>
+                                <DropdownItem href="/for-boards" description="Technical oversight, governance">For Boards</DropdownItem>
+                                <DropdownItem href="/case-studies" description="Real results from engagements">Case Studies</DropdownItem>
+                                <DropdownItem href="/principal" description="About Richard Ewing">The Principal</DropdownItem>
                             </Dropdown>
-
-                            <Link href="/blog" className="text-gray-300 hover:text-white transition-colors relative group">
-                                Blog
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all group-hover:w-full" />
-                            </Link>
 
                             <Link href="/exogram" className="text-gray-300 hover:text-white transition-colors relative group">
                                 Exogram
@@ -200,63 +183,52 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                 <div className="p-6 space-y-8 pb-20">
 
-                    <MobileSection title="ADVISORY" href="/advisory" onClick={onClose}>
-                        <div className="text-gray-400 mb-4">Book an R&D audit</div>
-                        <MobileLink href="/principal" onClick={onClose} className="border-l-2 border-[var(--accent-purple)]">
-                            The Principal (Bio)
-                        </MobileLink>
-                        <MobileLink href="/workshops" onClick={onClose}>Workshops & Speaking</MobileLink>
-                        <MobileLink href="/advisory/licensing" onClick={onClose}>White-Label Licensing</MobileLink>
-                        <MobileLink href="/certification" onClick={onClose}>Certification (CPE)</MobileLink>
-                    </MobileSection>
+                    {/* Start Here - Hero CTA */}
+                    <Link
+                        href="/doctrine"
+                        onClick={onClose}
+                        className="block w-full bg-gradient-to-r from-emerald-600 to-cyan-600 text-white text-center font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity"
+                    >
+                        ✦ START HERE
+                    </Link>
 
                     <div className="w-full h-px bg-white/10" />
 
-                    <div className="space-y-4">
-                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Learn</h3>
-                        <MobileLink href="/doctrine" onClick={onClose}>Doctrine</MobileLink>
-                        <MobileLink href="/manifesto" onClick={onClose}>Manifesto</MobileLink>
-                        <MobileLink href="/articles" onClick={onClose}>Articles</MobileLink>
-                        <MobileLink href="/glossary" onClick={onClose}>Glossary (400+)</MobileLink>
-                        <MobileLink href="/curriculum" onClick={onClose}>Curriculum</MobileLink>
-                        <MobileLink href="/curriculum/tracks" onClick={onClose}>Curriculum Tracks</MobileLink>
-                        <MobileLink href="/guides" onClick={onClose}>Guides</MobileLink>
-                        <MobileLink href="/benchmark" onClick={onClose}>Benchmark Report</MobileLink>
-                        <MobileLink href="/briefings" onClick={onClose}>Briefings</MobileLink>
+                    {/* Learn Section */}
+                    <div className="space-y-3">
+                        <h3 className="text-xs font-bold text-cyan-400 uppercase tracking-widest pl-2">Learn</h3>
+                        <MobileLink href="/guides" onClick={onClose}>Guides (50 Playbooks)</MobileLink>
+                        <MobileLink href="/comparisons" onClick={onClose}>Comparisons (50 Analyses)</MobileLink>
+                        <MobileLink href="/curriculum" onClick={onClose}>Curriculum (190 Modules)</MobileLink>
+                        <MobileLink href="/glossary" onClick={onClose}>Glossary (420+ Terms)</MobileLink>
+                        <MobileLink href="/blog" onClick={onClose}>Blog (105 Articles)</MobileLink>
                         <MobileLink href="/resources/ai-courses" onClick={onClose}>AI Courses (Free)</MobileLink>
-                        <MobileLink href="/blog" onClick={onClose}>Blog</MobileLink>
                     </div>
 
-                    <div className="space-y-4">
-                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Free Tools</h3>
-                        <MobileLink href="/tools/pdi" onClick={onClose}>Product Debt Index</MobileLink>
-                        <MobileLink href="/tools/ev-se" onClick={onClose}>EV-SE Valuation</MobileLink>
-                        <MobileLink href="/tools/aueb" onClick={onClose}>AI Unit Economics</MobileLink>
-                        <MobileLink href="/tools/aper" onClick={onClose}>APER Ratio</MobileLink>
+                    {/* Tools Section */}
+                    <div className="space-y-3">
+                        <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest pl-2">Free Tools</h3>
+                        <MobileLink href="/tools/pdi" onClick={onClose}>PDI — Product Debt Index</MobileLink>
+                        <MobileLink href="/tools/ev-se" onClick={onClose}>EV-SE — Valuation Engine</MobileLink>
+                        <MobileLink href="/tools/aueb" onClick={onClose}>AUEB — AI Unit Economics</MobileLink>
+                        <MobileLink href="/tools/aper" onClick={onClose}>APER — Engineering Ratio</MobileLink>
                         <MobileLink href="/tools/audit-interview" onClick={onClose}>Audit Interview</MobileLink>
-                        <MobileLink href="/compare" onClick={onClose}>Compare Tools</MobileLink>
-                        <MobileLink href="/roi" onClick={onClose}>ROI Calculator</MobileLink>
                     </div>
 
-                    <div className="space-y-4">
-                        <h3 className="text-xs font-bold text-cyan-400 uppercase tracking-widest pl-2">For You</h3>
+                    {/* Advisory Section */}
+                    <div className="space-y-3">
+                        <h3 className="text-xs font-bold text-amber-400 uppercase tracking-widest pl-2">Advisory</h3>
+                        <MobileLink href="/advisory" onClick={onClose}>Advisory Services</MobileLink>
+                        <MobileLink href="/pricing" onClick={onClose}>Advisory Pricing</MobileLink>
+                        <MobileLink href="/for-ctos" onClick={onClose}>For CTOs</MobileLink>
                         <MobileLink href="/for-investors" onClick={onClose}>For Investors (PE/VC)</MobileLink>
                         <MobileLink href="/for-boards" onClick={onClose}>For Board Directors</MobileLink>
-                        <MobileLink href="/for-ctos" onClick={onClose}>For CTOs</MobileLink>
-                        <MobileLink href="/industries" onClick={onClose}>Industries (14)</MobileLink>
-                    </div>
-
-                    <div className="space-y-4">
-                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Engage</h3>
-                        <MobileLink href="/pricing" onClick={onClose}>Advisory Pricing</MobileLink>
-                        <MobileLink href="/methodology" onClick={onClose}>Methodology</MobileLink>
                         <MobileLink href="/case-studies" onClick={onClose}>Case Studies</MobileLink>
-                        <MobileLink href="/testimonials" onClick={onClose}>Testimonials</MobileLink>
-                        <MobileLink href="/partnerships" onClick={onClose}>Partnerships</MobileLink>
-                        <MobileLink href="/resources" onClick={onClose}>Resource Hub</MobileLink>
+                        <MobileLink href="/principal" onClick={onClose}>The Principal</MobileLink>
                     </div>
 
-                    <div className="space-y-4">
+                    {/* Exogram */}
+                    <div className="space-y-3">
                         <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Exogram</h3>
                         <MobileLink href="/exogram" onClick={onClose} className="text-[var(--accent-purple)]">
                             What I&apos;m Building

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
+import RelatedContent from '@/components/RelatedContent';
 
 export const metadata: Metadata = {
     title: 'Engineering Efficiency Blueprint — From Measurement to Optimization | Richard Ewing',
@@ -114,8 +115,9 @@ export default function EngineeringEfficiencyGuidePage() {
                         <p className="text-zinc-300 mb-6">Richard Ewing advises engineering leaders on efficiency optimization. R&D Capital Audits identify where your investment is being wasted — and how to reclaim it.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-bold hover:opacity-90 transition-opacity">Book an R&D Capital Audit →</Link>
                     </div>
+                <RelatedContent currentSlug="engineering-efficiency" type="guide" count={3} />
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
     );
 }

@@ -7,6 +7,7 @@ import { TrendingDown, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Us
 import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
+import ToolCelebration from '../../components/ToolCelebration';
 
 const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
     const [display, setDisplay] = useState(0);
@@ -345,6 +346,7 @@ export default function AUEBTool() {
 
     return (
         <div className="min-h-screen bg-[#050505] text-zinc-200 selection:bg-cyan-500/30 font-sans">
+            <ToolCelebration show={!!results} toolName="AUEB" />
 
             {/* HEADER */}
             <nav className="border-b border-white/5 bg-black/50 backdrop-blur-xl sticky top-0 z-50">

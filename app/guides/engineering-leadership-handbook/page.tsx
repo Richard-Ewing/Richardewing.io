@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
+import RelatedContent from '@/components/RelatedContent';
 
 export const metadata: Metadata = {
     title: 'The Engineering Leadership Handbook — From Team Lead to VP | Richard Ewing',
@@ -113,8 +114,9 @@ export default function EngineeringLeadershipGuidePage() {
                         <p className="text-zinc-300 mb-6">Richard Ewing works with engineering leaders at every level — from first-time managers to VPs building 100+ person orgs. Advisory sessions help you navigate transitions and build high-performing teams.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-bold hover:opacity-90 transition-opacity">Book an Advisory Session →</Link>
                     </div>
+                <RelatedContent currentSlug="engineering-leadership-handbook" type="guide" count={3} />
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
     );
 }

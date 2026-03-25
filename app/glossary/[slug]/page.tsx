@@ -552,7 +552,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </Link>
                 </section>
 
-                <RelatedContent currentPath={`/glossary/${slug}`} category={term.category} />
+                <RelatedContent currentSlug={slug} type="guide" />
             </article>
         </div>
     );

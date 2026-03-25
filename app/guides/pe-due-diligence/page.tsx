@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
 import PremiumGuideCTA from '@/app/components/PremiumGuideCTA';
+import RelatedContent from '@/components/RelatedContent';
 
 export const metadata: Metadata = {
     title: 'PE Technology Due Diligence Guide — What PE Firms Actually Evaluate | Richard Ewing',
@@ -121,8 +122,9 @@ export default function PEDueDiligenceGuidePage() {
                         <p className="text-zinc-300 mb-6">Richard Ewing serves as a technical due diligence partner for PE firms. Pre-acquisition assessments deliver a written Quality of Technology report for investment committees.</p>
                         <Link href="/api/buy/due_diligence" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-rose-500 text-white font-bold hover:opacity-90 transition-opacity">Book Due Diligence — $15,000 →</Link>
                     </div>
+                <RelatedContent currentSlug="pe-due-diligence" type="guide" count={3} />
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ToolCelebration from '../../components/ToolCelebration';
 import Link from 'next/link';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
@@ -233,6 +234,7 @@ export default function PDITool() {
 
     return (
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
+            <ToolCelebration show={!!results} toolName="PDI" />
             {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-white transition">Intelligence</Link>

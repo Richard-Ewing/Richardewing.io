@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
+import RelatedContent from '@/components/RelatedContent';
 
 export const metadata: Metadata = {
     title: 'Product Economics Playbook — Unit Economics, Feature P&L & Kill Switch | Richard Ewing',
@@ -113,8 +114,9 @@ export default function ProductEconomicsGuidePage() {
                         <p className="text-zinc-300 mb-6">Richard Ewing helps product leaders quantify ROI, identify zombie features, and build business cases that get funding. As a Product Economist, he bridges the gap between engineering and finance.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-rose-500 text-white font-bold hover:opacity-90 transition-opacity">Book an Advisory Session →</Link>
                     </div>
+                <RelatedContent currentSlug="product-economics" type="guide" count={3} />
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
     );
 }

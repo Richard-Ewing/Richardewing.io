@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
 import PremiumGuideCTA from '@/app/components/PremiumGuideCTA';
+import RelatedContent from '@/components/RelatedContent';
 
 export const metadata: Metadata = {
     title: 'AI Economics Hub — The Cost of Intelligence | Richard Ewing',
@@ -144,8 +145,9 @@ export default function AIEconomicsGuidePage() {
                         <p className="text-zinc-300 mb-6">Richard Ewing advises AI companies on unit economics, inference cost optimization, and AI governance. Stop building AI features that lose money.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-bold hover:opacity-90 transition-opacity">Book AI Economics Advisory →</Link>
                     </div>
+                <RelatedContent currentSlug="ai-economics" type="guide" count={3} />
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
     );
 }
