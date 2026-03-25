@@ -1731,10 +1731,12 @@ export default async function ComparisonDeepDivePage({ params }: { params: Promi
                                     <span className={`text-lg font-bold ${rightColors.text}`}>{comp.right.name}</span>
                                 </div>
                             </div>
+                            {/* eslint-disable react/forbid-dom-props */}
                             <div className="h-4 rounded-full bg-zinc-800 overflow-hidden flex">
                                 <div className={`${leftColors.barBg} transition-all`} style={{ width: `${(leftTotal / (leftTotal + rightTotal)) * 100}%` }} />
                                 <div className={`${rightColors.barBg} transition-all`} style={{ width: `${(rightTotal / (leftTotal + rightTotal)) * 100}%` }} />
                             </div>
+                            {/* eslint-enable react/forbid-dom-props */}
                         </div>
 
                         {/* Dimension-by-Dimension Scoring */}
@@ -1748,9 +1750,11 @@ export default async function ComparisonDeepDivePage({ params }: { params: Promi
                                                 <span className={`text-sm font-bold ${leftColors.text}`}>{comp.left.name}</span>
                                                 <span className="text-sm font-bold text-white">{row.leftScore || 7}/10</span>
                                             </div>
+                                            {/* eslint-disable react/forbid-dom-props */}
                                             <div className="h-2 rounded-full bg-zinc-800 overflow-hidden mb-2">
                                                 <div className={`h-full ${leftColors.barBg} rounded-full`} style={{ width: `${(row.leftScore || 7) * 10}%` }} />
                                             </div>
+                                            {/* eslint-enable react/forbid-dom-props */}
                                             <p className="text-xs text-zinc-400">{row.left}</p>
                                         </div>
                                         <div>
@@ -1758,9 +1762,11 @@ export default async function ComparisonDeepDivePage({ params }: { params: Promi
                                                 <span className={`text-sm font-bold ${rightColors.text}`}>{comp.right.name}</span>
                                                 <span className="text-sm font-bold text-white">{row.rightScore || 7}/10</span>
                                             </div>
+                                            {/* eslint-disable react/forbid-dom-props */}
                                             <div className="h-2 rounded-full bg-zinc-800 overflow-hidden mb-2">
                                                 <div className={`h-full ${rightColors.barBg} rounded-full`} style={{ width: `${(row.rightScore || 7) * 10}%` }} />
                                             </div>
+                                            {/* eslint-enable react/forbid-dom-props */}
                                             <p className="text-xs text-zinc-400">{row.right}</p>
                                         </div>
                                     </div>

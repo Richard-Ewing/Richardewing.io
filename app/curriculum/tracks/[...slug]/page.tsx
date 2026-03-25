@@ -4,9 +4,7 @@ import { notFound } from 'next/navigation';
 import { getModule, getAllModuleSlugs, type CurriculumModule } from '@/lib/curriculum-data';
 import ModuleCompleteButton from '@/app/components/ModuleCompleteButton';
 
-export async function generateStaticParams() {
-    return getAllModuleSlugs().map(s => ({ slug: s.split('/') }));
-}
+// generateStaticParams removed to allow dynamic auth() rendering at request time
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
     const { slug } = await params;
@@ -19,7 +17,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
 }
 
-function ModuleCard({ mod }: { mod: CurriculumModule }) {
+import { auth } from '@clerk/nextjs/server';
+import PayGate from '@/app/components/PayGate';
+
+function ModuleCard({ mod, hasAccess }: { mod: CurriculumModule, hasAccess: boolean }) {
     return (
         <main className="pt-20">
             <div className="page-container">
@@ -54,7 +55,13 @@ function ModuleCard({ mod }: { mod: CurriculumModule }) {
                         </ul>
                     </div>
 
-                    <div className="space-y-12">
+                    <PayGate 
+                        moduleTitle={mod.title} 
+                        moduleId={mod.moduleId} 
+                        trackName={mod.trackName} 
+                        totalLessons={mod.lessons.length}
+                        hasAccess={hasAccess}
+                    >
                         {mod.lessons.map((lesson, i) => (
                             <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden">
                                 <div className="p-8">
@@ -81,7 +88,7 @@ function ModuleCard({ mod }: { mod: CurriculumModule }) {
                                 </div>
                             </div>
                         ))}
-                    </div>
+                    </PayGate>
 
                     <ModuleCompleteButton nextHref={mod.nextHref} moduleTitle={`${mod.moduleId}: ${mod.title}`} />
                 </div>
@@ -94,6 +101,13 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
     const { slug } = await params;
     const mod = getModule(slug.join('/'));
     if (!mod) notFound();
-    return <ModuleCard mod={mod} />;
+    
+    // Auth check for Stripe Access
+    const { userId, sessionClaims } = await auth();
+    // @ts-ignore - publicMetadata comes from Clerk session tokens
+    const hasSubscription = sessionClaims?.metadata?.has_yearly_subscription === true;
+    const hasAccess = !!userId && hasSubscription;
+
+    return <ModuleCard mod={mod} hasAccess={hasAccess} />;
 }
 

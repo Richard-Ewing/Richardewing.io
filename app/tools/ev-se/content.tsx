@@ -22,6 +22,7 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                 <div key={i} className="flex items-center gap-4">
                     <div className="w-24 text-xs font-mono text-zinc-500 text-right">{item.name}</div>
                     <div className="flex-1 h-10 bg-zinc-900 rounded-lg overflow-hidden relative">
+                        {/* eslint-disable react/forbid-dom-props */}
                         <div
                             className="h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4"
                             style={{
@@ -29,6 +30,7 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                                 backgroundColor: item.color,
                             }}
                         >
+                        {/* eslint-enable react/forbid-dom-props */}
                             <span className="text-xs font-mono text-white font-bold">
                                 ${(item.value / 1000000).toFixed(1)}M
                             </span>
@@ -66,6 +68,7 @@ const RiskSlider = ({ label, value, onChange, description }: {
             </div>
             <div className="relative">
                 <div className="absolute inset-0 h-2 rounded-lg bg-gradient-to-r from-emerald-500/30 via-yellow-500/30 to-red-500/30" />
+                {/* eslint-disable react/forbid-dom-props */}
                 <input
                     type="range"
                     min="0"
@@ -79,6 +82,7 @@ const RiskSlider = ({ label, value, onChange, description }: {
                         background: `linear-gradient(to right, #22c55e ${value}%, transparent ${value}%)`,
                     }}
                 />
+                {/* eslint-enable react/forbid-dom-props */}
             </div>
             <div className="flex justify-between text-[10px] text-zinc-600">
                 <span>Low Risk</span>

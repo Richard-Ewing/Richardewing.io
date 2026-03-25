@@ -176,6 +176,53 @@ const tracks = [
             },
         ],
     },
+    {
+        id: 'ai-enterprise',
+        title: 'AI & Enterprise Architect',
+        icon: '🤖',
+        color: 'purple',
+        subtitle: 'Master the economics of AI operations and scalable enterprise architecture',
+        modules: [
+            {
+                name: 'AI Operations & Governance',
+                items: [
+                    { label: 'AI Model Selection Economics', href: '/curriculum/tracks/ai-operations/11-1' },
+                    { label: 'Prompt Engineering ROI', href: '/curriculum/tracks/ai-operations/11-2' },
+                    { label: 'AI Testing & Eval Economics', href: '/curriculum/tracks/ai-operations/11-3' },
+                    { label: 'Hallucination Cost Modeling', href: '/curriculum/tracks/ai-operations/11-4' },
+                    { label: 'RAG Architecture Economics', href: '/curriculum/tracks/ai-operations/11-5' }
+                ],
+            },
+            {
+                name: 'AI Agent & Automation Economics',
+                items: [
+                    { label: 'Agentic Cost Structures', href: '/curriculum/tracks/ai-agent-economics/13-1' },
+                    { label: 'Agent Build vs Buy', href: '/curriculum/tracks/ai-agent-economics/13-2' },
+                    { label: 'RAG Pipeline Optimization', href: '/curriculum/tracks/ai-agent-economics/13-3' },
+                    { label: 'LLM Inference Cost Modeling', href: '/curriculum/tracks/ai-agent-economics/13-4' },
+                    { label: '→ Tool: AUEB Calculator', href: '/tools/aueb', isTool: true }
+                ],
+            },
+            {
+                name: 'Enterprise Architecture',
+                items: [
+                    { label: 'Architecture Review Board', href: '/curriculum/tracks/enterprise-architecture/12-1' },
+                    { label: 'API Gateway Economics', href: '/curriculum/tracks/enterprise-architecture/12-2' },
+                    { label: 'Event-Driven Architecture', href: '/curriculum/tracks/enterprise-architecture/12-3' },
+                    { label: 'Legacy Modernization ROI', href: '/curriculum/tracks/enterprise-architecture/12-4' }
+                ],
+            },
+            {
+                name: 'Cloud FinOps',
+                items: [
+                    { label: 'FinOps Fundamentals', href: '/curriculum/tracks/cloud-finops/14-1' },
+                    { label: 'Cloud Cost Allocation', href: '/curriculum/tracks/cloud-finops/14-2' },
+                    { label: 'Kubernetes Cost Management', href: '/curriculum/tracks/cloud-finops/14-4' },
+                    { label: 'Serverless vs Containers', href: '/curriculum/tracks/cloud-finops/14-5' }
+                ],
+            }
+        ],
+    },
 ];
 
 const colorMap: Record<string, { border: string; bg: string; text: string; glow: string; dot: string }> = {

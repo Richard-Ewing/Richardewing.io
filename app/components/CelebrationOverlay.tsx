@@ -192,9 +192,8 @@ export default function CelebrationOverlay({
     return (
         <div
             className={`fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-700 ${
-                fadeOut ? 'opacity-0' : 'opacity-100'
+                fadeOut ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
             }`}
-            style={{ pointerEvents: fadeOut ? 'none' : 'auto' }}
             onClick={() => {
                 setFadeOut(true);
                 setTimeout(() => {
@@ -209,8 +208,7 @@ export default function CelebrationOverlay({
             {/* Confetti Canvas */}
             <canvas
                 ref={canvasRef}
-                className="absolute inset-0 pointer-events-none"
-                style={{ zIndex: 1 }}
+                className="absolute inset-0 pointer-events-none z-[1]"
             />
 
             {/* Content */}

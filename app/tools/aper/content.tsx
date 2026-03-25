@@ -340,6 +340,8 @@ export default function APERTool() {
                                                 <div className="relative">
                                                     <input
                                                         type="number"
+                                                        title={key}
+                                                        aria-label={`Enter percentage for ${key}`}
                                                         value={val}
                                                         onChange={(e) => setTeamBreakdown({ ...teamBreakdown, [key]: parseInt(e.target.value) || 0 })}
                                                         className="w-full bg-black/50 border border-zinc-800 rounded-lg px-3 py-2 text-white font-mono text-sm focus:border-yellow-500 focus:outline-none"

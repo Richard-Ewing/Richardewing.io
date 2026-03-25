@@ -5,30 +5,51 @@ import Link from 'next/link';
 import { Lock, BookOpen, Sparkles, ChevronDown, Award } from 'lucide-react';
 import { PRODUCTS } from '@/lib/products';
 
+import { useUser } from '@clerk/nextjs';
+
 interface PayGateProps {
     moduleTitle: string;
     moduleId: string;
     trackName: string;
     totalLessons: number;
     previewLessonIndex?: number;
+    hasAccess?: boolean;
     children: React.ReactNode;
 }
 
-export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, children }: PayGateProps) {
+export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, children }: PayGateProps) {
     const [showPricing, setShowPricing] = useState(false);
     const [loading, setLoading] = useState<string | null>(null);
     const childArray = Array.isArray(children) ? children : [children];
     const previewContent = childArray[previewLessonIndex];
     const lockedContent = childArray.filter((_, i) => i !== previewLessonIndex);
 
+    const { user, isLoaded, isSignedIn } = useUser();
+
     const handleCheckout = (productId: string) => {
+        if (isLoaded && !isSignedIn) {
+            // Optional: you could force sign-in here. For now we pass to Stripe.
+            // Ideally Stripe checkout sends them back or creates a guest mapping.
+        }
+
         setLoading(productId);
         const product = PRODUCTS[productId];
         if (product?.paymentLink) {
-            window.open(product.paymentLink, '_blank');
+            const url = new URL(product.paymentLink);
+            if (user?.id) {
+                url.searchParams.append('client_reference_id', user.id);
+            }
+            if (user?.primaryEmailAddress?.emailAddress) {
+                url.searchParams.append('prefilled_email', user.primaryEmailAddress.emailAddress);
+            }
+            window.open(url.toString(), '_blank');
         }
         setTimeout(() => setLoading(null), 1000);
     };
+
+    if (hasAccess) {
+        return <div className="space-y-12">{children}</div>;
+    }
 
     return (
         <div>

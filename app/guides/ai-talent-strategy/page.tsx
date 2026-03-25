@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
 import RelatedContent from '@/components/RelatedContent';
+import GuidePayGate from '@/app/components/GuidePayGate';
+import { auth } from '@clerk/nextjs/server';
 
 export const metadata: Metadata = {
     title: 'AI Talent Strategy & Compensation Guide \u2014 Hire, Retain, and Develop ML Engineers at Scale | Richard Ewing',
@@ -48,7 +50,7 @@ const textColorMap: Record<string, string> = {
     violet: 'text-violet-400', emerald: 'text-emerald-400', red: 'text-red-400',
 };
 
-export default function AiTalentStrategyPage() {
+export default async function AiTalentStrategyPage() {
     const articleSchema = {
         '@context': 'https://schema.org', '@type': 'Article',
         headline: 'AI Talent Strategy & Compensation Guide \u2014 Hire, Retain, and Develop ML Engineers at Scale',
@@ -73,6 +75,11 @@ export default function AiTalentStrategyPage() {
         url: 'https://www.richardewing.io/guides/ai-talent-strategy',
     };
 
+    
+    const { userId, sessionClaims } = await auth();
+    // @ts-ignore
+    const hasAccess = !!userId && (sessionClaims?.metadata?.has_yearly_subscription === true || sessionClaims?.metadata?.has_premium_guide_access === true);
+
     return (
         <main className="pt-20">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
@@ -90,7 +97,9 @@ export default function AiTalentStrategyPage() {
                     <p className="text-lg text-zinc-400 mb-4 max-w-2xl">Hire, Retain, and Develop ML Engineers at Scale. A comprehensive engineering economics guide.</p>
                     <p className="text-sm text-zinc-500 mb-12">A pillar resource with linked glossary terms, tools, and frameworks.</p>
 
-                    <div className="space-y-8 mb-16">
+                    
+<GuidePayGate guideTitle="AI Talent Strategy & Compensation Guide" productId="guide_ai_talent_strategy" hasAccess={hasAccess}>
+<div className="space-y-8 mb-16">
                         {sections.map((section, i) => (
                             <div key={i} className={`rounded-2xl border p-8 ${colorMap[section.color]}`}>
                                 <h2 className={`text-2xl font-grotesk font-bold mb-2 ${textColorMap[section.color]}`}>{section.title}</h2>
@@ -124,7 +133,9 @@ export default function AiTalentStrategyPage() {
                         <p className="text-zinc-300 mb-6">Richard Ewing advises CTOs, CFOs, and boards on engineering economics. R&D Capital Audits quantify your investment in dollars and quarters.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:opacity-90 transition-opacity">Book an R&D Capital Audit \u2192</Link>
                     </div>
-                <RelatedContent currentSlug="ai-talent-strategy" type="guide" count={3} />
+                
+</GuidePayGate>
+<RelatedContent currentSlug="ai-talent-strategy" type="guide" count={3} />
                     </div>
                 </div>
             </main>

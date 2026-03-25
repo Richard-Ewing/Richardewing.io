@@ -462,6 +462,8 @@ export default function AUEBTool() {
                                                 <div className="relative">
                                                     <input
                                                         type="number"
+                                                        title={f.name}
+                                                        aria-label={`Enter percentage for ${f.name}`}
                                                         value={f.queriesPercent}
                                                         onChange={(e) => {
                                                             const newFeatures = [...features];
@@ -629,11 +631,13 @@ export default function AUEBTool() {
                                                 <div className="text-xs text-zinc-500 mt-1">{((results.hostingCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
                                             </div>
                                         </div>
+                                        {/* eslint-disable react/forbid-dom-props */}
                                         <div className="h-4 bg-zinc-800 rounded-full overflow-hidden flex">
                                             <div className="h-full bg-red-500" style={{ width: `${(results.llmCost / results.totalInfraCost) * 100}%` }} />
                                             <div className="h-full bg-orange-500" style={{ width: `${(results.apiCost / results.totalInfraCost) * 100}%` }} />
                                             <div className="h-full bg-yellow-500" style={{ width: `${(results.hostingCost / results.totalInfraCost) * 100}%` }} />
                                         </div>
+                                        {/* eslint-enable react/forbid-dom-props */}
                                         <div className="flex justify-between text-xs text-zinc-500 mt-2">
                                             <span>Total Infrastructure: <span className="text-white font-bold">{formatMoney(results.totalInfraCost)}/mo</span></span>
                                             <span>Per User: <span className="text-white font-bold">{formatMoney(results.costPerUser)}</span></span>

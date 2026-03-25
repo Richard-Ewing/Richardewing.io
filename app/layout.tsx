@@ -9,6 +9,7 @@ import ExitIntentPopup from './components/ExitIntentPopup';
 import StickyBottomCTA from './components/StickyBottomCTA';
 import SocialProofTicker from './components/SocialProofTicker';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk' });
@@ -85,6 +86,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    <ClerkProvider appearance={{ variables: { colorPrimary: '#06b6d4', colorBackground: '#0A0A12', colorText: '#ffffff', colorInputBackground: '#ffffff05', colorInputText: '#ffffff' } }}>
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${mono.variable} ${serif.variable}`}>
       <head>
         <link rel="ai-agent-manifest" href="/.well-known/ai-agent-manifest.json" />
@@ -207,5 +209,6 @@ export default function RootLayout({
         )}
       </body>
     </html>
+    </ClerkProvider>
   );
 }
