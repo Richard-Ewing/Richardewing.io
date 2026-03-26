@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { Mail, ArrowRight, Loader2, Lock, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useUser } from '@clerk/nextjs';
 
 interface ToolGateProps {
     children: React.ReactNode;
@@ -22,6 +23,16 @@ export default function ToolGate({ children, toolName = "This Diagnostic", onUnl
     // Using the same form ID as the newsletter form for consistent tracking
     const formId = "xzddbpwy";
     const [state, handleFormspreeSubmit] = useForm(formId);
+    
+    const { isLoaded, isSignedIn } = useUser();
+
+    // Auto-unlock if user is already authenticated via Clerk
+    React.useEffect(() => {
+        if (isLoaded && isSignedIn && !isUnlocked) {
+            setIsUnlocked(true);
+            onUnlock?.();
+        }
+    }, [isLoaded, isSignedIn, isUnlocked, onUnlock]);
 
     // When Formspree submission succeeds, unlock and trigger callback
     React.useEffect(() => {
