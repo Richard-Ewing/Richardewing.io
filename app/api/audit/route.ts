@@ -76,8 +76,11 @@ export async function POST(req: Request) {
             throw new Error('Empty response from Gemini');
         }
 
+        // Strip markdown formatting if the LLM wrapped the JSON
+        const cleanJson = rawResponse.replace(/```json/gi, '').replace(/```/gi, '').trim();
+
         // Parse and validate response
-        const parsed = JSON.parse(rawResponse);
+        const parsed = JSON.parse(cleanJson);
         const validated = ResponseSchema.parse(parsed);
 
         // Calculate category counts
@@ -93,18 +96,18 @@ export async function POST(req: Request) {
             total: validated.categorized.length,
         });
 
-    } catch (error) {
+    } catch (error: any) {
         console.error('PDI Analysis Error:', error);
 
         if (error instanceof z.ZodError) {
             return NextResponse.json(
-                { error: 'Invalid response format from AI', details: error.issues },
+                { error: `Invalid response format from AI: ${JSON.stringify(error.issues)}` },
                 { status: 500 }
             );
         }
 
         return NextResponse.json(
-            { error: 'Analysis failed', message: error instanceof Error ? error.message : 'Unknown error' },
+            { error: error?.message || 'Unknown server error during analysis' },
             { status: 500 }
         );
     }
