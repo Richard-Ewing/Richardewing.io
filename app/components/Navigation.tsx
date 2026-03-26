@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 
 const Navigation = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -90,6 +91,26 @@ const Navigation = () => {
                             >
                                 Book Audit →
                             </Link>
+
+                            <div className="h-6 w-px bg-white/20 mx-1 flex-shrink-0" />
+
+                            {/* Authentication */}
+                            <SignedOut>
+                                <SignInButton mode="modal" fallbackRedirectUrl="/vault" signUpFallbackRedirectUrl="/vault">
+                                    <button className="text-gray-300 hover:text-white transition-colors text-sm font-semibold whitespace-nowrap">
+                                        Sign In
+                                    </button>
+                                </SignInButton>
+                            </SignedOut>
+                            <SignedIn>
+                                <div className="flex items-center justify-center -ml-2">
+                                    <UserButton 
+                                        afterSignOutUrl="/" 
+                                        userProfileMode="navigation"
+                                        userProfileUrl="/vault"
+                                    />
+                                </div>
+                            </SignedIn>
 
                         </div>
 
@@ -240,10 +261,28 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                     <Link
                         href="/advisory"
                         onClick={onClose}
-                        className="block w-full bg-[var(--accent-crimson)] text-white text-center font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity"
+                        className="block w-full bg-[var(--accent-crimson)] text-white text-center font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity mb-4"
                     >
                         BOOK AN AUDIT
                     </Link>
+
+                    <SignedOut>
+                        <SignInButton mode="modal" fallbackRedirectUrl="/vault" signUpFallbackRedirectUrl="/vault">
+                            <button onClick={onClose} className="block w-full bg-white/5 border border-white/10 text-white text-center font-bold py-4 rounded-xl text-lg hover:bg-white/10 transition-colors">
+                                SIGN IN
+                            </button>
+                        </SignInButton>
+                    </SignedOut>
+                    
+                    <SignedIn>
+                        <Link 
+                            href="/vault"
+                            onClick={onClose}
+                            className="block w-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-center font-bold py-4 rounded-xl text-lg hover:bg-cyan-500/20 transition-colors"
+                        >
+                            ACCESS VAULT
+                        </Link>
+                    </SignedIn>
 
                 </div>
             </div>
