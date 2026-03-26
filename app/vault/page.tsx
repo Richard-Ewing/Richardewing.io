@@ -205,6 +205,41 @@ export default async function VaultPage() {
                     {/* RIGHT COLUMN: Upgrades & Advisory */}
                     <div className="w-full md:w-80 space-y-6">
                         <div className="sticky top-24">
+                            
+                            {/* FREE TIER USAGE TRACKING */}
+                            {!hasSubscription && (
+                                <div className="mb-8">
+                                    <h2 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center justify-between">
+                                        Diagnostic Usage
+                                        <span className="text-[10px] bg-zinc-900 px-2 py-0.5 rounded text-zinc-400 border border-zinc-800">FREE TIER</span>
+                                    </h2>
+                                    <div className="card p-5 border-zinc-800 bg-black">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <h3 className="font-bold text-white">Audits Allocated</h3>
+                                            <span className="text-xs font-mono text-zinc-500">{toolRuns.length}/3 Used</span>
+                                        </div>
+                                        
+                                        {/* Progress Bar */}
+                                        <div className="w-full h-1.5 bg-zinc-900 rounded-full overflow-hidden mb-4">
+                                            <div 
+                                                className={`h-full transition-all ${toolRuns.length >= 3 ? 'bg-red-500' : 'bg-cyan-500'}`} 
+                                                style={{ width: `${Math.min(100, (toolRuns.length / 3) * 100)}%` }}
+                                            ></div>
+                                        </div>
+                                        
+                                        {toolRuns.length >= 3 ? (
+                                            <p className="text-xs text-red-400 font-bold mb-4">Limit reached. Unlock the library to generate unlimited diagnostic reports.</p>
+                                        ) : (
+                                            <p className="text-xs text-zinc-400 mb-4">{3 - toolRuns.length} board-ready reports remaining this month.</p>
+                                        )}
+                                        
+                                        <Link href="/api/buy/full_curriculum" className={`block text-center w-full py-2 text-[10px] font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-900 border border-zinc-800 hover:border-cyan-500/50 text-white'}`}>
+                                            Unlock Unlimited
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
+
                             <h2 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4">Available Upgrades</h2>
 
                             {!hasSubscription && (
