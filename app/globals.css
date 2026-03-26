@@ -298,3 +298,22 @@ html {
     offset-distance: 100%;
   }
 }
+
+/* ══════════════════════════════════════════════════════════ */
+/* CLERK AUTHENTICATION OVERRIDES                             */
+/* ══════════════════════════════════════════════════════════ */
+.cl-formFieldInput, 
+.cl-formFieldInput:-webkit-autofill,
+.cl-formFieldInput:-webkit-autofill:hover, 
+.cl-formFieldInput:-webkit-autofill:focus, 
+.cl-formFieldInput:-webkit-autofill:active {
+    background-color: #1A1A24 !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.1) !important;
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #1A1A24 inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+.cl-formFieldInput::placeholder {
+    color: #858590 !important;
+}

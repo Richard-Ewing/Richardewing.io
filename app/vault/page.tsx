@@ -1,7 +1,8 @@
 import { redirect } from 'next/navigation';
 import { currentUser } from '@clerk/nextjs/server';
 import Link from 'next/link';
-import { BookOpen, ShieldCheck, ChevronRight, Lock, Download, Zap, Database, TrendingUp, Presentation } from 'lucide-react';
+import { BookOpen, ShieldCheck, ChevronRight, Lock, Download, Zap, Database, TrendingUp, Presentation, Clock, Activity } from 'lucide-react';
+import { supabaseAdmin } from '@/lib/supabase';
 
 export const metadata = {
     title: 'Client Vault',
@@ -17,6 +18,23 @@ export default async function VaultPage() {
 
     const hasPremium = user.publicMetadata?.has_premium_guide_access === true || user.publicMetadata?.has_yearly_subscription === true;
     const hasSubscription = user.publicMetadata?.has_yearly_subscription === true;
+
+    // Fetch historical diagnostic runs for this user
+    const { data: rawToolRuns, error } = await supabaseAdmin
+        .from('tool_runs')
+        .select('*')
+        .eq('user_id', user.id)
+        .order('created_at', { ascending: false });
+
+    // Safely parse
+    const toolRuns = rawToolRuns || [];
+
+    const formatMoney = (num: number) => {
+        if (!num) return '$0';
+        if (num >= 1000000) return '$' + (num / 1000000).toFixed(1) + 'M';
+        if (num >= 1000) return '$' + (num / 1000).toFixed(0) + 'K';
+        return '$' + num.toFixed(0);
+    };
 
     return (
         <main className="min-h-screen pt-32 pb-24 px-6">
@@ -79,21 +97,68 @@ export default async function VaultPage() {
                             )}
                         </section>
 
-                        {/* DIAGNOSTIC HISTORY (Phase 3 Prep) */}
+                        {/* DIAGNOSTIC HISTORY (Phase 3) */}
                         <section>
                             <h2 className="text-xl font-bold text-white mb-4 mt-12 flex items-center gap-2">
-                                <Database className="w-5 h-5 text-zinc-500" />
+                                <Database className="w-5 h-5 text-cyan-500" />
                                 Diagnostic Artifacts & History
                             </h2>
-                            <div className="p-8 rounded-2xl border border-zinc-800 bg-zinc-900/50 flex flex-col items-center text-center">
-                                <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center mb-4">
-                                    <TrendingUp className="w-5 h-5 text-zinc-500" />
+                            
+                            {toolRuns.length > 0 ? (
+                                <div className="space-y-4">
+                                    {toolRuns.map((run) => (
+                                        <div key={run.id} className="p-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 hover:bg-zinc-900/80 transition-colors">
+                                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                                <div>
+                                                    <div className="flex items-center gap-2 mb-2">
+                                                        <span className="px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
+                                                            {run.tool_id === 'pdi' ? 'PDI Audit' : run.tool_id}
+                                                        </span>
+                                                        <span className="text-xs text-zinc-500 flex items-center gap-1">
+                                                            <Clock className="w-3 h-3" />
+                                                            {new Date(run.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                                                        </span>
+                                                    </div>
+                                                    <h3 className="text-lg font-bold text-white">
+                                                        {run.tool_id === 'pdi' ? 'Product Debt Index Assessment' : 'Diagnostic Run'}
+                                                    </h3>
+                                                </div>
+                                                
+                                                <div className="flex items-center gap-6">
+                                                    <div className="text-right">
+                                                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Score</div>
+                                                        <div className={`text-xl font-bold ${run.score < 50 ? 'text-red-400' : 'text-cyan-400'}`}>
+                                                            {run.score}/100
+                                                        </div>
+                                                    </div>
+                                                    <div className="text-right">
+                                                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Waste Identified</div>
+                                                        <div className="text-xl font-bold text-white font-mono">
+                                                            {formatMoney(run.financial_waste)}
+                                                        </div>
+                                                    </div>
+                                                    <Link href={`/tools/${run.tool_id}`} className="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-colors group">
+                                                        <Activity className="w-5 h-5 text-zinc-400 group-hover:text-cyan-400" />
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
-                                <h3 className="text-lg font-bold text-white mb-2">Longitudinal Tracking Pending</h3>
-                                <p className="text-sm text-zinc-400 max-w-md mx-auto">
-                                    When you run Enterprise tools like the PDI or AUEB, your quarter-over-quarter snapshots and board-ready PDF reports will be securely saved here.
-                                </p>
-                            </div>
+                            ) : (
+                                <div className="p-8 rounded-2xl border border-zinc-800 bg-zinc-900/50 flex flex-col items-center text-center">
+                                    <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center mb-4">
+                                        <TrendingUp className="w-5 h-5 text-zinc-500" />
+                                    </div>
+                                    <h3 className="text-lg font-bold text-white mb-2">Longitudinal Tracking Pending</h3>
+                                    <p className="text-sm text-zinc-400 max-w-md mx-auto mb-6">
+                                        When you run Enterprise tools like the PDI or AUEB, your quarter-over-quarter snapshots and board-ready PDF reports will be securely saved here.
+                                    </p>
+                                    <Link href="/tools/pdi" className="inline-flex items-center justify-center px-6 py-2 border border-cyan-500/50 text-cyan-400 text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-cyan-500/10 transition-colors">
+                                        Run First Audit
+                                    </Link>
+                                </div>
+                            )}
                         </section>
 
                     </div>
