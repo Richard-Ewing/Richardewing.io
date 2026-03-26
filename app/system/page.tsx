@@ -2,6 +2,7 @@
 
 
 import Link from 'next/link';
+import { Database } from 'lucide-react';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
 import ShineBorder from '../components/magicui/shine-border';
@@ -34,6 +35,20 @@ export default function SystemPage() {
 
                     {/* Tool Cards - AI-Powered */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <GlowCard className="p-6 sm:col-span-2" glowColor="zinc">
+                            <div className="flex items-center gap-2 mb-3">
+                                <Database className="w-4 h-4 text-zinc-400" />
+                                <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest">Board-Level Intelligence</span>
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-2">Longitudinal Dashboard</h3>
+                            <p className="text-zinc-500 text-sm mb-4">Secure repository for your historical execution snapshots. Track margin erosion, valuation destruction, and operational drift across quarters.</p>
+                            <ShineBorder borderColor="rgba(255, 255, 255, 0.4)" duration={3}>
+                                <Link href="/tools/dashboard" className="block w-full text-center bg-white text-black font-bold text-xs uppercase tracking-widest py-3 hover:bg-zinc-200 transition">
+                                    Access Data Warehouse →
+                                </Link>
+                            </ShineBorder>
+                        </GlowCard>
+
                         <GlowCard className="p-6" glowColor="danger">
                             <div className="flex items-center gap-2 mb-3">
                                 <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
@@ -132,7 +147,7 @@ export default function SystemPage() {
                                 <li className="flex items-center gap-3"><span className="w-2 h-2 bg-cobalt rounded-full" />PHASE 2: CapEx vs. OpEx Re-Classification</li>
                                 <li className="flex items-center gap-3"><span className="w-2 h-2 bg-cobalt rounded-full" />PHASE 3: The "Win Locker" Implementation</li>
                             </ul>
-                            <Link href="/canonical/q-pep.html" className="px-4 py-2 bg-cobalt/10 border border-cobalt/30 text-cobalt text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-cobalt/20 transition">View Framework →</Link>
+                            <Link href="/system" className="px-4 py-2 bg-cobalt/10 border border-cobalt/30 text-cobalt text-xs font-mono uppercase tracking-widest rounded-lg hover:bg-cobalt/20 transition">View Framework →</Link>
                         </div>
                     </div>
                 </section>

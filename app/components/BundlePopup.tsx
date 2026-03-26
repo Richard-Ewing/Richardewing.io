@@ -2,6 +2,7 @@
 
 import { X, Gift, Sparkles, ArrowRight } from 'lucide-react';
 import { PRODUCTS } from '@/lib/products';
+import { useUser, useClerk } from '@clerk/nextjs';
 
 interface BundlePopupProps {
     isOpen: boolean;
@@ -18,12 +19,23 @@ const PREMIUM_GUIDES = [
 ];
 
 export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePopupProps) {
+    const { user, isSignedIn } = useUser();
+    const { openSignIn } = useClerk();
+
     if (!isOpen) return null;
 
     const handleCheckout = (productId: string) => {
+        if (!isSignedIn) {
+            openSignIn();
+            return;
+        }
+
         const product = PRODUCTS[productId];
         if (product?.paymentLink) {
-            window.open(product.paymentLink, '_blank');
+            const url = new URL(product.paymentLink);
+            if (user?.id) url.searchParams.append('client_reference_id', user.id);
+            if (user?.primaryEmailAddress?.emailAddress) url.searchParams.append('prefilled_email', user.primaryEmailAddress.emailAddress);
+            window.open(url.toString(), '_blank');
         }
     };
 

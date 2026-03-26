@@ -1131,7 +1131,7 @@ export default function ComparisonsPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Need a Custom Framework Analysis?</h2>
                         <p className="text-zinc-400 mb-6 max-w-lg mx-auto text-sm">Book a strategy session for a comparison tailored to your stack, team, and business model.</p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="/api/buy/strategy_session" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:opacity-90 transition-opacity">
+                            <a href="/api/buy/strategy_session" className="px-6 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:opacity-90 transition-opacity">
                                 Book Strategy Session →
                             </a>
                             <Link href="/guides" className="px-6 py-3 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">

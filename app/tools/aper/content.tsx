@@ -8,6 +8,8 @@ import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
+import { ExportToPDFButton } from '../../components/ExportToPDFButton';
+import { QPEPRemediation } from '../../components/QPEPRemediation';
 
 // --- MAGIC UI COMPONENTS ---
 
@@ -177,13 +179,27 @@ export default function APERTool() {
                 { name: 'Danger Zone', value: 200000, color: '#dc2626' },
             ];
 
-            setResults({
+            const payload = {
                 aper, engineeringMargin, multiplier, benchmarks, totalEngCost,
                 engineers: engNum, costPerEng: costNum, coordinationTax,
                 optimalHeadcount, overheadCost, teamBreakdown,
                 productivityIndex, newHireRampCost, teamHealthScore, revenueGap, leverageRatio
-            });
+            };
+
+            setResults(payload);
             setLoading(false);
+
+            // Silently persist to Supabase for longitudinal tracking
+            fetch('/api/tools/runs', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    tool_id: 'APER',
+                    run_data: { arr: arrNum, engineers: engNum, costPerEng: costNum, avgTenure: tenureNum, hiringVelocity: hiringNum, teamBreakdown },
+                    output_metrics: payload
+                })
+            }).catch(console.error);
+
         }, 800);
     };
 
@@ -405,7 +421,19 @@ export default function APERTool() {
                     ) : (
                         /* --- RESULTS STATE --- */
                         <>
-                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
+                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8 relative">
+
+                                {/* ACTION HEADER & PDF EXPORT */}
+                                <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-white/10 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                                    <div>
+                                        <h2 className="text-xl font-bold text-white mb-1">Board-Ready Deliverable Generated</h2>
+                                        <p className="text-sm text-zinc-400">Export this assessment to a verified Executive PDF.</p>
+                                    </div>
+                                    <ExportToPDFButton targetId="aper-pdf-export-zone" fileName={`APER_Assessment_${persona}.pdf`} />
+                                </div>
+
+                                {/* -------- PDF CAPTURE ZONE START -------- */}
+                                <div id="aper-pdf-export-zone" className="space-y-8 bg-[#050505] p-2 sm:p-4 rounded-3xl">
 
                                 {/* HERO SCORE */}
                                 <motion.div
@@ -634,7 +662,7 @@ export default function APERTool() {
                                     className="text-center pt-8"
                                 >
                                     <p className="text-xs text-zinc-600 mb-3">Trusted by product leaders at</p>
-                                    <div className="flex items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
+                                    <div className="flex flex-wrap items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
                                         <span>Stripe</span>
                                         <span>Figma</span>
                                         <span>Linear</span>
@@ -642,6 +670,13 @@ export default function APERTool() {
                                         <span>Vercel</span>
                                     </div>
                                 </motion.div>
+
+                                {/* Q-PEP Remediation Block — captured into PDF */}
+                                <QPEPRemediation toolId="APER" metrics={results} />
+
+                                </div>
+
+                                {/* -------- PDF CAPTURE ZONE END -------- */}
 
                             </motion.div>
                         </>

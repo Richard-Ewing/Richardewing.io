@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Lock, BookOpen, Sparkles, ChevronDown, Award } from 'lucide-react';
 import { PRODUCTS } from '@/lib/products';
 
-import { useUser } from '@clerk/nextjs';
+import { useUser, useClerk } from '@clerk/nextjs';
 
 interface PayGateProps {
     moduleTitle: string;
@@ -25,11 +25,12 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
     const lockedContent = childArray.filter((_, i) => i !== previewLessonIndex);
 
     const { user, isLoaded, isSignedIn } = useUser();
+    const { openSignIn } = useClerk();
 
     const handleCheckout = (productId: string) => {
-        if (isLoaded && !isSignedIn) {
-            // Optional: you could force sign-in here. For now we pass to Stripe.
-            // Ideally Stripe checkout sends them back or creates a guest mapping.
+        if (!isSignedIn) {
+            openSignIn();
+            return;
         }
 
         setLoading(productId);

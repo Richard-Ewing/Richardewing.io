@@ -11,6 +11,8 @@ import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTria
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
+import { ExportToPDFButton } from '../../components/ExportToPDFButton';
+import { QPEPRemediation } from '../../components/QPEPRemediation';
 
 // Simple Bar Chart component (no external dependency)
 const WaterfallChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
@@ -22,7 +24,7 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                 <div key={i} className="flex items-center gap-4">
                     <div className="w-24 text-xs font-mono text-zinc-500 text-right">{item.name}</div>
                     <div className="flex-1 h-10 bg-zinc-900 rounded-lg overflow-hidden relative">
-                        {/* eslint-disable react/forbid-dom-props */}
+                        {/* eslint-disable-next-line react/forbid-dom-props */}
                         <div
                             className="h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4"
                             style={{
@@ -30,7 +32,6 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                                 backgroundColor: item.color,
                             }}
                         >
-                        {/* eslint-enable react/forbid-dom-props */}
                             <span className="text-xs font-mono text-white font-bold">
                                 ${(item.value / 1000000).toFixed(1)}M
                             </span>
@@ -68,7 +69,7 @@ const RiskSlider = ({ label, value, onChange, description }: {
             </div>
             <div className="relative">
                 <div className="absolute inset-0 h-2 rounded-lg bg-gradient-to-r from-emerald-500/30 via-yellow-500/30 to-red-500/30" />
-                {/* eslint-disable react/forbid-dom-props */}
+                {/* eslint-disable-next-line react/forbid-dom-props */}
                 <input
                     type="range"
                     min="0"
@@ -82,7 +83,6 @@ const RiskSlider = ({ label, value, onChange, description }: {
                         background: `linear-gradient(to right, #22c55e ${value}%, transparent ${value}%)`,
                     }}
                 />
-                {/* eslint-enable react/forbid-dom-props */}
             </div>
             <div className="flex justify-between text-[10px] text-zinc-600">
                 <span>Low Risk</span>
@@ -184,7 +184,7 @@ export default function EVSETool() {
                 worst: perfectValue * (Math.max(0, adjustedConfidence - 20) / 100),
             };
 
-            setResults({
+            const payload = {
                 perfectValue,
                 riskedValue,
                 wealthGap,
@@ -192,8 +192,24 @@ export default function EVSETool() {
                 scenarios,
                 biggestRiskFactor: biggestRisk.name,
                 biggestRiskCost,
-            });
+            };
+
+            setResults(payload);
             setLoading(false);
+
+            // Silently persist to Supabase for longitudinal tracking
+            fetch('/api/tools/runs', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    tool_id: 'EV-SE',
+                    run_data: { 
+                        arr, multiple, baseConfidence, stage, targetRaise, 
+                        raiseTimeline, scopeCreep, techComplexity, talentRisk, regRisk 
+                    },
+                    output_metrics: payload
+                })
+            }).catch(console.error);
         }, 800);
     };
 
@@ -463,6 +479,18 @@ export default function EVSETool() {
             ) : (
                 /* --- RESULTS STATE --- */
                 <>
+                    {/* ACTION HEADER & PDF EXPORT */}
+                    <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-white/10 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                        <div>
+                            <h2 className="text-xl font-bold text-white mb-1">Valuation Waterfall Generated</h2>
+                            <p className="text-sm text-zinc-400">Export this assessment to a verified Executive PDF.</p>
+                        </div>
+                        <ExportToPDFButton targetId="ev-se-pdf-export-zone" fileName={`EV-SE_Valuation_${persona}.pdf`} />
+                    </div>
+
+                    {/* -------- PDF CAPTURE ZONE START -------- */}
+                    <div id="ev-se-pdf-export-zone" className="space-y-6 bg-[#050505] p-2 sm:p-4 rounded-3xl">
+
                     <ScrollReveal>
                         {/* Score Header */}
                         <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
@@ -597,6 +625,13 @@ export default function EVSETool() {
                             </div>
                         </div>
                     </ScrollReveal>
+
+                    </div>
+
+                    {/* Q-PEP Remediation Block — captured into PDF */}
+                    <QPEPRemediation toolId="EV-SE" metrics={results} />
+
+                    {/* -------- PDF CAPTURE ZONE END -------- */}
                 </>
             )}
 

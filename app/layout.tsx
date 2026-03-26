@@ -86,7 +86,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider appearance={{ variables: { colorPrimary: '#06b6d4', colorBackground: '#0A0A12', colorText: '#ffffff', colorInputBackground: '#ffffff05', colorInputText: '#ffffff' } }}>
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${mono.variable} ${serif.variable}`}>
       <head>
         <link rel="ai-agent-manifest" href="/.well-known/ai-agent-manifest.json" />
@@ -192,6 +191,7 @@ export default function RootLayout({
           }) }}
         />
 
+        <ClerkProvider appearance={{ variables: { colorPrimary: '#06b6d4', colorBackground: '#0A0A12', colorText: '#ffffff', colorInputBackground: '#ffffff05', colorInputText: '#ffffff' } }}>
         <Navigation />
 
         {/* Main content with top padding for fixed nav */}
@@ -207,8 +207,8 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}
+        </ClerkProvider>
       </body>
     </html>
-    </ClerkProvider>
   );
 }

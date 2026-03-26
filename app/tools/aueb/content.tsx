@@ -8,6 +8,8 @@ import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
+import { ExportToPDFButton } from '../../components/ExportToPDFButton';
+import { QPEPRemediation } from '../../components/QPEPRemediation';
 
 const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
     const [display, setDisplay] = useState(0);
@@ -245,15 +247,31 @@ export default function AUEBTool() {
                 margin: 100 - ((f.queriesPercent / 100) * (100 - grossMargin))
             }));
 
-            setResults({
+            const payload = {
                 grossMargin, monthlyRevenue, monthlyCost: totalInfraCost, monthlyProfit, profitPerUser,
                 costPerUser: totalCostPerUser, insolvencyPoint, models, growthData,
                 price: priceNum, queries: queriesNum, users: usersNum,
                 monthsToCollapse: monthsToCollapse || 36,
                 featureBreakdown,
                 llmCost, apiCost, hostingCost, totalInfraCost
-            });
+            };
+
+            setResults(payload);
             setLoading(false);
+
+            // Silently persist to Supabase for longitudinal tracking
+            fetch('/api/tools/runs', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    tool_id: 'AUEB',
+                    run_data: { 
+                        price: priceNum, queries: queriesNum, costPerQuery: costNum, users: usersNum, 
+                        growthRate: growthRateNum, cachingEnabled, features, hostingCostPerUser: hostingNum, thirdPartyApis 
+                    },
+                    output_metrics: payload
+                })
+            }).catch(console.error);
         }, 800);
     };
 
@@ -543,7 +561,19 @@ export default function AUEBTool() {
                     ) : (
                         /* --- RESULTS STATE --- */
                         <>
-                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
+                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8 relative">
+
+                                {/* ACTION HEADER & PDF EXPORT */}
+                                <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-white/10 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                                    <div>
+                                        <h2 className="text-xl font-bold text-white mb-1">Board-Ready Deliverable Generated</h2>
+                                        <p className="text-sm text-zinc-400">Export this assessment to a verified Executive PDF.</p>
+                                    </div>
+                                    <ExportToPDFButton targetId="aueb-pdf-export-zone" fileName={`AUEB_Assessment_${persona}.pdf`} />
+                                </div>
+
+                                {/* -------- PDF CAPTURE ZONE START -------- */}
+                                <div id="aueb-pdf-export-zone" className="space-y-8 bg-[#050505] p-2 sm:p-4 rounded-3xl">
 
                                 {/* GAUGE HERO */}
                                 <motion.div
@@ -631,13 +661,14 @@ export default function AUEBTool() {
                                                 <div className="text-xs text-zinc-500 mt-1">{((results.hostingCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
                                             </div>
                                         </div>
-                                        {/* eslint-disable react/forbid-dom-props */}
                                         <div className="h-4 bg-zinc-800 rounded-full overflow-hidden flex">
+                                            {/* eslint-disable-next-line react/forbid-dom-props */}
                                             <div className="h-full bg-red-500" style={{ width: `${(results.llmCost / results.totalInfraCost) * 100}%` }} />
+                                            {/* eslint-disable-next-line react/forbid-dom-props */}
                                             <div className="h-full bg-orange-500" style={{ width: `${(results.apiCost / results.totalInfraCost) * 100}%` }} />
+                                            {/* eslint-disable-next-line react/forbid-dom-props */}
                                             <div className="h-full bg-yellow-500" style={{ width: `${(results.hostingCost / results.totalInfraCost) * 100}%` }} />
                                         </div>
-                                        {/* eslint-enable react/forbid-dom-props */}
                                         <div className="flex justify-between text-xs text-zinc-500 mt-2">
                                             <span>Total Infrastructure: <span className="text-white font-bold">{formatMoney(results.totalInfraCost)}/mo</span></span>
                                             <span>Per User: <span className="text-white font-bold">{formatMoney(results.costPerUser)}</span></span>
@@ -781,7 +812,7 @@ export default function AUEBTool() {
                                     className="text-center pt-8"
                                 >
                                     <p className="text-xs text-zinc-600 mb-3">Trusted by product leaders at</p>
-                                    <div className="flex items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
+                                    <div className="flex flex-wrap items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
                                         <span>Stripe</span>
                                         <span>Figma</span>
                                         <span>Linear</span>
@@ -789,6 +820,14 @@ export default function AUEBTool() {
                                         <span>Vercel</span>
                                     </div>
                                 </motion.div>
+
+                                </div>
+
+                                {/* Q-PEP Remediation Block — captured into PDF */}
+                                <QPEPRemediation toolId="AUEB" metrics={results} />
+
+                                {/* -------- PDF CAPTURE ZONE END -------- */}
+
                             </motion.div>
                         </>
                     )}

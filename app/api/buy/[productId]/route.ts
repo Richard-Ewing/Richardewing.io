@@ -1,17 +1,30 @@
 import { NextResponse } from 'next/server';
 import { PRODUCTS } from '@/lib/products';
+import { auth } from '@clerk/nextjs/server';
 
-// Simple redirect to Stripe Payment Link — no API key needed
 export async function GET(
     request: Request,
     { params }: { params: Promise<{ productId: string }> }
 ) {
     const { productId } = await params;
+    
+    // Server-side Auth Check
+    const { userId, redirectToSignIn } = await auth();
+
+    // Force sign-in loop if anonymous
+    if (!userId) {
+        return redirectToSignIn({ returnBackUrl: request.url });
+    }
+
     const product = PRODUCTS[productId];
 
     if (!product || !product.paymentLink) {
         return NextResponse.redirect(new URL('/advisory', request.url));
     }
 
-    return NextResponse.redirect(product.paymentLink);
+    // Construct precise Stripe Payload with guaranteed Clerk Identity Identity Mapping
+    const stripeUrl = new URL(product.paymentLink);
+    stripeUrl.searchParams.append('client_reference_id', userId);
+
+    return NextResponse.redirect(stripeUrl);
 }

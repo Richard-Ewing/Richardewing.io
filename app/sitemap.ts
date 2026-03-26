@@ -9,13 +9,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const glossaryPages: MetadataRoute.Sitemap = [
         {
             url: `${baseUrl}/glossary`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'weekly',
             priority: 0.8,
         },
         ...glossaryTerms.map(term => ({
             url: `${baseUrl}/glossary/${term.slug}`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         })),
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const frameworkPages: MetadataRoute.Sitemap = frameworks.map(f => ({
         url: `${baseUrl}/articles/frameworks/${f.slug}`,
-        lastModified: new Date(),
+        lastModified: new Date('2026-03-25'),
         changeFrequency: 'monthly' as const,
         priority: 0.7,
     }));
@@ -34,43 +34,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Core Pages
         {
             url: `${baseUrl}/`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'weekly',
             priority: 1.0,
         },
         {
             url: `${baseUrl}/advisory`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.9,
         },
         {
             url: `${baseUrl}/advisory/licensing`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.6,
         },
         {
             url: `${baseUrl}/doctrine`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/tools`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/guides`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'weekly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/comparisons`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -78,37 +78,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Tool Pages
         {
             url: `${baseUrl}/tools/pdi`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/tools/ev-se`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/tools/aueb`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/tools/aper`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/tools/audit-interview`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/tools/scoring`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.5,
         },
@@ -116,49 +116,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Content Pages
         {
             url: `${baseUrl}/articles`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'weekly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/briefings`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/exogram`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/manifesto`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'yearly',
             priority: 0.6,
         },
         {
             url: `${baseUrl}/principal`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/book`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.5,
         },
         {
             url: `${baseUrl}/profiles`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.5,
         },
         {
             url: `${baseUrl}/system`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.5,
         },
@@ -166,49 +166,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Monetization Pages
         {
             url: `${baseUrl}/benchmark`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/certification`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/workshops`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/curriculum`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/pricing`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/resources`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'weekly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/resources/ai-courses`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/case-studies`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -216,68 +216,68 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Lead magnets & help
         {
             url: `${baseUrl}/checklist`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/faq`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/start-here`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.9,
         },
         // Comparison pages
         {
             url: `${baseUrl}/compare`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/compare/pdi-vs-sonarqube`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/compare/audit-interview-vs-leetcode`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/compare/aueb-vs-aws-cost-explorer`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/compare/audit-interview-vs-hackerrank`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/compare/ev-se-vs-jellyfish`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/compare/pdi-vs-codeclimate`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/compare/aper-vs-linearb`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
@@ -285,61 +285,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Industry verticals
         {
             url: `${baseUrl}/industries`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/industries/fintech`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/industries/healthtech`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/industries/ai-first`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/industries/saas`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/industries/govtech`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/industries/edtech`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/industries/ecommerce`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/industries/cybersecurity`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/industries/logistics`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
@@ -347,7 +347,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Guides / Content Hubs
         {
             url: `${baseUrl}/industries/insurtech`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -355,19 +355,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Guides / Content Hubs
         {
             url: `${baseUrl}/guides`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.9,
         },
         {
             url: `${baseUrl}/guides/technical-debt`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.9,
         },
         {
             url: `${baseUrl}/guides/ai-economics`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.9,
         },
@@ -375,19 +375,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Blog Recap Pages
         {
             url: `${baseUrl}/articles/recap/cio-com`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/articles/recap/built-in`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/articles/recap/hackernoon`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -395,7 +395,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Additional Comparison Pages
         {
             url: `${baseUrl}/compare/audit-interview-vs-traditional`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -403,25 +403,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Audience Funnel Pages
         {
             url: `${baseUrl}/for-investors`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.9,
         },
         {
             url: `${baseUrl}/for-boards`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.9,
         },
         {
             url: `${baseUrl}/for-ctos`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.9,
         },
         {
             url: `${baseUrl}/roi`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
@@ -429,13 +429,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Additional Industry Verticals
         {
             url: `${baseUrl}/industries/proptech`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/industries/legaltech`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -443,13 +443,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // More Industry + Comparison
         {
             url: `${baseUrl}/industries/agritech`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/compare/pdi-vs-waydev`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -457,25 +457,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Methodology + Social Proof
         {
             url: `${baseUrl}/methodology`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/testimonials`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/partnerships`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/curriculum/tracks`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -483,19 +483,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // More Verticals + Comparisons (Pass 20)
         {
             url: `${baseUrl}/industries/cleantech`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/industries/mediatech`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/compare/aper-vs-jellyfish`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -503,25 +503,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Curriculum Module Pages — 24 modules across 4 tracks
         ...['1-1','1-2','1-3','1-4','1-5','1-6'].map(m => ({
             url: `${baseUrl}/curriculum/tracks/engineering-economics/${m}`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         })),
         ...['2-1','2-2','2-3','2-4','2-5','2-6'].map(m => ({
             url: `${baseUrl}/curriculum/tracks/ai-product-economics/${m}`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         })),
         ...['3-1','3-2','3-3','3-4','3-5','3-6'].map(m => ({
             url: `${baseUrl}/curriculum/tracks/rd-capital-management/${m}`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         })),
         ...['4-1','4-2','4-3','4-4','4-5','4-6'].map(m => ({
             url: `${baseUrl}/curriculum/tracks/capstone/${m}`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         })),
@@ -579,7 +579,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             'dbt-vs-airflow'
         ].map(slug => ({
             url: `${baseUrl}/comparisons/${slug}`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.7,
         })),
@@ -607,14 +607,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
             'spatial-computing-economics'
         ].map(slug => ({
             url: `${baseUrl}/guides/${slug}`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.7,
         })),
 
         ...exogramDocs.map(doc => ({
             url: `${baseUrl}/exogram/docs/${doc.slug}`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.8,
         })),
@@ -624,7 +624,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Legal
         {
             url: `${baseUrl}/legal`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-03-25'),
             changeFrequency: 'yearly',
             priority: 0.3,
         },

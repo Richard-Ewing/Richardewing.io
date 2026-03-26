@@ -38,6 +38,17 @@ export async function POST(req: Request) {
                 const client = await clerkClient();
                 
                 if (isSubscription) {
+                    // Update Stripe Subscription to persistently store the Clerk User ID for downstream revocation hooks
+                    if (session.subscription) {
+                        try {
+                            await stripe.subscriptions.update(session.subscription as string, {
+                                metadata: { clerkUserId: userId }
+                            });
+                        } catch (e) {
+                            console.error('Failed to attach metadata to Stripe Subscription', e);
+                        }
+                    }
+
                     await client.users.updateUserMetadata(userId, {
                         publicMetadata: {
                             has_yearly_subscription: true,
@@ -63,12 +74,27 @@ export async function POST(req: Request) {
         }
     }
     
-    // Handle subscription cancellations
+    // Handle subscription cancellations unconditionally
     if (event.type === 'customer.subscription.deleted') {
         const subscription = event.data.object as Stripe.Subscription;
-        // In a real schema we'd look up the user by Stripe Customer ID.
-        // For simplicity, we assume Clerk handles the customer abstraction or we store customer_id.
-        console.log(`Subscription ${subscription.id} deleted.`);
+        const clerkUserId = subscription.metadata?.clerkUserId;
+        
+        if (clerkUserId) {
+            try {
+                const client = await clerkClient();
+                await client.users.updateUserMetadata(clerkUserId, {
+                    publicMetadata: {
+                        has_yearly_subscription: false,
+                        subscription_status: 'canceled'
+                    }
+                });
+                console.log(`Access definitively revoked for Clerk User: ${clerkUserId}`);
+            } catch (error) {
+                console.error('Failed to enforce subscription revocation on Clerk metadata', error);
+            }
+        } else {
+            console.log(`Subscription ${subscription.id} deleted, but no clerkUserId metadata was found.`);
+        }
     }
 
     return new NextResponse('Webhook processed successfully', { status: 200 });

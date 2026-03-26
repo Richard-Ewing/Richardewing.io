@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Lock, FileText } from 'lucide-react';
-import { useUser } from '@clerk/nextjs';
+import { useUser, useClerk } from '@clerk/nextjs';
 import { PRODUCTS } from '@/lib/products';
 
 interface GuidePayGateProps {
@@ -15,8 +15,14 @@ interface GuidePayGateProps {
 export default function GuidePayGate({ guideTitle, productId, hasAccess = false, children }: GuidePayGateProps) {
     const [loading, setLoading] = useState<string | null>(null);
     const { user, isLoaded, isSignedIn } = useUser();
+    const { openSignIn } = useClerk();
 
     const handleCheckout = (type: string) => {
+        if (!isSignedIn) {
+            openSignIn();
+            return;
+        }
+        
         setLoading(type);
         const product = PRODUCTS[type];
         if (product?.paymentLink) {

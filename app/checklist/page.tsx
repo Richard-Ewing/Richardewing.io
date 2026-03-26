@@ -305,10 +305,10 @@ export default function ChecklistPage() {
                         <h2 className="text-2xl font-bold text-white mb-4">Want These Questions Answered Professionally?</h2>
                         <p className="text-zinc-400 mb-8 max-w-lg mx-auto">Book a diagnostic engagement and get a written executive summary with quantified findings, benchmarks, and a prioritized remediation roadmap.</p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <a href="/api/buy/strategy_session" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
+                            <a href="/api/buy/strategy_session" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                                 Book Strategy Session →
                             </a>
-                            <a href="/api/buy/full_audit" target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
+                            <a href="/api/buy/full_audit" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
                                 Full R&amp;D Audit ($7,500) →
                             </a>
                         </div>
