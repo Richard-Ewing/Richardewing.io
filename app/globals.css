@@ -328,9 +328,31 @@ html {
 .cl-formFieldLabel {
     color: #c8c8d0 !important;
 }
-.cl-socialButtonsBlockButtonText, .cl-socialButtonsBlockButton {
+
+/* Rebuilding button styles since Tailwind utilities get purged */
+.cl-socialButtonsBlockButtonText {
     color: #ffffff !important;
 }
+.cl-socialButtonsBlockButton {
+    background-color: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: #ffffff !important;
+    transition: all 0.2s ease !important;
+}
+.cl-socialButtonsBlockButton:hover {
+    background-color: rgba(255,255,255,0.1) !important;
+}
+
+.cl-formButtonPrimary {
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    transition: opacity 0.2s ease !important;
+}
+.cl-formButtonPrimary:hover {
+    opacity: 0.9 !important;
+}
+
 .cl-dividerText {
     color: #858590 !important;
 }
