@@ -1,6 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+import { motion } from 'framer-motion';
 import ToolCelebration from '../../components/ToolCelebration';
 import Link from 'next/link';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
@@ -85,14 +88,20 @@ export default function PDITool() {
     // Persona State
     const [persona, setPersona] = useState<Persona>('Founder');
 
+    // Progressive Disclosure State
+    const [step, setStep] = useState(1);
+
     // Inputs
     const [tickets, setTickets] = useState('');
-    const [teamSize, setTeamSize] = useState('20');
-    const [salary, setSalary] = useState('240000');
+    const [teamSize, setTeamSize] = useState(20);
+    const [salary, setSalary] = useState(240000);
     const [roadmapHorizon, setRoadmapHorizon] = useState('Q4');
     const [sprintLength, setSprintLength] = useState('2');
     const [avgTicketAge, setAvgTicketAge] = useState('30');
+    
+    // UI States
     const [loading, setLoading] = useState(false);
+    const [isSaving, setIsSaving] = useState(false);
     const [results, setResults] = useState<Results | null>(null);
     const [showGate, setShowGate] = useState(false);
 
@@ -121,8 +130,8 @@ export default function PDITool() {
             const score = Math.round(100 - ((maint / total) * 100));
 
             // Enhanced calculations
-            const teamNum = parseInt(teamSize) || 1;
-            const salaryNum = parseInt(salary) || 0;
+            const teamNum = teamSize || 1;
+            const salaryNum = salary || 0;
             const sprintWeeks = parseInt(sprintLength) || 2;
             const sprintsPerYear = 52 / sprintWeeks;
             const waste = teamNum * salaryNum * (maint / total);
@@ -198,7 +207,7 @@ export default function PDITool() {
                 };
 
             case 'VP Eng':
-                const seniorHours = waste / (parseInt(salary) / 2080); // Approximate hours wasted
+                const seniorHours = waste / (salary / 2080); // Approximate hours wasted
                 if (score < 50) return {
                     headline: `${Math.round(seniorHours).toLocaleString()} hours/year of senior IC time is wasted.`,
                     detail: `Your team is doing ${maintenance}% maintenance work. This is the #1 cause of senior engineer attrition—they didn't sign up to be janitors.`,
@@ -228,7 +237,47 @@ export default function PDITool() {
         }
     };
 
+    const handleSaveAndExport = async () => {
+        if (!results) return;
+        setIsSaving(true);
+        try {
+            // 1. Save to Supabase via API
+            await fetch('/api/tools/pdi/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    score: results.score,
+                    financial_waste: results.financials.waste,
+                    inputs: { teamSize, salary, sprintLength, avgTicketAge, roadmapHorizon, tickets: tickets.substring(0, 1000) }
+                })
+            });
 
+            // 2. Generate PDF Artifact
+            const element = document.getElementById('pdi-results-artifact');
+            if (element) {
+                // Temporarily force white text to be dark for print readability if needed, 
+                // but dark mode PDFs are also cool. We'll stick to native dark mode.
+                const canvas = await html2canvas(element, { 
+                    scale: 2, 
+                    backgroundColor: '#050505',
+                    logging: false
+                });
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'px',
+                    format: [canvas.width, canvas.height]
+                });
+                pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+                pdf.save(`Product_Debt_Index_${new Date().toISOString().split('T')[0]}.pdf`);
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Failed to export report.");
+        } finally {
+            setIsSaving(false);
+        }
+    };
 
     const COLORS = { growth: '#22d3ee', retention: '#8b5cf6', maintenance: '#dc2626' };
 
@@ -280,129 +329,176 @@ export default function PDITool() {
                             </div>
                         </div>
 
-                        {/* Input Form */}
+                        {/* PROGRESSIVE DISCLOSURE WIZARD */}
                         <div className="space-y-6">
-                            <div>
-                                <label className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3 block">
-                                    1. Backlog Evidence
-                                </label>
-                                <textarea
-                                    value={tickets}
-                                    onChange={e => setTickets(e.target.value)}
-                                    className="w-full h-40 sm:h-48 bg-black/50 border border-white/10 rounded-xl p-4 font-mono text-sm text-zinc-300 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500/50 transition-all placeholder:text-zinc-700 resize-none"
-                                    placeholder="Paste Jira tickets, PRs, or task descriptions here (one per line)...
+                            
+                            {/* STEP 1: ORGANIZATIONAL SCALE */}
+                            {step === 1 && (
+                                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
+                                    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                        <div className="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold font-mono text-sm border border-cyan-500/30">1</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-white">Organizational Scale</h3>
+                                            <p className="text-sm text-zinc-500">Define the size and cost of your engineering machine.</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-8">
+                                        <div className="p-6 bg-black/40 rounded-xl border border-white/5 relative group">
+                                            <div className="flex justify-between items-end mb-4">
+                                                <label className="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2">
+                                                    Engineering Team Size
+                                                    <span className="w-4 h-4 rounded-full bg-zinc-800 text-zinc-400 flex items-center justify-center text-[10px] cursor-help" title="Total number of ICs, EMs, and QA who touch the codebase.">?</span>
+                                                </label>
+                                                <div className="text-3xl font-bold text-white font-mono">{teamSize}</div>
+                                            </div>
+                                            <input 
+                                                type="range" min="1" max="500" value={teamSize} 
+                                                onChange={e => setTeamSize(parseInt(e.target.value))}
+                                                className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-cyan-500" 
+                                            />
+                                            <div className="flex justify-between text-[10px] text-zinc-500 font-mono mt-2">
+                                                <span>1 (Startup)</span>
+                                                <span>{teamSize > 120 ? 'Enterprise (>120)' : teamSize > 40 ? 'Scale-up (40-120)' : 'Growth (1-40)'}</span>
+                                                <span>500 (Enterprise)</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="p-6 bg-black/40 rounded-xl border border-white/5 relative group">
+                                            <div className="flex justify-between items-end mb-4">
+                                                <label className="text-xs font-mono text-violet-400 uppercase tracking-widest flex items-center gap-2">
+                                                    Average Fully-Loaded Salary
+                                                    <span className="w-4 h-4 rounded-full bg-zinc-800 text-zinc-400 flex items-center justify-center text-[10px] cursor-help" title="Base salary + benefits, taxes, software licenses, and overhead. Usually 120-140% of base.">?</span>
+                                                </label>
+                                                <div className="text-3xl font-bold text-white font-mono">${(salary / 1000).toFixed(0)}k</div>
+                                            </div>
+                                            <input 
+                                                type="range" min="60000" max="450000" step="5000" value={salary} 
+                                                onChange={e => setSalary(parseInt(e.target.value))}
+                                                className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-violet-500" 
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <button onClick={() => setStep(2)} className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-cyan-400 transition-all flex items-center justify-center gap-2">
+                                        Next: R&D Cadence <ArrowRight size={16} />
+                                    </button>
+                                </motion.div>
+                            )}
+
+                            {/* STEP 2: CADENCE & HORIZON */}
+                            {step === 2 && (
+                                <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
+                                    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                        <div className="w-8 h-8 rounded-full bg-violet-500/20 text-violet-400 flex items-center justify-center font-bold font-mono text-sm border border-violet-500/30">2</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-white">R&D Cadence</h3>
+                                            <p className="text-sm text-zinc-500">How you plan and measure velocity.</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div>
+                                            <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">Sprint Length</label>
+                                            <select value={sprintLength} onChange={e => setSprintLength(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors">
+                                                <option value="1">1 Week</option>
+                                                <option value="2">2 Weeks</option>
+                                                <option value="3">3 Weeks</option>
+                                                <option value="4">4 Weeks</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">Ticket Age (Days)</label>
+                                            <input type="number" value={avgTicketAge} onChange={e => setAvgTicketAge(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors" />
+                                        </div>
+                                        <div>
+                                            <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">Horizon</label>
+                                            <select value={roadmapHorizon} onChange={e => setRoadmapHorizon(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors">
+                                                <option value="Q1">Q1 (This Quarter)</option>
+                                                <option value="H1">H1 (6 Months)</option>
+                                                <option value="FY">FY (Full Year)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <button onClick={() => setStep(1)} className="w-1/3 py-4 bg-zinc-900 border border-white/10 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">
+                                            Back
+                                        </button>
+                                        <button onClick={() => setStep(3)} className="w-2/3 py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-violet-400 transition-all flex items-center justify-center gap-2">
+                                            Next: Inject Evidence <ArrowRight size={16} />
+                                        </button>
+                                    </div>
+                                </motion.div>
+                            )}
+
+                            {/* STEP 3: EVIDENCE INJECTION */}
+                            {step === 3 && (
+                                <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
+                                    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                        <div className="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold font-mono text-sm border border-red-500/30">3</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-white">Backlog Evidence</h3>
+                                            <p className="text-sm text-zinc-500">Paste your recent Jira tickets, PRs, or tasks.</p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <textarea
+                                            value={tickets}
+                                            onChange={e => setTickets(e.target.value)}
+                                            className="w-full h-48 sm:h-64 bg-black/50 border border-white/10 rounded-xl p-4 font-mono text-sm text-zinc-300 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500/50 transition-all placeholder:text-zinc-700 resize-none"
+                                            placeholder="Paste Jira tickets, PRs, or task descriptions here (one per line)...
 
 Example:
-Fix login page bug
-Refactor payment service
-Add new pricing tier
-Improve dashboard performance
-Migrate to new database"
-                                />
-                            </div>
+Fix login page race condition
+Refactor payment microservice
+Add enterprise SSO tier
+Optimize dashboard database query
+Migrate from Heroku to AWS"
+                                        />
+                                        <p className="text-xs text-zinc-600 mt-2 font-mono">Our LLM classifier will categorize these into Growth, Retention, or Maintenance to calculate your capital leakage.</p>
+                                    </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                <div>
-                                    <label htmlFor="teamSize" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3 block">
-                                        2. Team Size
-                                    </label>
-                                    <input
-                                        id="teamSize"
-                                        type="number"
-                                        value={teamSize}
-                                        onChange={e => setTeamSize(e.target.value)}
-                                        placeholder="20"
-                                        className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white font-mono focus:border-cyan-500 focus:outline-none transition-colors"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="salary" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3 block">
-                                        3. Avg Fully-Loaded Salary
-                                    </label>
-                                    <input
-                                        id="salary"
-                                        type="number"
-                                        value={salary}
-                                        onChange={e => setSalary(e.target.value)}
-                                        placeholder="240000"
-                                        className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white font-mono focus:border-cyan-500 focus:outline-none transition-colors"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="horizon" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3 block">
-                                        4. Roadmap Horizon
-                                    </label>
-                                    <select
-                                        id="horizon"
-                                        value={roadmapHorizon}
-                                        onChange={e => setRoadmapHorizon(e.target.value)}
-                                        className="w-full bg-black/50 border border-white/10 rounded-xl p-3 text-white font-mono focus:border-cyan-500 focus:outline-none transition-colors"
-                                    >
-                                        <option value="Q1">Q1 (This Quarter)</option>
-                                        <option value="H1">H1 (6 Months)</option>
-                                        <option value="FY">FY (Full Year)</option>
-                                    </select>
-                                </div>
-                            </div>
+                                    <div className="flex gap-4">
+                                        <button onClick={() => setStep(2)} className="w-1/3 py-4 bg-zinc-900 border border-white/10 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">
+                                            Back
+                                        </button>
+                                        <div className="w-2/3">
+                                            <ShineBorder borderColor="rgba(220, 38, 38, 0.6)" duration={2}>
+                                                <button
+                                                    onClick={() => setShowGate(true)}
+                                                    disabled={loading || !tickets.trim()}
+                                                    className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-red-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                                                >
+                                                    {loading ? (
+                                                        <>
+                                                            <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                                                            ANALYZING...
+                                                        </>
+                                                    ) : (
+                                                        "RUN FORENSIC AUDIT →"
+                                                    )}
+                                                </button>
+                                            </ShineBorder>
+                                        </div>
+                                    </div>
 
-                            {/* Advanced Options */}
-                            <div className="grid grid-cols-2 gap-4 p-4 bg-black/20 rounded-xl border border-white/5">
-                                <div>
-                                    <label htmlFor="sprintLength" className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2 block">
-                                        Sprint Length (weeks)
-                                    </label>
-                                    <input
-                                        id="sprintLength"
-                                        type="number"
-                                        value={sprintLength}
-                                        onChange={e => setSprintLength(e.target.value)}
-                                        className="w-full bg-black/50 border border-white/10 rounded-lg p-2 text-white font-mono text-sm focus:border-cyan-500 focus:outline-none"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="ticketAge" className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2 block">
-                                        Avg Ticket Age (days)
-                                    </label>
-                                    <input
-                                        id="ticketAge"
-                                        type="number"
-                                        value={avgTicketAge}
-                                        onChange={e => setAvgTicketAge(e.target.value)}
-                                        className="w-full bg-black/50 border border-white/10 rounded-lg p-2 text-white font-mono text-sm focus:border-cyan-500 focus:outline-none"
-                                    />
-                                </div>
-                            </div>
-
-                            <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
-                                <button
-                                    onClick={() => setShowGate(true)}
-                                    disabled={loading || !tickets.trim()}
-                                    className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-cyan-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
-                                >
-                                    {loading ? (
-                                        <>
-                                            <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                                            SCANNING BACKLOG...
-                                        </>
-                                    ) : (
-                                        "RUN FORENSIC AUDIT →"
+                                    {showGate && (
+                                        <div className="mt-6">
+                                            <ToolGate toolName="the Product Debt Index" onUnlock={() => { setShowGate(false); analyze(); }}>
+                                                <></>
+                                            </ToolGate>
+                                        </div>
                                     )}
-                                </button>
-                            </ShineBorder>
-
-                            {showGate && (
-                                <div className="mt-6">
-                                    <ToolGate toolName="the Product Debt Index" onUnlock={() => { setShowGate(false); analyze(); }}>
-                                        <></>
-                                    </ToolGate>
-                                </div>
+                                </motion.div>
                             )}
                         </div>
                     </div>
                 </ScrollReveal>
             ) : (
                 /* --- RESULTS STATE --- */
-                <>
+                <div id="pdi-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
                     <ScrollReveal>
                         {/* Score Header */}
                         <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
@@ -581,21 +677,23 @@ Migrate to new database"
 
                     {/* Action Footer */}
                     <ScrollReveal delay={250}>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t border-white/10">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t border-white/10" data-html2canvas-ignore>
                             <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Audit</button>
-                            <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.score < 50
-                                ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
-                                : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)]'
+                            <button onClick={handleSaveAndExport} disabled={isSaving} className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all flex items-center gap-2 ${results.score < 50
+                                ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)] disabled:bg-red-800'
+                                : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)] disabled:bg-cyan-700'
                                 }`}>
-                                {results.score < 50 ? '🚨 Start Debt Burn-Down' : 'Optimize My Roadmap'} →
-                            </Link>
+                                {isSaving ? (
+                                    <><div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" /> GENERATING REPORT...</>
+                                ) : '💾 SAVE TO VAULT & EXPORT PDF'}
+                            </button>
                             <Link href="/system" className="text-zinc-500 text-sm hover:text-white">Explore All Tools →</Link>
                         </div>
                     </ScrollReveal>
 
                     {/* Social Proof */}
                     <ScrollReveal delay={300}>
-                        <div className="text-center pt-8">
+                        <div className="text-center pt-8 pb-4">
                             <p className="text-xs text-zinc-600 mb-3">Trusted by product leaders at</p>
                             <div className="flex items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
                                 <span>Stripe</span>
@@ -606,7 +704,7 @@ Migrate to new database"
                             </div>
                         </div>
                     </ScrollReveal>
-                </>
+                </div>
             )
             }
 
