@@ -39,17 +39,55 @@ export default async function VaultPage() {
     return (
         <main className="min-h-screen pt-32 pb-24 px-6">
             <div className="max-w-5xl mx-auto">
+                {/* INTELLIGENCE BRIEFING / CONTEXT ENGINE */}
                 <div className="mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
                         <ShieldCheck className="w-4 h-4 text-cyan-400" />
                         <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest">Secure Client Portal</span>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-white mb-4">
-                        Welcome back, <span className="text-cyan-400">{user.firstName || 'Strategist'}</span>
-                    </h1>
-                    <p className="text-zinc-400 max-w-2xl text-lg">
-                        This is your secure vault. Access your unlocked premium assets, download board-ready reports, and track your diagnostic history.
-                    </p>
+                    
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+                        <div>
+                            <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-white mb-2">
+                                Welcome back, <span className="text-cyan-400">{user.firstName || 'Strategist'}</span>
+                            </h1>
+                            <p className="text-zinc-400 max-w-2xl text-lg">
+                                Access your unlocked advisory assets and board-ready PDF diagnostic reports.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* DYNAMIC RESUME STATE */}
+                    <div className="p-6 md:p-8 rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-transparent flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group">
+                        {/* Background flare */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none transition-opacity group-hover:opacity-100 opacity-50"></div>
+                        
+                        <div className="relative z-10">
+                            <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                                Active Context
+                            </div>
+                            <h2 className="text-2xl font-bold text-white mb-2">
+                                {toolRuns.length > 0 
+                                    ? `Last Action: ${toolRuns[0].tool_id === 'pdi' ? 'Product Debt Index' : 'Diagnostic Audit'}` 
+                                    : 'Vault Initialized: Awaiting First Assessment'}
+                            </h2>
+                            <p className="text-sm text-zinc-300 max-w-xl">
+                                {toolRuns.length > 0 
+                                    ? `You identified ${formatMoney(toolRuns[0].financial_waste)} in hidden capital waste on ${new Date(toolRuns[0].created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}. Continue iterating on your technical debt models.`
+                                    : 'Run your first boardroom-ready diagnostic to baseline your engineering metrics and identify hidden capital waste.'}
+                            </p>
+                        </div>
+                        
+                        <div className="relative z-10 shrink-0">
+                            <Link 
+                                href={toolRuns.length > 0 ? `/tools/${toolRuns[0].tool_id}` : '/tools/pdi'} 
+                                className="inline-flex items-center justify-center px-8 py-4 bg-cyan-500 text-black text-sm font-bold shadow-[0_0_30px_rgba(6,182,212,0.3)] hover:shadow-[0_0_40px_rgba(6,182,212,0.5)] uppercase tracking-widest rounded-xl hover:bg-cyan-400 transition-all hover:scale-105"
+                            >
+                                {toolRuns.length > 0 ? 'Resume Analysis' : 'Start Audit'} <ChevronRight className="w-4 h-4 ml-2" />
+                            </Link>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-8">
