@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { SignInButton, UserButton, useUser } from '@clerk/nextjs';
+import { SignInButton, useUser, useClerk } from '@clerk/nextjs';
 
 const Navigation = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -105,7 +105,7 @@ const Navigation = () => {
                             )}
                             {isLoaded && isSignedIn && (
                                 <div className="flex items-center justify-center -ml-2">
-                                    <UserButton />
+                                    <UserDropdown />
                                 </div>
                             )}
 
@@ -135,7 +135,7 @@ const Navigation = () => {
 };
 
 // Dropdown Component
-const Dropdown = ({ label, children }: { label: string, children: React.ReactNode }) => {
+const Dropdown = ({ label, children }: { label: React.ReactNode, children: React.ReactNode }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -307,6 +307,38 @@ const MobileLink = ({ href, children, onClick, className = "" }: { href: string,
         >
             {children}
         </Link>
+    );
+};
+
+const UserDropdown = () => {
+    const { user } = useUser();
+    const { signOut } = useClerk();
+    
+    if (!user) return null;
+
+    const initials = user.firstName && user.lastName 
+        ? `${user.firstName[0]}${user.lastName[0]}` 
+        : user.primaryEmailAddress?.emailAddress?.substring(0, 1).toUpperCase() || 'U';
+
+    return (
+        <Dropdown label={
+            <div className="w-8 h-8 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold text-sm border border-violet-400/50 hover:border-violet-400 transition-colors shadow-[0_0_10px_rgba(139,92,246,0.3)]">
+                {initials}
+            </div>
+        }>
+            <div className="px-4 py-3 border-b border-white/10 mb-2">
+                <p className="text-sm font-medium text-white">{user.fullName || 'User'}</p>
+                <p className="text-xs text-zinc-500 truncate">{user.primaryEmailAddress?.emailAddress}</p>
+            </div>
+            <DropdownItem href="/vault" description="Your intelligence dashboard">My Vault</DropdownItem>
+            <DropdownItem href="/system" description="All enterprise tools">Tools Library</DropdownItem>
+            <button 
+                onClick={() => signOut()} 
+                className="w-full text-left block px-4 py-3 text-sm text-red-400 hover:text-red-300 hover:bg-white/5 transition-colors mt-2 border-t border-white/10"
+            >
+                Sign Out
+            </button>
+        </Dropdown>
     );
 };
 

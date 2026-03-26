@@ -4,6 +4,7 @@ import React, { useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm, ValidationError } from '@formspree/react';
 import { Mail, ArrowRight, CheckCircle, Loader2 } from 'lucide-react';
+import { useUser } from '@clerk/nextjs';
 
 interface NewsletterFormProps {
     id?: string;
@@ -25,6 +26,9 @@ export function NewsletterForm({
     const [state, handleSubmit] = useForm(id);
     const lastSubmittedEmailRef = useRef<string>('');
     const router = useRouter();
+    const { user } = useUser();
+    
+    const defaultEmail = user?.primaryEmailAddress?.emailAddress || "";
 
     // Fire-and-forget to Beehiiv when Formspree succeeds, then redirect
     useEffect(() => {
@@ -74,9 +78,11 @@ export function NewsletterForm({
                     type="email"
                     name="email"
                     placeholder={placeholder}
+                    defaultValue={defaultEmail}
+                    readOnly={!!defaultEmail}
                     required
                     disabled={state.submitting}
-                    className="w-full pl-11 pr-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-mono text-sm"
+                    className="w-full pl-11 pr-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed read-only:bg-white/5 read-only:text-zinc-400 font-mono text-sm"
                 />
                 <ValidationError
                     prefix="Email"

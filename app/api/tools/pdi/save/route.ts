@@ -28,7 +28,7 @@ export async function POST(req: Request) {
 
         if (error) {
             console.error('Supabase Insert Error:', error);
-            return NextResponse.json({ error: 'Failed to save to Vault' }, { status: 500 });
+            return NextResponse.json({ error: `Supabase Error: ${error.message}` }, { status: 500 });
         }
 
         return NextResponse.json({ success: true });
