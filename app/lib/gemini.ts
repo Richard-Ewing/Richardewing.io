@@ -11,4 +11,4 @@ const genAI = new GoogleGenerativeAI(apiKey || 'dummy_key');
 
 // Export the model for use in API routes
 // Using 'gemini-3.1-flash-lite' per Google deprecation notice (June 2026)
-export const model = genAI.getGenerativeModel({ model: 'gemini-3.1-flash-lite' });
+export const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });

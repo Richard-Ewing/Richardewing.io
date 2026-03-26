@@ -105,10 +105,7 @@ const Navigation = () => {
                             )}
                             {isLoaded && isSignedIn && (
                                 <div className="flex items-center justify-center -ml-2">
-                                    <UserButton 
-                                        userProfileMode="navigation"
-                                        userProfileUrl="/vault"
-                                    />
+                                    <UserButton />
                                 </div>
                             )}
 
