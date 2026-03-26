@@ -24,15 +24,22 @@ export default function ToolGate({ children, toolName = "This Diagnostic", onUnl
     const formId = "xzddbpwy";
     const [state, handleFormspreeSubmit] = useForm(formId);
     
-    const { isLoaded, isSignedIn } = useUser();
+    const { isLoaded, isSignedIn, user } = useUser();
 
     // Auto-unlock if user is already authenticated via Clerk
     React.useEffect(() => {
-        if (isLoaded && isSignedIn && !isUnlocked) {
+        if (isLoaded && isSignedIn && user?.primaryEmailAddress?.emailAddress && !isUnlocked) {
+            // Silently capture the lead since they bypassed the form
+            fetch('/api/beehiiv', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: user.primaryEmailAddress.emailAddress, source: `${toolName} Gate (Auto)` }),
+            }).catch(() => {});
+            
             setIsUnlocked(true);
             onUnlock?.();
         }
-    }, [isLoaded, isSignedIn, isUnlocked, onUnlock]);
+    }, [isLoaded, isSignedIn, isUnlocked, onUnlock, user, toolName]);
 
     // When Formspree submission succeeds, unlock and trigger callback
     React.useEffect(() => {
