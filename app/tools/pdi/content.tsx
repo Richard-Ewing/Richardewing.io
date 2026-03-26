@@ -242,7 +242,7 @@ export default function PDITool() {
         setIsSaving(true);
         try {
             // 1. Save to Supabase via API
-            await fetch('/api/tools/pdi/save', {
+            const saveRes = await fetch('/api/tools/pdi/save', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -251,6 +251,11 @@ export default function PDITool() {
                     inputs: { teamSize, salary, sprintLength, avgTicketAge, roadmapHorizon, tickets: tickets.substring(0, 1000) }
                 })
             });
+
+            if (!saveRes.ok) {
+                const errData = await saveRes.json().catch(() => ({}));
+                throw new Error(errData.error || `Vault connection failed (${saveRes.status})`);
+            }
 
             // 2. Generate PDF Artifact
             const element = document.getElementById('pdi-results-artifact');
@@ -271,9 +276,9 @@ export default function PDITool() {
                 pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
                 pdf.save(`Product_Debt_Index_${new Date().toISOString().split('T')[0]}.pdf`);
             }
-        } catch (error) {
-            console.error(error);
-            alert("Failed to export report.");
+        } catch (error: any) {
+            console.error('Export Error:', error);
+            alert(`Failed to export report: ${error?.message || error}`);
         } finally {
             setIsSaving(false);
         }

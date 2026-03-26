@@ -10,6 +10,7 @@ import StickyBottomCTA from './components/StickyBottomCTA';
 import SocialProofTicker from './components/SocialProofTicker';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { ClerkProvider } from '@clerk/nextjs';
+import { dark } from '@clerk/themes';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk' });
@@ -191,7 +192,7 @@ export default function RootLayout({
           }) }}
         />
 
-        <ClerkProvider appearance={{ variables: { colorPrimary: '#06b6d4', colorBackground: '#0A0A12', colorText: '#ffffff', colorInputBackground: '#ffffff05', colorInputText: '#ffffff' } }}>
+        <ClerkProvider appearance={{ baseTheme: dark, variables: { colorPrimary: '#06b6d4', colorBackground: '#0A0A12', colorText: '#ffffff', colorInputBackground: '#ffffff05', colorInputText: '#ffffff' } }}>
         <Navigation />
 
         {/* Main content with top padding for fixed nav */}
