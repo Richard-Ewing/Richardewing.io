@@ -47,9 +47,9 @@ const Navigation = () => {
                         {/* Desktop Nav — Simplified: 3 dropdowns + Start Here */}
                         <div className="hidden md:flex items-center gap-6 lg:gap-8">
 
-                            {/* Start Here — the golden path for new visitors */}
-                            <Link href="/doctrine" className="text-emerald-400 hover:text-emerald-300 transition-colors relative group font-semibold">
-                                ✦ Start Here
+                            {/* Start Here / Vault Dashboard — the golden path for visitors */}
+                            <Link href={isSignedIn ? "/vault" : "/doctrine"} className="text-emerald-400 hover:text-emerald-300 transition-colors relative group font-semibold">
+                                ✦ {isSignedIn ? "Vault Dashboard" : "Start Here"}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
 

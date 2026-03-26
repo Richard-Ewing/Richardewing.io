@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { toPng } from 'html-to-image';
 import { motion } from 'framer-motion';
 import ToolCelebration from '../../components/ToolCelebration';
 import Link from 'next/link';
@@ -260,20 +260,20 @@ export default function PDITool() {
             // 2. Generate PDF Artifact
             const element = document.getElementById('pdi-results-artifact');
             if (element) {
-                // Temporarily force white text to be dark for print readability if needed, 
-                // but dark mode PDFs are also cool. We'll stick to native dark mode.
-                const canvas = await html2canvas(element, { 
-                    scale: 2, 
-                    backgroundColor: '#050505',
-                    logging: false
+                // toPng handles modern CSS natively without crashing on oklab/oklch colors.
+                const imgData = await toPng(element, { 
+                    pixelRatio: 2, 
+                    backgroundColor: '#050505'
                 });
-                const imgData = canvas.toDataURL('image/png');
+                
+                // Get element dimensions for precise PDF scaling
+                const { offsetWidth, offsetHeight } = element;
                 const pdf = new jsPDF({
                     orientation: 'portrait',
                     unit: 'px',
-                    format: [canvas.width, canvas.height]
+                    format: [offsetWidth, offsetHeight]
                 });
-                pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+                pdf.addImage(imgData, 'PNG', 0, 0, offsetWidth, offsetHeight);
                 pdf.save(`Product_Debt_Index_${new Date().toISOString().split('T')[0]}.pdf`);
             }
         } catch (error: any) {

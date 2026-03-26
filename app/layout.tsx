@@ -199,13 +199,12 @@ export default function RootLayout({
               colorPrimary: '#06b6d4', 
               colorBackground: '#0A0A12', 
               colorText: '#ffffff', 
-              colorInputBackground: '#1A1A24', 
+              colorInputBackground: '#18181b', // Strict hex code locks dark mode
               colorInputText: '#ffffff',
               colorDanger: '#dc2626'
             },
             elements: {
               card: 'border border-white/10 shadow-2xl bg-[#0A0A12]',
-              formFieldInput: 'bg-[#1A1A24] border-white/10 text-white placeholder:text-zinc-600',
               formFieldLabel: 'text-zinc-400 font-sans',
               socialButtonsBlockButton: 'bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all font-sans',
               formButtonPrimary: 'font-bold tracking-widest uppercase hover:opacity-90 transition-opacity',
