@@ -192,7 +192,26 @@ export default function RootLayout({
           }) }}
         />
 
-        <ClerkProvider appearance={{ baseTheme: dark, variables: { colorPrimary: '#06b6d4', colorBackground: '#0A0A12', colorText: '#ffffff', colorInputBackground: '#ffffff05', colorInputText: '#ffffff' } }}>
+        <ClerkProvider 
+          appearance={{ 
+            baseTheme: dark, 
+            variables: { 
+              colorPrimary: '#06b6d4', 
+              colorBackground: '#0A0A12', 
+              colorText: '#ffffff', 
+              colorInputBackground: '#1A1A24', 
+              colorInputText: '#ffffff',
+              colorDanger: '#dc2626'
+            },
+            elements: {
+              card: 'border border-white/10 shadow-2xl',
+              socialButtonsBlockButton: 'bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all font-sans',
+              formButtonPrimary: 'font-bold tracking-widest uppercase hover:opacity-90 transition-opacity',
+              headerTitle: 'font-sans font-bold',
+              headerSubtitle: 'font-sans text-white/60'
+            }
+          }}
+        >
         <Navigation />
 
         {/* Main content with top padding for fixed nav */}
