@@ -108,7 +108,7 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
     const metadata: any = sessionClaims?.metadata || {};
     const hasSubscription = metadata.has_yearly_subscription === true;
     const unlockedItems = (metadata.unlocked_items as string[]) || [];
-    const hasAccess = !!userId && (hasSubscription || unlockedItems.includes(`module_${mod.moduleId}`));
+    const hasAccess = !!userId && (hasSubscription || unlockedItems.includes(`module_${mod.moduleId}`) || unlockedItems.includes(`module_track_${slug[0]}`));
 
     return <ModuleCard mod={mod} hasAccess={hasAccess} />;
 }

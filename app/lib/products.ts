@@ -61,6 +61,30 @@ export const PRODUCTS: Record<string, Product> = {
         interval: 'year',
         paymentLink: 'https://buy.stripe.com/eVq00cdvgcTMeW91xC2B209',
     },
+    module_cto: {
+        name: 'Engineering Leader / CTO — Track Access',
+        description: 'Lifetime access to the Engineeering Leader / CTO track.',
+        price: 2900, mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
+    },
+    module_pm: {
+        name: 'Product Manager / CPO — Track Access',
+        description: 'Lifetime access to the Product Manager / CPO track.',
+        price: 2900, mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
+    },
+    module_investor: {
+        name: 'PE / VC / Investor — Track Access',
+        description: 'Lifetime access to the PE / VC / Investor track.',
+        price: 2900, mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
+    },
+    module_ai_enterprise: {
+        name: 'AI & Enterprise Architect — Track Access',
+        description: 'Lifetime access to the AI & Enterprise Architect track.',
+        price: 2900, mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
+    },
     module_devops: {
         name: 'DevOps & Platform Economics — Single Module',
         description: 'Lifetime access to one DevOps & Platform Economics module (Track 5).',
