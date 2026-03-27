@@ -67,7 +67,7 @@ export default function GuidePayGate({ guideTitle, productId, hasAccess = false,
                         className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold text-sm hover:opacity-90 transition-opacity"
                     >
                         <FileText className="w-4 h-4" />
-                        {loading === productId ? 'Redirecting...' : 'Unlock Guide \u2014 $29'}
+                        {loading === productId ? 'Redirecting...' : `Unlock Guide — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`}
                     </button>
                     
                     <div className="mt-4 pt-4 border-t border-white/5">
