@@ -43,9 +43,23 @@ CLASSIFICATION RULES (IMMUTABLE):
    - Provide 3 highly tactical action items per month based specifically on the user's backlog.
 
 OUTPUT INSTRUCTION:
-Return a JSON object with:
-1. "categorized" array (fields: "ticket", "category", "reasoning").
-2. "qpep_roadmap" array of exactly 3 objects (fields: "month" (1,2,3), "focus", "action_items" (array of 3 strings)).
+Return ONLY a valid JSON object matching this exact schema:
+{
+  "categorized": [
+    {
+      "ticket": "string (the original ticket text)",
+      "category": "string (must be EXACTLY one of: 'Maintenance', 'Retention', 'Growth')",
+      "reasoning": "string (1 short sentence)"
+    }
+  ],
+  "qpep_roadmap": [
+    {
+      "month": number (1, 2, or 3),
+      "focus": "string (the strategic theme)",
+      "action_items": ["string", "string", "string"]
+    }
+  ]
+}
 `;
 
 export async function POST(req: Request) {
