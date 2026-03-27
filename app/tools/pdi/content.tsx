@@ -78,10 +78,14 @@ interface Results {
         category: string;
         reasoning: string;
     }>;
-    // Enhanced metrics
     debtVelocity: number; // tickets per sprint going to debt
     burnDownWeeks: number; // estimated weeks to clear if dedicated
     ticketCount: number;
+    qpep_roadmap?: Array<{
+        month: number;
+        focus: string;
+        action_items: string[];
+    }>;
 }
 
 export default function PDITool() {
@@ -162,6 +166,7 @@ export default function PDITool() {
                 debtVelocity,
                 burnDownWeeks,
                 ticketCount: total,
+                qpep_roadmap: data.qpep_roadmap,
             });
         } catch (error: any) {
             console.error(error);
@@ -682,6 +687,35 @@ Migrate from Heroku to AWS"
                                     ))}
                                 </div>
                             </GlowCard>
+                        </ScrollReveal>
+                    )}
+
+                    {/* Q-PEP ROADMAP */}
+                    {results.qpep_roadmap && results.qpep_roadmap.length > 0 && (
+                        <ScrollReveal delay={225}>
+                            <h3 className="text-xl font-bold text-white mb-4 mt-8 flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                                Quarterly Product Execution Plan (Q-PEP)
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                {results.qpep_roadmap.map((plan, i) => (
+                                    <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 relative overflow-hidden group hover:border-cyan-500/50 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-cyan-500/10 transition-colors"></div>
+                                        <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-3 border-b border-white/5 pb-2">
+                                            Month {plan.month}
+                                        </div>
+                                        <h4 className="font-bold text-white mb-4 text-sm">{plan.focus}</h4>
+                                        <ul className="space-y-3">
+                                            {plan.action_items.map((action, j) => (
+                                                <li key={j} className="flex items-start gap-2 text-xs text-zinc-400 leading-relaxed">
+                                                    <span className="text-cyan-500 mt-1 border border-cyan-500/30 rounded text-[8px] px-1 font-mono shrink-0">EXEC</span>
+                                                    <span>{action}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
                         </ScrollReveal>
                     )}
 

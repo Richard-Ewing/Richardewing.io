@@ -11,6 +11,11 @@ const TicketSchema = z.object({
 
 const ResponseSchema = z.object({
     categorized: z.array(TicketSchema),
+    qpep_roadmap: z.array(z.object({
+        month: z.number(),
+        focus: z.string(),
+        action_items: z.array(z.string()),
+    })).length(3),
 });
 
 // THE "RUTHLESS" PERSONA
@@ -31,11 +36,16 @@ CLASSIFICATION RULES (IMMUTABLE):
    - Keywords: new feature, launch, market expansion, upsell, pricing tier, viral, acquisition, onboarding, revenue, experiment.
    - Logic: If it directly drives Net New ARR, it is Growth.
 
+4. Q-PEP REMEDIATION (The Cure):
+   - You MUST analyze the specific 'Maintenance' tickets identified.
+   - You MUST generate a 3-month Quarterly Product Execution Plan (Q-PEP) to eliminate this debt.
+   - Month 1 is aggressive triage. Month 2 is structural refactor. Month 3 is CI/CD & Automation.
+   - Provide 3 highly tactical action items per month based specifically on the user's backlog.
+
 OUTPUT INSTRUCTION:
-Return a JSON object with a "categorized" array. Each item MUST have these exact keys:
-- "ticket": The original ticket text.
-- "category": Exactly one of "Maintenance", "Retention", or "Growth".
-- "reasoning": A short explanation (1 sentence).
+Return a JSON object with:
+1. "categorized" array (fields: "ticket", "category", "reasoning").
+2. "qpep_roadmap" array of exactly 3 objects (fields: "month" (1,2,3), "focus", "action_items" (array of 3 strings)).
 `;
 
 export async function POST(req: Request) {
@@ -92,6 +102,7 @@ export async function POST(req: Request) {
 
         return NextResponse.json({
             categorized: validated.categorized,
+            qpep_roadmap: validated.qpep_roadmap,
             categories,
             total: validated.categorized.length,
         });
