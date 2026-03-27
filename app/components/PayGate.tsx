@@ -138,7 +138,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                         <div className="absolute top-2 right-2 bg-cyan-500 text-black text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">Best Value</div>
                                         <div className="flex items-center justify-between">
                                             <div>
-                                                <div className="text-sm font-bold text-white">{loading === 'full_curriculum' ? 'Redirecting...' : 'All 170 Modules'}</div>
+                                                <div className="text-sm font-bold text-white">{loading === 'full_curriculum' ? 'Redirecting...' : 'All 60 Modules'}</div>
                                                 <div className="text-xs text-zinc-500">Full curriculum + tools</div>
                                             </div>
                                             <div className="text-right">
@@ -161,7 +161,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                             </button>
 
                             <p className="text-[10px] text-zinc-600 mt-3">
-                                Includes all 170 modules • 500+ lessons • 5 tools • Certificate of completion
+                                Includes all 60 modules • 150+ lessons • 5 tools • Certificate of completion
                             </p>
 
                             {/* Alternative: Advisory */}

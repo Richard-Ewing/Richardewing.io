@@ -76,7 +76,7 @@ export default function GuidePayGate({ guideTitle, productId, hasAccess = false,
                             disabled={!!loading}
                             className="text-xs text-zinc-500 hover:text-cyan-400 transition-colors"
                         >
-                            Or get all 10 Guides + 170 Modules for $199/yr
+                            Or get all 10 Guides + 60 Modules for $199/yr
                         </button>
                     </div>
                 </div>
