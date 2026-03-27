@@ -760,19 +760,6 @@ export default function GuidesPage() {
                         ))}
                     </div>
 
-                    {/* PREMIUM GUIDES */}
-                    <div className="mb-4">
-                        <div className="flex items-center gap-3 mb-2">
-                            <h2 className="text-2xl font-grotesk font-bold text-white">Premium Guides</h2>
-                            <span className="text-[10px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-1 rounded-full uppercase tracking-widest">$29 each</span>
-                        </div>
-                        <p className="text-zinc-500 text-sm">Deep-dive resources that would cost $5,000+ if delivered as advisory. One-time purchase, lifetime access.</p>
-                    </div>
-                    <div className="space-y-5 mb-16">
-                        {premiumGuides.map((guide) => (
-                            <Link key={guide.slug} href={`/guides/${guide.slug}`} className="block group">
-                                <div className="card p-6 sm:p-8 hover:border-amber-500/30 transition-all border-amber-500/10">
-                                    <div className="flex flex-col sm:flex-row gap-6">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2 flex-wrap mb-3">
                                                 <span className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border ${badgeStyles[guide.badgeColor]}`}>{guide.badge}</span>
@@ -785,61 +772,6 @@ export default function GuidesPage() {
                                             <h3 className="text-xl font-grotesk font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">{guide.title}</h3>
                                             <p className="text-sm text-zinc-500 font-mono mb-3">{guide.subtitle}</p>
                                             <p className="text-zinc-400 text-sm leading-relaxed mb-4">{guide.description}</p>
-                                            <div className="flex flex-wrap gap-1.5 mb-3">
-                                                {guide.topics.map((topic) => (
-                                                    <span key={topic} className="text-[9px] font-mono px-2 py-0.5 rounded bg-amber-500/[0.03] border border-amber-500/10 text-zinc-500">{topic}</span>
-                                                ))}
-                                            </div>
-                                            <div className="flex items-center gap-3">
-                                                {guide.tools?.map((tool) => (
-                                                    <span key={tool.name} className="text-[10px] text-cyan-400">🛠️ {tool.name}</span>
-                                                ))}
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col items-center justify-center gap-2">
-                                            <div className="text-xl font-grotesk font-bold text-amber-400">{(guide as typeof guide & { price?: string }).price}</div>
-                                            <div className="text-[9px] text-zinc-600 uppercase">one-time</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-
-                    {/* Bundle CTA */}
-                    <div className="rounded-2xl border border-violet-500/20 bg-gradient-to-br from-violet-500/[0.03] to-cyan-500/[0.03] p-8 text-center mb-12">
-                        <div className="inline-block px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 mb-4">
-                            <span className="text-[10px] font-mono text-violet-400 uppercase tracking-widest">Best Value</span>
-                        </div>
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-3">All Premium Guides Bundle — $99</h2>
-                        <p className="text-zinc-400 mb-6 max-w-lg mx-auto text-sm">Get all 5 premium guides for the price of 3. Plus access to future premium guides at no extra cost.</p>
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <a href="/api/buy/premium_bundle" className="px-6 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:opacity-90 transition-opacity">
-                                Get All Premium Guides — $99 →
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Cross-Links */}
-                    <div className="grid sm:grid-cols-4 gap-3 mb-12">
-                        <Link href="/glossary" className="card p-4 text-center hover:border-cyan-500/20 transition-all group">
-                            <div className="text-xl mb-1">📚</div>
-                            <div className="text-xs font-bold text-white group-hover:text-cyan-400 transition-colors">Glossary</div>
-                            <div className="text-[9px] text-zinc-600">420+ terms</div>
-                        </Link>
-                        <Link href="/comparisons" className="card p-4 text-center hover:border-emerald-500/20 transition-all group">
-                            <div className="text-xl mb-1">⚔️</div>
-                            <div className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">Comparisons</div>
-                            <div className="text-[9px] text-zinc-600">Head-to-head analysis</div>
-                        </Link>
-                        <Link href="/curriculum/tracks" className="card p-4 text-center hover:border-violet-500/20 transition-all group">
-                            <div className="text-xl mb-1">🎓</div>
-                            <div className="text-xs font-bold text-white group-hover:text-violet-400 transition-colors">Curriculum</div>
-                            <div className="text-[9px] text-zinc-600">60 modules</div>
-                        </Link>
-                        <Link href="/tools" className="card p-4 text-center hover:border-amber-500/20 transition-all group">
-                            <div className="text-xl mb-1">🛠️</div>
-                            <div className="text-xs font-bold text-white group-hover:text-amber-400 transition-colors">Free Tools</div>
                             <div className="text-[9px] text-zinc-600">5 calculators</div>
                         </Link>
                     </div>

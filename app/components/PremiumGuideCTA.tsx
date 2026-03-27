@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import BundlePopup from './BundlePopup';
+import BundlePopup, { PREMIUM_GUIDES } from './BundlePopup';
 import { ArrowRight, Lock } from 'lucide-react';
 
 interface PremiumGuideCTAProps {
@@ -11,6 +11,7 @@ interface PremiumGuideCTAProps {
 
 export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCTAProps) {
     const [showBundle, setShowBundle] = useState(false);
+    const guidePrice = PREMIUM_GUIDES.find(g => g.slug === guideSlug)?.price || 29;
 
     return (
         <>
@@ -29,13 +30,13 @@ export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCT
                         onClick={() => setShowBundle(true)}
                         className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-sm rounded-xl hover:opacity-90 transition-opacity"
                     >
-                        Unlock for $29 <ArrowRight className="w-4 h-4" />
+                        Unlock for ${guidePrice} <ArrowRight className="w-4 h-4" />
                     </button>
                     <button
                         onClick={() => setShowBundle(true)}
                         className="text-xs text-violet-400 hover:text-white transition-colors underline underline-offset-2"
                     >
-                        Or bundle & save up to 32%
+                        Or bundle & save up to 60%
                     </button>
                 </div>
 

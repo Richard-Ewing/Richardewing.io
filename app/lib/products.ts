@@ -98,27 +98,48 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/dRm8wIcrcaLE4hv4JO2B207',
     },
 
-    // --- GUIDES ---
-    premium_guide: {
-        name: 'Premium Guide Access',
-        description: 'Access to one premium guide: AI Economics, PE Due Diligence, SaaS Metrics, VC Assessment, or Cloud FinOps.',
+    // --- GUIDES (DYNAMIC TIERS) ---
+    premium_guide_29: {
+        name: 'Premium Guide Access ($29 Tier)',
+        description: 'Access to one premium guide.',
         price: 2900,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/3cI7sE1My1b44hvccg2B20a',
+        paymentLink: 'https://buy.stripe.com/3cI7sE1My1b44hvccg2B20a', // Original Link
     },
-    premium_bundle: {
-        name: 'All 5 Premium Guides Bundle',
-        description: 'All 5 premium guides (AI Economics, PE Due Diligence, VC Assessment, SaaS Metrics, Cloud FinOps). Save 32% vs buying individually.',
+    premium_guide_79: {
+        name: 'Premium Guide Access ($79 Tier)',
+        description: 'Access to one premium guide.',
+        price: 7900,
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/placeholder_79', // TODO: Update with real link
+    },
+    premium_guide_99: {
+        name: 'Premium Guide Access ($99 Tier)',
+        description: 'Access to one premium guide.',
         price: 9900,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/fZu5kw0IucTM3drdgk2B20c',
+        paymentLink: 'https://buy.stripe.com/placeholder_99', // TODO: Update with real link
     },
-    premium_bundle_3: {
-        name: '3-Guide Bundle — Pick Any 3',
-        description: 'Choose any 3 premium guides. Save 21% vs buying individually.',
-        price: 6900,
+    premium_guide_129: {
+        name: 'Premium Guide Access ($129 Tier)',
+        description: 'Access to one premium guide.',
+        price: 12900,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/8x200c8aWf1UaFT0ty2B20b',
+        paymentLink: 'https://buy.stripe.com/placeholder_129', // TODO: Update with real link
+    },
+    premium_guide_149: {
+        name: 'Premium Flagship Guide ($149 Tier)',
+        description: 'Access to one premium flagship playbook.',
+        price: 14900,
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/placeholder_149', // TODO: Update with real link
+    },
+    premium_bundle_ultimate: {
+        name: 'Ultimate Guides Bundle',
+        description: 'Complete access to all 13 premium guides/playbooks across all pricing tiers. Save over $500.',
+        price: 39900,
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/placeholder_bundle_399', // TODO: Update with real link
     },
 
     // --- ADVISORY (CORE TIERS) ---
