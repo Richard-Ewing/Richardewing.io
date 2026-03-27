@@ -221,7 +221,7 @@ const tracks = [
                     { label: 'SWE to AI Engineer', href: '/curriculum/tracks/ai-career-transitions/15-4' },
                     { label: 'VP Eng to VP AI', href: '/curriculum/tracks/ai-career-transitions/15-8' }
                 ],
-            }
+            },
             {
                 name: 'Cloud FinOps',
                 items: [

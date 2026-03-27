@@ -43,7 +43,7 @@ export default function BreakingIntoAgenticAI() {
                         <div className="card p-8 mb-12 bg-violet-500/5 border-violet-500/20">
                             <h2 className="text-2xl font-grotesk font-bold text-white mb-4 mt-0">The 2026 Imperative</h2>
                             <p className="text-zinc-400">
-                                The era of the "Chatbot" is over. 2026 is defined by <Link href="/glossary/agentic-ai" className="text-cyan-400 hover:underline">Agentic AI</—systems capable of autonomous reasoning, tool use, and multi-step execution. Engineering these systems requires a fundamental shift from deterministic loops to probabilistic orchestration.
+                                The era of the "Chatbot" is over. 2026 is defined by <Link href="/glossary/agentic-ai" className="text-cyan-400 hover:underline">Agentic AI</Link>—systems capable of autonomous reasoning, tool use, and multi-step execution. Engineering these systems requires a fundamental shift from deterministic loops to probabilistic orchestration.
                             </p>
                             <div className="mt-6 flex flex-wrap gap-2">
                                 <span className="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-zinc-300 font-mono">LangGraph</span>
