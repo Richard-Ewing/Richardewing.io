@@ -222,8 +222,12 @@ export default async function VaultPage() {
                                         {/* Progress Bar */}
                                         <div className="w-full h-1.5 bg-zinc-900 rounded-full overflow-hidden mb-4">
                                             <div 
-                                                className={`h-full transition-all ${toolRuns.length >= 3 ? 'bg-red-500' : 'bg-cyan-500'}`} 
-                                                style={{ width: `${Math.min(100, (toolRuns.length / 3) * 100)}%` }}
+                                                className={`h-full transition-all ${
+                                                    toolRuns.length >= 3 ? 'bg-red-500 w-full' : 
+                                                    toolRuns.length === 2 ? 'bg-cyan-500 w-2/3' : 
+                                                    toolRuns.length === 1 ? 'bg-cyan-500 w-1/3' : 
+                                                    'bg-cyan-500 w-0'
+                                                }`} 
                                             ></div>
                                         </div>
                                         

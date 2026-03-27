@@ -80,7 +80,7 @@ export const articleDerivedTerms: GlossaryTerm[] = [
     },
     {
         title: 'DORA Metrics',
-        slug: 'dora-metrics',
+        slug: 'dora-metrics', tier: 'pillar',
         definition: `DORA Metrics are four key metrics identified by the DevOps Research and Assessment team (now part of Google) that predict software delivery performance and organizational outcomes:\n\n**1. Deployment Frequency:** How often code is deployed to production. Elite teams deploy on-demand, multiple times per day.\n\n**2. Lead Time for Changes:** Time from code commit to production deployment. Elite teams achieve less than one hour.\n\n**3. Change Failure Rate:** Percentage of deployments that cause a failure in production. Elite teams achieve 0-15%.\n\n**4. Mean Time to Recovery (MTTR):** Time to restore service after a production failure. Elite teams recover in less than one hour.\n\nDORA research demonstrates that high-performing teams on these metrics also achieve better organizational outcomes: higher profitability, market share, and employee satisfaction.`,
         whyItMatters: `DORA metrics are the industry standard for measuring engineering delivery performance. Board members and investors increasingly expect DORA reporting as part of engineering due diligence.\n\nRichard Ewing uses DORA metrics as a diagnostic input alongside the Product Debt Index. A team with good DORA metrics but high PDI scores is shipping fast but accumulating debt — a ticking time bomb. A team with poor DORA metrics and high PDI scores has already entered the Subprime Code Crisis.`,
         howToMeasure: 'Track deployment frequency, lead time (commit to deploy), change failure rate (rollbacks/hotfixes), and MTTR automatically through CI/CD tooling. Benchmark against DORA\'s elite/high/medium/low categories.',
@@ -93,6 +93,7 @@ export const articleDerivedTerms: GlossaryTerm[] = [
     {
         title: 'AI Agent',
         slug: 'ai-agent',
+        tier: 'pillar',
         definition: `An AI agent is an autonomous software system that uses large language models (LLMs) to perceive, reason, plan, and take actions in the real world without constant human oversight. Unlike simple AI assistants (which respond to prompts), agents can:\n\n- **Plan multi-step tasks** by breaking goals into sub-goals\n- **Use tools** (APIs, databases, browsers, code execution)\n- **Maintain memory** across interactions\n- **Make decisions autonomously** based on context\n- **Take actions** that affect external systems\n\nThe 2025-2026 wave of AI agents includes coding agents (Devin, Cursor Agent), customer support agents, data analysis agents, and enterprise workflow agents.`,
         whyItMatters: `AI agents introduce a fundamentally new governance challenge: when an AI takes an action autonomously, who is liable? Richard Ewing's AI Liability Gradient framework addresses this directly — showing that organizational liability increases non-linearly with agent autonomy.\n\nExogram was built as the execution control plane for AI agents — the "IAM for agentic AI." It provides action admissibility filtering, truth ledger verification, and deterministic governance to ensure agents operate within defined boundaries.`,
         howToMeasure: 'Track agent autonomy level, action approval rate, error rate, liability exposure, and cost per agent action. Use the AI Liability Gradient to classify risk.',
@@ -190,6 +191,7 @@ export const articleDerivedTerms: GlossaryTerm[] = [
     {
         title: 'Retrieval-Augmented Generation',
         slug: 'retrieval-augmented-generation',
+        tier: 'pillar',
         definition: `Retrieval-Augmented Generation (RAG) is a technique that enhances large language model (LLM) responses by first retrieving relevant documents from a knowledge base, then using those documents as context for the model's response generation.\n\n**How RAG works:**\n1. User sends a query\n2. The query is converted to a vector embedding\n3. Similar documents are retrieved from a vector database\n4. Retrieved documents are included in the LLM prompt as context\n5. The LLM generates a response grounded in the retrieved documents\n\nRAG reduces hallucination by grounding the model's response in factual source material rather than relying solely on the model's training data.`,
         whyItMatters: `RAG is the most widely deployed technique for making AI systems more accurate and trustworthy. However, RAG alone is insufficient — it does not guarantee that the retrieved documents themselves are correct, current, or non-contradictory.\n\nExogram's Truth Ledger goes beyond RAG by ensuring that the underlying knowledge base is versioned, source-attributed, conflict-checked, and temporally valid. RAG answers "what documents are relevant?" — the Truth Ledger answers "are those documents true?"`,
         howToMeasure: 'Track retrieval precision (percentage of retrieved documents that are relevant), response accuracy (percentage of responses that are factually correct), and hallucination rate (responses that contradict retrieved documents).',
@@ -201,7 +203,7 @@ export const articleDerivedTerms: GlossaryTerm[] = [
     },
     {
         title: 'Vector Database',
-        slug: 'vector-database',
+        slug: 'vector-database', tier: 'pillar',
         definition: `A vector database is a specialized database designed to store, index, and query high-dimensional vector embeddings — numerical representations of data (text, images, audio) generated by machine learning models.\n\n**Key capabilities:**\n- **Similarity search:** Find the most similar vectors to a query vector (nearest neighbor search)\n- **Scalability:** Handle millions to billions of vectors with sub-second query times\n- **Filtering:** Combine vector similarity with metadata filters\n- **Real-time updates:** Add, update, and delete vectors without rebuilding the index\n\n**Popular vector databases:** Pinecone, Weaviate, Milvus, Qdrant, ChromaDB\n\nVector databases are the infrastructure layer that enables RAG, semantic search, recommendation systems, and AI agent memory.`,
         whyItMatters: `Vector databases have become essential infrastructure for AI applications. They are the "memory" layer that allows AI systems to access relevant information beyond their training data.\n\nIn the context of Exogram's architecture, vector databases store the embeddings that enable semantic search across the Truth Ledger — allowing AI agents to find relevant facts based on meaning, not just keyword matching.`,
         howToMeasure: 'Evaluate on: query latency (p50/p99), recall@k (percentage of truly relevant results in top-k), cost per million queries, and scalability (performance at 10M, 100M, 1B+ vectors).',
@@ -214,6 +216,7 @@ export const articleDerivedTerms: GlossaryTerm[] = [
     {
         title: 'Prompt Engineering',
         slug: 'prompt-engineering',
+        tier: 'pillar',
         definition: `Prompt engineering is the practice of designing, optimizing, and testing the instructions (prompts) given to large language models to achieve desired outputs. It encompasses techniques from simple instruction writing to complex multi-step chains with examples, constraints, and output formatting.\n\n**Key techniques:**\n- **Few-shot prompting:** Providing examples of desired input-output pairs\n- **Chain-of-thought:** Instructing the model to show its reasoning steps\n- **System prompts:** Setting the model's persona, constraints, and output format\n- **Prompt chaining:** Breaking complex tasks into sequential prompts\n- **Retrieval-augmented prompts:** Including retrieved context documents`,
         whyItMatters: `Prompt engineering directly impacts AI feature costs and quality. A well-engineered prompt can achieve the same accuracy with a cheaper model, reducing the Cost of Predictivity. Poorly engineered prompts waste tokens, increase latency, and produce inconsistent results.\n\nFor engineering leaders, prompt engineering is a skill gap that affects AI product margins. Teams that invest in prompt optimization can reduce AI inference costs by 30-60%.`,
         howToMeasure: 'Track output quality scores, token usage per request, latency, and cost per successful completion. A/B test prompt variations to optimize for quality per dollar.',
@@ -226,6 +229,7 @@ export const articleDerivedTerms: GlossaryTerm[] = [
     {
         title: 'LLM Fine-Tuning',
         slug: 'llm-fine-tuning',
+        tier: 'pillar',
         definition: `LLM Fine-Tuning is the process of training a pre-trained large language model on a domain-specific dataset to improve its performance on specialized tasks. Unlike prompting (which provides instructions at inference time), fine-tuning permanently modifies the model's weights.\n\n**When to fine-tune vs. prompt:**\n- **Fine-tune when:** You need consistent formatting, domain-specific terminology, or the task requires knowledge not in the base model\n- **Prompt when:** The task is achievable with instructions and examples, or you need flexibility to change behavior quickly\n- **Use RAG when:** The required knowledge changes frequently or is too large for fine-tuning\n\n**Cost considerations:** Fine-tuning requires training compute (one-time), but the fine-tuned model may require fewer tokens per request (ongoing savings).`,
         whyItMatters: `Fine-tuning decisions directly impact AI unit economics. A fine-tuned model can achieve higher accuracy with fewer tokens (reducing the Cost of Predictivity), but the upfront training cost must be amortized across usage.\n\nThe AUEB calculator at richardewing.io/tools/aueb helps teams model the break-even point: how many requests does it take for fine-tuning savings to exceed the training cost?`,
         howToMeasure: 'Compare: accuracy of fine-tuned model vs. prompted base model, cost per request for each, and calculate the break-even point based on expected request volume.',

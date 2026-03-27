@@ -8,7 +8,7 @@ export const sixteenthPassTerms: GlossaryTerm[] = [
     // Architecture Patterns (+3)
     {
         title: 'Event-Driven Architecture',
-        slug: 'event-driven-architecture',
+        slug: 'event-driven-architecture', tier: 'pillar',
         definition: `Event-driven architecture (EDA) is a software design pattern where services communicate by producing and consuming events — asynchronous messages that represent something that happened (e.g., "OrderPlaced", "UserRegistered").\n\n**Components:**\n- **Event producers:** Services that emit events when state changes\n- **Event broker:** Message infrastructure (Kafka, RabbitMQ, AWS EventBridge)\n- **Event consumers:** Services that react to events\n- **Event store:** Persistent log of all events (event sourcing)\n\n**Benefits:** Decoupled services (producers don't know about consumers), natural audit log, easy to add new consumers, horizontal scalability.\n\n**Challenges:** Eventual consistency (not immediate), debugging distributed flows, ordering guarantees, event schema evolution.\n\nEDA is increasingly used with AI systems: model predictions trigger events, AI results are consumed asynchronously, and event stores provide training data.`,
         whyItMatters: 'Event-driven architecture enables scale but creates orchestration complexity. Understanding when EDA is worth the trade-off prevents both under-architecting (monolith bottlenecks) and over-architecting (distributed complexity).',
         category: 'Architecture Patterns',

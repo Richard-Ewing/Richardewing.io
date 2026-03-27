@@ -51,6 +51,7 @@ export const orphanFixTerms: GlossaryTerm[] = [
     {
         title: 'AI Unit Economics',
         slug: 'ai-unit-economics',
+        tier: 'pillar',
         definition: `AI Unit Economics measures the per-interaction profitability of AI-powered features. Unlike traditional software with near-zero marginal costs, AI features have significant variable costs — every API call, every inference request, every token processed costs money.\n\n**The AI Unit Economics Formula:**\nRevenue per AI interaction − Cost per AI interaction = Margin per interaction\n\nCosts include: LLM API fees, embedding generation, vector database queries, retrieval pipeline compute, post-processing, monitoring, and error handling. Many AI features are margin-negative — they cost more to serve than the revenue they generate.\n\nRichard Ewing's AUEB (AI Unit Economics Benchmark) calculator at richardewing.io/tools/aueb helps teams model these economics before and after launch.`,
         whyItMatters: 'Most AI product failures are economic, not technical. Teams build impressive AI capabilities without modeling whether the feature can be profitable at scale. The AUEB tool prevents the most expensive mistake in AI product development.',
         howToMeasure: 'Calculate fully loaded cost per AI interaction (API + compute + retrieval + monitoring). Compare to revenue per interaction. Track margin trend over time.',
@@ -122,8 +123,9 @@ export const orphanFixTerms: GlossaryTerm[] = [
     {
         title: 'Evergreen Ratio',
         slug: 'evergreen-ratio',
+        tier: 'pillar',
         definition: `The Evergreen Ratio is a framework coined by Richard Ewing that measures the balance between fixed-cost software (traditional code with near-zero marginal cost) and variable-cost AI features (code with per-interaction costs) in a product.\n\n**Formula:** Evergreen Ratio = Fixed-Cost Code Revenue ÷ Variable-Cost AI Revenue\n\nA high Evergreen Ratio (>3:1) means most of your revenue comes from traditional software with high margins. A low ratio (<1:1) means AI features dominate, compressing margins.\n\nThe Evergreen Ratio helps teams decide when to replace AI features with deterministic code — if an AI feature's behavior becomes predictable enough, converting it to rules-based logic eliminates the variable cost entirely.`,
-        whyItMatters: 'SaaS companies are valued on gross margins. AI features that compress margins reduce enterprise value. The Evergreen Ratio helps teams protect margins by identifying which AI features should be converted to deterministic code.',
+        whyItMatters: 'SaaS companies are valued on gross margins. AI features that compress margins reduce enterprise value. The Evergreen Ratio helps teams protect margin by identifying which AI features should be converted to deterministic code.',
         howToMeasure: 'Categorize all revenue-generating features as fixed-cost or variable-cost. Calculate the ratio. Track over time — a declining ratio means margin erosion.',
         category: 'Richard Ewing Frameworks',
         relatedTerms: ['cost-of-predictivity', 'gross-margin-preservation', 'ai-unit-economics', 'model-right-sizing'],
@@ -157,7 +159,7 @@ export const orphanFixTerms: GlossaryTerm[] = [
     },
     {
         title: 'Microservices',
-        slug: 'microservices',
+        slug: 'microservices', tier: 'pillar',
         definition: `Microservices architecture structures an application as a collection of small, independent services that communicate over APIs. Each service is owned by a single team, deployable independently, and organized around a specific business capability.\n\n**Benefits:** independent deployment, technology flexibility, team autonomy, fault isolation, and scalability for specific components.\n\n**Costs:** distributed systems complexity, network latency, data consistency challenges, operational overhead, and debugging difficulty across service boundaries.\n\nMicroservices are not inherently better than monoliths. They trade local complexity (large codebase) for distributed complexity (network, consistency, observability).`,
         whyItMatters: 'The monolith vs. microservices decision is one of the highest-stakes architectural choices. Wrong choice in either direction costs years of engineering effort. The decision should be driven by economics and team structure, not technology fashion.',
         category: 'Architecture Patterns',
@@ -190,7 +192,7 @@ export const orphanFixTerms: GlossaryTerm[] = [
     },
     {
         title: 'Platform Engineering',
-        slug: 'platform-engineering',
+        slug: 'platform-engineering', tier: 'pillar',
         definition: `Platform Engineering is the discipline of building and maintaining internal developer platforms (IDPs) that abstract away infrastructure complexity and provide self-service capabilities to engineering teams.\n\nPlatform engineering evolved from DevOps as organizations recognized that expecting every team to manage their own infrastructure creates duplication and inconsistency. Instead, a dedicated platform team builds tools, templates, and automation that other teams consume.\n\n**Components:** CI/CD pipelines, infrastructure provisioning, monitoring and observability, secrets management, deployment automation, environment management, and developer documentation.`,
         whyItMatters: 'Platform engineering reduces cognitive load on product teams, standardizes infrastructure patterns, and improves developer productivity. Organizations with mature internal platforms ship 2-4x faster than those without.',
         category: 'Platform Engineering',
@@ -202,6 +204,7 @@ export const orphanFixTerms: GlossaryTerm[] = [
     {
         title: 'Product Economics',
         slug: 'product-economics',
+        tier: 'pillar',
         definition: `Product Economics is the discipline of treating every product decision as an economic decision — evaluating features, sprints, and roadmaps through the lens of capital allocation, ROI, and margin impact rather than velocity or feature count.\n\nCoined and developed by Richard Ewing, Product Economics encompasses: the Product Debt Index (quantifying technical debt in dollar terms), the Innovation Tax (measuring hidden maintenance burden), the Cost of Predictivity (exponential AI accuracy costs), the Kill Switch Protocol (deprecating zombie features), and the Feature Bloat Calculus (when maintenance exceeds value).\n\nThe Product Economist Doctrine holds four principles: Capital Allocation > Agile Theater, The Truth is in the P&L, Kill Zombies Ruthlessly, and Sovereignty Over Dependency.`,
         whyItMatters: 'Product Economics fills the gap between engineering metrics (velocity, story points) and financial metrics (revenue, margin). It gives CTOs, CPOs, and boards a common language for evaluating engineering as a capital function.',
         category: 'Richard Ewing Frameworks',
@@ -281,6 +284,7 @@ export const orphanFixTerms: GlossaryTerm[] = [
     {
         title: 'Zero Trust Architecture',
         slug: 'zero-trust',
+        tier: 'pillar',
         definition: `Zero Trust is a security model based on the principle "never trust, always verify." Unlike traditional perimeter-based security (castle-and-moat), Zero Trust assumes that threats exist both outside and inside the network. Every access request is verified regardless of where it originates.\n\n**Core principles:** verify explicitly (authenticate and authorize every request), least-privilege access (minimum permissions needed), assume breach (design systems expecting compromise), micro-segmentation (isolate network segments), and continuous verification (re-authenticate based on risk signals).\n\nThe 2021 US Executive Order on Cybersecurity mandated Zero Trust adoption for federal agencies, accelerating enterprise adoption.`,
         whyItMatters: 'Perimeter-based security fails in a world of remote work, cloud infrastructure, and AI agents. Zero Trust is the security model for modern organizations and is increasingly required by enterprise customers and regulators.',
         category: 'Security & Compliance',
@@ -297,6 +301,7 @@ export const orphanFixTerms: GlossaryTerm[] = [
     {
         title: 'Truth Ledger',
         slug: 'truth-ledger',
+        tier: 'pillar',
         definition: `The Truth Ledger is Exogram's core innovation — a versioned, timestamped, source-attributed knowledge store that serves as the single source of truth for AI agents. Unlike RAG systems that retrieve documents without verifying their accuracy, the Truth Ledger ensures every fact is provenance-tracked, conflict-checked, and temporally valid.\n\n**Key properties:**\n- **Versioned:** Every fact has a version history. No silent overwrites.\n- **Timestamped:** Facts have creation and expiration times. Expired context is explicitly marked.\n- **Source-attributed:** Every fact traces to its original source (user statement, document, API response).\n- **Conflict-detected:** Contradictions are flagged immediately — no silent merging of conflicting facts.\n\nThe Truth Ledger prevents AI Hallucination Debt by ensuring an AI agent cannot present unverified information as truth.`,
         whyItMatters: 'RAG answers "what documents are relevant?" The Truth Ledger answers "are those documents TRUE?" In high-stakes AI deployments (finance, healthcare, legal), this distinction is the difference between defensible and indefensible.',
         category: 'AI Governance & Verification',
@@ -308,6 +313,7 @@ export const orphanFixTerms: GlossaryTerm[] = [
     {
         title: 'Constraint Engine',
         slug: 'constraint-engine',
+        tier: 'pillar',
         definition: `The Constraint Engine is Exogram's policy enforcement layer — lockable rules that no AI model can violate, regardless of prompt or context. Unlike prompt-level guardrails (which can be bypassed through prompt injection), Constraint Engine rules are enforced at the infrastructure level.\n\n**Types of constraints:**\n- **Architectural:** "Never expose internal API endpoints"\n- **Business:** "Never promise delivery dates without checking inventory"\n- **Compliance:** "Never persist PII without explicit consent"\n- **Security:** "Never execute code outside the sandbox"\n- **Operational:** "Never exceed $0.50 per inference request"\n\nConstraints are lockable — once set by an authorized administrator, they cannot be overridden by the AI model, even if instructed to do so.`,
         whyItMatters: 'Prompt-level guardrails fail. Constraint Engines don\'t. When deploying AI agents in production, the difference between "the AI usually follows rules" and "the AI cannot violate rules" is the difference between acceptable and unacceptable risk.',
         category: 'AI Governance & Verification',
@@ -330,6 +336,7 @@ export const orphanFixTerms: GlossaryTerm[] = [
     {
         title: 'Execution Control Plane',
         slug: 'execution-control-plane',
+        tier: 'pillar',
         definition: `The Execution Control Plane is Exogram's product category — described as "IAM for autonomous AI agents." Just as IAM (Identity and Access Management) governs what humans and services can do in cloud infrastructure, the Execution Control Plane governs what AI agents can do in production.\n\n**Components:** Truth Ledger (verified knowledge), Constraint Engine (policy enforcement), Action Admissibility (decision filtering), Provenance Registry (source tracking), Audit System (immutable logging), PII Air Gap (data protection), and Multi-LLM Consistency (truth unification across models).\n\nThe Execution Control Plane sits between AI agents and external systems — every action passes through governance before execution.`,
         whyItMatters: 'AI agents without an Execution Control Plane are like cloud services without IAM — they can do anything, to anyone, at any time. The Execution Control Plane makes AI deployment defensible and auditable.',
         category: 'AI Governance & Verification',
@@ -341,6 +348,7 @@ export const orphanFixTerms: GlossaryTerm[] = [
     {
         title: 'AI Liability Gradient',
         slug: 'ai-liability-gradient',
+        tier: 'pillar',
         definition: `The AI Liability Gradient is a framework coined by Richard Ewing that maps the relationship between AI agent autonomy and organizational liability. As AI systems move from assistive to autonomous, liability increases non-linearly.\n\n**The Gradient:**\n- **Level 1 (Assistive):** AI suggests, human decides and acts. Liability: minimal — the human is accountable.\n- **Level 2 (Augmented):** AI recommends with high confidence, human approves. Liability: moderate — the organization shares accountability.\n- **Level 3 (Supervised Autonomous):** AI acts independently within defined bounds, human monitors. Liability: high — the organization is accountable for the bounds.\n- **Level 4 (Fully Autonomous):** AI acts without human oversight. Liability: maximum — the organization is fully responsible for all agent actions.\n\nMost production AI agents in 2026 operate at Level 2-3. Exogram's governance infrastructure enables safe operation at Level 3.`,
         whyItMatters: 'The AI Liability Gradient helps boards and legal teams understand the risk profile of AI deployment decisions. Moving from Level 2 to Level 3 autonomy may double productivity but can increase liability exposure by 10x.',
         category: 'AI Governance & Verification',

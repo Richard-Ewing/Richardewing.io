@@ -368,6 +368,8 @@ export default function PDITool() {
                                                 <div className="text-3xl font-bold text-white font-mono">{teamSize}</div>
                                             </div>
                                             <input 
+                                                title="Engineering Team Size"
+                                                aria-label="Engineering Team Size"
                                                 type="range" min="1" max="500" value={teamSize} 
                                                 onChange={e => setTeamSize(parseInt(e.target.value))}
                                                 className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-cyan-500" 
@@ -388,6 +390,8 @@ export default function PDITool() {
                                                 <div className="text-3xl font-bold text-white font-mono">${(salary / 1000).toFixed(0)}k</div>
                                             </div>
                                             <input 
+                                                title="Average Fully-Loaded Salary"
+                                                aria-label="Average Fully-Loaded Salary"
                                                 type="range" min="60000" max="450000" step="5000" value={salary} 
                                                 onChange={e => setSalary(parseInt(e.target.value))}
                                                 className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-violet-500" 
@@ -415,7 +419,7 @@ export default function PDITool() {
                                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                         <div>
                                             <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">Sprint Length</label>
-                                            <select value={sprintLength} onChange={e => setSprintLength(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors">
+                                            <select title="Sprint Length" aria-label="Sprint Length" value={sprintLength} onChange={e => setSprintLength(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors">
                                                 <option value="1">1 Week</option>
                                                 <option value="2">2 Weeks</option>
                                                 <option value="3">3 Weeks</option>
@@ -424,11 +428,11 @@ export default function PDITool() {
                                         </div>
                                         <div>
                                             <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">Ticket Age (Days)</label>
-                                            <input type="number" value={avgTicketAge} onChange={e => setAvgTicketAge(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors" />
+                                            <input title="Average Ticket Age" aria-label="Average Ticket Age" placeholder="e.g. 30" type="number" value={avgTicketAge} onChange={e => setAvgTicketAge(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors" />
                                         </div>
                                         <div>
                                             <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">Horizon</label>
-                                            <select value={roadmapHorizon} onChange={e => setRoadmapHorizon(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors">
+                                            <select title="Roadmap Horizon" aria-label="Roadmap Horizon" value={roadmapHorizon} onChange={e => setRoadmapHorizon(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors">
                                                 <option value="Q1">Q1 (This Quarter)</option>
                                                 <option value="H1">H1 (6 Months)</option>
                                                 <option value="FY">FY (Full Year)</option>

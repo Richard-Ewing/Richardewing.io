@@ -35,7 +35,7 @@ export const fifteenthPassTerms: GlossaryTerm[] = [
     },
     {
         title: 'FinOps',
-        slug: 'finops',
+        slug: 'finops', tier: 'pillar',
         definition: `FinOps (Financial Operations) is the practice of bringing financial accountability to cloud spending. It combines engineering, finance, and business to optimize cloud costs without sacrificing performance.\n\n**FinOps lifecycle:**\n1. **Inform:** Understand where cloud spend goes — by team, service, environment\n2. **Optimize:** Right-size instances, eliminate waste, use reserved/spot pricing\n3. **Operate:** Build cost-awareness into engineering culture and workflows\n\n**Common cloud waste patterns:**\n- Over-provisioned compute (running large instances for small workloads)\n- Idle resources (dev/staging environments running 24/7)\n- Unattached storage volumes and snapshots\n- Data transfer costs from poor architecture decisions\n\n**FinOps tools:** Vantage, CloudZero, Kubecost, AWS Cost Explorer, Google Cloud FinOps Hub.\n\nThe average company wastes 30% of its cloud spend. FinOps aims to reduce this to under 10%.`,
         whyItMatters: 'Cloud costs are the second-largest engineering expense after salaries. FinOps makes cloud spending visible and accountable. Without it, engineering teams treat cloud resources as free — creating runaway infrastructure costs.',
         howToMeasure: 'Track cost per customer, cost per transaction, cloud spend as % of revenue, and unit economics. Compare actual spend against reserved/optimized pricing to quantify savings opportunity.',

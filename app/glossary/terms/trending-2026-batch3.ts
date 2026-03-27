@@ -7,7 +7,7 @@ import { GlossaryTerm } from '../types';
 export const trendingTermsBatch3: GlossaryTerm[] = [
     {
         title: 'Platform Engineering',
-        slug: 'platform-engineering',
+        slug: 'platform-engineering', tier: 'pillar',
         definition: `Platform Engineering is the discipline of designing and building self-service toolchains and workflows that enable software engineering teams to deliver value faster and more reliably.\n\nPlatform engineers build "Internal Developer Platforms" (IDPs) — curated, self-service environments where product engineers can provision infrastructure, deploy applications, and access tools without filing tickets or waiting for platform teams.\n\n**Key components:** Self-service infrastructure provisioning, golden path templates, CI/CD pipelines, observability dashboards, and service catalogs.\n\nGartner predicts that by 2026, 80% of software engineering organizations will establish platform teams as internal providers of reusable services, components, and tools.`,
         whyItMatters: 'Platform engineering is the structural response to developer experience (DevEx) problems. Without platform investment, every team solves infrastructure problems independently — creating duplicated effort, inconsistent practices, and compounding technical debt.',
         category: 'Engineering Management',
@@ -25,7 +25,7 @@ export const trendingTermsBatch3: GlossaryTerm[] = [
     },
     {
         title: 'FinOps',
-        slug: 'finops',
+        slug: 'finops', tier: 'pillar',
         definition: `FinOps (Financial Operations) is the practice of bringing financial accountability to the variable spend model of cloud computing. It brings together technology, finance, and business teams to collaborate on data-driven spending decisions.\n\n**Core principles:**\n1. **Teams need to collaborate** — engineering, finance, and business must work together\n2. **Everyone takes ownership** — engineers are accountable for the cost of their infrastructure\n3. **A centralized team drives FinOps** — a cross-functional FinOps team coordinates efforts\n4. **Reports should be accessible and timely** — real-time cost visibility for all stakeholders\n5. **Decisions are driven by business value** — cloud spend is evaluated by the value it generates, not just the cost\n\nFor AI-heavy organizations, FinOps extends to AI cost management — tracking LLM API costs, GPU inference costs, and embedding generation costs at the feature level.`,
         whyItMatters: 'Cloud spend is the largest variable cost for most software companies. Without FinOps discipline, cloud costs grow faster than revenue. For AI companies, FinOps is even more critical because AI inference costs are significant per-interaction expenses.',
         howToMeasure: 'Track unit cost per customer, cost per feature, cost per transaction. Compare cloud spend growth rate to revenue growth rate. If cloud costs grow faster than revenue, you have a FinOps problem.',
@@ -44,7 +44,7 @@ export const trendingTermsBatch3: GlossaryTerm[] = [
     },
     {
         title: 'Infrastructure as Code (IaC)',
-        slug: 'infrastructure-as-code',
+        slug: 'infrastructure-as-code', tier: 'pillar',
         definition: `Infrastructure as Code (IaC) is the practice of managing and provisioning computing infrastructure through machine-readable configuration files rather than manual processes.\n\n**Key tools:** Terraform, AWS CloudFormation, Pulumi, Ansible, and Kubernetes manifests.\n\n**Benefits:**\n- **Reproducibility:** Infrastructure is version-controlled and reproducible\n- **Speed:** Environments can be provisioned in minutes, not days\n- **Consistency:** Every environment is identical (dev, staging, production)\n- **Auditability:** Infrastructure changes are code-reviewed and logged\n\n**IaC Debt:** When IaC configurations drift from actual infrastructure, or when IaC modules become unmaintained, organizations accumulate IaC Debt — a subcategory of infrastructure technical debt.`,
         whyItMatters: 'IaC reduces infrastructure technical debt by making infrastructure decisions explicit, reviewable, and version-controlled. Without IaC, infrastructure becomes a black box that only one or two team members understand — creating knowledge dependency and risk.',
         category: 'DevOps & Infrastructure',

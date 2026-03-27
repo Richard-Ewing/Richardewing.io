@@ -4,6 +4,7 @@ export const aiMlTerms: GlossaryTerm[] = [
     {
         slug: 'transformer-architecture',
         title: 'Transformer Architecture',
+        tier: 'pillar',
         category: 'AI & Machine Learning',
         definition: `The Transformer architecture is the foundational neural network design behind all modern large language models including GPT-4, Claude, Gemini, and Llama. Introduced in the landmark 2017 paper "Attention Is All You Need" by Vaswani et al. at Google, transformers use self-attention mechanisms to process input sequences in parallel rather than sequentially.\n\nBefore transformers, recurrent neural networks (RNNs) processed text one word at a time. Transformers process entire sequences simultaneously, making them dramatically faster to train and better at capturing long-range dependencies in text.\n\nKey components include: multi-head self-attention (allowing the model to focus on different parts of the input simultaneously), positional encoding (preserving word order information), and feed-forward neural networks (processing each position independently).\n\nUnderstanding transformer architecture is essential for any leader making AI investment decisions because architecture determines cost structure. Transformer inference scales quadratically with input length — doubling your prompt length quadruples the compute cost.`,
         whyItMatters: `Transformer architecture determines the cost structure of all modern AI applications. Understanding how transformers work helps executives make better decisions about prompt design, context window management, and AI cost governance.`,
@@ -17,6 +18,7 @@ export const aiMlTerms: GlossaryTerm[] = [
     {
         slug: 'fine-tuning',
         title: 'Fine-Tuning',
+        tier: 'pillar',
         category: 'AI & Machine Learning',
         definition: `Fine-tuning is the process of taking a pre-trained AI model and training it further on a smaller, domain-specific dataset to customize its behavior for a particular use case. It's the middle ground between using a general-purpose model as-is and training a custom model from scratch.\n\nFine-tuning modifies the model's weights to improve performance on specific tasks. For example, fine-tuning GPT-4 on legal documents produces a model that generates better legal text than the base model.\n\nThe economics of fine-tuning involve a significant upfront cost ($1K-$100K+ depending on dataset size and model) but can reduce ongoing inference costs by producing shorter, more accurate outputs that require fewer tokens and less post-processing.\n\nFine-tuning vs. RAG: Fine-tuning changes the model itself. RAG provides context without changing the model. Fine-tuning is better for style and format. RAG is better for factual accuracy. Many production systems use both.`,
         whyItMatters: `Fine-tuning decisions have major cost implications. A well-fine-tuned model can reduce per-query costs by 50-80% compared to prompting a general model. But the upfront cost and maintenance burden of fine-tuned models must be weighed against the flexibility of RAG-based approaches.`,
@@ -31,6 +33,7 @@ export const aiMlTerms: GlossaryTerm[] = [
     {
         slug: 'ai-inference',
         title: 'AI Inference',
+        tier: 'pillar',
         category: 'AI & Machine Learning',
         definition: `AI inference is the process of running a trained model to generate predictions or outputs from new input data. Unlike training (which is done once), inference happens every time a user interacts with an AI feature — every chatbot response, every code suggestion, every image generation.\n\nInference cost is the dominant variable cost in AI features. Training GPT-4 cost an estimated $100M, but inference costs across all users dwarf that number. Each inference call consumes GPU compute proportional to model size and input/output length.\n\nInference optimization is a critical engineering discipline: model quantization (reducing precision from 32-bit to 8-bit or 4-bit), batching (processing multiple requests simultaneously), caching (storing common responses), and distillation (creating smaller student models from larger teacher models).\n\nFor product leaders, inference cost is the unit cost that determines whether your AI feature has positive or negative unit economics. Richard Ewing's AUEB tool calculates Cost of Predictivity — the true per-query cost including inference, retrieval, verification, and error handling.`,
         whyItMatters: `Inference cost is what determines whether AI features are profitable or margin-destroying. Every AI query costs real money. Understanding and optimizing inference economics is essential for any AI product strategy.`,
@@ -69,7 +72,7 @@ export const aiMlTerms: GlossaryTerm[] = [
         relatedTerms: ['rag', 'large-language-model', 'artificial-intelligence'],
     },
     {
-        slug: 'vector-database',
+        slug: 'vector-database', tier: 'pillar',
         title: 'Vector Database',
         category: 'AI & Machine Learning',
         definition: `A vector database is a specialized database designed to store, index, and query high-dimensional vector embeddings efficiently. Unlike traditional databases that search by exact matches or keywords, vector databases perform similarity search — finding the vectors closest to a query vector in high-dimensional space.\n\nPopular vector databases include: Pinecone (managed cloud-native), Weaviate (open-source), Qdrant (open-source, Rust), Chroma (lightweight, developer-friendly), Milvus (enterprise-scale), and pgvector (PostgreSQL extension).\n\nVector databases are the backbone of RAG pipelines. When a user asks a question, the question is embedded into a vector, the vector database finds the most similar document vectors, and those documents are provided as context to the LLM.\n\nKey performance metrics: query latency (milliseconds to return results), recall (% of truly relevant results returned), and throughput (queries per second at scale).`,
@@ -156,6 +159,7 @@ export const aiMlTerms: GlossaryTerm[] = [
     {
         slug: 'generative-ai',
         title: 'Generative AI',
+        tier: 'pillar',
         category: 'AI & Machine Learning',
         definition: `Generative AI refers to artificial intelligence systems that create new content — text, images, audio, video, code, and 3D models — rather than simply analyzing or classifying existing content. It represents a fundamental shift in computing from analysis to creation.\n\nKey generative AI modalities: text generation (GPT-4, Claude, Gemini), image generation (DALL-E, Midjourney, Stable Diffusion), code generation (GitHub Copilot, Cursor), audio generation (ElevenLabs, Suno), video generation (Sora, Runway), and 3D model generation.\n\nThe economics of generative AI are fundamentally different from traditional software. Traditional software has near-zero marginal cost per user. Generative AI has significant marginal cost per query — every generated output costs compute. This is what Richard Ewing calls the Cost of Predictivity.\n\nIn 2026, generative AI has moved from novelty to production infrastructure. Companies are using it for customer support, content creation, code generation, design, data analysis, and decision support. The winners are organizations that understand the unit economics — cost per useful output — not just the technology.`,
         whyItMatters: `Generative AI is the most transformative technology of the decade, but its variable cost structure breaks traditional software economics. Understanding generative AI unit economics is essential for building sustainable AI features.`,

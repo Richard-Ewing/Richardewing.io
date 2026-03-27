@@ -10,7 +10,7 @@ export const gapFillTerms: GlossaryTerm[] = [
     // =========================================================================
     {
         title: 'Design System',
-        slug: 'design-system',
+        slug: 'design-system', tier: 'pillar',
         definition: `A design system is a collection of reusable UI components, design tokens, guidelines, and documentation that enables teams to build consistent user interfaces at scale. It is a single source of truth for design and code.\n\n**Components of a design system:**\n- **Design tokens:** Colors, spacing, typography, shadows as variables\n- **Component library:** Buttons, inputs, cards, modals, navigation\n- **Pattern library:** Common layouts, forms, data tables\n- **Documentation:** Usage guidelines, accessibility standards, do's and don'ts\n- **Tooling:** Storybook, Figma libraries, code generators\n\n**Examples:** Material Design (Google), Carbon (IBM), Polaris (Shopify), Primer (GitHub).\n\nDesign systems reduce design debt by standardizing decisions. Without one, every developer invents their own button style, creating visual fragmentation and maintenance burden.`,
         whyItMatters: 'Design systems eliminate a category of technical debt by standardizing UI decisions. Without one, visual inconsistencies multiply across features, creating UX debt that degrades user trust and increases development time.',
         category: 'Design & UX',
@@ -109,7 +109,7 @@ export const gapFillTerms: GlossaryTerm[] = [
     // =========================================================================
     {
         title: 'Data Mesh',
-        slug: 'data-mesh',
+        slug: 'data-mesh', tier: 'pillar',
         definition: `Data mesh is a decentralized data architecture paradigm where domain teams own and publish their data as products, rather than centralizing all data into a single data warehouse or lake managed by a central team.\n\n**Four principles (Zhamak Dehghani):**\n1. **Domain ownership:** Each business domain owns its analytical data\n2. **Data as a product:** Data is treated like a product with an SLA, documentation, and quality guarantees\n3. **Self-serve platform:** A shared infrastructure platform enables domain teams to manage their own data\n4. **Federated governance:** Global standards with local implementation\n\nData mesh solves the central data team bottleneck: as organizations grow, a single data team can't serve every domain's needs. But it requires significant organizational maturity and investment.`,
         whyItMatters: 'Data mesh addresses the scaling challenge of centralized data architectures. For product leaders, it determines who owns and is accountable for data quality — which directly affects AI feature reliability.',
         category: 'Data & Analytics',
@@ -118,7 +118,7 @@ export const gapFillTerms: GlossaryTerm[] = [
     },
     {
         title: 'Data Lakehouse',
-        slug: 'data-lakehouse',
+        slug: 'data-lakehouse', tier: 'pillar',
         definition: `A data lakehouse is a modern data architecture that combines the best features of data lakes (cheap storage for all data types) and data warehouses (structured querying and ACID transactions).\n\n**Data Lake vs. Warehouse vs. Lakehouse:**\n- **Data Lake:** Stores raw data cheaply (S3, GCS) but queries are slow and governance is weak\n- **Data Warehouse:** Fast queries and strong governance (Snowflake, BigQuery) but expensive for raw data\n- **Data Lakehouse:** Both — cheap raw storage with warehouse-grade query performance and governance\n\n**Technologies:** Delta Lake (Databricks), Apache Iceberg (Netflix), Apache Hudi. These add ACID transactions, schema enforcement, and time travel to data lakes.\n\nThe lakehouse architecture is becoming the default for organizations that need both AI/ML workloads (which need raw data) and business analytics (which need structured queries).`,
         whyItMatters: 'Data lakehouse architecture determines the cost structure of your analytics and AI infrastructure. Wrong architecture choice = either overpaying for storage or suffering slow queries.',
         category: 'Data & Analytics',
@@ -137,6 +137,7 @@ export const gapFillTerms: GlossaryTerm[] = [
     {
         title: 'MLOps',
         slug: 'mlops',
+        tier: 'pillar',
         definition: `MLOps (Machine Learning Operations) is the set of practices for deploying, monitoring, and managing machine learning models in production. It applies DevOps principles to the ML lifecycle.\n\n**MLOps lifecycle:**\n1. **Data pipeline:** Collection, cleaning, feature engineering\n2. **Model training:** Experimentation, hyperparameter tuning\n3. **Model validation:** Testing, bias detection, performance benchmarking\n4. **Deployment:** Serving models via APIs or batch processing\n5. **Monitoring:** Tracking drift, performance degradation, cost\n6. **Retraining:** Automated or triggered model updates\n\n**Tools:** MLflow (experiment tracking), Kubeflow (Kubernetes-native ML), Weights & Biases (experiment management), DVC (data version control).\n\nMLOps is essential because models degrade over time (model drift). Without MLOps, deployed models silently become less accurate — creating hidden AI technical debt.`,
         whyItMatters: 'MLOps prevents AI technical debt. Every deployed model is a maintenance commitment. Without MLOps, models degrade silently, creating decisions based on increasingly wrong predictions.',
         category: 'Data & Analytics',

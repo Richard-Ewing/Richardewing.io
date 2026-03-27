@@ -9,6 +9,7 @@ export const highVolumeTerms: GlossaryTerm[] = [
     {
         title: 'Annual Recurring Revenue (ARR)',
         slug: 'arr',
+        tier: 'pillar',
         definition: `Annual Recurring Revenue (ARR) is the annualized value of recurring subscription revenue. It is the single most important metric for SaaS company valuation.\n\n**Formula:** ARR = MRR × 12\n\n**Or more precisely:**\nARR = (New ARR) + (Expansion ARR) - (Contraction ARR) - (Churned ARR)\n\n**Why ARR matters for valuation:**\n- Public SaaS companies trade at 5-15x ARR multiples\n- High-quality SaaS (Rule of 40+) commands premium multiples\n- ARR growth rate is the #1 predictor of valuation multiple\n\nARR only counts recurring revenue — one-time fees, professional services, and usage-based revenue are excluded from ARR calculations.`,
         whyItMatters: 'ARR is the foundation of SaaS valuation. It measures the predictable, recurring revenue engine. Technical debt that slows feature velocity directly suppresses ARR growth by delaying new revenue-generating capabilities.',
         howToMeasure: 'Sum all active subscription contracts, annualized. Exclude one-time fees and services revenue.',
@@ -29,6 +30,7 @@ export const highVolumeTerms: GlossaryTerm[] = [
     {
         title: 'Customer Acquisition Cost (CAC)',
         slug: 'customer-acquisition-cost',
+        tier: 'pillar',
         definition: `Customer Acquisition Cost (CAC) is the total cost of acquiring a new customer, including all sales and marketing expenses.\n\n**Formula:** CAC = Total Sales & Marketing Spend / Number of New Customers Acquired\n\n**2025 benchmarks:**\n- B2B SaaS average: ~$1,200 per customer\n- Enterprise SaaS: $5,000-$50,000+ per customer\n- SMB SaaS: $200-$2,000 per customer\n- PLG SaaS: $50-$500 per customer\n\n**Critical ratios:**\n- **LTV:CAC ratio:** Should be ≥ 3:1 for healthy economics\n- **CAC Payback Period:** Months to recover CAC from subscription revenue (ideal: < 18 months)`,
         whyItMatters: 'CAC determines the efficiency of your growth engine. Rising CAC without proportional LTV increase signals market saturation or competitive pressure. For investors, CAC payback period is a key indicator of capital efficiency.',
         howToMeasure: 'Divide total sales and marketing spend (including salaries, tools, advertising, events) by the number of new customers acquired in the same period.',
@@ -39,6 +41,7 @@ export const highVolumeTerms: GlossaryTerm[] = [
     {
         title: 'Customer Lifetime Value (LTV / CLTV)',
         slug: 'customer-lifetime-value',
+        tier: 'pillar',
         definition: `Customer Lifetime Value (LTV or CLTV) is the total revenue expected from a customer account over the entire duration of their relationship with your company.\n\n**Simple formula:** LTV = ARPA × Customer Lifetime\n\n**More precise:** LTV = ARPA / Monthly Churn Rate\n\nWhere ARPA = Average Revenue Per Account\n\n**Example:**\n- ARPA: $500/month\n- Monthly churn rate: 2%\n- LTV = $500 / 0.02 = $25,000\n\nLTV is the most important metric to pair with Customer Acquisition Cost (CAC). The LTV:CAC ratio determines whether your unit economics are sustainable.`,
         whyItMatters: 'LTV tells you the ceiling on what you can spend to acquire a customer and still make money. If your LTV is $25,000, you can afford to spend up to ~$8,000 on acquisition (3:1 ratio). Technical debt that causes churn directly reduces LTV.',
         howToMeasure: 'Divide average revenue per account by your monthly churn rate. For more precision, model by cohort and segment.',
@@ -59,6 +62,7 @@ export const highVolumeTerms: GlossaryTerm[] = [
     {
         title: 'Large Language Model (LLM)',
         slug: 'large-language-model',
+        tier: 'pillar',
         definition: `A Large Language Model (LLM) is an AI system trained on massive text datasets to understand and generate human language. LLMs are the foundation of modern AI assistants, chatbots, coding tools, and content generation.\n\n**Key LLMs (2025-2026):**\n- **GPT-4o / GPT-5** (OpenAI)\n- **Claude 4 / Opus** (Anthropic)\n- **Gemini 2.5 / 3.1** (Google)\n- **Llama 3.x / 4** (Meta, open-source)\n- **Mistral Large** (Mistral AI)\n\n**How LLMs work:** LLMs are neural networks with billions of parameters trained on text from the internet, books, and other sources. They predict the next likely token (word/subword) given the preceding context. This probabilistic generation is what enables both their power and their tendency to hallucinate.\n\n**Economic impact:** Every LLM query costs money (compute + API fees). This variable cost fundamentally changes the economics of software — from near-zero marginal cost to measurable per-interaction cost.`,
         whyItMatters: 'LLMs are the most transformative technology since the internet. But they introduce variable costs to software economics for the first time. Understanding LLM economics — cost per token, accuracy vs cost tradeoffs, and margin impact — is essential for any product leader building AI features.',
         category: 'AI & Machine Learning',
@@ -68,6 +72,7 @@ export const highVolumeTerms: GlossaryTerm[] = [
     {
         title: 'AI Agent',
         slug: 'ai-agent',
+        tier: 'pillar',
         definition: `An AI Agent is an autonomous software system that can perceive its environment, reason about goals, make plans, use tools, and take actions with minimal human intervention.\n\n**How AI agents differ from chatbots:**\n- **Chatbot:** Responds to prompts, stateless, single-turn\n- **AI Agent:** Plans multi-step actions, uses tools, maintains state, operates autonomously\n\n**Agent capabilities:**\n- Break complex goals into subtasks\n- Call APIs, databases, and other tools\n- Evaluate results and adjust approach\n- Maintain context across multiple interactions\n- Collaborate with other agents\n\n**Examples:** Coding agents (Devin, SWE-Agent), research agents, customer service agents, DevOps agents, and data analysis agents.\n\nSearch interest for "AI agents" surged 900% in 2025, making it one of the most searched AI terms globally.`,
         whyItMatters: 'AI agents represent the shift from AI as a tool (you ask, it answers) to AI as a worker (you assign, it executes). This creates massive value but also introduces governance challenges — which is exactly what Exogram solves.',
         category: 'AI & Machine Learning',
@@ -77,6 +82,7 @@ export const highVolumeTerms: GlossaryTerm[] = [
     {
         title: 'Prompt Engineering',
         slug: 'prompt-engineering',
+        tier: 'pillar',
         definition: `Prompt Engineering is the practice of designing, structuring, and optimizing inputs (prompts) to AI models to produce desired outputs reliably and efficiently.\n\n**Key techniques:**\n- **Zero-shot prompting:** Direct instruction without examples\n- **Few-shot prompting:** Providing examples of desired input/output pairs\n- **Chain-of-thought (CoT):** Instructing the model to reason step-by-step\n- **System prompts:** Setting context, role, and constraints for the model\n- **ReAct (Reasoning + Acting):** Combining reasoning with tool use\n- **Tree of thoughts:** Exploring multiple reasoning paths in parallel\n\n**Economic impact:** Better prompts reduce token usage (lower cost) and improve accuracy (higher value). Prompt engineering directly impacts AI COGS and the Cost of Predictivity.`,
         whyItMatters: 'Prompt engineering is the most cost-effective way to improve AI output quality without fine-tuning. A well-crafted prompt can reduce token usage by 50% and improve accuracy by 20%+ — directly impacting AI unit economics.',
         category: 'AI & Machine Learning',
@@ -103,7 +109,7 @@ export const highVolumeTerms: GlossaryTerm[] = [
     },
     {
         title: 'Microservices Architecture',
-        slug: 'microservices',
+        slug: 'microservices', tier: 'pillar',
         definition: `Microservices is an architectural style where an application is composed of small, independently deployable services that communicate over well-defined APIs.\n\n**Benefits:**\n- Independent deployment and scaling\n- Technology flexibility per service\n- Team autonomy and ownership\n- Fault isolation\n\n**Hidden costs (Microservices Debt):**\n- **Distributed system complexity:** Network latency, partial failures, eventual consistency\n- **Operational overhead:** Each service needs monitoring, logging, deployment pipelines\n- **Integration testing difficulty:** Testing interactions between 50+ services is exponentially harder\n- **Data consistency challenges:** Transactions across services require saga patterns or event sourcing\n\nThe initial move to microservices often creates more technical debt than it eliminates — especially when teams don't have the operational maturity to manage distributed systems.`,
         whyItMatters: 'Microservices are not inherently better than monoliths. They trade one type of complexity (monolith) for another (distributed systems). The economic case for microservices only works when team size and deployment frequency justify the operational overhead.',
         category: 'Architecture & Design',
@@ -122,6 +128,7 @@ export const highVolumeTerms: GlossaryTerm[] = [
     {
         title: 'Technical Debt',
         slug: 'technical-debt-definition',
+        tier: 'pillar',
         definition: `Technical Debt is the accumulated cost of expedient engineering decisions that create future maintenance burden. Coined by Ward Cunningham in 1992, the debt metaphor describes how choosing quick solutions over optimal ones generates "interest payments" in the form of increased maintenance work.\n\n**Types of technical debt:**\n- **Deliberate debt:** Conscious shortcuts taken under deadline pressure\n- **Accidental debt:** Debt accumulated through lack of knowledge or changing requirements\n- **Bit rot:** Debt that accumulates simply from aging code and evolving ecosystems\n- **Design debt:** Architectural decisions that made sense originally but no longer scale\n- **AI-generated debt:** Code produced by LLMs without full understanding of system context\n\n**The economic model:**\n- Technical debt accrues "interest" — ongoing maintenance cost\n- Interest compounds as the codebase grows\n- The "principal" is the cost to refactor/replace\n- The Technical Insolvency Date is when interest consumes 100% of engineering capacity\n\nRichard Ewing's contribution: treating technical debt as an economic phenomenon measurable in dollars and quarters, not just a code quality concern.`,
         whyItMatters: 'Technical debt is the central concept in product economics. It is the mechanism by which engineering decisions become financial consequences. Understanding debt economics — not just debt existence — is what separates good engineering leaders from great ones.',
         howToMeasure: 'Use the Product Debt Index (PDI) calculator at richardewing.io/tools/pdi to quantify your debt in dollars and calculate your Technical Insolvency Date.',

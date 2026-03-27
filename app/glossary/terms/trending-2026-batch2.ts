@@ -18,7 +18,7 @@ export const trendingTermsBatch2: GlossaryTerm[] = [
     },
     {
         title: 'Burn Multiple',
-        slug: 'burn-multiple',
+        slug: 'burn-multiple', tier: 'pillar',
         definition: `The Burn Multiple is a capital efficiency metric that measures how much cash a company consumes to generate each new dollar of net Annual Recurring Revenue (ARR).\n\n**Formula:** Burn Multiple = Net Burn / Net New ARR\n\n**Benchmarks (2025-2026):**\n- **< 1.0x:** Best-in-class efficiency (AI-native startups)\n- **1.0x - 1.5x:** Excellent\n- **1.5x - 2.0x:** Good / median\n- **2.0x - 3.0x:** Concerning\n- **> 3.0x:** Unsustainable\n\nThe burn multiple has emerged as one of the most important metrics for Series A and B boards because it captures capital discipline in a single number that's harder to game than growth rate alone.`,
         whyItMatters: 'In the post-ZIRP era, investors scrutinize capital efficiency above raw growth. The burn multiple tells you the true cost of growth. A company growing 100% with a 3.0x burn multiple is economically weaker than one growing 50% with a 0.8x burn multiple.',
         howToMeasure: 'Divide net cash burn by net new ARR for the period. Include all operating expenses. Lower is better.',
@@ -42,7 +42,7 @@ export const trendingTermsBatch2: GlossaryTerm[] = [
     },
     {
         title: 'Net Revenue Retention (NRR)',
-        slug: 'net-revenue-retention',
+        slug: 'net-revenue-retention', tier: 'pillar',
         definition: `Net Revenue Retention (NRR) measures the percentage of recurring revenue retained from existing customers over a period, including expansion, contraction, and churn.\n\n**Formula:** NRR = (Starting MRR + Expansion - Contraction - Churn) / Starting MRR × 100%\n\n**Benchmarks:**\n- **130%+:** World-class (Snowflake, Datadog levels)\n- **120-130%:** Excellent\n- **110-120%:** Good\n- **100-110%:** Acceptable\n- **< 100%:** Revenue is shrinking without new sales\n\nNRR above 100% means your existing customer base generates more revenue each period even if you acquire zero new customers.`,
         whyItMatters: 'NRR is often valued more than new customer acquisition by SaaS investors because it demonstrates product-market fit, pricing power, and customer satisfaction. Technical debt that degrades product quality directly erodes NRR.',
         howToMeasure: 'Track monthly or annual recurring revenue changes from your starting customer cohort, including expansion, downgrades, and churn.',
@@ -65,7 +65,7 @@ export const trendingTermsBatch2: GlossaryTerm[] = [
     },
     {
         title: 'Developer Experience (DevEx)',
-        slug: 'developer-experience',
+        slug: 'developer-experience', tier: 'pillar',
         definition: `Developer Experience (DevEx) is the holistic experience of software developers as they interact with tools, processes, systems, and organizational culture to accomplish their work.\n\n**DevEx encompasses:**\n- **Tooling:** IDE quality, CI/CD speed, debugging tools, documentation\n- **Process:** Code review speed, deployment frequency, approval bottlenecks\n- **Environment:** Build times, test reliability, environment provisioning speed\n- **Culture:** Autonomy, knowledge sharing, on-call burden, meeting load\n\nDevEx has become a critical investment area because it directly impacts developer productivity, retention, and code quality. Companies with strong DevEx report 2x faster delivery and 50% lower engineer turnover.`,
         whyItMatters: 'Poor DevEx is a form of organizational technical debt. It compounds because frustrated developers write worse code, take longer to ship, and leave — creating knowledge loss and hiring costs that further degrade the system.',
         howToMeasure: 'Survey-based metrics (DX Core 4), DORA metrics, build/deploy times, PR review cycle times, and engineer satisfaction scores.',
@@ -101,7 +101,7 @@ export const trendingTermsBatch2: GlossaryTerm[] = [
     },
     {
         title: 'DORA Metrics',
-        slug: 'dora-metrics',
+        slug: 'dora-metrics', tier: 'pillar',
         definition: `DORA Metrics are the four key measures of software delivery performance identified by the DevOps Research and Assessment (DORA) team (now part of Google Cloud). They are the industry standard for measuring engineering team effectiveness.\n\n**The four DORA metrics:**\n1. **Deployment Frequency:** How often code is deployed to production\n2. **Lead Time for Changes:** Time from code commit to production\n3. **Change Failure Rate:** Percentage of deployments causing failures\n4. **Time to Restore Service:** How quickly teams recover from failures\n\n**Performance levels (2025):**\n- **Elite:** Deploy on-demand, < 1 hour lead time, < 5% failure rate, < 1 hour MTTR\n- **High:** Deploy daily-weekly, 1 day-1 week lead time, < 15% failure rate, < 1 day MTTR\n- **Low:** Deploy monthly+, 1-6 months lead time, > 30% failure rate, > 1 week MTTR`,
         whyItMatters: 'DORA metrics are the operational evidence of technical debt impact. High technical debt directly degrades all four metrics — slower deployments, longer lead times, more failures, and slower recovery.',
         howToMeasure: 'Track through CI/CD pipeline data, deployment logs, incident management systems, and source control metrics.',

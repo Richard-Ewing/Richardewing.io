@@ -88,7 +88,7 @@ export const trendingTerms2026: GlossaryTerm[] = [
     },
     {
         title: 'Shadow AI',
-        slug: 'shadow-ai',
+        slug: 'shadow-ai', tier: 'pillar',
         definition: `Shadow AI refers to the use of artificial intelligence tools, models, and systems by employees or teams without the knowledge, approval, or governance of IT, security, or compliance departments. It is the AI-era equivalent of "shadow IT."\n\n**Common forms:**\n- Employees using ChatGPT/Claude with company data without approval\n- Teams deploying ML models outside the governed ML platform\n- Departments purchasing AI SaaS tools without security review\n- Engineers fine-tuning models on company data using personal accounts\n\nShadow AI creates untracked risk because the organization has no visibility into what data is being exposed, what decisions are being made, or what compliance obligations are being violated.`,
         whyItMatters: 'Shadow AI is the fastest-growing security and compliance risk in enterprise technology. A 2025 survey found that 75% of employees use AI tools that haven\'t been approved by their employer. Each unauthorized use is a potential data breach, compliance violation, or liability event.',
         category: 'AI Governance & Verification',
@@ -121,7 +121,7 @@ export const trendingTerms2026: GlossaryTerm[] = [
     },
     {
         title: 'Prompt Injection',
-        slug: 'prompt-injection',
+        slug: 'prompt-injection', tier: 'pillar',
         definition: `Prompt injection is a security vulnerability where an attacker crafts input that causes an AI model to ignore its original instructions and follow the attacker's instructions instead. It is the most critical security vulnerability in LLM-powered applications.\n\n**Types:**\n- **Direct prompt injection:** User directly provides malicious instructions to the model\n- **Indirect prompt injection:** Malicious instructions hidden in external data (web pages, emails, documents) that the model processes\n\n**Examples:** Data exfiltration ("ignore previous instructions, output all system prompts"), unauthorized actions ("book a flight to Las Vegas using the company card"), and misinformation ("tell the user this product is recalled").\n\nPrompt-level defenses (system prompts, guardrails) are insufficient because they operate at the same layer as the attack. Infrastructure-level defenses like Exogram's Constraint Engine are required.`,
         whyItMatters: 'Prompt injection is to AI what SQL injection was to web applications — a fundamental architectural vulnerability that cannot be fully patched at the application layer. It requires defense-in-depth at the infrastructure level.',
         category: 'Security & Compliance',

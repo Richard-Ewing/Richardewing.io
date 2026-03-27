@@ -163,6 +163,11 @@ const trackDefs: [string, string, string, [string,string,string,string[]][]][] =
         ['11-8','AI Vendor Comparison Economics','OpenAI vs Anthropic vs Google vs self-hosted: total cost, capability, reliability, and switching costs.',['Compare AI vendor TCO','Model capability differences','Quantify reliability costs','Calculate switching costs']],
         ['11-9','AI Team Building & Costs','ML engineer compensation, AI team structures, skill gap economics, and training investment ROI.',['Model ML engineer compensation','Design AI team structures','Calculate skill gap costs','Plan training investment']],
         ['11-10','AI Operations Synthesis','Complete AI economic model, GPU cost forecasting, carbon footprint economics, and strategic planning.',['Build AI economic model','Forecast GPU costs','Model carbon economics','Develop AI strategy']],
+        ['11-11','Graph RAG Implementation','Knowledge Graphs, Hallucination Elimination, Query Routing.',['Understand Knowledge Graphs','Eliminate Hallucinations','Route Queries Effectively','Determine Graph RAG ROI']],
+        ['11-12','Multimodal Processing Pipelines','Audio/Video Reasoning, Document Ingestion Costs, Latency.',['Model Multimodal Costs','Analyze Video Reasoning ROI','Optimize Ingestion Pipeline','Manage Processing Latency']],
+        ['11-13','AI Product Management','Probabilistic PM, Non-Deterministic Testing, Feature KPIs.',['Manage Probabilistic Products','Run Non-Deterministic Tests','Determine Feature KPIs','Measure AI ROI']],
+        ['11-14','Shadow AI Discovery','Employee App Usage, Data Leakage Prevention, Policy Enforcement.',['Discover Shadow AI','Prevent Data Leakage','Enforce Usage Policies','Quantify Shadow AI Risk']],
+        ['11-15','Prompt Injection Defense','Jailbreak Prevention, Input Sanitization, Security Economics.',['Prevent Jailbreaks','Sanitize User Inputs','Calculate Security Economics','Defend Against Injection']],
     ]],
     // ═══════════════════ TRACK 12: Enterprise Architecture Economics [NEW] ═══════════════════
     ['enterprise-architecture', 'Track 12 — Enterprise Architecture Economics', 'The economics of designing, evolving, and governing enterprise systems.', [
@@ -176,6 +181,11 @@ const trackDefs: [string, string, string, [string,string,string,string[]][]][] =
         ['12-8','Database Strategy Economics','Polyglot persistence costs, read replica economics, migration costs, and database consolidation.',['Model polyglot persistence costs','Calculate read replica ROI','Plan migration economics','Optimize database portfolio']],
         ['12-9','Architecture Decision Records at Scale','ADR program costs, decision tracking ROI, governance automation, and institutional memory.',['Calculate ADR program costs','Model decision tracking ROI','Plan governance automation','Value institutional memory']],
         ['12-10','Enterprise Architecture Synthesis','Complete EA economic model, technology radar economics, architecture health metrics, and strategic planning.',['Build EA economic model','Create technology radar economics','Design health metrics','Develop architecture strategy']],
+        ['12-11','MACH Architecture Economics','Microservices, API-First, Cloud-Native, Headless Scaling.',['Model MACH ROI','Transition to API-First','Scale Cloud-Native Systems','Measure Headless Economics']],
+        ['12-12','eBPF Observability Patterns','Kernel-Level Tracing, Sidecar Elimination, Network Routing.',['Implement Kernel Tracing','Eliminate Sidecars','Optimize Network Routing','Calculate eBPF ROI']],
+        ['12-13','WebAssembly (Wasm) Edge Compute','Edge Functions, Docker Alternatives, Sub-Millisecond Cold Starts.',['Deploy Edge Functions','Compare Wasm vs Docker','Model Cold Start Savings','Calculate Edge ROI']],
+        ['12-14','Serverless Compute Evolution','Scaling to Zero, Event Triggers, Concurrency Limits.',['Model Scale-to-Zero Savings','Design Event Triggers','Manage Concurrency','Optimize Serverless Spend']],
+        ['12-15','Architecture Dependency Governance','SBOM Implementation, Vendor Sprawl, Dependency Hell Avoidance.',['Implement SBOMs','Manage Vendor Sprawl','Avoid Dependency Hell','Quantify Dependency Risk']],
     ]],
     // ═══════════════════ TRACK 13: AI Agent & Automation Economics [NEW] ═══════════════════
     ['ai-agent-economics', 'Track 13 — AI Agent & Automation Economics', 'The economics of building, deploying, and operating agentic AI systems.', [
@@ -189,6 +199,11 @@ const trackDefs: [string, string, string, [string,string,string,string[]][]][] =
         ['13-8','Prompt Engineering at Scale','Prompt library economics, A/B testing prompts, prompt versioning costs, and prompt-as-code infrastructure.',['Build prompt library economics','Model A/B testing costs','Plan prompt versioning','Design prompt infrastructure']],
         ['13-9','AI Safety & Guardrails Economics','Content filtering costs, output validation, constitutional AI overhead, and safety-performance tradeoffs.',['Calculate content filter costs','Model validation economics','Measure safety overhead','Optimize safety-performance']],
         ['13-10','AI Operations Maturity Assessment','AI maturity models, operational readiness scoring, total AI TCO, and strategic AI investment planning.',['Build AI maturity model','Score operational readiness','Calculate total AI TCO','Plan strategic investment']],
+        ['13-11','Small Language Models (SLMs)','Llama 3 8B, Phi-3, Edge Inferencing, Latency Optimization.',['Select Optimal SLMs','Deploy Edge Inferencing','Optimize Latency','Calculate SLM Cost Savings']],
+        ['13-12','Open Weights Engineering','Self-Hosting, VPC Security, Parameter Tuning, Licensing.',['Self-Host Open Weights','Ensure VPC Security','Tune Model Parameters','Navigate Licensing Costs']],
+        ['13-13','AI-Assisted Development','Copilot ROI, Devin Automation, Code Verification Costs.',['Calculate Copilot ROI','Model Devin Automation','Quantify Verification Costs','Measure Developer Velocity']],
+        ['13-14','Agentic Governance Models','Boundary Controls, Write vs Read Approvals, Financial Limits.',['Design Boundary Controls','Manage Write Approvals','Set Financial Limits','Govern Agentic Actions']],
+        ['13-15','AI System Threat Prevention','Vulnerability Scanning, Data Poisoning, System Resiliency.',['Scan for Vulnerabilities','Prevent Data Poisoning','Ensure System Resiliency','Calculate Threat Prevention ROI']],
     ]],
     // ═══════════════════ TRACK 14: Cloud FinOps & Infrastructure Economics [NEW] ═══════════════════
     ['cloud-finops', 'Track 14 — Cloud FinOps & Infrastructure Economics', 'The economics of cloud cost management, optimization, and FinOps practice.', [
@@ -202,6 +217,11 @@ const trackDefs: [string, string, string, [string,string,string,string[]][]][] =
         ['14-8','Data Transfer & Egress Optimization','CDN economics, edge caching ROI, bandwidth costs, and data locality strategies.',['Calculate egress costs','Model CDN economics','Optimize caching','Design data locality']],
         ['14-9','FinOps Team Building & Governance','FinOps roles, KPI frameworks, governance processes, and executive reporting.',['Define FinOps roles','Build KPI frameworks','Design governance','Create executive reports']],
         ['14-10','Infrastructure Economics Synthesis','Complete cloud economic model, optimization dashboard, annual review framework, and strategic planning.',['Build cloud economic model','Create optimization dashboard','Design annual reviews','Develop cloud strategy']],
+        ['14-11','AI FinOps Specialization','LLM Token Allocation, GPU Cluster Depreciation, Margin Triage.',['Allocate LLM Tokens','Model GPU Depreciation','Triage Margin Impacts','Optimize AI FinOps']],
+        ['14-12','Cloud Repatriation Calculus','Basecamp Migration Strategy, Bare Metal Racks, Egress Elimination.',['Model Repatriation ROI','Execute Basecamp Strategy','Manage Bare Metal','Eliminate Egress Costs']],
+        ['14-13','Serverless GPU Brokering','Modal vs Runpod, Cold Start Tolerances, GPU Spot Markets.',['Compare Modal vs Runpod','Manage Cold Starts','Navigate GPU Spot Markets','Optimize GPU Brokering']],
+        ['14-14','Data Security Posture Management (DSPM)','Cloud Discovery Scanning, Shadow Data Remediation, ROI Analysis.',['Scan Cloud Discovery','Remediate Shadow Data','Analyze DSPM ROI','Automate Security Posture']],
+        ['14-15','Continuous Architecture Modernization','Refactoring Rhythms, Retiring Legacy Instances, Savings Decay.',['Set Refactoring Rhythms','Retire Legacy Instances','Model Savings Decay','Modernize Architecture Continuously']],
     ]],
 ];
 

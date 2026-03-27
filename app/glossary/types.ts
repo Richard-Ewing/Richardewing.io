@@ -10,6 +10,7 @@ export interface GlossaryTerm {
     relatedTerms: string[];
     relatedTools?: { name: string; url: string }[];
     relatedArticles?: { title: string; url: string }[];
+    tier?: 'pillar' | 'standard' | 'basic';
     // Rich content fields
     checklist?: string[];
     howToApply?: string;

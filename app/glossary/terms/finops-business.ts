@@ -3,7 +3,7 @@ import { GlossaryTerm } from '../types';
 export const finopsBusinessTerms: GlossaryTerm[] = [
     {
         title: 'FinOps',
-        slug: 'finops',
+        slug: 'finops', tier: 'pillar',
         definition: `FinOps (Financial Operations) is a cloud financial management discipline that brings financial accountability to the variable cost model of cloud computing. It combines engineering, finance, and business teams to make real-time data-driven spending decisions.\n\nFinOps operates on three phases: Inform (visibility into cloud costs), Optimize (right-size, reserve, eliminate waste), Operate (continuously manage cloud economics).`,
         whyItMatters: 'Cloud costs are the second largest line item (after headcount) for most engineering organizations. Without FinOps discipline, cloud spend grows 2-3x faster than revenue. Richard Ewing\'s engineering diagnostics include cloud cost analysis as part of the overall R&D economics assessment.',
         howToMeasure: 'Track cloud spend as a percentage of revenue, cost per customer, unit economics per workload, and reserved vs. on-demand utilization ratio.',

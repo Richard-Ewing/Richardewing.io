@@ -88,7 +88,7 @@ export const eighteenthPassTerms: GlossaryTerm[] = [
     },
     {
         title: 'Net Revenue Retention (NRR)',
-        slug: 'net-revenue-retention',
+        slug: 'net-revenue-retention', tier: 'pillar',
         definition: `Net Revenue Retention (NRR) measures how much revenue you retain from existing customers over a period, including expansion, contraction, and churn. NRR > 100% means you're growing even without acquiring new customers.\n\n**Formula:** NRR = (Starting Revenue + Expansion - Contraction - Churn) / Starting Revenue × 100%\n\n**Benchmarks:**\n- **Elite:** 130%+ (Datadog: 130%, Snowflake: 131%)\n- **Great:** 120-130% (Twilio: 123%)\n- **Good:** 110-120%\n- **Concerning:** 100-110%\n- **Trouble:** < 100% (revenue is shrinking without new customers)\n\n**Why NRR matters more than new ARR:** If NRR < 100%, you're filling a leaky bucket. Every dollar of new revenue is offset by churning revenue. Fixing retention is almost always higher ROI than increasing acquisition.`,
         whyItMatters: 'NRR is the single most important SaaS metric for understanding business health. A 120% NRR means the business almost doubles revenue from existing customers every 4 years — without a single new customer.',
         category: 'SaaS & Metrics',

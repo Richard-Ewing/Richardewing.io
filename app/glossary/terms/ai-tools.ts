@@ -44,7 +44,7 @@ export const aiToolsTerms: GlossaryTerm[] = [
     },
     {
         title: 'Vector Database',
-        slug: 'vector-database',
+        slug: 'vector-database', tier: 'pillar',
         definition: `A Vector Database is a specialized database designed to store, index, and query high-dimensional vector embeddings efficiently. It is the infrastructure backbone of RAG systems and semantic search.\n\n**How it works:** Text, images, or other data are converted into numerical vectors (embeddings) that capture semantic meaning. Similar items have similar vectors. The database enables fast similarity search across millions or billions of vectors.\n\n**Leading solutions (2025-2026):**\n- **Pinecone:** Managed, serverless, enterprise-grade\n- **Chroma:** Open-source, developer-friendly\n- **Weaviate:** Open-source with hybrid search\n- **Milvus/Zilliz:** High-performance, scalable\n- **pgvector:** PostgreSQL extension for vector search\n\n**Market size:** The vector database market reached $2.55B in 2025, projected to reach $3.7B+ in 2026. Growth is driven by enterprise AI adoption and the explosion of unstructured data.`,
         whyItMatters: 'Vector databases are the "memory" infrastructure for AI applications. Choosing the right vector database and indexing strategy directly impacts AI feature performance, cost, and scalability.',
         category: 'AI & Machine Learning',
@@ -98,7 +98,7 @@ export const aiToolsTerms: GlossaryTerm[] = [
     },
     {
         title: 'Prompt Injection',
-        slug: 'prompt-injection',
+        slug: 'prompt-injection', tier: 'pillar',
         definition: `Prompt Injection is a security vulnerability where malicious input causes an AI model to ignore its system instructions, reveal internal prompts, or perform unintended actions.\n\n**Types:**\n- **Direct injection:** User input that overrides system instructions (e.g., "Ignore all previous instructions and...")\n- **Indirect injection:** Malicious content embedded in external data the AI processes (e.g., hidden instructions in a webpage the AI summarizes)\n\n**Why it's dangerous:**\n- AI agents with tool access can be tricked into executing harmful actions\n- Customer-facing AI can be made to reveal proprietary system prompts\n- RAG systems can be poisoned by injecting malicious content into knowledge bases\n\n**Mitigation strategies:** Input sanitization, output filtering, instruction hierarchy separation, and validation layers between agent decisions and action execution.`,
         whyItMatters: 'Prompt injection is the SQL injection of the AI era. Every AI-facing product needs prompt injection defenses. The cost of a successful injection — data leakage, unauthorized actions, reputational damage — makes this a critical product economics concern.',
         category: 'AI Governance & Verification',

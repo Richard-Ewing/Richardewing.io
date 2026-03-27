@@ -43,6 +43,7 @@ import { sixteenthPassTerms } from './sixteenth-pass';
 import { seventeenthPassTerms } from './seventeenth-pass';
 import { eighteenthPassTerms } from './eighteenth-pass';
 import { nineteenthPassTerms } from './nineteenth-pass';
+import { semanticExpansion2026 } from './2026-expansion';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -101,6 +102,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...eighteenthPassTerms,
     // Nineteenth pass
     ...nineteenthPassTerms,
+    // 2026 Semantic Expansion
+    ...semanticExpansion2026,
 ];
 
 export const allGlossaryCategories = [

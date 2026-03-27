@@ -27,7 +27,7 @@ export const devopsPlatformTerms: GlossaryTerm[] = [
     },
     {
         title: 'Infrastructure as Code',
-        slug: 'infrastructure-as-code',
+        slug: 'infrastructure-as-code', tier: 'pillar',
         definition: `Infrastructure as Code (IaC) is the practice of managing infrastructure (servers, networks, databases) through code files rather than manual configuration. Infrastructure definitions are version-controlled, reviewed, tested, and deployed through the same CI/CD pipeline as application code.\n\n**Popular IaC tools:** Terraform (multi-cloud), Pulumi (programming languages), AWS CloudFormation, Ansible, Chef, Puppet.\n\n**Key benefits:** Reproducibility (same infrastructure in every environment), auditability (who changed what, when), disaster recovery (rebuild from code), and cost visibility (infrastructure as a reviewable bill of materials).`,
         whyItMatters: 'IaC eliminates "snowflake" servers — unique configurations that no one can reproduce if they fail. It also enables FinOps by making infrastructure costs visible and reviewable in code. Richard Ewing\'s cloud cost analysis as part of the engineering diagnostic evaluates IaC maturity.',
         howToMeasure: 'Percentage of infrastructure managed by code. Drift detection rate (manual changes not in code). Time to reproduce an environment from scratch.',
