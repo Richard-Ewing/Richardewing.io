@@ -490,6 +490,62 @@ const guides: GuideItem[] = [
     audience: "Product Strategists, Spatial Architects, CTOs",
     terms: "30+ terms linked",
     price: "$79"
+},
+{
+    slug: 'breaking-into-agentic-ai-engineering',
+    title: 'Career Paths: Agentic AI Engineering',
+    subtitle: 'From Single-Prompt to Orchestration',
+    description: 'The 2026 playbook for transitioning from traditional Software Engineering or Machine Learning to Autonomous Multi-Agent orchestration and probabilistic design.',
+    badge: 'Career Path',
+    badgeColor: 'violet',
+    topics: [
+        'Agentic Architecture',
+        'State Graphs',
+        'Tool Calling',
+        'Probabilistic Routing'
+    ],
+    readTime: '30 min',
+    free: true,
+    audience: 'Software Engineers, Machine Learning Engineers',
+    terms: '10+ terms linked',
+},
+{
+    slug: 'how-to-deploy-small-language-models',
+    title: 'How To: Deploy Small Language Models',
+    subtitle: 'Bypassing API Oligopolies at the Edge',
+    description: 'Complete architecture guide for running highly specialized, quantized 3B-8B parameter inference locally to reduce token margin tax by 90%.',
+    badge: '🔒 Premium Playbook',
+    badgeColor: 'emerald',
+    topics: [
+        'SLMs',
+        'Quantization',
+        'Edge Inferencing',
+        'Margin Tax'
+    ],
+    readTime: '25 min',
+    free: false,
+    audience: 'Cloud Architects, CTOs, Staff Engineers',
+    terms: '15+ terms linked',
+    price: '$79'
+},
+{
+    slug: 'how-to-implement-dspm-data-security',
+    title: 'How To: Implement DSPM Data Security',
+    subtitle: 'Automating Shadow Data Toxicity Discovery',
+    description: 'The definitive implementation guide for establishing an agentless Data Security Posture Management cloud-native scanner to secure internal data before AI ingest.',
+    badge: '🔒 Premium Playbook',
+    badgeColor: 'red',
+    topics: [
+        'DSPM',
+        'Shadow Data',
+        'Agentless Discovery',
+        'Toxicity Mapping'
+    ],
+    readTime: '45 min',
+    free: false,
+    audience: 'CISO, Data Engineers, SecOps Leads',
+    terms: '20+ terms linked',
+    price: '$99'
 }
 ];
 
