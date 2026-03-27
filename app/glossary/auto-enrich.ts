@@ -393,3 +393,78 @@ export function autoIndustryBenchmarks(category: string, title: string): { indus
         { industry: 'E-Commerce', metric: `${title} ROI`, low: '<1x', median: '2-3x', elite: '>5x' },
     ];
 }
+
+// NEW: Auto-generated Hub-and-Spoke SEO Article matrix
+export function autoSpokes(category: string, title: string, slug: string): { title: string; url: string; description: string }[] {
+    const spokes: Record<string, { title: string; url: string; description: string }[]> = {
+        'Technical Debt & Code Quality': [
+            { title: `Calculating ${title} EBITDA Impact for Private Equity`, url: `/articles/calculating-${slug}-ebitda-impact-private-equity`, description: `How investors quantify the hidden liabilities of ${title} during M&A due diligence.` },
+            { title: `How to Translate DORA Metrics into Financial ${title}`, url: `/articles/how-to-translate-dora-metrics-into-financial-${slug}`, description: `A bridge for CTOs to explain engineering constraints to the CFO.` },
+            { title: `${title} Governance Frameworks for Scale-Ups`, url: `/articles/${slug}-governance-frameworks-for-scaleups`, description: `Board-ready policies to prevent technical insolvency at scale.` }
+        ],
+        'AI & Machine Learning': [
+            { title: `${title} Unit Economics: The Ultimate CTO Guide`, url: `/articles/${slug}-unit-economics-cto-guide`, description: `Detailed breakdown of the fixed vs. variable cost structures limiting AI profitability.` },
+            { title: `Mitigating ${title} Risk in Enterprise Deployments`, url: `/articles/mitigating-${slug}-risk-enterprise`, description: `Ensuring compliance, data security, and margin preservation at 100x scale.` },
+            { title: `The Cost of Predictivity: Why ${title} Defies Software Economics`, url: `/articles/cost-of-predictivity-defies-${slug}`, description: `Understanding why AI scaling costs compound differently than traditional SaaS.` }
+        ],
+        'SaaS Metrics & Finance': [
+            { title: `Leveraging ${title} to Drive Rule of 40 Valuations`, url: `/articles/leveraging-${slug}-rule-of-40`, description: `How top-quartile companies engineer their metrics for venture funding.` },
+            { title: `${title} Benchmarks for Series B and Beyond`, url: `/articles/${slug}-benchmarks-series-b-beyond`, description: `The exact financial milestones required to unlock late-stage growth capital.` },
+            { title: `The Board's Guide to Interpreting ${title}`, url: `/articles/boards-guide-interpreting-${slug}`, description: `How sophisticated investors strip away vanity metrics to find truth.` }
+        ],
+    };
+    return spokes[category] || [
+        { title: `The Enterprise Guide to Scaling ${title}`, url: `/articles/enterprise-guide-scaling-${slug}`, description: `Architectural constraints and organizational requirements for enterprise-wide adoption.` },
+        { title: `${title} ROI Models for Chief Financial Officers`, url: `/articles/${slug}-roi-models-cfo`, description: `Quantifying the CapEx vs. OpEx trade-offs of modern engineering practices.` },
+        { title: `Overcoming Implementation Friction with ${title}`, url: `/articles/overcoming-implementation-friction-${slug}`, description: `Change management strategies to drive adoption and compliance across 500+ engineer orgs.` }
+    ];
+}
+
+// NEW: Auto-generated Curriculum pathways
+export function autoCurriculum(category: string, title: string, slug: string): { track: string; title: string; url: string; price: string }[] {
+    const tracks: Record<string, { track: string; title: string; url: string; price: string }[]> = {
+        'Technical Debt & Code Quality': [
+            { track: 'Engineering Economics', title: `Quantifying ${title} for the Boardroom`, url: `/curriculum/engineering-economics/${slug}-quantification`, price: '$199' }
+        ],
+        'AI & Machine Learning': [
+            { track: 'AI Unit Economics', title: `Architecting Profitable ${title} Systems`, url: `/curriculum/ai-economics/architecting-${slug}`, price: '$199' }
+        ],
+        'Leadership & Governance': [
+            { track: 'Technology Leadership', title: `Executive Governance of ${title}`, url: `/curriculum/technology-leadership/governance-${slug}`, price: '$199' }
+        ]
+    };
+    return tracks[category] || [
+        { track: 'Digital Transformation', title: `Operationalizing ${title} at Scale`, url: `/curriculum/digital-transformation/operationalizing-${slug}`, price: '$199' }
+    ];
+}
+
+// NEW: Auto-generated Executive Guides
+export function autoGuides(category: string, title: string, slug: string): { title: string; url: string; type: string }[] {
+    return [
+        { title: `Private Equity Due Diligence Checklist for ${title}`, url: `/guides/pe-due-diligence`, type: 'Executive Brief' },
+        { title: `The ${category.split(' & ')[0]} Investment Thesis (2026-2028)`, url: `/guides/cto-investment-thesis`, type: 'Market Report' }
+    ];
+}
+
+// NEW: Auto-generated Premium Diagnostic Mapping
+export function autoPremiumTool(category: string, title: string, slug: string): { name: string; tag: string; icon: string; url: string; price: string; description: string } {
+    if (category.includes('AI') || category.includes('Machine Learning')) {
+        return {
+            name: 'AI Unit Economics Builder',
+            tag: 'AUEB Framework',
+            icon: '🧠',
+            url: '/tools/aueb',
+            price: '$10k Value',
+            description: `Run a definitive financial audit to determine if your ${title} infrastructure is destroying margins at scale.`
+        };
+    }
+    
+    return {
+        name: 'Product Debt Index',
+        tag: 'PDI Diagnostic',
+        icon: '⚖️',
+        url: '/tools/pdi',
+        price: '$10k Value',
+        description: `Quantify the hidden economic liability of ${title} across your architecture using the world's leading valuation impact framework.`
+    };
+}

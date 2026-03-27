@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '../terms';
-import { autoKeyMetrics, autoMaturityLevels, autoComparisons, autoQuiz, autoDiagram, autoCommonMistakes, autoBestPractices, autoIndustryBenchmarks } from '../auto-enrich';
+import { autoKeyMetrics, autoMaturityLevels, autoComparisons, autoQuiz, autoDiagram, autoCommonMistakes, autoBestPractices, autoIndustryBenchmarks, autoSpokes, autoCurriculum, autoGuides, autoPremiumTool } from '../auto-enrich';
 import RelatedContent from '../../components/RelatedContent';
 import GlossaryToolCTA from '../../components/GlossaryToolCTA';
 import ShareButtons from '../../components/ShareButtons';
@@ -140,6 +140,10 @@ export default async function GlossaryTermPage({ params }: Props) {
     const commonMistakes = autoCommonMistakes(term.category, term.title);
     const bestPractices = autoBestPractices(term.category, term.title);
     const industryBenchmarks = autoIndustryBenchmarks(term.category, term.title);
+    const spokes = autoSpokes(term.category, term.title, slug);
+    const curriculumTracks = autoCurriculum(term.category, term.title, slug);
+    const executiveGuides = autoGuides(term.category, term.title, slug);
+    const premiumTool = autoPremiumTool(term.category, term.title, slug);
 
     const faqSchema = {
         '@context': 'https://schema.org',
@@ -474,6 +478,92 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 ))}
                             </tbody>
                         </table>
+                    </div>
+                </section>
+
+                {/* Hub-and-Spoke SEO Matrix — NEW */}
+                <section className="mb-12 mt-16 pt-12 border-t border-white/10">
+                    <div className="flex items-center gap-3 mb-8">
+                        <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+                            <span className="text-xl">🌐</span>
+                        </div>
+                        <div>
+                            <h2 className="text-3xl font-grotesk font-bold text-white">Explore the {term.title} Ecosystem</h2>
+                            <p className="text-sm font-mono text-cyan-400 mt-1 uppercase tracking-widest">Pillar & Spoke Navigation Matrix</p>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        
+                        {/* Spoke Articles Column */}
+                        <div className="card p-6 border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent flex flex-col h-full">
+                            <h3 className="text-lg font-grotesk font-bold text-white flex items-center gap-2 mb-4">
+                                <span className="text-cyan-400">📝</span> Deep-Dive Articles
+                            </h3>
+                            <div className="space-y-4 flex-1">
+                                {spokes.map((s, i) => (
+                                    <Link key={i} href={s.url} className="block group">
+                                        <div className="text-sm font-bold text-zinc-300 group-hover:text-cyan-400 transition-colors mb-1">{s.title}</div>
+                                        <div className="text-xs text-zinc-500 line-clamp-2">{s.description}</div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Curriculum Column */}
+                        <div className="card p-6 border-violet-500/20 bg-gradient-to-br from-violet-500/5 to-transparent flex flex-col h-full">
+                            <h3 className="text-lg font-grotesk font-bold text-white flex items-center gap-2 mb-4">
+                                <span className="text-violet-400">🎓</span> Curriculum Tracks
+                            </h3>
+                            <div className="space-y-4 flex-1">
+                                {curriculumTracks.map((c, i) => (
+                                    <Link key={i} href={c.url} className="block group">
+                                        <div className="text-[10px] font-mono text-violet-400 uppercase tracking-widest mb-1">{c.track}</div>
+                                        <div className="text-sm font-bold text-zinc-300 group-hover:text-violet-400 transition-colors mb-1">{c.title}</div>
+                                        <div className="inline-flex items-center justify-center px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-white mt-1">Premium Track</div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Executive Guides Column */}
+                        <div className="card p-6 border-emerald-500/20 bg-gradient-to-br from-emerald-500/5 to-transparent flex flex-col h-full">
+                            <h3 className="text-lg font-grotesk font-bold text-white flex items-center gap-2 mb-4">
+                                <span className="text-emerald-400">📄</span> Executive Guides
+                            </h3>
+                            <div className="space-y-4 flex-1">
+                                {executiveGuides.map((g, i) => (
+                                    <Link key={i} href={g.url} className="block group">
+                                        <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1">{g.type}</div>
+                                        <div className="text-sm font-bold text-zinc-300 group-hover:text-emerald-400 transition-colors">{g.title}</div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Monetization / Premium Diagnostic Column */}
+                        <div className="card p-6 border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-red-500/5 to-transparent relative overflow-hidden flex flex-col h-full">
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 blur-2xl rounded-full" />
+                            <h3 className="text-lg font-grotesk font-bold text-white flex items-center gap-2 mb-4 relative z-10">
+                                <span className="text-amber-400">{premiumTool.icon}</span> Flagship Advisory
+                            </h3>
+                            <div className="flex-1 flex flex-col relative z-10">
+                                <div className="text-[10px] font-mono text-amber-400 uppercase tracking-widest mb-1">{premiumTool.tag}</div>
+                                <div className="text-base font-bold text-white mb-2 leading-tight">{premiumTool.name}</div>
+                                <div className="text-xs text-zinc-400 mb-6 flex-1">{premiumTool.description}</div>
+                                
+                                <Link 
+                                    href={premiumTool.url} 
+                                    className="block w-full text-center py-2.5 px-4 bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm rounded-lg transition-colors shadow-[0_0_15px_rgba(245,158,11,0.3)]"
+                                >
+                                    Deploy Tool
+                                </Link>
+                                <div className="text-center mt-2 text-[10px] font-mono text-zinc-500 uppercase tracking-wide">
+                                    {premiumTool.price}
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 

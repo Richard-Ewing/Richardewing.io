@@ -1,5 +1,48 @@
 export const articles = [
     {
+        slug: "calculating-technical-debt-ebitda-impact-private-equity",
+        title: "Calculating Technical Debt's EBITDA Impact in Private Equity Due Diligence",
+        description: "A financial framework for Private Equity operating partners to translate legacy code maintenance burdens directly into EBITDA compression forecasts.",
+        date: "Apr 2026",
+        readTime: "8 min read",
+        source: "The Canon",
+        content: `
+            <p>During technical due diligence, evaluating software architecture is standard practice. However, translating those architectural findings into financial models is where most Private Equity firms fail. When a target company's engineering team spends 45% of their time keeping legacy systems running, that isn't just an engineering inefficiency—it is a direct drag on EBITDA margins.</p>
+            <h3>The Hidden Cost of Legacy Integration</h3>
+            <p>Every dollar spent on maintenance is a dollar not spent on growth. If you are modeling a 3x enterprise value expansion based on aggressive feature shipping, but the target holds massive undocumented liabilities, those feature roadmaps will stall. This is why establishing <a href="/glossary/technical-debt" class="text-cyan-400 hover:font-bold border-b border-cyan-500/30 transition-all">core technical debt principles</a> during the diligence phase is critical. It allows operating partners to quantify the exact CapEx required to refactor the platform before it scales.</p>
+            <p>Using the Product Debt Index (PDI) framework, PE firms can convert abstract engineering complaints into a concrete $M liability on the balance sheet, adjusting the purchase price or carving out specific remediation tranches.</p>
+        `
+    },
+    {
+        slug: "how-to-translate-dora-metrics-into-financial-technical-debt",
+        title: "How to Translate DORA Metrics into Financial Technical Debt",
+        description: "Deployment frequency and lead times are useful for engineers, but CFOs need dollar values. Here is the formula.",
+        date: "Apr 2026",
+        readTime: "6 min read",
+        source: "The Canon",
+        content: `
+            <p>Engineering leaders frequently present DORA metrics (Deployment Frequency, Lead Time, Change Failure Rate, MTTR) to executive boards to justify refactoring budgets. The problem? Boards do not allocate capital based on "Deployment Frequency." They allocate capital based on Return on Invested Capital (ROIC) and risk mitigation.</p>
+            <h3>The Financial Translation Layer</h3>
+            <p>To secure budget for system modernization, you must convert DORA regressions into dollar-cost abstractions. A rising Change Failure Rate isn't just an operational nuisance; it is an active tax on engineering payroll. By applying <a href="/glossary/technical-debt" class="text-cyan-400 hover:font-bold border-b border-cyan-500/30 transition-all">core technical debt principles</a>, you can map the exact number of hours lost to incident recovery against the fully-loaded cost of your engineering team.</p>
+            <p>If your Mean Time To Recovery (MTTR) increases by 2 hours over a quarter across 50 engineers averaging $150/hr, that is a hard financial loss. Showing CFOs the literal bleed rate of technical debt guarantees funding for the fix.</p>
+        `
+    },
+    {
+        slug: "technical-debt-governance-frameworks-for-ai-startups",
+        title: "Technical Debt Governance Frameworks for AI Startups",
+        description: "AI startups accumulate technical debt faster than any previous generation of software companies. This guide provides a rapid governance framework to survive the scale phase.",
+        date: "Apr 2026",
+        readTime: "9 min read",
+        source: "The Canon",
+        content: `
+            <p>In the sprint to achieve Agentic AI breakthroughs and secure Series A funding, AI startups are writing code at unprecedented speeds, heavily assisted by LLM copilots. The result is "Vibe Coding Debt"—a rapid accumulation of undocumented, poorly architected probabilistic systems.</p>
+            <h3>Governing the AI Codebase</h3>
+            <p>Unlike deterministic CRUD apps, AI features carry a Cost of Predictivity that scales non-linearly. If the underlying prompt orchestrations and vector DB retrievals are tangled in spaghetti code, iterating on model accuracy becomes mathematically impossible without breaking the system.</p>
+            <p>AI CTOs must implement <a href="/glossary/technical-debt" class="text-cyan-400 hover:font-bold border-b border-cyan-500/30 transition-all">core technical debt principles</a> from day one. This includes separating deterministic business logic from probabilistic LLM calls, enforcing strict API boundaries around AI agents, and using the Kill Switch Protocol on experimental endpoints that generate API costs but no user value.</p>
+            <p>Failing to govern technical debt early means hitting the Technical Insolvency Date right when you need to scale.</p>
+        `
+    },
+    {
         slug: "anthropic-academy-ai-courses-curated",
         title: "Anthropic Just Made AI Education Free — Here's What Leaders Should Take",
         description: "A curated walkthrough of all 15 Anthropic Academy courses, grouped by audience — leaders, builders, architects, and educators — with editorial commentary on which ones matter and why.",
