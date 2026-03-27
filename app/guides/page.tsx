@@ -546,6 +546,79 @@ const guides: GuideItem[] = [
     audience: 'CISO, Data Engineers, SecOps Leads',
     terms: '20+ terms linked',
     price: '$99'
+},
+{
+    slug: 'breaking-into-ai-operations',
+    title: 'Career Paths: AI Operations',
+    subtitle: 'Transitioning to the RAG Infrastructure Layer',
+    description: 'The definitive blueprint for migrating from DevOps or traditional Data Engineering to managing Vector Databases, Embeddings, and Orchestrating LLMs.',
+    badge: 'Career Path',
+    badgeColor: 'violet',
+    topics: [
+        'Vector Databases',
+        'Model Registries',
+        'RAG Scaling',
+        'Prompt Injection Defense'
+    ],
+    readTime: '35 min',
+    free: true,
+    audience: 'DevOps Engineers, Data Engineers',
+    terms: '12+ terms linked',
+},
+{
+    slug: 'breaking-into-mlops',
+    title: 'Career Paths: MLOps Mastery',
+    subtitle: 'Automating Model Lifecycles',
+    description: 'Master the CI/CD of Machine Learning. Transition from generic backend engineering to managing the lifecycle of open-weights and proprietary models.',
+    badge: 'Career Path',
+    badgeColor: 'violet',
+    topics: [
+        'Continuous Training',
+        'Model Drift',
+        'Feature Stores',
+        'A/B Experimentation'
+    ],
+    readTime: '40 min',
+    free: true,
+    audience: 'Backend Engineers, Data Scientists',
+    terms: '14+ terms linked',
+},
+{
+    slug: 'breaking-into-ai-product-management',
+    title: 'Career Paths: AI Product Management',
+    subtitle: 'Managing Non-Deterministic Products',
+    description: 'How to design roadmaps, establish KPIs, and wireframe UX for LLM-driven features where the output is probabilistic and unpredictable.',
+    badge: 'Career Path',
+    badgeColor: 'violet',
+    topics: [
+        'Probabilistic UX',
+        'Hallucination Risk mitigation',
+        'Generative UI',
+        'Token Economics'
+    ],
+    readTime: '25 min',
+    free: true,
+    audience: 'Product Managers, UX Designers',
+    terms: '15+ terms linked',
+},
+{
+    slug: 'executive-technology-guide-2026',
+    title: 'The 2026 Executive AI Playbook',
+    subtitle: 'Navigating $10M+ Architectural Transitions',
+    description: 'The definitive strategy for CTOs and VPs. Analyzing Buy vs Build economics, Open Source vs Private weights, and sovereign data architecture.',
+    badge: '🔒 Premium Playbook',
+    badgeColor: 'amber',
+    topics: [
+        'Sovereign AI',
+        'Buy vs Build math',
+        'Vendor Lock-in mitigation',
+        'Board-Level Compliance'
+    ],
+    readTime: '60 min',
+    free: false,
+    audience: 'CTOs, VP Engineering, Tech Founders',
+    terms: '25+ terms linked',
+    price: '$149'
 }
 ];
 
