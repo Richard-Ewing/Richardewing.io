@@ -376,7 +376,7 @@ export default function CurriculumPage() {
                                                                 {isModule && moduleId && (
                                                                     <a 
                                                                         href={`/api/buy/single_module?moduleId=${moduleId}`}
-                                                                        className="opacity-0 group-hover:opacity-100 absolute right-2 px-2 py-0.5 text-[9px] uppercase tracking-widest bg-white/10 hover:bg-white/20 text-white rounded font-bold transition-all shrink-0 z-10"
+                                                                        className="absolute right-2 px-2 py-0.5 text-[9px] uppercase tracking-widest bg-violet-500/10 hover:bg-violet-500/20 text-violet-300 border border-violet-500/20 rounded font-bold transition-all shrink-0 z-10"
                                                                     >
                                                                         Buy—$29
                                                                     </a>
