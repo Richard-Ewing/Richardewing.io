@@ -344,31 +344,46 @@ export default function CurriculumPage() {
                                                     </h3>
                                                 </div>
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 ml-11">
-                                                    {mod.items.map((item, ii) => (
-                                                        <Link
-                                                            key={ii}
-                                                            href={item.href}
-                                                            target={(item as any).isExternal ? '_blank' : undefined}
-                                                            rel={(item as any).isExternal ? 'noopener noreferrer' : undefined}
-                                                            className={`group flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
+                                                    {mod.items.map((item, ii) => {
+                                                        const isModule = !(item as any).isTool && !(item as any).isExternal;
+                                                        const moduleId = isModule ? item.href.split('/').pop()?.replace('-', '.') : null;
+                                                        
+                                                        return (
+                                                            <div key={ii} className={`relative group flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
                                                                 (item as any).isTool
                                                                     ? `${colors.bg} border ${colors.border} hover:border-opacity-100`
                                                                     : 'hover:bg-white/5'
-                                                            }`}
-                                                        >
-                                                            <span className={`w-1.5 h-1.5 rounded-full ${(item as any).isTool ? colors.dot : 'bg-zinc-600 group-hover:bg-zinc-400'} transition-colors`} />
-                                                            <span className={`text-sm ${
-                                                                (item as any).isTool
-                                                                    ? `${colors.text} font-bold`
-                                                                    : 'text-zinc-400 group-hover:text-white'
-                                                            } transition-colors`}>
-                                                                {item.label}
-                                                            </span>
-                                                            {(item as any).isExternal && (
-                                                                <span className="text-zinc-600 text-xs">↗</span>
-                                                            )}
-                                                        </Link>
-                                                    ))}
+                                                            }`}>
+                                                                <Link
+                                                                    href={item.href}
+                                                                    target={(item as any).isExternal ? '_blank' : undefined}
+                                                                    rel={(item as any).isExternal ? 'noopener noreferrer' : undefined}
+                                                                    className={`flex flex-1 items-center gap-2 ${isModule ? 'pr-12' : ''}`}
+                                                                >
+                                                                    <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${(item as any).isTool ? colors.dot : 'bg-zinc-600 group-hover:bg-zinc-400'} transition-colors`} />
+                                                                    <span className={`text-sm line-clamp-1 ${
+                                                                        (item as any).isTool
+                                                                            ? `${colors.text} font-bold`
+                                                                            : 'text-zinc-400 group-hover:text-white'
+                                                                    } transition-colors`}>
+                                                                        {item.label}
+                                                                    </span>
+                                                                    {(item as any).isExternal && (
+                                                                        <span className="text-zinc-600 text-xs shrink-0">↗</span>
+                                                                    )}
+                                                                </Link>
+                                                                
+                                                                {isModule && moduleId && (
+                                                                    <a 
+                                                                        href={`/api/buy/single_module?moduleId=${moduleId}`}
+                                                                        className="opacity-0 group-hover:opacity-100 absolute right-2 px-2 py-0.5 text-[9px] uppercase tracking-widest bg-white/10 hover:bg-white/20 text-white rounded font-bold transition-all shrink-0 z-10"
+                                                                    >
+                                                                        Buy—$29
+                                                                    </a>
+                                                                )}
+                                                            </div>
+                                                        );
+                                                    })}
                                                 </div>
                                             </div>
                                         ))}

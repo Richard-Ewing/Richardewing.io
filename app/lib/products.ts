@@ -203,6 +203,14 @@ export const PRODUCTS: Record<string, Product> = {
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00w5kwfDoaLEbJXb8c2B20l',
     },
+    pe_intelligence_tier: {
+        name: 'Private Equity Intelligence Tier',
+        description: 'Unlimited M&A PDF Exports, Q-PEP Remediation Roadmaps, and CISO Dashboard Access.',
+        price: 99900,
+        mode: 'subscription',
+        interval: 'year',
+        paymentLink: 'https://buy.stripe.com/placeholder_pe_tier',
+    },
     fractional_cpo: {
         name: 'Fractional CPO — Monthly',
         description: '2-3 days/week embedded: product strategy, roadmap ownership, engineering economics oversight, board reporting, hiring.',

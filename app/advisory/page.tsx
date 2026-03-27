@@ -174,8 +174,8 @@ export default function AdvisoryPage() {
                                 <li>✓ Board-level reporting</li>
                                 <li>✓ Hiring/team architecture</li>
                             </ul>
-                            <a href="mailto:richardewing@exogram.ai?subject=Fractional%20CPO%20Inquiry" className="block w-full py-3 text-center rounded-lg border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 font-bold text-sm transition-all">
-                                Inquire →
+                            <a href="/api/buy/fractional_cpo" className="block w-full py-3 text-center rounded-lg border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 font-bold text-sm transition-all">
+                                Book Engagement →
                             </a>
                         </div>
 
@@ -190,8 +190,8 @@ export default function AdvisoryPage() {
                                 <li>✓ Technical debt quantification</li>
                                 <li>✓ Investment committee deliverable</li>
                             </ul>
-                            <a href="mailto:richardewing@exogram.ai?subject=Due%20Diligence%20Partner%20Inquiry" className="block w-full py-3 text-center rounded-lg border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 font-bold text-sm transition-all">
-                                Inquire →
+                            <a href="/api/buy/due_diligence" className="block w-full py-3 text-center rounded-lg border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 font-bold text-sm transition-all">
+                                Secure Partner →
                             </a>
                         </div>
 
@@ -206,8 +206,8 @@ export default function AdvisoryPage() {
                                 <li>✓ Written technical assessment</li>
                                 <li>✓ Async advisory access</li>
                             </ul>
-                            <a href="mailto:richardewing@exogram.ai?subject=Board%20Observer%20Inquiry" className="block w-full py-3 text-center rounded-lg border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 font-bold text-sm transition-all">
-                                Inquire →
+                            <a href="/api/buy/board_observer" className="block w-full py-3 text-center rounded-lg border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 font-bold text-sm transition-all">
+                                Lock Seat →
                             </a>
                         </div>
                     </div>

@@ -812,7 +812,7 @@ export default function GuidesPage() {
                             </div>
                             <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-4">Ultimate Guides Bundle — $399</h2>
                             <p className="text-zinc-400 mb-8 max-w-xl mx-auto text-base leading-relaxed">Get complete access to all 13 premium guides/playbooks across all pricing tiers. Save over $500. Plus access to future premium guides at no extra cost.</p>
-                            <a href="https://buy.stripe.com/6oUfZa1My6vodS57W02B20y" target="_blank" rel="noreferrer" className="inline-block px-10 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-sm rounded-xl hover:opacity-90 transition-opacity shadow-[0_0_30px_rgba(139,92,246,0.3)]">
+                            <a href="/api/buy/premium_bundle_ultimate" className="inline-block px-10 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-sm rounded-xl hover:opacity-90 transition-opacity shadow-[0_0_30px_rgba(139,92,246,0.3)]">
                                 Get All Premium Guides — $399 →
                             </a>
                             <div className="flex items-center justify-center gap-6 mt-8 text-[10px] font-mono uppercase tracking-wider text-zinc-500">

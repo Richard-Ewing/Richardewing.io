@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '@/app/glossary/terms';
-import PremiumGuideCTA from '@/app/components/PremiumGuideCTA';
 import RelatedContent from '@/components/RelatedContent';
+import GuidePayGate from '@/app/components/GuidePayGate';
+import { auth } from '@clerk/nextjs/server';
 
 export const metadata: Metadata = {
     title: 'Executive Technology Guide 2026 | Richard Ewing',
@@ -33,7 +34,11 @@ const shifts = [
     }
 ];
 
-export default function ExecutiveGuide2026Page() {
+export default async function ExecutiveGuide2026Page() {
+    const { userId, sessionClaims } = await auth();
+    // @ts-ignore
+    const hasAccess = !!userId && (sessionClaims?.metadata?.has_yearly_subscription === true || sessionClaims?.metadata?.has_premium_guide_access === true);
+
     return (
         <main className="pt-20">
             <div className="page-container">
@@ -51,9 +56,7 @@ export default function ExecutiveGuide2026Page() {
                         The technology landscape is hardening. 2024 was about prototyping AI. 2025 was about productionizing it. 2026 is strictly about <strong>margin preservation and unit economics</strong>. If your infrastructure is not radically re-architected this year, your cloud costs will destroy your EBITDA.
                     </p>
 
-                    <div className="mb-12">
-                        <PremiumGuideCTA guideSlug="executive-technology-guide-2026" guideName="The Complete 2026 Strategic Blueprint" />
-                    </div>
+                    <GuidePayGate guideTitle="The 2026 Executive AI Playbook" productId="premium_guide_149" hasAccess={hasAccess}>
 
                     <h2 className="text-3xl font-bold text-white mb-8">The Three Architectural Mandates</h2>
                     
@@ -95,6 +98,7 @@ export default function ExecutiveGuide2026Page() {
                             Initiate Advisory Engagement →
                         </Link>
                     </div>
+                    </GuidePayGate>
                 
                     <RelatedContent currentSlug="executive-technology-guide-2026" type="guide" count={3} />
                 </div>

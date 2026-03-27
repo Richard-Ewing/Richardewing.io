@@ -1,6 +1,12 @@
 import Link from 'next/link';
+import GuidePayGate from '@/app/components/GuidePayGate';
+import { auth } from '@clerk/nextjs/server';
 
-export default function HowToDeploySLMs() {
+export default async function HowToDeploySLMs() {
+    const { userId, sessionClaims } = await auth();
+    // @ts-ignore
+    const hasAccess = !!userId && (sessionClaims?.metadata?.has_yearly_subscription === true || sessionClaims?.metadata?.has_premium_guide_access === true);
+
     return (
         <main className="pt-20">
             <div className="page-container">
@@ -39,6 +45,7 @@ export default function HowToDeploySLMs() {
                     </div>
 
                     {/* Content */}
+                    <GuidePayGate guideTitle="How To: Deploy Small Language Models" productId="premium_guide_79" hasAccess={hasAccess}>
                     <div className="prose prose-invert prose-cyan max-w-none">
                         <div className="card p-8 mb-12 bg-emerald-500/5 border-emerald-500/20">
                             <h2 className="text-2xl font-grotesk font-bold text-white mb-4 mt-0">The SLM Revolution</h2>
@@ -74,6 +81,7 @@ export default function HowToDeploySLMs() {
                             </Link>
                         </div>
                     </div>
+                    </GuidePayGate>
                 </div>
             </div>
         </main>

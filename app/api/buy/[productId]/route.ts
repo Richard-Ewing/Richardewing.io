@@ -24,7 +24,12 @@ export async function GET(
 
     // Construct precise Stripe Payload with guaranteed Clerk Identity Identity Mapping
     const stripeUrl = new URL(product.paymentLink);
-    stripeUrl.searchParams.append('client_reference_id', userId);
+    const searchParams = new URL(request.url).searchParams;
+    const moduleId = searchParams.get('moduleId');
+    
+    // Support dual-referencing for granular module purchases
+    const referenceId = moduleId ? `${userId}::module_${moduleId}` : userId;
+    stripeUrl.searchParams.append('client_reference_id', referenceId);
 
     return NextResponse.redirect(stripeUrl);
 }
