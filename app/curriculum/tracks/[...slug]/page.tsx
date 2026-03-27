@@ -105,8 +105,10 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
     // Auth check for Stripe Access
     const { userId, sessionClaims } = await auth();
     // @ts-ignore - publicMetadata comes from Clerk session tokens
-    const hasSubscription = sessionClaims?.metadata?.has_yearly_subscription === true;
-    const hasAccess = !!userId && hasSubscription;
+    const metadata: any = sessionClaims?.metadata || {};
+    const hasSubscription = metadata.has_yearly_subscription === true;
+    const unlockedItems = (metadata.unlocked_items as string[]) || [];
+    const hasAccess = !!userId && (hasSubscription || unlockedItems.includes(`module_${mod.moduleId}`));
 
     return <ModuleCard mod={mod} hasAccess={hasAccess} />;
 }

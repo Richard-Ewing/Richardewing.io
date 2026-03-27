@@ -38,7 +38,8 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
         if (product?.paymentLink) {
             const url = new URL(product.paymentLink);
             if (user?.id) {
-                url.searchParams.append('client_reference_id', user.id);
+                const referenceId = productId === 'single_module' ? `${user.id}::module_${moduleId}` : user.id;
+                url.searchParams.append('client_reference_id', referenceId);
             }
             if (user?.primaryEmailAddress?.emailAddress) {
                 url.searchParams.append('prefilled_email', user.primaryEmailAddress.emailAddress);

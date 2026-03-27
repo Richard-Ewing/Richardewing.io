@@ -402,7 +402,7 @@ export default function CurriculumPage() {
                             Start with a single module or unlock the complete library with certificate.
                         </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
                             {/* Tier 1: Single Module */}
                             <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex flex-col">
                                 <div className="text-xs text-zinc-500 uppercase tracking-widest font-mono mb-3">Starter</div>
@@ -413,28 +413,12 @@ export default function CurriculumPage() {
                                     <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-emerald-400 mt-0.5">✓</span> All lessons &amp; assessments</li>
                                     <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-emerald-400 mt-0.5">✓</span> Lifetime access</li>
                                 </ul>
-                                <a href="/api/buy/single_module" className="block text-center py-3 rounded-lg border border-white/20 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/5 transition-all">
-                                    Buy Module — $29
+                                <a href="#tracks" className="block text-center py-3 rounded-lg border border-white/20 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/5 transition-all">
+                                    Browse Modules — $29
                                 </a>
                             </div>
 
-                            {/* Tier 2: 3-Module Bundle */}
-                            <div className="rounded-2xl border border-violet-500/30 bg-violet-500/5 p-6 flex flex-col relative">
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-violet-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">Best Value</div>
-                                <div className="text-xs text-violet-400 uppercase tracking-widest font-mono mb-3">Bundle</div>
-                                <div className="text-3xl font-bold text-white mb-1">$69</div>
-                                <div className="text-sm text-zinc-500 mb-1">One-time · Lifetime access · 3 modules</div>
-                                <div className="text-xs text-violet-400 mb-6">~$23/module — save 21%</div>
-                                <ul className="space-y-2 mb-6 flex-1">
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-violet-400 mt-0.5">✓</span> Choose any 3 tracks</li>
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-violet-400 mt-0.5">✓</span> All lessons &amp; assessments</li>
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-violet-400 mt-0.5">✓</span> Lifetime access</li>
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-violet-400 mt-0.5">✓</span> Related tool access</li>
-                                </ul>
-                                <a href="/api/buy/module_bundle_3" className="block text-center py-3 rounded-lg bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold text-sm uppercase tracking-widest hover:opacity-90 transition-opacity shadow-lg">
-                                    Get 3 Modules — $69
-                                </a>
-                            </div>
+
 
                             {/* Tier 3: Full Curriculum */}
                             <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-6 flex flex-col">

@@ -26,10 +26,14 @@ export async function POST(req: Request) {
 
     // Handle successful checkouts
     if (event.type === 'checkout.session.completed') {
-        // We pass the Clerk UserID via standard Stripe client_reference_id
-        const userId = session.client_reference_id;
+        // We pass the Clerk UserID via standard Stripe client_reference_id, optionally with a specific item ID
+        const rawReferenceId = session.client_reference_id;
 
-        if (userId) {
+        if (rawReferenceId) {
+            const parts = rawReferenceId.split('::');
+            const userId = parts[0];
+            const specificItemId = parts.length > 1 ? parts[1] : null;
+
             try {
                 // Determine what was purchased to set the right metadata grants
                 // If it's a subscription mode checkout, grant universal access
@@ -78,14 +82,21 @@ export async function POST(req: Request) {
                         publicMetadata: metadataPayload
                     });
                 } else {
-                    // One-off purchase handling (Guides/Diagnostics)
+                    // One-off purchase handling (Guides/Diagnostics/Modules)
+                    const userObj = await client.users.getUser(userId);
+                    const existingUnlocked = (userObj.publicMetadata.unlocked_items as string[]) || [];
+                    const updatedUnlocked = specificItemId && !existingUnlocked.includes(specificItemId)
+                        ? [...existingUnlocked, specificItemId]
+                        : existingUnlocked;
+
                     await client.users.updateUserMetadata(userId, {
                         publicMetadata: {
                             has_premium_guide_access: true,
+                            unlocked_items: updatedUnlocked
                         }
                     });
                 }
-                console.log(`Successfully provisioned access for Clerk User: ${userId} (Quantity: ${quantity})`);
+                console.log(`Successfully provisioned access for Clerk User: ${userId} (Quantity: ${quantity}, Item: ${specificItemId || 'None'})`);
             } catch (error) {
                 console.error('Failed to update Clerk user metadata:', error);
                 return new NextResponse('Error updating user metadata', { status: 500 });
