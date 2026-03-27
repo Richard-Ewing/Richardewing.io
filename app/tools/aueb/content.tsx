@@ -10,6 +10,8 @@ import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
+import jsPDF from 'jspdf';
+import { toPng } from 'html-to-image';
 
 const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
     const [display, setDisplay] = useState(0);
@@ -139,6 +141,9 @@ interface Results {
 export default function AUEBTool() {
     // Persona State
     const [persona, setPersona] = useState<Persona>('Founder');
+    const [step, setStep] = useState(1);
+    const [isSaving, setIsSaving] = useState(false);
+    const [showPaywall, setShowPaywall] = useState(false);
 
     // Basic Inputs
     const [price, setPrice] = useState('29');
@@ -169,6 +174,55 @@ export default function AUEBTool() {
     const [loading, setLoading] = useState(false);
     const [showGate, setShowGate] = useState(false);
 
+
+
+    const handleSaveAndExport = async () => {
+        setIsSaving(true);
+        try {
+            const priceNum = parseFloat(price) || 0;
+            const queriesNum = parseFloat(queries) || 0;
+            const costNum = parseFloat(costPerQuery) || 0;
+            const usersNum = parseFloat(users) || 0;
+            const growthRateNum = parseFloat(growthRate) || 15;
+            const hostingNum = parseFloat(hostingCostPerUser) || 0;
+
+            const payload = {
+                run_data: { price: priceNum, queries: queriesNum, costPerQuery: costNum, users: usersNum, growthRate: growthRateNum, cachingEnabled, features, hostingCostPerUser: hostingNum, thirdPartyApis },
+                output_metrics: results
+            };
+            const res = await fetch('/api/tools/aueb/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const data = await res.json();
+            
+            if (res.status === 402 && data.error === 'PAYMENT_REQUIRED') {
+                setShowPaywall(true);
+                return;
+            }
+            if (!res.ok) throw new Error(data?.message || 'Failed to save');
+
+            if (data.qpep_roadmap) {
+                setResults((prev: any) => prev ? { ...prev, qpep_roadmap: data.qpep_roadmap } : null);
+            }
+
+            // Small delay to let React render the Q-PEP roadmap into the DOM
+            await new Promise(r => setTimeout(r, 800));
+
+            const element = document.getElementById('aueb-pdf-export-zone');
+            if (!element) return;
+            const dataUrl = await toPng(element, { quality: 1.0, backgroundColor: '#050505', pixelRatio: 2 });
+            const pdf = new jsPDF({ orientation: 'p', unit: 'px', format: [element.offsetWidth, element.offsetHeight] });
+            pdf.addImage(dataUrl, 'PNG', 0, 0, element.offsetWidth, element.offsetHeight);
+            pdf.save(`AUEB_Assessment_${persona}.pdf`);
+        } catch (error: any) {
+            console.error(error);
+            alert(`Export failed: ${error.message || "Unknown error"}`);
+        } finally {
+            setIsSaving(false);
+        }
+    };
 
     const calculate = () => {
         setLoading(true);
@@ -365,6 +419,43 @@ export default function AUEBTool() {
     return (
         <div className="min-h-screen bg-[#050505] text-zinc-200 selection:bg-cyan-500/30 font-sans">
             <ToolCelebration show={!!results} toolName="AUEB" />
+            {/* MONETIZATION ENGINE: PAYWALL MODAL */}
+            {showPaywall && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" data-html2canvas-ignore>
+                    <div className="bg-zinc-950 border border-zinc-800 rounded-3xl max-w-md w-full p-8 relative shadow-2xl overflow-hidden scale-100 animate-in zoom-in-95 duration-200">
+                        {/* Lighting Fx */}
+                        <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-violet-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                        
+                        <div className="relative z-10">
+                            <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mb-6 border border-red-500/20">
+                                <Lock className="w-5 h-5 text-red-400" />
+                            </div>
+                            
+                            <h3 className="text-3xl font-bold text-white mb-2 font-grotesk tracking-tight">Limit Reached.</h3>
+                            <p className="text-zinc-400 text-sm mb-8 leading-relaxed">
+                                You have consumed your allocation of 3 free diagnostic audits. Unlock the Full Library to save unlimited board-ready PDF reports directly to your Vault.
+                            </p>
+                            
+                            <div className="space-y-3">
+                                <Link 
+                                    href="/api/buy/full_curriculum" 
+                                    onClick={() => setShowPaywall(false)}
+                                    className="flex items-center justify-center w-full py-4 bg-cyan-500 text-black font-bold uppercase tracking-widest text-xs rounded-xl transition-all shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:scale-[1.02]"
+                                >
+                                    Unlock Library for $199
+                                </Link>
+                                <button 
+                                    onClick={() => setShowPaywall(false)} 
+                                    className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-400 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"
+                                >
+                                    Dismiss
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* HEADER */}
             <nav className="border-b border-white/5 bg-black/50 backdrop-blur-xl sticky top-0 z-50">
@@ -569,7 +660,7 @@ export default function AUEBTool() {
                                         <h2 className="text-xl font-bold text-white mb-1">Board-Ready Deliverable Generated</h2>
                                         <p className="text-sm text-zinc-400">Export this assessment to a verified Executive PDF.</p>
                                     </div>
-                                    <ExportToPDFButton targetId="aueb-pdf-export-zone" fileName={`AUEB_Assessment_${persona}.pdf`} />
+
                                 </div>
 
                                 {/* -------- PDF CAPTURE ZONE START -------- */}
