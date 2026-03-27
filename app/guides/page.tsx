@@ -225,6 +225,91 @@ const guides: GuideItem[] = [
     audience: 'Senior Engineers, Backend Devs',
     terms: '15+ terms linked',
 },
+{
+    slug: 'breaking-into-ai-product-management',
+    title: 'Career Paths: AI Product Management',
+    subtitle: 'Transitioning from B2B SaaS to AI Economics',
+    description: 'The definitive career transition roadmap for PMs moving into AI Product Leadership, Unit Economics, and AI feature P&L management.',
+    badge: 'Career Path',
+    badgeColor: 'amber',
+    topics: ['AI Protocol', 'Feature Economics', 'Stochastic UX', 'Tokens'],
+    readTime: '20 min',
+    tools: [],
+    free: true,
+    audience: 'Product Managers, Founders',
+    terms: '12+ terms linked',
+},
+{
+    slug: 'breaking-into-mlops',
+    title: 'Career Paths: MLOps',
+    subtitle: 'From DevOps to AI Data Planes',
+    description: 'The roadmap for transitioning from traditional systems administration directly into hyper-scale GPU cluster operations and MLOps.',
+    badge: 'Career Path',
+    badgeColor: 'emerald',
+    topics: ['GPU Brokering', 'Kubernetes', 'Data Planes', 'Vector DBs'],
+    readTime: '25 min',
+    tools: [],
+    free: true,
+    audience: 'DevOps, SysAdmins, Infrastructure Engineers',
+    terms: '18+ terms linked',
+},
+
+    {
+        slug: 'breaking-into-agentic-ai-engineering',
+        title: 'Career Paths: Agentic AI Engineering',
+        subtitle: 'From Single-Prompt to Orchestration',
+        description: 'The 2026 playbook for transitioning from traditional Software Engineering or Machine Learning to Autonomous Multi-Agent orchestration and probabilistic design.',
+        badge: 'Career Path',
+        badgeColor: 'violet',
+        topics: [
+            'Agentic Architecture',
+            'State Graphs',
+            'Tool Calling',
+            'Probabilistic Routing'
+        ],
+        readTime: '30 min',
+        free: true,
+        audience: 'Software Engineers, Machine Learning Engineers',
+        terms: '10+ terms linked',
+    },
+    {
+        slug: 'how-to-deploy-small-language-models',
+        title: 'How To: Deploy Small Language Models',
+        subtitle: 'Bypassing API Oligopolies at the Edge',
+        description: 'Complete architecture guide for running highly specialized, quantized 3B-8B parameter inference locally to reduce token margin tax by 90%.',
+        badge: '🔒 Premium Playbook',
+        badgeColor: 'emerald',
+        topics: [
+            'SLMs',
+            'Quantization',
+            'Edge Inferencing',
+            'Margin Tax'
+        ],
+        readTime: '25 min',
+        free: false,
+        audience: 'Cloud Architects, CTOs, Staff Engineers',
+        terms: '15+ terms linked',
+        price: '$79'
+    },
+    {
+        slug: 'how-to-implement-dspm-data-security',
+        title: 'How To: Implement DSPM Data Security',
+        subtitle: 'Automating Shadow Data Toxicity Discovery',
+        description: 'The definitive implementation guide for establishing an agentless Data Security Posture Management cloud-native scanner to secure internal data before AI ingest.',
+        badge: '🔒 Premium Playbook',
+        badgeColor: 'red',
+        topics: [
+            'DSPM',
+            'Shadow Data',
+            'Agentless Discovery',
+            'Toxicity Mapping'
+        ],
+        readTime: '45 min',
+        free: false,
+        audience: 'CISO, Data Engineers, SecOps Leads',
+        terms: '20+ terms linked',
+        price: '$99'
+    },
     // --- PREMIUM GUIDES ---
     {
         slug: 'ai-economics',
@@ -417,8 +502,9 @@ const badgeStyles: Record<string, string> = {
 };
 
 export default function GuidesPage() {
-    const freeGuides = guides.filter(g => g.free);
-    const premiumGuides = guides.filter(g => !g.free);
+    const careerPaths = guides.filter(g => g.badge === 'Career Path');
+    const freeGuides = guides.filter(g => g.free && g.badge !== 'Career Path');
+    const premiumGuides = guides.filter(g => !g.free && g.badge !== 'Career Path');
 
     return (
         <main className="pt-20">
@@ -434,7 +520,7 @@ export default function GuidesPage() {
                         </h1>
                         <p className="text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed">
                             The most comprehensive engineering economics guides on the internet. Written by a Product Economist. Used in $7,500 advisory engagements. 
-                            {freeGuides.length} free, {premiumGuides.length} premium.
+                            {freeGuides.length} free, {premiumGuides.length} premium, {careerPaths.length} career paths.
                         </p>
                     </div>
 
@@ -498,6 +584,45 @@ export default function GuidesPage() {
                                         <div className="flex items-center">
                                             <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center group-hover:border-cyan-500/30 group-hover:bg-cyan-500/5 transition-all">
                                                 <span className="text-zinc-500 group-hover:text-cyan-400 transition-colors">→</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+
+                    {/* CAREER PATHS */}
+                    <div className="mb-4">
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-2">Career Pathways</h2>
+                        <p className="text-zinc-500 text-sm">Actionable blueprints for pivoting into the highest-leverage 2026 technical disciplines.</p>
+                    </div>
+                    <div className="space-y-5 mb-16">
+                        {careerPaths.map((guide) => (
+                            <Link key={guide.slug} href={`/guides/${guide.slug}`} className="block group">
+                                <div className="card p-6 sm:p-8 hover:border-violet-500/30 transition-all border-violet-500/10">
+                                    <div className="flex flex-col sm:flex-row gap-6">
+                                        <div className="flex-1">
+                                            <div className="flex items-center gap-2 flex-wrap mb-3">
+                                                <span className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border ${badgeStyles[guide.badgeColor]}`}>{guide.badge}</span>
+                                                <span className="text-[10px] text-zinc-600">{guide.readTime}</span>
+                                                <span className="text-[10px] text-zinc-600">•</span>
+                                                <span className="text-[10px] text-zinc-600">{guide.audience}</span>
+                                                <span className="text-[10px] text-zinc-600">•</span>
+                                                <span className="text-[10px] text-zinc-600">{guide.terms}</span>
+                                            </div>
+                                            <h3 className="text-xl font-grotesk font-bold text-white mb-1 group-hover:text-violet-400 transition-colors">{guide.title}</h3>
+                                            <p className="text-sm text-zinc-500 font-mono mb-3">{guide.subtitle}</p>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">{guide.description}</p>
+                                            <div className="flex flex-wrap gap-1.5 mb-3">
+                                                {guide.topics.map((topic) => (
+                                                    <span key={topic} className="text-[9px] font-mono px-2 py-0.5 rounded bg-white/[0.03] border border-white/5 text-zinc-500">{topic}</span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center group-hover:border-violet-500/30 group-hover:bg-violet-500/5 transition-all">
+                                                <span className="text-zinc-500 group-hover:text-violet-400 transition-colors">→</span>
                                             </div>
                                         </div>
                                     </div>

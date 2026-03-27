@@ -223,6 +223,25 @@ const trackDefs: [string, string, string, [string,string,string,string[]][]][] =
         ['14-14','Data Security Posture Management (DSPM)','Cloud Discovery Scanning, Shadow Data Remediation, ROI Analysis.',['Scan Cloud Discovery','Remediate Shadow Data','Analyze DSPM ROI','Automate Security Posture']],
         ['14-15','Continuous Architecture Modernization','Refactoring Rhythms, Retiring Legacy Instances, Savings Decay.',['Set Refactoring Rhythms','Retire Legacy Instances','Model Savings Decay','Modernize Architecture Continuously']],
     ]],
+
+    // ═══════════════════ TRACK 15: AI Career Pivots & Transitions [NEW] ═══════════════════
+    ['ai-career-transitions', 'Track 15 — AI Career Pivots & Transitions', 'Actionable blueprints for pivoting into the highest-leverage 2026 technical disciplines.', [
+        ['15-1','Breaking into AI Product Management','Probabilistic roadmapping, non-deterministic KPI design, and managing LLM unpredictability.',['Understand probabilistic UX','Design AI KPIs','Manage hallucination risk','Build AI product portfolios']],
+        ['15-2','Transitioning from DevOps to MLOps','GPU orchestration, Vector DB scaling, embedding pipelines, and model registry management.',['Orchestrate GPU clusters','Scale vector databases','Manage embeddings','Build model registries']],
+        ['15-3','Pivot to AI Security (AISecOps)','Prompt injection defense, data poisoning detection, boundary control, and LLM access governance.',['Defend against prompt injection','Detect data poisoning','Set boundary controls','Govern LLM access']],
+        ['15-4','Software Engineer to AI Engineer','Agentic orchestration, RAG pipelines, API function calling, and zero-shot architecture.',['Build agent architectures','Implement RAG','Connect LLMs to APIs','Design zero-shot flows']],
+        ['15-5','Cloud Architect to AI Solutions Architect','Multi-model routing costs, token optimization, edge deployment, and sovereign AI design.',['Optimize token costs','Route multi-model queries','Deploy edge AI','Design sovereign clouds']],
+        ['15-6','Data Engineer to AI Operations (AIOps)','Unstructured data pipelines, chunking strategies, semantic ETL, and continuous model improvement.',['Build unstructured pipelines','Optimize RAG chunking','Create semantic ETL','Automate model metrics']],
+        ['15-7','Pivot to Financial Engineering (FinOps for AI)','LLM GPU deprecation math, token allocation economics, arbitrage, and AI margin triage.',['Calculate AI GPU ROI','Allocate token budgets','Perform API arbitrage','Triage AI profit margins']],
+        ['15-8','Executive Transition: VP Eng to VP AI','Board-level AI literacy, buy vs build frameworks, AI talent economics, and technical moat strategy.',['Present AI to boards','Model buy vs build','Price AI talent','Build technical moats']],
+        ['15-9','QA Engineer to AI Evaluator','Deterministic testing vs LLM eval frameworks, benchmark creation, regression, and prompt versioning.',['Build eval frameworks','Create custom benchmarks','Test LLM regression','Version control prompts']],
+        ['15-10','UX Designer to AI Interface Designer','Conversational UX, streaming token load states, Copilot design systems, and generative UI.',['Design conversational flows','Optimize streaming UX','Build Copilot patterns','Create generative UI']],
+        ['15-11','Pivot to Small Language Model (SLM) Tuning','Edge device optimization, Lora/Qlora fine-tuning, and open-weights quantization.',['Optimize for edge','Fine-tune with Qlora','Quantize open weights','Deploy SLMs locally']],
+        ['15-12','Technical Writer to Prompt Engineer','Few-shot orchestration, chain-of-thought documentation, system prompt architectures, and evaluation.',['Write chain-of-thought','Architect system prompts','Orchestrate few-shot','Evaluate prompt reliability']],
+        ['15-13','Compliance Officer to AI Governance Lead','EU AI Act mapping, NIST AI RMF compliance, bias audits, and red-teaming programs.',['Map EU AI Act','Implement NIST RMF','Run bias audits','Manage red-teaming']],
+        ['15-14','System Admin to Sovereign AI Infrastructure','Air-gapped LLM deployment, bare-metal GPU clusters, and strict data egress elimination.',['Deploy air-gapped LLMs','Manage bare-metal GPUs','Eliminate data egress','Ensure sovereign privacy']],
+        ['15-15','Career Pivot Synthesis: The 2026 AI Playbook','Complete skills gap analysis, resume repositioning, interview frameworks, and negotiation.',['Perform skills gap analysis','Reposition technical resumes','Master AI interviews','Negotiate AI compensation']]
+    ]],
 ];
 
 trackDefs.forEach(([trackSlug, trackName, , mods]) => {

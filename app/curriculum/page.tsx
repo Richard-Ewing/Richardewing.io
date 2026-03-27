@@ -212,6 +212,16 @@ const tracks = [
                     { label: 'Legacy Modernization ROI', href: '/curriculum/tracks/enterprise-architecture/12-4' }
                 ],
             },
+
+            {
+                name: 'AI Career Pivots & Transitions',
+                items: [
+                    { label: 'AI Product Management', href: '/curriculum/tracks/ai-career-transitions/15-1' },
+                    { label: 'DevOps to MLOps', href: '/curriculum/tracks/ai-career-transitions/15-2' },
+                    { label: 'SWE to AI Engineer', href: '/curriculum/tracks/ai-career-transitions/15-4' },
+                    { label: 'VP Eng to VP AI', href: '/curriculum/tracks/ai-career-transitions/15-8' }
+                ],
+            }
             {
                 name: 'Cloud FinOps',
                 items: [
