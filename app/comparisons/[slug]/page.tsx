@@ -1632,6 +1632,163 @@ const comparisons: Comparison[] = [
         "Extremely dynamic prop-driven visualizations",
         "When utility classes cause religious team wars"
     ]
+},
+{
+    "slug": "ebpf-vs-istio",
+    "title": "eBPF vs. Istio",
+    "subtitle": "Kernel-Level Observability vs. Application Service Mesh",
+    "left": {
+        "name": "eBPF",
+        "color": "cyan"
+    },
+    "right": {
+        "name": "Istio",
+        "color": "violet"
+    },
+    "description": "eBPF provides zero-instrumentation observability directly from the Linux kernel. Istio provides a comprehensive Layer 7 service mesh with traffic routing. The debate defines the future of cloud-native networking.",
+    "rows": [
+        {
+            "dimension": "Performance Overhead",
+            "left": "Near-zero (Runs in kernel)",
+            "right": "Noticeable (Sidecar proxies)",
+            "leftScore": 10,
+            "rightScore": 4
+        },
+        {
+            "dimension": "Instrumentation",
+            "left": "Zero code changes needed",
+            "right": "Requires sidecar injection",
+            "leftScore": 10,
+            "rightScore": 6
+        },
+        {
+            "dimension": "Traffic Routing",
+            "left": "Limited L7 capabilities",
+            "right": "Advanced L7 (Canary, Retry)",
+            "leftScore": 4,
+            "rightScore": 10
+        },
+        {
+            "dimension": "Security Policies",
+            "left": "Network, Process, File level",
+            "right": "mTLS, JWT, L7 RBAC",
+            "leftScore": 8,
+            "rightScore": 9
+        },
+        {
+            "dimension": "Complexity",
+            "left": "High (Kernel programming)",
+            "right": "High (CRDs and YAML hell)",
+            "leftScore": 4,
+            "rightScore": 3
+        },
+        {
+            "dimension": "Maturity",
+            "left": "Rising star (Cilium)",
+            "right": "Enterprise standard",
+            "leftScore": 7,
+            "rightScore": 10
+        }
+    ],
+    "verdict": "Use eBPF (via Cilium) for high-performance networking and observability. Use Istio if you need complex Layer 7 traffic routing and robust mTLS. The industry is moving toward a hybrid: eBPF data planes with Istio control planes.",
+    "economicImpact": "Istio sidecars can consume 15-30% of your total cluster RAM and CPU. Moving to an eBPF-based mesh can save $100K+ per year in compute overhead for large clusters.",
+    "decisionGuide": "Need zero-overhead observability? eBPF. Need complex canary deployments and L7 routing? Istio. Need both? Ambient Mesh (Istio's sidecar-less eBPF architecture).",
+    "tools": [
+        "/tools/aueb"
+    ],
+    "marketContext": "eBPF is the most disruptive Linux networking technology in a decade, powering tools like Cilium and Pixie. Istio is the CNCF standard for service meshes.",
+    "adoptionTrend": "Sidecar architectures are dying. The industry is rapidly adopting eBPF-based \"sidecar-less\" meshes like Cilium and Istio Ambient Mesh.",
+    "whenToUseLeft": [
+        "Ultra-low latency environments",
+        "High-performance observability",
+        "Resource-constrained clusters",
+        "Network-level security enforcement"
+    ],
+    "whenToUseRight": [
+        "Complex L7 traffic shaping",
+        "Circuit breaking and retries",
+        "Zero-trust mTLS requirements",
+        "Enterprise compliance mandates"
+    ]
+},
+{
+    "slug": "slms-vs-llms",
+    "title": "SLMs vs. LLMs",
+    "subtitle": "Small Language Models vs. Large Language Models",
+    "left": {
+        "name": "SLMs",
+        "color": "emerald"
+    },
+    "right": {
+        "name": "LLMs",
+        "color": "amber"
+    },
+    "description": "LLMs possess vast general knowledge but are expensive and slow. SLMs (Small Language Models) are heavily distilled, hyper-fast, and run on-device. The choice determines your unit economics.",
+    "rows": [
+        {
+            "dimension": "Cost per 1M Tokens",
+            "left": "<$0.50 (or virtually free)",
+            "right": "$5.00 - $30.00",
+            "leftScore": 10,
+            "rightScore": 3
+        },
+        {
+            "dimension": "Latency",
+            "left": "Sub-100ms (On-device)",
+            "right": "500ms - 5s (Cloud)",
+            "leftScore": 10,
+            "rightScore": 5
+        },
+        {
+            "dimension": "Reasoning Capability",
+            "left": "Narrow, task-specific",
+            "right": "Broad, complex, multi-step",
+            "leftScore": 4,
+            "rightScore": 10
+        },
+        {
+            "dimension": "Data Privacy",
+            "left": "Perfect (Local execution)",
+            "right": "Requires cloud transmission",
+            "leftScore": 10,
+            "rightScore": 4
+        },
+        {
+            "dimension": "General Knowledge",
+            "left": "Highly constrained",
+            "right": "Encyclopedic",
+            "leftScore": 3,
+            "rightScore": 10
+        },
+        {
+            "dimension": "Fine-Tuning",
+            "left": "Fast and cheap (<$100)",
+            "right": "Slow and expensive ($10K+)",
+            "leftScore": 9,
+            "rightScore": 4
+        }
+    ],
+    "verdict": "Prototype with an LLM. Productionize with an SLM. Use massive models for reasoning and synthesis; use tiny models for classification, routing, and fast local tasks.",
+    "economicImpact": "Processing 1M daily customer interactions with GPT-4 costs $300K/yr. Routing simple interactions through a fine-tuned SLM drops that cost to $5K/yr.",
+    "decisionGuide": "Is the task complex reasoning? LLM. Is the task simple classification or entity extraction? SLM. Need it to run offline on an iPhone? SLM.",
+    "tools": [
+        "/tools/aueb",
+        "/tools/ev-se"
+    ],
+    "marketContext": "Models like Llama 3 8B, Phi-3, and Gemma are proving that parameters under 10B can achieve what required 100B+ parameters a year ago.",
+    "adoptionTrend": "The LLM router pattern is taking over: send the user's prompt to a fast SLM classifier to determine if it requires an expensive LLM.",
+    "whenToUseLeft": [
+        "High-volume classification tasks",
+        "On-device or edge processing",
+        "Strict privacy requirements",
+        "Latency-sensitive UI features"
+    ],
+    "whenToUseRight": [
+        "Complex reasoning and synthesis",
+        "Broad knowledge queries",
+        "Advanced coding tasks",
+        "Creative writing & ideation"
+    ]
 }
 ];
 

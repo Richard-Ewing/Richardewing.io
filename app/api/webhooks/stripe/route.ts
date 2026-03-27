@@ -35,6 +35,11 @@ export async function POST(req: Request) {
                 // If it's a subscription mode checkout, grant universal access
                 const isSubscription = session.mode === 'subscription';
                 
+                // Fetch the line items to determine the precise quantity purchased for B2B Team Licensing
+                const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
+                const quantity = lineItems.data.reduce((total, item) => total + (item.quantity || 1), 0);
+                const isTeamPurchase = quantity > 1;
+
                 const client = await clerkClient();
                 
                 if (isSubscription) {
@@ -49,22 +54,38 @@ export async function POST(req: Request) {
                         }
                     }
 
+                    // Base metadata grant
+                    const metadataPayload: any = {
+                        has_yearly_subscription: true,
+                        subscription_status: 'active'
+                    };
+
+                    // Enterprise B2B Team Licensing injection
+                    if (isTeamPurchase) {
+                        // We embed the Clerk user ID into the code itself for instant O(1) backend lookups
+                        const uniqueSuffix = Math.random().toString(36).substring(2, 8).toUpperCase();
+                        const inviteCode = `REQ-${userId}-${uniqueSuffix}`;
+                        
+                        metadataPayload.is_team_admin = true;
+                        metadataPayload.team_seats_total = quantity;
+                        metadataPayload.team_invite_code = inviteCode;
+                        metadataPayload.team_members_claimed = [];
+                        
+                        console.log(`Enterprise B2B License activated: ${quantity} seats granted to ${userId}`);
+                    }
+
                     await client.users.updateUserMetadata(userId, {
-                        publicMetadata: {
-                            has_yearly_subscription: true,
-                            subscription_status: 'active'
-                        }
+                        publicMetadata: metadataPayload
                     });
                 } else {
-                    // For single guide purchases, we would normally parse the line items.
-                    // For now, any one-off purchase triggers general premium guide access.
+                    // One-off purchase handling (Guides/Diagnostics)
                     await client.users.updateUserMetadata(userId, {
                         publicMetadata: {
                             has_premium_guide_access: true,
                         }
                     });
                 }
-                console.log(`Successfully provisioned access for Clerk User: ${userId}`);
+                console.log(`Successfully provisioned access for Clerk User: ${userId} (Quantity: ${quantity})`);
             } catch (error) {
                 console.error('Failed to update Clerk user metadata:', error);
                 return new NextResponse('Error updating user metadata', { status: 500 });

@@ -120,17 +120,47 @@ export default async function VaultPage() {
                                             Open Tools <ChevronRight className="w-3 h-3 ml-1" />
                                         </Link>
                                     </div>
+                                    
+                                    {/* ENTERPRISE B2B ADMIN PANEL */}
+                                    {user.publicMetadata?.is_team_admin === true && (
+                                        <div className="card p-6 border-amber-500/30 bg-amber-500/[0.02] hover:bg-amber-500/[0.05] transition-colors group sm:col-span-2">
+                                            <div className="flex items-center justify-between mb-2">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="text-2xl">🏢</div>
+                                                    <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">Enterprise Team Management</h3>
+                                                </div>
+                                                <span className="px-3 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-[10px] uppercase font-bold tracking-widest rounded-full">Admin</span>
+                                            </div>
+                                            <p className="text-sm text-zinc-400 mb-4">Manage your B2B enterprise license, view your team member seating ledger, and copy your invite URL.</p>
+                                            <Link href="/vault/team" className="inline-flex items-center text-xs font-bold text-amber-400 uppercase tracking-widest hover:text-amber-300">
+                                                Open Admin Dashboard <ChevronRight className="w-3 h-3 ml-1" />
+                                            </Link>
+                                        </div>
+                                    )}
                                 </div>
                             ) : (
-                                <div className="p-8 rounded-2xl border border-zinc-800 bg-zinc-900/50 text-center">
-                                    <BookOpen className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
-                                    <h3 className="text-lg font-bold text-white mb-2">No Premium Assets Yet</h3>
-                                    <p className="text-sm text-zinc-400 mb-6 max-w-md mx-auto">
-                                        Unlock the curriculum, premium guides, or advisory resources to see them beautifully organized here.
-                                    </p>
-                                    <Link href="/guides" className="inline-flex items-center justify-center px-6 py-2 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-cyan-400 transition-colors">
-                                        Browse Library
-                                    </Link>
+                                <div className="space-y-4">
+                                    <div className="p-8 rounded-2xl border border-zinc-800 bg-zinc-900/50 text-center">
+                                        <BookOpen className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
+                                        <h3 className="text-lg font-bold text-white mb-2">No Premium Assets Yet</h3>
+                                        <p className="text-sm text-zinc-400 mb-6 max-w-md mx-auto">
+                                            Unlock the curriculum, premium guides, or advisory resources to see them beautifully organized here.
+                                        </p>
+                                        <Link href="/guides" className="inline-flex items-center justify-center px-6 py-2 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-cyan-400 transition-colors">
+                                            Browse Library
+                                        </Link>
+                                    </div>
+                                    
+                                    {/* JOIN A TEAM / CORPORATE SEAT */}
+                                    <div className="p-6 rounded-2xl border border-dashed border-zinc-700 bg-black text-center group hover:border-cyan-500/30 transition-colors">
+                                        <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-widest">Enterprise Invite?</h3>
+                                        <p className="text-xs text-zinc-500 mb-4 max-w-sm mx-auto">
+                                            If your CTO or company purchased an enterprise team license, click below to claim your corporate seat.
+                                        </p>
+                                        <Link href="/vault/join" className="inline-flex items-center text-[10px] font-bold text-cyan-500 uppercase tracking-widest group-hover:text-cyan-400">
+                                            Enter Invite Code <ChevronRight className="w-3 h-3 ml-1" />
+                                        </Link>
+                                    </div>
                                 </div>
                             )}
                         </section>

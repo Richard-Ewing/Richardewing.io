@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '../terms';
-import { autoKeyMetrics, autoMaturityLevels, autoComparisons, autoQuiz, autoDiagram, autoCommonMistakes, autoBestPractices, autoIndustryBenchmarks, autoSpokes, autoCurriculum, autoGuides, autoPremiumTool } from '../auto-enrich';
+import { autoKeyMetrics, autoMaturityLevels, autoComparisons, autoQuiz, autoDiagram, autoCommonMistakes, autoBestPractices, autoIndustryBenchmarks, autoSpokes, autoCurriculum, autoGuides, autoPremiumTool, autoWhereIsItUsed, autoWhoUsesIt } from '../auto-enrich';
 import RelatedContent from '../../components/RelatedContent';
 import GlossaryToolCTA from '../../components/GlossaryToolCTA';
 import ShareButtons from '../../components/ShareButtons';
@@ -132,6 +132,8 @@ export default async function GlossaryTermPage({ params }: Props) {
     // Get checklist and how-to-apply (explicit or auto-generated)
     const checklist = term.checklist || autoChecklist(term.category, term.title);
     const howToApply = term.howToApply || autoHowToApply(term.category, term.title);
+    const whereIsItUsed = term.whereIsItUsed || autoWhereIsItUsed(term.category, term.title);
+    const whoUsesIt = term.whoUsesIt || autoWhoUsesIt(term.category, term.title);
     const keyMetrics = term.keyMetrics && term.keyMetrics.length > 0 ? term.keyMetrics : autoKeyMetrics(term.category, term.title);
     const maturityLevels = term.maturityLevels && term.maturityLevels.length > 0 ? term.maturityLevels : autoMaturityLevels(term.category, term.title);
     const comparisons = term.comparisons && term.comparisons.length > 0 ? term.comparisons : autoComparisons(term.category, term.title);
@@ -291,6 +293,30 @@ export default async function GlossaryTermPage({ params }: Props) {
                         ))}
                     </div>
                 </section>
+
+                {/* Where Is It Used? */}
+                {whereIsItUsed && (
+                    <section className="mb-12 card p-8 border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.02] to-transparent">
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🌍 Where Is It Used?</h2>
+                        <div className="prose prose-invert max-w-none">
+                            {whereIsItUsed.split('\n\n').map((p, i) => (
+                                <p key={i} className="text-zinc-300 leading-relaxed mb-4">{p}</p>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* Who Uses It? */}
+                {whoUsesIt && (
+                    <section className="mb-12 card p-8 border-violet-500/20 bg-gradient-to-br from-violet-500/[0.02] to-transparent">
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">👤 Who Uses It?</h2>
+                        <div className="prose prose-invert max-w-none">
+                            {whoUsesIt.split('\n\n').map((p, i) => (
+                                <p key={i} className="text-zinc-300 leading-relaxed mb-4">{p}</p>
+                            ))}
+                        </div>
+                    </section>
+                )}
 
                 {/* Why It Matters */}
                 <section className="mb-12 card p-8 border-cyan-500/20">
