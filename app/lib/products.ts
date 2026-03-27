@@ -111,35 +111,35 @@ export const PRODUCTS: Record<string, Product> = {
         description: 'Access to one premium guide.',
         price: 7900,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/placeholder_79', // TODO: Update with real link
+        paymentLink: 'https://buy.stripe.com/28EbIUgHs5rkcO16RW2B20u', // Real Link
     },
     premium_guide_99: {
         name: 'Premium Guide Access ($99 Tier)',
         description: 'Access to one premium guide.',
         price: 9900,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/placeholder_99', // TODO: Update with real link
+        paymentLink: 'https://buy.stripe.com/28E8wI1My8DwcO19042B20v', // Real Link
     },
     premium_guide_129: {
         name: 'Premium Guide Access ($129 Tier)',
         description: 'Access to one premium guide.',
         price: 12900,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/placeholder_129', // TODO: Update with real link
+        paymentLink: 'https://buy.stripe.com/00w9AMaj46vobJXgsw2B20w', // Real Link
     },
     premium_guide_149: {
         name: 'Premium Flagship Guide ($149 Tier)',
         description: 'Access to one premium flagship playbook.',
         price: 14900,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/placeholder_149', // TODO: Update with real link
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x', // Real Link
     },
     premium_bundle_ultimate: {
         name: 'Ultimate Guides Bundle',
         description: 'Complete access to all 13 premium guides/playbooks across all pricing tiers. Save over $500.',
         price: 39900,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/placeholder_bundle_399', // TODO: Update with real link
+        paymentLink: 'https://buy.stripe.com/6oUfZa1My6vodS57W02B20y', // Real Link
     },
 
     // --- ADVISORY (CORE TIERS) ---

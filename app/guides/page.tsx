@@ -760,6 +760,17 @@ export default function GuidesPage() {
                         ))}
                     </div>
 
+                    {/* PREMIUM GUIDES */}
+                    <div className="mb-4 mt-6">
+                        <h2 className="text-2xl font-grotesk font-bold text-white mb-2">Premium Playbooks & Guides</h2>
+                        <p className="text-zinc-500 text-sm">Actionable ROI models, frameworks, and templates. Unlock instantly.</p>
+                    </div>
+                    <div className="space-y-5 mb-16">
+                        {premiumGuides.map((guide) => (
+                            <Link key={guide.slug} href={`/guides/${guide.slug}`} className="block group">
+                                <div className="card p-6 sm:p-8 hover:border-amber-500/30 transition-all border-white/5 relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-colors" />
+                                    <div className="flex flex-col sm:flex-row gap-6 relative z-10">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2 flex-wrap mb-3">
                                                 <span className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border ${badgeStyles[guide.badgeColor]}`}>{guide.badge}</span>
@@ -772,10 +783,45 @@ export default function GuidesPage() {
                                             <h3 className="text-xl font-grotesk font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">{guide.title}</h3>
                                             <p className="text-sm text-zinc-500 font-mono mb-3">{guide.subtitle}</p>
                                             <p className="text-zinc-400 text-sm leading-relaxed mb-4">{guide.description}</p>
-                            <div className="text-[9px] text-zinc-600">5 calculators</div>
-                        </Link>
+                                            <div className="flex flex-wrap gap-1.5 mb-3">
+                                                {guide.topics.map((topic) => (
+                                                    <span key={topic} className="text-[9px] font-mono px-2 py-0.5 rounded bg-white/[0.03] border border-white/5 text-zinc-500">{topic}</span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col justify-end items-start sm:items-end min-w-[120px] mt-4 sm:mt-0">
+                                            <span className="text-2xl font-grotesk font-bold text-amber-400">{guide.price}</span>
+                                            <span className="text-[10px] text-zinc-500 uppercase tracking-widest mt-1">One-Time</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
                     </div>
 
+                    {/* BUNDLE CTA */}
+                    <div className="card p-8 sm:p-12 text-center border-violet-500/20 bg-gradient-to-br from-violet-500/10 to-transparent mb-16 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-bl-[100px] pointer-events-none" />
+                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-violet-500/5 rounded-tr-[100px] pointer-events-none" />
+                        
+                        <div className="relative z-10">
+                            <div className="inline-block px-4 py-1.5 rounded-full bg-violet-500/20 border border-violet-500/30 mb-6">
+                                <span className="text-xs font-mono text-violet-300 uppercase tracking-widest flex items-center justify-center gap-2">
+                                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" /> Ultimate Value
+                                </span>
+                            </div>
+                            <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-4">Ultimate Guides Bundle — $399</h2>
+                            <p className="text-zinc-400 mb-8 max-w-xl mx-auto text-base leading-relaxed">Get complete access to all 13 premium guides/playbooks across all pricing tiers. Save over $500. Plus access to future premium guides at no extra cost.</p>
+                            <a href="https://buy.stripe.com/6oUfZa1My6vodS57W02B20y" target="_blank" rel="noreferrer" className="inline-block px-10 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-sm rounded-xl hover:opacity-90 transition-opacity shadow-[0_0_30px_rgba(139,92,246,0.3)]">
+                                Get All Premium Guides — $399 →
+                            </a>
+                            <div className="flex items-center justify-center gap-6 mt-8 text-[10px] font-mono uppercase tracking-wider text-zinc-500">
+                                <span>✓ Instant access</span>
+                                <span>✓ PDF downloads</span>
+                                <span>✓ Future updates</span>
+                            </div>
+                        </div>
+                    </div>
                     {/* Advisory CTA */}
                     <div className="card p-8 text-center border-cyan-500/20 mb-12">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Want Personalized Application?</h2>
