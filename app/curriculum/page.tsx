@@ -343,43 +343,60 @@ export default function CurriculumPage() {
                                                         {mod.name}
                                                     </h3>
                                                 </div>
-                                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 ml-11">
+                                                <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 ml-11">
                                                     {mod.items.map((item, ii) => {
                                                         const isModule = !(item as any).isTool && !(item as any).isExternal;
                                                         const moduleId = isModule ? item.href.split('/').pop()?.replace('-', '.') : null;
                                                         
                                                         return (
-                                                            <div key={ii} className={`relative group flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
+                                                            <div key={ii} className={`flex flex-col justify-between p-4 rounded-xl border transition-all ${
                                                                 (item as any).isTool
-                                                                    ? `${colors.bg} border ${colors.border} hover:border-opacity-100`
-                                                                    : 'hover:bg-white/5'
+                                                                    ? `${colors.bg} ${colors.border} hover:brightness-110`
+                                                                    : 'bg-white/[0.02] border-white/5 hover:border-white/20 hover:bg-white/[0.04]'
                                                             }`}>
                                                                 <Link
                                                                     href={item.href}
                                                                     target={(item as any).isExternal ? '_blank' : undefined}
                                                                     rel={(item as any).isExternal ? 'noopener noreferrer' : undefined}
-                                                                    className={`flex flex-1 items-center gap-2 ${isModule ? 'pr-12' : ''}`}
+                                                                    className="flex items-start gap-3 mb-4"
                                                                 >
-                                                                    <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${(item as any).isTool ? colors.dot : 'bg-zinc-600 group-hover:bg-zinc-400'} transition-colors`} />
-                                                                    <span className={`text-sm line-clamp-1 ${
-                                                                        (item as any).isTool
-                                                                            ? `${colors.text} font-bold`
-                                                                            : 'text-zinc-400 group-hover:text-white'
-                                                                    } transition-colors`}>
-                                                                        {item.label}
-                                                                    </span>
-                                                                    {(item as any).isExternal && (
-                                                                        <span className="text-zinc-600 text-xs shrink-0">↗</span>
-                                                                    )}
+                                                                    <span className={`w-2 h-2 mt-1.5 rounded-full shrink-0 ${(item as any).isTool ? colors.dot : 'bg-zinc-500'} transition-colors`} />
+                                                                    <div className="flex-1">
+                                                                        <span className={`text-sm font-bold block ${
+                                                                            (item as any).isTool
+                                                                                ? `${colors.text}`
+                                                                                : 'text-zinc-200 hover:text-white'
+                                                                        } transition-colors`}>
+                                                                            {item.label}
+                                                                            {(item as any).isExternal && (
+                                                                                <span className="text-zinc-500 text-xs ml-2">↗</span>
+                                                                            )}
+                                                                        </span>
+                                                                        {isModule && (
+                                                                            <span className="text-xs text-zinc-500 block mt-1">Single Module Access</span>
+                                                                        )}
+                                                                    </div>
                                                                 </Link>
                                                                 
-                                                                {isModule && moduleId && (
+                                                                {isModule && moduleId ? (
                                                                     <a 
                                                                         href={`/api/buy/single_module?moduleId=${moduleId}`}
-                                                                        className="absolute right-2 px-2 py-0.5 text-[9px] uppercase tracking-widest bg-violet-500/10 hover:bg-violet-500/20 text-violet-300 border border-violet-500/20 rounded font-bold transition-all shrink-0 z-10"
+                                                                        className={`block w-full py-2.5 text-center flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 text-white text-xs font-bold hover:bg-violet-500/10 hover:border-violet-500/30 hover:text-violet-400 transition-all outline-none`}
                                                                     >
-                                                                        Buy—$29
+                                                                        <span className="text-xs">Unlock Module</span>
+                                                                        <span className="text-white/30">•</span>
+                                                                        <span className="text-[10px] uppercase tracking-widest text-violet-400">$29</span>
                                                                     </a>
+                                                                ) : (
+                                                                    <Link
+                                                                        href={item.href}
+                                                                        target={(item as any).isExternal ? '_blank' : undefined}
+                                                                        rel={(item as any).isExternal ? 'noopener noreferrer' : undefined}
+                                                                        className={`block w-full py-2.5 text-center flex items-center justify-center gap-2 rounded-lg border ${colors.border} bg-black/20 ${colors.text} text-xs font-bold hover:brightness-125 transition-all outline-none`}
+                                                                    >
+                                                                        <span>Access {(item as any).isTool ? 'Tool' : 'Reference'}</span>
+                                                                        <span>→</span>
+                                                                    </Link>
                                                                 )}
                                                             </div>
                                                         );
