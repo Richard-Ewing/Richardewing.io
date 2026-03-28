@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import TrackAccordion from '@/app/components/TrackAccordion';
 
 export const metadata: Metadata = {
     title: 'Product Economics Curriculum — 190 Modules, 14 Tracks | Richard Ewing',
@@ -459,51 +460,9 @@ export default function CurriculumTracksPage() {
                         </div>
                     </div>
 
-                    <div className="space-y-12">
+                    <div className="space-y-6">
                         {tracks.map((track, i) => (
-                            <div key={i} className={`rounded-2xl border p-8 sm:p-10 ${colorMap[track.color]}`}>
-                                <div className="flex items-start gap-4 mb-8">
-                                    <span className="text-4xl">{track.icon}</span>
-                                    <div>
-                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">{track.subtitle}</div>
-                                        <h2 className={`text-2xl font-grotesk font-bold ${textMap[track.color]}`}>{track.title}</h2>
-                                        <p className="text-zinc-400 mt-2">{track.description}</p>
-                                    </div>
-                                </div>
-
-                                <div className="space-y-3 mb-8">
-                                    {track.modules.map((m, j) => (
-                                        <Link key={j} href={m.href} className="flex items-center justify-between p-4 rounded-xl bg-black/20 border border-white/5 hover:border-white/20 transition-colors group">
-                                            <div>
-                                                <div className="text-white font-bold text-sm group-hover:text-cyan-300 transition-colors">{m.name}</div>
-                                                <div className="text-xs text-zinc-500 mt-1">{m.topics}</div>
-                                            </div>
-                                            <span className="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                                                Start →
-                                            </span>
-                                        </Link>
-                                    ))}
-                                </div>
-
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div>
-                                        <h3 className="text-xs font-mono text-zinc-600 uppercase tracking-widest mb-2">Related Glossary</h3>
-                                        <div className="flex flex-wrap gap-2">
-                                            {track.glossaryTerms.map(t => (
-                                                <Link key={t} href={`/glossary/${t}`} className="px-2 py-1 rounded-md bg-white/5 text-xs text-zinc-400 hover:text-white transition-colors">{t.replace(/-/g, ' ')}</Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xs font-mono text-zinc-600 uppercase tracking-widest mb-2">Tools</h3>
-                                        <div className="flex flex-wrap gap-2">
-                                            {track.tools.map(t => (
-                                                <Link key={t.href} href={t.href} className={`px-3 py-1 rounded-md text-xs font-bold ${textMap[track.color]} hover:underline`}>{t.name} →</Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <TrackAccordion key={i} track={track} colorMap={colorMap} textMap={textMap} />
                         ))}
                     </div>
 

@@ -47,13 +47,13 @@ const Navigation = () => {
                         {/* Desktop Nav — Simplified: 3 dropdowns + Start Here */}
                         <div className="hidden md:flex items-center gap-6 lg:gap-8">
 
-                            {/* Start Here / Vault Dashboard — the golden path for visitors */}
+                            {/* Start Here / Member Dashboard — the golden path for visitors */}
                             <Link href={isSignedIn ? "/vault" : "/doctrine"} className="text-emerald-400 hover:text-emerald-300 transition-colors relative group font-semibold">
-                                ✦ {isSignedIn ? "Vault Dashboard" : "Start Here"}
+                                ✦ {isSignedIn ? "Member Dashboard" : "Start Here"}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Dropdown label="The Vault">
+                            <Dropdown label="Curriculum & Library">
                                 <DropdownItem href="/curriculum/tracks" description="190 modules across 14 tracks">Complete Curriculum</DropdownItem>
                                 <DropdownItem href="/curriculum" description="Learning paths by role">Learning Paths</DropdownItem>
                                 <DropdownItem href="/glossary" description="420+ engineering economics terms">Glossary</DropdownItem>
@@ -61,7 +61,7 @@ const Navigation = () => {
                                 <DropdownItem href="/resources/ai-courses" description="Free AI & engineering courses">AI Courses</DropdownItem>
                             </Dropdown>
 
-                            <Dropdown label="Tools">
+                            <Dropdown label="ROI Calculators">
                                 <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">PDI — Product Debt Index</DropdownItem>
                                 <DropdownItem href="/tools/ev-se" description="Model enterprise value per engineer">EV-SE — Valuation Engine</DropdownItem>
                                 <DropdownItem href="/tools/aueb" description="Calculate AI unit economics">AUEB — AI Unit Economics</DropdownItem>
@@ -215,7 +215,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     {/* Learn Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-cyan-400 uppercase tracking-widest pl-2">The Vault</h3>
+                        <h3 className="text-xs font-bold text-cyan-400 uppercase tracking-widest pl-2">Curriculum & Library</h3>
                         <MobileLink href="/curriculum/tracks" onClick={onClose}>Complete Curriculum</MobileLink>
                         <MobileLink href="/curriculum" onClick={onClose}>Learning Paths</MobileLink>
                         <MobileLink href="/glossary" onClick={onClose}>Glossary (420+ Terms)</MobileLink>
@@ -225,7 +225,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     {/* Tools Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest pl-2">Free Tools</h3>
+                        <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest pl-2">ROI Calculators</h3>
                         <MobileLink href="/tools/pdi" onClick={onClose}>PDI — Product Debt Index</MobileLink>
                         <MobileLink href="/tools/ev-se" onClick={onClose}>EV-SE — Valuation Engine</MobileLink>
                         <MobileLink href="/tools/aueb" onClick={onClose}>AUEB — AI Unit Economics</MobileLink>

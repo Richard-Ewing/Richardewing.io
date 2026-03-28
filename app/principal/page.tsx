@@ -34,8 +34,8 @@ const personSchema = {
     "image": "https://www.richardewing.io/assets/images/headshot.jpg",
     "sameAs": [
         "https://linkedin.com/in/richard-ewing-mba",
-        "https://twitter.com/richardewing",
-        "https://exogram.ai"
+        "https://x.com/Richard85626233",
+        "https://www.mindtheproduct.com/author/richard-ewing/"
     ],
     "knowsAbout": [
         "Product Economics",

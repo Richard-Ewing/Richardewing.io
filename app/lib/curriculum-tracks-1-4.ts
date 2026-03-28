@@ -4,7 +4,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
     
     // Helper to generate the next href automatically
     const getNext = (trackStr: string, index: number, total: number) => {
-        return index < total - 1 ? `/vault/curriculum/tracks/${trackStr}/${trackStr === 'cto' ? 1 : trackStr === 'pm' ? 2 : trackStr === 'investor' ? 3 : 4}-${index + 2}` : undefined;
+        return index < total - 1 ? `/vault/curriculum/tracks/${trackStr}/${trackStr === 'engineering-economics' ? 1 : trackStr === 'ai-product-economics' ? 2 : trackStr === 'rd-capital-management' ? 3 : 4}-${index + 2}` : undefined;
     };
 
     // ═══════════════════ TRACK 1: CTO / Engineering Leader ═══════════════════
@@ -73,7 +73,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
     ];
 
     ctoMods.forEach(([id, title, desc, takeaways, lessons], i) => {
-        modules[`cto/${id}`] = m(id, title, desc, t1, takeaways, lessons, getNext('cto', i, ctoMods.length));
+        modules[`engineering-economics/${id}`] = m(id, title, desc, t1, takeaways, lessons, getNext('engineering-economics', i, ctoMods.length));
     });
 
     // ═══════════════════ TRACK 2: PM / CPO ═══════════════════
@@ -142,7 +142,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
     ];
 
     pmMods.forEach(([id, title, desc, takeaways, lessons], i) => {
-        modules[`pm/${id}`] = m(id, title, desc, t2, takeaways, lessons, getNext('pm', i, pmMods.length));
+        modules[`ai-product-economics/${id}`] = m(id, title, desc, t2, takeaways, lessons, getNext('ai-product-economics', i, pmMods.length));
     });
 
     // ═══════════════════ TRACK 3: Investor / PE / VC ═══════════════════
@@ -211,7 +211,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
     ];
 
     invMods.forEach(([id, title, desc, takeaways, lessons], i) => {
-        modules[`investor/${id}`] = m(id, title, desc, t3, takeaways, lessons, getNext('investor', i, invMods.length));
+        modules[`rd-capital-management/${id}`] = m(id, title, desc, t3, takeaways, lessons, getNext('rd-capital-management', i, invMods.length));
     });
 
     // ═══════════════════ TRACK 4: AI Enterprise Architect ═══════════════════
@@ -280,6 +280,6 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
     ];
 
     aiMods.forEach(([id, title, desc, takeaways, lessons], i) => {
-        modules[`ai-enterprise/${id}`] = m(id, title, desc, t4, takeaways, lessons, getNext('ai-enterprise', i, aiMods.length));
+        modules[`ai-enterprise-architecture/${id}`] = m(id, title, desc, t4, takeaways, lessons, getNext('ai-enterprise-architecture', i, aiMods.length));
     });
 }
