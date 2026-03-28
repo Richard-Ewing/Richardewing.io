@@ -109,11 +109,10 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
     const unlockedItems = (metadata.unlocked_items as string[]) || [];
     const hasAccess = !!userId && (hasSubscription || unlockedItems.includes(`module_${mod.moduleId}`) || unlockedItems.includes(`module_track_${slug[0]}`) || unlockedItems.includes(`module_${slug[0]}`));
 
-    // Only show free preview for the FIRST module of each track
-    // First modules end in -1 (e.g., 1-1, 2-1, 5-1, 6-1, etc.)
-    const moduleNumber = mod.moduleId.split('.').pop() || mod.moduleId.split('-').pop() || '';
-    const isFirstModule = moduleNumber === '1' || mod.moduleId.endsWith('-1') || mod.moduleId.endsWith('.1');
+    // ONLY show free preview for the very first module of the entire platform: Track 1 (CTO), Module 1 (1-1)
+    // Removed the "first module of every track" leak.
+    const isFreePreviewModule = mod.moduleId === '1-1';
 
-    return <ModuleCard mod={mod} hasAccess={hasAccess} showPreview={isFirstModule} />;
+    return <ModuleCard mod={mod} hasAccess={hasAccess} showPreview={isFreePreviewModule} />;
 }
 

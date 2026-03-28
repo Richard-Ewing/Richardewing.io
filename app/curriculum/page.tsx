@@ -263,8 +263,27 @@ export default function CurriculumPage() {
                     {/* Tracks */}
                     {tracks.map((track, ti) => {
                         const colors = colorMap[track.color];
+                        
                         return (
                             <div key={track.id} id={track.id} className="mb-24">
+                                {ti === 0 && (
+                                    <div className="mb-8 flex items-center gap-4">
+                                        <div className="h-px bg-white/10 flex-1" />
+                                        <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/20">
+                                            Phase 1: Start Here — Free Primer
+                                        </span>
+                                        <div className="h-px bg-white/10 flex-1" />
+                                    </div>
+                                )}
+                                {ti === 1 && (
+                                    <div className="mb-8 flex items-center gap-4">
+                                        <div className="h-px bg-white/10 flex-1" />
+                                        <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest bg-cyan-500/10 px-4 py-1.5 rounded-full border border-cyan-500/20">
+                                            Phase 2: The Premium Vault
+                                        </span>
+                                        <div className="h-px bg-white/10 flex-1" />
+                                    </div>
+                                )}
                                 <div className={`relative rounded-2xl border ${colors.border} overflow-hidden`}>
                                     {/* Track Header */}
                                     <div className={`${colors.bg} px-8 py-8 border-b ${colors.border}`}>
@@ -289,8 +308,8 @@ export default function CurriculumPage() {
                                             <span className={`text-xs font-mono uppercase tracking-widest ${colors.text}`}>
                                                 Self-Paced
                                             </span>
-                                            {ti === 0 || track.modules.length > 0 ? (
-                                                <span className="text-xs font-mono uppercase tracking-widest px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Free Preview</span>
+                                            {track.id === 'cto' && track.modules.length > 0 ? (
+                                                <span className="text-xs font-mono uppercase tracking-widest px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Free Preview Available</span>
                                             ) : null}
                                         </div>
                                     </div>
