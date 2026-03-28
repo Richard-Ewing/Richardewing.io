@@ -8,6 +8,7 @@ export interface Lesson { title: string; content: string; details: LessonDetail[
 export interface CurriculumModule {
     moduleId: string; title: string; description: string; trackName: string;
     takeaways: string[]; lessons: Lesson[]; nextHref?: string;
+    productId?: string; bundleId?: string;
 }
 
 export function m(id: string, title: string, desc: string, track: string, takeaways: string[], lessons: Lesson[], next?: string): CurriculumModule {

@@ -80,6 +80,33 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks/:path*',
         permanent: true,
       },
+      // Track 15 Free Playbooks
+      {
+        source: '/guides/cto-first-90-days',
+        destination: '/vault/curriculum/tracks/guides/15-1',
+        permanent: true,
+      },
+      {
+        source: '/guides/technical-debt',
+        destination: '/vault/curriculum/tracks/guides/15-2',
+        permanent: true,
+      },
+      {
+        source: '/guides/build-vs-buy',
+        destination: '/vault/curriculum/tracks/guides/15-3',
+        permanent: true,
+      },
+      {
+        source: '/guides/engineering-efficiency',
+        destination: '/vault/curriculum/tracks/guides/15-4',
+        permanent: true,
+      },
+      {
+        source: '/guides/product-economics',
+        destination: '/vault/curriculum/tracks/guides/15-5',
+        permanent: true,
+      },
+      // Track 16 Premium Guides
       {
         source: '/guides/how-to-deploy-small-language-models',
         destination: '/vault/curriculum/tracks/guides/16-1',
@@ -95,6 +122,7 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks/guides/16-3',
         permanent: true,
       },
+      // Track 17 Comparisons
       {
         source: '/comparisons/nextjs-remix-astro',
         destination: '/vault/curriculum/tracks/comparisons/17-1',
@@ -103,6 +131,42 @@ const nextConfig: NextConfig = {
       {
         source: '/comparisons/claude-vs-gpt4',
         destination: '/vault/curriculum/tracks/comparisons/17-2',
+        permanent: true,
+      },
+      {
+        source: '/comparisons/pdi-vs-dora',
+        destination: '/vault/curriculum/tracks/comparisons/17-3',
+        permanent: true,
+      },
+      {
+        source: '/comparisons/agile-vs-kanban',
+        destination: '/vault/curriculum/tracks/comparisons/17-4',
+        permanent: true,
+      },
+      {
+        source: '/comparisons/monolith-vs-microservices',
+        destination: '/vault/curriculum/tracks/comparisons/17-5',
+        permanent: true,
+      },
+      // Wildcard Fallbacks
+      {
+        source: '/guides/:slug*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/guides',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/comparisons/:slug*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/comparisons',
+        destination: '/vault/curriculum/tracks',
         permanent: true,
       },
     ];

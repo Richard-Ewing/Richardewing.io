@@ -53,10 +53,9 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Dropdown label="Learn">
-                                <DropdownItem href="/guides" description="50 free & premium playbooks">Guides</DropdownItem>
-                                <DropdownItem href="/comparisons" description="50 Gartner-grade analyses">Comparisons</DropdownItem>
-                                <DropdownItem href="/curriculum" description="190 modules across 14 tracks">Curriculum</DropdownItem>
+                            <Dropdown label="The Vault">
+                                <DropdownItem href="/curriculum/tracks" description="190 modules across 14 tracks">Complete Curriculum</DropdownItem>
+                                <DropdownItem href="/curriculum" description="Learning paths by role">Learning Paths</DropdownItem>
                                 <DropdownItem href="/glossary" description="420+ engineering economics terms">Glossary</DropdownItem>
                                 <DropdownItem href="/blog" description="105 articles on engineering economics">Blog</DropdownItem>
                                 <DropdownItem href="/resources/ai-courses" description="Free AI & engineering courses">AI Courses</DropdownItem>
@@ -216,10 +215,9 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     {/* Learn Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-cyan-400 uppercase tracking-widest pl-2">Learn</h3>
-                        <MobileLink href="/guides" onClick={onClose}>Guides (50 Playbooks)</MobileLink>
-                        <MobileLink href="/comparisons" onClick={onClose}>Comparisons (50 Analyses)</MobileLink>
-                        <MobileLink href="/curriculum" onClick={onClose}>Curriculum (190 Modules)</MobileLink>
+                        <h3 className="text-xs font-bold text-cyan-400 uppercase tracking-widest pl-2">The Vault</h3>
+                        <MobileLink href="/curriculum/tracks" onClick={onClose}>Complete Curriculum</MobileLink>
+                        <MobileLink href="/curriculum" onClick={onClose}>Learning Paths</MobileLink>
                         <MobileLink href="/glossary" onClick={onClose}>Glossary (420+ Terms)</MobileLink>
                         <MobileLink href="/blog" onClick={onClose}>Blog (105 Articles)</MobileLink>
                         <MobileLink href="/resources/ai-courses" onClick={onClose}>AI Courses (Free)</MobileLink>

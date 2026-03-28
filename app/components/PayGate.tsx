@@ -14,9 +14,11 @@ interface PayGateProps {
     showPreview?: boolean;
     children: React.ReactNode;
     nextHref?: string;
+    productId?: string;
+    bundleId?: string;
 }
 
-export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, showPreview = true, children, nextHref }: PayGateProps) {
+export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, showPreview = true, children, nextHref, productId = 'single_module', bundleId = 'full_curriculum' }: PayGateProps) {
     if (hasAccess) {
         return <ModuleStepper moduleTitle={moduleTitle} nextHref={nextHref}>{children}</ModuleStepper>;
     }
@@ -99,15 +101,19 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                             </div>
                             
                             <CheckoutButton 
-                                productId="single_module" 
+                                productId={productId} 
                                 moduleId={moduleId}
-                                label={`Buy Module — $${PRODUCTS['single_module']?.price ? PRODUCTS['single_module'].price / 100 : 29}`} 
+                                label={`Buy Module — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`} 
                                 icon="file" 
                                 variant="primary" 
                             />
                             
                             <div className="mt-4 pt-4 border-t border-white/5">
-                                <CheckoutButton productId="full_curriculum" label="Or get all 10 Guides + 60 Modules for $199/yr" variant="outline" />
+                                <CheckoutButton 
+                                    productId={bundleId} 
+                                    label={bundleId === 'full_curriculum' ? "Or get all 10 Guides + 60 Modules for $199/yr" : "Or bundle all 13 Premium Guides for $399"} 
+                                    variant="outline" 
+                                />
                             </div>
                         </div>
                     </div>

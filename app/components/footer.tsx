@@ -51,9 +51,8 @@ export function Footer() {
                             <li><Link href="/doctrine" className="text-gray-400 hover:text-white transition-colors">Doctrine</Link></li>
                             <li><Link href="/articles" className="text-gray-400 hover:text-white transition-colors">Canonical Hub</Link></li>
                             <li><Link href="/glossary" className="text-gray-400 hover:text-white transition-colors">Glossary (400+)</Link></li>
-                            <li><Link href="/curriculum" className="text-gray-400 hover:text-white transition-colors">Curriculum</Link></li>
-                            <li><Link href="/curriculum/tracks" className="text-gray-400 hover:text-white transition-colors">Curriculum Tracks</Link></li>
-                            <li><Link href="/guides" className="text-gray-400 hover:text-white transition-colors">Guides</Link></li>
+                            <li><Link href="/curriculum/tracks" className="text-gray-400 hover:text-white transition-colors">Complete Curriculum</Link></li>
+                            <li><Link href="/curriculum" className="text-gray-400 hover:text-white transition-colors">Learning Paths</Link></li>
                             <li><Link href="/resources" className="text-gray-400 hover:text-white transition-colors">Resource Hub</Link></li>
                             <li><Link href="/briefings" className="text-gray-400 hover:text-white transition-colors">Briefings</Link></li>
                             <li><Link href="/exogram" className="text-gray-400 hover:text-white transition-colors">Exogram</Link></li>

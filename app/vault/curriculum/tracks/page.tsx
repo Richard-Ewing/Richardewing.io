@@ -374,6 +374,52 @@ const tracks = [
         glossaryTerms: ['finops', 'ai-finops', 'cloud-repatriation', 'serverless-gpus', 'dspm', 'burn-multiple', 'infrastructure-as-code', 'cloud-cost-optimization'],
         tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }, { name: 'AUEB Calculator', href: '/tools/aueb' }],
     },
+    {
+        title: 'Free Playbooks & Guides',
+        subtitle: 'Track 15 — Free Guides',
+        description: 'A curated selection of the most popular free playbooks on executive engineering and technology management.',
+        modules: [
+            { id: '15-1', name: '15.1 The CTO\'s First 90 Days', topics: 'Trust Bridge, 360 Audit, Objective Roadmaps', href: '/vault/curriculum/tracks/guides/15-1' },
+            { id: '15-2', name: '15.2 The Definitive Guide to Technical Debt', topics: 'PDI Framework, Innovation Tax, Risk Exposure', href: '/vault/curriculum/tracks/guides/15-2' },
+            { id: '15-3', name: '15.3 Build vs. Buy Economics', topics: 'TCO Models, Maintenance Burden, Margin Tax', href: '/vault/curriculum/tracks/guides/15-3' },
+            { id: '15-4', name: '15.4 Engineering Efficiency Blueprint', topics: 'Revenue Per Engineer (RPE), DORA Metrics, APER Targets', href: '/vault/curriculum/tracks/guides/15-4' },
+            { id: '15-5', name: '15.5 Product Economics & Unit Profitability', topics: 'Feature P&L, Kill Switch Protocol, Zombie Features', href: '/vault/curriculum/tracks/guides/15-5' },
+        ],
+        color: 'cyan',
+        icon: '📖',
+        glossaryTerms: ['technical-debt', 'dora-metrics', 'innovation-tax', 'cost-of-delay'],
+        tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }, { name: 'APER Calculator', href: '/tools/aper' }],
+    },
+    {
+        title: 'Executive Premium Playbooks',
+        subtitle: 'Track 16 — Premium Authored Content',
+        description: 'Advanced, high-impact technical playbooks covering edge AI, governance, and organizational transformation ($199 Value).',
+        modules: [
+            { id: '16-1', name: '16.1 How to Deploy SLMs', topics: 'Model Quantization, VRAM Allocation, Zero-Trust Architecture', href: '/vault/curriculum/tracks/guides/16-1' },
+            { id: '16-2', name: '16.2 AI Governance & Compliance', topics: 'DLP Gateways, Prompt Injection, Context Sanitization', href: '/vault/curriculum/tracks/guides/16-2' },
+            { id: '16-3', name: '16.3 AI-Native Engineering Teams', topics: 'Autonomous PR Reviews, 10x Developer Baselines, CI/CD Integration', href: '/vault/curriculum/tracks/guides/16-3' },
+        ],
+        color: 'emerald',
+        icon: '💼',
+        glossaryTerms: ['small-language-models', 'ai-governance', 'zero-trust'],
+        tools: [],
+    },
+    {
+        title: 'Technical Framework Comparisons',
+        subtitle: 'Track 17 — Comparisons',
+        description: 'Gartner-grade head-to-head analyses of major engineering frameworks, metrics, and models.',
+        modules: [
+            { id: '17-1', name: '17.1 Next.js vs Remix vs Astro', topics: 'RSC Architectural Boundaries, Vercel Edge Compute', href: '/vault/curriculum/tracks/comparisons/17-1' },
+            { id: '17-2', name: '17.2 Anthropic Claude vs GPT-4o', topics: 'Context Window Degradation, Token Router Systems', href: '/vault/curriculum/tracks/comparisons/17-2' },
+            { id: '17-3', name: '17.3 PDI vs DORA Metrics', topics: 'Financial Health vs Delivery Speed, Presentation Dynamics', href: '/vault/curriculum/tracks/comparisons/17-3' },
+            { id: '17-4', name: '17.4 Agile vs Kanban', topics: 'Sprint Overhead, Batch Size Reduction, WIP Limits', href: '/vault/curriculum/tracks/comparisons/17-4' },
+            { id: '17-5', name: '17.5 Monolith vs Microservices', topics: 'Premature Complexity, Domain Interfaces, Distributed Latency', href: '/vault/curriculum/tracks/comparisons/17-5' },
+        ],
+        color: 'indigo',
+        icon: '⚖️',
+        glossaryTerms: ['dora-metrics', 'product-debt-index'],
+        tools: [],
+    }
 ];
 
 const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5', teal: 'border-teal-500/30 bg-teal-500/5', lime: 'border-lime-500/30 bg-lime-500/5', fuchsia: 'border-fuchsia-500/30 bg-fuchsia-500/5', blue: 'border-blue-500/30 bg-blue-500/5' };

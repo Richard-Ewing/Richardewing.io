@@ -62,6 +62,8 @@ function ModuleCard({ mod, hasAccess, showPreview }: { mod: CurriculumModule, ha
                         hasAccess={hasAccess}
                         showPreview={showPreview}
                         nextHref={mod.nextHref}
+                        productId={mod.productId}
+                        bundleId={mod.bundleId}
                     >
                         {mod.lessons.map((lesson, i) => (
                             <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden">
