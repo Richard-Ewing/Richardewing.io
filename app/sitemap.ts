@@ -495,32 +495,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         {
             url: `${baseUrl}/compare/aper-vs-jellyfish`,
+        },
+        {
+            url: `${baseUrl}/industries/mediatech`,
+            lastModified: new Date('2026-03-25'),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/compare/aper-vs-jellyfish`,
             lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
 
-        // Curriculum Module Pages — 24 modules across 4 tracks
+        // Curriculum Module Pages (Vault Protected)
         ...['1-1','1-2','1-3','1-4','1-5','1-6'].map(m => ({
-            url: `${baseUrl}/curriculum/tracks/engineering-economics/${m}`,
+            url: `${baseUrl}/vault/curriculum/tracks/engineering-economics/${m}`,
             lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         })),
         ...['2-1','2-2','2-3','2-4','2-5','2-6'].map(m => ({
-            url: `${baseUrl}/curriculum/tracks/ai-product-economics/${m}`,
+            url: `${baseUrl}/vault/curriculum/tracks/ai-product-economics/${m}`,
             lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         })),
         ...['3-1','3-2','3-3','3-4','3-5','3-6'].map(m => ({
-            url: `${baseUrl}/curriculum/tracks/rd-capital-management/${m}`,
+            url: `${baseUrl}/vault/curriculum/tracks/rd-capital-management/${m}`,
             lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         })),
         ...['4-1','4-2','4-3','4-4','4-5','4-6'].map(m => ({
-            url: `${baseUrl}/curriculum/tracks/capstone/${m}`,
+            url: `${baseUrl}/vault/curriculum/tracks/capstone/${m}`,
+            lastModified: new Date('2026-03-25'),
+            changeFrequency: 'monthly' as const,
+            priority: 0.6,
+        })),
+        ...['16-1','16-2','16-3'].map(m => ({
+            url: `${baseUrl}/vault/curriculum/tracks/guides/${m}`,
+            lastModified: new Date('2026-03-25'),
+            changeFrequency: 'monthly' as const,
+            priority: 0.6,
+        })),
+        ...['17-1','17-2'].map(m => ({
+            url: `${baseUrl}/vault/curriculum/tracks/comparisons/${m}`,
             lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.6,

@@ -60,7 +60,8 @@ const tracks = trackMeta.map(meta => {
             name: `${mod.moduleId}: ${mod.title}`,
             items: mod.lessons.map(lesson => ({
                 label: lesson.title,
-                isStatic: true // Enforce no free clickable routing
+                href: `/vault/curriculum/tracks/${key}`,
+                isStatic: false
             }))
         }));
     

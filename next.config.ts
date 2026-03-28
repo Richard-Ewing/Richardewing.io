@@ -74,6 +74,37 @@ const nextConfig: NextConfig = {
         destination: '/robots.txt',
         permanent: true,
       },
+      // ═══════════════════ LMS MIGRATION ═══════════════════
+      {
+        source: '/curriculum/tracks/:path*',
+        destination: '/vault/curriculum/tracks/:path*',
+        permanent: true,
+      },
+      {
+        source: '/guides/how-to-deploy-small-language-models',
+        destination: '/vault/curriculum/tracks/guides/16-1',
+        permanent: true,
+      },
+      {
+        source: '/guides/ai-governance-compliance',
+        destination: '/vault/curriculum/tracks/guides/16-2',
+        permanent: true,
+      },
+      {
+        source: '/guides/ai-native-development-teams',
+        destination: '/vault/curriculum/tracks/guides/16-3',
+        permanent: true,
+      },
+      {
+        source: '/comparisons/nextjs-remix-astro',
+        destination: '/vault/curriculum/tracks/comparisons/17-1',
+        permanent: true,
+      },
+      {
+        source: '/comparisons/claude-vs-gpt4',
+        destination: '/vault/curriculum/tracks/comparisons/17-2',
+        permanent: true,
+      },
     ];
   },
 };
