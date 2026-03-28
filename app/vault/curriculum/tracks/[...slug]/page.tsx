@@ -19,6 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 import { auth } from '@clerk/nextjs/server';
 import PayGate from '@/app/components/PayGate';
 
+import ProgressCompleteButton from '@/app/components/ProgressCompleteButton';
+
 function ModuleCard({ mod, hasAccess, showPreview }: { mod: CurriculumModule, hasAccess: boolean, showPreview: boolean }) {
     return (
         <main className="pt-20">
@@ -66,7 +68,7 @@ function ModuleCard({ mod, hasAccess, showPreview }: { mod: CurriculumModule, ha
                         bundleId={mod.bundleId}
                     >
                         {mod.lessons.map((lesson, i) => (
-                            <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden">
+                            <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden mb-8 last:mb-0">
                                 <div className="p-8">
                                     <div className="flex items-center gap-3 mb-4">
                                         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-white/10 flex items-center justify-center">
@@ -91,6 +93,8 @@ function ModuleCard({ mod, hasAccess, showPreview }: { mod: CurriculumModule, ha
                                 </div>
                             </div>
                         ))}
+                        
+                        <ProgressCompleteButton moduleId={mod.moduleId} nextHref={mod.nextHref} />
                     </PayGate>
                 </div>
             </div>

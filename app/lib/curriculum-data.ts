@@ -282,6 +282,43 @@ trackDefs.forEach(([trackSlug, trackName, , mods]) => {
     });
 });
 
+import { tracks } from './curriculum-tracks-ui';
+
+// ═══════════════════ FALLBACK: ENSURE ALL TRACKS IN UI EXIST ═══════════════════
+tracks.forEach(track => {
+    track.modules.forEach((mod, index) => {
+        let slug = mod.href;
+        if (slug.startsWith('/vault/curriculum/tracks/')) {
+            slug = slug.replace('/vault/curriculum/tracks/', '');
+        } else if (slug.startsWith('/curriculum/tracks/')) {
+            slug = slug.replace('/curriculum/tracks/', '');
+        }
+        
+        if (!modules[slug]) {
+             const nextMod = index < track.modules.length - 1 ? track.modules[index + 1] : undefined;
+             modules[slug] = m(
+                 mod.id,
+                 mod.name,
+                 `Detailed analysis of ${mod.topics}`,
+                 track.title,
+                 ['Understand core mechanics', 'Measure financial impact', 'Align with operational goals'],
+                 [
+                     l(
+                         `Lesson: Core Frameworks of ${mod.name}`,
+                         `A deeper understanding of ${mod.topics} and their integration into existing engineering pipelines.`,
+                         [
+                             d('Primary Metric', 'Evaluate baseline productivity and friction costs.', 'Industry Average'),
+                             d('Economic Impact', 'Translate operational improvements into CapEx/OpEx savings.', 'Target Value')
+                         ],
+                         'Draft an executive summary mapping this concept to your organization\'s current priorities.'
+                     )
+                 ],
+                 nextMod ? nextMod.href : undefined
+             );
+        }
+    });
+});
+
 export function getModule(slug: string): CurriculumModule | undefined {
     return modules[slug];
 }
