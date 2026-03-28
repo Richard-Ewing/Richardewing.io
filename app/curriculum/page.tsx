@@ -344,31 +344,51 @@ export default function CurriculumPage() {
                                                     </h3>
                                                 </div>
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 ml-11">
-                                                    {mod.items.map((item, ii) => (
-                                                        <Link
-                                                            key={ii}
-                                                            href={item.href}
-                                                            target={(item as any).isExternal ? '_blank' : undefined}
-                                                            rel={(item as any).isExternal ? 'noopener noreferrer' : undefined}
-                                                            className={`group flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
-                                                                (item as any).isTool
-                                                                    ? `${colors.bg} border ${colors.border} hover:border-opacity-100`
-                                                                    : 'hover:bg-white/5'
-                                                            }`}
-                                                        >
-                                                            <span className={`w-1.5 h-1.5 rounded-full ${(item as any).isTool ? colors.dot : 'bg-zinc-600 group-hover:bg-zinc-400'} transition-colors`} />
-                                                            <span className={`text-sm ${
-                                                                (item as any).isTool
-                                                                    ? `${colors.text} font-bold`
-                                                                    : 'text-zinc-400 group-hover:text-white'
-                                                            } transition-colors`}>
-                                                                {item.label}
-                                                            </span>
-                                                            {(item as any).isExternal && (
-                                                                <span className="text-zinc-600 text-xs">↗</span>
-                                                            )}
-                                                        </Link>
-                                                    ))}
+                                                    {mod.items.map((item, ii) => {
+                                                        const isStatic = !(item as any).isTool && !(item as any).isExternal;
+                                                        
+                                                        const innerContent = (
+                                                            <>
+                                                                <span className={`w-1.5 h-1.5 rounded-full ${(item as any).isTool ? colors.dot : isStatic ? 'bg-zinc-700' : 'bg-zinc-600 group-hover:bg-zinc-400'} transition-colors`} />
+                                                                <span className={`text-sm ${
+                                                                    (item as any).isTool
+                                                                        ? `${colors.text} font-bold`
+                                                                        : isStatic
+                                                                        ? 'text-zinc-500' // Dim the static preview text slightly
+                                                                        : 'text-zinc-400 group-hover:text-white'
+                                                                } transition-colors`}>
+                                                                    {item.label}
+                                                                </span>
+                                                                {(item as any).isExternal && (
+                                                                    <span className="text-zinc-600 text-xs">↗</span>
+                                                                )}
+                                                            </>
+                                                        );
+
+                                                        const className = `group flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
+                                                            (item as any).isTool
+                                                                ? `${colors.bg} border ${colors.border} hover:border-opacity-100`
+                                                                : isStatic 
+                                                                ? 'pointer-events-none' 
+                                                                : 'hover:bg-white/5'
+                                                        }`;
+
+                                                        if (isStatic) {
+                                                            return <div key={ii} className={className}>{innerContent}</div>;
+                                                        }
+
+                                                        return (
+                                                            <Link
+                                                                key={ii}
+                                                                href={item.href}
+                                                                target={(item as any).isExternal ? '_blank' : undefined}
+                                                                rel={(item as any).isExternal ? 'noopener noreferrer' : undefined}
+                                                                className={className}
+                                                            >
+                                                                {innerContent}
+                                                            </Link>
+                                                        );
+                                                    })}
                                                 </div>
                                             </div>
                                         ))}

@@ -1,8 +1,5 @@
-'use client';
-
-import { useState } from 'react';
-import { Lock, FileText } from 'lucide-react';
-import { useUser, useClerk } from '@clerk/nextjs';
+import { Lock } from 'lucide-react';
+import CheckoutButton from './client/CheckoutButton';
 import { PRODUCTS } from '@/lib/products';
 
 interface GuidePayGateProps {
@@ -13,41 +10,32 @@ interface GuidePayGateProps {
 }
 
 export default function GuidePayGate({ guideTitle, productId, hasAccess = false, children }: GuidePayGateProps) {
-    const [loading, setLoading] = useState<string | null>(null);
-    const { user, isLoaded, isSignedIn } = useUser();
-    const { openSignIn } = useClerk();
-
-    const handleCheckout = (type: string) => {
-        if (!isSignedIn) {
-            openSignIn();
-            return;
-        }
-        
-        setLoading(type);
-        const product = PRODUCTS[type];
-        if (product?.paymentLink) {
-            const url = new URL(product.paymentLink);
-            if (user?.id) url.searchParams.append('client_reference_id', user.id);
-            if (user?.primaryEmailAddress?.emailAddress) url.searchParams.append('prefilled_email', user.primaryEmailAddress.emailAddress);
-            window.open(url.toString(), '_blank');
-        }
-        setTimeout(() => setLoading(null), 1000);
-    };
-
     if (hasAccess) {
         return <div className="animate-in fade-in duration-500">{children}</div>;
     }
 
-    const childArray = Array.isArray(children) ? children : [children];
-    // First element in the wrapper is usually the "space-y-8 mb-16" sections map
-    // We will blur everything in the children wrapper.
-
+    // SERVER-SIDE GATING:
+    // If hasAccess is false, we literally do NOT render `children` at all.
+    // The underlying confidential RSC markup is thereby completely severed and stripped from the Client HTML payload.
+    // Inspect Element / Network inspection will only see this skeleton, solving the client-blur vulnerability!
+    
     return (
         <div className="relative mt-8">
             <div className="relative overflow-hidden rounded-2xl max-h-[400px]">
-                <div className="blur-[6px] opacity-30 pointer-events-none select-none">
-                    {children}
+                
+                {/* Visual Skeleton Replacement - Zero Data Leakage */}
+                <div className="space-y-6 opacity-40 p-10 select-none pointer-events-none" aria-hidden="true">
+                    <div className="h-8 bg-white/20 rounded-md w-1/3 mb-6"></div>
+                    <div className="h-4 bg-white/10 rounded-sm w-full"></div>
+                    <div className="h-4 bg-white/10 rounded-sm w-[90%]"></div>
+                    <div className="h-4 bg-white/10 rounded-sm w-4/5"></div>
+                    <div className="h-6 bg-white/20 rounded-md w-1/2 mt-12 mb-4"></div>
+                    <div className="h-4 bg-white/10 rounded-sm w-full"></div>
+                    <div className="h-4 bg-white/10 rounded-sm w-[85%]"></div>
+                    <div className="h-32 bg-emerald-500/10 border border-emerald-500/20 rounded-xl w-full mt-8"></div>
+                    <div className="h-4 bg-white/10 rounded-sm w-full mt-8"></div>
                 </div>
+
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/90 to-zinc-950" />
             </div>
 
@@ -61,23 +49,10 @@ export default function GuidePayGate({ guideTitle, productId, hasAccess = false,
                         Unlock full access to the {guideTitle} playbook, including frameworks, economic models, and due diligence checks.
                     </p>
 
-                    <button
-                        onClick={() => handleCheckout(productId)}
-                        disabled={!!loading}
-                        className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold text-sm hover:opacity-90 transition-opacity"
-                    >
-                        <FileText className="w-4 h-4" />
-                        {loading === productId ? 'Redirecting...' : `Unlock Guide — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`}
-                    </button>
+                    <CheckoutButton productId={productId} label={`Unlock Guide — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`} icon="file" variant="primary" />
                     
                     <div className="mt-4 pt-4 border-t border-white/5">
-                        <button
-                            onClick={() => handleCheckout('full_curriculum')}
-                            disabled={!!loading}
-                            className="text-xs text-zinc-500 hover:text-cyan-400 transition-colors"
-                        >
-                            Or get all 10 Guides + 60 Modules for $199/yr
-                        </button>
+                        <CheckoutButton productId="full_curriculum" label="Or get all 10 Guides + 60 Modules for $199/yr" variant="outline" />
                     </div>
                 </div>
             </div>
