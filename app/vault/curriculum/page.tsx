@@ -122,9 +122,9 @@ export default async function VaultCurriculumPage() {
                                     ) : (
                                         <a 
                                             href={`/api/buy/module_${track.id.replace('-', '_')}?moduleId=track_${track.id}`}
-                                            className="flex items-center text-sm font-bold text-zinc-500 hover:text-white transition-colors"
+                                            className="px-6 py-2.5 rounded-lg border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 font-bold text-sm uppercase tracking-widest hover:bg-cyan-500/10 transition-colors"
                                         >
-                                            Unlock for $29
+                                            Buy Track — $29
                                         </a>
                                     )}
                                 </div>
