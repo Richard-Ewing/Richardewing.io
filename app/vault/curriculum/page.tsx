@@ -10,16 +10,21 @@ export const metadata: Metadata = {
 
 // Simplified central definition of the 10 core tracks
 const vaultTracks = [
-    { id: 'cto', title: 'CTO / Engineering Leader', desc: 'Master the economics of engineering organizations', slug: 'cto', count: 18 },
-    { id: 'pm', title: 'Product Manager / CPO', desc: 'Think like a Product Economist, not a feature factory', slug: 'pm', count: 19 },
-    { id: 'investor', title: 'PE / VC / Investor', desc: 'Technical due diligence for portfolio value creation', slug: 'investor', count: 20 },
-    { id: 'ai_enterprise', title: 'AI & Enterprise Architect', desc: 'Master the economics of AI operations', slug: 'ai-enterprise', count: 22 },
-    { id: 'devops_economics', title: 'DevOps & Platform Economics', desc: 'CI/CD ROI, Observability spend, and infrastructure accounting', slug: 'devops-economics', count: 15 },
-    { id: 'product_mgmt', title: 'Product Management Economics', desc: 'Feature P&L, Prioritization economics, and unit economics', slug: 'product-economics', count: 15 },
-    { id: 'security', title: 'Security & Compliance Economics', desc: 'Breach cost modeling, compliance ROI, and insurance', slug: 'security-economics', count: 14 },
-    { id: 'data', title: 'Data & Analytics Economics', desc: 'Data warehouse ROI, pipeline spend, and analytics TCO', slug: 'data-economics', count: 15 },
-    { id: 'leadership', title: 'Engineering Leadership', desc: 'Hiring capital, retention economics, and team scaling', slug: 'leadership-economics', count: 15 },
-    { id: 'startup', title: 'Startup Economics', desc: 'Burn rate, runway extension, and early stage R&D allocation', slug: 'startup-economics', count: 15 },
+    { id: 'cto', title: 'CTO / Engineering Leader', desc: 'Master the economics of engineering organizations', slug: 'cto', count: 3, startModule: '1-1' },
+    { id: 'pm', title: 'Product Manager / CPO', desc: 'Think like a Product Economist, not a feature factory', slug: 'pm', count: 3, startModule: '2-1' },
+    { id: 'investor', title: 'PE / VC / Investor', desc: 'Technical due diligence for portfolio value creation', slug: 'investor', count: 3, startModule: '3-1' },
+    { id: 'ai_enterprise', title: 'AI & Enterprise Architect', desc: 'Master the economics of AI operations', slug: 'ai-enterprise', count: 3, startModule: '4-1' },
+    { id: 'devops_economics', title: 'Platform Engineering & DevOps', desc: 'CI/CD ROI, Observability spend, and infrastructure accounting', slug: 'devops-economics', count: 15, startModule: '5-1' },
+    { id: 'product_mgmt', title: 'Product Management Economics', desc: 'Feature P&L, Prioritization economics, and unit economics', slug: 'product-economics', count: 15, startModule: '6-1' },
+    { id: 'security', title: 'Security & Compliance Economics', desc: 'Breach cost modeling, compliance ROI, and insurance', slug: 'security-economics', count: 15, startModule: '7-1' },
+    { id: 'data', title: 'Data & Analytics Economics', desc: 'Data warehouse ROI, pipeline spend, and analytics TCO', slug: 'data-economics', count: 15, startModule: '8-1' },
+    { id: 'leadership', title: 'Engineering Leadership', desc: 'Hiring capital, retention economics, and team scaling', slug: 'leadership-economics', count: 15, startModule: '9-1' },
+    { id: 'startup', title: 'Startup Economics', desc: 'Burn rate, runway extension, and early stage R&D allocation', slug: 'startup-economics', count: 15, startModule: '10-1' },
+    { id: 'ai_operations', title: 'AI Operations & Governance', desc: 'Model selection, prompt engineering ROI, and AI compliance', slug: 'ai-operations', count: 15, startModule: '11-1' },
+    { id: 'enterprise_architecture', title: 'Enterprise Architecture Economics', desc: 'Bounded contexts, message buses, and systems design', slug: 'enterprise-architecture', count: 15, startModule: '12-1' },
+    { id: 'ai_agent_economics', title: 'AI Agent & Automation Economics', desc: 'Agentic cost structures, RAG pipelines, and LLM inference modeling', slug: 'ai-agent-economics', count: 15, startModule: '13-1' },
+    { id: 'cloud_finops', title: 'Cloud FinOps & Infrastructure Economics', desc: 'FinOps maturity, reserved instances, and Kubernetes cost management', slug: 'cloud-finops', count: 15, startModule: '14-1' },
+    { id: 'ai_career_transitions', title: 'AI Career Pivots & Transitions', desc: 'Actionable blueprints for the highest-leverage 2026 technical disciplines', slug: 'ai-career-transitions', count: 15, startModule: '15-1' }
 ];
 
 export default async function VaultCurriculumPage() {
@@ -103,18 +108,7 @@ export default async function VaultCurriculumPage() {
                                     
                                     {isUnlocked ? (
                                         <Link 
-                                            href={`/vault/curriculum/tracks/${track.slug}/${
-                                                track.slug === 'cto' ? '1-1' :
-                                                track.slug === 'pm' ? '2-1' :
-                                                track.slug === 'investor' ? '3-1' :
-                                                track.slug === 'ai-enterprise' ? '4-1' :
-                                                track.slug === 'devops-economics' ? '5-1' :
-                                                track.slug === 'product-economics' ? '6-1' :
-                                                track.slug === 'security-economics' ? '7-1' :
-                                                track.slug === 'data-economics' ? '8-1' :
-                                                track.slug === 'leadership-economics' ? '9-1' :
-                                                '10-1'
-                                            }`} 
+                                            href={`/vault/curriculum/tracks/${track.slug}/${track.startModule}`} 
                                             className="flex items-center text-sm font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors"
                                         >
                                             Enter Track <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />

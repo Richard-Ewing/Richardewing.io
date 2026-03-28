@@ -2,6 +2,7 @@ import { Lock, BookOpen } from 'lucide-react';
 import CheckoutButton from './client/CheckoutButton';
 import { PRODUCTS } from '@/lib/products';
 import ModuleStepper from './client/ModuleStepper';
+import CurriculumSalesPreview from './CurriculumSalesPreview';
 
 interface PayGateProps {
     moduleTitle: string;
@@ -41,23 +42,27 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
 
             {/* Pay Gate Barrier */}
             <div className="relative">
-                {/* Visual Skeleton Replacement - Zero Data Leakage */}
-                <div className="relative overflow-hidden rounded-2xl max-h-[300px]">
-                    <div className="space-y-6 opacity-40 p-10 select-none pointer-events-none" aria-hidden="true">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="w-8 h-8 rounded-full bg-white/20 border border-white/10" />
-                            <div className="h-6 bg-white/20 rounded-md w-1/3"></div>
+                {showPreview ? (
+                    <CurriculumSalesPreview />
+                ) : (
+                    /* Visual Skeleton Replacement - Zero Data Leakage (Only shown if landing directly on locked module) */
+                    <div className="relative overflow-hidden rounded-2xl max-h-[300px]">
+                        <div className="space-y-6 opacity-40 p-10 select-none pointer-events-none" aria-hidden="true">
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-8 h-8 rounded-full bg-white/20 border border-white/10" />
+                                <div className="h-6 bg-white/20 rounded-md w-1/3"></div>
+                            </div>
+                            <div className="h-4 bg-white/10 rounded-sm w-full"></div>
+                            <div className="h-4 bg-white/10 rounded-sm w-[90%]"></div>
+                            <div className="h-4 bg-white/10 rounded-sm w-4/5"></div>
+                            <div className="grid grid-cols-2 gap-4 mt-6">
+                                <div className="h-24 bg-white/5 rounded-xl border border-white/10" />
+                                <div className="h-24 bg-white/5 rounded-xl border border-white/10" />
+                            </div>
                         </div>
-                        <div className="h-4 bg-white/10 rounded-sm w-full"></div>
-                        <div className="h-4 bg-white/10 rounded-sm w-[90%]"></div>
-                        <div className="h-4 bg-white/10 rounded-sm w-4/5"></div>
-                        <div className="grid grid-cols-2 gap-4 mt-6">
-                            <div className="h-24 bg-white/5 rounded-xl border border-white/10" />
-                            <div className="h-24 bg-white/5 rounded-xl border border-white/10" />
-                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/80 to-zinc-950" />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/80 to-zinc-950" />
-                </div>
+                )}
 
                 {/* Unlock CTA */}
                 <div className={`relative ${showPreview ? '-mt-32' : '-mt-16'} z-10`}>

@@ -29,6 +29,7 @@ const comparisons = [
         economicImpact: 'Migrating an SEO-heavy content site from Next.js to Astro routinely cuts compute costs by 80% while dramatically improving Core Web Vitals.',
         decisionGuide: 'Default to Astro for content. Escalate to Remix for forms and mutations. Only escalate to App Router if RSC caching complexity provides a distinct business advantage.',
         tools: [],
+        vaultId: '17-1',
     },
     {
         slug: 'claude-vs-gpt4',
@@ -49,6 +50,7 @@ const comparisons = [
         economicImpact: 'Hardcoding to OpenAI is costing startups 40% margin pure profit. Abstracting the model layer allows dynamic routing to the cheapest capable model.',
         decisionGuide: 'Build an LLM gateway (like LiteLLM). Route all standard RAG and Code-Gen to Sonnet. Route simple classification to Haiku. Reserve GPT-4o exclusively for its voice API.',
         tools: [],
+        vaultId: '17-2',
     },
     // --- FREE COMPARISONS ---
     {
@@ -1139,6 +1141,23 @@ export default function ComparisonsPage() {
                                             Want expert analysis? →
                                         </Link>
                                     </div>
+
+                                    {/* Link into LMS Engine for Premium Audits */}
+                                    {/* @ts-ignore - added dynamically */}
+                                    {(comp as any).vaultId && (
+                                        <div className="mt-8 pt-6 border-t border-cyan-500/10">
+                                            <Link href={`/vault/curriculum/tracks/comparisons/${(comp as any).vaultId.split('-')[1]}`} className="flex items-center justify-between p-4 bg-cyan-500/10 border border-cyan-500/20 rounded-xl hover:bg-cyan-500/20 transition-all group">
+                                                <div>
+                                                    <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-1 flex items-center gap-2">
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                                                        Premium Interactive Audit
+                                                    </div>
+                                                    <div className="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">Access the Full Technical Audit Playbook</div>
+                                                </div>
+                                                <div className="text-cyan-400 group-hover:translate-x-1 transition-transform">→</div>
+                                            </Link>
+                                        </div>
+                                    )}
                                 </div>
                             </section>
                         ))}

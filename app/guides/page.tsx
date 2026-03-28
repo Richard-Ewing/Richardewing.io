@@ -22,6 +22,7 @@ interface GuideItem {
     audience: string;
     terms: string;
     price?: string;
+    vaultId?: string;
 }
 
 const guides: GuideItem[] = [
@@ -39,6 +40,7 @@ const guides: GuideItem[] = [
         free: false,
         audience: 'CTOs, AI Architects',
         terms: '10+ terms linked',
+        vaultId: '16-1'
     },
     {
         slug: 'ai-governance-compliance',
@@ -53,6 +55,7 @@ const guides: GuideItem[] = [
         free: false,
         audience: 'CISOs, InfoSec Leads, Platform Engineers',
         terms: '15+ terms linked',
+        vaultId: '16-2'
     },
     // --- FREE GUIDES ---
     {
@@ -171,8 +174,8 @@ const guides: GuideItem[] = [
     title: "Building AI-Native Engineering Teams",
     subtitle: "Maximizing GenAI Developer Experience (DevEx)",
     description: "How to structure, tool, and lead engineering teams in the age of generative AI.",
-    badge: "DevEx",
-    badgeColor: "cyan",
+    badge: "Vault Premium",
+    badgeColor: "violet",
     topics: [
         "AI-Native DX",
         "Generative Tooling",
@@ -182,9 +185,10 @@ const guides: GuideItem[] = [
     ],
     readTime: "35 min",
     tools: [],
-    free: true,
+    free: false,
     audience: "Engineering Managers, Platform Directors",
-    terms: "35+ terms linked"
+    terms: "35+ terms linked",
+    vaultId: "16-3"
 },
     {
     slug: "post-quantum-migration",
@@ -713,7 +717,7 @@ export default function GuidesPage() {
                     </div>
                     <div className="space-y-5 mb-16">
                         {freeGuides.map((guide) => (
-                            <Link key={guide.slug} href={`/guides/${guide.slug}`} className="block group">
+                            <Link key={guide.slug} href={guide.vaultId ? `/vault/curriculum/tracks/guides/${guide.vaultId.split('-')[1]}` : `/guides/${guide.slug}`} className="block group">
                                 <div className="card p-6 sm:p-8 hover:border-cyan-500/30 transition-all">
                                     <div className="flex flex-col sm:flex-row gap-6">
                                         <div className="flex-1">
@@ -757,7 +761,7 @@ export default function GuidesPage() {
                     </div>
                     <div className="space-y-5 mb-16">
                         {careerPaths.map((guide) => (
-                            <Link key={guide.slug} href={`/guides/${guide.slug}`} className="block group">
+                            <Link key={guide.slug} href={guide.vaultId ? `/vault/curriculum/tracks/guides/${guide.vaultId.split('-')[1]}` : `/guides/${guide.slug}`} className="block group">
                                 <div className="card p-6 sm:p-8 hover:border-violet-500/30 transition-all border-violet-500/10">
                                     <div className="flex flex-col sm:flex-row gap-6">
                                         <div className="flex-1">
@@ -796,7 +800,7 @@ export default function GuidesPage() {
                     </div>
                     <div className="space-y-5 mb-16">
                         {premiumGuides.map((guide) => (
-                            <Link key={guide.slug} href={`/guides/${guide.slug}`} className="block group">
+                            <Link key={guide.slug} href={guide.vaultId ? `/vault/curriculum/tracks/guides/${guide.vaultId.split('-')[1]}` : `/guides/${guide.slug}`} className="block group">
                                 <div className="card p-6 sm:p-8 hover:border-amber-500/30 transition-all border-white/5 relative overflow-hidden">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-colors" />
                                     <div className="flex flex-col sm:flex-row gap-6 relative z-10">
