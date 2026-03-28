@@ -23,12 +23,16 @@ export function d(metric: string, description: string, benchmark: string): Lesso
 export const modules: Record<string, CurriculumModule> = {};
 
 import { guidesComparisonsModules } from './curriculum-guides-comparisons';
+import { tracks6to10Modules } from './curriculum-tracks-6-10';
 
 // ═══════════════════ TRACK 1-4 ═══════════════════
 populateTracks1To4(modules);
 
 // ═══════════════════ TRACK 16 & 17 (GUIDES / COMPARISONS) ═══════════════════
 Object.assign(modules, guidesComparisonsModules);
+
+// ═══════════════════ TRACKS 6-10 ═══════════════════
+Object.assign(modules, tracks6to10Modules);
 
 // ═══════════════════ TRACK 5: DevOps & Platform Economics ═══════════════════
 const t5 = 'Track 5 — DevOps & Platform Economics';

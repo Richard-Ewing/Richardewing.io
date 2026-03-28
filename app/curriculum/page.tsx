@@ -22,32 +22,74 @@ import { modules } from '@/lib/curriculum-data';
 
 const trackMeta = [
     {
-        id: 'cto',
+        id: 'engineering-economics',
         title: 'CTO / Engineering Leader',
         icon: '⚙️',
         color: 'cyan',
         subtitle: 'Master the economics of engineering organizations',
     },
     {
-        id: 'pm',
+        id: 'ai-product-economics',
         title: 'Product Manager / CPO',
         icon: '📊',
         color: 'purple',
         subtitle: 'Think like a Product Economist, not a feature factory',
     },
     {
-        id: 'investor',
+        id: 'rd-capital-management',
         title: 'PE / VC / Investor',
         icon: '💰',
         color: 'amber',
         subtitle: 'Technical due diligence for portfolio value creation',
     },
     {
-        id: 'ai-enterprise',
+        id: 'capstone',
         title: 'AI & Enterprise Architect',
         icon: '🤖',
         color: 'purple',
         subtitle: 'Master the economics of AI operations and scalable enterprise architecture',
+    },
+    {
+        id: 'devops-economics',
+        title: 'Platform Engineering & DevOps',
+        icon: '🚀',
+        color: 'cyan',
+        subtitle: 'Master CI/CD pipeline economics and observability ROI',
+    },
+    {
+        id: 'technical-debt-valuation',
+        title: 'Technical Debt Valuation',
+        icon: '📉',
+        color: 'purple',
+        subtitle: 'Quantify the interest rate of legacy systems to defend rewrites',
+    },
+    {
+        id: 'enterprise-architecture',
+        title: 'Enterprise Architecture',
+        icon: '🏛️',
+        color: 'amber',
+        subtitle: 'Bounded contexts, message buses, and systems design',
+    },
+    {
+        id: 'cto-transition',
+        title: 'The CTO Transition',
+        icon: '👔',
+        color: 'cyan',
+        subtitle: 'Board communication, span of control, and team topologies',
+    },
+    {
+        id: 'security-compliance',
+        title: 'Security & Compliance',
+        icon: '🛡️',
+        color: 'purple',
+        subtitle: 'Automate SOC2/ISO27001 via internal developer platforms',
+    },
+    {
+        id: 'multi-agent-ops',
+        title: 'Generative AI Operations',
+        icon: '🧠',
+        color: 'amber',
+        subtitle: 'RAG economics, agentic supervision, and vector search',
     },
 ];
 
@@ -178,8 +220,8 @@ export default function CurriculumPage() {
                                                 </div>
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 ml-11">
                                                     {mod.items.map((item, ii) => {
-                                                        const isStatic = !(item as any).isTool && !(item as any).isExternal;
-                                                        
+                                                        // If we provide an explicit href, the component MUST render as a Link to activate the Vault preview routing.
+                                                        const isStatic = !((item as any).href) && !(item as any).isTool && !(item as any).isExternal;
                                                         const innerContent = (
                                                             <>
                                                                 <span className={`w-1.5 h-1.5 rounded-full ${(item as any).isTool ? colors.dot : isStatic ? 'bg-zinc-700' : 'bg-zinc-600 group-hover:bg-zinc-400'} transition-colors`} />

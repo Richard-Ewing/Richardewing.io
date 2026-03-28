@@ -25,6 +25,35 @@ interface GuideItem {
 }
 
 const guides: GuideItem[] = [
+    // --- PREMIUM LMS GUIDES ---
+    {
+        slug: 'how-to-deploy-small-language-models',
+        title: 'How to Deploy Small Language Models (SLMs) at the Edge',
+        subtitle: 'Severing the API Margin Tax with Local Inference',
+        description: 'A comprehensive playbook on escaping hyperscaler dependency by deploying 8B parameter models natively. Covers ONNX quantization, VRAM economics, and local data sanitization pathways.',
+        badge: 'Vault Premium',
+        badgeColor: 'amber',
+        topics: ['SLM Economics', 'API Margin Tax', 'Model Quantization', 'VRAM Allocation', 'Zero-Trust AI', 'Local Inference Latency'],
+        readTime: '35 min',
+        tools: [],
+        free: false,
+        audience: 'CTOs, AI Architects',
+        terms: '10+ terms linked',
+    },
+    {
+        slug: 'ai-governance-compliance',
+        title: 'AI Governance & Compliance Audit',
+        subtitle: 'Securing the Generative Attack Surface',
+        description: 'Mitigating the blast radius of prompt injections and unbounded context windows. Learn how to construct an outbound Data Loss Prevention (DLP) gateway using native Named Entity Recognition.',
+        badge: 'Vault Premium',
+        badgeColor: 'violet',
+        topics: ['DLP Gateways', 'Prompt Injection', 'Zero-Trust Architecture', 'Named Entity Recognition', 'Context Sanitization', 'Blast Radius Analytics'],
+        readTime: '40 min',
+        tools: [],
+        free: false,
+        audience: 'CISOs, InfoSec Leads, Platform Engineers',
+        terms: '15+ terms linked',
+    },
     // --- FREE GUIDES ---
     {
         slug: 'technical-debt',

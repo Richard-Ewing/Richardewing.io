@@ -9,6 +9,48 @@ export const metadata: Metadata = {
 };
 
 const comparisons = [
+    // --- PREMIUM LMS COMPARISONS ---
+    {
+        slug: 'nextjs-remix-astro',
+        title: 'Next.js App Router vs. Remix vs. Astro',
+        subtitle: 'The Hydration Cost & TTI Economics',
+        left: { name: 'App Router', color: 'cyan' },
+        right: { name: 'Astro', color: 'violet' },
+        description: 'React Server Components fundamentally broke the traditional CDN caching model, driving up compute costs. This analysis breaks down the compute economics, Time to Interactive (TTI), and Vercel infrastructure bills for the three modern paradigms.',
+        rows: [
+            { dimension: 'Compute Margin', left: 'Very High (RSC / Lambda)', right: 'Zero (Static HTML Edge)' },
+            { dimension: 'TTI (Time to Interactive)', left: 'Heavy JS Payload', right: 'Near-Instant (Islands)' },
+            { dimension: 'Vendor Lock-in', left: 'High (Vercel Primitives)', right: 'Low (Any Static Host)' },
+            { dimension: 'DevEx Velocity', left: 'Steep RSC Learning Curve', right: 'HTML/JS Simplicity' },
+            { dimension: 'Best For', left: 'Complex stateful dashboards', right: 'Content and SEO-heavy sites' },
+            { dimension: 'Cost Predictability', left: 'Unpredictable (Serverless)', right: 'Highly Predictable (Bandwidth)' },
+        ],
+        verdict: 'If you are building a document, use Astro. If you are building an application with heavily restricted state, use Remix. If you have infinite Vercel credits, use Next.js App Router.',
+        economicImpact: 'Migrating an SEO-heavy content site from Next.js to Astro routinely cuts compute costs by 80% while dramatically improving Core Web Vitals.',
+        decisionGuide: 'Default to Astro for content. Escalate to Remix for forms and mutations. Only escalate to App Router if RSC caching complexity provides a distinct business advantage.',
+        tools: [],
+    },
+    {
+        slug: 'claude-vs-gpt4',
+        title: 'Claude 3.5 Sonnet vs. GPT-4o',
+        subtitle: 'The Economics of Inference Routing',
+        left: { name: 'Claude 3.5 Sonnet', color: 'amber' },
+        right: { name: 'GPT-4o', color: 'emerald' },
+        description: 'Model routing is the new CDN load balancing. This analysis compares cost-per-million tokens, inference latency, and intelligence density between Anthropic and OpenAI for production workloads.',
+        rows: [
+            { dimension: 'Cost ($ / 1M Input)', left: '$3.00', right: '$5.00' },
+            { dimension: 'Context Window', left: '200K Tokens', right: '128K Tokens' },
+            { dimension: 'Coding Benchmarks', left: 'State of the Art (92% HumanEval)', right: 'Strong Generalist' },
+            { dimension: 'Inference Latency', left: 'Ultra-fast TTFT', right: 'Fast TTFT' },
+            { dimension: 'Ecosystem Margin', left: 'AWS Bedrock / GCP integration', right: 'Azure OpenAI lock-in' },
+            { dimension: 'Rate Limits', left: 'Generous Tier 4', right: 'Strict TPM Caps' },
+        ],
+        verdict: 'Claude 3.5 Sonnet destroys GPT-4o in the coding, agentic reasoning, and cost paradigms. GPT-4o remains superior for multimodal (voice/vision) edge cases.',
+        economicImpact: 'Hardcoding to OpenAI is costing startups 40% margin pure profit. Abstracting the model layer allows dynamic routing to the cheapest capable model.',
+        decisionGuide: 'Build an LLM gateway (like LiteLLM). Route all standard RAG and Code-Gen to Sonnet. Route simple classification to Haiku. Reserve GPT-4o exclusively for its voice API.',
+        tools: [],
+    },
+    // --- FREE COMPARISONS ---
     {
         slug: 'pdi-vs-dora',
         title: 'PDI vs. DORA Metrics',
