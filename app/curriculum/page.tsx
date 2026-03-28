@@ -21,47 +21,56 @@ export const metadata: Metadata = {
 import { modules } from '@/lib/curriculum-data';
 
 const trackMeta = [
+    // --- Tracks 1-4: Use short key prefixes ---
     {
-        id: 'engineering-economics',
+        id: 'cto',
         title: 'CTO / Engineering Leader',
         icon: '⚙️',
         color: 'cyan',
         subtitle: 'Master the economics of engineering organizations',
+        productId: 'module_cto',
     },
     {
-        id: 'ai-product-economics',
+        id: 'pm',
         title: 'Product Manager / CPO',
         icon: '📊',
         color: 'purple',
         subtitle: 'Think like a Product Economist, not a feature factory',
+        productId: 'module_pm',
     },
     {
-        id: 'rd-capital-management',
+        id: 'investor',
         title: 'PE / VC / Investor',
         icon: '💰',
         color: 'amber',
         subtitle: 'Technical due diligence for portfolio value creation',
+        productId: 'module_investor',
     },
     {
-        id: 'capstone',
+        id: 'ai-enterprise',
         title: 'AI & Enterprise Architect',
         icon: '🤖',
         color: 'purple',
         subtitle: 'Master the economics of AI operations and scalable enterprise architecture',
+        productId: 'module_ai_enterprise',
     },
+    // --- Track 5: Uses full slug prefix ---
     {
         id: 'devops-economics',
         title: 'Platform Engineering & DevOps',
         icon: '🚀',
         color: 'cyan',
         subtitle: 'Master CI/CD pipeline economics and observability ROI',
+        productId: 'module_devops',
     },
+    // --- Tracks 6-10: original short-form (tracks-6-10.ts) ---
     {
         id: 'technical-debt-valuation',
         title: 'Technical Debt Valuation',
         icon: '📉',
         color: 'purple',
         subtitle: 'Quantify the interest rate of legacy systems to defend rewrites',
+        productId: 'single_module',
     },
     {
         id: 'enterprise-architecture',
@@ -69,6 +78,7 @@ const trackMeta = [
         icon: '🏛️',
         color: 'amber',
         subtitle: 'Bounded contexts, message buses, and systems design',
+        productId: 'single_module',
     },
     {
         id: 'cto-transition',
@@ -76,6 +86,7 @@ const trackMeta = [
         icon: '👔',
         color: 'cyan',
         subtitle: 'Board communication, span of control, and team topologies',
+        productId: 'single_module',
     },
     {
         id: 'security-compliance',
@@ -83,6 +94,7 @@ const trackMeta = [
         icon: '🛡️',
         color: 'purple',
         subtitle: 'Automate SOC2/ISO27001 via internal developer platforms',
+        productId: 'module_security',
     },
     {
         id: 'multi-agent-ops',
@@ -90,6 +102,80 @@ const trackMeta = [
         icon: '🧠',
         color: 'amber',
         subtitle: 'RAG economics, agentic supervision, and vector search',
+        productId: 'single_module',
+    },
+    // --- Tracks 11-15: expanded catalog (curriculum-data.ts trackDefs) ---
+    {
+        id: 'product-economics',
+        title: 'Product Management Economics',
+        icon: '📈',
+        color: 'purple',
+        subtitle: 'Feature prioritization, pricing strategy, and churn economics',
+        productId: 'module_product_mgmt',
+    },
+    {
+        id: 'security-economics',
+        title: 'Security & Compliance Economics',
+        icon: '🔐',
+        color: 'cyan',
+        subtitle: 'Breach cost modeling, compliance ROI, and cyber insurance analysis',
+        productId: 'module_security',
+    },
+    {
+        id: 'data-economics',
+        title: 'Data & Analytics Economics',
+        icon: '🗄️',
+        color: 'amber',
+        subtitle: 'Data warehouse costs, quality ROI, and ML pipeline economics',
+        productId: 'module_data',
+    },
+    {
+        id: 'engineering-leadership',
+        title: 'Engineering Leadership',
+        icon: '👥',
+        color: 'purple',
+        subtitle: 'CTO economics, headcount planning, and talent retention',
+        productId: 'module_leadership',
+    },
+    {
+        id: 'startup-economics',
+        title: 'Startup Economics',
+        icon: '🚀',
+        color: 'cyan',
+        subtitle: 'Runway, burn rate, MVP economics, and fundraising',
+        productId: 'module_startup',
+    },
+    {
+        id: 'ai-operations',
+        title: 'AI Operations & Governance',
+        icon: '🤖',
+        color: 'amber',
+        subtitle: 'Model selection, prompt engineering ROI, and AI compliance',
+        productId: 'single_module',
+    },
+    {
+        id: 'ai-agent-economics',
+        title: 'AI Agent & Automation',
+        icon: '🧩',
+        color: 'purple',
+        subtitle: 'Agentic cost structures, RAG pipelines, and LLM inference modeling',
+        productId: 'single_module',
+    },
+    {
+        id: 'cloud-finops',
+        title: 'Cloud FinOps & Infrastructure',
+        icon: '☁️',
+        color: 'cyan',
+        subtitle: 'FinOps maturity, reserved instances, and Kubernetes cost management',
+        productId: 'single_module',
+    },
+    {
+        id: 'ai-career-transitions',
+        title: 'AI Career Pivots & Transitions',
+        icon: '🔄',
+        color: 'amber',
+        subtitle: 'Actionable blueprints for the highest-leverage 2026 technical disciplines',
+        productId: 'single_module',
     },
 ];
 
@@ -193,16 +279,19 @@ export default function CurriculumPage() {
                                         </div>
                                         <div className="flex items-center gap-4 mt-4">
                                             <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">
-                                                {track.modules.length} modules
+                                                {track.modules.length} {track.modules.length === 1 ? 'module' : 'modules'}
                                             </span>
                                             <span className="text-xs text-zinc-600">•</span>
                                             <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">
-                                                {track.modules.reduce((n, m) => n + m.items.length, 0)} topics
+                                                {track.modules.reduce((n, m) => n + m.items.length, 0)} lessons
                                             </span>
                                             <span className="text-xs text-zinc-600">•</span>
                                             <span className={`text-xs font-mono uppercase tracking-widest ${colors.text}`}>
                                                 Self-Paced
                                             </span>
+                                            {ti === 0 || track.modules.length > 0 ? (
+                                                <span className="text-xs font-mono uppercase tracking-widest px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Free Preview</span>
+                                            ) : null}
                                         </div>
                                     </div>
 
@@ -272,15 +361,18 @@ export default function CurriculumPage() {
                                     {/* Track CTA */}
                                     <div className={`${colors.bg} px-8 py-6 border-t ${colors.border}`}>
                                         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                                            <p className={`text-sm font-bold ${colors.text}`}>
-                                                Unlock the complete {track.title} Track — $29
-                                            </p>
+                                            <div>
+                                                <p className={`text-sm font-bold ${colors.text}`}>
+                                                    Get the complete {track.title} Track — $29
+                                                </p>
+                                                <p className="text-xs text-zinc-500 mt-1">One-time payment · Lifetime access · All {track.modules.length} modules</p>
+                                            </div>
                                             <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
                                                 <a
-                                                    href={`/api/buy/module_${track.id.replace('-', '_')}?moduleId=track_${track.id}`}
+                                                    href={`/api/buy/${(track as any).productId || 'single_module'}?moduleId=track_${track.id}`}
                                                     className={`px-6 py-3 rounded-lg border flex-1 text-center md:flex-none ${colors.border} bg-white/5 text-white font-bold text-sm uppercase tracking-widest hover:${colors.bg} transition-all`}
                                                 >
-                                                    Unlock Track
+                                                    Buy Track — $29
                                                 </a>
                                                 <Link
                                                     href="/advisory"

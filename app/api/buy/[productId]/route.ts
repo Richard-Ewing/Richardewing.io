@@ -19,7 +19,7 @@ export async function GET(
     const product = PRODUCTS[productId];
 
     if (!product || !product.paymentLink) {
-        return NextResponse.redirect(new URL('/advisory', request.url));
+        return NextResponse.redirect(new URL('/curriculum', request.url));
     }
 
     // Construct precise Stripe Payload with guaranteed Clerk Identity Identity Mapping

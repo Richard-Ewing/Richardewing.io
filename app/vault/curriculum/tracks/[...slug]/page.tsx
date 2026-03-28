@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 import { auth } from '@clerk/nextjs/server';
 import PayGate from '@/app/components/PayGate';
 
-function ModuleCard({ mod, hasAccess }: { mod: CurriculumModule, hasAccess: boolean }) {
+function ModuleCard({ mod, hasAccess, showPreview }: { mod: CurriculumModule, hasAccess: boolean, showPreview: boolean }) {
     return (
         <main className="pt-20">
             <div className="page-container">
@@ -60,6 +60,7 @@ function ModuleCard({ mod, hasAccess }: { mod: CurriculumModule, hasAccess: bool
                         trackName={mod.trackName} 
                         totalLessons={mod.lessons.length}
                         hasAccess={hasAccess}
+                        showPreview={showPreview}
                         nextHref={mod.nextHref}
                     >
                         {mod.lessons.map((lesson, i) => (
@@ -108,6 +109,11 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
     const unlockedItems = (metadata.unlocked_items as string[]) || [];
     const hasAccess = !!userId && (hasSubscription || unlockedItems.includes(`module_${mod.moduleId}`) || unlockedItems.includes(`module_track_${slug[0]}`) || unlockedItems.includes(`module_${slug[0]}`));
 
-    return <ModuleCard mod={mod} hasAccess={hasAccess} />;
+    // Only show free preview for the FIRST module of each track
+    // First modules end in -1 (e.g., 1-1, 2-1, 5-1, 6-1, etc.)
+    const moduleNumber = mod.moduleId.split('.').pop() || mod.moduleId.split('-').pop() || '';
+    const isFirstModule = moduleNumber === '1' || mod.moduleId.endsWith('-1') || mod.moduleId.endsWith('.1');
+
+    return <ModuleCard mod={mod} hasAccess={hasAccess} showPreview={isFirstModule} />;
 }
 

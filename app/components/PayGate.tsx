@@ -10,11 +10,12 @@ interface PayGateProps {
     totalLessons: number;
     previewLessonIndex?: number;
     hasAccess?: boolean;
+    showPreview?: boolean;
     children: React.ReactNode;
     nextHref?: string;
 }
 
-export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, children, nextHref }: PayGateProps) {
+export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, showPreview = true, children, nextHref }: PayGateProps) {
     if (hasAccess) {
         return <ModuleStepper moduleTitle={moduleTitle} nextHref={nextHref}>{children}</ModuleStepper>;
     }
@@ -27,14 +28,16 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
     // They literally do not exist on the client side HTML payload. This closes the Inspect Element bug.
     return (
         <div>
-            {/* Free Preview: First Lesson */}
-            <div className="mb-8 relative z-20">
-                <div className="flex items-center gap-2 mb-4 px-4 py-2 rounded-lg bg-emerald-500/5 border border-emerald-500/20 w-fit">
-                    <BookOpen className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">Free Preview</span>
+            {/* Free Preview: First Lesson (only shown for first module of each track) */}
+            {showPreview && (
+                <div className="mb-8 relative z-20">
+                    <div className="flex items-center gap-2 mb-4 px-4 py-2 rounded-lg bg-emerald-500/5 border border-emerald-500/20 w-fit">
+                        <BookOpen className="w-4 h-4 text-emerald-400" />
+                        <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">Free Preview — Lesson 1</span>
+                    </div>
+                    {previewContent}
                 </div>
-                {previewContent}
-            </div>
+            )}
 
             {/* Pay Gate Barrier */}
             <div className="relative">
@@ -57,17 +60,17 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                 </div>
 
                 {/* Unlock CTA */}
-                <div className="relative -mt-32 z-10">
+                <div className={`relative ${showPreview ? '-mt-32' : '-mt-16'} z-10`}>
                     <div className="mx-auto max-w-lg rounded-2xl border border-white/10 bg-zinc-900/95 backdrop-blur-xl p-8 shadow-2xl shadow-violet-500/5">
                         <div className="text-center">
                             <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500/20 to-cyan-500/20 border border-white/10 flex items-center justify-center mx-auto mb-4">
                                 <Lock className="w-6 h-6 text-violet-400" />
                             </div>
                             <h3 className="text-xl font-grotesk font-bold text-white mb-2">
-                                Unlock Full Module
+                                Get Full Module Access
                             </h3>
                             <p className="text-zinc-400 text-sm mb-6">
-                                {totalLessons - 1} more lessons with hands-on exercises, metric cards, and assessment checklists.
+                                {showPreview ? `${totalLessons - 1} more lessons` : `${totalLessons} lessons`} with hands-on exercises, metric cards, and assessment checklists.
                             </p>
 
                             {/* Quick Stats */}
@@ -89,7 +92,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                             <CheckoutButton 
                                 productId="single_module" 
                                 moduleId={moduleId}
-                                label={`Unlock Module — $${PRODUCTS['single_module']?.price ? PRODUCTS['single_module'].price / 100 : 29}`} 
+                                label={`Buy Module — $${PRODUCTS['single_module']?.price ? PRODUCTS['single_module'].price / 100 : 29}`} 
                                 icon="file" 
                                 variant="primary" 
                             />
