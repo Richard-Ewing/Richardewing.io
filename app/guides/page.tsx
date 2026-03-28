@@ -715,38 +715,25 @@ export default function GuidesPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-2">Free Guides</h2>
                         <p className="text-zinc-500 text-sm">Full access, no paywall. Start learning immediately.</p>
                     </div>
-                    <div className="space-y-5 mb-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                         {freeGuides.map((guide) => (
                             <Link key={guide.slug} href={guide.vaultId ? `/vault/curriculum/tracks/guides/${guide.vaultId.split('-')[1]}` : `/guides/${guide.slug}`} className="block group">
-                                <div className="card p-6 sm:p-8 hover:border-cyan-500/30 transition-all">
-                                    <div className="flex flex-col sm:flex-row gap-6">
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-2 flex-wrap mb-3">
-                                                <span className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border ${badgeStyles[guide.badgeColor]}`}>{guide.badge}</span>
-                                                <span className="text-[10px] text-zinc-600">{guide.readTime}</span>
-                                                <span className="text-[10px] text-zinc-600">•</span>
-                                                <span className="text-[10px] text-zinc-600">{guide.audience}</span>
-                                                <span className="text-[10px] text-zinc-600">•</span>
-                                                <span className="text-[10px] text-zinc-600">{guide.terms}</span>
-                                            </div>
-                                            <h3 className="text-xl font-grotesk font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">{guide.title}</h3>
-                                            <p className="text-sm text-zinc-500 font-mono mb-3">{guide.subtitle}</p>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">{guide.description}</p>
-                                            <div className="flex flex-wrap gap-1.5 mb-3">
-                                                {guide.topics.map((topic) => (
-                                                    <span key={topic} className="text-[9px] font-mono px-2 py-0.5 rounded bg-white/[0.03] border border-white/5 text-zinc-500">{topic}</span>
-                                                ))}
-                                            </div>
-                                            <div className="flex items-center gap-3">
-                                                {guide.tools?.map((tool) => (
-                                                    <span key={tool.name} className="text-[10px] text-cyan-400">🛠️ {tool.name}</span>
-                                                ))}
-                                            </div>
+                                <div className="card p-6 flex flex-col h-full hover:border-cyan-500/30 transition-all bg-black/40">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <span className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border ${badgeStyles[guide.badgeColor]}`}>{guide.badge}</span>
+                                        <span className="text-[10px] text-zinc-500">{guide.readTime}</span>
+                                    </div>
+                                    <h3 className="text-xl font-grotesk font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">{guide.title}</h3>
+                                    <p className="text-xs text-zinc-500 font-mono mb-4">{guide.subtitle}</p>
+                                    <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3">{guide.description}</p>
+                                    
+                                    <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                                        <div className="flex flex-col gap-1">
+                                            <span className="text-[10px] text-zinc-600 font-mono uppercase">Audience</span>
+                                            <span className="text-xs text-zinc-400">{guide.audience.split(',')[0]}</span>
                                         </div>
-                                        <div className="flex items-center">
-                                            <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center group-hover:border-cyan-500/30 group-hover:bg-cyan-500/5 transition-all">
-                                                <span className="text-zinc-500 group-hover:text-cyan-400 transition-colors">→</span>
-                                            </div>
+                                        <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center group-hover:border-cyan-500/30 group-hover:bg-cyan-500/10 transition-all">
+                                            <span className="text-zinc-500 group-hover:text-cyan-400 transition-colors">→</span>
                                         </div>
                                     </div>
                                 </div>
@@ -759,33 +746,25 @@ export default function GuidesPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-2">Career Pathways</h2>
                         <p className="text-zinc-500 text-sm">Actionable blueprints for pivoting into the highest-leverage 2026 technical disciplines.</p>
                     </div>
-                    <div className="space-y-5 mb-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                         {careerPaths.map((guide) => (
                             <Link key={guide.slug} href={guide.vaultId ? `/vault/curriculum/tracks/guides/${guide.vaultId.split('-')[1]}` : `/guides/${guide.slug}`} className="block group">
-                                <div className="card p-6 sm:p-8 hover:border-violet-500/30 transition-all border-violet-500/10">
-                                    <div className="flex flex-col sm:flex-row gap-6">
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-2 flex-wrap mb-3">
-                                                <span className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border ${badgeStyles[guide.badgeColor]}`}>{guide.badge}</span>
-                                                <span className="text-[10px] text-zinc-600">{guide.readTime}</span>
-                                                <span className="text-[10px] text-zinc-600">•</span>
-                                                <span className="text-[10px] text-zinc-600">{guide.audience}</span>
-                                                <span className="text-[10px] text-zinc-600">•</span>
-                                                <span className="text-[10px] text-zinc-600">{guide.terms}</span>
-                                            </div>
-                                            <h3 className="text-xl font-grotesk font-bold text-white mb-1 group-hover:text-violet-400 transition-colors">{guide.title}</h3>
-                                            <p className="text-sm text-zinc-500 font-mono mb-3">{guide.subtitle}</p>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">{guide.description}</p>
-                                            <div className="flex flex-wrap gap-1.5 mb-3">
-                                                {guide.topics.map((topic) => (
-                                                    <span key={topic} className="text-[9px] font-mono px-2 py-0.5 rounded bg-white/[0.03] border border-white/5 text-zinc-500">{topic}</span>
-                                                ))}
-                                            </div>
+                                <div className="card p-6 flex flex-col h-full hover:border-violet-500/30 transition-all border-violet-500/10 bg-black/40">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <span className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border ${badgeStyles[guide.badgeColor]}`}>{guide.badge}</span>
+                                        <span className="text-[10px] text-zinc-500">{guide.readTime}</span>
+                                    </div>
+                                    <h3 className="text-xl font-grotesk font-bold text-white mb-2 group-hover:text-violet-400 transition-colors line-clamp-2">{guide.title}</h3>
+                                    <p className="text-xs text-zinc-500 font-mono mb-4">{guide.subtitle}</p>
+                                    <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3">{guide.description}</p>
+                                    
+                                    <div className="mt-auto pt-6 border-t border-violet-500/10 flex items-center justify-between">
+                                        <div className="flex flex-col gap-1">
+                                            <span className="text-[10px] text-zinc-600 font-mono uppercase">Role</span>
+                                            <span className="text-xs text-zinc-400">{guide.audience.split(',')[0]}</span>
                                         </div>
-                                        <div className="flex items-center">
-                                            <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center group-hover:border-violet-500/30 group-hover:bg-violet-500/5 transition-all">
-                                                <span className="text-zinc-500 group-hover:text-violet-400 transition-colors">→</span>
-                                            </div>
+                                        <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center group-hover:border-violet-500/30 group-hover:bg-violet-500/10 transition-all">
+                                            <span className="text-zinc-500 group-hover:text-violet-400 transition-colors">→</span>
                                         </div>
                                     </div>
                                 </div>
@@ -798,33 +777,28 @@ export default function GuidesPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-2">Premium Playbooks & Guides</h2>
                         <p className="text-zinc-500 text-sm">Actionable ROI models, frameworks, and templates. Unlock instantly.</p>
                     </div>
-                    <div className="space-y-5 mb-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-16">
                         {premiumGuides.map((guide) => (
                             <Link key={guide.slug} href={guide.vaultId ? `/vault/curriculum/tracks/guides/${guide.vaultId.split('-')[1]}` : `/guides/${guide.slug}`} className="block group">
-                                <div className="card p-6 sm:p-8 hover:border-amber-500/30 transition-all border-white/5 relative overflow-hidden">
+                                <div className="card p-6 flex flex-col h-full hover:border-amber-500/30 transition-all border-white/5 relative overflow-hidden bg-black/40">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-colors" />
-                                    <div className="flex flex-col sm:flex-row gap-6 relative z-10">
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-2 flex-wrap mb-3">
-                                                <span className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border ${badgeStyles[guide.badgeColor]}`}>{guide.badge}</span>
-                                                <span className="text-[10px] text-zinc-600">{guide.readTime}</span>
-                                                <span className="text-[10px] text-zinc-600">•</span>
-                                                <span className="text-[10px] text-zinc-600">{guide.audience}</span>
-                                                <span className="text-[10px] text-zinc-600">•</span>
-                                                <span className="text-[10px] text-zinc-600">{guide.terms}</span>
-                                            </div>
-                                            <h3 className="text-xl font-grotesk font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">{guide.title}</h3>
-                                            <p className="text-sm text-zinc-500 font-mono mb-3">{guide.subtitle}</p>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">{guide.description}</p>
-                                            <div className="flex flex-wrap gap-1.5 mb-3">
-                                                {guide.topics.map((topic) => (
-                                                    <span key={topic} className="text-[9px] font-mono px-2 py-0.5 rounded bg-white/[0.03] border border-white/5 text-zinc-500">{topic}</span>
-                                                ))}
-                                            </div>
+                                    <div className="relative z-10 flex flex-col h-full">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <span className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border ${badgeStyles[guide.badgeColor]}`}>{guide.badge}</span>
+                                            <span className="text-[10px] text-zinc-500">{guide.readTime}</span>
                                         </div>
-                                        <div className="flex flex-col justify-end items-start sm:items-end min-w-[120px] mt-4 sm:mt-0">
-                                            <span className="text-2xl font-grotesk font-bold text-amber-400">{guide.price}</span>
-                                            <span className="text-[10px] text-zinc-500 uppercase tracking-widest mt-1">One-Time</span>
+                                        <h3 className="text-xl font-grotesk font-bold text-white mb-2 group-hover:text-amber-400 transition-colors line-clamp-2">{guide.title}</h3>
+                                        <p className="text-xs text-zinc-500 font-mono mb-4">{guide.subtitle}</p>
+                                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3">{guide.description}</p>
+                                        
+                                        <div className="mt-auto pt-6 border-t border-amber-500/10 flex items-center justify-between">
+                                            <div className="flex flex-col gap-1">
+                                                <span className="text-[12px] font-bold text-amber-400">{guide.price}</span>
+                                                <span className="text-[9px] text-zinc-500 font-mono uppercase">Unlock Forever</span>
+                                            </div>
+                                            <div className="w-10 h-10 rounded-xl border border-amber-500/20 bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:scale-105 transition-all text-amber-400">
+                                                →
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

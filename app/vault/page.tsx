@@ -26,8 +26,17 @@ export default async function VaultPage() {
         .eq('user_id', user.id)
         .order('created_at', { ascending: false });
 
+    // Fetch learning progress
+    const { data: contentProgressRaw } = await supabaseAdmin
+        .from('user_content_progress')
+        .select('*')
+        .eq('user_id', user.id)
+        .order('last_accessed', { ascending: false })
+        .limit(3);
+
     // Safely parse
     const toolRuns = rawToolRuns || [];
+    const contentProgress = contentProgressRaw || [];
 
     const formatMoney = (num: number) => {
         if (!num) return '$0';
@@ -95,6 +104,36 @@ export default async function VaultPage() {
                     {/* LEFT COLUMN: Assets & Tools */}
                     <div className="flex-1 space-y-8">
                         
+                        {/* CONTINUE LEARNING */}
+                        {contentProgress.length > 0 && (
+                            <section>
+                                <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                    <BookOpen className="w-5 h-5 text-emerald-500" />
+                                    Continue Learning
+                                </h2>
+                                <div className="space-y-3">
+                                    {contentProgress.map(progress => (
+                                        <Link key={progress.id} href={`/vault/curriculum/tracks/${progress.content_id.toLowerCase().replace(/\s+/g, '-')}`} className="block card p-4 border-emerald-500/20 bg-emerald-500/[0.02] hover:bg-emerald-500/[0.05] hover:border-emerald-500/40 transition-all group">
+                                            <div className="flex items-center justify-between mb-3">
+                                                <h3 className="text-white font-bold group-hover:text-emerald-400 transition-colors uppercase font-grotesk tracking-widest">{progress.content_id}</h3>
+                                                {progress.is_completed ? (
+                                                    <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest border border-emerald-500/30 px-2 py-0.5 rounded-full bg-emerald-500/10">Completed</span>
+                                                ) : (
+                                                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">{progress.progress_percentage}% Complete</span>
+                                                )}
+                                            </div>
+                                            <div className="w-full h-1.5 bg-black rounded-full overflow-hidden border border-white/5">
+                                                <div 
+                                                    className={`h-full transition-all duration-1000 ${progress.is_completed ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]' : 'bg-gradient-to-r from-emerald-600 to-cyan-500 object-cover'}`}
+                                                    style={{ width: `${Math.max(progress.progress_percentage, 5)}%` }}
+                                                />
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </section>
+                        )}
+
                         {/* UNLOCKED ASSETS */}
                         <section>
                             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">

@@ -31,12 +31,16 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
         <div>
             {/* Free Preview: First Lesson (only shown for first module of each track) */}
             {showPreview && (
-                <div className="mb-8 relative z-20">
+                <div className="mb-0 relative z-20">
                     <div className="flex items-center gap-2 mb-4 px-4 py-2 rounded-lg bg-emerald-500/5 border border-emerald-500/20 w-fit">
                         <BookOpen className="w-4 h-4 text-emerald-400" />
                         <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">Free Preview — Lesson 1</span>
                     </div>
-                    {previewContent}
+                    <div className="relative pb-24">
+                        {previewContent}
+                        {/* CSS Teaser Fade-out over the bottom of the preview content */}
+                        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/80 to-transparent z-10 pointer-events-none" />
+                    </div>
                 </div>
             )}
 

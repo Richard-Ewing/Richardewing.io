@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import GlossaryContent from './glossary-content';
+import { glossaryTerms } from './terms';
 
 export const metadata: Metadata = {
     title: 'Technology & AI Glossary — 400+ Definitions | Richard Ewing',
@@ -27,5 +28,28 @@ export const metadata: Metadata = {
 };
 
 export default function GlossaryPage() {
-    return <GlossaryContent />;
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "DefinedTermSet",
+        "@id": "https://www.richardewing.io/glossary",
+        "name": "Technology & AI Glossary",
+        "description": "400+ definitions covering technical debt, AI economics, SaaS metrics, and engineering management.",
+        "hasDefinedTerm": glossaryTerms.map(term => ({
+            "@type": "DefinedTerm",
+            "termCode": term.slug,
+            "name": term.title,
+            "description": term.definition,
+            "url": `https://www.richardewing.io/glossary/${term.slug}`
+        }))
+    };
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <GlossaryContent />
+        </>
+    );
 }

@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 };
 
 import { modules } from '@/lib/curriculum-data';
+import { ChevronDown, PlayCircle, Lock } from 'lucide-react';
 
 const trackMeta = [
     { id: 'cto', title: 'CTO / Engineering Leader', icon: '⚙️', color: 'cyan', subtitle: 'Master the economics of engineering organizations', productId: 'module_cto' },
@@ -31,17 +32,10 @@ const trackMeta = [
     { id: 'data-economics', title: 'Data & Analytics Economics', icon: '🗄️', color: 'amber', subtitle: 'Data warehouse costs, quality ROI, and ML pipeline economics', productId: 'module_data' },
     { id: 'engineering-leadership', title: 'Engineering Leadership', icon: '👥', color: 'purple', subtitle: 'CTO economics, headcount planning, and talent retention', productId: 'module_leadership' },
     { id: 'startup-economics', title: 'Startup Economics', icon: '🚀', color: 'cyan', subtitle: 'Runway, burn rate, MVP economics, and fundraising', productId: 'module_startup' },
-    { id: 'ai-operations', title: 'AI Operations & Governance', icon: '🤖', color: 'amber', subtitle: 'Model selection, prompt engineering ROI, and AI compliance', productId: 'single_module' },
-    { id: 'enterprise-architecture', title: 'Enterprise Architecture Economics', icon: '🏛️', color: 'cyan', subtitle: 'Bounded contexts, message buses, and systems design', productId: 'single_module' },
-    { id: 'ai-agent-economics', title: 'AI Agent & Automation Economics', icon: '🧩', color: 'purple', subtitle: 'Agentic cost structures, RAG pipelines, and LLM inference modeling', productId: 'single_module' },
-    { id: 'cloud-finops', title: 'Cloud FinOps & Infrastructure Economics', icon: '☁️', color: 'cyan', subtitle: 'FinOps maturity, reserved instances, and Kubernetes cost management', productId: 'single_module' },
-    { id: 'ai-career-transitions', title: 'AI Career Pivots & Transitions', icon: '🔄', color: 'amber', subtitle: 'Actionable blueprints for the highest-leverage 2026 technical disciplines', productId: 'single_module' }
 ];
 
-// Dynamically generate the syllabus directly from the premium Vault datastore
 const tracks = trackMeta.map(meta => {
     const trackModules = Object.entries(modules)
-        // Match the prefix, e.g. "cto/1-1"
         .filter(([key]) => key.startsWith(`${meta.id}/`))
         .map(([key, mod]) => ({
             name: `${mod.moduleId}: ${mod.title}`,
@@ -55,266 +49,165 @@ const tracks = trackMeta.map(meta => {
     return { ...meta, modules: trackModules };
 });
 
-const colorMap: Record<string, { border: string; bg: string; text: string; glow: string; dot: string }> = {
-    cyan: { border: 'border-cyan-500/30', bg: 'bg-cyan-500/5', text: 'text-cyan-400', glow: 'bg-cyan-500/10', dot: 'bg-cyan-400' },
-    purple: { border: 'border-purple-500/30', bg: 'bg-purple-500/5', text: 'text-purple-400', glow: 'bg-purple-500/10', dot: 'bg-purple-400' },
-    amber: { border: 'border-amber-500/30', bg: 'bg-amber-500/5', text: 'text-amber-400', glow: 'bg-amber-500/10', dot: 'bg-amber-400' },
+const colorMap: Record<string, { border: string; bg: string; text: string; glow: string; dot: string; fill: string }> = {
+    cyan: { border: 'border-cyan-500/30', fill: 'bg-cyan-500', bg: 'bg-cyan-500/5', text: 'text-cyan-400', glow: 'bg-cyan-500/10', dot: 'bg-cyan-400' },
+    purple: { border: 'border-purple-500/30', fill: 'bg-purple-500', bg: 'bg-purple-500/5', text: 'text-purple-400', glow: 'bg-purple-500/10', dot: 'bg-purple-400' },
+    amber: { border: 'border-amber-500/30', fill: 'bg-amber-500', bg: 'bg-amber-500/5', text: 'text-amber-400', glow: 'bg-amber-500/10', dot: 'bg-amber-400' },
 };
 
 export default function CurriculumPage() {
     return (
         <main className="pt-20">
-            <div className="page-container">
-                <div className="max-w-6xl w-full relative z-10 mx-auto">
-                    <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
-
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                        <span>Learn</span><span>/</span><span className="text-cyan-400 font-bold">Curriculum</span>
+            <div className="page-container relative">
+                {/* Visual Header */}
+                <div className="max-w-7xl relative mx-auto mb-20 text-center">
+                    <div className="inline-flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8">
+                        LMS Curriculum Database
                     </div>
-
-                    <div className="mb-12 border-b border-white/10 pb-12">
-                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
-                            Engineering Economics{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">
-                                Curriculum.
-                            </span>
-                        </h1>
-                        <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl">
-                            Self-paced learning tracks for engineering leaders, product managers, and investors.
-                            <br />
-                            <span className="text-white">
-                                Master the frameworks, tools, and metrics that separate gut-feel from data-driven technology leadership.
-                            </span>
-                        </p>
-
-                        <div className="flex flex-wrap items-center gap-4 mt-8">
-                            <a
-                                href="/api/buy/full_curriculum"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-lg text-white font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity shadow-lg"
-                            >
-                                Unlock All 60 Modules — $199/yr
-                            </a>
-                            <span className="text-zinc-600 text-sm">~$3.30/module · Cancel anytime</span>
-                        </div>
+                    <h1 className="text-5xl md:text-7xl font-grotesk font-bold text-white mb-6">
+                        The Master Data Engine for <br className="hidden md:block"/>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                            Engineering Leaders.
+                        </span>
+                    </h1>
+                    <p className="text-xl text-zinc-400 max-w-3xl mx-auto mb-10">
+                        Stop guessing about technical debt, AI strategy, and R&D capital efficiency. 
+                        Self-paced, high-fidelity curriculum tracks designed for CTOs, CPOs, and Investors.
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center gap-4">
+                        <a href="/api/buy/full_curriculum" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-zinc-200 transition-colors shadow-xl rounded-lg flex items-center gap-2">
+                            Unlock Complete Curriculum — $199/yr
+                        </a>
+                        <Link href="#library" className="px-8 py-4 rounded-lg border border-white/20 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/5 transition-colors">
+                            Browse Free Previews
+                        </Link>
                     </div>
+                </div>
 
-                    {/* Track Selection Header */}
-                    <div className="flex flex-wrap gap-4 mb-16">
+                {/* The Library (Course Grid) */}
+                <div id="library" className="max-w-6xl w-full relative z-10 mx-auto scroll-mt-32">
+                    
+                    {/* Track Quick Navigation */}
+                    <div className="flex flex-wrap gap-3 mb-12 border-b border-white/10 pb-8">
                         {tracks.map(track => {
                             const colors = colorMap[track.color];
                             return (
-                                <a
-                                    key={track.id}
-                                    href={`#${track.id}`}
-                                    className={`card px-6 py-4 ${colors.border} hover:${colors.bg} transition-all group`}
-                                >
-                                    <span className="text-2xl mr-3">{track.icon}</span>
-                                    <span className={`text-sm font-bold uppercase tracking-widest ${colors.text}`}>
-                                        {track.title}
-                                    </span>
+                                <a key={track.id} href={`#track-${track.id}`} className={`px-4 py-2 text-xs font-mono uppercase tracking-widest rounded-lg border ${colors.border} ${colors.bg} ${colors.text} hover:opacity-80 transition-opacity`}>
+                                    {track.icon} {track.title}
                                 </a>
                             );
                         })}
                     </div>
 
-                    {/* Tracks */}
-                    {tracks.map((track, ti) => {
-                        const colors = colorMap[track.color];
-                        
-                        return (
-                            <div key={track.id} id={track.id} className="mb-24">
-                                {ti === 0 && (
-                                    <div className="mb-8 flex items-center gap-4">
-                                        <div className="h-px bg-white/10 flex-1" />
-                                        <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/20">
-                                            Phase 1: Start Here — Free Primer
-                                        </span>
-                                        <div className="h-px bg-white/10 flex-1" />
-                                    </div>
-                                )}
-                                {ti === 1 && (
-                                    <div className="mb-8 flex items-center gap-4">
-                                        <div className="h-px bg-white/10 flex-1" />
-                                        <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest bg-cyan-500/10 px-4 py-1.5 rounded-full border border-cyan-500/20">
-                                            Phase 2: The Premium Vault
-                                        </span>
-                                        <div className="h-px bg-white/10 flex-1" />
-                                    </div>
-                                )}
-                                <div className={`relative rounded-2xl border ${colors.border} overflow-hidden`}>
-                                    {/* Track Header */}
-                                    <div className={`${colors.bg} px-8 py-8 border-b ${colors.border}`}>
-                                        <div className="flex items-center gap-4 mb-2">
-                                            <span className="text-4xl">{track.icon}</span>
+                    <div className="space-y-6">
+                        {tracks.map((track, ti) => {
+                            const colors = colorMap[track.color];
+                            const isFirst = ti === 0;
+                            const totalModules = track.modules.length;
+                            const totalLessons = track.modules.reduce((n, m) => n + m.items.length, 0);
+
+                            return (
+                                <details 
+                                    key={track.id} 
+                                    id={`track-${track.id}`} 
+                                    className={`group bg-zinc-950 border ${colors.border} rounded-2xl overflow-hidden scroll-mt-24`} 
+                                    open={isFirst}
+                                >
+                                    <summary className={`px-8 py-6 cursor-pointer hover:bg-white/[0.02] flex items-center justify-between gap-6 transition-colors select-none`}>
+                                        <div className="flex items-center gap-6">
+                                            <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl shadow-lg">
+                                                {track.icon}
+                                            </div>
                                             <div>
-                                                <h2 className="text-3xl font-grotesk font-bold text-white">
-                                                    {track.title}
-                                                </h2>
-                                                <p className="text-zinc-400 mt-1">{track.subtitle}</p>
+                                                <div className="flex items-center gap-3 mb-1">
+                                                    <h2 className="text-2xl font-grotesk font-bold text-white group-hover:text-cyan-400 transition-colors">
+                                                        {track.title}
+                                                    </h2>
+                                                    {track.id === 'cto' && (
+                                                        <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 uppercase">Free Primer</span>
+                                                    )}
+                                                </div>
+                                                <p className="text-zinc-500 text-sm">{track.subtitle}</p>
                                             </div>
                                         </div>
-                                        <div className="flex items-center gap-4 mt-4">
-                                            <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">
-                                                {track.modules.length} {track.modules.length === 1 ? 'module' : 'modules'}
-                                            </span>
-                                            <span className="text-xs text-zinc-600">•</span>
-                                            <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">
-                                                {track.modules.reduce((n, m) => n + m.items.length, 0)} lessons
-                                            </span>
-                                            <span className="text-xs text-zinc-600">•</span>
-                                            <span className={`text-xs font-mono uppercase tracking-widest ${colors.text}`}>
-                                                Self-Paced
-                                            </span>
-                                            {track.id === 'cto' && track.modules.length > 0 ? (
-                                                <span className="text-xs font-mono uppercase tracking-widest px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Free Preview Available</span>
-                                            ) : null}
-                                        </div>
-                                    </div>
-
-                                    {/* Modules */}
-                                    <div className="divide-y divide-white/5">
-                                        {track.modules.map((mod, mi) => (
-                                            <div key={mi} className="px-8 py-6 hover:bg-white/[0.02] transition-colors">
-                                                <div className="flex items-center gap-3 mb-4">
-                                                    <span className={`w-8 h-8 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center text-sm font-bold ${colors.text}`}>
-                                                        {mi + 1}
-                                                    </span>
-                                                    <h3 className="text-lg font-bold text-white font-grotesk">
-                                                        {mod.name}
-                                                    </h3>
-                                                </div>
-                                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 ml-11">
-                                                    {mod.items.map((item, ii) => {
-                                                        // If we provide an explicit href, the component MUST render as a Link to activate the Vault preview routing.
-                                                        const isStatic = !((item as any).href) && !(item as any).isTool && !(item as any).isExternal;
-                                                        const innerContent = (
-                                                            <>
-                                                                <span className={`w-1.5 h-1.5 rounded-full ${(item as any).isTool ? colors.dot : isStatic ? 'bg-zinc-700' : 'bg-zinc-600 group-hover:bg-zinc-400'} transition-colors`} />
-                                                                <span className={`text-sm ${
-                                                                    (item as any).isTool
-                                                                        ? `${colors.text} font-bold`
-                                                                        : isStatic
-                                                                        ? 'text-zinc-500' // Dim the static preview text slightly
-                                                                        : 'text-zinc-400 group-hover:text-white'
-                                                                } transition-colors`}>
-                                                                    {item.label}
-                                                                </span>
-                                                                {(item as any).isExternal && (
-                                                                    <span className="text-zinc-600 text-xs">↗</span>
-                                                                )}
-                                                            </>
-                                                        );
-
-                                                        const className = `group flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
-                                                            (item as any).isTool
-                                                                ? `${colors.bg} border ${colors.border} hover:border-opacity-100`
-                                                                : isStatic 
-                                                                ? 'pointer-events-none' 
-                                                                : 'hover:bg-white/5'
-                                                        }`;
-
-                                                        if (isStatic) {
-                                                            return <div key={ii} className={className}>{innerContent}</div>;
-                                                        }
-
-                                                        return (
-                                                            <Link
-                                                                key={ii}
-                                                                href={(item as any).href || '#'}
-                                                                target={(item as any).isExternal ? '_blank' : undefined}
-                                                                rel={(item as any).isExternal ? 'noopener noreferrer' : undefined}
-                                                                className={className}
-                                                            >
-                                                                {innerContent}
-                                                            </Link>
-                                                        );
-                                                    })}
-                                                </div>
+                                        
+                                        <div className="flex items-center gap-6">
+                                            <div className="hidden md:flex flex-col items-end text-right">
+                                                <span className={`text-[10px] font-mono uppercase tracking-widest ${colors.text}`}>
+                                                    {totalModules} Modules · {totalLessons} Lessons
+                                                </span>
+                                                <span className="text-zinc-600 text-xs">Self-paced track</span>
                                             </div>
-                                        ))}
-                                    </div>
+                                            <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-open:rotate-180 transition-transform">
+                                                <ChevronDown className="w-5 h-5 text-zinc-400" />
+                                            </div>
+                                        </div>
+                                    </summary>
 
-                                    {/* Track CTA */}
-                                    <div className={`${colors.bg} px-8 py-6 border-t ${colors.border}`}>
-                                        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                                    {/* Collapsible Course Content Grid */}
+                                    <div className="border-t border-white/5 bg-zinc-900/30 p-8">
+                                        
+                                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                            {track.modules.map((mod, mi) => (
+                                                <div key={mi} className={`rounded-xl border border-white/10 bg-black/40 p-6 flex flex-col hover:border-white/20 transition-all shadow-xl`}>
+                                                    <div className="flex items-start justify-between gap-4 mb-4">
+                                                        <div className="flex items-center gap-3">
+                                                            <div className={`w-10 h-10 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center text-lg font-bold ${colors.text}`}>
+                                                                {mi + 1}
+                                                            </div>
+                                                            <h3 className="text-lg font-bold text-white font-grotesk leading-tight max-w-[280px]">
+                                                                {mod.name.split(':')[1]?.trim() || mod.name}
+                                                            </h3>
+                                                        </div>
+                                                        {(track.id === 'cto' && mi === 0) ? (
+                                                            <span className="text-[9px] font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/10 px-2 flex items-center gap-1 rounded uppercase"><PlayCircle className="w-3 h-3"/> Free</span>
+                                                        ) : (
+                                                            <span className="text-[9px] font-mono text-zinc-500 border border-zinc-800 bg-zinc-900 px-2 flex items-center gap-1 rounded uppercase"><Lock className="w-3 h-3"/> Pro</span>
+                                                        )}
+                                                    </div>
+
+                                                    <div className="flex-1 space-y-2 mb-6 ml-13">
+                                                        {mod.items.map((item, ii) => {
+                                                            const isStatic = !(item as any).href;
+                                                            return (
+                                                                <div key={ii} className="flex items-center gap-3 group/item">
+                                                                    <div className={`w-1.5 h-1.5 rounded-full ${isStatic ? 'bg-zinc-800' : 'bg-zinc-600'} group-hover/item:bg-white`} />
+                                                                    <span className={`text-sm tracking-wide ${isStatic ? 'text-zinc-600' : 'text-zinc-400'}`}>{item.label}</span>
+                                                                </div>
+                                                            )
+                                                        })}
+                                                    </div>
+                                                    
+                                                    <Link 
+                                                        href={mod.items[0]?.href || '#'}
+                                                        className={`mt-auto w-full py-3 rounded-lg border ${colors.border} ${colors.bg} text-center text-xs font-bold font-mono tracking-widest ${colors.text} uppercase hover:brightness-125 transition-all`}
+                                                    >
+                                                        {(track.id === 'cto' && mi === 0) ? 'Start Free Preview' : 'Preview Syllabus'}
+                                                    </Link>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        {/* Purchase Bar for the Track */}
+                                        <div className="mt-8 rounded-xl bg-gradient-to-r from-white/5 to-transparent border border-white/10 p-6 flex flex-col sm:flex-row items-center justify-between gap-6">
                                             <div>
-                                                <p className={`text-sm font-bold ${colors.text}`}>
-                                                    Get the complete {track.title} Track — $29
-                                                </p>
-                                                <p className="text-xs text-zinc-500 mt-1">One-time payment · Lifetime access · All {track.modules.length} modules</p>
+                                                <h4 className="text-lg font-bold text-white font-grotesk mb-1">Get the complete {track.title} Track</h4>
+                                                <p className="text-zinc-500 text-sm">One-time payment. Lifetime access. Includes updates.</p>
                                             </div>
-                                            <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
-                                                <a
-                                                    href={`/api/buy/${(track as any).productId || 'single_module'}?moduleId=track_${track.id}`}
-                                                    className={`px-6 py-3 rounded-lg border flex-1 text-center md:flex-none ${colors.border} bg-white/5 text-white font-bold text-sm uppercase tracking-widest hover:${colors.bg} transition-all`}
-                                                >
-                                                    Buy Track — $29
-                                                </a>
-                                                <Link
-                                                    href="/advisory"
-                                                    className={`px-6 py-3 rounded-lg border flex-1 text-center md:flex-none ${colors.border} ${colors.text} font-bold text-sm uppercase tracking-widest hover:bg-white/5 transition-all`}
-                                                >
-                                                    Book Advisory
-                                                </Link>
-                                            </div>
+                                            <a 
+                                                href={`/api/buy/${track.productId}?moduleId=${track.id}`}
+                                                className={`px-8 py-3 rounded-lg ${colors.fill} text-white font-bold uppercase tracking-widest text-sm shadow-xl hover:opacity-90 transition-opacity whitespace-nowrap`}
+                                            >
+                                                Buy Track — $29
+                                            </a>
                                         </div>
+
                                     </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-
-                    {/* Pricing Tiers */}
-                    <div className="py-20 border-t border-white/10">
-                        <h2 className="text-3xl font-grotesk font-bold text-white mb-4 text-center">
-                            Choose Your Access Level.
-                        </h2>
-                        <p className="text-zinc-400 mb-12 max-w-xl mx-auto text-center">
-                            Start with a single module or unlock the complete library with certificate.
-                        </p>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                            {/* Tier 1: Single Module */}
-                            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex flex-col">
-                                <div className="text-xs text-zinc-500 uppercase tracking-widest font-mono mb-3">Starter</div>
-                                <div className="text-3xl font-bold text-white mb-1">$29</div>
-                                <div className="text-sm text-zinc-500 mb-6">One-time · Lifetime access · 1 module</div>
-                                <ul className="space-y-2 mb-6 flex-1">
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-emerald-400 mt-0.5">✓</span> Access to 1 complete module</li>
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-emerald-400 mt-0.5">✓</span> All lessons &amp; assessments</li>
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-emerald-400 mt-0.5">✓</span> Lifetime access</li>
-                                </ul>
-                                <a href="#tracks" className="block text-center py-3 rounded-lg border border-white/20 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/5 transition-all">
-                                    Browse Modules — $29
-                                </a>
-                            </div>
-
-
-
-                            {/* Tier 3: Full Curriculum */}
-                            <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-6 flex flex-col">
-                                <div className="text-xs text-cyan-400 uppercase tracking-widest font-mono mb-3">Complete</div>
-                                <div className="text-3xl font-bold text-white mb-1">$199<span className="text-lg text-zinc-500">/yr</span></div>
-                                <div className="text-sm text-zinc-500 mb-1">All 60 modules · 14 tracks</div>
-                                <div className="text-xs text-cyan-400 mb-6">~$3.30/module · Cancel anytime</div>
-                                <ul className="space-y-2 mb-6 flex-1">
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> All 60 modules, 14 tracks</li>
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> 5 diagnostic tool access</li>
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> Certificate of completion</li>
-                                    <li className="flex items-start gap-2 text-sm text-zinc-400"><span className="text-cyan-400 mt-0.5">✓</span> New modules as released</li>
-                                </ul>
-                                <a href="/api/buy/full_curriculum" className="block text-center py-3 rounded-lg border border-cyan-500/30 text-cyan-400 font-bold text-sm uppercase tracking-widest hover:bg-cyan-500/10 transition-all">
-                                    Unlock Everything — $199/yr
-                                </a>
-                            </div>
-                        </div>
-
-                        <p className="text-zinc-600 text-xs mt-6 text-center">
-                            All plans include access to free tools. Not sure? <Link href="/tools/pdi" className="text-cyan-400 hover:text-cyan-300 underline">Try the free PDI calculator</Link> first.
-                        </p>
+                                </details>
+                            );
+                        })}
                     </div>
+
                 </div>
             </div>
         </main>

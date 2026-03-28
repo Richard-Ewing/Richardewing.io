@@ -16,3 +16,15 @@ CREATE INDEX IF NOT EXISTS idx_user_tool_runs_user_id ON public.user_tool_runs(u
 -- Note: No Row Level Security (RLS) policies are active.
 -- Verification happens completely server-side via Clerk's auth() method
 -- executing through the Service Role Key.
+
+
+CREATE TABLE IF NOT EXISTS public.user_content_progress (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  content_type TEXT NOT NULL,
+  content_id TEXT NOT NULL,
+  progress_percentage INTEGER DEFAULT 0,
+  is_completed BOOLEAN DEFAULT false,
+  last_accessed TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL,
+  UNIQUE(user_id, content_id)
+);

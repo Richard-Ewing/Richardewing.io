@@ -1068,11 +1068,22 @@ export default function ComparisonsPage() {
                         </p>
                     </div>
 
-                    {/* Jump Links */}
-                    <div className="flex flex-wrap gap-2 mb-12 justify-center">
+                    {/* Grid of Comparisons */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                         {comparisons.map(c => (
-                            <a key={c.slug} href={`#${c.slug}`} className="text-[10px] font-mono px-3 py-1.5 rounded-lg border border-white/5 text-zinc-500 hover:text-cyan-400 hover:border-cyan-500/20 transition-all">
-                                {c.left.name} vs {c.right.name}
+                            <a key={c.slug} href={`#${c.slug}`} className="card p-6 border-white/10 hover:border-cyan-500/30 transition-all bg-black/40 flex flex-col relative overflow-hidden group">
+                                <div className={`absolute top-0 right-0 w-32 h-32 opacity-10 rounded-bl-full pointer-events-none transition-colors `} />
+                                <div className="flex items-center gap-3 mb-4">
+                                    <span className={`px-3 py-1 rounded-full border text-[9px] font-mono uppercase tracking-widest ${colorMap[c.left.color]}`}>{c.left.name}</span>
+                                    <span className="text-zinc-600 text-[10px]">vs</span>
+                                    <span className={`px-3 py-1 rounded-full border text-[9px] font-mono uppercase tracking-widest ${colorMap[c.right.color]}`}>{c.right.name}</span>
+                                </div>
+                                <h3 className="text-lg font-grotesk font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">{c.title}</h3>
+                                <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3 ext-balance flex-1">{c.description}</p>
+                                <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+                                    <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 group-hover:text-cyan-400 transition-colors">Read Full Analysis</span>
+                                    <span className="text-zinc-500 group-hover:text-cyan-400 transition-colors">↓</span>
+                                </div>
                             </a>
                         ))}
                     </div>

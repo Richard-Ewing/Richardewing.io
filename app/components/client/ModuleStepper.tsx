@@ -1,7 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { useAuth } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
 
 interface ModuleStepperProps {
     children: React.ReactNode;
@@ -11,8 +13,29 @@ interface ModuleStepperProps {
 
 export default function ModuleStepper({ children, nextHref, moduleTitle }: ModuleStepperProps) {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isCompleting, setIsCompleting] = useState(false);
+    const { userId } = useAuth();
+    const router = useRouter();
     const childArray = React.Children.toArray(children);
     const totalLessons = childArray.length;
+
+    useEffect(() => {
+        // Log progress when user loads the activeIndex
+        if (!userId) return;
+        const progress = Math.round(((activeIndex + 1) / totalLessons) * 100);
+        const isCompleted = activeIndex === totalLessons - 1;
+        
+        fetch('/api/progress', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                content_id: moduleTitle || 'unknown_module',
+                content_type: 'curriculum',
+                progress_percentage: progress,
+                is_completed: isCompleted
+            })
+        }).catch(err => console.debug('Failed to log progress', err));
+    }, [activeIndex, moduleTitle, totalLessons, userId]);
 
     const handleNext = () => {
         if (activeIndex < totalLessons - 1) {
@@ -25,6 +48,33 @@ export default function ModuleStepper({ children, nextHref, moduleTitle }: Modul
         if (activeIndex > 0) {
             setActiveIndex(activeIndex - 1);
             window.scrollTo({ top: 300, behavior: 'smooth' });
+        }
+    };
+
+    const handleComplete = async () => {
+        if (!userId) {
+            if (nextHref) router.push(nextHref);
+            return;
+        }
+        
+        setIsCompleting(true);
+        try {
+            await fetch('/api/progress', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    content_id: moduleTitle || 'unknown_module',
+                    content_type: 'curriculum',
+                    progress_percentage: 100,
+                    is_completed: true
+                })
+            });
+        } catch (err) {
+            console.debug('Failed to log completion', err);
+        } finally {
+            if (nextHref) {
+                router.push(nextHref);
+            }
         }
     };
 
@@ -67,16 +117,21 @@ export default function ModuleStepper({ children, nextHref, moduleTitle }: Modul
                     </button>
                 ) : (
                     nextHref ? (
-                        <a
-                            href={nextHref}
-                            className="flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-sm tracking-widest hover:opacity-90 transition-all shadow-lg shadow-emerald-500/20"
+                        <button
+                            onClick={handleComplete}
+                            disabled={isCompleting}
+                            className={`flex items-center gap-2 px-8 py-3 rounded-xl text-white font-bold text-sm tracking-widest transition-all shadow-lg ${isCompleting ? 'bg-emerald-600/50 cursor-wait' : 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:opacity-90 shadow-emerald-500/20'}`}
                         >
-                            Complete Module <CheckCircle2 className="w-4 h-4 ml-1" />
-                        </a>
+                            {isCompleting ? 'Completing...' : 'Mark as Complete & Continue'} <CheckCircle2 className="w-4 h-4 ml-1" />
+                        </button>
                     ) : (
-                        <div className="flex items-center gap-2 px-8 py-3 rounded-xl bg-white/5 border border-white/10 text-zinc-400 font-bold text-sm tracking-widest cursor-default">
-                            <CheckCircle2 className="w-4 h-4 text-emerald-500" /> Track Completed
-                        </div>
+                        <button 
+                            onClick={handleComplete}
+                            disabled={isCompleting}
+                            className={`flex items-center gap-2 px-8 py-3 rounded-xl border border-white/10 text-white font-bold text-sm tracking-widest transition-all ${isCompleting ? 'bg-white/5 cursor-wait' : 'bg-white/10 hover:bg-white/20'}`}
+                        >
+                            {isCompleting ? 'Saving...' : 'Mark Track as Completed'} <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                        </button>
                     )
                 )}
             </div>
