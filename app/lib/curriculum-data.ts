@@ -20,7 +20,7 @@ export function d(metric: string, description: string, benchmark: string): Lesso
     return { metric, description, benchmark };
 }
 
-const modules: Record<string, CurriculumModule> = {};
+export const modules: Record<string, CurriculumModule> = {};
 
 // ═══════════════════ TRACK 1-4 ═══════════════════
 populateTracks1To4(modules);

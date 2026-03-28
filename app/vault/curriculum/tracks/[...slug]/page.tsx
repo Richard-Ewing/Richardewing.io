@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getModule, getAllModuleSlugs, type CurriculumModule } from '@/lib/curriculum-data';
-import ModuleCompleteButton from '@/app/components/ModuleCompleteButton';
 
 // generateStaticParams removed to allow dynamic auth() rendering at request time
 
@@ -61,6 +60,7 @@ function ModuleCard({ mod, hasAccess }: { mod: CurriculumModule, hasAccess: bool
                         trackName={mod.trackName} 
                         totalLessons={mod.lessons.length}
                         hasAccess={hasAccess}
+                        nextHref={mod.nextHref}
                     >
                         {mod.lessons.map((lesson, i) => (
                             <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden">
@@ -89,8 +89,6 @@ function ModuleCard({ mod, hasAccess }: { mod: CurriculumModule, hasAccess: bool
                             </div>
                         ))}
                     </PayGate>
-
-                    <ModuleCompleteButton nextHref={mod.nextHref} moduleTitle={`${mod.moduleId}: ${mod.title}`} />
                 </div>
             </div>
         </main>

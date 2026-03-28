@@ -18,65 +18,15 @@ export const metadata: Metadata = {
     },
 };
 
-const tracks = [
+import { modules } from '@/lib/curriculum-data';
+
+const trackMeta = [
     {
         id: 'cto',
         title: 'CTO / Engineering Leader',
         icon: '⚙️',
         color: 'cyan',
         subtitle: 'Master the economics of engineering organizations',
-        modules: [
-            {
-                name: 'Foundation: Technical Debt Economics',
-                items: [
-                    { label: 'Technical Debt', href: '/glossary/technical-debt' },
-                    { label: 'Technical Insolvency Date', href: '/glossary/technical-insolvency-date' },
-                    { label: 'Innovation Tax', href: '/glossary/innovation-tax' },
-                    { label: 'Product Debt Index (PDI)', href: '/glossary/product-debt-index' },
-                    { label: '→ Tool: PDI Calculator', href: '/tools/pdi', isTool: true },
-                ],
-            },
-            {
-                name: 'Engineering Metrics That Matter',
-                items: [
-                    { label: 'DORA Metrics', href: '/glossary/dora-metrics' },
-                    { label: 'Engineering Productivity', href: '/glossary/engineering-productivity' },
-                    { label: 'APER (Revenue Per Engineer)', href: '/glossary/aper-metric' },
-                    { label: 'Engineering Velocity', href: '/glossary/engineering-velocity' },
-                    { label: '→ Tool: APER Calculator', href: '/tools/aper', isTool: true },
-                ],
-            },
-            {
-                name: 'Architecture & Operations',
-                items: [
-                    { label: 'Cloud Architecture', href: '/glossary/cloud-architecture' },
-                    { label: 'Monolith to Microservices', href: '/glossary/monolith-to-microservices' },
-                    { label: 'CI/CD', href: '/glossary/cicd' },
-                    { label: 'Observability', href: '/glossary/observability' },
-                    { label: 'Site Reliability Engineering', href: '/glossary/site-reliability-engineering' },
-                ],
-            },
-            {
-                name: 'AI Economics',
-                items: [
-                    { label: 'Cost of Predictivity', href: '/glossary/cost-of-predictivity' },
-                    { label: 'AI Unit Economics (AUEB)', href: '/glossary/aueb-framework' },
-                    { label: 'AI Hallucination', href: '/glossary/ai-hallucination' },
-                    { label: 'AI Governance', href: '/glossary/ai-governance' },
-                    { label: '→ Tool: AUEB Calculator', href: '/tools/aueb', isTool: true },
-                ],
-            },
-            {
-                name: 'Leadership & Governance',
-                items: [
-                    { label: 'Fractional CTO', href: '/glossary/fractional-cto' },
-                    { label: 'Technology Governance', href: '/glossary/technology-governance' },
-                    { label: 'Build vs. Buy', href: '/glossary/build-vs-buy' },
-                    { label: 'Team Topologies', href: '/glossary/team-topologies' },
-                    { label: 'Change Management', href: '/glossary/change-management' },
-                ],
-            },
-        ],
     },
     {
         id: 'pm',
@@ -84,48 +34,6 @@ const tracks = [
         icon: '📊',
         color: 'purple',
         subtitle: 'Think like a Product Economist, not a feature factory',
-        modules: [
-            {
-                name: 'Foundation: Product Economics',
-                items: [
-                    { label: 'Product Economist', href: '/glossary/product-economist' },
-                    { label: 'Unit Economics', href: '/glossary/unit-economics' },
-                    { label: 'Feature Bloat Calculus', href: '/glossary/feature-bloat-calculus' },
-                    { label: 'Kill Switch Protocol', href: '/glossary/kill-switch-protocol' },
-                    { label: '→ Article: 3 Financial Metrics for PMs', href: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/', isExternal: true },
-                ],
-            },
-            {
-                name: 'Prioritization Frameworks',
-                items: [
-                    { label: 'RICE Framework', href: '/glossary/rice-framework' },
-                    { label: 'Kano Model', href: '/glossary/kano-model' },
-                    { label: 'Jobs To Be Done (JTBD)', href: '/glossary/jobs-to-be-done' },
-                    { label: 'North Star Metric', href: '/glossary/north-star-metric' },
-                    { label: 'Product-Market Fit', href: '/glossary/product-market-fit' },
-                ],
-            },
-            {
-                name: 'Product Operations',
-                items: [
-                    { label: 'Product Roadmap', href: '/glossary/product-roadmap' },
-                    { label: 'OKRs', href: '/glossary/okrs' },
-                    { label: 'A/B Testing', href: '/glossary/a-b-testing' },
-                    { label: 'Product Analytics', href: '/glossary/product-analytics' },
-                    { label: 'Product Discovery', href: '/glossary/product-discovery' },
-                ],
-            },
-            {
-                name: 'AI Product Leadership',
-                items: [
-                    { label: 'AI Unit Economics', href: '/glossary/aueb-framework' },
-                    { label: 'Prompt Engineering', href: '/glossary/prompt-engineering' },
-                    { label: 'RAG Architecture', href: '/glossary/rag' },
-                    { label: 'Vibe Coding', href: '/glossary/vibe-coding' },
-                    { label: '→ Article: The AI Product Business Test', href: 'https://builtin.com/articles/ai-product-business-test', isExternal: true },
-                ],
-            },
-        ],
     },
     {
         id: 'investor',
@@ -133,48 +41,6 @@ const tracks = [
         icon: '💰',
         color: 'amber',
         subtitle: 'Technical due diligence for portfolio value creation',
-        modules: [
-            {
-                name: 'Foundation: SaaS Metrics',
-                items: [
-                    { label: 'Annual Recurring Revenue (ARR)', href: '/glossary/arr' },
-                    { label: 'Net Revenue Retention', href: '/glossary/net-revenue-retention' },
-                    { label: 'Rule of 40', href: '/glossary/rule-of-40' },
-                    { label: 'SaaS Valuation', href: '/glossary/saas-valuation' },
-                    { label: '→ Tool: EV-SE Scenario Engine', href: '/tools/ev-se', isTool: true },
-                ],
-            },
-            {
-                name: 'Technical Due Diligence',
-                items: [
-                    { label: 'Technical Due Diligence', href: '/glossary/technical-due-diligence' },
-                    { label: 'Product Debt Index', href: '/glossary/product-debt-index' },
-                    { label: 'Technical Insolvency Date', href: '/glossary/technical-insolvency-date' },
-                    { label: 'R&D Capital Audit', href: '/glossary/r-and-d-capital-audit' },
-                    { label: '→ Tool: PDI Calculator', href: '/tools/pdi', isTool: true },
-                ],
-            },
-            {
-                name: 'AI Risk Assessment',
-                items: [
-                    { label: 'Cost of Predictivity', href: '/glossary/cost-of-predictivity' },
-                    { label: 'AI Governance', href: '/glossary/ai-governance' },
-                    { label: 'AI Hallucination', href: '/glossary/ai-hallucination' },
-                    { label: 'Vendor Lock-In', href: '/glossary/vendor-lock-in' },
-                    { label: '→ Tool: AUEB Calculator', href: '/tools/aueb', isTool: true },
-                ],
-            },
-            {
-                name: 'Financial Engineering',
-                items: [
-                    { label: 'Burn Rate & Runway', href: '/glossary/burn-rate' },
-                    { label: 'CAP Table', href: '/glossary/cap-table' },
-                    { label: 'Gross Margin', href: '/glossary/gross-margin' },
-                    { label: 'LTV / CAC', href: '/glossary/ltv-lifetime-value' },
-                    { label: 'R&D Capitalization (ASC 350-40)', href: '/glossary/r-and-d-capitalization' },
-                ],
-            },
-        ],
     },
     {
         id: 'ai-enterprise',
@@ -182,58 +48,24 @@ const tracks = [
         icon: '🤖',
         color: 'purple',
         subtitle: 'Master the economics of AI operations and scalable enterprise architecture',
-        modules: [
-            {
-                name: 'AI Operations & Governance',
-                items: [
-                    { label: 'AI Model Selection Economics', href: '/curriculum/tracks/ai-operations/11-1' },
-                    { label: 'Prompt Engineering ROI', href: '/curriculum/tracks/ai-operations/11-2' },
-                    { label: 'AI Testing & Eval Economics', href: '/curriculum/tracks/ai-operations/11-3' },
-                    { label: 'Hallucination Cost Modeling', href: '/curriculum/tracks/ai-operations/11-4' },
-                    { label: 'RAG Architecture Economics', href: '/curriculum/tracks/ai-operations/11-5' }
-                ],
-            },
-            {
-                name: 'AI Agent & Automation Economics',
-                items: [
-                    { label: 'Agentic Cost Structures', href: '/curriculum/tracks/ai-agent-economics/13-1' },
-                    { label: 'Agent Build vs Buy', href: '/curriculum/tracks/ai-agent-economics/13-2' },
-                    { label: 'RAG Pipeline Optimization', href: '/curriculum/tracks/ai-agent-economics/13-3' },
-                    { label: 'LLM Inference Cost Modeling', href: '/curriculum/tracks/ai-agent-economics/13-4' },
-                    { label: '→ Tool: AUEB Calculator', href: '/tools/aueb', isTool: true }
-                ],
-            },
-            {
-                name: 'Enterprise Architecture',
-                items: [
-                    { label: 'Architecture Review Board', href: '/curriculum/tracks/enterprise-architecture/12-1' },
-                    { label: 'API Gateway Economics', href: '/curriculum/tracks/enterprise-architecture/12-2' },
-                    { label: 'Event-Driven Architecture', href: '/curriculum/tracks/enterprise-architecture/12-3' },
-                    { label: 'Legacy Modernization ROI', href: '/curriculum/tracks/enterprise-architecture/12-4' }
-                ],
-            },
-
-            {
-                name: 'AI Career Pivots & Transitions',
-                items: [
-                    { label: 'AI Product Management', href: '/curriculum/tracks/ai-career-transitions/15-1' },
-                    { label: 'DevOps to MLOps', href: '/curriculum/tracks/ai-career-transitions/15-2' },
-                    { label: 'SWE to AI Engineer', href: '/curriculum/tracks/ai-career-transitions/15-4' },
-                    { label: 'VP Eng to VP AI', href: '/curriculum/tracks/ai-career-transitions/15-8' }
-                ],
-            },
-            {
-                name: 'Cloud FinOps',
-                items: [
-                    { label: 'FinOps Fundamentals', href: '/curriculum/tracks/cloud-finops/14-1' },
-                    { label: 'Cloud Cost Allocation', href: '/curriculum/tracks/cloud-finops/14-2' },
-                    { label: 'Kubernetes Cost Management', href: '/curriculum/tracks/cloud-finops/14-4' },
-                    { label: 'Serverless vs Containers', href: '/curriculum/tracks/cloud-finops/14-5' }
-                ],
-            }
-        ],
     },
 ];
+
+// Dynamically generate the syllabus directly from the premium Vault datastore
+const tracks = trackMeta.map(meta => {
+    const trackModules = Object.entries(modules)
+        // Match the prefix, e.g. "cto/1-1"
+        .filter(([key]) => key.startsWith(`${meta.id}/`))
+        .map(([key, mod]) => ({
+            name: `${mod.moduleId}: ${mod.title}`,
+            items: mod.lessons.map(lesson => ({
+                label: lesson.title,
+                isStatic: true // Enforce no free clickable routing
+            }))
+        }));
+    
+    return { ...meta, modules: trackModules };
+});
 
 const colorMap: Record<string, { border: string; bg: string; text: string; glow: string; dot: string }> = {
     cyan: { border: 'border-cyan-500/30', bg: 'bg-cyan-500/5', text: 'text-cyan-400', glow: 'bg-cyan-500/10', dot: 'bg-cyan-400' },
@@ -380,7 +212,7 @@ export default function CurriculumPage() {
                                                         return (
                                                             <Link
                                                                 key={ii}
-                                                                href={item.href}
+                                                                href={(item as any).href || '#'}
                                                                 target={(item as any).isExternal ? '_blank' : undefined}
                                                                 rel={(item as any).isExternal ? 'noopener noreferrer' : undefined}
                                                                 className={className}
