@@ -707,34 +707,135 @@ Migrate from Heroku to AWS"
                         </ScrollReveal>
                     )}
 
-                    {/* Q-PEP ROADMAP */}
+                    {/* Q-PEP ROADMAP - GANTT CHART */}
                     {results.qpep_roadmap && results.qpep_roadmap.length > 0 && (
                         <ScrollReveal delay={225}>
                             <h3 className="text-xl font-bold text-white mb-4 mt-8 flex items-center gap-2">
                                 <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                                 Quarterly Product Execution Plan (Q-PEP)
                             </h3>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                                {results.qpep_roadmap.map((plan, i) => (
-                                    <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 relative overflow-hidden group hover:border-cyan-500/50 transition-colors">
-                                        <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-cyan-500/10 transition-colors"></div>
-                                        <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-3 border-b border-white/5 pb-2">
-                                            Month {plan.month}
+                            <div className="bg-zinc-900 border border-white/10 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 via-orange-500 to-cyan-500"></div>
+                                <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6 border-b border-white/5 pb-4">Execution Gantt Chart (90-Day Burn Down)</h4>
+                                
+                                <div className="space-y-6 md:space-y-8">
+                                    {results.qpep_roadmap.map((plan, i) => (
+                                        <div key={i} className="relative md:pl-6 pl-4">
+                                            {/* Timeline dot */}
+                                            <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)] z-10"></div>
+                                            
+                                            <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+                                                <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-400 shrink-0 inline-block w-fit">
+                                                    Month {plan.month}
+                                                </div>
+                                                <div className="font-bold text-white text-base leading-tight md:leading-normal">{plan.focus}</div>
+                                            </div>
+                                            
+                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                                {plan.action_items.map((action: string, j: number) => {
+                                                    // Visual length variations to simulate Gantt chart task durations
+                                                    const widths = ["w-full", "w-[90%]", "w-[95%]"];
+                                                    const width = widths[j % widths.length];
+                                                    // Progressive colors down the months
+                                                    const colorClasses = [
+                                                        "from-red-500/20 to-orange-500/20 border-orange-500/50 text-orange-200",
+                                                        "from-orange-500/20 to-yellow-500/20 border-yellow-500/50 text-yellow-200",
+                                                        "from-blue-500/20 to-cyan-500/20 border-cyan-500/50 text-cyan-200"
+                                                    ];
+                                                    const color = colorClasses[i % colorClasses.length];
+                                                    
+                                                    return (
+                                                        <div key={j} className={`${width} bg-gradient-to-r ${color} border-l-2 p-3 rounded-r-md min-h-[70px] flex items-center transition-all hover:brightness-125 hover:translate-x-1 duration-300 shadow-sm`}>
+                                                            <span className="text-xs leading-relaxed">{action}</span>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
                                         </div>
-                                        <h4 className="font-bold text-white mb-4 text-sm">{plan.focus}</h4>
-                                        <ul className="space-y-3">
-                                            {plan.action_items.map((action, j) => (
-                                                <li key={j} className="flex items-start gap-2 text-xs text-zinc-400 leading-relaxed">
-                                                    <span className="text-cyan-500 mt-1 border border-cyan-500/30 rounded text-[8px] px-1 font-mono shrink-0">EXEC</span>
-                                                    <span>{action}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                ))}
+                                    ))}
+                                    {/* Vertical Timeline line */}
+                                    <div className="absolute left-[0.15rem] md:left-[-0.95rem] top-4 bottom-4 w-px bg-white/10 z-0 hidden md:block"></div>
+                                </div>
                             </div>
                         </ScrollReveal>
                     )}
+
+                    {/* ADVISORY PROTOCOLS - Practical execution advice */}
+                    <ScrollReveal delay={250}>
+                        <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5 bg-black/20">
+                            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                                Prescriptive Intervention Protocols
+                            </h3>
+                            <p className="text-zinc-400 text-sm mb-8">Based on your audit metrics, this is the exact operational surgery required immediately.</p>
+
+                            <div className="space-y-4">
+                                {/* Rule 1: High Waste */}
+                                {results.financials.wastePerSprint > 50000 && (
+                                    <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div className="bg-red-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-red-500/30">
+                                            <span className="text-red-400 font-bold text-xl">$</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Hemorrhage Protocol (Severe Capital Waste)</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are burning over {formatMoney(50000)} per sprint in non-yielding maintenance. You must freeze all net-new feature development for the next 2 sprints (the &quot;Win Locker&quot; pattern).</p>
+                                            <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-red-500">
+                                                <span className="text-red-400">ACTION:</span> Establish a strict &quot;Debt Tax&quot; for 90 days. For every 1 sprint point of net-new feature growth, engineers must retire 0.5 points of structural maintenance debt. 
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* Rule 2: High Velocity of Debt */}
+                                {results.debtVelocity > 5 && (
+                                    <div className="bg-orange-500/10 border border-orange-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div className="bg-orange-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-orange-500/30">
+                                            <span className="text-orange-400 font-bold text-xl">⚡</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Velocity Quarantine (High Incident Volume)</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are generating {results.debtVelocity} active maintenance/debt tickets per sprint cycle. This indicates a systemic failure in your CI/CD pipelines and architectural boundaries.</p>
+                                            <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-orange-500">
+                                                <span className="text-orange-400">ACTION:</span> Implement strict State-Hashing during commits. Deny all PR merges that do not include 100% test coverage on the affected code quadrant.
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* Rule 3: Low Growth / Maintenance Dominates */}
+                                {results.metrics.growth < 30 && (
+                                    <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div className="bg-cyan-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/30">
+                                            <span className="text-cyan-400 font-bold text-xl">↳</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Growth Starvation Protocol</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">With only {results.metrics.growth}% of capacity allocated to Net-New ARR, your specialized engineering org is functioning solely as expensive IT support.</p>
+                                            <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-cyan-500">
+                                                <span className="text-cyan-400">ACTION:</span> Re-allocate capacity using the algorithmic 70/20/10 rule. If any upcoming sprint plan exceeds 20% maintenance allocation, the system should automatically lock the board requiring executive override.
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* Baseline Advice if numbers are okay */}
+                                {results.financials.wastePerSprint <= 50000 && results.debtVelocity <= 5 && results.metrics.growth >= 30 && (
+                                    <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div className="bg-emerald-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-emerald-500/30">
+                                            <span className="text-emerald-400 font-bold text-xl">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Stability &amp; Optimization Protocol</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Your current operational metrics are largely stable and within acceptable bounds. However, entropy never sleeps in software systems.</p>
+                                            <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-emerald-500">
+                                                <span className="text-emerald-400">ACTION:</span> Shift engineering focus upstream towards optimizing the Cost of Goods Sold (COGS) at your infrastructure layer. Audit cloud compute arbitrage and consolidate legacy managed services.
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </ScrollReveal>
 
                     {/* Action Footer */}
                     <ScrollReveal delay={250}>
