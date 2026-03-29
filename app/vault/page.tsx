@@ -3,6 +3,7 @@ import { currentUser } from '@clerk/nextjs/server';
 import Link from 'next/link';
 import { BookOpen, ShieldCheck, ChevronRight, Lock, Download, Zap, Database, TrendingUp, Presentation, Clock, Activity } from 'lucide-react';
 import { supabaseAdmin } from '@/lib/supabase';
+import VaultProgressFlywheel from '@/components/VaultProgressFlywheel';
 import progressStyles from '../styles/progress.module.css';
 
 export const metadata = {
@@ -43,7 +44,7 @@ export default async function VaultPage() {
 
     // Safely parse
     const toolRuns = rawToolRuns || [];
-    const contentProgress = contentProgressRaw?.filter(p => p.content_type === 'curriculum') || [];
+    const contentProgress = contentProgressRaw?.filter(p => p.content_type === 'module') || [];
     
     // Global Data Moat Aggregation
     let totalAuebMargin = 0; let auebCount = 0;
@@ -65,13 +66,11 @@ export default async function VaultPage() {
     const globalPdiWaste = pdiCount > 0 ? (totalPdiWaste / pdiCount) : 1250000;
     
     // Progress Flywheel Calculation
-    const completedCount = contentProgress.filter(p => p.is_completed).length;
+    const completedCount = contentProgress.length;
     // Dynamically retrieve total modules count to stay updated as tracks expand
     const curriculumData = await import('@/lib/curriculum-data');
     const totalModulesCount = curriculumData.getAllModuleSlugs().length;
-    const completionPercentage = typeof Math !== 'undefined' ? Math.min(100, Math.round((completedCount / totalModulesCount) * 100)) : 0;
-    const circumference = 2 * Math.PI * 45; // r=45
-    const strokeDashoffset = circumference - (completionPercentage / 100) * circumference;
+    const completedModuleIds = contentProgress.map(p => p.content_id);
 
     const formatMoney = (num: number) => {
         if (!num) return '$0';
@@ -140,35 +139,11 @@ export default async function VaultPage() {
                     <div className="flex-1 space-y-8">
 
                         {/* PROGRESS FLYWHEEL SECTION */}
-                        <section className="card p-6 border-violet-500/20 bg-violet-500/[0.02] relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
-                            <div className="relative z-10 flex flex-col sm:flex-row items-center gap-8">
-                                <div className="relative w-32 h-32 flex-shrink-0">
-                                    <svg className="w-full h-full transform -rotate-90">
-                                        <circle cx="64" cy="64" r="45" fill="none" stroke="currentColor" strokeWidth="8" className="text-white/5" />
-                                        <circle 
-                                            cx="64" cy="64" r="45" fill="none" stroke="currentColor" strokeWidth="8" 
-                                            className="text-violet-500 transition-all duration-1000 ease-out"
-                                            strokeDasharray={circumference}
-                                            strokeDashoffset={strokeDashoffset}
-                                            strokeLinecap="round"
-                                        />
-                                    </svg>
-                                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                        <span className="text-2xl font-grotesk font-bold text-white">{completionPercentage}%</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h2 className="text-2xl font-bold text-white mb-2">Architectural Mastery</h2>
-                                    <p className="text-sm text-zinc-400 mb-4">
-                                        You have mastered <strong className="text-violet-400">{completedCount}</strong> out of <strong className="text-white">{totalModulesCount}</strong> core modules across {Math.ceil(totalModulesCount / 15)} disciplines. The curriculum continually adapts to macroeconomic trends.
-                                    </p>
-                                    <Link href="/vault/curriculum/tracks" className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-sm text-white transition-all">
-                                        Explore All {Math.ceil(totalModulesCount / 15)} Tracks <ChevronRight className="w-4 h-4" />
-                                    </Link>
-                                </div>
-                            </div>
-                        </section>
+                        <VaultProgressFlywheel
+                            serverCompletedCount={completedCount}
+                            totalModulesCount={totalModulesCount}
+                            serverCompletedModuleIds={completedModuleIds}
+                        />
                         
                         {/* CONTINUE LEARNING */}
                         {contentProgress.length > 0 && (
