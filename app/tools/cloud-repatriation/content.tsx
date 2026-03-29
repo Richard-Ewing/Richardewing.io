@@ -86,6 +86,45 @@ export default function CloudContent() {
             const migrationCapEx = 250000; 
             const breakevenMonths = Math.max(1, Math.ceil(migrationCapEx / monthlySavings));
 
+            const generatedRoadmap = [
+                {
+                    month: 1,
+                    focus: "Hardware & Networking",
+                    actionItems: [
+                        "Size bare-metal baseline (Equinix/Deft)",
+                        "Provision BGP & cross-connects",
+                        "Establish private IPsec to AWS VPC"
+                    ]
+                },
+                {
+                    month: 2,
+                    focus: "State Repatriation",
+                    actionItems: [
+                        "Implement dual-write on primary arrays",
+                        "Migrate read-replicas off RDS/Aurora",
+                        "Cutover primary DBs to NVMe clusters"
+                    ]
+                },
+                {
+                    month: 3,
+                    focus: "Compute & Ingress Shift",
+                    actionItems: [
+                        "Deploy stateless API nodes (K8s/Nomad)",
+                        "Route 10% of ingress via Cloudflare/Route53",
+                        "Verify telemetry & latency baselines"
+                    ]
+                },
+                {
+                    month: 4,
+                    focus: "Full Cloud Exit",
+                    actionItems: [
+                        "Ramp remaining 90% traffic to Private DC",
+                        "Spin down legacy EC2/ECS clusters",
+                        "Terminate Managed AWS EDP/Contracts"
+                    ]
+                }
+            ];
+
             setResults({
                 awsTotal: totalBill,
                 bmTotal: bareMetalTotal,
@@ -94,7 +133,10 @@ export default function CloudContent() {
                 awsStats: { compute: awsCompute, db: awsDb, egress: awsEgress },
                 bmStats: { compute: bmCompute, db: bmDb, egress: bmEgress, devops: extraDevops },
                 evCreation,
-                breakevenMonths
+                breakevenMonths,
+                roadmap: generatedRoadmap,
+                heavyEgress: egressP >= 30,
+                heavyDb: dbP >= 40
             });
 
         } catch (error: any) {
@@ -299,6 +341,111 @@ export default function CloudContent() {
                                     <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-3">Data Transfer (Egress Cartel)</div>
                                     <div className="flex justify-between text-xs font-mono mb-1"><span className="text-red-400">AWS ($0.09/GB)</span><span className="text-emerald-400">Unmetered 10G</span></div>
                                     <div className="flex justify-between font-bold mb-4 tracking-tighter"><span className="text-red-400 text-2xl">{formatMoney(results.awsStats.egress)}</span><span className="text-emerald-400 text-2xl">{formatMoney(results.bmStats.egress)}</span></div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+
+                        {/* CLOUD EXIT GANTT CHART */}
+                        <ScrollReveal delay={150}>
+                            <h3 className="text-white font-bold font-grotesk text-xl mb-4 text-center mt-10 border-t border-white/10 pt-10 flex items-center justify-center gap-2">
+                                <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+                                120-Day Workload Repatriation Timeline
+                            </h3>
+                            <div className="bg-zinc-900 border border-white/10 rounded-2xl p-6 md:p-8 relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-rose-500 to-amber-500"></div>
+                                <div className="space-y-6 md:space-y-8">
+                                    {results.roadmap.map((plan: any, i: number) => (
+                                        <div key={i} className="relative md:pl-6 pl-4">
+                                            {/* Timeline dot */}
+                                            <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.5)] z-10"></div>
+                                            
+                                            <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+                                                <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-400 shrink-0 inline-block w-fit">
+                                                    Month {plan.month}
+                                                </div>
+                                                <div className="font-bold text-white text-base">{plan.focus}</div>
+                                            </div>
+                                            
+                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                                {plan.actionItems.map((action: string, j: number) => {
+                                                    const widths = ["w-full", "w-[90%]", "w-[95%]"];
+                                                    const width = widths[j % widths.length];
+                                                    const colorClasses = [
+                                                        "from-red-500/20 to-rose-500/20 border-rose-500/50 text-rose-200",
+                                                        "from-orange-500/20 to-amber-500/20 border-amber-500/50 text-amber-200",
+                                                        "from-zinc-500/20 to-zinc-600/20 border-zinc-500/50 text-zinc-300"
+                                                    ];
+                                                    const color = colorClasses[i % colorClasses.length];
+                                                    
+                                                    return (
+                                                        <div key={j} className={`${width} bg-gradient-to-r ${color} border-l-2 p-3 rounded-r-md min-h-[70px] flex items-center transition-all hover:translate-x-1 duration-300 shadow-sm`}>
+                                                            <span className="text-xs leading-relaxed">{action}</span>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                    ))}
+                                    <div className="absolute left-[0.15rem] md:left-[-0.95rem] top-4 bottom-4 w-px bg-white/10 z-0 hidden md:block"></div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+
+                        {/* PRESCRIPTIVE INFRASTRUCTURE PLAYBOOKS */}
+                        <ScrollReveal delay={200}>
+                            <div className="capsule-container rounded-2xl p-6 sm:p-8 mt-10 border border-white/5 bg-black/20">
+                                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                    Prescriptive Repatriation Tactics
+                                </h3>
+                                <p className="text-zinc-400 text-sm mb-8">Based on your AWS/GCP invoice breakdown, implement these architectural shifts to realize your ${formatMoney(results.annualSavings)}/yr savings.</p>
+
+                                <div className="space-y-4">
+                                    {/* General Compute Migration */}
+                                    <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div className="bg-cyan-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/30">
+                                            <span className="text-cyan-400 font-bold text-xl">🖥️</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-2">Docker Lift & Shift (EC2/ECS)</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Stateless compute is the easiest target. AWS EC2 operates at an ~85% gross margin. Moving containers from ECS to Nomad or K3s on dual-EPYC bare metal is a solved 1-week problem.</p>
+                                            <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-cyan-500">
+                                                <span className="text-cyan-400">ACTION:</span> Lease 2 high-density chassis from Deft/Equinix. Install Proxmox or bare-metal Kubernetes. Adjust CI/CD to deploy images to new IP block simultaneously.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* DB Protocol */}
+                                    {results.heavyDb && (
+                                        <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+                                            <div className="bg-amber-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/30">
+                                                <span className="text-amber-400 font-bold text-xl">🗄️</span>
+                                            </div>
+                                            <div>
+                                                <h4 className="text-white font-bold mb-2">Managed RDS Abstraction Tax</h4>
+                                                <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are paying a premium for AWS Aurora/RDS. Databases are simply blocks on disks—an NVMe bare metal cluster will yield 15x IOPS for 1/8th the price.</p>
+                                                <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-amber-500">
+                                                    <span className="text-amber-400">ACTION:</span> Set up logical replication from AWS RDS to your private dedicated Postgres NVMe cluster. Once synced, pause writes on AWS, failover DNS, and sever the cloud DB connection.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Egress Protocol */}
+                                    {results.heavyEgress && (
+                                        <div className="bg-rose-500/10 border border-rose-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+                                            <div className="bg-rose-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/30">
+                                                <span className="text-rose-400 font-bold text-xl">🌐</span>
+                                            </div>
+                                            <div>
+                                                <h4 className="text-white font-bold mb-2">The Egress Cartel Trap</h4>
+                                                <p className="text-zinc-400 text-sm leading-relaxed mb-4">AWS charges $0.09/GB for data egress. This is an artificial monopoly markup. 10G unmetered drops in a private rack cost less than $1,000/mo statically.</p>
+                                                <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-rose-500">
+                                                    <span className="text-rose-400">ACTION:</span> Move all high-bandwidth egress paths (video, streaming, heavy API JSON payloads) behind Cloudflare to nullify AWS egress, then route directly from your bare metal unmetered pipelines.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </ScrollReveal>

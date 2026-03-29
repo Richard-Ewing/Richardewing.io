@@ -235,6 +235,36 @@ export default function DueDiligenceTool() {
                 }
             ];
 
+            const generatedQpepRoadmap = [
+                {
+                    month: 1,
+                    focus: "Triage & Containment",
+                    actionItems: [
+                        redFlags.length > 0 ? "Execute Emergency Red Flag Remediation" : "Establish baseline observability metrics",
+                        infraWaste > 0 ? "Freeze non-essential cloud provisioning immediately" : "Lock down IAM and RBAC roles across environments",
+                        "Audit top 20% of engineering salary allocation vs output"
+                    ]
+                },
+                {
+                    month: 2,
+                    focus: "Structural Restructuring",
+                    actionItems: [
+                        monolith ? "Begin bounded context extraction (Strangler Fig)" : "Optimize distributed service transaction latencies",
+                        hasCompliance ? "Automate compliance evidence collection" : "Perform rigorous gap analysis for SOC2 readiness",
+                        heavyAiDependency ? "Air-gap sensitive tenant data from public LLM APIs" : "Audit core proprietary IP boundaries & licenses"
+                    ]
+                },
+                {
+                    month: 3,
+                    focus: "Valuation Accretion",
+                    actionItems: [
+                        "Enforce strict 70/20/10 (Feature/Debt/R&D) capacity allocation",
+                        engEfficiency < 50 ? "Execute targeted restructuring for low-leverage headcount" : "Scale high-leverage engineering squads",
+                        "Present clean Technical Diligence Posture to Board"
+                    ]
+                }
+            ];
+
             const payload: DueDiligenceResults = {
                 riskScore: finalRiskScore,
                 valuationImpairment,
@@ -244,7 +274,7 @@ export default function DueDiligenceTool() {
                 engineeringEfficiency: engEfficiency,
                 redFlags,
                 threatVectors: threatVectors.sort((a,b) => b.severity - a.severity),
-                qpepRoadmap: {}
+                qpepRoadmap: generatedQpepRoadmap
             };
 
             setResults(payload);
@@ -565,6 +595,121 @@ export default function DueDiligenceTool() {
                                             ))}
                                         </div>
                                     </BentoCard>
+                                </motion.div>
+
+                                {/* GANTT CHART ROADMAP */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+                                >
+                                    <div className="bg-zinc-900 border border-white/10 rounded-2xl p-6 md:p-8 mt-8 relative overflow-hidden">
+                                        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 via-orange-500 to-cyan-500"></div>
+                                        <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6 border-b border-white/5 pb-4">Post-Acquisition Integration Gantt Chart</h4>
+                                        
+                                        <div className="space-y-6 md:space-y-8">
+                                            {results.qpepRoadmap.map((plan: any, i: number) => (
+                                                <div key={i} className="relative md:pl-6 pl-4">
+                                                    {/* Timeline dot */}
+                                                    <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)] z-10"></div>
+                                                    
+                                                    <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+                                                        <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-400 shrink-0 inline-block w-fit">
+                                                            Month {plan.month}
+                                                        </div>
+                                                        <div className="font-bold text-white text-base leading-tight md:leading-normal">{plan.focus}</div>
+                                                    </div>
+                                                    
+                                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                                        {plan.actionItems.map((action: string, j: number) => {
+                                                            const widths = ["w-full", "w-[90%]", "w-[95%]"];
+                                                            const width = widths[j % widths.length];
+                                                            const colorClasses = [
+                                                                "from-red-500/20 to-orange-500/20 border-orange-500/50 text-orange-200",
+                                                                "from-orange-500/20 to-yellow-500/20 border-yellow-500/50 text-yellow-200",
+                                                                "from-blue-500/20 to-cyan-500/20 border-cyan-500/50 text-cyan-200"
+                                                            ];
+                                                            const color = colorClasses[i % colorClasses.length];
+                                                            
+                                                            return (
+                                                                <div key={j} className={`${width} bg-gradient-to-r ${color} border-l-2 p-3 rounded-r-md min-h-[70px] flex items-center transition-all hover:brightness-125 hover:translate-x-1 duration-300 shadow-sm`}>
+                                                                    <span className="text-xs leading-relaxed">{action}</span>
+                                                                </div>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            <div className="absolute left-[0.15rem] md:left-[-0.95rem] top-4 bottom-4 w-px bg-white/10 z-0 hidden md:block"></div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+
+                                {/* POST-ACQUISITION INTERVENTION PROTOCOLS */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                                >
+                                    <div className="capsule-container rounded-2xl p-6 sm:p-8 mt-8 border border-white/5 bg-black/20">
+                                        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                                            Prescriptive Integration Protocols
+                                        </h3>
+                                        <p className="text-zinc-400 text-sm mb-8">Based on the Diligence Risk Score, these are the immediate operational mandates for the acquiring Operating Partners.</p>
+
+                                        <div className="space-y-4">
+                                            {/* Rule 1: High Impairment/Risk */}
+                                            {results.riskScore >= 60 && (
+                                                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+                                                    <div className="bg-red-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-red-500/30">
+                                                        <span className="text-red-400 font-bold text-xl">!</span>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="text-white font-bold mb-2">Hostile Restructuring Mandate</h4>
+                                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">Risk score {results.riskScore}/100 exceeds safe thresholds. Valuation is significantly impaired due to systemic tech debt and compliance risks.</p>
+                                                        <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-red-500">
+                                                            <span className="text-red-400">ACTION:</span> Institute an immediate freeze on unapproved feature development. Enforce mandatory architecture audit. Retain 3rd-party distressed-asset turnaround specialists.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                            {/* Rule 2: Low Efficiency */}
+                                            {results.engineeringEfficiency < 60 && (
+                                                <div className="bg-orange-500/10 border border-orange-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+                                                    <div className="bg-orange-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-orange-500/30">
+                                                        <span className="text-orange-400 font-bold text-xl">👥</span>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="text-white font-bold mb-2">Workforce Rightsizing Protocol</h4>
+                                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">ARR per head is deeply misaligned with SaaS benchmarks. Engineering is heavily bloated.</p>
+                                                        <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-orange-500">
+                                                            <span className="text-orange-400">ACTION:</span> Implement aggressive up-or-out performance tracking. Replace lowest 20% of contributors with high-leverage AI-assisted engineers.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                            {/* Rule 3: Cloud Waste */}
+                                            {results.annualInfraWaste > 100000 && (
+                                                <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+                                                    <div className="bg-yellow-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-yellow-500/30">
+                                                        <span className="text-yellow-400 font-bold text-xl">$</span>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="text-white font-bold mb-2">EBITDA Leakage Stoppage</h4>
+                                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">Cloud infrastructure is burning excessive capital that should be dropping to the bottom line.</p>
+                                                        <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-yellow-500">
+                                                            <span className="text-yellow-400">ACTION:</span> Mandate immediate AWS/GCP instance rightsizing. Transition to reserved instances post-audit. Halt all new cloud provisioning without VP-level approval.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
                                 </motion.div>
 
                                 </div>
