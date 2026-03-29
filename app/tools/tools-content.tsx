@@ -169,6 +169,19 @@ export default function ToolsContent() {
               </ShineBorder>
             </a>
 
+            <Link href="/tools/career-pathing" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#0ea5e9", "#0284c7", "#0369a1"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-sky-600/20 flex items-center justify-center text-sky-400 font-bold">12</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-sky-400">Career Architecture Funnel</h3>
+                    <p className="text-gray-400 text-sm mb-3">A diagnostic engine mapping your specific career bottleneck directly to the Curriculum Vault.</p>
+                    <span className="text-sky-400 text-sm">Run Diagnostic →</span>
+                  </div>
+                </div>
+              </ShineBorder>
+            </Link>
+
           </div>
         </section>
 
