@@ -16,14 +16,14 @@ export const PRODUCTS: Record<string, Product> = {
         description: 'Instant, lifetime access to all 400 framework modules, 5 strategic enterprise tools, and continuously updating intelligence.',
         price: 99900, // $999.00
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/test_pass_url', // Replace with real link
+        paymentLink: 'https://richardewing.io/checkout-pending', // Pending real Stripe Link
     },
     team_license_pass: {
         name: 'Enterprise Team License (10 Seats)',
         description: 'B2B Corporate access. Instantly provision up to 10 seats of the All-Access Vault Pass for your engineering leadership and PM layer.',
         price: 499900, // $4,999.00
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/test_team_url', // Replace with real link
+        paymentLink: 'https://richardewing.io/checkout-pending', // Pending real Stripe Link
     },
     // --- CURRICULUM ---
     single_module: {

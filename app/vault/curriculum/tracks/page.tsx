@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import TrackAccordion from '@/app/components/TrackAccordion';
-import CurriculumTabs from '@/app/components/client/CurriculumTabs';
+import CurriculumDirectoryGrid from '@/app/components/client/CurriculumDirectoryGrid';
 import { tracks } from '@/app/lib/curriculum-tracks-ui';
 import { auth } from '@clerk/nextjs/server';
 import { supabaseAdmin } from '@/lib/supabase';
@@ -65,7 +65,7 @@ export default async function CurriculumTracksPage() {
                         </div>
                     </div>
 
-                    <CurriculumTabs>
+                    <CurriculumDirectoryGrid>
                         {/* 1. Foundations */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
@@ -163,7 +163,7 @@ export default async function CurriculumTracksPage() {
                                 ))}
                             </div>
                         </div>
-                    </CurriculumTabs>
+                    </CurriculumDirectoryGrid>
 
                     {/* CTA */}
                     <div className="mt-16 text-center">
