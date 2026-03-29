@@ -30,36 +30,44 @@ const COLLEGES: CategoryCard[] = [
         stats: 'Tracks 5-14'
     },
     { 
+        id: 'megatrends', 
+        label: 'Hyper-Niche Meta-Trends', 
+        description: 'Neural-Symbolic AI, Synthetic Data Economics, Quantum Threat Modeling, and Bio-IT Integrations.', 
+        colorClasses: 'from-sky-950/40 to-indigo-900/20 border-sky-500/30 text-sky-400 group-hover:border-sky-400/60 group-hover:shadow-[0_0_30px_rgba(14,165,233,0.15)] ring-sky-500/30',
+        icon: <Network className="w-6 h-6 mb-4" />,
+        stats: 'Tracks 23-30'
+    },
+    { 
         id: 'industry', 
         label: 'Industry-Specific Markets', 
-        description: 'Targeted economic strategies for SaaS, FinTech, Healthcare, DeepTech, and Government sectors.', 
+        description: 'Targeted economic strategies for B2B SaaS, FinTech, Healthcare, E-Commerce, and DefenseTech sectors.', 
         colorClasses: 'from-pink-950/40 to-rose-900/20 border-pink-500/30 text-pink-400 group-hover:border-pink-400/60 group-hover:shadow-[0_0_30px_rgba(236,72,153,0.15)] ring-pink-500/30',
         icon: <Building2 className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 18-30'
+        stats: 'Tracks 51-55'
     },
     { 
         id: 'operations', 
-        label: 'Scaling & Growth Operations', 
-        description: 'Mastering hyper-growth, operational turnarounds, M&A integration, and compliance economics.', 
+        label: 'Core Software Operations', 
+        description: 'Mastering classic UI/UX design economics, agile delivery math, and full-stack software development.', 
         colorClasses: 'from-amber-950/40 to-orange-900/20 border-amber-500/30 text-amber-400 group-hover:border-amber-400/60 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.15)] ring-amber-500/30',
         icon: <Briefcase className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 31-35'
+        stats: 'Tracks 18-22, 31-35'
     },
     { 
         id: 'leadership', 
-        label: 'Leadership & Management', 
-        description: 'Board-level communication, managing up, the 90-day CTO/CPO plan, and executive promotion trajectories.', 
+        label: 'Career Trajectory & Leadership', 
+        description: 'Breaking into tech, stepping up to Staff/Principal, and crossing the chasm into CTO/VPE Management.', 
         colorClasses: 'from-orange-950/40 to-red-900/20 border-orange-500/30 text-orange-400 group-hover:border-orange-400/60 group-hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] ring-orange-500/30',
         icon: <GraduationCap className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 36-40'
+        stats: 'Tracks 36-41, 56-57'
     },
     { 
         id: 'corporate', 
-        label: 'Corporate & Enterprise IT', 
-        description: 'Managing massive vendor implementations, legacy enterprise migrations, and old-school infrastructure debt.', 
+        label: 'Corporate & Legacy IT', 
+        description: 'Managing massive vendor implementations, legacy ERP migrations, and old-school infrastructure debt.', 
         colorClasses: 'from-zinc-800/40 to-zinc-900/20 border-zinc-500/30 text-zinc-300 group-hover:border-zinc-400/60 group-hover:shadow-[0_0_30px_rgba(161,161,170,0.15)] ring-zinc-500/30',
         icon: <Network className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 41-50'
+        stats: 'Tracks 42-50'
     },
     { 
         id: 'playbooks', 

@@ -881,5 +881,103 @@ export const tracks = [
             title: `Module ${i + 1}: ${['The Fractional CTO Value Prop', 'W2 vs 1099 Blended Economics', 'Boutique Consultancy Margins', 'Hiring for Spikes vs Sustained Velocity', 'The Cost of Onboarding Contractors', 'Intellectual Property Risks in Gig Work', 'Retainer vs Hourly SOWs', 'The Bench Cost Eradication', 'Transitioning Open Source to Enterprise', 'The Solopreneur Engineer Strategy'][i]}`,
             href: `/vault/curriculum/tracks/fractional-engineering/50-${i + 1}`
         }))
+    },
+    {
+        title: "B2B SaaS Economics",
+        subtitle: "Track 51 — Industry Vertical",
+        description: "The unique financial dynamics of high-margin B2B software architectures: NRR mapping, Multi-tenant DB scaling, and PLG funnels.",
+        modules: Array.from({ length: 15 }, (_, i) => ({
+            id: `51-${i + 1}`,
+            name: `51.${i + 1} SaaS Value ${['Multi-tenant Storage Costs', 'Net Revenue Retention Physics', 'The Rule of 40 Metrics', 'PLG Conversion Overheads', 'Enterprise Feature Flag Pipelines', 'SaaS Migration Costs', 'White-labeling Math', 'The Cost of Churn', 'API Monetization Rate Limits', 'Custom Domain Provisioning', 'Billing Engine Edge Cases', 'Customer Success Overheads', 'Freemium vs Sandbox Costs', 'CAC Payback Periods', 'SOC2 Architecture Tax'][i]}`,
+            topics: "Stripe, RLS, DynamoDB, Retention",
+            href: `/vault/curriculum/tracks/b2b-saas-economics/51-${i + 1}`
+        })),
+        color: 'sky',
+        icon: '☁️',
+        glossaryTerms: ['arr', 'cac', 'net-revenue-retention', 'burn-multiple']
+    },
+    {
+        title: "FinTech & Payments Economics",
+        subtitle: "Track 52 — Industry Vertical",
+        description: "Reconciling the ledger. Integrating payment rails, ACH batch math, PCI-DSS blast radiuses, and the cost of financial consensus.",
+        modules: Array.from({ length: 15 }, (_, i) => ({
+            id: `52-${i + 1}`,
+            name: `52.${i + 1} Payment Math ${['Double-Entry Database Design', 'Stripe Integration Margins', 'ACH Return Risk Metrics', 'PCI-DSS Compliance Costs', 'Fraud Detection Models', 'Plaid & Open Banking Tolls', 'KYC/AML Latency Overheads', 'Cross-border FX Fees', 'Ledger Reconciliation Time', 'Cryptographic Transaction Signatures', 'Core Banking System Wrappers', 'PCI Tokenization Strategies', 'Regulatory Reporting Costs', 'Chargeback Economics', 'Idempotency Key Architecture'][i]}`,
+            topics: "Stripe, Plaid, Kafka, Postgres",
+            href: `/vault/curriculum/tracks/fintech-economics/52-${i + 1}`
+        })),
+        color: 'emerald',
+        icon: '💵',
+        glossaryTerms: ['pci-dss', 'idempotency-key']
+    },
+    {
+        title: "HealthTech & Bio-IT Operations",
+        subtitle: "Track 53 — Industry Vertical",
+        description: "Scaling software inside highly regulated ecosystems. HIPAA blast radiuses, Epic/Cerner API fees, and PHI isolation patterns.",
+        modules: Array.from({ length: 15 }, (_, i) => ({
+            id: `53-${i + 1}`,
+            name: `53.${i + 1} HealthTech Math ${['HIPAA Liability Quantification', 'FHIR API Integration', 'PHI Data Isolation Patterns', 'Epic App Orchard Economics', 'Telehealth Media Costs', 'SOC2 vs HITRUST', 'Interoperability Taxes', 'Clinical Trial Data Overheads', 'Electronic Health Record (EHR) Sync', 'FDA Medical Device Software (SaMD)', 'De-identification Protocols', 'BAA Vendor Lock-in', 'Patient Identity Portals', 'Bioinformatics Storage Scale', 'HL7 Messaging Latency'][i]}`,
+            topics: "HL7, FHIR, HITRUST",
+            href: `/vault/curriculum/tracks/healthtech-economics/53-${i + 1}`
+        })),
+        color: 'teal',
+        icon: '🏥',
+        glossaryTerms: ['phi', 'hipaa', 'fhir']
+    },
+    {
+        title: "GovTech & Defense Architecture",
+        subtitle: "Track 54 — Industry Vertical",
+        description: "The economics of selling software to sovereign entities. IL4/IL5 clearances, FedRAMP authorizations, and zero-trust air-gaps.",
+        modules: Array.from({ length: 15 }, (_, i) => ({
+            id: `54-${i + 1}`,
+            name: `54.${i + 1} DefenseTech ${['FedRAMP Authorization ROI', 'GovCloud Premium Costs', 'Air-Gapped Deployments', 'DoD IL4/IL5 Impact', 'ITAR Data Segregation', 'Clearance Timelines', 'NIST 800-171 Compliance', 'SBIR/STTR Grant Economics', 'Procurement Cycle Valuations', 'Zero Trust Architecture', 'Supply Chain Risk (SCRM)', 'FIPS 140 Cryptography', 'Defense Contractor Margin', 'Public Sector APIs', 'ATO (Authority to Operate) Friction'][i]}`,
+            topics: "FedRAMP, IL5, GovCloud, Zero Trust",
+            href: `/vault/curriculum/tracks/govtech-economics/54-${i + 1}`
+        })),
+        color: 'zinc',
+        icon: '🏛️',
+        glossaryTerms: ['fedramp', 'itar', 'ato']
+    },
+    {
+        title: "Logistics & E-Commerce Tech",
+        subtitle: "Track 55 — Industry Vertical",
+        description: "The physical-to-digital translation engine. Supply chain APIs, webhook reliability, inventory sharding, and edge optimization.",
+        modules: Array.from({ length: 15 }, (_, i) => ({
+            id: `55-${i + 1}`,
+            name: `55.${i + 1} Supply Chain IT ${['Inventory Database Sharding', 'Shopify App Store Margins', 'Webhook Reliability Engineering', 'Last-Mile Routing Economics', 'Warehouse Robotics Interfacing', 'CDN Edge Caching Costs', 'Cart Abandonment Physics', 'Headless Commerce Architecture', 'API Request Pagination', 'Reverse Logistics Logic', 'ERP Order Reconciliation', 'Traffic Spikes & Black Friday', 'Cross-border Taxes (VAT)', 'Dropshipping Data Sync', 'Fraud Scraping Physics'][i]}`,
+            topics: "Shopify, Vercel Edge, Prisma",
+            href: `/vault/curriculum/tracks/logistics-ecommerce/55-${i + 1}`
+        })),
+        color: 'orange',
+        icon: '📦',
+        glossaryTerms: ['headless-commerce', 'event-sourcing']
+    },
+    {
+        title: "Breaking Into Executive Tech",
+        subtitle: "Track 56 — Early Career Economics",
+        description: "The economics of hiring from the other side of the desk. Navigating AI screening, the ROI of bootcamps, and escaping the 'Junior Phase'.",
+        modules: Array.from({ length: 15 }, (_, i) => ({
+            id: `56-${i + 1}`,
+            name: `56.${i + 1} Breaking In ${['The ATS AI Resume Wall', 'Degree vs Bootcamp ROI', 'The Cost of Interview Fatigue', 'Open Source Revenue Potential', 'LeetCode Economics', 'Networking as an Asset Class', 'The First 90 Days ROI', 'Salary Negotiation Math', 'Contract-to-Hire Physics', 'The \"Entry Level\" Paradox', 'Avoiding Stagnation Roles', 'Reading the Equity Package', 'Remote vs Onsite Leverage', 'Side Project Value Vectors', 'Building a Niche Monopoly'][i]}`,
+            topics: "Career Architecture, Leverage",
+            href: `/vault/curriculum/tracks/breaking-into-tech/56-${i + 1}`
+        })),
+        color: 'rose',
+        icon: '🏅',
+        glossaryTerms: ['ats', 'roi']
+    },
+    {
+        title: "Junior to Senior Fast-Track",
+        subtitle: "Track 57 — Mid Career Acceleration",
+        description: "How to stop taking tickets and start generating business value. Taking architectural ownership and mastering technical storytelling.",
+        modules: Array.from({ length: 15 }, (_, i) => ({
+            id: `57-${i + 1}`,
+            name: `57.${i + 1} Senior Trajectory ${['Moving Beyond Jira Tickets', 'The Economics of Debugging', 'PR Merger Velocity', 'Incident Triage Leadership', 'Mentoring Junior ICs', 'Writing High-ROI Documentation', 'Understanding the P&L', 'Architectural Decision Ownership', 'Tech Debt Prioritization', 'Eliminating \"It Works on My Machine\"', 'Cross-functional Empathy', 'System Design Defensibility', 'The Cost of Complacency', 'Communicating with PMs', 'The 10x Engineer Fallacy'][i]}`,
+            topics: "Career Progressions, Technical Debt",
+            href: `/vault/curriculum/tracks/junior-to-senior/57-${i + 1}`
+        })),
+        color: 'fuchsia',
+        icon: '🚀',
+        glossaryTerms: ['engineering-velocity', 'technical-debt']
     }
 ];
