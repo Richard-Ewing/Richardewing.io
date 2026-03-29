@@ -17,7 +17,16 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
 
     useEffect(() => {
         const updateProgress = () => {
-             const localProgress = JSON.parse(localStorage.getItem('vault_progress') || '[]');
+             let localProgress: string[] = [];
+             try {
+                 const stored = localStorage.getItem('vault_progress');
+                 if (stored) {
+                     const parsed = JSON.parse(stored);
+                     if (Array.isArray(parsed)) localProgress = parsed;
+                 }
+             } catch (e) {
+                 console.error('Failed to parse vault_progress', e);
+             }
              // Merge local progress with server progress to ensure instant UI reactivity while fetching
              const merged = Array.from(new Set([...serverCompletedModuleIds, ...localProgress]));
              setCompletedModules(merged);
