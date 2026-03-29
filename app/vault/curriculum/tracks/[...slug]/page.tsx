@@ -21,6 +21,7 @@ import PayGate from '@/app/components/PayGate';
 
 import ProgressCompleteButton from '@/app/components/ProgressCompleteButton';
 import ModuleStepper from '@/app/components/client/ModuleStepper';
+import ToolEmbed from '@/app/components/client/ToolEmbed';
 
 function ModuleCard({ mod, hasAccess, showPreview, aiContent }: { mod: CurriculumModule, hasAccess: boolean, showPreview: boolean, aiContent?: any }) {
     return (
@@ -70,11 +71,23 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent }: { mod: Curriculu
                     >
                         {aiContent && typeof aiContent === 'object' ? (
                             <ModuleStepper parsedContent={aiContent}>
+                                {mod.embeddedTool && (
+                                    <div className="border border-cyan-500/20 bg-black/40 rounded-3xl p-6 lg:p-12 mb-8 relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-400 border-b border-l border-cyan-500/20 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
+                                        <ToolEmbed toolId={mod.embeddedTool} />
+                                    </div>
+                                )}
                                 <ProgressCompleteButton moduleId={mod.moduleId} nextHref={mod.nextHref} />
                             </ModuleStepper>
                         ) : aiContent ? (
                             <>
                                 <div className="prose prose-invert max-w-none ai-content" dangerouslySetInnerHTML={{ __html: aiContent as string }} />
+                                {mod.embeddedTool && (
+                                    <div className="border border-cyan-500/20 bg-black/40 rounded-3xl p-6 lg:p-12 mt-12 mb-8 relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-400 border-b border-l border-cyan-500/20 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
+                                        <ToolEmbed toolId={mod.embeddedTool} />
+                                    </div>
+                                )}
                                 <ProgressCompleteButton moduleId={mod.moduleId} nextHref={mod.nextHref} />
                             </>
                         ) : (
@@ -105,6 +118,12 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent }: { mod: Curriculu
                                         </div>
                                     </div>
                                 ))}
+                                {mod.embeddedTool && (
+                                    <div className="border border-cyan-500/20 bg-black/40 rounded-3xl p-6 lg:p-12 mb-8 relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-400 border-b border-l border-cyan-500/20 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
+                                        <ToolEmbed toolId={mod.embeddedTool} />
+                                    </div>
+                                )}
                                 <ProgressCompleteButton moduleId={mod.moduleId} nextHref={mod.nextHref} />
                             </>
                         )}

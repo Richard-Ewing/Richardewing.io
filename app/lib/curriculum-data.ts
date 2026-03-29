@@ -9,10 +9,11 @@ export interface CurriculumModule {
     moduleId: string; title: string; description: string; trackName: string;
     takeaways: string[]; lessons: Lesson[]; nextHref?: string;
     productId?: string; bundleId?: string;
+    embeddedTool?: string;
 }
 
-export function m(id: string, title: string, desc: string, track: string, takeaways: string[], lessons: Lesson[], next?: string): CurriculumModule {
-    return { moduleId: id, title, description: desc, trackName: track, takeaways, lessons, nextHref: next };
+export function m(id: string, title: string, desc: string, track: string, takeaways: string[], lessons: Lesson[], next?: string, embeddedTool?: string): CurriculumModule {
+    return { moduleId: id, title, description: desc, trackName: track, takeaways, lessons, nextHref: next, embeddedTool };
 }
 export function l(title: string, content: string, details: LessonDetail[], exercise: string): Lesson {
     return { title, content, details, exercise };
@@ -391,7 +392,19 @@ tracks.forEach(track => {
 });
 
 export function getModule(slug: string): CurriculumModule | undefined {
-    return modules[slug];
+    let mod = modules[slug];
+    
+    // Dynamically inject tools into specific tracks for interactive learning
+    if (mod) {
+        if (mod.moduleId === '14-12') mod.embeddedTool = 'cloud-repatriation';
+        if (mod.moduleId === '9-14') mod.embeddedTool = 'due-diligence';
+        if (mod.moduleId === '10-6' || mod.moduleId === '5-15') mod.embeddedTool = 'pdi';
+        if (mod.moduleId === '11-1') mod.embeddedTool = 'aueb';
+        if (mod.moduleId === '6-1' || mod.moduleId === '10-4') mod.embeddedTool = 'aper';
+        if (mod.moduleId === '5-10') mod.embeddedTool = 'ev-se';
+    }
+    
+    return mod;
 }
 
 export function getAllModuleSlugs(): string[] {
