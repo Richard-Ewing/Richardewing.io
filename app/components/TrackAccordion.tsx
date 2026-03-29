@@ -115,16 +115,18 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-black/10 rounded-xl p-6 border border-white/5">
-                        <div>
-                            <h3 className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest mb-3">Related Glossary</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {track.glossaryTerms.map((t: string) => (
-                                    <Link key={t} href={`/glossary/${t}`} className="px-2 py-1 rounded-md bg-white/5 text-xs text-zinc-400 hover:text-white transition-colors border border-white/5 hover:border-white/20">
-                                        {t.replace(/-/g, ' ')}
-                                    </Link>
-                                ))}
+                        {track.glossaryTerms && track.glossaryTerms.length > 0 && (
+                            <div>
+                                <h3 className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest mb-3">Related Glossary</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {track.glossaryTerms.map((t: string) => (
+                                        <Link key={t} href={`/glossary/${t}`} className="px-2 py-1 rounded-md bg-white/5 text-xs text-zinc-400 hover:text-white transition-colors border border-white/5 hover:border-white/20">
+                                            {t.replace(/-/g, ' ')}
+                                        </Link>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
                         {track.tools && track.tools.length > 0 && (
                             <div>
                                 <h3 className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest mb-3">Tools & Assets</h3>
