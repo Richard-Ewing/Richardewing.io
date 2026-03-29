@@ -1,0 +1,133 @@
+<div class="max-w-7xl mx-auto px-6 py-12 bg-zinc-950 text-white font-sans">
+
+    <h1 class="text-5xl font-extrabold text-gradient-to-r from-cyan-400 to-emerald-400 mb-6 tracking-tight">
+        2.7 AI Build vs Buy Decisions
+    </h1>
+    <p class="text-zinc-400 text-lg leading-relaxed mb-10 border-l-4 border-cyan-500 pl-4">
+        This module delivers an executive-level analysis dissecting the strategic imperatives behind AI build vs. buy decisions. We deconstruct the mechanics of API integration versus custom model development, evaluate open-source versus proprietary solutions, and provide a rigorous Total Cost of Ownership (TCO) framework for self-hosted deployments. Master operational frameworks, conduct precise TCO teardowns, and strategize board-level implementation for optimal financial and technical outcomes.
+    </p>
+
+    <div class="bg-zinc-900 border border-zinc-700 p-8 rounded-xl shadow-2xl mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6 border-b border-zinc-700 pb-4">Key Takeaways</h2>
+        <ul class="space-y-4 text-lg text-zinc-300">
+            <li class="flex items-start">
+                <span class="text-cyan-400 mr-3 text-xl">&raquo;</span>
+                <p><strong>Master the Mechanics of API vs. Custom Model:</strong> Deeply understand the latency, data sovereignty, scalability, and IP implications inherent in each architectural choice to drive competitive advantage.</p>
+            </li>
+            <li class="flex items-start">
+                <span class="text-cyan-400 mr-3 text-xl">&raquo;</span>
+                <p><strong>Optimize Tokens Per Second (TPS) and Reduce GPU Scarcity:</strong> Implement advanced inference optimization, batching strategies, and hardware allocation models to maximize throughput and mitigate the critical constraint of GPU availability.</p>
+            </li>
+            <li class="flex items-start">
+                <span class="text-cyan-400 mr-3 text-xl">&raquo;</span>
+                <p><strong>Align Fine-Tuning Capabilities with Board-Level Financial Goals:</strong> Translate the strategic value of custom model training and adaptation into measurable financial returns, demonstrating direct impact on EBITDA and enterprise valuation.</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Part 1: Lesson 1 -->
+    <div class="mb-12">
+        <h2 class="text-4xl font-bold text-emerald-400 mb-6 tracking-tight">
+            Part 1: Lesson 1: The Physics of AI Build vs. Buy Decisions
+        </h2>
+        <p class="text-zinc-400 leading-relaxed mb-6">
+            To comprehend API vs. Custom Model, Open Source vs. Proprietary, and Self-Host TCO, we must first deconstruct the underlying physics. Industry leaders don't merely implement; they instrument these decisions to combat <strong class="text-red-400">GPU Scarcity</strong>. By orchestrating architecture, organizations shift from reactive maintenance to proactive value creation. This lesson covers baseline metrics and operational hurdles of deployment.
+        </p>
+
+        <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg mb-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Core Metrics for Operational Excellence</h3>
+            <ul class="list-disc list-inside space-y-3 text-zinc-300">
+                <li><strong class="text-cyan-400">Primary KPI: Tokens Per Second (TPS)</strong> — The fundamental measure of inference throughput. Directly impacts user experience, latency-sensitive applications, and operational cost. Higher TPS reduces GPU utilization time per request.</li>
+                <li><strong class="text-emerald-400">Secondary Metric: Cost Per 1k Tokens</strong> — The direct financial expenditure for processing each unit of output. Incorporates compute, memory, and associated infrastructure costs. Critical for budget forecasting and ROI analysis.</li>
+                <li><strong class="text-red-400">Risk Vector: Model Drift</strong> — The degradation of model performance over time due to shifts in data distribution or real-world dynamics. Mitigating drift requires robust MLOps, continuous monitoring, and strategic re-training/fine-tuning capabilities.</li>
+            </ul>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold text-white mb-4">Executive Exercise: Performance Bottleneck Audit</h3>
+            <p class="text-zinc-300 leading-relaxed">
+                Conduct a rigorous <strong class="text-cyan-400">60-minute audit</strong> of your current AI inference pipeline. Instrument and log actual Tokens Per Second (TPS) for your primary AI workloads. Analyze the data to identify the precise system bottleneck:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-zinc-400 mt-4 pl-4">
+                <li>Is it GPU compute-bound?</li>
+                <li>Is it memory bandwidth limited?</li>
+                <li>Is it network I/O from data sources?</li>
+                <li>Is it CPU pre/post-processing overhead?</li>
+                <li>Is it API rate limits or service provider latency?</li>
+            </ul>
+            <p class="text-zinc-300 leading-relaxed mt-4">
+                Quantify the current TPS ceiling and project its impact on future demand scaling and cost efficiency.
+            </p>
+        </div>
+    </div>
+
+    <!-- Part 2: Lesson 2 -->
+    <div class="mb-12">
+        <h2 class="text-4xl font-bold text-emerald-400 mb-6 tracking-tight">
+            Part 2: Lesson 2: Economic Teardown & TCO
+        </h2>
+        <p class="text-zinc-400 leading-relaxed mb-6">
+            Every technical decision is a financial decision. Implementing Self-Host TCO significantly alters the balance sheet. By quantizing operational overhead, we extract hidden margin. This teardown breaks down the Total Cost of Ownership (TCO) across compute, human capital, and opportunity cost, providing a holistic view of the financial implications of each architectural path.
+        </p>
+
+        <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg mb-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Components of Total Cost of Ownership (TCO)</h3>
+            <ul class="list-disc list-inside space-y-3 text-zinc-300">
+                <li><strong class="text-cyan-400">Direct CapEx/OpEx:</strong> Includes initial capital expenditure for hardware (GPUs, servers, networking) or ongoing operational expenditure for cloud compute (instance hours, data transfer), API subscriptions, and software licenses.</li>
+                <li><strong class="text-emerald-400">Human Capital Toll:</strong> The fully loaded cost of talent required for design, development, deployment, maintenance, security, and continuous MLOps. This encompasses ML Engineers, Data Scientists, DevOps, Security Analysts, and Project Management. This is often the largest hidden cost of 'build'.</li>
+                <li><strong class="text-red-400">Opportunity Cost:</strong> The value of the next best alternative use of capital, time, and human resources. This includes time-to-market advantage, agility in pivoting, focus on core business IP, and strategic resource allocation.</li>
+            </ul>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold text-white mb-4">Executive Exercise: 3-Year TCO Modeling</h3>
+            <p class="text-zinc-300 leading-relaxed">
+                Build a comprehensive 3-year TCO model comparing two scenarios:
+            </p>
+            <ol class="list-decimal list-inside space-y-2 text-zinc-400 mt-4 pl-4">
+                <li><strong class="text-cyan-400">Scenario A (Status Quo/API-First):</strong> Leverage existing infrastructure and predominantly use external AI APIs for core capabilities. Quantify subscription fees, integration costs, and minimal human capital for API management.</li>
+                <li><strong class="text-emerald-400">Scenario B (Strategic Build/Self-Host):</strong> Develop a custom model, fine-tune, and self-host on dedicated infrastructure (on-prem or private cloud). Quantify CapEx (hardware), OpEx (power, cooling, maintenance, cloud instance reservations), and the significantly expanded human capital toll for ML engineering, MLOps, and security.</li>
+            </ol>
+            <p class="text-zinc-300 leading-relaxed mt-4">
+                Present a clear financial projection, identifying payback periods and comparing the cumulative costs.
+            </p>
+        </div>
+    </div>
+
+    <!-- Part 3: Lesson 3 -->
+    <div class="mb-12">
+        <h2 class="text-4xl font-bold text-emerald-400 mb-6 tracking-tight">
+            Part 3: Lesson 3: Board-Level Strategy & Scaling
+        </h2>
+        <p class="text-zinc-400 leading-relaxed mb-6">
+            Technical excellence is irrelevant if it cannot be communicated to the C-suite. This lesson demonstrates how to map API vs. Custom Model decisions directly to <strong class="text-cyan-400">EBITDA and enterprise value</strong>. Scaling requires distilling the core culture and establishing an unshakeable narrative that frames technical debt as a financial liability, not merely an engineering complaint.
+        </p>
+
+        <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg mb-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Strategic Framework for Executive Communication</h3>
+            <ul class="list-disc list-inside space-y-3 text-zinc-300">
+                <li><strong class="text-cyan-400">The Executive Narrative:</strong> Articulate the AI strategy in terms of market differentiation, customer experience uplift, operational efficiency gains, and risk mitigation. Translate TPS improvements into direct revenue impact or cost savings.</li>
+                <li><strong class="text-emerald-400">Scaling Bottlenecks:</strong> Identify not only technical limitations (GPU capacity, data throughput) but also organizational, talent, and compliance hurdles that impede growth. Propose solutions framed as strategic investments.</li>
+                <li><strong class="text-red-400">The Competitive Moat:</strong> Detail how specific build vs. buy choices contribute to defensible intellectual property, proprietary data advantages, unique model capabilities, or a superior cost structure that cannot be easily replicated by competitors.</li>
+            </ul>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold text-white mb-4">Executive Exercise: PR/FAQ or Investment Memo</h3>
+            <p class="text-zinc-300 leading-relaxed">
+                Draft a compelling 1-page PR/FAQ (Press Release / Frequently Asked Questions) or Executive Memo proposing a major investment in either a <strong class="text-cyan-400">strategic custom model build</strong> (e.g., fine-tuning a foundational model for a core business function) or a <strong class="text-emerald-400">high-volume API integration</strong>.
+            </p>
+            <p class="text-zinc-300 leading-relaxed mt-4">
+                Your document must:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-zinc-400 mt-4 pl-4">
+                <li>Clearly state the <strong class="text-white">business problem</strong> being solved.</li>
+                <li>Outline the chosen AI strategy (build/buy) and its <strong class="text-white">rationale</strong> (TCO, IP, time-to-market).</li>
+                <li>Quantify the <strong class="text-white">expected financial impact</strong> (e.g., increased revenue, reduced operating costs, enhanced customer lifetime value, market share gain).</li>
+                <li>Address <strong class="text-white">key risks</strong> and mitigation strategies.</li>
+                <li>Conclude with a clear <strong class="text-white">call to action</strong> for board approval.</li>
+            </ul>
+        </div>
+    </div>
+
+</div>

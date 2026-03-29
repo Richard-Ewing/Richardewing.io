@@ -1,0 +1,147 @@
+<div class="min-h-screen bg-zinc-900 text-white font-sans p-8 md:p-12 lg:p-16">
+    <header class="mb-12 border-b border-zinc-700 pb-8">
+        <p class="text-xs tracking-widest uppercase text-zinc-500 mb-2">Track 6 — Technical Debt Valuation</p>
+        <h1 class="text-5xl font-extrabold text-white mb-4 leading-tight">6.1: Technical Debt Taxonomy</h1>
+        <p class="text-zinc-400 text-lg leading-relaxed mb-6">This module dissects technical debt into its fundamental constituents, enabling precise identification, rigorous valuation, and strategic remediation. Executives and technical leaders will gain an unparalleled framework for managing the hidden liabilities within their software estates.</p>
+
+        <div class="bg-gradient-to-br from-purple-900/30 to-zinc-800/30 border border-purple-700/50 p-6 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold text-purple-400 mb-4">Key Takeaways</h2>
+            <ul class="list-disc list-inside text-zinc-300 space-y-2">
+                <li class="flex items-start">
+                    <span class="mr-2 text-purple-400">&#8227;</span>
+                    <p class="flex-1">Categorize debt into four distinct quadrants for granular management.</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-purple-400">&#8227;</span>
+                    <p class="flex-1">Quantify debt's interest rate, translating technical risk into financial impact.</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-purple-400">&#8227;</span>
+                    <p class="flex-1">Differentiate toxic, value-eroding debt from strategic, growth-enabling debt.</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-purple-400">&#8227;</span>
+                    <p class="flex-1">Architect and maintain a dynamic, financial-grade technical debt registry.</p>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="space-y-16">
+        <!-- Part 1: Lesson 1 -->
+        <section class="bg-white/5 border border-white/10 p-8 rounded-xl shadow-xl">
+            <h2 class="text-4xl font-extrabold text-cyan-400 mb-6 border-b border-zinc-700 pb-4">Part 1: Lesson 1: The Four Debt Quadrants</h2>
+            <p class="text-zinc-400 leading-relaxed mb-6">Technical debt is not monolithic. It is rigorously categorized by <strong class="text-emerald-400">Deliberateness</strong> (chosen vs. emergent) and <strong class="text-emerald-400">Recklessness</strong> (prudent vs. irresponsible). This 2x2 matrix defines unique risk profiles, interest accrual rates, and demands distinct remediation strategies.</p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-zinc-800/50 border border-zinc-700 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-yellow-400 mb-3">1. Deliberate & Reckless Debt</h3>
+                    <p class="text-zinc-400 leading-snug">Conscious decisions to cut corners without a remediation plan. E.g., shipping without automated tests or architectural review to hit a deadline. <strong class="text-red-400">High interest, high risk.</strong> Rapidly compounds operational instability and development bottlenecks.</p>
+                </div>
+                <div class="bg-zinc-800/50 border border-zinc-700 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-green-400 mb-3">2. Deliberate & Prudent Debt</h3>
+                    <p class="text-zinc-400 leading-snug">Strategic, calculated debt taken with a clear future refactoring plan. E.g., a simpler architecture for an MVP to validate market fit, with an explicit re-architecture roadmap. <strong class="text-emerald-400">Low interest, manageable risk.</strong> Serves a tactical purpose.</p>
+                </div>
+                <div class="bg-zinc-800/50 border border-zinc-700 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-orange-400 mb-3">3. Inadvertent & Reckless Debt</h3>
+                    <p class="text-zinc-400 leading-snug">Debt incurred unknowingly due to a lack of skill, experience, or process. E.g., junior developer introduces performance bottlenecks or security vulnerabilities without recognizing implications. <strong class="text-orange-400">Moderate-High interest, often latent risk.</strong> Often manifests as "organizational debt."</p>
+                </div>
+                <div class="bg-zinc-800/50 border border-zinc-700 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-3">4. Inadvertent & Prudent Debt</h3>
+                    <p class="text-zinc-400 leading-snug">Debt that emerges as understanding evolves. E.g., elegant initial design becomes suboptimal as business requirements pivot or new technologies emerge. <strong class="text-sky-400">Low interest, inherent evolution risk.</strong> A natural consequence of agile development.</p>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">Core Metrics for Debt Quadrants:</h3>
+            <ul class="list-disc list-inside text-zinc-300 mb-6 space-y-2 pl-4">
+                <li><strong class="text-cyan-400">Reckless-Deliberate Rate (RDR):</strong> Velocity impact coefficient per story point of this debt. Quantifies immediate technical drag.</li>
+                <li><strong class="text-emerald-400">Prudent-Deliberate Rate (PDR):</strong> Future refactoring cost as a percentage of initial delivery value. Tracks planned future investment.</li>
+                <li><strong class="text-yellow-400">Inadvertent-Reckless Rate (IRR):</strong> Incident frequency or mean-time-to-resolution (MTTR) increase attributable to this debt type. Identifies systemic competency gaps.</li>
+                <li><strong class="text-blue-400">Inadvertent-Prudent Rate (IPR):</strong> Adaptation cost as a percentage of feature re-development. Measures architectural agility.</li>
+            </ul>
+
+            <div class="bg-zinc-800/50 border border-zinc-700 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold text-purple-400 mb-3">Exercise: Quadrant Classification & Interest Rate Quantification</h3>
+                <p class="text-zinc-400 leading-relaxed mb-4">Identify your top 10 most impactful known technical debt items. For each:</p>
+                <ul class="list-disc list-inside text-zinc-300 space-y-2 pl-4">
+                    <li>Classify it into one of the four quadrants, justifying the classification.</li>
+                    <li>Estimate its monthly interest rate. E.g., a "Deliberate & Reckless" item without tests might incur a 5% velocity penalty for any new feature touching that module.</li>
+                    <li>Calculate the aggregate monthly interest rate for each quadrant in your portfolio. This exposes acute operational liabilities.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Part 2: Lesson 2 -->
+        <section class="bg-white/5 border border-white/10 p-8 rounded-xl shadow-xl">
+            <h2 class="text-4xl font-extrabold text-cyan-400 mb-6 border-b border-zinc-700 pb-4">Part 2: Lesson 2: Building a Living Debt Registry</h2>
+            <p class="text-zinc-400 leading-relaxed mb-6">A technical debt registry is not a static issue tracker; it is a dynamic financial instrument. It serves as your ledger of future liabilities, enabling granular tracking, valuation, and strategic portfolio management. Each entry demands a clear audit trail and quantified impact.</p>
+
+            <h3 class="text-2xl font-bold text-white mb-4">Mandatory Registry Entry Attributes:</h3>
+            <ul class="list-disc list-inside text-zinc-300 mb-6 space-y-2 pl-4">
+                <li><strong class="text-cyan-400">Unique ID:</strong> For traceability.</li>
+                <li><strong class="text-emerald-400">Origin Commit/Issue:</strong> Direct link to the exact code change or decision. Essential for root cause analysis.</li>
+                <li><strong class="text-yellow-400">Quadrant Classification:</strong> As defined in Lesson 1. Drives repayment strategy.</li>
+                <li><strong class="text-orange-400">Estimated Remediation Cost:</strong> Quantified in <strong class="text-orange-400">engineering-days or story points</strong> (the 'principal').</li>
+                <li><strong class="text-red-400">Monthly Interest Payment:</strong> Quantified in <strong class="text-red-400">velocity points, MTTR increase, or operational cost increase</strong> (the recurring cost). High interest warrants immediate attention.</li>
+                <li><strong class="text-purple-400">Risk of Compound Failure:</strong> Qualitative (Low/Medium/High) and quantitative (e.g., probability of cascading system failure) assessment. Critical for prioritizing toxic debt.</li>
+                <li><strong class="text-sky-400">Affected Business Capability:</strong> Links technical debt directly to business impact.</li>
+                <li><strong class="text-green-400">Remediation Owner & Target Date:</strong> Assign accountability and establish a timeline.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-white mb-4">Core Metrics for Debt Registry Management:</h3>
+            <ul class="list-disc list-inside text-zinc-300 mb-6 space-y-2 pl-4">
+                <li><strong class="text-cyan-400">Registry Completeness:</strong> Percentage of codebase/modules with identified and registered debt. Target 90%+.</li>
+                <li><strong class="text-emerald-400">Interest Accrual Rate:</strong> Total monthly interest payment across all active debt items. Increasing trend is a red flag.</li>
+                <li><strong class="text-yellow-400">Remediation Velocity:</strong> Engineering-days of debt retired per sprint/month. Must outpace interest accrual.</li>
+                <li><strong class="text-red-400">Debt-to-Feature Ratio:</strong> Total estimated remediation cost vs. new feature delivery cost. Indicates system health.</li>
+            </ul>
+
+            <div class="bg-zinc-800/50 border border-zinc-700 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold text-purple-400 mb-3">Exercise: Populate a Debt Registry</h3>
+                <p class="text-zinc-400 leading-relaxed mb-4">For your primary codebase, identify at least 15 distinct technical debt items. For each, create an entry in a nascent debt registry (e.g., Jira, custom markdown). Ensure each entry includes:</p>
+                <ul class="list-disc list-inside text-zinc-300 space-y-2 pl-4">
+                    <li><strong class="text-cyan-400">Quadrant Classification.</strong></li>
+                    <li><strong class="text-emerald-400">Estimated Remediation Cost</strong> (e.g., 3 engineering-days, 20 story points).</li>
+                    <li><strong class="text-yellow-400">Monthly Interest Payment</strong> (e.g., 0.5 velocity points, $500/month in increased support, 1-hour MTTR increase).</li>
+                    <li><strong class="text-red-400">Risk of Compound Failure</strong> (Low/Medium/High).</li>
+                    <li><strong class="text-purple-400">Affected Business Capability.</strong></li>
+                </ul>
+                <p class="text-zinc-400 mt-4">Focus on precision in estimation. Avoid vague descriptions. This exercise forms the bedrock of robust technical debt management.</p>
+            </div>
+        </section>
+
+        <!-- Part 3: Lesson 3 -->
+        <section class="bg-white/5 border border-white/10 p-8 rounded-xl shadow-xl">
+            <h2 class="text-4xl font-extrabold text-cyan-400 mb-6 border-b border-zinc-700 pb-4">Part 3: Lesson 3: Presenting Debt to the Board</h2>
+            <p class="text-zinc-400 leading-relaxed mb-6">Executives do not operate on "technical debt." They operate on financial metrics, risk exposure, and strategic advantage. The lexicon must shift from engineering jargon to board-level discourse: <strong class="text-emerald-400">technical debt is deferred maintenance on a capital asset.</strong></p>
+            <p class="text-zinc-400 leading-relaxed mb-6">Frame software as a critical capital asset. Like machinery or infrastructure, software depreciates without maintenance. Technical debt represents this depreciation, reducing productive capacity, increasing operational costs, and escalating security risks. Each remediation dollar is an investment preventing further asset decay and ensuring future revenue generation.</p>
+
+            <h3 class="text-2xl font-bold text-white mb-4">Board-Level Framing Principles:</h3>
+            <ul class="list-disc list-inside text-zinc-300 mb-6 space-y-2 pl-4">
+                <li><strong class="text-cyan-400">Asset Depreciation:</strong> Quantify diminished value and reduced lifespan due to debt. E.g., "This module's lack of scalability means it will fail at 50% of projected user growth, requiring a $X rebuild."</li>
+                <li><strong class="text-emerald-400">Operational Risk:</strong> Translate technical fragility into direct business risk (revenue loss, compliance fines, brand damage). E.g., "Untested payment gateway has Y% probability of causing $Z in lost transactions per quarter."</li>
+                <li><strong class="text-yellow-400">Opportunity Cost:</strong> Explain foregone features or market opportunities due to resources consumed by debt servicing. E.g., "Our team spends 15% capacity patching legacy issues, preventing development of the new AI product line."</li>
+                <li><strong class="text-orange-400">Remediation ROI:</strong> Present debt repayment as an investment with clear returns. E.g., "Investing 20 engineering-days to refactor auth service will reduce support tickets by 30%, saving $X annually and improving CSAT by Y points."</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-white mb-4">Core Metrics for Board Presentation:</h3>
+            <ul class="list-disc list-inside text-zinc-300 mb-6 space-y-2 pl-4">
+                <li><strong class="text-cyan-400">Asset Depreciation Rate:</strong> Percentage decline in software asset value per quarter due to unaddressed debt.</li>
+                <li><strong class="text-emerald-400">Operational Risk Exposure (ORE):</strong> Sum of quantifiable financial risks (lost revenue, increased MTTR, security breach costs) directly linked to debt.</li>
+                <li><strong class="text-yellow-400">Remediation ROI (R-ROI):</strong> (Annual Savings + Revenue Enabled) / Remediation Cost. Must demonstrate compelling returns.</li>
+                <li><strong class="text-red-400">Technical Debt Ratio (TDR):</strong> Total Estimated Remediation Cost / Total Software Asset Value (estimated initial development cost). High TDR signals critical underinvestment.</li>
+            </ul>
+
+            <div class="bg-zinc-800/50 border border-zinc-700 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold text-purple-400 mb-3">Exercise: Draft a Board Memo</h3>
+                <p class="text-zinc-400 leading-relaxed mb-4">Leveraging your debt registry and financial framing, draft a one-page board memo. Select your top 3-5 most impactful technical debt items and present them:</p>
+                <ul class="list-disc list-inside text-zinc-300 space-y-2 pl-4">
+                    <li><strong class="text-cyan-400">As capital depreciation.</strong></li>
+                    <li><strong class="text-emerald-400">With specific dollar amounts</strong> for current operational cost, projected revenue loss, or compliance risk.</li>
+                    <li><strong class="text-yellow-400">Propose a remediation investment</strong> and articulate its projected <strong class="text-yellow-400">ROI</strong> in financial terms.</li>
+                </ul>
+                <p class="text-zinc-400 mt-4">This memo must be concise, impactful, and devoid of technical jargon. Focus solely on business value and risk mitigation.</p>
+            </div>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,209 @@
+<div class="min-h-screen bg-gray-950 text-zinc-300 p-8 md:p-12 font-sans">
+    <header class="mb-12">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 border-b-2 border-cyan-500 pb-4">
+            Module 3-1: Technical Due Diligence Red Flags
+        </h1>
+        <p class="text-xl md:text-2xl text-zinc-400 leading-relaxed mb-6">
+            Exposing hidden technical risks that destroy M&A enterprise value.
+        </p>
+        <p class="text-lg text-zinc-500 italic">
+            <strong>Track:</strong> PE / VC / Investor
+        </p>
+    </header>
+
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold text-white mb-6">Key Takeaways for Executive Action</h2>
+        <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg">
+            <ul class="list-disc list-inside space-y-3 text-lg text-zinc-300">
+                <li class="flex items-start">
+                    <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                    <strong class="text-white">Spot Legacy Code Rot:</strong> Quantify the financial burden of outdated, unmaintainable codebases.
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                    <strong class="text-white">Audit Key Person Dependencies:</strong> Identify single points of failure that threaten asset continuity and operational integrity.
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                    <strong class="text-white">Evaluate Architecture Scaling Ceilings:</strong> Uncover systemic limitations that cap growth and necessitate costly overhauls.
+                </li>
+                <li class="flex items-start">
+                    <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                    <strong class="text-white">Assess AI Lock-in Risks:</strong> Analyze proprietary model, data, and platform dependencies that could cripple future innovation or incur exorbitant switching costs.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <main class="space-y-16">
+        <!-- Part 1: Lesson 1: Valuing Technical Debt in Deals -->
+        <section>
+            <h2 class="text-3xl font-bold text-white mb-6 border-b border-zinc-700 pb-3">
+                <span class="text-cyan-400">Part 1:</span> Lesson 1: Valuing Technical Debt in Deals
+            </h2>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                Technical debt is a measurable liability, not a qualitative concern. A target generating $10M ARR may appear robust until its 15-year-old monolithic codebase is exposed. Migrating this infrastructure to a modern cloud-native stack could demand a $2M R&D investment post-acquisition. This is not a future operational cost; it is a direct reduction in the asset's immediate enterprise valuation. Failure to quantify this liability means overpaying.
+            </p>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                <strong>Actionable Insight:</strong> Enterprise value must be adjusted by the immediate, quantifiable cost of modernization required to unlock projected growth or achieve operational efficiency targets.
+            </p>
+
+            <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg mb-8">
+                <h3 class="text-xl font-semibold text-white mb-4">Critical Metrics:</h3>
+                <ul class="list-disc list-inside space-y-2 text-zinc-300">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                        <strong class="text-white">Platform Re-Platforming Cost (PRC):</strong> Direct financial projection for refactoring or rewriting core architectural components. Calculated by developer hours, infrastructure redesign, and migration expenses.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                        <strong class="text-white">Version Lock-in Index (VLI):</strong> Quantifies reliance on deprecated libraries, frameworks, or operating system versions. High VLI indicates security vulnerabilities, prohibitive upgrade paths, and talent acquisition challenges. This includes proprietary AI model dependencies without clear export or fine-tuning capabilities.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                        <strong class="text-white">Quality of Technical (QoT) Report:</strong> A comprehensive technical audit scorecard, assessing code quality, architectural hygiene, testing coverage, and operational maturity. Scores are weighted for impact on scalability, maintainability, and security.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold text-white mb-4">Executive Exercise: Simulating a QoT Evaluation</h3>
+                <p class="text-zinc-400 mb-4">
+                    Given a hypothetical architecture diagram of a target company's core platform, execute a simulated QoT evaluation. Identify three <strong>Severe Priority-Deficiency-Impact (PDI) Flags</strong> that would necessitate a significant valuation adjustment.
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-zinc-300">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-cyan-400 text-xl">&bull;</span>
+                        <strong>PDI Flag 1:</strong> Identify a critical component built on an End-of-Life (EoL) framework (e.g., Python 2.x, AngularJS 1.x) with no documented migration plan. Estimate immediate security exposure and future re-platforming cost.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-cyan-400 text-xl">&bull;</span>
+                        <strong>PDI Flag 2:</strong> Pinpoint a monolithic data store (e.g., single large MySQL instance) handling all write operations, indicating severe scaling limitations and a single point of failure. Detail the architectural implications and re-architecting effort.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-cyan-400 text-xl">&bull;</span>
+                        <strong>PDI Flag 3:</strong> Uncover a critical business logic component developed by an external vendor using a proprietary, undocumented language or framework (e.g., a custom AI inference engine with opaque training data or model architecture). Assess the lock-in and intellectual property risk.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Part 2: Lesson 2: Key Person Dependency -->
+        <section>
+            <h2 class="text-3xl font-bold text-white mb-6 border-b border-zinc-700 pb-3">
+                <span class="text-cyan-400">Part 2:</span> Lesson 2: Key Person Dependency
+            </h2>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                Human capital concentration represents a critical, often underestimated, technical liability. An organization where one Senior Architect holds all institutional system knowledge and architectural blueprints solely in their mind is an existential fragility. If this individual departs post-acquisition, the operational value of that asset can plummet to zero, requiring extensive reverse-engineering, re-architecture, and significant financial outlay. This is not merely an HR issue; it's an engineering and continuity risk that directly impacts enterprise valuation.
+            </p>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                <strong>Actionable Insight:</strong> Evaluate the distribution of critical knowledge and access. High concentration implies fragile, non-transferable assets.
+            </p>
+
+            <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg mb-8">
+                <h3 class="text-xl font-semibold text-white mb-4">Critical Metrics:</h3>
+                <ul class="list-disc list-inside space-y-2 text-zinc-300">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                        <strong class="text-white">Bus Factor (BF):</strong> The minimum number of team members who, if hit by a bus (or quit), would completely halt project progress due to loss of critical knowledge. A BF of 1 or 2 in core areas is an extreme red flag.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                        <strong class="text-white">Documentation Coverage Index (DCI):</strong> Quantifies the completeness and accessibility of system documentation, architectural decision records, and runbooks. Low DCI correlates directly with higher Bus Factor risk.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                        <strong class="text-white">Equity Lock-ups & Retention Plans:</strong> Assess the effectiveness of existing retention mechanisms for critical technical talent. Insufficient or poorly structured lock-ups exacerbate Key Person Dependency risk.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold text-white mb-4">Executive Exercise: Assessing Key Person Risk via Git History</h3>
+                <p class="text-zinc-400 mb-4">
+                    In a due diligence data room, access a target company's core repository git commit history (or equivalent source control logs). Analyze the distribution of commits, lines changed, and module ownership.
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-zinc-300">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-cyan-400 text-xl">&bull;</span>
+                        Identify if a single developer or a small cohort accounts for >70% of commits to mission-critical modules over the last 12-24 months.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-cyan-400 text-xl">&bull;</span>
+                        Determine if the primary contributors to key microservices or AI model training pipelines have less than 1 year of tenure or are not subject to robust post-acquisition retention agreements.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-cyan-400 text-xl">&bull;</span>
+                        Cross-reference commit distribution with internal organizational charts and documentation access logs to identify undocumented "shadow owners" of critical systems.
+                    </li>
+                </ul>
+                <p class="text-zinc-400 mt-4 italic">
+                    Flag any instance where core system knowledge or critical development activity is disproportionately concentrated.
+                </p>
+            </div>
+        </section>
+
+        <!-- Part 3: Lesson 3: Architecture Scaling Ceilings -->
+        <section>
+            <h2 class="text-3xl font-bold text-white mb-6 border-b border-zinc-700 pb-3">
+                <span class="text-cyan-400">Part 3:</span> Lesson 3: Architecture Scaling Ceilings
+            </h2>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                Investors acquire companies for their future potential, which inherently implies scalability. An architecture that efficiently supports 1,000 users today is irrelevant if the strategic plan demands 100,000 users tomorrow, yet the system cannot accommodate this growth without a complete ground-up rewrite. Identify these bottlenecks—monolithic services, unindexed databases, synchronous operations, or poorly distributed data stores—as immediate liabilities. These are not future problems; they are present valuation detractors.
+            </p>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                <strong>Actionable Insight:</strong> Future growth projections are predicated on architectural headroom. A lack thereof requires significant re-investment, diminishing projected ROI.
+            </p>
+
+            <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg mb-8">
+                <h3 class="text-xl font-semibold text-white mb-4">Critical Metrics:</h3>
+                <ul class="list-disc list-inside space-y-2 text-zinc-300">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                        <strong class="text-white">Database Sharding Limits:</strong> Evaluate the current database architecture for horizontal scalability. A system reliant on a single, vertically scaled relational database without sharding or replication strategies is a hard ceiling.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                        <strong class="text-white">Stateless Compute Adherence:</strong> Assess the extent to which application services are stateless. Stateful services complicate load balancing, auto-scaling, and resilience, creating inherent scaling bottlenecks.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                        <strong class="text-white">Content Delivery Network (CDN) Distribution & Cache Hit Ratio:</strong> Analyze global content delivery strategy. Poor CDN utilization or low cache hit ratios indicate inefficient resource consumption and poor user experience at scale. Assess also the distribution strategy for AI model inference points.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-emerald-400 text-xl">&bull;</span>
+                        <strong class="text-white">Monolithic Service Footprint:</strong> Identify core business logic encapsulated within large, tightly coupled services that preclude independent scaling, deployment, or failure isolation.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold text-white mb-4">Executive Exercise: Infrastructure Topology Bill Analysis</h3>
+                <p class="text-zinc-400 mb-4">
+                    Obtain a recent AWS (or Azure/GCP) infrastructure topology bill and corresponding cost explorer report from the data room.
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-zinc-300">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-cyan-400 text-xl">&bull;</span>
+                        Analyze the ratio of database (RDS, DynamoDB) costs to compute (EC2, Lambda) costs. A disproportionately high database cost for a growth-stage company might indicate inefficient querying, lack of caching, or scaling challenges.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-cyan-400 text-xl">&bull;</span>
+                        Identify substantial expenditure on large, fixed-size EC2 instances (e.g., c5.xlarge+) instead of auto-scaling groups or serverless functions (Lambda, Fargate). This signals a static, potentially monolithic architecture lacking elasticity.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-cyan-400 text-xl">&bull;</span>
+                        Evaluate egress data transfer costs. High egress costs, especially without significant CDN usage, could point to suboptimal data locality, inefficient internal network patterns, or a lack of global distribution for users/AI inference.
+                    </li>
+                </ul>
+                <p class="text-zinc-400 mt-4 italic">
+                    Determine if the current infrastructure spend indicates efficient scaling, or if it points to an architecture that will rapidly become cost-prohibitive or incapable of handling projected demand.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-16 pt-8 border-t border-zinc-800 text-center text-zinc-500 text-sm">
+        <p>Exclusive Playbook: Technical Due Diligence Red Flags. For authorized executive and technical leadership use only. &copy; 2023 McKinsey & Co. Advisory.</p>
+    </footer>
+</div>

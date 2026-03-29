@@ -1,0 +1,221 @@
+<div class="min-h-screen bg-zinc-950 text-zinc-100 p-8 md:p-12 lg:p-16 font-sans">
+    <header class="mb-12">
+        <p class="text-xs uppercase tracking-widest text-zinc-500 mb-2">Track 11 — AI Operations & Governance Economics</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400 leading-tight mb-4">
+            Module 11.5: RAG Architecture Economics
+        </h1>
+        <p class="text-zinc-400 text-lg md:text-xl leading-relaxed">
+            Embedding costs, vector database pricing, chunking strategy economics, and retrieval quality ROI.
+        </p>
+        <div class="mt-8 bg-zinc-900 border border-zinc-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-white mb-4">Key Takeaways:</h2>
+            <ul class="list-disc list-inside text-zinc-300 space-y-2 pl-4">
+                <li><strong class="text-emerald-400">Calculate Embedding Costs:</strong> Demystify the true cost per query.</li>
+                <li><strong class="text-emerald-400">Compare Vector DB Pricing:</strong> Optimize storage and QPS for maximum efficiency.</li>
+                <li><strong class="text-emerald-400">Optimize Chunking Economics:</strong> Balance cost, quality, and performance.</li>
+                <li><strong class="text-emerald-400">Measure Retrieval Quality ROI:</strong> Quantify the financial impact of accuracy and relevance.</li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="space-y-16">
+        <!-- Part 1: Lesson 1: RAG Architecture Economics Fundamentals -->
+        <section class="bg-white/5 border border-white/10 p-8 rounded-xl shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-6">Part 1: Lesson 1: RAG Architecture Economics Fundamentals</h2>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                RAG's true power is unlocked when its economic levers are mastered. This lesson dissects the core cost structures, quantifies the ROI, and provides a framework for strategic optimization. Every query, every embedding, every vector search has a financial footprint. Our objective is to minimize that footprint while maximizing operational and strategic value.
+            </p>
+
+            <h3 class="text-2xl font-bold text-cyan-400 mb-4">Metrics: Cost Structure, ROI Framework, Industry Benchmarks</h3>
+            <ul class="list-disc list-inside text-zinc-300 space-y-3 pl-4 mb-6">
+                <li><strong>Embedding Costs:</strong> Calculated as <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">(Tokens per Chunk * Chunks per Document * Documents) * Cost per Token</code>, plus API call overhead. Factors: model choice (e.g., OpenAI Ada-002 vs. open-source fine-tuned models like BGE-small-en-v1.5), batching efficiency, and re-embedding frequency. High-volume ingestion is a primary cost driver.</li>
+                <li><strong>Vector Database Pricing:</strong> Key variables include storage (GB/TB), Query Per Second (QPS) capacity, indexing operations, and data egress. Pricing models vary widely: instance-based (Pinecone, Weaviate Cloud), serverless (Qdrant Cloud, Faiss-on-S3), or self-managed (Milvus, Pgvector). Latency-SLA-backed QPS is often the most significant cost component for production systems.</li>
+                <li><strong>Chunking Strategy Economics:</strong> Not just a retrieval parameter, but a cost multiplier. Smaller chunks mean more chunks, increasing embedding costs and vector DB storage. Larger chunks reduce these, but risk losing semantic granularity, impacting retrieval quality. Optimal overlap reduces context loss but inflates chunk count. This is a critical balance.</li>
+                <li><strong>Retrieval Quality ROI:</strong> Quantify value from reduced hallucination, improved answer accuracy, and decreased human intervention. Metrics include user satisfaction scores, human review time saved, reduced error rates in automated processes, and accelerated decision-making cycles. Direct financial benefits derive from reduced operational costs or increased revenue from superior AI-driven interactions.</li>
+                <li><strong>ROI Framework:</strong> <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">ROI = (Quantifiable Benefits - Total RAG Costs) / Total RAG Costs</code>. Benefits must be directly attributable to RAG system performance improvements.</li>
+                <li><strong>Industry Benchmarks:</strong> Top-tier RAG implementations target <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">sub-$0.01 per complex query</code> and <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">p95 retrieval latency &lt; 500ms</code> for enterprise-scale knowledge bases. Cost per embedded token for proprietary models ranges from $0.0001 to $0.0004. Open-source models, self-hosted, can reduce this by 90% or more, with associated infrastructure and management overhead.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-cyan-400 mb-4">Exercise: Calculate Current RAG Investment & Optimization Opportunities</h3>
+            <p class="text-zinc-400 leading-relaxed mb-4">
+                Conduct a forensic audit of your current RAG infrastructure.
+            </p>
+            <ol class="list-decimal list-inside text-zinc-300 space-y-3 pl-4">
+                <li><strong>Data Ingestion Costs:</strong>
+                    <ul class="list-disc list-inside ml-6">
+                        <li>Identify all data sources, total document count, and average token count per document.</li>
+                        <li>Determine average chunk size and overlap. Calculate total chunks and total tokens embedded.</li>
+                        <li>Specify embedding model(s) used and their per-token cost or equivalent compute cost if self-hosted.</li>
+                        <li><strong>Calculate: Total Embedding Cost = (Total Tokens Embedded / 1000) * Cost per 1000 Tokens.</strong></li>
+                    </ul>
+                </li>
+                <li><strong>Vector DB Costs:</strong>
+                    <ul class="list-disc list-inside ml-6">
+                        <li>Record current storage usage (GB), average QPS, and specific vector DB pricing tier/model.</li>
+                        <li>Account for indexing operations, backup, and any egress charges.</li>
+                        <li><strong>Calculate: Monthly Vector DB Cost.</strong></li>
+                    </ul>
+                </li>
+                <li><strong>Retrieval/Reranking Costs:</strong>
+                    <ul class="list-disc list-inside ml-6">
+                        <li>Identify reranking models (if any) and their associated API/compute costs per query.</li>
+                        <li><strong>Calculate: Monthly Retrieval/Reranking Cost = (Average Daily Queries * 30) * Cost per Query.</strong></li>
+                    </ul>
+                </li>
+                <li><strong>Total Current Monthly RAG Spend:</strong> Sum of the above.</li>
+                <li><strong>Identify Optimization Opportunities:</strong>
+                    <ul class="list-disc list-inside ml-6">
+                        <li>Where are the costliest components? (E.g., high embedding re-runs, expensive vector DB QPS, suboptimal chunking).</li>
+                        <li>Quantify potential savings by switching to cheaper embedding models, tuning vector DB indices, or optimizing chunking.</li>
+                        <li>Estimate the potential ROI for each identified optimization.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Part 2: Lesson 2: Implementation Strategy -->
+        <section class="bg-white/5 border border-white/10 p-8 rounded-xl shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-6">Part 2: Lesson 2: Implementation Strategy</h2>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                Economic insights are valueless without concrete action. This lesson delineates tactical quick wins and strategic long-term initiatives to translate cost structure analysis into measurable RAG performance and financial gains. Prioritize interventions based on impact and implementation complexity.
+            </p>
+
+            <h3 class="text-2xl font-bold text-cyan-400 mb-4">Metrics: Implementation Cost, Quick Wins, Measurement</h3>
+            <ul class="list-disc list-inside text-zinc-300 space-y-3 pl-4 mb-6">
+                <li><strong>Quick Wins:</strong> Actions deployable within 30-60 days with clear, direct cost reductions or performance improvements. Examples:
+                    <ul class="list-disc list-inside ml-6">
+                        <li><strong>Embedding Model Swap:</strong> Evaluate and integrate an open-source or cheaper proprietary embedding model (e.g., from Cohere or Hugging Face Transformers) with minimal loss in retrieval quality.</li>
+                        <li><strong>Dynamic Chunking Logic:</strong> Implement adaptive chunking based on document structure (e.g., markdown headers, sentence segmentation) rather than fixed-size splits. Reduces redundant chunks.</li>
+                        <li><strong>Vector DB Index Tuning:</strong> Adjust HNSW parameters (<code>M</code>, <code>ef_construction</code>, <code>ef_search</code>) for optimal recall vs. latency tradeoff, or leverage quantization (e.g., Product Quantization) for reduced storage.</li>
+                        <li><strong>Cache Layer:</strong> Introduce a Redis or similar cache for frequently queried embeddings or full retrieval results. Significant QPS reduction on the vector DB.</li>
+                    </ul>
+                </li>
+                <li><strong>Long-Term Planning:</strong> Strategic shifts requiring more significant architectural changes, 3-12 months out. Examples:
+                    <ul class="list-disc list-inside ml-6">
+                        <li><strong>Multi-Vector DB Architecture:</strong> Segment data into high-priority/high-QPS (managed service) and archival/low-QPS (self-hosted, cost-optimized) tiers.</li>
+                        <li><strong>Hybrid Retrieval System:</strong> Integrate sparse retrieval (BM25, keyword search) with dense retrieval (vector search). Often provides higher recall with fewer, smaller chunks.</li>
+                        <li><strong>Quantized Embeddings:</strong> Explore storing embeddings in lower precision (e.g., INT8) after evaluation of quality impact. Significant storage savings.</li>
+                        <li><strong>Intelligent Reranking Orchestration:</strong> Use a lightweight, cheaper reranker for initial pass, reserving a more powerful, expensive model for top-N candidates.</li>
+                        <li><strong>Proactive Observability & AIOps:</strong> Deploy comprehensive monitoring for cost per query, latency per component, and recall metrics to detect drifts and enable autonomous optimization.</li>
+                    </ul>
+                </li>
+                <li><strong>Measurement:</strong> Establish baseline metrics before implementation. Track weekly/monthly: Total Cost, Cost per Query, Average Retrieval Latency, Recall@K, Mean Reciprocal Rank (MRR). Use A/B testing for significant changes.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-cyan-400 mb-4">Exercise: Design a 90-Day Implementation Plan</h3>
+            <p class="text-zinc-400 leading-relaxed mb-4">
+                Develop a 90-day actionable roadmap, integrating quick wins and initiating long-term strategies.
+            </p>
+            <ol class="list-decimal list-inside text-zinc-300 space-y-3 pl-4">
+                <li><strong>Day 0-30: Foundation & Quick Wins</strong>
+                    <ul class="list-disc list-inside ml-6">
+                        <li><strong>Goal:</strong> Establish baseline metrics. Implement highest-impact, lowest-effort optimizations.</li>
+                        <li><strong>Tasks:</strong>
+                            <ul class="list-circle list-inside ml-6">
+                                <li><strong>Week 1-2:</strong> Deploy comprehensive cost & performance monitoring. Establish baseline KPIs.</li>
+                                <li><strong>Week 3-4:</strong> Implement embedding model evaluation and swap (e.g., switch from expensive proprietary to BGE-large-en-v1.5 self-hosted/cheaper API). Target 15-25% embedding cost reduction.</li>
+                                <li><strong>Expected ROI:</strong> <strong class="text-emerald-400">Immediate 15-25% reduction in embedding generation costs.</strong></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Day 31-60: Optimization & Strategic Setup</strong>
+                    <ul class="list-disc list-inside ml-6">
+                        <li><strong>Goal:</strong> Optimize core retrieval. Begin architectural planning for long-term.</li>
+                        <li><strong>Tasks:</strong>
+                            <ul class="list-circle list-inside ml-6">
+                                <li><strong>Week 5-6:</strong> Tune vector DB index parameters, or implement a basic caching layer for frequently accessed data/queries. Target 10-15% QPS reduction on vector DB.</li>
+                                <li><strong>Week 7-8:</strong> Initiate PoC for a hybrid retrieval system (e.g., BM25 + dense vector). Begin architectural design for multi-tiered vector storage.</li>
+                                <li><strong>Expected ROI:</strong> <strong class="text-emerald-400">5-10% reduction in vector DB operational costs. Improved retrieval latency by 10-20%.</strong></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Day 61-90: Refinement & Scalability Prep</strong>
+                    <ul class="list-disc list-inside ml-6">
+                        <li><strong>Goal:</strong> Refine current optimizations, finalize long-term architecture, and prepare for scale.</li>
+                        <li><strong>Tasks:</strong>
+                            <ul class="list-circle list-inside ml-6">
+                                <li><strong>Week 9-10:</strong> Optimize chunking strategy based on content analysis and retrieval performance. Conduct A/B tests to validate changes.</li>
+                                <li><strong>Week 11-12:</strong> Finalize plans for quantized embeddings or intelligent reranking. Document target architecture and resource requirements.</li>
+                                <li><strong>Expected ROI:</strong> <strong class="text-emerald-400">Further 5-10% cost efficiency. Enhanced retrieval quality leading to improved user experience (quantify via NPS/satisfaction). Total projected 90-day cost savings: 25-40%.</strong></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Part 3: Lesson 3: Executive Communication -->
+        <section class="bg-white/5 border border-white/10 p-8 rounded-xl shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-6">Part 3: Lesson 3: Executive Communication</h2>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                Technical prowess must translate into strategic value for the executive suite. This lesson focuses on framing RAG investments and optimizations in terms of quantifiable financial outcomes and strategic business advantages, securing buy-in and justifying resource allocation.
+            </p>
+
+            <h3 class="text-2xl font-bold text-cyan-400 mb-4">Metrics: Financial Translation, Trend Analysis, Strategic Positioning</h3>
+            <ul class="list-disc list-inside text-zinc-300 space-y-3 pl-4 mb-6">
+                <li><strong>Financial Translation:</strong> Convert technical metrics into P&L impact.
+                    <ul class="list-disc list-inside ml-6">
+                        <li><strong>Cost Reduction:</strong> <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">X% reduction in cloud spend for AI services</code>, <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">Annualized savings of $Y million</code>.</li>
+                        <li><strong>Revenue Generation:</strong> <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">Z% increase in customer conversion rates due to improved AI assistant accuracy</code>, <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">Annual incremental revenue of $W million</code> from new AI-powered product features.</li>
+                        <li><strong>Productivity Gains:</strong> <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">Reduced human agent resolution time by P%</code>, <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">Equivalent to FTE savings of Q employees annually</code>.</li>
+                        <li><strong>Risk Mitigation:</strong> <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">Decrease in compliance violation incidents by R%</code>, <code class="bg-zinc-800 text-emerald-400 px-2 py-1 rounded">Avoidance of regulatory fines up to $S million</code>.</li>
+                    </ul>
+                </li>
+                <li><strong>Trend Analysis:</strong> Present historical performance, current state, and projected outcomes using clear visualizations.
+                    <ul class="list-disc list-inside ml-6">
+                        <li><strong>Cost Trends:</strong> Monthly spend (actual vs. projected), cost per query (trending downwards).</li>
+                        <li><strong>Performance Trends:</strong> Retrieval latency (trending downwards), recall/precision (trending upwards), user satisfaction scores.</li>
+                        <li><strong>ROI Trajectory:</strong> Show the cumulative return on investment over time, illustrating compounding benefits.</li>
+                    </ul>
+                </li>
+                <li><strong>Strategic Positioning:</strong> Frame RAG as a critical enabler for corporate objectives.
+                    <ul class="list-disc list-inside ml-6">
+                        <li><strong>Competitive Advantage:</strong> Positioning as an industry leader in AI adoption and efficiency.</li>
+                        <li><strong>Innovation Catalyst:</strong> Underpinning new product development and service offerings.</li>
+                        <li><strong>Operational Excellence:</strong> Demonstrating lean, efficient AI infrastructure management.</li>
+                        <li><strong>Data-Driven Decision Making:</strong> Emphasize how RAG improves access to critical organizational knowledge.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-cyan-400 mb-4">Exercise: Create a One-Page Executive Summary</h3>
+            <p class="text-zinc-400 leading-relaxed mb-4">
+                Condense your RAG economic strategy into a concise, impactful executive summary.
+            </p>
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-lg shadow-inner">
+                <h4 class="text-xl font-bold text-white mb-3">RAG Economics: Strategic Investment & Optimization Overview</h4>
+                <p class="text-zinc-300 text-sm mb-4"><strong>Date:</strong> [Current Date] | <strong>Prepared for:</strong> Executive Leadership Team</p>
+
+                <h5 class="text-lg font-semibold text-emerald-400 mb-2">Executive Summary:</h5>
+                <p class="text-zinc-400 text-sm mb-4">
+                    Our RAG architecture is a critical enabler for AI-driven intelligence across [Key Business Areas]. This report outlines our strategic approach to optimizing RAG's economic footprint, demonstrating significant cost efficiencies while enhancing performance and unlocking new business capabilities. We project a <strong class="text-emerald-400">Total ROI of [X]% over 12 months</strong>, translating to <strong class="text-emerald-400">annualized savings/revenue generation of $[Y] million</strong>.
+                </p>
+
+                <h5 class="text-lg font-semibold text-emerald-400 mb-2">Key Financial Outcomes & Trends:</h5>
+                <ul class="list-disc list-inside text-zinc-400 text-sm space-y-1 mb-4">
+                    <li><strong>Current Monthly RAG Spend:</strong> $[Current Monthly Spend]</li>
+                    <li><strong>Projected Monthly Spend (12 Months):</strong> $[Projected Monthly Spend] (<strong class="text-emerald-400">[Z]% Reduction</strong>)</li>
+                    <li><strong>Cost per Query:</strong> Reduced from $[Old Cost] to $[New Cost] (<strong class="text-emerald-400">[A]% Improvement</strong>)</li>
+                    <li><strong>Operational Savings:</strong> $[B] million annually through [specific example, e.g., optimized embedding models, reduced vector DB QPS].</li>
+                    <li><strong>Revenue Impact:</strong> $[C] million in potential incremental revenue from [specific example, e.g., improved customer service, accelerated product cycles].</li>
+                    <li><strong>Productivity Uplift:</strong> [D] FTE equivalent savings across [relevant departments].</li>
+                </ul>
+
+                <h5 class="text-lg font-semibold text-emerald-400 mb-2">Strategic Recommendations:</h5>
+                <ul class="list-disc list-inside text-zinc-400 text-sm space-y-1">
+                    <li><strong>Continue Investment in AI Efficiency:</strong> Prioritize initiatives that further reduce TCO while preserving/enhancing performance.</li>
+                    <li><strong>Expand Hybrid Retrieval & Multi-Tiered Storage:</strong> Implement advanced architectures for superior scalability and cost control.</li>
+                    <li><strong>Leverage RAG for [New Strategic Initiative]:</strong> Explore new applications of optimized RAG to drive [specific business goal, e.g., personalized marketing, internal knowledge management].</li>
+                    <li><strong>Establish AI Governance Framework:</strong> Ensure continuous monitoring of RAG economics, quality, and compliance.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-16 text-center text-zinc-600 text-sm">
+        <p class="mb-2">© 2024 McKinsey & Company. All Rights Reserved. For Executive & Technical Leaders Only.</p>
+        <p>Unauthorized reproduction or distribution is strictly prohibited.</p>
+    </footer>
+</div>
