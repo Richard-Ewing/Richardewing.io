@@ -104,6 +104,71 @@ export default function ToolsContent() {
               </ShineBorder>
             </Link>
 
+            <Link href="/tools/fte-displacement" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#a855f7", "#6366f1", "#06b6d4"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center text-purple-400 font-bold">07</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-400">Agentic FTE Displacement Matrix</h3>
+                    <p className="text-gray-400 text-sm mb-3">Calculate EBITDA expansion of replacing human Tier-1 support with autonomous LLM agents.</p>
+                    <span className="text-purple-400 text-sm">Try Now →</span>
+                  </div>
+                </div>
+              </ShineBorder>
+            </Link>
+
+            <Link href="/tools/cloud-repatriation" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#f59e0b", "#f43f5e", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-rose-600/20 flex items-center justify-center text-rose-400 font-bold">08</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-rose-400">Cloud Repatriation Engine</h3>
+                    <p className="text-gray-400 text-sm mb-3">Calculate the exact EBITDA recapture of moving off AWS to bare-metal servers.</p>
+                    <span className="text-rose-400 text-sm">Try Now →</span>
+                  </div>
+                </div>
+              </ShineBorder>
+            </Link>
+
+            <Link href="/tools/shadow-ai" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#fcd34d", "#fbbf24", "#f59e0b"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-amber-600/20 flex items-center justify-center text-amber-400 font-bold">09</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-amber-400">Shadow AI Security Audit</h3>
+                    <p className="text-gray-400 text-sm mb-3">Calculate your enterprise blast radius for unauthorized shadow AI usage and IP Leakage.</p>
+                    <span className="text-amber-400 text-sm">Try Now →</span>
+                  </div>
+                </div>
+              </ShineBorder>
+            </Link>
+
+            <a href="https://exogram.ai/proving-ground" target="_blank" rel="noopener noreferrer" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#3b82f6", "#2563eb", "#1d4ed8"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-blue-600/20 flex items-center justify-center text-blue-400 font-bold">10</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400">Deterministic Execution Sandbox</h3>
+                    <p className="text-gray-400 text-sm mb-3">Fire adversarial payloads at Exogram's 8-rule deterministic policy engine. Zero LLM.</p>
+                    <span className="text-blue-400 text-sm">Try Live Sandbox ↗</span>
+                  </div>
+                </div>
+              </ShineBorder>
+            </a>
+
+            <a href="https://exogram.ai/analyze" target="_blank" rel="noopener noreferrer" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#10b981", "#059669", "#047857"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-emerald-600/20 flex items-center justify-center text-emerald-400 font-bold">11</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-emerald-400">Agentic Telemetry Analyzer</h3>
+                    <p className="text-gray-400 text-sm mb-3">Enforce a deterministic execution boundary for your autonomous AI agents.</p>
+                    <span className="text-emerald-400 text-sm">Analyze Architecture ↗</span>
+                  </div>
+                </div>
+              </ShineBorder>
+            </a>
+
           </div>
         </section>
 
