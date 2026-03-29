@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import TrackAccordion from '@/app/components/TrackAccordion';
 import { tracks } from '@/app/lib/curriculum-tracks-ui';
+import { auth } from '@clerk/nextjs/server';
+import { supabaseAdmin } from '@/lib/supabase';
+
 export const metadata: Metadata = {
     title: 'Product Economics Curriculum — 190 Modules, 14 Tracks | Richard Ewing',
     description: 'Fourteen curriculum tracks for mastering product economics: Engineering Economics, AI Product Economics, R&D Capital Management, Capstone, DevOps, Product Management, Security, Data, Leadership, Startup, AI Operations, Enterprise Architecture, AI Agents, and Cloud FinOps. 190 comprehensive modules.',
@@ -12,7 +15,21 @@ export const metadata: Metadata = {
 const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5', teal: 'border-teal-500/30 bg-teal-500/5', lime: 'border-lime-500/30 bg-lime-500/5', fuchsia: 'border-fuchsia-500/30 bg-fuchsia-500/5', blue: 'border-blue-500/30 bg-blue-500/5' };
 const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400', amber: 'text-amber-400', orange: 'text-orange-400', pink: 'text-pink-400', red: 'text-red-400', sky: 'text-sky-400', indigo: 'text-indigo-400', rose: 'text-rose-400', teal: 'text-teal-400', lime: 'text-lime-400', fuchsia: 'text-fuchsia-400', blue: 'text-blue-400' };
 
-export default function CurriculumTracksPage() {
+export default async function CurriculumTracksPage() {
+    const { userId } = await auth();
+    let completedModuleIds: string[] = [];
+
+    if (userId) {
+        try {
+            const { data } = await supabaseAdmin
+                .from('user_content_progress')
+                .select('content_id')
+                .eq('user_id', userId)
+                .eq('is_completed', true);
+            if (data) completedModuleIds = data.map(d => d.content_id);
+        } catch (e) { console.error('Failed to fetch user progress:', e); }
+    }
+
     return (
         <main className="pt-20">
             <div className="page-container">
@@ -54,7 +71,7 @@ export default function CurriculumTracksPage() {
                         </div>
                         <div className="space-y-6">
                             {tracks.slice(0, 4).map((track, i) => (
-                                <TrackAccordion key={`core-${i}`} track={track} colorMap={colorMap} textMap={textMap} />
+                                <TrackAccordion key={`core-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
                             ))}
                         </div>
                     </div>
@@ -67,7 +84,7 @@ export default function CurriculumTracksPage() {
                         </div>
                         <div className="space-y-6">
                             {tracks.slice(4, 14).map((track, i) => (
-                                <TrackAccordion key={`arch-${i}`} track={track} colorMap={colorMap} textMap={textMap} />
+                                <TrackAccordion key={`arch-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
                             ))}
                         </div>
                     </div>
@@ -80,7 +97,7 @@ export default function CurriculumTracksPage() {
                         </div>
                         <div className="space-y-6">
                             {tracks.slice(14).map((track, i) => (
-                                <TrackAccordion key={`free-${i}`} track={track} colorMap={colorMap} textMap={textMap} />
+                                <TrackAccordion key={`free-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
                             ))}
                         </div>
                     </div>

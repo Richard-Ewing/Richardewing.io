@@ -7,20 +7,24 @@ interface TrackAccordionProps {
     track: any;
     colorMap: Record<string, string>;
     textMap: Record<string, string>;
+    serverCompletedModuleIds?: string[];
 }
 
-export default function TrackAccordion({ track, colorMap, textMap }: TrackAccordionProps) {
+export default function TrackAccordion({ track, colorMap, textMap, serverCompletedModuleIds = [] }: TrackAccordionProps) {
     const [isOpen, setIsOpen] = useState(false);
-    const [completedModules, setCompletedModules] = useState<string[]>([]);
+    const [completedModules, setCompletedModules] = useState<string[]>(serverCompletedModuleIds);
 
     useEffect(() => {
         const updateProgress = () => {
-             setCompletedModules(JSON.parse(localStorage.getItem('vault_progress') || '[]'));
+             const localProgress = JSON.parse(localStorage.getItem('vault_progress') || '[]');
+             // Merge local progress with server progress to ensure instant UI reactivity while fetching
+             const merged = Array.from(new Set([...serverCompletedModuleIds, ...localProgress]));
+             setCompletedModules(merged);
         };
         updateProgress();
         window.addEventListener('vault_progress_updated', updateProgress);
         return () => window.removeEventListener('vault_progress_updated', updateProgress);
-    }, []);
+    }, [serverCompletedModuleIds]);
 
     const completionCount = track.modules.filter((m: any) => completedModules.includes(m.id)).length;
     const progressPercent = track.modules.length > 0 ? (completionCount / track.modules.length) * 100 : 0;
@@ -113,7 +117,7 @@ export default function TrackAccordion({ track, colorMap, textMap }: TrackAccord
                         </div>
                         {track.tools && track.tools.length > 0 && (
                             <div>
-                                <h3 className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest mb-3">ROI Calculators</h3>
+                                <h3 className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest mb-3">Tools & Assets</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {track.tools.map((t: any) => (
                                         <Link key={t.href} href={t.href} className={`px-3 py-1 rounded-md text-xs font-bold ${textMap[track.color]} bg-white/5 border border-white/10 hover:border-current transition-colors`}>

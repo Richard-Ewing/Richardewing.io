@@ -14,7 +14,7 @@ export default function ProgressCompleteButton({ moduleId, nextHref }: { moduleI
         }
     }, [moduleId]);
 
-    const handleComplete = () => {
+    const handleComplete = async () => {
         const progress = JSON.parse(localStorage.getItem('vault_progress') || '[]');
         if (!progress.includes(moduleId)) {
             progress.push(moduleId);
@@ -24,6 +24,22 @@ export default function ProgressCompleteButton({ moduleId, nextHref }: { moduleI
 
         // Trigger a custom event so other components (if on the same page) could update
         window.dispatchEvent(new Event('vault_progress_updated'));
+
+        // Sync with database for cross-device persistence
+        try {
+            await fetch('/api/progress', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    content_id: moduleId,
+                    content_type: 'module',
+                    progress_percentage: 100,
+                    is_completed: true
+                })
+            });
+        } catch (error) {
+            console.error('Failed to sync progress to database', error);
+        }
 
         if (nextHref) {
             router.push(nextHref);

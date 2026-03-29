@@ -113,7 +113,16 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
     const metadata: any = sessionClaims?.metadata || {};
     const hasSubscription = metadata.has_yearly_subscription === true;
     const unlockedItems = (metadata.unlocked_items as string[]) || [];
-    const hasAccess = !!userId && (hasSubscription || unlockedItems.includes(`module_${mod.moduleId}`) || unlockedItems.includes(`module_track_${slug[0]}`) || unlockedItems.includes(`module_${slug[0]}`));
+
+    // Bypass PayGate for Track 15 (Free Playbooks) and Track 17 (Comparisons). Track 16 remains paid.
+    const isExplicitlyFreeTrack = (slug[0] === 'guides' && mod.moduleId.startsWith('15-')) || slug[0] === 'comparisons';
+
+    const hasAccess = isExplicitlyFreeTrack || (!!userId && (
+        hasSubscription || 
+        unlockedItems.includes(`module_${mod.moduleId}`) || 
+        unlockedItems.includes(`module_track_${slug[0]}`) || 
+        unlockedItems.includes(`module_${slug[0]}`)
+    ));
 
     // ONLY show free preview for the very first module of the entire platform: Track 1 (CTO), Module 1 (1-1)
     // Removed the "first module of every track" leak.
