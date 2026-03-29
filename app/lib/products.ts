@@ -10,6 +10,21 @@ export interface Product {
 }
 
 export const PRODUCTS: Record<string, Product> = {
+    // --- UNIFIED ENTERPRISE PASS ---
+    all_access_pass: {
+        name: 'All-Access Vault Pass',
+        description: 'Instant, lifetime access to all 400 framework modules, 5 strategic enterprise tools, and continuously updating intelligence.',
+        price: 99900, // $999.00
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/test_pass_url', // Replace with real link
+    },
+    team_license_pass: {
+        name: 'Enterprise Team License (10 Seats)',
+        description: 'B2B Corporate access. Instantly provision up to 10 seats of the All-Access Vault Pass for your engineering leadership and PM layer.',
+        price: 499900, // $4,999.00
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/test_team_url', // Replace with real link
+    },
     // --- CURRICULUM ---
     single_module: {
         name: 'Single Curriculum Module',
@@ -401,5 +416,14 @@ export const PRODUCTS: Record<string, Product> = {
         description: 'Balancing ESG commitments with infrastructure cost realities in high-compute AI environments.',
         price: 2900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/3cI7sE1My1b44hvccg2B20a',
+    },
+
+    // --- B2B ENTERPRISE ---
+    enterprise_curriculum_license: {
+        name: 'Enterprise Curriculum License (10 Seats)',
+        description: 'B2B 10-seat license to the full Vault LMS curriculum. Includes team progress reporting and 1 kickoff advisory session.',
+        price: 150000,
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/placeholder_enterprise',
     },
 };

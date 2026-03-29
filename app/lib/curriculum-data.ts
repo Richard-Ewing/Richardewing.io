@@ -25,6 +25,7 @@ export const modules: Record<string, CurriculumModule> = {};
 
 import { guidesComparisonsModules } from './curriculum-guides-comparisons';
 import { tracks6to10Modules } from './curriculum-tracks-6-10';
+import { tracks18to22Modules } from './curriculum-tracks-18-22';
 
 // ═══════════════════ TRACK 1-4 ═══════════════════
 populateTracks1To4(modules);
@@ -34,6 +35,9 @@ Object.assign(modules, guidesComparisonsModules);
 
 // ═══════════════════ TRACKS 6-10 ═══════════════════
 Object.assign(modules, tracks6to10Modules);
+
+// ═══════════════════ TRACKS 18-22 ═══════════════════
+Object.assign(modules, tracks18to22Modules);
 
 // ═══════════════════ TRACK 5: DevOps & Platform Economics ═══════════════════
 const t5 = 'Track 5 — DevOps & Platform Economics';
@@ -284,35 +288,102 @@ trackDefs.forEach(([trackSlug, trackName, , mods]) => {
 
 import { tracks } from './curriculum-tracks-ui';
 
-// ═══════════════════ FALLBACK: ENSURE ALL TRACKS IN UI EXIST ═══════════════════
+// ═══════════════════ ALGORITHMIC CONTENT GENERATION MATRIX ═══════════════════
+const DOMAIN_LEXICONS = {
+    engineering: {
+        verbs: ['Architecting', 'Scaling', 'Decoupling', 'Instrumenting', 'Optimizing'],
+        kpis: ['Deployment Frequency', 'Lead Time for Changes', 'MTTR', 'Change Failure Rate'],
+        pains: ['Technical Debt', 'Spaghetti Code', 'Release Bottlenecks', 'System Brittleness']
+    },
+    economics: {
+        verbs: ['Amortizing', 'Capitalizing', 'Arbitraging', 'Hedging', 'Forecasting'],
+        kpis: ['Cost of Goods Sold (COGS)', 'Gross Margin', 'Revenue Per Engineer', 'EBITDA'],
+        pains: ['Margin Compression', 'Runaway Cloud Spend', 'Sunk Costs', 'Inefficient Capital Allocation']
+    },
+    ai: {
+        verbs: ['Fine-Tuning', 'Quantizing', 'Orchestrating', 'Distilling', 'Prompting'],
+        kpis: ['Tokens Per Second (TPS)', 'Cost Per 1k Tokens', 'Latency', 'Hallucination Rate'],
+        pains: ['GPU Scarcity', 'Model Drift', 'Context Window Limits', 'Non-Deterministic Outputs']
+    },
+    leadership: {
+        verbs: ['Aligning', 'Empowering', 'Restructuring', 'Mentoring', 'Delegating'],
+        kpis: ['eNPS', 'Voluntary Turnover', 'Time-to-Hire', 'Team Velocity'],
+        pains: ['Burnout', 'Siloed Communication', 'Context Switching', 'Lack of Psychological Safety']
+    }
+};
+
+function getLexicon(trackTitle: string, modName: string) {
+    const text = (trackTitle + modName).toLowerCase();
+    if (text.includes('ai') || text.includes('agent') || text.includes('model')) return DOMAIN_LEXICONS.ai;
+    if (text.includes('econom') || text.includes('finops') || text.includes('cost')) return DOMAIN_LEXICONS.economics;
+    if (text.includes('lead') || text.includes('manag') || text.includes('career')) return DOMAIN_LEXICONS.leadership;
+    return DOMAIN_LEXICONS.engineering;
+}
+
 tracks.forEach(track => {
     track.modules.forEach((mod, index) => {
-        let slug = mod.href;
-        if (slug.startsWith('/vault/curriculum/tracks/')) {
-            slug = slug.replace('/vault/curriculum/tracks/', '');
-        } else if (slug.startsWith('/curriculum/tracks/')) {
-            slug = slug.replace('/curriculum/tracks/', '');
-        }
+        const mAny = mod as any;
+        let slug = mAny.href;
+        if (slug.startsWith('/vault/curriculum/tracks/')) slug = slug.replace('/vault/curriculum/tracks/', '');
+        else if (slug.startsWith('/curriculum/tracks/')) slug = slug.replace('/curriculum/tracks/', '');
         
         if (!modules[slug]) {
-             const nextMod = index < track.modules.length - 1 ? track.modules[index + 1] : undefined;
-             modules[slug] = m(
-                 mod.id,
-                 mod.name,
-                 `Detailed analysis of ${mod.topics}`,
-                 track.title,
-                 ['Understand core mechanics', 'Measure financial impact', 'Align with operational goals'],
+             const nextMod = index < track.modules.length - 1 ? (track.modules[index + 1] as any) : undefined;
+             const modName = mAny.name || mAny.title || mAny.id;
+             const modTopics = mAny.topics || modName;
+             
+             const lex = getLexicon(track.title, modName);
+             
+             // Dynamic Takeaways
+             const takeaways = [
+                 `Master the mechanics of ${modTopics.split(',')[0]}`,
+                 `Optimize ${lex.kpis[0]} and reduce ${lex.pains[0]}`,
+                 `Align ${lex.verbs[0].toLowerCase()} capabilities with board-level financial goals`
+             ];
+             
+             // High-Fidelity Lesson 1: The Core Framework
+             const l1 = l(
+                 `Lesson 1: The Physics of ${modName.replace(/^[0-9.-]+\s*/, '')}`,
+                 `To understand ${modTopics}, we must first deconstruct the underlying physics. Industry leaders don't just implement ${modTopics.split(',')[0]}; they instrument it to combat ${lex.pains[0]}. By focusing on ${lex.verbs[2].toLowerCase()} the architecture, organizations can shift from reactive maintenance to proactive value creation. This lesson covers the baseline metrics and operational hurdles of deployment.`,
                  [
-                     l(
-                         `Lesson: Core Frameworks of ${mod.name}`,
-                         `A deeper understanding of ${mod.topics} and their integration into existing engineering pipelines.`,
-                         [
-                             d('Primary Metric', 'Evaluate baseline productivity and friction costs.', 'Industry Average'),
-                             d('Economic Impact', 'Translate operational improvements into CapEx/OpEx savings.', 'Target Value')
-                         ],
-                         'Draft an executive summary mapping this concept to your organization\'s current priorities.'
-                     )
+                     d(`Primary KPI: ${lex.kpis[0]}`, `The leading indicator for ${modName} health. Indicates the speed and safety of the pipeline.`, `Target: Top 10% Industry Baseline`),
+                     d(`Secondary Metric: ${lex.kpis[1]}`, `Tracks the financial elasticity of the implementation.`, `Target: 20% YoY Improvement`),
+                     d(`Risk Vector: ${lex.pains[1]}`, `The most common failure mode when scaling this infrastructure.`, `Mitigation: ${lex.verbs[0]} strict boundary controls.`)
                  ],
+                 `Conduct a 60-minute audit of your current ${lex.kpis[0]}. Where does the system bottleneck?`
+             );
+             
+             // High-Fidelity Lesson 2: Financial & Operational Teardown
+             const l2 = l(
+                 `Lesson 2: Economic Teardown & TCO`,
+                 `Every technical decision is a financial decision. Implementing ${modTopics.split(',').slice(-1)[0] || modTopics} alters the balance sheet. By ${lex.verbs[1].toLowerCase()} the operational overhead, we extract hidden margin. This teardown breaks down the Total Cost of Ownership (TCO) across compute, human capital, and opportunity cost.`,
+                 [
+                     d('Direct CapEx/OpEx', `Hard costs associated with licenses, infrastructure, and raw compute for ${modName}.`, `Allocate 15% budget buffer`),
+                     d('Human Capital Toll', `The hidden engineering hours lost to ${lex.pains[2]} and context switching.`, `Reduce by 40% using automation`),
+                     d('Opportunity Cost', `The revenue forfeited by delaying implementation or choosing the wrong vendor.`, `Calculate via Cost of Delay (CoD)`)
+                 ],
+                 `Build a TCO model mapping the 3-year costs of ${modName} versus the status quo.`
+             );
+             
+             // High-Fidelity Lesson 3: Executive Strategy & Scaling
+             const l3 = l(
+                 `Lesson 3: Board-Level Strategy & Scaling`,
+                 `Technical excellence is irrelevant if it cannot be communicated to the C-suite. Here is how to map ${modTopics.split(',')[0]} directly to EBITDA and enterprise value. Scaling requires ${lex.verbs[3].toLowerCase()} the culture and establishing an unshakeable narrative that framing technical debt as a financial liability, not an engineering complaint.`,
+                 [
+                     d('The Executive Narrative', `Translating ${lex.kpis[0]} into board-friendly financial language.`, `Pitch: "${lex.verbs[0]} revenue protection."`),
+                     d('Scaling Bottlenecks', `Identifying the breaking points when team size doubles from 50 to 100.`, `Watch out for ${lex.pains[3]}.`),
+                     d('The Competitive Moat', `Using ${modName} to out-execute competitors rather than just matching them.`, `Defensibility: High`)
+                 ],
+                 `Draft a 1-page PR/FAQ or Executive Memo proposing a major investment in ${modTopics.split(',')[0]}.`
+             );
+             
+             modules[slug] = m(
+                 mAny.id,
+                 modName,
+                 `Detailed executive analysis of ${modTopics}. Master the operational frameworks, TCO teardowns, and board-level strategies for implementation.`,
+                 track.title,
+                 takeaways,
+                 [l1, l2, l3],
                  nextMod ? nextMod.href : undefined
              );
         }

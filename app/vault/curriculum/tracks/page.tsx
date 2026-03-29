@@ -6,11 +6,11 @@ import { auth } from '@clerk/nextjs/server';
 import { supabaseAdmin } from '@/lib/supabase';
 
 export const metadata: Metadata = {
-    title: 'Product Economics Curriculum — 190 Modules, 14 Tracks | Richard Ewing',
-    description: 'Fourteen curriculum tracks for mastering product economics: Engineering Economics, AI Product Economics, R&D Capital Management, Capstone, DevOps, Product Management, Security, Data, Leadership, Startup, AI Operations, Enterprise Architecture, AI Agents, and Cloud FinOps. 190 comprehensive modules.',
+    title: 'Product Economics Curriculum — 400 Modules, 40 Tracks | Richard Ewing',
+    description: 'Forty curriculum tracks for mastering product economics: Core Engineering, Data Pipelines, AI Paradigms, Security, Leadership, UI/UX, TPM, Cloud FinOps, and Career Progressions. 400 comprehensive modules.',
     keywords: ['product economics curriculum', 'engineering economics course', 'AI economics training', 'R&D capital management', 'technical debt certification', 'engineering leadership course', 'DevOps economics', 'security economics', 'cloud finops', 'AI agent economics'],
     alternates: { canonical: 'https://www.richardewing.io/curriculum/tracks' },
-    openGraph: { title: 'Product Economics Curriculum — 190 Modules, 14 Tracks', description: 'Master product economics across fourteen specialized tracks.', url: 'https://www.richardewing.io/curriculum/tracks', type: 'website' },
+    openGraph: { title: 'Product Economics Curriculum — 400 Modules, 40 Tracks', description: 'Master product economics across forty specialized tracks.', url: 'https://www.richardewing.io/curriculum/tracks', type: 'website' },
 };
 const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5', teal: 'border-teal-500/30 bg-teal-500/5', lime: 'border-lime-500/30 bg-lime-500/5', fuchsia: 'border-fuchsia-500/30 bg-fuchsia-500/5', blue: 'border-blue-500/30 bg-blue-500/5' };
 const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400', amber: 'text-amber-400', orange: 'text-orange-400', pink: 'text-pink-400', red: 'text-red-400', sky: 'text-sky-400', indigo: 'text-indigo-400', rose: 'text-rose-400', teal: 'text-teal-400', lime: 'text-lime-400', fuchsia: 'text-fuchsia-400', blue: 'text-blue-400' };
@@ -35,25 +35,26 @@ export default async function CurriculumTracksPage() {
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-violet-500 uppercase tracking-widest mb-4">Curriculum — 190 Modules</div>
+                        <div className="text-xs font-mono text-violet-500 uppercase tracking-widest mb-4">Curriculum — 400 Modules</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
-                            Fourteen Paths to{' '}
+                            Forty Paths to{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Mastery</span>
                         </h1>
                         <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-                            From engineering metrics to AI economics to security to startup economics. 190 modules, 500+ lessons, each with hands-on exercises and tools. 420+ glossary definitions underpin every module.
+                            From engineering metrics to AI economics to security, leadership, and startup economics. 400 modules, 1,200+ lessons, each with hands-on framework reviews. 500+ glossary definitions underpin every module.
                         </p>
                         <div className="flex items-center justify-center gap-6 mt-6 flex-wrap">
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">190</div>
+                                <div className="text-2xl font-grotesk font-bold text-white">400</div>
                                 <div className="text-xs text-zinc-500">Modules</div>
                             </div>
+
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">500+</div>
+                                <div className="text-2xl font-grotesk font-bold text-white">1,200+</div>
                                 <div className="text-xs text-zinc-500">Lessons</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">420+</div>
+                                <div className="text-2xl font-grotesk font-bold text-white">500+</div>
                                 <div className="text-xs text-zinc-500">Glossary Terms</div>
                             </div>
                             <div className="text-center">
@@ -89,14 +90,66 @@ export default async function CurriculumTracksPage() {
                         </div>
                     </div>
 
-                    <div className="mb-8">
+                    <div className="mb-16">
                         <div className="flex items-center gap-4 mb-8">
                             <div className="h-px bg-white/10 flex-grow"></div>
-                            <h2 className="text-sm font-mono text-emerald-500 uppercase tracking-widest font-bold">Free Playbooks & Comparisons</h2>
+                            <h2 className="text-sm font-mono text-pink-500 uppercase tracking-widest font-bold">Hyper-Niche Meta-Trends (2025/2026)</h2>
                             <div className="h-px bg-white/10 flex-grow"></div>
                         </div>
                         <div className="space-y-6">
-                            {tracks.slice(14).map((track, i) => (
+                            {tracks.slice(17, 30).map((track, i) => (
+                                <TrackAccordion key={`mega-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="mb-8 mt-16">
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="h-px bg-white/10 flex-grow"></div>
+                            <h2 className="text-sm font-mono text-amber-500 uppercase tracking-widest font-bold">Core Software & Operations</h2>
+                            <div className="h-px bg-white/10 flex-grow"></div>
+                        </div>
+                        <div className="space-y-6">
+                            {tracks.slice(30, 35).map((track, i) => (
+                                <TrackAccordion key={`ops-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="mb-8 mt-16">
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="h-px bg-white/10 flex-grow"></div>
+                            <h2 className="text-sm font-mono text-orange-500 uppercase tracking-widest font-bold">Engineering Leadership & Promotion Trajectories</h2>
+                            <div className="h-px bg-white/10 flex-grow"></div>
+                        </div>
+                        <div className="space-y-6">
+                            {tracks.slice(35, 40).map((track, i) => (
+                                <TrackAccordion key={`leadership-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <div className="mb-8 mt-16">
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="h-px bg-white/10 flex-grow"></div>
+                            <h2 className="text-sm font-mono text-zinc-300 uppercase tracking-widest font-bold">Old School & Corporate IT Economics</h2>
+                            <div className="h-px bg-white/10 flex-grow"></div>
+                        </div>
+                        <div className="space-y-6">
+                            {tracks.slice(40, 50).map((track, i) => (
+                                <TrackAccordion key={`oldschool-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="mb-16">
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="h-px bg-emerald-500/30 flex-grow"></div>
+                            <h2 className="text-sm font-mono text-emerald-500 uppercase tracking-widest font-bold">Free Resources & Playbooks</h2>
+                            <div className="h-px bg-emerald-500/30 flex-grow"></div>
+                        </div>
+                        <div className="space-y-6">
+                            {tracks.slice(14, 17).map((track, i) => (
                                 <TrackAccordion key={`free-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
                             ))}
                         </div>

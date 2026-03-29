@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import jsPDF from 'jspdf';
-import { toPng } from 'html-to-image';
+import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { motion } from 'framer-motion';
 import ToolCelebration from '../../components/ToolCelebration';
 import Link from 'next/link';
@@ -168,6 +167,29 @@ export default function PDITool() {
                 ticketCount: total,
                 qpep_roadmap: data.qpep_roadmap,
             });
+
+            // Silently persist to Supabase for longitudinal tracking (Data Moat telemetry)
+            fetch('/api/tools/runs', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    tool_id: 'pdi',
+                    run_data: { teamSize, salary, sprintLength, avgTicketAge, roadmapHorizon },
+                    output_metrics: {
+                        score,
+                        financial_waste: waste,
+                        metrics: { 
+                            growth: Math.round((growth / total) * 100), 
+                            retention: Math.round((retention / total) * 100), 
+                            maintenance: Math.round((maint / total) * 100) 
+                        },
+                        debtVelocity,
+                        burnDownWeeks,
+                        ticketCount: total,
+                    }
+                })
+            }).catch(console.error);
+
         } catch (error: any) {
             console.error(error);
             alert(`Audit failed: ${error.message || "Unknown error"}`);
@@ -243,9 +265,9 @@ export default function PDITool() {
         }
     };
 
-    const handleSaveAndExport = async () => {
-        if (!results) return;
-        setIsSaving(true);
+    const handleSaveToVault = async (): Promise<boolean> => {
+        if (!results) return false;
+        
         try {
             // 1. Save to Supabase via API
             const saveRes = await fetch('/api/tools/pdi/save', {
@@ -262,35 +284,15 @@ export default function PDITool() {
                 const errData = await saveRes.json().catch(() => ({}));
                 if (saveRes.status === 402) {
                     setShowPaywall(true);
-                    return; // Abort export
+                    return false; // Abort export
                 }
                 throw new Error(errData.error || `Vault connection failed (${saveRes.status})`);
             }
-
-            // 2. Generate PDF Artifact
-            const element = document.getElementById('pdi-results-artifact');
-            if (element) {
-                // toPng handles modern CSS natively without crashing on oklab/oklch colors.
-                const imgData = await toPng(element, { 
-                    pixelRatio: 2, 
-                    backgroundColor: '#050505'
-                });
-                
-                // Get element dimensions for precise PDF scaling
-                const { offsetWidth, offsetHeight } = element;
-                const pdf = new jsPDF({
-                    orientation: 'portrait',
-                    unit: 'px',
-                    format: [offsetWidth, offsetHeight]
-                });
-                pdf.addImage(imgData, 'PNG', 0, 0, offsetWidth, offsetHeight);
-                pdf.save(`Product_Debt_Index_${new Date().toISOString().split('T')[0]}.pdf`);
-            }
+            return true;
         } catch (error: any) {
             console.error('Export Error:', error);
-            alert(`Failed to export report: ${error?.message || error}`);
-        } finally {
-            setIsSaving(false);
+            alert(`Failed to save report: ${error?.message || error}`);
+            return false;
         }
     };
 
@@ -518,9 +520,20 @@ Migrate from Heroku to AWS"
             ) : (
                 /* --- RESULTS STATE --- */
                 <div id="pdi-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
-                    <ScrollReveal>
-                        {/* Score Header */}
-                        <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
+                    <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-cyan-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                        <div>
+                            <h2 className="text-xl font-bold text-white mb-1">PDI Diagnostic Complete</h2>
+                            <p className="text-sm text-zinc-400">Export this assessment to a verified Executive PDF for board review.</p>
+                        </div>
+                        <div className="mt-4 sm:mt-0">
+                            <ExportToPDFButton targetId="pdi-pdf-export-zone" fileName={`PDI_Diagnostic_${persona}.pdf`} />
+                        </div>
+                    </div>
+
+                    <div id="pdi-pdf-export-zone" className="space-y-6">
+                        <ScrollReveal>
+                            {/* Score Header */}
+                            <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
                             <BorderBeam size={300} duration={12} delay={9} borderWidth={1.5} />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                 <div>
@@ -727,14 +740,11 @@ Migrate from Heroku to AWS"
                     <ScrollReveal delay={250}>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t border-white/10" data-html2canvas-ignore>
                             <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Audit</button>
-                            <button onClick={handleSaveAndExport} disabled={isSaving} className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all flex items-center gap-2 ${results.score < 50
-                                ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)] disabled:bg-red-800'
-                                : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)] disabled:bg-cyan-700'
-                                }`}>
-                                {isSaving ? (
-                                    <><div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" /> GENERATING REPORT...</>
-                                ) : '💾 SAVE TO VAULT & EXPORT PDF'}
-                            </button>
+                            <ExportToPDFButton 
+                                targetId="pdi-results-artifact" 
+                                fileName={`Product_Debt_Index_${new Date().toISOString().split('T')[0]}.pdf`} 
+                                onBeforeExport={handleSaveToVault} 
+                            />
                             <Link href="/system" className="text-zinc-500 text-sm hover:text-white">Explore All Tools →</Link>
                         </div>
                     </ScrollReveal>
@@ -752,6 +762,7 @@ Migrate from Heroku to AWS"
                             </div>
                         </div>
                     </ScrollReveal>
+                    </div> {/* End PDF Export Zone */}
                 </div>
             )
             }

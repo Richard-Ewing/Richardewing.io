@@ -7,11 +7,13 @@ import { useUser, useClerk } from '@clerk/nextjs';
 export function ExportToPDFButton({ 
     targetId, 
     fileName = 'Exogram_Report.pdf', 
-    className = '' 
+    className = '',
+    onBeforeExport
 }: { 
     targetId: string, 
     fileName?: string, 
-    className?: string 
+    className?: string,
+    onBeforeExport?: () => Promise<boolean>
 }) {
     const [isExporting, setIsExporting] = useState(false);
     const { isSignedIn } = useUser();
@@ -26,6 +28,14 @@ export function ExportToPDFButton({
 
         setIsExporting(true);
         try {
+            if (onBeforeExport) {
+                const canProceed = await onBeforeExport();
+                if (!canProceed) {
+                    setIsExporting(false);
+                    return;
+                }
+            }
+
             // Dynamically import heavy PDF engines only on click to prevent Next.js SSR crashes
             const html2canvas = (await import('html2canvas')).default;
             const jsPDF = (await import('jspdf')).default;

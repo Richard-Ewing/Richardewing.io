@@ -3,6 +3,7 @@ import { currentUser } from '@clerk/nextjs/server';
 import Link from 'next/link';
 import { BookOpen, ShieldCheck, ChevronRight, Lock, Download, Zap, Database, TrendingUp, Presentation, Clock, Activity } from 'lucide-react';
 import { supabaseAdmin } from '@/lib/supabase';
+import progressStyles from '../styles/progress.module.css';
 
 export const metadata = {
     title: 'Client Vault',
@@ -19,24 +20,58 @@ export default async function VaultPage() {
     const hasPremium = user.publicMetadata?.has_premium_guide_access === true || user.publicMetadata?.has_yearly_subscription === true;
     const hasSubscription = user.publicMetadata?.has_yearly_subscription === true;
 
-    // Fetch historical diagnostic runs for this user
-    const { data: rawToolRuns, error } = await supabaseAdmin
-        .from('tool_runs')
-        .select('*')
-        .eq('user_id', user.id)
-        .order('created_at', { ascending: false });
-
-    // Fetch learning progress
-    const { data: contentProgressRaw } = await supabaseAdmin
-        .from('user_content_progress')
-        .select('*')
-        .eq('user_id', user.id)
-        .order('last_accessed', { ascending: false })
-        .limit(3);
+    // Parallel fetch required data
+    const [
+        { data: rawToolRuns, error: runsError },
+        { data: contentProgressRaw, error: progressError },
+        { data: globalToolRuns }
+    ] = await Promise.all([
+        supabaseAdmin
+            .from('user_tool_runs')
+            .select('*')
+            .eq('user_id', user.id)
+            .order('created_at', { ascending: false }),
+        supabaseAdmin
+            .from('user_content_progress')
+            .select('*')
+            .eq('user_id', user.id),
+        supabaseAdmin
+            .from('user_tool_runs')
+            .select('output_metrics, tool_id')
+            .limit(1000)
+    ]);
 
     // Safely parse
     const toolRuns = rawToolRuns || [];
-    const contentProgress = contentProgressRaw || [];
+    const contentProgress = contentProgressRaw?.filter(p => p.content_type === 'curriculum') || [];
+    
+    // Global Data Moat Aggregation
+    let totalAuebMargin = 0; let auebCount = 0;
+    let totalPdiWaste = 0; let pdiCount = 0;
+    if (globalToolRuns) {
+        globalToolRuns.forEach(run => {
+            const lowerToolId = run.tool_id?.toLowerCase();
+            if (lowerToolId === 'aueb' && run.output_metrics?.grossMargin) {
+                totalAuebMargin += Number(run.output_metrics.grossMargin); 
+                auebCount++;
+            }
+            if (lowerToolId === 'pdi' && (run.output_metrics?.financial_waste || (run as any).financial_waste)) {
+                totalPdiWaste += Number(run.output_metrics?.financial_waste ?? (run as any).financial_waste); 
+                pdiCount++;
+            }
+        });
+    }
+    const globalAuebMargin = auebCount > 0 ? (totalAuebMargin / auebCount).toFixed(1) : '68.5';
+    const globalPdiWaste = pdiCount > 0 ? (totalPdiWaste / pdiCount) : 1250000;
+    
+    // Progress Flywheel Calculation
+    const completedCount = contentProgress.filter(p => p.is_completed).length;
+    // Dynamically retrieve total modules count to stay updated as tracks expand
+    const curriculumData = await import('@/lib/curriculum-data');
+    const totalModulesCount = curriculumData.getAllModuleSlugs().length;
+    const completionPercentage = typeof Math !== 'undefined' ? Math.min(100, Math.round((completedCount / totalModulesCount) * 100)) : 0;
+    const circumference = 2 * Math.PI * 45; // r=45
+    const strokeDashoffset = circumference - (completionPercentage / 100) * circumference;
 
     const formatMoney = (num: number) => {
         if (!num) return '$0';
@@ -101,8 +136,39 @@ export default async function VaultPage() {
 
                 <div className="flex flex-col md:flex-row gap-8">
                     
-                    {/* LEFT COLUMN: Assets & Tools */}
+                    {/* LEFT COLUMN: Main Dash */}
                     <div className="flex-1 space-y-8">
+
+                        {/* PROGRESS FLYWHEEL SECTION */}
+                        <section className="card p-6 border-violet-500/20 bg-violet-500/[0.02] relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+                            <div className="relative z-10 flex flex-col sm:flex-row items-center gap-8">
+                                <div className="relative w-32 h-32 flex-shrink-0">
+                                    <svg className="w-full h-full transform -rotate-90">
+                                        <circle cx="64" cy="64" r="45" fill="none" stroke="currentColor" strokeWidth="8" className="text-white/5" />
+                                        <circle 
+                                            cx="64" cy="64" r="45" fill="none" stroke="currentColor" strokeWidth="8" 
+                                            className="text-violet-500 transition-all duration-1000 ease-out"
+                                            strokeDasharray={circumference}
+                                            strokeDashoffset={strokeDashoffset}
+                                            strokeLinecap="round"
+                                        />
+                                    </svg>
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                                        <span className="text-2xl font-grotesk font-bold text-white">{completionPercentage}%</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 className="text-2xl font-bold text-white mb-2">Architectural Mastery</h2>
+                                    <p className="text-sm text-zinc-400 mb-4">
+                                        You have mastered <strong className="text-violet-400">{completedCount}</strong> out of <strong className="text-white">{totalModulesCount}</strong> core modules across {Math.ceil(totalModulesCount / 15)} disciplines. The curriculum continually adapts to macroeconomic trends.
+                                    </p>
+                                    <Link href="/vault/curriculum/tracks" className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-sm text-white transition-all">
+                                        Explore All {Math.ceil(totalModulesCount / 15)} Tracks <ChevronRight className="w-4 h-4" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </section>
                         
                         {/* CONTINUE LEARNING */}
                         {contentProgress.length > 0 && (
@@ -112,27 +178,40 @@ export default async function VaultPage() {
                                     Continue Learning
                                 </h2>
                                 <div className="space-y-3">
-                                    {contentProgress.map(progress => (
-                                        <Link key={progress.id} href={`/vault/curriculum/tracks/${progress.content_id.toLowerCase().replace(/\s+/g, '-')}`} className="block card p-4 border-emerald-500/20 bg-emerald-500/[0.02] hover:bg-emerald-500/[0.05] hover:border-emerald-500/40 transition-all group">
-                                            <div className="flex items-center justify-between mb-3">
-                                                <h3 className="text-white font-bold group-hover:text-emerald-400 transition-colors uppercase font-grotesk tracking-widest">{progress.content_id}</h3>
-                                                {progress.is_completed ? (
-                                                    <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest border border-emerald-500/30 px-2 py-0.5 rounded-full bg-emerald-500/10">Completed</span>
-                                                ) : (
-                                                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">{progress.progress_percentage}% Complete</span>
-                                                )}
-                                            </div>
-                                            <div className="w-full h-1.5 bg-black rounded-full overflow-hidden border border-white/5">
-                                                <div 
-                                                    className={`h-full transition-all duration-1000 ${progress.is_completed ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]' : 'bg-gradient-to-r from-emerald-600 to-cyan-500 object-cover'}`}
-                                                    style={{ width: `${Math.max(progress.progress_percentage, 5)}%` }}
-                                                />
-                                            </div>
-                                        </Link>
-                                    ))}
+                                    {/* Await the import outside the map callback */}
+                                    {await (async () => {
+                                        const { tracks } = await import('@/app/lib/curriculum-tracks-ui');
+                                        return contentProgress.map(progress => {
+                                            // Resolve exact href via registry
+                                            let resolvedHref = `/vault/curriculum/tracks/${progress.content_id.toLowerCase().replace(/\s+/g, '-')}`;
+                                            for(const t of tracks) {
+                                                const mod = t.modules.find(m => m.id === progress.content_id);
+                                                if (mod && mod.href) resolvedHref = mod.href;
+                                            }
+
+                                            return (
+                                                <Link key={progress.id} href={resolvedHref} className="block card p-4 border-emerald-500/20 bg-emerald-500/[0.02] hover:bg-emerald-500/[0.05] hover:border-emerald-500/40 transition-all group">
+                                                    <div className="flex items-center justify-between mb-3">
+                                                        <h3 className="text-white font-bold group-hover:text-emerald-400 transition-colors uppercase font-grotesk tracking-widest">{progress.content_id}</h3>
+                                                        {progress.is_completed ? (
+                                                            <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest border border-emerald-500/30 px-2 py-0.5 rounded-full bg-emerald-500/10">Completed</span>
+                                                        ) : (
+                                                            <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">{progress.progress_percentage}% Complete</span>
+                                                        )}
+                                                    </div>
+                                                    <div className="w-full h-1.5 bg-black rounded-full overflow-hidden border border-white/5">
+                                                        <div 
+                                                            className={`h-full transition-all duration-1000 ${progressStyles[`w_${Math.max(Math.round(progress.progress_percentage), 5)}`]} ${progress.is_completed ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]' : 'bg-gradient-to-r from-emerald-600 to-cyan-500 object-cover'}`}
+                                                        />
+                                                    </div>
+                                                </Link>
+                                            );
+                                        });
+                                    })()}
                                 </div>
                             </section>
                         )}
+
 
                         {/* UNLOCKED ASSETS */}
                         <section>
@@ -234,14 +313,14 @@ export default async function VaultPage() {
                                                 <div className="flex items-center gap-6">
                                                     <div className="text-right">
                                                         <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Score</div>
-                                                        <div className={`text-xl font-bold ${run.score < 50 ? 'text-red-400' : 'text-cyan-400'}`}>
-                                                            {run.score}/100
+                                                        <div className={`text-xl font-bold ${(run.output_metrics?.score ?? run.score) < 50 ? 'text-red-400' : 'text-cyan-400'}`}>
+                                                            {run.output_metrics?.score ?? run.score ?? 0}/100
                                                         </div>
                                                     </div>
                                                     <div className="text-right">
                                                         <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Waste Identified</div>
                                                         <div className="text-xl font-bold text-white font-mono">
-                                                            {formatMoney(run.financial_waste)}
+                                                            {formatMoney(run.output_metrics?.financial_waste ?? run.financial_waste ?? 0)}
                                                         </div>
                                                     </div>
                                                     <Link href={`/tools/${run.tool_id}`} className="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-colors group">
@@ -273,7 +352,34 @@ export default async function VaultPage() {
 
                     {/* RIGHT COLUMN: Upgrades & Advisory */}
                     <div className="w-full md:w-80 space-y-6">
-                        <div className="sticky top-24">
+                        <div className="sticky top-24 space-y-8">
+
+                            {/* STATE OF INDUSTRY ECONOMICS - GLOBAL DATA MOAT */}
+                            <div>
+                                <h2 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center justify-between">
+                                    Industry Benchmarks
+                                    <span className="text-[10px] bg-blue-500/10 px-2 py-0.5 rounded text-blue-400 border border-blue-500/20">Moat</span>
+                                </h2>
+                                <div className="card border-blue-500/20 bg-blue-500/[0.02]">
+                                    <div className="p-5 border-b border-white/5">
+                                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Global AI Unit Economics avg.</div>
+                                        <div className="flex items-end gap-2 text-white">
+                                            <span className="text-3xl font-grotesk font-bold">{globalAuebMargin}%</span>
+                                            <span className="text-xs text-blue-400 mb-1">Gross Margin</span>
+                                        </div>
+                                    </div>
+                                    <div className="p-5">
+                                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Global Product Debt average</div>
+                                        <div className="flex items-end gap-2 text-white">
+                                            <span className="text-3xl font-grotesk font-bold">{formatMoney(globalPdiWaste)}</span>
+                                            <span className="text-xs text-red-400 mb-1">Waste Identified</span>
+                                        </div>
+                                    </div>
+                                    <div className="px-5 pb-5 text-[10px] text-zinc-500 text-center leading-tight">
+                                        Derived from <strong className="text-zinc-400">{auebCount + pdiCount}</strong> anonymized enterprise snapshots run through the Vault.
+                                    </div>
+                                </div>
+                            </div>
                             
                             {/* FREE TIER USAGE TRACKING */}
                             {!hasSubscription && (

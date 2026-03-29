@@ -1,7 +1,8 @@
-import { MetadataRoute } from 'next';import { exogramDocs } from '@/lib/exogram-docs';
-
+import { MetadataRoute } from 'next';
+import { exogramDocs } from '@/lib/exogram-docs';
 import { glossaryTerms } from './glossary/terms';
 import { frameworks } from '@/lib/data';
+import { tracks } from '@/app/lib/curriculum-tracks-ui';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.richardewing.io';
@@ -515,43 +516,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
 
-        // Curriculum Module Pages (Vault Protected)
-        ...['1-1','1-2','1-3','1-4','1-5','1-6'].map(m => ({
-            url: `${baseUrl}/vault/curriculum/tracks/engineering-economics/${m}`,
+        // Curriculum Module Pages (Vault Protected Previews)
+        ...tracks.flatMap(t => t.modules.map(mod => ({
+            url: `${baseUrl}${mod.href}`,
             lastModified: new Date('2026-03-25'),
             changeFrequency: 'monthly' as const,
             priority: 0.6,
-        })),
-        ...['2-1','2-2','2-3','2-4','2-5','2-6'].map(m => ({
-            url: `${baseUrl}/vault/curriculum/tracks/ai-product-economics/${m}`,
-            lastModified: new Date('2026-03-25'),
-            changeFrequency: 'monthly' as const,
-            priority: 0.6,
-        })),
-        ...['3-1','3-2','3-3','3-4','3-5','3-6'].map(m => ({
-            url: `${baseUrl}/vault/curriculum/tracks/rd-capital-management/${m}`,
-            lastModified: new Date('2026-03-25'),
-            changeFrequency: 'monthly' as const,
-            priority: 0.6,
-        })),
-        ...['4-1','4-2','4-3','4-4','4-5','4-6'].map(m => ({
-            url: `${baseUrl}/vault/curriculum/tracks/capstone/${m}`,
-            lastModified: new Date('2026-03-25'),
-            changeFrequency: 'monthly' as const,
-            priority: 0.6,
-        })),
-        ...['16-1','16-2','16-3'].map(m => ({
-            url: `${baseUrl}/vault/curriculum/tracks/guides/${m}`,
-            lastModified: new Date('2026-03-25'),
-            changeFrequency: 'monthly' as const,
-            priority: 0.6,
-        })),
-        ...['17-1','17-2'].map(m => ({
-            url: `${baseUrl}/vault/curriculum/tracks/comparisons/${m}`,
-            lastModified: new Date('2026-03-25'),
-            changeFrequency: 'monthly' as const,
-            priority: 0.6,
-        })),
+        }))),
         // --- DYNAMICALLY INJECTED 50/50 MILESTONE AND EXOGRAM DOCS ---
         ...[
             'rust-vs-go',

@@ -87,34 +87,39 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                             {/* Quick Stats */}
                             <div className="grid grid-cols-3 gap-3 mb-6">
                                 <div className="rounded-xl bg-white/[0.02] border border-white/5 p-3 text-center">
-                                    <div className="text-lg font-bold text-white">{totalLessons}</div>
-                                    <div className="text-[10px] text-zinc-500 uppercase">Lessons</div>
+                                    <div className="text-xl font-bold text-white">400</div>
+                                    <div className="text-[10px] text-zinc-500 uppercase">Modules</div>
                                 </div>
                                 <div className="rounded-xl bg-white/[0.02] border border-white/5 p-3 text-center">
-                                    <div className="text-lg font-bold text-white">{totalLessons * 3}+</div>
-                                    <div className="text-[10px] text-zinc-500 uppercase">Exercises</div>
+                                    <div className="text-xl font-bold text-white">5+</div>
+                                    <div className="text-[10px] text-zinc-500 uppercase">Tools</div>
                                 </div>
                                 <div className="rounded-xl bg-violet-500/10 border border-violet-500/20 p-3 text-center">
-                                    <div className="text-lg font-bold text-violet-400">100%</div>
+                                    <div className="text-xl font-bold text-violet-400">100%</div>
                                     <div className="text-[10px] text-violet-500 uppercase">ROI</div>
                                 </div>
                             </div>
                             
-                            <CheckoutButton 
-                                productId={productId} 
-                                moduleId={moduleId}
-                                label={`Buy Module — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`} 
-                                icon="file" 
-                                variant="primary" 
-                            />
-                            
-                            <div className="mt-4 pt-4 border-t border-white/5">
+                            <div className="space-y-3">
                                 <CheckoutButton 
-                                    productId={bundleId} 
-                                    label={bundleId === 'full_curriculum' ? "Or get all 10 Guides + 60 Modules for $199/yr" : "Or bundle all 13 Premium Guides for $399"} 
-                                    variant="outline" 
+                                    productId="all_access_pass" 
+                                    moduleId={moduleId} // Optional tracking
+                                    label="Unlock the All-Access Vault Pass — $999/yr" 
+                                    icon="file" 
+                                    variant="primary" 
+                                />
+                                <CheckoutButton 
+                                    productId="team_license_pass" 
+                                    moduleId={moduleId}
+                                    label="B2B Team License (10 Seats) — $4,999/yr" 
+                                    icon="key" 
+                                    variant="secondary" 
                                 />
                             </div>
+                            
+                            <p className="mt-4 text-[10px] text-zinc-500 uppercase tracking-widest font-mono">
+                                Replaces all $29, $99, and $10k tiers. Secure Stripe Checkout.
+                            </p>
                         </div>
                     </div>
                 </div>

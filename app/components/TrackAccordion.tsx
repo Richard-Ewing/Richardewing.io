@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import progressStyles from '../styles/progress.module.css';
 
 interface TrackAccordionProps {
     track: any;
@@ -55,7 +56,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                     </p>
                     {completionCount > 0 && !isOpen && (
                         <div className="w-full max-w-xs h-1 bg-black/50 overflow-hidden rounded-full mt-4">
-                            <div className="h-full bg-emerald-500 w-[var(--progress)]" style={{ '--progress': `${progressPercent}%` } as React.CSSProperties} />
+                            <div className={`h-full bg-emerald-500 ${progressStyles[`w_${Math.round(progressPercent)}`]}`} />
                         </div>
                     )}
                 </div>
@@ -78,7 +79,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                     
                     {completionCount > 0 && (
                         <div className="w-full h-1.5 bg-black/50 overflow-hidden rounded-full mb-8 border border-white/5">
-                            <div className="h-full bg-emerald-500 transition-all duration-500 w-[var(--progress)]" style={{ '--progress': `${progressPercent}%` } as React.CSSProperties} />
+                            <div className={`h-full bg-emerald-500 transition-all duration-500 ${progressStyles[`w_${Math.round(progressPercent)}`]}`} />
                         </div>
                     )}
                     
@@ -128,6 +129,30 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                             </div>
                         )}
                     </div>
+
+                    {progressPercent >= 100 && (
+                        <div className="mt-8 rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-6 sm:p-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                            <div className="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+                                <div className="h-16 w-16 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/30 flex-shrink-0">
+                                    <span className="text-3xl">🏆</span>
+                                </div>
+                                <div className="flex-grow">
+                                    <h3 className="text-xl font-grotesk font-bold text-emerald-400 mb-2">Track Mastered</h3>
+                                    <p className="text-sm text-zinc-300">
+                                        You have successfully completed every module in this architecture. To help you implement these exact systems in your organization, you've unlocked a complimentary 30-minute implementation audit with Richard Ewing, or you can roll this out to your engineering managers with a Team License.
+                                    </p>
+                                </div>
+                                <div className="flex flex-col gap-3 flex-shrink-0 w-full sm:w-auto">
+                                    <Link href="/advisory" className="px-6 py-3 rounded-lg bg-emerald-500 text-black font-bold text-sm text-center hover:bg-emerald-400 transition-colors whitespace-nowrap shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                                        Claim Advisory Audit →
+                                    </Link>
+                                    <a href="/api/buy/enterprise/enterprise_curriculum_license" className="px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-white font-bold text-sm text-center hover:bg-white/10 transition-colors whitespace-nowrap">
+                                        Add Enterprise Team License
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

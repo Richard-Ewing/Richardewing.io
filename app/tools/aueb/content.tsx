@@ -10,8 +10,7 @@ import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
-import jsPDF from 'jspdf';
-import { toPng } from 'html-to-image';
+import progressStyles from '../../styles/progress.module.css';
 
 const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
     const [display, setDisplay] = useState(0);
@@ -176,7 +175,7 @@ export default function AUEBTool() {
 
 
 
-    const handleSaveAndExport = async () => {
+    const handleSaveToVault = async (): Promise<boolean> => {
         setIsSaving(true);
         try {
             const priceNum = parseFloat(price) || 0;
@@ -199,7 +198,7 @@ export default function AUEBTool() {
             
             if (res.status === 402 && data.error === 'PAYMENT_REQUIRED') {
                 setShowPaywall(true);
-                return;
+                return false;
             }
             if (!res.ok) throw new Error(data?.message || 'Failed to save');
 
@@ -209,16 +208,12 @@ export default function AUEBTool() {
 
             // Small delay to let React render the Q-PEP roadmap into the DOM
             await new Promise(r => setTimeout(r, 800));
+            return true;
 
-            const element = document.getElementById('aueb-pdf-export-zone');
-            if (!element) return;
-            const dataUrl = await toPng(element, { quality: 1.0, backgroundColor: '#050505', pixelRatio: 2 });
-            const pdf = new jsPDF({ orientation: 'p', unit: 'px', format: [element.offsetWidth, element.offsetHeight] });
-            pdf.addImage(dataUrl, 'PNG', 0, 0, element.offsetWidth, element.offsetHeight);
-            pdf.save(`AUEB_Assessment_${persona}.pdf`);
         } catch (error: any) {
             console.error(error);
             alert(`Export failed: ${error.message || "Unknown error"}`);
+            return false;
         } finally {
             setIsSaving(false);
         }
@@ -506,7 +501,7 @@ export default function AUEBTool() {
 
 <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-zinc-800">
-                                    <div className="h-full bg-cyan-500 transition-all duration-500" style={{ width: `${(step / 3) * 100}%` }} />
+                                    <div className={`h-full bg-cyan-500 transition-all duration-500 ${progressStyles[`w_${Math.round((step / 3) * 100)}`]}`} />
                                 </div>
                                 
                                 {step === 1 && (
@@ -667,7 +662,11 @@ export default function AUEBTool() {
                                         <h2 className="text-xl font-bold text-white mb-1">Board-Ready Deliverable Generated</h2>
                                         <p className="text-sm text-zinc-400">Export this assessment to a verified Executive PDF.</p>
                                     </div>
-
+                                    <ExportToPDFButton 
+                                        targetId="aueb-pdf-export-zone" 
+                                        fileName={`AUEB_Assessment_${persona}.pdf`} 
+                                        onBeforeExport={handleSaveToVault} 
+                                    />
                                 </div>
 
                                 {/* -------- PDF CAPTURE ZONE START -------- */}
@@ -760,12 +759,9 @@ export default function AUEBTool() {
                                             </div>
                                         </div>
                                         <div className="h-4 bg-zinc-800 rounded-full overflow-hidden flex">
-                                            {/* eslint-disable-next-line react/forbid-dom-props */}
-                                            <div className="h-full bg-red-500" style={{ width: `${(results.llmCost / results.totalInfraCost) * 100}%` }} />
-                                            {/* eslint-disable-next-line react/forbid-dom-props */}
-                                            <div className="h-full bg-orange-500" style={{ width: `${(results.apiCost / results.totalInfraCost) * 100}%` }} />
-                                            {/* eslint-disable-next-line react/forbid-dom-props */}
-                                            <div className="h-full bg-yellow-500" style={{ width: `${(results.hostingCost / results.totalInfraCost) * 100}%` }} />
+                                            <div className={`h-full bg-red-500 ${progressStyles[`w_${Math.round((results.llmCost / results.totalInfraCost) * 100) || 0}`]}`} />
+                                            <div className={`h-full bg-orange-500 ${progressStyles[`w_${Math.round((results.apiCost / results.totalInfraCost) * 100) || 0}`]}`} />
+                                            <div className={`h-full bg-yellow-500 ${progressStyles[`w_${Math.round((results.hostingCost / results.totalInfraCost) * 100) || 0}`]}`} />
                                         </div>
                                         <div className="flex justify-between text-xs text-zinc-500 mt-2">
                                             <span>Total Infrastructure: <span className="text-white font-bold">{formatMoney(results.totalInfraCost)}/mo</span></span>

@@ -408,5 +408,478 @@ export const tracks = [
         icon: '⚖️',
         glossaryTerms: ['dora-metrics', 'product-debt-index'],
         tools: [],
+    },
+    // --- CLASSIC DISCIPLINES (Tracks 18-22) ---
+    {
+        title: 'The Fullstack Career',
+        subtitle: 'Track 18 — Classic Discipline',
+        description: 'Economics of the engineering lifecycle: from frontend state to backend scaling and promotion outcomes.',
+        modules: [
+            { id: '18-1', name: '18.1 Frontend State Economics', topics: 'React optimization ROI, re-rendering waste', href: '/vault/curriculum/tracks/fullstack-career/18-1' },
+            { id: '18-2', name: '18.2 Backend API Design ROI', topics: 'REST vs GraphQL caching, payload size optimization', href: '/vault/curriculum/tracks/fullstack-career/18-2' },
+            { id: '18-3', name: '18.3 Database Query Optimization', topics: 'N+1 problems, indexing ROI, latency cost', href: '/vault/curriculum/tracks/fullstack-career/18-3' },
+            { id: '18-4', name: '18.4 Client vs Server Rendering', topics: 'SSR compute costs, CSR SEO impact, conversion', href: '/vault/curriculum/tracks/fullstack-career/18-4' },
+            { id: '18-5', name: '18.5 The Promotion Calculus', topics: 'Business outcomes, impact translation', href: '/vault/curriculum/tracks/fullstack-career/18-5' },
+        ],
+        color: 'blue',
+        icon: '💻',
+        glossaryTerms: ['dora-metrics', 'unit-economics'],
+        tools: [],
+    },
+    {
+        title: 'Agile & Delivery Economics',
+        subtitle: 'Track 19 — Classic Discipline',
+        description: 'Mapping agile velocity, story points, and sprint planning directly to margin and delivery capitalization.',
+        modules: [
+            { id: '19-1', name: '19.1 Story Point Dollar Value', topics: 'Engineering cost metrics, sprint burn rate', href: '/vault/curriculum/tracks/agile-economics/19-1' },
+            { id: '19-2', name: '19.2 Cost of Agile Ceremonies', topics: 'Meeting overhead, async ROI, planning costs', href: '/vault/curriculum/tracks/agile-economics/19-2' },
+            { id: '19-3', name: '19.3 Technical Debt in the Backlog', topics: 'Shadow backlog drag, refactoring ROI', href: '/vault/curriculum/tracks/agile-economics/19-3' },
+            { id: '19-4', name: '19.4 Predictability vs Velocity', topics: 'Missed commitments risk, stakeholder trust', href: '/vault/curriculum/tracks/agile-economics/19-4' },
+            { id: '19-5', name: '19.5 Agile Capitalization', topics: 'CapEx vs OpEx, balance sheet impact', href: '/vault/curriculum/tracks/agile-economics/19-5' },
+        ],
+        color: 'emerald',
+        icon: '🔄',
+        glossaryTerms: ['capital-expenditure', 'operating-expense', 'technical-debt'],
+        tools: [],
+    },
+    {
+        title: 'System Design & Architecture',
+        subtitle: 'Track 20 — Classic Discipline',
+        description: 'The financial impact of monoliths, microservices, caches, and distributed systems on scale.',
+        modules: [
+            { id: '20-1', name: '20.1 Monolith vs Microservice TCO', topics: 'Network tax, deployment overhead, mental load', href: '/vault/curriculum/tracks/system-design/20-1' },
+            { id: '20-2', name: '20.2 Event-Driven Cost Models', topics: 'Queue limits, message bus pricing, reconciliation', href: '/vault/curriculum/tracks/system-design/20-2' },
+            { id: '20-3', name: '20.3 Caching Layer Economics', topics: 'Redis vs DB costs, cache invalidation risk', href: '/vault/curriculum/tracks/system-design/20-3' },
+            { id: '20-4', name: '20.4 Database Sharding & Scaling', topics: 'Horizontal vs vertical efficiency, migration costs', href: '/vault/curriculum/tracks/system-design/20-4' },
+            { id: '20-5', name: '20.5 Architecture Defensibility', topics: 'Technical moats, vendor strategy, lock-in', href: '/vault/curriculum/tracks/system-design/20-5' },
+        ],
+        color: 'amber',
+        icon: '🏗️',
+        glossaryTerms: ['total-cost-of-ownership', 'microservices'],
+        tools: [],
+    },
+    {
+        title: 'Traditional Product Management',
+        subtitle: 'Track 21 — Classic Discipline',
+        description: 'Backlog economics, discovery ROI, build vs buy, and precise stakeholder management frameworks.',
+        modules: [
+            { id: '21-1', name: '21.1 Discovery Phase Economics', topics: 'User research cost, prototyping ROI', href: '/vault/curriculum/tracks/traditional-pm/21-1' },
+            { id: '21-2', name: '21.2 Feature Sunset Calculus', topics: 'Zombie features, negative-ROI pruning', href: '/vault/curriculum/tracks/traditional-pm/21-2' },
+            { id: '21-3', name: '21.3 The Cost of Scope Creep', topics: 'Compounding delays, feature freeze economics', href: '/vault/curriculum/tracks/traditional-pm/21-3' },
+            { id: '21-4', name: '21.4 Build vs Buy Validation', topics: 'Integration risk, maintenance tax, 3rd-party vendors', href: '/vault/curriculum/tracks/traditional-pm/21-4' },
+            { id: '21-5', name: '21.5 Stakeholder Alignment Value', topics: 'Misalignment friction, roadmap trust', href: '/vault/curriculum/tracks/traditional-pm/21-5' },
+        ],
+        color: 'pink',
+        icon: '📝',
+        glossaryTerms: ['cost-of-delay'],
+        tools: [],
+    },
+    {
+        title: 'Engineering Culture & Motivation',
+        subtitle: 'Track 22 — Classic Discipline',
+        description: 'The hard financial ROI of psychological safety, retention, compensation, and team dynamics.',
+        modules: [
+            { id: '22-1', name: '22.1 Engineer Replacement Cost', topics: 'Recruiting costs, lost velocity, onboarding drag', href: '/vault/curriculum/tracks/engineering-culture/22-1' },
+            { id: '22-2', name: '22.2 ROI of Psychological Safety', topics: 'Fear-based QA, hidden redundancy, deployment speed', href: '/vault/curriculum/tracks/engineering-culture/22-2' },
+            { id: '22-3', name: '22.3 Toxic Debt Quantification', topics: 'Collaboration loss, negative impact on team output', href: '/vault/curriculum/tracks/engineering-culture/22-3' },
+            { id: '22-4', name: '22.4 Developer Experience (DX)', topics: 'Internal tooling, flow state revenue generation', href: '/vault/curriculum/tracks/engineering-culture/22-4' },
+            { id: '22-5', name: '22.5 Compensation vs Equity', topics: 'Pay bands, retention strategies, value alignment', href: '/vault/curriculum/tracks/engineering-culture/22-5' },
+        ],
+        color: 'rose',
+        icon: '🫂',
+        glossaryTerms: ['developer-experience'],
+        tools: [],
+    },
+    {
+        title: 'Neural-Symbolic AI & System 2 Reasoning',
+        subtitle: 'Track 23 — Mega-Trend',
+        description: 'Moving beyond pattern matching to structured, verifiable logical reasoning architectures for enterprise decision making.',
+        modules: [
+            { id: '23-1', name: '23.1 System 2 Thinking in LLMs', topics: 'Chain of Thought, Tree of Thoughts, Planning Algorithms', href: '/vault/curriculum/tracks/23/23-1' },
+            { id: '23-2', name: '23.2 Causal Inference Models', topics: 'Judea Pearl, Directed Acyclic Graphs, Counterfactual AI', href: '/vault/curriculum/tracks/23/23-2' },
+            { id: '23-3', name: '23.3 The Logic-Language Divide', topics: 'Theorem Proving, Symbolic Engines, Integration Pathways', href: '/vault/curriculum/tracks/23/23-3' },
+            { id: '23-4', name: '23.4 Deterministic Output Controls', topics: 'Grammar Enforcement, JSON Schema Constraints, Guided Generation', href: '/vault/curriculum/tracks/23/23-4' },
+            { id: '23-5', name: '23.5 Enterprise Decision Automation', topics: 'Replacing Heuristics, Policy Engines, Regulatory Verification', href: '/vault/curriculum/tracks/23/23-5' },
+        ],
+        color: 'sky',
+        icon: '🧠',
+        glossaryTerms: ['large-language-model', 'ai-governance'],
+        tools: [],
+    },
+    {
+        title: 'Post-Quantum Security & AI Threat Modeling',
+        subtitle: 'Track 24 — Mega-Trend',
+        description: 'Securing AI architectures against advanced cryptographic and adversarial threats, preparing for post-quantum vulnerabilities.',
+        modules: [
+            { id: '24-1', name: '24.1 Algorithmic Poisoning Defense', topics: 'Data Lineage, Watermarking, Adversarial Training', href: '/vault/curriculum/tracks/24/24-1' },
+            { id: '24-2', name: '24.2 Cryptographic Migration Economics', topics: 'Q-Day Readiness, Lattice-Based Cryptography, RSA Depreciation', href: '/vault/curriculum/tracks/24/24-2' },
+            { id: '24-3', name: '24.3 AI Red Teaming at Scale', topics: 'Automated Jailbreaking, Chaos Engineering for LLMs', href: '/vault/curriculum/tracks/24/24-3' },
+            { id: '24-4', name: '24.4 Prompt Injection Infrastructures', topics: 'Dual LLM Verification, Input Sanitization Layers, Output Filtering', href: '/vault/curriculum/tracks/24/24-4' },
+            { id: '24-5', name: '24.5 The Quantum Threat Timeline', topics: 'Shor’s Algorithm, Harvest Now Decrypt Later, NIST Standards', href: '/vault/curriculum/tracks/24/24-5' },
+        ],
+        color: 'red',
+        icon: '🔒',
+        glossaryTerms: ['post-quantum-cryptography', 'prompt-injection'],
+        tools: [],
+    },
+    {
+        title: 'Bio-Computational AI Integration',
+        subtitle: 'Track 25 — Mega-Trend',
+        description: 'The intersection of biology and computation, applying machine learning to solve physical science problems.',
+        modules: [
+            { id: '25-1', name: '25.1 AlphaFold & Proteomic Architectures', topics: 'Protein Folding, Chemical Space Exploration, API Integration', href: '/vault/curriculum/tracks/25/25-1' },
+            { id: '25-2', name: '25.2 Genomic Foundation Models', topics: 'DNA as Tokens, Transformers in Biology, Evo/HyenaDNA', href: '/vault/curriculum/tracks/25/25-2' },
+            { id: '25-3', name: '25.3 Physical AI Simulation', topics: 'Molecular Dynamics, Digital Twins for Pharma, Cost Analysis', href: '/vault/curriculum/tracks/25/25-3' },
+            { id: '25-4', name: '25.4 The Bio-IT Data Pipeline', topics: 'Petabyte Scaling, Specialized Storage, FAIR Data Principles', href: '/vault/curriculum/tracks/25/25-4' },
+            { id: '25-5', name: '25.5 Healthcare AI Economics', topics: 'Drug Discovery ROI, Clinical Trial Optimization, Regulatory Moats', href: '/vault/curriculum/tracks/25/25-5' },
+        ],
+        color: 'emerald',
+        icon: '🧬',
+        glossaryTerms: ['multimodal-ai', 'total-cost-of-ownership'],
+        tools: [],
+    },
+    {
+        title: 'Synthetic Data Economics',
+        subtitle: 'Track 26 — Mega-Trend',
+        description: 'Overcoming the Data Wall with AI-generated datasets and domain-specific training regimens.',
+        modules: [
+            { id: '26-1', name: '26.1 The Law of Data Scarcity', topics: 'Chinchilla Scaling Laws, Organic Data Exhaustion', href: '/vault/curriculum/tracks/26/26-1' },
+            { id: '26-2', name: '26.2 Synthetic Augmentation Pipelines', topics: 'Teacher-Student Distillation, Noise Injection, Distribution Shift', href: '/vault/curriculum/tracks/26/26-2' },
+            { id: '26-3', name: '26.3 Domain Fidelity & Validation', topics: 'Evaluating Synthetic Quality, Ground Truth Anchoring', href: '/vault/curriculum/tracks/26/26-3' },
+            { id: '26-4', name: '26.4 Multi-Modal Generation', topics: 'Video, Audio, and Edge-Case Simulation Models', href: '/vault/curriculum/tracks/26/26-4' },
+            { id: '26-5', name: '26.5 The ROI of Foundational Training', topics: 'Compute vs. Data Cost Analysis, Enterprise Fine-tuning', href: '/vault/curriculum/tracks/26/26-5' },
+        ],
+        color: 'teal',
+        icon: '📊',
+        glossaryTerms: ['fine-tuning', 'hallucination-entropy'],
+        tools: [],
+    },
+    {
+        title: 'SLMs & Edge Intelligence',
+        subtitle: 'Track 27 — Mega-Trend',
+        description: 'Deploying Small Language Models locally to slash cloud dependency, reduce latency, and ensure maximum data sovereignty.',
+        modules: [
+            { id: '27-1', name: '27.1 The SLM Paradigm Shift', topics: 'Parameters vs. Performance, Edge Scaling, Model Downsizing', href: '/vault/curriculum/tracks/27/27-1' },
+            { id: '27-2', name: '27.2 Quantization Physics', topics: 'FP16, INT8, AWQ, and Lossless Compression Techniques', href: '/vault/curriculum/tracks/27/27-2' },
+            { id: '27-3', name: '27.3 On-Device Inferencing', topics: 'Neural Processing Units (NPUs), WebGPU, CoreML', href: '/vault/curriculum/tracks/27/27-3' },
+            { id: '27-4', name: '27.4 Hybrid Cloud-Edge Routing', topics: 'Intent Classification, Privacy-Preserving Fallbacks', href: '/vault/curriculum/tracks/27/27-4' },
+            { id: '27-5', name: '27.5 Edge ROI & Serverless Economics', topics: 'Zero Marginal Cost Architectures, Battery Drain Constraints', href: '/vault/curriculum/tracks/27/27-5' },
+        ],
+        color: 'rose',
+        icon: '📱',
+        glossaryTerms: ['quantization', 'zero-trust'],
+        tools: [],
+    },
+    {
+        title: 'Agentic Process Automation (APA)',
+        subtitle: 'Track 28 — Mega-Trend',
+        description: 'The sunset of RPA. Designing reasoning-based, fault-tolerant AI agents for multi-modal, unstructured workflows.',
+        modules: [
+            { id: '28-1', name: '28.1 Beyond Rules-Based RPA', topics: 'Action Space, DOM Understanding, Semantic Selectors', href: '/vault/curriculum/tracks/28/28-1' },
+            { id: '28-2', name: '28.2 Multi-Agent Orchestration', topics: 'Supervisor Patterns, Handoff Protocols, Swarm Intelligence', href: '/vault/curriculum/tracks/28/28-2' },
+            { id: '28-3', name: '28.3 Self-Healing Workflows', topics: 'Error Recovery, Reflection Loops, Exception Handling', href: '/vault/curriculum/tracks/28/28-3' },
+            { id: '28-4', name: '28.4 Human-in-the-Loop Safeguards', topics: 'Confidence Thresholds, Asynchronous Approval Chains', href: '/vault/curriculum/tracks/28/28-4' },
+            { id: '28-5', name: '28.5 The Future of BPO', topics: 'Business Process Outsourcing Disruption, FTE Cost Modeling', href: '/vault/curriculum/tracks/28/28-5' },
+        ],
+        color: 'fuchsia',
+        icon: '🤖',
+        glossaryTerms: ['agentic-workflow', 'human-in-the-loop'],
+        tools: [],
+    },
+    {
+        title: 'AI Supply Chain & GPU FinOps',
+        subtitle: 'Track 29 — Mega-Trend',
+        description: 'Securing the physical compute layer of the AI revolution and managing dynamic, spiraling API expenses.',
+        modules: [
+            { id: '29-1', name: '29.1 Hardware Monopolies & Moats', topics: 'NVIDIA Dominance, Custom Silicon (TPU/Trainium/Inferentia)', href: '/vault/curriculum/tracks/29/29-1' },
+            { id: '29-2', name: '29.2 Cloud GPU Procurement', topics: 'Reserved Instances vs. Spot Markets, Multi-Cloud Hedging', href: '/vault/curriculum/tracks/29/29-2' },
+            { id: '29-3', name: '29.3 Token-Level Cost Accounting', topics: 'Input/Output Ratios, Batching Economics, Throughput Optimization', href: '/vault/curriculum/tracks/29/29-3' },
+            { id: '29-4', name: '29.4 Cache Hierarchies & Vector DBs', topics: 'Semantic Caching, RAG Cost Architectures, DB Scaling', href: '/vault/curriculum/tracks/29/29-4' },
+            { id: '29-5', name: '29.5 Predictable Margins in AI SaaS', topics: 'Cost of Goods Sold (COGS) Forecasting, Pricing Tier Dynamics', href: '/vault/curriculum/tracks/29/29-5' },
+        ],
+        color: 'amber',
+        icon: '💻',
+        glossaryTerms: ['gpu-utilization', 'unit-economics'],
+        tools: [],
+    },
+    {
+        title: 'AI Governance & Sovereignty',
+        subtitle: 'Track 30 — Mega-Trend',
+        description: 'De-risking the enterprise path to superintelligence. Designing constitutional frameworks and maintaining sovereign data control.',
+        modules: [
+            { id: '30-1', name: '30.1 Constitutional AI Foundations', topics: 'Alignment Principles, Value Specifications, Policy Design', href: '/vault/curriculum/tracks/30/30-1' },
+            { id: '30-2', name: '30.2 Private Cloud Deployments', topics: 'VPC Enclaves, Air-gapped Intelligence, Data Sovereignty', href: '/vault/curriculum/tracks/30/30-2' },
+            { id: '30-3', name: '30.3 Algorithmic Auditing & Bias', topics: 'Fairness Metrics, Regulatory Compliance, Explainability', href: '/vault/curriculum/tracks/30/30-3' },
+            { id: '30-4', name: '30.4 IP & Copyright Litigation Risk', topics: 'Safe Harbor Scenarios, Clean Room Training, Vendor Liability', href: '/vault/curriculum/tracks/30/30-4' },
+            { id: '30-5', name: '30.5 The Chief AI Officer (CAIO)', topics: 'Organizational Design, Change Management, AI Operating Models', href: '/vault/curriculum/tracks/30/30-5' },
+        ],
+        color: 'indigo',
+        icon: '🏛️',
+        glossaryTerms: ['artificial-general-intelligence', 'explainable-ai'],
+        tools: [],
+    }
+
+    ,
+    {
+        title: 'Data Engineering & Pipeline Economics',
+        subtitle: 'Track 31 — Core Discipline',
+        description: 'The foundation of AI and ML. Overcoming data silos, pipeline latency, and the economics of robust data warehousing.',
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `31-${i + 1}`,
+            name: `31.${i + 1} Data Architecture ${['ETL Economics', 'Data Lake vs Warehouse', 'Streaming Pipelines', 'Data Quality Mesh', 'Orchestration (Airflow)', 'Vector Embeddings', 'Feature Stores', 'Storage Hierarchies', 'Data Privacy/Compliance', 'Data Pipeline TCO'][i]}`,
+            topics: 'Data Stack, Redshift/Snowflake, Kafka, S3, Processing Overhead',
+            href: `/vault/curriculum/tracks/31/31-${i + 1}`
+        })),
+        color: 'cyan',
+        icon: '🗄️',
+        glossaryTerms: ['data-lake', 'etl', 'vector-database'],
+        tools: []
+    },
+    {
+        title: 'UI/UX Value Measurement',
+        subtitle: 'Track 32 — Core Discipline',
+        description: 'Quantifying the ROI of design. Measuring user friction, conversion optimization, and the economic impact of intuitive interfaces.',
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `32-${i + 1}`,
+            name: `32.${i + 1} UX Economics ${['Friction Mapping', 'Conversion Rate Optimization', 'Design Systems ROI', 'A/B Testing Math', 'Accessibility Economics', 'Onboarding Drop-off', 'Micro-interactions', 'Time-to-Value', 'Customer Acquisition Cost (CAC)', 'Churn Prevention'][i]}`,
+            topics: 'Figma, Retention Analytics, Customer Success, LTV',
+            href: `/vault/curriculum/tracks/32/32-${i + 1}`
+        })),
+        color: 'pink',
+        icon: '🎨',
+        glossaryTerms: ['customer-acquisition-cost', 'lifetime-value'],
+        tools: []
+    },
+    {
+        title: 'Full-Stack Architecture',
+        subtitle: 'Track 33 — Core Discipline',
+        description: 'Scaling web applications from MVP to Enterprise. The economics of monoliths vs microservices, state management, and API design.',
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `33-${i + 1}`,
+            name: `33.${i + 1} Full-Stack ${['Monolith vs Microservices', 'Server-Side Rendering (SSR)', 'API Gateway Economics', 'State Management', 'Database Indexing', 'Caching Layers (Redis)', 'GraphQL vs REST', 'CI/CD Pipelines', 'Authentication/AuthZ', 'WebSockets & Real-time'][i]}`,
+            topics: 'Next.js, Node, Postgres, Redis, System Design',
+            href: `/vault/curriculum/tracks/33/33-${i + 1}`
+        })),
+        color: 'amber',
+        icon: '⚙️',
+        glossaryTerms: ['microservices', 'api-gateway'],
+        tools: []
+    },
+    {
+        title: 'Agile Operations & Lean Delivery',
+        subtitle: 'Track 34 — Core Discipline',
+        description: 'Optimizing the software factory. Measuring velocity, sprint economics, and eliminating waste in the development cycle.',
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `34-${i + 1}`,
+            name: `34.${i + 1} Delivery Math ${['Sprint Velocity Forecasting', 'Cost of Delay', 'WIP Limits', 'Story Point Inflation', 'Value Stream Mapping', 'Retrospective ROI', 'Kanban Economics', 'Product Owner Alignment', 'SAFe vs LeSS', 'Continuous Delivery'][i]}`,
+            topics: 'Jira, DORA metrics, Cycle Time, Lead Time',
+            href: `/vault/curriculum/tracks/34/34-${i + 1}`
+        })),
+        color: 'emerald',
+        icon: '🔄',
+        glossaryTerms: ['cost-of-delay', 'dora-metrics', 'value-stream'],
+        tools: []
+    },
+    {
+        title: 'Tech Support & Operations Economy',
+        subtitle: 'Track 35 — Core Discipline',
+        description: 'The cost of keeping the lights on. Support ticketing, incident response (PagerDuty), and Site Reliability Engineering (SRE).',
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `35-${i + 1}`,
+            name: `35.${i + 1} SRE Economics ${['Incident Cost Calculation', 'MTTR vs MTTD', 'On-Call Burnout ROI', 'Tier 1/2/3 Deflection', 'Runbook Automation', 'Chaos Engineering', 'SLAs and Penalties', 'Error Budgets', 'Post-Mortem Analytics', 'Customer Success Sync'][i]}`,
+            topics: 'SRE, PagerDuty, Incident Management, SLO, SLA',
+            href: `/vault/curriculum/tracks/35/35-${i + 1}`
+        })),
+        color: 'red',
+        icon: '🚑',
+        glossaryTerms: ['sre', 'mttr', 'error-budget'],
+        tools: []
+    },
+    {
+        title: 'The Engineering Manager Blueprint',
+        subtitle: 'Track 36 — Career Path',
+        description: 'Transitioning from Individual Contributor (IC) to Management. Measuring team health, 1-on-1s, and allocation.',
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `36-${i + 1}`,
+            name: `36.${i + 1} EM Blueprint ${['The IC to Manager Shift', 'Performance Reviews', 'Compensation Math', 'Hiring & Onboarding ROI', 'Managing Low Performers', 'Psychological Safety', 'Capacity Planning', 'Delegation Economics', 'Managing Up', 'Team Retention'][i]}`,
+            topics: 'Leadership, People Management, CapEx vs OpEx',
+            href: `/vault/curriculum/tracks/36/36-${i + 1}`
+        })),
+        color: 'violet',
+        icon: '👔',
+        glossaryTerms: ['engineering-leadership', 'turnover-cost'],
+        tools: []
+    },
+    {
+        title: 'The Staff Engineer Transition',
+        subtitle: 'Track 37 — Career Path',
+        description: 'Mastering the technical leadership track. Cross-functional influence, architecture stewardship, and long-term technical vision.',
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `37-${i + 1}`,
+            name: `37.${i + 1} Staff Auth ${['Scope and Influence', 'Writing Tech Specs', 'Sponsorship vs Mentorship', 'Navigating Org Politics', 'Technical Debt Advisory', 'System Design Leadership', 'Incubation Projects', 'Alignment with Product', 'Scaling Knowledge', 'The Principal Horizon'][i]}`,
+            topics: 'Staff+, Tech Lead, RFCs, Cross-team alignment',
+            href: `/vault/curriculum/tracks/37/37-${i + 1}`
+        })),
+        color: 'indigo',
+        icon: '⭐',
+        glossaryTerms: ['staff-engineer', 'rfcs', 'technical-vision'],
+        tools: []
+    },
+    {
+        title: 'Technical Program Management (TPM)',
+        subtitle: 'Track 38 — Career Path',
+        description: 'Driving massive cross-functional initiatives. Dependency mapping, risk mitigation, and executive stakeholder communication.',
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `38-${i + 1}`,
+            name: `38.${i + 1} TPM Matrix ${['Program Initiation', 'Gantt & Dependencies', 'Risk Registers', 'Stakeholder Management', 'Resource Arbitration', 'Launch Readiness', 'Vendor Integration', 'Compliance Milestones', 'Post-Launch Triage', 'Scaling the PMO'][i]}`,
+            topics: 'PMO, Dependencies, Risk Management, Launch',
+            href: `/vault/curriculum/tracks/38/38-${i + 1}`
+        })),
+        color: 'sky',
+        icon: '📅',
+        glossaryTerms: ['tpm', 'risk-register', 'critical-path'],
+        tools: []
+    },
+    {
+        title: 'VP of Engineering Mastery',
+        subtitle: 'Track 39 — Career Path',
+        description: 'Managing managers, org design, board-level communication, and scaling the engineering department from 50 to 500.',
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `39-${i + 1}`,
+            name: `39.${i + 1} VPE Protocol ${['Org Design & Topology', 'Board Reporting', 'Budgeting & Headcount', 'C-Suite Alignment', 'Mergers & Tech DD', 'Global Outsourcing ROI', 'Engineering Brand', 'Executive Recruiting', 'VPE vs CTO', 'Crisis Management'][i]}`,
+            topics: 'Board of Directors, R&D Capital, Due Diligence',
+            href: `/vault/curriculum/tracks/39/39-${i + 1}`
+        })),
+        color: 'fuchsia',
+        icon: '👑',
+        glossaryTerms: ['capitalization', 'due-diligence', 'org-topology'],
+        tools: []
+    },
+    {
+        title: 'Cloud Architect & FinOps Engineering',
+        subtitle: 'Track 40 — Career Path',
+        description: 'Designing systems that scale infinitely without bankrupting the company. Blending infrastructure design with unit economics.',
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `40-${i + 1}`,
+            name: `40.${i + 1} Cloud Auth ${['Multi-Cloud Strategy', 'Infrastructure as Code', 'FinOps Integration', 'Disaster Recovery ROI', 'Zero Trust Architecture', 'Data Egress Triage', 'Serverless Migration', 'Capacity Forecasting', 'Vendor Negotiation', 'Compliance Automation'][i]}`,
+            topics: 'AWS, GCP, Azure, Terraform, Security Posture',
+            href: `/vault/curriculum/tracks/40/40-${i + 1}`
+        })),
+        color: 'blue',
+        icon: '☁️',
+        glossaryTerms: ['infrastructure-as-code', 'disaster-recovery', 'finops'],
+        tools: []
+    }
+,
+
+    {
+        title: "Track 41: Career Mobility & Technical Economics",
+        slug: "career-mobility-technical-economics",
+        description: "Diagnose your career velocity, negotiate compensation based on business value delivery, and position yourself as a revenue-generating asset rather than a cost center.",
+        freeAccess: false,
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `41-${i + 1}`,
+            title: `Module ${i + 1}: ${['Compensation Economics', 'Equity Valuation Mechanics', 'The Business Case for Promotion', 'Negotiating with P&L Leaders', 'Navigating Layoff Risk', 'Building a Revenue-Centric Resume', 'The Cost of Stagnation', 'Managing Up with Metrics', 'Transitioning Individual Contributor to Management', 'Executive Presence & Pitching'][i]}`,
+            href: `/vault/curriculum/tracks/career-mobility-technical-economics/41-${i + 1}`
+        }))
+    },
+    {
+        title: "Track 42: The Mainframe & Legacy Systems Economics",
+        slug: "mainframe-legacy-systems",
+        description: "The 'Old School' reality: Managing the economic burden of legacy codebases, COBOL bridging, and risk-adjusted modernization strategies.",
+        freeAccess: false,
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `42-${i + 1}`,
+            title: `Module ${i + 1}: ${['The True Cost of Legacy Code', 'COBOL Developer Scarcity', 'Mainframe to Cloud Migration Economics', 'Strangler Fig Pattern ROI', 'Risk-Adjusted Technical Debt', 'When NOT to Modernize', 'Legacy System Security Premiums', 'Vendor Lock-in Diagnostics', 'Data Gravity in On-Premise Servers', 'Pitching Legacy Replacements to the Board'][i]}`,
+            href: `/vault/curriculum/tracks/mainframe-legacy-systems/42-${i + 1}`
+        }))
+    },
+    {
+        title: "Track 43: Corporate IT Cost Centers & Operational Expenditures",
+        slug: "corporate-it-cost-centers",
+        description: "Unravel the classical IT budgeting structures, differentiating between CapEx equipment and OpEx software licenses.",
+        freeAccess: false,
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `43-${i + 1}`,
+            title: `Module ${i + 1}: ${['CapEx vs OpEx Fundamentals', 'IT Equipment Depreciation', 'Software License Audits (Oracle/Microsoft)', 'Help Desk Ticket Economics', 'On-Premise Server Utilization Rates', 'Disaster Recovery Economics', 'The Cost of Employee Offboarding', 'Vendor Management Strategies', 'Shadow IT Financial Leakage', 'The CIO\'s Budget Allocation Guide'][i]}`,
+            href: `/vault/curriculum/tracks/corporate-it-cost-centers/43-${i + 1}`
+        }))
+    },
+    {
+        title: "Track 44: The Economics of Offshore vs Nearshore Outsourcing",
+        slug: "outsourcing-economics",
+        description: "Classical talent arbitrage: calculate the true blended cost of offshore teams, hidden communication delays, and vendor attrition taxes.",
+        freeAccess: false,
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `44-${i + 1}`,
+            title: `Module ${i + 1}: ${['The Blended Rate Illusion', 'Communication Debt & Timezones', 'Vendor Attrition & Rewriting Code', 'Cultural Alignment Costs', 'Nearshore vs Offshore vs Domestic', 'Structuring SOWs for Outcome', 'The Cost of IP Leakage', 'Transitioning Vendors to In-house', 'Body Shopping vs Managed Services', 'Staff Augmentation Economics'][i]}`,
+            href: `/vault/curriculum/tracks/outsourcing-economics/44-${i + 1}`
+        }))
+    },
+    {
+        title: "Track 45: Monoliths & Classic Database Economics",
+        slug: "monolith-classic-database",
+        description: "Why the majestic monolith is highly profitable. Analyzing Oracle, SQL Server, and massive vertical scaling costs vs modern microservices.",
+        freeAccess: false,
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `45-${i + 1}`,
+            title: `Module ${i + 1}: ${['The Profitability of Monoliths', 'Vertical Scaling Economics', 'Oracle Enterprise License Costs', 'SQL Server Core Pricing Strategies', 'Network Egress Within Monoliths', 'Microservices Distributed Tax', 'ACID Transactions & Financial Value', 'Stored Procedures vs App Layer', 'Database Administrator (DBA) ROI', 'Breaking the Monolith: Cost Analysis'][i]}`,
+            href: `/vault/curriculum/tracks/monolith-classic-database/45-${i + 1}`
+        }))
+    },
+    {
+        title: "Track 46: Engineering Velocity & Agile Economics",
+        slug: "engineering-velocity-agile",
+        description: "The classic project management methodologies quantified: Scrum, Kanban, SAFe, and tracking sprint points as financial throughput.",
+        freeAccess: false,
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `46-${i + 1}`,
+            title: `Module ${i + 1}: ${['The Cost of Agile Ceremonies', 'Story Points to Dollar Mapping', 'SAFe Overhead Diagnostics', 'Kanban Cycle Time Economics', 'The Waterfall Premium', 'Sprint Predictability Ratios', 'Developer Burnout Costs', 'The Scrum Master\'s Financial Value', 'Jira Administration Tax', 'Continuous Delivery Revenue Acceleration'][i]}`,
+            href: `/vault/curriculum/tracks/engineering-velocity-agile/46-${i + 1}`
+        }))
+    },
+    {
+        title: "Track 47: Executive Alignment & Board Governance",
+        slug: "executive-alignment-governance",
+        description: "How to translate technical minutiae into EBITDA, Margins, and Risk Vectors for the Board of Directors.",
+        freeAccess: false,
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `47-${i + 1}`,
+            title: `Module ${i + 1}: ${['The Language of the Boardroom', 'Translating Uptime to EBITDA', 'Risk Quantification for CEOs', 'CapEx vs OpEx Board Presentations', 'Defending the Tech Budget', 'M&A Technology Due Diligence', 'Post-Merger Integration Costs', 'The KPI to OKR Bridge', 'Managing Technical Debt at the Board Level', 'The 90-Day CTO Turnaround Strategy'][i]}`,
+            href: `/vault/curriculum/tracks/executive-alignment-governance/47-${i + 1}`
+        }))
+    },
+    {
+        title: "Track 48: ERP Systems & Enterprise Integration",
+        slug: "erp-enterprise-integration",
+        description: "The economics of SAP, Salesforce, Workday, and the massive multi-year integration consultancies that follow.",
+        freeAccess: false,
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `48-${i + 1}`,
+            title: `Module ${i + 1}: ${['SAP Implementation Economics', 'The Salesforce License Death Spiral', 'Customization vs Configuration Costs', 'System Integrator (SI) Margin Stacking', 'Workday Transformation Budgets', 'Data Warehousing Enterprise Tolls', 'MuleSoft API Integration Costs', 'The Sunk Cost Fallacy in ERPs', 'User Adoption Friction Tax', 'Legacy ERP Maintenance Budgets'][i]}`,
+            href: `/vault/curriculum/tracks/erp-enterprise-integration/48-${i + 1}`
+        }))
+    },
+    {
+        title: "Track 49: Classic QA & Quality Economics",
+        slug: "classic-qa-quality",
+        description: "The financial difference between manual QA teams, test-driven development, and the true cost of production defects.",
+        freeAccess: false,
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `49-${i + 1}`,
+            title: `Module ${i + 1}: ${['The Cost of a Production Defect', 'Manual QA Army Economics', 'Test Automation ROI Framework', 'The 100% Coverage Fallacy', 'Shift-Left Financial Impact', 'Compliance Testing Budgets', 'User Acceptance Testing Delays', 'The False Positive Tax in CI/CD', 'Quality vs Time-to-Market Tradeoffs', 'Post-Mortem Economic Engineering'][i]}`,
+            href: `/vault/curriculum/tracks/classic-qa-quality/49-${i + 1}`
+        }))
+    },
+    {
+        title: "Track 50: The Fractional Engineering Economy",
+        slug: "fractional-engineering",
+        description: "Navigating the modern gig-executive landscape: Fractional CTOs, Staff-level consultants, and 1099 talent allocation.",
+        freeAccess: false,
+        modules: Array.from({ length: 10 }, (_, i) => ({
+            id: `50-${i + 1}`,
+            title: `Module ${i + 1}: ${['The Fractional CTO Value Prop', 'W2 vs 1099 Blended Economics', 'Boutique Consultancy Margins', 'Hiring for Spikes vs Sustained Velocity', 'The Cost of Onboarding Contractors', 'Intellectual Property Risks in Gig Work', 'Retainer vs Hourly SOWs', 'The Bench Cost Eradication', 'Transitioning Open Source to Enterprise', 'The Solopreneur Engineer Strategy'][i]}`,
+            href: `/vault/curriculum/tracks/fractional-engineering/50-${i + 1}`
+        }))
     }
 ];

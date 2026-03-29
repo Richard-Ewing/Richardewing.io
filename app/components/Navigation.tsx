@@ -52,10 +52,8 @@ const Navigation = () => {
                                 ✦ {isSignedIn ? "Member Dashboard" : "Start Here"}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
-
-                            <Dropdown label="Curriculum & Library">
-                                <DropdownItem href="/curriculum/tracks" description="190 modules across 14 tracks">Complete Curriculum</DropdownItem>
-                                <DropdownItem href="/glossary" description="420+ engineering economics terms">Glossary</DropdownItem>
+                            <Dropdown label="Library & Docs">
+                                <DropdownItem href="/glossary" description="500+ engineering economics terms">Glossary</DropdownItem>
                                 <DropdownItem href="/blog" description="105 articles on engineering economics">Blog</DropdownItem>
                                 <DropdownItem href="/resources/ai-courses" description="Free AI & engineering courses">AI Courses</DropdownItem>
                             </Dropdown>
@@ -65,8 +63,12 @@ const Navigation = () => {
                                 <DropdownItem href="/tools/ev-se" description="Model enterprise value per engineer">EV-SE — Valuation Engine</DropdownItem>
                                 <DropdownItem href="/tools/aueb" description="Calculate AI unit economics">AUEB — AI Unit Economics</DropdownItem>
                                 <DropdownItem href="/tools/aper" description="Measure adjusted productivity ratio">APER — Engineering Ratio</DropdownItem>
-                                <DropdownItem href="/tools/audit-interview" description="Structured technical assessment">Audit Interview</DropdownItem>
                             </Dropdown>
+                            
+                            <Link href="/tools/audit-interview" className="text-gray-300 hover:text-white transition-colors relative group font-medium">
+                                Audit Interview
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all group-hover:w-full" />
+                            </Link>
 
                             <Dropdown label="Advisory">
                                 <DropdownItem href="/advisory" description="R&D Capital Audits & fractional CTO">Advisory Services</DropdownItem>
