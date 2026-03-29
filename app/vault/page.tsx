@@ -166,7 +166,7 @@ export default async function VaultPage() {
                             <div className="relative z-10 w-full mt-2">
                                 {await (async () => {
                                     const { getModule } = await import('@/lib/curriculum-data');
-                                    let href = '/vault/curriculum/tracks/1-1/the-ctos-first-90-days-establish-assess-stabilize';
+                                    let href = '/vault/curriculum/tracks/engineering-economics/1-1';
                                     let btnText = 'Start Mastery';
                                     
                                     if (contentProgress.length > 0) {
