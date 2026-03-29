@@ -1,7 +1,6 @@
 import { Lock, BookOpen } from 'lucide-react';
 import CheckoutButton from './client/CheckoutButton';
 import { PRODUCTS } from '@/lib/products';
-import ModuleStepper from './client/ModuleStepper';
 import CurriculumSalesPreview from './CurriculumSalesPreview';
 
 interface PayGateProps {
@@ -20,7 +19,7 @@ interface PayGateProps {
 
 export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, showPreview = true, children, nextHref, productId = 'single_module', bundleId = 'full_curriculum' }: PayGateProps) {
     if (hasAccess) {
-        return <ModuleStepper moduleTitle={moduleTitle} nextHref={nextHref}>{children}</ModuleStepper>;
+        return <>{children}</>;
     }
 
     const childArray = Array.isArray(children) ? children : [children];
