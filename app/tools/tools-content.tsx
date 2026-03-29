@@ -78,14 +78,27 @@ export default function ToolsContent() {
               </ShineBorder>
             </Link>
 
-            <Link href="/tools/audit-interview" className="group block col-span-1 md:col-span-2">
+            <Link href="/tools/audit-interview" className="group block">
               <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center text-purple-400 font-bold">05</div>
+                  <div className="w-12 h-12 rounded-lg bg-emerald-600/20 flex items-center justify-center text-emerald-400 font-bold">05</div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-400">Audit Interview Protocol</h3>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-emerald-400">Audit Interview Protocol</h3>
                     <p className="text-gray-400 text-sm mb-3">The hiring methodology for the AI age. Test judgment, not syntax.</p>
-                    <span className="text-purple-400 text-sm">Try Now →</span>
+                    <span className="text-emerald-400 text-sm">Try Now →</span>
+                  </div>
+                </div>
+              </ShineBorder>
+            </Link>
+
+            <Link href="/tools/slm-vs-api" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#10b981", "#34d399", "#A07CFE"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-emerald-600/20 flex items-center justify-center text-emerald-400 font-bold">06</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-emerald-400">SLM vs API Arbitrage</h3>
+                    <p className="text-gray-400 text-sm mb-3">Calculate the exact hardware breakeven point for repatriating AI workloads.</p>
+                    <span className="text-emerald-400 text-sm">Try Now →</span>
                   </div>
                 </div>
               </ShineBorder>
