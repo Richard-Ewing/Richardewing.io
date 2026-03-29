@@ -26,8 +26,10 @@ export default function VaultProgressFlywheel({ serverCompletedCount, totalModul
                 // Merge local into server
                 const merged = new Set([...serverCompletedModuleIds, ...localIds]);
                 if (merged.size > serverCompletedCount) {
-                    setCompletedCount(merged.size);
-                    setPercentage(totalModulesCount > 0 ? Math.min(100, Math.round((merged.size / totalModulesCount) * 100)) : 0);
+                    setTimeout(() => {
+                        setCompletedCount(merged.size);
+                        setPercentage(totalModulesCount > 0 ? Math.min(100, Math.round((merged.size / totalModulesCount) * 100)) : 0);
+                    }, 0);
                     isSyncNeeded = true;
                     localIdsToSync = localIds;
                 }

@@ -156,7 +156,7 @@ export default function DueDiligenceTool() {
             const cloudNum = parseFloat(cloudSpend) || 0;
 
             let baseScore = 20;
-            let redFlags: string[] = [];
+            const redFlags: string[] = [];
 
             // Headcount efficiency check ($250k ARR per engineer is median)
             const arrPerEng = engNum > 0 ? arrNum / engNum : 0;

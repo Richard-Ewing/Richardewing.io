@@ -22,12 +22,12 @@ const PieChart = ({ data }: { data: { name: string; value: number; color: string
     return (
         <svg viewBox="0 0 100 100" className="w-full h-full">
             {data.map((slice, i) => {
+                const startAngle = data.slice(0, i).reduce((sum, s) => sum + (s.value / total) * 360, 0);
                 const angle = (slice.value / total) * 360;
-                const startAngle = currentAngle;
-                currentAngle += angle;
+                const endAngle = startAngle + angle;
 
                 const startRad = (startAngle - 90) * Math.PI / 180;
-                const endRad = (currentAngle - 90) * Math.PI / 180;
+                const endRad = (endAngle - 90) * Math.PI / 180;
 
                 const x1 = 50 + 35 * Math.cos(startRad);
                 const y1 = 50 + 35 * Math.sin(startRad);

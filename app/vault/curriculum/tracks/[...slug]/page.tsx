@@ -125,7 +125,6 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
     
     // Auth check for Stripe Access
     const { userId, sessionClaims } = await auth();
-    // @ts-ignore - publicMetadata comes from Clerk session tokens
     const metadata: any = sessionClaims?.metadata || {};
     const hasSubscription = metadata.has_yearly_subscription === true;
     const unlockedItems = (metadata.unlocked_items as string[]) || [];

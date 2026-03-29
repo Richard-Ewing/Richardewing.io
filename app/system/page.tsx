@@ -138,7 +138,7 @@ export default function SystemPage() {
                         <div className="text-3xl sm:text-4xl font-mono text-zinc-700 font-bold">02</div>
                         <div>
                             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Q-PEP™ Protocol</h2>
-                            <p className="font-mono text-xs text-cobalt tracking-widest uppercase mb-6">// QUALITATIVE-PROFITABILITY EFFICIENCY PROTOCOL</p>
+                            <p className="font-mono text-xs text-cobalt tracking-widest uppercase mb-6">{"// QUALITATIVE-PROFITABILITY EFFICIENCY PROTOCOL"}</p>
                             <p className="text-zinc-400 mb-6 text-base sm:text-lg">
                                 The framework for turnaround. Once leakage is identified (APER), Q-PEP is the surgery. It restructures the "Product Org" into an "Investment Portfolio."
                             </p>

@@ -17,14 +17,13 @@ export default function Meteors({ count = 20 }: MeteorsProps) {
   const [meteors, setMeteors] = useState<Meteor[]>([]);
 
   useEffect(() => {
-    setMeteors(
-      Array.from({ length: count }, (_, i) => ({
+    const newMeteors = Array.from({ length: count }, (_, i) => ({
         id: i,
         left: Math.random() * 100,
         delay: Math.random() * 5,
         duration: 3 + Math.random() * 3,
-      }))
-    );
+    }));
+    setTimeout(() => setMeteors(newMeteors), 0);
   }, [count]);
 
   return (

@@ -51,20 +51,6 @@ export default function SessionCommandCenter() {
     const [analytics, setAnalytics] = useState<any>(null);
     const [showGate, setShowGate] = useState(false);
 
-    // Initial Load
-    useEffect(() => {
-        fetchSession();
-    }, []);
-
-    // Timer Tick
-    useEffect(() => {
-        if (!timeLeft || timeLeft <= 0) return;
-        const timer = setInterval(() => {
-            setTimeLeft(prev => prev - 1);
-        }, 1000);
-        return () => clearInterval(timer);
-    }, [timeLeft]);
-
     const fetchSession = async () => {
         setLoading(true);
         try {
@@ -128,6 +114,21 @@ export default function SessionCommandCenter() {
             setLoading(false);
         }
     };
+
+    // Initial Load
+    useEffect(() => {
+        fetchSession();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    // Timer Tick
+    useEffect(() => {
+        if (!timeLeft || timeLeft <= 0) return;
+        const timer = setInterval(() => {
+            setTimeLeft(prev => prev - 1);
+        }, 1000);
+        return () => clearInterval(timer);
+    }, [timeLeft]);
 
     const submitFindings = async () => {
         if (rationale.length < 5) return alert("Please document your findings before advancing.");

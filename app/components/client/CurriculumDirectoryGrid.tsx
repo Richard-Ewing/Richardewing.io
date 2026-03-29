@@ -97,7 +97,8 @@ export default function CurriculumDirectoryGrid({ children }: { children: React.
                             onClick={() => {
                                 setActiveCollegiate(college.id);
                                 // Optional smooth scroll
-                                window.scrollTo({ top: document.getElementById('curriculum-directory-content')?.offsetTop! - 100, behavior: 'smooth' });
+                                const el = document.getElementById('curriculum-directory-content');
+                                if (el) window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
                             }}
                             className={`group relative flex flex-col items-start text-left p-6 w-full rounded-2xl border transition-all duration-500 ease-out overflow-hidden ${
                                 isActive 

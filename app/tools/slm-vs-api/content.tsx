@@ -172,7 +172,7 @@ export default function SLMTool() {
                                                 </label>
                                                 <div className="text-2xl font-bold text-white font-mono">{queriesPerDay.toLocaleString()}</div>
                                             </div>
-                                            <input type="range" min="1000" max="500000" step="1000" value={queriesPerDay} onChange={e => setQueriesPerDay(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-blue-500" />
+                                            <input type="range" title="Queries Per Day" aria-label="Queries Per Day" min="1000" max="500000" step="1000" value={queriesPerDay} onChange={e => setQueriesPerDay(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-blue-500" />
                                         </div>
 
                                         <div className="p-6 bg-black/40 rounded-xl border border-white/5 relative group">
@@ -183,7 +183,7 @@ export default function SLMTool() {
                                                 </label>
                                                 <div className="text-2xl font-bold text-white font-mono">{tokensPerQuery.toLocaleString()} t/req</div>
                                             </div>
-                                            <input type="range" min="500" max="32000" step="500" value={tokensPerQuery} onChange={e => setTokensPerQuery(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500" />
+                                            <input type="range" title="Tokens Per Workflow" aria-label="Tokens Per Workflow" min="500" max="32000" step="500" value={tokensPerQuery} onChange={e => setTokensPerQuery(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500" />
                                         </div>
                                     </div>
 
@@ -206,13 +206,13 @@ export default function SLMTool() {
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                         <div>
                                             <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block"><BrainCircuit size={12} className="inline mr-1"/> Current API Tax Collector</label>
-                                            <select value={apiProvider} onChange={e => setApiProvider(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-emerald-500 focus:outline-none transition-colors">
+                                            <select title="API Provider" aria-label="API Provider" value={apiProvider} onChange={e => setApiProvider(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-emerald-500 focus:outline-none transition-colors">
                                                 {Object.keys(API_PRICING).map(k => <option key={k} value={k}>{API_PRICING[k].name}</option>)}
                                             </select>
                                         </div>
                                         <div>
                                             <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block"><HardDrive size={12} className="inline mr-1"/> Local SLM Strategy (vLLM/Ollama)</label>
-                                            <select value={hardwareStrategy} onChange={e => setHardwareStrategy(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-emerald-500 focus:outline-none transition-colors">
+                                            <select title="Hardware Strategy" aria-label="Hardware Strategy" value={hardwareStrategy} onChange={e => setHardwareStrategy(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-emerald-500 focus:outline-none transition-colors">
                                                 {Object.keys(HW_PRICING).map(k => <option key={k} value={k}>{HW_PRICING[k].name}</option>)}
                                             </select>
                                             <p className="text-[10px] text-zinc-600 font-mono mt-2">Includes amortized $150/hr DevOps maintenance tax.</p>

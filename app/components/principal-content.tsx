@@ -13,7 +13,7 @@ const renderAIResponse = (text: string) => {
     return text.split('\n').map((line, i) => {
         // Bold text: **text**
         const boldRegex = /\*\*(.+?)\*\*/g;
-        let formattedLine = line.replace(boldRegex, '<strong class="text-white font-bold">$1</strong>');
+        const formattedLine = line.replace(boldRegex, '<strong class="text-white font-bold">$1</strong>');
 
         // Bullet points: • or -
         if (line.trim().startsWith('•') || line.trim().startsWith('-')) {
