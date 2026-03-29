@@ -1,138 +1,104 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
-import { useAuth } from '@clerk/nextjs';
-import { useRouter } from 'next/navigation';
+import { ChevronRight, ChevronLeft, CheckCircle2, Clock, BookOpen } from 'lucide-react';
 
-interface ModuleStepperProps {
-    children: React.ReactNode;
-    nextHref?: string;
-    moduleTitle: string;
+interface ParsedContent {
+    syllabus: string;
+    lessons: { title: string, html: string }[];
 }
 
-export default function ModuleStepper({ children, nextHref, moduleTitle }: ModuleStepperProps) {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [isCompleting, setIsCompleting] = useState(false);
-    const { userId } = useAuth();
-    const router = useRouter();
-    const childArray = React.Children.toArray(children);
-    const totalLessons = childArray.length;
+interface ModuleStepperProps {
+    parsedContent: ParsedContent;
+    children: React.ReactNode; // The Mark Complete button
+}
 
+export default function ModuleStepper({ parsedContent, children }: ModuleStepperProps) {
+    const [currentStep, setCurrentStep] = useState(0);
+    
+    // total steps = syllabus (0) + lessons (1..N)
+    const totalSteps = 1 + parsedContent.lessons.length;
+    const isLastStep = currentStep === totalSteps - 1;
+
+    // Reset scroll when step changes
     useEffect(() => {
-        // Log progress when user loads the activeIndex
-        if (!userId) return;
-        const progress = Math.round(((activeIndex + 1) / totalLessons) * 100);
-        const isCompleted = activeIndex === totalLessons - 1;
-        
-        fetch('/api/progress', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                content_id: moduleTitle || 'unknown_module',
-                content_type: 'curriculum',
-                progress_percentage: progress,
-                is_completed: isCompleted
-            })
-        }).catch(err => console.debug('Failed to log progress', err));
-    }, [activeIndex, moduleTitle, totalLessons, userId]);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [currentStep]);
 
     const handleNext = () => {
-        if (activeIndex < totalLessons - 1) {
-            setActiveIndex(activeIndex + 1);
-            window.scrollTo({ top: 300, behavior: 'smooth' });
-        }
+        if (currentStep < totalSteps - 1) setCurrentStep(v => v + 1);
     };
 
     const handlePrev = () => {
-        if (activeIndex > 0) {
-            setActiveIndex(activeIndex - 1);
-            window.scrollTo({ top: 300, behavior: 'smooth' });
-        }
+        if (currentStep > 0) setCurrentStep(v => v - 1);
     };
 
-    const handleComplete = async () => {
-        if (!userId) {
-            if (nextHref) router.push(nextHref);
-            return;
-        }
-        
-        setIsCompleting(true);
-        try {
-            await fetch('/api/progress', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    content_id: moduleTitle || 'unknown_module',
-                    content_type: 'curriculum',
-                    progress_percentage: 100,
-                    is_completed: true
-                })
-            });
-        } catch (err) {
-            console.debug('Failed to log completion', err);
-        } finally {
-            if (nextHref) {
-                router.push(nextHref);
-            }
-        }
+    const renderProgressBar = () => {
+        return (
+            <div className="mb-12">
+                <div className="flex items-center justify-between mb-4">
+                    <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2">
+                        <BookOpen className="w-3 h-3" />
+                        {currentStep === 0 ? 'Syllabus Introduction' : `Lesson ${currentStep} of ${totalSteps - 1}`}
+                    </span>
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest bg-zinc-900 border border-zinc-800 px-2 py-1 rounded flex items-center gap-1">
+                        <Clock className="w-3 h-3 text-emerald-500" />
+                        2 MIN READ
+                    </span>
+                </div>
+                <div className="w-full flex gap-1 h-2">
+                    {Array.from({ length: totalSteps }).map((_, i) => (
+                        <div 
+                            key={i} 
+                            onClick={() => setCurrentStep(i)}
+                            className={`flex-1 rounded-full cursor-pointer transition-all duration-300 ${
+                                i < currentStep ? 'bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]' :
+                                i === currentStep ? 'bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]' :
+                                'bg-zinc-800 hover:bg-zinc-700'
+                            }`}
+                        />
+                    ))}
+                </div>
+            </div>
+        );
     };
 
     return (
-        <div className="space-y-8 animate-in fade-in duration-500">
-            {/* Progress Bar */}
-            <div className="flex items-center gap-4 mb-4">
-                <div className="flex-1 h-2 bg-white/5 rounded-full overflow-hidden">
-                    <div 
-                        className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transition-all duration-500"
-                        style={{ width: `${((activeIndex + 1) / totalLessons) * 100}%` }}
-                    />
-                </div>
-                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest">
-                    Lesson {activeIndex + 1} / {totalLessons}
-                </div>
-            </div>
+        <div className="w-full pb-20">
+            {/* The Top Navigation Bar */}
+            {totalSteps > 1 && renderProgressBar()}
 
-            {/* Render the Active Lesson */}
-            <div className="min-h-[400px]">
-                {childArray[activeIndex]}
-            </div>
+            {/* The Active Content Payload */}
+            {currentStep === 0 ? (
+                <div className="prose prose-invert max-w-none ai-content syllabus-view" dangerouslySetInnerHTML={{ __html: parsedContent.syllabus }} />
+            ) : (
+                <div className="space-y-8">
+                    {/* Render actual lesson */}
+                    <div className="prose prose-invert max-w-none ai-content lesson-view" dangerouslySetInnerHTML={{ __html: parsedContent.lessons[currentStep - 1].html }} />
+                </div>
+            )}
 
-            {/* Controls */}
-            <div className="flex items-center justify-between pt-8 border-t border-white/10 mt-8">
-                <button
+            {/* The Footer Action Dashboard */}
+            <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-50">
+                <button 
                     onClick={handlePrev}
-                    disabled={activeIndex === 0}
-                    className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 text-white font-bold text-sm tracking-widest disabled:opacity-30 disabled:pointer-events-none hover:bg-white/5 transition-all"
+                    disabled={currentStep === 0}
+                    className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-black border border-white/10 text-white hover:bg-zinc-900"
                 >
                     <ChevronLeft className="w-4 h-4" /> Previous
                 </button>
-                
-                {activeIndex < totalLessons - 1 ? (
-                    <button
-                        onClick={handleNext}
-                        className="flex items-center gap-2 px-8 py-3 rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 font-bold text-sm tracking-widest hover:bg-cyan-500/20 hover:border-cyan-500/50 transition-all shadow-lg shadow-cyan-500/10"
-                    >
-                        Next Lesson <ChevronRight className="w-4 h-4 ml-1" />
-                    </button>
+
+                {isLastStep ? (
+                    <div className="w-full sm:w-auto">
+                        {children}
+                    </div>
                 ) : (
-                    nextHref ? (
-                        <button
-                            onClick={handleComplete}
-                            disabled={isCompleting}
-                            className={`flex items-center gap-2 px-8 py-3 rounded-xl text-white font-bold text-sm tracking-widest transition-all shadow-lg ${isCompleting ? 'bg-emerald-600/50 cursor-wait' : 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:opacity-90 shadow-emerald-500/20'}`}
-                        >
-                            {isCompleting ? 'Completing...' : 'Mark as Complete & Continue'} <CheckCircle2 className="w-4 h-4 ml-1" />
-                        </button>
-                    ) : (
-                        <button 
-                            onClick={handleComplete}
-                            disabled={isCompleting}
-                            className={`flex items-center gap-2 px-8 py-3 rounded-xl border border-white/10 text-white font-bold text-sm tracking-widest transition-all ${isCompleting ? 'bg-white/5 cursor-wait' : 'bg-white/10 hover:bg-white/20'}`}
-                        >
-                            {isCompleting ? 'Saving...' : 'Mark Track as Completed'} <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                        </button>
-                    )
+                    <button 
+                        onClick={handleNext}
+                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-cyan-500 text-black font-bold flex items-center justify-center gap-2 transition-all hover:bg-cyan-400 hover:scale-105 shadow-[0_0_20px_rgba(6,182,212,0.3)] uppercase tracking-widest text-sm"
+                    >
+                        Next Lesson <ChevronRight className="w-4 h-4" />
+                    </button>
                 )}
             </div>
         </div>

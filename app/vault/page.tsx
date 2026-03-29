@@ -35,7 +35,8 @@ export default async function VaultPage() {
         supabaseAdmin
             .from('user_content_progress')
             .select('*')
-            .eq('user_id', user.id),
+            .eq('user_id', user.id)
+            .order('updated_at', { ascending: false }),
         supabaseAdmin
             .from('user_tool_runs')
             .select('output_metrics, tool_id')
@@ -101,34 +102,100 @@ export default async function VaultPage() {
                     </div>
 
                     {/* DYNAMIC RESUME STATE */}
-                    <div className="p-6 md:p-8 rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-transparent flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group">
-                        {/* Background flare */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none transition-opacity group-hover:opacity-100 opacity-50"></div>
-                        
-                        <div className="relative z-10">
-                            <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                                Active Context
+                    <div className="grid md:grid-cols-2 gap-6 relative">
+                        {/* Resume Diagnostic */}
+                        <div className="p-6 md:p-8 rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-transparent flex flex-col justify-between gap-6 relative overflow-hidden group">
+                            {/* Background flare */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none transition-opacity group-hover:opacity-100 opacity-50"></div>
+                            
+                            <div className="relative z-10 w-full">
+                                <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-3 flex items-center justify-between gap-2 w-full">
+                                    <div className="flex items-center gap-2">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                                        Active Audit
+                                    </div>
+                                    <Database className="w-4 h-4 text-cyan-500/50" />
+                                </div>
+                                <h2 className="text-2xl font-bold text-white mb-2 line-clamp-1">
+                                    {toolRuns.length > 0 
+                                        ? `Last Action: ${toolRuns[0].tool_id === 'pdi' ? 'Product Debt Index' : 'Diagnostic'}` 
+                                        : 'Awaiting Assessment'}
+                                </h2>
+                                <p className="text-sm text-zinc-300 max-w-xl h-10 line-clamp-2">
+                                    {toolRuns.length > 0 
+                                        ? `Identified ${formatMoney(toolRuns[0].financial_waste)} in capital waste on ${new Date(toolRuns[0].created_at).toLocaleDateString()}.`
+                                        : 'Run your first boardroom-ready diagnostic to baseline metrics.'}
+                                </p>
                             </div>
-                            <h2 className="text-2xl font-bold text-white mb-2">
-                                {toolRuns.length > 0 
-                                    ? `Last Action: ${toolRuns[0].tool_id === 'pdi' ? 'Product Debt Index' : 'Diagnostic Audit'}` 
-                                    : 'Vault Initialized: Awaiting First Assessment'}
-                            </h2>
-                            <p className="text-sm text-zinc-300 max-w-xl">
-                                {toolRuns.length > 0 
-                                    ? `You identified ${formatMoney(toolRuns[0].financial_waste)} in hidden capital waste on ${new Date(toolRuns[0].created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}. Continue iterating on your technical debt models.`
-                                    : 'Run your first boardroom-ready diagnostic to baseline your engineering metrics and identify hidden capital waste.'}
-                            </p>
+                            
+                            <div className="relative z-10 w-full mt-2">
+                                <Link 
+                                    href={toolRuns.length > 0 ? `/tools/${toolRuns[0].tool_id}` : '/tools/pdi'} 
+                                    className="w-full inline-flex items-center justify-center px-8 py-4 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm font-bold shadow-[0_0_30px_rgba(6,182,212,0.1)] hover:shadow-[0_0_40px_rgba(6,182,212,0.3)] uppercase tracking-widest rounded-xl hover:bg-cyan-500/20 transition-all hover:scale-[1.02]"
+                                >
+                                    {toolRuns.length > 0 ? 'Resume Analysis' : 'Start Audit'} <ChevronRight className="w-4 h-4 ml-2" />
+                                </Link>
+                            </div>
                         </div>
-                        
-                        <div className="relative z-10 shrink-0">
-                            <Link 
-                                href={toolRuns.length > 0 ? `/tools/${toolRuns[0].tool_id}` : '/tools/pdi'} 
-                                className="inline-flex items-center justify-center px-8 py-4 bg-cyan-500 text-black text-sm font-bold shadow-[0_0_30px_rgba(6,182,212,0.3)] hover:shadow-[0_0_40px_rgba(6,182,212,0.5)] uppercase tracking-widest rounded-xl hover:bg-cyan-400 transition-all hover:scale-105"
-                            >
-                                {toolRuns.length > 0 ? 'Resume Analysis' : 'Start Audit'} <ChevronRight className="w-4 h-4 ml-2" />
-                            </Link>
+
+                        {/* Resume Curriculum */}
+                        <div className="p-6 md:p-8 rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-transparent flex flex-col justify-between gap-6 relative overflow-hidden group">
+                            {/* Background flare */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none transition-opacity group-hover:opacity-100 opacity-50"></div>
+                            
+                            <div className="relative z-10 w-full">
+                                <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-3 flex items-center justify-between gap-2 w-full">
+                                    <div className="flex items-center gap-2">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                        Active Curriculum
+                                    </div>
+                                    <BookOpen className="w-4 h-4 text-emerald-500/50" />
+                                </div>
+                                <h2 className="text-2xl font-bold text-white mb-2 line-clamp-1">
+                                    {contentProgress.length > 0 
+                                        ? `Resume: ${contentProgress[0].content_id}`
+                                        : 'Awaiting Mastery'}
+                                </h2>
+                                <p className="text-sm text-zinc-300 max-w-xl h-10 line-clamp-2">
+                                    {contentProgress.length > 0
+                                        ? (contentProgress[0].is_completed ? 'Module mastered. Step into the next logical framework in your track series.' : `You are ${contentProgress[0].progress_percentage}% through this foundational module. Master the framework.`)
+                                        : 'Zero modules completed. Begin Track 01 to establish your executive authority.'}
+                                </p>
+                            </div>
+            
+                            <div className="relative z-10 w-full mt-2">
+                                {await (async () => {
+                                    const { getModule } = await import('@/lib/curriculum-data');
+                                    let href = '/vault/curriculum/tracks/1-1/the-ctos-first-90-days-establish-assess-stabilize';
+                                    let btnText = 'Start Mastery';
+                                    
+                                    if (contentProgress.length > 0) {
+                                        const recentMod = getModule(contentProgress[0].content_id);
+                                        const { tracks } = await import('@/app/lib/curriculum-tracks-ui');
+                                        if (recentMod) {
+                                            if (contentProgress[0].is_completed && recentMod.nextHref) {
+                                                href = recentMod.nextHref;
+                                                btnText = 'Start Next Module';
+                                            } else {
+                                                btnText = 'Resume Module';
+                                                for(const t of tracks) {
+                                                    const m = t.modules.find(m => m.id === contentProgress[0].content_id);
+                                                    if (m && m.href) href = m.href;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    return (
+                                        <Link 
+                                            href={href} 
+                                            className="w-full inline-flex items-center justify-center px-8 py-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-bold shadow-[0_0_30px_rgba(16,185,129,0.1)] hover:shadow-[0_0_40px_rgba(16,185,129,0.3)] uppercase tracking-widest rounded-xl hover:bg-emerald-500/20 transition-all hover:scale-[1.02]"
+                                        >
+                                            {btnText} <ChevronRight className="w-4 h-4 ml-2" />
+                                        </Link>
+                                    );
+                                })()}
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import TrackAccordion from '@/app/components/TrackAccordion';
+import CurriculumTabs from '@/app/components/client/CurriculumTabs';
 import { tracks } from '@/app/lib/curriculum-tracks-ui';
 import { auth } from '@clerk/nextjs/server';
 import { supabaseAdmin } from '@/lib/supabase';
@@ -64,96 +65,105 @@ export default async function CurriculumTracksPage() {
                         </div>
                     </div>
 
-                    <div className="mb-16">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="h-px bg-white/10 flex-grow"></div>
-                            <h2 className="text-sm font-mono text-cyan-500 uppercase tracking-widest font-bold">Core Executive Tracks</h2>
-                            <div className="h-px bg-white/10 flex-grow"></div>
+                    <CurriculumTabs>
+                        {/* 1. Foundations */}
+                        <div>
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <h2 className="text-sm font-mono text-cyan-500 uppercase tracking-widest font-bold">Core Executive Tracks</h2>
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                            </div>
+                            <div className="space-y-6">
+                                {tracks.slice(0, 4).map((track, i) => (
+                                    <TrackAccordion key={`core-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                                ))}
+                            </div>
                         </div>
-                        <div className="space-y-6">
-                            {tracks.slice(0, 4).map((track, i) => (
-                                <TrackAccordion key={`core-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
-                            ))}
-                        </div>
-                    </div>
 
-                    <div className="mb-16">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="h-px bg-white/10 flex-grow"></div>
-                            <h2 className="text-sm font-mono text-violet-500 uppercase tracking-widest font-bold">Specialized Architectures</h2>
-                            <div className="h-px bg-white/10 flex-grow"></div>
+                        {/* 2. Architectures */}
+                        <div>
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <h2 className="text-sm font-mono text-violet-500 uppercase tracking-widest font-bold">Specialized Architectures</h2>
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                            </div>
+                            <div className="space-y-6">
+                                {tracks.slice(4, 14).map((track, i) => (
+                                    <TrackAccordion key={`arch-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                                ))}
+                            </div>
                         </div>
-                        <div className="space-y-6">
-                            {tracks.slice(4, 14).map((track, i) => (
-                                <TrackAccordion key={`arch-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
-                            ))}
-                        </div>
-                    </div>
 
-                    <div className="mb-16">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="h-px bg-white/10 flex-grow"></div>
-                            <h2 className="text-sm font-mono text-pink-500 uppercase tracking-widest font-bold">Hyper-Niche Meta-Trends (2025/2026)</h2>
-                            <div className="h-px bg-white/10 flex-grow"></div>
+                        {/* 3. Mega Trends */}
+                        <div>
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <h2 className="text-sm font-mono text-pink-500 uppercase tracking-widest font-bold">Hyper-Niche Meta-Trends (2025/2026)</h2>
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                            </div>
+                            <div className="space-y-6">
+                                {tracks.slice(17, 30).map((track, i) => (
+                                    <TrackAccordion key={`mega-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                                ))}
+                            </div>
                         </div>
-                        <div className="space-y-6">
-                            {tracks.slice(17, 30).map((track, i) => (
-                                <TrackAccordion key={`mega-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
-                            ))}
-                        </div>
-                    </div>
 
-                    <div className="mb-8 mt-16">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="h-px bg-white/10 flex-grow"></div>
-                            <h2 className="text-sm font-mono text-amber-500 uppercase tracking-widest font-bold">Core Software & Operations</h2>
-                            <div className="h-px bg-white/10 flex-grow"></div>
+                        {/* 4. Operations */}
+                        <div>
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <h2 className="text-sm font-mono text-amber-500 uppercase tracking-widest font-bold">Core Software & Operations</h2>
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                            </div>
+                            <div className="space-y-6">
+                                {tracks.slice(30, 35).map((track, i) => (
+                                    <TrackAccordion key={`ops-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                                ))}
+                            </div>
                         </div>
-                        <div className="space-y-6">
-                            {tracks.slice(30, 35).map((track, i) => (
-                                <TrackAccordion key={`ops-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
-                            ))}
-                        </div>
-                    </div>
 
-                    <div className="mb-8 mt-16">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="h-px bg-white/10 flex-grow"></div>
-                            <h2 className="text-sm font-mono text-orange-500 uppercase tracking-widest font-bold">Engineering Leadership & Promotion Trajectories</h2>
-                            <div className="h-px bg-white/10 flex-grow"></div>
+                        {/* 5. Leadership */}
+                        <div>
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <h2 className="text-sm font-mono text-orange-500 uppercase tracking-widest font-bold">Engineering Leadership & Promotion Trajectories</h2>
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                            </div>
+                            <div className="space-y-6">
+                                {tracks.slice(35, 40).map((track, i) => (
+                                    <TrackAccordion key={`leadership-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                                ))}
+                            </div>
                         </div>
-                        <div className="space-y-6">
-                            {tracks.slice(35, 40).map((track, i) => (
-                                <TrackAccordion key={`leadership-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
-                            ))}
-                        </div>
-                    </div>
-                    
-                    <div className="mb-8 mt-16">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="h-px bg-white/10 flex-grow"></div>
-                            <h2 className="text-sm font-mono text-zinc-300 uppercase tracking-widest font-bold">Old School & Corporate IT Economics</h2>
-                            <div className="h-px bg-white/10 flex-grow"></div>
-                        </div>
-                        <div className="space-y-6">
-                            {tracks.slice(40, 50).map((track, i) => (
-                                <TrackAccordion key={`oldschool-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
-                            ))}
-                        </div>
-                    </div>
 
-                    <div className="mb-16">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="h-px bg-emerald-500/30 flex-grow"></div>
-                            <h2 className="text-sm font-mono text-emerald-500 uppercase tracking-widest font-bold">Free Resources & Playbooks</h2>
-                            <div className="h-px bg-emerald-500/30 flex-grow"></div>
+                        {/* 6. Corporate IT */}
+                        <div>
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <h2 className="text-sm font-mono text-zinc-300 uppercase tracking-widest font-bold">Old School & Corporate IT Economics</h2>
+                                <div className="h-px bg-white/10 flex-grow"></div>
+                            </div>
+                            <div className="space-y-6">
+                                {tracks.slice(40, 50).map((track, i) => (
+                                    <TrackAccordion key={`oldschool-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                                ))}
+                            </div>
                         </div>
-                        <div className="space-y-6">
-                            {tracks.slice(14, 17).map((track, i) => (
-                                <TrackAccordion key={`free-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
-                            ))}
+
+                        {/* 7. Free Resources */}
+                        <div>
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="h-px bg-emerald-500/30 flex-grow"></div>
+                                <h2 className="text-sm font-mono text-emerald-500 uppercase tracking-widest font-bold">Free Resources & Playbooks</h2>
+                                <div className="h-px bg-emerald-500/30 flex-grow"></div>
+                            </div>
+                            <div className="space-y-6">
+                                {tracks.slice(14, 17).map((track, i) => (
+                                    <TrackAccordion key={`free-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                                ))}
+                            </div>
                         </div>
-                    </div>
+                    </CurriculumTabs>
 
                     {/* CTA */}
                     <div className="mt-16 text-center">
