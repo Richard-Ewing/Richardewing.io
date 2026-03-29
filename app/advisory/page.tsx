@@ -41,7 +41,7 @@ export default function AdvisoryPage() {
                                 <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-4">Tier 1: Private Equity</div>
                                 <h3 className="text-2xl font-bold text-white mb-2">Technical Due Diligence</h3>
                                 <div className="text-4xl font-mono text-zinc-300 mb-6">$15,000<span className="text-sm text-zinc-600"> / deal</span></div>
-                                <p className="text-zinc-400 text-sm leading-relaxed mb-8 h-20">
+                                <p className="text-zinc-400 text-sm leading-relaxed mb-8 min-h-[120px]">
                                     Intensive 2-week forensic code and architecture audit. Determine the exact technical debt and blast radiuses before you sign the term sheet to acquire a SaaS company.
                                 </p>
                                 <ul className="space-y-4 mb-8 text-sm text-zinc-300">
@@ -64,7 +64,7 @@ export default function AdvisoryPage() {
                                 <div className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-4">Tier 2: Mid-Market Execution</div>
                                 <h3 className="text-2xl font-bold text-white mb-2">AI & SecOps Taskforce</h3>
                                 <div className="text-4xl font-mono text-white mb-6">$10,000<span className="text-sm text-zinc-500"> / mo</span></div>
-                                <p className="text-zinc-300 text-sm leading-relaxed mb-8 h-20">
+                                <p className="text-zinc-300 text-sm leading-relaxed mb-8 min-h-[120px]">
                                     A 90-day sprint engagement to rip out standard OpenAI endpoints and securely implement sovereign, localized SLMs inside your VPC. Kill the API tax and ensure SOC2 data sovereignty.
                                 </p>
                                 <ul className="space-y-4 mb-8 text-sm text-zinc-200">
@@ -85,7 +85,7 @@ export default function AdvisoryPage() {
                                 <div className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-4">Tier 3: Enterprise Scale</div>
                                 <h3 className="text-2xl font-bold text-white mb-2">Methodology Steering</h3>
                                 <div className="text-4xl font-mono text-zinc-300 mb-6">$5,000<span className="text-sm text-zinc-600"> / mo</span></div>
-                                <p className="text-zinc-400 text-sm leading-relaxed mb-8 h-20">
+                                <p className="text-zinc-400 text-sm leading-relaxed mb-8 min-h-[120px]">
                                     For VPEs who purchased the 57-Track Vault Pass. Placed on retainer, I run the steering committee to deploy specific tracks directly onto your engineering floor to ensure massive adoption.
                                 </p>
                                 <ul className="space-y-4 mb-8 text-sm text-zinc-300">
