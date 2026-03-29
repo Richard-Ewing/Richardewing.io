@@ -15,56 +15,56 @@ interface CategoryCard {
 const COLLEGES: CategoryCard[] = [
     { 
         id: 'foundations', 
-        label: 'Engineering Executive Fundamentals', 
-        description: 'Core economic principles for the engineering leader. Metrics, debt quantification, and platform economics.', 
+        label: 'Core Business Strategy', 
+        description: 'The foundational economics of engineering. Financial metrics, cost alignment, and strategic planning.', 
         colorClasses: 'from-cyan-950/40 to-blue-900/20 border-cyan-500/30 text-cyan-400 group-hover:border-cyan-400/60 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] ring-cyan-500/30',
         icon: <BookOpen className="w-6 h-6 mb-4" />,
         stats: 'Tracks 1-4'
     },
     { 
         id: 'architectures', 
-        label: 'Specialized Architectures', 
-        description: 'Economic deep-dives into data pipelines, ML infrastructure, IoT, and high-availability systems.', 
+        label: 'Technology Infrastructure', 
+        description: 'Deep dives into the costs and ROI of data pipelines, AI infrastructure, and high-availability systems.', 
         colorClasses: 'from-violet-950/40 to-fuchsia-900/20 border-violet-500/30 text-violet-400 group-hover:border-violet-400/60 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] ring-violet-500/30',
         icon: <Server className="w-6 h-6 mb-4" />,
         stats: 'Tracks 5-14'
     },
     { 
         id: 'industry', 
-        label: 'Industry Verticals', 
-        description: 'Applied strategies tailored for SaaS, FinTech, DeepTech, Healthcare, and Government contracts.', 
+        label: 'Industry-Specific Markets', 
+        description: 'Targeted economic strategies for SaaS, FinTech, Healthcare, DeepTech, and Government sectors.', 
         colorClasses: 'from-pink-950/40 to-rose-900/20 border-pink-500/30 text-pink-400 group-hover:border-pink-400/60 group-hover:shadow-[0_0_30px_rgba(236,72,153,0.15)] ring-pink-500/30',
         icon: <Building2 className="w-6 h-6 mb-4" />,
         stats: 'Tracks 18-30'
     },
     { 
         id: 'operations', 
-        label: 'Scaling & Operations', 
-        description: 'Navigating hyper-growth, turnaround scenarios, M&A integration, and compliance economics.', 
+        label: 'Scaling & Growth Operations', 
+        description: 'Mastering hyper-growth, operational turnarounds, M&A integration, and compliance economics.', 
         colorClasses: 'from-amber-950/40 to-orange-900/20 border-amber-500/30 text-amber-400 group-hover:border-amber-400/60 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.15)] ring-amber-500/30',
         icon: <Briefcase className="w-6 h-6 mb-4" />,
         stats: 'Tracks 31-35'
     },
     { 
         id: 'leadership', 
-        label: 'Executive Leadership', 
-        description: 'Board-level communication, managing up, the 90-day CTO plan, and promotion trajectories.', 
+        label: 'Leadership & Management', 
+        description: 'Board-level communication, managing up, the 90-day CTO/CPO plan, and executive promotion trajectories.', 
         colorClasses: 'from-orange-950/40 to-red-900/20 border-orange-500/30 text-orange-400 group-hover:border-orange-400/60 group-hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] ring-orange-500/30',
         icon: <GraduationCap className="w-6 h-6 mb-4" />,
         stats: 'Tracks 36-40'
     },
     { 
         id: 'corporate', 
-        label: 'Enterprise Modernization', 
-        description: 'Managing legacy migrations, SAP/Oracle economics, and old-school infrastructure debt.', 
+        label: 'Corporate & Enterprise IT', 
+        description: 'Managing massive vendor implementations, legacy enterprise migrations, and old-school infrastructure debt.', 
         colorClasses: 'from-zinc-800/40 to-zinc-900/20 border-zinc-500/30 text-zinc-300 group-hover:border-zinc-400/60 group-hover:shadow-[0_0_30px_rgba(161,161,170,0.15)] ring-zinc-500/30',
         icon: <Network className="w-6 h-6 mb-4" />,
         stats: 'Tracks 41-50'
     },
     { 
         id: 'playbooks', 
-        label: 'Execution Blueprints', 
-        description: 'Tactical, open-source survival guides and instant-action playbooks for immediate implementation.', 
+        label: 'Tactical Playbooks', 
+        description: 'Step-by-step survival guides and open-source execution blueprints for immediate implementation.', 
         colorClasses: 'from-emerald-950/40 to-teal-900/20 border-emerald-500/30 text-emerald-400 group-hover:border-emerald-400/60 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] ring-emerald-500/30',
         icon: <PocketKnife className="w-6 h-6 mb-4" />,
         stats: 'Tracks 15-17'

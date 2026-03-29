@@ -104,7 +104,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                     productId="all_access_pass" 
                                     moduleId={moduleId} // Optional tracking
                                     label="Unlock the All-Access Vault Pass — $999/yr" 
-                                    icon="file" 
+                                    icon="lock" 
                                     variant="primary" 
                                 />
                                 <CheckoutButton 
@@ -114,6 +114,15 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                     icon="key" 
                                     variant="secondary" 
                                 />
+                                <div className="pt-2 border-t border-white/5">
+                                    <CheckoutButton 
+                                        productId="single_module" 
+                                        moduleId={moduleId}
+                                        label="Unlock Single Module Only — $29" 
+                                        icon="file" 
+                                        variant="outline" 
+                                    />
+                                </div>
                             </div>
                             
                             <p className="mt-4 text-[10px] text-zinc-500 uppercase tracking-widest font-mono">
