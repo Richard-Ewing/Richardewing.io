@@ -244,9 +244,9 @@ export default function WarRoom() {
                         </div>
                     </ScrollReveal>
 
-                     {/* EXTERNAL (PE / M&A) */}
+                    {/* EXTERNAL (PE / M&A) */}
                      <ScrollReveal delay={400}>
-                        <div className="bg-black/60 border border-white/10 rounded-3xl p-8 relative overflow-hidden group hover:border-zinc-500/50 transition-colors">
+                        <div className="bg-black/60 border border-white/10 rounded-3xl p-8 relative overflow-hidden group hover:border-zinc-500/50 transition-colors h-full">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-zinc-500/10 transition-colors duration-1000"></div>
                             <div className="flex items-center gap-3 mb-8">
                                 <Briefcase className="text-zinc-300 h-8 w-8" />
@@ -268,6 +268,43 @@ export default function WarRoom() {
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/due-diligence" className="text-[10px] uppercase tracking-widest text-zinc-300 hover:text-white flex items-center gap-1 transition-colors">Run External Diligence <ArrowRight size={12} /></Link>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ScrollReveal>
+
+                    {/* AI STRATEGY & RISK (CAIO/CRO) */}
+                    <ScrollReveal delay={500}>
+                        <div className="bg-black/60 border border-rose-500/10 rounded-3xl p-8 relative overflow-hidden group hover:border-rose-500/30 transition-colors h-full">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-rose-500/10 transition-colors duration-1000"></div>
+                            <div className="flex items-center gap-3 mb-8">
+                                <AlertTriangle className="text-rose-500 h-8 w-8" />
+                                <div>
+                                    <h3 className="text-xl font-bold text-white uppercase tracking-tight">AI Strategy & Risk</h3>
+                                    <p className="text-xs font-mono text-rose-400 uppercase tracking-widest">Chief AI Officer / CRO</p>
+                                </div>
+                            </div>
+
+                            <div className="space-y-6">
+                                <div className="p-5 bg-zinc-900/50 border border-rose-500/20 rounded-xl border-l-2 border-l-rose-500">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <span className="text-sm font-bold text-zinc-300">Model Collapse Liability</span>
+                                        <span className="text-xl font-black text-white text-right">
+                                            {totalWealthGap > 0 ? 'High Exposure' : 'Pending Audit'}
+                                        </span>
+                                    </div>
+                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">Financial tax triggered by synthetic data decay forcing continuous model retraining capital expenditure.</p>
+                                    
+                                    <div className="mt-4 p-3 bg-rose-500/10 border border-rose-500/20 rounded-lg">
+                                        <div className="text-[10px] uppercase tracking-widest text-rose-400 font-bold mb-1 flex items-center gap-2">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                                            Active Threat Briefing
+                                        </div>
+                                        <Link href="/blog/model-collapse-financial-modeling" className="text-xs text-white hover:text-rose-300 transition-colors block leading-tight">
+                                           Read the CIO.com framework on mitigating this depreciation schedule.
+                                        </Link>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

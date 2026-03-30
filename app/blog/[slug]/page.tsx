@@ -12,11 +12,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     const article = allArticles[slug];
     if (!article) return { title: 'Article Not Found' };
+    
+    const canonicalURL = article.canonicalUrl || `https://www.richardewing.io/blog/${slug}`;
+    
     return {
         title: `${article.title} | Richard Ewing`,
         description: article.excerpt,
-        alternates: { canonical: `https://www.richardewing.io/blog/${slug}` },
-        openGraph: { title: article.title, description: article.excerpt, url: `https://www.richardewing.io/blog/${slug}`, type: 'article' },
+        alternates: { canonical: canonicalURL },
+        openGraph: { title: article.title, description: article.excerpt, url: canonicalURL, type: 'article' },
     };
 }
 

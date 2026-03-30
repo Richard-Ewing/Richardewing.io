@@ -188,6 +188,7 @@ const trackDefs: [string, string, string, [string,string,string,string[]][]][] =
         ['11-13','AI Product Management','Probabilistic PM, Non-Deterministic Testing, Feature KPIs.',['Manage Probabilistic Products','Run Non-Deterministic Tests','Determine Feature KPIs','Measure AI ROI']],
         ['11-14','Shadow AI Discovery','Employee App Usage, Data Leakage Prevention, Policy Enforcement.',['Discover Shadow AI','Prevent Data Leakage','Enforce Usage Policies','Quantify Shadow AI Risk']],
         ['11-15','Prompt Injection Defense','Jailbreak Prevention, Input Sanitization, Security Economics.',['Prevent Jailbreaks','Sanitize User Inputs','Calculate Security Economics','Defend Against Injection']],
+        ['11-16','Model Collapse Financial Modeling','Quantifying the depreciation of AI assets, mitigating collapse risks, and managing organic data acquisition costs.',['Quantify Model Depreciation','Manage Data Acquisition','Evaluate Synthetic Risk','Model Financial Decay']],
     ]],
     // ═══════════════════ TRACK 12: Enterprise Architecture Economics [NEW] ═══════════════════
     ['enterprise-architecture', 'Track 12 — Enterprise Architecture Economics', 'The economics of designing, evolving, and governing enterprise systems.', [
@@ -399,7 +400,7 @@ export function getModule(slug: string): CurriculumModule | undefined {
         if (mod.moduleId === '14-12') mod.embeddedTool = 'cloud-repatriation';
         if (mod.moduleId === '9-14') mod.embeddedTool = 'due-diligence';
         if (mod.moduleId === '10-6' || mod.moduleId === '5-15') mod.embeddedTool = 'pdi';
-        if (mod.moduleId === '11-1') mod.embeddedTool = 'aueb';
+        if (mod.moduleId === '11-1' || mod.moduleId === '11-16') mod.embeddedTool = 'aueb';
         if (mod.moduleId === '6-1' || mod.moduleId === '10-4') mod.embeddedTool = 'aper';
         if (mod.moduleId === '5-10') mod.embeddedTool = 'ev-se';
     }

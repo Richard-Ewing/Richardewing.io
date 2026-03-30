@@ -279,6 +279,7 @@ export const tracks = [
             { id: '11-13', name: '11.13 AI Product Management', topics: 'Probabilistic PM, Non-Deterministic Testing, Feature KPIs', href: '/curriculum/tracks/ai-operations/11-13' },
             { id: '11-14', name: '11.14 Shadow AI Discovery', topics: 'Employee App Usage, Data Leakage Prevention, Policy Enforcement', href: '/curriculum/tracks/ai-operations/11-14' },
             { id: '11-15', name: '11.15 Prompt Injection Defense', topics: 'Jailbreak Prevention, Input Sanitization, Security Economics', href: '/curriculum/tracks/ai-operations/11-15' },
+            { id: '11-16', name: '11.16 Model Collapse Financial Modeling', topics: 'Model Depreciation, Organic Data Costs, Financial Decay', href: '/curriculum/tracks/ai-operations/11-16' },
         ],
         color: 'teal',
         icon: '🧠',

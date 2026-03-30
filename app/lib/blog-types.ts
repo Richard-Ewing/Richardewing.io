@@ -9,6 +9,7 @@ export interface ArticleData {
     readTime: string;
     featured?: boolean;
     content: string;
+    canonicalUrl?: string;
 }
 
 export const categoryColors: Record<string, string> = {

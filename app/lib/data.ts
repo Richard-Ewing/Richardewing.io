@@ -1,5 +1,13 @@
 export const articles = [
     {
+        slug: "model-collapse-financial-modeling",
+        title: "The hidden inflation of AI: Why model collapse is a business risk",
+        description: "Everyone is worried about AI ethics, but few are talking about AI economics. AI is not a deploy-and-forget asset. It is a depreciating one that requires continuous CapEx to maintain.",
+        date: "Apr 2026",
+        readTime: "11 min read",
+        source: "CIO.com"
+    },
+    {
         slug: "calculating-technical-debt-ebitda-impact-private-equity",
         title: "Calculating Technical Debt's EBITDA Impact in Private Equity Due Diligence",
         description: "A financial framework for Private Equity operating partners to translate legacy code maintenance burdens directly into EBITDA compression forecasts.",

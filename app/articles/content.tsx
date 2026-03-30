@@ -190,12 +190,15 @@ export default function ArticlesPage() {
 
                     {displayedArticles.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {displayedArticles.map((article, i) => (
+                            {displayedArticles.map((article, i) => {
+                                const isExternal = article.externalUrl?.startsWith('http');
+                                const href = article.externalUrl || `/blog/${article.slug}`;
+                                return (
                                 <Link
                                     key={article.slug}
-                                    href={article.externalUrl || '#'}
-                                    target={article.externalUrl ? "_blank" : undefined}
-                                    rel={article.externalUrl ? "noopener noreferrer" : undefined}
+                                    href={href}
+                                    target={isExternal ? "_blank" : undefined}
+                                    rel={isExternal ? "noopener noreferrer" : undefined}
                                     className="group block"
                                 >
                                     <GlowCard className="p-6 h-full flex flex-col justify-between hover:bg-white/5 transition-colors" glowColor={i % 2 === 0 ? "cyan" : "purple"}>
@@ -214,7 +217,8 @@ export default function ArticlesPage() {
                                         </div>
                                     </GlowCard>
                                 </Link>
-                            ))}
+                                );
+                            })}
                         </div>
                     ) : (
                         <div className="text-center py-20 border border-dashed border-zinc-800 rounded-2xl">
