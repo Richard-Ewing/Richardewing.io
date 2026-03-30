@@ -135,6 +135,11 @@ interface Results {
     apiCost: number;
     hostingCost: number;
     totalInfraCost: number;
+    qpep_roadmap?: Array<{
+        month: number;
+        focus: string;
+        action_items: string[];
+    }>;
 }
 
 export default function AUEBTool() {
@@ -296,13 +301,29 @@ export default function AUEBTool() {
                 margin: 100 - ((f.queriesPercent / 100) * (100 - grossMargin))
             }));
 
+            const qpep_roadmap = [];
+            if (grossMargin < 50) {
+                qpep_roadmap.push({ month: 1, focus: "Hemorrhage Control & Semantic Caching", action_items: ["Audit 'Chat' & 'Search' payload bloat", "Deploy Redis Semantic Caching", "Rate-limit high-frequency API endpoints"] });
+                qpep_roadmap.push({ month: 2, focus: "SLM Orchestration & Evaluation", action_items: ["Evaluate open-weight SLMs (e.g. Llama 3) for routine queries", "Build intent-classifier routing layer", "Shadow-test SLM responses vs current OpenAI baselines"] });
+                qpep_roadmap.push({ month: 3, focus: "Production Migration", action_items: ["Route 40% of low-complexity traffic to sovereign SLMs", "Decommission redundant vector search infrastructure", "Stabilize gross margin > 70%"] });
+            } else if (!cachingEnabled) {
+                qpep_roadmap.push({ month: 1, focus: "Immediate Margin Capture", action_items: ["Deploy vector caching layer (Redis or similar)", "Identify duplicate high-token queries", "Establish baseline token budgets per user"] });
+                qpep_roadmap.push({ month: 2, focus: "Mid-Term Cost Deflection", action_items: ["Evaluate intent routing for simpler models", "Transition 'Summary' features to cheaper tiers", "Monitor API egress taxation"] });
+                qpep_roadmap.push({ month: 3, focus: "Sustainable Modeling", action_items: ["Shift to provisioned throughput vs on-demand", "Lock in Enterprise commits for API services", "Target 85%+ margin"] });
+            } else {
+                qpep_roadmap.push({ month: 1, focus: "Growth Infrastructure", action_items: ["Monitor auto-scaling cloud costs against MAU growth", "Stress-test database read/write limits", "Establish automated FinOps alerts"] });
+                qpep_roadmap.push({ month: 2, focus: "Model Arbitrage & Fine-tuning", action_items: ["Fine-tune custom Llama models on proprietary datasets", "Reduce reliance on general-purpose frontier models", "A/B test fine-tuned SLM vs GPT-4"] });
+                qpep_roadmap.push({ month: 3, focus: "Market Dominance", action_items: ["Reinvest margin into R&D / feature expansion", "Explore multi-modal AI offerings", "Maintain strict unit economic discipline"] });
+            }
+
             const payload = {
                 grossMargin, monthlyRevenue, monthlyCost: totalInfraCost, monthlyProfit, profitPerUser,
                 costPerUser: totalCostPerUser, insolvencyPoint, models, growthData,
                 price: priceNum, queries: queriesNum, users: usersNum,
                 monthsToCollapse: monthsToCollapse || 36,
                 featureBreakdown,
-                llmCost, apiCost, hostingCost, totalInfraCost
+                llmCost, apiCost, hostingCost, totalInfraCost,
+                qpep_roadmap
             };
 
             setResults(payload);
@@ -914,6 +935,64 @@ export default function AUEBTool() {
                                         <span>Vercel</span>
                                     </div>
                                 </motion.div>
+
+                                {/* Q-PEP ROADMAP - GANTT CHART */}
+                                {results.qpep_roadmap && results.qpep_roadmap.length > 0 && (
+                                    <motion.div 
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+                                    >
+                                        <h3 className="text-xl font-bold text-white mb-4 mt-8 flex items-center gap-2">
+                                            <div className="w-2 h-2 rounded-full border border-cyan-400 bg-cyan-400/50 animate-pulse" />
+                                            Quarterly Margin Execution Plan (Q-PEP)
+                                        </h3>
+                                        <div className="bg-zinc-900 border border-white/10 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
+                                            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-500 via-blue-500 to-indigo-500"></div>
+                                            <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6 border-b border-white/5 pb-4">Execution Gantt Chart (90-Day Burn Down)</h4>
+                                            
+                                            <div className="space-y-6 md:space-y-8">
+                                                {results.qpep_roadmap.map((plan: any, i: number) => (
+                                                    <div key={i} className="relative md:pl-6 pl-4">
+                                                        {/* Timeline dot */}
+                                                        <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)] z-10"></div>
+                                                        
+                                                        <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+                                                            <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-400 shrink-0 inline-block w-fit">
+                                                                Month {plan.month}
+                                                            </div>
+                                                            <div className="font-bold text-white text-base leading-tight md:leading-normal">{plan.focus}</div>
+                                                        </div>
+                                                        
+                                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                                            {plan.action_items.map((action: string, j: number) => {
+                                                                // Visual length variations to simulate Gantt chart task durations
+                                                                const widths = ["w-full", "w-[90%]", "w-[95%]"];
+                                                                const width = widths[j % widths.length];
+                                                                // Progressive colors down the months
+                                                                const colorClasses = [
+                                                                    "from-cyan-500/20 to-blue-500/20 border-cyan-500/50 text-cyan-200",
+                                                                    "from-blue-500/20 to-indigo-500/20 border-blue-500/50 text-blue-200",
+                                                                    "from-indigo-500/20 to-violet-500/20 border-indigo-500/50 text-indigo-200"
+                                                                ];
+                                                                const color = colorClasses[i % colorClasses.length];
+                                                                
+                                                                return (
+                                                                    <div key={j} className={`${width} bg-gradient-to-r ${color} border-l-2 p-3 rounded-r-md min-h-[70px] flex items-center transition-all hover:brightness-125 hover:translate-x-1 duration-300 shadow-sm`}>
+                                                                        <span className="text-xs leading-relaxed">{action}</span>
+                                                                    </div>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {/* Vertical Timeline line */}
+                                                <div className="absolute left-[0.15rem] md:left-[-0.95rem] top-4 bottom-4 w-px bg-white/10 z-0 hidden md:block"></div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                )}
 
                                 </div>
 

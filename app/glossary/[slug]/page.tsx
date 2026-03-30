@@ -384,7 +384,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                         <div className="text-[10px] font-mono text-zinc-600">{pct}%</div>
                                     </div>
                                     <div className="w-full h-1.5 rounded-full bg-white/5 mb-1.5">
-                                        {/* eslint-disable-next-line react/forbid-dom-props */}
+                                        { }
                                         <div className={`h-full rounded-full bg-gradient-to-r ${barColor} transition-all`} style={{ width: `${pct}%` }} />
                                     </div>
                                     <div className="text-xs text-zinc-500">{level.description}</div>

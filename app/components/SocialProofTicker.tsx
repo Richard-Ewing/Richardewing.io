@@ -23,7 +23,10 @@ export default function SocialProofTicker() {
     useEffect(() => {
         if (dismissed) return;
         const wasDismissed = sessionStorage.getItem('social-proof-dismissed');
-        if (wasDismissed) { setDismissed(true); return; }
+        if (wasDismissed) { 
+            setTimeout(() => setDismissed(true), 0); 
+            return; 
+        }
 
         // Show after 8 seconds
         const initialTimer = setTimeout(() => setShow(true), 8000);

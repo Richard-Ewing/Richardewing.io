@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
@@ -24,7 +25,7 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                 <div key={i} className="flex items-center gap-4">
                     <div className="w-24 text-xs font-mono text-zinc-500 text-right">{item.name}</div>
                     <div className="flex-1 h-10 bg-zinc-900 rounded-lg overflow-hidden relative">
-                        {/* eslint-disable-next-line react/forbid-dom-props */}
+                        { }
                         <div
                             className="h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4"
                             style={{
@@ -69,7 +70,7 @@ const RiskSlider = ({ label, value, onChange, description }: {
             </div>
             <div className="relative">
                 <div className="absolute inset-0 h-2 rounded-lg bg-gradient-to-r from-emerald-500/30 via-yellow-500/30 to-red-500/30" />
-                {/* eslint-disable-next-line react/forbid-dom-props */}
+                { }
                 <input
                     type="range"
                     min="0"
@@ -117,13 +118,17 @@ interface Results {
     };
     biggestRiskFactor: string;
     biggestRiskCost: number;
+    qpep_roadmap?: Array<{
+        month: number;
+        focus: string;
+        action_items: string[];
+    }>;
 }
 
 export default function EVSETool() {
     // Persona State
     const [persona, setPersona] = useState<Persona>('Founder');
-
-    // Basic inputs
+    const [step, setStep] = useState(1);
     const [arr, setArr] = useState('12000000');
     const [multiple, setMultiple] = useState('8');
     const [baseConfidence, setBaseConfidence] = useState(75);
@@ -177,6 +182,25 @@ export default function EVSETool() {
             // Calculate cost of biggest risk
             const biggestRiskCost = (biggestRisk.impact / riskImpact) * wealthGap;
 
+            const qpep_roadmap = [];
+            if (biggestRisk.name === 'Scope Creep') {
+                qpep_roadmap.push({ month: 1, focus: "Scope Quarantine", action_items: ["Freeze all non-critical feature development", "Implement strict PR boundary testing", "Audit actively running feature flags"] });
+                qpep_roadmap.push({ month: 2, focus: "Product Pruning", action_items: ["Deprecate underutilized endpoints", "Consolidate redundant macro-features", "Offboard low-ROI technical debt"] });
+                qpep_roadmap.push({ month: 3, focus: "Value Expansion", action_items: ["Reallocate engineering to core differentiator", "Launch structured Beta program", "Stabilize release velocity"] });
+            } else if (biggestRisk.name === 'Tech Complexity') {
+                qpep_roadmap.push({ month: 1, focus: "Architecture Simplification", action_items: ["Audit third-party dependencies", "Abstract legacy microservices", "Decommission redundant databases"] });
+                qpep_roadmap.push({ month: 2, focus: "Pipeline Hardening", action_items: ["Implement generic CI/CD pipelines", "Standardize container orchestration", "Enhance telemetry visibility"] });
+                qpep_roadmap.push({ month: 3, focus: "Scale Preparedness", action_items: ["Stress test data ingestion limit", "Establish automated failover", "Document system bottlenecks"] });
+            } else if (biggestRisk.name === 'Talent Risk') {
+                qpep_roadmap.push({ month: 1, focus: "Knowledge Distillation", action_items: ["Mandatory pair-programming on critical path", "Extract IP from 'hero' engineers", "Document deployment runbooks"] });
+                qpep_roadmap.push({ month: 2, focus: "Resilience Training", action_items: ["Cross-train backend engineers on infra", "Simulate key-person departure", "Standardize onboarding flow"] });
+                qpep_roadmap.push({ month: 3, focus: "Capacity Expansion", action_items: ["Hire strategic external contractors", "Implement automated code reviews", "Establish clear succession plans"] });
+            } else {
+                qpep_roadmap.push({ month: 1, focus: "Compliance Audit", action_items: ["Map all PII data flows", "Review third-party sub-processors", "Establish clear retention policies"] });
+                qpep_roadmap.push({ month: 2, focus: "Security Hardening", action_items: ["Implement localized data residency", "Conduct external penetration testing", "Deploy automated compliance checking in CI"] });
+                qpep_roadmap.push({ month: 3, focus: "Enterprise Readiness", action_items: ["Secure SOC2 Type II certification", "Draft transparent SLAs", "De-risk future regulatory shifts"] });
+            }
+
             // Scenario modeling
             const scenarios = {
                 best: perfectValue * 1.2,
@@ -192,6 +216,7 @@ export default function EVSETool() {
                 scenarios,
                 biggestRiskFactor: biggestRisk.name,
                 biggestRiskCost,
+                qpep_roadmap,
             };
 
             setResults(payload);
@@ -322,8 +347,14 @@ export default function EVSETool() {
                             </div>
                         </div>
 
-                        {/* Core Inputs */}
-                        <div className="space-y-8">
+                        <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-zinc-800">
+                                <div className={`h-full bg-purple-500 transition-all duration-500 w-${Math.round((step / 3) * 100)}`} style={{ width: `${(step / 3) * 100}%` }} />
+                            </div>
+
+                        {/* Core Inputs - STEP 1 */}
+                        {step === 1 && (
+                        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8 mt-2">
                             <div>
                                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Valuation Inputs</div>
                                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
@@ -383,9 +414,14 @@ export default function EVSETool() {
                                     </div>
                                 </div>
                             </div>
+                            <button onClick={() => setStep(2)} className="w-full mt-8 py-4 bg-white hover:bg-zinc-200 text-black font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2">Next: Funding Context <ArrowRight size={16} /></button>
+                        </motion.div>
+                        )}
 
-                            {/* Funding Context */}
-                            <div className="pt-6 border-t border-white/5">
+                        {/* Funding Context - STEP 2 */}
+                        {step === 2 && (
+                        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8 mt-2">
+                            <div>
                                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Funding Context</div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
@@ -417,9 +453,17 @@ export default function EVSETool() {
                                     </div>
                                 </div>
                             </div>
+                            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                                <button onClick={() => setStep(1)} className="px-6 py-4 bg-zinc-800 hover:bg-zinc-700 text-white rounded-xl transition-all">← Back</button>
+                                <button onClick={() => setStep(3)} className="flex-1 py-4 bg-white hover:bg-zinc-200 text-black font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2">Next: Execution Risks <ArrowRight size={16} /></button>
+                            </div>
+                        </motion.div>
+                        )}
 
-                            {/* Risk Sliders */}
-                            <div className="pt-6 border-t border-white/5">
+                        {/* Risk Sliders - STEP 3 */}
+                        {step === 3 && (
+                        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8 mt-2">
+                            <div>
                                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Execution Risk Factors</div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <RiskSlider
@@ -449,6 +493,9 @@ export default function EVSETool() {
                                 </div>
                             </div>
 
+                            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                            <button onClick={() => setStep(2)} className="px-6 py-4 bg-zinc-800 hover:bg-zinc-700 text-white rounded-xl transition-all">← Back</button>
+                            <div className="flex-1">
                             <ShineBorder borderColor="rgba(168, 85, 247, 0.6)" duration={2}>
                                 <button
                                     onClick={() => setShowGate(true)}
@@ -465,6 +512,8 @@ export default function EVSETool() {
                                     )}
                                 </button>
                             </ShineBorder>
+                            </div>
+                            </div>
 
                             {showGate && (
                                 <div className="mt-6">
@@ -473,6 +522,8 @@ export default function EVSETool() {
                                     </ToolGate>
                                 </div>
                             )}
+                        </motion.div>
+                        )}
                         </div>
                     </div>
                 </ScrollReveal>
@@ -597,6 +648,57 @@ export default function EVSETool() {
                             </div>
                         </div>
                     </ScrollReveal>
+
+                    {/* EXECUTION ROADMAP - GANTT CHART */}
+                    {results.qpep_roadmap && results.qpep_roadmap.length > 0 && (
+                        <ScrollReveal delay={180}>
+                            <h3 className="text-xl font-bold text-white mb-4 mt-8 flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                                Value Remediation Plan
+                            </h3>
+                            <div className="bg-zinc-900 border border-white/10 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 via-pink-500 to-red-500"></div>
+                                <h4 className="font-mono text-xs text-purple-400 uppercase tracking-widest mb-6 border-b border-white/5 pb-4">90-Day Execution Gantt Chart: {results.biggestRiskFactor}</h4>
+                                
+                                <div className="space-y-6 md:space-y-8">
+                                    {results.qpep_roadmap.map((plan, i) => (
+                                        <div key={i} className="relative md:pl-6 pl-4">
+                                            {/* Timeline dot */}
+                                            <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.5)] z-10"></div>
+                                            
+                                            <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+                                                <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-400 shrink-0 inline-block w-fit">
+                                                    Month {plan.month}
+                                                </div>
+                                                <div className="font-bold text-white text-base leading-tight md:leading-normal">{plan.focus}</div>
+                                            </div>
+                                            
+                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                                {plan.action_items.map((action: string, j: number) => {
+                                                    const widths = ["w-full", "w-[90%]", "w-[95%]"];
+                                                    const width = widths[j % widths.length];
+                                                    const colorClasses = [
+                                                        "from-purple-500/20 to-pink-500/20 border-purple-500/50 text-purple-200",
+                                                        "from-pink-500/20 to-rose-500/20 border-pink-500/50 text-pink-200",
+                                                        "from-rose-500/20 to-red-500/20 border-rose-500/50 text-red-200"
+                                                    ];
+                                                    const color = colorClasses[i % colorClasses.length];
+                                                    
+                                                    return (
+                                                        <div key={j} className={`${width} bg-gradient-to-r ${color} border-l-2 p-3 rounded-r-md min-h-[70px] flex items-center transition-all hover:brightness-125 hover:translate-x-1 duration-300 shadow-sm`}>
+                                                            <span className="text-xs leading-relaxed">{action}</span>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                    ))}
+                                    {/* Vertical Timeline line */}
+                                    <div className="absolute left-[0.15rem] md:left-[-0.95rem] top-4 bottom-4 w-px bg-white/10 z-0 hidden md:block"></div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                    )}
 
                     {/* Action Footer */}
                     <ScrollReveal delay={200}>

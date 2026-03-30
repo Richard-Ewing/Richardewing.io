@@ -55,6 +55,26 @@ const nextConfig: NextConfig = {
       },
       // Legacy 404s reported by GSC
       {
+        source: '/10',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/exogram/docs/schema-integrity',
+        destination: '/exogram',
+        permanent: true,
+      },
+      {
+        source: '/exogram/docs/eaap-specification',
+        destination: '/exogram',
+        permanent: true,
+      },
+      {
+        source: '/canonical/:slug*',
+        destination: '/briefings',
+        permanent: true,
+      },
+      {
         source: '/methodology.html',
         destination: '/system',
         permanent: true,

@@ -1,0 +1,221 @@
+"use client";
+
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowLeft, Rocket, Users, Coins, Calculator, TrendingDown, RefreshCcw } from 'lucide-react';
+import Link from 'next/link';
+import ToolCelebration from '@/app/components/ToolCelebration';
+
+export default function AIRoiTimelineContent() {
+    const [engineers, setEngineers] = useState(50);
+    const [salary, setSalary] = useState(150000);
+    const [aiStrategy, setAiStrategy] = useState<'copilot' | 'rag' | 'slm'>('rag');
+    
+    // Derived Costs
+    const totalFteCost = engineers * salary;
+    
+    // AI Strategy Data
+    const strategyData = {
+        copilot: { capEx: 20000, opExPerUser: 400, gain: 0.15, name: 'SaaS Copilots' },
+        rag: { capEx: 150000, opExPerUser: 2500, gain: 0.25, name: 'Proprietary RAG' },
+        slm: { capEx: 400000, opExPerUser: 800, gain: 0.35, name: 'Fine-Tuned SLM' }
+    };
+    
+    const activeStrategy = strategyData[aiStrategy];
+    
+    // Financial Mathematics
+    const implementationCost = activeStrategy.capEx;
+    const annualAiOpex = engineers * activeStrategy.opExPerUser;
+    const displacedEngineers = Math.floor(engineers * activeStrategy.gain);
+    const grossSavings = displacedEngineers * salary;
+    const netAnnualSavings = grossSavings - annualAiOpex;
+    const breakEvenMonths = netAnnualSavings > 0 ? (implementationCost / netAnnualSavings) * 12 : -1;
+
+    // View State
+    const [view, setView] = useState<'input' | 'results'>('input');
+
+    const handleCalculate = () => {
+        setView('results');
+        
+        // Persist the run to the intelligence dashboard
+        fetch('/api/tools/runs', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                tool_id: 'ai-roi-timeline',
+                run_data: { engineers, salary, aiStrategy },
+                output_metrics: { implementationCost, netAnnualSavings, breakEvenMonths }
+            })
+        }).catch(e => console.error('Failed to log tool run:', e));
+    };
+
+    return (
+        <div className="min-h-screen bg-black text-white py-20 px-4 sm:px-6 relative overflow-hidden font-sans">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.1),transparent_50%)] pointer-events-none"></div>
+            
+            <div className="max-w-4xl mx-auto relative z-10">
+                <Link href="/tools" className="inline-flex items-center text-zinc-500 hover:text-white transition-colors mb-12 font-mono text-xs uppercase tracking-widest">
+                    <ArrowLeft size={14} className="mr-2" /> Back to Tools
+                </Link>
+
+                <div className="mb-12">
+                    <h1 className="text-4xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-zinc-200 to-zinc-600 tracking-tight leading-tight">
+                        AI Break-Even <br/> Modeler
+                    </h1>
+                    <p className="text-zinc-400 mt-4 max-w-2xl text-lg leading-relaxed">
+                        Calculate exactly when your CapEx drops below human FTE OpEx displacement. Stop guessing ROI; model it.
+                    </p>
+                </div>
+
+                {view === 'input' && (
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* INPUT PANEL */}
+                        <div className="space-y-6">
+                            <div className="bg-zinc-950/50 p-6 rounded-2xl border border-white/5 space-y-8">
+                                <div>
+                                    <div className="flex justify-between items-end mb-4">
+                                        <label htmlFor="engineers-range" className="text-xs font-mono text-purple-400 uppercase tracking-widest flex items-center gap-2"><Users size={12}/> Headcount</label>
+                                        <div className="text-2xl font-bold font-mono">{engineers} FTEs</div>
+                                    </div>
+                                    <input id="engineers-range" title="Engineers" aria-label="Engineers count" type="range" min="10" max="500" step="5" value={engineers} onChange={(e) => setEngineers(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-purple-500" />
+                                </div>
+                                
+                                <div>
+                                    <div className="flex justify-between items-end mb-4">
+                                        <label htmlFor="salary-range" className="text-xs font-mono text-green-400 uppercase tracking-widest flex items-center gap-2"><Coins size={12}/> Cost / FTE</label>
+                                        <div className="text-2xl font-bold font-mono">${(salary/1000).toFixed(0)}k</div>
+                                    </div>
+                                    <input id="salary-range" title="Salary per FTE" aria-label="Salary per FTE" type="range" min="80000" max="300000" step="10000" value={salary} onChange={(e) => setSalary(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-green-500" />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* STRATEGY SELECTION */}
+                        <div className="space-y-4 flex flex-col justify-between">
+                            <div className="space-y-3">
+                                <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest block mb-4">Architecture Strategy</label>
+                                
+                                {Object.entries(strategyData).map(([key, data]) => {
+                                    const isActive = aiStrategy === key;
+                                    return (
+                                        <div 
+                                            key={key} 
+                                            onClick={() => setAiStrategy(key as any)}
+                                            className={`p-4 rounded-xl border cursor-pointer transition-all ${isActive ? 'bg-purple-500/10 border-purple-500/50' : 'bg-black border-white/5 hover:border-white/20'}`}
+                                        >
+                                            <div className="flex justify-between items-center">
+                                                <div className="font-bold text-white">{data.name}</div>
+                                                <div className="text-xs font-mono text-purple-400">{(data.gain * 100)}% Gain</div>
+                                            </div>
+                                            <div className="grid grid-cols-2 gap-4 mt-3 text-xs text-zinc-500 font-mono">
+                                                <div>CapEx: ${(data.capEx/1000).toFixed(0)}k</div>
+                                                <div>OpEx/Yr: ${(data.opExPerUser)}/user</div>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
+                            <button onClick={handleCalculate} className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2 mt-auto">
+                                Run Matrix <Rocket size={16} />
+                            </button>
+                        </div>
+                    </motion.div>
+                )}
+
+                {view === 'results' && (
+                    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="space-y-8">
+                        <ToolCelebration show={view === 'results'} toolName="AI ROI Modeler" />
+                        
+                        {/* Executive Summary */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div className="p-6 bg-zinc-900 border border-zinc-800 rounded-2xl relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-colors duration-500"></div>
+                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2 flex items-center gap-2">Implementation CapEx</div>
+                                <div className="text-3xl sm:text-4xl font-black text-rose-400 break-words">${implementationCost.toLocaleString()}</div>
+                                <div className="text-xs text-zinc-600 mt-2 font-mono">Initial setup & training cost</div>
+                            </div>
+                            
+                            <div className="p-6 bg-zinc-900 border border-zinc-800 rounded-2xl relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/5 rounded-full blur-2xl group-hover:bg-green-500/10 transition-colors duration-500"></div>
+                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2 flex items-center gap-2">Annual Net Savings</div>
+                                <div className="text-3xl sm:text-4xl font-black text-green-400 break-words">${netAnnualSavings.toLocaleString()}</div>
+                                <div className="text-xs text-zinc-600 mt-2 font-mono">Displacing {displacedEngineers} FTEs</div>
+                            </div>
+
+                            <div className="p-6 bg-purple-900/20 border border-purple-500/30 rounded-2xl relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-colors duration-500"></div>
+                                <div className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2 flex items-center gap-2">Break-Even Horizon</div>
+                                <div className="text-3xl sm:text-4xl font-black text-white">
+                                    {breakEvenMonths < 0 ? 'Never' : `${breakEvenMonths.toFixed(1)} Months`}
+                                </div>
+                                <div className="text-xs text-purple-300/50 mt-2 font-mono">Until CapEx is recovered</div>
+                            </div>
+                        </div>
+
+                        {/* Visualization Matrix */}
+                        <div className="p-8 bg-zinc-950 border border-white/5 rounded-2xl">
+                            <h3 className="text-lg font-bold mb-6 flex items-center gap-2"><TrendingDown className="text-zinc-500" /> Capital Amortization Timeline</h3>
+                            
+                            {/* Horizontal bar timeline representing months */}
+                            <div className="space-y-4">
+                                {[3, 6, 12, 18, 24].map((month) => {
+                                    const netPosition = (netAnnualSavings / 12 * month) - implementationCost;
+                                    const isProfitable = netPosition > 0;
+                                    const maxLoss = implementationCost;
+                                    const maxProfit = (netAnnualSavings / 12 * 24) - implementationCost;
+                                    const spread = maxProfit + maxLoss;
+                                    const zeroPoint = (maxLoss / spread) * 100;
+                                    const barWidth = Math.abs(netPosition / spread) * 100;
+                                    
+                                    return (
+                                        <div key={month} className="grid grid-cols-12 items-center gap-4 group">
+                                            <div className="col-span-2 text-xs font-mono text-zinc-500">Month {month}</div>
+                                            <div className="col-span-8 bg-black h-4 rounded-full relative overflow-hidden border border-white/5">
+                                                {/* Zero Line Marker */}
+                                                {/* eslint-disable-next-line react/forbid-dom-props */}
+                                                <div className="absolute top-0 bottom-0 border-l border-zinc-700 z-10" style={{ left: `${zeroPoint}%` }}></div>
+                                                
+                                                {/* The Bar */}
+                                                {/* eslint-disable-next-line react/forbid-dom-props */}
+                                                <div 
+                                                    className={`absolute top-0 bottom-0 rounded-full ${isProfitable ? 'bg-green-500/50 group-hover:bg-green-400' : 'bg-rose-500/50 group-hover:bg-rose-400'} transition-colors`}
+                                                    style={{ 
+                                                        width: `${barWidth}%`, 
+                                                        left: isProfitable ? `${zeroPoint}%` : `${zeroPoint - barWidth}%` 
+                                                    }}
+                                                />
+                                            </div>
+                                            <div className={`col-span-2 text-right font-mono text-xs font-bold ${isProfitable ? 'text-green-400' : 'text-rose-400'}`}>
+                                                {isProfitable ? '+' : '-'}${Math.abs(Math.round(netPosition)).toLocaleString()}
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
+                            <div className="mt-8 pt-8 border-t border-white/5">
+                                <Link 
+                                    href="/reports/state-of-ai-engineering" 
+                                    className="flex items-center justify-between p-4 rounded-xl bg-purple-500/10 border border-purple-500/20 hover:bg-purple-500/20 transition-colors group"
+                                >
+                                    <div>
+                                        <div className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors">Download The State of AI Engineering 2026</div>
+                                        <div className="text-xs text-zinc-500 font-mono mt-1">Get the full playbook on displacing FTEs with AI safely.</div>
+                                    </div>
+                                    <Calculator className="text-purple-400 group-hover:scale-110 transition-transform" />
+                                </Link>
+                            </div>
+                        </div>
+                        
+                        <div className="flex justify-center">
+                            <button onClick={() => setView('input')} className="px-6 py-3 bg-zinc-900 text-zinc-400 hover:text-white rounded-lg font-mono text-xs uppercase tracking-widest transition-colors flex items-center gap-2">
+                                <RefreshCcw size={14} /> Recalibrate Matrix
+                            </button>
+                        </div>
+                    </motion.div>
+                )}
+            </div>
+        </div>
+    );
+}

@@ -10,7 +10,7 @@ export default function ProgressCompleteButton({ moduleId, nextHref }: { moduleI
     useEffect(() => {
         const progress = JSON.parse(localStorage.getItem('vault_progress') || '[]');
         if (progress.includes(moduleId)) {
-            setIsCompleted(true);
+            setTimeout(() => setIsCompleted(true), 0);
         }
     }, [moduleId]);
 

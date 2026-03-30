@@ -23,8 +23,9 @@ export default function ToolCelebration({ show, toolName }: { show: boolean; too
                 } catch { /* ignore */ }
             }, 600);
             return () => clearTimeout(timer);
+        } else if (!show && hasCelebrated) {
+            setTimeout(() => setHasCelebrated(false), 0);
         }
-        if (!show) setHasCelebrated(false);
     }, [show, hasCelebrated, toolName]);
 
     if (!celebrate) return null;

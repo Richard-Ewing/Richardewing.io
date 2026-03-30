@@ -16,7 +16,10 @@ export default function StickyBottomCTA() {
     useEffect(() => {
         if (isConversionPage || dismissed) return;
         const alreadyDismissed = sessionStorage.getItem('sticky-cta-dismissed');
-        if (alreadyDismissed) { setDismissed(true); return; }
+        if (alreadyDismissed) { 
+            setTimeout(() => setDismissed(true), 0); 
+            return; 
+        }
 
         const handleScroll = () => {
             const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;

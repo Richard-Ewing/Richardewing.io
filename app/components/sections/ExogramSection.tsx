@@ -17,7 +17,7 @@ const ExogramSection = () => {
                         {/* Header with logo */}
                         <div className="flex flex-col items-center gap-4">
                             <div className="w-16 h-16 flex items-center justify-center">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                { }
                                 <img src="/images/exogram/logo-main.png" alt="Exogram Logo" className="w-full h-full object-contain" />
                             </div>
                             <div>
@@ -43,7 +43,7 @@ const ExogramSection = () => {
 
                             {/* Founder Attribution - Right Aligned on Desktop to kiss the center line */}
                             <div className="flex items-center justify-center md:justify-end gap-4 h-12">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                { }
                                 <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover shadow-sm" />
                                 <div className="text-left flex flex-col justify-center h-full">
                                     <p className="text-white font-semibold leading-none mb-1">Founded by Richard Ewing</p>

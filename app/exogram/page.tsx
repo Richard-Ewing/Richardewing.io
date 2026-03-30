@@ -18,7 +18,7 @@ export default function ExogramPage() {
                     <div className="relative z-10">
                         {/* Logo */}
                         <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            { }
                             <img src="/images/exogram/logo-main.png" alt="Exogram Logo" className="w-full h-full object-contain" />
                         </div>
 
@@ -34,7 +34,7 @@ export default function ExogramPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto items-center mt-8 mb-12">
                             <div className="flex justify-center md:justify-end w-full">
                                 <div className="inline-flex items-center gap-3 px-5 h-[52px] w-[260px] rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    { }
                                     <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-8 h-8 rounded-full object-cover grayscale opacity-80" />
                                     <div className="text-left flex-1">
                                         <p className="text-white font-semibold text-xs leading-tight">Founded by Richard Ewing</p>
@@ -222,7 +222,7 @@ export default function ExogramPage() {
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full border-t border-white/10 pt-8 mt-4 items-center">
                                 <div className="flex items-center justify-center md:justify-end gap-4 h-12">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    { }
                                     <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover shadow-sm" />
                                     <div className="text-left flex flex-col justify-center h-full">
                                         <p className="text-white font-semibold leading-none mb-1">Founded by Richard Ewing</p>

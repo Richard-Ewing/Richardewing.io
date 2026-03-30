@@ -1,7 +1,11 @@
 import React from 'react';
-import { ShieldCheck, BarChart3, Presentation, Lock, Zap } from 'lucide-react';
+import { ShieldCheck, BarChart3, Presentation, Lock, Zap, Clock, PlayCircle, FileText } from 'lucide-react';
 
-export default function CurriculumSalesPreview() {
+interface CurriculumSalesPreviewProps {
+    lessons?: any[];
+}
+
+export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSalesPreviewProps) {
     return (
         <div className="mt-16 relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-zinc-950">
             {/* Background Glows */}
@@ -42,47 +46,62 @@ export default function CurriculumSalesPreview() {
                             <Zap className="w-5 h-5 text-emerald-400" />
                         </div>
                         <h4 className="text-white font-bold font-grotesk mb-2">150+ Frameworks</h4>
-                        <p className="text-zinc-500 text-sm">Instant access to the entire 60-module curriculum data engine and continuous updates.</p>
+                        <p className="text-zinc-500 text-sm">Instant access to the entire curriculum data engine and continuous updates.</p>
                     </div>
                 </div>
             </div>
 
-            {/* Blurred Mockup Area to demonstrate value */}
-            <div className="relative p-10 bg-zinc-950/50">
-                <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-zinc-950 to-transparent z-10" />
-                <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent z-10" />
-                
-                <div className="max-w-4xl mx-auto grid grid-cols-2 gap-6 opacity-30 select-none pointer-events-none">
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-                        <div className="h-4 bg-zinc-800 rounded w-1/3 mb-6" />
+            {/* Syllabus Render Map (Coursera-style) */}
+            <div className="relative p-10 bg-zinc-950/80">
+                <div className="max-w-4xl mx-auto">
+                    <h3 className="text-xl font-bold font-grotesk text-white mb-6 border-b border-white/10 pb-4">Syllabus Overview</h3>
+                    
+                    {lessons && lessons.length > 0 ? (
                         <div className="space-y-4">
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-zinc-800 rounded-full" />
-                                <div className="flex-1 space-y-2">
-                                    <div className="h-3 bg-zinc-800 rounded w-3/4" />
-                                    <div className="h-2 bg-zinc-800 rounded w-1/2" />
+                            {lessons.map((lesson, idx) => (
+                                <div key={idx} className="bg-white/[0.02] border border-white/5 rounded-2xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 group/lock hover:bg-white/[0.04] transition-colors relative overflow-hidden">
+                                    <div className="flex items-start gap-4">
+                                        <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center shrink-0">
+                                            {idx % 2 === 0 ? <PlayCircle className="w-5 h-5 text-cyan-500/50" /> : <FileText className="w-5 h-5 text-purple-500/50" />}
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold mb-1 group-hover/lock:text-cyan-400 transition-colors flex items-center gap-2">
+                                                Lesson {idx + 1}: {lesson.title}
+                                            </h4>
+                                            <p className="text-zinc-500 text-sm line-clamp-2 max-w-2xl">{lesson.content}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="flex items-center gap-6 shrink-0 md:pl-6 md:border-l border-white/10">
+                                        <div className="flex flex-col items-center gap-1 opacity-60">
+                                            <Clock className="w-4 h-4 text-zinc-400" />
+                                            <span className="text-[10px] font-mono text-zinc-500">{15 + (idx * 5)} MIN</span>
+                                        </div>
+                                        <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
+                                            <Lock className="w-4 h-4 text-zinc-500" />
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Scanline effect entirely aesthetic */}
+                                    <div className="absolute inset-y-0 left-0 w-1 bg-cyan-500 opacity-0 group-hover/lock:opacity-100 transition-opacity" />
                                 </div>
-                            </div>
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-zinc-800 rounded-full" />
-                                <div className="flex-1 space-y-2">
-                                    <div className="h-3 bg-zinc-800 rounded w-full" />
-                                    <div className="h-2 bg-zinc-800 rounded w-2/3" />
-                                </div>
-                            </div>
+                            ))}
                         </div>
-                    </div>
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-                        <div className="h-4 bg-emerald-500/20 rounded w-1/4 mb-4" />
-                        <div className="h-10 bg-zinc-800 rounded w-1/2 mb-6" />
-                        <div className="h-32 bg-zinc-800 rounded-xl w-full" />
-                    </div>
+                    ) : (
+                        <div className="bg-zinc-900/50 border border-white/5 rounded-2xl p-10 text-center">
+                            <Lock className="w-8 h-8 text-zinc-600 mx-auto mb-4" />
+                            <p className="text-zinc-500 font-mono text-sm uppercase">Curriculum data locked behind perimeter.</p>
+                        </div>
+                    )}
                 </div>
 
-                <div className="absolute inset-0 flex items-center justify-center z-20 mt-16">
-                    <div className="bg-zinc-900/80 backdrop-blur-xl border border-white/10 rounded-full px-8 py-4 flex items-center gap-3">
-                        <Lock className="w-5 h-5 text-cyan-400" />
-                        <span className="text-white font-mono uppercase tracking-widest text-sm font-bold">Premium Content Locked</span>
+                {/* Gradient overlay to fade bottom */}
+                <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-zinc-950 via-zinc-950/90 to-transparent pointer-events-none" />
+                
+                <div className="absolute inset-x-0 bottom-12 flex items-center justify-center z-20 pointer-events-none">
+                    <div className="bg-cyan-500/10 backdrop-blur-xl border border-cyan-500/20 rounded-full px-6 py-3 flex items-center gap-3 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
+                        <ShieldCheck className="w-5 h-5 text-cyan-400" />
+                        <span className="text-cyan-400 font-mono uppercase tracking-widest text-sm font-bold">Encrypted Vault Asset</span>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ export default function RelatedContent({ currentSlug, type, count = 3 }: Related
             hash = current.charCodeAt(i) + ((hash << 5) - hash);
         }
         
-        let targetType = arr.filter(item => item.slug !== current);
+        const targetType = arr.filter(item => item.slug !== current);
         
         // Slightly bias towards the opposite type to cross-pollinate, but ensure deterministic pull
         const seedValue = Math.abs(hash);

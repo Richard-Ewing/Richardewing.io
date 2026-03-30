@@ -23,9 +23,12 @@ import ProgressCompleteButton from '@/app/components/ProgressCompleteButton';
 import ModuleStepper from '@/app/components/client/ModuleStepper';
 import ToolEmbed from '@/app/components/client/ToolEmbed';
 
-function ModuleCard({ mod, hasAccess, showPreview, aiContent }: { mod: CurriculumModule, hasAccess: boolean, showPreview: boolean, aiContent?: any }) {
+import StructuredData, { generateCourseSchema } from '@/app/components/seo/StructuredData';
+
+function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod: CurriculumModule, hasAccess: boolean, showPreview: boolean, aiContent?: any, fullSlug: string }) {
     return (
         <main className="pt-20">
+            <StructuredData data={generateCourseSchema(mod.title, mod.description, 'Richard Ewing', `https://www.richardewing.io/curriculum/tracks/${fullSlug}`)} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
@@ -68,6 +71,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent }: { mod: Curriculu
                         nextHref={mod.nextHref}
                         productId={mod.productId}
                         bundleId={mod.bundleId}
+                        lessons={mod.lessons}
                     >
                         {aiContent && typeof aiContent === 'object' ? (
                             <ModuleStepper parsedContent={aiContent}>
@@ -176,5 +180,5 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
         // Silently fallback if content directory or file doesn't exist
     }
 
-    return <ModuleCard mod={mod} hasAccess={hasAccess} showPreview={isFreePreviewModule} aiContent={aiContent} />;
+    return <ModuleCard mod={mod} hasAccess={hasAccess} showPreview={isFreePreviewModule} aiContent={aiContent} fullSlug={slug.join('/')} />;
 }

@@ -17,7 +17,7 @@ import ToolGate from '../../components/tool-gate';
 // Simple Pie Chart component (no external dependency)
 const PieChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
     const total = data.reduce((sum, d) => sum + d.value, 0);
-    let currentAngle = 0;
+    const currentAngle = 0;
 
     return (
         <svg viewBox="0 0 100 100" className="w-full h-full">

@@ -89,7 +89,7 @@ export default async function TeamAdminPage() {
 
                         {/* Progress Bar */}
                         <div className="w-full h-2 bg-zinc-900 rounded-full overflow-hidden mb-4">
-                            {/* eslint-disable-next-line */}
+                            { }
                             <div 
                                 className={`h-full transition-all ${isAtCapacity ? 'bg-red-500' : 'bg-cyan-500'}`} 
                                 style={{ width: `${Math.min(100, (seatsUsed / availableChildSeats) * 100)}%` }}

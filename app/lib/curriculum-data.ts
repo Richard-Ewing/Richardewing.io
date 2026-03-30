@@ -392,7 +392,7 @@ tracks.forEach(track => {
 });
 
 export function getModule(slug: string): CurriculumModule | undefined {
-    let mod = modules[slug];
+    const mod = modules[slug];
     
     // Dynamically inject tools into specific tracks for interactive learning
     if (mod) {

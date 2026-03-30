@@ -15,9 +15,10 @@ interface PayGateProps {
     nextHref?: string;
     productId?: string;
     bundleId?: string;
+    lessons?: any[];
 }
 
-export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, showPreview = true, children, nextHref, productId = 'single_module', bundleId = 'full_curriculum' }: PayGateProps) {
+export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, showPreview = true, children, nextHref, productId = 'single_module', bundleId = 'full_curriculum', lessons = [] }: PayGateProps) {
     if (hasAccess) {
         return <>{children}</>;
     }
@@ -48,7 +49,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
             {/* Pay Gate Barrier */}
             <div className="relative">
                 {showPreview ? (
-                    <CurriculumSalesPreview />
+                    <CurriculumSalesPreview lessons={lessons} />
                 ) : (
                     /* Visual Skeleton Replacement - Zero Data Leakage (Only shown if landing directly on locked module) */
                     <div className="relative overflow-hidden rounded-2xl max-h-[300px]">

@@ -35,7 +35,7 @@ const Navigation = () => {
                         <Link href="/" className="flex items-center gap-3 group">
                             {/* Using a placeholder avatar if image not available, or the actual image path */}
                             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--accent-purple)] relative">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                { }
                                 <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-full h-full object-cover" />
                             </div>
                             <div>
@@ -72,12 +72,8 @@ const Navigation = () => {
                             </Link>
 
                             <Dropdown label="Advisory">
-                                <DropdownItem href="/advisory" description="R&D Capital Audits & fractional CTO">Advisory Services</DropdownItem>
-                                <DropdownItem href="/pricing" description="Engagements from $450+">Pricing</DropdownItem>
-                                <DropdownItem href="/for-ctos" description="R&D economics, team scaling">For CTOs</DropdownItem>
-                                <DropdownItem href="/for-investors" description="Due diligence, portfolio monitoring">For Investors</DropdownItem>
-                                <DropdownItem href="/for-boards" description="Technical oversight, governance">For Boards</DropdownItem>
-                                <DropdownItem href="/case-studies" description="Real results from engagements">Case Studies</DropdownItem>
+                                <DropdownItem href="/advisory" description="Enterprise taskforces & forensics">Executive Advisory</DropdownItem>
+                                <DropdownItem href="/case-studies" description="Platform telemetry & outcomes">Case Studies</DropdownItem>
                                 <DropdownItem href="/principal" description="About Richard Ewing">The Principal</DropdownItem>
                             </Dropdown>
 
@@ -237,11 +233,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                     {/* Advisory Section */}
                     <div className="space-y-3">
                         <h3 className="text-xs font-bold text-amber-400 uppercase tracking-widest pl-2">Advisory</h3>
-                        <MobileLink href="/advisory" onClick={onClose}>Advisory Services</MobileLink>
-                        <MobileLink href="/pricing" onClick={onClose}>Advisory Pricing</MobileLink>
-                        <MobileLink href="/for-ctos" onClick={onClose}>For CTOs</MobileLink>
-                        <MobileLink href="/for-investors" onClick={onClose}>For Investors (PE/VC)</MobileLink>
-                        <MobileLink href="/for-boards" onClick={onClose}>For Board Directors</MobileLink>
+                        <MobileLink href="/advisory" onClick={onClose}>Executive Advisory</MobileLink>
                         <MobileLink href="/case-studies" onClick={onClose}>Case Studies</MobileLink>
                         <MobileLink href="/principal" onClick={onClose}>The Principal</MobileLink>
                     </div>

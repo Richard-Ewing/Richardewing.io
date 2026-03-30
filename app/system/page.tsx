@@ -40,11 +40,11 @@ export default function SystemPage() {
                                 <Database className="w-4 h-4 text-zinc-400" />
                                 <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest">Board-Level Intelligence</span>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-2">Longitudinal Dashboard</h3>
-                            <p className="text-zinc-500 text-sm mb-4">Secure repository for your historical execution snapshots. Track margin erosion, valuation destruction, and operational drift across quarters.</p>
+                            <h3 className="text-xl font-bold text-white mb-2">Executive War Room</h3>
+                            <p className="text-zinc-500 text-sm mb-4">Secure repository for your historical execution snapshots. Track margin erosion, valuation destruction, and operational drift across quarters in a unified C-Suite dashboard.</p>
                             <ShineBorder borderColor="rgba(255, 255, 255, 0.4)" duration={3}>
-                                <Link href="/tools/dashboard" className="block w-full text-center bg-white text-black font-bold text-xs uppercase tracking-widest py-3 hover:bg-zinc-200 transition">
-                                    Access Data Warehouse →
+                                <Link href="/tools/war-room" className="block w-full text-center bg-white text-black font-bold text-xs uppercase tracking-widest py-3 hover:bg-zinc-200 transition">
+                                    Enter War Room →
                                 </Link>
                             </ShineBorder>
                         </GlowCard>

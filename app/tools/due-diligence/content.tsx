@@ -403,7 +403,7 @@ export default function DueDiligenceTool() {
 
                             <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-zinc-800">
-                                    {/* eslint-disable-next-line */}
+                                    { }
                                     <div className="h-full bg-red-600 transition-all duration-500" style={{ width: `${(step / 3) * 100}%` }} />
                                 </div>
                                 
@@ -586,7 +586,7 @@ export default function DueDiligenceTool() {
                                                             <div className="text-xs font-mono text-zinc-500">{tv.severity}% Severity</div>
                                                         </div>
                                                         <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden mb-1">
-                                                            {/* eslint-disable-next-line */}
+                                                            { }
                                                             <div className={`h-full ${tv.color}`} style={{ width: `${tv.severity}%` }} />
                                                         </div>
                                                         <div className="text-xs text-zinc-400">{tv.details}</div>

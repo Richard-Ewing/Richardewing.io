@@ -139,6 +139,17 @@ export default function CloudContent() {
                 heavyDb: dbP >= 40
             });
 
+            // Persist the run to the intelligence dashboard
+            fetch('/api/tools/runs', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    tool_id: 'cloud-repatriation',
+                    run_data: { totalBill, computeP, dbP, egressP },
+                    output_metrics: { annualSavings, evCreation, breakevenMonths }
+                })
+            }).catch(e => console.error('Failed to log tool run:', e));
+
         } catch (error: any) {
             console.error(error);
             alert(`Execution failed: ${error.message}`);
@@ -246,6 +257,7 @@ export default function CloudContent() {
                                                 <label className="text-xs font-mono text-rose-500 uppercase tracking-widest flex items-center gap-2"><Activity size={12}/> Network Egress/Bandwidth</label>
                                                 <div className="text-xl font-bold text-white font-mono">{egressP}%</div>
                                             </div>
+                                            {/* eslint-disable-next-line react/forbid-dom-props */}
                                             <div className="w-full bg-zinc-800 h-2 rounded mt-2 overflow-hidden"><div className="bg-rose-500 h-full" style={{width: `${egressP}%`}} /></div>
                                         </div>
                                     </div>
