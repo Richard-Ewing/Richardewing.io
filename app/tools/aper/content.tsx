@@ -10,6 +10,8 @@ import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
+import { ScrollReveal } from '../../components/magicui/scroll-reveal';
+import ShineBorder from '../../components/magicui/shine-border';
 
 // --- MAGIC UI COMPONENTS ---
 
@@ -94,6 +96,9 @@ interface Results {
 export default function APERTool() {
     // Persona State
     const [persona, setPersona] = useState<Persona>('Founder');
+
+    // Progressive Disclosure State
+    const [step, setStep] = useState(1);
 
     // Basic Inputs
     const [arr, setArr] = useState('15000000');
@@ -291,133 +296,185 @@ export default function APERTool() {
                 <AnimatePresence mode="wait">
                     {!results ? (
                         /* --- INPUT STATE --- */
-                        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto">
-                            <div className="text-center mb-12">
-                                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">
-                                    Are You <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Overstaffed?</span>
-                                </h1>
-                                <p className="text-xl text-zinc-500">Calculate your Revenue Per Engineer before your board does.</p>
-                            </div>
-
-                            {/* PERSONA SELECTOR */}
-                            <div className="mb-8">
-                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">I am a...</div>
-                                <div className="flex flex-wrap gap-2">
-                                    {PERSONAS.map(p => (
-                                        <button
-                                            key={p.id}
-                                            onClick={() => setPersona(p.id)}
-                                            className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id
-                                                ? 'bg-yellow-500/10 border-yellow-500 text-yellow-400'
-                                                : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
-                                                }`}
-                                        >
-                                            <p.icon size={14} />
-                                            {p.label}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8">
-                                {/* BASIC INPUTS */}
-                                <div>
-                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Core Metrics</div>
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                        <div>
-                                            <label htmlFor="arr" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block">Annual Revenue (ARR)</label>
-                                            <div className="relative">
-                                                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500">$</span>
-                                                <input id="arr" type="number" value={arr} onChange={(e) => setArr(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-yellow-500 focus:outline-none" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label htmlFor="engineers" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block">Engineer Headcount</label>
-                                            <input id="engineers" type="number" value={engineers} onChange={(e) => setEngineers(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-yellow-500 focus:outline-none" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="cost" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block">Fully-Loaded Cost/Eng</label>
-                                            <div className="relative">
-                                                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500">$</span>
-                                                <input id="cost" type="number" value={costPerEng} onChange={(e) => setCostPerEng(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-yellow-500 focus:outline-none" />
-                                            </div>
-                                        </div>
-                                    </div>
+                        <ScrollReveal>
+                            <div className="max-w-4xl mx-auto">
+                                <div className="text-center mb-12">
+                                    <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">
+                                        Are You <br />
+                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Overstaffed?</span>
+                                    </h1>
+                                    <p className="text-xl text-zinc-500">Calculate your Revenue Per Engineer before your board does.</p>
                                 </div>
 
-                                {/* TEAM BREAKDOWN */}
-                                <div className="pt-6 border-t border-white/5">
-                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Team Composition (% of headcount)</div>
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                        {Object.entries(teamBreakdown).map(([key, val]) => (
-                                            <div key={key}>
-                                                <label className="text-xs text-zinc-400 mb-1 block capitalize">{key}</label>
-                                                <div className="relative">
-                                                    <input
-                                                        type="number"
-                                                        title={key}
-                                                        aria-label={`Enter percentage for ${key}`}
-                                                        value={val}
-                                                        onChange={(e) => setTeamBreakdown({ ...teamBreakdown, [key]: parseInt(e.target.value) || 0 })}
-                                                        className="w-full bg-black/50 border border-zinc-800 rounded-lg px-3 py-2 text-white font-mono text-sm focus:border-yellow-500 focus:outline-none"
-                                                    />
-                                                    <span className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-600 text-xs">%</span>
-                                                </div>
-                                            </div>
+                                {/* PERSONA SELECTOR */}
+                                <div className="mb-8">
+                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">I am a...</div>
+                                    <div className="flex flex-wrap gap-2">
+                                        {PERSONAS.map(p => (
+                                            <button
+                                                key={p.id}
+                                                onClick={() => setPersona(p.id)}
+                                                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id
+                                                    ? 'bg-yellow-500/10 border-yellow-500 text-yellow-400'
+                                                    : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
+                                                    }`}
+                                            >
+                                                <p.icon size={14} />
+                                                {p.label}
+                                            </button>
                                         ))}
                                     </div>
                                 </div>
 
-                                {/* ENHANCED INPUTS */}
-                                <div className="pt-6 border-t border-white/5">
-                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Team Health Metrics</div>
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                        <div>
-                                            <label htmlFor="tenure" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block flex items-center gap-2">
-                                                <Clock size={12} /> Avg Tenure (months)
-                                            </label>
-                                            <input id="tenure" type="number" value={avgTenure} onChange={(e) => setAvgTenure(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-yellow-500 focus:outline-none" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="hiring" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block flex items-center gap-2">
-                                                <Users size={12} /> Hires (last 12mo)
-                                            </label>
-                                            <input id="hiring" type="number" value={hiringVelocity} onChange={(e) => setHiringVelocity(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-yellow-500 focus:outline-none" />
-                                        </div>
-                                        <div>
-                                            <label htmlFor="remote" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block flex items-center gap-2">
-                                                <Building size={12} /> Remote %
-                                            </label>
-                                            <input id="remote" type="number" value={remotePercent} onChange={(e) => setRemotePercent(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-yellow-500 focus:outline-none" />
-                                        </div>
-                                    </div>
-                                </div>
+                                <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8">
+                                    
+                                    {/* STEP 1: CORE METRICS */}
+                                    {step === 1 && (
+                                        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
+                                            <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                                <div className="w-8 h-8 rounded-full bg-yellow-500/20 text-yellow-400 flex items-center justify-center font-bold font-mono text-sm border border-yellow-500/30">1</div>
+                                                <div>
+                                                    <h3 className="text-xl font-bold text-white">Core Metrics</h3>
+                                                    <p className="text-sm text-zinc-500">Define the top-line scale of engineering vs revenue.</p>
+                                                </div>
+                                            </div>
 
-                                <button
-                                    onClick={() => setShowGate(true)}
-                                    disabled={loading}
-                                    className="w-full py-4 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-black font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2"
-                                >
-                                    {loading ? (
-                                        <>
-                                            <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                                            Calculating Efficiency...
-                                        </>
-                                    ) : (
-                                        'Calculate My APER →'
+                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                                <div>
+                                                    <label htmlFor="arr" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block">Annual Revenue (ARR)</label>
+                                                    <div className="relative">
+                                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500">$</span>
+                                                        <input id="arr" type="number" value={arr} onChange={(e) => setArr(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-yellow-500 focus:outline-none transition-colors" />
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="engineers" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block">Engineer Headcount</label>
+                                                    <input id="engineers" type="number" value={engineers} onChange={(e) => setEngineers(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-yellow-500 focus:outline-none transition-colors" />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="cost" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block">Fully-Loaded Cost/Eng</label>
+                                                    <div className="relative">
+                                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500">$</span>
+                                                        <input id="cost" type="number" value={costPerEng} onChange={(e) => setCostPerEng(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-yellow-500 focus:outline-none transition-colors" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <button onClick={() => setStep(2)} className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-yellow-400 transition-all flex items-center justify-center gap-2">
+                                                Next: Team Composition <ArrowRight size={16} />
+                                            </button>
+                                        </motion.div>
                                     )}
-                                </button>
 
-                                {showGate && (
-                                    <div className="mt-6">
-                                        <ToolGate toolName="the APER Efficiency Diagnostic" onUnlock={() => { setShowGate(false); calculate(); }}>
-                                            <></>
-                                        </ToolGate>
-                                    </div>
-                                )}
+                                    {/* STEP 2: TEAM BREAKDOWN */}
+                                    {step === 2 && (
+                                        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
+                                            <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                                <div className="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold font-mono text-sm border border-orange-500/30">2</div>
+                                                <div>
+                                                    <h3 className="text-xl font-bold text-white">Team Composition</h3>
+                                                    <p className="text-sm text-zinc-500">Break down how roles are distributed across headcount.</p>
+                                                </div>
+                                            </div>
+
+                                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                                {Object.entries(teamBreakdown).map(([key, val]) => (
+                                                    <div key={key}>
+                                                        <label className="text-xs text-zinc-400 mb-1 block capitalize">{key}</label>
+                                                        <div className="relative">
+                                                            <input
+                                                                type="number"
+                                                                title={key}
+                                                                aria-label={`Enter percentage for ${key}`}
+                                                                value={val}
+                                                                onChange={(e) => setTeamBreakdown({ ...teamBreakdown, [key]: parseInt(e.target.value) || 0 })}
+                                                                className="w-full bg-black/50 border border-zinc-800 rounded-lg px-3 py-2 text-white font-mono text-sm focus:border-orange-500 focus:outline-none transition-colors"
+                                                            />
+                                                            <span className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-600 text-xs">%</span>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+
+                                            <div className="flex gap-4">
+                                                <button onClick={() => setStep(1)} className="w-1/3 py-4 bg-zinc-900 border border-white/10 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">
+                                                    Back
+                                                </button>
+                                                <button onClick={() => setStep(3)} className="w-2/3 py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-orange-400 transition-all flex items-center justify-center gap-2">
+                                                    Next: Health Metrics <ArrowRight size={16} />
+                                                </button>
+                                            </div>
+                                        </motion.div>
+                                    )}
+
+                                    {/* STEP 3: ENHANCED INPUTS */}
+                                    {step === 3 && (
+                                        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
+                                            <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                                <div className="w-8 h-8 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-bold font-mono text-sm border border-red-500/30">3</div>
+                                                <div>
+                                                    <h3 className="text-xl font-bold text-white">Health Metrics</h3>
+                                                    <p className="text-sm text-zinc-500">Measure stability, retention, and friction.</p>
+                                                </div>
+                                            </div>
+
+                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                                <div>
+                                                    <label htmlFor="tenure" className="text-xs font-mono text-red-400 uppercase tracking-widest mb-2 block flex items-center gap-2">
+                                                        <Clock size={12} /> Avg Tenure (Months)
+                                                    </label>
+                                                    <input id="tenure" type="number" value={avgTenure} onChange={(e) => setAvgTenure(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-red-500 focus:outline-none transition-colors" />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="hiring" className="text-xs font-mono text-red-400 uppercase tracking-widest mb-2 block flex items-center gap-2">
+                                                        <Users size={12} /> Hires (Last 12mo)
+                                                    </label>
+                                                    <input id="hiring" type="number" value={hiringVelocity} onChange={(e) => setHiringVelocity(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-red-500 focus:outline-none transition-colors" />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="remote" className="text-xs font-mono text-red-400 uppercase tracking-widest mb-2 block flex items-center gap-2">
+                                                        <Building size={12} /> Remote %
+                                                    </label>
+                                                    <input id="remote" type="number" value={remotePercent} onChange={(e) => setRemotePercent(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-red-500 focus:outline-none transition-colors" />
+                                                </div>
+                                            </div>
+
+                                            <div className="flex gap-4">
+                                                <button onClick={() => setStep(2)} className="w-1/3 py-4 bg-zinc-900 border border-white/10 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">
+                                                    Back
+                                                </button>
+                                                <div className="w-2/3">
+                                                    <ShineBorder borderColor="rgba(234, 179, 8, 0.6)" duration={2} className="w-full h-full p-0">
+                                                        <button
+                                                            onClick={() => setShowGate(true)}
+                                                            disabled={loading}
+                                                            className="w-full py-4 bg-white hover:bg-yellow-400 text-black font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                                                        >
+                                                            {loading ? (
+                                                                <>
+                                                                    <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                                                                    CALCULATING...
+                                                                </>
+                                                            ) : (
+                                                                'RUN DIAGNOSTIC →'
+                                                            )}
+                                                        </button>
+                                                    </ShineBorder>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    )}
+
+                                    {showGate && (
+                                        <div className="mt-6">
+                                            <ToolGate toolName="the APER Efficiency Diagnostic" onUnlock={() => { setShowGate(false); calculate(); }}>
+                                                <></>
+                                            </ToolGate>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                        </motion.div>
+                        </ScrollReveal>
                     ) : (
                         /* --- RESULTS STATE --- */
                         <>

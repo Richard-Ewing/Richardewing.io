@@ -53,6 +53,7 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
                             <Dropdown label="Library & Docs">
+                                <DropdownItem href="/articles" description="Syndicated work in CIO, Built In, etc">Published Articles</DropdownItem>
                                 <DropdownItem href="/vault/curriculum/tracks" description="400+ modules and playbooks">Complete Curriculum</DropdownItem>
                                 <DropdownItem href="/glossary" description="500+ engineering economics terms">Glossary</DropdownItem>
                                 <DropdownItem href="/blog" description="105 articles on engineering economics">Blog</DropdownItem>
@@ -214,6 +215,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                     {/* Learn Section */}
                     <div className="space-y-3">
                         <h3 className="text-xs font-bold text-cyan-400 uppercase tracking-widest pl-2">Curriculum & Library</h3>
+                        <MobileLink href="/articles" onClick={onClose}>Published Articles</MobileLink>
                         <MobileLink href="/vault/curriculum/tracks" onClick={onClose}>Complete Curriculum</MobileLink>
                         <MobileLink href="/glossary" onClick={onClose}>Glossary (420+ Terms)</MobileLink>
                         <MobileLink href="/blog" onClick={onClose}>Blog (105 Articles)</MobileLink>

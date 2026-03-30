@@ -129,22 +129,47 @@ export default function BlogContent() {
                         </div>
                     ) : (
                         <div className="space-y-4">
-                            {regular.map(article => (
-                                <Link key={article.slug} href={`/blog/${article.slug}`}
-                                    className="group flex items-start gap-6 p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04] transition-all">
-                                    <div className="flex-1">
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <span className={`text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border ${categoryColors[article.category] || 'text-zinc-400 bg-zinc-500/10 border-zinc-500/20'}`}>{article.category}</span>
-                                            <span className="text-[10px] text-zinc-600">{article.readTime}</span>
-                                            <span className="text-[10px] text-zinc-700">·</span>
-                                            <span className="text-[10px] text-zinc-600">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
-                                        </div>
-                                        <h3 className="text-lg font-grotesk font-bold text-white group-hover:text-cyan-300 transition-colors mb-1">{article.title}</h3>
-                                        <p className="text-sm text-zinc-500 leading-relaxed">{article.excerpt}</p>
-                                    </div>
-                                    <span className="text-zinc-600 group-hover:text-cyan-400 transition-colors mt-4 shrink-0">→</span>
-                                </Link>
-                            ))}
+                            {categories
+                                .filter(cat => (!selectedCategory || selectedCategory === cat.name))
+                                .map(cat => {
+                                    const catArticles = regular.filter(a => a.category === cat.name);
+                                    if (catArticles.length === 0) return null;
+                                    
+                                    return (
+                                        <details key={cat.name} className="group/accordion rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden" open={!!search || !!selectedCategory}>
+                                            <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/[0.04] transition-colors select-none marker:content-none [&::-webkit-details-marker]:hidden">
+                                                <div className="flex items-center gap-4">
+                                                    <span className={`text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border ${categoryColors[cat.name] || 'text-zinc-400 bg-zinc-500/10 border-zinc-500/20'}`}>
+                                                        {cat.name}
+                                                    </span>
+                                                    <span className="text-sm font-bold text-white group-hover/accordion:text-cyan-300 transition-colors flex-1">{cat.name} Library</span>
+                                                </div>
+                                                <div className="flex items-center gap-4 text-zinc-500">
+                                                    <span className="text-xs">{catArticles.length} {catArticles.length === 1 ? 'Article' : 'Articles'}</span>
+                                                    <span className="transform transition-transform duration-200 group-open/accordion:rotate-180">↓</span>
+                                                </div>
+                                            </summary>
+                                            
+                                            <div className="border-t border-white/5 bg-black/20 p-2 sm:p-4 space-y-2">
+                                                {catArticles.map(article => (
+                                                    <Link key={article.slug} href={`/blog/${article.slug}`}
+                                                        className="group flex items-start gap-4 sm:gap-6 p-4 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/[0.03] transition-all">
+                                                        <div className="flex-1">
+                                                            <div className="flex items-center gap-3 mb-1.5">
+                                                                <span className="text-[10px] font-mono text-zinc-500">{article.readTime}</span>
+                                                                <span className="text-[10px] text-zinc-700">·</span>
+                                                                <span className="text-[10px] font-mono text-zinc-500">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                                                            </div>
+                                                            <h3 className="text-base font-grotesk font-bold text-zinc-200 group-hover:text-cyan-300 transition-colors mb-1">{article.title}</h3>
+                                                            <p className="text-sm text-zinc-500 leading-relaxed line-clamp-2">{article.excerpt}</p>
+                                                        </div>
+                                                        <span className="text-zinc-700 group-hover:text-cyan-400 transition-colors mt-2 shrink-0">→</span>
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </details>
+                                    );
+                                })}
                         </div>
                     )}
                 </section>
