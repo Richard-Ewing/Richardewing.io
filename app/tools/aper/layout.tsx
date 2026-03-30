@@ -1,26 +1,4 @@
-import type { Metadata } from 'next';
-import { aperKeywords } from '../../lib/keywords';
-
-export const metadata: Metadata = {
-    title: 'Revenue Per Engineer Benchmark | Engineering Efficiency Calculator',
-    description: 'Are you overstaffed? Calculate your Revenue Per Engineer (APER™) and compare against elite SaaS benchmarks (Stripe, Figma). Diagnose organizational bloat.',
-    keywords: aperKeywords,
-    openGraph: {
-        title: 'Revenue Per Engineer Benchmark | APER™',
-        description: 'Calculate your Revenue Per Engineer and compare against elite SaaS companies.',
-        type: 'website',
-        url: 'https://www.richardewing.io/tools/aper',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Revenue Per Engineer Benchmark | APER™',
-        description: 'Calculate engineering efficiency. Compare against Stripe, Figma, Linear.',
-    },
-    alternates: {
-        canonical: 'https://www.richardewing.io/tools/aper',
-    },
-};
-
+// Removed metadata to avoid duplication with page.tsx
 export default function APERLayout({ children }: { children: React.ReactNode }) {
     return (
         <>

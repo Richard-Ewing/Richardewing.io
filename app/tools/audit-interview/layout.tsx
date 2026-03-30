@@ -1,26 +1,4 @@
-import type { Metadata } from 'next';
-import { auditInterviewKeywords } from '../../lib/keywords';
-
-export const metadata: Metadata = {
-    title: 'The Audit Interview | Engineering Judgment Assessment for the AI Age',
-    description: 'The hiring protocol for the AI age. Test verification skills, not generation skills. AI-powered simulation based on the methodology from Built In\'s "Death of the Syntax Interview." Created by Richard Ewing.',
-    keywords: auditInterviewKeywords,
-    alternates: {
-        canonical: 'https://www.richardewing.io/tools/audit-interview',
-    },
-    openGraph: {
-        title: 'The Audit Interview | War-Time Leadership Assessment',
-        description: 'The hiring protocol for the AI age. Test judgment, not syntax. AI-powered simulation by Richard Ewing.',
-        url: 'https://www.richardewing.io/tools/audit-interview',
-        type: 'website',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'The Audit Interview | Richard Ewing',
-        description: 'Test engineering judgment, not syntax. The hiring protocol for the AI age.',
-    },
-};
-
+// Removed metadata to avoid duplication with page.tsx
 export default function AuditInterviewLayout({ children }: { children: React.ReactNode }) {
     return (
         <>

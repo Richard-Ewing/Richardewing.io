@@ -1,37 +1,6 @@
-import type { Metadata } from 'next';
+// Removed metadata to avoid duplication with page.tsx
 
-const dueDiligenceKeywords = [
-    'engineering due diligence',
-    'technical due diligence',
-    'M&A tech scan',
-    'private equity software audit',
-    'technical debt assessment',
-    'VC technical diligence',
-    'tech stack audit M&A',
-    'codebase quality check',
-    'software acquisition risk',
-    'technical debt calculator m&a'
-];
-
-export const metadata: Metadata = {
-    title: 'M&A Engineering Due Diligence Scanner',
-    description: 'Instantly scan acquisition targets for critical technical debt, AI dependency risks, and engineering insolvency. Exclusive $999 due diligence diagnostic for Private Equity and VC.',
-    keywords: dueDiligenceKeywords,
-    openGraph: {
-        title: 'M&A Engineering Due Diligence Scanner',
-        description: 'Calculate valuation impairment risk. Identify technical debt, cloud cost bloat, and security threats before finalizing an acquisition.',
-        type: 'website',
-        url: 'https://www.richardewing.io/tools/due-diligence',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'M&A Tech Scanner | Richard Ewing',
-        description: 'Scan targets for tech debt, team bloat, and AI supply chain risk.',
-    },
-    alternates: {
-        canonical: 'https://www.richardewing.io/tools/due-diligence',
-    },
-};
+// Removed metadata to avoid duplication with page.tsx
 
 export default function DueDiligenceLayout({ children }: { children: React.ReactNode }) {
     return (

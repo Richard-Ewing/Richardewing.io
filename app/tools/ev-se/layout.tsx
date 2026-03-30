@@ -1,26 +1,4 @@
-import type { Metadata } from 'next';
-import { evseKeywords } from '../../lib/keywords';
-
-export const metadata: Metadata = {
-    title: 'SaaS Valuation Calculator | Risk-Adjusted Revenue Multiples',
-    description: 'Calculate your true Enterprise Value (EV). Adjust SaaS revenue multiples for churn risk, scope creep, and execution confidence. The EV-SE Engine™.',
-    keywords: evseKeywords,
-    openGraph: {
-        title: 'SaaS Valuation Calculator | Risk-Adjusted Multiples',
-        description: 'Calculate risk-adjusted enterprise value. See your Wealth Destruction Gap.',
-        type: 'website',
-        url: 'https://www.richardewing.io/tools/ev-se',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'SaaS Valuation Calculator | EV-SE Engine™',
-        description: 'Calculate risk-adjusted SaaS revenue multiples for exit planning.',
-    },
-    alternates: {
-        canonical: 'https://www.richardewing.io/tools/ev-se',
-    },
-};
-
+// Removed metadata to avoid duplication with page.tsx
 export default function EVSELayout({ children }: { children: React.ReactNode }) {
     return (
         <>

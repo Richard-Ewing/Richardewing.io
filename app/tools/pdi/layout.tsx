@@ -1,26 +1,4 @@
-import type { Metadata } from 'next';
-import { pdiKeywords } from '../../lib/keywords';
-
-export const metadata: Metadata = {
-    title: 'Technical Debt Calculator | The Product Debt Index™ (PDI)',
-    description: 'Forensic technical debt calculator. Quantify the financial cost of legacy code, refactoring vs. features, and engineering insolvency. Stop capital leakage.',
-    keywords: pdiKeywords,
-    openGraph: {
-        title: 'Technical Debt Calculator | Product Debt Index™',
-        description: 'Forensic calculator to quantify the financial cost of technical debt. See your engineering insolvency horizon.',
-        type: 'website',
-        url: 'https://www.richardewing.io/tools/pdi',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Technical Debt Calculator | PDI™',
-        description: 'Quantify the financial cost of legacy code and maintenance burden.',
-    },
-    alternates: {
-        canonical: 'https://www.richardewing.io/tools/pdi',
-    },
-};
-
+// Removed metadata to avoid duplication with page.tsx
 export default function PDILayout({ children }: { children: React.ReactNode }) {
     return (
         <>
