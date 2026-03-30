@@ -172,7 +172,12 @@ export default function RootLayout({
               'https://builtin.com/authors/richard-ewing',
               'https://hackernoon.com/u/richardewing',
               'https://www.mindtheproduct.com/author/richard-ewing/',
+              'https://www.mindtheproduct.com/profile/richard-ewing',
               'https://github.com/Richard-Ewing',
+              'https://medium.com/@richardewing',
+              'https://substack.com/@richardewing',
+              'https://www.amazon.com/author/richardewing',
+              'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5'
             ],
           }) }}
         />
