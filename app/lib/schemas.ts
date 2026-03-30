@@ -10,6 +10,7 @@ export const personSchema = {
         "https://linkedin.com/in/richard-ewing-mba",
         "https://exogram.ai",
         "https://builtin.com/authors/richard-ewing",
+        "https://www.cio.com/author/richard-ewing/",
         "https://www.mindtheproduct.com/profile/richard-ewing",
         "https://github.com/Richard-Ewing",
         "https://medium.com/@richardewing",
