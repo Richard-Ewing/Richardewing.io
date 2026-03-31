@@ -42,3 +42,7 @@ next-env.d.ts
 
 .vercel
 .env*.local
+
+# Google Cloud Service Account Keys
+google-credentials.json
+
