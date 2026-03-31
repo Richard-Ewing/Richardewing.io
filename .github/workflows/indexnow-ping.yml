@@ -1,0 +1,32 @@
+name: Automate IndexNow Ping
+
+# Trigger the action whenever code is pushed to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ping-indexnow:
+    name: "Mass Submit Sitemap to IndexNow"
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Ecosystem
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Vercel needs time to build and deploy the application to your public domain
+      # If we run the script instantly, it will pull the OLD sitemap.xml.
+      # By waiting 180 seconds, we guarantee Vercel has fully published the new updates.
+      - name: Delay for Vercel Synchronous Deployment
+        run: |
+          echo "Waiting 3 minutes to ensure Vercel has fully compiled and explicitly deployed the new sitemap to production before pinging..."
+          sleep 180
+
+      - name: Execute Mass Algorithmic Ping
+        run: node ping-all.js
