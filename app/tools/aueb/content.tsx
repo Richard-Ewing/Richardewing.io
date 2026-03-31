@@ -156,6 +156,8 @@ export default function AUEBTool() {
     const [users, setUsers] = useState('5000');
 
     // Enhanced Inputs
+    const [monetizationStrategy, setMonetizationStrategy] = useState<'bundled' | 'premium'>('bundled');
+    const [premiumCharge, setPremiumCharge] = useState('10');
     const [growthRate, setGrowthRate] = useState('15');
     const [cachingEnabled, setCachingEnabled] = useState(false);
     const [features, setFeatures] = useState<FeatureData[]>([
@@ -190,8 +192,10 @@ export default function AUEBTool() {
             const growthRateNum = parseFloat(growthRate) || 15;
             const hostingNum = parseFloat(hostingCostPerUser) || 0;
 
+            const premiumNum = parseFloat(premiumCharge) || 0;
+
             const payload = {
-                run_data: { price: priceNum, queries: queriesNum, costPerQuery: costNum, users: usersNum, growthRate: growthRateNum, cachingEnabled, features, hostingCostPerUser: hostingNum, thirdPartyApis },
+                run_data: { price: priceNum, queries: queriesNum, costPerQuery: costNum, users: usersNum, growthRate: growthRateNum, cachingEnabled, features, hostingCostPerUser: hostingNum, thirdPartyApis, monetizationStrategy, premiumCharge: premiumNum },
                 output_metrics: results
             };
             const res = await fetch('/api/tools/aueb/save', {
@@ -234,6 +238,9 @@ export default function AUEBTool() {
             const growthRateNum = parseFloat(growthRate) || 15;
             const hostingNum = parseFloat(hostingCostPerUser) || 0;
 
+            const premiumNum = parseFloat(premiumCharge) || 0;
+            const effectiveRevenuePerUser = monetizationStrategy === 'premium' ? priceNum + premiumNum : priceNum;
+
             // Apply caching discount to LLM costs
             const effectiveLlmCost = cachingEnabled ? costNum * 0.6 : costNum;
             const llmCostPerUser = queriesNum * effectiveLlmCost;
@@ -246,10 +253,10 @@ export default function AUEBTool() {
             // Total cost per user
             const totalCostPerUser = llmCostPerUser + apiCostPerUser + hostingNum;
 
-            const grossMargin = ((priceNum - totalCostPerUser) / priceNum) * 100;
-            const profitPerUser = priceNum - totalCostPerUser;
+            const grossMargin = ((effectiveRevenuePerUser - totalCostPerUser) / effectiveRevenuePerUser) * 100;
+            const profitPerUser = effectiveRevenuePerUser - totalCostPerUser;
 
-            const monthlyRevenue = priceNum * usersNum;
+            const monthlyRevenue = effectiveRevenuePerUser * usersNum;
             const llmCost = llmCostPerUser * usersNum;
             const apiCost = apiCostPerUser * usersNum;
             const hostingCost = hostingNum * usersNum;
@@ -263,7 +270,7 @@ export default function AUEBTool() {
                 for (let i = 1; i <= 36; i++) {
                     const projectedUsers = usersNum * Math.pow(1 + (growthRateNum / 100), i);
                     const projectedCost = projectedUsers * totalCostPerUser;
-                    const projectedRevenue = projectedUsers * priceNum;
+                    const projectedRevenue = projectedUsers * effectiveRevenuePerUser;
                     if (projectedCost > projectedRevenue * 0.5) { // Cost > 50% of revenue
                         monthsToCollapse = i;
                         break;
@@ -280,7 +287,7 @@ export default function AUEBTool() {
                 { model: 'Llama 3 (70B)', cost: 0.0005 },
             ].map(m => ({
                 ...m,
-                margin: ((priceNum - (queriesNum * m.cost) - apiCostPerUser - hostingNum) / priceNum) * 100,
+                margin: ((effectiveRevenuePerUser - (queriesNum * m.cost) - apiCostPerUser - hostingNum) / effectiveRevenuePerUser) * 100,
                 costPerUser: queriesNum * m.cost
             })).sort((a, b) => b.margin - a.margin);
 
@@ -289,7 +296,7 @@ export default function AUEBTool() {
                 const monthUsers = usersNum * Math.pow(1 + (growthRateNum / 100), i);
                 return {
                     month: `M${month}`,
-                    revenue: (monthUsers * priceNum) / 1000,
+                    revenue: (monthUsers * effectiveRevenuePerUser) / 1000,
                     cost: (monthUsers * totalCostPerUser) / 1000,
                 };
             });
@@ -337,7 +344,7 @@ export default function AUEBTool() {
                     tool_id: 'AUEB',
                     run_data: { 
                         price: priceNum, queries: queriesNum, costPerQuery: costNum, users: usersNum, 
-                        growthRate: growthRateNum, cachingEnabled, features, hostingCostPerUser: hostingNum, thirdPartyApis 
+                        growthRate: growthRateNum, cachingEnabled, features, hostingCostPerUser: hostingNum, thirdPartyApis, monetizationStrategy, premiumCharge: premiumNum 
                     },
                     output_metrics: payload
                 })
@@ -530,13 +537,43 @@ export default function AUEBTool() {
                                         <div>
                                             <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Unit Economics</div>
                                             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                                <div className="md:col-span-2">
+                                                    <label className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">AI Monetization Strategy</label>
+                                                    <div className="flex gap-2">
+                                                        <button onClick={() => setMonetizationStrategy('bundled')} className={`flex-1 px-4 py-3 rounded-xl border transition-all ${monetizationStrategy === 'bundled' ? 'bg-cyan-500/10 border-cyan-500 text-cyan-400' : 'bg-black/50 border-zinc-800 text-zinc-500'}`}>Bundled (Free)</button>
+                                                        <button onClick={() => setMonetizationStrategy('premium')} className={`flex-1 px-4 py-3 rounded-xl border transition-all ${monetizationStrategy === 'premium' ? 'bg-purple-500/10 border-purple-500 text-purple-400' : 'bg-black/50 border-zinc-800 text-zinc-500'}`}>Premium Add-on</button>
+                                                    </div>
+                                                </div>
                                                 <div>
-                                                    <label htmlFor="price" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Price/User/Month</label>
+                                                    <label htmlFor="price" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Base Price/Mo</label>
                                                     <div className="relative">
                                                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500">$</span>
                                                         <input id="price" type="number" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-cyan-500 focus:outline-none" />
                                                     </div>
                                                 </div>
+                                                {monetizationStrategy === 'premium' ? (
+                                                    <div>
+                                                        <label htmlFor="premium" className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2 block">AI Add-on Price</label>
+                                                        <div className="relative">
+                                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-500/50">$</span>
+                                                            <input id="premium" type="number" value={premiumCharge} onChange={(e) => setPremiumCharge(e.target.value)} className="w-full bg-black/50 border border-purple-500/30 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-purple-500 focus:outline-none" />
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div>
+                                                        <label htmlFor="users" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Active Users</label>
+                                                        <input id="users" type="number" value={users} onChange={(e) => setUsers(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-cyan-500 focus:outline-none" />
+                                                    </div>
+                                                )}
+                                            </div>
+                                            
+                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                                                {monetizationStrategy === 'premium' && (
+                                                    <div>
+                                                        <label htmlFor="users" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Active Users</label>
+                                                        <input id="users" type="number" value={users} onChange={(e) => setUsers(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-cyan-500 focus:outline-none" />
+                                                    </div>
+                                                )}
                                                 <div>
                                                     <label htmlFor="queries" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">AI Queries/User/Mo</label>
                                                     <input id="queries" type="number" value={queries} onChange={(e) => setQueries(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-cyan-500 focus:outline-none" />
@@ -547,10 +584,6 @@ export default function AUEBTool() {
                                                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500">$</span>
                                                         <input id="cost" type="number" step="0.001" value={costPerQuery} onChange={(e) => setCostPerQuery(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-cyan-500 focus:outline-none" />
                                                     </div>
-                                                </div>
-                                                <div>
-                                                    <label htmlFor="users" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Active Users</label>
-                                                    <input id="users" type="number" value={users} onChange={(e) => setUsers(e.target.value)} className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-3 text-white font-mono focus:border-cyan-500 focus:outline-none" />
                                                 </div>
                                             </div>
                                         </div>

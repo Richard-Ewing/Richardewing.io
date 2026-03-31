@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ShieldAlert, Crosshair, Cpu, Briefcase, Activity, AlertTriangle, Database, TrendingUp, Users, ArrowRight } from 'lucide-react';
+import { ShieldAlert, Crosshair, Cpu, Briefcase, Activity, AlertTriangle, Database, TrendingUp, Users, ArrowRight, Zap } from 'lucide-react';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
@@ -156,6 +156,15 @@ export default function WarRoom() {
                                         <span className="text-xl font-black text-white">{averagePDI}</span>
                                     </div>
                                     <p className="text-xs text-zinc-500 leading-relaxed font-mono">Current average code entropy spanning all active domains. Determines engineering velocity decay.</p>
+                                    {(latestTools['pdi']?.output_metrics?.qpep_roadmap || latestTools['PDI']?.output_metrics?.qpep_roadmap) && (
+                                        <div className="mt-4 mb-2 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg">
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <Zap className="text-blue-400" size={12} />
+                                                <span className="text-[10px] uppercase tracking-widest text-blue-400 font-bold">Execution Ready</span>
+                                            </div>
+                                            <p className="text-xs text-blue-200/70 font-mono">Remediation timeline auto-generated from diagnostic payload.</p>
+                                        </div>
+                                    )}
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/pdi" className="text-[10px] uppercase tracking-widest text-blue-400 hover:text-white flex items-center gap-1 transition-colors">Execute PDI Modeler <ArrowRight size={12} /></Link>
                                     </div>
@@ -196,6 +205,15 @@ export default function WarRoom() {
                                         </span>
                                     </div>
                                     <p className="text-xs text-zinc-500 leading-relaxed font-mono">Tracks the collapse of software margins triggered by unbounded LLM API costs.</p>
+                                    {(latestTools['AUEB']?.output_metrics?.qpep_roadmap || latestTools['aueb']?.output_metrics?.qpep_roadmap) && (
+                                        <div className="mt-4 mb-2 p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <Zap className="text-emerald-400" size={12} />
+                                                <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">Execution Ready</span>
+                                            </div>
+                                            <p className="text-xs text-emerald-200/70 font-mono">Margin defense timeline auto-generated from diagnostic payload.</p>
+                                        </div>
+                                    )}
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/aueb" className="text-[10px] uppercase tracking-widest text-emerald-400 hover:text-white flex items-center gap-1 transition-colors">Calculate Margin <ArrowRight size={12} /></Link>
                                     </div>

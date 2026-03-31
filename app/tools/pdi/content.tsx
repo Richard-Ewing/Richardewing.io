@@ -98,9 +98,9 @@ export default function PDITool() {
     const [tickets, setTickets] = useState('');
     const [teamSize, setTeamSize] = useState(20);
     const [salary, setSalary] = useState(240000);
-    const [roadmapHorizon, setRoadmapHorizon] = useState('Q4');
+    const [prCycleHours, setPrCycleHours] = useState('48');
     const [sprintLength, setSprintLength] = useState('2');
-    const [avgTicketAge, setAvgTicketAge] = useState('30');
+    const [deployFreqDays, setDeployFreqDays] = useState('7');
     
     // UI States
     const [loading, setLoading] = useState(false);
@@ -142,7 +142,13 @@ export default function PDITool() {
             const wastePerSprint = waste / sprintsPerYear;
             const debtTickets = maint;
             const ticketsPerSprint = total / sprintsPerYear;
-            const debtVelocity = Math.round((maint / total) * ticketsPerSprint);
+            
+            // Factor in velocity decay from poor CI/CD telemetry
+            const prPenalty = 1 + (Number(prCycleHours) / 48); // Penalty threshold baseline 48h
+            const deployPenalty = 1 + (Number(deployFreqDays) / 7); // Penalty threshold baseline 7d
+            const velocityMultiplier = (prPenalty + deployPenalty) / 2;
+            
+            const debtVelocity = Math.round(((maint / total) * ticketsPerSprint) * velocityMultiplier);
             // If we dedicated the team to debt reduction, how long to clear?
             const burnDownWeeks = Math.ceil(maint / (teamNum * 0.5)); // ~0.5 tickets per engineer per sprint
             // ROI: cost of 1 sprint of dedicated debt reduction vs annual savings
@@ -174,7 +180,7 @@ export default function PDITool() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     tool_id: 'pdi',
-                    run_data: { teamSize, salary, sprintLength, avgTicketAge, roadmapHorizon },
+                    run_data: { teamSize, salary, sprintLength, prCycleHours, deployFreqDays },
                     output_metrics: {
                         score,
                         financial_waste: waste,
@@ -186,6 +192,7 @@ export default function PDITool() {
                         debtVelocity,
                         burnDownWeeks,
                         ticketCount: total,
+                        qpep_roadmap: data.qpep_roadmap
                     }
                 })
             }).catch(console.error);
@@ -276,7 +283,8 @@ export default function PDITool() {
                 body: JSON.stringify({
                     score: results.score,
                     financial_waste: results.financials.waste,
-                    inputs: { teamSize, salary, sprintLength, avgTicketAge, roadmapHorizon, tickets: tickets.substring(0, 1000) }
+                    inputs: { teamSize, salary, sprintLength, prCycleHours, deployFreqDays, tickets: tickets.substring(0, 1000) },
+                    qpep_roadmap: results.qpep_roadmap
                 })
             });
 
@@ -429,16 +437,12 @@ export default function PDITool() {
                                             </select>
                                         </div>
                                         <div>
-                                            <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">Ticket Age (Days)</label>
-                                            <input title="Average Ticket Age" aria-label="Average Ticket Age" placeholder="e.g. 30" type="number" value={avgTicketAge} onChange={e => setAvgTicketAge(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors" />
+                                            <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">PR Cycle (Hours)</label>
+                                            <input title="PR Cycle Time" aria-label="PR Cycle Time" placeholder="e.g. 48" type="number" value={prCycleHours} onChange={e => setPrCycleHours(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors" />
                                         </div>
                                         <div>
-                                            <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">Horizon</label>
-                                            <select title="Roadmap Horizon" aria-label="Roadmap Horizon" value={roadmapHorizon} onChange={e => setRoadmapHorizon(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors">
-                                                <option value="Q1">Q1 (This Quarter)</option>
-                                                <option value="H1">H1 (6 Months)</option>
-                                                <option value="FY">FY (Full Year)</option>
-                                            </select>
+                                            <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">Deploy Freq (Days)</label>
+                                            <input title="Deploy Frequency" aria-label="Deploy Frequency" placeholder="e.g. 7" type="number" value={deployFreqDays} onChange={e => setDeployFreqDays(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors" />
                                         </div>
                                     </div>
 
