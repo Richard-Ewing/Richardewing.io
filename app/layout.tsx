@@ -162,6 +162,7 @@ export default function RootLayout({
             description: 'Product Economics advisory firm specializing in R&D capital audits, technical debt diagnostics, and AI unit economics.',
             founder: {
               '@type': 'Person',
+              '@id': 'https://www.richardewing.io/#person',
               name: 'Richard Ewing',
               jobTitle: 'Product Economist',
               url: 'https://www.richardewing.io/principal',
@@ -177,7 +178,8 @@ export default function RootLayout({
               'https://medium.com/@richardewing',
               'https://substack.com/@richardewing',
               'https://www.amazon.com/author/richardewing',
-              'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5'
+              'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5',
+              'https://www.linkedin.com/company/exogram-ai/'
             ],
           }) }}
         />

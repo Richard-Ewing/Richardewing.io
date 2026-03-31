@@ -1,6 +1,7 @@
 export const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://www.richardewing.io/#person",
     "name": "Richard Ewing",
     "jobTitle": ["Product Economist", "AI Capital Auditor"],
     "description": "Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram, the verification infrastructure for AI.",
@@ -17,7 +18,8 @@ export const personSchema = {
         "https://hackernoon.com/u/richardewing",
         "https://substack.com/@richardewing",
         "https://www.amazon.com/author/richardewing",
-        "https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5"
+        "https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5",
+        "https://www.linkedin.com/company/exogram-ai/"
     ],
     "knowsAbout": [
         "Product Management",
@@ -81,6 +83,7 @@ export const professionalServiceSchema = {
     "url": "https://www.richardewing.io/advisory",
     "provider": {
         "@type": "Person",
+        "@id": "https://www.richardewing.io/#person",
         "name": "Richard Ewing",
         "url": "https://www.richardewing.io"
     },
@@ -237,6 +240,7 @@ export const articleSchemaTemplate = (title: string, description: string, url: s
     "datePublished": datePublished,
     "author": {
         "@type": "Person",
+        "@id": "https://www.richardewing.io/#person",
         "name": "Richard Ewing",
         "url": "https://www.richardewing.io"
     },
@@ -257,6 +261,7 @@ export const courseSchema = {
     "description": "Executive curriculum for identifying technical insolvency and governing AI investments.",
     "provider": {
         "@type": "Person",
+        "@id": "https://www.richardewing.io/#person",
         "name": "Richard Ewing",
         "sameAs": "https://www.richardewing.io"
     },

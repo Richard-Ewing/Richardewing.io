@@ -36,6 +36,10 @@ export default function ExogramLayout({
                         '@type': 'Organization',
                         name: 'Exogram',
                         url: 'https://exogram.ai',
+                        sameAs: [
+                            'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5',
+                            'https://www.linkedin.com/company/exogram-ai/'
+                        ],
                         description: 'Verification infrastructure for AI. The missing trust layer between models and applications. Prevents hallucination propagation with deterministic contr...',
                         founder: {
                             '@type': 'Person',
