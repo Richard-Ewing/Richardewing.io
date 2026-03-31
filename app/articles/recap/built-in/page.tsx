@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Richard Ewing Built In Articles — Engineering Economics for Scaling Teams | Product Economist',
-    description: 'Richard Ewing\'s published articles on Built In covering engineering team economics, hiring velocity, developer productivity metrics, and scaling engineering organizations.',
+    title: 'Richard Ewing Built In Articles — Engineering Economics f...',
+    description: 'Richard Ewing\'s published articles on Built In covering engineering team economics, hiring velocity, developer productivity metrics, and scaling engine...',
     keywords: ['Richard Ewing Built In', 'engineering economics articles', 'scaling engineering teams', 'developer productivity', 'product economist Built In'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/built-in' },
     openGraph: { title: 'Richard Ewing on Built In', description: 'Published articles on engineering team economics and developer productivity.', url: 'https://www.richardewing.io/articles/recap/built-in', type: 'article' },
@@ -12,19 +12,19 @@ export const metadata: Metadata = {
 const articles = [
     {
         title: 'Revenue Per Engineer: The Metric Your Board Should Track',
-        description: 'Why APER (Annualized Productive Engineering Revenue) is the missing link between engineering investment and business results. How top companies measure engineering ROI.',
+        description: 'Why APER (Annualized Productive Engineering Revenue) is the missing link between engineering investment and business results. How top companies measure ...',
         topics: ['APER', 'Engineering Productivity', 'Revenue Per Engineer', 'Board Metrics'],
         icon: '📈',
     },
     {
         title: 'The True Cost of a Bad Hire in Engineering',
-        description: 'Quantifying the total cost of a mis-hire in engineering: salary, onboarding, ramp time, team disruption, and the technical debt they leave behind. The hidden cost is 3-5x salary.',
+        description: 'Quantifying the total cost of a mis-hire in engineering: salary, onboarding, ramp time, team disruption, and the technical debt they leave behind. The h...',
         topics: ['Cost Per Hire', 'Engineering ROI', 'Team Scaling', 'Hiring Economics'],
         icon: '👥',
     },
     {
         title: 'Why Your Engineering Team Is Slower Than You Think',
-        description: 'The maintenance load trap: how invisible infrastructure work consumes 40-80% of engineering capacity without anyone noticing. How to measure and reclaim engineering velocity.',
+        description: 'The maintenance load trap: how invisible infrastructure work consumes 40-80% of engineering capacity without anyone noticing. How to measure and reclaim...',
         topics: ['Maintenance Load', 'Feature Velocity', 'Engineering Capacity', 'Invisible Work'],
         icon: '⚡',
     },

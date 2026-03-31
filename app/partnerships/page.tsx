@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Partnerships — Advisory, Licensing & Integration Partners | Richard Ewing',
-    description: 'Partner with Richard Ewing: advisory referrals, white-label licensing, tool integrations, consulting firm partnerships, and PE deal flow. Expand your service offering with product economics frameworks.',
+    title: 'Partnerships — Advisory, Licensing & Integration Partners',
+    description: 'Partner with Richard Ewing: advisory referrals, white-label licensing, tool integrations, consulting firm partnerships, and PE deal flow. Expand your se...',
     keywords: ['Richard Ewing partnerships', 'R&D audit partnerships', 'consulting firm partnership', 'white-label technical debt', 'PE advisory partner'],
     alternates: { canonical: 'https://www.richardewing.io/partnerships' },
     openGraph: { title: 'Partnerships — Advisory & Licensing', description: 'Partner with Richard Ewing for R&D Capital Audits.', url: 'https://www.richardewing.io/partnerships', type: 'website' },

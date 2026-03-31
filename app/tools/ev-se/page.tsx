@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import EVSETool from './content';
 
 export const metadata: Metadata = {
-    title: 'EV-SE Valuation Engine | Risk-Adjusted Enterprise Value Calculator',
-    description: 'Quantify the "Certainty Premium" investors pay for. Model how execution risk, churn, and scope creep destroy enterprise value. Free SaaS valuation tool by Richard Ewing.',
+    title: 'EV-SE Valuation Engine | Risk-Adjusted Enterprise Value C...',
+    description: 'Quantify the "Certainty Premium" investors pay for. Model how execution risk, churn, and scope creep destroy enterprise value. Free SaaS valuation tool ...',
     keywords: [
         'enterprise value calculator',
         'SaaS valuation tool',

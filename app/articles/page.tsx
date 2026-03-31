@@ -3,7 +3,7 @@ import ArticlesPage from './content';
 
 export const metadata: Metadata = {
     title: 'Forensic Engineering Articles & Research | Richard Ewing',
-    description: 'Deep dives into R&D capital efficiency, technical debt valuation, AI unit economics, and engineering economics. Published in CIO.com, Built In, Mind the Product, and HackerNoon. By Richard Ewing, Product Economist.',
+    description: 'Deep dives into R&D capital efficiency, technical debt valuation, AI unit economics, and engineering economics. Published in CIO.com, Built In, Mind the...',
     keywords: [
         'product economist articles',
         'R&D capital efficiency',

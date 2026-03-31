@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'APER Calculator FAQ | Richard Ewing',
-    description: 'Frequently asked questions about the Adjusted Productivity to Engineering Ratio (APER) — how to benchmark engineering team efficiency and interpret revenue-per-engineer metrics.',
+    description: 'Frequently asked questions about the Adjusted Productivity to Engineering Ratio (APER) — how to benchmark engineering team efficiency and interpret reve...',
     keywords: ['APER calculator', 'engineering efficiency', 'revenue per engineer', 'engineering productivity metrics'],
     alternates: { canonical: 'https://www.richardewing.io/tools/aper/faq' },
     openGraph: { title: 'APER Calculator FAQ', description: 'How to benchmark engineering efficiency with APER.', url: 'https://www.richardewing.io/tools/aper/faq', type: 'article' },

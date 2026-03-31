@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { exogramKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Exogram — Verification Infrastructure for AI | Founded by Richard Ewing',
-    description: 'The missing trust layer between AI models and applications. Exogram prevents hallucination propagation with admissibility control planes and state-hashing commit enforcement. Founded by Richard Ewing, Product Economist.',
+    title: 'Exogram — Verification Infrastructure for AI | Founded by...',
+    description: 'The missing trust layer between AI models and applications. Exogram prevents hallucination propagation with admissibility control planes and state-hashi...',
     keywords: exogramKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/exogram',
@@ -36,7 +36,7 @@ export default function ExogramLayout({
                         '@type': 'Organization',
                         name: 'Exogram',
                         url: 'https://exogram.ai',
-                        description: 'Verification infrastructure for AI. The missing trust layer between models and applications. Prevents hallucination propagation with deterministic control planes.',
+                        description: 'Verification infrastructure for AI. The missing trust layer between models and applications. Prevents hallucination propagation with deterministic contr...',
                         founder: {
                             '@type': 'Person',
                             '@id': 'https://www.richardewing.io/#person',

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'The Complete R&D Audit Checklist — 75 Questions Across 6 Domains | Richard Ewing',
-    description: 'The complete R&D audit checklist used in $7,500 engagements. 75 questions across 6 domains with scoring rubrics, action items, and remediation frameworks. Free for CTOs and VPs of Engineering.',
+    title: 'The Complete R&D Audit Checklist — 75 Questions Across 6 ...',
+    description: 'The complete R&D audit checklist used in $7,500 engagements. 75 questions across 6 domains with scoring rubrics, action items, and remediation framework...',
     keywords: ['R&D audit checklist', 'engineering audit', 'technical due diligence checklist', 'CTO checklist', 'technology assessment', 'product economist'],
     alternates: { canonical: 'https://www.richardewing.io/checklist' },
     openGraph: {

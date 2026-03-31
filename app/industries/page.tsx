@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Industries — FinTech, HealthTech, AI-First | Product Economics Advisory',
-    description: 'Product economics advisory by industry vertical. Specialized R&D audit, technical debt assessment, and AI governance for FinTech, HealthTech, and AI-first companies.',
+    title: 'Industries — FinTech, HealthTech, AI-First | Product Econ...',
+    description: 'Product economics advisory by industry vertical. Specialized R&D audit, technical debt assessment, and AI governance for FinTech, HealthTech, and AI-fir...',
     keywords: ['industry advisory', 'fintech CTO advisor', 'healthtech engineering audit', 'AI company economics', 'vertical product economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries' },
 };
@@ -12,7 +12,7 @@ const verticals = [
     {
         title: 'FinTech',
         subtitle: 'Regulated Financial Services',
-        description: 'SOX, PCI-DSS, and state regulations create the highest compliance-driven technical debt in any industry. Engineering capacity is consumed by regulatory requirements.',
+        description: 'SOX, PCI-DSS, and state regulations create the highest compliance-driven technical debt in any industry. Engineering capacity is consumed by regulatory ...',
         href: '/industries/fintech',
         color: 'emerald',
         icon: '💳',
@@ -68,7 +68,7 @@ const verticals = [
     {
         title: 'Cybersecurity',
         subtitle: 'Security Products',
-        description: 'Security debt compounds faster than any other form of technical debt. AI detection costs, zero-day response, and compliance overhead create unique economics.',
+        description: 'Security debt compounds faster than any other form of technical debt. AI detection costs, zero-day response, and compliance overhead create unique econo...',
         href: '/industries/cybersecurity',
         color: 'red',
         icon: '🛡️',
@@ -84,7 +84,7 @@ const verticals = [
     {
         title: 'InsurTech',
         subtitle: 'Insurance Technology',
-        description: 'Legacy core systems from the 1980s, state-by-state regulatory compliance, AI underwriting economics, and claims processing debt that nobody fully understands.',
+        description: 'Legacy core systems from the 1980s, state-by-state regulatory compliance, AI underwriting economics, and claims processing debt that nobody fully unders...',
         href: '/industries/insurtech',
         color: 'yellow',
         icon: '🏦',
@@ -108,7 +108,7 @@ const verticals = [
     {
         title: 'AgriTech',
         subtitle: 'Agriculture Technology',
-        description: 'Precision agriculture AI costs, IoT sensor infrastructure debt at massive scale, satellite imagery processing economics, and farm-to-fork supply chain traceability.',
+        description: 'Precision agriculture AI costs, IoT sensor infrastructure debt at massive scale, satellite imagery processing economics, and farm-to-fork supply chain t...',
         href: '/industries/agritech',
         color: 'teal',
         icon: '🌾',

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Methodology — How R&D Capital Audits Work | Richard Ewing',
-    description: 'The step-by-step methodology behind R&D Capital Audits: data collection, technical assessment, economic modeling, and board-ready reporting. How we quantify technical debt in dollars.',
+    description: 'The step-by-step methodology behind R&D Capital Audits: data collection, technical assessment, economic modeling, and board-ready reporting. How we quan...',
     keywords: ['R&D audit methodology', 'technical debt assessment process', 'engineering audit steps', 'how to quantify technical debt', 'product economics methodology'],
     alternates: { canonical: 'https://www.richardewing.io/methodology' },
     openGraph: { title: 'Methodology — How R&D Capital Audits Work', description: 'The step-by-step process behind R&D Capital Audits.', url: 'https://www.richardewing.io/methodology', type: 'website' },

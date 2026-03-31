@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'LegalTech Product Economics — Legal Technology Debt & AI | Richard Ewing',
-    description: 'Product economics for LegalTech: document processing AI costs, compliance data infrastructure, contract analytics model economics, and legal data security requirements.',
+    title: 'LegalTech Product Economics — Legal Technology Debt & AI',
+    description: 'Product economics for LegalTech: document processing AI costs, compliance data infrastructure, contract analytics model economics, and legal data securi...',
     keywords: ['legaltech technical debt', 'legal technology', 'contract AI economics', 'legal document processing', 'legaltech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/legaltech' },
     openGraph: { title: 'LegalTech Product Economics', description: 'R&D capital challenges in legal technology.', url: 'https://www.richardewing.io/industries/legaltech', type: 'article' },
 };
 
 const sections = [
-    { title: 'Document Processing AI Economics', description: 'Legal document analysis (contract review, due diligence, discovery) relies on NLP and LLMs. Processing costs scale with document volume — and legal documents are long. A single M&A deal can require processing 100K+ documents.', stats: 'LLM cost per legal document: $0.50-$5.00', color: 'violet' },
-    { title: 'Regulatory Compliance Data Debt', description: 'LegalTech products must track jurisdictional regulations across 50+ states and 200+ countries. Each jurisdiction updates independently. The data maintenance burden is enormous and never ends.', stats: '50+ US jurisdictions × monthly regulatory changes', color: 'cyan' },
-    { title: 'Contract Analytics Model Drift', description: 'AI models trained on historical contracts degrade as legal language evolves. New clauses, regulatory changes, and industry-specific terms create continuous model drift requiring expensive retraining.', stats: 'Model accuracy drops 5-15% per year without retraining', color: 'rose' },
-    { title: 'Legal Data Security Requirements', description: 'Attorney-client privilege data requires highest-tier security. LegalTech companies face SOC 2 Type II, data residency, encryption-at-rest, and audit logging requirements that create significant infrastructure debt.', stats: 'Security compliance: $200K-$500K/year for LegalTech', color: 'emerald' },
+    { title: 'Document Processing AI Economics', description: 'Legal document analysis (contract review, due diligence, discovery) relies on NLP and LLMs. Processing costs scale with document volume — and legal docu...', stats: 'LLM cost per legal document: $0.50-$5.00', color: 'violet' },
+    { title: 'Regulatory Compliance Data Debt', description: 'LegalTech products must track jurisdictional regulations across 50+ states and 200+ countries. Each jurisdiction updates independently. The data mainten...', stats: '50+ US jurisdictions × monthly regulatory changes', color: 'cyan' },
+    { title: 'Contract Analytics Model Drift', description: 'AI models trained on historical contracts degrade as legal language evolves. New clauses, regulatory changes, and industry-specific terms create continu...', stats: 'Model accuracy drops 5-15% per year without retraining', color: 'rose' },
+    { title: 'Legal Data Security Requirements', description: 'Attorney-client privilege data requires highest-tier security. LegalTech companies face SOC 2 Type II, data residency, encryption-at-rest, and audit log...', stats: 'Security compliance: $200K-$500K/year for LegalTech', color: 'emerald' },
 ];
 
 const colorMap: Record<string, string> = { violet: 'border-violet-500/30 bg-violet-500/5', cyan: 'border-cyan-500/30 bg-cyan-500/5', rose: 'border-rose-500/30 bg-rose-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5' };

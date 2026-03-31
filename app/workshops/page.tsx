@@ -32,7 +32,7 @@ const keynotes = [
         ],
     },
     {
-        title: 'AI Unit Economics for CFOs: When Your AI Feature Costs More Than It Earns',
+        title: 'AI Unit Economics for CFOs: When Your AI Feature Costs Mo...',
         audience: 'CFOs, Finance leaders, AI/ML leaders, Product leaders',
         duration: '45 min keynote',
         highlights: [
@@ -43,7 +43,7 @@ const keynotes = [
         ],
     },
     {
-        title: 'The Subprime Code Crisis: Why Your Next Acquisition Target Has Hidden Liabilities',
+        title: 'The Subprime Code Crisis: Why Your Next Acquisition Targe...',
         audience: 'PE/VC investors, M&A teams, Board directors, Due diligence teams',
         duration: '30-45 min keynote',
         highlights: [

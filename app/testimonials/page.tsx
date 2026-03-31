@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Testimonials — What Clients Say About R&D Capital Audits | Richard Ewing',
+    title: 'Testimonials — What Clients Say About R&D Capital Audits',
     description: 'Client testimonials and social proof for R&D Capital Audits. See what CIOs, CTOs, PE partners, and board members say about product economics frameworks.',
     keywords: ['R&D audit testimonials', 'technical debt audit reviews', 'product economist testimonials', 'Richard Ewing reviews'],
     alternates: { canonical: 'https://www.richardewing.io/testimonials' },

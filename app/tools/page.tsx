@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import ToolsContent from './tools-content';
 
 export const metadata: Metadata = {
-    title: 'Free Diagnostic Tools — Technical Debt, AI Economics, Valuation | Richard Ewing',
-    description: 'Free boardroom-ready diagnostic tools used in $7,500 engagements. Product Debt Index, Enterprise Value Scenario Engine, AI Unit Economics Benchmark, Revenue Per Engineer, and Audit Interview Protocol.',
+    title: 'Free Diagnostic Tools — Technical Debt, AI Economics, Val...',
+    description: 'Free boardroom-ready diagnostic tools used in $7,500 engagements. Product Debt Index, Enterprise Value Scenario Engine, AI Unit Economics Benchmark, Rev...',
     keywords: [
         'technical debt calculator', 'product debt index', 'free engineering tools',
         'AI unit economics calculator', 'SaaS valuation tool', 'revenue per engineer calculator',

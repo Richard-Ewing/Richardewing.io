@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'PDI vs Waydev — Engineering Intelligence Comparison | Richard Ewing',
-    description: 'Compare the Product Debt Index (PDI) with Waydev for engineering intelligence. See how economic-first technical debt measurement differs from git-analytics approaches.',
+    title: 'PDI vs Waydev — Engineering Intelligence Comparison',
+    description: 'Compare the Product Debt Index (PDI) with Waydev for engineering intelligence. See how economic-first technical debt measurement differs from git-analyt...',
     keywords: ['PDI vs Waydev', 'technical debt measurement comparison', 'engineering analytics tools', 'Waydev alternative', 'Product Debt Index'],
     alternates: { canonical: 'https://www.richardewing.io/compare/pdi-vs-waydev' },
     openGraph: { title: 'PDI vs Waydev — Engineering Intelligence Comparison', description: 'Economic debt measurement vs. git analytics.', url: 'https://www.richardewing.io/compare/pdi-vs-waydev', type: 'article' },

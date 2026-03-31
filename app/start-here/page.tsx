@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Start Here — Your Guide to Product Economics | Richard Ewing',
-    description: 'New to product economics? Start here. Free diagnostic tools, 400+ glossary terms, learning tracks, and advisory services — a guided path from diagnosis to action.',
+    description: 'New to product economics? Start here. Free diagnostic tools, 400+ glossary terms, learning tracks, and advisory services — a guided path from diagnosis ...',
     keywords: [
         'product economics start', 'technical debt guide', 'CTO resources',
         'engineering economics introduction', 'Richard Ewing start here',
@@ -36,7 +36,7 @@ const steps = [
         number: '02',
         title: 'Learn',
         subtitle: 'Understand the frameworks behind the numbers',
-        description: 'Explore 400+ glossary terms, structured learning tracks for CTOs, PMs, and Investors, and published frameworks on technical debt, AI economics, and R&D capital allocation.',
+        description: 'Explore 400+ glossary terms, structured learning tracks for CTOs, PMs, and Investors, and published frameworks on technical debt, AI economics, and R&D ...',
         links: [
             { label: 'Glossary (400+ Terms)', href: '/glossary', primary: true },
             { label: 'Curriculum', href: '/curriculum' },

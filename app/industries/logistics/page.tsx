@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for Logistics & Supply Chain — Real-Time Systems & IoT Debt | Richard Ewing',
-    description: 'Product economics advisory for logistics and supply chain tech. Real-time tracking system debt, IoT infrastructure costs, demand forecasting AI, and integration complexity.',
+    title: 'Product Economics for Logistics & Supply Chain — Real-Tim...',
+    description: 'Product economics advisory for logistics and supply chain tech. Real-time tracking system debt, IoT infrastructure costs, demand forecasting AI, and int...',
     keywords: ['logistics technical debt', 'supply chain technology', 'logistics AI cost', 'IoT infrastructure debt', 'logistics CTO advisor'],
     alternates: { canonical: 'https://www.richardewing.io/industries/logistics' },
     openGraph: { title: 'Product Economics for Logistics', description: 'Real-time systems, IoT scale, and AI forecasting create unique engineering economics.', url: 'https://www.richardewing.io/industries/logistics', type: 'website' },
 };
 
 const challenges = [
-    { icon: '📦', title: 'Real-Time System Debt', description: 'Tracking millions of packages, vehicles, and warehouse operations in real-time creates latency requirements that compound infrastructure complexity exponentially.' },
-    { icon: '📡', title: 'IoT Scale', description: 'Thousands of sensors, GPS trackers, and RFID readers generate billions of data points daily. IoT infrastructure debt grows silently as sensor networks expand.' },
-    { icon: '🤖', title: 'AI Forecasting Economics', description: 'Demand forecasting, route optimization, and inventory prediction are AI-intensive features where inference costs scale directly with the number of SKUs, routes, and warehouses.' },
+    { icon: '📦', title: 'Real-Time System Debt', description: 'Tracking millions of packages, vehicles, and warehouse operations in real-time creates latency requirements that compound infrastructure complexity expo...' },
+    { icon: '📡', title: 'IoT Scale', description: 'Thousands of sensors, GPS trackers, and RFID readers generate billions of data points daily. IoT infrastructure debt grows silently as sensor networks e...' },
+    { icon: '🤖', title: 'AI Forecasting Economics', description: 'Demand forecasting, route optimization, and inventory prediction are AI-intensive features where inference costs scale directly with the number of SKUs,...' },
     { icon: '🔗', title: 'Integration Complexity', description: 'ERP systems, WMS, TMS, carrier APIs, and customs platforms create layered integration debt. Each new partner adds API maintenance cost forever.' },
 ];
 

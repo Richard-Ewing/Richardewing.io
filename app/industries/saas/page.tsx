@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for SaaS & B2B — Debt-to-ARR, COGS, Margin Defense | Richard Ewing',
-    description: 'Product economics advisory for SaaS and B2B companies. Technical debt impact on ARR growth, COGS optimization, gross margin defense, and R&D capital allocation.',
+    title: 'Product Economics for SaaS & B2B — Debt-to-ARR, COGS, Mar...',
+    description: 'Product economics advisory for SaaS and B2B companies. Technical debt impact on ARR growth, COGS optimization, gross margin defense, and R&D capital all...',
     keywords: ['saas technical debt', 'b2b product economics', 'saas gross margin', 'cogs optimization saas', 'technical debt arr impact', 'saas cto advisor'],
     alternates: { canonical: 'https://www.richardewing.io/industries/saas' },
     openGraph: { title: 'Product Economics for SaaS & B2B', description: 'Why your technical debt is destroying your ARR multiple.', url: 'https://www.richardewing.io/industries/saas', type: 'website' },
 };
 
 const challenges = [
-    { icon: '📉', title: 'Debt-to-ARR Drag', description: 'Technical debt reduces feature velocity. Reduced velocity slows ARR growth. Slower ARR growth compresses valuation multiples. The economic chain reaction is measurable.' },
-    { icon: '💰', title: 'COGS Inflation', description: 'AI features, cloud waste, and over-provisioned infrastructure inflate Cost of Goods Sold — the silent killer of SaaS gross margins that investors scrutinize.' },
+    { icon: '📉', title: 'Debt-to-ARR Drag', description: 'Technical debt reduces feature velocity. Reduced velocity slows ARR growth. Slower ARR growth compresses valuation multiples. The economic chain reactio...' },
+    { icon: '💰', title: 'COGS Inflation', description: 'AI features, cloud waste, and over-provisioned infrastructure inflate Cost of Goods Sold — the silent killer of SaaS gross margins that investors scruti...' },
     { icon: '🏗️', title: 'Platform Complexity', description: 'Multi-tenant architectures, API ecosystems, and integration layers create compounding technical debt that is uniquely difficult to measure and remediate.' },
-    { icon: '🔄', title: 'Feature Bloat', description: 'SaaS companies ship features to close deals. Each feature adds maintenance cost. Zombie features — used by <5% of customers — consume 30%+ of engineering capacity.' },
+    { icon: '🔄', title: 'Feature Bloat', description: 'SaaS companies ship features to close deals. Each feature adds maintenance cost. Zombie features — used by <5% of customers — consume 30%+ of engineerin...' },
 ];
 
 export default function SaaSPage() {

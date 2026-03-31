@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import AuditInterviewLanding from './content';
 
 export const metadata: Metadata = {
-    title: 'The Audit Interview | Assess Engineering Judgment, Not Syntax',
-    description: 'The hiring protocol for the AI age. Test verification skills, not generation skills. Based on the methodology from Built In\'s "Death of the Syntax Interview."',
+    title: 'The Audit Interview | Assess Engineering Judgment, Not Sy...',
+    description: 'The hiring protocol for the AI age. Test verification skills, not generation skills. Based on the methodology from Built In\'s "Death of the Syntax Inte...',
     alternates: {
         canonical: 'https://www.richardewing.io/tools/audit-interview',
     },

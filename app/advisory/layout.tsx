@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { advisoryKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Technology Consulting & R&D Capital Audit Advisory | Richard Ewing',
-    description: 'Technology consulting, R&D capital audits, AI cost governance, and technical due diligence. From $450 diagnostic to $40,000 turnaround engagement. Fractional CTO, engineering audit, board advisory.',
+    title: 'Technology Consulting & R&D Capital Audit Advisory',
+    description: 'Technology consulting, R&D capital audits, AI cost governance, and technical due diligence. From $450 diagnostic to $40,000 turnaround engagement. Fract...',
     keywords: advisoryKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/advisory',

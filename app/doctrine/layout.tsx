@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { doctrineKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Product Economics Doctrine — Frameworks for R&D Capital Allocation | Richard Ewing',
-    description: 'The immutable laws of software solvency. Capital allocation over agile theater. Technical Insolvency Date. Innovation Tax. Kill Switch Protocol. Feature Bloat Calculus. Product Economist methodology by Richard Ewing.',
+    title: 'Product Economics Doctrine — Frameworks for R&D Capital A...',
+    description: 'The immutable laws of software solvency. Capital allocation over agile theater. Technical Insolvency Date. Innovation Tax. Kill Switch Protocol. Feature...',
     keywords: doctrineKeywords,
     alternates: { canonical: 'https://www.richardewing.io/doctrine' },
     openGraph: {

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Published Profiles & Media | Richard Ewing',
-    description: 'Richard Ewing\'s published work across CIO.com (Foundry), Built In, Mind the Product, and HackerNoon. Expert contributor on product economics, R&D auditing, and AI unit economics.',
+    description: 'Richard Ewing\'s published work across CIO.com (Foundry), Built In, Mind the Product, and HackerNoon. Expert contributor on product economics, R&D audit...',
     keywords: [
         'Richard Ewing publications',
         'CIO.com contributor',

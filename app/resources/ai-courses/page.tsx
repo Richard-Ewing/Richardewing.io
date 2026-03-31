@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Learning Hub — 50+ Curated Courses, Tools & Resources | Richard Ewing 2026',
-    description: 'The most comprehensive free AI learning hub: 50+ courses from Anthropic, Google, Microsoft, Stanford, and MIT. Curated for technology leaders, developers, and board directors with editorial commentary.',
+    title: 'AI Learning Hub — 50+ Curated Courses, Tools & Resources ...',
+    description: 'The most comprehensive free AI learning hub: 50+ courses from Anthropic, Google, Microsoft, Stanford, and MIT. Curated for technology leaders, developer...',
     keywords: [
         'free AI courses 2026', 'Anthropic courses', 'Claude courses', 'Anthropic Academy',
         'AI fluency course', 'MCP course', 'Claude API course', 'free AI training',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     ],
     alternates: { canonical: 'https://www.richardewing.io/resources/ai-courses' },
     openGraph: {
-        title: 'AI Learning Hub — 50+ Curated Courses & Resources | Richard Ewing',
+        title: 'AI Learning Hub — 50+ Curated Courses & Resources',
         description: 'The most comprehensive free AI learning hub. 50+ courses curated for leaders, builders, and architects.',
         url: 'https://www.richardewing.io/resources/ai-courses',
         type: 'website',

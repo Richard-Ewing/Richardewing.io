@@ -4,7 +4,7 @@ import { glossaryTerms } from './terms';
 
 export const metadata: Metadata = {
     title: 'Technology & AI Glossary — 400+ Definitions | Richard Ewing',
-    description: 'The most comprehensive technology leadership glossary. 400+ definitions covering technical debt, AI economics, SaaS metrics, engineering management, product strategy, and more. By Richard Ewing, Product Economist.',
+    description: 'The most comprehensive technology leadership glossary. 400+ definitions covering technical debt, AI economics, SaaS metrics, engineering management, pro...',
     keywords: [
         'technology glossary', 'technical debt definition', 'AI glossary', 'SaaS metrics glossary',
         'engineering management terms', 'product management glossary', 'CTO glossary',

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'ROI Calculator — R&D Capital Audit Return on Investment | Richard Ewing',
-    description: 'Calculate the potential ROI of an R&D Capital Audit. See how quantifying technical debt, improving DORA metrics, and optimizing AI unit economics translates to dollars saved.',
+    title: 'ROI Calculator — R&D Capital Audit Return on Investment',
+    description: 'Calculate the potential ROI of an R&D Capital Audit. See how quantifying technical debt, improving DORA metrics, and optimizing AI unit economics transl...',
     keywords: ['R&D audit ROI', 'technical debt ROI', 'engineering efficiency ROI', 'DORA metrics improvement', 'engineering productivity savings'],
     alternates: { canonical: 'https://www.richardewing.io/roi' },
     openGraph: { title: 'ROI Calculator — R&D Capital Audit ROI', description: 'See the dollar value of engineering optimization.', url: 'https://www.richardewing.io/roi', type: 'website' },

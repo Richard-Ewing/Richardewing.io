@@ -10,8 +10,8 @@ import BlurIn from '@/app/components/magicui/blur-in';
 import { BorderBeam } from '@/app/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'The Engineering Execution Vault — 57 Economics Tracks | Richard Ewing',
-    description: 'Fifty-seven curriculum tracks for mastering product economics: Core Engineering, Data Pipelines, AI Paradigms, Security, Leadership, UI/UX, TPM, Cloud FinOps, Industry Verticals, and Career Progressions.',
+    title: 'The Engineering Execution Vault — 57 Economics Tracks',
+    description: 'Fifty-seven curriculum tracks for mastering product economics: Core Engineering, Data Pipelines, AI Paradigms, Security, Leadership, UI/UX, TPM, Cloud F...',
     keywords: ['product economics curriculum', 'engineering economics course', 'AI economics training', 'R&D capital management', 'technical debt certification', 'engineering leadership course', 'DevOps economics', 'security economics', 'cloud finops', 'AI agent economics'],
     alternates: { canonical: 'https://www.richardewing.io/vault/curriculum/tracks' },
     openGraph: { title: 'The Engineering Execution Vault', description: 'Master product economics across fifty-seven specialized tracks.', url: 'https://www.richardewing.io/vault/curriculum/tracks', type: 'website' },

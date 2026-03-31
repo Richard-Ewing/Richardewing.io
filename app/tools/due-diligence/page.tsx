@@ -3,7 +3,7 @@ import DueDiligenceTool from './content';
 
 export const metadata: Metadata = {
     title: 'M&A Engineering Due Diligence Scanner | Private Equity Tool',
-    description: 'Instantly scan acquisition targets for critical technical debt, AI dependency risks, and engineering insolvency. Exclusive $999 due diligence diagnostic for Private Equity and VC.',
+    description: 'Instantly scan acquisition targets for critical technical debt, AI dependency risks, and engineering insolvency. Exclusive $999 due diligence diagnostic...',
     keywords: [
         'engineering due diligence',
         'technical due diligence',

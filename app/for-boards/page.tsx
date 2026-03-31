@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'For Board Members — R&D Capital Visibility for Directors | Richard Ewing',
-    description: 'Board-ready R&D capital reports. Translate engineering complexity into financial metrics directors can act on. Product Debt Index, Technical Insolvency Date, and Innovation Tax dashboards.',
+    title: 'For Board Members — R&D Capital Visibility for Directors',
+    description: 'Board-ready R&D capital reports. Translate engineering complexity into financial metrics directors can act on. Product Debt Index, Technical Insolvency ...',
     keywords: ['board technology oversight', 'R&D capital board reporting', 'technical debt for boards', 'CTO board presentation', 'engineering metrics for directors'],
     alternates: { canonical: 'https://www.richardewing.io/for-boards' },
     openGraph: { title: 'For Board Members — R&D Capital Visibility', description: 'Board-ready engineering reports in financial language.', url: 'https://www.richardewing.io/for-boards', type: 'website' },

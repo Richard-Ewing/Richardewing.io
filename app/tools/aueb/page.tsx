@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import AUEBTool from './content';
 
 export const metadata: Metadata = {
-    title: 'AI Unit Economics Benchmark | Calculate Your AI Margin Collapse Point',
-    description: 'Model your AI feature economics and find your collapse point. Compare GPT-4, Claude, and open-source LLM costs. Prevent AI hallucination debt. Free tool by Richard Ewing, AI Capital Auditor.',
+    title: 'AI Unit Economics Benchmark | Calculate Your AI Margin Co...',
+    description: 'Model your AI feature economics and find your collapse point. Compare GPT-4, Claude, and open-source LLM costs. Prevent AI hallucination debt. Free tool...',
     keywords: [
         'AI unit economics',
         'LLM cost calculator',

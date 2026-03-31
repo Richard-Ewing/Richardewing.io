@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'APER vs LinearB — Engineering Judgment vs Engineering Metrics | Richard Ewing',
-    description: 'APER (AI Performance Economics Rating) vs LinearB comparison. APER evaluates engineers on economic judgment. LinearB tracks engineering activity metrics. Different missions.',
+    title: 'APER vs LinearB — Engineering Judgment vs Engineering Met...',
+    description: 'APER (AI Performance Economics Rating) vs LinearB comparison. APER evaluates engineers on economic judgment. LinearB tracks engineering activity metrics...',
     keywords: ['linearb alternative', 'engineering metrics tool', 'engineering judgment assessment', 'aper vs linearb', 'developer productivity measurement'],
     alternates: { canonical: 'https://www.richardewing.io/compare/aper-vs-linearb' },
     openGraph: { title: 'APER vs LinearB — Judgment vs Activity', description: 'LinearB tracks what engineers did. APER evaluates whether they made economically sound decisions.', url: 'https://www.richardewing.io/compare/aper-vs-linearb', type: 'article' },

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'The Operating System | Algorithmic Solvency Tools',
-    description: 'The Product Economist operating system. AI-powered diagnostic tools for technical debt quantification, AI unit economics, enterprise valuation, and engineering efficiency. By Richard Ewing.',
+    description: 'The Product Economist operating system. AI-powered diagnostic tools for technical debt quantification, AI unit economics, enterprise valuation, and engi...',
     keywords: [
         'product economist tools',
         'algorithmic solvency',

@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import BriefingsPage from './content';
 
 export const metadata: Metadata = {
-    title: 'Executive Briefings | War-Time Intelligence for AI-Era Leaders',
-    description: 'High-signal intelligence for War-Time Executives. Briefings on engineering economics, AI cost governance, technical insolvency, and the subprime code crisis. By Richard Ewing, Product Economist.',
+    title: 'Executive Briefings | War-Time Intelligence for AI-Era Le...',
+    description: 'High-signal intelligence for War-Time Executives. Briefings on engineering economics, AI cost governance, technical insolvency, and the subprime code cr...',
     keywords: [
         'executive briefings',
         'war-time leadership',

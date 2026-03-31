@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for AI-First Companies — Margin Defense & Governance | Richard Ewing',
-    description: 'Product economics advisory for AI-first companies. AI unit economics modeling, margin erosion prevention, model dependency analysis, and Exogram integration for AI governance.',
+    title: 'Product Economics for AI-First Companies — Margin Defense...',
+    description: 'Product economics advisory for AI-first companies. AI unit economics modeling, margin erosion prevention, model dependency analysis, and Exogram integra...',
     keywords: ['AI company technical debt', 'AI margin erosion', 'LLM cost optimization', 'AI-first product economics', 'AI governance advisory', 'LLM unit economics', 'exogram integration'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ai-first' },
     openGraph: { title: 'Product Economics for AI-First Companies', description: 'Margin defense, cost modelinng, and AI governance for companies building on LLMs.', url: 'https://www.richardewing.io/industries/ai-first', type: 'website' },
 };
 
 const challenges = [
-    { icon: '📉', title: 'Margin Erosion', description: 'Every AI interaction costs money. Unlike traditional SaaS (95%+ gross margin), AI-first products operate at 40-70% margins. At scale, this compresses valuation multiples.' },
-    { icon: '🔗', title: 'Model Dependency', description: 'Building on GPT-4, Claude, or Gemini means your core capability is controlled by someone else. Price changes, deprecations, and capability regressions are existential risks.' },
+    { icon: '📉', title: 'Margin Erosion', description: 'Every AI interaction costs money. Unlike traditional SaaS (95%+ gross margin), AI-first products operate at 40-70% margins. At scale, this compresses va...' },
+    { icon: '🔗', title: 'Model Dependency', description: 'Building on GPT-4, Claude, or Gemini means your core capability is controlled by someone else. Price changes, deprecations, and capability regressions a...' },
     { icon: '🎭', title: 'Hallucination Liability', description: 'When your AI gives wrong information to a customer, who is liable? AI Hallucination Debt compounds invisibly until it creates a crisis.' },
-    { icon: '💰', title: 'Unsustainable Unit Economics', description: 'Most AI features are margin-negative when fully loaded costs are included (inference + retrieval + monitoring + error handling). The AUEB calculator reveals this.' },
+    { icon: '💰', title: 'Unsustainable Unit Economics', description: 'Most AI features are margin-negative when fully loaded costs are included (inference + retrieval + monitoring + error handling). The AUEB calculator rev...' },
 ];
 
 export default function AIFirstPage() {

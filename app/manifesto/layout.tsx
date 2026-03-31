@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'The Product Economist Manifesto | Innovation Without Solvency is Philanthropy',
+    title: 'The Product Economist Manifesto | Innovation Without Solv...',
     description: 'The era of the "Happy Builder" is over. A manifesto on capital sovereignty for product leaders. By Richard Ewing, Product Economist and Founder of Exogram.',
     keywords: [
         'product economist manifesto',
