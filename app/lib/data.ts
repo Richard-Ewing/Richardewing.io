@@ -308,5 +308,70 @@ export const frameworks = [
             { title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publication: 'Mind the Product', date: 'Feb 2026', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
         ],
         relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }
+    },
+    {
+        slug: 'vibe-coding-debt',
+        name: 'Vibe Coding Debt',
+        definition: `Vibe Coding Debt is the specific architectural liability created when engineers use AI copilots to generate large volumes of probabilistic code without deeply understanding the underlying system logic.\n\nA rapidly trending concept in 2026, "vibe coding" describes an experimental, iterative workflow where developers prompt an AI to generate features, accepting the code because it "vibes" or appears to work, without verifying edge cases or structural integrity. While this produces unprecedented short-term velocity, it creates a massive undocumented liability.\n\nVibe Coding Debt is uniquely dangerous because unlike traditional technical debt—which human engineers usually understand because they wrote it—vibe coding debt is opaque. When an LLM-generated abstraction breaks three quarters later, the original human "author" has zero context on why the code was structured that way, making the Mean Time To Recovery (MTTR) catastrophic.`,
+        whyItMatters: `For startups rushing to ship AI features, Vibe Coding Debt is the silent killer. It creates isolated pockets of code that nobody on the team fully understands, severely complicating future scaling or security audits.\n\nFor CTOs and engineering leaders, governing vibe coding requires a structural shift in how teams operate: moving developers from being code generators to being systems auditors. Relying on the Product Debt Index (PDI) to track opaque code regions ensures that vibe coding velocity doesn't trigger unexpected Technical Insolvency.`,
+        howToCalculate: [
+            'Audit code contributions to identify segments exclusively authored by AI copilots',
+            'Measure the test coverage of AI-generated vs. human-authored code',
+            'Calculate MTTR for incidents within AI-generated modules vs. legacy human code',
+            'Index these factors through the Product Debt Index (PDI) calculator'
+        ],
+        relatedArticles: [
+            { title: 'Technical Debt Governance Frameworks for AI Startups', publication: 'The Canon', date: 'Apr 2026', url: '/articles/technical-debt-governance-frameworks-for-ai-startups' },
+            { title: 'Vibe Coding Debt: The Silent Killer of AI-Native Startups', publication: 'The Canon', date: 'Apr 2026', url: '/blog/vibe-coding-debt-the-silent-killer-of-ai-native-startups' }
+        ],
+        relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }
+    },
+    {
+        slug: 'shadow-agents',
+        name: 'Shadow Agents',
+        definition: `Shadow Agents represent the next, more dangerous evolution of Shadow IT: autonomous, AI-driven workflows deployed by business units without centralized IT governance or security oversight.\n\nWhile traditional Shadow IT typically involves employees using unsanctioned SaaS tools, a Shadow Agent acts as an autonomous digital worker. It operates continuously, often holding elevated API permissions or scraping sensitive corporate data into unvetted vector databases across different platforms. Because they operate at machine speed, Shadow Agents can trigger systemic failures, budget overruns, or data exfiltration events in milliseconds.\n\nIn 2026, the primary cybersecurity challenge for enterprises is mapping the "traceability black hole" caused by these non-human actors orchestrating complex workflows beyond the visibility of the CISO.`,
+        whyItMatters: `For CISOs, Shadow Agents exponentially multiply the enterprise threat surface. Attackers leveraging prompt injection techniques can hijack a poorly secured Shadow Agent to execute authenticated commands across the internal network.\n\nFor CIOs managing budgets, Shadow Agents trigger unmonitored API inference loops, resulting in massive, unexpected cloud consumption spikes.\n\nGoverning Shadow Agents requires implementing Zero-Trust pipelines and strict Boundary Control Protocols, ensuring every autonomous action is deterministically evaluated for admissibility before execution.`,
+        howToCalculate: [
+            'Deploy API monitoring to detect non-human traffic patterns from unsanctioned namespaces',
+            'Conduct a centralized inventory audit mapping all authorized autonomous actions',
+            'Enforce Exogram Action Admissibility Protocol (EAAP) verification across all external APIs',
+            'Score the organizational risk profile using the Enterprise Value Scenario Engine (EV-SE)'
+        ],
+        relatedArticles: [
+            { title: 'The Rise of Shadow Agents: Why Your Next Data Breach Will Be Automated', publication: 'The Canon', date: 'Apr 2026', url: '/blog/the-rise-of-shadow-agents-why-your-next-data-breach-will-be-automated' }
+        ],
+        relatedTool: { name: 'Enterprise Value Scenario Engine (EV-SE)', url: '/tools/ev-se' }
+    },
+    {
+        slug: 'agentic-drift',
+        name: 'Agentic Drift (Logic Drift)',
+        definition: `Agentic Drift, or Logic Drift, is the compounding error rate that occurs when probabilistic AI systems operate recursively without deterministic human verification or hard enforcement boundaries.\n\nAs autonomous agents execute multi-step plans, they continuously reinterpret past context windows and intermediate results to determine their next action. Because language models hallucinate or misweigh instructions slightly on each pass, a minor interpretation error at step 1 geometrically expands by step 4. This causes the agent to "drift" from its original objective, potentially executing destructive commands or hallucinating false operational states.\n\nAgentic drift is why prototype agents work perfectly on simple deterministic test cases, but repeatedly fail in dynamic, unpredictable enterprise production environments.`,
+        whyItMatters: `Agentic drift is the primary reason enterprise AI initiatives fail to scale. Without addressing drift, human-in-the-loop (HITL) overrides become structurally required, defeating the entire ROI of automation.\n\nMitigating Agentic Drift requires wrapping probabilistic models in deterministic state machines, utilizing structural schema validation, Threat Prevention Layers, and cryptographic State Hashing to ground the agent at every iteration loop—all core capabilities of the Exogram architecture.`,
+        howToCalculate: [
+            'Measure the success rate of agent plans as the number of execution steps increases',
+            'Calculate the manual intervention rate (MIR) required to correct drifted agents',
+            'Deploy the Exogram Schema Integrity Engine to force deterministic checkpointing between reasoning loops'
+        ],
+        relatedArticles: [
+            { title: 'AI Agents Won\'t Crash the Economy. Bad Governance Might.', publication: 'Built In', date: 'Mar 2026', url: 'https://builtin.com/articles/agentic-ai-scientific-economic-analysis' }
+        ],
+        relatedTool: { name: 'Exogram Diagnostic', url: '/' }
+    },
+    {
+        slug: 'return-on-ai-investment',
+        name: 'ROAI (Return on AI Investment)',
+        definition: `ROAI is the strict financial framework used to measure the tangible margin improvements derived from AI deployments, marking the end of the "AI at any cost" experimentation era.\n\nThroughout 2024 and 2025, enterprises funded AI pilots based on strategic FOMO (Fear Of Missing Out), rarely scrutinizing the precise unit economics of inference costs versus generated value. By 2026, CFOs demand quantifiable ROAI. If an AI feature costs $0.05 per inference to operate but only generates $0.01 of measurable productivity or revenue lift, it holds Negative Carry and destroys margins.\n\nROAI demands that every AI integration is evaluated against its Cost of Predictivity. Moving an AI model from 85% to 95% accuracy often requires a 10x increase in compute costs through RAG pipelines and sophisticated multi-agent orchestrations. ROAI establishes the exact AI Margin Collapse Point where the pursuit of algorithmic perfection bankrupts the product.`,
+        whyItMatters: `For product owners, failing to prove ROAI means losing executive sponsorship and budget. The market no longer rewards companies simply for having "AI inside"; it rewards capital-efficient execution.\n\nFor Private Equity evaluating technical operations, negative ROAI is an immediate red flag indicating untracked CapEx burn disguised as innovation.\n\nOptimizing ROAI requires precise benchmarking, isolating token costs per transaction, and comparing them directly to the human labor replaced or the premium pricing enabled.`,
+        howToCalculate: [
+            'Calculate the exact API inference and hosting costs per successful user transaction',
+            'Determine the fractional revenue or productivity value assigned to that transaction',
+            'Plot the Margin Collapse curve comparing cost-per-accuracy tier',
+            'Directly validate ROAI using the AI Unit Economics Benchmark (AUEB) tool'
+        ],
+        relatedArticles: [
+            { title: 'ROAI is the New ROI: Why CFOs Are Killing Your AI Pilots in 2026', publication: 'The Canon', date: 'Apr 2026', url: '/blog/roai-is-the-new-roi-why-cfos-are-killing-your-ai-pilots-in-2026' },
+            { title: 'The Cost of Predictivity', publication: 'Built In', date: 'Nov 2025', url: '/articles/cost-of-predictivity' }
+        ],
+        relatedTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }
     }
 ];

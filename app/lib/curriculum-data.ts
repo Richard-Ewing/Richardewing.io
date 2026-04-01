@@ -27,6 +27,7 @@ export const modules: Record<string, CurriculumModule> = {};
 import { guidesComparisonsModules } from './curriculum-guides-comparisons';
 import { tracks6to10Modules } from './curriculum-tracks-6-10';
 import { tracks18to22Modules } from './curriculum-tracks-18-22';
+import { allAgenticModulesData } from './curriculum-tracks-agentic';
 
 // ═══════════════════ TRACK 1-4 ═══════════════════
 populateTracks1To4(modules);
@@ -39,6 +40,9 @@ Object.assign(modules, tracks6to10Modules);
 
 // ═══════════════════ TRACKS 18-22 ═══════════════════
 Object.assign(modules, tracks18to22Modules);
+
+// ═══════════════════ NEW 2026 AI TREND MODULES ═══════════════════
+Object.assign(modules, allAgenticModulesData);
 
 // ═══════════════════ TRACK 5: DevOps & Platform Economics ═══════════════════
 const t5 = 'Track 5 — DevOps & Platform Economics';

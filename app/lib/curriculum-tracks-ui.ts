@@ -19,6 +19,7 @@ export const tracks = [
             { id: '1-13', name: '1.13 Engineering Budget Planning', topics: 'Zero-Based Budgeting, Headcount Modeling, Contingency Planning', href: '/curriculum/tracks/engineering-economics/1-13' },
             { id: '1-14', name: '1.14 M&A Engineering Integration', topics: 'Day 1-100 Playbook, Talent Retention, Tech Stack Consolidation', href: '/curriculum/tracks/engineering-economics/1-14' },
             { id: '1-15', name: '1.15 Engineering Economics Synthesis', topics: 'Complete Economic Model, Dashboard Design, Quarterly Reporting', href: '/curriculum/tracks/engineering-economics/1-15' },
+            { id: '1-16', name: '1.16 Governing Vibe Coding & AI-Assisted Output', topics: 'Vibe Coding Debt, Copilot ROI, Validation', href: '/curriculum/tracks/engineering-economics/1-16' },
         ],
         color: 'cyan',
         icon: '📊',
@@ -45,6 +46,7 @@ export const tracks = [
             { id: '2-13', name: '2.13 AI Product Lifecycle', topics: 'Prototype to Production 10x Cost, Scaling Patterns', href: '/curriculum/tracks/ai-product-economics/2-13' },
             { id: '2-14', name: '2.14 AI Marketplace Strategy', topics: 'API Monetization, Model-as-a-Service, Developer Ecosystems', href: '/curriculum/tracks/ai-product-economics/2-14' },
             { id: '2-15', name: '2.15 AI Economics Synthesis', topics: 'Complete AI Economic Model, Portfolio Analysis, Board Reporting', href: '/curriculum/tracks/ai-product-economics/2-15' },
+            { id: '2-16', name: '2.16 ROAI and AI Unit Economics', topics: 'Cost of Predictivity, ROAI Calculation, AUEB Ratio', href: '/curriculum/tracks/ai-product-economics/2-16' },
         ],
         color: 'violet',
         icon: '🤖',
@@ -980,5 +982,20 @@ export const tracks = [
         color: 'fuchsia',
         icon: '🚀',
         glossaryTerms: ['engineering-velocity', 'technical-debt']
+    },
+    {
+        title: "Governance for Agentic AI",
+        subtitle: "Track 58 — Emerging Threat Vectors",
+        description: "Focusing on Boundary Control, Kill Switches, and Shadow Agents in autonomous enterprise environments.",
+        modules: [
+            { id: '58-1', name: '58.1 The Rise of Shadow Agents', topics: 'Shadow IT Evolution, Autonomous Risks, Breaches', href: '/vault/curriculum/tracks/agentic-governance/58-1' },
+            { id: '58-2', name: '58.2 Boundary Control & RBAC for AI', topics: 'Agentic Permissions, Least Privilege, Zero Trust', href: '/vault/curriculum/tracks/agentic-governance/58-2' },
+            { id: '58-3', name: '58.3 Kill Switches & Graceful Degradation', topics: 'Manual Overrides, Safety Systems, Fail-safes', href: '/vault/curriculum/tracks/agentic-governance/58-3' },
+            { id: '58-4', name: '58.4 Mitigating Agentic Drift', topics: 'Action Admissibility, Error Correction, Recursive Drift', href: '/vault/curriculum/tracks/agentic-governance/58-4' },
+            { id: '58-5', name: '58.5 ROI of Deterministic Execution', topics: 'PDI, Safe Execution Env, Economic Value', href: '/vault/curriculum/tracks/agentic-governance/58-5' }
+        ],
+        color: 'rose',
+        icon: '🛡️',
+        glossaryTerms: ['agentic-workflow', 'shadow-ai', 'prompt-injection', 'zero-trust']
     }
 ];

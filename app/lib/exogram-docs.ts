@@ -68,6 +68,18 @@ export const exogramDocs: ExogramDoc[] = [
             { type: 'p', text: 'Every valid context window update is hashed and stored in an immutable ledger. When an agent attempts to retrieve memory, the hash is verified. If the memory was hallucinated, the engine prevents the context insertion, keeping the agent grounded.' }
         ]
     },
+    {
+        id: 'shadow-agent-mitigation',
+        slug: 'shadow-agent-mitigation',
+        title: 'Shadow Agent Mitigation',
+        category: 'Architecture',
+        description: 'Preventing unauthorized non-human actors from executing automated workflows.',
+        content: [
+            { type: 'p', text: 'As organizations adopt autonomous AI, employees are deploying undocumented "Shadow Agents" that interact with internal APIs at machine speed. Exogram\'s Threat Prevention Layer stops rogue non-human actors by validating execution provenance.' },
+            { type: 'h2', text: 'Execution Provenance Tracking' },
+            { type: 'p', text: 'Every agentic action must supply a valid cryptographic trace linking the action directly back to an authorized, human-approved session. Unverified programmatic requests are instantly quarantined.' }
+        ]
+    },
 
     // --- CORE CONCEPTS ---
     {
@@ -141,6 +153,18 @@ export const exogramDocs: ExogramDoc[] = [
             { type: 'p', text: 'Adding verification layers cannot bottleneck the application. Exogram enforces strict latency budgets for every check.' },
             { type: 'ul', items: ['Schema Validation: ~2ms', 'Threat Detection: ~15ms', 'Admissibility Check: ~5ms', 'State Hashing: ~1ms'] },
             { type: 'p', text: 'To achieve this, Exogram is built in Rust using WebAssembly modules deployed directly to the edge, running physically adjacent to your application logic.' }
+        ]
+    },
+    {
+        id: 'agentic-identity-rbac',
+        slug: 'agentic-identity-rbac',
+        title: 'Agentic Identity & RBAC',
+        category: 'Core Concepts',
+        description: 'Differentiating human users from autonomous AI consumers in access controls.',
+        content: [
+            { type: 'p', text: 'Standard Role-Based Access Control (RBAC) fails for autonomous AI. A human might have "database read" access, but their AI Agent should only be allowed to read specific anonymized tables. Exogram introduces Agentic Identity to separate human intent from machine execution.' },
+            { type: 'h2', text: 'Machine-Specific Policies' },
+            { type: 'p', text: 'By provisioning explicit Agentic Identities, Exogram enforces least-privilege boundaries specifically tailored to the reasoning capabilities of the LLM in use. High-risk write operations are strictly sandboxed or gated via human-in-the-loop.' }
         ]
     },
 
