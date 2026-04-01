@@ -8,8 +8,9 @@ export async function generateStaticParams() {
     }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-    const doc = getExogramDoc(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const resolvedParams = await params;
+    const doc = getExogramDoc(resolvedParams.slug);
     if (!doc) return { title: 'Not Found' };
 
     return {
@@ -19,8 +20,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     };
 }
 
-export default function ExogramDocPage({ params }: { params: { slug: string } }) {
-    const doc = getExogramDoc(params.slug);
+export default async function ExogramDocPage({ params }: { params: Promise<{ slug: string }> }) {
+    const resolvedParams = await params;
+    const doc = getExogramDoc(resolvedParams.slug);
     if (!doc) return notFound();
 
     return (

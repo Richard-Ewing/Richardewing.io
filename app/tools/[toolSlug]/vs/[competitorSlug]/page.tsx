@@ -19,10 +19,11 @@ function getMatch(toolSlug: string, competitorSlug: string) {
 
 // NextJS Dynamic Metadata
 export async function generateMetadata(
-    { params }: { params: { toolSlug: string; competitorSlug: string } },
+    { params }: { params: Promise<{ toolSlug: string; competitorSlug: string }> },
     parent: ResolvingMetadata
 ): Promise<Metadata> {
-    const match = getMatch(params.toolSlug, params.competitorSlug);
+    const resolvedParams = await params;
+    const match = getMatch(resolvedParams.toolSlug, resolvedParams.competitorSlug);
     if (!match) return { title: 'Comparison Not Found' };
 
     const { tool, competitor } = match;
@@ -43,8 +44,9 @@ export async function generateMetadata(
     };
 }
 
-export default function CombatComparisonPage({ params }: { params: { toolSlug: string; competitorSlug: string } }) {
-    const match = getMatch(params.toolSlug, params.competitorSlug);
+export default async function CombatComparisonPage({ params }: { params: Promise<{ toolSlug: string; competitorSlug: string }> }) {
+    const resolvedParams = await params;
+    const match = getMatch(resolvedParams.toolSlug, resolvedParams.competitorSlug);
 
     if (!match) {
         notFound();

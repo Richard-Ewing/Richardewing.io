@@ -5,14 +5,15 @@ import { articles } from '../../lib/data';
 import { articleSchemaTemplate } from '../../lib/schemas';
 
 interface Props {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 // Generate Metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const article = articles.find((a) => a.slug === params.slug);
+    const resolvedParams = await params;
+    const article = articles.find((a) => a.slug === resolvedParams.slug);
 
     if (!article) {
         return {
@@ -49,8 +50,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default function ArticlePage({ params }: Props) {
-    const article = articles.find((a) => a.slug === params.slug);
+export default async function ArticlePage({ params }: Props) {
+    const resolvedParams = await params;
+    const article = articles.find((a) => a.slug === resolvedParams.slug);
 
     if (!article) {
         return notFound();

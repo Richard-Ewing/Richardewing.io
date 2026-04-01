@@ -39,7 +39,6 @@ export default function CelebrationOverlay({
     subtitle = 'Excellent work. Keep building your engineering economics expertise.',
     duration = 4000,
 }: CelebrationOverlayProps) {
-    const [particles, setParticles] = useState<Particle[]>([]);
     const [visible, setVisible] = useState(false);
     const [fadeOut, setFadeOut] = useState(false);
     const [showContent, setShowContent] = useState(false);
@@ -89,13 +88,10 @@ export default function CelebrationOverlay({
     useEffect(() => {
         if (!isActive) return;
 
-        setTimeout(() => {
-            setVisible(true);
-            setFadeOut(false);
-            setShowContent(false);
-            const particleData = createParticles();
-            setParticles(particleData);
-        }, 0);
+        setVisible(true);
+        setFadeOut(false);
+        setShowContent(false);
+        const particleData = createParticles();
 
         // Show content after a brief delay
         const contentTimer = setTimeout(() => setShowContent(true), 300);
