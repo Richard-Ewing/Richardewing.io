@@ -259,7 +259,7 @@ export default function CloudContent() {
                                                 <label className="text-xs font-mono text-rose-500 uppercase tracking-widest flex items-center gap-2"><Activity size={12}/> Network Egress/Bandwidth</label>
                                                 <div className="text-xl font-bold text-white font-mono">{egressP}%</div>
                                             </div>
-                                            {/* eslint-disable-next-line react/forbid-dom-props */}
+                                            { }
                                             <div className="w-full bg-zinc-800 h-2 rounded mt-2 overflow-hidden"><div className={`bg-rose-500 h-full ${styles.progressBar}`} style={{'--progress-width': `${egressP}%`} as React.CSSProperties} /></div>
                                         </div>
                                     </div>

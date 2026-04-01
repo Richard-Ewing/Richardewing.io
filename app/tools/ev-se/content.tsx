@@ -27,7 +27,7 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                 <div key={i} className="flex items-center gap-4">
                     <div className="w-24 text-xs font-mono text-zinc-500 text-right">{item.name}</div>
                     <div className="flex-1 h-10 bg-zinc-900 rounded-lg overflow-hidden relative">
-                        {/* eslint-disable-next-line react/forbid-dom-props */}
+                        { }
                         <div
                             className={`h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4 ${styles.waterfallBar}`}
                             style={ {
@@ -72,7 +72,7 @@ const RiskSlider = ({ label, value, onChange, description }: {
             </div>
             <div className="relative">
                 <div className="absolute inset-0 h-2 rounded-lg bg-gradient-to-r from-emerald-500/30 via-yellow-500/30 to-red-500/30" />
-                {/* eslint-disable-next-line react/forbid-dom-props */}
+                { }
                 <input
                     type="range"
                     min="0"
@@ -351,7 +351,7 @@ export default function EVSETool() {
 
                         <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden">
                             <div className="absolute top-0 left-0 w-full h-1 bg-zinc-800">
-                                {/* eslint-disable-next-line react/forbid-dom-props */}
+                                { }
                                 <div className={`h-full bg-purple-500 transition-all duration-500 ${styles.progressHeader}`} style={ { '--header-progress': `${(step / 3) * 100}%` } as React.CSSProperties } />
                             </div>
 

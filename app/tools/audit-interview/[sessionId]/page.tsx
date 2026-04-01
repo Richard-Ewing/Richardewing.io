@@ -469,7 +469,7 @@ export default function SessionCommandCenter() {
                         {formatTime(timeLeft)}
                     </div>
                     <div className="h-1 w-full bg-zinc-900 mt-4 rounded-full overflow-hidden">
-                        {/* eslint-disable-next-line react/forbid-dom-props */}
+                        { }
                         <div
                             className={`h-full transition-all duration-1000 ${timeLeft < 60 ? 'bg-red-500' : 'bg-zinc-500'} ${styles.timeProgress}`}
                             style={ { '--time-left-pct': `${(timeLeft / 1200) * 100}%` } as React.CSSProperties }

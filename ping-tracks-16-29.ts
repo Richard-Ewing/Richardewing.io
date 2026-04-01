@@ -2,7 +2,7 @@ import { execSync } from 'child_process';
 import { modules } from './app/lib/curriculum-data';
 
 const baseUrl = 'https://www.richardewing.io/curriculum/tracks/';
-let urls = [];
+const urls = [];
 
 // Get all module slugs
 for (const [slug, mod] of Object.entries(modules)) {

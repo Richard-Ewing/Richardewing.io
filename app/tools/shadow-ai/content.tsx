@@ -121,21 +121,21 @@ export default function ShadowContent() {
                 
                 let foundEvents = 0;
                 let knownSpend = 0;
-                let activeVendors = new Map<string, { count: number; spend: number; threat: string }>();
+                const activeVendors = new Map<string, { count: number; spend: number; threat: string }>();
 
                 // Heuristic mapping logic: look at all string columns against the dictionary
-                for (let row of rows) {
-                    let textCorpus = Object.values(row).join(' ');
+                for (const row of rows) {
+                    const textCorpus = Object.values(row).join(' ');
                     // Attempt to find spend column (amount, price, cost...)
                     let lineItemCost = 0;
-                    for (let key of Object.keys(row)) {
+                    for (const key of Object.keys(row)) {
                         if (/amount|cost|price|spend|total/i.test(key)) {
                             const val = parseFloat((row[key] as string).replace(/[^0-9.-]+/g,""));
                             if (!isNaN(val)) lineItemCost = val;
                         }
                     }
 
-                    for (let vendor of AI_DICTIONARY) {
+                    for (const vendor of AI_DICTIONARY) {
                         if (vendor.regex.test(textCorpus)) {
                             foundEvents++;
                             knownSpend += lineItemCost;

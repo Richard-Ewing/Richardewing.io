@@ -93,10 +93,9 @@ export default function CelebrationOverlay({
             setVisible(true);
             setFadeOut(false);
             setShowContent(false);
+            const particleData = createParticles();
+            setParticles(particleData);
         }, 0);
-
-        const particleData = createParticles();
-        setParticles(particleData);
 
         // Show content after a brief delay
         const contentTimer = setTimeout(() => setShowContent(true), 300);

@@ -18,7 +18,7 @@ function chunkText(text: string, chunkSize: number, overlap: number) {
     const chunks = [];
     let i = 0;
     while (i < text.length) {
-        let end = i + chunkSize;
+        const end = i + chunkSize;
         const chunkStr = text.slice(i, end);
         chunks.push({
             id: `chunk-${i}`,

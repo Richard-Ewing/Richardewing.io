@@ -178,11 +178,11 @@ export default function AIRoiTimelineContent() {
                                             <div className="col-span-2 text-xs font-mono text-zinc-500">Month {month}</div>
                                             <div className="col-span-8 bg-black h-4 rounded-full relative overflow-hidden border border-white/5">
                                                 {/* Zero Line Marker */}
-                                                {/* eslint-disable-next-line react/forbid-dom-props */}
+                                                { }
                                                 <div className={`absolute top-0 bottom-0 border-l border-zinc-700 z-10 ${styles.zeroLine}`} style={ { '--left-pos': `${zeroPoint}%` } as React.CSSProperties }></div>
                                                 
                                                 {/* The Bar */}
-                                                {/* eslint-disable-next-line react/forbid-dom-props */}
+                                                { }
                                                 <div 
                                                     className={`absolute top-0 bottom-0 rounded-full ${isProfitable ? 'bg-green-500/50 group-hover:bg-green-400' : 'bg-rose-500/50 group-hover:bg-rose-400'} transition-colors ${styles.barGraph}`}
                                                     style={ { 
