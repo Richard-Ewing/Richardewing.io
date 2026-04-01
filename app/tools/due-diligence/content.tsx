@@ -661,6 +661,9 @@ export default function DueDiligenceTool() {
                                     transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
                                 >
                                     <div className="capsule-container rounded-2xl p-6 sm:p-8 mt-8 border border-white/5 bg-black/20">
+                                        <div className="flex items-center gap-2 mb-4">
+                                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                        </div>
                                         <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                                             <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                                             Prescriptive Integration Protocols

@@ -8,7 +8,7 @@ import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle } from 'lucide-react';
+import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle, Lock } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
@@ -520,7 +520,7 @@ export default function EVSETool() {
 
                             {showGate && (
                                 <div className="mt-6">
-                                    <ToolGate toolName="the Enterprise Value Scenario Engine" onUnlock={() => { setShowGate(false); calculate(); }}>
+                                    <ToolGate toolName="the Enterprise Value Scenario Engine" toolSlug="ev-se" mappedCurriculumId="2-3" onUnlock={() => { setShowGate(false); calculate(); }}>
                                         <></>
                                     </ToolGate>
                                 </div>
@@ -536,6 +536,9 @@ export default function EVSETool() {
                     {/* ACTION HEADER & PDF EXPORT */}
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-white/10 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                            </div>
                             <h2 className="text-xl font-bold text-white mb-1">Valuation Waterfall Generated</h2>
                             <p className="text-sm text-zinc-400">Export this assessment to a verified Executive PDF.</p>
                         </div>

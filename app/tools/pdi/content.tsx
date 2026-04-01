@@ -562,6 +562,9 @@ Migrate from Heroku to AWS"
                 <div id="pdi-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-cyan-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                            </div>
                             <h2 className="text-xl font-bold text-white mb-1">PDI Diagnostic Complete</h2>
                             <p className="text-sm text-zinc-400">Export this assessment to a verified Executive PDF for board review.</p>
                         </div>

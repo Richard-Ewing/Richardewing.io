@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Rocket, Users, Coins, Calculator, TrendingDown, RefreshCcw, DownloadCloud, TrendingUp, Clock, ShieldAlert } from 'lucide-react';
+import { ArrowLeft, Rocket, Users, Coins, Calculator, TrendingDown, RefreshCcw, DownloadCloud, TrendingUp, Clock, ShieldAlert, Lock } from 'lucide-react';
 import Link from 'next/link';
 import ToolCelebration from '@/app/components/ToolCelebration';
 import { VaultUpsell } from '../../components/VaultUpsell';
@@ -129,6 +129,9 @@ export default function AIRoiTimelineContent() {
                     <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="space-y-8">
                         <ToolCelebration show={view === 'results'} toolName="AI ROI Modeler" />
                         
+                        <div className="flex items-center gap-2 mb-2 justify-center">
+                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                        </div>
                         {/* Executive Summary */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div className="p-6 bg-zinc-900 border border-zinc-800 rounded-2xl relative overflow-hidden group">
