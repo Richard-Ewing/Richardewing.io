@@ -182,6 +182,45 @@ export default function ToolsContent() {
               </ShineBorder>
             </Link>
 
+            <Link href="/tools/prompt-injection-sandbox" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#10b981", "#059669", "#047857"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-emerald-600/20 flex items-center justify-center text-emerald-400 font-bold">13</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-emerald-400">Prompt Injection Sandbox</h3>
+                    <p className="text-gray-400 text-sm mb-3">Test your system prompts against modern jailbreaks, Base64 encodings, and roleplay bypass heuristics.</p>
+                    <span className="text-emerald-400 text-sm">Run Red Team →</span>
+                  </div>
+                </div>
+              </ShineBorder>
+            </Link>
+
+            <Link href="/tools/rag-chunking-visualizer" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#6366f1", "#4f46e5", "#4338ca"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-indigo-600/20 flex items-center justify-center text-indigo-400 font-bold">14</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-indigo-400">RAG Chunking Visualizer</h3>
+                    <p className="text-gray-400 text-sm mb-3">Visually optimize your Vector DB embeddings. See exactly where semantic context breaks.</p>
+                    <span className="text-indigo-400 text-sm">Map Boundaries →</span>
+                  </div>
+                </div>
+              </ShineBorder>
+            </Link>
+
+            <Link href="/tools/agent-router" className="group block">
+              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#3b82f6", "#2563eb", "#1d4ed8"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-blue-600/20 flex items-center justify-center text-blue-400 font-bold">15</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400">Agentic Token Simulator</h3>
+                    <p className="text-gray-400 text-sm mb-3">Calculate the compound token decay and GPU execution costs of multi-agent LLM workflows.</p>
+                    <span className="text-blue-400 text-sm">Run FinOps Simulation →</span>
+                  </div>
+                </div>
+              </ShineBorder>
+            </Link>
+
           </div>
         </section>
 

@@ -31,13 +31,13 @@ if (urls.length > 0) {
     try {
         execSync(`node ping-google.js ${urls.join(' ')}`, { stdio: 'inherit' });
     } catch (e) {
-        console.error('Error pinging Google:', e.message);
+        console.error('Error pinging Google:', (e as Error).message);
     }
 
     try {
         execSync(`node ping-indexnow.js ${urls.join(' ')}`, { stdio: 'inherit' });
     } catch (e) {
-        console.error('Error pinging IndexNow:', e.message);
+        console.error('Error pinging IndexNow:', (e as Error).message);
     }
 
     console.log('Automated indexing payload dispatched.');
