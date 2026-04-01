@@ -102,6 +102,10 @@ export function getModule(slug: string): CurriculumModule | undefined {
         if (mod.moduleId === '11-1' || mod.moduleId === '11-16') mod.embeddedTool = 'aueb';
         if (mod.moduleId === '6-1' || mod.moduleId === '10-4') mod.embeddedTool = 'aper';
         if (mod.moduleId === '5-10') mod.embeddedTool = 'ev-se';
+        if (mod.moduleId === '27-10') mod.embeddedTool = 'shadow-ai';
+        if (mod.moduleId === '28-2') mod.embeddedTool = 'prompt-injection-sandbox';
+        if (mod.moduleId === '27-7') mod.embeddedTool = 'rag-chunking-visualizer';
+        if (mod.moduleId === '29-10') mod.embeddedTool = 'agent-router';
     }
     
     return mod;

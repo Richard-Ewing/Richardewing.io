@@ -9,7 +9,7 @@ import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import ShineBorder from '../../components/magicui/shine-border';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Network, Server, ArrowRight, ShieldCheck, Cpu, DollarSign } from 'lucide-react';
+import { Network, Server, ArrowRight, ShieldCheck, Cpu, DollarSign, Lock } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
 import { GlowCard } from '../../components/magicui/glow-card';
 
@@ -109,7 +109,7 @@ export default function AgentRouterContent() {
             
             <div className="mb-6 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                    <Link href="/system" className="hover:text-white transition">Intelligence</Link>
+                    <Link href="/tools" className="hover:text-white transition">Enterprise Diagnostics</Link>
                     <span>/</span>
                     <span className="text-white font-bold">FinOps Router Emulator</span>
                 </div>
@@ -199,7 +199,7 @@ export default function AgentRouterContent() {
 
                         {showGate && (
                             <div className="mt-6">
-                                <ToolGate toolName="FinOps Simulator" onUnlock={() => { setShowGate(false); runSimulation(); }}>
+                                <ToolGate toolName="FinOps Simulator" toolSlug="agent-router" mappedCurriculumId="27-4" onUnlock={() => { setShowGate(false); runSimulation(); }}>
                                     <></>
                                 </ToolGate>
                             </div>
@@ -210,6 +210,9 @@ export default function AgentRouterContent() {
                 <div id="router-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
                      <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-blue-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="bg-blue-500/20 text-blue-400 border border-blue-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                            </div>
                             <h2 className="text-xl font-bold text-white mb-1">Architecture Economics Validated</h2>
                             <p className="text-sm text-zinc-400">Compounding token burn mapped across {agentHops} sequential hops.</p>
                         </div>
@@ -224,7 +227,7 @@ export default function AgentRouterContent() {
                                 <BorderBeam size={400} duration={12} delay={9} borderWidth={1.5} colorFrom="#3b82f6" colorTo="#8b5cf6" />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                     <div>
-                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Compounded Monthly API Spend</div>
+                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">API Bankruptcy Liability (CODN)</div>
                                         <div className={`text-6xl sm:text-7xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.monthlyCost > 50000 ? 'from-red-500 to-rose-600' : 'from-blue-400 to-indigo-500'}`}>
                                             {formatMoney(results.monthlyCost)}
                                         </div>
@@ -279,8 +282,8 @@ export default function AgentRouterContent() {
                             <VaultUpsell 
                                 urgencyLevel={results.monthlyCost > 10000 && !useEdgeRouter ? 'critical' : 'growth'}
                                 recommendedTracks={[
-                                    { id: 'TRACK-10', title: 'Sovereign Edge Integration', desc: 'Deploying quantization and Apple Silicon for free, infinite local routing loops.' },
-                                    { id: 'TRACK-20', title: 'System Design Economics', desc: 'Prevent API bankruptcy by tracking COGS at the individual node layer.' }
+                                    { id: 'Module 27-4', title: 'Hybrid Cloud-Edge Routing', desc: 'Deploying quantization and Apple Silicon for free local routing loops.' },
+                                    { id: 'Module 29-10', title: 'Capstone: AI FinOps Integration', desc: 'Prevent API bankruptcy by tracking token COGS at the individual node layer.' }
                                 ]} 
                             />
 

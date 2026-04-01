@@ -9,15 +9,18 @@ import { useUser } from '@clerk/nextjs';
 interface ToolGateProps {
     children: React.ReactNode;
     toolName?: string;
+    toolSlug?: string;
+    mappedCurriculumId?: string;
     /** Called when the user successfully submits their email. Use this to trigger the tool's calculation. */
     onUnlock?: () => void;
 }
 
-export default function ToolGate({ children, toolName = "This Diagnostic", onUnlock }: ToolGateProps) {
+export default function ToolGate({ children, toolName = "This Diagnostic", toolSlug, mappedCurriculumId, onUnlock }: ToolGateProps) {
     const [isUnlocked, setIsUnlocked] = useState(false);
     const [validationError, setValidationError] = useState('');
     const [isValidating, setIsValidating] = useState(false);
     const [email, setEmail] = useState('');
+    const [usesCounter, setUsesCounter] = useState(0);
     const formRef = useRef<HTMLFormElement>(null);
 
     // Using the same form ID as the newsletter form for consistent tracking
@@ -26,28 +29,61 @@ export default function ToolGate({ children, toolName = "This Diagnostic", onUnl
     
     const { isLoaded, isSignedIn, user } = useUser();
 
-    // Auto-unlock if user is already authenticated via Clerk
+    // Check usage limits locally on mount
     React.useEffect(() => {
-        if (isLoaded && isSignedIn && user?.primaryEmailAddress?.emailAddress && !isUnlocked) {
-            // Silently capture the lead since they bypassed the form
-            fetch('/api/beehiiv', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: user.primaryEmailAddress.emailAddress, source: `${toolName} Gate (Auto)` }),
-            }).catch(() => {});
-            
+        const storedUses = localStorage.getItem('exogram_tool_uses');
+        if (storedUses) {
+            setUsesCounter(parseInt(storedUses, 10));
+        }
+    }, []);
+
+    // Evaluate Paid Entitlements
+    const isVaultMaster = user?.publicMetadata?.has_yearly_subscription === true;
+    const unlockedAssets = (user?.publicMetadata?.unlocked_items as string[]) || [];
+    const hasToolAsset = toolSlug ? unlockedAssets.includes(toolSlug) : false;
+    const hasCurriculumAsset = mappedCurriculumId ? unlockedAssets.includes(mappedCurriculumId) : false;
+    const hasPaidEntitlement = isVaultMaster || hasToolAsset || hasCurriculumAsset;
+
+    // Auto-unlock if user has paid entitlements
+    React.useEffect(() => {
+        if (isLoaded && isSignedIn && hasPaidEntitlement && !isUnlocked) {
             setIsUnlocked(true);
             onUnlock?.();
         }
-    }, [isLoaded, isSignedIn, isUnlocked, onUnlock, user, toolName]);
+    }, [isLoaded, isSignedIn, hasPaidEntitlement, isUnlocked, onUnlock]);
+
+    // Auto-unlock (bypass form) for signed-in free users BUT increment their local counter
+    React.useEffect(() => {
+        if (isLoaded && isSignedIn && user?.primaryEmailAddress?.emailAddress && !isUnlocked && !hasPaidEntitlement) {
+            if (usesCounter < 3) {
+                 fetch('/api/beehiiv', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: user.primaryEmailAddress.emailAddress, source: `${toolName} Gate (Auto)` }),
+                }).catch(() => {});
+                
+                const newCount = usesCounter + 1;
+                setUsesCounter(newCount);
+                localStorage.setItem('exogram_tool_uses', newCount.toString());
+                
+                setIsUnlocked(true);
+                onUnlock?.();
+            }
+        }
+    }, [isLoaded, isSignedIn, isUnlocked, onUnlock, user, toolName, usesCounter, hasPaidEntitlement]);
 
     // When Formspree submission succeeds, unlock and trigger callback
     React.useEffect(() => {
         if (state.succeeded) {
+            const newCount = usesCounter + 1;
+            setUsesCounter(newCount);
+            if (!hasPaidEntitlement) {
+                localStorage.setItem('exogram_tool_uses', newCount.toString());
+            }
             setIsUnlocked(true);
             onUnlock?.();
         }
-    }, [state.succeeded, onUnlock]);
+    }, [state.succeeded, onUnlock, usesCounter, isSignedIn]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -101,6 +137,28 @@ export default function ToolGate({ children, toolName = "This Diagnostic", onUnl
 
     if (isUnlocked) {
         return <>{children}</>;
+    }
+
+    const isLimitExceeded = usesCounter >= 3 && !hasPaidEntitlement;
+
+    if (isLimitExceeded) {
+        return (
+            <div className="w-full bg-zinc-900/50 border border-red-500/20 rounded-3xl text-white flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden my-8 shadow-2xl backdrop-blur-sm">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.05),transparent_70%)] pointer-events-none" />
+                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="max-w-xl w-full text-center z-10">
+                    <div className="w-16 h-16 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(239,68,68,0.1)]">
+                        <Lock className="w-8 h-8 text-red-500" />
+                    </div>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tighter text-white">Diagnostic Limit Reached</h2>
+                    <p className="text-zinc-400 text-lg mb-8 max-w-md mx-auto">
+                        You have exceeded the maximum number of free generic diagnostic scans. To continue evaluating systems via {toolName}, please join the Vault.
+                    </p>
+                    <a href="/vault/join" className="block w-full py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold uppercase tracking-widest text-sm rounded-xl transition-all shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:shadow-[0_0_30px_rgba(225,29,72,0.6)]">
+                        Upgrade & Unlock Vault →
+                    </a>
+                </motion.div>
+            </div>
+        );
     }
 
     return (

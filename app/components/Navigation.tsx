@@ -60,11 +60,15 @@ const Navigation = () => {
                                 <DropdownItem href="/resources/ai-courses" description="Free AI & engineering courses">AI Courses</DropdownItem>
                             </Dropdown>
 
-                            <Dropdown label="ROI Calculators">
+                            <Dropdown label="Enterprise Diagnostics">
                                 <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">PDI — Product Debt Index</DropdownItem>
                                 <DropdownItem href="/tools/ev-se" description="Model enterprise value per engineer">EV-SE — Valuation Engine</DropdownItem>
                                 <DropdownItem href="/tools/aueb" description="Calculate AI unit economics">AUEB — AI Unit Economics</DropdownItem>
                                 <DropdownItem href="/tools/aper" description="Measure adjusted productivity ratio">APER — Engineering Ratio</DropdownItem>
+                                <DropdownItem href="/tools/shadow-ai" description="Zero-trust localized API scanner">Shadow AI Sandbox</DropdownItem>
+                                <DropdownItem href="/tools/prompt-injection-sandbox" description="Red-team prompt vulnerabilities">Prompt Injection Matrix</DropdownItem>
+                                <DropdownItem href="/tools/rag-chunking-visualizer" description="Vector semantic overlap utility">RAG Chunking Extrapolator</DropdownItem>
+                                <DropdownItem href="/tools/agent-router" description="API cost vs token ROI simulator">Agentic FinOps Simulator</DropdownItem>
                             </Dropdown>
                             
                             <Link href="/tools/audit-interview" className="text-gray-300 hover:text-white transition-colors relative group font-medium">
@@ -224,11 +228,15 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     {/* Tools Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest pl-2">ROI Calculators</h3>
+                        <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest pl-2">Enterprise Diagnostics</h3>
                         <MobileLink href="/tools/pdi" onClick={onClose}>PDI — Product Debt Index</MobileLink>
                         <MobileLink href="/tools/ev-se" onClick={onClose}>EV-SE — Valuation Engine</MobileLink>
                         <MobileLink href="/tools/aueb" onClick={onClose}>AUEB — AI Unit Economics</MobileLink>
                         <MobileLink href="/tools/aper" onClick={onClose}>APER — Engineering Ratio</MobileLink>
+                        <MobileLink href="/tools/shadow-ai" onClick={onClose}>Shadow AI Matrix</MobileLink>
+                        <MobileLink href="/tools/prompt-injection-sandbox" onClick={onClose}>Prompt Injection Sandbox</MobileLink>
+                        <MobileLink href="/tools/rag-chunking-visualizer" onClick={onClose}>RAG Visualizer</MobileLink>
+                        <MobileLink href="/tools/agent-router" onClick={onClose}>Agentic FinOps Simulator</MobileLink>
                         <MobileLink href="/tools/audit-interview" onClick={onClose}>Audit Interview</MobileLink>
                     </div>
 

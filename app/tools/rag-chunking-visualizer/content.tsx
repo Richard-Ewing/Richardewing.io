@@ -9,7 +9,7 @@ import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import ShineBorder from '../../components/magicui/shine-border';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Layers, Database, ArrowRight, Server, FileText, Settings, TriangleAlert } from 'lucide-react';
+import { Layers, Database, ArrowRight, Server, FileText, Settings, TriangleAlert, Lock } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
 
 // Helper to chunk text
@@ -44,6 +44,7 @@ export default function RagChunkingContent() {
         chunks: { id: string, text: string, start: number, end: number }[];
         brokenWords: number;
         efficiencyScore: number;
+        codn: number;
     } | null>(null);
     const [showGate, setShowGate] = useState(false);
 
@@ -67,11 +68,13 @@ export default function RagChunkingContent() {
 
             const penalty = (brokenWords / generatedChunks.length) * 100;
             const score = Math.max(10, Math.round(100 - penalty));
+            const codn = brokenWords * 1500; // $1500 annualized support friction / hallucination liability per broken boundary
 
             setResults({
                 chunks: generatedChunks,
                 brokenWords,
-                efficiencyScore: score
+                efficiencyScore: score,
+                codn
             });
         } finally {
             setLoading(false);
@@ -107,7 +110,7 @@ export default function RagChunkingContent() {
             
             <div className="mb-6 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                    <Link href="/system" className="hover:text-white transition">Intelligence</Link>
+                    <Link href="/tools" className="hover:text-white transition">Enterprise Diagnostics</Link>
                     <span>/</span>
                     <span className="text-white font-bold">RAG Architecture Visualizer</span>
                 </div>
@@ -189,7 +192,7 @@ export default function RagChunkingContent() {
 
                         {showGate && (
                             <div className="mt-6">
-                                <ToolGate toolName="RAG Visualizer" onUnlock={() => { setShowGate(false); runChunkingSimulation(); }}>
+                                <ToolGate toolName="RAG Visualizer" toolSlug="rag-chunking-visualizer" mappedCurriculumId="29-4" onUnlock={() => { setShowGate(false); runChunkingSimulation(); }}>
                                     <></>
                                 </ToolGate>
                             </div>
@@ -200,6 +203,9 @@ export default function RagChunkingContent() {
                 <div id="chunk-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
                      <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-indigo-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="bg-indigo-500/20 text-indigo-400 border border-indigo-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                            </div>
                             <h2 className="text-xl font-bold text-white mb-1">Vector Topology Mapped</h2>
                             <p className="text-sm text-zinc-400">Heuristic breakdown of Context Loss vectors across {results.chunks.length} dimensional slices.</p>
                         </div>
@@ -214,15 +220,18 @@ export default function RagChunkingContent() {
                                 <BorderBeam size={400} duration={12} delay={9} borderWidth={1.5} colorFrom="#6366f1" colorTo="#06b6d4" />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                     <div>
-                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Retrieval Cohesion Score</div>
-                                        <div className={`text-6xl sm:text-8xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.efficiencyScore < 50 ? 'from-rose-500 to-red-600' : 'from-indigo-400 to-cyan-400'}`}>
-                                            {results.efficiencyScore}%
+                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Hallucination Liability (CODN)</div>
+                                        <div className={`text-6xl sm:text-7xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.efficiencyScore < 50 ? 'from-rose-500 to-red-600' : 'from-indigo-400 to-cyan-400'}`}>
+                                            ${results.codn.toLocaleString()}
                                         </div>
                                         <div className="mt-6">
                                              <span className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2 ${results.efficiencyScore < 60 ? 'bg-red-900/30 text-rose-400 border border-red-900/50' : 'bg-indigo-900/30 text-indigo-400 border border-indigo-900/50'}`}>
                                                 <TriangleAlert size={12}/> {results.brokenWords} SEVERED CONTEXT BOUNDARIES
                                             </span>
                                         </div>
+                                        <p className="text-sm text-zinc-400 mt-4 leading-relaxed">
+                                            Each severed semantic boundary creates isolated tokens that the LLM model cannot accurately interpret, forcing it to hallucinate responses. At an enterprise scale, these misinterpretations manifest as an estimated <strong className="text-white">${results.codn.toLocaleString()} in support rework and brand liability.</strong>
+                                        </p>
                                     </div>
                                     <div>
                                          <div className="bg-black/50 p-6 rounded-2xl border border-white/5 space-y-4">
@@ -284,8 +293,8 @@ export default function RagChunkingContent() {
                             <VaultUpsell 
                                 urgencyLevel={results.efficiencyScore < 70 ? 'critical' : 'growth'}
                                 recommendedTracks={[
-                                    { id: 'TRACK-19', title: 'Agentic RAG Fallbacks', desc: 'When chunking fails, establish multi-hop reasoning loops so LLMs retrieve recursively.' },
-                                    { id: 'TRACK-24', title: 'Generative AI Cost Engineering', desc: 'Overlap redundancy multiplies your OpenAI token bill exponentially. Optimize it safely.' }
+                                    { id: 'Module 27-7', title: 'Local Vector Embeddings', desc: 'Execute RAG entirely locally via SQLite Vector.' },
+                                    { id: 'Module 29-4', title: 'Cache Hierarchies & Vector DBs', desc: 'Implement strict Semantic Caches to bypass LLM routes.' }
                                 ]} 
                             />
 

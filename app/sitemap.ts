@@ -4,9 +4,18 @@ import { glossaryTerms } from './glossary/terms';
 import { frameworks } from '@/lib/data';
 import { tracks } from '@/app/lib/curriculum-tracks-ui';
 import { getSortedArticles } from '@/app/lib/blog-data';
+import { COMBAT_SEO_MATRIX } from '@/app/lib/combat-seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.richardewing.io';
+
+    const combatPages: MetadataRoute.Sitemap = COMBAT_SEO_MATRIX.flatMap(t => 
+        t.competitors.map(c => ({
+            url: `${baseUrl}/tools/${t.toolSlug}/vs/${c.slug}`,
+            changeFrequency: 'weekly' as const,
+            priority: 0.9,
+        }))
+    );
 
     const glossaryPages: MetadataRoute.Sitemap = [
         {
@@ -36,6 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     return [
+        ...combatPages,
         ...glossaryPages,
         ...frameworkPages,
         ...blogPages,

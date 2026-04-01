@@ -193,7 +193,7 @@ export default function ShadowContent() {
             <ToolCelebration show={!!results} toolName="SHADOW-AI" />
             <div className="mb-6 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                    <Link href="/system" className="hover:text-white transition">Intelligence</Link>
+                    <Link href="/tools" className="hover:text-white transition">Enterprise Diagnostics</Link>
                     <span>/</span>
                     <span className="text-white font-bold">Shadow AI Audit</span>
                 </div>
@@ -338,6 +338,7 @@ export default function ShadowContent() {
                                     className={`border-2 border-dashed ${auditFile ? 'border-rose-500 bg-rose-500/5' : 'border-zinc-700 bg-black/40 hover:bg-zinc-900 transition-colors cursor-pointer'} rounded-2xl p-12 flex flex-col items-center justify-center text-center`}
                                 >
                                     <input 
+                                        title="Audit CSV Log Upload"
                                         type="file" 
                                         accept=".csv" 
                                         className="hidden" 
@@ -363,13 +364,21 @@ export default function ShadowContent() {
                                      <div className="pt-4">
                                         <ShineBorder borderColor="rgba(244, 63, 94, 0.6)" duration={2}>
                                             <button 
-                                                onClick={runForensicAudit} 
+                                                onClick={() => setShowGate(true)} 
                                                 disabled={loading}
                                                 className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-rose-500 transition-all flex items-center justify-center gap-3 disabled:opacity-50"
                                             >
                                                 {loading ? ( <><div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" /> SCANNING THREAT VECTORS...</> ) : ( "FORCE LOCAL AUDIT ENGINE →" )}
                                             </button>
                                         </ShineBorder>
+                                     </div>
+                                )}
+                            
+                                {showGate && (
+                                     <div className="pt-4">
+                                        <ToolGate toolName="Shadow AI Scanner" toolSlug="shadow-ai" mappedCurriculumId="27-10" onUnlock={() => { setShowGate(false); runForensicAudit(); }}>
+                                            <></>
+                                        </ToolGate>
                                      </div>
                                 )}
                             </motion.div>
@@ -380,6 +389,9 @@ export default function ShadowContent() {
                 <div id="shadow-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-amber-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                            </div>
                             <h2 className="text-xl font-bold text-white mb-1">Liability Assessment Complete</h2>
                             <p className="text-sm text-zinc-400">
                                 {results.type === 'AUDIT' ? 'Deterministic detection via cryptographic / regex parsing.' : 'Forensic extrapolation of unmonitored intellectual property egress.'}
@@ -396,7 +408,7 @@ export default function ShadowContent() {
                                 <BorderBeam size={400} duration={12} delay={9} borderWidth={1.5} colorFrom="#f59e0b" colorTo="#ef4444" />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                     <div>
-                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Estimated IP Liability (Monthly)</div>
+                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Cost of Doing Nothing (CODN) Penalty</div>
                                         <div className={`text-5xl sm:text-6xl font-bold tracking-tighter leading-tight text-transparent bg-clip-text bg-gradient-to-r ${results.riskTier === 'CRITICAL' ? 'from-red-500 to-rose-600' : results.riskTier === 'HIGH' ? 'from-orange-500 to-amber-500' : 'from-yellow-400 to-emerald-400'}`}>
                                             {formatMoney(results.financialLiability)}
                                         </div>
@@ -473,8 +485,8 @@ export default function ShadowContent() {
                             <VaultUpsell 
                                 urgencyLevel={results.riskTier === 'CRITICAL' || results.riskTier === 'HIGH' ? 'critical' : 'growth'}
                                 recommendedTracks={[
-                                    { id: 'TRACK-07', title: 'Data Sovereignty & Local SLMs', desc: 'Step-by-step enclave deployment to legally bypass SaaS vendor IP contamination.' },
-                                    { id: 'TRACK-11', title: 'RAG Architecture Security', desc: 'Secure document stores from deterministic extraction vulnerabilities.' }
+                                    { id: 'Module 27-10', title: 'Zero-Trust Hardware Architectures', desc: 'Secure Enclaves (TEE) & Offline Local Vectors' },
+                                    { id: 'Module 22-4', title: 'Generative AI DLP Framework', desc: 'Legal boundaries for engineering chat deployments.' }
                                 ]} 
                             />
 

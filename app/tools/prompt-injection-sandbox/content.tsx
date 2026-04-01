@@ -71,6 +71,7 @@ export default function PromptInjectionContent() {
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState<{
         score: number;
+        codn: number;
         evaluations: AttackVector[];
         hardenedPrompt: string;
     } | null>(null);
@@ -90,6 +91,8 @@ export default function PromptInjectionContent() {
             });
 
             const score = Math.round((passedCount / VECTORS.length) * 100);
+            const failedCount = VECTORS.length - passedCount;
+            const codn = failedCount === 0 ? 0 : 50000 + (failedCount * 15000); // Base hijacking liability + per-vector penalty
 
             // Synthesize hardened prompt
             let hardened = prompt.trim();
@@ -108,6 +111,7 @@ export default function PromptInjectionContent() {
 
             setResults({
                 score,
+                codn,
                 evaluations: evals,
                 hardenedPrompt: hardened
             });
@@ -129,7 +133,7 @@ export default function PromptInjectionContent() {
             
             <div className="mb-6 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                    <Link href="/system" className="hover:text-white transition">Intelligence</Link>
+                    <Link href="/tools" className="hover:text-white transition">Enterprise Diagnostics</Link>
                     <span>/</span>
                     <span className="text-white font-bold">Prompt Intrusion Sandbox</span>
                 </div>
@@ -189,7 +193,7 @@ Only answer questions related to AcmeCorp logistics.
 
                             {showGate && (
                                 <div className="mt-6">
-                                    <ToolGate toolName="Prompt Injection Sandbox" onUnlock={() => { setShowGate(false); runAttackSimulation(); }}>
+                                    <ToolGate toolName="Prompt Injection Sandbox" toolSlug="prompt-injection-sandbox" mappedCurriculumId="28-2" onUnlock={() => { setShowGate(false); runAttackSimulation(); }}>
                                         <></>
                                     </ToolGate>
                                 </div>
@@ -201,6 +205,9 @@ Only answer questions related to AcmeCorp logistics.
                 <div id="sandbox-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
                      <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                            </div>
                             <h2 className="text-xl font-bold text-white mb-1">Red Team Penetration Complete</h2>
                             <p className="text-sm text-zinc-400">Heuristic structural analysis verified across 5 critical logic bypass domains.</p>
                         </div>
@@ -215,9 +222,9 @@ Only answer questions related to AcmeCorp logistics.
                                 <BorderBeam size={400} duration={12} delay={9} borderWidth={1.5} colorFrom="#10b981" colorTo="#047857" />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                     <div>
-                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Prompt Defensibility Score</div>
-                                        <div className={`text-6xl sm:text-8xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.score < 50 ? 'from-red-500 to-orange-500' : results.score < 80 ? 'from-amber-400 to-orange-400' : 'from-emerald-400 to-teal-500'}`}>
-                                            {results.score}%
+                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Cost of Doing Nothing (CODN)</div>
+                                        <div className={`text-5xl sm:text-6xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.score < 50 ? 'from-red-500 to-orange-500' : results.score < 80 ? 'from-amber-400 to-orange-400' : 'from-emerald-400 to-teal-500'}`}>
+                                            ${results.codn.toLocaleString()}
                                         </div>
                                         <div className="mt-6">
                                             <span className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2 ${results.score < 50 ? 'bg-red-900/30 text-rose-400 border border-red-900/50' : results.score < 80 ? 'bg-amber-900/30 text-amber-500 border border-amber-900/50' : 'bg-emerald-900/30 text-emerald-400 border border-emerald-900/50'}`}>
@@ -225,7 +232,7 @@ Only answer questions related to AcmeCorp logistics.
                                             </span>
                                         </div>
                                         <p className="text-sm text-zinc-400 mt-4 leading-relaxed">
-                                            Your instructions successfully mitigated <strong className="text-white">{results.evaluations.filter(v => v.passed).length} of {results.evaluations.length}</strong> adversarial vectors. This exposes the underlying agent chain to command hijacking and arbitrary execution.
+                                            Your instructions successfully mitigated <strong className="text-white">{results.evaluations.filter(v => v.passed).length} of {results.evaluations.length}</strong> adversarial vectors. This exposes the underlying agent chain to command hijacking and arbitrary execution, compounding into an estimated ${results.codn.toLocaleString()} in liability risk.
                                         </p>
                                     </div>
                                     <div>
@@ -297,8 +304,8 @@ Only answer questions related to AcmeCorp logistics.
                             <VaultUpsell 
                                 urgencyLevel={results.score < 50 ? 'critical' : 'growth'}
                                 recommendedTracks={[
-                                    { id: 'TRACK-11', title: 'Deterministic QA Execution Boundaries', desc: 'Prevent system state corruption using strict logic enforcement pipelines.' },
-                                    { id: 'TRACK-23', title: 'Neural-Symbolic Fallbacks', desc: 'When LLMs hallucinate instructions, fallback to Python execution.' }
+                                    { id: 'Module 28-2', title: 'Multi-Agent Orchestration', desc: 'Secure agent hierarchies that isolate adversarial context.' },
+                                    { id: 'Module 28-4', title: 'Human-in-the-Loop Safeguards', desc: 'Architect hardware-based circuit breakers for payload execution.' }
                                 ]} 
                             />
 
