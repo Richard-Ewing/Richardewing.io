@@ -1,0 +1,8 @@
+.zeroLine {
+    left: var(--left-pos);
+}
+
+.barGraph {
+    width: var(--bar-width);
+    left: var(--bar-left);
+}

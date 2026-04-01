@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { TrendingUp, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building } from 'lucide-react';
 import Link from 'next/link';
-import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
+import { VaultUpsell } from '../../components/VaultUpsell';
 import ShineBorder from '../../components/magicui/shine-border';
 
 // --- MAGIC UI COMPONENTS ---
@@ -673,24 +673,17 @@ export default function APERTool() {
                                                     </li>
                                                 </ul>
                                             </div>
-
-                                            <div className="border-l border-white/10 pl-8">
-                                                <div className="mb-4">
-                                                    <h3 className="text-xl font-bold text-white mb-2">Want the Full Analysis?</h3>
-                                                    <p className="text-zinc-400 text-sm">Get a team topology review and optimal headcount roadmap.</p>
-                                                </div>
-                                                <NewsletterForm
-                                                    buttonText="Get Team Analysis"
-                                                    extraData={{
-                                                        tool: 'APER',
-                                                        persona,
-                                                        aper: results.aper
-                                                    }}
-                                                />
-                                            </div>
                                         </div>
                                     </div>
                                 </motion.div>
+
+                                <VaultUpsell 
+                                    urgencyLevel={results.aper < 400000 ? 'critical' : 'growth'}
+                                    recommendedTracks={[
+                                        { id: 'TRACK-04', title: 'AI Unit Economics & Margin Collapse', desc: 'Identify bloat and restructure headcount to maximize enterprise valuation.' },
+                                        { id: 'TRACK-09', title: 'Fractional AI Executive Integration', desc: 'Accelerate engineering velocity without adding to the coordination tax.' }
+                                    ]} 
+                                />
 
                                 {/* ACTION FOOTER */}
                                 <motion.div
@@ -698,16 +691,9 @@ export default function APERTool() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                                    className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 border-t border-white/10"
+                                    className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8"
                                 >
-                                    <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Analysis</button>
-                                    <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.aper < 400000
-                                        ? 'bg-orange-600 hover:bg-orange-500 text-white shadow-[0_0_30px_rgba(249,115,22,0.4)]'
-                                        : 'bg-yellow-500 hover:bg-yellow-400 text-black shadow-[0_0_30px_rgba(234,179,8,0.3)]'
-                                        }`}>
-                                        {results.aper < 400000 ? '⚠️ Workforce Optimization Session' : 'Maximize My Efficiency'} →
-                                    </Link>
-                                    <Link href="/system" className="text-zinc-500 text-sm hover:text-white">Explore All Tools →</Link>
+                                    <button onClick={() => setResults(null)} className="text-zinc-500 text-sm font-mono tracking-widest hover:text-white uppercase">← Run New Analysis</button>
                                 </motion.div>
 
                                 {/* SOCIAL PROOF */}

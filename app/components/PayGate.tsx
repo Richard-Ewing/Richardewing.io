@@ -16,9 +16,10 @@ interface PayGateProps {
     productId?: string;
     bundleId?: string;
     lessons?: any[];
+    status?: 'live' | 'waitlist';
 }
 
-export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, showPreview = true, children, nextHref, productId = 'single_module', bundleId = 'full_curriculum', lessons = [] }: PayGateProps) {
+export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, showPreview = true, children, nextHref, productId = 'single_module', bundleId = 'full_curriculum', lessons = [], status = 'live' }: PayGateProps) {
     if (hasAccess) {
         return <>{children}</>;
     }
@@ -116,13 +117,20 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                     variant="secondary" 
                                 />
                                 <div className="pt-2 border-t border-white/5">
-                                    <CheckoutButton 
-                                        productId="single_module" 
-                                        moduleId={moduleId}
-                                        label="Unlock Single Module Only — $29" 
-                                        icon="file" 
-                                        variant="outline" 
-                                    />
+                                    {status === 'waitlist' ? (
+                                        <button disabled className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-white/5 bg-white/[0.02] text-zinc-500 cursor-not-allowed transition-colors font-medium text-sm">
+                                            <Lock className="w-4 h-4" />
+                                            <span>Join Waitlist — In Active Development</span>
+                                        </button>
+                                    ) : (
+                                        <CheckoutButton 
+                                            productId="single_module" 
+                                            moduleId={moduleId}
+                                            label="Unlock Single Module Only — $29" 
+                                            icon="file" 
+                                            variant="outline" 
+                                        />
+                                    )}
                                 </div>
                             </div>
                             

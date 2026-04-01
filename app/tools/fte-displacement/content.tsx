@@ -11,7 +11,7 @@ import ShineBorder from '../../components/magicui/shine-border';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { Globe, Users, Headphones, DollarSign, ArrowRight, Zap, Building2, UserMinus } from 'lucide-react';
-import { NewsletterForm } from '../../components/newsletter-form';
+import { VaultUpsell } from '../../components/VaultUpsell';
 import ToolGate from '../../components/tool-gate';
 
 // --- PERSONA TYPES ---
@@ -297,7 +297,7 @@ export default function FTEContent() {
                         </ScrollReveal>
 
                         <ScrollReveal delay={150}>
-                             <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-white/10">
+                             <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-white/10 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <Zap size={16} className="text-cyan-400" />
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">The Path to Automation</span>
@@ -305,18 +305,21 @@ export default function FTEContent() {
                                 <p className="text-zinc-300 text-sm leading-relaxed mb-4">
                                     Replacing humans with agents fundamentally changes your unit economics. However, open-ended LLMs hallucinate and fail. To realize this EBITDA expansion, you must constrain the AI within deterministic execution boundaries, mapping exact workflow DAGs rather than relying on unstructured "chatbots."
                                 </p>
-                                <div className="space-y-3">
-                                    <div className="text-sm text-white font-semibold mb-2">Request an architecture review for agentic displacement:</div>
-                                    <NewsletterForm buttonText="Deploy Execution Taskforce" extraData={{ tool: 'FTE', savings: formatMoney(results.netOngoingSavings) }} />
-                                </div>
                             </div>
                         </ScrollReveal>
 
+                        <VaultUpsell 
+                            urgencyLevel={results.netYear1Savings > 0 ? 'critical' : 'growth'}
+                            recommendedTracks={[
+                                { id: 'TRACK-01', title: 'Agentic Workflow Construction', desc: 'Map deterministic DAGs to permanently displace operational overhead.' },
+                                { id: 'TRACK-05', title: 'Technical Debt & Valuation Impact', desc: 'Secure the foundation required for high-confidence autonomous agents.' }
+                            ]} 
+                        />
+
                         {/* Action Footer */}
                         <ScrollReveal delay={250}>
-                            <div className="flex justify-center flex-wrap gap-6 pt-6 border-t border-white/10" data-html2canvas-ignore>
+                            <div className="flex justify-center flex-wrap gap-6 mt-6" data-html2canvas-ignore>
                                 <button onClick={() => setResults(null)} className="text-zinc-500 font-mono tracking-widest text-xs hover:text-white uppercase transition-colors">← Rerun Model</button>
-                                <Link href="/advisory" className="text-cyan-400 font-mono tracking-widest text-xs hover:text-cyan-300 uppercase transition-colors flex items-center gap-1">Book Taskforce Integration <ArrowRight size={12}/></Link>
                             </div>
                         </ScrollReveal>
                     </div>

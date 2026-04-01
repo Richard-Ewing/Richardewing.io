@@ -14,6 +14,8 @@ import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
+import { VaultUpsell } from '../../components/VaultUpsell';
+import styles from './styles.module.css';
 
 // Simple Bar Chart component (no external dependency)
 const WaterfallChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
@@ -25,13 +27,13 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                 <div key={i} className="flex items-center gap-4">
                     <div className="w-24 text-xs font-mono text-zinc-500 text-right">{item.name}</div>
                     <div className="flex-1 h-10 bg-zinc-900 rounded-lg overflow-hidden relative">
-                        { }
+                        {/* eslint-disable-next-line react/forbid-dom-props */}
                         <div
-                            className="h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4"
-                            style={{
-                                width: `${(item.value / maxValue) * 100}%`,
-                                backgroundColor: item.color,
-                            }}
+                            className={`h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4 ${styles.waterfallBar}`}
+                            style={ {
+                                '--bar-width': `${(item.value / maxValue) * 100}%`,
+                                '--bar-color': item.color,
+                            } as React.CSSProperties }
                         >
                             <span className="text-xs font-mono text-white font-bold">
                                 ${(item.value / 1000000).toFixed(1)}M
@@ -70,7 +72,7 @@ const RiskSlider = ({ label, value, onChange, description }: {
             </div>
             <div className="relative">
                 <div className="absolute inset-0 h-2 rounded-lg bg-gradient-to-r from-emerald-500/30 via-yellow-500/30 to-red-500/30" />
-                { }
+                {/* eslint-disable-next-line react/forbid-dom-props */}
                 <input
                     type="range"
                     min="0"
@@ -79,10 +81,10 @@ const RiskSlider = ({ label, value, onChange, description }: {
                     onChange={e => onChange(parseInt(e.target.value))}
                     aria-label={label}
                     title={label}
-                    className="relative w-full h-2 bg-transparent rounded-lg appearance-none cursor-pointer z-10"
-                    style={{
-                        background: `linear-gradient(to right, #22c55e ${value}%, transparent ${value}%)`,
-                    }}
+                    className={`relative w-full h-2 bg-transparent rounded-lg appearance-none cursor-pointer z-10 ${styles.riskSlider}`}
+                    style={ {
+                        '--slider-bg': `linear-gradient(to right, #22c55e ${value}%, transparent ${value}%)`,
+                    } as React.CSSProperties }
                 />
             </div>
             <div className="flex justify-between text-[10px] text-zinc-600">
@@ -349,7 +351,8 @@ export default function EVSETool() {
 
                         <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden">
                             <div className="absolute top-0 left-0 w-full h-1 bg-zinc-800">
-                                <div className={`h-full bg-purple-500 transition-all duration-500 w-${Math.round((step / 3) * 100)}`} style={{ width: `${(step / 3) * 100}%` }} />
+                                {/* eslint-disable-next-line react/forbid-dom-props */}
+                                <div className={`h-full bg-purple-500 transition-all duration-500 ${styles.progressHeader}`} style={ { '--header-progress': `${(step / 3) * 100}%` } as React.CSSProperties } />
                             </div>
 
                         {/* Core Inputs - STEP 1 */}
@@ -702,15 +705,17 @@ export default function EVSETool() {
 
                     {/* Action Footer */}
                     <ScrollReveal delay={200}>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t border-white/10">
-                            <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← New Scenario</button>
-                            <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.adjustedConfidence < 60
-                                ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
-                                : 'bg-purple-500 hover:bg-purple-400 text-white shadow-[0_0_30px_rgba(168,85,247,0.3)]'
-                                }`}>
-                                {results.adjustedConfidence < 60 ? '🚨 Risk Mitigation Session' : 'Defend My Valuation'} →
-                            </Link>
-                            <Link href="/system" className="text-zinc-500 text-sm hover:text-white">Explore All Tools →</Link>
+                        <div className="pt-8">
+                            <VaultUpsell 
+                                urgencyLevel={results.adjustedConfidence < 60 ? 'critical' : 'growth'}
+                                recommendedTracks={[
+                                    { id: 'TRACK-05', title: 'Technical Debt & Valuation Impact', desc: 'Identify how structural technical debt directly haircuts M&A valuation multiples.' },
+                                    { id: 'TRACK-09', title: 'Scope Creep & Risk Profiling', desc: 'Build governance models that lock roadmaps and eliminate key person risk.' }
+                                ]} 
+                            />
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-6">
+                                <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← New Scenario</button>
+                            </div>
                         </div>
                     </ScrollReveal>
 

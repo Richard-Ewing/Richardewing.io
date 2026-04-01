@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { ScrollReveal } from '../../../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../../../components/magicui/glow-card';
 import { ArrowRight, Lock, TrendingUp, Search, XCircle, CheckCircle2 } from 'lucide-react';
+import { VaultUpsell } from '../../../../components/VaultUpsell';
 
 // Reusing the radar chart logic but adapted for this data structure
 const RadarChart = ({ scores }: { scores: any[] }) => {
@@ -179,6 +180,16 @@ export default function CommitteeDashboard() {
                     </div>
                 </div>
             </ScrollReveal>
+
+            <div className="mt-8">
+                <VaultUpsell 
+                    urgencyLevel={analytics?.verdict?.includes('Strong No Hire') || analytics?.verdict?.includes('No Hire') ? 'critical' : 'growth'}
+                    recommendedTracks={[
+                        { id: 'TRACK-01', title: 'Agentic Workflow Construction', desc: 'Secure internal technical competence to evaluate autonomous systems.' },
+                        { id: 'TRACK-05', title: 'Technical Debt & Valuation Impact', desc: 'Prevent catastrophic enterprise value destruction via poor engineering judgment.' }
+                    ]} 
+                />
+            </div>
         </div>
     );
 }

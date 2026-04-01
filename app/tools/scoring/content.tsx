@@ -6,6 +6,7 @@ import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
 import { ArrowRight, Search, Target, Brain, TrendingUp, Cpu, BarChart3 } from 'lucide-react';
+import { VaultUpsell } from '../../components/VaultUpsell';
 
 type Role = 'engineering' | 'pm';
 
@@ -390,6 +391,16 @@ export default function AuditInterview() {
                                     </p>
                                 </div>
                             )}
+                        </div>
+
+                        <div className="mt-8">
+                            <VaultUpsell 
+                                urgencyLevel={outcome.total > 7 ? 'growth' : 'critical'}
+                                recommendedTracks={[
+                                    { id: 'TRACK-01', title: 'Agentic Workflow Construction', desc: 'Secure internal technical competence to evaluate autonomous systems.' },
+                                    { id: 'TRACK-05', title: 'Technical Debt & Valuation Impact', desc: 'Prevent catastrophic enterprise value destruction via poor engineering judgment.' }
+                                ]} 
+                            />
                         </div>
                     </div>
                 </ScrollReveal>

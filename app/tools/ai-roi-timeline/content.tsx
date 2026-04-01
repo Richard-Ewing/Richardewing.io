@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowLeft, Rocket, Users, Coins, Calculator, TrendingDown, RefreshCcw } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowLeft, Rocket, Users, Coins, Calculator, TrendingDown, RefreshCcw, DownloadCloud, TrendingUp, Clock, ShieldAlert } from 'lucide-react';
 import Link from 'next/link';
 import ToolCelebration from '@/app/components/ToolCelebration';
+import { VaultUpsell } from '../../components/VaultUpsell';
+import styles from './styles.module.css';
 
 export default function AIRoiTimelineContent() {
     const [engineers, setEngineers] = useState(50);
@@ -174,16 +176,16 @@ export default function AIRoiTimelineContent() {
                                             <div className="col-span-8 bg-black h-4 rounded-full relative overflow-hidden border border-white/5">
                                                 {/* Zero Line Marker */}
                                                 {/* eslint-disable-next-line react/forbid-dom-props */}
-                                                <div className="absolute top-0 bottom-0 border-l border-zinc-700 z-10" style={{ left: `${zeroPoint}%` }}></div>
+                                                <div className={`absolute top-0 bottom-0 border-l border-zinc-700 z-10 ${styles.zeroLine}`} style={ { '--left-pos': `${zeroPoint}%` } as React.CSSProperties }></div>
                                                 
                                                 {/* The Bar */}
                                                 {/* eslint-disable-next-line react/forbid-dom-props */}
                                                 <div 
-                                                    className={`absolute top-0 bottom-0 rounded-full ${isProfitable ? 'bg-green-500/50 group-hover:bg-green-400' : 'bg-rose-500/50 group-hover:bg-rose-400'} transition-colors`}
-                                                    style={{ 
-                                                        width: `${barWidth}%`, 
-                                                        left: isProfitable ? `${zeroPoint}%` : `${zeroPoint - barWidth}%` 
-                                                    }}
+                                                    className={`absolute top-0 bottom-0 rounded-full ${isProfitable ? 'bg-green-500/50 group-hover:bg-green-400' : 'bg-rose-500/50 group-hover:bg-rose-400'} transition-colors ${styles.barGraph}`}
+                                                    style={ { 
+                                                        '--bar-width': `${barWidth}%`, 
+                                                        '--bar-left': isProfitable ? `${zeroPoint}%` : `${zeroPoint - barWidth}%` 
+                                                    } as React.CSSProperties }
                                                 />
                                             </div>
                                             <div className={`col-span-2 text-right font-mono text-xs font-bold ${isProfitable ? 'text-green-400' : 'text-rose-400'}`}>
@@ -195,16 +197,13 @@ export default function AIRoiTimelineContent() {
                             </div>
 
                             <div className="mt-8 pt-8 border-t border-white/5">
-                                <Link 
-                                    href="/reports/state-of-ai-engineering" 
-                                    className="flex items-center justify-between p-4 rounded-xl bg-purple-500/10 border border-purple-500/20 hover:bg-purple-500/20 transition-colors group"
-                                >
-                                    <div>
-                                        <div className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors">Download The State of AI Engineering 2026</div>
-                                        <div className="text-xs text-zinc-500 font-mono mt-1">Get the full playbook on displacing FTEs with AI safely.</div>
-                                    </div>
-                                    <Calculator className="text-purple-400 group-hover:scale-110 transition-transform" />
-                                </Link>
+                                <VaultUpsell 
+                                    urgencyLevel={breakEvenMonths < 12 ? 'growth' : 'critical'}
+                                    recommendedTracks={[
+                                        { id: 'TRACK-01', title: 'Agentic Workflow Construction', desc: 'Accelerate breakeven by deploying deterministic agents.' },
+                                        { id: 'TRACK-04', title: 'AI Unit Economics & Margin Collapse', desc: 'Identify AI insolvency triggers and restructure inference costs.' }
+                                    ]} 
+                                />
                             </div>
                         </div>
                         

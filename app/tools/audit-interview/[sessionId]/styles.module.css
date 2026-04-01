@@ -1,0 +1,3 @@
+.timeProgress {
+    width: var(--time-left-pct);
+}

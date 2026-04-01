@@ -1,0 +1,12 @@
+.waterfallBar {
+    width: var(--bar-width);
+    background-color: var(--bar-color);
+}
+
+.riskSlider {
+    background: var(--slider-bg);
+}
+
+.progressHeader {
+    width: var(--header-progress);
+}

@@ -13,6 +13,7 @@ import { BorderBeam } from '../../components/magicui/border-beam';
 import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle, Lock } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
+import { VaultUpsell, RecommendedTrack } from '../../components/VaultUpsell';
 
 // Simple Pie Chart component (no external dependency)
 const PieChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
@@ -50,6 +51,16 @@ const PieChart = ({ data }: { data: { name: string; value: number; color: string
     );
 };
 
+const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: React.ReactNode; title: string; icon?: React.ComponentType<{ size?: number; className?: string }>; className?: string }) => (
+    <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 ${className}`}>
+        <div className="flex items-center gap-2 mb-4">
+            {Icon && <Icon size={20} className="text-blue-400" />}
+            <h3 className="font-semibold text-white">{title}</h3>
+        </div>
+        {children}
+    </div>
+);
+
 // --- PERSONA TYPES ---
 type Persona = 'Founder' | 'CPO' | 'VP Eng' | 'CFO';
 
@@ -86,6 +97,31 @@ interface Results {
         action_items: string[];
     }>;
 }
+
+const getRecommendedTracks = (score: number, growth: number, debtVelocity: number): RecommendedTrack[] => {
+    if (score < 50) {
+        return [
+            { id: 'Track 16', title: 'Technical Debt Forgiveness Protocols', desc: 'Stop bleeding capital. A framework to enforce 70/20/10 capacity allocation and isolate sprawling system collapse.' },
+            { id: 'Track 20', title: 'System Design Economics', desc: 'Refactor enterprise architecture based strictly on Cost of Goods Sold (COGS) rather than vanity engineering metrics.' }
+        ];
+    }
+    if (growth < 30) {
+        return [
+            { id: 'Track 28', title: 'Agentic Process Automation (APA)', desc: 'Augment a starved engineering bench with Multi-Agent execution to drive massive product execution via specialized proxy workers.' },
+            { id: 'Track 07', title: 'Generative Coding Economics', desc: 'Deploy localized SLM Copilots securely to bypass human developer bottlenecks and scale feature velocity instantly.' }
+        ];
+    }
+    if (debtVelocity > 5) {
+        return [
+            { id: 'Track 23', title: 'Neural-Symbolic AI & System 2 Reasoning', desc: 'Your error velocity is catastrophic. Enforce deterministic policy logic architectures to prevent algorithmic structural damage.' },
+            { id: 'Track 14', title: 'Semantic CI/CD Pipeline Moats', desc: 'Prevent future insolvency by implementing strict automated, AI-driven QA regression gating prior to integration merges.' }
+        ];
+    }
+    return [
+        { id: 'Track 29', title: 'AI Supply Chain & GPU FinOps', desc: 'Optimize your stable baseline by enforcing strict token-level API accounting and forecasting massive cloud scale costs.' },
+        { id: 'Track 10', title: 'Sovereign Edge Implementation', desc: 'Prepare your stable architecture for fully disconnected, localized private deployments (M1/Edge TPU inference limits).' }
+    ];
+};
 
 export default function PDITool() {
     // Persona State
@@ -841,8 +877,14 @@ Migrate from Heroku to AWS"
                         </div>
                     </ScrollReveal>
 
+                    {/* VAULT MONETIZATION UPSELL INJECTION */}
+                    <VaultUpsell 
+                        recommendedTracks={getRecommendedTracks(results.score, results.metrics.growth, results.debtVelocity)} 
+                        urgencyLevel={results.score < 50 || results.metrics.growth < 30 ? 'critical' : 'growth'} 
+                    />
+
                     {/* Action Footer */}
-                    <ScrollReveal delay={250}>
+                    <ScrollReveal delay={300}>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t border-white/10" data-html2canvas-ignore>
                             <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Audit</button>
                             <ExportToPDFButton 

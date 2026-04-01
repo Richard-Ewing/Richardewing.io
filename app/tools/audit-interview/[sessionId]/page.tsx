@@ -17,9 +17,10 @@ import { Line, Bar } from 'react-chartjs-2';
 import { ScrollReveal } from '../../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../../components/magicui/glow-card';
 import ShineBorder from '../../../components/magicui/shine-border';
-import { NewsletterForm } from '../../../components/newsletter-form';
 import ToolGate from '../../../components/tool-gate';
 import Link from 'next/link';
+import { VaultUpsell } from '../../../components/VaultUpsell';
+import styles from './styles.module.css';
 
 // Register ChartJS
 ChartJS.register(
@@ -420,49 +421,19 @@ export default function SessionCommandCenter() {
                     </div>
 
                     <div className="flex flex-col items-center pt-8 gap-6">
-                        {/* REVISED CTA */}
-                        <div className="w-full max-w-2xl bg-[#0f1115] border border-emerald-500/30 rounded-xl p-8 text-center relative overflow-hidden">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-cyan-500"></div>
-                            <h4 className="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-2">⚠ The Protocol, Not The Assessment</h4>
-                            <p className="text-zinc-400 text-sm mb-6 max-w-lg mx-auto">
-                                This tool demonstrates the methodology. In a live audit, I evaluate the <strong>hesitation</strong>—where candidates pause signals judgment.
-                            </p>
+                        <div className="w-full mt-8">
+                            <VaultUpsell 
+                                urgencyLevel={analytics.verdict.includes('Strong No Hire') || analytics.verdict.includes('No Hire') ? 'critical' : 'growth'}
+                                recommendedTracks={[
+                                    { id: 'TRACK-01', title: 'Agentic Workflow Construction', desc: 'Secure internal technical competence to evaluate autonomous systems.' },
+                                    { id: 'TRACK-05', title: 'Technical Debt & Valuation Impact', desc: 'Prevent catastrophic enterprise value destruction via poor engineering judgment.' }
+                                ]} 
+                            />
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-left">
-                                <div className="space-y-4 border-r border-white/5 pr-4">
-                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">Revenue Path</div>
-                                    <h5 className="text-white font-bold mb-2">Deploy the Protocol</h5>
-                                    <p className="text-xs text-zinc-400 mb-4">Book a live forensic hiring audit for your next VP/Director candidate.</p>
-                                    <a
-                                        href="https://richardewing.io/advisory"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block w-full py-3 bg-white text-black text-center font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-emerald-400 transition-colors shadow-lg hover:shadow-emerald-500/20"
-                                    >
-                                        Book Audit ($2,500)
-                                    </a>
-                                </div>
-
-                                <div className="space-y-4 pl-4">
-                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-1">Education Path</div>
-                                    <h5 className="text-white font-bold mb-2">Steal the Questions</h5>
-                                    <p className="text-xs text-zinc-400 mb-4">Get the complete PDF of my specialized interview questions for Product & Eng.</p>
-                                    <NewsletterForm
-                                        buttonText="Get Protocol PDF"
-                                        placeholder="Email for PDF..."
-                                        extraData={{
-                                            tool: 'Audit Interview',
-                                            verdict: analytics.verdict,
-                                            role: session.role
-                                        }}
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="mt-8 pt-6 border-t border-white/5">
+                            <div className="flex justify-center mt-8">
                                 <button
                                     onClick={() => (window.location.href = '/tools/audit-interview')}
-                                    className="text-zinc-500 text-xs uppercase tracking-widest hover:text-white transition-colors"
+                                    className="text-zinc-500 font-mono text-xs uppercase tracking-widest hover:text-white transition-colors"
                                 >
                                     ← Run Another Simulation
                                 </button>
@@ -498,9 +469,10 @@ export default function SessionCommandCenter() {
                         {formatTime(timeLeft)}
                     </div>
                     <div className="h-1 w-full bg-zinc-900 mt-4 rounded-full overflow-hidden">
+                        {/* eslint-disable-next-line react/forbid-dom-props */}
                         <div
-                            className={`h-full transition-all duration-1000 ${timeLeft < 60 ? 'bg-red-500' : 'bg-zinc-500'}`}
-                            style={{ width: `${(timeLeft / 1200) * 100}%` }}
+                            className={`h-full transition-all duration-1000 ${timeLeft < 60 ? 'bg-red-500' : 'bg-zinc-500'} ${styles.timeProgress}`}
+                            style={ { '--time-left-pct': `${(timeLeft / 1200) * 100}%` } as React.CSSProperties }
                         ></div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import ToolCelebration from '../../components/ToolCelebration';
 import Link from 'next/link';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
+import { VaultUpsell } from '../../components/VaultUpsell';
 import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
 import NumberTicker from '../../components/magicui/number-ticker';
@@ -13,6 +14,7 @@ import { BorderBeam } from '../../components/magicui/border-beam';
 import { CloudOff, Layers, Activity, DollarSign, ArrowRight, Zap, Database, Server } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
 import { NewsletterForm } from '../../components/newsletter-form';
+import styles from './styles.module.css';
 
 // --- PERSONA TYPES ---
 type Persona = 'CFO' | 'CTO' | 'CEO' | 'PE_Partner';
@@ -258,7 +260,7 @@ export default function CloudContent() {
                                                 <div className="text-xl font-bold text-white font-mono">{egressP}%</div>
                                             </div>
                                             {/* eslint-disable-next-line react/forbid-dom-props */}
-                                            <div className="w-full bg-zinc-800 h-2 rounded mt-2 overflow-hidden"><div className="bg-rose-500 h-full" style={{width: `${egressP}%`}} /></div>
+                                            <div className="w-full bg-zinc-800 h-2 rounded mt-2 overflow-hidden"><div className={`bg-rose-500 h-full ${styles.progressBar}`} style={{'--progress-width': `${egressP}%`} as React.CSSProperties} /></div>
                                         </div>
                                     </div>
 
@@ -372,10 +374,12 @@ export default function CloudContent() {
                                             <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.5)] z-10"></div>
                                             
                                             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-400 shrink-0 inline-block w-fit">
-                                                    Month {plan.month}
+                                                <div className={`px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest shrink-0 inline-block w-fit ${plan.month === 1 ? 'bg-rose-500/20 text-rose-300 border border-rose-500/50 font-bold' : 'bg-white/5 text-zinc-400'}`}>
+                                                    Month {plan.month} {plan.month === 1 && '— CRITICAL DEPENDENCY'}
                                                 </div>
-                                                <div className="font-bold text-white text-base">{plan.focus}</div>
+                                                <div className="font-bold text-white text-base">
+                                                    {plan.focus}
+                                                </div>
                                             </div>
                                             
                                             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -462,11 +466,18 @@ export default function CloudContent() {
                             </div>
                         </ScrollReveal>
 
+                        <VaultUpsell 
+                            urgencyLevel={results.evCreation > 5000000 ? 'critical' : 'growth'}
+                            recommendedTracks={[
+                                { id: 'TRACK-04', title: 'AI Unit Economics & Margin Collapse', desc: 'Identify how rented hardware destroys long term multiples.' },
+                                { id: 'TRACK-07', title: 'Data Sovereignty & Local Enclaves', desc: 'Step-by-step enclave deployment to legally bypass SaaS vendor IP contamination.' }
+                            ]} 
+                        />
+
                         {/* Action Footer */}
                         <ScrollReveal delay={250}>
-                            <div className="flex justify-center flex-wrap gap-6 pt-10" data-html2canvas-ignore>
+                            <div className="flex justify-center flex-wrap gap-6 mt-8" data-html2canvas-ignore>
                                 <button onClick={() => setResults(null)} className="text-zinc-500 font-mono tracking-widest text-xs hover:text-white uppercase transition-colors">← Refine Financials</button>
-                                <Link href="/advisory" className="text-rose-400 font-mono tracking-widest text-xs hover:text-rose-300 uppercase transition-colors flex items-center gap-1">Book Due Diligence Partner <ArrowRight size={12}/></Link>
                             </div>
                         </ScrollReveal>
                     </div>

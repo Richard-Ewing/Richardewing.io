@@ -8,10 +8,10 @@ import Link from 'next/link';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
+import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { ShieldAlert, ArrowRight, ShieldOff, Lock, UserX, Target } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
-import { NewsletterForm } from '../../components/newsletter-form';
 
 // --- PERSONA TYPES ---
 type Persona = 'CISO' | 'CTO' | 'CEO' | 'Legal';
@@ -267,15 +267,18 @@ export default function ShadowContent() {
                                 <p className="text-zinc-300 text-sm leading-relaxed mb-4">
                                     You cannot train engineers not to use ChatGPT—it is a 10x multiplier on velocity. The only SOC2-compliant solution is deploying a local, private SLM enclave (Llama 3) inside your VPC, giving them an API endpoint that guarantees zero-data-retention.
                                 </p>
-                                <div className="space-y-3">
-                                    <div className="text-sm text-white font-semibold mb-2">Book a Due Diligence Partner to secure your perimeter:</div>
-                                    <NewsletterForm buttonText="Deploy Private LLM Enclave" extraData={{ tool: 'SHADOW_AI', liability: results.financialLiability }} />
-                                </div>
                             </div>
 
-                            <div className="flex justify-center flex-wrap gap-6 pt-6 border-t border-white/10" data-html2canvas-ignore>
+                            <VaultUpsell 
+                                urgencyLevel={results.riskTier === 'CRITICAL' || results.riskTier === 'HIGH' ? 'critical' : 'growth'}
+                                recommendedTracks={[
+                                    { id: 'TRACK-07', title: 'Data Sovereignty & Local SLMs', desc: 'Step-by-step enclave deployment to legally bypass SaaS vendor IP contamination.' },
+                                    { id: 'TRACK-11', title: 'RAG Architecture Security', desc: 'Secure document stores from deterministic extraction vulnerabilities.' }
+                                ]} 
+                            />
+
+                            <div className="flex justify-center flex-wrap gap-6 mt-8" data-html2canvas-ignore>
                                 <button onClick={() => setResults(null)} className="text-zinc-500 font-mono tracking-widest text-xs hover:text-white uppercase transition-colors">← Recalibrate Matrix</button>
-                                <Link href="/advisory" className="text-amber-400 font-mono tracking-widest text-xs hover:text-amber-300 uppercase transition-colors flex items-center gap-1">Advisory Services <ArrowRight size={12}/></Link>
                             </div>
                         </ScrollReveal>
                     </div>

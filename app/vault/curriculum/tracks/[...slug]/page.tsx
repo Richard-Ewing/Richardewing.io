@@ -18,6 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 import { auth } from '@clerk/nextjs/server';
 import PayGate from '@/app/components/PayGate';
+import CurriculumQuiz from '@/app/components/curriculum/CurriculumQuiz';
+import ActionChecklist from '@/app/components/curriculum/ActionChecklist';
 
 import ProgressCompleteButton from '@/app/components/ProgressCompleteButton';
 import ModuleStepper from '@/app/components/client/ModuleStepper';
@@ -72,6 +74,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                         productId={mod.productId}
                         bundleId={mod.bundleId}
                         lessons={mod.lessons}
+                        status={mod.status}
                     >
                         {aiContent && typeof aiContent === 'object' ? (
                             <ModuleStepper parsedContent={aiContent}>
@@ -105,20 +108,43 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                                 </div>
                                                 <h2 className="text-xl font-grotesk font-bold text-white">{lesson.title}</h2>
                                             </div>
-                                            <p className="text-zinc-400 mb-6">{lesson.content}</p>
-                                            <div className="space-y-3 mb-6">
-                                                {lesson.details.map((d, j) => (
-                                                    <div key={j} className="rounded-xl bg-black/20 border border-white/5 p-5">
-                                                        <div className="text-sm font-bold text-white mb-1">{d.metric}</div>
-                                                        <p className="text-xs text-zinc-500 mb-2">{d.description}</p>
-                                                        <div className="text-[10px] font-mono text-cyan-500 uppercase tracking-widest">{d.benchmark}</div>
-                                                    </div>
-                                                ))}
+                                            <div className="space-y-4 mb-6">
+                                                {Array.isArray(lesson.content) ? (
+                                                    lesson.content.map((block, bIdx) => (
+                                                        <p key={bIdx} className="text-zinc-400 leading-relaxed text-[15px]">{block}</p>
+                                                    ))
+                                                ) : (
+                                                    <p className="text-zinc-400 leading-relaxed text-[15px]">{lesson.content}</p>
+                                                )}
                                             </div>
-                                            <div className="rounded-xl bg-emerald-500/5 border border-emerald-500/20 p-5">
-                                                <div className="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2">📝 Exercise</div>
-                                                <p className="text-sm text-zinc-300">{lesson.exercise}</p>
-                                            </div>
+
+                                            {lesson.details && lesson.details.length > 0 && (
+                                                <div className="space-y-3 mb-6">
+                                                    {lesson.details.map((d, j) => (
+                                                        <div key={j} className="rounded-xl bg-black/20 border border-white/5 p-5 relative overflow-hidden group">
+                                                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-cyan-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                                                            <div className="text-sm font-bold text-white mb-1">{d.metric}</div>
+                                                            <p className="text-xs text-zinc-500 mb-2">{d.description}</p>
+                                                            <div className="text-[10px] font-mono text-cyan-500 uppercase tracking-widest">{d.benchmark}</div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+
+                                            {lesson.exercise && (
+                                                <div className="rounded-xl bg-emerald-500/5 border border-emerald-500/20 p-5 mt-8">
+                                                    <div className="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2">📝 Exercise</div>
+                                                    <p className="text-sm text-zinc-300">{lesson.exercise}</p>
+                                                </div>
+                                            )}
+
+                                            {lesson.checklist && lesson.checklist.length > 0 && (
+                                                <ActionChecklist items={lesson.checklist} />
+                                            )}
+
+                                            {lesson.quiz && (
+                                                <CurriculumQuiz quiz={lesson.quiz} />
+                                            )}
                                         </div>
                                     </div>
                                 ))}

@@ -8,6 +8,8 @@ import ToolCelebration from '../../components/ToolCelebration';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import jsPDF from 'jspdf';
 import { toPng } from 'html-to-image';
+import { VaultUpsell } from '../../components/VaultUpsell';
+import styles from './styles.module.css';
 
 const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
     const [display, setDisplay] = useState(0);
@@ -403,8 +405,8 @@ export default function DueDiligenceTool() {
 
                             <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-zinc-800">
-                                    { }
-                                    <div className="h-full bg-red-600 transition-all duration-500" style={{ width: `${(step / 3) * 100}%` }} />
+                                    {/* eslint-disable-next-line react/forbid-dom-props */}
+                                    <div className={`h-full bg-red-600 transition-all duration-500 ${styles.progressBar}`} style={ { '--progress-width': `${(step / 3) * 100}%` } as React.CSSProperties } />
                                 </div>
                                 
                                 {step === 1 && (
@@ -586,8 +588,8 @@ export default function DueDiligenceTool() {
                                                             <div className="text-xs font-mono text-zinc-500">{tv.severity}% Severity</div>
                                                         </div>
                                                         <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden mb-1">
-                                                            { }
-                                                            <div className={`h-full ${tv.color}`} style={{ width: `${tv.severity}%` }} />
+                                                            {/* eslint-disable-next-line react/forbid-dom-props */}
+                                                            <div className={`h-full ${tv.color} ${styles.progressBar}`} style={ { '--progress-width': `${tv.severity}%` } as React.CSSProperties } />
                                                         </div>
                                                         <div className="text-xs text-zinc-400">{tv.details}</div>
                                                     </div>
@@ -633,8 +635,13 @@ export default function DueDiligenceTool() {
                                                             const color = colorClasses[i % colorClasses.length];
                                                             
                                                             return (
-                                                                <div key={j} className={`${width} bg-gradient-to-r ${color} border-l-2 p-3 rounded-r-md min-h-[70px] flex items-center transition-all hover:brightness-125 hover:translate-x-1 duration-300 shadow-sm`}>
-                                                                    <span className="text-xs leading-relaxed">{action}</span>
+                                                                <div key={j} className={`${width} bg-gradient-to-r ${color} border-l-2 p-3 rounded-r-md min-h-[70px] flex flex-col justify-center transition-all hover:brightness-125 hover:translate-x-1 duration-300 shadow-sm relative overflow-hidden group`}>
+                                                                    {plan.month === 1 && (
+                                                                        <div className="absolute top-0 right-0 bg-red-500/20 text-red-300 text-[8px] font-mono px-2 py-0.5 rounded-bl-md uppercase tracking-widest border-b border-l border-red-500/30 group-hover:bg-red-500/40 transition-colors">
+                                                                            Critical Path Dependency
+                                                                        </div>
+                                                                    )}
+                                                                    <span className={`text-xs leading-relaxed relative z-10 ${plan.month === 1 ? 'mt-2' : ''}`}>{action}</span>
                                                                 </div>
                                                             );
                                                         })}
@@ -714,6 +721,22 @@ export default function DueDiligenceTool() {
 
                                 </div>
                                 {/* -------- PDF CAPTURE ZONE END -------- */}
+
+                                <div className="mt-8">
+                                    <VaultUpsell 
+                                        urgencyLevel={results.riskScore >= 60 ? 'critical' : 'growth'}
+                                        recommendedTracks={[
+                                            { id: 'TRACK-05', title: 'Technical Debt & Valuation Impact', desc: 'Prevent catastrophic enterprise value destruction via post-acquisition legacy drag.' },
+                                            { id: 'TRACK-04', title: 'AI Unit Economics & Margin Collapse', desc: 'Structure aggressive reorganizations to salvage impaired acquisitions.' }
+                                        ]} 
+                                    />
+                                    
+                                    <div className="flex justify-center mt-8 mb-8">
+                                        <button onClick={() => { setResults(null); setStep(1); }} className="text-zinc-500 font-mono text-xs tracking-widest hover:text-white uppercase transition-colors">
+                                            ← Run New Due Diligence
+                                        </button>
+                                    </div>
+                                </div>
 
                             </motion.div>
                         </>

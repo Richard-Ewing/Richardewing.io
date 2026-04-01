@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
+import { VaultUpsell } from '../../components/VaultUpsell';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { Target, Users, Cpu, DollarSign, ArrowRight, BrainCircuit, HardDrive, Zap } from 'lucide-react';
@@ -311,8 +312,8 @@ export default function SLMTool() {
                             </div>
                         </ScrollReveal>
 
-                        <ScrollReveal delay={150}>
-                             <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-white/10">
+                         <ScrollReveal delay={150}>
+                             <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-white/10 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <Zap size={16} className="text-yellow-400" />
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">The "Why" For Private AI</span>
@@ -320,18 +321,21 @@ export default function SLMTool() {
                                 <p className="text-zinc-300 text-sm leading-relaxed mb-4">
                                     Aside from raw compute arbitrage, moving to an SLM (like Llama-3-8B) provides 100% data sovereignty, eliminating the blast-radius risk of sending PII and proprietary board logic outside your VPC. If your business is regulated (HealthTech, FinTech, Defense), the "API Tax" isn't just financial, it's a regulatory liability. 
                                 </p>
-                                <div className="space-y-3">
-                                    <div className="text-sm text-white font-semibold mb-2">Stop renting your brain. Have me audit your API architecture:</div>
-                                    <NewsletterForm buttonText="Request R&D AI Audit" extraData={{ tool: 'SLM', result: results.isSelfHostCheaper ? "Deploy Local" : "Stay API" }} />
-                                </div>
                             </div>
                         </ScrollReveal>
 
+                        <VaultUpsell 
+                            urgencyLevel={results.isSelfHostCheaper ? 'critical' : 'growth'}
+                            recommendedTracks={[
+                                { id: 'TRACK-04', title: 'AI Unit Economics & Margin Collapse', desc: 'Identify AI insolvency triggers and restructure inference costs.' },
+                                { id: 'TRACK-07', title: 'Data Sovereignty & Local SLMs', desc: 'Deploy Local Enclaves to bypass SaaS vendor IP contamination.' }
+                            ]} 
+                        />
+
                         {/* Action Footer */}
                         <ScrollReveal delay={250}>
-                            <div className="flex justify-center gap-6 pt-6 border-t border-white/10" data-html2canvas-ignore>
+                            <div className="flex justify-center gap-6 mt-6" data-html2canvas-ignore>
                                 <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Re-Calculate Variables</button>
-                                <Link href="/advisory" className="text-zinc-500 text-sm hover:text-white">Book Private AI Implementation →</Link>
                             </div>
                         </ScrollReveal>
                     </div>

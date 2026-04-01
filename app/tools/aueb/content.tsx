@@ -10,6 +10,7 @@ import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
+import { VaultUpsell } from '../../components/VaultUpsell';
 import progressStyles from '../../styles/progress.module.css';
 
 const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
@@ -917,17 +918,9 @@ export default function AUEBTool() {
 
                                             <div className="border-l border-white/10 pl-8">
                                                 <div className="mb-4">
-                                                    <h3 className="text-xl font-bold text-white mb-2">Want the Full Analysis?</h3>
-                                                    <p className="text-zinc-400 text-sm">Get a personalized deep-dive with model migration roadmap and feature P&L breakdown.</p>
+                                                    <h3 className="text-xl font-bold text-white mb-2">Detailed Financial Matrix</h3>
+                                                    <p className="text-zinc-400 text-sm">Deploy the Vault Curriculum to execute immediate margin recovery strategies.</p>
                                                 </div>
-                                                <NewsletterForm
-                                                    buttonText="Get Full Report"
-                                                    extraData={{
-                                                        tool: 'AUEB',
-                                                        persona,
-                                                        grossMargin: results.grossMargin
-                                                    }}
-                                                />
                                             </div>
                                         </div>
                                     </div>
@@ -939,16 +932,18 @@ export default function AUEBTool() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-                                    className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 border-t border-white/10"
+                                    className="pt-8"
                                 >
-                                    <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Analysis</button>
-                                    <Link href="/advisory" className={`px-10 py-4 font-bold uppercase tracking-widest rounded-xl transition-all ${results.grossMargin < 50
-                                        ? 'bg-red-600 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.4)]'
-                                        : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)]'
-                                        }`}>
-                                        {results.grossMargin < 50 ? '🚨 Emergency Margin Audit' : 'Optimize My Margins'} →
-                                    </Link>
-                                    <Link href="/system" className="text-zinc-500 text-sm hover:text-white">Explore All Tools →</Link>
+                                    <VaultUpsell 
+                                        urgencyLevel={results.grossMargin < 50 ? 'critical' : 'growth'}
+                                        recommendedTracks={[
+                                            { id: 'TRACK-04', title: 'AI Unit Economics & Margin Collapse', desc: 'Identify AI insolvency triggers and restructure inference costs.' },
+                                            { id: 'TRACK-08', title: 'Caching & Deterministic Fallbacks', desc: 'Implement semantic routing to avoid the LLM token tax.' }
+                                        ]} 
+                                    />
+                                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-6">
+                                        <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Analysis</button>
+                                    </div>
                                 </motion.div>
 
                                 {/* SOCIAL PROOF */}
@@ -983,17 +978,29 @@ export default function AUEBTool() {
                                         </h3>
                                         <div className="bg-zinc-900 border border-white/10 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
                                             <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-500 via-blue-500 to-indigo-500"></div>
+                                            
+                                            {/* MONTH 1 CRITICAL DEPENDENCY INJECTION */}
+                                            <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-4 mb-8">
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <AlertTriangle size={16} className="text-cyan-400" />
+                                                    <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Phase 1 Critical Path Dependency</span>
+                                                </div>
+                                                <p className="text-zinc-300 text-sm leading-relaxed">
+                                                    <strong>Execution mapped below is non-linear.</strong> Phase 1 architecture decisions compound geometrically. Delaying Month 1 deliverables will irreversibly bind your infrastructure to legacy OpEx margins. Month 1 execution is the only variable that guarantees Month 3 solvency.
+                                                </p>
+                                            </div>
+
                                             <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6 border-b border-white/5 pb-4">Execution Gantt Chart (90-Day Burn Down)</h4>
                                             
                                             <div className="space-y-6 md:space-y-8">
                                                 {results.qpep_roadmap.map((plan: any, i: number) => (
                                                     <div key={i} className="relative md:pl-6 pl-4">
                                                         {/* Timeline dot */}
-                                                        <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)] z-10"></div>
+                                                        <div className={`absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] z-10 ${i === 0 ? 'bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.8)] animate-pulse' : 'bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)]'}`}></div>
                                                         
                                                         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                            <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-400 shrink-0 inline-block w-fit">
-                                                                Month {plan.month}
+                                                            <div className={`px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest shrink-0 inline-block w-fit ${i === 0 ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'bg-white/5 text-zinc-400'}`}>
+                                                                Month {plan.month} {i === 0 && ' - CRITICAL'}
                                                             </div>
                                                             <div className="font-bold text-white text-base leading-tight md:leading-normal">{plan.focus}</div>
                                                         </div>
@@ -1027,11 +1034,10 @@ export default function AUEBTool() {
                                     </motion.div>
                                 )}
 
-                                </div>
-
                                 {/* Q-PEP Remediation Block — captured into PDF */}
-                                <QPEPRemediation toolId="AUEB" metrics={results} />
+                                <QPEPRemediation toolId="AUEB" metrics={results!} />
 
+                                </div>
                                 {/* -------- PDF CAPTURE ZONE END -------- */}
 
                             </motion.div>
