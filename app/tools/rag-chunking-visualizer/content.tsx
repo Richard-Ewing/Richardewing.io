@@ -406,6 +406,41 @@ export default function RagChunkingContent() {
                             </div>
                         </ScrollReveal>
 
+                        {/* CLOUD API BURN METRICS (NEW STRAT) */}
+                        <ScrollReveal delay={220}>
+                            <div className="mb-6 border-b border-white/10 pb-4 mt-8">
+                                <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                    <Server size={18} className="text-cyan-400"/>
+                                    Enterprise Cloud Margin Impact
+                                </h3>
+                                <p className="text-zinc-500 text-sm">Fortune 500 cloud infrastructure spend multiplier based on current chunking inefficiency.</p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-sm">
+                                <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
+                                    <h4 className="text-white font-semibold mb-4 border-b border-white/10 pb-2">Vector Database Burn (Pinecone/Milvus)</h4>
+                                    <div className="space-y-4">
+                                        <div>
+                                            <div className="flex justify-between mb-1"><span className="text-zinc-400">Inefficiency Premium</span><span className="text-rose-400 font-mono font-bold">+${Math.round(results.chunks.length * 14.5).toLocaleString()}/yr</span></div>
+                                            <p className="text-xs text-zinc-500 mt-2">Bad chunking necessitates upgrading from cheap s1 (storage optimized) pods to expensive p2 (performance optimized) pods to handle the sheer volume of fragmented, overlapping semantic arrays.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
+                                    <h4 className="text-white font-semibold mb-4 border-b border-white/10 pb-2">Frontier Model API Exhaust</h4>
+                                    <div className="space-y-4">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-500/30 text-cyan-400 font-bold shrink-0">API</div>
+                                            <div>
+                                                <div className="text-white font-semibold flex justify-between">Retrieval Token Tax <span className="text-rose-400 font-mono text-xs">+{((overlap / chunkSize)*100).toFixed(0)}% Opex</span></div>
+                                                <div className="text-xs text-zinc-400 mt-1">Every RAG pipeline query pulls these redundant tokens into the context window, multiplying your per-token prompt costs geometrically.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+
                         {/* Board-Ready 3-Step Remediation Playbook */}
                         <ScrollReveal delay={250}>
                              <div className="mb-6 border-b border-white/10 pb-4 mt-8">

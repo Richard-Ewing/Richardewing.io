@@ -290,6 +290,23 @@ Only answer questions related to AcmeCorp logistics.
                                                     </motion.div>
                                                 ))}
                                             </div>
+
+                                            {/* CORPORATE EXTORTION MATRIX (NEW STRAT) */}
+                                            {results.evaluations.filter((v:any) => !v.passed).length > 0 && (
+                                                <div className="mt-8 border-t border-white/10 pt-6">
+                                                    <h4 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><Target size={16} className="text-rose-500"/> Corporate Extortion Extrapolation</h4>
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        <div className="bg-rose-500/5 border border-rose-500/20 p-5 rounded-xl">
+                                                            <div className="font-semibold text-rose-400 text-sm mb-2">Automated Brand Disparagement</div>
+                                                            <p className="text-xs text-zinc-400 leading-relaxed">By hijacking the primary System Prompt via Context Overflow, an attacker forces your corporate customer service bot to output disparaging, racist, or factually catastrophic material directly to end-users on your domain.</p>
+                                                        </div>
+                                                        <div className="bg-amber-500/5 border border-amber-500/20 p-5 rounded-xl">
+                                                            <div className="font-semibold text-amber-400 text-sm mb-2">Function Calling Escalation (RCE)</div>
+                                                            <p className="text-xs text-zinc-400 leading-relaxed">If this LLM possesses read/write access to internal APIs via tool-calling, the Roleplay Override vector can coerce the model into systematically dumping or deleting database records under the guise of an "administrative simulation."</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
                                     )}
 

@@ -881,6 +881,11 @@ export const ARTICLE_DERIVED = [
     'AI mistake detection assessment', 'Claude cheating interviews',
     'Anthropic candidates using Claude', 'syntax interview is dead',
     'measuring the wrong skill', 'what would you ship judgment',
+    // From "Make AI Projects Profitable" (Built In, Apr 2026)
+    'ai volatility tax', 'ai response drift', 'execution layer',
+    'evergreen ratio', 'profitability framework', 'make AI projects profitable',
+    'AI margin collapse', 'agentic orchestration', 'compound AI systems',
+    'behavioral auditing', 'unpredictable AI models',
     // Publication & authority signals
     'published CIO.com', 'published Built In', 'published Mind the Product',
     'published HackerNoon', 'published Foundry', 'editors pick Built In',

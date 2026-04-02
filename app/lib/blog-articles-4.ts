@@ -1,0 +1,115 @@
+import { ArticleData } from './blog-types';
+
+export const articlesBatch4: Record<string, ArticleData> = {
+    'make-ai-projects-profitable': {
+        title: 'Most AI Projects Just Burn Cash. Here\'s How to Make Them Profitable.',
+        excerpt: 'An expert analysis on AI unit economics, the "Evergreen Ratio", and calculating the AI Volatility Tax to stop bleeding cash on inferencing.',
+        category: 'AI Economics',
+        date: '2026-04-02',
+        readTime: '8 min',
+        featured: true,
+        canonicalUrl: 'https://builtin.com/articles/make-ai-projects-profitable',
+        content: `<h2>The AI Profitability Crisis</h2><p>In 2026, the era of deploying AI simply to boast about having "AI inside" is functionally dead. Executive boards are no longer accepting pure R&D burn without measurable unit economics. We have transitioned from the awe of capability to the brutal reality of the P&L.</p><p>There are two compounding liabilities that drag most AI projects into "Negative Carry" (costing more to run than they generate): The <strong>AI Volatility Tax</strong> and an abysmal <strong>Evergreen Ratio</strong>.</p><h3>The AI Volatility Tax</h3><p>Every non-deterministic AI inference carries a Volatility Tax. This is the hidden cost of human-in-the-loop verification required because probabilistic systems hallucinate. If your AI writes code 10x faster but requires your senior engineer to spend 4 hours auditing its outputs to prevent a production vulnerability, your AI feature has negative unit economics.</p><p>You must factor the labor cost of verification directly into the Cost of Goods Sold (COGS) for your AI features. The solution is the <strong>Execution Layer</strong>—a deterministic boundary that verifies and enforces strict schemas on LLM outputs before they are processed by your business logic. By shifting validation to code rather than humans, you minimize the Volatility Tax.</p><h3>The Evergreen Ratio</h3><p>If every query to your system requires a live inference from a Frontier Model (like GPT-4 Opus or Claude 3.5 Opus), you will bankrupt yourself at scale. Profitability is determined by the <strong>Evergreen Ratio</strong>: the ratio of Cached/Pre-calculated Responses to Live Inferences.</p><p>High profitability AI systems rely heavily on semantic caching, embeddings, and pre-computation. The most profitable AI systems are the ones that use the least amount of live AI execution in production. By driving your Evergreen Ratio up, you detach your revenue scaling from your compute scaling.</p><hr/><p><em>To measure your feature's economic viability, use the <a href="/tools/aueb">AI Unit Economics Benchmark (AUEB)</a> or the <a href="/tools/vta">Volatility Tax Auditor (VTA)</a> tools. Read the full post on <a href="https://builtin.com/articles/make-ai-projects-profitable" target="_blank">Built In</a>.</em></p>`
+    },
+    'anthropic-academy-ai-courses-curated': {
+        title: 'Anthropic Just Made AI Education Free — Here\'s What Leaders Should Take',
+        excerpt: 'A curated walkthrough of all 15 Anthropic Academy courses, grouped by audience with editorial commentary on which ones matter and why.',
+        category: 'AI Economics',
+        date: '2026-03-25',
+        readTime: '5 min',
+        canonicalUrl: '/resources/ai-courses',
+        content: `<h2>Navigating the AI Curriculum</h2><p>Anthropic's commitment to open education is a paradigm shift, but with 15 dense technical courses, executive and engineering leaders risk getting bogged down in tutorials not meant for their persona.</p><h3>For the Executive Suite</h3><p>If you are controlling the budget, skip the developer-centric prompt engineering basic courses. You need to focus entirely on the architectural and safety modules. Understanding how Constitutional AI governs drift and how tiered access models dictate pricing is critical for accurately modeling your API burn rate.</p><h3>For the Architects (The "Execution Layer" Builders)</h3><p>Ignore the chatbot tutorials; your focus must be on <strong>Tool Use</strong> and <strong>Function Calling</strong>. The only way to build deterministic enterprise software using probabilistic models is by forcing the models to output strictly validated JSON schemas. The courses on function calling are mandatory listening for anyone building what we call an Execution Layer—that firm barrier between AI intent and system action.</p><hr/><p><em>Integrate these learnings with the <a href="/curriculum/tracks/agentic-governance">Agentic Governance Curriculum Track</a>.</em></p>`
+    },
+    'why-your-cfo-hates-your-agile-transformation': {
+        title: 'Why Your CFO Hates Your Agile Transformation',
+        excerpt: 'CIOs speak in sprints; CFOs speak in quarters. That language barrier is the number one reason R&D budgets get slashed.',
+        category: 'Technical Debt',
+        date: '2026-03-20',
+        readTime: '8 min',
+        featured: true,
+        canonicalUrl: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html',
+        content: `<h2>The Communication Gap</h2><p>Agile transformations optimize for engineering velocity but absolutely destroy financial visibility. When a CFO asks what a $5M R&D investment generated over a quarter, and the engineering leader answers with "story points" and "velocity charts," the CFO hears: <em>"We have no idea what we are building or what it costs."</em></p><h3>The Capitalization Matrix</h3><p>The solution is not abandoning Agile; it is building a translation layer. We use the Capitalization Matrix to map Sprint delivery directly into ASC 350-40 accounting standards.</p><p>You must divide all engineering work strictly into two buckets: <strong>OpEx (Maintenance & Bug Fixes)</strong> and <strong>CapEx (New Feature Development)</strong>. By tracking the percentage of time your team spends maintaining legacy systems (the Innovation Tax), you can show the CFO exactly how much technical debt is compressing the company's EBITDA.</p><hr/><p><em>Measure your exact debt liability via the <a href="/tools/pdi">Product Debt Index (PDI)</a>. Read the original column on <a href="https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html" target="_blank">CIO.com</a>.</em></p>`
+    },
+    'vibe-coding-era-software-engineering-role': {
+        title: 'In the Vibe Coding Era, What Does a Software Engineer Even Do?',
+        excerpt: 'An expert analysis of the changing nature of software development work. Introduces the 4 Laws of Probabilistic Software Development.',
+        category: 'Engineering Management',
+        date: '2026-03-15',
+        readTime: '9 min',
+        canonicalUrl: 'https://builtin.com/articles/vibe-coding-era-software-engineering-role',
+        content: `<h2>Welcome to the Vibe Coding Era</h2><p>Copilots and LLM-based SWE agents have reduced the cost of generating syntax to zero. Developers can now rapidly scaffold applications by simply describing the "vibe" or high-level architecture they want. But this explosion of generated code creates an enormous liability.</p><h3>The 4 Laws of Probabilistic Software Development</h3><p>1. <strong>Complexity Compounds Faster:</strong> Generating code is free; maintaining it is not. Vibe coding allows junior developers to spin up architectures they cannot mathematically comprehend, accelerating the Technical Insolvency Date.<br/>2. <strong>Verification Replaces Generation:</strong> The core skill of the software engineer is no longer writing for-loops. It is auditing, verifying, and securing probabilistic generations.<br/>3. <strong>The Systems Governor:</strong> The most valuable engineers moving forward are "Systems Governors"—architects who design the deterministic state machines that bound and control LLM actions.<br/>4. <strong>The Liability Gradient:</strong> The closer an AI output gets to database execution, the higher its liability profile. Humans must govern the execution thresholds.</p><hr/><p><em>Evaluate your team's readiness using the <a href="/curriculum/tracks/ai-product-economics">AI Product Economics Track</a>. Full unedited article published on <a href="https://builtin.com/articles/vibe-coding-era-software-engineering-role" target="_blank">Built In</a>.</em></p>`
+    },
+    'agentic-ai-scientific-economic-analysis': {
+        title: 'AI Agents Won\'t Crash the Economy. Bad Governance Might.',
+        excerpt: 'An expert analysis of the AI science and economics behind the Citrini Research report on agentic AI.',
+        category: 'AI Economics',
+        date: '2026-03-10',
+        readTime: '9 min',
+        canonicalUrl: 'https://builtin.com/articles/agentic-ai-scientific-economic-analysis',
+        content: `<h2>The Macroeconomic View of Agents</h2><p>Agentic AI—systems designed to take autonomous action—represents a fundamental shift in the <strong>variable cost of intelligence</strong>. For the first time, organizations can scale complex labor without scaling human headcount linearly.</p><h3>The Liability Gradient and Macro Loops</h3><p>However, an autonomous agent without a rigorous governance boundary represents uncontrolled liability. As agents begin to interact with other agents at high frequency, we witness <strong>macro regression loops</strong>: recursive errors caused by Agentic Drift where probabilistic models lose the thread of their original intent.</p><p>To prevent catastrophic failure, companies must deploy an Exogram Action Admissibility Protocol (EAAP) layer that deterministically checks the state and authorization of an agent before it commits an operation to a system of record.</p><hr/><p><em>For detailed EAAP specifications, see our <a href="/exogram/docs/eaap-specification">Documentation Center</a>. Original article hosted at <a href="https://builtin.com/articles/agentic-ai-scientific-economic-analysis" target="_blank">Built In</a>.</em></p>`
+    },
+    'innovation-requires-deleting-code': {
+        title: 'Real Innovation Requires Deleting Code, Not Writing It',
+        excerpt: 'An expert analysis of how to audit for features you can deprecate and how to delete them. Introduces the Sunset Protocol for governing subtraction.',
+        category: 'Technical Debt',
+        date: '2026-02-28',
+        readTime: '6 min',
+        canonicalUrl: 'https://builtin.com/articles/innovation-requires-deleting-code',
+        content: `<h2>The Engineering Obsession with Addition</h2><p>Engineering teams love to build. Product Managers love to launch. But very few organizations celebrate the deletion of code. The result is "Feature Gravity" — an ever-expanding codebase that demands an increasingly large share of your R&D budget just to maintain.</p><h3>The Sunset Protocol</h3><p>Real innovation capacity is unlocked by subtraction. The <strong>Sunset Protocol</strong> is a rigorous governance framework for deprecating code:</p><p>1. <strong>Economic Audit:</strong> Measure the usage and revenue attribution of every feature against its maintenance cost. If Cost > Value, mark it as a Zombie Feature.<br/>2. <strong>The Kill Switch:</strong> Put the feature behind a toggle. If nobody complains for 30 days, delete the underlying infrastructure.<br/>3. <strong>Capacity Reallocation:</strong> Measure the hours saved and immediately reallocate them to high-margin, cap-ex initiatives.</p><p>Deleting code is the highest ROI action a CTO can take to extend the team's Technical Insolvency Date.</p><hr/><p><em>Calculate your maintenance burden instantly at <a href="/tools/pdi">richardewing.io/tools/pdi</a>. Original run on <a href="https://builtin.com/articles/innovation-requires-deleting-code" target="_blank">Built In</a>.</em></p>`
+    },
+    'audit-interview-scorecard': {
+        title: 'When AI Writes the Code, What Are Employers Hiring For?',
+        excerpt: 'An expert discussion of how to conduct better software engineering interviews in the age of AI. Introduces the 4 Dimensions of Engineering Judgment scorecard.',
+        category: 'Hiring',
+        date: '2026-02-20',
+        readTime: '7 min',
+        canonicalUrl: 'https://builtin.com/articles/audit-interview-scorecard',
+        content: `<h2>The Death of the Whiteboard Interview</h2><p>If an AI can generate a perfect sorting algorithm in 2 seconds, why are we still asking candidates to whiteboard it? We are testing a skill that has effectively been commoditized.</p><h3>The 4 Dimensions of Engineering Judgment</h3><p>Employers should shift to the <strong>Audit Interview</strong> model. Provide the candidate with a 500-line block of AI-generated code containing subtle architectural, security, and logic flaws. Score them on:</p><p>1. <strong>Verification:</strong> Did they catch the hidden SQL injection or memory leak?<br/>2. <strong>Prioritization:</strong> Can they differentiate between a P0 critical failure and a P3 style nitpick?<br/>3. <strong>Communication:</strong> How well do they explain the risk to a non-technical PM?<br/>4. <strong>Judgment:</strong> Under what business constraints would they "ship it anyway"?</p><p>We are no longer hiring code authors. We are hiring code auditors.</p><hr/><p><em>Generate practice scenarios using the <a href="/tools/audit-interview">Audit Interview Tool</a>. Article found on <a href="https://builtin.com/articles/audit-interview-scorecard" target="_blank">Built In</a>.</em></p>`
+    },
+    'financial-metrics-scorecard': {
+        title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard',
+        excerpt: 'Selected for the Mind the Product Newsletter. A deep dive on product P&L ownership and capital efficiency.',
+        category: 'Product Management',
+        date: '2026-02-15',
+        readTime: '5 min',
+        canonicalUrl: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/',
+        content: `<h2>Transitioning from Output to Outcomes</h2><p>Great Product Managers do not just ship features; they manage P&Ls. If a PM cannot articulate the financial unit economics of their domain, they are functioning as a project manager.</p><h3>The 3 Core Financial Metrics</h3><p>1. <strong>Feature Contribution Margin:</strong> What does this specific feature cost in cloud compute, third-party APIs (especially LLMs), and maintenance versus the revenue it drives or churn it prevents?<br/>2. <strong>Cost of Delay (CoD):</strong> A quantified dollar value of what every week of delayed launch costs the business in lost revenue or market share.<br/>3. <strong>R&D Capitalization Rate:</strong> What percentage of the team's sprint cycles count as Capital Expenditure (new value) vs. Operating Expense (debt and bugs).</p><hr/><p><em>Track your capital efficiency using the <a href="/tools/aper">APER Scorecard</a>. Featured by <a href="https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/" target="_blank">Mind the Product</a>.</em></p>`
+    },
+    'reimagining-coding-interview': {
+        title: 'Reimagining the Coding Interview',
+        excerpt: 'AI can generate code. The scarce skill is catching what AI gets wrong. This article introduces the Audit Interview.',
+        category: 'Hiring',
+        date: '2026-02-10',
+        readTime: '6 min',
+        canonicalUrl: 'https://builtin.com/articles/reimagining-coding-interview',
+        content: `<h2>A Paradigm Shift in Talent Assessment</h2><p>Standard data structures and algorithms tests do not predict performance in an era where Copilot handles boilerplate. The real danger in modern software development is the opaque complexity introduced by AI models generating code faster than humans can comprehend it (Vibe Coding Debt).</p><h3>Testing for Auditing Prowess</h3><p>The solution is the <strong>Audit Interview</strong>. By presenting candidates with flawed AI generations and asking them to navigate the debug process, companies can assess the only skill that matters: human judgment. An engineer who can spot a subtle context-window hallucination or a dangerous edge case in an LLM output is exponentially more valuable than an engineer who has memorized a binary tree reversal.</p><hr/><p><em>Test your skills on the <a href="/tools/audit-interview">Audit Interview Simulator</a>. Published originally on <a href="https://builtin.com/articles/reimagining-coding-interview" target="_blank">Built In</a>.</em></p>`
+    },
+    'shipping-faster-wont-get-you-promoted': {
+        title: 'Hey, senior PMs: Shipping faster won’t get you promoted',
+        excerpt: 'Shipping fast felt great — until margins tanked, and I learned that real product leadership means understanding how features make or lose money.',
+        category: 'Product Management',
+        date: '2026-02-05',
+        readTime: '6 min',
+        canonicalUrl: 'https://www.cio.com/article/4128139/hey-senior-pms-shipping-faster-wont-get-you-promoted.html',
+        content: `<h2>The Velocity Trap</h2><p>In mid-career product management, the primary metric of success is execution velocity: How fast can you get a spec to engineering, through QA, and into production? But as you transition to Senior and Principal roles, this metric becomes a liability.</p><h3>Feature Economics over Feature Velocity</h3><p>Executive leadership does not care about your sprint velocity if the features you are shipping hold a negative carry. A Senior PM understands the <strong>Feature Bloat Calculus</strong>. They know that every line of code added to the system increases the permanent maintenance tax on the organization.</p><p>You get promoted by killing bad ideas before they consume engineering capacity. You get promoted by proving the unit economics of a feature before demanding architecture changes. You get promoted by acting like the CEO of your feature set.</p><hr/><p><em>Check out the full article on <a href="https://www.cio.com/article/4128139/hey-senior-pms-shipping-faster-wont-get-you-promoted.html" target="_blank">CIO.com</a>.</em></p>`
+    },
+    'ai-product-business-test': {
+        title: 'The AI Product Business Test',
+        excerpt: 'Validating AI unit economics before writing code. (Editor\'s Pick)',
+        category: 'AI Economics',
+        date: '2026-01-20',
+        readTime: '6 min',
+        featured: true,
+        canonicalUrl: 'https://builtin.com/articles/ai-product-business-test',
+        content: `<h2>The Margin Collapse Reality Check</h2><p>Before writing a single line of AI orchestration code, product teams must pass the AI Business Test. The fundamental problem with GenAI products is the <strong>Cost of Predictivity</strong>: taking an LLM from 80% accuracy to 95% accuracy often requires a 10x explosion in token costs and RAG infrastructure.</p><h3>The Viability Framework</h3><p>If your product requires 5,000 input tokens and generates 1,000 output tokens to satisfy a single user query, calculate that cost via the OpenAI/Anthropic pricing sheets. Now multiply that by user volume. Does your SaaS subscription cover that burn rate while maintaining 70% gross margins? If not, you are building a feature that fails at scale.</p><p>To survive, you must implement <strong>Semantic Caching</strong> and Tiered Model Routing to drastically reduce live LLM calls.</p><hr/><p><em>Benchmark your exact token economics at <a href="/tools/aueb">The AUEB Calculator</a>. Recognized as an Editor's Pick on <a href="https://builtin.com/articles/ai-product-business-test" target="_blank">Built In</a>.</em></p>`
+    },
+    'best-ai-product-zero-customers': {
+        title: 'The Best AI Product I Ever Led Had Zero Customers',
+        excerpt: 'A retrospective on why technical excellence doesn\'t guarantee product-market fit.',
+        category: 'Product Management',
+        date: '2025-09-15',
+        readTime: '7 min',
+        canonicalUrl: 'https://hackernoon.com/the-best-ai-product-i-ever-led-had-zero-customers',
+        content: `<h2>The Allure of the Cutting Edge</h2><p>We built a technically flawless, highly complex AI orchestration system. It utilized state-of-the-art vector embeddings, dynamic prompt routing, and rigorous execution layers. Our engineering team won awards. The architecture was pristine.</p><p>And nobody bought it.</p><h3>Technical Excellence vs. Product-Market Fit</h3><p>The lesson learned through millions in sunk R&D costs is that the enterprise buyer does not buy architectures; they buy operational leverage. We had fallen in love with the technology rather than the economic problem it solved.</p><p>Before you leverage the latest LLM advancement, ensure you are answering a highly acute financial pain point for the buyer. If you cannot explain the ROI to the CFO in 30 seconds, your technical excellence is irrelevant.</p><hr/><p><em>Read the full post-mortem on <a href="https://hackernoon.com/the-best-ai-product-i-ever-led-had-zero-customers" target="_blank">HackerNoon</a>. Validate your enterprise hypotheses via the <a href="/tools/ev-se">Enterprise Value Scenario Engine (EV-SE)</a>.</em></p>`
+    }
+};

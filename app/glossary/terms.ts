@@ -705,6 +705,76 @@ The decision to migrate should be driven by economics, not fashion. If your mono
         relatedTerms: ['technical-debt', 'legacy-code', 'refactoring', 'technical-insolvency-date'],
         relatedTools: [{ name: 'Product Debt Index (PDI)', url: '/tools/pdi' }],
     },
+    {
+        slug: 'ai-volatility-tax',
+        title: 'AI Volatility Tax',
+        category: 'Richard Ewing Frameworks',
+        definition: `The AI Volatility Tax is a framework developed by Richard Ewing (expanding on concepts from Steve Oppenheim) that measures the hidden labor cost of verifying probabilistic AI outputs. Unlike traditional deterministic software where QA is a one-time cost, probabilistic AI requires continuous human-in-the-loop verification on every output.
+
+This ongoing "tax" occurs because you can never fully trust an LLM. As a result, the cost structure of an AI feature isn't just the API call; it includes the human labor required to verify, correct, and manage the output of the model in production.
+
+If an AI writes code 10x faster but requires a senior engineer to spend hours validating that the code isn't hallucinating a vulnerable package, the AI Volatility Tax is the cost of that engineer's time.`,
+        whyItMatters: `Most companies budget for the compute cost of AI but ignore the Volatility Tax. If the labor cost to verify the output exceeds the labor cost saved by generating it, the AI feature has negative unit economics and will burn cash at scale.`,
+        faqs: [
+            { question: 'What is the AI Volatility Tax?', answer: 'The ongoing human labor cost required to verify, monitor, and correct the unpredictable outputs of probabilistic AI models.' },
+            { question: 'How do you reduce the Volatility Tax?', answer: 'Through strict Execution Layers, deterministic guardrails, Confidence Scoring, and using AI for low-risk ideation rather than high-risk execution.' }
+        ],
+        relatedTerms: ['cost-of-predictivity', 'ai-response-drift', 'execution-layer'],
+        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }, { name: 'Volatility Tax Auditor (VTA)', url: '/tools/vta' }],
+    },
+    {
+        slug: 'ai-response-drift',
+        title: 'AI Response Drift (LLM Inconsistency)',
+        category: 'AI & Machine Learning',
+        definition: `AI Response Drift (or LLM Inconsistency) is the phenomenon where a language model produces different, conflicting, or degraded answers to the exact same prompt over time or across repeated executions. 
+
+Unlike traditional software APIs which are deterministic (the same input always yields the exact same output), LLMs are probabilistic. They sample from a distribution of possible next tokens. Even with temperature set to 0, underlying model updates, routing changes, or slight context shifts can cause the model's behavior to drift.
+
+Richard Ewing identifies Response Drift as the primary barrier to autonomous agentic orchestration. If the underlying intelligence is unstable, any autonomous workflow built on top of it becomes brittle and economically unviable.`,
+        whyItMatters: `You cannot build reliable, deterministic enterprise workflows on top of a foundation that drifts. If an LLM suddenly changes how it parses a JSON schema, it will silently break downstream integrations.`,
+        faqs: [
+            { question: 'What causes AI Response Drift?', answer: 'Silent model updates by API providers (like OpenAI or Anthropic), changes in quantization, or differences in GPU floating-point arithmetic across data centers.' },
+            { question: 'Can you fix LLM Inconsistency?', answer: 'You cannot fix it at the model level. You must build deterministic Execution Layers around the LLM to catch, validate, and retry non-compliant outputs.' }
+        ],
+        relatedTerms: ['execution-layer', 'ai-volatility-tax', 'agentic-ai'],
+        relatedTools: [{ name: 'Schema Integrity Validator', url: '/tools/schema-integrity' }],
+    },
+    {
+        slug: 'execution-layer',
+        title: 'Execution Layer',
+        category: 'Architecture Patterns',
+        definition: `The Execution Layer is the deterministic boundary within a software application that translates probabilistic AI intent into safe, verifiable, and predictable system actions.
+
+In Richard Ewing's doctrine, the "Brain" (the LLM) should be strictly separated from the "Hands" (the Execution Layer). The AI is allowed to reason, plan, and format data, but it is explicitly forbidden from executing direct changes to databases, controlling systems, or taking irreversible actions.
+
+Instead, the AI passes structured intent (like a validated JSON payload) to the Execution Layer. The Execution Layer is written in deterministic, testable code (like TypeScript or Python) and enforces strict business logic, input validation, and access controls before performing the requested action.`,
+        whyItMatters: `Failing to implement a robust Execution Layer is how companies end up with prompt injection vulnerabilities, data corruption, and catastrophic AI failures. The Execution Layer is the firewall between an unpredictable LLM and a mission-critical database.`,
+        faqs: [
+            { question: 'What is the Execution Layer?', answer: 'The strict, deterministic boundary in your code that validates and executes the intent of an AI model, ensuring the AI never has direct control over critical systems.' },
+            { question: 'Why separate the brain and the hands?', answer: 'Because AI reasoning is probabilistic and prone to hallucination. Execution must be deterministic and guaranteed by traditional, testable code.' }
+        ],
+        relatedTerms: ['agentic-ai', 'ai-response-drift', 'prompt-engineering'],
+        relatedTools: [{ name: 'Command & Control Simulator', url: '/tools/prompt-injection-sandbox' }],
+    },
+    {
+        slug: 'evergreen-ratio',
+        title: 'Evergreen Ratio',
+        category: 'SaaS Metrics & Finance',
+        definition: `The Evergreen Ratio is a financial metric coined by Richard Ewing that measures the profitability of AI workflows. It compares the number of times an AI-generated output is reused (cached/served deterministically) against the number of times it must be freshly generated (inferred probabilistically).
+
+The formula: [Cached Hits] / [Live Inferences] = Evergreen Ratio.
+
+If every user query requires a live LLM inference, the Evergreen Ratio is 0, and your profit margins will collapse at scale due to the Cost of Predictivity. If an AI generates a report once and 100 users read it from the cache, the ratio is 100, and the feature enjoys SaaS-like 80%+ gross margins.
+
+The Evergreen Ratio proves that the most profitable AI companies are actually the ones that use the least AI in production.`,
+        whyItMatters: `Most AI products have negative unit economics because they rely on 100% live inference. Optimizing your Evergreen Ratio is the only way to scale an AI product without scaling your API costs linearly alongside it.`,
+        faqs: [
+            { question: 'What is the Evergreen Ratio?', answer: 'A metric that measures how often you reuse cached AI outputs vs. generating new ones. High Evergreen Ratio = High Profit Margins.' },
+            { question: 'How do you improve your Evergreen Ratio?', answer: 'Pre-compute common answers, cache embeddings, and build product experiences that guide users toward shared insights rather than purely bespoke generation.' }
+        ],
+        relatedTerms: ['cost-of-predictivity', 'ai-volatility-tax', 'unit-economics'],
+        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
+    },
 ];
 
 // Merge new category file terms with existing terms, deduplicating by slug

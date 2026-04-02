@@ -2,12 +2,14 @@ import { ArticleData } from './blog-types';
 import { articlesBatch1 } from './blog-articles-1';
 import { articlesBatch2 } from './blog-articles-2';
 import { articlesBatch3 } from './blog-articles-3';
+import { articlesBatch4 } from './blog-articles-4';
 
 // Merge all article batches into a single lookup
 export const allArticles: Record<string, ArticleData> = {
     ...articlesBatch1,
     ...articlesBatch2,
     ...articlesBatch3,
+    ...articlesBatch4,
 };
 
 // Get sorted article list (newest first)

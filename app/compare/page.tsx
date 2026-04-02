@@ -66,10 +66,10 @@ export default function ComparePage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
-                        Compare <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Tools</span>
+                        Exogram Diagnostics vs <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-400">Mainstream SaaS</span>
                     </h1>
                     <p className="text-lg text-zinc-400 mb-12 max-w-2xl">
-                        How the Product Economist toolkit compares to mainstream alternatives. Different tools solve different problems.
+                        Mainstream tools measure engineering activity, code syntax, and server usage. Exogram tools are board-ready forensic engines that calculate the exact EBITDA hemorrhage caused by Technical Debt, AI Volatility, and Shadow Architecture.
                     </p>
 
                     <div className="space-y-6">

@@ -468,6 +468,53 @@ export default function ShadowContent() {
                             </div>
                         </ScrollReveal>
 
+                        {/* ENTERPRISE THREAT MODELING (NEW) */}
+                        <ScrollReveal delay={120}>
+                            <div className="mb-6 border-b border-white/10 pb-4 mt-8">
+                                <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                    <Target size={18} className="text-rose-400"/>
+                                    Enterprise Threat & Exfiltration Matrix
+                                </h3>
+                                <p className="text-zinc-500 text-sm">Fortune 500 targeted probability modeling for data loss via LLM public memory retention.</p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-sm">
+                                <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
+                                    <h4 className="text-white font-semibold mb-4 border-b border-white/10 pb-2">Regulatory Liability (GDPR / CCPA)</h4>
+                                    <div className="space-y-4">
+                                        <div>
+                                            <div className="flex justify-between mb-1"><span className="text-zinc-400">Projected Fines (Est)</span><span className="text-rose-400 font-mono font-bold">{formatMoney(results.financialLiability * 14.5)}</span></div>
+                                            <div className="w-full bg-black rounded-full h-1"><div className="bg-rose-500 h-1 rounded-full" style={{width: '75%'}}></div></div>
+                                        </div>
+                                        <div>
+                                            <div className="flex justify-between mb-1"><span className="text-zinc-400">Class Action Risk Factor</span><span className="text-amber-400 font-mono font-bold">CRITICAL</span></div>
+                                            <div className="w-full bg-black rounded-full h-1"><div className="bg-amber-500 h-1 rounded-full" style={{width: '90%'}}></div></div>
+                                        </div>
+                                        <p className="text-xs text-zinc-500 mt-2">LLM retention of PII constitutes an unrecoverable breach under "Right to be Forgotten" mandates.</p>
+                                    </div>
+                                </div>
+                                <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
+                                    <h4 className="text-white font-semibold mb-4 border-b border-white/10 pb-2">Intellectual Property Egress</h4>
+                                    <div className="space-y-4">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/30 text-blue-400 font-bold shrink-0">IP</div>
+                                            <div>
+                                                <div className="text-white font-semibold">Proprietary Source Code</div>
+                                                <div className="text-xs text-zinc-400">Foundational models may train on your core algorithms if submitted via consumer endpoints.</div>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/30 text-emerald-400 font-bold shrink-0">DB</div>
+                                            <div>
+                                                <div className="text-white font-semibold">Database Schema Leakage</div>
+                                                <div className="text-xs text-zinc-400">Engineers pasting SQL contexts expose your internal system architecture to zero-day vectors.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+
                         {/* Board-Ready 3-Step Remediation Playbook */}
                         <ScrollReveal delay={150}>
                              <div className="mb-6 border-b border-white/10 pb-4 mt-8">

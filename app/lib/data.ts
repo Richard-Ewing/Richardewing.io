@@ -1,5 +1,14 @@
 export const articles = [
     {
+        slug: "make-ai-projects-profitable",
+        title: "Most AI Projects Just Burn Cash. Here's How to Make Them Profitable.",
+        description: "An expert analysis on AI unit economics, the 'Evergreen Ratio', and calculating the AI Volatility Tax to stop bleeding cash on inferencing.",
+        date: "Apr 2026",
+        readTime: "8 min read",
+        source: "Built In",
+        externalUrl: "https://builtin.com/articles/make-ai-projects-profitable"
+    },
+    {
         slug: "model-collapse-financial-modeling",
         title: "The hidden inflation of AI: Why model collapse is a business risk",
         description: "Everyone is worried about AI ethics, but few are talking about AI economics. AI is not a deploy-and-forget asset. It is a depreciating one that requires continuous CapEx to maintain.",

@@ -348,7 +348,43 @@ export default function AgentRouterContent() {
                                 </div>
                                 <div className="mt-6 pt-4 border-t border-zinc-800/80 flex justify-between items-center text-xs font-mono text-zinc-500 uppercase tracking-widest">
                                     <span>Total Context Window Accumulation</span>
-                                    <span className="text-rose-400 font-bold">{Math.floor(baseInputTokens * agentHops * 2.25).toLocaleString()} + Tokens / Request</span>
+                                    <span className="text-rose-400 font-bold">{Math.floor(baseInputTokens * (agentHops > 1 ? agentHops * 1.5 : 1)).toLocaleString()} + Tokens / Request</span>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+
+                        {/* OPEX HEMORRHAGE MATRIX (NEW STRAT) */}
+                        <ScrollReveal delay={120}>
+                            <div className="mb-6 border-b border-white/10 pb-4 mt-8">
+                                <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                    <Network size={18} className="text-indigo-400"/>
+                                    Enterprise OPEX Drain Matrix
+                                </h3>
+                                <p className="text-zinc-500 text-sm">Quantifying collateral damage on downstream technical and operational budgets.</p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-sm">
+                                <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
+                                    <h4 className="text-white font-semibold mb-4 border-b border-white/10 pb-2">Compute Deprivation (Opportunity Cost)</h4>
+                                    <div className="space-y-4">
+                                        <div>
+                                            <div className="flex justify-between mb-1"><span className="text-zinc-400">Headcount Equivalent</span><span className="text-indigo-400 font-mono font-bold">{(results.monthlyCost * 12 / 185000).toFixed(1)} Engineers</span></div>
+                                            <div className="w-full bg-black rounded-full h-1"><div className="bg-indigo-500 h-1 rounded-full" style={{width: `${Math.min(100, (results.monthlyCost * 12 / 185000) * 10)}%`}}></div></div>
+                                        </div>
+                                        <p className="text-xs text-zinc-500 mt-2">The capital combusted by looping Frontier Models through tertiary logic hops equates to the loaded cost of highly skilled technical hires.</p>
+                                    </div>
+                                </div>
+                                <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
+                                    <h4 className="text-white font-semibold mb-4 border-b border-white/10 pb-2">API Rate Limit Stacking</h4>
+                                    <div className="space-y-4">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center border border-amber-500/30 text-amber-400 font-bold shrink-0">429</div>
+                                            <div>
+                                                <div className="text-white font-semibold">Tier-5 Threshold Violation</div>
+                                                <div className="text-xs text-zinc-400">With {(results.totalTokens / 1000000000).toFixed(2)}B tokens flooding OpenAI/Anthropic, you hit global org-level rate limits (HTTP 429), taking down parallel engineering squads.</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </ScrollReveal>
