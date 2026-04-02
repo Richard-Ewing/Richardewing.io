@@ -12,21 +12,21 @@ const comparisons = [
     {
         title: 'Shadow AI Scanner vs Wiz.io',
         subtitle: 'Liability vs Infrastructure',
-        description: 'Wiz scans cloud infrastructure. Exograms Shadow Defensibility calculates the exact Cost of Doing Nothing (CODN) for every localized shadow endpoint.',
+        description: 'Wiz scans cloud infrastructure. The Shadow AI Endpoint Scanner calculates the exact Cost of Doing Nothing (CODN) for every localized shadow endpoint.',
         href: '/tools/shadow-ai/vs/wiz',
         color: 'rose',
     },
     {
         title: 'Prompt Defensibility vs Promptfoo',
         subtitle: 'Extrapolation vs CLI Testing',
-        description: 'Promptfoo handles CLI testing. Exogram generates C-Suite executable Confidential Audits detailing the dollar liability of payload extrusion.',
+        description: 'Promptfoo handles CLI testing. The Intrusion Sandbox generates C-Suite executable Confidential Audits detailing the dollar liability of payload extrusion.',
         href: '/tools/prompt-injection-sandbox/vs/promptfoo',
         color: 'orange',
     },
     {
         title: 'Agent FinOps vs Datadog LLM',
         subtitle: 'Unit Economics vs Observability',
-        description: 'Datadog traces deployment latency. Exogram models the $100k+ API bankruptcy before multi-agent logic is universally shipped.',
+        description: 'Datadog traces deployment latency. The Agentic FinOps Emulator models the $100k+ API bankruptcy before multi-agent logic is universally shipped.',
         href: '/tools/agent-router/vs/datadog-llm',
         color: 'indigo',
     },
@@ -73,10 +73,10 @@ export default function ComparePage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
-                        Exogram Diagnostics vs <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-400">Mainstream SaaS</span>
+                        Targeted Diagnostic Engines vs <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-400">Mainstream SaaS</span>
                     </h1>
                     <p className="text-lg text-zinc-400 mb-12 max-w-2xl">
-                        Mainstream tools measure engineering activity, code syntax, and server usage. Exogram tools are board-ready forensic engines that calculate the exact EBITDA hemorrhage caused by Technical Debt, AI Volatility, and Shadow Architecture.
+                        Mainstream tools measure engineering activity, code syntax, and server usage. Our specialized forensic engines calculate the exact EBITDA hemorrhage caused by Technical Debt, AI Volatility, and Shadow Architecture.
                     </p>
 
                     <div className="space-y-6">

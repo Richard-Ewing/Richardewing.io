@@ -151,7 +151,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                               <div className="bg-indigo-500/10 border border-indigo-500/20 p-6 rounded-xl">
                                   <h3 className="text-xs font-mono text-indigo-400 uppercase tracking-widest mb-2 flex items-center gap-2"><Zap size={14}/> Board-Level Valuation</h3>
                                   <p className="text-sm text-zinc-300 leading-relaxed">
-                                      Every Exogram diagnostic terminates in an Executive Briefing PDF and directly maps to our Sovereign Enterprise Curriculum, explicitly training your teams to eradicate the vulnerability locally.
+                                      Every <strong>{tool.toolName}</strong> computation terminates in an Executive Briefing PDF. We bypass generalized metrics to give you a deterministic, Board-ready artifact that maps directly to our Sovereign Enterprise Curriculum, explicitly training your teams to eradicate the exact vulnerability locally.
                                   </p>
                               </div>
                           </div>
