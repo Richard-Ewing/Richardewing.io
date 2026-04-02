@@ -2,9 +2,11 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Rocket, Users, Coins, Calculator, TrendingDown, RefreshCcw, DownloadCloud, TrendingUp, Clock, ShieldAlert, Lock } from 'lucide-react';
+import { ArrowLeft, Rocket, Users, Coins, Calculator, TrendingDown, RefreshCcw, DownloadCloud, TrendingUp, Clock, ShieldAlert, Lock, Zap } from 'lucide-react';
 import Link from 'next/link';
 import ToolCelebration from '@/app/components/ToolCelebration';
+import ToolGate from '../../components/tool-gate';
+import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import styles from './styles.module.css';
 
@@ -34,9 +36,13 @@ export default function AIRoiTimelineContent() {
     const breakEvenMonths = netAnnualSavings > 0 ? (implementationCost / netAnnualSavings) * 12 : -1;
 
     // View State
-    const [view, setView] = useState<'input' | 'results'>('input');
+    const [view, setView] = useState<'input' | 'gate' | 'results'>('input');
 
     const handleCalculate = () => {
+        setView('gate');
+    };
+
+    const processResults = () => {
         setView('results');
         
         // Persist the run to the intelligence dashboard
@@ -125,14 +131,36 @@ export default function AIRoiTimelineContent() {
                     </motion.div>
                 )}
 
+                {view === 'gate' && (
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-8">
+                        <ToolGate toolName="the Break-Even Modeler" onUnlock={() => { processResults(); }}>
+                            <></>
+                        </ToolGate>
+                    </motion.div>
+                )}
+
                 {view === 'results' && (
                     <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="space-y-8">
                         <ToolCelebration show={view === 'results'} toolName="AI ROI Modeler" />
                         
-                        <div className="flex items-center gap-2 mb-2 justify-center">
-                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
-                        </div>
-                        {/* Executive Summary */}
+                        <div id="ai-roi-timeline-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
+                            <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-purple-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                                <div>
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                    </div>
+                                    <h2 className="text-xl font-bold text-white mb-1">Timeline Dashboard</h2>
+                                </div>
+                                <div className="mt-4 sm:mt-0 flex gap-4">
+                                    <button onClick={() => setView('input')} className="px-4 py-2 border border-white/10 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
+                                        <RefreshCcw size={14} /> Recalibrate
+                                    </button>
+                                    <ExportToPDFButton targetId="ai-roi-pdf-export-zone" fileName={`AI_ROI_Timeline.pdf`} />
+                                </div>
+                            </div>
+
+                        <div id="ai-roi-pdf-export-zone">
+                         {/* Executive Summary */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div className="p-6 bg-zinc-900 border border-zinc-800 rounded-2xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-colors duration-500"></div>
@@ -179,16 +207,16 @@ export default function AIRoiTimelineContent() {
                                             <div className="col-span-8 bg-black h-4 rounded-full relative overflow-hidden border border-white/5">
                                                 {/* Zero Line Marker */}
                                                 { }
-                                                <div className={`absolute top-0 bottom-0 border-l border-zinc-700 z-10 ${styles.zeroLine}`} style={ { '--left-pos': `${zeroPoint}%` } as React.CSSProperties }></div>
+                                                <style>{`
+                                                    #zero-line-${month} { left: ${zeroPoint}%; }
+                                                    #bar-graph-${month} { width: ${barWidth}%; left: ${isProfitable ? zeroPoint : zeroPoint - barWidth}%; }
+                                                `}</style>
+                                                <div id={`zero-line-${month}`} className={`absolute top-0 bottom-0 border-l border-zinc-700 z-10`} />
                                                 
                                                 {/* The Bar */}
-                                                { }
                                                 <div 
-                                                    className={`absolute top-0 bottom-0 rounded-full ${isProfitable ? 'bg-green-500/50 group-hover:bg-green-400' : 'bg-rose-500/50 group-hover:bg-rose-400'} transition-colors ${styles.barGraph}`}
-                                                    style={ { 
-                                                        '--bar-width': `${barWidth}%`, 
-                                                        '--bar-left': isProfitable ? `${zeroPoint}%` : `${zeroPoint - barWidth}%` 
-                                                    } as React.CSSProperties }
+                                                    id={`bar-graph-${month}`}
+                                                    className={`absolute top-0 bottom-0 rounded-full ${isProfitable ? 'bg-green-500/50 group-hover:bg-green-400' : 'bg-rose-500/50 group-hover:bg-rose-400'} transition-colors`}
                                                 />
                                             </div>
                                             <div className={`col-span-2 text-right font-mono text-xs font-bold ${isProfitable ? 'text-green-400' : 'text-rose-400'}`}>
@@ -200,6 +228,71 @@ export default function AIRoiTimelineContent() {
                             </div>
 
                             <div className="mt-8 pt-8 border-t border-white/5">
+                                {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
+                                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5 bg-black/20">
+                                    <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                        <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                                        3-Step CapEx Justification Playbook
+                                    </h3>
+                                    <p className="text-zinc-400 text-sm mb-8">Execute this operational sequence to securely finance the ${implementationCost.toLocaleString()} CapEx requirement and guarantee the {breakEvenMonths.toFixed(1)}-month payback period.</p>
+
+                                    <div className="space-y-4">
+                                        {/* Step 1 */}
+                                        <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
+                                            <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
+                                                <span className="text-rose-400 font-bold font-mono">01</span>
+                                            </div>
+                                            <div className="relative z-10 w-full">
+                                                <h4 className="text-white font-bold mb-2">Hard-Lock the Headcount Freeze</h4>
+                                                <p className="text-zinc-400 text-sm leading-relaxed mb-4">The ${netAnnualSavings.toLocaleString()} annual savings model depends entirely on strict capacity displacement. Phantom hiring will destroy the break-even math.</p>
+                                                <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                        <Zap size={10} /> Execution Directive
+                                                    </div>
+                                                    <p className="text-xs text-zinc-300">Mandate an immediate requisition freeze in the affected department. Any backfill requests for the {displacedEngineers} displaced roles must require direct Board/CFO approval.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Step 2 */}
+                                        <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                            <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
+                                                <span className="text-amber-400 font-bold font-mono">02</span>
+                                            </div>
+                                            <div className="relative z-10 w-full">
+                                                <h4 className="text-white font-bold mb-2">Quarantine the Implementation CapEx</h4>
+                                                <p className="text-zinc-400 text-sm leading-relaxed mb-4">Without strict vendor and compute isolation, the initial ${implementationCost.toLocaleString()} investment will silently inflate through unmonitored API inference charges.</p>
+                                                <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                        <Zap size={10} /> Execution Directive
+                                                    </div>
+                                                    <p className="text-xs text-zinc-300">Establish a dedicated FinOps tracking tag specifically for this deployment. Route API tokens through a rigid gateway proxy (e.g. Cloudflare AI Gateway) with hard-capped daily spend limits.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Step 3 */}
+                                        <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+                                            <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                                <span className="text-cyan-400 font-bold font-mono">03</span>
+                                            </div>
+                                            <div className="relative z-10 w-full">
+                                                <h4 className="text-white font-bold mb-2">Schedule the Audit Clawback</h4>
+                                                <p className="text-zinc-400 text-sm leading-relaxed mb-4">CapEx investments without structured post-mortems are effectively donations to engineering R&D. Accountability must be verified at precisely {breakEvenMonths.toFixed(1)} months.</p>
+                                                <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                        <Zap size={10} /> Execution Directive
+                                                    </div>
+                                                    <p className="text-xs text-zinc-300">Insert a calendar hold for a 30-minute executive review on the exact breakeven date. If the net position is not positive, the owning VP must submit a detailed remediation plan.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
                                 <VaultUpsell 
                                     urgencyLevel={breakEvenMonths < 12 ? 'growth' : 'critical'}
                                     recommendedTracks={[
@@ -209,11 +302,7 @@ export default function AIRoiTimelineContent() {
                                 />
                             </div>
                         </div>
-                        
-                        <div className="flex justify-center">
-                            <button onClick={() => setView('input')} className="px-6 py-3 bg-zinc-900 text-zinc-400 hover:text-white rounded-lg font-mono text-xs uppercase tracking-widest transition-colors flex items-center gap-2">
-                                <RefreshCcw size={14} /> Recalibrate Matrix
-                            </button>
+                            </div>
                         </div>
                     </motion.div>
                 )}

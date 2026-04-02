@@ -3,7 +3,7 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 export const tracks5and6Modules: Record<string, CurriculumModule> = {};
 
 const t5 = 'Track 5 — DevOps & Platform Economics';
-const t6 = 'Track 6 — Cloud FinOps & Unit Economics';
+const t6 = 'Track 6 — Product Economics';
 
 // ═══════════════════ TRACK 5: DEVOPS ECONOMICS ═══════════════════
 
@@ -69,9 +69,9 @@ tracks5and6Modules['devops-economics/5-1'] = m('5-1', 'CI/CD Pipeline Economics'
     ], '/vault/curriculum/tracks/devops-economics/5-2', undefined, 'live'
 );
 
-// ═══════════════════ TRACK 6: CLOUD FINOPS ═══════════════════
+// ═══════════════════ TRACK 6: PRODUCT ECONOMICS ═══════════════════
 
-tracks5and6Modules['cloud-finops/6-1'] = m('6-1', 'Unit Economics & Cloud COGS', 'Master the fundamental math of Cloud FinOps. Calculate your Cloud COGS, establish per-tenant unit economics, and measure gross margin impact.', t6, 
+tracks5and6Modules['product-economics/6-1'] = m('6-1', 'Unit Economics & Cloud COGS', 'Master the fundamental math of Cloud FinOps. Calculate your Cloud COGS, establish per-tenant unit economics, and measure gross margin impact.', t6, 
     ['Calculate pure Cloud COGS', 'Allocate shared cluster costs', 'Establish per-tenant unit economic modeling'], [
         l('Demystifying Cloud COGS', 
             [
@@ -111,5 +111,5 @@ tracks5and6Modules['cloud-finops/6-1'] = m('6-1', 'Unit Economics & Cloud COGS',
                 explanation: 'A toxic tenant is structurally unprofitable. Because their heavy usage is usually hidden within shared multi-tenant clusters, they act as parasites on your gross margin until unit economics modeling exposes them.'
             }
         )
-    ], '/vault/curriculum/tracks/cloud-finops/6-2', undefined, 'live'
+    ], '/vault/curriculum/tracks/product-economics/6-2', undefined, 'live'
 );

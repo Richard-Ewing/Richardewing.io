@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ShieldAlert, Crosshair, Cpu, Briefcase, Activity, AlertTriangle, Database, TrendingUp, Users, ArrowRight, Zap } from 'lucide-react';
+import { ShieldAlert, Crosshair, Cpu, Briefcase, Activity, AlertTriangle, Database, TrendingUp, Users, ArrowRight, Zap, DownloadCloud } from 'lucide-react';
 import { BorderBeam } from '../../components/magicui/border-beam';
+import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
@@ -88,13 +89,16 @@ export default function WarRoom() {
                         <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.8)]" />
                         <span className="font-bold tracking-widest text-sm text-white uppercase font-mono">Executive War Room <span className="text-zinc-600 font-normal">| ALL DEPARTMENTS</span></span>
                     </div>
-                    <Link href="/system" className="text-[10px] font-mono text-zinc-400 hover:text-white transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-white/5">
-                        Close Session
-                    </Link>
+                    <div className="flex gap-4">
+                        <ExportToPDFButton targetId="war-room-matrix" fileName={`Enterprise_Threat_Matrix.pdf`} />
+                        <Link href="/system" className="text-[10px] font-mono text-zinc-400 hover:text-white transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-white/5">
+                            Close Session
+                        </Link>
+                    </div>
                 </div>
             </nav>
 
-            <main className="max-w-7xl mx-auto px-6 py-12 relative z-10 space-y-12">
+            <main id="war-room-matrix" className="max-w-7xl mx-auto px-6 py-12 relative z-10 space-y-12">
                 
                 {/* GLOBAL THREAT MAP (CEO/BOARD) */}
                 <ScrollReveal>
@@ -246,18 +250,7 @@ export default function WarRoom() {
                             </div>
 
                             <div className="space-y-6">
-                                <div className="p-5 bg-zinc-900/50 border border-white/5 rounded-xl border-l-2 border-l-amber-500">
-                                    <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-300">Cost-per-Engineer Capital (APER)</span>
-                                        <span className="text-xl font-black text-white text-right">
-                                            {latestTools['APER'] ? `${(latestTools['APER'].output_metrics?.multiplier || 0).toFixed(1)}x` : 'Pending'}
-                                        </span>
-                                    </div>
-                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">Measures the enterprise-value multiplier generated per full-time senior engineer.</p>
-                                    <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/aper" className="text-[10px] uppercase tracking-widest text-amber-400 hover:text-white flex items-center gap-1 transition-colors">Audit Headcount Value <ArrowRight size={12} /></Link>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </ScrollReveal>

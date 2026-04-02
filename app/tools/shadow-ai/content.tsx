@@ -10,7 +10,7 @@ import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { ShieldAlert, ArrowRight, ShieldOff, Lock, UserX, Target, UploadCloud, FileSpreadsheet, Eye } from 'lucide-react';
+import { ShieldAlert, ArrowRight, ShieldOff, Lock, UserX, Target, UploadCloud, FileSpreadsheet, Eye, Zap } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
 import Papa from 'papaparse';
 
@@ -470,6 +470,56 @@ export default function ShadowContent() {
                             </div>
                         </ScrollReveal>
 
+                        {/* Board-Ready 3-Step Remediation Playbook */}
+                        <ScrollReveal delay={150}>
+                             <div className="mb-6 border-b border-white/10 pb-4 mt-8">
+                                <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                    <ShieldAlert size={18} className="text-rose-400"/>
+                                    Execution Playbook: Shadow AI Mitigation
+                                </h3>
+                                <p className="text-zinc-500 text-sm">Deploy this 90-day architectural roadmap to secure data sovereignty.</p>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-rose-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
+                                     <div className="text-rose-400 font-mono text-xs mb-3 uppercase tracking-widest bg-rose-500/10 w-8 h-8 rounded flex items-center justify-center border border-rose-500/20">01</div>
+                                     <h4 className="text-white font-bold mb-2">Endpoint Termination</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">You cannot train engineers not to use ChatGPT. The only solution is explicitly blackholing external LLM requests.</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">Update Zscaler rules to explicitly blackhole all DNS requests to chatgpt.com, claude.ai, and other consumer APIs.</p>
+                                     </div>
+                                </div>
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-amber-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                     <div className="text-amber-400 font-mono text-xs mb-3 uppercase tracking-widest bg-amber-500/10 w-8 h-8 rounded flex items-center justify-center border border-amber-500/20">02</div>
+                                     <h4 className="text-white font-bold mb-2">Private Gateway Deployment</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">Enterprise SLAs legally prohibit model training on customer payloads, offering protection guarantees.</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">Provision Azure OpenAI or AWS Bedrock endpoints entirely inside your private VPC.</p>
+                                     </div>
+                                </div>
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-emerald-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
+                                     <div className="text-emerald-400 font-mono text-xs mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
+                                     <h4 className="text-white font-bold mb-2">Sanctioned Internal UI</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">Engineers get their 10x velocity, and you retain complete data sovereignty with logging.</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">Deploy LobeHub or LibreChat internally, pointing to your private VPC Enclave.</p>
+                                     </div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+
                         {/* Action Footer */}
                         <ScrollReveal delay={250}>
                              <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-white/10 mb-8">
@@ -478,7 +528,7 @@ export default function ShadowContent() {
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">The Enterprise Mandate</span>
                                 </div>
                                 <p className="text-zinc-300 text-sm leading-relaxed mb-4">
-                                    You cannot train engineers not to use ChatGPT—it is a 10x multiplier on velocity. The only SOC2-compliant solution is deploying a local, private SLM enclave (Llama 3) inside your VPC, giving them an API endpoint that guarantees zero-data-retention.
+                                    You cannot train engineers not to use ChatGPT—it is a 10x multiplier on velocity. The only SOC-compliant resolution is deploying a private enclave inside your VPC, giving them an interface that mathematically guarantees zero-data-retention.
                                 </p>
                             </div>
 

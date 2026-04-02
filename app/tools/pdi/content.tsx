@@ -10,7 +10,7 @@ import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle, Lock } from 'lucide-react';
+import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle, Lock, Zap } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
 import { VaultUpsell, RecommendedTrack } from '../../components/VaultUpsell';
@@ -803,79 +803,69 @@ Migrate from Heroku to AWS"
                         </ScrollReveal>
                     )}
 
-                    {/* ADVISORY PROTOCOLS - Practical execution advice */}
+                    {/* ADVISORY PROTOCOLS - 3-Step Board Playbook */}
                     <ScrollReveal delay={250}>
                         <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5 bg-black/20">
                             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                                Prescriptive Intervention Protocols
+                                <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                                3-Step Board Remediation Playbook
                             </h3>
-                            <p className="text-zinc-400 text-sm mb-8">Based on your audit metrics, this is the exact operational surgery required immediately.</p>
+                            <p className="text-zinc-400 text-sm mb-8">Based on your audit metrics, execute this operational surgery immediately to stop capital hemorrhage.</p>
 
                             <div className="space-y-4">
-                                {/* Rule 1: High Waste */}
-                                {results.financials.wastePerSprint > 50000 && (
-                                    <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div className="bg-red-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-red-500/30">
-                                            <span className="text-red-400 font-bold text-xl">$</span>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-white font-bold mb-2">Hemorrhage Protocol (Severe Capital Waste)</h4>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are burning over {formatMoney(50000)} per sprint in non-yielding maintenance. You must freeze all net-new feature development for the next 2 sprints (the &quot;Win Locker&quot; pattern).</p>
-                                            <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-red-500">
-                                                <span className="text-red-400">ACTION:</span> Establish a strict &quot;Debt Tax&quot; for 90 days. For every 1 sprint point of net-new feature growth, engineers must retire 0.5 points of structural maintenance debt. 
+                                {/* Step 1 */}
+                                <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
+                                    <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
+                                        <span className="text-rose-400 font-bold font-mono">01</span>
+                                    </div>
+                                    <div className="relative z-10 w-full">
+                                        <h4 className="text-white font-bold mb-2">CapEx Quarantine Protocol</h4>
+                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">Mandate an absolute freeze on net-new feature development for any codebase quadrant operating above 40% maintenance allocation.</p>
+                                        <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                <Zap size={10} /> Execution Directive
                                             </div>
+                                            <p className="text-xs text-zinc-300">Enforce the &quot;Win Locker&quot; pattern: Zero PR approvals on quarantined domains until debt ratio decreases by 15%.</p>
                                         </div>
                                     </div>
-                                )}
+                                </div>
 
-                                {/* Rule 2: High Velocity of Debt */}
-                                {results.debtVelocity > 5 && (
-                                    <div className="bg-orange-500/10 border border-orange-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div className="bg-orange-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-orange-500/30">
-                                            <span className="text-orange-400 font-bold text-xl">⚡</span>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-white font-bold mb-2">Velocity Quarantine (High Incident Volume)</h4>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are generating {results.debtVelocity} active maintenance/debt tickets per sprint cycle. This indicates a systemic failure in your CI/CD pipelines and architectural boundaries.</p>
-                                            <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-orange-500">
-                                                <span className="text-orange-400">ACTION:</span> Implement strict State-Hashing during commits. Deny all PR merges that do not include 100% test coverage on the affected code quadrant.
+                                {/* Step 2 */}
+                                <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                    <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
+                                        <span className="text-amber-400 font-bold font-mono">02</span>
+                                    </div>
+                                    <div className="relative z-10 w-full">
+                                        <h4 className="text-white font-bold mb-2">Balance Sheet Refactoring</h4>
+                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">Structural maintenance debt must be capitalized as a core business function, not shadow IT work done on weekends.</p>
+                                        <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                <Zap size={10} /> Execution Directive
                                             </div>
+                                            <p className="text-xs text-zinc-300">Set Jira sprint templates to automatically lock 20% of engineering points to &quot;Structural Neutralization&quot; before any feature work is scheduled.</p>
                                         </div>
                                     </div>
-                                )}
+                                </div>
 
-                                {/* Rule 3: Low Growth / Maintenance Dominates */}
-                                {results.metrics.growth < 30 && (
-                                    <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div className="bg-cyan-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/30">
-                                            <span className="text-cyan-400 font-bold text-xl">↳</span>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-white font-bold mb-2">Growth Starvation Protocol</h4>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">With only {results.metrics.growth}% of capacity allocated to Net-New ARR, your specialized engineering org is functioning solely as expensive IT support.</p>
-                                            <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-cyan-500">
-                                                <span className="text-cyan-400">ACTION:</span> Re-allocate capacity using the algorithmic 70/20/10 rule. If any upcoming sprint plan exceeds 20% maintenance allocation, the system should automatically lock the board requiring executive override.
+                                {/* Step 3 */}
+                                <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+                                    <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                        <span className="text-cyan-400 font-bold font-mono">03</span>
+                                    </div>
+                                    <div className="relative z-10 w-full">
+                                        <h4 className="text-white font-bold mb-2">CFO Workflow Alignment</h4>
+                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are burning {formatMoney(results.financials.wastePerSprint)} per sprint cycle in overhead. This is no longer an engineering problem; it’s a capital efficiency crisis.</p>
+                                        <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                <Zap size={10} /> Execution Directive
                                             </div>
+                                            <p className="text-xs text-zinc-300">Route all maintenance spikes over $50k OpEx equivalent through formal CFO approval workflows using the PDI metric as the justification vehicle.</p>
                                         </div>
                                     </div>
-                                )}
-
-                                {/* Baseline Advice if numbers are okay */}
-                                {results.financials.wastePerSprint <= 50000 && results.debtVelocity <= 5 && results.metrics.growth >= 30 && (
-                                    <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div className="bg-emerald-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-emerald-500/30">
-                                            <span className="text-emerald-400 font-bold text-xl">✓</span>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-white font-bold mb-2">Stability &amp; Optimization Protocol</h4>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Your current operational metrics are largely stable and within acceptable bounds. However, entropy never sleeps in software systems.</p>
-                                            <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-emerald-500">
-                                                <span className="text-emerald-400">ACTION:</span> Shift engineering focus upstream towards optimizing the Cost of Goods Sold (COGS) at your infrastructure layer. Audit cloud compute arbitrage and consolidate legacy managed services.
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
+                                </div>
                             </div>
                         </div>
                     </ScrollReveal>

@@ -9,7 +9,7 @@ import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import ShineBorder from '../../components/magicui/shine-border';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Network, Server, ArrowRight, ShieldCheck, Cpu, DollarSign, Lock } from 'lucide-react';
+import { Network, Server, ArrowRight, ShieldCheck, Cpu, DollarSign, Lock, Zap } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
 import { GlowCard } from '../../components/magicui/glow-card';
 
@@ -169,12 +169,8 @@ export default function AgentRouterContent() {
                             </div>
 
                             {/* Edge Router Toggle */}
-                            <div className="md:col-span-2 p-6 rounded-xl border transition-colors cursor-pointer group flex items-center justify-between"
-                                onClick={() => setUseEdgeRouter(!useEdgeRouter)}
-                                style={{
-                                    backgroundColor: useEdgeRouter ? 'rgba(59, 130, 246, 0.1)' : 'rgba(0,0,0,0.4)',
-                                    borderColor: useEdgeRouter ? 'rgba(59, 130, 246, 0.5)' : 'rgba(255,255,255,0.05)'
-                                }}>
+                            <div className={`md:col-span-2 p-6 rounded-xl border transition-colors cursor-pointer group flex items-center justify-between ${useEdgeRouter ? 'bg-blue-500/10 border-blue-500/50' : 'bg-black/40 border-white/5'}`}
+                                onClick={() => setUseEdgeRouter(!useEdgeRouter)}>
                                 <div>
                                     <h4 className={`font-bold font-mono uppercase tracking-widest flex items-center gap-2 mb-1 ${useEdgeRouter ? 'text-blue-400' : 'text-zinc-500'}`}>
                                         <ShieldCheck size={18} /> Enable Private SLM Semantic Router
@@ -277,7 +273,55 @@ export default function AgentRouterContent() {
                             </div>
                         </ScrollReveal>
 
-                        {/* Action Footer */}
+                        {/* Board-Ready 3-Step Remediation Playbook */}
+                        <ScrollReveal delay={150}>
+                             <div className="mb-6 border-b border-white/10 pb-4 mt-8">
+                                <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                    <ShieldCheck size={18} className="text-emerald-400"/>
+                                    Execution Playbook: API Firewalling
+                                </h3>
+                                <p className="text-zinc-500 text-sm">Deploy this architecture to structurally eliminate compounding token debt.</p>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-blue-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-blue-500/10 transition-colors"></div>
+                                     <div className="text-blue-400 font-mono text-xs mb-3 uppercase tracking-widest bg-blue-500/10 w-8 h-8 rounded flex items-center justify-center border border-blue-500/20">01</div>
+                                     <h4 className="text-white font-bold mb-2">Deploy Semantic Router</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">Route all incoming payloads through a local, CPU-bound classifying model to drop or cache baseline queries before they hit paid APIs.</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-blue-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">Run Llama-3 8B locally on CPU cache to preemptively classify and deflect 60% of requests.</p>
+                                     </div>
+                                </div>
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-indigo-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-indigo-500/10 transition-colors"></div>
+                                     <div className="text-indigo-400 font-mono text-xs mb-3 uppercase tracking-widest bg-indigo-500/10 w-8 h-8 rounded flex items-center justify-center border border-indigo-500/20">02</div>
+                                     <h4 className="text-white font-bold mb-2">Contextual Pruning</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">Agent hops intrinsically copy-paste the last agent's output. Force a summarization layer between hops.</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">Compress prompt strings by 80% using a cheap deterministic model between execution hops.</p>
+                                     </div>
+                                </div>
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-emerald-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
+                                     <div className="text-emerald-400 font-mono text-xs mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
+                                     <h4 className="text-white font-bold mb-2">Cascade Routing</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">Never hardcode GPT-4o. Configure the router to attempt Claude Haiku or GPT-4o-Mini first.</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">Only escalate to the Frontier model layer if the target validation regex explicitly fails.</p>
+                                     </div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
                         <ScrollReveal delay={250}>
                             <VaultUpsell 
                                 urgencyLevel={results.monthlyCost > 10000 && !useEdgeRouter ? 'critical' : 'growth'}

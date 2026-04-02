@@ -2,21 +2,30 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, ChevronRight, Briefcase, GraduationCap, Network, PocketKnife, ArrowRight, Server, ShieldAlert, Zap, Search } from 'lucide-react';
+import { CheckCircle2, ChevronRight, Briefcase, GraduationCap, Network, PocketKnife, ArrowRight, Server, ShieldAlert, Zap, Search, Lock } from 'lucide-react';
 import Link from 'next/link';
 import { GlowCard } from '../../components/magicui/glow-card';
 import { BorderBeam } from '../../components/magicui/border-beam';
+import ToolCelebration from '../../components/ToolCelebration';
+import ToolGate from '../../components/tool-gate';
+import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 
 export default function CareerPathingContent() {
     const [step, setStep] = useState(1);
     const [answers, setAnswers] = useState({ q1: '', q2: '', q3: '' });
+    const [showGate, setShowGate] = useState(false);
 
     const resetQuestions = () => {
         setStep(1);
         setAnswers({ q1: '', q2: '', q3: '' });
+        setShowGate(false);
     };
 
     const runAnalysis = () => {
+        setShowGate(true);
+    };
+
+    const processResults = () => {
         setStep(4);
     };
 
@@ -171,7 +180,7 @@ export default function CareerPathingContent() {
                     )}
 
                     {/* Q3 */}
-                    {step === 3 && (
+                    {step === 3 && !showGate && (
                         <motion.div 
                             key="step-3"
                             initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}
@@ -200,13 +209,40 @@ export default function CareerPathingContent() {
                         </motion.div>
                     )}
 
+                    {showGate && (
+                        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-8">
+                            <ToolGate toolName="the Career Architecture diagnostic" onUnlock={() => { setShowGate(false); processResults(); }}>
+                                <></>
+                            </ToolGate>
+                        </motion.div>
+                    )}
+
                     {/* RESULTS */}
                     {step === 4 && (
                         <motion.div 
                             key="step-4"
                             initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
-                            className={`bg-gradient-to-bl border rounded-3xl p-8 lg:p-12 relative overflow-hidden ${getRecommendation().color}`}
-                        >   
+                        >
+                            <ToolCelebration show={step === 4} toolName="CAREER ARCHITECTURE" />
+
+                            <div id="career-pathing-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl mt-8">
+                                <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                                    <div>
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                        </div>
+                                        <h2 className="text-xl font-bold text-white mb-1">Career Architecture Dashboard</h2>
+                                    </div>
+                                    <div className="mt-4 sm:mt-0 flex gap-4">
+                                        <button onClick={resetQuestions} className="px-4 py-2 border border-white/10 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
+                                            Recalibrate
+                                        </button>
+                                        <ExportToPDFButton targetId="career-pdf-export-zone" fileName={`Career_Architecture_Diagnostic.pdf`} />
+                                    </div>
+                                </div>
+
+                                <div id="career-pdf-export-zone">
+                                    <div className={`bg-gradient-to-bl border rounded-3xl p-8 lg:p-12 relative overflow-hidden ${getRecommendation().color}`}>   
                             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 blur-[120px] pointer-events-none rounded-full" />
                             <BorderBeam size={400} duration={15} delay={0} />
                             
@@ -267,8 +303,78 @@ export default function CareerPathingContent() {
                                     </GlowCard>
                                 </div>
                             </div>
-                        </motion.div>
-                    )}
+
+                            {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
+                            <div className="mt-12 pt-12 border-t border-white/10 relative z-10 text-left">
+                                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
+                                    Phase 3: IC Career Advancement Playbook
+                                </h3>
+                                <p className="text-zinc-400 text-sm mb-8">Execute this operational sequence immediately to break through your promotion ceiling and force executive recognition of your fiscal impact.</p>
+
+                                <div className="space-y-4">
+                                    {/* Step 1 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
+                                        <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
+                                            <span className="text-rose-400 font-bold font-mono">01</span>
+                                        </div>
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Audit Your P&L Proximity</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">If your work cannot be tied directly to top-line revenue generation or bottom-line compute reduction, you are viewed as an expendable cost center.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                    <Zap size={10} /> Execution Directive
+                                                </div>
+                                                <p className="text-xs text-zinc-300">Run the PDI Audit on your current sprint backlog. Map exactly how much cloud run-rate your features are consuming vs. saving. Pitch the delta to your Engineering Manager.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Step 2 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                        <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
+                                            <span className="text-amber-400 font-bold font-mono">02</span>
+                                        </div>
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Neutralize Subservient Communication</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Directors do not want status updates. They want risk mitigation plans. If you only explain 'how' you built a feature, you will remain an IC forever.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                    <Zap size={10} /> Execution Directive
+                                                </div>
+                                                <p className="text-xs text-zinc-300">Format your next async update as an "Executive Action Memo". Lead with the exact EBITDA impact, list the key person risks, and request approval for a specific architectural pivot.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Step 3 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+                                        <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                            <span className="text-cyan-400 font-bold font-mono">03</span>
+                                        </div>
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Establish a Sovereign Agent Sub-Routine</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">The easiest way to jump titles is to orchestrate autonomous labor. If you can automate the busywork of 3 junior engineers, you instantly justify a Staff-level trajectory.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                    <Zap size={10} /> Execution Directive
+                                                </div>
+                                                <p className="text-xs text-zinc-300">Deploy a Langfuse telemetry stack over a local Llama 3 8B model to automate unit test generation for your team. Present the hours saved in your 1-on-1.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+            )}
 
                 </AnimatePresence>
             </div>

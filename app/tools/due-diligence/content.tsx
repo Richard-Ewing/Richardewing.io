@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShieldAlert, DollarSign, Lock, Activity, Users, Target, Code, Database, BrainCircuit, ShieldOff } from 'lucide-react';
+import { ShieldAlert, DollarSign, Lock, Activity, Users, Target, Code, Database, BrainCircuit, ShieldOff, Zap } from 'lucide-react';
 import Link from 'next/link';
 import ToolCelebration from '../../components/ToolCelebration';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
@@ -405,8 +405,7 @@ export default function DueDiligenceTool() {
 
                             <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-zinc-800">
-                                    { }
-                                    <div className={`h-full bg-red-600 transition-all duration-500 ${styles.progressBar}`} style={ { '--progress-width': `${(step / 3) * 100}%` } as React.CSSProperties } />
+                                    <div className={`h-full bg-red-600 transition-all duration-500 ${step === 1 ? 'w-1/3' : step === 2 ? 'w-2/3' : 'w-full'}`} />
                                 </div>
                                 
                                 {step === 1 && (
@@ -588,8 +587,8 @@ export default function DueDiligenceTool() {
                                                             <div className="text-xs font-mono text-zinc-500">{tv.severity}% Severity</div>
                                                         </div>
                                                         <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden mb-1">
-                                                            { }
-                                                            <div className={`h-full ${tv.color} ${styles.progressBar}`} style={ { '--progress-width': `${tv.severity}%` } as React.CSSProperties } />
+                                                            <style>{`#tv-progress-${tv.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i} { width: ${tv.severity}%; }`}</style>
+                                                            <div id={`tv-progress-${tv.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i}`} className={`h-full ${tv.color}`} />
                                                         </div>
                                                         <div className="text-xs text-zinc-400">{tv.details}</div>
                                                     </div>
@@ -653,7 +652,7 @@ export default function DueDiligenceTool() {
                                     </div>
                                 </motion.div>
 
-                                {/* POST-ACQUISITION INTERVENTION PROTOCOLS */}
+                                {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
                                 <motion.div
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -665,59 +664,66 @@ export default function DueDiligenceTool() {
                                             <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                         </div>
                                         <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                                            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                                            Prescriptive Integration Protocols
+                                            <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                                            3-Step Board Remediation Playbook
                                         </h3>
-                                        <p className="text-zinc-400 text-sm mb-8">Based on the Diligence Risk Score, these are the immediate operational mandates for the acquiring Operating Partners.</p>
+                                        <p className="text-zinc-400 text-sm mb-8">Execute this operational surgery immediately to neutralize the ${formatMoney(results.valuationImpairment)} valuation impairment.</p>
 
                                         <div className="space-y-4">
-                                            {/* Rule 1: High Impairment/Risk */}
-                                            {results.riskScore >= 60 && (
-                                                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
-                                                    <div className="bg-red-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-red-500/30">
-                                                        <span className="text-red-400 font-bold text-xl">!</span>
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="text-white font-bold mb-2">Hostile Restructuring Mandate</h4>
-                                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">Risk score {results.riskScore}/100 exceeds safe thresholds. Valuation is significantly impaired due to systemic tech debt and compliance risks.</p>
-                                                        <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-red-500">
-                                                            <span className="text-red-400">ACTION:</span> Institute an immediate freeze on unapproved feature development. Enforce mandatory architecture audit. Retain 3rd-party distressed-asset turnaround specialists.
+                                            {/* Step 1 */}
+                                            <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                                <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
+                                                <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
+                                                    <span className="text-rose-400 font-bold font-mono">01</span>
+                                                </div>
+                                                <div className="relative z-10 w-full">
+                                                    <h4 className="text-white font-bold mb-2">Hostile Valuation Holdback</h4>
+                                                    <p className="text-zinc-400 text-sm leading-relaxed mb-4">The target's technical entropy poses an existential threat to post-close EBITDA. Do not acquire these liabilities at face value.</p>
+                                                    <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                            <Zap size={10} /> Execution Directive
                                                         </div>
+                                                        <p className="text-xs text-zinc-300">Contractually isolate the exact ${formatMoney(results.valuationImpairment)} impairment value into an escrow hold-back account, contingent upon the target proving architectural viability post-migration.</p>
                                                     </div>
                                                 </div>
-                                            )}
+                                            </div>
 
-                                            {/* Rule 2: Low Efficiency */}
-                                            {results.engineeringEfficiency < 60 && (
-                                                <div className="bg-orange-500/10 border border-orange-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
-                                                    <div className="bg-orange-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-orange-500/30">
-                                                        <span className="text-orange-400 font-bold text-xl">👥</span>
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="text-white font-bold mb-2">Workforce Rightsizing Protocol</h4>
-                                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">ARR per head is deeply misaligned with SaaS benchmarks. Engineering is heavily bloated.</p>
-                                                        <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-orange-500">
-                                                            <span className="text-orange-400">ACTION:</span> Implement aggressive up-or-out performance tracking. Replace lowest 20% of contributors with high-leverage AI-assisted engineers.
+                                            {/* Step 2 */}
+                                            <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                                <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
+                                                    <span className="text-amber-400 font-bold font-mono">02</span>
+                                                </div>
+                                                <div className="relative z-10 w-full">
+                                                    <h4 className="text-white font-bold mb-2">Workforce Rightsizing & Neutralization</h4>
+                                                    <p className="text-zinc-400 text-sm leading-relaxed mb-4">ARR per head is deeply misaligned with modern SaaS benchmarks. The engineering org is heavily bloated creating gross margin drag.</p>
+                                                    <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                            <Zap size={10} /> Execution Directive
                                                         </div>
+                                                        <p className="text-xs text-zinc-300">Implement aggressive up-or-out performance tracking on Day 1. Terminate the lowest 20% of legacy contributors immediately and backfill capacity with AI-augmented workflows.</p>
                                                     </div>
                                                 </div>
-                                            )}
+                                            </div>
 
-                                            {/* Rule 3: Cloud Waste */}
-                                            {results.annualInfraWaste > 100000 && (
-                                                <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
-                                                    <div className="bg-yellow-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-yellow-500/30">
-                                                        <span className="text-yellow-400 font-bold text-xl">$</span>
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="text-white font-bold mb-2">EBITDA Leakage Stoppage</h4>
-                                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">Cloud infrastructure is burning excessive capital that should be dropping to the bottom line.</p>
-                                                        <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-yellow-500">
-                                                            <span className="text-yellow-400">ACTION:</span> Mandate immediate AWS/GCP instance rightsizing. Transition to reserved instances post-audit. Halt all new cloud provisioning without VP-level approval.
+                                            {/* Step 3 */}
+                                            <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                                <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+                                                <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                                    <span className="text-cyan-400 font-bold font-mono">03</span>
+                                                </div>
+                                                <div className="relative z-10 w-full">
+                                                    <h4 className="text-white font-bold mb-2">Immediate EBITDA Leakage Stoppage</h4>
+                                                    <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are acquiring ${formatMoney(results.annualInfraWaste)}/yr in structural cloud infrastructure waste that should be dropping to the bottom line.</p>
+                                                    <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                            <Zap size={10} /> Execution Directive
                                                         </div>
+                                                        <p className="text-xs text-zinc-300">Mandate immediate AWS/GCP instance rightsizing and aggressive reserved instance purchasing. Halt all new cloud provisioning without explicit PE/Board VP-level approval.</p>
                                                     </div>
                                                 </div>
-                                            )}
+                                            </div>
+
                                         </div>
                                     </div>
                                 </motion.div>

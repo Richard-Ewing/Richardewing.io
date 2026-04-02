@@ -1037,6 +1037,79 @@ export default function AUEBTool() {
                                     </motion.div>
                                 )}
 
+                                {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                                >
+                                    <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5 bg-black/20 text-left">
+                                        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                            <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                                            3-Step Inference Optimization Roadmap
+                                        </h3>
+                                        <p className="text-zinc-400 text-sm mb-8">Execute this operational sequence immediately to arrest AI margin collapse and secure unit economic profitability.</p>
+
+                                        <div className="space-y-4">
+                                            {/* Step 1 */}
+                                            <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                                <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
+                                                <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
+                                                    <span className="text-rose-400 font-bold font-mono">01</span>
+                                                </div>
+                                                <div className="relative z-10 w-full">
+                                                    <h4 className="text-white font-bold mb-2">Deploy Semantic Caching Architecture</h4>
+                                                    <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are paying frontier-model token prices over and over for duplicate queries. Stop treating repetitive intent as novel computation.</p>
+                                                    <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                            <Zap size={10} /> Execution Directive
+                                                        </div>
+                                                        <p className="text-xs text-zinc-300">Implement a Redis-backed Vector database layer to intercept and cache semantically similar prompts. Instantly deflect 30-40% of queries away from paid API endpoints.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Step 2 */}
+                                            <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                                <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
+                                                    <span className="text-amber-400 font-bold font-mono">02</span>
+                                                </div>
+                                                <div className="relative z-10 w-full">
+                                                    <h4 className="text-white font-bold mb-2">Build a Sovereign Intent Router</h4>
+                                                    <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are using GPT-4-class intelligence to run simple extraction tasks. This is like using a supercomputer to operate a calculator.</p>
+                                                    <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                            <Zap size={10} /> Execution Directive
+                                                        </div>
+                                                        <p className="text-xs text-zinc-300">Deploy a fast, cheap intent classifier (e.g., Llama 3 8B) to triage incoming requests. Route basic summarization tasks to low-cost models, reserving frontier capabilities exclusively for high-reasoning tasks.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Step 3 */}
+                                            <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                                <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+                                                <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                                    <span className="text-cyan-400 font-bold font-mono">03</span>
+                                                </div>
+                                                <div className="relative z-10 w-full">
+                                                    <h4 className="text-white font-bold mb-2">Productize Token Limitations</h4>
+                                                    <p className="text-zinc-400 text-sm leading-relaxed mb-4">Unlimited queries uncap your liability. Generative AI fundamentally reintroduces COGS into SaaS, and your pricing tiers must reflect that.</p>
+                                                    <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                            <Zap size={10} /> Execution Directive
+                                                        </div>
+                                                        <p className="text-xs text-zinc-300">Enforce strict rate limits on base-tier accounts. Force users hitting the P90 percentile of compute consumption into high-margin enterprise tiers to offset their infrastructure drain.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </motion.div>
+
                                 {/* Q-PEP Remediation Block — captured into PDF */}
                                 <QPEPRemediation toolId="AUEB" metrics={results!} />
 

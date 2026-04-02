@@ -65,18 +65,7 @@ export default function ToolsContent() {
               </ShineBorder>
             </Link>
 
-            <Link href="/tools/aper" className="group block">
-              <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#22d3ee", "#8b5cf6", "#f472b6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-cyan-600/20 flex items-center justify-center text-cyan-400 font-bold">04</div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400">Engineering Ratio (APER)</h3>
-                    <p className="text-gray-400 text-sm mb-3">Assess if you&apos;re overstaffed or understaffed for your stage.</p>
-                    <span className="text-cyan-400 text-sm">Try Now →</span>
-                  </div>
-                </div>
-              </ShineBorder>
-            </Link>
+
 
             <Link href="/tools/audit-interview" className="group block">
               <ShineBorder className="h-full bg-zinc-900/50 border border-white/5 p-6" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} classNameOverlay="opacity-0 group-hover:opacity-100">

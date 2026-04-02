@@ -10,7 +10,7 @@ import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { ShieldAlert, ArrowRight, ShieldOff, Lock, Copy, CheckCircle2, Shield, AlertTriangle, Zap, Target } from 'lucide-react';
+import { ShieldCheck, Crosshair, AlertTriangle, ArrowRight, ShieldAlert, Cpu, Lock, Zap, Target, Shield, CheckCircle2, Copy } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
 
 type AttackVector = {
@@ -298,6 +298,55 @@ Only answer questions related to AcmeCorp logistics.
                             </ScrollReveal>
                         )}
 
+                        {/* Board-Ready 3-Step Remediation Playbook */}
+                        <ScrollReveal delay={200}>
+                             <div className="mb-6 border-b border-white/10 pb-4 mt-8">
+                                <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                    <Shield size={18} className="text-cyan-400"/>
+                                    Execution Playbook: Adversarial Defensibility
+                                </h3>
+                                <p className="text-zinc-500 text-sm">Implement this defense-in-depth architecture to prevent model hijacking.</p>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-red-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-red-500/10 transition-colors"></div>
+                                     <div className="text-red-400 font-mono text-xs mb-3 uppercase tracking-widest bg-red-500/10 w-8 h-8 rounded flex items-center justify-center border border-red-500/20">01</div>
+                                     <h4 className="text-white font-bold mb-2">Deterministic Delimiters</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">Force the LLM to separate system instructions from user payloads by encapsulating all user input in literal XML tags.</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-red-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">Wrap all inputs in &lt;user_input&gt; blocks to prevent interpretation as root execution commands.</p>
+                                     </div>
+                                </div>
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-amber-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                     <div className="text-amber-400 font-mono text-xs mb-3 uppercase tracking-widest bg-amber-500/10 w-8 h-8 rounded flex items-center justify-center border border-amber-500/20">02</div>
+                                     <h4 className="text-white font-bold mb-2">Classifier Firewalls</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">Run every payload through a fast classifier (Llama Guard) before sending it to your heavy execution agent.</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">If Llama Guard flags an adversarial pattern, instantly HTTP 403 the request pipeline.</p>
+                                     </div>
+                                </div>
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-emerald-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
+                                     <div className="text-emerald-400 font-mono text-xs mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
+                                     <h4 className="text-white font-bold mb-2">Tool Execution Isolation</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">Never give an LLM direct execution schema permissions. Rely on hard-coded Python validators.</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">Use a "Circuit Breaker" architecture where the LLM only proposes schemas, instead of executing APIs.</p>
+                                     </div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
 
                         {/* Action Footer */}
                         <ScrollReveal delay={250}>

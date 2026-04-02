@@ -717,8 +717,71 @@ export default function APERTool() {
                                     </div>
                                 </motion.div>
 
-                                {/* Q-PEP Remediation Block — captured into PDF */}
-                                <QPEPRemediation toolId="APER" metrics={results} />
+                                {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
+                                <div className="mt-12 pt-12 border-t border-white/10 relative z-10 text-left">
+                                    <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                        <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                                        Phase 3: APER Headcount Optimization Playbook
+                                    </h3>
+                                    <p className="text-zinc-400 text-sm mb-8">Execute this sequence immediately to right-size the engineering org and maximize velocity.</p>
+
+                                    <div className="space-y-4">
+                                        {/* Step 1 */}
+                                        <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
+                                            <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
+                                                <span className="text-rose-400 font-bold font-mono">01</span>
+                                            </div>
+                                            <div className="relative z-10 w-full">
+                                                <h4 className="text-white font-bold mb-2">Freeze Middle-Management Roles</h4>
+                                                <p className="text-zinc-400 text-sm leading-relaxed mb-4">Adding Engineering Managers before unlocking IC leverage only compounds your coordination tax.</p>
+                                                <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                        <Zap size={10} /> Execution Directive
+                                                    </div>
+                                                    <p className="text-xs text-zinc-300">Enact a 90-day hiring freeze for all non-IC roles. Direct saved CapEx back into developer tooling.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Step 2 */}
+                                        <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                            <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
+                                                <span className="text-amber-400 font-bold font-mono">02</span>
+                                            </div>
+                                            <div className="relative z-10 w-full">
+                                                <h4 className="text-white font-bold mb-2">Decouple Core Domain Boundaries</h4>
+                                                <p className="text-zinc-400 text-sm leading-relaxed mb-4">Cross-team dependencies drive high coordination taxes and slow overall velocity down geometrically.</p>
+                                                <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                        <Zap size={10} /> Execution Directive
+                                                    </div>
+                                                    <p className="text-xs text-zinc-300">Mandate strict API contracts between distinct product domains. Decouple release cycles entirely.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Step 3 */}
+                                        <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+                                            <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                                <span className="text-cyan-400 font-bold font-mono">03</span>
+                                            </div>
+                                            <div className="relative z-10 w-full">
+                                                <h4 className="text-white font-bold mb-2">Automate Repetitive QA</h4>
+                                                <p className="text-zinc-400 text-sm leading-relaxed mb-4">Over 30% of engineering bandwidth is consumed by manual testing blocks.</p>
+                                                <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                        <Zap size={10} /> Execution Directive
+                                                    </div>
+                                                    <p className="text-xs text-zinc-300">Configure LLM-based CI/CD steps that auto-generate basic test coverage for every PR merged.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
 
                                 </div>
 

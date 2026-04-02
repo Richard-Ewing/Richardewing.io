@@ -82,7 +82,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                 Get Full Module Access
                             </h3>
                             <p className="text-zinc-400 text-sm mb-6">
-                                {showPreview ? `${totalLessons - 1} more lessons` : `${totalLessons} lessons`} with hands-on exercises, metric cards, and assessment checklists.
+                                {showPreview ? `${totalLessons - 1} more lesson${totalLessons - 1 === 1 ? '' : 's'}` : `${totalLessons} lesson${totalLessons === 1 ? '' : 's'}`} with actionable remediation playbooks, executive dashboards, and deterministic engineering architecture.
                             </p>
 
                             {/* Quick Stats */}

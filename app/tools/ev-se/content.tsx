@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useId } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
@@ -8,7 +8,7 @@ import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle, Lock } from 'lucide-react';
+import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle, Lock, Zap } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
@@ -20,28 +20,26 @@ import styles from './styles.module.css';
 // Simple Bar Chart component (no external dependency)
 const WaterfallChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
     const maxValue = Math.max(...data.map(d => d.value));
+    const sectionId = useId().replace(/[^a-zA-Z0-9-]/g, '');
 
     return (
         <div className="space-y-4 mt-4">
-            {data.map((item, i) => (
-                <div key={i} className="flex items-center gap-4">
-                    <div className="w-24 text-xs font-mono text-zinc-500 text-right">{item.name}</div>
-                    <div className="flex-1 h-10 bg-zinc-900 rounded-lg overflow-hidden relative">
-                        { }
-                        <div
-                            className={`h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4 ${styles.waterfallBar}`}
-                            style={ {
-                                '--bar-width': `${(item.value / maxValue) * 100}%`,
-                                '--bar-color': item.color,
-                            } as React.CSSProperties }
-                        >
-                            <span className="text-xs font-mono text-white font-bold">
-                                ${(item.value / 1000000).toFixed(1)}M
-                            </span>
+            {data.map((item, i) => {
+                const uniqueId = `bar-${item.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i}-${sectionId}`;
+                return (
+                    <div key={i} className="flex items-center gap-4">
+                        <div className="w-24 text-xs font-mono text-zinc-500 text-right">{item.name}</div>
+                        <div className="flex-1 h-10 bg-zinc-900 rounded-lg overflow-hidden relative">
+                            <style>{`#${uniqueId} { width: ${(item.value / maxValue) * 100}%; background-color: ${item.color}; }`}</style>
+                            <div id={uniqueId} className={`h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4 ${styles.waterfallBar}`}>
+                                <span className="text-xs font-mono text-white font-bold">
+                                    ${(item.value / 1000000).toFixed(1)}M
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
+                );
+            })}
         </div>
     );
 };
@@ -73,7 +71,9 @@ const RiskSlider = ({ label, value, onChange, description }: {
             <div className="relative">
                 <div className="absolute inset-0 h-2 rounded-lg bg-gradient-to-r from-emerald-500/30 via-yellow-500/30 to-red-500/30" />
                 { }
+                <style>{`#slider-${label.replace(/[^a-zA-Z0-9-]/g, '-')} { background: linear-gradient(to right, #22c55e ${value}%, transparent ${value}%); }`}</style>
                 <input
+                    id={`slider-${label.replace(/[^a-zA-Z0-9-]/g, '-')}`}
                     type="range"
                     min="0"
                     max="100"
@@ -82,9 +82,6 @@ const RiskSlider = ({ label, value, onChange, description }: {
                     aria-label={label}
                     title={label}
                     className={`relative w-full h-2 bg-transparent rounded-lg appearance-none cursor-pointer z-10 ${styles.riskSlider}`}
-                    style={ {
-                        '--slider-bg': `linear-gradient(to right, #22c55e ${value}%, transparent ${value}%)`,
-                    } as React.CSSProperties }
                 />
             </div>
             <div className="flex justify-between text-[10px] text-zinc-600">
@@ -352,7 +349,7 @@ export default function EVSETool() {
                         <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden">
                             <div className="absolute top-0 left-0 w-full h-1 bg-zinc-800">
                                 { }
-                                <div className={`h-full bg-purple-500 transition-all duration-500 ${styles.progressHeader}`} style={ { '--header-progress': `${(step / 3) * 100}%` } as React.CSSProperties } />
+                                <div className={`h-full bg-purple-500 transition-all duration-500 ${step === 1 ? 'w-1/3' : step === 2 ? 'w-2/3' : 'w-full'}`} />
                             </div>
 
                         {/* Core Inputs - STEP 1 */}
@@ -706,6 +703,74 @@ export default function EVSETool() {
                         </ScrollReveal>
                     )}
 
+                    {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
+                    <ScrollReveal delay={190}>
+                        <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5 bg-black/20 text-left">
+                            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                                3-Step SE Org Engineering Efficiency Playbook
+                            </h3>
+                            <p className="text-zinc-400 text-sm mb-8">Execute this operational sequence immediately to eliminate execution drag and restore investor-grade valuation multiples.</p>
+
+                            <div className="space-y-4">
+                                {/* Step 1 */}
+                                <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
+                                    <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
+                                        <span className="text-rose-400 font-bold font-mono">01</span>
+                                    </div>
+                                    <div className="relative z-10 w-full">
+                                        <h4 className="text-white font-bold mb-2">Audit Lead-Time to Deployment</h4>
+                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">Your current velocity is destroying enterprise value. Software engineering organizations with opaque delivery pipelines suffer massive valuation haircuts in due diligence.</p>
+                                        <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                <Zap size={10} /> Execution Directive
+                                            </div>
+                                            <p className="text-xs text-zinc-300">Implement deterministic DORA metric tracking across all squads. Any team failing to deploy to production at least twice weekly must halt feature development and resolve CI/CD bottlenecks.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Step 2 */}
+                                <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                    <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
+                                        <span className="text-amber-400 font-bold font-mono">02</span>
+                                    </div>
+                                    <div className="relative z-10 w-full">
+                                        <h4 className="text-white font-bold mb-2">Neutralize Key-Person Dependencies</h4>
+                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">A single point of failure in your talent pool is a terminal risk to potential acquirers. If your lead architect leaves, does your roadmap halt?</p>
+                                        <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                <Zap size={10} /> Execution Directive
+                                            </div>
+                                            <p className="text-xs text-zinc-300">Mandate immediate architecture shadowing. Pair your most critical engineers with mid-level ICs for 30 days to force knowledge transfer and distribute systemic risk.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Step 3 */}
+                                <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+                                    <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                        <span className="text-cyan-400 font-bold font-mono">03</span>
+                                    </div>
+                                    <div className="relative z-10 w-full">
+                                        <h4 className="text-white font-bold mb-2">Hard-Lock the Product Roadmap</h4>
+                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">Scope creep is compounding your execution risk. Investors penalize teams that lack the discipline to say no to transient sales requests.</p>
+                                        <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                <Zap size={10} /> Execution Directive
+                                            </div>
+                                            <p className="text-xs text-zinc-300">Institute a 90-day feature freeze on all uncommitted requests. Reallocate 40% of sprint capacity strictly to technical debt reduction and infrastructure hardening.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </ScrollReveal>
+
                     {/* Action Footer */}
                     <ScrollReveal delay={200}>
                         <div className="pt-8">
@@ -737,10 +802,6 @@ export default function EVSETool() {
                     </ScrollReveal>
 
                     </div>
-
-                    {/* Q-PEP Remediation Block — captured into PDF */}
-                    <QPEPRemediation toolId="EV-SE" metrics={results} />
-
                     {/* -------- PDF CAPTURE ZONE END -------- */}
                 </>
             )}

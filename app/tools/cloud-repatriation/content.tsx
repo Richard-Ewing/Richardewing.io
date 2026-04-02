@@ -260,7 +260,10 @@ export default function CloudContent() {
                                                 <div className="text-xl font-bold text-white font-mono">{egressP}%</div>
                                             </div>
                                             { }
-                                            <div className="w-full bg-zinc-800 h-2 rounded mt-2 overflow-hidden"><div className={`bg-rose-500 h-full ${styles.progressBar}`} style={{'--progress-width': `${egressP}%`} as React.CSSProperties} /></div>
+                                            <div className="w-full bg-zinc-800 h-2 rounded mt-2 overflow-hidden relative">
+                                                <style>{`#egress-progress { width: ${egressP}%; }`}</style>
+                                                <div id="egress-progress" className="bg-rose-500 h-full transition-all duration-500" />
+                                            </div>
                                         </div>
                                     </div>
 
@@ -410,61 +413,70 @@ export default function CloudContent() {
                             </div>
                         </ScrollReveal>
 
-                        {/* PRESCRIPTIVE INFRASTRUCTURE PLAYBOOKS */}
+                        {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
                         <ScrollReveal delay={200}>
                             <div className="capsule-container rounded-2xl p-6 sm:p-8 mt-10 border border-white/5 bg-black/20">
                                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                    Prescriptive Repatriation Tactics
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                                    3-Step Board Remediation Playbook
                                 </h3>
-                                <p className="text-zinc-400 text-sm mb-8">Based on your AWS/GCP invoice breakdown, implement these architectural shifts to realize your ${formatMoney(results.annualSavings)}/yr savings.</p>
+                                <p className="text-zinc-400 text-sm mb-8">Execute this operational surgery immediately to recapture your ${formatMoney(results.annualSavings)}/yr in cloud rent.</p>
 
                                 <div className="space-y-4">
-                                    {/* General Compute Migration */}
-                                    <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div className="bg-cyan-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/30">
-                                            <span className="text-cyan-400 font-bold text-xl">🖥️</span>
+                                    {/* Step 1 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
+                                        <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
+                                            <span className="text-rose-400 font-bold font-mono">01</span>
                                         </div>
-                                        <div>
-                                            <h4 className="text-white font-bold mb-2">Docker Lift & Shift (EC2/ECS)</h4>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Stateless compute is the easiest target. AWS EC2 operates at an ~85% gross margin. Moving containers from ECS to Nomad or K3s on dual-EPYC bare metal is a solved 1-week problem.</p>
-                                            <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-cyan-500">
-                                                <span className="text-cyan-400">ACTION:</span> Lease 2 high-density chassis from Deft/Equinix. Install Proxmox or bare-metal Kubernetes. Adjust CI/CD to deploy images to new IP block simultaneously.
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Decouple Stateless Compute (Lift & Shift)</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Stateless compute is the easiest abstraction layer to migrate. AWS EC2 operates at an ~85% gross margin that you are paying directly.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                    <Zap size={10} /> Execution Directive
+                                                </div>
+                                                <p className="text-xs text-zinc-300">Lease 2 high-density dual-EPYC chassis from Deft/Equinix. Install Proxmox/K3s. Adjust CI/CD to deploy images to the new bare-metal IP block simultaneously (shadow traffic).</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    {/* DB Protocol */}
-                                    {results.heavyDb && (
-                                        <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
-                                            <div className="bg-amber-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/30">
-                                                <span className="text-amber-400 font-bold text-xl">🗄️</span>
-                                            </div>
-                                            <div>
-                                                <h4 className="text-white font-bold mb-2">Managed RDS Abstraction Tax</h4>
-                                                <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are paying a premium for AWS Aurora/RDS. Databases are simply blocks on disks—an NVMe bare metal cluster will yield 15x IOPS for 1/8th the price.</p>
-                                                <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-amber-500">
-                                                    <span className="text-amber-400">ACTION:</span> Set up logical replication from AWS RDS to your private dedicated Postgres NVMe cluster. Once synced, pause writes on AWS, failover DNS, and sever the cloud DB connection.
+                                    {/* Step 2 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                        <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
+                                            <span className="text-amber-400 font-bold font-mono">02</span>
+                                        </div>
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Neutralize the Managed Database Tax</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are paying a massive premium for AWS Aurora/RDS wrappers. Databases are simply optimized blocks on disks. An NVMe bare metal cluster yields 15x IOPS for 1/8th the price.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                    <Zap size={10} /> Execution Directive
                                                 </div>
+                                                <p className="text-xs text-zinc-300">Initiate logical replication from AWS to your private Postgres NVMe cluster. Pause writes, failover DNS caching layer, and sever the AWS connection entirely.</p>
                                             </div>
                                         </div>
-                                    )}
+                                    </div>
 
-                                    {/* Egress Protocol */}
-                                    {results.heavyEgress && (
-                                        <div className="bg-rose-500/10 border border-rose-500/20 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start">
-                                            <div className="bg-rose-500/20 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/30">
-                                                <span className="text-rose-400 font-bold text-xl">🌐</span>
-                                            </div>
-                                            <div>
-                                                <h4 className="text-white font-bold mb-2">The Egress Cartel Trap</h4>
-                                                <p className="text-zinc-400 text-sm leading-relaxed mb-4">AWS charges $0.09/GB for data egress. This is an artificial monopoly markup. 10G unmetered drops in a private rack cost less than $1,000/mo statically.</p>
-                                                <div className="bg-black/40 p-3 rounded text-xs font-mono text-zinc-300 border border-white/5 border-l-2 border-l-rose-500">
-                                                    <span className="text-rose-400">ACTION:</span> Move all high-bandwidth egress paths (video, streaming, heavy API JSON payloads) behind Cloudflare to nullify AWS egress, then route directly from your bare metal unmetered pipelines.
+                                    {/* Step 3 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+                                        <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                            <span className="text-cyan-400 font-bold font-mono">03</span>
+                                        </div>
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Eliminate the Egress Cartel Monopoly</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">AWS charges $0.09/GB for data egress—an artificial monopoly markup. A 10G unmetered drop in a private rack costs less than $1,000/mo statically.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                    <Zap size={10} /> Execution Directive
                                                 </div>
+                                                <p className="text-xs text-zinc-300">Move all high-bandwidth bandwidth egress paths (video, streaming, heavy API JSON payloads) behind Cloudflare to nullify AWS egress, then route directly from the new bare metal unmetered pipeline.</p>
                                             </div>
                                         </div>
-                                    )}
+                                    </div>
+
                                 </div>
                             </div>
                         </ScrollReveal>

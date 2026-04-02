@@ -422,6 +422,74 @@ export default function SessionCommandCenter() {
 
                     <div className="flex flex-col items-center pt-8 gap-6">
                         <div className="w-full mt-8">
+                            {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
+                            <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5 bg-black/20 text-left">
+                                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                                    3-Step Compliance Action Memo
+                                </h3>
+                                <p className="text-zinc-400 text-sm mb-8">Execute this operational sequence immediately to limit the enterprise blast radius of this candidate's judgment profile.</p>
+
+                                <div className="space-y-4">
+                                    {/* Step 1 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
+                                        <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
+                                            <span className="text-rose-400 font-bold font-mono">01</span>
+                                        </div>
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Hard-Lock the Recruiting Pipeline</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">The candidate's score of {analytics.score}/100 indicates systemic misalignment with deterministic engineering and enterprise value creation. Do not proceed.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
+                                                    Execution Directive
+                                                </div>
+                                                <p className="text-xs text-zinc-300">Issue an immediate "Strong No Hire" disposition to TA. Mandate that all future resumes must pre-filter for specific deterministic systems experience before initial technical screens.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Step 2 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                        <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
+                                            <span className="text-amber-400 font-bold font-mono">02</span>
+                                        </div>
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Recalibrate the Interview Panel</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">If this candidate progressed past the initial phone screen, your existing technical interviewers are approving detrimental systemic risks.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
+                                                    Execution Directive
+                                                </div>
+                                                <p className="text-xs text-zinc-300">Replace the current technical interview loop with standardized, scenario-based architecture design questions focused strictly on margin, risk, and structural determinism.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Step 3 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+                                        <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
+                                            <span className="text-cyan-400 font-bold font-mono">03</span>
+                                        </div>
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Internal Team Compliance Audit</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">The fact that you are actively interviewing for {session.role === 'PRODUCT_VP' ? 'Product Leadership' : 'Engineering Leadership'} indicates potential internal instability. Verify your existing teams aren't committing the same errors.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
+                                                    Execution Directive
+                                                </div>
+                                                <p className="text-xs text-zinc-300">Conduct an immediate, unannounced code/architecture review on your most critical internal project. Fire any internal leaders exhibiting the judgment flaws seen in this interview.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                             <VaultUpsell 
                                 urgencyLevel={analytics.verdict.includes('Strong No Hire') || analytics.verdict.includes('No Hire') ? 'critical' : 'growth'}
                                 recommendedTracks={[
@@ -469,10 +537,10 @@ export default function SessionCommandCenter() {
                         {formatTime(timeLeft)}
                     </div>
                     <div className="h-1 w-full bg-zinc-900 mt-4 rounded-full overflow-hidden">
-                        { }
+                        <style>{`#time-progress { width: ${(timeLeft / 1200) * 100}%; }`}</style>
                         <div
-                            className={`h-full transition-all duration-1000 ${timeLeft < 60 ? 'bg-red-500' : 'bg-zinc-500'} ${styles.timeProgress}`}
-                            style={ { '--time-left-pct': `${(timeLeft / 1200) * 100}%` } as React.CSSProperties }
+                            id="time-progress"
+                            className={`h-full transition-all duration-1000 ${timeLeft < 60 ? 'bg-red-500' : 'bg-zinc-500'}`}
                         ></div>
                     </div>
                 </div>

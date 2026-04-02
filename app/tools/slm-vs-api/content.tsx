@@ -315,7 +315,7 @@ export default function SLMTool() {
                             </div>
                         </ScrollReveal>
 
-                         <ScrollReveal delay={150}>
+                        <ScrollReveal delay={150}>
                              <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-white/10 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <Zap size={16} className="text-yellow-400" />
@@ -324,6 +324,74 @@ export default function SLMTool() {
                                 <p className="text-zinc-300 text-sm leading-relaxed mb-4">
                                     Aside from raw compute arbitrage, moving to an SLM (like Llama-3-8B) provides 100% data sovereignty, eliminating the blast-radius risk of sending PII and proprietary board logic outside your VPC. If your business is regulated (HealthTech, FinTech, Defense), the "API Tax" isn't just financial, it's a regulatory liability. 
                                 </p>
+                            </div>
+                        </ScrollReveal>
+
+                        {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
+                        <ScrollReveal delay={180}>
+                            <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5 bg-black/20 text-left">
+                                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                    3-Step Inference Margin Escapement Playbook
+                                </h3>
+                                <p className="text-zinc-400 text-sm mb-8">Execute this operational sequence immediately to arrest runaway LLM infrastructure costs and restore your engineering unit economics.</p>
+
+                                <div className="space-y-4">
+                                    {/* Step 1 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
+                                        <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
+                                            <span className="text-rose-400 font-bold font-mono">01</span>
+                                        </div>
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Audit Provider Arbitrage Velocity</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Are you locked into OpenAI because your developers love the playground? API moat lock-in prevents margin optimization through dynamic prompt routing.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                    <Zap size={10} /> Execution Directive
+                                                </div>
+                                                <p className="text-xs text-zinc-300">Mandate an abstraction layer implementation (LiteLLM, Langfuse). Disconnect core business logic from single-provider SDKs within 14 days to enable instant token arbitrage.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Step 2 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+                                        <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
+                                            <span className="text-amber-400 font-bold font-mono">02</span>
+                                        </div>
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Map Semantic Caching Yield</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are likely paying frontier-model APIs repeatedly to generate responses to identical user queries. Token taxation on cached queries is a massive EBITDA leak.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                    <Zap size={10} /> Execution Directive
+                                                </div>
+                                                <p className="text-xs text-zinc-300">Deploy a vector similarity cache (Redis / Pinecone) in front of all generative endpoints. Target a 30% hit rate reduction on outbound network requests by end of quarter.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Step 3 */}
+                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-emerald-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
+                                        <div className="bg-emerald-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-emerald-500/20">
+                                            <span className="text-emerald-400 font-bold font-mono">03</span>
+                                        </div>
+                                        <div className="relative z-10 w-full">
+                                            <h4 className="text-white font-bold mb-2">Stand Up a Sovereign Validation Enclave</h4>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Data sovereignty isn't just about privacy—it's an M&A prerequisite. Moving to an SLM (Llama 3 8B) on your VPC completely insulates your proprietary vectors from SaaS telemetry.</p>
+                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                                <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
+                                                    <Zap size={10} /> Execution Directive
+                                                </div>
+                                                <p className="text-xs text-zinc-300">Stand up a local bare-metal node running vLLM. Shadow-route 10% of API traffic to the SLM to prove deterministic latency and output parity before the board review.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </ScrollReveal>
 

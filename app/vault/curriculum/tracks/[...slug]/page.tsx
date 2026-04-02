@@ -188,9 +188,8 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
         unlockedItems.includes(`module_${slug[0]}`)
     ));
 
-    // ONLY show free preview for the very first module of the entire platform: Track 1 (CTO), Module 1 (1-1)
-    // Removed the "first module of every track" leak.
-    const isFreePreviewModule = mod.moduleId === '1-1';
+    // Unlock Lesson 1 of EVERY module universally to drive high conversion to the PayGate.
+    const isFreePreviewModule = true;
 
     let aiContent = null;
     try {

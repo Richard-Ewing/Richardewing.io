@@ -2,10 +2,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ExportToPDFButton } from '../../components/ExportToPDFButton';
+import ToolCelebration from '../../components/ToolCelebration';
+import ToolGate from '../../components/tool-gate';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
-import { ArrowRight, Search, Target, Brain, TrendingUp, Cpu, BarChart3 } from 'lucide-react';
+import { ArrowRight, Search, Target, Brain, TrendingUp, Cpu, BarChart3, Lock } from 'lucide-react';
 import { VaultUpsell } from '../../components/VaultUpsell';
 
 type Role = 'engineering' | 'pm';
@@ -124,6 +127,7 @@ export default function AuditInterview() {
         ai_interrogation: ''
     });
 
+    const [showGate, setShowGate] = useState(false);
     const [outcome, setOutcome] = useState<Outcome | null>(null);
     const [memo, setMemo] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
@@ -137,6 +141,10 @@ export default function AuditInterview() {
     };
 
     const calculateVerdict = () => {
+        setShowGate(true);
+    };
+
+    const processResults = () => {
         const total = Object.values(scores).reduce((a, b) => a + b, 0);
         let verdict = '';
         let rationale = '';
@@ -159,7 +167,7 @@ export default function AuditInterview() {
         setMemo(null); // Reset memo on new calculation
         // Scroll to results
         setTimeout(() => {
-            document.getElementById('results-dashboard')?.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('scoring-results-artifact')?.scrollIntoView({ behavior: 'smooth' });
         }, 100);
     };
 
@@ -200,6 +208,7 @@ export default function AuditInterview() {
 
     return (
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
+            <ToolCelebration show={!!outcome} toolName="AUDIT INTERVIEW" />
             {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-white transition">Intelligence</Link>
@@ -298,24 +307,38 @@ export default function AuditInterview() {
                                 </button>
                             </ShineBorder>
                         </div>
+                        
+                        {showGate && (
+                            <div className="mt-6">
+                                <ToolGate toolName="the Audit Interview Framework" onUnlock={() => { setShowGate(false); processResults(); }}>
+                                    <></>
+                                </ToolGate>
+                            </div>
+                        )}
                     </div>
                 </ScrollReveal>
             ) : (
                 /* --- DASHBOARD STATE --- */
-                <ScrollReveal>
-                    <div id="results-dashboard">
-                        {/* Dashboard Header */}
-                        <div className="flex items-center justify-between mb-8">
-                            <div>
-                                <h1 className="text-3xl font-bold text-white mb-2">Interview Dashboard</h1>
-                                <p className="text-zinc-400 text-sm">Session Complete • Protocol {role.toUpperCase()}-092</p>
+                <div id="scoring-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
+                    <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                        <div>
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
+                            <h2 className="text-xl font-bold text-white mb-1">Interview Dashboard</h2>
+                            <p className="text-sm text-zinc-400">Session Complete • Protocol {role.toUpperCase()}-092</p>
+                        </div>
+                        <div className="mt-4 sm:mt-0 flex gap-4">
                             <button onClick={() => setOutcome(null)} className="px-4 py-2 border border-white/10 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
                                 <Search size={14} /> New Audit
                             </button>
+                            <ExportToPDFButton targetId="scoring-pdf-export-zone" fileName={`Audit_Interview_${role}.pdf`} />
                         </div>
+                    </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+                    <div id="scoring-pdf-export-zone">
+                        <ScrollReveal>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
                             {/* Left Col: Verdict Card */}
                             <GlowCard className="p-8 flex flex-col items-center justify-center text-center h-full" glowColor={outcome.total > 7 ? "emerald" : "danger"}>
                                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
@@ -402,8 +425,9 @@ export default function AuditInterview() {
                                 ]} 
                             />
                         </div>
+                        </ScrollReveal>
                     </div>
-                </ScrollReveal>
+                </div>
             )}
         </div>
     );

@@ -9,7 +9,7 @@ import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import ShineBorder from '../../components/magicui/shine-border';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Layers, Database, ArrowRight, Server, FileText, Settings, TriangleAlert, Lock } from 'lucide-react';
+import { Layers, Database, ArrowRight, Server, FileText, Settings, TriangleAlert, Lock, Zap } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
 
 // Helper to chunk text
@@ -285,6 +285,56 @@ export default function RagChunkingContent() {
                             
                             <div className="mt-4 flex items-center gap-4 text-xs font-mono text-zinc-500">
                                 <div className="flex items-center gap-1"><span className="w-3 h-3 bg-yellow-500/30 border border-yellow-500/50 rounded inline-block"></span> Overlap Safety Net</div>
+                            </div>
+                        </ScrollReveal>
+
+                        {/* Board-Ready 3-Step Remediation Playbook */}
+                        <ScrollReveal delay={150}>
+                             <div className="mb-6 border-b border-white/10 pb-4 mt-8">
+                                <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                    <Database size={18} className="text-indigo-400"/>
+                                    Execution Playbook: Semantic Protection
+                                </h3>
+                                <p className="text-zinc-500 text-sm">Deploy this architecture to eliminate vector hallucination and data shears.</p>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-indigo-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-indigo-500/10 transition-colors"></div>
+                                     <div className="text-indigo-400 font-mono text-xs mb-3 uppercase tracking-widest bg-indigo-500/10 w-8 h-8 rounded flex items-center justify-center border border-indigo-500/20">01</div>
+                                     <h4 className="text-white font-bold mb-2">Sync Embedding Models</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">Never use string-length chunking. Always chunk using the exact Byte Pair Encoding (tiktoken) of your target embedding model.</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">Validate the exact encoding dictionary (e.g. text-embedding-3-small) to prevent mid-token shearing.</p>
+                                     </div>
+                                </div>
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-cyan-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+                                     <div className="text-cyan-400 font-mono text-xs mb-3 uppercase tracking-widest bg-cyan-500/10 w-8 h-8 rounded flex items-center justify-center border border-cyan-500/20">02</div>
+                                     <h4 className="text-white font-bold mb-2">Recursive Splitting</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">Upgrade your ingest pipeline to use Recursive Splitting (paragraphs, then sentences, then cascading down to words).</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">Force semantic ideas to stay geometrically bound together in vector space.</p>
+                                     </div>
+                                </div>
+                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-emerald-500">
+                                     <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
+                                     <div className="text-emerald-400 font-mono text-xs mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
+                                     <h4 className="text-white font-bold mb-2">Window Expansion</h4>
+                                     <p className="text-zinc-400 text-sm mb-4">Provide enough surrounding context for the LLM to understand referential pronouns (it, they, he) in isolated queries.</p>
+                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                         <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
+                                             <Zap size={10} /> Execution Directive
+                                         </div>
+                                         <p className="text-xs text-zinc-300">Configure your chunk overlap to be exactly 15-20% of your total chunk byte size.</p>
+                                     </div>
+                                </div>
                             </div>
                         </ScrollReveal>
 
