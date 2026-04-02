@@ -233,6 +233,19 @@ export default function WarRoom() {
                                         <Link href="/tools/cloud-repatriation" className="text-[10px] uppercase tracking-widest text-cyan-400 hover:text-white flex items-center gap-1 transition-colors">Arbitrage Analysis <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
+
+                                <div className="p-5 bg-zinc-900/50 border border-white/5 rounded-xl border-l-2 border-l-rose-500">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <span className="text-sm font-bold text-zinc-300">AI Tool Economics (Net Revenue Retention)</span>
+                                        <span className="text-xl font-black text-white text-right">
+                                            {latestTools['copilot-roi'] ? `${(latestTools['copilot-roi'].output_metrics?.netRevenueRetention || 0).toFixed(0)}%` : 'Pending'}
+                                        </span>
+                                    </div>
+                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">True profitability of AI tools factoring in downstream Vibe Coding Debt and Review Bottlenecks.</p>
+                                    <div className="mt-4 flex justify-end">
+                                        <Link href="/tools/copilot-roi" className="text-[10px] uppercase tracking-widest text-rose-400 hover:text-white flex items-center gap-1 transition-colors">Model AI Economics <ArrowRight size={12} /></Link>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </ScrollReveal>
@@ -250,7 +263,18 @@ export default function WarRoom() {
                             </div>
 
                             <div className="space-y-6">
-
+                                <div className="p-5 bg-zinc-900/50 border border-white/5 rounded-xl border-l-2 border-l-amber-500">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <span className="text-sm font-bold text-zinc-300">AI CapEx Break-Even</span>
+                                        <span className="text-xl font-black text-white text-right">
+                                            {latestTools['ai-roi-timeline'] ? `${(latestTools['ai-roi-timeline'].output_metrics?.breakEvenMonths || 0).toFixed(1)} Months` : 'Pending'}
+                                        </span>
+                                    </div>
+                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">Displaced FTE equivalent tracked against AI architecture implementation costs.</p>
+                                    <div className="mt-4 flex justify-end">
+                                        <Link href="/tools/ai-roi-timeline" className="text-[10px] uppercase tracking-widest text-amber-400 hover:text-white flex items-center gap-1 transition-colors">Audit Break-Even <ArrowRight size={12} /></Link>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </ScrollReveal>
