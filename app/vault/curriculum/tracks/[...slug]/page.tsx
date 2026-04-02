@@ -26,6 +26,7 @@ import ActionChecklist from '@/app/components/curriculum/ActionChecklist';
 import ProgressCompleteButton from '@/app/components/ProgressCompleteButton';
 import ModuleStepper from '@/app/components/client/ModuleStepper';
 import ToolEmbed from '@/app/components/client/ToolEmbed';
+import SemanticText from '@/app/components/SemanticText';
 
 import StructuredData, { generateCourseSchema } from '@/app/components/seo/StructuredData';
 
@@ -113,10 +114,14 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                             <div className="space-y-4 mb-6">
                                                 {Array.isArray(lesson.content) ? (
                                                     lesson.content.map((block, bIdx) => (
-                                                        <p key={bIdx} className="text-zinc-400 leading-relaxed text-[15px]">{block}</p>
+                                                        <p key={bIdx} className="text-zinc-400 leading-relaxed text-[15px]">
+                                                            <SemanticText text={block} />
+                                                        </p>
                                                     ))
                                                 ) : (
-                                                    <p className="text-zinc-400 leading-relaxed text-[15px]">{lesson.content}</p>
+                                                    <p className="text-zinc-400 leading-relaxed text-[15px]">
+                                                        <SemanticText text={lesson.content} />
+                                                    </p>
                                                 )}
                                             </div>
 
