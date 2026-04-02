@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import CurriculumSalesPreview from './components/CurriculumSalesPreview';
 
 export default function NotFound() {
     return (
@@ -35,6 +36,15 @@ export default function NotFound() {
                         </Link>
                     </div>
                 </div>
+            </div>
+
+            {/* Injected Curriculum Sales Preview to harden 404s and reduce bounce rate */}
+            <div className="max-w-7xl mx-auto px-6 mt-16 mb-24 opacity-80 hover:opacity-100 transition-opacity">
+                 <div className="text-center mb-8">
+                     <h3 className="text-xl font-bold text-white mb-2">Since you're here, look at what you're missing.</h3>
+                     <p className="text-zinc-500 text-sm">Our enterprise tracks are hardened for scale. Navigate away, or explore the syllabus.</p>
+                 </div>
+                 <CurriculumSalesPreview />
             </div>
         </main>
     );

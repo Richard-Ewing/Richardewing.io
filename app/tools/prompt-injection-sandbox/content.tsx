@@ -7,6 +7,7 @@ import ToolCelebration from '../../components/ToolCelebration';
 import Link from 'next/link';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
+import { PersonaSwitcher, Persona } from '../../components/PersonaSwitcher';
 import ShineBorder from '../../components/magicui/shine-border';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
@@ -67,6 +68,7 @@ const VECTORS: AttackVector[] = [
 ];
 
 export default function PromptInjectionContent() {
+    const [persona, setPersona] = useState<Persona>('CISO');
     const [prompt, setPrompt] = useState('');
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState<{
@@ -216,48 +218,61 @@ Only answer questions related to AcmeCorp logistics.
                         </div>
                     </div>
 
+                    <PersonaSwitcher activePersona={persona} onChange={setPersona} />
+
                     <div id="sandbox-pdf-export-zone" className="space-y-6">
                         <ScrollReveal>
                             <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
                                 <BorderBeam size={400} duration={12} delay={9} borderWidth={1.5} colorFrom="#10b981" colorTo="#047857" />
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
-                                    <div>
-                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Cost of Doing Nothing (CODN)</div>
-                                        <div className={`text-5xl sm:text-6xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.score < 50 ? 'from-red-500 to-orange-500' : results.score < 80 ? 'from-amber-400 to-orange-400' : 'from-emerald-400 to-teal-500'}`}>
-                                            ${results.codn.toLocaleString()}
-                                        </div>
-                                        <div className="mt-6">
-                                            <span className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2 ${results.score < 50 ? 'bg-red-900/30 text-rose-400 border border-red-900/50' : results.score < 80 ? 'bg-amber-900/30 text-amber-500 border border-amber-900/50' : 'bg-emerald-900/30 text-emerald-400 border border-emerald-900/50'}`}>
-                                                <Target size={12}/> {results.score < 50 ? 'HIGH VULNERABILITY DETECTED' : results.score < 80 ? 'PARTIAL MITIGATION' : 'ISO-STANDARD FORTIFICATION'}
-                                            </span>
-                                        </div>
-                                        <p className="text-sm text-zinc-400 mt-4 leading-relaxed">
-                                            Your instructions successfully mitigated <strong className="text-white">{results.evaluations.filter(v => v.passed).length} of {results.evaluations.length}</strong> adversarial vectors. This exposes the underlying agent chain to command hijacking and arbitrary execution, compounding into an estimated ${results.codn.toLocaleString()} in liability risk.
-                                        </p>
-                                    </div>
-                                    <div>
-                                         <div className="bg-[#0c0c0c] p-6 rounded-2xl border border-zinc-800 shadow-2xl space-y-4 max-h-[350px] overflow-y-auto custom-scrollbar relative">
-                                                <div className="text-xs font-mono text-emerald-400 uppercase tracking-widest border-b border-zinc-800 pb-3 mb-3 sticky top-0 bg-[#0c0c0c]/90 backdrop-blur-md z-10 flex justify-between items-center">
-                                                    <span>Threat Vector Matrix Map</span>
-                                                    <span className="text-zinc-500">{results.evaluations.filter((v:any) => !v.passed).length} active vulnerabilities</span>
+                                <div className="relative z-10 w-full min-h-[400px]">
+                                    {persona === 'CFO' && (
+                                        <div className="flex flex-col md:flex-row gap-8 items-center">
+                                            <div className="flex-1">
+                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Cost of Doing Nothing (CODN)</div>
+                                                <div className={`text-5xl sm:text-6xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.score < 50 ? 'from-red-500 to-orange-500' : results.score < 80 ? 'from-amber-400 to-orange-400' : 'from-emerald-400 to-teal-500'}`}>
+                                                    ${results.codn.toLocaleString()}
                                                 </div>
+                                                <div className="mt-6">
+                                                    <span className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2 ${results.score < 50 ? 'bg-red-900/30 text-rose-400 border border-red-900/50' : results.score < 80 ? 'bg-amber-900/30 text-amber-500 border border-amber-900/50' : 'bg-emerald-900/30 text-emerald-400 border border-emerald-900/50'}`}>
+                                                        <Target size={12}/> {results.score < 50 ? 'HIGH VULNERABILITY DETECTED' : results.score < 80 ? 'PARTIAL MITIGATION' : 'ISO-STANDARD FORTIFICATION'}
+                                                    </span>
+                                                </div>
+                                                <p className="text-sm text-zinc-400 mt-4 leading-relaxed">
+                                                    Your instructions successfully mitigated <strong className="text-white">{results.evaluations.filter((v:any) => v.passed).length} of {results.evaluations.length}</strong> adversarial vectors. This exposes the underlying agent chain to command hijacking and arbitrary execution, compounding into an estimated ${results.codn.toLocaleString()} in liability risk.
+                                                </p>
+                                            </div>
+                                            <div className="flex-1 bg-black/50 p-6 rounded-2xl border border-red-500/20 space-y-4 w-full">
+                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">Financial Risk Breakdown</div>
+                                                <div className="flex justify-between items-center pb-2 border-b border-white/5">
+                                                    <span className="text-sm text-zinc-400">Class Action Liability</span>
+                                                    <span className="text-sm font-mono text-red-400">High Risk</span>
+                                                </div>
+                                                <div className="flex justify-between items-center pb-2 border-b border-white/5">
+                                                    <span className="text-sm text-zinc-400">Malicious API Burn</span>
+                                                    <span className="text-sm font-mono text-amber-400">Exposed</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {persona === 'CISO' && (
+                                        <div className="w-full">
+                                            <div className="text-xs font-mono text-emerald-400 uppercase tracking-widest border-b border-zinc-800 pb-3 mb-6 flex justify-between items-center">
+                                                <span>Threat Vector Matrix Map</span>
+                                                <span className="text-zinc-500">{results.evaluations.filter((v:any) => !v.passed).length} active vulnerabilities</span>
+                                            </div>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 {results.evaluations.map((v: any, i: number) => (
                                                     <motion.div 
-                                                        initial={{x: 20, opacity: 0}}
-                                                        animate={{x: 0, opacity: 1}}
+                                                        initial={{y: 20, opacity: 0}}
+                                                        animate={{y: 0, opacity: 1}}
                                                         transition={{delay: 0.1 * i}}
                                                         key={i} 
                                                         className={`flex gap-3 border border-zinc-800/50 p-4 rounded-xl relative overflow-hidden group ${v.passed ? 'bg-emerald-900/10' : 'bg-red-900/10'}`}
                                                     >
-                                                        {/* Background threat strength visual */}
-                                                        {!v.passed && <div className="absolute bottom-0 left-0 h-1 bg-rose-500/50" style={{width: v.severity === 'CRITICAL' ? '100%' : v.severity === 'HIGH' ? '75%' : '50%'}}></div>}
-                                                        
+                                                        {!v.passed && <div className="absolute bottom-0 left-0 h-1 bg-rose-500/50" style={{width: v.severity === 'Critical' ? '100%' : v.severity === 'High' ? '75%' : '50%'}}></div>}
                                                         <div className="mt-0.5 shrink-0">
-                                                            {v.passed ? (
-                                                                <Shield className="w-5 h-5 text-emerald-500" />
-                                                            ) : (
-                                                                <ShieldAlert className="w-5 h-5 text-rose-500" />
-                                                            )}
+                                                            {v.passed ? <Shield className="w-5 h-5 text-emerald-500" /> : <ShieldAlert className="w-5 h-5 text-rose-500" />}
                                                         </div>
                                                         <div className="flex-1 min-w-0">
                                                             <div className="flex justify-between items-center mb-1">
@@ -274,42 +289,57 @@ Only answer questions related to AcmeCorp logistics.
                                                         </div>
                                                     </motion.div>
                                                 ))}
-                                         </div>
-                                    </div>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {persona === 'VP Eng' && (
+                                        <div className="w-full">
+                                            <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+                                                <div className="flex items-center gap-2">
+                                                    <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                                                    <h3 className="text-xl font-bold text-white">Synthesized Hardened Prompt</h3>
+                                                </div>
+                                                <button 
+                                                    onClick={copyToClipboard}
+                                                    className="flex items-center gap-2 px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-xs font-mono text-white transition-colors"
+                                                >
+                                                    {copied ? <CheckCircle2 size={14} className="text-emerald-400" /> : <Copy size={14} />}
+                                                    {copied ? 'COPIED' : 'COPY PAYLOAD'}
+                                                </button>
+                                            </div>
+                                            <p className="text-zinc-400 text-sm mb-4 leading-relaxed">
+                                                We have algorithmically rewritten your prompt to include deterministic bounding boxes (XML delimiters) and explicit adversarial negation loops as instructed by major lab guidelines (Anthropic, OpenAI).
+                                            </p>
+                                            
+                                            <div className="relative font-mono text-sm group h-64 overflow-y-auto custom-scrollbar">
+                                                 <div className="absolute top-0 left-0 w-1 h-full bg-cyan-500 rounded-l-xl z-20"></div>
+                                                 <pre className="w-full h-full bg-[#0a0a0b] border border-white/10 rounded-xl p-6 pl-8 text-zinc-300 whitespace-pre-wrap leading-relaxed">
+                                                     {results.hardenedPrompt}
+                                                 </pre>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {persona === 'Legal' && (
+                                        <div className="bg-black/50 p-6 rounded-2xl border border-amber-500/20 space-y-4">
+                                             <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">SLA & Regulatory Breach Risk</div>
+                                             <div className="space-y-4">
+                                                <div className="flex justify-between items-center border-b border-white/5 pb-2">
+                                                    <div className="text-sm text-zinc-400">Automated Data Exfiltration <span className="block text-xs text-zinc-500">Unrestricted system prompting bypasses DPI</span></div>
+                                                    <span className="font-mono text-rose-400 text-right">Violation Imminent</span>
+                                                </div>
+                                                <div className="flex justify-between items-center border-b border-white/5 pb-2">
+                                                    <div className="text-sm text-zinc-400">EU AI Act Liability <span className="block text-xs text-zinc-500">Lack of deterministic safety guardrails</span></div>
+                                                    <span className="font-mono text-amber-400 text-right">Non-Compliant</span>
+                                                </div>
+                                                <p className="text-xs text-zinc-500 font-mono italic">A single jailbreak payload can force this architecture to disgorge PII, breaching SLA terms instantly.</p>
+                                             </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </ScrollReveal>
-
-                        {/* HARDENED PROMPT SYNTHESIS */}
-                        {results.score < 100 && (
-                            <ScrollReveal delay={150}>
-                                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5">
-                                    <div className="flex justify-between items-center mb-6">
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-                                            <h3 className="text-xl font-bold text-white">Synthesized Hardened Prompt</h3>
-                                        </div>
-                                        <button 
-                                            onClick={copyToClipboard}
-                                            className="flex items-center gap-2 px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-xs font-mono text-white transition-colors"
-                                        >
-                                            {copied ? <CheckCircle2 size={14} className="text-emerald-400" /> : <Copy size={14} />}
-                                            {copied ? 'COPIED' : 'COPY PAYLOAD'}
-                                        </button>
-                                    </div>
-                                    <p className="text-zinc-400 text-sm mb-4 leading-relaxed">
-                                        We have algorithmically rewritten your prompt to include deterministic bounding boxes (XML delimiters) and explicit adversarial negation loops as instructed by major lab guidelines (Anthropic, OpenAI).
-                                    </p>
-                                    
-                                    <div className="relative font-mono text-sm group">
-                                         <div className="absolute top-0 left-0 w-1 h-full bg-cyan-500 rounded-l-xl z-20"></div>
-                                         <pre className="w-full bg-[#0a0a0b] border border-white/10 rounded-xl p-6 pl-8 text-zinc-300 overflow-x-auto whitespace-pre-wrap leading-relaxed">
-                                             {results.hardenedPrompt}
-                                         </pre>
-                                    </div>
-                                </div>
-                            </ScrollReveal>
-                        )}
 
                         {/* Board-Ready 3-Step Remediation Playbook */}
                         <ScrollReveal delay={200}>

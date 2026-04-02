@@ -12,6 +12,7 @@ import { BorderBeam } from '../../components/magicui/border-beam';
 import { Network, Server, ArrowRight, ShieldCheck, Cpu, DollarSign, Lock, Zap } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
 import { GlowCard } from '../../components/magicui/glow-card';
+import { PersonaSwitcher, Persona } from '../../components/PersonaSwitcher';
 
 // Pricing per 1M tokens (Input / Output)
 const MODELS: Record<string, { in: number; out: number; name: string }> = {
@@ -21,6 +22,7 @@ const MODELS: Record<string, { in: number; out: number; name: string }> = {
 };
 
 export default function AgentRouterContent() {
+    const [persona, setPersona] = useState<Persona>('VP Eng');
     // Inputs
     const [dailyRequests, setDailyRequests] = useState(10000);
     const [baseInputTokens, setBaseInputTokens] = useState(2500); // Base system + user prompt
@@ -217,13 +219,20 @@ export default function AgentRouterContent() {
                         </div>
                     </div>
 
+                    <PersonaSwitcher activePersona={persona} onChange={setPersona} />
+
                     <div id="router-pdf-export-zone" className="space-y-6">
                         <ScrollReveal>
                             <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
                                 <BorderBeam size={400} duration={12} delay={9} borderWidth={1.5} colorFrom="#3b82f6" colorTo="#8b5cf6" />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                     <div>
-                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">API Bankruptcy Liability (CODN)</div>
+                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">
+                                            {persona === 'CFO' ? 'Gross Margin Erosion Risk' :
+                                             persona === 'VP Eng' ? 'API Bankruptcy Liability (CODN)' :
+                                             persona === 'CISO' ? 'External Payload Extrusion Risk' :
+                                             'Vendor Lock-In Liability'}
+                                        </div>
                                         <div className={`text-6xl sm:text-7xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.monthlyCost > 50000 ? 'from-red-500 to-rose-600' : 'from-blue-400 to-indigo-500'}`}>
                                             {formatMoney(results.monthlyCost)}
                                         </div>
@@ -241,34 +250,72 @@ export default function AgentRouterContent() {
                                         <p className="text-sm text-zinc-400 mt-6 leading-relaxed">
                                             Executing <strong className="text-white">{results.grossMonthlyRequests.toLocaleString()} monthly base triggers</strong> through a {agentHops}-hop agentic chain yields a geometric explosion of Input Tokens, mapping to exactly <strong className="text-white">{(results.totalTokens / 1000000000).toFixed(2)} Billion Total Tokens</strong> consumed per month.
                                         </p>
-                                    </div>
-                                    <div>
-                                         <GlowCard className="p-6 h-full" glowColor="blue">
-                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3 mb-3">Workflow Topology Exhaust</div>
-                                                
-                                                <div className="flex justify-between items-center pb-3 border-b border-white/5 mb-3">
-                                                    <span className="text-sm text-zinc-400">Total System Triggers</span>
-                                                    <span className="text-sm font-mono text-blue-400">{results.grossMonthlyRequests.toLocaleString()}</span>
+                                     </div>
+                                     <div>
+                                         {persona === 'CFO' && (
+                                            <div className="bg-black/50 p-6 rounded-2xl border border-green-500/20 space-y-4 h-full">
+                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">Unit Margin Collapse Matrix</div>
+                                                <div className="flex justify-between items-center pb-2 border-b border-white/5">
+                                                    <span className="text-sm text-zinc-400">Annualized API Run Rate</span>
+                                                    <span className="text-sm font-mono text-red-400">${(results.monthlyCost * 12).toLocaleString()}</span>
                                                 </div>
-                                                
-                                                {useEdgeRouter && (
-                                                    <div className="flex justify-between items-center pb-3 border-b border-white/5 mb-3">
-                                                        <span className="text-sm text-zinc-400">SLM Edge Deflections (0 Cost)</span>
-                                                        <span className="text-sm font-mono text-emerald-400">+{(results.grossMonthlyRequests - results.frontierRequests).toLocaleString()}</span>
-                                                    </div>
-                                                )}
+                                                <div className="flex justify-between items-center pb-2 border-b border-white/5">
+                                                    <span className="text-sm text-zinc-400">Average API Cost / System Trigger</span>
+                                                    <span className="text-sm font-mono text-amber-400">${(results.monthlyCost / results.grossMonthlyRequests).toFixed(4)}</span>
+                                                </div>
+                                                <p className="text-xs text-zinc-500 font-mono mt-2 pt-2">Variable token pricing destroys gross margins when tied to fixed-fee SaaS tiers.</p>
+                                            </div>
+                                         )}
+                                         {persona === 'VP Eng' && (
+                                              <GlowCard className="p-6 h-full" glowColor="blue">
+                                                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3 mb-3">Workflow Topology Exhaust</div>
+                                                 
+                                                 <div className="flex justify-between items-center pb-3 border-b border-white/5 mb-3">
+                                                     <span className="text-sm text-zinc-400">Total System Triggers</span>
+                                                     <span className="text-sm font-mono text-blue-400">{results.grossMonthlyRequests.toLocaleString()}</span>
+                                                 </div>
+                                                 
+                                                 {useEdgeRouter && (
+                                                     <div className="flex justify-between items-center pb-3 border-b border-white/5 mb-3">
+                                                         <span className="text-sm text-zinc-400">SLM Edge Deflections (0 Cost)</span>
+                                                         <span className="text-sm font-mono text-emerald-400">+{(results.grossMonthlyRequests - results.frontierRequests).toLocaleString()}</span>
+                                                     </div>
+                                                 )}
 
-                                                <div className="flex justify-between items-center pb-3 border-b border-white/5 mb-3">
-                                                    <span className="text-sm text-zinc-400">Frontier API Payloads</span>
-                                                    <span className="text-sm font-mono text-indigo-400">{results.frontierRequests.toLocaleString()}</span>
-                                                </div>
+                                                 <div className="flex justify-between items-center pb-3 border-b border-white/5 mb-3">
+                                                     <span className="text-sm text-zinc-400">Frontier API Payloads</span>
+                                                     <span className="text-sm font-mono text-indigo-400">{results.frontierRequests.toLocaleString()}</span>
+                                                 </div>
 
-                                                <div className="flex justify-between items-center pt-2">
-                                                    <span className="text-xs font-mono text-white">Execution Hops per Payload</span>
-                                                    <span className={`text-sm font-mono font-bold ${agentHops > 2 ? 'text-orange-400' : 'text-blue-400'}`}>x {agentHops} Deep</span>
+                                                 <div className="flex justify-between items-center pt-2">
+                                                     <span className="text-xs font-mono text-white">Execution Hops per Payload</span>
+                                                     <span className={`text-sm font-mono font-bold ${agentHops > 2 ? 'text-orange-400' : 'text-blue-400'}`}>x {agentHops} Deep</span>
+                                                 </div>
+                                             </GlowCard>
+                                         )}
+                                         {persona === 'CISO' && (
+                                            <div className="bg-black/50 p-6 rounded-2xl border border-rose-500/20 space-y-4 h-full">
+                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">External Payload Exposure</div>
+                                                <div className="text-center py-4">
+                                                    <div className="text-4xl font-bold text-rose-400 font-mono">{(results.totalTokens / 1000000).toFixed(1)}M</div>
+                                                    <p className="text-xs text-zinc-500 mt-2">Proprietary Tokens Exfiltrated to Public API per month</p>
                                                 </div>
-                                         </GlowCard>
-                                    </div>
+                                            </div>
+                                         )}
+                                          {persona === 'Legal' && (
+                                            <div className="bg-black/50 p-6 rounded-2xl border border-amber-500/20 space-y-4 h-full">
+                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">Vendor Lock-In Dependency</div>
+                                                <div className="flex justify-between items-center pb-2">
+                                                    <span className="text-sm text-zinc-400">SaaS Provider Dependency</span>
+                                                    <span className="text-sm font-mono text-amber-400 text-right">Critical</span>
+                                                </div>
+                                                <div className="flex justify-between items-center pt-2 border-t border-white/5">
+                                                    <span className="text-sm text-zinc-400">Risk of Unilateral Price Bumps</span>
+                                                    <span className="text-sm font-mono text-rose-400 text-right">Extremely High</span>
+                                                </div>
+                                            </div>
+                                         )}
+                                     </div>
                                 </div>
                             </div>
                         </ScrollReveal>

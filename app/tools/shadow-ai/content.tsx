@@ -9,22 +9,13 @@ import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
 import { VaultUpsell } from '../../components/VaultUpsell';
+import { PersonaSwitcher, Persona } from '../../components/PersonaSwitcher';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { ShieldAlert, ArrowRight, ShieldOff, Lock, UserX, Target, UploadCloud, FileSpreadsheet, Eye, Zap } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
 import Papa from 'papaparse';
 
-
-// --- PERSONA TYPES ---
-type Persona = 'CISO' | 'CTO' | 'CEO' | 'Legal';
-type Mode = 'ESTIMATE' | 'AUDIT';
-
-const PERSONAS: { id: Persona; label: string; icon: React.ComponentType<{ size?: number }> }[] = [
-    { id: 'CISO', label: 'CISO/SecOps', icon: ShieldAlert },
-    { id: 'CTO', label: 'CTO', icon: Target },
-    { id: 'Legal', label: 'General Counsel', icon: Lock },
-    { id: 'CEO', label: 'CEO', icon: UserX },
-];
+type Mode = 'SIMULATE' | 'AUDIT';
 
 // Extracted AI Dictionary
 const AI_DICTIONARY = [
@@ -45,13 +36,11 @@ const AI_DICTIONARY = [
 
 export default function ShadowContent() {
     const [persona, setPersona] = useState<Persona>('CISO');
-    const [mode, setMode] = useState<Mode>('ESTIMATE');
+    const [mode, setMode] = useState<Mode>('SIMULATE');
     const [step, setStep] = useState(1);
 
-    // MODE 1: Estimate Inputs
-    const [employeeCount, setEmployeeCount] = useState(300);
-    const [engineeringMix, setEngineeringMix] = useState(40);
-    const [dlpEnforcement, setDlpEnforcement] = useState(20);
+    // MODE 1: Simulate Inputs
+    const [simulatedLogs, setSimulatedLogs] = useState('');
 
     // MODE 2: Audit Inputs
     const [auditFile, setAuditFile] = useState<File | null>(null);
@@ -63,35 +52,31 @@ export default function ShadowContent() {
     const [results, setResults] = useState<any>(null);
     const [showGate, setShowGate] = useState(false);
 
-    // --- ESTIMATOR EXECUTION ---
-    const runEstimation = async () => {
+    // --- SIMULATOR EXECUTION ---
+    const runSimulation = async () => {
         setLoading(true);
         try {
             await new Promise(r => setTimeout(r, 1500));
-            const unprotectedRatio = (100 - dlpEnforcement) / 100;
-            const engineers = Math.round(employeeCount * (engineeringMix / 100));
-            const nonEngineers = employeeCount - engineers;
-
-            const weeklyEngPrompts = engineers * 15 * unprotectedRatio;
-            const weeklyStaffPrompts = nonEngineers * 3.5 * unprotectedRatio;
-            const totalMonthlyPrompts = Math.round((weeklyEngPrompts + weeklyStaffPrompts) * 4.33);
-
-            const piiViolations = Math.round(totalMonthlyPrompts * 0.01);
-            const financialLiability = piiViolations * 5000;
+            const text = simulatedLogs.toLowerCase();
+            const hasCode = text.includes('function') || text.includes('const') || text.includes('var') || text.includes('let') || text.includes('=>') || text.includes('class ');
+            
+            const totalMonthlyPrompts = Math.max(1250, text.length * 2);
+            const piiViolations = Math.round(totalMonthlyPrompts * 0.05); // Simulated leakage rate
+            const shadowSpend = Math.round(totalMonthlyPrompts * 0.85); // Mock SaaS spend baseline
+            const financialLiability = (piiViolations * 5000) + shadowSpend;
 
             let riskTier = 'MODERATE';
             if (financialLiability > 500000) riskTier = 'CRITICAL';
             else if (financialLiability > 100000) riskTier = 'HIGH';
 
             setResults({
-                type: 'ESTIMATION',
-                engineers,
-                nonEngineers,
+                type: 'SIMULATION',
                 totalMonthlyPrompts,
                 piiViolations,
                 financialLiability,
                 riskTier,
-                dlpEnforcement
+                hasCodeLeak: hasCode,
+                shadowSpend
             });
         } catch (error: any) {
             console.error(error);
@@ -197,11 +182,11 @@ export default function ShadowContent() {
                     <span>/</span>
                     <span className="text-white font-bold">Shadow AI Audit</span>
                 </div>
-                {/* Mode Switcher if pre-results */}
+                 {/* Mode Switcher if pre-results */}
                 {!results && (
                      <div className="flex bg-black/50 border border-white/5 p-1 rounded-lg self-end">
-                        <button onClick={() => setMode('ESTIMATE')} className={`px-4 py-1.5 text-xs font-mono uppercase tracking-widest rounded transition-all ${mode === 'ESTIMATE' ? 'bg-amber-500/20 text-amber-400 font-bold' : 'text-zinc-500 hover:text-zinc-300'}`}>
-                            Estimation Model
+                        <button onClick={() => setMode('SIMULATE')} className={`px-4 py-1.5 text-xs font-mono uppercase tracking-widest rounded transition-all ${mode === 'SIMULATE' ? 'bg-amber-500/20 text-amber-400 font-bold' : 'text-zinc-500 hover:text-zinc-300'}`}>
+                            Log Injection
                         </button>
                         <button onClick={() => setMode('AUDIT')} className={`px-4 py-1.5 flex items-center gap-1 text-xs font-mono uppercase tracking-widest rounded transition-all ${mode === 'AUDIT' ? 'bg-rose-500/20 text-rose-400 font-bold' : 'text-zinc-500 hover:text-zinc-300'}`}>
                             <Eye size={12}/> Zero-Trust Audit
@@ -229,94 +214,44 @@ export default function ShadowContent() {
 
                         <div className="mb-8">
                             <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">Auditing from the perspective of...</div>
-                            <div className="flex flex-wrap gap-2">
-                                {PERSONAS.map(p => (
-                                    <button key={p.id} onClick={() => setPersona(p.id)}
-                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id ? 'bg-zinc-800 border-zinc-500 text-white' : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'}`}
-                                    >
-                                        <p.icon size={14} /> {p.label}
-                                    </button>
-                                ))}
-                            </div>
+                            <PersonaSwitcher activePersona={persona} onChange={setPersona} />
                         </div>
 
-                        {/* ESTIMATION MODE */}
-                        {mode === 'ESTIMATE' && (
+                        {/* SIMULATION MODE */}
+                        {mode === 'SIMULATE' && (
                             <div className="space-y-6">
-                                {step === 1 && (
-                                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
-                                        <div className="flex items-center gap-3 border-b border-white/10 pb-4">
-                                            <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono text-sm border border-amber-500/30">1</div>
-                                            <div>
-                                                <h3 className="text-xl font-bold text-white">Employee Scale & Mix</h3>
-                                                <p className="text-sm text-zinc-500">Define the size of your human attack vector.</p>
-                                            </div>
+                                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
+                                    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                        <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono text-sm border border-amber-500/30">1</div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-white">Log Extrapolation</h3>
+                                            <p className="text-sm text-zinc-500">Paste an internal Slack log or Developer PR communication.</p>
                                         </div>
+                                    </div>
 
-                                        <div className="space-y-8">
-                                            <div className="p-6 bg-black/40 rounded-xl border border-white/5 relative group">
-                                                <div className="flex justify-between items-end mb-4">
-                                                    <label className="text-xs font-mono text-amber-400 uppercase tracking-widest">Total Employee Headcount</label>
-                                                    <div className="text-2xl font-bold text-white font-mono">{employeeCount}</div>
-                                                </div>
-                                                <input title="Employees" type="range" min="10" max="5000" step="10" value={employeeCount} onChange={e => setEmployeeCount(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500" />
-                                            </div>
+                                    <div>
+                                        <textarea 
+                                            value={simulatedLogs} 
+                                            onChange={e => setSimulatedLogs(e.target.value)} 
+                                            placeholder="Example: Hey guys, can someone check my API key? I asked ChatGPT but it kept hallucinating the response..." 
+                                            className="w-full h-48 sm:h-64 bg-black/50 border border-white/10 rounded-xl p-4 font-mono text-sm text-zinc-300 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-all placeholder:text-zinc-700 resize-none"
+                                        />
+                                    </div>
 
-                                            <div className="p-6 bg-black/40 rounded-xl border border-white/5 relative group">
-                                                <div className="flex justify-between items-end mb-4">
-                                                    <label className="text-xs font-mono text-blue-400 uppercase tracking-widest">Engineering Weight</label>
-                                                    <div className="text-2xl font-bold text-white font-mono">{engineeringMix}%</div>
-                                                </div>
-                                                <input title="Engineering %" type="range" min="5" max="95" step="5" value={engineeringMix} onChange={e => setEngineeringMix(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-blue-500" />
-                                                <div className="text-xs font-mono text-zinc-500 mt-2">Engineers paste codebase syntax into ChatGPT at 5x the rate of marketing.</div>
-                                            </div>
+                                    <div className="w-full">
+                                        <ShineBorder borderColor="rgba(245, 158, 11, 0.6)" duration={2}>
+                                            <button onClick={() => { setShowGate(true); }} disabled={simulatedLogs.length < 5 || loading} className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-amber-500 transition-all flex items-center justify-center gap-3 disabled:opacity-50">
+                                                {loading ? ( <><div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" /> SCANNING...</> ) : ( "RUN LIABILITY AUDIT →" )}
+                                            </button>
+                                        </ShineBorder>
+                                    </div>
+
+                                    {showGate && (
+                                        <div className="mt-6">
+                                            <ToolGate toolName="Shadow AI Scanner" toolSlug="shadow-ai" mappedCurriculumId="27-10" onUnlock={() => { setShowGate(false); runSimulation(); }}><></></ToolGate>
                                         </div>
-
-                                        <button onClick={() => setStep(2)} className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-amber-400 transition-all flex items-center justify-center gap-2">
-                                            Next: Compliance Gates <ArrowRight size={16} />
-                                        </button>
-                                    </motion.div>
-                                )}
-
-                                {step === 2 && (
-                                    <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
-                                        <div className="flex items-center gap-3 border-b border-white/10 pb-4">
-                                            <div className="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold font-mono text-sm border border-red-500/30">2</div>
-                                            <div>
-                                                <h3 className="text-xl font-bold text-white">Device Level Protection (DLP)</h3>
-                                                <p className="text-sm text-zinc-500">What % of your endpoints explicitly block public LLM URLs through Zscaler/VPNs?</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="p-6 bg-black/40 rounded-xl border border-white/5 relative group">
-                                            <div className="flex justify-between items-end mb-4">
-                                                <label className="text-xs font-mono text-red-400 uppercase tracking-widest">DLP Endpoint Coverage</label>
-                                                <div className="text-3xl font-bold text-white font-mono">{dlpEnforcement}%</div>
-                                            </div>
-                                            <input title="DLP" type="range" min="0" max="100" step="5" value={dlpEnforcement} onChange={e => setDlpEnforcement(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-red-500" />
-                                            <div className="text-xs text-zinc-500 mt-4 leading-relaxed font-mono">
-                                                If DLP is 0%, all endpoints have unmonitored access to OpenAI, Anthropic, and xAI.
-                                            </div>
-                                        </div>
-
-                                        <div className="flex gap-4">
-                                            <button onClick={() => setStep(1)} className="w-1/3 py-4 bg-zinc-900 border border-white/10 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">Back</button>
-                                            <div className="w-2/3">
-                                                <ShineBorder borderColor="rgba(245, 158, 11, 0.6)" duration={2}>
-                                                    <button onClick={() => { setShowGate(true); }} className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-amber-500 transition-all flex items-center justify-center gap-3">
-                                                        {loading ? ( <><div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" /> SCANNING...</> ) : ( "RUN LIABILITY AUDIT →" )}
-                                                    </button>
-                                                </ShineBorder>
-                                            </div>
-                                        </div>
-
-                                        {showGate && (
-                                            <div className="mt-6">
-                                                <ToolGate toolName="Shadow AI Audit" onUnlock={() => { setShowGate(false); runEstimation(); }}><></></ToolGate>
-                                            </div>
-                                        )}
-                                    </motion.div>
-                                )}
+                                    )}
+                                </motion.div>
                             </div>
                         )}
 
@@ -426,6 +361,9 @@ export default function ShadowContent() {
                                         </p>
                                     </div>
                                     <div>
+                                        {results.type !== 'AUDIT' && (
+                                            <PersonaSwitcher activePersona={persona} onChange={setPersona} />
+                                        )}
                                         {results.type === 'AUDIT' ? (
                                             <div className="bg-black/50 p-6 rounded-2xl border border-white/5 h-full max-h-[250px] overflow-y-auto custom-scrollbar">
                                                  <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3 mb-3 sticky top-0 bg-black/50 backdrop-blur-md">VENDORS IDENTIFIED</div>
@@ -449,20 +387,58 @@ export default function ShadowContent() {
                                                  )}
                                             </div>
                                         ) : (
-                                            <div className="bg-black/50 p-6 rounded-2xl border border-white/5 space-y-4">
-                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3 mb-3">Attack Surface Breakdown</div>
-                                                <div className="flex justify-between items-center pb-2">
-                                                    <span className="text-sm text-zinc-400">Engineering Endpoints</span>
-                                                    <span className="text-sm font-mono text-blue-400">{results.engineers}</span>
-                                                </div>
-                                                <div className="flex justify-between items-center border-b border-white/5 pb-3">
-                                                    <span className="text-sm text-zinc-400">Standard Staff Endpoints</span>
-                                                    <span className="text-sm font-mono text-indigo-400">{results.nonEngineers}</span>
-                                                </div>
-                                                <div className="flex justify-between items-center pt-2">
-                                                    <span className="text-xs font-mono text-rose-500">Unmitigated Payload Count</span>
-                                                    <span className="text-lg font-mono font-bold text-white">{results.totalMonthlyPrompts.toLocaleString()}</span>
-                                                </div>
+                                            <div className="flex flex-col gap-4">
+                                                {persona === 'CISO' && (
+                                                    <div className="bg-black/50 p-6 rounded-2xl border border-rose-500/20 space-y-4">
+                                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">Compliance Perimeter Heatmap</div>
+                                                        <div className="space-y-3 pt-2">
+                                                            <div className="flex justify-between items-center bg-rose-500/10 p-2 rounded">
+                                                                <span className="text-sm text-rose-400 font-bold">PII Exfiltration</span>
+                                                                <span className="text-xs font-mono text-rose-400">{results.piiViolations} hits</span>
+                                                            </div>
+                                                            <div className="flex justify-between items-center bg-amber-500/10 p-2 rounded">
+                                                                <span className="text-sm text-amber-400 font-bold">API Key Exposure</span>
+                                                                <span className="text-xs font-mono text-amber-400">High Risk</span>
+                                                            </div>
+                                                            <div className="flex justify-between items-center bg-emerald-500/10 p-2 rounded">
+                                                                <span className="text-sm text-emerald-400 font-bold">Sanctioned Inference</span>
+                                                                <span className="text-xs font-mono text-emerald-400">0 hits</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {persona === 'CFO' && (
+                                                    <div className="bg-black/50 p-6 rounded-2xl border border-green-500/20 space-y-4">
+                                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">Unlicensed SaaS Spend Waste</div>
+                                                        <div className="text-center py-4">
+                                                            <div className="text-4xl font-bold text-green-400 font-mono">${(results.shadowSpend || results.knownSpend || 14500).toLocaleString()}</div>
+                                                            <p className="text-xs text-zinc-500 mt-2">Annualized Unregulated Corporate Credit Card Expense</p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {persona === 'VP Eng' && (
+                                                    <div className="bg-black/50 p-6 rounded-2xl border border-blue-500/20 space-y-4">
+                                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">Algorithmic Contamination Log</div>
+                                                        <div className="flex justify-between items-center pb-2">
+                                                            <span className="text-sm text-zinc-400">AI-Generated Code Leakage</span>
+                                                            <span className="text-sm font-mono text-blue-400 text-right">{results.hasCodeLeak ? "Detected" : "None Detected"}</span>
+                                                        </div>
+                                                        <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                                                            <span className="text-sm text-zinc-400">Payload Integrity</span>
+                                                            <span className="text-sm font-mono text-rose-400 text-right">Compromised</span>
+                                                        </div>
+                                                        <p className="text-xs text-zinc-500 font-mono mt-2 pt-2 border-t border-white/10">Codebase is currently ingesting untrusted public LLM tokens without validation.</p>
+                                                    </div>
+                                                )}
+                                                {persona === 'Legal' && (
+                                                    <div className="bg-black/50 p-6 rounded-2xl border border-amber-500/20 space-y-4">
+                                                         <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">SLA & Copyright Exposure</div>
+                                                         <div className="space-y-2">
+                                                            <div className="text-sm text-amber-400">Potential GDPR Fines: <span className="font-bold">Active Exposure</span></div>
+                                                            <div className="text-sm text-rose-400">IP Ownership Voided: <span className="font-bold">High Risk</span></div>
+                                                         </div>
+                                                    </div>
+                                                )}
                                             </div>
                                         )}
                                     </div>

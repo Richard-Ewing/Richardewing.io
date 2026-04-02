@@ -11,6 +11,7 @@ import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { Layers, Database, ArrowRight, Server, FileText, Settings, TriangleAlert, Lock, Zap } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
+import { PersonaSwitcher, Persona } from '../../components/PersonaSwitcher';
 
 // Helper to chunk text
 function chunkText(text: string, chunkSize: number, overlap: number) {
@@ -35,6 +36,7 @@ function chunkText(text: string, chunkSize: number, overlap: number) {
 }
 
 export default function RagChunkingContent() {
+    const [persona, setPersona] = useState<Persona>('VP Eng');
     const [rawText, setRawText] = useState('');
     const [chunkSize, setChunkSize] = useState(200);
     const [overlap, setOverlap] = useState(50);
@@ -214,42 +216,106 @@ export default function RagChunkingContent() {
                         </div>
                     </div>
 
+                    <PersonaSwitcher activePersona={persona} onChange={setPersona} />
+
                     <div id="chunk-pdf-export-zone" className="space-y-6">
                         <ScrollReveal>
                             <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
                                 <BorderBeam size={400} duration={12} delay={9} borderWidth={1.5} colorFrom="#6366f1" colorTo="#06b6d4" />
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
-                                    <div>
-                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Hallucination Liability (CODN)</div>
-                                        <div className={`text-6xl sm:text-7xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.efficiencyScore < 50 ? 'from-rose-500 to-red-600' : 'from-indigo-400 to-cyan-400'}`}>
-                                            ${results.codn.toLocaleString()}
-                                        </div>
-                                        <div className="mt-6">
-                                             <span className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2 ${results.efficiencyScore < 60 ? 'bg-red-900/30 text-rose-400 border border-red-900/50' : 'bg-indigo-900/30 text-indigo-400 border border-indigo-900/50'}`}>
-                                                <TriangleAlert size={12}/> {results.brokenWords} SEVERED CONTEXT BOUNDARIES
-                                            </span>
-                                        </div>
-                                        <p className="text-sm text-zinc-400 mt-4 leading-relaxed">
-                                            Each severed semantic boundary creates isolated tokens that the LLM model cannot accurately interpret, forcing it to hallucinate responses. At an enterprise scale, these misinterpretations manifest as an estimated <strong className="text-white">${results.codn.toLocaleString()} in support rework and brand liability.</strong>
-                                        </p>
-                                    </div>
-                                    <div>
-                                         <div className="bg-black/50 p-6 rounded-2xl border border-white/5 space-y-4">
+                                <div className="min-h-[300px] relative z-10 w-full">
+                                    {persona === 'CFO' && (
+                                        <div className="flex flex-col md:flex-row gap-8 items-center">
+                                            <div className="flex-1">
+                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Hallucination Liability (CODN)</div>
+                                                <div className={`text-6xl sm:text-7xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.efficiencyScore < 50 ? 'from-rose-500 to-red-600' : 'from-indigo-400 to-cyan-400'}`}>
+                                                    ${results.codn.toLocaleString()}
+                                                </div>
+                                                <div className="mt-6">
+                                                     <span className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2 ${results.efficiencyScore < 60 ? 'bg-red-900/30 text-rose-400 border border-red-900/50' : 'bg-indigo-900/30 text-indigo-400 border border-indigo-900/50'}`}>
+                                                        <TriangleAlert size={12}/> {results.brokenWords} SEVERED CONTEXT BOUNDARIES
+                                                    </span>
+                                                </div>
+                                                <p className="text-sm text-zinc-400 mt-4 leading-relaxed">
+                                                    Each severed semantic boundary creates isolated tokens that the LLM model cannot accurately interpret, forcing it to hallucinate responses. At an enterprise scale, these misinterpretations manifest as an estimated <strong className="text-white">${results.codn.toLocaleString()} in support rework and brand liability.</strong>
+                                                </p>
+                                            </div>
+                                            <div className="flex-1 bg-black/50 p-6 rounded-2xl border border-white/5 space-y-4">
                                                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3 mb-3">Database Load Topology</div>
-                                                <div className="flex justify-between items-center pb-2">
+                                                <div className="flex justify-between items-center pb-2 border-b border-white/5">
                                                     <span className="text-sm text-zinc-400">Total Vectors (Rows)</span>
                                                     <span className="text-sm font-mono text-indigo-400">{results.chunks.length}</span>
                                                 </div>
-                                                <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                                                <div className="flex justify-between items-center pb-2 border-b border-white/5">
+                                                    <span className="text-sm text-zinc-400">Storage API Run Rate</span>
+                                                    <span className="text-sm font-mono text-rose-400">Inefficient</span>
+                                                </div>
+                                                <p className="text-xs text-zinc-500 font-mono mt-2 italic">Vector databases charge per dimensional float. Storing raw noise directly inflates monthly active spend.</p>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {persona === 'VP Eng' && (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                            <div>
+                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Semantic Integrity Score</div>
+                                                <div className={`text-6xl sm:text-7xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.efficiencyScore < 50 ? 'from-rose-500 to-red-600' : 'from-indigo-400 to-cyan-400'}`}>
+                                                    {results.efficiencyScore}%
+                                                </div>
+                                                <p className="text-sm text-zinc-400 mt-4 leading-relaxed">
+                                                    The current sliding window parameters result in {results.brokenWords} hard word-shears, obliterating meaning.
+                                                </p>
+                                            </div>
+                                            <div className="bg-black/50 p-6 rounded-2xl border border-white/5 space-y-4 h-full flex flex-col justify-center">
+                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3 mb-3">Ingest Pipeline Stats</div>
+                                                <div className="flex justify-between items-center pb-2">
+                                                    <span className="text-sm text-zinc-400">Pipeline Input</span>
+                                                    <span className="text-sm font-mono text-indigo-400">{rawText.length} Chars</span>
+                                                </div>
+                                                <div className="flex justify-between items-center pb-2">
                                                     <span className="text-sm text-zinc-400">Overlap Redundancy</span>
                                                     <span className="text-sm font-mono text-cyan-400">{overlap} Chars</span>
                                                 </div>
-                                                <div className="flex justify-between items-center pt-2">
+                                                <div className="flex justify-between items-center border-t border-white/5 pt-3">
                                                     <span className="text-xs font-mono text-white">Semantic Cut Penalty</span>
                                                     <span className={`text-sm font-mono font-bold ${results.brokenWords > 0 ? 'text-red-400' : 'text-emerald-400'}`}>-{results.brokenWords * 2}% Loss</span>
                                                 </div>
-                                         </div>
-                                    </div>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {persona === 'CISO' && (
+                                        <div className="flex flex-col md:flex-row gap-8 items-center">
+                                            <div className="flex-1 w-full bg-black/50 p-6 rounded-2xl border border-rose-500/20 space-y-4">
+                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">Data Integrity Defect Pipeline</div>
+                                                <div className="space-y-4">
+                                                    <div className="flex justify-between items-center border-b border-white/5 pb-2">
+                                                        <span className="text-sm text-zinc-400">Authorization Context Loss</span>
+                                                        <span className="text-xs font-mono text-rose-400 shrink-0">CRITICAL RISK</span>
+                                                    </div>
+                                                    <div className="flex justify-between items-center border-b border-white/5 pb-2">
+                                                        <span className="text-sm text-zinc-400">Access Control Bypass</span>
+                                                        <span className="text-xs font-mono text-amber-400 shrink-0">ELEVATED</span>
+                                                    </div>
+                                                </div>
+                                                <p className="text-xs text-zinc-500 font-mono mt-2">When user permissions/access tags are physically chunked into a different embedded matrix than the sensitive data itself, RBAC fails.</p>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {persona === 'Legal' && (
+                                        <div className="flex flex-col md:flex-row gap-8 items-center">
+                                            <div className="flex-1 bg-black/50 p-6 rounded-2xl border border-amber-500/20 space-y-4">
+                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">Contractual Interpretation Shearing</div>
+                                                <div className="flex justify-between items-center pb-2">
+                                                    <span className="text-sm text-zinc-400">Legal Negation Loss Rate</span>
+                                                    <span className="text-sm font-mono text-rose-400 font-bold">{Math.min(100, results.brokenWords * 3)}%</span>
+                                                </div>
+                                                <p className="text-xs text-zinc-500 font-mono mt-2 leading-relaxed">
+                                                    Legal liability soars when the embedding model physically separates sentences like "We are NOT" and "liable for financial damages." into two different chunks. If the LLM retrieves only the second chunk via cosine similarity, the AI issues legally binding falsehoods on behalf of the company.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </ScrollReveal>

@@ -12,6 +12,7 @@ import { QPEPRemediation } from '../../components/QPEPRemediation';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import ShineBorder from '../../components/magicui/shine-border';
+import { PersonaSwitcher } from '../../components/PersonaSwitcher';
 
 // --- MAGIC UI COMPONENTS ---
 
@@ -307,23 +308,13 @@ export default function APERTool() {
                                 </div>
 
                                 {/* PERSONA SELECTOR */}
-                                <div className="mb-8">
-                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">I am a...</div>
-                                    <div className="flex flex-wrap gap-2">
-                                        {PERSONAS.map(p => (
-                                            <button
-                                                key={p.id}
-                                                onClick={() => setPersona(p.id)}
-                                                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id
-                                                    ? 'bg-yellow-500/10 border-yellow-500 text-yellow-400'
-                                                    : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
-                                                    }`}
-                                            >
-                                                <p.icon size={14} />
-                                                {p.label}
-                                            </button>
-                                        ))}
-                                    </div>
+                                <div className="mb-8 max-w-2xl mx-auto">
+                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 text-center">I am a...</div>
+                                    <PersonaSwitcher 
+                                        activePersona={persona} 
+                                        onChange={setPersona} 
+                                        personas={PERSONAS}
+                                    />
                                 </div>
 
                                 <div className="bg-zinc-900/30 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl space-y-8">

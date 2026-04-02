@@ -63,10 +63,13 @@ const Navigation = () => {
                             <Dropdown label="Enterprise Diagnostics">
                                 <Link
                                     href="/compare"
-                                    className="block px-4 py-3 text-sm font-semibold text-rose-400 hover:text-rose-300 hover:bg-rose-900/10 transition-colors border-l-2 border-rose-500 bg-black/20"
+                                    className="block p-5 bg-gradient-to-br from-rose-500/20 to-black/40 border-b border-rose-500/30 hover:from-rose-500/30 transition-all font-semibold"
                                 >
-                                    <span className="block flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />Combat Matrix (Compare)</span>
-                                    <span className="block text-[10px] text-zinc-500 mt-0.5 font-mono">VS Legacy / Competitors</span>
+                                    <div className="flex items-center gap-3 mb-1">
+                                        <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse shadow-[0_0_10px_#f43f5e]" />
+                                        <span className="text-white text-base">Combat Matrix</span>
+                                    </div>
+                                    <p className="text-[10.5px] text-rose-200/70 font-mono tracking-widest uppercase">Compare vs Legacy Competitors</p>
                                 </Link>
                                 <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">PDI — Product Debt Index</DropdownItem>
                                 <DropdownItem href="/tools/ev-se" description="Model enterprise value per engineer">EV-SE — Valuation Engine</DropdownItem>
@@ -235,14 +238,18 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     {/* Tools Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest pl-2">Enterprise Diagnostics</h3>
+                        <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest pl-2 mb-4">Enterprise Diagnostics</h3>
                         
                         <Link
                             href="/compare"
                             onClick={onClose}
-                            className={`block px-4 py-3 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-400 hover:bg-rose-500/20 transition-colors font-semibold flex items-center justify-between`}
+                            className={`block px-5 py-4 rounded-xl bg-gradient-to-r from-rose-500/20 to-zinc-900 border border-rose-500/30 text-white hover:bg-rose-500/30 transition-colors font-semibold shadow-lg mb-6`}
                         >
-                            <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />Combat Matrix (Compare)</span>
+                            <div className="flex items-center gap-3 mb-1">
+                                <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse shadow-[0_0_10px_#f43f5e]" />
+                                <span>Combat Matrix (Compare)</span>
+                            </div>
+                            <span className="text-[10px] text-rose-300/70 font-mono tracking-widest uppercase block mt-1">Compare vs Competition</span>
                         </Link>
 
                         <MobileLink href="/tools/pdi" onClick={onClose}>PDI — Product Debt Index</MobileLink>
