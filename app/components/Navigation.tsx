@@ -71,14 +71,15 @@ const Navigation = () => {
                                     </div>
                                     <p className="text-[10.5px] text-rose-200/70 font-mono tracking-widest uppercase">Compare vs Legacy Competitors</p>
                                 </Link>
-                                <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">PDI — Product Debt Index</DropdownItem>
-                                <DropdownItem href="/tools/ev-se" description="Model enterprise value per engineer">EV-SE — Valuation Engine</DropdownItem>
-                                <DropdownItem href="/tools/aueb" description="Calculate AI unit economics">AUEB — AI Unit Economics</DropdownItem>
-                                <DropdownItem href="/tools/aper" description="Measure adjusted productivity ratio">APER — Engineering Ratio</DropdownItem>
-                                <DropdownItem href="/tools/shadow-ai" description="Zero-trust localized API scanner">Shadow AI Sandbox</DropdownItem>
-                                <DropdownItem href="/tools/prompt-injection-sandbox" description="Red-team prompt vulnerabilities">Prompt Injection Matrix</DropdownItem>
-                                <DropdownItem href="/tools/rag-chunking-visualizer" description="Vector semantic overlap utility">RAG Chunking Extrapolator</DropdownItem>
-                                <DropdownItem href="/tools/agent-router" description="API cost vs token ROI simulator">Agentic FinOps Simulator</DropdownItem>
+                                <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">Tech Debt Forecaster (PDI)</DropdownItem>
+                                <DropdownItem href="/tools/ev-se" description="Model enterprise value per engineer">Engineering Value Model (EV-SE)</DropdownItem>
+                                <DropdownItem href="/tools/aueb" description="Calculate AI unit economics">AI Margin Calculator (AUEB)</DropdownItem>
+                                <DropdownItem href="/tools/aper" description="Measure adjusted productivity ratio">Engineering ROI Engine (APER)</DropdownItem>
+                                <DropdownItem href="/tools/vta" description="Calculate financial drag from LLM variance">Volatility Tax Auditor</DropdownItem>
+                                <DropdownItem href="/tools/shadow-ai" description="Zero-trust corporate API risk scanner">Shadow AI Defensibility</DropdownItem>
+                                <DropdownItem href="/tools/prompt-injection-sandbox" description="Red-team LLM prompt vulnerabilities">Prompt Intrusion Sandbox</DropdownItem>
+                                <DropdownItem href="/tools/rag-chunking-visualizer" description="Cloud vector database API burn rate">RAG Cost Extrapolator</DropdownItem>
+                                <DropdownItem href="/tools/agent-router" description="Multi-agent orchestration LLM costs">Agentic FinOps Simulator</DropdownItem>
                             </Dropdown>
                             
                             <Link href="/tools/audit-interview" className="text-gray-300 hover:text-white transition-colors relative group font-medium">
@@ -252,13 +253,14 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                             <span className="text-[10px] text-rose-300/70 font-mono tracking-widest uppercase block mt-1">Compare vs Competition</span>
                         </Link>
 
-                        <MobileLink href="/tools/pdi" onClick={onClose}>PDI — Product Debt Index</MobileLink>
-                        <MobileLink href="/tools/ev-se" onClick={onClose}>EV-SE — Valuation Engine</MobileLink>
-                        <MobileLink href="/tools/aueb" onClick={onClose}>AUEB — AI Unit Economics</MobileLink>
-                        <MobileLink href="/tools/aper" onClick={onClose}>APER — Engineering Ratio</MobileLink>
-                        <MobileLink href="/tools/shadow-ai" onClick={onClose}>Shadow AI Matrix</MobileLink>
-                        <MobileLink href="/tools/prompt-injection-sandbox" onClick={onClose}>Prompt Injection Sandbox</MobileLink>
-                        <MobileLink href="/tools/rag-chunking-visualizer" onClick={onClose}>RAG Visualizer</MobileLink>
+                        <MobileLink href="/tools/pdi" onClick={onClose}>Tech Debt Forecaster (PDI)</MobileLink>
+                        <MobileLink href="/tools/ev-se" onClick={onClose}>Engineering Value Model (EV-SE)</MobileLink>
+                        <MobileLink href="/tools/aueb" onClick={onClose}>AI Margin Calculator (AUEB)</MobileLink>
+                        <MobileLink href="/tools/aper" onClick={onClose}>Engineering ROI Engine (APER)</MobileLink>
+                        <MobileLink href="/tools/vta" onClick={onClose}>Volatility Tax Auditor</MobileLink>
+                        <MobileLink href="/tools/shadow-ai" onClick={onClose}>Shadow AI Defensibility</MobileLink>
+                        <MobileLink href="/tools/prompt-injection-sandbox" onClick={onClose}>Prompt Intrusion Sandbox</MobileLink>
+                        <MobileLink href="/tools/rag-chunking-visualizer" onClick={onClose}>RAG Cost Extrapolator</MobileLink>
                         <MobileLink href="/tools/agent-router" onClick={onClose}>Agentic FinOps Simulator</MobileLink>
                         <MobileLink href="/tools/audit-interview" onClick={onClose}>Audit Interview</MobileLink>
                     </div>

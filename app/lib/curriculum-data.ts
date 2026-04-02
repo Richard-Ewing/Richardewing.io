@@ -99,6 +99,7 @@ export function getModule(slug: string): CurriculumModule | undefined {
         if (mod.moduleId === '14-12') mod.embeddedTool = 'cloud-repatriation';
         if (mod.moduleId === '9-14') mod.embeddedTool = 'due-diligence';
         if (mod.moduleId === '10-6' || mod.moduleId === '5-15') mod.embeddedTool = 'pdi';
+        if (mod.moduleId === '11-4') mod.embeddedTool = 'vta';
         if (mod.moduleId === '11-1' || mod.moduleId === '11-16') mod.embeddedTool = 'aueb';
         if (mod.moduleId === '6-1' || mod.moduleId === '10-4') mod.embeddedTool = 'aper';
         if (mod.moduleId === '5-10') mod.embeddedTool = 'ev-se';

@@ -87,6 +87,8 @@ export default function VTATool() {
                                             max="100000"
                                             step="1000"
                                             value={monthlyInferences}
+                                            title="Monthly Inferences"
+                                            aria-label="Monthly Target Inferences"
                                             onChange={(e) => setMonthlyInferences(Number(e.target.value))}
                                             className="w-full accent-blue-500 bg-white/10 h-2 rounded-lg appearance-none cursor-pointer"
                                         />
@@ -102,6 +104,8 @@ export default function VTATool() {
                                             max="50"
                                             step="1"
                                             value={driftRate}
+                                            title="Response Drift Rate"
+                                            aria-label="AI Response Drift Rate"
                                             onChange={(e) => setDriftRate(Number(e.target.value))}
                                             className="w-full accent-red-500 bg-white/10 h-2 rounded-lg appearance-none cursor-pointer"
                                         />
@@ -114,6 +118,8 @@ export default function VTATool() {
                                         <input
                                             type="number"
                                             value={verificationTime}
+                                            title="Verification Time"
+                                            aria-label="Verification Time in Minutes"
                                             onChange={(e) => setVerificationTime(Number(e.target.value))}
                                             className="w-full bg-black/50 border border-white/10 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono"
                                         />
@@ -125,6 +131,8 @@ export default function VTATool() {
                                         <input
                                             type="number"
                                             value={hourlyRate}
+                                            title="Verifier Hourly Rate"
+                                            aria-label="Verifier Labor Base Rate"
                                             onChange={(e) => setHourlyRate(Number(e.target.value))}
                                             className="w-full bg-black/50 border border-white/10 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono"
                                         />

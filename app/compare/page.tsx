@@ -10,53 +10,53 @@ export const metadata: Metadata = {
 
 const comparisons = [
     {
-        title: 'Product Debt Index vs SonarQube',
+        title: 'Shadow AI Scanner vs Wiz.io',
+        subtitle: 'Liability vs Infrastructure',
+        description: 'Wiz scans cloud infrastructure. Exograms Shadow Defensibility calculates the exact Cost of Doing Nothing (CODN) for every localized shadow endpoint.',
+        href: '/tools/shadow-ai/vs/wiz',
+        color: 'rose',
+    },
+    {
+        title: 'Prompt Defensibility vs Promptfoo',
+        subtitle: 'Extrapolation vs CLI Testing',
+        description: 'Promptfoo handles CLI testing. Exogram generates C-Suite executable Confidential Audits detailing the dollar liability of payload extrusion.',
+        href: '/tools/prompt-injection-sandbox/vs/promptfoo',
+        color: 'orange',
+    },
+    {
+        title: 'Agent FinOps vs Datadog LLM',
+        subtitle: 'Unit Economics vs Observability',
+        description: 'Datadog traces deployment latency. Exogram models the $100k+ API bankruptcy before multi-agent logic is universally shipped.',
+        href: '/tools/agent-router/vs/datadog-llm',
+        color: 'indigo',
+    },
+    {
+        title: 'Volatility Auditor vs Scale AI',
+        subtitle: 'EBITDA vs Fine-Tuning',
+        description: 'Scale handles data. The Volatility Tax Auditor (VTA) acts as a Board-level actuary, forecasting unpredictable human-AI fallback support costs.',
+        href: '/tools/vta',
+        color: 'fuchsia',
+    },
+    {
+        title: 'PDI vs SonarQube',
         subtitle: 'Economic Debt vs Code Quality',
-        description: 'SonarQube measures code smells. PDI measures when technical debt will bankrupt your engineering capacity — in dollars.',
+        description: 'SonarQube measures code smells. PDI calculates when Technical Debt will mathematically bankrupt your engineering capacity.',
         href: '/compare/pdi-vs-sonarqube',
         color: 'cyan',
     },
     {
-        title: 'Audit Interview vs LeetCode',
-        subtitle: 'Judgment vs Speed',
-        description: 'LeetCode tests code generation speed. The Audit Interview tests engineering judgment — the skill AI can\'t replace.',
-        href: '/compare/audit-interview-vs-leetcode',
-        color: 'purple',
+        title: 'Vendor Defensibility vs Gartner',
+        subtitle: 'Surgical Math vs Subjective Grid',
+        description: 'Gartner measures subjective positioning. Due Diligence Engine executes mathematical SLM CODN extraction for strict contract leverage.',
+        href: '/tools/due-diligence/vs/gartner-magic-quadrant',
+        color: 'amber',
     },
     {
-        title: 'AUEB vs AWS Cost Explorer',
-        subtitle: 'AI Economics vs Cloud Billing',
-        description: 'AWS tracks cloud spend. AUEB tells you whether your AI features will ever make money. Cloud billing ≠ AI economics.',
+        title: 'AUEB vs AWS Explorer',
+        subtitle: 'AI Margin vs Cloud Spend',
+        description: 'AWS tracks basic server spend. AUEB tells you whether your Generative AI features suffer from structural margin collapse.',
         href: '/compare/aueb-vs-aws-cost-explorer',
-        color: 'orange',
-    },
-    {
-        title: 'Audit Interview vs HackerRank',
-        subtitle: 'Judgment vs Puzzles',
-        description: 'HackerRank tests algorithmic puzzles that GPT-4 can pass. The Audit Interview tests judgment AI can\'t replicate.',
-        href: '/compare/audit-interview-vs-hackerrank',
         color: 'emerald',
-    },
-    {
-        title: 'EV-SE vs Jellyfish',
-        subtitle: 'Economics vs Metrics',
-        description: 'Jellyfish tracks engineering activity. EV-SE tells you whether that activity creates lasting economic value.',
-        href: '/compare/ev-se-vs-jellyfish',
-        color: 'cyan',
-    },
-    {
-        title: 'PDI vs CodeClimate',
-        subtitle: 'Prognosis vs Symptoms',
-        description: 'CodeClimate grades code quality. PDI calculates when technical debt will bankrupt your engineering capacity — in dollars.',
-        href: '/compare/pdi-vs-codeclimate',
-        color: 'purple',
-    },
-    {
-        title: 'APER vs LinearB',
-        subtitle: 'Judgment vs Activity',
-        description: 'LinearB tracks how fast engineers move. APER evaluates whether they make economically sound decisions.',
-        href: '/compare/aper-vs-linearb',
-        color: 'orange',
     },
 ];
 
@@ -73,16 +73,30 @@ export default function ComparePage() {
                     </p>
 
                     <div className="space-y-6">
-                        {comparisons.map((c) => (
-                            <Link key={c.href} href={c.href} className="group block">
-                                <div className={`rounded-2xl border ${c.color === 'cyan' ? 'border-cyan-500/20 hover:border-cyan-500/50' : c.color === 'purple' ? 'border-purple-500/20 hover:border-purple-500/50' : c.color === 'orange' ? 'border-orange-500/20 hover:border-orange-500/50' : 'border-emerald-500/20 hover:border-emerald-500/50'} p-8 transition-all hover:bg-white/[0.02]`}>
-                                    <div className={`text-xs font-mono uppercase tracking-widest mb-2 ${c.color === 'cyan' ? 'text-cyan-400' : c.color === 'purple' ? 'text-purple-400' : c.color === 'orange' ? 'text-orange-400' : 'text-emerald-400'}`}>{c.subtitle}</div>
-                                    <h2 className="text-2xl font-grotesk font-bold text-white mb-3 group-hover:text-white">{c.title}</h2>
-                                    <p className="text-zinc-400 mb-4">{c.description}</p>
-                                    <span className={`text-sm font-bold uppercase tracking-widest ${c.color === 'cyan' ? 'text-cyan-400' : c.color === 'purple' ? 'text-purple-400' : c.color === 'orange' ? 'text-orange-400' : 'text-emerald-400'}`}>Read Comparison →</span>
-                                </div>
-                            </Link>
-                        ))}
+                        {comparisons.map((c) => {
+                            const colorMap: Record<string, { border: string, hover: string, text: string }> = {
+                                cyan: { border: 'border-cyan-500/20', hover: 'hover:border-cyan-500/50', text: 'text-cyan-400' },
+                                purple: { border: 'border-purple-500/20', hover: 'hover:border-purple-500/50', text: 'text-purple-400' },
+                                orange: { border: 'border-orange-500/20', hover: 'hover:border-orange-500/50', text: 'text-orange-400' },
+                                emerald: { border: 'border-emerald-500/20', hover: 'hover:border-emerald-500/50', text: 'text-emerald-400' },
+                                rose: { border: 'border-rose-500/20', hover: 'hover:border-rose-500/50', text: 'text-rose-400' },
+                                indigo: { border: 'border-indigo-500/20', hover: 'hover:border-indigo-500/50', text: 'text-indigo-400' },
+                                fuchsia: { border: 'border-fuchsia-500/20', hover: 'hover:border-fuchsia-500/50', text: 'text-fuchsia-400' },
+                                amber: { border: 'border-amber-500/20', hover: 'hover:border-amber-500/50', text: 'text-amber-400' }
+                            };
+                            const theme = colorMap[c.color] || colorMap.cyan;
+
+                            return (
+                                <Link key={c.href} href={c.href} className="group block">
+                                    <div className={`rounded-2xl border ${theme.border} ${theme.hover} p-8 transition-all hover:bg-white/[0.02]`}>
+                                        <div className={`text-xs font-mono uppercase tracking-widest mb-2 ${theme.text}`}>{c.subtitle}</div>
+                                        <h2 className="text-2xl font-grotesk font-bold text-white mb-3 group-hover:text-white">{c.title}</h2>
+                                        <p className="text-zinc-400 mb-4">{c.description}</p>
+                                        <span className={`text-sm font-bold uppercase tracking-widest ${theme.text}`}>Read Comparison →</span>
+                                    </div>
+                                </Link>
+                            );
+                        })}
                     </div>
 
                     <div className="text-center py-16 border-t border-white/10 mt-16">

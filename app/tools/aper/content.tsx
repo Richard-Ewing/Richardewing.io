@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { TrendingUp, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building } from 'lucide-react';
+import { TrendingUp, TrendingDown, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building, Building2, Skull } from 'lucide-react';
 import Link from 'next/link';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
@@ -92,6 +92,8 @@ interface Results {
     teamHealthScore: number; // Overall team health 0-100
     revenueGap: number; // ARR needed to reach elite APER
     leverageRatio: number; // Revenue per $ of eng spend
+    valuationGap: number; // Lost enterprise value due to APER inefficiency
+    valuationMultiple: number; // Multiple used for valuation impact
 }
 
 export default function APERTool() {
@@ -173,7 +175,12 @@ export default function APERTool() {
 
             // Revenue gap to reach elite status
             const eliteAper = 600000;
-            const revenueGap = Math.max(0, (eliteAper * engNum) - arrNum);
+            const targetAper = 500000;
+            const revenueGap = Math.max(0, (targetAper * engNum) - arrNum);
+            
+            // Valuation impact (CapEx Hemorrhage)
+            const valuationMultiple = 10;
+            const valuationGap = revenueGap * valuationMultiple;
 
             // Leverage ratio
             const leverageRatio = arrNum / totalEngCost;
@@ -189,7 +196,7 @@ export default function APERTool() {
                 aper, engineeringMargin, multiplier, benchmarks, totalEngCost,
                 engineers: engNum, costPerEng: costNum, coordinationTax,
                 optimalHeadcount, overheadCost, teamBreakdown,
-                productivityIndex, newHireRampCost, teamHealthScore, revenueGap, leverageRatio
+                productivityIndex, newHireRampCost, teamHealthScore, revenueGap, leverageRatio, valuationGap, valuationMultiple
             };
 
             setResults(payload);
@@ -561,6 +568,37 @@ export default function APERTool() {
                                         </div>
                                     </BentoCard>
                                 </motion.div>
+
+                                {/* CapEx Hemorrhage Horizon Matrix */}
+                                {results.valuationGap > 0 && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
+                                    >
+                                        <div className="capsule-container rounded-2xl p-6 mb-6 border border-red-500/30">
+                                            <div className="flex items-center gap-2 mb-4">
+                                                <TrendingDown className="w-4 h-4 text-red-500 animate-pulse" />
+                                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-500">Corporate Solvency Matrix (CapEx Hemorrhage Horizon)</div>
+                                            </div>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                <div className="bg-black/40 rounded-xl p-5 border border-white/5 relative overflow-hidden">
+                                                    <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-white" /></div>
+                                                    <div className="text-xs text-zinc-500 mb-2">Unrealized Revenue (Hemorrhage)</div>
+                                                    <div className="text-3xl font-bold text-red-500">{formatMoney(results.revenueGap)}/yr</div>
+                                                    <div className="text-xs text-red-400/60 mt-2 mt-auto">ARR missing due to sub-optimal APER.</div>
+                                                </div>
+                                                <div className="bg-black/40 rounded-xl p-5 border border-white/5 relative overflow-hidden">
+                                                    <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-white" /></div>
+                                                    <div className="text-xs text-zinc-500 mb-2">Valuation Collapse Probability</div>
+                                                    <div className="text-3xl font-bold text-orange-400">{formatMoney(results.valuationGap)}</div>
+                                                    <div className="text-xs text-orange-400/60 mt-2 mt-auto">Lost Enterprise Value (assuming {results.valuationMultiple}x multiple). Down-round highly probable.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                )}
 
                                 {/* TEAM HEALTH DASHBOARD */}
                                 <motion.div

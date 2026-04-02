@@ -10,7 +10,7 @@ import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle, Lock, Zap } from 'lucide-react';
+import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, TrendingDown, AlertTriangle, Lock, Zap, Skull, Building2 } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
 import { VaultUpsell, RecommendedTrack } from '../../components/VaultUpsell';
@@ -80,6 +80,9 @@ interface Results {
     };
     financials: {
         waste: number;
+        rewriteCost: number;
+        isTechnicalDefault: boolean;
+        defaultRatio: number;
         wastePerSprint: number;
         debtReductionROI: number;
     };
@@ -175,6 +178,10 @@ export default function PDITool() {
             const sprintWeeks = parseInt(sprintLength) || 2;
             const sprintsPerYear = 52 / sprintWeeks;
             const waste = teamNum * salaryNum * (maint / total);
+            const rewriteCost = (teamNum * salaryNum) * 0.4; // Extrapolating 5-month rewrite effort utilizing Agentic tools
+            const isTechnicalDefault = waste > rewriteCost;
+            const defaultRatio = waste / rewriteCost;
+
             const wastePerSprint = waste / sprintsPerYear;
             const debtTickets = maint;
             const ticketsPerSprint = total / sprintsPerYear;
@@ -200,6 +207,9 @@ export default function PDITool() {
                 },
                 financials: {
                     waste,
+                    rewriteCost,
+                    isTechnicalDefault,
+                    defaultRatio,
                     wastePerSprint,
                     debtReductionROI,
                 },
@@ -664,6 +674,48 @@ Migrate from Heroku to AWS"
                                     <div className="text-xs text-zinc-500 mb-1">Debt Reduction ROI</div>
                                     <div className="text-xl font-bold text-emerald-400">{results.financials.debtReductionROI.toFixed(1)}x</div>
                                     <div className="text-[10px] text-zinc-600">per sprint invested</div>
+                                </div>
+                            </div>
+                        </div>
+                    </ScrollReveal>
+
+                    {/* Corporate Solvency Matrix (Technical Default Extrapolation) */}
+                    <ScrollReveal delay={175}>
+                        <div className={`capsule-container rounded-2xl p-6 mb-6 border ${results.financials.isTechnicalDefault ? 'border-red-500/50' : 'border-emerald-500/30'}`}>
+                            <div className="flex items-center gap-2 mb-4">
+                                <AlertTriangle className={`w-4 h-4 ${results.financials.isTechnicalDefault ? 'text-red-500 animate-pulse' : 'text-emerald-400'}`} />
+                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-500">Corporate Solvency Matrix (Technical Default)</div>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="bg-black/40 rounded-xl p-5 border border-white/5 relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-white" /></div>
+                                    <div className="text-xs text-zinc-500 mb-2">Annual Maintenance Burden</div>
+                                    <div className="text-3xl font-bold text-red-500">{formatMoney(results.financials.waste)}</div>
+                                    <div className="text-xs text-red-400/60 mt-2 mt-auto">Cost of servicing status-quo tech debt (Interest).</div>
+                                </div>
+                                <div className="bg-black/40 rounded-xl p-5 border border-white/5 relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-white" /></div>
+                                    <div className="text-xs text-zinc-500 mb-2">Generative AI Rewrite Protocol</div>
+                                    <div className="text-3xl font-bold text-cyan-400">{formatMoney(results.financials.rewriteCost)}</div>
+                                    <div className="text-xs text-cyan-400/60 mt-2 mt-auto">Cost to burn down and rebuild via Agentic orchestration (Principal).</div>
+                                </div>
+                            </div>
+                            
+                            <div className={`mt-6 p-4 rounded-xl border ${results.financials.isTechnicalDefault ? 'bg-red-500/10 border-red-500/30' : 'bg-emerald-500/10 border-emerald-500/30'}`}>
+                                <div className="flex items-start gap-4">
+                                    <div className={`p-3 rounded-full ${results.financials.isTechnicalDefault ? 'bg-red-500/20 text-red-400' : 'bg-emerald-500/20 text-emerald-400'}`}>
+                                        {results.financials.isTechnicalDefault ? <TrendingDown className="w-6 h-6" /> : <TrendingUp className="w-6 h-6" />}
+                                    </div>
+                                    <div>
+                                        <div className={`font-bold ${results.financials.isTechnicalDefault ? 'text-red-400' : 'text-emerald-400'}`}>
+                                            {results.financials.isTechnicalDefault ? 'CRITICAL: Technical Default Threshold Exceeded' : 'Viable: System Solvency Maintained'}
+                                        </div>
+                                        <div className="text-xs text-zinc-400 mt-1">
+                                            {results.financials.isTechnicalDefault 
+                                                ? `The interest payment (maintenance) is now ${results.financials.defaultRatio.toFixed(1)}x greater than the principal (rebuild cost). You are in Technical Default. It is mathematically cheaper to burn the codebase down and rewrite it.` 
+                                                : `Your maintenance burden is tracking below the cost of a full rewrite. Implement aggressive debt rotation now before crossing the default horizon.`}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

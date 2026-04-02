@@ -8,7 +8,7 @@ import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, AlertTriangle, Lock, Zap } from 'lucide-react';
+import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, TrendingDown, AlertTriangle, Lock, Zap, Skull, Building2 } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
@@ -30,8 +30,7 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                     <div key={i} className="flex items-center gap-4">
                         <div className="w-24 text-xs font-mono text-zinc-500 text-right">{item.name}</div>
                         <div className="flex-1 h-10 bg-zinc-900 rounded-lg overflow-hidden relative">
-                            <style>{`#${uniqueId} { width: ${(item.value / maxValue) * 100}%; background-color: ${item.color}; }`}</style>
-                            <div id={uniqueId} className={`h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4 ${styles.waterfallBar}`}>
+                            <div style={{ width: `${(item.value / maxValue) * 100}%`, backgroundColor: item.color }} className={`h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4 ${styles.waterfallBar}`}>
                                 <span className="text-xs font-mono text-white font-bold">
                                     ${(item.value / 1000000).toFixed(1)}M
                                 </span>
@@ -117,6 +116,7 @@ interface Results {
     };
     biggestRiskFactor: string;
     biggestRiskCost: number;
+    diligenceWalkProbability: number;
     qpep_roadmap?: Array<{
         month: number;
         focus: string;
@@ -207,6 +207,8 @@ export default function EVSETool() {
                 worst: perfectValue * (Math.max(0, adjustedConfidence - 20) / 100),
             };
 
+            const diligenceWalkProbability = Math.min(100, Math.max(0, (100 - adjustedConfidence) * 1.5));
+
             const payload = {
                 perfectValue,
                 riskedValue,
@@ -215,6 +217,7 @@ export default function EVSETool() {
                 scenarios,
                 biggestRiskFactor: biggestRisk.name,
                 biggestRiskCost,
+                diligenceWalkProbability,
                 qpep_roadmap,
             };
 
@@ -606,6 +609,32 @@ export default function EVSETool() {
                             </GlowCard>
                         </div>
                     </ScrollReveal>
+
+                    {/* Corporate Solvency Matrix (M&A Due Diligence Risk) */}
+                    {results.diligenceWalkProbability > 20 && (
+                        <ScrollReveal delay={125}>
+                            <div className="capsule-container rounded-2xl p-6 mb-6 border border-red-500/30">
+                                <div className="flex items-center gap-2 mb-4">
+                                    <TrendingDown className="w-4 h-4 text-red-500 animate-pulse" />
+                                    <div className="text-xs font-mono uppercase tracking-widest text-zinc-500">Corporate Solvency Matrix (M&A Due Diligence Risk)</div>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="bg-black/40 rounded-xl p-5 border border-white/5 relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-white" /></div>
+                                        <div className="text-xs text-zinc-500 mb-2">Deal Collapse Probability</div>
+                                        <div className="text-3xl font-bold text-red-500">{results.diligenceWalkProbability.toFixed(0)}%</div>
+                                        <div className="text-xs text-red-400/60 mt-2 mt-auto">Likelihood of acquirer walking away during Tech Due Diligence.</div>
+                                    </div>
+                                    <div className="bg-black/40 rounded-xl p-5 border border-white/5 relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-white" /></div>
+                                        <div className="text-xs text-zinc-500 mb-2">Valuation Discount Penalty</div>
+                                        <div className="text-3xl font-bold text-orange-400">{formatMoney(results.wealthGap)}</div>
+                                        <div className="text-xs text-orange-400/60 mt-2 mt-auto">If the deal does close, this is the haircut applied by the Private Equity committee.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                    )}
 
                     {/* Charts Grid */}
                     <ScrollReveal delay={150}>

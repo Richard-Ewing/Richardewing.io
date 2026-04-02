@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { TrendingDown, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Users, Target, Mail, ArrowRight, Cpu } from 'lucide-react';
+import { TrendingDown, TrendingUp, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Users, Target, Mail, ArrowRight, Cpu, Skull, Building2 } from 'lucide-react';
 import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
@@ -863,6 +863,37 @@ export default function AUEBTool() {
                                         </div>
                                     </BentoCard>
                                 </motion.div>
+
+                                {/* Corporate Solvency Matrix (Margin Collapse Horizon) */}
+                                {results.monthsToCollapse < 36 && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+                                    >
+                                        <div className="capsule-container rounded-2xl p-6 mb-6 border border-red-500/30">
+                                            <div className="flex items-center gap-2 mb-4">
+                                                <TrendingDown className="w-4 h-4 text-red-500 animate-pulse" />
+                                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-500">Corporate Solvency Matrix (Margin Collapse Horizon)</div>
+                                            </div>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                <div className="bg-black/40 rounded-xl p-5 border border-white/5 relative overflow-hidden">
+                                                    <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-white" /></div>
+                                                    <div className="text-xs text-zinc-500 mb-2">Insolvency Point</div>
+                                                    <div className="text-3xl font-bold text-red-500">Month {results.monthsToCollapse}</div>
+                                                    <div className="text-xs text-red-400/60 mt-2 mt-auto">Point where scaling users destroys company margins completely.</div>
+                                                </div>
+                                                <div className="bg-black/40 rounded-xl p-5 border border-white/5 relative overflow-hidden">
+                                                    <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-white" /></div>
+                                                    <div className="text-xs text-zinc-500 mb-2">Current Gross Margin</div>
+                                                    <div className="text-3xl font-bold text-orange-400">{results.grossMargin.toFixed(0)}%</div>
+                                                    <div className="text-xs text-orange-400/60 mt-2 mt-auto">Falling below benchmark limits venture capital scaling viability.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                )}
 
                                 {/* GROWTH CHART */}
                                 <motion.div
