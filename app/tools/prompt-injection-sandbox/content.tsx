@@ -236,30 +236,43 @@ Only answer questions related to AcmeCorp logistics.
                                         </p>
                                     </div>
                                     <div>
-                                         <div className="bg-black/50 p-6 rounded-2xl border border-white/5 space-y-4 max-h-[250px] overflow-y-auto custom-scrollbar">
-                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3 mb-3 sticky top-0 bg-black/50 backdrop-blur-md">VECTOR PENETRATION REPORT</div>
-                                                {results.evaluations.map((v, i) => (
-                                                    <div key={i} className="flex gap-3 border-b border-white/5 pb-3 mb-3 last:border-0 last:mb-0 last:pb-0">
-                                                        <div className="mt-0.5">
+                                         <div className="bg-[#0c0c0c] p-6 rounded-2xl border border-zinc-800 shadow-2xl space-y-4 max-h-[350px] overflow-y-auto custom-scrollbar relative">
+                                                <div className="text-xs font-mono text-emerald-400 uppercase tracking-widest border-b border-zinc-800 pb-3 mb-3 sticky top-0 bg-[#0c0c0c]/90 backdrop-blur-md z-10 flex justify-between items-center">
+                                                    <span>Threat Vector Matrix Map</span>
+                                                    <span className="text-zinc-500">{results.evaluations.filter((v:any) => !v.passed).length} active vulnerabilities</span>
+                                                </div>
+                                                {results.evaluations.map((v: any, i: number) => (
+                                                    <motion.div 
+                                                        initial={{x: 20, opacity: 0}}
+                                                        animate={{x: 0, opacity: 1}}
+                                                        transition={{delay: 0.1 * i}}
+                                                        key={i} 
+                                                        className={`flex gap-3 border border-zinc-800/50 p-4 rounded-xl relative overflow-hidden group ${v.passed ? 'bg-emerald-900/10' : 'bg-red-900/10'}`}
+                                                    >
+                                                        {/* Background threat strength visual */}
+                                                        {!v.passed && <div className="absolute bottom-0 left-0 h-1 bg-rose-500/50" style={{width: v.severity === 'CRITICAL' ? '100%' : v.severity === 'HIGH' ? '75%' : '50%'}}></div>}
+                                                        
+                                                        <div className="mt-0.5 shrink-0">
                                                             {v.passed ? (
                                                                 <Shield className="w-5 h-5 text-emerald-500" />
                                                             ) : (
                                                                 <ShieldAlert className="w-5 h-5 text-rose-500" />
                                                             )}
                                                         </div>
-                                                        <div className="flex-1">
-                                                            <div className="flex justify-between items-center">
-                                                                <h4 className={`text-sm font-bold ${v.passed ? 'text-zinc-300' : 'text-white'}`}>{v.name}</h4>
-                                                                {!v.passed && <span className="text-[10px] font-mono text-rose-500 px-1 py-0.5 bg-rose-500/10 rounded">{v.severity} Risk</span>}
+                                                        <div className="flex-1 min-w-0">
+                                                            <div className="flex justify-between items-center mb-1">
+                                                                <h4 className={`text-sm font-bold truncate ${v.passed ? 'text-zinc-300' : 'text-white'}`}>{v.name}</h4>
+                                                                {!v.passed && <span className="text-[10px] shrink-0 font-mono text-rose-500 px-2 py-0.5 bg-rose-500/10 border border-rose-500/20 rounded ml-2">{v.severity}</span>}
                                                             </div>
-                                                            <p className="text-xs text-zinc-500 mt-1 leading-relaxed">{v.description}</p>
+                                                            <p className="text-[11px] text-zinc-500 leading-relaxed mb-2">{v.description}</p>
                                                             {!v.passed && (
-                                                                <div className="mt-2 text-[10px] font-mono text-amber-400 bg-amber-500/10 p-2 rounded border border-amber-500/20">
-                                                                    <strong>Mitigation Required:</strong> {v.mitigation}
+                                                                <div className="mt-2 text-[10px] font-mono text-amber-400 bg-amber-500/10 p-2 rounded border border-amber-500/20 flex gap-2 items-start">
+                                                                    <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1 shrink-0"></div>
+                                                                    <span className="leading-tight">{v.mitigation}</span>
                                                                 </div>
                                                             )}
                                                         </div>
-                                                    </div>
+                                                    </motion.div>
                                                 ))}
                                          </div>
                                     </div>

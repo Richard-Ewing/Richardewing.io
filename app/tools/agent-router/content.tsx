@@ -273,6 +273,39 @@ export default function AgentRouterContent() {
                             </div>
                         </ScrollReveal>
 
+                        {/* WATERFALL CHART */}
+                        <ScrollReveal delay={100}>
+                            <div className="bg-[#0c0c0c] border border-zinc-800 rounded-2xl p-6 mb-8 shadow-2xl overflow-hidden relative">
+                                <h3 className="text-xs font-mono text-blue-400 uppercase tracking-widest border-b border-zinc-800/80 pb-3 mb-6">Agentic Token Compounding (Per System Trigger)</h3>
+                                <div className="space-y-4">
+                                    {Array.from({ length: agentHops }).map((_, i) => {
+                                        const hopTokens = baseInputTokens * ((i + 1) * 1.5);
+                                        const widthPercent = Math.min((hopTokens / (baseInputTokens * (agentHops * 1.5))) * 100, 100);
+                                        return (
+                                            <motion.div 
+                                                key={i}
+                                                initial={{ width: 0, opacity: 0 }}
+                                                animate={{ width: `${widthPercent}%`, opacity: 1 }}
+                                                transition={{ duration: 0.8, delay: 0.3 + (i * 0.2), ease: "easeOut" }}
+                                                className={`h-12 rounded-r-lg flex items-center px-4 relative group ${i === 0 ? 'bg-blue-900/40 border-l-2 border-blue-500' : 'bg-indigo-900/40 border-l-2 border-indigo-500'}`}
+                                            >
+                                                <div className="absolute left-4 font-mono text-white font-bold text-sm">
+                                                    Hop {i+1}: <span className="text-zinc-400 ml-1">{i === 0 ? 'Triage / Planner' : i === 1 ? 'Researcher / Search' : i === 2 ? 'Code Editor' : i === 3 ? 'Verifier / Critic' : 'Auto-Healer'}</span>
+                                                </div>
+                                                <div className="absolute right-4 font-mono text-[10px] text-white/50 group-hover:text-white transition-colors">
+                                                    +{hopTokens.toLocaleString()} t
+                                                </div>
+                                            </motion.div>
+                                        );
+                                    })}
+                                </div>
+                                <div className="mt-6 pt-4 border-t border-zinc-800/80 flex justify-between items-center text-xs font-mono text-zinc-500 uppercase tracking-widest">
+                                    <span>Total Context Window Accumulation</span>
+                                    <span className="text-rose-400 font-bold">{Math.floor(baseInputTokens * agentHops * 2.25).toLocaleString()} + Tokens / Request</span>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+
                         {/* Board-Ready 3-Step Remediation Playbook */}
                         <ScrollReveal delay={150}>
                              <div className="mb-6 border-b border-white/10 pb-4 mt-8">

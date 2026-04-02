@@ -470,6 +470,28 @@ export default function ShadowContent() {
                             </div>
                         </ScrollReveal>
 
+                        {/* FORENSIC TERMINAL LOG */}
+                        <ScrollReveal delay={100}>
+                            <div className="bg-[#0c0c0c] border border-zinc-800 rounded-xl font-mono text-xs p-4 max-h-[250px] overflow-y-auto mb-8 shadow-[0_0_20px_rgba(225,29,72,0.1)]">
+                                <div className="flex gap-2 mb-3 pb-2 border-b border-zinc-800/50">
+                                    <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                                    <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                                    <div className="text-[10px] text-zinc-600 ml-2 uppercase">sys_forensic_tty [LIVE EXTRAPOLATION]</div>
+                                </div>
+                                <div className="space-y-2 font-mono pb-2">
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 0.5}} className="text-zinc-400"><span className="text-zinc-600 mr-2">{'>'}</span> [SYS] Initializing localized forensic sweep...</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 1.2}} className="text-zinc-400"><span className="text-zinc-600 mr-2">{'>'}</span> [SCAN] Extracting {results.type === 'AUDIT' ? results.recordsScanned : (results.totalMonthlyPrompts / 10).toFixed(0)} outbound telemetry packets...</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 2.0}} className="text-yellow-400"><span className="text-zinc-600 mr-2">{'>'}</span> [WARN] POST api.openai.com/v1/chat/completions - Unsanctioned Copilot Payload</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 2.8}} className="text-blue-400"><span className="text-zinc-600 mr-2">{'>'}</span> [MATCH] Heuristic trigger: "Proprietary Database Schema Sequence" detected</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 3.5}} className="text-rose-400"><span className="text-zinc-600 mr-2">{'>'}</span> [CRITICAL] Unencrypted PII / Valid JWT Token identified inside prompt context window.</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 4.2}} className="text-rose-500 font-bold"><span className="text-zinc-600 mr-2">{'>'}</span> [ALERT] {results.piiViolations} additional structurally similar payloads surfaced in 30-day DNS cache.</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 5.0}} className="text-emerald-400"><span className="text-zinc-600 mr-2">{'>'}</span> [DONE] Board proxy liability report compiled. Awaiting structural CI/CD firewall remediation.</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 5.2}} className="animate-pulse text-zinc-500 mt-1">_</motion.div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+
                         {/* Board-Ready 3-Step Remediation Playbook */}
                         <ScrollReveal delay={150}>
                              <div className="mb-6 border-b border-white/10 pb-4 mt-8">

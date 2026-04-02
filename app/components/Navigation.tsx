@@ -61,6 +61,13 @@ const Navigation = () => {
                             </Dropdown>
 
                             <Dropdown label="Enterprise Diagnostics">
+                                <Link
+                                    href="/compare"
+                                    className="block px-4 py-3 text-sm font-semibold text-rose-400 hover:text-rose-300 hover:bg-rose-900/10 transition-colors border-l-2 border-rose-500 bg-black/20"
+                                >
+                                    <span className="block flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />Combat Matrix (Compare)</span>
+                                    <span className="block text-[10px] text-zinc-500 mt-0.5 font-mono">VS Legacy / Competitors</span>
+                                </Link>
                                 <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">PDI — Product Debt Index</DropdownItem>
                                 <DropdownItem href="/tools/ev-se" description="Model enterprise value per engineer">EV-SE — Valuation Engine</DropdownItem>
                                 <DropdownItem href="/tools/aueb" description="Calculate AI unit economics">AUEB — AI Unit Economics</DropdownItem>
@@ -229,6 +236,15 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                     {/* Tools Section */}
                     <div className="space-y-3">
                         <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest pl-2">Enterprise Diagnostics</h3>
+                        
+                        <Link
+                            href="/compare"
+                            onClick={onClose}
+                            className={`block px-4 py-3 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-400 hover:bg-rose-500/20 transition-colors font-semibold flex items-center justify-between`}
+                        >
+                            <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />Combat Matrix (Compare)</span>
+                        </Link>
+
                         <MobileLink href="/tools/pdi" onClick={onClose}>PDI — Product Debt Index</MobileLink>
                         <MobileLink href="/tools/ev-se" onClick={onClose}>EV-SE — Valuation Engine</MobileLink>
                         <MobileLink href="/tools/aueb" onClick={onClose}>AUEB — AI Unit Economics</MobileLink>

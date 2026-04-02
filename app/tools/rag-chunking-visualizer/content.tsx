@@ -288,8 +288,60 @@ export default function RagChunkingContent() {
                             </div>
                         </ScrollReveal>
 
+                        {/* VECTOR REDUNDANCY MAP */}
+                        <ScrollReveal delay={200}>
+                            <div className="bg-[#0c0c0c] border border-zinc-800 rounded-2xl p-6 mt-8 mb-8 shadow-2xl relative overflow-hidden">
+                                <h3 className="text-xs font-mono text-cyan-400 uppercase tracking-widest border-b border-zinc-800 pb-3 mb-6 flex justify-between">
+                                    <span>Vector Index Bloat Visualization</span>
+                                    <span className="text-rose-400">{((overlap / chunkSize) * 100).toFixed(1)}% Storage Redundancy</span>
+                                </h3>
+                                
+                                <div className="relative h-48 w-full border-b border-l border-zinc-800/80 p-4">
+                                    <div className="absolute -left-6 top-1/2 -rotate-90 text-[10px] font-mono text-zinc-600 tracking-widest uppercase">Vector Storage Space</div>
+                                    <div className="absolute bottom-1 right-1/2 translate-x-1/2 text-[10px] font-mono text-zinc-600 tracking-widest uppercase mb-[-20px]">Timeline of Document Chunks</div>
+                                    
+                                    <div className="w-full h-full relative flex items-end">
+                                        {results.chunks.map((chunk: any, i: number) => {
+                                            const width = 100 / results.chunks.length;
+                                            const overlapWidth = (overlap / chunkSize) * width;
+                                            
+                                            return (
+                                                <motion.div 
+                                                    key={i}
+                                                    initial={{ height: 0 }}
+                                                    animate={{ height: `${100 - (i * (30 / Math.max(results.chunks.length, 1)))}%` }}
+                                                    transition={{ duration: 0.5, delay: 0.1 * i, ease: "easeOut" }}
+                                                    style={{ 
+                                                        width: `${width}%`,
+                                                        left: `${i * width - (i > 0 ? overlapWidth * i : 0)}%`,
+                                                        position: 'absolute',
+                                                        bottom: 0,
+                                                        zIndex: results.chunks.length - i
+                                                    }}
+                                                    className="border border-indigo-500/30 rounded-t-sm bg-indigo-500/10 group hover:bg-indigo-500/30 transition-colors"
+                                                >
+                                                    {i > 0 && overlap > 0 && (
+                                                        <div 
+                                                            className="absolute top-0 bottom-0 left-0 bg-yellow-500/40 border-r border-yellow-500/50" 
+                                                            style={{width: `${(overlap / chunkSize) * 100}%`}}
+                                                        ></div>
+                                                    )}
+                                                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                        <span className="text-[10px] font-mono bg-black border border-white/10 px-1 py-0.5 rounded text-white">{chunk.end - chunk.start}c</span>
+                                                    </div>
+                                                </motion.div>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                                <div className="mt-8 pt-4 text-[11px] text-zinc-500 font-mono leading-relaxed max-w-2xl">
+                                    Vectors stacking horizontally with the yellow intersections representing duplicated tokens explicitly stored multiple times inside your Pinecone/Weaviate index. A high redundancy rapidly accelerates RAM consumption and indexing API exhaust.
+                                </div>
+                            </div>
+                        </ScrollReveal>
+
                         {/* Board-Ready 3-Step Remediation Playbook */}
-                        <ScrollReveal delay={150}>
+                        <ScrollReveal delay={250}>
                              <div className="mb-6 border-b border-white/10 pb-4 mt-8">
                                 <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
                                     <Database size={18} className="text-indigo-400"/>
