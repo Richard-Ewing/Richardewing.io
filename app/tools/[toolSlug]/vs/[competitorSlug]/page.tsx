@@ -75,6 +75,11 @@ export default async function CombatComparisonPage({ params }: { params: Promise
             }
         }
     };
+    
+    // Dynamic failure message based on competitor name
+    const dynamicFailure = competitor.slug === 'gartner-magic-quadrant' 
+        ? "They map theoretical market quadrants without calculating the underlying Cost of Doing Nothing (CODN) or the exact technical debt you inherit by buying 'Leaders'."
+        : `They approach the problem as an operational symptom. They map basic telemetry without calculating the underlying Cost of Doing Nothing (CODN) or Board-level liability that destroys enterprise momentum.`;
 
     return (
         <div className="bg-[#050505] min-h-screen text-white font-sans selection:bg-indigo-500/30">
@@ -100,7 +105,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                         {competitor.name}
                      </h1>
                      <p className="text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed">
-                        If you are an engineer optimizing latency, use {competitor.name}. If you are a C-Suite executive quantifying millions in enterprise liability and SEC exposure, deploy Exogram.
+                        If your goal is standard operational telemetry, {competitor.name} is sufficient. If you are a C-Suite executive quantifying millions in enterprise liability, deploy {tool.toolName}.
                      </p>
                 </div>
 
@@ -122,7 +127,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                               <div className="bg-red-500/5 border border-red-500/10 p-6 rounded-xl">
                                   <h3 className="text-xs font-mono text-red-400 uppercase tracking-widest mb-2 flex items-center gap-2"><Target size={14}/> The Critical Failure</h3>
                                   <p className="text-sm text-zinc-400 leading-relaxed">
-                                      They treat AI as just another software endpoint. They map tokens and API routes without calculating the underlying Cost of Doing Nothing (CODN) or Board-level liability that destroys enterprise momentum.
+                                      {dynamicFailure}
                                   </p>
                               </div>
                           </div>
@@ -136,7 +141,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                           </div>
                           <div className="mb-8 relative z-10">
                              <div className="text-xs font-mono text-indigo-400 uppercase tracking-widest mb-2">The Deterministic Standard</div>
-                             <h2 className="text-3xl font-bold text-white mb-2">Exogram</h2>
+                             <h2 className="text-3xl font-bold text-white mb-2">Exogram {tool.toolName}</h2>
                           </div>
                           <div className="space-y-6 relative z-10">
                               <div>
@@ -151,6 +156,47 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                               </div>
                           </div>
                      </div>
+                </div>
+
+                {/* Actual Head-To-Head Comparison Matrix */}
+                <div className="mb-24">
+                    <div className="text-center mb-10">
+                        <h3 className="text-3xl font-bold mb-3">Head-To-Head Architecture</h3>
+                        <p className="text-zinc-500">Why {competitor.name} fails in the boardroom.</p>
+                    </div>
+                    <div className="bg-[#0a0a0b] border border-white/10 rounded-2xl overflow-hidden">
+                        <table className="w-full text-left border-collapse">
+                            <thead>
+                                <tr className="bg-white/5 border-b border-white/10">
+                                    <th className="p-6 text-sm font-bold text-zinc-300 uppercase tracking-widest w-1/2">Capability</th>
+                                    <th className="p-6 text-sm font-bold text-zinc-500 uppercase tracking-widest w-1/4 text-center border-l border-white/5">{competitor.name}</th>
+                                    <th className="p-6 text-sm font-bold text-indigo-400 uppercase tracking-widest w-1/4 text-center border-l border-white/5">Exogram {tool.toolName}</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-white/5">
+                                <tr className="hover:bg-white/5 transition-colors">
+                                    <td className="p-6 text-zinc-300">Deterministic Financial Translation (CODN)</td>
+                                    <td className="p-6 text-center text-red-500 font-bold">❌</td>
+                                    <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
+                                </tr>
+                                <tr className="hover:bg-white/5 transition-colors">
+                                    <td className="p-6 text-zinc-300">C-Suite Executive PDF Briefing Generation</td>
+                                    <td className="p-6 text-center text-red-500 font-bold">❌</td>
+                                    <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
+                                </tr>
+                                <tr className="hover:bg-white/5 transition-colors">
+                                    <td className="p-6 text-zinc-300">Sovereign Architecture / Local SLA Mapping</td>
+                                    <td className="p-6 text-center text-red-500 font-bold">❌</td>
+                                    <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
+                                </tr>
+                                <tr className="hover:bg-white/5 transition-colors">
+                                    <td className="p-6 text-zinc-300">Surface-Level Telemetry / Industry Generalizations</td>
+                                    <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
+                                    <td className="p-6 text-center text-red-500 font-bold">❌</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div className="text-center max-w-2xl mx-auto">
