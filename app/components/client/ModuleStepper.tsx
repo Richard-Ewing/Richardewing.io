@@ -10,10 +10,11 @@ interface ParsedContent {
 
 interface ModuleStepperProps {
     parsedContent: ParsedContent;
+    hasAccess?: boolean;
     children: React.ReactNode; // The Mark Complete button
 }
 
-export default function ModuleStepper({ parsedContent, children }: ModuleStepperProps) {
+export default function ModuleStepper({ parsedContent, hasAccess = true, children }: ModuleStepperProps) {
     const [currentStep, setCurrentStep] = useState(0);
     
     // total steps = syllabus (0) + lessons (1..N)
@@ -26,6 +27,7 @@ export default function ModuleStepper({ parsedContent, children }: ModuleStepper
     }, [currentStep]);
 
     const handleNext = () => {
+        if (!hasAccess) return;
         if (currentStep < totalSteps - 1) setCurrentStep(v => v + 1);
     };
 
@@ -46,15 +48,21 @@ export default function ModuleStepper({ parsedContent, children }: ModuleStepper
                         2 MIN READ
                     </span>
                 </div>
-                <div className="w-full flex gap-1 h-2">
+                <div className="w-full flex gap-1 h-2 relative">
+                    {!hasAccess && (
+                        <div className="absolute top-0 right-0 bottom-0 left-[30px] z-10 cursor-not-allowed" title="Module locked. Please upgrade to access."></div>
+                    )}
                     {Array.from({ length: totalSteps }).map((_, i) => (
                         <div 
                             key={i} 
-                            onClick={() => setCurrentStep(i)}
-                            className={`flex-1 rounded-full cursor-pointer transition-all duration-300 ${
+                            onClick={() => {
+                                if (!hasAccess && i > 0) return;
+                                setCurrentStep(i);
+                            }}
+                            className={`flex-1 rounded-full transition-all duration-300 ${!hasAccess && i > 0 ? 'bg-zinc-800/50 cursor-not-allowed' : 'cursor-pointer'} ${
                                 i < currentStep ? 'bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]' :
                                 i === currentStep ? 'bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]' :
-                                'bg-zinc-800 hover:bg-zinc-700'
+                                (!hasAccess && i > 0 ? 'bg-zinc-800/10' : 'bg-zinc-800 hover:bg-zinc-700')
                             }`}
                         />
                     ))}
@@ -79,28 +87,30 @@ export default function ModuleStepper({ parsedContent, children }: ModuleStepper
             )}
 
             {/* The Footer Action Dashboard */}
-            <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-50">
-                <button 
-                    onClick={handlePrev}
-                    disabled={currentStep === 0}
-                    className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-black border border-white/10 text-white hover:bg-zinc-900"
-                >
-                    <ChevronLeft className="w-4 h-4" /> Previous
-                </button>
-
-                {isLastStep ? (
-                    <div className="w-full sm:w-auto">
-                        {children}
-                    </div>
-                ) : (
+            {hasAccess && (
+                <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-50">
                     <button 
-                        onClick={handleNext}
-                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-cyan-500 text-black font-bold flex items-center justify-center gap-2 transition-all hover:bg-cyan-400 hover:scale-105 shadow-[0_0_20px_rgba(6,182,212,0.3)] uppercase tracking-widest text-sm"
+                        onClick={handlePrev}
+                        disabled={currentStep === 0}
+                        className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-black border border-white/10 text-white hover:bg-zinc-900"
                     >
-                        Next Lesson <ChevronRight className="w-4 h-4" />
+                        <ChevronLeft className="w-4 h-4" /> Previous
                     </button>
-                )}
-            </div>
+
+                    {isLastStep ? (
+                        <div className="w-full sm:w-auto">
+                            {children}
+                        </div>
+                    ) : (
+                        <button 
+                            onClick={handleNext}
+                            className="w-full sm:w-auto px-10 py-4 rounded-xl bg-cyan-500 text-black font-bold flex items-center justify-center gap-2 transition-all hover:bg-cyan-400 hover:scale-105 shadow-[0_0_20px_rgba(6,182,212,0.3)] uppercase tracking-widest text-sm"
+                        >
+                            Next Lesson <ChevronRight className="w-4 h-4" />
+                        </button>
+                    )}
+                </div>
+            )}
         </div>
     );
 }

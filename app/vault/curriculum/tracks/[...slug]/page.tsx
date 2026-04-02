@@ -192,12 +192,21 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
     const isFreePreviewModule = true;
 
     let aiContent = null;
+    let mappedLessons = mod.lessons; // Default to static lessons
+
     try {
         const jsonPath = path.join(process.cwd(), 'app', 'content', 'parsed', `${mod.moduleId}.json`);
         const htmlPath = path.join(process.cwd(), 'app', 'content', 'modules', `${mod.moduleId}.html`);
         
         if (fs.existsSync(jsonPath)) {
             aiContent = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+            if (aiContent && typeof aiContent === 'object' && Array.isArray(aiContent.lessons)) {
+                // Map the JSON AI generated structure to the expected `CurriculumModule` lesson structure for the PayGate
+                mappedLessons = aiContent.lessons.map((l: any) => ({
+                    title: l.title,
+                    content: 'Interactive Module Section.',
+                }));
+            }
         } else if (fs.existsSync(htmlPath)) {
             aiContent = fs.readFileSync(htmlPath, 'utf8');
         }
@@ -205,5 +214,6 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
         // Silently fallback if content directory or file doesn't exist
     }
 
-    return <ModuleCard mod={mod} hasAccess={hasAccess} showPreview={isFreePreviewModule} aiContent={aiContent} fullSlug={slug.join('/')} />;
+    // Pass the unified mappedLessons override
+    return <ModuleCard mod={{ ...mod, lessons: mappedLessons }} hasAccess={hasAccess} showPreview={isFreePreviewModule} aiContent={aiContent} fullSlug={slug.join('/')} />;
 }
