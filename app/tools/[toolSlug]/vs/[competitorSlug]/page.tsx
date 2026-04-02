@@ -29,8 +29,8 @@ export async function generateMetadata(
     const { tool, competitor } = match;
 
     return {
-        title: `Exogram ${tool.toolName} vs. ${competitor.name} (2026 Comparison)`,
-        description: `Why enterprise leaders choose Exogram's deterministic architecture over ${competitor.name}. Calculate literal Cost of Doing Nothing (CODN) and Board-Level Liability.`,
+        title: `${tool.toolName} vs. ${competitor.name} (2026 Comparison)`,
+        description: `Why enterprise leaders choose deterministic architecture over ${competitor.name}. Calculate literal Cost of Doing Nothing (CODN) and Board-Level Liability.`,
         keywords: [
             `${competitor.name} alternative`,
             `${tool.toolName} vs ${competitor.name}`,
@@ -58,8 +58,8 @@ export default async function CombatComparisonPage({ params }: { params: Promise
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        name: `Exogram ${tool.toolName} vs. ${competitor.name}`,
-        description: `A technical and financial comparison between Exogram's ${tool.toolName} and ${competitor.name}.`,
+        name: `${tool.toolName} vs. ${competitor.name}`,
+        description: `A technical and financial comparison between ${tool.toolName} and ${competitor.name}.`,
         publisher: {
             '@type': 'Organization',
             name: 'Exogram',
@@ -100,7 +100,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                         Architectural Comparison Analysis
                      </div>
                      <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-6 leading-tight">
-                        Exogram <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">{tool.toolName}</span> <br/>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">{tool.toolName}</span> <br/>
                         <span className="text-zinc-500 text-3xl sm:text-5xl border-t border-b border-zinc-800 py-2 inline-block my-4 w-32 lowercase font-serif italic">vs</span><br/>
                         {competitor.name}
                      </h1>
@@ -141,7 +141,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                           </div>
                           <div className="mb-8 relative z-10">
                              <div className="text-xs font-mono text-indigo-400 uppercase tracking-widest mb-2">The Deterministic Standard</div>
-                             <h2 className="text-3xl font-bold text-white mb-2">Exogram {tool.toolName}</h2>
+                             <h2 className="text-3xl font-bold text-white mb-2">{tool.toolName}</h2>
                           </div>
                           <div className="space-y-6 relative z-10">
                               <div>
@@ -170,7 +170,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                                 <tr className="bg-white/5 border-b border-white/10">
                                     <th className="p-6 text-sm font-bold text-zinc-300 uppercase tracking-widest w-1/2">Capability</th>
                                     <th className="p-6 text-sm font-bold text-zinc-500 uppercase tracking-widest w-1/4 text-center border-l border-white/5">{competitor.name}</th>
-                                    <th className="p-6 text-sm font-bold text-indigo-400 uppercase tracking-widest w-1/4 text-center border-l border-white/5">Exogram {tool.toolName}</th>
+                                    <th className="p-6 text-sm font-bold text-indigo-400 uppercase tracking-widest w-1/4 text-center border-l border-white/5">{tool.toolName}</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-white/5">
