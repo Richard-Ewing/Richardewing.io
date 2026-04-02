@@ -260,6 +260,13 @@ export const PRODUCTS: Record<string, Product> = {
     },
 
     // --- CERTIFICATION & WORKSHOPS ---
+    practitioner_certification: {
+        name: 'AI Practitioner Certification Pass',
+        description: 'Complete practitioner access to all AI economics, systems mapping, and model arbitrage curriculum modules.',
+        price: 24900,
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/3cI7sE1My1b44hvccg2B20a', 
+    },
     certification: {
         name: 'Product Economist Certification (CPE)',
         description: 'Professional certification in product economics methodology. 12 modules, 48 hours, exam + curriculum access + digital certificate.',

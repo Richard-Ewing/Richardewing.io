@@ -104,9 +104,9 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                         </button>
                                     ) : (
                                         <CheckoutButton 
-                                            productId="single_module" 
+                                            productId="practitioner_certification" 
                                             moduleId={moduleId}
-                                            label="Unlock Single Module Only — $29" 
+                                            label="AI Practitioner Certification Pass — $249" 
                                             icon="file" 
                                             variant="outline" 
                                         />

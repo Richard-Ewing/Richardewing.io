@@ -55,6 +55,7 @@ const tracks = [
         textColor: 'text-purple-400',
         description: 'Integrate AI into your development workflow. Ship AI-powered features.',
         courses: [
+            { name: 'AI Practitioner Certification Pass', url: '/api/buy/practitioner_certification', provider: 'Richard Ewing', description: 'Complete practitioner access to all AI economics, systems mapping, and model arbitrage curriculum modules.', editorial: 'If you are shipping AI features, you must understand their unit economics before deployment. My flagship course designed specifically for engineers.' },
             { name: 'Building with the Claude API', url: 'https://anthropic.skilljar.com/claude-with-the-anthropic-api', provider: 'Anthropic', description: 'Comprehensive course covering API requests, prompt design, and integrating Claude with external services.', editorial: 'Essential for any developer building AI features. Pair this with my AUEB calculator to validate your unit economics before you ship.' },
             { name: 'Claude Code in Action', url: 'https://anthropic.skilljar.com/claude-code-in-action', provider: 'Anthropic', description: 'Integrate Claude Code into your development workflow — read files, run commands, edit code, and automate tasks.', editorial: 'The practical "get things done" course. If your team uses Claude Code, this is required training.' },
             { name: 'Introduction to Agent Skills', url: 'https://anthropic.skilljar.com/introduction-to-agent-skills', provider: 'Anthropic', description: 'Build, configure, and share Skills in Claude Code — reusable markdown instructions for tasks.', editorial: 'Skills are how you scale AI productivity across a team. Eliminates the "everyone prompts differently" problem.' },
@@ -111,6 +112,7 @@ const tracks = [
         textColor: 'text-blue-400',
         description: 'AI product strategy, user research with AI, and feature economics.',
         courses: [
+            { name: 'AI Practitioner Certification Pass', url: '/api/buy/practitioner_certification', provider: 'Richard Ewing', description: 'Complete practitioner access to all AI economics, systems mapping, and model arbitrage curriculum modules.', editorial: 'My 12-hour certification course showing PMs exactly how to calculate and defend AI feature profitability.' },
             { name: 'AI Product Management', url: 'https://www.deeplearning.ai/courses/ai-for-everyone/', provider: 'DeepLearning.AI', description: 'Foundational AI concepts for product managers including feasibility analysis and team building.', editorial: 'Start here if you\'re a PM building AI features. Understanding feasibility prevents expensive false starts.' },
             { name: 'How Business Thinkers Can Start Building AI Plugins', url: 'https://www.deeplearning.ai/short-courses/chatgpt-building-ai-plugins/', provider: 'DeepLearning.AI', description: 'Non-technical guide to building AI plugins and understanding AI tool integrations.', editorial: 'Perfect for PMs who need to write specs for AI features without deep technical knowledge.' },
             { name: 'AI-Powered Product Development', url: 'https://www.productschool.com/resources/blog/ai-product-management-guide', provider: 'Product School', description: 'Comprehensive guide on integrating AI into product development lifecycle — from ideation to deployment.', editorial: 'The PM playbook for AI features. Covers prioritization, user research, and go-to-market for AI products.' },
@@ -363,11 +365,11 @@ export default function AiCoursesPage() {
                             Knowing how to build with AI is necessary. Knowing whether you <em>should</em> build — and at what cost — is what separates winners from margin casualties.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/tools/aueb" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
-                                Calculate Your AI Unit Economics →
+                            <Link href="/api/buy/practitioner_certification" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
+                                Unlock AI Practitioner Pass ($249) →
                             </Link>
-                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
-                                Book an R&D Audit →
+                            <Link href="/tools/aueb" className="px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                                Run AUEB Profitability Audit →
                             </Link>
                         </div>
                     </div>
