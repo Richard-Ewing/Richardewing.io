@@ -47,7 +47,7 @@ export function NewsletterForm({
                 return () => clearTimeout(timer);
             }
         }
-    }, [state.succeeded]);
+    }, [state.succeeded, extraData?.tool, redirectTo, router]);
 
     // Wrap handleSubmit to capture the email before submission
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {

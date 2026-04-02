@@ -88,9 +88,12 @@ export default function CelebrationOverlay({
     useEffect(() => {
         if (!isActive) return;
 
-        setVisible(true);
-        setFadeOut(false);
-        setShowContent(false);
+        const initTimer = setTimeout(() => {
+            setVisible(true);
+            setFadeOut(false);
+            setShowContent(false);
+        }, 10);
+        
         const particleData = createParticles();
 
         // Show content after a brief delay
@@ -177,6 +180,7 @@ export default function CelebrationOverlay({
         }, duration);
 
         return () => {
+            clearTimeout(initTimer);
             clearTimeout(contentTimer);
             clearTimeout(fadeTimer);
             clearTimeout(hideTimer);

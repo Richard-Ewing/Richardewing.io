@@ -30,11 +30,11 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                     <div key={i} className="flex items-center gap-4">
                         <div className="w-24 text-xs font-mono text-zinc-500 text-right">{item.name}</div>
                         <div className="flex-1 h-10 bg-zinc-900 rounded-lg overflow-hidden relative">
-                            <div style={{ width: `${(item.value / maxValue) * 100}%`, backgroundColor: item.color }} className={`h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4 ${styles.waterfallBar}`}>
+                            <motion.div initial={{width: 0}} animate={{ width: `${(item.value / maxValue) * 100}%`, backgroundColor: item.color }} className={`h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4 ${styles.waterfallBar}`}>
                                 <span className="text-xs font-mono text-white font-bold">
                                     ${(item.value / 1000000).toFixed(1)}M
                                 </span>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 );

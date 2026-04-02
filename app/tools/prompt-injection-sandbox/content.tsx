@@ -270,7 +270,7 @@ Only answer questions related to AcmeCorp logistics.
                                                         key={i} 
                                                         className={`flex gap-3 border border-zinc-800/50 p-4 rounded-xl relative overflow-hidden group ${v.passed ? 'bg-emerald-900/10' : 'bg-red-900/10'}`}
                                                     >
-                                                        {!v.passed && <div className="absolute bottom-0 left-0 h-1 bg-rose-500/50" style={{width: v.severity === 'Critical' ? '100%' : v.severity === 'High' ? '75%' : '50%'}}></div>}
+                                                        {!v.passed && <div className={`absolute bottom-0 left-0 h-1 bg-rose-500/50 ${v.severity === 'Critical' ? 'w-full' : v.severity === 'High' ? 'w-3/4' : 'w-1/2'}`}></div>}
                                                         <div className="mt-0.5 shrink-0">
                                                             {v.passed ? <Shield className="w-5 h-5 text-emerald-500" /> : <ShieldAlert className="w-5 h-5 text-rose-500" />}
                                                         </div>

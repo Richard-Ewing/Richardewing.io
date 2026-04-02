@@ -369,7 +369,7 @@ export default function AgentRouterContent() {
                                     <div className="space-y-4">
                                         <div>
                                             <div className="flex justify-between mb-1"><span className="text-zinc-400">Headcount Equivalent</span><span className="text-indigo-400 font-mono font-bold">{(results.monthlyCost * 12 / 185000).toFixed(1)} Engineers</span></div>
-                                            <div className="w-full bg-black rounded-full h-1"><div className="bg-indigo-500 h-1 rounded-full" style={{width: `${Math.min(100, (results.monthlyCost * 12 / 185000) * 10)}%`}}></div></div>
+                                            <div className="w-full bg-black rounded-full h-1"><motion.div className="bg-indigo-500 h-1 rounded-full" initial={{width: 0}} animate={{width: `${Math.min(100, (results.monthlyCost * 12 / 185000) * 10)}%`}}></motion.div></div>
                                         </div>
                                         <p className="text-xs text-zinc-500 mt-2">The capital combusted by looping Frontier Models through tertiary logic hops equates to the loaded cost of highly skilled technical hires.</p>
                                     </div>

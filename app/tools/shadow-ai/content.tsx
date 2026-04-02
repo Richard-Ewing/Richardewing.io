@@ -484,11 +484,11 @@ export default function ShadowContent() {
                                     <div className="space-y-4">
                                         <div>
                                             <div className="flex justify-between mb-1"><span className="text-zinc-400">Projected Fines (Est)</span><span className="text-rose-400 font-mono font-bold">{formatMoney(results.financialLiability * 14.5)}</span></div>
-                                            <div className="w-full bg-black rounded-full h-1"><div className="bg-rose-500 h-1 rounded-full" style={{width: '75%'}}></div></div>
+                                            <div className="w-full bg-black rounded-full h-1"><div className="bg-rose-500 h-1 rounded-full w-[75%]"></div></div>
                                         </div>
                                         <div>
                                             <div className="flex justify-between mb-1"><span className="text-zinc-400">Class Action Risk Factor</span><span className="text-amber-400 font-mono font-bold">CRITICAL</span></div>
-                                            <div className="w-full bg-black rounded-full h-1"><div className="bg-amber-500 h-1 rounded-full" style={{width: '90%'}}></div></div>
+                                            <div className="w-full bg-black rounded-full h-1"><div className="bg-amber-500 h-1 rounded-full w-[90%]"></div></div>
                                         </div>
                                         <p className="text-xs text-zinc-500 mt-2">LLM retention of PII constitutes an unrecoverable breach under "Right to be Forgotten" mandates.</p>
                                     </div>

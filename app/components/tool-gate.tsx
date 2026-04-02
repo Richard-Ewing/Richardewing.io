@@ -83,7 +83,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
             setIsUnlocked(true);
             onUnlock?.();
         }
-    }, [state.succeeded, onUnlock, usesCounter, isSignedIn]);
+    }, [state.succeeded, onUnlock, usesCounter, isSignedIn, hasPaidEntitlement]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

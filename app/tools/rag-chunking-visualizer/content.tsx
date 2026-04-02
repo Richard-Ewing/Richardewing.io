@@ -387,10 +387,10 @@ export default function RagChunkingContent() {
                                                     className="border border-indigo-500/30 rounded-t-sm bg-indigo-500/10 group hover:bg-indigo-500/30 transition-colors"
                                                 >
                                                     {i > 0 && overlap > 0 && (
-                                                        <div 
+                                                        <motion.div 
                                                             className="absolute top-0 bottom-0 left-0 bg-yellow-500/40 border-r border-yellow-500/50" 
                                                             style={{width: `${(overlap / chunkSize) * 100}%`}}
-                                                        ></div>
+                                                        ></motion.div>
                                                     )}
                                                     <div className="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
                                                         <span className="text-[10px] font-mono bg-black border border-white/10 px-1 py-0.5 rounded text-white">{chunk.end - chunk.start}c</span>
