@@ -45,7 +45,11 @@ export const modules: Record<string, CurriculumModule> = {};
 
 import { guidesComparisonsModules } from './curriculum-guides-comparisons';
 import { tracks16to17ExpansionModules } from './curriculum-tracks-16-17-expansion';
-import { tracks18to22Modules } from './curriculum-tracks-18-22';
+import { tracks18Modules } from './curriculum-tracks-18';
+import { tracks19Modules } from './curriculum-tracks-19';
+import { tracks20Modules } from './curriculum-tracks-20';
+import { tracks21Modules } from './curriculum-tracks-21';
+import { tracks22Modules } from './curriculum-tracks-22';
 import { tracks5and6Modules } from './curriculum-tracks-5-6';
 import { tracks7Modules } from './curriculum-tracks-7';
 import { tracks8Modules } from './curriculum-tracks-8';
@@ -65,7 +69,7 @@ Object.assign(modules, tracks5and6Modules);
 Object.assign(modules, tracks7Modules, tracks8Modules, tracks9Modules, tracks10Modules);
 
 // ═══════════════════ TRACKS 18-22 ═══════════════════
-Object.assign(modules, tracks18to22Modules);
+Object.assign(modules, tracks18Modules, tracks19Modules, tracks20Modules, tracks21Modules, tracks22Modules);
 
 // ═══════════════════ NEW 2026 AI TREND MODULES ═══════════════════
 import { tracks23to26Modules } from './curriculum-tracks-23-26';
