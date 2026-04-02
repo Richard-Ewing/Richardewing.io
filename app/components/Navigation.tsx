@@ -62,12 +62,12 @@ const Navigation = () => {
 
                             <Dropdown label="Enterprise Diagnostics">
                                 <Link
-                                    href="/tools/war-room"
+                                    href="/tools/board-room"
                                     className="block p-5 bg-gradient-to-br from-indigo-500/20 to-black/40 border-b border-indigo-500/30 hover:from-indigo-500/30 transition-all font-semibold"
                                 >
                                     <div className="flex items-center gap-3 mb-1">
                                         <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
-                                        <span className="text-white text-base">Executive War Room</span>
+                                        <span className="text-white text-base">Executive Board Room</span>
                                     </div>
                                     <p className="text-[10.5px] text-indigo-200/70 font-mono tracking-widest uppercase">Board-Level Telemetry Hub</p>
                                 </Link>
@@ -76,6 +76,7 @@ const Navigation = () => {
                                 <DropdownItem href="/tools/copilot-roi" description="Calculate Net Revenue Retention">Copilot ROI Forecaster</DropdownItem>
                                 <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">Tech Debt Forecaster (PDI)</DropdownItem>
                                 <DropdownItem href="/tools/aueb" description="Model AI unit margin collapse">AI Margin Calculator (AUEB)</DropdownItem>
+                                <DropdownItem href="/compare" description="LLM capability & cost matrix">Model Comparison Matrix</DropdownItem>
                                 <DropdownItem href="/tools/ai-roi-timeline" description="Hardware vs API investment horizons">AI CapEx Break-Even</DropdownItem>
                                 
                                 <div className="mt-2 p-2 relative z-10 w-full bg-[var(--bg-secondary)] pb-3">
@@ -246,13 +247,13 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest pl-2 mb-4">Enterprise Diagnostics</h3>
                         
                         <Link
-                            href="/tools/war-room"
+                            href="/tools/board-room"
                             onClick={onClose}
                             className={`block px-5 py-4 rounded-xl bg-gradient-to-r from-indigo-500/20 to-zinc-900 border border-indigo-500/30 text-white hover:bg-indigo-500/30 transition-colors font-semibold shadow-lg mb-6`}
                         >
                             <div className="flex items-center gap-3 mb-1">
                                 <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
-                                <span>Executive War Room</span>
+                                <span>Executive Board Room</span>
                             </div>
                             <span className="text-[10px] text-indigo-300/70 font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
                         </Link>
@@ -260,6 +261,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/tools/copilot-roi" onClick={onClose}>Copilot ROI Forecaster</MobileLink>
                         <MobileLink href="/tools/pdi" onClick={onClose}>Tech Debt Forecaster (PDI)</MobileLink>
                         <MobileLink href="/tools/aueb" onClick={onClose}>AI Margin Calculator (AUEB)</MobileLink>
+                        <MobileLink href="/compare" onClick={onClose}>Model Comparison Matrix</MobileLink>
                         <MobileLink href="/tools/ai-roi-timeline" onClick={onClose}>AI CapEx Break-Even</MobileLink>
                         
                         <Link href="/tools" onClick={onClose} className="block mt-4 text-center border border-white/10 bg-white/5 rounded-lg py-3 hover:bg-white/10 transition-colors">

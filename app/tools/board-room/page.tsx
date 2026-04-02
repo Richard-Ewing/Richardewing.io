@@ -11,7 +11,7 @@ import NumberTicker from '../../components/magicui/number-ticker';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
 
-export default function WarRoom() {
+export default function BoardRoom() {
     const { user, isLoaded } = useUser();
     const [runs, setRuns] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
@@ -40,7 +40,7 @@ export default function WarRoom() {
             <div className="min-h-screen bg-black flex flex-col items-center justify-center p-6 text-center">
                 <ShieldAlert className="text-red-500 w-16 h-16 mb-6 animate-pulse" />
                 <h1 className="text-3xl font-bold text-white mb-4 uppercase tracking-tighter">Clearance Required</h1>
-                <p className="text-zinc-500 mb-8 max-w-md font-mono text-sm uppercase tracking-widest leading-relaxed">The war room is restricted to verified C-Suite personnel. Authenticate to establish connection.</p>
+                <p className="text-zinc-500 mb-8 max-w-md font-mono text-sm uppercase tracking-widest leading-relaxed">The board room is restricted to verified C-Suite personnel. Authenticate to establish connection.</p>
                 <Link href="/sign-in" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-widest rounded-lg transition-colors">Establish Neural Link</Link>
             </div>
         );
@@ -87,10 +87,10 @@ export default function WarRoom() {
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.8)]" />
-                        <span className="font-bold tracking-widest text-sm text-white uppercase font-mono">Executive War Room <span className="text-zinc-600 font-normal">| ALL DEPARTMENTS</span></span>
+                        <span className="font-bold tracking-widest text-sm text-white uppercase font-mono">Executive Board Room <span className="text-zinc-600 font-normal">| ALL DEPARTMENTS</span></span>
                     </div>
                     <div className="flex gap-4">
-                        <ExportToPDFButton targetId="war-room-matrix" fileName={`Enterprise_Threat_Matrix.pdf`} />
+                        <ExportToPDFButton targetId="board-room-matrix" fileName={`Enterprise_Threat_Matrix.pdf`} />
                         <Link href="/system" className="text-[10px] font-mono text-zinc-400 hover:text-white transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-white/5">
                             Close Session
                         </Link>
@@ -98,7 +98,7 @@ export default function WarRoom() {
                 </div>
             </nav>
 
-            <main id="war-room-matrix" className="max-w-7xl mx-auto px-6 py-12 relative z-10 space-y-12">
+            <main id="board-room-matrix" className="max-w-7xl mx-auto px-6 py-12 relative z-10 space-y-12">
                 
                 {/* GLOBAL THREAT MAP (CEO/BOARD) */}
                 <ScrollReveal>
