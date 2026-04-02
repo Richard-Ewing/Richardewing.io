@@ -60,16 +60,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/exogram/docs/schema-integrity',
-        destination: '/exogram',
-        permanent: true,
-      },
-      {
-        source: '/exogram/docs/eaap-specification',
-        destination: '/exogram',
-        permanent: true,
-      },
-      {
         source: '/canonical/:slug*',
         destination: '/briefings',
         permanent: true,
