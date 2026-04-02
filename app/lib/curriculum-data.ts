@@ -27,10 +27,11 @@ export interface CurriculumModule {
     productId?: string; bundleId?: string;
     embeddedTool?: string;
     status?: 'live' | 'waitlist';
+    relatedArticles?: string[];
 }
 
-export function m(id: string, title: string, desc: string, track: string, takeaways: string[], lessons: Lesson[], next?: string, embeddedTool?: string, status: 'live' | 'waitlist' = 'live'): CurriculumModule {
-    return { moduleId: id, title, description: desc, trackName: track, takeaways, lessons, nextHref: next, embeddedTool, status };
+export function m(id: string, title: string, desc: string, track: string, takeaways: string[], lessons: Lesson[], next?: string, embeddedTool?: string, status: 'live' | 'waitlist' = 'live', relatedArticles?: string[]): CurriculumModule {
+    return { moduleId: id, title, description: desc, trackName: track, takeaways, lessons, nextHref: next, embeddedTool, status, relatedArticles };
 }
 
 export function l(title: string, content: string | string[], details: LessonDetail[], exercise: string, checklist?: string[], quiz?: Quiz): Lesson {

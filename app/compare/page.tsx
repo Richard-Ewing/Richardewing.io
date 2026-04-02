@@ -58,6 +58,13 @@ const comparisons = [
         href: '/compare/aueb-vs-aws-cost-explorer',
         color: 'emerald',
     },
+    {
+        title: 'Copilot ROI vs GitClear',
+        subtitle: 'EBITDA vs LOC Generation',
+        description: 'GitClear tracks code output volume. Copilot ROI Forecaster calculates the exact EBITDA destruction caused by downstream Vibe Coding Debt & review drag.',
+        href: '/compare/copilot-roi-vs-gitclear',
+        color: 'fuchsia',
+    },
 ];
 
 export default function ComparePage() {

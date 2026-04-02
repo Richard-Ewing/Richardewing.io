@@ -16,6 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
 }
 
+import { articles } from '@/app/lib/data';
+
 import { auth } from '@clerk/nextjs/server';
 import PayGate from '@/app/components/PayGate';
 import CurriculumQuiz from '@/app/components/curriculum/CurriculumQuiz';
@@ -158,6 +160,26 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                             </>
                         )}
                     </PayGate>
+
+                    {mod.relatedArticles && mod.relatedArticles.length > 0 && (
+                        <div className="mt-16 border-t border-cyan-500/10 pt-12">
+                            <h2 className="text-2xl font-grotesk font-bold text-white mb-6">Related Thought Leadership</h2>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                {mod.relatedArticles.map((slug) => {
+                                    const article = articles.find(a => a.slug === slug);
+                                    if (!article) return null;
+                                    const href = article.externalUrl || article.legacyUrl || `/blog/${article.slug}`;
+                                    return (
+                                        <Link key={slug} href={href} className="block p-5 rounded-xl border border-cyan-500/10 bg-cyan-500/5 hover:bg-cyan-500/10 hover:border-cyan-500/30 transition-all group">
+                                            <div className="text-[10px] font-mono text-cyan-500/70 uppercase tracking-widest mb-2 group-hover:text-cyan-400">{article.source}</div>
+                                            <h3 className="text-white font-bold mb-2 group-hover:text-cyan-300 transition-colors">{article.title}</h3>
+                                            <p className="text-zinc-400 text-sm line-clamp-2">{article.description}</p>
+                                        </Link>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </main>

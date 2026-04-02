@@ -382,5 +382,62 @@ export const frameworks = [
             { title: 'The Cost of Predictivity', publication: 'Built In', date: 'Nov 2025', url: '/articles/cost-of-predictivity' }
         ],
         relatedTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }
+    },
+    {
+        slug: 'dspm',
+        name: 'Data Security Posture Management (DSPM)',
+        definition: `Data Security Posture Management (DSPM) is the automated discovery, mapping, and continuous monitoring of sensitive data across multi-cloud environments, specifically architected to prevent data exfiltration by autonomous AI agents.\n\nIn the era of shadow agents and zero-trust boundaries, traditional perimeter security fails because AI workloads dynamically ingest vast quantities of unstructured corporate data (emails, Slack logs, PDFs). DSPM enforces strict identity access management (IAM) at the vector-database level, ensuring that AI models can only query data authorized for the specific execution context.`,
+        whyItMatters: `Without DSPM, an executive assistant agent interacting with a procurement system could be maliciously prompted into returning highly sensitive financial forecasts. DSPM mathematically restricts the agent's context window.`,
+        howToCalculate: [
+            'Audit unstructured data locations (S3 buckets, OneDrive, Slack)',
+            'Deploy automated classification to tag PII and financial data',
+            'Enforce zero-trust retrieval policies before vector embedding'
+        ],
+        relatedArticles: [
+            { title: 'The Rise of Shadow Agents: Why Your Next Data Breach Will Be Automated', publication: 'The Canon', date: 'Apr 2026', url: '/blog/the-rise-of-shadow-agents-why-your-next-data-breach-will-be-automated' }
+        ],
+        relatedTool: { name: 'Shadow AI Defensibility', url: '/tools/shadow-ai' }
+    },
+    {
+        slug: 'sovereign-ai',
+        name: 'Sovereign AI',
+        definition: `Sovereign AI refers to large language models and inference architectures deployed entirely within a nation's or enterprise's physical borders, adhering to strict data localization laws.\n\nFueled by geopolitical tensions and the rise of the EU AI Act, Sovereign AI mandates that prompt data, model weights, and inference hardware remain air-gapped from major foreign cloud providers. In the enterprise context, 'corporate sovereignty' involves repatriating cloud workloads to bare-metal servers.`,
+        whyItMatters: `For Fortune 500 CISOs, sending customer financial data to an API endpoint outside their jurisdiction is a catastrophic regulatory risk. Sovereign AI allows companies to achieve near-frontier model performance via open-weights models (like LLaMA) on private infrastructure.`,
+        howToCalculate: [
+            'Compare the TCO of API inference vs bare-metal server leasing',
+            'Model the capital expenditure of H100 clusters',
+            'Assess regulatory exposure under GDPR or CCPA for multi-tenant model caching'
+        ],
+        relatedArticles: [
+            { title: 'The Cost of Predictivity', publication: 'Built In', date: 'Nov 2025', url: '/articles/cost-of-predictivity' }
+        ]
+    },
+    {
+        slug: 'graph-rag',
+        name: 'Graph RAG (Retrieval-Augmented Generation)',
+        definition: `Graph RAG (Retrieval-Augmented Generation) evolves standard vector-based semantic search by combining knowledge graphs with vector embeddings, allowing LLMs to reason over complex, deeply interconnected enterprise datasets.\n\nStandard RAG fails at global queries (e.g., "Summarize the entire procurement strategy") because it only retrieves the top 10 most semantically similar text chunks. Graph RAG builds an ontological map of relationships, enabling the model to traverse nodes and synthesize answers from disparate documents with massive accuracy improvements.`,
+        whyItMatters: `If an enterprise relies on LLMs for legal discovery or complex financial auditing, standard RAG hallucination rates are unacceptably high. Graph RAG significantly lowers the Cost of Predictivity for complex reasoning loops.`,
+        howToCalculate: [
+            'Abstract entity extraction costs during indexing',
+            'Measure the latency increase from multi-hop graph queries',
+            'Audit hallucination reduction vs traditional BM25/Vector retrieval'
+        ],
+        relatedArticles: [],
+        relatedTool: { name: 'RAG Cost Extrapolator', url: '/tools/rag-chunking-visualizer' }
+    },
+    {
+        slug: 'slm',
+        name: 'Small Language Models (SLM)',
+        definition: `Small Language Models (SLMs) are highly distilled AI models typically containing under 8 billion parameters. They are optimized for specific, deterministic tasks rather than emergent general reasoning.\n\nWhile frontier models (GPT-4) cost fractions of a cent per token and latency is high, SLMs can run locally on edge devices (laptops, phones) or highly optimized serverless endpoints. They drastically reduce inferencing costs and eliminate the need to send data off-site.`,
+        whyItMatters: `In the pursuit of positive Return on AI Investment (ROAI), using a 1-trillion parameter model to route support tickets is economically devastating. SLMs right-size the intelligence to the task, achieving margin preservation.`,
+        howToCalculate: [
+            'Identify repetitive classification tasks in the AI orchestration chain',
+            'Calculate the cost delta between frontier API calls and local SLM inference',
+            'Implement routing architecture to leverage SLMs as the frontline tier'
+        ],
+        relatedArticles: [
+            { title: 'ROAI is the New ROI: Why CFOs Are Killing Your AI Pilots in 2026', publication: 'The Canon', date: 'Apr 2026', url: '/blog/roai-is-the-new-roi-why-cfos-are-killing-your-ai-pilots-in-2026' }
+        ],
+        relatedTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }
     }
 ];

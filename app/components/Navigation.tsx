@@ -71,15 +71,21 @@ const Navigation = () => {
                                     </div>
                                     <p className="text-[10.5px] text-rose-200/70 font-mono tracking-widest uppercase">Compare vs Legacy Competitors</p>
                                 </Link>
+                                
+                                <div className="px-5 py-2 text-[10px] font-bold tracking-widest text-[var(--accent-purple)] uppercase mt-2">Engineering ROI & Valuation</div>
                                 <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">Tech Debt Forecaster (PDI)</DropdownItem>
                                 <DropdownItem href="/tools/ev-se" description="Model enterprise value per engineer">Engineering Value Model (EV-SE)</DropdownItem>
-                                <DropdownItem href="/tools/aueb" description="Calculate AI unit economics">AI Margin Calculator (AUEB)</DropdownItem>
                                 <DropdownItem href="/tools/aper" description="Measure adjusted productivity ratio">Engineering ROI Engine (APER)</DropdownItem>
                                 <DropdownItem href="/tools/vta" description="Calculate financial drag from LLM variance">Volatility Tax Auditor</DropdownItem>
-                                <DropdownItem href="/tools/shadow-ai" description="Zero-trust corporate API risk scanner">Shadow AI Defensibility</DropdownItem>
-                                <DropdownItem href="/tools/prompt-injection-sandbox" description="Red-team LLM prompt vulnerabilities">Prompt Intrusion Sandbox</DropdownItem>
+                                
+                                <div className="px-5 py-2 text-[10px] font-bold tracking-widest text-[var(--accent-cyan)] uppercase border-t border-white/5 mt-2 pt-4">AI Margins & FinOps</div>
+                                <DropdownItem href="/tools/aueb" description="Calculate AI unit economics">AI Margin Calculator (AUEB)</DropdownItem>
                                 <DropdownItem href="/tools/rag-chunking-visualizer" description="Cloud vector database API burn rate">RAG Cost Extrapolator</DropdownItem>
                                 <DropdownItem href="/tools/agent-router" description="Multi-agent orchestration LLM costs">Agentic FinOps Simulator</DropdownItem>
+
+                                <div className="px-5 py-2 text-[10px] font-bold tracking-widest text-[var(--accent-crimson)] uppercase border-t border-white/5 mt-2 pt-4">Security & Governance</div>
+                                <DropdownItem href="/tools/shadow-ai" description="Zero-trust corporate API risk scanner">Shadow AI Defensibility</DropdownItem>
+                                <DropdownItem href="/tools/prompt-injection-sandbox" description="Red-team LLM prompt vulnerabilities">Prompt Intrusion Sandbox</DropdownItem>
                             </Dropdown>
                             
                             <Link href="/tools/audit-interview" className="text-gray-300 hover:text-white transition-colors relative group font-medium">

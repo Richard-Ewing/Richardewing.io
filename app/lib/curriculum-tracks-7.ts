@@ -46,7 +46,7 @@ tracks7Modules['security-economics/7-1'] = m('7-1', 'Breach Cost Modeling', 'Cal
                 explanation: 'Boards think in terms of revenue, growth, and Enterprise Value. Framing security as "roadmap insurance" directly ties protective spending to the preservation of the company\'s growth targets.'
             }
         )
-    ], '/vault/curriculum/tracks/security-economics/7-2', undefined, 'live'
+    ], '/vault/curriculum/tracks/security-economics/7-2', undefined, 'live', ['shadow-agents']
 );
 
 tracks7Modules['security-economics/7-2'] = m('7-2', 'Compliance ROI', 'Transform SOC 2, ISO 27001, and HIPAA from cost centers into aggressive revenue-unlocking assets.', t7, 
