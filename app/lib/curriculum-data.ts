@@ -72,9 +72,15 @@ Object.assign(modules, tracks7Modules, tracks8Modules, tracks9Modules, tracks10M
 Object.assign(modules, tracks18Modules, tracks19Modules, tracks20Modules, tracks21Modules, tracks22Modules);
 
 // ═══════════════════ NEW 2026 AI TREND MODULES ═══════════════════
-import { tracks23to26Modules } from './curriculum-tracks-23-26';
-import { tracks27to29Modules } from './curriculum-tracks-27-29';
-Object.assign(modules, tracks23to26Modules, tracks27to29Modules);
+import { tracks23Modules } from './curriculum-tracks-23';
+import { tracks24Modules } from './curriculum-tracks-24';
+import { tracks25Modules } from './curriculum-tracks-25';
+import { tracks26Modules } from './curriculum-tracks-26';
+import { tracks27Modules } from './curriculum-tracks-27';
+import { tracks28Modules } from './curriculum-tracks-28';
+import { tracks29Modules } from './curriculum-tracks-29';
+
+Object.assign(modules, tracks23Modules, tracks24Modules, tracks25Modules, tracks26Modules, tracks27Modules, tracks28Modules, tracks29Modules);
 
 
 
