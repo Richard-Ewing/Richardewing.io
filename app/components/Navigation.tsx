@@ -62,30 +62,28 @@ const Navigation = () => {
 
                             <Dropdown label="Enterprise Diagnostics">
                                 <Link
-                                    href="/compare"
-                                    className="block p-5 bg-gradient-to-br from-rose-500/20 to-black/40 border-b border-rose-500/30 hover:from-rose-500/30 transition-all font-semibold"
+                                    href="/tools/war-room"
+                                    className="block p-5 bg-gradient-to-br from-indigo-500/20 to-black/40 border-b border-indigo-500/30 hover:from-indigo-500/30 transition-all font-semibold"
                                 >
                                     <div className="flex items-center gap-3 mb-1">
-                                        <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse shadow-[0_0_10px_#f43f5e]" />
-                                        <span className="text-white text-base">Combat Matrix</span>
+                                        <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
+                                        <span className="text-white text-base">Executive War Room</span>
                                     </div>
-                                    <p className="text-[10.5px] text-rose-200/70 font-mono tracking-widest uppercase">Compare vs Legacy Competitors</p>
+                                    <p className="text-[10.5px] text-indigo-200/70 font-mono tracking-widest uppercase">Board-Level Telemetry Hub</p>
                                 </Link>
                                 
-                                <div className="px-5 py-2 text-[10px] font-bold tracking-widest text-[var(--accent-purple)] uppercase mt-2">Engineering ROI & Valuation</div>
+                                <div className="px-5 py-2 text-[10px] font-bold tracking-widest text-[var(--accent-purple)] uppercase mt-2">Flagship Engines</div>
+                                <DropdownItem href="/tools/copilot-roi" description="Calculate Net Revenue Retention">Copilot ROI Forecaster</DropdownItem>
                                 <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">Tech Debt Forecaster (PDI)</DropdownItem>
-                                <DropdownItem href="/tools/ev-se" description="Model enterprise value per engineer">Engineering Value Model (EV-SE)</DropdownItem>
-                                <DropdownItem href="/tools/aper" description="Measure adjusted productivity ratio">Engineering ROI Engine (APER)</DropdownItem>
-                                <DropdownItem href="/tools/vta" description="Calculate financial drag from LLM variance">Volatility Tax Auditor</DropdownItem>
+                                <DropdownItem href="/tools/aueb" description="Model AI unit margin collapse">AI Margin Calculator (AUEB)</DropdownItem>
+                                <DropdownItem href="/tools/ai-roi-timeline" description="Hardware vs API investment horizons">AI CapEx Break-Even</DropdownItem>
                                 
-                                <div className="px-5 py-2 text-[10px] font-bold tracking-widest text-[var(--accent-cyan)] uppercase border-t border-white/5 mt-2 pt-4">AI Margins & FinOps</div>
-                                <DropdownItem href="/tools/aueb" description="Calculate AI unit economics">AI Margin Calculator (AUEB)</DropdownItem>
-                                <DropdownItem href="/tools/rag-chunking-visualizer" description="Cloud vector database API burn rate">RAG Cost Extrapolator</DropdownItem>
-                                <DropdownItem href="/tools/agent-router" description="Multi-agent orchestration LLM costs">Agentic FinOps Simulator</DropdownItem>
-
-                                <div className="px-5 py-2 text-[10px] font-bold tracking-widest text-[var(--accent-crimson)] uppercase border-t border-white/5 mt-2 pt-4">Security & Governance</div>
-                                <DropdownItem href="/tools/shadow-ai" description="Zero-trust corporate API risk scanner">Shadow AI Defensibility</DropdownItem>
-                                <DropdownItem href="/tools/prompt-injection-sandbox" description="Red-team LLM prompt vulnerabilities">Prompt Intrusion Sandbox</DropdownItem>
+                                <div className="mt-2 p-2 relative z-10 w-full bg-[var(--bg-secondary)] pb-3">
+                                    <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 rounded-lg py-2.5 mx-3 transition-colors">
+                                        <span className="text-xs font-semibold text-gray-300">Explore All Diagnostics</span>
+                                        <span className="text-xs text-white">→</span>
+                                    </Link>
+                                </div>
                             </Dropdown>
                             
                             <Link href="/tools/audit-interview" className="text-gray-300 hover:text-white transition-colors relative group font-medium">
@@ -248,27 +246,25 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest pl-2 mb-4">Enterprise Diagnostics</h3>
                         
                         <Link
-                            href="/compare"
+                            href="/tools/war-room"
                             onClick={onClose}
-                            className={`block px-5 py-4 rounded-xl bg-gradient-to-r from-rose-500/20 to-zinc-900 border border-rose-500/30 text-white hover:bg-rose-500/30 transition-colors font-semibold shadow-lg mb-6`}
+                            className={`block px-5 py-4 rounded-xl bg-gradient-to-r from-indigo-500/20 to-zinc-900 border border-indigo-500/30 text-white hover:bg-indigo-500/30 transition-colors font-semibold shadow-lg mb-6`}
                         >
                             <div className="flex items-center gap-3 mb-1">
-                                <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse shadow-[0_0_10px_#f43f5e]" />
-                                <span>Combat Matrix (Compare)</span>
+                                <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
+                                <span>Executive War Room</span>
                             </div>
-                            <span className="text-[10px] text-rose-300/70 font-mono tracking-widest uppercase block mt-1">Compare vs Competition</span>
+                            <span className="text-[10px] text-indigo-300/70 font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
                         </Link>
 
+                        <MobileLink href="/tools/copilot-roi" onClick={onClose}>Copilot ROI Forecaster</MobileLink>
                         <MobileLink href="/tools/pdi" onClick={onClose}>Tech Debt Forecaster (PDI)</MobileLink>
-                        <MobileLink href="/tools/ev-se" onClick={onClose}>Engineering Value Model (EV-SE)</MobileLink>
                         <MobileLink href="/tools/aueb" onClick={onClose}>AI Margin Calculator (AUEB)</MobileLink>
-                        <MobileLink href="/tools/aper" onClick={onClose}>Engineering ROI Engine (APER)</MobileLink>
-                        <MobileLink href="/tools/vta" onClick={onClose}>Volatility Tax Auditor</MobileLink>
-                        <MobileLink href="/tools/shadow-ai" onClick={onClose}>Shadow AI Defensibility</MobileLink>
-                        <MobileLink href="/tools/prompt-injection-sandbox" onClick={onClose}>Prompt Intrusion Sandbox</MobileLink>
-                        <MobileLink href="/tools/rag-chunking-visualizer" onClick={onClose}>RAG Cost Extrapolator</MobileLink>
-                        <MobileLink href="/tools/agent-router" onClick={onClose}>Agentic FinOps Simulator</MobileLink>
-                        <MobileLink href="/tools/audit-interview" onClick={onClose}>Audit Interview</MobileLink>
+                        <MobileLink href="/tools/ai-roi-timeline" onClick={onClose}>AI CapEx Break-Even</MobileLink>
+                        
+                        <Link href="/tools" onClick={onClose} className="block mt-4 text-center border border-white/10 bg-white/5 rounded-lg py-3 hover:bg-white/10 transition-colors">
+                            <span className="text-sm font-semibold text-white">Explore All 12+ Diagnostics →</span>
+                        </Link>
                     </div>
 
                     {/* Advisory Section */}

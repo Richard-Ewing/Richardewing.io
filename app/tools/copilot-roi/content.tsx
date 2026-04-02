@@ -69,7 +69,7 @@ const RiskSlider = ({ label, value, onChange, description, min = 0, max = 100, s
                 <div className="absolute top-3 left-0 right-0 h-1 rounded-lg bg-zinc-800" />
                 <div 
                     className="absolute top-3 left-0 h-1 rounded-lg bg-gradient-to-r from-cyan-500 to-fuchsia-500" 
-                    style={{ width: `${percentage}%` }}
+                    ref={(el) => { if (el) el.style.width = `${percentage}%`; }}
                 />
                 <input
                     type="range"

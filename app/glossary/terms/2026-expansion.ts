@@ -207,5 +207,67 @@ export const semanticExpansion2026: GlossaryTerm[] = [
         whyItMatters: `AI-Assisted Development compresses the time to write code by 10x, but scales the difficulty of reading, verifying, and maintaining that code linearly. Engineering leadership must govern it aggressively.`,
         faqs: [{ question: 'Does AI-assisted development replace developers?', answer: 'No, it shifts the developer role from "manual syntax generator" to "reviewer & orchestrator," demanding higher architectural skill but less rote typing.' }],
         relatedTerms: ['developer-experience', 'dora-metrics', 'shadow-ai']
+    },
+    
+    // 10. 2026 Enterprise Mega-Trends
+    {
+        title: 'Agentic Workflows',
+        slug: 'agentic-workflows',
+        tier: 'pillar',
+        category: 'AI & Machine Learning',
+        definition: `Agentic Workflows refer to multi-step, autonomous processes where AI agents dynamically plan, execute, and course-correct to achieve a high-level goal without human intervention at every step.\n\nContrasted with simple direct-prompting, agentic workflows use tools, browse the web, verify sub-tasks, and orchestrate other specialized agents to synthesize an outcome. In 2026, agentic workflows represent the final shift from AI as a "Co-Pilot" (assistant) to AI as an "Auto-Pilot" (executor).`,
+        whyItMatters: `Agentic workflows dramatically increase enterprise productivity but require strict Execution Layers and deterministic boundaries to prevent runaway costs, hallucinations, or unauthorized destructive actions.`,
+        faqs: [{ question: 'What is the difference between an AI model and an AI agent?', answer: 'An AI model predicts the next word. An AI agent uses a model as its "brain" to execute an Agentic Workflow by calling APIs, reading files, and taking iterative actions.' }],
+        relatedTerms: ['execution-layer', 'artificial-intelligence', 'prompt-engineering']
+    },
+    {
+        title: 'Sovereign AI',
+        slug: 'sovereign-ai',
+        tier: 'pillar',
+        category: 'AI & Machine Learning',
+        definition: `Sovereign AI refers to artificial intelligence capabilities—including physical infrastructure, foundation models, and training datasets—that are entirely owned, governed, and localized by a specific nation-state, enterprise, or coalition to protect intellectual property and national security.\n\nBy 2026, regulatory pressures and data privacy mandates have forced governments and Fortune 500 enterprises to abandon multi-tenant cloud AI models in favor of sovereign architectures hosted physically within their own borders or Virtual Private Clouds.`,
+        whyItMatters: `Sovereign AI mitigates the existential risk of corporate or national secrets leaking into public foundation models, ensuring complete compliance with data residency laws.`,
+        faqs: [{ question: 'Why is Sovereign AI necessary?', answer: 'Because using a public API like OpenAI means risking highly classified state or corporate data being used to train a model that foreign adversaries or competitors might access.' }],
+        relatedTerms: ['open-weights', 'ai-governance', 'cloud-repatriation']
+    },
+    {
+        title: 'Model Routing',
+        slug: 'model-routing',
+        tier: 'pillar',
+        category: 'AI & Machine Learning',
+        definition: `Model Routing is a dynamic architectural capability where incoming API requests are algorithmically distributed to different AI models (e.g., GPT-4, Claude 3 Haiku, Llama 3 8B) based on the specific intent, complexity, latency requirement, and cost-profile of the prompt.\n\nInstead of hardcoding a single LLM, an enterprise routing gateway assesses the task. Simple summarization is routed to an ultra-cheap, fast SLM. Complex reasoning is routed to an expensive frontier model.`,
+        whyItMatters: `Model Routing is the ultimate lever for optimizing AI Unit Economics. Without it, companies suffer from the Cost of Predictivity by overpaying for simple tasks using frontier intelligence.`,
+        faqs: [{ question: 'What is a Model Router?', answer: 'An intelligent gateway that dynamically sends a user prompt to the fastest, cheapest, or smartest AI model available based entirely on what the prompt actually needs.' }],
+        relatedTerms: ['small-language-models', 'ai-finops', 'cost-of-predictivity']
+    },
+    {
+        title: 'Internal Developer Platforms (IDPs)',
+        slug: 'internal-developer-platforms',
+        tier: 'pillar',
+        category: 'Engineering & Architecture',
+        definition: `An Internal Developer Platform (IDP) is a self-service paved road built by Platform Engineering teams that allows developers to spin up environments, deploy code, and manage cloud resources without waiting for DevOps or infrastructure teams.\n\nBy 2026, constructing an IDP is mandatory for engineering scale. It abstracts away the massive underlying complexities of Kubernetes, CI/CD, and Terraform into a unified Golden Path, significantly reducing developer cognitive load.`,
+        whyItMatters: `IDPs unlock engineering velocity. They reduce onboarding time, slash deployment bottlenecks, and standardize security policies globally across the entire technology organization.`,
+        faqs: [{ question: 'What is the purpose of an IDP?', answer: 'To stop developers from having to understand 40 different infrastructure tools, allowing them to focus entirely on writing business logic while the IDP handles the plumbing.' }],
+        relatedTerms: ['devops', 'cicd', 'platform-engineering']
+    },
+    {
+        title: 'Synthetic Data',
+        slug: 'synthetic-data',
+        tier: 'pillar',
+        category: 'Data & Analytics',
+        definition: `Synthetic Data is information that is artificially generated by AI algorithms rather than collected from real-world events or users. It is designed to perfectly mimic the statistical properties of production data without containing any personally identifiable information (PII).\n\nIn 2026, the AI industry hit the "Data Wall" (running out of high-quality human text to train on). Synthetic data became the primary fuel for fine-tuning models, testing edge cases safely, and sharing datasets across borders without violating GDPR or HIPAA.`,
+        whyItMatters: `Synthetic Data eliminates the security risk of using production data in lower environments while enabling organizations to train specialized AI agents on edge-cases that rarely occur in real life.`,
+        faqs: [{ question: 'Is synthetic data as good as real data?', answer: 'Yes, and often better. It can be mathematically guaranteed to contain no bias, no PII, and perfectly represent edge-cases that you would otherwise have to wait years to collect organically.' }],
+        relatedTerms: ['ai-governance', 'machine-learning', 'data-security-posture-management']
+    },
+    {
+        title: 'AI Explainability Mandate',
+        slug: 'ai-explainability-mandate',
+        tier: 'pillar',
+        category: 'Security & Compliance',
+        definition: `An AI Explainability Mandate is a formal regulatory or corporate policy requiring that any decision made, influenced, or routed by an Artificial Intelligence system can be transparently audited, reasoned, and understood by a human operator.\n\nHistorically, neural networks were "black boxes". By 2026, aggressive consumer protection laws and enterprise risk committees mandated that if an AI denies a loan, flags a transaction, or routes a critical workflow, the engineering team must be able to prove exactly 'Why' mathematically.`,
+        whyItMatters: `Failing an Explainability Mandate results in immediate loss of compliance, heavy fines, and the forced shutdown of the offending AI agents. It is the core tenet of modern AI Risk Management.`,
+        faqs: [{ question: 'Can you explain how a neural network makes a decision?', answer: 'Increasingly, yes. Explainable AI (XAI) tools map the activation weights and prompt rationales (chain-of-thought) to create an audit log understandable by non-technical regulators.' }],
+        relatedTerms: ['ai-governance', 'responsible-ai', 'post-quantum-cryptography']
     }
 ];

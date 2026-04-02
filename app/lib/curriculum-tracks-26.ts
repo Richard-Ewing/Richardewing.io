@@ -1,78 +1,78 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks26Modules: Record<string, CurriculumModule> = {};
-const t26 = 'Track 26 — Multi-Agent Architectures';
+const t26 = 'Track 26 — AI-Native Internal Developer Platforms (IDPs)';
 
-tracks26Modules['multi-agent/26-1'] = m('26-1', 'The Semantic Router Paradigm', 'Replacing conditional if/else logic with dynamic classification nodes.', t26, 
-    ['Eliminate brittle conditionals', 'Deploy semantic routers'], [
-        l('Eradicating the IF Statement', 
+tracks26Modules['idps/26-1'] = m('26-1', 'The Collapse of DevOps Tool Sprawl', 'Abstracting cognitive load, platform engineering, paved roads.', t26, 
+    ['Eradicate infrastructure cognitive load', 'Deploy the Golden Path'], [
+        l('Developer Friction and The Golden Path', 
             [
-                'For fifty years, software engineering has relied entirely on rigid, deterministic `if/else` conditional trees. If a user inputs exactly the expected string, the logic branches. If the user misspells a word or phrases the intent slightly differently, the rigid conditional tree shatters and fails.', 
-                'In the modern Multi-Agent framework, we replace brittle regex conditionals entirely with a "Semantic Router." Incoming user intents are mathematically transformed into high-dimensional vectors and evaluated against an explicit multi-dimensional conceptual space.',
-                'This means you no longer program exact routing paths. You deploy an incredibly fast, highly optimized localized model purely tasked with categorizing the mathematical intent of the input, dynamically dispatching that payload to the correct specialized downstream sub-agent without utilizing a single line of hardcoded conditional logic.'
+                'For the last decade, the philosophy of "You build it, you run it" forced standard frontend and backend developers to possess deep, painful mastery of esoteric infrastructure layers like Kubernetes, Terraform, AWS IAM roles, and dense CI/CD pipelines. This resulted in epic cognitive overload, utterly destroying raw coding velocity.', 
+                'Platform Engineering directly opposes this via the Internal Developer Platform (IDP). The IDP is a heavily automated "Paved Road" or "Golden Path". An engineer requests a "Standard Web App", and the IDP autonomously provisions the exact GitHub repo, the strictly compliant Terraform state, the exact Kubernetes manifests, and the deployment pipelines instantly. No infrastructure knowledge required.',
+                'By 2026, the velocity ceiling of a company is purely restricted by the quality of its IDP. Forcing senior software engineers to write YAML configuration scripts is an unacceptable waste of corporate capital.'
             ],
             [
-                d('Deterministic Rigidity Tax', 'The immense developer time wasted writing infinite RegEx edge-cases for user spelling errors.', 'Annihilated via Vector routing'),
-                d('Semantic Dispatch Latency', 'The microsecond lag incurred by categorizing intents algorithmically.', 'Must be < 50ms locally')
+                d('Time to First Commit (Onboarding)', 'The total duration spanning a new engineer’s first day to their first production deployment.', '< 1 Day Mandatory Target'),
+                d('Infrastructure Cognitive Waste', 'The literal developer hours burned attempting to configure complex cloud networking instead of writing business logic.', 'Massively Eliminated')
             ], 
-            'Strip a massive, complicated conditional logic block out of an existing routing layer.', 
-            ['Identify a chatbot or heavy internal CLI wizard running on massive `Switch/Case` statements.', 'Replace the routing block with an explicit `SemanticRouter` implementation using FastEmbed.', 'Test the routing by submitting wildly misspelled, highly ambiguous text and observing the flawless mathematical distribution.'], 
+            'Audit the explicit manual infrastructure steps required to launch a "Hello World" microservice.', 
+            ['Track the exact number of JIRA tickets required for a developer to request a new Database table from DevOps.', 'Analyze the time delay of routing cloud-permission approvals.', 'Draft an architectural schema for a fully self-service UI template interface.'], 
             {
-                question: 'What is the massive architectural advantage of a Semantic Router over traditional programmatic conditionals?',
-                options: ['It compiles faster in Webpack', 'It categorizes raw intent mathematically, allowing it to correctly route highly ambiguous, misspelled, or uniquely phrased user inputs without requiring developers to constantly write infinite `if/else` edge cases', 'It uses less data in Postgres', 'It automatically creates UI buttons'],
+                question: 'What is the primary philosophical shift driving the adoption of Internal Developer Platforms (IDPs)?',
+                options: ['Developers need to learn advanced Unix networking', 'Software engineers should spend 99% of their time writing actual business logic; forcing them to manually configure massive, complicated Kubernetes deployment states is an atrocious waste of highly-paid cognitive bandwidth', 'It allows the company to use older servers', 'It prevents AI from replacing developers'],
                 correctIndex: 1,
-                explanation: 'A mathematical boundary understands meaning. An `if (text === "refund")` block only understands exact syntactic matching. Semantic routers understand intent.'
+                explanation: 'An IDP abstracts away all the painful infrastructure plumbing. The developer inputs code, and the IDP handles everything else required to securely launch it onto the internet.'
             }
         )
-    ], '/vault/curriculum/tracks/multi-agent/26-2', undefined, 'live'
+    ], '/vault/curriculum/tracks/idps/26-2', undefined, 'live'
 );
 
-tracks26Modules['multi-agent/26-2'] = m('26-2', 'Hierarchical Agent Guilds', 'Supervisor nodes, worker separation of concerns, inference loops.', t26, 
-    ['Separate reasoning from doing', 'Establish strict agent hierarchy'], [
-        l('The Division of Algorithmic Labor', 
+tracks26Modules['idps/26-2'] = m('26-2', 'Agentic Code Scaffolding', 'Autonomous repo creation, security linting, AI integration.', t26, 
+    ['Integrate autonomous security scanners', 'Execute AI pre-flight code reviews'], [
+        l('The AI-Native Platform Layer', 
             [
-                'A single monolithic LLM instructed to "Write code, run the code, check the database, and email the user" will inextricably fail. Just as a human developer becomes overwhelmed by massive simultaneous context switching, an LLM suffers devastating cognitive decline when forced to juggle wildly disparate tools and constraints simultaneously.', 
-                'Architectural dominance requires establishing "Hierarchical Agent Guilds." You deploy one explicit Supervisor Node responsible exclusively for maintaining the holistic roadmap. The Supervisor does not execute tasks; it commands specialized Worker Nodes.',
-                'Worker nodes possess extreme limitations. The "SQL Extraction" worker has no idea how to send an email; it solely knows database schemas. By strictly dividing the labor, you enforce separation of concerns, drastically dropping hallucination rates to zero.'
+                'A traditional IDP provisions the infrastructure correctly. An "AI-Native IDP" provisions the infrastructure and simultaneously primes the contextual intelligence required to continuously maintain it. When the platform generates a microservice, it automatically generates the hyper-specific AI context bounds for the repository.', 
+                'It instantly writes the `.cursorrules` file or the `copilot-instructions.md` file, strictly defining the precise architectural boundaries, linting styles, and API contract obligations natively into the repo prompt space.',
+                'Furthermore, it injects an autonomous "Pre-Flight Security Review Agent" directly into the CI/CD pipeline, guaranteeing that every line of code deployed from the Platform is fiercely audited for hallucinated bugs or insecure logic prior to human review.'
             ],
             [
-                d('Monolithic Task Failure Rate', 'The percentage of complex multi-step instructions that collapse mid-execution in a single agent.', '> 80% Failure Rate'),
-                d('Hierarchical Delegation Efficacy', 'The massive increase in accuracy achieved by confining agents to single-purpose schemas.', 'Sustained Excellence')
+                d('Prompt Context Priming rate', 'The percentage of new repositories instantly pre-configured with organizational AI context files.', 'Must be 100% via Platform'),
+                d('Agentic Pipeline Defect Catch', 'The total volume of critical code vulnerabilities intercepted by the IDP AI node before master-branch merge.', 'Highly Critical Security Layer')
             ], 
-            'Decouple an overloaded LLM prompt into an explicit Supervisor/Worker architecture.', 
-            ['Review an existing massive system prompt containing instructions for 4 different functional domains.', 'Extract those domains into 4 entirely distinct agent personas stripped of all irrelevant tools.', 'Code a rigid Supervisor loop (e.g. LangGraph) that delegates tasks to the workers sequentially.'], 
+            'Execute an AI ruleset injection directly into the IDP boilerplate templates.', 
+            ['Ensure every template generated by the platform team instantly contains a rigid markdown ruleset explicitly detailing how AI agents should interact with the stack.', 'Hook the repository creation event into an AI system prompting the exact constraints for future code generations.', 'Inject a mandatory AI review step into the scaffolding Github Action.'], 
             {
-                question: 'Why does cramming multiple functional capabilities into a single monolithic AI Agent severely degrade performance?',
-                options: ['It uses too much internet bandwidth', 'It induces massive cognitive decline within the model due to overlapping, heavily constrained instructions, resulting in severe hallucinations and mixed output formatting', 'It restricts the use of Javascript', 'It causes the server to overheat'],
+                question: 'What fundamentally differentiates an AI-Native IDP from a standard Developer Platform?',
+                options: ['It uses darker colors in the UI', 'It actively injects localized structural system prompts (`.cursorrules`) into newly built repositories, ensuring any coding agents subsequently utilized by the developer fundamentally understand the strict architectural constraints of the architecture', 'It requires using Python', 'It shuts off the servers at night'],
                 correctIndex: 1,
-                explanation: 'Just like heavily overloaded monolithic code functions, an overloaded prompt creates fragile execution flow. Separation of Concerns applies equally to Artificial Intelligence prompts.'
+                explanation: 'A platform doesn\'t just configure servers; it configures context. By seeding repositories with explicit rules engines, the platform mathematically bounds future AI coding agents.'
             }
         )
-    ], '/vault/curriculum/tracks/multi-agent/26-10', undefined, 'live'
+    ], '/vault/curriculum/tracks/idps/26-10', undefined, 'live'
 );
 
 for (let i = 3; i <= 10; i++) {
-    tracks26Modules[`multi-agent/26-${i}`] = m(`26-${i}`, `Advanced Swarm Protocols ${i}`, `Expansion module tracking deep multi-agent routing boundaries.`, t26, 
-        ['Optimize node communication', 'Calculate total swarm token spend', 'Establish deterministic execution barriers'], [
-            l(`Deep Swarm Architecture ${i}`, 
+    tracks26Modules[`idps/26-${i}`] = m(`26-${i}`, `Advanced Platform Ergonomics ${i}`, `Expansion module tracking deep platform engineering scaling systems.`, t26, 
+        ['Optimize Developer Experience (DX)', 'Eliminate JIRA ticket pipelines', 'Enforce Global Compliance'], [
+            l(`Deep IDP Abstractions ${i}`, 
                 [
-                    `Continuing the expansion into complex multi-agent swarms. Allowing multiple distinct narrow LLMs to debate, code, test, and merge operations asynchronously without human intervention.`, 
-                    `The executive strategy demands profound tracing over the inter-agent conversational loops. If a coding agent argues endlessly with a testing agent, the compounding inference bill will scale into infinity.`,
-                    `The architecture absolutely mandates hard deterministic stop bounds on recursive swarm debate cycles.`
+                    `Continuing the expansion into Platform Engineering and Developer Portals (like Backstage). The failure to treat internal engineering efficiency as a literal Tier-1 Product guarantees sluggish feature delivery.`, 
+                    `The executive strategy demands viewing the IDP as a product, and the internal developers as the hyper-critical customer. If the platform is harder to use than AWS console, the developers will violently reject it.`,
+                    `The architecture absolutely mandates establishing massive template catalogs to prevent the constant manual reinvention of standard microservice plumbing.`
                 ],
                 [
-                    d(`Inter-Agent Volatility Loop ${i}`, `The risk of multiple LLM nodes becoming trapped in an infinite recursive debate.`, `Mitigated via hard counters`),
-                    d(`Task Finality Optimization ${i}`, `The speed at which the final Supervisor signs off on the distributed package.`, `Sustained`)
+                    d(`Internal Net Promoter Score ${i}`, `The real-time metric tracking how effectively the IDP eliminates pain for the engineering staff.`, `Must track continuously`),
+                    d(`Shadow IT Evasion Rate ${i}`, `The percentage of developers actively bypassing the IDP to deploy manually.`, `Must crush to zero`)
                 ], 
-                `Architect stringent state machines enveloping internal agent dialogue mechanics.`, 
-                [`Integrate rigid cyclic limits within LangGraph loops.`, `Monitor the active token burn per agent conversation layer.`, `Force output termination after the 3rd iteration regardless of success metrics.`], 
+                `Architect stringent Self-Service workflows via backstage.`, 
+                [`Integrate massive software catalog tracking within the platform UI.`, `Monitor the deployment metrics of autonomous infrastructure pipelines.`, `Force rigorous abstraction over massive Terraform configs.`], 
                 {
-                    question: `Why must extreme limits be placed on the internal conversational depth of a Multi-Agent Swarm?`,
-                    options: [`They start to talk too fast`, `Multiple agents critiquing each other can easily fall into an infinite logical recursion ring, burning vast reserves of API capital without ever delivering a resolved outcome`, `It makes the architecture diagram too confusing`, `Because the cloud provider will terminate the account automatically`],
+                    question: `Why is an IDP considered a "Product" rather than just an IT operations ticket system?`,
+                    options: [`You sell it to other companies`, `Because its ultimate goal is maximizing the Developer Experience (DX) and velocity of the internal user—requiring product analytics, UX testing, and continuous feedback loops to ensure high adoption`, `Because it has an expensive logo`, `Because it requires a credit card to use`],
                     correctIndex: 1,
-                    explanation: `AI models don't get bored. If you instruct them to find perfection, they will argue forever. You must algorithmically mandate a strict stop condition to protect capital.`
+                    explanation: `Developers will completely abandon complicated, slow internal tools. Treating the IDP like a high-end consumer SaaS product is the only way to successfully scale its adoption.`
                 }
             )
-        ], i < 10 ? `/vault/curriculum/tracks/multi-agent/26-${i+1}` : undefined, undefined, 'live'
+        ], i < 10 ? `/vault/curriculum/tracks/idps/26-${i+1}` : undefined, undefined, 'live'
     );
 }
