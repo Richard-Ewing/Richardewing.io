@@ -5,6 +5,7 @@ import { frameworks } from '@/lib/data';
 import { tracks } from '@/app/lib/curriculum-tracks-ui';
 import { getSortedArticles } from '@/app/lib/blog-data';
 import { COMBAT_SEO_MATRIX } from '@/app/lib/combat-seo';
+import { CAREER_PATHS } from '@/app/lib/career-paths';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.richardewing.io';
@@ -44,7 +45,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
     }));
 
+    const careerPages: MetadataRoute.Sitemap = [
+        {
+            url: `${baseUrl}/careers`,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        ...CAREER_PATHS.map(path => ({
+            url: `${baseUrl}/careers/${path.slug}`,
+            changeFrequency: 'monthly' as const,
+            priority: 0.8,
+        }))
+    ];
+
     return [
+        ...careerPages,
         ...combatPages,
         ...glossaryPages,
         ...frameworkPages,

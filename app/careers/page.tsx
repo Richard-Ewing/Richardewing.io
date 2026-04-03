@@ -71,19 +71,10 @@ export default function DeepCareersHub() {
                         Master Neural-Symbolic reasoning architectures, tool-use logic limits, and the deterministic boundaries required to prevent hallucination explosions.
                     </p>
 
-                    <div className="space-y-4 mt-auto relative z-10">
-                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border-b border-white/5 pb-2">Mastery Curriculum</div>
-                        <Link href="/vault/curriculum/tracks?filter=ai-agent-economics" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-cyan-400 transition-colors">Track 13: AI Agent Economics</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-cyan-400 group-hover/link:translate-x-1 transition-all" />
-                        </Link>
-                        <Link href="/vault/curriculum/tracks?filter=28" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-cyan-400 transition-colors">Track 28: Agentic Process Automation</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-cyan-400 group-hover/link:translate-x-1 transition-all" />
-                        </Link>
-                        <Link href="/vault/curriculum/tracks?filter=23" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-cyan-400 transition-colors">Track 23: Neural-Symbolic System 2</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-cyan-400 group-hover/link:translate-x-1 transition-all" />
+                    <div className="mt-auto relative z-10 pt-4">
+                        <Link href="/careers/agentic-solutions-architect" className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 font-bold tracking-widest uppercase text-xs transition-colors border border-cyan-500/20">
+                            Explore Architect Path
+                            <ArrowRight size={14} />
                         </Link>
                     </div>
                 </GlowCard>
@@ -101,19 +92,10 @@ export default function DeepCareersHub() {
                         Govern the product roadmap as a fiduciary asset, measuring AI Unit Economics and mapping R&D spend directly to enterprise valuation.
                     </p>
 
-                    <div className="space-y-4 mt-auto relative z-10">
-                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border-b border-white/5 pb-2">Mastery Curriculum</div>
-                        <Link href="/vault/curriculum/tracks?filter=ai-product-economics" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-purple-400 transition-colors">Track 2: AI Product Economics</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-purple-400 group-hover/link:translate-x-1 transition-all" />
-                        </Link>
-                        <Link href="/vault/curriculum/tracks?filter=29" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-purple-400 transition-colors">Track 29: AI Supply Chain & GPU FinOps</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-purple-400 group-hover/link:translate-x-1 transition-all" />
-                        </Link>
-                        <Link href="/vault/curriculum/tracks?filter=30" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-purple-400 transition-colors">Track 30: AI Sovereignty & CAIO</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-purple-400 group-hover/link:translate-x-1 transition-all" />
+                    <div className="mt-auto relative z-10 pt-4">
+                        <Link href="/careers/ai-product-economist" className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 font-bold tracking-widest uppercase text-xs transition-colors border border-purple-500/20">
+                            Explore Economist Path
+                            <ArrowRight size={14} />
                         </Link>
                     </div>
                 </GlowCard>
@@ -130,19 +112,10 @@ export default function DeepCareersHub() {
                         The ultimate weapon against API vendor lock-in. Scale internal developer platforms (IDP), drastically cut API costs by deploying Small Language Models (SLMs) to the edge natively, and orchestrate Cloud Repatriation deployments.
                     </p>
 
-                    <div className="space-y-4 mt-auto relative z-10">
-                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border-b border-white/5 pb-2">Mastery Curriculum</div>
-                        <Link href="/vault/curriculum/tracks?filter=devops-economics" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-emerald-400 transition-colors">Track 5: DevOps & Platform Econ</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-emerald-400 group-hover/link:translate-x-1 transition-all" />
-                        </Link>
-                        <Link href="/vault/curriculum/tracks?filter=cloud-finops" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-emerald-400 transition-colors">Track 14: Cloud FinOps Frameworks</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-emerald-400 group-hover/link:translate-x-1 transition-all" />
-                        </Link>
-                        <Link href="/vault/curriculum/tracks?filter=27" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-emerald-400 transition-colors">Track 27: SLMs & Edge Intelligence</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-emerald-400 group-hover/link:translate-x-1 transition-all" />
+                    <div className="mt-auto relative z-10 pt-4">
+                        <Link href="/careers/platform-edge-engineer" className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 font-bold tracking-widest uppercase text-xs transition-colors border border-emerald-500/20">
+                            Explore Engineering Path
+                            <ArrowRight size={14} />
                         </Link>
                     </div>
                 </GlowCard>
@@ -159,15 +132,10 @@ export default function DeepCareersHub() {
                         Protect the enterprise against zero-day autonomous threats. Map Post-Quantum cryptographic deprecation costs, isolate AI sandbox privileges, and defend violently against multi-modal Prompt Injection vectors.
                     </p>
 
-                    <div className="space-y-4 mt-auto relative z-10 lg:grid lg:grid-cols-2 lg:gap-4 lg:space-y-0 xl:block xl:space-y-4">
-                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border-b border-white/5 pb-2 lg:col-span-2 xl:col-span-1">Mastery Curriculum</div>
-                        <Link href="/vault/curriculum/tracks?filter=24" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-red-400 transition-colors">Track 24: Threat Modeling Post-QA</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-red-400 group-hover/link:translate-x-1 transition-all" />
-                        </Link>
-                        <Link href="/vault/curriculum/tracks?filter=security-economics" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-red-400 transition-colors">Track 7: Security Margin Economics</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-red-400 group-hover/link:translate-x-1 transition-all" />
+                    <div className="mt-auto relative z-10 pt-4">
+                        <Link href="/careers/ai-security-fiduciary" className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-red-400/10 hover:bg-red-400/20 text-red-500 font-bold tracking-widest uppercase text-xs transition-colors border border-red-500/20">
+                            Explore Security Path
+                            <ArrowRight size={14} />
                         </Link>
                     </div>
                 </GlowCard>
@@ -184,15 +152,10 @@ export default function DeepCareersHub() {
                         Human organic data has been exhausted. Scale the walls of Model Collapse by building massive Synthetic Data generation pipelines, maintaining high-fidelity truth anchoring, and feeding domain-locked fine-tuning regimens.
                     </p>
 
-                    <div className="space-y-4 mt-auto relative z-10">
-                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border-b border-white/5 pb-2">Mastery Curriculum</div>
-                        <Link href="/vault/curriculum/tracks?filter=26" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-blue-400 transition-colors">Track 26: Synthetic Data Economics</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-blue-400 group-hover/link:translate-x-1 transition-all" />
-                        </Link>
-                        <Link href="/vault/curriculum/tracks?filter=data-economics" className="flex items-center justify-between group/link hover:bg-white/5 p-2 -mx-2 rounded-lg transition-colors">
-                            <span className="text-sm font-medium text-gray-300 group-hover/link:text-blue-400 transition-colors">Track 8: Data Wall & Analysis TCO</span>
-                            <ArrowRight size={14} className="text-zinc-600 group-hover/link:text-blue-400 group-hover/link:translate-x-1 transition-all" />
+                    <div className="mt-auto relative z-10 pt-4">
+                        <Link href="/careers/synthetic-data-architect" className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 font-bold tracking-widest uppercase text-xs transition-colors border border-blue-500/20">
+                            Explore Data Path
+                            <ArrowRight size={14} />
                         </Link>
                     </div>
                 </GlowCard>
