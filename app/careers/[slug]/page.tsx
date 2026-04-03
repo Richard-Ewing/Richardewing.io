@@ -164,7 +164,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     {track.description}
                                 </p>
                                 <div className="mt-auto space-y-3 relative z-10 w-full pt-4">
-                                    <Link href={`/vault/curriculum/tracks?filter=${track.title.toLowerCase().replace(/\s+/g, '-')}`} className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-white font-medium text-sm transition-all border border-white/10 hover:border-white/30">
+                                    <Link href={`/vault${track.modules && track.modules.length > 0 ? track.modules[0].href : '/curriculum/tracks'}`} className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-white font-medium text-sm transition-all border border-white/10 hover:border-white/30">
                                         Explore Track Details
                                         <ArrowRight size={14} className="text-zinc-400" />
                                     </Link>

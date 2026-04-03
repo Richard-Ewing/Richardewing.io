@@ -62,23 +62,23 @@ export const CAREER_PATHS: CareerPath[] = [
         seoKeywords: ['Generative UI', 'AI UX Design', 'Transient Interfaces', 'Dynamic Dashboards', 'LLM UI/UX', 'Structured Outputs']
     },
     {
-        slug: 'ma-technical-strategist',
-        title: 'M&A Technical Strategist',
-        manifestoTitle: 'The Value Extractor',
-        label: 'The Extractor',
+        slug: 'vp-engineering-economics',
+        title: 'VP of Engineering Economics',
+        manifestoTitle: 'The Metric Fiduciary',
+        label: 'The Fiduciary',
         iconName: 'LineChart',
         color: 'emerald',
         domain: 'Product & Economics',
-        description: 'Lead technical due diligence by modeling the underlying API debt, hallucination liability, and vendor lock-in of target AI startups.',
+        description: 'Bridge the massive chasm between engineering output and the CFO\'s spreadsheet. Govern R&D capital, ruthlessly trim technical insolvency, and translate APER to the board.',
         manifesto: [
-            'Private Equity and M&A vectors are saturated with AI startups boasting massive ARR, but hiding horrific underlying Unit Economics and API dependencies.',
-            'As an M&A Technical Strategist, your function is to bypass the pitch deck and audit the underlying AI architecture for "Orchestration Debt" and "Guardrail Taxes."',
-            'You quantify the difference between a highly-defensible fine-tuned model asset and a fragile OpenAI wrapper with zero long-term enterprise valuation (EV).'
+            'For too long, engineering has been a black box to the CFO. "Story Points" and "Velocity" mean nothing in the boardroom. The board only cares about one thing: Are we getting a return on our R&D Capital?',
+            'As the VP of Engineering Economics, your mandate is to translate cloud spend, developer productivity, and technical debt directly into financial reporting.',
+            'You measure Annualized Productivity per Engineer (APER). You enforce build-vs-buy constraints. You are the ultimate fiduciary of the engineering organization, ensuring the business extracts compounding value from every line of code deployed.'
         ],
-        glossaryTerms: ['technical-debt', 'ai-cogs', 'innovation-tax', 'technical-insolvency-date', 'cost-of-predictivity'],
-        curriculumKeywords: ['economics', 'm&a', 'due diligence', 'roi', 'valuation'],
-        seoMeta: 'Become an M&A AI Technical Strategist. Execute technical due diligence on AI startups, measure API dependency debt, and evaluate Enterprise Valuation (EV).',
-        seoKeywords: ['M&A Due Diligence AI', 'AI Startup Valuation', 'API Dependency Audit', 'Technical Debt M&A', 'Enterprise Valuation AI', 'AI Economics']
+        glossaryTerms: ['technical-debt', 'ai-cogs', 'innovation-tax', 'technical-insolvency-date', 'aper-metric', 'dora-metrics'],
+        curriculumKeywords: ['economics', 'roi', 'valuation', 'budget'],
+        seoMeta: 'Become a VP of Engineering Economics. Master APER, translate engineering metrics to the CFO, and govern enterprise R&D Capital investments.',
+        seoKeywords: ['VP of Engineering Economics', 'Engineering Economics', 'R&D Capital Management', 'CFO Engineering Metrics', 'APER metric', 'Tech Debt Valuation']
     },
     {
         slug: 'ai-implementation-leader',

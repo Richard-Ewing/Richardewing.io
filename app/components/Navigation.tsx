@@ -62,8 +62,9 @@ const Navigation = () => {
 
                             <Dropdown label="Careers & Transitions">
                                 <DropdownItem href="/careers" description="The Career Pathfinder Hub">Career Compass</DropdownItem>
-                                <DropdownItem href="/vault/curriculum/tracks?filter=platform-engineering" description="ICs, Managers, Architects">Platform Engineering</DropdownItem>
-                                <DropdownItem href="/vault/curriculum/tracks?filter=ai-product-economics" description="Breaking in and scaling up">Product Management</DropdownItem>
+                                <DropdownItem href="/careers/vp-engineering-economics" description="The Metric Fiduciary">VP of Engineering Economics</DropdownItem>
+                                <DropdownItem href="/careers/ai-product-economist" description="The Value Extractor">AI Product Economist</DropdownItem>
+                                <DropdownItem href="/careers/platform-edge-engineer" description="The Scaler">Platform Engineer</DropdownItem>
                             </Dropdown>
 
                             <Dropdown label="Enterprise Diagnostics">
