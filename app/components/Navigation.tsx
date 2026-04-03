@@ -60,6 +60,12 @@ const Navigation = () => {
                                 <DropdownItem href="/resources/ai-courses" description="Free AI & engineering courses">AI Courses</DropdownItem>
                             </Dropdown>
 
+                            <Dropdown label="Careers & Transitions">
+                                <DropdownItem href="/careers" description="The Career Pathfinder Hub">Career Compass</DropdownItem>
+                                <DropdownItem href="/vault/curriculum/tracks?filter=platform-engineering" description="ICs, Managers, Architects">Platform Engineering</DropdownItem>
+                                <DropdownItem href="/vault/curriculum/tracks?filter=ai-product-economics" description="Breaking in and scaling up">Product Management</DropdownItem>
+                            </Dropdown>
+
                             <Dropdown label="Enterprise Diagnostics">
                                 <Link
                                     href="/tools/board-room"
@@ -240,6 +246,12 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/glossary" onClick={onClose}>Glossary (420+ Terms)</MobileLink>
                         <MobileLink href="/blog" onClick={onClose}>Blog (105 Articles)</MobileLink>
                         <MobileLink href="/resources/ai-courses" onClick={onClose}>AI Courses (Free)</MobileLink>
+                    </div>
+
+                    {/* Careers Section */}
+                    <div className="space-y-3">
+                        <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-widest pl-2 mt-4 mb-2">Careers & Transitions</h3>
+                        <MobileLink href="/careers" onClick={onClose}>Career Pathfinder Hub</MobileLink>
                     </div>
 
                     {/* Tools Section */}
