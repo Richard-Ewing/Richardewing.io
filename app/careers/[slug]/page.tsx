@@ -4,28 +4,31 @@ import { CAREER_PATHS } from '../../lib/career-paths';
 import { tracks } from '../../lib/curriculum-tracks-ui';
 import { glossaryTerms } from '../../glossary/terms';
 import Link from 'next/link';
-import { ArrowRight, Cpu, Target, Blocks, LockKeyhole, Database, CheckCircle, Diamond, XCircle, TrendingUp, CalendarDays } from 'lucide-react';
+import { ArrowRight, Cpu, Target, Blocks, LockKeyhole, Database, CheckCircle, Diamond, XCircle, TrendingUp, CalendarDays, DollarSign, HelpCircle, PhoneCall } from 'lucide-react';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import ShineBorder from '../../components/magicui/shine-border';
 import { GlowCard } from '../../components/magicui/glow-card';
 import { Metadata } from 'next';
 
 const iconMap: Record<string, any> = {
-    Cpu, Target, Blocks, LockKeyhole, Database
+    Cpu, Target, Blocks, LockKeyhole, Database, LayoutTemplate: Cpu
 };
 
-// NextJS Dynamic Routing: generateStaticParams
 export async function generateStaticParams() {
     return CAREER_PATHS.map((path) => ({
         slug: path.slug,
     }));
 }
 
-// NextJS Dynamic Metadata
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const resolvedParams = await params;
     const path = CAREER_PATHS.find((p) => p.slug === resolvedParams.slug);
-    if (!path) return { title: 'Not Found' };
+
+    if (!path) {
+        return {
+            title: 'Path Not Found',
+        };
+    }
 
     return {
         title: `${path.title} | 2026 Executive Pathfinder`,
@@ -43,26 +46,45 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function CareerPathPage({ params }: { params: Promise<{ slug: string }> }) {
     const resolvedParams = await params;
-    const pathData = CAREER_PATHS.find((p) => p.slug === resolvedParams.slug);
+    const pathData = CAREER_PATHS.find((p) => p.slug === resolvedParams.slug) as any;
     if (!pathData) return notFound();
 
     const Icon = iconMap[pathData.iconName] || Cpu;
 
-    // Resolve Terms
     const resolvedTerms = pathData.glossaryTerms
-        .map(slug => glossaryTerms.find(t => t.slug === slug))
-        .filter(t => t !== undefined);
+        .map((slug: string) => glossaryTerms.find((t: any) => t.slug === slug))
+        .filter((t: any) => t !== undefined);
 
-    // Resolve Tracks (Basic keyword matching against track topics/title)
     const resolvedTracks = tracks.filter(track => {
         const trackText = (track.title + ' ' + track.subtitle + ' ' + track.description).toLowerCase();
-        return pathData.curriculumKeywords.some(kw => trackText.includes(kw.toLowerCase()));
+        return pathData.curriculumKeywords.some((kw: string) => trackText.includes(kw.toLowerCase()));
     });
+
+    let jsonLdFAQ = null;
+    if (pathData.faqs && pathData.faqs.length > 0) {
+        jsonLdFAQ = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": pathData.faqs.map((faq: any) => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                }
+            }))
+        };
+    }
 
     return (
         <div className="max-w-7xl w-full relative z-10 mx-auto px-4 pb-24">
+            {jsonLdFAQ && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFAQ) }}
+                />
+            )}
             
-            {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest pt-8">
                 <Link href="/" className="hover:text-white transition">Home</Link>
                 <span>/</span>
@@ -96,38 +118,59 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                         {pathData.description}
                     </p>
 
-                    {/* NEW KPI BAR */}
-                    {pathData.primaryMetrics && (
-                        <div className="mt-12 bg-black/40 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-xl relative z-10">
-                            <div className="flex items-center gap-3 mb-6 border-b border-white/5 pb-4">
-                                <TrendingUp className={`text-${pathData.color}-400 flex-shrink-0`} size={20} />
-                                <h3 className="text-xs sm:text-sm font-mono uppercase tracking-widest text-white font-bold">Primary Board KPIs</h3>
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-                                {pathData.primaryMetrics.map((metric: any, i: number) => (
-                                    <div key={i} className="border-l-2 border-white/10 pl-4 hover:border-white/30 transition-colors">
-                                        <div className={`text-${pathData.color}-300 font-bold mb-2`}>{metric.name}</div>
-                                        <div className="text-sm text-zinc-400 font-light leading-relaxed">{metric.description}</div>
+                    <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-6 relative z-10">
+                        {pathData.marketEconomics && (
+                            <div className="md:col-span-5 bg-gradient-to-br from-black to-[#0a0c10] border border-cyan-500/20 rounded-2xl p-6 md:p-8 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.1)] relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 p-32 bg-cyan-500/5 blur-[80px] pointer-events-none rounded-full group-hover:bg-cyan-500/10 transition-colors" />
+                                <div className="flex items-center gap-3 mb-6 border-b border-white/5 pb-4 relative z-10">
+                                    <DollarSign className="text-cyan-400 flex-shrink-0" size={20} />
+                                    <h3 className="text-xs sm:text-sm font-mono uppercase tracking-widest text-white font-bold">2026 Market Economics</h3>
+                                </div>
+                                <div className="space-y-6 relative z-10">
+                                    <div>
+                                        <div className="text-[10px] text-zinc-500 font-mono tracking-widest uppercase mb-1">Base Comp (Est)</div>
+                                        <div className="text-2xl font-black text-white font-grotesk">{pathData.marketEconomics.salary}</div>
                                     </div>
-                                ))}
+                                    <div className="flex items-center gap-3">
+                                        <div className="h-px bg-cyan-500/30 flex-grow" />
+                                        <div className="text-xs font-bold text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded border border-cyan-500/20 tracking-widest">{pathData.marketEconomics.growth}</div>
+                                    </div>
+                                    <div className="pt-2">
+                                        <div className="text-[10px] text-zinc-500 font-mono tracking-widest uppercase mb-2">The Monetization Gap</div>
+                                        <div className="text-sm text-zinc-300 italic border-l-2 border-cyan-500/30 pl-3 leading-relaxed">"{pathData.marketEconomics.gap}"</div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    )}
+                        )}
+
+                        {pathData.primaryMetrics && (
+                            <div className={`md:col-span-${pathData.marketEconomics ? '7' : '12'} bg-black/40 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-xl`}>
+                                <div className="flex items-center gap-3 mb-6 border-b border-white/5 pb-4">
+                                    <TrendingUp className={`text-${pathData.color}-400 flex-shrink-0`} size={20} />
+                                    <h3 className="text-xs sm:text-sm font-mono uppercase tracking-widest text-white font-bold">Primary Board KPIs</h3>
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                    {pathData.primaryMetrics.map((metric: any, i: number) => (
+                                        <div key={i} className="border-l-2 border-white/10 pl-4 hover:border-white/30 transition-colors">
+                                            <div className={`text-${pathData.color}-300 font-bold mb-2 text-sm`}>{metric.name}</div>
+                                            <div className="text-xs text-zinc-400 font-light leading-relaxed">{metric.description}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </ScrollReveal>
 
-            {/* TWO COLUMN CONTENT */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-                
-                {/* LEFT COL: Manifesto & 90 Days */}
                 <div className="lg:col-span-7 space-y-16">
-                    {/* MANIFESTO SECTION */}
                     <ScrollReveal>
                         <h2 className={`text-3xl font-black text-white mb-8 border-b border-white/10 pb-4 flex items-center gap-4`}>
                             The 2026 Mandate
                         </h2>
                         <div className="space-y-6 text-zinc-300 leading-relaxed text-lg font-light">
-                            {pathData.manifesto.map((paragraph, idx) => (
+                            {pathData.manifesto.map((paragraph: string, idx: number) => (
                                 <p key={idx} className="border-l-2 border-white/10 pl-6 py-2 hover:border-zinc-500 transition-colors">
                                     {paragraph}
                                 </p>
@@ -135,7 +178,6 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                         </div>
                     </ScrollReveal>
 
-                    {/* 90 DAY TRANSITION PROTOCOL */}
                     {pathData.first90Days && (
                         <ScrollReveal>
                             <h2 className={`text-3xl font-black text-white mb-8 border-b border-white/10 pb-4 flex items-center gap-4`}>
@@ -146,7 +188,6 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                             
                             <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
                                 
-                                {/* Day 30 */}
                                 <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                                     <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-black bg-${pathData.color}-500/20 text-${pathData.color}-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_15px_var(--tw-shadow-color)] shadow-${pathData.color}-500/20`}>
                                         <span className="font-mono text-xs font-bold">30</span>
@@ -156,7 +197,6 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                         <p className="text-zinc-400 text-sm leading-relaxed">{pathData.first90Days.day30}</p>
                                     </div>
                                 </div>
-                                {/* Day 60 */}
                                 <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                                     <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-black bg-${pathData.color}-500/20 text-${pathData.color}-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2`}>
                                         <span className="font-mono text-xs font-bold">60</span>
@@ -166,7 +206,6 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                         <p className="text-zinc-400 text-sm leading-relaxed">{pathData.first90Days.day60}</p>
                                     </div>
                                 </div>
-                                {/* Day 90 */}
                                 <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                                     <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-black bg-${pathData.color}-500 text-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_20px_var(--tw-shadow-color)] shadow-${pathData.color}-500/40`}>
                                         <span className="font-mono text-xs font-bold">90</span>
@@ -176,16 +215,21 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                         <p className="text-zinc-400 text-sm leading-relaxed">{pathData.first90Days.day90}</p>
                                     </div>
                                 </div>
-
+                            </div>
+                            
+                            <div className="mt-12 bg-[#0a0c10] border border-cyan-500/30 rounded-2xl p-8 hover:bg-white/5 transition-all text-center">
+                                <PhoneCall className="mx-auto text-cyan-400 mb-4" size={24} />
+                                <h4 className="text-white font-bold mb-2">Need a tailored 90-Day Architecture?</h4>
+                                <p className="text-zinc-400 text-sm mb-6 max-w-sm mx-auto">Book a 1-on-1 strategy audit to map this protocol directly to your unique enterprise constraints.</p>
+                                <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500/10 border border-cyan-500/50 text-cyan-400 text-xs font-mono font-bold tracking-widest uppercase rounded-lg hover:bg-cyan-500 hover:text-white transition-all">
+                                    Book Strategy Audit <ArrowRight size={14} />
+                                </Link>
                             </div>
                         </ScrollReveal>
                     )}
                 </div>
 
-                {/* RIGHT COL: Anti-Patterns & Lexicon */}
                 <div className="lg:col-span-5 space-y-8">
-                    
-                    {/* INTERVIEW ANTI-PATTERNS */}
                     {pathData.interviewAntiPatterns && (
                         <ScrollReveal>
                             <div className="bg-red-950/10 border border-red-500/20 rounded-2xl p-8 shadow-2xl relative overflow-hidden group">
@@ -216,7 +260,6 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                         </ScrollReveal>
                     )}
 
-                    {/* COMPETENCIES / REQUIRED KNOWLEDGE */}
                     <ScrollReveal>
                         <div className="bg-[#0a0c10] border border-white/10 rounded-2xl p-8 shadow-2xl">
                             <h3 className="text-xl font-bold text-white mb-2">Required Lexicon</h3>
@@ -242,7 +285,6 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                 </div>
             </div>
 
-            {/* CURRICULUM ARCHITECTURE */}
             <ScrollReveal>
                 <div className="mb-24 mt-12 bg-[#0a0c10]/50 border border-white/5 p-8 sm:p-12 rounded-[2.5rem]">
                     <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-12 border-b border-white/10 pb-8">
@@ -281,7 +323,26 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                 </div>
             </ScrollReveal>
 
-            {/* THE COMMITMENT FUNNEL */}
+            {/* NEW FAQ SECTION */}
+            {pathData.faqs && pathData.faqs.length > 0 && (
+                <ScrollReveal>
+                    <div className="mb-24">
+                        <div className="flex items-center gap-3 mb-8">
+                            <HelpCircle className="text-white" size={28} />
+                            <h2 className="text-3xl font-grotesk font-bold text-white">Transition FAQs</h2>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {pathData.faqs.map((faq: any, idx: number) => (
+                                <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors">
+                                    <h3 className="text-lg font-bold text-white mb-4 leading-tight">{faq.question}</h3>
+                                    <p className="text-zinc-400 text-sm leading-relaxed">{faq.answer}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </ScrollReveal>
+            )}
+
             <ScrollReveal>
                 <ShineBorder 
                     className="w-full bg-gradient-to-br from-[#0f1115] to-[#1a1c23] !border-0 rounded-3xl p-10 md:p-14 shadow-2xl backdrop-blur-xl flex flex-col items-center text-center mt-12"

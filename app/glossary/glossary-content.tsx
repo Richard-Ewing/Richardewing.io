@@ -1,14 +1,27 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { glossaryTerms, glossaryCategories } from './terms';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function GlossaryContent() {
     const termsByCategory = glossaryCategories.map(cat => ({
         category: cat,
         terms: glossaryTerms.filter(t => t.category === cat),
     })).filter(g => g.terms.length > 0);
+
+    const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({
+        [termsByCategory[0]?.category]: true // Open first category by default
+    });
+
+    const toggleCategory = (cat: string) => {
+        setOpenCategories(prev => ({
+            ...prev,
+            [cat]: !prev[cat]
+        }));
+    };
 
     return (
         <div className="max-w-6xl w-full relative z-10 mx-auto">
@@ -31,54 +44,79 @@ export default function GlossaryContent() {
                 </div>
             </ScrollReveal>
 
-            {termsByCategory.map((group, gi) => (
-                <ScrollReveal key={group.category} delay={gi * 100}>
-                    <div className="mb-16">
-                        <h2 className="text-2xl font-bold text-white mb-6 font-grotesk flex items-center gap-3">
-                            <span className="w-2 h-2 rounded-full bg-cyan-400" />
-                            {group.category}
-                        </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {group.terms.map(term => (
-                                <Link
-                                    key={term.slug}
-                                    href={`/glossary/${term.slug}`}
-                                    className="group block"
+            <div className="space-y-6">
+                {termsByCategory.map((group, gi) => {
+                    const isOpen = openCategories[group.category];
+                    return (
+                        <ScrollReveal key={group.category} delay={gi * 50}>
+                            <div className={`border ${isOpen ? 'border-cyan-500/30 bg-white/5' : 'border-white/10 bg-[#0a0c10]'} rounded-2xl overflow-hidden transition-all duration-300`}>
+                                {/* Accordion Header */}
+                                <button 
+                                    onClick={() => toggleCategory(group.category)}
+                                    className="w-full flex items-center justify-between p-6 sm:p-8 hover:bg-white/5 transition-colors text-left"
                                 >
-                                    <div className="card p-5 h-full hover:border-cyan-500/50 transition-all">
-                                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors font-grotesk">
-                                            {term.title}
-                                        </h3>
-                                        <p className="text-sm text-zinc-500 line-clamp-3">
-                                            {term.definition.slice(0, 160)}...
-                                        </p>
-                                        <div className="mt-3 text-xs font-bold uppercase tracking-widest text-cyan-500 group-hover:text-cyan-300">
-                                            Read Definition →
+                                    <div className="flex items-center gap-4">
+                                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-cyan-500/20 text-cyan-400' : 'bg-white/5 text-zinc-400'}`}>
+                                            <span className="font-bold font-mono">{group.terms.length}</span>
+                                        </div>
+                                        <h2 className={`text-2xl font-bold font-grotesk transition-colors ${isOpen ? 'text-white' : 'text-zinc-300'}`}>
+                                            {group.category}
+                                        </h2>
+                                    </div>
+                                    <div className={`shrink-0 transition-transform duration-300 ${isOpen ? 'text-cyan-400' : 'text-zinc-500'}`}>
+                                        {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
+                                    </div>
+                                </button>
+                                
+                                {/* Accordion Content */}
+                                <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                    <div className="overflow-hidden">
+                                        <div className="p-6 sm:p-8 pt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                            {group.terms.map(term => (
+                                                <Link
+                                                    key={term.slug}
+                                                    href={`/glossary/${term.slug}`}
+                                                    className="group block"
+                                                >
+                                                    <div className="card p-5 h-full bg-black/40 border border-white/5 hover:border-cyan-500/50 hover:bg-white/5 transition-all rounded-xl">
+                                                        <h3 className="text-sm font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors font-grotesk">
+                                                            {term.title}
+                                                        </h3>
+                                                        <p className="text-xs text-zinc-500 line-clamp-2 leading-relaxed">
+                                                            {term.definition.slice(0, 160)}...
+                                                        </p>
+                                                        <div className="mt-3 text-[10px] font-bold uppercase tracking-widest text-zinc-600 group-hover:text-cyan-400 transition-colors">
+                                                            Read Definition →
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            ))}
                                         </div>
                                     </div>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </ScrollReveal>
-            ))}
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                    );
+                })}
+            </div>
 
-            {/* Bottom CTA — currently missing! */}
-            <div className="text-center py-16 border-t border-white/10">
-                <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Need help applying these concepts?</h2>
-                <p className="text-zinc-400 mb-8 max-w-lg mx-auto">
-                    Our diagnostic tools put these definitions into practice — try one free.
+            {/* Bottom CTA */}
+            <div className="text-center py-20 mt-12 mb-12 relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-transparent to-cyan-950/20">
+                <div className="absolute top-0 right-0 w-full h-full bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
+                <h2 className="text-3xl font-grotesk font-black text-white mb-4">Master The Architecture</h2>
+                <p className="text-zinc-400 mb-8 max-w-lg mx-auto leading-relaxed">
+                    Our diagnostic tools put these definitions into direct, mathematically precise execution—evaluate your enterprise today.
                 </p>
-                <div className="flex flex-wrap justify-center gap-4">
+                <div className="flex flex-col sm:flex-row justify-center gap-4 px-6">
                     <Link
                         href="/tools/pdi"
-                        className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-cobalt rounded-lg text-white font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
+                        className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-cobalt rounded-xl text-white font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]"
                     >
                         Run Free PDI Assessment
                     </Link>
                     <Link
                         href="/advisory"
-                        className="px-8 py-4 border border-white/20 rounded-lg text-white font-bold uppercase tracking-widest text-sm hover:border-white/40 transition-colors"
+                        className="px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold uppercase tracking-widest text-xs hover:bg-white/10 transition-colors"
                     >
                         Book Advisory Session →
                     </Link>

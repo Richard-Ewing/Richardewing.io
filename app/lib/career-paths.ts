@@ -23,6 +23,8 @@ export type CareerPath = {
     primaryMetrics: { name: string; description: string }[];
     first90Days: { day30: string; day60: string; day90: string };
     interviewAntiPatterns: string[];
+    marketEconomics?: { salary: string; growth: string; gap: string };
+    faqs?: { question: string; answer: string }[];
 };
 
 export const CAREER_PATHS: CareerPath[] = [
@@ -59,7 +61,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Discussing 'Agile workflows' and 'User Stories' instead of Margin Preservation.",
             "Valuing the capability of the AI over the mathematical ROAI (Return on AI).",
             "Failing to understand the difference between CapEx (building a model) and OpEx (API inference taxes)."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$190,000 - $310,000",
+        "growth": "+240% YoY",
+        "gap": "Traditional PMs write stories; Economists model AI token ROI. The difference is $150k in base salary."
+},
+        faqs: [
+        {
+                "question": "How do I transition from a traditional PM?",
+                "answer": "Stop focusing on user stories. Learn how to calculate AI Unit Economics (AUEB) and validate feature-level inference costs against MRR."
+        },
+        {
+                "question": "Do I need to know how to code?",
+                "answer": "No, but you must understand the mathematical difference between caching, RAG retrieval costs, and frontier model API taxes."
+        }
+]
     },
     {
         slug: 'generative-ui-ux-architect',
@@ -93,7 +110,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Focusing your portfolio on static pixel-perfect mockups rather than dynamic JSON state rendering.",
             "Not understanding how a context window directly controls a conditional React flow.",
             "Designing without constraints for LLM latency (failing to use skeletons or streaming chunk responses)."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$180,000 - $290,000",
+        "growth": "+185% YoY",
+        "gap": "Figma mockups are commoditized. Architecting structured JSON outputs that render dynamically is a hyper-premium skill."
+},
+        faqs: [
+        {
+                "question": "Is Figma dead?",
+                "answer": "Static design is dead. You need to design design systems that LLMs can dynamically assemble based on user intent."
+        },
+        {
+                "question": "What is a transient interface?",
+                "answer": "A UI that does not exist until the user prompts it, rendered purely via structured output bindings from an SLM/LLM."
+        }
+]
     },
     {
         slug: 'vp-engineering-economics',
@@ -127,7 +159,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Bringing up 'Story Points' or 'Velocity' as measures of success to board-level stakeholders.",
             "Displaying an inability to read a basic balance sheet or understand EBITDA impact.",
             "Advocating for a massive rewrite ('Bankruptcy') without a mathematical TCO (Total Cost of Ownership) justification."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$280,000 - $450,000+",
+        "growth": "+120% YoY",
+        "gap": "Standard VPs focus on velocity. Economic VPs focus on R&D Capital Return (APER). The latter talks to the Board."
+},
+        faqs: [
+        {
+                "question": "Why does APER matter more than DORA?",
+                "answer": "DORA measures speed. APER (Annualized Productivity per Engineer) measures financial value. The CFO only understands dollars."
+        },
+        {
+                "question": "How do I quantify Technical Debt?",
+                "answer": "Use the PDI (Principal Debt Index) framework to map legacy architectural friction into an explicit innovation tax dollar amount."
+        }
+]
     },
     {
         slug: 'ai-implementation-leader',
@@ -161,7 +208,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Treating an AI migration like a standard ERP deployment; failing to account for model hallucination risks.",
             "Ignoring the massive cultural friction and employee fear of replacement.",
             "Failing to articulate the specific security policies required to clear Infosec hurdles for LLM adoption."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$200,000 - $320,000",
+        "growth": "+210% YoY",
+        "gap": "General project managers are being automated out. Leaders who can cross domains (Legal, Sec, Eng) to deploy AI command massive premiums."
+},
+        faqs: [
+        {
+                "question": "What is the hardest part of AI adoption?",
+                "answer": "It is not the technology. It is decommissioning legacy SaaS contracts and fighting the culture war of \"Shadow AI\"."
+        },
+        {
+                "question": "Who do I report to?",
+                "answer": "Typically the CTO or Chief Strategy Officer. You are running a PMO specifically targeted at replacing human abstraction with Agentic execution."
+        }
+]
     },
 
     // --- Engineering & Infrastructure ---
@@ -197,7 +259,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Bragging about writing boilerplate 'prompts' instead of architecting deterministic semantic routing.",
             "Displaying ignorance of 'infinite loop' agentic vulnerabilities and API billing exhaustion.",
             "Believing an LLM should directly execute SQL mutations on a production database."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$220,000 - $350,000",
+        "growth": "+310% YoY",
+        "gap": "Writing microservices is a commodity. Orchestrating autonomous agents with zero-trust sandboxing is the rarest capability in tech."
+},
+        faqs: [
+        {
+                "question": "What is Agentic Process Automation?",
+                "answer": "Moving from human-in-the-loop workflows to systems where autonomous agents evaluate context, select tools, and execute autonomously."
+        },
+        {
+                "question": "How do you prevent agentic infinite loops?",
+                "answer": "By constructing deterministic kill-switches and rigid semantic gating before any agent interacts with a mutable database."
+        }
+]
     },
     {
         slug: 'platform-edge-engineer',
@@ -231,7 +308,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Over-indexing on AWS/GCP proprietary managed services rather than open-weight, hardware-agnostic deployments.",
             "Displaying an inability to calculate the exact hardware VRAM required to load a quantized 8B parameter model.",
             "Focusing on microservice orchestration (K8s) without understanding model weight orchestration."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$190,000 - $280,000",
+        "growth": "+190% YoY",
+        "gap": "Cloud deployment is automated. Deploying custom SLMs to edge devices to bypass massive API egress costs is the massive ROI play."
+},
+        faqs: [
+        {
+                "question": "Why are Small Language Models (SLMs) important?",
+                "answer": "To escape the crushing API token costs of GPT-4, you deploy 8B parameter models locally. This requires extreme FinOps architecture."
+        },
+        {
+                "question": "What is an Internal Developer Platform (IDP)?",
+                "answer": "A unified infrastructure layer that abstracts the complexity of RAG, Vector DBs, and Edge deployment away from standard feature engineers."
+        }
+]
     },
     {
         slug: 'agentic-devops-engineer',
@@ -265,7 +357,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Applying legacy CI/CD unit testing mentalities (pass/fail) to non-deterministic semantic models.",
             "Not understanding the extreme memory constraints or batch-processing math required in GPU inference.",
             "Ignoring the specific network topography required for massive RAG retrieval architectures."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$180,000 - $300,000",
+        "growth": "+160% YoY",
+        "gap": "Standard CI/CD fails against non-deterministic AI weights. Architecting LLMOps caching structures is a mandatory transition."
+},
+        faqs: [
+        {
+                "question": "What is Semantic Caching?",
+                "answer": "Intercepting redundant identical LLM queries at the gateway (e.g., via Redis) to instantly bypass expensive model inference computations."
+        },
+        {
+                "question": "How do you deploy model weights?",
+                "answer": "Unlike standard codebase deployment, model weights are massive binaries requiring distinct distribution architectures (like BitTorrent-style edge delivery)."
+        }
+]
     },
     {
         slug: 'cloud-repatriation-architect',
@@ -299,7 +406,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Failing to mathematically articulate exactly at what token-volume scale the bare-metal CapEx line crosses the Cloud OpEx line.",
             "Being afraid of 'rack space and cooling' realities of physical data center logistics.",
             "Advocating for 100% repatriation rather than a strategic hybrid architecture."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$240,000 - $380,000",
+        "growth": "+140% YoY",
+        "gap": "Hyperscaler dependency is bleeding enterprise margin. Architects who can mathematically justify the CapEx of Bare-Metal GPU clusters are incredibly valuable."
+},
+        faqs: [
+        {
+                "question": "When does Cloud Repatriation make sense?",
+                "answer": "When your continuous batch-inference volume creates an OpEx (API/Cloud bill) that exceeds the 36-month CapEx depreciation of raw server racks."
+        },
+        {
+                "question": "Is on-premise coming back?",
+                "answer": "Yes. Due to data sovereignty laws (EU AI Act) and catastrophic inference costs, hybrid-local architecture is the definitive 2026 enterprise strategy."
+        }
+]
     },
 
     // --- Security & Governance ---
@@ -335,7 +457,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Treating a 'Prompt Injection' like a classic SQL Injection that can be easily solved with a Regex filter.",
             "Overcommitting to algorithmic detection models instead of deterministic sandboxing infrastructure.",
             "Talking about theoretical AI doom rather than actionable compliance frameworks like the EU AI Act."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$250,000 - $450,000",
+        "growth": "+220% YoY",
+        "gap": "WAF rules do not stop Prompt Injections. CISOs who understand the blast radius of autonomous agent hijacking dictate board strategy."
+},
+        faqs: [
+        {
+                "question": "Wait, what exactly is the Agentic Blast Radius?",
+                "answer": "The mathematical calculation of maximum financial and data loss if an autonomous agent is hijacked via malicious prompt injection and executes unverified APIs."
+        },
+        {
+                "question": "Can regular security tools protect LLMs?",
+                "answer": "No. They cannot parse semantic hallucination or stochastic prompt bypasses. You must build deterministic sandboxes around probabilistic outputs."
+        }
+]
     },
     {
         slug: 'ai-governance-director',
@@ -369,7 +506,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Discussing ethics purely in abstraction rather than translating ethics into executable code blocks and hard liability risk.",
             "Evidencing no knowledge of global regulatory frameworks like the evolving mandates of the EU AI Act.",
             "Believing governance relies on 'asking employees to be careful' instead of implementing hard system guardrails."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$200,000 - $350,000",
+        "growth": "+280% YoY",
+        "gap": "AI policy writing is cheap. Engineering automated algorithmic bias pipelines that halt deployment per the EU AI Act commands massive value."
+},
+        faqs: [
+        {
+                "question": "What is the EU AI Act?",
+                "answer": "The global standard for AI regulation. If you deploy a \"High-Risk\" workflow without strict algorithmic auditing, fines can reach 7% of global turnover."
+        },
+        {
+                "question": "How do I enforce governance?",
+                "answer": "By removing humans. You implement automated Data Lineage tagging and compliance check-gates directly into the git commit/CI phase."
+        }
+]
     },
     {
         slug: 'post-qa-verification-engineer',
@@ -403,7 +555,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Proposing standard Cypress or Selenium tests to govern raw generative text outputs.",
             "Failing to articulate how 'LLM-as-a-Judge' architectures are uniquely distinct from traditional programmatic assertions.",
             "Ignoring the exorbitant cost mathematics of running massive model Evals on every single PR commit."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$160,000 - $250,000",
+        "growth": "+150% YoY",
+        "gap": "Manual unit testing is defunct for LLMs. Engineering dynamic LLM-as-a-Judge Eval harnesses is the new verification paradigm."
+},
+        faqs: [
+        {
+                "question": "Why don't normal unit tests work?",
+                "answer": "Because generative models are non-deterministic. A Boolean True/False assertion fails when an LLM returns 10 valid but uniquely phrased responses."
+        },
+        {
+                "question": "What is LLM-as-a-Judge?",
+                "answer": "Using a massive frontier model (like GPT-4) to read, score, and grade the outputs of your cheaper production models against a rubric."
+        }
+]
     },
     {
         slug: 'shadow-ai-remediation-specialist',
@@ -437,7 +604,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Believing the solution is simply to 'ban ChatGPT' without providing an enterprise-grade internal equivalent.",
             "Misunderstanding the difference between Enterprise API retention models and standard consumer GUI data usage rights.",
             "Underestimating the sheer ingenuity developers will use to bypass network blocks to get their AI tools back."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$180,000 - $280,000",
+        "growth": "+175% YoY",
+        "gap": "Blocking ChatGPT is easy. Architecting internal, zero-retention safe havens to stop Dark IP leakage is incredibly complex."
+},
+        faqs: [
+        {
+                "question": "What is Shadow AI?",
+                "answer": "Employees bypassing governed IT systems to paste highly proprietary enterprise data directly into public foundational models."
+        },
+        {
+                "question": "How do we stop it?",
+                "answer": "Not by just blocking IP addresses. You must deploy an enterprise-tier internal gateway that provides the utility employees want, wrapped in zero-retention compliance."
+        }
+]
     },
 
     // --- Data & AI Foundations ---
@@ -473,7 +655,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Failing to understand the concept of 'Model Collapse' (training models on model output recursively).",
             "Viewing data engineering purely as a storage problem (data lakes) rather than an algorithmic intelligence pipeline.",
             "Believing LLMs are magic and generate 'new insight' rather than simply interpolating their training boundaries."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$200,000 - $330,000",
+        "growth": "+290% YoY",
+        "gap": "Organic data is exhausted. Generating high-fidelity semantic data pipelines to bypass the Model Collapse wall is the next frontier."
+},
+        faqs: [
+        {
+                "question": "What is Model Collapse?",
+                "answer": "When an AI model trains on data generated by an AI model, the dimensional distribution collapses, and the model degrades into hallucinating sludge."
+        },
+        {
+                "question": "Why do we need synthetic data?",
+                "answer": "For edge cases. You cannot naturally find enough organic data representing a 0.01% anomaly, so you programmatically generate it to fine-tune the model."
+        }
+]
     },
     {
         slug: 'prompt-engineering-lead',
@@ -507,7 +704,22 @@ export const CAREER_PATHS: CareerPath[] = [
             "Showing off 'cool tricks' to bypass filters rather than demonstrating programmatic, version-controlled architecture.",
             "Displaying an inability to differentiate between zero-shot, few-shot, and Chain-of-Thought (CoT) structures deeply.",
             "Demonstrating no awareness of the token-economics (financial cost) associated with their massive prompts."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$180,000 - $300,000",
+        "growth": "+230% YoY",
+        "gap": "Basic prompt writing is dead. Architecting System-2 multi-shot contextual chains and managing Prompt Registries is engineering."
+},
+        faqs: [
+        {
+                "question": "Isn't Prompt Engineering just talking to an AI?",
+                "answer": "No. Large-scale systemic prompting requires programming conditional logic trees, managing token-compression ratios, and executing algorithmic A/B testing."
+        },
+        {
+                "question": "What is a Prompt Registry?",
+                "answer": "Treating structural prompts like code repositories. Version control, latency tracing, and dependency mapping for every system-level LLM call."
+        }
+]
     },
     {
         slug: 'agentic-knowledge-architect',
@@ -541,6 +753,21 @@ export const CAREER_PATHS: CareerPath[] = [
             "Relying completely on simple recursive character-splitting for RAG without understanding the lethal effect on semantic meaning.",
             "Assuming RAG is a solved problem that just requires buying Pinecone and dropping text into it.",
             "Demonstrating zero understanding of 'Hybrid Search' and relying purely on dense cosine similarity for strict part-number inquiries."
-        ]
+        ],
+        marketEconomics: {
+        "salary": "$190,000 - $290,000",
+        "growth": "+250% YoY",
+        "gap": "Legacy ETL implies tabular data. Architecting hybrid semantic vector graphs determines if RAG outputs hallucinate or succeed."
+},
+        faqs: [
+        {
+                "question": "Why do RAG pipelines fail?",
+                "answer": "Because of naive chunking strategies that destroy semantic meaning before the text is even embedded into the vector database."
+        },
+        {
+                "question": "What is Hybrid Search?",
+                "answer": "Combining standard sparse keyword search (BM25) with dense vector search (Cosine Similarity) over the Knowledge Graph to achieve absolute deterministic retrieval."
+        }
+]
     }
 ];
