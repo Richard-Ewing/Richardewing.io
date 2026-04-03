@@ -140,6 +140,11 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                         <div className="text-sm text-zinc-300 italic border-l-2 border-cyan-500/30 pl-3 leading-relaxed">"{pathData.marketEconomics.gap}"</div>
                                     </div>
                                 </div>
+                                <div className="mt-8 pt-4 border-t border-cyan-500/10">
+                                    <p className="text-[9px] text-cyan-500/60 font-mono uppercase tracking-widest leading-relaxed">
+                                        *Base compensation figures represent aggregate On-Target Earnings (OTE) extrapolated for Tier-1 technology hubs (SF, NYC, London). Actual bandwidths fluctuate based on geographic latency and discrete remote equity negotiations.
+                                    </p>
+                                </div>
                             </div>
                         )}
 
