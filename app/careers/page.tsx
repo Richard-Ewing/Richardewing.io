@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Code2, Network, ShieldAlert, Cpu, Activity, Zap, CheckCircle, TrendingUp, Target, Database, Blocks, Diamond, Lock, LockKeyhole, CpuIcon } from 'lucide-react';
+import { ArrowRight, Sparkles, Code2, Network, ShieldAlert, Cpu, Activity, Zap, CheckCircle, TrendingUp, Target, Database, Blocks, Diamond, Lock, LockKeyhole } from 'lucide-react';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
 import ShineBorder from '../components/magicui/shine-border';
@@ -62,7 +62,7 @@ export default function DeepCareersHub() {
                 <GlowCard className="p-8 h-full flex flex-col group relative overflow-hidden" glowColor="cyan">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-bl-[100px] pointer-events-none transition-all group-hover:bg-cyan-500/10" />
                     <div className="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/20 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
-                        <CpuIcon className="text-cyan-400" size={28} />
+                        <Cpu className="text-cyan-400" size={28} />
                     </div>
                     <div className="inline-block px-2 py-1 mb-3 rounded text-[9px] font-mono font-bold text-cyan-400 uppercase tracking-widest bg-cyan-400/10 border border-cyan-400/20 self-start">The Orchestrator</div>
                     <h3 className="text-2xl font-bold text-white mb-3">Agentic Solutions Architect</h3>
@@ -219,7 +219,7 @@ export default function DeepCareersHub() {
                                 <div className="w-12 h-12 rounded-xl bg-zinc-800/50 flex items-center justify-center mb-6">
                                     <Activity className="text-zinc-400" size={24} />
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-3">Discovery (Top Funnel)</h3>
+                                <h3 className="text-xl font-bold text-white mb-3">Discovery</h3>
                                 <p className="text-sm text-zinc-400 mb-8 leading-relaxed">Assimilate the dialect of Engineering Economics. Required reading before stepping into any VP or Director-level scenario.</p>
                                 
                                 <ul className="space-y-4 mb-8">
@@ -257,7 +257,7 @@ export default function DeepCareersHub() {
                                 <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6 border border-indigo-500/30">
                                     <Diamond className="text-indigo-400" size={24} />
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-3">The Vault (Middle Funnel)</h3>
+                                <h3 className="text-xl font-bold text-white mb-3">The Vault</h3>
                                 <p className="text-sm text-zinc-300 mb-8 leading-relaxed font-medium">Over 400+ specific economic frameworks, AI sizing calculators, and board-ready deliverables. The fastest route to promotion.</p>
                                 
                                 <ul className="space-y-4 mb-8">
@@ -282,7 +282,7 @@ export default function DeepCareersHub() {
                                 </ul>
                                 
                                 <div className="mt-auto pt-4 relative z-20 text-center">
-                                    <Link href="/doctrine" className="inline-block w-full py-3 px-6 bg-white text-black font-bold text-sm tracking-widest uppercase rounded-lg hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20">
+                                    <Link href="/api/buy/all_access_pass" className="inline-block w-full py-3 px-6 bg-white text-black font-bold text-sm tracking-widest uppercase rounded-lg hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20">
                                         Unlock The Vault
                                     </Link>
                                 </div>
@@ -298,7 +298,7 @@ export default function DeepCareersHub() {
                                 <div className="w-12 h-12 rounded-xl bg-red-900/30 flex items-center justify-center mb-6 border border-red-500/20">
                                     <ShieldAlert className="text-[var(--accent-crimson)]" size={24} />
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-3">Assessment (Bottom Funnel)</h3>
+                                <h3 className="text-xl font-bold text-white mb-3">Assessment</h3>
                                 <p className="text-sm text-zinc-400 mb-8 leading-relaxed">Once you understand the math, you must prove judgment. Prove your fiduciary responsibility before touching multi-million dollar R&D budgets.</p>
                                 
                                 <ul className="space-y-4 mb-8">
