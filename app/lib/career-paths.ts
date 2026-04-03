@@ -19,6 +19,10 @@ export type CareerPath = {
     seoMeta: string;
     seoKeywords: string[];
     domain: 'Engineering & Infrastructure' | 'Product & Economics' | 'Security & Governance' | 'Data & AI Foundations';
+    // --- NEW ENRICHMENT FOR 90 DAY TRANSITION ---
+    primaryMetrics: { name: string; description: string }[];
+    first90Days: { day30: string; day60: string; day90: string };
+    interviewAntiPatterns: string[];
 };
 
 export const CAREER_PATHS: CareerPath[] = [
@@ -40,7 +44,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['ai-cogs', 'innovation-tax', 'cost-of-delay', 'technical-insolvency-date', 'ai-assisted-development', 'dora-metrics'],
         curriculumKeywords: ['finops', 'pricing', 'economics', 'roi', 'cogs'],
         seoMeta: 'Transition to an AI Product Economist. Master AI Unit Economics, inference cost modeling, and govern the generative product roadmap as a fiduciary asset.',
-        seoKeywords: ['AI Product Economist', 'AI PM', 'AI product management', 'AI unit economics', 'LLM feature pricing', 'API tracking', 'AUEB']
+        seoKeywords: ['AI Product Economist', 'AI PM', 'AI product management', 'AI unit economics', 'LLM feature pricing', 'API tracking', 'AUEB'],
+        primaryMetrics: [
+            { name: "AUEB Ratio", description: "AI Unit Economics Benchmark: AI COGS relative to Monthly Recurring Revenue." },
+            { name: "Cost of Predictivity", description: "The margin penalty paid to ensure determinism over hallucination." },
+            { name: "Inference-to-Conversion Rate", description: "How effectively raw token generation converts to user action." }
+        ],
+        first90Days: {
+            day30: "Audit the current feature backlog and mercilessly cull any roadmap item that lacks a deterministic Unit Economics model.",
+            day60: "Map the exact token pricing overhead against customer LTV, identifying which features bleed OPEX.",
+            day90: "Present a board-ready executive dashboard demonstrating a 15% reduction in API COGS while maintaining product feature parity."
+        },
+        interviewAntiPatterns: [
+            "Discussing 'Agile workflows' and 'User Stories' instead of Margin Preservation.",
+            "Valuing the capability of the AI over the mathematical ROAI (Return on AI).",
+            "Failing to understand the difference between CapEx (building a model) and OpEx (API inference taxes)."
+        ]
     },
     {
         slug: 'generative-ui-ux-architect',
@@ -59,7 +78,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['ai-inference', 'developer-experience', 'technical-debt'],
         curriculumKeywords: ['product', 'design', 'generative ui', 'ux', 'dashboard'],
         seoMeta: 'Become a Generative UI/UX Architect in 2026. Design transient, on-the-fly user interfaces powered by structured LLM outputs and dynamic intent.',
-        seoKeywords: ['Generative UI', 'AI UX Design', 'Transient Interfaces', 'Dynamic Dashboards', 'LLM UI/UX', 'Structured Outputs']
+        seoKeywords: ['Generative UI', 'AI UX Design', 'Transient Interfaces', 'Dynamic Dashboards', 'LLM UI/UX', 'Structured Outputs'],
+        primaryMetrics: [
+            { name: "Time-to-Intent (TTI)", description: "How quickly a user's raw prompt transforms into an actionable state machine." },
+            { name: "UI Hallucination Rate", description: "Frequency of generative state failure causing a broken or unusable component." },
+            { name: "Friction Tax", description: "The amount of non-generative clicks required to override an incorrect dynamic screen." }
+        ],
+        first90Days: {
+            day30: "Deconstruct the legacy design system into atomic, dynamically orchestratable JSON components.",
+            day60: "Prototype a System-2 UI loop where a Small Language Model (SLM) strictly routes UX state changes without hallucination.",
+            day90: "Deploy the first 'Transient Dashboard' that eliminates at least 3 static configuration screens, increasing user intent velocity by 300%."
+        },
+        interviewAntiPatterns: [
+            "Focusing your portfolio on static pixel-perfect mockups rather than dynamic JSON state rendering.",
+            "Not understanding how a context window directly controls a conditional React flow.",
+            "Designing without constraints for LLM latency (failing to use skeletons or streaming chunk responses)."
+        ]
     },
     {
         slug: 'vp-engineering-economics',
@@ -78,7 +112,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['technical-debt', 'ai-cogs', 'innovation-tax', 'technical-insolvency-date', 'aper-metric', 'dora-metrics'],
         curriculumKeywords: ['economics', 'roi', 'valuation', 'budget'],
         seoMeta: 'Become a VP of Engineering Economics. Master APER, translate engineering metrics to the CFO, and govern enterprise R&D Capital investments.',
-        seoKeywords: ['VP of Engineering Economics', 'Engineering Economics', 'R&D Capital Management', 'CFO Engineering Metrics', 'APER metric', 'Tech Debt Valuation']
+        seoKeywords: ['VP of Engineering Economics', 'Engineering Economics', 'R&D Capital Management', 'CFO Engineering Metrics', 'APER metric', 'Tech Debt Valuation'],
+        primaryMetrics: [
+            { name: "Annualized Productivity per Engineer (APER)", description: "The core financial return generated per engineering headcount." },
+            { name: "Technical Insolvency Date", description: "The projected quarter where maintenance OPEX exceeds total revenue due to compounding Tech Debt." },
+            { name: "Innovation Tax", description: "The percentage of sprint capacity burned on keeping legacy dependencies alive." }
+        ],
+        first90Days: {
+            day30: "Execute a merciless PDI (Principal Debt Index) audit across all engineering verticals to map hidden liabilities.",
+            day60: "Convert existing DORA metrics and arbitrary velocity points into a strict dollar-value APER dashboard for the executive team.",
+            day90: "Align the CFO and CTO on a CapEx/OpEx classification grid, proving a strategic reduction in the Innovation Tax."
+        },
+        interviewAntiPatterns: [
+            "Bringing up 'Story Points' or 'Velocity' as measures of success to board-level stakeholders.",
+            "Displaying an inability to read a basic balance sheet or understand EBITDA impact.",
+            "Advocating for a massive rewrite ('Bankruptcy') without a mathematical TCO (Total Cost of Ownership) justification."
+        ]
     },
     {
         slug: 'ai-implementation-leader',
@@ -97,7 +146,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['technical-debt', 'maintenance-load', 'cost-of-delay', 'ai-assisted-development'],
         curriculumKeywords: ['leadership', 'strategy', 'management', 'roi', 'pm'],
         seoMeta: 'Transition into an AI Implementation Leader. Manage the enterprise PMO migration from legacy tech stacks to autonomous Agentic ecosystems.',
-        seoKeywords: ['AI Implementation', 'Enterprise AI Migration', 'AI PMO', 'Legacy Tech Migration', 'Agentic Workflows', 'Change Management AI']
+        seoKeywords: ['AI Implementation', 'Enterprise AI Migration', 'AI PMO', 'Legacy Tech Migration', 'Agentic Workflows', 'Change Management AI'],
+        primaryMetrics: [
+            { name: "SaaS Decommission Velocity", description: "The rate at which legacy vendor contracts are eliminated by internal Agentic execution." },
+            { name: "Cross-Functional Friction", description: "The measured operational drag between Legal, Security, and Engineering during AI adoption." },
+            { name: "Integration Debt Accrual", description: "The penalty paid for bolting AI onto unoptimized, decoupled legacy databases." }
+        ],
+        first90Days: {
+            day30: "Map the entire constellation of legacy SaaS tooling and identify the lowest-friction candidates for AI workflow replacement.",
+            day60: "Establish the 'Agentic Migration PMO', forcing Legal, Infosec, and Engineering into a unified daily deployment cadence.",
+            day90: "Execute the first successful decommissioning of a $100k+ legacy vendor contract, proving the Agentic ROI to the board."
+        },
+        interviewAntiPatterns: [
+            "Treating an AI migration like a standard ERP deployment; failing to account for model hallucination risks.",
+            "Ignoring the massive cultural friction and employee fear of replacement.",
+            "Failing to articulate the specific security policies required to clear Infosec hurdles for LLM adoption."
+        ]
     },
 
     // --- Engineering & Infrastructure ---
@@ -118,7 +182,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['agentic-workflow', 'orchestration-debt', 'cost-of-predictivity', 'rag', 'technical-debt', 'large-language-model', 'ai-inference'],
         curriculumKeywords: ['economics', 'agent', 'automation', 'devops'],
         seoMeta: 'Become a 2026 Agentic Solutions Architect. Transition from microservices to Agentic Process Automation (APA) and build secure, non-deterministic AI execution environments.',
-        seoKeywords: ['Agentic Solutions Architect', 'AI orchestrator', 'agentic workflows', 'AI orchestration', 'career transition tech', 'autonomous AI systems', 'Agentic Process Automation']
+        seoKeywords: ['Agentic Solutions Architect', 'AI orchestrator', 'agentic workflows', 'AI orchestration', 'career transition tech', 'autonomous AI systems', 'Agentic Process Automation'],
+        primaryMetrics: [
+            { name: "Orchestration Debt", description: "The structural complexity tax of chaining too many LLMs together without determinism." },
+            { name: "Recursion Trap Rate", description: "The frequency at which an autonomous agent enters an infinite logic loop requiring human intervention." },
+            { name: "System-2 Verification Cost", description: "The compute overhead explicitly required to verify a model's generated plan before execution." }
+        ],
+        first90Days: {
+            day30: "Audit all existing LLM tool-calling endpoints to ensure rigid schema enforcement and zero-trust sandboxing.",
+            day60: "Replace a high-latency monolothic GPT-4o pipeline with a multi-agent orchestration of faster, localized Small Language Models.",
+            day90: "Deploy an absolute 'Kill Switch' infrastructure guaranteeing automatic halt of any agentic loop displaying >5% entropy drift."
+        },
+        interviewAntiPatterns: [
+            "Bragging about writing boilerplate 'prompts' instead of architecting deterministic semantic routing.",
+            "Displaying ignorance of 'infinite loop' agentic vulnerabilities and API billing exhaustion.",
+            "Believing an LLM should directly execute SQL mutations on a production database."
+        ]
     },
     {
         slug: 'platform-edge-engineer',
@@ -137,7 +216,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['small-language-models', 'open-weights', 'developer-experience', 'maintenance-load', 'conways-law', 'rag'],
         curriculumKeywords: ['devops', 'platform', 'cloud', 'finops', 'edge'],
         seoMeta: 'Master Platform & Edge Engineering for 2026. Scale internal developer platforms, deploy edge SLMs, and execute cloud repatriation to collapse API costs.',
-        seoKeywords: ['Platform Engineer', 'Edge Engineer', 'SLM deployment', 'Internal Developer Platform', 'IDP', 'Cloud Repatriation', 'GPU FinOps']
+        seoKeywords: ['Platform Engineer', 'Edge Engineer', 'SLM deployment', 'Internal Developer Platform', 'IDP', 'Cloud Repatriation', 'GPU FinOps'],
+        primaryMetrics: [
+            { name: "Inference Latency Tax", description: "The round-trip delay caused by cloud API calls compared to Edge-native SLM execution." },
+            { name: "DevEx Friction Score", description: "The time it takes a feature engineer to stand up a localized vector database environment." },
+            { name: "Egress Cloud Pricing", description: "The punishing financial metric you are hired to completely eliminate through localized topologies." }
+        ],
+        first90Days: {
+            day30: "Execute a FinOps audit on the current hyperscaler footprint, identifying immediate cloud egress hemorrhage.",
+            day60: "Stand up the v1 Internal Developer Platform (IDP), granting feature engineers self-serve access to quantized SLMs.",
+            day90: "Evict a massive API dependency, migrating 40% of standard inferences to local CPU/Edge devices, saving $50k+ MRR."
+        },
+        interviewAntiPatterns: [
+            "Over-indexing on AWS/GCP proprietary managed services rather than open-weight, hardware-agnostic deployments.",
+            "Displaying an inability to calculate the exact hardware VRAM required to load a quantized 8B parameter model.",
+            "Focusing on microservice orchestration (K8s) without understanding model weight orchestration."
+        ]
     },
     {
         slug: 'agentic-devops-engineer',
@@ -156,7 +250,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['rag', 'large-language-model', 'ai-inference', 'dora-metrics', 'orchestration-debt'],
         curriculumKeywords: ['devops', 'mlops', 'llmops', 'caching', 'infrastructure'],
         seoMeta: 'Become an Agentic DevOps Engineer. Build LLMOps pipelines, semantic caching arrays, and scaling infrastructure for enterprise AI inference.',
-        seoKeywords: ['Agentic DevOps', 'LLMOps', 'MLOps pipelines', 'Semantic Caching AI', 'AI Infrastructure Scaling', 'Vector Database DevOps']
+        seoKeywords: ['Agentic DevOps', 'LLMOps', 'MLOps pipelines', 'Semantic Caching AI', 'AI Infrastructure Scaling', 'Vector Database DevOps'],
+        primaryMetrics: [
+            { name: "Semantic Cache Hit Rate", description: "The percentage of AI queries instantly resolved by caching rather than requiring a fresh inference compute layer." },
+            { name: "Model Deployment TTI", description: "Time-to-Implement for pushing a newly fine-tuned model weight across a global distributed edge network." },
+            { name: "Shadow State Variance", description: "The difference in output quality between production models and newly staged beta pipelines." }
+        ],
+        first90Days: {
+            day30: "Audit the current deployment infrastructure to measure exactly how painfully slow rolling out multi-gigabyte vector indexes currently is.",
+            day60: "Engineer a high-throughput Semantic Caching gateway (e.g., Redis-backed) to trap redundant identical LLM queries.",
+            day90: "Implement an automated LLM shadow-deployment pipeline that scores experimental prompt logic against production baseline in real time."
+        },
+        interviewAntiPatterns: [
+            "Applying legacy CI/CD unit testing mentalities (pass/fail) to non-deterministic semantic models.",
+            "Not understanding the extreme memory constraints or batch-processing math required in GPU inference.",
+            "Ignoring the specific network topography required for massive RAG retrieval architectures."
+        ]
     },
     {
         slug: 'cloud-repatriation-architect',
@@ -175,7 +284,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['ai-cogs', 'ai-inference', 'technical-debt', 'cost-of-predictivity'],
         curriculumKeywords: ['cloud', 'finops', 'hardware', 'gpu', 'economics', 'repatriation'],
         seoMeta: 'The Cloud Repatriation Architect role. Execute the strategic migration of high-volume LLM inference to bare-metal GPU clusters to collapse massive FinOps costs.',
-        seoKeywords: ['Cloud Repatriation', 'Bare Metal GPU', 'FinOps AI Pricing', 'On-premise LLM inference', 'Cloud Exit Strategy AI']
+        seoKeywords: ['Cloud Repatriation', 'Bare Metal GPU', 'FinOps AI Pricing', 'On-premise LLM inference', 'Cloud Exit Strategy AI'],
+        primaryMetrics: [
+            { name: "Unit Inference Margin", description: "The precise dollar cost difference of generating 1M tokens locally vs on Azure/AWS." },
+            { name: "GPU Utilization Density", description: "The efficiency metric of ensuring localized hardware is running 24/7 rather than idling." },
+            { name: "Egress Neutrality", description: "Eliminating the ransom payments required to pull massive vector data stores out of walled hyperscalers." }
+        ],
+        first90Days: {
+            day30: "Perform a brutal autopsy on the AWS/GCP bill, isolating exactly which managed AI services are functioning as hidden taxation.",
+            day60: "Design the initial Bare-Metal proving ground—a hyper-localized cluster running a dedicated, high-density batch inference pipeline.",
+            day90: "Migrate the heaviest, most predictable background batch AI workload off the cloud, securing an immediate 60% margin improvement."
+        },
+        interviewAntiPatterns: [
+            "Failing to mathematically articulate exactly at what token-volume scale the bare-metal CapEx line crosses the Cloud OpEx line.",
+            "Being afraid of 'rack space and cooling' realities of physical data center logistics.",
+            "Advocating for 100% repatriation rather than a strategic hybrid architecture."
+        ]
     },
 
     // --- Security & Governance ---
@@ -196,7 +320,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['guardrails', 'technical-debt', 'orchestration-debt', 'innovation-tax', 'ai-assisted-development'],
         curriculumKeywords: ['security', 'compliance', 'governance', 'risk', 'board'],
         seoMeta: 'The 2026 AI Security Fiduciary path. Defend against multi-modal prompt injections, secure agentic privileges, and manage enterprise AI hallucination liability.',
-        seoKeywords: ['AI Security', 'AI CISO', 'Agentic Security', 'Prompt Injection Defense', 'AI Hallucination Liability', 'Enterprise AI Governance']
+        seoKeywords: ['AI Security', 'AI CISO', 'Agentic Security', 'Prompt Injection Defense', 'AI Hallucination Liability', 'Enterprise AI Governance'],
+        primaryMetrics: [
+            { name: "Agentic Blast Radius", description: "The quantified max-liability vector if an autonomous system is successfully hijacked via prompt-injection." },
+            { name: "Zero-Trust Inference Threshold", description: "The degree to which the LLM generation layer is cleanly amputated from the data execution layer." },
+            { name: "Data Poisoning Velocity", description: "How fast an adversarial prompt injected into a RAG cluster contaminates the wider enterprise logic." }
+        ],
+        first90Days: {
+            day30: "Audit every internal LLM wrapper for direct database write-permissions and instantly aggressively revoke any agentic autonomy.",
+            day60: "Red-team the RAG pipelines. Prove to the board how easily an external actor can poison an internal knowledge base.",
+            day90: "Deploy an absolute deterministic firewall between probabilistic text generation and state-altering API execution (The Agentic Gap)."
+        },
+        interviewAntiPatterns: [
+            "Treating a 'Prompt Injection' like a classic SQL Injection that can be easily solved with a Regex filter.",
+            "Overcommitting to algorithmic detection models instead of deterministic sandboxing infrastructure.",
+            "Talking about theoretical AI doom rather than actionable compliance frameworks like the EU AI Act."
+        ]
     },
     {
         slug: 'ai-governance-director',
@@ -215,7 +354,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['guardrails', 'technical-debt', 'ai-assisted-development'],
         curriculumKeywords: ['governance', 'compliance', 'legal', 'risk', 'board'],
         seoMeta: 'Transition into an AI Governance Director. Navigate EU AI Act liabilities, execute deep AI bias auditing, and construct deterministic compliance pipelines.',
-        seoKeywords: ['AI Governance', 'EU AI Act Compliance', 'AI Risk Parity', 'Algorithmic Bias Auditing', 'Enterprise AI Legal Risk']
+        seoKeywords: ['AI Governance', 'EU AI Act Compliance', 'AI Risk Parity', 'Algorithmic Bias Auditing', 'Enterprise AI Legal Risk'],
+        primaryMetrics: [
+            { name: "EU AI Act Liability Quotient", description: "The percentage of deployed shadow pipelines violating High-Risk categorization." },
+            { name: "Automated Bias Drift", description: "The statistical measurement of a model degrading into discriminatory or hallucinatory output over time." },
+            { name: "Governance Deployment Block Rate", description: "The number of high-risk generative prototypes successfully barred from reaching production state." }
+        ],
+        first90Days: {
+            day30: "Establish the definitive mapping of all High-Risk AI categorizations under the EU AI Act across the entire product surface.",
+            day60: "Force engineering implementation of mandatory Data Lineage tagging, ensuring every output can be definitively traced to its prompt-source.",
+            day90: "Ratify the Enterprise AI Constitution Board, granting absolute veto power to the Governance Director prior to any Agentic deployment."
+        },
+        interviewAntiPatterns: [
+            "Discussing ethics purely in abstraction rather than translating ethics into executable code blocks and hard liability risk.",
+            "Evidencing no knowledge of global regulatory frameworks like the evolving mandates of the EU AI Act.",
+            "Believing governance relies on 'asking employees to be careful' instead of implementing hard system guardrails."
+        ]
     },
     {
         slug: 'post-qa-verification-engineer',
@@ -234,7 +388,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['cost-of-predictivity', 'orchestration-debt', 'rag', 'technical-debt'],
         curriculumKeywords: ['qa', 'testing', 'evals', 'verification', 'governance'],
         seoMeta: 'Become a Post-QA AI Verification Engineer. Build dynamic Evaluation (Evals) suites using LLM-as-a-Judge architecture to verify non-deterministic outputs.',
-        seoKeywords: ['AI QA Engineering', 'LLM Evals', 'LLM as a judge', 'AI Verification', 'Non-deterministic testing', 'Generative QA']
+        seoKeywords: ['AI QA Engineering', 'LLM Evals', 'LLM as a judge', 'AI Verification', 'Non-deterministic testing', 'Generative QA'],
+        primaryMetrics: [
+            { name: "LLM-as-a-Judge Convergence", description: "The statistical consistency of the Eval model scoring the target model." },
+            { name: "Hallucination Capture Rate", description: "The percentage of fabricated facts successfully trapped by the Eval harness before reaching the user." },
+            { name: "Eval Compute Overhead", description: "The financial cost of running massive evaluation models against production outputs." }
+        ],
+        first90Days: {
+            day30: "Deprecate legacy boolean-heavy unit testing for any feature relying on generative outputs, replacing them with dynamic context tests.",
+            day60: "Deploy a frontier LLM-as-a-Judge automated pipeline that grades output tone, brand alignment, and truthfulness on every commit.",
+            day90: "Reduce manual QA overhead by 80% by proving the automated Eval architecture holds zero false-positives under stress load."
+        },
+        interviewAntiPatterns: [
+            "Proposing standard Cypress or Selenium tests to govern raw generative text outputs.",
+            "Failing to articulate how 'LLM-as-a-Judge' architectures are uniquely distinct from traditional programmatic assertions.",
+            "Ignoring the exorbitant cost mathematics of running massive model Evals on every single PR commit."
+        ]
     },
     {
         slug: 'shadow-ai-remediation-specialist',
@@ -253,7 +422,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['guardrails', 'technical-debt', 'ai-assisted-development'],
         curriculumKeywords: ['security', 'governance', 'risk', 'compliance'],
         seoMeta: 'Master Shadow AI Remediation. Hunt down unauthorized API pipelines, secure Enterprise IP leaks, and govern employee AI utilization patterns.',
-        seoKeywords: ['Shadow AI', 'AI Cyber Hunt', 'Enterprise IP Leak AI', 'Unauthorized LLM use', 'AI Security Governance']
+        seoKeywords: ['Shadow AI', 'AI Cyber Hunt', 'Enterprise IP Leak AI', 'Unauthorized LLM use', 'AI Security Governance'],
+        primaryMetrics: [
+            { name: "Dark IP Leakage Rate", description: "The volume of proprietary codebase and strategy documentation fed into public (un-opted-out) foundation networks." },
+            { name: "Unauthorized Pipeline Interception", description: "The speed at which a new rogue employee department API gateway is detected and forcefully terminated." },
+            { name: "Internal Governed Utility Score", description: "The adoption rate of the official internal AI tools provided to offset Shadow AI needs." }
+        ],
+        first90Days: {
+            day30: "Run a massive, silent network packet audit to locate exactly where engineering teams are circumventing the proxy to hit OpenAI/Anthropic APIs natively.",
+            day60: "Execute 'The Purge'—terminating unauthorized webhook integrations and shadow slack-bots.",
+            day90: "Deploy the 'Safe Haven' internal gateway, provisioning governed, enterprise-grade, zero-retention LLM access to immediately replace the banned workflows."
+        },
+        interviewAntiPatterns: [
+            "Believing the solution is simply to 'ban ChatGPT' without providing an enterprise-grade internal equivalent.",
+            "Misunderstanding the difference between Enterprise API retention models and standard consumer GUI data usage rights.",
+            "Underestimating the sheer ingenuity developers will use to bypass network blocks to get their AI tools back."
+        ]
     },
 
     // --- Data & AI Foundations ---
@@ -274,7 +458,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['rag', 'large-language-model', 'ai-inference', 'cost-of-predictivity', 'ai-cogs'],
         curriculumKeywords: ['data', 'synthetic', 'rag', 'fine-tuning', 'models'],
         seoMeta: 'Become a Synthetic Data Architect. Overcome the AI data wall by building high-fidelity synthetic pipelines and defending enterprise AI against Model Collapse.',
-        seoKeywords: ['Synthetic Data', 'Data Architecture', 'Model Collapse', 'AI Fine-tuning', 'Knowledge Graphs', 'RAG pipelines', 'AI Data Wall']
+        seoKeywords: ['Synthetic Data', 'Data Architecture', 'Model Collapse', 'AI Fine-tuning', 'Knowledge Graphs', 'RAG pipelines', 'AI Data Wall'],
+        primaryMetrics: [
+            { name: "Synthetic Viability Quotient", description: "The mathematical threshold where synthetic data matches or exceeds organic human distribution variance." },
+            { name: "Dimensional Mode Collapse", description: "Tracking the degradation of diversity inside the generated corpus over subsequent generation generations." },
+            { name: "Generation Run Economics", description: "The compute cost of generating 1TB of high fidelity synthetic grounding data vs manual organic curation." }
+        ],
+        first90Days: {
+            day30: "Identify the absolute most constrained data bottleneck in the current enterprise machine learning pipeline and size the deficit.",
+            day60: "Engineer a multi-agent adversarial generation loop where one LLM generates synthetic cases and a second critic LLM ruthlessly prunes anomalous or hallucinated drift.",
+            day90: "Inject the verified synthetic corpus into the primary fine-tuning pipeline, demonstrating an overwhelming gain in model capability at edge cases."
+        },
+        interviewAntiPatterns: [
+            "Failing to understand the concept of 'Model Collapse' (training models on model output recursively).",
+            "Viewing data engineering purely as a storage problem (data lakes) rather than an algorithmic intelligence pipeline.",
+            "Believing LLMs are magic and generate 'new insight' rather than simply interpolating their training boundaries."
+        ]
     },
     {
         slug: 'prompt-engineering-lead',
@@ -293,7 +492,22 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['ai-inference', 'rag', 'large-language-model'],
         curriculumKeywords: ['prompt', 'training', 'ai', 'data', 'models'],
         seoMeta: 'Become a 2026 System-2 Prompt Engineering Lead. Architect multi-shot logic, manage version-controlled prompt registries, and enforce LLM cognitive loops.',
-        seoKeywords: ['Prompt Engineering Lead', 'System-2 Prompting', 'Prompt Registries', 'LLM Context Windows', 'Chain of Thought Architect']
+        seoKeywords: ['Prompt Engineering Lead', 'System-2 Prompting', 'Prompt Registries', 'LLM Context Windows', 'Chain of Thought Architect'],
+        primaryMetrics: [
+            { name: "Token Compression Ratio", description: "The density of systemic prompt instructions relative to context window utilization." },
+            { name: "System-2 Activation Threshold", description: "The statistical certainty that a prompt forces the model into deep reasoning rather than stochastic parroting." },
+            { name: "Prompt Regression Rate", description: "The frequency of breakages occurring across the stack when a new foundational model update deprecates prompt logic." }
+        ],
+        first90Days: {
+            day30: "Audit the codebase and extract every single hardcoded string prompt into a unified, version-controlled Prompt Registry.",
+            day60: "Restructure critical logic prompts using few-shot formatting and XML delimiting, eliminating massive prompt-injection vulnerabilities.",
+            day90: "Execute an A/B test proving that a deeply optimized System-2 prompt architecture generates 40% less token waste while improving precision."
+        },
+        interviewAntiPatterns: [
+            "Showing off 'cool tricks' to bypass filters rather than demonstrating programmatic, version-controlled architecture.",
+            "Displaying an inability to differentiate between zero-shot, few-shot, and Chain-of-Thought (CoT) structures deeply.",
+            "Demonstrating no awareness of the token-economics (financial cost) associated with their massive prompts."
+        ]
     },
     {
         slug: 'agentic-knowledge-architect',
@@ -312,6 +526,21 @@ export const CAREER_PATHS: CareerPath[] = [
         glossaryTerms: ['rag', 'large-language-model', 'ai-inference', 'technical-debt'],
         curriculumKeywords: ['data', 'rag', 'vector', 'embedding', 'knowledge graph'],
         seoMeta: 'Evolve into an Agentic Knowledge Architect. Design advanced RAG pipelines, optimize semantic vector chunking, and feed autonomous agents with enterprise ground truth.',
-        seoKeywords: ['Knowledge Architect AI', 'Vector Database Architecture', 'Advanced RAG pipelines', 'Enterprise Data Embeddings', 'AI Data Engineering']
+        seoKeywords: ['Knowledge Architect AI', 'Vector Database Architecture', 'Advanced RAG pipelines', 'Enterprise Data Embeddings', 'AI Data Engineering'],
+        primaryMetrics: [
+            { name: "Semantic Retrieval Accuracy (@K)", description: "The exact probability the vector search successfully yields the required context chunk on the first extraction." },
+            { name: "Chunk Entropy Loss", description: "The amount of critical contextual meaning severed when a document is sliced into tokenized embedding chunks." },
+            { name: "Embedding Overlap Decay", description: "The clustering failure rate of the vector space representing disparate domain knowledge natively." }
+        ],
+        first90Days: {
+            day30: "Execute a massive mapping constraint of all the most vital unstructured enterprise data that is currently unreachable by inference pipelines.",
+            day60: "Stand up the v1 Vector Pipeline, instituting highly semantic metadata tagging and parent-child associative chunking over naive character splitting.",
+            day90: "Deploy the Hybrid Search architecture (combining sparse keyword and dense vector), proving 99% retrieval accuracy to the Agentic orchestrators."
+        },
+        interviewAntiPatterns: [
+            "Relying completely on simple recursive character-splitting for RAG without understanding the lethal effect on semantic meaning.",
+            "Assuming RAG is a solved problem that just requires buying Pinecone and dropping text into it.",
+            "Demonstrating zero understanding of 'Hybrid Search' and relying purely on dense cosine similarity for strict part-number inquiries."
+        ]
     }
 ];
