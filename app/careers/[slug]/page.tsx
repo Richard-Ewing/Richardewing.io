@@ -22,8 +22,9 @@ export async function generateStaticParams() {
 }
 
 // NextJS Dynamic Metadata
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const path = CAREER_PATHS.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const resolvedParams = await params;
+    const path = CAREER_PATHS.find((p) => p.slug === resolvedParams.slug);
     if (!path) return { title: 'Not Found' };
 
     return {
@@ -40,8 +41,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default function CareerPathPage({ params }: { params: { slug: string } }) {
-    const pathData = CAREER_PATHS.find((p) => p.slug === params.slug);
+export default async function CareerPathPage({ params }: { params: Promise<{ slug: string }> }) {
+    const resolvedParams = await params;
+    const pathData = CAREER_PATHS.find((p) => p.slug === resolvedParams.slug);
     if (!pathData) return notFound();
 
     const Icon = iconMap[pathData.iconName] || Cpu;
