@@ -144,7 +144,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                         )}
 
                         {pathData.primaryMetrics && (
-                            <div className={`md:col-span-${pathData.marketEconomics ? '7' : '12'} bg-black/40 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-xl`}>
+                            <div className={`${pathData.marketEconomics ? 'md:col-span-7' : 'md:col-span-12'} bg-black/40 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-xl`}>
                                 <div className="flex items-center gap-3 mb-6 border-b border-white/5 pb-4">
                                     <TrendingUp className={`text-${pathData.color}-400 flex-shrink-0`} size={20} />
                                     <h3 className="text-xs sm:text-sm font-mono uppercase tracking-widest text-white font-bold">Primary Board KPIs</h3>
