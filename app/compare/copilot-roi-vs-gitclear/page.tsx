@@ -42,7 +42,7 @@ export default function CopilotROIvsGitClearPage() {
                             <thead>
                                 <tr className="border-b border-white/10">
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">Dimension</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-fuchsia-400 uppercase tracking-widest">Exogram (Copilot ROI)</th>
+                                    <th className="text-left py-4 px-4 text-xs font-mono text-fuchsia-400 uppercase tracking-widest">Richard Ewing (Copilot ROI)</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-400 uppercase tracking-widest">GitClear</th>
                                 </tr>
                             </thead>
@@ -63,10 +63,10 @@ export default function CopilotROIvsGitClearPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">The Verdict</h2>
                         <p className="text-zinc-300 mb-6">
                             <strong>Volume is not Value.</strong> GitClear will tell you your developers are writing 40% more code since buying Copilot. 
-                            Exogram will tell you that the 40% additional code is mathematically destroying your senior engineering capacity in review cycles, resulting in a net negative Return on AI Investment.
+                            Our methodology will tell you that the 40% additional code is mathematically destroying your senior engineering capacity in review cycles, resulting in a net negative Return on AI Investment.
                         </p>
                         <p className="text-zinc-400 mb-8">
-                            If you want to track developer commits, use GitClear. If you are a CFO trying to figure out why R&D spending is up but feature delivery is stalled, use Exogram.
+                            If you want to track developer commits, use GitClear. If you are a CFO trying to figure out why R&D spending is up but feature delivery is stalled, use the Copilot ROI Tool.
                         </p>
                         <Link href="/tools/copilot-roi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white font-bold hover:shadow-[0_0_20px_rgba(217,70,239,0.3)] transition-all">
                             Try the Free Copilot ROI Forecaster →

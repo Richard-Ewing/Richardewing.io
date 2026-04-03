@@ -787,7 +787,22 @@ export const METHODOLOGIES = [
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 21: Article-Derived Keywords (Mined from 13 published articles)
+// CATEGORY 21: Q2 2026 Mega Trends (APA, Sovereign AI, Heat Math, Collapse)
+// ---------------------------------------------------------------------------
+export const MEGA_TRENDS_2026 = [
+    'Agentic Process Automation', 'APA AI', 'APA software', 'agentic orchestration',
+    'autonomous agent networks', 'multi-agent workflows', 'swarm architecture AI',
+    'Sovereign AI Substrates', 'cloud repatriation for AI', 'local SLM economics',
+    'edge computing AI inference', 'bare metal AI hosting', 'air-gapped LLM',
+    'Model Collapse', 'Synthetic Data Exhaust', 'AI ground truth degradation',
+    'cognitive inbreeding AI', 'verified human datasets', 'AI data poisoning',
+    'Thermodynamic Compute Cost', 'AI energy economics', 'nuclear data centers',
+    'nuclear AI SaaS', 'energy-adjusted EBITDA', 'compute as leverage',
+    'post-Turing evaluation metrics', 'local compute sandboxing',
+];
+
+// ---------------------------------------------------------------------------
+// CATEGORY 22: Article-Derived Keywords (Mined from 13 published articles)
 // Every concept, term, and framework mentioned in Richard Ewing's published works
 // ---------------------------------------------------------------------------
 export const ARTICLE_DERIVED = [
@@ -911,6 +926,7 @@ export const homepageKeywords = [
     ...LEADERSHIP_EXECUTIVE,
     ...BOARD_GOVERNANCE,
     ...CONSULTING,
+    ...MEGA_TRENDS_2026,
     ...TRENDING_FUTURE,
     ...AI_SAFETY,
     ...FINANCE_BUDGETS,
@@ -930,6 +946,7 @@ export const advisoryKeywords = [
     ...FINANCE_BUDGETS,
     ...LEADERSHIP_EXECUTIVE,
     ...BOARD_GOVERNANCE,
+    ...MEGA_TRENDS_2026,
     ...BRANDED,
     ...ARTICLE_DERIVED,
     ...AI_COSTS,
@@ -991,6 +1008,7 @@ export const aperKeywords = [
 export const doctrineKeywords = [
     ...PRODUCT_MANAGEMENT,
     ...LEADERSHIP_EXECUTIVE,
+    ...MEGA_TRENDS_2026,
     ...ENGINEERING_MANAGEMENT,
     ...METHODOLOGIES,
     ...BRANDED,
@@ -1009,6 +1027,7 @@ export const exogramKeywords = [
     ...CYBERSECURITY_DATA,
     ...BRANDED,
     ...ARTICLE_DERIVED,
+    ...MEGA_TRENDS_2026,
     ...TRENDING_FUTURE,
     ...BOARD_GOVERNANCE,
     ...SEARCH_OPTIMIZATION,
@@ -1023,6 +1042,7 @@ export const principalKeywords = [
     ...PRODUCT_MANAGEMENT,
     ...AI_GENERAL,
     ...ENGINEERING_MANAGEMENT,
+    ...MEGA_TRENDS_2026,
     ...TRENDING_FUTURE,
     ...BOARD_GOVERNANCE,
     ...SEARCH_OPTIMIZATION,

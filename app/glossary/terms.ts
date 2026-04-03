@@ -775,6 +775,129 @@ The Evergreen Ratio proves that the most profitable AI companies are actually th
         relatedTerms: ['cost-of-predictivity', 'ai-volatility-tax', 'unit-economics'],
         relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
     },
+    {
+        slug: 'agentic-process-automation',
+        title: 'Agentic Process Automation (APA)',
+        category: 'AI & Machine Learning',
+        definition: `Agentic Process Automation (APA) is the 2026 evolution of Robotic Process Automation (RPA). Where legacy RPA relied on brittle, deterministic scripts and static screen-scraping to move data, APA uses autonomous language models (agents) to complete unstructured, multi-step workflows.
+
+A traditional RPA bot breaks if a vendor changes their invoice template. An APA agent simply reads the new invoice, understands the structural change, extracts the data, and proceeds with the workflow without human intervention or reprogramming.
+
+However, APA introduces massive governance risks. Because the agents interpret data probabilistically rather than deterministically, they require strict Execution Layers and boundary monitoring to prevent autonomous hallucination cascades.`,
+        whyItMatters: `APA represents the shift from 'scripted efficiency' to 'autonomous operations'. Organizations deploying APA realize 10x the operational leverage of legacy RPA, but require entirely new architectures to govern the unpredictable nature of the agents.`,
+        faqs: [
+            { question: 'What is Agentic Process Automation (APA)?', answer: 'The use of autonomous AI agents instead of rigid rules-based scripts to automate complex, unstructured business workflows.' },
+            { question: 'How is APA different from RPA?', answer: 'RPA requires structured data and static workflows. APA can handle unstructured data, unexpected variations, and multi-step reasoning.' }
+        ],
+        relatedTerms: ['agentic-ai', 'execution-layer', 'ai-volatility-tax'],
+    },
+    {
+        slug: 'sovereign-ai-substrate',
+        title: 'Sovereign AI Substrate',
+        category: 'Cloud & Infrastructure',
+        definition: `A Sovereign AI Substrate refers to the localized, deeply-controlled deployment of generative AI models (typically open-weights models like Llama, Mistral, or DeepSeek) running entirely on untethered hardware or private bare-metal infrastructure.
+
+In 2026, massive enterprises are executing "Cloud Repatriation for AI." Sending proprietary intellectual property, trade secrets, and PII to public cloud providers (OpenAI, Anthropic) introduces unacceptable data leakage risks and catastrophic margin compression due to variable API token costs. 
+
+A Sovereign AI Substrate allows an organization to own its intelligence layer outright. The models run locally, the data never leaves the firewall, and the Cost of Predictivity fundamentally shifts from variable OpEx to fixed CapEx.`,
+        whyItMatters: `Owning the AI intelligence layer is becoming a matter of strategic survival. Organizations that rent their intelligence via public cloud APIs suffer margin collapse. Organizations that build Sovereign AI Substrates achieve structural competitive advantage.`,
+        faqs: [
+            { question: 'What is a Sovereign AI Substrate?', answer: 'A private, localized deployment of AI models running on owned or deeply-controlled hardware, ensuring data never touches public cloud APIs.' },
+            { question: 'Why are companies repatriating AI from the cloud?', answer: 'To protect intellectual property, ensure regulatory compliance, and collapse the variable token costs associated with public AI APIs.' }
+        ],
+        relatedTerms: ['cost-of-predictivity', 'ai-governance'],
+        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
+    },
+    {
+        slug: 'model-collapse',
+        title: 'Model Collapse (Synthetic Data Exhaust)',
+        category: 'AI & Machine Learning',
+        definition: `Model Collapse describes the mathematical degradation of generative AI models when they are trained recursively on AI-generated data (Synthetic Data Exhaust) rather than human-generated ground truth.
+
+As the internet becomes overwhelmingly populated by AI-generated text, images, and code, subsequent generations of models inevitably scrape and train on this synthetic data. Over time, the models lose the "tails" of the original human data distribution. They begin to continuously output generic, homogenous, and statistically probable blandness—eventually suffering complete cognitive inbreeding.
+
+In 2026, Model Collapse has created a massive premium on verified, purely human datasets. Organizations that possess walled gardens of human-generated ground truth hold the most valuable assets in the AI economy.`,
+        whyItMatters: `The AI internet is poisoning itself. Organizations that solely rely on synthetic data generation or public LLMs for specialized tasks will see their outputs homogenize into mediocrity. First-party human data is the ultimate competitive moat.`,
+        faqs: [
+            { question: 'What is Model Collapse?', answer: 'The degradation of an AI\'s capabilities that occurs when it is increasingly trained on the output of other AIs rather than original human data.' },
+            { question: 'What is Synthetic Data Exhaust?', answer: 'The massive volume of AI-generated content flooding the internet, which inevitably gets scraped and used as training data for future models.' }
+        ],
+        relatedTerms: ['ai-hallucination', 'ai-response-drift'],
+    },
+    {
+        slug: 'thermodynamic-compute-cost',
+        title: 'Thermodynamic Compute Cost',
+        category: 'SaaS Metrics & Finance',
+        definition: `Thermodynamic Compute Cost is the baseline energy expenditure required to execute an AI inference operation, irrespective of cloud provider markup. It represents the absolute physical floor of AI unit economics.
+
+While SaaS logic scales at near-zero marginal cost, AI inference scales linearly with energy consumption (GPU utilization, cooling, data center wattage). In 2026, the scarcity of power grid capacity—and the resulting shift toward dedicated nuclear/SMR-powered AI data centers—dictates capability.
+
+For enterprise CTOs, calculating Thermodynamic Compute Cost is required to determine whether an AI feature will ever be economically viable at scale. If the energy cost of generating a summary exceeds the business value of that summary, the feature is fundamentally unsustainable.`,
+        whyItMatters: `Thermodynamics, not software engineering, is the ultimate bottleneck of the AI revolution. You cannot optimize your way out of the basic physics required to run a massive tensor calculation. Understanding these costs dictates AI pricing strategy.`,
+        faqs: [
+            { question: 'What is Thermodynamic Compute Cost?', answer: 'The raw, physical energy required to perform an AI computation. It represents the absolute minimum cost floor for AI before any vendor markup.' },
+            { question: 'Why does AI energy economics matter to SaaS?', answer: 'Because unlike traditional software where adding 100,000 users costs almost nothing, adding 100,000 AI users requires linear, scaling energy expenditure.' }
+        ],
+        relatedTerms: ['cost-of-predictivity', 'unit-economics'],
+        relatedTools: [{ name: 'Enterprise Value Scenario Engine (EV-SE)', url: '/tools/ev-se' }],
+    },
+    {
+        slug: 'system-2-reasoning-tokens',
+        title: 'System 2 Reasoning Tokens',
+        category: 'architecture',
+        definition: 'In conversational AI, System 2 reasoning refers to the deliberate, multi-step logical deduction processes (like "Chain of Thought" or "Tree of Thoughts") executed by an LLM prior to emitting the final response. It introduces "Test-Time Compute" by consuming tokens invisibly to strictly verify logic.',
+        whyItMatters: 'System 2 reasoning eliminates the fast, intuitive, and often hallucinatory guesses of baseline models. However, it radically alters the API economic model by secretly burning "Reasoning Tokens" (Test-Time Compute) simply to think, turning simple prompts into expensive computational tasks. Executives must govern these tokens vigorously to avoid margin collapse.',
+        faqs: [
+            {
+                question: 'Why do System 2 tokens cost more?',
+                answer: 'Because the LLM generates a massive internal monologue to self-correct its logic before returning the final visible answer to the user. You pay for the entire hidden thought process.'
+            },
+            {
+                question: 'How do we control these costs?',
+                answer: 'Implement strict Model Routing. Use System 1 (fast/cheap) models for parsing and formatting, and trigger System 2 models only for high-stakes mathematical or architectural deductions.'
+            }
+        ],
+        relatedTerms: ['test-time-compute', 'model-routing', 'ai-inference'],
+        relatedTools: [{ name: 'Agentic FinOps Emulator', url: '/tools/agent-router' }],
+    },
+    {
+        slug: 'ai-dspm',
+        title: 'AI Data Security Posture Management (DSPM)',
+        category: 'security',
+        definition: 'A specialized security architecture designed to autonomously discover, map, and protect unstructured data stores and vector databases from being inadvertently ingested by Large Language Models or shadow agents.',
+        whyItMatters: 'Traditional IAM cannot prevent an AI agent from scraping a publicly accessible S3 bucket containing PII, summarizing it, and surfacing it to an unauthorized user in a chat interface. AI-DSPM systems algorithmically classify data risk before it hits the embedding pipeline, ensuring Sovereign AI Substrates do not become catastrophic liability engines.',
+        faqs: [
+            {
+                question: 'How does AI-DSPM differ from traditional cloud security?',
+                answer: 'Traditional tools look at network boundaries. DSPM looks directly at the content payload to flag PII, secrets, or IP before an LLM can memorize it.'
+            },
+            {
+                question: 'What is the penalty for ignoring this?',
+                answer: 'In the EU, regulatory fines for un-governed biometric or localized PII leaking into generative model outputs can reach 4% of global revenue.'
+            }
+        ],
+        relatedTerms: ['shadow-ai', 'agentic-governance', 'sovereign-ai-substrate'],
+        relatedTools: [{ name: 'Shadow AI Endpoint Risk Scanner', url: '/tools/shadow-ai' }],
+    },
+    {
+        slug: 'hallucination-entropy',
+        title: 'Hallucination Entropy',
+        category: 'executive',
+        definition: 'A measurable metric describing the rate at which an autonomous agent’s output deviates from factual reality or explicit instructions as the operating context window becomes saturated with multi-turn generative logic.',
+        whyItMatters: 'As agents execute looped autonomous workflows, their context windows fill with their own generated tokens. High Hallucination Entropy indicates a "Drift" state, where the agent begins recursively believing its own errors. Executives must mandate "Epoch Sweeping"—forcing agents to compress and reset their context every 5 turns—to prevent catastrophic downstream liability.',
+        faqs: [
+            {
+                question: 'Can prompt engineering eliminate this?',
+                answer: 'No. Prompt engineering delays it. Hallucination entropy is a fundamental mathematical property of autoregressive token generation at scale.'
+            },
+            {
+                question: 'How is it measured?',
+                answer: 'By deploying secondary "Validator Models" whose sole, deterministic job is to benchmark the output of the primary agent against a grounded Truth Database.'
+            }
+        ],
+        relatedTerms: ['model-collapse', 'cost-of-predictivity', 'prompt-injection'],
+        relatedTools: [{ name: 'Volatility Tax Auditor (VTA)', url: '/tools/vta' }],
+    }
 ];
 
 // Merge new category file terms with existing terms, deduplicating by slug
