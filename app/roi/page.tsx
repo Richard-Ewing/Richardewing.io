@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'ROI Calculator — R&D Capital Audit Return on Investment',
-    description: 'Calculate the potential ROI of an R&D Capital Audit. See how quantifying technical debt, improving DORA metrics, and optimizing AI unit economics transl...',
+    description: 'Calculate the exact financial ROI of an R&D Capital Audit. See how neutralizing technical debt, vastly improving DORA metrics, driving down enterprise m...',
     keywords: ['R&D audit ROI', 'technical debt ROI', 'engineering efficiency ROI', 'DORA metrics improvement', 'engineering productivity savings'],
     alternates: { canonical: 'https://www.richardewing.io/roi' },
-    openGraph: { title: 'ROI Calculator — R&D Capital Audit ROI', description: 'See the dollar value of engineering optimization.', url: 'https://www.richardewing.io/roi', type: 'website' },
+    openGraph: { title: 'ROI Calculator — R&D Capital Audit ROI', description: 'See the exact dollar value of enterprise engineering and AI optimization across your entire roadmap.', url: 'https://www.richardewing.io/roi', type: 'website' },
 };
 
 const scenarios = [

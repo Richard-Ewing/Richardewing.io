@@ -2,10 +2,34 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Code2, Network, ShieldAlert, Cpu, Activity, Zap, CheckCircle, TrendingUp, Target, Database, Blocks, Diamond, Lock, LockKeyhole } from 'lucide-react';
+import { ArrowRight, Sparkles, Code2, Network, ShieldAlert, Cpu, Activity, Zap, CheckCircle, TrendingUp, Target, Database, Blocks, Diamond, Lock, LockKeyhole, Shield, TestTube, TerminalSquare, ServerCrash, LayoutTemplate, LineChart, Milestone, HardDrive, Search, Library } from 'lucide-react';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
 import ShineBorder from '../components/magicui/shine-border';
+import { CAREER_PATHS } from '../lib/career-paths';
+
+const ICON_MAP: Record<string, any> = {
+    Cpu, Target, Blocks, LockKeyhole, Database, Shield, TestTube, 
+    TerminalSquare, ServerCrash, LayoutTemplate, LineChart, 
+    Milestone, HardDrive, Search, Library
+};
+
+const CMAP: Record<string, { bg: string, text: string, border: string, shadow: string, hoverBg: string, bg10: string }> = {
+    cyan: { bg: 'bg-cyan-500/5', text: 'text-cyan-400', border: 'border-cyan-500/20', shadow: 'shadow-[0_0_15px_rgba(6,182,212,0.15)]', hoverBg: 'hover:bg-cyan-500/20', bg10: 'bg-cyan-500/10' },
+    purple: { bg: 'bg-purple-500/5', text: 'text-purple-400', border: 'border-purple-500/20', shadow: 'shadow-[0_0_15px_rgba(168,85,247,0.15)]', hoverBg: 'hover:bg-purple-500/20', bg10: 'bg-purple-500/10' },
+    emerald: { bg: 'bg-emerald-500/5', text: 'text-emerald-400', border: 'border-emerald-500/20', shadow: 'shadow-[0_0_15px_rgba(16,185,129,0.15)]', hoverBg: 'hover:bg-emerald-500/20', bg10: 'bg-emerald-500/10' },
+    red: { bg: 'bg-red-500/5', text: 'text-red-500', border: 'border-red-500/20', shadow: 'shadow-[0_0_15px_rgba(239,68,68,0.15)]', hoverBg: 'hover:bg-red-500/20', bg10: 'bg-red-500/10' },
+    blue: { bg: 'bg-blue-500/5', text: 'text-blue-400', border: 'border-blue-500/20', shadow: 'shadow-[0_0_15px_rgba(59,130,246,0.15)]', hoverBg: 'hover:bg-blue-500/20', bg10: 'bg-blue-500/10' },
+    pink: { bg: 'bg-pink-500/5', text: 'text-pink-400', border: 'border-pink-500/20', shadow: 'shadow-[0_0_15px_rgba(236,72,153,0.15)]', hoverBg: 'hover:bg-pink-500/20', bg10: 'bg-pink-500/10' },
+    amber: { bg: 'bg-amber-500/5', text: 'text-amber-400', border: 'border-amber-500/20', shadow: 'shadow-[0_0_15px_rgba(245,158,11,0.15)]', hoverBg: 'hover:bg-amber-500/20', bg10: 'bg-amber-500/10' },
+    orange: { bg: 'bg-orange-500/5', text: 'text-orange-400', border: 'border-orange-500/20', shadow: 'shadow-[0_0_15px_rgba(249,115,22,0.15)]', hoverBg: 'hover:bg-orange-500/20', bg10: 'bg-orange-500/10' },
+    indigo: { bg: 'bg-indigo-500/5', text: 'text-indigo-400', border: 'border-indigo-500/20', shadow: 'shadow-[0_0_15px_rgba(99,102,241,0.15)]', hoverBg: 'hover:bg-indigo-500/20', bg10: 'bg-indigo-500/10' },
+    slate: { bg: 'bg-slate-500/5', text: 'text-slate-400', border: 'border-slate-500/20', shadow: 'shadow-[0_0_15px_rgba(100,116,139,0.15)]', hoverBg: 'hover:bg-slate-500/20', bg10: 'bg-slate-500/10' },
+    fuchsia: { bg: 'bg-fuchsia-500/5', text: 'text-fuchsia-400', border: 'border-fuchsia-500/20', shadow: 'shadow-[0_0_15px_rgba(217,70,239,0.15)]', hoverBg: 'hover:bg-fuchsia-500/20', bg10: 'bg-fuchsia-500/10' },
+    yellow: { bg: 'bg-yellow-500/5', text: 'text-yellow-400', border: 'border-yellow-500/20', shadow: 'shadow-[0_0_15px_rgba(234,179,8,0.15)]', hoverBg: 'hover:bg-yellow-500/20', bg10: 'bg-yellow-500/10' },
+    teal: { bg: 'bg-teal-500/5', text: 'text-teal-400', border: 'border-teal-500/20', shadow: 'shadow-[0_0_15px_rgba(20,184,166,0.15)]', hoverBg: 'hover:bg-teal-500/20', bg10: 'bg-teal-500/10' },
+    rose: { bg: 'bg-rose-500/5', text: 'text-rose-400', border: 'border-rose-500/20', shadow: 'shadow-[0_0_15px_rgba(244,63,94,0.15)]', hoverBg: 'hover:bg-rose-500/20', bg10: 'bg-rose-500/10' },
+};
 
 export default function DeepCareersHub() {
     return (
@@ -55,111 +79,49 @@ export default function DeepCareersHub() {
                 </div>
             </ScrollReveal>
 
-            {/* THE 5 PILLARS */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-24">
-                
-                {/* 1. Agentic Architect */}
-                <GlowCard className="p-8 h-full flex flex-col group relative overflow-hidden" glowColor="cyan">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-bl-[100px] pointer-events-none transition-all group-hover:bg-cyan-500/10" />
-                    <div className="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/20 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
-                        <Cpu className="text-cyan-400" size={28} />
-                    </div>
-                    <div className="inline-block px-2 py-1 mb-3 rounded text-[9px] font-mono font-bold text-cyan-400 uppercase tracking-widest bg-cyan-400/10 border border-cyan-400/20 self-start">The Orchestrator</div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Agentic Solutions Architect</h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                        Transition from human-orchestrated microservices to autonomous Agentic Process Automation (APA). 
-                        Master Neural-Symbolic reasoning architectures, tool-use logic limits, and the deterministic boundaries required to prevent hallucination explosions.
-                    </p>
+            {/* THE 15 PILLARS - TAXONOMY GRID */}
+            <div className="space-y-24 mb-24">
+                {Array.from(new Set(CAREER_PATHS.map(p => p.domain))).map(domain => {
+                    const pathsInDomain = CAREER_PATHS.filter(p => p.domain === domain);
+                    return (
+                        <div key={domain}>
+                            <ScrollReveal>
+                                <div className="mb-8 border-b border-white/10 pb-4">
+                                    <h3 className="text-3xl font-black text-white tracking-tight">{domain}</h3>
+                                    <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest mt-1">{pathsInDomain.length} Executive Archetypes</p>
+                                </div>
+                            </ScrollReveal>
+                            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                                {pathsInDomain.map(path => {
+                                    const IconNode = ICON_MAP[path.iconName] || Cpu;
+                                    const colors = CMAP[path.color] || CMAP.cyan;
+                                    return (
+                                        <GlowCard key={path.slug} className="p-8 h-full flex flex-col group relative overflow-hidden" glowColor={path.color}>
+                                            <div className={`absolute top-0 right-0 w-32 h-32 ${colors.bg} rounded-bl-[100px] pointer-events-none transition-all group-hover:${colors.bg10}`} />
+                                            <div className={`w-14 h-14 ${colors.bg10} rounded-2xl flex items-center justify-center mb-6 border ${colors.border} group-hover:scale-110 transition-transform duration-500 ${colors.shadow}`}>
+                                                <IconNode className={`${colors.text}`} size={28} />
+                                            </div>
+                                            <div className={`inline-block px-2 py-1 mb-3 rounded text-[9px] font-mono font-bold ${colors.text} uppercase tracking-widest ${colors.bg10} border ${colors.border} self-start`}>
+                                                {path.label}
+                                            </div>
+                                            <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{path.title}</h3>
+                                            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                                                {path.description}
+                                            </p>
 
-                    <div className="mt-auto relative z-10 pt-4">
-                        <Link href="/careers/agentic-solutions-architect" className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 font-bold tracking-widest uppercase text-xs transition-colors border border-cyan-500/20">
-                            Explore Architect Path
-                            <ArrowRight size={14} />
-                        </Link>
-                    </div>
-                </GlowCard>
-
-                {/* 2. Product Economist */}
-                <GlowCard className="p-8 h-full flex flex-col group relative overflow-hidden" glowColor="purple">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-bl-[100px] pointer-events-none transition-all group-hover:bg-purple-500/10" />
-                    <div className="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
-                        <Target className="text-purple-400" size={28} />
-                    </div>
-                    <div className="inline-block px-2 py-1 mb-3 rounded text-[9px] font-mono font-bold text-purple-400 uppercase tracking-widest bg-purple-400/10 border border-purple-400/20 self-start">The Visionary</div>
-                    <h3 className="text-2xl font-bold text-white mb-3">AI Product Economist</h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                        Stop prioritizing features by "vibe." Evaluate the exact API token-cost-to-revenue ratio for generative features. 
-                        Govern the product roadmap as a fiduciary asset, measuring AI Unit Economics and mapping R&D spend directly to enterprise valuation.
-                    </p>
-
-                    <div className="mt-auto relative z-10 pt-4">
-                        <Link href="/careers/ai-product-economist" className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 font-bold tracking-widest uppercase text-xs transition-colors border border-purple-500/20">
-                            Explore Economist Path
-                            <ArrowRight size={14} />
-                        </Link>
-                    </div>
-                </GlowCard>
-
-                {/* 3. Platform & SLM Scaling */}
-                <GlowCard className="p-8 h-full flex flex-col group relative overflow-hidden" glowColor="emerald">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-bl-[100px] pointer-events-none transition-all group-hover:bg-emerald-500/10" />
-                    <div className="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
-                        <Blocks className="text-emerald-400" size={28} />
-                    </div>
-                    <div className="inline-block px-2 py-1 mb-3 rounded text-[9px] font-mono font-bold text-emerald-400 uppercase tracking-widest bg-emerald-400/10 border border-emerald-400/20 self-start">The Scaler</div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Platform & Edge Engineer</h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                        The ultimate weapon against API vendor lock-in. Scale internal developer platforms (IDP), drastically cut API costs by deploying Small Language Models (SLMs) to the edge natively, and orchestrate Cloud Repatriation deployments.
-                    </p>
-
-                    <div className="mt-auto relative z-10 pt-4">
-                        <Link href="/careers/platform-edge-engineer" className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 font-bold tracking-widest uppercase text-xs transition-colors border border-emerald-500/20">
-                            Explore Engineering Path
-                            <ArrowRight size={14} />
-                        </Link>
-                    </div>
-                </GlowCard>
-
-                {/* 4. AI Security & Fiduciary */}
-                <GlowCard className="p-8 h-full flex flex-col group relative overflow-hidden xl:col-span-1 lg:col-span-2 sm:col-span-1" glowColor="red">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-bl-[100px] pointer-events-none transition-all group-hover:bg-red-500/10" />
-                    <div className="w-14 h-14 bg-red-500/10 rounded-2xl flex items-center justify-center mb-6 border border-red-500/20 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_15px_rgba(239,68,68,0.15)]">
-                        <LockKeyhole className="text-red-400" size={28} />
-                    </div>
-                    <div className="inline-block px-2 py-1 mb-3 rounded text-[9px] font-mono font-bold text-red-400 uppercase tracking-widest bg-red-400/10 border border-red-400/20 self-start">The Protector</div>
-                    <h3 className="text-2xl font-bold text-white mb-3">AI Security & Fiduciary (CISO)</h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                        Protect the enterprise against zero-day autonomous threats. Map Post-Quantum cryptographic deprecation costs, isolate AI sandbox privileges, and defend violently against multi-modal Prompt Injection vectors.
-                    </p>
-
-                    <div className="mt-auto relative z-10 pt-4">
-                        <Link href="/careers/ai-security-fiduciary" className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-red-400/10 hover:bg-red-400/20 text-red-500 font-bold tracking-widest uppercase text-xs transition-colors border border-red-500/20">
-                            Explore Security Path
-                            <ArrowRight size={14} />
-                        </Link>
-                    </div>
-                </GlowCard>
-
-                {/* 5. Synthetic Data / Foundations */}
-                <GlowCard className="p-8 h-full flex flex-col group relative overflow-hidden lg:col-span-1" glowColor="blue">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-bl-[100px] pointer-events-none transition-all group-hover:bg-blue-500/10" />
-                    <div className="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
-                        <Database className="text-blue-400" size={28} />
-                    </div>
-                    <div className="inline-block px-2 py-1 mb-3 rounded text-[9px] font-mono font-bold text-blue-400 uppercase tracking-widest bg-blue-400/10 border border-blue-400/20 self-start">The Foundation</div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Synthetic Data Architecture</h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                        Human organic data has been exhausted. Scale the walls of Model Collapse by building massive Synthetic Data generation pipelines, maintaining high-fidelity truth anchoring, and feeding domain-locked fine-tuning regimens.
-                    </p>
-
-                    <div className="mt-auto relative z-10 pt-4">
-                        <Link href="/careers/synthetic-data-architect" className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 font-bold tracking-widest uppercase text-xs transition-colors border border-blue-500/20">
-                            Explore Data Path
-                            <ArrowRight size={14} />
-                        </Link>
-                    </div>
-                </GlowCard>
-
+                                            <div className="mt-auto relative z-10 pt-4">
+                                                <Link href={`/careers/${path.slug}`} className={`flex items-center justify-center gap-2 w-full py-3 rounded-lg ${colors.bg10} ${colors.hoverBg} ${colors.text} font-bold tracking-widest uppercase text-[10px] transition-colors border ${colors.border}`}>
+                                                    Explore Strategy
+                                                    <ArrowRight size={14} />
+                                                </Link>
+                                            </div>
+                                        </GlowCard>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
 
 

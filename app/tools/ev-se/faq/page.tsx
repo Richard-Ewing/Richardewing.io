@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'EV/SE Calculator FAQ | Richard Ewing',
-    description: 'Frequently asked questions about Enterprise Value per Software Engineer (EV/SE) — how to value engineering teams for M&A, fundraising, and strategic pla...',
+    description: 'Frequently asked questions about Enterprise Value per Software Engineer (EV/SE). Learn exactly how Private Equity, Venture Capital, and sophisticated co...',
     keywords: ['enterprise value per engineer', 'EV/SE calculator', 'engineering team valuation', 'M&A engineering assessment'],
     alternates: { canonical: 'https://www.richardewing.io/tools/ev-se/faq' },
     openGraph: { title: 'EV/SE Calculator FAQ', description: 'How to value engineering teams with EV/SE.', url: 'https://www.richardewing.io/tools/ev-se/faq', type: 'article' },

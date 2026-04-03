@@ -30,23 +30,20 @@ function processMetadata(filePath) {
   let content = fs.readFileSync(filePath, 'utf8');
   if (!content.includes('export const metadata')) return;
 
+  // Extract the metadata block using simple naive scoping
+  const metadataStart = content.indexOf('export const metadata');
+  const metadataEnd = content.indexOf('};', metadataStart) + 2;
+  if (metadataStart === -1 || metadataEnd === 1) return;
+
+  let metadataBlock = content.substring(metadataStart, metadataEnd);
   let modified = false;
 
   // TITLE PROCESSING
-  // Match title: "...", title: '...', title: `...`
   const titleRegex = /(title:\s*)(['"`])((?:\\['"`]|(?!\2).)*)(\2)/g;
-  content = content.replace(titleRegex, (match, prefix, quote, innerText) => {
+  metadataBlock = metadataBlock.replace(titleRegex, (match, prefix, quote, innerText) => {
     let newTitle = innerText;
-    
-    // First attempt: strip branding if over 60
-    if (newTitle.length > 60) {
-      newTitle = trimBranding(newTitle);
-    }
-    
-    // Fallback: brutal truncate
-    if (newTitle.length > 60) {
-      newTitle = truncateString(newTitle, 60);
-    }
+    if (newTitle.length > 60) newTitle = trimBranding(newTitle);
+    if (newTitle.length > 60) newTitle = truncateString(newTitle, 60);
     
     if (newTitle !== innerText) {
       modified = true;
@@ -56,18 +53,18 @@ function processMetadata(filePath) {
   });
 
   // DESCRIPTION PROCESSING
-  const descRegex = /(description:\s*)(['"`])((?:\\['"`]|(?!\2).)*)(\2)/g;
-  content = content.replace(descRegex, (match, prefix, quote, innerText) => {
+  // Only target the main SEO description, not openGraph inline descriptions
+  const descRegex = /^(\s*description:\s*)(['"`])((?:\\['"`]|(?!\2).)*)(\2)/gm;
+  metadataBlock = metadataBlock.replace(descRegex, (match, prefix, quote, innerText) => {
     let newDesc = innerText;
 
-    // Check if it's too short, just log it, don't auto-expand unless we want to inject a placeholder
     if (newDesc.length < 50) {
       console.log(`[TOO SHORT] ${filePath}: ${newDesc}`);
-      // Not modifying here, will handle manually
     }
 
-    if (newDesc.length > 155) {
-      newDesc = truncateString(newDesc, 155);
+    // Increased length allowance for modern AEO optimization (250 chars)
+    if (newDesc.length > 250) {
+      newDesc = truncateString(newDesc, 250);
     }
 
     if (newDesc !== innerText) {
@@ -78,6 +75,7 @@ function processMetadata(filePath) {
   });
 
   if (modified) {
+    content = content.substring(0, metadataStart) + metadataBlock + content.substring(metadataEnd);
     fs.writeFileSync(filePath, content, 'utf8');
     console.log(`[ FIXED  ] ${filePath}`);
   }

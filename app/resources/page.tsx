@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Resources Hub | Richard Ewing — Product Economist',
-    description: 'Free tools, glossary, curriculum, articles, and frameworks for technology leaders, product managers, and investors. Everything you need to audit enginee...',
+    description: 'Access premium free tools, the massive 2026 enterprise glossary, comprehensive curriculum tracks, deep-dive articles, and strategic frameworks for techn...',
     keywords: ['technology resources', 'CTO tools', 'engineering metrics', 'product management resources', 'Richard Ewing tools', 'free SaaS tools'],
     alternates: { canonical: 'https://www.richardewing.io/resources' },
-    openGraph: { title: 'Resources Hub | Richard Ewing', description: 'Free tools, glossary, and frameworks for technology leaders.', url: 'https://www.richardewing.io/resources', type: 'website' },
+    openGraph: { title: 'Resources Hub | Richard Ewing', description: 'Access premium free tools, the massive 2026 enterprise glossary, comprehensive curriculum tracks, deep-dive articles, and strategic frameworks for techn...', url: 'https://www.richardewing.io/resources', type: 'website' },
 };
 
 const resourceSections = [
