@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${mod.moduleId}: ${mod.title} | Curriculum | Richard Ewing`,
         description: mod.description,
-        alternates: { canonical: `https://www.richardewing.io/curriculum/tracks/${slug.join('/')}` },
+        alternates: { canonical: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}` },
     };
 }
 
