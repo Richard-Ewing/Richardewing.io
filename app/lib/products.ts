@@ -248,7 +248,7 @@ export const PRODUCTS: Record<string, Product> = {
         price: 99900,
         mode: 'subscription',
         interval: 'year',
-        paymentLink: 'https://buy.stripe.com/placeholder_pe_tier',
+        paymentLink: 'https://buy.stripe.com/4gM8wIgHs6vo15j3FK2B20B',
     },
     fractional_cpo: {
         name: 'Fractional CPO — Monthly',
@@ -431,6 +431,6 @@ export const PRODUCTS: Record<string, Product> = {
         description: 'B2B 10-seat license to the full Vault LMS curriculum. Includes team progress reporting and 1 kickoff advisory session.',
         price: 150000,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/placeholder_enterprise',
+        paymentLink: 'https://buy.stripe.com/5kQ5kw62O9HAeW90ty2B20C',
     },
 };
