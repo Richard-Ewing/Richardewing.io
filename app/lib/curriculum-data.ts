@@ -103,8 +103,17 @@ Object.assign(
 
 import { tracks } from './curriculum-tracks-ui';
 export function getModule(slug: string): CurriculumModule | undefined {
-    const mod = modules[slug];
-    
+    let mod = modules[slug];
+
+    // Robust fallback: If exact slug path fails due to prefix mismatches between UI and registry, find by unique moduleId
+    if (!mod) {
+        const idBase = slug.split('/').pop();
+        if (idBase) {
+            const fallbackMod = Object.values(modules).find(m => m.moduleId === idBase);
+            if (fallbackMod) mod = fallbackMod;
+        }
+    }
+
     // Dynamically inject tools into specific tracks for interactive learning
     if (mod) {
         if (mod.moduleId === '14-12') mod.embeddedTool = 'cloud-repatriation';

@@ -68,7 +68,7 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
 
             <div className="relative z-10 flex flex-col items-center">
                 <Link 
-                    href="/api/buy/full_curriculum" 
+                    href="/api/buy/enterprise/enterprise_curriculum_license" 
                     className={`w-full sm:w-2/3 py-5 bg-gradient-to-r font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-3 hover:text-black ${
                         isCritical 
                         ? 'from-red-600 to-orange-600 hover:from-white hover:to-white shadow-[0_0_30px_rgba(220,38,38,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)]' 
