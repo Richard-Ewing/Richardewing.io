@@ -90,6 +90,58 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks/:path*',
         permanent: true,
       },
+      // Legacy Track ID -> Slug Migrations
+      {
+        source: '/vault/curriculum/tracks/23/:path*',
+        destination: '/vault/curriculum/tracks/agentic-automation/:path*',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/24/:path*',
+        destination: '/vault/curriculum/tracks/sovereign-ai/:path*',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/25/:path*',
+        destination: '/vault/curriculum/tracks/model-routing/:path*',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/26/:path*',
+        destination: '/vault/curriculum/tracks/idps/:path*',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/27/:path*',
+        destination: '/vault/curriculum/tracks/synthetic-data/:path*',
+        permanent: true,
+      },
+      // Deprecated Old Numbers & Slugs
+      {
+        source: '/vault/curriculum/tracks/33/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/41/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/55/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/career-mobility-technical-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/logistics-ecommerce/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
       // Track 15 Free Playbooks
       {
         source: '/guides/cto-first-90-days',
