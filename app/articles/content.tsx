@@ -7,6 +7,7 @@ import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
 import { articles, frameworks } from '../lib/data';
 import { NewsletterSignup } from '../components/NewsletterSignup';
+import PublicationLedger from '../components/PublicationLedger';
 
 export default function ArticlesPage() {
     // Filter state
@@ -242,6 +243,10 @@ export default function ArticlesPage() {
                 <div className="mb-20">
                     <NewsletterSignup variant="full" />
                 </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={600}>
+                <PublicationLedger />
             </ScrollReveal>
 
         </div>
