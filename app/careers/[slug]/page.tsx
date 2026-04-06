@@ -361,9 +361,9 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                         Are you ready to transition architectures? You require access to all execution playbooks, diagnostics, and ROI calculators to prove your fiduciary capabilities to the board. 
                     </p>
                     <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
-                        <Link href="/api/buy/all_access_pass" className="w-full sm:w-auto py-5 px-12 bg-white text-black font-black text-sm tracking-widest uppercase rounded-xl hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
+                        <a href="/api/buy/all_access_pass" className="w-full sm:w-auto py-5 px-12 bg-white text-black font-black text-sm tracking-widest uppercase rounded-xl hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
                             Unlock Full Execution Architecture
-                        </Link>
+                        </a>
                     </div>
                     <p className="mt-6 text-[10px] text-zinc-500 font-mono tracking-widest uppercase border border-white/5 bg-black/20 px-4 py-2 rounded-full inline-block">
                         Lifetime Access to 57 Curriculum Tracks

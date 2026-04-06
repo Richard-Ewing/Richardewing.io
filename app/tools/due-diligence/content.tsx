@@ -341,9 +341,9 @@ export default function DueDiligenceTool() {
                             </div>
 
                             <div className="space-y-3">
-                                <Link href="/api/buy/pe_intelligence_tier" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold uppercase tracking-widest text-xs rounded-xl transition-all shadow-lg">
+                                <a href="/api/buy/pe_intelligence_tier" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold uppercase tracking-widest text-xs rounded-xl transition-all shadow-lg">
                                     Upgrade to PE Tier
-                                </Link>
+                                </a>
                                 <button 
                                     onClick={() => setShowPaywall(false)} 
                                     className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-400 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"

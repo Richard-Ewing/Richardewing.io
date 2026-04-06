@@ -1006,13 +1006,13 @@ Migrate from Heroku to AWS"
                             </p>
                             
                             <div className="space-y-3">
-                                <Link 
+                                <a 
                                     href="/api/buy/full_curriculum" 
                                     onClick={() => setShowPaywall(false)}
                                     className="flex items-center justify-center w-full py-4 bg-cyan-500 text-black font-bold uppercase tracking-widest text-xs rounded-xl transition-all shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:scale-[1.02]"
                                 >
                                     Unlock Library for $199
-                                </Link>
+                                </a>
                                 <button 
                                     onClick={() => setShowPaywall(false)} 
                                     className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-400 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"

@@ -67,7 +67,7 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
             </div>
 
             <div className="relative z-10 flex flex-col items-center">
-                <Link 
+                <a 
                     href="/api/buy/enterprise/enterprise_curriculum_license" 
                     className={`w-full sm:w-2/3 py-5 bg-gradient-to-r font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-3 hover:text-black ${
                         isCritical 
@@ -76,7 +76,7 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
                     }`}
                 >
                     <Lock className="w-5 h-5" /> Unlock Full Enterprise Framework Now
-                </Link>
+                </a>
                 <p className="text-[10px] font-mono text-zinc-600 mt-4 uppercase tracking-widest">Instant access to all 29 tracks • 290+ technical modules</p>
             </div>
         </div>

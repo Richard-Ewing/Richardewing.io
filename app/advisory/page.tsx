@@ -117,7 +117,7 @@ export default function AdvisoryPage() {
                                 <span className="font-mono text-cyan-400">$2,500</span>
                             </div>
                             <p className="text-sm text-zinc-500 mb-4">You run the PDI tool, you don't like the number. We sit down for 60 minutes, locate the exact capital leak, and formulate an immediate reduction strategy.</p>
-                            <Link href="/api/buy/insolvency_diagnostic" className="text-xs font-mono text-cyan-500 uppercase tracking-widest hover:text-cyan-400">Book Session →</Link>
+                            <a href="/api/buy/insolvency_diagnostic" className="text-xs font-mono text-cyan-500 uppercase tracking-widest hover:text-cyan-400">Book Session →</a>
                         </div>
 
                         <div className="bg-black/50 border border-white/5 p-6 rounded-2xl hover:border-amber-500/30 transition-all">
@@ -126,7 +126,7 @@ export default function AdvisoryPage() {
                                 <span className="font-mono text-amber-400">$450</span>
                             </div>
                             <p className="text-sm text-zinc-500 mb-4">Not sure if you have a problem? A 30-minute rapid-fire session. You describe your AWS bill and velocity, I tell you if your building is on fire.</p>
-                            <Link href="/api/buy/gut_check" className="text-xs font-mono text-amber-500 uppercase tracking-widest hover:text-amber-400">Schedule Evaluation →</Link>
+                            <a href="/api/buy/gut_check" className="text-xs font-mono text-amber-500 uppercase tracking-widest hover:text-amber-400">Schedule Evaluation →</a>
                         </div>
                     </div>
                 </section>

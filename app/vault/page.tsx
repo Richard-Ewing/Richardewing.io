@@ -454,9 +454,9 @@ export default async function VaultPage() {
                                             <p className="text-xs text-zinc-400 mb-4">{3 - toolRuns.length} board-ready reports remaining this month.</p>
                                         )}
                                         
-                                        <Link href="/api/buy/full_curriculum" className={`block text-center w-full py-2 text-[10px] font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-900 border border-zinc-800 hover:border-cyan-500/50 text-white'}`}>
+                                        <a href="/api/buy/full_curriculum" className={`block text-center w-full py-2 text-[10px] font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-900 border border-zinc-800 hover:border-cyan-500/50 text-white'}`}>
                                             Unlock Unlimited
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
                             )}
@@ -470,9 +470,9 @@ export default async function VaultPage() {
                                         <Lock className="w-3 h-3 text-zinc-600 group-hover:text-violet-400" />
                                     </div>
                                     <p className="text-xs text-zinc-400 mb-4">Unlock all 150 curriculum modules and all premium guides.</p>
-                                    <Link href="/api/buy/full_curriculum" className="block text-center w-full py-2 bg-zinc-900 hover:bg-violet-600 text-white text-[10px] font-bold uppercase tracking-widest rounded transition-colors">
+                                    <a href="/api/buy/full_curriculum" className="block text-center w-full py-2 bg-zinc-900 hover:bg-violet-600 text-white text-[10px] font-bold uppercase tracking-widest rounded transition-colors">
                                         Unlock for $199/yr
-                                    </Link>
+                                    </a>
                                 </div>
                             )}
 

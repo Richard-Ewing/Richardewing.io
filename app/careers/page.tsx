@@ -207,9 +207,9 @@ export default function DeepCareersHub() {
                                 </ul>
                                 
                                 <div className="mt-auto pt-4 relative z-20 text-center">
-                                    <Link href="/api/buy/all_access_pass" className="inline-block w-full py-3 px-6 bg-white text-black font-bold text-sm tracking-widest uppercase rounded-lg hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20">
+                                    <a href="/api/buy/all_access_pass" className="inline-block w-full py-3 px-6 bg-white text-black font-bold text-sm tracking-widest uppercase rounded-lg hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20">
                                         Unlock The Vault
-                                    </Link>
+                                    </a>
                                 </div>
                             </ShineBorder>
                         </div>
