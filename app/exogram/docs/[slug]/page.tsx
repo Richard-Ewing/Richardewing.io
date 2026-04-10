@@ -1,5 +1,5 @@
 import { getExogramDoc, exogramDocs } from '@/lib/exogram-docs';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ExogramDocPage({ params }: { params: Promise<{ slug: string }> }) {
     const resolvedParams = await params;
     const doc = getExogramDoc(resolvedParams.slug);
-    if (!doc) return notFound();
+    if (!doc) permanentRedirect('/exogram/docs');
 
     return (
         <article className="prose prose-invert prose-purple max-w-none">

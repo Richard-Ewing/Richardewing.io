@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '../terms';
@@ -100,7 +100,7 @@ function autoHowToApply(category: string, title: string): string {
 export default async function GlossaryTermPage({ params }: Props) {
     const { slug } = await params;
     const term = glossaryTerms.find(t => t.slug === slug);
-    if (!term) return notFound();
+    if (!term) permanentRedirect('/glossary');
 
     const relatedTermObjects = term.relatedTerms
         .map(r => glossaryTerms.find(t => t.slug === r))
