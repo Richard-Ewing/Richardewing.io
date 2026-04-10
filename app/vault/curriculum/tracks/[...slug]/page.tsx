@@ -8,7 +8,7 @@ import { getModule, getAllModuleSlugs, type CurriculumModule } from '@/lib/curri
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
     const { slug } = await params;
     const mod = getModule(slug.join('/'));
-    if (!mod) return { title: 'Module Not Found' };
+    if (!mod) return { title: `Module Not Found: ${slug.join('/')} | Curriculum`, description: `The requested curriculum module at ${slug.join('/')} could not be found.` };
     return {
         title: `${mod.moduleId}: ${mod.title} | Curriculum | Richard Ewing`,
         description: mod.description,

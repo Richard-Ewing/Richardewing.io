@@ -11,7 +11,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const article = allArticles[slug];
-    if (!article) return { title: 'Article Not Found' };
+    if (!article) {
+        return {
+            title: `Blog Post Not Found: ${slug}`,
+            description: `The requested blog post ${slug} could not be found.`,
+        };
+    }
     
     const canonicalURL = article.canonicalUrl || `https://www.richardewing.io/blog/${slug}`;
     

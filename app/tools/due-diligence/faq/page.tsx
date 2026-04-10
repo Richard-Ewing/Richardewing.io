@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Unit Economics Benchmark (AUEB) FAQ | Richard Ewing',
-    description: 'Frequently asked questions about the AI Unit Economics Benchmark (AUEB) — how to measure AI feature profitability, inference costs, and model ROI.',
-    keywords: ['AI unit economics', 'AUEB calculator', 'AI cost analysis', 'inference cost benchmark', 'AI ROI'],
-    alternates: { canonical: 'https://www.richardewing.io/tools/aueb/faq' },
-    openGraph: { title: 'AUEB FAQ', description: 'How to measure AI feature profitability with AUEB.', url: 'https://www.richardewing.io/tools/aueb/faq', type: 'article' },
+    title: 'Technical Due Diligence FAQ | Richard Ewing',
+    description: 'Frequently asked questions about Technical Due Diligence, M&A audits, and AI architecture validation for investors and operators.',
+    keywords: ['technical due diligence', 'M&A audit', 'AI architecture validation', 'CTO due diligence', 'technical audit'],
+    alternates: { canonical: 'https://www.richardewing.io/tools/due-diligence/faq' },
+    openGraph: { title: 'Technical Due Diligence FAQ', description: 'Frequently asked questions about Technical Due Diligence.', url: 'https://www.richardewing.io/tools/due-diligence/faq', type: 'article' },
 };
 
 const faqs = [
