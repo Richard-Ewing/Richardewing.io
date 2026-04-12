@@ -6,6 +6,7 @@ import { tracks } from '@/app/lib/curriculum-tracks-ui';
 import { getSortedArticles } from '@/app/lib/blog-data';
 import { COMBAT_SEO_MATRIX } from '@/app/lib/combat-seo';
 import { CAREER_PATHS } from '@/app/lib/career-paths';
+import pseoMatrixData from '@/app/lib/pseo-matrix.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.richardewing.io';
@@ -583,7 +584,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 
         // --- PROGRAMMATIC SEO (pSEO) MATRIX ---
-        ...(require('@/app/lib/pseo-matrix.json') || []).map((item: any) => ({
+        ...(pseoMatrixData || []).map((item: any) => ({
             url: `${baseUrl}/compare/${item.slug}`,
             changeFrequency: 'weekly' as const,
             priority: 0.8,
