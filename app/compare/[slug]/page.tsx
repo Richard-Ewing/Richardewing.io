@@ -18,9 +18,10 @@ export async function generateStaticParams() {
     }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
     const data = getMatrixData();
-    const item = data.find((i: any) => i.slug === params.slug);
+    const item = data.find((i: any) => i.slug === slug);
 
     if (!item) {
         return { title: 'Comparison Not Found' };
@@ -29,13 +30,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title: item.title,
         description: item.metaDescription,
-        alternates: { canonical: `https://www.richardewing.io/compare/${params.slug}` },
+        alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },
     };
 }
 
-export default function PseoComparePage({ params }: { params: { slug: string } }) {
+export default async function PseoComparePage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
     const data = getMatrixData();
-    const item = data.find((i: any) => i.slug === params.slug);
+    const item = data.find((i: any) => i.slug === slug);
 
     if (!item) {
         notFound();
