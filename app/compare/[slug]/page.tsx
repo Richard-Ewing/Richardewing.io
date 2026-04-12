@@ -1,18 +1,13 @@
 import { notFound } from 'next/navigation';
-import fs from 'fs';
-import path from 'path';
+
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import data from '@/app/lib/pseo-matrix.json';
+
 // Pre-read the matrix synchronously so ISR can generate paths
 function getMatrixData() {
-    try {
-        const filePath = path.join(process.cwd(), 'app/lib/pseo-matrix.json');
-        if (!fs.existsSync(filePath)) return [];
-        return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-    } catch {
-        return [];
-    }
+    return data || [];
 }
 
 // Generate static params for the ones that exist. For future ones, fallback to ISR
