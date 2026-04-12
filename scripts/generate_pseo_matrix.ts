@@ -30,7 +30,18 @@ const SEED_TOOLS = [
     "Stripe", "Paddle", "Lemon Squeezy", "Braintree",
     "GitHub Actions", "GitLab CI", "CircleCI", "Jenkins",
     "Pinecone", "Milvus", "Weaviate", "Qdrant",
-    "LangChain", "LlamaIndex", "Haystack", "Semantic Kernel"
+    "LangChain", "LlamaIndex", "Haystack", "Semantic Kernel",
+    // --- 10 NEW ENTERPRISE SEARCH TARGET CATEGORIES ---
+    "Mixpanel", "Amplitude", "PostHog", "Heap", // Product Analytics
+    "Auth0", "Clerk", "Okta", "Keycloak", // Authentication & Identity
+    "Kafka", "RabbitMQ", "Apache Pulsar", "Amazon Kinesis", // Event Streaming
+    "Snowflake", "Databricks", "BigQuery", "Redshift", // Data Warehousing
+    "AWS Lambda", "Cloudflare Workers", "Google Cloud Functions", "Azure Functions", // Serverless Edge Compute
+    "Sanity", "Contentful", "Strapi", "Storyblok", // Headless CMS / Content API
+    "Apache Airflow", "Prefect", "Dagster", "Temporal", // Data / Workflow Orchestration
+    "Kong", "Apigee", "Envoy", "Istio", // API Gateways & Service Mesh
+    "Cypress", "Playwright", "Selenium", "Puppeteer", // Automated Testing Networks
+    "Chroma", "pgvector", "Faiss", "Redis OM" // Local/Open Source Vector Databases
 ];
 
 // We only process a small chunk in this script to avoid massive API limits.
