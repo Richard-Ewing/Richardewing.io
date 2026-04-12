@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "pdi-vs-sonar",
+    "toolA": "PDI",
+    "toolB": "SonarQube",
+    "title": "PDI vs SonarQube for Enterprise Engineering",
+    "metaDescription": "A technical architectural comparison of PDI and SonarQube, calculating technical debt, ROI timelines, and engineering efficiency.",
+    "theirFocus": "SonarQube focuses on static syntax analysis and generic code quality metrics isolated from business context.",
+    "ourAdvantage": "PDI calculates the deterministic Cost of Doing Nothing (CODN) and integrates directly into Board-level financial metrics, translating debt into pure EBITDA liability.",
+    "technicalDistinction": "SonarQube operates strictly as an AST parser, relying on community-defined rule sets to score cyclomatic complexity and code smells. It fundamentally cannot perceive the execution environment or the architectural bounds of the microservices it scans.\n\nPDI, on the other hand, operates at the structural level. It calculates margin deterioration by mapping dependency graphs directly to cloud inference costs and deployment friction, allowing CTOs to objectively prove why rewriting a legacy monolith generates more revenue than shipping net-new features."
+  },
+  {
+    "slug": "vercel-vs-netlify",
+    "toolA": "Vercel",
+    "toolB": "Netlify",
+    "title": "Vercel vs Netlify for Enterprise Edge Architecture",
+    "metaDescription": "An architectural breakdown of Vercel and Netlify for global React/Next.js edge deployments and compute costs.",
+    "theirFocus": "Netlify targets agnostic frontend hosting with a focus on generic serverless functions across multiple static site generators.",
+    "ourAdvantage": "Vercel provides native, optimized Rust-compiled edge execution tightly coupled with Next.js router transitions to prevent React waterfalls.",
+    "technicalDistinction": "Vercel fundamentally owns the Next.js compiler toolchain (Turbopack). When deploying to Vercel, the framework topology maps perfectly 1:1 with their proprietary Edge Network, ensuring Server Actions and RSCs bypass standard cold-start latencies.\n\nNetlify relies on abstraction layers (Netlify Adapters) to ingest Next.js code and translate it into AWS Lambda topologies. This adapter tax creates systemic edge cases in cache revalidation (ISR) and middleware execution."
+  },
+  {
+    "slug": "openai-vs-anthropic",
+    "toolA": "OpenAI API",
+    "toolB": "Anthropic Claude API",
+    "title": "OpenAI vs Anthropic for Sovereign RAG Systems",
+    "metaDescription": "Comparing OpenAI GPT-4o with Anthropic Claude 3.5 Sonnet for enterprise RAG deployments focusing on context windows and latency.",
+    "theirFocus": "OpenAI aggressively pursues multi-modal general intelligence optimized for short conversational bursts.",
+    "ourAdvantage": "Anthropic utilizes proprietary needle-in-a-haystack context scaling, preventing hallucination liability in 100k+ token financial documents.",
+    "technicalDistinction": "OpenAI's underlying continuous batching infrastructure optimizes for high-throughput, low-latency API responses. However, when context windows exceed 64k tokens, semantic attention degradation occurs, increasing the hallucination liability metric (HLM) drastically.\n\nAnthropic's architectural focus on Constitutional AI and massive context window utilization guarantees much higher recall accuracy in RAG operations. The enterprise trade-off is slightly higher time-to-first-token (TTFT) latency exchanged for deterministic alignment."
+  }
+]

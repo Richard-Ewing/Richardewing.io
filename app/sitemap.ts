@@ -582,6 +582,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 
 
+        // --- PROGRAMMATIC SEO (pSEO) MATRIX ---
+        ...(require('@/app/lib/pseo-matrix.json') || []).map((item: any) => ({
+            url: `${baseUrl}/compare/${item.slug}`,
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+        })),
+
         // Legal
         {
             url: `${baseUrl}/legal`,
