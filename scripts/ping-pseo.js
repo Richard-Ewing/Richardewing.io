@@ -73,6 +73,39 @@ async function pushSeoMatrix() {
 
         p.then(() => {
             console.log(`\n✅ Completed indexing ping for ${successCount} permutations. Run tomorrow for the next batch.`);
+            
+            // --- INDEX NOW (BING/YANDEX) INTEGRATION ---
+            const https = require('https');
+            const indexNowKey = "3340d267ae86446787754f0e60a3edc5";
+            const indexNowPayload = JSON.stringify({
+              host: "www.richardewing.io",
+              key: indexNowKey,
+              keyLocation: "https://www.richardewing.io/" + indexNowKey + ".txt",
+              urlList: batch.map(entry => `https://www.richardewing.io/compare/${entry.slug}`)
+            });
+
+            const indexNowOptions = {
+              hostname: 'api.indexnow.org',
+              port: 443,
+              path: '/indexnow',
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+                'Content-Length': Buffer.byteLength(indexNowPayload)
+              }
+            };
+
+            console.log(`\n📡 Submitting ${batch.length} URLs to IndexNow (Bing/Yandex) simultaneously...`);
+            const req = https.request(indexNowOptions, (res) => {
+              if (res.statusCode === 200 || res.statusCode === 202) {
+                  console.log("✅ Success! IndexNow accepted the ping.");
+              } else {
+                  console.log("⚠️ IndexNow responded with status: " + res.statusCode);
+              }
+            });
+            req.on('error', (e) => console.error(`❌ IndexNow Error: ${e.message}`));
+            req.write(indexNowPayload);
+            req.end();
         });
     });
 }
