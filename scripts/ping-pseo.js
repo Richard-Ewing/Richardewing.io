@@ -3,13 +3,11 @@ const fs = require('fs');
 const path = require('path');
 const key = require('../google-credentials.json');
 
-const jwtClient = new google.auth.JWT(
-  key.client_email,
-  null,
-  key.private_key,
-  ['https://www.googleapis.com/auth/indexing'],
-  null
-);
+const jwtClient = new google.auth.JWT({
+  email: key.client_email,
+  key: key.private_key,
+  scopes: ['https://www.googleapis.com/auth/indexing'],
+});
 
 const MAX_BATCH_SIZE = 200; // Google Indexing API single batch limit
 
