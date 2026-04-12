@@ -35,7 +35,7 @@ const SEED_TOOLS = [
 
 // We only process a small chunk in this script to avoid massive API limits.
 // The user can expand this later.
-const BATCH_SIZE = 20;
+const BATCH_SIZE = 10000;
 
 function shuffleArray(array: any[]) {
     // Deterministically or randomly shuffle
