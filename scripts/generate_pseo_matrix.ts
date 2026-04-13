@@ -45,8 +45,8 @@ const SEED_TOOLS = [
 ];
 
 // We only process a small chunk in this script to avoid massive API limits.
-// The user can expand this later.
-const BATCH_SIZE = 10000;
+// Generating 53 today as optimally requested.
+const BATCH_SIZE = 53;
 
 function shuffleArray(array: any[]) {
     // Deterministically or randomly shuffle
@@ -73,8 +73,19 @@ for (let i = 0; i < SEED_TOOLS.length; i++) {
     }
 }
 
-// Just take a randomized slice to demonstrate the pipeline
-const targetPairs = shuffleArray(allPairs).slice(0, BATCH_SIZE);
+// Pre-load existing slugs to avoid duplicate API generation costs
+const outputPath = path.resolve(process.cwd(), 'app/lib/pseo-matrix.json');
+let existingData: any[] = [];
+if (fs.existsSync(outputPath)) {
+    existingData = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
+}
+const existingSlugs = new Set(existingData.map(e => e.slug));
+
+// Filter out pairs we already generated
+const newPairs = allPairs.filter(p => !existingSlugs.has(p.slug));
+
+// Take a randomized slice of the ungenerated pairs
+const targetPairs = shuffleArray(newPairs).slice(0, BATCH_SIZE);
 
 async function generateMatrix() {
     const results = [];
@@ -117,14 +128,7 @@ async function generateMatrix() {
         }
     }
 
-    const outputPath = path.resolve(process.cwd(), 'app/lib/pseo-matrix.json');
-    
-    // Merge with existing if any
-    let existingData = [];
-    if (fs.existsSync(outputPath)) {
-        existingData = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
-    }
-    
+    // Merge with existing if any (already loaded at the top script level)
     const finalData = [...existingData, ...results];
     
     fs.writeFileSync(outputPath, JSON.stringify(finalData, null, 4));
