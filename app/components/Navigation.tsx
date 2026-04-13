@@ -80,6 +80,7 @@ const Navigation = () => {
                                 </Link>
                                 
                                 <div className="px-5 py-2 text-[10px] font-bold tracking-widest text-[var(--accent-purple)] uppercase mt-2">Flagship Engines</div>
+                                <DropdownItem href="/benchmark/ai-capital-2026" description="FTE & CapEx/OpEx Threshold Data">2026 AI Capital Benchmark</DropdownItem>
                                 <DropdownItem href="/tools/copilot-roi" description="Calculate Net Revenue Retention">Copilot ROI Forecaster</DropdownItem>
                                 <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">Tech Debt Forecaster (PDI)</DropdownItem>
                                 <DropdownItem href="/tools/aueb" description="Model AI unit margin collapse">AI Margin Calculator (AUEB)</DropdownItem>
@@ -271,6 +272,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                             <span className="text-[10px] text-indigo-300/70 font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
                         </Link>
 
+                        <MobileLink href="/benchmark/ai-capital-2026" onClick={onClose} className="font-bold text-cyan-400">2026 AI Capital Benchmark</MobileLink>
                         <MobileLink href="/tools/copilot-roi" onClick={onClose}>Copilot ROI Forecaster</MobileLink>
                         <MobileLink href="/tools/pdi" onClick={onClose}>Tech Debt Forecaster (PDI)</MobileLink>
                         <MobileLink href="/tools/aueb" onClick={onClose}>AI Margin Calculator (AUEB)</MobileLink>
