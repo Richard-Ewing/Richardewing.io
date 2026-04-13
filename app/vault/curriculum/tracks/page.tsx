@@ -10,11 +10,11 @@ import BlurIn from '@/app/components/magicui/blur-in';
 import { BorderBeam } from '@/app/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'The Product Economics Curriculum — 14 Authority Tracks',
-    description: 'Fourteen high-fidelity curriculum tracks for mastering engineering economics, AI financial modeling, career capital, and executive leadership — built by a Product Economist with published authority in CIO.com and Built In.',
-    keywords: ['product economics curriculum', 'engineering economics course', 'AI economics training', 'R&D capital management', 'technical debt quantification', 'engineering leadership course', 'cloud finops', 'AI pricing strategy', 'career economics', 'CTO training'],
+    title: 'The Product Economics Curriculum — 18 Authority Tracks',
+    description: 'Eighteen high-fidelity curriculum tracks for mastering engineering economics, AI financial modeling, career capital, leadership, M&A integration, and executive governance — built by a Product Economist with published authority in CIO.com and Built In.',
+    keywords: ['product economics curriculum', 'engineering economics course', 'AI economics training', 'R&D capital management', 'technical debt quantification', 'engineering leadership course', 'cloud finops', 'AI pricing strategy', 'career economics', 'CTO training', 'M&A integration', 'vendor economics', 'developer experience', 'remote team economics'],
     alternates: { canonical: 'https://www.richardewing.io/vault/curriculum/tracks' },
-    openGraph: { title: 'The Product Economics Curriculum', description: 'Master engineering economics across fourteen authority tracks.', url: 'https://www.richardewing.io/vault/curriculum/tracks', type: 'website' },
+    openGraph: { title: 'The Product Economics Curriculum', description: 'Master engineering economics across eighteen authority tracks.', url: 'https://www.richardewing.io/vault/curriculum/tracks', type: 'website' },
 };
 const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5', teal: 'border-teal-500/30 bg-teal-500/5', lime: 'border-lime-500/30 bg-lime-500/5', fuchsia: 'border-fuchsia-500/30 bg-fuchsia-500/5', blue: 'border-blue-500/30 bg-blue-500/5' };
 const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400', amber: 'text-amber-400', orange: 'text-orange-400', pink: 'text-pink-400', red: 'text-red-400', sky: 'text-sky-400', indigo: 'text-indigo-400', rose: 'text-rose-400', teal: 'text-teal-400', lime: 'text-lime-400', fuchsia: 'text-fuchsia-400', blue: 'text-blue-400' };
@@ -50,16 +50,16 @@ export default async function CurriculumTracksPage() {
                         <BlurIn word="Economics System." className="text-4xl sm:text-6xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400 mb-6" />
                         
                         <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-                            These aren&apos;t courses. These are 14 deep-authority curriculum tracks built from published frameworks in CIO.com and Built In — spanning engineering economics, AI financial modeling, and executive leadership.
+                            These aren&apos;t courses. These are 18 deep-authority curriculum tracks built from published frameworks in CIO.com and Built In — spanning engineering economics, AI financial modeling, career capital, leadership, M&A integration, and executive governance.
                         </p>
                         
                         <div className="flex items-center justify-center gap-8 mt-6">
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">14</div>
+                                <div className="text-2xl font-grotesk font-bold text-white">18</div>
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mt-1">Authority Tracks</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">178</div>
+                                <div className="text-2xl font-grotesk font-bold text-white">218</div>
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mt-1">Deep Modules</div>
                             </div>
                             <div className="text-center bg-purple-500/10 px-4 py-2 rounded-lg border border-purple-500/20">
@@ -68,7 +68,7 @@ export default async function CurriculumTracksPage() {
                             </div>
                             <div className="text-center bg-indigo-500/10 px-4 py-2 rounded-lg border border-indigo-500/20">
                                 <div className="text-xl font-mono font-bold text-indigo-400">$799</div>
-                                <div className="text-[10px] font-mono uppercase tracking-widest text-indigo-500 mt-1">All 14 Tracks</div>
+                                <div className="text-[10px] font-mono uppercase tracking-widest text-indigo-500 mt-1">All 18 Tracks</div>
                             </div>
                         </div>
                     </div>

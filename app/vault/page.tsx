@@ -470,7 +470,7 @@ export default async function VaultPage() {
                                         <h3 className="font-bold text-white group-hover:text-violet-400 transition-colors">Full Library Access</h3>
                                         <Lock className="w-3 h-3 text-zinc-600 group-hover:text-violet-400" />
                                     </div>
-                                    <p className="text-xs text-zinc-400 mb-4">Unlock all 178 modules across 14 curriculum tracks. Lifetime access.</p>
+                                    <p className="text-xs text-zinc-400 mb-4">Unlock all 218 modules across 18 curriculum tracks. Lifetime access.</p>
                                     <a href="/api/buy/full_curriculum" className="block text-center w-full py-2 bg-zinc-900 hover:bg-violet-600 text-white text-[10px] font-bold uppercase tracking-widest rounded transition-colors">
                                         Unlock for $799
                                     </a>

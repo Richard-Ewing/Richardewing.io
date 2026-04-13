@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { BookOpen, Cpu, TrendingUp, Crown } from 'lucide-react';
+import { BookOpen, Cpu, TrendingUp, Crown, Globe, Briefcase } from 'lucide-react';
 
 interface CategoryCard {
     id: string;
@@ -16,7 +16,7 @@ const COLLEGES: CategoryCard[] = [
     { 
         id: 'foundations', 
         label: 'Engineering Economics', 
-        description: 'The core P&L curriculum: productivity metrics, technical debt, cost of delay, team topologies, and applied capstone projects.', 
+        description: 'The core P&L curriculum: productivity metrics, technical debt, cost of delay, R&D capital management, and applied capstone projects.', 
         colorClasses: 'from-cyan-950/40 to-blue-900/20 border-cyan-500/30 text-cyan-400 group-hover:border-cyan-400/60 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] ring-cyan-500/30',
         icon: <BookOpen className="w-6 h-6 mb-4" />,
         stats: 'Tracks 1–4'
@@ -24,26 +24,26 @@ const COLLEGES: CategoryCard[] = [
     { 
         id: 'ai-economics', 
         label: 'AI & Cloud Economics', 
-        description: 'AI pricing strategy, unit economics, FinOps, inference cost arbitrage, build vs buy, and AI due diligence for investors.', 
+        description: 'AI pricing strategy, Cloud FinOps, inference cost arbitrage, build vs buy frameworks, technical debt as financial liability, and AI due diligence.', 
         colorClasses: 'from-violet-950/40 to-fuchsia-900/20 border-violet-500/30 text-violet-400 group-hover:border-violet-400/60 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] ring-violet-500/30',
         icon: <Cpu className="w-6 h-6 mb-4" />,
         stats: 'Tracks 5–11'
     },
     { 
         id: 'career', 
-        label: 'Career Capital & Leadership', 
-        description: 'From IC to Staff to CTO. Compensation economics, promotion frameworks, and the economics of leadership as a learnable skill.', 
+        label: 'Career, Leadership & Remote Teams', 
+        description: 'From IC to executive. Compensation economics, promotion frameworks, leadership as a learnable skill, remote team economics, and developer experience.', 
         colorClasses: 'from-amber-950/40 to-orange-900/20 border-amber-500/30 text-amber-400 group-hover:border-amber-400/60 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.15)] ring-amber-500/30',
         icon: <TrendingUp className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 12–14'
+        stats: 'Tracks 12–15, 17'
     },
     { 
         id: 'executive', 
-        label: 'Executive & Board Economics', 
-        description: 'Board reporting, EBITDA translation, technical debt as financial liability, and the senior-to-executive transition economics.', 
+        label: 'Executive, M&A & Vendor Economics', 
+        description: 'Board reporting, EBITDA translation, M&A integration economics, vendor & contract negotiation, and the senior-to-executive transition.', 
         colorClasses: 'from-indigo-950/40 to-purple-900/20 border-indigo-500/30 text-indigo-400 group-hover:border-indigo-400/60 group-hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] ring-indigo-500/30',
         icon: <Crown className="w-6 h-6 mb-4" />,
-        stats: 'Cross-Cutting'
+        stats: 'Tracks 13, 16, 18'
     },
 ];
 

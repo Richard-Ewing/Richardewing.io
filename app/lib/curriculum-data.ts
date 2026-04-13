@@ -76,6 +76,13 @@ populateNewTracks8to14(modules);
 import { populateExpansion8to14 } from './curriculum-tracks-expansion-8-14';
 populateExpansion8to14(modules);
 
+// ═══════════════════ NEW TRACKS 15-18 ═══════════════════
+// Track 15: Remote & Distributed Team Economics
+// Track 16: M&A Technical Integration Economics
+// Track 17: Developer Experience (DX) Economics
+// Track 18: Vendor & Contract Economics
+import { populateTracks15to18 } from './curriculum-tracks-new-15-18';
+populateTracks15to18(modules);
 
 // ═══════════════════ LEGACY TRACK CONTENT (kept on disk for future restoration) ═══════════════════
 // The following files exist on disk but are NOT imported into the active registry:
