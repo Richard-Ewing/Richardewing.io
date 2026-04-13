@@ -106,11 +106,6 @@ const Navigation = () => {
                                 <DropdownItem href="/principal" description="About Richard Ewing">The Principal</DropdownItem>
                             </Dropdown>
 
-                            <Link href="/exogram" className="text-gray-300 hover:text-white transition-colors relative group">
-                                Exogram
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
-                            </Link>
-
                             {/* Primary CTA */}
                             <Link
                                 href="/advisory"
@@ -290,14 +285,6 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/advisory" onClick={onClose}>Executive Advisory</MobileLink>
                         <MobileLink href="/case-studies" onClick={onClose}>Case Studies</MobileLink>
                         <MobileLink href="/principal" onClick={onClose}>The Principal</MobileLink>
-                    </div>
-
-                    {/* Exogram */}
-                    <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Exogram</h3>
-                        <MobileLink href="/exogram" onClick={onClose} className="text-[var(--accent-purple)]">
-                            What I&apos;m Building
-                        </MobileLink>
                     </div>
 
                     <div className="w-full h-px bg-white/10" />

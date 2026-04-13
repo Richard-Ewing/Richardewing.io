@@ -112,7 +112,6 @@ export function Footer() {
                         <Link href="/legal" className="hover:text-white transition-colors">Legal & Privacy</Link>
                         <Link href="https://linkedin.com/in/richard-ewing-mba" target="_blank" className="hover:text-white transition-colors">LinkedIn</Link>
                         <Link href="https://x.com/Richard85626233" target="_blank" className="hover:text-white transition-colors">X (Twitter)</Link>
-                        <Link href="/exogram" className="hover:text-white transition-colors">Exogram System</Link>
                     </div>
                 </div>
 

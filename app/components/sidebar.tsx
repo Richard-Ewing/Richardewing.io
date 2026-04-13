@@ -41,7 +41,6 @@ export function Sidebar() {
             label: 'Intelligence', items: [
                 { href: '/system', label: '04. System' },
                 { href: '/doctrine', label: '05. Doctrine' },
-                { href: '/exogram', label: '06. Exogram', highlight: true },
                 { href: '/articles', label: '07. Canonical Hub' },
             ]
         },
