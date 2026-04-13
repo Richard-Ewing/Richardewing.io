@@ -142,6 +142,342 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
+      // ═══════════════════ 2026 CURRICULUM RESTRUCTURING — KILLED TRACKS ═══════════════════
+      // Classic disciplines killed
+      {
+        source: '/vault/curriculum/tracks/devops-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/security-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/data-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/engineering-leadership/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/startup-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/enterprise-architecture/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/ai-agent-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      // Classic disciplines tracks 18-22
+      {
+        source: '/vault/curriculum/tracks/fullstack-career/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/agile-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/system-design/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/traditional-pm/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/engineering-culture/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      // Mega-trends tracks 23-30
+      {
+        source: '/vault/curriculum/tracks/23/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/24/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/25/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/26/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/27/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/28/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/29/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/30/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      // Old-school slugged tracks (31-57)
+      {
+        source: '/vault/curriculum/tracks/31/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/32/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/34/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/35/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/36/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/37/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/38/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/39/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/40/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/42/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/43/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/44/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/45/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/46/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/47/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/48/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/49/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/50/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/51/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/52/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/53/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/54/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/56/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/57/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/58/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      // Named slug redirects for killed tracks
+      {
+        source: '/vault/curriculum/tracks/mainframe-legacy-systems/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/corporate-it-cost-centers/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/outsourcing-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/monolith-classic-database/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/engineering-velocity-agile/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/executive-alignment-governance/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/erp-enterprise-integration/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/classic-qa-quality/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/fractional-engineering/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/b2b-saas-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/fintech-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/healthtech-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/govtech-economics/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/breaking-into-tech/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/junior-to-senior/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/agentic-governance/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/agentic-automation/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/sovereign-ai/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/model-routing/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/idps/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/synthetic-data/:path*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
       // Track 15 Free Playbooks
       {
         source: '/guides/cto-first-90-days',

@@ -1,5 +1,5 @@
-// Centralized curriculum data for tracks 5-10 (dynamic route modules)
-// Tracks 1-4 have hardcoded pages; tracks 5-10 use [..slug] catch-all
+// Centralized curriculum data for all tracks
+// After 2026 restructuring: 11 core authority tracks only
 
 import { populateTracks1To4 } from './curriculum-tracks-1-4';
 
@@ -44,62 +44,45 @@ export function d(metric: string, description: string, benchmark: string): Lesso
 
 export const modules: Record<string, CurriculumModule> = {};
 
-import { guidesComparisonsModules } from './curriculum-guides-comparisons';
-import { tracks16to17ExpansionModules } from './curriculum-tracks-16-17-expansion';
-import { tracks18Modules } from './curriculum-tracks-18';
-import { tracks19Modules } from './curriculum-tracks-19';
-import { tracks20Modules } from './curriculum-tracks-20';
-import { tracks21Modules } from './curriculum-tracks-21';
-import { tracks22Modules } from './curriculum-tracks-22';
-import { tracks5and6Modules } from './curriculum-tracks-5-6';
-import { tracks7Modules } from './curriculum-tracks-7';
-import { tracks8Modules } from './curriculum-tracks-8';
-import { tracks9Modules } from './curriculum-tracks-9';
-import { tracks10Modules } from './curriculum-tracks-10';
+// ═══════════════════ CORE AUTHORITY TRACKS ═══════════════════
 
-// ═══════════════════ TRACK 1-4 ═══════════════════
+// Track 1-4: Engineering Economics, AI Product Economics, R&D Capital, Capstone
 populateTracks1To4(modules);
 
-// ═══════════════════ TRACK 16 & 17 (GUIDES / COMPARISONS) ═══════════════════
-Object.assign(modules, guidesComparisonsModules, tracks16to17ExpansionModules);
-
-// ═══════════════════ TRACKS 5-6 ═══════════════════
+// Track 5 (old Track 6): Product Management Economics
+import { tracks5and6Modules } from './curriculum-tracks-5-6';
 Object.assign(modules, tracks5and6Modules);
 
-// ═══════════════════ TRACKS 7-10 ═══════════════════
-Object.assign(modules, tracks7Modules, tracks8Modules, tracks9Modules, tracks10Modules);
-
-// ═══════════════════ TRACKS 18-22 ═══════════════════
-Object.assign(modules, tracks18Modules, tracks19Modules, tracks20Modules, tracks21Modules, tracks22Modules);
-
-// ═══════════════════ NEW 2026 AI TREND MODULES ═══════════════════
-import { tracks23Modules } from './curriculum-tracks-23';
-import { tracks24Modules } from './curriculum-tracks-24';
-import { tracks25Modules } from './curriculum-tracks-25';
-import { tracks26Modules } from './curriculum-tracks-26';
-import { tracks27Modules } from './curriculum-tracks-27';
-import { tracks28Modules } from './curriculum-tracks-28';
-import { tracks29Modules } from './curriculum-tracks-29';
-
-Object.assign(modules, tracks23Modules, tracks24Modules, tracks25Modules, tracks26Modules, tracks27Modules, tracks28Modules, tracks29Modules);
-
-
-
-// ═══════════════════ TRACKS 11-15 ═══════════════════
+// Track 6 (old Track 11): AI Operations Economics & Cost Governance
 import { tracks11Modules } from './curriculum-tracks-11';
-import { tracks12Modules } from './curriculum-tracks-12';
-import { tracks13Modules } from './curriculum-tracks-13';
-import { tracks14Modules } from './curriculum-tracks-14';
-import { tracks15Modules } from './curriculum-tracks-15';
+Object.assign(modules, tracks11Modules);
 
-Object.assign(
-    modules,
-    tracks11Modules,
-    tracks12Modules,
-    tracks13Modules,
-    tracks14Modules,
-    tracks15Modules
-);
+// Track 7 (old Track 14): Cloud FinOps & AI Cost Management
+import { tracks14Modules } from './curriculum-tracks-14';
+Object.assign(modules, tracks14Modules);
+
+// ═══════════════════ NEW 2026 TRACKS (stubs — content TBD) ═══════════════════
+// Track 8: AI Pricing Strategy & Monetization Economics
+// Track 9: Technical Debt as Financial Liability
+// Track 10: AI Due Diligence for Investors & Acquirers
+// Track 11: Economics of Build vs. Buy for AI
+// (New track content files will be created as module content is developed)
+
+
+// ═══════════════════ LEGACY TRACK CONTENT (kept on disk for future restoration) ═══════════════════
+// The following files exist on disk but are NOT imported into the active registry:
+// - curriculum-tracks-5-6.ts (Track 5 DevOps — killed; Track 6 PM — kept above)
+// - curriculum-tracks-7.ts (Security Economics — killed)
+// - curriculum-tracks-8.ts (Data Economics — killed)
+// - curriculum-tracks-9.ts (Engineering Leadership — consolidated into Track 3)
+// - curriculum-tracks-10.ts (Startup Economics — consolidated into Track 4)
+// - curriculum-tracks-12.ts (Enterprise Architecture — killed)
+// - curriculum-tracks-13.ts (AI Agent Economics — consolidated into Track 11)
+// - curriculum-tracks-15.ts (Free Playbooks — killed from catalog)
+// - curriculum-tracks-16-17-expansion.ts (Guides/Comparisons — killed)
+// - curriculum-tracks-18.ts through curriculum-tracks-29.ts (all killed)
+// - curriculum-guides-comparisons.ts (killed)
+
 
 import { tracks } from './curriculum-tracks-ui';
 export function getModule(slug: string): CurriculumModule | undefined {
@@ -117,16 +100,9 @@ export function getModule(slug: string): CurriculumModule | undefined {
     // Dynamically inject tools into specific tracks for interactive learning
     if (mod) {
         if (mod.moduleId === '14-12') mod.embeddedTool = 'cloud-repatriation';
-        if (mod.moduleId === '9-14') mod.embeddedTool = 'due-diligence';
-        if (mod.moduleId === '10-6' || mod.moduleId === '5-15') mod.embeddedTool = 'pdi';
         if (mod.moduleId === '11-4') mod.embeddedTool = 'vta';
         if (mod.moduleId === '11-1' || mod.moduleId === '11-16') mod.embeddedTool = 'aueb';
-        if (mod.moduleId === '6-1' || mod.moduleId === '10-4') mod.embeddedTool = 'aper';
-        if (mod.moduleId === '5-10') mod.embeddedTool = 'ev-se';
-        if (mod.moduleId === '27-10') mod.embeddedTool = 'shadow-ai';
-        if (mod.moduleId === '28-2') mod.embeddedTool = 'prompt-injection-sandbox';
-        if (mod.moduleId === '27-7') mod.embeddedTool = 'rag-chunking-visualizer';
-        if (mod.moduleId === '29-10') mod.embeddedTool = 'agent-router';
+        if (mod.moduleId === '6-1') mod.embeddedTool = 'aper';
     }
     
     return mod;
