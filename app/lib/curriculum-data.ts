@@ -61,12 +61,16 @@ Object.assign(modules, tracks11Modules);
 import { tracks14Modules } from './curriculum-tracks-14';
 Object.assign(modules, tracks14Modules);
 
-// ═══════════════════ NEW 2026 TRACKS (stubs — content TBD) ═══════════════════
+// ═══════════════════ NEW 2026 TRACKS ═══════════════════
 // Track 8: AI Pricing Strategy & Monetization Economics
 // Track 9: Technical Debt as Financial Liability
 // Track 10: AI Due Diligence for Investors & Acquirers
 // Track 11: Economics of Build vs. Buy for AI
-// (New track content files will be created as module content is developed)
+// Track 12: Career Capital Economics
+// Track 13: Engineering-to-Executive Economics
+// Track 14: The Economics of Leadership (Not Management)
+import { populateNewTracks8to14 } from './curriculum-tracks-new-8-14';
+populateNewTracks8to14(modules);
 
 
 // ═══════════════════ LEGACY TRACK CONTENT (kept on disk for future restoration) ═══════════════════
