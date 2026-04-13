@@ -72,6 +72,10 @@ Object.assign(modules, tracks14Modules);
 import { populateNewTracks8to14 } from './curriculum-tracks-new-8-14';
 populateNewTracks8to14(modules);
 
+// ═══════════════════ EXPANSION: Fill Tracks 8-14 to Full 10-Module Depth ═══════════════════
+import { populateExpansion8to14 } from './curriculum-tracks-expansion-8-14';
+populateExpansion8to14(modules);
+
 
 // ═══════════════════ LEGACY TRACK CONTENT (kept on disk for future restoration) ═══════════════════
 // The following files exist on disk but are NOT imported into the active registry:
