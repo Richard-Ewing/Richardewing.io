@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { BookOpen, Server, Building2, Briefcase, GraduationCap, Network, PocketKnife } from 'lucide-react';
+import { BookOpen, Cpu, TrendingUp, Crown } from 'lucide-react';
 
 interface CategoryCard {
     id: string;
@@ -15,80 +15,48 @@ interface CategoryCard {
 const COLLEGES: CategoryCard[] = [
     { 
         id: 'foundations', 
-        label: 'Core Business Strategy', 
-        description: 'The foundational economics of engineering. Financial metrics, cost alignment, and strategic planning.', 
+        label: 'Engineering Economics', 
+        description: 'The core P&L curriculum: productivity metrics, technical debt, cost of delay, team topologies, and applied capstone projects.', 
         colorClasses: 'from-cyan-950/40 to-blue-900/20 border-cyan-500/30 text-cyan-400 group-hover:border-cyan-400/60 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] ring-cyan-500/30',
         icon: <BookOpen className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 1-4'
+        stats: 'Tracks 1–4'
     },
     { 
-        id: 'architectures', 
-        label: 'Technology Infrastructure', 
-        description: 'Deep dives into the costs and ROI of data pipelines, AI infrastructure, and high-availability systems.', 
+        id: 'ai-economics', 
+        label: 'AI & Cloud Economics', 
+        description: 'AI pricing strategy, unit economics, FinOps, inference cost arbitrage, build vs buy, and AI due diligence for investors.', 
         colorClasses: 'from-violet-950/40 to-fuchsia-900/20 border-violet-500/30 text-violet-400 group-hover:border-violet-400/60 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] ring-violet-500/30',
-        icon: <Server className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 5-14'
+        icon: <Cpu className="w-6 h-6 mb-4" />,
+        stats: 'Tracks 5–11'
     },
     { 
-        id: 'megatrends', 
-        label: 'Hyper-Niche Meta-Trends', 
-        description: 'Neural-Symbolic AI, Synthetic Data Economics, Quantum Threat Modeling, and Bio-IT Integrations.', 
-        colorClasses: 'from-sky-950/40 to-indigo-900/20 border-sky-500/30 text-sky-400 group-hover:border-sky-400/60 group-hover:shadow-[0_0_30px_rgba(14,165,233,0.15)] ring-sky-500/30',
-        icon: <Network className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 23-30'
-    },
-    { 
-        id: 'industry', 
-        label: 'Industry-Specific Markets', 
-        description: 'Targeted economic strategies for B2B SaaS, FinTech, Healthcare, E-Commerce, and DefenseTech sectors.', 
-        colorClasses: 'from-pink-950/40 to-rose-900/20 border-pink-500/30 text-pink-400 group-hover:border-pink-400/60 group-hover:shadow-[0_0_30px_rgba(236,72,153,0.15)] ring-pink-500/30',
-        icon: <Building2 className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 51-55'
-    },
-    { 
-        id: 'operations', 
-        label: 'Core Software Operations', 
-        description: 'Mastering classic UI/UX design economics, agile delivery math, and full-stack software development.', 
+        id: 'career', 
+        label: 'Career Capital & Leadership', 
+        description: 'From IC to Staff to CTO. Compensation economics, promotion frameworks, and the economics of leadership as a learnable skill.', 
         colorClasses: 'from-amber-950/40 to-orange-900/20 border-amber-500/30 text-amber-400 group-hover:border-amber-400/60 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.15)] ring-amber-500/30',
-        icon: <Briefcase className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 18-22, 31-35'
+        icon: <TrendingUp className="w-6 h-6 mb-4" />,
+        stats: 'Tracks 12–14'
     },
     { 
-        id: 'leadership', 
-        label: 'Career Trajectory & Leadership', 
-        description: 'Breaking into tech, stepping up to Staff/Principal, and crossing the chasm into CTO/VPE Management.', 
-        colorClasses: 'from-orange-950/40 to-red-900/20 border-orange-500/30 text-orange-400 group-hover:border-orange-400/60 group-hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] ring-orange-500/30',
-        icon: <GraduationCap className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 36-41, 56-57'
-    },
-    { 
-        id: 'corporate', 
-        label: 'Corporate & Legacy IT', 
-        description: 'Managing massive vendor implementations, legacy ERP migrations, and old-school infrastructure debt.', 
-        colorClasses: 'from-zinc-800/40 to-zinc-900/20 border-zinc-500/30 text-zinc-300 group-hover:border-zinc-400/60 group-hover:shadow-[0_0_30px_rgba(161,161,170,0.15)] ring-zinc-500/30',
-        icon: <Network className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 42-50'
-    },
-    { 
-        id: 'playbooks', 
-        label: 'Tactical Playbooks', 
-        description: 'Step-by-step survival guides and open-source execution blueprints for immediate implementation.', 
-        colorClasses: 'from-emerald-950/40 to-teal-900/20 border-emerald-500/30 text-emerald-400 group-hover:border-emerald-400/60 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] ring-emerald-500/30',
-        icon: <PocketKnife className="w-6 h-6 mb-4" />,
-        stats: 'Tracks 15-17'
+        id: 'executive', 
+        label: 'Executive & Board Economics', 
+        description: 'Board reporting, EBITDA translation, technical debt as financial liability, and the senior-to-executive transition economics.', 
+        colorClasses: 'from-indigo-950/40 to-purple-900/20 border-indigo-500/30 text-indigo-400 group-hover:border-indigo-400/60 group-hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] ring-indigo-500/30',
+        icon: <Crown className="w-6 h-6 mb-4" />,
+        stats: 'Cross-Cutting'
     },
 ];
 
 export default function CurriculumDirectoryGrid({ children }: { children: React.ReactNode }) {
     const [activeCollegiate, setActiveCollegiate] = useState<string>('foundations');
 
-    // Children array mapping to match the 7 categories above.
+    // Children array mapping to match the 4 categories above.
     const childrenArray = React.Children.toArray(children);
 
     return (
         <div className="w-full">
             {/* Executive Directory Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
                 {COLLEGES.map(college => {
                     const isActive = activeCollegiate === college.id;
                     return (

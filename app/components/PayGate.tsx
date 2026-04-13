@@ -68,7 +68,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                             {/* Quick Stats */}
                             <div className="grid grid-cols-3 gap-3 mb-6">
                                 <div className="rounded-xl bg-white/[0.02] border border-white/5 p-3 text-center">
-                                    <div className="text-xl font-bold text-white">400</div>
+                                    <div className="text-xl font-bold text-white">178</div>
                                     <div className="text-[10px] text-zinc-500 uppercase">Modules</div>
                                 </div>
                                 <div className="rounded-xl bg-white/[0.02] border border-white/5 p-3 text-center">
@@ -85,14 +85,14 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                 <CheckoutButton 
                                     productId="all_access_pass" 
                                     moduleId={moduleId} // Optional tracking
-                                    label="Unlock the All-Access Vault Pass — $999/yr" 
+                                    label="Unlock the All-Access Vault Pass — $999" 
                                     icon="lock" 
                                     variant="primary" 
                                 />
                                 <CheckoutButton 
                                     productId="team_license_pass" 
                                     moduleId={moduleId}
-                                    label="B2B Team License (10 Seats) — $4,999/yr" 
+                                    label="B2B Team License (10 Seats) — $4,999" 
                                     icon="key" 
                                     variant="secondary" 
                                 />
@@ -115,7 +115,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                             </div>
                             
                             <p className="mt-4 text-[10px] text-zinc-500 uppercase tracking-widest font-mono">
-                                Replaces all $29, $99, and $10k tiers. Secure Stripe Checkout.
+                                Secure Stripe Checkout. Lifetime access.
                             </p>
                         </div>
                     </div>
