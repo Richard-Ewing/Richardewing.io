@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import BlurIn from '@/components/magicui/blur-in';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import Meteors from '@/components/magicui/meteors';
@@ -17,9 +18,9 @@ export default function ExogramPage() {
 
                     <div className="relative z-10">
                         {/* Logo */}
-                        <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                        <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center relative">
                             { }
-                            <img src="/images/exogram/logo-main.png" alt="Exogram Logo" className="w-full h-full object-contain" />
+                            <Image src="/images/exogram/logo-main.png" alt="Exogram Logo" fill className="object-contain" sizes="96px" />
                         </div>
 
                         <BlurIn word="Exogram" className="text-4xl md:text-5xl font-bold text-white mb-4" />
@@ -35,7 +36,7 @@ export default function ExogramPage() {
                             <div className="flex justify-center md:justify-end w-full">
                                 <div className="inline-flex items-center gap-3 px-5 h-[52px] w-[260px] rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                                     { }
-                                    <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-8 h-8 rounded-full object-cover grayscale opacity-80" />
+                                    <Image src="/assets/headshot.jpg" alt="Richard Ewing" width={32} height={32} className="rounded-full object-cover grayscale opacity-80" />
                                     <div className="text-left flex-1">
                                         <p className="text-white font-semibold text-xs leading-tight">Founded by Richard Ewing</p>
                                         <p className="text-gray-500 text-[10px] leading-tight">Product Economist</p>
@@ -223,7 +224,7 @@ export default function ExogramPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full border-t border-white/10 pt-8 mt-4 items-center">
                                 <div className="flex items-center justify-center md:justify-end gap-4 h-12">
                                     { }
-                                    <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover shadow-sm" />
+                                    <Image src="/assets/headshot.jpg" alt="Richard Ewing" width={48} height={48} className="rounded-full object-cover shadow-sm" />
                                     <div className="text-left flex flex-col justify-center h-full">
                                         <p className="text-white font-semibold leading-none mb-1">Founded by Richard Ewing</p>
                                         <div className="flex items-center gap-2">

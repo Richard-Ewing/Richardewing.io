@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ExogramSection = () => {
     return (
@@ -16,9 +17,9 @@ const ExogramSection = () => {
 
                         {/* Header with logo */}
                         <div className="flex flex-col items-center gap-4">
-                            <div className="w-16 h-16 flex items-center justify-center">
+                            <div className="w-16 h-16 flex items-center justify-center relative">
                                 { }
-                                <img src="/images/exogram/logo-main.png" alt="Exogram Logo" className="w-full h-full object-contain" />
+                                <Image src="/images/exogram/logo-main.png" alt="Exogram Logo" fill className="object-contain" sizes="64px" />
                             </div>
                             <div>
                                 <h3 className="text-2xl font-bold text-white mb-1">Exogram</h3>
@@ -44,7 +45,7 @@ const ExogramSection = () => {
                             {/* Founder Attribution - Right Aligned on Desktop to kiss the center line */}
                             <div className="flex items-center justify-center md:justify-end gap-4 h-12">
                                 { }
-                                <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-12 h-12 rounded-full object-cover shadow-sm" />
+                                <Image src="/assets/headshot.jpg" alt="Richard Ewing" width={48} height={48} className="rounded-full object-cover shadow-sm" />
                                 <div className="text-left flex flex-col justify-center h-full">
                                     <p className="text-white font-semibold leading-none mb-1">Founded by Richard Ewing</p>
                                     <div className="flex items-center gap-2">

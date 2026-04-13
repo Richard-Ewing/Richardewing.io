@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { currentUser } from '@clerk/nextjs/server';
 import Link from 'next/link';
+import Image from 'next/image';
 import { BookOpen, ShieldCheck, ChevronRight, Lock, Download, Zap, Database, TrendingUp, Presentation, Clock, Activity } from 'lucide-react';
 import { supabaseAdmin } from '@/lib/supabase';
 import VaultProgressFlywheel from '@/components/VaultProgressFlywheel';
@@ -489,8 +490,8 @@ export default async function VaultPage() {
 
                             <div className="mt-8 p-5 rounded-xl bg-gradient-to-br from-zinc-900 to-black border border-zinc-800">
                                 <div className="flex items-center gap-3 mb-3">
-                                    <div className="w-8 h-8 rounded-full overflow-hidden border border-zinc-700">
-                                        <img src="/assets/headshot.jpg" alt="Support" className="w-full h-full object-cover" />
+                                    <div className="w-8 h-8 rounded-full overflow-hidden border border-zinc-700 relative">
+                                        <Image src="/assets/headshot.jpg" alt="Support" fill className="object-cover" sizes="32px" />
                                     </div>
                                     <div>
                                         <div className="text-sm font-bold text-white">Direct Support</div>
