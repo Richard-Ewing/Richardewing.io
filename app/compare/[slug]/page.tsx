@@ -5,6 +5,9 @@ import Link from 'next/link';
 
 import data from '@/app/lib/pseo-matrix.json';
 
+// Cache pages globally for 7 days (604,800 seconds) to prevent bot hammering
+export const revalidate = 604800;
+
 // Pre-read the matrix synchronously so ISR can generate paths
 function getMatrixData() {
     return data || [];

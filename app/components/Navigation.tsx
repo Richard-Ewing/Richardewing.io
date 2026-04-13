@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SignInButton, useUser, useClerk } from '@clerk/nextjs';
+import Image from 'next/image';
 
 const Navigation = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -35,8 +36,7 @@ const Navigation = () => {
                         <Link href="/" className="flex items-center gap-3 group">
                             {/* Using a placeholder avatar if image not available, or the actual image path */}
                             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--accent-purple)] relative">
-                                { }
-                                <img src="/assets/headshot.jpg" alt="Richard Ewing" className="w-full h-full object-cover" />
+                                <Image src="/assets/headshot.jpg" alt="Richard Ewing" width={40} height={40} className="w-full h-full object-cover" priority />
                             </div>
                             <div>
                                 <div className="font-semibold text-white group-hover:text-[var(--accent-purple)] transition-colors">Richard Ewing</div>
