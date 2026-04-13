@@ -88,6 +88,19 @@ export default function BenchmarkPage() {
                     </div>
                 </section>
 
+                <section className="section max-w-4xl mx-auto text-center mt-12 mb-16 border-t border-white/10 pt-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-6">
+                        Open Data Report
+                    </div>
+                    <h2 className="text-3xl font-bold text-white mb-4 font-grotesk">The 2026 AI Capital Engineering Index</h2>
+                    <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">
+                        We open-sourced our proprietary M&A telemetry. View the raw, ungated mathematical timeline of FTE displacement, Vector DB collapse, and OpEx vs CapEx thresholds.
+                    </p>
+                    <Link href="/benchmark/ai-capital-2026" className="inline-flex px-8 py-4 bg-zinc-900 border border-cyan-500/30 text-white font-bold text-sm rounded-lg hover:bg-cyan-950/20 transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.3)]">
+                        Read The Open Data Report →
+                    </Link>
+                </section>
+
                 <section className="section max-w-4xl mx-auto text-center">
                     <h2 className="text-2xl font-bold text-white mb-4 font-grotesk">Want Personalized Analysis?</h2>
                     <p className="text-zinc-400 mb-6 max-w-xl mx-auto">
