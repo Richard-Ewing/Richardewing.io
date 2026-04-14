@@ -20,10 +20,10 @@ export function Footer() {
                             </div>
                             <div>
                                 <div className="font-semibold text-zinc-900 font-grotesk">Richard Ewing</div>
-                                <div className="text-xs text-zinc-500 font-mono">Product Economist</div>
+                                <div className="text-xs text-zinc-700 font-mono">Product Economist</div>
                             </div>
                         </div>
-                        <p className="text-zinc-500 text-sm">
+                        <p className="text-zinc-700 text-sm">
                             I audit engineering spend and surface capital risks.
                         </p>
                     </div>
@@ -76,7 +76,7 @@ export function Footer() {
                     {/* Stay Current */}
                     <div className="col-span-2 lg:col-span-1">
                         <h4 className="text-xs text-purple-600 uppercase tracking-wide mb-4 font-mono">Stay Current</h4>
-                        <p className="text-zinc-500 text-sm mb-4">
+                        <p className="text-zinc-700 text-sm mb-4">
                             Monthly analysis of why products fail economically.
                         </p>
                         <NewsletterSignup variant="compact" />
@@ -106,7 +106,7 @@ export function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-700">
                     <p>© 2026 Richard Ewing. All rights reserved.</p>
                     <div className="flex items-center gap-6">
                         <Link href="/legal" className="hover:text-zinc-900 transition-colors">Legal & Privacy</Link>

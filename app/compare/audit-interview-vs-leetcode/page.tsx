@@ -25,15 +25,15 @@ export default function AuditInterviewVsLeetCodePage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-purple-400 font-bold">Audit Interview vs LeetCode</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
-                        Audit Interview <span className="text-zinc-500">vs</span>{' '}
+                        Audit Interview <span className="text-zinc-700">vs</span>{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">LeetCode</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
                         LeetCode tests code generation speed — a skill AI now does better than humans. The Audit Interview tests <span className="text-white font-bold">engineering judgment</span> — the skill that becomes MORE valuable as AI improves.
                     </p>
 
@@ -44,15 +44,15 @@ export default function AuditInterviewVsLeetCodePage() {
                                 <tr className="border-b border-zinc-200">
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">Dimension</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-purple-400 uppercase tracking-widest">Audit Interview</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-400 uppercase tracking-widest">LeetCode</th>
+                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-600 uppercase tracking-widest">LeetCode</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
                                     <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02]">
-                                        <td className="py-4 px-4 text-sm text-zinc-400 font-bold">{row.dimension}</td>
-                                        <td className="py-4 px-4 text-sm text-white">{row.audit}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-400">{row.leet}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-600 font-bold">{row.dimension}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-900">{row.audit}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-600">{row.leet}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -62,10 +62,10 @@ export default function AuditInterviewVsLeetCodePage() {
                     {/* Verdict */}
                     <div className="rounded-2xl border border-purple-500/30 bg-purple-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">The Verdict</h2>
-                        <p className="text-zinc-300 mb-6">
+                        <p className="text-zinc-700 mb-6">
                             LeetCode tests the <strong>wrong skill</strong> for the AI age. When Copilot can solve 90% of LeetCode problems, testing candidates on algorithm speed measures nothing about their engineering value.
                         </p>
-                        <p className="text-zinc-400 mb-8">
+                        <p className="text-zinc-600 mb-8">
                             The Audit Interview tests the four dimensions that matter: <strong>Verification</strong> (catching AI errors), <strong>Architecture</strong> (system design judgment), <strong>Economics</strong> (cost awareness), and <strong>Leadership</strong> (decision-making under ambiguity).
                         </p>
                         <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold hover:opacity-90 transition-opacity">
@@ -75,7 +75,7 @@ export default function AuditInterviewVsLeetCodePage() {
 
                     {/* CTA */}
                     <div className="text-center py-12 border-t border-zinc-200">
-                        <p className="text-zinc-400 mb-4">Need help redesigning your hiring process?</p>
+                        <p className="text-zinc-600 mb-4">Need help redesigning your hiring process?</p>
                         <Link href="/advisory" className="text-purple-400 hover:text-purple-300 font-bold uppercase tracking-widest text-sm">
                             Book Advisory Consultation →
                         </Link>

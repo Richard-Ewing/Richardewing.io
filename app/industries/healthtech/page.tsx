@@ -21,7 +21,7 @@ export default function HealthTechPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/industries" className="hover:text-cyan-400">Industries</Link><span>/</span><span className="text-blue-400 font-bold">HealthTech</span>
                     </div>
 
@@ -29,7 +29,7 @@ export default function HealthTechPage() {
                         Product Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">HealthTech</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
                         Healthcare engineering operates under the tightest regulatory constraints in any industry. HIPAA, FDA, and CMS rules mean that every line of technical debt carries outsized risk.
                     </p>
 
@@ -38,14 +38,14 @@ export default function HealthTechPage() {
                             <div key={i} className="rounded-xl border border-zinc-200 p-6 hover:border-blue-500/30 transition-colors">
                                 <div className="text-2xl mb-3">{c.icon}</div>
                                 <h3 className="text-lg font-grotesk font-bold text-white mb-2">{c.title}</h3>
-                                <p className="text-zinc-400 text-sm">{c.description}</p>
+                                <p className="text-zinc-600 text-sm">{c.description}</p>
                             </div>
                         ))}
                     </div>
 
                     <div className="rounded-2xl border border-blue-500/30 bg-blue-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">How I Help HealthTech Companies</h2>
-                        <ul className="space-y-3 text-zinc-300 mb-8">
+                        <ul className="space-y-3 text-zinc-700 mb-8">
                             <li className="flex items-start gap-3"><span className="text-blue-400 mt-1">→</span> <span>Quantify HIPAA-driven technical debt and compliance carry costs</span></li>
                             <li className="flex items-start gap-3"><span className="text-blue-400 mt-1">→</span> <span>Audit clinical AI models for regulatory defensibility (FDA SaMD)</span></li>
                             <li className="flex items-start gap-3"><span className="text-blue-400 mt-1">→</span> <span>Calculate the economic impact of interoperability mandates on engineering capacity</span></li>

@@ -29,7 +29,7 @@ export default function TestimonialsPage() {
                             What Clients{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Say</span>
                         </h1>
-                        <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+                        <p className="text-xl text-zinc-600 max-w-2xl mx-auto">
                             From PE partners to CTOs to board directors — hear how R&D Capital Audits have transformed engineering investment decisions.
                         </p>
                     </div>
@@ -41,11 +41,11 @@ export default function TestimonialsPage() {
                                     <span className="text-2xl">{t.icon}</span>
                                     <div>
                                         <div className="text-white font-bold text-sm">{t.name}</div>
-                                        <div className="text-xs text-zinc-500">{t.company}</div>
+                                        <div className="text-xs text-zinc-700">{t.company}</div>
                                     </div>
                                     <span className="ml-auto px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-400 font-mono">{t.role}</span>
                                 </div>
-                                <blockquote className="text-zinc-300 text-sm leading-relaxed italic">&ldquo;{t.quote}&rdquo;</blockquote>
+                                <blockquote className="text-zinc-700 text-sm leading-relaxed italic">&ldquo;{t.quote}&rdquo;</blockquote>
                             </div>
                         ))}
                     </div>
@@ -53,25 +53,25 @@ export default function TestimonialsPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-16">
                         <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">100+</div>
-                            <div className="text-xs text-zinc-500 mt-1">Audits Completed</div>
+                            <div className="text-xs text-zinc-700 mt-1">Audits Completed</div>
                         </div>
                         <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">$50M+</div>
-                            <div className="text-xs text-zinc-500 mt-1">Client Savings Identified</div>
+                            <div className="text-xs text-zinc-700 mt-1">Client Savings Identified</div>
                         </div>
                         <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">14</div>
-                            <div className="text-xs text-zinc-500 mt-1">Industries Served</div>
+                            <div className="text-xs text-zinc-700 mt-1">Industries Served</div>
                         </div>
                         <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">4.9/5</div>
-                            <div className="text-xs text-zinc-500 mt-1">Client Satisfaction</div>
+                            <div className="text-xs text-zinc-700 mt-1">Client Satisfaction</div>
                         </div>
                     </div>
 
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Join 100+ Companies</h2>
-                        <p className="text-zinc-400 mb-8 max-w-xl mx-auto">See why PE firms, boards, and CTOs trust R&D Capital Audits for their most important technology investment decisions.</p>
+                        <p className="text-zinc-600 mb-8 max-w-xl mx-auto">See why PE firms, boards, and CTOs trust R&D Capital Audits for their most important technology investment decisions.</p>
                         <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Book Your Audit →</Link>
                     </div>
                 </div>

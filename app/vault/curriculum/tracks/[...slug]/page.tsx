@@ -36,7 +36,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
             <StructuredData data={generateCourseSchema(mod.title, mod.description, 'Richard Ewing', `https://www.richardewing.io/curriculum/tracks/${fullSlug}`)} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/curriculum/tracks" className="hover:text-cyan-400">Tracks</Link>
                         <span>/</span>
                         <span className="hover:text-cyan-400">{mod.trackName}</span>
@@ -50,7 +50,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                             {mod.moduleId}:{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">{mod.title}</span>
                         </h1>
-                        <p className="text-lg text-zinc-600 max-w-2xl">{mod.description}</p>
+                        <p className="text-lg text-zinc-800 max-w-2xl">{mod.description}</p>
                         <div className="flex items-center gap-4 mt-4">
                             <span className="px-3 py-1 rounded-full text-xs font-mono bg-cyan-50 text-cyan-700 border border-cyan-200">{mod.lessons.length} Lessons</span>
                             <span className="px-3 py-1 rounded-full text-xs font-mono bg-emerald-50 text-emerald-700 border border-emerald-200">~45 min</span>
@@ -114,12 +114,12 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                             <div className="space-y-4 mb-6">
                                                 {Array.isArray(lesson.content) ? (
                                                     lesson.content.map((block, bIdx) => (
-                                                        <p key={bIdx} className="text-zinc-600 leading-relaxed text-[15px]">
+                                                        <p key={bIdx} className="text-zinc-800 leading-relaxed text-[15px]">
                                                             <SemanticText text={block} />
                                                         </p>
                                                     ))
                                                 ) : (
-                                                    <p className="text-zinc-600 leading-relaxed text-[15px]">
+                                                    <p className="text-zinc-800 leading-relaxed text-[15px]">
                                                         <SemanticText text={lesson.content} />
                                                     </p>
                                                 )}
@@ -128,10 +128,10 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                             {lesson.details && lesson.details.length > 0 && (
                                                 <div className="space-y-3 mb-6">
                                                     {lesson.details.map((d, j) => (
-                                                        <div key={j} className="rounded-xl bg-zinc-50 border border-white/5 p-5 relative overflow-hidden group">
+                                                        <div key={j} className="rounded-xl bg-zinc-50 border border-zinc-200 p-5 relative overflow-hidden group">
                                                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-cyan-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                                                             <div className="text-sm font-bold text-zinc-900 mb-1">{d.metric}</div>
-                                                            <p className="text-xs text-zinc-500 mb-2">{d.description}</p>
+                                                            <p className="text-xs text-zinc-700 mb-2">{d.description}</p>
                                                             <div className="text-[10px] font-mono text-cyan-500 uppercase tracking-widest">{d.benchmark}</div>
                                                         </div>
                                                     ))}
@@ -178,7 +178,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                         <Link key={slug} href={href} className="block p-5 rounded-xl border border-zinc-200 bg-zinc-50 hover:bg-cyan-50 hover:border-cyan-300 transition-all group">
                                             <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2 group-hover:text-cyan-600">{article.source}</div>
                                             <h3 className="text-zinc-900 font-bold mb-2 group-hover:text-cyan-700 transition-colors">{article.title}</h3>
-                                            <p className="text-zinc-600 text-sm line-clamp-2">{article.description}</p>
+                                            <p className="text-zinc-800 text-sm line-clamp-2">{article.description}</p>
                                         </Link>
                                     )
                                 })}

@@ -11,7 +11,7 @@ const NavItem = ({ href, children, isActive = false, onClick }: { href: string; 
         onClick={onClick}
         className={`block text-sm py-2 px-4 border-l-2 transition-all ${isActive
             ? 'text-zinc-900 border-purple-500 bg-purple-50'
-            : 'text-zinc-500 border-transparent hover:text-zinc-900 hover:border-zinc-300'
+            : 'text-zinc-700 border-transparent hover:text-zinc-900 hover:border-zinc-300'
             }`}
     >
         {children}
@@ -73,7 +73,7 @@ export function Sidebar() {
                     </div>
                     <div>
                         <div className="text-zinc-900 font-bold text-sm">RICHARD EWING</div>
-                        <div className="text-zinc-500 text-[10px] font-mono tracking-widest">PRODUCT ECONOMIST</div>
+                        <div className="text-zinc-700 text-[10px] font-mono tracking-widest">PRODUCT ECONOMIST</div>
                     </div>
                 </Link>
                 <button
@@ -94,7 +94,7 @@ export function Sidebar() {
             {/* Mobile Overlay */}
             {isOpen && (
                 <div
-                    className="lg:hidden fixed inset-0 bg-black/30 z-40"
+                    className="lg:hidden fixed inset-0 bg-zinc-100 z-40"
                     onClick={closeMenu}
                 />
             )}
@@ -116,7 +116,7 @@ export function Sidebar() {
                             <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" width={80} height={80} className="object-cover" priority />
                         </div>
                         <h3 className="text-zinc-900 font-bold tracking-tight text-lg">RICHARD EWING</h3>
-                        <span className="font-mono text-xs text-zinc-500 tracking-widest block mt-1">PRODUCT ECONOMIST</span>
+                        <span className="font-mono text-xs text-zinc-700 tracking-widest block mt-1">PRODUCT ECONOMIST</span>
                     </Link>
                 </div>
 
@@ -124,7 +124,7 @@ export function Sidebar() {
                 <nav className="space-y-6 flex-1">
                     {navItems.map((section) => (
                         <div key={section.label}>
-                            <div className={`text-[10px] font-mono uppercase mb-2 ml-4 tracking-widest ${section.labelClass || 'text-zinc-600'}`}>
+                            <div className={`text-[10px] font-mono uppercase mb-2 ml-4 tracking-widest ${section.labelClass || 'text-zinc-800'}`}>
                                 {section.label}
                             </div>
                             <div className="space-y-1">
@@ -144,7 +144,7 @@ export function Sidebar() {
                 </nav>
 
                 {/* Footer */}
-                <div className="font-mono text-[10px] text-zinc-600 mt-8">&copy; 2026 Richard Ewing</div>
+                <div className="font-mono text-[10px] text-zinc-800 mt-8">&copy; 2026 Richard Ewing</div>
             </aside>
 
             {/* Mobile Spacer */}

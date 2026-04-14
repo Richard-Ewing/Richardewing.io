@@ -103,7 +103,7 @@ export default function ResourcesPage() {
                         Everything You Need.<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">All Free.</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-zinc-800 max-w-2xl mx-auto">
                         Tools, frameworks, and knowledge designed to help technology leaders make better capital allocation decisions.
                     </p>
                 </section>
@@ -114,8 +114,8 @@ export default function ResourcesPage() {
                             <div className="flex items-start gap-4 mb-6">
                                 <span className="text-3xl">{section.icon}</span>
                                 <div>
-                                    <h2 className="text-xl font-bold text-white">{section.title}</h2>
-                                    <p className="text-zinc-600 text-sm mt-1">{section.description}</p>
+                                    <h2 className="text-xl font-bold text-zinc-900">{section.title}</h2>
+                                    <p className="text-zinc-800 text-sm mt-1">{section.description}</p>
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -128,7 +128,7 @@ export default function ResourcesPage() {
                                     >
                                         <div>
                                             <div className="font-semibold text-white group-hover:text-cyan-400 transition-colors text-sm">{item.name}</div>
-                                            <div className="text-xs text-zinc-500 mt-0.5">{item.description}</div>
+                                            <div className="text-xs text-zinc-700 mt-0.5">{item.description}</div>
                                         </div>
                                         <span className="text-gray-600 group-hover:text-cyan-400 transition-colors ml-2">→</span>
                                     </Link>
@@ -142,7 +142,7 @@ export default function ResourcesPage() {
                 <section className="text-center mt-16">
                     <div className="card p-10 border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent max-w-2xl mx-auto">
                         <h2 className="text-2xl font-bold text-white mb-4">Need personalized guidance?</h2>
-                        <p className="text-zinc-600 mb-6">Our advisory services provide hands-on support tailored to your organization.</p>
+                        <p className="text-zinc-800 mb-6">Our advisory services provide hands-on support tailored to your organization.</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link href="/pricing" className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
                                 View Pricing →

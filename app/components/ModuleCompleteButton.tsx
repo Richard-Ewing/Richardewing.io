@@ -43,7 +43,7 @@ export default function ModuleCompleteButton({ nextHref, moduleTitle }: ModuleCo
                         <h3 className="text-lg font-grotesk font-bold text-white mb-1">
                             {completed ? '🏆 Module Complete!' : 'Finished all lessons?'}
                         </h3>
-                        <p className="text-sm text-zinc-400">
+                        <p className="text-sm text-zinc-600">
                             {completed
                                 ? 'Great work! Your progress has been saved.'
                                 : 'Mark this module as complete to track your progress.'}

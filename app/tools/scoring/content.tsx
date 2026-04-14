@@ -210,7 +210,7 @@ export default function AuditInterview() {
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!outcome} toolName="AUDIT INTERVIEW" />
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-white font-bold">Audit Interview</span>
@@ -229,7 +229,7 @@ export default function AuditInterview() {
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-4">
                             Audit <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Interview.</span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-zinc-400 mb-8">
+                        <p className="text-lg sm:text-xl text-zinc-600 mb-8">
                             The "Product Economist" framework for technical auditing. Quantify judgment, capital risk, and leverage.
                         </p>
 
@@ -254,12 +254,12 @@ export default function AuditInterview() {
                             {DIMENSIONS.map((dim) => (
                                 <div key={dim.id} className="bg-zinc-50 rounded-xl p-4 sm:p-6 border border-zinc-200">
                                     <div className="flex items-start gap-3 mb-4">
-                                        <div className="p-2 bg-zinc-50 rounded-lg text-zinc-400">
+                                        <div className="p-2 bg-zinc-50 rounded-lg text-zinc-600">
                                             <dim.icon size={20} />
                                         </div>
                                         <div>
-                                            <h3 className="text-lg font-bold text-white">{dim.label}</h3>
-                                            <p className="text-sm text-zinc-500">{dim.desc}</p>
+                                            <h3 className="text-lg font-bold text-zinc-900">{dim.label}</h3>
+                                            <p className="text-sm text-zinc-700">{dim.desc}</p>
                                         </div>
                                     </div>
 
@@ -272,15 +272,15 @@ export default function AuditInterview() {
                                                         key={val}
                                                         onClick={() => handleScoreChange(dim.id as keyof Scores, val)}
                                                         className={`flex-1 py-2 text-sm font-mono font-bold rounded-md transition-all ${scores[dim.id as keyof Scores] === val
-                                                            ? 'bg-emerald-600 text-white'
-                                                            : 'hover:bg-white/10 text-zinc-500'
+                                                            ? 'bg-emerald-600 text-zinc-900'
+                                                            : 'hover:bg-white/10 text-zinc-700'
                                                             }`}
                                                     >
                                                         {val}
                                                     </button>
                                                 ))}
                                             </div>
-                                            <div className="text-center text-[10px] text-zinc-400 font-mono uppercase mt-1">
+                                            <div className="text-center text-[10px] text-zinc-600 font-mono uppercase mt-1">
                                                 {SCORE_LABELS[scores[dim.id as keyof Scores]]}
                                             </div>
                                         </div>
@@ -290,7 +290,7 @@ export default function AuditInterview() {
                                             value={observations[dim.id as keyof Observations]}
                                             onChange={(e) => handleObservationChange(dim.id as keyof Observations, e.target.value)}
                                             placeholder={`Notes on ${dim.label.toLowerCase()}...`}
-                                            className="w-full bg-white/50 border border-zinc-200 rounded-lg p-3 text-sm text-zinc-300 focus:border-emerald-500 focus:outline-none transition-all placeholder:text-zinc-700 h-20 resize-none"
+                                            className="w-full bg-white/50 border border-zinc-200 rounded-lg p-3 text-sm text-zinc-700 focus:border-emerald-500 focus:outline-none transition-all placeholder:text-zinc-700 h-20 resize-none"
                                         />
                                     </div>
                                 </div>
@@ -319,14 +319,14 @@ export default function AuditInterview() {
                 </ScrollReveal>
             ) : (
                 /* --- DASHBOARD STATE --- */
-                <div id="scoring-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
+                <div id="scoring-results-artifact" className="bg-white p-2 sm:p-6 rounded-3xl">
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-white mb-1">Interview Dashboard</h2>
-                            <p className="text-sm text-zinc-400">Session Complete • Protocol {role.toUpperCase()}-092</p>
+                            <p className="text-sm text-zinc-600">Session Complete • Protocol {role.toUpperCase()}-092</p>
                         </div>
                         <div className="mt-4 sm:mt-0 flex gap-4">
                             <button onClick={() => setOutcome(null)} className="px-4 py-2 border border-zinc-200 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
@@ -346,7 +346,7 @@ export default function AuditInterview() {
                                     {outcome.verdict}
                                 </div>
                                 <div className="flex items-center gap-3 text-sm font-mono border-t border-zinc-200 pt-4 mt-4 w-full justify-center">
-                                    <span className="text-zinc-400">Total Score:</span>
+                                    <span className="text-zinc-600">Total Score:</span>
                                     <span className="text-white font-bold">{outcome.total}/12</span>
                                 </div>
                             </GlowCard>
@@ -365,18 +365,18 @@ export default function AuditInterview() {
                                 {DIMENSIONS.map(dim => (
                                     <div key={dim.id} className="flex justify-between items-center">
                                         <div className="flex items-center gap-2">
-                                            <dim.icon size={14} className="text-zinc-400" />
-                                            <span className="text-sm text-zinc-300">{dim.label}</span>
+                                            <dim.icon size={14} className="text-zinc-600" />
+                                            <span className="text-sm text-zinc-700">{dim.label}</span>
                                         </div>
                                         <div className={`text-sm font-mono font-bold ${scores[dim.id as keyof Scores] === 3 ? 'text-emerald-400' :
-                                            scores[dim.id as keyof Scores] === 0 ? 'text-red-500' : 'text-white'
+                                            scores[dim.id as keyof Scores] === 0 ? 'text-red-500' : 'text-zinc-900'
                                             }`}>
                                             {scores[dim.id as keyof Scores]}/3
                                         </div>
                                     </div>
                                 ))}
                                 <div className="border-t border-zinc-200 pt-4 mt-4">
-                                    <p className="text-xs text-zinc-400 leading-relaxed italic">
+                                    <p className="text-xs text-zinc-600 leading-relaxed italic">
                                         "{outcome.rationale}"
                                     </p>
                                 </div>
@@ -387,12 +387,12 @@ export default function AuditInterview() {
                         <div className="capsule-container rounded-2xl p-8 mb-12">
                             <div className="flex items-center gap-2 mb-6">
                                 <TrendingUp size={18} className="text-emerald-500" />
-                                <h2 className="text-xl font-bold text-white">Executive Defense Memo</h2>
+                                <h2 className="text-xl font-bold text-zinc-900">Executive Defense Memo</h2>
                             </div>
 
                             {!memo ? (
                                 <div className="text-center py-12 border-2 border-dashed border-zinc-200 rounded-xl">
-                                    <p className="text-zinc-500 mb-6 max-w-md mx-auto">
+                                    <p className="text-zinc-700 mb-6 max-w-md mx-auto">
                                         Generate a high-agency defense memo to justify this hiring decision to the Investment Committee.
                                     </p>
                                     <button
@@ -404,12 +404,12 @@ export default function AuditInterview() {
                                     </button>
                                 </div>
                             ) : (
-                                <div className="prose prose-zinc prose-lg max-w-none bg-black/30 p-8 rounded-xl border-l-4 border-emerald-500">
+                                <div className="prose prose-zinc prose-lg max-w-none bg-zinc-100 p-8 rounded-xl border-l-4 border-emerald-500">
                                     <div className="flex justify-between items-start mb-4">
                                         <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest">Confidential // Internal Only</span>
                                         <button onClick={() => navigator.clipboard.writeText(memo)} className="text-[10px] font-mono text-zinc-500 hover:text-zinc-900 uppercase">Copy</button>
                                     </div>
-                                    <p className="text-zinc-200 leading-loose whitespace-pre-wrap font-serif">
+                                    <p className="text-zinc-800 leading-loose whitespace-pre-wrap font-serif">
                                         {memo}
                                     </p>
                                 </div>

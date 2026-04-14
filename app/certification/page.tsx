@@ -45,11 +45,11 @@ export default function CertificationPage() {
                         Certified Product<br />
                         <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Economist.</span>
                     </h1>
-                    <p className="text-zinc-600 text-lg max-w-2xl mx-auto mb-4">
+                    <p className="text-zinc-800 text-lg max-w-2xl mx-auto mb-4">
                         The only professional credential in product economics.
                         Master the methodology. Earn the title.
                     </p>
-                    <p className="text-zinc-600 text-sm max-w-lg mx-auto mb-8">
+                    <p className="text-zinc-800 text-sm max-w-lg mx-auto mb-8">
                         48 hours of instruction · 12 modules · Live capstone review · Credential valid for 2 years
                     </p>
 
@@ -67,10 +67,10 @@ export default function CertificationPage() {
                                 <div className="text-2xl font-bold text-amber-400/30 font-mono group-hover:text-amber-400/60 transition-colors">{mod.num}</div>
                                 <div className="flex-1">
                                     <div className="flex items-center justify-between mb-1">
-                                        <h3 className="text-lg font-bold text-white">{mod.title}</h3>
-                                        <span className="text-xs text-zinc-600 font-mono">{mod.hours}</span>
+                                        <h3 className="text-lg font-bold text-zinc-900">{mod.title}</h3>
+                                        <span className="text-xs text-zinc-800 font-mono">{mod.hours}</span>
                                     </div>
-                                    <p className="text-zinc-400 text-sm">{mod.desc}</p>
+                                    <p className="text-zinc-600 text-sm">{mod.desc}</p>
                                 </div>
                             </div>
                         ))}
@@ -89,7 +89,7 @@ export default function CertificationPage() {
                                 <h3 className="text-lg font-bold text-white mb-3">{section.title}</h3>
                                 <ul className="space-y-2">
                                     {section.items.map((item, j) => (
-                                        <li key={j} className="flex items-start gap-2 text-zinc-400 text-sm">
+                                        <li key={j} className="flex items-start gap-2 text-zinc-600 text-sm">
                                             <CheckCircle className="w-3 h-3 text-amber-400/50 mt-1 flex-shrink-0" />
                                             {item}
                                         </li>
@@ -101,7 +101,7 @@ export default function CertificationPage() {
 
                     <div className="card p-8 md:p-12 border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-transparent text-center">
                         <div className="text-3xl font-bold text-white mb-2">$1,500</div>
-                        <p className="text-zinc-500 text-sm mb-6">Per certification · Payment plans available</p>
+                        <p className="text-zinc-700 text-sm mb-6">Per certification · Payment plans available</p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a
                                 href="/api/buy/certification"
@@ -120,12 +120,12 @@ export default function CertificationPage() {
                                 Just Join Waitlist
                             </a>
                         </div>
-                        <p className="text-[10px] text-zinc-600 mt-4">Cohort 1 opens Q3 2026. Pay now to secure priority enrollment.</p>
+                        <p className="text-[10px] text-zinc-800 mt-4">Cohort 1 opens Q3 2026. Pay now to secure priority enrollment.</p>
                     </div>
                 </section>
 
                 <section className="section max-w-4xl mx-auto text-center">
-                    <p className="text-zinc-500 text-sm">
+                    <p className="text-zinc-700 text-sm">
                         Questions?{' '}
                         <a href="mailto:richardewing@exogram.ai?subject=CPE%20Certification%20Inquiry" className="text-amber-400 hover:text-zinc-900 transition-colors">Email Richard directly</a>
                         {' '}or{' '}

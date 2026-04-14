@@ -36,7 +36,7 @@ export default function ForBoardsPage() {
                             Your CTO Speaks Engineering.<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">You Need Financial Language.</span>
                         </h1>
-                        <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-8">
+                        <p className="text-xl text-zinc-600 max-w-2xl mx-auto mb-8">
                             R&D Capital Audits translate technical complexity into board-ready financial metrics. Know the real cost of your technology investment — not the optimistic narrative.
                         </p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold hover:opacity-90 transition-opacity">Request Board Briefing →</Link>
@@ -48,7 +48,7 @@ export default function ForBoardsPage() {
                             {boardQuestions.map((q, i) => (
                                 <div key={i} className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-6">
                                     <h3 className="text-lg font-bold text-white mb-2">&ldquo;{q.question}&rdquo;</h3>
-                                    <p className="text-zinc-400 mb-3">{q.answer}</p>
+                                    <p className="text-zinc-600 mb-3">{q.answer}</p>
                                     <Link href={q.link} className="text-xs font-mono text-amber-400 hover:text-amber-300 uppercase tracking-widest">
                                         Measure with {q.metric} →
                                     </Link>
@@ -60,21 +60,21 @@ export default function ForBoardsPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
                         <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">$$$</div>
-                            <div className="text-sm text-zinc-400">Debt quantified in dollars, not story points</div>
+                            <div className="text-sm text-zinc-600">Debt quantified in dollars, not story points</div>
                         </div>
                         <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">Q1-Q4</div>
-                            <div className="text-sm text-zinc-400">Quarterly reporting cadence for fiduciary oversight</div>
+                            <div className="text-sm text-zinc-600">Quarterly reporting cadence for fiduciary oversight</div>
                         </div>
                         <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">1 Page</div>
-                            <div className="text-sm text-zinc-400">Executive summary, not 50-page engineering reports</div>
+                            <div className="text-sm text-zinc-600">Executive summary, not 50-page engineering reports</div>
                         </div>
                     </div>
 
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Board-Ready in 2 Weeks</h2>
-                        <p className="text-zinc-400 mb-8 max-w-xl mx-auto">Full R&D Capital Audit with executive summary, risk assessment, and remediation roadmap. Delivered as a board presentation, not a technical document.</p>
+                        <p className="text-zinc-600 mb-8 max-w-xl mx-auto">Full R&D Capital Audit with executive summary, risk assessment, and remediation roadmap. Delivered as a board presentation, not a technical document.</p>
                         <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Schedule Board Briefing →</Link>
                     </div>
                 </div>

@@ -47,7 +47,7 @@ export default function AperFaqPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/tools" className="hover:text-cyan-400">Tools</Link><span>/</span>
                         <Link href="/tools/aper" className="hover:text-cyan-400">APER</Link><span>/</span>
                         <span className="text-cyan-400 font-bold">FAQ</span>
@@ -55,18 +55,18 @@ export default function AperFaqPage() {
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
                         APER{' '}<span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-400">FAQ</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 mb-12 max-w-2xl">Everything you need to know about measuring engineering team efficiency with APER.</p>
+                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">Everything you need to know about measuring engineering team efficiency with APER.</p>
                     <div className="space-y-6 mb-16">
                         {faqs.map((faq, i) => (
                             <div key={i} className={`rounded-2xl border p-8 ${colorStyles[faq.color]}`}>
                                 <h2 className="text-xl font-grotesk font-bold text-white mb-4">{faq.q}</h2>
-                                <p className="text-zinc-300 leading-relaxed">{faq.a}</p>
+                                <p className="text-zinc-700 leading-relaxed">{faq.a}</p>
                             </div>
                         ))}
                     </div>
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Try the APER Calculator</h2>
-                        <p className="text-zinc-300 mb-6">Benchmark your engineering efficiency in under 5 minutes. No account required.</p>
+                        <p className="text-zinc-700 mb-6">Benchmark your engineering efficiency in under 5 minutes. No account required.</p>
                         <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-white font-bold hover:opacity-90 transition-opacity">Launch APER Calculator &rarr;</Link>
                     </div>
                 </div>

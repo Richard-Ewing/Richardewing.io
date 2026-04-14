@@ -65,10 +65,10 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
     return (
         <div className="mt-12 border-t border-zinc-200 pt-12 space-y-8">
             {/* Email Capture Section */}
-            <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-8 border border-zinc-200 shadow-2xl">
+            <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-8 border border-zinc-200 shadow-2xl">
                 <div className="flex items-center gap-3 mb-4">
                     <UrgencyIcon urgency={contextCTA.urgency} />
-                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-700">
                         {toolName} Results
                     </span>
                 </div>
@@ -76,7 +76,7 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                     {headline || 'Want a Board-Ready Analysis?'}
                 </h3>
-                <p className="text-zinc-400 mb-6">
+                <p className="text-zinc-600 mb-6">
                     Get a personalized deep-dive with actionable recommendations from a Product Economist.
                 </p>
 
@@ -90,7 +90,7 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                     }}
                 />
 
-                <p className="text-xs text-zinc-600 mt-3">
+                <p className="text-xs text-zinc-800 mt-3">
                     No spam. Unsubscribe anytime. Your data is secure.
                 </p>
             </div>
@@ -98,7 +98,7 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
             {/* Primary CTA */}
             <div className="text-center space-y-6">
                 <div className="inline-flex flex-col items-center">
-                    <p className="text-zinc-500 text-sm mb-4">Ready to fix this? Talk to a Product Economist.</p>
+                    <p className="text-zinc-700 text-sm mb-4">Ready to fix this? Talk to a Product Economist.</p>
                     <Link
                         href="/advisory"
                         className={`group relative inline-flex items-center gap-3 px-10 py-4 font-bold uppercase tracking-widest text-sm rounded-xl transition-all transform hover:scale-105 ${contextCTA.urgency === 'critical'
@@ -133,13 +133,13 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
 
             {/* Social Proof */}
             <div className="text-center pt-8 border-t border-zinc-200">
-                <p className="text-xs text-zinc-600 mb-3">Trusted by product leaders at</p>
-                <div className="flex items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
-                    <span className="hover:text-zinc-400 transition-colors">Stripe</span>
-                    <span className="hover:text-zinc-400 transition-colors">Figma</span>
-                    <span className="hover:text-zinc-400 transition-colors">Linear</span>
-                    <span className="hover:text-zinc-400 transition-colors">Notion</span>
-                    <span className="hover:text-zinc-400 transition-colors">Vercel</span>
+                <p className="text-xs text-zinc-800 mb-3">Trusted by product leaders at</p>
+                <div className="flex items-center justify-center gap-8 text-zinc-800 font-mono text-xs">
+                    <span className="hover:text-zinc-600 transition-colors">Stripe</span>
+                    <span className="hover:text-zinc-600 transition-colors">Figma</span>
+                    <span className="hover:text-zinc-600 transition-colors">Linear</span>
+                    <span className="hover:text-zinc-600 transition-colors">Notion</span>
+                    <span className="hover:text-zinc-600 transition-colors">Vercel</span>
                 </div>
             </div>
         </div>
@@ -157,7 +157,7 @@ interface SEOContentProps {
 
 export function SEOContent({ title, description, howItWorks, whyItMatters, formula }: SEOContentProps) {
     return (
-        <section className="mt-16 border-t border-zinc-200 pt-12 text-zinc-500 space-y-8">
+        <section className="mt-16 border-t border-zinc-200 pt-12 text-zinc-700 space-y-8">
             <div>
                 <h2 className="text-white font-bold text-2xl mb-4">{title}</h2>
                 <p className="leading-relaxed">{description}</p>

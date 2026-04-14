@@ -149,8 +149,8 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                     <div className="w-16 h-16 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(239,68,68,0.1)]">
                         <Lock className="w-8 h-8 text-red-500" />
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tighter text-white">Diagnostic Limit Reached</h2>
-                    <p className="text-zinc-400 text-lg mb-8 max-w-md mx-auto">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tighter text-zinc-900">Diagnostic Limit Reached</h2>
+                    <p className="text-zinc-600 text-lg mb-8 max-w-md mx-auto">
                         You have exceeded the maximum number of free generic diagnostic scans. To continue evaluating systems via {toolName}, please join the Vault.
                     </p>
                     <a href="/vault/join" className="block w-full py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold uppercase tracking-widest text-sm rounded-xl transition-all shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:shadow-[0_0_30px_rgba(225,29,72,0.6)]">
@@ -181,7 +181,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                     Enter Email to Continue
                 </h1>
 
-                <p className="text-zinc-400 text-lg mb-8 max-w-md mx-auto">
+                <p className="text-zinc-600 text-lg mb-8 max-w-md mx-auto">
                     Enter your email to access {toolName} results.
                 </p>
 
@@ -190,7 +190,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                         <input type="hidden" name="source" value={`${toolName} Gate`} />
 
                         <div className="relative">
-                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
+                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-700" />
                             <input
                                 id="email"
                                 type="email"
@@ -200,7 +200,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                                 disabled={state.submitting || isValidating}
                                 value={email}
                                 onChange={(e) => { setEmail(e.target.value); setValidationError(''); }}
-                                className="w-full pl-12 pr-4 py-4 bg-white/50 border border-zinc-200 rounded-xl text-white placeholder:text-zinc-400 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all font-mono"
+                                className="w-full pl-12 pr-4 py-4 bg-white/50 border border-zinc-200 rounded-xl text-white placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all font-mono"
                             />
                             <ValidationError
                                 prefix="Email"
@@ -237,7 +237,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                         </button>
                     </form>
 
-                    <p className="text-[10px] text-zinc-500 font-mono mt-6 uppercase tracking-widest">
+                    <p className="text-[10px] text-zinc-700 font-mono mt-6 uppercase tracking-widest">
                         Zero spam. Just high-leverage insights for product leaders.
                     </p>
                 </div>

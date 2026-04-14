@@ -72,13 +72,13 @@ export default function ProgressCompleteButton({ moduleId, nextHref }: { moduleI
                                     <div>
                                         <div className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-1">Track Completed</div>
                                         <h3 className="text-2xl font-grotesk font-bold text-white mb-2">Unlock Private Office Hours</h3>
-                                        <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                                        <p className="text-zinc-600 text-sm leading-relaxed mb-6">
                                             You've mastered the theory. Now let's map it to your specific stack. Book a 1-on-1 strategic synthesis call to apply this exact framework to your firm's architecture, team layout, and board commitments.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="border-t border-zinc-200 bg-zinc-50 p-6 flex items-center justify-between">
-                                    <div className="text-xs text-zinc-500 max-w-[200px]">Enterprise Advisory Intake Questionnaire required pre-call.</div>
+                                    <div className="text-xs text-zinc-700 max-w-[200px]">Enterprise Advisory Intake Questionnaire required pre-call.</div>
                                     <button onClick={() => window.location.href='/advisory'} className="px-6 py-3 bg-white hover:bg-zinc-200 text-black font-bold uppercase tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] text-xs">
                                         Apply for Advisory →
                                     </button>

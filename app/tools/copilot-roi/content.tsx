@@ -22,8 +22,8 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                 
                 return (
                     <div key={i} className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 relative group">
-                        <div className="w-full sm:w-36 text-xs font-mono text-zinc-500 sm:text-right hidden sm:block leading-tight">{item.name}</div>
-                        <div className="w-full sm:hidden text-[10px] font-mono text-zinc-400 uppercase tracking-widest">{item.name}</div>
+                        <div className="w-full sm:w-36 text-xs font-mono text-zinc-700 sm:text-right hidden sm:block leading-tight">{item.name}</div>
+                        <div className="w-full sm:hidden text-[10px] font-mono text-zinc-600 uppercase tracking-widest">{item.name}</div>
                         
                         <div className="flex-1 w-full h-10 bg-zinc-50 border border-zinc-200 rounded-lg overflow-hidden relative">
                             <motion.div 
@@ -61,8 +61,8 @@ const RiskSlider = ({ label, value, onChange, description, min = 0, max = 100, s
         <div className="space-y-3 p-4 bg-white/60 rounded-xl border border-zinc-200 hover:border-cyan-500/20 transition-colors group">
             <div className="flex justify-between items-center">
                 <span className="text-sm text-white font-medium group-hover:text-cyan-400 transition-colors">{label}</span>
-                <div className={`flex items-center gap-2 px-2 py-1 rounded-lg bg-black/30 border border-zinc-200`}>
-                    <span className="text-xs font-mono text-zinc-300 font-bold">{value}{suffix}</span>
+                <div className={`flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-100 border border-zinc-200`}>
+                    <span className="text-xs font-mono text-zinc-700 font-bold">{value}{suffix}</span>
                 </div>
             </div>
             <div className="relative pt-2 pb-1">
@@ -82,7 +82,7 @@ const RiskSlider = ({ label, value, onChange, description, min = 0, max = 100, s
                     className="relative w-full h-1 bg-transparent appearance-none cursor-pointer z-10 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-[0_0_10px_rgba(34,211,238,0.5)]"
                 />
             </div>
-            <p className="text-[11px] text-zinc-500 leading-relaxed pt-1">{description}</p>
+            <p className="text-[11px] text-zinc-700 leading-relaxed pt-1">{description}</p>
         </div>
     );
 };
@@ -196,7 +196,7 @@ export default function CopilotROITool() {
     const readout = getPersonaReadout();
 
     return (
-        <main className="min-h-screen bg-black pt-28 pb-20 selection:bg-cyan-500/30 font-grotesk">
+        <main className="min-h-screen bg-white pt-28 pb-20 selection:bg-cyan-500/30 font-grotesk">
             <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
             
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -208,7 +208,7 @@ export default function CopilotROITool() {
                             <Bot className="w-3 h-3" />
                             AI Enterprise Economics
                         </div>
-                        <div className="px-2 py-1 rounded bg-white/5 text-zinc-400 text-[10px] font-mono tracking-widest uppercase border border-zinc-200">
+                        <div className="px-2 py-1 rounded bg-white/5 text-zinc-600 text-[10px] font-mono tracking-widest uppercase border border-zinc-200">
                             Unit Cost Forecaster
                         </div>
                     </div>
@@ -217,7 +217,7 @@ export default function CopilotROITool() {
                         Copilot <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-purple-500">ROI Forecaster</span>
                     </h1>
                     
-                    <p className="text-lg sm:text-xl text-zinc-400 max-w-3xl font-light leading-relaxed">
+                    <p className="text-lg sm:text-xl text-zinc-600 max-w-3xl font-light leading-relaxed">
                         Vendors sell "Lines of Code Generated". You buy "Net Revenue Retention". Calculate how raw generative AI velocity is violently degraded by code review bottlenecks and Vibe Coding Debt.
                     </p>
                 </div>
@@ -300,8 +300,8 @@ export default function CopilotROITool() {
                             
                             <div className="p-5 rounded-2xl bg-fuchsia-500/5 items-start flex gap-3 border border-fuchsia-500/20">
                                 <Code className="w-5 h-5 text-fuchsia-400 mt-1 flex-shrink-0" />
-                                <div className="text-xs text-zinc-400">
-                                    <strong className="text-zinc-200">The Subprime Code Crisis:</strong> Vibe coding generates massive volumes of syntactically correct but architecturally flawed code. This calculator mathematically prices the downstream cost of unwinding that code.
+                                <div className="text-xs text-zinc-600">
+                                    <strong className="text-zinc-800">The Subprime Code Crisis:</strong> Vibe coding generates massive volumes of syntactically correct but architecturally flawed code. This calculator mathematically prices the downstream cost of unwinding that code.
                                 </div>
                             </div>
 
@@ -321,16 +321,16 @@ export default function CopilotROITool() {
                                             <h2 className={`text-5xl lg:text-7xl font-bold tracking-tighter ${isNegativeReturn ? 'text-red-500' : 'text-emerald-500'}`}>
                                                 {isNegativeReturn ? '-' : '+'}${Math.abs(netROAI_Dollar / 1000).toFixed(0)}k
                                             </h2>
-                                            <span className="text-zinc-500 font-mono mb-2">/ year</span>
+                                            <span className="text-zinc-700 font-mono mb-2">/ year</span>
                                         </div>
                                     </div>
                                     <div className="mt-4 md:mt-0 flex gap-2 w-full md:w-auto">
                                         <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-200 px-4 py-2 rounded-xl">
-                                            <div className="text-[10px] uppercase font-mono text-zinc-500 mb-1">Gross Expected Lift</div>
+                                            <div className="text-[10px] uppercase font-mono text-zinc-700 mb-1">Gross Expected Lift</div>
                                             <div className="text-lg font-bold text-emerald-400">${(grossProductivityLiftDollar / 1000).toFixed(0)}k</div>
                                         </div>
                                         <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-200 px-4 py-2 rounded-xl">
-                                            <div className="text-[10px] uppercase font-mono text-zinc-500 mb-1">Total Drag Penalties</div>
+                                            <div className="text-[10px] uppercase font-mono text-zinc-700 mb-1">Total Drag Penalties</div>
                                             <div className="text-lg font-bold text-red-400">-${((annualLicenseCost + vibeDebtDragDollar + reviewBottleneckDragDollar) / 1000).toFixed(0)}k</div>
                                         </div>
                                     </div>
@@ -375,7 +375,7 @@ export default function CopilotROITool() {
                                                 className={`flex-1 min-w-[120px] px-4 py-5 flex items-center justify-center gap-2 text-sm font-medium transition-all border-b-2 font-mono uppercase tracking-wider ${
                                                     isActive 
                                                         ? 'border-cyan-500 text-cyan-400 bg-cyan-500/5' 
-                                                        : 'border-transparent text-zinc-500 hover:text-zinc-300 hover:bg-white/5'
+                                                        : 'border-transparent text-zinc-500 hover:text-zinc-700 hover:bg-white/5'
                                                 }`}
                                             >
                                                 <Icon size={16} />
@@ -393,7 +393,7 @@ export default function CopilotROITool() {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <div className="inline-flex px-3 py-1 bg-white/5 border border-zinc-200 rounded tracking-widest text-[10px] text-zinc-400 font-mono mb-4 uppercase">
+                                        <div className="inline-flex px-3 py-1 bg-white/5 border border-zinc-200 rounded tracking-widest text-[10px] text-zinc-600 font-mono mb-4 uppercase">
                                             {readout.title}
                                         </div>
 
@@ -401,7 +401,7 @@ export default function CopilotROITool() {
                                             {readout.insights.map((insight, idx) => (
                                                 <div key={idx} className="flex gap-3 items-start group">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-2.5 opacity-50 group-hover:opacity-100 transition-opacity shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
-                                                    <p className="text-zinc-300 text-lg leading-relaxed flex-1">
+                                                    <p className="text-zinc-700 text-lg leading-relaxed flex-1">
                                                         {insight}
                                                     </p>
                                                 </div>
@@ -427,7 +427,7 @@ export default function CopilotROITool() {
                                             fileName={`copilot-roi-audit-${activePersona.toLowerCase()}.pdf`}
                                         />
                                     </div>
-                                    <div className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">Confidential Engine</div>
+                                    <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest">Confidential Engine</div>
                                 </div>
                             </div>
 

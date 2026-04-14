@@ -76,35 +76,35 @@ export default async function ArticlePage({ params }: Props) {
             />
 
             {/* Breadcrumb */}
-            <div className="mb-8 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            <div className="mb-8 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/articles" className="hover:text-zinc-900 transition-colors">Canonical Hub</Link>
                 <span>/</span>
                 <span className="text-cyan-400 font-bold truncate">{article.title}</span>
             </div>
 
             {/* Header */}
-            <header className="mb-12 border-b border-white/10 pb-12">
+            <header className="mb-12 border-b border-zinc-200 pb-12">
                 <div className="flex items-center gap-4 mb-6">
                     <span className="px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono uppercase tracking-widest">
                         {article.source}
                     </span>
-                    <span className="text-zinc-500 text-xs font-mono uppercase tracking-widest">
+                    <span className="text-zinc-700 text-xs font-mono uppercase tracking-widest">
                         {article.readTime}
                     </span>
                 </div>
                 <h1 className="text-3xl sm:text-5xl font-grotesk font-bold text-white mb-6 leading-tight">
                     {article.title}
                 </h1>
-                <p className="text-xl text-zinc-400 leading-relaxed font-serif italic">
+                <p className="text-xl text-zinc-600 leading-relaxed font-serif italic">
                     {article.description}
                 </p>
             </header>
 
             {/* Content Placeholder / Fallback */}
             <div className="prose prose-zinc prose-lg max-w-none">
-                <div className="p-8 bg-white/5 border border-white/10 rounded-2xl mb-12">
+                <div className="p-8 bg-white/5 border border-zinc-200 rounded-2xl mb-12">
                     <h3 className="text-xl font-bold text-white mb-4 font-grotesk">Full Text Available in Archive</h3>
-                    <p className="text-zinc-400 text-sm mb-6">
+                    <p className="text-zinc-600 text-sm mb-6">
                         This article was originally published on <strong>{article.source}</strong>.
                         You can read the full text in its original format or view the local archival copy.
                     </p>
@@ -117,7 +117,7 @@ export default async function ArticlePage({ params }: Props) {
                                 Read Archival Copy
                             </a>
                         )}
-                        <Link href="/briefings" className="px-6 py-3 border border-white/20 hover:border-white/50 text-white font-bold uppercase tracking-widest text-xs rounded-lg transition-colors">
+                        <Link href="/briefings" className="px-6 py-3 border border-white/20 hover:border-zinc-2000 text-white font-bold uppercase tracking-widest text-xs rounded-lg transition-colors">
                             View All Briefings
                         </Link>
                     </div>
@@ -129,7 +129,7 @@ export default async function ArticlePage({ params }: Props) {
                 )}
             </div>
 
-            <div className="mt-20 pt-12 border-t border-white/10">
+            <div className="mt-20 pt-12 border-t border-zinc-200">
                 <Link href="/articles" className="text-zinc-500 hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-mono uppercase tracking-widest">
                     ← Back to Canonical Hub
                 </Link>

@@ -60,7 +60,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                         )}
                     </div>
                     <h2 className={`text-xl sm:text-2xl font-grotesk font-bold ${textMap[track.color]} transition-colors`}>{track.title}</h2>
-                    <p className={`text-sm sm:text-base text-zinc-500 mt-2 line-clamp-2 sm:line-clamp-none ${isOpen ? '' : 'hidden sm:block'}`}>
+                    <p className={`text-sm sm:text-base text-zinc-700 mt-2 line-clamp-2 sm:line-clamp-none ${isOpen ? '' : 'hidden sm:block'}`}>
                         {track.description}
                     </p>
                     {completionCount > 0 && !isOpen && (
@@ -69,7 +69,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                         </div>
                     )}
                 </div>
-                <div className="flex-shrink-0 mt-3 sm:mt-4 text-zinc-500">
+                <div className="flex-shrink-0 mt-3 sm:mt-4 text-zinc-700">
                     <svg 
                         className={`w-6 h-6 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
                         fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -84,7 +84,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                 className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
             >
                 <div className="px-6 pb-6 pt-0 sm:px-8 sm:pb-8 border-t border-zinc-200 mt-2 pt-6">
-                    <p className="text-zinc-500 mb-8 sm:hidden">{track.description}</p>
+                    <p className="text-zinc-700 mb-8 sm:hidden">{track.description}</p>
                     
                     {completionCount > 0 && (
                         <div className="w-full h-1.5 bg-zinc-200 overflow-hidden rounded-full mb-8 border border-zinc-300">
@@ -99,11 +99,11 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                 <Link key={j} href={m.href} className={`flex items-center justify-between p-4 rounded-xl border transition-colors group ${isDone ? 'bg-emerald-50 border-emerald-200 hover:border-emerald-300' : 'bg-white border-zinc-200 hover:border-zinc-300 shadow-sm'}`}>
                                     <div className="pr-4 flex items-center gap-3">
                                         <div className="flex-shrink-0 text-zinc-900 font-bold text-sm w-6">
-                                            {isDone ? <span className="text-emerald-600">✓</span> : <span className="text-zinc-400">{j + 1}.</span>}
+                                            {isDone ? <span className="text-emerald-600">✓</span> : <span className="text-zinc-600">{j + 1}.</span>}
                                         </div>
                                         <div>
-                                            <div className={`font-bold text-sm transition-colors ${isDone ? 'text-zinc-600 group-hover:text-emerald-600' : 'text-zinc-900 group-hover:text-purple-700'}`}>{m.name}</div>
-                                            <div className="text-xs text-zinc-500 mt-1">{m.topics}</div>
+                                            <div className={`font-bold text-sm transition-colors ${isDone ? 'text-zinc-800 group-hover:text-emerald-600' : 'text-zinc-900 group-hover:text-purple-700'}`}>{m.name}</div>
+                                            <div className="text-xs text-zinc-700 mt-1">{m.topics}</div>
                                         </div>
                                     </div>
                                     <span className={`flex-shrink-0 px-3 py-1 rounded-full text-xs font-mono border whitespace-nowrap ${isDone ? 'bg-zinc-100 text-emerald-600 border-emerald-200' : 'bg-emerald-50 text-emerald-600 border-emerald-200'}`}>
@@ -149,7 +149,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                 </div>
                                 <div className="flex-grow">
                                     <h3 className="text-xl font-grotesk font-bold text-emerald-700 mb-2">Track Mastered</h3>
-                                    <p className="text-sm text-zinc-600">
+                                    <p className="text-sm text-zinc-800">
                                         You have successfully completed every module in this architecture. To help you implement these exact systems in your organization, you've unlocked a complimentary 30-minute implementation audit with Richard Ewing, or you can roll this out to your engineering managers with a Team License.
                                     </p>
                                 </div>

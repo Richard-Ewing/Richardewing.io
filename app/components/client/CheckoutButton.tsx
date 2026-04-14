@@ -43,9 +43,9 @@ export default function CheckoutButton({ productId, label, icon = 'file', varian
     const IconComponent = icon === 'key' ? Key : icon === 'lock' ? Lock : FileText;
 
     let baseClass = "flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-sm transition-opacity ";
-    if (variant === 'primary') baseClass += "bg-gradient-to-r from-cyan-600 to-blue-600 text-white hover:opacity-90";
-    else if (variant === 'secondary') baseClass += "bg-emerald-500 text-black hover:bg-emerald-400";
-    else baseClass += "border border-zinc-300 text-white hover:bg-white/5";
+    if (variant === 'primary') baseClass += "bg-gradient-to-r from-violet-600 to-purple-600 text-white hover:opacity-90 shadow-lg";
+    else if (variant === 'secondary') baseClass += "bg-emerald-500 text-white hover:bg-emerald-400";
+    else baseClass += "border border-zinc-300 text-zinc-800 hover:bg-zinc-50";
 
     const defaultLabel = `Unlock — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`;
 

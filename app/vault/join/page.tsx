@@ -61,13 +61,13 @@ export default function JoinTeamPage() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
                     
                     <div className="relative z-10 text-center mb-8">
-                        <div className="w-16 h-16 rounded-2xl bg-black border border-zinc-200 flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(6,182,212,0.1)]">
+                        <div className="w-16 h-16 rounded-2xl bg-white border border-zinc-200 flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(6,182,212,0.1)]">
                             <Users className="w-8 h-8 text-cyan-500" />
                         </div>
                         <h1 className="text-3xl font-grotesk font-bold text-white mb-3">
                             Claim Enterprise Seat
                         </h1>
-                        <p className="text-zinc-400 text-sm">
+                        <p className="text-zinc-600 text-sm">
                             Enter the secure team code provided by your administrator to instantly unlock full curriculum and platform access.
                         </p>
                     </div>
@@ -83,7 +83,7 @@ export default function JoinTeamPage() {
                                 value={inviteCode}
                                 onChange={(e) => setInviteCode(e.target.value.toUpperCase())}
                                 placeholder="REQ-XXXXXX-XXXXXX"
-                                className="w-full bg-black border border-zinc-200 rounded-xl px-5 py-4 text-white font-mono text-lg focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors uppercase placeholder:normal-case placeholder:text-zinc-700 placeholder:font-sans"
+                                className="w-full bg-white border border-zinc-200 rounded-xl px-5 py-4 text-white font-mono text-lg focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors uppercase placeholder:normal-case placeholder:text-zinc-700 placeholder:font-sans"
                                 disabled={status === 'loading' || status === 'success'}
                             />
                         </div>
@@ -105,7 +105,7 @@ export default function JoinTeamPage() {
                                 disabled={status === 'loading' || !inviteCode}
                                 className={`w-full py-4 rounded-xl flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-widest transition-all ${
                                     status === 'loading' || !inviteCode 
-                                    ? 'bg-zinc-800 text-zinc-500 cursor-not-allowed' 
+                                    ? 'bg-zinc-800 text-zinc-700 cursor-not-allowed' 
                                     : 'bg-cyan-500 text-black hover:bg-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]'
                                 }`}
                             >
@@ -117,7 +117,7 @@ export default function JoinTeamPage() {
                             </button>
                         )}
                         
-                        <div className="mt-6 flex items-center justify-center gap-2 text-[10px] text-zinc-600 font-mono uppercase tracking-widest">
+                        <div className="mt-6 flex items-center justify-center gap-2 text-[10px] text-zinc-800 font-mono uppercase tracking-widest">
                             <ShieldCheck className="w-3 h-3" /> Encrypted Code Verification
                         </div>
                     </form>

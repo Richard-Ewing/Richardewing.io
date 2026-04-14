@@ -96,7 +96,7 @@ export default async function VaultPage() {
                             <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-white mb-2">
                                 Welcome back, <span className="text-cyan-400">{user.firstName || 'Strategist'}</span>
                             </h1>
-                            <p className="text-zinc-400 max-w-2xl text-lg">
+                            <p className="text-zinc-600 max-w-2xl text-lg">
                                 Access your unlocked advisory assets and board-ready PDF diagnostic reports.
                             </p>
                         </div>
@@ -122,7 +122,7 @@ export default async function VaultPage() {
                                         ? `Last Action: ${toolRuns[0].tool_id === 'pdi' ? 'Product Debt Index' : 'Diagnostic'}` 
                                         : 'Awaiting Assessment'}
                                 </h2>
-                                <p className="text-sm text-zinc-300 max-w-xl h-10 line-clamp-2">
+                                <p className="text-sm text-zinc-700 max-w-xl h-10 line-clamp-2">
                                     {toolRuns.length > 0 
                                         ? `Identified ${formatMoney(toolRuns[0].financial_waste)} in capital waste on ${new Date(toolRuns[0].created_at).toLocaleDateString()}.`
                                         : 'Run your first boardroom-ready diagnostic to baseline metrics.'}
@@ -157,7 +157,7 @@ export default async function VaultPage() {
                                         ? `Resume: ${contentProgress[0].content_id}`
                                         : 'Awaiting Mastery'}
                                 </h2>
-                                <p className="text-sm text-zinc-300 max-w-xl h-10 line-clamp-2">
+                                <p className="text-sm text-zinc-700 max-w-xl h-10 line-clamp-2">
                                     {contentProgress.length > 0
                                         ? (contentProgress[0].is_completed ? 'Module mastered. Step into the next logical framework in your track series.' : `You are ${contentProgress[0].progress_percentage}% through this foundational module. Master the framework.`)
                                         : 'Zero modules completed. Begin Track 01 to establish your executive authority.'}
@@ -239,10 +239,10 @@ export default async function VaultPage() {
                                                         {progress.is_completed ? (
                                                             <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest border border-emerald-500/30 px-2 py-0.5 rounded-full bg-emerald-500/10">Completed</span>
                                                         ) : (
-                                                            <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">{progress.progress_percentage}% Complete</span>
+                                                            <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">{progress.progress_percentage}% Complete</span>
                                                         )}
                                                     </div>
-                                                    <div className="w-full h-1.5 bg-black rounded-full overflow-hidden border border-zinc-200">
+                                                    <div className="w-full h-1.5 bg-white rounded-full overflow-hidden border border-zinc-200">
                                                         <div 
                                                             className={`h-full transition-all duration-1000 ${progressStyles[`w_${Math.max(Math.round(progress.progress_percentage), 5)}`]} ${progress.is_completed ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]' : 'bg-gradient-to-r from-emerald-600 to-cyan-500 object-cover'}`}
                                                         />
@@ -268,7 +268,7 @@ export default async function VaultPage() {
                                     <div className="card p-6 border-cyan-500/20 bg-cyan-500/[0.02] hover:bg-cyan-500/[0.05] transition-colors group">
                                         <div className="text-2xl mb-3">📘</div>
                                         <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Premium Curriculum</h3>
-                                        <p className="text-sm text-zinc-400 mb-4">Full access to engineering economics playbooks and teardowns.</p>
+                                        <p className="text-sm text-zinc-600 mb-4">Full access to engineering economics playbooks and teardowns.</p>
                                         <Link href="/curriculum" className="inline-flex items-center text-xs font-bold text-cyan-400 uppercase tracking-widest">
                                             Access Curriculum <ChevronRight className="w-3 h-3 ml-1" />
                                         </Link>
@@ -276,7 +276,7 @@ export default async function VaultPage() {
                                     <div className="card p-6 border-violet-500/20 bg-violet-500/[0.02] hover:bg-violet-500/[0.05] transition-colors group">
                                         <div className="text-2xl mb-3">🛠️</div>
                                         <h3 className="text-lg font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">Diagnostic Tools</h3>
-                                        <p className="text-sm text-zinc-400 mb-4">Run the Product Debt Index and AI Unit Economics calculators.</p>
+                                        <p className="text-sm text-zinc-600 mb-4">Run the Product Debt Index and AI Unit Economics calculators.</p>
                                         <Link href="/tools" className="inline-flex items-center text-xs font-bold text-violet-400 uppercase tracking-widest">
                                             Open Tools <ChevronRight className="w-3 h-3 ml-1" />
                                         </Link>
@@ -292,7 +292,7 @@ export default async function VaultPage() {
                                                 </div>
                                                 <span className="px-3 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-[10px] uppercase font-bold tracking-widest rounded-full">Admin</span>
                                             </div>
-                                            <p className="text-sm text-zinc-400 mb-4">Manage your B2B enterprise license, view your team member seating ledger, and copy your invite URL.</p>
+                                            <p className="text-sm text-zinc-600 mb-4">Manage your B2B enterprise license, view your team member seating ledger, and copy your invite URL.</p>
                                             <Link href="/vault/team" className="inline-flex items-center text-xs font-bold text-amber-400 uppercase tracking-widest hover:text-amber-300">
                                                 Open Admin Dashboard <ChevronRight className="w-3 h-3 ml-1" />
                                             </Link>
@@ -302,9 +302,9 @@ export default async function VaultPage() {
                             ) : (
                                 <div className="space-y-4">
                                     <div className="p-8 rounded-2xl border border-zinc-200 bg-white/80 text-center">
-                                        <BookOpen className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
+                                        <BookOpen className="w-8 h-8 text-zinc-800 mx-auto mb-3" />
                                         <h3 className="text-lg font-bold text-white mb-2">No Premium Assets Yet</h3>
-                                        <p className="text-sm text-zinc-400 mb-6 max-w-md mx-auto">
+                                        <p className="text-sm text-zinc-600 mb-6 max-w-md mx-auto">
                                             Unlock the curriculum, premium playbooks, or advisory resources to see them beautifully organized here.
                                         </p>
                                         <Link href="/curriculum/tracks" className="inline-flex items-center justify-center px-6 py-2 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-cyan-400 transition-colors">
@@ -313,9 +313,9 @@ export default async function VaultPage() {
                                     </div>
                                     
                                     {/* JOIN A TEAM / CORPORATE SEAT */}
-                                    <div className="p-6 rounded-2xl border border-dashed border-zinc-300 bg-black text-center group hover:border-cyan-500/30 transition-colors">
+                                    <div className="p-6 rounded-2xl border border-dashed border-zinc-300 bg-white text-center group hover:border-cyan-500/30 transition-colors">
                                         <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-widest">Enterprise Invite?</h3>
-                                        <p className="text-xs text-zinc-500 mb-4 max-w-sm mx-auto">
+                                        <p className="text-xs text-zinc-700 mb-4 max-w-sm mx-auto">
                                             If your CTO or company purchased an enterprise team license, click below to claim your corporate seat.
                                         </p>
                                         <Link href="/vault/join" className="inline-flex items-center text-[10px] font-bold text-cyan-500 uppercase tracking-widest group-hover:text-cyan-400">
@@ -343,12 +343,12 @@ export default async function VaultPage() {
                                                         <span className="px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
                                                             {run.tool_id === 'pdi' ? 'PDI Audit' : run.tool_id}
                                                         </span>
-                                                        <span className="text-xs text-zinc-500 flex items-center gap-1">
+                                                        <span className="text-xs text-zinc-700 flex items-center gap-1">
                                                             <Clock className="w-3 h-3" />
                                                             {new Date(run.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                                                         </span>
                                                     </div>
-                                                    <h3 className="text-lg font-bold text-white">
+                                                    <h3 className="text-lg font-bold text-zinc-900">
                                                         {run.tool_id === 'pdi' ? 'Product Debt Index Assessment' : 'Diagnostic Run'}
                                                     </h3>
                                                 </div>
@@ -367,7 +367,7 @@ export default async function VaultPage() {
                                                         </div>
                                                     </div>
                                                     <Link href={`/tools/${run.tool_id}`} className="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-zinc-200 text-white transition-colors group">
-                                                        <Activity className="w-5 h-5 text-zinc-400 group-hover:text-cyan-400" />
+                                                        <Activity className="w-5 h-5 text-zinc-600 group-hover:text-cyan-400" />
                                                     </Link>
                                                 </div>
                                             </div>
@@ -377,10 +377,10 @@ export default async function VaultPage() {
                             ) : (
                                 <div className="p-8 rounded-2xl border border-zinc-200 bg-white/80 flex flex-col items-center text-center">
                                     <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center mb-4">
-                                        <TrendingUp className="w-5 h-5 text-zinc-500" />
+                                        <TrendingUp className="w-5 h-5 text-zinc-700" />
                                     </div>
                                     <h3 className="text-lg font-bold text-white mb-2">Longitudinal Tracking Pending</h3>
-                                    <p className="text-sm text-zinc-400 max-w-md mx-auto mb-6">
+                                    <p className="text-sm text-zinc-600 max-w-md mx-auto mb-6">
                                         When you run Enterprise tools like the PDI or AUEB, your quarter-over-quarter snapshots and board-ready PDF reports will be securely saved here.
                                     </p>
                                     <Link href="/tools/pdi" className="inline-flex items-center justify-center px-6 py-2 border border-cyan-500/50 text-cyan-400 text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-cyan-500/10 transition-colors">
@@ -406,20 +406,20 @@ export default async function VaultPage() {
                                 <div className="card border-blue-500/20 bg-blue-500/[0.02]">
                                     <div className="p-5 border-b border-zinc-200">
                                         <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Global AI Unit Economics avg.</div>
-                                        <div className="flex items-end gap-2 text-white">
+                                        <div className="flex items-end gap-2 text-zinc-900">
                                             <span className="text-3xl font-grotesk font-bold">{globalAuebMargin}%</span>
                                             <span className="text-xs text-blue-400 mb-1">Gross Margin</span>
                                         </div>
                                     </div>
                                     <div className="p-5">
                                         <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Global Product Debt average</div>
-                                        <div className="flex items-end gap-2 text-white">
+                                        <div className="flex items-end gap-2 text-zinc-900">
                                             <span className="text-3xl font-grotesk font-bold">{formatMoney(globalPdiWaste)}</span>
                                             <span className="text-xs text-red-400 mb-1">Waste Identified</span>
                                         </div>
                                     </div>
-                                    <div className="px-5 pb-5 text-[10px] text-zinc-500 text-center leading-tight">
-                                        Derived from <strong className="text-zinc-400">{auebCount + pdiCount}</strong> anonymized enterprise snapshots run through the Vault.
+                                    <div className="px-5 pb-5 text-[10px] text-zinc-700 text-center leading-tight">
+                                        Derived from <strong className="text-zinc-600">{auebCount + pdiCount}</strong> anonymized enterprise snapshots run through the Vault.
                                     </div>
                                 </div>
                             </div>
@@ -429,12 +429,12 @@ export default async function VaultPage() {
                                 <div className="mb-8">
                                     <h2 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center justify-between">
                                         Diagnostic Usage
-                                        <span className="text-[10px] bg-zinc-50 px-2 py-0.5 rounded text-zinc-400 border border-zinc-200">FREE TIER</span>
+                                        <span className="text-[10px] bg-zinc-50 px-2 py-0.5 rounded text-zinc-600 border border-zinc-200">FREE TIER</span>
                                     </h2>
-                                    <div className="card p-5 border-zinc-200 bg-black">
+                                    <div className="card p-5 border-zinc-200 bg-white">
                                         <div className="flex items-center justify-between mb-2">
-                                            <h3 className="font-bold text-white">Audits Allocated</h3>
-                                            <span className="text-xs font-mono text-zinc-500">{toolRuns.length}/3 Used</span>
+                                            <h3 className="font-bold text-zinc-900">Audits Allocated</h3>
+                                            <span className="text-xs font-mono text-zinc-700">{toolRuns.length}/3 Used</span>
                                         </div>
                                         
                                         {/* Progress Bar */}
@@ -452,10 +452,10 @@ export default async function VaultPage() {
                                         {toolRuns.length >= 3 ? (
                                             <p className="text-xs text-red-400 font-bold mb-4">Limit reached. Unlock the library to generate unlimited diagnostic reports.</p>
                                         ) : (
-                                            <p className="text-xs text-zinc-400 mb-4">{3 - toolRuns.length} board-ready reports remaining this month.</p>
+                                            <p className="text-xs text-zinc-600 mb-4">{3 - toolRuns.length} board-ready reports remaining this month.</p>
                                         )}
                                         
-                                        <a href="/api/buy/full_curriculum" className={`block text-center w-full py-2 text-[10px] font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-50 border border-zinc-200 hover:border-cyan-500/50 text-white'}`}>
+                                        <a href="/api/buy/full_curriculum" className={`block text-center w-full py-2 text-[10px] font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-50 border border-zinc-200 hover:border-cyan-500/50 text-zinc-900'}`}>
                                             Unlock Unlimited
                                         </a>
                                     </div>
@@ -465,40 +465,40 @@ export default async function VaultPage() {
                             <h2 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4">Available Upgrades</h2>
 
                             {!hasSubscription && (
-                                <div className="card p-5 border-zinc-200 bg-black mb-4 group hover:border-violet-500/30 transition-colors">
+                                <div className="card p-5 border-zinc-200 bg-white mb-4 group hover:border-violet-500/30 transition-colors">
                                     <div className="flex items-center justify-between mb-2">
                                         <h3 className="font-bold text-white group-hover:text-violet-400 transition-colors">Full Library Access</h3>
-                                        <Lock className="w-3 h-3 text-zinc-600 group-hover:text-violet-400" />
+                                        <Lock className="w-3 h-3 text-zinc-800 group-hover:text-violet-400" />
                                     </div>
-                                    <p className="text-xs text-zinc-400 mb-4">Unlock all 218 modules across 18 curriculum tracks. Lifetime access.</p>
+                                    <p className="text-xs text-zinc-600 mb-4">Unlock all 218 modules across 18 curriculum tracks. Lifetime access.</p>
                                     <a href="/api/buy/full_curriculum" className="block text-center w-full py-2 bg-zinc-50 hover:bg-violet-600 text-white text-[10px] font-bold uppercase tracking-widest rounded transition-colors">
                                         Unlock for $799
                                     </a>
                                 </div>
                             )}
 
-                            <div className="card p-5 border-zinc-200 bg-black group hover:border-amber-500/30 transition-colors">
+                            <div className="card p-5 border-zinc-200 bg-white group hover:border-amber-500/30 transition-colors">
                                 <div className="flex items-center justify-between mb-2">
                                     <h3 className="font-bold text-white group-hover:text-amber-400 transition-colors">Audit Engagement</h3>
-                                    <Lock className="w-3 h-3 text-zinc-600 group-hover:text-amber-400" />
+                                    <Lock className="w-3 h-3 text-zinc-800 group-hover:text-amber-400" />
                                 </div>
-                                <p className="text-xs text-zinc-400 mb-4">Book a fractional CTO engagement or deep-dive R&D capital audit.</p>
+                                <p className="text-xs text-zinc-600 mb-4">Book a fractional CTO engagement or deep-dive R&D capital audit.</p>
                                 <Link href="/advisory" className="block text-center w-full py-2 border border-zinc-200 hover:border-amber-500 text-zinc-600 hover:text-amber-400 text-[10px] font-bold uppercase tracking-widest rounded transition-colors">
                                     View Engagements
                                 </Link>
                             </div>
 
-                            <div className="mt-8 p-5 rounded-xl bg-gradient-to-br from-zinc-900 to-black border border-zinc-200">
+                            <div className="mt-8 p-5 rounded-xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200">
                                 <div className="flex items-center gap-3 mb-3">
                                     <div className="w-8 h-8 rounded-full overflow-hidden border border-zinc-300 relative">
                                         <Image src="/assets/headshot.jpg" alt="Support" fill className="object-cover" sizes="32px" />
                                     </div>
                                     <div>
-                                        <div className="text-sm font-bold text-white">Direct Support</div>
-                                        <div className="text-[10px] text-zinc-500">Principal Access</div>
+                                        <div className="text-sm font-bold text-zinc-900">Direct Support</div>
+                                        <div className="text-[10px] text-zinc-700">Principal Access</div>
                                     </div>
                                 </div>
-                                <p className="text-xs text-zinc-400 mb-3">Need help with an asset or looking for custom advisory?</p>
+                                <p className="text-xs text-zinc-600 mb-3">Need help with an asset or looking for custom advisory?</p>
                                 <a href="mailto:richard@richardewing.io" className="text-cyan-400 hover:text-cyan-300 text-xs font-semibold">
                                     Contact Richard →
                                 </a>

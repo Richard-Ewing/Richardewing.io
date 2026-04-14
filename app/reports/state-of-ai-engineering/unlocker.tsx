@@ -35,7 +35,7 @@ export default function ReportUnlocker() {
         return (
             <div className="animate-in fade-in zoom-in duration-500 p-6 rounded-xl bg-green-500/10 border border-green-500/30 flex flex-col items-center justify-center text-center space-y-3">
                 <CheckCircle2 className="w-12 h-12 text-green-400" />
-                <h4 className="text-xl font-bold text-white">Access Granted</h4>
+                <h4 className="text-xl font-bold text-zinc-900">Access Granted</h4>
                 <p className="text-sm text-green-200">
                     Securing your telemetry packet... Transferring to Command Center.
                 </p>
@@ -53,7 +53,7 @@ export default function ReportUnlocker() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder="cto@enterprise.com"
-                    className="w-full bg-black border border-zinc-200 rounded-xl px-4 py-3 text-white placeholder:text-zinc-700 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all font-mono text-sm"
+                    className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-white placeholder:text-zinc-700 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all font-mono text-sm"
                 />
             </div>
             
@@ -72,7 +72,7 @@ export default function ReportUnlocker() {
                     </>
                 )}
             </button>
-            <p className="text-[10px] text-zinc-600 font-mono text-center">
+            <p className="text-[10px] text-zinc-800 font-mono text-center">
                 By unlocking, you agree to receive high-leverage architectural intelligence. No spam. Ever.
             </p>
         </form>

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -33,7 +33,7 @@ export default function HomeContent() {
                 </h1>
 
                 <div className="mb-10">
-                    <span className="text-zinc-500 text-xl sm:text-2xl font-grotesk">I find the leaks in </span>
+                    <span className="text-zinc-700 text-xl sm:text-2xl font-grotesk">I find the leaks in </span>
                     <WordRotate
                         words={["AI they don't understand.", "Features nobody uses.", "Headcount without ROI.", "Zombie Infrastructure."]}
                         className="text-xl sm:text-2xl font-grotesk font-extrabold text-cyan-600"
@@ -41,7 +41,7 @@ export default function HomeContent() {
                     />
                 </div>
 
-                <p className="text-lg sm:text-xl text-zinc-600 max-w-2xl leading-relaxed mb-12 font-sans">
+                <p className="text-lg sm:text-xl text-zinc-800 max-w-2xl leading-relaxed mb-12 font-sans">
                     I'm <span className="text-zinc-900 font-bold">Richard Ewing</span>, a Product Economist.
                     I run forensic audits that find the capital leaks inside your AI investments—then I help you plug them.
                     <span className="text-cyan-600"> No consulting theater. Just hard numbers.</span>
@@ -85,19 +85,19 @@ export default function HomeContent() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <GlowCard className="p-8 h-full" glowColor="red">
                         <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">1. Zombie Infrastructure</h3>
-                        <p className="text-zinc-600">Legacy systems compounded by interest. Maintenance costs consuming 100% of engineering capacity.</p>
+                        <p className="text-zinc-800">Legacy systems compounded by interest. Maintenance costs consuming 100% of engineering capacity.</p>
                     </GlowCard>
                     <GlowCard className="p-8 h-full" glowColor="red">
                         <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">2. Feature Bloat</h3>
-                        <p className="text-zinc-600">The silent killer. Code that generates no revenue but incurs 100% of the testing and security tax.</p>
+                        <p className="text-zinc-800">The silent killer. Code that generates no revenue but incurs 100% of the testing and security tax.</p>
                     </GlowCard>
                     <GlowCard className="p-8 h-full" glowColor="red">
                         <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">3. AI Hallucination Debt</h3>
-                        <p className="text-zinc-600">The cost of verifying probabilistic output. When "90% accurate" means "100% liability".</p>
+                        <p className="text-zinc-800">The cost of verifying probabilistic output. When "90% accurate" means "100% liability".</p>
                     </GlowCard>
                     <GlowCard className="p-8 h-full" glowColor="red">
                         <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">4. Capital Misallocation</h3>
-                        <p className="text-zinc-600">Calling OpEx "Innovation". 80% of your R&D budget is just keeping the lights on.</p>
+                        <p className="text-zinc-800">Calling OpEx "Innovation". 80% of your R&D budget is just keeping the lights on.</p>
                     </GlowCard>
                 </div>
             </ScrollReveal>
@@ -117,7 +117,7 @@ export default function HomeContent() {
                     ].map((tool) => (
                         <Link key={tool.name} href={tool.href} className="group block p-6 rounded-xl border border-zinc-200 bg-white hover:border-cyan-400 hover:bg-zinc-50 transition-all">
                             <div className="text-2xl font-bold text-zinc-900 mb-2 font-grotesk group-hover:text-cyan-600">{tool.name}</div>
-                            <div className="text-sm text-zinc-600 uppercase tracking-wider">{tool.desc}</div>
+                            <div className="text-sm text-zinc-800 uppercase tracking-wider">{tool.desc}</div>
                             <div className="mt-4 text-cyan-500 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">Launch Tool →</div>
                         </Link>
                     ))}
@@ -133,7 +133,7 @@ export default function HomeContent() {
                             The Exogram
                         </h2>
                         <h3 className="text-xl font-mono text-purple-600 mb-4 uppercase tracking-widest">Active Development</h3>
-                        <p className="text-zinc-600 text-lg leading-relaxed mb-8">
+                        <p className="text-zinc-800 text-lg leading-relaxed mb-8">
                             I don't just advise. I build. <strong className="text-zinc-900">Exogram</strong> is my active research into AI memory systems and long-context reasoning.
                             It is the engine that powers my own agency.
                         </p>
@@ -150,7 +150,7 @@ export default function HomeContent() {
                                     Online
                                 </div>
                             </div>
-                            <div className="space-y-4 font-mono text-sm text-zinc-600">
+                            <div className="space-y-4 font-mono text-sm text-zinc-800">
                                 <div className="flex justify-between border-b border-zinc-200 pb-2">
                                     <span>System Load</span>
                                     <span className="text-zinc-900">42%</span>
@@ -180,13 +180,13 @@ export default function HomeContent() {
                     <div className="space-y-6">
                         <div className="space-y-2">
                             <h3 className="text-xl font-bold text-zinc-900">What is an R&D audit?</h3>
-                            <p className="text-zinc-600 leading-relaxed">
+                            <p className="text-zinc-800 leading-relaxed">
                                 An R&D audit is a forensic review of engineering spend that surfaces hidden capital risks — technical debt, maintenance costs reported as innovation, and AI economics that aren't being tracked. Unlike consulting, an audit doesn't optimize; it verifies what's actually true.
                             </p>
                         </div>
                         <div className="space-y-2">
                             <h3 className="text-xl font-bold text-zinc-900">How much does an R&D audit cost?</h3>
-                            <p className="text-zinc-600 leading-relaxed">
+                            <p className="text-zinc-800 leading-relaxed">
                                 Richard Ewing offers R&D audits starting at $2,500 for a 60-minute diagnostic with written report, up to $7,500 for a full 2-3 week forensic review. A 30-minute gut-check call is available for $450.
                             </p>
                         </div>
@@ -194,13 +194,13 @@ export default function HomeContent() {
                     <div className="space-y-6">
                         <div className="space-y-2">
                             <h3 className="text-xl font-bold text-zinc-900">What's the difference between consulting and auditing?</h3>
-                            <p className="text-zinc-600 leading-relaxed">
+                            <p className="text-zinc-800 leading-relaxed">
                                 Consulting asks "how can we improve?" Auditing asks "what's actually true?" Consultants optimize. Auditors verify. An R&D audit surfaces the facts — the real maintenance ratio, the true technical debt liability, the actual AI unit economics — without assuming the current approach is correct.
                             </p>
                         </div>
                         <div className="space-y-2">
                             <h3 className="text-xl font-bold text-zinc-900">What is a Product Economist?</h3>
-                            <p className="text-zinc-600 leading-relaxed">
+                            <p className="text-zinc-800 leading-relaxed">
                                 A Product Economist treats product decisions as economic decisions. Rather than measuring success in story points or velocity, a Product Economist measures R&D ROI, capital efficiency, and the dollar value of technical debt. I coined the term to describe the gap between engineering metrics and financial reality.
                             </p>
                         </div>
@@ -225,7 +225,7 @@ export default function HomeContent() {
                         <div key={tier.name} className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-xl border border-zinc-200 bg-white hover:bg-zinc-50 transition-colors">
                             <div className="text-center sm:text-left mb-4 sm:mb-0">
                                 <div className="text-xl font-bold text-zinc-900 font-grotesk">{tier.name}</div>
-                                <div className="text-sm text-zinc-500">{tier.desc}</div>
+                                <div className="text-sm text-zinc-700">{tier.desc}</div>
                             </div>
                             <div className="flex items-center gap-6">
                                 <div className="text-xl font-mono text-cyan-600">{tier.price}</div>
@@ -240,7 +240,7 @@ export default function HomeContent() {
             <ScrollReveal delay={300} className="max-w-4xl relative z-10 py-20 border-t border-zinc-200 mt-8">
                 <div className="bg-gradient-to-br from-white to-zinc-50 p-8 sm:p-12 rounded-2xl border border-zinc-200 text-center">
                     <h3 className="text-2xl sm:text-3xl font-grotesk font-bold text-zinc-900 mb-4">Join the Executive Briefing</h3>
-                    <p className="text-zinc-600 mb-8 max-w-lg mx-auto">
+                    <p className="text-zinc-800 mb-8 max-w-lg mx-auto">
                         No fluff. Just weekly analysis of why products fail and how to fix them.
                         Join 2,500+ board members and product leaders.
                     </p>

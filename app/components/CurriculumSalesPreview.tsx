@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { ShieldCheck, BarChart3, Presentation, Lock, Zap, Clock, PlayCircle, FileText, Database, Network, Cpu, LayoutTemplate, Activity } from 'lucide-react';
@@ -25,7 +25,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                 <h2 className="text-3xl md:text-5xl font-grotesk font-bold text-zinc-900 mb-6">
                     Unlock <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-400 to-purple-500">Execution Fidelity</span>.
                 </h2>
-                <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-10">
+                <p className="text-lg text-zinc-800 max-w-2xl mx-auto mb-10">
                     You've seen the theory. The Vault contains the exact board-ready financial models, autonomous AI orchestration codes, and executive action playbooks that drive 8-figure valuation impacts.
                 </p>
 
@@ -38,7 +38,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                 <BarChart3 className="w-6 h-6 text-purple-600" />
                             </div>
                             <h4 className="text-zinc-900 font-bold font-grotesk text-lg mb-2">Executive Dashboards</h4>
-                            <p className="text-zinc-600 text-sm leading-relaxed">Generate deterministic, board-ready financial artifacts to justify CAPEX workflows immediately to your CFO.</p>
+                            <p className="text-zinc-800 text-sm leading-relaxed">Generate deterministic, board-ready financial artifacts to justify CAPEX workflows immediately to your CFO.</p>
                         </div>
                     </div>
                     
@@ -50,7 +50,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                 <Database className="w-6 h-6 text-cyan-600" />
                             </div>
                             <h4 className="text-zinc-900 font-bold font-grotesk text-lg mb-2">Defensible Economics</h4>
-                            <p className="text-zinc-600 text-sm leading-relaxed">Replace heuristic guesswork with hard mathematical frameworks for build-vs-buy and SLA penalty negotiations.</p>
+                            <p className="text-zinc-800 text-sm leading-relaxed">Replace heuristic guesswork with hard mathematical frameworks for build-vs-buy and SLA penalty negotiations.</p>
                         </div>
                     </div>
                     
@@ -62,7 +62,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                 <Zap className="w-6 h-6 text-emerald-600" />
                             </div>
                             <h4 className="text-zinc-900 font-bold font-grotesk text-lg mb-2">3-Step Playbooks</h4>
-                            <p className="text-zinc-600 text-sm leading-relaxed">Actionable remediation templates attached to every module to neutralize friction and drive instant deployment velocity.</p>
+                            <p className="text-zinc-800 text-sm leading-relaxed">Actionable remediation templates attached to every module to neutralize friction and drive instant deployment velocity.</p>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
             {/* High-Fidelity Vault Encrypted Visuals */}
             <div className="relative bg-white overflow-hidden border-t border-zinc-200 pb-20 pt-10">
                 {/* Radial gradient background */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900/40 via-black to-black pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-50/40 via-black to-zinc-100 pointer-events-none" />
                 
                 <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
@@ -79,7 +79,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                             <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" /> Highly Classified Assets
                         </div>
                         <h3 className="text-3xl font-bold font-grotesk text-zinc-900">Engineering Intelligence Awaiting Extraction</h3>
-                        <p className="text-zinc-500 text-sm mt-3 max-w-xl mx-auto">No generic advice. No filler. Just uncompromising architectural truths and unit economic calculators.</p>
+                        <p className="text-zinc-700 text-sm mt-3 max-w-xl mx-auto">No generic advice. No filler. Just uncompromising architectural truths and unit economic calculators.</p>
                     </div>
 
                     <div className="relative w-full aspect-[21/9] flex items-center justify-center -mt-10 perspective-[1000px] select-none pointer-events-none">
@@ -93,7 +93,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                     <Lock className="w-8 h-8 text-rose-500" />
                                 </div>
                                 <h4 className="text-2xl font-bold text-zinc-900 mb-4 relative z-10 tracking-tight">Vault Terminal Locked</h4>
-                                <p className="text-xs text-zinc-600 font-mono uppercase tracking-widest leading-relaxed relative z-10 bg-white/50 p-4 rounded-xl border border-zinc-200">
+                                <p className="text-xs text-zinc-800 font-mono uppercase tracking-widest leading-relaxed relative z-10 bg-white/50 p-4 rounded-xl border border-zinc-200">
                                     Awaiting authorization clearance. Unlock the module to decrypt architectural playbooks, P&L models, and deterministic diagnostic utilities.
                                 </p>
                             </div>
@@ -145,37 +145,37 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
                                 <div className="flex items-center gap-3 mb-6 border-b border-zinc-200 pb-4">
                                     <Network className="w-5 h-5 text-purple-600" />
-                                    <div className="text-xs font-mono uppercase text-zinc-600 tracking-widest">Inference Architecture</div>
+                                    <div className="text-xs font-mono uppercase text-zinc-800 tracking-widest">Inference Architecture</div>
                                 </div>
                                 <div className="font-mono text-[10px] text-purple-300/50 space-y-2">
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-600">01</span>
+                                        <span className="text-zinc-800">01</span>
                                         <span className="text-emerald-600/50">import</span> <span>{'{ orchestrator }'}</span> <span className="text-emerald-600/50">from</span> <span className="text-amber-400/50">'@exogram/core'</span>;
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-600">02</span>
+                                        <span className="text-zinc-800">02</span>
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-600">03</span>
+                                        <span className="text-zinc-800">03</span>
                                         <span className="text-purple-600/50">const</span> <span>router</span> = <span>new</span> <span className="text-cyan-600/50">AgentRouter</span>({`{`});
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-600">04</span>
+                                        <span className="text-zinc-800">04</span>
                                         <span className="ml-4 text-rose-600/50">strategy:</span> <span className="text-amber-400/50">'COST_EFFICIENT_SLM'</span>,
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-600">05</span>
+                                        <span className="text-zinc-800">05</span>
                                         <span className="ml-4 text-rose-600/50">fallback:</span> <span className="text-amber-400/50">'FRONTIER_MODEL'</span>
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-600">06</span>
+                                        <span className="text-zinc-800">06</span>
                                         <span>{`});`}</span>
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-600">07</span>
+                                        <span className="text-zinc-800">07</span>
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-600">08</span>
+                                        <span className="text-zinc-800">08</span>
                                         <span className="text-emerald-600/50">await</span> <span>router.guardrail</span>({`payload`});
                                     </div>
                                 </div>
@@ -224,17 +224,17 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                             <h4 className="text-zinc-900 font-bold mb-1 group-hover/lock:text-cyan-600 transition-colors flex items-center gap-2">
                                                 Lesson {idx + 1}: {lesson.title}
                                             </h4>
-                                            <p className="text-zinc-500 text-sm line-clamp-2 max-w-2xl">{lesson.content}</p>
+                                            <p className="text-zinc-700 text-sm line-clamp-2 max-w-2xl">{lesson.content}</p>
                                         </div>
                                     </div>
                                     
                                     <div className="flex items-center gap-6 shrink-0 md:pl-6 md:border-l border-zinc-200">
                                         <div className="flex flex-col items-center gap-1 opacity-60">
-                                            <Clock className="w-4 h-4 text-zinc-600" />
-                                            <span className="text-[10px] font-mono text-zinc-500">{15 + (idx * 5)} MIN</span>
+                                            <Clock className="w-4 h-4 text-zinc-800" />
+                                            <span className="text-[10px] font-mono text-zinc-700">{15 + (idx * 5)} MIN</span>
                                         </div>
                                         <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
-                                            <Lock className="w-4 h-4 text-zinc-500" />
+                                            <Lock className="w-4 h-4 text-zinc-700" />
                                         </div>
                                     </div>
                                     
@@ -245,8 +245,8 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                         </div>
                     ) : (
                         <div className="bg-white/80 border border-zinc-200 rounded-2xl p-10 text-center">
-                            <Lock className="w-8 h-8 text-zinc-600 mx-auto mb-4" />
-                            <p className="text-zinc-500 font-mono text-sm uppercase">Curriculum data locked behind perimeter.</p>
+                            <Lock className="w-8 h-8 text-zinc-800 mx-auto mb-4" />
+                            <p className="text-zinc-700 font-mono text-sm uppercase">Curriculum data locked behind perimeter.</p>
                         </div>
                     )}
                 </div>

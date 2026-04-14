@@ -18,7 +18,7 @@ const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: 
     <div className={`relative overflow-hidden rounded-2xl border border-zinc-200 bg-white/5 p-6 ${className}`}>
         <div className="flex items-center gap-2 mb-4">
             {Icon && <Icon size={20} className="text-blue-400" />}
-            <h3 className="font-semibold text-white">{title}</h3>
+            <h3 className="font-semibold text-zinc-900">{title}</h3>
         </div>
         {children}
     </div>
@@ -52,7 +52,7 @@ export default function VTATool() {
     };
 
     return (
-        <div className="min-h-screen bg-[#050505] text-slate-300 font-sans selection:bg-blue-500/30">
+        <div className="min-h-screen bg-white text-zinc-800 font-sans selection:bg-blue-500/30">
             <div className="relative">
                 {/* Background glow */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -79,7 +79,7 @@ export default function VTATool() {
                                 <h2 className="text-2xl font-bold text-white mb-6">Execution Variables</h2>
                                 <div className="space-y-6 relative z-10">
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-300 mb-2">Monthly Target Inferences</label>
+                                        <label className="block text-sm font-medium text-zinc-800 mb-2">Monthly Target Inferences</label>
                                         <p className="text-xs text-slate-500 mb-3">Total queries hitting your AI service</p>
                                         <input
                                             type="range"
@@ -96,7 +96,7 @@ export default function VTATool() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-300 mb-2">AI Response Drift Rate (%)</label>
+                                        <label className="block text-sm font-medium text-zinc-800 mb-2">AI Response Drift Rate (%)</label>
                                         <p className="text-xs text-slate-500 mb-3">Percentage of outputs requiring human review</p>
                                         <input
                                             type="range"
@@ -113,7 +113,7 @@ export default function VTATool() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-300 mb-2">Verification Time (Minutes)</label>
+                                        <label className="block text-sm font-medium text-zinc-800 mb-2">Verification Time (Minutes)</label>
                                         <p className="text-xs text-slate-500 mb-3">Time taken by a human to audit one flagged output</p>
                                         <input
                                             type="number"
@@ -126,7 +126,7 @@ export default function VTATool() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-300 mb-2">Verifier Labor Base ($/Hour)</label>
+                                        <label className="block text-sm font-medium text-zinc-800 mb-2">Verifier Labor Base ($/Hour)</label>
                                         <p className="text-xs text-slate-500 mb-3">Fully burdened hourly rate of your engineering/audit staff</p>
                                         <input
                                             type="number"

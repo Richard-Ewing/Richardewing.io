@@ -56,7 +56,7 @@ export default function VaultProgressFlywheel({ serverCompletedCount, totalModul
             <div className="relative z-10 flex flex-col sm:flex-row items-center gap-8">
                 <div className="relative w-32 h-32 flex-shrink-0">
                     <svg className="w-full h-full transform -rotate-90">
-                        <circle cx="64" cy="64" r="45" fill="none" stroke="currentColor" strokeWidth="8" className="text-white/5" />
+                        <circle cx="64" cy="64" r="45" fill="none" stroke="currentColor" strokeWidth="8" className="text-zinc-900/5" />
                         <circle 
                             cx="64" cy="64" r="45" fill="none" stroke="currentColor" strokeWidth="8" 
                             className="text-violet-500 transition-all duration-1000 ease-out"
@@ -66,13 +66,13 @@ export default function VaultProgressFlywheel({ serverCompletedCount, totalModul
                         />
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
-                        <span className="text-2xl font-grotesk font-bold text-white">{percentage}%</span>
+                        <span className="text-2xl font-grotesk font-bold text-zinc-900">{percentage}%</span>
                     </div>
                 </div>
                 <div>
                     <h2 className="text-2xl font-bold text-white mb-2">Architectural Mastery</h2>
-                    <p className="text-sm text-zinc-400 mb-4">
-                        You have mastered <strong className="text-violet-400">{completedCount}</strong> out of <strong className="text-white">{totalModulesCount}</strong> core modules across {Math.ceil(totalModulesCount / 15)} disciplines. The curriculum continually adapts to macroeconomic trends.
+                    <p className="text-sm text-zinc-600 mb-4">
+                        You have mastered <strong className="text-violet-400">{completedCount}</strong> out of <strong className="text-zinc-900">{totalModulesCount}</strong> core modules across {Math.ceil(totalModulesCount / 15)} disciplines. The curriculum continually adapts to macroeconomic trends.
                     </p>
                     <Link href="/vault/curriculum/tracks" className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-zinc-200 rounded-lg text-sm text-white transition-all">
                         Explore All {Math.ceil(totalModulesCount / 15)} Tracks <ChevronRight className="w-4 h-4" />

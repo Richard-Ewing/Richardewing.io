@@ -65,7 +65,7 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                         <Gift className="w-6 h-6 text-violet-400" />
                         <span className="text-xs font-mono text-violet-400 uppercase tracking-widest">Bundle & Save</span>
                     </div>
-                    <h2 className="text-2xl font-grotesk font-bold text-white">
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-900">
                         Get More Guides. <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">Pay Less.</span>
                     </h2>
                 </div>
@@ -80,11 +80,11 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                     >
                         <div>
                             <div className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">This Guide Only</div>
-                            <div className="text-xs text-zinc-500 mt-0.5">Instant access to this guide</div>
+                            <div className="text-xs text-zinc-700 mt-0.5">Instant access to this guide</div>
                         </div>
                         <div className="flex items-center gap-2">
-                            <span className="text-xl font-bold text-white">${PREMIUM_GUIDES.find(g => g.slug === currentGuide)?.price || 29}</span>
-                            <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-cyan-400 transition-colors" />
+                            <span className="text-xl font-bold text-zinc-900">${PREMIUM_GUIDES.find(g => g.slug === currentGuide)?.price || 29}</span>
+                            <ArrowRight className="w-4 h-4 text-zinc-700 group-hover:text-cyan-400 transition-colors" />
                         </div>
                     </button>
 
@@ -99,24 +99,24 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                         </div>
                         <div>
                             <div className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">All 13 Premium Guides</div>
-                            <div className="text-xs text-zinc-500 mt-0.5">Complete 2026 premium library · Save over $500</div>
+                            <div className="text-xs text-zinc-700 mt-0.5">Complete 2026 premium library · Save over $500</div>
                             <div className="flex flex-wrap gap-1 mt-2">
                                 {PREMIUM_GUIDES.slice(0, 5).map(g => (
                                     <span key={g.id} className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">{g.name}</span>
                                 ))}
-                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-zinc-400">+8 more</span>
+                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-zinc-600">+8 more</span>
                             </div>
                         </div>
                         <div className="flex flex-col items-end">
-                            <span className="text-xl font-bold text-white">$399</span>
-                            <span className="text-[10px] text-zinc-500 line-through">$1,027</span>
+                            <span className="text-xl font-bold text-zinc-900">$399</span>
+                            <span className="text-[10px] text-zinc-700 line-through">$1,027</span>
                         </div>
                     </button>
                 </div>
 
                 {/* Footer */}
                 <div className="px-6 pb-6">
-                    <p className="text-[10px] text-zinc-600 text-center">
+                    <p className="text-[10px] text-zinc-800 text-center">
                         Secure checkout powered by Stripe · Instant PDF access after purchase
                     </p>
                 </div>

@@ -63,8 +63,8 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-grotesk leading-tight">
                             {framework.name}
                         </h1>
-                        <p className="text-zinc-600">
-                            Coined by <span className="text-white">Richard Ewing</span>, Product Economist
+                        <p className="text-zinc-800">
+                            Coined by <span className="text-zinc-900">Richard Ewing</span>, Product Economist
                         </p>
                     </div>
                 </section>
@@ -85,7 +85,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 <section className="section-sm">
                     <div className="max-w-3xl">
                         <h2 className="text-lg font-semibold text-purple-400 mb-4 font-grotesk">Why It Matters</h2>
-                        <p className="text-zinc-600 leading-relaxed text-lg">
+                        <p className="text-zinc-800 leading-relaxed text-lg">
                             {framework.whyItMatters}
                         </p>
                     </div>
@@ -98,7 +98,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                             <h2 className="text-lg font-semibold text-green-400 mb-4 font-grotesk">How to Calculate</h2>
                             <ol className="space-y-4">
                                 {framework.howToCalculate.map((step, i) => (
-                                    <li key={i} className="flex gap-4 text-zinc-600">
+                                    <li key={i} className="flex gap-4 text-zinc-800">
                                         <span className="text-green-500 font-mono font-bold bg-green-900/20 px-2 rounded">{i + 1}</span>
                                         <span>{step}</span>
                                     </li>
@@ -118,7 +118,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                                     <a href={article.url} className="text-lg text-white group-hover:text-purple-400 transition-colors font-semibold block mb-1">
                                         "{article.title}"
                                     </a>
-                                    <span className="text-zinc-500 text-sm font-mono"> — {article.publication}, {article.date}</span>
+                                    <span className="text-zinc-700 text-sm font-mono"> — {article.publication}, {article.date}</span>
                                 </li>
                             ))}
                         </ul>
@@ -130,7 +130,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                     <section className="section my-8">
                         <div className="max-w-3xl card-featured border-purple-500/50 p-8">
                             <h2 className="text-lg font-semibold text-purple-400 mb-2 font-grotesk">Calculate Yours</h2>
-                            <p className="text-zinc-600 mb-6">Use the interactive tool to calculate your {framework.name}.</p>
+                            <p className="text-zinc-800 mb-6">Use the interactive tool to calculate your {framework.name}.</p>
                             <a
                                 href={framework.relatedTool.url}
                                 className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors"
@@ -144,10 +144,10 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {/* Citation */}
                 <section className="section-sm pb-20">
                     <div className="max-w-3xl">
-                        <h2 className="text-sm font-semibold text-zinc-500 mb-4 font-mono uppercase tracking-widest">Citation</h2>
+                        <h2 className="text-sm font-semibold text-zinc-700 mb-4 font-mono uppercase tracking-widest">Citation</h2>
                         <div className="card bg-white/50 p-6 border-zinc-200">
-                            <p className="text-zinc-500 text-xs mb-4 uppercase">To cite this definition:</p>
-                            <p className="text-zinc-600 font-mono text-sm break-all">
+                            <p className="text-zinc-700 text-xs mb-4 uppercase">To cite this definition:</p>
+                            <p className="text-zinc-800 font-mono text-sm break-all">
                                 Ewing, R. (2026). "{framework.name}." richardewing.io.<br />
                                 https://www.richardewing.io/articles/frameworks/{framework.slug}
                             </p>

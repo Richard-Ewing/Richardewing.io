@@ -55,17 +55,17 @@ export default function CIORecapPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/articles" className="hover:text-cyan-400">Articles</Link><span>/</span><span className="text-cyan-400 font-bold">CIO.com</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
                         Published on{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">CIO.com</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 mb-4 max-w-2xl">
+                    <p className="text-lg text-zinc-600 mb-4 max-w-2xl">
                         Richard Ewing&apos;s published articles on CIO.com — Tier 1 media for CIOs, CTOs, and technology executives. Covering R&amp;D capital efficiency, technical debt economics, and AI adoption strategies.
                     </p>
-                    <p className="text-sm text-zinc-500 mb-12">CIO.com is an IDG publication reaching 2M+ technology decision-makers monthly.</p>
+                    <p className="text-sm text-zinc-700 mb-12">CIO.com is an IDG publication reaching 2M+ technology decision-makers monthly.</p>
 
                     <div className="space-y-6 mb-16">
                         {articles.map((article, i) => (
@@ -74,7 +74,7 @@ export default function CIORecapPage() {
                                     <span className="text-3xl">{article.icon}</span>
                                     <div className="flex-1">
                                         <h2 className="text-xl font-grotesk font-bold text-white mb-3">{article.title}</h2>
-                                        <p className="text-zinc-400 mb-4">{article.description}</p>
+                                        <p className="text-zinc-600 mb-4">{article.description}</p>
                                         <div className="flex flex-wrap gap-2">
                                             {article.topics.map(topic => (
                                                 <span key={topic} className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs text-cyan-400 font-mono">{topic}</span>
@@ -107,7 +107,7 @@ export default function CIORecapPage() {
 
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Work With Richard</h2>
-                        <p className="text-zinc-300 mb-6">The frameworks published on CIO.com are available as proprietary advisory engagements. R&amp;D Capital Audits translate technical complexity into board-ready financial clarity.</p>
+                        <p className="text-zinc-700 mb-6">The frameworks published on CIO.com are available as proprietary advisory engagements. R&amp;D Capital Audits translate technical complexity into board-ready financial clarity.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
                     </div>
                 </div>

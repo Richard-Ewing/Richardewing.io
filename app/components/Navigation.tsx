@@ -40,7 +40,7 @@ const Navigation = () => {
                             </div>
                             <div>
                                 <div className="font-semibold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors">Richard Ewing</div>
-                                <div className="text-xs text-zinc-500">Product Economist</div>
+                                <div className="text-xs text-zinc-700">Product Economist</div>
                             </div>
                         </Link>
 
@@ -89,7 +89,7 @@ const Navigation = () => {
                                 
                                 <div className="mt-2 p-2 relative z-10 w-full bg-zinc-50 pb-3">
                                     <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-zinc-200 hover:border-zinc-300 bg-white hover:bg-zinc-50 rounded-lg py-2.5 mx-3 transition-colors">
-                                        <span className="text-xs font-semibold text-zinc-600">Explore All Diagnostics</span>
+                                        <span className="text-xs font-semibold text-zinc-800">Explore All Diagnostics</span>
                                         <span className="text-xs text-zinc-900">→</span>
                                     </Link>
                                 </div>
@@ -198,7 +198,7 @@ const DropdownItem = ({ href, children, description }: { href: string, children:
             className="block px-4 py-3 text-sm text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
         >
             <span className="block">{children}</span>
-            {description && <span className="block text-[10px] text-zinc-400 mt-0.5">{description}</span>}
+            {description && <span className="block text-[10px] text-zinc-600 mt-0.5">{description}</span>}
         </Link>
     );
 };
@@ -360,7 +360,7 @@ const UserDropdown = () => {
         }>
             <div className="px-4 py-3 border-b border-zinc-200 mb-2">
                 <p className="text-sm font-medium text-zinc-900">{user.fullName || 'User'}</p>
-                <p className="text-xs text-zinc-500 truncate">{user.primaryEmailAddress?.emailAddress}</p>
+                <p className="text-xs text-zinc-700 truncate">{user.primaryEmailAddress?.emailAddress}</p>
             </div>
             <DropdownItem href="/vault" description="Your intelligence dashboard">My Vault</DropdownItem>
             <DropdownItem href="/system" description="All enterprise tools">Tools Library</DropdownItem>

@@ -55,7 +55,7 @@ export default function ForCTOsPage() {
                             Stop Guessing.<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-violet-400">Start Measuring.</span>
                         </h1>
-                        <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-8">
+                        <p className="text-xl text-zinc-600 max-w-2xl mx-auto mb-8">
                             6 free tools + 400+ glossary definitions + proprietary frameworks. Everything a CTO needs to quantify engineering economics and communicate with boards in financial language.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
@@ -70,7 +70,7 @@ export default function ForCTOsPage() {
                             <Link key={i} href={tool.href} className={`rounded-2xl border p-6 transition-colors ${colorMap[tool.color]}`}>
                                 <span className="text-2xl mb-3 block">{tool.icon}</span>
                                 <h3 className="text-lg font-bold text-white mb-2">{tool.name}</h3>
-                                <p className="text-sm text-zinc-400">{tool.description}</p>
+                                <p className="text-sm text-zinc-600">{tool.description}</p>
                             </Link>
                         ))}
                     </div>
@@ -81,7 +81,7 @@ export default function ForCTOsPage() {
                             <Link key={i} href={fw.href} className="flex items-center gap-4 rounded-xl border border-zinc-200 p-5 hover:border-rose-500/30 transition-colors group">
                                 <div>
                                     <div className="text-white font-bold group-hover:text-rose-400 transition-colors">{fw.name}</div>
-                                    <div className="text-sm text-zinc-500">{fw.description}</div>
+                                    <div className="text-sm text-zinc-700">{fw.description}</div>
                                 </div>
                             </Link>
                         ))}
@@ -89,7 +89,7 @@ export default function ForCTOsPage() {
 
                     <div className="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Need a Full R&D Audit?</h2>
-                        <p className="text-zinc-400 mb-8 max-w-xl mx-auto">Free tools give you directional insight. An R&D Capital Audit gives you the full picture: dollar-denominated debt, insolvency timeline, and a prioritized remediation roadmap.</p>
+                        <p className="text-zinc-600 mb-8 max-w-xl mx-auto">Free tools give you directional insight. An R&D Capital Audit gives you the full picture: dollar-denominated debt, insolvency timeline, and a prioritized remediation roadmap.</p>
                         <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Book R&D Capital Audit →</Link>
                     </div>
                 </div>

@@ -43,14 +43,14 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
                         <span className={`font-mono text-xs uppercase tracking-widest ${iconColor} font-bold`}>Mandatory Executive Training</span>
                     </div>
                     <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{headline}</h3>
-                    <p className="text-zinc-400 max-w-2xl text-sm leading-relaxed">
+                    <p className="text-zinc-600 max-w-2xl text-sm leading-relaxed">
                         {subheadline}
                     </p>
                 </div>
                 {/* Value Anchor Frame */}
                 <div className="bg-white/50 border border-zinc-200 rounded-xl p-4 shrink-0 text-center w-full sm:w-auto">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-1">Consulting Equivalent Value</div>
-                    <div className={`text-xl font-bold text-zinc-300 line-through decoration-2 mb-1 ${isCritical ? 'decoration-red-500/50' : 'decoration-emerald-500/50'}`}>$15,000+</div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-700 mb-1">Consulting Equivalent Value</div>
+                    <div className={`text-xl font-bold text-zinc-700 line-through decoration-2 mb-1 ${isCritical ? 'decoration-red-500/50' : 'decoration-emerald-500/50'}`}>$15,000+</div>
                     <div className="text-[10px] font-mono text-cyan-500">Vault Access: $1,495</div>
                 </div>
             </div>
@@ -61,7 +61,7 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
                     <div key={idx} className={`bg-white border border-zinc-200 rounded-xl p-5 transition-colors ${cardHoverColor}`}>
                         <div className={`text-xs font-mono mb-2 ${trackIdColor}`}>{track.id}</div>
                         <div className="text-lg font-bold text-white mb-2">{track.title}</div>
-                        <div className="text-sm text-zinc-500 leading-relaxed">{track.desc}</div>
+                        <div className="text-sm text-zinc-700 leading-relaxed">{track.desc}</div>
                     </div>
                 ))}
             </div>
@@ -77,7 +77,7 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
                 >
                     <Lock className="w-5 h-5" /> Unlock Full Enterprise Framework Now
                 </a>
-                <p className="text-[10px] font-mono text-zinc-600 mt-4 uppercase tracking-widest">Instant access to all 29 tracks • 290+ technical modules</p>
+                <p className="text-[10px] font-mono text-zinc-800 mt-4 uppercase tracking-widest">Instant access to all 29 tracks • 290+ technical modules</p>
             </div>
         </div>
     );

@@ -72,7 +72,7 @@ Here are the details on the feature we are killing:
 export default function SystemPromptsPage() {
     return (
         <div className="max-w-5xl mx-auto px-6 py-12">
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/" className="hover:text-cyan-400">Home</Link>
                 <span>/</span>
                 <span className="text-cyan-400 font-bold">System Prompts</span>
@@ -82,7 +82,7 @@ export default function SystemPromptsPage() {
                 <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
                     Executive <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">System Prompts</span>
                 </h1>
-                <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl">
+                <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl">
                     Operational AI prompts designed for CTOs, CPOs, and Engineering Leaders. Use these to format ChatGPT, Claude, or Perplexity as a ruthless Product Economist.
                 </p>
             </div>
@@ -94,14 +94,14 @@ export default function SystemPromptsPage() {
                             <div className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-bold text-cyan-400">
                                 For {p.audience}
                             </div>
-                            <h2 className="text-2xl font-grotesk font-bold text-white">{p.title}</h2>
+                            <h2 className="text-2xl font-grotesk font-bold text-zinc-900">{p.title}</h2>
                         </div>
-                        <p className="text-zinc-400 mb-6">{p.description}</p>
+                        <p className="text-zinc-600 mb-6">{p.description}</p>
                         
                         <div className="relative group">
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-xl blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
-                            <div className="relative bg-black border border-zinc-200 rounded-xl p-6">
-                                <pre className="font-mono text-sm text-zinc-300 whitespace-pre-wrap">
+                            <div className="relative bg-white border border-zinc-200 rounded-xl p-6">
+                                <pre className="font-mono text-sm text-zinc-700 whitespace-pre-wrap">
                                     {p.prompt}
                                 </pre>
                             </div>
@@ -112,7 +112,7 @@ export default function SystemPromptsPage() {
 
             <div className="mt-16 card p-8 border-violet-500/30 bg-gradient-to-br from-violet-500/10 to-transparent text-center">
                 <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Stop Prompting. Start Executing.</h2>
-                <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
+                <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
                     Prompts give you frameworks. Audits give you board-ready financial models. If your R&D margin is collapsing, book a diagnostic.
                 </p>
                 <Link href="/advisory" className="inline-flex px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-all">

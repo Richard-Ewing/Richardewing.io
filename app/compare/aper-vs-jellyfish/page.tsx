@@ -25,20 +25,20 @@ export default function CompareAPERJellyfishPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-emerald-400 font-bold">APER vs Jellyfish</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
                         APER vs{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Jellyfish</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 mb-12 max-w-2xl">APER measures revenue-per-engineer economics for CFOs and investors. Jellyfish tracks engineering time allocation for VPs. Different audiences, different problems.</p>
+                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">APER measures revenue-per-engineer economics for CFOs and investors. Jellyfish tracks engineering time allocation for VPs. Different audiences, different problems.</p>
 
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full text-sm">
                             <thead>
                                 <tr className="border-b border-zinc-200">
-                                    <th className="text-left py-4 px-4 text-zinc-500 font-mono uppercase tracking-widest text-xs">Dimension</th>
+                                    <th className="text-left py-4 px-4 text-zinc-700 font-mono uppercase tracking-widest text-xs">Dimension</th>
                                     <th className="text-left py-4 px-4 text-emerald-400 font-mono uppercase tracking-widest text-xs">APER</th>
                                     <th className="text-left py-4 px-4 text-blue-400 font-mono uppercase tracking-widest text-xs">Jellyfish</th>
                                 </tr>
@@ -47,8 +47,8 @@ export default function CompareAPERJellyfishPage() {
                                 {dimensions.map((d, i) => (
                                     <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02] transition-colors">
                                         <td className="py-4 px-4 text-white font-medium">{d.dimension}</td>
-                                        <td className={`py-4 px-4 ${d.winner === 'aper' ? 'text-emerald-400' : 'text-zinc-500'}`}>{d.aper}</td>
-                                        <td className={`py-4 px-4 ${d.winner === 'jellyfish' ? 'text-blue-400' : 'text-zinc-500'}`}>{d.jellyfish}</td>
+                                        <td className={`py-4 px-4 ${d.winner === 'aper' ? 'text-emerald-400' : 'text-zinc-700'}`}>{d.aper}</td>
+                                        <td className={`py-4 px-4 ${d.winner === 'jellyfish' ? 'text-blue-400' : 'text-zinc-700'}`}>{d.jellyfish}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -57,7 +57,7 @@ export default function CompareAPERJellyfishPage() {
 
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 text-center">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Calculate Your APER — Free</h2>
-                        <p className="text-zinc-300 mb-6">Find out how your revenue-per-engineer compares to industry benchmarks in 5 minutes.</p>
+                        <p className="text-zinc-700 mb-6">Find out how your revenue-per-engineer compares to industry benchmarks in 5 minutes.</p>
                         <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold hover:opacity-90 transition-opacity">Calculate APER →</Link>
                     </div>
                 </div>

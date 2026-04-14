@@ -55,7 +55,7 @@ const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: 
     <div className={`relative overflow-hidden rounded-2xl border border-zinc-200 bg-white/5 p-6 ${className}`}>
         <div className="flex items-center gap-2 mb-4">
             {Icon && <Icon size={20} className="text-blue-400" />}
-            <h3 className="font-semibold text-white">{title}</h3>
+            <h3 className="font-semibold text-zinc-900">{title}</h3>
         </div>
         {children}
     </div>
@@ -356,7 +356,7 @@ export default function PDITool() {
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!results} toolName="PDI" />
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-white font-bold">PDI Engine</span>
@@ -376,7 +376,7 @@ export default function PDITool() {
                             Quantify the <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Hidden Debt.</span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-zinc-400 mb-8">
+                        <p className="text-lg sm:text-xl text-zinc-600 mb-8">
                             AI-powered forensic audit for engineering insolvency. Paste your backlog and see where your capital is bleeding.
                         </p>
 
@@ -409,8 +409,8 @@ export default function PDITool() {
                                     <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold font-mono text-sm border border-cyan-500/30">1</div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-white">Organizational Scale</h3>
-                                            <p className="text-sm text-zinc-500">Define the size and cost of your engineering machine.</p>
+                                            <h3 className="text-xl font-bold text-zinc-900">Organizational Scale</h3>
+                                            <p className="text-sm text-zinc-700">Define the size and cost of your engineering machine.</p>
                                         </div>
                                     </div>
 
@@ -419,7 +419,7 @@ export default function PDITool() {
                                             <div className="flex justify-between items-end mb-4">
                                                 <label className="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2">
                                                     Engineering Team Size
-                                                    <span className="w-4 h-4 rounded-full bg-zinc-800 text-zinc-400 flex items-center justify-center text-[10px] cursor-help" title="Total number of ICs, EMs, and QA who touch the codebase.">?</span>
+                                                    <span className="w-4 h-4 rounded-full bg-zinc-800 text-zinc-600 flex items-center justify-center text-[10px] cursor-help" title="Total number of ICs, EMs, and QA who touch the codebase.">?</span>
                                                 </label>
                                                 <div className="text-3xl font-bold text-white font-mono">{teamSize}</div>
                                             </div>
@@ -430,7 +430,7 @@ export default function PDITool() {
                                                 onChange={e => setTeamSize(parseInt(e.target.value))}
                                                 className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-cyan-500" 
                                             />
-                                            <div className="flex justify-between text-[10px] text-zinc-500 font-mono mt-2">
+                                            <div className="flex justify-between text-[10px] text-zinc-700 font-mono mt-2">
                                                 <span>1 (Startup)</span>
                                                 <span>{teamSize > 120 ? 'Enterprise (>120)' : teamSize > 40 ? 'Scale-up (40-120)' : 'Growth (1-40)'}</span>
                                                 <span>500 (Enterprise)</span>
@@ -441,7 +441,7 @@ export default function PDITool() {
                                             <div className="flex justify-between items-end mb-4">
                                                 <label className="text-xs font-mono text-violet-400 uppercase tracking-widest flex items-center gap-2">
                                                     Average Fully-Loaded Salary
-                                                    <span className="w-4 h-4 rounded-full bg-zinc-800 text-zinc-400 flex items-center justify-center text-[10px] cursor-help" title="Base salary + benefits, taxes, software licenses, and overhead. Usually 120-140% of base.">?</span>
+                                                    <span className="w-4 h-4 rounded-full bg-zinc-800 text-zinc-600 flex items-center justify-center text-[10px] cursor-help" title="Base salary + benefits, taxes, software licenses, and overhead. Usually 120-140% of base.">?</span>
                                                 </label>
                                                 <div className="text-3xl font-bold text-white font-mono">${(salary / 1000).toFixed(0)}k</div>
                                             </div>
@@ -467,8 +467,8 @@ export default function PDITool() {
                                     <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-violet-500/20 text-violet-400 flex items-center justify-center font-bold font-mono text-sm border border-violet-500/30">2</div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-white">R&D Cadence</h3>
-                                            <p className="text-sm text-zinc-500">How you plan and measure velocity.</p>
+                                            <h3 className="text-xl font-bold text-zinc-900">R&D Cadence</h3>
+                                            <p className="text-sm text-zinc-700">How you plan and measure velocity.</p>
                                         </div>
                                     </div>
 
@@ -509,8 +509,8 @@ export default function PDITool() {
                                     <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold font-mono text-sm border border-red-500/30">3</div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-white">Backlog Evidence</h3>
-                                            <p className="text-sm text-zinc-500">Paste your recent Jira tickets, PRs, or tasks.</p>
+                                            <h3 className="text-xl font-bold text-zinc-900">Backlog Evidence</h3>
+                                            <p className="text-sm text-zinc-700">Paste your recent Jira tickets, PRs, or tasks.</p>
                                         </div>
                                     </div>
 
@@ -518,7 +518,7 @@ export default function PDITool() {
                                         <textarea
                                             value={tickets}
                                             onChange={e => setTickets(e.target.value)}
-                                            className="w-full h-48 sm:h-64 bg-white/50 border border-zinc-200 rounded-xl p-4 font-mono text-sm text-zinc-300 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500/50 transition-all placeholder:text-zinc-700 resize-none"
+                                            className="w-full h-48 sm:h-64 bg-white/50 border border-zinc-200 rounded-xl p-4 font-mono text-sm text-zinc-700 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500/50 transition-all placeholder:text-zinc-700 resize-none"
                                             placeholder="Paste Jira tickets, PRs, or task descriptions here (one per line)...
 
 Example:
@@ -528,7 +528,7 @@ Add enterprise SSO tier
 Optimize dashboard database query
 Migrate from Heroku to AWS"
                                         />
-                                        <p className="text-xs text-zinc-600 mt-2 font-mono">Our LLM classifier will categorize these into Growth, Retention, or Maintenance to calculate your capital leakage.</p>
+                                        <p className="text-xs text-zinc-800 mt-2 font-mono">Our LLM classifier will categorize these into Growth, Retention, or Maintenance to calculate your capital leakage.</p>
                                     </div>
 
                                     <div className="flex gap-4">
@@ -569,14 +569,14 @@ Migrate from Heroku to AWS"
                 </ScrollReveal>
             ) : (
                 /* --- RESULTS STATE --- */
-                <div id="pdi-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
+                <div id="pdi-results-artifact" className="bg-white p-2 sm:p-6 rounded-3xl">
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-cyan-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-white mb-1">PDI Diagnostic Complete</h2>
-                            <p className="text-sm text-zinc-400">Export this assessment to a verified Executive PDF for board review.</p>
+                            <p className="text-sm text-zinc-600">Export this assessment to a verified Executive PDF for board review.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="pdi-pdf-export-zone" fileName={`PDI_Diagnostic_${persona}.pdf`} />
@@ -596,7 +596,7 @@ Migrate from Heroku to AWS"
                                     </div>
                                     <div className="mt-4">
                                         {results.score < 50 ? (
-                                            <span className="px-3 py-1.5 rounded-full bg-red-900/30 text-red-400 border border-red-900/50 text-xs font-bold uppercase tracking-widest">
+                                            <span className="px-3 py-1.5 rounded-full bg-red-50/30 text-red-400 border border-red-900/50 text-xs font-bold uppercase tracking-widest">
                                                 ⚠ INSOLVENT
                                             </span>
                                         ) : (
@@ -607,8 +607,8 @@ Migrate from Heroku to AWS"
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed">
-                                        Based on your backlog, <strong className="text-white">{results.metrics.maintenance}% of your capacity</strong> is consumed by non-accretive work.
+                                    <p className="text-lg sm:text-xl text-zinc-700 leading-relaxed">
+                                        Based on your backlog, <strong className="text-zinc-900">{results.metrics.maintenance}% of your capacity</strong> is consumed by non-accretive work.
                                         You are burning <span className="text-red-500 font-bold font-mono">${(results.financials.waste / 1000000).toFixed(1)}M</span> annually on maintenance.
                                     </p>
                                 </div>
@@ -619,12 +619,12 @@ Migrate from Heroku to AWS"
                     {/* PERSONA-SPECIFIC INSIGHT */}
                     <ScrollReveal delay={50}>
                         <div className="capsule-container rounded-2xl p-6 mb-6 border-l-4 border-red-500">
-                            <div className="flex items-center gap-2 mb-3 text-zinc-500">
+                            <div className="flex items-center gap-2 mb-3 text-zinc-700">
                                 <Target size={14} />
                                 <span className="text-[10px] font-mono uppercase tracking-widest">Insight for {persona}</span>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-2">{getPersonaInsight(results).headline}</h3>
-                            <p className="text-zinc-400 leading-relaxed mb-3">{getPersonaInsight(results).detail}</p>
+                            <p className="text-zinc-600 leading-relaxed mb-3">{getPersonaInsight(results).detail}</p>
                             <p className="text-cyan-400 font-semibold">{getPersonaInsight(results).action}</p>
                         </div>
                     </ScrollReveal>
@@ -657,23 +657,23 @@ Migrate from Heroku to AWS"
                         <div className="capsule-container rounded-2xl p-6 mb-6">
                             <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Debt Dynamics</div>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                <div className="bg-black/30 rounded-xl p-4">
-                                    <div className="text-xs text-zinc-500 mb-1">Waste per Sprint</div>
+                                <div className="bg-zinc-100 rounded-xl p-4">
+                                    <div className="text-xs text-zinc-700 mb-1">Waste per Sprint</div>
                                     <div className="text-xl font-bold text-red-400">{formatMoney(results.financials.wastePerSprint)}</div>
                                 </div>
-                                <div className="bg-black/30 rounded-xl p-4">
-                                    <div className="text-xs text-zinc-500 mb-1">Debt Velocity</div>
+                                <div className="bg-zinc-100 rounded-xl p-4">
+                                    <div className="text-xs text-zinc-700 mb-1">Debt Velocity</div>
                                     <div className="text-xl font-bold text-orange-400">{results.debtVelocity} tickets/sprint</div>
                                 </div>
-                                <div className="bg-black/30 rounded-xl p-4">
-                                    <div className="text-xs text-zinc-500 mb-1">Clear Backlog In</div>
+                                <div className="bg-zinc-100 rounded-xl p-4">
+                                    <div className="text-xs text-zinc-700 mb-1">Clear Backlog In</div>
                                     <div className="text-xl font-bold text-yellow-400">{results.burnDownWeeks} weeks</div>
-                                    <div className="text-[10px] text-zinc-600">if dedicated</div>
+                                    <div className="text-[10px] text-zinc-800">if dedicated</div>
                                 </div>
-                                <div className="bg-black/30 rounded-xl p-4">
-                                    <div className="text-xs text-zinc-500 mb-1">Debt Reduction ROI</div>
+                                <div className="bg-zinc-100 rounded-xl p-4">
+                                    <div className="text-xs text-zinc-700 mb-1">Debt Reduction ROI</div>
                                     <div className="text-xl font-bold text-emerald-400">{results.financials.debtReductionROI.toFixed(1)}x</div>
-                                    <div className="text-[10px] text-zinc-600">per sprint invested</div>
+                                    <div className="text-[10px] text-zinc-800">per sprint invested</div>
                                 </div>
                             </div>
                         </div>
@@ -684,18 +684,18 @@ Migrate from Heroku to AWS"
                         <div className={`capsule-container rounded-2xl p-6 mb-6 border ${results.financials.isTechnicalDefault ? 'border-red-500/50' : 'border-emerald-500/30'}`}>
                             <div className="flex items-center gap-2 mb-4">
                                 <AlertTriangle className={`w-4 h-4 ${results.financials.isTechnicalDefault ? 'text-red-500 animate-pulse' : 'text-emerald-400'}`} />
-                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-500">Corporate Solvency Matrix (Technical Default)</div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-700">Corporate Solvency Matrix (Technical Default)</div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-200 relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-white" /></div>
-                                    <div className="text-xs text-zinc-500 mb-2">Annual Maintenance Burden</div>
+                                    <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
+                                    <div className="text-xs text-zinc-700 mb-2">Annual Maintenance Burden</div>
                                     <div className="text-3xl font-bold text-red-500">{formatMoney(results.financials.waste)}</div>
                                     <div className="text-xs text-red-400/60 mt-2 mt-auto">Cost of servicing status-quo tech debt (Interest).</div>
                                 </div>
                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-200 relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-white" /></div>
-                                    <div className="text-xs text-zinc-500 mb-2">Generative AI Rewrite Protocol</div>
+                                    <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
+                                    <div className="text-xs text-zinc-700 mb-2">Generative AI Rewrite Protocol</div>
                                     <div className="text-3xl font-bold text-cyan-400">{formatMoney(results.financials.rewriteCost)}</div>
                                     <div className="text-xs text-cyan-400/60 mt-2 mt-auto">Cost to burn down and rebuild via Agentic orchestration (Principal).</div>
                                 </div>
@@ -710,7 +710,7 @@ Migrate from Heroku to AWS"
                                         <div className={`font-bold ${results.financials.isTechnicalDefault ? 'text-red-400' : 'text-emerald-400'}`}>
                                             {results.financials.isTechnicalDefault ? 'CRITICAL: Technical Default Threshold Exceeded' : 'Viable: System Solvency Maintained'}
                                         </div>
-                                        <div className="text-xs text-zinc-400 mt-1">
+                                        <div className="text-xs text-zinc-600 mt-1">
                                             {results.financials.isTechnicalDefault 
                                                 ? `The interest payment (maintenance) is now ${results.financials.defaultRatio.toFixed(1)}x greater than the principal (rebuild cost). You are in Technical Default. It is mathematically cheaper to burn the codebase down and rewrite it.` 
                                                 : `Your maintenance burden is tracking below the cost of a full rewrite. Implement aggressive debt rotation now before crossing the default horizon.`}
@@ -734,23 +734,23 @@ Migrate from Heroku to AWS"
                                     ]} />
                                 </div>
                                 <div className="flex justify-center gap-6 mt-6">
-                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-cyan-400" /><span className="text-xs text-zinc-400">Growth</span></div>
-                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-purple-500" /><span className="text-xs text-zinc-400">Retention</span></div>
-                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-red-600" /><span className="text-xs text-zinc-400">Maintenance</span></div>
+                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-cyan-400" /><span className="text-xs text-zinc-600">Growth</span></div>
+                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-purple-500" /><span className="text-xs text-zinc-600">Retention</span></div>
+                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-red-600" /><span className="text-xs text-zinc-600">Maintenance</span></div>
                                 </div>
                             </GlowCard>
 
                             {/* EXECUTIVE SUMMARY + EMAIL */}
-                            <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-zinc-200">
+                            <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-6 border border-zinc-200">
                                 <div className="flex items-center gap-2 mb-4">
                                     <div className={`w-3 h-3 rounded-full animate-pulse ${results.score < 50 ? 'bg-red-500' : 'bg-cyan-400'}`} />
-                                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">Executive Summary</span>
+                                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-700">Executive Summary</span>
                                 </div>
 
-                                <ul className="space-y-2 text-zinc-400 text-sm mb-6">
+                                <ul className="space-y-2 text-zinc-600 text-sm mb-6">
                                     <li className="flex items-start gap-2">
                                         <span className="text-red-400 mt-0.5">•</span>
-                                        <span>PDI of <strong className="text-white">{results.score}</strong> means {100 - results.score}% of capacity is non-value-creating.</span>
+                                        <span>PDI of <strong className="text-zinc-900">{results.score}</strong> means {100 - results.score}% of capacity is non-value-creating.</span>
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <span className="text-red-400 mt-0.5">•</span>
@@ -784,7 +784,7 @@ Migrate from Heroku to AWS"
                                 <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-4">AI Categorization Results</div>
                                 <div className="max-h-64 overflow-y-auto space-y-2">
                                     {results.categorized.map((item, i) => (
-                                        <div key={i} className="flex items-start gap-3 p-3 bg-black/30 rounded-lg">
+                                        <div key={i} className="flex items-start gap-3 p-3 bg-zinc-100 rounded-lg">
                                             <span className={`px-2 py-0.5 rounded text-[10px] font-mono uppercase ${item.category === 'growth' ? 'bg-cyan-500/20 text-cyan-400' :
                                                 item.category === 'retention' ? 'bg-purple-500/20 text-purple-400' :
                                                     'bg-red-500/20 text-red-400'
@@ -792,8 +792,8 @@ Migrate from Heroku to AWS"
                                                 {item.category}
                                             </span>
                                             <div className="flex-1">
-                                                <p className="text-sm text-white">{item.ticket}</p>
-                                                <p className="text-xs text-zinc-500 mt-1">{item.reasoning}</p>
+                                                <p className="text-sm text-zinc-900">{item.ticket}</p>
+                                                <p className="text-xs text-zinc-700 mt-1">{item.reasoning}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -820,7 +820,7 @@ Migrate from Heroku to AWS"
                                             <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)] z-10"></div>
                                             
                                             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-400 shrink-0 inline-block w-fit">
+                                                <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-600 shrink-0 inline-block w-fit">
                                                     Month {plan.month}
                                                 </div>
                                                 <div className="font-bold text-white text-base leading-tight md:leading-normal">{plan.focus}</div>
@@ -862,7 +862,7 @@ Migrate from Heroku to AWS"
                                 <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                 3-Step Board Remediation Playbook
                             </h3>
-                            <p className="text-zinc-400 text-sm mb-8">Based on your audit metrics, execute this operational surgery immediately to stop capital hemorrhage.</p>
+                            <p className="text-zinc-600 text-sm mb-8">Based on your audit metrics, execute this operational surgery immediately to stop capital hemorrhage.</p>
 
                             <div className="space-y-4">
                                 {/* Step 1 */}
@@ -873,12 +873,12 @@ Migrate from Heroku to AWS"
                                     </div>
                                     <div className="relative z-10 w-full">
                                         <h4 className="text-white font-bold mb-2">CapEx Quarantine Protocol</h4>
-                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">Mandate an absolute freeze on net-new feature development for any codebase quadrant operating above 40% maintenance allocation.</p>
+                                        <p className="text-zinc-600 text-sm leading-relaxed mb-4">Mandate an absolute freeze on net-new feature development for any codebase quadrant operating above 40% maintenance allocation.</p>
                                         <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                             <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-xs text-zinc-300">Enforce the &quot;Win Locker&quot; pattern: Zero PR approvals on quarantined domains until debt ratio decreases by 15%.</p>
+                                            <p className="text-xs text-zinc-700">Enforce the &quot;Win Locker&quot; pattern: Zero PR approvals on quarantined domains until debt ratio decreases by 15%.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -891,12 +891,12 @@ Migrate from Heroku to AWS"
                                     </div>
                                     <div className="relative z-10 w-full">
                                         <h4 className="text-white font-bold mb-2">Balance Sheet Refactoring</h4>
-                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">Structural maintenance debt must be capitalized as a core business function, not shadow IT work done on weekends.</p>
+                                        <p className="text-zinc-600 text-sm leading-relaxed mb-4">Structural maintenance debt must be capitalized as a core business function, not shadow IT work done on weekends.</p>
                                         <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                             <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-xs text-zinc-300">Set Jira sprint templates to automatically lock 20% of engineering points to &quot;Structural Neutralization&quot; before any feature work is scheduled.</p>
+                                            <p className="text-xs text-zinc-700">Set Jira sprint templates to automatically lock 20% of engineering points to &quot;Structural Neutralization&quot; before any feature work is scheduled.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -909,12 +909,12 @@ Migrate from Heroku to AWS"
                                     </div>
                                     <div className="relative z-10 w-full">
                                         <h4 className="text-white font-bold mb-2">CFO Workflow Alignment</h4>
-                                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are burning {formatMoney(results.financials.wastePerSprint)} per sprint cycle in overhead. This is no longer an engineering problem; it’s a capital efficiency crisis.</p>
+                                        <p className="text-zinc-600 text-sm leading-relaxed mb-4">You are burning {formatMoney(results.financials.wastePerSprint)} per sprint cycle in overhead. This is no longer an engineering problem; it’s a capital efficiency crisis.</p>
                                         <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                             <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-xs text-zinc-300">Route all maintenance spikes over $50k OpEx equivalent through formal CFO approval workflows using the PDI metric as the justification vehicle.</p>
+                                            <p className="text-xs text-zinc-700">Route all maintenance spikes over $50k OpEx equivalent through formal CFO approval workflows using the PDI metric as the justification vehicle.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -931,21 +931,21 @@ Migrate from Heroku to AWS"
                     {/* Action Footer */}
                     <ScrollReveal delay={300}>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t border-zinc-200" data-html2canvas-ignore>
-                            <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-zinc-900 underline underline-offset-4">← Run New Audit</button>
+                            <button onClick={() => setResults(null)} className="text-zinc-700 text-sm hover:text-zinc-900 underline underline-offset-4">← Run New Audit</button>
                             <ExportToPDFButton 
                                 targetId="pdi-results-artifact" 
                                 fileName={`Product_Debt_Index_${new Date().toISOString().split('T')[0]}.pdf`} 
                                 onBeforeExport={handleSaveToVault} 
                             />
-                            <Link href="/system" className="text-zinc-500 text-sm hover:text-zinc-900">Explore All Tools →</Link>
+                            <Link href="/system" className="text-zinc-700 text-sm hover:text-zinc-900">Explore All Tools →</Link>
                         </div>
                     </ScrollReveal>
 
                     {/* Social Proof */}
                     <ScrollReveal delay={300}>
                         <div className="text-center pt-8 pb-4">
-                            <p className="text-xs text-zinc-600 mb-3">Trusted by product leaders at</p>
-                            <div className="flex items-center justify-center gap-8 text-zinc-600 font-mono text-xs">
+                            <p className="text-xs text-zinc-800 mb-3">Trusted by product leaders at</p>
+                            <div className="flex items-center justify-center gap-8 text-zinc-800 font-mono text-xs">
                                 <span>Stripe</span>
                                 <span>Figma</span>
                                 <span>Linear</span>
@@ -963,10 +963,10 @@ Migrate from Heroku to AWS"
             <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
                 <div className="prose prose-zinc prose-lg max-w-none">
                     <h2 className="text-4xl font-bold text-white mb-8">Why Standard Technical Debt Calculators Fail</h2>
-                    <p className="text-zinc-400 leading-relaxed">
+                    <p className="text-zinc-600 leading-relaxed">
                         Most engineering metrics are vanity signals. Counting &quot;cyclomatic complexity&quot; or &quot;TODO comments&quot; does not tell a CFO whether to approve a budget. The <strong>Product Debt Index™ (PDI)</strong> is different. It is a forensic accounting tool that converts &quot;bad code&quot; into &quot;wasted salary dollars.&quot;
                     </p>
-                    <p className="text-zinc-400 leading-relaxed">
+                    <p className="text-zinc-600 leading-relaxed">
                         When your PDI drops below 50, you have crossed the <strong>Insolvency Threshold</strong>. You are no longer a software company; you are a digital nursing home. You are paying senior engineer salaries to change bedpans (maintenance) instead of building skyscrapers (growth).
                     </p>
                 </div>
@@ -974,13 +974,13 @@ Migrate from Heroku to AWS"
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div>
                         <h3 className="text-2xl font-bold text-cyan-400 mb-4">The &quot;Compound Interest&quot; of Bad Code</h3>
-                        <p className="text-zinc-400 text-sm leading-relaxed">
+                        <p className="text-zinc-600 text-sm leading-relaxed">
                             Technical debt is financial debt with variable interest rates. A &quot;quick hack&quot; to ship a feature for Q3 earnings is a loan taken out against Q4 velocity. If you do not pay down the principal (refactoring), the interest payments (maintenance work) will eventually consume 100% of your available capacity. This calculator quantifies that interest payment in real-time.
                         </p>
                     </div>
                     <div>
                         <h3 className="text-2xl font-bold text-red-500 mb-4">CapEx vs. OpEx Trap</h3>
-                        <p className="text-zinc-400 text-sm leading-relaxed">
+                        <p className="text-zinc-600 text-sm leading-relaxed">
                             Private Equity firms love this metric. They use it to detect if an engineering team is capitalizing expenses (claiming maintenance work as &quot;R&amp;D&quot;) to inflate EBITDA. The PDI exposes the truth: are you building assets, or just servicing liabilities?
                         </p>
                     </div>
@@ -1001,7 +1001,7 @@ Migrate from Heroku to AWS"
                             </div>
                             
                             <h3 className="text-3xl font-bold text-white mb-2 font-grotesk tracking-tight">Limit Reached.</h3>
-                            <p className="text-zinc-400 text-sm mb-8 leading-relaxed">
+                            <p className="text-zinc-600 text-sm mb-8 leading-relaxed">
                                 You have consumed your allocation of 3 free diagnostic audits. Unlock the Full Library to save unlimited board-ready PDF reports directly to your Vault.
                             </p>
                             
@@ -1015,7 +1015,7 @@ Migrate from Heroku to AWS"
                                 </a>
                                 <button 
                                     onClick={() => setShowPaywall(false)} 
-                                    className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-400 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"
+                                    className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-600 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"
                                 >
                                     Dismiss
                                 </button>

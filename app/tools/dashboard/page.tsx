@@ -39,13 +39,13 @@ export default function IntelligenceDashboard() {
             });
     }, [isLoaded, user]);
 
-    if (!isLoaded) return <div className="min-h-screen bg-[#050505] flex items-center justify-center"><div className="w-8 h-8 border-2 border-zinc-300 border-t-white rounded-full animate-spin" /></div>;
+    if (!isLoaded) return <div className="min-h-screen bg-white flex items-center justify-center"><div className="w-8 h-8 border-2 border-zinc-300 border-t-white rounded-full animate-spin" /></div>;
 
     if (!user) {
         return (
-            <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-center p-6 text-center">
+            <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
                 <h1 className="text-3xl font-bold text-white mb-4">Authentication Required</h1>
-                <p className="text-zinc-400 mb-8 max-w-md">You must be signed in to access the C-Suite Command Center and historical execution data.</p>
+                <p className="text-zinc-600 mb-8 max-w-md">You must be signed in to access the C-Suite Command Center and historical execution data.</p>
                 <Link href="/sign-in" className="px-6 py-3 bg-white text-black font-bold rounded-lg hover:bg-zinc-200 transition-colors">Authenticate</Link>
             </div>
         );
@@ -115,19 +115,19 @@ export default function IntelligenceDashboard() {
                         <span className={`px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-widest rounded-md border ${getToolColor(run.tool_id)}`}>
                             {run.tool_id}
                         </span>
-                        <span className="text-xs text-zinc-500 font-mono flex items-center gap-1">
+                        <span className="text-xs text-zinc-700 font-mono flex items-center gap-1">
                             <Calendar size={12} /> {date}
                         </span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-12">
                         <div>
-                            <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-widest mb-1">{primaryMetric.label}</div>
-                            <div className="text-2xl font-bold text-white">{primaryMetric.value}</div>
+                            <div className="text-[10px] text-zinc-700 font-mono uppercase tracking-widest mb-1">{primaryMetric.label}</div>
+                            <div className="text-2xl font-bold text-zinc-900">{primaryMetric.value}</div>
                         </div>
                         <div className="hidden sm:block w-px h-10 bg-white/10" />
                         <div>
-                            <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-widest mb-1">{secondaryMetric.label}</div>
-                            <div className="text-xl font-medium text-zinc-300">{secondaryMetric.value}</div>
+                            <div className="text-[10px] text-zinc-700 font-mono uppercase tracking-widest mb-1">{secondaryMetric.label}</div>
+                            <div className="text-xl font-medium text-zinc-700">{secondaryMetric.value}</div>
                         </div>
                     </div>
                 </div>
@@ -142,12 +142,12 @@ export default function IntelligenceDashboard() {
     };
 
     return (
-        <div className="min-h-screen bg-[#050505] text-zinc-200">
+        <div className="min-h-screen bg-white text-zinc-800">
             <nav className="border-b border-zinc-200 bg-white/80 backdrop-blur-2xl sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <Activity className="text-cyan-400" size={18} />
-                        <span className="font-bold tracking-tight text-lg text-white">C-Suite Command Center <span className="text-zinc-600 font-normal">| Strategic Diagnostics</span></span>
+                        <span className="font-bold tracking-tight text-lg text-zinc-900">C-Suite Command Center <span className="text-zinc-800 font-normal">| Strategic Diagnostics</span></span>
                     </div>
                     <Link href="/system" className="text-[10px] font-mono text-zinc-600 hover:text-zinc-900 transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-zinc-200">
                         Exit to Hub
@@ -170,7 +170,7 @@ export default function IntelligenceDashboard() {
                         <div className="text-4xl font-bold font-grotesk text-white flex items-baseline gap-1">
                             $ <NumberTicker value={totalValuationGap} />
                         </div>
-                        <p className="text-xs text-zinc-400 mt-4 leading-relaxed">Aggregated enterprise value theoretically at risk due to technical debt, margin drag, and inefficient APER.</p>
+                        <p className="text-xs text-zinc-600 mt-4 leading-relaxed">Aggregated enterprise value theoretically at risk due to technical debt, margin drag, and inefficient APER.</p>
                         <BorderBeam duration={12} delay={0} size={250} />
                     </GlowCard>
 
@@ -185,7 +185,7 @@ export default function IntelligenceDashboard() {
                         <div className="text-4xl font-bold font-grotesk text-white flex items-baseline gap-1">
                             <NumberTicker value={finalConfidence} /> %
                         </div>
-                        <p className="text-xs text-zinc-400 mt-4 leading-relaxed">Aggregate confidence score across all executed technical benchmarks and organizational health metrics.</p>
+                        <p className="text-xs text-zinc-600 mt-4 leading-relaxed">Aggregate confidence score across all executed technical benchmarks and organizational health metrics.</p>
                         <BorderBeam duration={8} delay={3} size={250} />
                     </GlowCard>
 
@@ -198,9 +198,9 @@ export default function IntelligenceDashboard() {
                         </div>
                         <div className="text-sm font-mono text-zinc-500 uppercase tracking-widest mb-2">Diagnostic Tools Run</div>
                         <div className="text-4xl font-bold font-grotesk text-white flex items-baseline gap-1">
-                            <NumberTicker value={uniqueToolsRun} /> <span className="text-xl text-zinc-600">/ {totalToolsAvailable}</span>
+                            <NumberTicker value={uniqueToolsRun} /> <span className="text-xl text-zinc-800">/ {totalToolsAvailable}</span>
                         </div>
-                        <p className="text-xs text-zinc-400 mt-4 leading-relaxed">You have executed {uniqueToolsRun} out of {totalToolsAvailable} core intelligence protocols to map your organization.</p>
+                        <p className="text-xs text-zinc-600 mt-4 leading-relaxed">You have executed {uniqueToolsRun} out of {totalToolsAvailable} core intelligence protocols to map your organization.</p>
                         <BorderBeam duration={10} delay={6} size={250} />
                     </GlowCard>
                 </div>
@@ -209,7 +209,7 @@ export default function IntelligenceDashboard() {
                     <h2 className="text-2xl font-bold font-grotesk text-white flex items-center gap-3">
                         <History className="text-cyan-400" /> Execution Ledger
                     </h2>
-                    <span className="text-xs font-mono text-zinc-500 tracking-widest uppercase">{runs.length} Snapshots Stored</span>
+                    <span className="text-xs font-mono text-zinc-700 tracking-widest uppercase">{runs.length} Snapshots Stored</span>
                 </div>
 
                 {loading ? (
@@ -220,9 +220,9 @@ export default function IntelligenceDashboard() {
                     </div>
                 ) : runs.length === 0 ? (
                     <div className="text-center py-24 bg-white/20 border border-zinc-200 rounded-3xl border-dashed">
-                        <History className="mx-auto text-zinc-600 mb-4" size={48} />
+                        <History className="mx-auto text-zinc-800 mb-4" size={48} />
                         <h3 className="text-xl font-bold text-white mb-2">Awaiting Telemetry</h3>
-                        <p className="text-zinc-500 mb-8 max-w-md mx-auto">You have not executed any intelligence playbooks yet. Run an analysis to establish your longitudinal baseline.</p>
+                        <p className="text-zinc-700 mb-8 max-w-md mx-auto">You have not executed any intelligence playbooks yet. Run an analysis to establish your longitudinal baseline.</p>
                         <div className="flex items-center justify-center gap-4">
                             <Link href="/tools/aper" className="px-6 py-3 bg-white hover:bg-zinc-200 text-black rounded-lg text-sm font-bold uppercase tracking-widest transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">Execute APER</Link>
                         </div>

@@ -22,11 +22,11 @@ const BriefCard = ({ number, title, subtitle, href, isNew, date }: BriefCardProp
                     New
                 </div>
             )}
-            <div className="text-xs text-zinc-500 mb-3 font-mono uppercase tracking-widest">{number} · {date}</div>
+            <div className="text-xs text-zinc-700 mb-3 font-mono uppercase tracking-widest">{number} · {date}</div>
             <h3 className="font-semibold text-lg text-white mb-2 group-hover:text-purple-400 transition-colors font-grotesk">
                 {title}
             </h3>
-            <p className="text-zinc-600 text-sm leading-relaxed">
+            <p className="text-zinc-800 text-sm leading-relaxed">
                 {subtitle}
             </p>
         </div>
@@ -64,9 +64,9 @@ export default function BriefingsPage() {
                         Executive<br />
                         <span className="text-purple-400">Briefings.</span>
                     </h1>
-                    <p className="text-zinc-600 text-lg mb-8 max-w-2xl">
+                    <p className="text-zinc-800 text-lg mb-8 max-w-2xl">
                         Dense, actionable intelligence for leaders who don't have time for
-                        "thought leadership." <span className="text-white">Read time: 5-10 minutes each.</span>
+                        "thought leadership." <span className="text-zinc-900">Read time: 5-10 minutes each.</span>
                     </p>
 
                     <a
@@ -100,7 +100,7 @@ export default function BriefingsPage() {
                                 <h3 className="text-2xl font-bold text-white mb-2 font-grotesk">
                                     AI Unit Economics Benchmark™
                                 </h3>
-                                <p className="text-zinc-600 text-sm max-w-md">
+                                <p className="text-zinc-800 text-sm max-w-md">
                                     Calculate if your AI features will scale or collapse before you write a single line of code.
                                 </p>
                             </div>
@@ -125,7 +125,7 @@ export default function BriefingsPage() {
             {/* Archive link */}
             <ScrollReveal delay={300}>
                 <div className="text-center pb-20">
-                    <p className="text-zinc-500 text-sm mb-4">
+                    <p className="text-zinc-700 text-sm mb-4">
                         Full archive on Beehiiv:
                     </p>
                     <a

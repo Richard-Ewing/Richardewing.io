@@ -15,9 +15,9 @@ export default function DoctrinePage() {
                             Sovereignty in<br />
                             <span className="text-cyan-400">Product Economics.</span>
                         </h1>
-                        <p className="text-zinc-600 text-lg">
+                        <p className="text-zinc-800 text-lg">
                             The following principles govern the methodology of the Product Economist.
-                            They are not suggestions; they are the <span className="text-white">immutable laws</span> of software solvency.
+                            They are not suggestions; they are the <span className="text-zinc-900">immutable laws</span> of software solvency.
                         </p>
                     </div>
                 </section>
@@ -29,17 +29,17 @@ export default function DoctrinePage() {
                         <div className="card">
                             <div className="text-xs text-purple-400 mb-3">01</div>
                             <h3 className="text-lg font-semibold text-white mb-3">Capital Allocation {'>'} Agile Theater</h3>
-                            <p className="text-zinc-600 text-sm">
+                            <p className="text-zinc-800 text-sm">
                                 We do not measure success by velocity, story points, or features shipped.
-                                We measure success by <span className="text-white">Return on Invested Capital (ROIC)</span>.
+                                We measure success by <span className="text-zinc-900">Return on Invested Capital (ROIC)</span>.
                             </p>
                         </div>
 
                         <div className="card">
                             <div className="text-xs text-cyan-400 mb-3">02</div>
                             <h3 className="text-lg font-semibold text-white mb-3">The Truth is in the P&L</h3>
-                            <p className="text-zinc-600 text-sm">
-                                Users lie. NPS lies. Roadmaps lie. The <span className="text-white">Profit & Loss statement</span> tells
+                            <p className="text-zinc-800 text-sm">
+                                Users lie. NPS lies. Roadmaps lie. The <span className="text-zinc-900">Profit & Loss statement</span> tells
                                 the only truth that matters.
                             </p>
                         </div>
@@ -47,17 +47,17 @@ export default function DoctrinePage() {
                         <div className="card">
                             <div className="text-xs text-purple-400 mb-3">03</div>
                             <h3 className="text-lg font-semibold text-white mb-3">Kill Zombies Ruthlessly</h3>
-                            <p className="text-zinc-600 text-sm">
+                            <p className="text-zinc-800 text-sm">
                                 A "Zombie Feature" is code that requires maintenance but generates zero incremental value.
-                                We execute the <span className="text-white">Kill Switch Protocol</span>.
+                                We execute the <span className="text-zinc-900">Kill Switch Protocol</span>.
                             </p>
                         </div>
 
                         <div className="card">
                             <div className="text-xs text-cyan-400 mb-3">04</div>
                             <h3 className="text-lg font-semibold text-white mb-3">Sovereignty Over Dependency</h3>
-                            <p className="text-zinc-600 text-sm">
-                                Do not build your house on rental land. <span className="text-white">Own your core IP.</span>
+                            <p className="text-zinc-800 text-sm">
+                                Do not build your house on rental land. <span className="text-zinc-900">Own your core IP.</span>
                                 Build small, sharp tools that do one thing perfectly.
                             </p>
                         </div>
@@ -74,8 +74,8 @@ export default function DoctrinePage() {
 
                             <div>
                                 <h3 className="text-lg font-semibold text-cyan-400 mb-2">Technical Insolvency Date</h3>
-                                <p className="text-zinc-600">
-                                    The <span className="text-white">Technical Insolvency Date</span> is the specific future quarter
+                                <p className="text-zinc-800">
+                                    The <span className="text-zinc-900">Technical Insolvency Date</span> is the specific future quarter
                                     when an organization's technical debt maintenance will consume 100% of engineering capacity,
                                     leaving zero time for new development.
                                 </p>
@@ -83,8 +83,8 @@ export default function DoctrinePage() {
 
                             <div>
                                 <h3 className="text-lg font-semibold text-purple-400 mb-2">Innovation Tax</h3>
-                                <p className="text-zinc-600">
-                                    <span className="text-white">Innovation Tax</span> is the hidden cost of maintenance work that
+                                <p className="text-zinc-800">
+                                    <span className="text-zinc-900">Innovation Tax</span> is the hidden cost of maintenance work that
                                     gets reported as innovation investment in financial and board reporting.
                                 </p>
                             </div>
@@ -115,25 +115,25 @@ export default function DoctrinePage() {
                             <div className="card">
                                 <div className="text-xs text-purple-400 uppercase tracking-wide mb-2">Expert Contributor</div>
                                 <h3 className="font-semibold text-white mb-1">Built In</h3>
-                                <p className="text-zinc-500 text-sm">Monthly columnist. Jan 2026 article featured in Editor's Newsletter.</p>
+                                <p className="text-zinc-700 text-sm">Monthly columnist. Jan 2026 article featured in Editor's Newsletter.</p>
                             </div>
 
                             <div className="card">
                                 <div className="text-xs text-cyan-400 uppercase tracking-wide mb-2">Contributor</div>
                                 <h3 className="font-semibold text-white mb-1">Mind the Product</h3>
-                                <p className="text-zinc-500 text-sm">Feb 2026 article. Newsletter feature.</p>
+                                <p className="text-zinc-700 text-sm">Feb 2026 article. Newsletter feature.</p>
                             </div>
 
                             <div className="card">
                                 <div className="text-xs text-purple-400 uppercase tracking-wide mb-2">Expert Contributor</div>
                                 <h3 className="font-semibold text-white mb-1">Foundry (CIO.com)</h3>
-                                <p className="text-zinc-500 text-sm">Monthly columnist for enterprise technology network.</p>
+                                <p className="text-zinc-700 text-sm">Monthly columnist for enterprise technology network.</p>
                             </div>
 
                             <div className="card">
                                 <div className="text-xs text-cyan-400 uppercase tracking-wide mb-2">Published</div>
                                 <h3 className="font-semibold text-white mb-1">HackerNoon</h3>
-                                <p className="text-zinc-500 text-sm">4M+ monthly readers.</p>
+                                <p className="text-zinc-700 text-sm">4M+ monthly readers.</p>
                             </div>
 
                         </div>
@@ -142,7 +142,7 @@ export default function DoctrinePage() {
 
                 {/* CTA */}
                 <section className="section-sm text-center">
-                    <p className="text-zinc-600 mb-6">Apply these principles to your organization.</p>
+                    <p className="text-zinc-800 mb-6">Apply these principles to your organization.</p>
                     <a href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
                         Book an Intervention →
                     </a>

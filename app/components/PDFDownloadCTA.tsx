@@ -17,7 +17,7 @@ export default function PDFDownloadCTA({ toolName, score }: PDFDownloadCTAProps)
                 </div>
                 <div className="flex-1">
                     <h4 className="text-lg font-bold text-white mb-1">Get the Board-Ready PDF</h4>
-                    <p className="text-zinc-400 text-sm mb-4">
+                    <p className="text-zinc-600 text-sm mb-4">
                         Download your {toolName} results as a professionally formatted PDF.
                         {score !== undefined && ` Your score: ${score}.`} Perfect for sharing with leadership, investors, or your board.
                     </p>

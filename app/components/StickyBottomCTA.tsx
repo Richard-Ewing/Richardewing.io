@@ -42,7 +42,7 @@ export default function StickyBottomCTA() {
                             <p className="text-white text-sm font-bold truncate">
                                 Is your R&D budget building assets — or just servicing liabilities?
                             </p>
-                            <p className="text-zinc-500 text-xs hidden sm:block">30-min diagnostic call with a Product Economist. $450.</p>
+                            <p className="text-zinc-700 text-xs hidden sm:block">30-min diagnostic call with a Product Economist. $450.</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0">

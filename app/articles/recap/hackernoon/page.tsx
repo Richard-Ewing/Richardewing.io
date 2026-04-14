@@ -53,17 +53,17 @@ export default function HackerNoonRecapPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/articles" className="hover:text-cyan-400">Articles</Link><span>/</span><span className="text-orange-400 font-bold">HackerNoon</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
                         Published on{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400">HackerNoon</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 mb-4 max-w-2xl">
+                    <p className="text-lg text-zinc-600 mb-4 max-w-2xl">
                         Richard Ewing&apos;s articles on HackerNoon — the leading platform for developer-focused content, covering AI agent economics, open-source sustainability, and technical debt strategy for startups.
                     </p>
-                    <p className="text-sm text-zinc-500 mb-12">HackerNoon reaches 4M+ developers and technical decision-makers monthly.</p>
+                    <p className="text-sm text-zinc-700 mb-12">HackerNoon reaches 4M+ developers and technical decision-makers monthly.</p>
 
                     <div className="space-y-6 mb-16">
                         {articles.map((article, i) => (
@@ -72,7 +72,7 @@ export default function HackerNoonRecapPage() {
                                     <span className="text-3xl">{article.icon}</span>
                                     <div className="flex-1">
                                         <h2 className="text-xl font-grotesk font-bold text-white mb-3">{article.title}</h2>
-                                        <p className="text-zinc-400 mb-4">{article.description}</p>
+                                        <p className="text-zinc-600 mb-4">{article.description}</p>
                                         <div className="flex flex-wrap gap-2">
                                             {article.topics.map(topic => (
                                                 <span key={topic} className="px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-xs text-orange-400 font-mono">{topic}</span>
@@ -105,7 +105,7 @@ export default function HackerNoonRecapPage() {
 
                     <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-8">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Work With Richard</h2>
-                        <p className="text-zinc-300 mb-6">From AI agent cost modeling to technical debt quantification — get the frameworks used by PE firms and Fortune 500 companies.</p>
+                        <p className="text-zinc-700 mb-6">From AI agent cost modeling to technical debt quantification — get the frameworks used by PE firms and Fortune 500 companies.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
                     </div>
                 </div>

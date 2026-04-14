@@ -96,7 +96,7 @@ export default function FTEContent() {
     return (
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!results} toolName="FTE-DISPLACEMENT" />
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-white font-bold">FTE Displacement Matrix</span>
@@ -113,7 +113,7 @@ export default function FTEContent() {
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-4">
                             Expand Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Gross Margins.</span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-zinc-400 mb-8 max-w-2xl">
+                        <p className="text-lg sm:text-xl text-zinc-600 mb-8 max-w-2xl">
                             Tier-1 human support is an outdated variable cost. Calculate exactly how much EBITDA you can recapture by displacing 30-60% of your BPO routing layer with Sovereign Agentic Workflows.
                         </p>
 
@@ -136,8 +136,8 @@ export default function FTEContent() {
                                     <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold font-mono text-sm border border-cyan-500/30">1</div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-white">Current Support Overhead</h3>
-                                            <p className="text-sm text-zinc-500">How large is your human routing layer?</p>
+                                            <h3 className="text-xl font-bold text-zinc-900">Current Support Overhead</h3>
+                                            <p className="text-sm text-zinc-700">How large is your human routing layer?</p>
                                         </div>
                                     </div>
 
@@ -160,7 +160,7 @@ export default function FTEContent() {
                                                 <div className="text-2xl font-bold text-white font-mono">${(fullyLoadedSalary/1000).toFixed(1)}k</div>
                                             </div>
                                             <input title="Salary" type="range" min="15000" max="120000" step="1000" value={fullyLoadedSalary} onChange={e => setFullyLoadedSalary(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500" />
-                                            <div className="flex justify-between text-[10px] text-zinc-500 mt-2 font-mono">
+                                            <div className="flex justify-between text-[10px] text-zinc-700 mt-2 font-mono">
                                                 <span>Offshore ($15k)</span>
                                                 <span>Nearshore ($35k)</span>
                                                 <span>US Onshore ($80k+)</span>
@@ -179,8 +179,8 @@ export default function FTEContent() {
                                     <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold font-mono text-sm border border-purple-500/30">2</div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-white">Agentic Deflection Ratio</h3>
-                                            <p className="text-sm text-zinc-500">How many tickets can a strict deterministic LLM handle autonomously?</p>
+                                            <h3 className="text-xl font-bold text-zinc-900">Agentic Deflection Ratio</h3>
+                                            <p className="text-sm text-zinc-700">How many tickets can a strict deterministic LLM handle autonomously?</p>
                                         </div>
                                     </div>
 
@@ -192,8 +192,8 @@ export default function FTEContent() {
                                             <div className="text-2xl font-bold text-white font-mono">{automationTarget}%</div>
                                         </div>
                                         <input title="Automation" type="range" min="10" max="85" step="5" value={automationTarget} onChange={e => setAutomationTarget(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-rose-500" />
-                                        <div className="text-xs text-zinc-500 mt-4 leading-relaxed tracking-wide">
-                                            At {automationTarget}%, you are attempting to fully clear <strong className="text-white">{Math.round(ticketsMonthly * (automationTarget/100)).toLocaleString()} tickets/mo</strong> without human intervention.
+                                        <div className="text-xs text-zinc-700 mt-4 leading-relaxed tracking-wide">
+                                            At {automationTarget}%, you are attempting to fully clear <strong className="text-zinc-900">{Math.round(ticketsMonthly * (automationTarget/100)).toLocaleString()} tickets/mo</strong> without human intervention.
                                         </div>
                                     </div>
                                     
@@ -224,14 +224,14 @@ export default function FTEContent() {
                     </div>
                 </ScrollReveal>
             ) : (
-                <div id="fte-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
+                <div id="fte-results-artifact" className="bg-white p-2 sm:p-6 rounded-3xl">
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-purple-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-white mb-1">EBITDA Expansion Forecast</h2>
-                            <p className="text-sm text-zinc-400">Your Agentic workflow savings have been modeled.</p>
+                            <p className="text-sm text-zinc-600">Your Agentic workflow savings have been modeled.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="fte-pdf-export-zone" fileName={`FTE_Displacement_${persona}.pdf`} />
@@ -246,14 +246,14 @@ export default function FTEContent() {
                                     <div>
                                         <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Steady State Margin Shift</div>
                                         <div className="text-5xl sm:text-6xl font-bold tracking-tighter leading-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">
-                                            +{formatMoney(results.netOngoingSavings)} <span className="text-2xl text-zinc-500">/ yr</span>
+                                            +{formatMoney(results.netOngoingSavings)} <span className="text-2xl text-zinc-700">/ yr</span>
                                         </div>
                                         <div className="mt-6">
                                             <span className="px-3 py-1.5 rounded-full bg-purple-900/30 text-purple-400 border border-purple-900/50 text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2">
                                                 <UserMinus size={12}/> {results.headcountReduction} FTEs Reallocated
                                             </span>
                                         </div>
-                                        <p className="text-sm text-zinc-400 mt-4 leading-relaxed">
+                                        <p className="text-sm text-zinc-600 mt-4 leading-relaxed">
                                             By automating {automationTarget}% of {ticketsMonthly.toLocaleString()} monthly incidents, you transition {formatMoney(results.annualHumanSavings)} of variable human payroll into {formatMoney(results.annualAgentComputeCost)} of fixed, infinitely scalable compute cost.
                                         </p>
                                     </div>
@@ -269,7 +269,7 @@ export default function FTEContent() {
                                             </div>
                                             <div className="flex justify-between items-center pb-1">
                                                 <span className="text-xs font-mono text-emerald-500 uppercase tracking-widest font-bold">Capital Breakeven</span>
-                                                <span className="text-xl font-mono font-bold text-white">{results.breakevenMonths} Months</span>
+                                                <span className="text-xl font-mono font-bold text-zinc-900">{results.breakevenMonths} Months</span>
                                             </div>
                                         </div>
                                     </div>
@@ -281,31 +281,31 @@ export default function FTEContent() {
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                                 <GlowCard className="p-6" glowColor="red">
                                     <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Eliminated Payroll</div>
-                                    <div className="text-3xl font-bold text-red-400">-{formatMoney(results.annualHumanSavings)}<span className="text-sm font-normal text-zinc-500">/yr</span></div>
-                                    <p className="text-[10px] text-zinc-500 mt-2 line-clamp-2">Variable human overhead completely removed from P&L.</p>
+                                    <div className="text-3xl font-bold text-red-400">-{formatMoney(results.annualHumanSavings)}<span className="text-sm font-normal text-zinc-700">/yr</span></div>
+                                    <p className="text-[10px] text-zinc-700 mt-2 line-clamp-2">Variable human overhead completely removed from P&L.</p>
                                 </GlowCard>
 
                                 <GlowCard className="p-6" glowColor="cyan">
                                     <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Agent Compute Cost</div>
-                                    <div className="text-3xl font-bold text-cyan-400">+{formatMoney(results.annualAgentComputeCost)}<span className="text-sm font-normal text-zinc-500">/yr</span></div>
-                                    <p className="text-[10px] text-zinc-500 mt-2 line-clamp-2">New fixed LLM inference cost logic.</p>
+                                    <div className="text-3xl font-bold text-cyan-400">+{formatMoney(results.annualAgentComputeCost)}<span className="text-sm font-normal text-zinc-700">/yr</span></div>
+                                    <p className="text-[10px] text-zinc-700 mt-2 line-clamp-2">New fixed LLM inference cost logic.</p>
                                 </GlowCard>
 
                                 <GlowCard className="p-6" glowColor="emerald">
                                     <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Year 1 Net Impact</div>
-                                    <div className="text-3xl font-bold text-emerald-400">{formatMoney(results.netYear1Savings)}<span className="text-sm font-normal text-zinc-500"> EBITDA</span></div>
-                                    <p className="text-[10px] text-zinc-500 mt-2 line-clamp-2">Includes immediate {formatMoney(results.implementationCost)} CapEx implementation write-off.</p>
+                                    <div className="text-3xl font-bold text-emerald-400">{formatMoney(results.netYear1Savings)}<span className="text-sm font-normal text-zinc-700"> EBITDA</span></div>
+                                    <p className="text-[10px] text-zinc-700 mt-2 line-clamp-2">Includes immediate {formatMoney(results.implementationCost)} CapEx implementation write-off.</p>
                                 </GlowCard>
                             </div>
                         </ScrollReveal>
 
                         <ScrollReveal delay={150}>
-                             <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-zinc-200 mb-8">
+                             <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-6 border border-zinc-200 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <Zap size={16} className="text-cyan-400" />
-                                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">The Path to Automation</span>
+                                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-700">The Path to Automation</span>
                                 </div>
-                                <p className="text-zinc-300 text-sm leading-relaxed mb-4">
+                                <p className="text-zinc-700 text-sm leading-relaxed mb-4">
                                     Replacing humans with agents fundamentally changes your unit economics. However, open-ended LLMs hallucinate and fail. To realize this EBITDA expansion, you must constrain the AI within deterministic execution boundaries, mapping exact workflow DAGs rather than relying on unstructured "chatbots."
                                 </p>
                             </div>
@@ -318,7 +318,7 @@ export default function FTEContent() {
                                     <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                     3-Step Headcount Rightsizing Playbook
                                 </h3>
-                                <p className="text-zinc-400 text-sm mb-8">Execute this operational sequence immediately to capture gross margin expansion through autonomous labor deflection without compromising SLA integrity.</p>
+                                <p className="text-zinc-600 text-sm mb-8">Execute this operational sequence immediately to capture gross margin expansion through autonomous labor deflection without compromising SLA integrity.</p>
 
                                 <div className="space-y-4">
                                     {/* Step 1 */}
@@ -329,12 +329,12 @@ export default function FTEContent() {
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Halt BPO Contract Renewals</h4>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are currently subsidizing inefficient human labor for deterministic classification and triage tasks. End this immediately.</p>
+                                            <p className="text-zinc-600 text-sm leading-relaxed mb-4">You are currently subsidizing inefficient human labor for deterministic classification and triage tasks. End this immediately.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-300">Instruct Procurement and vendor management to freeze all Tier-1 support outsourcing renewals currently in the pipeline. Place vendors on month-to-month contracts.</p>
+                                                <p className="text-xs text-zinc-700">Instruct Procurement and vendor management to freeze all Tier-1 support outsourcing renewals currently in the pipeline. Place vendors on month-to-month contracts.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -347,12 +347,12 @@ export default function FTEContent() {
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Deploy Semantic Triage Layer</h4>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">You cannot rip-and-replace support. You must intercept incoming volume before it enters the human queue.</p>
+                                            <p className="text-zinc-600 text-sm leading-relaxed mb-4">You cannot rip-and-replace support. You must intercept incoming volume before it enters the human queue.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-300">Implement an intent classification router (e.g., Llama 3 8B) in front of Zendesk/Intercom. Auto-close Top 5 known issues instantly with RAG documentation before allocating an agent.</p>
+                                                <p className="text-xs text-zinc-700">Implement an intent classification router (e.g., Llama 3 8B) in front of Zendesk/Intercom. Auto-close Top 5 known issues instantly with RAG documentation before allocating an agent.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -365,12 +365,12 @@ export default function FTEContent() {
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Upskill Top 10% Retained Staff</h4>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">As deterministic volume falls, unresolved tickets will spike in complexity. You need engineers, not agents.</p>
+                                            <p className="text-zinc-600 text-sm leading-relaxed mb-4">As deterministic volume falls, unresolved tickets will spike in complexity. You need engineers, not agents.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-300">Transition remaining Tier-3 support personnel into "AI Automation Engineers." Task them explicitly with updating knowledge vectors to prevent human escalation of newly closed loop cases.</p>
+                                                <p className="text-xs text-zinc-700">Transition remaining Tier-3 support personnel into "AI Automation Engineers." Task them explicitly with updating knowledge vectors to prevent human escalation of newly closed loop cases.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -390,7 +390,7 @@ export default function FTEContent() {
                         {/* Action Footer */}
                         <ScrollReveal delay={250}>
                             <div className="flex justify-center flex-wrap gap-6 mt-6" data-html2canvas-ignore>
-                                <button onClick={() => setResults(null)} className="text-zinc-500 font-mono tracking-widest text-xs hover:text-zinc-900 uppercase transition-colors">← Rerun Model</button>
+                                <button onClick={() => setResults(null)} className="text-zinc-700 font-mono tracking-widest text-xs hover:text-zinc-900 uppercase transition-colors">← Rerun Model</button>
                             </div>
                         </ScrollReveal>
                     </div>

@@ -119,7 +119,7 @@ export default function SLMTool() {
     return (
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!results} toolName="SLM-ARB" />
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-white font-bold">Inference Arbitrage</span>
@@ -136,7 +136,7 @@ export default function SLMTool() {
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-4">
                             Kill the <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">API Tax.</span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-zinc-400 mb-8 max-w-2xl">
+                        <p className="text-lg sm:text-xl text-zinc-600 mb-8 max-w-2xl">
                             At a certain volume, renting OpenAI tokens becomes a massive capital leak. Calculate exactly when you should transition to hosting your own open-source models (Llama 3, Mistral) on bare metal or custom cloud clusters.
                         </p>
 
@@ -159,8 +159,8 @@ export default function SLMTool() {
                                     <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold font-mono text-sm border border-blue-500/30">1</div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-white">Inference Volume</h3>
-                                            <p className="text-sm text-zinc-500">How heavy is your generative payload?</p>
+                                            <h3 className="text-xl font-bold text-zinc-900">Inference Volume</h3>
+                                            <p className="text-sm text-zinc-700">How heavy is your generative payload?</p>
                                         </div>
                                     </div>
 
@@ -169,7 +169,7 @@ export default function SLMTool() {
                                             <div className="flex justify-between items-end mb-4">
                                                 <label className="text-xs font-mono text-blue-400 uppercase tracking-widest flex items-center gap-2">
                                                     Generative Workflows / Day
-                                                    <span className="w-4 h-4 rounded-full bg-zinc-800 text-zinc-400 flex items-center justify-center text-[10px] cursor-help" title="How many times users trigger an LLM (chat, summarization, workflow automation)">?</span>
+                                                    <span className="w-4 h-4 rounded-full bg-zinc-800 text-zinc-600 flex items-center justify-center text-[10px] cursor-help" title="How many times users trigger an LLM (chat, summarization, workflow automation)">?</span>
                                                 </label>
                                                 <div className="text-2xl font-bold text-white font-mono">{queriesPerDay.toLocaleString()}</div>
                                             </div>
@@ -180,7 +180,7 @@ export default function SLMTool() {
                                             <div className="flex justify-between items-end mb-4">
                                                 <label className="text-xs font-mono text-indigo-400 uppercase tracking-widest flex items-center gap-2">
                                                     Average Tokens / Workflow
-                                                    <span className="w-4 h-4 rounded-full bg-zinc-800 text-zinc-400 flex items-center justify-center text-[10px] cursor-help" title="RAG payload: User prompt + DB Context + LLM Output. 1000 tokens ≈ 750 words.">?</span>
+                                                    <span className="w-4 h-4 rounded-full bg-zinc-800 text-zinc-600 flex items-center justify-center text-[10px] cursor-help" title="RAG payload: User prompt + DB Context + LLM Output. 1000 tokens ≈ 750 words.">?</span>
                                                 </label>
                                                 <div className="text-2xl font-bold text-white font-mono">{tokensPerQuery.toLocaleString()} t/req</div>
                                             </div>
@@ -199,8 +199,8 @@ export default function SLMTool() {
                                     <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono text-sm border border-emerald-500/30">2</div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-white">Vendor & Target Hardware</h3>
-                                            <p className="text-sm text-zinc-500">Choose your API dependency and local hardware alternative.</p>
+                                            <h3 className="text-xl font-bold text-zinc-900">Vendor & Target Hardware</h3>
+                                            <p className="text-sm text-zinc-700">Choose your API dependency and local hardware alternative.</p>
                                         </div>
                                     </div>
 
@@ -216,7 +216,7 @@ export default function SLMTool() {
                                             <select title="Hardware Strategy" aria-label="Hardware Strategy" value={hardwareStrategy} onChange={e => setHardwareStrategy(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl p-4 text-white font-mono focus:border-emerald-500 focus:outline-none transition-colors">
                                                 {Object.keys(HW_PRICING).map(k => <option key={k} value={k}>{HW_PRICING[k].name}</option>)}
                                             </select>
-                                            <p className="text-[10px] text-zinc-600 font-mono mt-2">Includes amortized $150/hr DevOps maintenance tax.</p>
+                                            <p className="text-[10px] text-zinc-800 font-mono mt-2">Includes amortized $150/hr DevOps maintenance tax.</p>
                                         </div>
                                     </div>
 
@@ -242,14 +242,14 @@ export default function SLMTool() {
                     </div>
                 </ScrollReveal>
             ) : (
-                <div id="slm-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
+                <div id="slm-results-artifact" className="bg-white p-2 sm:p-6 rounded-3xl">
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-white mb-1">Inference Arbitrage Results Signed</h2>
-                            <p className="text-sm text-zinc-400">Your AI unit economics have been quantified.</p>
+                            <p className="text-sm text-zinc-600">Your AI unit economics have been quantified.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="slm-pdf-export-zone" fileName={`SLM_Arbitrage_${persona}.pdf`} />
@@ -267,8 +267,8 @@ export default function SLMTool() {
                                             {results.isSelfHostCheaper ? 'Repatriate to Bare Metal.' : 'Stay on the API.'}
                                         </div>
                                         <div className="mt-6 flex flex-col gap-2">
-                                            <span className="text-zinc-400 font-mono text-sm leading-relaxed">
-                                                At {(results.totalMonthlyQueries).toLocaleString()} runs/mo using {results.apiName}, your monthly API bill is <strong className="text-white">{formatMoney(results.apiCost)}</strong>.
+                                            <span className="text-zinc-600 font-mono text-sm leading-relaxed">
+                                                At {(results.totalMonthlyQueries).toLocaleString()} runs/mo using {results.apiName}, your monthly API bill is <strong className="text-zinc-900">{formatMoney(results.apiCost)}</strong>.
                                             </span>
                                         </div>
                                     </div>
@@ -278,13 +278,13 @@ export default function SLMTool() {
                                                 <>
                                                     <div className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-1">Projected Annual Savings</div>
                                                     <div className="text-5xl font-bold text-emerald-400 font-mono mb-2">+{formatMoney(results.annualSavings)}</div>
-                                                    <p className="text-xs text-zinc-400">By migrating to {results.hardwareName}, you break even on hardware and maintenance in <strong className="text-white">{results.breakevenDays} days</strong> of operation.</p>
+                                                    <p className="text-xs text-zinc-600">By migrating to {results.hardwareName}, you break even on hardware and maintenance in <strong className="text-zinc-900">{results.breakevenDays} days</strong> of operation.</p>
                                                 </>
                                             ) : (
                                                 <>
                                                     <div className="text-xs font-mono text-red-500 uppercase tracking-widest mb-1">Local Hosting Premium</div>
                                                     <div className="text-5xl font-bold text-red-400 font-mono mb-2">-{formatMoney(Math.abs(results.annualSavings))}</div>
-                                                    <p className="text-xs text-zinc-400">You do not have the token volume to justify {results.hardwareName} and a local MLOps team overhead.</p>
+                                                    <p className="text-xs text-zinc-600">You do not have the token volume to justify {results.hardwareName} and a local MLOps team overhead.</p>
                                                 </>
                                             )}
                                         </div>
@@ -297,31 +297,31 @@ export default function SLMTool() {
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                                 <GlowCard className="p-6" glowColor="blue">
                                     <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">API Run Rate</div>
-                                    <div className="text-3xl font-bold text-blue-400">{formatMoney(results.apiCost)}<span className="text-sm font-normal text-zinc-500">/mo</span></div>
-                                    <p className="text-[10px] text-zinc-500 mt-2 line-clamp-2">Paid to LLM vendor directly via metered billing.</p>
+                                    <div className="text-3xl font-bold text-blue-400">{formatMoney(results.apiCost)}<span className="text-sm font-normal text-zinc-700">/mo</span></div>
+                                    <p className="text-[10px] text-zinc-700 mt-2 line-clamp-2">Paid to LLM vendor directly via metered billing.</p>
                                 </GlowCard>
 
                                 <GlowCard className="p-6" glowColor="emerald">
                                     <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Total Local Cost</div>
-                                    <div className="text-3xl font-bold text-emerald-400">{formatMoney(results.localCost)}<span className="text-sm font-normal text-zinc-500">/mo</span></div>
-                                    <p className="text-[10px] text-zinc-500 mt-2 line-clamp-2">{results.hardwareName} + Devops baseline overhead.</p>
+                                    <div className="text-3xl font-bold text-emerald-400">{formatMoney(results.localCost)}<span className="text-sm font-normal text-zinc-700">/mo</span></div>
+                                    <p className="text-[10px] text-zinc-700 mt-2 line-clamp-2">{results.hardwareName} + Devops baseline overhead.</p>
                                 </GlowCard>
 
                                 <GlowCard className="p-6" glowColor={results.isSelfHostCheaper ? "emerald" : "red"}>
                                     <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Arbitrage Gap</div>
-                                    <div className="text-3xl font-bold text-white">{formatMoney(Math.abs(results.monthlySavings))}<span className="text-sm font-normal text-zinc-500">/mo</span></div>
-                                    <p className="text-[10px] text-zinc-500 mt-2 line-clamp-2">The exact financial gap between architectures.</p>
+                                    <div className="text-3xl font-bold text-zinc-900">{formatMoney(Math.abs(results.monthlySavings))}<span className="text-sm font-normal text-zinc-700">/mo</span></div>
+                                    <p className="text-[10px] text-zinc-700 mt-2 line-clamp-2">The exact financial gap between architectures.</p>
                                 </GlowCard>
                             </div>
                         </ScrollReveal>
 
                         <ScrollReveal delay={150}>
-                             <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-zinc-200 mb-8">
+                             <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-6 border border-zinc-200 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <Zap size={16} className="text-yellow-400" />
-                                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">The "Why" For Private AI</span>
+                                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-700">The "Why" For Private AI</span>
                                 </div>
-                                <p className="text-zinc-300 text-sm leading-relaxed mb-4">
+                                <p className="text-zinc-700 text-sm leading-relaxed mb-4">
                                     Aside from raw compute arbitrage, moving to an SLM (like Llama-3-8B) provides 100% data sovereignty, eliminating the blast-radius risk of sending PII and proprietary board logic outside your VPC. If your business is regulated (HealthTech, FinTech, Defense), the "API Tax" isn't just financial, it's a regulatory liability. 
                                 </p>
                             </div>
@@ -334,7 +334,7 @@ export default function SLMTool() {
                                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                                     3-Step Inference Margin Escapement Playbook
                                 </h3>
-                                <p className="text-zinc-400 text-sm mb-8">Execute this operational sequence immediately to arrest runaway LLM infrastructure costs and restore your engineering unit economics.</p>
+                                <p className="text-zinc-600 text-sm mb-8">Execute this operational sequence immediately to arrest runaway LLM infrastructure costs and restore your engineering unit economics.</p>
 
                                 <div className="space-y-4">
                                     {/* Step 1 */}
@@ -345,12 +345,12 @@ export default function SLMTool() {
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Audit Provider Arbitrage Velocity</h4>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Are you locked into OpenAI because your developers love the playground? API moat lock-in prevents margin optimization through dynamic prompt routing.</p>
+                                            <p className="text-zinc-600 text-sm leading-relaxed mb-4">Are you locked into OpenAI because your developers love the playground? API moat lock-in prevents margin optimization through dynamic prompt routing.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-300">Mandate an abstraction layer implementation (LiteLLM, Langfuse). Disconnect core business logic from single-provider SDKs within 14 days to enable instant token arbitrage.</p>
+                                                <p className="text-xs text-zinc-700">Mandate an abstraction layer implementation (LiteLLM, Langfuse). Disconnect core business logic from single-provider SDKs within 14 days to enable instant token arbitrage.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -363,12 +363,12 @@ export default function SLMTool() {
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Map Semantic Caching Yield</h4>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are likely paying frontier-model APIs repeatedly to generate responses to identical user queries. Token taxation on cached queries is a massive EBITDA leak.</p>
+                                            <p className="text-zinc-600 text-sm leading-relaxed mb-4">You are likely paying frontier-model APIs repeatedly to generate responses to identical user queries. Token taxation on cached queries is a massive EBITDA leak.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-300">Deploy a vector similarity cache (Redis / Pinecone) in front of all generative endpoints. Target a 30% hit rate reduction on outbound network requests by end of quarter.</p>
+                                                <p className="text-xs text-zinc-700">Deploy a vector similarity cache (Redis / Pinecone) in front of all generative endpoints. Target a 30% hit rate reduction on outbound network requests by end of quarter.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -381,12 +381,12 @@ export default function SLMTool() {
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Stand Up a Sovereign Validation Enclave</h4>
-                                            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Data sovereignty isn't just about privacy—it's an M&A prerequisite. Moving to an SLM (Llama 3 8B) on your VPC completely insulates your proprietary vectors from SaaS telemetry.</p>
+                                            <p className="text-zinc-600 text-sm leading-relaxed mb-4">Data sovereignty isn't just about privacy—it's an M&A prerequisite. Moving to an SLM (Llama 3 8B) on your VPC completely insulates your proprietary vectors from SaaS telemetry.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-300">Stand up a local bare-metal node running vLLM. Shadow-route 10% of API traffic to the SLM to prove deterministic latency and output parity before the board review.</p>
+                                                <p className="text-xs text-zinc-700">Stand up a local bare-metal node running vLLM. Shadow-route 10% of API traffic to the SLM to prove deterministic latency and output parity before the board review.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -406,7 +406,7 @@ export default function SLMTool() {
                         {/* Action Footer */}
                         <ScrollReveal delay={250}>
                             <div className="flex justify-center gap-6 mt-6" data-html2canvas-ignore>
-                                <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-zinc-900 underline underline-offset-4">← Re-Calculate Variables</button>
+                                <button onClick={() => setResults(null)} className="text-zinc-700 text-sm hover:text-zinc-900 underline underline-offset-4">← Re-Calculate Variables</button>
                             </div>
                         </ScrollReveal>
                     </div>

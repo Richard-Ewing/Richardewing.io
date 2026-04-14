@@ -53,7 +53,7 @@ export default async function TeamAdminPage() {
                     <h1 className="text-4xl font-grotesk font-bold text-white mb-4">
                         Team License Management
                     </h1>
-                    <p className="text-zinc-400 text-lg max-w-2xl">
+                    <p className="text-zinc-600 text-lg max-w-2xl">
                         You have unlocked an enterprise-tier license. Distribute your unique team code to colleagues to instantly grant them full subscription access.
                     </p>
                 </div>
@@ -62,10 +62,10 @@ export default async function TeamAdminPage() {
                     {/* INVITE CODE WIDGET */}
                     <div className="card p-8 border-amber-500/30 bg-gradient-to-br from-amber-500/[0.05] to-transparent">
                         <h2 className="text-sm font-bold text-white uppercase tracking-widest mb-2">Your Team Invite Code</h2>
-                        <p className="text-xs text-zinc-400 mb-6">Colleagues will enter this code inside their Vault to claim a seat.</p>
+                        <p className="text-xs text-zinc-600 mb-6">Colleagues will enter this code inside their Vault to claim a seat.</p>
                         
                         <div className="flex items-center gap-3">
-                            <code className="flex-1 block p-4 bg-black border border-amber-500/30 rounded-xl text-amber-400 font-mono text-lg font-bold text-center">
+                            <code className="flex-1 block p-4 bg-white border border-amber-500/30 rounded-xl text-amber-400 font-mono text-lg font-bold text-center">
                                 {inviteCode}
                             </code>
                             <CopyButton textToCopy={inviteCode} />
@@ -73,17 +73,17 @@ export default async function TeamAdminPage() {
                     </div>
 
                     {/* SEAT CAPACITY WIDGET */}
-                    <div className="card p-8 border-zinc-200 bg-black">
+                    <div className="card p-8 border-zinc-200 bg-white">
                         <div className="flex justify-between items-end mb-6">
                             <div>
                                 <h2 className="text-sm font-bold text-white uppercase tracking-widest mb-1">Seating Capacity</h2>
-                                <p className="text-xs text-zinc-500">Total available invites</p>
+                                <p className="text-xs text-zinc-700">Total available invites</p>
                             </div>
                             <div className="text-right">
                                 <span className={`text-3xl font-bold font-mono ${isAtCapacity ? 'text-red-400' : 'text-cyan-400'}`}>
                                     {seatsUsed}
                                 </span>
-                                <span className="text-zinc-500 text-lg"> / {availableChildSeats}</span>
+                                <span className="text-zinc-700 text-lg"> / {availableChildSeats}</span>
                             </div>
                         </div>
 
@@ -107,7 +107,7 @@ export default async function TeamAdminPage() {
                 {/* TEAM LEDGER */}
                 <section>
                     <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                        <ShieldCheck className="w-5 h-5 text-zinc-400" />
+                        <ShieldCheck className="w-5 h-5 text-zinc-600" />
                         Active Team Members
                     </h2>
                     
@@ -115,7 +115,7 @@ export default async function TeamAdminPage() {
                         <div className="card overflow-hidden border-zinc-200">
                             <table className="w-full text-left border-collapse">
                                 <thead>
-                                    <tr className="bg-white/80 border-b border-zinc-200 text-[10px] uppercase tracking-widest text-zinc-500">
+                                    <tr className="bg-white/80 border-b border-zinc-200 text-[10px] uppercase tracking-widest text-zinc-700">
                                         <th className="p-4 font-bold">Email Address</th>
                                         <th className="p-4 font-bold hidden sm:table-cell">User ID</th>
                                         <th className="p-4 font-bold text-right">Date Claimed</th>
@@ -130,10 +130,10 @@ export default async function TeamAdminPage() {
                                                 </div>
                                                 {member.email}
                                             </td>
-                                            <td className="p-4 hidden sm:table-cell text-xs text-zinc-500 font-mono">
+                                            <td className="p-4 hidden sm:table-cell text-xs text-zinc-700 font-mono">
                                                 {member.user_id.substring(0, 14)}...
                                             </td>
-                                            <td className="p-4 text-right text-xs text-zinc-400">
+                                            <td className="p-4 text-right text-xs text-zinc-600">
                                                 {new Date(member.joined_at).toLocaleDateString()}
                                             </td>
                                         </tr>
@@ -143,9 +143,9 @@ export default async function TeamAdminPage() {
                         </div>
                     ) : (
                         <div className="p-12 rounded-2xl border border-dashed border-zinc-200 bg-white/20 text-center">
-                            <Users className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
+                            <Users className="w-8 h-8 text-zinc-800 mx-auto mb-3" />
                             <h3 className="text-lg font-bold text-white mb-2">No Seats Claimed Yet</h3>
-                            <p className="text-sm text-zinc-500 max-w-md mx-auto">
+                            <p className="text-sm text-zinc-700 max-w-md mx-auto">
                                 Share your invite code with your team. As soon as they claim a seat, they will appear in this ledger and gain instant Full Curriculum access.
                             </p>
                         </div>

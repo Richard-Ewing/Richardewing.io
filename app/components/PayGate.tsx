@@ -1,4 +1,4 @@
-import { Lock, BookOpen } from 'lucide-react';
+import { Lock, BookOpen, Zap, ShieldCheck } from 'lucide-react';
 import CheckoutButton from './client/CheckoutButton';
 import { PRODUCTS } from '@/lib/products';
 import CurriculumSalesPreview from './CurriculumSalesPreview';
@@ -19,20 +19,17 @@ interface PayGateProps {
     status?: 'live' | 'waitlist';
 }
 
-export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, showPreview = true, children, nextHref, productId = 'single_module', bundleId = 'full_curriculum', lessons = [], status = 'live' }: PayGateProps) {
+export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, showPreview = true, children, nextHref, productId = 'single_track', bundleId = 'full_curriculum', lessons = [], status = 'live' }: PayGateProps) {
     if (hasAccess) {
         return <>{children}</>;
     }
 
     const childArray = Array.isArray(children) ? children : [children];
-    // We only expose the specific isolated preview node (the first lesson block) to the client.
     const previewContent = childArray[previewLessonIndex];
 
-    // The other children (lockedContent) are utterly omitted from the RSC server payload output.
-    // They literally do not exist on the client side HTML payload. This closes the Inspect Element bug.
     return (
         <div>
-            {/* Free Preview: First Lesson (only shown for first module of each track) */}
+            {/* Free Preview: First Lesson */}
             {showPreview && (
                 <div className="mb-0 relative z-20">
                     <div className="flex items-center gap-2 mb-4 px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200 w-fit">
@@ -41,85 +38,86 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                     </div>
                     <div className="relative pb-24">
                         {previewContent}
-                        {/* CSS Teaser Fade-out over the bottom of the preview content */}
                         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/80 to-transparent z-10 pointer-events-none" />
                     </div>
                 </div>
             )}
 
-            {/* Pay Gate Barrier */}
-            <div className="relative">
-                <CurriculumSalesPreview lessons={lessons} />
+            {/* ═══════════════════════════════════════════════════ */}
+            {/* PRIMARY BUY CTA — ABOVE THE FOLD FOR CONVERSION    */}
+            {/* ═══════════════════════════════════════════════════ */}
+            <div className={`relative ${showPreview ? '-mt-16' : 'mt-4'} z-30 mb-8`}>
+                <div className="mx-auto max-w-2xl rounded-2xl border-2 border-violet-300 bg-white p-8 shadow-2xl">
+                    <div className="text-center">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 border border-violet-200 text-violet-700 font-mono text-xs uppercase tracking-widest mb-4">
+                            <ShieldCheck className="w-4 h-4" /> Unlock Full Access
+                        </div>
+                        <h3 className="text-2xl font-grotesk font-bold text-zinc-900 mb-2">
+                            Continue Learning: {trackName}
+                        </h3>
+                        <p className="text-zinc-700 text-sm mb-6">
+                            {showPreview ? `${totalLessons - 1} more lesson${totalLessons - 1 === 1 ? '' : 's'}` : `${totalLessons} lesson${totalLessons === 1 ? '' : 's'}`} with actionable playbooks, executive dashboards, and engineering architecture.
+                        </p>
 
-                {/* Unlock CTA */}
-                <div className={`relative ${showPreview ? '-mt-32' : '-mt-16'} z-10`}>
-                    <div className="mx-auto max-w-lg rounded-2xl border border-zinc-200 bg-white/95 backdrop-blur-xl p-8 shadow-xl">
-                        <div className="text-center">
-                            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-50 to-indigo-50 border border-violet-200 flex items-center justify-center mx-auto mb-4">
-                                <Lock className="w-6 h-6 text-violet-600" />
-                            </div>
-                            <h3 className="text-xl font-grotesk font-bold text-zinc-900 mb-2">
-                                Get Full Module Access
-                            </h3>
-                            <p className="text-zinc-500 text-sm mb-6">
-                                {showPreview ? `${totalLessons - 1} more lesson${totalLessons - 1 === 1 ? '' : 's'}` : `${totalLessons} lesson${totalLessons === 1 ? '' : 's'}`} with actionable remediation playbooks, executive dashboards, and deterministic engineering architecture.
-                            </p>
-
-                            {/* Quick Stats */}
-                            <div className="grid grid-cols-3 gap-3 mb-6">
-                                <div className="rounded-xl bg-zinc-50 border border-zinc-200 p-3 text-center">
-                                    <div className="text-xl font-bold text-zinc-900">293</div>
-                                    <div className="text-[10px] text-zinc-500 uppercase">Modules</div>
-                                </div>
-                                <div className="rounded-xl bg-zinc-50 border border-zinc-200 p-3 text-center">
-                                    <div className="text-xl font-bold text-zinc-900">5+</div>
-                                    <div className="text-[10px] text-zinc-500 uppercase">Tools</div>
-                                </div>
-                                <div className="rounded-xl bg-violet-50 border border-violet-200 p-3 text-center">
-                                    <div className="text-xl font-bold text-violet-700">100%</div>
-                                    <div className="text-[10px] text-violet-500 uppercase">ROI</div>
-                                </div>
-                            </div>
-                            
-                            <div className="space-y-3">
+                        {/* Two-column pricing */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            {/* Per-Track */}
+                            <div className="border-2 border-violet-400 bg-violet-50 rounded-xl p-5 relative">
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-violet-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">Most Popular</div>
+                                <div className="text-3xl font-bold text-zinc-900 mb-1">$149</div>
+                                <div className="text-xs text-zinc-700 mb-4">This Track · Lifetime</div>
                                 <CheckoutButton 
-                                    productId={productId || 'single_module'} 
+                                    productId={productId || 'single_track'} 
                                     moduleId={moduleId}
-                                    label={`Unlock This Track — $149`} 
+                                    label="Buy This Track" 
                                     icon="lock" 
                                     variant="primary" 
                                 />
+                            </div>
+                            {/* All Access */}
+                            <div className="border border-zinc-200 bg-zinc-50 rounded-xl p-5">
+                                <div className="text-3xl font-bold text-zinc-900 mb-1">$799</div>
+                                <div className="text-xs text-zinc-700 mb-4">All 23 Tracks · Lifetime</div>
                                 <CheckoutButton 
-                                    productId="all_access_pass" 
+                                    productId="full_curriculum" 
                                     moduleId={moduleId}
-                                    label="Unlock All 23 Tracks — $799" 
+                                    label="Unlock Everything" 
                                     icon="key" 
                                     variant="secondary" 
                                 />
-                                <div className="pt-2 border-t border-zinc-200">
-                                    {status === 'waitlist' ? (
-                                        <button disabled className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-400 cursor-not-allowed transition-colors font-medium text-sm">
-                                            <Lock className="w-4 h-4" />
-                                            <span>Join Waitlist — In Active Development</span>
-                                        </button>
-                                    ) : (
-                                        <CheckoutButton 
-                                            productId="team_license_pass" 
-                                            moduleId={moduleId}
-                                            label="B2B Team License (10 Seats) — $4,999" 
-                                            icon="file" 
-                                            variant="outline" 
-                                        />
-                                    )}
-                                </div>
                             </div>
-                            
-                            <p className="mt-4 text-[10px] text-zinc-500 uppercase tracking-widest font-mono">
-                                Secure Stripe Checkout. Lifetime access.
-                            </p>
+                        </div>
+
+                        {/* Team tier */}
+                        {status === 'waitlist' ? (
+                            <button disabled className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-600 cursor-not-allowed transition-colors font-medium text-sm">
+                                <Lock className="w-4 h-4" />
+                                <span>Join Waitlist — In Active Development</span>
+                            </button>
+                        ) : (
+                            <CheckoutButton 
+                                productId="team_license_pass" 
+                                moduleId={moduleId}
+                                label="B2B Team License (10 Seats) — $4,999" 
+                                icon="file" 
+                                variant="outline" 
+                            />
+                        )}
+                        
+                        <div className="flex items-center justify-center gap-4 mt-4 text-[10px] text-zinc-600 uppercase tracking-widest font-mono">
+                            <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3" /> Secure Stripe Checkout</span>
+                            <span>·</span>
+                            <span>Lifetime Access</span>
+                            <span>·</span>
+                            <span>Instant Delivery</span>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            {/* Sales Preview (below the buy CTA) */}
+            <div className="relative">
+                <CurriculumSalesPreview lessons={lessons} />
             </div>
         </div>
     );

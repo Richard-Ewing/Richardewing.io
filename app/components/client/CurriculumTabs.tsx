@@ -15,7 +15,7 @@ const CATEGORIES: TabCategory[] = [
     { id: 'industry', label: '3. Industry Verticals', description: 'Applied Sector Strategies (18-30)', color: 'from-pink-500/20 to-rose-500/20 border-pink-500/40 text-pink-400 shadow-[0_0_20px_rgba(236,72,153,0.15)] ring-1 ring-pink-500/30' },
     { id: 'operations', label: '4. Operations', description: 'Scaling & Execution (31-35)', color: 'from-amber-500/20 to-orange-500/20 border-amber-500/40 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.15)] ring-1 ring-amber-500/30' },
     { id: 'leadership', label: '5. Executive Leadership', description: 'Board-Level Communication (36-40)', color: 'from-orange-500/20 to-red-500/20 border-orange-500/40 text-orange-400 shadow-[0_0_20px_rgba(249,115,22,0.15)] ring-1 ring-orange-500/30' },
-    { id: 'corporate', label: '6. Enterprise IT', description: 'Legacy Modernization (41-50)', color: 'from-zinc-400/20 to-zinc-500/20 border-zinc-500/40 text-zinc-300 shadow-[0_0_20px_rgba(161,161,170,0.15)] ring-1 ring-zinc-500/30' },
+    { id: 'corporate', label: '6. Enterprise IT', description: 'Legacy Modernization (41-50)', color: 'from-zinc-400/20 to-zinc-500/20 border-zinc-500/40 text-zinc-700 shadow-[0_0_20px_rgba(161,161,170,0.15)] ring-1 ring-zinc-500/30' },
     { id: 'playbooks', label: '7. Execution Guides', description: 'Tactical Open Blueprints (15-17)', color: 'from-emerald-500/20 to-teal-500/20 border-emerald-500/40 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.15)] ring-1 ring-emerald-500/30' },
 ];
 
@@ -49,7 +49,7 @@ export default function CurriculumTabs({ children }: { children: React.ReactNode
                                 <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity" />
                                 <div className="relative z-10">
                                     <div className="text-sm font-bold whitespace-nowrap tracking-wide">{category.label}</div>
-                                    <div className={`text-[10px] font-mono mt-1 uppercase tracking-widest ${isActive ? 'opacity-90' : 'opacity-50 text-zinc-500 group-hover/btn:text-zinc-400'}`}>
+                                    <div className={`text-[10px] font-mono mt-1 uppercase tracking-widest ${isActive ? 'opacity-90' : 'opacity-50 text-zinc-700 group-hover/btn:text-zinc-600'}`}>
                                         {category.description}
                                     </div>
                                 </div>

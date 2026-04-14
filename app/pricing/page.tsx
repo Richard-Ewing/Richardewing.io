@@ -94,7 +94,7 @@ export default function PricingPage() {
                         Transparent Pricing.<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Measurable Results.</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-zinc-800 max-w-2xl mx-auto">
                         Every engagement is designed to deliver quantifiable ROI. No black-box consulting — every recommendation is backed by data from our proprietary diagnostic tools.
                     </p>
                 </section>
@@ -122,16 +122,16 @@ export default function PricingPage() {
                             )}
 
                             <h3 className="text-xl font-bold text-white mb-2">{tier.name}</h3>
-                            <p className="text-zinc-600 text-sm mb-6">{tier.description}</p>
+                            <p className="text-zinc-800 text-sm mb-6">{tier.description}</p>
 
                             <div className="mb-6">
-                                <span className="text-4xl font-bold text-white">{tier.price}</span>
-                                <span className="text-zinc-500 ml-1">{tier.period}</span>
+                                <span className="text-4xl font-bold text-zinc-900">{tier.price}</span>
+                                <span className="text-zinc-700 ml-1">{tier.period}</span>
                             </div>
 
                             <ul className="space-y-3 mb-8 flex-grow">
                                 {tier.features.map((feature, i) => (
-                                    <li key={i} className="flex items-start gap-2 text-sm text-zinc-600">
+                                    <li key={i} className="flex items-start gap-2 text-sm text-zinc-800">
                                         <span className="text-cyan-500 mt-0.5 flex-shrink-0">✓</span>
                                         {feature}
                                     </li>
@@ -158,21 +158,21 @@ export default function PricingPage() {
                 <section className="max-w-4xl mx-auto mb-20">
                     <div className="card p-10 text-center border-emerald-500/20">
                         <h2 className="text-2xl font-bold text-white mb-4">The ROI Promise</h2>
-                        <p className="text-zinc-600 mb-8 max-w-2xl mx-auto">
+                        <p className="text-zinc-800 mb-8 max-w-2xl mx-auto">
                             Every advisory engagement uses our proprietary diagnostic tools to deliver quantifiable results — not opinions.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div className="text-center">
                                 <div className="text-3xl font-bold text-cyan-400 mb-2">20-40%</div>
-                                <div className="text-sm text-zinc-600">Engineering spend reallocation identified</div>
+                                <div className="text-sm text-zinc-800">Engineering spend reallocation identified</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl font-bold text-emerald-400 mb-2">90 days</div>
-                                <div className="text-sm text-zinc-600">To measurable DORA metric improvement</div>
+                                <div className="text-sm text-zinc-800">To measurable DORA metric improvement</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl font-bold text-purple-400 mb-2">10-50x</div>
-                                <div className="text-sm text-zinc-600">Typical ROI on Diagnostic investment</div>
+                                <div className="text-sm text-zinc-800">Typical ROI on Diagnostic investment</div>
                             </div>
                         </div>
                     </div>
@@ -185,7 +185,7 @@ export default function PricingPage() {
                         {faqs.map((faq, i) => (
                             <div key={i} className="card p-6">
                                 <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
-                                <p className="text-zinc-600 text-sm">{faq.a}</p>
+                                <p className="text-zinc-800 text-sm">{faq.a}</p>
                             </div>
                         ))}
                     </div>
@@ -195,7 +195,7 @@ export default function PricingPage() {
                 <section className="text-center">
                     <div className="card p-10 border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 max-w-2xl mx-auto">
                         <h2 className="text-2xl font-bold text-white mb-4">Ready to quantify your engineering ROI?</h2>
-                        <p className="text-zinc-600 mb-6">Book a free introductory call. No commitment — let&apos;s discuss your situation.</p>
+                        <p className="text-zinc-800 mb-6">Book a free introductory call. No commitment — let&apos;s discuss your situation.</p>
                         <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-white font-bold rounded-lg hover:opacity-90 transition-opacity shadow-lg">
                             Book Introductory Call →
                         </Link>

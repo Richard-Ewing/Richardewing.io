@@ -27,7 +27,7 @@ export default function GlossaryContent() {
         <div className="max-w-6xl w-full relative z-10 mx-auto">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                 <span>Knowledge</span><span>/</span><span className="text-cyan-600 font-bold">Glossary</span>
             </div>
 
@@ -36,7 +36,7 @@ export default function GlossaryContent() {
                     <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-900 mb-6">
                         Technology & AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">Glossary.</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl">
+                    <p className="text-lg text-zinc-800 leading-relaxed max-w-2xl">
                         {glossaryTerms.length}+ terms defined with rich explanations, practical FAQs, and links to free diagnostic tools.
                         <br />
                         <span className="text-zinc-800">Technical debt, AI economics, SaaS metrics, product management, and engineering leadership — explained.</span>
@@ -56,14 +56,14 @@ export default function GlossaryContent() {
                                     className="w-full flex items-center justify-between p-6 sm:p-8 hover:bg-zinc-50 transition-colors text-left"
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-cyan-100 text-cyan-700' : 'bg-zinc-100 text-zinc-500'}`}>
+                                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-cyan-100 text-cyan-700' : 'bg-zinc-100 text-zinc-700'}`}>
                                             <span className="font-bold font-mono">{group.terms.length}</span>
                                         </div>
                                         <h2 className={`text-2xl font-bold font-grotesk transition-colors ${isOpen ? 'text-zinc-900' : 'text-zinc-700'}`}>
                                             {group.category}
                                         </h2>
                                     </div>
-                                    <div className={`shrink-0 transition-transform duration-300 ${isOpen ? 'text-cyan-600' : 'text-zinc-400'}`}>
+                                    <div className={`shrink-0 transition-transform duration-300 ${isOpen ? 'text-cyan-600' : 'text-zinc-600'}`}>
                                         {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
                                     </div>
                                 </button>
@@ -82,10 +82,10 @@ export default function GlossaryContent() {
                                                         <h3 className="text-sm font-bold text-zinc-900 mb-2 group-hover:text-cyan-700 transition-colors font-grotesk">
                                                             {term.title}
                                                         </h3>
-                                                        <p className="text-xs text-zinc-500 line-clamp-2 leading-relaxed">
+                                                        <p className="text-xs text-zinc-700 line-clamp-2 leading-relaxed">
                                                             {term.definition.slice(0, 160)}...
                                                         </p>
-                                                        <div className="mt-3 text-[10px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-cyan-600 transition-colors">
+                                                        <div className="mt-3 text-[10px] font-bold uppercase tracking-widest text-zinc-700 group-hover:text-cyan-600 transition-colors">
                                                             Read Definition →
                                                         </div>
                                                     </div>
@@ -104,7 +104,7 @@ export default function GlossaryContent() {
             <div className="text-center py-20 mt-12 mb-12 relative overflow-hidden rounded-3xl border border-zinc-200 bg-gradient-to-b from-white to-cyan-50">
                 <div className="absolute top-0 right-0 w-full h-full bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
                 <h2 className="text-3xl font-grotesk font-black text-zinc-900 mb-4">Master The Architecture</h2>
-                <p className="text-zinc-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                <p className="text-zinc-800 mb-8 max-w-lg mx-auto leading-relaxed">
                     Our diagnostic tools put these definitions into direct, mathematically precise execution—evaluate your enterprise today.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 px-6">

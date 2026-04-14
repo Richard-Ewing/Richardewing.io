@@ -73,7 +73,7 @@ export default function StartHerePage() {
                 <div className="max-w-4xl w-full relative z-10 mx-auto">
                     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <span>Guide</span><span>/</span><span className="text-cyan-400 font-bold">Start Here</span>
                     </div>
 
@@ -84,7 +84,7 @@ export default function StartHerePage() {
                                 Start Here.
                             </span>
                         </h1>
-                        <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl">
+                        <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl">
                             Three steps from diagnosis to action. Free tools, 400+ definitions,
                             structured learning — everything you need to treat engineering as a capital function.
                         </p>
@@ -99,13 +99,13 @@ export default function StartHerePage() {
                                     <div className="flex items-center gap-4">
                                         <span className={`text-4xl font-mono font-bold ${colors.text}`}>{step.number}</span>
                                         <div>
-                                            <h2 className="text-2xl font-grotesk font-bold text-white">{step.title}</h2>
-                                            <p className="text-zinc-400 text-sm mt-1">{step.subtitle}</p>
+                                            <h2 className="text-2xl font-grotesk font-bold text-zinc-900">{step.title}</h2>
+                                            <p className="text-zinc-600 text-sm mt-1">{step.subtitle}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="px-8 py-6">
-                                    <p className="text-zinc-400 mb-6">{step.description}</p>
+                                    <p className="text-zinc-600 mb-6">{step.description}</p>
                                     <div className="flex flex-wrap gap-3">
                                         {step.links.map(link => (
                                             <Link
@@ -129,7 +129,7 @@ export default function StartHerePage() {
                     {/* About section */}
                     <div className="text-center py-16 border-t border-zinc-200">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Who Built This?</h2>
-                        <p className="text-zinc-400 mb-6 max-w-xl mx-auto">
+                        <p className="text-zinc-600 mb-6 max-w-xl mx-auto">
                             Richard Ewing is a Product Economist and AI Capital Auditor.
                             He has scaled B2B SaaS to $25M ARR and is the founder of{' '}
                             <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline">Exogram</a>, verification infrastructure for AI.

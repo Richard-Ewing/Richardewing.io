@@ -28,13 +28,13 @@ const ExogramSection = () => {
                         </div>
 
                         {/* Tagline */}
-                        <p className="text-xl md:text-2xl text-zinc-600 leading-relaxed max-w-2xl">
+                        <p className="text-xl md:text-2xl text-zinc-800 leading-relaxed max-w-2xl">
                             AI doesn't fail because it can't reason.<br />
                             <span className="text-purple-600">It fails because it doesn't know what's true.</span>
                         </p>
 
                         {/* Description */}
-                        <p className="text-zinc-500 max-w-xl">
+                        <p className="text-zinc-700 max-w-xl">
                             Exogram is the missing trust layer between AI models and applications —
                             maintaining context, meaning, and truth so AI systems can be relied upon.
                         </p>
@@ -49,7 +49,7 @@ const ExogramSection = () => {
                                 <div className="text-left flex flex-col justify-center h-full">
                                     <p className="text-zinc-900 font-semibold leading-none mb-1">Founded by Richard Ewing</p>
                                     <div className="flex items-center gap-2">
-                                        <p className="text-zinc-500 text-xs leading-none">Product Economist</p>
+                                        <p className="text-zinc-700 text-xs leading-none">Product Economist</p>
                                         <span className="text-emerald-600 text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-50 rounded border border-emerald-200 leading-none flex items-center h-4">Live</span>
                                     </div>
                                 </div>

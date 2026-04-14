@@ -21,8 +21,8 @@ export default function ActionChecklist({ items }: { items: string[] }) {
             </div>
             
             <div className="flex items-end justify-between mb-6 pr-32">
-                <h3 className="text-lg font-grotesk font-bold text-white">Action Items</h3>
-                <div className="text-xs font-mono text-zinc-500">{progress}% Complete</div>
+                <h3 className="text-lg font-grotesk font-bold text-zinc-900">Action Items</h3>
+                <div className="text-xs font-mono text-zinc-700">{progress}% Complete</div>
             </div>
 
             <div className="w-full bg-white/5 h-1 rounded-full mb-6 overflow-hidden">
@@ -42,7 +42,7 @@ export default function ActionChecklist({ items }: { items: string[] }) {
                             <div className="shrink-0 mt-0.5 text-amber-500">
                                 {isChecked ? <CheckSquare className="w-5 h-5" /> : <Square className="w-5 h-5 opacity-50" />}
                             </div>
-                            <span className={`text-sm md:text-base transition-all ${isChecked ? 'text-zinc-500 line-through' : 'text-zinc-300'}`}>
+                            <span className={`text-sm md:text-base transition-all ${isChecked ? 'text-zinc-700 line-through' : 'text-zinc-700'}`}>
                                 {item}
                             </span>
                         </button>

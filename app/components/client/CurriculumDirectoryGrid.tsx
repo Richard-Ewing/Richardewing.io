@@ -74,11 +74,11 @@ export default function CurriculumDirectoryGrid({ children }: { children: React.
                                     : 'bg-white hover:bg-zinc-50 text-zinc-500 hover:text-zinc-700 border-zinc-200 hover:border-zinc-300'
                             }`}
                         >
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             
-                            <div className={`relative flex items-center justify-between w-full transition-colors duration-300 ${isActive ? '' : 'text-zinc-400 group-hover:text-zinc-600'}`}>
+                            <div className={`relative flex items-center justify-between w-full transition-colors duration-300 ${isActive ? '' : 'text-zinc-600 group-hover:text-zinc-800'}`}>
                                 {college.icon}
-                                <span className={`text-[10px] font-mono tracking-widest px-2 py-1 rounded-md border ${isActive ? 'bg-white/60 border-zinc-200' : 'bg-transparent border-transparent text-zinc-400'}`}>
+                                <span className={`text-[10px] font-mono tracking-widest px-2 py-1 rounded-md border ${isActive ? 'bg-white/60 border-zinc-200' : 'bg-transparent border-transparent text-zinc-600'}`}>
                                     {college.stats}
                                 </span>
                             </div>

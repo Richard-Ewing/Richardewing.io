@@ -28,8 +28,8 @@ export default function ManifestoPage() {
                             <span className="text-gold">is Over.</span>
                         </h1>
 
-                        <article className="prose prose-zinc prose-lg mx-auto leading-relaxed text-zinc-300 max-w-none">
-                            <p className="first-letter:text-6xl sm:first-letter:text-8xl first-letter:float-left first-letter:mr-3 sm:first-letter:mr-4 first-letter:text-gold first-letter:font-serif text-zinc-300 text-base sm:text-lg">
+                        <article className="prose prose-zinc prose-lg mx-auto leading-relaxed text-zinc-700 max-w-none">
+                            <p className="first-letter:text-6xl sm:first-letter:text-8xl first-letter:float-left first-letter:mr-3 sm:first-letter:mr-4 first-letter:text-gold first-letter:font-serif text-zinc-700 text-base sm:text-lg">
                                 For fifteen years, we have been told that the job of a Product Leader is to "empathize." We built "Feature Factories" disguised as "Agile Squads." We celebrated velocity while our unit economics quietly decayed. We shipped features that users didn't want with money we didn't have.
                             </p>
 
@@ -39,7 +39,7 @@ export default function ManifestoPage() {
                                 </p>
                             </div>
 
-                            <p className="text-zinc-300 mb-6 text-base sm:text-lg">
+                            <p className="text-zinc-700 mb-6 text-base sm:text-lg">
                                 The ZIRP era is <span className="text-red-500 font-bold">dead</span>. The Board no longer cares about your "User Journey Maps." They care about <span className="text-white font-bold">Yield</span>. This is not a demotion; it is an evolution. The survivors will be those who learn to speak the language of capital.
                             </p>
 
@@ -48,12 +48,12 @@ export default function ManifestoPage() {
                                 <p className="text-white font-bold text-lg sm:text-xl mb-4">
                                     We are not just builders anymore. We are Architects of Capital.
                                 </p>
-                                <p className="text-zinc-400 text-sm sm:text-base">
+                                <p className="text-zinc-600 text-sm sm:text-base">
                                     We must learn to speak the language of the P&L, or we will be relegated to the children's table while the CFO makes the real roadmap decisions. The Product Economist exists to bridge this gap—to give technical leaders the financial fluency they need to command the room.
                                 </p>
                             </div>
 
-                            <p className="text-zinc-300 text-base sm:text-lg">
+                            <p className="text-zinc-700 text-base sm:text-lg">
                                 This is not a condemnation of creativity. It is a call to <span className="text-white font-bold">responsible creativity</span>. Build what matters. Kill what doesn't. Own the numbers. That is the path to sovereignty.
                             </p>
 
@@ -77,7 +77,7 @@ export default function ManifestoPage() {
             {/* CTA */}
             <ScrollReveal delay={200}>
                 <div className="text-center py-12 mt-8">
-                    <p className="text-zinc-400 mb-6">Ready to become an Architect of Capital?</p>
+                    <p className="text-zinc-600 mb-6">Ready to become an Architect of Capital?</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <ShineBorder borderColor="rgba(212, 175, 55, 0.6)" duration={2}>
                             <Link

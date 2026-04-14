@@ -92,7 +92,7 @@ export default function ModuleStepper({ parsedContent, hasAccess = true, childre
                     <button 
                         onClick={handlePrev}
                         disabled={currentStep === 0}
-                        className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-black border border-zinc-200 text-white hover:bg-zinc-50"
+                        className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-white border border-zinc-200 text-white hover:bg-zinc-50"
                     >
                         <ChevronLeft className="w-4 h-4" /> Previous
                     </button>

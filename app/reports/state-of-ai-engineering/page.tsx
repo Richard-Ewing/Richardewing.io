@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function StateOfAIEngineering() {
     return (
-        <div className="min-h-screen bg-black text-white relative font-sans overflow-hidden">
+        <div className="min-h-screen bg-white text-white relative font-sans overflow-hidden">
             {/* Background elements */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
             <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-to-b from-purple-900/20 via-black/5 to-transparent pointer-events-none"></div>
@@ -32,7 +32,7 @@ export default function StateOfAIEngineering() {
                     <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-white to-zinc-500 leading-tight">
                         State of AI <br />Engineering <span className="text-purple-500">2026</span>
                     </h1>
-                    <p className="text-xl text-zinc-400 max-w-2xl leading-relaxed">
+                    <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
                         The definitive executive playbook for surviving the generative capability chasm. Discover exactly when your LLM OpEx outpaces human FTE displacement—and how to stop the bleeding.
                     </p>
                 </div>
@@ -48,7 +48,7 @@ export default function StateOfAIEngineering() {
                                 <h3 className="text-2xl font-bold text-white flex items-center gap-2">
                                    <BookOpen className="text-purple-400" size={24} /> Unlock The Playbook
                                 </h3>
-                                <p className="text-sm text-zinc-400">
+                                <p className="text-sm text-zinc-600">
                                     Enter your executive email to instantly unlock the 40-page report and map your dashboard telemetry.
                                 </p>
                             </div>
@@ -65,31 +65,31 @@ export default function StateOfAIEngineering() {
                                 <li className="flex items-start gap-3">
                                     <div className="w-6 h-6 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center flex-shrink-0 mt-0.5 border border-cyan-500/20">1</div>
                                     <div>
-                                        <p className="text-zinc-200 font-medium">The SLM vs API Deficit</p>
-                                        <p className="text-xs text-zinc-500 mt-1">Why wrapping OpenAI is a tactical advantage but a strategic liability long-term.</p>
+                                        <p className="text-zinc-800 font-medium">The SLM vs API Deficit</p>
+                                        <p className="text-xs text-zinc-700 mt-1">Why wrapping OpenAI is a tactical advantage but a strategic liability long-term.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <div className="w-6 h-6 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center flex-shrink-0 mt-0.5 border border-purple-500/20">2</div>
                                     <div>
-                                        <p className="text-zinc-200 font-medium">FTE Displacement Timelines</p>
-                                        <p className="text-xs text-zinc-500 mt-1">Exact mathematics on replacing Junior devs with Copilot vs RAG architecture.</p>
+                                        <p className="text-zinc-800 font-medium">FTE Displacement Timelines</p>
+                                        <p className="text-xs text-zinc-700 mt-1">Exact mathematics on replacing Junior devs with Copilot vs RAG architecture.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <div className="w-6 h-6 rounded-full bg-rose-500/10 text-rose-400 flex items-center justify-center flex-shrink-0 mt-0.5 border border-rose-500/20"><ShieldAlert size={12} /></div>
                                     <div>
-                                        <p className="text-zinc-200 font-medium">Hostile Valuation Protection</p>
-                                        <p className="text-xs text-zinc-500 mt-1">How PE firms use your unoptimized token spend to gut your EBITDA during M&amp;A.</p>
+                                        <p className="text-zinc-800 font-medium">Hostile Valuation Protection</p>
+                                        <p className="text-xs text-zinc-700 mt-1">How PE firms use your unoptimized token spend to gut your EBITDA during M&amp;A.</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         
                         <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-200">
-                            <p className="text-xs text-zinc-500 font-mono italic">
+                            <p className="text-xs text-zinc-700 font-mono italic">
                                 "This is the document I wish my CTO read before we burned $4M trying to build an internal Claude wrapper." 
-                                <br/><span className="text-zinc-300 mt-2 block">— Director of R&D, Series C Fintech</span>
+                                <br/><span className="text-zinc-700 mt-2 block">— Director of R&D, Series C Fintech</span>
                             </p>
                         </div>
                     </div>

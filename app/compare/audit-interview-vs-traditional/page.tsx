@@ -25,14 +25,14 @@ export default function CompareAuditVsTraditionalPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-cyan-400 font-bold">Audit Interview vs Traditional</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
                         Audit Interview vs{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-rose-400">Traditional Interview</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
                         Traditional interviews are inconsistent, biased, and expensive. The Audit Interview standardizes engineering assessment with AI-powered scoring, fixed rubrics, and committee review.
                     </p>
 
@@ -40,7 +40,7 @@ export default function CompareAuditVsTraditionalPage() {
                         <table className="w-full text-sm">
                             <thead>
                                 <tr className="border-b border-zinc-200">
-                                    <th className="text-left py-4 px-4 text-zinc-500 font-mono uppercase tracking-widest text-xs">Dimension</th>
+                                    <th className="text-left py-4 px-4 text-zinc-700 font-mono uppercase tracking-widest text-xs">Dimension</th>
                                     <th className="text-left py-4 px-4 text-cyan-400 font-mono uppercase tracking-widest text-xs">Audit Interview</th>
                                     <th className="text-left py-4 px-4 text-rose-400 font-mono uppercase tracking-widest text-xs">Traditional</th>
                                 </tr>
@@ -49,8 +49,8 @@ export default function CompareAuditVsTraditionalPage() {
                                 {dimensions.map((d, i) => (
                                     <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02] transition-colors">
                                         <td className="py-4 px-4 text-white font-medium">{d.dimension}</td>
-                                        <td className={`py-4 px-4 ${d.winner === 'audit' ? 'text-cyan-400' : 'text-zinc-500'}`}>{d.audit}</td>
-                                        <td className={`py-4 px-4 ${d.winner === 'traditional' ? 'text-rose-400' : 'text-zinc-500'}`}>{d.traditional}</td>
+                                        <td className={`py-4 px-4 ${d.winner === 'audit' ? 'text-cyan-400' : 'text-zinc-700'}`}>{d.audit}</td>
+                                        <td className={`py-4 px-4 ${d.winner === 'traditional' ? 'text-rose-400' : 'text-zinc-700'}`}>{d.traditional}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -59,7 +59,7 @@ export default function CompareAuditVsTraditionalPage() {
 
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Try the Audit Interview</h2>
-                        <p className="text-zinc-300 mb-6">Free, AI-powered engineering assessment. Get scored across 5 levels with instant committee review.</p>
+                        <p className="text-zinc-700 mb-6">Free, AI-powered engineering assessment. Get scored across 5 levels with instant committee review.</p>
                         <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:opacity-90 transition-opacity">Start Free Assessment →</Link>
                     </div>
                 </div>

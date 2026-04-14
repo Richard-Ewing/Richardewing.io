@@ -94,10 +94,10 @@ export default function ExogramArchitecturePage() {
     return (
         <main className="pt-24 pb-20">
             <div className="page-container max-w-5xl mx-auto">
-                <div className="text-xs text-zinc-500 mb-8">
+                <div className="text-xs text-zinc-700 mb-8">
                     <Link href="/exogram" className="hover:text-zinc-900 transition-colors">Exogram</Link>
                     <span className="mx-2">→</span>
-                    <span className="text-zinc-400">Architecture</span>
+                    <span className="text-zinc-600">Architecture</span>
                 </div>
 
                 <section className="text-center mb-16">
@@ -105,7 +105,7 @@ export default function ExogramArchitecturePage() {
                     <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-white mb-6">
                         Verification <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Architecture.</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+                    <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                         Four verification layers that sit between your AI models and your application.
                         Each layer operates independently and can be adopted incrementally.
                     </p>
@@ -116,16 +116,16 @@ export default function ExogramArchitecturePage() {
                         <section key={layer.name} className={layer.sectionClass}>
                             <div className="flex items-center gap-4 mb-6">
                                 <span className={layer.badgeClass}>{layer.tag}</span>
-                                <h2 className="text-2xl font-grotesk font-bold text-white">{layer.name}</h2>
+                                <h2 className="text-2xl font-grotesk font-bold text-zinc-900">{layer.name}</h2>
                             </div>
-                            <p className="text-zinc-400 mb-6 max-w-3xl">{layer.description}</p>
+                            <p className="text-zinc-600 mb-6 max-w-3xl">{layer.description}</p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div>
                                     <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Capabilities</h3>
                                     <ul className="space-y-2">
                                         {layer.features.map(f => (
-                                            <li key={f} className="flex items-start gap-2 text-sm text-zinc-400">
+                                            <li key={f} className="flex items-start gap-2 text-sm text-zinc-600">
                                                 <span className={layer.arrowClass}>→</span>
                                                 {f}
                                             </li>
@@ -137,8 +137,8 @@ export default function ExogramArchitecturePage() {
                                     <div className="space-y-3">
                                         {layer.metrics.map(m => (
                                             <div key={m.label} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.03] border border-zinc-200">
-                                                <span className="text-xs text-zinc-500">{m.label}</span>
-                                                <span className="text-sm font-mono text-white">{m.value}</span>
+                                                <span className="text-xs text-zinc-700">{m.label}</span>
+                                                <span className="text-sm font-mono text-zinc-900">{m.value}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -155,7 +155,7 @@ export default function ExogramArchitecturePage() {
 
                 <section className="text-center mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Integration</h2>
-                    <p className="text-zinc-400 max-w-2xl mx-auto mb-8">Exogram integrates via MCP (Model Context Protocol), REST API, or SDK. Drop it into your existing AI pipeline with zero architecture changes.</p>
+                    <p className="text-zinc-600 max-w-2xl mx-auto mb-8">Exogram integrates via MCP (Model Context Protocol), REST API, or SDK. Drop it into your existing AI pipeline with zero architecture changes.</p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
                         {[
                             { method: 'MCP Server', desc: 'Native protocol integration for Claude and compatible AI agents', badge: 'Recommended' },
@@ -165,7 +165,7 @@ export default function ExogramArchitecturePage() {
                             <div key={m.method} className="p-6 rounded-xl bg-white/[0.03] border border-zinc-200">
                                 <span className="text-[10px] font-mono text-purple-400 uppercase tracking-widest">{m.badge}</span>
                                 <h3 className="text-white font-bold mt-2 mb-2">{m.method}</h3>
-                                <p className="text-xs text-zinc-500">{m.desc}</p>
+                                <p className="text-xs text-zinc-700">{m.desc}</p>
                             </div>
                         ))}
                     </div>

@@ -90,7 +90,7 @@ const AIExpandCard = ({
                 <div className="flex-1">
                     <div className={`font-mono text-[10px] ${labelColor} uppercase tracking-widest mb-1`}>{label}</div>
                     <h3 className="text-white font-bold text-lg mb-2">{title}</h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed mb-3">{description}</p>
+                    <p className="text-zinc-600 text-sm leading-relaxed mb-3">{description}</p>
 
                     <button
                         onClick={askAI}
@@ -111,7 +111,7 @@ const AIExpandCard = ({
                     </button>
 
                     {expanded && aiResponse && (
-                        <div className="mt-4 pt-4 border-t border-zinc-200 text-sm text-zinc-300 leading-relaxed animate-fade-in-up">
+                        <div className="mt-4 pt-4 border-t border-zinc-200 text-sm text-zinc-700 leading-relaxed animate-fade-in-up">
                             {renderAIResponse(aiResponse)}
                         </div>
                     )}
@@ -148,7 +148,7 @@ export default function PrincipalContent() {
                             <div>
                                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">Richard Ewing</h1>
                                 <div className="font-mono text-sm text-cyan-400 uppercase tracking-widest mb-4">Product Economist</div>
-                                <p className="text-zinc-300 leading-relaxed text-base sm:text-lg">
+                                <p className="text-zinc-700 leading-relaxed text-base sm:text-lg">
                                     Founder of <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition">Exogram</a> and the executive who <span className="text-white font-bold">turns bleeding product organizations into profit engines</span>.
                                     I do not manage backlogs. I manage P&Ls. I do not ship features. I ship ROI.
                                 </p>
@@ -164,7 +164,7 @@ export default function PrincipalContent() {
                                 <div className="text-[10px] sm:text-xs font-mono text-zinc-500 uppercase mt-1">ARR Scaled</div>
                             </div>
                             <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
-                                <div className="text-3xl sm:text-4xl font-bold text-white">
+                                <div className="text-3xl sm:text-4xl font-bold text-zinc-900">
                                     <NumberTicker value={7} suffix="M+" />
                                 </div>
                                 <div className="text-[10px] sm:text-xs font-mono text-zinc-500 uppercase mt-1">Users Migrated</div>
@@ -221,7 +221,7 @@ export default function PrincipalContent() {
                     <p className="text-2xl sm:text-3xl text-white font-bold leading-tight mb-4">
                         "Innovation without Operation<br />is Hallucination."
                     </p>
-                    <p className="text-zinc-400 text-base leading-relaxed">
+                    <p className="text-zinc-600 text-base leading-relaxed">
                         Engineering speaks velocity. The C-Suite speaks P&L. When these languages fail to connect,
                         you get features that don't sell and roadmaps that don't ship. <span className="text-white font-semibold">I am the translation layer.</span>
                     </p>
@@ -285,29 +285,29 @@ export default function PrincipalContent() {
                 <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8">
                     <div className="flex items-center gap-3 mb-6">
                         <span className="w-1 h-8 bg-gradient-to-b from-cyan-400 to-cobalt rounded-full" />
-                        <h2 className="text-xl sm:text-2xl font-bold text-white">The Methodology</h2>
+                        <h2 className="text-xl sm:text-2xl font-bold text-zinc-900">The Methodology</h2>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="p-5 border border-zinc-200 rounded-xl hover:border-cyan-500/30 transition group">
                             <div className="font-mono text-xs text-cyan-400 uppercase mb-2">Framework 01</div>
                             <h3 className="text-white font-bold mb-2 group-hover:text-cyan-400 transition">APER™ Diagnostic</h3>
-                            <p className="text-zinc-500 text-sm">Actionable Product Economic Review. Forensic audit of engineering throughput vs. revenue impact.</p>
+                            <p className="text-zinc-700 text-sm">Actionable Product Economic Review. Forensic audit of engineering throughput vs. revenue impact.</p>
                         </div>
                         <div className="p-5 border border-zinc-200 rounded-xl hover:border-cobalt/30 transition group">
                             <div className="font-mono text-xs text-cobalt uppercase mb-2">Framework 02</div>
                             <h3 className="text-white font-bold mb-2 group-hover:text-cobalt transition">Q-PEP™ Protocol</h3>
-                            <p className="text-zinc-500 text-sm">Qualitative-Profitability Efficiency Protocol. Surgery for unit-economic insolvency.</p>
+                            <p className="text-zinc-700 text-sm">Qualitative-Profitability Efficiency Protocol. Surgery for unit-economic insolvency.</p>
                         </div>
                         <div className="p-5 border border-zinc-200 rounded-xl hover:border-red-500/30 transition group">
                             <div className="font-mono text-xs text-red-400 uppercase mb-2">Framework 03</div>
                             <h3 className="text-white font-bold mb-2 group-hover:text-red-400 transition">Product Debt Index™</h3>
-                            <p className="text-zinc-500 text-sm">AI-powered forensic engine to quantify capital leakage in your backlog.</p>
+                            <p className="text-zinc-700 text-sm">AI-powered forensic engine to quantify capital leakage in your backlog.</p>
                         </div>
                         <div className="p-5 border border-zinc-200 rounded-xl hover:border-gold/30 transition group">
                             <div className="font-mono text-xs text-gold uppercase mb-2">Framework 04</div>
                             <h3 className="text-white font-bold mb-2 group-hover:text-gold transition">The Product Economist™</h3>
-                            <p className="text-zinc-500 text-sm">15+ years of methodology distilled into an executive playbook. <span className="italic">O'Reilly book in progress.</span></p>
+                            <p className="text-zinc-700 text-sm">15+ years of methodology distilled into an executive playbook. <span className="italic">O'Reilly book in progress.</span></p>
                         </div>
                     </div>
                 </div>
@@ -323,12 +323,12 @@ export default function PrincipalContent() {
                         <div className="p-4 border border-zinc-200 rounded-xl hover:border-gold/30 transition group">
                             <div className="font-mono text-xs text-gold uppercase mb-1">Master of Business Administration</div>
                             <div className="text-white font-bold group-hover:text-gold transition">City University of Seattle</div>
-                            <div className="text-zinc-600 text-xs mt-1">Finance Concentration</div>
+                            <div className="text-zinc-800 text-xs mt-1">Finance Concentration</div>
                         </div>
                         <div className="p-4 border border-zinc-200 rounded-xl hover:border-cobalt/30 transition group">
                             <div className="font-mono text-xs text-cobalt uppercase mb-1">Bachelor of Science</div>
                             <div className="text-white font-bold group-hover:text-cobalt transition">Computer Science</div>
-                            <div className="text-zinc-600 text-xs mt-1">Technical Foundation</div>
+                            <div className="text-zinc-800 text-xs mt-1">Technical Foundation</div>
                         </div>
                     </div>
                 </div>
@@ -337,7 +337,7 @@ export default function PrincipalContent() {
             {/* CTA */}
             <ScrollReveal delay={250}>
                 <div className="text-center py-8 border-t border-zinc-200">
-                    <p className="text-zinc-400 mb-4">Ready to work with a Product Economist?</p>
+                    <p className="text-zinc-600 mb-4">Ready to work with a Product Economist?</p>
                     <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
                         <Link
                             href="/advisory"

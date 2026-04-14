@@ -33,14 +33,14 @@ export default function BoardRoom() {
             });
     }, [isLoaded, user]);
 
-    if (!isLoaded) return <div className="min-h-screen bg-black flex items-center justify-center"><div className="w-8 h-8 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin" /></div>;
+    if (!isLoaded) return <div className="min-h-screen bg-white flex items-center justify-center"><div className="w-8 h-8 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin" /></div>;
 
     if (!user) {
         return (
-            <div className="min-h-screen bg-black flex flex-col items-center justify-center p-6 text-center">
+            <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
                 <ShieldAlert className="text-red-500 w-16 h-16 mb-6 animate-pulse" />
                 <h1 className="text-3xl font-bold text-white mb-4 uppercase tracking-tighter">Clearance Required</h1>
-                <p className="text-zinc-500 mb-8 max-w-md font-mono text-sm uppercase tracking-widest leading-relaxed">The board room is restricted to verified C-Suite personnel. Authenticate to establish connection.</p>
+                <p className="text-zinc-700 mb-8 max-w-md font-mono text-sm uppercase tracking-widest leading-relaxed">The board room is restricted to verified C-Suite personnel. Authenticate to establish connection.</p>
                 <Link href="/sign-in" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-widest rounded-lg transition-colors">Establish Neural Link</Link>
             </div>
         );
@@ -78,7 +78,7 @@ export default function BoardRoom() {
     };
 
     return (
-        <div className="min-h-screen bg-[#020202] text-zinc-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
+        <div className="min-h-screen bg-white text-zinc-700 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
             {/* Grid Background */}
             <div className="fixed inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
             <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] pointer-events-none" />
@@ -87,7 +87,7 @@ export default function BoardRoom() {
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.8)]" />
-                        <span className="font-bold tracking-widest text-sm text-white uppercase font-mono">Executive Board Room <span className="text-zinc-600 font-normal">| ALL DEPARTMENTS</span></span>
+                        <span className="font-bold tracking-widest text-sm text-white uppercase font-mono">Executive Board Room <span className="text-zinc-800 font-normal">| ALL DEPARTMENTS</span></span>
                     </div>
                     <div className="flex gap-4">
                         <ExportToPDFButton targetId="board-room-matrix" fileName={`Enterprise_Threat_Matrix.pdf`} />
@@ -111,28 +111,28 @@ export default function BoardRoom() {
                         <GlowCard className="p-6 bg-rose-950/20 border border-rose-500/20 rounded-2xl relative overflow-hidden group">
                             <BorderBeam size={100} duration={8} delay={0} colorFrom="#f43f5e" colorTo="#be123c" />
                             <div className="text-[10px] font-mono text-rose-500 uppercase tracking-widest mb-4">Total Enterprise Value at Risk</div>
-                            <div className="text-4xl font-black text-white">{totalWealthGap > 0 ? formatCurrency(totalWealthGap) : 'TBD'}</div>
+                            <div className="text-4xl font-black text-zinc-900">{totalWealthGap > 0 ? formatCurrency(totalWealthGap) : 'TBD'}</div>
                             <div className="mt-4 text-xs text-rose-400/70 font-mono tracking-widest">Aggregate across all erosion models.</div>
                         </GlowCard>
                         
-                        <GlowCard className="p-6 bg-cyan-950/20 border border-cyan-500/20 rounded-2xl relative overflow-hidden">
+                        <GlowCard className="p-6 bg-cyan-50/20 border border-cyan-500/20 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={10} delay={2} colorFrom="#06b6d4" colorTo="#0284c7" />
                             <div className="text-[10px] font-mono text-cyan-500 uppercase tracking-widest mb-4">Total Cloud/Infra Arbitrage</div>
-                            <div className="text-4xl font-black text-white">{totalCloudSavings > 0 ? formatCurrency(totalCloudSavings) : 'TBD'}</div>
+                            <div className="text-4xl font-black text-zinc-900">{totalCloudSavings > 0 ? formatCurrency(totalCloudSavings) : 'TBD'}</div>
                             <div className="mt-4 text-xs text-cyan-400/70 font-mono tracking-widest">OpEx capture ready for execution.</div>
                         </GlowCard>
 
                         <GlowCard className="p-6 bg-emerald-950/20 border border-emerald-500/20 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={9} delay={4} colorFrom="#10b981" colorTo="#047857" />
                             <div className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest mb-4">AI Unit Economics (Margin)</div>
-                            <div className="text-4xl font-black text-white">{marginCollapseRisk ? `${marginCollapseRisk.toFixed(1)}%` : 'TBD'}</div>
+                            <div className="text-4xl font-black text-zinc-900">{marginCollapseRisk ? `${marginCollapseRisk.toFixed(1)}%` : 'TBD'}</div>
                             <div className="mt-4 text-xs text-emerald-400/70 font-mono tracking-widest">Projected gross margin post-AI scale.</div>
                         </GlowCard>
 
                         <GlowCard className="p-6 bg-purple-950/20 border border-purple-500/20 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={12} delay={6} colorFrom="#a855f7" colorTo="#7e22ce" />
                             <div className="text-[10px] font-mono text-purple-500 uppercase tracking-widest mb-4">Telemetry Snapshots</div>
-                            <div className="text-4xl font-black text-white">{totalRuns}</div>
+                            <div className="text-4xl font-black text-zinc-900">{totalRuns}</div>
                             <div className="mt-4 text-xs text-purple-400/70 font-mono tracking-widest">Diagnostic data points processed.</div>
                         </GlowCard>
                     </div>
@@ -156,10 +156,10 @@ export default function BoardRoom() {
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-blue-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-300">Product Debt Index (PDI)</span>
-                                        <span className="text-xl font-black text-white">{averagePDI}</span>
+                                        <span className="text-sm font-bold text-zinc-700">Product Debt Index (PDI)</span>
+                                        <span className="text-xl font-black text-zinc-900">{averagePDI}</span>
                                     </div>
-                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">Current average code entropy spanning all active domains. Determines engineering velocity decay.</p>
+                                    <p className="text-xs text-zinc-700 leading-relaxed font-mono">Current average code entropy spanning all active domains. Determines engineering velocity decay.</p>
                                     {(latestTools['pdi']?.output_metrics?.qpep_roadmap || latestTools['PDI']?.output_metrics?.qpep_roadmap) && (
                                         <div className="mt-4 mb-2 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg">
                                             <div className="flex items-center gap-2 mb-1">
@@ -176,10 +176,10 @@ export default function BoardRoom() {
 
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-purple-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-300">Engineering Velocity Erosion</span>
-                                        <span className="text-xl font-black text-white">{latestTools['EV-SE'] ? formatCurrency(latestTools['EV-SE'].output_metrics?.wealthGap || 0) : 'Pending'}</span>
+                                        <span className="text-sm font-bold text-zinc-700">Engineering Velocity Erosion</span>
+                                        <span className="text-xl font-black text-zinc-900">{latestTools['EV-SE'] ? formatCurrency(latestTools['EV-SE'].output_metrics?.wealthGap || 0) : 'Pending'}</span>
                                     </div>
-                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">The CapEx being permanently vaporized by slow deployment cycles and untracked sprint spillage.</p>
+                                    <p className="text-xs text-zinc-700 leading-relaxed font-mono">The CapEx being permanently vaporized by slow deployment cycles and untracked sprint spillage.</p>
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/ev-se" className="text-[10px] uppercase tracking-widest text-purple-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Run Valuation Erosion <ArrowRight size={12} /></Link>
                                     </div>
@@ -203,12 +203,12 @@ export default function BoardRoom() {
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-emerald-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-300">AI Unit Economics (AUEB)</span>
+                                        <span className="text-sm font-bold text-zinc-700">AI Unit Economics (AUEB)</span>
                                         <span className="text-xl font-black text-white text-right">
                                             {latestTools['AUEB'] ? `${(latestTools['AUEB'].output_metrics?.grossMargin || 0).toFixed(1)}%` : 'Pending'}
                                         </span>
                                     </div>
-                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">Tracks the collapse of software margins triggered by unbounded LLM API costs.</p>
+                                    <p className="text-xs text-zinc-700 leading-relaxed font-mono">Tracks the collapse of software margins triggered by unbounded LLM API costs.</p>
                                     {(latestTools['AUEB']?.output_metrics?.qpep_roadmap || latestTools['aueb']?.output_metrics?.qpep_roadmap) && (
                                         <div className="mt-4 mb-2 p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
                                             <div className="flex items-center gap-2 mb-1">
@@ -225,10 +225,10 @@ export default function BoardRoom() {
 
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-cyan-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-300">Cloud FinOps Arbitrage</span>
-                                        <span className="text-xl font-black text-white">{latestTools['CLOUD-REPAT'] ? formatCurrency(latestTools['CLOUD-REPAT'].output_metrics?.annualSavings || 0) : 'Pending'}</span>
+                                        <span className="text-sm font-bold text-zinc-700">Cloud FinOps Arbitrage</span>
+                                        <span className="text-xl font-black text-zinc-900">{latestTools['CLOUD-REPAT'] ? formatCurrency(latestTools['CLOUD-REPAT'].output_metrics?.annualSavings || 0) : 'Pending'}</span>
                                     </div>
-                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">OpEx available to recapture via private cloud repatriation vs AWS Basecamp index.</p>
+                                    <p className="text-xs text-zinc-700 leading-relaxed font-mono">OpEx available to recapture via private cloud repatriation vs AWS Basecamp index.</p>
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/cloud-repatriation" className="text-[10px] uppercase tracking-widest text-cyan-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Arbitrage Analysis <ArrowRight size={12} /></Link>
                                     </div>
@@ -236,12 +236,12 @@ export default function BoardRoom() {
 
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-rose-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-300">AI Tool Economics (Net Revenue Retention)</span>
+                                        <span className="text-sm font-bold text-zinc-700">AI Tool Economics (Net Revenue Retention)</span>
                                         <span className="text-xl font-black text-white text-right">
                                             {latestTools['copilot-roi'] ? `${(latestTools['copilot-roi'].output_metrics?.netRevenueRetention || 0).toFixed(0)}%` : 'Pending'}
                                         </span>
                                     </div>
-                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">True profitability of AI tools factoring in downstream Vibe Coding Debt and Review Bottlenecks.</p>
+                                    <p className="text-xs text-zinc-700 leading-relaxed font-mono">True profitability of AI tools factoring in downstream Vibe Coding Debt and Review Bottlenecks.</p>
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/copilot-roi" className="text-[10px] uppercase tracking-widest text-rose-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Model AI Economics <ArrowRight size={12} /></Link>
                                     </div>
@@ -265,12 +265,12 @@ export default function BoardRoom() {
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-amber-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-300">AI CapEx Break-Even</span>
+                                        <span className="text-sm font-bold text-zinc-700">AI CapEx Break-Even</span>
                                         <span className="text-xl font-black text-white text-right">
                                             {latestTools['ai-roi-timeline'] ? `${(latestTools['ai-roi-timeline'].output_metrics?.breakEvenMonths || 0).toFixed(1)} Months` : 'Pending'}
                                         </span>
                                     </div>
-                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">Displaced FTE equivalent tracked against AI architecture implementation costs.</p>
+                                    <p className="text-xs text-zinc-700 leading-relaxed font-mono">Displaced FTE equivalent tracked against AI architecture implementation costs.</p>
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/ai-roi-timeline" className="text-[10px] uppercase tracking-widest text-amber-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Audit Break-Even <ArrowRight size={12} /></Link>
                                     </div>
@@ -284,24 +284,24 @@ export default function BoardRoom() {
                         <div className="bg-white/60 border border-zinc-200 rounded-3xl p-8 relative overflow-hidden group hover:border-zinc-500/50 transition-colors h-full">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-zinc-500/10 transition-colors duration-1000"></div>
                             <div className="flex items-center gap-3 mb-8">
-                                <Briefcase className="text-zinc-300 h-8 w-8" />
+                                <Briefcase className="text-zinc-700 h-8 w-8" />
                                 <div>
                                     <h3 className="text-xl font-bold text-white uppercase tracking-tight">Mergers & Acquisitions</h3>
-                                    <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">Private Equity / Due Diligence</p>
+                                    <p className="text-xs font-mono text-zinc-600 uppercase tracking-widest">Private Equity / Due Diligence</p>
                                 </div>
                             </div>
 
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-zinc-300">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-300">Technical Due Diligence Tracker</span>
+                                        <span className="text-sm font-bold text-zinc-700">Technical Due Diligence Tracker</span>
                                         <span className="text-xl font-black text-white text-right">
                                             {latestTools['DUE-DILIGENCE'] ? `${(latestTools['DUE-DILIGENCE'].output_metrics?.adjustedConfidence || 0).toFixed(0)}%` : 'Pending'}
                                         </span>
                                     </div>
-                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">Overall technical health and survivability score for inbound acquisition targets.</p>
+                                    <p className="text-xs text-zinc-700 leading-relaxed font-mono">Overall technical health and survivability score for inbound acquisition targets.</p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/due-diligence" className="text-[10px] uppercase tracking-widest text-zinc-300 hover:text-zinc-900 flex items-center gap-1 transition-colors">Run External Diligence <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/due-diligence" className="text-[10px] uppercase tracking-widest text-zinc-700 hover:text-zinc-900 flex items-center gap-1 transition-colors">Run External Diligence <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
                             </div>
@@ -323,12 +323,12 @@ export default function BoardRoom() {
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-rose-500/20 rounded-xl border-l-2 border-l-rose-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-300">Model Collapse Liability</span>
+                                        <span className="text-sm font-bold text-zinc-700">Model Collapse Liability</span>
                                         <span className="text-xl font-black text-white text-right">
                                             {totalWealthGap > 0 ? 'High Exposure' : 'Pending Audit'}
                                         </span>
                                     </div>
-                                    <p className="text-xs text-zinc-500 leading-relaxed font-mono">Financial tax triggered by synthetic data decay forcing continuous model retraining capital expenditure.</p>
+                                    <p className="text-xs text-zinc-700 leading-relaxed font-mono">Financial tax triggered by synthetic data decay forcing continuous model retraining capital expenditure.</p>
                                     
                                     <div className="mt-4 p-3 bg-rose-500/10 border border-rose-500/20 rounded-lg">
                                         <div className="text-[10px] uppercase tracking-widest text-rose-400 font-bold mb-1 flex items-center gap-2">

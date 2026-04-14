@@ -43,7 +43,7 @@ export default function ForInvestorsPage() {
                             Quantify R&D Risk<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Before You Invest</span>
                         </h1>
-                        <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-8">
+                        <p className="text-xl text-zinc-600 max-w-2xl mx-auto mb-8">
                             Technical debt is the #1 hidden cost in technology acquisitions. R&D Capital Audits translate engineering complexity into dollar-denominated risk that LPs, boards, and deal teams understand.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
@@ -57,7 +57,7 @@ export default function ForInvestorsPage() {
                             <div key={i} className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-8">
                                 <span className="text-3xl mb-4 block">{uc.icon}</span>
                                 <h2 className="text-xl font-grotesk font-bold text-white mb-3">{uc.title}</h2>
-                                <p className="text-zinc-400 mb-4">{uc.description}</p>
+                                <p className="text-zinc-600 mb-4">{uc.description}</p>
                                 <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">{uc.stats}</span>
                             </div>
                         ))}
@@ -70,9 +70,9 @@ export default function ForInvestorsPage() {
                                 <Link key={i} href={m.link} className="flex items-center justify-between p-5 rounded-xl border border-zinc-200 hover:border-cyan-500/30 transition-colors group">
                                     <div>
                                         <div className="text-white font-bold group-hover:text-cyan-400 transition-colors">{m.name}</div>
-                                        <div className="text-sm text-zinc-500">{m.description}</div>
+                                        <div className="text-sm text-zinc-700">{m.description}</div>
                                     </div>
-                                    <span className="text-zinc-600 group-hover:text-cyan-400 transition-colors">→</span>
+                                    <span className="text-zinc-800 group-hover:text-cyan-400 transition-colors">→</span>
                                 </Link>
                             ))}
                         </div>
@@ -80,7 +80,7 @@ export default function ForInvestorsPage() {
 
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Trusted by Top PE Firms</h2>
-                        <p className="text-zinc-400 mb-8 max-w-xl mx-auto">R&D Capital Audits have been used in 100+ due diligence engagements. Published frameworks in CIO.com and Built In. Board-ready deliverables.</p>
+                        <p className="text-zinc-600 mb-8 max-w-xl mx-auto">R&D Capital Audits have been used in 100+ due diligence engagements. Published frameworks in CIO.com and Built In. Board-ready deliverables.</p>
                         <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Schedule a 30-Minute Briefing →</Link>
                     </div>
                 </div>

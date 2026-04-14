@@ -36,7 +36,7 @@ const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; pref
 
 const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: React.ReactNode; title: string; icon?: React.ComponentType<{ size?: number }>; className?: string }) => (
     <div className={`relative overflow-hidden rounded-2xl border border-zinc-200 bg-white/60 p-6 backdrop-blur-md ${className}`}>
-        <div className="flex items-center gap-2 mb-4 text-zinc-500">
+        <div className="flex items-center gap-2 mb-4 text-zinc-700">
             {Icon && <Icon size={14} />}
             <span className="text-[10px] font-mono uppercase tracking-widest">{title}</span>
         </div>
@@ -310,7 +310,7 @@ export default function DueDiligenceTool() {
     };
 
     return (
-        <div className="min-h-screen bg-[#050505] text-zinc-200 selection:bg-cyan-500/30 font-sans">
+        <div className="min-h-screen bg-white text-zinc-800 selection:bg-cyan-500/30 font-sans">
             <ToolCelebration show={!!results} toolName="Due Diligence Diagnostics" />
             
             {/* MONETIZATION ENGINE: PAYWALL MODAL ($999 TIER) */}
@@ -326,14 +326,14 @@ export default function DueDiligenceTool() {
                             </div>
                             
                             <h3 className="text-3xl font-bold text-white mb-2 font-grotesk tracking-tight">Enterprise Scanner Locked.</h3>
-                            <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
+                            <p className="text-zinc-600 text-sm mb-6 leading-relaxed">
                                 This is a professional-grade M&A execution tool. Full access requires the Private Equity Intelligence Tier. 
                             </p>
                             
                             <div className="bg-white/5 border border-zinc-200 rounded-xl p-4 mb-6">
                                 <div className="text-sm font-bold text-white mb-2 text-center">Private Equity Pass</div>
-                                <div className="text-3xl font-bold text-cyan-400 text-center mb-4">$999<span className="text-sm text-zinc-500 font-normal">/yr</span></div>
-                                <ul className="text-[10px] text-zinc-400 space-y-2 font-mono uppercase tracking-widest">
+                                <div className="text-3xl font-bold text-cyan-400 text-center mb-4">$999<span className="text-sm text-zinc-700 font-normal">/yr</span></div>
+                                <ul className="text-[10px] text-zinc-600 space-y-2 font-mono uppercase tracking-widest">
                                     <li className="flex items-center gap-2">• Unlimited M&A PDF Exports</li>
                                     <li className="flex items-center gap-2">• Q-PEP Remediation Roadmaps</li>
                                     <li className="flex items-center gap-2">• CISO Dashboard Access</li>
@@ -346,7 +346,7 @@ export default function DueDiligenceTool() {
                                 </a>
                                 <button 
                                     onClick={() => setShowPaywall(false)} 
-                                    className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-400 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"
+                                    className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-600 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"
                                 >
                                     Dismiss
                                 </button>
@@ -361,7 +361,7 @@ export default function DueDiligenceTool() {
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_#dc2626]" />
-                        <span className="font-bold tracking-tight text-lg">M&A DILIGENCE <span className="text-zinc-600 font-normal">| Enterprise Scanner</span></span>
+                        <span className="font-bold tracking-tight text-lg">M&A DILIGENCE <span className="text-zinc-800 font-normal">| Enterprise Scanner</span></span>
                     </div>
                     <Link href="/advisory" className="flex items-center gap-2 text-xs font-mono text-zinc-600 hover:text-zinc-900 transition-colors uppercase tracking-widest">
                         <ShieldAlert size={12} />
@@ -380,7 +380,7 @@ export default function DueDiligenceTool() {
                                     Calculate Acquisition <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">Impairment Risk</span>
                                 </h1>
-                                <p className="text-xl text-zinc-500">Scan acquisition targets for critical technical debt, security vectors, and engineering bloat before you write the check.</p>
+                                <p className="text-xl text-zinc-700">Scan acquisition targets for critical technical debt, security vectors, and engineering bloat before you write the check.</p>
                             </div>
 
                             {/* PERSONA SELECTOR */}
@@ -416,14 +416,14 @@ export default function DueDiligenceTool() {
                                                 <div>
                                                     <label className="text-xs font-mono text-red-400 uppercase tracking-widest mb-2 block">Target ARR</label>
                                                     <div className="relative">
-                                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500">$</span>
+                                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-700">$</span>
                                                         <input type="number" title="Target ARR" aria-label="Target ARR" value={arr} onChange={(e) => setArr(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-red-500 focus:outline-none" />
                                                     </div>
                                                 </div>
                                                 <div>
                                                     <label className="text-xs font-mono text-red-400 uppercase tracking-widest mb-2 block">Monthly Cloud Spend</label>
                                                     <div className="relative">
-                                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500">$</span>
+                                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-700">$</span>
                                                         <input type="number" title="Monthly Cloud Spend" aria-label="Monthly Cloud Spend" value={cloudSpend} onChange={(e) => setCloudSpend(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-red-500 focus:outline-none" />
                                                     </div>
                                                 </div>
@@ -448,22 +448,22 @@ export default function DueDiligenceTool() {
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 
                                                 {/* Checkboxes */}
-                                                <button onClick={() => setMonolith(!monolith)} className={`text-left p-4 rounded-xl border transition-all ${monolith ? 'bg-orange-500/10 border-orange-500/50 text-orange-400' : 'bg-white/50 border-zinc-200 text-zinc-400'}`}>
+                                                <button onClick={() => setMonolith(!monolith)} className={`text-left p-4 rounded-xl border transition-all ${monolith ? 'bg-orange-500/10 border-orange-500/50 text-orange-400' : 'bg-white/50 border-zinc-200 text-zinc-600'}`}>
                                                     <div className="font-bold mb-1 flex items-center gap-2"><Code size={16}/> Monolithic Architecture</div>
                                                     <div className="text-xs opacity-70">App is primarily a single large codebase rather than isolated services.</div>
                                                 </button>
                                                 
-                                                <button onClick={() => setHeavyAiDependency(!heavyAiDependency)} className={`text-left p-4 rounded-xl border transition-all ${heavyAiDependency ? 'bg-red-500/10 border-red-500/50 text-red-400' : 'bg-white/50 border-zinc-200 text-zinc-400'}`}>
+                                                <button onClick={() => setHeavyAiDependency(!heavyAiDependency)} className={`text-left p-4 rounded-xl border transition-all ${heavyAiDependency ? 'bg-red-500/10 border-red-500/50 text-red-400' : 'bg-white/50 border-zinc-200 text-zinc-600'}`}>
                                                     <div className="font-bold mb-1 flex items-center gap-2"><BrainCircuit size={16}/> Heavy AI Dependency</div>
                                                     <div className="text-xs opacity-70">Core product loops rely entirely on 3rd-party LLM APIs (OpenAI/Anthropic).</div>
                                                 </button>
 
-                                                <button onClick={() => setHasCompliance(!hasCompliance)} className={`text-left p-4 rounded-xl border transition-all ${hasCompliance ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400' : 'bg-white/50 border-zinc-200 text-zinc-400'}`}>
+                                                <button onClick={() => setHasCompliance(!hasCompliance)} className={`text-left p-4 rounded-xl border transition-all ${hasCompliance ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400' : 'bg-white/50 border-zinc-200 text-zinc-600'}`}>
                                                     <div className="font-bold mb-1 flex items-center gap-2"><ShieldAlert size={16}/> SOC2 / ISO Compliant</div>
                                                     <div className="text-xs opacity-70">Firm has independently audited active compliance certificates.</div>
                                                 </button>
 
-                                                <button onClick={() => setHasOffshore(!hasOffshore)} className={`text-left p-4 rounded-xl border transition-all ${hasOffshore ? 'bg-yellow-500/10 border-yellow-500/50 text-yellow-500' : 'bg-white/50 border-zinc-200 text-zinc-400'}`}>
+                                                <button onClick={() => setHasOffshore(!hasOffshore)} className={`text-left p-4 rounded-xl border transition-all ${hasOffshore ? 'bg-yellow-500/10 border-yellow-500/50 text-yellow-500' : 'bg-white/50 border-zinc-200 text-zinc-600'}`}>
                                                     <div className="font-bold mb-1 flex items-center gap-2"><Users size={16}/> Offshore Engineering</div>
                                                     <div className="text-xs opacity-70">Significant portion of engineering execution is outsourced or offshore.</div>
                                                 </button>
@@ -490,7 +490,7 @@ export default function DueDiligenceTool() {
                                 <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-red-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                                     <div>
                                         <h2 className="text-xl font-bold text-white mb-1">M&A Acquisition Diagnostic Complete</h2>
-                                        <p className="text-sm text-zinc-400">Export this assessment to a verified Executive PDF for board review.</p>
+                                        <p className="text-sm text-zinc-600">Export this assessment to a verified Executive PDF for board review.</p>
                                     </div>
                                     <div className="mt-4 sm:mt-0">
                                         <button 
@@ -504,7 +504,7 @@ export default function DueDiligenceTool() {
                                 </div>
 
                                 {/* -------- PDF CAPTURE ZONE START -------- */}
-                                <div id="dd-pdf-export-zone" className="space-y-8 bg-[#050505] p-2 sm:p-4 rounded-3xl">
+                                <div id="dd-pdf-export-zone" className="space-y-8 bg-white p-2 sm:p-4 rounded-3xl">
 
                                 {/* GAUGE HERO */}
                                 <motion.div
@@ -519,7 +519,7 @@ export default function DueDiligenceTool() {
                                     <div className={`mt-12 text-4xl font-bold tracking-tight ${getRiskStatus(results.riskScore).color}`}>
                                         {getRiskStatus(results.riskScore).text}
                                     </div>
-                                    <div className="mt-2 text-zinc-400 text-sm font-mono tracking-widest uppercase">
+                                    <div className="mt-2 text-zinc-600 text-sm font-mono tracking-widest uppercase">
                                         {getRiskStatus(results.riskScore).sub}
                                     </div>
                                 </motion.div>
@@ -534,15 +534,15 @@ export default function DueDiligenceTool() {
                                 >
                                     <BentoCard title="Valuation Impairment Risk" icon={DollarSign} className="border-red-500/30">
                                         <div className="text-4xl font-bold text-red-500"><NumberTicker value={results.valuationImpairment} prefix="$" /></div>
-                                        <div className="text-xs text-zinc-500 mt-2 font-mono">Suggested Holdback Delta</div>
+                                        <div className="text-xs text-zinc-700 mt-2 font-mono">Suggested Holdback Delta</div>
                                     </BentoCard>
                                     <BentoCard title="Tech Debt Recovery Cost" icon={Code} className="border-orange-500/20">
                                         <div className="text-3xl font-bold text-orange-400"><NumberTicker value={results.techDebtRecoveryCost} prefix="$" /></div>
-                                        <div className="text-xs text-zinc-500 mt-2 font-mono">Immediate CapEx required post-close</div>
+                                        <div className="text-xs text-zinc-700 mt-2 font-mono">Immediate CapEx required post-close</div>
                                     </BentoCard>
                                     <BentoCard title="Annual Cloud Waste" icon={Activity} className="border-zinc-500/20">
-                                        <div className="text-3xl font-bold text-zinc-300"><NumberTicker value={results.annualInfraWaste} prefix="$" /></div>
-                                        <div className="text-xs text-zinc-500 mt-2 font-mono">Inefficient OPEX identifiable</div>
+                                        <div className="text-3xl font-bold text-zinc-700"><NumberTicker value={results.annualInfraWaste} prefix="$" /></div>
+                                        <div className="text-xs text-zinc-700 mt-2 font-mono">Inefficient OPEX identifiable</div>
                                     </BentoCard>
                                 </motion.div>
 
@@ -554,7 +554,7 @@ export default function DueDiligenceTool() {
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
                                     >
-                                        <BentoCard title="Critical Deal Red Flags" icon={ShieldAlert} className="border-red-500/40 bg-red-950/20">
+                                        <BentoCard title="Critical Deal Red Flags" icon={ShieldAlert} className="border-red-500/40 bg-red-50/20">
                                             <ul className="space-y-3">
                                                 {results.redFlags.map((flag, i) => (
                                                     <li key={i} className="flex items-start gap-3">
@@ -579,18 +579,18 @@ export default function DueDiligenceTool() {
                                             {results.threatVectors.map((tv, i) => (
                                                 <div key={i} className="flex gap-4 items-center">
                                                     <div className="w-12 h-12 bg-white/50 border border-zinc-200 rounded-xl flex items-center justify-center flex-shrink-0">
-                                                        <tv.icon size={20} className="text-zinc-400"/>
+                                                        <tv.icon size={20} className="text-zinc-600"/>
                                                     </div>
                                                     <div className="flex-1">
                                                         <div className="flex justify-between mb-1">
-                                                            <div className="font-bold text-white">{tv.name}</div>
-                                                            <div className="text-xs font-mono text-zinc-500">{tv.severity}% Severity</div>
+                                                            <div className="font-bold text-zinc-900">{tv.name}</div>
+                                                            <div className="text-xs font-mono text-zinc-700">{tv.severity}% Severity</div>
                                                         </div>
                                                         <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden mb-1">
                                                             <style>{`#tv-progress-${tv.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i} { width: ${tv.severity}%; }`}</style>
                                                             <div id={`tv-progress-${tv.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i}`} className={`h-full ${tv.color}`} />
                                                         </div>
-                                                        <div className="text-xs text-zinc-400">{tv.details}</div>
+                                                        <div className="text-xs text-zinc-600">{tv.details}</div>
                                                     </div>
                                                 </div>
                                             ))}
@@ -616,7 +616,7 @@ export default function DueDiligenceTool() {
                                                     <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)] z-10"></div>
                                                     
                                                     <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                        <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-400 shrink-0 inline-block w-fit">
+                                                        <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-600 shrink-0 inline-block w-fit">
                                                             Month {plan.month}
                                                         </div>
                                                         <div className="font-bold text-white text-base leading-tight md:leading-normal">{plan.focus}</div>
@@ -667,7 +667,7 @@ export default function DueDiligenceTool() {
                                             <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                             3-Step Board Remediation Playbook
                                         </h3>
-                                        <p className="text-zinc-400 text-sm mb-8">Execute this operational surgery immediately to neutralize the ${formatMoney(results.valuationImpairment)} valuation impairment.</p>
+                                        <p className="text-zinc-600 text-sm mb-8">Execute this operational surgery immediately to neutralize the ${formatMoney(results.valuationImpairment)} valuation impairment.</p>
 
                                         <div className="space-y-4">
                                             {/* Step 1 */}
@@ -678,12 +678,12 @@ export default function DueDiligenceTool() {
                                                 </div>
                                                 <div className="relative z-10 w-full">
                                                     <h4 className="text-white font-bold mb-2">Hostile Valuation Holdback</h4>
-                                                    <p className="text-zinc-400 text-sm leading-relaxed mb-4">The target's technical entropy poses an existential threat to post-close EBITDA. Do not acquire these liabilities at face value.</p>
+                                                    <p className="text-zinc-600 text-sm leading-relaxed mb-4">The target's technical entropy poses an existential threat to post-close EBITDA. Do not acquire these liabilities at face value.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                         <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-xs text-zinc-300">Contractually isolate the exact ${formatMoney(results.valuationImpairment)} impairment value into an escrow hold-back account, contingent upon the target proving architectural viability post-migration.</p>
+                                                        <p className="text-xs text-zinc-700">Contractually isolate the exact ${formatMoney(results.valuationImpairment)} impairment value into an escrow hold-back account, contingent upon the target proving architectural viability post-migration.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -696,12 +696,12 @@ export default function DueDiligenceTool() {
                                                 </div>
                                                 <div className="relative z-10 w-full">
                                                     <h4 className="text-white font-bold mb-2">Workforce Rightsizing & Neutralization</h4>
-                                                    <p className="text-zinc-400 text-sm leading-relaxed mb-4">ARR per head is deeply misaligned with modern SaaS benchmarks. The engineering org is heavily bloated creating gross margin drag.</p>
+                                                    <p className="text-zinc-600 text-sm leading-relaxed mb-4">ARR per head is deeply misaligned with modern SaaS benchmarks. The engineering org is heavily bloated creating gross margin drag.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                         <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-xs text-zinc-300">Implement aggressive up-or-out performance tracking on Day 1. Terminate the lowest 20% of legacy contributors immediately and backfill capacity with AI-augmented workflows.</p>
+                                                        <p className="text-xs text-zinc-700">Implement aggressive up-or-out performance tracking on Day 1. Terminate the lowest 20% of legacy contributors immediately and backfill capacity with AI-augmented workflows.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -714,12 +714,12 @@ export default function DueDiligenceTool() {
                                                 </div>
                                                 <div className="relative z-10 w-full">
                                                     <h4 className="text-white font-bold mb-2">Immediate EBITDA Leakage Stoppage</h4>
-                                                    <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are acquiring ${formatMoney(results.annualInfraWaste)}/yr in structural cloud infrastructure waste that should be dropping to the bottom line.</p>
+                                                    <p className="text-zinc-600 text-sm leading-relaxed mb-4">You are acquiring ${formatMoney(results.annualInfraWaste)}/yr in structural cloud infrastructure waste that should be dropping to the bottom line.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                         <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-xs text-zinc-300">Mandate immediate AWS/GCP instance rightsizing and aggressive reserved instance purchasing. Halt all new cloud provisioning without explicit PE/Board VP-level approval.</p>
+                                                        <p className="text-xs text-zinc-700">Mandate immediate AWS/GCP instance rightsizing and aggressive reserved instance purchasing. Halt all new cloud provisioning without explicit PE/Board VP-level approval.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -741,7 +741,7 @@ export default function DueDiligenceTool() {
                                     />
                                     
                                     <div className="flex justify-center mt-8 mb-8">
-                                        <button onClick={() => { setResults(null); setStep(1); }} className="text-zinc-500 font-mono text-xs tracking-widest hover:text-zinc-900 uppercase transition-colors">
+                                        <button onClick={() => { setResults(null); setStep(1); }} className="text-zinc-700 font-mono text-xs tracking-widest hover:text-zinc-900 uppercase transition-colors">
                                             ← Run New Due Diligence
                                         </button>
                                     </div>

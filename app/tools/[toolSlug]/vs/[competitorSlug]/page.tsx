@@ -82,7 +82,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
         : `They approach the problem as an operational symptom. They map basic telemetry without calculating the underlying Cost of Doing Nothing (CODN) or Board-level liability that destroys enterprise momentum.`;
 
     return (
-        <div className="bg-[#050505] min-h-screen text-white font-sans selection:bg-indigo-500/30">
+        <div className="bg-white min-h-screen text-white font-sans selection:bg-indigo-500/30">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -101,17 +101,17 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                      </div>
                      <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-6 leading-tight">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">{tool.toolName}</span> <br/>
-                        <span className="text-zinc-500 text-3xl sm:text-5xl border-t border-b border-zinc-800 py-2 inline-block my-4 w-32 lowercase font-serif italic">vs</span><br/>
+                        <span className="text-zinc-700 text-3xl sm:text-5xl border-t border-b border-zinc-800 py-2 inline-block my-4 w-32 lowercase font-serif italic">vs</span><br/>
                         {competitor.name}
                      </h1>
-                     <p className="text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed">
+                     <p className="text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed">
                         If your goal is standard operational telemetry, {competitor.name} is sufficient. If you are a C-Suite executive quantifying millions in enterprise liability, deploy {tool.toolName}.
                      </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
                      {/* Competitor Column */}
-                     <div className="bg-[#0a0a0b] border border-white/5 rounded-[2rem] p-8 relative overflow-hidden group hover:border-red-500/20 transition-all opacity-80">
+                     <div className="bg-white border border-zinc-200 rounded-[2rem] p-8 relative overflow-hidden group hover:border-red-500/20 transition-all opacity-80">
                           <div className="absolute top-0 right-0 p-6 opacity-10">
                               <Target size={120} />
                           </div>
@@ -121,12 +121,12 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                           </div>
                           <div className="space-y-6">
                               <div>
-                                  <h3 className="text-sm font-bold text-zinc-300 uppercase tracking-widest mb-2">Core Philosophy</h3>
-                                  <p className="text-zinc-500 leading-relaxed">{competitor.theirFocus}</p>
+                                  <h3 className="text-sm font-bold text-zinc-700 uppercase tracking-widest mb-2">Core Philosophy</h3>
+                                  <p className="text-zinc-700 leading-relaxed">{competitor.theirFocus}</p>
                               </div>
                               <div className="bg-red-500/5 border border-red-500/10 p-6 rounded-xl">
                                   <h3 className="text-xs font-mono text-red-400 uppercase tracking-widest mb-2 flex items-center gap-2"><Target size={14}/> The Critical Failure</h3>
-                                  <p className="text-sm text-zinc-400 leading-relaxed">
+                                  <p className="text-sm text-zinc-600 leading-relaxed">
                                       {dynamicFailure}
                                   </p>
                               </div>
@@ -134,7 +134,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                      </div>
 
                      {/* Exogram Column */}
-                     <div className="bg-[#0a0a0b] border border-indigo-500/30 rounded-[2rem] p-8 relative overflow-hidden shadow-[0_0_50px_rgba(99,102,241,0.05)]">
+                     <div className="bg-white border border-indigo-500/30 rounded-[2rem] p-8 relative overflow-hidden shadow-[0_0_50px_rgba(99,102,241,0.05)]">
                           <BorderBeam size={200} duration={12} delay={9} borderWidth={1.5} colorFrom="#6366f1" colorTo="#22d3ee" />
                           <div className="absolute top-0 right-0 p-6 opacity-10 text-indigo-500">
                               <ShieldCheck size={120} />
@@ -145,12 +145,12 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                           </div>
                           <div className="space-y-6 relative z-10">
                               <div>
-                                  <h3 className="text-sm font-bold text-zinc-300 uppercase tracking-widest mb-2">Core Philosophy</h3>
-                                  <p className="text-zinc-300 leading-relaxed font-medium">{competitor.ourAdvantage}</p>
+                                  <h3 className="text-sm font-bold text-zinc-700 uppercase tracking-widest mb-2">Core Philosophy</h3>
+                                  <p className="text-zinc-700 leading-relaxed font-medium">{competitor.ourAdvantage}</p>
                               </div>
                               <div className="bg-indigo-500/10 border border-indigo-500/20 p-6 rounded-xl">
                                   <h3 className="text-xs font-mono text-indigo-400 uppercase tracking-widest mb-2 flex items-center gap-2"><Zap size={14}/> Board-Level Valuation</h3>
-                                  <p className="text-sm text-zinc-300 leading-relaxed">
+                                  <p className="text-sm text-zinc-700 leading-relaxed">
                                       Every <strong>{tool.toolName}</strong> computation terminates in an Executive Briefing PDF. We bypass generalized metrics to give you a deterministic, Board-ready artifact that maps directly to our Sovereign Enterprise Curriculum, explicitly training your teams to eradicate the exact vulnerability locally.
                                   </p>
                               </div>
@@ -162,35 +162,35 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                 <div className="mb-24">
                     <div className="text-center mb-10">
                         <h3 className="text-3xl font-bold mb-3">Head-To-Head Architecture</h3>
-                        <p className="text-zinc-500">Why {competitor.name} fails in the boardroom.</p>
+                        <p className="text-zinc-700">Why {competitor.name} fails in the boardroom.</p>
                     </div>
-                    <div className="bg-[#0a0a0b] border border-white/10 rounded-2xl overflow-hidden">
+                    <div className="bg-white border border-zinc-200 rounded-2xl overflow-hidden">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="bg-white/5 border-b border-white/10">
-                                    <th className="p-6 text-sm font-bold text-zinc-300 uppercase tracking-widest w-1/2">Capability</th>
-                                    <th className="p-6 text-sm font-bold text-zinc-500 uppercase tracking-widest w-1/4 text-center border-l border-white/5">{competitor.name}</th>
-                                    <th className="p-6 text-sm font-bold text-indigo-400 uppercase tracking-widest w-1/4 text-center border-l border-white/5">{tool.toolName}</th>
+                                <tr className="bg-white/5 border-b border-zinc-200">
+                                    <th className="p-6 text-sm font-bold text-zinc-700 uppercase tracking-widest w-1/2">Capability</th>
+                                    <th className="p-6 text-sm font-bold text-zinc-500 uppercase tracking-widest w-1/4 text-center border-l border-zinc-200">{competitor.name}</th>
+                                    <th className="p-6 text-sm font-bold text-indigo-400 uppercase tracking-widest w-1/4 text-center border-l border-zinc-200">{tool.toolName}</th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-white/5">
+                            <tbody className="divide-y divide-zinc-200">
                                 <tr className="hover:bg-white/5 transition-colors">
-                                    <td className="p-6 text-zinc-300">Deterministic Financial Translation (CODN)</td>
+                                    <td className="p-6 text-zinc-700">Deterministic Financial Translation (CODN)</td>
                                     <td className="p-6 text-center text-red-500 font-bold">❌</td>
                                     <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
                                 </tr>
                                 <tr className="hover:bg-white/5 transition-colors">
-                                    <td className="p-6 text-zinc-300">C-Suite Executive PDF Briefing Generation</td>
+                                    <td className="p-6 text-zinc-700">C-Suite Executive PDF Briefing Generation</td>
                                     <td className="p-6 text-center text-red-500 font-bold">❌</td>
                                     <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
                                 </tr>
                                 <tr className="hover:bg-white/5 transition-colors">
-                                    <td className="p-6 text-zinc-300">Sovereign Architecture / Local SLA Mapping</td>
+                                    <td className="p-6 text-zinc-700">Sovereign Architecture / Local SLA Mapping</td>
                                     <td className="p-6 text-center text-red-500 font-bold">❌</td>
                                     <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
                                 </tr>
                                 <tr className="hover:bg-white/5 transition-colors">
-                                    <td className="p-6 text-zinc-300">Surface-Level Telemetry / Industry Generalizations</td>
+                                    <td className="p-6 text-zinc-700">Surface-Level Telemetry / Industry Generalizations</td>
                                     <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
                                     <td className="p-6 text-center text-red-500 font-bold">❌</td>
                                 </tr>

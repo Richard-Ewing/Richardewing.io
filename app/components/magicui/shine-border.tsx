@@ -53,7 +53,7 @@ export default function ShineBorder({
                 }}
             />
 
-            <div className="relative bg-obsidian rounded-xl h-full w-full z-10">
+            <div className="relative bg-white rounded-xl h-full w-full z-10">
                 {children}
             </div>
             <style jsx>{`

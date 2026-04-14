@@ -24,20 +24,20 @@ export default function CleanTechPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/industries" className="hover:text-cyan-400">Industries</Link><span>/</span><span className="text-emerald-400 font-bold">CleanTech</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
                         CleanTech{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Product Economics</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 mb-12 max-w-2xl">Clean energy and climate technology face R&D challenges shaped by legacy grid infrastructure, complex emissions accounting, evolving regulations, and massive IoT deployments.</p>
+                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">Clean energy and climate technology face R&D challenges shaped by legacy grid infrastructure, complex emissions accounting, evolving regulations, and massive IoT deployments.</p>
 
                     <div className="space-y-6 mb-16">
                         {sections.map((s, i) => (
                             <div key={i} className={`rounded-2xl border p-8 ${colorMap[s.color]}`}>
                                 <h2 className={`text-2xl font-grotesk font-bold mb-3 ${textMap[s.color]}`}>{s.title}</h2>
-                                <p className="text-zinc-400 mb-4">{s.description}</p>
+                                <p className="text-zinc-600 mb-4">{s.description}</p>
                                 <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">{s.stats}</span>
                             </div>
                         ))}
@@ -45,7 +45,7 @@ export default function CleanTechPage() {
 
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 text-center">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">CleanTech R&D Audit</h2>
-                        <p className="text-zinc-300 mb-6">Quantify your grid integration debt, carbon accounting complexity, and IoT infrastructure costs.</p>
+                        <p className="text-zinc-700 mb-6">Quantify your grid integration debt, carbon accounting complexity, and IoT infrastructure costs.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-bold hover:opacity-90 transition-opacity">Book CleanTech Audit →</Link>
                     </div>
                 </div>

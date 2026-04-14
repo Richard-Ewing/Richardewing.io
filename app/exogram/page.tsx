@@ -27,7 +27,7 @@ export default function ExogramPage() {
                         <p className="text-xl text-purple-400 mb-4">
                             The Verification Infrastructure for AI
                         </p>
-                        <p className="text-zinc-400 max-w-2xl mx-auto mb-8">
+                        <p className="text-zinc-600 max-w-2xl mx-auto mb-8">
                             AI systems generate language. Exogram maintains reality. A verification layer that sits between AI models and your application, ensuring every output is structurally valid, operationally safe, and auditably correct.
                         </p>
 
@@ -39,7 +39,7 @@ export default function ExogramPage() {
                                     <Image src="/assets/headshot.jpg" alt="Richard Ewing" width={32} height={32} className="rounded-full object-cover grayscale opacity-80" />
                                     <div className="text-left flex-1">
                                         <p className="text-white font-semibold text-xs leading-tight">Founded by Richard Ewing</p>
-                                        <p className="text-zinc-500 text-[10px] leading-tight">Product Economist</p>
+                                        <p className="text-zinc-700 text-[10px] leading-tight">Product Economist</p>
                                     </div>
                                     <div className="pl-3 border-l border-zinc-200 h-6 flex items-center">
                                         <span className="text-green-500 text-[10px] font-mono tracking-wider">LIVE</span>
@@ -61,14 +61,14 @@ export default function ExogramPage() {
                 <section className="section">
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-2xl font-bold text-white mb-8 text-center">The Problem</h2>
-                        <p className="text-xl text-center text-zinc-600 mb-12">
+                        <p className="text-xl text-center text-zinc-800 mb-12">
                             AI didn&apos;t fail because it&apos;s not smart enough.<br />
                             <span className="text-purple-400">It failed because it doesn&apos;t know what it&apos;s allowed to be wrong about.</span>
                         </p>
                         <div className="grid-2">
                             <div className="card">
                                 <h3 className="font-semibold text-white mb-4">Modern AI Systems:</h3>
-                                <ul className="space-y-2 text-zinc-600 text-sm">
+                                <ul className="space-y-2 text-zinc-800 text-sm">
                                     <li>• Generate fluent language without knowing truth</li>
                                     <li>• Forget prior decisions and context</li>
                                     <li>• Blend facts with confident confabulations</li>
@@ -79,7 +79,7 @@ export default function ExogramPage() {
                             </div>
                             <div className="card">
                                 <h3 className="font-semibold text-white mb-4">The Business Impact:</h3>
-                                <ul className="space-y-2 text-zinc-600 text-sm">
+                                <ul className="space-y-2 text-zinc-800 text-sm">
                                     <li>• Hallucinations become policy decisions</li>
                                     <li>• Guesses become financial commitments</li>
                                     <li>• Memory corruption becomes liability</li>
@@ -93,20 +93,20 @@ export default function ExogramPage() {
                 </section>
 
                 {/* The Stack */}
-                <section className="section bg-black/30 pt-0">
+                <section className="section bg-zinc-100 pt-0">
                     <div className="max-w-3xl mx-auto text-center">
                         <h2 className="text-2xl font-bold text-white mb-8">The Stack</h2>
-                        <p className="text-xl text-zinc-600 mb-12">Exogram is the missing layer in the AI stack.</p>
+                        <p className="text-xl text-zinc-800 mb-12">Exogram is the missing layer in the AI stack.</p>
                         <div className="space-y-4 max-w-md mx-auto">
                             <div className="px-6 py-4 rounded-lg bg-white/5 border border-zinc-200 text-left">
-                                <span className="text-zinc-500 text-sm">Layer 1</span>
+                                <span className="text-zinc-700 text-sm">Layer 1</span>
                                 <span className="text-white ml-4">COMPUTE</span>
-                                <span className="text-zinc-500 ml-4">→ GPUs, infrastructure</span>
+                                <span className="text-zinc-700 ml-4">→ GPUs, infrastructure</span>
                             </div>
                             <div className="px-6 py-4 rounded-lg bg-white/5 border border-zinc-200 text-left">
-                                <span className="text-zinc-500 text-sm">Layer 2</span>
+                                <span className="text-zinc-700 text-sm">Layer 2</span>
                                 <span className="text-white ml-4">MODELS</span>
-                                <span className="text-zinc-500 ml-4">→ OpenAI, Anthropic, etc.</span>
+                                <span className="text-zinc-700 ml-4">→ OpenAI, Anthropic, etc.</span>
                             </div>
                             <div className="px-6 py-4 rounded-lg bg-purple-600/20 border-2 border-purple-500 text-left">
                                 <span className="text-purple-400 text-sm">Layer 3</span>
@@ -114,17 +114,17 @@ export default function ExogramPage() {
                                 <span className="text-purple-400 ml-4">→ EXOGRAM</span>
                             </div>
                             <div className="px-6 py-4 rounded-lg bg-white/5 border border-zinc-200 text-left">
-                                <span className="text-zinc-500 text-sm">Layer 4</span>
+                                <span className="text-zinc-700 text-sm">Layer 4</span>
                                 <span className="text-white ml-4">APPLICATIONS</span>
-                                <span className="text-zinc-500 ml-4">→ Agents, Copilots, SaaS</span>
+                                <span className="text-zinc-700 ml-4">→ Agents, Copilots, SaaS</span>
                             </div>
                         </div>
 
                         <div className="mt-16 mb-4">
-                            <p className="text-xl md:text-2xl text-zinc-600 leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-xl md:text-2xl text-zinc-800 leading-relaxed max-w-3xl mx-auto">
                                 LLMs generate language. <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-bold">Exogram maintains reality.</span>
                             </p>
-                            <p className="text-lg md:text-xl text-zinc-600 mt-4 leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-lg md:text-xl text-zinc-800 mt-4 leading-relaxed max-w-3xl mx-auto">
                                 Together, they enable intelligence that remembers, reasons, and can be trusted.
                             </p>
                         </div>
@@ -135,7 +135,7 @@ export default function ExogramPage() {
                 <section className="section">
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-2xl font-bold text-white mb-4 text-center">Verification Architecture</h2>
-                        <p className="text-zinc-400 text-center mb-12 max-w-xl mx-auto">Four independent verification layers. Adopt incrementally. Each one reduces AI risk measurably.</p>
+                        <p className="text-zinc-600 text-center mb-12 max-w-xl mx-auto">Four independent verification layers. Adopt incrementally. Each one reduces AI risk measurably.</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {[
                                 { name: 'Schema Integrity Engine', desc: 'Validates every AI output against structural contracts. Catches hallucinated fields, missing data, and type mismatches in <5ms.', metric: '<5ms validation', cardClass: 'p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5', badgeClass: 'text-[10px] font-mono text-cyan-400 px-2 py-0.5 rounded border border-cyan-500/30' },
@@ -148,7 +148,7 @@ export default function ExogramPage() {
                                         <h3 className="text-white font-bold">{layer.name}</h3>
                                         <span className={layer.badgeClass}>{layer.metric}</span>
                                     </div>
-                                    <p className="text-sm text-zinc-400 leading-relaxed">{layer.desc}</p>
+                                    <p className="text-sm text-zinc-600 leading-relaxed">{layer.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -161,10 +161,10 @@ export default function ExogramPage() {
                 </section>
 
                 {/* Industry Use Cases Preview */}
-                <section className="section bg-black/30">
+                <section className="section bg-zinc-100">
                     <div className="max-w-4xl mx-auto text-center">
                         <h2 className="text-2xl font-bold text-white mb-4">Built for Every Industry Deploying AI</h2>
-                        <p className="text-zinc-400 mb-10 max-w-xl mx-auto">Healthcare, finance, legal, and enterprise teams trust Exogram to verify AI outputs before they reach users.</p>
+                        <p className="text-zinc-600 mb-10 max-w-xl mx-auto">Healthcare, finance, legal, and enterprise teams trust Exogram to verify AI outputs before they reach users.</p>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                             {[
                                 { icon: '🏥', label: 'Healthcare', stat: '99.8% accuracy' },
@@ -197,17 +197,17 @@ export default function ExogramPage() {
                             <Link href="/exogram/architecture" className="group p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5 hover:border-cyan-500/40 transition-all">
                                 <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">Deep Dive</span>
                                 <h3 className="text-xl font-bold text-white mt-2 mb-2 group-hover:text-cyan-300 transition-colors">Architecture</h3>
-                                <p className="text-sm text-zinc-400">4 verification layers, performance specs, and integration methods.</p>
+                                <p className="text-sm text-zinc-600">4 verification layers, performance specs, and integration methods.</p>
                             </Link>
                             <Link href="/exogram/use-cases" className="group p-6 rounded-xl border border-purple-500/20 bg-purple-500/5 hover:border-purple-500/40 transition-all">
                                 <span className="text-xs font-mono text-purple-400 uppercase tracking-widest">Industry</span>
                                 <h3 className="text-xl font-bold text-white mt-2 mb-2 group-hover:text-purple-300 transition-colors">Use Cases</h3>
-                                <p className="text-sm text-zinc-400">Healthcare, fintech, legal, and enterprise AI verification.</p>
+                                <p className="text-sm text-zinc-600">Healthcare, fintech, legal, and enterprise AI verification.</p>
                             </Link>
                             <Link href="/exogram/roadmap" className="group p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5 hover:border-emerald-500/40 transition-all">
                                 <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">Direction</span>
                                 <h3 className="text-xl font-bold text-white mt-2 mb-2 group-hover:text-emerald-300 transition-colors">Roadmap</h3>
-                                <p className="text-sm text-zinc-400">What&apos;s shipped, in progress, and planned for Q2-Q4 2026.</p>
+                                <p className="text-sm text-zinc-600">What&apos;s shipped, in progress, and planned for Q2-Q4 2026.</p>
                             </Link>
                         </div>
                     </div>
@@ -228,7 +228,7 @@ export default function ExogramPage() {
                                     <div className="text-left flex flex-col justify-center h-full">
                                         <p className="text-white font-semibold leading-none mb-1">Founded by Richard Ewing</p>
                                         <div className="flex items-center gap-2">
-                                            <p className="text-zinc-600 text-xs leading-none">Product Economist</p>
+                                            <p className="text-zinc-800 text-xs leading-none">Product Economist</p>
                                             <span className="text-emerald-500 text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-500/10 rounded border border-emerald-500/20 leading-none flex items-center h-4">Live</span>
                                         </div>
                                     </div>

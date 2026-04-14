@@ -92,11 +92,11 @@ export default function WorkshopsPage() {
                         Workshops &<br />
                         <span className="bg-gradient-to-r from-rose-400 to-purple-400 bg-clip-text text-transparent">Speaking.</span>
                     </h1>
-                    <p className="text-zinc-600 text-lg max-w-2xl mx-auto mb-4">
+                    <p className="text-zinc-800 text-lg max-w-2xl mx-auto mb-4">
                         Keynotes that make engineering leaders uncomfortable.
                         Workshops that make them effective.
                     </p>
-                    <p className="text-zinc-600 text-sm">
+                    <p className="text-zinc-800 text-sm">
                         Published in CIO.com · Built In · Mind the Product · HackerNoon
                     </p>
                 </section>
@@ -110,18 +110,18 @@ export default function WorkshopsPage() {
                         {keynotes.map((k, i) => (
                             <div key={i} className="card p-6 md:p-8 hover:border-rose-500/30 transition-colors">
                                 <div className="flex items-start justify-between gap-4 mb-4">
-                                    <h3 className="text-xl font-bold text-white">{k.title}</h3>
-                                    <span className="text-xs text-zinc-600 font-mono whitespace-nowrap flex items-center gap-1">
+                                    <h3 className="text-xl font-bold text-zinc-900">{k.title}</h3>
+                                    <span className="text-xs text-zinc-800 font-mono whitespace-nowrap flex items-center gap-1">
                                         <Clock className="w-3 h-3" /> {k.duration}
                                     </span>
                                 </div>
-                                <p className="text-zinc-500 text-sm mb-4">
+                                <p className="text-zinc-700 text-sm mb-4">
                                     <Users className="w-3 h-3 inline mr-1" />
                                     {k.audience}
                                 </p>
                                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                     {k.highlights.map((h, j) => (
-                                        <li key={j} className="flex items-start gap-2 text-zinc-400 text-sm">
+                                        <li key={j} className="flex items-start gap-2 text-zinc-600 text-sm">
                                             <CheckCircle className="w-3 h-3 text-rose-400/50 mt-1 flex-shrink-0" />
                                             {h}
                                         </li>
@@ -141,11 +141,11 @@ export default function WorkshopsPage() {
                         {workshops.map((w, i) => (
                             <div key={i} className="card p-6 flex flex-col">
                                 <h3 className="text-lg font-bold text-white mb-2">{w.title}</h3>
-                                <p className="text-zinc-500 text-xs font-mono mb-1">{w.format} · {w.participants}</p>
-                                <p className="text-zinc-400 text-sm mb-4 flex-1">{w.desc}</p>
+                                <p className="text-zinc-700 text-xs font-mono mb-1">{w.format} · {w.participants}</p>
+                                <p className="text-zinc-600 text-sm mb-4 flex-1">{w.desc}</p>
                                 <div className="flex items-center justify-between pt-4 border-t border-zinc-200 mb-4">
-                                    <span className="text-xl font-bold text-white">{w.price}</span>
-                                    <span className="text-xs text-zinc-500">+ travel</span>
+                                    <span className="text-xl font-bold text-zinc-900">{w.price}</span>
+                                    <span className="text-xs text-zinc-700">+ travel</span>
                                 </div>
                                 <a
                                     href={`/api/buy/${w.productId}`}
@@ -162,7 +162,7 @@ export default function WorkshopsPage() {
                 <section className="section max-w-3xl mx-auto text-center">
                     <div className="card p-8 md:p-12 border-rose-500/20 bg-gradient-to-br from-rose-500/5 to-transparent">
                         <h2 className="text-2xl font-bold text-white mb-4 font-grotesk">Book a Speaking Engagement</h2>
-                        <p className="text-zinc-400 mb-6">
+                        <p className="text-zinc-600 mb-6">
                             Keynote fees start at $5,000. Workshop fees start at $5,000.
                             Travel and accommodations are additional.
                         </p>

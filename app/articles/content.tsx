@@ -52,7 +52,7 @@ export default function ArticlesPage() {
             {/* Background FX */}
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                 <span>Knowledge</span><span>/</span><span className="text-cyan-400 font-bold">Canonical Hub</span>
             </div>
 
@@ -61,9 +61,9 @@ export default function ArticlesPage() {
                     <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
                         The Canonical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">Hub.</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl">
+                    <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl">
                         Every framework, definition, and article I've published. <br />
-                        <span className="text-white">This is the source material. Cite it.</span>
+                        <span className="text-zinc-900">This is the source material. Cite it.</span>
                     </p>
 
                     {/* Quick Links */}
@@ -87,8 +87,8 @@ export default function ArticlesPage() {
                         </div>
 
                         <div className="relative z-10">
-                            <div className="flex items-center gap-3 mb-4 text-xs font-mono text-zinc-400 uppercase tracking-widest">
-                                <span className="text-white">{featuredArticle.publication}</span>
+                            <div className="flex items-center gap-3 mb-4 text-xs font-mono text-zinc-600 uppercase tracking-widest">
+                                <span className="text-zinc-900">{featuredArticle.publication}</span>
                                 <span>•</span>
                                 <span>{featuredArticle.date}</span>
                             </div>
@@ -97,7 +97,7 @@ export default function ArticlesPage() {
                                 {featuredArticle.title}
                             </h2>
 
-                            <p className="text-lg text-zinc-300 mb-8 max-w-2xl">
+                            <p className="text-lg text-zinc-700 mb-8 max-w-2xl">
                                 {featuredArticle.description}
                             </p>
 
@@ -114,7 +114,7 @@ export default function ArticlesPage() {
                 <div id="frameworks" className="mb-20">
                     <div className="mb-8">
                         <h2 className="text-2xl font-bold text-white mb-2 font-grotesk">Frameworks I've Coined</h2>
-                        <p className="text-zinc-400 text-sm">Canonical definitions. Cite these.</p>
+                        <p className="text-zinc-600 text-sm">Canonical definitions. Cite these.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -128,7 +128,7 @@ export default function ArticlesPage() {
                                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors font-grotesk">
                                         {fw.name}
                                     </h3>
-                                    <p className="text-sm text-zinc-400 mb-6 flex-grow line-clamp-3">
+                                    <p className="text-sm text-zinc-600 mb-6 flex-grow line-clamp-3">
                                         {fw.definition}
                                     </p>
                                     <div className="text-xs font-bold uppercase tracking-widest text-cyan-500 group-hover:text-cyan-300 flex items-center gap-2">
@@ -166,7 +166,7 @@ export default function ArticlesPage() {
                                         className={`h-6 w-auto object-contain transition-all mx-auto ${selectedPublication === pub.name ? 'opacity-100' : 'opacity-50 group-hover:opacity-100'}`}
                                     />
                                 </div>
-                                <div className={`text-xs font-mono uppercase tracking-widest transition-colors w-full text-center ${selectedPublication === pub.name ? 'text-cyan-400' : 'text-zinc-500 group-hover:text-zinc-400'}`}>
+                                <div className={`text-xs font-mono uppercase tracking-widest transition-colors w-full text-center ${selectedPublication === pub.name ? 'text-cyan-400' : 'text-zinc-700 group-hover:text-zinc-600'}`}>
                                     {selectedPublication === pub.name ? 'Viewing' : 'Filter'}
                                 </div>
                             </button>
@@ -206,14 +206,14 @@ export default function ArticlesPage() {
                                         <div>
                                             <div className="flex justify-between items-center mb-4">
                                                 <div className="flex items-center gap-2">
-                                                    <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest border border-zinc-200 px-2 py-0.5 rounded-full">{article.source}</span>
+                                                    <span className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest border border-zinc-200 px-2 py-0.5 rounded-full">{article.source}</span>
                                                 </div>
-                                                <span className="font-mono text-xs text-zinc-600 uppercase tracking-widest">{article.date}</span>
+                                                <span className="font-mono text-xs text-zinc-800 uppercase tracking-widest">{article.date}</span>
                                             </div>
                                             <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors font-grotesk">{article.title}</h3>
-                                            <p className="text-zinc-500 text-sm leading-relaxed mb-4 line-clamp-2">{article.description}</p>
+                                            <p className="text-zinc-700 text-sm leading-relaxed mb-4 line-clamp-2">{article.description}</p>
                                         </div>
-                                        <div className="text-xs font-bold uppercase tracking-widest text-zinc-500 group-hover:text-zinc-900 transition-colors">
+                                        <div className="text-xs font-bold uppercase tracking-widest text-zinc-700 group-hover:text-zinc-900 transition-colors">
                                             Read
                                         </div>
                                     </GlowCard>
@@ -223,7 +223,7 @@ export default function ArticlesPage() {
                         </div>
                     ) : (
                         <div className="text-center py-20 border border-dashed border-zinc-200 rounded-2xl">
-                            <p className="text-zinc-500">No articles found for this filter.</p>
+                            <p className="text-zinc-700">No articles found for this filter.</p>
                             <button onClick={() => setSelectedPublication(null)} className="mt-4 text-cyan-400 hover:text-cyan-300 text-sm">Clear Filters</button>
                         </div>
                     )}

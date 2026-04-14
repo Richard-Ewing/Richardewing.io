@@ -9,7 +9,7 @@ export default function CheckoutPending() {
                     <Lock className="w-8 h-8 text-violet-400" />
                 </div>
                 <h1 className="text-3xl font-bold font-grotesk text-white mb-4">Enterprise Checkout Pending</h1>
-                <p className="text-zinc-400 mb-8 leading-relaxed">
+                <p className="text-zinc-600 mb-8 leading-relaxed">
                     This premium licensing tier is currently being securely integrated with Stripe. 
                     Please return shortly or contact your account representative to manually process this transaction.
                 </p>

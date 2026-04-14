@@ -25,7 +25,7 @@ export default function CurriculumQuiz({ quiz }: { quiz: Quiz }) {
                     const isCorrectOption = idx === quiz.correctIndex;
                     
                     let bgClass = "bg-white/[0.02] border-zinc-200 hover:bg-white/[0.05]";
-                    let textClass = "text-zinc-300";
+                    let textClass = "text-zinc-700";
                     let icon = null;
 
                     if (hasSubmitted) {
@@ -77,7 +77,7 @@ export default function CurriculumQuiz({ quiz }: { quiz: Quiz }) {
                         <div className={`text-sm font-bold mb-1 ${isCorrect ? 'text-emerald-400' : 'text-red-400'}`}>
                             {isCorrect ? 'Correct!' : 'Incorrect.'}
                         </div>
-                        <p className="text-zinc-300 text-sm leading-relaxed">{quiz.explanation}</p>
+                        <p className="text-zinc-700 text-sm leading-relaxed">{quiz.explanation}</p>
                     </div>
                 </div>
             )}

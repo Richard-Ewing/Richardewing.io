@@ -158,7 +158,7 @@ export default function IndustriesPage() {
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
                         Industries We <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-orange-400">Serve</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
                         Product economics principles are universal. The application is vertical-specific. Each industry carries unique debt profiles, regulatory burdens, and AI risk factors.
                     </p>
 
@@ -171,7 +171,7 @@ export default function IndustriesPage() {
                                         <div>
                                             <div className={`text-xs font-mono uppercase tracking-widest mb-1 ${textMap[v.color]}`}>{v.subtitle}</div>
                                             <h2 className="text-2xl font-grotesk font-bold text-white mb-3">{v.title}</h2>
-                                            <p className="text-zinc-400 mb-4">{v.description}</p>
+                                            <p className="text-zinc-600 mb-4">{v.description}</p>
                                             <span className={`text-sm font-bold uppercase tracking-widest ${textMap[v.color]}`}>Learn More →</span>
                                         </div>
                                     </div>
@@ -181,7 +181,7 @@ export default function IndustriesPage() {
                     </div>
 
                     <div className="text-center py-12 border-t border-zinc-200">
-                        <p className="text-zinc-400 mb-4">Don&apos;t see your industry?</p>
+                        <p className="text-zinc-600 mb-4">Don&apos;t see your industry?</p>
                         <Link href="/advisory" className="text-cyan-400 hover:text-cyan-300 font-bold uppercase tracking-widest text-sm">
                             Book a Custom Assessment →
                         </Link>

@@ -52,7 +52,7 @@ export default function SocialProofTicker() {
 
     return (
         <div className={`fixed bottom-20 left-4 z-40 max-w-sm transition-all duration-300 ${animating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
-            <div className="bg-zinc-900/95 backdrop-blur-md border border-zinc-200 rounded-xl p-4 shadow-2xl">
+            <div className="bg-white/95 backdrop-blur-md border border-zinc-200 rounded-xl p-4 shadow-2xl">
                 <button
                     onClick={() => { setDismissed(true); setShow(false); sessionStorage.setItem('social-proof-dismissed', 'true'); }}
                     className="absolute top-2 right-2 text-zinc-600 hover:text-zinc-900 transition-colors"
@@ -63,8 +63,8 @@ export default function SocialProofTicker() {
                 <div className="flex items-start gap-3">
                     <div className="text-lg flex-shrink-0">{msg.emoji}</div>
                     <div>
-                        <p className="text-white text-sm font-medium leading-tight">{msg.text}</p>
-                        <p className="text-zinc-500 text-xs mt-1 flex items-center gap-1">
+                        <p className="text-zinc-900 text-sm font-medium leading-tight">{msg.text}</p>
+                        <p className="text-zinc-700 text-xs mt-1 flex items-center gap-1">
                             <TrendingUp className="w-3 h-3" />
                             {msg.time}
                         </p>

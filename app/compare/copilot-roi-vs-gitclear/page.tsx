@@ -21,18 +21,18 @@ const rows = [
 
 export default function CopilotROIvsGitClearPage() {
     return (
-        <main className="pt-20 bg-black min-h-screen">
+        <main className="pt-20 bg-white min-h-screen">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/compare" className="hover:text-fuchsia-400">Compare</Link><span>/</span><span className="text-fuchsia-400 font-bold">Copilot ROI vs GitClear</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
-                        Copilot ROI Forecaster <span className="text-zinc-500">vs</span>{' '}
+                        Copilot ROI Forecaster <span className="text-zinc-700">vs</span>{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-cyan-400">GitClear</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
                         GitClear and Jellyfish track code output volume to prove your AI licenses are working. Exogram calculates the <span className="text-white font-bold">exact EBITDA destruction</span> caused by downstream Vibe Coding Debt and senior engineer review drag.
                     </p>
 
@@ -43,15 +43,15 @@ export default function CopilotROIvsGitClearPage() {
                                 <tr className="border-b border-zinc-200">
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">Dimension</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-fuchsia-400 uppercase tracking-widest">Richard Ewing (Copilot ROI)</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-400 uppercase tracking-widest">GitClear</th>
+                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-600 uppercase tracking-widest">GitClear</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
                                     <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02]">
-                                        <td className="py-4 px-4 text-sm text-zinc-400 font-bold">{row.dimension}</td>
-                                        <td className="py-4 px-4 text-sm text-white">{row.exogram}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-400">{row.gitclear}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-600 font-bold">{row.dimension}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-900">{row.exogram}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-600">{row.gitclear}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -61,11 +61,11 @@ export default function CopilotROIvsGitClearPage() {
                     {/* Verdict */}
                     <div className="rounded-2xl border border-fuchsia-500/30 bg-fuchsia-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">The Verdict</h2>
-                        <p className="text-zinc-300 mb-6">
+                        <p className="text-zinc-700 mb-6">
                             <strong>Volume is not Value.</strong> GitClear will tell you your developers are writing 40% more code since buying Copilot. 
                             Our methodology will tell you that the 40% additional code is mathematically destroying your senior engineering capacity in review cycles, resulting in a net negative Return on AI Investment.
                         </p>
-                        <p className="text-zinc-400 mb-8">
+                        <p className="text-zinc-600 mb-8">
                             If you want to track developer commits, use GitClear. If you are a CFO trying to figure out why R&D spending is up but feature delivery is stalled, use the Copilot ROI Tool.
                         </p>
                         <Link href="/tools/copilot-roi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white font-bold hover:shadow-[0_0_20px_rgba(217,70,239,0.3)] transition-all">
@@ -75,7 +75,7 @@ export default function CopilotROIvsGitClearPage() {
 
                     {/* CTA */}
                     <div className="text-center py-12 border-t border-zinc-200">
-                        <p className="text-zinc-400 mb-4">Want the board-level readout on your AI investment?</p>
+                        <p className="text-zinc-600 mb-4">Want the board-level readout on your AI investment?</p>
                         <Link href="/advisory" className="text-fuchsia-400 hover:text-fuchsia-300 font-bold uppercase tracking-widest text-sm">
                             Book an R&D Capital Audit →
                         </Link>

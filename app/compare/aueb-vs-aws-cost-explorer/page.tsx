@@ -25,15 +25,15 @@ export default function AUEBvsAWSPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-orange-400 font-bold">AUEB vs AWS Cost Explorer</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
-                        AUEB <span className="text-zinc-500">vs</span>{' '}
+                        AUEB <span className="text-zinc-700">vs</span>{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400">AWS Cost Explorer</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
                         AWS Cost Explorer tells you how much you spent on cloud services. AUEB tells you <span className="text-white font-bold">whether your AI features will ever make money</span>. Cloud billing ≠ AI economics.
                     </p>
 
@@ -43,15 +43,15 @@ export default function AUEBvsAWSPage() {
                                 <tr className="border-b border-zinc-200">
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">Dimension</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-orange-400 uppercase tracking-widest">AUEB</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-400 uppercase tracking-widest">AWS Cost Explorer</th>
+                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-600 uppercase tracking-widest">AWS Cost Explorer</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
                                     <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02]">
-                                        <td className="py-4 px-4 text-sm text-zinc-400 font-bold">{row.dimension}</td>
-                                        <td className="py-4 px-4 text-sm text-white">{row.aueb}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-400">{row.aws}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-600 font-bold">{row.dimension}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-900">{row.aueb}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-600">{row.aws}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -60,10 +60,10 @@ export default function AUEBvsAWSPage() {
 
                     <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">The Verdict</h2>
-                        <p className="text-zinc-300 mb-6">
+                        <p className="text-zinc-700 mb-6">
                             <strong>They answer completely different questions.</strong> AWS Cost Explorer is essential for managing cloud bills. AUEB is essential for knowing whether your AI product strategy is viable.
                         </p>
-                        <p className="text-zinc-400 mb-8">
+                        <p className="text-zinc-600 mb-8">
                             You need AWS Cost Explorer to know your inputs. You need AUEB to know your outputs. The gap between them is where AI products die.
                         </p>
                         <Link href="/tools/aueb" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-orange-500 to-yellow-600 text-white font-bold hover:opacity-90 transition-opacity">
@@ -72,7 +72,7 @@ export default function AUEBvsAWSPage() {
                     </div>
 
                     <div className="text-center py-12 border-t border-zinc-200">
-                        <p className="text-zinc-400 mb-4">Need AI economics advisory?</p>
+                        <p className="text-zinc-600 mb-4">Need AI economics advisory?</p>
                         <Link href="/advisory" className="text-orange-400 hover:text-orange-300 font-bold uppercase tracking-widest text-sm">
                             Book a $2,500 AI Economics Diagnostic →
                         </Link>

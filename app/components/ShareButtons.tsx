@@ -35,7 +35,7 @@ export default function ShareButtons({ url, title, description }: ShareButtonsPr
 
     return (
         <div className="flex items-center gap-2">
-            <span className="text-xs text-zinc-600 font-mono uppercase tracking-wider">Share:</span>
+            <span className="text-xs text-zinc-800 font-mono uppercase tracking-wider">Share:</span>
             <a
                 href={linkedInShareUrl}
                 target="_blank"
@@ -43,7 +43,7 @@ export default function ShareButtons({ url, title, description }: ShareButtonsPr
                 className="p-2 bg-white/5 border border-zinc-200 rounded-lg hover:bg-blue-500/10 hover:border-blue-500/30 transition-all group"
                 title="Share on LinkedIn"
             >
-                <Linkedin className="w-4 h-4 text-zinc-400 group-hover:text-blue-400 transition-colors" />
+                <Linkedin className="w-4 h-4 text-zinc-600 group-hover:text-blue-400 transition-colors" />
             </a>
             <button
                 onClick={handleCopy}
@@ -53,7 +53,7 @@ export default function ShareButtons({ url, title, description }: ShareButtonsPr
                 {copied ? (
                     <Check className="w-4 h-4 text-emerald-400" />
                 ) : (
-                    <LinkIcon className="w-4 h-4 text-zinc-400 group-hover:text-cyan-400 transition-colors" />
+                    <LinkIcon className="w-4 h-4 text-zinc-600 group-hover:text-cyan-400 transition-colors" />
                 )}
             </button>
         </div>
