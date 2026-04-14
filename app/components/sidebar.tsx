@@ -10,8 +10,8 @@ const NavItem = ({ href, children, isActive = false, onClick }: { href: string; 
         href={href}
         onClick={onClick}
         className={`block text-sm py-2 px-4 border-l-2 transition-all ${isActive
-            ? 'text-white border-cyan-400 bg-cyan-400/5'
-            : 'text-zinc-400 border-transparent hover:text-white hover:border-white/50'
+            ? 'text-zinc-900 border-purple-500 bg-purple-50'
+            : 'text-zinc-500 border-transparent hover:text-zinc-900 hover:border-zinc-300'
             }`}
     >
         {children}
@@ -45,7 +45,7 @@ export function Sidebar() {
             ]
         },
         {
-            label: 'Free Tools', labelClass: 'text-cyan-400', items: [
+            label: 'Free Tools', labelClass: 'text-cyan-600', items: [
                 { href: '/tools', label: 'All Tools →' },
                 { href: '/tools/pdi', label: 'Product Debt Audit', highlight: true },
                 { href: '/tools/audit-interview', label: 'Audit Interview' },
@@ -66,19 +66,19 @@ export function Sidebar() {
     return (
         <>
             {/* Mobile Header */}
-            <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-b border-white/5 px-4 py-3 flex items-center justify-between">
+            <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-zinc-200 px-4 py-3 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-zinc-800 overflow-hidden">
                         <Image src="/assets/images/headshot.jpg" alt="RE" width={40} height={40} className="object-cover grayscale" />
                     </div>
                     <div>
-                        <div className="text-white font-bold text-sm">RICHARD EWING</div>
+                        <div className="text-zinc-900 font-bold text-sm">RICHARD EWING</div>
                         <div className="text-zinc-500 text-[10px] font-mono tracking-widest">PRODUCT ECONOMIST</div>
                     </div>
                 </Link>
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="p-2 text-white hover:text-cyan-400 transition"
+                    className="p-2 text-zinc-900 hover:text-purple-600 transition"
                     aria-label="Toggle menu"
                 >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,7 +94,7 @@ export function Sidebar() {
             {/* Mobile Overlay */}
             {isOpen && (
                 <div
-                    className="lg:hidden fixed inset-0 bg-black/80 z-40"
+                    className="lg:hidden fixed inset-0 bg-black/30 z-40"
                     onClick={closeMenu}
                 />
             )}
@@ -102,7 +102,7 @@ export function Sidebar() {
             {/* Sidebar */}
             <aside className={`
         fixed lg:sticky top-0 left-0 h-screen z-50
-        bg-black/95 backdrop-blur-xl border-r border-white/5
+        bg-white/95 backdrop-blur-xl border-r border-zinc-200
         w-[280px] lg:w-auto
         transform transition-transform duration-300 ease-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
@@ -115,7 +115,7 @@ export function Sidebar() {
                         <div className="w-20 h-20 rounded-full border-2 border-zinc-700 mb-4 overflow-hidden grayscale hover:grayscale-0 transition duration-500">
                             <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" width={80} height={80} className="object-cover" priority />
                         </div>
-                        <h3 className="text-white font-bold tracking-tight text-lg">RICHARD EWING</h3>
+                        <h3 className="text-zinc-900 font-bold tracking-tight text-lg">RICHARD EWING</h3>
                         <span className="font-mono text-xs text-zinc-500 tracking-widest block mt-1">PRODUCT ECONOMIST</span>
                     </Link>
                 </div>
