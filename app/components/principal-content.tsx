@@ -95,7 +95,7 @@ const AIExpandCard = ({
                     <button
                         onClick={askAI}
                         disabled={loading}
-                        className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-400 hover:text-white transition group"
+                        className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-400 hover:text-zinc-900 transition group"
                     >
                         {loading ? (
                             <>
@@ -111,7 +111,7 @@ const AIExpandCard = ({
                     </button>
 
                     {expanded && aiResponse && (
-                        <div className="mt-4 pt-4 border-t border-white/10 text-sm text-zinc-300 leading-relaxed animate-fade-in-up">
+                        <div className="mt-4 pt-4 border-t border-zinc-200 text-sm text-zinc-300 leading-relaxed animate-fade-in-up">
                             {renderAIResponse(aiResponse)}
                         </div>
                     )}
@@ -141,7 +141,7 @@ export default function PrincipalContent() {
                             <div className="relative group shrink-0">
                                 {/* Animated glow ring */}
                                 <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-cobalt to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-500 animate-pulse" />
-                                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-zinc-800 border-2 border-white/20 overflow-hidden relative">
+                                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-zinc-800 border-2 border-zinc-300 overflow-hidden relative">
                                     <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" fill className="object-cover grayscale group-hover:grayscale-0 transition duration-500" />
                                 </div>
                             </div>
@@ -156,7 +156,7 @@ export default function PrincipalContent() {
                         </div>
 
                         {/* Power Stats */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 border-t border-white/10 pt-8">
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 border-t border-zinc-200 pt-8">
                             <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
                                 <div className="text-3xl sm:text-4xl font-bold text-cyan-400">
                                     <NumberTicker value={25} prefix="$" suffix="M" />
@@ -195,7 +195,7 @@ export default function PrincipalContent() {
                             { name: 'Built In', note: "Editor's Pick", href: 'https://builtin.com/authors/richard-ewing', color: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/5' },
                             { name: 'Mind the Product', note: 'Featured Author', href: 'https://www.mindtheproduct.com/profile/richard-ewing', color: 'text-purple-400 border-purple-500/30 bg-purple-500/5' },
                             { name: 'HackerNoon', note: 'Contributing Author', href: 'https://hackernoon.com/u/richardewing', color: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/5' },
-                            { name: 'Medium', note: 'Author', href: 'https://medium.com/@richardewing', color: 'text-white border-white/20 bg-white/5' },
+                            { name: 'Medium', note: 'Author', href: 'https://medium.com/@richardewing', color: 'text-white border-zinc-300 bg-white/5' },
                             { name: 'Amazon', note: 'Published Author', href: 'https://www.amazon.com/author/richardewing', color: 'text-amber-400 border-amber-500/30 bg-amber-500/5' },
                             { name: 'AWS Startups', note: 'Showcase Company', href: 'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5', color: 'text-orange-400 border-orange-500/30 bg-orange-500/5' },
                         ].map(pub => (
@@ -289,22 +289,22 @@ export default function PrincipalContent() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div className="p-5 border border-white/10 rounded-xl hover:border-cyan-500/30 transition group">
+                        <div className="p-5 border border-zinc-200 rounded-xl hover:border-cyan-500/30 transition group">
                             <div className="font-mono text-xs text-cyan-400 uppercase mb-2">Framework 01</div>
                             <h3 className="text-white font-bold mb-2 group-hover:text-cyan-400 transition">APER™ Diagnostic</h3>
                             <p className="text-zinc-500 text-sm">Actionable Product Economic Review. Forensic audit of engineering throughput vs. revenue impact.</p>
                         </div>
-                        <div className="p-5 border border-white/10 rounded-xl hover:border-cobalt/30 transition group">
+                        <div className="p-5 border border-zinc-200 rounded-xl hover:border-cobalt/30 transition group">
                             <div className="font-mono text-xs text-cobalt uppercase mb-2">Framework 02</div>
                             <h3 className="text-white font-bold mb-2 group-hover:text-cobalt transition">Q-PEP™ Protocol</h3>
                             <p className="text-zinc-500 text-sm">Qualitative-Profitability Efficiency Protocol. Surgery for unit-economic insolvency.</p>
                         </div>
-                        <div className="p-5 border border-white/10 rounded-xl hover:border-red-500/30 transition group">
+                        <div className="p-5 border border-zinc-200 rounded-xl hover:border-red-500/30 transition group">
                             <div className="font-mono text-xs text-red-400 uppercase mb-2">Framework 03</div>
                             <h3 className="text-white font-bold mb-2 group-hover:text-red-400 transition">Product Debt Index™</h3>
                             <p className="text-zinc-500 text-sm">AI-powered forensic engine to quantify capital leakage in your backlog.</p>
                         </div>
-                        <div className="p-5 border border-white/10 rounded-xl hover:border-gold/30 transition group">
+                        <div className="p-5 border border-zinc-200 rounded-xl hover:border-gold/30 transition group">
                             <div className="font-mono text-xs text-gold uppercase mb-2">Framework 04</div>
                             <h3 className="text-white font-bold mb-2 group-hover:text-gold transition">The Product Economist™</h3>
                             <p className="text-zinc-500 text-sm">15+ years of methodology distilled into an executive playbook. <span className="italic">O'Reilly book in progress.</span></p>
@@ -320,12 +320,12 @@ export default function PrincipalContent() {
                         <span className="w-6 h-0.5 bg-gold" /> Credentials
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="p-4 border border-white/10 rounded-xl hover:border-gold/30 transition group">
+                        <div className="p-4 border border-zinc-200 rounded-xl hover:border-gold/30 transition group">
                             <div className="font-mono text-xs text-gold uppercase mb-1">Master of Business Administration</div>
                             <div className="text-white font-bold group-hover:text-gold transition">City University of Seattle</div>
                             <div className="text-zinc-600 text-xs mt-1">Finance Concentration</div>
                         </div>
-                        <div className="p-4 border border-white/10 rounded-xl hover:border-cobalt/30 transition group">
+                        <div className="p-4 border border-zinc-200 rounded-xl hover:border-cobalt/30 transition group">
                             <div className="font-mono text-xs text-cobalt uppercase mb-1">Bachelor of Science</div>
                             <div className="text-white font-bold group-hover:text-cobalt transition">Computer Science</div>
                             <div className="text-zinc-600 text-xs mt-1">Technical Foundation</div>
@@ -336,7 +336,7 @@ export default function PrincipalContent() {
 
             {/* CTA */}
             <ScrollReveal delay={250}>
-                <div className="text-center py-8 border-t border-white/10">
+                <div className="text-center py-8 border-t border-zinc-200">
                     <p className="text-zinc-400 mb-4">Ready to work with a Product Economist?</p>
                     <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
                         <Link

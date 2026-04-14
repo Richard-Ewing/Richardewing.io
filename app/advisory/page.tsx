@@ -19,12 +19,12 @@ export default function AdvisoryPage() {
                         Executive Integration Partners
                     </div>
                     <BlurIn word="Beyond Architecture." className="text-5xl md:text-7xl font-bold font-grotesk tracking-tighter text-white mb-6" />
-                    <p className="text-gray-400 text-lg sm:text-xl max-w-3xl mx-auto mb-6 leading-relaxed">
+                    <p className="text-zinc-600 text-lg sm:text-xl max-w-3xl mx-auto mb-6 leading-relaxed">
                         The Curriculum provides the blueprints. Advisory provides the execution. 
                         I run specialized taskforces to secure Board-level outcomes: repatriating cloud costs, implementing sovereign AI architectures, and forensically auditing startups for Private Equity acquisition.
                     </p>
 
-                    <div className="inline-flex items-center gap-6 px-8 py-3 rounded-full bg-white/5 border border-white/10 text-xs font-mono font-bold tracking-widest text-zinc-400">
+                    <div className="inline-flex items-center gap-6 px-8 py-3 rounded-full bg-white/5 border border-zinc-200 text-xs font-mono font-bold tracking-widest text-zinc-400">
                         <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div> Q2 Capacity: 1 Slot</span>
                         <span className="text-zinc-700">|</span>
                         <span>$50M+ ARR Entities</span>
@@ -36,7 +36,7 @@ export default function AdvisoryPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
 
                         {/* TIER 1: Technical Due Diligence */}
-                        <div className="card bg-zinc-950/80 border border-white/5 relative overflow-hidden group">
+                        <div className="card bg-zinc-950/80 border border-zinc-200 relative overflow-hidden group">
                             <div className="p-8">
                                 <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-4">Tier 1: Private Equity</div>
                                 <h3 className="text-2xl font-bold text-white mb-2">Technical Due Diligence</h3>
@@ -57,7 +57,7 @@ export default function AdvisoryPage() {
                         </div>
 
                         {/* TIER 2: Fractional AI SecOps */}
-                        <ShineBorder className="card-featured relative p-0 overflow-hidden bg-zinc-950" color={["#10b981", "#34d399"]}>
+                        <ShineBorder className="card-featured relative p-0 overflow-hidden bg-white" color={["#10b981", "#34d399"]}>
                             <BorderBeam size={300} duration={12} delay={9} borderWidth={2} colorFrom="#10b981" colorTo="#3b82f6" />
                             <div className="p-8 relative z-10 bg-gradient-to-b from-emerald-900/10 to-transparent">
                                 <div className="absolute top-0 right-0 px-3 py-1 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold tracking-widest font-mono border-b border-l border-emerald-500/20 rounded-bl-lg">TOP TIER</div>
@@ -80,7 +80,7 @@ export default function AdvisoryPage() {
                         </ShineBorder>
 
                         {/* TIER 3: Curriculum Retainer */}
-                        <div className="card bg-zinc-950/80 border border-white/5 relative overflow-hidden group">
+                        <div className="card bg-zinc-950/80 border border-zinc-200 relative overflow-hidden group">
                             <div className="p-8">
                                 <div className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-4">Tier 3: Enterprise Scale</div>
                                 <h3 className="text-2xl font-bold text-white mb-2">Methodology Steering</h3>
@@ -104,14 +104,14 @@ export default function AdvisoryPage() {
                 </section>
 
                 {/* Additional / Footer Services */}
-                <section className="section-sm max-w-4xl mx-auto border-t border-white/10 pt-16">
+                <section className="section-sm max-w-4xl mx-auto border-t border-zinc-200 pt-16">
                     <div className="text-center mb-10">
                         <h2 className="text-2xl font-bold font-grotesk text-white">Standalone Diagnostics</h2>
                         <p className="text-zinc-500 text-sm mt-2">Specialized immediate-impact tactical sessions.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-black/50 border border-white/5 p-6 rounded-2xl hover:border-cyan-500/30 transition-all">
+                        <div className="bg-white/50 border border-zinc-200 p-6 rounded-2xl hover:border-cyan-500/30 transition-all">
                             <div className="flex justify-between items-start mb-2">
                                 <h3 className="text-lg font-bold text-white">The 60-Min Insolvency Audit</h3>
                                 <span className="font-mono text-cyan-400">$2,500</span>
@@ -120,7 +120,7 @@ export default function AdvisoryPage() {
                             <a href="/api/buy/insolvency_diagnostic" className="text-xs font-mono text-cyan-500 uppercase tracking-widest hover:text-cyan-400">Book Session →</a>
                         </div>
 
-                        <div className="bg-black/50 border border-white/5 p-6 rounded-2xl hover:border-amber-500/30 transition-all">
+                        <div className="bg-white/50 border border-zinc-200 p-6 rounded-2xl hover:border-amber-500/30 transition-all">
                             <div className="flex justify-between items-start mb-2">
                                 <h3 className="text-lg font-bold text-white">Gut-Check Evaluation</h3>
                                 <span className="font-mono text-amber-400">$450</span>

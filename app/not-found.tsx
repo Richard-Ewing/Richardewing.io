@@ -14,19 +14,19 @@ export default function NotFound() {
                             The page you&apos;re looking for doesn&apos;t exist or has been moved. Here are some places to start:
                         </p>
                         <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto mb-8">
-                            <Link href="/blog" className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-500/30 transition-colors">
+                            <Link href="/blog" className="p-4 rounded-xl bg-white/[0.03] border border-zinc-200 hover:border-cyan-500/30 transition-colors">
                                 <p className="text-white font-semibold text-sm">Blog</p>
                                 <p className="text-[11px] text-zinc-500">100+ articles</p>
                             </Link>
-                            <Link href="/articles" className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-500/30 transition-colors">
+                            <Link href="/articles" className="p-4 rounded-xl bg-white/[0.03] border border-zinc-200 hover:border-cyan-500/30 transition-colors">
                                 <p className="text-white font-semibold text-sm">Articles</p>
                                 <p className="text-[11px] text-zinc-500">Published work</p>
                             </Link>
-                            <Link href="/tools/pdi" className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-500/30 transition-colors">
+                            <Link href="/tools/pdi" className="p-4 rounded-xl bg-white/[0.03] border border-zinc-200 hover:border-cyan-500/30 transition-colors">
                                 <p className="text-white font-semibold text-sm">Free Tools</p>
                                 <p className="text-[11px] text-zinc-500">PDI, APER, AUEB</p>
                             </Link>
-                            <Link href="/advisory" className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-500/30 transition-colors">
+                            <Link href="/advisory" className="p-4 rounded-xl bg-white/[0.03] border border-zinc-200 hover:border-cyan-500/30 transition-colors">
                                 <p className="text-white font-semibold text-sm">Advisory</p>
                                 <p className="text-[11px] text-zinc-500">Book a session</p>
                             </Link>

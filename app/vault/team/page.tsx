@@ -40,7 +40,7 @@ export default async function TeamAdminPage() {
         <main className="min-h-screen pt-32 pb-24 px-6">
             <div className="max-w-4xl mx-auto">
                 
-                <Link href="/vault" className="inline-flex items-center text-xs font-bold text-zinc-500 uppercase tracking-widest hover:text-white transition-colors mb-8">
+                <Link href="/vault" className="inline-flex items-center text-xs font-bold text-zinc-500 uppercase tracking-widest hover:text-zinc-900 transition-colors mb-8">
                     <ChevronLeft className="w-4 h-4 mr-1" /> Back to Vault
                 </Link>
 
@@ -73,7 +73,7 @@ export default async function TeamAdminPage() {
                     </div>
 
                     {/* SEAT CAPACITY WIDGET */}
-                    <div className="card p-8 border-zinc-800 bg-black">
+                    <div className="card p-8 border-zinc-200 bg-black">
                         <div className="flex justify-between items-end mb-6">
                             <div>
                                 <h2 className="text-sm font-bold text-white uppercase tracking-widest mb-1">Seating Capacity</h2>
@@ -88,7 +88,7 @@ export default async function TeamAdminPage() {
                         </div>
 
                         {/* Progress Bar */}
-                        <div className="w-full h-2 bg-zinc-900 rounded-full overflow-hidden mb-4">
+                        <div className="w-full h-2 bg-zinc-50 rounded-full overflow-hidden mb-4">
                             { }
                             <div 
                                 className={`h-full transition-all ${isAtCapacity ? 'bg-red-500' : 'bg-cyan-500'}`} 
@@ -112,10 +112,10 @@ export default async function TeamAdminPage() {
                     </h2>
                     
                     {claimedMembers.length > 0 ? (
-                        <div className="card overflow-hidden border-zinc-800">
+                        <div className="card overflow-hidden border-zinc-200">
                             <table className="w-full text-left border-collapse">
                                 <thead>
-                                    <tr className="bg-zinc-900/50 border-b border-zinc-800 text-[10px] uppercase tracking-widest text-zinc-500">
+                                    <tr className="bg-white/80 border-b border-zinc-200 text-[10px] uppercase tracking-widest text-zinc-500">
                                         <th className="p-4 font-bold">Email Address</th>
                                         <th className="p-4 font-bold hidden sm:table-cell">User ID</th>
                                         <th className="p-4 font-bold text-right">Date Claimed</th>
@@ -123,7 +123,7 @@ export default async function TeamAdminPage() {
                                 </thead>
                                 <tbody>
                                     {claimedMembers.map((member, idx) => (
-                                        <tr key={idx} className="border-b border-zinc-900/50 hover:bg-zinc-900/30 transition-colors">
+                                        <tr key={idx} className="border-b border-zinc-900/50 hover:bg-white/40 transition-colors">
                                             <td className="p-4 flex items-center gap-3 text-white font-medium">
                                                 <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center">
                                                     <span className="text-xs text-cyan-400 font-bold">{member.email.charAt(0).toUpperCase()}</span>
@@ -142,7 +142,7 @@ export default async function TeamAdminPage() {
                             </table>
                         </div>
                     ) : (
-                        <div className="p-12 rounded-2xl border border-dashed border-zinc-800 bg-zinc-900/20 text-center">
+                        <div className="p-12 rounded-2xl border border-dashed border-zinc-200 bg-white/20 text-center">
                             <Users className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
                             <h3 className="text-lg font-bold text-white mb-2">No Seats Claimed Yet</h3>
                             <p className="text-sm text-zinc-500 max-w-md mx-auto">

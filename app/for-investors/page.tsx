@@ -48,7 +48,7 @@ export default function ForInvestorsPage() {
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="/advisory" className="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-bold hover:opacity-90 transition-opacity">Request Due Diligence Proposal →</Link>
-                            <Link href="/tools/pdi" className="px-8 py-4 rounded-lg border border-white/20 text-white font-bold hover:bg-white/5 transition-colors">Try PDI Calculator Free →</Link>
+                            <Link href="/tools/pdi" className="px-8 py-4 rounded-lg border border-zinc-300 text-white font-bold hover:bg-white/5 transition-colors">Try PDI Calculator Free →</Link>
                         </div>
                     </div>
 
@@ -63,11 +63,11 @@ export default function ForInvestorsPage() {
                         ))}
                     </div>
 
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-10 mb-16">
+                    <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-10 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-8 text-center">What We Measure</h2>
                         <div className="space-y-4">
                             {metrics.map((m, i) => (
-                                <Link key={i} href={m.link} className="flex items-center justify-between p-5 rounded-xl border border-white/10 hover:border-cyan-500/30 transition-colors group">
+                                <Link key={i} href={m.link} className="flex items-center justify-between p-5 rounded-xl border border-zinc-200 hover:border-cyan-500/30 transition-colors group">
                                     <div>
                                         <div className="text-white font-bold group-hover:text-cyan-400 transition-colors">{m.name}</div>
                                         <div className="text-sm text-zinc-500">{m.description}</div>

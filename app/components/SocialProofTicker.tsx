@@ -52,10 +52,10 @@ export default function SocialProofTicker() {
 
     return (
         <div className={`fixed bottom-20 left-4 z-40 max-w-sm transition-all duration-300 ${animating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
-            <div className="bg-zinc-900/95 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-2xl">
+            <div className="bg-zinc-900/95 backdrop-blur-md border border-zinc-200 rounded-xl p-4 shadow-2xl">
                 <button
                     onClick={() => { setDismissed(true); setShow(false); sessionStorage.setItem('social-proof-dismissed', 'true'); }}
-                    className="absolute top-2 right-2 text-zinc-600 hover:text-white transition-colors"
+                    className="absolute top-2 right-2 text-zinc-600 hover:text-zinc-900 transition-colors"
                     aria-label="Dismiss"
                 >
                     <X className="w-3 h-3" />

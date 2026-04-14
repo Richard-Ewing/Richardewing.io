@@ -35,7 +35,7 @@ export default function HealthTechPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                         {challenges.map((c, i) => (
-                            <div key={i} className="rounded-xl border border-white/10 p-6 hover:border-blue-500/30 transition-colors">
+                            <div key={i} className="rounded-xl border border-zinc-200 p-6 hover:border-blue-500/30 transition-colors">
                                 <div className="text-2xl mb-3">{c.icon}</div>
                                 <h3 className="text-lg font-grotesk font-bold text-white mb-2">{c.title}</h3>
                                 <p className="text-zinc-400 text-sm">{c.description}</p>
@@ -53,7 +53,7 @@ export default function HealthTechPage() {
                         </ul>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold hover:opacity-90">Free PDI Assessment →</Link>
-                            <Link href="/advisory" className="px-6 py-3 rounded-lg border border-white/20 text-white font-bold hover:bg-white/5">Book Advisory →</Link>
+                            <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-300 text-white font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     </div>
                 </div>

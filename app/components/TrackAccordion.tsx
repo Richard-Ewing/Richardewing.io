@@ -45,7 +45,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
             {/* Header (Clickable) */}
             <button 
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full text-left p-6 sm:p-8 flex items-start gap-4 hover:bg-black/[0.02] transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500/50"
+                className="w-full text-left p-6 sm:p-8 flex items-start gap-4 hover:bg-zinc-50 transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500/50"
             >
                 <div className="flex-shrink-0 text-3xl sm:text-4xl mt-1">{track.icon}</div>
                 <div className="flex-grow pr-4">

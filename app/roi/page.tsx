@@ -74,10 +74,10 @@ export default function ROIPage() {
                                         <div className="flex justify-between"><span className="text-zinc-500 text-sm">Engineers</span><span className="text-white font-mono">{s.engineers}</span></div>
                                         <div className="flex justify-between"><span className="text-zinc-500 text-sm">Avg Salary</span><span className="text-white font-mono">${s.avgSalary.toLocaleString()}</span></div>
                                         <div className="flex justify-between"><span className="text-zinc-500 text-sm">Total R&D Spend</span><span className="text-white font-mono">${(totalRD / 1000000).toFixed(1)}M</span></div>
-                                        <div className="border-t border-white/10 pt-4"></div>
+                                        <div className="border-t border-zinc-200 pt-4"></div>
                                         <div className="flex justify-between"><span className="text-zinc-500 text-sm">Innovation Tax (before)</span><span className="text-rose-400 font-mono">{s.innovationTaxBefore}%</span></div>
                                         <div className="flex justify-between"><span className="text-zinc-500 text-sm">Innovation Tax (after)</span><span className="text-emerald-400 font-mono">{s.innovationTaxAfter}%</span></div>
-                                        <div className="border-t border-white/10 pt-4"></div>
+                                        <div className="border-t border-zinc-200 pt-4"></div>
                                         <div className="flex justify-between"><span className="text-zinc-500 text-sm">Annual Savings</span><span className={`font-mono font-bold text-lg ${textMap[s.color]}`}>${(savings / 1000000).toFixed(1)}M</span></div>
                                         <div className="flex justify-between"><span className="text-zinc-500 text-sm">ROI on Audit</span><span className={`font-mono font-bold ${textMap[s.color]}`}>{roi}%</span></div>
                                     </div>
@@ -86,7 +86,7 @@ export default function ROIPage() {
                         })}
                     </div>
 
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-10 mb-16">
+                    <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-10 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-6 text-center">How We Calculate Savings</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                             <div className="text-center">

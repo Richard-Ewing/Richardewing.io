@@ -39,7 +39,7 @@ export default function CompareAuditVsTraditionalPage() {
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full text-sm">
                             <thead>
-                                <tr className="border-b border-white/10">
+                                <tr className="border-b border-zinc-200">
                                     <th className="text-left py-4 px-4 text-zinc-500 font-mono uppercase tracking-widest text-xs">Dimension</th>
                                     <th className="text-left py-4 px-4 text-cyan-400 font-mono uppercase tracking-widest text-xs">Audit Interview</th>
                                     <th className="text-left py-4 px-4 text-rose-400 font-mono uppercase tracking-widest text-xs">Traditional</th>
@@ -47,7 +47,7 @@ export default function CompareAuditVsTraditionalPage() {
                             </thead>
                             <tbody>
                                 {dimensions.map((d, i) => (
-                                    <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                    <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02] transition-colors">
                                         <td className="py-4 px-4 text-white font-medium">{d.dimension}</td>
                                         <td className={`py-4 px-4 ${d.winner === 'audit' ? 'text-cyan-400' : 'text-zinc-500'}`}>{d.audit}</td>
                                         <td className={`py-4 px-4 ${d.winner === 'traditional' ? 'text-rose-400' : 'text-zinc-500'}`}>{d.traditional}</td>

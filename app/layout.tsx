@@ -196,12 +196,12 @@ export default function RootLayout({
               colorDanger: '#dc2626'
             },
             elements: {
-              card: 'border border-white/10 shadow-2xl bg-[#0A0A12]',
+              card: 'border border-zinc-200 shadow-2xl bg-[#0A0A12]',
               formFieldLabel: 'text-zinc-400 font-sans',
-              socialButtonsBlockButton: 'bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all font-sans',
+              socialButtonsBlockButton: 'bg-white/5 border-zinc-200 text-white hover:bg-white/10 transition-all font-sans',
               formButtonPrimary: 'font-bold tracking-widest uppercase hover:opacity-90 transition-opacity',
               headerTitle: 'font-sans font-bold',
-              headerSubtitle: 'font-sans text-white/60',
+              headerSubtitle: 'font-sans text-zinc-500',
               dividerLine: 'bg-white/10',
               dividerText: 'text-zinc-500'
             }

@@ -37,10 +37,10 @@ const publications = [
 
 export const AsSeenIn = () => {
     return (
-        <div className="py-8 border-y border-white/5 my-8">
+        <div className="py-8 border-y border-zinc-200 my-8">
             <div className="text-center">
                 {/* Label */}
-                <p className="text-xs text-gray-500 uppercase tracking-widest mb-6 font-mono">
+                <p className="text-xs text-zinc-500 uppercase tracking-widest mb-6 font-mono">
                     As Seen In
                 </p>
 

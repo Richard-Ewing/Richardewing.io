@@ -45,7 +45,7 @@ export default function CertificationPage() {
                         Certified Product<br />
                         <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Economist.</span>
                     </h1>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-4">
+                    <p className="text-zinc-600 text-lg max-w-2xl mx-auto mb-4">
                         The only professional credential in product economics.
                         Master the methodology. Earn the title.
                     </p>
@@ -127,9 +127,9 @@ export default function CertificationPage() {
                 <section className="section max-w-4xl mx-auto text-center">
                     <p className="text-zinc-500 text-sm">
                         Questions?{' '}
-                        <a href="mailto:richardewing@exogram.ai?subject=CPE%20Certification%20Inquiry" className="text-amber-400 hover:text-white transition-colors">Email Richard directly</a>
+                        <a href="mailto:richardewing@exogram.ai?subject=CPE%20Certification%20Inquiry" className="text-amber-400 hover:text-zinc-900 transition-colors">Email Richard directly</a>
                         {' '}or{' '}
-                        <Link href="/advisory" className="text-amber-400 hover:text-white transition-colors">book a call</Link>.
+                        <Link href="/advisory" className="text-amber-400 hover:text-zinc-900 transition-colors">book a call</Link>.
                     </p>
                 </section>
             </div>

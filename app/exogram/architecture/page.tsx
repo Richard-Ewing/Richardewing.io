@@ -95,7 +95,7 @@ export default function ExogramArchitecturePage() {
         <main className="pt-24 pb-20">
             <div className="page-container max-w-5xl mx-auto">
                 <div className="text-xs text-zinc-500 mb-8">
-                    <Link href="/exogram" className="hover:text-white transition-colors">Exogram</Link>
+                    <Link href="/exogram" className="hover:text-zinc-900 transition-colors">Exogram</Link>
                     <span className="mx-2">→</span>
                     <span className="text-zinc-400">Architecture</span>
                 </div>
@@ -136,7 +136,7 @@ export default function ExogramArchitecturePage() {
                                     <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Performance</h3>
                                     <div className="space-y-3">
                                         {layer.metrics.map(m => (
-                                            <div key={m.label} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.03] border border-white/5">
+                                            <div key={m.label} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.03] border border-zinc-200">
                                                 <span className="text-xs text-zinc-500">{m.label}</span>
                                                 <span className="text-sm font-mono text-white">{m.value}</span>
                                             </div>
@@ -162,7 +162,7 @@ export default function ExogramArchitecturePage() {
                             { method: 'REST API', desc: 'Standard HTTP endpoints for any programming language or framework', badge: 'Universal' },
                             { method: 'Python SDK', desc: 'pip install exogram — type-safe client with async support', badge: 'Coming Soon' },
                         ].map(m => (
-                            <div key={m.method} className="p-6 rounded-xl bg-white/[0.03] border border-white/10">
+                            <div key={m.method} className="p-6 rounded-xl bg-white/[0.03] border border-zinc-200">
                                 <span className="text-[10px] font-mono text-purple-400 uppercase tracking-widest">{m.badge}</span>
                                 <h3 className="text-white font-bold mt-2 mb-2">{m.method}</h3>
                                 <p className="text-xs text-zinc-500">{m.desc}</p>
@@ -175,7 +175,7 @@ export default function ExogramArchitecturePage() {
                     <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
                         Visit Exogram.ai →
                     </a>
-                    <Link href="/exogram/use-cases" className="px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                    <Link href="/exogram/use-cases" className="px-6 py-3 bg-white/5 border border-zinc-200 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                         View Use Cases →
                     </Link>
                 </div>

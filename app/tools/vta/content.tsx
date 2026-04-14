@@ -15,7 +15,7 @@ import ToolGate from '../../components/tool-gate';
 import { VaultUpsell, RecommendedTrack } from '../../components/VaultUpsell';
 
 const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: React.ReactNode; title: string; icon?: React.ComponentType<{ size?: number; className?: string }>; className?: string }) => (
-    <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 ${className}`}>
+    <div className={`relative overflow-hidden rounded-2xl border border-zinc-200 bg-white/5 p-6 ${className}`}>
         <div className="flex items-center gap-2 mb-4">
             {Icon && <Icon size={20} className="text-blue-400" />}
             <h3 className="font-semibold text-white">{title}</h3>
@@ -74,7 +74,7 @@ export default function VTATool() {
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16" id="vta-calculator">
                         {/* INPUT PANEL */}
                         <div className="lg:col-span-5 space-y-6">
-                            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 relative overflow-hidden backdrop-blur-xl">
+                            <div className="bg-white/5 border border-zinc-200 rounded-2xl p-6 relative overflow-hidden backdrop-blur-xl">
                                 <BorderBeam className="opacity-20" size={300} duration={12} delay={0} />
                                 <h2 className="text-2xl font-bold text-white mb-6">Execution Variables</h2>
                                 <div className="space-y-6 relative z-10">
@@ -121,7 +121,7 @@ export default function VTATool() {
                                             title="Verification Time"
                                             aria-label="Verification Time in Minutes"
                                             onChange={(e) => setVerificationTime(Number(e.target.value))}
-                                            className="w-full bg-black/50 border border-white/10 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono"
+                                            className="w-full bg-white/50 border border-zinc-200 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono"
                                         />
                                     </div>
 
@@ -134,7 +134,7 @@ export default function VTATool() {
                                             title="Verifier Hourly Rate"
                                             aria-label="Verifier Labor Base Rate"
                                             onChange={(e) => setHourlyRate(Number(e.target.value))}
-                                            className="w-full bg-black/50 border border-white/10 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono"
+                                            className="w-full bg-white/50 border border-zinc-200 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono"
                                         />
                                     </div>
 
@@ -162,7 +162,7 @@ export default function VTATool() {
                         {/* RESULTS PANEL */}
                         <div className="lg:col-span-7">
                             {!showResults ? (
-                                <div className="h-full min-h-[400px] border border-white/10 bg-white/5 rounded-2xl flex flex-col items-center justify-center p-8 text-center relative overflow-hidden backdrop-blur-xl">
+                                <div className="h-full min-h-[400px] border border-zinc-200 bg-white/5 rounded-2xl flex flex-col items-center justify-center p-8 text-center relative overflow-hidden backdrop-blur-xl">
                                     <div className="w-24 h-24 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
                                         <FileSearch size={40} className="text-blue-400" />
                                     </div>
@@ -178,7 +178,7 @@ export default function VTATool() {
                                     <div className="space-y-6">
                                         {annualTax > 0 && <ToolCelebration show={true} toolName="VTA" />}
 
-                                        <div className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/10 mb-6">
+                                        <div className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-zinc-200 mb-6">
                                             <div className="flex items-center gap-2 text-white font-medium">
                                                 <FileSearch size={20} className="text-blue-400" />
                                                 Behavioral Audit Report
@@ -210,11 +210,11 @@ export default function VTATool() {
                                         <BentoCard title="Margin Compression Analysis" icon={AlertTriangle} className="col-span-2">
                                             <div className="space-y-6">
                                                 <div className="grid grid-cols-2 gap-4 text-sm">
-                                                    <div className="p-4 bg-black/40 rounded-lg border border-white/5">
+                                                    <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-200">
                                                         <span className="text-slate-400 block mb-1">Effective Cost Per Interaction</span>
                                                         <span className="text-xl text-white font-mono">${effectiveCostPerInference.toFixed(2)}</span>
                                                     </div>
-                                                    <div className="p-4 bg-black/40 rounded-lg border border-white/5">
+                                                    <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-200">
                                                         <span className="text-slate-400 block mb-1">Monthly Flagged Reviews</span>
                                                         <span className="text-xl text-white font-mono">{monthlyReviews.toLocaleString()}</span>
                                                     </div>
@@ -228,7 +228,7 @@ export default function VTATool() {
                                             </div>
                                         </BentoCard>
 
-                                        <div className="mt-12 pt-8 border-t border-white/10">
+                                        <div className="mt-12 pt-8 border-t border-zinc-200">
                                             <VaultUpsell 
                                                 urgencyLevel={annualTax > 250000 ? 'critical' : 'growth'}
                                                 recommendedTracks={[

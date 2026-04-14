@@ -26,7 +26,7 @@ export default async function ExogramDocPage({ params }: { params: Promise<{ slu
     if (!doc) permanentRedirect('/exogram/docs');
 
     return (
-        <article className="prose prose-invert prose-purple max-w-none">
+        <article className="prose prose-zinc prose-purple max-w-none">
             <span className="text-[10px] font-mono text-purple-400 uppercase tracking-widest">
                 {doc.category}
             </span>

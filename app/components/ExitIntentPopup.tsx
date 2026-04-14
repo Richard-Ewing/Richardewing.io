@@ -76,9 +76,9 @@ export default function ExitIntentPopup() {
 
     return (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" onClick={handleDismiss}>
-            <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-            <div className="relative w-full max-w-lg bg-zinc-900 border border-white/10 rounded-2xl p-8 shadow-2xl animate-in fade-in zoom-in duration-300" onClick={(e) => e.stopPropagation()}>
-                <button onClick={handleDismiss} className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors" aria-label="Close popup">
+            <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+            <div className="relative w-full max-w-lg bg-zinc-50 border border-zinc-200 rounded-2xl p-8 shadow-2xl animate-in fade-in zoom-in duration-300" onClick={(e) => e.stopPropagation()}>
+                <button onClick={handleDismiss} className="absolute top-4 right-4 text-zinc-500 hover:text-zinc-900 transition-colors" aria-label="Close popup">
                     <X className="w-5 h-5" />
                 </button>
 
@@ -102,7 +102,7 @@ export default function ExitIntentPopup() {
                         </p>
 
                         {/* What You Get */}
-                        <div className="bg-white/[0.03] border border-white/5 rounded-xl p-4 mb-5 space-y-2">
+                        <div className="bg-white/[0.03] border border-zinc-200 rounded-xl p-4 mb-5 space-y-2">
                             <div className="flex items-start gap-2 text-xs text-zinc-300">
                                 <span className="text-emerald-400 mt-0.5">✓</span> Traffic-light scoring rubrics for every question
                             </div>
@@ -117,7 +117,7 @@ export default function ExitIntentPopup() {
                         {/* Domain Preview */}
                         <div className="flex flex-wrap gap-1.5 mb-5 justify-center">
                             {['⚡ Velocity', '🏗️ Tech Debt', '🤖 AI Economics', '💰 Revenue', '👥 People', '📊 Strategic'].map((d, i) => (
-                                <span key={i} className="text-[10px] px-2 py-1 rounded-full bg-white/5 border border-white/10 text-zinc-400 font-mono">{d}</span>
+                                <span key={i} className="text-[10px] px-2 py-1 rounded-full bg-white/5 border border-zinc-200 text-zinc-400 font-mono">{d}</span>
                             ))}
                         </div>
 
@@ -125,7 +125,7 @@ export default function ExitIntentPopup() {
                             <input
                                 type="email" value={email} onChange={(e) => { setEmail(e.target.value); setValidationError(''); }}
                                 placeholder="name@company.com" required disabled={state.submitting || isValidating}
-                                className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-zinc-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all font-mono text-sm"
+                                className="w-full px-4 py-3 bg-white/50 border border-zinc-200 rounded-xl text-white placeholder:text-zinc-400 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all font-mono text-sm"
                             />
                             <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-red-500" />
 
@@ -143,7 +143,7 @@ export default function ExitIntentPopup() {
                             </button>
                         </form>
 
-                        <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/5">
+                        <div className="flex items-center justify-between mt-4 pt-3 border-t border-zinc-200">
                             <p className="text-[10px] text-zinc-600">Zero spam · Used by 2,000+ executives</p>
                             <a href="/tools" className="text-[10px] text-zinc-500 hover:text-cyan-400 transition-colors">
                                 Or try free tools →

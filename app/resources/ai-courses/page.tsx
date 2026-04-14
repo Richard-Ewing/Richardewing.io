@@ -222,7 +222,7 @@ export default function AiCoursesPage() {
                         { value: '8+', label: 'Providers' },
                         { value: '✓', label: 'Editorial Commentary' },
                     ].map((stat) => (
-                        <div key={stat.label} className="text-center p-4 rounded-xl bg-white/5 border border-white/5">
+                        <div key={stat.label} className="text-center p-4 rounded-xl bg-white/5 border border-zinc-200">
                             <div className="text-2xl font-bold text-white font-mono">{stat.value}</div>
                             <div className="text-xs text-zinc-500 uppercase tracking-widest mt-1">{stat.label}</div>
                         </div>
@@ -237,10 +237,10 @@ export default function AiCoursesPage() {
                                 {track.icon} {track.label}
                             </a>
                         ))}
-                        <a href="#reading" className="text-xs font-mono px-3 py-1.5 rounded-full border border-zinc-500/30 bg-zinc-500/10 text-zinc-400 hover:opacity-80 transition-opacity">
+                        <a href="#reading" className="text-xs font-mono px-3 py-1.5 rounded-full border border-zinc-500/30 bg-zinc-500/10 text-zinc-600 hover:opacity-80 transition-opacity">
                             📖 Reading
                         </a>
-                        <a href="#tools" className="text-xs font-mono px-3 py-1.5 rounded-full border border-zinc-500/30 bg-zinc-500/10 text-zinc-400 hover:opacity-80 transition-opacity">
+                        <a href="#tools" className="text-xs font-mono px-3 py-1.5 rounded-full border border-zinc-500/30 bg-zinc-500/10 text-zinc-600 hover:opacity-80 transition-opacity">
                             🔧 Tools
                         </a>
                     </div>
@@ -277,10 +277,10 @@ export default function AiCoursesPage() {
                                                 <span className="text-zinc-600 group-hover:text-zinc-400 transition-colors shrink-0 mt-1">{isInternal ? '→' : '↗'}</span>
                                             </div>
                                             <div className="flex items-center gap-2 mb-3">
-                                                <span className="text-[10px] font-mono text-zinc-600 px-2 py-0.5 rounded-full border border-white/5 bg-white/[0.02]">{course.provider}</span>
+                                                <span className="text-[10px] font-mono text-zinc-600 px-2 py-0.5 rounded-full border border-zinc-200 bg-white/[0.02]">{course.provider}</span>
                                             </div>
                                             <p className="text-sm text-zinc-400 mb-4 leading-relaxed">{course.description}</p>
-                                            <div className={`text-xs ${track.textColor} font-mono leading-relaxed border-t border-white/5 pt-3`}>
+                                            <div className={`text-xs ${track.textColor} font-mono leading-relaxed border-t border-zinc-200 pt-3`}>
                                                 <span className="font-bold uppercase tracking-widest">Richard&apos;s Take:</span>{' '}
                                                 <span className="text-zinc-400">{course.editorial}</span>
                                             </div>
@@ -304,7 +304,7 @@ export default function AiCoursesPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {recommendedReading.map(book => (
                             <a key={book.title} href={book.url} target="_blank" rel="noopener noreferrer"
-                                className="group block p-6 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 hover:bg-white/[0.06] transition-all">
+                                className="group block p-6 rounded-xl bg-white/[0.03] border border-zinc-200 hover:border-zinc-300 hover:bg-white/[0.06] transition-all">
                                 <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors font-grotesk mb-1">{book.title}</h3>
                                 <p className="text-xs text-zinc-500 mb-3">{book.author}</p>
                                 <p className="text-sm text-zinc-400 leading-relaxed">{book.description}</p>
@@ -325,7 +325,7 @@ export default function AiCoursesPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {tools.map(tool => (
                             <a key={tool.name} href={tool.url} target="_blank" rel="noopener noreferrer"
-                                className="group block p-5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-emerald-500/30 hover:bg-white/[0.06] transition-all">
+                                className="group block p-5 rounded-xl bg-white/[0.03] border border-zinc-200 hover:border-emerald-500/30 hover:bg-white/[0.06] transition-all">
                                 <div className="flex items-center justify-between mb-2">
                                     <h3 className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors font-grotesk">{tool.name}</h3>
                                     <span className="text-zinc-700 group-hover:text-zinc-400 transition-colors">↗</span>
@@ -368,7 +368,7 @@ export default function AiCoursesPage() {
                             <a href="/api/buy/practitioner_certification" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
                                 Unlock AI Practitioner Pass ($249) →
                             </a>
-                            <Link href="/tools/aueb" className="px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                            <Link href="/tools/aueb" className="px-6 py-3 bg-white/5 border border-zinc-200 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                                 Run AUEB Profitability Audit →
                             </Link>
                         </div>

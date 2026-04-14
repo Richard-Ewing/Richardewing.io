@@ -33,7 +33,7 @@ export default function CurriculumTabs({ children }: { children: React.ReactNode
                 <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[var(--bg-primary)] to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[var(--bg-primary)] to-transparent z-10 pointer-events-none" />
 
-                <div className="flex overflow-x-auto hide-scrollbar gap-2 snap-x px-4 py-2 bg-black/40 backdrop-blur-xl border border-white/5 shadow-2xl rounded-2xl">
+                <div className="flex overflow-x-auto hide-scrollbar gap-2 snap-x px-4 py-2 bg-zinc-50 backdrop-blur-xl border border-zinc-200 shadow-2xl rounded-2xl">
                     {CATEGORIES.map(category => {
                         const isActive = activeTab === category.id;
                         return (
@@ -43,7 +43,7 @@ export default function CurriculumTabs({ children }: { children: React.ReactNode
                                 className={`snap-start relative flex-shrink-0 text-left px-6 py-4 rounded-xl transition-all duration-500 ease-out group/btn overflow-hidden ${
                                     isActive 
                                         ? `bg-gradient-to-br ${category.color} scale-[1.02]` 
-                                        : 'bg-white/[0.01] hover:bg-white/[0.04] text-zinc-400 hover:text-white border-transparent'
+                                        : 'bg-white/[0.01] hover:bg-white/[0.04] text-zinc-600 hover:text-zinc-900 border-transparent'
                                 }`}
                             >
                                 <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity" />

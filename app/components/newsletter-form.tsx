@@ -82,7 +82,7 @@ export function NewsletterForm({
                     readOnly={!!defaultEmail}
                     required
                     disabled={state.submitting}
-                    className="w-full pl-11 pr-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed read-only:bg-white/5 read-only:text-zinc-400 font-mono text-sm"
+                    className="w-full pl-11 pr-4 py-3 bg-white/50 border border-zinc-200 rounded-xl text-white placeholder:text-zinc-400 focus:border-cyan-500 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed read-only:bg-white/5 read-only:text-zinc-400 font-mono text-sm"
                 />
                 <ValidationError
                     prefix="Email"

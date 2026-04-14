@@ -14,7 +14,7 @@ export default function ActionChecklist({ items }: { items: string[] }) {
     const progress = Math.round((completedCount / items.length) * 100);
 
     return (
-        <div className="rounded-2xl border border-white/10 bg-black/40 p-6 mt-8 relative overflow-hidden">
+        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 mt-8 relative overflow-hidden">
             <div className="absolute top-0 right-0 px-4 py-1 bg-amber-500/10 text-amber-400 border-b border-l border-amber-500/20 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg flex items-center gap-1">
                 <Rocket className="w-3 h-3" />
                 Execution Checklist
@@ -37,7 +37,7 @@ export default function ActionChecklist({ items }: { items: string[] }) {
                         <button 
                             key={idx}
                             onClick={() => toggle(idx)}
-                            className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-4 ${isChecked ? 'bg-white/[0.02] border-white/5 opacity-60 hover:opacity-100' : 'bg-white/[0.04] border-white/10 hover:bg-white/[0.08]'}`}
+                            className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-4 ${isChecked ? 'bg-white/[0.02] border-zinc-200 opacity-60 hover:opacity-100' : 'bg-white/[0.04] border-zinc-200 hover:bg-white/[0.08]'}`}
                         >
                             <div className="shrink-0 mt-0.5 text-amber-500">
                                 {isChecked ? <CheckSquare className="w-5 h-5" /> : <Square className="w-5 h-5 opacity-50" />}

@@ -178,13 +178,13 @@ export default function ShadowContent() {
             <ToolCelebration show={!!results} toolName="SHADOW-AI" />
             <div className="mb-6 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                    <Link href="/tools" className="hover:text-white transition">Enterprise Diagnostics</Link>
+                    <Link href="/tools" className="hover:text-zinc-900 transition">Enterprise Diagnostics</Link>
                     <span>/</span>
                     <span className="text-white font-bold">Shadow AI Audit</span>
                 </div>
                  {/* Mode Switcher if pre-results */}
                 {!results && (
-                     <div className="flex bg-black/50 border border-white/5 p-1 rounded-lg self-end">
+                     <div className="flex bg-white/50 border border-zinc-200 p-1 rounded-lg self-end">
                         <button onClick={() => setMode('SIMULATE')} className={`px-4 py-1.5 text-xs font-mono uppercase tracking-widest rounded transition-all ${mode === 'SIMULATE' ? 'bg-amber-500/20 text-amber-400 font-bold' : 'text-zinc-500 hover:text-zinc-300'}`}>
                             Log Injection
                         </button>
@@ -197,7 +197,7 @@ export default function ShadowContent() {
 
             {!results ? (
                 <ScrollReveal>
-                    <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-white/5">
+                    <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-200">
                         <div className="flex items-center gap-2 mb-6">
                             <div className={`w-2 h-2 rounded-full animate-pulse ${mode === 'AUDIT' ? 'bg-rose-500' : 'bg-amber-500'}`} />
                             <span className={`font-mono text-xs uppercase tracking-widest ${mode === 'AUDIT' ? 'text-rose-400' : 'text-amber-400'}`}>
@@ -221,7 +221,7 @@ export default function ShadowContent() {
                         {mode === 'SIMULATE' && (
                             <div className="space-y-6">
                                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
-                                    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                    <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono text-sm border border-amber-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-white">Log Extrapolation</h3>
@@ -234,7 +234,7 @@ export default function ShadowContent() {
                                             value={simulatedLogs} 
                                             onChange={e => setSimulatedLogs(e.target.value)} 
                                             placeholder="Example: Hey guys, can someone check my API key? I asked ChatGPT but it kept hallucinating the response..." 
-                                            className="w-full h-48 sm:h-64 bg-black/50 border border-white/10 rounded-xl p-4 font-mono text-sm text-zinc-300 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-all placeholder:text-zinc-700 resize-none"
+                                            className="w-full h-48 sm:h-64 bg-white/50 border border-zinc-200 rounded-xl p-4 font-mono text-sm text-zinc-300 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-all placeholder:text-zinc-700 resize-none"
                                         />
                                     </div>
 
@@ -270,7 +270,7 @@ export default function ShadowContent() {
 
                                 <div 
                                     onClick={() => fileInputRef.current?.click()}
-                                    className={`border-2 border-dashed ${auditFile ? 'border-rose-500 bg-rose-500/5' : 'border-zinc-700 bg-black/40 hover:bg-zinc-900 transition-colors cursor-pointer'} rounded-2xl p-12 flex flex-col items-center justify-center text-center`}
+                                    className={`border-2 border-dashed ${auditFile ? 'border-rose-500 bg-rose-500/5' : 'border-zinc-300 bg-zinc-50 hover:bg-zinc-50 transition-colors cursor-pointer'} rounded-2xl p-12 flex flex-col items-center justify-center text-center`}
                                 >
                                     <input 
                                         title="Audit CSV Log Upload"
@@ -322,7 +322,7 @@ export default function ShadowContent() {
                 </ScrollReveal>
             ) : (
                 <div id="shadow-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
-                    <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-amber-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                    <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-amber-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
@@ -339,7 +339,7 @@ export default function ShadowContent() {
 
                     <div id="shadow-pdf-export-zone" className="space-y-6">
                         <ScrollReveal>
-                            <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
+                            <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-zinc-200">
                                 <BorderBeam size={400} duration={12} delay={9} borderWidth={1.5} colorFrom="#f59e0b" colorTo="#ef4444" />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                     <div>
@@ -365,14 +365,14 @@ export default function ShadowContent() {
                                             <PersonaSwitcher activePersona={persona} onChange={setPersona} />
                                         )}
                                         {results.type === 'AUDIT' ? (
-                                            <div className="bg-black/50 p-6 rounded-2xl border border-white/5 h-full max-h-[250px] overflow-y-auto custom-scrollbar">
-                                                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3 mb-3 sticky top-0 bg-black/50 backdrop-blur-md">VENDORS IDENTIFIED</div>
+                                            <div className="bg-white/50 p-6 rounded-2xl border border-zinc-200 h-full max-h-[250px] overflow-y-auto custom-scrollbar">
+                                                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-200 pb-3 mb-3 sticky top-0 bg-white/50 backdrop-blur-md">VENDORS IDENTIFIED</div>
                                                  {results.vendors.length === 0 ? (
                                                      <div className="text-sm text-zinc-500 py-4 text-center">No high-risk Shadow AI vendors identified in logs.</div>
                                                  ) : (
                                                      <div className="space-y-3">
                                                          {results.vendors.map((v: any, i: number) => (
-                                                             <div key={i} className="flex justify-between items-center border-b border-white/5 pb-2 last:border-0 last:pb-0">
+                                                             <div key={i} className="flex justify-between items-center border-b border-zinc-200 pb-2 last:border-0 last:pb-0">
                                                                  <div>
                                                                      <div className="text-sm text-white font-bold">{v.name}</div>
                                                                      <div className="text-[10px] text-zinc-500 font-mono">{v.threat}</div>
@@ -389,8 +389,8 @@ export default function ShadowContent() {
                                         ) : (
                                             <div className="flex flex-col gap-4">
                                                 {persona === 'CISO' && (
-                                                    <div className="bg-black/50 p-6 rounded-2xl border border-rose-500/20 space-y-4">
-                                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">Compliance Perimeter Heatmap</div>
+                                                    <div className="bg-white/50 p-6 rounded-2xl border border-rose-500/20 space-y-4">
+                                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-200 pb-3">Compliance Perimeter Heatmap</div>
                                                         <div className="space-y-3 pt-2">
                                                             <div className="flex justify-between items-center bg-rose-500/10 p-2 rounded">
                                                                 <span className="text-sm text-rose-400 font-bold">PII Exfiltration</span>
@@ -408,8 +408,8 @@ export default function ShadowContent() {
                                                     </div>
                                                 )}
                                                 {persona === 'CFO' && (
-                                                    <div className="bg-black/50 p-6 rounded-2xl border border-green-500/20 space-y-4">
-                                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">Unlicensed SaaS Spend Waste</div>
+                                                    <div className="bg-white/50 p-6 rounded-2xl border border-green-500/20 space-y-4">
+                                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-200 pb-3">Unlicensed SaaS Spend Waste</div>
                                                         <div className="text-center py-4">
                                                             <div className="text-4xl font-bold text-green-400 font-mono">${(results.shadowSpend || results.knownSpend || 14500).toLocaleString()}</div>
                                                             <p className="text-xs text-zinc-500 mt-2">Annualized Unregulated Corporate Credit Card Expense</p>
@@ -417,22 +417,22 @@ export default function ShadowContent() {
                                                     </div>
                                                 )}
                                                 {persona === 'VP Eng' && (
-                                                    <div className="bg-black/50 p-6 rounded-2xl border border-blue-500/20 space-y-4">
-                                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">Algorithmic Contamination Log</div>
+                                                    <div className="bg-white/50 p-6 rounded-2xl border border-blue-500/20 space-y-4">
+                                                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-200 pb-3">Algorithmic Contamination Log</div>
                                                         <div className="flex justify-between items-center pb-2">
                                                             <span className="text-sm text-zinc-400">AI-Generated Code Leakage</span>
                                                             <span className="text-sm font-mono text-blue-400 text-right">{results.hasCodeLeak ? "Detected" : "None Detected"}</span>
                                                         </div>
-                                                        <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                                                        <div className="flex justify-between items-center border-b border-zinc-200 pb-3">
                                                             <span className="text-sm text-zinc-400">Payload Integrity</span>
                                                             <span className="text-sm font-mono text-rose-400 text-right">Compromised</span>
                                                         </div>
-                                                        <p className="text-xs text-zinc-500 font-mono mt-2 pt-2 border-t border-white/10">Codebase is currently ingesting untrusted public LLM tokens without validation.</p>
+                                                        <p className="text-xs text-zinc-500 font-mono mt-2 pt-2 border-t border-zinc-200">Codebase is currently ingesting untrusted public LLM tokens without validation.</p>
                                                     </div>
                                                 )}
                                                 {persona === 'Legal' && (
-                                                    <div className="bg-black/50 p-6 rounded-2xl border border-amber-500/20 space-y-4">
-                                                         <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-white/10 pb-3">SLA & Copyright Exposure</div>
+                                                    <div className="bg-white/50 p-6 rounded-2xl border border-amber-500/20 space-y-4">
+                                                         <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-200 pb-3">SLA & Copyright Exposure</div>
                                                          <div className="space-y-2">
                                                             <div className="text-sm text-amber-400">Potential GDPR Fines: <span className="font-bold">Active Exposure</span></div>
                                                             <div className="text-sm text-rose-400">IP Ownership Voided: <span className="font-bold">High Risk</span></div>
@@ -448,8 +448,8 @@ export default function ShadowContent() {
 
                         {/* FORENSIC TERMINAL LOG */}
                         <ScrollReveal delay={100}>
-                            <div className="bg-[#0c0c0c] border border-zinc-800 rounded-xl font-mono text-xs p-4 max-h-[250px] overflow-y-auto mb-8 shadow-[0_0_20px_rgba(225,29,72,0.1)]">
-                                <div className="flex gap-2 mb-3 pb-2 border-b border-zinc-800/50">
+                            <div className="bg-[#0c0c0c] border border-zinc-200 rounded-xl font-mono text-xs p-4 max-h-[250px] overflow-y-auto mb-8 shadow-[0_0_20px_rgba(225,29,72,0.1)]">
+                                <div className="flex gap-2 mb-3 pb-2 border-b border-zinc-200/50">
                                     <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
                                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
                                     <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
@@ -470,7 +470,7 @@ export default function ShadowContent() {
 
                         {/* ENTERPRISE THREAT MODELING (NEW) */}
                         <ScrollReveal delay={120}>
-                            <div className="mb-6 border-b border-white/10 pb-4 mt-8">
+                            <div className="mb-6 border-b border-zinc-200 pb-4 mt-8">
                                 <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
                                     <Target size={18} className="text-rose-400"/>
                                     Enterprise Threat & Exfiltration Matrix
@@ -479,8 +479,8 @@ export default function ShadowContent() {
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-sm">
-                                <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
-                                    <h4 className="text-white font-semibold mb-4 border-b border-white/10 pb-2">Regulatory Liability (GDPR / CCPA)</h4>
+                                <div className="bg-white/5 border border-zinc-200 p-5 rounded-xl">
+                                    <h4 className="text-white font-semibold mb-4 border-b border-zinc-200 pb-2">Regulatory Liability (GDPR / CCPA)</h4>
                                     <div className="space-y-4">
                                         <div>
                                             <div className="flex justify-between mb-1"><span className="text-zinc-400">Projected Fines (Est)</span><span className="text-rose-400 font-mono font-bold">{formatMoney(results.financialLiability * 14.5)}</span></div>
@@ -493,8 +493,8 @@ export default function ShadowContent() {
                                         <p className="text-xs text-zinc-500 mt-2">LLM retention of PII constitutes an unrecoverable breach under "Right to be Forgotten" mandates.</p>
                                     </div>
                                 </div>
-                                <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
-                                    <h4 className="text-white font-semibold mb-4 border-b border-white/10 pb-2">Intellectual Property Egress</h4>
+                                <div className="bg-white/5 border border-zinc-200 p-5 rounded-xl">
+                                    <h4 className="text-white font-semibold mb-4 border-b border-zinc-200 pb-2">Intellectual Property Egress</h4>
                                     <div className="space-y-4">
                                         <div className="flex items-center gap-3">
                                             <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/30 text-blue-400 font-bold shrink-0">IP</div>
@@ -517,7 +517,7 @@ export default function ShadowContent() {
 
                         {/* Board-Ready 3-Step Remediation Playbook */}
                         <ScrollReveal delay={150}>
-                             <div className="mb-6 border-b border-white/10 pb-4 mt-8">
+                             <div className="mb-6 border-b border-zinc-200 pb-4 mt-8">
                                 <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
                                     <ShieldAlert size={18} className="text-rose-400"/>
                                     Execution Playbook: Shadow AI Mitigation
@@ -526,36 +526,36 @@ export default function ShadowContent() {
                             </div>
                             
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-rose-500">
+                                <div className="bg-white/80 border border-zinc-200 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-rose-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                      <div className="text-rose-400 font-mono text-xs mb-3 uppercase tracking-widest bg-rose-500/10 w-8 h-8 rounded flex items-center justify-center border border-rose-500/20">01</div>
                                      <h4 className="text-white font-bold mb-2">Endpoint Termination</h4>
                                      <p className="text-zinc-400 text-sm mb-4">You cannot train engineers not to use ChatGPT. The only solution is explicitly blackholing external LLM requests.</p>
-                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                     <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2 relative z-10">
                                          <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-300">Update Zscaler rules to explicitly blackhole all DNS requests to chatgpt.com, claude.ai, and other consumer APIs.</p>
                                      </div>
                                 </div>
-                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-amber-500">
+                                <div className="bg-white/80 border border-zinc-200 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-amber-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                      <div className="text-amber-400 font-mono text-xs mb-3 uppercase tracking-widest bg-amber-500/10 w-8 h-8 rounded flex items-center justify-center border border-amber-500/20">02</div>
                                      <h4 className="text-white font-bold mb-2">Private Gateway Deployment</h4>
                                      <p className="text-zinc-400 text-sm mb-4">Enterprise SLAs legally prohibit model training on customer payloads, offering protection guarantees.</p>
-                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                     <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2 relative z-10">
                                          <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-300">Provision Azure OpenAI or AWS Bedrock endpoints entirely inside your private VPC.</p>
                                      </div>
                                 </div>
-                                <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-900/80 transition-colors border-l-2 border-l-emerald-500">
+                                <div className="bg-white/80 border border-zinc-200 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
                                      <div className="text-emerald-400 font-mono text-xs mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
                                      <h4 className="text-white font-bold mb-2">Sanctioned Internal UI</h4>
                                      <p className="text-zinc-400 text-sm mb-4">Engineers get their 10x velocity, and you retain complete data sovereignty with logging.</p>
-                                     <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2 relative z-10">
+                                     <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2 relative z-10">
                                          <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
@@ -567,7 +567,7 @@ export default function ShadowContent() {
 
                         {/* Action Footer */}
                         <ScrollReveal delay={250}>
-                             <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-white/10 mb-8">
+                             <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-zinc-200 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <ShieldOff size={16} className="text-amber-400" />
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">The Enterprise Mandate</span>
@@ -586,7 +586,7 @@ export default function ShadowContent() {
                             />
 
                             <div className="flex justify-center flex-wrap gap-6 mt-8" data-html2canvas-ignore>
-                                <button onClick={() => { setResults(null); setAuditFile(null); }} className="text-zinc-500 font-mono tracking-widest text-xs hover:text-white uppercase transition-colors">← Recalibrate Matrix</button>
+                                <button onClick={() => { setResults(null); setAuditFile(null); }} className="text-zinc-500 font-mono tracking-widest text-xs hover:text-zinc-900 uppercase transition-colors">← Recalibrate Matrix</button>
                             </div>
                         </ScrollReveal>
                     </div>

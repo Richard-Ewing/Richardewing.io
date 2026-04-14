@@ -74,7 +74,7 @@ export default function MethodologyPage() {
 
                     <div className="space-y-8 mb-16">
                         {phases.map((p, i) => (
-                            <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
+                            <div key={i} className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-8">
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl font-bold text-cyan-400">{p.phase}</div>
                                     <div className="flex-1">

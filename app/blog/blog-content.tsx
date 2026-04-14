@@ -52,10 +52,10 @@ export default function BlogContent() {
                                 placeholder="Search articles…"
                                 value={search}
                                 onChange={e => setSearch(e.target.value)}
-                                className="w-full px-5 py-3 bg-white/[0.05] border border-white/10 rounded-xl text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-cyan-500/50 transition-colors"
+                                className="w-full px-5 py-3 bg-white/[0.05] border border-zinc-200 rounded-xl text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-cyan-500/50 transition-colors"
                             />
                             {search && (
-                                <button onClick={() => setSearch('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-white text-xs">✕</button>
+                                <button onClick={() => setSearch('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-900 text-xs">✕</button>
                             )}
                         </div>
                     </div>
@@ -100,7 +100,7 @@ export default function BlogContent() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {featured.map(article => (
                                 <Link key={article.slug} href={`/blog/${article.slug}`}
-                                    className="group block rounded-2xl border border-white/10 bg-white/[0.03] p-8 hover:border-cyan-500/30 hover:bg-white/[0.05] transition-all">
+                                    className="group block rounded-2xl border border-zinc-200 bg-white/[0.03] p-8 hover:border-cyan-500/30 hover:bg-white/[0.05] transition-all">
                                     <div className="flex items-center gap-3 mb-4">
                                         <span className={`text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-full border ${categoryColors[article.category]}`}>{article.category}</span>
                                         <span className="text-[10px] text-zinc-600">{article.readTime} read</span>
@@ -123,7 +123,7 @@ export default function BlogContent() {
                         {featured.length > 0 ? `All ${regular.length} Articles` : `${filtered.length} Articles`}
                     </h2>
                     {regular.length === 0 && filtered.length === 0 ? (
-                        <div className="text-center py-20 border border-dashed border-zinc-800 rounded-2xl">
+                        <div className="text-center py-20 border border-dashed border-zinc-200 rounded-2xl">
                             <p className="text-zinc-500 mb-4">No articles match your search.</p>
                             <button onClick={() => { setSearch(''); setSelectedCategory(null); }} className="text-cyan-400 hover:underline text-sm">Clear filters</button>
                         </div>
@@ -136,7 +136,7 @@ export default function BlogContent() {
                                     if (catArticles.length === 0) return null;
                                     
                                     return (
-                                        <details key={cat.name} className="group/accordion rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden" open={!!search || !!selectedCategory}>
+                                        <details key={cat.name} className="group/accordion rounded-xl border border-zinc-200 bg-white/[0.02] overflow-hidden" open={!!search || !!selectedCategory}>
                                             <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/[0.04] transition-colors select-none marker:content-none [&::-webkit-details-marker]:hidden">
                                                 <div className="flex items-center gap-4">
                                                     <span className={`text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border ${categoryColors[cat.name] || 'text-zinc-400 bg-zinc-500/10 border-zinc-500/20'}`}>
@@ -150,10 +150,10 @@ export default function BlogContent() {
                                                 </div>
                                             </summary>
                                             
-                                            <div className="border-t border-white/5 bg-black/20 p-2 sm:p-4 space-y-2">
+                                            <div className="border-t border-zinc-200 bg-zinc-50 p-2 sm:p-4 space-y-2">
                                                 {catArticles.map(article => (
                                                     <Link key={article.slug} href={`/blog/${article.slug}`}
-                                                        className="group flex items-start gap-4 sm:gap-6 p-4 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/[0.03] transition-all">
+                                                        className="group flex items-start gap-4 sm:gap-6 p-4 rounded-xl border border-transparent hover:border-zinc-200 hover:bg-white/[0.03] transition-all">
                                                         <div className="flex-1">
                                                             <div className="flex items-center gap-3 mb-1.5">
                                                                 <span className="text-[10px] font-mono text-zinc-500">{article.readTime}</span>
@@ -176,7 +176,7 @@ export default function BlogContent() {
 
                 {/* Cross-link to Published Articles */}
                 <section className="mt-16 max-w-5xl mx-auto">
-                    <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.03]">
+                    <div className="p-8 rounded-2xl border border-zinc-200 bg-white/[0.03]">
                         <div className="flex items-center gap-4 mb-4">
                             <span className="text-xs font-mono text-purple-400 uppercase tracking-widest">Tier 1 Publications</span>
                         </div>

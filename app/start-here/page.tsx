@@ -77,7 +77,7 @@ export default function StartHerePage() {
                         <span>Guide</span><span>/</span><span className="text-cyan-400 font-bold">Start Here</span>
                     </div>
 
-                    <div className="mb-16 border-b border-white/10 pb-12">
+                    <div className="mb-16 border-b border-zinc-200 pb-12">
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
                             New Here?{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">
@@ -127,7 +127,7 @@ export default function StartHerePage() {
                     })}
 
                     {/* About section */}
-                    <div className="text-center py-16 border-t border-white/10">
+                    <div className="text-center py-16 border-t border-zinc-200">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Who Built This?</h2>
                         <p className="text-zinc-400 mb-6 max-w-xl mx-auto">
                             Richard Ewing is a Product Economist and AI Capital Auditor.
@@ -138,13 +138,13 @@ export default function StartHerePage() {
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link
                                 href="/principal"
-                                className="px-6 py-3 border border-white/20 rounded-lg text-white text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
+                                className="px-6 py-3 border border-zinc-300 rounded-lg text-white text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
                             >
                                 About Richard →
                             </Link>
                             <Link
                                 href="/profiles"
-                                className="px-6 py-3 border border-white/20 rounded-lg text-white text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
+                                className="px-6 py-3 border border-zinc-300 rounded-lg text-white text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
                             >
                                 Published Work →
                             </Link>

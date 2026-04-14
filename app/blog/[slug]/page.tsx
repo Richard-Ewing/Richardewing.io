@@ -46,7 +46,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         <main className="pt-24 pb-20">
             <div className="page-container max-w-3xl mx-auto">
                 <div className="flex items-center gap-2 text-xs text-zinc-500 mb-8">
-                    <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+                    <Link href="/blog" className="hover:text-zinc-900 transition-colors">Blog</Link>
                     <span>→</span>
                     <span className="text-zinc-400">{article.category}</span>
                 </div>
@@ -65,7 +65,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                     </div>
                 </header>
 
-                <article className="prose prose-invert prose-zinc max-w-none
+                <article className="prose prose-zinc prose-zinc max-w-none
                     prose-headings:font-grotesk prose-headings:text-white
                     prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
                     prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3

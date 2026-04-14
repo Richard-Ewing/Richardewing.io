@@ -211,7 +211,7 @@ export default function AuditInterview() {
             <ToolCelebration show={!!outcome} toolName="AUDIT INTERVIEW" />
             {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                <Link href="/system" className="hover:text-white transition">Intelligence</Link>
+                <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-white font-bold">Audit Interview</span>
             </div>
@@ -234,14 +234,14 @@ export default function AuditInterview() {
                         </p>
 
                         {/* Role Selector */}
-                        <div className="flex gap-4 mb-8 border-b border-white/10 pb-8">
+                        <div className="flex gap-4 mb-8 border-b border-zinc-200 pb-8">
                             {['engineering', 'pm'].map((r) => (
                                 <button
                                     key={r}
                                     onClick={() => setRole(r as Role)}
                                     className={`px-4 py-2 rounded-lg border uppercase font-mono text-xs tracking-widest transition-all ${role === r
                                         ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400'
-                                        : 'bg-zinc-900/50 border-white/10 text-zinc-500 hover:border-white/30'
+                                        : 'bg-white/80 border-zinc-200 text-zinc-500 hover:border-white/30'
                                         }`}
                                 >
                                     {r === 'pm' ? 'Product Manager' : 'Engineer'}
@@ -252,9 +252,9 @@ export default function AuditInterview() {
                         {/* Scoring Grid */}
                         <div className="space-y-8">
                             {DIMENSIONS.map((dim) => (
-                                <div key={dim.id} className="bg-black/20 rounded-xl p-4 sm:p-6 border border-white/5">
+                                <div key={dim.id} className="bg-zinc-50 rounded-xl p-4 sm:p-6 border border-zinc-200">
                                     <div className="flex items-start gap-3 mb-4">
-                                        <div className="p-2 bg-zinc-900 rounded-lg text-zinc-400">
+                                        <div className="p-2 bg-zinc-50 rounded-lg text-zinc-400">
                                             <dim.icon size={20} />
                                         </div>
                                         <div>
@@ -266,7 +266,7 @@ export default function AuditInterview() {
                                     <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6">
                                         {/* Component: Score Selector */}
                                         <div className="flex flex-col gap-2">
-                                            <div className="flex gap-1 bg-black/50 p-1 rounded-lg border border-white/10">
+                                            <div className="flex gap-1 bg-white/50 p-1 rounded-lg border border-zinc-200">
                                                 {[0, 1, 2, 3].map(val => (
                                                     <button
                                                         key={val}
@@ -290,7 +290,7 @@ export default function AuditInterview() {
                                             value={observations[dim.id as keyof Observations]}
                                             onChange={(e) => handleObservationChange(dim.id as keyof Observations, e.target.value)}
                                             placeholder={`Notes on ${dim.label.toLowerCase()}...`}
-                                            className="w-full bg-black/50 border border-white/10 rounded-lg p-3 text-sm text-zinc-300 focus:border-emerald-500 focus:outline-none transition-all placeholder:text-zinc-700 h-20 resize-none"
+                                            className="w-full bg-white/50 border border-zinc-200 rounded-lg p-3 text-sm text-zinc-300 focus:border-emerald-500 focus:outline-none transition-all placeholder:text-zinc-700 h-20 resize-none"
                                         />
                                     </div>
                                 </div>
@@ -320,7 +320,7 @@ export default function AuditInterview() {
             ) : (
                 /* --- DASHBOARD STATE --- */
                 <div id="scoring-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
-                    <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                    <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
@@ -329,7 +329,7 @@ export default function AuditInterview() {
                             <p className="text-sm text-zinc-400">Session Complete • Protocol {role.toUpperCase()}-092</p>
                         </div>
                         <div className="mt-4 sm:mt-0 flex gap-4">
-                            <button onClick={() => setOutcome(null)} className="px-4 py-2 border border-white/10 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
+                            <button onClick={() => setOutcome(null)} className="px-4 py-2 border border-zinc-200 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
                                 <Search size={14} /> New Audit
                             </button>
                             <ExportToPDFButton targetId="scoring-pdf-export-zone" fileName={`Audit_Interview_${role}.pdf`} />
@@ -345,14 +345,14 @@ export default function AuditInterview() {
                                 <div className={`text-6xl sm:text-7xl font-bold tracking-tighter mb-4 ${outcome.total > 7 ? 'text-emerald-400' : 'text-red-500'}`}>
                                     {outcome.verdict}
                                 </div>
-                                <div className="flex items-center gap-3 text-sm font-mono border-t border-white/10 pt-4 mt-4 w-full justify-center">
+                                <div className="flex items-center gap-3 text-sm font-mono border-t border-zinc-200 pt-4 mt-4 w-full justify-center">
                                     <span className="text-zinc-400">Total Score:</span>
                                     <span className="text-white font-bold">{outcome.total}/12</span>
                                 </div>
                             </GlowCard>
 
                             {/* Middle Col: Radar Chart */}
-                            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden">
+                            <div className="bg-white/80 border border-zinc-200 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden">
                                 <span className="absolute top-4 left-4 text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Attribute Geometry</span>
                                 <div className="w-64 h-64">
                                     <RadarChart scores={scores} />
@@ -360,7 +360,7 @@ export default function AuditInterview() {
                             </div>
 
                             {/* Right Col: Breakdown List */}
-                            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl p-6 space-y-4">
+                            <div className="bg-white/80 border border-zinc-200 rounded-2xl p-6 space-y-4">
                                 <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-4">Dimension Audit</span>
                                 {DIMENSIONS.map(dim => (
                                     <div key={dim.id} className="flex justify-between items-center">
@@ -375,7 +375,7 @@ export default function AuditInterview() {
                                         </div>
                                     </div>
                                 ))}
-                                <div className="border-t border-white/10 pt-4 mt-4">
+                                <div className="border-t border-zinc-200 pt-4 mt-4">
                                     <p className="text-xs text-zinc-400 leading-relaxed italic">
                                         "{outcome.rationale}"
                                     </p>
@@ -391,7 +391,7 @@ export default function AuditInterview() {
                             </div>
 
                             {!memo ? (
-                                <div className="text-center py-12 border-2 border-dashed border-white/10 rounded-xl">
+                                <div className="text-center py-12 border-2 border-dashed border-zinc-200 rounded-xl">
                                     <p className="text-zinc-500 mb-6 max-w-md mx-auto">
                                         Generate a high-agency defense memo to justify this hiring decision to the Investment Committee.
                                     </p>
@@ -404,10 +404,10 @@ export default function AuditInterview() {
                                     </button>
                                 </div>
                             ) : (
-                                <div className="prose prose-invert prose-lg max-w-none bg-black/30 p-8 rounded-xl border-l-4 border-emerald-500">
+                                <div className="prose prose-zinc prose-lg max-w-none bg-black/30 p-8 rounded-xl border-l-4 border-emerald-500">
                                     <div className="flex justify-between items-start mb-4">
                                         <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest">Confidential // Internal Only</span>
-                                        <button onClick={() => navigator.clipboard.writeText(memo)} className="text-[10px] font-mono text-zinc-500 hover:text-white uppercase">Copy</button>
+                                        <button onClick={() => navigator.clipboard.writeText(memo)} className="text-[10px] font-mono text-zinc-500 hover:text-zinc-900 uppercase">Copy</button>
                                     </div>
                                     <p className="text-zinc-200 leading-loose whitespace-pre-wrap font-serif">
                                         {memo}

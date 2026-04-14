@@ -52,7 +52,7 @@ export default function ProtocolInitialization() {
 
             {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                <Link href="/system" className="hover:text-white transition">Intelligence</Link>
+                <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-white font-bold">Fiduciary Protocol</span>
             </div>
@@ -152,7 +152,7 @@ export default function ProtocolInitialization() {
 
 
                     {/* SYSTEM DOCTRINE (Why Now) */}
-                    <div className="py-20 border-t border-white/5 relative">
+                    <div className="py-20 border-t border-zinc-200 relative">
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-[#0a0a0a] text-zinc-500 font-mono text-xs uppercase tracking-[0.2em]">System Doctrine</div>
 
                         <div className="max-w-3xl mx-auto text-center space-y-8">
@@ -160,7 +160,7 @@ export default function ProtocolInitialization() {
                             <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
                                 AI generates syntax for free. LeetCode measures memorization. Traditional interviews are optimizing for a commodity.
                             </p>
-                            <div className="p-6 bg-white/5 border border-white/10 rounded-xl text-left">
+                            <div className="p-6 bg-white/5 border border-zinc-200 rounded-xl text-left">
                                 <p className="text-zinc-300 leading-relaxed font-mono text-sm md:text-base">
                                     We must stop testing for <strong className="text-white">Construction</strong> (writing code/product specs) and start testing for <strong className="text-white">Verification</strong> (auditing outcomes).
                                     <br /><br />
@@ -173,7 +173,7 @@ export default function ProtocolInitialization() {
 
 
                     {/* THE GAUNTLET (Methodology) */}
-                    <div className="py-20 border-t border-white/5">
+                    <div className="py-20 border-t border-zinc-200">
                         <div className="text-center mb-12">
                             <h3 className="text-2xl font-bold text-white mb-2">The 3-Phase Protocol</h3>
                             <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest">Every candidate runs the same simulation</p>
@@ -185,7 +185,7 @@ export default function ProtocolInitialization() {
                                 { id: '02', title: 'The Audit', desc: 'Verify AI logic for "Memory Bombs" and hidden debt.', color: 'cyan' },
                                 { id: '03', title: 'The Defense', desc: 'Prioritize one fix and explicitly defer the rest.', color: 'indigo' },
                             ].map((phase) => (
-                                <div key={phase.id} className="p-6 bg-[#0f1115] border border-white/10 rounded-xl hover:border-white/20 transition-all hover:-translate-y-1 group">
+                                <div key={phase.id} className="p-6 bg-[#0f1115] border border-zinc-200 rounded-xl hover:border-zinc-300 transition-all hover:-translate-y-1 group">
                                     <div className={`text-4xl font-mono font-bold text-white/10 mb-4 group-hover:text-${phase.color}-500/20 transition-colors`}>{phase.id}</div>
                                     <div className="text-sm font-bold text-white uppercase tracking-wider mb-2">{phase.title}</div>
                                     <div className="text-xs text-zinc-500 leading-relaxed">{phase.desc}</div>
@@ -196,7 +196,7 @@ export default function ProtocolInitialization() {
 
 
                     {/* UNIVERSAL LEVELING MATRIX (Outcome) */}
-                    <div className="py-20 border-t border-white/5">
+                    <div className="py-20 border-t border-zinc-200">
                         <div className="text-center mb-12">
                             <h3 className="text-2xl font-bold text-white mb-2">Universal Leveling Matrix (L3 - L6)</h3>
                             <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest">Enterprise-Grade Assessment Standard</p>
@@ -205,7 +205,7 @@ export default function ProtocolInitialization() {
                         <div className="overflow-x-auto">
                             <table className="w-full text-left font-mono text-sm border-collapse">
                                 <thead>
-                                    <tr className="border-b border-white/10 text-zinc-500 text-xs uppercase tracking-widest">
+                                    <tr className="border-b border-zinc-200 text-zinc-500 text-xs uppercase tracking-widest">
                                         <th className="py-4 px-6">Level</th>
                                         <th className="py-4 px-6">Designation (Eng / PM)</th>
                                         <th className="py-4 px-6">Primary Signal Detected</th>
@@ -234,7 +234,7 @@ export default function ProtocolInitialization() {
             </ScrollReveal>
 
             {loading && (
-                <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center">
+                <div className="fixed inset-0 bg-white/80 backdrop-blur-sm z-[100] flex items-center justify-center">
                     <div className="flex flex-col items-center gap-4 animate-pulse">
                         <div className="w-12 h-12 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
                         <div className="font-mono text-sm uppercase tracking-widest text-emerald-500">Constructing Calibration Environment...</div>

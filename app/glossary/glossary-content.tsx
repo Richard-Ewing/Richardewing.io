@@ -28,18 +28,18 @@ export default function GlossaryContent() {
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                <span>Knowledge</span><span>/</span><span className="text-cyan-400 font-bold">Glossary</span>
+                <span>Knowledge</span><span>/</span><span className="text-cyan-600 font-bold">Glossary</span>
             </div>
 
             <ScrollReveal>
-                <div className="mb-12 border-b border-white/10 pb-12">
-                    <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
-                        Technology & AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">Glossary.</span>
+                <div className="mb-12 border-b border-zinc-200 pb-12">
+                    <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-900 mb-6">
+                        Technology & AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">Glossary.</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl">
+                    <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl">
                         {glossaryTerms.length}+ terms defined with rich explanations, practical FAQs, and links to free diagnostic tools.
                         <br />
-                        <span className="text-white">Technical debt, AI economics, SaaS metrics, product management, and engineering leadership — explained.</span>
+                        <span className="text-zinc-800">Technical debt, AI economics, SaaS metrics, product management, and engineering leadership — explained.</span>
                     </p>
                 </div>
             </ScrollReveal>
@@ -49,21 +49,21 @@ export default function GlossaryContent() {
                     const isOpen = openCategories[group.category];
                     return (
                         <ScrollReveal key={group.category} delay={gi * 50}>
-                            <div className={`border ${isOpen ? 'border-cyan-500/30 bg-white/5' : 'border-white/10 bg-[#0a0c10]'} rounded-2xl overflow-hidden transition-all duration-300`}>
+                            <div className={`border ${isOpen ? 'border-cyan-300 bg-cyan-50/50' : 'border-zinc-200 bg-white'} rounded-2xl overflow-hidden transition-all duration-300`}>
                                 {/* Accordion Header */}
                                 <button 
                                     onClick={() => toggleCategory(group.category)}
-                                    className="w-full flex items-center justify-between p-6 sm:p-8 hover:bg-white/5 transition-colors text-left"
+                                    className="w-full flex items-center justify-between p-6 sm:p-8 hover:bg-zinc-50 transition-colors text-left"
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-cyan-500/20 text-cyan-400' : 'bg-white/5 text-zinc-400'}`}>
+                                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-cyan-100 text-cyan-700' : 'bg-zinc-100 text-zinc-500'}`}>
                                             <span className="font-bold font-mono">{group.terms.length}</span>
                                         </div>
-                                        <h2 className={`text-2xl font-bold font-grotesk transition-colors ${isOpen ? 'text-white' : 'text-zinc-300'}`}>
+                                        <h2 className={`text-2xl font-bold font-grotesk transition-colors ${isOpen ? 'text-zinc-900' : 'text-zinc-700'}`}>
                                             {group.category}
                                         </h2>
                                     </div>
-                                    <div className={`shrink-0 transition-transform duration-300 ${isOpen ? 'text-cyan-400' : 'text-zinc-500'}`}>
+                                    <div className={`shrink-0 transition-transform duration-300 ${isOpen ? 'text-cyan-600' : 'text-zinc-400'}`}>
                                         {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
                                     </div>
                                 </button>
@@ -78,14 +78,14 @@ export default function GlossaryContent() {
                                                     href={`/glossary/${term.slug}`}
                                                     className="group block"
                                                 >
-                                                    <div className="card p-5 h-full bg-black/40 border border-white/5 hover:border-cyan-500/50 hover:bg-white/5 transition-all rounded-xl">
-                                                        <h3 className="text-sm font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors font-grotesk">
+                                                    <div className="card p-5 h-full bg-white border border-zinc-200 hover:border-cyan-400 hover:bg-cyan-50/30 transition-all rounded-xl">
+                                                        <h3 className="text-sm font-bold text-zinc-900 mb-2 group-hover:text-cyan-700 transition-colors font-grotesk">
                                                             {term.title}
                                                         </h3>
                                                         <p className="text-xs text-zinc-500 line-clamp-2 leading-relaxed">
                                                             {term.definition.slice(0, 160)}...
                                                         </p>
-                                                        <div className="mt-3 text-[10px] font-bold uppercase tracking-widest text-zinc-600 group-hover:text-cyan-400 transition-colors">
+                                                        <div className="mt-3 text-[10px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-cyan-600 transition-colors">
                                                             Read Definition →
                                                         </div>
                                                     </div>
@@ -101,22 +101,22 @@ export default function GlossaryContent() {
             </div>
 
             {/* Bottom CTA */}
-            <div className="text-center py-20 mt-12 mb-12 relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-transparent to-cyan-950/20">
+            <div className="text-center py-20 mt-12 mb-12 relative overflow-hidden rounded-3xl border border-zinc-200 bg-gradient-to-b from-white to-cyan-50">
                 <div className="absolute top-0 right-0 w-full h-full bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
-                <h2 className="text-3xl font-grotesk font-black text-white mb-4">Master The Architecture</h2>
-                <p className="text-zinc-400 mb-8 max-w-lg mx-auto leading-relaxed">
+                <h2 className="text-3xl font-grotesk font-black text-zinc-900 mb-4">Master The Architecture</h2>
+                <p className="text-zinc-600 mb-8 max-w-lg mx-auto leading-relaxed">
                     Our diagnostic tools put these definitions into direct, mathematically precise execution—evaluate your enterprise today.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 px-6">
                     <Link
                         href="/tools/pdi"
-                        className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-cobalt rounded-xl text-white font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]"
+                        className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-xl text-white font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-opacity shadow-md"
                     >
                         Run Free PDI Assessment
                     </Link>
                     <Link
                         href="/advisory"
-                        className="px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold uppercase tracking-widest text-xs hover:bg-white/10 transition-colors"
+                        className="px-8 py-4 bg-white border border-zinc-300 rounded-xl text-zinc-700 font-bold uppercase tracking-widest text-xs hover:bg-zinc-50 transition-colors"
                     >
                         Book Advisory Session →
                     </Link>

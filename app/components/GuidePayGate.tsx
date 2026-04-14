@@ -40,7 +40,7 @@ export default function GuidePayGate({ guideTitle, productId, hasAccess = false,
             </div>
 
             <div className="relative -mt-48 z-10 mx-auto max-w-lg mb-16">
-                <div className="rounded-2xl border border-white/10 bg-zinc-900/95 backdrop-blur-xl p-8 shadow-2xl shadow-cyan-500/5 text-center">
+                <div className="rounded-2xl border border-zinc-200 bg-zinc-900/95 backdrop-blur-xl p-8 shadow-2xl shadow-cyan-500/5 text-center">
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/20 flex flex-col items-center justify-center mx-auto mb-4">
                         <Lock className="w-6 h-6 text-cyan-400" />
                     </div>
@@ -51,7 +51,7 @@ export default function GuidePayGate({ guideTitle, productId, hasAccess = false,
 
                     <CheckoutButton productId={productId} label={`Unlock Guide — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`} icon="file" variant="primary" />
                     
-                    <div className="mt-4 pt-4 border-t border-white/5">
+                    <div className="mt-4 pt-4 border-t border-zinc-200">
                         <CheckoutButton productId="full_curriculum" label="Or get all 10 Guides + 60 Modules for $199/yr" variant="outline" />
                     </div>
                 </div>

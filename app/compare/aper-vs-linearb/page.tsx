@@ -36,8 +36,8 @@ export default function APERvsLinearBPage() {
                     </p>
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full border-collapse">
-                            <thead><tr className="border-b border-white/10"><th className="text-left py-4 px-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">Dimension</th><th className="text-left py-4 px-4 text-xs font-mono text-violet-400 uppercase tracking-widest">APER</th><th className="text-left py-4 px-4 text-xs font-mono text-zinc-400 uppercase tracking-widest">LinearB</th></tr></thead>
-                            <tbody>{rows.map((row, i) => (<tr key={i} className="border-b border-white/5 hover:bg-white/[0.02]"><td className="py-4 px-4 text-sm text-zinc-400 font-bold">{row.dimension}</td><td className="py-4 px-4 text-sm text-white">{row.aper}</td><td className="py-4 px-4 text-sm text-zinc-400">{row.lb}</td></tr>))}</tbody>
+                            <thead><tr className="border-b border-zinc-200"><th className="text-left py-4 px-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">Dimension</th><th className="text-left py-4 px-4 text-xs font-mono text-violet-400 uppercase tracking-widest">APER</th><th className="text-left py-4 px-4 text-xs font-mono text-zinc-400 uppercase tracking-widest">LinearB</th></tr></thead>
+                            <tbody>{rows.map((row, i) => (<tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02]"><td className="py-4 px-4 text-sm text-zinc-400 font-bold">{row.dimension}</td><td className="py-4 px-4 text-sm text-white">{row.aper}</td><td className="py-4 px-4 text-sm text-zinc-400">{row.lb}</td></tr>))}</tbody>
                         </table>
                     </div>
                     <div className="rounded-2xl border border-violet-500/30 bg-violet-500/5 p-8 mb-16">

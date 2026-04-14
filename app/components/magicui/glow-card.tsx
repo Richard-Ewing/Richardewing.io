@@ -14,13 +14,13 @@ export function GlowCard({ children, className = '', glowColor = 'cyan', ...prop
         gold: 'hover:border-gold/50 hover:shadow-gold/20',
         danger: 'hover:border-danger/50 hover:shadow-danger/20',
         emerald: 'hover:border-emerald-500/50 hover:shadow-emerald-500/20',
-        white: 'hover:border-white/50 hover:shadow-white/10',
+        white: 'hover:border-zinc-2000 hover:shadow-white/10',
     };
 
     return (
         <div
             className={`
-        border border-white/10 bg-zinc-900/30 backdrop-blur-sm rounded-2xl
+        border border-zinc-200 bg-white/40 backdrop-blur-sm rounded-2xl
         transition-all duration-500 ease-out
         hover:scale-[1.01] hover:shadow-lg
         ${colorMap[glowColor] || colorMap.cyan}

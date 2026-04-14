@@ -78,7 +78,7 @@ export default function SystemPromptsPage() {
                 <span className="text-cyan-400 font-bold">System Prompts</span>
             </div>
 
-            <div className="mb-12 border-b border-white/10 pb-12">
+            <div className="mb-12 border-b border-zinc-200 pb-12">
                 <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
                     Executive <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">System Prompts</span>
                 </h1>
@@ -89,7 +89,7 @@ export default function SystemPromptsPage() {
 
             <div className="space-y-12">
                 {prompts.map((p, idx) => (
-                    <div key={p.id} className="card p-8 border-white/10">
+                    <div key={p.id} className="card p-8 border-zinc-200">
                         <div className="flex items-center gap-3 mb-4">
                             <div className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-bold text-cyan-400">
                                 For {p.audience}
@@ -100,7 +100,7 @@ export default function SystemPromptsPage() {
                         
                         <div className="relative group">
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-xl blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
-                            <div className="relative bg-black border border-white/10 rounded-xl p-6">
+                            <div className="relative bg-black border border-zinc-200 rounded-xl p-6">
                                 <pre className="font-mono text-sm text-zinc-300 whitespace-pre-wrap">
                                     {p.prompt}
                                 </pre>

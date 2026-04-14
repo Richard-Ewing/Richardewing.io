@@ -57,7 +57,7 @@ export default function ArticlesPage() {
             </div>
 
             <ScrollReveal>
-                <div className="mb-12 border-b border-white/10 pb-12">
+                <div className="mb-12 border-b border-zinc-200 pb-12">
                     <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
                         The Canonical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">Hub.</span>
                     </h1>
@@ -101,7 +101,7 @@ export default function ArticlesPage() {
                                 {featuredArticle.description}
                             </p>
 
-                            <a href={featuredArticle.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-purple-400 font-bold uppercase tracking-widest text-xs hover:text-white transition-colors">
+                            <a href={featuredArticle.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-purple-400 font-bold uppercase tracking-widest text-xs hover:text-zinc-900 transition-colors">
                                 Read Article <span className="text-lg">→</span>
                             </a>
                         </div>
@@ -206,14 +206,14 @@ export default function ArticlesPage() {
                                         <div>
                                             <div className="flex justify-between items-center mb-4">
                                                 <div className="flex items-center gap-2">
-                                                    <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest border border-white/10 px-2 py-0.5 rounded-full">{article.source}</span>
+                                                    <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest border border-zinc-200 px-2 py-0.5 rounded-full">{article.source}</span>
                                                 </div>
                                                 <span className="font-mono text-xs text-zinc-600 uppercase tracking-widest">{article.date}</span>
                                             </div>
                                             <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors font-grotesk">{article.title}</h3>
                                             <p className="text-zinc-500 text-sm leading-relaxed mb-4 line-clamp-2">{article.description}</p>
                                         </div>
-                                        <div className="text-xs font-bold uppercase tracking-widest text-zinc-500 group-hover:text-white transition-colors">
+                                        <div className="text-xs font-bold uppercase tracking-widest text-zinc-500 group-hover:text-zinc-900 transition-colors">
                                             Read
                                         </div>
                                     </GlowCard>
@@ -222,7 +222,7 @@ export default function ArticlesPage() {
                             })}
                         </div>
                     ) : (
-                        <div className="text-center py-20 border border-dashed border-zinc-800 rounded-2xl">
+                        <div className="text-center py-20 border border-dashed border-zinc-200 rounded-2xl">
                             <p className="text-zinc-500">No articles found for this filter.</p>
                             <button onClick={() => setSelectedPublication(null)} className="mt-4 text-cyan-400 hover:text-cyan-300 text-sm">Clear Filters</button>
                         </div>
@@ -230,7 +230,7 @@ export default function ArticlesPage() {
 
                     {!selectedPublication && (
                         <div className="mt-8 text-center">
-                            <button className="px-6 py-3 border border-white/10 rounded-lg text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-white hover:border-white/30 transition-all">
+                            <button className="px-6 py-3 border border-zinc-200 rounded-lg text-sm font-bold uppercase tracking-widest text-zinc-600 hover:text-zinc-900 hover:border-white/30 transition-all">
                                 View Full Archive
                             </button>
                         </div>

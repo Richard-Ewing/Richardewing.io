@@ -180,7 +180,7 @@ export default function IndustriesPage() {
                         ))}
                     </div>
 
-                    <div className="text-center py-12 border-t border-white/10">
+                    <div className="text-center py-12 border-t border-zinc-200">
                         <p className="text-zinc-400 mb-4">Don&apos;t see your industry?</p>
                         <Link href="/advisory" className="text-cyan-400 hover:text-cyan-300 font-bold uppercase tracking-widest text-sm">
                             Book a Custom Assessment →

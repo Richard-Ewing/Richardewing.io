@@ -47,7 +47,7 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
                         {pct >= 80 ? '🎉 Excellent! You have a strong understanding.' : pct >= 50 ? '👍 Good start! Review the sections above to strengthen your knowledge.' : '📚 Keep learning! Review the definition and how-to-apply sections above.'}
                     </div>
                 </div>
-                <button onClick={() => { setCurrentQ(0); setSelected(null); setScore(0); setFinished(false); setShowExplanation(false); }} className="w-full px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:border-violet-500/30 transition-colors text-sm font-bold">
+                <button onClick={() => { setCurrentQ(0); setSelected(null); setScore(0); setFinished(false); setShowExplanation(false); }} className="w-full px-6 py-3 rounded-lg bg-white/5 border border-zinc-200 text-zinc-300 hover:text-zinc-900 hover:border-violet-500/30 transition-colors text-sm font-bold">
                     Retake Quiz
                 </button>
             </section>
@@ -63,7 +63,7 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
                 <h3 className="text-lg font-bold text-white mb-4">{q.question}</h3>
                 <div className="space-y-2">
                     {q.options.map((opt, idx) => {
-                        let cls = 'border-white/10 hover:border-violet-500/30';
+                        let cls = 'border-zinc-200 hover:border-violet-500/30';
                         if (selected !== null) {
                             if (idx === q.answer) cls = 'border-emerald-500/50 bg-emerald-500/10';
                             else if (idx === selected) cls = 'border-red-500/50 bg-red-500/10';
@@ -80,7 +80,7 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
             </div>
 
             {showExplanation && (
-                <div className="mb-6 p-4 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="mb-6 p-4 rounded-xl bg-white/[0.02] border border-zinc-200">
                     <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-2">Explanation</div>
                     <p className="text-sm text-zinc-400">{q.explanation}</p>
                 </div>

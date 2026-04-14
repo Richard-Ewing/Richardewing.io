@@ -34,7 +34,7 @@ export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCT
                     </button>
                     <button
                         onClick={() => setShowBundle(true)}
-                        className="text-xs text-violet-400 hover:text-white transition-colors underline underline-offset-2"
+                        className="text-xs text-violet-400 hover:text-zinc-900 transition-colors underline underline-offset-2"
                     >
                         Or bundle & save up to 60%
                     </button>

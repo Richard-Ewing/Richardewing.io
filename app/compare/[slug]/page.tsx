@@ -75,7 +75,7 @@ export default async function PseoComparePage({ params }: { params: Promise<{ sl
                         </div>
                     </div>
 
-                    <div className="prose prose-invert prose-lg max-w-none mb-16">
+                    <div className="prose prose-zinc prose-lg max-w-none mb-16">
                         <h2 className="text-3xl font-grotesk font-bold text-white mb-6">The Technical Breakdown</h2>
                         {item.technicalDistinction.split('\n\n').map((paragraph: string, index: number) => (
                             <p key={index} className="text-zinc-300 leading-relaxed mb-6">{paragraph}</p>

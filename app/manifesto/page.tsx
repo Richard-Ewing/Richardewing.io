@@ -13,7 +13,7 @@ export default function ManifestoPage() {
             <div className="absolute bottom-0 left-0 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-white/5 rounded-full blur-[100px] pointer-events-none" />
 
             <ScrollReveal>
-                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-12 lg:p-16 border border-white/10 bg-zinc-900/40 relative z-10 overflow-hidden">
+                <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-12 lg:p-16 border border-zinc-200 bg-white/60 relative z-10 overflow-hidden">
                     {/* Subtle gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent pointer-events-none" />
 
@@ -28,7 +28,7 @@ export default function ManifestoPage() {
                             <span className="text-gold">is Over.</span>
                         </h1>
 
-                        <article className="prose prose-invert prose-lg mx-auto leading-relaxed text-zinc-300 max-w-none">
+                        <article className="prose prose-zinc prose-lg mx-auto leading-relaxed text-zinc-300 max-w-none">
                             <p className="first-letter:text-6xl sm:first-letter:text-8xl first-letter:float-left first-letter:mr-3 sm:first-letter:mr-4 first-letter:text-gold first-letter:font-serif text-zinc-300 text-base sm:text-lg">
                                 For fifteen years, we have been told that the job of a Product Leader is to "empathize." We built "Feature Factories" disguised as "Agile Squads." We celebrated velocity while our unit economics quietly decayed. We shipped features that users didn't want with money we didn't have.
                             </p>
@@ -57,10 +57,10 @@ export default function ManifestoPage() {
                                 This is not a condemnation of creativity. It is a call to <span className="text-white font-bold">responsible creativity</span>. Build what matters. Kill what doesn't. Own the numbers. That is the path to sovereignty.
                             </p>
 
-                            <div className="mt-12 sm:mt-20 pt-8 sm:pt-12 border-t border-white/10 flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+                            <div className="mt-12 sm:mt-20 pt-8 sm:pt-12 border-t border-zinc-200 flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
                                 <div className="relative group">
                                     <div className="absolute -inset-2 bg-gold/30 blur-xl opacity-30 group-hover:opacity-60 transition-opacity rounded-full" />
-                                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-zinc-800 border-2 border-white/10 overflow-hidden relative">
+                                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-zinc-800 border-2 border-zinc-200 overflow-hidden relative">
                                         <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" fill className="object-cover grayscale group-hover:grayscale-0 transition duration-500" />
                                     </div>
                                 </div>

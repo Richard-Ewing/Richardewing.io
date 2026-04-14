@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -22,89 +22,89 @@ export default function HomeContent() {
 
             {/* Hero Section */}
             <section className="flex-1 flex flex-col justify-center max-w-5xl mx-auto relative z-10 py-12 sm:py-20 px-4 sm:px-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-mono uppercase tracking-widest mb-8 w-fit animate-pulse">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-50 border border-cyan-200 rounded-full text-cyan-600 text-xs font-mono uppercase tracking-widest mb-8 w-fit animate-pulse">
                     <span className="w-2 h-2 bg-cyan-400 rounded-full" />
                     Now Accepting Q1 2026 Engagements
                 </div>
 
-                <h1 className="text-5xl sm:text-6xl lg:text-8xl font-grotesk font-bold text-white tracking-tight leading-[1.05] mb-6">
+                <h1 className="text-5xl sm:text-6xl lg:text-8xl font-grotesk font-bold text-zinc-900 tracking-tight leading-[1.05] mb-6">
                     Your AI Investment is<br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Bleeding Cash.</span>
                 </h1>
 
                 <div className="mb-10">
-                    <span className="text-gray-500 text-xl sm:text-2xl font-grotesk">I find the leaks in </span>
+                    <span className="text-zinc-500 text-xl sm:text-2xl font-grotesk">I find the leaks in </span>
                     <WordRotate
                         words={["AI they don't understand.", "Features nobody uses.", "Headcount without ROI.", "Zombie Infrastructure."]}
-                        className="text-xl sm:text-2xl font-grotesk font-extrabold text-cyan-400"
+                        className="text-xl sm:text-2xl font-grotesk font-extrabold text-cyan-600"
                         duration={3000}
                     />
                 </div>
 
-                <p className="text-lg sm:text-xl text-gray-400 max-w-2xl leading-relaxed mb-12 font-sans">
-                    I'm <span className="text-white font-bold">Richard Ewing</span>, a Product Economist.
+                <p className="text-lg sm:text-xl text-zinc-600 max-w-2xl leading-relaxed mb-12 font-sans">
+                    I'm <span className="text-zinc-900 font-bold">Richard Ewing</span>, a Product Economist.
                     I run forensic audits that find the capital leaks inside your AI investments—then I help you plug them.
-                    <span className="text-cyan-400"> No consulting theater. Just hard numbers.</span>
+                    <span className="text-cyan-600"> No consulting theater. Just hard numbers.</span>
                 </p>
 
                 {/* Path Selector (Replaces Standard Buttons) */}
                 <div className="mb-16">
-                    <h3 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-6">Choose Your Path</h3>
+                    <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-6">Choose Your Path</h3>
                     <PathSelector />
                 </div>
 
                 {/* Authority Stats Bar */}
                 <StatsBar
                     stats={[
-                        { value: <><NumberTicker value={25} prefix="$" suffix="M" className="text-cyan-400 font-bold" /></>, label: "ARR Scaled" },
-                        { value: <><NumberTicker value={15} suffix="+" className="text-cyan-400 font-bold" /></>, label: "Years Exp." },
-                        { value: <><NumberTicker value={7} suffix="M+" className="text-cyan-400 font-bold" /></>, label: "Users Impacted" },
-                        { value: <span className="text-gold"><NumberTicker value={100} suffix="%" className="text-cyan-400 font-bold" /></span>, label: "Independence" }
+                        { value: <><NumberTicker value={25} prefix="$" suffix="M" className="text-cyan-600 font-bold" /></>, label: "ARR Scaled" },
+                        { value: <><NumberTicker value={15} suffix="+" className="text-cyan-600 font-bold" /></>, label: "Years Exp." },
+                        { value: <><NumberTicker value={7} suffix="M+" className="text-cyan-600 font-bold" /></>, label: "Users Impacted" },
+                        { value: <span className="text-gold"><NumberTicker value={100} suffix="%" className="text-cyan-600 font-bold" /></span>, label: "Independence" }
                     ]}
                     className="mb-8"
                 />
 
                 {/* Social Proof */}
                 <div className="pt-8">
-                    <p className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-4">Authority Established In</p>
+                    <p className="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-4">Authority Established In</p>
                     <div className="flex flex-wrap items-center gap-6 opacity-60 hover:opacity-100 transition-opacity">
-                        <span className="text-lg font-bold text-white">CIO</span>
-                        <span className="text-lg font-bold text-white">Built In</span>
-                        <span className="text-lg font-bold text-white">Mind the Product</span>
-                        <span className="text-lg font-bold text-white">HackerNoon</span>
+                        <span className="text-lg font-bold text-zinc-900">CIO</span>
+                        <span className="text-lg font-bold text-zinc-900">Built In</span>
+                        <span className="text-lg font-bold text-zinc-900">Mind the Product</span>
+                        <span className="text-lg font-bold text-zinc-900">HackerNoon</span>
                     </div>
                 </div>
             </section>
 
             {/* Section: The Exposure Layer */}
             <ScrollReveal className="relative z-10 py-20">
-                <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-12 flex items-center gap-4">
+                <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-900 mb-12 flex items-center gap-4">
                     <span className="w-12 h-1 bg-red-600"></span>
                     The Four Horsemen of Technical Insolvency
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <GlowCard className="p-8 h-full" glowColor="red">
-                        <h3 className="text-xl font-bold text-white mb-2 font-grotesk">1. Zombie Infrastructure</h3>
-                        <p className="text-gray-400">Legacy systems compounded by interest. Maintenance costs consuming 100% of engineering capacity.</p>
+                        <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">1. Zombie Infrastructure</h3>
+                        <p className="text-zinc-600">Legacy systems compounded by interest. Maintenance costs consuming 100% of engineering capacity.</p>
                     </GlowCard>
                     <GlowCard className="p-8 h-full" glowColor="red">
-                        <h3 className="text-xl font-bold text-white mb-2 font-grotesk">2. Feature Bloat</h3>
-                        <p className="text-gray-400">The silent killer. Code that generates no revenue but incurs 100% of the testing and security tax.</p>
+                        <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">2. Feature Bloat</h3>
+                        <p className="text-zinc-600">The silent killer. Code that generates no revenue but incurs 100% of the testing and security tax.</p>
                     </GlowCard>
                     <GlowCard className="p-8 h-full" glowColor="red">
-                        <h3 className="text-xl font-bold text-white mb-2 font-grotesk">3. AI Hallucination Debt</h3>
-                        <p className="text-gray-400">The cost of verifying probabilistic output. When "90% accurate" means "100% liability".</p>
+                        <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">3. AI Hallucination Debt</h3>
+                        <p className="text-zinc-600">The cost of verifying probabilistic output. When "90% accurate" means "100% liability".</p>
                     </GlowCard>
                     <GlowCard className="p-8 h-full" glowColor="red">
-                        <h3 className="text-xl font-bold text-white mb-2 font-grotesk">4. Capital Misallocation</h3>
-                        <p className="text-gray-400">Calling OpEx "Innovation". 80% of your R&D budget is just keeping the lights on.</p>
+                        <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">4. Capital Misallocation</h3>
+                        <p className="text-zinc-600">Calling OpEx "Innovation". 80% of your R&D budget is just keeping the lights on.</p>
                     </GlowCard>
                 </div>
             </ScrollReveal>
 
             {/* Section: Tools / Proof of Methodology */}
-            <ScrollReveal delay={100} className="relative z-10 py-20 border-t border-white/5">
-                <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-12 flex items-center gap-4">
+            <ScrollReveal delay={100} className="relative z-10 py-20 border-t border-zinc-200">
+                <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-900 mb-12 flex items-center gap-4">
                     <span className="w-12 h-1 bg-cyan-400"></span>
                     Proof of Methodology
                 </h2>
@@ -115,9 +115,9 @@ export default function HomeContent() {
                         { name: "AUEB", desc: "AI Unit Economics", href: "/tools/aueb" },
                         { name: "APER", desc: "Audit Probability", href: "/tools/aper" }
                     ].map((tool) => (
-                        <Link key={tool.name} href={tool.href} className="group block p-6 rounded-xl border border-white/10 bg-white/5 hover:border-cyan-400 hover:bg-white/10 transition-all">
-                            <div className="text-2xl font-bold text-white mb-2 font-grotesk group-hover:text-cyan-400">{tool.name}</div>
-                            <div className="text-sm text-gray-400 uppercase tracking-wider">{tool.desc}</div>
+                        <Link key={tool.name} href={tool.href} className="group block p-6 rounded-xl border border-zinc-200 bg-white hover:border-cyan-400 hover:bg-zinc-50 transition-all">
+                            <div className="text-2xl font-bold text-zinc-900 mb-2 font-grotesk group-hover:text-cyan-600">{tool.name}</div>
+                            <div className="text-sm text-zinc-600 uppercase tracking-wider">{tool.desc}</div>
                             <div className="mt-4 text-cyan-500 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">Launch Tool →</div>
                         </Link>
                     ))}
@@ -125,43 +125,43 @@ export default function HomeContent() {
             </ScrollReveal>
 
             {/* Section: The Exogram (What I'm Building) */}
-            <ScrollReveal delay={100} className="relative z-10 py-20 border-t border-white/5">
+            <ScrollReveal delay={100} className="relative z-10 py-20 border-t border-zinc-200">
                 <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="flex-1">
-                        <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-6 flex items-center gap-4">
+                        <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-900 mb-6 flex items-center gap-4">
                             <span className="w-12 h-1 bg-purple-500"></span>
                             The Exogram
                         </h2>
-                        <h3 className="text-xl font-mono text-purple-400 mb-4 uppercase tracking-widest">Active Development</h3>
-                        <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                            I don't just advise. I build. <strong className="text-white">Exogram</strong> is my active research into AI memory systems and long-context reasoning.
+                        <h3 className="text-xl font-mono text-purple-600 mb-4 uppercase tracking-widest">Active Development</h3>
+                        <p className="text-zinc-600 text-lg leading-relaxed mb-8">
+                            I don't just advise. I build. <strong className="text-zinc-900">Exogram</strong> is my active research into AI memory systems and long-context reasoning.
                             It is the engine that powers my own agency.
                         </p>
-                        <Link href="/exogram" className="inline-flex items-center gap-2 text-purple-400 font-bold uppercase tracking-widest hover:text-purple-300 transition-colors">
+                        <Link href="/exogram" className="inline-flex items-center gap-2 text-purple-600 font-bold uppercase tracking-widest hover:text-purple-300 transition-colors">
                             View Project Status <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
                     <div className="flex-1 w-full">
-                        <GlowCard className="p-8 h-full bg-purple-900/10 border-purple-500/20" glowColor="purple">
+                        <GlowCard className="p-8 h-full bg-purple-50 border-purple-200" glowColor="purple">
                             <div className="flex justify-between items-start mb-6">
-                                <div className="text-2xl font-bold text-white font-grotesk">Exogram</div>
-                                <div className="px-3 py-1 bg-green-500/20 text-green-400 text-[10px] font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
+                                <div className="text-2xl font-bold text-zinc-900 font-grotesk">Exogram</div>
+                                <div className="px-3 py-1 bg-green-50 text-green-600 text-[10px] font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
                                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                                     Online
                                 </div>
                             </div>
-                            <div className="space-y-4 font-mono text-sm text-gray-400">
-                                <div className="flex justify-between border-b border-white/5 pb-2">
+                            <div className="space-y-4 font-mono text-sm text-zinc-600">
+                                <div className="flex justify-between border-b border-zinc-200 pb-2">
                                     <span>System Load</span>
-                                    <span className="text-white">42%</span>
+                                    <span className="text-zinc-900">42%</span>
                                 </div>
-                                <div className="flex justify-between border-b border-white/5 pb-2">
+                                <div className="flex justify-between border-b border-zinc-200 pb-2">
                                     <span>Memory Nodes</span>
-                                    <span className="text-white">14,205</span>
+                                    <span className="text-zinc-900">14,205</span>
                                 </div>
-                                <div className="flex justify-between border-b border-white/5 pb-2">
+                                <div className="flex justify-between border-b border-zinc-200 pb-2">
                                     <span>Last Ingestion</span>
-                                    <span className="text-white">Just now</span>
+                                    <span className="text-zinc-900">Just now</span>
                                 </div>
                             </div>
                         </GlowCard>
@@ -171,36 +171,36 @@ export default function HomeContent() {
 
             {/* Section: Feature Snippet / FAQ for AEO (Hidden/Structured potentially, or visible) - Adding visible per request for content coverage */}
             {/* Adding FAQ Section for AEO as per instructions */}
-            <section id="faq" className="relative z-10 py-20 border-t border-white/5">
-                <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-12 flex items-center gap-4">
+            <section id="faq" className="relative z-10 py-20 border-t border-zinc-200">
+                <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-900 mb-12 flex items-center gap-4">
                     <span className="w-12 h-1 bg-gradient-to-r from-cyan-500 to-cobalt"></span>
                     Common Questions
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-6">
                         <div className="space-y-2">
-                            <h3 className="text-xl font-bold text-white">What is an R&D audit?</h3>
-                            <p className="text-gray-400 leading-relaxed">
+                            <h3 className="text-xl font-bold text-zinc-900">What is an R&D audit?</h3>
+                            <p className="text-zinc-600 leading-relaxed">
                                 An R&D audit is a forensic review of engineering spend that surfaces hidden capital risks — technical debt, maintenance costs reported as innovation, and AI economics that aren't being tracked. Unlike consulting, an audit doesn't optimize; it verifies what's actually true.
                             </p>
                         </div>
                         <div className="space-y-2">
-                            <h3 className="text-xl font-bold text-white">How much does an R&D audit cost?</h3>
-                            <p className="text-gray-400 leading-relaxed">
+                            <h3 className="text-xl font-bold text-zinc-900">How much does an R&D audit cost?</h3>
+                            <p className="text-zinc-600 leading-relaxed">
                                 Richard Ewing offers R&D audits starting at $2,500 for a 60-minute diagnostic with written report, up to $7,500 for a full 2-3 week forensic review. A 30-minute gut-check call is available for $450.
                             </p>
                         </div>
                     </div>
                     <div className="space-y-6">
                         <div className="space-y-2">
-                            <h3 className="text-xl font-bold text-white">What's the difference between consulting and auditing?</h3>
-                            <p className="text-gray-400 leading-relaxed">
+                            <h3 className="text-xl font-bold text-zinc-900">What's the difference between consulting and auditing?</h3>
+                            <p className="text-zinc-600 leading-relaxed">
                                 Consulting asks "how can we improve?" Auditing asks "what's actually true?" Consultants optimize. Auditors verify. An R&D audit surfaces the facts — the real maintenance ratio, the true technical debt liability, the actual AI unit economics — without assuming the current approach is correct.
                             </p>
                         </div>
                         <div className="space-y-2">
-                            <h3 className="text-xl font-bold text-white">What is a Product Economist?</h3>
-                            <p className="text-gray-400 leading-relaxed">
+                            <h3 className="text-xl font-bold text-zinc-900">What is a Product Economist?</h3>
+                            <p className="text-zinc-600 leading-relaxed">
                                 A Product Economist treats product decisions as economic decisions. Rather than measuring success in story points or velocity, a Product Economist measures R&D ROI, capital efficiency, and the dollar value of technical debt. I coined the term to describe the gap between engineering metrics and financial reality.
                             </p>
                         </div>
@@ -209,8 +209,8 @@ export default function HomeContent() {
             </section>
 
             {/* Section: Governance Tiers */}
-            <ScrollReveal delay={200} className="relative z-10 py-20 border-t border-white/5">
-                <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-12 flex items-center gap-4">
+            <ScrollReveal delay={200} className="relative z-10 py-20 border-t border-zinc-200">
+                <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-900 mb-12 flex items-center gap-4">
                     <span className="w-12 h-1 bg-gold"></span>
                     Intervention Protocols
                 </h2>
@@ -222,14 +222,14 @@ export default function HomeContent() {
                         { name: "R&D Capital Audit", price: "$7,500", desc: "Full Forensic Review" },
                         { name: "Oversight Retainer", price: "$5,000/mo", desc: "Board-Level Sanity Checks" }
                     ].map((tier) => (
-                        <div key={tier.name} className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                        <div key={tier.name} className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-xl border border-zinc-200 bg-white hover:bg-zinc-50 transition-colors">
                             <div className="text-center sm:text-left mb-4 sm:mb-0">
-                                <div className="text-xl font-bold text-white font-grotesk">{tier.name}</div>
-                                <div className="text-sm text-gray-500">{tier.desc}</div>
+                                <div className="text-xl font-bold text-zinc-900 font-grotesk">{tier.name}</div>
+                                <div className="text-sm text-zinc-500">{tier.desc}</div>
                             </div>
                             <div className="flex items-center gap-6">
-                                <div className="text-xl font-mono text-cyan-400">{tier.price}</div>
-                                <Link href="/advisory" className="text-sm font-bold text-white uppercase tracking-wider hover:text-cyan-400 transition-colors">Book Now</Link>
+                                <div className="text-xl font-mono text-cyan-600">{tier.price}</div>
+                                <Link href="/advisory" className="text-sm font-bold text-zinc-900 uppercase tracking-wider hover:text-cyan-600 transition-colors">Book Now</Link>
                             </div>
                         </div>
                     ))}
@@ -237,10 +237,10 @@ export default function HomeContent() {
             </ScrollReveal>
 
             {/* Newsletter */}
-            <ScrollReveal delay={300} className="max-w-4xl relative z-10 py-20 border-t border-white/10 mt-8">
-                <div className="bg-gradient-to-br from-gray-900 to-black p-8 sm:p-12 rounded-2xl border border-white/10 text-center">
-                    <h3 className="text-2xl sm:text-3xl font-grotesk font-bold text-white mb-4">Join the Executive Briefing</h3>
-                    <p className="text-gray-400 mb-8 max-w-lg mx-auto">
+            <ScrollReveal delay={300} className="max-w-4xl relative z-10 py-20 border-t border-zinc-200 mt-8">
+                <div className="bg-gradient-to-br from-white to-zinc-50 p-8 sm:p-12 rounded-2xl border border-zinc-200 text-center">
+                    <h3 className="text-2xl sm:text-3xl font-grotesk font-bold text-zinc-900 mb-4">Join the Executive Briefing</h3>
+                    <p className="text-zinc-600 mb-8 max-w-lg mx-auto">
                         No fluff. Just weekly analysis of why products fail and how to fix them.
                         Join 2,500+ board members and product leaders.
                     </p>
@@ -253,3 +253,4 @@ export default function HomeContent() {
         </div>
     );
 }
+

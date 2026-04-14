@@ -86,9 +86,9 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
             )}
             
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest pt-8">
-                <Link href="/" className="hover:text-white transition">Home</Link>
+                <Link href="/" className="hover:text-zinc-900 transition">Home</Link>
                 <span>/</span>
-                <Link href="/careers" className="hover:text-white transition">2026 Pathfinder</Link>
+                <Link href="/careers" className="hover:text-zinc-900 transition">2026 Pathfinder</Link>
                 <span>/</span>
                 <span className={`text-${pathData.color}-400 font-bold`}>{pathData.label}</span>
             </div>
@@ -149,7 +149,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                         )}
 
                         {pathData.primaryMetrics && (
-                            <div className={`${pathData.marketEconomics ? 'md:col-span-7' : 'md:col-span-12'} bg-black/40 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-xl`}>
+                            <div className={`${pathData.marketEconomics ? 'md:col-span-7' : 'md:col-span-12'} bg-zinc-50 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-xl`}>
                                 <div className="flex items-center gap-3 mb-6 border-b border-white/5 pb-4">
                                     <TrendingUp className={`text-${pathData.color}-400 flex-shrink-0`} size={20} />
                                     <h3 className="text-xs sm:text-sm font-mono uppercase tracking-widest text-white font-bold">Primary Board KPIs</h3>
@@ -226,7 +226,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                 <PhoneCall className="mx-auto text-cyan-400 mb-4" size={24} />
                                 <h4 className="text-white font-bold mb-2">Need a tailored 90-Day Architecture?</h4>
                                 <p className="text-zinc-400 text-sm mb-6 max-w-sm mx-auto">Book a 1-on-1 strategy audit to map this protocol directly to your unique enterprise constraints.</p>
-                                <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500/10 border border-cyan-500/50 text-cyan-400 text-xs font-mono font-bold tracking-widest uppercase rounded-lg hover:bg-cyan-500 hover:text-white transition-all">
+                                <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500/10 border border-cyan-500/50 text-cyan-400 text-xs font-mono font-bold tracking-widest uppercase rounded-lg hover:bg-cyan-500 hover:text-zinc-900 transition-all">
                                     Book Strategy Audit <ArrowRight size={14} />
                                 </Link>
                             </div>
@@ -258,7 +258,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     ))}
                                 </div>
 
-                                <Link href="/tools/audit-interview" className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-[10px] font-bold font-mono tracking-widest uppercase hover:bg-red-500 hover:text-white transition-all shadow-[0_0_15px_rgba(239,68,68,0.1)] hover:shadow-[0_0_20px_rgba(239,68,68,0.3)]">
+                                <Link href="/tools/audit-interview" className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-[10px] font-bold font-mono tracking-widest uppercase hover:bg-red-500 hover:text-zinc-900 transition-all shadow-[0_0_15px_rgba(239,68,68,0.1)] hover:shadow-[0_0_20px_rgba(239,68,68,0.3)]">
                                     Launch Diagnostic Protocol <ArrowRight size={14} />
                                 </Link>
                             </div>
@@ -278,7 +278,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                         <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all">
                                             <div className="flex items-center justify-between mb-1">
                                                 <span className={`text-sm font-bold text-${pathData.color}-400`}>{term.title}</span>
-                                                <ArrowRight size={14} className="text-zinc-600 group-hover:text-white transition-colors" />
+                                                <ArrowRight size={14} className="text-zinc-600 group-hover:text-zinc-900 transition-colors" />
                                             </div>
                                             <p className="text-xs text-zinc-400 line-clamp-2 mt-2 leading-relaxed">{term.definition}</p>
                                         </div>
@@ -307,7 +307,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {resolvedTracks.map((track) => (
                             <GlowCard key={track.title} className="p-8 h-full flex flex-col group relative overflow-hidden" glowColor={track.color || 'indigo'}>
-                                <div className="inline-block px-2 py-1 mb-4 rounded text-[9px] font-mono font-bold text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/10 self-start group-hover:text-white transition-colors">
+                                <div className="inline-block px-2 py-1 mb-4 rounded text-[9px] font-mono font-bold text-zinc-500 uppercase tracking-widest bg-white/5 border border-white/10 self-start group-hover:text-zinc-900 transition-colors">
                                     {track.subtitle}
                                 </div>
                                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">{track.title}</h3>
@@ -315,7 +315,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     {track.description}
                                 </p>
                                 <div className="mt-auto relative z-10 w-full pt-4 border-t border-white/5">
-                                    <Link href={track.modules && track.modules.length > 0 ? (track.modules[0].href.startsWith('/vault') ? track.modules[0].href : `/vault${track.modules[0].href}`) : '/vault/curriculum/tracks'} className="flex items-center justify-between w-full p-4 rounded-xl bg-black/40 hover:bg-white/10 text-white font-bold text-xs transition-all border border-white/5 hover:border-white/20 group/btn">
+                                    <Link href={track.modules && track.modules.length > 0 ? (track.modules[0].href.startsWith('/vault') ? track.modules[0].href : `/vault${track.modules[0].href}`) : '/vault/curriculum/tracks'} className="flex items-center justify-between w-full p-4 rounded-xl bg-zinc-50 hover:bg-white/10 text-white font-bold text-xs transition-all border border-white/5 hover:border-white/20 group/btn">
                                         ACCESS TRACK MODULE 1
                                         <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center group-hover/btn:bg-white/20 transition-colors">
                                             <ArrowRight size={12} className="text-zinc-300" />
@@ -365,7 +365,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                             Unlock Full Execution Architecture
                         </a>
                     </div>
-                    <p className="mt-6 text-[10px] text-zinc-500 font-mono tracking-widest uppercase border border-white/5 bg-black/20 px-4 py-2 rounded-full inline-block">
+                    <p className="mt-6 text-[10px] text-zinc-500 font-mono tracking-widest uppercase border border-white/5 bg-zinc-50 px-4 py-2 rounded-full inline-block">
                         Lifetime Access to 57 Curriculum Tracks
                     </p>
                 </ShineBorder>

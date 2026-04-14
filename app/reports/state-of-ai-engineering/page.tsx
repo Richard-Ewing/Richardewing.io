@@ -20,7 +20,7 @@ export default function StateOfAIEngineering() {
             <Meteors count={20} />
 
             <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 sm:py-32">
-                <Link href="/" className="inline-flex items-center text-sm font-mono text-zinc-500 hover:text-white transition-colors mb-12 uppercase tracking-widest">
+                <Link href="/" className="inline-flex items-center text-sm font-mono text-zinc-500 hover:text-zinc-900 transition-colors mb-12 uppercase tracking-widest">
                     <ChevronRight size={14} className="mr-1 rotate-180" /> Back to Base
                 </Link>
 
@@ -40,7 +40,7 @@ export default function StateOfAIEngineering() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start opacity-0 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-forwards">
                     
                     {/* The Gate */}
-                    <div className="relative w-full rounded-2xl bg-zinc-950 border border-white/10 p-8 shadow-[0_0_50px_-12px_rgba(168,85,247,0.3)]">
+                    <div className="relative w-full rounded-2xl bg-white border border-zinc-200 p-8 shadow-[0_0_50px_-12px_rgba(168,85,247,0.3)]">
                         <BorderBeam duration={8} size={250} colorFrom="#a855f7" colorTo="#3b82f6" />
                         
                         <div className="relative z-10 flex flex-col gap-6">
@@ -86,7 +86,7 @@ export default function StateOfAIEngineering() {
                             </ul>
                         </div>
                         
-                        <div className="p-4 bg-zinc-900 rounded-lg border border-zinc-800">
+                        <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-200">
                             <p className="text-xs text-zinc-500 font-mono italic">
                                 "This is the document I wish my CTO read before we burned $4M trying to build an internal Claude wrapper." 
                                 <br/><span className="text-zinc-300 mt-2 block">— Director of R&D, Series C Fintech</span>

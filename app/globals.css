@@ -6,13 +6,6 @@
 
   /* Legacy token kept for any remaining references */
   --color-obsidian: #1A1A1A;
-
-  /* Light-mode neutral overrides for zinc scale */
-  --color-zinc-400: #6B6B6B;
-  --color-zinc-500: #8A8A8A;
-  --color-zinc-600: #4A4A4A;
-  --color-zinc-900: #F5F0EB;
-  --color-zinc-950: #F5F0EB;
 }
 
 :root {

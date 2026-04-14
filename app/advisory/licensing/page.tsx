@@ -29,7 +29,7 @@ export default function LicensingPage() {
                         Your Brand.<br />
                         <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">My Diagnostic Engine.</span>
                     </h1>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
+                    <p className="text-zinc-600 text-lg max-w-2xl mx-auto mb-8">
                         License the same proprietary calculators used in $7,500 R&D audits —
                         under your firm's brand, with your client data.
                     </p>
@@ -71,7 +71,7 @@ export default function LicensingPage() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="bg-zinc-900/50 border border-white/10 rounded-xl p-6">
+                            <div className="bg-white/80 border border-zinc-200 rounded-xl p-6">
                                 <div className="text-xs text-purple-400 uppercase mb-2 font-mono">Standard</div>
                                 <div className="text-3xl font-bold text-white mb-1">$1,500<span className="text-lg text-zinc-500">/mo</span></div>
                                 <p className="text-zinc-500 text-sm mb-4">3 tools, 1 team seat, quarterly updates</p>
@@ -79,7 +79,7 @@ export default function LicensingPage() {
                                     Start Standard License →
                                 </a>
                             </div>
-                            <div className="bg-zinc-900/50 border border-purple-500/30 rounded-xl p-6">
+                            <div className="bg-white/80 border border-purple-500/30 rounded-xl p-6">
                                 <div className="text-xs text-cyan-400 uppercase mb-2 font-mono">Enterprise</div>
                                 <div className="text-3xl font-bold text-white mb-1">$3,000<span className="text-lg text-zinc-500">/mo</span></div>
                                 <p className="text-zinc-500 text-sm mb-4">All 5 tools, unlimited seats, custom integrations</p>
@@ -94,7 +94,7 @@ export default function LicensingPage() {
                 <section className="section max-w-4xl mx-auto text-center">
                     <p className="text-zinc-500 text-sm">
                         Not sure if licensing is the right fit?{' '}
-                        <Link href="/advisory" className="text-purple-400 hover:text-white transition-colors">Book a 30-min call</Link> to discuss.
+                        <Link href="/advisory" className="text-purple-400 hover:text-zinc-900 transition-colors">Book a 30-min call</Link> to discuss.
                     </p>
                 </section>
             </div>

@@ -29,7 +29,7 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="text-xs text-gray-500 uppercase tracking-wide mb-4 font-mono">Intervention</h4>
+                        <h4 className="text-xs text-zinc-500 uppercase tracking-wide mb-4 font-mono">Intervention</h4>
                         <ul className="space-y-2 text-sm font-grotesk">
                             <li><Link href="/start-here" className="text-cyan-600 hover:text-zinc-900 transition-colors font-bold">→ Start Here</Link></li>
                             <li><Link href="/advisory" className="text-zinc-500 hover:text-zinc-900 transition-colors">Advisory Services</Link></li>
@@ -46,7 +46,7 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="text-xs text-gray-500 uppercase tracking-wide mb-4 font-mono">Intelligence</h4>
+                        <h4 className="text-xs text-zinc-500 uppercase tracking-wide mb-4 font-mono">Intelligence</h4>
                         <ul className="space-y-2 text-sm font-grotesk">
                             <li><Link href="/doctrine" className="text-zinc-500 hover:text-zinc-900 transition-colors">Doctrine</Link></li>
                             <li><Link href="/articles" className="text-zinc-500 hover:text-zinc-900 transition-colors">Canonical Hub</Link></li>
@@ -86,7 +86,7 @@ export function Footer() {
 
                 {/* As Seen In */}
                 <div className="py-8 border-y border-zinc-200 mb-8">
-                    <p className="text-xs text-gray-500 uppercase tracking-widest text-center mb-6 font-mono">
+                    <p className="text-xs text-zinc-500 uppercase tracking-widest text-center mb-6 font-mono">
                         Published In
                     </p>
                     <div className="flex items-center justify-center gap-8 flex-wrap">
@@ -106,7 +106,7 @@ export function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
                     <p>© 2026 Richard Ewing. All rights reserved.</p>
                     <div className="flex items-center gap-6">
                         <Link href="/legal" className="hover:text-zinc-900 transition-colors">Legal & Privacy</Link>

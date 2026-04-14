@@ -108,7 +108,7 @@ const NewsletterSection = () => {
                             </>
                         )}
 
-                        <p className="mt-8 text-sm text-gray-500">
+                        <p className="mt-8 text-sm text-zinc-500">
                             Monthly. No fluff. 2,000+ executives read before they decide.
                         </p>
 

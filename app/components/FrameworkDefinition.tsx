@@ -49,7 +49,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
 
                 {/* Breadcrumb */}
                 <div className="py-8">
-                    <a href="/articles" className="text-gray-500 hover:text-white text-sm font-mono transition-colors">
+                    <a href="/articles" className="text-zinc-500 hover:text-zinc-900 text-sm font-mono transition-colors">
                         ← Back to Canonical Hub
                     </a>
                 </div>
@@ -63,7 +63,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-grotesk leading-tight">
                             {framework.name}
                         </h1>
-                        <p className="text-gray-400">
+                        <p className="text-zinc-600">
                             Coined by <span className="text-white">Richard Ewing</span>, Product Economist
                         </p>
                     </div>
@@ -74,7 +74,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                     <div className="max-w-3xl">
                         <h2 className="text-lg font-semibold text-cyan-400 mb-4 font-grotesk">Definition</h2>
                         <div className="p-6 bg-white/5 border-l-4 border-cyan-400 rounded-r-lg">
-                            <p className="text-xl text-gray-200 leading-relaxed font-serif italic">
+                            <p className="text-xl text-zinc-700 leading-relaxed font-serif italic">
                                 {framework.definition}
                             </p>
                         </div>
@@ -85,7 +85,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 <section className="section-sm">
                     <div className="max-w-3xl">
                         <h2 className="text-lg font-semibold text-purple-400 mb-4 font-grotesk">Why It Matters</h2>
-                        <p className="text-gray-300 leading-relaxed text-lg">
+                        <p className="text-zinc-600 leading-relaxed text-lg">
                             {framework.whyItMatters}
                         </p>
                     </div>
@@ -98,7 +98,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                             <h2 className="text-lg font-semibold text-green-400 mb-4 font-grotesk">How to Calculate</h2>
                             <ol className="space-y-4">
                                 {framework.howToCalculate.map((step, i) => (
-                                    <li key={i} className="flex gap-4 text-gray-300">
+                                    <li key={i} className="flex gap-4 text-zinc-600">
                                         <span className="text-green-500 font-mono font-bold bg-green-900/20 px-2 rounded">{i + 1}</span>
                                         <span>{step}</span>
                                     </li>
@@ -111,14 +111,14 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {/* Related Articles */}
                 <section className="section-sm">
                     <div className="max-w-3xl">
-                        <h2 className="text-lg font-semibold text-white mb-4 font-grotesk border-b border-white/10 pb-2">Related Articles</h2>
+                        <h2 className="text-lg font-semibold text-white mb-4 font-grotesk border-b border-zinc-200 pb-2">Related Articles</h2>
                         <ul className="space-y-4">
                             {framework.relatedArticles.map((article, i) => (
                                 <li key={i} className="group">
                                     <a href={article.url} className="text-lg text-white group-hover:text-purple-400 transition-colors font-semibold block mb-1">
                                         "{article.title}"
                                     </a>
-                                    <span className="text-gray-500 text-sm font-mono"> — {article.publication}, {article.date}</span>
+                                    <span className="text-zinc-500 text-sm font-mono"> — {article.publication}, {article.date}</span>
                                 </li>
                             ))}
                         </ul>
@@ -130,7 +130,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                     <section className="section my-8">
                         <div className="max-w-3xl card-featured border-purple-500/50 p-8">
                             <h2 className="text-lg font-semibold text-purple-400 mb-2 font-grotesk">Calculate Yours</h2>
-                            <p className="text-gray-400 mb-6">Use the interactive tool to calculate your {framework.name}.</p>
+                            <p className="text-zinc-600 mb-6">Use the interactive tool to calculate your {framework.name}.</p>
                             <a
                                 href={framework.relatedTool.url}
                                 className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors"
@@ -144,10 +144,10 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {/* Citation */}
                 <section className="section-sm pb-20">
                     <div className="max-w-3xl">
-                        <h2 className="text-sm font-semibold text-gray-500 mb-4 font-mono uppercase tracking-widest">Citation</h2>
-                        <div className="card bg-black/50 p-6 border-white/5">
-                            <p className="text-gray-500 text-xs mb-4 uppercase">To cite this definition:</p>
-                            <p className="text-gray-300 font-mono text-sm break-all">
+                        <h2 className="text-sm font-semibold text-zinc-500 mb-4 font-mono uppercase tracking-widest">Citation</h2>
+                        <div className="card bg-white/50 p-6 border-zinc-200">
+                            <p className="text-zinc-500 text-xs mb-4 uppercase">To cite this definition:</p>
+                            <p className="text-zinc-600 font-mono text-sm break-all">
                                 Ewing, R. (2026). "{framework.name}." richardewing.io.<br />
                                 https://www.richardewing.io/articles/frameworks/{framework.slug}
                             </p>

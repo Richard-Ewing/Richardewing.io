@@ -76,15 +76,15 @@ export default function PartnershipsPage() {
                         ))}
                     </div>
 
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-10 text-center mb-16">
+                    <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-10 text-center mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-6">Partnership Tiers</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                            <div className="rounded-xl border border-white/10 p-6 flex flex-col">
+                            <div className="rounded-xl border border-zinc-200 p-6 flex flex-col">
                                 <h3 className="text-lg font-bold text-zinc-300 mb-2">Referral Partner</h3>
                                 <p className="text-sm text-zinc-500 mb-4 flex-1">Refer clients for R&D audits. Earn referral fees on closed deals.</p>
                                 <div className="text-2xl font-bold text-white mb-1">Free</div>
                                 <div className="text-xs text-zinc-600 mb-4">Revenue share on referred deals</div>
-                                <a href="mailto:richardewing@exogram.ai?subject=Referral%20Partner%20Application" className="block text-center py-3 rounded-lg border border-white/20 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/5 transition-all">
+                                <a href="mailto:richardewing@exogram.ai?subject=Referral%20Partner%20Application" className="block text-center py-3 rounded-lg border border-zinc-300 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/5 transition-all">
                                     Apply →
                                 </a>
                             </div>

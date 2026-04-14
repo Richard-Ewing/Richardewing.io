@@ -36,7 +36,7 @@ export default function TestimonialsPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
                         {testimonials.map((t, i) => (
-                            <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 hover:border-amber-500/20 transition-colors">
+                            <div key={i} className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-8 hover:border-amber-500/20 transition-colors">
                                 <div className="flex items-center gap-3 mb-4">
                                     <span className="text-2xl">{t.icon}</span>
                                     <div>
@@ -51,19 +51,19 @@ export default function TestimonialsPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-16">
-                        <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">100+</div>
                             <div className="text-xs text-zinc-500 mt-1">Audits Completed</div>
                         </div>
-                        <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">$50M+</div>
                             <div className="text-xs text-zinc-500 mt-1">Client Savings Identified</div>
                         </div>
-                        <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">14</div>
                             <div className="text-xs text-zinc-500 mt-1">Industries Served</div>
                         </div>
-                        <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">4.9/5</div>
                             <div className="text-xs text-zinc-500 mt-1">Client Satisfaction</div>
                         </div>

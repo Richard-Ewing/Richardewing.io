@@ -40,7 +40,7 @@ export default function AuditInterviewVsHackerRankPage() {
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full border-collapse">
                             <thead>
-                                <tr className="border-b border-white/10">
+                                <tr className="border-b border-zinc-200">
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">Dimension</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-emerald-400 uppercase tracking-widest">Audit Interview</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-400 uppercase tracking-widest">HackerRank</th>
@@ -48,7 +48,7 @@ export default function AuditInterviewVsHackerRankPage() {
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
-                                    <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02]">
+                                    <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02]">
                                         <td className="py-4 px-4 text-sm text-zinc-400 font-bold">{row.dimension}</td>
                                         <td className="py-4 px-4 text-sm text-white">{row.audit}</td>
                                         <td className="py-4 px-4 text-sm text-zinc-400">{row.hack}</td>

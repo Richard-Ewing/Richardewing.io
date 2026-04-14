@@ -40,7 +40,7 @@ export default function AUEBvsAWSPage() {
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full border-collapse">
                             <thead>
-                                <tr className="border-b border-white/10">
+                                <tr className="border-b border-zinc-200">
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">Dimension</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-orange-400 uppercase tracking-widest">AUEB</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-400 uppercase tracking-widest">AWS Cost Explorer</th>
@@ -48,7 +48,7 @@ export default function AUEBvsAWSPage() {
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
-                                    <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02]">
+                                    <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02]">
                                         <td className="py-4 px-4 text-sm text-zinc-400 font-bold">{row.dimension}</td>
                                         <td className="py-4 px-4 text-sm text-white">{row.aueb}</td>
                                         <td className="py-4 px-4 text-sm text-zinc-400">{row.aws}</td>
@@ -71,7 +71,7 @@ export default function AUEBvsAWSPage() {
                         </Link>
                     </div>
 
-                    <div className="text-center py-12 border-t border-white/10">
+                    <div className="text-center py-12 border-t border-zinc-200">
                         <p className="text-zinc-400 mb-4">Need AI economics advisory?</p>
                         <Link href="/advisory" className="text-orange-400 hover:text-orange-300 font-bold uppercase tracking-widest text-sm">
                             Book a $2,500 AI Economics Diagnostic →

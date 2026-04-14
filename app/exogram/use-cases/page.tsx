@@ -57,7 +57,7 @@ export default function ExogramUseCasesPage() {
         <main className="pt-24 pb-20">
             <div className="page-container max-w-5xl mx-auto">
                 <div className="text-xs text-zinc-500 mb-8">
-                    <Link href="/exogram" className="hover:text-white transition-colors">Exogram</Link>
+                    <Link href="/exogram" className="hover:text-zinc-900 transition-colors">Exogram</Link>
                     <span className="mx-2">→</span>
                     <span className="text-zinc-400">Use Cases</span>
                 </div>
@@ -75,7 +75,7 @@ export default function ExogramUseCasesPage() {
 
                 <div className="space-y-8">
                     {useCases.map(uc => (
-                        <section key={uc.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 hover:border-purple-500/20 transition-colors">
+                        <section key={uc.title} className="rounded-2xl border border-zinc-200 bg-white/[0.03] p-8 hover:border-purple-500/20 transition-colors">
                             <div className="flex items-start gap-4 mb-6">
                                 <span className="text-4xl">{uc.icon}</span>
                                 <div>
@@ -98,7 +98,7 @@ export default function ExogramUseCasesPage() {
                                     <p className="text-sm text-white font-semibold mb-3">{uc.impact}</p>
                                     <div className="flex flex-wrap gap-1.5">
                                         {uc.regulations.map(r => (
-                                            <span key={r} className="text-[10px] font-mono text-zinc-500 px-2 py-0.5 rounded border border-white/5 bg-white/[0.02]">{r}</span>
+                                            <span key={r} className="text-[10px] font-mono text-zinc-500 px-2 py-0.5 rounded border border-zinc-200 bg-white/[0.02]">{r}</span>
                                         ))}
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@ export default function ExogramUseCasesPage() {
                             <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
                                 Visit Exogram.ai →
                             </a>
-                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-200 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                                 Discuss Your Use Case →
                             </Link>
                         </div>

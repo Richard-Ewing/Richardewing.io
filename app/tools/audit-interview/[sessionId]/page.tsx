@@ -423,7 +423,7 @@ export default function SessionCommandCenter() {
                     <div className="flex flex-col items-center pt-8 gap-6">
                         <div className="w-full mt-8">
                             {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
-                            <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5 bg-black/20 text-left">
+                            <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5 bg-zinc-50 text-left">
                                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                     3-Step Compliance Action Memo
@@ -440,7 +440,7 @@ export default function SessionCommandCenter() {
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Hard-Lock the Recruiting Pipeline</h4>
                                             <p className="text-zinc-400 text-sm leading-relaxed mb-4">The candidate's score of {analytics.score}/100 indicates systemic misalignment with deterministic engineering and enterprise value creation. Do not proceed.</p>
-                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="bg-white/60 p-3 rounded border border-white/5 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
@@ -459,7 +459,7 @@ export default function SessionCommandCenter() {
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Recalibrate the Interview Panel</h4>
                                             <p className="text-zinc-400 text-sm leading-relaxed mb-4">If this candidate progressed past the initial phone screen, your existing technical interviewers are approving detrimental systemic risks.</p>
-                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="bg-white/60 p-3 rounded border border-white/5 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
@@ -478,7 +478,7 @@ export default function SessionCommandCenter() {
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Internal Team Compliance Audit</h4>
                                             <p className="text-zinc-400 text-sm leading-relaxed mb-4">The fact that you are actively interviewing for {session.role === 'PRODUCT_VP' ? 'Product Leadership' : 'Engineering Leadership'} indicates potential internal instability. Verify your existing teams aren't committing the same errors.</p>
-                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="bg-white/60 p-3 rounded border border-white/5 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
@@ -501,7 +501,7 @@ export default function SessionCommandCenter() {
                             <div className="flex justify-center mt-8">
                                 <button
                                     onClick={() => (window.location.href = '/tools/audit-interview')}
-                                    className="text-zinc-500 font-mono text-xs uppercase tracking-widest hover:text-white transition-colors"
+                                    className="text-zinc-500 font-mono text-xs uppercase tracking-widest hover:text-zinc-900 transition-colors"
                                 >
                                     ← Run Another Simulation
                                 </button>

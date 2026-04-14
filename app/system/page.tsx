@@ -107,7 +107,7 @@ export default function SystemPage() {
                     </div>
 
                     {/* APER Diagnostic Tool Gateway */}
-                    <section id="aper" className="mb-8 pt-6 border-t border-white/10">
+                    <section id="aper" className="mb-8 pt-6 border-t border-zinc-200">
                         <div className="border border-yellow-500/20 rounded-2xl p-6 bg-gradient-to-br from-yellow-500/5 via-transparent to-transparent">
                             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                                 <div>
@@ -133,7 +133,7 @@ export default function SystemPage() {
 
             {/* Q-PEP Section */}
             <ScrollReveal delay={200}>
-                <section id="qpep" className="mb-8 border-t border-white/10 pt-8">
+                <section id="qpep" className="mb-8 border-t border-zinc-200 pt-8">
                     <div className="grid grid-cols-1 md:grid-cols-[80px_1fr] gap-4 sm:gap-6">
                         <div className="text-3xl sm:text-4xl font-mono text-zinc-700 font-bold">02</div>
                         <div>
@@ -155,7 +155,7 @@ export default function SystemPage() {
 
             {/* CTA */}
             <ScrollReveal delay={300}>
-                <div className="text-center py-8 border-t border-white/10">
+                <div className="text-center py-8 border-t border-zinc-200">
                     <p className="text-zinc-400 mb-6">Ready to install financial transparency?</p>
                     <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
                         <Link

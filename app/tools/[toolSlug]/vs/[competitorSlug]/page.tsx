@@ -91,7 +91,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
             <Navigation />
             
             <main className="max-w-5xl mx-auto px-4 pt-32 mb-32 relative z-10">
-                <Link href={`/tools/${tool.toolSlug}`} className="inline-flex items-center gap-2 text-zinc-500 hover:text-white font-mono text-xs uppercase tracking-widest transition-colors mb-12">
+                <Link href={`/tools/${tool.toolSlug}`} className="inline-flex items-center gap-2 text-zinc-500 hover:text-zinc-900 font-mono text-xs uppercase tracking-widest transition-colors mb-12">
                     <ArrowLeft size={14} /> Back to Diagnostic App
                 </Link>
 
@@ -204,7 +204,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                     <ShineBorder borderColor="rgba(99, 102, 241, 0.6)" duration={2}>
                         <Link 
                             href={`/tools/${tool.toolSlug}`}
-                            className="w-full sm:w-auto px-8 py-5 bg-white text-black font-bold uppercase tracking-widest hover:bg-indigo-500 hover:text-white transition-all flex items-center justify-center gap-3"
+                            className="w-full sm:w-auto px-8 py-5 bg-white text-black font-bold uppercase tracking-widest hover:bg-indigo-500 hover:text-zinc-900 transition-all flex items-center justify-center gap-3"
                         >
                             <Zap size={18}/> RUN THE EXECUTIVE AUDIT NOW
                         </Link>

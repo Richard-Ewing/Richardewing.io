@@ -29,7 +29,7 @@ export default function BenchmarkPage() {
                         State of Product Debt<br />
                         <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">2026 Report.</span>
                     </h1>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
+                    <p className="text-zinc-600 text-lg max-w-2xl mx-auto mb-8">
                         Anonymized, aggregated data from diagnostic tools used by engineering leaders.
                         How does your organization compare?
                     </p>
@@ -70,7 +70,7 @@ export default function BenchmarkPage() {
                                     ))}
                                 </ul>
                             </div>
-                            <div className="bg-zinc-900/50 border border-white/10 rounded-2xl p-8 text-center">
+                            <div className="bg-white/80 border border-zinc-200 rounded-2xl p-8 text-center">
                                 <Download className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
                                 <h3 className="text-xl font-bold text-white mb-2">Download Free Report</h3>
                                 <p className="text-zinc-500 text-sm mb-6">Enter your email to receive the full PDF report.</p>
@@ -88,7 +88,7 @@ export default function BenchmarkPage() {
                     </div>
                 </section>
 
-                <section className="section max-w-4xl mx-auto text-center mt-12 mb-16 border-t border-white/10 pt-16">
+                <section className="section max-w-4xl mx-auto text-center mt-12 mb-16 border-t border-zinc-200 pt-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-6">
                         Open Data Report
                     </div>
@@ -96,7 +96,7 @@ export default function BenchmarkPage() {
                     <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">
                         We open-sourced our proprietary M&A telemetry. View the raw, ungated mathematical timeline of FTE displacement, Vector DB collapse, and OpEx vs CapEx thresholds.
                     </p>
-                    <Link href="/benchmark/ai-capital-2026" className="inline-flex px-8 py-4 bg-zinc-900 border border-cyan-500/30 text-white font-bold text-sm rounded-lg hover:bg-cyan-950/20 transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.3)]">
+                    <Link href="/benchmark/ai-capital-2026" className="inline-flex px-8 py-4 bg-zinc-50 border border-cyan-500/30 text-white font-bold text-sm rounded-lg hover:bg-cyan-950/20 transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.3)]">
                         Read The Open Data Report →
                     </Link>
                 </section>
@@ -107,7 +107,7 @@ export default function BenchmarkPage() {
                         The benchmark tells you where the industry stands. A diagnostic tells you where <span className="text-white font-semibold">you</span> stand.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/tools/pdi" className="px-6 py-3 bg-white/5 border border-white/10 text-white font-bold text-sm rounded-lg hover:bg-white/10 transition-all">
+                        <Link href="/tools/pdi" className="px-6 py-3 bg-white/5 border border-zinc-200 text-white font-bold text-sm rounded-lg hover:bg-white/10 transition-all">
                             Run Free PDI Calculator
                         </Link>
                         <Link href="/advisory" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-sm rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">

@@ -58,15 +58,15 @@ export default function ForBoardsPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">$$$</div>
                             <div className="text-sm text-zinc-400">Debt quantified in dollars, not story points</div>
                         </div>
-                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">Q1-Q4</div>
                             <div className="text-sm text-zinc-400">Quarterly reporting cadence for fiduciary oversight</div>
                         </div>
-                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">1 Page</div>
                             <div className="text-sm text-zinc-400">Executive summary, not 50-page engineering reports</div>
                         </div>

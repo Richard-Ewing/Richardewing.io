@@ -239,7 +239,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <div className="flex items-center justify-between mb-3">
                         <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest">{term.category}</div>
                         <div className="flex items-center gap-3">
-                            <span className="text-xs text-gray-500 font-mono">{readingTime} min read</span>
+                            <span className="text-xs text-zinc-500 font-mono">{readingTime} min read</span>
                             <ShareButtons url={`/glossary/${slug}`} title={`What is ${term.title}?`} />
                         </div>
                     </div>
@@ -285,7 +285,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 {/* Full Definition */}
                 <section className="mb-12">
-                    <div className="prose prose-invert prose-lg max-w-none">
+                    <div className="prose prose-zinc prose-lg max-w-none">
                         {term.definition.split('\n\n').map((p, i) => (
                             <p key={i} className="text-zinc-300 leading-relaxed mb-4"
                                dangerouslySetInnerHTML={{ __html: autoLink(p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>'), slug) }}
@@ -298,7 +298,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {whereIsItUsed && (
                     <section className="mb-12 card p-8 border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.02] to-transparent">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🌍 Where Is It Used?</h2>
-                        <div className="prose prose-invert max-w-none">
+                        <div className="prose prose-zinc max-w-none">
                             {whereIsItUsed.split('\n\n').map((p, i) => (
                                 <p key={i} className="text-zinc-300 leading-relaxed mb-4">{p}</p>
                             ))}
@@ -310,7 +310,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {whoUsesIt && (
                     <section className="mb-12 card p-8 border-violet-500/20 bg-gradient-to-br from-violet-500/[0.02] to-transparent">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">👤 Who Uses It?</h2>
-                        <div className="prose prose-invert max-w-none">
+                        <div className="prose prose-zinc max-w-none">
                             {whoUsesIt.split('\n\n').map((p, i) => (
                                 <p key={i} className="text-zinc-300 leading-relaxed mb-4">{p}</p>
                             ))}
@@ -321,7 +321,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* Why It Matters */}
                 <section className="mb-12 card p-8 border-cyan-500/20">
                     <h2 className="text-2xl font-grotesk font-bold text-white mb-4">💡 Why It Matters</h2>
-                    <div className="prose prose-invert max-w-none">
+                    <div className="prose prose-zinc max-w-none">
                         {term.whyItMatters.split('\n\n').map((p, i) => (
                             <p key={i} className="text-zinc-300 leading-relaxed mb-4">{p}</p>
                         ))}
@@ -332,7 +332,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {term.howToMeasure && (
                     <section className="mb-12 card p-8 border-emerald-500/20">
                         <h2 className="text-2xl font-grotesk font-bold text-white mb-4">📏 How to Measure</h2>
-                        <div className="prose prose-invert max-w-none">
+                        <div className="prose prose-zinc max-w-none">
                             {term.howToMeasure.split('\n').map((line, i) => (
                                 <p key={i} className="text-zinc-300 leading-relaxed mb-2">{line}</p>
                             ))}
@@ -343,7 +343,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* How to Apply — always rendered */}
                 <section className="mb-12 card p-8 border-violet-500/20">
                     <h2 className="text-2xl font-grotesk font-bold text-white mb-6">🛠️ How to Apply {term.title}</h2>
-                    <div className="prose prose-invert max-w-none">
+                    <div className="prose prose-zinc max-w-none">
                         {howToApply.split('\n\n').map((p, i) => (
                             <p key={i} className="text-zinc-300 leading-relaxed mb-4"
                                dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>') }}
@@ -359,7 +359,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         {checklist.map((item, i) => (
                             <label key={i} className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 transition-colors cursor-pointer group">
                                 <input type="checkbox" className="mt-1 accent-emerald-500 w-4 h-4 rounded" />
-                                <span className="text-zinc-300 group-hover:text-white transition-colors">{item}</span>
+                                <span className="text-zinc-300 group-hover:text-zinc-900 transition-colors">{item}</span>
                             </label>
                         ))}
                     </div>
@@ -432,7 +432,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         </div>
                     </div>
                     <div className="p-6">
-                        <div className="bg-black/40 rounded-xl p-6 font-mono text-sm text-zinc-400 whitespace-pre-line border border-white/5 overflow-x-auto">
+                        <div className="bg-zinc-50 rounded-xl p-6 font-mono text-sm text-zinc-400 whitespace-pre-line border border-white/5 overflow-x-auto">
                             {diagram}
                         </div>
                     </div>

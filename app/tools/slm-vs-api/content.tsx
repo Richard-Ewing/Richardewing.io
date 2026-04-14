@@ -120,14 +120,14 @@ export default function SLMTool() {
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!results} toolName="SLM-ARB" />
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                <Link href="/system" className="hover:text-white transition">Intelligence</Link>
+                <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-white font-bold">Inference Arbitrage</span>
             </div>
 
             {!results ? (
                 <ScrollReveal>
-                    <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-white/5">
+                    <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-200">
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
                             <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest">AI Unit Economics | Build vs Buy</span>
@@ -145,7 +145,7 @@ export default function SLMTool() {
                             <div className="flex flex-wrap gap-2">
                                 {PERSONAS.map(p => (
                                     <button key={p.id} onClick={() => setPersona(p.id)}
-                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400' : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'}`}
+                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400' : 'bg-white/80 border-zinc-200 text-zinc-600 hover:border-white/30'}`}
                                     >
                                         <p.icon size={14} /> {p.label}
                                     </button>
@@ -156,7 +156,7 @@ export default function SLMTool() {
                         <div className="space-y-6">
                             {step === 1 && (
                                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
-                                    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                    <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold font-mono text-sm border border-blue-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-white">Inference Volume</h3>
@@ -165,7 +165,7 @@ export default function SLMTool() {
                                     </div>
 
                                     <div className="space-y-8">
-                                        <div className="p-6 bg-black/40 rounded-xl border border-white/5 relative group">
+                                        <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-200 relative group">
                                             <div className="flex justify-between items-end mb-4">
                                                 <label className="text-xs font-mono text-blue-400 uppercase tracking-widest flex items-center gap-2">
                                                     Generative Workflows / Day
@@ -176,7 +176,7 @@ export default function SLMTool() {
                                             <input type="range" title="Queries Per Day" aria-label="Queries Per Day" min="1000" max="500000" step="1000" value={queriesPerDay} onChange={e => setQueriesPerDay(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-blue-500" />
                                         </div>
 
-                                        <div className="p-6 bg-black/40 rounded-xl border border-white/5 relative group">
+                                        <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-200 relative group">
                                             <div className="flex justify-between items-end mb-4">
                                                 <label className="text-xs font-mono text-indigo-400 uppercase tracking-widest flex items-center gap-2">
                                                     Average Tokens / Workflow
@@ -196,7 +196,7 @@ export default function SLMTool() {
 
                             {step === 2 && (
                                 <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
-                                    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                    <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono text-sm border border-emerald-500/30">2</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-white">Vendor & Target Hardware</h3>
@@ -207,13 +207,13 @@ export default function SLMTool() {
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                         <div>
                                             <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block"><BrainCircuit size={12} className="inline mr-1"/> Current API Tax Collector</label>
-                                            <select title="API Provider" aria-label="API Provider" value={apiProvider} onChange={e => setApiProvider(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-emerald-500 focus:outline-none transition-colors">
+                                            <select title="API Provider" aria-label="API Provider" value={apiProvider} onChange={e => setApiProvider(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl p-4 text-white font-mono focus:border-emerald-500 focus:outline-none transition-colors">
                                                 {Object.keys(API_PRICING).map(k => <option key={k} value={k}>{API_PRICING[k].name}</option>)}
                                             </select>
                                         </div>
                                         <div>
                                             <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block"><HardDrive size={12} className="inline mr-1"/> Local SLM Strategy (vLLM/Ollama)</label>
-                                            <select title="Hardware Strategy" aria-label="Hardware Strategy" value={hardwareStrategy} onChange={e => setHardwareStrategy(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-emerald-500 focus:outline-none transition-colors">
+                                            <select title="Hardware Strategy" aria-label="Hardware Strategy" value={hardwareStrategy} onChange={e => setHardwareStrategy(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl p-4 text-white font-mono focus:border-emerald-500 focus:outline-none transition-colors">
                                                 {Object.keys(HW_PRICING).map(k => <option key={k} value={k}>{HW_PRICING[k].name}</option>)}
                                             </select>
                                             <p className="text-[10px] text-zinc-600 font-mono mt-2">Includes amortized $150/hr DevOps maintenance tax.</p>
@@ -221,7 +221,7 @@ export default function SLMTool() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <button onClick={() => setStep(1)} className="w-1/3 py-4 bg-zinc-900 border border-white/10 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">Back</button>
+                                        <button onClick={() => setStep(1)} className="w-1/3 py-4 bg-zinc-50 border border-zinc-200 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">Back</button>
                                         <div className="w-2/3">
                                             <ShineBorder borderColor="rgba(16, 185, 129, 0.6)" duration={2}>
                                                 <button onClick={() => { setShowGate(true); }} className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-emerald-500 transition-all flex items-center justify-center gap-3">
@@ -243,7 +243,7 @@ export default function SLMTool() {
                 </ScrollReveal>
             ) : (
                 <div id="slm-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
-                    <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                    <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
@@ -258,7 +258,7 @@ export default function SLMTool() {
 
                     <div id="slm-pdf-export-zone" className="space-y-6">
                         <ScrollReveal>
-                            <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
+                            <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-zinc-200">
                                 <BorderBeam size={400} duration={12} delay={9} borderWidth={1.5} colorFrom="#10b981" colorTo="#34d399" />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                     <div>
@@ -273,7 +273,7 @@ export default function SLMTool() {
                                         </div>
                                     </div>
                                     <div>
-                                        <div className="bg-black/50 p-6 rounded-2xl border border-white/5">
+                                        <div className="bg-white/50 p-6 rounded-2xl border border-zinc-200">
                                             {results.isSelfHostCheaper ? (
                                                 <>
                                                     <div className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-1">Projected Annual Savings</div>
@@ -316,7 +316,7 @@ export default function SLMTool() {
                         </ScrollReveal>
 
                         <ScrollReveal delay={150}>
-                             <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-white/10 mb-8">
+                             <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-zinc-200 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <Zap size={16} className="text-yellow-400" />
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">The "Why" For Private AI</span>
@@ -329,7 +329,7 @@ export default function SLMTool() {
 
                         {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
                         <ScrollReveal delay={180}>
-                            <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5 bg-black/20 text-left">
+                            <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-zinc-200 bg-zinc-50 text-left">
                                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                                     3-Step Inference Margin Escapement Playbook
@@ -338,7 +338,7 @@ export default function SLMTool() {
 
                                 <div className="space-y-4">
                                     {/* Step 1 */}
-                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                         <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
                                             <span className="text-rose-400 font-bold font-mono">01</span>
@@ -346,7 +346,7 @@ export default function SLMTool() {
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Audit Provider Arbitrage Velocity</h4>
                                             <p className="text-zinc-400 text-sm leading-relaxed mb-4">Are you locked into OpenAI because your developers love the playground? API moat lock-in prevents margin optimization through dynamic prompt routing.</p>
-                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
@@ -356,7 +356,7 @@ export default function SLMTool() {
                                     </div>
 
                                     {/* Step 2 */}
-                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                         <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
                                             <span className="text-amber-400 font-bold font-mono">02</span>
@@ -364,7 +364,7 @@ export default function SLMTool() {
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Map Semantic Caching Yield</h4>
                                             <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are likely paying frontier-model APIs repeatedly to generate responses to identical user queries. Token taxation on cached queries is a massive EBITDA leak.</p>
-                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
@@ -374,7 +374,7 @@ export default function SLMTool() {
                                     </div>
 
                                     {/* Step 3 */}
-                                    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-emerald-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-emerald-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
                                         <div className="bg-emerald-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-emerald-500/20">
                                             <span className="text-emerald-400 font-bold font-mono">03</span>
@@ -382,7 +382,7 @@ export default function SLMTool() {
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-white font-bold mb-2">Stand Up a Sovereign Validation Enclave</h4>
                                             <p className="text-zinc-400 text-sm leading-relaxed mb-4">Data sovereignty isn't just about privacy—it's an M&A prerequisite. Moving to an SLM (Llama 3 8B) on your VPC completely insulates your proprietary vectors from SaaS telemetry.</p>
-                                            <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                            <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
@@ -406,7 +406,7 @@ export default function SLMTool() {
                         {/* Action Footer */}
                         <ScrollReveal delay={250}>
                             <div className="flex justify-center gap-6 mt-6" data-html2canvas-ignore>
-                                <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Re-Calculate Variables</button>
+                                <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-zinc-900 underline underline-offset-4">← Re-Calculate Variables</button>
                             </div>
                         </ScrollReveal>
                     </div>

@@ -6,7 +6,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
     if (variant === 'compact') {
         return (
             <div className="flex items-center gap-4">
-                <span className="text-gray-400 text-sm font-grotesk">Get new articles first:</span>
+                <span className="text-zinc-600 text-sm font-grotesk">Get new articles first:</span>
                 <a
                     href={beehiivUrl}
                     target="_blank"
@@ -27,7 +27,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
                 <h3 className="text-2xl font-bold text-white mb-4 font-grotesk">
                     Executive Briefings
                 </h3>
-                <p className="text-gray-400 mb-6 max-w-md mx-auto">
+                <p className="text-zinc-600 mb-6 max-w-md mx-auto">
                     Dense, actionable intelligence for leaders who don't have time for "thought leadership."
                     <br /><span className="text-white">Read time: 5-10 minutes each.</span>
                 </p>
@@ -38,7 +38,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
                 >
                     Subscribe on Beehiiv →
                 </a>
-                <p className="text-gray-500 text-sm">
+                <p className="text-zinc-500 text-sm">
                     Join 2,000+ executives. One email per month. Unsubscribe anytime.
                 </p>
             </div>
@@ -51,7 +51,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
             <h3 className="text-lg font-semibold text-white mb-2 font-grotesk">
                 Get New Briefs First
             </h3>
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-zinc-600 text-sm mb-4">
                 One email per month. No spam. Unsubscribe anytime.
             </p>
             <a

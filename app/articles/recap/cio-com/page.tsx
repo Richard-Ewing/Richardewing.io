@@ -87,20 +87,20 @@ export default function CIORecapPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
+                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-8">
                             <h2 className="text-xl font-grotesk font-bold text-white mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
                                 {['technical-debt', 'innovation-tax', 'ai-cogs', 'dora-metrics', 'cost-of-predictivity'].map(slug => (
-                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-400 hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
+                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>
                         </div>
-                        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
+                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-8">
                             <h2 className="text-xl font-grotesk font-bold text-white mb-4">Related Tools</h2>
                             <div className="space-y-2">
-                                <Link href="/tools/pdi" className="block text-sm text-zinc-400 hover:text-cyan-400 transition-colors">→ Product Debt Index (PDI)</Link>
-                                <Link href="/tools/aper" className="block text-sm text-zinc-400 hover:text-cyan-400 transition-colors">→ APER Calculator</Link>
-                                <Link href="/tools/aueb" className="block text-sm text-zinc-400 hover:text-cyan-400 transition-colors">→ AUEB Calculator</Link>
+                                <Link href="/tools/pdi" className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ Product Debt Index (PDI)</Link>
+                                <Link href="/tools/aper" className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ APER Calculator</Link>
+                                <Link href="/tools/aueb" className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ AUEB Calculator</Link>
                             </div>
                         </div>
                     </div>

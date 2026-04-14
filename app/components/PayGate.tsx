@@ -68,7 +68,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                             {/* Quick Stats */}
                             <div className="grid grid-cols-3 gap-3 mb-6">
                                 <div className="rounded-xl bg-zinc-50 border border-zinc-200 p-3 text-center">
-                                    <div className="text-xl font-bold text-zinc-900">218</div>
+                                    <div className="text-xl font-bold text-zinc-900">293</div>
                                     <div className="text-[10px] text-zinc-500 uppercase">Modules</div>
                                 </div>
                                 <div className="rounded-xl bg-zinc-50 border border-zinc-200 p-3 text-center">
@@ -83,16 +83,16 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                             
                             <div className="space-y-3">
                                 <CheckoutButton 
-                                    productId="all_access_pass" 
-                                    moduleId={moduleId} // Optional tracking
-                                    label="Unlock the All-Access Vault Pass — $999" 
+                                    productId={productId || 'single_module'} 
+                                    moduleId={moduleId}
+                                    label={`Unlock This Track — $149`} 
                                     icon="lock" 
                                     variant="primary" 
                                 />
                                 <CheckoutButton 
-                                    productId="team_license_pass" 
+                                    productId="all_access_pass" 
                                     moduleId={moduleId}
-                                    label="B2B Team License (10 Seats) — $4,999" 
+                                    label="Unlock All 23 Tracks — $799" 
                                     icon="key" 
                                     variant="secondary" 
                                 />
@@ -104,9 +104,9 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                         </button>
                                     ) : (
                                         <CheckoutButton 
-                                            productId="practitioner_certification" 
+                                            productId="team_license_pass" 
                                             moduleId={moduleId}
-                                            label="AI Practitioner Certification Pass — $249" 
+                                            label="B2B Team License (10 Seats) — $4,999" 
                                             icon="file" 
                                             variant="outline" 
                                         />

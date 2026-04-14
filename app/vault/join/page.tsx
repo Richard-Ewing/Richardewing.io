@@ -52,7 +52,7 @@ export default function JoinTeamPage() {
         <main className="min-h-screen pt-32 pb-24 px-6 flex items-center justify-center">
             <div className="w-full max-w-lg">
                 
-                <Link href="/vault" className="inline-flex items-center text-xs font-bold text-zinc-500 uppercase tracking-widest hover:text-white transition-colors mb-8">
+                <Link href="/vault" className="inline-flex items-center text-xs font-bold text-zinc-500 uppercase tracking-widest hover:text-zinc-900 transition-colors mb-8">
                     <ChevronLeft className="w-4 h-4 mr-1" /> Back to Vault
                 </Link>
 
@@ -61,7 +61,7 @@ export default function JoinTeamPage() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
                     
                     <div className="relative z-10 text-center mb-8">
-                        <div className="w-16 h-16 rounded-2xl bg-black border border-zinc-800 flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(6,182,212,0.1)]">
+                        <div className="w-16 h-16 rounded-2xl bg-black border border-zinc-200 flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(6,182,212,0.1)]">
                             <Users className="w-8 h-8 text-cyan-500" />
                         </div>
                         <h1 className="text-3xl font-grotesk font-bold text-white mb-3">
@@ -83,7 +83,7 @@ export default function JoinTeamPage() {
                                 value={inviteCode}
                                 onChange={(e) => setInviteCode(e.target.value.toUpperCase())}
                                 placeholder="REQ-XXXXXX-XXXXXX"
-                                className="w-full bg-black border border-zinc-800 rounded-xl px-5 py-4 text-white font-mono text-lg focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors uppercase placeholder:normal-case placeholder:text-zinc-700 placeholder:font-sans"
+                                className="w-full bg-black border border-zinc-200 rounded-xl px-5 py-4 text-white font-mono text-lg focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors uppercase placeholder:normal-case placeholder:text-zinc-700 placeholder:font-sans"
                                 disabled={status === 'loading' || status === 'success'}
                             />
                         </div>

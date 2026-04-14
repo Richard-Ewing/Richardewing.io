@@ -112,7 +112,7 @@ export function Sidebar() {
                 {/* Desktop Header */}
                 <div className="hidden lg:block mb-8">
                     <Link href="/" className="block">
-                        <div className="w-20 h-20 rounded-full border-2 border-zinc-700 mb-4 overflow-hidden grayscale hover:grayscale-0 transition duration-500">
+                        <div className="w-20 h-20 rounded-full border-2 border-zinc-300 mb-4 overflow-hidden grayscale hover:grayscale-0 transition duration-500">
                             <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" width={80} height={80} className="object-cover" priority />
                         </div>
                         <h3 className="text-zinc-900 font-bold tracking-tight text-lg">RICHARD EWING</h3>

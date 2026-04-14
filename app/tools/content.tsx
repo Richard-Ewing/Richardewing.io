@@ -139,7 +139,7 @@ export default function ToolsPage() {
 
             {/* Trust Section */}
             <ScrollReveal delay={400}>
-                <div className="text-center border-t border-white/10 pt-12">
+                <div className="text-center border-t border-zinc-200 pt-12">
                     <p className="text-xs text-zinc-600 mb-4 uppercase tracking-widest">Trusted by product leaders at</p>
                     <div className="flex items-center justify-center gap-8 text-zinc-500 font-mono text-sm">
                         <span>Stripe</span>

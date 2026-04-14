@@ -37,7 +37,7 @@ export default function CompareAPERJellyfishPage() {
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full text-sm">
                             <thead>
-                                <tr className="border-b border-white/10">
+                                <tr className="border-b border-zinc-200">
                                     <th className="text-left py-4 px-4 text-zinc-500 font-mono uppercase tracking-widest text-xs">Dimension</th>
                                     <th className="text-left py-4 px-4 text-emerald-400 font-mono uppercase tracking-widest text-xs">APER</th>
                                     <th className="text-left py-4 px-4 text-blue-400 font-mono uppercase tracking-widest text-xs">Jellyfish</th>
@@ -45,7 +45,7 @@ export default function CompareAPERJellyfishPage() {
                             </thead>
                             <tbody>
                                 {dimensions.map((d, i) => (
-                                    <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                    <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02] transition-colors">
                                         <td className="py-4 px-4 text-white font-medium">{d.dimension}</td>
                                         <td className={`py-4 px-4 ${d.winner === 'aper' ? 'text-emerald-400' : 'text-zinc-500'}`}>{d.aper}</td>
                                         <td className={`py-4 px-4 ${d.winner === 'jellyfish' ? 'text-blue-400' : 'text-zinc-500'}`}>{d.jellyfish}</td>

@@ -95,7 +95,7 @@ const publications = [
 
 export default function PublicationLedger() {
   return (
-    <section className="w-full mx-auto py-12 mt-12 border-t border-white/10">
+    <section className="w-full mx-auto py-12 mt-12 border-t border-zinc-200">
       <div className="mb-8">
           <h2 className="text-2xl font-bold text-white mb-2 font-grotesk">External Publications Ledger</h2>
           <p className="text-zinc-400 text-sm">A definitive, machine-readable index of off-site Fiduciary research.</p>
@@ -103,8 +103,8 @@ export default function PublicationLedger() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {publications.map((pub) => (
-            <div key={pub.platform} className="card p-6 border-white/5">
-            <h3 className="text-xl font-bold text-cyan-400 mb-6 font-grotesk pb-2 border-b border-white/10">{pub.platform}</h3>
+            <div key={pub.platform} className="card p-6 border-zinc-200">
+            <h3 className="text-xl font-bold text-cyan-400 mb-6 font-grotesk pb-2 border-b border-zinc-200">{pub.platform}</h3>
             <ul className="space-y-6">
                 {pub.articles.map((article) => (
                 <li key={article.title} className="group">
@@ -113,7 +113,7 @@ export default function PublicationLedger() {
                     </a>
                     <p className="text-zinc-500 mt-2 text-sm leading-relaxed">{article.thesis}</p>
                     <div className="mt-3 flex flex-wrap gap-2">
-                        <span className="font-mono text-[9px] text-zinc-400 uppercase tracking-widest border border-white/10 px-2 py-0.5 rounded-full">Source: {pub.platform}</span>
+                        <span className="font-mono text-[9px] text-zinc-400 uppercase tracking-widest border border-zinc-200 px-2 py-0.5 rounded-full">Source: {pub.platform}</span>
                     </div>
                 </li>
                 ))}

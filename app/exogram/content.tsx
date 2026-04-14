@@ -35,7 +35,7 @@ export default function ExogramPage() {
                     <ScrollReveal>
                         <div className="relative group">
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-2xl opacity-20 group-hover:opacity-40 transition blur duration-500" />
-                            <div className="relative bg-black rounded-xl p-8 border border-white/10">
+                            <div className="relative bg-black rounded-xl p-8 border border-zinc-200">
                                 <div className="flex justify-between items-start mb-8">
                                     <div>
                                         <div className="flex items-center gap-3 mb-2">
@@ -52,26 +52,26 @@ export default function ExogramPage() {
 
                                 {/* Metrics Grid */}
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                                    <div className="p-4 bg-white/5 rounded-lg border border-white/5">
+                                    <div className="p-4 bg-white/5 rounded-lg border border-zinc-200">
                                         <div className="text-xs text-zinc-500 font-mono uppercase mb-1">Context Window</div>
                                         <div className="text-xl font-bold text-white font-grotesk"><NumberTicker value={200} suffix="k" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400" /></div>
                                     </div>
-                                    <div className="p-4 bg-white/5 rounded-lg border border-white/5">
+                                    <div className="p-4 bg-white/5 rounded-lg border border-zinc-200">
                                         <div className="text-xs text-zinc-500 font-mono uppercase mb-1">Memory Nodes</div>
                                         <div className="text-xl font-bold text-white font-grotesk"><NumberTicker value={14205} className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400" /></div>
                                     </div>
-                                    <div className="p-4 bg-white/5 rounded-lg border border-white/5">
+                                    <div className="p-4 bg-white/5 rounded-lg border border-zinc-200">
                                         <div className="text-xs text-zinc-500 font-mono uppercase mb-1">Daily Inops</div>
                                         <div className="text-xl font-bold text-white font-grotesk"><NumberTicker value={140} className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400" /></div>
                                     </div>
-                                    <div className="p-4 bg-white/5 rounded-lg border border-white/5">
+                                    <div className="p-4 bg-white/5 rounded-lg border border-zinc-200">
                                         <div className="text-xs text-zinc-500 font-mono uppercase mb-1">Uptime</div>
                                         <div className="text-xl font-bold text-green-400 font-grotesk">99.9%</div>
                                     </div>
                                 </div>
 
                                 {/* Terminal Output / Log */}
-                                <div className="bg-black border border-zinc-800 rounded-lg p-4 font-mono text-xs h-40 overflow-hidden relative">
+                                <div className="bg-black border border-zinc-200 rounded-lg p-4 font-mono text-xs h-40 overflow-hidden relative">
                                     <div className="absolute top-2 right-2 flex gap-1">
                                         <div className="w-2 h-2 rounded-full bg-red-500/20"></div>
                                         <div className="w-2 h-2 rounded-full bg-yellow-500/20"></div>
@@ -95,7 +95,7 @@ export default function ExogramPage() {
                 {/* Sidebar / Changelog */}
                 <div className="space-y-6">
                     <ScrollReveal delay={200}>
-                        <div className="p-6 rounded-xl border border-white/10 bg-white/5">
+                        <div className="p-6 rounded-xl border border-zinc-200 bg-white/5">
                             <h3 className="text-sm font-bold text-white font-grotesk uppercase tracking-widest mb-4 flex items-center gap-2">
                                 <Shield className="w-4 h-4 text-gold" /> System Status
                             </h3>
@@ -121,9 +121,9 @@ export default function ExogramPage() {
                     </ScrollReveal>
 
                     <ScrollReveal delay={300}>
-                        <div className="p-6 rounded-xl border border-white/10 bg-white/5">
+                        <div className="p-6 rounded-xl border border-zinc-200 bg-white/5">
                             <h3 className="text-sm font-bold text-white font-grotesk uppercase tracking-widest mb-6">Recent Deployments</h3>
-                            <div className="relative border-l border-white/10 ml-2 space-y-8">
+                            <div className="relative border-l border-zinc-200 ml-2 space-y-8">
                                 <div className="pl-6 relative">
                                     <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-purple-500 ring-4 ring-black" />
                                     <div className="text-xs text-purple-400 font-mono mb-1">Today, 09:42 AM</div>

@@ -242,7 +242,7 @@ export default async function VaultPage() {
                                                             <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">{progress.progress_percentage}% Complete</span>
                                                         )}
                                                     </div>
-                                                    <div className="w-full h-1.5 bg-black rounded-full overflow-hidden border border-white/5">
+                                                    <div className="w-full h-1.5 bg-black rounded-full overflow-hidden border border-zinc-200">
                                                         <div 
                                                             className={`h-full transition-all duration-1000 ${progressStyles[`w_${Math.max(Math.round(progress.progress_percentage), 5)}`]} ${progress.is_completed ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]' : 'bg-gradient-to-r from-emerald-600 to-cyan-500 object-cover'}`}
                                                         />
@@ -301,7 +301,7 @@ export default async function VaultPage() {
                                 </div>
                             ) : (
                                 <div className="space-y-4">
-                                    <div className="p-8 rounded-2xl border border-zinc-800 bg-zinc-900/50 text-center">
+                                    <div className="p-8 rounded-2xl border border-zinc-200 bg-white/80 text-center">
                                         <BookOpen className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
                                         <h3 className="text-lg font-bold text-white mb-2">No Premium Assets Yet</h3>
                                         <p className="text-sm text-zinc-400 mb-6 max-w-md mx-auto">
@@ -313,7 +313,7 @@ export default async function VaultPage() {
                                     </div>
                                     
                                     {/* JOIN A TEAM / CORPORATE SEAT */}
-                                    <div className="p-6 rounded-2xl border border-dashed border-zinc-700 bg-black text-center group hover:border-cyan-500/30 transition-colors">
+                                    <div className="p-6 rounded-2xl border border-dashed border-zinc-300 bg-black text-center group hover:border-cyan-500/30 transition-colors">
                                         <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-widest">Enterprise Invite?</h3>
                                         <p className="text-xs text-zinc-500 mb-4 max-w-sm mx-auto">
                                             If your CTO or company purchased an enterprise team license, click below to claim your corporate seat.
@@ -336,7 +336,7 @@ export default async function VaultPage() {
                             {toolRuns.length > 0 ? (
                                 <div className="space-y-4">
                                     {toolRuns.map((run) => (
-                                        <div key={run.id} className="p-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 hover:bg-zinc-900/80 transition-colors">
+                                        <div key={run.id} className="p-6 rounded-2xl border border-zinc-200 bg-white/80 hover:bg-zinc-100 transition-colors">
                                             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                                 <div>
                                                     <div className="flex items-center gap-2 mb-2">
@@ -366,7 +366,7 @@ export default async function VaultPage() {
                                                             {formatMoney(run.output_metrics?.financial_waste ?? run.financial_waste ?? 0)}
                                                         </div>
                                                     </div>
-                                                    <Link href={`/tools/${run.tool_id}`} className="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-colors group">
+                                                    <Link href={`/tools/${run.tool_id}`} className="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-zinc-200 text-white transition-colors group">
                                                         <Activity className="w-5 h-5 text-zinc-400 group-hover:text-cyan-400" />
                                                     </Link>
                                                 </div>
@@ -375,7 +375,7 @@ export default async function VaultPage() {
                                     ))}
                                 </div>
                             ) : (
-                                <div className="p-8 rounded-2xl border border-zinc-800 bg-zinc-900/50 flex flex-col items-center text-center">
+                                <div className="p-8 rounded-2xl border border-zinc-200 bg-white/80 flex flex-col items-center text-center">
                                     <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center mb-4">
                                         <TrendingUp className="w-5 h-5 text-zinc-500" />
                                     </div>
@@ -404,7 +404,7 @@ export default async function VaultPage() {
                                     <span className="text-[10px] bg-blue-500/10 px-2 py-0.5 rounded text-blue-400 border border-blue-500/20">Moat</span>
                                 </h2>
                                 <div className="card border-blue-500/20 bg-blue-500/[0.02]">
-                                    <div className="p-5 border-b border-white/5">
+                                    <div className="p-5 border-b border-zinc-200">
                                         <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Global AI Unit Economics avg.</div>
                                         <div className="flex items-end gap-2 text-white">
                                             <span className="text-3xl font-grotesk font-bold">{globalAuebMargin}%</span>
@@ -429,16 +429,16 @@ export default async function VaultPage() {
                                 <div className="mb-8">
                                     <h2 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center justify-between">
                                         Diagnostic Usage
-                                        <span className="text-[10px] bg-zinc-900 px-2 py-0.5 rounded text-zinc-400 border border-zinc-800">FREE TIER</span>
+                                        <span className="text-[10px] bg-zinc-50 px-2 py-0.5 rounded text-zinc-400 border border-zinc-200">FREE TIER</span>
                                     </h2>
-                                    <div className="card p-5 border-zinc-800 bg-black">
+                                    <div className="card p-5 border-zinc-200 bg-black">
                                         <div className="flex items-center justify-between mb-2">
                                             <h3 className="font-bold text-white">Audits Allocated</h3>
                                             <span className="text-xs font-mono text-zinc-500">{toolRuns.length}/3 Used</span>
                                         </div>
                                         
                                         {/* Progress Bar */}
-                                        <div className="w-full h-1.5 bg-zinc-900 rounded-full overflow-hidden mb-4">
+                                        <div className="w-full h-1.5 bg-zinc-50 rounded-full overflow-hidden mb-4">
                                             <div 
                                                 className={`h-full transition-all ${
                                                     toolRuns.length >= 3 ? 'bg-red-500 w-full' : 
@@ -455,7 +455,7 @@ export default async function VaultPage() {
                                             <p className="text-xs text-zinc-400 mb-4">{3 - toolRuns.length} board-ready reports remaining this month.</p>
                                         )}
                                         
-                                        <a href="/api/buy/full_curriculum" className={`block text-center w-full py-2 text-[10px] font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-900 border border-zinc-800 hover:border-cyan-500/50 text-white'}`}>
+                                        <a href="/api/buy/full_curriculum" className={`block text-center w-full py-2 text-[10px] font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-50 border border-zinc-200 hover:border-cyan-500/50 text-white'}`}>
                                             Unlock Unlimited
                                         </a>
                                     </div>
@@ -465,32 +465,32 @@ export default async function VaultPage() {
                             <h2 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4">Available Upgrades</h2>
 
                             {!hasSubscription && (
-                                <div className="card p-5 border-zinc-800 bg-black mb-4 group hover:border-violet-500/30 transition-colors">
+                                <div className="card p-5 border-zinc-200 bg-black mb-4 group hover:border-violet-500/30 transition-colors">
                                     <div className="flex items-center justify-between mb-2">
                                         <h3 className="font-bold text-white group-hover:text-violet-400 transition-colors">Full Library Access</h3>
                                         <Lock className="w-3 h-3 text-zinc-600 group-hover:text-violet-400" />
                                     </div>
                                     <p className="text-xs text-zinc-400 mb-4">Unlock all 218 modules across 18 curriculum tracks. Lifetime access.</p>
-                                    <a href="/api/buy/full_curriculum" className="block text-center w-full py-2 bg-zinc-900 hover:bg-violet-600 text-white text-[10px] font-bold uppercase tracking-widest rounded transition-colors">
+                                    <a href="/api/buy/full_curriculum" className="block text-center w-full py-2 bg-zinc-50 hover:bg-violet-600 text-white text-[10px] font-bold uppercase tracking-widest rounded transition-colors">
                                         Unlock for $799
                                     </a>
                                 </div>
                             )}
 
-                            <div className="card p-5 border-zinc-800 bg-black group hover:border-amber-500/30 transition-colors">
+                            <div className="card p-5 border-zinc-200 bg-black group hover:border-amber-500/30 transition-colors">
                                 <div className="flex items-center justify-between mb-2">
                                     <h3 className="font-bold text-white group-hover:text-amber-400 transition-colors">Audit Engagement</h3>
                                     <Lock className="w-3 h-3 text-zinc-600 group-hover:text-amber-400" />
                                 </div>
                                 <p className="text-xs text-zinc-400 mb-4">Book a fractional CTO engagement or deep-dive R&D capital audit.</p>
-                                <Link href="/advisory" className="block text-center w-full py-2 border border-zinc-800 hover:border-amber-500 text-zinc-400 hover:text-amber-400 text-[10px] font-bold uppercase tracking-widest rounded transition-colors">
+                                <Link href="/advisory" className="block text-center w-full py-2 border border-zinc-200 hover:border-amber-500 text-zinc-600 hover:text-amber-400 text-[10px] font-bold uppercase tracking-widest rounded transition-colors">
                                     View Engagements
                                 </Link>
                             </div>
 
-                            <div className="mt-8 p-5 rounded-xl bg-gradient-to-br from-zinc-900 to-black border border-zinc-800">
+                            <div className="mt-8 p-5 rounded-xl bg-gradient-to-br from-zinc-900 to-black border border-zinc-200">
                                 <div className="flex items-center gap-3 mb-3">
-                                    <div className="w-8 h-8 rounded-full overflow-hidden border border-zinc-700 relative">
+                                    <div className="w-8 h-8 rounded-full overflow-hidden border border-zinc-300 relative">
                                         <Image src="/assets/headshot.jpg" alt="Support" fill className="object-cover" sizes="32px" />
                                     </div>
                                     <div>

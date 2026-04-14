@@ -19,7 +19,7 @@ const PricingPreview = () => {
                     {/* Free Tier - Dual Action */}
                     <div className="card text-center flex flex-col justify-between h-full">
                         <div>
-                            <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">Free</div>
+                            <div className="text-xs text-zinc-500 uppercase tracking-wide mb-2">Free</div>
                             <div className="text-2xl font-bold text-zinc-900 mb-2">$0</div>
                             <p className="text-zinc-500 text-sm mb-4">Newsletter + Tools</p>
                         </div>
@@ -51,7 +51,7 @@ const PricingPreview = () => {
 
                     {/* Audit */}
                     <div className="card text-center">
-                        <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">Audit</div>
+                        <div className="text-xs text-zinc-500 uppercase tracking-wide mb-2">Audit</div>
                         <div className="text-2xl font-bold text-zinc-900 mb-2">$7,500</div>
                         <p className="text-zinc-500 text-sm mb-4">R&D Capital Audit</p>
                         <a href="/api/buy/full_audit" className="text-cyan-600 text-sm hover:underline">Book Audit →</a>
@@ -59,7 +59,7 @@ const PricingPreview = () => {
 
                     {/* Enterprise */}
                     <div className="card text-center">
-                        <div className="text-xs text-gray-500 uppercase tracking-wide mb-2">Enterprise</div>
+                        <div className="text-xs text-zinc-500 uppercase tracking-wide mb-2">Enterprise</div>
                         <div className="text-2xl font-bold text-zinc-900 mb-2">$5K/mo</div>
                         <p className="text-zinc-500 text-sm mb-4">Independent Oversight</p>
                         <a href="/api/buy/retainer" className="text-cyan-600 text-sm hover:underline mb-2 block">Subscribe →</a>

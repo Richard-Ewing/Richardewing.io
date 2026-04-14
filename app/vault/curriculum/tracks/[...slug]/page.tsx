@@ -41,27 +41,27 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                         <span>/</span>
                         <span className="hover:text-cyan-400">{mod.trackName}</span>
                         <span>/</span>
-                        <span className="text-cyan-400 font-bold">{mod.moduleId}</span>
+                        <span className="text-cyan-600 font-bold">{mod.moduleId}</span>
                     </div>
 
                     <div className="mb-10">
                         <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-3">{mod.trackName}</div>
-                        <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-4">
+                        <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-900 mb-4">
                             {mod.moduleId}:{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">{mod.title}</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">{mod.title}</span>
                         </h1>
-                        <p className="text-lg text-zinc-400 max-w-2xl">{mod.description}</p>
+                        <p className="text-lg text-zinc-600 max-w-2xl">{mod.description}</p>
                         <div className="flex items-center gap-4 mt-4">
-                            <span className="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">{mod.lessons.length} Lessons</span>
-                            <span className="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">~45 min</span>
+                            <span className="px-3 py-1 rounded-full text-xs font-mono bg-cyan-50 text-cyan-700 border border-cyan-200">{mod.lessons.length} Lessons</span>
+                            <span className="px-3 py-1 rounded-full text-xs font-mono bg-emerald-50 text-emerald-700 border border-emerald-200">~45 min</span>
                         </div>
                     </div>
 
-                    <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-8 mb-12">
-                        <h2 className="text-lg font-grotesk font-bold text-white mb-4">🎯 What You&apos;ll Learn</h2>
-                        <ul className="space-y-2 text-zinc-300">
+                    <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-8 mb-12">
+                        <h2 className="text-lg font-grotesk font-bold text-zinc-900 mb-4">🎯 What You&apos;ll Learn</h2>
+                        <ul className="space-y-2 text-zinc-700">
                             {mod.takeaways.map((t, i) => (
-                                <li key={i} className="flex items-start gap-2"><span className="text-cyan-400 mt-1">✓</span> {t}</li>
+                                <li key={i} className="flex items-start gap-2"><span className="text-cyan-600 mt-1">✓</span> {t}</li>
                             ))}
                         </ul>
                     </div>
@@ -82,7 +82,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                         {aiContent && typeof aiContent === 'object' ? (
                             <ModuleStepper parsedContent={aiContent}>
                                 {mod.embeddedTool && (
-                                    <div className="border border-cyan-500/20 bg-black/40 rounded-3xl p-6 lg:p-12 mb-8 relative overflow-hidden">
+                                    <div className="border border-cyan-500/20 bg-zinc-50 rounded-3xl p-6 lg:p-12 mb-8 relative overflow-hidden">
                                         <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-400 border-b border-l border-cyan-500/20 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
                                         <ToolEmbed toolId={mod.embeddedTool} />
                                     </div>
@@ -91,9 +91,9 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                             </ModuleStepper>
                         ) : aiContent ? (
                             <>
-                                <div className="prose prose-invert max-w-none ai-content" dangerouslySetInnerHTML={{ __html: aiContent as string }} />
+                                <div className="prose prose-zinc max-w-none ai-content" dangerouslySetInnerHTML={{ __html: aiContent as string }} />
                                 {mod.embeddedTool && (
-                                    <div className="border border-cyan-500/20 bg-black/40 rounded-3xl p-6 lg:p-12 mt-12 mb-8 relative overflow-hidden">
+                                    <div className="border border-cyan-500/20 bg-zinc-50 rounded-3xl p-6 lg:p-12 mt-12 mb-8 relative overflow-hidden">
                                         <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-400 border-b border-l border-cyan-500/20 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
                                         <ToolEmbed toolId={mod.embeddedTool} />
                                     </div>
@@ -103,23 +103,23 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                         ) : (
                             <>
                                 {mod.lessons.map((lesson, i) => (
-                                    <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden mb-8 last:mb-0">
+                                    <div key={i} className="rounded-2xl border border-zinc-200 bg-white overflow-hidden mb-8 last:mb-0">
                                         <div className="p-8">
                                             <div className="flex items-center gap-3 mb-4">
-                                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-white/10 flex items-center justify-center">
-                                                    <span className="text-xs font-bold text-white">{i + 1}</span>
+                                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 border border-zinc-200 flex items-center justify-center">
+                                                    <span className="text-xs font-bold text-zinc-700">{i + 1}</span>
                                                 </div>
-                                                <h2 className="text-xl font-grotesk font-bold text-white">{lesson.title}</h2>
+                                                <h2 className="text-xl font-grotesk font-bold text-zinc-900">{lesson.title}</h2>
                                             </div>
                                             <div className="space-y-4 mb-6">
                                                 {Array.isArray(lesson.content) ? (
                                                     lesson.content.map((block, bIdx) => (
-                                                        <p key={bIdx} className="text-zinc-400 leading-relaxed text-[15px]">
+                                                        <p key={bIdx} className="text-zinc-600 leading-relaxed text-[15px]">
                                                             <SemanticText text={block} />
                                                         </p>
                                                     ))
                                                 ) : (
-                                                    <p className="text-zinc-400 leading-relaxed text-[15px]">
+                                                    <p className="text-zinc-600 leading-relaxed text-[15px]">
                                                         <SemanticText text={lesson.content} />
                                                     </p>
                                                 )}
@@ -128,9 +128,9 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                             {lesson.details && lesson.details.length > 0 && (
                                                 <div className="space-y-3 mb-6">
                                                     {lesson.details.map((d, j) => (
-                                                        <div key={j} className="rounded-xl bg-black/20 border border-white/5 p-5 relative overflow-hidden group">
+                                                        <div key={j} className="rounded-xl bg-zinc-50 border border-white/5 p-5 relative overflow-hidden group">
                                                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-cyan-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                                                            <div className="text-sm font-bold text-white mb-1">{d.metric}</div>
+                                                            <div className="text-sm font-bold text-zinc-900 mb-1">{d.metric}</div>
                                                             <p className="text-xs text-zinc-500 mb-2">{d.description}</p>
                                                             <div className="text-[10px] font-mono text-cyan-500 uppercase tracking-widest">{d.benchmark}</div>
                                                         </div>
@@ -140,8 +140,8 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
 
                                             {lesson.exercise && (
                                                 <div className="rounded-xl bg-emerald-500/5 border border-emerald-500/20 p-5 mt-8">
-                                                    <div className="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2">📝 Exercise</div>
-                                                    <p className="text-sm text-zinc-300">{lesson.exercise}</p>
+                                                    <div className="text-xs font-mono text-emerald-600 uppercase tracking-widest mb-2">📝 Exercise</div>
+                                                    <p className="text-sm text-zinc-700">{lesson.exercise}</p>
                                                 </div>
                                             )}
 
@@ -156,7 +156,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                     </div>
                                 ))}
                                 {mod.embeddedTool && (
-                                    <div className="border border-cyan-500/20 bg-black/40 rounded-3xl p-6 lg:p-12 mb-8 relative overflow-hidden">
+                                    <div className="border border-cyan-500/20 bg-zinc-50 rounded-3xl p-6 lg:p-12 mb-8 relative overflow-hidden">
                                         <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-400 border-b border-l border-cyan-500/20 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
                                         <ToolEmbed toolId={mod.embeddedTool} />
                                     </div>
@@ -168,17 +168,17 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
 
                     {mod.relatedArticles && mod.relatedArticles.length > 0 && (
                         <div className="mt-16 border-t border-cyan-500/10 pt-12">
-                            <h2 className="text-2xl font-grotesk font-bold text-white mb-6">Related Thought Leadership</h2>
+                            <h2 className="text-2xl font-grotesk font-bold text-zinc-900 mb-6">Related Thought Leadership</h2>
                             <div className="grid md:grid-cols-2 gap-4">
                                 {mod.relatedArticles.map((slug) => {
                                     const article = articles.find(a => a.slug === slug);
                                     if (!article) return null;
                                     const href = article.externalUrl || article.legacyUrl || `/blog/${article.slug}`;
                                     return (
-                                        <Link key={slug} href={href} className="block p-5 rounded-xl border border-cyan-500/10 bg-cyan-500/5 hover:bg-cyan-500/10 hover:border-cyan-500/30 transition-all group">
-                                            <div className="text-[10px] font-mono text-cyan-500/70 uppercase tracking-widest mb-2 group-hover:text-cyan-400">{article.source}</div>
-                                            <h3 className="text-white font-bold mb-2 group-hover:text-cyan-300 transition-colors">{article.title}</h3>
-                                            <p className="text-zinc-400 text-sm line-clamp-2">{article.description}</p>
+                                        <Link key={slug} href={href} className="block p-5 rounded-xl border border-zinc-200 bg-zinc-50 hover:bg-cyan-50 hover:border-cyan-300 transition-all group">
+                                            <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2 group-hover:text-cyan-600">{article.source}</div>
+                                            <h3 className="text-zinc-900 font-bold mb-2 group-hover:text-cyan-700 transition-colors">{article.title}</h3>
+                                            <p className="text-zinc-600 text-sm line-clamp-2">{article.description}</p>
                                         </Link>
                                     )
                                 })}

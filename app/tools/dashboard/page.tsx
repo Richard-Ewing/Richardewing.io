@@ -39,7 +39,7 @@ export default function IntelligenceDashboard() {
             });
     }, [isLoaded, user]);
 
-    if (!isLoaded) return <div className="min-h-screen bg-[#050505] flex items-center justify-center"><div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" /></div>;
+    if (!isLoaded) return <div className="min-h-screen bg-[#050505] flex items-center justify-center"><div className="w-8 h-8 border-2 border-zinc-300 border-t-white rounded-full animate-spin" /></div>;
 
     if (!user) {
         return (
@@ -61,7 +61,7 @@ export default function IntelligenceDashboard() {
             case 'PDI': return 'text-rose-400 bg-rose-400/10 border-rose-400/20';
             case 'DUE-DILIGENCE': return 'text-amber-400 bg-amber-400/10 border-amber-400/20';
             case 'CLOUD-REPAT': return 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20';
-            default: return 'text-white bg-white/10 border-white/20';
+            default: return 'text-white bg-white/10 border-zinc-300';
         }
     };
 
@@ -106,7 +106,7 @@ export default function IntelligenceDashboard() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 key={run.id} 
-                className="bg-black/60 border border-white/10 hover:border-white/20 transition-all p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group"
+                className="bg-white/60 border border-zinc-200 hover:border-zinc-300 transition-all p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group"
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 
@@ -132,7 +132,7 @@ export default function IntelligenceDashboard() {
                     </div>
                 </div>
                 
-                <div className="relative z-10 flex items-center gap-4 border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 md:pl-6 w-full md:w-auto mt-2 md:mt-0">
+                <div className="relative z-10 flex items-center gap-4 border-t md:border-t-0 md:border-l border-zinc-200 pt-4 md:pt-0 md:pl-6 w-full md:w-auto mt-2 md:mt-0">
                     <Link href={`/tools/${run.tool_id.toLowerCase()}`} className="w-full md:w-auto px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-lg text-xs font-mono tracking-widest uppercase transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
                         Re-Execute <ArrowRight size={14} />
                     </Link>
@@ -143,13 +143,13 @@ export default function IntelligenceDashboard() {
 
     return (
         <div className="min-h-screen bg-[#050505] text-zinc-200">
-            <nav className="border-b border-white/5 bg-black/80 backdrop-blur-2xl sticky top-0 z-50">
+            <nav className="border-b border-zinc-200 bg-white/80 backdrop-blur-2xl sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <Activity className="text-cyan-400" size={18} />
                         <span className="font-bold tracking-tight text-lg text-white">C-Suite Command Center <span className="text-zinc-600 font-normal">| Strategic Diagnostics</span></span>
                     </div>
-                    <Link href="/system" className="text-[10px] font-mono text-zinc-400 hover:text-white transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-white/5">
+                    <Link href="/system" className="text-[10px] font-mono text-zinc-600 hover:text-zinc-900 transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-zinc-200">
                         Exit to Hub
                     </Link>
                 </div>
@@ -159,7 +159,7 @@ export default function IntelligenceDashboard() {
 
                 {/* Executive Summary Row */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                    <GlowCard className="p-8 bg-black/40 border border-white/10 rounded-3xl relative overflow-hidden group">
+                    <GlowCard className="p-8 bg-zinc-50 border border-zinc-200 rounded-3xl relative overflow-hidden group">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
                                 <ShieldAlert size={20} className="text-red-400" />
@@ -174,7 +174,7 @@ export default function IntelligenceDashboard() {
                         <BorderBeam duration={12} delay={0} size={250} />
                     </GlowCard>
 
-                    <GlowCard className="p-8 bg-black/40 border border-white/10 rounded-3xl relative overflow-hidden group">
+                    <GlowCard className="p-8 bg-zinc-50 border border-zinc-200 rounded-3xl relative overflow-hidden group">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
                                 <TrendingUp size={20} className="text-emerald-400" />
@@ -189,7 +189,7 @@ export default function IntelligenceDashboard() {
                         <BorderBeam duration={8} delay={3} size={250} />
                     </GlowCard>
 
-                    <GlowCard className="p-8 bg-black/40 border border-white/10 rounded-3xl relative overflow-hidden group">
+                    <GlowCard className="p-8 bg-zinc-50 border border-zinc-200 rounded-3xl relative overflow-hidden group">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
                                 <Database size={20} className="text-cyan-400" />
@@ -205,7 +205,7 @@ export default function IntelligenceDashboard() {
                     </GlowCard>
                 </div>
 
-                <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="mb-8 flex items-center justify-between border-b border-zinc-200 pb-4">
                     <h2 className="text-2xl font-bold font-grotesk text-white flex items-center gap-3">
                         <History className="text-cyan-400" /> Execution Ledger
                     </h2>
@@ -215,11 +215,11 @@ export default function IntelligenceDashboard() {
                 {loading ? (
                     <div className="space-y-4">
                         {[1, 2, 3].map(i => (
-                            <div key={i} className="h-40 bg-zinc-900/20 border border-white/5 rounded-2xl animate-pulse" />
+                            <div key={i} className="h-40 bg-white/20 border border-zinc-200 rounded-2xl animate-pulse" />
                         ))}
                     </div>
                 ) : runs.length === 0 ? (
-                    <div className="text-center py-24 bg-zinc-900/20 border border-white/5 rounded-3xl border-dashed">
+                    <div className="text-center py-24 bg-white/20 border border-zinc-200 rounded-3xl border-dashed">
                         <History className="mx-auto text-zinc-600 mb-4" size={48} />
                         <h3 className="text-xl font-bold text-white mb-2">Awaiting Telemetry</h3>
                         <p className="text-zinc-500 mb-8 max-w-md mx-auto">You have not executed any intelligence playbooks yet. Run an analysis to establish your longitudinal baseline.</p>

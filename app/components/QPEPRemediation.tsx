@@ -212,7 +212,7 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
     if (items.length === 0) return null;
 
     return (
-        <section className="mt-8 bg-gradient-to-br from-zinc-900/80 via-zinc-900/40 to-transparent border border-white/10 rounded-3xl p-6 sm:p-8">
+        <section className="mt-8 bg-gradient-to-br from-zinc-900/80 via-zinc-900/40 to-transparent border border-zinc-200 rounded-3xl p-6 sm:p-8">
             {/* Header */}
             <div className="flex items-center gap-3 mb-2">
                 <div className="w-2 h-2 bg-cobalt rounded-full animate-pulse shadow-[0_0_10px_rgba(45,112,253,0.6)]" />
@@ -245,7 +245,7 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
             </div>
 
             {/* Footer */}
-            <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+            <div className="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between">
                 <p className="text-[10px] text-zinc-600 font-mono">CONFIDENTIAL — For Internal Executive Distribution Only</p>
                 <p className="text-[10px] text-zinc-600 font-mono">RichardEwing.io/advisory</p>
             </div>

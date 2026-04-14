@@ -36,13 +36,13 @@ export default function DeepCareersHub() {
         <div className="max-w-7xl w-full relative z-10 mx-auto px-4 pb-24">
             {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest pt-8">
-                <Link href="/" className="hover:text-white transition">Home</Link>
+                <Link href="/" className="hover:text-zinc-900 transition">Home</Link>
                 <span>/</span>
                 <span className="text-white font-bold">2026 Career Pathfinder</span>
             </div>
 
             <ScrollReveal>
-                <div className="capsule-container rounded-2xl sm:rounded-[2.5rem] p-8 sm:p-14 mb-16 overflow-hidden relative border border-white/5 bg-gradient-to-br from-[#0a0c10] via-[#0f1115] to-black">
+                <div className="capsule-container rounded-2xl sm:rounded-[2.5rem] p-8 sm:p-14 mb-16 overflow-hidden relative border border-zinc-200 bg-gradient-to-br from-[#0a0c10] via-[#0f1115] to-black">
                     <div className="absolute top-[-20%] right-[-10%] p-64 bg-[var(--accent-purple)]/10 blur-[120px] pointer-events-none rounded-full" />
                     <div className="absolute bottom-[-20%] left-[-10%] p-48 bg-emerald-500/5 blur-[120px] pointer-events-none rounded-full" />
                     
@@ -68,8 +68,8 @@ export default function DeepCareersHub() {
             </ScrollReveal>
 
             <ScrollReveal>
-                <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-6">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                <div className="flex items-center gap-4 mb-8 border-b border-zinc-200 pb-6">
+                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-zinc-200 flex items-center justify-center">
                         <Network className="text-[var(--accent-cyan)]" size={24} />
                     </div>
                     <div>
@@ -86,7 +86,7 @@ export default function DeepCareersHub() {
                     return (
                         <div key={domain}>
                             <ScrollReveal>
-                                <div className="mb-8 border-b border-white/10 pb-4">
+                                <div className="mb-8 border-b border-zinc-200 pb-4">
                                     <h3 className="text-3xl font-black text-white tracking-tight">{domain}</h3>
                                     <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest mt-1">{pathsInDomain.length} Executive Archetypes</p>
                                 </div>
@@ -137,9 +137,9 @@ export default function DeepCareersHub() {
                         
                         {/* LOW INTENT - FREE */}
                         <div className="relative group">
-                            <div className="h-full bg-[#0a0c10] border border-white/10 rounded-2xl p-8 hover:border-zinc-500/50 transition-all shadow-xl">
+                            <div className="h-full bg-[#0a0c10] border border-zinc-200 rounded-2xl p-8 hover:border-zinc-500/50 transition-all shadow-xl">
                                 <div className="absolute top-0 right-8 transform -translate-y-1/2">
-                                    <div className="bg-zinc-800 text-zinc-300 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/10">Free Access</div>
+                                    <div className="bg-zinc-800 text-zinc-300 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-zinc-200">Free Access</div>
                                 </div>
                                 <div className="w-12 h-12 rounded-xl bg-zinc-800/50 flex items-center justify-center mb-6">
                                     <Activity className="text-zinc-400" size={24} />
@@ -216,7 +216,7 @@ export default function DeepCareersHub() {
 
                         {/* EXTREME INTENT - VALIDATION */}
                         <div className="relative group">
-                            <div className="h-full bg-[#0a0c10] border border-white/10 rounded-2xl p-8 hover:border-[var(--accent-crimson)]/50 transition-all shadow-xl">
+                            <div className="h-full bg-[#0a0c10] border border-zinc-200 rounded-2xl p-8 hover:border-[var(--accent-crimson)]/50 transition-all shadow-xl">
                                 <div className="absolute top-0 right-8 transform -translate-y-1/2">
                                     <div className="bg-[var(--bg-primary)] text-[var(--accent-crimson)] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-[var(--accent-crimson)] shadow-[0_0_10px_rgba(255,68,68,0.2)]">Final Validation</div>
                                 </div>

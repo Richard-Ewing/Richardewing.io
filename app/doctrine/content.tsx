@@ -98,7 +98,7 @@ export default function DoctrineContent() {
                     </div>
 
                     {/* Quotable Block */}
-                    <div className="bg-white/5 rounded-xl p-8 text-center italic border border-white/10">
+                    <div className="bg-white/5 rounded-xl p-8 text-center italic border border-zinc-200">
                         <p className="text-xl sm:text-2xl text-zinc-300 font-serif mb-4">
                             "Technical debt isn't a cleanup problem. It's a balance sheet liability."
                         </p>
@@ -122,7 +122,7 @@ export default function DoctrineContent() {
                             <GlowCard className="p-5 h-full" glowColor="cobalt">
                                 <div className="flex items-start justify-between mb-2">
                                     <div className="text-[10px] font-mono text-cobalt uppercase tracking-widest">Expert Contributor</div>
-                                    <span className="text-zinc-600 group-hover:text-white transition">→</span>
+                                    <span className="text-zinc-600 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-white mb-1 group-hover:text-cobalt transition">Built In</div>
                                 <p className="text-xs text-zinc-400 leading-relaxed">
@@ -135,7 +135,7 @@ export default function DoctrineContent() {
                             <GlowCard className="p-5 h-full" glowColor="cyan">
                                 <div className="flex items-start justify-between mb-2">
                                     <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest">Contributor</div>
-                                    <span className="text-zinc-600 group-hover:text-white transition">→</span>
+                                    <span className="text-zinc-600 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-white mb-1 group-hover:text-cyan-400 transition">Mind the Product</div>
                                 <p className="text-xs text-zinc-400 leading-relaxed">
@@ -148,7 +148,7 @@ export default function DoctrineContent() {
                             <GlowCard className="p-5 h-full" glowColor="gold">
                                 <div className="flex items-start justify-between mb-2">
                                     <div className="text-[10px] font-mono text-gold uppercase tracking-widest">Expert Contributor</div>
-                                    <span className="text-zinc-600 group-hover:text-white transition">→</span>
+                                    <span className="text-zinc-600 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-white mb-1 group-hover:text-gold transition">Foundry (CIO.com)</div>
                                 <p className="text-xs text-zinc-400 leading-relaxed">
@@ -161,7 +161,7 @@ export default function DoctrineContent() {
                             <GlowCard className="p-5 h-full" glowColor="cyan">
                                 <div className="flex items-start justify-between mb-2">
                                     <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest">Published</div>
-                                    <span className="text-zinc-600 group-hover:text-white transition">→</span>
+                                    <span className="text-zinc-600 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition">HackerNoon</div>
                                 <p className="text-xs text-zinc-400 leading-relaxed">
@@ -173,13 +173,13 @@ export default function DoctrineContent() {
 
                     {/* Awards */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="p-5 border border-white/10 rounded-xl bg-cobalt/5 hover:border-cobalt/30 transition">
+                        <div className="p-5 border border-zinc-200 rounded-xl bg-cobalt/5 hover:border-cobalt/30 transition">
                             <div className="text-[10px] font-mono text-cobalt uppercase tracking-widest mb-2">Innovation Award</div>
                             <div className="text-lg font-bold text-white mb-1">Digital Transformation Excellence</div>
                             <p className="text-xs text-zinc-500">7.7M user migration. Zero downtime.</p>
                         </div>
 
-                        <div className="p-5 border border-white/10 rounded-xl bg-emerald-500/5 hover:border-emerald-500/30 transition">
+                        <div className="p-5 border border-zinc-200 rounded-xl bg-emerald-500/5 hover:border-emerald-500/30 transition">
                             <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-2">Governor's Award</div>
                             <div className="text-lg font-bold text-white mb-1">The Extra Mile Award</div>
                             <p className="text-xs text-zinc-500">Washington State. Gov. Jay Inslee.</p>
@@ -190,7 +190,7 @@ export default function DoctrineContent() {
 
             {/* CTA */}
             <ScrollReveal delay={300}>
-                <div className="text-center py-8 border-t border-white/10">
+                <div className="text-center py-8 border-t border-zinc-200">
                     <p className="text-zinc-400 mb-6">Apply these principles to your organization.</p>
                     <ShineBorder borderColor="rgba(16, 185, 129, 0.6)" duration={2}>
                         <Link
@@ -201,13 +201,13 @@ export default function DoctrineContent() {
                         </Link>
                     </ShineBorder>
 
-                    <div className="mt-8 pt-6 border-t border-white/10">
+                    <div className="mt-8 pt-6 border-t border-zinc-200">
                         <p className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Not Ready for intervention?</p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-white/20 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-white">
+                            <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-zinc-300 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-white">
                                 Subscribe Free
                             </a>
-                            <Link href="/tools" className="px-6 py-3 border border-white/20 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-white">
+                            <Link href="/tools" className="px-6 py-3 border border-zinc-300 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-white">
                                 Try Free Tools
                             </Link>
                         </div>

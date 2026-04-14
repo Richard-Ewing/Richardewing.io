@@ -83,7 +83,7 @@ export default function PdfExportButton({
       className={`
         mt-8 w-full py-4 rounded-xl font-bold tracking-tight uppercase flex items-center justify-center gap-3 transition-all duration-300 relative overflow-hidden group
         ${isExporting 
-          ? 'bg-[#18181b] text-zinc-500 cursor-not-allowed border-zinc-800 border' 
+          ? 'bg-[#18181b] text-zinc-500 cursor-not-allowed border-zinc-200 border' 
           : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_30px_rgba(79,70,229,0.5)]'
         }
       `}

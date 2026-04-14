@@ -90,14 +90,14 @@ export default function FaqPage() {
             ))}
 
             {/* CTA */}
-            <div className="text-center py-12 border-t border-white/10">
+            <div className="text-center py-12 border-t border-zinc-200">
                 <h2 className="text-2xl font-bold text-white mb-4">Still Have Questions?</h2>
                 <p className="text-zinc-400 mb-8">Book a free 15-minute call or explore the tools.</p>
                 <div className="flex flex-wrap justify-center gap-4">
                     <Link href="/advisory" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                         Book a Call →
                     </Link>
-                    <Link href="/tools" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 transition-all">
+                    <Link href="/tools" className="px-8 py-4 border border-zinc-300 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 transition-all">
                         Explore Free Tools →
                     </Link>
                 </div>

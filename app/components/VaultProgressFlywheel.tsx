@@ -74,7 +74,7 @@ export default function VaultProgressFlywheel({ serverCompletedCount, totalModul
                     <p className="text-sm text-zinc-400 mb-4">
                         You have mastered <strong className="text-violet-400">{completedCount}</strong> out of <strong className="text-white">{totalModulesCount}</strong> core modules across {Math.ceil(totalModulesCount / 15)} disciplines. The curriculum continually adapts to macroeconomic trends.
                     </p>
-                    <Link href="/vault/curriculum/tracks" className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-sm text-white transition-all">
+                    <Link href="/vault/curriculum/tracks" className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-zinc-200 rounded-lg text-sm text-white transition-all">
                         Explore All {Math.ceil(totalModulesCount / 15)} Tracks <ChevronRight className="w-4 h-4" />
                     </Link>
                 </div>

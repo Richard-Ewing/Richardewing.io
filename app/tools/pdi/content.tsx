@@ -52,7 +52,7 @@ const PieChart = ({ data }: { data: { name: string; value: number; color: string
 };
 
 const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: React.ReactNode; title: string; icon?: React.ComponentType<{ size?: number; className?: string }>; className?: string }) => (
-    <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 ${className}`}>
+    <div className={`relative overflow-hidden rounded-2xl border border-zinc-200 bg-white/5 p-6 ${className}`}>
         <div className="flex items-center gap-2 mb-4">
             {Icon && <Icon size={20} className="text-blue-400" />}
             <h3 className="font-semibold text-white">{title}</h3>
@@ -357,7 +357,7 @@ export default function PDITool() {
             <ToolCelebration show={!!results} toolName="PDI" />
             {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                <Link href="/system" className="hover:text-white transition">Intelligence</Link>
+                <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-white font-bold">PDI Engine</span>
             </div>
@@ -390,7 +390,7 @@ export default function PDITool() {
                                         onClick={() => setPersona(p.id)}
                                         className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id
                                             ? 'bg-red-500/10 border-red-500 text-red-400'
-                                            : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-white/30'
+                                            : 'bg-white/80 border-zinc-200 text-zinc-600 hover:border-white/30'
                                             }`}
                                     >
                                         <p.icon size={14} />
@@ -406,7 +406,7 @@ export default function PDITool() {
                             {/* STEP 1: ORGANIZATIONAL SCALE */}
                             {step === 1 && (
                                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
-                                    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                    <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold font-mono text-sm border border-cyan-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-white">Organizational Scale</h3>
@@ -415,7 +415,7 @@ export default function PDITool() {
                                     </div>
 
                                     <div className="space-y-8">
-                                        <div className="p-6 bg-black/40 rounded-xl border border-white/5 relative group">
+                                        <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-200 relative group">
                                             <div className="flex justify-between items-end mb-4">
                                                 <label className="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2">
                                                     Engineering Team Size
@@ -437,7 +437,7 @@ export default function PDITool() {
                                             </div>
                                         </div>
 
-                                        <div className="p-6 bg-black/40 rounded-xl border border-white/5 relative group">
+                                        <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-200 relative group">
                                             <div className="flex justify-between items-end mb-4">
                                                 <label className="text-xs font-mono text-violet-400 uppercase tracking-widest flex items-center gap-2">
                                                     Average Fully-Loaded Salary
@@ -464,7 +464,7 @@ export default function PDITool() {
                             {/* STEP 2: CADENCE & HORIZON */}
                             {step === 2 && (
                                 <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
-                                    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                    <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-violet-500/20 text-violet-400 flex items-center justify-center font-bold font-mono text-sm border border-violet-500/30">2</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-white">R&D Cadence</h3>
@@ -475,7 +475,7 @@ export default function PDITool() {
                                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                         <div>
                                             <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">Sprint Length</label>
-                                            <select title="Sprint Length" aria-label="Sprint Length" value={sprintLength} onChange={e => setSprintLength(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors">
+                                            <select title="Sprint Length" aria-label="Sprint Length" value={sprintLength} onChange={e => setSprintLength(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors">
                                                 <option value="1">1 Week</option>
                                                 <option value="2">2 Weeks</option>
                                                 <option value="3">3 Weeks</option>
@@ -484,16 +484,16 @@ export default function PDITool() {
                                         </div>
                                         <div>
                                             <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">PR Cycle (Hours)</label>
-                                            <input title="PR Cycle Time" aria-label="PR Cycle Time" placeholder="e.g. 48" type="number" value={prCycleHours} onChange={e => setPrCycleHours(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors" />
+                                            <input title="PR Cycle Time" aria-label="PR Cycle Time" placeholder="e.g. 48" type="number" value={prCycleHours} onChange={e => setPrCycleHours(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors" />
                                         </div>
                                         <div>
                                             <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3 block">Deploy Freq (Days)</label>
-                                            <input title="Deploy Frequency" aria-label="Deploy Frequency" placeholder="e.g. 7" type="number" value={deployFreqDays} onChange={e => setDeployFreqDays(e.target.value)} className="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors" />
+                                            <input title="Deploy Frequency" aria-label="Deploy Frequency" placeholder="e.g. 7" type="number" value={deployFreqDays} onChange={e => setDeployFreqDays(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl p-4 text-white font-mono focus:border-violet-500 focus:outline-none transition-colors" />
                                         </div>
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <button onClick={() => setStep(1)} className="w-1/3 py-4 bg-zinc-900 border border-white/10 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">
+                                        <button onClick={() => setStep(1)} className="w-1/3 py-4 bg-zinc-50 border border-zinc-200 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">
                                             Back
                                         </button>
                                         <button onClick={() => setStep(3)} className="w-2/3 py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-violet-400 transition-all flex items-center justify-center gap-2">
@@ -506,7 +506,7 @@ export default function PDITool() {
                             {/* STEP 3: EVIDENCE INJECTION */}
                             {step === 3 && (
                                 <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
-                                    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+                                    <div className="flex items-center gap-3 border-b border-zinc-200 pb-4">
                                         <div className="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold font-mono text-sm border border-red-500/30">3</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-white">Backlog Evidence</h3>
@@ -518,7 +518,7 @@ export default function PDITool() {
                                         <textarea
                                             value={tickets}
                                             onChange={e => setTickets(e.target.value)}
-                                            className="w-full h-48 sm:h-64 bg-black/50 border border-white/10 rounded-xl p-4 font-mono text-sm text-zinc-300 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500/50 transition-all placeholder:text-zinc-700 resize-none"
+                                            className="w-full h-48 sm:h-64 bg-white/50 border border-zinc-200 rounded-xl p-4 font-mono text-sm text-zinc-300 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500/50 transition-all placeholder:text-zinc-700 resize-none"
                                             placeholder="Paste Jira tickets, PRs, or task descriptions here (one per line)...
 
 Example:
@@ -532,7 +532,7 @@ Migrate from Heroku to AWS"
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <button onClick={() => setStep(2)} className="w-1/3 py-4 bg-zinc-900 border border-white/10 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">
+                                        <button onClick={() => setStep(2)} className="w-1/3 py-4 bg-zinc-50 border border-zinc-200 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">
                                             Back
                                         </button>
                                         <div className="w-2/3">
@@ -570,7 +570,7 @@ Migrate from Heroku to AWS"
             ) : (
                 /* --- RESULTS STATE --- */
                 <div id="pdi-results-artifact" className="bg-[#050505] p-2 sm:p-6 rounded-3xl">
-                    <div className="flex flex-col sm:flex-row items-center justify-between bg-zinc-900/40 border border-cyan-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                    <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-cyan-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
@@ -586,7 +586,7 @@ Migrate from Heroku to AWS"
                     <div id="pdi-pdf-export-zone" className="space-y-6">
                         <ScrollReveal>
                             {/* Score Header */}
-                            <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-white/10">
+                            <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-zinc-200">
                             <BorderBeam size={300} duration={12} delay={9} borderWidth={1.5} />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                 <div>
@@ -687,13 +687,13 @@ Migrate from Heroku to AWS"
                                 <div className="text-xs font-mono uppercase tracking-widest text-zinc-500">Corporate Solvency Matrix (Technical Default)</div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="bg-black/40 rounded-xl p-5 border border-white/5 relative overflow-hidden">
+                                <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-200 relative overflow-hidden">
                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-white" /></div>
                                     <div className="text-xs text-zinc-500 mb-2">Annual Maintenance Burden</div>
                                     <div className="text-3xl font-bold text-red-500">{formatMoney(results.financials.waste)}</div>
                                     <div className="text-xs text-red-400/60 mt-2 mt-auto">Cost of servicing status-quo tech debt (Interest).</div>
                                 </div>
-                                <div className="bg-black/40 rounded-xl p-5 border border-white/5 relative overflow-hidden">
+                                <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-200 relative overflow-hidden">
                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-white" /></div>
                                     <div className="text-xs text-zinc-500 mb-2">Generative AI Rewrite Protocol</div>
                                     <div className="text-3xl font-bold text-cyan-400">{formatMoney(results.financials.rewriteCost)}</div>
@@ -741,7 +741,7 @@ Migrate from Heroku to AWS"
                             </GlowCard>
 
                             {/* EXECUTIVE SUMMARY + EMAIL */}
-                            <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-white/10">
+                            <div className="bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-zinc-900/60 rounded-2xl p-6 border border-zinc-200">
                                 <div className="flex items-center gap-2 mb-4">
                                     <div className={`w-3 h-3 rounded-full animate-pulse ${results.score < 50 ? 'bg-red-500' : 'bg-cyan-400'}`} />
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">Executive Summary</span>
@@ -809,9 +809,9 @@ Migrate from Heroku to AWS"
                                 <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                                 Quarterly Product Execution Plan (Q-PEP)
                             </h3>
-                            <div className="bg-zinc-900 border border-white/10 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
+                            <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 via-orange-500 to-cyan-500"></div>
-                                <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6 border-b border-white/5 pb-4">Execution Gantt Chart (90-Day Burn Down)</h4>
+                                <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6 border-b border-zinc-200 pb-4">Execution Gantt Chart (90-Day Burn Down)</h4>
                                 
                                 <div className="space-y-6 md:space-y-8">
                                     {results.qpep_roadmap.map((plan, i) => (
@@ -857,7 +857,7 @@ Migrate from Heroku to AWS"
 
                     {/* ADVISORY PROTOCOLS - 3-Step Board Playbook */}
                     <ScrollReveal delay={250}>
-                        <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-white/5 bg-black/20">
+                        <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-zinc-200 bg-zinc-50">
                             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                                 <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                 3-Step Board Remediation Playbook
@@ -866,7 +866,7 @@ Migrate from Heroku to AWS"
 
                             <div className="space-y-4">
                                 {/* Step 1 */}
-                                <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                     <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
                                         <span className="text-rose-400 font-bold font-mono">01</span>
@@ -874,7 +874,7 @@ Migrate from Heroku to AWS"
                                     <div className="relative z-10 w-full">
                                         <h4 className="text-white font-bold mb-2">CapEx Quarantine Protocol</h4>
                                         <p className="text-zinc-400 text-sm leading-relaxed mb-4">Mandate an absolute freeze on net-new feature development for any codebase quadrant operating above 40% maintenance allocation.</p>
-                                        <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                        <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                             <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
@@ -884,7 +884,7 @@ Migrate from Heroku to AWS"
                                 </div>
 
                                 {/* Step 2 */}
-                                <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                     <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
                                         <span className="text-amber-400 font-bold font-mono">02</span>
@@ -892,7 +892,7 @@ Migrate from Heroku to AWS"
                                     <div className="relative z-10 w-full">
                                         <h4 className="text-white font-bold mb-2">Balance Sheet Refactoring</h4>
                                         <p className="text-zinc-400 text-sm leading-relaxed mb-4">Structural maintenance debt must be capitalized as a core business function, not shadow IT work done on weekends.</p>
-                                        <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                        <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                             <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
@@ -902,7 +902,7 @@ Migrate from Heroku to AWS"
                                 </div>
 
                                 {/* Step 3 */}
-                                <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                     <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
                                         <span className="text-cyan-400 font-bold font-mono">03</span>
@@ -910,7 +910,7 @@ Migrate from Heroku to AWS"
                                     <div className="relative z-10 w-full">
                                         <h4 className="text-white font-bold mb-2">CFO Workflow Alignment</h4>
                                         <p className="text-zinc-400 text-sm leading-relaxed mb-4">You are burning {formatMoney(results.financials.wastePerSprint)} per sprint cycle in overhead. This is no longer an engineering problem; it’s a capital efficiency crisis.</p>
-                                        <div className="bg-black/60 p-3 rounded border border-white/5 flex flex-col gap-2">
+                                        <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                             <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
@@ -930,14 +930,14 @@ Migrate from Heroku to AWS"
 
                     {/* Action Footer */}
                     <ScrollReveal delay={300}>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t border-white/10" data-html2canvas-ignore>
-                            <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-white underline underline-offset-4">← Run New Audit</button>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t border-zinc-200" data-html2canvas-ignore>
+                            <button onClick={() => setResults(null)} className="text-zinc-500 text-sm hover:text-zinc-900 underline underline-offset-4">← Run New Audit</button>
                             <ExportToPDFButton 
                                 targetId="pdi-results-artifact" 
                                 fileName={`Product_Debt_Index_${new Date().toISOString().split('T')[0]}.pdf`} 
                                 onBeforeExport={handleSaveToVault} 
                             />
-                            <Link href="/system" className="text-zinc-500 text-sm hover:text-white">Explore All Tools →</Link>
+                            <Link href="/system" className="text-zinc-500 text-sm hover:text-zinc-900">Explore All Tools →</Link>
                         </div>
                     </ScrollReveal>
 
@@ -961,7 +961,7 @@ Migrate from Heroku to AWS"
 
             {/* AUTHORITY CONTENT: PDI */}
             <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
-                <div className="prose prose-invert prose-lg max-w-none">
+                <div className="prose prose-zinc prose-lg max-w-none">
                     <h2 className="text-4xl font-bold text-white mb-8">Why Standard Technical Debt Calculators Fail</h2>
                     <p className="text-zinc-400 leading-relaxed">
                         Most engineering metrics are vanity signals. Counting &quot;cyclomatic complexity&quot; or &quot;TODO comments&quot; does not tell a CFO whether to approve a budget. The <strong>Product Debt Index™ (PDI)</strong> is different. It is a forensic accounting tool that converts &quot;bad code&quot; into &quot;wasted salary dollars.&quot;
@@ -989,8 +989,8 @@ Migrate from Heroku to AWS"
 
             {/* MONETIZATION ENGINE: PAYWALL MODAL */}
             {showPaywall && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" data-html2canvas-ignore>
-                    <div className="bg-zinc-950 border border-zinc-800 rounded-3xl max-w-md w-full p-8 relative shadow-2xl overflow-hidden scale-100 animate-in zoom-in-95 duration-200">
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-white/80 backdrop-blur-sm" data-html2canvas-ignore>
+                    <div className="bg-white border border-zinc-200 rounded-3xl max-w-md w-full p-8 relative shadow-2xl overflow-hidden scale-100 animate-in zoom-in-95 duration-200">
                         {/* Lighting Fx */}
                         <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
                         <div className="absolute bottom-0 left-0 w-32 h-32 bg-violet-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>

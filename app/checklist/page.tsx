@@ -220,7 +220,7 @@ export default function ChecklistPage() {
                                                                 <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1">🎯 Action</div>
                                                                 <p className="text-xs text-zinc-400">{item.action}</p>
                                                             </div>
-                                                            <div className="sm:w-48 rounded-lg bg-white/[0.02] border border-white/5 p-3">
+                                                            <div className="sm:w-48 rounded-lg bg-white/[0.02] border border-zinc-200 p-3">
                                                                 <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Scoring</div>
                                                                 <div className="space-y-1">
                                                                     <div className="flex items-center gap-2 text-xs">
@@ -301,14 +301,14 @@ export default function ChecklistPage() {
                     </div>
 
                     {/* CTA: Advisory */}
-                    <div className="text-center py-12 border-t border-white/10">
+                    <div className="text-center py-12 border-t border-zinc-200">
                         <h2 className="text-2xl font-bold text-white mb-4">Want These Questions Answered Professionally?</h2>
                         <p className="text-zinc-400 mb-8 max-w-lg mx-auto">Book a diagnostic engagement and get a written executive summary with quantified findings, benchmarks, and a prioritized remediation roadmap.</p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="/api/buy/strategy_session" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                                 Book Strategy Session →
                             </a>
-                            <a href="/api/buy/full_audit" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
+                            <a href="/api/buy/full_audit" className="px-8 py-4 border border-zinc-300 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
                                 Full R&amp;D Audit ($7,500) →
                             </a>
                         </div>

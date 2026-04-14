@@ -60,7 +60,7 @@ export default function ForCTOsPage() {
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="/tools" className="px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white font-bold hover:opacity-90 transition-opacity">Explore All Tools →</Link>
-                            <Link href="/glossary" className="px-8 py-4 rounded-lg border border-white/20 text-white font-bold hover:bg-white/5 transition-colors">Browse 400+ Definitions →</Link>
+                            <Link href="/glossary" className="px-8 py-4 rounded-lg border border-zinc-300 text-white font-bold hover:bg-white/5 transition-colors">Browse 400+ Definitions →</Link>
                         </div>
                     </div>
 
@@ -78,7 +78,7 @@ export default function ForCTOsPage() {
                     <h2 className="text-2xl font-grotesk font-bold text-white mb-8">Proprietary Frameworks</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
                         {frameworks.map((fw, i) => (
-                            <Link key={i} href={fw.href} className="flex items-center gap-4 rounded-xl border border-white/10 p-5 hover:border-rose-500/30 transition-colors group">
+                            <Link key={i} href={fw.href} className="flex items-center gap-4 rounded-xl border border-zinc-200 p-5 hover:border-rose-500/30 transition-colors group">
                                 <div>
                                     <div className="text-white font-bold group-hover:text-rose-400 transition-colors">{fw.name}</div>
                                     <div className="text-sm text-zinc-500">{fw.description}</div>

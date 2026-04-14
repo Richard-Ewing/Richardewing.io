@@ -43,7 +43,7 @@ export default function ModuleStepper({ parsedContent, hasAccess = true, childre
                         <BookOpen className="w-3 h-3" />
                         {currentStep === 0 ? 'Syllabus Introduction' : `Lesson ${currentStep} of ${totalSteps - 1}`}
                     </span>
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest bg-zinc-900 border border-zinc-800 px-2 py-1 rounded flex items-center gap-1">
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest bg-zinc-50 border border-zinc-200 px-2 py-1 rounded flex items-center gap-1">
                         <Clock className="w-3 h-3 text-emerald-500" />
                         2 MIN READ
                     </span>
@@ -78,21 +78,21 @@ export default function ModuleStepper({ parsedContent, hasAccess = true, childre
 
             {/* The Active Content Payload */}
             {currentStep === 0 ? (
-                <div className="prose prose-invert max-w-none ai-content syllabus-view" dangerouslySetInnerHTML={{ __html: parsedContent.syllabus }} />
+                <div className="prose prose-zinc max-w-none ai-content syllabus-view" dangerouslySetInnerHTML={{ __html: parsedContent.syllabus }} />
             ) : (
                 <div className="space-y-8">
                     {/* Render actual lesson */}
-                    <div className="prose prose-invert max-w-none ai-content lesson-view" dangerouslySetInnerHTML={{ __html: parsedContent.lessons[currentStep - 1].html }} />
+                    <div className="prose prose-zinc max-w-none ai-content lesson-view" dangerouslySetInnerHTML={{ __html: parsedContent.lessons[currentStep - 1].html }} />
                 </div>
             )}
 
             {/* The Footer Action Dashboard */}
             {hasAccess && (
-                <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-50">
+                <div className="mt-16 pt-8 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-50">
                     <button 
                         onClick={handlePrev}
                         disabled={currentStep === 0}
-                        className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-black border border-white/10 text-white hover:bg-zinc-900"
+                        className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-black border border-zinc-200 text-white hover:bg-zinc-50"
                     >
                         <ChevronLeft className="w-4 h-4" /> Previous
                     </button>

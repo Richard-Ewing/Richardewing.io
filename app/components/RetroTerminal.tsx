@@ -67,7 +67,7 @@ AUTHOR
         return (
             <button
                 onClick={() => setIsOpen(true)}
-                className="group flex items-center gap-3 px-5 py-3 bg-black/60 border border-green-500/30 rounded-lg hover:border-green-500/60 hover:bg-black/80 transition-all font-mono text-sm"
+                className="group flex items-center gap-3 px-5 py-3 bg-white/60 border border-green-500/30 rounded-lg hover:border-green-500/60 hover:bg-white/80 transition-all font-mono text-sm"
             >
                 <span className="text-green-500 opacity-70 group-hover:opacity-100 transition-opacity">&gt;_</span>
                 <span className="text-green-400 group-hover:text-green-300 transition-colors">Terminal Mode</span>
@@ -100,7 +100,7 @@ AUTHOR
             {/* Terminal content */}
             <div
                 ref={terminalRef}
-                className="bg-black/95 p-6 font-mono text-sm text-green-400 leading-relaxed max-h-[500px] overflow-y-auto whitespace-pre-wrap"
+                className="bg-white/95 p-6 font-mono text-sm text-green-400 leading-relaxed max-h-[500px] overflow-y-auto whitespace-pre-wrap"
                 style={{
                     textShadow: '0 0 5px rgba(0,255,0,0.3)',
                 }}

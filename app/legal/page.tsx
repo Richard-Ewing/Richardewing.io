@@ -11,7 +11,7 @@ export default function LegalPage() {
                 <div className="absolute bottom-0 left-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-white/5 rounded-full blur-[100px] pointer-events-none" />
 
                 <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                    <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                    <Link href="/" className="hover:text-zinc-900 transition-colors">Home</Link>
                     <span>/</span>
                     <span className="text-zinc-400">Signal</span>
                     <span>/</span>
@@ -19,7 +19,7 @@ export default function LegalPage() {
                 </div>
 
                 <ScrollReveal>
-                    <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 lg:p-16 border border-white/10 bg-surface/50">
+                    <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 lg:p-16 border border-zinc-200 bg-surface/50">
                         <span className="font-mono text-titanium text-xs uppercase tracking-[0.3em] mb-4 block">Compliance</span>
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-none mb-8">
                             Legal &amp;<br />Terms of Use
@@ -75,30 +75,30 @@ export default function LegalPage() {
                                     The following are registered trademarks and proprietary intellectual property of Richard Ewing:
                                 </p>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                                    <div className="p-3 border border-white/10 rounded-lg text-center hover:border-cyan-500/30 transition">
+                                    <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-cyan-500/30 transition">
                                         <div className="text-white font-bold text-sm">APER™</div>
                                         <div className="text-zinc-600 text-[10px]">Team Efficiency Diagnostic</div>
                                     </div>
-                                    <div className="p-3 border border-white/10 rounded-lg text-center hover:border-red-500/30 transition">
+                                    <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-red-500/30 transition">
                                         <div className="text-white font-bold text-sm">AUEB™</div>
                                         <div className="text-zinc-600 text-[10px]">AI Unit Economics Benchmark</div>
                                     </div>
-                                    <div className="p-3 border border-white/10 rounded-lg text-center hover:border-emerald-500/30 transition">
+                                    <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-emerald-500/30 transition">
                                         <div className="text-white font-bold text-sm">PDI™</div>
                                         <div className="text-zinc-600 text-[10px]">Product Debt Index</div>
                                     </div>
-                                    <div className="p-3 border border-white/10 rounded-lg text-center hover:border-purple-500/30 transition">
+                                    <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-purple-500/30 transition">
                                         <div className="text-white font-bold text-sm">EV-SE™</div>
                                         <div className="text-zinc-600 text-[10px]">Valuation Scenario Engine</div>
                                     </div>
-                                    <div className="p-3 border border-white/10 rounded-lg text-center hover:border-cobalt/30 transition">
+                                    <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-cobalt/30 transition">
                                         <div className="text-white font-bold text-sm">Q-PEP™</div>
                                         <div className="text-zinc-600 text-[10px]">Quarterly Protocol</div>
                                     </div>
-                                    <div className="p-3 border border-white/10 rounded-lg text-center hover:border-gold/30 transition">
+                                    <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-gold/30 transition">
                                         <div className="text-zinc-600 text-[10px]">Methodology & Brand</div>
                                     </div>
-                                    <div className="p-3 border border-white/10 rounded-lg text-center hover:border-emerald-500/30 transition">
+                                    <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-emerald-500/30 transition">
                                         <div className="text-white font-bold text-sm">AUDIT™</div>
                                         <div className="text-zinc-600 text-[10px]">Audit Interview Protocol</div>
                                     </div>
@@ -135,14 +135,14 @@ export default function LegalPage() {
                                 </p>
                                 <a
                                     href="mailto:richardewing@exogram.ai"
-                                    className="inline-flex items-center gap-2 text-cyan-400 hover:text-white transition font-mono text-sm"
+                                    className="inline-flex items-center gap-2 text-cyan-400 hover:text-zinc-900 transition font-mono text-sm"
                                 >
                                     <span className="w-2 h-2 bg-cyan-400 rounded-full" />
                                     richardewing@exogram.ai
                                 </a>
                             </section>
 
-                            <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-zinc-500 text-xs sm:text-sm font-mono">
+                            <div className="pt-8 border-t border-zinc-200 flex flex-col sm:flex-row justify-between items-center gap-4 text-zinc-500 text-xs sm:text-sm font-mono">
                                 <span>Last Updated: January 2026</span>
                                 <span>© 2026 Richard Ewing. All rights reserved.</span>
                             </div>

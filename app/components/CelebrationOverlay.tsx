@@ -204,7 +204,7 @@ export default function CelebrationOverlay({
             }}
         >
             {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+            <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
 
             {/* Confetti Canvas */}
             <canvas
@@ -221,7 +221,7 @@ export default function CelebrationOverlay({
                 {/* Glowing ring */}
                 <div className="relative inline-block mb-8">
                     <div className="w-28 h-28 rounded-full bg-gradient-to-br from-cyan-500 via-violet-500 to-emerald-500 p-[3px] animate-spin-slow">
-                        <div className="w-full h-full rounded-full bg-zinc-950 flex items-center justify-center">
+                        <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
                             <span className="text-5xl">🏆</span>
                         </div>
                     </div>
@@ -238,7 +238,7 @@ export default function CelebrationOverlay({
                 <p className="text-zinc-400 text-lg max-w-md mx-auto mb-6">{subtitle}</p>
 
                 {/* Progress streak indicator */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-white/10">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-zinc-200">
                     <span className="text-amber-400">🔥</span>
                     <span className="text-sm text-zinc-300 font-mono">Keep the momentum going</span>
                 </div>

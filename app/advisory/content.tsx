@@ -40,7 +40,7 @@ export default function AdvisoryContent() {
                         </p>
 
                         {/* Stats */}
-                        <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
+                        <div className="grid grid-cols-3 gap-4 pt-6 border-t border-zinc-200">
                             <div className="text-center">
                                 <div className="text-2xl sm:text-3xl font-bold text-cyan-400 tabular-nums"><NumberTicker value={200} suffix="%" /></div>
                                 <div className="text-[10px] font-mono text-zinc-500 uppercase">Avg Revenue Lift</div>
@@ -68,7 +68,7 @@ export default function AdvisoryContent() {
                             <h3 className="text-xl font-bold text-white font-grotesk">Diagnostic Call</h3>
                             <span className="text-2xl font-bold text-cyan-400 font-mono">$450</span>
                         </div>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-zinc-200 pb-4">
                             30-Minute Rapid Assessment. You describe the situation, I tell you if it's on fire. No pitch, just triage.
                         </p>
                         <a href="/api/buy/gut_check" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
@@ -85,15 +85,15 @@ export default function AdvisoryContent() {
                             <h3 className="text-xl font-bold text-white font-grotesk">Insolvency Diagnostic</h3>
                             <span className="text-2xl font-bold text-red-500 font-mono">$2,500</span>
                         </div>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-zinc-200 pb-4">
                             60-minute deep dive. Includes written Risk Exposure Report detailing red/yellow/green flags across 5 failure modes.
                         </p>
                         <a href="/api/buy/insolvency_diagnostic" className="block w-full text-center bg-red-600 text-white font-bold uppercase text-xs py-3 rounded hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)]">
                             Schedule Deep Dive
                         </a>
-                        <div className="mt-4 pt-3 border-t border-white/10 text-center">
+                        <div className="mt-4 pt-3 border-t border-zinc-200 text-center">
                             <span className="text-zinc-500 text-[10px] uppercase tracking-wide block mb-1">Not ready for deep dive?</span>
-                            <a href="/api/buy/gut_check" className="text-xs text-red-400 hover:text-white transition-colors underline decoration-dotted">
+                            <a href="/api/buy/gut_check" className="text-xs text-red-400 hover:text-zinc-900 transition-colors underline decoration-dotted">
                                 Start with a 30-min Gut-Check ($450) →
                             </a>
                         </div>
@@ -105,10 +105,10 @@ export default function AdvisoryContent() {
                             <h3 className="text-xl font-bold text-white font-grotesk">R&D Capital Audit</h3>
                             <span className="text-2xl font-bold text-white font-mono">$7,500</span>
                         </div>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-zinc-200 pb-4">
                             Full forensic review of engineering spend vs. ROI. 2-3 week engagement delivering a complete Audit Package and Turnaround Plan.
                         </p>
-                        <a href="/api/buy/full_audit" className="block w-full text-center bg-white/5 border border-white/10 text-white font-bold uppercase text-xs py-3 rounded hover:bg-white/10 transition-all">
+                        <a href="/api/buy/full_audit" className="block w-full text-center bg-white/5 border border-zinc-200 text-white font-bold uppercase text-xs py-3 rounded hover:bg-white/10 transition-all">
                             Commission Audit
                         </a>
                     </GlowCard>
@@ -119,7 +119,7 @@ export default function AdvisoryContent() {
                             <h3 className="text-xl font-bold text-white font-grotesk">AI Cost Governance</h3>
                             <span className="text-2xl font-bold text-cyan-400 font-mono">$5,000</span>
                         </div>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-zinc-200 pb-4">
                             Dedicated AI economics analysis. Unit economics model, collapse point calculation, and margin protection framework.
                         </p>
                         <a href="/api/buy/ai_cost_governance" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
@@ -133,7 +133,7 @@ export default function AdvisoryContent() {
                             <h3 className="text-xl font-bold text-white font-grotesk">Independent Oversight</h3>
                             <span className="text-2xl font-bold text-gold font-mono">$5,000<span className="text-sm text-zinc-500">/mo</span></span>
                         </div>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-white/10 pb-4">
+                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 border-b border-zinc-200 pb-4">
                             Board-level economic sanity checks. Asynchronous access for critical buy/build/kill decisions. Minimum 3-month commitment.
                             <br /><br />
                             <span className="text-gold/80 italic text-xs">Engagements are scoped against measurable capital outcomes.</span>
@@ -147,7 +147,7 @@ export default function AdvisoryContent() {
 
             {/* AEO: FAQ Section */}
             <ScrollReveal delay={150}>
-                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-white/20">
+                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-zinc-300">
                     <h2 className="text-2xl font-grotesk font-bold text-white mb-6">Common Questions <span className="text-zinc-500 text-lg font-normal">Answered</span></h2>
                     <div className="space-y-6">
                         <div itemScope itemType="https://schema.org/Question">
@@ -171,11 +171,11 @@ export default function AdvisoryContent() {
                             <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                                 <p itemProp="text" className="text-zinc-400 text-sm leading-relaxed">
                                     Take the free{' '}
-                                    <a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-white transition-colors underline decoration-dotted">AI Fluency</a>{' '}
+                                    <a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-zinc-900 transition-colors underline decoration-dotted">AI Fluency</a>{' '}
                                     and{' '}
-                                    <a href="https://anthropic.skilljar.com/claude-101" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-white transition-colors underline decoration-dotted">Claude 101</a>{' '}
+                                    <a href="https://anthropic.skilljar.com/claude-101" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-zinc-900 transition-colors underline decoration-dotted">Claude 101</a>{' '}
                                     courses from Anthropic Academy. They establish the AI governance vocabulary we&apos;ll use during the audit. View{' '}
-                                    <a href="/resources/ai-courses" className="text-cyan-400 hover:text-white transition-colors underline decoration-dotted">all 15 curated courses</a>.
+                                    <a href="/resources/ai-courses" className="text-cyan-400 hover:text-zinc-900 transition-colors underline decoration-dotted">all 15 curated courses</a>.
                                 </p>
                             </div>
                         </div>
@@ -196,7 +196,7 @@ export default function AdvisoryContent() {
                             <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-cyan-400 transition-colors">
                                 Subscribe Free
                             </a>
-                            <Link href="/tools" className="px-6 py-3 bg-transparent border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-colors">
+                            <Link href="/tools" className="px-6 py-3 bg-transparent border border-zinc-300 text-white font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-colors">
                                 Access Tools
                             </Link>
                         </div>
@@ -205,8 +205,8 @@ export default function AdvisoryContent() {
             </ScrollReveal>
 
             {/* Board & Fractional Leadership */}
-            <ScrollReveal delay={300} className="mt-16 border-t border-white/10 pt-16 mb-20">
-                <div className="bg-gradient-to-br from-zinc-900 to-black p-8 sm:p-12 rounded-2xl border border-white/10 relative overflow-hidden">
+            <ScrollReveal delay={300} className="mt-16 border-t border-zinc-200 pt-16 mb-20">
+                <div className="bg-gradient-to-br from-zinc-900 to-black p-8 sm:p-12 rounded-2xl border border-zinc-200 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-[80px] pointer-events-none" />
 
                     <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
@@ -219,13 +219,13 @@ export default function AdvisoryContent() {
                                 <a href="mailto:richardewing@exogram.ai?subject=Board%20Inquiry" className="inline-flex items-center justify-center px-8 py-4 bg-gold text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-white transition-all">
                                     Request Board Bio
                                 </a>
-                                <Link href="/manifesto" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-all">
+                                <Link href="/manifesto" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-zinc-300 text-white font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-all">
                                     Read Operating Principles
                                 </Link>
                             </div>
                         </div>
                         <div className="w-full md:w-1/3">
-                            <GlowCard className="p-6 bg-black/50" glowColor="gold">
+                            <GlowCard className="p-6 bg-white/50" glowColor="gold">
                                 <div className="text-xs font-mono text-gold uppercase tracking-widest mb-2">Capacity</div>
                                 <div className="text-3xl font-bold text-white font-grotesk mb-1">1 Slot</div>
                                 <div className="text-sm text-zinc-500 mb-4">Remaining for Q1 2026</div>
