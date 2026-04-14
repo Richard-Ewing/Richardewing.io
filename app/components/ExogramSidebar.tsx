@@ -15,11 +15,11 @@ export default function ExogramSidebar() {
     return (
         <>
             {/* Mobile Toggle */}
-            <div className="md:hidden flex items-center justify-between p-4 border-b border-zinc-200 bg-white sticky top-16 z-40">
+            <div className="md:hidden flex items-center justify-between p-4 border-b border-zinc-400 bg-white sticky top-16 z-40">
                 <span className="text-sm font-bold text-zinc-950 uppercase tracking-wider">Docs Menu</span>
                 <button 
                     onClick={() => setIsOpen(!isOpen)}
-                    className="p-2 text-zinc-600 hover:text-zinc-900"
+                    className="p-2 text-zinc-900 hover:text-zinc-900"
                 >
                     {isOpen ? 'Close' : 'Menu'}
                 </button>
@@ -29,7 +29,7 @@ export default function ExogramSidebar() {
             <aside className={`
                 fixed md:sticky top-[120px] left-0 h-[calc(100vh-120px)] w-full md:w-64
                 bg-white/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none
-                border-r border-zinc-200 overflow-y-auto pb-20 z-30 transition-transform duration-300
+                border-r border-zinc-400 overflow-y-auto pb-20 z-30 transition-transform duration-300
                 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
             `}>
                 <nav className="p-6 space-y-8">
@@ -37,7 +37,7 @@ export default function ExogramSidebar() {
                     <div>
                         <Link 
                             href="/exogram/docs" 
-                            className={`text-sm font-semibold transition-colors ${pathname === '/exogram/docs' ? 'text-purple-400' : 'text-zinc-700 hover:text-zinc-900'}`}
+                            className={`text-sm font-semibold transition-colors ${pathname === '/exogram/docs' ? 'text-purple-400' : 'text-zinc-950 hover:text-zinc-900'}`}
                             onClick={() => setIsOpen(false)}
                         >
                             Documentation Home
@@ -47,7 +47,7 @@ export default function ExogramSidebar() {
                     {/* Category Groups */}
                     {categories.map(category => (
                         <div key={category} className="space-y-3">
-                            <h4 className="text-[10px] font-mono font-bold text-zinc-500 uppercase tracking-widest">{category}</h4>
+                            <h4 className="text-[10px] font-mono font-bold text-zinc-800 uppercase tracking-widest">{category}</h4>
                             <ul className="space-y-2">
                                 {exogramDocs.filter(doc => doc.category === category).map(doc => {
                                     const isActive = pathname === `/exogram/docs/${doc.slug}`;
@@ -58,7 +58,7 @@ export default function ExogramSidebar() {
                                                 className={`block text-sm transition-colors border-l-2 pl-3 py-1 ${
                                                     isActive 
                                                         ? 'border-purple-500 text-purple-400 font-medium bg-purple-500/5' 
-                                                        : 'border-zinc-200 text-zinc-600 hover:text-zinc-800 hover:border-zinc-300'
+                                                        : 'border-zinc-400 text-zinc-900 hover:text-zinc-800 hover:border-zinc-300'
                                                 }`}
                                                 onClick={() => setIsOpen(false)}
                                             >

@@ -1,4 +1,4 @@
-
+﻿
 const profiles = [
     {
         publication: 'CIO.com',
@@ -99,7 +99,7 @@ export const PublishedProfiles = () => {
                                 <p className="text-xs text-cyan-400 mb-2 font-mono uppercase tracking-wide">{profile.role}</p>
                                 <p className="text-zinc-800 text-sm mb-2">{profile.description}</p>
                                 {profile.articleCount && (
-                                    <p className="text-zinc-700 text-xs mt-1 font-mono">
+                                    <p className="text-zinc-950 text-xs mt-1 font-mono">
                                         {profile.articleCount} articles
                                     </p>
                                 )}

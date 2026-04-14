@@ -94,7 +94,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
             </div>
 
             <ScrollReveal>
-                <div className={`capsule-container rounded-2xl sm:rounded-[2.5rem] p-8 sm:p-14 mb-16 overflow-hidden relative border border-zinc-200 bg-gradient-to-br from-zinc-50 via-[#0f1115] to-zinc-100`}>
+                <div className={`capsule-container rounded-2xl sm:rounded-[2.5rem] p-8 sm:p-14 mb-16 overflow-hidden relative border border-zinc-400 bg-gradient-to-br from-zinc-50 via-[#0f1115] to-zinc-100`}>
                     <div className={`absolute top-[-20%] right-[-10%] p-64 bg-${pathData.color}-500/10 blur-[120px] pointer-events-none rounded-full`} />
                     <div className="absolute bottom-[-20%] left-[-10%] p-48 bg-zinc-500/5 blur-[120px] pointer-events-none rounded-full" />
                     
@@ -122,7 +122,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                         {pathData.marketEconomics && (
                             <div className="md:col-span-5 bg-gradient-to-br from-white to-[#0a0c10] border border-cyan-500/20 rounded-2xl p-6 md:p-8 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.1)] relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 p-32 bg-cyan-500/5 blur-[80px] pointer-events-none rounded-full group-hover:bg-cyan-500/10 transition-colors" />
-                                <div className="flex items-center gap-3 mb-6 border-b border-zinc-200 pb-4 relative z-10">
+                                <div className="flex items-center gap-3 mb-6 border-b border-zinc-400 pb-4 relative z-10">
                                     <DollarSign className="text-cyan-400 flex-shrink-0" size={20} />
                                     <h3 className="text-xs sm:text-sm font-mono uppercase tracking-widest text-zinc-950 font-bold">2026 Market Economics</h3>
                                 </div>
@@ -149,14 +149,14 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                         )}
 
                         {pathData.primaryMetrics && (
-                            <div className={`${pathData.marketEconomics ? 'md:col-span-7' : 'md:col-span-12'} bg-zinc-50 border border-zinc-200 rounded-2xl p-6 md:p-8 backdrop-blur-xl`}>
-                                <div className="flex items-center gap-3 mb-6 border-b border-zinc-200 pb-4">
+                            <div className={`${pathData.marketEconomics ? 'md:col-span-7' : 'md:col-span-12'} bg-zinc-50 border border-zinc-400 rounded-2xl p-6 md:p-8 backdrop-blur-xl`}>
+                                <div className="flex items-center gap-3 mb-6 border-b border-zinc-400 pb-4">
                                     <TrendingUp className={`text-${pathData.color}-400 flex-shrink-0`} size={20} />
                                     <h3 className="text-xs sm:text-sm font-mono uppercase tracking-widest text-zinc-950 font-bold">Primary Board KPIs</h3>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                                     {pathData.primaryMetrics.map((metric: any, i: number) => (
-                                        <div key={i} className="border-l-2 border-zinc-200 pl-4 hover:border-white/30 transition-colors">
+                                        <div key={i} className="border-l-2 border-zinc-400 pl-4 hover:border-white/30 transition-colors">
                                             <div className={`text-${pathData.color}-300 font-bold mb-2 text-sm`}>{metric.name}</div>
                                             <div className="text-xs text-zinc-600 font-light leading-relaxed">{metric.description}</div>
                                         </div>
@@ -171,12 +171,12 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
                 <div className="lg:col-span-7 space-y-16">
                     <ScrollReveal>
-                        <h2 className={`text-3xl font-black text-zinc-950 mb-8 border-b border-zinc-200 pb-4 flex items-center gap-4`}>
+                        <h2 className={`text-3xl font-black text-zinc-950 mb-8 border-b border-zinc-400 pb-4 flex items-center gap-4`}>
                             The 2026 Mandate
                         </h2>
                         <div className="space-y-6 text-zinc-700 leading-relaxed text-lg font-light">
                             {pathData.manifesto.map((paragraph: string, idx: number) => (
-                                <p key={idx} className="border-l-2 border-zinc-200 pl-6 py-2 hover:border-zinc-500 transition-colors">
+                                <p key={idx} className="border-l-2 border-zinc-400 pl-6 py-2 hover:border-zinc-500 transition-colors">
                                     {paragraph}
                                 </p>
                             ))}
@@ -185,7 +185,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
 
                     {pathData.first90Days && (
                         <ScrollReveal>
-                            <h2 className={`text-3xl font-black text-zinc-950 mb-8 border-b border-zinc-200 pb-4 flex items-center gap-4`}>
+                            <h2 className={`text-3xl font-black text-zinc-950 mb-8 border-b border-zinc-400 pb-4 flex items-center gap-4`}>
                                 <CalendarDays className={`text-${pathData.color}-400`} size={28} />
                                 Execution Protocol
                             </h2>
@@ -197,7 +197,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-black bg-${pathData.color}-500/20 text-${pathData.color}-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_15px_var(--tw-shadow-color)] shadow-${pathData.color}-500/20`}>
                                         <span className="font-mono text-xs font-bold">30</span>
                                     </div>
-                                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/5 border border-zinc-200 p-6 rounded-2xl hover:bg-white/10 transition-colors">
+                                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/5 border border-zinc-400 p-6 rounded-2xl hover:bg-white/10 transition-colors">
                                         <h4 className="text-zinc-950 font-bold mb-3 text-lg">The Audit</h4>
                                         <p className="text-zinc-600 text-sm leading-relaxed">{pathData.first90Days.day30}</p>
                                     </div>
@@ -206,7 +206,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-black bg-${pathData.color}-500/20 text-${pathData.color}-400 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2`}>
                                         <span className="font-mono text-xs font-bold">60</span>
                                     </div>
-                                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/5 border border-zinc-200 p-6 rounded-2xl hover:bg-white/10 transition-colors">
+                                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/5 border border-zinc-400 p-6 rounded-2xl hover:bg-white/10 transition-colors">
                                         <h4 className="text-zinc-950 font-bold mb-3 text-lg">The Architecture</h4>
                                         <p className="text-zinc-600 text-sm leading-relaxed">{pathData.first90Days.day60}</p>
                                     </div>
@@ -215,7 +215,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-black bg-${pathData.color}-500 text-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_20px_var(--tw-shadow-color)] shadow-${pathData.color}-500/40`}>
                                         <span className="font-mono text-xs font-bold">90</span>
                                     </div>
-                                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/5 border border-zinc-200 p-6 rounded-2xl hover:bg-white/10 transition-colors">
+                                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/5 border border-zinc-400 p-6 rounded-2xl hover:bg-white/10 transition-colors">
                                         <h4 className="text-zinc-950 font-bold mb-3 text-lg">The Execution</h4>
                                         <p className="text-zinc-600 text-sm leading-relaxed">{pathData.first90Days.day90}</p>
                                     </div>
@@ -266,16 +266,16 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                     )}
 
                     <ScrollReveal>
-                        <div className="bg-white border border-zinc-200 rounded-2xl p-8 shadow-2xl">
+                        <div className="bg-white border border-zinc-400 rounded-2xl p-8 shadow-2xl">
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">Required Lexicon</h3>
-                            <p className="text-[10px] text-zinc-700 mb-8 font-mono tracking-widest uppercase border-b border-zinc-200 pb-4">
+                            <p className="text-[10px] text-zinc-700 mb-8 font-mono tracking-widest uppercase border-b border-zinc-400 pb-4">
                                 Strategic vocabulary & concepts
                             </p>
                             
                             <div className="space-y-3">
                                 {resolvedTerms.map((term: any) => (
                                     <Link href={`/glossary/${term.slug}`} key={term.slug} className="block group">
-                                        <div className="p-4 rounded-xl bg-white/5 border border-zinc-200 hover:border-white/20 hover:bg-white/10 transition-all">
+                                        <div className="p-4 rounded-xl bg-white/5 border border-zinc-400 hover:border-white/20 hover:bg-white/10 transition-all">
                                             <div className="flex items-center justify-between mb-1">
                                                 <span className={`text-sm font-bold text-${pathData.color}-400`}>{term.title}</span>
                                                 <ArrowRight size={14} className="text-zinc-800 group-hover:text-zinc-900 transition-colors" />
@@ -291,9 +291,9 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
             </div>
 
             <ScrollReveal>
-                <div className="mb-24 mt-12 bg-white/50 border border-zinc-200 p-8 sm:p-12 rounded-[2.5rem]">
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-12 border-b border-zinc-200 pb-8">
-                        <div className="w-16 h-16 rounded-2xl bg-white/5 border border-zinc-200 flex items-center justify-center flex-shrink-0">
+                <div className="mb-24 mt-12 bg-white/50 border border-zinc-400 p-8 sm:p-12 rounded-[2.5rem]">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-12 border-b border-zinc-400 pb-8">
+                        <div className="w-16 h-16 rounded-2xl bg-white/5 border border-zinc-400 flex items-center justify-center flex-shrink-0">
                             <Diamond className="text-indigo-400" size={32} />
                         </div>
                         <div>
@@ -307,15 +307,15 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {resolvedTracks.map((track) => (
                             <GlowCard key={track.title} className="p-8 h-full flex flex-col group relative overflow-hidden" glowColor={track.color || 'indigo'}>
-                                <div className="inline-block px-2 py-1 mb-4 rounded text-[9px] font-mono font-bold text-zinc-500 uppercase tracking-widest bg-white/5 border border-zinc-200 self-start group-hover:text-zinc-900 transition-colors">
+                                <div className="inline-block px-2 py-1 mb-4 rounded text-[9px] font-mono font-bold text-zinc-500 uppercase tracking-widest bg-white/5 border border-zinc-400 self-start group-hover:text-zinc-900 transition-colors">
                                     {track.subtitle}
                                 </div>
                                 <h3 className="text-xl font-bold text-zinc-950 mb-3 group-hover:text-cyan-300 transition-colors">{track.title}</h3>
                                 <p className="text-zinc-600 text-sm leading-relaxed mb-8 flex-grow">
                                     {track.description}
                                 </p>
-                                <div className="mt-auto relative z-10 w-full pt-4 border-t border-zinc-200">
-                                    <Link href={track.modules && track.modules.length > 0 ? (track.modules[0].href.startsWith('/vault') ? track.modules[0].href : `/vault${track.modules[0].href}`) : '/vault/curriculum/tracks'} className="flex items-center justify-between w-full p-4 rounded-xl bg-zinc-50 hover:bg-white/10 text-zinc-950 font-bold text-xs transition-all border border-zinc-200 hover:border-white/20 group/btn">
+                                <div className="mt-auto relative z-10 w-full pt-4 border-t border-zinc-400">
+                                    <Link href={track.modules && track.modules.length > 0 ? (track.modules[0].href.startsWith('/vault') ? track.modules[0].href : `/vault${track.modules[0].href}`) : '/vault/curriculum/tracks'} className="flex items-center justify-between w-full p-4 rounded-xl bg-zinc-50 hover:bg-white/10 text-zinc-950 font-bold text-xs transition-all border border-zinc-400 hover:border-white/20 group/btn">
                                         ACCESS TRACK MODULE 1
                                         <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center group-hover/btn:bg-white/20 transition-colors">
                                             <ArrowRight size={12} className="text-zinc-900" />
@@ -338,7 +338,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {pathData.faqs.map((faq: any, idx: number) => (
-                                <div key={idx} className="bg-white/5 border border-zinc-200 rounded-2xl p-8 hover:bg-white/10 transition-colors">
+                                <div key={idx} className="bg-white/5 border border-zinc-400 rounded-2xl p-8 hover:bg-white/10 transition-colors">
                                     <h3 className="text-lg font-bold text-zinc-950 mb-4 leading-tight">{faq.question}</h3>
                                     <p className="text-zinc-600 text-sm leading-relaxed">{faq.answer}</p>
                                 </div>
@@ -365,7 +365,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                             Unlock Full Execution Architecture
                         </a>
                     </div>
-                    <p className="mt-6 text-[10px] text-zinc-700 font-mono tracking-widest uppercase border border-zinc-200 bg-zinc-50 px-4 py-2 rounded-full inline-block">
+                    <p className="mt-6 text-[10px] text-zinc-700 font-mono tracking-widest uppercase border border-zinc-400 bg-zinc-50 px-4 py-2 rounded-full inline-block">
                         Lifetime Access to 57 Curriculum Tracks
                     </p>
                 </ShineBorder>

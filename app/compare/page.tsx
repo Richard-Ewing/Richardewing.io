@@ -75,7 +75,7 @@ export default function ComparePage() {
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Targeted Diagnostic Engines vs <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-400">Mainstream SaaS</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
                         Mainstream tools measure engineering activity, code syntax, and server usage. Our specialized forensic engines calculate the exact EBITDA hemorrhage caused by Technical Debt, AI Volatility, and Shadow Architecture.
                     </p>
 
@@ -98,7 +98,7 @@ export default function ComparePage() {
                                     <div className={`rounded-2xl border ${theme.border} ${theme.hover} p-8 transition-all hover:bg-zinc-50`}>
                                         <div className={`text-xs font-mono uppercase tracking-widest mb-2 ${theme.text}`}>{c.subtitle}</div>
                                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-3 group-hover:text-zinc-900">{c.title}</h2>
-                                        <p className="text-zinc-600 mb-4">{c.description}</p>
+                                        <p className="text-zinc-900 mb-4">{c.description}</p>
                                         <span className={`text-sm font-bold uppercase tracking-widest ${theme.text}`}>Read Comparison →</span>
                                     </div>
                                 </Link>
@@ -106,8 +106,8 @@ export default function ComparePage() {
                         })}
                     </div>
 
-                    <div className="text-center py-16 border-t border-zinc-200 mt-16">
-                        <p className="text-zinc-600 mb-4">Try all tools free</p>
+                    <div className="text-center py-16 border-t border-zinc-400 mt-16">
+                        <p className="text-zinc-900 mb-4">Try all tools free</p>
                         <Link href="/tools" className="text-cyan-400 hover:text-cyan-300 font-bold uppercase tracking-widest text-sm">
                             View All Diagnostic Tools →
                         </Link>

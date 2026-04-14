@@ -57,7 +57,7 @@ const NewsletterSection = () => {
         <section ref={ref} className={`py-24 px-6 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <div className="max-w-4xl mx-auto">
 
-                <div className="p-12 rounded-3xl bg-white border border-zinc-200 text-center relative overflow-hidden shadow-lg">
+                <div className="p-12 rounded-3xl bg-white border border-zinc-400 text-center relative overflow-hidden shadow-lg">
 
                     {/* Background pattern */}
                     <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#7c3aed_1px,transparent_1px)] [background-size:20px_20px]" />
@@ -77,7 +77,7 @@ const NewsletterSection = () => {
                             </div>
                         ) : (
                             <>
-                                <p className="text-zinc-700 mb-8 max-w-xl mx-auto">
+                                <p className="text-zinc-950 mb-8 max-w-xl mx-auto">
                                     Subscribe and get the <strong className="text-zinc-900">R&D Audit Checklist</strong> — The 15 questions I ask in every $7,500 engagement.
                                 </p>
 
@@ -112,8 +112,8 @@ const NewsletterSection = () => {
                             Monthly. No fluff. 2,000+ executives read before they decide.
                         </p>
 
-                        <div className="mt-6 border-t border-zinc-200 pt-6">
-                            <Link href="/tools" className="text-xs text-zinc-500 hover:text-zinc-900 uppercase tracking-widest transition-colors flex items-center justify-center gap-2 group">
+                        <div className="mt-6 border-t border-zinc-400 pt-6">
+                            <Link href="/tools" className="text-xs text-zinc-800 hover:text-zinc-900 uppercase tracking-widest transition-colors flex items-center justify-center gap-2 group">
                                 Or try my free tools
                                 <span className="group-hover:translate-x-1 transition-transform">→</span>
                             </Link>

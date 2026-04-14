@@ -94,7 +94,7 @@ export default function ExogramArchitecturePage() {
     return (
         <main className="pt-24 pb-20">
             <div className="page-container max-w-5xl mx-auto">
-                <div className="text-xs text-zinc-700 mb-8">
+                <div className="text-xs text-zinc-950 mb-8">
                     <Link href="/exogram" className="hover:text-zinc-900 transition-colors">Exogram</Link>
                     <span className="mx-2">→</span>
                     <span className="text-zinc-800">Architecture</span>
@@ -105,7 +105,7 @@ export default function ExogramArchitecturePage() {
                     <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Verification <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Architecture.</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-zinc-900 max-w-2xl mx-auto">
                         Four verification layers that sit between your AI models and your application.
                         Each layer operates independently and can be adopted incrementally.
                     </p>
@@ -118,11 +118,11 @@ export default function ExogramArchitecturePage() {
                                 <span className={layer.badgeClass}>{layer.tag}</span>
                                 <h2 className="text-2xl font-grotesk font-bold text-zinc-900">{layer.name}</h2>
                             </div>
-                            <p className="text-zinc-600 mb-6 max-w-3xl">{layer.description}</p>
+                            <p className="text-zinc-900 mb-6 max-w-3xl">{layer.description}</p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div>
-                                    <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Capabilities</h3>
+                                    <h3 className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Capabilities</h3>
                                     <ul className="space-y-2">
                                         {layer.features.map(f => (
                                             <li key={f} className="flex items-start gap-2 text-sm text-zinc-800">
@@ -133,10 +133,10 @@ export default function ExogramArchitecturePage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Performance</h3>
+                                    <h3 className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Performance</h3>
                                     <div className="space-y-3">
                                         {layer.metrics.map(m => (
-                                            <div key={m.label} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.03] border border-zinc-200">
+                                            <div key={m.label} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.03] border border-zinc-400">
                                                 <span className="text-xs text-zinc-900">{m.label}</span>
                                                 <span className="text-sm font-mono text-zinc-900">{m.value}</span>
                                             </div>
@@ -146,7 +146,7 @@ export default function ExogramArchitecturePage() {
                             </div>
                             {i < layers.length - 1 && (
                                 <div className="flex justify-center mt-6">
-                                    <span className="text-zinc-700 text-2xl">↓</span>
+                                    <span className="text-zinc-950 text-2xl">↓</span>
                                 </div>
                             )}
                         </section>
@@ -155,14 +155,14 @@ export default function ExogramArchitecturePage() {
 
                 <section className="text-center mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Integration</h2>
-                    <p className="text-zinc-600 max-w-2xl mx-auto mb-8">Exogram integrates via MCP (Model Context Protocol), REST API, or SDK. Drop it into your existing AI pipeline with zero architecture changes.</p>
+                    <p className="text-zinc-900 max-w-2xl mx-auto mb-8">Exogram integrates via MCP (Model Context Protocol), REST API, or SDK. Drop it into your existing AI pipeline with zero architecture changes.</p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
                         {[
                             { method: 'MCP Server', desc: 'Native protocol integration for Claude and compatible AI agents', badge: 'Recommended' },
                             { method: 'REST API', desc: 'Standard HTTP endpoints for any programming language or framework', badge: 'Universal' },
                             { method: 'Python SDK', desc: 'pip install exogram — type-safe client with async support', badge: 'Coming Soon' },
                         ].map(m => (
-                            <div key={m.method} className="p-6 rounded-xl bg-white/[0.03] border border-zinc-200">
+                            <div key={m.method} className="p-6 rounded-xl bg-white/[0.03] border border-zinc-400">
                                 <span className="text-[10px] font-mono text-purple-400 uppercase tracking-widest">{m.badge}</span>
                                 <h3 className="text-zinc-950 font-bold mt-2 mb-2">{m.method}</h3>
                                 <p className="text-xs text-zinc-900">{m.desc}</p>
@@ -175,7 +175,7 @@ export default function ExogramArchitecturePage() {
                     <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
                         Visit Exogram.ai →
                     </a>
-                    <Link href="/exogram/use-cases" className="px-6 py-3 bg-white/5 border border-zinc-200 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                    <Link href="/exogram/use-cases" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                         View Use Cases →
                     </Link>
                 </div>

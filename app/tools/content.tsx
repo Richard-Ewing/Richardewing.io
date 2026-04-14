@@ -85,7 +85,7 @@ export default function ToolsPage() {
                         Boardroom-Ready Insights<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">In 60 Seconds</span>
                     </h1>
-                    <p className="text-xl text-zinc-600 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-xl text-zinc-900 max-w-2xl mx-auto leading-relaxed">
                         Stop guessing. These diagnostic tools give you the exact numbers you need to make better decisions about AI costs, team sizing, and product strategy.
                     </p>
                 </div>
@@ -114,14 +114,14 @@ export default function ToolsPage() {
                                     <p className={`text-sm font-semibold ${colors.text} mb-3`}>
                                         {tool.tagline}
                                     </p>
-                                    <p className="text-zinc-600 text-sm leading-relaxed mb-4">
+                                    <p className="text-zinc-900 text-sm leading-relaxed mb-4">
                                         {tool.description}
                                     </p>
 
                                     {/* Metrics Preview */}
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {tool.metrics.map((metric, j) => (
-                                            <span key={j} className="px-2 py-1 bg-zinc-100 rounded text-[10px] font-mono text-zinc-500 uppercase">
+                                            <span key={j} className="px-2 py-1 bg-zinc-100 rounded text-[10px] font-mono text-zinc-800 uppercase">
                                                 {metric}
                                             </span>
                                         ))}
@@ -139,9 +139,9 @@ export default function ToolsPage() {
 
             {/* Trust Section */}
             <ScrollReveal delay={400}>
-                <div className="text-center border-t border-zinc-200 pt-12">
+                <div className="text-center border-t border-zinc-400 pt-12">
                     <p className="text-xs text-zinc-800 mb-4 uppercase tracking-widest">Trusted by product leaders at</p>
-                    <div className="flex items-center justify-center gap-8 text-zinc-700 font-mono text-sm">
+                    <div className="flex items-center justify-center gap-8 text-zinc-950 font-mono text-sm">
                         <span>Stripe</span>
                         <span>Figma</span>
                         <span>Linear</span>
@@ -158,19 +158,19 @@ export default function ToolsPage() {
                     <div className="space-y-6">
                         <div>
                             <h3 className="text-zinc-950 font-semibold mb-2">How do I calculate AI unit economics?</h3>
-                            <p className="text-zinc-600 text-sm">Use the AUEB tool to input your pricing, AI query volume, and costs. It calculates gross margin, cost per user, and projects when you'll hit margin collapse at your growth rate.</p>
+                            <p className="text-zinc-900 text-sm">Use the AUEB tool to input your pricing, AI query volume, and costs. It calculates gross margin, cost per user, and projects when you'll hit margin collapse at your growth rate.</p>
                         </div>
                         <div>
                             <h3 className="text-zinc-950 font-semibold mb-2">What is a good revenue per engineer ratio?</h3>
-                            <p className="text-zinc-600 text-sm">Top-quartile companies achieve $400K-$500K+ ARR per engineer. The APER tool benchmarks your team against industry standards and shows your coordination tax.</p>
+                            <p className="text-zinc-900 text-sm">Top-quartile companies achieve $400K-$500K+ ARR per engineer. The APER tool benchmarks your team against industry standards and shows your coordination tax.</p>
                         </div>
                         <div>
                             <h3 className="text-zinc-950 font-semibold mb-2">How do I measure product debt?</h3>
-                            <p className="text-zinc-600 text-sm">The PDI tool uses AI to categorize your backlog into growth, retention, and maintenance work. Your PDI score shows what percentage of engineering capacity is going to non-value-creating work.</p>
+                            <p className="text-zinc-900 text-sm">The PDI tool uses AI to categorize your backlog into growth, retention, and maintenance work. Your PDI score shows what percentage of engineering capacity is going to non-value-creating work.</p>
                         </div>
                         <div>
                             <h3 className="text-zinc-950 font-semibold mb-2">How does execution risk affect valuation?</h3>
-                            <p className="text-zinc-600 text-sm">Investors discount valuations based on perceived execution risk. The EV-SE tool models risk factors like scope creep, technical complexity, and talent risk to show the dollar impact on your valuation.</p>
+                            <p className="text-zinc-900 text-sm">Investors discount valuations based on perceived execution risk. The EV-SE tool models risk factors like scope creep, technical complexity, and talent risk to show the dollar impact on your valuation.</p>
                         </div>
                     </div>
                 </div>

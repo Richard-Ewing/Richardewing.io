@@ -49,7 +49,7 @@ export function PathSelector() {
                     key={path.id}
                     href={path.href}
                     className={cn(
-                        "group relative p-6 rounded-xl border border-zinc-200 bg-white/5 transition-all duration-300 backdrop-blur-sm overflow-hidden",
+                        "group relative p-6 rounded-xl border border-zinc-400 bg-white/5 transition-all duration-300 backdrop-blur-sm overflow-hidden",
                         path.border,
                         { 'scale-[1.02] bg-white/[0.07]': hovered === path.id }
                     )}
@@ -66,14 +66,14 @@ export function PathSelector() {
                         <div className="flex items-start justify-between">
                             <path.icon className={cn("w-6 h-6 mb-4", path.color)} />
                             <ArrowRight className={cn(
-                                "w-4 h-4 text-zinc-700 transition-transform duration-300",
+                                "w-4 h-4 text-zinc-950 transition-transform duration-300",
                                 { '-rotate-45 text-zinc-900': hovered === path.id }
                             )} />
                         </div>
 
                         <div>
                             <h3 className="text-lg font-bold text-zinc-950 font-grotesk mb-1">{path.label}</h3>
-                            <p className="text-xs text-zinc-600 font-mono leading-relaxed">{path.description}</p>
+                            <p className="text-xs text-zinc-900 font-mono leading-relaxed">{path.description}</p>
                         </div>
                     </div>
                 </Link>

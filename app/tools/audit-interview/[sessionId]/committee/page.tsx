@@ -96,7 +96,7 @@ export default function CommitteeDashboard() {
         <div className="max-w-6xl mx-auto px-4 py-12 relative z-10">
             {/* Header */}
             <ScrollReveal>
-                <div className="capsule-container rounded-2xl p-8 mb-12 border border-zinc-200">
+                <div className="capsule-container rounded-2xl p-8 mb-12 border border-zinc-400">
                     <div className="flex justify-between items-start">
                         <div>
                             <div className="flex items-center gap-2 mb-4">
@@ -113,7 +113,7 @@ export default function CommitteeDashboard() {
                         </div>
                         <div className="text-right hidden sm:block">
                             <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Interviewer</div>
-                            <div className="text-zinc-950 font-mono bg-zinc-100 px-3 py-1 rounded-lg border border-zinc-200">{session.interviewer_id}</div>
+                            <div className="text-zinc-950 font-mono bg-zinc-100 px-3 py-1 rounded-lg border border-zinc-400">{session.interviewer_id}</div>
                         </div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@ export default function CommitteeDashboard() {
                             }`}>
                             {analytics.verdict}
                         </div>
-                        <div className="border-t border-zinc-200 pt-6 w-full">
+                        <div className="border-t border-zinc-400 pt-6 w-full">
                             <p className="text-zinc-600 text-sm italic leading-relaxed">
                                 "{analytics.rationale}"
                             </p>
@@ -138,7 +138,7 @@ export default function CommitteeDashboard() {
 
                 {/* Center: Radar */}
                 <ScrollReveal delay={200}>
-                    <div className="bg-zinc-100 border border-zinc-200 rounded-2xl p-6 flex flex-col items-center justify-center h-full relative">
+                    <div className="bg-zinc-100 border border-zinc-400 rounded-2xl p-6 flex flex-col items-center justify-center h-full relative">
                         <span className="absolute top-4 left-4 text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Attribute Geometry</span>
                         <div className="w-64 h-64">
                             <RadarChart scores={analytics.scores} />
@@ -148,11 +148,11 @@ export default function CommitteeDashboard() {
 
                 {/* Right: Scores List */}
                 <ScrollReveal delay={300}>
-                    <div className="bg-zinc-100 border border-zinc-200 rounded-2xl p-6 h-full overflow-y-auto max-h-[400px]">
+                    <div className="bg-zinc-100 border border-zinc-400 rounded-2xl p-6 h-full overflow-y-auto max-h-[400px]">
                         <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-4">Score Audit</span>
                         <div className="space-y-4">
                             {analytics.scores.map((s: any, i: number) => (
-                                <div key={i} className="border-b border-zinc-200 last:border-0 pb-4 last:pb-0">
+                                <div key={i} className="border-b border-zinc-400 last:border-0 pb-4 last:pb-0">
                                     <div className="flex justify-between items-start mb-1">
                                         <span className="text-xs text-zinc-700 font-bold uppercase">{s.dimension.replace(/_/g, ' ')}</span>
                                         <span className={`font-mono text-xs font-bold ${s.score > 2 ? 'text-emerald-400' : 'text-zinc-900'}`}>{s.score}/3</span>
@@ -167,7 +167,7 @@ export default function CommitteeDashboard() {
 
             {/* Questions Transcript */}
             <ScrollReveal delay={400}>
-                <div className="mt-12 bg-zinc-100 border border-zinc-200 rounded-2xl p-8">
+                <div className="mt-12 bg-zinc-100 border border-zinc-400 rounded-2xl p-8">
                     <h3 className="text-lg font-bold text-zinc-950 mb-6 flex items-center gap-2">
                         <Search size={18} className="text-zinc-900" />
                         Session Transcript

@@ -25,7 +25,7 @@ const Navigation = () => {
         <>
             <nav
                 className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
-                    ? 'bg-white/90 backdrop-blur-lg border-b border-zinc-200 py-3 shadow-sm'
+                    ? 'bg-white/90 backdrop-blur-lg border-b border-zinc-400 py-3 shadow-sm'
                     : 'bg-transparent py-5'
                     }`}
             >
@@ -88,14 +88,14 @@ const Navigation = () => {
                                 <DropdownItem href="/tools/ai-roi-timeline" description="Hardware vs API investment horizons">AI CapEx Break-Even</DropdownItem>
                                 
                                 <div className="mt-2 p-2 relative z-10 w-full bg-zinc-50 pb-3">
-                                    <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-zinc-200 hover:border-zinc-300 bg-white hover:bg-zinc-50 rounded-lg py-2.5 mx-3 transition-colors">
+                                    <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-zinc-400 hover:border-zinc-300 bg-white hover:bg-zinc-50 rounded-lg py-2.5 mx-3 transition-colors">
                                         <span className="text-xs font-semibold text-zinc-950">Explore All Diagnostics</span>
                                         <span className="text-xs text-zinc-900">→</span>
                                     </Link>
                                 </div>
                             </Dropdown>
                             
-                            <Link href="/tools/audit-interview" className="text-zinc-600 hover:text-zinc-900 transition-colors relative group font-medium">
+                            <Link href="/tools/audit-interview" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
                                 Audit Interview
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all group-hover:w-full" />
                             </Link>
@@ -119,7 +119,7 @@ const Navigation = () => {
                             {/* Authentication */}
                             {isLoaded && !isSignedIn && (
                                 <SignInButton mode="modal" fallbackRedirectUrl="/vault" signUpFallbackRedirectUrl="/vault">
-                                    <button className="text-zinc-600 hover:text-zinc-900 transition-colors text-sm font-semibold whitespace-nowrap">
+                                    <button className="text-zinc-900 hover:text-zinc-900 transition-colors text-sm font-semibold whitespace-nowrap">
                                         Sign In
                                     </button>
                                 </SignInButton>
@@ -165,7 +165,7 @@ const Dropdown = ({ label, children }: { label: React.ReactNode, children: React
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
         >
-            <button className="flex items-center gap-1 text-zinc-600 hover:text-zinc-900 py-2 group-hover:text-[var(--accent-purple)] transition-colors">
+            <button className="flex items-center gap-1 text-zinc-900 hover:text-zinc-900 py-2 group-hover:text-[var(--accent-purple)] transition-colors">
                 {label}
                 <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -179,7 +179,7 @@ const Dropdown = ({ label, children }: { label: React.ReactNode, children: React
                         transition={{ duration: 0.2 }}
                         className="absolute top-full left-0 w-64 pt-2"
                     >
-                        <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-xl">
+                        <div className="bg-white border border-zinc-400 rounded-xl overflow-hidden shadow-xl">
                             <div className="py-2">
                                 {children}
                             </div>
@@ -195,10 +195,10 @@ const DropdownItem = ({ href, children, description }: { href: string, children:
     return (
         <Link
             href={href}
-            className="block px-4 py-3 text-sm text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
+            className="block px-4 py-3 text-sm text-zinc-900 hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
         >
             <span className="block">{children}</span>
-            {description && <span className="block text-[10px] text-zinc-600 mt-0.5">{description}</span>}
+            {description && <span className="block text-[10px] text-zinc-900 mt-0.5">{description}</span>}
         </Link>
     );
 };
@@ -215,7 +215,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
             className="fixed inset-0 z-[60] bg-[var(--bg-primary)]/98 backdrop-blur-xl"
         >
             <div className="flex flex-col h-full overflow-y-auto">
-                <div className="flex items-center justify-between p-6 border-b border-zinc-200">
+                <div className="flex items-center justify-between p-6 border-b border-zinc-400">
                     <div className="font-semibold text-zinc-900">Menu</div>
                     <button onClick={onClose} className="p-2 text-zinc-900 hover:text-[var(--accent-crimson)]" aria-label="Close menu">
                         <X className="w-6 h-6" />
@@ -274,7 +274,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/compare" onClick={onClose}>Model Comparison Matrix</MobileLink>
                         <MobileLink href="/tools/ai-roi-timeline" onClick={onClose}>AI CapEx Break-Even</MobileLink>
                         
-                        <Link href="/tools" onClick={onClose} className="block mt-4 text-center border border-zinc-200 bg-white rounded-lg py-3 hover:bg-zinc-50 transition-colors">
+                        <Link href="/tools" onClick={onClose} className="block mt-4 text-center border border-zinc-400 bg-white rounded-lg py-3 hover:bg-zinc-50 transition-colors">
                             <span className="text-sm font-semibold text-zinc-900">Explore All 12+ Diagnostics →</span>
                         </Link>
                     </div>
@@ -299,7 +299,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     {isLoaded && !isSignedIn && (
                         <SignInButton mode="modal" fallbackRedirectUrl="/vault" signUpFallbackRedirectUrl="/vault">
-                            <button onClick={onClose} className="block w-full bg-zinc-100 border border-zinc-200 text-zinc-900 text-center font-bold py-4 rounded-xl text-lg hover:bg-zinc-200 transition-colors">
+                            <button onClick={onClose} className="block w-full bg-zinc-100 border border-zinc-400 text-zinc-900 text-center font-bold py-4 rounded-xl text-lg hover:bg-zinc-200 transition-colors">
                                 SIGN IN
                             </button>
                         </SignInButton>
@@ -335,7 +335,7 @@ const MobileLink = ({ href, children, onClick, className = "" }: { href: string,
         <Link
             href={href}
             onClick={onClick}
-            className={`block px-4 py-3 rounded-lg bg-white text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 transition-colors ${className}`}
+            className={`block px-4 py-3 rounded-lg bg-white text-zinc-900 hover:text-zinc-900 hover:bg-zinc-50 transition-colors ${className}`}
         >
             {children}
         </Link>
@@ -358,15 +358,15 @@ const UserDropdown = () => {
                 {initials}
             </div>
         }>
-            <div className="px-4 py-3 border-b border-zinc-200 mb-2">
+            <div className="px-4 py-3 border-b border-zinc-400 mb-2">
                 <p className="text-sm font-medium text-zinc-900">{user.fullName || 'User'}</p>
-                <p className="text-xs text-zinc-700 truncate">{user.primaryEmailAddress?.emailAddress}</p>
+                <p className="text-xs text-zinc-950 truncate">{user.primaryEmailAddress?.emailAddress}</p>
             </div>
             <DropdownItem href="/vault" description="Your intelligence dashboard">My Vault</DropdownItem>
             <DropdownItem href="/system" description="All enterprise tools">Tools Library</DropdownItem>
             <button 
                 onClick={() => signOut()} 
-                className="w-full text-left block px-4 py-3 text-sm text-red-500 hover:text-red-600 hover:bg-zinc-50 transition-colors mt-2 border-t border-zinc-200"
+                className="w-full text-left block px-4 py-3 text-sm text-red-500 hover:text-red-600 hover:bg-zinc-50 transition-colors mt-2 border-t border-zinc-400"
             >
                 Sign Out
             </button>

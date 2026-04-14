@@ -53,12 +53,12 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
             <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
             <div
-                className="relative w-full max-w-lg rounded-2xl border border-zinc-200 bg-white shadow-2xl shadow-violet-500/10 overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+                className="relative w-full max-w-lg rounded-2xl border border-zinc-400 bg-white shadow-2xl shadow-violet-500/10 overflow-hidden animate-in fade-in zoom-in-95 duration-200"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Header */}
-                <div className="relative bg-gradient-to-r from-violet-600/20 to-cyan-600/20 border-b border-zinc-200 p-6">
-                    <button onClick={onClose} className="absolute top-4 right-4 text-zinc-500 hover:text-zinc-900 transition-colors">
+                <div className="relative bg-gradient-to-r from-violet-600/20 to-cyan-600/20 border-b border-zinc-400 p-6">
+                    <button onClick={onClose} className="absolute top-4 right-4 text-zinc-800 hover:text-zinc-900 transition-colors">
                         <X className="w-5 h-5" />
                     </button>
                     <div className="flex items-center gap-3 mb-2">
@@ -76,15 +76,15 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                     <button
                         onClick={() => handleCheckout(PREMIUM_GUIDES.find(g => g.slug === currentGuide)?.id || 'premium_guide_29')}
                         disabled={false}
-                        className="w-full flex items-center justify-between p-4 rounded-xl border border-zinc-200 bg-zinc-50 hover:border-zinc-300 transition-all group text-left"
+                        className="w-full flex items-center justify-between p-4 rounded-xl border border-zinc-400 bg-zinc-50 hover:border-zinc-300 transition-all group text-left"
                     >
                         <div>
                             <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors">This Guide Only</div>
-                            <div className="text-xs text-zinc-700 mt-0.5">Instant access to this guide</div>
+                            <div className="text-xs text-zinc-950 mt-0.5">Instant access to this guide</div>
                         </div>
                         <div className="flex items-center gap-2">
                             <span className="text-xl font-bold text-zinc-900">${PREMIUM_GUIDES.find(g => g.slug === currentGuide)?.price || 29}</span>
-                            <ArrowRight className="w-4 h-4 text-zinc-700 group-hover:text-cyan-400 transition-colors" />
+                            <ArrowRight className="w-4 h-4 text-zinc-950 group-hover:text-cyan-400 transition-colors" />
                         </div>
                     </button>
 
@@ -99,7 +99,7 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                         </div>
                         <div>
                             <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors">All 13 Premium Guides</div>
-                            <div className="text-xs text-zinc-700 mt-0.5">Complete 2026 premium library · Save over $500</div>
+                            <div className="text-xs text-zinc-950 mt-0.5">Complete 2026 premium library · Save over $500</div>
                             <div className="flex flex-wrap gap-1 mt-2">
                                 {PREMIUM_GUIDES.slice(0, 5).map(g => (
                                     <span key={g.id} className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">{g.name}</span>
@@ -109,7 +109,7 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                         </div>
                         <div className="flex flex-col items-end">
                             <span className="text-xl font-bold text-zinc-900">$399</span>
-                            <span className="text-[10px] text-zinc-700 line-through">$1,027</span>
+                            <span className="text-[10px] text-zinc-950 line-through">$1,027</span>
                         </div>
                     </button>
                 </div>

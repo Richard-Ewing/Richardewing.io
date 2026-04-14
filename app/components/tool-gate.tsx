@@ -150,7 +150,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                         <Lock className="w-8 h-8 text-red-500" />
                     </div>
                     <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tighter text-zinc-900">Diagnostic Limit Reached</h2>
-                    <p className="text-zinc-600 text-lg mb-8 max-w-md mx-auto">
+                    <p className="text-zinc-900 text-lg mb-8 max-w-md mx-auto">
                         You have exceeded the maximum number of free generic diagnostic scans. To continue evaluating systems via {toolName}, please join the Vault.
                     </p>
                     <a href="/vault/join" className="block w-full py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold uppercase tracking-widest text-sm rounded-xl transition-all shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:shadow-[0_0_30px_rgba(225,29,72,0.6)]">
@@ -162,7 +162,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
     }
 
     return (
-        <div className="w-full bg-white/40 border border-zinc-200 rounded-3xl text-zinc-950 flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden my-8 shadow-2xl backdrop-blur-sm">
+        <div className="w-full bg-white/40 border border-zinc-400 rounded-3xl text-zinc-950 flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden my-8 shadow-2xl backdrop-blur-sm">
             {/* Background effects */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.05),transparent_70%)] pointer-events-none" />
             <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
@@ -173,7 +173,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                 transition={{ duration: 0.5 }}
                 className="max-w-xl w-full text-center z-10"
             >
-                <div className="w-16 h-16 bg-white/5 border border-zinc-200 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+                <div className="w-16 h-16 bg-white/5 border border-zinc-400 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
                     <Lock className="w-8 h-8 text-cyan-400" />
                 </div>
 
@@ -181,11 +181,11 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                     Enter Email to Continue
                 </h1>
 
-                <p className="text-zinc-600 text-lg mb-8 max-w-md mx-auto">
+                <p className="text-zinc-900 text-lg mb-8 max-w-md mx-auto">
                     Enter your email to access {toolName} results.
                 </p>
 
-                <div className="bg-white/5 border border-zinc-200 p-6 md:p-8 rounded-3xl backdrop-blur-md">
+                <div className="bg-white/5 border border-zinc-400 p-6 md:p-8 rounded-3xl backdrop-blur-md">
                     <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
                         <input type="hidden" name="source" value={`${toolName} Gate`} />
 
@@ -200,7 +200,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                                 disabled={state.submitting || isValidating}
                                 value={email}
                                 onChange={(e) => { setEmail(e.target.value); setValidationError(''); }}
-                                className="w-full pl-12 pr-4 py-4 bg-white/50 border border-zinc-200 rounded-xl text-zinc-950 placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all font-mono"
+                                className="w-full pl-12 pr-4 py-4 bg-white/50 border border-zinc-400 rounded-xl text-zinc-950 placeholder:text-zinc-900 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all font-mono"
                             />
                             <ValidationError
                                 prefix="Email"
@@ -237,7 +237,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                         </button>
                     </form>
 
-                    <p className="text-[10px] text-zinc-700 font-mono mt-6 uppercase tracking-widest">
+                    <p className="text-[10px] text-zinc-950 font-mono mt-6 uppercase tracking-widest">
                         Zero spam. Just high-leverage insights for product leaders.
                     </p>
                 </div>

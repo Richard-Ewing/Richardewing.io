@@ -22,10 +22,10 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                 
                 return (
                     <div key={i} className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 relative group">
-                        <div className="w-full sm:w-36 text-xs font-mono text-zinc-700 sm:text-right hidden sm:block leading-tight">{item.name}</div>
-                        <div className="w-full sm:hidden text-[10px] font-mono text-zinc-600 uppercase tracking-widest">{item.name}</div>
+                        <div className="w-full sm:w-36 text-xs font-mono text-zinc-950 sm:text-right hidden sm:block leading-tight">{item.name}</div>
+                        <div className="w-full sm:hidden text-[10px] font-mono text-zinc-900 uppercase tracking-widest">{item.name}</div>
                         
-                        <div className="flex-1 w-full h-10 bg-zinc-50 border border-zinc-200 rounded-lg overflow-hidden relative">
+                        <div className="flex-1 w-full h-10 bg-zinc-50 border border-zinc-400 rounded-lg overflow-hidden relative">
                             <motion.div 
                                 initial={{ width: 0 }} 
                                 animate={{ width: `${widthPercent}%` }} 
@@ -58,11 +58,11 @@ const RiskSlider = ({ label, value, onChange, description, min = 0, max = 100, s
     const percentage = ((value - min) / (max - min)) * 100;
     
     return (
-        <div className="space-y-3 p-4 bg-white/60 rounded-xl border border-zinc-200 hover:border-cyan-500/20 transition-colors group">
+        <div className="space-y-3 p-4 bg-white/60 rounded-xl border border-zinc-400 hover:border-cyan-500/20 transition-colors group">
             <div className="flex justify-between items-center">
                 <span className="text-sm text-zinc-950 font-medium group-hover:text-cyan-400 transition-colors">{label}</span>
-                <div className={`flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-100 border border-zinc-200`}>
-                    <span className="text-xs font-mono text-zinc-700 font-bold">{value}{suffix}</span>
+                <div className={`flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-100 border border-zinc-400`}>
+                    <span className="text-xs font-mono text-zinc-950 font-bold">{value}{suffix}</span>
                 </div>
             </div>
             <div className="relative pt-2 pb-1">
@@ -82,7 +82,7 @@ const RiskSlider = ({ label, value, onChange, description, min = 0, max = 100, s
                     className="relative w-full h-1 bg-transparent appearance-none cursor-pointer z-10 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-[0_0_10px_rgba(34,211,238,0.5)]"
                 />
             </div>
-            <p className="text-[11px] text-zinc-700 leading-relaxed pt-1">{description}</p>
+            <p className="text-[11px] text-zinc-950 leading-relaxed pt-1">{description}</p>
         </div>
     );
 };
@@ -208,7 +208,7 @@ export default function CopilotROITool() {
                             <Bot className="w-3 h-3" />
                             AI Enterprise Economics
                         </div>
-                        <div className="px-2 py-1 rounded bg-white/5 text-zinc-600 text-[10px] font-mono tracking-widest uppercase border border-zinc-200">
+                        <div className="px-2 py-1 rounded bg-white/5 text-zinc-900 text-[10px] font-mono tracking-widest uppercase border border-zinc-400">
                             Unit Cost Forecaster
                         </div>
                     </div>
@@ -217,7 +217,7 @@ export default function CopilotROITool() {
                         Copilot <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-purple-500">ROI Forecaster</span>
                     </h1>
                     
-                    <p className="text-lg sm:text-xl text-zinc-600 max-w-3xl font-light leading-relaxed">
+                    <p className="text-lg sm:text-xl text-zinc-900 max-w-3xl font-light leading-relaxed">
                         Vendors sell "Lines of Code Generated". You buy "Net Revenue Retention". Calculate how raw generative AI velocity is violently degraded by code review bottlenecks and Vibe Coding Debt.
                     </p>
                 </div>
@@ -231,10 +231,10 @@ export default function CopilotROITool() {
                         <div className="lg:col-span-4 space-y-6">
                             
                             {/* Control Block 1: Baseline */}
-                            <div className="bg-white/50 border border-zinc-200 rounded-3xl p-6 lg:p-8 relative overflow-hidden backdrop-blur-xl group hover:border-cyan-500/30 transition-colors">
+                            <div className="bg-white/50 border border-zinc-400 rounded-3xl p-6 lg:p-8 relative overflow-hidden backdrop-blur-xl group hover:border-cyan-500/30 transition-colors">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                                 
-                                <h3 className="text-zinc-950 font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-200 pb-4">
+                                <h3 className="text-zinc-950 font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-400 pb-4">
                                     <Building2 className="w-5 h-5 text-cyan-400" />
                                     Engineering Baseline
                                 </h3>
@@ -265,10 +265,10 @@ export default function CopilotROITool() {
                             </div>
 
                             {/* Control Block 2: Penalties */}
-                            <div className="bg-white/50 border border-zinc-200 rounded-3xl p-6 lg:p-8 relative overflow-hidden backdrop-blur-xl group hover:border-fuchsia-500/30 transition-colors">
+                            <div className="bg-white/50 border border-zinc-400 rounded-3xl p-6 lg:p-8 relative overflow-hidden backdrop-blur-xl group hover:border-fuchsia-500/30 transition-colors">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                                 
-                                <h3 className="text-zinc-950 font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-200 pb-4">
+                                <h3 className="text-zinc-950 font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-400 pb-4">
                                     <AlertTriangle className="w-5 h-5 text-fuchsia-400" />
                                     Execution Drag
                                 </h3>
@@ -311,26 +311,26 @@ export default function CopilotROITool() {
                         <div className="lg:col-span-8 flex flex-col gap-6" id="pdf-export-target">
                             
                             {/* Main Math Block */}
-                            <div className="bg-white border border-zinc-200 rounded-3xl p-6 lg:p-10 relative overflow-hidden shadow-2xl">
+                            <div className="bg-white border border-zinc-400 rounded-3xl p-6 lg:p-10 relative overflow-hidden shadow-2xl">
                                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-fuchsia-500/5"></div>
                                 
-                                <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 border-b border-zinc-200 pb-6">
+                                <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 border-b border-zinc-400 pb-6">
                                     <div>
-                                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Net Financial Position</div>
+                                        <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-2">Net Financial Position</div>
                                         <div className="flex items-end gap-4">
                                             <h2 className={`text-5xl lg:text-7xl font-bold tracking-tighter ${isNegativeReturn ? 'text-red-500' : 'text-emerald-500'}`}>
                                                 {isNegativeReturn ? '-' : '+'}${Math.abs(netROAI_Dollar / 1000).toFixed(0)}k
                                             </h2>
-                                            <span className="text-zinc-700 font-mono mb-2">/ year</span>
+                                            <span className="text-zinc-950 font-mono mb-2">/ year</span>
                                         </div>
                                     </div>
                                     <div className="mt-4 md:mt-0 flex gap-2 w-full md:w-auto">
-                                        <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-200 px-4 py-2 rounded-xl">
-                                            <div className="text-[10px] uppercase font-mono text-zinc-700 mb-1">Gross Expected Lift</div>
+                                        <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-400 px-4 py-2 rounded-xl">
+                                            <div className="text-[10px] uppercase font-mono text-zinc-950 mb-1">Gross Expected Lift</div>
                                             <div className="text-lg font-bold text-emerald-400">${(grossProductivityLiftDollar / 1000).toFixed(0)}k</div>
                                         </div>
-                                        <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-200 px-4 py-2 rounded-xl">
-                                            <div className="text-[10px] uppercase font-mono text-zinc-700 mb-1">Total Drag Penalties</div>
+                                        <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-400 px-4 py-2 rounded-xl">
+                                            <div className="text-[10px] uppercase font-mono text-zinc-950 mb-1">Total Drag Penalties</div>
                                             <div className="text-lg font-bold text-red-400">-${((annualLicenseCost + vibeDebtDragDollar + reviewBottleneckDragDollar) / 1000).toFixed(0)}k</div>
                                         </div>
                                     </div>
@@ -362,9 +362,9 @@ export default function CopilotROITool() {
                             </div>
 
                             {/* Persona Intelligence Block */}
-                            <div className="bg-white/50 border border-zinc-200 rounded-3xl relative overflow-hidden backdrop-blur-xl flex flex-col h-full">
+                            <div className="bg-white/50 border border-zinc-400 rounded-3xl relative overflow-hidden backdrop-blur-xl flex flex-col h-full">
                                 {/* Persona Tabs */}
-                                <div className="flex overflow-x-auto border-b border-zinc-200 scrollbar-hide">
+                                <div className="flex overflow-x-auto border-b border-zinc-400 scrollbar-hide">
                                     {PERSONAS.map((p) => {
                                         const Icon = p.icon;
                                         const isActive = activePersona === p.id;
@@ -375,7 +375,7 @@ export default function CopilotROITool() {
                                                 className={`flex-1 min-w-[120px] px-4 py-5 flex items-center justify-center gap-2 text-sm font-medium transition-all border-b-2 font-mono uppercase tracking-wider ${
                                                     isActive 
                                                         ? 'border-cyan-500 text-cyan-400 bg-cyan-500/5' 
-                                                        : 'border-transparent text-zinc-500 hover:text-zinc-700 hover:bg-white/5'
+                                                        : 'border-transparent text-zinc-800 hover:text-zinc-950 hover:bg-white/5'
                                                 }`}
                                             >
                                                 <Icon size={16} />
@@ -393,7 +393,7 @@ export default function CopilotROITool() {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <div className="inline-flex px-3 py-1 bg-white/5 border border-zinc-200 rounded tracking-widest text-[10px] text-zinc-600 font-mono mb-4 uppercase">
+                                        <div className="inline-flex px-3 py-1 bg-white/5 border border-zinc-400 rounded tracking-widest text-[10px] text-zinc-900 font-mono mb-4 uppercase">
                                             {readout.title}
                                         </div>
 
@@ -401,7 +401,7 @@ export default function CopilotROITool() {
                                             {readout.insights.map((insight, idx) => (
                                                 <div key={idx} className="flex gap-3 items-start group">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-2.5 opacity-50 group-hover:opacity-100 transition-opacity shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
-                                                    <p className="text-zinc-700 text-lg leading-relaxed flex-1">
+                                                    <p className="text-zinc-950 text-lg leading-relaxed flex-1">
                                                         {insight}
                                                     </p>
                                                 </div>
@@ -420,7 +420,7 @@ export default function CopilotROITool() {
                                 </div>
                                 
                                 {/* Tools Footer */}
-                                <div className="mt-auto border-t border-zinc-200 bg-zinc-50 p-4 px-8 flex justify-between items-center">
+                                <div className="mt-auto border-t border-zinc-400 bg-zinc-50 p-4 px-8 flex justify-between items-center">
                                     <div className="flex gap-4">
                                         <ExportToPDFButton 
                                             targetId="pdf-export-target" 

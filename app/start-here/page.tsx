@@ -77,14 +77,14 @@ export default function StartHerePage() {
                         <span>Guide</span><span>/</span><span className="text-cyan-400 font-bold">Start Here</span>
                     </div>
 
-                    <div className="mb-16 border-b border-zinc-200 pb-12">
+                    <div className="mb-16 border-b border-zinc-400 pb-12">
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             New Here?{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">
                                 Start Here.
                             </span>
                         </h1>
-                        <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl">
+                        <p className="text-lg text-zinc-900 leading-relaxed max-w-2xl">
                             Three steps from diagnosis to action. Free tools, 400+ definitions,
                             structured learning — everything you need to treat engineering as a capital function.
                         </p>
@@ -100,12 +100,12 @@ export default function StartHerePage() {
                                         <span className={`text-4xl font-mono font-bold ${colors.text}`}>{step.number}</span>
                                         <div>
                                             <h2 className="text-2xl font-grotesk font-bold text-zinc-900">{step.title}</h2>
-                                            <p className="text-zinc-600 text-sm mt-1">{step.subtitle}</p>
+                                            <p className="text-zinc-900 text-sm mt-1">{step.subtitle}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="px-8 py-6">
-                                    <p className="text-zinc-600 mb-6">{step.description}</p>
+                                    <p className="text-zinc-900 mb-6">{step.description}</p>
                                     <div className="flex flex-wrap gap-3">
                                         {step.links.map(link => (
                                             <Link
@@ -127,9 +127,9 @@ export default function StartHerePage() {
                     })}
 
                     {/* About section */}
-                    <div className="text-center py-16 border-t border-zinc-200">
+                    <div className="text-center py-16 border-t border-zinc-400">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Who Built This?</h2>
-                        <p className="text-zinc-600 mb-6 max-w-xl mx-auto">
+                        <p className="text-zinc-900 mb-6 max-w-xl mx-auto">
                             Richard Ewing is a Product Economist and AI Capital Auditor.
                             He has scaled B2B SaaS to $25M ARR and is the founder of{' '}
                             <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline">Exogram</a>, verification infrastructure for AI.

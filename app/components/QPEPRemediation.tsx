@@ -212,14 +212,14 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
     if (items.length === 0) return null;
 
     return (
-        <section className="mt-8 bg-gradient-to-br from-zinc-50/80 via-zinc-900/40 to-transparent border border-zinc-200 rounded-3xl p-6 sm:p-8">
+        <section className="mt-8 bg-gradient-to-br from-zinc-50/80 via-zinc-900/40 to-transparent border border-zinc-400 rounded-3xl p-6 sm:p-8">
             {/* Header */}
             <div className="flex items-center gap-3 mb-2">
                 <div className="w-2 h-2 bg-cobalt rounded-full animate-pulse shadow-[0_0_10px_rgba(45,112,253,0.6)]" />
                 <span className="font-mono text-[10px] text-cobalt uppercase tracking-[0.2em]">Q-PEP™ Remediation Protocol</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 mb-1 tracking-tight">Prescriptive Action Plan</h3>
-            <p className="text-xs text-zinc-700 mb-6">Qualitative-Profitability Efficiency Protocol — Generated {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+            <p className="text-xs text-zinc-950 mb-6">Qualitative-Profitability Efficiency Protocol — Generated {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
 
             {/* Remediation Items */}
             <div className="space-y-4">
@@ -229,7 +229,7 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
                         <div key={i} className={`${colors.bg} border ${colors.border} rounded-2xl p-5`}>
                             <div className="flex items-center justify-between mb-3">
                                 <div className="flex items-center gap-2">
-                                    <span className="font-mono text-[10px] text-zinc-700 tracking-widest">{item.phase}</span>
+                                    <span className="font-mono text-[10px] text-zinc-950 tracking-widest">{item.phase}</span>
                                     <span className="text-zinc-900">|</span>
                                     <span className={`font-mono text-[10px] ${colors.text} tracking-widest font-bold`}>{item.urgency}</span>
                                 </div>
@@ -238,14 +238,14 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
                                 )}
                             </div>
                             <h4 className="text-sm font-bold text-zinc-950 mb-2">{item.title}</h4>
-                            <p className="text-xs text-zinc-600 leading-relaxed">{item.prescription}</p>
+                            <p className="text-xs text-zinc-900 leading-relaxed">{item.prescription}</p>
                         </div>
                     );
                 })}
             </div>
 
             {/* Footer */}
-            <div className="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between">
+            <div className="mt-6 pt-4 border-t border-zinc-400 flex items-center justify-between">
                 <p className="text-[10px] text-zinc-800 font-mono">CONFIDENTIAL — For Internal Executive Distribution Only</p>
                 <p className="text-[10px] text-zinc-800 font-mono">RichardEwing.io/advisory</p>
             </div>

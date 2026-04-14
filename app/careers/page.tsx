@@ -42,7 +42,7 @@ export default function DeepCareersHub() {
             </div>
 
             <ScrollReveal>
-                <div className="capsule-container rounded-2xl sm:rounded-[2.5rem] p-8 sm:p-14 mb-16 overflow-hidden relative border border-zinc-200 bg-gradient-to-br from-indigo-50 via-violet-50 to-white">
+                <div className="capsule-container rounded-2xl sm:rounded-[2.5rem] p-8 sm:p-14 mb-16 overflow-hidden relative border border-zinc-400 bg-gradient-to-br from-indigo-50 via-violet-50 to-white">
                     <div className="absolute top-[-20%] right-[-10%] p-64 bg-[var(--accent-purple)]/10 blur-[120px] pointer-events-none rounded-full" />
                     <div className="absolute bottom-[-20%] left-[-10%] p-48 bg-emerald-500/5 blur-[120px] pointer-events-none rounded-full" />
                     
@@ -52,15 +52,15 @@ export default function DeepCareersHub() {
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_#10b981]"></div>
                             <span className="font-mono text-[10px] text-emerald-400 uppercase tracking-widest font-bold">THE 2026 PARADIGM</span>
                         </div>
-                        <span className="text-zinc-700 text-xs font-mono uppercase tracking-widest hidden sm:inline-block">/</span>
-                        <span className="text-zinc-600 text-xs font-mono uppercase tracking-widest hidden sm:inline-block">Abandon the feature factory. Govern the agents.</span>
+                        <span className="text-zinc-950 text-xs font-mono uppercase tracking-widest hidden sm:inline-block">/</span>
+                        <span className="text-zinc-900 text-xs font-mono uppercase tracking-widest hidden sm:inline-block">Abandon the feature factory. Govern the agents.</span>
                     </div>
 
                     <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-zinc-950 tracking-tighter mb-6 leading-[0.9]">
                         Beyond <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-indigo-500 italic">Syntax.</span><br />
-                        <span className="text-zinc-700 font-light">Into</span> Orchestration<span className="text-emerald-500">.</span>
+                        <span className="text-zinc-950 font-light">Into</span> Orchestration<span className="text-emerald-500">.</span>
                     </h1>
-                    <p className="text-xl sm:text-2xl text-zinc-700 mb-12 max-w-3xl leading-relaxed font-light">
+                    <p className="text-xl sm:text-2xl text-zinc-950 mb-12 max-w-3xl leading-relaxed font-light">
                         The era of competing on "lines of code written" is over. High-capital 2026 engineering roles demand professionals who can architect non-deterministic risk, orchestrate multi-agent workflows, and ruthlessly optimize GPU Unit Economics. 
                         <strong> Select your transition architecture.</strong>
                     </p>
@@ -68,13 +68,13 @@ export default function DeepCareersHub() {
             </ScrollReveal>
 
             <ScrollReveal>
-                <div className="flex items-center gap-4 mb-8 border-b border-zinc-200 pb-6">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-zinc-200 flex items-center justify-center">
+                <div className="flex items-center gap-4 mb-8 border-b border-zinc-400 pb-6">
+                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-zinc-400 flex items-center justify-center">
                         <Network className="text-[var(--accent-cyan)]" size={24} />
                     </div>
                     <div>
                         <h2 className="text-3xl font-bold text-zinc-950 tracking-tight">The Executive Five</h2>
-                        <p className="text-zinc-700 text-sm font-mono uppercase tracking-widest mt-1">Highest ROI Roles for 2026-2030</p>
+                        <p className="text-zinc-950 text-sm font-mono uppercase tracking-widest mt-1">Highest ROI Roles for 2026-2030</p>
                     </div>
                 </div>
             </ScrollReveal>
@@ -86,9 +86,9 @@ export default function DeepCareersHub() {
                     return (
                         <div key={domain}>
                             <ScrollReveal>
-                                <div className="mb-8 border-b border-zinc-200 pb-4">
+                                <div className="mb-8 border-b border-zinc-400 pb-4">
                                     <h3 className="text-3xl font-black text-zinc-950 tracking-tight">{domain}</h3>
-                                    <p className="text-zinc-700 font-mono text-xs uppercase tracking-widest mt-1">{pathsInDomain.length} Executive Archetypes</p>
+                                    <p className="text-zinc-950 font-mono text-xs uppercase tracking-widest mt-1">{pathsInDomain.length} Executive Archetypes</p>
                                 </div>
                             </ScrollReveal>
                             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -105,7 +105,7 @@ export default function DeepCareersHub() {
                                                 {path.label}
                                             </div>
                                             <h3 className="text-xl font-bold text-zinc-950 mb-3 tracking-tight">{path.title}</h3>
-                                            <p className="text-zinc-600 text-sm leading-relaxed mb-6">
+                                            <p className="text-zinc-900 text-sm leading-relaxed mb-6">
                                                 {path.description}
                                             </p>
 
@@ -130,38 +130,38 @@ export default function DeepCareersHub() {
                 <div className="mb-20 mt-32">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl sm:text-5xl font-black text-zinc-950 mb-4 tracking-tighter">The Path to Multi-Million Dollar Capitalization</h2>
-                        <p className="text-zinc-600 max-w-2xl mx-auto">This is not a bootcamp. This is the exact telemetry, math, and strategic leverage I use during $7,500/day boardroom interventions. Filtered sequentially by your commitment.</p>
+                        <p className="text-zinc-900 max-w-2xl mx-auto">This is not a bootcamp. This is the exact telemetry, math, and strategic leverage I use during $7,500/day boardroom interventions. Filtered sequentially by your commitment.</p>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         
                         {/* LOW INTENT - FREE */}
                         <div className="relative group">
-                            <div className="h-full bg-white border border-zinc-200 rounded-2xl p-8 hover:border-zinc-500/50 transition-all shadow-xl">
+                            <div className="h-full bg-white border border-zinc-400 rounded-2xl p-8 hover:border-zinc-500/50 transition-all shadow-xl">
                                 <div className="absolute top-0 right-8 transform -translate-y-1/2">
-                                    <div className="bg-zinc-200 text-zinc-700 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-zinc-200">Free Access</div>
+                                    <div className="bg-zinc-200 text-zinc-950 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-zinc-400">Free Access</div>
                                 </div>
                                 <div className="w-12 h-12 rounded-xl bg-zinc-100 flex items-center justify-center mb-6">
                                     <Activity className="text-zinc-800" size={24} />
                                 </div>
                                 <h3 className="text-xl font-bold text-zinc-950 mb-3">Discovery</h3>
-                                <p className="text-sm text-zinc-600 mb-8 leading-relaxed">Assimilate the dialect of Engineering Economics. Required reading before stepping into any VP or Director-level scenario.</p>
+                                <p className="text-sm text-zinc-900 mb-8 leading-relaxed">Assimilate the dialect of Engineering Economics. Required reading before stepping into any VP or Director-level scenario.</p>
                                 
                                 <ul className="space-y-4 mb-8">
                                     <li>
                                         <Link href="/glossary" className="group/item flex items-start gap-3">
-                                            <div className="mt-1 bg-zinc-200 rounded p-1"><ArrowRight size={12} className="text-zinc-700 group-hover/item:text-zinc-950 transition-colors" /></div>
+                                            <div className="mt-1 bg-zinc-200 rounded p-1"><ArrowRight size={12} className="text-zinc-950 group-hover/item:text-zinc-950 transition-colors" /></div>
                                             <div>
-                                                <div className="text-sm font-bold text-zinc-700 group-hover/item:text-zinc-900">The Lexicon (420+ Terms)</div>
+                                                <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">The Lexicon (420+ Terms)</div>
                                                 <div className="text-xs text-zinc-900">Master the exact vernacular used by CFOs.</div>
                                             </div>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link href="/blog" className="group/item flex items-start gap-3">
-                                            <div className="mt-1 bg-zinc-200 rounded p-1"><ArrowRight size={12} className="text-zinc-700 group-hover/item:text-zinc-950 transition-colors" /></div>
+                                            <div className="mt-1 bg-zinc-200 rounded p-1"><ArrowRight size={12} className="text-zinc-950 group-hover/item:text-zinc-950 transition-colors" /></div>
                                             <div>
-                                                <div className="text-sm font-bold text-zinc-700 group-hover/item:text-zinc-900">Core Articles</div>
+                                                <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">Core Articles</div>
                                                 <div className="text-xs text-zinc-900">100+ deep-dive economic essays.</div>
                                             </div>
                                         </Link>
@@ -183,7 +183,7 @@ export default function DeepCareersHub() {
                                     <Diamond className="text-indigo-400" size={24} />
                                 </div>
                                 <h3 className="text-xl font-bold text-zinc-950 mb-3">The Vault</h3>
-                                <p className="text-sm text-zinc-700 mb-8 leading-relaxed font-medium">Over 400+ specific economic frameworks, AI sizing calculators, and board-ready deliverables. The fastest route to promotion.</p>
+                                <p className="text-sm text-zinc-950 mb-8 leading-relaxed font-medium">Over 400+ specific economic frameworks, AI sizing calculators, and board-ready deliverables. The fastest route to promotion.</p>
                                 
                                 <ul className="space-y-4 mb-8">
                                     <li>
@@ -216,7 +216,7 @@ export default function DeepCareersHub() {
 
                         {/* EXTREME INTENT - VALIDATION */}
                         <div className="relative group">
-                            <div className="h-full bg-white border border-zinc-200 rounded-2xl p-8 hover:border-[var(--accent-crimson)]/50 transition-all shadow-xl">
+                            <div className="h-full bg-white border border-zinc-400 rounded-2xl p-8 hover:border-[var(--accent-crimson)]/50 transition-all shadow-xl">
                                 <div className="absolute top-0 right-8 transform -translate-y-1/2">
                                     <div className="bg-[var(--bg-primary)] text-[var(--accent-crimson)] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-[var(--accent-crimson)] shadow-[0_0_10px_rgba(255,68,68,0.2)]">Final Validation</div>
                                 </div>
@@ -224,14 +224,14 @@ export default function DeepCareersHub() {
                                     <ShieldAlert className="text-[var(--accent-crimson)]" size={24} />
                                 </div>
                                 <h3 className="text-xl font-bold text-zinc-950 mb-3">Assessment</h3>
-                                <p className="text-sm text-zinc-600 mb-8 leading-relaxed">Once you understand the math, you must prove judgment. Prove your fiduciary responsibility before touching multi-million dollar R&D budgets.</p>
+                                <p className="text-sm text-zinc-900 mb-8 leading-relaxed">Once you understand the math, you must prove judgment. Prove your fiduciary responsibility before touching multi-million dollar R&D budgets.</p>
                                 
                                 <ul className="space-y-4 mb-8">
                                     <li>
                                         <Link href="/tools/audit-interview" className="group/item flex items-start gap-3">
                                             <div className="mt-1 bg-red-50/30 rounded p-1 border border-red-500/20"><ArrowRight size={12} className="text-[var(--accent-crimson)] group-hover/item:translate-x-1 transition-transform" /></div>
                                             <div>
-                                                <div className="text-sm font-bold text-zinc-700 group-hover/item:text-zinc-900">The Audit Interview Protocol</div>
+                                                <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">The Audit Interview Protocol</div>
                                                 <div className="text-xs text-zinc-900">Test Non-Deterministic Agentic Governance logic.</div>
                                             </div>
                                         </Link>
@@ -240,7 +240,7 @@ export default function DeepCareersHub() {
                                         <Link href="/tools/board-room" className="group/item flex items-start gap-3">
                                             <div className="mt-1 bg-red-50/30 rounded p-1 border border-red-500/20"><ArrowRight size={12} className="text-[var(--accent-crimson)] group-hover/item:translate-x-1 transition-transform" /></div>
                                             <div>
-                                                <div className="text-sm font-bold text-zinc-700 group-hover/item:text-zinc-900">Executive Board Room</div>
+                                                <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">Executive Board Room</div>
                                                 <div className="text-xs text-zinc-900">Run actual capital diagnostics.</div>
                                             </div>
                                         </Link>

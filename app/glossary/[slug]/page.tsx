@@ -235,7 +235,7 @@ export default async function GlossaryTermPage({ params }: Props) {
             <RetroTerminal title={term.title} category={term.category} definition={term.definition} whyItMatters={term.whyItMatters} />
 
             <article>
-                <header className="mb-10 border-b border-zinc-200 pb-10">
+                <header className="mb-10 border-b border-zinc-400 pb-10">
                     <div className="flex items-center justify-between mb-3">
                         <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest">{term.category}</div>
                         <div className="flex items-center gap-3">
@@ -274,7 +274,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">📊 Key Metrics &amp; Benchmarks</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         {keyMetrics.map((m, i) => (
-                            <div key={i} className="rounded-xl border border-zinc-200 bg-zinc-50 p-5 text-center">
+                            <div key={i} className="rounded-xl border border-zinc-400 bg-zinc-50 p-5 text-center">
                                 <div className="text-3xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">{m.value}</div>
                                 <div className="text-sm font-bold text-zinc-950 mt-2">{m.label}</div>
                                 <div className="text-xs text-zinc-700 mt-1">{m.description}</div>
@@ -357,7 +357,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">✅ {term.title} Checklist</h2>
                     <div className="space-y-3">
                         {checklist.map((item, i) => (
-                            <label key={i} className="flex items-start gap-3 p-3 rounded-lg bg-zinc-50 border border-zinc-200 hover:border-emerald-500/20 transition-colors cursor-pointer group">
+                            <label key={i} className="flex items-start gap-3 p-3 rounded-lg bg-zinc-50 border border-zinc-400 hover:border-emerald-500/20 transition-colors cursor-pointer group">
                                 <input type="checkbox" className="mt-1 accent-emerald-500 w-4 h-4 rounded" />
                                 <span className="text-zinc-700 group-hover:text-zinc-900 transition-colors">{item}</span>
                             </label>
@@ -374,8 +374,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                             const pct = Math.round(((i + 1) / maturityLevels.length) * 100);
                             const barColor = i < 2 ? 'from-red-500 to-red-400' : i < 4 ? 'from-amber-500 to-yellow-400' : i < 6 ? 'from-emerald-500 to-cyan-400' : 'from-violet-500 to-purple-400';
                             return (
-                            <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-zinc-200 bg-zinc-50 hover:bg-white/[0.03] transition-all">
-                                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-zinc-200 flex items-center justify-center">
+                            <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-zinc-400 bg-zinc-50 hover:bg-white/[0.03] transition-all">
+                                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-zinc-400 flex items-center justify-center">
                                     <span className="text-sm font-bold text-zinc-900">{i + 1}</span>
                                 </div>
                                 <div className="flex-1">
@@ -401,7 +401,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
                             <thead>
-                                <tr className="border-b border-zinc-200">
+                                <tr className="border-b border-zinc-400">
                                     <th className="text-left py-3 px-4 text-zinc-700 font-mono uppercase tracking-widest text-xs">{term.title} vs.</th>
                                     <th className="text-left py-3 px-4 text-emerald-400 font-mono uppercase tracking-widest text-xs">{term.title} Advantage</th>
                                     <th className="text-left py-3 px-4 text-amber-400 font-mono uppercase tracking-widest text-xs">Other Approach</th>
@@ -409,7 +409,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                             </thead>
                             <tbody>
                                 {comparisons.map((c, i) => (
-                                    <tr key={i} className="border-b border-zinc-200">
+                                    <tr key={i} className="border-b border-zinc-400">
                                         <td className="py-3 px-4 text-zinc-950 font-medium">{c.vs}</td>
                                         <td className="py-3 px-4 text-emerald-400">{c.advantage}</td>
                                         <td className="py-3 px-4 text-amber-400">{c.disadvantage}</td>
@@ -422,7 +422,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 {/* Visual Diagram — always rendered */}
                 <section className="mb-12 rounded-2xl border border-violet-500/20 bg-gradient-to-br from-violet-500/[0.03] to-cyan-500/[0.03] overflow-hidden">
-                    <div className="px-8 pt-6 pb-4 border-b border-zinc-200 flex items-center gap-3">
+                    <div className="px-8 pt-6 pb-4 border-b border-zinc-400 flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
                             <span className="text-sm">🔄</span>
                         </div>
@@ -432,7 +432,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         </div>
                     </div>
                     <div className="p-6">
-                        <div className="bg-zinc-50 rounded-xl p-6 font-mono text-sm text-zinc-600 whitespace-pre-line border border-zinc-200 overflow-x-auto">
+                        <div className="bg-zinc-50 rounded-xl p-6 font-mono text-sm text-zinc-600 whitespace-pre-line border border-zinc-400 overflow-x-auto">
                             {diagram}
                         </div>
                     </div>
@@ -484,7 +484,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
                             <thead>
-                                <tr className="border-b border-zinc-200">
+                                <tr className="border-b border-zinc-400">
                                     <th className="text-left py-3 px-4 text-zinc-700 font-mono uppercase tracking-widest text-xs">Industry</th>
                                     <th className="text-left py-3 px-4 text-zinc-700 font-mono uppercase tracking-widest text-xs">Metric</th>
                                     <th className="text-left py-3 px-4 text-red-400 font-mono uppercase tracking-widest text-xs">Low</th>
@@ -494,7 +494,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                             </thead>
                             <tbody>
                                 {industryBenchmarks.map((b, i) => (
-                                    <tr key={i} className="border-b border-zinc-200">
+                                    <tr key={i} className="border-b border-zinc-400">
                                         <td className="py-3 px-4 text-zinc-950 font-medium">{b.industry}</td>
                                         <td className="py-3 px-4 text-zinc-800">{b.metric}</td>
                                         <td className="py-3 px-4 text-red-400">{b.low}</td>
@@ -509,7 +509,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 {/* Hub-and-Spoke SEO Matrix — NEW (3-Tier Governance) */}
                 {term.tier === 'pillar' && (
-                    <section className="mb-12 mt-16 pt-12 border-t border-zinc-200">
+                    <section className="mb-12 mt-16 pt-12 border-t border-zinc-400">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
                                 <span className="text-xl">🌐</span>
@@ -596,7 +596,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 )}
 
                 {term.tier === 'standard' && (
-                    <section className="mb-12 mt-16 pt-12 border-t border-zinc-200">
+                    <section className="mb-12 mt-16 pt-12 border-t border-zinc-400">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
                                 <span className="text-xl">📚</span>
@@ -618,11 +618,11 @@ export default async function GlossaryTermPage({ params }: Props) {
                                     ))}
                                 </div>
                             </div>
-                            <div className="card p-6 border-zinc-200 flex flex-col items-center justify-center text-center bg-zinc-50">
+                            <div className="card p-6 border-zinc-400 flex flex-col items-center justify-center text-center bg-zinc-50">
                                 <div className="text-3xl mb-3">🎓</div>
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">Master Technical Execution</h3>
                                 <p className="text-sm text-zinc-600 mb-6">Learn how top-quartile engineering organizations systematically manage {term.title.toLowerCase()}.</p>
-                                <Link href="/curriculum" className="w-full max-w-[200px] text-center py-2.5 px-4 bg-white/5 hover:bg-white/10 border border-zinc-200 text-zinc-950 font-bold text-sm rounded-lg transition-colors">
+                                <Link href="/curriculum" className="w-full max-w-[200px] text-center py-2.5 px-4 bg-white/5 hover:bg-white/10 border border-zinc-400 text-zinc-950 font-bold text-sm rounded-lg transition-colors">
                                     Explore Curriculum
                                 </Link>
                             </div>
@@ -654,7 +654,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">📚 Resources</h2>
                         <div className="space-y-2">
                             {term.resources.map((r, i) => (
-                                <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl bg-zinc-50 border border-zinc-200 hover:border-cyan-500/30 transition-colors group">
+                                <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl bg-zinc-50 border border-zinc-400 hover:border-cyan-500/30 transition-colors group">
                                     <div>
                                         <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-400 transition-colors">{r.title}</div>
                                         <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mt-1">{r.type}</div>
@@ -688,7 +688,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         <div className="flex flex-wrap gap-3">
                             {relatedTermObjects.map(rt => rt && (
                                 <Link key={rt.slug} href={`/glossary/${rt.slug}`}
-                                    className="px-4 py-2 bg-white/5 border border-zinc-200 rounded-full text-sm text-zinc-700 hover:border-cyan-500/50 hover:text-cyan-400 transition-all">
+                                    className="px-4 py-2 bg-white/5 border border-zinc-400 rounded-full text-sm text-zinc-700 hover:border-cyan-500/50 hover:text-cyan-400 transition-all">
                                     {rt.title}
                                 </Link>
                             ))}

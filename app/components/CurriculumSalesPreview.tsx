@@ -18,7 +18,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
             {/* Header Content */}
-            <div className="relative z-10 p-10 md:p-14 text-center border-b border-zinc-200 bg-zinc-50">
+            <div className="relative z-10 p-10 md:p-14 text-center border-b border-zinc-400 bg-zinc-50">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-600 font-mono text-xs uppercase tracking-widest mb-6">
                     <ShieldCheck className="w-4 h-4" /> End of Free Sequence
                 </div>
@@ -30,7 +30,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left mt-10">
-                    <div className="bg-gradient-to-br from-white/5 to-transparent border border-zinc-200 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden group hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]">
+                    <div className="bg-gradient-to-br from-white/5 to-transparent border border-zinc-400 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden group hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]">
                         <div className="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                         <div className="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-[40px] pointer-events-none" />
                         <div className="relative z-10">
@@ -42,7 +42,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                         </div>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-white/5 to-transparent border border-zinc-200 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden group hover:border-cyan-500/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]">
+                    <div className="bg-gradient-to-br from-white/5 to-transparent border border-zinc-400 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden group hover:border-cyan-500/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]">
                         <div className="absolute inset-0 bg-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                         <div className="absolute -top-10 -right-10 w-32 h-32 bg-cyan-500/20 rounded-full blur-[40px] pointer-events-none" />
                         <div className="relative z-10">
@@ -54,7 +54,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                         </div>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-white/5 to-transparent border border-zinc-200 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden group hover:border-emerald-500/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]">
+                    <div className="bg-gradient-to-br from-white/5 to-transparent border border-zinc-400 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden group hover:border-emerald-500/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]">
                         <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                         <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-[40px] pointer-events-none" />
                         <div className="relative z-10">
@@ -69,7 +69,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
             </div>
 
             {/* High-Fidelity Vault Encrypted Visuals */}
-            <div className="relative bg-white overflow-hidden border-t border-zinc-200 pb-20 pt-10">
+            <div className="relative bg-white overflow-hidden border-t border-zinc-400 pb-20 pt-10">
                 {/* Radial gradient background */}
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-50/40 via-transparent to-zinc-100 pointer-events-none" />
                 
@@ -79,7 +79,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                             <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" /> Highly Classified Assets
                         </div>
                         <h3 className="text-3xl font-bold font-grotesk text-zinc-900">Engineering Intelligence Awaiting Extraction</h3>
-                        <p className="text-zinc-700 text-sm mt-3 max-w-xl mx-auto">No generic advice. No filler. Just uncompromising architectural truths and unit economic calculators.</p>
+                        <p className="text-zinc-950 text-sm mt-3 max-w-xl mx-auto">No generic advice. No filler. Just uncompromising architectural truths and unit economic calculators.</p>
                     </div>
 
                     <div className="relative w-full aspect-[21/9] flex items-center justify-center -mt-10 perspective-[1000px] select-none pointer-events-none">
@@ -93,7 +93,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                     <Lock className="w-8 h-8 text-rose-500" />
                                 </div>
                                 <h4 className="text-2xl font-bold text-zinc-900 mb-4 relative z-10 tracking-tight">Vault Terminal Locked</h4>
-                                <p className="text-xs text-zinc-800 font-mono uppercase tracking-widest leading-relaxed relative z-10 bg-white/50 p-4 rounded-xl border border-zinc-200">
+                                <p className="text-xs text-zinc-800 font-mono uppercase tracking-widest leading-relaxed relative z-10 bg-white/50 p-4 rounded-xl border border-zinc-400">
                                     Awaiting authorization clearance. Unlock the module to decrypt architectural playbooks, P&L models, and deterministic diagnostic utilities.
                                 </p>
                             </div>
@@ -102,7 +102,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                         {/* Faux Premium UI Elements Floating in 3D Space */}
                         <div className="absolute w-full h-full transform-style-3d opacity-20">
                             {/* Left Data Pane */}
-                            <div className="absolute left-[5%] top-[15%] w-[35%] h-[60%] bg-zinc-50 border border-zinc-200 rounded-2xl p-6 transform -rotate-y-12 rotate-z-3 shadow-2xl overflow-hidden backdrop-blur-md">
+                            <div className="absolute left-[5%] top-[15%] w-[35%] h-[60%] bg-zinc-50 border border-zinc-400 rounded-2xl p-6 transform -rotate-y-12 rotate-z-3 shadow-2xl overflow-hidden backdrop-blur-md">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50" />
                                 <div className="flex items-center justify-between mb-6">
                                     <div className="flex items-center gap-2">
@@ -117,18 +117,18 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                 <div className="space-y-4">
                                     <div className="w-full h-3 bg-white/5 rounded-sm" />
                                     <div className="w-full flex gap-3 h-24 mt-2">
-                                        <div className="flex-1 bg-white/5 rounded-lg border border-zinc-200 flex flex-col justify-end p-2 gap-1">
+                                        <div className="flex-1 bg-white/5 rounded-lg border border-zinc-400 flex flex-col justify-end p-2 gap-1">
                                             <div className="w-full h-1/2 bg-cyan-500/20 rounded-sm" />
                                         </div>
-                                        <div className="flex-1 bg-white/5 rounded-lg border border-zinc-200 flex flex-col justify-end p-2 gap-1">
+                                        <div className="flex-1 bg-white/5 rounded-lg border border-zinc-400 flex flex-col justify-end p-2 gap-1">
                                             <div className="w-full h-3/4 bg-purple-500/20 rounded-sm" />
                                         </div>
-                                        <div className="flex-1 bg-white/5 rounded-lg border border-zinc-200 flex flex-col justify-end p-2 gap-1">
+                                        <div className="flex-1 bg-white/5 rounded-lg border border-zinc-400 flex flex-col justify-end p-2 gap-1">
                                             <div className="w-full h-full bg-emerald-500/20 rounded-sm" />
                                         </div>
                                     </div>
                                     <div className="w-[80%] h-3 bg-white/5 rounded-sm" />
-                                    <div className="w-full h-16 bg-white/5 rounded-xl border border-zinc-200 mt-4 flex items-center justify-between px-4">
+                                    <div className="w-full h-16 bg-white/5 rounded-xl border border-zinc-400 mt-4 flex items-center justify-between px-4">
                                         <div className="flex items-center gap-3">
                                             <div className="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/30" />
                                             <div className="space-y-1">
@@ -143,7 +143,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                             {/* Right Code/Architecture Pane */}
                             <div className="absolute right-[5%] top-[25%] w-[35%] h-[60%] bg-white border border-purple-500/20 rounded-2xl p-6 transform rotate-y-12 -rotate-z-3 shadow-2xl overflow-hidden backdrop-blur-md">
                                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
-                                <div className="flex items-center gap-3 mb-6 border-b border-zinc-200 pb-4">
+                                <div className="flex items-center gap-3 mb-6 border-b border-zinc-400 pb-4">
                                     <Network className="w-5 h-5 text-purple-600" />
                                     <div className="text-xs font-mono uppercase text-zinc-800 tracking-widest">Inference Architecture</div>
                                 </div>
@@ -208,27 +208,27 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
             {/* Syllabus Render Map (Coursera-style) */}
             <div className="relative p-10 bg-white">
                 <div className="max-w-4xl mx-auto">
-                    <h3 className="text-xl font-bold font-grotesk text-zinc-900 mb-6 border-b border-zinc-200 pb-4 flex items-center gap-3">
+                    <h3 className="text-xl font-bold font-grotesk text-zinc-900 mb-6 border-b border-zinc-400 pb-4 flex items-center gap-3">
                         <FileText className="w-5 h-5 text-cyan-600" /> Module Syllabus
                     </h3>
                     
                     {lessons && lessons.length > 0 ? (
                         <div className="space-y-4">
                             {lessons.map((lesson, idx) => (
-                                <div key={idx} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 group/lock hover:bg-white/[0.04] transition-colors relative overflow-hidden">
+                                <div key={idx} className="bg-zinc-50 border border-zinc-400 rounded-2xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 group/lock hover:bg-white/[0.04] transition-colors relative overflow-hidden">
                                     <div className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center shrink-0">
+                                        <div className="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-400 flex items-center justify-center shrink-0">
                                             {idx % 2 === 0 ? <PlayCircle className="w-5 h-5 text-cyan-500/50" /> : <Database className="w-5 h-5 text-purple-500/50" />}
                                         </div>
                                         <div>
                                             <h4 className="text-zinc-900 font-bold mb-1 group-hover/lock:text-cyan-600 transition-colors flex items-center gap-2">
                                                 Lesson {idx + 1}: {lesson.title}
                                             </h4>
-                                            <p className="text-zinc-700 text-sm line-clamp-2 max-w-2xl">{lesson.content}</p>
+                                            <p className="text-zinc-950 text-sm line-clamp-2 max-w-2xl">{lesson.content}</p>
                                         </div>
                                     </div>
                                     
-                                    <div className="flex items-center gap-6 shrink-0 md:pl-6 md:border-l border-zinc-200">
+                                    <div className="flex items-center gap-6 shrink-0 md:pl-6 md:border-l border-zinc-400">
                                         <div className="flex flex-col items-center gap-1 opacity-60">
                                             <Clock className="w-4 h-4 text-zinc-950" />
                                             <span className="text-[10px] font-mono text-zinc-900">{15 + (idx * 5)} MIN</span>
@@ -244,9 +244,9 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                             ))}
                         </div>
                     ) : (
-                        <div className="bg-white/80 border border-zinc-200 rounded-2xl p-10 text-center">
+                        <div className="bg-white/80 border border-zinc-400 rounded-2xl p-10 text-center">
                             <Lock className="w-8 h-8 text-zinc-800 mx-auto mb-4" />
-                            <p className="text-zinc-700 font-mono text-sm uppercase">Curriculum data locked behind perimeter.</p>
+                            <p className="text-zinc-950 font-mono text-sm uppercase">Curriculum data locked behind perimeter.</p>
                         </div>
                     )}
                 </div>

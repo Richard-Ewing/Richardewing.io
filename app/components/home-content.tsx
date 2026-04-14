@@ -33,7 +33,7 @@ export default function HomeContent() {
                 </h1>
 
                 <div className="mb-10">
-                    <span className="text-zinc-700 text-xl sm:text-2xl font-grotesk">I find the leaks in </span>
+                    <span className="text-zinc-950 text-xl sm:text-2xl font-grotesk">I find the leaks in </span>
                     <WordRotate
                         words={["AI they don't understand.", "Features nobody uses.", "Headcount without ROI.", "Zombie Infrastructure."]}
                         className="text-xl sm:text-2xl font-grotesk font-extrabold text-cyan-600"
@@ -49,7 +49,7 @@ export default function HomeContent() {
 
                 {/* Path Selector (Replaces Standard Buttons) */}
                 <div className="mb-16">
-                    <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-6">Choose Your Path</h3>
+                    <h3 className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-6">Choose Your Path</h3>
                     <PathSelector />
                 </div>
 
@@ -66,7 +66,7 @@ export default function HomeContent() {
 
                 {/* Social Proof */}
                 <div className="pt-8">
-                    <p className="font-mono text-xs text-zinc-500 uppercase tracking-widest mb-4">Authority Established In</p>
+                    <p className="font-mono text-xs text-zinc-800 uppercase tracking-widest mb-4">Authority Established In</p>
                     <div className="flex flex-wrap items-center gap-6 opacity-60 hover:opacity-100 transition-opacity">
                         <span className="text-lg font-bold text-zinc-900">CIO</span>
                         <span className="text-lg font-bold text-zinc-900">Built In</span>
@@ -103,7 +103,7 @@ export default function HomeContent() {
             </ScrollReveal>
 
             {/* Section: Tools / Proof of Methodology */}
-            <ScrollReveal delay={100} className="relative z-10 py-20 border-t border-zinc-200">
+            <ScrollReveal delay={100} className="relative z-10 py-20 border-t border-zinc-400">
                 <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-900 mb-12 flex items-center gap-4">
                     <span className="w-12 h-1 bg-cyan-400"></span>
                     Proof of Methodology
@@ -115,7 +115,7 @@ export default function HomeContent() {
                         { name: "AUEB", desc: "AI Unit Economics", href: "/tools/aueb" },
                         { name: "APER", desc: "Audit Probability", href: "/tools/aper" }
                     ].map((tool) => (
-                        <Link key={tool.name} href={tool.href} className="group block p-6 rounded-xl border border-zinc-200 bg-white hover:border-cyan-400 hover:bg-zinc-50 transition-all">
+                        <Link key={tool.name} href={tool.href} className="group block p-6 rounded-xl border border-zinc-400 bg-white hover:border-cyan-400 hover:bg-zinc-50 transition-all">
                             <div className="text-2xl font-bold text-zinc-900 mb-2 font-grotesk group-hover:text-cyan-600">{tool.name}</div>
                             <div className="text-sm text-zinc-800 uppercase tracking-wider">{tool.desc}</div>
                             <div className="mt-4 text-cyan-500 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">Launch Tool →</div>
@@ -125,7 +125,7 @@ export default function HomeContent() {
             </ScrollReveal>
 
             {/* Section: The Exogram (What I'm Building) */}
-            <ScrollReveal delay={100} className="relative z-10 py-20 border-t border-zinc-200">
+            <ScrollReveal delay={100} className="relative z-10 py-20 border-t border-zinc-400">
                 <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="flex-1">
                         <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-900 mb-6 flex items-center gap-4">
@@ -151,15 +151,15 @@ export default function HomeContent() {
                                 </div>
                             </div>
                             <div className="space-y-4 font-mono text-sm text-zinc-950">
-                                <div className="flex justify-between border-b border-zinc-200 pb-2">
+                                <div className="flex justify-between border-b border-zinc-400 pb-2">
                                     <span>System Load</span>
                                     <span className="text-zinc-900">42%</span>
                                 </div>
-                                <div className="flex justify-between border-b border-zinc-200 pb-2">
+                                <div className="flex justify-between border-b border-zinc-400 pb-2">
                                     <span>Memory Nodes</span>
                                     <span className="text-zinc-900">14,205</span>
                                 </div>
-                                <div className="flex justify-between border-b border-zinc-200 pb-2">
+                                <div className="flex justify-between border-b border-zinc-400 pb-2">
                                     <span>Last Ingestion</span>
                                     <span className="text-zinc-900">Just now</span>
                                 </div>
@@ -171,7 +171,7 @@ export default function HomeContent() {
 
             {/* Section: Feature Snippet / FAQ for AEO (Hidden/Structured potentially, or visible) - Adding visible per request for content coverage */}
             {/* Adding FAQ Section for AEO as per instructions */}
-            <section id="faq" className="relative z-10 py-20 border-t border-zinc-200">
+            <section id="faq" className="relative z-10 py-20 border-t border-zinc-400">
                 <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-900 mb-12 flex items-center gap-4">
                     <span className="w-12 h-1 bg-gradient-to-r from-cyan-500 to-cobalt"></span>
                     Common Questions
@@ -209,7 +209,7 @@ export default function HomeContent() {
             </section>
 
             {/* Section: Governance Tiers */}
-            <ScrollReveal delay={200} className="relative z-10 py-20 border-t border-zinc-200">
+            <ScrollReveal delay={200} className="relative z-10 py-20 border-t border-zinc-400">
                 <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-900 mb-12 flex items-center gap-4">
                     <span className="w-12 h-1 bg-gold"></span>
                     Intervention Protocols
@@ -222,7 +222,7 @@ export default function HomeContent() {
                         { name: "R&D Capital Audit", price: "$7,500", desc: "Full Forensic Review" },
                         { name: "Oversight Retainer", price: "$5,000/mo", desc: "Board-Level Sanity Checks" }
                     ].map((tier) => (
-                        <div key={tier.name} className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-xl border border-zinc-200 bg-white hover:bg-zinc-50 transition-colors">
+                        <div key={tier.name} className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-xl border border-zinc-400 bg-white hover:bg-zinc-50 transition-colors">
                             <div className="text-center sm:text-left mb-4 sm:mb-0">
                                 <div className="text-xl font-bold text-zinc-900 font-grotesk">{tier.name}</div>
                                 <div className="text-sm text-zinc-900">{tier.desc}</div>
@@ -237,8 +237,8 @@ export default function HomeContent() {
             </ScrollReveal>
 
             {/* Newsletter */}
-            <ScrollReveal delay={300} className="max-w-4xl relative z-10 py-20 border-t border-zinc-200 mt-8">
-                <div className="bg-gradient-to-br from-white to-zinc-50 p-8 sm:p-12 rounded-2xl border border-zinc-200 text-center">
+            <ScrollReveal delay={300} className="max-w-4xl relative z-10 py-20 border-t border-zinc-400 mt-8">
+                <div className="bg-gradient-to-br from-white to-zinc-50 p-8 sm:p-12 rounded-2xl border border-zinc-400 text-center">
                     <h3 className="text-2xl sm:text-3xl font-grotesk font-bold text-zinc-900 mb-4">Join the Executive Briefing</h3>
                     <p className="text-zinc-800 mb-8 max-w-lg mx-auto">
                         No fluff. Just weekly analysis of why products fail and how to fix them.

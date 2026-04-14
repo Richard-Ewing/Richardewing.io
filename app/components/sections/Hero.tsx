@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from 'next/link';
 import NumberTicker from '@/components/magicui/number-ticker';
@@ -28,7 +28,7 @@ const Hero = () => {
                 </div>
 
                 {/* Credibility line */}
-                <p className="text-zinc-700 mb-6 text-lg">
+                <p className="text-zinc-950 mb-6 text-lg">
                     Richard Ewing, Product Economist · Founder of <a href="/exogram" className="text-purple-600 hover:text-purple-500 transition">Exogram</a> · $<NumberTicker value={25} />M ARR scaled
                 </p>
 

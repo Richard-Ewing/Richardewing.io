@@ -24,7 +24,7 @@ export default function AdvisoryPage() {
                         I run specialized taskforces to secure Board-level outcomes: repatriating cloud costs, implementing sovereign AI architectures, and forensically auditing startups for Private Equity acquisition.
                     </p>
 
-                    <div className="inline-flex items-center gap-6 px-8 py-3 rounded-full bg-white/5 border border-zinc-200 text-xs font-mono font-bold tracking-widest text-zinc-800">
+                    <div className="inline-flex items-center gap-6 px-8 py-3 rounded-full bg-white/5 border border-zinc-400 text-xs font-mono font-bold tracking-widest text-zinc-800">
                         <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div> Q2 Capacity: 1 Slot</span>
                         <span className="text-zinc-900">|</span>
                         <span>$50M+ ARR Entities</span>
@@ -36,12 +36,12 @@ export default function AdvisoryPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
 
                         {/* TIER 1: Technical Due Diligence */}
-                        <div className="card bg-zinc-100 border border-zinc-200 relative overflow-hidden group">
+                        <div className="card bg-zinc-100 border border-zinc-400 relative overflow-hidden group">
                             <div className="p-8">
                                 <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-4">Tier 1: Private Equity</div>
                                 <h3 className="text-2xl font-bold text-zinc-950 mb-2">Technical Due Diligence</h3>
-                                <div className="text-4xl font-mono text-zinc-700 mb-6">$15,000<span className="text-sm text-zinc-950"> / deal</span></div>
-                                <p className="text-zinc-600 text-sm leading-relaxed mb-8 min-h-[120px]">
+                                <div className="text-4xl font-mono text-zinc-950 mb-6">$15,000<span className="text-sm text-zinc-950"> / deal</span></div>
+                                <p className="text-zinc-900 text-sm leading-relaxed mb-8 min-h-[120px]">
                                     Intensive 2-week forensic code and architecture audit. Determine the exact technical debt and blast radiuses before you sign the term sheet to acquire a SaaS company.
                                 </p>
                                 <ul className="space-y-4 mb-8 text-sm text-zinc-900">
@@ -64,7 +64,7 @@ export default function AdvisoryPage() {
                                 <div className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-4">Tier 2: Mid-Market Execution</div>
                                 <h3 className="text-2xl font-bold text-zinc-950 mb-2">AI & SecOps Taskforce</h3>
                                 <div className="text-4xl font-mono text-zinc-950 mb-6">$10,000<span className="text-sm text-zinc-900"> / mo</span></div>
-                                <p className="text-zinc-700 text-sm leading-relaxed mb-8 min-h-[120px]">
+                                <p className="text-zinc-950 text-sm leading-relaxed mb-8 min-h-[120px]">
                                     A 90-day sprint engagement to rip out standard OpenAI endpoints and securely implement sovereign, localized SLMs inside your VPC. Kill the API tax and ensure SOC2 data sovereignty.
                                 </p>
                                 <ul className="space-y-4 mb-8 text-sm text-zinc-950">
@@ -80,12 +80,12 @@ export default function AdvisoryPage() {
                         </ShineBorder>
 
                         {/* TIER 3: Curriculum Retainer */}
-                        <div className="card bg-zinc-100 border border-zinc-200 relative overflow-hidden group">
+                        <div className="card bg-zinc-100 border border-zinc-400 relative overflow-hidden group">
                             <div className="p-8">
                                 <div className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-4">Tier 3: Enterprise Scale</div>
                                 <h3 className="text-2xl font-bold text-zinc-950 mb-2">Methodology Steering</h3>
-                                <div className="text-4xl font-mono text-zinc-700 mb-6">$5,000<span className="text-sm text-zinc-950"> / mo</span></div>
-                                <p className="text-zinc-600 text-sm leading-relaxed mb-8 min-h-[120px]">
+                                <div className="text-4xl font-mono text-zinc-950 mb-6">$5,000<span className="text-sm text-zinc-950"> / mo</span></div>
+                                <p className="text-zinc-900 text-sm leading-relaxed mb-8 min-h-[120px]">
                                     For VPEs who purchased the 57-Track Vault Pass. Placed on retainer, I run the steering committee to deploy specific tracks directly onto your engineering floor to ensure massive adoption.
                                 </p>
                                 <ul className="space-y-4 mb-8 text-sm text-zinc-900">
@@ -104,28 +104,28 @@ export default function AdvisoryPage() {
                 </section>
 
                 {/* Additional / Footer Services */}
-                <section className="section-sm max-w-4xl mx-auto border-t border-zinc-200 pt-16">
+                <section className="section-sm max-w-4xl mx-auto border-t border-zinc-400 pt-16">
                     <div className="text-center mb-10">
                         <h2 className="text-2xl font-bold font-grotesk text-zinc-900">Standalone Diagnostics</h2>
-                        <p className="text-zinc-700 text-sm mt-2">Specialized immediate-impact tactical sessions.</p>
+                        <p className="text-zinc-950 text-sm mt-2">Specialized immediate-impact tactical sessions.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-white/50 border border-zinc-200 p-6 rounded-2xl hover:border-cyan-500/30 transition-all">
+                        <div className="bg-white/50 border border-zinc-400 p-6 rounded-2xl hover:border-cyan-500/30 transition-all">
                             <div className="flex justify-between items-start mb-2">
                                 <h3 className="text-lg font-bold text-zinc-900">The 60-Min Insolvency Audit</h3>
                                 <span className="font-mono text-cyan-400">$2,500</span>
                             </div>
-                            <p className="text-sm text-zinc-700 mb-4">You run the PDI tool, you don't like the number. We sit down for 60 minutes, locate the exact capital leak, and formulate an immediate reduction strategy.</p>
+                            <p className="text-sm text-zinc-950 mb-4">You run the PDI tool, you don't like the number. We sit down for 60 minutes, locate the exact capital leak, and formulate an immediate reduction strategy.</p>
                             <a href="/api/buy/insolvency_diagnostic" className="text-xs font-mono text-cyan-500 uppercase tracking-widest hover:text-cyan-400">Book Session →</a>
                         </div>
 
-                        <div className="bg-white/50 border border-zinc-200 p-6 rounded-2xl hover:border-amber-500/30 transition-all">
+                        <div className="bg-white/50 border border-zinc-400 p-6 rounded-2xl hover:border-amber-500/30 transition-all">
                             <div className="flex justify-between items-start mb-2">
                                 <h3 className="text-lg font-bold text-zinc-900">Gut-Check Evaluation</h3>
                                 <span className="font-mono text-amber-400">$450</span>
                             </div>
-                            <p className="text-sm text-zinc-700 mb-4">Not sure if you have a problem? A 30-minute rapid-fire session. You describe your AWS bill and velocity, I tell you if your building is on fire.</p>
+                            <p className="text-sm text-zinc-950 mb-4">Not sure if you have a problem? A 30-minute rapid-fire session. You describe your AWS bill and velocity, I tell you if your building is on fire.</p>
                             <a href="/api/buy/gut_check" className="text-xs font-mono text-amber-500 uppercase tracking-widest hover:text-amber-400">Schedule Evaluation →</a>
                         </div>
                     </div>

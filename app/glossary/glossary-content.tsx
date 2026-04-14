@@ -32,7 +32,7 @@ export default function GlossaryContent() {
             </div>
 
             <ScrollReveal>
-                <div className="mb-12 border-b border-zinc-200 pb-12">
+                <div className="mb-12 border-b border-zinc-400 pb-12">
                     <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-900 mb-6">
                         Technology & AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">Glossary.</span>
                     </h1>
@@ -49,7 +49,7 @@ export default function GlossaryContent() {
                     const isOpen = openCategories[group.category];
                     return (
                         <ScrollReveal key={group.category} delay={gi * 50}>
-                            <div className={`border ${isOpen ? 'border-cyan-300 bg-cyan-50/50' : 'border-zinc-200 bg-white'} rounded-2xl overflow-hidden transition-all duration-300`}>
+                            <div className={`border ${isOpen ? 'border-cyan-300 bg-cyan-50/50' : 'border-zinc-400 bg-white'} rounded-2xl overflow-hidden transition-all duration-300`}>
                                 {/* Accordion Header */}
                                 <button 
                                     onClick={() => toggleCategory(group.category)}
@@ -78,14 +78,14 @@ export default function GlossaryContent() {
                                                     href={`/glossary/${term.slug}`}
                                                     className="group block"
                                                 >
-                                                    <div className="card p-5 h-full bg-white border border-zinc-200 hover:border-cyan-400 hover:bg-cyan-50/30 transition-all rounded-xl">
+                                                    <div className="card p-5 h-full bg-white border border-zinc-400 hover:border-cyan-400 hover:bg-cyan-50/30 transition-all rounded-xl">
                                                         <h3 className="text-sm font-bold text-zinc-900 mb-2 group-hover:text-cyan-700 transition-colors font-grotesk">
                                                             {term.title}
                                                         </h3>
-                                                        <p className="text-xs text-zinc-700 line-clamp-2 leading-relaxed">
+                                                        <p className="text-xs text-zinc-950 line-clamp-2 leading-relaxed">
                                                             {term.definition.slice(0, 160)}...
                                                         </p>
-                                                        <div className="mt-3 text-[10px] font-bold uppercase tracking-widest text-zinc-700 group-hover:text-cyan-600 transition-colors">
+                                                        <div className="mt-3 text-[10px] font-bold uppercase tracking-widest text-zinc-950 group-hover:text-cyan-600 transition-colors">
                                                             Read Definition →
                                                         </div>
                                                     </div>
@@ -101,7 +101,7 @@ export default function GlossaryContent() {
             </div>
 
             {/* Bottom CTA */}
-            <div className="text-center py-20 mt-12 mb-12 relative overflow-hidden rounded-3xl border border-zinc-200 bg-gradient-to-b from-white to-cyan-50">
+            <div className="text-center py-20 mt-12 mb-12 relative overflow-hidden rounded-3xl border border-zinc-400 bg-gradient-to-b from-white to-cyan-50">
                 <div className="absolute top-0 right-0 w-full h-full bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
                 <h2 className="text-3xl font-grotesk font-black text-zinc-900 mb-4">Master The Architecture</h2>
                 <p className="text-zinc-800 mb-8 max-w-lg mx-auto leading-relaxed">
@@ -116,7 +116,7 @@ export default function GlossaryContent() {
                     </Link>
                     <Link
                         href="/advisory"
-                        className="px-8 py-4 bg-white border border-zinc-300 rounded-xl text-zinc-700 font-bold uppercase tracking-widest text-xs hover:bg-zinc-50 transition-colors"
+                        className="px-8 py-4 bg-white border border-zinc-300 rounded-xl text-zinc-950 font-bold uppercase tracking-widest text-xs hover:bg-zinc-50 transition-colors"
                     >
                         Book Advisory Session →
                     </Link>

@@ -56,11 +56,11 @@ export default async function CurriculumTracksPage() {
                         <div className="flex items-center justify-center gap-8 mt-6">
                             <div className="text-center">
                                 <div className="text-2xl font-grotesk font-bold text-zinc-900">23</div>
-                                <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-700 mt-1">Authority Tracks</div>
+                                <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-950 mt-1">Authority Tracks</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-2xl font-grotesk font-bold text-zinc-900">293</div>
-                                <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-700 mt-1">Deep Modules</div>
+                                <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-950 mt-1">Deep Modules</div>
                             </div>
                             <div className="text-center bg-purple-50 px-4 py-2 rounded-lg border border-purple-200">
                                 <div className="text-xl font-mono font-bold text-purple-700">$149</div>
@@ -93,7 +93,7 @@ export default async function CurriculumTracksPage() {
                                     </div>
                                     <div className="md:w-64 w-full h-full flex flex-col items-center justify-center bg-purple-50 rounded-xl border border-purple-100 p-6">
                                         <div className="text-3xl font-mono text-zinc-900 mb-1">Advisory</div>
-                                        <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest text-center">Strategic Partnership</div>
+                                        <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest text-center">Strategic Partnership</div>
                                     </div>
                                 </div>
                             </ShineBorder>
@@ -181,7 +181,7 @@ export default async function CurriculumTracksPage() {
                     </CurriculumDirectoryGrid>
 
                     {/* BOTTOM CTA */}
-                    <div className="mt-20 pt-16 border-t border-zinc-200">
+                    <div className="mt-20 pt-16 border-t border-zinc-400">
                         <div className="rounded-[2.5rem] bg-gradient-to-br from-purple-50 via-white to-indigo-50 p-10 sm:p-16 border border-purple-100 text-center relative overflow-hidden shadow-lg">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-purple-200/30 blur-[100px] pointer-events-none rounded-full" />
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-200/30 blur-[100px] pointer-events-none rounded-full" />
@@ -197,7 +197,7 @@ export default async function CurriculumTracksPage() {
                                 <Link href="/advisory" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-purple-700 text-white hover:bg-purple-600 transition-colors shadow-lg">
                                     Explore Advisory
                                 </Link>
-                                <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-white border border-zinc-200 text-zinc-700 hover:text-zinc-900 hover:border-zinc-300 transition-colors shadow-sm">
+                                <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-white border border-zinc-400 text-zinc-950 hover:text-zinc-900 hover:border-zinc-300 transition-colors shadow-sm">
                                     Unlock $999 Full Curriculum
                                 </Link>
                             </div>

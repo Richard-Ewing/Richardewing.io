@@ -37,7 +37,7 @@ const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; pref
 };
 
 const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: React.ReactNode; title: string; icon?: React.ComponentType<{ size?: number }>; className?: string }) => (
-    <div className={`relative overflow-hidden rounded-2xl border border-zinc-200 bg-white/60 p-6 backdrop-blur-md ${className}`}>
+    <div className={`relative overflow-hidden rounded-2xl border border-zinc-400 bg-white/60 p-6 backdrop-blur-md ${className}`}>
         <div className="flex items-center gap-2 mb-4 text-zinc-900">
             {Icon && <Icon size={14} />}
             <span className="text-[10px] font-mono uppercase tracking-widest">{title}</span>
@@ -446,7 +446,7 @@ export default function AUEBTool() {
             {/* MONETIZATION ENGINE: PAYWALL MODAL */}
             {showPaywall && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-white/80 backdrop-blur-sm" data-html2canvas-ignore>
-                    <div className="bg-white border border-zinc-200 rounded-3xl max-w-md w-full p-8 relative shadow-2xl overflow-hidden scale-100 animate-in zoom-in-95 duration-200">
+                    <div className="bg-white border border-zinc-400 rounded-3xl max-w-md w-full p-8 relative shadow-2xl overflow-hidden scale-100 animate-in zoom-in-95 duration-200">
                         {/* Lighting Fx */}
                         <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
                         <div className="absolute bottom-0 left-0 w-32 h-32 bg-violet-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
@@ -457,7 +457,7 @@ export default function AUEBTool() {
                             </div>
                             
                             <h3 className="text-3xl font-bold text-zinc-950 mb-2 font-grotesk tracking-tight">Limit Reached.</h3>
-                            <p className="text-zinc-600 text-sm mb-8 leading-relaxed">
+                            <p className="text-zinc-900 text-sm mb-8 leading-relaxed">
                                 You have consumed your allocation of 3 free diagnostic audits. Unlock the Full Library to save unlimited board-ready PDF reports directly to your Vault.
                             </p>
                             
@@ -471,7 +471,7 @@ export default function AUEBTool() {
                                 </a>
                                 <button 
                                     onClick={() => setShowPaywall(false)} 
-                                    className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-600 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"
+                                    className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-900 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"
                                 >
                                     Dismiss
                                 </button>
@@ -482,13 +482,13 @@ export default function AUEBTool() {
             )}
 
             {/* HEADER */}
-            <nav className="border-b border-zinc-200 bg-white/50 backdrop-blur-xl sticky top-0 z-50">
+            <nav className="border-b border-zinc-400 bg-white/50 backdrop-blur-xl sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_#dc2626]" />
                         <span className="font-bold tracking-tight text-lg">AUEB™ <span className="text-zinc-800 font-normal">| AI Margin Audit</span></span>
                     </div>
-                    <Link href="/advisory" className="flex items-center gap-2 text-xs font-mono text-zinc-600 hover:text-zinc-900 transition-colors uppercase tracking-widest">
+                    <Link href="/advisory" className="flex items-center gap-2 text-xs font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest">
                         <Lock size={12} />
                         Get Expert Help
                     </Link>
@@ -510,7 +510,7 @@ export default function AUEBTool() {
 
                             {/* PERSONA SELECTOR */}
                             <div className="mb-8">
-                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">I am a...</div>
+                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-3">I am a...</div>
                                 <div className="flex flex-wrap gap-2">
                                     {PERSONAS.map(p => (
                                         <button
@@ -518,7 +518,7 @@ export default function AUEBTool() {
                                             onClick={() => setPersona(p.id)}
                                             className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id
                                                 ? 'bg-cyan-500/10 border-cyan-500 text-cyan-400'
-                                                : 'bg-white/80 border-zinc-200 text-zinc-600 hover:border-white/30'
+                                                : 'bg-white/80 border-zinc-400 text-zinc-900 hover:border-white/30'
                                                 }`}
                                         >
                                             <p.icon size={14} />
@@ -528,7 +528,7 @@ export default function AUEBTool() {
                                 </div>
                             </div>
 
-<div className="bg-white/40 p-8 rounded-3xl border border-zinc-200 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden">
+<div className="bg-white/40 p-8 rounded-3xl border border-zinc-400 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-zinc-200">
                                     <div className={`h-full bg-cyan-500 transition-all duration-500 ${progressStyles[`w_${Math.round((step / 3) * 100)}`]}`} />
                                 </div>
@@ -536,20 +536,20 @@ export default function AUEBTool() {
                                 {step === 1 && (
                                     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8 mt-2">
                                         <div>
-                                            <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Unit Economics</div>
+                                            <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Unit Economics</div>
                                             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                                                 <div className="md:col-span-2">
                                                     <label className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">AI Monetization Strategy</label>
                                                     <div className="flex gap-2">
-                                                        <button onClick={() => setMonetizationStrategy('bundled')} className={`flex-1 px-4 py-3 rounded-xl border transition-all ${monetizationStrategy === 'bundled' ? 'bg-cyan-500/10 border-cyan-500 text-cyan-400' : 'bg-white/50 border-zinc-200 text-zinc-900'}`}>Bundled (Free)</button>
-                                                        <button onClick={() => setMonetizationStrategy('premium')} className={`flex-1 px-4 py-3 rounded-xl border transition-all ${monetizationStrategy === 'premium' ? 'bg-purple-500/10 border-purple-500 text-purple-400' : 'bg-white/50 border-zinc-200 text-zinc-900'}`}>Premium Add-on</button>
+                                                        <button onClick={() => setMonetizationStrategy('bundled')} className={`flex-1 px-4 py-3 rounded-xl border transition-all ${monetizationStrategy === 'bundled' ? 'bg-cyan-500/10 border-cyan-500 text-cyan-400' : 'bg-white/50 border-zinc-400 text-zinc-900'}`}>Bundled (Free)</button>
+                                                        <button onClick={() => setMonetizationStrategy('premium')} className={`flex-1 px-4 py-3 rounded-xl border transition-all ${monetizationStrategy === 'premium' ? 'bg-purple-500/10 border-purple-500 text-purple-400' : 'bg-white/50 border-zinc-400 text-zinc-900'}`}>Premium Add-on</button>
                                                     </div>
                                                 </div>
                                                 <div>
                                                     <label htmlFor="price" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Base Price/Mo</label>
                                                     <div className="relative">
                                                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
-                                                        <input id="price" type="number" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 pl-7 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
+                                                        <input id="price" type="number" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 pl-7 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
                                                     </div>
                                                 </div>
                                                 {monetizationStrategy === 'premium' ? (
@@ -563,7 +563,7 @@ export default function AUEBTool() {
                                                 ) : (
                                                     <div>
                                                         <label htmlFor="users" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Active Users</label>
-                                                        <input id="users" type="number" value={users} onChange={(e) => setUsers(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
+                                                        <input id="users" type="number" value={users} onChange={(e) => setUsers(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
                                                     </div>
                                                 )}
                                             </div>
@@ -572,18 +572,18 @@ export default function AUEBTool() {
                                                 {monetizationStrategy === 'premium' && (
                                                     <div>
                                                         <label htmlFor="users" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Active Users</label>
-                                                        <input id="users" type="number" value={users} onChange={(e) => setUsers(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
+                                                        <input id="users" type="number" value={users} onChange={(e) => setUsers(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
                                                     </div>
                                                 )}
                                                 <div>
                                                     <label htmlFor="queries" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">AI Queries/User/Mo</label>
-                                                    <input id="queries" type="number" value={queries} onChange={(e) => setQueries(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
+                                                    <input id="queries" type="number" value={queries} onChange={(e) => setQueries(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
                                                 </div>
                                                 <div>
                                                     <label htmlFor="cost" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Cost/Query</label>
                                                     <div className="relative">
                                                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
-                                                        <input id="cost" type="number" step="0.001" value={costPerQuery} onChange={(e) => setCostPerQuery(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 pl-7 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
+                                                        <input id="cost" type="number" step="0.001" value={costPerQuery} onChange={(e) => setCostPerQuery(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 pl-7 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -595,12 +595,12 @@ export default function AUEBTool() {
                                 {step === 2 && (
                                     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8 mt-2">
                                         <div>
-                                            <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Growth & Optimization</div>
+                                            <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Growth & Optimization</div>
                                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                                 <div>
                                                     <label htmlFor="growth" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Monthly Growth Rate</label>
                                                     <div className="relative">
-                                                        <input id="growth" type="number" value={growthRate} onChange={(e) => setGrowthRate(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
+                                                        <input id="growth" type="number" value={growthRate} onChange={(e) => setGrowthRate(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
                                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-900">%</span>
                                                     </div>
                                                 </div>
@@ -610,7 +610,7 @@ export default function AUEBTool() {
                                                         onClick={() => setCachingEnabled(!cachingEnabled)}
                                                         className={`w-full px-4 py-3 rounded-xl border transition-all flex items-center justify-between ${cachingEnabled
                                                             ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400'
-                                                            : 'bg-white/50 border-zinc-200 text-zinc-800'
+                                                            : 'bg-white/50 border-zinc-400 text-zinc-800'
                                                             }`}
                                                     >
                                                         <span>{cachingEnabled ? 'Semantic caching enabled' : 'No caching implemented'}</span>
@@ -619,12 +619,12 @@ export default function AUEBTool() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="pt-6 border-t border-zinc-200">
-                                            <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">AI Feature Mix (% of queries)</div>
+                                        <div className="pt-6 border-t border-zinc-400">
+                                            <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">AI Feature Mix (% of queries)</div>
                                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                                 {features.map((f, i) => (
                                                     <div key={i}>
-                                                        <label className="text-xs text-zinc-600 mb-1 block">{f.name}</label>
+                                                        <label className="text-xs text-zinc-900 mb-1 block">{f.name}</label>
                                                         <div className="relative">
                                                             <input
                                                                 type="number"
@@ -636,7 +636,7 @@ export default function AUEBTool() {
                                                                     newFeatures[i].queriesPercent = parseInt(e.target.value) || 0;
                                                                     setFeatures(newFeatures);
                                                                 }}
-                                                                className="w-full bg-white/50 border border-zinc-200 rounded-lg px-3 py-2 text-zinc-950 font-mono text-sm focus:border-cyan-500 focus:outline-none"
+                                                                className="w-full bg-white/50 border border-zinc-400 rounded-lg px-3 py-2 text-zinc-950 font-mono text-sm focus:border-cyan-500 focus:outline-none"
                                                             />
                                                             <span className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-800 text-xs">%</span>
                                                         </div>
@@ -654,13 +654,13 @@ export default function AUEBTool() {
                                 {step === 3 && (
                                     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8 mt-2">
                                         <div>
-                                            <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Infrastructure Costs (Monthly Per User)</div>
+                                            <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Infrastructure Costs (Monthly Per User)</div>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div>
                                                     <label htmlFor="hosting" className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Hosting & Compute</label>
                                                     <div className="relative">
                                                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
-                                                        <input id="hosting" type="number" step="0.01" value={hostingCostPerUser} onChange={(e) => setHostingCostPerUser(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 pl-7 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
+                                                        <input id="hosting" type="number" step="0.01" value={hostingCostPerUser} onChange={(e) => setHostingCostPerUser(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 pl-7 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
                                                     </div>
                                                     <p className="text-[10px] text-zinc-800 mt-1">AWS/GCP/Vercel per user allocation</p>
                                                 </div>
@@ -677,7 +677,7 @@ export default function AUEBTool() {
                                                                 }}
                                                                 className={`w-full px-3 py-2 rounded-lg border text-left flex items-center justify-between transition-all text-sm ${api.enabled
                                                                     ? 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400'
-                                                                    : 'bg-zinc-100 border-zinc-200 text-zinc-900'
+                                                                    : 'bg-zinc-100 border-zinc-400 text-zinc-900'
                                                                     }`}
                                                             >
                                                                 <span>{api.name}</span>
@@ -712,7 +712,7 @@ export default function AUEBTool() {
                             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8 relative">
 
                                 {/* ACTION HEADER & PDF EXPORT */}
-                                <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-zinc-200 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                                <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-zinc-400 rounded-2xl p-6 mb-8 backdrop-blur-md">
                                     <div>
                                         <div className="flex items-center gap-2 mb-2">
                                             <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
@@ -738,7 +738,7 @@ export default function AUEBTool() {
                                     transition={{ duration: 0.6, ease: "easeOut" }}
                                     className="capsule-container rounded-2xl sm:rounded-[2rem] p-8 text-center mb-8"
                                 >
-                                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-8">GROSS MARGIN HEALTH</div>
+                                    <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-8">GROSS MARGIN HEALTH</div>
                                     <GaugeChart value={results.grossMargin} />
                                     <div className={`mt-12 text-4xl font-bold tracking-tight ${getMarginStatus(results.grossMargin).color}`}>
                                         {getMarginStatus(results.grossMargin).text}
@@ -760,7 +760,7 @@ export default function AUEBTool() {
                                     <BentoCard title={`Insight for ${persona}`} icon={Target} className="border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent">
                                         <div className="space-y-4">
                                             <h3 className="text-2xl font-bold text-zinc-900">{getPersonaInsight(results).headline}</h3>
-                                            <p className="text-zinc-600 leading-relaxed">{getPersonaInsight(results).detail}</p>
+                                            <p className="text-zinc-900 leading-relaxed">{getPersonaInsight(results).detail}</p>
                                             <p className="text-cyan-400 font-semibold">{getPersonaInsight(results).action}</p>
                                         </div>
                                     </BentoCard>
@@ -787,7 +787,7 @@ export default function AUEBTool() {
                                     </BentoCard>
                                     <BentoCard title="Months to 50% COGS" icon={AlertTriangle} className="border-yellow-500/20">
                                         <div className="text-3xl font-bold text-yellow-400">{results.monthsToCollapse}</div>
-                                        <div className="text-zinc-700 text-xs mt-2">At {growthRate}% monthly growth</div>
+                                        <div className="text-zinc-950 text-xs mt-2">At {growthRate}% monthly growth</div>
                                     </BentoCard>
                                 </motion.div>
 
@@ -803,17 +803,17 @@ export default function AUEBTool() {
                                             <div className="bg-zinc-100 rounded-xl p-4">
                                                 <div className="text-xs font-mono text-red-400 uppercase tracking-widest mb-1">LLM Costs</div>
                                                 <div className="text-2xl font-bold text-red-500">{formatMoney(results.llmCost)}/mo</div>
-                                                <div className="text-xs text-zinc-700 mt-1">{((results.llmCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                                <div className="text-xs text-zinc-950 mt-1">{((results.llmCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
                                             </div>
                                             <div className="bg-zinc-100 rounded-xl p-4">
                                                 <div className="text-xs font-mono text-orange-400 uppercase tracking-widest mb-1">Third-Party APIs</div>
                                                 <div className="text-2xl font-bold text-orange-500">{formatMoney(results.apiCost)}/mo</div>
-                                                <div className="text-xs text-zinc-700 mt-1">{((results.apiCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                                <div className="text-xs text-zinc-950 mt-1">{((results.apiCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
                                             </div>
                                             <div className="bg-zinc-100 rounded-xl p-4">
                                                 <div className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-1">Hosting & Compute</div>
                                                 <div className="text-2xl font-bold text-yellow-500">{formatMoney(results.hostingCost)}/mo</div>
-                                                <div className="text-xs text-zinc-700 mt-1">{((results.hostingCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                                <div className="text-xs text-zinc-950 mt-1">{((results.hostingCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
                                             </div>
                                         </div>
                                         <div className="h-4 bg-zinc-200 rounded-full overflow-hidden flex">
@@ -821,7 +821,7 @@ export default function AUEBTool() {
                                             <div className={`h-full bg-orange-500 ${progressStyles[`w_${Math.round((results.apiCost / results.totalInfraCost) * 100) || 0}`]}`} />
                                             <div className={`h-full bg-yellow-500 ${progressStyles[`w_${Math.round((results.hostingCost / results.totalInfraCost) * 100) || 0}`]}`} />
                                         </div>
-                                        <div className="flex justify-between text-xs text-zinc-700 mt-2">
+                                        <div className="flex justify-between text-xs text-zinc-950 mt-2">
                                             <span>Total Infrastructure: <span className="text-zinc-950 font-bold">{formatMoney(results.totalInfraCost)}/mo</span></span>
                                             <span>Per User: <span className="text-zinc-950 font-bold">{formatMoney(results.costPerUser)}</span></span>
                                         </div>
@@ -839,7 +839,7 @@ export default function AUEBTool() {
                                         <div className="overflow-x-auto">
                                             <table className="w-full text-sm">
                                                 <thead>
-                                                    <tr className="border-b border-zinc-200 text-zinc-700 font-mono text-xs uppercase">
+                                                    <tr className="border-b border-zinc-400 text-zinc-950 font-mono text-xs uppercase">
                                                         <th className="text-left py-3">Model</th>
                                                         <th className="text-right py-3">Cost/User</th>
                                                         <th className="text-right py-3">Margin</th>
@@ -850,7 +850,7 @@ export default function AUEBTool() {
                                                     {results.models.map((model: ModelData, i: number) => {
                                                         const savings = ((model.margin - results.grossMargin) / 100) * results.monthlyRevenue;
                                                         return (
-                                                            <tr key={i} className="border-b border-zinc-200/50 hover:bg-zinc-200/30">
+                                                            <tr key={i} className="border-b border-zinc-400/50 hover:bg-zinc-200/30">
                                                                 <td className="py-3 font-semibold text-zinc-900">{model.model}</td>
                                                                 <td className="py-3 text-right text-zinc-800">{formatMoney(model.costPerUser)}</td>
                                                                 <td className={`py-3 text-right font-bold ${model.margin >= 60 ? 'text-emerald-400' : 'text-red-500'}`}>{model.margin.toFixed(1)}%</td>
@@ -878,15 +878,15 @@ export default function AUEBTool() {
                                                 <div className="text-xs font-mono uppercase tracking-widest text-zinc-900">Corporate Solvency Matrix (Margin Collapse Horizon)</div>
                                             </div>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-200 relative overflow-hidden">
+                                                <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
-                                                    <div className="text-xs text-zinc-700 mb-2">Insolvency Point</div>
+                                                    <div className="text-xs text-zinc-950 mb-2">Insolvency Point</div>
                                                     <div className="text-3xl font-bold text-red-500">Month {results.monthsToCollapse}</div>
                                                     <div className="text-xs text-red-400/60 mt-2 mt-auto">Point where scaling users destroys company margins completely.</div>
                                                 </div>
-                                                <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-200 relative overflow-hidden">
+                                                <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
-                                                    <div className="text-xs text-zinc-700 mb-2">Current Gross Margin</div>
+                                                    <div className="text-xs text-zinc-950 mb-2">Current Gross Margin</div>
                                                     <div className="text-3xl font-bold text-orange-400">{results.grossMargin.toFixed(0)}%</div>
                                                     <div className="text-xs text-orange-400/60 mt-2 mt-auto">Falling below benchmark limits venture capital scaling viability.</div>
                                                 </div>
@@ -925,7 +925,7 @@ export default function AUEBTool() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                                 >
-                                    <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-8 border border-zinc-200">
+                                    <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-8 border border-zinc-400">
                                         <div className="flex items-center gap-3 mb-6">
                                             <div className={`w-3 h-3 rounded-full animate-pulse ${results.grossMargin < 50 ? 'bg-red-500' : 'bg-cyan-400'}`} />
                                             <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">Executive Summary</span>
@@ -950,10 +950,10 @@ export default function AUEBTool() {
                                                 </ul>
                                             </div>
 
-                                            <div className="border-l border-zinc-200 pl-8">
+                                            <div className="border-l border-zinc-400 pl-8">
                                                 <div className="mb-4">
                                                     <h3 className="text-xl font-bold text-zinc-950 mb-2">Detailed Financial Matrix</h3>
-                                                    <p className="text-zinc-600 text-sm">Deploy the Vault Curriculum to execute immediate margin recovery strategies.</p>
+                                                    <p className="text-zinc-900 text-sm">Deploy the Vault Curriculum to execute immediate margin recovery strategies.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -976,7 +976,7 @@ export default function AUEBTool() {
                                         ]} 
                                     />
                                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-6">
-                                        <button onClick={() => setResults(null)} className="text-zinc-700 text-sm hover:text-zinc-900 underline underline-offset-4">← Run New Analysis</button>
+                                        <button onClick={() => setResults(null)} className="text-zinc-950 text-sm hover:text-zinc-900 underline underline-offset-4">← Run New Analysis</button>
                                     </div>
                                 </motion.div>
 
@@ -1010,7 +1010,7 @@ export default function AUEBTool() {
                                             <div className="w-2 h-2 rounded-full border border-cyan-400 bg-cyan-400/50 animate-pulse" />
                                             Quarterly Margin Execution Plan (Q-PEP)
                                         </h3>
-                                        <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
+                                        <div className="bg-zinc-50 border border-zinc-400 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
                                             <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-500 via-blue-500 to-indigo-500"></div>
                                             
                                             {/* MONTH 1 CRITICAL DEPENDENCY INJECTION */}
@@ -1019,12 +1019,12 @@ export default function AUEBTool() {
                                                     <AlertTriangle size={16} className="text-cyan-400" />
                                                     <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Phase 1 Critical Path Dependency</span>
                                                 </div>
-                                                <p className="text-zinc-700 text-sm leading-relaxed">
+                                                <p className="text-zinc-950 text-sm leading-relaxed">
                                                     <strong>Execution mapped below is non-linear.</strong> Phase 1 architecture decisions compound geometrically. Delaying Month 1 deliverables will irreversibly bind your infrastructure to legacy OpEx margins. Month 1 execution is the only variable that guarantees Month 3 solvency.
                                                 </p>
                                             </div>
 
-                                            <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6 border-b border-zinc-200 pb-4">Execution Gantt Chart (90-Day Burn Down)</h4>
+                                            <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">Execution Gantt Chart (90-Day Burn Down)</h4>
                                             
                                             <div className="space-y-6 md:space-y-8">
                                                 {results.qpep_roadmap.map((plan: any, i: number) => (
@@ -1046,8 +1046,8 @@ export default function AUEBTool() {
                                                                 const width = widths[j % widths.length];
                                                                 // Progressive colors down the months
                                                                 const colorClasses = [
-                                                                    "from-cyan-500/20 to-blue-500/20 border-cyan-500/50 text-cyan-200",
-                                                                    "from-blue-500/20 to-indigo-500/20 border-blue-500/50 text-blue-200",
+                                                                    "from-cyan-500/20 to-blue-500/20 border-cyan-500/50 text-cyan-700",
+                                                                    "from-blue-500/20 to-indigo-500/20 border-blue-500/50 text-blue-700",
                                                                     "from-indigo-500/20 to-violet-500/20 border-indigo-500/50 text-indigo-200"
                                                                 ];
                                                                 const color = colorClasses[i % colorClasses.length];
@@ -1075,24 +1075,24 @@ export default function AUEBTool() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                                 >
-                                    <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-zinc-200 bg-zinc-50 text-left">
+                                    <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-zinc-400 bg-zinc-50 text-left">
                                         <h3 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-2">
                                             <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                             3-Step Inference Optimization Roadmap
                                         </h3>
-                                        <p className="text-zinc-600 text-sm mb-8">Execute this operational sequence immediately to arrest AI margin collapse and secure unit economic profitability.</p>
+                                        <p className="text-zinc-900 text-sm mb-8">Execute this operational sequence immediately to arrest AI margin collapse and secure unit economic profitability.</p>
 
                                         <div className="space-y-4">
                                             {/* Step 1 */}
-                                            <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                            <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                                 <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                                 <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
                                                     <span className="text-rose-400 font-bold font-mono">01</span>
                                                 </div>
                                                 <div className="relative z-10 w-full">
                                                     <h4 className="text-zinc-950 font-bold mb-2">Deploy Semantic Caching Architecture</h4>
-                                                    <p className="text-zinc-600 text-sm leading-relaxed mb-4">You are paying frontier-model token prices over and over for duplicate queries. Stop treating repetitive intent as novel computation.</p>
-                                                    <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
+                                                    <p className="text-zinc-900 text-sm leading-relaxed mb-4">You are paying frontier-model token prices over and over for duplicate queries. Stop treating repetitive intent as novel computation.</p>
+                                                    <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                         <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
@@ -1102,15 +1102,15 @@ export default function AUEBTool() {
                                             </div>
 
                                             {/* Step 2 */}
-                                            <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                            <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                                 <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                                 <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
                                                     <span className="text-amber-400 font-bold font-mono">02</span>
                                                 </div>
                                                 <div className="relative z-10 w-full">
                                                     <h4 className="text-zinc-950 font-bold mb-2">Build a Sovereign Intent Router</h4>
-                                                    <p className="text-zinc-600 text-sm leading-relaxed mb-4">You are using GPT-4-class intelligence to run simple extraction tasks. This is like using a supercomputer to operate a calculator.</p>
-                                                    <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
+                                                    <p className="text-zinc-900 text-sm leading-relaxed mb-4">You are using GPT-4-class intelligence to run simple extraction tasks. This is like using a supercomputer to operate a calculator.</p>
+                                                    <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                         <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
@@ -1120,15 +1120,15 @@ export default function AUEBTool() {
                                             </div>
 
                                             {/* Step 3 */}
-                                            <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                            <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                                 <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
                                                     <span className="text-cyan-400 font-bold font-mono">03</span>
                                                 </div>
                                                 <div className="relative z-10 w-full">
                                                     <h4 className="text-zinc-950 font-bold mb-2">Productize Token Limitations</h4>
-                                                    <p className="text-zinc-600 text-sm leading-relaxed mb-4">Unlimited queries uncap your liability. Generative AI fundamentally reintroduces COGS into SaaS, and your pricing tiers must reflect that.</p>
-                                                    <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
+                                                    <p className="text-zinc-900 text-sm leading-relaxed mb-4">Unlimited queries uncap your liability. Generative AI fundamentally reintroduces COGS into SaaS, and your pricing tiers must reflect that.</p>
+                                                    <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                         <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
@@ -1157,20 +1157,20 @@ export default function AUEBTool() {
             <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
                 <div className="prose prose-zinc prose-lg max-w-none">
                     <h2 className="text-4xl font-bold text-zinc-950 mb-8">The Linear Cost Trap of Generative AI</h2>
-                    <p className="text-zinc-600 leading-relaxed">
+                    <p className="text-zinc-900 leading-relaxed">
                         For 20 years, SaaS enjoyed <strong>Zero Marginal Cost</strong>. Once you wrote the code, the millionth user cost you nothing. Generative AI breaks this physics. It reintroduces <strong>COGS</strong> (Cost of Goods Sold) into software. Every query has a compute cost. Every prompt burns cash.
                     </p>
-                    <p className="text-zinc-600 leading-relaxed">
+                    <p className="text-zinc-900 leading-relaxed">
                         The <strong>AI Unit Economics Benchmark (AUEB)</strong> is designed to detect the &quot;Insolvency Horizon.&quot; Many AI startups are essentially Ponzi schemes where Series A capital is used to subsidize OpenAI&apos;s server bills. If your Gross Margin is below 60%, you are not building a software company—you are building a reselling agency with bad margins.
                     </p>
                 </div>
 
                 <div className="border-l-4 border-red-600 pl-8">
                     <h3 className="text-2xl font-bold text-zinc-950 mb-4">The &quot;Token Tax&quot;</h3>
-                    <p className="text-zinc-600 text-lg">
+                    <p className="text-zinc-900 text-lg">
                         Stop asking &quot;What can AI do?&quot; and start asking &quot;What does the query cost?&quot;
                     </p>
-                    <p className="text-zinc-700 mt-4 text-sm">
+                    <p className="text-zinc-950 mt-4 text-sm">
                         If a user pays you $20/month, and they run 500 queries at $0.03/query (GPT-4), your cost is $15. Your margin is $5 (25%). After server costs and stripe fees, you are losing money on every customer. This calculator exposes that math instantly.
                     </p>
                 </div>

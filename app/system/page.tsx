@@ -28,7 +28,7 @@ export default function SystemPage() {
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-6">
                             Algorithmic <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-zinc-600">Solvency.</span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-zinc-600 max-w-2xl leading-relaxed">
+                        <p className="text-lg sm:text-xl text-zinc-900 max-w-2xl leading-relaxed">
                             Most product organizations are black boxes of capital consumption. The Product Economist uses proprietary frameworks to force <span className="text-zinc-950 font-bold">financial transparency</span>.
                         </p>
                     </header>
@@ -38,10 +38,10 @@ export default function SystemPage() {
                         <GlowCard className="p-6 sm:col-span-2" glowColor="zinc">
                             <div className="flex items-center gap-2 mb-3">
                                 <Database className="w-4 h-4 text-zinc-800" />
-                                <span className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">Board-Level Intelligence</span>
+                                <span className="font-mono text-[10px] text-zinc-900 uppercase tracking-widest">Board-Level Intelligence</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">Executive Board Room</h3>
-                            <p className="text-zinc-700 text-sm mb-4">Secure repository for your historical execution snapshots. Track margin erosion, valuation destruction, and operational drift across quarters in a unified C-Suite dashboard.</p>
+                            <p className="text-zinc-950 text-sm mb-4">Secure repository for your historical execution snapshots. Track margin erosion, valuation destruction, and operational drift across quarters in a unified C-Suite dashboard.</p>
                             <ShineBorder borderColor="rgba(255, 255, 255, 0.4)" duration={3}>
                                 <Link href="/tools/board-room" className="block w-full text-center bg-white text-black font-bold text-xs uppercase tracking-widest py-3 hover:bg-zinc-200 transition">
                                     Enter Board Room →
@@ -55,7 +55,7 @@ export default function SystemPage() {
                                 <span className="font-mono text-[10px] text-red-400 uppercase tracking-widest">AI-Powered</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">PDI 2.0 Engine</h3>
-                            <p className="text-zinc-700 text-sm mb-4">Product Debt Index. Forensic audit of your backlog to quantify capital leakage.</p>
+                            <p className="text-zinc-950 text-sm mb-4">Product Debt Index. Forensic audit of your backlog to quantify capital leakage.</p>
                             <ShineBorder borderColor="rgba(220, 38, 38, 0.6)" duration={2}>
                                 <Link href="/tools/pdi" className="block w-full text-center bg-red-600 text-white font-bold text-xs uppercase tracking-widest py-3 hover:bg-red-500 transition">
                                     Launch PDI →
@@ -69,7 +69,7 @@ export default function SystemPage() {
                                 <span className="font-mono text-[10px] text-cyan-400 uppercase tracking-widest">Valuation</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">EV-SE Engine</h3>
-                            <p className="text-zinc-700 text-sm mb-4">Enterprise Value Scenario Engine. Quantify how execution risk destroys valuation.</p>
+                            <p className="text-zinc-950 text-sm mb-4">Enterprise Value Scenario Engine. Quantify how execution risk destroys valuation.</p>
                             <ShineBorder borderColor="rgba(34, 211, 238, 0.6)" duration={2}>
                                 <Link href="/tools/ev-se" className="block w-full text-center bg-cyan-500 text-black font-bold text-xs uppercase tracking-widest py-3 hover:bg-cyan-400 transition">
                                     Launch EV-SE →
@@ -83,7 +83,7 @@ export default function SystemPage() {
                                 <span className="font-mono text-[10px] text-violet-400 uppercase tracking-widest">Unit Economics</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">AUEB Engine</h3>
-                            <p className="text-zinc-700 text-sm mb-4">AI Unit Economics Benchmark. Calculate your margin collapse point with model arbitrage analysis.</p>
+                            <p className="text-zinc-950 text-sm mb-4">AI Unit Economics Benchmark. Calculate your margin collapse point with model arbitrage analysis.</p>
                             <ShineBorder borderColor="rgba(139, 92, 246, 0.6)" duration={2}>
                                 <Link href="/tools/aueb" className="block w-full text-center bg-violet-600 text-white font-bold text-xs uppercase tracking-widest py-3 hover:bg-violet-500 transition">
                                     Launch AUEB →
@@ -97,7 +97,7 @@ export default function SystemPage() {
                                 <span className="font-mono text-[10px] text-emerald-400 uppercase tracking-widest">Human Capital Audit</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">Audit Interview</h3>
-                            <p className="text-zinc-700 text-sm mb-4">Quantify candidate judgment. Move beyond code syntax to measure capital stewardship and architectural reasoning.</p>
+                            <p className="text-zinc-950 text-sm mb-4">Quantify candidate judgment. Move beyond code syntax to measure capital stewardship and architectural reasoning.</p>
                             <ShineBorder borderColor="rgba(16, 185, 129, 0.6)" duration={2}>
                                 <Link href="/tools/audit-interview" className="block w-full text-center bg-emerald-600 text-white font-bold text-xs uppercase tracking-widest py-3 hover:bg-emerald-500 transition">
                                     Launch Audit Interview →
@@ -107,7 +107,7 @@ export default function SystemPage() {
                     </div>
 
                     {/* APER Diagnostic Tool Gateway */}
-                    <section id="aper" className="mb-8 pt-6 border-t border-zinc-200">
+                    <section id="aper" className="mb-8 pt-6 border-t border-zinc-400">
                         <div className="border border-yellow-500/20 rounded-2xl p-6 bg-gradient-to-br from-yellow-500/5 via-transparent to-transparent">
                             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                                 <div>
@@ -116,7 +116,7 @@ export default function SystemPage() {
                                         <span className="font-mono text-xs text-yellow-400 uppercase tracking-widest">Interactive Tool</span>
                                     </div>
                                     <h3 className="text-xl font-bold text-zinc-950 mb-1">APER™ Diagnostic</h3>
-                                    <p className="text-zinc-600 text-sm">The &quot;Revenue Per Engineer&quot; efficiency engine. Detect overstaffing and coordination overhead instantly.</p>
+                                    <p className="text-zinc-900 text-sm">The &quot;Revenue Per Engineer&quot; efficiency engine. Detect overstaffing and coordination overhead instantly.</p>
                                 </div>
                                 <ShineBorder borderColor="rgba(234, 179, 8, 0.6)" duration={2}>
                                     <Link href="/tools/aper" className="block px-6 py-3 bg-yellow-500 text-black font-bold text-xs uppercase tracking-widest hover:bg-yellow-400 transition whitespace-nowrap">
@@ -133,16 +133,16 @@ export default function SystemPage() {
 
             {/* Q-PEP Section */}
             <ScrollReveal delay={200}>
-                <section id="qpep" className="mb-8 border-t border-zinc-200 pt-8">
+                <section id="qpep" className="mb-8 border-t border-zinc-400 pt-8">
                     <div className="grid grid-cols-1 md:grid-cols-[80px_1fr] gap-4 sm:gap-6">
-                        <div className="text-3xl sm:text-4xl font-mono text-zinc-700 font-bold">02</div>
+                        <div className="text-3xl sm:text-4xl font-mono text-zinc-950 font-bold">02</div>
                         <div>
                             <h2 className="text-2xl sm:text-3xl font-bold text-zinc-950 mb-4">Q-PEP™ Protocol</h2>
                             <p className="font-mono text-xs text-cobalt tracking-widest uppercase mb-6">{"// QUALITATIVE-PROFITABILITY EFFICIENCY PROTOCOL"}</p>
-                            <p className="text-zinc-600 mb-6 text-base sm:text-lg">
+                            <p className="text-zinc-900 mb-6 text-base sm:text-lg">
                                 The framework for turnaround. Once leakage is identified (APER), Q-PEP is the surgery. It restructures the "Product Org" into an "Investment Portfolio."
                             </p>
-                            <ul className="space-y-3 font-mono text-xs sm:text-sm tracking-wide text-zinc-700 mb-6">
+                            <ul className="space-y-3 font-mono text-xs sm:text-sm tracking-wide text-zinc-950 mb-6">
                                 <li className="flex items-center gap-3"><span className="w-2 h-2 bg-cobalt rounded-full" />PHASE 1: Kill the "Maybe" Features</li>
                                 <li className="flex items-center gap-3"><span className="w-2 h-2 bg-cobalt rounded-full" />PHASE 2: CapEx vs. OpEx Re-Classification</li>
                                 <li className="flex items-center gap-3"><span className="w-2 h-2 bg-cobalt rounded-full" />PHASE 3: The "Win Locker" Implementation</li>
@@ -155,8 +155,8 @@ export default function SystemPage() {
 
             {/* CTA */}
             <ScrollReveal delay={300}>
-                <div className="text-center py-8 border-t border-zinc-200">
-                    <p className="text-zinc-600 mb-6">Ready to install financial transparency?</p>
+                <div className="text-center py-8 border-t border-zinc-400">
+                    <p className="text-zinc-900 mb-6">Ready to install financial transparency?</p>
                     <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
                         <Link
                             href="/advisory"

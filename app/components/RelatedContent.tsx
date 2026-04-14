@@ -39,7 +39,7 @@ export default function RelatedContent({ currentSlug, type, count = 3 }: Related
     if (related.length === 0) return null;
 
     return (
-        <div className="mt-16 pt-12 border-t border-zinc-200">
+        <div className="mt-16 pt-12 border-t border-zinc-400">
             <h2 className="text-xl font-bold font-grotesk text-zinc-950 mb-6">
                 Keep exploring
             </h2>
@@ -48,7 +48,7 @@ export default function RelatedContent({ currentSlug, type, count = 3 }: Related
                     <Link 
                         key={item.slug} 
                         href={`/${item.type}s/${item.slug}`}
-                        className="group p-5 rounded-xl border border-zinc-200 bg-white hover:bg-white/5 transition-all"
+                        className="group p-5 rounded-xl border border-zinc-400 bg-white hover:bg-white/5 transition-all"
                     >
                         <span className="text-[10px] font-mono text-purple-400 uppercase tracking-widest mb-2 block">
                             {item.type}

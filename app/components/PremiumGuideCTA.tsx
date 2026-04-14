@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import BundlePopup, { PREMIUM_GUIDES } from './BundlePopup';
@@ -21,7 +21,7 @@ export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCT
                     <span className="text-xs font-mono text-violet-400 uppercase tracking-widest">Premium Guide</span>
                 </div>
                 <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mb-2">{guideName}</h3>
-                <p className="text-zinc-600 text-sm mb-6 max-w-md mx-auto">
+                <p className="text-zinc-900 text-sm mb-6 max-w-md mx-auto">
                     Unlock full access to this guide including frameworks, templates, and actionable worksheets.
                 </p>
 

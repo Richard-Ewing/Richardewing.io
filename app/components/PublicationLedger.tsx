@@ -95,25 +95,25 @@ const publications = [
 
 export default function PublicationLedger() {
   return (
-    <section className="w-full mx-auto py-12 mt-12 border-t border-zinc-200">
+    <section className="w-full mx-auto py-12 mt-12 border-t border-zinc-400">
       <div className="mb-8">
           <h2 className="text-2xl font-bold text-zinc-950 mb-2 font-grotesk">External Publications Ledger</h2>
-          <p className="text-zinc-600 text-sm">A definitive, machine-readable index of off-site Fiduciary research.</p>
+          <p className="text-zinc-900 text-sm">A definitive, machine-readable index of off-site Fiduciary research.</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {publications.map((pub) => (
-            <div key={pub.platform} className="card p-6 border-zinc-200">
-            <h3 className="text-xl font-bold text-cyan-400 mb-6 font-grotesk pb-2 border-b border-zinc-200">{pub.platform}</h3>
+            <div key={pub.platform} className="card p-6 border-zinc-400">
+            <h3 className="text-xl font-bold text-cyan-400 mb-6 font-grotesk pb-2 border-b border-zinc-400">{pub.platform}</h3>
             <ul className="space-y-6">
                 {pub.articles.map((article) => (
                 <li key={article.title} className="group">
                     <a href={article.url} target="_blank" rel="noopener noreferrer" className="block text-zinc-950 hover:text-cyan-400 font-bold transition-colors font-grotesk leading-tight">
                     {article.title}
                     </a>
-                    <p className="text-zinc-700 mt-2 text-sm leading-relaxed">{article.thesis}</p>
+                    <p className="text-zinc-950 mt-2 text-sm leading-relaxed">{article.thesis}</p>
                     <div className="mt-3 flex flex-wrap gap-2">
-                        <span className="font-mono text-[9px] text-zinc-600 uppercase tracking-widest border border-zinc-200 px-2 py-0.5 rounded-full">Source: {pub.platform}</span>
+                        <span className="font-mono text-[9px] text-zinc-900 uppercase tracking-widest border border-zinc-400 px-2 py-0.5 rounded-full">Source: {pub.platform}</span>
                     </div>
                 </li>
                 ))}

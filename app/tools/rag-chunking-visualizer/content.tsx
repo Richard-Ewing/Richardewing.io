@@ -120,7 +120,7 @@ export default function RagChunkingContent() {
 
             {!results ? (
                 <ScrollReveal>
-                    <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-200">
+                    <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-400">
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse" />
                             <span className="font-mono text-xs text-indigo-400 uppercase tracking-widest">Semantic Splitting Simulator</span>
@@ -129,7 +129,7 @@ export default function RagChunkingContent() {
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
                              See where the <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-500">Meaning Breaks.</span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-zinc-600 mb-8 max-w-2xl leading-relaxed">
+                        <p className="text-lg sm:text-xl text-zinc-900 mb-8 max-w-2xl leading-relaxed">
                             Vector embedding pipelines fail because blind text-chunking destroys semantic context mid-sentence. Visualize exactly how your Pinecone or Chroma splits behave before committing them to the database.
                         </p>
 
@@ -142,14 +142,14 @@ export default function RagChunkingContent() {
                                     <textarea
                                         value={rawText}
                                         onChange={e => setRawText(e.target.value)}
-                                        className="w-full h-48 bg-white border border-zinc-200 rounded-xl p-6 font-mono text-xs text-zinc-700 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 transition-all placeholder:text-zinc-700 resize-none shadow-inner"
+                                        className="w-full h-48 bg-white border border-zinc-400 rounded-xl p-6 font-mono text-xs text-zinc-950 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 transition-all placeholder:text-zinc-950 resize-none shadow-inner"
                                         placeholder="Paste paragraphs, code blocks, or unstructured legal text here to observe how the sliding window tears it apart..."
                                     />
-                                    <div className="text-right mt-2 text-[10px] text-zinc-700 font-mono">Payload: {rawText.length} Characters</div>
+                                    <div className="text-right mt-2 text-[10px] text-zinc-950 font-mono">Payload: {rawText.length} Characters</div>
                                 </div>
                             </div>
                             
-                            <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-200">
+                            <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-400">
                                 <div className="flex justify-between items-end mb-4">
                                     <label className="text-xs font-mono text-indigo-400 uppercase tracking-widest flex items-center gap-2">
                                         <Settings size={14} /> Chunk Size (Chars)
@@ -162,10 +162,10 @@ export default function RagChunkingContent() {
                                     onChange={e => setChunkSize(parseInt(e.target.value))}
                                     className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-indigo-500" 
                                 />
-                                <p className="text-[10px] mt-3 font-mono text-zinc-700 leading-relaxed">The absolute length limit of each matrix sent to the embedding model.</p>
+                                <p className="text-[10px] mt-3 font-mono text-zinc-950 leading-relaxed">The absolute length limit of each matrix sent to the embedding model.</p>
                             </div>
 
-                            <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-200">
+                            <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-400">
                                 <div className="flex justify-between items-end mb-4">
                                     <label className="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2">
                                         <Layers size={14} /> Overlap Window
@@ -178,7 +178,7 @@ export default function RagChunkingContent() {
                                     onChange={e => setOverlap(parseInt(e.target.value))}
                                     className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-cyan-500" 
                                 />
-                                <p className="text-[10px] mt-3 font-mono text-zinc-700 leading-relaxed">Prevents semantic destruction by dragging context across boundaries.</p>
+                                <p className="text-[10px] mt-3 font-mono text-zinc-950 leading-relaxed">Prevents semantic destruction by dragging context across boundaries.</p>
                             </div>
                         </div>
 
@@ -220,13 +220,13 @@ export default function RagChunkingContent() {
 
                     <div id="chunk-pdf-export-zone" className="space-y-6">
                         <ScrollReveal>
-                            <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-zinc-200">
+                            <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-6 relative overflow-hidden border border-zinc-400">
                                 <BorderBeam size={400} duration={12} delay={9} borderWidth={1.5} colorFrom="#6366f1" colorTo="#06b6d4" />
                                 <div className="min-h-[300px] relative z-10 w-full">
                                     {persona === 'CFO' && (
                                         <div className="flex flex-col md:flex-row gap-8 items-center">
                                             <div className="flex-1">
-                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Hallucination Liability (CODN)</div>
+                                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-2">Hallucination Liability (CODN)</div>
                                                 <div className={`text-6xl sm:text-7xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.efficiencyScore < 50 ? 'from-rose-500 to-red-600' : 'from-indigo-400 to-cyan-400'}`}>
                                                     ${results.codn.toLocaleString()}
                                                 </div>
@@ -235,21 +235,21 @@ export default function RagChunkingContent() {
                                                         <TriangleAlert size={12}/> {results.brokenWords} SEVERED CONTEXT BOUNDARIES
                                                     </span>
                                                 </div>
-                                                <p className="text-sm text-zinc-600 mt-4 leading-relaxed">
+                                                <p className="text-sm text-zinc-900 mt-4 leading-relaxed">
                                                     Each severed semantic boundary creates isolated tokens that the LLM model cannot accurately interpret, forcing it to hallucinate responses. At an enterprise scale, these misinterpretations manifest as an estimated <strong className="text-zinc-900">${results.codn.toLocaleString()} in support rework and brand liability.</strong>
                                                 </p>
                                             </div>
-                                            <div className="flex-1 bg-white/50 p-6 rounded-2xl border border-zinc-200 space-y-4">
-                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-200 pb-3 mb-3">Database Load Topology</div>
-                                                <div className="flex justify-between items-center pb-2 border-b border-zinc-200">
+                                            <div className="flex-1 bg-white/50 p-6 rounded-2xl border border-zinc-400 space-y-4">
+                                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3 mb-3">Database Load Topology</div>
+                                                <div className="flex justify-between items-center pb-2 border-b border-zinc-400">
                                                     <span className="text-sm text-zinc-800">Total Vectors (Rows)</span>
                                                     <span className="text-sm font-mono text-indigo-400">{results.chunks.length}</span>
                                                 </div>
-                                                <div className="flex justify-between items-center pb-2 border-b border-zinc-200">
+                                                <div className="flex justify-between items-center pb-2 border-b border-zinc-400">
                                                     <span className="text-sm text-zinc-800">Storage API Run Rate</span>
                                                     <span className="text-sm font-mono text-rose-400">Inefficient</span>
                                                 </div>
-                                                <p className="text-xs text-zinc-700 font-mono mt-2 italic">Vector databases charge per dimensional float. Storing raw noise directly inflates monthly active spend.</p>
+                                                <p className="text-xs text-zinc-950 font-mono mt-2 italic">Vector databases charge per dimensional float. Storing raw noise directly inflates monthly active spend.</p>
                                             </div>
                                         </div>
                                     )}
@@ -257,16 +257,16 @@ export default function RagChunkingContent() {
                                     {persona === 'VP Eng' && (
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                                             <div>
-                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Semantic Integrity Score</div>
+                                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-2">Semantic Integrity Score</div>
                                                 <div className={`text-6xl sm:text-7xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.efficiencyScore < 50 ? 'from-rose-500 to-red-600' : 'from-indigo-400 to-cyan-400'}`}>
                                                     {results.efficiencyScore}%
                                                 </div>
-                                                <p className="text-sm text-zinc-600 mt-4 leading-relaxed">
+                                                <p className="text-sm text-zinc-900 mt-4 leading-relaxed">
                                                     The current sliding window parameters result in {results.brokenWords} hard word-shears, obliterating meaning.
                                                 </p>
                                             </div>
-                                            <div className="bg-white/50 p-6 rounded-2xl border border-zinc-200 space-y-4 h-full flex flex-col justify-center">
-                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-200 pb-3 mb-3">Ingest Pipeline Stats</div>
+                                            <div className="bg-white/50 p-6 rounded-2xl border border-zinc-400 space-y-4 h-full flex flex-col justify-center">
+                                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3 mb-3">Ingest Pipeline Stats</div>
                                                 <div className="flex justify-between items-center pb-2">
                                                     <span className="text-sm text-zinc-800">Pipeline Input</span>
                                                     <span className="text-sm font-mono text-indigo-400">{rawText.length} Chars</span>
@@ -275,7 +275,7 @@ export default function RagChunkingContent() {
                                                     <span className="text-sm text-zinc-800">Overlap Redundancy</span>
                                                     <span className="text-sm font-mono text-cyan-400">{overlap} Chars</span>
                                                 </div>
-                                                <div className="flex justify-between items-center border-t border-zinc-200 pt-3">
+                                                <div className="flex justify-between items-center border-t border-zinc-400 pt-3">
                                                     <span className="text-xs font-mono text-zinc-900">Semantic Cut Penalty</span>
                                                     <span className={`text-sm font-mono font-bold ${results.brokenWords > 0 ? 'text-red-400' : 'text-emerald-400'}`}>-{results.brokenWords * 2}% Loss</span>
                                                 </div>
@@ -286,18 +286,18 @@ export default function RagChunkingContent() {
                                     {persona === 'CISO' && (
                                         <div className="flex flex-col md:flex-row gap-8 items-center">
                                             <div className="flex-1 w-full bg-white/50 p-6 rounded-2xl border border-rose-500/20 space-y-4">
-                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-200 pb-3">Data Integrity Defect Pipeline</div>
+                                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Data Integrity Defect Pipeline</div>
                                                 <div className="space-y-4">
-                                                    <div className="flex justify-between items-center border-b border-zinc-200 pb-2">
+                                                    <div className="flex justify-between items-center border-b border-zinc-400 pb-2">
                                                         <span className="text-sm text-zinc-800">Authorization Context Loss</span>
                                                         <span className="text-xs font-mono text-rose-400 shrink-0">CRITICAL RISK</span>
                                                     </div>
-                                                    <div className="flex justify-between items-center border-b border-zinc-200 pb-2">
+                                                    <div className="flex justify-between items-center border-b border-zinc-400 pb-2">
                                                         <span className="text-sm text-zinc-800">Access Control Bypass</span>
                                                         <span className="text-xs font-mono text-amber-400 shrink-0">ELEVATED</span>
                                                     </div>
                                                 </div>
-                                                <p className="text-xs text-zinc-700 font-mono mt-2">When user permissions/access tags are physically chunked into a different embedded matrix than the sensitive data itself, RBAC fails.</p>
+                                                <p className="text-xs text-zinc-950 font-mono mt-2">When user permissions/access tags are physically chunked into a different embedded matrix than the sensitive data itself, RBAC fails.</p>
                                             </div>
                                         </div>
                                     )}
@@ -305,12 +305,12 @@ export default function RagChunkingContent() {
                                     {persona === 'Legal' && (
                                         <div className="flex flex-col md:flex-row gap-8 items-center">
                                             <div className="flex-1 bg-white/50 p-6 rounded-2xl border border-amber-500/20 space-y-4">
-                                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-200 pb-3">Contractual Interpretation Shearing</div>
+                                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Contractual Interpretation Shearing</div>
                                                 <div className="flex justify-between items-center pb-2">
                                                     <span className="text-sm text-zinc-800">Legal Negation Loss Rate</span>
                                                     <span className="text-sm font-mono text-rose-400 font-bold">{Math.min(100, results.brokenWords * 3)}%</span>
                                                 </div>
-                                                <p className="text-xs text-zinc-700 font-mono mt-2 leading-relaxed">
+                                                <p className="text-xs text-zinc-950 font-mono mt-2 leading-relaxed">
                                                     Legal liability soars when the embedding model physically separates sentences like "We are NOT" and "liable for financial damages." into two different chunks. If the LLM retrieves only the second chunk via cosine similarity, the AI issues legally binding falsehoods on behalf of the company.
                                                 </p>
                                             </div>
@@ -322,26 +322,26 @@ export default function RagChunkingContent() {
 
                         {/* VISUAL CASCADING FLOW OF CHUNKS */}
                         <ScrollReveal delay={150}>
-                            <div className="mb-6 border-b border-zinc-200 pb-4">
+                            <div className="mb-6 border-b border-zinc-400 pb-4">
                                 <h3 className="text-xl font-bold text-zinc-950 mb-2 flex items-center gap-2">
                                     <Server size={18} className="text-indigo-400"/>
                                     Vector Mapping Simulator
                                 </h3>
-                                <p className="text-zinc-700 text-sm">Visualizing how the Language Model interprets these physical database rows.</p>
+                                <p className="text-zinc-950 text-sm">Visualizing how the Language Model interprets these physical database rows.</p>
                             </div>
                             
                             <div className="space-y-4">
                                 {results.chunks.map((chunk, index) => (
                                     <div key={chunk.id} className="relative group transition-all duration-300">
                                          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-indigo-500 to-cyan-500 rounded-l-xl opacity-50 group-hover:opacity-100 z-10 transition-opacity"></div>
-                                         <div className="bg-white border border-zinc-200 hover:border-zinc-300 rounded-xl p-6 pl-8 transition-colors">
+                                         <div className="bg-white border border-zinc-400 hover:border-zinc-300 rounded-xl p-6 pl-8 transition-colors">
                                               <div className="flex justify-between items-center mb-3">
                                                   <div className="text-xs font-mono uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">
                                                       Vector Index [{index}]
                                                   </div>
                                                   <div className="text-[10px] text-zinc-800 font-mono">Chars: {chunk.start} → {chunk.end}</div>
                                               </div>
-                                              <p className="text-sm font-mono text-zinc-700 leading-relaxed whitespace-pre-wrap">
+                                              <p className="text-sm font-mono text-zinc-950 leading-relaxed whitespace-pre-wrap">
                                                   {renderVisuallyHighlightedOverlap(chunk, index, index === results.chunks.length - 1)}
                                               </p>
                                          </div>
@@ -356,13 +356,13 @@ export default function RagChunkingContent() {
 
                         {/* VECTOR REDUNDANCY MAP */}
                         <ScrollReveal delay={200}>
-                            <div className="bg-white border border-zinc-200 rounded-2xl p-6 mt-8 mb-8 shadow-2xl relative overflow-hidden">
-                                <h3 className="text-xs font-mono text-cyan-400 uppercase tracking-widest border-b border-zinc-200 pb-3 mb-6 flex justify-between">
+                            <div className="bg-white border border-zinc-400 rounded-2xl p-6 mt-8 mb-8 shadow-2xl relative overflow-hidden">
+                                <h3 className="text-xs font-mono text-cyan-400 uppercase tracking-widest border-b border-zinc-400 pb-3 mb-6 flex justify-between">
                                     <span>Vector Index Bloat Visualization</span>
                                     <span className="text-rose-400">{((overlap / chunkSize) * 100).toFixed(1)}% Storage Redundancy</span>
                                 </h3>
                                 
-                                <div className="relative h-48 w-full border-b border-l border-zinc-200/80 p-4">
+                                <div className="relative h-48 w-full border-b border-l border-zinc-400/80 p-4">
                                     <div className="absolute -left-6 top-1/2 -rotate-90 text-[10px] font-mono text-zinc-800 tracking-widest uppercase">Vector Storage Space</div>
                                     <div className="absolute bottom-1 right-1/2 translate-x-1/2 text-[10px] font-mono text-zinc-800 tracking-widest uppercase mb-[-20px]">Timeline of Document Chunks</div>
                                     
@@ -393,14 +393,14 @@ export default function RagChunkingContent() {
                                                         ></motion.div>
                                                     )}
                                                     <div className="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span className="text-[10px] font-mono bg-white border border-zinc-200 px-1 py-0.5 rounded text-zinc-900">{chunk.end - chunk.start}c</span>
+                                                        <span className="text-[10px] font-mono bg-white border border-zinc-400 px-1 py-0.5 rounded text-zinc-900">{chunk.end - chunk.start}c</span>
                                                     </div>
                                                 </motion.div>
                                             );
                                         })}
                                     </div>
                                 </div>
-                                <div className="mt-8 pt-4 text-[11px] text-zinc-700 font-mono leading-relaxed max-w-2xl">
+                                <div className="mt-8 pt-4 text-[11px] text-zinc-950 font-mono leading-relaxed max-w-2xl">
                                     Vectors stacking horizontally with the yellow intersections representing duplicated tokens explicitly stored multiple times inside your Pinecone/Weaviate index. A high redundancy rapidly accelerates RAM consumption and indexing API exhaust.
                                 </div>
                             </div>
@@ -408,32 +408,32 @@ export default function RagChunkingContent() {
 
                         {/* CLOUD API BURN METRICS (NEW STRAT) */}
                         <ScrollReveal delay={220}>
-                            <div className="mb-6 border-b border-zinc-200 pb-4 mt-8">
+                            <div className="mb-6 border-b border-zinc-400 pb-4 mt-8">
                                 <h3 className="text-xl font-bold text-zinc-950 mb-2 flex items-center gap-2">
                                     <Server size={18} className="text-cyan-400"/>
                                     Enterprise Cloud Margin Impact
                                 </h3>
-                                <p className="text-zinc-700 text-sm">Fortune 500 cloud infrastructure spend multiplier based on current chunking inefficiency.</p>
+                                <p className="text-zinc-950 text-sm">Fortune 500 cloud infrastructure spend multiplier based on current chunking inefficiency.</p>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-sm">
-                                <div className="bg-white/5 border border-zinc-200 p-5 rounded-xl">
-                                    <h4 className="text-zinc-950 font-semibold mb-4 border-b border-zinc-200 pb-2">Vector Database Burn (Pinecone/Milvus)</h4>
+                                <div className="bg-white/5 border border-zinc-400 p-5 rounded-xl">
+                                    <h4 className="text-zinc-950 font-semibold mb-4 border-b border-zinc-400 pb-2">Vector Database Burn (Pinecone/Milvus)</h4>
                                     <div className="space-y-4">
                                         <div>
                                             <div className="flex justify-between mb-1"><span className="text-zinc-800">Inefficiency Premium</span><span className="text-rose-400 font-mono font-bold">+${Math.round(results.chunks.length * 14.5).toLocaleString()}/yr</span></div>
-                                            <p className="text-xs text-zinc-700 mt-2">Bad chunking necessitates upgrading from cheap s1 (storage optimized) pods to expensive p2 (performance optimized) pods to handle the sheer volume of fragmented, overlapping semantic arrays.</p>
+                                            <p className="text-xs text-zinc-950 mt-2">Bad chunking necessitates upgrading from cheap s1 (storage optimized) pods to expensive p2 (performance optimized) pods to handle the sheer volume of fragmented, overlapping semantic arrays.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="bg-white/5 border border-zinc-200 p-5 rounded-xl">
-                                    <h4 className="text-zinc-950 font-semibold mb-4 border-b border-zinc-200 pb-2">Frontier Model API Exhaust</h4>
+                                <div className="bg-white/5 border border-zinc-400 p-5 rounded-xl">
+                                    <h4 className="text-zinc-950 font-semibold mb-4 border-b border-zinc-400 pb-2">Frontier Model API Exhaust</h4>
                                     <div className="space-y-4">
                                         <div className="flex items-center gap-3">
                                             <div className="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-500/30 text-cyan-400 font-bold shrink-0">API</div>
                                             <div>
                                                 <div className="text-zinc-950 font-semibold flex justify-between">Retrieval Token Tax <span className="text-rose-400 font-mono text-xs">+{((overlap / chunkSize)*100).toFixed(0)}% Opex</span></div>
-                                                <div className="text-xs text-zinc-600 mt-1">Every RAG pipeline query pulls these redundant tokens into the context window, multiplying your per-token prompt costs geometrically.</div>
+                                                <div className="text-xs text-zinc-900 mt-1">Every RAG pipeline query pulls these redundant tokens into the context window, multiplying your per-token prompt costs geometrically.</div>
                                             </div>
                                         </div>
                                     </div>
@@ -443,45 +443,45 @@ export default function RagChunkingContent() {
 
                         {/* Board-Ready 3-Step Remediation Playbook */}
                         <ScrollReveal delay={250}>
-                             <div className="mb-6 border-b border-zinc-200 pb-4 mt-8">
+                             <div className="mb-6 border-b border-zinc-400 pb-4 mt-8">
                                 <h3 className="text-xl font-bold text-zinc-950 mb-2 flex items-center gap-2">
                                     <Database size={18} className="text-indigo-400"/>
                                     Execution Playbook: Semantic Protection
                                 </h3>
-                                <p className="text-zinc-700 text-sm">Deploy this architecture to eliminate vector hallucination and data shears.</p>
+                                <p className="text-zinc-950 text-sm">Deploy this architecture to eliminate vector hallucination and data shears.</p>
                             </div>
                             
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                                <div className="bg-white/80 border border-zinc-200 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-indigo-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-indigo-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-indigo-500/10 transition-colors"></div>
                                      <div className="text-indigo-400 font-mono text-xs mb-3 uppercase tracking-widest bg-indigo-500/10 w-8 h-8 rounded flex items-center justify-center border border-indigo-500/20">01</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Sync Embedding Models</h4>
-                                     <p className="text-zinc-600 text-sm mb-4">Never use string-length chunking. Always chunk using the exact Byte Pair Encoding (tiktoken) of your target embedding model.</p>
-                                     <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2 relative z-10">
+                                     <p className="text-zinc-900 text-sm mb-4">Never use string-length chunking. Always chunk using the exact Byte Pair Encoding (tiktoken) of your target embedding model.</p>
+                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
                                          <div className="flex items-center gap-2 text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-900">Validate the exact encoding dictionary (e.g. text-embedding-3-small) to prevent mid-token shearing.</p>
                                      </div>
                                 </div>
-                                <div className="bg-white/80 border border-zinc-200 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-cyan-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-cyan-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                      <div className="text-cyan-400 font-mono text-xs mb-3 uppercase tracking-widest bg-cyan-500/10 w-8 h-8 rounded flex items-center justify-center border border-cyan-500/20">02</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Recursive Splitting</h4>
-                                     <p className="text-zinc-600 text-sm mb-4">Upgrade your ingest pipeline to use Recursive Splitting (paragraphs, then sentences, then cascading down to words).</p>
-                                     <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2 relative z-10">
+                                     <p className="text-zinc-900 text-sm mb-4">Upgrade your ingest pipeline to use Recursive Splitting (paragraphs, then sentences, then cascading down to words).</p>
+                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
                                          <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-900">Force semantic ideas to stay geometrically bound together in vector space.</p>
                                      </div>
                                 </div>
-                                <div className="bg-white/80 border border-zinc-200 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
                                      <div className="text-emerald-400 font-mono text-xs mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Window Expansion</h4>
-                                     <p className="text-zinc-600 text-sm mb-4">Provide enough surrounding context for the LLM to understand referential pronouns (it, they, he) in isolated queries.</p>
-                                     <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2 relative z-10">
+                                     <p className="text-zinc-900 text-sm mb-4">Provide enough surrounding context for the LLM to understand referential pronouns (it, they, he) in isolated queries.</p>
+                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
                                          <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
@@ -502,7 +502,7 @@ export default function RagChunkingContent() {
                             />
 
                             <div className="flex justify-center flex-wrap gap-6 mt-8" data-html2canvas-ignore>
-                                <button onClick={() => setResults(null)} className="text-zinc-700 font-mono tracking-widest text-xs hover:text-zinc-900 uppercase transition-colors">← Update Padding Parameters</button>
+                                <button onClick={() => setResults(null)} className="text-zinc-950 font-mono tracking-widest text-xs hover:text-zinc-900 uppercase transition-colors">← Update Padding Parameters</button>
                             </div>
                         </ScrollReveal>
                     </div>

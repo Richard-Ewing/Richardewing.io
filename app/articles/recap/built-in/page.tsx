@@ -60,10 +60,10 @@ export default function BuiltInRecapPage() {
                         Published on{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Built In</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-4 max-w-2xl">
+                    <p className="text-lg text-zinc-900 mb-4 max-w-2xl">
                         Richard Ewing&apos;s articles on Built In — the leading platform for startup and tech company culture, covering engineering team economics, developer productivity, and scaling strategies.
                     </p>
-                    <p className="text-sm text-zinc-700 mb-12">Built In reaches 3M+ tech professionals monthly across 8 metro markets.</p>
+                    <p className="text-sm text-zinc-950 mb-12">Built In reaches 3M+ tech professionals monthly across 8 metro markets.</p>
 
                     <div className="space-y-6 mb-16">
                         {articles.map((article, i) => (
@@ -72,7 +72,7 @@ export default function BuiltInRecapPage() {
                                     <span className="text-3xl">{article.icon}</span>
                                     <div className="flex-1">
                                         <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">{article.title}</h2>
-                                        <p className="text-zinc-600 mb-4">{article.description}</p>
+                                        <p className="text-zinc-900 mb-4">{article.description}</p>
                                         <div className="flex flex-wrap gap-2">
                                             {article.topics.map(topic => (
                                                 <span key={topic} className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-400 font-mono">{topic}</span>
@@ -85,27 +85,27 @@ export default function BuiltInRecapPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8">
+                        <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
                                 {['aper', 'engineering-productivity', 'maintenance-load', 'feature-velocity', 'cost-per-hire'].map(slug => (
-                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
+                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>
                         </div>
-                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8">
+                        <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Tools</h2>
                             <div className="space-y-2">
-                                <Link href="/tools/aper" className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ APER Calculator</Link>
-                                <Link href="/tools/ev-se" className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ EV-SE Calculator</Link>
-                                <Link href="/tools/audit-interview" className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ Audit Interview</Link>
+                                <Link href="/tools/aper" className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ APER Calculator</Link>
+                                <Link href="/tools/ev-se" className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ EV-SE Calculator</Link>
+                                <Link href="/tools/audit-interview" className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ Audit Interview</Link>
                             </div>
                         </div>
                     </div>
 
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Work With Richard</h2>
-                        <p className="text-zinc-700 mb-6">Scale your engineering organization with evidence-based economics. R&amp;D Capital Audits quantify engineering investment returns for boards and investors.</p>
+                        <p className="text-zinc-950 mb-6">Scale your engineering organization with evidence-based economics. R&amp;D Capital Audits quantify engineering investment returns for boards and investors.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
                     </div>
                 </div>

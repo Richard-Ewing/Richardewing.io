@@ -83,7 +83,7 @@ export default async function ArticlePage({ params }: Props) {
             </div>
 
             {/* Header */}
-            <header className="mb-12 border-b border-zinc-200 pb-12">
+            <header className="mb-12 border-b border-zinc-400 pb-12">
                 <div className="flex items-center gap-4 mb-6">
                     <span className="px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono uppercase tracking-widest">
                         {article.source}
@@ -102,7 +102,7 @@ export default async function ArticlePage({ params }: Props) {
 
             {/* Content Placeholder / Fallback */}
             <div className="prose prose-zinc prose-lg max-w-none">
-                <div className="p-8 bg-white/5 border border-zinc-200 rounded-2xl mb-12">
+                <div className="p-8 bg-white/5 border border-zinc-400 rounded-2xl mb-12">
                     <h3 className="text-xl font-bold text-zinc-950 mb-4 font-grotesk">Full Text Available in Archive</h3>
                     <p className="text-zinc-600 text-sm mb-6">
                         This article was originally published on <strong>{article.source}</strong>.
@@ -117,7 +117,7 @@ export default async function ArticlePage({ params }: Props) {
                                 Read Archival Copy
                             </a>
                         )}
-                        <Link href="/briefings" className="px-6 py-3 border border-white/20 hover:border-zinc-2000 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-lg transition-colors">
+                        <Link href="/briefings" className="px-6 py-3 border border-white/20 hover:border-zinc-4000 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-lg transition-colors">
                             View All Briefings
                         </Link>
                     </div>
@@ -129,7 +129,7 @@ export default async function ArticlePage({ params }: Props) {
                 )}
             </div>
 
-            <div className="mt-20 pt-12 border-t border-zinc-200">
+            <div className="mt-20 pt-12 border-t border-zinc-400">
                 <Link href="/articles" className="text-zinc-500 hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-mono uppercase tracking-widest">
                     ← Back to Canonical Hub
                 </Link>

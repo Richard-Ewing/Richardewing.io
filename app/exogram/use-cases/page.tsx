@@ -56,7 +56,7 @@ export default function ExogramUseCasesPage() {
     return (
         <main className="pt-24 pb-20">
             <div className="page-container max-w-5xl mx-auto">
-                <div className="text-xs text-zinc-700 mb-8">
+                <div className="text-xs text-zinc-950 mb-8">
                     <Link href="/exogram" className="hover:text-zinc-900 transition-colors">Exogram</Link>
                     <span className="mx-2">→</span>
                     <span className="text-zinc-800">Use Cases</span>
@@ -67,7 +67,7 @@ export default function ExogramUseCasesPage() {
                     <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Use <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Cases.</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-zinc-900 max-w-2xl mx-auto">
                         Every industry deploying AI faces the same problem: outputs that can&apos;t be trusted.
                         Exogram provides the verification layer that makes AI enterprise-ready.
                     </p>
@@ -75,7 +75,7 @@ export default function ExogramUseCasesPage() {
 
                 <div className="space-y-8">
                     {useCases.map(uc => (
-                        <section key={uc.title} className="rounded-2xl border border-zinc-200 bg-white/[0.03] p-8 hover:border-purple-500/20 transition-colors">
+                        <section key={uc.title} className="rounded-2xl border border-zinc-400 bg-white/[0.03] p-8 hover:border-purple-500/20 transition-colors">
                             <div className="flex items-start gap-4 mb-6">
                                 <span className="text-4xl">{uc.icon}</span>
                                 <div>
@@ -87,18 +87,18 @@ export default function ExogramUseCasesPage() {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div>
                                     <h3 className="text-xs font-mono text-red-400 uppercase tracking-widest mb-3">Problem</h3>
-                                    <p className="text-sm text-zinc-600 leading-relaxed">{uc.problem}</p>
+                                    <p className="text-sm text-zinc-900 leading-relaxed">{uc.problem}</p>
                                 </div>
                                 <div>
                                     <h3 className="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-3">Solution</h3>
-                                    <p className="text-sm text-zinc-600 leading-relaxed">{uc.solution}</p>
+                                    <p className="text-sm text-zinc-900 leading-relaxed">{uc.solution}</p>
                                 </div>
                                 <div>
                                     <h3 className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3">Impact</h3>
                                     <p className="text-sm text-zinc-950 font-semibold mb-3">{uc.impact}</p>
                                     <div className="flex flex-wrap gap-1.5">
                                         {uc.regulations.map(r => (
-                                            <span key={r} className="text-[10px] font-mono text-zinc-700 px-2 py-0.5 rounded border border-zinc-200 bg-zinc-50">{r}</span>
+                                            <span key={r} className="text-[10px] font-mono text-zinc-950 px-2 py-0.5 rounded border border-zinc-400 bg-zinc-50">{r}</span>
                                         ))}
                                     </div>
                                 </div>
@@ -110,12 +110,12 @@ export default function ExogramUseCasesPage() {
                 <section className="mt-16 text-center">
                     <div className="card p-10 border-purple-500/20 bg-purple-900/10">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Your Industry Not Listed?</h2>
-                        <p className="text-zinc-600 mb-6 max-w-lg mx-auto">Exogram&apos;s verification layers are industry-agnostic. If your AI system produces outputs that need to be trusted, Exogram can verify them.</p>
+                        <p className="text-zinc-900 mb-6 max-w-lg mx-auto">Exogram&apos;s verification layers are industry-agnostic. If your AI system produces outputs that need to be trusted, Exogram can verify them.</p>
                         <div className="flex justify-center gap-4">
                             <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
                                 Visit Exogram.ai →
                             </a>
-                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-200 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                                 Discuss Your Use Case →
                             </Link>
                         </div>

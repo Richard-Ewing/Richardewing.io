@@ -111,7 +111,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
                      {/* Competitor Column */}
-                     <div className="bg-white border border-zinc-200 rounded-[2rem] p-8 relative overflow-hidden group hover:border-red-500/20 transition-all opacity-80">
+                     <div className="bg-white border border-zinc-400 rounded-[2rem] p-8 relative overflow-hidden group hover:border-red-500/20 transition-all opacity-80">
                           <div className="absolute top-0 right-0 p-6 opacity-10">
                               <Target size={120} />
                           </div>
@@ -164,13 +164,13 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                         <h3 className="text-3xl font-bold mb-3">Head-To-Head Architecture</h3>
                         <p className="text-zinc-900">Why {competitor.name} fails in the boardroom.</p>
                     </div>
-                    <div className="bg-white border border-zinc-200 rounded-2xl overflow-hidden">
+                    <div className="bg-white border border-zinc-400 rounded-2xl overflow-hidden">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="bg-white/5 border-b border-zinc-200">
+                                <tr className="bg-white/5 border-b border-zinc-400">
                                     <th className="p-6 text-sm font-bold text-zinc-700 uppercase tracking-widest w-1/2">Capability</th>
-                                    <th className="p-6 text-sm font-bold text-zinc-500 uppercase tracking-widest w-1/4 text-center border-l border-zinc-200">{competitor.name}</th>
-                                    <th className="p-6 text-sm font-bold text-indigo-400 uppercase tracking-widest w-1/4 text-center border-l border-zinc-200">{tool.toolName}</th>
+                                    <th className="p-6 text-sm font-bold text-zinc-500 uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{competitor.name}</th>
+                                    <th className="p-6 text-sm font-bold text-indigo-400 uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{tool.toolName}</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-zinc-200">

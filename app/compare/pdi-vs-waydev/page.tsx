@@ -32,22 +32,22 @@ export default function ComparePDIWaydevPage() {
                         Product Debt Index vs{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Waydev</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
                         PDI quantifies technical debt in dollars. Waydev tracks developer activity from git data. One speaks finance, the other speaks engineering. They solve different problems.
                     </p>
 
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full text-sm">
                             <thead>
-                                <tr className="border-b border-zinc-200">
-                                    <th className="text-left py-4 px-4 text-zinc-700 font-mono uppercase tracking-widest text-xs">Dimension</th>
+                                <tr className="border-b border-zinc-400">
+                                    <th className="text-left py-4 px-4 text-zinc-950 font-mono uppercase tracking-widest text-xs">Dimension</th>
                                     <th className="text-left py-4 px-4 text-cyan-400 font-mono uppercase tracking-widest text-xs">PDI</th>
                                     <th className="text-left py-4 px-4 text-emerald-400 font-mono uppercase tracking-widest text-xs">Waydev</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {dimensions.map((d, i) => (
-                                    <tr key={i} className="border-b border-zinc-200 hover:bg-zinc-50 transition-colors">
+                                    <tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50 transition-colors">
                                         <td className="py-4 px-4 text-zinc-950 font-medium">{d.dimension}</td>
                                         <td className={`py-4 px-4 ${d.winner === 'pdi' ? 'text-cyan-400' : 'text-zinc-900'}`}>{d.pdi}</td>
                                         <td className={`py-4 px-4 ${d.winner === 'waydev' ? 'text-emerald-400' : 'text-zinc-900'}`}>{d.waydev}</td>
@@ -59,7 +59,7 @@ export default function ComparePDIWaydevPage() {
 
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8 text-center">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try PDI — Free</h2>
-                        <p className="text-zinc-700 mb-6">Calculate your Product Debt Index and Technical Insolvency Date in 10 minutes. No git integration required.</p>
+                        <p className="text-zinc-950 mb-6">Calculate your Product Debt Index and Technical Insolvency Date in 10 minutes. No git integration required.</p>
                         <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:opacity-90 transition-opacity">Calculate Your PDI →</Link>
                     </div>
                 </div>

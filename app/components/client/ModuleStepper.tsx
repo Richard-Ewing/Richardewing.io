@@ -43,7 +43,7 @@ export default function ModuleStepper({ parsedContent, hasAccess = true, childre
                         <BookOpen className="w-3 h-3" />
                         {currentStep === 0 ? 'Syllabus Introduction' : `Lesson ${currentStep} of ${totalSteps - 1}`}
                     </span>
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest bg-zinc-50 border border-zinc-200 px-2 py-1 rounded flex items-center gap-1">
+                    <span className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest bg-zinc-50 border border-zinc-400 px-2 py-1 rounded flex items-center gap-1">
                         <Clock className="w-3 h-3 text-emerald-500" />
                         2 MIN READ
                     </span>
@@ -88,11 +88,11 @@ export default function ModuleStepper({ parsedContent, hasAccess = true, childre
 
             {/* The Footer Action Dashboard */}
             {hasAccess && (
-                <div className="mt-16 pt-8 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-50">
+                <div className="mt-16 pt-8 border-t border-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-50">
                     <button 
                         onClick={handlePrev}
                         disabled={currentStep === 0}
-                        className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-white border border-zinc-200 text-zinc-950 hover:bg-zinc-50"
+                        className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-white border border-zinc-400 text-zinc-950 hover:bg-zinc-50"
                     >
                         <ChevronLeft className="w-4 h-4" /> Previous
                     </button>

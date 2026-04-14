@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
@@ -22,7 +22,7 @@ const BriefCard = ({ number, title, subtitle, href, isNew, date }: BriefCardProp
                     New
                 </div>
             )}
-            <div className="text-xs text-zinc-700 mb-3 font-mono uppercase tracking-widest">{number} · {date}</div>
+            <div className="text-xs text-zinc-950 mb-3 font-mono uppercase tracking-widest">{number} · {date}</div>
             <h3 className="font-semibold text-lg text-zinc-950 mb-2 group-hover:text-purple-400 transition-colors font-grotesk">
                 {title}
             </h3>
@@ -125,7 +125,7 @@ export default function BriefingsPage() {
             {/* Archive link */}
             <ScrollReveal delay={300}>
                 <div className="text-center pb-20">
-                    <p className="text-zinc-700 text-sm mb-4">
+                    <p className="text-zinc-950 text-sm mb-4">
                         Full archive on Beehiiv:
                     </p>
                     <a

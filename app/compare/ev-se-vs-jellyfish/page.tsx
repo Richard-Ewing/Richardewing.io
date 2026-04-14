@@ -31,18 +31,18 @@ export default function EVSEvsJellyfishPage() {
                         EV-SE <span className="text-zinc-900">vs</span>{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">Jellyfish</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
                         Jellyfish tracks what engineers are working on. EV-SE tells you <span className="text-zinc-950 font-bold">whether that work is economically sustainable</span>. Activity metrics ≠ economic sustainability.
                     </p>
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full border-collapse">
-                            <thead><tr className="border-b border-zinc-200"><th className="text-left py-4 px-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">Dimension</th><th className="text-left py-4 px-4 text-xs font-mono text-teal-400 uppercase tracking-widest">EV-SE</th><th className="text-left py-4 px-4 text-xs font-mono text-zinc-600 uppercase tracking-widest">Jellyfish</th></tr></thead>
-                            <tbody>{rows.map((row, i) => (<tr key={i} className="border-b border-zinc-200 hover:bg-zinc-50"><td className="py-4 px-4 text-sm text-zinc-600 font-bold">{row.dimension}</td><td className="py-4 px-4 text-sm text-zinc-900">{row.evse}</td><td className="py-4 px-4 text-sm text-zinc-800">{row.jelly}</td></tr>))}</tbody>
+                            <thead><tr className="border-b border-zinc-400"><th className="text-left py-4 px-4 text-xs font-mono text-zinc-800 uppercase tracking-widest">Dimension</th><th className="text-left py-4 px-4 text-xs font-mono text-teal-400 uppercase tracking-widest">EV-SE</th><th className="text-left py-4 px-4 text-xs font-mono text-zinc-900 uppercase tracking-widest">Jellyfish</th></tr></thead>
+                            <tbody>{rows.map((row, i) => (<tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50"><td className="py-4 px-4 text-sm text-zinc-900 font-bold">{row.dimension}</td><td className="py-4 px-4 text-sm text-zinc-900">{row.evse}</td><td className="py-4 px-4 text-sm text-zinc-800">{row.jelly}</td></tr>))}</tbody>
                         </table>
                     </div>
                     <div className="rounded-2xl border border-teal-500/30 bg-teal-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
-                        <p className="text-zinc-700 mb-6"><strong>Use both — for different purposes.</strong> Jellyfish shows engineering activity. EV-SE evaluates whether that activity creates lasting value. Tracking without economic analysis is measurement without meaning.</p>
+                        <p className="text-zinc-950 mb-6"><strong>Use both — for different purposes.</strong> Jellyfish shows engineering activity. EV-SE evaluates whether that activity creates lasting value. Tracking without economic analysis is measurement without meaning.</p>
                         <Link href="/tools/ev-se" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-bold hover:opacity-90 transition-opacity">Try the Free EV-SE Calculator →</Link>
                     </div>
                 </div>

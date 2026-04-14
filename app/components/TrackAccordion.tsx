@@ -50,7 +50,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                 <div className="flex-shrink-0 text-3xl sm:text-4xl mt-1">{track.icon}</div>
                 <div className="flex-grow pr-4">
                     <div className="flex items-center gap-3 mb-2">
-                        <div className="text-[10px] sm:text-xs font-mono text-zinc-500 uppercase tracking-widest">{track.subtitle}</div>
+                        <div className="text-[10px] sm:text-xs font-mono text-zinc-800 uppercase tracking-widest">{track.subtitle}</div>
                         {completionCount > 0 && (
                             <div className="flex items-center gap-2">
                                 <span className="text-[10px] font-mono text-emerald-600 uppercase tracking-widest border border-emerald-200 px-2 py-0.5 rounded-full bg-emerald-50">
@@ -60,7 +60,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                         )}
                     </div>
                     <h2 className={`text-xl sm:text-2xl font-grotesk font-bold ${textMap[track.color]} transition-colors`}>{track.title}</h2>
-                    <p className={`text-sm sm:text-base text-zinc-700 mt-2 line-clamp-2 sm:line-clamp-none ${isOpen ? '' : 'hidden sm:block'}`}>
+                    <p className={`text-sm sm:text-base text-zinc-950 mt-2 line-clamp-2 sm:line-clamp-none ${isOpen ? '' : 'hidden sm:block'}`}>
                         {track.description}
                     </p>
                     {completionCount > 0 && !isOpen && (
@@ -83,8 +83,8 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
             <div 
                 className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
             >
-                <div className="px-6 pb-6 pt-0 sm:px-8 sm:pb-8 border-t border-zinc-200 mt-2 pt-6">
-                    <p className="text-zinc-700 mb-8 sm:hidden">{track.description}</p>
+                <div className="px-6 pb-6 pt-0 sm:px-8 sm:pb-8 border-t border-zinc-400 mt-2 pt-6">
+                    <p className="text-zinc-950 mb-8 sm:hidden">{track.description}</p>
                     
                     {completionCount > 0 && (
                         <div className="w-full h-1.5 bg-zinc-200 overflow-hidden rounded-full mb-8 border border-zinc-300">
@@ -96,14 +96,14 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                         {track.modules.map((m: any, j: number) => {
                             const isDone = completedModules.includes(m.id);
                             return (
-                                <Link key={j} href={m.href} className={`flex items-center justify-between p-4 rounded-xl border transition-colors group ${isDone ? 'bg-emerald-50 border-emerald-200 hover:border-emerald-300' : 'bg-white border-zinc-200 hover:border-zinc-300 shadow-sm'}`}>
+                                <Link key={j} href={m.href} className={`flex items-center justify-between p-4 rounded-xl border transition-colors group ${isDone ? 'bg-emerald-50 border-emerald-200 hover:border-emerald-300' : 'bg-white border-zinc-400 hover:border-zinc-300 shadow-sm'}`}>
                                     <div className="pr-4 flex items-center gap-3">
                                         <div className="flex-shrink-0 text-zinc-900 font-bold text-sm w-6">
                                             {isDone ? <span className="text-emerald-600">✓</span> : <span className="text-zinc-800">{j + 1}.</span>}
                                         </div>
                                         <div>
                                             <div className={`font-bold text-sm transition-colors ${isDone ? 'text-zinc-800 group-hover:text-emerald-600' : 'text-zinc-900 group-hover:text-purple-700'}`}>{m.name}</div>
-                                            <div className="text-xs text-zinc-700 mt-1">{m.topics}</div>
+                                            <div className="text-xs text-zinc-950 mt-1">{m.topics}</div>
                                         </div>
                                     </div>
                                     <span className={`flex-shrink-0 px-3 py-1 rounded-full text-xs font-mono border whitespace-nowrap ${isDone ? 'bg-zinc-100 text-emerald-600 border-emerald-200' : 'bg-emerald-50 text-emerald-600 border-emerald-200'}`}>
@@ -114,13 +114,13 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                         })}
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-zinc-50 rounded-xl p-6 border border-zinc-200">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-zinc-50 rounded-xl p-6 border border-zinc-400">
                         {track.glossaryTerms && track.glossaryTerms.length > 0 && (
                             <div>
-                                <h3 className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-3">Related Glossary</h3>
+                                <h3 className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-3">Related Glossary</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {track.glossaryTerms.map((t: string) => (
-                                        <Link key={t} href={`/glossary/${t}`} className="px-2 py-1 rounded-md bg-white text-xs text-zinc-600 hover:text-zinc-900 transition-colors border border-zinc-200 hover:border-zinc-300">
+                                        <Link key={t} href={`/glossary/${t}`} className="px-2 py-1 rounded-md bg-white text-xs text-zinc-900 hover:text-zinc-900 transition-colors border border-zinc-400 hover:border-zinc-300">
                                             {t.replace(/-/g, ' ')}
                                         </Link>
                                     ))}
@@ -129,10 +129,10 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                         )}
                         {track.tools && track.tools.length > 0 && (
                             <div>
-                                <h3 className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-3">Tools & Assets</h3>
+                                <h3 className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-3">Tools & Assets</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {track.tools.map((t: any) => (
-                                        <Link key={t.href} href={t.href} className={`px-3 py-1 rounded-md text-xs font-bold ${textMap[track.color]} bg-white border border-zinc-200 hover:border-current transition-colors`}>
+                                        <Link key={t.href} href={t.href} className={`px-3 py-1 rounded-md text-xs font-bold ${textMap[track.color]} bg-white border border-zinc-400 hover:border-current transition-colors`}>
                                             {t.name} →
                                         </Link>
                                     ))}
@@ -157,7 +157,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                     <Link href="/advisory" className="px-6 py-3 rounded-lg bg-emerald-600 text-white font-bold text-sm text-center hover:bg-emerald-500 transition-colors whitespace-nowrap shadow-md">
                                         Claim Advisory Audit →
                                     </Link>
-                                    <a href="/api/buy/enterprise/enterprise_curriculum_license" className="px-6 py-3 rounded-lg bg-white border border-zinc-200 text-zinc-700 font-bold text-sm text-center hover:bg-zinc-50 transition-colors whitespace-nowrap">
+                                    <a href="/api/buy/enterprise/enterprise_curriculum_license" className="px-6 py-3 rounded-lg bg-white border border-zinc-400 text-zinc-950 font-bold text-sm text-center hover:bg-zinc-50 transition-colors whitespace-nowrap">
                                         Add Enterprise Team License
                                     </a>
                                 </div>

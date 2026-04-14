@@ -106,7 +106,7 @@ export default function PricingPage() {
                             className={`relative rounded-2xl p-8 flex flex-col ${
                                 tier.highlight
                                     ? 'bg-gradient-to-b from-cyan-500/10 to-purple-500/10 border-2 border-cyan-500/40 shadow-[0_0_40px_rgba(6,182,212,0.15)]'
-                                    : 'bg-[var(--bg-secondary)] border border-zinc-200'
+                                    : 'bg-[var(--bg-secondary)] border border-zinc-400'
                             }`}
                         >
                             {tier.badge && (
@@ -126,7 +126,7 @@ export default function PricingPage() {
 
                             <div className="mb-6">
                                 <span className="text-4xl font-bold text-zinc-900">{tier.price}</span>
-                                <span className="text-zinc-700 ml-1">{tier.period}</span>
+                                <span className="text-zinc-950 ml-1">{tier.period}</span>
                             </div>
 
                             <ul className="space-y-3 mb-8 flex-grow">
@@ -145,7 +145,7 @@ export default function PricingPage() {
                                 className={`block text-center py-3 px-6 rounded-lg font-semibold text-sm transition-all ${
                                     tier.highlight
                                         ? 'bg-gradient-to-r from-cyan-500 to-cobalt text-white hover:opacity-90 shadow-lg'
-                                        : 'bg-white/5 border border-zinc-200 text-zinc-950 hover:bg-white/10 hover:border-zinc-300'
+                                        : 'bg-white/5 border border-zinc-400 text-zinc-950 hover:bg-white/10 hover:border-zinc-300'
                                 }`}
                             >
                                 {tier.cta} →

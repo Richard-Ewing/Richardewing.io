@@ -83,7 +83,7 @@ export default async function PseoComparePage({ params }: { params: Promise<{ sl
                     </div>
 
                     {/* Exogram Traffic Trap / Lead Capture */}
-                    <div className="rounded-3xl border border-zinc-200 bg-white p-8 md:p-12 text-center relative overflow-hidden mt-20">
+                    <div className="rounded-3xl border border-zinc-400 bg-white p-8 md:p-12 text-center relative overflow-hidden mt-20">
                         <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/10 to-transparent opacity-50"></div>
                         <h3 className="text-2xl md:text-3xl font-grotesk font-bold text-zinc-950 mb-4 relative z-10">
                             Stop Guessing Your AI / Architectural Risk

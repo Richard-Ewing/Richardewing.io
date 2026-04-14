@@ -29,23 +29,23 @@ export default function SaaSPage() {
                         Product Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">SaaS &amp; B2B</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
                         SaaS economics depend on gross margin, feature velocity, and ARR growth. Technical debt attacks all three simultaneously. The question isn&apos;t whether you have debt — it&apos;s whether the debt is destroying your valuation.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                         {challenges.map((c, i) => (
-                            <div key={i} className="rounded-xl border border-zinc-200 p-6 hover:border-violet-500/30 transition-colors">
+                            <div key={i} className="rounded-xl border border-zinc-400 p-6 hover:border-violet-500/30 transition-colors">
                                 <div className="text-2xl mb-3">{c.icon}</div>
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">{c.title}</h3>
-                                <p className="text-zinc-600 text-sm">{c.description}</p>
+                                <p className="text-zinc-900 text-sm">{c.description}</p>
                             </div>
                         ))}
                     </div>
 
                     <div className="rounded-2xl border border-violet-500/30 bg-violet-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">How I Help SaaS Companies</h2>
-                        <ul className="space-y-3 text-zinc-700 mb-8">
+                        <ul className="space-y-3 text-zinc-950 mb-8">
                             <li className="flex items-start gap-3"><span className="text-violet-400 mt-1">→</span> <span>Calculate the dollar impact of technical debt on ARR growth rate</span></li>
                             <li className="flex items-start gap-3"><span className="text-violet-400 mt-1">→</span> <span>Identify and sunset zombie features consuming engineering capacity</span></li>
                             <li className="flex items-start gap-3"><span className="text-violet-400 mt-1">→</span> <span>Optimize COGS structure for AI features using the AUEB framework</span></li>

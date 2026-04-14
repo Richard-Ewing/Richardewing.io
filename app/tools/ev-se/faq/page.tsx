@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -55,18 +55,18 @@ export default function EvSeFaqPage() {
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         EV/SE{' '}<span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">FAQ</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">Everything you need to know about valuing engineering teams with Enterprise Value per Software Engineer.</p>
+                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">Everything you need to know about valuing engineering teams with Enterprise Value per Software Engineer.</p>
                     <div className="space-y-6 mb-16">
                         {faqs.map((faq, i) => (
                             <div key={i} className={`rounded-2xl border p-8 ${colorStyles[faq.color]}`}>
                                 <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">{faq.q}</h2>
-                                <p className="text-zinc-700 leading-relaxed">{faq.a}</p>
+                                <p className="text-zinc-950 leading-relaxed">{faq.a}</p>
                             </div>
                         ))}
                     </div>
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try the EV/SE Calculator</h2>
-                        <p className="text-zinc-700 mb-6">Benchmark your engineering team valuation in under 5 minutes. No account required.</p>
+                        <p className="text-zinc-950 mb-6">Benchmark your engineering team valuation in under 5 minutes. No account required.</p>
                         <Link href="/tools/ev-se" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold hover:opacity-90 transition-opacity">Launch EV/SE Calculator &rarr;</Link>
                     </div>
                 </div>

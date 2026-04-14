@@ -40,7 +40,7 @@ export default async function ExogramDocPage({ params }: { params: Promise<{ slu
             <div className="space-y-8">
                 {doc.content.map((block, i) => {
                     if (block.type === 'h2') {
-                        return <h2 key={i} className="text-2xl font-bold text-zinc-950 mt-12 mb-4 border-b border-zinc-200 pb-2">{block.text}</h2>;
+                        return <h2 key={i} className="text-2xl font-bold text-zinc-950 mt-12 mb-4 border-b border-zinc-400 pb-2">{block.text}</h2>;
                     }
                     if (block.type === 'p') {
                         return <p key={i} className="text-zinc-700 leading-relaxed">{block.text}</p>;
@@ -56,8 +56,8 @@ export default async function ExogramDocPage({ params }: { params: Promise<{ slu
                     }
                     if (block.type === 'code') {
                         return (
-                            <div key={i} className="my-6 rounded-xl overflow-hidden border border-zinc-200 bg-white">
-                                <div className="px-4 py-2 border-b border-zinc-200 bg-zinc-50">
+                            <div key={i} className="my-6 rounded-xl overflow-hidden border border-zinc-400 bg-white">
+                                <div className="px-4 py-2 border-b border-zinc-400 bg-zinc-50">
                                     <span className="text-[10px] font-mono text-zinc-900">{block.language || 'text'}</span>
                                 </div>
                                 <pre className="p-4 overflow-x-auto text-sm font-mono text-zinc-900">
@@ -70,7 +70,7 @@ export default async function ExogramDocPage({ params }: { params: Promise<{ slu
                 })}
             </div>
             
-            <div className="mt-20 pt-8 border-t border-zinc-200 flex justify-between items-center text-sm">
+            <div className="mt-20 pt-8 border-t border-zinc-400 flex justify-between items-center text-sm">
                 <span className="text-zinc-700 font-mono">EAAP Protocol v1.0</span>
                 <span className="text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">Verified Architecture</span>
             </div>

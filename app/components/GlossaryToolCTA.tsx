@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 // Maps glossary term categories/slugs to relevant tools
 const toolMapping: Record<string, { name: string; url: string; cta: string; emoji: string }> = {
@@ -49,7 +49,7 @@ export default function GlossaryToolCTA({ slug, category, termTitle }: GlossaryT
                 <div className="flex-1">
                     <p className="text-xs text-purple-400 font-mono uppercase tracking-wider mb-1">Free Tool</p>
                     <h4 className="text-lg font-bold text-zinc-950 mb-1">{tool.cta}</h4>
-                    <p className="text-zinc-600 text-sm mb-4">
+                    <p className="text-zinc-900 text-sm mb-4">
                         Use the free {tool.name} diagnostic to put numbers behind your {termTitle.toLowerCase()} challenges.
                     </p>
                     <Link

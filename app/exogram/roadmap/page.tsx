@@ -56,7 +56,7 @@ const phases = [
     {
         status: 'future' as const, label: 'Future', quarter: 'Q3-Q4 2026', title: 'Intelligence Layer',
         sectionClass: 'rounded-2xl border border-zinc-500/20 bg-zinc-500/5 p-8',
-        badgeClass: 'text-[10px] font-mono text-zinc-600 px-2 py-1 rounded-full border border-zinc-500/30 bg-zinc-500/10 uppercase tracking-widest',
+        badgeClass: 'text-[10px] font-mono text-zinc-900 px-2 py-1 rounded-full border border-zinc-500/30 bg-zinc-500/10 uppercase tracking-widest',
         dotClass: 'hidden md:flex absolute left-4 top-2 w-5 h-5 rounded-full border-2 border-zinc-500 bg-zinc-500/20 items-center justify-center',
         items: [
             'Predictive verification — flag likely hallucinations before generation completes',
@@ -73,7 +73,7 @@ export default function ExogramRoadmapPage() {
     return (
         <main className="pt-24 pb-20">
             <div className="page-container max-w-4xl mx-auto">
-                <div className="text-xs text-zinc-700 mb-8">
+                <div className="text-xs text-zinc-950 mb-8">
                     <Link href="/exogram" className="hover:text-zinc-900 transition-colors">Exogram</Link>
                     <span className="mx-2">→</span>
                     <span className="text-zinc-800">Roadmap</span>
@@ -84,7 +84,7 @@ export default function ExogramRoadmapPage() {
                     <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Product <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Roadmap.</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-zinc-900 max-w-2xl mx-auto">
                         Where AI verification is going. Built in public, driven by real-world enterprise needs.
                     </p>
                 </section>
@@ -109,7 +109,7 @@ export default function ExogramRoadmapPage() {
                                     <ul className="space-y-2">
                                         {phase.items.map(item => (
                                             <li key={item} className="flex items-start gap-2 text-sm text-zinc-800">
-                                                <span className={phase.status === 'complete' ? 'text-emerald-400 mt-0.5' : 'text-zinc-700 mt-0.5'}>{phase.status === 'complete' ? '✓' : '→'}</span>
+                                                <span className={phase.status === 'complete' ? 'text-emerald-400 mt-0.5' : 'text-zinc-950 mt-0.5'}>{phase.status === 'complete' ? '✓' : '→'}</span>
                                                 {item}
                                             </li>
                                         ))}
@@ -123,12 +123,12 @@ export default function ExogramRoadmapPage() {
                 <section className="mt-16 text-center">
                     <div className="card p-8 border-purple-500/20">
                         <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">Shape the Roadmap</h3>
-                        <p className="text-zinc-600 text-sm mb-6">Exogram&apos;s roadmap is shaped by real enterprise needs. If you&apos;re deploying AI at scale, your requirements drive our priorities.</p>
+                        <p className="text-zinc-900 text-sm mb-6">Exogram&apos;s roadmap is shaped by real enterprise needs. If you&apos;re deploying AI at scale, your requirements drive our priorities.</p>
                         <div className="flex justify-center gap-4">
                             <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
                                 Visit Exogram.ai →
                             </a>
-                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-200 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                                 Discuss Integration →
                             </Link>
                         </div>

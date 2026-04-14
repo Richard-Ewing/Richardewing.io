@@ -229,19 +229,19 @@ export default function AuditInterview() {
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
                             Audit <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Interview.</span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-zinc-600 mb-8">
+                        <p className="text-lg sm:text-xl text-zinc-900 mb-8">
                             The "Product Economist" framework for technical auditing. Quantify judgment, capital risk, and leverage.
                         </p>
 
                         {/* Role Selector */}
-                        <div className="flex gap-4 mb-8 border-b border-zinc-200 pb-8">
+                        <div className="flex gap-4 mb-8 border-b border-zinc-400 pb-8">
                             {['engineering', 'pm'].map((r) => (
                                 <button
                                     key={r}
                                     onClick={() => setRole(r as Role)}
                                     className={`px-4 py-2 rounded-lg border uppercase font-mono text-xs tracking-widest transition-all ${role === r
                                         ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400'
-                                        : 'bg-white/80 border-zinc-200 text-zinc-500 hover:border-white/30'
+                                        : 'bg-white/80 border-zinc-400 text-zinc-800 hover:border-white/30'
                                         }`}
                                 >
                                     {r === 'pm' ? 'Product Manager' : 'Engineer'}
@@ -252,7 +252,7 @@ export default function AuditInterview() {
                         {/* Scoring Grid */}
                         <div className="space-y-8">
                             {DIMENSIONS.map((dim) => (
-                                <div key={dim.id} className="bg-zinc-50 rounded-xl p-4 sm:p-6 border border-zinc-200">
+                                <div key={dim.id} className="bg-zinc-50 rounded-xl p-4 sm:p-6 border border-zinc-400">
                                     <div className="flex items-start gap-3 mb-4">
                                         <div className="p-2 bg-zinc-50 rounded-lg text-zinc-800">
                                             <dim.icon size={20} />
@@ -266,7 +266,7 @@ export default function AuditInterview() {
                                     <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6">
                                         {/* Component: Score Selector */}
                                         <div className="flex flex-col gap-2">
-                                            <div className="flex gap-1 bg-white/50 p-1 rounded-lg border border-zinc-200">
+                                            <div className="flex gap-1 bg-white/50 p-1 rounded-lg border border-zinc-400">
                                                 {[0, 1, 2, 3].map(val => (
                                                     <button
                                                         key={val}
@@ -280,7 +280,7 @@ export default function AuditInterview() {
                                                     </button>
                                                 ))}
                                             </div>
-                                            <div className="text-center text-[10px] text-zinc-600 font-mono uppercase mt-1">
+                                            <div className="text-center text-[10px] text-zinc-900 font-mono uppercase mt-1">
                                                 {SCORE_LABELS[scores[dim.id as keyof Scores]]}
                                             </div>
                                         </div>
@@ -290,7 +290,7 @@ export default function AuditInterview() {
                                             value={observations[dim.id as keyof Observations]}
                                             onChange={(e) => handleObservationChange(dim.id as keyof Observations, e.target.value)}
                                             placeholder={`Notes on ${dim.label.toLowerCase()}...`}
-                                            className="w-full bg-white/50 border border-zinc-200 rounded-lg p-3 text-sm text-zinc-700 focus:border-emerald-500 focus:outline-none transition-all placeholder:text-zinc-700 h-20 resize-none"
+                                            className="w-full bg-white/50 border border-zinc-400 rounded-lg p-3 text-sm text-zinc-950 focus:border-emerald-500 focus:outline-none transition-all placeholder:text-zinc-950 h-20 resize-none"
                                         />
                                     </div>
                                 </div>
@@ -329,7 +329,7 @@ export default function AuditInterview() {
                             <p className="text-sm text-zinc-800">Session Complete • Protocol {role.toUpperCase()}-092</p>
                         </div>
                         <div className="mt-4 sm:mt-0 flex gap-4">
-                            <button onClick={() => setOutcome(null)} className="px-4 py-2 border border-zinc-200 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
+                            <button onClick={() => setOutcome(null)} className="px-4 py-2 border border-zinc-400 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
                                 <Search size={14} /> New Audit
                             </button>
                             <ExportToPDFButton targetId="scoring-pdf-export-zone" fileName={`Audit_Interview_${role}.pdf`} />
@@ -341,27 +341,27 @@ export default function AuditInterview() {
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
                             {/* Left Col: Verdict Card */}
                             <GlowCard className="p-8 flex flex-col items-center justify-center text-center h-full" glowColor={outcome.total > 7 ? "emerald" : "danger"}>
-                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
+                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
                                 <div className={`text-6xl sm:text-7xl font-bold tracking-tighter mb-4 ${outcome.total > 7 ? 'text-emerald-400' : 'text-red-500'}`}>
                                     {outcome.verdict}
                                 </div>
-                                <div className="flex items-center gap-3 text-sm font-mono border-t border-zinc-200 pt-4 mt-4 w-full justify-center">
+                                <div className="flex items-center gap-3 text-sm font-mono border-t border-zinc-400 pt-4 mt-4 w-full justify-center">
                                     <span className="text-zinc-800">Total Score:</span>
                                     <span className="text-zinc-950 font-bold">{outcome.total}/12</span>
                                 </div>
                             </GlowCard>
 
                             {/* Middle Col: Radar Chart */}
-                            <div className="bg-white/80 border border-zinc-200 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden">
-                                <span className="absolute top-4 left-4 text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Attribute Geometry</span>
+                            <div className="bg-white/80 border border-zinc-400 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden">
+                                <span className="absolute top-4 left-4 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">Attribute Geometry</span>
                                 <div className="w-64 h-64">
                                     <RadarChart scores={scores} />
                                 </div>
                             </div>
 
                             {/* Right Col: Breakdown List */}
-                            <div className="bg-white/80 border border-zinc-200 rounded-2xl p-6 space-y-4">
-                                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-4">Dimension Audit</span>
+                            <div className="bg-white/80 border border-zinc-400 rounded-2xl p-6 space-y-4">
+                                <span className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest block mb-4">Dimension Audit</span>
                                 {DIMENSIONS.map(dim => (
                                     <div key={dim.id} className="flex justify-between items-center">
                                         <div className="flex items-center gap-2">
@@ -375,8 +375,8 @@ export default function AuditInterview() {
                                         </div>
                                     </div>
                                 ))}
-                                <div className="border-t border-zinc-200 pt-4 mt-4">
-                                    <p className="text-xs text-zinc-600 leading-relaxed italic">
+                                <div className="border-t border-zinc-400 pt-4 mt-4">
+                                    <p className="text-xs text-zinc-900 leading-relaxed italic">
                                         "{outcome.rationale}"
                                     </p>
                                 </div>
@@ -391,8 +391,8 @@ export default function AuditInterview() {
                             </div>
 
                             {!memo ? (
-                                <div className="text-center py-12 border-2 border-dashed border-zinc-200 rounded-xl">
-                                    <p className="text-zinc-700 mb-6 max-w-md mx-auto">
+                                <div className="text-center py-12 border-2 border-dashed border-zinc-400 rounded-xl">
+                                    <p className="text-zinc-950 mb-6 max-w-md mx-auto">
                                         Generate a high-agency defense memo to justify this hiring decision to the Investment Committee.
                                     </p>
                                     <button
@@ -407,7 +407,7 @@ export default function AuditInterview() {
                                 <div className="prose prose-zinc prose-lg max-w-none bg-zinc-100 p-8 rounded-xl border-l-4 border-emerald-500">
                                     <div className="flex justify-between items-start mb-4">
                                         <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest">Confidential // Internal Only</span>
-                                        <button onClick={() => navigator.clipboard.writeText(memo)} className="text-[10px] font-mono text-zinc-500 hover:text-zinc-900 uppercase">Copy</button>
+                                        <button onClick={() => navigator.clipboard.writeText(memo)} className="text-[10px] font-mono text-zinc-800 hover:text-zinc-900 uppercase">Copy</button>
                                     </div>
                                     <p className="text-zinc-800 leading-loose whitespace-pre-wrap font-serif">
                                         {memo}

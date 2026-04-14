@@ -128,7 +128,7 @@ export default function ChecklistPage() {
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         The Complete R&amp;D Audit <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Checklist</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-6 leading-relaxed">
+                    <p className="text-lg text-zinc-900 mb-6 leading-relaxed">
                         The {totalQuestions} questions used in every <span className="text-zinc-950 font-bold">$7,500 diagnostic engagement</span>. 
                         Organized across {domains.length} domains with traffic-light scoring, remediation actions, and benchmark thresholds. 
                         This is the same framework used to audit engineering organizations at companies from Series A startups to Fortune 500 enterprises.
@@ -212,16 +212,16 @@ export default function ChecklistPage() {
                                                     </div>
                                                     <div className="flex-1">
                                                         <h3 className="text-zinc-950 font-bold text-base mb-2">{item.q}</h3>
-                                                        <p className="text-zinc-700 text-sm mb-3">
-                                                            <span className="text-zinc-600 font-semibold">Why: </span>{item.why}
+                                                        <p className="text-zinc-950 text-sm mb-3">
+                                                            <span className="text-zinc-900 font-semibold">Why: </span>{item.why}
                                                         </p>
                                                         <div className="flex flex-col sm:flex-row gap-3">
                                                             <div className="flex-1 rounded-lg bg-emerald-500/5 border border-emerald-500/10 p-3">
                                                                 <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1">🎯 Action</div>
                                                                 <p className="text-xs text-zinc-800">{item.action}</p>
                                                             </div>
-                                                            <div className="sm:w-48 rounded-lg bg-zinc-50 border border-zinc-200 p-3">
-                                                                <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Scoring</div>
+                                                            <div className="sm:w-48 rounded-lg bg-zinc-50 border border-zinc-400 p-3">
+                                                                <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-2">Scoring</div>
                                                                 <div className="space-y-1">
                                                                     <div className="flex items-center gap-2 text-xs">
                                                                         <div className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
@@ -275,7 +275,7 @@ export default function ChecklistPage() {
                     {/* Tools CTA */}
                     <div className="card p-8 text-center mb-12 border-cyan-500/20">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">🛠️ Answer These Questions With Free Tools</h2>
-                        <p className="text-zinc-600 mb-6">Don&apos;t guess — use our calculators to get accurate scores for the metrics above.</p>
+                        <p className="text-zinc-900 mb-6">Don&apos;t guess — use our calculators to get accurate scores for the metrics above.</p>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
                             <Link href="/tools/pdi" className="card p-4 hover:border-cyan-500/30 transition-all">
                                 <div className="text-lg mb-1">📊</div>
@@ -301,9 +301,9 @@ export default function ChecklistPage() {
                     </div>
 
                     {/* CTA: Advisory */}
-                    <div className="text-center py-12 border-t border-zinc-200">
+                    <div className="text-center py-12 border-t border-zinc-400">
                         <h2 className="text-2xl font-bold text-zinc-950 mb-4">Want These Questions Answered Professionally?</h2>
-                        <p className="text-zinc-600 mb-8 max-w-lg mx-auto">Book a diagnostic engagement and get a written executive summary with quantified findings, benchmarks, and a prioritized remediation roadmap.</p>
+                        <p className="text-zinc-900 mb-8 max-w-lg mx-auto">Book a diagnostic engagement and get a written executive summary with quantified findings, benchmarks, and a prioritized remediation roadmap.</p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="/api/buy/strategy_session" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                                 Book Strategy Session →

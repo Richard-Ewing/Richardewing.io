@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from 'react';
 
@@ -115,25 +115,25 @@ export default function DoctrinePage() {
                             <div className="card">
                                 <div className="text-xs text-purple-400 uppercase tracking-wide mb-2">Expert Contributor</div>
                                 <h3 className="font-semibold text-zinc-950 mb-1">Built In</h3>
-                                <p className="text-zinc-700 text-sm">Monthly columnist. Jan 2026 article featured in Editor's Newsletter.</p>
+                                <p className="text-zinc-950 text-sm">Monthly columnist. Jan 2026 article featured in Editor's Newsletter.</p>
                             </div>
 
                             <div className="card">
                                 <div className="text-xs text-cyan-400 uppercase tracking-wide mb-2">Contributor</div>
                                 <h3 className="font-semibold text-zinc-950 mb-1">Mind the Product</h3>
-                                <p className="text-zinc-700 text-sm">Feb 2026 article. Newsletter feature.</p>
+                                <p className="text-zinc-950 text-sm">Feb 2026 article. Newsletter feature.</p>
                             </div>
 
                             <div className="card">
                                 <div className="text-xs text-purple-400 uppercase tracking-wide mb-2">Expert Contributor</div>
                                 <h3 className="font-semibold text-zinc-950 mb-1">Foundry (CIO.com)</h3>
-                                <p className="text-zinc-700 text-sm">Monthly columnist for enterprise technology network.</p>
+                                <p className="text-zinc-950 text-sm">Monthly columnist for enterprise technology network.</p>
                             </div>
 
                             <div className="card">
                                 <div className="text-xs text-cyan-400 uppercase tracking-wide mb-2">Published</div>
                                 <h3 className="font-semibold text-zinc-950 mb-1">HackerNoon</h3>
-                                <p className="text-zinc-700 text-sm">4M+ monthly readers.</p>
+                                <p className="text-zinc-950 text-sm">4M+ monthly readers.</p>
                             </div>
 
                         </div>

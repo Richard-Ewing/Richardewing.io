@@ -11,7 +11,7 @@ const NavItem = ({ href, children, isActive = false, onClick }: { href: string; 
         onClick={onClick}
         className={`block text-sm py-2 px-4 border-l-2 transition-all ${isActive
             ? 'text-zinc-900 border-purple-500 bg-purple-50'
-            : 'text-zinc-700 border-transparent hover:text-zinc-900 hover:border-zinc-300'
+            : 'text-zinc-950 border-transparent hover:text-zinc-900 hover:border-zinc-300'
             }`}
     >
         {children}
@@ -66,14 +66,14 @@ export function Sidebar() {
     return (
         <>
             {/* Mobile Header */}
-            <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-zinc-200 px-4 py-3 flex items-center justify-between">
+            <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-zinc-400 px-4 py-3 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-zinc-200 overflow-hidden">
                         <Image src="/assets/images/headshot.jpg" alt="RE" width={40} height={40} className="object-cover grayscale" />
                     </div>
                     <div>
                         <div className="text-zinc-900 font-bold text-sm">RICHARD EWING</div>
-                        <div className="text-zinc-700 text-[10px] font-mono tracking-widest">PRODUCT ECONOMIST</div>
+                        <div className="text-zinc-950 text-[10px] font-mono tracking-widest">PRODUCT ECONOMIST</div>
                     </div>
                 </Link>
                 <button
@@ -102,7 +102,7 @@ export function Sidebar() {
             {/* Sidebar */}
             <aside className={`
         fixed lg:sticky top-0 left-0 h-screen z-50
-        bg-white/95 backdrop-blur-xl border-r border-zinc-200
+        bg-white/95 backdrop-blur-xl border-r border-zinc-400
         w-[280px] lg:w-auto
         transform transition-transform duration-300 ease-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
@@ -116,7 +116,7 @@ export function Sidebar() {
                             <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" width={80} height={80} className="object-cover" priority />
                         </div>
                         <h3 className="text-zinc-900 font-bold tracking-tight text-lg">RICHARD EWING</h3>
-                        <span className="font-mono text-xs text-zinc-700 tracking-widest block mt-1">PRODUCT ECONOMIST</span>
+                        <span className="font-mono text-xs text-zinc-950 tracking-widest block mt-1">PRODUCT ECONOMIST</span>
                     </Link>
                 </div>
 

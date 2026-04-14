@@ -33,7 +33,7 @@ export default function PDIvsSonarQubePage() {
                         Product Debt Index <span className="text-zinc-900">vs</span>{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">SonarQube</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
                         SonarQube tells you how many code smells you have. PDI tells you <span className="text-zinc-950 font-bold">when technical debt will bankrupt your engineering capacity</span>. They measure different things at different layers.
                     </p>
 
@@ -41,16 +41,16 @@ export default function PDIvsSonarQubePage() {
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full border-collapse">
                             <thead>
-                                <tr className="border-b border-zinc-200">
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">Dimension</th>
+                                <tr className="border-b border-zinc-400">
+                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-800 uppercase tracking-widest">Dimension</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-cyan-400 uppercase tracking-widest">PDI</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-600 uppercase tracking-widest">SonarQube</th>
+                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-900 uppercase tracking-widest">SonarQube</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
-                                    <tr key={i} className="border-b border-zinc-200 hover:bg-zinc-50">
-                                        <td className="py-4 px-4 text-sm text-zinc-600 font-bold">{row.dimension}</td>
+                                    <tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50">
+                                        <td className="py-4 px-4 text-sm text-zinc-900 font-bold">{row.dimension}</td>
                                         <td className="py-4 px-4 text-sm text-zinc-900">{row.pdi}</td>
                                         <td className="py-4 px-4 text-sm text-zinc-800">{row.sonar}</td>
                                     </tr>
@@ -62,11 +62,11 @@ export default function PDIvsSonarQubePage() {
                     {/* Verdict */}
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
-                        <p className="text-zinc-700 mb-6">
+                        <p className="text-zinc-950 mb-6">
                             <strong>Use both.</strong> SonarQube is excellent at catching code-level issues in your CI/CD pipeline.
                             PDI answers the question SonarQube can&apos;t: <em>&quot;What is this debt costing us in dollars, and when will it consume all engineering capacity?&quot;</em>
                         </p>
-                        <p className="text-zinc-600 mb-8">
+                        <p className="text-zinc-900 mb-8">
                             SonarQube is a microscope. PDI is a financial statement. CTOs need both. Boards only care about the financial statement.
                         </p>
                         <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold hover:opacity-90 transition-opacity">
@@ -75,8 +75,8 @@ export default function PDIvsSonarQubePage() {
                     </div>
 
                     {/* CTA */}
-                    <div className="text-center py-12 border-t border-zinc-200">
-                        <p className="text-zinc-600 mb-4">Need the full picture?</p>
+                    <div className="text-center py-12 border-t border-zinc-400">
+                        <p className="text-zinc-900 mb-4">Need the full picture?</p>
                         <Link href="/advisory" className="text-cyan-400 hover:text-cyan-300 font-bold uppercase tracking-widest text-sm">
                             Book a $2,500 Insolvency Diagnostic →
                         </Link>

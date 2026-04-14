@@ -52,7 +52,7 @@ export default function JoinTeamPage() {
         <main className="min-h-screen pt-32 pb-24 px-6 flex items-center justify-center">
             <div className="w-full max-w-lg">
                 
-                <Link href="/vault" className="inline-flex items-center text-xs font-bold text-zinc-500 uppercase tracking-widest hover:text-zinc-900 transition-colors mb-8">
+                <Link href="/vault" className="inline-flex items-center text-xs font-bold text-zinc-800 uppercase tracking-widest hover:text-zinc-900 transition-colors mb-8">
                     <ChevronLeft className="w-4 h-4 mr-1" /> Back to Vault
                 </Link>
 
@@ -61,20 +61,20 @@ export default function JoinTeamPage() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
                     
                     <div className="relative z-10 text-center mb-8">
-                        <div className="w-16 h-16 rounded-2xl bg-white border border-zinc-200 flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(6,182,212,0.1)]">
+                        <div className="w-16 h-16 rounded-2xl bg-white border border-zinc-400 flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(6,182,212,0.1)]">
                             <Users className="w-8 h-8 text-cyan-500" />
                         </div>
                         <h1 className="text-3xl font-grotesk font-bold text-zinc-950 mb-3">
                             Claim Enterprise Seat
                         </h1>
-                        <p className="text-zinc-600 text-sm">
+                        <p className="text-zinc-900 text-sm">
                             Enter the secure team code provided by your administrator to instantly unlock full curriculum and platform access.
                         </p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="relative z-10">
                         <div className="mb-6">
-                            <label htmlFor="inviteCode" className="block text-xs font-bold text-zinc-500 uppercase tracking-widest mb-2">
+                            <label htmlFor="inviteCode" className="block text-xs font-bold text-zinc-800 uppercase tracking-widest mb-2">
                                 Team Invite Code
                             </label>
                             <input 
@@ -83,7 +83,7 @@ export default function JoinTeamPage() {
                                 value={inviteCode}
                                 onChange={(e) => setInviteCode(e.target.value.toUpperCase())}
                                 placeholder="REQ-XXXXXX-XXXXXX"
-                                className="w-full bg-white border border-zinc-200 rounded-xl px-5 py-4 text-zinc-950 font-mono text-lg focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors uppercase placeholder:normal-case placeholder:text-zinc-700 placeholder:font-sans"
+                                className="w-full bg-white border border-zinc-400 rounded-xl px-5 py-4 text-zinc-950 font-mono text-lg focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors uppercase placeholder:normal-case placeholder:text-zinc-950 placeholder:font-sans"
                                 disabled={status === 'loading' || status === 'success'}
                             />
                         </div>
@@ -105,7 +105,7 @@ export default function JoinTeamPage() {
                                 disabled={status === 'loading' || !inviteCode}
                                 className={`w-full py-4 rounded-xl flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-widest transition-all ${
                                     status === 'loading' || !inviteCode 
-                                    ? 'bg-zinc-200 text-zinc-700 cursor-not-allowed' 
+                                    ? 'bg-zinc-200 text-zinc-950 cursor-not-allowed' 
                                     : 'bg-cyan-500 text-black hover:bg-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]'
                                 }`}
                             >

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -31,21 +31,21 @@ export default function PropTechPage() {
                         PropTech{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Product Economics</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">Real estate technology carries unique R&D challenges: massive data integration surfaces, legacy MLS systems, AI valuation accuracy requirements, and IoT infrastructure debt.</p>
+                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">Real estate technology carries unique R&D challenges: massive data integration surfaces, legacy MLS systems, AI valuation accuracy requirements, and IoT infrastructure debt.</p>
 
                     <div className="space-y-6 mb-16">
                         {sections.map((s, i) => (
                             <div key={i} className={`rounded-2xl border p-8 ${colorMap[s.color]}`}>
                                 <h2 className={`text-2xl font-grotesk font-bold mb-3 ${textMap[s.color]}`}>{s.title}</h2>
-                                <p className="text-zinc-600 mb-4">{s.description}</p>
-                                <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">{s.stats}</span>
+                                <p className="text-zinc-900 mb-4">{s.description}</p>
+                                <span className="text-xs font-mono text-zinc-800 uppercase tracking-widest">{s.stats}</span>
                             </div>
                         ))}
                     </div>
 
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-8 text-center">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">PropTech R&D Audit</h2>
-                        <p className="text-zinc-700 mb-6">Quantify your data integration debt, valuation model economics, and IoT infrastructure costs.</p>
+                        <p className="text-zinc-950 mb-6">Quantify your data integration debt, valuation model economics, and IoT infrastructure costs.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold hover:opacity-90 transition-opacity">Book PropTech Audit →</Link>
                     </div>
                 </div>

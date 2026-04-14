@@ -235,12 +235,12 @@ export default function CelebrationOverlay({
                         {title}
                     </span>
                 </h2>
-                <p className="text-zinc-600 text-lg max-w-md mx-auto mb-6">{subtitle}</p>
+                <p className="text-zinc-900 text-lg max-w-md mx-auto mb-6">{subtitle}</p>
 
                 {/* Progress streak indicator */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-zinc-200">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-zinc-400">
                     <span className="text-amber-400">🔥</span>
-                    <span className="text-sm text-zinc-700 font-mono">Keep the momentum going</span>
+                    <span className="text-sm text-zinc-950 font-mono">Keep the momentum going</span>
                 </div>
 
                 <p className="text-xs text-zinc-800 mt-6">Click anywhere to continue</p>

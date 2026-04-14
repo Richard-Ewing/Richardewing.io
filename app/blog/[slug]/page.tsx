@@ -99,7 +99,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             {related.map(r => (
                                 <Link key={r.slug} href={`/blog/${r.slug}`}
-                                    className="group p-5 rounded-xl border border-zinc-200 bg-zinc-50 hover:border-white/15 transition-all">
+                                    className="group p-5 rounded-xl border border-zinc-400 bg-zinc-50 hover:border-white/15 transition-all">
                                     <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors mb-2">{r.title}</h3>
                                     <p className="text-xs text-zinc-700 line-clamp-2">{r.excerpt}</p>
                                     <span className="text-[10px] text-zinc-800 mt-2 block">{r.readTime}</span>
@@ -119,9 +119,9 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                 </div>
 
                 {/* Author Box */}
-                <div className="p-8 rounded-2xl border border-zinc-200 bg-white/[0.03]">
+                <div className="p-8 rounded-2xl border border-zinc-400 bg-white/[0.03]">
                     <div className="flex items-start gap-6">
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-zinc-200 flex items-center justify-center shrink-0">
+                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-zinc-400 flex items-center justify-center shrink-0">
                             <span className="text-2xl">📊</span>
                         </div>
                         <div>

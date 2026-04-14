@@ -31,14 +31,14 @@ export const PRODUCTS: Record<string, Product> = {
         description: 'Lifetime access to one complete curriculum track with all modules, lessons, exercises, and assessments.',
         price: 14900, // $149.00
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_engineering: {
         name: 'Engineering Economics — Track Access',
         description: 'Lifetime access to the Engineering Economics Foundations track (Track 1). All 16 modules, lessons, and assessments.',
         price: 14900, // $149.00
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_ai_economics: {
         name: 'AI Product Economics — Track Access',
@@ -79,61 +79,61 @@ export const PRODUCTS: Record<string, Product> = {
         name: 'Engineering Leader / CTO — Track Access',
         description: 'Lifetime access to the Engineeering Leader / CTO track.',
         price: 14900, mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_pm: {
         name: 'Product Manager / CPO — Track Access',
         description: 'Lifetime access to the Product Manager / CPO track.',
         price: 14900, mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_investor: {
         name: 'PE / VC / Investor — Track Access',
         description: 'Lifetime access to the PE / VC / Investor track.',
         price: 14900, mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_ai_enterprise: {
         name: 'AI & Enterprise Architect — Track Access',
         description: 'Lifetime access to the AI & Enterprise Architect track.',
         price: 14900, mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_devops: {
         name: 'DevOps & Platform Economics — Single Module',
         description: 'Lifetime access to one DevOps & Platform Economics module (Track 5).',
         price: 14900, mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_product_mgmt: {
         name: 'Product Management Economics — Single Module',
         description: 'Lifetime access to one Product Management Economics module (Track 6).',
         price: 14900, mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_security: {
         name: 'Security & Compliance Economics — Single Module',
         description: 'Lifetime access to one Security & Compliance Economics module (Track 7).',
         price: 14900, mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_data: {
         name: 'Data & Analytics Economics — Single Module',
         description: 'Lifetime access to one Data & Analytics Economics module (Track 8).',
         price: 14900, mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_leadership: {
         name: 'Engineering Leadership — Single Module',
         description: 'Lifetime access to one Engineering Leadership module (Track 9).',
         price: 14900, mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_startup: {
         name: 'Startup Economics — Single Module',
         description: 'Lifetime access to one Startup Economics module (Track 10).',
         price: 14900, mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
 
     // --- GUIDES (DYNAMIC TIERS) ---
@@ -264,7 +264,7 @@ export const PRODUCTS: Record<string, Product> = {
         description: 'Complete practitioner access to all AI economics, systems mapping, and model arbitrage curriculum modules.',
         price: 24900,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p', 
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x', 
     },
     certification: {
         name: 'Product Economist Certification (CPE)',

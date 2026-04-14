@@ -62,7 +62,7 @@ export default function AIRoiTimelineContent() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.1),transparent_50%)] pointer-events-none"></div>
             
             <div className="max-w-4xl mx-auto relative z-10">
-                <Link href="/tools" className="inline-flex items-center text-zinc-500 hover:text-zinc-900 transition-colors mb-12 font-mono text-xs uppercase tracking-widest">
+                <Link href="/tools" className="inline-flex items-center text-zinc-800 hover:text-zinc-900 transition-colors mb-12 font-mono text-xs uppercase tracking-widest">
                     <ArrowLeft size={14} className="mr-2" /> Back to Tools
                 </Link>
 
@@ -70,7 +70,7 @@ export default function AIRoiTimelineContent() {
                     <h1 className="text-4xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-zinc-200 to-zinc-600 tracking-tight leading-tight">
                         AI Break-Even <br/> Modeler
                     </h1>
-                    <p className="text-zinc-600 mt-4 max-w-2xl text-lg leading-relaxed">
+                    <p className="text-zinc-900 mt-4 max-w-2xl text-lg leading-relaxed">
                         Calculate exactly when your CapEx drops below human FTE OpEx displacement. Stop guessing ROI; model it.
                     </p>
                 </div>
@@ -79,7 +79,7 @@ export default function AIRoiTimelineContent() {
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* INPUT PANEL */}
                         <div className="space-y-6">
-                            <div className="bg-zinc-100 p-6 rounded-2xl border border-zinc-200 space-y-8">
+                            <div className="bg-zinc-100 p-6 rounded-2xl border border-zinc-400 space-y-8">
                                 <div>
                                     <div className="flex justify-between items-end mb-4">
                                         <label htmlFor="engineers-range" className="text-xs font-mono text-purple-400 uppercase tracking-widest flex items-center gap-2"><Users size={12}/> Headcount</label>
@@ -101,7 +101,7 @@ export default function AIRoiTimelineContent() {
                         {/* STRATEGY SELECTION */}
                         <div className="space-y-4 flex flex-col justify-between">
                             <div className="space-y-3">
-                                <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest block mb-4">Architecture Strategy</label>
+                                <label className="text-xs font-mono text-zinc-800 uppercase tracking-widest block mb-4">Architecture Strategy</label>
                                 
                                 {Object.entries(strategyData).map(([key, data]) => {
                                     const isActive = aiStrategy === key;
@@ -109,13 +109,13 @@ export default function AIRoiTimelineContent() {
                                         <div 
                                             key={key} 
                                             onClick={() => setAiStrategy(key as any)}
-                                            className={`p-4 rounded-xl border cursor-pointer transition-all ${isActive ? 'bg-purple-500/10 border-purple-500/50' : 'bg-white border-zinc-200 hover:border-zinc-300'}`}
+                                            className={`p-4 rounded-xl border cursor-pointer transition-all ${isActive ? 'bg-purple-500/10 border-purple-500/50' : 'bg-white border-zinc-400 hover:border-zinc-300'}`}
                                         >
                                             <div className="flex justify-between items-center">
                                                 <div className="font-bold text-zinc-900">{data.name}</div>
                                                 <div className="text-xs font-mono text-purple-400">{(data.gain * 100)}% Gain</div>
                                             </div>
-                                            <div className="grid grid-cols-2 gap-4 mt-3 text-xs text-zinc-700 font-mono">
+                                            <div className="grid grid-cols-2 gap-4 mt-3 text-xs text-zinc-950 font-mono">
                                                 <div>CapEx: ${(data.capEx/1000).toFixed(0)}k</div>
                                                 <div>OpEx/Yr: ${(data.opExPerUser)}/user</div>
                                             </div>
@@ -152,7 +152,7 @@ export default function AIRoiTimelineContent() {
                                     <h2 className="text-xl font-bold text-zinc-950 mb-1">Timeline Dashboard</h2>
                                 </div>
                                 <div className="mt-4 sm:mt-0 flex gap-4">
-                                    <button onClick={() => setView('input')} className="px-4 py-2 border border-zinc-200 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
+                                    <button onClick={() => setView('input')} className="px-4 py-2 border border-zinc-400 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
                                         <RefreshCcw size={14} /> Recalibrate
                                     </button>
                                     <ExportToPDFButton targetId="ai-roi-pdf-export-zone" fileName={`AI_ROI_Timeline.pdf`} />
@@ -162,16 +162,16 @@ export default function AIRoiTimelineContent() {
                         <div id="ai-roi-pdf-export-zone">
                          {/* Executive Summary */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div className="p-6 bg-zinc-50 border border-zinc-200 rounded-2xl relative overflow-hidden group">
+                            <div className="p-6 bg-zinc-50 border border-zinc-400 rounded-2xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-colors duration-500"></div>
-                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2 flex items-center gap-2">Implementation CapEx</div>
+                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-2 flex items-center gap-2">Implementation CapEx</div>
                                 <div className="text-3xl sm:text-4xl font-black text-rose-400 break-words">${implementationCost.toLocaleString()}</div>
                                 <div className="text-xs text-zinc-800 mt-2 font-mono">Initial setup & training cost</div>
                             </div>
                             
-                            <div className="p-6 bg-zinc-50 border border-zinc-200 rounded-2xl relative overflow-hidden group">
+                            <div className="p-6 bg-zinc-50 border border-zinc-400 rounded-2xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/5 rounded-full blur-2xl group-hover:bg-green-500/10 transition-colors duration-500"></div>
-                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2 flex items-center gap-2">Annual Net Savings</div>
+                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-2 flex items-center gap-2">Annual Net Savings</div>
                                 <div className="text-3xl sm:text-4xl font-black text-green-400 break-words">${netAnnualSavings.toLocaleString()}</div>
                                 <div className="text-xs text-zinc-800 mt-2 font-mono">Displacing {displacedEngineers} FTEs</div>
                             </div>
@@ -187,7 +187,7 @@ export default function AIRoiTimelineContent() {
                         </div>
 
                         {/* Visualization Matrix */}
-                        <div className="p-8 bg-white border border-zinc-200 rounded-2xl">
+                        <div className="p-8 bg-white border border-zinc-400 rounded-2xl">
                             <h3 className="text-lg font-bold mb-6 flex items-center gap-2"><TrendingDown className="text-zinc-900" /> Capital Amortization Timeline</h3>
                             
                             {/* Horizontal bar timeline representing months */}
@@ -204,7 +204,7 @@ export default function AIRoiTimelineContent() {
                                     return (
                                         <div key={month} className="grid grid-cols-12 items-center gap-4 group">
                                             <div className="col-span-2 text-xs font-mono text-zinc-900">Month {month}</div>
-                                            <div className="col-span-8 bg-white h-4 rounded-full relative overflow-hidden border border-zinc-200">
+                                            <div className="col-span-8 bg-white h-4 rounded-full relative overflow-hidden border border-zinc-400">
                                                 {/* Zero Line Marker */}
                                                 { }
                                                 <style>{`
@@ -227,26 +227,26 @@ export default function AIRoiTimelineContent() {
                                 })}
                             </div>
 
-                            <div className="mt-8 pt-8 border-t border-zinc-200">
+                            <div className="mt-8 pt-8 border-t border-zinc-400">
                                 {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
-                                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-zinc-200 bg-zinc-50">
+                                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-zinc-400 bg-zinc-50">
                                     <h3 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-2">
                                         <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                         3-Step CapEx Justification Playbook
                                     </h3>
-                                    <p className="text-zinc-600 text-sm mb-8">Execute this operational sequence to securely finance the ${implementationCost.toLocaleString()} CapEx requirement and guarantee the {breakEvenMonths.toFixed(1)}-month payback period.</p>
+                                    <p className="text-zinc-900 text-sm mb-8">Execute this operational sequence to securely finance the ${implementationCost.toLocaleString()} CapEx requirement and guarantee the {breakEvenMonths.toFixed(1)}-month payback period.</p>
 
                                     <div className="space-y-4">
                                         {/* Step 1 */}
-                                        <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                             <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
                                                 <span className="text-rose-400 font-bold font-mono">01</span>
                                             </div>
                                             <div className="relative z-10 w-full">
                                                 <h4 className="text-zinc-950 font-bold mb-2">Hard-Lock the Headcount Freeze</h4>
-                                                <p className="text-zinc-600 text-sm leading-relaxed mb-4">The ${netAnnualSavings.toLocaleString()} annual savings model depends entirely on strict capacity displacement. Phantom hiring will destroy the break-even math.</p>
-                                                <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
+                                                <p className="text-zinc-900 text-sm leading-relaxed mb-4">The ${netAnnualSavings.toLocaleString()} annual savings model depends entirely on strict capacity displacement. Phantom hiring will destroy the break-even math.</p>
+                                                <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                     <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
@@ -256,15 +256,15 @@ export default function AIRoiTimelineContent() {
                                         </div>
 
                                         {/* Step 2 */}
-                                        <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                             <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
                                                 <span className="text-amber-400 font-bold font-mono">02</span>
                                             </div>
                                             <div className="relative z-10 w-full">
                                                 <h4 className="text-zinc-950 font-bold mb-2">Quarantine the Implementation CapEx</h4>
-                                                <p className="text-zinc-600 text-sm leading-relaxed mb-4">Without strict vendor and compute isolation, the initial ${implementationCost.toLocaleString()} investment will silently inflate through unmonitored API inference charges.</p>
-                                                <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
+                                                <p className="text-zinc-900 text-sm leading-relaxed mb-4">Without strict vendor and compute isolation, the initial ${implementationCost.toLocaleString()} investment will silently inflate through unmonitored API inference charges.</p>
+                                                <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                     <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
@@ -274,15 +274,15 @@ export default function AIRoiTimelineContent() {
                                         </div>
 
                                         {/* Step 3 */}
-                                        <div className="bg-white/80 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                             <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
                                                 <span className="text-cyan-400 font-bold font-mono">03</span>
                                             </div>
                                             <div className="relative z-10 w-full">
                                                 <h4 className="text-zinc-950 font-bold mb-2">Schedule the Audit Clawback</h4>
-                                                <p className="text-zinc-600 text-sm leading-relaxed mb-4">CapEx investments without structured post-mortems are effectively donations to engineering R&D. Accountability must be verified at precisely {breakEvenMonths.toFixed(1)} months.</p>
-                                                <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
+                                                <p className="text-zinc-900 text-sm leading-relaxed mb-4">CapEx investments without structured post-mortems are effectively donations to engineering R&D. Accountability must be verified at precisely {breakEvenMonths.toFixed(1)} months.</p>
+                                                <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                     <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>

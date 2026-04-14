@@ -61,7 +61,7 @@ export function NewsletterForm({
             <div className={`p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-center ${className}`}>
                 <CheckCircle className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
                 <h3 className="text-emerald-400 font-bold text-sm uppercase tracking-widest">Signal Received</h3>
-                <p className="text-zinc-600 text-xs mt-1">You've been added to the protocol.</p>
+                <p className="text-zinc-900 text-xs mt-1">You've been added to the protocol.</p>
             </div>
         );
     }
@@ -82,7 +82,7 @@ export function NewsletterForm({
                     readOnly={!!defaultEmail}
                     required
                     disabled={state.submitting}
-                    className="w-full pl-11 pr-4 py-3 bg-white/50 border border-zinc-200 rounded-xl text-zinc-950 placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed read-only:bg-white/5 read-only:text-zinc-600 font-mono text-sm"
+                    className="w-full pl-11 pr-4 py-3 bg-white/50 border border-zinc-400 rounded-xl text-zinc-950 placeholder:text-zinc-900 focus:border-cyan-500 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed read-only:bg-white/5 read-only:text-zinc-900 font-mono text-sm"
                 />
                 <ValidationError
                     prefix="Email"

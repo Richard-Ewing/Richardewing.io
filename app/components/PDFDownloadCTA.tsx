@@ -17,7 +17,7 @@ export default function PDFDownloadCTA({ toolName, score }: PDFDownloadCTAProps)
                 </div>
                 <div className="flex-1">
                     <h4 className="text-lg font-bold text-zinc-950 mb-1">Get the Board-Ready PDF</h4>
-                    <p className="text-zinc-600 text-sm mb-4">
+                    <p className="text-zinc-900 text-sm mb-4">
                         Download your {toolName} results as a professionally formatted PDF.
                         {score !== undefined && ` Your score: ${score}.`} Perfect for sharing with leadership, investors, or your board.
                     </p>
@@ -31,7 +31,7 @@ export default function PDFDownloadCTA({ toolName, score }: PDFDownloadCTAProps)
                         </Link>
                         <Link
                             href="/benchmark"
-                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-zinc-200 text-zinc-950 text-sm font-bold rounded-lg hover:bg-white/10 transition-all"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-zinc-400 text-zinc-950 text-sm font-bold rounded-lg hover:bg-white/10 transition-all"
                         >
                             Free Industry Benchmark <ArrowRight className="w-4 h-4" />
                         </Link>

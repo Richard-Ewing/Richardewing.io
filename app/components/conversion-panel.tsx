@@ -63,9 +63,9 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
     const contextCTA = getContextualCTA(scoreType, score);
 
     return (
-        <div className="mt-12 border-t border-zinc-200 pt-12 space-y-8">
+        <div className="mt-12 border-t border-zinc-400 pt-12 space-y-8">
             {/* Email Capture Section */}
-            <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-8 border border-zinc-200 shadow-2xl">
+            <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-8 border border-zinc-400 shadow-2xl">
                 <div className="flex items-center gap-3 mb-4">
                     <UrgencyIcon urgency={contextCTA.urgency} />
                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">
@@ -76,7 +76,7 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                 <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 mb-2">
                     {headline || 'Want a Board-Ready Analysis?'}
                 </h3>
-                <p className="text-zinc-600 mb-6">
+                <p className="text-zinc-900 mb-6">
                     Get a personalized deep-dive with actionable recommendations from a Product Economist.
                 </p>
 
@@ -98,7 +98,7 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
             {/* Primary CTA */}
             <div className="text-center space-y-6">
                 <div className="inline-flex flex-col items-center">
-                    <p className="text-zinc-700 text-sm mb-4">Ready to fix this? Talk to a Product Economist.</p>
+                    <p className="text-zinc-950 text-sm mb-4">Ready to fix this? Talk to a Product Economist.</p>
                     <Link
                         href="/advisory"
                         className={`group relative inline-flex items-center gap-3 px-10 py-4 font-bold uppercase tracking-widest text-sm rounded-xl transition-all transform hover:scale-105 ${contextCTA.urgency === 'critical'
@@ -117,14 +117,14 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                 <div className="flex items-center justify-center gap-6 text-sm">
                     <button
                         onClick={onReset}
-                        className="text-zinc-500 hover:text-zinc-900 transition-colors underline underline-offset-4"
+                        className="text-zinc-800 hover:text-zinc-900 transition-colors underline underline-offset-4"
                     >
                         ← Run New Analysis
                     </button>
                     <span className="text-zinc-900">|</span>
                     <Link
                         href="/system"
-                        className="text-zinc-500 hover:text-zinc-900 transition-colors"
+                        className="text-zinc-800 hover:text-zinc-900 transition-colors"
                     >
                         Explore All Tools →
                     </Link>
@@ -132,14 +132,14 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
             </div>
 
             {/* Social Proof */}
-            <div className="text-center pt-8 border-t border-zinc-200">
+            <div className="text-center pt-8 border-t border-zinc-400">
                 <p className="text-xs text-zinc-800 mb-3">Trusted by product leaders at</p>
                 <div className="flex items-center justify-center gap-8 text-zinc-800 font-mono text-xs">
-                    <span className="hover:text-zinc-600 transition-colors">Stripe</span>
-                    <span className="hover:text-zinc-600 transition-colors">Figma</span>
-                    <span className="hover:text-zinc-600 transition-colors">Linear</span>
-                    <span className="hover:text-zinc-600 transition-colors">Notion</span>
-                    <span className="hover:text-zinc-600 transition-colors">Vercel</span>
+                    <span className="hover:text-zinc-900 transition-colors">Stripe</span>
+                    <span className="hover:text-zinc-900 transition-colors">Figma</span>
+                    <span className="hover:text-zinc-900 transition-colors">Linear</span>
+                    <span className="hover:text-zinc-900 transition-colors">Notion</span>
+                    <span className="hover:text-zinc-900 transition-colors">Vercel</span>
                 </div>
             </div>
         </div>
@@ -157,7 +157,7 @@ interface SEOContentProps {
 
 export function SEOContent({ title, description, howItWorks, whyItMatters, formula }: SEOContentProps) {
     return (
-        <section className="mt-16 border-t border-zinc-200 pt-12 text-zinc-700 space-y-8">
+        <section className="mt-16 border-t border-zinc-400 pt-12 text-zinc-950 space-y-8">
             <div>
                 <h2 className="text-zinc-950 font-bold text-2xl mb-4">{title}</h2>
                 <p className="leading-relaxed">{description}</p>
@@ -168,7 +168,7 @@ export function SEOContent({ title, description, howItWorks, whyItMatters, formu
                     <h3 className="text-zinc-950 font-semibold text-lg mb-3">How It Works</h3>
                     <p className="leading-relaxed">{howItWorks}</p>
                     {formula && (
-                        <div className="mt-4 p-4 bg-white/80 rounded-lg border border-zinc-200 font-mono text-sm text-cyan-400">
+                        <div className="mt-4 p-4 bg-white/80 rounded-lg border border-zinc-400 font-mono text-sm text-cyan-400">
                             {formula}
                         </div>
                     )}
@@ -179,7 +179,7 @@ export function SEOContent({ title, description, howItWorks, whyItMatters, formu
                 </div>
             </div>
 
-            <div className="text-xs text-zinc-700 pt-4 border-t border-zinc-200">
+            <div className="text-xs text-zinc-950 pt-4 border-t border-zinc-400">
                 © 2026 Richard Ewing. Product Economist. All frameworks and methodologies are proprietary.
             </div>
         </section>

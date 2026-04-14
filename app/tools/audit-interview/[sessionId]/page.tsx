@@ -306,7 +306,7 @@ export default function SessionCommandCenter() {
         // UPDATED: Correct columns for PM Backlog (Initiative, Type, Risk, Value)
         if (scenario.chart_type === 'table_backlog') {
             return (
-                <div className="w-full overflow-hidden border border-zinc-200 rounded-xl">
+                <div className="w-full overflow-hidden border border-zinc-400 rounded-xl">
                     <table className="w-full text-sm text-left font-mono">
                         <thead className="bg-[#161b22] text-zinc-700 text-[10px] uppercase tracking-widest">
                             <tr>
@@ -333,7 +333,7 @@ export default function SessionCommandCenter() {
             );
         }
         return (
-            <div className="bg-[#161b22] border border-zinc-200 rounded-xl p-4">
+            <div className="bg-[#161b22] border border-zinc-400 rounded-xl p-4">
                 {renderChart()}
             </div>
         );
@@ -394,7 +394,7 @@ export default function SessionCommandCenter() {
                             <h3 className="text-zinc-700 text-xs uppercase tracking-widest mb-4">Phase Breakdown</h3>
                             <div className="space-y-4">
                                 {analytics.scores.map((s: any, i: number) => (
-                                    <div key={i} className="flex justify-between items-center border-b border-zinc-200 pb-2 last:border-0">
+                                    <div key={i} className="flex justify-between items-center border-b border-zinc-400 pb-2 last:border-0">
                                         <span className="text-sm font-mono text-zinc-900">{s.phase}</span>
                                         <span className={`text-xs font-bold ${s.score >= 5 ? 'text-emerald-400' : 'text-zinc-800'} bg-white/5 px-2 py-1 rounded`}>
                                             L{s.score}
@@ -409,7 +409,7 @@ export default function SessionCommandCenter() {
                             <p className="text-sm text-zinc-600 leading-relaxed italic">
                                 "{analytics.rationale}"
                             </p>
-                            <div className="mt-4 pt-4 border-t border-zinc-200">
+                            <div className="mt-4 pt-4 border-t border-zinc-400">
                                 <span className="text-xs text-emerald-400 uppercase tracking-widest">Strengths Detected:</span>
                                 <div className="flex flex-wrap gap-2 mt-2">
                                     {['System', 'Verification', 'Economics'].map(tag => (
@@ -423,7 +423,7 @@ export default function SessionCommandCenter() {
                     <div className="flex flex-col items-center pt-8 gap-6">
                         <div className="w-full mt-8">
                             {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
-                            <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-zinc-200 bg-zinc-50 text-left">
+                            <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-zinc-400 bg-zinc-50 text-left">
                                 <h3 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                     3-Step Compliance Action Memo
@@ -432,7 +432,7 @@ export default function SessionCommandCenter() {
 
                                 <div className="space-y-4">
                                     {/* Step 1 */}
-                                    <div className="bg-zinc-100 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-200 transition-colors">
+                                    <div className="bg-zinc-100 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-200 transition-colors">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                         <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
                                             <span className="text-rose-400 font-bold font-mono">01</span>
@@ -440,7 +440,7 @@ export default function SessionCommandCenter() {
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-zinc-950 font-bold mb-2">Hard-Lock the Recruiting Pipeline</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">The candidate's score of {analytics.score}/100 indicates systemic misalignment with deterministic engineering and enterprise value creation. Do not proceed.</p>
-                                            <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
+                                            <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
@@ -451,7 +451,7 @@ export default function SessionCommandCenter() {
                                     </div>
 
                                     {/* Step 2 */}
-                                    <div className="bg-zinc-100 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-200 transition-colors">
+                                    <div className="bg-zinc-100 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-200 transition-colors">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                         <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
                                             <span className="text-amber-400 font-bold font-mono">02</span>
@@ -459,7 +459,7 @@ export default function SessionCommandCenter() {
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-zinc-950 font-bold mb-2">Recalibrate the Interview Panel</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">If this candidate progressed past the initial phone screen, your existing technical interviewers are approving detrimental systemic risks.</p>
-                                            <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
+                                            <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
@@ -470,7 +470,7 @@ export default function SessionCommandCenter() {
                                     </div>
 
                                     {/* Step 3 */}
-                                    <div className="bg-zinc-100 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-200 transition-colors">
+                                    <div className="bg-zinc-100 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-200 transition-colors">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                         <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
                                             <span className="text-cyan-400 font-bold font-mono">03</span>
@@ -478,7 +478,7 @@ export default function SessionCommandCenter() {
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-zinc-950 font-bold mb-2">Internal Team Compliance Audit</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">The fact that you are actively interviewing for {session.role === 'PRODUCT_VP' ? 'Product Leadership' : 'Engineering Leadership'} indicates potential internal instability. Verify your existing teams aren't committing the same errors.</p>
-                                            <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
+                                            <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
@@ -517,8 +517,8 @@ export default function SessionCommandCenter() {
     return (
         <div className="min-h-screen bg-white text-zinc-950 flex flex-col md:flex-row font-sans selection:bg-red-500/30 overflow-hidden">
             {/* LEFT SIDEBAR - COMMAND */}
-            <div className="w-full md:w-80 border-r border-zinc-200 bg-white flex flex-col relative z-20">
-                <div className="p-6 border-b border-zinc-200">
+            <div className="w-full md:w-80 border-r border-zinc-400 bg-white flex flex-col relative z-20">
+                <div className="p-6 border-b border-zinc-400">
                     <div className="flex items-center gap-3 mb-1">
                         <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm shadow-lg ${isEng ? 'bg-gradient-to-br from-emerald-600 to-emerald-900 shadow-emerald-900/20' : 'bg-gradient-to-br from-indigo-600 to-indigo-900 shadow-indigo-900/20'}`}>
                             <ThemeIcon size={16} />
@@ -531,7 +531,7 @@ export default function SessionCommandCenter() {
                 </div>
 
                 {/* TIMER BLOCK */}
-                <div className="p-6 border-b border-zinc-200 bg-gradient-to-b from-white/20 to-transparent">
+                <div className="p-6 border-b border-zinc-400 bg-gradient-to-b from-white/20 to-transparent">
                     <div className="text-[10px] text-zinc-700 font-mono uppercase tracking-widest mb-2">Time Remaining</div>
                     <div className={`text-5xl font-mono font-bold tracking-tighter tabular-nums transition-colors duration-500 ${timeLeft < 60 ? 'text-red-500 animate-pulse' : 'text-zinc-900'}`}>
                         {formatTime(timeLeft)}
@@ -589,7 +589,7 @@ export default function SessionCommandCenter() {
                                 <h2 className="text-2xl md:text-3xl font-bold text-zinc-950 mb-4 tracking-tight leading-tight">
                                     {scenario ? scenario.prompt.split('\n')[0] : "Loading..."}
                                 </h2>
-                                <div className="text-zinc-600 text-lg leading-relaxed whitespace-pre-wrap bg-white/5 p-6 rounded-lg border border-zinc-200">
+                                <div className="text-zinc-600 text-lg leading-relaxed whitespace-pre-wrap bg-white/5 p-6 rounded-lg border border-zinc-400">
                                     {scenario ? scenario.prompt : "Decrypting mission parameters..."}
                                 </div>
                             </div>
@@ -611,7 +611,7 @@ export default function SessionCommandCenter() {
                                     {scenario.chart_type === 'dashboard' && scenario.chart_data && (
                                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                                             {scenario.chart_data.metrics.map((m: any, i: number) => (
-                                                <div key={i} className="bg-[#161b22] border border-zinc-200 p-4 rounded-lg">
+                                                <div key={i} className="bg-[#161b22] border border-zinc-400 p-4 rounded-lg">
                                                     <div className="text-[10px] text-zinc-500 uppercase tracking-widest mb-1">{m.label}</div>
                                                     <div className={`text-xl font-mono font-bold ${m.trend === 'up' && m.label.includes('Cost') ? 'text-red-500' :
                                                         m.trend === 'down' && m.label.includes('Margin') ? 'text-red-500' : 'text-zinc-900'
@@ -630,7 +630,7 @@ export default function SessionCommandCenter() {
                             )}
 
                             {/* INTERACTION AREA */}
-                            <div className="pt-6 border-t border-zinc-200 space-y-4">
+                            <div className="pt-6 border-t border-zinc-400 space-y-4">
                                 <label className="block text-xs font-mono text-zinc-500 uppercase tracking-widest">
                                     Candidate Findings Log
                                 </label>
@@ -638,7 +638,7 @@ export default function SessionCommandCenter() {
                                     value={rationale}
                                     onChange={(e) => setRationale(e.target.value)}
                                     placeholder="Type your hypothesis, root cause analysis, or defense here..."
-                                    className={`w-full h-40 bg-white border border-zinc-200 rounded-xl p-4 text-zinc-950 font-mono text-sm focus:${theme.primary.replace('text-', 'border-')} focus:outline-none focus:ring-1 focus:ring-opacity-50 transition-all resize-none placeholder:text-zinc-900`}
+                                    className={`w-full h-40 bg-white border border-zinc-400 rounded-xl p-4 text-zinc-950 font-mono text-sm focus:${theme.primary.replace('text-', 'border-')} focus:outline-none focus:ring-1 focus:ring-opacity-50 transition-all resize-none placeholder:text-zinc-900`}
                                 />
                                 <div className="flex justify-end">
                                     <ShineBorder borderColor={isEng ? "rgba(52, 211, 153, 0.5)" : "rgba(129, 140, 248, 0.5)"} duration={3}>

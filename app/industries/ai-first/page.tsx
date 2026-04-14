@@ -29,23 +29,23 @@ export default function AIFirstPage() {
                         Product Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">AI-First Companies</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
                         AI-first companies face a unique paradox: your core value proposition is your biggest cost center. Every query costs money. Every hallucination creates liability. Every model dependency creates risk.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                         {challenges.map((c, i) => (
-                            <div key={i} className="rounded-xl border border-zinc-200 p-6 hover:border-orange-500/30 transition-colors">
+                            <div key={i} className="rounded-xl border border-zinc-400 p-6 hover:border-orange-500/30 transition-colors">
                                 <div className="text-2xl mb-3">{c.icon}</div>
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">{c.title}</h3>
-                                <p className="text-zinc-600 text-sm">{c.description}</p>
+                                <p className="text-zinc-900 text-sm">{c.description}</p>
                             </div>
                         ))}
                     </div>
 
                     <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">How I Help AI-First Companies</h2>
-                        <ul className="space-y-3 text-zinc-700 mb-8">
+                        <ul className="space-y-3 text-zinc-950 mb-8">
                             <li className="flex items-start gap-3"><span className="text-orange-400 mt-1">→</span> <span>Model AI unit economics before and after launch using the AUEB calculator</span></li>
                             <li className="flex items-start gap-3"><span className="text-orange-400 mt-1">→</span> <span>Identify which AI features to convert to deterministic code (Evergreen Ratio)</span></li>
                             <li className="flex items-start gap-3"><span className="text-orange-400 mt-1">→</span> <span>Implement AI governance through <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-orange-400 underline hover:text-orange-300">Exogram</a> integration</span></li>

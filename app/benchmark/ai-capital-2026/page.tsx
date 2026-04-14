@@ -26,7 +26,7 @@ export default function AICapitalBenchmark() {
             <Meteors count={40} />
 
             <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 sm:py-32">
-                <Link href="/benchmark" className="inline-flex items-center text-sm font-mono text-zinc-500 hover:text-zinc-900 transition-colors mb-12 uppercase tracking-widest">
+                <Link href="/benchmark" className="inline-flex items-center text-sm font-mono text-zinc-800 hover:text-zinc-900 transition-colors mb-12 uppercase tracking-widest">
                     {"<"} Back to Benchmarks
                 </Link>
 
@@ -39,14 +39,14 @@ export default function AICapitalBenchmark() {
                         The 2026 AI Capital<br /> 
                         <span className="text-cyan-500">Engineering Index</span>
                     </h1>
-                    <p className="text-xl text-zinc-600 max-w-3xl leading-relaxed">
+                    <p className="text-xl text-zinc-900 max-w-3xl leading-relaxed">
                         An irrefutable empirical analysis of LLM operating costs, architectural latency, workforce displacement mathematics, and the true threshold where renting AI APIs becomes a hostile M&A liability. 
                     </p>
                     <div className="flex gap-4 items-center">
                         <p className="text-sm font-mono text-cyan-400/80 border border-cyan-500/20 px-3 py-1 bg-cyan-50/30 rounded-md">
                             Computed: Q2 2026
                         </p>
-                        <p className="text-sm font-mono text-zinc-700 border border-zinc-200 px-3 py-1 rounded-md">
+                        <p className="text-sm font-mono text-zinc-950 border border-zinc-400 px-3 py-1 rounded-md">
                             Sample Size: 512 Enterprise Repositories
                         </p>
                     </div>
@@ -59,21 +59,21 @@ export default function AICapitalBenchmark() {
                     </h2>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        <div className="p-6 bg-white border border-zinc-200 rounded-xl relative overflow-hidden group">
+                        <div className="p-6 bg-white border border-zinc-400 rounded-xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><Zap size={64}/></div>
-                            <p className="text-sm text-zinc-700 font-mono mb-2 uppercase">Avg API OpEx / Mo</p>
+                            <p className="text-sm text-zinc-950 font-mono mb-2 uppercase">Avg API OpEx / Mo</p>
                             <p className="text-4xl font-bold text-zinc-900">$41,500</p>
                             <p className="text-xs text-rose-400 mt-2 flex items-center gap-1"><TrendingDown size={12}/> +14% QoQ Growth</p>
                         </div>
-                        <div className="p-6 bg-white border border-zinc-200 rounded-xl relative overflow-hidden group">
+                        <div className="p-6 bg-white border border-zinc-400 rounded-xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><Scale size={64}/></div>
-                            <p className="text-sm text-zinc-700 font-mono mb-2 uppercase">The Crossover Point</p>
+                            <p className="text-sm text-zinc-950 font-mono mb-2 uppercase">The Crossover Point</p>
                             <p className="text-4xl font-bold text-zinc-900">4.2M</p>
                             <p className="text-xs text-cyan-400 mt-2">Tokens/Day triggering SLM CapEx advantage.</p>
                         </div>
-                        <div className="p-6 bg-white border border-zinc-200 rounded-xl relative overflow-hidden group">
+                        <div className="p-6 bg-white border border-zinc-400 rounded-xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><BarChart3 size={64}/></div>
-                            <p className="text-sm text-zinc-700 font-mono mb-2 uppercase">Acquisition Penalty</p>
+                            <p className="text-sm text-zinc-950 font-mono mb-2 uppercase">Acquisition Penalty</p>
                             <p className="text-4xl font-bold text-zinc-900">-2.4x</p>
                             <p className="text-xs text-rose-400 mt-2 flex items-center gap-1">EBITDA multiple compression if wrapper-only.</p>
                         </div>
@@ -118,10 +118,10 @@ export default function AICapitalBenchmark() {
                         <TrendingDown className="text-cyan-400" /> 02. The FTE Displacement Index
                     </h2>
                     
-                    <div className="bg-white border border-zinc-200 rounded-xl p-8 mb-8 overflow-x-auto">
+                    <div className="bg-white border border-zinc-400 rounded-xl p-8 mb-8 overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="border-b border-zinc-200 text-sm font-mono text-zinc-500 uppercase tracking-wider">
+                                <tr className="border-b border-zinc-400 text-sm font-mono text-zinc-800 uppercase tracking-wider">
                                     <th className="pb-4 pr-6">Engineering Role</th>
                                     <th className="pb-4 pr-6">2024 Autonomy Rate</th>
                                     <th className="pb-4 pr-6 text-cyan-700 font-bold">2026 Autonomy Rate</th>
@@ -129,25 +129,25 @@ export default function AICapitalBenchmark() {
                                 </tr>
                             </thead>
                             <tbody className="text-zinc-900">
-                                <tr className="border-b border-zinc-200/50">
+                                <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">L1/L2 Frontend Engineer</td>
                                     <td className="py-4 pr-6 text-zinc-900">14%</td>
                                     <td className="py-4 pr-6 text-cyan-400 font-bold">78%</td>
                                     <td className="py-4 text-right">Native v0 / Agentic UI Generation</td>
                                 </tr>
-                                <tr className="border-b border-zinc-200/50">
+                                <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">QA / SDET Analyst</td>
                                     <td className="py-4 pr-6 text-zinc-900">22%</td>
                                     <td className="py-4 pr-6 text-cyan-400 font-bold">91%</td>
                                     <td className="py-4 text-right">Agentic E2E Testing Pipelines</td>
                                 </tr>
-                                <tr className="border-b border-zinc-200/50">
+                                <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">Data Analyst (SQL)</td>
                                     <td className="py-4 pr-6 text-zinc-900">18%</td>
                                     <td className="py-4 pr-6 text-cyan-400 font-bold">65%</td>
                                     <td className="py-4 text-right">Text-to-SQL RAG Systems</td>
                                 </tr>
-                                <tr className="border-b border-zinc-200/50">
+                                <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">DevOps (K8s Maintenance)</td>
                                     <td className="py-4 pr-6 text-zinc-900">8%</td>
                                     <td className="py-4 pr-6 text-cyan-400 font-bold">45%</td>
@@ -183,14 +183,14 @@ export default function AICapitalBenchmark() {
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div className="p-8 bg-zinc-50 border border-zinc-200 rounded-xl relative">
+                        <div className="p-8 bg-zinc-50 border border-zinc-400 rounded-xl relative">
                             <h4 className="text-xl font-bold mb-4">The Latency Death Zone</h4>
-                            <p className="text-zinc-600 mb-6">Average wait time for a complex multi-agent reasoning chain (using LangChain + External LLM APIs) hitting execution timeouts.</p>
+                            <p className="text-zinc-900 mb-6">Average wait time for a complex multi-agent reasoning chain (using LangChain + External LLM APIs) hitting execution timeouts.</p>
                             <p className="text-5xl font-black text-rose-500">4.8s <span className="text-lg text-rose-400 font-normal">ttfb</span></p>
                         </div>
-                        <div className="p-8 bg-zinc-50 border border-zinc-200 rounded-xl relative">
+                        <div className="p-8 bg-zinc-50 border border-zinc-400 rounded-xl relative">
                             <h4 className="text-xl font-bold mb-4">ACV Churn Correlation</h4>
-                            <p className="text-zinc-600 mb-6">Percentage of Enterprise Contracts lost at renewal due to "sluggish AI functionality" in the UI.</p>
+                            <p className="text-zinc-900 mb-6">Percentage of Enterprise Contracts lost at renewal due to "sluggish AI functionality" in the UI.</p>
                             <p className="text-5xl font-black text-rose-500">22% <span className="text-lg text-rose-400 font-normal">churn</span></p>
                         </div>
                     </div>
@@ -211,13 +211,13 @@ export default function AICapitalBenchmark() {
                         <Database className="text-cyan-400" /> 04. The Vector Component Collapse
                     </h2>
                     
-                    <div className="bg-white border border-zinc-200 rounded-xl p-8 mb-8">
+                    <div className="bg-white border border-zinc-400 rounded-xl p-8 mb-8">
                         <div className="w-full h-8 flex rounded-full overflow-hidden mb-4">
                             <div className="bg-cyan-500 h-full flex items-center px-4 font-bold text-black" style={{ width: '68%' }}>PostgreSQL (pgvector) - 68%</div>
                             <div className="bg-zinc-700 h-full flex items-center px-4 text-xs font-mono text-zinc-950" style={{ width: '18%' }}>Dedicated (Pinecone/Milvus) - 18%</div>
                             <div className="bg-zinc-200 h-full flex items-center px-4 text-xs font-mono text-zinc-950" style={{ width: '14%' }}>Other - 14%</div>
                         </div>
-                        <p className="text-sm text-zinc-700 text-center font-mono">2026 Enterprise Vector Search Market Share (Series B+)</p>
+                        <p className="text-sm text-zinc-950 text-center font-mono">2026 Enterprise Vector Search Market Share (Series B+)</p>
                     </div>
 
                     <div className="prose prose-zinc max-w-none text-zinc-900">
@@ -232,16 +232,16 @@ export default function AICapitalBenchmark() {
 
 
                 {/* Final Conversion Spoke */}
-                <div className="mt-24 pt-16 border-t border-zinc-200 text-center">
+                <div className="mt-24 pt-16 border-t border-zinc-400 text-center">
                     <h2 className="text-4xl font-bold text-zinc-900 mb-6 font-grotesk">Deploy The Playbook To Your Board</h2>
-                    <p className="text-zinc-600 mb-10 max-w-2xl mx-auto text-lg">
+                    <p className="text-zinc-900 mb-10 max-w-2xl mx-auto text-lg">
                         Don't let your CFO read this report before you do. Get a bespoke Exogram capability map generated specifically around your team's pull-request velocity, architectural latency, and AWS spend.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <Link href="/advisory" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-zinc-200 transition-all flex items-center gap-2 shadow-[0_0_30px_-5px_rgba(255,255,255,0.4)]">
                             Secure A Strategic Audit <ArrowRight size={16} />
                         </Link>
-                        <Link href="/tools" className="px-8 py-4 bg-transparent border border-zinc-600 text-zinc-700 font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-zinc-50 transition-all">
+                        <Link href="/tools" className="px-8 py-4 bg-transparent border border-zinc-600 text-zinc-950 font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-zinc-50 transition-all">
                             View Diagnostic Tools
                         </Link>
                     </div>

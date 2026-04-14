@@ -67,7 +67,7 @@ export default function FaqPage() {
             <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                 Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">Questions</span>
             </h1>
-            <p className="text-lg text-zinc-600 mb-12">Answers about advisory services, frameworks, tools, Exogram, and the glossary.</p>
+            <p className="text-lg text-zinc-900 mb-12">Answers about advisory services, frameworks, tools, Exogram, and the glossary.</p>
 
             {faqs.map((category) => (
                 <div key={category.category} className="mb-12">
@@ -82,7 +82,7 @@ export default function FaqPage() {
                                     <span>{faq.q}</span>
                                     <span className="text-cyan-400 text-xl font-mono group-open:rotate-45 transition-transform">+</span>
                                 </summary>
-                                <p className="text-zinc-600 mt-4 leading-relaxed">{faq.a}</p>
+                                <p className="text-zinc-900 mt-4 leading-relaxed">{faq.a}</p>
                             </details>
                         ))}
                     </div>
@@ -90,9 +90,9 @@ export default function FaqPage() {
             ))}
 
             {/* CTA */}
-            <div className="text-center py-12 border-t border-zinc-200">
+            <div className="text-center py-12 border-t border-zinc-400">
                 <h2 className="text-2xl font-bold text-zinc-950 mb-4">Still Have Questions?</h2>
-                <p className="text-zinc-600 mb-8">Book a free 15-minute call or explore the tools.</p>
+                <p className="text-zinc-900 mb-8">Book a free 15-minute call or explore the tools.</p>
                 <div className="flex flex-wrap justify-center gap-4">
                     <Link href="/advisory" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                         Book a Call →

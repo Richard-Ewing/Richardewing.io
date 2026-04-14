@@ -43,14 +43,14 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
                         <span className={`font-mono text-xs uppercase tracking-widest ${iconColor} font-bold`}>Mandatory Executive Training</span>
                     </div>
                     <h3 className="text-2xl sm:text-3xl font-bold text-zinc-950 mb-2">{headline}</h3>
-                    <p className="text-zinc-600 max-w-2xl text-sm leading-relaxed">
+                    <p className="text-zinc-900 max-w-2xl text-sm leading-relaxed">
                         {subheadline}
                     </p>
                 </div>
                 {/* Value Anchor Frame */}
-                <div className="bg-white/50 border border-zinc-200 rounded-xl p-4 shrink-0 text-center w-full sm:w-auto">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-700 mb-1">Consulting Equivalent Value</div>
-                    <div className={`text-xl font-bold text-zinc-700 line-through decoration-2 mb-1 ${isCritical ? 'decoration-red-500/50' : 'decoration-emerald-500/50'}`}>$15,000+</div>
+                <div className="bg-white/50 border border-zinc-400 rounded-xl p-4 shrink-0 text-center w-full sm:w-auto">
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-950 mb-1">Consulting Equivalent Value</div>
+                    <div className={`text-xl font-bold text-zinc-950 line-through decoration-2 mb-1 ${isCritical ? 'decoration-red-500/50' : 'decoration-emerald-500/50'}`}>$15,000+</div>
                     <div className="text-[10px] font-mono text-cyan-500">Vault Access: $1,495</div>
                 </div>
             </div>
@@ -58,10 +58,10 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
             {/* Injected Curriculum Framework */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 relative z-10">
                 {recommendedTracks.map((track, idx) => (
-                    <div key={idx} className={`bg-white border border-zinc-200 rounded-xl p-5 transition-colors ${cardHoverColor}`}>
+                    <div key={idx} className={`bg-white border border-zinc-400 rounded-xl p-5 transition-colors ${cardHoverColor}`}>
                         <div className={`text-xs font-mono mb-2 ${trackIdColor}`}>{track.id}</div>
                         <div className="text-lg font-bold text-zinc-950 mb-2">{track.title}</div>
-                        <div className="text-sm text-zinc-700 leading-relaxed">{track.desc}</div>
+                        <div className="text-sm text-zinc-950 leading-relaxed">{track.desc}</div>
                     </div>
                 ))}
             </div>

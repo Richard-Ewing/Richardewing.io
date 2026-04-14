@@ -7,7 +7,7 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
             {children}
 
             {/* Sticky Engagement CTA — appears at bottom of every curriculum page */}
-            <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-zinc-200 py-3 px-4 shadow-lg">
+            <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-zinc-400 py-3 px-4 shadow-lg">
                 <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-100 to-indigo-100 border border-violet-200 flex items-center justify-center">
@@ -19,10 +19,10 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
-                        <Link href="/tools" className="hidden sm:inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-purple-600 transition-colors px-3 py-1.5 rounded-lg border border-zinc-200 hover:border-purple-200">
+                        <Link href="/tools" className="hidden sm:inline-flex items-center gap-1.5 text-xs text-zinc-800 hover:text-purple-600 transition-colors px-3 py-1.5 rounded-lg border border-zinc-400 hover:border-purple-200">
                             🛠️ Free Tools
                         </Link>
-                        <Link href="/glossary" className="hidden sm:inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-purple-600 transition-colors px-3 py-1.5 rounded-lg border border-zinc-200 hover:border-purple-200">
+                        <Link href="/glossary" className="hidden sm:inline-flex items-center gap-1.5 text-xs text-zinc-800 hover:text-purple-600 transition-colors px-3 py-1.5 rounded-lg border border-zinc-400 hover:border-purple-200">
                             📚 Glossary
                         </Link>
                         <a

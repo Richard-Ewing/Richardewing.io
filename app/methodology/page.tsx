@@ -67,28 +67,28 @@ export default function MethodologyPage() {
                             How R&D Audits{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-rose-400">Work</span>
                         </h1>
-                        <p className="text-xl text-zinc-600 max-w-2xl mx-auto">
+                        <p className="text-xl text-zinc-900 max-w-2xl mx-auto">
                             A structured, 4-phase methodology that transforms raw engineering data into board-ready financial clarity. Typical engagement: 4 weeks.
                         </p>
                     </div>
 
                     <div className="space-y-8 mb-16">
                         {phases.map((p, i) => (
-                            <div key={i} className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8">
+                            <div key={i} className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl font-bold text-cyan-400">{p.phase}</div>
                                     <div className="flex-1">
                                         <h2 className="text-xl font-grotesk font-bold text-zinc-900">{p.title}</h2>
-                                        <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">{p.duration}</span>
+                                        <span className="text-xs font-mono text-zinc-800 uppercase tracking-widest">{p.duration}</span>
                                     </div>
                                     <span className="text-3xl">{p.icon}</span>
                                 </div>
-                                <p className="text-zinc-600 mb-4">{p.description}</p>
+                                <p className="text-zinc-900 mb-4">{p.description}</p>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <h3 className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Activities</h3>
                                         <ul className="space-y-1">
-                                            {p.activities.map((a, j) => <li key={j} className="text-sm text-zinc-700 flex items-start gap-2"><span className="text-cyan-500">→</span>{a}</li>)}
+                                            {p.activities.map((a, j) => <li key={j} className="text-sm text-zinc-950 flex items-start gap-2"><span className="text-cyan-500">→</span>{a}</li>)}
                                         </ul>
                                     </div>
                                     <div>
@@ -102,7 +102,7 @@ export default function MethodologyPage() {
 
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Start Your Audit</h2>
-                        <p className="text-zinc-600 mb-8 max-w-xl mx-auto">Board-ready results in 4 weeks. Dollar-denominated. Actionable. No 50-page technical reports that nobody reads.</p>
+                        <p className="text-zinc-900 mb-8 max-w-xl mx-auto">Board-ready results in 4 weeks. Dollar-denominated. Actionable. No 50-page technical reports that nobody reads.</p>
                         <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Book R&D Capital Audit →</Link>
                     </div>
                 </div>

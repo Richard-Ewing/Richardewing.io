@@ -34,13 +34,13 @@ const ExogramSection = () => {
                         </p>
 
                         {/* Description */}
-                        <p className="text-zinc-700 max-w-xl">
+                        <p className="text-zinc-950 max-w-xl">
                             Exogram is the missing trust layer between AI models and applications —
                             maintaining context, meaning, and truth so AI systems can be relied upon.
                         </p>
 
                         {/* Founder & CTAs Container - Side by Side on Desktop */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full border-t border-zinc-200 pt-8 mt-4 items-center">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full border-t border-zinc-400 pt-8 mt-4 items-center">
 
                             {/* Founder Attribution - Right Aligned on Desktop to kiss the center line */}
                             <div className="flex items-center justify-center md:justify-end gap-4 h-12">
@@ -49,7 +49,7 @@ const ExogramSection = () => {
                                 <div className="text-left flex flex-col justify-center h-full">
                                     <p className="text-zinc-900 font-semibold leading-none mb-1">Founded by Richard Ewing</p>
                                     <div className="flex items-center gap-2">
-                                        <p className="text-zinc-700 text-xs leading-none">Product Economist</p>
+                                        <p className="text-zinc-950 text-xs leading-none">Product Economist</p>
                                         <span className="text-emerald-600 text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-50 rounded border border-emerald-200 leading-none flex items-center h-4">Live</span>
                                     </div>
                                 </div>

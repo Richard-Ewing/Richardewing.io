@@ -29,8 +29,8 @@ export default function BookPage() {
                     and the frameworks, metrics, and diagnostic tools to fix it. Based on advisory engagements with 50+ technology companies.
                 </p>
 
-                <div className="p-8 rounded-2xl bg-[var(--bg-secondary)] border border-zinc-200 mb-8">
-                    <p className="text-sm text-zinc-700 mb-4 font-mono uppercase tracking-widest">Get Notified at Launch</p>
+                <div className="p-8 rounded-2xl bg-[var(--bg-secondary)] border border-zinc-400 mb-8">
+                    <p className="text-sm text-zinc-950 mb-4 font-mono uppercase tracking-widest">Get Notified at Launch</p>
                     <NewsletterForm
                         buttonText="Join Waitlist"
                         placeholder="your@email.com"

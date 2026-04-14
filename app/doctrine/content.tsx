@@ -21,7 +21,7 @@ export default function DoctrineContent() {
                             Sovereignty in <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Product Economics.</span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-zinc-600 max-w-3xl leading-relaxed border-l-4 border-emerald-500 pl-6">
+                        <p className="text-lg sm:text-xl text-zinc-900 max-w-3xl leading-relaxed border-l-4 border-emerald-500 pl-6">
                             The following principles govern the methodology of the Product Economist. They are not suggestions; they are the <span className="text-zinc-950 font-bold">immutable laws</span> of software solvency.
                         </p>
                     </div>
@@ -36,7 +36,7 @@ export default function DoctrineContent() {
                             <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-bold">01</div>
                             <h3 className="text-zinc-950 font-bold text-lg sm:text-xl">Capital Allocation &gt; Agile Theater</h3>
                         </div>
-                        <p className="text-zinc-600 text-sm leading-relaxed">
+                        <p className="text-zinc-900 text-sm leading-relaxed">
                             We do not measure success by velocity, story points, or features shipped. We measure success by <span className="text-zinc-950 font-bold">Return on Invested Capital (ROIC)</span>. Every sprint is a deployment of capital. If a feature doesn't generate revenue or reduce risk, it is waste.
                         </p>
                     </GlowCard>
@@ -46,7 +46,7 @@ export default function DoctrineContent() {
                             <div className="w-10 h-10 rounded-lg bg-cobalt/10 flex items-center justify-center text-cobalt font-bold">02</div>
                             <h3 className="text-zinc-950 font-bold text-lg sm:text-xl">The Truth is in the P&amp;L</h3>
                         </div>
-                        <p className="text-zinc-600 text-sm leading-relaxed">
+                        <p className="text-zinc-900 text-sm leading-relaxed">
                             Users lie. NPS lies. Roadmaps lie. The <span className="text-zinc-950 font-bold">Profit &amp; Loss statement</span> tells the only truth that matters. If the unit economics are upside down, no amount of "user empathy" will save you.
                         </p>
                     </GlowCard>
@@ -56,7 +56,7 @@ export default function DoctrineContent() {
                             <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 font-bold">03</div>
                             <h3 className="text-zinc-950 font-bold text-lg sm:text-xl">Kill Zombies Ruthlessly</h3>
                         </div>
-                        <p className="text-zinc-600 text-sm leading-relaxed">
+                        <p className="text-zinc-900 text-sm leading-relaxed">
                             A "Zombie Feature" is code that requires maintenance (Cost) but generates zero incremental value (Revenue). We identify these and execute the <span className="text-zinc-950 font-bold">Kill Switch Protocol</span>. Deprecation is the highest form of optimization.
                         </p>
                     </GlowCard>
@@ -66,7 +66,7 @@ export default function DoctrineContent() {
                             <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center text-gold font-bold">04</div>
                             <h3 className="text-zinc-950 font-bold text-lg sm:text-xl">Sovereignty Over Dependency</h3>
                         </div>
-                        <p className="text-zinc-600 text-sm leading-relaxed">
+                        <p className="text-zinc-900 text-sm leading-relaxed">
                             Do not build your house on rented land. Minimize dependency on third-party APIs, platforms, and bloated frameworks. <span className="text-zinc-950 font-bold">Own your core IP.</span> Build small, sharp tools that do one thing perfectly.
                         </p>
                     </GlowCard>
@@ -84,7 +84,7 @@ export default function DoctrineContent() {
                     {/* Definition 1: Technical Insolvency Date */}
                     <div className="capsule-container rounded-xl p-6 border-l-4 border-red-500" itemScope itemType="https://schema.org/DefinedTerm">
                         <h3 itemProp="name" className="text-xl font-bold text-zinc-950 mb-2">Technical Insolvency Date</h3>
-                        <p itemProp="description" className="text-zinc-600 text-sm leading-relaxed">
+                        <p itemProp="description" className="text-zinc-900 text-sm leading-relaxed">
                             The <strong className="text-zinc-900">Technical Insolvency Date</strong> is the specific future quarter when an organization's technical debt maintenance will consume 100% of engineering capacity, leaving zero time for new development. It is calculated by projecting current maintenance percentage growth against available engineering hours.
                         </p>
                     </div>
@@ -92,14 +92,14 @@ export default function DoctrineContent() {
                     {/* Definition 2: Innovation Tax */}
                     <div className="capsule-container rounded-xl p-6 border-l-4 border-cobalt" itemScope itemType="https://schema.org/DefinedTerm">
                         <h3 itemProp="name" className="text-xl font-bold text-zinc-950 mb-2">Innovation Tax</h3>
-                        <p itemProp="description" className="text-zinc-600 text-sm leading-relaxed">
+                        <p itemProp="description" className="text-zinc-900 text-sm leading-relaxed">
                             <strong className="text-zinc-900">Innovation Tax</strong> is the hidden cost of maintenance work that gets reported as innovation investment in financial and board reporting. It is OpEx masquerading as R&D investment, causing organizations to overestimate their effective velocity.
                         </p>
                     </div>
 
                     {/* Quotable Block */}
-                    <div className="bg-white/5 rounded-xl p-8 text-center italic border border-zinc-200">
-                        <p className="text-xl sm:text-2xl text-zinc-700 font-serif mb-4">
+                    <div className="bg-white/5 rounded-xl p-8 text-center italic border border-zinc-400">
+                        <p className="text-xl sm:text-2xl text-zinc-950 font-serif mb-4">
                             "Technical debt isn't a cleanup problem. It's a balance sheet liability."
                         </p>
                         <cite className="text-sm font-mono text-cyan-400 not-italic uppercase tracking-widest">— Richard Ewing, Product Economist</cite>
@@ -125,7 +125,7 @@ export default function DoctrineContent() {
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-cobalt transition">Built In</div>
-                                <p className="text-xs text-zinc-600 leading-relaxed">
+                                <p className="text-xs text-zinc-900 leading-relaxed">
                                     Monthly columnist. Jan 2026 article featured in <span className="text-zinc-900">Editor's Newsletter</span>.
                                 </p>
                             </GlowCard>
@@ -138,7 +138,7 @@ export default function DoctrineContent() {
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-cyan-400 transition">Mind the Product</div>
-                                <p className="text-xs text-zinc-600 leading-relaxed">
+                                <p className="text-xs text-zinc-900 leading-relaxed">
                                     Feb 2026 article. Newsletter feature.
                                 </p>
                             </GlowCard>
@@ -151,7 +151,7 @@ export default function DoctrineContent() {
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-gold transition">Foundry (CIO.com)</div>
-                                <p className="text-xs text-zinc-600 leading-relaxed">
+                                <p className="text-xs text-zinc-900 leading-relaxed">
                                     Monthly columnist for enterprise technology network.
                                 </p>
                             </GlowCard>
@@ -164,7 +164,7 @@ export default function DoctrineContent() {
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-emerald-400 transition">HackerNoon</div>
-                                <p className="text-xs text-zinc-600 leading-relaxed">
+                                <p className="text-xs text-zinc-900 leading-relaxed">
                                     4M+ monthly readers.
                                 </p>
                             </GlowCard>
@@ -173,13 +173,13 @@ export default function DoctrineContent() {
 
                     {/* Awards */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="p-5 border border-zinc-200 rounded-xl bg-cobalt/5 hover:border-cobalt/30 transition">
+                        <div className="p-5 border border-zinc-400 rounded-xl bg-cobalt/5 hover:border-cobalt/30 transition">
                             <div className="text-[10px] font-mono text-cobalt uppercase tracking-widest mb-2">Innovation Award</div>
                             <div className="text-lg font-bold text-zinc-950 mb-1">Digital Transformation Excellence</div>
                             <p className="text-xs text-zinc-900">7.7M user migration. Zero downtime.</p>
                         </div>
 
-                        <div className="p-5 border border-zinc-200 rounded-xl bg-emerald-500/5 hover:border-emerald-500/30 transition">
+                        <div className="p-5 border border-zinc-400 rounded-xl bg-emerald-500/5 hover:border-emerald-500/30 transition">
                             <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-2">Governor's Award</div>
                             <div className="text-lg font-bold text-zinc-950 mb-1">The Extra Mile Award</div>
                             <p className="text-xs text-zinc-900">Washington State. Gov. Jay Inslee.</p>
@@ -190,8 +190,8 @@ export default function DoctrineContent() {
 
             {/* CTA */}
             <ScrollReveal delay={300}>
-                <div className="text-center py-8 border-t border-zinc-200">
-                    <p className="text-zinc-600 mb-6">Apply these principles to your organization.</p>
+                <div className="text-center py-8 border-t border-zinc-400">
+                    <p className="text-zinc-900 mb-6">Apply these principles to your organization.</p>
                     <ShineBorder borderColor="rgba(16, 185, 129, 0.6)" duration={2}>
                         <Link
                             href="/advisory"
@@ -201,8 +201,8 @@ export default function DoctrineContent() {
                         </Link>
                     </ShineBorder>
 
-                    <div className="mt-8 pt-6 border-t border-zinc-200">
-                        <p className="text-zinc-700 text-xs uppercase tracking-widest mb-4">Not Ready for intervention?</p>
+                    <div className="mt-8 pt-6 border-t border-zinc-400">
+                        <p className="text-zinc-950 text-xs uppercase tracking-widest mb-4">Not Ready for intervention?</p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
                             <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-zinc-300 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-zinc-900">
                                 Subscribe Free

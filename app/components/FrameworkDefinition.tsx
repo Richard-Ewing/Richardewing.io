@@ -49,7 +49,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
 
                 {/* Breadcrumb */}
                 <div className="py-8">
-                    <a href="/articles" className="text-zinc-500 hover:text-zinc-900 text-sm font-mono transition-colors">
+                    <a href="/articles" className="text-zinc-800 hover:text-zinc-900 text-sm font-mono transition-colors">
                         ← Back to Canonical Hub
                     </a>
                 </div>
@@ -74,7 +74,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                     <div className="max-w-3xl">
                         <h2 className="text-lg font-semibold text-cyan-400 mb-4 font-grotesk">Definition</h2>
                         <div className="p-6 bg-white/5 border-l-4 border-cyan-400 rounded-r-lg">
-                            <p className="text-xl text-zinc-700 leading-relaxed font-serif italic">
+                            <p className="text-xl text-zinc-950 leading-relaxed font-serif italic">
                                 {framework.definition}
                             </p>
                         </div>
@@ -111,14 +111,14 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {/* Related Articles */}
                 <section className="section-sm">
                     <div className="max-w-3xl">
-                        <h2 className="text-lg font-semibold text-zinc-950 mb-4 font-grotesk border-b border-zinc-200 pb-2">Related Articles</h2>
+                        <h2 className="text-lg font-semibold text-zinc-950 mb-4 font-grotesk border-b border-zinc-400 pb-2">Related Articles</h2>
                         <ul className="space-y-4">
                             {framework.relatedArticles.map((article, i) => (
                                 <li key={i} className="group">
                                     <a href={article.url} className="text-lg text-zinc-950 group-hover:text-purple-400 transition-colors font-semibold block mb-1">
                                         "{article.title}"
                                     </a>
-                                    <span className="text-zinc-700 text-sm font-mono"> — {article.publication}, {article.date}</span>
+                                    <span className="text-zinc-950 text-sm font-mono"> — {article.publication}, {article.date}</span>
                                 </li>
                             ))}
                         </ul>
@@ -144,9 +144,9 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {/* Citation */}
                 <section className="section-sm pb-20">
                     <div className="max-w-3xl">
-                        <h2 className="text-sm font-semibold text-zinc-700 mb-4 font-mono uppercase tracking-widest">Citation</h2>
-                        <div className="card bg-white/50 p-6 border-zinc-200">
-                            <p className="text-zinc-700 text-xs mb-4 uppercase">To cite this definition:</p>
+                        <h2 className="text-sm font-semibold text-zinc-950 mb-4 font-mono uppercase tracking-widest">Citation</h2>
+                        <div className="card bg-white/50 p-6 border-zinc-400">
+                            <p className="text-zinc-950 text-xs mb-4 uppercase">To cite this definition:</p>
                             <p className="text-zinc-800 font-mono text-sm break-all">
                                 Ewing, R. (2026). "{framework.name}." richardewing.io.<br />
                                 https://www.richardewing.io/articles/frameworks/{framework.slug}

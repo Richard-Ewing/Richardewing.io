@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -31,21 +31,21 @@ export default function AgriTechPage() {
                         AgriTech{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-lime-400">Product Economics</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">Agriculture technology faces R&D challenges unlike any other vertical: extreme model drift tied to growing seasons, IoT at massive scale in remote locations, and complex multi-stakeholder supply chains.</p>
+                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">Agriculture technology faces R&D challenges unlike any other vertical: extreme model drift tied to growing seasons, IoT at massive scale in remote locations, and complex multi-stakeholder supply chains.</p>
 
                     <div className="space-y-6 mb-16">
                         {sections.map((s, i) => (
                             <div key={i} className={`rounded-2xl border p-8 ${colorMap[s.color]}`}>
                                 <h2 className={`text-2xl font-grotesk font-bold mb-3 ${textMap[s.color]}`}>{s.title}</h2>
-                                <p className="text-zinc-600 mb-4">{s.description}</p>
-                                <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">{s.stats}</span>
+                                <p className="text-zinc-900 mb-4">{s.description}</p>
+                                <span className="text-xs font-mono text-zinc-800 uppercase tracking-widest">{s.stats}</span>
                             </div>
                         ))}
                     </div>
 
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 text-center">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">AgriTech R&D Audit</h2>
-                        <p className="text-zinc-700 mb-6">Quantify your precision agriculture AI costs, IoT infrastructure debt, and satellite processing economics.</p>
+                        <p className="text-zinc-950 mb-6">Quantify your precision agriculture AI costs, IoT infrastructure debt, and satellite processing economics.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-lime-500 text-white font-bold hover:opacity-90 transition-opacity">Book AgriTech Audit →</Link>
                     </div>
                 </div>

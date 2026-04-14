@@ -34,7 +34,7 @@ export default function StickyBottomCTA() {
 
     return (
         <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom duration-500">
-            <div className="bg-white/95 backdrop-blur-md border-t border-zinc-200 shadow-[0_-4px_30px_rgba(0,0,0,0.5)]">
+            <div className="bg-white/95 backdrop-blur-md border-t border-zinc-400 shadow-[0_-4px_30px_rgba(0,0,0,0.5)]">
                 <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3 min-w-0">
                         <span className="hidden sm:inline text-2xl">📊</span>
@@ -42,7 +42,7 @@ export default function StickyBottomCTA() {
                             <p className="text-zinc-950 text-sm font-bold truncate">
                                 Is your R&D budget building assets — or just servicing liabilities?
                             </p>
-                            <p className="text-zinc-700 text-xs hidden sm:block">30-min diagnostic call with a Product Economist. $450.</p>
+                            <p className="text-zinc-950 text-xs hidden sm:block">30-min diagnostic call with a Product Economist. $450.</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0">
@@ -54,7 +54,7 @@ export default function StickyBottomCTA() {
                         </Link>
                         <button
                             onClick={() => { setDismissed(true); sessionStorage.setItem('sticky-cta-dismissed', 'true'); }}
-                            className="p-1 text-zinc-500 hover:text-zinc-900 transition-colors"
+                            className="p-1 text-zinc-800 hover:text-zinc-900 transition-colors"
                             aria-label="Dismiss"
                         >
                             <X className="w-4 h-4" />

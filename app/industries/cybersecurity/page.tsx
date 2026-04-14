@@ -28,21 +28,21 @@ export default function CybersecurityPage() {
                         Product Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">Cybersecurity</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
+                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
                         Security debt compounds faster than any other form of technical debt because the cost of failure is a breach — not slower features, but data loss, regulatory fines, and destroyed trust.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                         {challenges.map((c, i) => (
-                            <div key={i} className="rounded-xl border border-zinc-200 p-6 hover:border-red-500/30 transition-colors">
+                            <div key={i} className="rounded-xl border border-zinc-400 p-6 hover:border-red-500/30 transition-colors">
                                 <div className="text-2xl mb-3">{c.icon}</div>
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">{c.title}</h3>
-                                <p className="text-zinc-600 text-sm">{c.description}</p>
+                                <p className="text-zinc-900 text-sm">{c.description}</p>
                             </div>
                         ))}
                     </div>
                     <div className="rounded-2xl border border-red-500/30 bg-red-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">How I Help Cybersecurity Companies</h2>
-                        <ul className="space-y-3 text-zinc-700 mb-8">
+                        <ul className="space-y-3 text-zinc-950 mb-8">
                             <li className="flex items-start gap-3"><span className="text-red-400 mt-1">→</span> <span>Quantify security debt in breach risk dollars, not just vulnerability counts</span></li>
                             <li className="flex items-start gap-3"><span className="text-red-400 mt-1">→</span> <span>Model AI detection feature economics — false positive cost vs detection value</span></li>
                             <li className="flex items-start gap-3"><span className="text-red-400 mt-1">→</span> <span>Calculate compliance engineering overhead across multiple framework certifications</span></li>

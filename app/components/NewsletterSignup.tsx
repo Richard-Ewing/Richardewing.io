@@ -1,4 +1,4 @@
-
+﻿
 export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' | 'compact' | 'full' }) => {
 
     const beehiivUrl = 'https://theproducteconomist.beehiiv.com/subscribe';
@@ -38,7 +38,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
                 >
                     Subscribe on Beehiiv →
                 </a>
-                <p className="text-zinc-700 text-sm">
+                <p className="text-zinc-950 text-sm">
                     Join 2,000+ executives. One email per month. Unsubscribe anytime.
                 </p>
             </div>

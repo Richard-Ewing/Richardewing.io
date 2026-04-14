@@ -45,7 +45,7 @@ export default function BenchmarkPage() {
                             <div key={i} className="card p-6 text-center">
                                 <item.icon className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
                                 <div className="text-3xl font-bold text-zinc-950 mb-2">{item.stat}</div>
-                                <p className="text-zinc-600 text-sm">{item.label}</p>
+                                <p className="text-zinc-900 text-sm">{item.label}</p>
                             </div>
                         ))}
                     </div>
@@ -63,17 +63,17 @@ export default function BenchmarkPage() {
                                         'Technical Insolvency Date distribution',
                                         'Recommendations for each debt severity level',
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-2 text-zinc-700 text-sm">
+                                        <li key={i} className="flex items-start gap-2 text-zinc-950 text-sm">
                                             <CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
                                             {item}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-                            <div className="bg-white/80 border border-zinc-200 rounded-2xl p-8 text-center">
+                            <div className="bg-white/80 border border-zinc-400 rounded-2xl p-8 text-center">
                                 <Download className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
                                 <h3 className="text-xl font-bold text-zinc-950 mb-2">Download Free Report</h3>
-                                <p className="text-zinc-700 text-sm mb-6">Enter your email to receive the full PDF report.</p>
+                                <p className="text-zinc-950 text-sm mb-6">Enter your email to receive the full PDF report.</p>
                                 <a
                                     href="https://theproducteconomist.beehiiv.com/subscribe"
                                     target="_blank"
@@ -88,12 +88,12 @@ export default function BenchmarkPage() {
                     </div>
                 </section>
 
-                <section className="section max-w-4xl mx-auto text-center mt-12 mb-16 border-t border-zinc-200 pt-16">
+                <section className="section max-w-4xl mx-auto text-center mt-12 mb-16 border-t border-zinc-400 pt-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-6">
                         Open Data Report
                     </div>
                     <h2 className="text-3xl font-bold text-zinc-950 mb-4 font-grotesk">The 2026 AI Capital Engineering Index</h2>
-                    <p className="text-zinc-600 mb-8 max-w-2xl mx-auto">
+                    <p className="text-zinc-900 mb-8 max-w-2xl mx-auto">
                         We open-sourced our proprietary M&A telemetry. View the raw, ungated mathematical timeline of FTE displacement, Vector DB collapse, and OpEx vs CapEx thresholds.
                     </p>
                     <Link href="/benchmark/ai-capital-2026" className="inline-flex px-8 py-4 bg-zinc-50 border border-cyan-500/30 text-zinc-950 font-bold text-sm rounded-lg hover:bg-cyan-50/20 transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.3)]">
@@ -103,11 +103,11 @@ export default function BenchmarkPage() {
 
                 <section className="section max-w-4xl mx-auto text-center">
                     <h2 className="text-2xl font-bold text-zinc-950 mb-4 font-grotesk">Want Personalized Analysis?</h2>
-                    <p className="text-zinc-600 mb-6 max-w-xl mx-auto">
+                    <p className="text-zinc-900 mb-6 max-w-xl mx-auto">
                         The benchmark tells you where the industry stands. A diagnostic tells you where <span className="text-zinc-950 font-semibold">you</span> stand.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/tools/pdi" className="px-6 py-3 bg-white/5 border border-zinc-200 text-zinc-950 font-bold text-sm rounded-lg hover:bg-white/10 transition-all">
+                        <Link href="/tools/pdi" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-bold text-sm rounded-lg hover:bg-white/10 transition-all">
                             Run Free PDI Calculator
                         </Link>
                         <Link href="/advisory" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-sm rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">

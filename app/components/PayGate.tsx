@@ -55,7 +55,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                         <h3 className="text-2xl font-grotesk font-bold text-zinc-900 mb-2">
                             Continue Learning: {trackName}
                         </h3>
-                        <p className="text-zinc-700 text-sm mb-6">
+                        <p className="text-zinc-950 text-sm mb-6">
                             {showPreview ? `${totalLessons - 1} more lesson${totalLessons - 1 === 1 ? '' : 's'}` : `${totalLessons} lesson${totalLessons === 1 ? '' : 's'}`} with actionable playbooks, executive dashboards, and engineering architecture.
                         </p>
 
@@ -65,7 +65,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                             <div className="border-2 border-violet-400 bg-violet-50 rounded-xl p-5 relative">
                                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-violet-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">Most Popular</div>
                                 <div className="text-3xl font-bold text-zinc-900 mb-1">$149</div>
-                                <div className="text-xs text-zinc-700 mb-4">This Track · Lifetime</div>
+                                <div className="text-xs text-zinc-950 mb-4">This Track · Lifetime</div>
                                 <CheckoutButton 
                                     productId={productId || 'single_track'} 
                                     moduleId={moduleId}
@@ -75,9 +75,9 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                 />
                             </div>
                             {/* All Access */}
-                            <div className="border border-zinc-200 bg-zinc-50 rounded-xl p-5">
+                            <div className="border border-zinc-400 bg-zinc-50 rounded-xl p-5">
                                 <div className="text-3xl font-bold text-zinc-900 mb-1">$999</div>
-                                <div className="text-xs text-zinc-700 mb-4">All 23 Tracks · Lifetime</div>
+                                <div className="text-xs text-zinc-950 mb-4">All 23 Tracks · Lifetime</div>
                                 <CheckoutButton 
                                     productId="full_curriculum" 
                                     moduleId={moduleId}
@@ -90,7 +90,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
 
                         {/* Team tier */}
                         {status === 'waitlist' ? (
-                            <button disabled className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-600 cursor-not-allowed transition-colors font-medium text-sm">
+                            <button disabled className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-zinc-400 bg-zinc-50 text-zinc-900 cursor-not-allowed transition-colors font-medium text-sm">
                                 <Lock className="w-4 h-4" />
                                 <span>Join Waitlist — In Active Development</span>
                             </button>
@@ -104,7 +104,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                             />
                         )}
                         
-                        <div className="flex items-center justify-center gap-4 mt-4 text-[10px] text-zinc-600 uppercase tracking-widest font-mono">
+                        <div className="flex items-center justify-center gap-4 mt-4 text-[10px] text-zinc-900 uppercase tracking-widest font-mono">
                             <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3" /> Secure Stripe Checkout</span>
                             <span>·</span>
                             <span>Lifetime Access</span>

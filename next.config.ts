@@ -565,6 +565,50 @@ const nextConfig: NextConfig = {
         destination: '/glossary',
         permanent: true as const,
       })),
+      // ═══════════════════ AHREFS 404 REMEDIATION (282 URLs) ═══════════════════
+      // These wildcard rules eliminate ALL 404 patterns identified in the Ahrefs crawl.
+      // Pattern 1: /glossary/terms/:slug → /glossary/:slug (lesson inline links use wrong path)
+      {
+        source: '/glossary/terms/:slug',
+        destination: '/glossary/:slug',
+        permanent: true,
+      },
+      // Pattern 2: /articles/:slug → /articles (auto-generated article links that don't exist)
+      {
+        source: '/articles/:slug*',
+        destination: '/articles',
+        permanent: true,
+      },
+      // Pattern 3: /curriculum/digital-transformation/:slug → /vault/curriculum/tracks
+      {
+        source: '/curriculum/digital-transformation/:slug*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      // Pattern 4: /curriculum/ai-economics/:slug → /vault/curriculum/tracks
+      {
+        source: '/curriculum/ai-economics/:slug*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      // Pattern 5: /curriculum/engineering-economics/:slug → /vault/curriculum/tracks
+      {
+        source: '/curriculum/engineering-economics/:slug*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      // Pattern 6: /blog/:slug → /articles (old blog URLs)
+      {
+        source: '/blog/:slug*',
+        destination: '/articles',
+        permanent: true,
+      },
+      // Pattern 7: /tools/cloud-finops-calculator → /tools (deleted tool)
+      {
+        source: '/tools/cloud-finops-calculator',
+        destination: '/tools',
+        permanent: true,
+      },
     ];
   },
 };

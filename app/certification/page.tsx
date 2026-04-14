@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Link from 'next/link';
 import { GraduationCap, BookOpen, Award, Users, ArrowRight, CheckCircle } from 'lucide-react';
 
@@ -70,7 +70,7 @@ export default function CertificationPage() {
                                         <h3 className="text-lg font-bold text-zinc-900">{mod.title}</h3>
                                         <span className="text-xs text-zinc-800 font-mono">{mod.hours}</span>
                                     </div>
-                                    <p className="text-zinc-600 text-sm">{mod.desc}</p>
+                                    <p className="text-zinc-900 text-sm">{mod.desc}</p>
                                 </div>
                             </div>
                         ))}
@@ -89,7 +89,7 @@ export default function CertificationPage() {
                                 <h3 className="text-lg font-bold text-zinc-950 mb-3">{section.title}</h3>
                                 <ul className="space-y-2">
                                     {section.items.map((item, j) => (
-                                        <li key={j} className="flex items-start gap-2 text-zinc-600 text-sm">
+                                        <li key={j} className="flex items-start gap-2 text-zinc-900 text-sm">
                                             <CheckCircle className="w-3 h-3 text-amber-400/50 mt-1 flex-shrink-0" />
                                             {item}
                                         </li>
@@ -101,7 +101,7 @@ export default function CertificationPage() {
 
                     <div className="card p-8 md:p-12 border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-transparent text-center">
                         <div className="text-3xl font-bold text-zinc-950 mb-2">$1,500</div>
-                        <p className="text-zinc-700 text-sm mb-6">Per certification · Payment plans available</p>
+                        <p className="text-zinc-950 text-sm mb-6">Per certification · Payment plans available</p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a
                                 href="/api/buy/certification"
@@ -125,7 +125,7 @@ export default function CertificationPage() {
                 </section>
 
                 <section className="section max-w-4xl mx-auto text-center">
-                    <p className="text-zinc-700 text-sm">
+                    <p className="text-zinc-950 text-sm">
                         Questions?{' '}
                         <a href="mailto:richardewing@exogram.ai?subject=CPE%20Certification%20Inquiry" className="text-amber-400 hover:text-zinc-900 transition-colors">Email Richard directly</a>
                         {' '}or{' '}

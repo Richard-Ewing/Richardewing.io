@@ -103,10 +103,10 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                         ) : (
                             <>
                                 {mod.lessons.map((lesson, i) => (
-                                    <div key={i} className="rounded-2xl border border-zinc-200 bg-white overflow-hidden mb-8 last:mb-0">
+                                    <div key={i} className="rounded-2xl border border-zinc-400 bg-white overflow-hidden mb-8 last:mb-0">
                                         <div className="p-8">
                                             <div className="flex items-center gap-3 mb-4">
-                                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 border border-zinc-200 flex items-center justify-center">
+                                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 border border-zinc-400 flex items-center justify-center">
                                                     <span className="text-xs font-bold text-zinc-900">{i + 1}</span>
                                                 </div>
                                                 <h2 className="text-xl font-grotesk font-bold text-zinc-900">{lesson.title}</h2>
@@ -128,7 +128,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                             {lesson.details && lesson.details.length > 0 && (
                                                 <div className="space-y-3 mb-6">
                                                     {lesson.details.map((d, j) => (
-                                                        <div key={j} className="rounded-xl bg-zinc-50 border border-zinc-200 p-5 relative overflow-hidden group">
+                                                        <div key={j} className="rounded-xl bg-zinc-50 border border-zinc-400 p-5 relative overflow-hidden group">
                                                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-cyan-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                                                             <div className="text-sm font-bold text-zinc-900 mb-1">{d.metric}</div>
                                                             <p className="text-xs text-zinc-700 mb-2">{d.description}</p>
@@ -175,7 +175,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                     if (!article) return null;
                                     const href = article.externalUrl || article.legacyUrl || `/blog/${article.slug}`;
                                     return (
-                                        <Link key={slug} href={href} className="block p-5 rounded-xl border border-zinc-200 bg-zinc-50 hover:bg-cyan-50 hover:border-cyan-300 transition-all group">
+                                        <Link key={slug} href={href} className="block p-5 rounded-xl border border-zinc-400 bg-zinc-50 hover:bg-cyan-50 hover:border-cyan-300 transition-all group">
                                             <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2 group-hover:text-cyan-600">{article.source}</div>
                                             <h3 className="text-zinc-900 font-bold mb-2 group-hover:text-cyan-700 transition-colors">{article.title}</h3>
                                             <p className="text-zinc-800 text-sm line-clamp-2">{article.description}</p>

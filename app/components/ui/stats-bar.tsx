@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+﻿import { HTMLAttributes } from 'react';
 import { cn } from '@/app/lib/utils';
 
 interface StatsBarProps extends HTMLAttributes<HTMLDivElement> {
@@ -22,7 +22,7 @@ export function StatsBar({ stats, className, ...props }: StatsBarProps) {
                     <div className="font-grotesk text-3xl font-bold sm:text-4xl tabular-nums">
                         {stat.value}
                     </div>
-                    <div className="mt-1 text-xs uppercase tracking-[0.1em] text-zinc-700 font-grotesk">
+                    <div className="mt-1 text-xs uppercase tracking-[0.1em] text-zinc-950 font-grotesk">
                         {stat.label}
                     </div>
                 </div>

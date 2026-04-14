@@ -124,11 +124,11 @@ export default function ResourcesPage() {
                                         key={item.name}
                                         href={item.href}
                                         {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                                        className="flex items-center justify-between p-4 rounded-lg bg-white/5 border border-zinc-200 hover:border-cyan-500/30 hover:bg-cyan-500/5 transition-all group"
+                                        className="flex items-center justify-between p-4 rounded-lg bg-white/5 border border-zinc-400 hover:border-cyan-500/30 hover:bg-cyan-500/5 transition-all group"
                                     >
                                         <div>
                                             <div className="font-semibold text-zinc-950 group-hover:text-cyan-400 transition-colors text-sm">{item.name}</div>
-                                            <div className="text-xs text-zinc-700 mt-0.5">{item.description}</div>
+                                            <div className="text-xs text-zinc-950 mt-0.5">{item.description}</div>
                                         </div>
                                         <span className="text-gray-600 group-hover:text-cyan-400 transition-colors ml-2">→</span>
                                     </Link>
@@ -147,7 +147,7 @@ export default function ResourcesPage() {
                             <Link href="/pricing" className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
                                 View Pricing →
                             </Link>
-                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-200 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                                 Book Free Call →
                             </Link>
                         </div>
