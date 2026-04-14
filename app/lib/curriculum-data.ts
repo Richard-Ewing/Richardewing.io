@@ -84,6 +84,15 @@ populateExpansion8to14(modules);
 import { populateTracks15to18 } from './curriculum-tracks-new-15-18';
 populateTracks15to18(modules);
 
+// ═══════════════════ NEW TRACKS 19-23 ═══════════════════
+// Track 19: AI Agent Architecture & Economics
+// Track 20: Agentic Process Automation Economics
+// Track 21: AI Agent Governance & Trust Infrastructure
+// Track 22: Strategic Leadership Economics
+// Track 23: Executive Presence & Board Leadership
+import { populateTracks19to23 } from './curriculum-tracks-new-19-23';
+populateTracks19to23(modules);
+
 // ═══════════════════ LEGACY TRACK CONTENT (kept on disk for future restoration) ═══════════════════
 // The following files exist on disk but are NOT imported into the active registry:
 // - curriculum-tracks-5-6.ts (Track 5 DevOps — killed; Track 6 PM — kept above)

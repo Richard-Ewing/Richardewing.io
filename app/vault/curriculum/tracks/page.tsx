@@ -115,21 +115,25 @@ export default async function CurriculumTracksPage() {
                             </div>
                         </div>
 
-                        {/* 2. AI & Cloud Economics (Tracks 5-11) */}
+                        {/* 2. AI, Cloud & Agent Economics (Tracks 5-11, 19-21) */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
                                 <div className="h-px bg-zinc-300 flex-grow"></div>
-                                <h2 className="text-sm font-mono text-violet-500 uppercase tracking-widest font-bold">AI & Cloud Economics</h2>
+                                <h2 className="text-sm font-mono text-violet-500 uppercase tracking-widest font-bold">AI, Cloud & Agent Economics</h2>
                                 <div className="h-px bg-zinc-300 flex-grow"></div>
                             </div>
                             <div className="space-y-6">
                                 {tracks.slice(4, 11).map((track, i) => (
                                     <TrackAccordion key={`ai-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
                                 ))}
+                                {/* AI Agent Tracks 19-21 */}
+                                {tracks.slice(18, 21).map((track, i) => (
+                                    <TrackAccordion key={`agent-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
+                                ))}
                             </div>
                         </div>
 
-                        {/* 3. Career Capital & Leadership (Tracks 12-14) */}
+                        {/* 3. Career Capital & Leadership (Tracks 12-15, 17, 22) */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
                                 <div className="h-px bg-zinc-300 flex-grow"></div>
@@ -140,19 +144,25 @@ export default async function CurriculumTracksPage() {
                                 {tracks.slice(11, 14).map((track, i) => (
                                     <TrackAccordion key={`career-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
                                 ))}
+                                {/* Remote Teams Track 15 */}
+                                {tracks[14] && <TrackAccordion key="career-remote" track={tracks[14]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
+                                {/* DX Economics Track 17 */}
+                                {tracks[16] && <TrackAccordion key="career-dx" track={tracks[16]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
+                                {/* Strategic Leadership Track 22 */}
+                                {tracks[21] && <TrackAccordion key="career-leadership" track={tracks[21]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
                             </div>
                         </div>
 
-                        {/* 4. Executive & Board Economics (Cross-cutting: select from each category) */}
+                        {/* 4. Executive & Board Economics (Selected executive tracks + 16, 18, 23) */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
                                 <div className="h-px bg-zinc-300 flex-grow"></div>
                                 <h2 className="text-sm font-mono text-indigo-500 uppercase tracking-widest font-bold">Executive & Board Economics</h2>
                                 <div className="h-px bg-zinc-300 flex-grow"></div>
                             </div>
-                            <p className="text-sm text-zinc-600 mb-8 text-center italic">Board reporting, EBITDA translation, M&A leadership, and technical debt at the balance sheet level — curated from across all tracks.</p>
+                            <p className="text-sm text-zinc-600 mb-8 text-center italic">Board reporting, EBITDA translation, M&A leadership, and technical debt at the balance sheet level — curated for senior leaders and aspiring C-suite.</p>
                             <div className="space-y-6">
-                                {/* Track 3: Capstone & Applied Practice (bridges to executive) */}
+                                {/* Track 4: Capstone & Applied Practice */}
                                 {tracks[3] && <TrackAccordion key="exec-capstone" track={tracks[3]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
                                 {/* Track 9: Tech Debt as Financial Liability */}
                                 {tracks[8] && <TrackAccordion key="exec-techdebt" track={tracks[8]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
@@ -160,6 +170,12 @@ export default async function CurriculumTracksPage() {
                                 {tracks[9] && <TrackAccordion key="exec-dd" track={tracks[9]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
                                 {/* Track 13: Engineering-to-Executive */}
                                 {tracks[12] && <TrackAccordion key="exec-e2e" track={tracks[12]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
+                                {/* Track 16: M&A Integration */}
+                                {tracks[15] && <TrackAccordion key="exec-ma" track={tracks[15]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
+                                {/* Track 18: Vendor & Contract Economics */}
+                                {tracks[17] && <TrackAccordion key="exec-vendor" track={tracks[17]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
+                                {/* Track 23: Executive Presence & Board Leadership */}
+                                {tracks[22] && <TrackAccordion key="exec-presence" track={tracks[22]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
                             </div>
                         </div>
                     </CurriculumDirectoryGrid>
