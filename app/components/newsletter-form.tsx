@@ -72,7 +72,7 @@ export function NewsletterForm({
                 value !== undefined && <input key={key} type="hidden" name={key} value={value} />
             ))}
             <div className="relative flex-1">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-700" />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-900" />
                 <input
                     id="email"
                     type="email"
@@ -82,7 +82,7 @@ export function NewsletterForm({
                     readOnly={!!defaultEmail}
                     required
                     disabled={state.submitting}
-                    className="w-full pl-11 pr-4 py-3 bg-white/50 border border-zinc-200 rounded-xl text-white placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed read-only:bg-white/5 read-only:text-zinc-600 font-mono text-sm"
+                    className="w-full pl-11 pr-4 py-3 bg-white/50 border border-zinc-200 rounded-xl text-zinc-950 placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed read-only:bg-white/5 read-only:text-zinc-600 font-mono text-sm"
                 />
                 <ValidationError
                     prefix="Email"

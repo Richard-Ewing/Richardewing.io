@@ -50,7 +50,7 @@ export default function ROIPage() {
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
                         <div className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-4">ROI Calculator</div>
-                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
+                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             What&apos;s Your{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Engineering Waste?</span>
                         </h1>
@@ -71,9 +71,9 @@ export default function ROIPage() {
                                 <div key={i} className={`rounded-2xl border p-8 ${colorMap[s.color]}`}>
                                     <h2 className={`text-xl font-grotesk font-bold mb-6 ${textMap[s.color]}`}>{s.title}</h2>
                                     <div className="space-y-4 mb-6">
-                                        <div className="flex justify-between"><span className="text-zinc-700 text-sm">Engineers</span><span className="text-white font-mono">{s.engineers}</span></div>
-                                        <div className="flex justify-between"><span className="text-zinc-700 text-sm">Avg Salary</span><span className="text-white font-mono">${s.avgSalary.toLocaleString()}</span></div>
-                                        <div className="flex justify-between"><span className="text-zinc-700 text-sm">Total R&D Spend</span><span className="text-white font-mono">${(totalRD / 1000000).toFixed(1)}M</span></div>
+                                        <div className="flex justify-between"><span className="text-zinc-700 text-sm">Engineers</span><span className="text-zinc-950 font-mono">{s.engineers}</span></div>
+                                        <div className="flex justify-between"><span className="text-zinc-700 text-sm">Avg Salary</span><span className="text-zinc-950 font-mono">${s.avgSalary.toLocaleString()}</span></div>
+                                        <div className="flex justify-between"><span className="text-zinc-700 text-sm">Total R&D Spend</span><span className="text-zinc-950 font-mono">${(totalRD / 1000000).toFixed(1)}M</span></div>
                                         <div className="border-t border-zinc-200 pt-4"></div>
                                         <div className="flex justify-between"><span className="text-zinc-700 text-sm">Innovation Tax (before)</span><span className="text-rose-400 font-mono">{s.innovationTaxBefore}%</span></div>
                                         <div className="flex justify-between"><span className="text-zinc-700 text-sm">Innovation Tax (after)</span><span className="text-emerald-400 font-mono">{s.innovationTaxAfter}%</span></div>
@@ -86,29 +86,29 @@ export default function ROIPage() {
                         })}
                     </div>
 
-                    <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-10 mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-6 text-center">How We Calculate Savings</h2>
+                    <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-10 mb-16">
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6 text-center">How We Calculate Savings</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                             <div className="text-center">
                                 <div className="text-3xl mb-3">📊</div>
-                                <h3 className="text-white font-bold mb-2">Measure Innovation Tax</h3>
-                                <p className="text-sm text-zinc-700">Quantify % of engineering spent on maintenance vs. new feature work</p>
+                                <h3 className="text-zinc-950 font-bold mb-2">Measure Innovation Tax</h3>
+                                <p className="text-sm text-zinc-900">Quantify % of engineering spent on maintenance vs. new feature work</p>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl mb-3">🎯</div>
-                                <h3 className="text-white font-bold mb-2">Identify Waste</h3>
-                                <p className="text-sm text-zinc-700">Pinpoint specific debt sources: rework, incidents, manual processes</p>
+                                <h3 className="text-zinc-950 font-bold mb-2">Identify Waste</h3>
+                                <p className="text-sm text-zinc-900">Pinpoint specific debt sources: rework, incidents, manual processes</p>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl mb-3">💰</div>
-                                <h3 className="text-white font-bold mb-2">Remediation Plan</h3>
-                                <p className="text-sm text-zinc-700">Prioritized playbook to reclaim engineering capacity, measured in dollars</p>
+                                <h3 className="text-zinc-950 font-bold mb-2">Remediation Plan</h3>
+                                <p className="text-sm text-zinc-900">Prioritized playbook to reclaim engineering capacity, measured in dollars</p>
                             </div>
                         </div>
                     </div>
 
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-10 text-center">
-                        <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Get Your Custom ROI Analysis</h2>
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Get Your Custom ROI Analysis</h2>
                         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">These are illustrative scenarios. A real R&D Capital Audit produces company-specific numbers based on your actual metrics, team structure, and technology stack.</p>
                         <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Request Custom ROI Analysis →</Link>
                     </div>

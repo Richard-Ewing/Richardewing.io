@@ -87,8 +87,8 @@ export default function ExitIntentPopup() {
                         <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                             <Gift className="w-8 h-8 text-emerald-400" />
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-2">Redirecting to Checklist ✓</h3>
-                        <p className="text-zinc-600">Loading your R&D Audit Checklist...</p>
+                        <h3 className="text-2xl font-bold text-zinc-950 mb-2">Redirecting to Checklist ✓</h3>
+                        <p className="text-zinc-800">Loading your R&D Audit Checklist...</p>
                     </div>
                 ) : (
                     <>
@@ -96,20 +96,20 @@ export default function ExitIntentPopup() {
                             <Gift className="w-7 h-7 text-purple-400" />
                         </div>
 
-                        <h3 className="text-2xl font-bold text-white text-center mb-2">Wait — Free R&D Audit Checklist</h3>
+                        <h3 className="text-2xl font-bold text-zinc-950 text-center mb-2">Wait — Free R&D Audit Checklist</h3>
                         <p className="text-zinc-600 text-center text-sm mb-4">
-                            The same <span className="text-white font-semibold">39 questions across 6 domains</span> used in every <span className="text-white font-semibold">$7,500 engagement</span>.
+                            The same <span className="text-zinc-950 font-semibold">39 questions across 6 domains</span> used in every <span className="text-zinc-950 font-semibold">$7,500 engagement</span>.
                         </p>
 
                         {/* What You Get */}
                         <div className="bg-white/[0.03] border border-zinc-200 rounded-xl p-4 mb-5 space-y-2">
-                            <div className="flex items-start gap-2 text-xs text-zinc-700">
+                            <div className="flex items-start gap-2 text-xs text-zinc-900">
                                 <span className="text-emerald-400 mt-0.5">✓</span> Traffic-light scoring rubrics for every question
                             </div>
-                            <div className="flex items-start gap-2 text-xs text-zinc-700">
+                            <div className="flex items-start gap-2 text-xs text-zinc-900">
                                 <span className="text-emerald-400 mt-0.5">✓</span> Actionable remediation steps — not just diagnosis
                             </div>
-                            <div className="flex items-start gap-2 text-xs text-zinc-700">
+                            <div className="flex items-start gap-2 text-xs text-zinc-900">
                                 <span className="text-emerald-400 mt-0.5">✓</span> Benchmark thresholds so you know where you stand
                             </div>
                         </div>
@@ -125,7 +125,7 @@ export default function ExitIntentPopup() {
                             <input
                                 type="email" value={email} onChange={(e) => { setEmail(e.target.value); setValidationError(''); }}
                                 placeholder="name@company.com" required disabled={state.submitting || isValidating}
-                                className="w-full px-4 py-3 bg-white/50 border border-zinc-200 rounded-xl text-white placeholder:text-zinc-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all font-mono text-sm"
+                                className="w-full px-4 py-3 bg-white/50 border border-zinc-200 rounded-xl text-zinc-950 placeholder:text-zinc-600 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all font-mono text-sm"
                             />
                             <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-red-500" />
 
@@ -144,7 +144,7 @@ export default function ExitIntentPopup() {
                         </form>
 
                         <div className="flex items-center justify-between mt-4 pt-3 border-t border-zinc-200">
-                            <p className="text-[10px] text-zinc-800">Zero spam · Used by 2,000+ executives</p>
+                            <p className="text-[10px] text-zinc-950">Zero spam · Used by 2,000+ executives</p>
                             <a href="/tools" className="text-[10px] text-zinc-500 hover:text-cyan-400 transition-colors">
                                 Or try free tools →
                             </a>

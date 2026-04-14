@@ -53,7 +53,7 @@ export default function ReportUnlocker() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder="cto@enterprise.com"
-                    className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-white placeholder:text-zinc-700 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all font-mono text-sm"
+                    className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-zinc-950 placeholder:text-zinc-700 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all font-mono text-sm"
                 />
             </div>
             

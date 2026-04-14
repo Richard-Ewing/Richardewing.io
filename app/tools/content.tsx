@@ -81,7 +81,7 @@ export default function ToolsPage() {
                         <Star size={12} />
                         Free Diagnostic Tools
                     </div>
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-6">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-6">
                         Boardroom-Ready Insights<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">In 60 Seconds</span>
                     </h1>
@@ -108,7 +108,7 @@ export default function ToolsPage() {
                                         </span>
                                     </div>
 
-                                    <h2 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                                    <h2 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-cyan-400 transition-colors">
                                         {tool.name}
                                     </h2>
                                     <p className={`text-sm font-semibold ${colors.text} mb-3`}>
@@ -154,22 +154,22 @@ export default function ToolsPage() {
             {/* FAQ Section for SEO */}
             <ScrollReveal delay={500}>
                 <div className="mt-16 capsule-container rounded-2xl p-8">
-                    <h2 className="text-2xl font-bold text-white mb-8">Common Questions</h2>
+                    <h2 className="text-2xl font-bold text-zinc-950 mb-8">Common Questions</h2>
                     <div className="space-y-6">
                         <div>
-                            <h3 className="text-white font-semibold mb-2">How do I calculate AI unit economics?</h3>
+                            <h3 className="text-zinc-950 font-semibold mb-2">How do I calculate AI unit economics?</h3>
                             <p className="text-zinc-600 text-sm">Use the AUEB tool to input your pricing, AI query volume, and costs. It calculates gross margin, cost per user, and projects when you'll hit margin collapse at your growth rate.</p>
                         </div>
                         <div>
-                            <h3 className="text-white font-semibold mb-2">What is a good revenue per engineer ratio?</h3>
+                            <h3 className="text-zinc-950 font-semibold mb-2">What is a good revenue per engineer ratio?</h3>
                             <p className="text-zinc-600 text-sm">Top-quartile companies achieve $400K-$500K+ ARR per engineer. The APER tool benchmarks your team against industry standards and shows your coordination tax.</p>
                         </div>
                         <div>
-                            <h3 className="text-white font-semibold mb-2">How do I measure product debt?</h3>
+                            <h3 className="text-zinc-950 font-semibold mb-2">How do I measure product debt?</h3>
                             <p className="text-zinc-600 text-sm">The PDI tool uses AI to categorize your backlog into growth, retention, and maintenance work. Your PDI score shows what percentage of engineering capacity is going to non-value-creating work.</p>
                         </div>
                         <div>
-                            <h3 className="text-white font-semibold mb-2">How does execution risk affect valuation?</h3>
+                            <h3 className="text-zinc-950 font-semibold mb-2">How does execution risk affect valuation?</h3>
                             <p className="text-zinc-600 text-sm">Investors discount valuations based on perceived execution risk. The EV-SE tool models risk factors like scope creep, technical complexity, and talent risk to show the dollar impact on your valuation.</p>
                         </div>
                     </div>

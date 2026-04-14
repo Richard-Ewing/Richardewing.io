@@ -59,7 +59,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
 
                     <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-8 mb-12">
                         <h2 className="text-lg font-grotesk font-bold text-zinc-900 mb-4">🎯 What You&apos;ll Learn</h2>
-                        <ul className="space-y-2 text-zinc-700">
+                        <ul className="space-y-2 text-zinc-900">
                             {mod.takeaways.map((t, i) => (
                                 <li key={i} className="flex items-start gap-2"><span className="text-cyan-600 mt-1">✓</span> {t}</li>
                             ))}
@@ -107,7 +107,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                         <div className="p-8">
                                             <div className="flex items-center gap-3 mb-4">
                                                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-100 to-blue-100 border border-zinc-200 flex items-center justify-center">
-                                                    <span className="text-xs font-bold text-zinc-700">{i + 1}</span>
+                                                    <span className="text-xs font-bold text-zinc-900">{i + 1}</span>
                                                 </div>
                                                 <h2 className="text-xl font-grotesk font-bold text-zinc-900">{lesson.title}</h2>
                                             </div>
@@ -141,7 +141,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                             {lesson.exercise && (
                                                 <div className="rounded-xl bg-emerald-500/5 border border-emerald-500/20 p-5 mt-8">
                                                     <div className="text-xs font-mono text-emerald-600 uppercase tracking-widest mb-2">📝 Exercise</div>
-                                                    <p className="text-sm text-zinc-700">{lesson.exercise}</p>
+                                                    <p className="text-sm text-zinc-900">{lesson.exercise}</p>
                                                 </div>
                                             )}
 

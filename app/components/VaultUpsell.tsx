@@ -42,7 +42,7 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
                         <Lock className={`w-4 h-4 ${iconColor}`} />
                         <span className={`font-mono text-xs uppercase tracking-widest ${iconColor} font-bold`}>Mandatory Executive Training</span>
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{headline}</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-zinc-950 mb-2">{headline}</h3>
                     <p className="text-zinc-600 max-w-2xl text-sm leading-relaxed">
                         {subheadline}
                     </p>
@@ -60,7 +60,7 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
                 {recommendedTracks.map((track, idx) => (
                     <div key={idx} className={`bg-white border border-zinc-200 rounded-xl p-5 transition-colors ${cardHoverColor}`}>
                         <div className={`text-xs font-mono mb-2 ${trackIdColor}`}>{track.id}</div>
-                        <div className="text-lg font-bold text-white mb-2">{track.title}</div>
+                        <div className="text-lg font-bold text-zinc-950 mb-2">{track.title}</div>
                         <div className="text-sm text-zinc-700 leading-relaxed">{track.desc}</div>
                     </div>
                 ))}

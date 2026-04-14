@@ -37,13 +37,13 @@ export default function ModuleCompleteButton({ nextHref, moduleTitle }: ModuleCo
                 duration={4500}
             />
 
-            <div className="mt-12 rounded-2xl border border-zinc-200 bg-white/[0.02] p-8">
+            <div className="mt-12 rounded-2xl border border-zinc-200 bg-zinc-50 p-8">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                     <div>
-                        <h3 className="text-lg font-grotesk font-bold text-white mb-1">
+                        <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-1">
                             {completed ? '🏆 Module Complete!' : 'Finished all lessons?'}
                         </h3>
-                        <p className="text-sm text-zinc-600">
+                        <p className="text-sm text-zinc-800">
                             {completed
                                 ? 'Great work! Your progress has been saved.'
                                 : 'Mark this module as complete to track your progress.'}

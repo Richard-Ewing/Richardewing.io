@@ -122,14 +122,14 @@ export default function ChecklistPage() {
                     <div className="mb-10 p-6 rounded-2xl bg-emerald-500/5 border border-emerald-500/20 text-center">
                         <div className="text-4xl mb-3">✓</div>
                         <h2 className="text-2xl font-bold text-emerald-400 mb-2">You&apos;re In — Full Checklist Below</h2>
-                        <p className="text-zinc-600">You&apos;ve been added to The Product Economist briefing. Here&apos;s the complete diagnostic framework.</p>
+                        <p className="text-zinc-800">You&apos;ve been added to The Product Economist briefing. Here&apos;s the complete diagnostic framework.</p>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         The Complete R&amp;D Audit <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Checklist</span>
                     </h1>
                     <p className="text-lg text-zinc-600 mb-6 leading-relaxed">
-                        The {totalQuestions} questions used in every <span className="text-white font-bold">$7,500 diagnostic engagement</span>. 
+                        The {totalQuestions} questions used in every <span className="text-zinc-950 font-bold">$7,500 diagnostic engagement</span>. 
                         Organized across {domains.length} domains with traffic-light scoring, remediation actions, and benchmark thresholds. 
                         This is the same framework used to audit engineering organizations at companies from Series A startups to Fortune 500 enterprises.
                     </p>
@@ -138,37 +138,37 @@ export default function ChecklistPage() {
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
                         <div className="card p-4 text-center">
                             <div className="text-2xl font-grotesk font-bold text-zinc-900">{totalQuestions}</div>
-                            <div className="text-xs text-zinc-700">Questions</div>
+                            <div className="text-xs text-zinc-900">Questions</div>
                         </div>
                         <div className="card p-4 text-center">
                             <div className="text-2xl font-grotesk font-bold text-zinc-900">{domains.length}</div>
-                            <div className="text-xs text-zinc-700">Domains</div>
+                            <div className="text-xs text-zinc-900">Domains</div>
                         </div>
                         <div className="card p-4 text-center">
                             <div className="text-2xl font-grotesk font-bold text-zinc-900">{totalQuestions}</div>
-                            <div className="text-xs text-zinc-700">Scoring Rubrics</div>
+                            <div className="text-xs text-zinc-900">Scoring Rubrics</div>
                         </div>
                         <div className="card p-4 text-center">
                             <div className="text-2xl font-grotesk font-bold text-zinc-900">{totalQuestions}</div>
-                            <div className="text-xs text-zinc-700">Action Items</div>
+                            <div className="text-xs text-zinc-900">Action Items</div>
                         </div>
                     </div>
 
                     {/* How to Use This Checklist */}
                     <div className="card p-8 mb-12 border-cyan-500/20">
-                        <h2 className="text-xl font-grotesk font-bold text-white mb-4">📖 How to Use This Checklist</h2>
+                        <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">📖 How to Use This Checklist</h2>
                         <div className="grid sm:grid-cols-3 gap-6">
                             <div>
                                 <div className="text-sm font-bold text-cyan-400 mb-2">Step 1: Self-Assessment</div>
-                                <p className="text-xs text-zinc-700">Score each question using the traffic-light rubric. Be honest — this is for your benefit, not anyone else&apos;s.</p>
+                                <p className="text-xs text-zinc-900">Score each question using the traffic-light rubric. Be honest — this is for your benefit, not anyone else&apos;s.</p>
                             </div>
                             <div>
                                 <div className="text-sm font-bold text-amber-400 mb-2">Step 2: Prioritize</div>
-                                <p className="text-xs text-zinc-700">Count your red scores. These are your highest-impact remediation opportunities. Start with the domain with the most red.</p>
+                                <p className="text-xs text-zinc-900">Count your red scores. These are your highest-impact remediation opportunities. Start with the domain with the most red.</p>
                             </div>
                             <div>
                                 <div className="text-sm font-bold text-emerald-400 mb-2">Step 3: Execute</div>
-                                <p className="text-xs text-zinc-700">Use the action items for each question. Tackle 2-3 red items per quarter. Track progress with the free tools below.</p>
+                                <p className="text-xs text-zinc-900">Use the action items for each question. Tackle 2-3 red items per quarter. Track progress with the free tools below.</p>
                             </div>
                         </div>
                     </div>
@@ -176,13 +176,13 @@ export default function ChecklistPage() {
                     {/* Scoring Legend */}
                     <div className="flex items-center gap-6 mb-8 text-xs font-mono">
                         <div className="flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-red-500" /> <span className="text-zinc-600">Critical Risk</span>
+                            <div className="w-3 h-3 rounded-full bg-red-500" /> <span className="text-zinc-800">Critical Risk</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-amber-500" /> <span className="text-zinc-600">Improvement Needed</span>
+                            <div className="w-3 h-3 rounded-full bg-amber-500" /> <span className="text-zinc-800">Improvement Needed</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-emerald-500" /> <span className="text-zinc-600">On Track</span>
+                            <div className="w-3 h-3 rounded-full bg-emerald-500" /> <span className="text-zinc-800">On Track</span>
                         </div>
                     </div>
 
@@ -200,40 +200,40 @@ export default function ChecklistPage() {
                                             <h2 className="text-2xl font-grotesk font-bold text-zinc-900">
                                                 Domain {di + 1}: {domain.title}
                                             </h2>
-                                            <p className="text-xs text-zinc-700">{domain.description}</p>
+                                            <p className="text-xs text-zinc-900">{domain.description}</p>
                                         </div>
                                     </div>
                                     <div className="space-y-4 mt-6">
                                         {domain.questions.map((item, qi) => (
-                                            <div key={qi} className={`rounded-xl border ${c.border} bg-white/[0.01] p-6 hover:bg-white/[0.02] transition-all`}>
+                                            <div key={qi} className={`rounded-xl border ${c.border} bg-white/[0.01] p-6 hover:bg-zinc-50 transition-all`}>
                                                 <div className="flex items-start gap-4">
                                                     <div className={`shrink-0 w-8 h-8 rounded-xl ${c.icon} border ${c.border} flex items-center justify-center font-mono ${c.text} font-bold text-xs`}>
                                                         {String(qi + 1).padStart(2, '0')}
                                                     </div>
                                                     <div className="flex-1">
-                                                        <h3 className="text-white font-bold text-base mb-2">{item.q}</h3>
+                                                        <h3 className="text-zinc-950 font-bold text-base mb-2">{item.q}</h3>
                                                         <p className="text-zinc-700 text-sm mb-3">
                                                             <span className="text-zinc-600 font-semibold">Why: </span>{item.why}
                                                         </p>
                                                         <div className="flex flex-col sm:flex-row gap-3">
                                                             <div className="flex-1 rounded-lg bg-emerald-500/5 border border-emerald-500/10 p-3">
                                                                 <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1">🎯 Action</div>
-                                                                <p className="text-xs text-zinc-600">{item.action}</p>
+                                                                <p className="text-xs text-zinc-800">{item.action}</p>
                                                             </div>
-                                                            <div className="sm:w-48 rounded-lg bg-white/[0.02] border border-zinc-200 p-3">
+                                                            <div className="sm:w-48 rounded-lg bg-zinc-50 border border-zinc-200 p-3">
                                                                 <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-2">Scoring</div>
                                                                 <div className="space-y-1">
                                                                     <div className="flex items-center gap-2 text-xs">
                                                                         <div className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
-                                                                        <span className="text-zinc-700">{item.scoring.red}</span>
+                                                                        <span className="text-zinc-900">{item.scoring.red}</span>
                                                                     </div>
                                                                     <div className="flex items-center gap-2 text-xs">
                                                                         <div className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
-                                                                        <span className="text-zinc-700">{item.scoring.yellow}</span>
+                                                                        <span className="text-zinc-900">{item.scoring.yellow}</span>
                                                                     </div>
                                                                     <div className="flex items-center gap-2 text-xs">
                                                                         <div className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                                                                        <span className="text-zinc-700">{item.scoring.green}</span>
+                                                                        <span className="text-zinc-900">{item.scoring.green}</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -248,8 +248,8 @@ export default function ChecklistPage() {
                                     {di === 1 && (
                                         <div className="mt-8 p-5 rounded-xl border border-amber-500/20 bg-amber-500/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                                             <div>
-                                                <div className="text-sm font-bold text-white mb-1">Scored red on 3+ questions so far?</div>
-                                                <p className="text-xs text-zinc-600">A 30-minute Gut-Check call identifies whether you have a real problem — or just technical anxiety.</p>
+                                                <div className="text-sm font-bold text-zinc-950 mb-1">Scored red on 3+ questions so far?</div>
+                                                <p className="text-xs text-zinc-800">A 30-minute Gut-Check call identifies whether you have a real problem — or just technical anxiety.</p>
                                             </div>
                                             <a href="/api/buy/gut_check" className="shrink-0 px-5 py-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-widest hover:bg-amber-500/20 transition-all">
                                                 Gut-Check — $450 →
@@ -259,8 +259,8 @@ export default function ChecklistPage() {
                                     {di === 3 && (
                                         <div className="mt-8 p-5 rounded-xl border border-red-500/20 bg-red-500/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                                             <div>
-                                                <div className="text-sm font-bold text-white mb-1">Multiple red scores across domains?</div>
-                                                <p className="text-xs text-zinc-600">The Insolvency Diagnostic quantifies your exposure and delivers a written Risk Report with prioritized remediation.</p>
+                                                <div className="text-sm font-bold text-zinc-950 mb-1">Multiple red scores across domains?</div>
+                                                <p className="text-xs text-zinc-800">The Insolvency Diagnostic quantifies your exposure and delivers a written Risk Report with prioritized remediation.</p>
                                             </div>
                                             <a href="/api/buy/insolvency_diagnostic" className="shrink-0 px-5 py-2.5 rounded-lg bg-red-600 text-white text-xs font-bold uppercase tracking-widest hover:bg-red-500 transition-all">
                                                 Full Diagnostic — $2,500 →
@@ -274,41 +274,41 @@ export default function ChecklistPage() {
 
                     {/* Tools CTA */}
                     <div className="card p-8 text-center mb-12 border-cyan-500/20">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🛠️ Answer These Questions With Free Tools</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">🛠️ Answer These Questions With Free Tools</h2>
                         <p className="text-zinc-600 mb-6">Don&apos;t guess — use our calculators to get accurate scores for the metrics above.</p>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
                             <Link href="/tools/pdi" className="card p-4 hover:border-cyan-500/30 transition-all">
                                 <div className="text-lg mb-1">📊</div>
                                 <div className="text-sm font-bold text-zinc-900">PDI Calculator</div>
-                                <div className="text-[10px] text-zinc-700">Technical Debt Score</div>
+                                <div className="text-[10px] text-zinc-900">Technical Debt Score</div>
                             </Link>
                             <Link href="/tools/aper" className="card p-4 hover:border-cyan-500/30 transition-all">
                                 <div className="text-lg mb-1">⚡</div>
                                 <div className="text-sm font-bold text-zinc-900">APER Calculator</div>
-                                <div className="text-[10px] text-zinc-700">Revenue Per Engineer</div>
+                                <div className="text-[10px] text-zinc-900">Revenue Per Engineer</div>
                             </Link>
                             <Link href="/tools/aueb" className="card p-4 hover:border-cyan-500/30 transition-all">
                                 <div className="text-lg mb-1">💰</div>
                                 <div className="text-sm font-bold text-zinc-900">AUEB Calculator</div>
-                                <div className="text-[10px] text-zinc-700">AI Unit Economics</div>
+                                <div className="text-[10px] text-zinc-900">AI Unit Economics</div>
                             </Link>
                             <Link href="/tools/ev-se" className="card p-4 hover:border-cyan-500/30 transition-all">
                                 <div className="text-lg mb-1">🧮</div>
                                 <div className="text-sm font-bold text-zinc-900">EV-SE Calculator</div>
-                                <div className="text-[10px] text-zinc-700">Engineering Valuation</div>
+                                <div className="text-[10px] text-zinc-900">Engineering Valuation</div>
                             </Link>
                         </div>
                     </div>
 
                     {/* CTA: Advisory */}
                     <div className="text-center py-12 border-t border-zinc-200">
-                        <h2 className="text-2xl font-bold text-white mb-4">Want These Questions Answered Professionally?</h2>
+                        <h2 className="text-2xl font-bold text-zinc-950 mb-4">Want These Questions Answered Professionally?</h2>
                         <p className="text-zinc-600 mb-8 max-w-lg mx-auto">Book a diagnostic engagement and get a written executive summary with quantified findings, benchmarks, and a prioritized remediation roadmap.</p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a href="/api/buy/strategy_session" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                                 Book Strategy Session →
                             </a>
-                            <a href="/api/buy/full_audit" className="px-8 py-4 border border-zinc-300 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
+                            <a href="/api/buy/full_audit" className="px-8 py-4 border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
                                 Full R&amp;D Audit ($7,500) →
                             </a>
                         </div>

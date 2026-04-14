@@ -62,7 +62,7 @@ export default function VTATool() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
                     <ScrollReveal>
                         <div className="text-center max-w-3xl mx-auto mb-16">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-950 mb-6 tracking-tight">
                                 Volatility Tax Auditor <span className="text-blue-500">(VTA)</span>
                             </h1>
                             <p className="text-xl text-slate-400 mb-8 leading-relaxed">
@@ -76,7 +76,7 @@ export default function VTATool() {
                         <div className="lg:col-span-5 space-y-6">
                             <div className="bg-white/5 border border-zinc-200 rounded-2xl p-6 relative overflow-hidden backdrop-blur-xl">
                                 <BorderBeam className="opacity-20" size={300} duration={12} delay={0} />
-                                <h2 className="text-2xl font-bold text-white mb-6">Execution Variables</h2>
+                                <h2 className="text-2xl font-bold text-zinc-950 mb-6">Execution Variables</h2>
                                 <div className="space-y-6 relative z-10">
                                     <div>
                                         <label className="block text-sm font-medium text-zinc-800 mb-2">Monthly Target Inferences</label>
@@ -121,7 +121,7 @@ export default function VTATool() {
                                             title="Verification Time"
                                             aria-label="Verification Time in Minutes"
                                             onChange={(e) => setVerificationTime(Number(e.target.value))}
-                                            className="w-full bg-white/50 border border-zinc-200 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono"
+                                            className="w-full bg-white/50 border border-zinc-200 rounded-lg p-3 text-zinc-950 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono"
                                         />
                                     </div>
 
@@ -134,7 +134,7 @@ export default function VTATool() {
                                             title="Verifier Hourly Rate"
                                             aria-label="Verifier Labor Base Rate"
                                             onChange={(e) => setHourlyRate(Number(e.target.value))}
-                                            className="w-full bg-white/50 border border-zinc-200 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono"
+                                            className="w-full bg-white/50 border border-zinc-200 rounded-lg p-3 text-zinc-950 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono"
                                         />
                                     </div>
 
@@ -166,7 +166,7 @@ export default function VTATool() {
                                     <div className="w-24 h-24 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
                                         <FileSearch size={40} className="text-blue-400" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-4">Awaiting Audit Execution</h3>
+                                    <h3 className="text-2xl font-bold text-zinc-950 mb-4">Awaiting Audit Execution</h3>
                                     <p className="text-slate-400 max-w-sm">Configure your operational assumptions on the left to reveal the true cost of your AI implementation.</p>
                                 </div>
                             ) : (
@@ -179,7 +179,7 @@ export default function VTATool() {
                                         {annualTax > 0 && <ToolCelebration show={true} toolName="VTA" />}
 
                                         <div className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-zinc-200 mb-6">
-                                            <div className="flex items-center gap-2 text-white font-medium">
+                                            <div className="flex items-center gap-2 text-zinc-950 font-medium">
                                                 <FileSearch size={20} className="text-blue-400" />
                                                 Behavioral Audit Report
                                             </div>
@@ -200,7 +200,7 @@ export default function VTATool() {
 
                                             <GlowCard className="p-6">
                                                 <div className="text-sm text-slate-400 mb-1">Engineering Hours Burned</div>
-                                                <div className="text-4xl font-bold text-white mb-2 font-mono">
+                                                <div className="text-4xl font-bold text-zinc-950 mb-2 font-mono">
                                                     <NumberTicker value={hoursLostAnnual} />
                                                 </div>
                                                 <p className="text-xs text-slate-500">Hours lost yearly to output auditing.</p>
@@ -212,11 +212,11 @@ export default function VTATool() {
                                                 <div className="grid grid-cols-2 gap-4 text-sm">
                                                     <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-200">
                                                         <span className="text-slate-400 block mb-1">Effective Cost Per Interaction</span>
-                                                        <span className="text-xl text-white font-mono">${effectiveCostPerInference.toFixed(2)}</span>
+                                                        <span className="text-xl text-zinc-950 font-mono">${effectiveCostPerInference.toFixed(2)}</span>
                                                     </div>
                                                     <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-200">
                                                         <span className="text-slate-400 block mb-1">Monthly Flagged Reviews</span>
-                                                        <span className="text-xl text-white font-mono">{monthlyReviews.toLocaleString()}</span>
+                                                        <span className="text-xl text-zinc-950 font-mono">{monthlyReviews.toLocaleString()}</span>
                                                     </div>
                                                 </div>
                                                 <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-lg">

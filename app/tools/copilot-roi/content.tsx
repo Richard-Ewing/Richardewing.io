@@ -60,13 +60,13 @@ const RiskSlider = ({ label, value, onChange, description, min = 0, max = 100, s
     return (
         <div className="space-y-3 p-4 bg-white/60 rounded-xl border border-zinc-200 hover:border-cyan-500/20 transition-colors group">
             <div className="flex justify-between items-center">
-                <span className="text-sm text-white font-medium group-hover:text-cyan-400 transition-colors">{label}</span>
+                <span className="text-sm text-zinc-950 font-medium group-hover:text-cyan-400 transition-colors">{label}</span>
                 <div className={`flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-100 border border-zinc-200`}>
                     <span className="text-xs font-mono text-zinc-700 font-bold">{value}{suffix}</span>
                 </div>
             </div>
             <div className="relative pt-2 pb-1">
-                <div className="absolute top-3 left-0 right-0 h-1 rounded-lg bg-zinc-800" />
+                <div className="absolute top-3 left-0 right-0 h-1 rounded-lg bg-zinc-200" />
                 <div 
                     className="absolute top-3 left-0 h-1 rounded-lg bg-gradient-to-r from-cyan-500 to-fuchsia-500" 
                     ref={(el) => { if (el) el.style.width = `${percentage}%`; }}
@@ -213,7 +213,7 @@ export default function CopilotROITool() {
                         </div>
                     </div>
                     
-                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-none">
+                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-zinc-950 mb-6 tracking-tight leading-none">
                         Copilot <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-purple-500">ROI Forecaster</span>
                     </h1>
                     
@@ -234,7 +234,7 @@ export default function CopilotROITool() {
                             <div className="bg-white/50 border border-zinc-200 rounded-3xl p-6 lg:p-8 relative overflow-hidden backdrop-blur-xl group hover:border-cyan-500/30 transition-colors">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                                 
-                                <h3 className="text-white font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-200 pb-4">
+                                <h3 className="text-zinc-950 font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-200 pb-4">
                                     <Building2 className="w-5 h-5 text-cyan-400" />
                                     Engineering Baseline
                                 </h3>
@@ -268,7 +268,7 @@ export default function CopilotROITool() {
                             <div className="bg-white/50 border border-zinc-200 rounded-3xl p-6 lg:p-8 relative overflow-hidden backdrop-blur-xl group hover:border-fuchsia-500/30 transition-colors">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                                 
-                                <h3 className="text-white font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-200 pb-4">
+                                <h3 className="text-zinc-950 font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-200 pb-4">
                                     <AlertTriangle className="w-5 h-5 text-fuchsia-400" />
                                     Execution Drag
                                 </h3>
@@ -300,8 +300,8 @@ export default function CopilotROITool() {
                             
                             <div className="p-5 rounded-2xl bg-fuchsia-500/5 items-start flex gap-3 border border-fuchsia-500/20">
                                 <Code className="w-5 h-5 text-fuchsia-400 mt-1 flex-shrink-0" />
-                                <div className="text-xs text-zinc-600">
-                                    <strong className="text-zinc-800">The Subprime Code Crisis:</strong> Vibe coding generates massive volumes of syntactically correct but architecturally flawed code. This calculator mathematically prices the downstream cost of unwinding that code.
+                                <div className="text-xs text-zinc-800">
+                                    <strong className="text-zinc-950">The Subprime Code Crisis:</strong> Vibe coding generates massive volumes of syntactically correct but architecturally flawed code. This calculator mathematically prices the downstream cost of unwinding that code.
                                 </div>
                             </div>
 
@@ -312,7 +312,7 @@ export default function CopilotROITool() {
                             
                             {/* Main Math Block */}
                             <div className="bg-white border border-zinc-200 rounded-3xl p-6 lg:p-10 relative overflow-hidden shadow-2xl">
-                                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-black to-fuchsia-500/5"></div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-fuchsia-500/5"></div>
                                 
                                 <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 border-b border-zinc-200 pb-6">
                                     <div>
@@ -337,7 +337,7 @@ export default function CopilotROITool() {
                                 </div>
 
                                 <div className="relative z-10">
-                                    <h3 className="text-sm font-semibold text-white mb-6 uppercase tracking-wider font-mono">Margin Degradation Waterfall</h3>
+                                    <h3 className="text-sm font-semibold text-zinc-950 mb-6 uppercase tracking-wider font-mono">Margin Degradation Waterfall</h3>
                                     <WaterfallChart data={waterfallData} />
                                 </div>
 
@@ -354,7 +354,7 @@ export default function CopilotROITool() {
                                             </div>
                                             <div>
                                                 <h4 className="text-red-400 font-bold mb-1">Terminal Insolvency Risk</h4>
-                                                <p className="text-sm text-red-300/80">AI tool licensing combined with downstream review hours is displacing over 10% of total engineering capacity. Stop feature development and audit code review processes immediately.</p>
+                                                <p className="text-sm text-red-600">AI tool licensing combined with downstream review hours is displacing over 10% of total engineering capacity. Stop feature development and audit code review processes immediately.</p>
                                             </div>
                                         </motion.div>
                                     )}
@@ -420,7 +420,7 @@ export default function CopilotROITool() {
                                 </div>
                                 
                                 {/* Tools Footer */}
-                                <div className="mt-auto border-t border-zinc-200 bg-white/[0.02] p-4 px-8 flex justify-between items-center">
+                                <div className="mt-auto border-t border-zinc-200 bg-zinc-50 p-4 px-8 flex justify-between items-center">
                                     <div className="flex gap-4">
                                         <ExportToPDFButton 
                                             targetId="pdf-export-target" 

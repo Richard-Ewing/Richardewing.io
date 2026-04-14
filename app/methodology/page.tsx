@@ -63,7 +63,7 @@ export default function MethodologyPage() {
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-16">
                         <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-4">Methodology</div>
-                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
+                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             How R&D Audits{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-rose-400">Work</span>
                         </h1>
@@ -74,7 +74,7 @@ export default function MethodologyPage() {
 
                     <div className="space-y-8 mb-16">
                         {phases.map((p, i) => (
-                            <div key={i} className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-8">
+                            <div key={i} className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8">
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl font-bold text-cyan-400">{p.phase}</div>
                                     <div className="flex-1">
@@ -93,7 +93,7 @@ export default function MethodologyPage() {
                                     </div>
                                     <div>
                                         <h3 className="text-sm font-mono text-emerald-500 uppercase tracking-widest mb-2">Deliverable</h3>
-                                        <p className="text-sm text-zinc-600">{p.output}</p>
+                                        <p className="text-sm text-zinc-800">{p.output}</p>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@ export default function MethodologyPage() {
                     </div>
 
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-10 text-center">
-                        <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Start Your Audit</h2>
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Start Your Audit</h2>
                         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">Board-ready results in 4 weeks. Dollar-denominated. Actionable. No 50-page technical reports that nobody reads.</p>
                         <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Book R&D Capital Audit →</Link>
                     </div>

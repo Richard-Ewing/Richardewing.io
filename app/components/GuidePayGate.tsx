@@ -40,11 +40,11 @@ export default function GuidePayGate({ guideTitle, productId, hasAccess = false,
             </div>
 
             <div className="relative -mt-48 z-10 mx-auto max-w-lg mb-16">
-                <div className="rounded-2xl border border-zinc-200 bg-zinc-900/95 backdrop-blur-xl p-8 shadow-2xl shadow-cyan-500/5 text-center">
+                <div className="rounded-2xl border border-zinc-200 bg-white/95 backdrop-blur-xl p-8 shadow-2xl shadow-cyan-500/5 text-center">
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/20 flex flex-col items-center justify-center mx-auto mb-4">
                         <Lock className="w-6 h-6 text-cyan-400" />
                     </div>
-                    <h3 className="text-2xl font-grotesk font-bold text-white mb-2">Premium Guide Protected</h3>
+                    <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mb-2">Premium Guide Protected</h3>
                     <p className="text-zinc-600 text-sm mb-6">
                         Unlock full access to the {guideTitle} playbook, including frameworks, economic models, and due diligence checks.
                     </p>

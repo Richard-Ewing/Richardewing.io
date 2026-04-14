@@ -16,7 +16,7 @@ export default function ExogramSidebar() {
         <>
             {/* Mobile Toggle */}
             <div className="md:hidden flex items-center justify-between p-4 border-b border-zinc-200 bg-white sticky top-16 z-40">
-                <span className="text-sm font-bold text-white uppercase tracking-wider">Docs Menu</span>
+                <span className="text-sm font-bold text-zinc-950 uppercase tracking-wider">Docs Menu</span>
                 <button 
                     onClick={() => setIsOpen(!isOpen)}
                     className="p-2 text-zinc-600 hover:text-zinc-900"

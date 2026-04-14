@@ -54,7 +54,7 @@ export default async function PseoComparePage({ params }: { params: Promise<{ sl
                         ← Back to Comparisons
                     </Link>
 
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         {item.toolA} <span className="text-zinc-700 text-3xl mx-2">vs</span> <span className="text-rose-400">{item.toolB}</span>
                     </h1>
                     <p className="text-xl text-zinc-600 mb-12 border-l-2 border-cyan-500 pl-4 py-2">
@@ -76,7 +76,7 @@ export default async function PseoComparePage({ params }: { params: Promise<{ sl
                     </div>
 
                     <div className="prose prose-zinc prose-lg max-w-none mb-16">
-                        <h2 className="text-3xl font-grotesk font-bold text-white mb-6">The Technical Breakdown</h2>
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-6">The Technical Breakdown</h2>
                         {item.technicalDistinction.split('\n\n').map((paragraph: string, index: number) => (
                             <p key={index} className="text-zinc-700 leading-relaxed mb-6">{paragraph}</p>
                         ))}
@@ -85,7 +85,7 @@ export default async function PseoComparePage({ params }: { params: Promise<{ sl
                     {/* Exogram Traffic Trap / Lead Capture */}
                     <div className="rounded-3xl border border-zinc-200 bg-white p-8 md:p-12 text-center relative overflow-hidden mt-20">
                         <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/10 to-transparent opacity-50"></div>
-                        <h3 className="text-2xl md:text-3xl font-grotesk font-bold text-white mb-4 relative z-10">
+                        <h3 className="text-2xl md:text-3xl font-grotesk font-bold text-zinc-950 mb-4 relative z-10">
                             Stop Guessing Your AI / Architectural Risk
                         </h3>
                         <p className="text-zinc-600 mb-8 max-w-2xl mx-auto relative z-10">

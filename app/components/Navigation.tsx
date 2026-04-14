@@ -40,7 +40,7 @@ const Navigation = () => {
                             </div>
                             <div>
                                 <div className="font-semibold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors">Richard Ewing</div>
-                                <div className="text-xs text-zinc-700">Product Economist</div>
+                                <div className="text-xs text-zinc-900">Product Economist</div>
                             </div>
                         </Link>
 
@@ -89,7 +89,7 @@ const Navigation = () => {
                                 
                                 <div className="mt-2 p-2 relative z-10 w-full bg-zinc-50 pb-3">
                                     <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-zinc-200 hover:border-zinc-300 bg-white hover:bg-zinc-50 rounded-lg py-2.5 mx-3 transition-colors">
-                                        <span className="text-xs font-semibold text-zinc-800">Explore All Diagnostics</span>
+                                        <span className="text-xs font-semibold text-zinc-950">Explore All Diagnostics</span>
                                         <span className="text-xs text-zinc-900">→</span>
                                     </Link>
                                 </div>

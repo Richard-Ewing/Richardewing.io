@@ -25,7 +25,7 @@ export default function SaaSPage() {
                         <Link href="/industries" className="hover:text-cyan-400">Industries</Link><span>/</span><span className="text-violet-400 font-bold">SaaS &amp; B2B</span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Product Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">SaaS &amp; B2B</span>
                     </h1>
@@ -37,14 +37,14 @@ export default function SaaSPage() {
                         {challenges.map((c, i) => (
                             <div key={i} className="rounded-xl border border-zinc-200 p-6 hover:border-violet-500/30 transition-colors">
                                 <div className="text-2xl mb-3">{c.icon}</div>
-                                <h3 className="text-lg font-grotesk font-bold text-white mb-2">{c.title}</h3>
+                                <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">{c.title}</h3>
                                 <p className="text-zinc-600 text-sm">{c.description}</p>
                             </div>
                         ))}
                     </div>
 
                     <div className="rounded-2xl border border-violet-500/30 bg-violet-500/5 p-8 mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">How I Help SaaS Companies</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">How I Help SaaS Companies</h2>
                         <ul className="space-y-3 text-zinc-700 mb-8">
                             <li className="flex items-start gap-3"><span className="text-violet-400 mt-1">→</span> <span>Calculate the dollar impact of technical debt on ARR growth rate</span></li>
                             <li className="flex items-start gap-3"><span className="text-violet-400 mt-1">→</span> <span>Identify and sunset zombie features consuming engineering capacity</span></li>
@@ -53,7 +53,7 @@ export default function SaaSPage() {
                         </ul>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-600 text-white font-bold hover:opacity-90">Free PDI Assessment →</Link>
-                            <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-300 text-white font-bold hover:bg-white/5">Book Advisory →</Link>
+                            <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-300 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     </div>
                 </div>

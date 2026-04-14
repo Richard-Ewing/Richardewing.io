@@ -68,7 +68,7 @@ export function Sidebar() {
             {/* Mobile Header */}
             <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-zinc-200 px-4 py-3 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-zinc-800 overflow-hidden">
+                    <div className="w-10 h-10 rounded-full bg-zinc-200 overflow-hidden">
                         <Image src="/assets/images/headshot.jpg" alt="RE" width={40} height={40} className="object-cover grayscale" />
                     </div>
                     <div>
@@ -124,7 +124,7 @@ export function Sidebar() {
                 <nav className="space-y-6 flex-1">
                     {navItems.map((section) => (
                         <div key={section.label}>
-                            <div className={`text-[10px] font-mono uppercase mb-2 ml-4 tracking-widest ${section.labelClass || 'text-zinc-800'}`}>
+                            <div className={`text-[10px] font-mono uppercase mb-2 ml-4 tracking-widest ${section.labelClass || 'text-zinc-950'}`}>
                                 {section.label}
                             </div>
                             <div className="space-y-1">

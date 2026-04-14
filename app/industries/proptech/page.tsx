@@ -27,7 +27,7 @@ export default function PropTechPage() {
                     <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/industries" className="hover:text-cyan-400">Industries</Link><span>/</span><span className="text-amber-400 font-bold">PropTech</span>
                     </div>
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         PropTech{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Product Economics</span>
                     </h1>
@@ -44,7 +44,7 @@ export default function PropTechPage() {
                     </div>
 
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-8 text-center">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">PropTech R&D Audit</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">PropTech R&D Audit</h2>
                         <p className="text-zinc-700 mb-6">Quantify your data integration debt, valuation model economics, and IoT infrastructure costs.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold hover:opacity-90 transition-opacity">Book PropTech Audit →</Link>
                     </div>

@@ -69,7 +69,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                         </div>
                     )}
                 </div>
-                <div className="flex-shrink-0 mt-3 sm:mt-4 text-zinc-700">
+                <div className="flex-shrink-0 mt-3 sm:mt-4 text-zinc-900">
                     <svg 
                         className={`w-6 h-6 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
                         fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -99,7 +99,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                 <Link key={j} href={m.href} className={`flex items-center justify-between p-4 rounded-xl border transition-colors group ${isDone ? 'bg-emerald-50 border-emerald-200 hover:border-emerald-300' : 'bg-white border-zinc-200 hover:border-zinc-300 shadow-sm'}`}>
                                     <div className="pr-4 flex items-center gap-3">
                                         <div className="flex-shrink-0 text-zinc-900 font-bold text-sm w-6">
-                                            {isDone ? <span className="text-emerald-600">✓</span> : <span className="text-zinc-600">{j + 1}.</span>}
+                                            {isDone ? <span className="text-emerald-600">✓</span> : <span className="text-zinc-800">{j + 1}.</span>}
                                         </div>
                                         <div>
                                             <div className={`font-bold text-sm transition-colors ${isDone ? 'text-zinc-800 group-hover:text-emerald-600' : 'text-zinc-900 group-hover:text-purple-700'}`}>{m.name}</div>
@@ -149,7 +149,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                 </div>
                                 <div className="flex-grow">
                                     <h3 className="text-xl font-grotesk font-bold text-emerald-700 mb-2">Track Mastered</h3>
-                                    <p className="text-sm text-zinc-800">
+                                    <p className="text-sm text-zinc-950">
                                         You have successfully completed every module in this architecture. To help you implement these exact systems in your organization, you've unlocked a complimentary 30-minute implementation audit with Richard Ewing, or you can roll this out to your engineering managers with a Team License.
                                     </p>
                                 </div>

@@ -171,7 +171,7 @@ export default function CloudContent() {
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
-                <span className="text-white font-bold">Cloud Repatriation</span>
+                <span className="text-zinc-950 font-bold">Cloud Repatriation</span>
             </div>
 
             {!results ? (
@@ -182,7 +182,7 @@ export default function CloudContent() {
                             <span className="font-mono text-xs text-rose-400 uppercase tracking-widest">The "Basecamp Index" Arbitrage</span>
                         </div>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-4">
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
                             Exit the <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-500">Cloud Cartel.</span>
                         </h1>
                         <p className="text-lg sm:text-xl text-zinc-600 mb-8 max-w-2xl">
@@ -209,16 +209,16 @@ export default function CloudContent() {
                                         <div className="w-8 h-8 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold font-mono text-sm border border-rose-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">The AWS/GCP Bleed</h3>
-                                            <p className="text-sm text-zinc-700">What is your monthly run-rate?</p>
+                                            <p className="text-sm text-zinc-900">What is your monthly run-rate?</p>
                                         </div>
                                     </div>
 
                                     <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-200 relative group">
                                         <div className="flex justify-between items-end mb-4">
                                             <label className="text-xs font-mono text-rose-400 uppercase tracking-widest">Monthly Cloud Invoice</label>
-                                            <div className="text-3xl font-bold text-white font-mono">${(totalBill/1000).toFixed(0)}k</div>
+                                            <div className="text-3xl font-bold text-zinc-950 font-mono">${(totalBill/1000).toFixed(0)}k</div>
                                         </div>
-                                        <input title="Monthly" type="range" min="5000" max="750000" step="5000" value={totalBill} onChange={e => setTotalBill(parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-rose-500" />
+                                        <input title="Monthly" type="range" min="5000" max="750000" step="5000" value={totalBill} onChange={e => setTotalBill(parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-rose-500" />
                                     </div>
 
                                     <button onClick={() => setStep(2)} className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-rose-400 transition-all flex items-center justify-center gap-2">
@@ -233,7 +233,7 @@ export default function CloudContent() {
                                         <div className="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold font-mono text-sm border border-orange-500/30">2</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Invoice Allocation</h3>
-                                            <p className="text-sm text-zinc-700">Different services carry different margins. Approximate the split.</p>
+                                            <p className="text-sm text-zinc-900">Different services carry different margins. Approximate the split.</p>
                                         </div>
                                     </div>
 
@@ -241,26 +241,26 @@ export default function CloudContent() {
                                         <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-200 relative group">
                                             <div className="flex justify-between items-end mb-4">
                                                 <label className="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2"><Server size={12}/> Compute (EC2, ECS, EKS)</label>
-                                                <div className="text-xl font-bold text-white font-mono">{computeP}%</div>
+                                                <div className="text-xl font-bold text-zinc-950 font-mono">{computeP}%</div>
                                             </div>
-                                            <input title="Compute" type="range" min="10" max="80" step="5" value={computeP} onChange={e => handleSliderChange('compute', parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-cyan-500" />
+                                            <input title="Compute" type="range" min="10" max="80" step="5" value={computeP} onChange={e => handleSliderChange('compute', parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-cyan-500" />
                                         </div>
 
                                         <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-200 relative group">
                                             <div className="flex justify-between items-end mb-4">
                                                 <label className="text-xs font-mono text-amber-400 uppercase tracking-widest flex items-center gap-2"><Database size={12}/> Database & Storage</label>
-                                                <div className="text-xl font-bold text-white font-mono">{dbP}%</div>
+                                                <div className="text-xl font-bold text-zinc-950 font-mono">{dbP}%</div>
                                             </div>
-                                            <input title="Database" type="range" min="10" max="80" step="5" value={dbP} onChange={e => handleSliderChange('db', parseInt(e.target.value))} className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500" />
+                                            <input title="Database" type="range" min="10" max="80" step="5" value={dbP} onChange={e => handleSliderChange('db', parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-amber-500" />
                                         </div>
 
                                         <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-200 relative group">
                                             <div className="flex justify-between items-end mb-1">
                                                 <label className="text-xs font-mono text-rose-500 uppercase tracking-widest flex items-center gap-2"><Activity size={12}/> Network Egress/Bandwidth</label>
-                                                <div className="text-xl font-bold text-white font-mono">{egressP}%</div>
+                                                <div className="text-xl font-bold text-zinc-950 font-mono">{egressP}%</div>
                                             </div>
                                             { }
-                                            <div className="w-full bg-zinc-800 h-2 rounded mt-2 overflow-hidden relative">
+                                            <div className="w-full bg-zinc-200 h-2 rounded mt-2 overflow-hidden relative">
                                                 <style>{`#egress-progress { width: ${egressP}%; }`}</style>
                                                 <div id="egress-progress" className="bg-rose-500 h-full transition-all duration-500" />
                                             </div>
@@ -268,7 +268,7 @@ export default function CloudContent() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <button onClick={() => setStep(1)} className="w-1/3 py-4 bg-zinc-50 border border-zinc-200 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">Back</button>
+                                        <button onClick={() => setStep(1)} className="w-1/3 py-4 bg-zinc-50 border border-zinc-200 text-zinc-950 font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-200 transition-all">Back</button>
                                         <div className="w-2/3">
                                             <ShineBorder borderColor="rgba(244, 63, 94, 0.6)" duration={2}>
                                                 <button onClick={() => { setShowGate(true); }} className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-rose-500 transition-all flex items-center justify-center gap-3">
@@ -295,8 +295,8 @@ export default function CloudContent() {
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
-                            <h2 className="text-xl font-bold text-white mb-1">FinOps Arbitrage Model Complete</h2>
-                            <p className="text-sm text-zinc-600">Your repatriation economics clearly establish a mandate to exit the cloud.</p>
+                            <h2 className="text-xl font-bold text-zinc-950 mb-1">FinOps Arbitrage Model Complete</h2>
+                            <p className="text-sm text-zinc-800">Your repatriation economics clearly establish a mandate to exit the cloud.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="cloud-pdf-export-zone" fileName={`Cloud_Repatriation_${persona}.pdf`} />
@@ -311,7 +311,7 @@ export default function CloudContent() {
                                     <div>
                                         <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Net EBITDA Recovery</div>
                                         <div className="text-5xl sm:text-6xl font-bold tracking-tighter leading-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">
-                                            +{formatMoney(results.annualSavings)} <span className="text-2xl text-zinc-700">/ yr</span>
+                                            +{formatMoney(results.annualSavings)} <span className="text-2xl text-zinc-900">/ yr</span>
                                         </div>
                                         <div className="mt-6">
                                             <span className="px-3 py-1.5 rounded-full bg-emerald-900/30 text-emerald-400 border border-emerald-900/50 text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2">
@@ -343,7 +343,7 @@ export default function CloudContent() {
                         </ScrollReveal>
 
                         <ScrollReveal delay={100}>
-                            <h3 className="text-white font-bold font-grotesk text-xl mb-4 text-center mt-10 border-t border-zinc-200 pt-10">Capital Inefficiency Heatmap</h3>
+                            <h3 className="text-zinc-950 font-bold font-grotesk text-xl mb-4 text-center mt-10 border-t border-zinc-200 pt-10">Capital Inefficiency Heatmap</h3>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                                 <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-5 relative overflow-hidden group">
                                     <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-3">Compute Abstraction Tax</div>
@@ -367,7 +367,7 @@ export default function CloudContent() {
 
                         {/* CLOUD EXIT GANTT CHART */}
                         <ScrollReveal delay={150}>
-                            <h3 className="text-white font-bold font-grotesk text-xl mb-4 text-center mt-10 border-t border-zinc-200 pt-10 flex items-center justify-center gap-2">
+                            <h3 className="text-zinc-950 font-bold font-grotesk text-xl mb-4 text-center mt-10 border-t border-zinc-200 pt-10 flex items-center justify-center gap-2">
                                 <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
                                 120-Day Workload Repatriation Timeline
                             </h3>
@@ -380,10 +380,10 @@ export default function CloudContent() {
                                             <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.5)] z-10"></div>
                                             
                                             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                <div className={`px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest shrink-0 inline-block w-fit ${plan.month === 1 ? 'bg-rose-500/20 text-rose-300 border border-rose-500/50 font-bold' : 'bg-white/5 text-zinc-600'}`}>
+                                                <div className={`px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest shrink-0 inline-block w-fit ${plan.month === 1 ? 'bg-rose-500/20 text-rose-300 border border-rose-500/50 font-bold' : 'bg-white/5 text-zinc-800'}`}>
                                                     Month {plan.month} {plan.month === 1 && '— CRITICAL DEPENDENCY'}
                                                 </div>
-                                                <div className="font-bold text-white text-base">
+                                                <div className="font-bold text-zinc-950 text-base">
                                                     {plan.focus}
                                                 </div>
                                             </div>
@@ -395,7 +395,7 @@ export default function CloudContent() {
                                                     const colorClasses = [
                                                         "from-red-500/20 to-rose-500/20 border-rose-500/50 text-rose-200",
                                                         "from-orange-500/20 to-amber-500/20 border-amber-500/50 text-amber-200",
-                                                        "from-zinc-500/20 to-zinc-600/20 border-zinc-500/50 text-zinc-700"
+                                                        "from-zinc-500/20 to-zinc-600/20 border-zinc-500/50 text-zinc-900"
                                                     ];
                                                     const color = colorClasses[i % colorClasses.length];
                                                     
@@ -416,7 +416,7 @@ export default function CloudContent() {
                         {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
                         <ScrollReveal delay={200}>
                             <div className="capsule-container rounded-2xl p-6 sm:p-8 mt-10 border border-zinc-200 bg-zinc-50">
-                                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                     3-Step Board Remediation Playbook
                                 </h3>
@@ -430,13 +430,13 @@ export default function CloudContent() {
                                             <span className="text-rose-400 font-bold font-mono">01</span>
                                         </div>
                                         <div className="relative z-10 w-full">
-                                            <h4 className="text-white font-bold mb-2">Decouple Stateless Compute (Lift & Shift)</h4>
+                                            <h4 className="text-zinc-950 font-bold mb-2">Decouple Stateless Compute (Lift & Shift)</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">Stateless compute is the easiest abstraction layer to migrate. AWS EC2 operates at an ~85% gross margin that you are paying directly.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-700">Lease 2 high-density dual-EPYC chassis from Deft/Equinix. Install Proxmox/K3s. Adjust CI/CD to deploy images to the new bare-metal IP block simultaneously (shadow traffic).</p>
+                                                <p className="text-xs text-zinc-900">Lease 2 high-density dual-EPYC chassis from Deft/Equinix. Install Proxmox/K3s. Adjust CI/CD to deploy images to the new bare-metal IP block simultaneously (shadow traffic).</p>
                                             </div>
                                         </div>
                                     </div>
@@ -448,13 +448,13 @@ export default function CloudContent() {
                                             <span className="text-amber-400 font-bold font-mono">02</span>
                                         </div>
                                         <div className="relative z-10 w-full">
-                                            <h4 className="text-white font-bold mb-2">Neutralize the Managed Database Tax</h4>
+                                            <h4 className="text-zinc-950 font-bold mb-2">Neutralize the Managed Database Tax</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">You are paying a massive premium for AWS Aurora/RDS wrappers. Databases are simply optimized blocks on disks. An NVMe bare metal cluster yields 15x IOPS for 1/8th the price.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-700">Initiate logical replication from AWS to your private Postgres NVMe cluster. Pause writes, failover DNS caching layer, and sever the AWS connection entirely.</p>
+                                                <p className="text-xs text-zinc-900">Initiate logical replication from AWS to your private Postgres NVMe cluster. Pause writes, failover DNS caching layer, and sever the AWS connection entirely.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -466,13 +466,13 @@ export default function CloudContent() {
                                             <span className="text-cyan-400 font-bold font-mono">03</span>
                                         </div>
                                         <div className="relative z-10 w-full">
-                                            <h4 className="text-white font-bold mb-2">Eliminate the Egress Cartel Monopoly</h4>
+                                            <h4 className="text-zinc-950 font-bold mb-2">Eliminate the Egress Cartel Monopoly</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">AWS charges $0.09/GB for data egress—an artificial monopoly markup. A 10G unmetered drop in a private rack costs less than $1,000/mo statically.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-700">Move all high-bandwidth bandwidth egress paths (video, streaming, heavy API JSON payloads) behind Cloudflare to nullify AWS egress, then route directly from the new bare metal unmetered pipeline.</p>
+                                                <p className="text-xs text-zinc-900">Move all high-bandwidth bandwidth egress paths (video, streaming, heavy API JSON payloads) behind Cloudflare to nullify AWS egress, then route directly from the new bare metal unmetered pipeline.</p>
                                             </div>
                                         </div>
                                     </div>

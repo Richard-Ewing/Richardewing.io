@@ -99,7 +99,7 @@ export default function ResourcesPage() {
             <div className="page-container">
                 <section className="text-center mb-16">
                     <p className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-4">Resource Hub</p>
-                    <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Everything You Need.<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">All Free.</span>
                     </h1>
@@ -127,7 +127,7 @@ export default function ResourcesPage() {
                                         className="flex items-center justify-between p-4 rounded-lg bg-white/5 border border-zinc-200 hover:border-cyan-500/30 hover:bg-cyan-500/5 transition-all group"
                                     >
                                         <div>
-                                            <div className="font-semibold text-white group-hover:text-cyan-400 transition-colors text-sm">{item.name}</div>
+                                            <div className="font-semibold text-zinc-950 group-hover:text-cyan-400 transition-colors text-sm">{item.name}</div>
                                             <div className="text-xs text-zinc-700 mt-0.5">{item.description}</div>
                                         </div>
                                         <span className="text-gray-600 group-hover:text-cyan-400 transition-colors ml-2">→</span>
@@ -141,13 +141,13 @@ export default function ResourcesPage() {
                 {/* CTA */}
                 <section className="text-center mt-16">
                     <div className="card p-10 border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent max-w-2xl mx-auto">
-                        <h2 className="text-2xl font-bold text-white mb-4">Need personalized guidance?</h2>
+                        <h2 className="text-2xl font-bold text-zinc-950 mb-4">Need personalized guidance?</h2>
                         <p className="text-zinc-800 mb-6">Our advisory services provide hands-on support tailored to your organization.</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link href="/pricing" className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
                                 View Pricing →
                             </Link>
-                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-200 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-200 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                                 Book Free Call →
                             </Link>
                         </div>

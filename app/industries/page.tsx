@@ -155,7 +155,7 @@ export default function IndustriesPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Industries We <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-orange-400">Serve</span>
                     </h1>
                     <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
@@ -165,12 +165,12 @@ export default function IndustriesPage() {
                     <div className="space-y-6 mb-16">
                         {verticals.map((v) => (
                             <Link key={v.href} href={v.href} className="group block">
-                                <div className={`rounded-2xl border ${colorMap[v.color]} p-8 transition-all hover:bg-white/[0.02]`}>
+                                <div className={`rounded-2xl border ${colorMap[v.color]} p-8 transition-all hover:bg-zinc-50`}>
                                     <div className="flex items-start gap-4">
                                         <div className="text-3xl">{v.icon}</div>
                                         <div>
                                             <div className={`text-xs font-mono uppercase tracking-widest mb-1 ${textMap[v.color]}`}>{v.subtitle}</div>
-                                            <h2 className="text-2xl font-grotesk font-bold text-white mb-3">{v.title}</h2>
+                                            <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-3">{v.title}</h2>
                                             <p className="text-zinc-600 mb-4">{v.description}</p>
                                             <span className={`text-sm font-bold uppercase tracking-widest ${textMap[v.color]}`}>Learn More →</span>
                                         </div>

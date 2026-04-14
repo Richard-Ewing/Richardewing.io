@@ -39,7 +39,7 @@ export default function BoardRoom() {
         return (
             <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
                 <ShieldAlert className="text-red-500 w-16 h-16 mb-6 animate-pulse" />
-                <h1 className="text-3xl font-bold text-white mb-4 uppercase tracking-tighter">Clearance Required</h1>
+                <h1 className="text-3xl font-bold text-zinc-950 mb-4 uppercase tracking-tighter">Clearance Required</h1>
                 <p className="text-zinc-700 mb-8 max-w-md font-mono text-sm uppercase tracking-widest leading-relaxed">The board room is restricted to verified C-Suite personnel. Authenticate to establish connection.</p>
                 <Link href="/sign-in" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-widest rounded-lg transition-colors">Establish Neural Link</Link>
             </div>
@@ -87,7 +87,7 @@ export default function BoardRoom() {
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.8)]" />
-                        <span className="font-bold tracking-widest text-sm text-white uppercase font-mono">Executive Board Room <span className="text-zinc-800 font-normal">| ALL DEPARTMENTS</span></span>
+                        <span className="font-bold tracking-widest text-sm text-zinc-950 uppercase font-mono">Executive Board Room <span className="text-zinc-800 font-normal">| ALL DEPARTMENTS</span></span>
                     </div>
                     <div className="flex gap-4">
                         <ExportToPDFButton targetId="board-room-matrix" fileName={`Enterprise_Threat_Matrix.pdf`} />
@@ -104,7 +104,7 @@ export default function BoardRoom() {
                 <ScrollReveal>
                     <div className="mb-4 flex items-center gap-3">
                         <Crosshair className="text-rose-500" />
-                        <h2 className="text-2xl font-black text-white uppercase tracking-tighter">Global Threat Matrix</h2>
+                        <h2 className="text-2xl font-black text-zinc-950 uppercase tracking-tighter">Global Threat Matrix</h2>
                         <div className="flex-1 h-px bg-rose-500/20 ml-4 hidden sm:block"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -148,7 +148,7 @@ export default function BoardRoom() {
                             <div className="flex items-center gap-3 mb-8">
                                 <Cpu className="text-blue-500 h-8 w-8" />
                                 <div>
-                                    <h3 className="text-xl font-bold text-white uppercase tracking-tight">Engineering Protocol</h3>
+                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Engineering Protocol</h3>
                                     <p className="text-xs font-mono text-blue-400 uppercase tracking-widest">CTO / Platform Architecture</p>
                                 </div>
                             </div>
@@ -156,7 +156,7 @@ export default function BoardRoom() {
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-blue-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-700">Product Debt Index (PDI)</span>
+                                        <span className="text-sm font-bold text-zinc-900">Product Debt Index (PDI)</span>
                                         <span className="text-xl font-black text-zinc-900">{averagePDI}</span>
                                     </div>
                                     <p className="text-xs text-zinc-700 leading-relaxed font-mono">Current average code entropy spanning all active domains. Determines engineering velocity decay.</p>
@@ -176,7 +176,7 @@ export default function BoardRoom() {
 
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-purple-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-700">Engineering Velocity Erosion</span>
+                                        <span className="text-sm font-bold text-zinc-900">Engineering Velocity Erosion</span>
                                         <span className="text-xl font-black text-zinc-900">{latestTools['EV-SE'] ? formatCurrency(latestTools['EV-SE'].output_metrics?.wealthGap || 0) : 'Pending'}</span>
                                     </div>
                                     <p className="text-xs text-zinc-700 leading-relaxed font-mono">The CapEx being permanently vaporized by slow deployment cycles and untracked sprint spillage.</p>
@@ -195,7 +195,7 @@ export default function BoardRoom() {
                             <div className="flex items-center gap-3 mb-8">
                                 <Activity className="text-emerald-500 h-8 w-8" />
                                 <div>
-                                    <h3 className="text-xl font-bold text-white uppercase tracking-tight">Finance / Economics</h3>
+                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Finance / Economics</h3>
                                     <p className="text-xs font-mono text-emerald-400 uppercase tracking-widest">CFO / FinOps Desk</p>
                                 </div>
                             </div>
@@ -203,8 +203,8 @@ export default function BoardRoom() {
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-emerald-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-700">AI Unit Economics (AUEB)</span>
-                                        <span className="text-xl font-black text-white text-right">
+                                        <span className="text-sm font-bold text-zinc-900">AI Unit Economics (AUEB)</span>
+                                        <span className="text-xl font-black text-zinc-950 text-right">
                                             {latestTools['AUEB'] ? `${(latestTools['AUEB'].output_metrics?.grossMargin || 0).toFixed(1)}%` : 'Pending'}
                                         </span>
                                     </div>
@@ -225,7 +225,7 @@ export default function BoardRoom() {
 
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-cyan-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-700">Cloud FinOps Arbitrage</span>
+                                        <span className="text-sm font-bold text-zinc-900">Cloud FinOps Arbitrage</span>
                                         <span className="text-xl font-black text-zinc-900">{latestTools['CLOUD-REPAT'] ? formatCurrency(latestTools['CLOUD-REPAT'].output_metrics?.annualSavings || 0) : 'Pending'}</span>
                                     </div>
                                     <p className="text-xs text-zinc-700 leading-relaxed font-mono">OpEx available to recapture via private cloud repatriation vs AWS Basecamp index.</p>
@@ -236,8 +236,8 @@ export default function BoardRoom() {
 
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-rose-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-700">AI Tool Economics (Net Revenue Retention)</span>
-                                        <span className="text-xl font-black text-white text-right">
+                                        <span className="text-sm font-bold text-zinc-900">AI Tool Economics (Net Revenue Retention)</span>
+                                        <span className="text-xl font-black text-zinc-950 text-right">
                                             {latestTools['copilot-roi'] ? `${(latestTools['copilot-roi'].output_metrics?.netRevenueRetention || 0).toFixed(0)}%` : 'Pending'}
                                         </span>
                                     </div>
@@ -257,7 +257,7 @@ export default function BoardRoom() {
                             <div className="flex items-center gap-3 mb-8">
                                 <Users className="text-amber-500 h-8 w-8" />
                                 <div>
-                                    <h3 className="text-xl font-bold text-white uppercase tracking-tight">Human Capital & Talent</h3>
+                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Human Capital & Talent</h3>
                                     <p className="text-xs font-mono text-amber-400 uppercase tracking-widest">CHRO / Resource Allocation</p>
                                 </div>
                             </div>
@@ -265,8 +265,8 @@ export default function BoardRoom() {
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-amber-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-700">AI CapEx Break-Even</span>
-                                        <span className="text-xl font-black text-white text-right">
+                                        <span className="text-sm font-bold text-zinc-900">AI CapEx Break-Even</span>
+                                        <span className="text-xl font-black text-zinc-950 text-right">
                                             {latestTools['ai-roi-timeline'] ? `${(latestTools['ai-roi-timeline'].output_metrics?.breakEvenMonths || 0).toFixed(1)} Months` : 'Pending'}
                                         </span>
                                     </div>
@@ -286,7 +286,7 @@ export default function BoardRoom() {
                             <div className="flex items-center gap-3 mb-8">
                                 <Briefcase className="text-zinc-700 h-8 w-8" />
                                 <div>
-                                    <h3 className="text-xl font-bold text-white uppercase tracking-tight">Mergers & Acquisitions</h3>
+                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Mergers & Acquisitions</h3>
                                     <p className="text-xs font-mono text-zinc-600 uppercase tracking-widest">Private Equity / Due Diligence</p>
                                 </div>
                             </div>
@@ -294,8 +294,8 @@ export default function BoardRoom() {
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-zinc-200 rounded-xl border-l-2 border-l-zinc-300">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-700">Technical Due Diligence Tracker</span>
-                                        <span className="text-xl font-black text-white text-right">
+                                        <span className="text-sm font-bold text-zinc-900">Technical Due Diligence Tracker</span>
+                                        <span className="text-xl font-black text-zinc-950 text-right">
                                             {latestTools['DUE-DILIGENCE'] ? `${(latestTools['DUE-DILIGENCE'].output_metrics?.adjustedConfidence || 0).toFixed(0)}%` : 'Pending'}
                                         </span>
                                     </div>
@@ -315,7 +315,7 @@ export default function BoardRoom() {
                             <div className="flex items-center gap-3 mb-8">
                                 <AlertTriangle className="text-rose-500 h-8 w-8" />
                                 <div>
-                                    <h3 className="text-xl font-bold text-white uppercase tracking-tight">AI Strategy & Risk</h3>
+                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">AI Strategy & Risk</h3>
                                     <p className="text-xs font-mono text-rose-400 uppercase tracking-widest">Chief AI Officer / CRO</p>
                                 </div>
                             </div>
@@ -323,8 +323,8 @@ export default function BoardRoom() {
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-rose-500/20 rounded-xl border-l-2 border-l-rose-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-bold text-zinc-700">Model Collapse Liability</span>
-                                        <span className="text-xl font-black text-white text-right">
+                                        <span className="text-sm font-bold text-zinc-900">Model Collapse Liability</span>
+                                        <span className="text-xl font-black text-zinc-950 text-right">
                                             {totalWealthGap > 0 ? 'High Exposure' : 'Pending Audit'}
                                         </span>
                                     </div>
@@ -335,7 +335,7 @@ export default function BoardRoom() {
                                             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
                                             Active Threat Briefing
                                         </div>
-                                        <Link href="/blog/model-collapse-financial-modeling" className="text-xs text-white hover:text-rose-300 transition-colors block leading-tight">
+                                        <Link href="/blog/model-collapse-financial-modeling" className="text-xs text-zinc-950 hover:text-rose-300 transition-colors block leading-tight">
                                            Read the CIO.com framework on mitigating this depreciation schedule.
                                         </Link>
                                     </div>

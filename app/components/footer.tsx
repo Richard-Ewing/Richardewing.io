@@ -106,7 +106,7 @@ export function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-700">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-900">
                     <p>© 2026 Richard Ewing. All rights reserved.</p>
                     <div className="flex items-center gap-6">
                         <Link href="/legal" className="hover:text-zinc-900 transition-colors">Legal & Privacy</Link>

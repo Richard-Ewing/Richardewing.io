@@ -43,7 +43,7 @@ export default function CareerPathingContent() {
                 tool: { name: 'AUEB Diagnostic Tool', url: '/tools/aueb', desc: 'Run the AI Unit Economics Blueprint to price your transition.' },
                 ctaLink: "/vault",
                 icon: <Network className="w-8 h-8 text-sky-400 mb-4" />,
-                color: "from-sky-900/40 via-black to-zinc-100 border-sky-500/30"
+                color: "from-sky-900/40 via-transparent to-zinc-100 border-sky-500/30"
             };
         }
         
@@ -60,7 +60,7 @@ export default function CareerPathingContent() {
                 tool: { name: 'Audit Interview Simulator', url: '/tools/audit-interview', desc: 'Practice real-time System Design economics with our brutal AI interviewer.' },
                 ctaLink: "/vault",
                 icon: <Server className="w-8 h-8 text-violet-400 mb-4" />,
-                color: "from-violet-900/40 via-black to-zinc-100 border-violet-500/30"
+                color: "from-violet-900/40 via-transparent to-zinc-100 border-violet-500/30"
             };
         }
 
@@ -77,7 +77,7 @@ export default function CareerPathingContent() {
                 tool: { name: 'PDI Debt Modeler', url: '/tools/pdi', desc: 'Quantify technical debt as a financial liability to present to your CFO.' },
                 ctaLink: "/vault",
                 icon: <GraduationCap className="w-8 h-8 text-orange-400 mb-4" />,
-                color: "from-orange-900/40 via-black to-zinc-100 border-orange-500/30"
+                color: "from-orange-900/40 via-transparent to-zinc-100 border-orange-500/30"
             };
         }
 
@@ -93,7 +93,7 @@ export default function CareerPathingContent() {
             tool: { name: 'Audit Interview Simulator', url: '/tools/audit-interview', desc: 'Run endless mock behavioral rounds to sharpen your delivery.' },
             ctaLink: "/vault",
             icon: <Search className="w-8 h-8 text-emerald-400 mb-4" />,
-            color: "from-emerald-900/40 via-black to-zinc-100 border-emerald-500/30"
+            color: "from-emerald-900/40 via-transparent to-zinc-100 border-emerald-500/30"
         };
     };
 
@@ -103,7 +103,7 @@ export default function CareerPathingContent() {
             <div className="mb-12 border-b border-zinc-200 pb-8 mt-12">
                 <div className="flex items-center gap-3 mb-4">
                     <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                    <h1 className="text-3xl font-bold text-white tracking-tight">C-Suite Career Architecture Funnel</h1>
+                    <h1 className="text-3xl font-bold text-zinc-950 tracking-tight">C-Suite Career Architecture Funnel</h1>
                 </div>
                 <p className="text-zinc-600 max-w-2xl leading-relaxed">
                     The tech market has permanently shifted from a growth-at-all-costs model to an efficiency-first mandate. Run this 3-step diagnostic to map your exact A-to-Z learning trajectory.
@@ -122,7 +122,7 @@ export default function CareerPathingContent() {
                         >
                             <BorderBeam size={200} duration={12} delay={0} />
                             <div className="text-[10px] font-mono text-cyan-400 mb-2 uppercase tracking-widest px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 inline-block rounded-full">Diagnostic 1/3</div>
-                            <h2 className="text-2xl font-bold text-white mb-8 mt-4">What is your current or most recent professional designation?</h2>
+                            <h2 className="text-2xl font-bold text-zinc-950 mb-8 mt-4">What is your current or most recent professional designation?</h2>
                             
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {[
@@ -153,7 +153,7 @@ export default function CareerPathingContent() {
                         >
                             <BorderBeam size={200} duration={12} delay={0} />
                             <div className="text-[10px] font-mono text-cyan-400 mb-2 uppercase tracking-widest px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 inline-block rounded-full">Diagnostic 2/3</div>
-                            <h2 className="text-2xl font-bold text-white mb-8 mt-4">What is the exact obstacle blocking your trajectory right now?</h2>
+                            <h2 className="text-2xl font-bold text-zinc-950 mb-8 mt-4">What is the exact obstacle blocking your trajectory right now?</h2>
                             
                             <div className="grid grid-cols-1 gap-4">
                                 {[
@@ -170,7 +170,7 @@ export default function CareerPathingContent() {
                                     >
                                         <div>
                                             <div className="font-bold text-lg text-zinc-800 group-hover:text-zinc-900 mb-2">{opt.label}</div>
-                                            <div className="text-sm text-zinc-700">{opt.desc}</div>
+                                            <div className="text-sm text-zinc-900">{opt.desc}</div>
                                         </div>
                                         <ChevronRight className="w-6 h-6 text-zinc-800 group-hover:text-cyan-400" />
                                     </button>
@@ -188,7 +188,7 @@ export default function CareerPathingContent() {
                         >
                             <BorderBeam size={200} duration={12} delay={0} />
                             <div className="text-[10px] font-mono text-cyan-400 mb-2 uppercase tracking-widest px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 inline-block rounded-full">Diagnostic 3/3</div>
-                            <h2 className="text-2xl font-bold text-white mb-8 mt-4">What is your targeted timeline to completely resolve this bottleneck?</h2>
+                            <h2 className="text-2xl font-bold text-zinc-950 mb-8 mt-4">What is your targeted timeline to completely resolve this bottleneck?</h2>
                             
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                 {[
@@ -231,7 +231,7 @@ export default function CareerPathingContent() {
                                         <div className="flex items-center gap-2 mb-2">
                                             <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                         </div>
-                                        <h2 className="text-xl font-bold text-white mb-1">Career Architecture Dashboard</h2>
+                                        <h2 className="text-xl font-bold text-zinc-950 mb-1">Career Architecture Dashboard</h2>
                                     </div>
                                     <div className="mt-4 sm:mt-0 flex gap-4">
                                         <button onClick={resetQuestions} className="px-4 py-2 border border-zinc-200 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
@@ -253,7 +253,7 @@ export default function CareerPathingContent() {
                                         <CheckCircle2 className="w-4 h-4 text-emerald-400" /> A-to-Z Execution Architecture Deployed
                                     </div>
 
-                                    <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-400">{getRecommendation().title}</h2>
+                                    <h2 className="text-3xl lg:text-4xl font-bold text-zinc-950 mb-6 tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-400">{getRecommendation().title}</h2>
                                     <p className="text-zinc-700 text-base leading-relaxed mb-8">
                                         {getRecommendation().diagnosis}
                                     </p>
@@ -285,8 +285,8 @@ export default function CareerPathingContent() {
                                                 <div key={idx} className="flex items-start gap-4">
                                                     <div className="w-6 h-6 rounded-full bg-white/5 border border-zinc-200 flex items-center justify-center font-mono text-[10px] text-zinc-600 flex-shrink-0 mt-1">{idx+1}</div>
                                                     <div>
-                                                        <div className="font-bold text-white text-sm mb-1">{t.id}: {t.name}</div>
-                                                        <div className="text-xs text-zinc-700">{t.desc}</div>
+                                                        <div className="font-bold text-zinc-950 text-sm mb-1">{t.id}: {t.name}</div>
+                                                        <div className="text-xs text-zinc-900">{t.desc}</div>
                                                     </div>
                                                 </div>
                                             ))}
@@ -295,9 +295,9 @@ export default function CareerPathingContent() {
 
                                     <GlowCard className="bg-white/80 border border-zinc-200 rounded-2xl p-6 relative overflow-hidden">
                                         <h4 className="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-1 inline-block rounded border border-cyan-500/20 uppercase tracking-widest mb-4">Phase 2: Live Intervention</h4>
-                                        <h3 className="font-bold text-white text-lg mb-2">{getRecommendation().tool.name}</h3>
+                                        <h3 className="font-bold text-zinc-950 text-lg mb-2">{getRecommendation().tool.name}</h3>
                                         <p className="text-xs text-zinc-600 mb-6">{getRecommendation().tool.desc}</p>
-                                        <Link href={getRecommendation().tool.url} className="text-xs font-mono font-bold text-white hover:text-cyan-400 transition-colors uppercase tracking-widest flex items-center gap-2">
+                                        <Link href={getRecommendation().tool.url} className="text-xs font-mono font-bold text-zinc-950 hover:text-cyan-400 transition-colors uppercase tracking-widest flex items-center gap-2">
                                             Execute Tool <ChevronRight size={14} />
                                         </Link>
                                     </GlowCard>
@@ -306,7 +306,7 @@ export default function CareerPathingContent() {
 
                             {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
                             <div className="mt-12 pt-12 border-t border-zinc-200 relative z-10 text-left">
-                                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
                                     Phase 3: IC Career Advancement Playbook
                                 </h3>
@@ -320,13 +320,13 @@ export default function CareerPathingContent() {
                                             <span className="text-rose-400 font-bold font-mono">01</span>
                                         </div>
                                         <div className="relative z-10 w-full">
-                                            <h4 className="text-white font-bold mb-2">Audit Your P&L Proximity</h4>
+                                            <h4 className="text-zinc-950 font-bold mb-2">Audit Your P&L Proximity</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">If your work cannot be tied directly to top-line revenue generation or bottom-line compute reduction, you are viewed as an expendable cost center.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-700">Run the PDI Audit on your current sprint backlog. Map exactly how much cloud run-rate your features are consuming vs. saving. Pitch the delta to your Engineering Manager.</p>
+                                                <p className="text-xs text-zinc-900">Run the PDI Audit on your current sprint backlog. Map exactly how much cloud run-rate your features are consuming vs. saving. Pitch the delta to your Engineering Manager.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -338,13 +338,13 @@ export default function CareerPathingContent() {
                                             <span className="text-amber-400 font-bold font-mono">02</span>
                                         </div>
                                         <div className="relative z-10 w-full">
-                                            <h4 className="text-white font-bold mb-2">Neutralize Subservient Communication</h4>
+                                            <h4 className="text-zinc-950 font-bold mb-2">Neutralize Subservient Communication</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">Directors do not want status updates. They want risk mitigation plans. If you only explain 'how' you built a feature, you will remain an IC forever.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-700">Format your next async update as an "Executive Action Memo". Lead with the exact EBITDA impact, list the key person risks, and request approval for a specific architectural pivot.</p>
+                                                <p className="text-xs text-zinc-900">Format your next async update as an "Executive Action Memo". Lead with the exact EBITDA impact, list the key person risks, and request approval for a specific architectural pivot.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -356,13 +356,13 @@ export default function CareerPathingContent() {
                                             <span className="text-cyan-400 font-bold font-mono">03</span>
                                         </div>
                                         <div className="relative z-10 w-full">
-                                            <h4 className="text-white font-bold mb-2">Establish a Sovereign Agent Sub-Routine</h4>
+                                            <h4 className="text-zinc-950 font-bold mb-2">Establish a Sovereign Agent Sub-Routine</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">The easiest way to jump titles is to orchestrate autonomous labor. If you can automate the busywork of 3 junior engineers, you instantly justify a Staff-level trajectory.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-700">Deploy a Langfuse telemetry stack over a local Llama 3 8B model to automate unit test generation for your team. Present the hours saved in your 1-on-1.</p>
+                                                <p className="text-xs text-zinc-900">Deploy a Langfuse telemetry stack over a local Llama 3 8B model to automate unit test generation for your team. Present the hours saved in your 1-on-1.</p>
                                             </div>
                                         </div>
                                     </div>

@@ -31,7 +31,7 @@ export default function AdvisoryContent() {
                         </div>
 
                         <span className="font-mono text-zinc-700 text-xs uppercase tracking-[0.3em] mb-4 block">Access Levels</span>
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-grotesk font-bold text-white tracking-tight leading-tight mb-4">
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-grotesk font-bold text-zinc-950 tracking-tight leading-tight mb-4">
                             Intervention<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Protocols.</span>
                         </h1>
@@ -46,7 +46,7 @@ export default function AdvisoryContent() {
                                 <div className="text-[10px] font-mono text-zinc-500 uppercase">Avg Revenue Lift</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl sm:text-3xl font-bold text-white tabular-nums"><NumberTicker value={14} /></div>
+                                <div className="text-2xl sm:text-3xl font-bold text-zinc-950 tabular-nums"><NumberTicker value={14} /></div>
                                 <div className="text-[10px] font-mono text-zinc-500 uppercase">Days to Diagnosis</div>
                             </div>
                             <div className="text-center">
@@ -65,7 +65,7 @@ export default function AdvisoryContent() {
                     {/* Level 1: Diagnostic Call */}
                     <GlowCard className="p-6 sm:p-8" glowColor="cyan">
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
-                            <h3 className="text-xl font-bold text-white font-grotesk">Diagnostic Call</h3>
+                            <h3 className="text-xl font-bold text-zinc-950 font-grotesk">Diagnostic Call</h3>
                             <span className="text-2xl font-bold text-cyan-400 font-mono">$450</span>
                         </div>
                         <p className="text-zinc-600 text-sm leading-relaxed mb-6 border-b border-zinc-200 pb-4">
@@ -82,7 +82,7 @@ export default function AdvisoryContent() {
                             Most Critical
                         </div>
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
-                            <h3 className="text-xl font-bold text-white font-grotesk">Insolvency Diagnostic</h3>
+                            <h3 className="text-xl font-bold text-zinc-950 font-grotesk">Insolvency Diagnostic</h3>
                             <span className="text-2xl font-bold text-red-500 font-mono">$2,500</span>
                         </div>
                         <p className="text-zinc-600 text-sm leading-relaxed mb-6 border-b border-zinc-200 pb-4">
@@ -102,13 +102,13 @@ export default function AdvisoryContent() {
                     {/* Level 3: R&D Capital Audit */}
                     <GlowCard className="p-6 sm:p-8" glowColor="cobalt">
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
-                            <h3 className="text-xl font-bold text-white font-grotesk">R&D Capital Audit</h3>
-                            <span className="text-2xl font-bold text-white font-mono">$7,500</span>
+                            <h3 className="text-xl font-bold text-zinc-950 font-grotesk">R&D Capital Audit</h3>
+                            <span className="text-2xl font-bold text-zinc-950 font-mono">$7,500</span>
                         </div>
                         <p className="text-zinc-600 text-sm leading-relaxed mb-6 border-b border-zinc-200 pb-4">
                             Full forensic review of engineering spend vs. ROI. 2-3 week engagement delivering a complete Audit Package and Turnaround Plan.
                         </p>
-                        <a href="/api/buy/full_audit" className="block w-full text-center bg-white/5 border border-zinc-200 text-white font-bold uppercase text-xs py-3 rounded hover:bg-white/10 transition-all">
+                        <a href="/api/buy/full_audit" className="block w-full text-center bg-white/5 border border-zinc-200 text-zinc-950 font-bold uppercase text-xs py-3 rounded hover:bg-white/10 transition-all">
                             Commission Audit
                         </a>
                     </GlowCard>
@@ -116,7 +116,7 @@ export default function AdvisoryContent() {
                     {/* Level 4: AI Cost Governance */}
                     <GlowCard className="p-6 sm:p-8" glowColor="cyan">
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
-                            <h3 className="text-xl font-bold text-white font-grotesk">AI Cost Governance</h3>
+                            <h3 className="text-xl font-bold text-zinc-950 font-grotesk">AI Cost Governance</h3>
                             <span className="text-2xl font-bold text-cyan-400 font-mono">$5,000</span>
                         </div>
                         <p className="text-zinc-600 text-sm leading-relaxed mb-6 border-b border-zinc-200 pb-4">
@@ -130,8 +130,8 @@ export default function AdvisoryContent() {
                     {/* Level 5: Retainer */}
                     <GlowCard className="p-6 sm:p-8" glowColor="gold">
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
-                            <h3 className="text-xl font-bold text-white font-grotesk">Independent Oversight</h3>
-                            <span className="text-2xl font-bold text-gold font-mono">$5,000<span className="text-sm text-zinc-700">/mo</span></span>
+                            <h3 className="text-xl font-bold text-zinc-950 font-grotesk">Independent Oversight</h3>
+                            <span className="text-2xl font-bold text-gold font-mono">$5,000<span className="text-sm text-zinc-900">/mo</span></span>
                         </div>
                         <p className="text-zinc-600 text-sm leading-relaxed mb-6 border-b border-zinc-200 pb-4">
                             Board-level economic sanity checks. Asynchronous access for critical buy/build/kill decisions. Minimum 3-month commitment.
@@ -148,18 +148,18 @@ export default function AdvisoryContent() {
             {/* AEO: FAQ Section */}
             <ScrollReveal delay={150}>
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-zinc-300">
-                    <h2 className="text-2xl font-grotesk font-bold text-white mb-6">Common Questions <span className="text-zinc-700 text-lg font-normal">Answered</span></h2>
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">Common Questions <span className="text-zinc-700 text-lg font-normal">Answered</span></h2>
                     <div className="space-y-6">
                         <div itemScope itemType="https://schema.org/Question">
-                            <h3 itemProp="name" className="text-lg font-bold text-white mb-2">How much does an R&D audit cost?</h3>
+                            <h3 itemProp="name" className="text-lg font-bold text-zinc-950 mb-2">How much does an R&D audit cost?</h3>
                             <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                                 <p itemProp="text" className="text-zinc-600 text-sm leading-relaxed">
-                                    Richard Ewing offers R&D audits starting at <span className="text-white font-bold">$2,500</span> for a 60-minute diagnostic with written report, up to <span className="text-white font-bold">$7,500</span> for a full 2-3 week forensic review. A 30-minute gut-check call is available for $450.
+                                    Richard Ewing offers R&D audits starting at <span className="text-zinc-950 font-bold">$2,500</span> for a 60-minute diagnostic with written report, up to <span className="text-zinc-950 font-bold">$7,500</span> for a full 2-3 week forensic review. A 30-minute gut-check call is available for $450.
                                 </p>
                             </div>
                         </div>
                         <div itemScope itemType="https://schema.org/Question">
-                            <h3 itemProp="name" className="text-lg font-bold text-white mb-2">What is the difference between consulting and auditing?</h3>
+                            <h3 itemProp="name" className="text-lg font-bold text-zinc-950 mb-2">What is the difference between consulting and auditing?</h3>
                             <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                                 <p itemProp="text" className="text-zinc-600 text-sm leading-relaxed">
                                     Consulting asks "how can we improve?" Auditing asks "what's actually true?" Consultants optimize. Auditors verify. An R&D audit surfaces the facts — the real maintenance ratio, the true technical debt liability, the actual AI unit economics — without assuming the current approach is correct.
@@ -167,7 +167,7 @@ export default function AdvisoryContent() {
                             </div>
                         </div>
                         <div itemScope itemType="https://schema.org/Question">
-                            <h3 itemProp="name" className="text-lg font-bold text-white mb-2">How should I prepare before an engagement?</h3>
+                            <h3 itemProp="name" className="text-lg font-bold text-zinc-950 mb-2">How should I prepare before an engagement?</h3>
                             <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                                 <p itemProp="text" className="text-zinc-600 text-sm leading-relaxed">
                                     Take the free{' '}
@@ -189,14 +189,14 @@ export default function AdvisoryContent() {
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                         <div>
                             <div className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-2">Not Ready for Paid?</div>
-                            <h3 className="text-xl font-bold text-white font-grotesk">Run a Free Self-Diagnostic</h3>
+                            <h3 className="text-xl font-bold text-zinc-950 font-grotesk">Run a Free Self-Diagnostic</h3>
                             <p className="text-zinc-600 text-sm mt-2">(Newsletter + Tools)</p>
                         </div>
                         <div className="flex gap-4">
                             <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-cyan-400 transition-colors">
                                 Subscribe Free
                             </a>
-                            <Link href="/tools" className="px-6 py-3 bg-transparent border border-zinc-300 text-white font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-colors">
+                            <Link href="/tools" className="px-6 py-3 bg-transparent border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-colors">
                                 Access Tools
                             </Link>
                         </div>
@@ -211,7 +211,7 @@ export default function AdvisoryContent() {
 
                     <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
                         <div className="flex-1 text-center md:text-left">
-                            <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Board & Fractional Leadership</h2>
+                            <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Board & Fractional Leadership</h2>
                             <p className="text-zinc-600 leading-relaxed mb-6">
                                 For Series B+ companies requiring sustained intervention. I serve as a fractional CPO or Independent Board Director to oversee the implementation of capital efficiency protocols and AI governance.
                             </p>
@@ -219,7 +219,7 @@ export default function AdvisoryContent() {
                                 <a href="mailto:richardewing@exogram.ai?subject=Board%20Inquiry" className="inline-flex items-center justify-center px-8 py-4 bg-gold text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-white transition-all">
                                     Request Board Bio
                                 </a>
-                                <Link href="/manifesto" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-zinc-300 text-white font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-all">
+                                <Link href="/manifesto" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-all">
                                     Read Operating Principles
                                 </Link>
                             </div>
@@ -227,9 +227,9 @@ export default function AdvisoryContent() {
                         <div className="w-full md:w-1/3">
                             <GlowCard className="p-6 bg-white/50" glowColor="gold">
                                 <div className="text-xs font-mono text-gold uppercase tracking-widest mb-2">Capacity</div>
-                                <div className="text-3xl font-bold text-white font-grotesk mb-1">1 Slot</div>
+                                <div className="text-3xl font-bold text-zinc-950 font-grotesk mb-1">1 Slot</div>
                                 <div className="text-sm text-zinc-700 mb-4">Remaining for Q1 2026</div>
-                                <div className="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+                                <div className="w-full h-1 bg-zinc-200 rounded-full overflow-hidden">
                                     <div className="w-2/3 h-full bg-gold rounded-full" />
                                 </div>
                             </GlowCard>

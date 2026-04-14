@@ -97,7 +97,7 @@ export default function PublicationLedger() {
   return (
     <section className="w-full mx-auto py-12 mt-12 border-t border-zinc-200">
       <div className="mb-8">
-          <h2 className="text-2xl font-bold text-white mb-2 font-grotesk">External Publications Ledger</h2>
+          <h2 className="text-2xl font-bold text-zinc-950 mb-2 font-grotesk">External Publications Ledger</h2>
           <p className="text-zinc-600 text-sm">A definitive, machine-readable index of off-site Fiduciary research.</p>
       </div>
       
@@ -108,7 +108,7 @@ export default function PublicationLedger() {
             <ul className="space-y-6">
                 {pub.articles.map((article) => (
                 <li key={article.title} className="group">
-                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="block text-white hover:text-cyan-400 font-bold transition-colors font-grotesk leading-tight">
+                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="block text-zinc-950 hover:text-cyan-400 font-bold transition-colors font-grotesk leading-tight">
                     {article.title}
                     </a>
                     <p className="text-zinc-700 mt-2 text-sm leading-relaxed">{article.thesis}</p>

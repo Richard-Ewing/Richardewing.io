@@ -6,7 +6,7 @@ const t58 = 'Track 58 — Governance for Agentic AI';
 const t1 = 'Track 1 — Engineering Economics';
 const t2 = 'Track 2 — AI Product Economics';
 
-const singleProduct = 'single_module'; // Default $29.00 payment gateway product
+const singleProduct = 'single_track'; // $149.00 per-track payment gateway product
 
 // ---------------------------------------------------------
 // TRACK 58: GOVERNANCE FOR AGENTIC AI

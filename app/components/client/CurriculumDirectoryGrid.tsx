@@ -76,9 +76,9 @@ export default function CurriculumDirectoryGrid({ children }: { children: React.
                         >
                             <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             
-                            <div className={`relative flex items-center justify-between w-full transition-colors duration-300 ${isActive ? '' : 'text-zinc-600 group-hover:text-zinc-800'}`}>
+                            <div className={`relative flex items-center justify-between w-full transition-colors duration-300 ${isActive ? '' : 'text-zinc-600 group-hover:text-zinc-950'}`}>
                                 {college.icon}
-                                <span className={`text-[10px] font-mono tracking-widest px-2 py-1 rounded-md border ${isActive ? 'bg-white/60 border-zinc-200' : 'bg-transparent border-transparent text-zinc-600'}`}>
+                                <span className={`text-[10px] font-mono tracking-widest px-2 py-1 rounded-md border ${isActive ? 'bg-white/60 border-zinc-200' : 'bg-transparent border-transparent text-zinc-800'}`}>
                                     {college.stats}
                                 </span>
                             </div>

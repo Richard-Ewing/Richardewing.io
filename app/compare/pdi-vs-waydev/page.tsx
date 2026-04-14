@@ -28,7 +28,7 @@ export default function ComparePDIWaydevPage() {
                     <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-cyan-400 font-bold">PDI vs Waydev</span>
                     </div>
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Product Debt Index vs{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Waydev</span>
                     </h1>
@@ -47,10 +47,10 @@ export default function ComparePDIWaydevPage() {
                             </thead>
                             <tbody>
                                 {dimensions.map((d, i) => (
-                                    <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02] transition-colors">
-                                        <td className="py-4 px-4 text-white font-medium">{d.dimension}</td>
-                                        <td className={`py-4 px-4 ${d.winner === 'pdi' ? 'text-cyan-400' : 'text-zinc-700'}`}>{d.pdi}</td>
-                                        <td className={`py-4 px-4 ${d.winner === 'waydev' ? 'text-emerald-400' : 'text-zinc-700'}`}>{d.waydev}</td>
+                                    <tr key={i} className="border-b border-zinc-200 hover:bg-zinc-50 transition-colors">
+                                        <td className="py-4 px-4 text-zinc-950 font-medium">{d.dimension}</td>
+                                        <td className={`py-4 px-4 ${d.winner === 'pdi' ? 'text-cyan-400' : 'text-zinc-900'}`}>{d.pdi}</td>
+                                        <td className={`py-4 px-4 ${d.winner === 'waydev' ? 'text-emerald-400' : 'text-zinc-900'}`}>{d.waydev}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -58,7 +58,7 @@ export default function ComparePDIWaydevPage() {
                     </div>
 
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8 text-center">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Try PDI — Free</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try PDI — Free</h2>
                         <p className="text-zinc-700 mb-6">Calculate your Product Debt Index and Technical Insolvency Date in 10 minutes. No git integration required.</p>
                         <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:opacity-90 transition-opacity">Calculate Your PDI →</Link>
                     </div>

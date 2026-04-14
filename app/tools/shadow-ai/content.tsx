@@ -180,15 +180,15 @@ export default function ShadowContent() {
                 <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                     <Link href="/tools" className="hover:text-zinc-900 transition">Enterprise Diagnostics</Link>
                     <span>/</span>
-                    <span className="text-white font-bold">Shadow AI Audit</span>
+                    <span className="text-zinc-950 font-bold">Shadow AI Audit</span>
                 </div>
                  {/* Mode Switcher if pre-results */}
                 {!results && (
                      <div className="flex bg-white/50 border border-zinc-200 p-1 rounded-lg self-end">
-                        <button onClick={() => setMode('SIMULATE')} className={`px-4 py-1.5 text-xs font-mono uppercase tracking-widest rounded transition-all ${mode === 'SIMULATE' ? 'bg-amber-500/20 text-amber-400 font-bold' : 'text-zinc-500 hover:text-zinc-700'}`}>
+                        <button onClick={() => setMode('SIMULATE')} className={`px-4 py-1.5 text-xs font-mono uppercase tracking-widest rounded transition-all ${mode === 'SIMULATE' ? 'bg-amber-500/20 text-amber-400 font-bold' : 'text-zinc-500 hover:text-zinc-900'}`}>
                             Log Injection
                         </button>
-                        <button onClick={() => setMode('AUDIT')} className={`px-4 py-1.5 flex items-center gap-1 text-xs font-mono uppercase tracking-widest rounded transition-all ${mode === 'AUDIT' ? 'bg-rose-500/20 text-rose-400 font-bold' : 'text-zinc-500 hover:text-zinc-700'}`}>
+                        <button onClick={() => setMode('AUDIT')} className={`px-4 py-1.5 flex items-center gap-1 text-xs font-mono uppercase tracking-widest rounded transition-all ${mode === 'AUDIT' ? 'bg-rose-500/20 text-rose-400 font-bold' : 'text-zinc-500 hover:text-zinc-900'}`}>
                             <Eye size={12}/> Zero-Trust Audit
                         </button>
                      </div>
@@ -205,7 +205,7 @@ export default function ShadowContent() {
                             </span>
                         </div>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-4">
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
                             Quantify the <span className={`text-transparent bg-clip-text bg-gradient-to-r ${mode ==='AUDIT'? 'from-rose-400 to-red-600': 'from-amber-400 to-red-500'}`}>Blast Radius.</span>
                         </h1>
                         <p className="text-lg sm:text-xl text-zinc-600 mb-8 max-w-2xl">
@@ -225,7 +225,7 @@ export default function ShadowContent() {
                                         <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono text-sm border border-amber-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Log Extrapolation</h3>
-                                            <p className="text-sm text-zinc-700">Paste an internal Slack log or Developer PR communication.</p>
+                                            <p className="text-sm text-zinc-900">Paste an internal Slack log or Developer PR communication.</p>
                                         </div>
                                     </div>
 
@@ -261,7 +261,7 @@ export default function ShadowContent() {
                                 <div className="bg-rose-500/10 border border-rose-500/30 p-4 rounded-xl flex items-start gap-4 mb-6">
                                     <ShieldAlert className="text-rose-500 shrink-0 mt-0.5" />
                                     <div>
-                                        <h4 className="text-white font-bold text-sm mb-1">Zero-Trust Client-Side Processing</h4>
+                                        <h4 className="text-zinc-950 font-bold text-sm mb-1">Zero-Trust Client-Side Processing</h4>
                                         <p className="text-zinc-600 text-xs leading-relaxed">
                                             Drop your raw Expensify, Ramp, Brex, or Gateway logs in CSV format below. <strong>We do not upload this data.</strong> The parsing and regex heuristic matching happens entirely locally within your browser's memory using a proprietary 500+ Vendor AI Dictionary.
                                         </p>
@@ -283,13 +283,13 @@ export default function ShadowContent() {
                                     {auditFile ? (
                                         <>
                                             <FileSpreadsheet className="w-16 h-16 text-rose-500 mb-4" />
-                                            <div className="text-white font-bold text-lg mb-1">{auditFile.name}</div>
+                                            <div className="text-zinc-950 font-bold text-lg mb-1">{auditFile.name}</div>
                                             <div className="text-zinc-700 font-mono text-xs uppercase">{(auditFile.size / 1024).toFixed(1)} KB Ready for Hash Matching</div>
                                         </>
                                     ) : (
                                         <>
                                             <UploadCloud className="w-16 h-16 text-zinc-800 mb-4" />
-                                            <div className="text-white font-bold text-lg mb-1">Click or Drop CSV Log Here</div>
+                                            <div className="text-zinc-950 font-bold text-lg mb-1">Click or Drop CSV Log Here</div>
                                             <div className="text-zinc-700 font-mono text-xs uppercase">Supports standard expense or traffic logs</div>
                                         </>
                                     )}
@@ -327,8 +327,8 @@ export default function ShadowContent() {
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
-                            <h2 className="text-xl font-bold text-white mb-1">Liability Assessment Complete</h2>
-                            <p className="text-sm text-zinc-600">
+                            <h2 className="text-xl font-bold text-zinc-950 mb-1">Liability Assessment Complete</h2>
+                            <p className="text-sm text-zinc-800">
                                 {results.type === 'AUDIT' ? 'Deterministic detection via cryptographic / regex parsing.' : 'Forensic extrapolation of unmonitored intellectual property egress.'}
                             </p>
                         </div>
@@ -374,7 +374,7 @@ export default function ShadowContent() {
                                                          {results.vendors.map((v: any, i: number) => (
                                                              <div key={i} className="flex justify-between items-center border-b border-zinc-200 pb-2 last:border-0 last:pb-0">
                                                                  <div>
-                                                                     <div className="text-sm text-white font-bold">{v.name}</div>
+                                                                     <div className="text-sm text-zinc-950 font-bold">{v.name}</div>
                                                                      <div className="text-[10px] text-zinc-700 font-mono">{v.threat}</div>
                                                                  </div>
                                                                  <div className="text-right">
@@ -420,11 +420,11 @@ export default function ShadowContent() {
                                                     <div className="bg-white/50 p-6 rounded-2xl border border-blue-500/20 space-y-4">
                                                         <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-200 pb-3">Algorithmic Contamination Log</div>
                                                         <div className="flex justify-between items-center pb-2">
-                                                            <span className="text-sm text-zinc-600">AI-Generated Code Leakage</span>
+                                                            <span className="text-sm text-zinc-800">AI-Generated Code Leakage</span>
                                                             <span className="text-sm font-mono text-blue-400 text-right">{results.hasCodeLeak ? "Detected" : "None Detected"}</span>
                                                         </div>
                                                         <div className="flex justify-between items-center border-b border-zinc-200 pb-3">
-                                                            <span className="text-sm text-zinc-600">Payload Integrity</span>
+                                                            <span className="text-sm text-zinc-800">Payload Integrity</span>
                                                             <span className="text-sm font-mono text-rose-400 text-right">Compromised</span>
                                                         </div>
                                                         <p className="text-xs text-zinc-700 font-mono mt-2 pt-2 border-t border-zinc-200">Codebase is currently ingesting untrusted public LLM tokens without validation.</p>
@@ -456,8 +456,8 @@ export default function ShadowContent() {
                                     <div className="text-[10px] text-zinc-800 ml-2 uppercase">sys_forensic_tty [LIVE EXTRAPOLATION]</div>
                                 </div>
                                 <div className="space-y-2 font-mono pb-2">
-                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 0.5}} className="text-zinc-600"><span className="text-zinc-800 mr-2">{'>'}</span> [SYS] Initializing localized forensic sweep...</motion.div>
-                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 1.2}} className="text-zinc-600"><span className="text-zinc-800 mr-2">{'>'}</span> [SCAN] Extracting {results.type === 'AUDIT' ? results.recordsScanned : (results.totalMonthlyPrompts / 10).toFixed(0)} outbound telemetry packets...</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 0.5}} className="text-zinc-800"><span className="text-zinc-800 mr-2">{'>'}</span> [SYS] Initializing localized forensic sweep...</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 1.2}} className="text-zinc-800"><span className="text-zinc-800 mr-2">{'>'}</span> [SCAN] Extracting {results.type === 'AUDIT' ? results.recordsScanned : (results.totalMonthlyPrompts / 10).toFixed(0)} outbound telemetry packets...</motion.div>
                                     <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 2.0}} className="text-yellow-400"><span className="text-zinc-800 mr-2">{'>'}</span> [WARN] POST api.openai.com/v1/chat/completions - Unsanctioned Copilot Payload</motion.div>
                                     <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 2.8}} className="text-blue-400"><span className="text-zinc-800 mr-2">{'>'}</span> [MATCH] Heuristic trigger: "Proprietary Database Schema Sequence" detected</motion.div>
                                     <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 3.5}} className="text-rose-400"><span className="text-zinc-800 mr-2">{'>'}</span> [CRITICAL] Unencrypted PII / Valid JWT Token identified inside prompt context window.</motion.div>
@@ -471,7 +471,7 @@ export default function ShadowContent() {
                         {/* ENTERPRISE THREAT MODELING (NEW) */}
                         <ScrollReveal delay={120}>
                             <div className="mb-6 border-b border-zinc-200 pb-4 mt-8">
-                                <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-2 flex items-center gap-2">
                                     <Target size={18} className="text-rose-400"/>
                                     Enterprise Threat & Exfiltration Matrix
                                 </h3>
@@ -480,34 +480,34 @@ export default function ShadowContent() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-sm">
                                 <div className="bg-white/5 border border-zinc-200 p-5 rounded-xl">
-                                    <h4 className="text-white font-semibold mb-4 border-b border-zinc-200 pb-2">Regulatory Liability (GDPR / CCPA)</h4>
+                                    <h4 className="text-zinc-950 font-semibold mb-4 border-b border-zinc-200 pb-2">Regulatory Liability (GDPR / CCPA)</h4>
                                     <div className="space-y-4">
                                         <div>
-                                            <div className="flex justify-between mb-1"><span className="text-zinc-600">Projected Fines (Est)</span><span className="text-rose-400 font-mono font-bold">{formatMoney(results.financialLiability * 14.5)}</span></div>
+                                            <div className="flex justify-between mb-1"><span className="text-zinc-800">Projected Fines (Est)</span><span className="text-rose-400 font-mono font-bold">{formatMoney(results.financialLiability * 14.5)}</span></div>
                                             <div className="w-full bg-white rounded-full h-1"><div className="bg-rose-500 h-1 rounded-full w-[75%]"></div></div>
                                         </div>
                                         <div>
-                                            <div className="flex justify-between mb-1"><span className="text-zinc-600">Class Action Risk Factor</span><span className="text-amber-400 font-mono font-bold">CRITICAL</span></div>
+                                            <div className="flex justify-between mb-1"><span className="text-zinc-800">Class Action Risk Factor</span><span className="text-amber-400 font-mono font-bold">CRITICAL</span></div>
                                             <div className="w-full bg-white rounded-full h-1"><div className="bg-amber-500 h-1 rounded-full w-[90%]"></div></div>
                                         </div>
                                         <p className="text-xs text-zinc-700 mt-2">LLM retention of PII constitutes an unrecoverable breach under "Right to be Forgotten" mandates.</p>
                                     </div>
                                 </div>
                                 <div className="bg-white/5 border border-zinc-200 p-5 rounded-xl">
-                                    <h4 className="text-white font-semibold mb-4 border-b border-zinc-200 pb-2">Intellectual Property Egress</h4>
+                                    <h4 className="text-zinc-950 font-semibold mb-4 border-b border-zinc-200 pb-2">Intellectual Property Egress</h4>
                                     <div className="space-y-4">
                                         <div className="flex items-center gap-3">
                                             <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/30 text-blue-400 font-bold shrink-0">IP</div>
                                             <div>
-                                                <div className="text-white font-semibold">Proprietary Source Code</div>
-                                                <div className="text-xs text-zinc-600">Foundational models may train on your core algorithms if submitted via consumer endpoints.</div>
+                                                <div className="text-zinc-950 font-semibold">Proprietary Source Code</div>
+                                                <div className="text-xs text-zinc-800">Foundational models may train on your core algorithms if submitted via consumer endpoints.</div>
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/30 text-emerald-400 font-bold shrink-0">DB</div>
                                             <div>
-                                                <div className="text-white font-semibold">Database Schema Leakage</div>
-                                                <div className="text-xs text-zinc-600">Engineers pasting SQL contexts expose your internal system architecture to zero-day vectors.</div>
+                                                <div className="text-zinc-950 font-semibold">Database Schema Leakage</div>
+                                                <div className="text-xs text-zinc-800">Engineers pasting SQL contexts expose your internal system architecture to zero-day vectors.</div>
                                             </div>
                                         </div>
                                     </div>
@@ -518,7 +518,7 @@ export default function ShadowContent() {
                         {/* Board-Ready 3-Step Remediation Playbook */}
                         <ScrollReveal delay={150}>
                              <div className="mb-6 border-b border-zinc-200 pb-4 mt-8">
-                                <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-2 flex items-center gap-2">
                                     <ShieldAlert size={18} className="text-rose-400"/>
                                     Execution Playbook: Shadow AI Mitigation
                                 </h3>
@@ -529,37 +529,37 @@ export default function ShadowContent() {
                                 <div className="bg-white/80 border border-zinc-200 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-rose-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                      <div className="text-rose-400 font-mono text-xs mb-3 uppercase tracking-widest bg-rose-500/10 w-8 h-8 rounded flex items-center justify-center border border-rose-500/20">01</div>
-                                     <h4 className="text-white font-bold mb-2">Endpoint Termination</h4>
+                                     <h4 className="text-zinc-950 font-bold mb-2">Endpoint Termination</h4>
                                      <p className="text-zinc-600 text-sm mb-4">You cannot train engineers not to use ChatGPT. The only solution is explicitly blackholing external LLM requests.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2 relative z-10">
                                          <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-700">Update Zscaler rules to explicitly blackhole all DNS requests to chatgpt.com, claude.ai, and other consumer APIs.</p>
+                                         <p className="text-xs text-zinc-900">Update Zscaler rules to explicitly blackhole all DNS requests to chatgpt.com, claude.ai, and other consumer APIs.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-200 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-amber-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                      <div className="text-amber-400 font-mono text-xs mb-3 uppercase tracking-widest bg-amber-500/10 w-8 h-8 rounded flex items-center justify-center border border-amber-500/20">02</div>
-                                     <h4 className="text-white font-bold mb-2">Private Gateway Deployment</h4>
+                                     <h4 className="text-zinc-950 font-bold mb-2">Private Gateway Deployment</h4>
                                      <p className="text-zinc-600 text-sm mb-4">Enterprise SLAs legally prohibit model training on customer payloads, offering protection guarantees.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2 relative z-10">
                                          <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-700">Provision Azure OpenAI or AWS Bedrock endpoints entirely inside your private VPC.</p>
+                                         <p className="text-xs text-zinc-900">Provision Azure OpenAI or AWS Bedrock endpoints entirely inside your private VPC.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-200 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
                                      <div className="text-emerald-400 font-mono text-xs mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
-                                     <h4 className="text-white font-bold mb-2">Sanctioned Internal UI</h4>
+                                     <h4 className="text-zinc-950 font-bold mb-2">Sanctioned Internal UI</h4>
                                      <p className="text-zinc-600 text-sm mb-4">Engineers get their 10x velocity, and you retain complete data sovereignty with logging.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2 relative z-10">
                                          <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-700">Deploy LobeHub or LibreChat internally, pointing to your private VPC Enclave.</p>
+                                         <p className="text-xs text-zinc-900">Deploy LobeHub or LibreChat internally, pointing to your private VPC Enclave.</p>
                                      </div>
                                 </div>
                             </div>
@@ -570,7 +570,7 @@ export default function ShadowContent() {
                              <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-6 border border-zinc-200 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <ShieldOff size={16} className="text-amber-400" />
-                                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-700">The Enterprise Mandate</span>
+                                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">The Enterprise Mandate</span>
                                 </div>
                                 <p className="text-zinc-700 text-sm leading-relaxed mb-4">
                                     You cannot train engineers not to use ChatGPT—it is a 10x multiplier on velocity. The only SOC-compliant resolution is deploying a private enclave inside your VPC, giving them an interface that mathematically guarantees zero-data-retention.

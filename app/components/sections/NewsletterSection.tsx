@@ -73,7 +73,7 @@ const NewsletterSection = () => {
                                     <CheckCircle className="w-8 h-8 text-emerald-600" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-zinc-900 mb-2">Redirecting to Checklist ✓</h3>
-                                <p className="text-zinc-700">Loading your R&D Audit Checklist...</p>
+                                <p className="text-zinc-900">Loading your R&D Audit Checklist...</p>
                             </div>
                         ) : (
                             <>
@@ -108,7 +108,7 @@ const NewsletterSection = () => {
                             </>
                         )}
 
-                        <p className="mt-8 text-sm text-zinc-700">
+                        <p className="mt-8 text-sm text-zinc-900">
                             Monthly. No fluff. 2,000+ executives read before they decide.
                         </p>
 

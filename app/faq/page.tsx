@@ -64,21 +64,21 @@ export default function FaqPage() {
                 <span>Help</span><span>/</span><span className="text-cyan-400 font-bold">FAQ</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                 Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">Questions</span>
             </h1>
             <p className="text-lg text-zinc-600 mb-12">Answers about advisory services, frameworks, tools, Exogram, and the glossary.</p>
 
             {faqs.map((category) => (
                 <div key={category.category} className="mb-12">
-                    <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                    <h2 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-3">
                         <span className="w-6 h-0.5 bg-gradient-to-r from-cyan-400 to-cobalt" />
                         {category.category}
                     </h2>
                     <div className="space-y-4">
                         {category.questions.map((faq) => (
                             <details key={faq.q} className="card p-6 group cursor-pointer">
-                                <summary className="text-white font-bold cursor-pointer list-none flex items-center justify-between">
+                                <summary className="text-zinc-950 font-bold cursor-pointer list-none flex items-center justify-between">
                                     <span>{faq.q}</span>
                                     <span className="text-cyan-400 text-xl font-mono group-open:rotate-45 transition-transform">+</span>
                                 </summary>
@@ -91,13 +91,13 @@ export default function FaqPage() {
 
             {/* CTA */}
             <div className="text-center py-12 border-t border-zinc-200">
-                <h2 className="text-2xl font-bold text-white mb-4">Still Have Questions?</h2>
+                <h2 className="text-2xl font-bold text-zinc-950 mb-4">Still Have Questions?</h2>
                 <p className="text-zinc-600 mb-8">Book a free 15-minute call or explore the tools.</p>
                 <div className="flex flex-wrap justify-center gap-4">
                     <Link href="/advisory" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                         Book a Call →
                     </Link>
-                    <Link href="/tools" className="px-8 py-4 border border-zinc-300 text-white font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 transition-all">
+                    <Link href="/tools" className="px-8 py-4 border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 transition-all">
                         Explore Free Tools →
                     </Link>
                 </div>

@@ -230,7 +230,7 @@ export default function CelebrationOverlay({
                     <div className="absolute inset-[-8px] rounded-full border border-violet-400/20 animate-pulse" />
                 </div>
 
-                <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-3">
+                <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-950 mb-3">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-violet-400 to-emerald-400">
                         {title}
                     </span>

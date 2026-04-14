@@ -12,10 +12,10 @@ export const metadata = {
 
 export default function StateOfAIEngineering() {
     return (
-        <div className="min-h-screen bg-white text-white relative font-sans overflow-hidden">
+        <div className="min-h-screen bg-white text-zinc-950 relative font-sans overflow-hidden">
             {/* Background elements */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-to-b from-purple-900/20 via-black/5 to-transparent pointer-events-none"></div>
+            <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-to-b from-purple-900/20 via-transparent/5 to-transparent pointer-events-none"></div>
             
             <Meteors count={20} />
 
@@ -45,10 +45,10 @@ export default function StateOfAIEngineering() {
                         
                         <div className="relative z-10 flex flex-col gap-6">
                             <div className="space-y-2">
-                                <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                                <h3 className="text-2xl font-bold text-zinc-950 flex items-center gap-2">
                                    <BookOpen className="text-purple-400" size={24} /> Unlock The Playbook
                                 </h3>
-                                <p className="text-sm text-zinc-600">
+                                <p className="text-sm text-zinc-800">
                                     Enter your executive email to instantly unlock the 40-page report and map your dashboard telemetry.
                                 </p>
                             </div>

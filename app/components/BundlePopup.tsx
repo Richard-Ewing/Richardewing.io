@@ -76,10 +76,10 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                     <button
                         onClick={() => handleCheckout(PREMIUM_GUIDES.find(g => g.slug === currentGuide)?.id || 'premium_guide_29')}
                         disabled={false}
-                        className="w-full flex items-center justify-between p-4 rounded-xl border border-zinc-200 bg-white/[0.02] hover:border-zinc-300 transition-all group text-left"
+                        className="w-full flex items-center justify-between p-4 rounded-xl border border-zinc-200 bg-zinc-50 hover:border-zinc-300 transition-all group text-left"
                     >
                         <div>
-                            <div className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">This Guide Only</div>
+                            <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors">This Guide Only</div>
                             <div className="text-xs text-zinc-700 mt-0.5">Instant access to this guide</div>
                         </div>
                         <div className="flex items-center gap-2">
@@ -98,13 +98,13 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                             <Sparkles className="w-3 h-3" /> Ultimate Value
                         </div>
                         <div>
-                            <div className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">All 13 Premium Guides</div>
+                            <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors">All 13 Premium Guides</div>
                             <div className="text-xs text-zinc-700 mt-0.5">Complete 2026 premium library · Save over $500</div>
                             <div className="flex flex-wrap gap-1 mt-2">
                                 {PREMIUM_GUIDES.slice(0, 5).map(g => (
                                     <span key={g.id} className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">{g.name}</span>
                                 ))}
-                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-zinc-600">+8 more</span>
+                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-zinc-800">+8 more</span>
                             </div>
                         </div>
                         <div className="flex flex-col items-end">

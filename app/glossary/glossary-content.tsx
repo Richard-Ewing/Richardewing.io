@@ -39,7 +39,7 @@ export default function GlossaryContent() {
                     <p className="text-lg text-zinc-800 leading-relaxed max-w-2xl">
                         {glossaryTerms.length}+ terms defined with rich explanations, practical FAQs, and links to free diagnostic tools.
                         <br />
-                        <span className="text-zinc-800">Technical debt, AI economics, SaaS metrics, product management, and engineering leadership — explained.</span>
+                        <span className="text-zinc-950">Technical debt, AI economics, SaaS metrics, product management, and engineering leadership — explained.</span>
                     </p>
                 </div>
             </ScrollReveal>
@@ -56,14 +56,14 @@ export default function GlossaryContent() {
                                     className="w-full flex items-center justify-between p-6 sm:p-8 hover:bg-zinc-50 transition-colors text-left"
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-cyan-100 text-cyan-700' : 'bg-zinc-100 text-zinc-700'}`}>
+                                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-cyan-100 text-cyan-700' : 'bg-zinc-100 text-zinc-900'}`}>
                                             <span className="font-bold font-mono">{group.terms.length}</span>
                                         </div>
-                                        <h2 className={`text-2xl font-bold font-grotesk transition-colors ${isOpen ? 'text-zinc-900' : 'text-zinc-700'}`}>
+                                        <h2 className={`text-2xl font-bold font-grotesk transition-colors ${isOpen ? 'text-zinc-900' : 'text-zinc-900'}`}>
                                             {group.category}
                                         </h2>
                                     </div>
-                                    <div className={`shrink-0 transition-transform duration-300 ${isOpen ? 'text-cyan-600' : 'text-zinc-600'}`}>
+                                    <div className={`shrink-0 transition-transform duration-300 ${isOpen ? 'text-cyan-600' : 'text-zinc-800'}`}>
                                         {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
                                     </div>
                                 </button>

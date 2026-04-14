@@ -15,7 +15,7 @@ export default function Error({
     }, [error]);
 
     return (
-        <div className="min-h-screen bg-white text-white flex flex-col items-center justify-center p-4 font-mono">
+        <div className="min-h-screen bg-white text-zinc-950 flex flex-col items-center justify-center p-4 font-mono">
             <div className="bg-[#161b22] border border-red-900/50 p-8 rounded-xl max-w-md w-full text-center">
                 <div className="w-12 h-12 bg-red-50/20 rounded-full flex items-center justify-center mx-auto mb-4 text-red-500 text-2xl">
                     ⚠️
@@ -28,13 +28,13 @@ export default function Error({
                 <div className="flex gap-4 justify-center">
                     <button
                         onClick={() => reset()}
-                        className="bg-[#238636] hover:bg-[#2ea043] text-white px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold transition-colors"
+                        className="bg-[#238636] hover:bg-[#2ea043] text-zinc-950 px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold transition-colors"
                     >
                         Try Again
                     </button>
                     <button
                         onClick={() => window.location.href = '/tools/audit-interview'}
-                        className="bg-[#30363d] hover:bg-[#3c444d] text-white px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold transition-colors"
+                        className="bg-[#30363d] hover:bg-[#3c444d] text-zinc-950 px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold transition-colors"
                     >
                         Abort
                     </button>

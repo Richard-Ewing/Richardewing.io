@@ -22,7 +22,7 @@ export default function ActionChecklist({ items }: { items: string[] }) {
             
             <div className="flex items-end justify-between mb-6 pr-32">
                 <h3 className="text-lg font-grotesk font-bold text-zinc-900">Action Items</h3>
-                <div className="text-xs font-mono text-zinc-700">{progress}% Complete</div>
+                <div className="text-xs font-mono text-zinc-900">{progress}% Complete</div>
             </div>
 
             <div className="w-full bg-white/5 h-1 rounded-full mb-6 overflow-hidden">
@@ -37,12 +37,12 @@ export default function ActionChecklist({ items }: { items: string[] }) {
                         <button 
                             key={idx}
                             onClick={() => toggle(idx)}
-                            className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-4 ${isChecked ? 'bg-white/[0.02] border-zinc-200 opacity-60 hover:opacity-100' : 'bg-white/[0.04] border-zinc-200 hover:bg-white/[0.08]'}`}
+                            className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-4 ${isChecked ? 'bg-zinc-50 border-zinc-200 opacity-60 hover:opacity-100' : 'bg-white/[0.04] border-zinc-200 hover:bg-white/[0.08]'}`}
                         >
                             <div className="shrink-0 mt-0.5 text-amber-500">
                                 {isChecked ? <CheckSquare className="w-5 h-5" /> : <Square className="w-5 h-5 opacity-50" />}
                             </div>
-                            <span className={`text-sm md:text-base transition-all ${isChecked ? 'text-zinc-700 line-through' : 'text-zinc-700'}`}>
+                            <span className={`text-sm md:text-base transition-all ${isChecked ? 'text-zinc-700 line-through' : 'text-zinc-900'}`}>
                                 {item}
                             </span>
                         </button>

@@ -12,7 +12,7 @@ export default function ToolsContent() {
         {/* Hero */}
         <section className="section-lg text-center">
           <div className="text-xs text-cyan-400 uppercase tracking-wide mb-4">Free Diagnostic Tools</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6">
             Boardroom-Ready Insights<br />
             <span className="text-cyan-400">in 60 Seconds</span>
           </h1>
@@ -30,14 +30,14 @@ export default function ToolsContent() {
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-px bg-white/10 flex-1"></div>
-                  <h2 className="text-xl font-bold text-white tracking-widest uppercase text-cyan-400">Financial Audits & Enterprise Valuation</h2>
+                  <h2 className="text-xl font-bold text-zinc-950 tracking-widest uppercase text-cyan-400">Financial Audits & Enterprise Valuation</h2>
                   <div className="h-px bg-white/10 flex-1"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Link href="/tools/pdi" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#22d3ee", "#8b5cf6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400">Product Debt Index</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-400">Product Debt Index</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Quantify hidden technical debt in dollar terms to measure the drag on corporate valuation.</p>
                         <span className="text-cyan-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
                       </div>
@@ -47,7 +47,7 @@ export default function ToolsContent() {
                   <Link href="/tools/ev-se" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#22d3ee", "#8b5cf6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400">Valuation Scenario Engine</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-400">Valuation Scenario Engine</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Model exactly how delayed technical decisions compound and impact enterprise exit scenarios.</p>
                         <span className="text-cyan-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
                       </div>
@@ -57,7 +57,7 @@ export default function ToolsContent() {
                   <Link href="/tools/aueb" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#22d3ee", "#8b5cf6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400">AI Unit Economics Benchmark</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-400">AI Unit Economics Benchmark</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Calculate your Generative AI gross margin collapse point before your user base hits it.</p>
                         <span className="text-cyan-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
                       </div>
@@ -67,7 +67,7 @@ export default function ToolsContent() {
                   <Link href="/tools/slm-vs-api" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#22d3ee", "#8b5cf6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400">SLM vs API Arbitrage</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-400">SLM vs API Arbitrage</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Calculate the exact hardware breakeven point for repatriating cloud AI workloads to bare-metal servers.</p>
                         <span className="text-cyan-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
                       </div>
@@ -77,7 +77,7 @@ export default function ToolsContent() {
                   <Link href="/tools/fte-displacement" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#a855f7", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-fuchsia-400">Agentic FTE Displacement Matrix</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-fuchsia-400">Agentic FTE Displacement Matrix</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Calculate EBITDA expansion of replacing human Tier-1 support with autonomous LLM agents.</p>
                         <span className="text-fuchsia-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
                       </div>
@@ -87,7 +87,7 @@ export default function ToolsContent() {
                   <Link href="/tools/cloud-repatriation" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#a855f7", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-fuchsia-400">Cloud Repatriation Engine</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-fuchsia-400">Cloud Repatriation Engine</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Calculate the exact EBITDA recapture of moving off AWS to sovereign bare-metal architecture.</p>
                         <span className="text-fuchsia-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
                       </div>
@@ -97,7 +97,7 @@ export default function ToolsContent() {
                   <Link href="/tools/agent-router" className="group block md:col-span-2">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#a855f7", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-fuchsia-400">Agentic Token Simulator</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-fuchsia-400">Agentic Token Simulator</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Calculate the compound token decay and GPU execution costs of multi-agent LLM reasoning workflows.</p>
                         <span className="text-fuchsia-400 text-xs font-bold uppercase tracking-wider">Run FinOps Simulation →</span>
                       </div>
@@ -110,14 +110,14 @@ export default function ToolsContent() {
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-px bg-white/10 flex-1"></div>
-                  <h2 className="text-xl font-bold text-white tracking-widest uppercase text-emerald-400">Agentic Defense & Security Ops</h2>
+                  <h2 className="text-xl font-bold text-zinc-950 tracking-widest uppercase text-emerald-400">Agentic Defense & Security Ops</h2>
                   <div className="h-px bg-white/10 flex-1"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <a href="https://exogram.ai/proving-ground" target="_blank" rel="noopener noreferrer" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400">Deterministic Execution Sandbox</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-400">Deterministic Execution Sandbox</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Fire adversarial payloads at Exogram's 8-rule deterministic policy engine. Zero LLM.</p>
                         <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider">Try Live Sandbox ↗</span>
                       </div>
@@ -127,7 +127,7 @@ export default function ToolsContent() {
                   <a href="https://exogram.ai/analyze" target="_blank" rel="noopener noreferrer" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400">Agentic Telemetry Analyzer</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-400">Agentic Telemetry Analyzer</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Enforce a deterministic execution boundary for your autonomous AI agents.</p>
                         <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider">Analyze Architecture ↗</span>
                       </div>
@@ -137,7 +137,7 @@ export default function ToolsContent() {
                   <Link href="/tools/shadow-ai" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400">Shadow AI Security Audit</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-400">Shadow AI Security Audit</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Calculate your enterprise blast radius for unauthorized shadow AI usage and IP Leakage.</p>
                         <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
                       </div>
@@ -147,7 +147,7 @@ export default function ToolsContent() {
                   <Link href="/tools/prompt-injection-sandbox" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400">Prompt Injection Sandbox</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-400">Prompt Injection Sandbox</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Test your system prompts against modern jailbreaks, Base64 encodings, and roleplay bypasses.</p>
                         <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider">Run Red Team →</span>
                       </div>
@@ -157,7 +157,7 @@ export default function ToolsContent() {
                   <Link href="/tools/rag-chunking-visualizer" className="group block md:col-span-2">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400">RAG Chunking Visualizer</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-400">RAG Chunking Visualizer</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Visually optimize your Vector DB embeddings. See exactly where semantic context breaks across token limits.</p>
                         <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider">Map Boundaries →</span>
                       </div>
@@ -170,14 +170,14 @@ export default function ToolsContent() {
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-px bg-white/10 flex-1"></div>
-                  <h2 className="text-xl font-bold text-white tracking-widest uppercase text-amber-500">Human Capital & Architecture</h2>
+                  <h2 className="text-xl font-bold text-zinc-950 tracking-widest uppercase text-amber-500">Human Capital & Architecture</h2>
                   <div className="h-px bg-white/10 flex-1"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Link href="/tools/audit-interview" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#f59e0b", "#fbbf24"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-amber-400">Audit Interview Protocol</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-amber-400">Audit Interview Protocol</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">The hiring methodology for the AI age. Reconfigure your funnel to test high-level architectural judgment, not raw syntax.</p>
                         <span className="text-amber-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
                       </div>
@@ -187,7 +187,7 @@ export default function ToolsContent() {
                   <Link href="/tools/career-pathing" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-200 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#f59e0b", "#fbbf24"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-amber-400">Career Architecture Funnel</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-amber-400">Career Architecture Funnel</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">A diagnostic engine mapping your specific career bottleneck directly to the required structural Curriculum Vault tracks.</p>
                         <span className="text-amber-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
                       </div>
@@ -204,7 +204,7 @@ export default function ToolsContent() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <div className="text-xs text-purple-400 uppercase tracking-wide mb-2">Free Training</div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              <h2 className="text-2xl md:text-3xl font-bold text-zinc-950 mb-3">
                 Level Up Your <span className="text-purple-400">AI Skills</span>
               </h2>
               <p className="text-zinc-800 text-sm max-w-lg mx-auto">
@@ -224,8 +224,8 @@ export default function ToolsContent() {
                   rel="noopener noreferrer"
                   className={`group block p-5 rounded-xl bg-white/[0.03] border border-${course.color === 'cyan' ? 'cyan' : 'purple'}-500/20 hover:bg-white/[0.06] transition-all text-center`}
                 >
-                  <h3 className={`font-bold text-white mb-1 group-hover:text-${course.color === 'cyan' ? 'cyan' : 'purple'}-400 transition-colors`}>{course.name}</h3>
-                  <p className="text-xs text-zinc-700">{course.desc}</p>
+                  <h3 className={`font-bold text-zinc-950 mb-1 group-hover:text-${course.color === 'cyan' ? 'cyan' : 'purple'}-400 transition-colors`}>{course.name}</h3>
+                  <p className="text-xs text-zinc-900">{course.desc}</p>
                   <span className={`text-${course.color === 'cyan' ? 'cyan' : 'purple'}-400 text-xs mt-2 inline-block`}>Free Course ↗</span>
                 </a>
               ))}
@@ -250,7 +250,7 @@ export default function ToolsContent() {
             <a href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-cyan-600/90 text-white font-bold tracking-widest uppercase hover:bg-cyan-500 transition-colors">
               Book a $2,500 Insolvency Diagnostic →
             </a>
-            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg border border-zinc-300 text-white font-bold tracking-widest uppercase hover:bg-white/5 transition-colors">
+            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg border border-zinc-300 text-zinc-950 font-bold tracking-widest uppercase hover:bg-white/5 transition-colors">
               Deploy Deterministic AI Flow →
             </a>
           </div>

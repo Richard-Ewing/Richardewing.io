@@ -53,7 +53,7 @@ export function Definition({ term, definition, children }: DefinitionProps) {
             </button>
             {expanded && (
                 <div className="absolute left-0 top-full mt-1 p-3 bg-zinc-50 border border-zinc-200 rounded-lg text-xs text-zinc-700 max-w-[250px] shadow-xl z-50">
-                    <div className="font-semibold text-white mb-1">{term}</div>
+                    <div className="font-semibold text-zinc-950 mb-1">{term}</div>
                     <div>{definition}</div>
                     {children}
                 </div>

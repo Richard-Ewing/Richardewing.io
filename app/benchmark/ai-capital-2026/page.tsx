@@ -79,7 +79,7 @@ export default function AICapitalBenchmark() {
                         </div>
                     </div>
 
-                    <div className="prose prose-zinc max-w-none text-zinc-700">
+                    <div className="prose prose-zinc max-w-none text-zinc-900">
                         <p className="text-lg">
                             The single greatest architectural failure of the last 24 months is the *"RAG Wrapper Trap"*. Engineering leaders rushed to connect their user interfaces directly to external foundation model APIs (OpenAI, Anthropic) without calculating the marginal cost of a query at scale. 
                         </p>
@@ -99,7 +99,7 @@ export default function AICapitalBenchmark() {
                                 <h3 className="text-2xl font-bold text-zinc-900 flex items-center gap-2 mb-2">
                                     <ShieldAlert className="text-cyan-400" /> Are You Bleeding CapEx?
                                 </h3>
-                                <p className="text-zinc-600">
+                                <p className="text-zinc-800">
                                     Stop guessing if your LLM infrastructure is financially toxic. Our Exogram Auditors plug directly into your GitHub / AWS stacks to map your true capability debt in 72 hours.
                                 </p>
                             </div>
@@ -128,42 +128,42 @@ export default function AICapitalBenchmark() {
                                     <th className="pb-4 text-right">Replacement Vector</th>
                                 </tr>
                             </thead>
-                            <tbody className="text-zinc-700">
+                            <tbody className="text-zinc-900">
                                 <tr className="border-b border-zinc-200/50">
                                     <td className="py-4 pr-6 font-medium">L1/L2 Frontend Engineer</td>
-                                    <td className="py-4 pr-6 text-zinc-700">14%</td>
+                                    <td className="py-4 pr-6 text-zinc-900">14%</td>
                                     <td className="py-4 pr-6 text-cyan-400 font-bold">78%</td>
                                     <td className="py-4 text-right">Native v0 / Agentic UI Generation</td>
                                 </tr>
                                 <tr className="border-b border-zinc-200/50">
                                     <td className="py-4 pr-6 font-medium">QA / SDET Analyst</td>
-                                    <td className="py-4 pr-6 text-zinc-700">22%</td>
+                                    <td className="py-4 pr-6 text-zinc-900">22%</td>
                                     <td className="py-4 pr-6 text-cyan-400 font-bold">91%</td>
                                     <td className="py-4 text-right">Agentic E2E Testing Pipelines</td>
                                 </tr>
                                 <tr className="border-b border-zinc-200/50">
                                     <td className="py-4 pr-6 font-medium">Data Analyst (SQL)</td>
-                                    <td className="py-4 pr-6 text-zinc-700">18%</td>
+                                    <td className="py-4 pr-6 text-zinc-900">18%</td>
                                     <td className="py-4 pr-6 text-cyan-400 font-bold">65%</td>
                                     <td className="py-4 text-right">Text-to-SQL RAG Systems</td>
                                 </tr>
                                 <tr className="border-b border-zinc-200/50">
                                     <td className="py-4 pr-6 font-medium">DevOps (K8s Maintenance)</td>
-                                    <td className="py-4 pr-6 text-zinc-700">8%</td>
+                                    <td className="py-4 pr-6 text-zinc-900">8%</td>
                                     <td className="py-4 pr-6 text-cyan-400 font-bold">45%</td>
                                     <td className="py-4 text-right">Terraform Drift Auto-Remediation</td>
                                 </tr>
                                 <tr>
                                     <td className="py-4 pr-6 font-medium">Architect / Principal</td>
-                                    <td className="py-4 pr-6 text-zinc-700">2%</td>
+                                    <td className="py-4 pr-6 text-zinc-900">2%</td>
                                     <td className="py-4 pr-6 text-cyan-400 font-bold">12%</td>
-                                    <td className="py-4 text-right text-zinc-700">Not Displaced (Augmented 3x)</td>
+                                    <td className="py-4 text-right text-zinc-900">Not Displaced (Augmented 3x)</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <div className="prose prose-zinc max-w-none text-zinc-700">
+                    <div className="prose prose-zinc max-w-none text-zinc-900">
                         <p className="text-lg">
                             The math is no longer speculative. The capability overhang has breached the enterprise execution layer. Engineering organizations clinging to the 2022 model of "hiring massive armies of Junior React developers" are mathematically defaulting. 
                         </p>
@@ -195,7 +195,7 @@ export default function AICapitalBenchmark() {
                         </div>
                     </div>
 
-                    <div className="prose prose-zinc max-w-none text-zinc-700">
+                    <div className="prose prose-zinc max-w-none text-zinc-900">
                         <p className="text-lg">
                             Generative features are mathematically heavy. When a SaaS company tries to shove an async LLM chain directly into a synchronous user request flow, the UI locks up. Our telemetry across 500 implementations shows that any feature with a Time-To-First-Byte (TTFB) over <strong>2000 milliseconds</strong> experiences a 60% drop in user activation within the first week. 
                         </p>
@@ -214,13 +214,13 @@ export default function AICapitalBenchmark() {
                     <div className="bg-white border border-zinc-200 rounded-xl p-8 mb-8">
                         <div className="w-full h-8 flex rounded-full overflow-hidden mb-4">
                             <div className="bg-cyan-500 h-full flex items-center px-4 font-bold text-black" style={{ width: '68%' }}>PostgreSQL (pgvector) - 68%</div>
-                            <div className="bg-zinc-700 h-full flex items-center px-4 text-xs font-mono text-white" style={{ width: '18%' }}>Dedicated (Pinecone/Milvus) - 18%</div>
-                            <div className="bg-zinc-800 h-full flex items-center px-4 text-xs font-mono text-white" style={{ width: '14%' }}>Other - 14%</div>
+                            <div className="bg-zinc-700 h-full flex items-center px-4 text-xs font-mono text-zinc-950" style={{ width: '18%' }}>Dedicated (Pinecone/Milvus) - 18%</div>
+                            <div className="bg-zinc-200 h-full flex items-center px-4 text-xs font-mono text-zinc-950" style={{ width: '14%' }}>Other - 14%</div>
                         </div>
                         <p className="text-sm text-zinc-700 text-center font-mono">2026 Enterprise Vector Search Market Share (Series B+)</p>
                     </div>
 
-                    <div className="prose prose-zinc max-w-none text-zinc-700">
+                    <div className="prose prose-zinc max-w-none text-zinc-900">
                         <p className="text-lg">
                             The great unbundling of 2023 is officially over. The data overwhelmingly proves that spinning up highly specialized, segmented infrastructure for RAG applications (e.g., maintaining a separate Vector Database alongside your relational database) creates unsalvageable synchronization debt. 
                         </p>

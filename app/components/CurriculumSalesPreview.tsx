@@ -71,7 +71,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
             {/* High-Fidelity Vault Encrypted Visuals */}
             <div className="relative bg-white overflow-hidden border-t border-zinc-200 pb-20 pt-10">
                 {/* Radial gradient background */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-50/40 via-black to-zinc-100 pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-50/40 via-transparent to-zinc-100 pointer-events-none" />
                 
                 <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
@@ -149,33 +149,33 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                 </div>
                                 <div className="font-mono text-[10px] text-purple-300/50 space-y-2">
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-800">01</span>
+                                        <span className="text-zinc-950">01</span>
                                         <span className="text-emerald-600/50">import</span> <span>{'{ orchestrator }'}</span> <span className="text-emerald-600/50">from</span> <span className="text-amber-400/50">'@exogram/core'</span>;
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-800">02</span>
+                                        <span className="text-zinc-950">02</span>
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-800">03</span>
+                                        <span className="text-zinc-950">03</span>
                                         <span className="text-purple-600/50">const</span> <span>router</span> = <span>new</span> <span className="text-cyan-600/50">AgentRouter</span>({`{`});
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-800">04</span>
+                                        <span className="text-zinc-950">04</span>
                                         <span className="ml-4 text-rose-600/50">strategy:</span> <span className="text-amber-400/50">'COST_EFFICIENT_SLM'</span>,
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-800">05</span>
+                                        <span className="text-zinc-950">05</span>
                                         <span className="ml-4 text-rose-600/50">fallback:</span> <span className="text-amber-400/50">'FRONTIER_MODEL'</span>
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-800">06</span>
+                                        <span className="text-zinc-950">06</span>
                                         <span>{`});`}</span>
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-800">07</span>
+                                        <span className="text-zinc-950">07</span>
                                     </div>
                                     <div className="flex gap-4">
-                                        <span className="text-zinc-800">08</span>
+                                        <span className="text-zinc-950">08</span>
                                         <span className="text-emerald-600/50">await</span> <span>router.guardrail</span>({`payload`});
                                     </div>
                                 </div>
@@ -215,7 +215,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                     {lessons && lessons.length > 0 ? (
                         <div className="space-y-4">
                             {lessons.map((lesson, idx) => (
-                                <div key={idx} className="bg-white/[0.02] border border-zinc-200 rounded-2xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 group/lock hover:bg-white/[0.04] transition-colors relative overflow-hidden">
+                                <div key={idx} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 group/lock hover:bg-white/[0.04] transition-colors relative overflow-hidden">
                                     <div className="flex items-start gap-4">
                                         <div className="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center shrink-0">
                                             {idx % 2 === 0 ? <PlayCircle className="w-5 h-5 text-cyan-500/50" /> : <Database className="w-5 h-5 text-purple-500/50" />}
@@ -230,11 +230,11 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                     
                                     <div className="flex items-center gap-6 shrink-0 md:pl-6 md:border-l border-zinc-200">
                                         <div className="flex flex-col items-center gap-1 opacity-60">
-                                            <Clock className="w-4 h-4 text-zinc-800" />
-                                            <span className="text-[10px] font-mono text-zinc-700">{15 + (idx * 5)} MIN</span>
+                                            <Clock className="w-4 h-4 text-zinc-950" />
+                                            <span className="text-[10px] font-mono text-zinc-900">{15 + (idx * 5)} MIN</span>
                                         </div>
                                         <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
-                                            <Lock className="w-4 h-4 text-zinc-700" />
+                                            <Lock className="w-4 h-4 text-zinc-900" />
                                         </div>
                                     </div>
                                     

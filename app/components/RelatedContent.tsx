@@ -40,7 +40,7 @@ export default function RelatedContent({ currentSlug, type, count = 3 }: Related
 
     return (
         <div className="mt-16 pt-12 border-t border-zinc-200">
-            <h2 className="text-xl font-bold font-grotesk text-white mb-6">
+            <h2 className="text-xl font-bold font-grotesk text-zinc-950 mb-6">
                 Keep exploring
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -53,7 +53,7 @@ export default function RelatedContent({ currentSlug, type, count = 3 }: Related
                         <span className="text-[10px] font-mono text-purple-400 uppercase tracking-widest mb-2 block">
                             {item.type}
                         </span>
-                        <h3 className="text-sm font-bold text-white leading-snug group-hover:text-cyan-400 transition-colors">
+                        <h3 className="text-sm font-bold text-zinc-950 leading-snug group-hover:text-cyan-400 transition-colors">
                             {item.title}
                         </h3>
                     </Link>

@@ -59,10 +59,10 @@ export default function ModuleStepper({ parsedContent, hasAccess = true, childre
                                 if (!hasAccess && i > 0) return;
                                 setCurrentStep(i);
                             }}
-                            className={`flex-1 rounded-full transition-all duration-300 ${!hasAccess && i > 0 ? 'bg-zinc-800/50 cursor-not-allowed' : 'cursor-pointer'} ${
+                            className={`flex-1 rounded-full transition-all duration-300 ${!hasAccess && i > 0 ? 'bg-zinc-200/50 cursor-not-allowed' : 'cursor-pointer'} ${
                                 i < currentStep ? 'bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]' :
                                 i === currentStep ? 'bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]' :
-                                (!hasAccess && i > 0 ? 'bg-zinc-800/10' : 'bg-zinc-800 hover:bg-zinc-700')
+                                (!hasAccess && i > 0 ? 'bg-zinc-200/10' : 'bg-zinc-200 hover:bg-zinc-700')
                             }`}
                         />
                     ))}
@@ -92,7 +92,7 @@ export default function ModuleStepper({ parsedContent, hasAccess = true, childre
                     <button 
                         onClick={handlePrev}
                         disabled={currentStep === 0}
-                        className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-white border border-zinc-200 text-white hover:bg-zinc-50"
+                        className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-white border border-zinc-200 text-zinc-950 hover:bg-zinc-50"
                     >
                         <ChevronLeft className="w-4 h-4" /> Previous
                     </button>

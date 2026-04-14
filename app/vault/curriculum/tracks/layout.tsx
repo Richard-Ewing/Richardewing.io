@@ -15,7 +15,7 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                         </div>
                         <div className="hidden sm:block">
                             <div className="text-xs font-bold text-zinc-900">Product Economics Academy</div>
-                            <div className="text-[10px] text-zinc-700">23 tracks • 293 modules • Lifetime access</div>
+                            <div className="text-[10px] text-zinc-900">23 tracks • 293 modules • Lifetime access</div>
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -32,7 +32,7 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold text-xs hover:opacity-90 transition-opacity shadow-md"
                         >
                             <Sparkles className="w-3 h-3" />
-                            Unlock All 23 Tracks — $799
+                            Unlock All 23 Tracks — $999
                         </a>
                     </div>
                 </div>

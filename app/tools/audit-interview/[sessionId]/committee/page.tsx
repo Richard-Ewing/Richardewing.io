@@ -106,14 +106,14 @@ export default function CommitteeDashboard() {
                                 </div>
                                 <span className="font-mono text-zinc-800 text-[10px] uppercase tracking-widest">{session.session_id}</span>
                             </div>
-                            <h1 className="text-3xl sm:text-5xl font-bold text-white tracking-tight mb-2">Committee Dashboard</h1>
+                            <h1 className="text-3xl sm:text-5xl font-bold text-zinc-950 tracking-tight mb-2">Committee Dashboard</h1>
                             <p className="text-zinc-600 text-sm">
-                                Hiring Decision for <span className="text-white font-bold">{session.role.toUpperCase()}</span> Candidate
+                                Hiring Decision for <span className="text-zinc-950 font-bold">{session.role.toUpperCase()}</span> Candidate
                             </p>
                         </div>
                         <div className="text-right hidden sm:block">
                             <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Interviewer</div>
-                            <div className="text-white font-mono bg-zinc-900 px-3 py-1 rounded-lg border border-zinc-200">{session.interviewer_id}</div>
+                            <div className="text-zinc-950 font-mono bg-zinc-100 px-3 py-1 rounded-lg border border-zinc-200">{session.interviewer_id}</div>
                         </div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@ export default function CommitteeDashboard() {
 
                 {/* Center: Radar */}
                 <ScrollReveal delay={200}>
-                    <div className="bg-zinc-900/50 border border-zinc-200 rounded-2xl p-6 flex flex-col items-center justify-center h-full relative">
+                    <div className="bg-zinc-100 border border-zinc-200 rounded-2xl p-6 flex flex-col items-center justify-center h-full relative">
                         <span className="absolute top-4 left-4 text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Attribute Geometry</span>
                         <div className="w-64 h-64">
                             <RadarChart scores={analytics.scores} />
@@ -148,14 +148,14 @@ export default function CommitteeDashboard() {
 
                 {/* Right: Scores List */}
                 <ScrollReveal delay={300}>
-                    <div className="bg-zinc-900/50 border border-zinc-200 rounded-2xl p-6 h-full overflow-y-auto max-h-[400px]">
+                    <div className="bg-zinc-100 border border-zinc-200 rounded-2xl p-6 h-full overflow-y-auto max-h-[400px]">
                         <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-4">Score Audit</span>
                         <div className="space-y-4">
                             {analytics.scores.map((s: any, i: number) => (
                                 <div key={i} className="border-b border-zinc-200 last:border-0 pb-4 last:pb-0">
                                     <div className="flex justify-between items-start mb-1">
                                         <span className="text-xs text-zinc-700 font-bold uppercase">{s.dimension.replace(/_/g, ' ')}</span>
-                                        <span className={`font-mono text-xs font-bold ${s.score > 2 ? 'text-emerald-400' : 'text-zinc-700'}`}>{s.score}/3</span>
+                                        <span className={`font-mono text-xs font-bold ${s.score > 2 ? 'text-emerald-400' : 'text-zinc-900'}`}>{s.score}/3</span>
                                     </div>
                                     <p className="text-[10px] text-zinc-700 italic">"{s.rationale}"</p>
                                 </div>
@@ -168,13 +168,13 @@ export default function CommitteeDashboard() {
             {/* Questions Transcript */}
             <ScrollReveal delay={400}>
                 <div className="mt-12 bg-zinc-100 border border-zinc-200 rounded-2xl p-8">
-                    <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                        <Search size={18} className="text-zinc-700" />
+                    <h3 className="text-lg font-bold text-zinc-950 mb-6 flex items-center gap-2">
+                        <Search size={18} className="text-zinc-900" />
                         Session Transcript
                     </h3>
                     <div className="space-y-2">
                         {/* Assuming we log the questions shown - for now we just show the count or list from question bank if we tracked them specifically per session */}
-                        <div className="p-4 bg-zinc-900/50 rounded-lg text-sm text-zinc-600 font-mono">
+                        <div className="p-4 bg-zinc-100 rounded-lg text-sm text-zinc-600 font-mono">
                             Transcript available in full dossier export.
                         </div>
                     </div>

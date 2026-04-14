@@ -198,12 +198,12 @@ export default function RootLayout({
             elements: {
               card: 'border border-zinc-200 shadow-2xl bg-white',
               formFieldLabel: 'text-zinc-600 font-sans',
-              socialButtonsBlockButton: 'bg-white/5 border-zinc-200 text-white hover:bg-white/10 transition-all font-sans',
+              socialButtonsBlockButton: 'bg-white/5 border-zinc-200 text-zinc-950 hover:bg-white/10 transition-all font-sans',
               formButtonPrimary: 'font-bold tracking-widest uppercase hover:opacity-90 transition-opacity',
               headerTitle: 'font-sans font-bold',
-              headerSubtitle: 'font-sans text-zinc-700',
+              headerSubtitle: 'font-sans text-zinc-900',
               dividerLine: 'bg-white/10',
-              dividerText: 'text-zinc-700'
+              dividerText: 'text-zinc-900'
             }
           }}
         >

@@ -58,7 +58,7 @@ export default function CIORecapPage() {
                     <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/articles" className="hover:text-cyan-400">Articles</Link><span>/</span><span className="text-cyan-400 font-bold">CIO.com</span>
                     </div>
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Published on{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">CIO.com</span>
                     </h1>
@@ -73,7 +73,7 @@ export default function CIORecapPage() {
                                 <div className="flex items-start gap-4">
                                     <span className="text-3xl">{article.icon}</span>
                                     <div className="flex-1">
-                                        <h2 className="text-xl font-grotesk font-bold text-white mb-3">{article.title}</h2>
+                                        <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">{article.title}</h2>
                                         <p className="text-zinc-600 mb-4">{article.description}</p>
                                         <div className="flex flex-wrap gap-2">
                                             {article.topics.map(topic => (
@@ -87,16 +87,16 @@ export default function CIORecapPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-8">
-                            <h2 className="text-xl font-grotesk font-bold text-white mb-4">Related Glossary Terms</h2>
+                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8">
+                            <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
                                 {['technical-debt', 'innovation-tax', 'ai-cogs', 'dora-metrics', 'cost-of-predictivity'].map(slug => (
                                     <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>
                         </div>
-                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-8">
-                            <h2 className="text-xl font-grotesk font-bold text-white mb-4">Related Tools</h2>
+                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8">
+                            <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Tools</h2>
                             <div className="space-y-2">
                                 <Link href="/tools/pdi" className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ Product Debt Index (PDI)</Link>
                                 <Link href="/tools/aper" className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ APER Calculator</Link>
@@ -106,7 +106,7 @@ export default function CIORecapPage() {
                     </div>
 
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Work With Richard</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Work With Richard</h2>
                         <p className="text-zinc-700 mb-6">The frameworks published on CIO.com are available as proprietary advisory engagements. R&amp;D Capital Audits translate technical complexity into board-ready financial clarity.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
                     </div>

@@ -88,7 +88,7 @@ export default function WorkshopsPage() {
             <div className="page-container">
                 <section className="section-lg text-center">
                     <div className="text-xs text-rose-400 uppercase tracking-wide mb-4 font-mono">Speaking & Training</div>
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-grotesk">
+                    <h1 className="text-4xl md:text-6xl font-bold text-zinc-950 mb-6 font-grotesk">
                         Workshops &<br />
                         <span className="bg-gradient-to-r from-rose-400 to-purple-400 bg-clip-text text-transparent">Speaking.</span>
                     </h1>
@@ -102,7 +102,7 @@ export default function WorkshopsPage() {
                 </section>
 
                 <section className="section max-w-5xl mx-auto">
-                    <h2 className="text-2xl font-bold text-white mb-8 font-grotesk flex items-center gap-3">
+                    <h2 className="text-2xl font-bold text-zinc-950 mb-8 font-grotesk flex items-center gap-3">
                         <Mic className="w-6 h-6 text-rose-400" />
                         Keynote Presentations
                     </h2>
@@ -133,19 +133,19 @@ export default function WorkshopsPage() {
                 </section>
 
                 <section className="section max-w-5xl mx-auto">
-                    <h2 className="text-2xl font-bold text-white mb-8 font-grotesk flex items-center gap-3">
+                    <h2 className="text-2xl font-bold text-zinc-950 mb-8 font-grotesk flex items-center gap-3">
                         <Lightbulb className="w-6 h-6 text-amber-400" />
                         Workshops & Training
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {workshops.map((w, i) => (
                             <div key={i} className="card p-6 flex flex-col">
-                                <h3 className="text-lg font-bold text-white mb-2">{w.title}</h3>
+                                <h3 className="text-lg font-bold text-zinc-950 mb-2">{w.title}</h3>
                                 <p className="text-zinc-700 text-xs font-mono mb-1">{w.format} · {w.participants}</p>
                                 <p className="text-zinc-600 text-sm mb-4 flex-1">{w.desc}</p>
                                 <div className="flex items-center justify-between pt-4 border-t border-zinc-200 mb-4">
                                     <span className="text-xl font-bold text-zinc-900">{w.price}</span>
-                                    <span className="text-xs text-zinc-700">+ travel</span>
+                                    <span className="text-xs text-zinc-900">+ travel</span>
                                 </div>
                                 <a
                                     href={`/api/buy/${w.productId}`}
@@ -161,7 +161,7 @@ export default function WorkshopsPage() {
                 {/* Keynote Booking */}
                 <section className="section max-w-3xl mx-auto text-center">
                     <div className="card p-8 md:p-12 border-rose-500/20 bg-gradient-to-br from-rose-500/5 to-transparent">
-                        <h2 className="text-2xl font-bold text-white mb-4 font-grotesk">Book a Speaking Engagement</h2>
+                        <h2 className="text-2xl font-bold text-zinc-950 mb-4 font-grotesk">Book a Speaking Engagement</h2>
                         <p className="text-zinc-600 mb-6">
                             Keynote fees start at $5,000. Workshop fees start at $5,000.
                             Travel and accommodations are additional.
@@ -175,7 +175,7 @@ export default function WorkshopsPage() {
                             </a>
                             <a
                                 href="mailto:richardewing@exogram.ai?subject=Speaking%20Engagement%20Inquiry"
-                                className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-zinc-300 text-white font-bold uppercase tracking-widest text-sm rounded-xl hover:bg-white/5 transition-all"
+                                className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-sm rounded-xl hover:bg-white/5 transition-all"
                             >
                                 Custom Inquiry →
                             </a>

@@ -41,7 +41,7 @@ export default function CertificationPage() {
             <div className="page-container">
                 <section className="section-lg text-center">
                     <div className="text-xs text-amber-400 uppercase tracking-wide mb-4 font-mono">Professional Certification</div>
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-grotesk">
+                    <h1 className="text-4xl md:text-6xl font-bold text-zinc-950 mb-6 font-grotesk">
                         Certified Product<br />
                         <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Economist.</span>
                     </h1>
@@ -60,7 +60,7 @@ export default function CertificationPage() {
                 </section>
 
                 <section className="section max-w-4xl mx-auto">
-                    <h2 className="text-2xl font-bold text-white mb-8 font-grotesk text-center">Curriculum</h2>
+                    <h2 className="text-2xl font-bold text-zinc-950 mb-8 font-grotesk text-center">Curriculum</h2>
                     <div className="space-y-4">
                         {modules.map((mod) => (
                             <div key={mod.num} className="card p-6 flex items-start gap-6 group hover:border-amber-500/30 transition-colors">
@@ -86,7 +86,7 @@ export default function CertificationPage() {
                         ].map((section, i) => (
                             <div key={i} className="card p-6">
                                 <section.icon className="w-8 h-8 text-amber-400 mb-4" />
-                                <h3 className="text-lg font-bold text-white mb-3">{section.title}</h3>
+                                <h3 className="text-lg font-bold text-zinc-950 mb-3">{section.title}</h3>
                                 <ul className="space-y-2">
                                     {section.items.map((item, j) => (
                                         <li key={j} className="flex items-start gap-2 text-zinc-600 text-sm">
@@ -100,7 +100,7 @@ export default function CertificationPage() {
                     </div>
 
                     <div className="card p-8 md:p-12 border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-transparent text-center">
-                        <div className="text-3xl font-bold text-white mb-2">$1,500</div>
+                        <div className="text-3xl font-bold text-zinc-950 mb-2">$1,500</div>
                         <p className="text-zinc-700 text-sm mb-6">Per certification · Payment plans available</p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a

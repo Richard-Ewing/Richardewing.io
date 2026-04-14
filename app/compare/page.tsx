@@ -72,7 +72,7 @@ export default function ComparePage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Targeted Diagnostic Engines vs <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-400">Mainstream SaaS</span>
                     </h1>
                     <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
@@ -95,9 +95,9 @@ export default function ComparePage() {
 
                             return (
                                 <Link key={c.href} href={c.href} className="group block">
-                                    <div className={`rounded-2xl border ${theme.border} ${theme.hover} p-8 transition-all hover:bg-white/[0.02]`}>
+                                    <div className={`rounded-2xl border ${theme.border} ${theme.hover} p-8 transition-all hover:bg-zinc-50`}>
                                         <div className={`text-xs font-mono uppercase tracking-widest mb-2 ${theme.text}`}>{c.subtitle}</div>
-                                        <h2 className="text-2xl font-grotesk font-bold text-white mb-3 group-hover:text-zinc-900">{c.title}</h2>
+                                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-3 group-hover:text-zinc-900">{c.title}</h2>
                                         <p className="text-zinc-600 mb-4">{c.description}</p>
                                         <span className={`text-sm font-bold uppercase tracking-widest ${theme.text}`}>Read Comparison →</span>
                                     </div>

@@ -143,7 +143,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
 
     if (isLimitExceeded) {
         return (
-            <div className="w-full bg-white/80 border border-red-500/20 rounded-3xl text-white flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden my-8 shadow-2xl backdrop-blur-sm">
+            <div className="w-full bg-white/80 border border-red-500/20 rounded-3xl text-zinc-950 flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden my-8 shadow-2xl backdrop-blur-sm">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.05),transparent_70%)] pointer-events-none" />
                 <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="max-w-xl w-full text-center z-10">
                     <div className="w-16 h-16 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(239,68,68,0.1)]">
@@ -162,7 +162,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
     }
 
     return (
-        <div className="w-full bg-white/40 border border-zinc-200 rounded-3xl text-white flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden my-8 shadow-2xl backdrop-blur-sm">
+        <div className="w-full bg-white/40 border border-zinc-200 rounded-3xl text-zinc-950 flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden my-8 shadow-2xl backdrop-blur-sm">
             {/* Background effects */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.05),transparent_70%)] pointer-events-none" />
             <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
@@ -190,7 +190,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                         <input type="hidden" name="source" value={`${toolName} Gate`} />
 
                         <div className="relative">
-                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-700" />
+                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-900" />
                             <input
                                 id="email"
                                 type="email"
@@ -200,7 +200,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                                 disabled={state.submitting || isValidating}
                                 value={email}
                                 onChange={(e) => { setEmail(e.target.value); setValidationError(''); }}
-                                className="w-full pl-12 pr-4 py-4 bg-white/50 border border-zinc-200 rounded-xl text-white placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all font-mono"
+                                className="w-full pl-12 pr-4 py-4 bg-white/50 border border-zinc-200 rounded-xl text-zinc-950 placeholder:text-zinc-600 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all font-mono"
                             />
                             <ValidationError
                                 prefix="Email"

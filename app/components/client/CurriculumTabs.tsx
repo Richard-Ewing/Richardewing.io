@@ -49,7 +49,7 @@ export default function CurriculumTabs({ children }: { children: React.ReactNode
                                 <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity" />
                                 <div className="relative z-10">
                                     <div className="text-sm font-bold whitespace-nowrap tracking-wide">{category.label}</div>
-                                    <div className={`text-[10px] font-mono mt-1 uppercase tracking-widest ${isActive ? 'opacity-90' : 'opacity-50 text-zinc-700 group-hover/btn:text-zinc-600'}`}>
+                                    <div className={`text-[10px] font-mono mt-1 uppercase tracking-widest ${isActive ? 'opacity-90' : 'opacity-50 text-zinc-700 group-hover/btn:text-zinc-800'}`}>
                                         {category.description}
                                     </div>
                                 </div>

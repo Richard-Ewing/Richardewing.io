@@ -68,12 +68,12 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
             <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-8 border border-zinc-200 shadow-2xl">
                 <div className="flex items-center gap-3 mb-4">
                     <UrgencyIcon urgency={contextCTA.urgency} />
-                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-700">
+                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">
                         {toolName} Results
                     </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 mb-2">
                     {headline || 'Want a Board-Ready Analysis?'}
                 </h3>
                 <p className="text-zinc-600 mb-6">
@@ -121,7 +121,7 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                     >
                         ← Run New Analysis
                     </button>
-                    <span className="text-zinc-700">|</span>
+                    <span className="text-zinc-900">|</span>
                     <Link
                         href="/system"
                         className="text-zinc-500 hover:text-zinc-900 transition-colors"
@@ -159,13 +159,13 @@ export function SEOContent({ title, description, howItWorks, whyItMatters, formu
     return (
         <section className="mt-16 border-t border-zinc-200 pt-12 text-zinc-700 space-y-8">
             <div>
-                <h2 className="text-white font-bold text-2xl mb-4">{title}</h2>
+                <h2 className="text-zinc-950 font-bold text-2xl mb-4">{title}</h2>
                 <p className="leading-relaxed">{description}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h3 className="text-white font-semibold text-lg mb-3">How It Works</h3>
+                    <h3 className="text-zinc-950 font-semibold text-lg mb-3">How It Works</h3>
                     <p className="leading-relaxed">{howItWorks}</p>
                     {formula && (
                         <div className="mt-4 p-4 bg-white/80 rounded-lg border border-zinc-200 font-mono text-sm text-cyan-400">
@@ -174,7 +174,7 @@ export function SEOContent({ title, description, howItWorks, whyItMatters, formu
                     )}
                 </div>
                 <div>
-                    <h3 className="text-white font-semibold text-lg mb-3">Why It Matters</h3>
+                    <h3 className="text-zinc-950 font-semibold text-lg mb-3">Why It Matters</h3>
                     <p className="leading-relaxed">{whyItMatters}</p>
                 </div>
             </div>

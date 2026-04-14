@@ -48,17 +48,17 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                 <div className="flex items-center gap-2 text-xs text-zinc-700 mb-8">
                     <Link href="/blog" className="hover:text-zinc-900 transition-colors">Blog</Link>
                     <span>→</span>
-                    <span className="text-zinc-600">{article.category}</span>
+                    <span className="text-zinc-800">{article.category}</span>
                 </div>
 
                 <header className="mb-12">
                     <div className="flex items-center gap-3 mb-4">
                         <span className={`text-xs font-mono uppercase tracking-widest px-2 py-1 rounded-full border ${catColor}`}>{article.category}</span>
-                        <span className="text-xs text-zinc-800">{article.readTime} read</span>
+                        <span className="text-xs text-zinc-950">{article.readTime} read</span>
                     </div>
-                    <h1 className="text-3xl md:text-4xl font-grotesk font-bold text-white mb-4 leading-tight">{article.title}</h1>
+                    <h1 className="text-3xl md:text-4xl font-grotesk font-bold text-zinc-950 mb-4 leading-tight">{article.title}</h1>
                     <p className="text-lg text-zinc-600 leading-relaxed mb-6">{article.excerpt}</p>
-                    <div className="flex items-center gap-4 text-xs text-zinc-700">
+                    <div className="flex items-center gap-4 text-xs text-zinc-900">
                         <span>By Richard Ewing</span>
                         <span>·</span>
                         <time>{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
@@ -84,7 +84,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
 
                 {/* Inline Newsletter CTA */}
                 <div className="my-12 p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5 text-center">
-                    <p className="text-white font-semibold mb-2">Like this analysis?</p>
+                    <p className="text-zinc-950 font-semibold mb-2">Like this analysis?</p>
                     <p className="text-sm text-zinc-600 mb-4">Get the weekly engineering economics briefing — one email, every Monday.</p>
                     <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
                         className="inline-block px-6 py-2.5 rounded-lg bg-gradient-to-r from-cyan-600 to-violet-600 text-white font-bold text-sm hover:opacity-90 transition-opacity">
@@ -99,8 +99,8 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             {related.map(r => (
                                 <Link key={r.slug} href={`/blog/${r.slug}`}
-                                    className="group p-5 rounded-xl border border-zinc-200 bg-white/[0.02] hover:border-white/15 transition-all">
-                                    <h3 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">{r.title}</h3>
+                                    className="group p-5 rounded-xl border border-zinc-200 bg-zinc-50 hover:border-white/15 transition-all">
+                                    <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors mb-2">{r.title}</h3>
                                     <p className="text-xs text-zinc-700 line-clamp-2">{r.excerpt}</p>
                                     <span className="text-[10px] text-zinc-800 mt-2 block">{r.readTime}</span>
                                 </Link>
@@ -112,7 +112,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                 {/* Cross-link to Published Articles */}
                 <div className="mb-12 p-6 rounded-xl border border-purple-500/20 bg-purple-500/5">
                     <p className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2">Published Work</p>
-                    <p className="text-sm text-zinc-600">
+                    <p className="text-sm text-zinc-800">
                         This article expands on ideas from my published work in <strong className="text-zinc-900">CIO.com</strong>, <strong className="text-zinc-900">Built In</strong>, <strong className="text-zinc-900">Mind the Product</strong>, and <strong className="text-zinc-900">HackerNoon</strong>.{' '}
                         <Link href="/articles" className="text-purple-400 hover:underline">View published articles →</Link>
                     </p>
@@ -125,7 +125,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                             <span className="text-2xl">📊</span>
                         </div>
                         <div>
-                            <h3 className="text-lg font-grotesk font-bold text-white mb-1">Richard Ewing</h3>
+                            <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-1">Richard Ewing</h3>
                             <p className="text-sm text-zinc-700 mb-3">The Product Economist — Quantifying engineering economics for technology leaders, PE firms, and boards.</p>
                             <div className="flex flex-wrap gap-3">
                                 <Link href="/advisory" className="text-xs text-cyan-400 hover:underline">Book Advisory →</Link>

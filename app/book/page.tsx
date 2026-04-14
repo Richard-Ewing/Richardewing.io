@@ -19,7 +19,7 @@ export default function BookPage() {
         <div className="min-h-screen flex items-center justify-center px-6">
             <div className="text-center max-w-2xl">
                 <div className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-4">Coming 2026</div>
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-grotesk">The Product Economist</h1>
+                <h1 className="text-5xl md:text-7xl font-bold text-zinc-950 mb-6 font-grotesk">The Product Economist</h1>
                 <p className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-8 font-bold">
                     The Definitive Guide to R&D Capital Allocation
                 </p>

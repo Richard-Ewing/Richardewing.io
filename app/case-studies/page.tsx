@@ -61,7 +61,7 @@ export default function CaseStudiesPage() {
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
                         <div className="text-xs font-mono text-rose-500 uppercase tracking-widest mb-4">Case Studies</div>
-                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
+                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             Measurable{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-violet-400">Impact</span>
                         </h1>
@@ -84,21 +84,21 @@ export default function CaseStudiesPage() {
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                                     <div className="rounded-xl bg-zinc-100 p-4 text-center">
                                         <div className={`text-2xl font-bold ${textMap[cs.color]}`}>{cs.metrics.saved}</div>
-                                        <div className="text-xs text-zinc-700">Saved</div>
+                                        <div className="text-xs text-zinc-900">Saved</div>
                                     </div>
                                     <div className="rounded-xl bg-zinc-100 p-4 text-center">
                                         <div className={`text-2xl font-bold ${textMap[cs.color]}`}>{cs.metrics.innovationTax || cs.metrics.margin}</div>
-                                        <div className="text-xs text-zinc-700">{cs.metrics.innovationTax ? 'Innovation Tax' : 'Gross Margin'}</div>
+                                        <div className="text-xs text-zinc-900">{cs.metrics.innovationTax ? 'Innovation Tax' : 'Gross Margin'}</div>
                                     </div>
                                     <div className="rounded-xl bg-zinc-100 p-4 text-center">
                                         <div className={`text-2xl font-bold ${textMap[cs.color]}`}>{cs.metrics.timeline}</div>
-                                        <div className="text-xs text-zinc-700">Timeline</div>
+                                        <div className="text-xs text-zinc-900">Timeline</div>
                                     </div>
                                 </div>
 
                                 <div className="mb-6">
                                     <h3 className="text-sm font-mono text-zinc-500 uppercase tracking-widest mb-2">Situation</h3>
-                                    <p className="text-zinc-700">{cs.situation}</p>
+                                    <p className="text-zinc-900">{cs.situation}</p>
                                 </div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -120,7 +120,7 @@ export default function CaseStudiesPage() {
                     </div>
 
                     <div className="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-10 text-center">
-                        <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Get Your Custom Audit</h2>
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Get Your Custom Audit</h2>
                         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">Every R&D Capital Audit is tailored to your company&apos;s technology stack, team structure, and business context. Results delivered in 2-6 weeks.</p>
                         <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Book Your R&D Audit →</Link>
                     </div>

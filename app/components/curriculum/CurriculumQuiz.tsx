@@ -17,15 +17,15 @@ export default function CurriculumQuiz({ quiz }: { quiz: Quiz }) {
                 Knowledge Check
             </div>
             
-            <h3 className="text-lg font-grotesk font-bold text-white mb-6 pr-32">{quiz.question}</h3>
+            <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-6 pr-32">{quiz.question}</h3>
             
             <div className="space-y-3 mb-6">
                 {quiz.options.map((option, idx) => {
                     const isSelected = selectedIdx === idx;
                     const isCorrectOption = idx === quiz.correctIndex;
                     
-                    let bgClass = "bg-white/[0.02] border-zinc-200 hover:bg-white/[0.05]";
-                    let textClass = "text-zinc-700";
+                    let bgClass = "bg-zinc-50 border-zinc-200 hover:bg-white/[0.05]";
+                    let textClass = "text-zinc-900";
                     let icon = null;
 
                     if (hasSubmitted) {

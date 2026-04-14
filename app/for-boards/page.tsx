@@ -32,7 +32,7 @@ export default function ForBoardsPage() {
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-16">
                         <div className="text-xs font-mono text-amber-500 uppercase tracking-widest mb-4">For Board Members & Directors</div>
-                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
+                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             Your CTO Speaks Engineering.<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">You Need Financial Language.</span>
                         </h1>
@@ -43,11 +43,11 @@ export default function ForBoardsPage() {
                     </div>
 
                     <div className="mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-8 text-center">Questions Boards Should Be Asking</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-8 text-center">Questions Boards Should Be Asking</h2>
                         <div className="space-y-4">
                             {boardQuestions.map((q, i) => (
                                 <div key={i} className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-6">
-                                    <h3 className="text-lg font-bold text-white mb-2">&ldquo;{q.question}&rdquo;</h3>
+                                    <h3 className="text-lg font-bold text-zinc-950 mb-2">&ldquo;{q.question}&rdquo;</h3>
                                     <p className="text-zinc-600 mb-3">{q.answer}</p>
                                     <Link href={q.link} className="text-xs font-mono text-amber-400 hover:text-amber-300 uppercase tracking-widest">
                                         Measure with {q.metric} →
@@ -58,22 +58,22 @@ export default function ForBoardsPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">$$$</div>
-                            <div className="text-sm text-zinc-600">Debt quantified in dollars, not story points</div>
+                            <div className="text-sm text-zinc-800">Debt quantified in dollars, not story points</div>
                         </div>
-                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">Q1-Q4</div>
-                            <div className="text-sm text-zinc-600">Quarterly reporting cadence for fiduciary oversight</div>
+                            <div className="text-sm text-zinc-800">Quarterly reporting cadence for fiduciary oversight</div>
                         </div>
-                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">1 Page</div>
-                            <div className="text-sm text-zinc-600">Executive summary, not 50-page engineering reports</div>
+                            <div className="text-sm text-zinc-800">Executive summary, not 50-page engineering reports</div>
                         </div>
                     </div>
 
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-10 text-center">
-                        <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Board-Ready in 2 Weeks</h2>
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Board-Ready in 2 Weeks</h2>
                         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">Full R&D Capital Audit with executive summary, risk assessment, and remediation roadmap. Delivered as a board presentation, not a technical document.</p>
                         <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Schedule Board Briefing →</Link>
                     </div>

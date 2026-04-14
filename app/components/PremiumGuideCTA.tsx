@@ -20,7 +20,7 @@ export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCT
                     <Lock className="w-5 h-5 text-violet-400" />
                     <span className="text-xs font-mono text-violet-400 uppercase tracking-widest">Premium Guide</span>
                 </div>
-                <h3 className="text-2xl font-grotesk font-bold text-white mb-2">{guideName}</h3>
+                <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mb-2">{guideName}</h3>
                 <p className="text-zinc-600 text-sm mb-6 max-w-md mx-auto">
                     Unlock full access to this guide including frameworks, templates, and actionable worksheets.
                 </p>
@@ -40,7 +40,7 @@ export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCT
                     </button>
                 </div>
 
-                <div className="flex items-center justify-center gap-6 mt-6 text-[10px] text-zinc-800">
+                <div className="flex items-center justify-center gap-6 mt-6 text-[10px] text-zinc-950">
                     <span>✓ Instant access</span>
                     <span>✓ PDF download</span>
                     <span>✓ Future updates</span>

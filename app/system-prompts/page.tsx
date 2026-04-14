@@ -79,7 +79,7 @@ export default function SystemPromptsPage() {
             </div>
 
             <div className="mb-12 border-b border-zinc-200 pb-12">
-                <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                     Executive <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">System Prompts</span>
                 </h1>
                 <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl">
@@ -111,7 +111,7 @@ export default function SystemPromptsPage() {
             </div>
 
             <div className="mt-16 card p-8 border-violet-500/30 bg-gradient-to-br from-violet-500/10 to-transparent text-center">
-                <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Stop Prompting. Start Executing.</h2>
+                <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Stop Prompting. Start Executing.</h2>
                 <p className="text-zinc-600 mb-8 max-w-xl mx-auto">
                     Prompts give you frameworks. Audits give you board-ready financial models. If your R&D margin is collapsing, book a diagnostic.
                 </p>

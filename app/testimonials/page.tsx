@@ -25,7 +25,7 @@ export default function TestimonialsPage() {
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
                         <div className="text-xs font-mono text-amber-500 uppercase tracking-widest mb-4">Testimonials</div>
-                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
+                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             What Clients{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Say</span>
                         </h1>
@@ -36,12 +36,12 @@ export default function TestimonialsPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
                         {testimonials.map((t, i) => (
-                            <div key={i} className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-8 hover:border-amber-500/20 transition-colors">
+                            <div key={i} className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 hover:border-amber-500/20 transition-colors">
                                 <div className="flex items-center gap-3 mb-4">
                                     <span className="text-2xl">{t.icon}</span>
                                     <div>
-                                        <div className="text-white font-bold text-sm">{t.name}</div>
-                                        <div className="text-xs text-zinc-700">{t.company}</div>
+                                        <div className="text-zinc-950 font-bold text-sm">{t.name}</div>
+                                        <div className="text-xs text-zinc-900">{t.company}</div>
                                     </div>
                                     <span className="ml-auto px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-400 font-mono">{t.role}</span>
                                 </div>
@@ -51,26 +51,26 @@ export default function TestimonialsPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-16">
-                        <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">100+</div>
                             <div className="text-xs text-zinc-700 mt-1">Audits Completed</div>
                         </div>
-                        <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">$50M+</div>
                             <div className="text-xs text-zinc-700 mt-1">Client Savings Identified</div>
                         </div>
-                        <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">14</div>
                             <div className="text-xs text-zinc-700 mt-1">Industries Served</div>
                         </div>
-                        <div className="rounded-xl border border-zinc-200 bg-white/[0.02] p-6 text-center">
+                        <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">4.9/5</div>
                             <div className="text-xs text-zinc-700 mt-1">Client Satisfaction</div>
                         </div>
                     </div>
 
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-10 text-center">
-                        <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Join 100+ Companies</h2>
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Join 100+ Companies</h2>
                         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">See why PE firms, boards, and CTOs trust R&D Capital Audits for their most important technology investment decisions.</p>
                         <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Book Your Audit →</Link>
                     </div>

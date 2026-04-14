@@ -85,19 +85,19 @@ export default function HomeContent() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <GlowCard className="p-8 h-full" glowColor="red">
                         <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">1. Zombie Infrastructure</h3>
-                        <p className="text-zinc-800">Legacy systems compounded by interest. Maintenance costs consuming 100% of engineering capacity.</p>
+                        <p className="text-zinc-950">Legacy systems compounded by interest. Maintenance costs consuming 100% of engineering capacity.</p>
                     </GlowCard>
                     <GlowCard className="p-8 h-full" glowColor="red">
                         <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">2. Feature Bloat</h3>
-                        <p className="text-zinc-800">The silent killer. Code that generates no revenue but incurs 100% of the testing and security tax.</p>
+                        <p className="text-zinc-950">The silent killer. Code that generates no revenue but incurs 100% of the testing and security tax.</p>
                     </GlowCard>
                     <GlowCard className="p-8 h-full" glowColor="red">
                         <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">3. AI Hallucination Debt</h3>
-                        <p className="text-zinc-800">The cost of verifying probabilistic output. When "90% accurate" means "100% liability".</p>
+                        <p className="text-zinc-950">The cost of verifying probabilistic output. When "90% accurate" means "100% liability".</p>
                     </GlowCard>
                     <GlowCard className="p-8 h-full" glowColor="red">
                         <h3 className="text-xl font-bold text-zinc-900 mb-2 font-grotesk">4. Capital Misallocation</h3>
-                        <p className="text-zinc-800">Calling OpEx "Innovation". 80% of your R&D budget is just keeping the lights on.</p>
+                        <p className="text-zinc-950">Calling OpEx "Innovation". 80% of your R&D budget is just keeping the lights on.</p>
                     </GlowCard>
                 </div>
             </ScrollReveal>
@@ -150,7 +150,7 @@ export default function HomeContent() {
                                     Online
                                 </div>
                             </div>
-                            <div className="space-y-4 font-mono text-sm text-zinc-800">
+                            <div className="space-y-4 font-mono text-sm text-zinc-950">
                                 <div className="flex justify-between border-b border-zinc-200 pb-2">
                                     <span>System Load</span>
                                     <span className="text-zinc-900">42%</span>
@@ -225,7 +225,7 @@ export default function HomeContent() {
                         <div key={tier.name} className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-xl border border-zinc-200 bg-white hover:bg-zinc-50 transition-colors">
                             <div className="text-center sm:text-left mb-4 sm:mb-0">
                                 <div className="text-xl font-bold text-zinc-900 font-grotesk">{tier.name}</div>
-                                <div className="text-sm text-zinc-700">{tier.desc}</div>
+                                <div className="text-sm text-zinc-900">{tier.desc}</div>
                             </div>
                             <div className="flex items-center gap-6">
                                 <div className="text-xl font-mono text-cyan-600">{tier.price}</div>

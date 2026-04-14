@@ -25,7 +25,7 @@ export default function HealthTechPage() {
                         <Link href="/industries" className="hover:text-cyan-400">Industries</Link><span>/</span><span className="text-blue-400 font-bold">HealthTech</span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Product Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">HealthTech</span>
                     </h1>
@@ -37,14 +37,14 @@ export default function HealthTechPage() {
                         {challenges.map((c, i) => (
                             <div key={i} className="rounded-xl border border-zinc-200 p-6 hover:border-blue-500/30 transition-colors">
                                 <div className="text-2xl mb-3">{c.icon}</div>
-                                <h3 className="text-lg font-grotesk font-bold text-white mb-2">{c.title}</h3>
+                                <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">{c.title}</h3>
                                 <p className="text-zinc-600 text-sm">{c.description}</p>
                             </div>
                         ))}
                     </div>
 
                     <div className="rounded-2xl border border-blue-500/30 bg-blue-500/5 p-8 mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">How I Help HealthTech Companies</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">How I Help HealthTech Companies</h2>
                         <ul className="space-y-3 text-zinc-700 mb-8">
                             <li className="flex items-start gap-3"><span className="text-blue-400 mt-1">→</span> <span>Quantify HIPAA-driven technical debt and compliance carry costs</span></li>
                             <li className="flex items-start gap-3"><span className="text-blue-400 mt-1">→</span> <span>Audit clinical AI models for regulatory defensibility (FDA SaMD)</span></li>
@@ -53,7 +53,7 @@ export default function HealthTechPage() {
                         </ul>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold hover:opacity-90">Free PDI Assessment →</Link>
-                            <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-300 text-white font-bold hover:bg-white/5">Book Advisory →</Link>
+                            <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-300 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     </div>
                 </div>

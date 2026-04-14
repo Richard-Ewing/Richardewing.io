@@ -29,12 +29,12 @@ export default function PDIvsSonarQubePage() {
                         <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-cyan-400 font-bold">PDI vs SonarQube</span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
-                        Product Debt Index <span className="text-zinc-700">vs</span>{' '}
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
+                        Product Debt Index <span className="text-zinc-900">vs</span>{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">SonarQube</span>
                     </h1>
                     <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
-                        SonarQube tells you how many code smells you have. PDI tells you <span className="text-white font-bold">when technical debt will bankrupt your engineering capacity</span>. They measure different things at different layers.
+                        SonarQube tells you how many code smells you have. PDI tells you <span className="text-zinc-950 font-bold">when technical debt will bankrupt your engineering capacity</span>. They measure different things at different layers.
                     </p>
 
                     {/* Comparison Table */}
@@ -49,10 +49,10 @@ export default function PDIvsSonarQubePage() {
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
-                                    <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02]">
+                                    <tr key={i} className="border-b border-zinc-200 hover:bg-zinc-50">
                                         <td className="py-4 px-4 text-sm text-zinc-600 font-bold">{row.dimension}</td>
                                         <td className="py-4 px-4 text-sm text-zinc-900">{row.pdi}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-600">{row.sonar}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-800">{row.sonar}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -61,7 +61,7 @@ export default function PDIvsSonarQubePage() {
 
                     {/* Verdict */}
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8 mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">The Verdict</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-700 mb-6">
                             <strong>Use both.</strong> SonarQube is excellent at catching code-level issues in your CI/CD pipeline.
                             PDI answers the question SonarQube can&apos;t: <em>&quot;What is this debt costing us in dollars, and when will it consume all engineering capacity?&quot;</em>

@@ -41,7 +41,7 @@ const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; pref
 
 const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: React.ReactNode; title: string; icon?: React.ComponentType<{ size?: number }>; className?: string }) => (
     <div className={`relative overflow-hidden rounded-2xl border border-zinc-200 bg-white/60 p-6 backdrop-blur-md ${className}`}>
-        <div className="flex items-center gap-2 mb-4 text-zinc-700">
+        <div className="flex items-center gap-2 mb-4 text-zinc-900">
             {Icon && <Icon size={14} />}
             <span className="text-[10px] font-mono uppercase tracking-widest">{title}</span>
         </div>
@@ -307,11 +307,11 @@ export default function APERTool() {
                         <ScrollReveal>
                             <div className="max-w-4xl mx-auto">
                                 <div className="text-center mb-12">
-                                    <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">
+                                    <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-950 mb-6">
                                         Are You <br />
                                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Overstaffed?</span>
                                     </h1>
-                                    <p className="text-xl text-zinc-700">Calculate your Revenue Per Engineer before your board does.</p>
+                                    <p className="text-xl text-zinc-900">Calculate your Revenue Per Engineer before your board does.</p>
                                 </div>
 
                                 {/* PERSONA SELECTOR */}
@@ -333,7 +333,7 @@ export default function APERTool() {
                                                 <div className="w-8 h-8 rounded-full bg-yellow-500/20 text-yellow-400 flex items-center justify-center font-bold font-mono text-sm border border-yellow-500/30">1</div>
                                                 <div>
                                                     <h3 className="text-xl font-bold text-zinc-900">Core Metrics</h3>
-                                                    <p className="text-sm text-zinc-700">Define the top-line scale of engineering vs revenue.</p>
+                                                    <p className="text-sm text-zinc-900">Define the top-line scale of engineering vs revenue.</p>
                                                 </div>
                                             </div>
 
@@ -341,19 +341,19 @@ export default function APERTool() {
                                                 <div>
                                                     <label htmlFor="arr" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block">Annual Revenue (ARR)</label>
                                                     <div className="relative">
-                                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-700">$</span>
-                                                        <input id="arr" type="number" value={arr} onChange={(e) => setArr(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-yellow-500 focus:outline-none transition-colors" />
+                                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
+                                                        <input id="arr" type="number" value={arr} onChange={(e) => setArr(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 pl-7 text-zinc-950 font-mono focus:border-yellow-500 focus:outline-none transition-colors" />
                                                     </div>
                                                 </div>
                                                 <div>
                                                     <label htmlFor="engineers" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block">Engineer Headcount</label>
-                                                    <input id="engineers" type="number" value={engineers} onChange={(e) => setEngineers(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-white font-mono focus:border-yellow-500 focus:outline-none transition-colors" />
+                                                    <input id="engineers" type="number" value={engineers} onChange={(e) => setEngineers(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-yellow-500 focus:outline-none transition-colors" />
                                                 </div>
                                                 <div>
                                                     <label htmlFor="cost" className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-2 block">Fully-Loaded Cost/Eng</label>
                                                     <div className="relative">
-                                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-700">$</span>
-                                                        <input id="cost" type="number" value={costPerEng} onChange={(e) => setCostPerEng(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 pl-7 text-white font-mono focus:border-yellow-500 focus:outline-none transition-colors" />
+                                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
+                                                        <input id="cost" type="number" value={costPerEng} onChange={(e) => setCostPerEng(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 pl-7 text-zinc-950 font-mono focus:border-yellow-500 focus:outline-none transition-colors" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -371,7 +371,7 @@ export default function APERTool() {
                                                 <div className="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold font-mono text-sm border border-orange-500/30">2</div>
                                                 <div>
                                                     <h3 className="text-xl font-bold text-zinc-900">Team Composition</h3>
-                                                    <p className="text-sm text-zinc-700">Break down how roles are distributed across headcount.</p>
+                                                    <p className="text-sm text-zinc-900">Break down how roles are distributed across headcount.</p>
                                                 </div>
                                             </div>
 
@@ -386,7 +386,7 @@ export default function APERTool() {
                                                                 aria-label={`Enter percentage for ${key}`}
                                                                 value={val}
                                                                 onChange={(e) => setTeamBreakdown({ ...teamBreakdown, [key]: parseInt(e.target.value) || 0 })}
-                                                                className="w-full bg-white/50 border border-zinc-200 rounded-lg px-3 py-2 text-white font-mono text-sm focus:border-orange-500 focus:outline-none transition-colors"
+                                                                className="w-full bg-white/50 border border-zinc-200 rounded-lg px-3 py-2 text-zinc-950 font-mono text-sm focus:border-orange-500 focus:outline-none transition-colors"
                                                             />
                                                             <span className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-800 text-xs">%</span>
                                                         </div>
@@ -395,7 +395,7 @@ export default function APERTool() {
                                             </div>
 
                                             <div className="flex gap-4">
-                                                <button onClick={() => setStep(1)} className="w-1/3 py-4 bg-zinc-50 border border-zinc-200 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">
+                                                <button onClick={() => setStep(1)} className="w-1/3 py-4 bg-zinc-50 border border-zinc-200 text-zinc-950 font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-200 transition-all">
                                                     Back
                                                 </button>
                                                 <button onClick={() => setStep(3)} className="w-2/3 py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-orange-400 transition-all flex items-center justify-center gap-2">
@@ -412,7 +412,7 @@ export default function APERTool() {
                                                 <div className="w-8 h-8 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-bold font-mono text-sm border border-red-500/30">3</div>
                                                 <div>
                                                     <h3 className="text-xl font-bold text-zinc-900">Health Metrics</h3>
-                                                    <p className="text-sm text-zinc-700">Measure stability, retention, and friction.</p>
+                                                    <p className="text-sm text-zinc-900">Measure stability, retention, and friction.</p>
                                                 </div>
                                             </div>
 
@@ -421,24 +421,24 @@ export default function APERTool() {
                                                     <label htmlFor="tenure" className="text-xs font-mono text-red-400 uppercase tracking-widest mb-2 block flex items-center gap-2">
                                                         <Clock size={12} /> Avg Tenure (Months)
                                                     </label>
-                                                    <input id="tenure" type="number" value={avgTenure} onChange={(e) => setAvgTenure(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-white font-mono focus:border-red-500 focus:outline-none transition-colors" />
+                                                    <input id="tenure" type="number" value={avgTenure} onChange={(e) => setAvgTenure(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-red-500 focus:outline-none transition-colors" />
                                                 </div>
                                                 <div>
                                                     <label htmlFor="hiring" className="text-xs font-mono text-red-400 uppercase tracking-widest mb-2 block flex items-center gap-2">
                                                         <Users size={12} /> Hires (Last 12mo)
                                                     </label>
-                                                    <input id="hiring" type="number" value={hiringVelocity} onChange={(e) => setHiringVelocity(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-white font-mono focus:border-red-500 focus:outline-none transition-colors" />
+                                                    <input id="hiring" type="number" value={hiringVelocity} onChange={(e) => setHiringVelocity(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-red-500 focus:outline-none transition-colors" />
                                                 </div>
                                                 <div>
                                                     <label htmlFor="remote" className="text-xs font-mono text-red-400 uppercase tracking-widest mb-2 block flex items-center gap-2">
                                                         <Building size={12} /> Remote %
                                                     </label>
-                                                    <input id="remote" type="number" value={remotePercent} onChange={(e) => setRemotePercent(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-white font-mono focus:border-red-500 focus:outline-none transition-colors" />
+                                                    <input id="remote" type="number" value={remotePercent} onChange={(e) => setRemotePercent(e.target.value)} className="w-full bg-white/50 border border-zinc-200 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-red-500 focus:outline-none transition-colors" />
                                                 </div>
                                             </div>
 
                                             <div className="flex gap-4">
-                                                <button onClick={() => setStep(2)} className="w-1/3 py-4 bg-zinc-50 border border-zinc-200 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-all">
+                                                <button onClick={() => setStep(2)} className="w-1/3 py-4 bg-zinc-50 border border-zinc-200 text-zinc-950 font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-200 transition-all">
                                                     Back
                                                 </button>
                                                 <div className="w-2/3">
@@ -484,8 +484,8 @@ export default function APERTool() {
                                         <div className="flex items-center gap-2 mb-2">
                                             <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                         </div>
-                                        <h2 className="text-xl font-bold text-white mb-1">Board-Ready Deliverable Generated</h2>
-                                        <p className="text-sm text-zinc-600">Export this assessment to a verified Executive PDF.</p>
+                                        <h2 className="text-xl font-bold text-zinc-950 mb-1">Board-Ready Deliverable Generated</h2>
+                                        <p className="text-sm text-zinc-800">Export this assessment to a verified Executive PDF.</p>
                                     </div>
                                     <ExportToPDFButton targetId="aper-pdf-export-zone" fileName={`APER_Assessment_${persona}.pdf`} />
                                 </div>
@@ -580,7 +580,7 @@ export default function APERTool() {
                                         <div className="capsule-container rounded-2xl p-6 mb-6 border border-red-500/30">
                                             <div className="flex items-center gap-2 mb-4">
                                                 <TrendingDown className="w-4 h-4 text-red-500 animate-pulse" />
-                                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-700">Corporate Solvency Matrix (CapEx Hemorrhage Horizon)</div>
+                                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-900">Corporate Solvency Matrix (CapEx Hemorrhage Horizon)</div>
                                             </div>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-200 relative overflow-hidden">
@@ -651,7 +651,7 @@ export default function APERTool() {
                                 >
                                     <BentoCard title="Industry Benchmarks" icon={TrendingUp}>
                                         <div className="text-center mb-4">
-                                            <div className="text-sm text-zinc-700">How you compare to industry standards</div>
+                                            <div className="text-sm text-zinc-900">How you compare to industry standards</div>
                                         </div>
                                         <div className="h-64 w-full mt-4">
                                             <ResponsiveContainer width="100%" height="100%">
@@ -684,13 +684,13 @@ export default function APERTool() {
                                     <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-8 border border-zinc-200">
                                         <div className="flex items-center gap-3 mb-6">
                                             <div className={`w-3 h-3 rounded-full animate-pulse ${results.aper < 400000 ? 'bg-orange-500' : 'bg-cyan-400'}`} />
-                                            <span className="text-xs font-mono uppercase tracking-widest text-zinc-700">Executive Summary</span>
+                                            <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">Executive Summary</span>
                                         </div>
 
                                         <div className="grid md:grid-cols-2 gap-8">
                                             <div>
-                                                <h3 className="text-xl font-bold text-white mb-4">📊 Board-Ready Insights</h3>
-                                                <ul className="space-y-3 text-zinc-600">
+                                                <h3 className="text-xl font-bold text-zinc-950 mb-4">📊 Board-Ready Insights</h3>
+                                                <ul className="space-y-3 text-zinc-800">
                                                     <li className="flex items-start gap-2">
                                                         <span className="text-yellow-400 mt-1">•</span>
                                                         <span>APER of <strong className="text-zinc-900">{formatMoney(results.aper)}</strong>/engineer is {results.aper >= 500000 ? 'above' : 'below'} the $500K SaaS benchmark.</span>
@@ -748,7 +748,7 @@ export default function APERTool() {
 
                                 {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
                                 <div className="mt-12 pt-12 border-t border-zinc-200 relative z-10 text-left">
-                                    <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                    <h3 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-2">
                                         <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                         Phase 3: APER Headcount Optimization Playbook
                                     </h3>
@@ -762,13 +762,13 @@ export default function APERTool() {
                                                 <span className="text-rose-400 font-bold font-mono">01</span>
                                             </div>
                                             <div className="relative z-10 w-full">
-                                                <h4 className="text-white font-bold mb-2">Freeze Middle-Management Roles</h4>
+                                                <h4 className="text-zinc-950 font-bold mb-2">Freeze Middle-Management Roles</h4>
                                                 <p className="text-zinc-600 text-sm leading-relaxed mb-4">Adding Engineering Managers before unlocking IC leverage only compounds your coordination tax.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                     <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-xs text-zinc-700">Enact a 90-day hiring freeze for all non-IC roles. Direct saved CapEx back into developer tooling.</p>
+                                                    <p className="text-xs text-zinc-900">Enact a 90-day hiring freeze for all non-IC roles. Direct saved CapEx back into developer tooling.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -780,13 +780,13 @@ export default function APERTool() {
                                                 <span className="text-amber-400 font-bold font-mono">02</span>
                                             </div>
                                             <div className="relative z-10 w-full">
-                                                <h4 className="text-white font-bold mb-2">Decouple Core Domain Boundaries</h4>
+                                                <h4 className="text-zinc-950 font-bold mb-2">Decouple Core Domain Boundaries</h4>
                                                 <p className="text-zinc-600 text-sm leading-relaxed mb-4">Cross-team dependencies drive high coordination taxes and slow overall velocity down geometrically.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                     <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-xs text-zinc-700">Mandate strict API contracts between distinct product domains. Decouple release cycles entirely.</p>
+                                                    <p className="text-xs text-zinc-900">Mandate strict API contracts between distinct product domains. Decouple release cycles entirely.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -798,13 +798,13 @@ export default function APERTool() {
                                                 <span className="text-cyan-400 font-bold font-mono">03</span>
                                             </div>
                                             <div className="relative z-10 w-full">
-                                                <h4 className="text-white font-bold mb-2">Automate Repetitive QA</h4>
+                                                <h4 className="text-zinc-950 font-bold mb-2">Automate Repetitive QA</h4>
                                                 <p className="text-zinc-600 text-sm leading-relaxed mb-4">Over 30% of engineering bandwidth is consumed by manual testing blocks.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                     <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-xs text-zinc-700">Configure LLM-based CI/CD steps that auto-generate basic test coverage for every PR merged.</p>
+                                                    <p className="text-xs text-zinc-900">Configure LLM-based CI/CD steps that auto-generate basic test coverage for every PR merged.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -825,7 +825,7 @@ export default function APERTool() {
             {/* AUTHORITY CONTENT: APER */}
             <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
                 <div className="prose prose-zinc prose-lg max-w-none">
-                    <h2 className="text-4xl font-bold text-white mb-8">The Most Dangerous Number in SaaS</h2>
+                    <h2 className="text-4xl font-bold text-zinc-950 mb-8">The Most Dangerous Number in SaaS</h2>
                     <p className="text-zinc-600 leading-relaxed">
                         <strong>Revenue Per Employee (RPE)</strong> is the ultimate truth serum. In High-Leverage SaaS (the &quot;Elite&quot; zone), one engineer generates over $600k in ARR. In Low-Leverage SaaS (the &quot;Danger&quot; zone), one engineer generates less than $200k.
                     </p>
@@ -841,12 +841,12 @@ export default function APERTool() {
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
                         <div>
-                            <h4 className="font-bold text-white mb-2">Small Team (Elite)</h4>
-                            <p className="text-zinc-700">Communication is implicit. Decisions are instant. Architecture is unified. High APER.</p>
+                            <h4 className="font-bold text-zinc-950 mb-2">Small Team (Elite)</h4>
+                            <p className="text-zinc-900">Communication is implicit. Decisions are instant. Architecture is unified. High APER.</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-white mb-2">Large Team (Bloated)</h4>
-                            <p className="text-zinc-700">Communication is scheduled. Decisions require committees. Architecture is fragmented. Low APER.</p>
+                            <h4 className="font-bold text-zinc-950 mb-2">Large Team (Bloated)</h4>
+                            <p className="text-zinc-900">Communication is scheduled. Decisions require committees. Architecture is fragmented. Low APER.</p>
                         </div>
                     </div>
                 </div>

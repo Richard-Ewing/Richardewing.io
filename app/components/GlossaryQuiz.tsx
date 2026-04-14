@@ -39,11 +39,11 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
         const pct = Math.round((score / quiz.length) * 100);
         return (
             <section className="mb-12 card p-8 border-violet-500/20">
-                <h2 className="text-2xl font-grotesk font-bold text-white mb-4">🧠 Quiz Results: {title}</h2>
+                <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">🧠 Quiz Results: {title}</h2>
                 <div className="text-center py-8">
                     <div className="text-5xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400 mb-2">{pct}%</div>
                     <div className="text-lg text-zinc-700 mb-2">{score} / {quiz.length} correct</div>
-                    <div className="text-sm text-zinc-700">
+                    <div className="text-sm text-zinc-900">
                         {pct >= 80 ? '🎉 Excellent! You have a strong understanding.' : pct >= 50 ? '👍 Good start! Review the sections above to strengthen your knowledge.' : '📚 Keep learning! Review the definition and how-to-apply sections above.'}
                     </div>
                 </div>
@@ -56,11 +56,11 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
 
     return (
         <section className="mb-12 card p-8 border-violet-500/20">
-            <h2 className="text-2xl font-grotesk font-bold text-white mb-2">🧠 Test Your Knowledge: {title}</h2>
+            <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-2">🧠 Test Your Knowledge: {title}</h2>
             <div className="text-xs font-mono text-zinc-800 mb-6">Question {currentQ + 1} of {quiz.length}</div>
 
             <div className="mb-6">
-                <h3 className="text-lg font-bold text-white mb-4">{q.question}</h3>
+                <h3 className="text-lg font-bold text-zinc-950 mb-4">{q.question}</h3>
                 <div className="space-y-2">
                     {q.options.map((opt, idx) => {
                         let cls = 'border-zinc-200 hover:border-violet-500/30';
@@ -72,7 +72,7 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
                             <button key={idx} onClick={() => handleSelect(idx)} disabled={selected !== null}
                                 className={`w-full text-left p-4 rounded-xl border transition-colors ${cls} ${selected === null ? 'cursor-pointer' : 'cursor-default'}`}>
                                 <span className="text-xs font-mono text-zinc-800 mr-3">{String.fromCharCode(65 + idx)}</span>
-                                <span className={`text-sm ${selected !== null && idx === q.answer ? 'text-emerald-400' : 'text-zinc-700'}`}>{opt}</span>
+                                <span className={`text-sm ${selected !== null && idx === q.answer ? 'text-emerald-400' : 'text-zinc-900'}`}>{opt}</span>
                             </button>
                         );
                     })}
@@ -80,9 +80,9 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
             </div>
 
             {showExplanation && (
-                <div className="mb-6 p-4 rounded-xl bg-white/[0.02] border border-zinc-200">
+                <div className="mb-6 p-4 rounded-xl bg-zinc-50 border border-zinc-200">
                     <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-2">Explanation</div>
-                    <p className="text-sm text-zinc-600">{q.explanation}</p>
+                    <p className="text-sm text-zinc-800">{q.explanation}</p>
                 </div>
             )}
 

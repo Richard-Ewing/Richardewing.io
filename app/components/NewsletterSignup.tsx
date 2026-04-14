@@ -24,7 +24,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
                 <div className="text-xs text-purple-400 uppercase tracking-wide mb-4 font-mono">
                     Monthly Newsletter
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-grotesk">
+                <h3 className="text-2xl font-bold text-zinc-950 mb-4 font-grotesk">
                     Executive Briefings
                 </h3>
                 <p className="text-zinc-800 mb-6 max-w-md mx-auto">
@@ -48,7 +48,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
     // Default
     return (
         <div className="card p-6">
-            <h3 className="text-lg font-semibold text-white mb-2 font-grotesk">
+            <h3 className="text-lg font-semibold text-zinc-950 mb-2 font-grotesk">
                 Get New Briefs First
             </h3>
             <p className="text-zinc-800 text-sm mb-4">

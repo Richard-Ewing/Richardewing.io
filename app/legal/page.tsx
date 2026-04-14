@@ -13,21 +13,21 @@ export default function LegalPage() {
                 <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                     <Link href="/" className="hover:text-zinc-900 transition-colors">Home</Link>
                     <span>/</span>
-                    <span className="text-zinc-600">Signal</span>
+                    <span className="text-zinc-800">Signal</span>
                     <span>/</span>
-                    <span className="text-white font-bold">Legal</span>
+                    <span className="text-zinc-950 font-bold">Legal</span>
                 </div>
 
                 <ScrollReveal>
                     <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 lg:p-16 border border-zinc-200 bg-surface/50">
                         <span className="font-mono text-titanium text-xs uppercase tracking-[0.3em] mb-4 block">Compliance</span>
-                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-none mb-8">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 tracking-tight leading-none mb-8">
                             Legal &amp;<br />Terms of Use
                         </h1>
 
                         <div className="space-y-8 max-w-4xl">
                             <section>
-                                <h2 className="text-xl sm:text-2xl text-white font-bold mb-4 flex items-center gap-3">
+                                <h2 className="text-xl sm:text-2xl text-zinc-950 font-bold mb-4 flex items-center gap-3">
                                     <span className="w-6 h-0.5 bg-cyan-400" />
                                     Terms of Service
                                 </h2>
@@ -40,7 +40,7 @@ export default function LegalPage() {
                             </section>
 
                             <section>
-                                <h2 className="text-xl sm:text-2xl text-white font-bold mb-4 flex items-center gap-3">
+                                <h2 className="text-xl sm:text-2xl text-zinc-950 font-bold mb-4 flex items-center gap-3">
                                     <span className="w-6 h-0.5 bg-emerald-400" />
                                     Privacy Policy
                                 </h2>
@@ -50,24 +50,24 @@ export default function LegalPage() {
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
                                     <GlowCard className="p-4" glowColor="cyan">
                                         <div className="text-cyan-400 text-lg mb-2">🔒</div>
-                                        <div className="text-white font-bold text-sm mb-1">Secure Storage</div>
+                                        <div className="text-zinc-950 font-bold text-sm mb-1">Secure Storage</div>
                                         <div className="text-zinc-700 text-xs">Email addresses stored securely, never shared</div>
                                     </GlowCard>
                                     <GlowCard className="p-4" glowColor="cobalt">
                                         <div className="text-cobalt text-lg mb-2">🚫</div>
-                                        <div className="text-white font-bold text-sm mb-1">No Tracking</div>
+                                        <div className="text-zinc-950 font-bold text-sm mb-1">No Tracking</div>
                                         <div className="text-zinc-700 text-xs">No cookies beyond essential functionality</div>
                                     </GlowCard>
                                     <GlowCard className="p-4" glowColor="gold">
                                         <div className="text-gold text-lg mb-2">✉️</div>
-                                        <div className="text-white font-bold text-sm mb-1">Data Deletion</div>
+                                        <div className="text-zinc-950 font-bold text-sm mb-1">Data Deletion</div>
                                         <div className="text-zinc-700 text-xs">Request deletion anytime via email</div>
                                     </GlowCard>
                                 </div>
                             </section>
 
                             <section>
-                                <h2 className="text-xl sm:text-2xl text-white font-bold mb-4 flex items-center gap-3">
+                                <h2 className="text-xl sm:text-2xl text-zinc-950 font-bold mb-4 flex items-center gap-3">
                                     <span className="w-6 h-0.5 bg-gold" />
                                     Intellectual Property
                                 </h2>
@@ -76,30 +76,30 @@ export default function LegalPage() {
                                 </p>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                     <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-cyan-500/30 transition">
-                                        <div className="text-white font-bold text-sm">APER™</div>
+                                        <div className="text-zinc-950 font-bold text-sm">APER™</div>
                                         <div className="text-zinc-800 text-[10px]">Team Efficiency Diagnostic</div>
                                     </div>
                                     <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-red-500/30 transition">
-                                        <div className="text-white font-bold text-sm">AUEB™</div>
+                                        <div className="text-zinc-950 font-bold text-sm">AUEB™</div>
                                         <div className="text-zinc-800 text-[10px]">AI Unit Economics Benchmark</div>
                                     </div>
                                     <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-emerald-500/30 transition">
-                                        <div className="text-white font-bold text-sm">PDI™</div>
+                                        <div className="text-zinc-950 font-bold text-sm">PDI™</div>
                                         <div className="text-zinc-800 text-[10px]">Product Debt Index</div>
                                     </div>
                                     <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-purple-500/30 transition">
-                                        <div className="text-white font-bold text-sm">EV-SE™</div>
+                                        <div className="text-zinc-950 font-bold text-sm">EV-SE™</div>
                                         <div className="text-zinc-800 text-[10px]">Valuation Scenario Engine</div>
                                     </div>
                                     <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-cobalt/30 transition">
-                                        <div className="text-white font-bold text-sm">Q-PEP™</div>
+                                        <div className="text-zinc-950 font-bold text-sm">Q-PEP™</div>
                                         <div className="text-zinc-800 text-[10px]">Quarterly Protocol</div>
                                     </div>
                                     <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-gold/30 transition">
                                         <div className="text-zinc-800 text-[10px]">Methodology & Brand</div>
                                     </div>
                                     <div className="p-3 border border-zinc-200 rounded-lg text-center hover:border-emerald-500/30 transition">
-                                        <div className="text-white font-bold text-sm">AUDIT™</div>
+                                        <div className="text-zinc-950 font-bold text-sm">AUDIT™</div>
                                         <div className="text-zinc-800 text-[10px]">Audit Interview Protocol</div>
                                     </div>
                                 </div>
@@ -109,7 +109,7 @@ export default function LegalPage() {
                             </section>
 
                             <section>
-                                <h2 className="text-xl sm:text-2xl text-white font-bold mb-4 flex items-center gap-3">
+                                <h2 className="text-xl sm:text-2xl text-zinc-950 font-bold mb-4 flex items-center gap-3">
                                     <span className="w-6 h-0.5 bg-red-400" />
                                     Advisory Disclaimer
                                 </h2>
@@ -119,7 +119,7 @@ export default function LegalPage() {
                             </section>
 
                             <section>
-                                <h2 className="text-xl sm:text-2xl text-white font-bold mb-4 flex items-center gap-3">
+                                <h2 className="text-xl sm:text-2xl text-zinc-950 font-bold mb-4 flex items-center gap-3">
                                     <span className="w-6 h-0.5 bg-zinc-500" />
                                     Limitation of Liability
                                 </h2>
@@ -129,7 +129,7 @@ export default function LegalPage() {
                             </section>
 
                             <section className="capsule-container p-6 rounded-xl">
-                                <h2 className="text-lg text-white font-bold mb-4">Contact</h2>
+                                <h2 className="text-lg text-zinc-950 font-bold mb-4">Contact</h2>
                                 <p className="text-zinc-600 text-sm mb-4">
                                     For questions regarding these terms:
                                 </p>

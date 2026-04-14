@@ -89,7 +89,7 @@ export const PublishedProfiles = () => {
                             </div>
                             <div className="flex-1">
                                 <div className="flex items-center justify-between mb-1">
-                                    <h3 className="font-semibold text-white group-hover:text-purple-400 transition-colors">
+                                    <h3 className="font-semibold text-zinc-950 group-hover:text-purple-400 transition-colors">
                                         {profile.publication}
                                     </h3>
                                     {profile.featured && (

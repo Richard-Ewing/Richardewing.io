@@ -39,7 +39,7 @@ export default function ForInvestorsPage() {
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
                         <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-4">For Private Equity & Venture Capital</div>
-                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
+                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             Quantify R&D Risk<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Before You Invest</span>
                         </h1>
@@ -48,7 +48,7 @@ export default function ForInvestorsPage() {
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="/advisory" className="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-bold hover:opacity-90 transition-opacity">Request Due Diligence Proposal →</Link>
-                            <Link href="/tools/pdi" className="px-8 py-4 rounded-lg border border-zinc-300 text-white font-bold hover:bg-white/5 transition-colors">Try PDI Calculator Free →</Link>
+                            <Link href="/tools/pdi" className="px-8 py-4 rounded-lg border border-zinc-300 text-zinc-950 font-bold hover:bg-white/5 transition-colors">Try PDI Calculator Free →</Link>
                         </div>
                     </div>
 
@@ -56,21 +56,21 @@ export default function ForInvestorsPage() {
                         {useCases.map((uc, i) => (
                             <div key={i} className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-8">
                                 <span className="text-3xl mb-4 block">{uc.icon}</span>
-                                <h2 className="text-xl font-grotesk font-bold text-white mb-3">{uc.title}</h2>
+                                <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">{uc.title}</h2>
                                 <p className="text-zinc-600 mb-4">{uc.description}</p>
                                 <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">{uc.stats}</span>
                             </div>
                         ))}
                     </div>
 
-                    <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-10 mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-8 text-center">What We Measure</h2>
+                    <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-10 mb-16">
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-8 text-center">What We Measure</h2>
                         <div className="space-y-4">
                             {metrics.map((m, i) => (
                                 <Link key={i} href={m.link} className="flex items-center justify-between p-5 rounded-xl border border-zinc-200 hover:border-cyan-500/30 transition-colors group">
                                     <div>
-                                        <div className="text-white font-bold group-hover:text-cyan-400 transition-colors">{m.name}</div>
-                                        <div className="text-sm text-zinc-700">{m.description}</div>
+                                        <div className="text-zinc-950 font-bold group-hover:text-cyan-400 transition-colors">{m.name}</div>
+                                        <div className="text-sm text-zinc-900">{m.description}</div>
                                     </div>
                                     <span className="text-zinc-800 group-hover:text-cyan-400 transition-colors">→</span>
                                 </Link>
@@ -79,7 +79,7 @@ export default function ForInvestorsPage() {
                     </div>
 
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-10 text-center">
-                        <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Trusted by Top PE Firms</h2>
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Trusted by Top PE Firms</h2>
                         <p className="text-zinc-600 mb-8 max-w-xl mx-auto">R&D Capital Audits have been used in 100+ due diligence engagements. Published frameworks in CIO.com and Built In. Board-ready deliverables.</p>
                         <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Schedule a 30-Minute Briefing →</Link>
                     </div>

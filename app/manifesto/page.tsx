@@ -22,7 +22,7 @@ export default function ManifestoPage() {
                             The Doctrine of Sovereignty
                         </span>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-white mb-12 sm:mb-16 text-center leading-[1.1] tracking-tight">
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-zinc-950 mb-12 sm:mb-16 text-center leading-[1.1] tracking-tight">
                             The Era of the <br />
                             <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-zinc-500 to-zinc-700">"Happy Builder"</span><br />
                             <span className="text-gold">is Over.</span>
@@ -34,18 +34,18 @@ export default function ManifestoPage() {
                             </p>
 
                             <div className="my-10 sm:my-16 relative pl-6 sm:pl-8 border-l-4 border-gold">
-                                <p className="text-2xl sm:text-3xl lg:text-4xl font-serif italic text-white leading-tight m-0">
+                                <p className="text-2xl sm:text-3xl lg:text-4xl font-serif italic text-zinc-950 leading-tight m-0">
                                     "Innovation without Solvency<br />is just Philanthropy."
                                 </p>
                             </div>
 
                             <p className="text-zinc-700 mb-6 text-base sm:text-lg">
-                                The ZIRP era is <span className="text-red-500 font-bold">dead</span>. The Board no longer cares about your "User Journey Maps." They care about <span className="text-white font-bold">Yield</span>. This is not a demotion; it is an evolution. The survivors will be those who learn to speak the language of capital.
+                                The ZIRP era is <span className="text-red-500 font-bold">dead</span>. The Board no longer cares about your "User Journey Maps." They care about <span className="text-zinc-950 font-bold">Yield</span>. This is not a demotion; it is an evolution. The survivors will be those who learn to speak the language of capital.
                             </p>
 
                             <div className="capsule-container rounded-xl p-6 sm:p-8 my-10">
                                 <div className="font-mono text-xs text-gold uppercase tracking-widest mb-4">The New Mandate</div>
-                                <p className="text-white font-bold text-lg sm:text-xl mb-4">
+                                <p className="text-zinc-950 font-bold text-lg sm:text-xl mb-4">
                                     We are not just builders anymore. We are Architects of Capital.
                                 </p>
                                 <p className="text-zinc-600 text-sm sm:text-base">
@@ -54,18 +54,18 @@ export default function ManifestoPage() {
                             </div>
 
                             <p className="text-zinc-700 text-base sm:text-lg">
-                                This is not a condemnation of creativity. It is a call to <span className="text-white font-bold">responsible creativity</span>. Build what matters. Kill what doesn't. Own the numbers. That is the path to sovereignty.
+                                This is not a condemnation of creativity. It is a call to <span className="text-zinc-950 font-bold">responsible creativity</span>. Build what matters. Kill what doesn't. Own the numbers. That is the path to sovereignty.
                             </p>
 
                             <div className="mt-12 sm:mt-20 pt-8 sm:pt-12 border-t border-zinc-200 flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
                                 <div className="relative group">
                                     <div className="absolute -inset-2 bg-gold/30 blur-xl opacity-30 group-hover:opacity-60 transition-opacity rounded-full" />
-                                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-zinc-800 border-2 border-zinc-200 overflow-hidden relative">
+                                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-zinc-200 border-2 border-zinc-200 overflow-hidden relative">
                                         <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" fill className="object-cover grayscale group-hover:grayscale-0 transition duration-500" />
                                     </div>
                                 </div>
                                 <div className="text-center sm:text-left">
-                                    <div className="font-serif text-white text-xl sm:text-2xl italic mb-1">Richard Ewing</div>
+                                    <div className="font-serif text-zinc-950 text-xl sm:text-2xl italic mb-1">Richard Ewing</div>
                                     <div className="font-mono text-xs text-gold tracking-widest uppercase">The Product Economist</div>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@ export default function ManifestoPage() {
                         </ShineBorder>
                         <Link
                             href="/doctrine"
-                            className="inline-block border border-white/30 text-white font-bold uppercase text-sm px-8 py-4 rounded-xl tracking-widest hover:bg-white/5 transition-colors"
+                            className="inline-block border border-white/30 text-zinc-950 font-bold uppercase text-sm px-8 py-4 rounded-xl tracking-widest hover:bg-white/5 transition-colors"
                         >
                             Read The Doctrine
                         </Link>

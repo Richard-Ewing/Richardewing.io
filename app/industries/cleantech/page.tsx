@@ -27,7 +27,7 @@ export default function CleanTechPage() {
                     <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/industries" className="hover:text-cyan-400">Industries</Link><span>/</span><span className="text-emerald-400 font-bold">CleanTech</span>
                     </div>
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         CleanTech{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Product Economics</span>
                     </h1>
@@ -44,7 +44,7 @@ export default function CleanTechPage() {
                     </div>
 
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 text-center">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">CleanTech R&D Audit</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">CleanTech R&D Audit</h2>
                         <p className="text-zinc-700 mb-6">Quantify your grid integration debt, carbon accounting complexity, and IoT infrastructure costs.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-bold hover:opacity-90 transition-opacity">Book CleanTech Audit →</Link>
                     </div>

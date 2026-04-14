@@ -29,12 +29,12 @@ export default function AuditInterviewVsHackerRankPage() {
                         <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-emerald-400 font-bold">Audit Interview vs HackerRank</span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
-                        Audit Interview <span className="text-zinc-700">vs</span>{' '}
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
+                        Audit Interview <span className="text-zinc-900">vs</span>{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">HackerRank</span>
                     </h1>
                     <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
-                        HackerRank tests algorithmic puzzles. GPT-4 passes most HackerRank tests. The Audit Interview tests <span className="text-white font-bold">engineering judgment</span> — the skill AI makes MORE important, not less.
+                        HackerRank tests algorithmic puzzles. GPT-4 passes most HackerRank tests. The Audit Interview tests <span className="text-zinc-950 font-bold">engineering judgment</span> — the skill AI makes MORE important, not less.
                     </p>
 
                     <div className="overflow-x-auto mb-16">
@@ -48,10 +48,10 @@ export default function AuditInterviewVsHackerRankPage() {
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
-                                    <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02]">
+                                    <tr key={i} className="border-b border-zinc-200 hover:bg-zinc-50">
                                         <td className="py-4 px-4 text-sm text-zinc-600 font-bold">{row.dimension}</td>
                                         <td className="py-4 px-4 text-sm text-zinc-900">{row.audit}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-600">{row.hack}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-800">{row.hack}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -59,7 +59,7 @@ export default function AuditInterviewVsHackerRankPage() {
                     </div>
 
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">The Verdict</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-700 mb-6">
                             HackerRank was designed for a world where humans wrote all the code. In the AI age, <strong>the ability to generate correct algorithms is commoditized</strong>. The Audit Interview tests what remains scarce: verification, architecture judgment, economic awareness, and leadership.
                         </p>

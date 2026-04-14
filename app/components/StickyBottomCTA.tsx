@@ -34,12 +34,12 @@ export default function StickyBottomCTA() {
 
     return (
         <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom duration-500">
-            <div className="bg-zinc-900/95 backdrop-blur-md border-t border-zinc-200 shadow-[0_-4px_30px_rgba(0,0,0,0.5)]">
+            <div className="bg-white/95 backdrop-blur-md border-t border-zinc-200 shadow-[0_-4px_30px_rgba(0,0,0,0.5)]">
                 <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3 min-w-0">
                         <span className="hidden sm:inline text-2xl">📊</span>
                         <div className="min-w-0">
-                            <p className="text-white text-sm font-bold truncate">
+                            <p className="text-zinc-950 text-sm font-bold truncate">
                                 Is your R&D budget building assets — or just servicing liabilities?
                             </p>
                             <p className="text-zinc-700 text-xs hidden sm:block">30-min diagnostic call with a Product Economist. $450.</p>

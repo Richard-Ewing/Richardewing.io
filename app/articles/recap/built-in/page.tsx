@@ -56,7 +56,7 @@ export default function BuiltInRecapPage() {
                     <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/articles" className="hover:text-cyan-400">Articles</Link><span>/</span><span className="text-emerald-400 font-bold">Built In</span>
                     </div>
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Published on{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Built In</span>
                     </h1>
@@ -71,7 +71,7 @@ export default function BuiltInRecapPage() {
                                 <div className="flex items-start gap-4">
                                     <span className="text-3xl">{article.icon}</span>
                                     <div className="flex-1">
-                                        <h2 className="text-xl font-grotesk font-bold text-white mb-3">{article.title}</h2>
+                                        <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">{article.title}</h2>
                                         <p className="text-zinc-600 mb-4">{article.description}</p>
                                         <div className="flex flex-wrap gap-2">
                                             {article.topics.map(topic => (
@@ -85,16 +85,16 @@ export default function BuiltInRecapPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-8">
-                            <h2 className="text-xl font-grotesk font-bold text-white mb-4">Related Glossary Terms</h2>
+                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8">
+                            <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
                                 {['aper', 'engineering-productivity', 'maintenance-load', 'feature-velocity', 'cost-per-hire'].map(slug => (
                                     <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>
                         </div>
-                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.02] p-8">
-                            <h2 className="text-xl font-grotesk font-bold text-white mb-4">Related Tools</h2>
+                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8">
+                            <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Tools</h2>
                             <div className="space-y-2">
                                 <Link href="/tools/aper" className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ APER Calculator</Link>
                                 <Link href="/tools/ev-se" className="block text-sm text-zinc-600 hover:text-cyan-400 transition-colors">→ EV-SE Calculator</Link>
@@ -104,7 +104,7 @@ export default function BuiltInRecapPage() {
                     </div>
 
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Work With Richard</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Work With Richard</h2>
                         <p className="text-zinc-700 mb-6">Scale your engineering organization with evidence-based economics. R&amp;D Capital Audits quantify engineering investment returns for boards and investors.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
                     </div>

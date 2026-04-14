@@ -82,7 +82,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
         : `They approach the problem as an operational symptom. They map basic telemetry without calculating the underlying Cost of Doing Nothing (CODN) or Board-level liability that destroys enterprise momentum.`;
 
     return (
-        <div className="bg-white min-h-screen text-white font-sans selection:bg-indigo-500/30">
+        <div className="bg-white min-h-screen text-zinc-950 font-sans selection:bg-indigo-500/30">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -117,7 +117,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                           </div>
                           <div className="mb-8">
                              <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">The Legacy Approach</div>
-                             <h2 className="text-3xl font-bold text-white mb-2">{competitor.name}</h2>
+                             <h2 className="text-3xl font-bold text-zinc-950 mb-2">{competitor.name}</h2>
                           </div>
                           <div className="space-y-6">
                               <div>
@@ -141,7 +141,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                           </div>
                           <div className="mb-8 relative z-10">
                              <div className="text-xs font-mono text-indigo-400 uppercase tracking-widest mb-2">The Deterministic Standard</div>
-                             <h2 className="text-3xl font-bold text-white mb-2">{tool.toolName}</h2>
+                             <h2 className="text-3xl font-bold text-zinc-950 mb-2">{tool.toolName}</h2>
                           </div>
                           <div className="space-y-6 relative z-10">
                               <div>
@@ -162,7 +162,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                 <div className="mb-24">
                     <div className="text-center mb-10">
                         <h3 className="text-3xl font-bold mb-3">Head-To-Head Architecture</h3>
-                        <p className="text-zinc-700">Why {competitor.name} fails in the boardroom.</p>
+                        <p className="text-zinc-900">Why {competitor.name} fails in the boardroom.</p>
                     </div>
                     <div className="bg-white border border-zinc-200 rounded-2xl overflow-hidden">
                         <table className="w-full text-left border-collapse">
@@ -175,22 +175,22 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                             </thead>
                             <tbody className="divide-y divide-zinc-200">
                                 <tr className="hover:bg-white/5 transition-colors">
-                                    <td className="p-6 text-zinc-700">Deterministic Financial Translation (CODN)</td>
+                                    <td className="p-6 text-zinc-900">Deterministic Financial Translation (CODN)</td>
                                     <td className="p-6 text-center text-red-500 font-bold">❌</td>
                                     <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
                                 </tr>
                                 <tr className="hover:bg-white/5 transition-colors">
-                                    <td className="p-6 text-zinc-700">C-Suite Executive PDF Briefing Generation</td>
+                                    <td className="p-6 text-zinc-900">C-Suite Executive PDF Briefing Generation</td>
                                     <td className="p-6 text-center text-red-500 font-bold">❌</td>
                                     <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
                                 </tr>
                                 <tr className="hover:bg-white/5 transition-colors">
-                                    <td className="p-6 text-zinc-700">Sovereign Architecture / Local SLA Mapping</td>
+                                    <td className="p-6 text-zinc-900">Sovereign Architecture / Local SLA Mapping</td>
                                     <td className="p-6 text-center text-red-500 font-bold">❌</td>
                                     <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
                                 </tr>
                                 <tr className="hover:bg-white/5 transition-colors">
-                                    <td className="p-6 text-zinc-700">Surface-Level Telemetry / Industry Generalizations</td>
+                                    <td className="p-6 text-zinc-900">Surface-Level Telemetry / Industry Generalizations</td>
                                     <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
                                     <td className="p-6 text-center text-red-500 font-bold">❌</td>
                                 </tr>

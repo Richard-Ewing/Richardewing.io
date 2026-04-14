@@ -92,7 +92,7 @@ export default async function ArticlePage({ params }: Props) {
                         {article.readTime}
                     </span>
                 </div>
-                <h1 className="text-3xl sm:text-5xl font-grotesk font-bold text-white mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6 leading-tight">
                     {article.title}
                 </h1>
                 <p className="text-xl text-zinc-600 leading-relaxed font-serif italic">
@@ -103,7 +103,7 @@ export default async function ArticlePage({ params }: Props) {
             {/* Content Placeholder / Fallback */}
             <div className="prose prose-zinc prose-lg max-w-none">
                 <div className="p-8 bg-white/5 border border-zinc-200 rounded-2xl mb-12">
-                    <h3 className="text-xl font-bold text-white mb-4 font-grotesk">Full Text Available in Archive</h3>
+                    <h3 className="text-xl font-bold text-zinc-950 mb-4 font-grotesk">Full Text Available in Archive</h3>
                     <p className="text-zinc-600 text-sm mb-6">
                         This article was originally published on <strong>{article.source}</strong>.
                         You can read the full text in its original format or view the local archival copy.
@@ -117,7 +117,7 @@ export default async function ArticlePage({ params }: Props) {
                                 Read Archival Copy
                             </a>
                         )}
-                        <Link href="/briefings" className="px-6 py-3 border border-white/20 hover:border-zinc-2000 text-white font-bold uppercase tracking-widest text-xs rounded-lg transition-colors">
+                        <Link href="/briefings" className="px-6 py-3 border border-white/20 hover:border-zinc-2000 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-lg transition-colors">
                             View All Briefings
                         </Link>
                     </div>

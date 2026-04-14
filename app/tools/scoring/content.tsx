@@ -213,7 +213,7 @@ export default function AuditInterview() {
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
-                <span className="text-white font-bold">Audit Interview</span>
+                <span className="text-zinc-950 font-bold">Audit Interview</span>
             </div>
 
             {!outcome ? (
@@ -226,7 +226,7 @@ export default function AuditInterview() {
                             <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest">Product Economist | Audit Suite</span>
                         </div>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-4">
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
                             Audit <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Interview.</span>
                         </h1>
                         <p className="text-lg sm:text-xl text-zinc-600 mb-8">
@@ -254,12 +254,12 @@ export default function AuditInterview() {
                             {DIMENSIONS.map((dim) => (
                                 <div key={dim.id} className="bg-zinc-50 rounded-xl p-4 sm:p-6 border border-zinc-200">
                                     <div className="flex items-start gap-3 mb-4">
-                                        <div className="p-2 bg-zinc-50 rounded-lg text-zinc-600">
+                                        <div className="p-2 bg-zinc-50 rounded-lg text-zinc-800">
                                             <dim.icon size={20} />
                                         </div>
                                         <div>
                                             <h3 className="text-lg font-bold text-zinc-900">{dim.label}</h3>
-                                            <p className="text-sm text-zinc-700">{dim.desc}</p>
+                                            <p className="text-sm text-zinc-900">{dim.desc}</p>
                                         </div>
                                     </div>
 
@@ -273,7 +273,7 @@ export default function AuditInterview() {
                                                         onClick={() => handleScoreChange(dim.id as keyof Scores, val)}
                                                         className={`flex-1 py-2 text-sm font-mono font-bold rounded-md transition-all ${scores[dim.id as keyof Scores] === val
                                                             ? 'bg-emerald-600 text-zinc-900'
-                                                            : 'hover:bg-white/10 text-zinc-700'
+                                                            : 'hover:bg-white/10 text-zinc-900'
                                                             }`}
                                                     >
                                                         {val}
@@ -325,8 +325,8 @@ export default function AuditInterview() {
                             <div className="flex items-center gap-2 mb-2">
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
-                            <h2 className="text-xl font-bold text-white mb-1">Interview Dashboard</h2>
-                            <p className="text-sm text-zinc-600">Session Complete • Protocol {role.toUpperCase()}-092</p>
+                            <h2 className="text-xl font-bold text-zinc-950 mb-1">Interview Dashboard</h2>
+                            <p className="text-sm text-zinc-800">Session Complete • Protocol {role.toUpperCase()}-092</p>
                         </div>
                         <div className="mt-4 sm:mt-0 flex gap-4">
                             <button onClick={() => setOutcome(null)} className="px-4 py-2 border border-zinc-200 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
@@ -346,8 +346,8 @@ export default function AuditInterview() {
                                     {outcome.verdict}
                                 </div>
                                 <div className="flex items-center gap-3 text-sm font-mono border-t border-zinc-200 pt-4 mt-4 w-full justify-center">
-                                    <span className="text-zinc-600">Total Score:</span>
-                                    <span className="text-white font-bold">{outcome.total}/12</span>
+                                    <span className="text-zinc-800">Total Score:</span>
+                                    <span className="text-zinc-950 font-bold">{outcome.total}/12</span>
                                 </div>
                             </GlowCard>
 
@@ -365,8 +365,8 @@ export default function AuditInterview() {
                                 {DIMENSIONS.map(dim => (
                                     <div key={dim.id} className="flex justify-between items-center">
                                         <div className="flex items-center gap-2">
-                                            <dim.icon size={14} className="text-zinc-600" />
-                                            <span className="text-sm text-zinc-700">{dim.label}</span>
+                                            <dim.icon size={14} className="text-zinc-800" />
+                                            <span className="text-sm text-zinc-900">{dim.label}</span>
                                         </div>
                                         <div className={`text-sm font-mono font-bold ${scores[dim.id as keyof Scores] === 3 ? 'text-emerald-400' :
                                             scores[dim.id as keyof Scores] === 0 ? 'text-red-500' : 'text-zinc-900'

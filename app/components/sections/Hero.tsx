@@ -13,7 +13,7 @@ const Hero = () => {
                 {/* Eyebrow pill */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-200 mb-6">
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <span className="text-sm text-zinc-800">Independent R&D Oversight</span>
+                    <span className="text-sm text-zinc-950">Independent R&D Oversight</span>
                 </div>
 
                 <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6 leading-tight flex flex-col items-center">
@@ -41,19 +41,19 @@ const Hero = () => {
                     <Link href="/advisory" className="card text-left hover:border-purple-300 group block">
                         <div className="text-2xl mb-3">📊</div>
                         <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-purple-600">Get an Audit</h3>
-                        <p className="text-sm text-zinc-700">Diagnose my R&D economics</p>
+                        <p className="text-sm text-zinc-900">Diagnose my R&D economics</p>
                     </Link>
 
                     <Link href="/doctrine" className="card text-left hover:border-indigo-300 group block">
                         <div className="text-2xl mb-3">📖</div>
                         <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-indigo-600">Learn the Framework</h3>
-                        <p className="text-sm text-zinc-700">Read the doctrine</p>
+                        <p className="text-sm text-zinc-900">Read the doctrine</p>
                     </Link>
 
                     <Link href="/exogram" className="card text-left hover:border-purple-300 group block">
                         <div className="text-2xl mb-3">🔧</div>
                         <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-purple-600">See What I Build</h3>
-                        <p className="text-sm text-zinc-700">Explore Exogram</p>
+                        <p className="text-sm text-zinc-900">Explore Exogram</p>
                     </Link>
 
                 </div>

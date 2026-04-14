@@ -29,12 +29,12 @@ export default function AUEBvsAWSPage() {
                         <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-orange-400 font-bold">AUEB vs AWS Cost Explorer</span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
-                        AUEB <span className="text-zinc-700">vs</span>{' '}
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
+                        AUEB <span className="text-zinc-900">vs</span>{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400">AWS Cost Explorer</span>
                     </h1>
                     <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
-                        AWS Cost Explorer tells you how much you spent on cloud services. AUEB tells you <span className="text-white font-bold">whether your AI features will ever make money</span>. Cloud billing ≠ AI economics.
+                        AWS Cost Explorer tells you how much you spent on cloud services. AUEB tells you <span className="text-zinc-950 font-bold">whether your AI features will ever make money</span>. Cloud billing ≠ AI economics.
                     </p>
 
                     <div className="overflow-x-auto mb-16">
@@ -48,10 +48,10 @@ export default function AUEBvsAWSPage() {
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
-                                    <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02]">
+                                    <tr key={i} className="border-b border-zinc-200 hover:bg-zinc-50">
                                         <td className="py-4 px-4 text-sm text-zinc-600 font-bold">{row.dimension}</td>
                                         <td className="py-4 px-4 text-sm text-zinc-900">{row.aueb}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-600">{row.aws}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-800">{row.aws}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -59,7 +59,7 @@ export default function AUEBvsAWSPage() {
                     </div>
 
                     <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-8 mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">The Verdict</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-700 mb-6">
                             <strong>They answer completely different questions.</strong> AWS Cost Explorer is essential for managing cloud bills. AUEB is essential for knowing whether your AI product strategy is viable.
                         </p>

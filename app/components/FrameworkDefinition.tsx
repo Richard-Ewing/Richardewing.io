@@ -60,10 +60,10 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                         <div className="text-xs text-purple-400 uppercase tracking-wide mb-4 font-mono">
                             Framework Definition
                         </div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-grotesk leading-tight">
+                        <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6 font-grotesk leading-tight">
                             {framework.name}
                         </h1>
-                        <p className="text-zinc-800">
+                        <p className="text-zinc-950">
                             Coined by <span className="text-zinc-900">Richard Ewing</span>, Product Economist
                         </p>
                     </div>
@@ -98,7 +98,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                             <h2 className="text-lg font-semibold text-green-400 mb-4 font-grotesk">How to Calculate</h2>
                             <ol className="space-y-4">
                                 {framework.howToCalculate.map((step, i) => (
-                                    <li key={i} className="flex gap-4 text-zinc-800">
+                                    <li key={i} className="flex gap-4 text-zinc-950">
                                         <span className="text-green-500 font-mono font-bold bg-green-900/20 px-2 rounded">{i + 1}</span>
                                         <span>{step}</span>
                                     </li>
@@ -111,11 +111,11 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {/* Related Articles */}
                 <section className="section-sm">
                     <div className="max-w-3xl">
-                        <h2 className="text-lg font-semibold text-white mb-4 font-grotesk border-b border-zinc-200 pb-2">Related Articles</h2>
+                        <h2 className="text-lg font-semibold text-zinc-950 mb-4 font-grotesk border-b border-zinc-200 pb-2">Related Articles</h2>
                         <ul className="space-y-4">
                             {framework.relatedArticles.map((article, i) => (
                                 <li key={i} className="group">
-                                    <a href={article.url} className="text-lg text-white group-hover:text-purple-400 transition-colors font-semibold block mb-1">
+                                    <a href={article.url} className="text-lg text-zinc-950 group-hover:text-purple-400 transition-colors font-semibold block mb-1">
                                         "{article.title}"
                                     </a>
                                     <span className="text-zinc-700 text-sm font-mono"> — {article.publication}, {article.date}</span>

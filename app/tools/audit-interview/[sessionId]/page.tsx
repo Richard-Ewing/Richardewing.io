@@ -296,7 +296,7 @@ export default function SessionCommandCenter() {
                     <div className="flex items-center px-4 py-2 border-b border-[#30363d] bg-[#161b22]">
                         <div className="ml-4 text-zinc-700 text-[10px] uppercase tracking-widest">legacy_code_v1.py</div>
                     </div>
-                    <pre className="p-4 overflow-x-auto text-zinc-700">
+                    <pre className="p-4 overflow-x-auto text-zinc-900">
                         <code>{scenario.code || scenario.chart_data?.code}</code>
                     </pre>
                 </div>
@@ -320,8 +320,8 @@ export default function SessionCommandCenter() {
                             {scenario.chart_data?.items?.map((item: any, i: number) => (
                                 <tr key={i} className="hover:bg-white/5 transition-colors">
                                     <td className="px-4 py-3 font-semibold text-zinc-900">{item.name}</td>
-                                    <td className="px-4 py-3 text-zinc-600">{item.type || item.sponsor}</td>
-                                    <td className="px-4 py-3 text-zinc-600">{item.risk || item.cost}</td>
+                                    <td className="px-4 py-3 text-zinc-800">{item.type || item.sponsor}</td>
+                                    <td className="px-4 py-3 text-zinc-800">{item.risk || item.cost}</td>
                                     <td className={`px-4 py-3 ${item.value?.includes('Unk') ? 'text-red-400' : 'text-emerald-400'}`}>
                                         {item.value || item.roi}
                                     </td>
@@ -341,7 +341,7 @@ export default function SessionCommandCenter() {
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-white text-white flex flex-col items-center justify-center font-mono">
+            <div className="min-h-screen bg-white text-zinc-950 flex flex-col items-center justify-center font-mono">
                 <div className="flex flex-col items-center gap-4">
                     <div className="w-12 h-12 border-2 border-t-transparent border-white/20 rounded-full animate-spin"></div>
                     <span className="text-sm text-zinc-500 uppercase tracking-widest animate-pulse">Initializing Environment...</span>
@@ -350,7 +350,7 @@ export default function SessionCommandCenter() {
         );
     }
 
-    if (!session) return <div className="text-white font-mono p-10">Session Init Failed. Check API.</div>;
+    if (!session) return <div className="text-zinc-950 font-mono p-10">Session Init Failed. Check API.</div>;
 
     const theme = getTheme();
     const ThemeIcon = theme.icon;
@@ -367,7 +367,7 @@ export default function SessionCommandCenter() {
         const statusBg = isHire ? 'bg-emerald-500/10' : 'bg-red-500/10';
 
         return (
-            <div className="min-h-screen bg-white text-white font-sans p-6 overflow-y-auto">
+            <div className="min-h-screen bg-white text-zinc-950 font-sans p-6 overflow-y-auto">
                 <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-1000">
 
 
@@ -383,7 +383,7 @@ export default function SessionCommandCenter() {
                             {analytics.verdict.split(':')[0]}
                         </div>
 
-                        <div className="text-xl sm:text-2xl font-bold font-mono text-white tracking-tight">
+                        <div className="text-xl sm:text-2xl font-bold font-mono text-zinc-950 tracking-tight">
                             {analytics.verdict.split(':')[1]}
                         </div>
                     </div>
@@ -395,8 +395,8 @@ export default function SessionCommandCenter() {
                             <div className="space-y-4">
                                 {analytics.scores.map((s: any, i: number) => (
                                     <div key={i} className="flex justify-between items-center border-b border-zinc-200 pb-2 last:border-0">
-                                        <span className="text-sm font-mono text-zinc-700">{s.phase}</span>
-                                        <span className={`text-xs font-bold ${s.score >= 5 ? 'text-emerald-400' : 'text-zinc-600'} bg-white/5 px-2 py-1 rounded`}>
+                                        <span className="text-sm font-mono text-zinc-900">{s.phase}</span>
+                                        <span className={`text-xs font-bold ${s.score >= 5 ? 'text-emerald-400' : 'text-zinc-800'} bg-white/5 px-2 py-1 rounded`}>
                                             L{s.score}
                                         </span>
                                     </div>
@@ -424,7 +424,7 @@ export default function SessionCommandCenter() {
                         <div className="w-full mt-8">
                             {/* 3-STEP BOARD REMEDIATION PLAYBOOK */}
                             <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border border-zinc-200 bg-zinc-50 text-left">
-                                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                     3-Step Compliance Action Memo
                                 </h3>
@@ -432,58 +432,58 @@ export default function SessionCommandCenter() {
 
                                 <div className="space-y-4">
                                     {/* Step 1 */}
-                                    <div className="bg-zinc-900/50 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="bg-zinc-100 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-200 transition-colors">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                         <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
                                             <span className="text-rose-400 font-bold font-mono">01</span>
                                         </div>
                                         <div className="relative z-10 w-full">
-                                            <h4 className="text-white font-bold mb-2">Hard-Lock the Recruiting Pipeline</h4>
+                                            <h4 className="text-zinc-950 font-bold mb-2">Hard-Lock the Recruiting Pipeline</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">The candidate's score of {analytics.score}/100 indicates systemic misalignment with deterministic engineering and enterprise value creation. Do not proceed.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-700">Issue an immediate "Strong No Hire" disposition to TA. Mandate that all future resumes must pre-filter for specific deterministic systems experience before initial technical screens.</p>
+                                                <p className="text-xs text-zinc-900">Issue an immediate "Strong No Hire" disposition to TA. Mandate that all future resumes must pre-filter for specific deterministic systems experience before initial technical screens.</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* Step 2 */}
-                                    <div className="bg-zinc-900/50 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="bg-zinc-100 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-200 transition-colors">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                         <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
                                             <span className="text-amber-400 font-bold font-mono">02</span>
                                         </div>
                                         <div className="relative z-10 w-full">
-                                            <h4 className="text-white font-bold mb-2">Recalibrate the Interview Panel</h4>
+                                            <h4 className="text-zinc-950 font-bold mb-2">Recalibrate the Interview Panel</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">If this candidate progressed past the initial phone screen, your existing technical interviewers are approving detrimental systemic risks.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-700">Replace the current technical interview loop with standardized, scenario-based architecture design questions focused strictly on margin, risk, and structural determinism.</p>
+                                                <p className="text-xs text-zinc-900">Replace the current technical interview loop with standardized, scenario-based architecture design questions focused strictly on margin, risk, and structural determinism.</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* Step 3 */}
-                                    <div className="bg-zinc-900/50 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-900/80 transition-colors">
+                                    <div className="bg-zinc-100 border border-zinc-200 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-200 transition-colors">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                         <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
                                             <span className="text-cyan-400 font-bold font-mono">03</span>
                                         </div>
                                         <div className="relative z-10 w-full">
-                                            <h4 className="text-white font-bold mb-2">Internal Team Compliance Audit</h4>
+                                            <h4 className="text-zinc-950 font-bold mb-2">Internal Team Compliance Audit</h4>
                                             <p className="text-zinc-600 text-sm leading-relaxed mb-4">The fact that you are actively interviewing for {session.role === 'PRODUCT_VP' ? 'Product Leadership' : 'Engineering Leadership'} indicates potential internal instability. Verify your existing teams aren't committing the same errors.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-200 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-700">Conduct an immediate, unannounced code/architecture review on your most critical internal project. Fire any internal leaders exhibiting the judgment flaws seen in this interview.</p>
+                                                <p className="text-xs text-zinc-900">Conduct an immediate, unannounced code/architecture review on your most critical internal project. Fire any internal leaders exhibiting the judgment flaws seen in this interview.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -515,7 +515,7 @@ export default function SessionCommandCenter() {
     }
 
     return (
-        <div className="min-h-screen bg-white text-white flex flex-col md:flex-row font-sans selection:bg-red-500/30 overflow-hidden">
+        <div className="min-h-screen bg-white text-zinc-950 flex flex-col md:flex-row font-sans selection:bg-red-500/30 overflow-hidden">
             {/* LEFT SIDEBAR - COMMAND */}
             <div className="w-full md:w-80 border-r border-zinc-200 bg-white flex flex-col relative z-20">
                 <div className="p-6 border-b border-zinc-200">
@@ -536,7 +536,7 @@ export default function SessionCommandCenter() {
                     <div className={`text-5xl font-mono font-bold tracking-tighter tabular-nums transition-colors duration-500 ${timeLeft < 60 ? 'text-red-500 animate-pulse' : 'text-zinc-900'}`}>
                         {formatTime(timeLeft)}
                     </div>
-                    <div className="h-1 w-full bg-zinc-900 mt-4 rounded-full overflow-hidden">
+                    <div className="h-1 w-full bg-zinc-100 mt-4 rounded-full overflow-hidden">
                         <style>{`#time-progress { width: ${(timeLeft / 1200) * 100}%; }`}</style>
                         <div
                             id="time-progress"
@@ -560,7 +560,7 @@ export default function SessionCommandCenter() {
                                             'border-zinc-700'
                                         }`}></div>
 
-                                    <h3 className={`text-sm font-bold uppercase tracking-wider ${isCurrent ? 'text-zinc-900' : 'text-zinc-700'}`}>
+                                    <h3 className={`text-sm font-bold uppercase tracking-wider ${isCurrent ? 'text-zinc-900' : 'text-zinc-900'}`}>
                                         {p}
                                     </h3>
                                     <div className="text-[10px] font-mono text-zinc-800 mt-0.5">
@@ -586,7 +586,7 @@ export default function SessionCommandCenter() {
                                     <span className={`w-1.5 h-1.5 rounded-full bg-current animate-pulse`}></span>
                                     Active Protocol
                                 </div>
-                                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight leading-tight">
+                                <h2 className="text-2xl md:text-3xl font-bold text-zinc-950 mb-4 tracking-tight leading-tight">
                                     {scenario ? scenario.prompt.split('\n')[0] : "Loading..."}
                                 </h2>
                                 <div className="text-zinc-600 text-lg leading-relaxed whitespace-pre-wrap bg-white/5 p-6 rounded-lg border border-zinc-200">
@@ -602,7 +602,7 @@ export default function SessionCommandCenter() {
                                             <div className="flex items-center px-4 py-2 border-b border-[#30363d] bg-[#161b22]">
                                                 <div className="text-zinc-700 text-[10px] uppercase tracking-widest">src/processor.py</div>
                                             </div>
-                                            <pre className="p-4 overflow-x-auto text-zinc-700">
+                                            <pre className="p-4 overflow-x-auto text-zinc-900">
                                                 <code>{scenario.code}</code>
                                             </pre>
                                         </div>
@@ -638,7 +638,7 @@ export default function SessionCommandCenter() {
                                     value={rationale}
                                     onChange={(e) => setRationale(e.target.value)}
                                     placeholder="Type your hypothesis, root cause analysis, or defense here..."
-                                    className={`w-full h-40 bg-white border border-zinc-200 rounded-xl p-4 text-white font-mono text-sm focus:${theme.primary.replace('text-', 'border-')} focus:outline-none focus:ring-1 focus:ring-opacity-50 transition-all resize-none placeholder:text-zinc-700`}
+                                    className={`w-full h-40 bg-white border border-zinc-200 rounded-xl p-4 text-zinc-950 font-mono text-sm focus:${theme.primary.replace('text-', 'border-')} focus:outline-none focus:ring-1 focus:ring-opacity-50 transition-all resize-none placeholder:text-zinc-900`}
                                 />
                                 <div className="flex justify-end">
                                     <ShineBorder borderColor={isEng ? "rgba(52, 211, 153, 0.5)" : "rgba(129, 140, 248, 0.5)"} duration={3}>

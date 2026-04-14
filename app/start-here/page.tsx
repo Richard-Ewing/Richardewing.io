@@ -78,7 +78,7 @@ export default function StartHerePage() {
                     </div>
 
                     <div className="mb-16 border-b border-zinc-200 pb-12">
-                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-6">
+                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             New Here?{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">
                                 Start Here.
@@ -113,8 +113,8 @@ export default function StartHerePage() {
                                                 href={link.href}
                                                 className={
                                                     link.primary
-                                                        ? `px-6 py-3 ${colors.primaryBg} rounded-lg text-white font-bold text-sm uppercase tracking-widest hover:opacity-90 transition-opacity`
-                                                        : `px-6 py-3 border ${colors.border} rounded-lg text-white text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition-colors`
+                                                        ? `px-6 py-3 ${colors.primaryBg} rounded-lg text-zinc-950 font-bold text-sm uppercase tracking-widest hover:opacity-90 transition-opacity`
+                                                        : `px-6 py-3 border ${colors.border} rounded-lg text-zinc-950 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition-colors`
                                                 }
                                             >
                                                 {link.label} →
@@ -128,7 +128,7 @@ export default function StartHerePage() {
 
                     {/* About section */}
                     <div className="text-center py-16 border-t border-zinc-200">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Who Built This?</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Who Built This?</h2>
                         <p className="text-zinc-600 mb-6 max-w-xl mx-auto">
                             Richard Ewing is a Product Economist and AI Capital Auditor.
                             He has scaled B2B SaaS to $25M ARR and is the founder of{' '}
@@ -138,13 +138,13 @@ export default function StartHerePage() {
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link
                                 href="/principal"
-                                className="px-6 py-3 border border-zinc-300 rounded-lg text-white text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
+                                className="px-6 py-3 border border-zinc-300 rounded-lg text-zinc-950 text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
                             >
                                 About Richard →
                             </Link>
                             <Link
                                 href="/profiles"
-                                className="px-6 py-3 border border-zinc-300 rounded-lg text-white text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
+                                className="px-6 py-3 border border-zinc-300 rounded-lg text-zinc-950 text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
                             >
                                 Published Work →
                             </Link>

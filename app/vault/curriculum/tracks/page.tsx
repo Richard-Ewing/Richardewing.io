@@ -67,7 +67,7 @@ export default async function CurriculumTracksPage() {
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-purple-500 mt-1">Per Track</div>
                             </div>
                             <div className="text-center bg-indigo-50 px-4 py-2 rounded-lg border border-indigo-200">
-                                <div className="text-xl font-mono font-bold text-indigo-700">$799</div>
+                                <div className="text-xl font-mono font-bold text-indigo-700">$999</div>
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-indigo-500 mt-1">All 23 Tracks</div>
                             </div>
                         </div>
@@ -191,14 +191,14 @@ export default async function CurriculumTracksPage() {
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Start Proving It.</span>
                             </h2>
                             <p className="text-lg text-zinc-800 max-w-2xl mx-auto mb-10 leading-relaxed relative z-10">
-                                Every module teaches you to connect work to business outcomes. $149 per track. $799 for everything. Lifetime access.
+                                Every module teaches you to connect work to business outcomes. $149 per track. $999 for everything. Lifetime access.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
                                 <Link href="/advisory" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-purple-700 text-white hover:bg-purple-600 transition-colors shadow-lg">
                                     Explore Advisory
                                 </Link>
                                 <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-white border border-zinc-200 text-zinc-700 hover:text-zinc-900 hover:border-zinc-300 transition-colors shadow-sm">
-                                    Unlock $799 Full Curriculum
+                                    Unlock $999 Full Curriculum
                                 </Link>
                             </div>
                         </div>

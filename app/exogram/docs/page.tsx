@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ExogramDocsIndex() {
     return (
         <div className="prose prose-zinc max-w-none">
-            <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                 Exogram Documentation
             </h1>
             <p className="text-lg text-zinc-600 mb-12">
@@ -20,8 +20,8 @@ export default function ExogramDocsIndex() {
                 {exogramDocs.slice(0, 4).map(doc => (
                     <a key={doc.slug} href={`/exogram/docs/${doc.slug}`} className="block p-6 rounded-xl border border-zinc-200 bg-white/5 hover:bg-white/10 hover:border-purple-500/30 transition-all group">
                         <span className="text-[10px] font-mono text-purple-400 uppercase tracking-widest">{doc.category}</span>
-                        <h3 className="text-xl font-bold text-white mt-2 mb-2 group-hover:text-purple-300 transition-colors">{doc.title}</h3>
-                        <p className="text-sm text-zinc-600">{doc.description}</p>
+                        <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-purple-300 transition-colors">{doc.title}</h3>
+                        <p className="text-sm text-zinc-800">{doc.description}</p>
                     </a>
                 ))}
             </div>
@@ -32,7 +32,7 @@ export default function ExogramDocsIndex() {
             </p>
             <div className="bg-white/50 p-6 rounded-xl border border-zinc-200 mt-8">
                 <h3 className="text-sm font-mono text-cyan-400 mb-4">QUICK INSTALL</h3>
-                <code className="text-white block bg-white/50 px-4 py-3 rounded-lg border border-zinc-200 font-mono text-sm">
+                <code className="text-zinc-950 block bg-white/50 px-4 py-3 rounded-lg border border-zinc-200 font-mono text-sm">
                     npm install @exogram/sdk
                 </code>
             </div>

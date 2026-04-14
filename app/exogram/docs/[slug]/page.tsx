@@ -30,7 +30,7 @@ export default async function ExogramDocPage({ params }: { params: Promise<{ slu
             <span className="text-[10px] font-mono text-purple-400 uppercase tracking-widest">
                 {doc.category}
             </span>
-            <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-white mt-2 mb-6">
+            <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mt-2 mb-6">
                 {doc.title}
             </h1>
             <p className="text-xl text-zinc-600 mb-12">
@@ -40,14 +40,14 @@ export default async function ExogramDocPage({ params }: { params: Promise<{ slu
             <div className="space-y-8">
                 {doc.content.map((block, i) => {
                     if (block.type === 'h2') {
-                        return <h2 key={i} className="text-2xl font-bold text-white mt-12 mb-4 border-b border-zinc-200 pb-2">{block.text}</h2>;
+                        return <h2 key={i} className="text-2xl font-bold text-zinc-950 mt-12 mb-4 border-b border-zinc-200 pb-2">{block.text}</h2>;
                     }
                     if (block.type === 'p') {
                         return <p key={i} className="text-zinc-700 leading-relaxed">{block.text}</p>;
                     }
                     if (block.type === 'ul' && block.items) {
                         return (
-                            <ul key={i} className="space-y-3 list-disc list-outside ml-5 text-zinc-700">
+                            <ul key={i} className="space-y-3 list-disc list-outside ml-5 text-zinc-900">
                                 {block.items.map((item, j) => (
                                     <li key={j} className="pl-2 marker:text-purple-500">{item}</li>
                                 ))}
@@ -57,10 +57,10 @@ export default async function ExogramDocPage({ params }: { params: Promise<{ slu
                     if (block.type === 'code') {
                         return (
                             <div key={i} className="my-6 rounded-xl overflow-hidden border border-zinc-200 bg-white">
-                                <div className="px-4 py-2 border-b border-zinc-200 bg-white/[0.02]">
-                                    <span className="text-[10px] font-mono text-zinc-700">{block.language || 'text'}</span>
+                                <div className="px-4 py-2 border-b border-zinc-200 bg-zinc-50">
+                                    <span className="text-[10px] font-mono text-zinc-900">{block.language || 'text'}</span>
                                 </div>
-                                <pre className="p-4 overflow-x-auto text-sm font-mono text-zinc-700">
+                                <pre className="p-4 overflow-x-auto text-sm font-mono text-zinc-900">
                                     <code>{block.text}</code>
                                 </pre>
                             </div>

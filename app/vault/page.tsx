@@ -93,7 +93,7 @@ export default async function VaultPage() {
                     
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
                         <div>
-                            <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-white mb-2">
+                            <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mb-2">
                                 Welcome back, <span className="text-cyan-400">{user.firstName || 'Strategist'}</span>
                             </h1>
                             <p className="text-zinc-600 max-w-2xl text-lg">
@@ -117,7 +117,7 @@ export default async function VaultPage() {
                                     </div>
                                     <Database className="w-4 h-4 text-cyan-500/50" />
                                 </div>
-                                <h2 className="text-2xl font-bold text-white mb-2 line-clamp-1">
+                                <h2 className="text-2xl font-bold text-zinc-950 mb-2 line-clamp-1">
                                     {toolRuns.length > 0 
                                         ? `Last Action: ${toolRuns[0].tool_id === 'pdi' ? 'Product Debt Index' : 'Diagnostic'}` 
                                         : 'Awaiting Assessment'}
@@ -152,7 +152,7 @@ export default async function VaultPage() {
                                     </div>
                                     <BookOpen className="w-4 h-4 text-emerald-500/50" />
                                 </div>
-                                <h2 className="text-2xl font-bold text-white mb-2 line-clamp-1">
+                                <h2 className="text-2xl font-bold text-zinc-950 mb-2 line-clamp-1">
                                     {contentProgress.length > 0 
                                         ? `Resume: ${contentProgress[0].content_id}`
                                         : 'Awaiting Mastery'}
@@ -216,7 +216,7 @@ export default async function VaultPage() {
                         {/* CONTINUE LEARNING */}
                         {contentProgress.length > 0 && (
                             <section>
-                                <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                <h2 className="text-xl font-bold text-zinc-950 mb-4 flex items-center gap-2">
                                     <BookOpen className="w-5 h-5 text-emerald-500" />
                                     Continue Learning
                                 </h2>
@@ -235,7 +235,7 @@ export default async function VaultPage() {
                                             return (
                                                 <Link key={progress.id} href={resolvedHref} className="block card p-4 border-emerald-500/20 bg-emerald-500/[0.02] hover:bg-emerald-500/[0.05] hover:border-emerald-500/40 transition-all group">
                                                     <div className="flex items-center justify-between mb-3">
-                                                        <h3 className="text-white font-bold group-hover:text-emerald-400 transition-colors uppercase font-grotesk tracking-widest">{progress.content_id}</h3>
+                                                        <h3 className="text-zinc-950 font-bold group-hover:text-emerald-400 transition-colors uppercase font-grotesk tracking-widest">{progress.content_id}</h3>
                                                         {progress.is_completed ? (
                                                             <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest border border-emerald-500/30 px-2 py-0.5 rounded-full bg-emerald-500/10">Completed</span>
                                                         ) : (
@@ -258,7 +258,7 @@ export default async function VaultPage() {
 
                         {/* UNLOCKED ASSETS */}
                         <section>
-                            <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                            <h2 className="text-xl font-bold text-zinc-950 mb-4 flex items-center gap-2">
                                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
                                 Active Assets
                             </h2>
@@ -267,7 +267,7 @@ export default async function VaultPage() {
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     <div className="card p-6 border-cyan-500/20 bg-cyan-500/[0.02] hover:bg-cyan-500/[0.05] transition-colors group">
                                         <div className="text-2xl mb-3">📘</div>
-                                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Premium Curriculum</h3>
+                                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-400 transition-colors">Premium Curriculum</h3>
                                         <p className="text-sm text-zinc-600 mb-4">Full access to engineering economics playbooks and teardowns.</p>
                                         <Link href="/curriculum" className="inline-flex items-center text-xs font-bold text-cyan-400 uppercase tracking-widest">
                                             Access Curriculum <ChevronRight className="w-3 h-3 ml-1" />
@@ -275,7 +275,7 @@ export default async function VaultPage() {
                                     </div>
                                     <div className="card p-6 border-violet-500/20 bg-violet-500/[0.02] hover:bg-violet-500/[0.05] transition-colors group">
                                         <div className="text-2xl mb-3">🛠️</div>
-                                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">Diagnostic Tools</h3>
+                                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-violet-400 transition-colors">Diagnostic Tools</h3>
                                         <p className="text-sm text-zinc-600 mb-4">Run the Product Debt Index and AI Unit Economics calculators.</p>
                                         <Link href="/tools" className="inline-flex items-center text-xs font-bold text-violet-400 uppercase tracking-widest">
                                             Open Tools <ChevronRight className="w-3 h-3 ml-1" />
@@ -288,7 +288,7 @@ export default async function VaultPage() {
                                             <div className="flex items-center justify-between mb-2">
                                                 <div className="flex items-center gap-3">
                                                     <div className="text-2xl">🏢</div>
-                                                    <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">Enterprise Team Management</h3>
+                                                    <h3 className="text-lg font-bold text-zinc-950 group-hover:text-amber-400 transition-colors">Enterprise Team Management</h3>
                                                 </div>
                                                 <span className="px-3 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-[10px] uppercase font-bold tracking-widest rounded-full">Admin</span>
                                             </div>
@@ -303,7 +303,7 @@ export default async function VaultPage() {
                                 <div className="space-y-4">
                                     <div className="p-8 rounded-2xl border border-zinc-200 bg-white/80 text-center">
                                         <BookOpen className="w-8 h-8 text-zinc-800 mx-auto mb-3" />
-                                        <h3 className="text-lg font-bold text-white mb-2">No Premium Assets Yet</h3>
+                                        <h3 className="text-lg font-bold text-zinc-950 mb-2">No Premium Assets Yet</h3>
                                         <p className="text-sm text-zinc-600 mb-6 max-w-md mx-auto">
                                             Unlock the curriculum, premium playbooks, or advisory resources to see them beautifully organized here.
                                         </p>
@@ -314,7 +314,7 @@ export default async function VaultPage() {
                                     
                                     {/* JOIN A TEAM / CORPORATE SEAT */}
                                     <div className="p-6 rounded-2xl border border-dashed border-zinc-300 bg-white text-center group hover:border-cyan-500/30 transition-colors">
-                                        <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-widest">Enterprise Invite?</h3>
+                                        <h3 className="text-sm font-bold text-zinc-950 mb-2 uppercase tracking-widest">Enterprise Invite?</h3>
                                         <p className="text-xs text-zinc-700 mb-4 max-w-sm mx-auto">
                                             If your CTO or company purchased an enterprise team license, click below to claim your corporate seat.
                                         </p>
@@ -328,7 +328,7 @@ export default async function VaultPage() {
 
                         {/* DIAGNOSTIC HISTORY (Phase 3) */}
                         <section>
-                            <h2 className="text-xl font-bold text-white mb-4 mt-12 flex items-center gap-2">
+                            <h2 className="text-xl font-bold text-zinc-950 mb-4 mt-12 flex items-center gap-2">
                                 <Database className="w-5 h-5 text-cyan-500" />
                                 Diagnostic Artifacts & History
                             </h2>
@@ -362,11 +362,11 @@ export default async function VaultPage() {
                                                     </div>
                                                     <div className="text-right">
                                                         <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Waste Identified</div>
-                                                        <div className="text-xl font-bold text-white font-mono">
+                                                        <div className="text-xl font-bold text-zinc-950 font-mono">
                                                             {formatMoney(run.output_metrics?.financial_waste ?? run.financial_waste ?? 0)}
                                                         </div>
                                                     </div>
-                                                    <Link href={`/tools/${run.tool_id}`} className="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-zinc-200 text-white transition-colors group">
+                                                    <Link href={`/tools/${run.tool_id}`} className="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-zinc-200 text-zinc-950 transition-colors group">
                                                         <Activity className="w-5 h-5 text-zinc-600 group-hover:text-cyan-400" />
                                                     </Link>
                                                 </div>
@@ -376,10 +376,10 @@ export default async function VaultPage() {
                                 </div>
                             ) : (
                                 <div className="p-8 rounded-2xl border border-zinc-200 bg-white/80 flex flex-col items-center text-center">
-                                    <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center mb-4">
-                                        <TrendingUp className="w-5 h-5 text-zinc-700" />
+                                    <div className="w-12 h-12 rounded-full bg-zinc-200 flex items-center justify-center mb-4">
+                                        <TrendingUp className="w-5 h-5 text-zinc-900" />
                                     </div>
-                                    <h3 className="text-lg font-bold text-white mb-2">Longitudinal Tracking Pending</h3>
+                                    <h3 className="text-lg font-bold text-zinc-950 mb-2">Longitudinal Tracking Pending</h3>
                                     <p className="text-sm text-zinc-600 max-w-md mx-auto mb-6">
                                         When you run Enterprise tools like the PDI or AUEB, your quarter-over-quarter snapshots and board-ready PDF reports will be securely saved here.
                                     </p>
@@ -419,7 +419,7 @@ export default async function VaultPage() {
                                         </div>
                                     </div>
                                     <div className="px-5 pb-5 text-[10px] text-zinc-700 text-center leading-tight">
-                                        Derived from <strong className="text-zinc-600">{auebCount + pdiCount}</strong> anonymized enterprise snapshots run through the Vault.
+                                        Derived from <strong className="text-zinc-800">{auebCount + pdiCount}</strong> anonymized enterprise snapshots run through the Vault.
                                     </div>
                                 </div>
                             </div>
@@ -434,7 +434,7 @@ export default async function VaultPage() {
                                     <div className="card p-5 border-zinc-200 bg-white">
                                         <div className="flex items-center justify-between mb-2">
                                             <h3 className="font-bold text-zinc-900">Audits Allocated</h3>
-                                            <span className="text-xs font-mono text-zinc-700">{toolRuns.length}/3 Used</span>
+                                            <span className="text-xs font-mono text-zinc-900">{toolRuns.length}/3 Used</span>
                                         </div>
                                         
                                         {/* Progress Bar */}
@@ -467,19 +467,19 @@ export default async function VaultPage() {
                             {!hasSubscription && (
                                 <div className="card p-5 border-zinc-200 bg-white mb-4 group hover:border-violet-500/30 transition-colors">
                                     <div className="flex items-center justify-between mb-2">
-                                        <h3 className="font-bold text-white group-hover:text-violet-400 transition-colors">Full Library Access</h3>
+                                        <h3 className="font-bold text-zinc-950 group-hover:text-violet-400 transition-colors">Full Library Access</h3>
                                         <Lock className="w-3 h-3 text-zinc-800 group-hover:text-violet-400" />
                                     </div>
                                     <p className="text-xs text-zinc-600 mb-4">Unlock all 218 modules across 18 curriculum tracks. Lifetime access.</p>
                                     <a href="/api/buy/full_curriculum" className="block text-center w-full py-2 bg-zinc-50 hover:bg-violet-600 text-white text-[10px] font-bold uppercase tracking-widest rounded transition-colors">
-                                        Unlock for $799
+                                        Unlock for $999
                                     </a>
                                 </div>
                             )}
 
                             <div className="card p-5 border-zinc-200 bg-white group hover:border-amber-500/30 transition-colors">
                                 <div className="flex items-center justify-between mb-2">
-                                    <h3 className="font-bold text-white group-hover:text-amber-400 transition-colors">Audit Engagement</h3>
+                                    <h3 className="font-bold text-zinc-950 group-hover:text-amber-400 transition-colors">Audit Engagement</h3>
                                     <Lock className="w-3 h-3 text-zinc-800 group-hover:text-amber-400" />
                                 </div>
                                 <p className="text-xs text-zinc-600 mb-4">Book a fractional CTO engagement or deep-dive R&D capital audit.</p>
@@ -495,7 +495,7 @@ export default async function VaultPage() {
                                     </div>
                                     <div>
                                         <div className="text-sm font-bold text-zinc-900">Direct Support</div>
-                                        <div className="text-[10px] text-zinc-700">Principal Access</div>
+                                        <div className="text-[10px] text-zinc-900">Principal Access</div>
                                     </div>
                                 </div>
                                 <p className="text-xs text-zinc-600 mb-3">Need help with an asset or looking for custom advisory?</p>

@@ -76,7 +76,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                             </div>
                             {/* All Access */}
                             <div className="border border-zinc-200 bg-zinc-50 rounded-xl p-5">
-                                <div className="text-3xl font-bold text-zinc-900 mb-1">$799</div>
+                                <div className="text-3xl font-bold text-zinc-900 mb-1">$999</div>
                                 <div className="text-xs text-zinc-700 mb-4">All 23 Tracks · Lifetime</div>
                                 <CheckoutButton 
                                     productId="full_curriculum" 

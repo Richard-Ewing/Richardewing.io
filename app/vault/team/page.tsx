@@ -50,7 +50,7 @@ export default async function TeamAdminPage() {
                         <span className="text-[10px] font-mono text-amber-500 uppercase tracking-widest">Enterprise Administration</span>
                     </div>
                     
-                    <h1 className="text-4xl font-grotesk font-bold text-white mb-4">
+                    <h1 className="text-4xl font-grotesk font-bold text-zinc-950 mb-4">
                         Team License Management
                     </h1>
                     <p className="text-zinc-600 text-lg max-w-2xl">
@@ -61,7 +61,7 @@ export default async function TeamAdminPage() {
                 <div className="grid md:grid-cols-2 gap-8 mb-12">
                     {/* INVITE CODE WIDGET */}
                     <div className="card p-8 border-amber-500/30 bg-gradient-to-br from-amber-500/[0.05] to-transparent">
-                        <h2 className="text-sm font-bold text-white uppercase tracking-widest mb-2">Your Team Invite Code</h2>
+                        <h2 className="text-sm font-bold text-zinc-950 uppercase tracking-widest mb-2">Your Team Invite Code</h2>
                         <p className="text-xs text-zinc-600 mb-6">Colleagues will enter this code inside their Vault to claim a seat.</p>
                         
                         <div className="flex items-center gap-3">
@@ -76,8 +76,8 @@ export default async function TeamAdminPage() {
                     <div className="card p-8 border-zinc-200 bg-white">
                         <div className="flex justify-between items-end mb-6">
                             <div>
-                                <h2 className="text-sm font-bold text-white uppercase tracking-widest mb-1">Seating Capacity</h2>
-                                <p className="text-xs text-zinc-700">Total available invites</p>
+                                <h2 className="text-sm font-bold text-zinc-950 uppercase tracking-widest mb-1">Seating Capacity</h2>
+                                <p className="text-xs text-zinc-900">Total available invites</p>
                             </div>
                             <div className="text-right">
                                 <span className={`text-3xl font-bold font-mono ${isAtCapacity ? 'text-red-400' : 'text-cyan-400'}`}>
@@ -106,8 +106,8 @@ export default async function TeamAdminPage() {
 
                 {/* TEAM LEDGER */}
                 <section>
-                    <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                        <ShieldCheck className="w-5 h-5 text-zinc-600" />
+                    <h2 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-2">
+                        <ShieldCheck className="w-5 h-5 text-zinc-800" />
                         Active Team Members
                     </h2>
                     
@@ -115,7 +115,7 @@ export default async function TeamAdminPage() {
                         <div className="card overflow-hidden border-zinc-200">
                             <table className="w-full text-left border-collapse">
                                 <thead>
-                                    <tr className="bg-white/80 border-b border-zinc-200 text-[10px] uppercase tracking-widest text-zinc-700">
+                                    <tr className="bg-white/80 border-b border-zinc-200 text-[10px] uppercase tracking-widest text-zinc-900">
                                         <th className="p-4 font-bold">Email Address</th>
                                         <th className="p-4 font-bold hidden sm:table-cell">User ID</th>
                                         <th className="p-4 font-bold text-right">Date Claimed</th>
@@ -124,7 +124,7 @@ export default async function TeamAdminPage() {
                                 <tbody>
                                     {claimedMembers.map((member, idx) => (
                                         <tr key={idx} className="border-b border-zinc-900/50 hover:bg-white/40 transition-colors">
-                                            <td className="p-4 flex items-center gap-3 text-white font-medium">
+                                            <td className="p-4 flex items-center gap-3 text-zinc-950 font-medium">
                                                 <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center">
                                                     <span className="text-xs text-cyan-400 font-bold">{member.email.charAt(0).toUpperCase()}</span>
                                                 </div>
@@ -133,7 +133,7 @@ export default async function TeamAdminPage() {
                                             <td className="p-4 hidden sm:table-cell text-xs text-zinc-700 font-mono">
                                                 {member.user_id.substring(0, 14)}...
                                             </td>
-                                            <td className="p-4 text-right text-xs text-zinc-600">
+                                            <td className="p-4 text-right text-xs text-zinc-800">
                                                 {new Date(member.joined_at).toLocaleDateString()}
                                             </td>
                                         </tr>
@@ -144,7 +144,7 @@ export default async function TeamAdminPage() {
                     ) : (
                         <div className="p-12 rounded-2xl border border-dashed border-zinc-200 bg-white/20 text-center">
                             <Users className="w-8 h-8 text-zinc-800 mx-auto mb-3" />
-                            <h3 className="text-lg font-bold text-white mb-2">No Seats Claimed Yet</h3>
+                            <h3 className="text-lg font-bold text-zinc-950 mb-2">No Seats Claimed Yet</h3>
                             <p className="text-sm text-zinc-700 max-w-md mx-auto">
                                 Share your invite code with your team. As soon as they claim a seat, they will appear in this ledger and gain instant Full Curriculum access.
                             </p>

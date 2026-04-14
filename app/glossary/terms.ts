@@ -379,38 +379,6 @@ Richard Ewing's perspective: 'The best AI product I ever led had zero customers'
         relatedTerms: ['north-star-metric', 'rice-framework', 'jobs-to-be-done'],
     },
     {
-        slug: 'rice-framework',
-        title: 'RICE Framework',
-        category: 'Product Management',
-        definition: `RICE is a prioritization framework used by product managers to score and rank product ideas. RICE stands for Reach (how many people will this impact?), Impact (how much will it impact each person?), Confidence (how sure are you about your estimates?), and Effort (how much work is required?).
-
-The RICE score formula is: (Reach × Impact × Confidence) ÷ Effort. Higher scores indicate higher-priority initiatives.
-
-RICE was developed by Intercom and has become one of the most widely used product prioritization frameworks. Its strength is forcing product managers to think quantitatively about each factor rather than relying on gut feeling or stakeholder politics.`,
-        whyItMatters: `Product prioritization is the most impactful skill a PM can develop. RICE provides a systematic, defensible framework for deciding what to build next. It removes politics from prioritization.`,
-        faqs: [
-            { question: 'What is the RICE framework?', answer: 'RICE is a product prioritization method that scores ideas based on Reach, Impact, Confidence, and Effort. Score = (R × I × C) ÷ E.' },
-            { question: 'When should you use RICE?', answer: 'Use RICE when you have multiple competing product ideas and need a systematic way to prioritize. It works best for feature-level decisions at growth-stage companies.' }
-        ],
-        relatedTerms: ['product-market-fit', 'north-star-metric', 'jobs-to-be-done', 'kano-model'],
-    },
-    {
-        slug: 'north-star-metric',
-        title: 'North Star Metric',
-        category: 'Product Management',
-        definition: `A North Star Metric is the single metric that best captures the core value your product delivers to customers. It serves as the primary measure of product success and aligns the entire organization around one measurable outcome.
-
-Examples: Airbnb's North Star Metric is 'nights booked.' Spotify's is 'time spent listening.' Slack's is 'daily active teams.' Each captures the core value exchange between product and customer.
-
-A good North Star Metric has three properties: it reflects customer value (not just business value), it's a leading indicator of revenue growth, and it's actionable (teams can influence it).`,
-        whyItMatters: `Without a North Star Metric, teams optimize for different things — engineering optimizes for code quality, marketing for leads, sales for deals. The North Star aligns everyone around customer value delivery.`,
-        faqs: [
-            { question: 'What is a North Star Metric?', answer: 'A North Star Metric is the single most important metric that captures the core value your product delivers. It aligns the entire organization around one measurable outcome.' },
-            { question: 'How do you choose a North Star Metric?', answer: 'Choose a metric that reflects customer value, leads to revenue growth, and is actionable. It should capture the \'aha moment\' when customers get real value from your product.' }
-        ],
-        relatedTerms: ['product-market-fit', 'rice-framework', 'jobs-to-be-done'],
-    },
-    {
         slug: 'jobs-to-be-done',
         title: 'Jobs To Be Done (JTBD)',
         category: 'Product Management',
@@ -425,26 +393,6 @@ JTBD interviews reveal the functional, emotional, and social dimensions of custo
             { question: 'How do you do JTBD research?', answer: 'Conduct \'switching interviews\' — interview customers who recently switched to or from your product. Ask about the timeline of their decision, what triggered the switch, and what job they needed done.' }
         ],
         relatedTerms: ['product-market-fit', 'rice-framework', 'north-star-metric', 'kano-model'],
-    },
-    {
-        slug: 'kano-model',
-        title: 'Kano Model',
-        category: 'Product Management',
-        definition: `The Kano Model is a product development framework that categorizes features based on how they affect customer satisfaction. Developed by Professor Noriaki Kano, the model identifies five categories of features:
-
-1. **Must-Be (Basic)**: Features customers expect. Their absence causes dissatisfaction, but their presence doesn't increase satisfaction. Example: a login page.
-2. **One-Dimensional (Performance)**: Features where satisfaction scales linearly with how well they're implemented. Example: page load speed.
-3. **Attractive (Delighters)**: Features customers don't expect but love when they find them. Their absence doesn't cause dissatisfaction. Example: AI-powered suggestions.
-4. **Indifferent**: Features customers don't care about either way.
-5. **Reverse**: Features that some customers actively dislike.
-
-The Kano Model helps product teams allocate resources optimally: ensure Must-Be features work flawlessly, invest in Performance features that differentiate, and strategically add Delighters.`,
-        whyItMatters: `The Kano Model prevents the common mistake of investing equally in all features. Not all features deliver equal satisfaction. Knowing which category a feature falls into changes how you prioritize and resource it.`,
-        faqs: [
-            { question: 'What is the Kano Model?', answer: 'The Kano Model categorizes product features into five types based on how they affect customer satisfaction: Must-Be, Performance, Attractive (Delighters), Indifferent, and Reverse.' },
-            { question: 'How do you use the Kano Model?', answer: 'Survey customers with paired questions for each feature: \'How would you feel if this feature existed?\' and \'How would you feel if it didn\'t?\' The combination of answers determines the category.' }
-        ],
-        relatedTerms: ['rice-framework', 'product-market-fit', 'jobs-to-be-done'],
     },
     {
         slug: 'engineering-productivity',
@@ -511,22 +459,6 @@ CI/CD is the foundation of modern software delivery. Teams with mature CI/CD pip
             { question: 'What tools are used for CI/CD?', answer: 'Popular CI/CD tools include GitHub Actions, GitLab CI, Jenkins, CircleCI, and Vercel (for frontend). Infrastructure tools include Terraform, Pulumi, and AWS CDK.' }
         ],
         relatedTerms: ['devops', 'dora-metrics', 'engineering-productivity'],
-    },
-    {
-        slug: 'fractional-cto',
-        title: 'Fractional CTO',
-        category: 'Leadership & Governance',
-        definition: `A Fractional CTO is an experienced technology executive who provides part-time CTO services to companies that need senior technology leadership but can't justify or afford a full-time CTO. Fractional CTOs typically work 10-20 hours per week across multiple clients.
-
-Fractional CTOs are common for: early-stage startups with non-technical founders, growth-stage companies between CTO hires, PE- or VC-backed companies needing technology oversight, and organizations undergoing digital transformation.
-
-A fractional CTO provides strategic technology direction, architecture decisions, engineering team assessment, vendor evaluation, due diligence support, and board-level technology reporting.`,
-        whyItMatters: `Many companies need CTO-level thinking but not a full-time CTO. A fractional CTO provides senior technology leadership at a fraction of the cost — typically $5K-15K/month vs. $300K-500K+ for a full-time CTO.`,
-        faqs: [
-            { question: 'What is a fractional CTO?', answer: 'A fractional CTO is a part-time technology executive who provides strategic technology leadership to companies that need senior tech guidance but don\'t need or can\'t afford a full-time CTO.' },
-            { question: 'How much does a fractional CTO cost?', answer: 'Typically $5K-15K per month for 10-20 hours per week. This compares to $300K-500K+ annual salary for a full-time CTO.' }
-        ],
-        relatedTerms: ['digital-transformation', 'ai-governance'],
     },
     {
         slug: 'digital-transformation',
@@ -689,93 +621,6 @@ The 4 Laws of Probabilistic Software Development (coined by Richard Ewing) addre
         relatedTools: [{ name: 'Audit Interview Tool', url: '/tools/audit-interview' }],
     },
     {
-        slug: 'monolith-to-microservices',
-        title: 'Monolith to Microservices',
-        category: 'Technical Debt & Code Quality',
-        definition: `Monolith to microservices migration is the process of breaking a single, large application (monolith) into smaller, independent services (microservices) that communicate over APIs. It's one of the most common — and most dangerous — architectural transformations.
-
-The promise: independent deployment, technology flexibility, team autonomy, and better scalability. The reality: distributed systems are inherently more complex. Many organizations that migrate to microservices end up with a 'distributed monolith' — all the complexity of microservices with none of the benefits.
-
-The decision to migrate should be driven by economics, not fashion. If your monolith's maintenance burden is approaching the Technical Insolvency Date, migration may be warranted. If your monolith is working and your team is productive, the migration cost may not be justified.`,
-        whyItMatters: `Monolith-to-microservices migrations are among the highest-risk, highest-cost engineering decisions. A failed migration can consume years of effort and leave the organization worse off.`,
-        faqs: [
-            { question: 'Should I migrate from monolith to microservices?', answer: 'Only if you have a clear economic reason. If your monolith is blocking team productivity or approaching the Technical Insolvency Date, migration may be warranted. If it\'s working, don\'t fix it.' },
-            { question: 'How long does a monolith to microservices migration take?', answer: 'Typically 1-3 years for a medium-sized application. Many migrations are never fully completed. The strangler fig pattern — gradually replacing pieces of the monolith — is the safest approach.' }
-        ],
-        relatedTerms: ['technical-debt', 'legacy-code', 'refactoring', 'technical-insolvency-date'],
-        relatedTools: [{ name: 'Product Debt Index (PDI)', url: '/tools/pdi' }],
-    },
-    {
-        slug: 'ai-volatility-tax',
-        title: 'AI Volatility Tax',
-        category: 'Richard Ewing Frameworks',
-        definition: `The AI Volatility Tax is a framework developed by Richard Ewing (expanding on concepts from Steve Oppenheim) that measures the hidden labor cost of verifying probabilistic AI outputs. Unlike traditional deterministic software where QA is a one-time cost, probabilistic AI requires continuous human-in-the-loop verification on every output.
-
-This ongoing "tax" occurs because you can never fully trust an LLM. As a result, the cost structure of an AI feature isn't just the API call; it includes the human labor required to verify, correct, and manage the output of the model in production.
-
-If an AI writes code 10x faster but requires a senior engineer to spend hours validating that the code isn't hallucinating a vulnerable package, the AI Volatility Tax is the cost of that engineer's time.`,
-        whyItMatters: `Most companies budget for the compute cost of AI but ignore the Volatility Tax. If the labor cost to verify the output exceeds the labor cost saved by generating it, the AI feature has negative unit economics and will burn cash at scale.`,
-        faqs: [
-            { question: 'What is the AI Volatility Tax?', answer: 'The ongoing human labor cost required to verify, monitor, and correct the unpredictable outputs of probabilistic AI models.' },
-            { question: 'How do you reduce the Volatility Tax?', answer: 'Through strict Execution Layers, deterministic guardrails, Confidence Scoring, and using AI for low-risk ideation rather than high-risk execution.' }
-        ],
-        relatedTerms: ['cost-of-predictivity', 'ai-response-drift', 'execution-layer'],
-        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }, { name: 'Volatility Tax Auditor (VTA)', url: '/tools/vta' }],
-    },
-    {
-        slug: 'ai-response-drift',
-        title: 'AI Response Drift (LLM Inconsistency)',
-        category: 'AI & Machine Learning',
-        definition: `AI Response Drift (or LLM Inconsistency) is the phenomenon where a language model produces different, conflicting, or degraded answers to the exact same prompt over time or across repeated executions. 
-
-Unlike traditional software APIs which are deterministic (the same input always yields the exact same output), LLMs are probabilistic. They sample from a distribution of possible next tokens. Even with temperature set to 0, underlying model updates, routing changes, or slight context shifts can cause the model's behavior to drift.
-
-Richard Ewing identifies Response Drift as the primary barrier to autonomous agentic orchestration. If the underlying intelligence is unstable, any autonomous workflow built on top of it becomes brittle and economically unviable.`,
-        whyItMatters: `You cannot build reliable, deterministic enterprise workflows on top of a foundation that drifts. If an LLM suddenly changes how it parses a JSON schema, it will silently break downstream integrations.`,
-        faqs: [
-            { question: 'What causes AI Response Drift?', answer: 'Silent model updates by API providers (like OpenAI or Anthropic), changes in quantization, or differences in GPU floating-point arithmetic across data centers.' },
-            { question: 'Can you fix LLM Inconsistency?', answer: 'You cannot fix it at the model level. You must build deterministic Execution Layers around the LLM to catch, validate, and retry non-compliant outputs.' }
-        ],
-        relatedTerms: ['execution-layer', 'ai-volatility-tax', 'agentic-ai'],
-        relatedTools: [{ name: 'Schema Integrity Validator', url: '/tools/schema-integrity' }],
-    },
-    {
-        slug: 'execution-layer',
-        title: 'Execution Layer',
-        category: 'Architecture Patterns',
-        definition: `The Execution Layer is the deterministic boundary within a software application that translates probabilistic AI intent into safe, verifiable, and predictable system actions.
-
-In Richard Ewing's doctrine, the "Brain" (the LLM) should be strictly separated from the "Hands" (the Execution Layer). The AI is allowed to reason, plan, and format data, but it is explicitly forbidden from executing direct changes to databases, controlling systems, or taking irreversible actions.
-
-Instead, the AI passes structured intent (like a validated JSON payload) to the Execution Layer. The Execution Layer is written in deterministic, testable code (like TypeScript or Python) and enforces strict business logic, input validation, and access controls before performing the requested action.`,
-        whyItMatters: `Failing to implement a robust Execution Layer is how companies end up with prompt injection vulnerabilities, data corruption, and catastrophic AI failures. The Execution Layer is the firewall between an unpredictable LLM and a mission-critical database.`,
-        faqs: [
-            { question: 'What is the Execution Layer?', answer: 'The strict, deterministic boundary in your code that validates and executes the intent of an AI model, ensuring the AI never has direct control over critical systems.' },
-            { question: 'Why separate the brain and the hands?', answer: 'Because AI reasoning is probabilistic and prone to hallucination. Execution must be deterministic and guaranteed by traditional, testable code.' }
-        ],
-        relatedTerms: ['agentic-ai', 'ai-response-drift', 'prompt-engineering'],
-        relatedTools: [{ name: 'Command & Control Simulator', url: '/tools/prompt-injection-sandbox' }],
-    },
-    {
-        slug: 'evergreen-ratio',
-        title: 'Evergreen Ratio',
-        category: 'SaaS Metrics & Finance',
-        definition: `The Evergreen Ratio is a financial metric coined by Richard Ewing that measures the profitability of AI workflows. It compares the number of times an AI-generated output is reused (cached/served deterministically) against the number of times it must be freshly generated (inferred probabilistically).
-
-The formula: [Cached Hits] / [Live Inferences] = Evergreen Ratio.
-
-If every user query requires a live LLM inference, the Evergreen Ratio is 0, and your profit margins will collapse at scale due to the Cost of Predictivity. If an AI generates a report once and 100 users read it from the cache, the ratio is 100, and the feature enjoys SaaS-like 80%+ gross margins.
-
-The Evergreen Ratio proves that the most profitable AI companies are actually the ones that use the least AI in production.`,
-        whyItMatters: `Most AI products have negative unit economics because they rely on 100% live inference. Optimizing your Evergreen Ratio is the only way to scale an AI product without scaling your API costs linearly alongside it.`,
-        faqs: [
-            { question: 'What is the Evergreen Ratio?', answer: 'A metric that measures how often you reuse cached AI outputs vs. generating new ones. High Evergreen Ratio = High Profit Margins.' },
-            { question: 'How do you improve your Evergreen Ratio?', answer: 'Pre-compute common answers, cache embeddings, and build product experiences that guide users toward shared insights rather than purely bespoke generation.' }
-        ],
-        relatedTerms: ['cost-of-predictivity', 'ai-volatility-tax', 'unit-economics'],
-        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
-    },
-    {
         slug: 'agentic-process-automation',
         title: 'Agentic Process Automation (APA)',
         category: 'AI & Machine Learning',
@@ -790,23 +635,6 @@ However, APA introduces massive governance risks. Because the agents interpret d
             { question: 'How is APA different from RPA?', answer: 'RPA requires structured data and static workflows. APA can handle unstructured data, unexpected variations, and multi-step reasoning.' }
         ],
         relatedTerms: ['agentic-ai', 'execution-layer', 'ai-volatility-tax'],
-    },
-    {
-        slug: 'sovereign-ai-substrate',
-        title: 'Sovereign AI Substrate',
-        category: 'Cloud & Infrastructure',
-        definition: `A Sovereign AI Substrate refers to the localized, deeply-controlled deployment of generative AI models (typically open-weights models like Llama, Mistral, or DeepSeek) running entirely on untethered hardware or private bare-metal infrastructure.
-
-In 2026, massive enterprises are executing "Cloud Repatriation for AI." Sending proprietary intellectual property, trade secrets, and PII to public cloud providers (OpenAI, Anthropic) introduces unacceptable data leakage risks and catastrophic margin compression due to variable API token costs. 
-
-A Sovereign AI Substrate allows an organization to own its intelligence layer outright. The models run locally, the data never leaves the firewall, and the Cost of Predictivity fundamentally shifts from variable OpEx to fixed CapEx.`,
-        whyItMatters: `Owning the AI intelligence layer is becoming a matter of strategic survival. Organizations that rent their intelligence via public cloud APIs suffer margin collapse. Organizations that build Sovereign AI Substrates achieve structural competitive advantage.`,
-        faqs: [
-            { question: 'What is a Sovereign AI Substrate?', answer: 'A private, localized deployment of AI models running on owned or deeply-controlled hardware, ensuring data never touches public cloud APIs.' },
-            { question: 'Why are companies repatriating AI from the cloud?', answer: 'To protect intellectual property, ensure regulatory compliance, and collapse the variable token costs associated with public AI APIs.' }
-        ],
-        relatedTerms: ['cost-of-predictivity', 'ai-governance'],
-        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
     },
     {
         slug: 'model-collapse',
@@ -824,61 +652,7 @@ In 2026, Model Collapse has created a massive premium on verified, purely human 
         ],
         relatedTerms: ['ai-hallucination', 'ai-response-drift'],
     },
-    {
-        slug: 'thermodynamic-compute-cost',
-        title: 'Thermodynamic Compute Cost',
-        category: 'SaaS Metrics & Finance',
-        definition: `Thermodynamic Compute Cost is the baseline energy expenditure required to execute an AI inference operation, irrespective of cloud provider markup. It represents the absolute physical floor of AI unit economics.
 
-While SaaS logic scales at near-zero marginal cost, AI inference scales linearly with energy consumption (GPU utilization, cooling, data center wattage). In 2026, the scarcity of power grid capacity—and the resulting shift toward dedicated nuclear/SMR-powered AI data centers—dictates capability.
-
-For enterprise CTOs, calculating Thermodynamic Compute Cost is required to determine whether an AI feature will ever be economically viable at scale. If the energy cost of generating a summary exceeds the business value of that summary, the feature is fundamentally unsustainable.`,
-        whyItMatters: `Thermodynamics, not software engineering, is the ultimate bottleneck of the AI revolution. You cannot optimize your way out of the basic physics required to run a massive tensor calculation. Understanding these costs dictates AI pricing strategy.`,
-        faqs: [
-            { question: 'What is Thermodynamic Compute Cost?', answer: 'The raw, physical energy required to perform an AI computation. It represents the absolute minimum cost floor for AI before any vendor markup.' },
-            { question: 'Why does AI energy economics matter to SaaS?', answer: 'Because unlike traditional software where adding 100,000 users costs almost nothing, adding 100,000 AI users requires linear, scaling energy expenditure.' }
-        ],
-        relatedTerms: ['cost-of-predictivity', 'unit-economics'],
-        relatedTools: [{ name: 'Enterprise Value Scenario Engine (EV-SE)', url: '/tools/ev-se' }],
-    },
-    {
-        slug: 'system-2-reasoning-tokens',
-        title: 'System 2 Reasoning Tokens',
-        category: 'architecture',
-        definition: 'In conversational AI, System 2 reasoning refers to the deliberate, multi-step logical deduction processes (like "Chain of Thought" or "Tree of Thoughts") executed by an LLM prior to emitting the final response. It introduces "Test-Time Compute" by consuming tokens invisibly to strictly verify logic.',
-        whyItMatters: 'System 2 reasoning eliminates the fast, intuitive, and often hallucinatory guesses of baseline models. However, it radically alters the API economic model by secretly burning "Reasoning Tokens" (Test-Time Compute) simply to think, turning simple prompts into expensive computational tasks. Executives must govern these tokens vigorously to avoid margin collapse.',
-        faqs: [
-            {
-                question: 'Why do System 2 tokens cost more?',
-                answer: 'Because the LLM generates a massive internal monologue to self-correct its logic before returning the final visible answer to the user. You pay for the entire hidden thought process.'
-            },
-            {
-                question: 'How do we control these costs?',
-                answer: 'Implement strict Model Routing. Use System 1 (fast/cheap) models for parsing and formatting, and trigger System 2 models only for high-stakes mathematical or architectural deductions.'
-            }
-        ],
-        relatedTerms: ['test-time-compute', 'model-routing', 'ai-inference'],
-        relatedTools: [{ name: 'Agentic FinOps Emulator', url: '/tools/agent-router' }],
-    },
-    {
-        slug: 'ai-dspm',
-        title: 'AI Data Security Posture Management (DSPM)',
-        category: 'security',
-        definition: 'A specialized security architecture designed to autonomously discover, map, and protect unstructured data stores and vector databases from being inadvertently ingested by Large Language Models or shadow agents.',
-        whyItMatters: 'Traditional IAM cannot prevent an AI agent from scraping a publicly accessible S3 bucket containing PII, summarizing it, and surfacing it to an unauthorized user in a chat interface. AI-DSPM systems algorithmically classify data risk before it hits the embedding pipeline, ensuring Sovereign AI Substrates do not become catastrophic liability engines.',
-        faqs: [
-            {
-                question: 'How does AI-DSPM differ from traditional cloud security?',
-                answer: 'Traditional tools look at network boundaries. DSPM looks directly at the content payload to flag PII, secrets, or IP before an LLM can memorize it.'
-            },
-            {
-                question: 'What is the penalty for ignoring this?',
-                answer: 'In the EU, regulatory fines for un-governed biometric or localized PII leaking into generative model outputs can reach 4% of global revenue.'
-            }
-        ],
-        relatedTerms: ['shadow-ai', 'agentic-governance', 'sovereign-ai-substrate'],
-        relatedTools: [{ name: 'Shadow AI Endpoint Risk Scanner', url: '/tools/shadow-ai' }],
-    },
     {
         slug: 'hallucination-entropy',
         title: 'Hallucination Entropy',

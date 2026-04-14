@@ -52,20 +52,20 @@ export default function AuditInterviewFaqPage() {
                         <Link href="/tools/audit-interview" className="hover:text-cyan-400">Audit Interview</Link><span>/</span>
                         <span className="text-cyan-400 font-bold">FAQ</span>
                     </div>
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Audit Interview{' '}<span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-400">FAQ</span>
                     </h1>
                     <p className="text-lg text-zinc-600 mb-12 max-w-2xl">Everything you need to know about AI-powered engineering assessment that tests judgment, not just syntax.</p>
                     <div className="space-y-6 mb-16">
                         {faqs.map((faq, i) => (
                             <div key={i} className={`rounded-2xl border p-8 ${colorStyles[faq.color]}`}>
-                                <h2 className="text-xl font-grotesk font-bold text-white mb-4">{faq.q}</h2>
+                                <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">{faq.q}</h2>
                                 <p className="text-zinc-700 leading-relaxed">{faq.a}</p>
                             </div>
                         ))}
                     </div>
                     <div className="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-8 mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Try the Audit Interview</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try the Audit Interview</h2>
                         <p className="text-zinc-700 mb-6">Test your engineering judgment with our AI-powered assessment. Free to try.</p>
                         <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-pink-500 text-white font-bold hover:opacity-90 transition-opacity">Start Audit Interview &rarr;</Link>
                     </div>

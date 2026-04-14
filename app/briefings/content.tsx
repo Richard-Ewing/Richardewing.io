@@ -23,7 +23,7 @@ const BriefCard = ({ number, title, subtitle, href, isNew, date }: BriefCardProp
                 </div>
             )}
             <div className="text-xs text-zinc-700 mb-3 font-mono uppercase tracking-widest">{number} · {date}</div>
-            <h3 className="font-semibold text-lg text-white mb-2 group-hover:text-purple-400 transition-colors font-grotesk">
+            <h3 className="font-semibold text-lg text-zinc-950 mb-2 group-hover:text-purple-400 transition-colors font-grotesk">
                 {title}
             </h3>
             <p className="text-zinc-800 text-sm leading-relaxed">
@@ -52,7 +52,7 @@ export default function BriefingsPage() {
 
             {/* Breadcrumb */}
             <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-gray-600 uppercase tracking-widest">
-                <span>Signal</span><span>/</span><span className="text-white font-bold">Briefings</span>
+                <span>Signal</span><span>/</span><span className="text-zinc-950 font-bold">Briefings</span>
             </div>
 
             <ScrollReveal>
@@ -60,7 +60,7 @@ export default function BriefingsPage() {
                     <div className="text-xs text-purple-400 uppercase tracking-wide mb-4 font-mono">
                         Monthly Newsletter
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-grotesk">
+                    <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6 font-grotesk">
                         Executive<br />
                         <span className="text-purple-400">Briefings.</span>
                     </h1>
@@ -82,7 +82,7 @@ export default function BriefingsPage() {
 
             {/* Brief Cards - Grid */}
             <ScrollReveal delay={100}>
-                <h2 className="text-2xl font-bold text-white mb-8 font-grotesk">Recent Briefs</h2>
+                <h2 className="text-2xl font-bold text-zinc-950 mb-8 font-grotesk">Recent Briefs</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-20">
                     {briefs.map((brief, i) => (
                         <BriefCard key={i} {...brief} />
@@ -97,7 +97,7 @@ export default function BriefingsPage() {
                         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                             <div>
                                 <div className="text-xs text-purple-400 uppercase mb-2 font-mono">Interactive Tool</div>
-                                <h3 className="text-2xl font-bold text-white mb-2 font-grotesk">
+                                <h3 className="text-2xl font-bold text-zinc-950 mb-2 font-grotesk">
                                     AI Unit Economics Benchmark™
                                 </h3>
                                 <p className="text-zinc-800 text-sm max-w-md">

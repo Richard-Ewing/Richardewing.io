@@ -28,12 +28,12 @@ export default function CopilotROIvsGitClearPage() {
                         <Link href="/compare" className="hover:text-fuchsia-400">Compare</Link><span>/</span><span className="text-fuchsia-400 font-bold">Copilot ROI vs GitClear</span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-white mb-6">
-                        Copilot ROI Forecaster <span className="text-zinc-700">vs</span>{' '}
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
+                        Copilot ROI Forecaster <span className="text-zinc-900">vs</span>{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-cyan-400">GitClear</span>
                     </h1>
                     <p className="text-lg text-zinc-600 mb-12 max-w-2xl">
-                        GitClear and Jellyfish track code output volume to prove your AI licenses are working. Exogram calculates the <span className="text-white font-bold">exact EBITDA destruction</span> caused by downstream Vibe Coding Debt and senior engineer review drag.
+                        GitClear and Jellyfish track code output volume to prove your AI licenses are working. Exogram calculates the <span className="text-zinc-950 font-bold">exact EBITDA destruction</span> caused by downstream Vibe Coding Debt and senior engineer review drag.
                     </p>
 
                     {/* Comparison Table */}
@@ -48,10 +48,10 @@ export default function CopilotROIvsGitClearPage() {
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
-                                    <tr key={i} className="border-b border-zinc-200 hover:bg-white/[0.02]">
+                                    <tr key={i} className="border-b border-zinc-200 hover:bg-zinc-50">
                                         <td className="py-4 px-4 text-sm text-zinc-600 font-bold">{row.dimension}</td>
                                         <td className="py-4 px-4 text-sm text-zinc-900">{row.exogram}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-600">{row.gitclear}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-800">{row.gitclear}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -60,7 +60,7 @@ export default function CopilotROIvsGitClearPage() {
 
                     {/* Verdict */}
                     <div className="rounded-2xl border border-fuchsia-500/30 bg-fuchsia-500/5 p-8 mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">The Verdict</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-700 mb-6">
                             <strong>Volume is not Value.</strong> GitClear will tell you your developers are writing 40% more code since buying Copilot. 
                             Our methodology will tell you that the 40% additional code is mathematically destroying your senior engineering capacity in review cycles, resulting in a net negative Return on AI Investment.
