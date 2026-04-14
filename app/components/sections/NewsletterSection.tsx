@@ -57,28 +57,28 @@ const NewsletterSection = () => {
         <section ref={ref} className={`py-24 px-6 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <div className="max-w-4xl mx-auto">
 
-                <div className="p-12 rounded-3xl bg-[var(--bg-secondary)] border border-white/10 text-center relative overflow-hidden">
+                <div className="p-12 rounded-3xl bg-white border border-zinc-200 text-center relative overflow-hidden shadow-lg">
 
                     {/* Background pattern */}
-                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
+                    <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#7c3aed_1px,transparent_1px)] [background-size:20px_20px]" />
 
                     <div className="relative z-10">
                         <span className="text-[var(--accent-purple)] font-bold tracking-widest text-sm uppercase mb-4 block">Executive Briefings</span>
 
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">The Product Economist Newsletter</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">The Product Economist Newsletter</h2>
 
                         {state.succeeded ? (
                             <div className="py-4">
-                                <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                    <CheckCircle className="w-8 h-8 text-emerald-400" />
+                                <div className="w-16 h-16 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                    <CheckCircle className="w-8 h-8 text-emerald-600" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">Redirecting to Checklist ✓</h3>
-                                <p className="text-gray-400">Loading your R&D Audit Checklist...</p>
+                                <h3 className="text-2xl font-bold text-zinc-900 mb-2">Redirecting to Checklist ✓</h3>
+                                <p className="text-zinc-500">Loading your R&D Audit Checklist...</p>
                             </div>
                         ) : (
                             <>
-                                <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                                    Subscribe and get the <strong className="text-white">R&D Audit Checklist</strong> — The 15 questions I ask in every $7,500 engagement.
+                                <p className="text-zinc-500 mb-8 max-w-xl mx-auto">
+                                    Subscribe and get the <strong className="text-zinc-900">R&D Audit Checklist</strong> — The 15 questions I ask in every $7,500 engagement.
                                 </p>
 
                                 <form onSubmit={handleSubmit} className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
@@ -87,21 +87,21 @@ const NewsletterSection = () => {
                                         value={email}
                                         onChange={(e) => { setEmail(e.target.value); setValidationError(''); }}
                                         placeholder="Enter your email"
-                                        className="flex-grow px-6 py-4 rounded-lg bg-[var(--bg-primary)] border border-white/10 text-white focus:outline-none focus:border-[var(--accent-cyan)] transition-colors"
+                                        className="flex-grow px-6 py-4 rounded-lg bg-zinc-50 border border-zinc-300 text-zinc-900 focus:outline-none focus:border-purple-500 transition-colors"
                                         required
                                         disabled={state.submitting || isValidating}
                                     />
                                     <button
                                         type="submit"
                                         disabled={state.submitting || isValidating}
-                                        className="px-8 py-4 rounded-lg bg-white text-black font-bold hover:bg-gray-200 transition-colors whitespace-nowrap disabled:opacity-70 flex items-center justify-center gap-2"
+                                        className="px-8 py-4 rounded-lg bg-purple-700 text-white font-bold hover:bg-purple-600 transition-colors whitespace-nowrap disabled:opacity-70 flex items-center justify-center gap-2"
                                     >
                                         {(state.submitting || isValidating) ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Get Checklist <ArrowRight className="w-3 h-3" /></>}
                                     </button>
                                 </form>
 
                                 {validationError && (
-                                    <div className="max-w-md mx-auto mt-3 flex items-center gap-2 p-2 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-xs">
+                                    <div className="max-w-md mx-auto mt-3 flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-lg text-red-600 text-xs">
                                         <AlertCircle className="w-3 h-3" /><span>{validationError}</span>
                                     </div>
                                 )}
@@ -112,8 +112,8 @@ const NewsletterSection = () => {
                             Monthly. No fluff. 2,000+ executives read before they decide.
                         </p>
 
-                        <div className="mt-6 border-t border-white/10 pt-6">
-                            <Link href="/tools" className="text-xs text-gray-500 hover:text-white uppercase tracking-widest transition-colors flex items-center justify-center gap-2 group">
+                        <div className="mt-6 border-t border-zinc-200 pt-6">
+                            <Link href="/tools" className="text-xs text-zinc-500 hover:text-zinc-900 uppercase tracking-widest transition-colors flex items-center justify-center gap-2 group">
                                 Or try my free tools
                                 <span className="group-hover:translate-x-1 transition-transform">→</span>
                             </Link>

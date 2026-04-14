@@ -35,9 +35,9 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
             {/* Free Preview: First Lesson (only shown for first module of each track) */}
             {showPreview && (
                 <div className="mb-0 relative z-20">
-                    <div className="flex items-center gap-2 mb-4 px-4 py-2 rounded-lg bg-emerald-500/5 border border-emerald-500/20 w-fit">
-                        <BookOpen className="w-4 h-4 text-emerald-400" />
-                        <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">Free Preview — Lesson 1</span>
+                    <div className="flex items-center gap-2 mb-4 px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200 w-fit">
+                        <BookOpen className="w-4 h-4 text-emerald-600" />
+                        <span className="text-xs font-mono text-emerald-600 uppercase tracking-widest">Free Preview — Lesson 1</span>
                     </div>
                     <div className="relative pb-24">
                         {previewContent}
@@ -53,30 +53,30 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
 
                 {/* Unlock CTA */}
                 <div className={`relative ${showPreview ? '-mt-32' : '-mt-16'} z-10`}>
-                    <div className="mx-auto max-w-lg rounded-2xl border border-white/10 bg-zinc-900/95 backdrop-blur-xl p-8 shadow-2xl shadow-violet-500/5">
+                    <div className="mx-auto max-w-lg rounded-2xl border border-zinc-200 bg-white/95 backdrop-blur-xl p-8 shadow-xl">
                         <div className="text-center">
-                            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500/20 to-cyan-500/20 border border-white/10 flex items-center justify-center mx-auto mb-4">
-                                <Lock className="w-6 h-6 text-violet-400" />
+                            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-50 to-indigo-50 border border-violet-200 flex items-center justify-center mx-auto mb-4">
+                                <Lock className="w-6 h-6 text-violet-600" />
                             </div>
-                            <h3 className="text-xl font-grotesk font-bold text-white mb-2">
+                            <h3 className="text-xl font-grotesk font-bold text-zinc-900 mb-2">
                                 Get Full Module Access
                             </h3>
-                            <p className="text-zinc-400 text-sm mb-6">
+                            <p className="text-zinc-500 text-sm mb-6">
                                 {showPreview ? `${totalLessons - 1} more lesson${totalLessons - 1 === 1 ? '' : 's'}` : `${totalLessons} lesson${totalLessons === 1 ? '' : 's'}`} with actionable remediation playbooks, executive dashboards, and deterministic engineering architecture.
                             </p>
 
                             {/* Quick Stats */}
                             <div className="grid grid-cols-3 gap-3 mb-6">
-                                <div className="rounded-xl bg-white/[0.02] border border-white/5 p-3 text-center">
-                                    <div className="text-xl font-bold text-white">218</div>
+                                <div className="rounded-xl bg-zinc-50 border border-zinc-200 p-3 text-center">
+                                    <div className="text-xl font-bold text-zinc-900">218</div>
                                     <div className="text-[10px] text-zinc-500 uppercase">Modules</div>
                                 </div>
-                                <div className="rounded-xl bg-white/[0.02] border border-white/5 p-3 text-center">
-                                    <div className="text-xl font-bold text-white">5+</div>
+                                <div className="rounded-xl bg-zinc-50 border border-zinc-200 p-3 text-center">
+                                    <div className="text-xl font-bold text-zinc-900">5+</div>
                                     <div className="text-[10px] text-zinc-500 uppercase">Tools</div>
                                 </div>
-                                <div className="rounded-xl bg-violet-500/10 border border-violet-500/20 p-3 text-center">
-                                    <div className="text-xl font-bold text-violet-400">100%</div>
+                                <div className="rounded-xl bg-violet-50 border border-violet-200 p-3 text-center">
+                                    <div className="text-xl font-bold text-violet-700">100%</div>
                                     <div className="text-[10px] text-violet-500 uppercase">ROI</div>
                                 </div>
                             </div>
@@ -96,9 +96,9 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                     icon="key" 
                                     variant="secondary" 
                                 />
-                                <div className="pt-2 border-t border-white/5">
+                                <div className="pt-2 border-t border-zinc-200">
                                     {status === 'waitlist' ? (
-                                        <button disabled className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-white/5 bg-white/[0.02] text-zinc-500 cursor-not-allowed transition-colors font-medium text-sm">
+                                        <button disabled className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-400 cursor-not-allowed transition-colors font-medium text-sm">
                                             <Lock className="w-4 h-4" />
                                             <span>Join Waitlist — In Active Development</span>
                                         </button>

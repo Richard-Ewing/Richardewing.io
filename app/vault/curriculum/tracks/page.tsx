@@ -10,11 +10,11 @@ import BlurIn from '@/app/components/magicui/blur-in';
 import { BorderBeam } from '@/app/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'The Product Economics Curriculum — 18 Authority Tracks',
-    description: 'Eighteen high-fidelity curriculum tracks for mastering engineering economics, AI financial modeling, career capital, leadership, M&A integration, and executive governance — built by a Product Economist with published authority in CIO.com and Built In.',
-    keywords: ['product economics curriculum', 'engineering economics course', 'AI economics training', 'R&D capital management', 'technical debt quantification', 'engineering leadership course', 'cloud finops', 'AI pricing strategy', 'career economics', 'CTO training', 'M&A integration', 'vendor economics', 'developer experience', 'remote team economics'],
+    title: 'The Product Economics Academy — 18 Authority Tracks',
+    description: 'Eighteen high-fidelity curriculum tracks for mastering product economics, AI financial modeling, leadership, career capital, M&A integration, and executive governance — built by a Product Economist with published authority in CIO.com and Built In.',
+    keywords: ['product economics academy', 'product economics curriculum', 'AI economics training', 'R&D capital management', 'technical debt quantification', 'engineering leadership course', 'cloud finops', 'AI pricing strategy', 'career economics', 'CTO training', 'M&A integration', 'vendor economics', 'developer experience', 'remote team economics', 'ai agent economics', 'leadership training'],
     alternates: { canonical: 'https://www.richardewing.io/vault/curriculum/tracks' },
-    openGraph: { title: 'The Product Economics Curriculum', description: 'Master engineering economics across eighteen authority tracks.', url: 'https://www.richardewing.io/vault/curriculum/tracks', type: 'website' },
+    openGraph: { title: 'The Product Economics Academy', description: 'Master the business of building across eighteen authority tracks.', url: 'https://www.richardewing.io/vault/curriculum/tracks', type: 'website' },
 };
 const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5', teal: 'border-teal-500/30 bg-teal-500/5', lime: 'border-lime-500/30 bg-lime-500/5', fuchsia: 'border-fuchsia-500/30 bg-fuchsia-500/5', blue: 'border-blue-500/30 bg-blue-500/5' };
 const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400', amber: 'text-amber-400', orange: 'text-orange-400', pink: 'text-pink-400', red: 'text-red-400', sky: 'text-sky-400', indigo: 'text-indigo-400', rose: 'text-rose-400', teal: 'text-teal-400', lime: 'text-lime-400', fuchsia: 'text-fuchsia-400', blue: 'text-blue-400' };
@@ -41,33 +41,33 @@ export default async function CurriculumTracksPage() {
                     
                     {/* Enterprise Executive HERO */}
                     <div className="text-center mb-16 relative">
-                        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-purple-500/10 to-transparent pointer-events-none -z-10" />
-                        <div className="text-[10px] font-mono text-purple-400 uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></span>
-                            Product Economics Curriculum
+                        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-purple-500/5 to-transparent pointer-events-none -z-10" />
+                        <div className="text-[10px] font-mono text-purple-600 uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse"></span>
+                            Product Economics Academy
                         </div>
-                        <BlurIn word="The Engineering" className="text-4xl sm:text-6xl font-grotesk font-bold text-white mb-1" />
-                        <BlurIn word="Economics System." className="text-4xl sm:text-6xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400 mb-6" />
+                        <BlurIn word="The Product Economics" className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-900 mb-1" />
+                        <BlurIn word="Academy." className="text-4xl sm:text-6xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-6" />
                         
-                        <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-                            These aren&apos;t courses. These are 18 deep-authority curriculum tracks built from published frameworks in CIO.com and Built In — spanning engineering economics, AI financial modeling, career capital, leadership, M&A integration, and executive governance.
+                        <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+                            These aren&apos;t courses. These are 18 deep-authority curriculum tracks built from published frameworks in CIO.com and Built In — spanning product economics, AI financial modeling, leadership, career capital, M&A integration, and executive governance.
                         </p>
                         
                         <div className="flex items-center justify-center gap-8 mt-6">
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">18</div>
+                                <div className="text-2xl font-grotesk font-bold text-zinc-900">18</div>
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mt-1">Authority Tracks</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-white">218</div>
+                                <div className="text-2xl font-grotesk font-bold text-zinc-900">218</div>
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mt-1">Deep Modules</div>
                             </div>
-                            <div className="text-center bg-purple-500/10 px-4 py-2 rounded-lg border border-purple-500/20">
-                                <div className="text-xl font-mono font-bold text-purple-400">$149</div>
+                            <div className="text-center bg-purple-50 px-4 py-2 rounded-lg border border-purple-200">
+                                <div className="text-xl font-mono font-bold text-purple-700">$149</div>
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-purple-500 mt-1">Per Track</div>
                             </div>
-                            <div className="text-center bg-indigo-500/10 px-4 py-2 rounded-lg border border-indigo-500/20">
-                                <div className="text-xl font-mono font-bold text-indigo-400">$799</div>
+                            <div className="text-center bg-indigo-50 px-4 py-2 rounded-lg border border-indigo-200">
+                                <div className="text-xl font-mono font-bold text-indigo-700">$799</div>
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-indigo-500 mt-1">All 18 Tracks</div>
                             </div>
                         </div>
@@ -76,23 +76,23 @@ export default async function CurriculumTracksPage() {
                     {/* ADVISORY UPSELL */}
                     <div className="mb-16 relative group cursor-pointer">
                         <Link href="/advisory">
-                            <ShineBorder className="bg-zinc-950/80 p-0 overflow-hidden" color={["#8b5cf6", "#a855f7"]}>
-                                <BorderBeam size={200} duration={12} delay={9} borderWidth={1.5} colorFrom="#8b5cf6" colorTo="#ec4899" />
+                            <ShineBorder className="bg-white p-0 overflow-hidden shadow-lg" color={["#7c3aed", "#8b5cf6"]}>
+                                <BorderBeam size={200} duration={12} delay={9} borderWidth={1.5} colorFrom="#7c3aed" colorTo="#ec4899" />
                                 <div className="p-8 relative z-10 flex flex-col md:flex-row items-center gap-8">
                                     <div className="flex-1">
-                                        <div className="text-[10px] font-mono text-purple-400 uppercase tracking-widest mb-2 font-bold flex items-center gap-2">
+                                        <div className="text-[10px] font-mono text-purple-600 uppercase tracking-widest mb-2 font-bold flex items-center gap-2">
                                             Enterprise Advisory
                                         </div>
-                                        <h3 className="text-2xl font-bold text-white mb-3">Need organizational implementation?</h3>
-                                        <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+                                        <h3 className="text-2xl font-bold text-zinc-900 mb-3">Need organizational implementation?</h3>
+                                        <p className="text-sm text-zinc-600 leading-relaxed mb-4">
                                             The curriculum gives your team the frameworks. Advisory ensures they deploy them. I integrate these economic models directly into your SDLC through executive-level coaching and bi-weekly ops alignment.
                                         </p>
-                                        <div className="text-xs font-mono font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                                        <div className="text-xs font-mono font-bold text-purple-600 hover:text-purple-500 transition-colors">
                                             EXPLORE ADVISORY →
                                         </div>
                                     </div>
-                                    <div className="md:w-64 w-full h-full flex flex-col items-center justify-center bg-black/50 rounded-xl border border-white/5 p-6">
-                                        <div className="text-3xl font-mono text-white mb-1">Advisory</div>
+                                    <div className="md:w-64 w-full h-full flex flex-col items-center justify-center bg-purple-50 rounded-xl border border-purple-100 p-6">
+                                        <div className="text-3xl font-mono text-zinc-900 mb-1">Advisory</div>
                                         <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest text-center">Strategic Partnership</div>
                                     </div>
                                 </div>
@@ -104,9 +104,9 @@ export default async function CurriculumTracksPage() {
                         {/* 1. Engineering Economics Foundations (Tracks 1-4) */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <div className="h-px bg-zinc-300 flex-grow"></div>
                                 <h2 className="text-sm font-mono text-cyan-500 uppercase tracking-widest font-bold">Engineering Economics Foundations</h2>
-                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <div className="h-px bg-zinc-300 flex-grow"></div>
                             </div>
                             <div className="space-y-6">
                                 {tracks.slice(0, 4).map((track, i) => (
@@ -118,9 +118,9 @@ export default async function CurriculumTracksPage() {
                         {/* 2. AI & Cloud Economics (Tracks 5-11) */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <div className="h-px bg-zinc-300 flex-grow"></div>
                                 <h2 className="text-sm font-mono text-violet-500 uppercase tracking-widest font-bold">AI & Cloud Economics</h2>
-                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <div className="h-px bg-zinc-300 flex-grow"></div>
                             </div>
                             <div className="space-y-6">
                                 {tracks.slice(4, 11).map((track, i) => (
@@ -132,9 +132,9 @@ export default async function CurriculumTracksPage() {
                         {/* 3. Career Capital & Leadership (Tracks 12-14) */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <div className="h-px bg-zinc-300 flex-grow"></div>
                                 <h2 className="text-sm font-mono text-amber-500 uppercase tracking-widest font-bold">Career Capital & Leadership</h2>
-                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <div className="h-px bg-zinc-300 flex-grow"></div>
                             </div>
                             <div className="space-y-6">
                                 {tracks.slice(11, 14).map((track, i) => (
@@ -146,11 +146,11 @@ export default async function CurriculumTracksPage() {
                         {/* 4. Executive & Board Economics (Cross-cutting: select from each category) */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <div className="h-px bg-zinc-300 flex-grow"></div>
                                 <h2 className="text-sm font-mono text-indigo-500 uppercase tracking-widest font-bold">Executive & Board Economics</h2>
-                                <div className="h-px bg-white/10 flex-grow"></div>
+                                <div className="h-px bg-zinc-300 flex-grow"></div>
                             </div>
-                            <p className="text-sm text-zinc-500 mb-8 text-center italic">Board reporting, EBITDA translation, M&A leadership, and technical debt at the balance sheet level — curated from across all tracks.</p>
+                            <p className="text-sm text-zinc-600 mb-8 text-center italic">Board reporting, EBITDA translation, M&A leadership, and technical debt at the balance sheet level — curated from across all tracks.</p>
                             <div className="space-y-6">
                                 {/* Track 3: Capstone & Applied Practice (bridges to executive) */}
                                 {tracks[3] && <TrackAccordion key="exec-capstone" track={tracks[3]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
@@ -165,23 +165,23 @@ export default async function CurriculumTracksPage() {
                     </CurriculumDirectoryGrid>
 
                     {/* BOTTOM CTA */}
-                    <div className="mt-20 pt-16 border-t border-white/5">
-                        <div className="rounded-[2.5rem] bg-gradient-to-br from-purple-900/20 via-black to-blue-900/20 p-10 sm:p-16 border border-white/10 text-center relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/20 blur-[100px] pointer-events-none rounded-full" />
-                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/20 blur-[100px] pointer-events-none rounded-full" />
+                    <div className="mt-20 pt-16 border-t border-zinc-200">
+                        <div className="rounded-[2.5rem] bg-gradient-to-br from-purple-50 via-white to-indigo-50 p-10 sm:p-16 border border-purple-100 text-center relative overflow-hidden shadow-lg">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-200/30 blur-[100px] pointer-events-none rounded-full" />
+                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-200/30 blur-[100px] pointer-events-none rounded-full" />
                             
-                            <h2 className="text-3xl sm:text-5xl font-grotesk font-bold tracking-tighter text-white mb-6 relative z-10">
+                            <h2 className="text-3xl sm:text-5xl font-grotesk font-bold tracking-tighter text-zinc-900 mb-6 relative z-10">
                                 Stop Guessing at ROI.<br/>
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Start Proving It.</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Start Proving It.</span>
                             </h2>
-                            <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed relative z-10">
-                                Every module teaches you to connect engineering work to business outcomes. $149 per track. $799 for everything. Lifetime access.
+                            <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-10 leading-relaxed relative z-10">
+                                Every module teaches you to connect work to business outcomes. $149 per track. $799 for everything. Lifetime access.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-                                <Link href="/advisory" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-white text-black hover:bg-purple-400 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+                                <Link href="/advisory" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-purple-700 text-white hover:bg-purple-600 transition-colors shadow-lg">
                                     Explore Advisory
                                 </Link>
-                                <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-black/50 border border-white/10 text-zinc-300 hover:text-white hover:border-white/30 transition-colors">
+                                <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-white border border-zinc-200 text-zinc-700 hover:text-zinc-900 hover:border-zinc-300 transition-colors shadow-sm">
                                     Unlock $799 Full Curriculum
                                 </Link>
                             </div>

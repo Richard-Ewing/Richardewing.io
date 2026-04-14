@@ -25,7 +25,7 @@ const Navigation = () => {
         <>
             <nav
                 className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
-                    ? 'bg-[var(--bg-primary)]/90 backdrop-blur-lg border-b border-white/10 py-3'
+                    ? 'bg-white/90 backdrop-blur-lg border-b border-zinc-200 py-3 shadow-sm'
                     : 'bg-transparent py-5'
                     }`}
             >
@@ -39,8 +39,8 @@ const Navigation = () => {
                                 <Image src="/assets/headshot.jpg" alt="Richard Ewing" width={40} height={40} className="w-full h-full object-cover" priority />
                             </div>
                             <div>
-                                <div className="font-semibold text-white group-hover:text-[var(--accent-purple)] transition-colors">Richard Ewing</div>
-                                <div className="text-xs text-gray-400">Product Economist</div>
+                                <div className="font-semibold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors">Richard Ewing</div>
+                                <div className="text-xs text-zinc-500">Product Economist</div>
                             </div>
                         </Link>
 
@@ -48,7 +48,7 @@ const Navigation = () => {
                         <div className="hidden md:flex items-center gap-6 lg:gap-8">
 
                             {/* Start Here / Member Dashboard — the golden path for visitors */}
-                            <Link href={isSignedIn ? "/vault" : "/doctrine"} className="text-emerald-400 hover:text-emerald-300 transition-colors relative group font-semibold">
+                            <Link href={isSignedIn ? "/vault" : "/doctrine"} className="text-emerald-600 hover:text-emerald-500 transition-colors relative group font-semibold">
                                 ✦ {isSignedIn ? "Member Dashboard" : "Start Here"}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
@@ -70,13 +70,13 @@ const Navigation = () => {
                             <Dropdown label="Enterprise Diagnostics">
                                 <Link
                                     href="/tools/board-room"
-                                    className="block p-5 bg-gradient-to-br from-indigo-500/20 to-black/40 border-b border-indigo-500/30 hover:from-indigo-500/30 transition-all font-semibold"
+                                    className="block p-5 bg-gradient-to-br from-indigo-50 to-white border-b border-indigo-100 hover:from-indigo-100 transition-all font-semibold"
                                 >
                                     <div className="flex items-center gap-3 mb-1">
                                         <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
-                                        <span className="text-white text-base">Executive Board Room</span>
+                                        <span className="text-zinc-900 text-base">Executive Board Room</span>
                                     </div>
-                                    <p className="text-[10.5px] text-indigo-200/70 font-mono tracking-widest uppercase">Board-Level Telemetry Hub</p>
+                                    <p className="text-[10.5px] text-indigo-500/70 font-mono tracking-widest uppercase">Board-Level Telemetry Hub</p>
                                 </Link>
                                 
                                 <div className="px-5 py-2 text-[10px] font-bold tracking-widest text-[var(--accent-purple)] uppercase mt-2">Flagship Engines</div>
@@ -87,15 +87,15 @@ const Navigation = () => {
                                 <DropdownItem href="/compare" description="LLM capability & cost matrix">Model Comparison Matrix</DropdownItem>
                                 <DropdownItem href="/tools/ai-roi-timeline" description="Hardware vs API investment horizons">AI CapEx Break-Even</DropdownItem>
                                 
-                                <div className="mt-2 p-2 relative z-10 w-full bg-[var(--bg-secondary)] pb-3">
-                                    <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 rounded-lg py-2.5 mx-3 transition-colors">
-                                        <span className="text-xs font-semibold text-gray-300">Explore All Diagnostics</span>
-                                        <span className="text-xs text-white">→</span>
+                                <div className="mt-2 p-2 relative z-10 w-full bg-zinc-50 pb-3">
+                                    <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-zinc-200 hover:border-zinc-300 bg-white hover:bg-zinc-50 rounded-lg py-2.5 mx-3 transition-colors">
+                                        <span className="text-xs font-semibold text-zinc-600">Explore All Diagnostics</span>
+                                        <span className="text-xs text-zinc-900">→</span>
                                     </Link>
                                 </div>
                             </Dropdown>
                             
-                            <Link href="/tools/audit-interview" className="text-gray-300 hover:text-white transition-colors relative group font-medium">
+                            <Link href="/tools/audit-interview" className="text-zinc-600 hover:text-zinc-900 transition-colors relative group font-medium">
                                 Audit Interview
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all group-hover:w-full" />
                             </Link>
@@ -114,12 +114,12 @@ const Navigation = () => {
                                 Book Audit →
                             </Link>
 
-                            <div className="h-6 w-px bg-white/20 mx-1 flex-shrink-0" />
+                            <div className="h-6 w-px bg-zinc-200 mx-1 flex-shrink-0" />
 
                             {/* Authentication */}
                             {isLoaded && !isSignedIn && (
                                 <SignInButton mode="modal" fallbackRedirectUrl="/vault" signUpFallbackRedirectUrl="/vault">
-                                    <button className="text-gray-300 hover:text-white transition-colors text-sm font-semibold whitespace-nowrap">
+                                    <button className="text-zinc-600 hover:text-zinc-900 transition-colors text-sm font-semibold whitespace-nowrap">
                                         Sign In
                                     </button>
                                 </SignInButton>
@@ -134,7 +134,7 @@ const Navigation = () => {
 
                         {/* Mobile Hamburger */}
                         <button
-                            className="md:hidden text-white p-2"
+                            className="md:hidden text-zinc-900 p-2"
                             onClick={() => setMobileMenuOpen(true)}
                             aria-label="Open Menu"
                         >
@@ -165,7 +165,7 @@ const Dropdown = ({ label, children }: { label: React.ReactNode, children: React
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
         >
-            <button className="flex items-center gap-1 text-gray-300 hover:text-white py-2 group-hover:text-[var(--accent-cyan)] transition-colors">
+            <button className="flex items-center gap-1 text-zinc-600 hover:text-zinc-900 py-2 group-hover:text-[var(--accent-purple)] transition-colors">
                 {label}
                 <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -179,7 +179,7 @@ const Dropdown = ({ label, children }: { label: React.ReactNode, children: React
                         transition={{ duration: 0.2 }}
                         className="absolute top-full left-0 w-64 pt-2"
                     >
-                        <div className="bg-[var(--bg-secondary)] border border-white/10 rounded-xl overflow-hidden shadow-2xl backdrop-blur-xl">
+                        <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-xl">
                             <div className="py-2">
                                 {children}
                             </div>
@@ -195,10 +195,10 @@ const DropdownItem = ({ href, children, description }: { href: string, children:
     return (
         <Link
             href={href}
-            className="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
+            className="block px-4 py-3 text-sm text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
         >
             <span className="block">{children}</span>
-            {description && <span className="block text-[10px] text-zinc-600 mt-0.5">{description}</span>}
+            {description && <span className="block text-[10px] text-zinc-400 mt-0.5">{description}</span>}
         </Link>
     );
 };
@@ -212,12 +212,12 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-[var(--bg-primary)]/95 backdrop-blur-xl"
+            className="fixed inset-0 z-[60] bg-[var(--bg-primary)]/98 backdrop-blur-xl"
         >
             <div className="flex flex-col h-full overflow-y-auto">
-                <div className="flex items-center justify-between p-6 border-b border-white/10">
-                    <div className="font-semibold text-white">Menu</div>
-                    <button onClick={onClose} className="p-2 text-white hover:text-[var(--accent-crimson)]" aria-label="Close menu">
+                <div className="flex items-center justify-between p-6 border-b border-zinc-200">
+                    <div className="font-semibold text-zinc-900">Menu</div>
+                    <button onClick={onClose} className="p-2 text-zinc-900 hover:text-[var(--accent-crimson)]" aria-label="Close menu">
                         <X className="w-6 h-6" />
                     </button>
                 </div>
@@ -233,11 +233,11 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         ✦ START HERE
                     </Link>
 
-                    <div className="w-full h-px bg-white/10" />
+                    <div className="w-full h-px bg-zinc-200" />
 
                     {/* Learn Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-cyan-400 uppercase tracking-widest pl-2">Curriculum & Library</h3>
+                        <h3 className="text-xs font-bold text-cyan-600 uppercase tracking-widest pl-2">Curriculum & Library</h3>
                         <MobileLink href="/articles" onClick={onClose}>Published Articles</MobileLink>
                         <MobileLink href="/vault/curriculum/tracks" onClick={onClose}>Complete Curriculum</MobileLink>
                         <MobileLink href="/glossary" onClick={onClose}>Glossary (420+ Terms)</MobileLink>
@@ -247,47 +247,47 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     {/* Careers Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-widest pl-2 mt-4 mb-2">Careers & Transitions</h3>
+                        <h3 className="text-xs font-bold text-emerald-600 uppercase tracking-widest pl-2 mt-4 mb-2">Careers & Transitions</h3>
                         <MobileLink href="/careers" onClick={onClose}>Career Pathfinder Hub</MobileLink>
                     </div>
 
                     {/* Tools Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-violet-400 uppercase tracking-widest pl-2 mb-4">Enterprise Diagnostics</h3>
+                        <h3 className="text-xs font-bold text-violet-600 uppercase tracking-widest pl-2 mb-4">Enterprise Diagnostics</h3>
                         
                         <Link
                             href="/tools/board-room"
                             onClick={onClose}
-                            className={`block px-5 py-4 rounded-xl bg-gradient-to-r from-indigo-500/20 to-zinc-900 border border-indigo-500/30 text-white hover:bg-indigo-500/30 transition-colors font-semibold shadow-lg mb-6`}
+                            className={`block px-5 py-4 rounded-xl bg-gradient-to-r from-indigo-50 to-white border border-indigo-100 text-zinc-900 hover:from-indigo-100 transition-colors font-semibold shadow-sm mb-6`}
                         >
                             <div className="flex items-center gap-3 mb-1">
                                 <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
                                 <span>Executive Board Room</span>
                             </div>
-                            <span className="text-[10px] text-indigo-300/70 font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
+                            <span className="text-[10px] text-indigo-500/70 font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
                         </Link>
 
-                        <MobileLink href="/benchmark/ai-capital-2026" onClick={onClose} className="font-bold text-cyan-400">2026 AI Capital Benchmark</MobileLink>
+                        <MobileLink href="/benchmark/ai-capital-2026" onClick={onClose} className="font-bold text-cyan-600">2026 AI Capital Benchmark</MobileLink>
                         <MobileLink href="/tools/copilot-roi" onClick={onClose}>Copilot ROI Forecaster</MobileLink>
                         <MobileLink href="/tools/pdi" onClick={onClose}>Tech Debt Forecaster (PDI)</MobileLink>
                         <MobileLink href="/tools/aueb" onClick={onClose}>AI Margin Calculator (AUEB)</MobileLink>
                         <MobileLink href="/compare" onClick={onClose}>Model Comparison Matrix</MobileLink>
                         <MobileLink href="/tools/ai-roi-timeline" onClick={onClose}>AI CapEx Break-Even</MobileLink>
                         
-                        <Link href="/tools" onClick={onClose} className="block mt-4 text-center border border-white/10 bg-white/5 rounded-lg py-3 hover:bg-white/10 transition-colors">
-                            <span className="text-sm font-semibold text-white">Explore All 12+ Diagnostics →</span>
+                        <Link href="/tools" onClick={onClose} className="block mt-4 text-center border border-zinc-200 bg-white rounded-lg py-3 hover:bg-zinc-50 transition-colors">
+                            <span className="text-sm font-semibold text-zinc-900">Explore All 12+ Diagnostics →</span>
                         </Link>
                     </div>
 
                     {/* Advisory Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-amber-400 uppercase tracking-widest pl-2">Advisory</h3>
+                        <h3 className="text-xs font-bold text-amber-600 uppercase tracking-widest pl-2">Advisory</h3>
                         <MobileLink href="/advisory" onClick={onClose}>Executive Advisory</MobileLink>
                         <MobileLink href="/case-studies" onClick={onClose}>Case Studies</MobileLink>
                         <MobileLink href="/principal" onClick={onClose}>The Principal</MobileLink>
                     </div>
 
-                    <div className="w-full h-px bg-white/10" />
+                    <div className="w-full h-px bg-zinc-200" />
 
                     <Link
                         href="/advisory"
@@ -299,7 +299,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     {isLoaded && !isSignedIn && (
                         <SignInButton mode="modal" fallbackRedirectUrl="/vault" signUpFallbackRedirectUrl="/vault">
-                            <button onClick={onClose} className="block w-full bg-white/5 border border-white/10 text-white text-center font-bold py-4 rounded-xl text-lg hover:bg-white/10 transition-colors">
+                            <button onClick={onClose} className="block w-full bg-zinc-100 border border-zinc-200 text-zinc-900 text-center font-bold py-4 rounded-xl text-lg hover:bg-zinc-200 transition-colors">
                                 SIGN IN
                             </button>
                         </SignInButton>
@@ -309,7 +309,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <Link 
                             href="/vault"
                             onClick={onClose}
-                            className="block w-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-center font-bold py-4 rounded-xl text-lg hover:bg-cyan-500/20 transition-colors"
+                            className="block w-full bg-cyan-50 border border-cyan-200 text-cyan-700 text-center font-bold py-4 rounded-xl text-lg hover:bg-cyan-100 transition-colors"
                         >
                             ACCESS VAULT
                         </Link>
@@ -324,7 +324,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 const MobileSection = ({ title, href, children, onClick }: { title: string, href: string, children: React.ReactNode, onClick: () => void }) => {
     return (
         <Link href={href} onClick={onClick} className="block group">
-            <h2 className="text-2xl font-bold text-white group-hover:text-[var(--accent-cyan)] transition-colors mb-1">{title}</h2>
+            <h2 className="text-2xl font-bold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors mb-1">{title}</h2>
             {children}
         </Link>
     );
@@ -335,7 +335,7 @@ const MobileLink = ({ href, children, onClick, className = "" }: { href: string,
         <Link
             href={href}
             onClick={onClick}
-            className={`block px-4 py-3 rounded-lg bg-[var(--bg-secondary)] text-gray-300 hover:text-white hover:bg-white/10 transition-colors ${className}`}
+            className={`block px-4 py-3 rounded-lg bg-white text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 transition-colors ${className}`}
         >
             {children}
         </Link>
@@ -358,15 +358,15 @@ const UserDropdown = () => {
                 {initials}
             </div>
         }>
-            <div className="px-4 py-3 border-b border-white/10 mb-2">
-                <p className="text-sm font-medium text-white">{user.fullName || 'User'}</p>
+            <div className="px-4 py-3 border-b border-zinc-200 mb-2">
+                <p className="text-sm font-medium text-zinc-900">{user.fullName || 'User'}</p>
                 <p className="text-xs text-zinc-500 truncate">{user.primaryEmailAddress?.emailAddress}</p>
             </div>
             <DropdownItem href="/vault" description="Your intelligence dashboard">My Vault</DropdownItem>
             <DropdownItem href="/system" description="All enterprise tools">Tools Library</DropdownItem>
             <button 
                 onClick={() => signOut()} 
-                className="w-full text-left block px-4 py-3 text-sm text-red-400 hover:text-red-300 hover:bg-white/5 transition-colors mt-2 border-t border-white/10"
+                className="w-full text-left block px-4 py-3 text-sm text-red-500 hover:text-red-600 hover:bg-zinc-50 transition-colors mt-2 border-t border-zinc-200"
             >
                 Sign Out
             </button>

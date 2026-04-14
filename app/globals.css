@@ -4,58 +4,52 @@
   --font-sans: "Inter", system-ui, sans-serif;
   --font-grotesk: "Space Grotesk", sans-serif;
 
-  /* Retaining some old tokens to prevent immediate breakages before full refactor */
-  --color-obsidian: #0A0A12;
+  /* Legacy token kept for any remaining references */
+  --color-obsidian: #1A1A1A;
 
-  /* Readability boost: lighten zinc text on dark backgrounds */
-  --color-zinc-400: #c8c8d0;  /* was #b4b4be — body text — lightened 2 more notches */
-  --color-zinc-500: #a4a4b0;  /* was #8e8e9a — muted labels — lightened 2 more notches */
-  --color-zinc-600: #858590;  /* was #6e6e7a — subtle text — lightened 2 more notches */
+  /* Light-mode neutral overrides for zinc scale */
+  --color-zinc-400: #6B6B6B;
+  --color-zinc-500: #8A8A8A;
+  --color-zinc-600: #4A4A4A;
+  --color-zinc-900: #F5F0EB;
+  --color-zinc-950: #F5F0EB;
 }
 
 :root {
   /* ══════════════════════════════════════════════════════════ */
-  /* BACKGROUNDS — Deep space aesthetic                         */
+  /* BACKGROUNDS — Warm cream (inspired by Anthropic)          */
   /* ══════════════════════════════════════════════════════════ */
-  --bg-primary: #0A0A12;
-  /* Near-black with blue tint */
-  --bg-secondary: #12121A;
-  /* Slightly lighter for cards */
-  --bg-gradient-start: #0A0A12;
-  --bg-gradient-end: #1A1A2E;
-  --bg-card: rgba(255, 255, 255, 0.03);
-  /* Subtle glass effect */
+  --bg-primary: #F5F0EB;
+  --bg-secondary: #FFFFFF;
+  --bg-gradient-start: #F5F0EB;
+  --bg-gradient-end: #EDE7E0;
+  --bg-card: #FFFFFF;
 
   /* ══════════════════════════════════════════════════════════ */
-  /* TEXT — High contrast for readability                       */
+  /* TEXT — Dark for high contrast on light backgrounds         */
   /* ══════════════════════════════════════════════════════════ */
-  --text-primary: #FFFFFF;
-  --text-secondary: #E0E0E0;
-  /* INCREASED from gray */
-  --text-muted: #BCBCBC;
-  --text-gradient: linear-gradient(135deg, #FFFFFF 0%, #C0C0FF 100%);
+  --text-primary: #1A1A1A;
+  --text-secondary: #3A3A3A;
+  --text-muted: #6B6B6B;
+  --text-gradient: linear-gradient(135deg, #1A1A1A 0%, #4A3A6B 100%);
 
   /* ══════════════════════════════════════════════════════════ */
-  /* ACCENTS — Purple/Cyan like Exogram                         */
+  /* ACCENTS — Purple/Cyan retained for brand continuity       */
   /* ══════════════════════════════════════════════════════════ */
-  --accent-purple: #A855F7;
-  /* Exogram purple */
-  --accent-purple-glow: rgba(168, 85, 247, 0.3);
-  --accent-cyan: #00D4FF;
-  /* Keep for links */
-  --accent-crimson: #FF4444;
-  /* CTAs only */
-  --accent-gold: #FFD700;
-  /* Premium indicators */
+  --accent-purple: #7C3AED;
+  --accent-purple-glow: rgba(124, 58, 237, 0.15);
+  --accent-cyan: #0891B2;
+  --accent-crimson: #DC2626;
+  --accent-gold: #D97706;
 
   /* ══════════════════════════════════════════════════════════ */
-  /* EFFECTS                                                     */
+  /* EFFECTS — light-mode adapted                              */
   /* ══════════════════════════════════════════════════════════ */
-  --glow-purple: 0 0 60px rgba(168, 85, 247, 0.3);
-  --glow-cyan: 0 0 40px rgba(0, 212, 255, 0.2);
-  --border-glow: 1px solid rgba(168, 85, 247, 0.3);
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glow-purple: 0 4px 24px rgba(124, 58, 237, 0.12);
+  --glow-cyan: 0 4px 24px rgba(8, 145, 178, 0.10);
+  --border-glow: 1px solid rgba(124, 58, 237, 0.2);
+  --glass-bg: #FFFFFF;
+  --glass-border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Base Styles */
@@ -100,15 +94,11 @@ h3 {
 
 /* Utilities */
 .gradient-text {
-  background: linear-gradient(135deg, #FFFFFF 0%, #A855F7 50%, #FF4444 100%);
+  background: linear-gradient(135deg, #7C3AED 0%, #0891B2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
-
-
-
 
 /* ══════════════════════════════════════════════════════════ */
 /* SURGICAL FIX LAYOUT CLASSES                                */
@@ -161,13 +151,13 @@ h3 {
 .section-header h2 {
   font-size: 32px;
   font-weight: 700;
-  color: white;
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 
 .section-header p {
   font-size: 18px;
-  color: #bcbcbc;
+  color: var(--text-muted);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -209,35 +199,35 @@ h3 {
   }
 }
 
-/* Card Styling */
+/* Card Styling — Light mode */
 .card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   padding: 24px;
   transition: all 0.2s ease;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Featured card (for "Start Here" pricing) */
 .card-featured {
-  background: rgba(168, 85, 247, 0.1);
-  border: 2px solid rgba(168, 85, 247, 0.5);
+  background: rgba(124, 58, 237, 0.04);
+  border: 2px solid rgba(124, 58, 237, 0.3);
   border-radius: 12px;
   padding: 24px;
   transition: all 0.2s ease;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.06);
 }
 
 .card-featured:hover {
-  border-color: rgba(168, 85, 247, 0.8);
+  border-color: rgba(124, 58, 237, 0.5);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.1);
 }
 
 /* Animations */
@@ -267,8 +257,8 @@ html {
 }
 
 ::selection {
-  background: rgba(168, 85, 247, 0.3);
-  color: white;
+  background: rgba(124, 58, 237, 0.15);
+  color: #1A1A1A;
 }
 
 @keyframes shine {
@@ -300,47 +290,47 @@ html {
 }
 
 /* ══════════════════════════════════════════════════════════ */
-/* CLERK AUTHENTICATION OVERRIDES                             */
+/* CLERK AUTHENTICATION OVERRIDES — Light mode                */
 /* ══════════════════════════════════════════════════════════ */
 .cl-formFieldInput, 
 .cl-formFieldInput:-webkit-autofill,
 .cl-formFieldInput:-webkit-autofill:hover, 
 .cl-formFieldInput:-webkit-autofill:focus, 
 .cl-formFieldInput:-webkit-autofill:active {
-    background-color: #1A1A24 !important;
-    color: #ffffff !important;
-    border-color: rgba(255,255,255,0.1) !important;
-    -webkit-text-fill-color: #ffffff !important;
-    -webkit-box-shadow: 0 0 0px 1000px #1A1A24 inset !important;
+    background-color: #FFFFFF !important;
+    color: #1A1A1A !important;
+    border-color: rgba(0,0,0,0.15) !important;
+    -webkit-text-fill-color: #1A1A1A !important;
+    -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset !important;
     transition: background-color 5000s ease-in-out 0s !important;
 }
 .cl-formFieldInput::placeholder {
-    color: #858590 !important;
+    color: #8A8A8A !important;
 }
 
 /* Force text colors since Next.js purges Tailwind classes in Clerk's Shadow DOM */
 .cl-headerTitle {
-    color: #ffffff !important;
+    color: #1A1A1A !important;
 }
 .cl-headerSubtitle {
-    color: #a4a4b0 !important;
+    color: #6B6B6B !important;
 }
 .cl-formFieldLabel {
-    color: #c8c8d0 !important;
+    color: #4A4A4A !important;
 }
 
 /* Rebuilding button styles since Tailwind utilities get purged */
 .cl-socialButtonsBlockButtonText {
-    color: #ffffff !important;
+    color: #1A1A1A !important;
 }
 .cl-socialButtonsBlockButton {
-    background-color: rgba(255,255,255,0.05) !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
-    color: #ffffff !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid rgba(0,0,0,0.12) !important;
+    color: #1A1A1A !important;
     transition: all 0.2s ease !important;
 }
 .cl-socialButtonsBlockButton:hover {
-    background-color: rgba(255,255,255,0.1) !important;
+    background-color: #F5F0EB !important;
 }
 
 .cl-formButtonPrimary {
@@ -354,5 +344,5 @@ html {
 }
 
 .cl-dividerText {
-    color: #858590 !important;
+    color: #8A8A8A !important;
 }
