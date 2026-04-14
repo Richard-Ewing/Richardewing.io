@@ -21,23 +21,11 @@ export const personSchema = {
         "https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5",
         "https://www.linkedin.com/company/exogram-ai/"
     ],
-    "authorOf": [
+    "workExamples": [
         {
             "@type": "Article",
             "headline": "The Hidden Inflation of AI: Why Model Collapse Is a Business Risk",
             "url": "https://www.cio.com/article/4151360/the-hidden-inflation-of-ai-why-model-collapse-is-a-business-risk.html",
-            "publisher": { "@type": "Organization", "name": "CIO.com" }
-        },
-        {
-            "@type": "Article",
-            "headline": "Why Your CFO Hates Your Agile Transformation",
-            "url": "https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html",
-            "publisher": { "@type": "Organization", "name": "CIO.com" }
-        },
-        {
-            "@type": "Article",
-            "headline": "Hey, Senior PMs: Shipping Faster Won’t Get You Promoted",
-            "url": "https://www.cio.com/article/4128139/hey-senior-pms-shipping-faster-wont-get-you-promoted.html",
             "publisher": { "@type": "Organization", "name": "CIO.com" }
         },
         {
@@ -48,57 +36,9 @@ export const personSchema = {
         },
         {
             "@type": "Article",
-            "headline": "In the Vibe Coding Era, What Does a Software Engineer Even Do?",
-            "url": "https://builtin.com/articles/vibe-coding-era-software-engineering-role",
-            "publisher": { "@type": "Organization", "name": "Built In" }
-        },
-        {
-            "@type": "Article",
             "headline": "AI Agents Won't Crash the Economy. Bad Governance Might.",
             "url": "https://builtin.com/articles/agentic-ai-scientific-economic-analysis",
             "publisher": { "@type": "Organization", "name": "Built In" }
-        },
-        {
-            "@type": "Article",
-            "headline": "Real Innovation Requires Deleting Code, Not Writing It",
-            "url": "https://builtin.com/articles/innovation-requires-deleting-code",
-            "publisher": { "@type": "Organization", "name": "Built In" }
-        },
-        {
-            "@type": "Article",
-            "headline": "When AI Writes the Code, What Are Employers Hiring For?",
-            "url": "https://builtin.com/articles/audit-interview-scorecard",
-            "publisher": { "@type": "Organization", "name": "Built In" }
-        },
-        {
-            "@type": "Article",
-            "headline": "Reimagining the Coding Interview",
-            "url": "https://builtin.com/articles/reimagining-coding-interview",
-            "publisher": { "@type": "Organization", "name": "Built In" }
-        },
-        {
-            "@type": "Article",
-            "headline": "The AI Product Business Test",
-            "url": "https://builtin.com/articles/ai-product-business-test",
-            "publisher": { "@type": "Organization", "name": "Built In" }
-        },
-        {
-            "@type": "Article",
-            "headline": "I Built an Incredible AI Product That Nobody Wanted. Here's Why.",
-            "url": "https://builtin.com/editors-picks?i=08d8cc66-3dd4-4057-8e19-d79a11e32f55&utm_campaign=content_newsletter&utm_medium=email&utm_source=ses",
-            "publisher": { "@type": "Organization", "name": "Built In" }
-        },
-        {
-            "@type": "Article",
-            "headline": "The 3 Financial Metrics Every PM Needs on Their Scorecard",
-            "url": "https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/",
-            "publisher": { "@type": "Organization", "name": "Mind the Product" }
-        },
-        {
-            "@type": "Article",
-            "headline": "Community Post of the Week: The 3 Financial Metrics Every PM Needs on Their Scorecard",
-            "url": "https://go.pendo.io/index.php/email/emailWebview?email=MTg1LUxRVy0zNzAAAAGg-VozHnUlZENwwi1xI-qJJbTNChJkRXl5leffTwCm8dM8Szj9-Zw5fwHnDr4rvyyGNoXC4ecigJ1mXOEnZc8rX4ZDBtm2v95QhQ",
-            "publisher": { "@type": "Organization", "name": "Mind the Product" }
         },
         {
             "@type": "Article",

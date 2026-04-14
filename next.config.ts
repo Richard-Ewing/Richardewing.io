@@ -90,32 +90,9 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks/:path*',
         permanent: true,
       },
-      // Legacy Track ID -> Slug Migrations
-      {
-        source: '/vault/curriculum/tracks/23/:path*',
-        destination: '/vault/curriculum/tracks/agentic-automation/:path*',
-        permanent: true,
-      },
-      {
-        source: '/vault/curriculum/tracks/24/:path*',
-        destination: '/vault/curriculum/tracks/sovereign-ai/:path*',
-        permanent: true,
-      },
-      {
-        source: '/vault/curriculum/tracks/25/:path*',
-        destination: '/vault/curriculum/tracks/model-routing/:path*',
-        permanent: true,
-      },
-      {
-        source: '/vault/curriculum/tracks/26/:path*',
-        destination: '/vault/curriculum/tracks/idps/:path*',
-        permanent: true,
-      },
-      {
-        source: '/vault/curriculum/tracks/27/:path*',
-        destination: '/vault/curriculum/tracks/synthetic-data/:path*',
-        permanent: true,
-      },
+      // ═══════════════════ DEPRECATED TRACK REDIRECTS ═══════════════════
+      // NOTE: Tracks 23-27 were previously redirected to named slugs (agentic-automation, sovereign-ai, etc.)
+      // but those slugs were also killed. They now fall through to the generic numeric ID redirects below.
       // Deprecated Old Numbers & Slugs
       {
         source: '/vault/curriculum/tracks/33/:path*',
@@ -567,6 +544,27 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
+      // ═══════════════════ REMOVED GLOSSARY TERMS ═══════════════════
+      // Redirect deleted glossary slugs to the glossary index
+      ...[
+        'ai-dspm',
+        'ai-response-drift',
+        'ai-volatility-tax',
+        'evergreen-ratio',
+        'execution-layer',
+        'fractional-cto',
+        'kano-model',
+        'monolith-to-microservices',
+        'north-star-metric',
+        'rice-framework',
+        'sovereign-ai-substrate',
+        'system-2-reasoning-tokens',
+        'thermodynamic-compute-cost',
+      ].map(slug => ({
+        source: `/glossary/${slug}`,
+        destination: '/glossary',
+        permanent: true as const,
+      })),
     ];
   },
 };

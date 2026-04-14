@@ -22,7 +22,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: '#0A0A12', // Updated to match bg-primary
+  themeColor: '#ffffff',
 };
 
 export const metadata: Metadata = {
@@ -41,7 +41,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Richard Ewing — Product Economist & AI Auditor',
     description: 'Product Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram.',
-    url: 'https://www.richardewing.io',
     siteName: 'Richard Ewing',
     type: 'website',
     locale: 'en_US',
@@ -122,18 +121,8 @@ export default function RootLayout({
             },
           }) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            speakable: {
-              '@type': 'SpeakableSpecification',
-              cssSelector: ['h1', 'h2', '.speakable'],
-              xpath: ['/html/head/meta[@name="description"]/@content'],
-            },
-          }) }}
-        />
+
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

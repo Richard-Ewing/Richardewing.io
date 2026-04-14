@@ -96,16 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.8,
         },
-        {
-            url: `${baseUrl}/guides`,
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/comparisons`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
+
 
         // Tool Pages
         {
@@ -350,23 +341,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
 
-        // Guides / Content Hubs
-        {
-            url: `${baseUrl}/guides`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/guides/technical-debt`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/guides/ai-economics`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-
         // Blog Recap Pages
         {
             url: `${baseUrl}/articles/recap/cio-com`,
@@ -454,9 +428,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/curriculum/tracks`,
+            url: `${baseUrl}/vault/curriculum/tracks`,
             changeFrequency: 'monthly',
-            priority: 0.7,
+            priority: 0.8,
         },
 
         // More Verticals + Comparisons (Pass 20)
@@ -464,14 +438,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}/industries/cleantech`,
             changeFrequency: 'monthly',
             priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/industries/mediatech`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/compare/aper-vs-jellyfish`,
         },
         {
             url: `${baseUrl}/industries/mediatech`,
@@ -490,90 +456,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly' as const,
             priority: 0.6,
         }))),
-        // --- DYNAMICALLY INJECTED 50/50 MILESTONE AND EXOGRAM DOCS ---
-        ...[
-            'rust-vs-go',
-            'kafka-vs-rabbitmq',
-            'redis-vs-memcached',
-            'docker-swarm-vs-kubernetes',
-            'grpc-vs-trpc',
-            'cypress-vs-playwright',
-            'cloudflare-vs-fastly',
-            'snowflake-vs-redshift',
-            'auth0-vs-clerk',
-            'tailwind-vs-css-in-js',
-            'pdi-vs-dora',
-            'build-vs-buy',
-            'graphql-vs-rest',
-            'terraform-vs-pulumi',
-            'datadog-vs-grafana',
-            'revenue-per-engineer',
-            'technical-debt-types',
-            'agile-vs-kanban',
-            'monolith-vs-microservices',
-            'fine-tuning-vs-rag',
-            'staff-augmentation-vs-delivery',
-            'platform-team-vs-sres',
-            'capex-vs-opex',
-            'dora-vs-space',
-            'aws-vs-gcp-vs-azure',
-            'copilot-vs-cursor',
-            'react-spa-vs-nextjs',
-            'postgresql-vs-mongodb',
-            'build-ai-vs-buy-ai',
-            'soc2-vs-iso27001',
-            'scrum-vs-safe',
-            'okrs-vs-kpis',
-            'feature-flags-vs-branching',
-            'self-hosted-ai-vs-ai-saas',
-            'tech-debt-vs-design-debt',
-            'offshore-vs-nearshore',
-            'unit-tests-vs-integration-tests',
-            'clickhouse-vs-bigquery',
-            'vertical-ai-vs-horizontal-ai',
-            'aper-vs-rpe',
-            'langchain-vs-llamaindex',
-            'openai-vs-anthropic',
-            'vercel-vs-netlify',
-            'datadog-vs-newrelic',
-            'github-actions-vs-gitlab-ci',
-            'snowflake-vs-databricks',
-            'kubernetes-vs-serverless',
-            'linear-vs-jira',
-            'supabase-vs-firebase',
-            'dbt-vs-airflow'
-        ].map(slug => ({
-            url: `${baseUrl}/comparisons/${slug}`,
-            changeFrequency: 'monthly' as const,
-            priority: 0.7,
-        })),
-
-        ...[
-            'technical-debt',
-            'engineering-efficiency',
-            'executive-technology-guide',
-            'product-economics',
-            'engineering-leadership-handbook',
-            'multi-agent-orchestration',
-            'cto-to-ctro',
-            'ai-native-development-teams',
-            'post-quantum-migration',
-            'hybrid-ai-infrastructure',
-            'ai-economics',
-            'pe-due-diligence',
-            'vc-technology-assessment',
-            'saas-metrics',
-            'cloud-finops',
-            'ai-agent-compliance-framework',
-            'confidential-computing-playbook',
-            'gpu-finops-supercomputing',
-            'ai-security-posture-2026',
-            'spatial-computing-economics'
-        ].map(slug => ({
-            url: `${baseUrl}/guides/${slug}`,
-            changeFrequency: 'monthly' as const,
-            priority: 0.7,
-        })),
+        // --- DYNAMICALLY INJECTED EXOGRAM DOCS ---
+        // NOTE: /comparisons/* and /guides/* removed from sitemap — they all 308→ /vault/curriculum/tracks
 
         ...exogramDocs.map(doc => ({
             url: `${baseUrl}/exogram/docs/${doc.slug}`,
