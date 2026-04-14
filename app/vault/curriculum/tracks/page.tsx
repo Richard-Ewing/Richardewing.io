@@ -50,16 +50,16 @@ export default async function CurriculumTracksPage() {
                         <BlurIn word="Academy." className="text-4xl sm:text-6xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-6" />
                         
                         <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-                            These aren&apos;t courses. These are 18 deep-authority curriculum tracks built from published frameworks in CIO.com and Built In — spanning product economics, AI financial modeling, leadership, career capital, M&A integration, and executive governance.
+                            These aren&apos;t courses. These are 23 deep-authority curriculum tracks built from published frameworks in CIO.com and Built In — spanning product economics, AI agents, leadership, career capital, M&A integration, and executive governance.
                         </p>
                         
                         <div className="flex items-center justify-center gap-8 mt-6">
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-zinc-900">18</div>
+                                <div className="text-2xl font-grotesk font-bold text-zinc-900">23</div>
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mt-1">Authority Tracks</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-zinc-900">218</div>
+                                <div className="text-2xl font-grotesk font-bold text-zinc-900">293</div>
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mt-1">Deep Modules</div>
                             </div>
                             <div className="text-center bg-purple-50 px-4 py-2 rounded-lg border border-purple-200">
@@ -68,7 +68,7 @@ export default async function CurriculumTracksPage() {
                             </div>
                             <div className="text-center bg-indigo-50 px-4 py-2 rounded-lg border border-indigo-200">
                                 <div className="text-xl font-mono font-bold text-indigo-700">$799</div>
-                                <div className="text-[10px] font-mono uppercase tracking-widest text-indigo-500 mt-1">All 18 Tracks</div>
+                                <div className="text-[10px] font-mono uppercase tracking-widest text-indigo-500 mt-1">All 23 Tracks</div>
                             </div>
                         </div>
                     </div>
