@@ -137,7 +137,7 @@ export default function DueDiligenceTool() {
 
             const element = document.getElementById('dd-pdf-export-zone');
             if (!element) return;
-            const dataUrl = await toPng(element, { quality: 1.0, backgroundColor: '#050505', pixelRatio: 2 });
+            const dataUrl = await toPng(element, { quality: 1.0, backgroundColor: '#ffffff', pixelRatio: 2 });
             const pdf = new jsPDF({ orientation: 'p', unit: 'px', format: [element.offsetWidth, element.offsetHeight] });
             pdf.addImage(dataUrl, 'PNG', 0, 0, element.offsetWidth, element.offsetHeight);
             pdf.save(`Engineering_Due_Diligence_${profile}.pdf`);
