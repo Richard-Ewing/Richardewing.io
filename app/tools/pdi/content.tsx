@@ -18,14 +18,30 @@ import { VaultUpsell, RecommendedTrack } from '../../components/VaultUpsell';
 // Simple Pie Chart component (no external dependency)
 const PieChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
     const total = data.reduce((sum, d) => sum + d.value, 0);
-    const currentAngle = 0;
+
+    if (total === 0 || isNaN(total)) {
+        return (
+            <svg viewBox="0 0 100 100" className="w-full h-full opacity-30">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#d4d4d8" strokeWidth="15" strokeDasharray="4 4" />
+                <circle cx="50" cy="50" r="25" fill="#f8fafc" />
+            </svg>
+        );
+    }
 
     return (
         <svg viewBox="0 0 100 100" className="w-full h-full">
             {data.map((slice, i) => {
-                const startAngle = data.slice(0, i).reduce((sum, s) => sum + (s.value / total) * 360, 0);
+                if (slice.value === 0) return null;
+                const startAngle = data.filter((_, idx) => idx < i).reduce((sum, s) => sum + (s.value / total) * 360, 0);
                 const angle = (slice.value / total) * 360;
                 const endAngle = startAngle + angle;
+
+                // Handle single slice edge case (100% donut)
+                if (angle === 360) {
+                    return (
+                        <circle key={i} cx="50" cy="50" r="35" fill="none" stroke={slice.color} strokeWidth="30" />
+                    );
+                }
 
                 const startRad = (startAngle - 90) * Math.PI / 180;
                 const endRad = (endAngle - 90) * Math.PI / 180;
@@ -46,7 +62,8 @@ const PieChart = ({ data }: { data: { name: string; value: number; color: string
                     />
                 );
             })}
-            <circle cx="50" cy="50" r="20" fill="#050505" />
+            {/* Cutout for Donut Shape - matched to new light mode background */}
+            <circle cx="50" cy="50" r="20" fill="#ffffff" />
         </svg>
     );
 };
