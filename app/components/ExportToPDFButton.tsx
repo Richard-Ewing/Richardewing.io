@@ -37,10 +37,9 @@ export function ExportToPDFButton({
             }
 
             // Dynamically import heavy PDF engines only on click to prevent Next.js SSR crashes
-            const h2cModule = await import('html2canvas');
+            const htmlToImage = await import('html-to-image');
             const jsPDFModule = await import('jspdf');
             
-            const html2canvas = h2cModule.default || h2cModule;
             const jsPDF = jsPDFModule.default || jsPDFModule.jsPDF;
 
             const element = document.getElementById(targetId);
@@ -66,12 +65,14 @@ export function ExportToPDFButton({
             // Slight delay to allow browser to reflow layout to 1024px
             await new Promise(resolve => setTimeout(resolve, 150));
 
-            // 2) Snapshot the rigid DOM layer into a binary Canvas
-            const canvas = await html2canvas(element, {
-                scale: 2, // High resolution mode for crisp text
-                logging: false,
-                useCORS: true, 
-                backgroundColor: '#0a0a0b', // Exogram background base
+            // 2) Snapshot the rigid DOM layer into a binary Canvas via html-to-image
+            // html-to-image handles oklch and lab colors perfectly because it uses native SVG rendering
+            const imgData = await htmlToImage.toPng(element, {
+                pixelRatio: 2,
+                backgroundColor: '#0a0a0b',
+                style: {
+                    transform: 'none',
+                }
             });
 
             // 3) Restore the original DOM state instantly
@@ -85,10 +86,7 @@ export function ExportToPDFButton({
                     node.style.animation = '';
                 }
             });
-
             // 4) Convert Canvas to jsPDF standard format
-            const imgData = canvas.toDataURL('image/png', 1.0);
-            
             const pdf = new jsPDF({
                 orientation: 'portrait',
                 unit: 'mm',
@@ -96,8 +94,7 @@ export function ExportToPDFButton({
             });
 
             const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
+            const pdfHeight = (element.offsetHeight * pdfWidth) / element.offsetWidth;
             let heightLeft = pdfHeight;
             let position = 0;
             const pageHeight = pdf.internal.pageSize.getHeight();
