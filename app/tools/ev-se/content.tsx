@@ -28,10 +28,10 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                 const uniqueId = `bar-${item.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i}-${sectionId}`;
                 return (
                     <div key={i} className="flex items-center gap-4">
-                        <div className="w-24 text-xs font-mono text-zinc-950 text-right">{item.name}</div>
+                        <div className="w-24 text-xs font-bold font-mono text-zinc-950 text-right">{item.name}</div>
                         <div className="flex-1 h-10 bg-zinc-50 rounded-lg overflow-hidden relative">
                             <motion.div initial={{width: 0}} animate={{ width: `${(item.value / maxValue) * 100}%`, backgroundColor: item.color }} className={`h-full rounded-lg transition-all duration-1000 ease-out flex items-center justify-end pr-4 ${styles.waterfallBar}`}>
-                                <span className="text-xs font-mono text-zinc-950 font-bold">
+                                <span className="text-xs font-bold font-mono text-zinc-950 font-bold">
                                     ${(item.value / 1000000).toFixed(1)}M
                                 </span>
                             </motion.div>
@@ -51,10 +51,10 @@ const RiskSlider = ({ label, value, onChange, description }: {
     description: string;
 }) => {
     const getRiskLabel = (v: number) => {
-        if (v <= 15) return { emoji: '✓', text: 'Low', color: 'text-emerald-800 font-semibold' };
-        if (v <= 35) return { emoji: '◐', text: 'Moderate', color: 'text-yellow-800 font-semibold' };
-        if (v <= 60) return { emoji: '⚠', text: 'High', color: 'text-orange-800 font-semibold' };
-        return { emoji: '⛔', text: 'Critical', color: 'text-red-800 font-semibold' };
+        if (v <= 15) return { emoji: '✓', text: 'Low', color: 'text-emerald-900 font-extrabold font-semibold' };
+        if (v <= 35) return { emoji: '◐', text: 'Moderate', color: 'text-yellow-900 font-extrabold font-semibold' };
+        if (v <= 60) return { emoji: '⚠', text: 'High', color: 'text-orange-900 font-extrabold font-semibold' };
+        return { emoji: '⛔', text: 'Critical', color: 'text-red-900 font-extrabold font-semibold' };
     };
     const risk = getRiskLabel(value);
 
@@ -64,7 +64,7 @@ const RiskSlider = ({ label, value, onChange, description }: {
                 <span className="text-base text-zinc-950 font-bold">{label}</span>
                 <div className={`flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-100 ${risk.color}`}>
                     <span>{risk.emoji}</span>
-                    <span className="text-xs font-mono">{value}% {risk.text}</span>
+                    <span className="text-xs font-bold font-mono">{value}% {risk.text}</span>
                 </div>
             </div>
             <div className="relative">
@@ -83,11 +83,11 @@ const RiskSlider = ({ label, value, onChange, description }: {
                     className={`relative w-full h-2 bg-transparent rounded-lg appearance-none cursor-pointer z-10 ${styles.riskSlider}`}
                 />
             </div>
-            <div className="flex justify-between text-xs font-medium text-zinc-950">
+            <div className="flex justify-between text-xs font-bold font-medium text-zinc-950">
                 <span>Low Risk</span>
                 <span>High Risk</span>
             </div>
-            <p className="text-sm font-medium text-zinc-950">{description}</p>
+            <p className="text-sm font-semibold font-medium text-zinc-950">{description}</p>
         </div>
     );
 };
@@ -305,7 +305,7 @@ export default function EVSETool() {
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!results} toolName="EV-SE" />
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-zinc-950 font-bold">EV-SE Engine</span>
@@ -318,7 +318,7 @@ export default function EVSETool() {
                         {/* Status Badge */}
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">EV-SE | Valuation Scenario Engine</span>
+                            <span className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest">EV-SE | Valuation Scenario Engine</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -331,14 +331,14 @@ export default function EVSETool() {
 
                         {/* PERSONA SELECTOR */}
                         <div className="mb-8">
-                            <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-3">I am a...</div>
+                            <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-3">I am a...</div>
                             <div className="flex flex-wrap gap-2">
                                 {PERSONAS.map(p => (
                                     <button
                                         key={p.id}
                                         onClick={() => setPersona(p.id)}
                                         className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id
-                                            ? 'bg-purple-500/10 border-purple-500 text-purple-800 font-semibold'
+                                            ? 'bg-purple-500/10 border-purple-500 text-purple-900 font-extrabold font-semibold'
                                             : 'bg-white/80 border-zinc-400 text-zinc-900 hover:border-white/30'
                                             }`}
                                     >
@@ -359,10 +359,10 @@ export default function EVSETool() {
                         {step === 1 && (
                         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8 mt-2">
                             <div>
-                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Valuation Inputs</div>
+                                <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-4">Valuation Inputs</div>
                                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
                                     <div>
-                                        <label htmlFor="arr" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">ARR</label>
+                                        <label htmlFor="arr" className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">ARR</label>
                                         <div className="relative">
                                             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
                                             <input
@@ -375,7 +375,7 @@ export default function EVSETool() {
                                         </div>
                                     </div>
                                     <div>
-                                        <label htmlFor="multiple" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">Target Multiple</label>
+                                        <label htmlFor="multiple" className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">Target Multiple</label>
                                         <div className="relative">
                                             <input
                                                 id="multiple"
@@ -388,7 +388,7 @@ export default function EVSETool() {
                                         </div>
                                     </div>
                                     <div>
-                                        <label htmlFor="stage" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">Stage</label>
+                                        <label htmlFor="stage" className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">Stage</label>
                                         <select
                                             id="stage"
                                             value={stage}
@@ -403,7 +403,7 @@ export default function EVSETool() {
                                         </select>
                                     </div>
                                     <div>
-                                        <label htmlFor="confidence" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">Base Confidence</label>
+                                        <label htmlFor="confidence" className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">Base Confidence</label>
                                         <div className="relative">
                                             <input
                                                 id="confidence"
@@ -425,10 +425,10 @@ export default function EVSETool() {
                         {step === 2 && (
                         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8 mt-2">
                             <div>
-                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Funding Context</div>
+                                <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-4">Funding Context</div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label htmlFor="target" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">Target Raise</label>
+                                        <label htmlFor="target" className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">Target Raise</label>
                                         <div className="relative">
                                             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
                                             <input
@@ -441,7 +441,7 @@ export default function EVSETool() {
                                         </div>
                                     </div>
                                     <div>
-                                        <label htmlFor="timeline" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">Raise Timeline</label>
+                                        <label htmlFor="timeline" className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">Raise Timeline</label>
                                         <select
                                             id="timeline"
                                             value={raiseTimeline}
@@ -467,7 +467,7 @@ export default function EVSETool() {
                         {step === 3 && (
                         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8 mt-2">
                             <div>
-                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Execution Risk Factors</div>
+                                <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-4">Execution Risk Factors</div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <RiskSlider
                                         label="Scope Creep"
@@ -537,10 +537,10 @@ export default function EVSETool() {
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-zinc-400 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-bold font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Valuation Waterfall Generated</h2>
-                            <p className="text-sm text-zinc-900 font-medium">Export this assessment to a verified Executive PDF.</p>
+                            <p className="text-sm font-semibold text-zinc-900 font-medium">Export this assessment to a verified Executive PDF.</p>
                         </div>
                         <ExportToPDFButton targetId="ev-se-pdf-export-zone" fileName={`EV-SE_Valuation_${persona}.pdf`} />
                     </div>
@@ -554,12 +554,12 @@ export default function EVSETool() {
                             <BorderBeam size={300} duration={12} delay={9} borderWidth={1.5} colorFrom="#FF4444" colorTo="#A855F7" />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                 <div>
-                                    <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-2">Wealth Destruction Gap</div>
+                                    <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Wealth Destruction Gap</div>
                                     <div className="text-6xl sm:text-8xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-600">
                                         $<NumberTicker value={results.wealthGap / 1000000} />M
                                     </div>
                                     <div className="mt-4">
-                                        <span className={`px-3 py-1.5 rounded-full ${results.adjustedConfidence < 60 ? 'bg-red-50/30 text-red-800 font-semibold border border-red-900/50' : 'bg-purple-900/30 text-purple-800 font-semibold border border-purple-900/50'} text-xs font-bold uppercase tracking-widest`}>
+                                        <span className={`px-3 py-1.5 rounded-full ${results.adjustedConfidence < 60 ? 'bg-red-50/30 text-red-900 font-extrabold font-semibold border border-red-900/50' : 'bg-purple-900/30 text-purple-900 font-extrabold font-semibold border border-purple-900/50'} text-xs font-bold uppercase tracking-widest`}>
                                             {results.adjustedConfidence.toFixed(0)}% Execution Confidence
                                         </span>
                                     </div>
@@ -567,7 +567,7 @@ export default function EVSETool() {
                                 <div>
                                     <p className="text-lg sm:text-xl text-zinc-950 leading-relaxed">
                                         Your execution risk is destroying <span className="text-red-500 font-bold">${(results.wealthGap / 1000000).toFixed(1)}M</span> in potential enterprise value.
-                                        At perfect execution, you'd be worth <span className="text-cyan-800 font-semibold font-bold">${(results.perfectValue / 1000000).toFixed(0)}M</span>.
+                                        At perfect execution, you'd be worth <span className="text-cyan-900 font-extrabold font-semibold font-bold">${(results.perfectValue / 1000000).toFixed(0)}M</span>.
                                     </p>
                                 </div>
                             </div>
@@ -579,11 +579,11 @@ export default function EVSETool() {
                         <div className="capsule-container rounded-2xl p-6 mb-6 border-l-4 border-purple-500">
                             <div className="flex items-center gap-2 mb-3 text-zinc-900">
                                 <Target size={14} />
-                                <span className="text-xs font-medium font-mono uppercase tracking-widest">Insight for {persona}</span>
+                                <span className="text-xs font-bold font-medium font-mono uppercase tracking-widest">Insight for {persona}</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">{getPersonaInsight(results).headline}</h3>
                             <p className="text-zinc-900 leading-relaxed mb-3">{getPersonaInsight(results).detail}</p>
-                            <p className="text-purple-800 font-semibold font-semibold">{getPersonaInsight(results).action}</p>
+                            <p className="text-purple-900 font-extrabold font-semibold">{getPersonaInsight(results).action}</p>
                         </div>
                     </ScrollReveal>
 
@@ -591,21 +591,21 @@ export default function EVSETool() {
                     <ScrollReveal delay={100}>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                             <GlowCard className="p-6" glowColor="cyan">
-                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Potential Value</div>
-                                <div className="text-3xl sm:text-4xl font-bold text-cyan-800 font-semibold">${(results.perfectValue / 1000000).toFixed(0)}M</div>
-                                <p className="text-xs text-zinc-900 font-bold/60 mt-2">At perfect execution.</p>
+                                <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Potential Value</div>
+                                <div className="text-3xl sm:text-4xl font-bold text-cyan-900 font-extrabold font-semibold">${(results.perfectValue / 1000000).toFixed(0)}M</div>
+                                <p className="text-xs font-bold text-zinc-900 font-bold/60 mt-2">At perfect execution.</p>
                             </GlowCard>
 
                             <GlowCard className="p-6" glowColor="cyan">
-                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Risk-Adjusted Value</div>
-                                <div className="text-3xl sm:text-4xl font-bold text-purple-800 font-semibold">${(results.riskedValue / 1000000).toFixed(0)}M</div>
-                                <p className="text-xs text-zinc-900 font-bold/60 mt-2">What investors will pay.</p>
+                                <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Risk-Adjusted Value</div>
+                                <div className="text-3xl sm:text-4xl font-bold text-purple-900 font-extrabold font-semibold">${(results.riskedValue / 1000000).toFixed(0)}M</div>
+                                <p className="text-xs font-bold text-zinc-900 font-bold/60 mt-2">What investors will pay.</p>
                             </GlowCard>
 
                             <GlowCard className="p-6" glowColor="danger">
-                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Biggest Risk Factor</div>
-                                <div className="text-2xl sm:text-3xl font-bold text-orange-800 font-semibold">{results.biggestRiskFactor}</div>
-                                <p className="text-xs text-zinc-900 font-bold/60 mt-2">Costing {formatMoney(results.biggestRiskCost)}.</p>
+                                <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Biggest Risk Factor</div>
+                                <div className="text-2xl sm:text-3xl font-bold text-orange-900 font-extrabold font-semibold">{results.biggestRiskFactor}</div>
+                                <p className="text-xs font-bold text-zinc-900 font-bold/60 mt-2">Costing {formatMoney(results.biggestRiskCost)}.</p>
                             </GlowCard>
                         </div>
                     </ScrollReveal>
@@ -616,20 +616,20 @@ export default function EVSETool() {
                             <div className="capsule-container rounded-2xl p-6 mb-6 border border-red-500/30">
                                 <div className="flex items-center gap-2 mb-4">
                                     <TrendingDown className="w-4 h-4 text-red-500 animate-pulse" />
-                                    <div className="text-xs font-mono uppercase tracking-widest text-zinc-900">Corporate Solvency Matrix (M&A Due Diligence Risk)</div>
+                                    <div className="text-xs font-bold font-mono uppercase tracking-widest text-zinc-900">Corporate Solvency Matrix (M&A Due Diligence Risk)</div>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                         <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
-                                        <div className="text-sm font-medium text-zinc-950 mb-2">Deal Collapse Probability</div>
+                                        <div className="text-sm font-semibold font-medium text-zinc-950 mb-2">Deal Collapse Probability</div>
                                         <div className="text-3xl font-bold text-red-500">{results.diligenceWalkProbability.toFixed(0)}%</div>
-                                        <div className="text-xs text-zinc-900 font-bold/60 mt-2 mt-auto">Likelihood of acquirer walking away during Tech Due Diligence.</div>
+                                        <div className="text-xs font-bold text-zinc-900 font-bold/60 mt-2 mt-auto">Likelihood of acquirer walking away during Tech Due Diligence.</div>
                                     </div>
                                     <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                         <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
-                                        <div className="text-sm font-medium text-zinc-950 mb-2">Valuation Discount Penalty</div>
-                                        <div className="text-3xl font-bold text-orange-800 font-semibold">{formatMoney(results.wealthGap)}</div>
-                                        <div className="text-xs text-zinc-900 font-bold/60 mt-2 mt-auto">If the deal does close, this is the haircut applied by the Private Equity committee.</div>
+                                        <div className="text-sm font-semibold font-medium text-zinc-950 mb-2">Valuation Discount Penalty</div>
+                                        <div className="text-3xl font-bold text-orange-900 font-extrabold font-semibold">{formatMoney(results.wealthGap)}</div>
+                                        <div className="text-xs font-bold text-zinc-900 font-bold/60 mt-2 mt-auto">If the deal does close, this is the haircut applied by the Private Equity committee.</div>
                                     </div>
                                 </div>
                             </div>
@@ -640,7 +640,7 @@ export default function EVSETool() {
                     <ScrollReveal delay={150}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <GlowCard className="p-6" glowColor="cyan">
-                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Valuation Waterfall</div>
+                                <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Valuation Waterfall</div>
                                 <WaterfallChart data={waterfallData} />
                             </GlowCard>
 
@@ -648,26 +648,26 @@ export default function EVSETool() {
                             <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400">
                                 <div className="flex items-center gap-2 mb-4">
                                     <div className={`w-3 h-3 rounded-full animate-pulse ${results.adjustedConfidence < 60 ? 'bg-red-500' : 'bg-purple-400'}`} />
-                                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">Scenario Summary</span>
+                                    <span className="text-xs font-bold font-mono uppercase tracking-widest text-zinc-900">Scenario Summary</span>
                                 </div>
 
-                                <div className="space-y-3 text-sm mb-6">
+                                <div className="space-y-3 text-sm font-semibold mb-6">
                                     <div className="flex justify-between items-center p-2 rounded bg-emerald-500/10">
-                                        <span className="text-zinc-800">Best Case</span>
-                                        <span className="text-emerald-800 font-semibold font-mono font-bold">{formatMoney(results.scenarios.best)}</span>
+                                        <span className="text-zinc-950 font-bold">Best Case</span>
+                                        <span className="text-emerald-900 font-extrabold font-semibold font-mono font-bold">{formatMoney(results.scenarios.best)}</span>
                                     </div>
                                     <div className="flex justify-between items-center p-2 rounded bg-purple-500/10">
-                                        <span className="text-zinc-800">Expected Case</span>
-                                        <span className="text-purple-800 font-semibold font-mono font-bold">{formatMoney(results.scenarios.expected)}</span>
+                                        <span className="text-zinc-950 font-bold">Expected Case</span>
+                                        <span className="text-purple-900 font-extrabold font-semibold font-mono font-bold">{formatMoney(results.scenarios.expected)}</span>
                                     </div>
                                     <div className="flex justify-between items-center p-2 rounded bg-red-500/10">
-                                        <span className="text-zinc-800">Worst Case</span>
-                                        <span className="text-red-800 font-semibold font-mono font-bold">{formatMoney(results.scenarios.worst)}</span>
+                                        <span className="text-zinc-950 font-bold">Worst Case</span>
+                                        <span className="text-red-900 font-extrabold font-semibold font-mono font-bold">{formatMoney(results.scenarios.worst)}</span>
                                     </div>
                                 </div>
 
                                 <div className="space-y-3">
-                                    <div className="text-sm text-zinc-950 font-semibold mb-2">Get investor-ready scenario deck:</div>
+                                    <div className="text-sm font-semibold text-zinc-950 font-semibold mb-2">Get investor-ready scenario deck:</div>
                                     <NewsletterForm
                                         buttonText="Get Scenario Deck"
                                         extraData={{
@@ -690,7 +690,7 @@ export default function EVSETool() {
                             </h3>
                             <div className="bg-zinc-50 border border-zinc-400 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 via-pink-500 to-red-500"></div>
-                                <h4 className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">90-Day Execution Gantt Chart: {results.biggestRiskFactor}</h4>
+                                <h4 className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">90-Day Execution Gantt Chart: {results.biggestRiskFactor}</h4>
                                 
                                 <div className="space-y-6 md:space-y-8">
                                     {results.qpep_roadmap.map((plan, i) => (
@@ -699,7 +699,7 @@ export default function EVSETool() {
                                             <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.5)] z-10"></div>
                                             
                                             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                <div className="bg-white/5 px-3 py-1 rounded-md text-xs font-medium uppercase font-mono tracking-widest text-zinc-900 shrink-0 inline-block w-fit">
+                                                <div className="bg-white/5 px-3 py-1 rounded-md text-xs font-bold font-medium uppercase font-mono tracking-widest text-zinc-900 shrink-0 inline-block w-fit">
                                                     Month {plan.month}
                                                 </div>
                                                 <div className="font-bold text-zinc-950 text-base leading-tight md:leading-normal">{plan.focus}</div>
@@ -710,15 +710,15 @@ export default function EVSETool() {
                                                     const widths = ["w-full", "w-[90%]", "w-[95%]"];
                                                     const width = widths[j % widths.length];
                                                     const colorClasses = [
-                                                        "from-purple-500/20 to-pink-500/20 border-purple-500/50 text-purple-700",
-                                                        "from-pink-500/20 to-rose-500/20 border-pink-500/50 text-pink-800 font-bold",
-                                                        "from-rose-500/20 to-red-500/20 border-rose-500/50 text-red-800 font-bold"
+                                                        "from-purple-500/20 to-pink-500/20 border-purple-500/50 text-purple-900 font-extrabold",
+                                                        "from-pink-500/20 to-rose-500/20 border-pink-500/50 text-pink-900 font-extrabold",
+                                                        "from-rose-500/20 to-red-500/20 border-rose-500/50 text-red-900 font-extrabold"
                                                     ];
                                                     const color = colorClasses[i % colorClasses.length];
                                                     
                                                     return (
                                                         <div key={j} className={`${width} bg-gradient-to-r ${color} border-l-2 p-3 rounded-r-md min-h-[70px] flex items-center transition-all hover:brightness-125 hover:translate-x-1 duration-300 shadow-sm`}>
-                                                            <span className="text-xs leading-relaxed">{action}</span>
+                                                            <span className="text-xs font-bold leading-relaxed">{action}</span>
                                                         </div>
                                                     );
                                                 })}
@@ -739,7 +739,7 @@ export default function EVSETool() {
                                 <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                 3-Step SE Org Engineering Efficiency Playbook
                             </h3>
-                            <p className="text-zinc-900 text-sm mb-8">Execute this operational sequence immediately to eliminate execution drag and restore investor-grade valuation multiples.</p>
+                            <p className="text-zinc-900 text-sm font-semibold mb-8">Execute this operational sequence immediately to eliminate execution drag and restore investor-grade valuation multiples.</p>
 
                             <div className="space-y-4">
                                 {/* Step 1 */}
@@ -750,12 +750,12 @@ export default function EVSETool() {
                                     </div>
                                     <div className="relative z-10 w-full">
                                         <h4 className="text-zinc-950 font-bold mb-2">Audit Lead-Time to Deployment</h4>
-                                        <p className="text-zinc-900 text-sm leading-relaxed mb-4">Your current velocity is destroying enterprise value. Software engineering organizations with opaque delivery pipelines suffer massive valuation haircuts in due diligence.</p>
+                                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">Your current velocity is destroying enterprise value. Software engineering organizations with opaque delivery pipelines suffer massive valuation haircuts in due diligence.</p>
                                         <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                            <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                            <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-sm font-medium text-zinc-950">Implement deterministic DORA metric tracking across all squads. Any team failing to deploy to production at least twice weekly must halt feature development and resolve CI/CD bottlenecks.</p>
+                                            <p className="text-sm font-semibold font-medium text-zinc-950">Implement deterministic DORA metric tracking across all squads. Any team failing to deploy to production at least twice weekly must halt feature development and resolve CI/CD bottlenecks.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -768,12 +768,12 @@ export default function EVSETool() {
                                     </div>
                                     <div className="relative z-10 w-full">
                                         <h4 className="text-zinc-950 font-bold mb-2">Neutralize Key-Person Dependencies</h4>
-                                        <p className="text-zinc-900 text-sm leading-relaxed mb-4">A single point of failure in your talent pool is a terminal risk to potential acquirers. If your lead architect leaves, does your roadmap halt?</p>
+                                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">A single point of failure in your talent pool is a terminal risk to potential acquirers. If your lead architect leaves, does your roadmap halt?</p>
                                         <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                            <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                            <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-sm font-medium text-zinc-950">Mandate immediate architecture shadowing. Pair your most critical engineers with mid-level ICs for 30 days to force knowledge transfer and distribute systemic risk.</p>
+                                            <p className="text-sm font-semibold font-medium text-zinc-950">Mandate immediate architecture shadowing. Pair your most critical engineers with mid-level ICs for 30 days to force knowledge transfer and distribute systemic risk.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -782,16 +782,16 @@ export default function EVSETool() {
                                 <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                     <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
-                                        <span className="text-cyan-800 font-semibold font-bold font-mono">03</span>
+                                        <span className="text-cyan-900 font-extrabold font-semibold font-bold font-mono">03</span>
                                     </div>
                                     <div className="relative z-10 w-full">
                                         <h4 className="text-zinc-950 font-bold mb-2">Hard-Lock the Product Roadmap</h4>
-                                        <p className="text-zinc-900 text-sm leading-relaxed mb-4">Scope creep is compounding your execution risk. Investors penalize teams that lack the discipline to say no to transient sales requests.</p>
+                                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">Scope creep is compounding your execution risk. Investors penalize teams that lack the discipline to say no to transient sales requests.</p>
                                         <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                            <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-800 font-semibold uppercase tracking-widest font-bold">
+                                            <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-sm font-medium text-zinc-950">Institute a 90-day feature freeze on all uncommitted requests. Reallocate 40% of sprint capacity strictly to technical debt reduction and infrastructure hardening.</p>
+                                            <p className="text-sm font-semibold font-medium text-zinc-950">Institute a 90-day feature freeze on all uncommitted requests. Reallocate 40% of sprint capacity strictly to technical debt reduction and infrastructure hardening.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -811,7 +811,7 @@ export default function EVSETool() {
                                 ]} 
                             />
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-6">
-                                <button onClick={() => setResults(null)} className="text-zinc-950 text-sm hover:text-zinc-900 underline underline-offset-4">← New Scenario</button>
+                                <button onClick={() => setResults(null)} className="text-zinc-950 text-sm font-semibold hover:text-zinc-900 underline underline-offset-4">← New Scenario</button>
                             </div>
                         </div>
                     </ScrollReveal>
@@ -819,8 +819,8 @@ export default function EVSETool() {
                     {/* Social Proof */}
                     <ScrollReveal delay={250}>
                         <div className="text-center pt-8">
-                            <p className="text-xs text-zinc-900 font-bold mb-3">Trusted by product leaders at</p>
-                            <div className="flex items-center justify-center gap-8 text-zinc-800 font-mono text-xs">
+                            <p className="text-xs font-bold text-zinc-900 font-bold mb-3">Trusted by product leaders at</p>
+                            <div className="flex items-center justify-center gap-8 text-zinc-950 font-bold font-mono text-xs">
                                 <span>Stripe</span>
                                 <span>Figma</span>
                                 <span>Linear</span>
@@ -855,11 +855,11 @@ export default function EVSETool() {
                             <li className="flex gap-2"><span className="text-red-500">→</span> <strong>Key Person Risk:</strong> -20% Valuation Impact</li>
                             <li className="flex gap-2"><span className="text-red-500">→</span> <strong>Tech Debt:</strong> -10% Valuation Impact</li>
                         </ul>
-                        <p className="mt-4 text-xs text-zinc-900 font-bold">This tool forces you to confront these discounts upfront.</p>
+                        <p className="mt-4 text-xs font-bold text-zinc-900 font-bold">This tool forces you to confront these discounts upfront.</p>
                     </div>
                     <div>
-                        <h3 className="text-2xl font-bold text-yellow-800 font-semibold mb-4">Defending the Downside</h3>
-                        <p className="text-zinc-900 text-sm leading-relaxed">
+                        <h3 className="text-2xl font-bold text-yellow-900 font-extrabold font-semibold mb-4">Defending the Downside</h3>
+                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed">
                             The most valuable thing a Product Leader can do is not &quot;ideation&quot;—it is <strong>Risk Adjustment</strong>. By using this calculator to model &quot;Worst Case,&quot; &quot;Base Case,&quot; and &quot;Blue Sky,&quot; you transform your roadmap from a lottery ticket into a bankable bond. This is how you defend your budget in a downturn.
                         </p>
                     </div>

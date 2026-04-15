@@ -60,8 +60,8 @@ export default function FaqPage() {
         <div className="max-w-4xl w-full relative z-10 mx-auto">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                <span>Help</span><span>/</span><span className="text-cyan-800 font-semibold font-bold">FAQ</span>
+            <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                <span>Help</span><span>/</span><span className="text-cyan-900 font-extrabold font-semibold font-bold">FAQ</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
@@ -80,7 +80,7 @@ export default function FaqPage() {
                             <details key={faq.q} className="card p-6 group cursor-pointer">
                                 <summary className="text-zinc-950 font-bold cursor-pointer list-none flex items-center justify-between">
                                     <span>{faq.q}</span>
-                                    <span className="text-cyan-800 font-semibold text-xl font-mono group-open:rotate-45 transition-transform">+</span>
+                                    <span className="text-cyan-900 font-extrabold font-semibold text-xl font-mono group-open:rotate-45 transition-transform">+</span>
                                 </summary>
                                 <p className="text-zinc-900 mt-4 leading-relaxed">{faq.a}</p>
                             </details>
@@ -94,10 +94,10 @@ export default function FaqPage() {
                 <h2 className="text-2xl font-bold text-zinc-950 mb-4">Still Have Questions?</h2>
                 <p className="text-zinc-900 mb-8">Book a free 15-minute call or explore the tools.</p>
                 <div className="flex flex-wrap justify-center gap-4">
-                    <Link href="/advisory" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
+                    <Link href="/advisory" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs font-bold rounded-xl hover:bg-cyan-400 transition-colors">
                         Book a Call →
                     </Link>
-                    <Link href="/tools" className="px-8 py-4 border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 transition-all">
+                    <Link href="/tools" className="px-8 py-4 border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold rounded-xl hover:border-cyan-500 transition-all">
                         Explore Free Tools →
                     </Link>
                 </div>

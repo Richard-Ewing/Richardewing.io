@@ -58,12 +58,12 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
             >
                 {/* Header */}
                 <div className="relative bg-gradient-to-r from-violet-600/20 to-cyan-600/20 border-b border-zinc-400 p-6">
-                    <button onClick={onClose} className="absolute top-4 right-4 text-zinc-800 hover:text-zinc-900 transition-colors">
+                    <button onClick={onClose} className="absolute top-4 right-4 text-zinc-950 font-bold hover:text-zinc-900 transition-colors">
                         <X className="w-5 h-5" />
                     </button>
                     <div className="flex items-center gap-3 mb-2">
                         <Gift className="w-6 h-6 text-violet-400" />
-                        <span className="text-xs font-mono text-violet-400 uppercase tracking-widest">Bundle & Save</span>
+                        <span className="text-xs font-bold font-mono text-violet-400 uppercase tracking-widest">Bundle & Save</span>
                     </div>
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-900">
                         Get More Guides. <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">Pay Less.</span>
@@ -79,12 +79,12 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                         className="w-full flex items-center justify-between p-4 rounded-xl border border-zinc-400 bg-zinc-50 hover:border-zinc-500 transition-all group text-left"
                     >
                         <div>
-                            <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors">This Guide Only</div>
-                            <div className="text-xs text-zinc-950 mt-0.5">Instant access to this guide</div>
+                            <div className="text-sm font-semibold font-bold text-zinc-950 group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">This Guide Only</div>
+                            <div className="text-xs font-bold text-zinc-950 mt-0.5">Instant access to this guide</div>
                         </div>
                         <div className="flex items-center gap-2">
                             <span className="text-xl font-bold text-zinc-900">${PREMIUM_GUIDES.find(g => g.slug === currentGuide)?.price || 29}</span>
-                            <ArrowRight className="w-4 h-4 text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors" />
+                            <ArrowRight className="w-4 h-4 text-zinc-950 group-hover:text-cyan-900 font-extrabold font-semibold transition-colors" />
                         </div>
                     </button>
 
@@ -94,29 +94,29 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                         disabled={false}
                         className="w-full flex items-center justify-between p-4 rounded-xl border border-cyan-500/30 bg-cyan-500/5 hover:border-cyan-500/50 transition-all group text-left relative"
                     >
-                        <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full bg-cyan-500 text-xs font-medium font-bold text-zinc-950 font-semibold uppercase tracking-widest flex items-center gap-1">
+                        <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full bg-cyan-500 text-xs font-bold font-medium font-bold text-zinc-950 font-semibold uppercase tracking-widest flex items-center gap-1">
                             <Sparkles className="w-3 h-3" /> Ultimate Value
                         </div>
                         <div>
-                            <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors">All 13 Premium Guides</div>
-                            <div className="text-xs text-zinc-950 mt-0.5">Complete 2026 premium library · Save over $500</div>
+                            <div className="text-sm font-semibold font-bold text-zinc-950 group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">All 13 Premium Guides</div>
+                            <div className="text-xs font-bold text-zinc-950 mt-0.5">Complete 2026 premium library · Save over $500</div>
                             <div className="flex flex-wrap gap-1 mt-2">
                                 {PREMIUM_GUIDES.slice(0, 5).map(g => (
-                                    <span key={g.id} className="text-xs font-medium px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-800 font-semibold border border-cyan-500/20">{g.name}</span>
+                                    <span key={g.id} className="text-xs font-bold font-medium px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold border border-cyan-500/20">{g.name}</span>
                                 ))}
-                                <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-white/5 text-zinc-800">+8 more</span>
+                                <span className="text-xs font-bold font-medium px-2 py-0.5 rounded-full bg-white/5 text-zinc-950 font-bold">+8 more</span>
                             </div>
                         </div>
                         <div className="flex flex-col items-end">
                             <span className="text-xl font-bold text-zinc-900">$399</span>
-                            <span className="text-xs font-medium text-zinc-950 line-through">$1,027</span>
+                            <span className="text-xs font-bold font-medium text-zinc-950 line-through">$1,027</span>
                         </div>
                     </button>
                 </div>
 
                 {/* Footer */}
                 <div className="px-6 pb-6">
-                    <p className="text-xs font-medium text-zinc-800 text-center">
+                    <p className="text-xs font-bold font-medium text-zinc-950 font-bold text-center">
                         Secure checkout powered by Stripe · Instant PDF access after purchase
                     </p>
                 </div>

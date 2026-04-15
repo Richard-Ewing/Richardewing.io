@@ -36,7 +36,7 @@ export default function ReportUnlocker() {
             <div className="animate-in fade-in zoom-in duration-500 p-6 rounded-xl bg-green-500/10 border border-green-500/30 flex flex-col items-center justify-center text-center space-y-3">
                 <CheckCircle2 className="w-12 h-12 text-green-400" />
                 <h4 className="text-xl font-bold text-zinc-900">Access Granted</h4>
-                <p className="text-sm text-zinc-900 font-medium">
+                <p className="text-sm font-semibold text-zinc-900 font-medium">
                     Securing your telemetry packet... Transferring to Command Center.
                 </p>
             </div>
@@ -46,7 +46,7 @@ export default function ReportUnlocker() {
     return (
         <form onSubmit={handleUnlock} className="space-y-4">
             <div className="space-y-2">
-                <label className="text-xs font-mono text-zinc-800 uppercase tracking-widest block">Executive Email</label>
+                <label className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest block">Executive Email</label>
                 <input 
                     type="email" 
                     required
@@ -60,7 +60,7 @@ export default function ReportUnlocker() {
             <button 
                 type="submit"
                 disabled={loading}
-                className="w-full relative group overflow-hidden bg-white text-black font-bold uppercase tracking-widest text-sm rounded-xl py-4 flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full relative group overflow-hidden bg-white text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-xl py-4 flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 {loading ? (
                     <span className="animate-pulse">Authenticating...</span>
@@ -72,7 +72,7 @@ export default function ReportUnlocker() {
                     </>
                 )}
             </button>
-            <p className="text-xs font-medium text-zinc-800 font-mono text-center">
+            <p className="text-xs font-bold font-medium text-zinc-950 font-bold font-mono text-center">
                 By unlocking, you agree to receive high-leverage architectural intelligence. No spam. Ever.
             </p>
         </form>

@@ -15,14 +15,14 @@ export default function ActionChecklist({ items }: { items: string[] }) {
 
     return (
         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-6 mt-8 relative overflow-hidden">
-            <div className="absolute top-0 right-0 px-4 py-1 bg-amber-500/10 text-amber-400 border-b border-l border-amber-500/20 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg flex items-center gap-1">
+            <div className="absolute top-0 right-0 px-4 py-1 bg-amber-500/10 text-amber-400 border-b border-l border-amber-500/20 text-xs font-bold font-medium font-mono uppercase tracking-widest rounded-bl-lg flex items-center gap-1">
                 <Rocket className="w-3 h-3" />
                 Execution Checklist
             </div>
             
             <div className="flex items-end justify-between mb-6 pr-32">
                 <h3 className="text-lg font-grotesk font-bold text-zinc-900">Action Items</h3>
-                <div className="text-xs font-mono text-zinc-900">{progress}% Complete</div>
+                <div className="text-xs font-bold font-mono text-zinc-900">{progress}% Complete</div>
             </div>
 
             <div className="w-full bg-white/5 h-1 rounded-full mb-6 overflow-hidden">
@@ -42,7 +42,7 @@ export default function ActionChecklist({ items }: { items: string[] }) {
                             <div className="shrink-0 mt-0.5 text-amber-500">
                                 {isChecked ? <CheckSquare className="w-5 h-5" /> : <Square className="w-5 h-5 opacity-50" />}
                             </div>
-                            <span className={`text-sm md:text-base transition-all ${isChecked ? 'text-zinc-950 line-through' : 'text-zinc-900'}`}>
+                            <span className={`text-sm font-semibold md:text-base transition-all ${isChecked ? 'text-zinc-950 line-through' : 'text-zinc-900'}`}>
                                 {item}
                             </span>
                         </button>

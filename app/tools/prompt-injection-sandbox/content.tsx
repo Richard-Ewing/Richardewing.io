@@ -134,7 +134,7 @@ export default function PromptInjectionContent() {
             <ToolCelebration show={!!results} toolName="RED-TEAM" />
             
             <div className="mb-6 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
+                <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
                     <Link href="/tools" className="hover:text-zinc-900 transition">Enterprise Diagnostics</Link>
                     <span>/</span>
                     <span className="text-zinc-950 font-bold">Prompt Intrusion Sandbox</span>
@@ -146,7 +146,7 @@ export default function PromptInjectionContent() {
                     <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-400">
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">Model Red Teaming Interface</span>
+                            <span className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest">Model Red Teaming Interface</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -158,7 +158,7 @@ export default function PromptInjectionContent() {
 
                         <div className="space-y-8">
                             <div>
-                                <label className="text-xs font-mono text-emerald-800 font-semibold uppercase tracking-widest mb-3 flex items-center gap-2">
+                                <label className="text-xs font-bold font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest mb-3 flex items-center gap-2">
                                     <Lock size={14} /> Production System Prompt
                                 </label>
                                 <div className="relative">
@@ -166,7 +166,7 @@ export default function PromptInjectionContent() {
                                     <textarea
                                         value={prompt}
                                         onChange={e => setPrompt(e.target.value)}
-                                        className="w-full h-64 sm:h-80 bg-white border border-zinc-400 rounded-xl p-6 pl-8 font-mono text-sm text-zinc-950 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500/50 transition-all placeholder:text-zinc-950 resize-none z-10 relative shadow-inner"
+                                        className="w-full h-64 sm:h-80 bg-white border border-zinc-400 rounded-xl p-6 pl-8 font-mono text-sm font-semibold text-zinc-950 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500/50 transition-all placeholder:text-zinc-950 resize-none z-10 relative shadow-inner"
                                         placeholder="Paste your prompt exactly as it is compiled to the model endpoint...
 
 Example:
@@ -178,8 +178,8 @@ Only answer questions related to AcmeCorp logistics.
                                     />
                                 </div>
                                 <div className="flex justify-between items-center mt-3">
-                                    <p className="text-xs font-medium text-zinc-800 font-mono">Will be evaluated locally against 5 known intrusion topologies.</p>
-                                    <span className="text-xs font-medium font-mono font-bold text-zinc-900">{prompt.length} Bytes / {(prompt.length / 4).toFixed(0)} Tokens</span>
+                                    <p className="text-xs font-bold font-medium text-zinc-950 font-bold font-mono">Will be evaluated locally against 5 known intrusion topologies.</p>
+                                    <span className="text-xs font-bold font-medium font-mono font-bold text-zinc-900">{prompt.length} Bytes / {(prompt.length / 4).toFixed(0)} Tokens</span>
                                 </div>
                             </div>
 
@@ -208,10 +208,10 @@ Only answer questions related to AcmeCorp logistics.
                      <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-emerald-500/20 text-emerald-800 font-semibold border border-emerald-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                <span className="bg-emerald-500/20 text-emerald-900 font-extrabold font-semibold border border-emerald-500/50 px-2 py-0.5 rounded text-xs font-bold font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Red Team Penetration Complete</h2>
-                            <p className="text-sm text-zinc-900 font-medium">Heuristic structural analysis verified across 5 critical logic bypass domains.</p>
+                            <p className="text-sm font-semibold text-zinc-900 font-medium">Heuristic structural analysis verified across 5 critical logic bypass domains.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="sandbox-pdf-export-zone" fileName={`Prompt_Defensibility_Audit.pdf`} />
@@ -228,28 +228,28 @@ Only answer questions related to AcmeCorp logistics.
                                     {persona === 'CFO' && (
                                         <div className="flex flex-col md:flex-row gap-8 items-center">
                                             <div className="flex-1">
-                                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-2">Cost of Doing Nothing (CODN)</div>
+                                                <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Cost of Doing Nothing (CODN)</div>
                                                 <div className={`text-5xl sm:text-6xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.score < 50 ? 'from-red-500 to-orange-500' : results.score < 80 ? 'from-amber-400 to-orange-400' : 'from-emerald-400 to-teal-500'}`}>
                                                     ${results.codn.toLocaleString()}
                                                 </div>
                                                 <div className="mt-6">
-                                                    <span className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2 ${results.score < 50 ? 'bg-red-50/30 text-rose-400 border border-red-900/50' : results.score < 80 ? 'bg-amber-900/30 text-amber-500 border border-amber-900/50' : 'bg-emerald-900/30 text-emerald-800 font-semibold border border-emerald-900/50'}`}>
+                                                    <span className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2 ${results.score < 50 ? 'bg-red-50/30 text-rose-400 border border-red-900/50' : results.score < 80 ? 'bg-amber-900/30 text-amber-500 border border-amber-900/50' : 'bg-emerald-900/30 text-emerald-900 font-extrabold font-semibold border border-emerald-900/50'}`}>
                                                         <Target size={12}/> {results.score < 50 ? 'HIGH VULNERABILITY DETECTED' : results.score < 80 ? 'PARTIAL MITIGATION' : 'ISO-STANDARD FORTIFICATION'}
                                                     </span>
                                                 </div>
-                                                <p className="text-sm text-zinc-900 font-medium mt-4 leading-relaxed">
+                                                <p className="text-sm font-semibold text-zinc-900 font-medium mt-4 leading-relaxed">
                                                     Your instructions successfully mitigated <strong className="text-zinc-900">{results.evaluations.filter((v:any) => v.passed).length} of {results.evaluations.length}</strong> adversarial vectors. This exposes the underlying agent chain to command hijacking and arbitrary execution, compounding into an estimated ${results.codn.toLocaleString()} in liability risk.
                                                 </p>
                                             </div>
                                             <div className="flex-1 bg-white/50 p-6 rounded-2xl border border-red-500/20 space-y-4 w-full">
-                                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Financial Risk Breakdown</div>
+                                                <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest border-b border-zinc-400 pb-3">Financial Risk Breakdown</div>
                                                 <div className="flex justify-between items-center pb-2 border-b border-zinc-400">
-                                                    <span className="text-sm text-zinc-900 font-medium">Class Action Liability</span>
-                                                    <span className="text-sm font-mono text-red-800 font-semibold">High Risk</span>
+                                                    <span className="text-sm font-semibold text-zinc-900 font-medium">Class Action Liability</span>
+                                                    <span className="text-sm font-semibold font-mono text-red-900 font-extrabold font-semibold">High Risk</span>
                                                 </div>
                                                 <div className="flex justify-between items-center pb-2 border-b border-zinc-400">
-                                                    <span className="text-sm text-zinc-900 font-medium">Malicious API Burn</span>
-                                                    <span className="text-sm font-mono text-amber-400">Exposed</span>
+                                                    <span className="text-sm font-semibold text-zinc-900 font-medium">Malicious API Burn</span>
+                                                    <span className="text-sm font-semibold font-mono text-amber-400">Exposed</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -257,7 +257,7 @@ Only answer questions related to AcmeCorp logistics.
 
                                     {persona === 'CISO' && (
                                         <div className="w-full">
-                                            <div className="text-xs font-mono text-emerald-800 font-semibold uppercase tracking-widest border-b border-zinc-400 pb-3 mb-6 flex justify-between items-center">
+                                            <div className="text-xs font-bold font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest border-b border-zinc-400 pb-3 mb-6 flex justify-between items-center">
                                                 <span>Threat Vector Matrix Map</span>
                                                 <span className="text-zinc-900">{results.evaluations.filter((v:any) => !v.passed).length} active vulnerabilities</span>
                                             </div>
@@ -276,12 +276,12 @@ Only answer questions related to AcmeCorp logistics.
                                                         </div>
                                                         <div className="flex-1 min-w-0">
                                                             <div className="flex justify-between items-center mb-1">
-                                                                <h4 className={`text-sm font-bold truncate ${v.passed ? 'text-zinc-900' : 'text-zinc-900'}`}>{v.name}</h4>
-                                                                {!v.passed && <span className="text-xs font-medium shrink-0 font-mono text-rose-500 px-2 py-0.5 bg-rose-500/10 border border-rose-500/20 rounded ml-2">{v.severity}</span>}
+                                                                <h4 className={`text-sm font-semibold font-bold truncate ${v.passed ? 'text-zinc-900' : 'text-zinc-900'}`}>{v.name}</h4>
+                                                                {!v.passed && <span className="text-xs font-bold font-medium shrink-0 font-mono text-rose-500 px-2 py-0.5 bg-rose-500/10 border border-rose-500/20 rounded ml-2">{v.severity}</span>}
                                                             </div>
-                                                            <p className="text-sm font-medium text-zinc-950 leading-relaxed mb-2">{v.description}</p>
+                                                            <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed mb-2">{v.description}</p>
                                                             {!v.passed && (
-                                                                <div className="mt-2 text-xs font-medium font-mono text-amber-400 bg-amber-500/10 p-2 rounded border border-amber-500/20 flex gap-2 items-start">
+                                                                <div className="mt-2 text-xs font-bold font-medium font-mono text-amber-400 bg-amber-500/10 p-2 rounded border border-amber-500/20 flex gap-2 items-start">
                                                                     <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1 shrink-0"></div>
                                                                     <span className="leading-tight">{v.mitigation}</span>
                                                                 </div>
@@ -294,15 +294,15 @@ Only answer questions related to AcmeCorp logistics.
                                             {/* CORPORATE EXTORTION MATRIX (NEW STRAT) */}
                                             {results.evaluations.filter((v:any) => !v.passed).length > 0 && (
                                                 <div className="mt-8 border-t border-zinc-400 pt-6">
-                                                    <h4 className="text-sm font-bold text-zinc-950 mb-4 flex items-center gap-2"><Target size={16} className="text-rose-500"/> Corporate Extortion Extrapolation</h4>
+                                                    <h4 className="text-sm font-semibold font-bold text-zinc-950 mb-4 flex items-center gap-2"><Target size={16} className="text-rose-500"/> Corporate Extortion Extrapolation</h4>
                                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                         <div className="bg-rose-500/5 border border-rose-500/20 p-5 rounded-xl">
-                                                            <div className="font-semibold text-rose-400 text-sm mb-2">Automated Brand Disparagement</div>
-                                                            <p className="text-sm font-medium text-zinc-950 leading-relaxed">By hijacking the primary System Prompt via Context Overflow, an attacker forces your corporate customer service bot to output disparaging, racist, or factually catastrophic material directly to end-users on your domain.</p>
+                                                            <div className="font-semibold text-rose-400 text-sm font-semibold mb-2">Automated Brand Disparagement</div>
+                                                            <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed">By hijacking the primary System Prompt via Context Overflow, an attacker forces your corporate customer service bot to output disparaging, racist, or factually catastrophic material directly to end-users on your domain.</p>
                                                         </div>
                                                         <div className="bg-amber-500/5 border border-amber-500/20 p-5 rounded-xl">
-                                                            <div className="font-semibold text-amber-400 text-sm mb-2">Function Calling Escalation (RCE)</div>
-                                                            <p className="text-sm font-medium text-zinc-950 leading-relaxed">If this LLM possesses read/write access to internal APIs via tool-calling, the Roleplay Override vector can coerce the model into systematically dumping or deleting database records under the guise of an "administrative simulation."</p>
+                                                            <div className="font-semibold text-amber-400 text-sm font-semibold mb-2">Function Calling Escalation (RCE)</div>
+                                                            <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed">If this LLM possesses read/write access to internal APIs via tool-calling, the Roleplay Override vector can coerce the model into systematically dumping or deleting database records under the guise of an "administrative simulation."</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -319,17 +319,17 @@ Only answer questions related to AcmeCorp logistics.
                                                 </div>
                                                 <button 
                                                     onClick={copyToClipboard}
-                                                    className="flex items-center gap-2 px-3 py-1.5 bg-zinc-200 hover:bg-zinc-700 rounded-lg text-xs font-mono text-zinc-950 transition-colors"
+                                                    className="flex items-center gap-2 px-3 py-1.5 bg-zinc-200 hover:bg-zinc-700 rounded-lg text-xs font-bold font-mono text-zinc-950 transition-colors"
                                                 >
-                                                    {copied ? <CheckCircle2 size={14} className="text-emerald-800 font-semibold" /> : <Copy size={14} />}
+                                                    {copied ? <CheckCircle2 size={14} className="text-emerald-900 font-extrabold font-semibold" /> : <Copy size={14} />}
                                                     {copied ? 'COPIED' : 'COPY PAYLOAD'}
                                                 </button>
                                             </div>
-                                            <p className="text-zinc-900 text-sm mb-4 leading-relaxed">
+                                            <p className="text-zinc-900 text-sm font-semibold mb-4 leading-relaxed">
                                                 We have algorithmically rewritten your prompt to include deterministic bounding boxes (XML delimiters) and explicit adversarial negation loops as instructed by major lab guidelines (Anthropic, OpenAI).
                                             </p>
                                             
-                                            <div className="relative font-mono text-sm group h-64 overflow-y-auto custom-scrollbar">
+                                            <div className="relative font-mono text-sm font-semibold group h-64 overflow-y-auto custom-scrollbar">
                                                  <div className="absolute top-0 left-0 w-1 h-full bg-cyan-500 rounded-l-xl z-20"></div>
                                                  <pre className="w-full h-full bg-white border border-zinc-400 rounded-xl p-6 pl-8 text-zinc-950 whitespace-pre-wrap leading-relaxed">
                                                      {results.hardenedPrompt}
@@ -340,17 +340,17 @@ Only answer questions related to AcmeCorp logistics.
 
                                     {persona === 'Legal' && (
                                         <div className="bg-white/50 p-6 rounded-2xl border border-amber-500/20 space-y-4">
-                                             <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">SLA & Regulatory Breach Risk</div>
+                                             <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest border-b border-zinc-400 pb-3">SLA & Regulatory Breach Risk</div>
                                              <div className="space-y-4">
                                                 <div className="flex justify-between items-center border-b border-zinc-400 pb-2">
-                                                    <div className="text-sm text-zinc-900 font-medium">Automated Data Exfiltration <span className="block text-xs text-zinc-900 font-bold">Unrestricted system prompting bypasses DPI</span></div>
+                                                    <div className="text-sm font-semibold text-zinc-900 font-medium">Automated Data Exfiltration <span className="block text-xs font-bold text-zinc-900 font-bold">Unrestricted system prompting bypasses DPI</span></div>
                                                     <span className="font-mono text-rose-400 text-right">Violation Imminent</span>
                                                 </div>
                                                 <div className="flex justify-between items-center border-b border-zinc-400 pb-2">
-                                                    <div className="text-sm text-zinc-900 font-medium">EU AI Act Liability <span className="block text-xs text-zinc-900 font-bold">Lack of deterministic safety guardrails</span></div>
+                                                    <div className="text-sm font-semibold text-zinc-900 font-medium">EU AI Act Liability <span className="block text-xs font-bold text-zinc-900 font-bold">Lack of deterministic safety guardrails</span></div>
                                                     <span className="font-mono text-amber-400 text-right">Non-Compliant</span>
                                                 </div>
-                                                <p className="text-sm font-medium text-zinc-950 font-mono italic">A single jailbreak payload can force this architecture to disgorge PII, breaching SLA terms instantly.</p>
+                                                <p className="text-sm font-semibold font-medium text-zinc-950 font-mono italic">A single jailbreak payload can force this architecture to disgorge PII, breaching SLA terms instantly.</p>
                                              </div>
                                         </div>
                                     )}
@@ -362,7 +362,7 @@ Only answer questions related to AcmeCorp logistics.
                         <ScrollReveal delay={200}>
                              <div className="mb-6 border-b border-zinc-400 pb-4 mt-8">
                                 <h3 className="text-xl font-bold text-zinc-950 mb-2 flex items-center gap-2">
-                                    <Shield size={18} className="text-cyan-800 font-semibold"/>
+                                    <Shield size={18} className="text-cyan-900 font-extrabold font-semibold"/>
                                     Execution Playbook: Adversarial Defensibility
                                 </h3>
                                 <p className="text-zinc-950 text-sm">Implement this defense-in-depth architecture to prevent model hijacking.</p>
@@ -371,38 +371,38 @@ Only answer questions related to AcmeCorp logistics.
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-red-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-red-500/10 transition-colors"></div>
-                                     <div className="text-red-800 font-semibold font-mono text-xs mb-3 uppercase tracking-widest bg-red-500/10 w-8 h-8 rounded flex items-center justify-center border border-red-500/20">01</div>
+                                     <div className="text-red-900 font-extrabold font-semibold font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-red-500/10 w-8 h-8 rounded flex items-center justify-center border border-red-500/20">01</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Deterministic Delimiters</h4>
-                                     <p className="text-zinc-900 text-sm mb-4">Force the LLM to separate system instructions from user payloads by encapsulating all user input in literal XML tags.</p>
+                                     <p className="text-zinc-900 text-sm font-semibold mb-4">Force the LLM to separate system instructions from user payloads by encapsulating all user input in literal XML tags.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-red-800 font-semibold uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-red-900 font-extrabold font-semibold uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-sm font-medium text-zinc-950">Wrap all inputs in &lt;user_input&gt; blocks to prevent interpretation as root execution commands.</p>
+                                         <p className="text-sm font-semibold font-medium text-zinc-950">Wrap all inputs in &lt;user_input&gt; blocks to prevent interpretation as root execution commands.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-amber-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
-                                     <div className="text-amber-400 font-mono text-xs mb-3 uppercase tracking-widest bg-amber-500/10 w-8 h-8 rounded flex items-center justify-center border border-amber-500/20">02</div>
+                                     <div className="text-amber-400 font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-amber-500/10 w-8 h-8 rounded flex items-center justify-center border border-amber-500/20">02</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Classifier Firewalls</h4>
-                                     <p className="text-zinc-900 text-sm mb-4">Run every payload through a fast classifier (Llama Guard) before sending it to your heavy execution agent.</p>
+                                     <p className="text-zinc-900 text-sm font-semibold mb-4">Run every payload through a fast classifier (Llama Guard) before sending it to your heavy execution agent.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-sm font-medium text-zinc-950">If Llama Guard flags an adversarial pattern, instantly HTTP 403 the request pipeline.</p>
+                                         <p className="text-sm font-semibold font-medium text-zinc-950">If Llama Guard flags an adversarial pattern, instantly HTTP 403 the request pipeline.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
-                                     <div className="text-emerald-800 font-semibold font-mono text-xs mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
+                                     <div className="text-emerald-900 font-extrabold font-semibold font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Tool Execution Isolation</h4>
-                                     <p className="text-zinc-900 text-sm mb-4">Never give an LLM direct execution schema permissions. Rely on hard-coded Python validators.</p>
+                                     <p className="text-zinc-900 text-sm font-semibold mb-4">Never give an LLM direct execution schema permissions. Rely on hard-coded Python validators.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-800 font-semibold uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-sm font-medium text-zinc-950">Use a "Circuit Breaker" architecture where the LLM only proposes schemas, instead of executing APIs.</p>
+                                         <p className="text-sm font-semibold font-medium text-zinc-950">Use a "Circuit Breaker" architecture where the LLM only proposes schemas, instead of executing APIs.</p>
                                      </div>
                                 </div>
                             </div>
@@ -419,7 +419,7 @@ Only answer questions related to AcmeCorp logistics.
                             />
 
                             <div className="flex justify-center flex-wrap gap-6 mt-8" data-html2canvas-ignore>
-                                <button onClick={() => setResults(null)} className="text-zinc-950 font-mono tracking-widest text-xs hover:text-zinc-900 uppercase transition-colors">← Run New Simulation</button>
+                                <button onClick={() => setResults(null)} className="text-zinc-950 font-mono tracking-widest text-xs font-bold hover:text-zinc-900 uppercase transition-colors">← Run New Simulation</button>
                             </div>
                         </ScrollReveal>
                     </div>

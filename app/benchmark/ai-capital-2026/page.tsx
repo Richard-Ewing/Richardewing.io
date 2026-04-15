@@ -26,13 +26,13 @@ export default function AICapitalBenchmark() {
             <Meteors count={40} />
 
             <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 sm:py-32">
-                <Link href="/benchmark" className="inline-flex items-center text-sm font-mono text-zinc-800 hover:text-zinc-900 transition-colors mb-12 uppercase tracking-widest">
+                <Link href="/benchmark" className="inline-flex items-center text-sm font-semibold font-mono text-zinc-950 font-bold hover:text-zinc-900 transition-colors mb-12 uppercase tracking-widest">
                     {"<"} Back to Benchmarks
                 </Link>
 
                 {/* Hero Headers */}
                 <div className="space-y-6 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-800 font-semibold text-xs font-mono uppercase tracking-widest shadow-[0_0_15px_-3px_rgba(6,182,212,0.4)]">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold text-xs font-bold font-mono uppercase tracking-widest shadow-[0_0_15px_-3px_rgba(6,182,212,0.4)]">
                         <Globe size={14} /> Open Data Benchmark
                     </div>
                     <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-zinc-900 leading-tight">
@@ -43,10 +43,10 @@ export default function AICapitalBenchmark() {
                         An irrefutable empirical analysis of LLM operating costs, architectural latency, workforce displacement mathematics, and the true threshold where renting AI APIs becomes a hostile M&A liability. 
                     </p>
                     <div className="flex gap-4 items-center">
-                        <p className="text-sm font-mono text-cyan-900 font-bold border border-cyan-500/20 px-3 py-1 bg-cyan-50/30 rounded-md">
+                        <p className="text-sm font-semibold font-mono text-cyan-900 font-bold border border-cyan-500/20 px-3 py-1 bg-cyan-50/30 rounded-md">
                             Computed: Q2 2026
                         </p>
-                        <p className="text-sm font-mono text-zinc-950 border border-zinc-400 px-3 py-1 rounded-md">
+                        <p className="text-sm font-semibold font-mono text-zinc-950 border border-zinc-400 px-3 py-1 rounded-md">
                             Sample Size: 512 Enterprise Repositories
                         </p>
                     </div>
@@ -55,27 +55,27 @@ export default function AICapitalBenchmark() {
                 {/* Hard Data Hub 1: LLM Economics */}
                 <div className="mt-20">
                     <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <Cpu className="text-cyan-800 font-semibold" /> 01. The CapEx vs OpEx Threshold
+                        <Cpu className="text-cyan-900 font-extrabold font-semibold" /> 01. The CapEx vs OpEx Threshold
                     </h2>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                         <div className="p-6 bg-white border border-zinc-400 rounded-xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><Zap size={64}/></div>
-                            <p className="text-sm text-zinc-950 font-mono mb-2 uppercase">Avg API OpEx / Mo</p>
+                            <p className="text-sm font-semibold text-zinc-950 font-mono mb-2 uppercase">Avg API OpEx / Mo</p>
                             <p className="text-4xl font-bold text-zinc-900">$41,500</p>
-                            <p className="text-xs text-zinc-900 font-bold mt-2 flex items-center gap-1"><TrendingDown size={12}/> +14% QoQ Growth</p>
+                            <p className="text-xs font-bold text-zinc-900 font-bold mt-2 flex items-center gap-1"><TrendingDown size={12}/> +14% QoQ Growth</p>
                         </div>
                         <div className="p-6 bg-white border border-zinc-400 rounded-xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><Scale size={64}/></div>
-                            <p className="text-sm text-zinc-950 font-mono mb-2 uppercase">The Crossover Point</p>
+                            <p className="text-sm font-semibold text-zinc-950 font-mono mb-2 uppercase">The Crossover Point</p>
                             <p className="text-4xl font-bold text-zinc-900">4.2M</p>
-                            <p className="text-xs text-zinc-900 font-bold mt-2">Tokens/Day triggering SLM CapEx advantage.</p>
+                            <p className="text-xs font-bold text-zinc-900 font-bold mt-2">Tokens/Day triggering SLM CapEx advantage.</p>
                         </div>
                         <div className="p-6 bg-white border border-zinc-400 rounded-xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><BarChart3 size={64}/></div>
-                            <p className="text-sm text-zinc-950 font-mono mb-2 uppercase">Acquisition Penalty</p>
+                            <p className="text-sm font-semibold text-zinc-950 font-mono mb-2 uppercase">Acquisition Penalty</p>
                             <p className="text-4xl font-bold text-zinc-900">-2.4x</p>
-                            <p className="text-xs text-zinc-900 font-bold mt-2 flex items-center gap-1">EBITDA multiple compression if wrapper-only.</p>
+                            <p className="text-xs font-bold text-zinc-900 font-bold mt-2 flex items-center gap-1">EBITDA multiple compression if wrapper-only.</p>
                         </div>
                     </div>
 
@@ -97,14 +97,14 @@ export default function AICapitalBenchmark() {
                         <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
                             <div className="md:col-span-3">
                                 <h3 className="text-2xl font-bold text-zinc-900 flex items-center gap-2 mb-2">
-                                    <ShieldAlert className="text-cyan-800 font-semibold" /> Are You Bleeding CapEx?
+                                    <ShieldAlert className="text-cyan-900 font-extrabold font-semibold" /> Are You Bleeding CapEx?
                                 </h3>
-                                <p className="text-zinc-800">
+                                <p className="text-zinc-950 font-bold">
                                     Stop guessing if your LLM infrastructure is financially toxic. Our Exogram Auditors plug directly into your GitHub / AWS stacks to map your true capability debt in 72 hours.
                                 </p>
                             </div>
                             <div className="flex justify-end">
-                                <Link href="/advisory" className="w-full text-center px-6 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-widest text-sm rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.8)]">
+                                <Link href="/advisory" className="w-full text-center px-6 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.8)]">
                                     Book The Audit →
                                 </Link>
                             </div>
@@ -115,16 +115,16 @@ export default function AICapitalBenchmark() {
                 {/* Hard Data Hub 2: FTE Displacement */}
                 <div className="mt-24">
                     <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <TrendingDown className="text-cyan-800 font-semibold" /> 02. The FTE Displacement Index
+                        <TrendingDown className="text-cyan-900 font-extrabold font-semibold" /> 02. The FTE Displacement Index
                     </h2>
                     
                     <div className="bg-white border border-zinc-400 rounded-xl p-8 mb-8 overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="border-b border-zinc-400 text-sm font-mono text-zinc-800 uppercase tracking-wider">
+                                <tr className="border-b border-zinc-400 text-sm font-semibold font-mono text-zinc-950 font-bold uppercase tracking-wider">
                                     <th className="pb-4 pr-6">Engineering Role</th>
                                     <th className="pb-4 pr-6">2024 Autonomy Rate</th>
-                                    <th className="pb-4 pr-6 text-cyan-700 font-bold">2026 Autonomy Rate</th>
+                                    <th className="pb-4 pr-6 text-cyan-900 font-extrabold">2026 Autonomy Rate</th>
                                     <th className="pb-4 text-right">Replacement Vector</th>
                                 </tr>
                             </thead>
@@ -132,31 +132,31 @@ export default function AICapitalBenchmark() {
                                 <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">L1/L2 Frontend Engineer</td>
                                     <td className="py-4 pr-6 text-zinc-900">14%</td>
-                                    <td className="py-4 pr-6 text-cyan-800 font-semibold font-bold">78%</td>
+                                    <td className="py-4 pr-6 text-cyan-900 font-extrabold font-semibold font-bold">78%</td>
                                     <td className="py-4 text-right">Native v0 / Agentic UI Generation</td>
                                 </tr>
                                 <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">QA / SDET Analyst</td>
                                     <td className="py-4 pr-6 text-zinc-900">22%</td>
-                                    <td className="py-4 pr-6 text-cyan-800 font-semibold font-bold">91%</td>
+                                    <td className="py-4 pr-6 text-cyan-900 font-extrabold font-semibold font-bold">91%</td>
                                     <td className="py-4 text-right">Agentic E2E Testing Pipelines</td>
                                 </tr>
                                 <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">Data Analyst (SQL)</td>
                                     <td className="py-4 pr-6 text-zinc-900">18%</td>
-                                    <td className="py-4 pr-6 text-cyan-800 font-semibold font-bold">65%</td>
+                                    <td className="py-4 pr-6 text-cyan-900 font-extrabold font-semibold font-bold">65%</td>
                                     <td className="py-4 text-right">Text-to-SQL RAG Systems</td>
                                 </tr>
                                 <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">DevOps (K8s Maintenance)</td>
                                     <td className="py-4 pr-6 text-zinc-900">8%</td>
-                                    <td className="py-4 pr-6 text-cyan-800 font-semibold font-bold">45%</td>
+                                    <td className="py-4 pr-6 text-cyan-900 font-extrabold font-semibold font-bold">45%</td>
                                     <td className="py-4 text-right">Terraform Drift Auto-Remediation</td>
                                 </tr>
                                 <tr>
                                     <td className="py-4 pr-6 font-medium">Architect / Principal</td>
                                     <td className="py-4 pr-6 text-zinc-900">2%</td>
-                                    <td className="py-4 pr-6 text-cyan-800 font-semibold font-bold">12%</td>
+                                    <td className="py-4 pr-6 text-cyan-900 font-extrabold font-semibold font-bold">12%</td>
                                     <td className="py-4 text-right text-zinc-900">Not Displaced (Augmented 3x)</td>
                                 </tr>
                             </tbody>
@@ -179,7 +179,7 @@ export default function AICapitalBenchmark() {
                 {/* Hard Data Hub 3: Architectural Latency */}
                 <div className="mt-24">
                     <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <Activity className="text-cyan-800 font-semibold" /> 03. Architectural Latency vs ACV
+                        <Activity className="text-cyan-900 font-extrabold font-semibold" /> 03. Architectural Latency vs ACV
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -208,16 +208,16 @@ export default function AICapitalBenchmark() {
                 {/* Hard Data Hub 4: The Vector DB Consolidation */}
                 <div className="mt-24">
                     <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <Database className="text-cyan-800 font-semibold" /> 04. The Vector Component Collapse
+                        <Database className="text-cyan-900 font-extrabold font-semibold" /> 04. The Vector Component Collapse
                     </h2>
                     
                     <div className="bg-white border border-zinc-400 rounded-xl p-8 mb-8">
                         <div className="w-full h-8 flex rounded-full overflow-hidden mb-4">
                             <div className="bg-cyan-500 h-full flex items-center px-4 font-bold text-black" style={{ width: '68%' }}>PostgreSQL (pgvector) - 68%</div>
-                            <div className="bg-zinc-700 h-full flex items-center px-4 text-xs font-mono text-zinc-950" style={{ width: '18%' }}>Dedicated (Pinecone/Milvus) - 18%</div>
-                            <div className="bg-zinc-200 h-full flex items-center px-4 text-xs font-mono text-zinc-950" style={{ width: '14%' }}>Other - 14%</div>
+                            <div className="bg-zinc-700 h-full flex items-center px-4 text-xs font-bold font-mono text-zinc-950" style={{ width: '18%' }}>Dedicated (Pinecone/Milvus) - 18%</div>
+                            <div className="bg-zinc-200 h-full flex items-center px-4 text-xs font-bold font-mono text-zinc-950" style={{ width: '14%' }}>Other - 14%</div>
                         </div>
-                        <p className="text-sm text-zinc-950 text-center font-mono">2026 Enterprise Vector Search Market Share (Series B+)</p>
+                        <p className="text-sm font-semibold text-zinc-950 text-center font-mono">2026 Enterprise Vector Search Market Share (Series B+)</p>
                     </div>
 
                     <div className="prose prose-zinc max-w-none text-zinc-900">
@@ -238,10 +238,10 @@ export default function AICapitalBenchmark() {
                         Don't let your CFO read this report before you do. Get a bespoke Exogram capability map generated specifically around your team's pull-request velocity, architectural latency, and AWS spend.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <Link href="/advisory" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-zinc-200 transition-all flex items-center gap-2 shadow-[0_0_30px_-5px_rgba(255,255,255,0.4)]">
+                        <Link href="/advisory" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-lg hover:bg-zinc-200 transition-all flex items-center gap-2 shadow-[0_0_30px_-5px_rgba(255,255,255,0.4)]">
                             Secure A Strategic Audit <ArrowRight size={16} />
                         </Link>
-                        <Link href="/tools" className="px-8 py-4 bg-transparent border border-zinc-600 text-zinc-950 font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-zinc-50 transition-all">
+                        <Link href="/tools" className="px-8 py-4 bg-transparent border border-zinc-600 text-zinc-950 font-bold uppercase tracking-widest text-sm font-semibold rounded-lg hover:bg-zinc-50 transition-all">
                             View Diagnostic Tools
                         </Link>
                     </div>

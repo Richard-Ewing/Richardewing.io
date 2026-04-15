@@ -13,8 +13,8 @@ const layers = [
         tag: 'Layer 1',
         description: 'Validates that every AI output conforms to predefined structural contracts. Catches hallucinated fields, missing required data, and type mismatches befo...',
         sectionClass: 'rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-8',
-        badgeClass: 'text-xs font-mono text-cyan-800 font-semibold px-2 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10',
-        arrowClass: 'text-cyan-800 font-semibold mt-0.5',
+        badgeClass: 'text-xs font-bold font-mono text-cyan-900 font-extrabold font-semibold px-2 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10',
+        arrowClass: 'text-cyan-900 font-extrabold font-semibold mt-0.5',
         features: [
             'JSON Schema validation with custom AI-aware extensions',
             'Recursive nested object verification',
@@ -33,8 +33,8 @@ const layers = [
         tag: 'Layer 2',
         description: 'Enforces operational boundaries on AI behavior. Prevents scope creep, unauthorized actions, and ensures AI systems operate within their defined mandate.',
         sectionClass: 'rounded-2xl border border-purple-500/20 bg-purple-500/5 p-8',
-        badgeClass: 'text-xs font-mono text-purple-800 font-semibold px-2 py-1 rounded-full border border-purple-500/30 bg-purple-500/10',
-        arrowClass: 'text-purple-800 font-semibold mt-0.5',
+        badgeClass: 'text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold px-2 py-1 rounded-full border border-purple-500/30 bg-purple-500/10',
+        arrowClass: 'text-purple-900 font-extrabold font-semibold mt-0.5',
         features: [
             'Action admissibility verification (EAAP protocol)',
             'Scope boundary enforcement for agents',
@@ -53,8 +53,8 @@ const layers = [
         tag: 'Layer 3',
         description: 'Detects and blocks adversarial inputs, prompt injections, and data exfiltration attempts. The immune system for AI applications.',
         sectionClass: 'rounded-2xl border border-red-500/20 bg-red-500/5 p-8',
-        badgeClass: 'text-xs font-mono text-red-800 font-semibold px-2 py-1 rounded-full border border-red-500/30 bg-red-500/10',
-        arrowClass: 'text-red-800 font-semibold mt-0.5',
+        badgeClass: 'text-xs font-bold font-mono text-red-900 font-extrabold font-semibold px-2 py-1 rounded-full border border-red-500/30 bg-red-500/10',
+        arrowClass: 'text-red-900 font-extrabold font-semibold mt-0.5',
         features: [
             'Prompt injection detection (99.2% accuracy)',
             'Data exfiltration prevention',
@@ -73,8 +73,8 @@ const layers = [
         tag: 'Layer 4',
         description: 'Ensures AI systems maintain consistent, verified memory across sessions. Prevents "memory hallucinations" where AI systems fabricate or corrupt stored c...',
         sectionClass: 'rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-8',
-        badgeClass: 'text-xs font-mono text-emerald-800 font-semibold px-2 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10',
-        arrowClass: 'text-emerald-800 font-semibold mt-0.5',
+        badgeClass: 'text-xs font-bold font-mono text-emerald-900 font-extrabold font-semibold px-2 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10',
+        arrowClass: 'text-emerald-900 font-extrabold font-semibold mt-0.5',
         features: [
             'Cryptographic memory verification',
             'Cross-session consistency checks',
@@ -94,14 +94,14 @@ export default function ExogramArchitecturePage() {
     return (
         <main className="pt-24 pb-20">
             <div className="page-container max-w-5xl mx-auto">
-                <div className="text-xs text-zinc-950 mb-8">
+                <div className="text-xs font-bold text-zinc-950 mb-8">
                     <Link href="/exogram" className="hover:text-zinc-900 transition-colors">Exogram</Link>
                     <span className="mx-2">→</span>
-                    <span className="text-zinc-800">Architecture</span>
+                    <span className="text-zinc-950 font-bold">Architecture</span>
                 </div>
 
                 <section className="text-center mb-16">
-                    <p className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-4">Technical Deep Dive</p>
+                    <p className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-4">Technical Deep Dive</p>
                     <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Verification <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Architecture.</span>
                     </h1>
@@ -122,10 +122,10 @@ export default function ExogramArchitecturePage() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div>
-                                    <h3 className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Capabilities</h3>
+                                    <h3 className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-4">Capabilities</h3>
                                     <ul className="space-y-2">
                                         {layer.features.map(f => (
-                                            <li key={f} className="flex items-start gap-2 text-sm text-zinc-900 font-medium">
+                                            <li key={f} className="flex items-start gap-2 text-sm font-semibold text-zinc-900 font-medium">
                                                 <span className={layer.arrowClass}>→</span>
                                                 {f}
                                             </li>
@@ -133,12 +133,12 @@ export default function ExogramArchitecturePage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Performance</h3>
+                                    <h3 className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-4">Performance</h3>
                                     <div className="space-y-3">
                                         {layer.metrics.map(m => (
                                             <div key={m.label} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.03] border border-zinc-400">
-                                                <span className="text-xs text-zinc-900 font-bold">{m.label}</span>
-                                                <span className="text-sm font-mono text-zinc-900">{m.value}</span>
+                                                <span className="text-xs font-bold text-zinc-900 font-bold">{m.label}</span>
+                                                <span className="text-sm font-semibold font-mono text-zinc-900">{m.value}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -163,9 +163,9 @@ export default function ExogramArchitecturePage() {
                             { method: 'Python SDK', desc: 'pip install exogram — type-safe client with async support', badge: 'Coming Soon' },
                         ].map(m => (
                             <div key={m.method} className="p-6 rounded-xl bg-white/[0.03] border border-zinc-400">
-                                <span className="text-xs font-medium font-mono text-purple-800 font-semibold uppercase tracking-widest">{m.badge}</span>
+                                <span className="text-xs font-bold font-medium font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest">{m.badge}</span>
                                 <h3 className="text-zinc-950 font-bold mt-2 mb-2">{m.method}</h3>
-                                <p className="text-xs text-zinc-900 font-bold">{m.desc}</p>
+                                <p className="text-xs font-bold text-zinc-900 font-bold">{m.desc}</p>
                             </div>
                         ))}
                     </div>

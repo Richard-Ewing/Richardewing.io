@@ -43,7 +43,7 @@ export default function ModuleCompleteButton({ nextHref, moduleTitle }: ModuleCo
                         <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-1">
                             {completed ? '🏆 Module Complete!' : 'Finished all lessons?'}
                         </h3>
-                        <p className="text-sm text-zinc-900 font-medium">
+                        <p className="text-sm font-semibold text-zinc-900 font-medium">
                             {completed
                                 ? 'Great work! Your progress has been saved.'
                                 : 'Mark this module as complete to track your progress.'}
@@ -53,20 +53,20 @@ export default function ModuleCompleteButton({ nextHref, moduleTitle }: ModuleCo
                         {!completed ? (
                             <button
                                 onClick={handleComplete}
-                                className="px-6 py-3 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-emerald-500/20"
+                                className="px-6 py-3 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold font-bold text-sm font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-emerald-500/20"
                             >
                                 ✓ Mark Complete
                             </button>
                         ) : (
                             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
-                                <span className="text-emerald-800 font-semibold text-lg">✓</span>
-                                <span className="text-sm font-bold text-emerald-800 font-semibold">Completed</span>
+                                <span className="text-emerald-900 font-extrabold font-semibold text-lg">✓</span>
+                                <span className="text-sm font-semibold font-bold text-emerald-900 font-extrabold font-semibold">Completed</span>
                             </div>
                         )}
                         {nextHref && (
                             <Link
                                 href={nextHref}
-                                className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold font-bold text-sm hover:opacity-90 transition-opacity"
+                                className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold font-bold text-sm font-semibold hover:opacity-90 transition-opacity"
                             >
                                 Next Module →
                             </Link>
@@ -76,7 +76,7 @@ export default function ModuleCompleteButton({ nextHref, moduleTitle }: ModuleCo
             </div>
 
             <div className="mt-4 flex items-center justify-between">
-                <Link href="/curriculum/tracks" className="text-sm text-zinc-900 font-medium hover:text-zinc-900 transition-colors">← Back to Tracks</Link>
+                <Link href="/curriculum/tracks" className="text-sm font-semibold text-zinc-900 font-medium hover:text-zinc-900 transition-colors">← Back to Tracks</Link>
             </div>
         </>
     );

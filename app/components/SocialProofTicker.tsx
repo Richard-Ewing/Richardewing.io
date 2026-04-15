@@ -63,8 +63,8 @@ export default function SocialProofTicker() {
                 <div className="flex items-start gap-3">
                     <div className="text-lg flex-shrink-0">{msg.emoji}</div>
                     <div>
-                        <p className="text-zinc-900 text-sm font-medium leading-tight">{msg.text}</p>
-                        <p className="text-zinc-950 text-xs mt-1 flex items-center gap-1">
+                        <p className="text-zinc-900 text-sm font-semibold font-medium leading-tight">{msg.text}</p>
+                        <p className="text-zinc-950 text-xs font-bold mt-1 flex items-center gap-1">
                             <TrendingUp className="w-3 h-3" />
                             {msg.time}
                         </p>

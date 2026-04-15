@@ -210,7 +210,7 @@ export default function AuditInterview() {
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!outcome} toolName="AUDIT INTERVIEW" />
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-zinc-950 font-bold">Audit Interview</span>
@@ -223,7 +223,7 @@ export default function AuditInterview() {
                         {/* Status Badge */}
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">Product Economist | Audit Suite</span>
+                            <span className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest">Product Economist | Audit Suite</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -239,9 +239,9 @@ export default function AuditInterview() {
                                 <button
                                     key={r}
                                     onClick={() => setRole(r as Role)}
-                                    className={`px-4 py-2 rounded-lg border uppercase font-mono text-xs tracking-widest transition-all ${role === r
-                                        ? 'bg-emerald-500/10 border-emerald-500 text-emerald-800 font-semibold'
-                                        : 'bg-white/80 border-zinc-400 text-zinc-800 hover:border-white/30'
+                                    className={`px-4 py-2 rounded-lg border uppercase font-mono text-xs font-bold tracking-widest transition-all ${role === r
+                                        ? 'bg-emerald-500/10 border-emerald-500 text-emerald-900 font-extrabold font-semibold'
+                                        : 'bg-white/80 border-zinc-400 text-zinc-950 font-bold hover:border-white/30'
                                         }`}
                                 >
                                     {r === 'pm' ? 'Product Manager' : 'Engineer'}
@@ -254,12 +254,12 @@ export default function AuditInterview() {
                             {DIMENSIONS.map((dim) => (
                                 <div key={dim.id} className="bg-zinc-50 rounded-xl p-4 sm:p-6 border border-zinc-400">
                                     <div className="flex items-start gap-3 mb-4">
-                                        <div className="p-2 bg-zinc-50 rounded-lg text-zinc-800">
+                                        <div className="p-2 bg-zinc-50 rounded-lg text-zinc-950 font-bold">
                                             <dim.icon size={20} />
                                         </div>
                                         <div>
                                             <h3 className="text-lg font-bold text-zinc-900">{dim.label}</h3>
-                                            <p className="text-sm text-zinc-900 font-medium">{dim.desc}</p>
+                                            <p className="text-sm font-semibold text-zinc-900 font-medium">{dim.desc}</p>
                                         </div>
                                     </div>
 
@@ -271,7 +271,7 @@ export default function AuditInterview() {
                                                     <button
                                                         key={val}
                                                         onClick={() => handleScoreChange(dim.id as keyof Scores, val)}
-                                                        className={`flex-1 py-2 text-sm font-mono font-bold rounded-md transition-all ${scores[dim.id as keyof Scores] === val
+                                                        className={`flex-1 py-2 text-sm font-semibold font-mono font-bold rounded-md transition-all ${scores[dim.id as keyof Scores] === val
                                                             ? 'bg-emerald-600 text-zinc-900'
                                                             : 'hover:bg-white/10 text-zinc-900'
                                                             }`}
@@ -280,7 +280,7 @@ export default function AuditInterview() {
                                                     </button>
                                                 ))}
                                             </div>
-                                            <div className="text-center text-xs font-medium text-zinc-900 font-mono uppercase mt-1">
+                                            <div className="text-center text-xs font-bold font-medium text-zinc-900 font-mono uppercase mt-1">
                                                 {SCORE_LABELS[scores[dim.id as keyof Scores]]}
                                             </div>
                                         </div>
@@ -290,7 +290,7 @@ export default function AuditInterview() {
                                             value={observations[dim.id as keyof Observations]}
                                             onChange={(e) => handleObservationChange(dim.id as keyof Observations, e.target.value)}
                                             placeholder={`Notes on ${dim.label.toLowerCase()}...`}
-                                            className="w-full bg-white/50 border border-zinc-400 rounded-lg p-3 text-sm text-zinc-950 focus:border-emerald-500 focus:outline-none transition-all placeholder:text-zinc-950 h-20 resize-none"
+                                            className="w-full bg-white/50 border border-zinc-400 rounded-lg p-3 text-sm font-semibold text-zinc-950 focus:border-emerald-500 focus:outline-none transition-all placeholder:text-zinc-950 h-20 resize-none"
                                         />
                                     </div>
                                 </div>
@@ -323,13 +323,13 @@ export default function AuditInterview() {
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-bold font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Interview Dashboard</h2>
-                            <p className="text-sm text-zinc-900 font-medium">Session Complete • Protocol {role.toUpperCase()}-092</p>
+                            <p className="text-sm font-semibold text-zinc-900 font-medium">Session Complete • Protocol {role.toUpperCase()}-092</p>
                         </div>
                         <div className="mt-4 sm:mt-0 flex gap-4">
-                            <button onClick={() => setOutcome(null)} className="px-4 py-2 border border-zinc-400 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
+                            <button onClick={() => setOutcome(null)} className="px-4 py-2 border border-zinc-400 rounded-lg text-xs font-bold font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
                                 <Search size={14} /> New Audit
                             </button>
                             <ExportToPDFButton targetId="scoring-pdf-export-zone" fileName={`Audit_Interview_${role}.pdf`} />
@@ -341,19 +341,19 @@ export default function AuditInterview() {
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
                             {/* Left Col: Verdict Card */}
                             <GlowCard className="p-8 flex flex-col items-center justify-center text-center h-full" glowColor={outcome.total > 7 ? "emerald" : "danger"}>
-                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
-                                <div className={`text-6xl sm:text-7xl font-bold tracking-tighter mb-4 ${outcome.total > 7 ? 'text-emerald-800 font-semibold' : 'text-red-500'}`}>
+                                <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
+                                <div className={`text-6xl sm:text-7xl font-bold tracking-tighter mb-4 ${outcome.total > 7 ? 'text-emerald-900 font-extrabold font-semibold' : 'text-red-500'}`}>
                                     {outcome.verdict}
                                 </div>
-                                <div className="flex items-center gap-3 text-sm font-mono border-t border-zinc-400 pt-4 mt-4 w-full justify-center">
-                                    <span className="text-zinc-800">Total Score:</span>
+                                <div className="flex items-center gap-3 text-sm font-semibold font-mono border-t border-zinc-400 pt-4 mt-4 w-full justify-center">
+                                    <span className="text-zinc-950 font-bold">Total Score:</span>
                                     <span className="text-zinc-950 font-bold">{outcome.total}/12</span>
                                 </div>
                             </GlowCard>
 
                             {/* Middle Col: Radar Chart */}
                             <div className="bg-white/80 border border-zinc-400 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden">
-                                <span className="absolute top-4 left-4 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">Attribute Geometry</span>
+                                <span className="absolute top-4 left-4 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">Attribute Geometry</span>
                                 <div className="w-64 h-64">
                                     <RadarChart scores={scores} />
                                 </div>
@@ -361,14 +361,14 @@ export default function AuditInterview() {
 
                             {/* Right Col: Breakdown List */}
                             <div className="bg-white/80 border border-zinc-400 rounded-2xl p-6 space-y-4">
-                                <span className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest block mb-4">Dimension Audit</span>
+                                <span className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest block mb-4">Dimension Audit</span>
                                 {DIMENSIONS.map(dim => (
                                     <div key={dim.id} className="flex justify-between items-center">
                                         <div className="flex items-center gap-2">
-                                            <dim.icon size={14} className="text-zinc-800" />
-                                            <span className="text-sm text-zinc-900 font-medium">{dim.label}</span>
+                                            <dim.icon size={14} className="text-zinc-950 font-bold" />
+                                            <span className="text-sm font-semibold text-zinc-900 font-medium">{dim.label}</span>
                                         </div>
-                                        <div className={`text-sm font-mono font-bold ${scores[dim.id as keyof Scores] === 3 ? 'text-emerald-800 font-semibold' :
+                                        <div className={`text-sm font-semibold font-mono font-bold ${scores[dim.id as keyof Scores] === 3 ? 'text-emerald-900 font-extrabold font-semibold' :
                                             scores[dim.id as keyof Scores] === 0 ? 'text-red-500' : 'text-zinc-900'
                                             }`}>
                                             {scores[dim.id as keyof Scores]}/3
@@ -376,7 +376,7 @@ export default function AuditInterview() {
                                     </div>
                                 ))}
                                 <div className="border-t border-zinc-400 pt-4 mt-4">
-                                    <p className="text-sm font-medium text-zinc-950 leading-relaxed italic">
+                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed italic">
                                         "{outcome.rationale}"
                                     </p>
                                 </div>
@@ -398,7 +398,7 @@ export default function AuditInterview() {
                                     <button
                                         onClick={generateMemo}
                                         disabled={loading}
-                                        className="px-8 py-3 bg-white text-black font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-emerald-400 transition-colors disabled:opacity-50"
+                                        className="px-8 py-3 bg-white text-black font-bold text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-emerald-400 transition-colors disabled:opacity-50"
                                     >
                                         {loading ? "Drafting Memo..." : "Generate Memo"}
                                     </button>
@@ -406,10 +406,10 @@ export default function AuditInterview() {
                             ) : (
                                 <div className="prose prose-zinc prose-lg max-w-none bg-zinc-100 p-8 rounded-xl border-l-4 border-emerald-500">
                                     <div className="flex justify-between items-start mb-4">
-                                        <span className="text-xs font-medium font-mono text-emerald-500 uppercase tracking-widest">Confidential // Internal Only</span>
-                                        <button onClick={() => navigator.clipboard.writeText(memo)} className="text-xs font-medium font-mono text-zinc-800 hover:text-zinc-900 uppercase">Copy</button>
+                                        <span className="text-xs font-bold font-medium font-mono text-emerald-500 uppercase tracking-widest">Confidential // Internal Only</span>
+                                        <button onClick={() => navigator.clipboard.writeText(memo)} className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold hover:text-zinc-900 uppercase">Copy</button>
                                     </div>
-                                    <p className="text-zinc-800 leading-loose whitespace-pre-wrap font-serif">
+                                    <p className="text-zinc-950 font-bold leading-loose whitespace-pre-wrap font-serif">
                                         {memo}
                                     </p>
                                 </div>

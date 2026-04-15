@@ -59,9 +59,9 @@ export function NewsletterForm({
     if (state.succeeded) {
         return (
             <div className={`p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-center ${className}`}>
-                <CheckCircle className="w-8 h-8 text-emerald-800 font-semibold mx-auto mb-2" />
-                <h3 className="text-emerald-800 font-semibold font-bold text-sm uppercase tracking-widest">Signal Received</h3>
-                <p className="text-zinc-900 text-xs mt-1">You've been added to the protocol.</p>
+                <CheckCircle className="w-8 h-8 text-emerald-900 font-extrabold font-semibold mx-auto mb-2" />
+                <h3 className="text-emerald-900 font-extrabold font-semibold font-bold text-sm font-semibold uppercase tracking-widest">Signal Received</h3>
+                <p className="text-zinc-900 text-xs font-bold mt-1">You've been added to the protocol.</p>
             </div>
         );
     }
@@ -88,14 +88,14 @@ export function NewsletterForm({
                     prefix="Email"
                     field="email"
                     errors={state.errors}
-                    className="absolute -bottom-5 left-0 text-xs font-medium text-red-500"
+                    className="absolute -bottom-5 left-0 text-xs font-bold font-medium text-red-500"
                 />
             </div>
 
             <button
                 type="submit"
                 disabled={state.submitting}
-                className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs sm:text-sm rounded-xl hover:bg-cyan-400 transition-all flex items-center justify-center gap-2 whitespace-nowrap disabled:opacity-70 disabled:cursor-wait"
+                className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs font-bold sm:text-sm font-semibold rounded-xl hover:bg-cyan-400 transition-all flex items-center justify-center gap-2 whitespace-nowrap disabled:opacity-70 disabled:cursor-wait"
             >
                 {state.submitting ? (
                     <Loader2 className="w-4 h-4 animate-spin" />

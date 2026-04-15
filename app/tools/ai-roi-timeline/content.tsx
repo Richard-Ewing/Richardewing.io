@@ -62,7 +62,7 @@ export default function AIRoiTimelineContent() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.1),transparent_50%)] pointer-events-none"></div>
             
             <div className="max-w-4xl mx-auto relative z-10">
-                <Link href="/tools" className="inline-flex items-center text-zinc-800 hover:text-zinc-900 transition-colors mb-12 font-mono text-xs uppercase tracking-widest">
+                <Link href="/tools" className="inline-flex items-center text-zinc-950 font-bold hover:text-zinc-900 transition-colors mb-12 font-mono text-xs font-bold uppercase tracking-widest">
                     <ArrowLeft size={14} className="mr-2" /> Back to Tools
                 </Link>
 
@@ -82,7 +82,7 @@ export default function AIRoiTimelineContent() {
                             <div className="bg-zinc-100 p-6 rounded-2xl border border-zinc-400 space-y-8">
                                 <div>
                                     <div className="flex justify-between items-end mb-4">
-                                        <label htmlFor="engineers-range" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest flex items-center gap-2"><Users size={12}/> Headcount</label>
+                                        <label htmlFor="engineers-range" className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest flex items-center gap-2"><Users size={12}/> Headcount</label>
                                         <div className="text-2xl font-bold font-mono">{engineers} FTEs</div>
                                     </div>
                                     <input id="engineers-range" title="Engineers" aria-label="Engineers count" type="range" min="10" max="500" step="5" value={engineers} onChange={(e) => setEngineers(parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-purple-500" />
@@ -90,7 +90,7 @@ export default function AIRoiTimelineContent() {
                                 
                                 <div>
                                     <div className="flex justify-between items-end mb-4">
-                                        <label htmlFor="salary-range" className="text-xs font-mono text-green-400 uppercase tracking-widest flex items-center gap-2"><Coins size={12}/> Cost / FTE</label>
+                                        <label htmlFor="salary-range" className="text-xs font-bold font-mono text-green-400 uppercase tracking-widest flex items-center gap-2"><Coins size={12}/> Cost / FTE</label>
                                         <div className="text-2xl font-bold font-mono">${(salary/1000).toFixed(0)}k</div>
                                     </div>
                                     <input id="salary-range" title="Salary per FTE" aria-label="Salary per FTE" type="range" min="80000" max="300000" step="10000" value={salary} onChange={(e) => setSalary(parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-green-500" />
@@ -101,7 +101,7 @@ export default function AIRoiTimelineContent() {
                         {/* STRATEGY SELECTION */}
                         <div className="space-y-4 flex flex-col justify-between">
                             <div className="space-y-3">
-                                <label className="text-xs font-mono text-zinc-800 uppercase tracking-widest block mb-4">Architecture Strategy</label>
+                                <label className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest block mb-4">Architecture Strategy</label>
                                 
                                 {Object.entries(strategyData).map(([key, data]) => {
                                     const isActive = aiStrategy === key;
@@ -113,9 +113,9 @@ export default function AIRoiTimelineContent() {
                                         >
                                             <div className="flex justify-between items-center">
                                                 <div className="font-bold text-zinc-900">{data.name}</div>
-                                                <div className="text-xs font-mono text-purple-800 font-semibold">{(data.gain * 100)}% Gain</div>
+                                                <div className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold">{(data.gain * 100)}% Gain</div>
                                             </div>
-                                            <div className="grid grid-cols-2 gap-4 mt-3 text-xs text-zinc-950 font-mono">
+                                            <div className="grid grid-cols-2 gap-4 mt-3 text-xs font-bold text-zinc-950 font-mono">
                                                 <div>CapEx: ${(data.capEx/1000).toFixed(0)}k</div>
                                                 <div>OpEx/Yr: ${(data.opExPerUser)}/user</div>
                                             </div>
@@ -147,12 +147,12 @@ export default function AIRoiTimelineContent() {
                             <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-purple-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                                 <div>
                                     <div className="flex items-center gap-2 mb-2">
-                                        <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                        <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-bold font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                     </div>
                                     <h2 className="text-xl font-bold text-zinc-950 mb-1">Timeline Dashboard</h2>
                                 </div>
                                 <div className="mt-4 sm:mt-0 flex gap-4">
-                                    <button onClick={() => setView('input')} className="px-4 py-2 border border-zinc-400 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
+                                    <button onClick={() => setView('input')} className="px-4 py-2 border border-zinc-400 rounded-lg text-xs font-bold font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
                                         <RefreshCcw size={14} /> Recalibrate
                                     </button>
                                     <ExportToPDFButton targetId="ai-roi-pdf-export-zone" fileName={`AI_ROI_Timeline.pdf`} />
@@ -164,25 +164,25 @@ export default function AIRoiTimelineContent() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div className="p-6 bg-zinc-50 border border-zinc-400 rounded-2xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-colors duration-500"></div>
-                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-2 flex items-center gap-2">Implementation CapEx</div>
+                                <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2 flex items-center gap-2">Implementation CapEx</div>
                                 <div className="text-3xl sm:text-4xl font-black text-rose-400 break-words">${implementationCost.toLocaleString()}</div>
-                                <div className="text-xs text-zinc-900 font-bold mt-2 font-mono">Initial setup & training cost</div>
+                                <div className="text-xs font-bold text-zinc-900 font-bold mt-2 font-mono">Initial setup & training cost</div>
                             </div>
                             
                             <div className="p-6 bg-zinc-50 border border-zinc-400 rounded-2xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/5 rounded-full blur-2xl group-hover:bg-green-500/10 transition-colors duration-500"></div>
-                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-2 flex items-center gap-2">Annual Net Savings</div>
+                                <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2 flex items-center gap-2">Annual Net Savings</div>
                                 <div className="text-3xl sm:text-4xl font-black text-green-400 break-words">${netAnnualSavings.toLocaleString()}</div>
-                                <div className="text-xs text-zinc-900 font-bold mt-2 font-mono">Displacing {displacedEngineers} FTEs</div>
+                                <div className="text-xs font-bold text-zinc-900 font-bold mt-2 font-mono">Displacing {displacedEngineers} FTEs</div>
                             </div>
 
                             <div className="p-6 bg-purple-900/20 border border-purple-500/30 rounded-2xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-colors duration-500"></div>
-                                <div className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 flex items-center gap-2">Break-Even Horizon</div>
+                                <div className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-2 flex items-center gap-2">Break-Even Horizon</div>
                                 <div className="text-3xl sm:text-4xl font-black text-zinc-900">
                                     {breakEvenMonths < 0 ? 'Never' : `${breakEvenMonths.toFixed(1)} Months`}
                                 </div>
-                                <div className="text-xs text-zinc-900 font-bold/50 mt-2 font-mono">Until CapEx is recovered</div>
+                                <div className="text-xs font-bold text-zinc-900 font-bold/50 mt-2 font-mono">Until CapEx is recovered</div>
                             </div>
                         </div>
 
@@ -203,7 +203,7 @@ export default function AIRoiTimelineContent() {
                                     
                                     return (
                                         <div key={month} className="grid grid-cols-12 items-center gap-4 group">
-                                            <div className="col-span-2 text-xs font-mono text-zinc-900">Month {month}</div>
+                                            <div className="col-span-2 text-xs font-bold font-mono text-zinc-900">Month {month}</div>
                                             <div className="col-span-8 bg-white h-4 rounded-full relative overflow-hidden border border-zinc-400">
                                                 {/* Zero Line Marker */}
                                                 { }
@@ -234,7 +234,7 @@ export default function AIRoiTimelineContent() {
                                         <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                         3-Step CapEx Justification Playbook
                                     </h3>
-                                    <p className="text-zinc-900 text-sm mb-8">Execute this operational sequence to securely finance the ${implementationCost.toLocaleString()} CapEx requirement and guarantee the {breakEvenMonths.toFixed(1)}-month payback period.</p>
+                                    <p className="text-zinc-900 text-sm font-semibold mb-8">Execute this operational sequence to securely finance the ${implementationCost.toLocaleString()} CapEx requirement and guarantee the {breakEvenMonths.toFixed(1)}-month payback period.</p>
 
                                     <div className="space-y-4">
                                         {/* Step 1 */}
@@ -245,12 +245,12 @@ export default function AIRoiTimelineContent() {
                                             </div>
                                             <div className="relative z-10 w-full">
                                                 <h4 className="text-zinc-950 font-bold mb-2">Hard-Lock the Headcount Freeze</h4>
-                                                <p className="text-zinc-900 text-sm leading-relaxed mb-4">The ${netAnnualSavings.toLocaleString()} annual savings model depends entirely on strict capacity displacement. Phantom hiring will destroy the break-even math.</p>
+                                                <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">The ${netAnnualSavings.toLocaleString()} annual savings model depends entirely on strict capacity displacement. Phantom hiring will destroy the break-even math.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                    <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                    <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-sm font-medium text-zinc-950">Mandate an immediate requisition freeze in the affected department. Any backfill requests for the {displacedEngineers} displaced roles must require direct Board/CFO approval.</p>
+                                                    <p className="text-sm font-semibold font-medium text-zinc-950">Mandate an immediate requisition freeze in the affected department. Any backfill requests for the {displacedEngineers} displaced roles must require direct Board/CFO approval.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -263,12 +263,12 @@ export default function AIRoiTimelineContent() {
                                             </div>
                                             <div className="relative z-10 w-full">
                                                 <h4 className="text-zinc-950 font-bold mb-2">Quarantine the Implementation CapEx</h4>
-                                                <p className="text-zinc-900 text-sm leading-relaxed mb-4">Without strict vendor and compute isolation, the initial ${implementationCost.toLocaleString()} investment will silently inflate through unmonitored API inference charges.</p>
+                                                <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">Without strict vendor and compute isolation, the initial ${implementationCost.toLocaleString()} investment will silently inflate through unmonitored API inference charges.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                    <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                    <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-sm font-medium text-zinc-950">Establish a dedicated FinOps tracking tag specifically for this deployment. Route API tokens through a rigid gateway proxy (e.g. Cloudflare AI Gateway) with hard-capped daily spend limits.</p>
+                                                    <p className="text-sm font-semibold font-medium text-zinc-950">Establish a dedicated FinOps tracking tag specifically for this deployment. Route API tokens through a rigid gateway proxy (e.g. Cloudflare AI Gateway) with hard-capped daily spend limits.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -277,16 +277,16 @@ export default function AIRoiTimelineContent() {
                                         <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                             <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
-                                                <span className="text-cyan-800 font-semibold font-bold font-mono">03</span>
+                                                <span className="text-cyan-900 font-extrabold font-semibold font-bold font-mono">03</span>
                                             </div>
                                             <div className="relative z-10 w-full">
                                                 <h4 className="text-zinc-950 font-bold mb-2">Schedule the Audit Clawback</h4>
-                                                <p className="text-zinc-900 text-sm leading-relaxed mb-4">CapEx investments without structured post-mortems are effectively donations to engineering R&D. Accountability must be verified at precisely {breakEvenMonths.toFixed(1)} months.</p>
+                                                <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">CapEx investments without structured post-mortems are effectively donations to engineering R&D. Accountability must be verified at precisely {breakEvenMonths.toFixed(1)} months.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                    <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-800 font-semibold uppercase tracking-widest font-bold">
+                                                    <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-sm font-medium text-zinc-950">Insert a calendar hold for a 30-minute executive review on the exact breakeven date. If the net position is not positive, the owning VP must submit a detailed remediation plan.</p>
+                                                    <p className="text-sm font-semibold font-medium text-zinc-950">Insert a calendar hold for a 30-minute executive review on the exact breakeven date. If the net position is not positive, the owning VP must submit a detailed remediation plan.</p>
                                                 </div>
                                             </div>
                                         </div>

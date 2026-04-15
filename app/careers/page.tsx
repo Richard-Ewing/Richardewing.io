@@ -15,18 +15,18 @@ const ICON_MAP: Record<string, any> = {
 };
 
 const CMAP: Record<string, { bg: string, text: string, border: string, shadow: string, hoverBg: string, bg10: string }> = {
-    cyan: { bg: 'bg-cyan-500/5', text: 'text-cyan-800 font-semibold', border: 'border-cyan-500/20', shadow: 'shadow-[0_0_15px_rgba(6,182,212,0.15)]', hoverBg: 'hover:bg-cyan-500/20', bg10: 'bg-cyan-500/10' },
-    purple: { bg: 'bg-purple-500/5', text: 'text-purple-800 font-semibold', border: 'border-purple-500/20', shadow: 'shadow-[0_0_15px_rgba(168,85,247,0.15)]', hoverBg: 'hover:bg-purple-500/20', bg10: 'bg-purple-500/10' },
-    emerald: { bg: 'bg-emerald-500/5', text: 'text-emerald-800 font-semibold', border: 'border-emerald-500/20', shadow: 'shadow-[0_0_15px_rgba(16,185,129,0.15)]', hoverBg: 'hover:bg-emerald-500/20', bg10: 'bg-emerald-500/10' },
+    cyan: { bg: 'bg-cyan-500/5', text: 'text-cyan-900 font-extrabold font-semibold', border: 'border-cyan-500/20', shadow: 'shadow-[0_0_15px_rgba(6,182,212,0.15)]', hoverBg: 'hover:bg-cyan-500/20', bg10: 'bg-cyan-500/10' },
+    purple: { bg: 'bg-purple-500/5', text: 'text-purple-900 font-extrabold font-semibold', border: 'border-purple-500/20', shadow: 'shadow-[0_0_15px_rgba(168,85,247,0.15)]', hoverBg: 'hover:bg-purple-500/20', bg10: 'bg-purple-500/10' },
+    emerald: { bg: 'bg-emerald-500/5', text: 'text-emerald-900 font-extrabold font-semibold', border: 'border-emerald-500/20', shadow: 'shadow-[0_0_15px_rgba(16,185,129,0.15)]', hoverBg: 'hover:bg-emerald-500/20', bg10: 'bg-emerald-500/10' },
     red: { bg: 'bg-red-500/5', text: 'text-red-500', border: 'border-red-500/20', shadow: 'shadow-[0_0_15px_rgba(239,68,68,0.15)]', hoverBg: 'hover:bg-red-500/20', bg10: 'bg-red-500/10' },
-    blue: { bg: 'bg-blue-500/5', text: 'text-blue-800 font-semibold', border: 'border-blue-500/20', shadow: 'shadow-[0_0_15px_rgba(59,130,246,0.15)]', hoverBg: 'hover:bg-blue-500/20', bg10: 'bg-blue-500/10' },
+    blue: { bg: 'bg-blue-500/5', text: 'text-blue-900 font-extrabold font-semibold', border: 'border-blue-500/20', shadow: 'shadow-[0_0_15px_rgba(59,130,246,0.15)]', hoverBg: 'hover:bg-blue-500/20', bg10: 'bg-blue-500/10' },
     pink: { bg: 'bg-pink-500/5', text: 'text-pink-400', border: 'border-pink-500/20', shadow: 'shadow-[0_0_15px_rgba(236,72,153,0.15)]', hoverBg: 'hover:bg-pink-500/20', bg10: 'bg-pink-500/10' },
     amber: { bg: 'bg-amber-500/5', text: 'text-amber-400', border: 'border-amber-500/20', shadow: 'shadow-[0_0_15px_rgba(245,158,11,0.15)]', hoverBg: 'hover:bg-amber-500/20', bg10: 'bg-amber-500/10' },
-    orange: { bg: 'bg-orange-500/5', text: 'text-orange-800 font-semibold', border: 'border-orange-500/20', shadow: 'shadow-[0_0_15px_rgba(249,115,22,0.15)]', hoverBg: 'hover:bg-orange-500/20', bg10: 'bg-orange-500/10' },
-    indigo: { bg: 'bg-indigo-500/5', text: 'text-indigo-800 font-semibold', border: 'border-indigo-500/20', shadow: 'shadow-[0_0_15px_rgba(99,102,241,0.15)]', hoverBg: 'hover:bg-indigo-500/20', bg10: 'bg-indigo-500/10' },
-    slate: { bg: 'bg-slate-500/5', text: 'text-slate-600', border: 'border-slate-500/20', shadow: 'shadow-[0_0_15px_rgba(100,116,139,0.15)]', hoverBg: 'hover:bg-slate-500/20', bg10: 'bg-slate-500/10' },
+    orange: { bg: 'bg-orange-500/5', text: 'text-orange-900 font-extrabold font-semibold', border: 'border-orange-500/20', shadow: 'shadow-[0_0_15px_rgba(249,115,22,0.15)]', hoverBg: 'hover:bg-orange-500/20', bg10: 'bg-orange-500/10' },
+    indigo: { bg: 'bg-indigo-500/5', text: 'text-indigo-900 font-extrabold font-semibold', border: 'border-indigo-500/20', shadow: 'shadow-[0_0_15px_rgba(99,102,241,0.15)]', hoverBg: 'hover:bg-indigo-500/20', bg10: 'bg-indigo-500/10' },
+    slate: { bg: 'bg-slate-500/5', text: 'text-zinc-950 font-bold', border: 'border-slate-500/20', shadow: 'shadow-[0_0_15px_rgba(100,116,139,0.15)]', hoverBg: 'hover:bg-slate-500/20', bg10: 'bg-slate-500/10' },
     fuchsia: { bg: 'bg-fuchsia-500/5', text: 'text-zinc-950 font-semibolduchsia-400', border: 'border-fuchsia-500/20', shadow: 'shadow-[0_0_15px_rgba(217,70,239,0.15)]', hoverBg: 'hover:bg-fuchsia-500/20', bg10: 'bg-fuchsia-500/10' },
-    yellow: { bg: 'bg-yellow-500/5', text: 'text-yellow-800 font-semibold', border: 'border-yellow-500/20', shadow: 'shadow-[0_0_15px_rgba(234,179,8,0.15)]', hoverBg: 'hover:bg-yellow-500/20', bg10: 'bg-yellow-500/10' },
+    yellow: { bg: 'bg-yellow-500/5', text: 'text-yellow-900 font-extrabold font-semibold', border: 'border-yellow-500/20', shadow: 'shadow-[0_0_15px_rgba(234,179,8,0.15)]', hoverBg: 'hover:bg-yellow-500/20', bg10: 'bg-yellow-500/10' },
     teal: { bg: 'bg-teal-500/5', text: 'text-teal-400', border: 'border-teal-500/20', shadow: 'shadow-[0_0_15px_rgba(20,184,166,0.15)]', hoverBg: 'hover:bg-teal-500/20', bg10: 'bg-teal-500/10' },
     rose: { bg: 'bg-rose-500/5', text: 'text-rose-400', border: 'border-rose-500/20', shadow: 'shadow-[0_0_15px_rgba(244,63,94,0.15)]', hoverBg: 'hover:bg-rose-500/20', bg10: 'bg-rose-500/10' },
 };
@@ -35,7 +35,7 @@ export default function DeepCareersHub() {
     return (
         <div className="max-w-7xl w-full relative z-10 mx-auto px-4 pb-24">
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest pt-8">
+            <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest pt-8">
                 <Link href="/" className="hover:text-zinc-900 transition">Home</Link>
                 <span>/</span>
                 <span className="text-zinc-950 font-bold">2026 Career Pathfinder</span>
@@ -50,10 +50,10 @@ export default function DeepCareersHub() {
                     <div className="flex flex-wrap items-center gap-3 mb-8">
                         <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_#10b981]"></div>
-                            <span className="font-mono text-xs font-medium text-emerald-800 font-semibold uppercase tracking-widest font-bold">THE 2026 PARADIGM</span>
+                            <span className="font-mono text-xs font-bold font-medium text-emerald-900 font-extrabold font-semibold uppercase tracking-widest font-bold">THE 2026 PARADIGM</span>
                         </div>
-                        <span className="text-zinc-950 text-xs font-mono uppercase tracking-widest hidden sm:inline-block">/</span>
-                        <span className="text-zinc-900 text-xs font-mono uppercase tracking-widest hidden sm:inline-block">Abandon the feature factory. Govern the agents.</span>
+                        <span className="text-zinc-950 text-xs font-bold font-mono uppercase tracking-widest hidden sm:inline-block">/</span>
+                        <span className="text-zinc-900 text-xs font-bold font-mono uppercase tracking-widest hidden sm:inline-block">Abandon the feature factory. Govern the agents.</span>
                     </div>
 
                     <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-zinc-950 tracking-tighter mb-6 leading-[0.9]">
@@ -74,7 +74,7 @@ export default function DeepCareersHub() {
                     </div>
                     <div>
                         <h2 className="text-3xl font-bold text-zinc-950 tracking-tight">The Executive Five</h2>
-                        <p className="text-zinc-950 text-sm font-mono uppercase tracking-widest mt-1">Highest ROI Roles for 2026-2030</p>
+                        <p className="text-zinc-950 text-sm font-semibold font-mono uppercase tracking-widest mt-1">Highest ROI Roles for 2026-2030</p>
                     </div>
                 </div>
             </ScrollReveal>
@@ -88,7 +88,7 @@ export default function DeepCareersHub() {
                             <ScrollReveal>
                                 <div className="mb-8 border-b border-zinc-400 pb-4">
                                     <h3 className="text-3xl font-black text-zinc-950 tracking-tight">{domain}</h3>
-                                    <p className="text-zinc-950 font-mono text-xs uppercase tracking-widest mt-1">{pathsInDomain.length} Executive Archetypes</p>
+                                    <p className="text-zinc-950 font-mono text-xs font-bold uppercase tracking-widest mt-1">{pathsInDomain.length} Executive Archetypes</p>
                                 </div>
                             </ScrollReveal>
                             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -105,12 +105,12 @@ export default function DeepCareersHub() {
                                                 {path.label}
                                             </div>
                                             <h3 className="text-xl font-bold text-zinc-950 mb-3 tracking-tight">{path.title}</h3>
-                                            <p className="text-zinc-900 text-sm leading-relaxed mb-6">
+                                            <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-6">
                                                 {path.description}
                                             </p>
 
                                             <div className="mt-auto relative z-10 pt-4">
-                                                <Link href={`/careers/${path.slug}`} className={`flex items-center justify-center gap-2 w-full py-3 rounded-lg ${colors.bg10} ${colors.hoverBg} ${colors.text} font-bold tracking-widest uppercase text-xs font-medium transition-colors border ${colors.border}`}>
+                                                <Link href={`/careers/${path.slug}`} className={`flex items-center justify-center gap-2 w-full py-3 rounded-lg ${colors.bg10} ${colors.hoverBg} ${colors.text} font-bold tracking-widest uppercase text-xs font-bold font-medium transition-colors border ${colors.border}`}>
                                                     Explore Strategy
                                                     <ArrowRight size={14} />
                                                 </Link>
@@ -139,21 +139,21 @@ export default function DeepCareersHub() {
                         <div className="relative group">
                             <div className="h-full bg-white border border-zinc-400 rounded-2xl p-8 hover:border-zinc-500/50 transition-all shadow-xl">
                                 <div className="absolute top-0 right-8 transform -translate-y-1/2">
-                                    <div className="bg-zinc-200 text-zinc-950 text-xs font-medium font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-zinc-400">Free Access</div>
+                                    <div className="bg-zinc-200 text-zinc-950 text-xs font-bold font-medium font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-zinc-400">Free Access</div>
                                 </div>
                                 <div className="w-12 h-12 rounded-xl bg-zinc-100 flex items-center justify-center mb-6">
-                                    <Activity className="text-zinc-800" size={24} />
+                                    <Activity className="text-zinc-950 font-bold" size={24} />
                                 </div>
                                 <h3 className="text-xl font-bold text-zinc-950 mb-3">Discovery</h3>
-                                <p className="text-sm text-zinc-900 font-medium mb-8 leading-relaxed">Assimilate the dialect of Engineering Economics. Required reading before stepping into any VP or Director-level scenario.</p>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium mb-8 leading-relaxed">Assimilate the dialect of Engineering Economics. Required reading before stepping into any VP or Director-level scenario.</p>
                                 
                                 <ul className="space-y-4 mb-8">
                                     <li>
                                         <Link href="/glossary" className="group/item flex items-start gap-3">
                                             <div className="mt-1 bg-zinc-200 rounded p-1"><ArrowRight size={12} className="text-zinc-950 group-hover/item:text-zinc-950 transition-colors" /></div>
                                             <div>
-                                                <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">The Lexicon (420+ Terms)</div>
-                                                <div className="text-xs text-zinc-900 font-bold">Master the exact vernacular used by CFOs.</div>
+                                                <div className="text-sm font-semibold font-bold text-zinc-950 group-hover/item:text-zinc-900">The Lexicon (420+ Terms)</div>
+                                                <div className="text-xs font-bold text-zinc-900 font-bold">Master the exact vernacular used by CFOs.</div>
                                             </div>
                                         </Link>
                                     </li>
@@ -161,8 +161,8 @@ export default function DeepCareersHub() {
                                         <Link href="/blog" className="group/item flex items-start gap-3">
                                             <div className="mt-1 bg-zinc-200 rounded p-1"><ArrowRight size={12} className="text-zinc-950 group-hover/item:text-zinc-950 transition-colors" /></div>
                                             <div>
-                                                <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">Core Articles</div>
-                                                <div className="text-xs text-zinc-900 font-bold">100+ deep-dive economic essays.</div>
+                                                <div className="text-sm font-semibold font-bold text-zinc-950 group-hover/item:text-zinc-900">Core Articles</div>
+                                                <div className="text-xs font-bold text-zinc-900 font-bold">100+ deep-dive economic essays.</div>
                                             </div>
                                         </Link>
                                     </li>
@@ -177,37 +177,37 @@ export default function DeepCareersHub() {
                                 color={["#10b981", "#3b82f6", "#8b5cf6"]}
                             >
                                 <div className="absolute top-0 right-8 transform -translate-y-1/2 z-30">
-                                    <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold text-xs font-medium font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]">100,000x Value</div>
+                                    <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold text-xs font-bold font-medium font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]">100,000x Value</div>
                                 </div>
                                 <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6 border border-indigo-500/30">
-                                    <Diamond className="text-indigo-800 font-semibold" size={24} />
+                                    <Diamond className="text-indigo-900 font-extrabold font-semibold" size={24} />
                                 </div>
                                 <h3 className="text-xl font-bold text-zinc-950 mb-3">The Vault</h3>
-                                <p className="text-sm text-zinc-950 mb-8 leading-relaxed font-medium">Over 400+ specific economic frameworks, AI sizing calculators, and board-ready deliverables. The fastest route to promotion.</p>
+                                <p className="text-sm font-semibold text-zinc-950 mb-8 leading-relaxed font-medium">Over 400+ specific economic frameworks, AI sizing calculators, and board-ready deliverables. The fastest route to promotion.</p>
                                 
                                 <ul className="space-y-4 mb-8">
                                     <li>
                                         <Link href="/vault/curriculum/tracks" className="group/item flex items-start gap-3">
-                                            <div className="mt-1 bg-indigo-500/20 rounded p-1 border border-indigo-500/30"><CheckCircle size={12} className="text-indigo-800 font-semibold" /></div>
+                                            <div className="mt-1 bg-indigo-500/20 rounded p-1 border border-indigo-500/30"><CheckCircle size={12} className="text-indigo-900 font-extrabold font-semibold" /></div>
                                             <div>
-                                                <div className="text-sm font-bold text-zinc-900">Full Curriculum Access</div>
-                                                <div className="text-xs text-zinc-900 font-bold">30 tracks covering Agentic scaling, PDI, Serverless GPUs, and M&A Auditing.</div>
+                                                <div className="text-sm font-semibold font-bold text-zinc-900">Full Curriculum Access</div>
+                                                <div className="text-xs font-bold text-zinc-900 font-bold">30 tracks covering Agentic scaling, PDI, Serverless GPUs, and M&A Auditing.</div>
                                             </div>
                                         </Link>
                                     </li>
                                     <li>
                                         <div className="group/item flex items-start gap-3 opacity-90">
-                                            <div className="mt-1 bg-indigo-500/20 rounded p-1 border border-indigo-500/30"><CheckCircle size={12} className="text-indigo-800 font-semibold" /></div>
+                                            <div className="mt-1 bg-indigo-500/20 rounded p-1 border border-indigo-500/30"><CheckCircle size={12} className="text-indigo-900 font-extrabold font-semibold" /></div>
                                             <div>
-                                                <div className="text-sm font-bold text-zinc-900">Execution Playbooks</div>
-                                                <div className="text-xs text-zinc-900 font-bold">Step-by-step PDF runbooks for complex migrations.</div>
+                                                <div className="text-sm font-semibold font-bold text-zinc-900">Execution Playbooks</div>
+                                                <div className="text-xs font-bold text-zinc-900 font-bold">Step-by-step PDF runbooks for complex migrations.</div>
                                             </div>
                                         </div>
                                     </li>
                                 </ul>
                                 
                                 <div className="mt-auto pt-4 relative z-20 text-center">
-                                    <a href="/api/buy/all_access_pass" className="inline-block w-full py-3 px-6 bg-white text-black font-bold text-sm tracking-widest uppercase rounded-lg hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20">
+                                    <a href="/api/buy/all_access_pass" className="inline-block w-full py-3 px-6 bg-white text-black font-bold text-sm font-semibold tracking-widest uppercase rounded-lg hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20">
                                         Unlock The Vault
                                     </a>
                                 </div>
@@ -218,21 +218,21 @@ export default function DeepCareersHub() {
                         <div className="relative group">
                             <div className="h-full bg-white border border-zinc-400 rounded-2xl p-8 hover:border-[var(--accent-crimson)]/50 transition-all shadow-xl">
                                 <div className="absolute top-0 right-8 transform -translate-y-1/2">
-                                    <div className="bg-[var(--bg-primary)] text-[var(--accent-crimson)] text-xs font-medium font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-[var(--accent-crimson)] shadow-[0_0_10px_rgba(255,68,68,0.2)]">Final Validation</div>
+                                    <div className="bg-[var(--bg-primary)] text-[var(--accent-crimson)] text-xs font-bold font-medium font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-[var(--accent-crimson)] shadow-[0_0_10px_rgba(255,68,68,0.2)]">Final Validation</div>
                                 </div>
                                 <div className="w-12 h-12 rounded-xl bg-red-50/30 flex items-center justify-center mb-6 border border-red-500/20">
                                     <ShieldAlert className="text-[var(--accent-crimson)]" size={24} />
                                 </div>
                                 <h3 className="text-xl font-bold text-zinc-950 mb-3">Assessment</h3>
-                                <p className="text-sm text-zinc-900 font-medium mb-8 leading-relaxed">Once you understand the math, you must prove judgment. Prove your fiduciary responsibility before touching multi-million dollar R&D budgets.</p>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium mb-8 leading-relaxed">Once you understand the math, you must prove judgment. Prove your fiduciary responsibility before touching multi-million dollar R&D budgets.</p>
                                 
                                 <ul className="space-y-4 mb-8">
                                     <li>
                                         <Link href="/tools/audit-interview" className="group/item flex items-start gap-3">
                                             <div className="mt-1 bg-red-50/30 rounded p-1 border border-red-500/20"><ArrowRight size={12} className="text-[var(--accent-crimson)] group-hover/item:translate-x-1 transition-transform" /></div>
                                             <div>
-                                                <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">The Audit Interview Protocol</div>
-                                                <div className="text-xs text-zinc-900 font-bold">Test Non-Deterministic Agentic Governance logic.</div>
+                                                <div className="text-sm font-semibold font-bold text-zinc-950 group-hover/item:text-zinc-900">The Audit Interview Protocol</div>
+                                                <div className="text-xs font-bold text-zinc-900 font-bold">Test Non-Deterministic Agentic Governance logic.</div>
                                             </div>
                                         </Link>
                                     </li>
@@ -240,8 +240,8 @@ export default function DeepCareersHub() {
                                         <Link href="/tools/board-room" className="group/item flex items-start gap-3">
                                             <div className="mt-1 bg-red-50/30 rounded p-1 border border-red-500/20"><ArrowRight size={12} className="text-[var(--accent-crimson)] group-hover/item:translate-x-1 transition-transform" /></div>
                                             <div>
-                                                <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">Executive Board Room</div>
-                                                <div className="text-xs text-zinc-900 font-bold">Run actual capital diagnostics.</div>
+                                                <div className="text-sm font-semibold font-bold text-zinc-950 group-hover/item:text-zinc-900">Executive Board Room</div>
+                                                <div className="text-xs font-bold text-zinc-900 font-bold">Run actual capital diagnostics.</div>
                                             </div>
                                         </Link>
                                     </li>

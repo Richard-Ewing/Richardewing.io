@@ -39,10 +39,10 @@ export default function StickyBottomCTA() {
                     <div className="flex items-center gap-3 min-w-0">
                         <span className="hidden sm:inline text-2xl">📊</span>
                         <div className="min-w-0">
-                            <p className="text-zinc-950 text-sm font-bold truncate">
+                            <p className="text-zinc-950 text-sm font-semibold font-bold truncate">
                                 Is your R&D budget building assets — or just servicing liabilities?
                             </p>
-                            <p className="text-zinc-950 text-xs hidden sm:block">30-min diagnostic call with a Product Economist. $450.</p>
+                            <p className="text-zinc-950 text-xs font-bold hidden sm:block">30-min diagnostic call with a Product Economist. $450.</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0">
@@ -54,7 +54,7 @@ export default function StickyBottomCTA() {
                         </Link>
                         <button
                             onClick={() => { setDismissed(true); sessionStorage.setItem('sticky-cta-dismissed', 'true'); }}
-                            className="p-1 text-zinc-800 hover:text-zinc-900 transition-colors"
+                            className="p-1 text-zinc-950 font-bold hover:text-zinc-900 transition-colors"
                             aria-label="Dismiss"
                         >
                             <X className="w-4 h-4" />

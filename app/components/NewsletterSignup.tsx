@@ -6,7 +6,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
     if (variant === 'compact') {
         return (
             <div className="flex items-center gap-4">
-                <span className="text-zinc-800 text-sm font-grotesk">Get new articles first:</span>
+                <span className="text-zinc-950 font-bold text-sm font-semibold font-grotesk">Get new articles first:</span>
                 <a
                     href={beehiivUrl}
                     target="_blank"
@@ -21,20 +21,20 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
     if (variant === 'full') {
         return (
             <div className="card p-8 text-center border-purple-500/30 bg-purple-900/10">
-                <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">
+                <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">
                     Monthly Newsletter
                 </div>
                 <h3 className="text-2xl font-bold text-zinc-950 mb-4 font-grotesk">
                     Executive Briefings
                 </h3>
-                <p className="text-zinc-800 mb-6 max-w-md mx-auto">
+                <p className="text-zinc-950 font-bold mb-6 max-w-md mx-auto">
                     Dense, actionable intelligence for leaders who don't have time for "thought leadership."
                     <br /><span className="text-zinc-900">Read time: 5-10 minutes each.</span>
                 </p>
                 <a
                     href={beehiivUrl}
                     target="_blank"
-                    className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 mb-4 transition-colors font-grotesk"
+                    className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 mb-4 transition-colors font-grotesk"
                 >
                     Subscribe on Beehiiv →
                 </a>
@@ -51,13 +51,13 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
             <h3 className="text-lg font-semibold text-zinc-950 mb-2 font-grotesk">
                 Get New Briefs First
             </h3>
-            <p className="text-zinc-800 text-sm mb-4">
+            <p className="text-zinc-950 font-bold text-sm font-semibold mb-4">
                 One email per month. No spam. Unsubscribe anytime.
             </p>
             <a
                 href={beehiivUrl}
                 target="_blank"
-                className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 transition-colors font-grotesk"
+                className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 transition-colors font-grotesk"
             >
                 Subscribe on Beehiiv →
             </a>

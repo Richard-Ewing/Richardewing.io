@@ -18,7 +18,7 @@ export default function ManifestoPage() {
                     <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent pointer-events-none" />
 
                     <div className="relative">
-                        <span className="text-gold font-mono text-xs uppercase tracking-[0.3em] mb-8 sm:mb-12 block text-center opacity-80">
+                        <span className="text-gold font-mono text-xs font-bold uppercase tracking-[0.3em] mb-8 sm:mb-12 block text-center opacity-80">
                             The Doctrine of Sovereignty
                         </span>
 
@@ -44,11 +44,11 @@ export default function ManifestoPage() {
                             </p>
 
                             <div className="capsule-container rounded-xl p-6 sm:p-8 my-10">
-                                <div className="font-mono text-xs text-gold uppercase tracking-widest mb-4">The New Mandate</div>
+                                <div className="font-mono text-xs font-bold text-gold uppercase tracking-widest mb-4">The New Mandate</div>
                                 <p className="text-zinc-950 font-bold text-lg sm:text-xl mb-4">
                                     We are not just builders anymore. We are Architects of Capital.
                                 </p>
-                                <p className="text-zinc-900 text-sm sm:text-base">
+                                <p className="text-zinc-900 text-sm font-semibold sm:text-base">
                                     We must learn to speak the language of the P&L, or we will be relegated to the children's table while the CFO makes the real roadmap decisions. The Product Economist exists to bridge this gap—to give technical leaders the financial fluency they need to command the room.
                                 </p>
                             </div>
@@ -66,7 +66,7 @@ export default function ManifestoPage() {
                                 </div>
                                 <div className="text-center sm:text-left">
                                     <div className="font-serif text-zinc-950 text-xl sm:text-2xl italic mb-1">Richard Ewing</div>
-                                    <div className="font-mono text-xs text-gold tracking-widest uppercase">The Product Economist</div>
+                                    <div className="font-mono text-xs font-bold text-gold tracking-widest uppercase">The Product Economist</div>
                                 </div>
                             </div>
                         </article>
@@ -82,14 +82,14 @@ export default function ManifestoPage() {
                         <ShineBorder borderColor="rgba(212, 175, 55, 0.6)" duration={2}>
                             <Link
                                 href="/advisory"
-                                className="inline-block bg-white text-black font-bold uppercase text-sm px-8 py-4 tracking-widest hover:bg-gold transition-colors"
+                                className="inline-block bg-white text-black font-bold uppercase text-sm font-semibold px-8 py-4 tracking-widest hover:bg-gold transition-colors"
                             >
                                 Work With Me →
                             </Link>
                         </ShineBorder>
                         <Link
                             href="/doctrine"
-                            className="inline-block border border-white/30 text-zinc-950 font-bold uppercase text-sm px-8 py-4 rounded-xl tracking-widest hover:bg-white/5 transition-colors"
+                            className="inline-block border border-white/30 text-zinc-950 font-bold uppercase text-sm font-semibold px-8 py-4 rounded-xl tracking-widest hover:bg-white/5 transition-colors"
                         >
                             Read The Doctrine
                         </Link>

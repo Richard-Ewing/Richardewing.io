@@ -43,11 +43,11 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
                 <div className="text-center py-8">
                     <div className="text-5xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400 mb-2">{pct}%</div>
                     <div className="text-lg text-zinc-950 mb-2">{score} / {quiz.length} correct</div>
-                    <div className="text-sm text-zinc-900 font-medium">
+                    <div className="text-sm font-semibold text-zinc-900 font-medium">
                         {pct >= 80 ? '🎉 Excellent! You have a strong understanding.' : pct >= 50 ? '👍 Good start! Review the sections above to strengthen your knowledge.' : '📚 Keep learning! Review the definition and how-to-apply sections above.'}
                     </div>
                 </div>
-                <button onClick={() => { setCurrentQ(0); setSelected(null); setScore(0); setFinished(false); setShowExplanation(false); }} className="w-full px-6 py-3 rounded-lg bg-white/5 border border-zinc-400 text-zinc-950 hover:text-zinc-900 hover:border-violet-500/30 transition-colors text-sm font-bold">
+                <button onClick={() => { setCurrentQ(0); setSelected(null); setScore(0); setFinished(false); setShowExplanation(false); }} className="w-full px-6 py-3 rounded-lg bg-white/5 border border-zinc-400 text-zinc-950 hover:text-zinc-900 hover:border-violet-500/30 transition-colors text-sm font-semibold font-bold">
                     Retake Quiz
                 </button>
             </section>
@@ -57,7 +57,7 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
     return (
         <section className="mb-12 card p-8 border-violet-500/20">
             <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-2">🧠 Test Your Knowledge: {title}</h2>
-            <div className="text-xs font-mono text-zinc-800 mb-6">Question {currentQ + 1} of {quiz.length}</div>
+            <div className="text-xs font-bold font-mono text-zinc-950 font-bold mb-6">Question {currentQ + 1} of {quiz.length}</div>
 
             <div className="mb-6">
                 <h3 className="text-lg font-bold text-zinc-950 mb-4">{q.question}</h3>
@@ -71,8 +71,8 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
                         return (
                             <button key={idx} onClick={() => handleSelect(idx)} disabled={selected !== null}
                                 className={`w-full text-left p-4 rounded-xl border transition-colors ${cls} ${selected === null ? 'cursor-pointer' : 'cursor-default'}`}>
-                                <span className="text-xs font-mono text-zinc-800 mr-3">{String.fromCharCode(65 + idx)}</span>
-                                <span className={`text-sm ${selected !== null && idx === q.answer ? 'text-emerald-800 font-semibold' : 'text-zinc-900'}`}>{opt}</span>
+                                <span className="text-xs font-bold font-mono text-zinc-950 font-bold mr-3">{String.fromCharCode(65 + idx)}</span>
+                                <span className={`text-sm font-semibold ${selected !== null && idx === q.answer ? 'text-emerald-900 font-extrabold font-semibold' : 'text-zinc-900'}`}>{opt}</span>
                             </button>
                         );
                     })}
@@ -81,8 +81,8 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
 
             {showExplanation && (
                 <div className="mb-6 p-4 rounded-xl bg-zinc-50 border border-zinc-400">
-                    <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-2">Explanation</div>
-                    <p className="text-sm text-zinc-900 font-medium">{q.explanation}</p>
+                    <div className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest mb-2">Explanation</div>
+                    <p className="text-sm font-semibold text-zinc-900 font-medium">{q.explanation}</p>
                 </div>
             )}
 

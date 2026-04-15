@@ -11,25 +11,25 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                 <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-100 to-indigo-100 border border-violet-200 flex items-center justify-center">
-                            <BookOpen className="w-4 h-4 text-violet-600" />
+                            <BookOpen className="w-4 h-4 text-violet-900 font-extrabold" />
                         </div>
                         <div className="hidden sm:block">
                             <div className="text-xs font-bold text-zinc-900">Product Economics Academy</div>
-                            <div className="text-xs font-medium text-zinc-900">23 tracks • 293 modules • Lifetime access</div>
+                            <div className="text-xs font-bold font-medium text-zinc-900">23 tracks • 293 modules • Lifetime access</div>
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
-                        <Link href="/tools" className="hidden sm:inline-flex items-center gap-1.5 text-xs text-zinc-900 font-bold hover:text-purple-600 transition-colors px-3 py-1.5 rounded-lg border border-zinc-400 hover:border-purple-200">
+                        <Link href="/tools" className="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-zinc-900 font-bold hover:text-purple-900 font-extrabold transition-colors px-3 py-1.5 rounded-lg border border-zinc-400 hover:border-purple-200">
                             🛠️ Free Tools
                         </Link>
-                        <Link href="/glossary" className="hidden sm:inline-flex items-center gap-1.5 text-xs text-zinc-900 font-bold hover:text-purple-600 transition-colors px-3 py-1.5 rounded-lg border border-zinc-400 hover:border-purple-200">
+                        <Link href="/glossary" className="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-zinc-900 font-bold hover:text-purple-900 font-extrabold transition-colors px-3 py-1.5 rounded-lg border border-zinc-400 hover:border-purple-200">
                             📚 Glossary
                         </Link>
                         <a
                             href="/api/buy/full_curriculum"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 text-zinc-950 font-semibold font-bold text-xs hover:opacity-90 transition-opacity shadow-md"
+                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 text-zinc-950 font-semibold font-bold text-xs font-bold hover:opacity-90 transition-opacity shadow-md"
                         >
                             <Sparkles className="w-3 h-3" />
                             Unlock All 23 Tracks — $999

@@ -25,8 +25,8 @@ export default function CompareAuditVsTraditionalPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/compare" className="hover:text-cyan-800 font-semibold">Compare</Link><span>/</span><span className="text-cyan-800 font-semibold font-bold">Audit Interview vs Traditional</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/compare" className="hover:text-cyan-900 font-extrabold font-semibold">Compare</Link><span>/</span><span className="text-cyan-900 font-extrabold font-semibold font-bold">Audit Interview vs Traditional</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Audit Interview vs{' '}
@@ -41,7 +41,7 @@ export default function CompareAuditVsTraditionalPage() {
                             <thead>
                                 <tr className="border-b border-zinc-400">
                                     <th className="text-left py-4 px-4 text-zinc-950 font-mono uppercase tracking-widest text-xs">Dimension</th>
-                                    <th className="text-left py-4 px-4 text-cyan-800 font-semibold font-mono uppercase tracking-widest text-xs">Audit Interview</th>
+                                    <th className="text-left py-4 px-4 text-cyan-900 font-extrabold font-semibold font-mono uppercase tracking-widest text-xs">Audit Interview</th>
                                     <th className="text-left py-4 px-4 text-rose-400 font-mono uppercase tracking-widest text-xs">Traditional</th>
                                 </tr>
                             </thead>
@@ -49,7 +49,7 @@ export default function CompareAuditVsTraditionalPage() {
                                 {dimensions.map((d, i) => (
                                     <tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50 transition-colors">
                                         <td className="py-4 px-4 text-zinc-950 font-medium">{d.dimension}</td>
-                                        <td className={`py-4 px-4 ${d.winner === 'audit' ? 'text-cyan-800 font-semibold' : 'text-zinc-900'}`}>{d.audit}</td>
+                                        <td className={`py-4 px-4 ${d.winner === 'audit' ? 'text-cyan-900 font-extrabold font-semibold' : 'text-zinc-900'}`}>{d.audit}</td>
                                         <td className={`py-4 px-4 ${d.winner === 'traditional' ? 'text-rose-400' : 'text-zinc-900'}`}>{d.traditional}</td>
                                     </tr>
                                 ))}

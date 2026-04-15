@@ -55,12 +55,12 @@ export default function IntelligenceDashboard() {
 
     const getToolColor = (toolId: string) => {
         switch (toolId) {
-            case 'APER': return 'text-cyan-800 font-semibold bg-cyan-400/10 border-cyan-400/20';
-            case 'AUEB': return 'text-red-800 font-semibold bg-red-400/10 border-red-400/20';
-            case 'EV-SE': return 'text-purple-800 font-semibold bg-purple-400/10 border-purple-400/20';
+            case 'APER': return 'text-cyan-900 font-extrabold font-semibold bg-cyan-400/10 border-cyan-400/20';
+            case 'AUEB': return 'text-red-900 font-extrabold font-semibold bg-red-400/10 border-red-400/20';
+            case 'EV-SE': return 'text-purple-900 font-extrabold font-semibold bg-purple-400/10 border-purple-400/20';
             case 'PDI': return 'text-rose-400 bg-rose-400/10 border-rose-400/20';
             case 'DUE-DILIGENCE': return 'text-amber-400 bg-amber-400/10 border-amber-400/20';
-            case 'CLOUD-REPAT': return 'text-emerald-800 font-semibold bg-emerald-400/10 border-emerald-400/20';
+            case 'CLOUD-REPAT': return 'text-emerald-900 font-extrabold font-semibold bg-emerald-400/10 border-emerald-400/20';
             default: return 'text-zinc-950 bg-white/10 border-zinc-500';
         }
     };
@@ -112,28 +112,28 @@ export default function IntelligenceDashboard() {
                 
                 <div className="relative z-10 w-full md:w-auto">
                     <div className="flex items-center justify-between md:justify-start gap-4 mb-4">
-                        <span className={`px-3 py-1 text-xs font-medium font-mono font-bold uppercase tracking-widest rounded-md border ${getToolColor(run.tool_id)}`}>
+                        <span className={`px-3 py-1 text-xs font-bold font-medium font-mono font-bold uppercase tracking-widest rounded-md border ${getToolColor(run.tool_id)}`}>
                             {run.tool_id}
                         </span>
-                        <span className="text-sm font-medium text-zinc-950 font-mono flex items-center gap-1">
+                        <span className="text-sm font-semibold font-medium text-zinc-950 font-mono flex items-center gap-1">
                             <Calendar size={12} /> {date}
                         </span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-12">
                         <div>
-                            <div className="text-xs font-medium text-zinc-950 font-mono uppercase tracking-widest mb-1">{primaryMetric.label}</div>
+                            <div className="text-xs font-bold font-medium text-zinc-950 font-mono uppercase tracking-widest mb-1">{primaryMetric.label}</div>
                             <div className="text-2xl font-bold text-zinc-900">{primaryMetric.value}</div>
                         </div>
                         <div className="hidden sm:block w-px h-10 bg-white/10" />
                         <div>
-                            <div className="text-xs font-medium text-zinc-950 font-mono uppercase tracking-widest mb-1">{secondaryMetric.label}</div>
+                            <div className="text-xs font-bold font-medium text-zinc-950 font-mono uppercase tracking-widest mb-1">{secondaryMetric.label}</div>
                             <div className="text-xl font-medium text-zinc-900">{secondaryMetric.value}</div>
                         </div>
                     </div>
                 </div>
                 
                 <div className="relative z-10 flex items-center gap-4 border-t md:border-t-0 md:border-l border-zinc-400 pt-4 md:pt-0 md:pl-6 w-full md:w-auto mt-2 md:mt-0">
-                    <Link href={`/tools/${run.tool_id.toLowerCase()}`} className="w-full md:w-auto px-6 py-3 bg-white/5 hover:bg-white/10 text-zinc-950 rounded-lg text-xs font-mono tracking-widest uppercase transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+                    <Link href={`/tools/${run.tool_id.toLowerCase()}`} className="w-full md:w-auto px-6 py-3 bg-white/5 hover:bg-white/10 text-zinc-950 rounded-lg text-xs font-bold font-mono tracking-widest uppercase transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
                         Re-Execute <ArrowRight size={14} />
                     </Link>
                 </div>
@@ -146,10 +146,10 @@ export default function IntelligenceDashboard() {
             <nav className="border-b border-zinc-400 bg-white/80 backdrop-blur-2xl sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <Activity className="text-cyan-800 font-semibold" size={18} />
-                        <span className="font-bold tracking-tight text-lg text-zinc-900">C-Suite Command Center <span className="text-zinc-800 font-normal">| Strategic Diagnostics</span></span>
+                        <Activity className="text-cyan-900 font-extrabold font-semibold" size={18} />
+                        <span className="font-bold tracking-tight text-lg text-zinc-900">C-Suite Command Center <span className="text-zinc-950 font-bold font-normal">| Strategic Diagnostics</span></span>
                     </div>
-                    <Link href="/system" className="text-xs font-medium font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-zinc-400">
+                    <Link href="/system" className="text-xs font-bold font-medium font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-zinc-400">
                         Exit to Hub
                     </Link>
                 </div>
@@ -162,54 +162,54 @@ export default function IntelligenceDashboard() {
                     <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
-                                <ShieldAlert size={20} className="text-red-800 font-semibold" />
+                                <ShieldAlert size={20} className="text-red-900 font-extrabold font-semibold" />
                             </div>
-                            <span className="text-xs font-medium font-mono text-red-800 font-semibold bg-red-500/10 px-2 py-1 rounded-full border border-red-500/20 tracking-widest uppercase">Systemic Risk</span>
+                            <span className="text-xs font-bold font-medium font-mono text-red-900 font-extrabold font-semibold bg-red-500/10 px-2 py-1 rounded-full border border-red-500/20 tracking-widest uppercase">Systemic Risk</span>
                         </div>
-                        <div className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Identified Valuation Gap</div>
+                        <div className="text-sm font-semibold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Identified Valuation Gap</div>
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">
                             $ <NumberTicker value={totalValuationGap} />
                         </div>
-                        <p className="text-sm font-medium text-zinc-950 mt-4 leading-relaxed">Aggregated enterprise value theoretically at risk due to technical debt, margin drag, and inefficient APER.</p>
+                        <p className="text-sm font-semibold font-medium text-zinc-950 mt-4 leading-relaxed">Aggregated enterprise value theoretically at risk due to technical debt, margin drag, and inefficient APER.</p>
                         <BorderBeam duration={12} delay={0} size={250} />
                     </GlowCard>
 
                     <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                                <TrendingUp size={20} className="text-emerald-800 font-semibold" />
+                                <TrendingUp size={20} className="text-emerald-900 font-extrabold font-semibold" />
                             </div>
-                            <span className="text-xs font-medium font-mono text-emerald-800 font-semibold bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/20 tracking-widest uppercase">Health Metric</span>
+                            <span className="text-xs font-bold font-medium font-mono text-emerald-900 font-extrabold font-semibold bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/20 tracking-widest uppercase">Health Metric</span>
                         </div>
-                        <div className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Eng Pipeline Confidence</div>
+                        <div className="text-sm font-semibold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Eng Pipeline Confidence</div>
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">
                             <NumberTicker value={finalConfidence} /> %
                         </div>
-                        <p className="text-sm font-medium text-zinc-950 mt-4 leading-relaxed">Aggregate confidence score across all executed technical benchmarks and organizational health metrics.</p>
+                        <p className="text-sm font-semibold font-medium text-zinc-950 mt-4 leading-relaxed">Aggregate confidence score across all executed technical benchmarks and organizational health metrics.</p>
                         <BorderBeam duration={8} delay={3} size={250} />
                     </GlowCard>
 
                     <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-                                <Database size={20} className="text-cyan-800 font-semibold" />
+                                <Database size={20} className="text-cyan-900 font-extrabold font-semibold" />
                             </div>
-                            <span className="text-xs font-medium font-mono text-cyan-800 font-semibold bg-cyan-500/10 px-2 py-1 rounded-full border border-cyan-500/20 tracking-widest uppercase">Coverage</span>
+                            <span className="text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold bg-cyan-500/10 px-2 py-1 rounded-full border border-cyan-500/20 tracking-widest uppercase">Coverage</span>
                         </div>
-                        <div className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Diagnostic Tools Run</div>
+                        <div className="text-sm font-semibold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Diagnostic Tools Run</div>
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">
                             <NumberTicker value={uniqueToolsRun} /> <span className="text-xl text-zinc-950">/ {totalToolsAvailable}</span>
                         </div>
-                        <p className="text-sm font-medium text-zinc-950 mt-4 leading-relaxed">You have executed {uniqueToolsRun} out of {totalToolsAvailable} core intelligence protocols to map your organization.</p>
+                        <p className="text-sm font-semibold font-medium text-zinc-950 mt-4 leading-relaxed">You have executed {uniqueToolsRun} out of {totalToolsAvailable} core intelligence protocols to map your organization.</p>
                         <BorderBeam duration={10} delay={6} size={250} />
                     </GlowCard>
                 </div>
 
                 <div className="mb-8 flex items-center justify-between border-b border-zinc-400 pb-4">
                     <h2 className="text-2xl font-bold font-grotesk text-zinc-950 flex items-center gap-3">
-                        <History className="text-cyan-800 font-semibold" /> Execution Ledger
+                        <History className="text-cyan-900 font-extrabold font-semibold" /> Execution Ledger
                     </h2>
-                    <span className="text-xs font-mono text-zinc-950 tracking-widest uppercase">{runs.length} Snapshots Stored</span>
+                    <span className="text-xs font-bold font-mono text-zinc-950 tracking-widest uppercase">{runs.length} Snapshots Stored</span>
                 </div>
 
                 {loading ? (
@@ -220,11 +220,11 @@ export default function IntelligenceDashboard() {
                     </div>
                 ) : runs.length === 0 ? (
                     <div className="text-center py-24 bg-white/20 border border-zinc-400 rounded-3xl border-dashed">
-                        <History className="mx-auto text-zinc-800 mb-4" size={48} />
+                        <History className="mx-auto text-zinc-950 font-bold mb-4" size={48} />
                         <h3 className="text-xl font-bold text-zinc-950 mb-2">Awaiting Telemetry</h3>
                         <p className="text-zinc-950 mb-8 max-w-md mx-auto">You have not executed any intelligence playbooks yet. Run an analysis to establish your longitudinal baseline.</p>
                         <div className="flex items-center justify-center gap-4">
-                            <Link href="/tools/aper" className="px-6 py-3 bg-white hover:bg-zinc-200 text-black rounded-lg text-sm font-bold uppercase tracking-widest transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">Execute APER</Link>
+                            <Link href="/tools/aper" className="px-6 py-3 bg-white hover:bg-zinc-200 text-black rounded-lg text-sm font-semibold font-bold uppercase tracking-widest transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">Execute APER</Link>
                         </div>
                     </div>
                 ) : (

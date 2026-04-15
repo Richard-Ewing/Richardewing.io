@@ -21,8 +21,8 @@ export default function AIFirstPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/industries" className="hover:text-cyan-800 font-semibold">Industries</Link><span>/</span><span className="text-orange-800 font-semibold font-bold">AI-First Companies</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/industries" className="hover:text-cyan-900 font-extrabold font-semibold">Industries</Link><span>/</span><span className="text-orange-900 font-extrabold font-semibold font-bold">AI-First Companies</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
@@ -46,10 +46,10 @@ export default function AIFirstPage() {
                     <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">How I Help AI-First Companies</h2>
                         <ul className="space-y-3 text-zinc-950 mb-8">
-                            <li className="flex items-start gap-3"><span className="text-orange-800 font-semibold mt-1">→</span> <span>Model AI unit economics before and after launch using the AUEB calculator</span></li>
-                            <li className="flex items-start gap-3"><span className="text-orange-800 font-semibold mt-1">→</span> <span>Identify which AI features to convert to deterministic code (Evergreen Ratio)</span></li>
-                            <li className="flex items-start gap-3"><span className="text-orange-800 font-semibold mt-1">→</span> <span>Implement AI governance through <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-orange-800 font-semibold underline hover:text-orange-800 font-semibold">Exogram</a> integration</span></li>
-                            <li className="flex items-start gap-3"><span className="text-orange-800 font-semibold mt-1">→</span> <span>Audit model dependency risk and create multi-provider strategies</span></li>
+                            <li className="flex items-start gap-3"><span className="text-orange-900 font-extrabold font-semibold mt-1">→</span> <span>Model AI unit economics before and after launch using the AUEB calculator</span></li>
+                            <li className="flex items-start gap-3"><span className="text-orange-900 font-extrabold font-semibold mt-1">→</span> <span>Identify which AI features to convert to deterministic code (Evergreen Ratio)</span></li>
+                            <li className="flex items-start gap-3"><span className="text-orange-900 font-extrabold font-semibold mt-1">→</span> <span>Implement AI governance through <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-orange-900 font-extrabold font-semibold underline hover:text-orange-900 font-extrabold font-semibold">Exogram</a> integration</span></li>
+                            <li className="flex items-start gap-3"><span className="text-orange-900 font-extrabold font-semibold mt-1">→</span> <span>Audit model dependency risk and create multi-provider strategies</span></li>
                         </ul>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/tools/aueb" className="px-6 py-3 rounded-lg bg-gradient-to-r from-orange-500 to-red-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free AUEB Calculator →</Link>

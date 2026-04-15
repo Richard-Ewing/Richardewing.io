@@ -177,7 +177,7 @@ export default function ShadowContent() {
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!results} toolName="SHADOW-AI" />
             <div className="mb-6 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
+                <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
                     <Link href="/tools" className="hover:text-zinc-900 transition">Enterprise Diagnostics</Link>
                     <span>/</span>
                     <span className="text-zinc-950 font-bold">Shadow AI Audit</span>
@@ -185,10 +185,10 @@ export default function ShadowContent() {
                  {/* Mode Switcher if pre-results */}
                 {!results && (
                      <div className="flex bg-white/50 border border-zinc-400 p-1 rounded-lg self-end">
-                        <button onClick={() => setMode('SIMULATE')} className={`px-4 py-1.5 text-xs font-mono uppercase tracking-widest rounded transition-all ${mode === 'SIMULATE' ? 'bg-amber-500/20 text-amber-400 font-bold' : 'text-zinc-800 hover:text-zinc-900'}`}>
+                        <button onClick={() => setMode('SIMULATE')} className={`px-4 py-1.5 text-xs font-bold font-mono uppercase tracking-widest rounded transition-all ${mode === 'SIMULATE' ? 'bg-amber-500/20 text-amber-400 font-bold' : 'text-zinc-950 font-bold hover:text-zinc-900'}`}>
                             Log Injection
                         </button>
-                        <button onClick={() => setMode('AUDIT')} className={`px-4 py-1.5 flex items-center gap-1 text-xs font-mono uppercase tracking-widest rounded transition-all ${mode === 'AUDIT' ? 'bg-rose-500/20 text-rose-400 font-bold' : 'text-zinc-800 hover:text-zinc-900'}`}>
+                        <button onClick={() => setMode('AUDIT')} className={`px-4 py-1.5 flex items-center gap-1 text-xs font-bold font-mono uppercase tracking-widest rounded transition-all ${mode === 'AUDIT' ? 'bg-rose-500/20 text-rose-400 font-bold' : 'text-zinc-950 font-bold hover:text-zinc-900'}`}>
                             <Eye size={12}/> Zero-Trust Audit
                         </button>
                      </div>
@@ -200,7 +200,7 @@ export default function ShadowContent() {
                     <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-400">
                         <div className="flex items-center gap-2 mb-6">
                             <div className={`w-2 h-2 rounded-full animate-pulse ${mode === 'AUDIT' ? 'bg-rose-500' : 'bg-amber-500'}`} />
-                            <span className={`font-mono text-xs uppercase tracking-widest ${mode === 'AUDIT' ? 'text-rose-400' : 'text-amber-400'}`}>
+                            <span className={`font-mono text-xs font-bold uppercase tracking-widest ${mode === 'AUDIT' ? 'text-rose-400' : 'text-amber-400'}`}>
                                 SOC2 & ISO27001 Violation Audit
                             </span>
                         </div>
@@ -213,7 +213,7 @@ export default function ShadowContent() {
                         </p>
 
                         <div className="mb-8">
-                            <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-3">Auditing from the perspective of...</div>
+                            <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-3">Auditing from the perspective of...</div>
                             <PersonaSwitcher activePersona={persona} onChange={setPersona} />
                         </div>
 
@@ -222,10 +222,10 @@ export default function ShadowContent() {
                             <div className="space-y-6">
                                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
                                     <div className="flex items-center gap-3 border-b border-zinc-400 pb-4">
-                                        <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono text-sm border border-amber-500/30">1</div>
+                                        <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono text-sm font-semibold border border-amber-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Log Extrapolation</h3>
-                                            <p className="text-sm text-zinc-900 font-medium">Paste an internal Slack log or Developer PR communication.</p>
+                                            <p className="text-sm font-semibold text-zinc-900 font-medium">Paste an internal Slack log or Developer PR communication.</p>
                                         </div>
                                     </div>
 
@@ -234,7 +234,7 @@ export default function ShadowContent() {
                                             value={simulatedLogs} 
                                             onChange={e => setSimulatedLogs(e.target.value)} 
                                             placeholder="Example: Hey guys, can someone check my API key? I asked ChatGPT but it kept hallucinating the response..." 
-                                            className="w-full h-48 sm:h-64 bg-white/50 border border-zinc-400 rounded-xl p-4 font-mono text-sm text-zinc-950 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-all placeholder:text-zinc-950 resize-none"
+                                            className="w-full h-48 sm:h-64 bg-white/50 border border-zinc-400 rounded-xl p-4 font-mono text-sm font-semibold text-zinc-950 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-all placeholder:text-zinc-950 resize-none"
                                         />
                                     </div>
 
@@ -261,8 +261,8 @@ export default function ShadowContent() {
                                 <div className="bg-rose-500/10 border border-rose-500/30 p-4 rounded-xl flex items-start gap-4 mb-6">
                                     <ShieldAlert className="text-rose-500 shrink-0 mt-0.5" />
                                     <div>
-                                        <h4 className="text-zinc-950 font-bold text-sm mb-1">Zero-Trust Client-Side Processing</h4>
-                                        <p className="text-zinc-900 text-xs leading-relaxed">
+                                        <h4 className="text-zinc-950 font-bold text-sm font-semibold mb-1">Zero-Trust Client-Side Processing</h4>
+                                        <p className="text-zinc-900 text-xs font-bold leading-relaxed">
                                             Drop your raw Expensify, Ramp, Brex, or Gateway logs in CSV format below. <strong>We do not upload this data.</strong> The parsing and regex heuristic matching happens entirely locally within your browser's memory using a proprietary 500+ Vendor AI Dictionary.
                                         </p>
                                     </div>
@@ -284,13 +284,13 @@ export default function ShadowContent() {
                                         <>
                                             <FileSpreadsheet className="w-16 h-16 text-rose-500 mb-4" />
                                             <div className="text-zinc-950 font-bold text-lg mb-1">{auditFile.name}</div>
-                                            <div className="text-zinc-950 font-mono text-xs uppercase">{(auditFile.size / 1024).toFixed(1)} KB Ready for Hash Matching</div>
+                                            <div className="text-zinc-950 font-mono text-xs font-bold uppercase">{(auditFile.size / 1024).toFixed(1)} KB Ready for Hash Matching</div>
                                         </>
                                     ) : (
                                         <>
-                                            <UploadCloud className="w-16 h-16 text-zinc-800 mb-4" />
+                                            <UploadCloud className="w-16 h-16 text-zinc-950 font-bold mb-4" />
                                             <div className="text-zinc-950 font-bold text-lg mb-1">Click or Drop CSV Log Here</div>
-                                            <div className="text-zinc-950 font-mono text-xs uppercase">Supports standard expense or traffic logs</div>
+                                            <div className="text-zinc-950 font-mono text-xs font-bold uppercase">Supports standard expense or traffic logs</div>
                                         </>
                                     )}
                                 </div>
@@ -325,10 +325,10 @@ export default function ShadowContent() {
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-amber-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-bold font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Liability Assessment Complete</h2>
-                            <p className="text-sm text-zinc-900 font-medium">
+                            <p className="text-sm font-semibold text-zinc-900 font-medium">
                                 {results.type === 'AUDIT' ? 'Deterministic detection via cryptographic / regex parsing.' : 'Forensic extrapolation of unmonitored intellectual property egress.'}
                             </p>
                         </div>
@@ -343,7 +343,7 @@ export default function ShadowContent() {
                                 <BorderBeam size={400} duration={12} delay={9} borderWidth={1.5} colorFrom="#f59e0b" colorTo="#ef4444" />
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
                                     <div>
-                                        <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-2">Cost of Doing Nothing (CODN) Penalty</div>
+                                        <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Cost of Doing Nothing (CODN) Penalty</div>
                                         <div className={`text-5xl sm:text-6xl font-bold tracking-tighter leading-tight text-transparent bg-clip-text bg-gradient-to-r ${results.riskTier === 'CRITICAL' ? 'from-red-500 to-rose-600' : results.riskTier === 'HIGH' ? 'from-orange-500 to-amber-500' : 'from-yellow-400 to-emerald-400'}`}>
                                             {formatMoney(results.financialLiability)}
                                         </div>
@@ -352,7 +352,7 @@ export default function ShadowContent() {
                                                 <ShieldAlert size={12}/> {results.riskTier} RISK: {results.piiViolations} PROBABLE PII BREACHES / MO
                                             </span>
                                         </div>
-                                        <p className="text-sm text-zinc-900 font-medium mt-4 leading-relaxed">
+                                        <p className="text-sm font-semibold text-zinc-900 font-medium mt-4 leading-relaxed">
                                             {results.type === 'AUDIT' ? (
                                                 <>Based on local CSV analysis of {results.recordsScanned} records, we flag <strong className="text-zinc-900">{results.foundEvents} unsanctioned tool accesses</strong> directly leaking corporate IP.</>
                                             ) : (
@@ -366,20 +366,20 @@ export default function ShadowContent() {
                                         )}
                                         {results.type === 'AUDIT' ? (
                                             <div className="bg-white/50 p-6 rounded-2xl border border-zinc-400 h-full max-h-[250px] overflow-y-auto custom-scrollbar">
-                                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3 mb-3 sticky top-0 bg-white/50 backdrop-blur-md">VENDORS IDENTIFIED</div>
+                                                 <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest border-b border-zinc-400 pb-3 mb-3 sticky top-0 bg-white/50 backdrop-blur-md">VENDORS IDENTIFIED</div>
                                                  {results.vendors.length === 0 ? (
-                                                     <div className="text-sm text-zinc-950 py-4 text-center">No high-risk Shadow AI vendors identified in logs.</div>
+                                                     <div className="text-sm font-semibold text-zinc-950 py-4 text-center">No high-risk Shadow AI vendors identified in logs.</div>
                                                  ) : (
                                                      <div className="space-y-3">
                                                          {results.vendors.map((v: any, i: number) => (
                                                              <div key={i} className="flex justify-between items-center border-b border-zinc-400 pb-2 last:border-0 last:pb-0">
                                                                  <div>
-                                                                     <div className="text-sm text-zinc-950 font-bold">{v.name}</div>
-                                                                     <div className="text-xs font-medium text-zinc-950 font-mono">{v.threat}</div>
+                                                                     <div className="text-sm font-semibold text-zinc-950 font-bold">{v.name}</div>
+                                                                     <div className="text-xs font-bold font-medium text-zinc-950 font-mono">{v.threat}</div>
                                                                  </div>
                                                                  <div className="text-right">
-                                                                     <div className="text-sm font-mono text-rose-400">{v.count} hits</div>
-                                                                     {v.spend > 0 && <div className="text-xs font-medium text-zinc-950 font-mono">${v.spend.toFixed(2)} known spend</div>}
+                                                                     <div className="text-sm font-semibold font-mono text-rose-400">{v.count} hits</div>
+                                                                     {v.spend > 0 && <div className="text-xs font-bold font-medium text-zinc-950 font-mono">${v.spend.toFixed(2)} known spend</div>}
                                                                  </div>
                                                              </div>
                                                          ))}
@@ -390,52 +390,52 @@ export default function ShadowContent() {
                                             <div className="flex flex-col gap-4">
                                                 {persona === 'CISO' && (
                                                     <div className="bg-white/50 p-6 rounded-2xl border border-rose-500/20 space-y-4">
-                                                        <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Compliance Perimeter Heatmap</div>
+                                                        <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest border-b border-zinc-400 pb-3">Compliance Perimeter Heatmap</div>
                                                         <div className="space-y-3 pt-2">
                                                             <div className="flex justify-between items-center bg-rose-500/10 p-2 rounded">
-                                                                <span className="text-sm text-zinc-900 font-medium font-bold">PII Exfiltration</span>
-                                                                <span className="text-xs font-mono text-rose-400">{results.piiViolations} hits</span>
+                                                                <span className="text-sm font-semibold text-zinc-900 font-medium font-bold">PII Exfiltration</span>
+                                                                <span className="text-xs font-bold font-mono text-rose-400">{results.piiViolations} hits</span>
                                                             </div>
                                                             <div className="flex justify-between items-center bg-amber-500/10 p-2 rounded">
-                                                                <span className="text-sm text-zinc-900 font-medium font-bold">API Key Exposure</span>
-                                                                <span className="text-xs font-mono text-amber-400">High Risk</span>
+                                                                <span className="text-sm font-semibold text-zinc-900 font-medium font-bold">API Key Exposure</span>
+                                                                <span className="text-xs font-bold font-mono text-amber-400">High Risk</span>
                                                             </div>
                                                             <div className="flex justify-between items-center bg-emerald-500/10 p-2 rounded">
-                                                                <span className="text-sm text-zinc-900 font-medium font-bold">Sanctioned Inference</span>
-                                                                <span className="text-xs font-mono text-emerald-800 font-semibold">0 hits</span>
+                                                                <span className="text-sm font-semibold text-zinc-900 font-medium font-bold">Sanctioned Inference</span>
+                                                                <span className="text-xs font-bold font-mono text-emerald-900 font-extrabold font-semibold">0 hits</span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 )}
                                                 {persona === 'CFO' && (
                                                     <div className="bg-white/50 p-6 rounded-2xl border border-green-500/20 space-y-4">
-                                                        <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Unlicensed SaaS Spend Waste</div>
+                                                        <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest border-b border-zinc-400 pb-3">Unlicensed SaaS Spend Waste</div>
                                                         <div className="text-center py-4">
                                                             <div className="text-4xl font-bold text-green-400 font-mono">${(results.shadowSpend || results.knownSpend || 14500).toLocaleString()}</div>
-                                                            <p className="text-sm font-medium text-zinc-950 mt-2">Annualized Unregulated Corporate Credit Card Expense</p>
+                                                            <p className="text-sm font-semibold font-medium text-zinc-950 mt-2">Annualized Unregulated Corporate Credit Card Expense</p>
                                                         </div>
                                                     </div>
                                                 )}
                                                 {persona === 'VP Eng' && (
                                                     <div className="bg-white/50 p-6 rounded-2xl border border-blue-500/20 space-y-4">
-                                                        <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Algorithmic Contamination Log</div>
+                                                        <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest border-b border-zinc-400 pb-3">Algorithmic Contamination Log</div>
                                                         <div className="flex justify-between items-center pb-2">
-                                                            <span className="text-sm text-zinc-900 font-medium">AI-Generated Code Leakage</span>
-                                                            <span className="text-sm font-mono text-blue-800 font-semibold text-right">{results.hasCodeLeak ? "Detected" : "None Detected"}</span>
+                                                            <span className="text-sm font-semibold text-zinc-900 font-medium">AI-Generated Code Leakage</span>
+                                                            <span className="text-sm font-semibold font-mono text-blue-900 font-extrabold font-semibold text-right">{results.hasCodeLeak ? "Detected" : "None Detected"}</span>
                                                         </div>
                                                         <div className="flex justify-between items-center border-b border-zinc-400 pb-3">
-                                                            <span className="text-sm text-zinc-900 font-medium">Payload Integrity</span>
-                                                            <span className="text-sm font-mono text-rose-400 text-right">Compromised</span>
+                                                            <span className="text-sm font-semibold text-zinc-900 font-medium">Payload Integrity</span>
+                                                            <span className="text-sm font-semibold font-mono text-rose-400 text-right">Compromised</span>
                                                         </div>
-                                                        <p className="text-sm font-medium text-zinc-950 font-mono mt-2 pt-2 border-t border-zinc-400">Codebase is currently ingesting untrusted public LLM tokens without validation.</p>
+                                                        <p className="text-sm font-semibold font-medium text-zinc-950 font-mono mt-2 pt-2 border-t border-zinc-400">Codebase is currently ingesting untrusted public LLM tokens without validation.</p>
                                                     </div>
                                                 )}
                                                 {persona === 'Legal' && (
                                                     <div className="bg-white/50 p-6 rounded-2xl border border-amber-500/20 space-y-4">
-                                                         <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">SLA & Copyright Exposure</div>
+                                                         <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest border-b border-zinc-400 pb-3">SLA & Copyright Exposure</div>
                                                          <div className="space-y-2">
-                                                            <div className="text-sm text-zinc-900 font-medium">Potential GDPR Fines: <span className="font-bold">Active Exposure</span></div>
-                                                            <div className="text-sm text-zinc-900 font-medium">IP Ownership Voided: <span className="font-bold">High Risk</span></div>
+                                                            <div className="text-sm font-semibold text-zinc-900 font-medium">Potential GDPR Fines: <span className="font-bold">Active Exposure</span></div>
+                                                            <div className="text-sm font-semibold text-zinc-900 font-medium">IP Ownership Voided: <span className="font-bold">High Risk</span></div>
                                                          </div>
                                                     </div>
                                                 )}
@@ -448,21 +448,21 @@ export default function ShadowContent() {
 
                         {/* FORENSIC TERMINAL LOG */}
                         <ScrollReveal delay={100}>
-                            <div className="bg-white border border-zinc-400 rounded-xl font-mono text-xs p-4 max-h-[250px] overflow-y-auto mb-8 shadow-[0_0_20px_rgba(225,29,72,0.1)]">
+                            <div className="bg-white border border-zinc-400 rounded-xl font-mono text-xs font-bold p-4 max-h-[250px] overflow-y-auto mb-8 shadow-[0_0_20px_rgba(225,29,72,0.1)]">
                                 <div className="flex gap-2 mb-3 pb-2 border-b border-zinc-400/50">
                                     <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
                                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
                                     <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                                    <div className="text-xs font-medium text-zinc-800 ml-2 uppercase">sys_forensic_tty [LIVE EXTRAPOLATION]</div>
+                                    <div className="text-xs font-bold font-medium text-zinc-950 font-bold ml-2 uppercase">sys_forensic_tty [LIVE EXTRAPOLATION]</div>
                                 </div>
                                 <div className="space-y-2 font-mono pb-2">
-                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 0.5}} className="text-zinc-800"><span className="text-zinc-800 mr-2">{'>'}</span> [SYS] Initializing localized forensic sweep...</motion.div>
-                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 1.2}} className="text-zinc-800"><span className="text-zinc-800 mr-2">{'>'}</span> [SCAN] Extracting {results.type === 'AUDIT' ? results.recordsScanned : (results.totalMonthlyPrompts / 10).toFixed(0)} outbound telemetry packets...</motion.div>
-                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 2.0}} className="text-yellow-800 font-semibold"><span className="text-zinc-800 mr-2">{'>'}</span> [WARN] POST api.openai.com/v1/chat/completions - Unsanctioned Copilot Payload</motion.div>
-                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 2.8}} className="text-blue-800 font-semibold"><span className="text-zinc-800 mr-2">{'>'}</span> [MATCH] Heuristic trigger: "Proprietary Database Schema Sequence" detected</motion.div>
-                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 3.5}} className="text-rose-400"><span className="text-zinc-800 mr-2">{'>'}</span> [CRITICAL] Unencrypted PII / Valid JWT Token identified inside prompt context window.</motion.div>
-                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 4.2}} className="text-rose-500 font-bold"><span className="text-zinc-800 mr-2">{'>'}</span> [ALERT] {results.piiViolations} additional structurally similar payloads surfaced in 30-day DNS cache.</motion.div>
-                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 5.0}} className="text-emerald-800 font-semibold"><span className="text-zinc-800 mr-2">{'>'}</span> [DONE] Board proxy liability report compiled. Awaiting structural CI/CD firewall remediation.</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 0.5}} className="text-zinc-950 font-bold"><span className="text-zinc-950 font-bold mr-2">{'>'}</span> [SYS] Initializing localized forensic sweep...</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 1.2}} className="text-zinc-950 font-bold"><span className="text-zinc-950 font-bold mr-2">{'>'}</span> [SCAN] Extracting {results.type === 'AUDIT' ? results.recordsScanned : (results.totalMonthlyPrompts / 10).toFixed(0)} outbound telemetry packets...</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 2.0}} className="text-yellow-900 font-extrabold font-semibold"><span className="text-zinc-950 font-bold mr-2">{'>'}</span> [WARN] POST api.openai.com/v1/chat/completions - Unsanctioned Copilot Payload</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 2.8}} className="text-blue-900 font-extrabold font-semibold"><span className="text-zinc-950 font-bold mr-2">{'>'}</span> [MATCH] Heuristic trigger: "Proprietary Database Schema Sequence" detected</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 3.5}} className="text-rose-400"><span className="text-zinc-950 font-bold mr-2">{'>'}</span> [CRITICAL] Unencrypted PII / Valid JWT Token identified inside prompt context window.</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 4.2}} className="text-rose-500 font-bold"><span className="text-zinc-950 font-bold mr-2">{'>'}</span> [ALERT] {results.piiViolations} additional structurally similar payloads surfaced in 30-day DNS cache.</motion.div>
+                                    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 5.0}} className="text-emerald-900 font-extrabold font-semibold"><span className="text-zinc-950 font-bold mr-2">{'>'}</span> [DONE] Board proxy liability report compiled. Awaiting structural CI/CD firewall remediation.</motion.div>
                                     <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 5.2}} className="animate-pulse text-zinc-950 mt-1">_</motion.div>
                                 </div>
                             </div>
@@ -483,31 +483,31 @@ export default function ShadowContent() {
                                     <h4 className="text-zinc-950 font-semibold mb-4 border-b border-zinc-400 pb-2">Regulatory Liability (GDPR / CCPA)</h4>
                                     <div className="space-y-4">
                                         <div>
-                                            <div className="flex justify-between mb-1"><span className="text-zinc-800">Projected Fines (Est)</span><span className="text-rose-400 font-mono font-bold">{formatMoney(results.financialLiability * 14.5)}</span></div>
+                                            <div className="flex justify-between mb-1"><span className="text-zinc-950 font-bold">Projected Fines (Est)</span><span className="text-rose-400 font-mono font-bold">{formatMoney(results.financialLiability * 14.5)}</span></div>
                                             <div className="w-full bg-white rounded-full h-1"><div className="bg-rose-500 h-1 rounded-full w-[75%]"></div></div>
                                         </div>
                                         <div>
-                                            <div className="flex justify-between mb-1"><span className="text-zinc-800">Class Action Risk Factor</span><span className="text-amber-400 font-mono font-bold">CRITICAL</span></div>
+                                            <div className="flex justify-between mb-1"><span className="text-zinc-950 font-bold">Class Action Risk Factor</span><span className="text-amber-400 font-mono font-bold">CRITICAL</span></div>
                                             <div className="w-full bg-white rounded-full h-1"><div className="bg-amber-500 h-1 rounded-full w-[90%]"></div></div>
                                         </div>
-                                        <p className="text-sm font-medium text-zinc-950 mt-2">LLM retention of PII constitutes an unrecoverable breach under "Right to be Forgotten" mandates.</p>
+                                        <p className="text-sm font-semibold font-medium text-zinc-950 mt-2">LLM retention of PII constitutes an unrecoverable breach under "Right to be Forgotten" mandates.</p>
                                     </div>
                                 </div>
                                 <div className="bg-white/5 border border-zinc-400 p-5 rounded-xl">
                                     <h4 className="text-zinc-950 font-semibold mb-4 border-b border-zinc-400 pb-2">Intellectual Property Egress</h4>
                                     <div className="space-y-4">
                                         <div className="flex items-center gap-3">
-                                            <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/30 text-blue-800 font-semibold font-bold shrink-0">IP</div>
+                                            <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/30 text-blue-900 font-extrabold font-semibold font-bold shrink-0">IP</div>
                                             <div>
                                                 <div className="text-zinc-950 font-semibold">Proprietary Source Code</div>
-                                                <div className="text-xs text-zinc-900 font-bold">Foundational models may train on your core algorithms if submitted via consumer endpoints.</div>
+                                                <div className="text-xs font-bold text-zinc-900 font-bold">Foundational models may train on your core algorithms if submitted via consumer endpoints.</div>
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-3">
-                                            <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/30 text-emerald-800 font-semibold font-bold shrink-0">DB</div>
+                                            <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/30 text-emerald-900 font-extrabold font-semibold font-bold shrink-0">DB</div>
                                             <div>
                                                 <div className="text-zinc-950 font-semibold">Database Schema Leakage</div>
-                                                <div className="text-xs text-zinc-900 font-bold">Engineers pasting SQL contexts expose your internal system architecture to zero-day vectors.</div>
+                                                <div className="text-xs font-bold text-zinc-900 font-bold">Engineers pasting SQL contexts expose your internal system architecture to zero-day vectors.</div>
                                             </div>
                                         </div>
                                     </div>
@@ -528,38 +528,38 @@ export default function ShadowContent() {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-rose-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
-                                     <div className="text-rose-400 font-mono text-xs mb-3 uppercase tracking-widest bg-rose-500/10 w-8 h-8 rounded flex items-center justify-center border border-rose-500/20">01</div>
+                                     <div className="text-rose-400 font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-rose-500/10 w-8 h-8 rounded flex items-center justify-center border border-rose-500/20">01</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Endpoint Termination</h4>
-                                     <p className="text-zinc-900 text-sm mb-4">You cannot train engineers not to use ChatGPT. The only solution is explicitly blackholing external LLM requests.</p>
+                                     <p className="text-zinc-900 text-sm font-semibold mb-4">You cannot train engineers not to use ChatGPT. The only solution is explicitly blackholing external LLM requests.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-sm font-medium text-zinc-950">Update Zscaler rules to explicitly blackhole all DNS requests to chatgpt.com, claude.ai, and other consumer APIs.</p>
+                                         <p className="text-sm font-semibold font-medium text-zinc-950">Update Zscaler rules to explicitly blackhole all DNS requests to chatgpt.com, claude.ai, and other consumer APIs.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-amber-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
-                                     <div className="text-amber-400 font-mono text-xs mb-3 uppercase tracking-widest bg-amber-500/10 w-8 h-8 rounded flex items-center justify-center border border-amber-500/20">02</div>
+                                     <div className="text-amber-400 font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-amber-500/10 w-8 h-8 rounded flex items-center justify-center border border-amber-500/20">02</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Private Gateway Deployment</h4>
-                                     <p className="text-zinc-900 text-sm mb-4">Enterprise SLAs legally prohibit model training on customer payloads, offering protection guarantees.</p>
+                                     <p className="text-zinc-900 text-sm font-semibold mb-4">Enterprise SLAs legally prohibit model training on customer payloads, offering protection guarantees.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-sm font-medium text-zinc-950">Provision Azure OpenAI or AWS Bedrock endpoints entirely inside your private VPC.</p>
+                                         <p className="text-sm font-semibold font-medium text-zinc-950">Provision Azure OpenAI or AWS Bedrock endpoints entirely inside your private VPC.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
-                                     <div className="text-emerald-800 font-semibold font-mono text-xs mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
+                                     <div className="text-emerald-900 font-extrabold font-semibold font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Sanctioned Internal UI</h4>
-                                     <p className="text-zinc-900 text-sm mb-4">Engineers get their 10x velocity, and you retain complete data sovereignty with logging.</p>
+                                     <p className="text-zinc-900 text-sm font-semibold mb-4">Engineers get their 10x velocity, and you retain complete data sovereignty with logging.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-800 font-semibold uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-sm font-medium text-zinc-950">Deploy LobeHub or LibreChat internally, pointing to your private VPC Enclave.</p>
+                                         <p className="text-sm font-semibold font-medium text-zinc-950">Deploy LobeHub or LibreChat internally, pointing to your private VPC Enclave.</p>
                                      </div>
                                 </div>
                             </div>
@@ -570,9 +570,9 @@ export default function ShadowContent() {
                              <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <ShieldOff size={16} className="text-amber-400" />
-                                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">The Enterprise Mandate</span>
+                                    <span className="text-xs font-bold font-mono uppercase tracking-widest text-zinc-900">The Enterprise Mandate</span>
                                 </div>
-                                <p className="text-zinc-950 text-sm leading-relaxed mb-4">
+                                <p className="text-zinc-950 text-sm font-semibold leading-relaxed mb-4">
                                     You cannot train engineers not to use ChatGPT—it is a 10x multiplier on velocity. The only SOC-compliant resolution is deploying a private enclave inside your VPC, giving them an interface that mathematically guarantees zero-data-retention.
                                 </p>
                             </div>
@@ -586,7 +586,7 @@ export default function ShadowContent() {
                             />
 
                             <div className="flex justify-center flex-wrap gap-6 mt-8" data-html2canvas-ignore>
-                                <button onClick={() => { setResults(null); setAuditFile(null); }} className="text-zinc-950 font-mono tracking-widest text-xs hover:text-zinc-900 uppercase transition-colors">← Recalibrate Matrix</button>
+                                <button onClick={() => { setResults(null); setAuditFile(null); }} className="text-zinc-950 font-mono tracking-widest text-xs font-bold hover:text-zinc-900 uppercase transition-colors">← Recalibrate Matrix</button>
                             </div>
                         </ScrollReveal>
                     </div>

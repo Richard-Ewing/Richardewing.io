@@ -50,11 +50,11 @@ export default function ProgressCompleteButton({ moduleId, nextHref }: { moduleI
         <div className="mt-12 text-center">
             {isCompleted ? (
                 <div className="inline-flex flex-col items-center gap-4 w-full">
-                    <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 font-semibold font-bold">
+                    <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 font-extrabold font-semibold font-bold">
                         <span>✓ Module Completed</span>
                     </div>
                     {nextHref ? (
-                        <button onClick={() => router.push(nextHref)} className="text-zinc-900 hover:text-zinc-900 transition-colors text-sm underline underline-offset-4">
+                        <button onClick={() => router.push(nextHref)} className="text-zinc-900 hover:text-zinc-900 transition-colors text-sm font-semibold underline underline-offset-4">
                             Proceed to Next Module →
                         </button>
                     ) : (
@@ -70,15 +70,15 @@ export default function ProgressCompleteButton({ moduleId, nextHref }: { moduleI
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                                     </div>
                                     <div>
-                                        <div className="text-xs font-mono text-cyan-800 font-semibold uppercase tracking-widest mb-1">Track Completed</div>
+                                        <div className="text-xs font-bold font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest mb-1">Track Completed</div>
                                         <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mb-2">Unlock Private Office Hours</h3>
-                                        <p className="text-zinc-900 text-sm leading-relaxed mb-6">
+                                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-6">
                                             You've mastered the theory. Now let's map it to your specific stack. Book a 1-on-1 strategic synthesis call to apply this exact framework to your firm's architecture, team layout, and board commitments.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="border-t border-zinc-400 bg-zinc-50 p-6 flex items-center justify-between">
-                                    <div className="text-xs text-zinc-950 max-w-[200px]">Enterprise Advisory Intake Questionnaire required pre-call.</div>
+                                    <div className="text-xs font-bold text-zinc-950 max-w-[200px]">Enterprise Advisory Intake Questionnaire required pre-call.</div>
                                     <button onClick={() => window.location.href='/advisory'} className="px-6 py-3 bg-white hover:bg-zinc-200 text-black font-bold uppercase tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] text-xs">
                                         Apply for Advisory →
                                     </button>

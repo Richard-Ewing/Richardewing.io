@@ -26,10 +26,10 @@ interface QPEPRemediationProps {
 
 function getUrgencyColor(urgency: string) {
     switch (urgency) {
-        case 'CRITICAL': return { bg: 'bg-red-500/10', border: 'border-red-500/30', text: 'text-red-800 font-semibold', dot: 'bg-red-500' };
-        case 'HIGH': return { bg: 'bg-orange-500/10', border: 'border-orange-500/30', text: 'text-orange-800 font-semibold', dot: 'bg-orange-500' };
-        case 'MODERATE': return { bg: 'bg-yellow-500/10', border: 'border-yellow-500/30', text: 'text-yellow-800 font-semibold', dot: 'bg-yellow-500' };
-        default: return { bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', text: 'text-emerald-800 font-semibold', dot: 'bg-emerald-500' };
+        case 'CRITICAL': return { bg: 'bg-red-500/10', border: 'border-red-500/30', text: 'text-red-900 font-extrabold font-semibold', dot: 'bg-red-500' };
+        case 'HIGH': return { bg: 'bg-orange-500/10', border: 'border-orange-500/30', text: 'text-orange-900 font-extrabold font-semibold', dot: 'bg-orange-500' };
+        case 'MODERATE': return { bg: 'bg-yellow-500/10', border: 'border-yellow-500/30', text: 'text-yellow-900 font-extrabold font-semibold', dot: 'bg-yellow-500' };
+        default: return { bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', text: 'text-emerald-900 font-extrabold font-semibold', dot: 'bg-emerald-500' };
     }
 }
 
@@ -216,10 +216,10 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
             {/* Header */}
             <div className="flex items-center gap-3 mb-2">
                 <div className="w-2 h-2 bg-cobalt rounded-full animate-pulse shadow-[0_0_10px_rgba(45,112,253,0.6)]" />
-                <span className="font-mono text-xs font-medium text-cobalt uppercase tracking-[0.2em]">Q-PEP™ Remediation Protocol</span>
+                <span className="font-mono text-xs font-bold font-medium text-cobalt uppercase tracking-[0.2em]">Q-PEP™ Remediation Protocol</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 mb-1 tracking-tight">Prescriptive Action Plan</h3>
-            <p className="text-xs text-zinc-950 mb-6">Qualitative-Profitability Efficiency Protocol — Generated {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+            <p className="text-xs font-bold text-zinc-950 mb-6">Qualitative-Profitability Efficiency Protocol — Generated {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
 
             {/* Remediation Items */}
             <div className="space-y-4">
@@ -229,16 +229,16 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
                         <div key={i} className={`${colors.bg} border ${colors.border} rounded-2xl p-5`}>
                             <div className="flex items-center justify-between mb-3">
                                 <div className="flex items-center gap-2">
-                                    <span className="font-mono text-xs font-medium text-zinc-950 tracking-widest">{item.phase}</span>
+                                    <span className="font-mono text-xs font-bold font-medium text-zinc-950 tracking-widest">{item.phase}</span>
                                     <span className="text-zinc-900">|</span>
-                                    <span className={`font-mono text-xs font-medium ${colors.text} tracking-widest font-bold`}>{item.urgency}</span>
+                                    <span className={`font-mono text-xs font-bold font-medium ${colors.text} tracking-widest font-bold`}>{item.urgency}</span>
                                 </div>
                                 {item.asc_reference && (
-                                    <span className="font-mono text-[9px] text-zinc-800 bg-zinc-200/60 px-2 py-1 rounded-md">{item.asc_reference}</span>
+                                    <span className="font-mono text-[9px] text-zinc-950 font-bold bg-zinc-200/60 px-2 py-1 rounded-md">{item.asc_reference}</span>
                                 )}
                             </div>
-                            <h4 className="text-sm font-bold text-zinc-950 mb-2">{item.title}</h4>
-                            <p className="text-xs text-zinc-900 font-bold leading-relaxed">{item.prescription}</p>
+                            <h4 className="text-sm font-semibold font-bold text-zinc-950 mb-2">{item.title}</h4>
+                            <p className="text-xs font-bold text-zinc-900 font-bold leading-relaxed">{item.prescription}</p>
                         </div>
                     );
                 })}
@@ -246,8 +246,8 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
 
             {/* Footer */}
             <div className="mt-6 pt-4 border-t border-zinc-400 flex items-center justify-between">
-                <p className="text-xs font-medium text-zinc-800 font-mono">CONFIDENTIAL — For Internal Executive Distribution Only</p>
-                <p className="text-xs font-medium text-zinc-800 font-mono">RichardEwing.io/advisory</p>
+                <p className="text-xs font-bold font-medium text-zinc-950 font-bold font-mono">CONFIDENTIAL — For Internal Executive Distribution Only</p>
+                <p className="text-xs font-bold font-medium text-zinc-950 font-bold font-mono">RichardEwing.io/advisory</p>
             </div>
         </section>
     );

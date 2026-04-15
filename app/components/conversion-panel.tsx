@@ -52,7 +52,7 @@ const UrgencyIcon = ({ urgency }: { urgency: string }) => {
         case 'success':
             return <CheckCircle className="w-5 h-5 text-emerald-500" />;
         default:
-            return <TrendingDown className="w-5 h-5 text-cyan-800 font-semibold" />;
+            return <TrendingDown className="w-5 h-5 text-cyan-900 font-extrabold font-semibold" />;
     }
 };
 
@@ -68,7 +68,7 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
             <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-8 border border-zinc-400 shadow-2xl">
                 <div className="flex items-center gap-3 mb-4">
                     <UrgencyIcon urgency={contextCTA.urgency} />
-                    <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">
+                    <span className="text-xs font-bold font-mono uppercase tracking-widest text-zinc-900">
                         {toolName} Results
                     </span>
                 </div>
@@ -90,7 +90,7 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                     }}
                 />
 
-                <p className="text-xs text-zinc-900 font-bold mt-3">
+                <p className="text-xs font-bold text-zinc-900 font-bold mt-3">
                     No spam. Unsubscribe anytime. Your data is secure.
                 </p>
             </div>
@@ -98,10 +98,10 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
             {/* Primary CTA */}
             <div className="text-center space-y-6">
                 <div className="inline-flex flex-col items-center">
-                    <p className="text-zinc-950 text-sm mb-4">Ready to fix this? Talk to a Product Economist.</p>
+                    <p className="text-zinc-950 text-sm font-semibold mb-4">Ready to fix this? Talk to a Product Economist.</p>
                     <Link
                         href="/advisory"
-                        className={`group relative inline-flex items-center gap-3 px-10 py-4 font-bold uppercase tracking-widest text-sm rounded-xl transition-all transform hover:scale-105 ${contextCTA.urgency === 'critical'
+                        className={`group relative inline-flex items-center gap-3 px-10 py-4 font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all transform hover:scale-105 ${contextCTA.urgency === 'critical'
                             ? 'bg-red-600 hover:bg-red-500 text-zinc-950 font-semibold shadow-[0_0_30px_rgba(220,38,38,0.4)]'
                             : contextCTA.urgency === 'warning'
                                 ? 'bg-yellow-500 hover:bg-yellow-400 text-black shadow-[0_0_30px_rgba(234,179,8,0.4)]'
@@ -117,14 +117,14 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                 <div className="flex items-center justify-center gap-6 text-sm">
                     <button
                         onClick={onReset}
-                        className="text-zinc-800 hover:text-zinc-900 transition-colors underline underline-offset-4"
+                        className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors underline underline-offset-4"
                     >
                         ← Run New Analysis
                     </button>
                     <span className="text-zinc-900">|</span>
                     <Link
                         href="/system"
-                        className="text-zinc-800 hover:text-zinc-900 transition-colors"
+                        className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors"
                     >
                         Explore All Tools →
                     </Link>
@@ -133,8 +133,8 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
 
             {/* Social Proof */}
             <div className="text-center pt-8 border-t border-zinc-400">
-                <p className="text-xs text-zinc-900 font-bold mb-3">Trusted by product leaders at</p>
-                <div className="flex items-center justify-center gap-8 text-zinc-800 font-mono text-xs">
+                <p className="text-xs font-bold text-zinc-900 font-bold mb-3">Trusted by product leaders at</p>
+                <div className="flex items-center justify-center gap-8 text-zinc-950 font-bold font-mono text-xs">
                     <span className="hover:text-zinc-900 transition-colors">Stripe</span>
                     <span className="hover:text-zinc-900 transition-colors">Figma</span>
                     <span className="hover:text-zinc-900 transition-colors">Linear</span>
@@ -168,7 +168,7 @@ export function SEOContent({ title, description, howItWorks, whyItMatters, formu
                     <h3 className="text-zinc-950 font-semibold text-lg mb-3">How It Works</h3>
                     <p className="leading-relaxed">{howItWorks}</p>
                     {formula && (
-                        <div className="mt-4 p-4 bg-white/80 rounded-lg border border-zinc-400 font-mono text-sm text-zinc-900 font-medium">
+                        <div className="mt-4 p-4 bg-white/80 rounded-lg border border-zinc-400 font-mono text-sm font-semibold text-zinc-900 font-medium">
                             {formula}
                         </div>
                     )}
@@ -179,7 +179,7 @@ export function SEOContent({ title, description, howItWorks, whyItMatters, formu
                 </div>
             </div>
 
-            <div className="text-xs text-zinc-950 pt-4 border-t border-zinc-400">
+            <div className="text-xs font-bold text-zinc-950 pt-4 border-t border-zinc-400">
                 © 2026 Richard Ewing. Product Economist. All frameworks and methodologies are proprietary.
             </div>
         </section>

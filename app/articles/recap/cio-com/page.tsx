@@ -55,8 +55,8 @@ export default function CIORecapPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/articles" className="hover:text-cyan-800 font-semibold">Articles</Link><span>/</span><span className="text-cyan-800 font-semibold font-bold">CIO.com</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/articles" className="hover:text-cyan-900 font-extrabold font-semibold">Articles</Link><span>/</span><span className="text-cyan-900 font-extrabold font-semibold font-bold">CIO.com</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Published on{' '}
@@ -65,7 +65,7 @@ export default function CIORecapPage() {
                     <p className="text-lg text-zinc-900 mb-4 max-w-2xl">
                         Richard Ewing&apos;s published articles on CIO.com — Tier 1 media for CIOs, CTOs, and technology executives. Covering R&amp;D capital efficiency, technical debt economics, and AI adoption strategies.
                     </p>
-                    <p className="text-sm text-zinc-950 mb-12">CIO.com is an IDG publication reaching 2M+ technology decision-makers monthly.</p>
+                    <p className="text-sm font-semibold text-zinc-950 mb-12">CIO.com is an IDG publication reaching 2M+ technology decision-makers monthly.</p>
 
                     <div className="space-y-6 mb-16">
                         {articles.map((article, i) => (
@@ -77,7 +77,7 @@ export default function CIORecapPage() {
                                         <p className="text-zinc-900 mb-4">{article.description}</p>
                                         <div className="flex flex-wrap gap-2">
                                             {article.topics.map(topic => (
-                                                <span key={topic} className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs text-zinc-900 font-bold font-mono">{topic}</span>
+                                                <span key={topic} className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-bold text-zinc-900 font-bold font-mono">{topic}</span>
                                             ))}
                                         </div>
                                     </div>
@@ -91,16 +91,16 @@ export default function CIORecapPage() {
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
                                 {['technical-debt', 'innovation-tax', 'ai-cogs', 'dora-metrics', 'cost-of-predictivity'].map(slug => (
-                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
+                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm font-semibold text-zinc-900 font-medium hover:text-cyan-900 font-extrabold font-semibold transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>
                         </div>
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Tools</h2>
                             <div className="space-y-2">
-                                <Link href="/tools/pdi" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ Product Debt Index (PDI)</Link>
-                                <Link href="/tools/aper" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ APER Calculator</Link>
-                                <Link href="/tools/aueb" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ AUEB Calculator</Link>
+                                <Link href="/tools/pdi" className="block text-sm font-semibold text-zinc-900 font-medium hover:text-cyan-900 font-extrabold font-semibold transition-colors">→ Product Debt Index (PDI)</Link>
+                                <Link href="/tools/aper" className="block text-sm font-semibold text-zinc-900 font-medium hover:text-cyan-900 font-extrabold font-semibold transition-colors">→ APER Calculator</Link>
+                                <Link href="/tools/aueb" className="block text-sm font-semibold text-zinc-900 font-medium hover:text-cyan-900 font-extrabold font-semibold transition-colors">→ AUEB Calculator</Link>
                             </div>
                         </div>
                     </div>

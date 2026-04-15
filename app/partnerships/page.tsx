@@ -41,7 +41,7 @@ const partnerTypes = [
 ];
 
 const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', violet: 'border-violet-500/30 bg-violet-500/5', amber: 'border-amber-500/30 bg-amber-500/5' };
-const textMap: Record<string, string> = { cyan: 'text-cyan-800 font-semibold', emerald: 'text-emerald-800 font-semibold', violet: 'text-violet-400', amber: 'text-amber-400' };
+const textMap: Record<string, string> = { cyan: 'text-cyan-900 font-extrabold font-semibold', emerald: 'text-emerald-900 font-extrabold font-semibold', violet: 'text-violet-400', amber: 'text-amber-400' };
 
 export default function PartnershipsPage() {
     return (
@@ -49,7 +49,7 @@ export default function PartnershipsPage() {
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-4">Partnerships</div>
+                        <div className="text-xs font-bold font-mono text-emerald-500 uppercase tracking-widest mb-4">Partnerships</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             Grow With{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Product Economics</span>
@@ -67,7 +67,7 @@ export default function PartnershipsPage() {
                                 <p className="text-zinc-900 mb-4 text-sm">{pt.description}</p>
                                 <ul className="space-y-2">
                                     {pt.benefits.map((b, j) => (
-                                        <li key={j} className="text-sm text-zinc-950 flex items-start gap-2">
+                                        <li key={j} className="text-sm font-semibold text-zinc-950 flex items-start gap-2">
                                             <span className={textMap[pt.color]}>→</span>{b}
                                         </li>
                                     ))}
@@ -81,29 +81,29 @@ export default function PartnershipsPage() {
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                             <div className="rounded-xl border border-zinc-400 p-6 flex flex-col">
                                 <h3 className="text-lg font-bold text-zinc-950 mb-2">Referral Partner</h3>
-                                <p className="text-sm text-zinc-950 mb-4 flex-1">Refer clients for R&D audits. Earn referral fees on closed deals.</p>
+                                <p className="text-sm font-semibold text-zinc-950 mb-4 flex-1">Refer clients for R&D audits. Earn referral fees on closed deals.</p>
                                 <div className="text-2xl font-bold text-zinc-950 mb-1">Free</div>
-                                <div className="text-xs text-zinc-900 font-bold mb-4">Revenue share on referred deals</div>
-                                <a href="mailto:richardewing@exogram.ai?subject=Referral%20Partner%20Application" className="block text-center py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold text-xs uppercase tracking-widest hover:bg-white/5 transition-all">
+                                <div className="text-xs font-bold text-zinc-900 font-bold mb-4">Revenue share on referred deals</div>
+                                <a href="mailto:richardewing@exogram.ai?subject=Referral%20Partner%20Application" className="block text-center py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
                                     Apply →
                                 </a>
                             </div>
                             <div className="rounded-xl border border-cyan-500/30 bg-cyan-500/5 p-6 relative flex flex-col">
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-cyan-600 text-zinc-950 font-semibold text-xs font-medium font-bold uppercase tracking-widest rounded-full">Most Popular</div>
-                                <h3 className="text-lg font-bold text-cyan-800 font-semibold mb-2">Licensed Partner</h3>
-                                <p className="text-sm text-zinc-950 mb-4 flex-1">White-label frameworks for your consulting practice. Includes training and co-branded case studies.</p>
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-cyan-600 text-zinc-950 font-semibold text-xs font-bold font-medium font-bold uppercase tracking-widest rounded-full">Most Popular</div>
+                                <h3 className="text-lg font-bold text-cyan-900 font-extrabold font-semibold mb-2">Licensed Partner</h3>
+                                <p className="text-sm font-semibold text-zinc-950 mb-4 flex-1">White-label frameworks for your consulting practice. Includes training and co-branded case studies.</p>
                                 <div className="text-2xl font-bold text-zinc-950 mb-1">$2,500<span className="text-lg text-zinc-900">/mo</span></div>
-                                <div className="text-xs text-zinc-900 font-bold mb-4">Annual license + quarterly training</div>
-                                <a href="/api/buy/partner_licensed" className="block text-center py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-zinc-950 font-semibold font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-opacity">
+                                <div className="text-xs font-bold text-zinc-900 font-bold mb-4">Annual license + quarterly training</div>
+                                <a href="/api/buy/partner_licensed" className="block text-center py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-zinc-950 font-semibold font-bold text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
                                     Start Licensed Partnership →
                                 </a>
                             </div>
                             <div className="rounded-xl border border-emerald-500/30 p-6 flex flex-col">
-                                <h3 className="text-lg font-bold text-emerald-800 font-semibold mb-2">Strategic Partner</h3>
-                                <p className="text-sm text-zinc-950 mb-4 flex-1">Deep integration. Co-branded. Joint go-to-market. Custom SLA.</p>
+                                <h3 className="text-lg font-bold text-emerald-900 font-extrabold font-semibold mb-2">Strategic Partner</h3>
+                                <p className="text-sm font-semibold text-zinc-950 mb-4 flex-1">Deep integration. Co-branded. Joint go-to-market. Custom SLA.</p>
                                 <div className="text-2xl font-bold text-zinc-950 mb-1">Custom</div>
-                                <div className="text-xs text-zinc-900 font-bold mb-4">Custom partnership agreement</div>
-                                <a href="mailto:richardewing@exogram.ai?subject=Strategic%20Partnership%20Inquiry" className="block text-center py-3 rounded-lg border border-emerald-500/30 text-emerald-800 font-semibold font-bold text-xs uppercase tracking-widest hover:bg-emerald-500/10 transition-all">
+                                <div className="text-xs font-bold text-zinc-900 font-bold mb-4">Custom partnership agreement</div>
+                                <a href="mailto:richardewing@exogram.ai?subject=Strategic%20Partnership%20Inquiry" className="block text-center py-3 rounded-lg border border-emerald-500/30 text-emerald-900 font-extrabold font-semibold font-bold text-xs font-bold uppercase tracking-widest hover:bg-emerald-500/10 transition-all">
                                     Schedule Discussion →
                                 </a>
                             </div>

@@ -24,12 +24,12 @@ export default function BenchmarkPage() {
         <main className="pt-20">
             <div className="page-container">
                 <section className="section-lg text-center">
-                    <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Free Download</div>
+                    <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Free Download</div>
                     <h1 className="text-4xl md:text-6xl font-bold text-zinc-950 mb-6 font-grotesk">
                         State of Product Debt<br />
                         <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">2026 Report.</span>
                     </h1>
-                    <p className="text-zinc-800 text-lg max-w-2xl mx-auto mb-8">
+                    <p className="text-zinc-950 font-bold text-lg max-w-2xl mx-auto mb-8">
                         Anonymized, aggregated data from diagnostic tools used by engineering leaders.
                         How does your organization compare?
                     </p>
@@ -43,7 +43,7 @@ export default function BenchmarkPage() {
                             { stat: '18 mo', label: 'average time to Technical Insolvency Date when debt goes unmeasured', icon: TrendingDown },
                         ].map((item, i) => (
                             <div key={i} className="card p-6 text-center">
-                                <item.icon className="w-8 h-8 text-emerald-800 font-semibold mx-auto mb-3" />
+                                <item.icon className="w-8 h-8 text-emerald-900 font-extrabold font-semibold mx-auto mb-3" />
                                 <div className="text-3xl font-bold text-zinc-950 mb-2">{item.stat}</div>
                                 <p className="text-zinc-900 text-sm">{item.label}</p>
                             </div>
@@ -64,39 +64,39 @@ export default function BenchmarkPage() {
                                         'Recommendations for each debt severity level',
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-2 text-zinc-950 text-sm">
-                                            <CheckCircle className="w-4 h-4 text-emerald-800 font-semibold mt-0.5 flex-shrink-0" />
+                                            <CheckCircle className="w-4 h-4 text-emerald-900 font-extrabold font-semibold mt-0.5 flex-shrink-0" />
                                             {item}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                             <div className="bg-white/80 border border-zinc-400 rounded-2xl p-8 text-center">
-                                <Download className="w-12 h-12 text-emerald-800 font-semibold mx-auto mb-4" />
+                                <Download className="w-12 h-12 text-emerald-900 font-extrabold font-semibold mx-auto mb-4" />
                                 <h3 className="text-xl font-bold text-zinc-950 mb-2">Download Free Report</h3>
-                                <p className="text-zinc-950 text-sm mb-6">Enter your email to receive the full PDF report.</p>
+                                <p className="text-zinc-950 text-sm font-semibold mb-6">Enter your email to receive the full PDF report.</p>
                                 <a
                                     href="https://theproducteconomist.beehiiv.com/subscribe"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold uppercase tracking-widest text-sm rounded-xl transition-all"
+                                    className="block w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all"
                                 >
                                     Get Free Report →
                                 </a>
-                                <p className="text-xs font-medium text-zinc-800 mt-4">Delivered via The Product Economist newsletter. Zero spam.</p>
+                                <p className="text-xs font-bold font-medium text-zinc-950 font-bold mt-4">Delivered via The Product Economist newsletter. Zero spam.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <section className="section max-w-4xl mx-auto text-center mt-12 mb-16 border-t border-zinc-400 pt-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-800 font-semibold text-xs font-mono uppercase tracking-widest mb-6">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold text-xs font-bold font-mono uppercase tracking-widest mb-6">
                         Open Data Report
                     </div>
                     <h2 className="text-3xl font-bold text-zinc-950 mb-4 font-grotesk">The 2026 AI Capital Engineering Index</h2>
                     <p className="text-zinc-900 mb-8 max-w-2xl mx-auto">
                         We open-sourced our proprietary M&A telemetry. View the raw, ungated mathematical timeline of FTE displacement, Vector DB collapse, and OpEx vs CapEx thresholds.
                     </p>
-                    <Link href="/benchmark/ai-capital-2026" className="inline-flex px-8 py-4 bg-zinc-50 border border-cyan-500/30 text-zinc-950 font-bold text-sm rounded-lg hover:bg-cyan-50/20 transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.3)]">
+                    <Link href="/benchmark/ai-capital-2026" className="inline-flex px-8 py-4 bg-zinc-50 border border-cyan-500/30 text-zinc-950 font-bold text-sm font-semibold rounded-lg hover:bg-cyan-50/20 transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.3)]">
                         Read The Open Data Report →
                     </Link>
                 </section>
@@ -107,10 +107,10 @@ export default function BenchmarkPage() {
                         The benchmark tells you where the industry stands. A diagnostic tells you where <span className="text-zinc-950 font-semibold">you</span> stand.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/tools/pdi" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-bold text-sm rounded-lg hover:bg-white/10 transition-all">
+                        <Link href="/tools/pdi" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold rounded-lg hover:bg-white/10 transition-all">
                             Run Free PDI Calculator
                         </Link>
-                        <Link href="/advisory" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-zinc-950 font-semibold font-bold text-sm rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">
+                        <Link href="/advisory" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-zinc-950 font-semibold font-bold text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">
                             Book Diagnostic Call <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>

@@ -53,12 +53,12 @@ export default function PdiFaqPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/tools" className="hover:text-cyan-800 font-semibold">Tools</Link>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/tools" className="hover:text-cyan-900 font-extrabold font-semibold">Tools</Link>
                         <span>/</span>
-                        <Link href="/tools/pdi" className="hover:text-cyan-800 font-semibold">PDI</Link>
+                        <Link href="/tools/pdi" className="hover:text-cyan-900 font-extrabold font-semibold">PDI</Link>
                         <span>/</span>
-                        <span className="text-cyan-800 font-semibold font-bold">FAQ</span>
+                        <span className="text-cyan-900 font-extrabold font-semibold font-bold">FAQ</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">

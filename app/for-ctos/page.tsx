@@ -50,7 +50,7 @@ export default function ForCTOsPage() {
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-rose-500 uppercase tracking-widest mb-4">For CTOs & VPs of Engineering</div>
+                        <div className="text-xs font-bold font-mono text-rose-500 uppercase tracking-widest mb-4">For CTOs & VPs of Engineering</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             Stop Guessing.<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-violet-400">Start Measuring.</span>
@@ -70,7 +70,7 @@ export default function ForCTOsPage() {
                             <Link key={i} href={tool.href} className={`rounded-2xl border p-6 transition-colors ${colorMap[tool.color]}`}>
                                 <span className="text-2xl mb-3 block">{tool.icon}</span>
                                 <h3 className="text-lg font-bold text-zinc-950 mb-2">{tool.name}</h3>
-                                <p className="text-sm text-zinc-900 font-medium">{tool.description}</p>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium">{tool.description}</p>
                             </Link>
                         ))}
                     </div>
@@ -81,7 +81,7 @@ export default function ForCTOsPage() {
                             <Link key={i} href={fw.href} className="flex items-center gap-4 rounded-xl border border-zinc-400 p-5 hover:border-rose-500/30 transition-colors group">
                                 <div>
                                     <div className="text-zinc-950 font-bold group-hover:text-rose-400 transition-colors">{fw.name}</div>
-                                    <div className="text-sm text-zinc-900 font-medium">{fw.description}</div>
+                                    <div className="text-sm font-semibold text-zinc-900 font-medium">{fw.description}</div>
                                 </div>
                             </Link>
                         ))}

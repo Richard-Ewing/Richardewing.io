@@ -116,7 +116,7 @@ export default async function GlossaryTermPage({ params }: Props) {
             const escaped = t.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const regex = new RegExp(`\\b(${escaped})\\b`, 'i');
             if (regex.test(result)) {
-                result = result.replace(regex, `<a href="/glossary/${t.slug}" class="text-cyan-800 font-semibold hover:text-cyan-800 font-semibold underline underline-offset-2 decoration-cyan-500/30 transition-colors">$1</a>`);
+                result = result.replace(regex, `<a href="/glossary/${t.slug}" class="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold underline underline-offset-2 decoration-cyan-500/30 transition-colors">$1</a>`);
             }
         }
         return result;
@@ -226,10 +226,10 @@ export default async function GlossaryTermPage({ params }: Props) {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
 
-            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                <Link href="/glossary" className="hover:text-cyan-800 font-semibold">Glossary</Link>
+            <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                <Link href="/glossary" className="hover:text-cyan-900 font-extrabold font-semibold">Glossary</Link>
                 <span>/</span>
-                <span className="text-cyan-800 font-semibold font-bold">{term.title}</span>
+                <span className="text-cyan-900 font-extrabold font-semibold font-bold">{term.title}</span>
             </div>
 
             <RetroTerminal title={term.title} category={term.category} definition={term.definition} whyItMatters={term.whyItMatters} />
@@ -237,9 +237,9 @@ export default async function GlossaryTermPage({ params }: Props) {
             <article>
                 <header className="mb-10 border-b border-zinc-400 pb-10">
                     <div className="flex items-center justify-between mb-3">
-                        <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest">{term.category}</div>
+                        <div className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest">{term.category}</div>
                         <div className="flex items-center gap-3">
-                            <span className="text-xs text-zinc-900 font-bold font-mono">{readingTime} min read</span>
+                            <span className="text-xs font-bold text-zinc-900 font-bold font-mono">{readingTime} min read</span>
                             <ShareButtons url={`/glossary/${slug}`} title={`What is ${term.title}?`} />
                         </div>
                     </div>
@@ -251,21 +251,21 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* TL;DR Box — LLM-citation-friendly summary */}
                 <section className="tldr-box mb-10 p-6 rounded-xl bg-cyan-500/5 border border-cyan-500/20">
                     <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-mono font-bold text-cyan-500 uppercase tracking-widest">TL;DR</span>
+                        <span className="text-xs font-bold font-mono font-bold text-cyan-500 uppercase tracking-widest">TL;DR</span>
                     </div>
-                    <p className="text-zinc-800 leading-relaxed text-lg">{tldr}</p>
+                    <p className="text-zinc-950 font-bold leading-relaxed text-lg">{tldr}</p>
                 </section>
 
                 {/* At a Glance — Quick Reference Card */}
                 <section className="mb-12 rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-violet-500/5 p-8">
                     <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">⚡ {term.title} at a Glance</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                        <div className="flex items-start gap-2"><span className="text-cyan-800 font-semibold font-bold">📂</span><div><span className="text-zinc-900">Category:</span> <span className="text-zinc-900">{term.category}</span></div></div>
-                        <div className="flex items-start gap-2"><span className="text-cyan-800 font-semibold font-bold">⏱️</span><div><span className="text-zinc-900">Read Time:</span> <span className="text-zinc-900">{readingTime} min</span></div></div>
-                        <div className="flex items-start gap-2"><span className="text-cyan-800 font-semibold font-bold">🔗</span><div><span className="text-zinc-900">Related Terms:</span> <span className="text-zinc-900">{term.relatedTerms.length}</span></div></div>
-                        <div className="flex items-start gap-2"><span className="text-cyan-800 font-semibold font-bold">❓</span><div><span className="text-zinc-900">FAQs Answered:</span> <span className="text-zinc-900">{term.faqs.length}</span></div></div>
-                        <div className="flex items-start gap-2"><span className="text-cyan-800 font-semibold font-bold">✅</span><div><span className="text-zinc-900">Checklist Items:</span> <span className="text-zinc-900">{checklist.length}</span></div></div>
-                        <div className="flex items-start gap-2"><span className="text-cyan-800 font-semibold font-bold">🧪</span><div><span className="text-zinc-900">Quiz Questions:</span> <span className="text-zinc-900">{quiz.length}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">📂</span><div><span className="text-zinc-900">Category:</span> <span className="text-zinc-900">{term.category}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">⏱️</span><div><span className="text-zinc-900">Read Time:</span> <span className="text-zinc-900">{readingTime} min</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">🔗</span><div><span className="text-zinc-900">Related Terms:</span> <span className="text-zinc-900">{term.relatedTerms.length}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">❓</span><div><span className="text-zinc-900">FAQs Answered:</span> <span className="text-zinc-900">{term.faqs.length}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">✅</span><div><span className="text-zinc-900">Checklist Items:</span> <span className="text-zinc-900">{checklist.length}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">🧪</span><div><span className="text-zinc-900">Quiz Questions:</span> <span className="text-zinc-900">{quiz.length}</span></div></div>
                     </div>
                 </section>
 
@@ -276,8 +276,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                         {keyMetrics.map((m, i) => (
                             <div key={i} className="rounded-xl border border-zinc-400 bg-zinc-50 p-5 text-center">
                                 <div className="text-3xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">{m.value}</div>
-                                <div className="text-sm font-bold text-zinc-950 mt-2">{m.label}</div>
-                                <div className="text-xs text-zinc-900 font-bold mt-1">{m.description}</div>
+                                <div className="text-sm font-semibold font-bold text-zinc-950 mt-2">{m.label}</div>
+                                <div className="text-xs font-bold text-zinc-900 font-bold mt-1">{m.description}</div>
                             </div>
                         ))}
                     </div>
@@ -287,7 +287,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 <section className="mb-12">
                     <div className="prose prose-zinc prose-lg max-w-none">
                         {term.definition.split('\n\n').map((p, i) => (
-                            <p key={i} className="text-zinc-700 leading-relaxed mb-4"
+                            <p key={i} className="text-zinc-950 font-bold leading-relaxed mb-4"
                                dangerouslySetInnerHTML={{ __html: autoLink(p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-zinc-950 font-semibold">$1</strong>'), slug) }}
                             />
                         ))}
@@ -300,7 +300,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">🌍 Where Is It Used?</h2>
                         <div className="prose prose-zinc max-w-none">
                             {whereIsItUsed.split('\n\n').map((p, i) => (
-                                <p key={i} className="text-zinc-700 leading-relaxed mb-4">{p}</p>
+                                <p key={i} className="text-zinc-950 font-bold leading-relaxed mb-4">{p}</p>
                             ))}
                         </div>
                     </section>
@@ -312,7 +312,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">👤 Who Uses It?</h2>
                         <div className="prose prose-zinc max-w-none">
                             {whoUsesIt.split('\n\n').map((p, i) => (
-                                <p key={i} className="text-zinc-700 leading-relaxed mb-4">{p}</p>
+                                <p key={i} className="text-zinc-950 font-bold leading-relaxed mb-4">{p}</p>
                             ))}
                         </div>
                     </section>
@@ -323,7 +323,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">💡 Why It Matters</h2>
                     <div className="prose prose-zinc max-w-none">
                         {term.whyItMatters.split('\n\n').map((p, i) => (
-                            <p key={i} className="text-zinc-700 leading-relaxed mb-4">{p}</p>
+                            <p key={i} className="text-zinc-950 font-bold leading-relaxed mb-4">{p}</p>
                         ))}
                     </div>
                 </section>
@@ -334,7 +334,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">📏 How to Measure</h2>
                         <div className="prose prose-zinc max-w-none">
                             {term.howToMeasure.split('\n').map((line, i) => (
-                                <p key={i} className="text-zinc-700 leading-relaxed mb-2">{line}</p>
+                                <p key={i} className="text-zinc-950 font-bold leading-relaxed mb-2">{line}</p>
                             ))}
                         </div>
                     </section>
@@ -345,7 +345,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">🛠️ How to Apply {term.title}</h2>
                     <div className="prose prose-zinc max-w-none">
                         {howToApply.split('\n\n').map((p, i) => (
-                            <p key={i} className="text-zinc-700 leading-relaxed mb-4"
+                            <p key={i} className="text-zinc-950 font-bold leading-relaxed mb-4"
                                dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-zinc-950 font-semibold">$1</strong>') }}
                             />
                         ))}
@@ -359,7 +359,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         {checklist.map((item, i) => (
                             <label key={i} className="flex items-start gap-3 p-3 rounded-lg bg-zinc-50 border border-zinc-400 hover:border-emerald-500/20 transition-colors cursor-pointer group">
                                 <input type="checkbox" className="mt-1 accent-emerald-500 w-4 h-4 rounded" />
-                                <span className="text-zinc-700 group-hover:text-zinc-900 transition-colors">{item}</span>
+                                <span className="text-zinc-950 font-bold group-hover:text-zinc-900 transition-colors">{item}</span>
                             </label>
                         ))}
                     </div>
@@ -368,7 +368,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* Maturity Model — always rendered */}
                 <section className="mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">📈 {term.title} Maturity Model</h2>
-                    <p className="text-zinc-600 text-sm mb-4">Where does your organization stand? Use this model to assess your current level and identify the next milestone.</p>
+                    <p className="text-zinc-950 font-bold text-sm font-semibold mb-4">Where does your organization stand? Use this model to assess your current level and identify the next milestone.</p>
                     <div className="space-y-3">
                         {maturityLevels.map((level, i) => {
                             const pct = Math.round(((i + 1) / maturityLevels.length) * 100);
@@ -376,18 +376,18 @@ export default async function GlossaryTermPage({ params }: Props) {
                             return (
                             <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-zinc-400 bg-zinc-50 hover:bg-white/[0.03] transition-all">
                                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-zinc-400 flex items-center justify-center">
-                                    <span className="text-sm font-bold text-zinc-900">{i + 1}</span>
+                                    <span className="text-sm font-semibold font-bold text-zinc-900">{i + 1}</span>
                                 </div>
                                 <div className="flex-1">
                                     <div className="flex items-center justify-between mb-1">
-                                        <div className="text-sm font-bold text-zinc-900">{level.level}</div>
-                                        <div className="text-xs font-medium font-mono text-zinc-950">{pct}%</div>
+                                        <div className="text-sm font-semibold font-bold text-zinc-900">{level.level}</div>
+                                        <div className="text-xs font-bold font-medium font-mono text-zinc-950">{pct}%</div>
                                     </div>
                                     <div className="w-full h-1.5 rounded-full bg-white/5 mb-1.5">
                                         { }
                                         <div className={`h-full rounded-full bg-gradient-to-r ${barColor} transition-all`} style={{ width: `${pct}%` }} />
                                     </div>
-                                    <div className="text-xs text-zinc-900 font-bold">{level.description}</div>
+                                    <div className="text-xs font-bold text-zinc-900 font-bold">{level.description}</div>
                                 </div>
                             </div>
                             );
@@ -402,8 +402,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                         <table className="w-full text-sm">
                             <thead>
                                 <tr className="border-b border-zinc-400">
-                                    <th className="text-left py-3 px-4 text-zinc-700 font-mono uppercase tracking-widest text-xs">{term.title} vs.</th>
-                                    <th className="text-left py-3 px-4 text-emerald-800 font-semibold font-mono uppercase tracking-widest text-xs">{term.title} Advantage</th>
+                                    <th className="text-left py-3 px-4 text-zinc-950 font-bold font-mono uppercase tracking-widest text-xs">{term.title} vs.</th>
+                                    <th className="text-left py-3 px-4 text-emerald-900 font-extrabold font-semibold font-mono uppercase tracking-widest text-xs">{term.title} Advantage</th>
                                     <th className="text-left py-3 px-4 text-amber-400 font-mono uppercase tracking-widest text-xs">Other Approach</th>
                                 </tr>
                             </thead>
@@ -411,7 +411,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 {comparisons.map((c, i) => (
                                     <tr key={i} className="border-b border-zinc-400">
                                         <td className="py-3 px-4 text-zinc-950 font-medium">{c.vs}</td>
-                                        <td className="py-3 px-4 text-emerald-800 font-semibold">{c.advantage}</td>
+                                        <td className="py-3 px-4 text-emerald-900 font-extrabold font-semibold">{c.advantage}</td>
                                         <td className="py-3 px-4 text-amber-400">{c.disadvantage}</td>
                                     </tr>
                                 ))}
@@ -428,11 +428,11 @@ export default async function GlossaryTermPage({ params }: Props) {
                         </div>
                         <div>
                             <h2 className="text-lg font-grotesk font-bold text-zinc-900">How It Works</h2>
-                            <p className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">Visual Framework Diagram</p>
+                            <p className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">Visual Framework Diagram</p>
                         </div>
                     </div>
                     <div className="p-6">
-                        <div className="bg-zinc-50 rounded-xl p-6 font-mono text-sm text-zinc-900 font-medium whitespace-pre-line border border-zinc-400 overflow-x-auto">
+                        <div className="bg-zinc-50 rounded-xl p-6 font-mono text-sm font-semibold text-zinc-900 font-medium whitespace-pre-line border border-zinc-400 overflow-x-auto">
                             {diagram}
                         </div>
                     </div>
@@ -446,12 +446,12 @@ export default async function GlossaryTermPage({ params }: Props) {
                             <div key={i} className="rounded-xl border border-red-500/10 bg-red-500/[0.02] p-5">
                                 <div className="flex items-start gap-3">
                                     <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
-                                        <span className="text-xs font-bold text-red-800 font-semibold">{i + 1}</span>
+                                        <span className="text-xs font-bold text-red-900 font-extrabold font-semibold">{i + 1}</span>
                                     </div>
                                     <div className="flex-1">
-                                        <div className="text-sm font-bold text-zinc-950 mb-1">{m.mistake}</div>
-                                        <div className="text-xs text-zinc-900 font-bold/80 mb-2">⚠️ Consequence: {m.consequence}</div>
-                                        <div className="text-xs text-zinc-900 font-bold/80">✅ Fix: {m.fix}</div>
+                                        <div className="text-sm font-semibold font-bold text-zinc-950 mb-1">{m.mistake}</div>
+                                        <div className="text-xs font-bold text-zinc-900 font-bold/80 mb-2">⚠️ Consequence: {m.consequence}</div>
+                                        <div className="text-xs font-bold text-zinc-900 font-bold/80">✅ Fix: {m.fix}</div>
                                     </div>
                                 </div>
                             </div>
@@ -466,11 +466,11 @@ export default async function GlossaryTermPage({ params }: Props) {
                         {bestPractices.map((bp, i) => (
                             <div key={i} className="flex items-start gap-4 p-4 rounded-xl border border-emerald-500/10 bg-emerald-500/[0.02]">
                                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                                    <span className="text-xs font-bold text-emerald-800 font-semibold">✓</span>
+                                    <span className="text-xs font-bold text-emerald-900 font-extrabold font-semibold">✓</span>
                                 </div>
                                 <div>
-                                    <div className="text-sm font-bold text-zinc-900">{bp.practice}</div>
-                                    <div className="text-xs text-zinc-900 font-bold mt-1">Impact: {bp.impact}</div>
+                                    <div className="text-sm font-semibold font-bold text-zinc-900">{bp.practice}</div>
+                                    <div className="text-xs font-bold text-zinc-900 font-bold mt-1">Impact: {bp.impact}</div>
                                 </div>
                             </div>
                         ))}
@@ -480,26 +480,26 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* Industry Benchmarks — always rendered */}
                 <section className="mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">📊 Industry Benchmarks</h2>
-                    <p className="text-zinc-600 text-sm mb-4">How does your organization compare? Use these benchmarks to identify where you stand and where to invest.</p>
+                    <p className="text-zinc-950 font-bold text-sm font-semibold mb-4">How does your organization compare? Use these benchmarks to identify where you stand and where to invest.</p>
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
                             <thead>
                                 <tr className="border-b border-zinc-400">
-                                    <th className="text-left py-3 px-4 text-zinc-700 font-mono uppercase tracking-widest text-xs">Industry</th>
-                                    <th className="text-left py-3 px-4 text-zinc-700 font-mono uppercase tracking-widest text-xs">Metric</th>
-                                    <th className="text-left py-3 px-4 text-red-800 font-semibold font-mono uppercase tracking-widest text-xs">Low</th>
+                                    <th className="text-left py-3 px-4 text-zinc-950 font-bold font-mono uppercase tracking-widest text-xs">Industry</th>
+                                    <th className="text-left py-3 px-4 text-zinc-950 font-bold font-mono uppercase tracking-widest text-xs">Metric</th>
+                                    <th className="text-left py-3 px-4 text-red-900 font-extrabold font-semibold font-mono uppercase tracking-widest text-xs">Low</th>
                                     <th className="text-left py-3 px-4 text-amber-400 font-mono uppercase tracking-widest text-xs">Median</th>
-                                    <th className="text-left py-3 px-4 text-emerald-800 font-semibold font-mono uppercase tracking-widest text-xs">Elite</th>
+                                    <th className="text-left py-3 px-4 text-emerald-900 font-extrabold font-semibold font-mono uppercase tracking-widest text-xs">Elite</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {industryBenchmarks.map((b, i) => (
                                     <tr key={i} className="border-b border-zinc-400">
                                         <td className="py-3 px-4 text-zinc-950 font-medium">{b.industry}</td>
-                                        <td className="py-3 px-4 text-zinc-800">{b.metric}</td>
-                                        <td className="py-3 px-4 text-red-800 font-semibold">{b.low}</td>
+                                        <td className="py-3 px-4 text-zinc-950 font-bold">{b.metric}</td>
+                                        <td className="py-3 px-4 text-red-900 font-extrabold font-semibold">{b.low}</td>
                                         <td className="py-3 px-4 text-amber-400">{b.median}</td>
-                                        <td className="py-3 px-4 text-emerald-800 font-semibold">{b.elite}</td>
+                                        <td className="py-3 px-4 text-emerald-900 font-extrabold font-semibold">{b.elite}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -516,7 +516,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                             </div>
                             <div>
                                 <h2 className="text-3xl font-grotesk font-bold text-zinc-900">Explore the {term.title} Ecosystem</h2>
-                                <p className="text-sm font-mono text-cyan-800 font-semibold mt-1 uppercase tracking-widest">Pillar & Spoke Navigation Matrix</p>
+                                <p className="text-sm font-semibold font-mono text-cyan-900 font-extrabold font-semibold mt-1 uppercase tracking-widest">Pillar & Spoke Navigation Matrix</p>
                             </div>
                         </div>
 
@@ -525,13 +525,13 @@ export default async function GlossaryTermPage({ params }: Props) {
                             {/* Spoke Articles Column */}
                             <div className="card p-6 border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent flex flex-col h-full">
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 flex items-center gap-2 mb-4">
-                                    <span className="text-cyan-800 font-semibold">📝</span> Deep-Dive Articles
+                                    <span className="text-cyan-900 font-extrabold font-semibold">📝</span> Deep-Dive Articles
                                 </h3>
                                 <div className="space-y-4 flex-1">
                                     {spokes.map((s, i) => (
                                         <Link key={i} href={s.url} className="block group">
-                                            <div className="text-sm font-bold text-zinc-700 group-hover:text-cyan-800 font-semibold transition-colors mb-1">{s.title}</div>
-                                            <div className="text-xs text-zinc-900 font-bold line-clamp-2">{s.description}</div>
+                                            <div className="text-sm font-semibold font-bold text-zinc-950 font-bold group-hover:text-cyan-900 font-extrabold font-semibold transition-colors mb-1">{s.title}</div>
+                                            <div className="text-xs font-bold text-zinc-900 font-bold line-clamp-2">{s.description}</div>
                                         </Link>
                                     ))}
                                 </div>
@@ -545,9 +545,9 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 <div className="space-y-4 flex-1">
                                     {curriculumTracks.map((c, i) => (
                                         <Link key={i} href={c.url} className="block group">
-                                            <div className="text-xs font-medium font-mono text-violet-400 uppercase tracking-widest mb-1">{c.track}</div>
-                                            <div className="text-sm font-bold text-zinc-700 group-hover:text-violet-400 transition-colors mb-1">{c.title}</div>
-                                            <div className="inline-flex items-center justify-center px-2 py-0.5 rounded text-xs font-medium font-bold bg-white/10 text-zinc-950 mt-1">Premium Track</div>
+                                            <div className="text-xs font-bold font-medium font-mono text-violet-400 uppercase tracking-widest mb-1">{c.track}</div>
+                                            <div className="text-sm font-semibold font-bold text-zinc-950 font-bold group-hover:text-violet-400 transition-colors mb-1">{c.title}</div>
+                                            <div className="inline-flex items-center justify-center px-2 py-0.5 rounded text-xs font-bold font-medium font-bold bg-white/10 text-zinc-950 mt-1">Premium Track</div>
                                         </Link>
                                     ))}
                                 </div>
@@ -556,13 +556,13 @@ export default async function GlossaryTermPage({ params }: Props) {
                             {/* Executive Guides Column */}
                             <div className="card p-6 border-emerald-500/20 bg-gradient-to-br from-emerald-500/5 to-transparent flex flex-col h-full">
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 flex items-center gap-2 mb-4">
-                                    <span className="text-emerald-800 font-semibold">📄</span> Executive Guides
+                                    <span className="text-emerald-900 font-extrabold font-semibold">📄</span> Executive Guides
                                 </h3>
                                 <div className="space-y-4 flex-1">
                                     {executiveGuides.map((g, i) => (
                                         <Link key={i} href={g.url} className="block group">
-                                            <div className="text-xs font-medium font-mono text-emerald-800 font-semibold uppercase tracking-widest mb-1">{g.type}</div>
-                                            <div className="text-sm font-bold text-zinc-700 group-hover:text-emerald-800 font-semibold transition-colors">{g.title}</div>
+                                            <div className="text-xs font-bold font-medium font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest mb-1">{g.type}</div>
+                                            <div className="text-sm font-semibold font-bold text-zinc-950 font-bold group-hover:text-emerald-900 font-extrabold font-semibold transition-colors">{g.title}</div>
                                         </Link>
                                     ))}
                                 </div>
@@ -575,17 +575,17 @@ export default async function GlossaryTermPage({ params }: Props) {
                                     <span className="text-amber-400">{premiumTool.icon}</span> Flagship Advisory
                                 </h3>
                                 <div className="flex-1 flex flex-col relative z-10">
-                                    <div className="text-xs font-medium font-mono text-amber-400 uppercase tracking-widest mb-1">{premiumTool.tag}</div>
+                                    <div className="text-xs font-bold font-medium font-mono text-amber-400 uppercase tracking-widest mb-1">{premiumTool.tag}</div>
                                     <div className="text-base font-bold text-zinc-950 mb-2 leading-tight">{premiumTool.name}</div>
-                                    <div className="text-xs text-zinc-900 font-bold mb-6 flex-1">{premiumTool.description}</div>
+                                    <div className="text-xs font-bold text-zinc-900 font-bold mb-6 flex-1">{premiumTool.description}</div>
                                     
                                     <Link 
                                         href={premiumTool.url} 
-                                        className="block w-full text-center py-2.5 px-4 bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm rounded-lg transition-colors shadow-[0_0_15px_rgba(245,158,11,0.3)]"
+                                        className="block w-full text-center py-2.5 px-4 bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm font-semibold rounded-lg transition-colors shadow-[0_0_15px_rgba(245,158,11,0.3)]"
                                     >
                                         Deploy Tool
                                     </Link>
-                                    <div className="text-center mt-2 text-xs font-medium font-mono text-zinc-700 uppercase tracking-wide">
+                                    <div className="text-center mt-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-wide">
                                         {premiumTool.price}
                                     </div>
                                 </div>
@@ -603,7 +603,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                             </div>
                             <div>
                                 <h2 className="text-2xl font-grotesk font-bold text-zinc-900">Related Reading</h2>
-                                <p className="text-sm font-mono text-cyan-800 font-semibold mt-1 uppercase tracking-widest">Expand Your Knowledge</p>
+                                <p className="text-sm font-semibold font-mono text-cyan-900 font-extrabold font-semibold mt-1 uppercase tracking-widest">Expand Your Knowledge</p>
                             </div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -612,8 +612,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 <div className="space-y-4">
                                     {spokes.slice(0, 2).map((s, i) => (
                                         <Link key={i} href={s.url} className="block group">
-                                            <div className="text-sm font-bold text-zinc-700 group-hover:text-cyan-800 font-semibold transition-colors mb-1">{s.title}</div>
-                                            <div className="text-xs text-zinc-900 font-bold line-clamp-2">{s.description}</div>
+                                            <div className="text-sm font-semibold font-bold text-zinc-950 font-bold group-hover:text-cyan-900 font-extrabold font-semibold transition-colors mb-1">{s.title}</div>
+                                            <div className="text-xs font-bold text-zinc-900 font-bold line-clamp-2">{s.description}</div>
                                         </Link>
                                     ))}
                                 </div>
@@ -621,8 +621,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                             <div className="card p-6 border-zinc-400 flex flex-col items-center justify-center text-center bg-zinc-50">
                                 <div className="text-3xl mb-3">🎓</div>
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">Master Technical Execution</h3>
-                                <p className="text-sm text-zinc-900 font-medium mb-6">Learn how top-quartile engineering organizations systematically manage {term.title.toLowerCase()}.</p>
-                                <Link href="/curriculum" className="w-full max-w-[200px] text-center py-2.5 px-4 bg-white/5 hover:bg-white/10 border border-zinc-400 text-zinc-950 font-bold text-sm rounded-lg transition-colors">
+                                <p className="text-sm font-semibold text-zinc-900 font-medium mb-6">Learn how top-quartile engineering organizations systematically manage {term.title.toLowerCase()}.</p>
+                                <Link href="/curriculum" className="w-full max-w-[200px] text-center py-2.5 px-4 bg-white/5 hover:bg-white/10 border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold rounded-lg transition-colors">
                                     Explore Curriculum
                                 </Link>
                             </div>
@@ -638,7 +638,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                             {term.faqs.map((faq, i) => (
                                 <div key={i} className="card p-6">
                                     <h3 className="text-lg font-bold text-zinc-950 mb-2">{faq.question}</h3>
-                                    <p className="text-zinc-800">{faq.answer}</p>
+                                    <p className="text-zinc-950 font-bold">{faq.answer}</p>
                                 </div>
                             ))}
                         </div>
@@ -656,10 +656,10 @@ export default async function GlossaryTermPage({ params }: Props) {
                             {term.resources.map((r, i) => (
                                 <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl bg-zinc-50 border border-zinc-400 hover:border-cyan-500/30 transition-colors group">
                                     <div>
-                                        <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors">{r.title}</div>
-                                        <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mt-1">{r.type}</div>
+                                        <div className="text-sm font-semibold font-bold text-zinc-950 group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">{r.title}</div>
+                                        <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mt-1">{r.type}</div>
                                     </div>
-                                    <span className="text-xs text-zinc-900 font-bold">→</span>
+                                    <span className="text-xs font-bold text-zinc-900 font-bold">→</span>
                                 </a>
                             ))}
                         </div>
@@ -673,7 +673,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {term.relatedTools.map(tool => (
                                 <Link key={tool.url} href={tool.url} className="card p-5 hover:border-cyan-500/50 transition-all group">
-                                    <div className="text-lg font-bold text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors">{tool.name}</div>
+                                    <div className="text-lg font-bold text-zinc-950 group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">{tool.name}</div>
                                     <div className="text-xs font-bold uppercase tracking-widest text-cyan-500 mt-2">Try Free →</div>
                                 </Link>
                             ))}
@@ -688,7 +688,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         <div className="flex flex-wrap gap-3">
                             {relatedTermObjects.map(rt => rt && (
                                 <Link key={rt.slug} href={`/glossary/${rt.slug}`}
-                                    className="px-4 py-2 bg-white/5 border border-zinc-400 rounded-full text-sm text-zinc-900 font-medium hover:border-cyan-500/50 hover:text-cyan-800 font-semibold transition-all">
+                                    className="px-4 py-2 bg-white/5 border border-zinc-400 rounded-full text-sm font-semibold text-zinc-900 font-medium hover:border-cyan-500/50 hover:text-cyan-900 font-extrabold font-semibold transition-all">
                                     {rt.title}
                                 </Link>
                             ))}
@@ -700,8 +700,8 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 <section className="card p-8 border-cobalt/30 bg-gradient-to-br from-cobalt/10 to-transparent">
                     <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-2">Need Expert Help?</h2>
-                    <p className="text-zinc-600 mb-4">Richard Ewing is a Product Economist and AI Capital Auditor. He helps companies translate technical complexity into financial clarity.</p>
-                    <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-zinc-950 font-semibold text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">
+                    <p className="text-zinc-950 font-bold mb-4">Richard Ewing is a Product Economist and AI Capital Auditor. He helps companies translate technical complexity into financial clarity.</p>
+                    <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-zinc-950 font-semibold text-sm font-semibold font-bold rounded-lg hover:opacity-90 transition-opacity">
                         Book Advisory Call →
                     </Link>
                 </section>

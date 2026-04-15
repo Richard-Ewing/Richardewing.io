@@ -91,20 +91,20 @@ export default async function CombatComparisonPage({ params }: { params: Promise
             <Navigation />
             
             <main className="max-w-5xl mx-auto px-4 pt-32 mb-32 relative z-10">
-                <Link href={`/tools/${tool.toolSlug}`} className="inline-flex items-center gap-2 text-zinc-700 hover:text-zinc-900 font-mono text-xs uppercase tracking-widest transition-colors mb-12">
+                <Link href={`/tools/${tool.toolSlug}`} className="inline-flex items-center gap-2 text-zinc-950 font-bold hover:text-zinc-900 font-mono text-xs font-bold uppercase tracking-widest transition-colors mb-12">
                     <ArrowLeft size={14} /> Back to Diagnostic App
                 </Link>
 
                 <div className="text-center mb-24">
-                     <div className="inline-block bg-red-500/10 border border-red-500/20 text-red-800 font-semibold px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest mb-6">
+                     <div className="inline-block bg-red-500/10 border border-red-500/20 text-red-900 font-extrabold font-semibold px-3 py-1 rounded-full text-xs font-bold font-mono uppercase tracking-widest mb-6">
                         Architectural Comparison Analysis
                      </div>
                      <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-6 leading-tight">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">{tool.toolName}</span> <br/>
-                        <span className="text-zinc-700 text-3xl sm:text-5xl border-t border-b border-zinc-800 py-2 inline-block my-4 w-32 lowercase font-serif italic">vs</span><br/>
+                        <span className="text-zinc-950 font-bold text-3xl sm:text-5xl border-t border-b border-zinc-800 py-2 inline-block my-4 w-32 lowercase font-serif italic">vs</span><br/>
                         {competitor.name}
                      </h1>
-                     <p className="text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed">
+                     <p className="text-xl text-zinc-950 font-bold max-w-3xl mx-auto leading-relaxed">
                         If your goal is standard operational telemetry, {competitor.name} is sufficient. If you are a C-Suite executive quantifying millions in enterprise liability, deploy {tool.toolName}.
                      </p>
                 </div>
@@ -116,17 +116,17 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                               <Target size={120} />
                           </div>
                           <div className="mb-8">
-                             <div className="text-xs font-mono text-zinc-700 uppercase tracking-widest mb-2">The Legacy Approach</div>
+                             <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">The Legacy Approach</div>
                              <h2 className="text-3xl font-bold text-zinc-950 mb-2">{competitor.name}</h2>
                           </div>
                           <div className="space-y-6">
                               <div>
-                                  <h3 className="text-sm font-bold text-zinc-700 uppercase tracking-widest mb-2">Core Philosophy</h3>
-                                  <p className="text-zinc-700 leading-relaxed">{competitor.theirFocus}</p>
+                                  <h3 className="text-sm font-semibold font-bold text-zinc-950 font-bold uppercase tracking-widest mb-2">Core Philosophy</h3>
+                                  <p className="text-zinc-950 font-bold leading-relaxed">{competitor.theirFocus}</p>
                               </div>
                               <div className="bg-red-500/5 border border-red-500/10 p-6 rounded-xl">
-                                  <h3 className="text-xs font-mono text-red-800 font-semibold uppercase tracking-widest mb-2 flex items-center gap-2"><Target size={14}/> The Critical Failure</h3>
-                                  <p className="text-sm text-zinc-900 font-medium leading-relaxed">
+                                  <h3 className="text-xs font-bold font-mono text-red-900 font-extrabold font-semibold uppercase tracking-widest mb-2 flex items-center gap-2"><Target size={14}/> The Critical Failure</h3>
+                                  <p className="text-sm font-semibold text-zinc-900 font-medium leading-relaxed">
                                       {dynamicFailure}
                                   </p>
                               </div>
@@ -140,17 +140,17 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                               <ShieldCheck size={120} />
                           </div>
                           <div className="mb-8 relative z-10">
-                             <div className="text-xs font-mono text-indigo-800 font-semibold uppercase tracking-widest mb-2">The Deterministic Standard</div>
+                             <div className="text-xs font-bold font-mono text-indigo-900 font-extrabold font-semibold uppercase tracking-widest mb-2">The Deterministic Standard</div>
                              <h2 className="text-3xl font-bold text-zinc-950 mb-2">{tool.toolName}</h2>
                           </div>
                           <div className="space-y-6 relative z-10">
                               <div>
-                                  <h3 className="text-sm font-bold text-zinc-700 uppercase tracking-widest mb-2">Core Philosophy</h3>
-                                  <p className="text-zinc-700 leading-relaxed font-medium">{competitor.ourAdvantage}</p>
+                                  <h3 className="text-sm font-semibold font-bold text-zinc-950 font-bold uppercase tracking-widest mb-2">Core Philosophy</h3>
+                                  <p className="text-zinc-950 font-bold leading-relaxed font-medium">{competitor.ourAdvantage}</p>
                               </div>
                               <div className="bg-indigo-500/10 border border-indigo-500/20 p-6 rounded-xl">
-                                  <h3 className="text-xs font-mono text-indigo-800 font-semibold uppercase tracking-widest mb-2 flex items-center gap-2"><Zap size={14}/> Board-Level Valuation</h3>
-                                  <p className="text-sm text-zinc-900 font-medium leading-relaxed">
+                                  <h3 className="text-xs font-bold font-mono text-indigo-900 font-extrabold font-semibold uppercase tracking-widest mb-2 flex items-center gap-2"><Zap size={14}/> Board-Level Valuation</h3>
+                                  <p className="text-sm font-semibold text-zinc-900 font-medium leading-relaxed">
                                       Every <strong>{tool.toolName}</strong> computation terminates in an Executive Briefing PDF. We bypass generalized metrics to give you a deterministic, Board-ready artifact that maps directly to our Sovereign Enterprise Curriculum, explicitly training your teams to eradicate the exact vulnerability locally.
                                   </p>
                               </div>
@@ -168,9 +168,9 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-white/5 border-b border-zinc-400">
-                                    <th className="p-6 text-sm font-bold text-zinc-700 uppercase tracking-widest w-1/2">Capability</th>
-                                    <th className="p-6 text-sm font-bold text-zinc-700 uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{competitor.name}</th>
-                                    <th className="p-6 text-sm font-bold text-indigo-800 font-semibold uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{tool.toolName}</th>
+                                    <th className="p-6 text-sm font-semibold font-bold text-zinc-950 font-bold uppercase tracking-widest w-1/2">Capability</th>
+                                    <th className="p-6 text-sm font-semibold font-bold text-zinc-950 font-bold uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{competitor.name}</th>
+                                    <th className="p-6 text-sm font-semibold font-bold text-indigo-900 font-extrabold font-semibold uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{tool.toolName}</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-zinc-200">

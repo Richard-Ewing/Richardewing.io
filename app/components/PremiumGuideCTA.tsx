@@ -18,29 +18,29 @@ export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCT
             <div className="rounded-2xl border border-violet-500/20 bg-gradient-to-br from-violet-500/5 to-transparent p-8 text-center">
                 <div className="flex items-center justify-center gap-2 mb-4">
                     <Lock className="w-5 h-5 text-violet-400" />
-                    <span className="text-xs font-mono text-violet-400 uppercase tracking-widest">Premium Guide</span>
+                    <span className="text-xs font-bold font-mono text-violet-400 uppercase tracking-widest">Premium Guide</span>
                 </div>
                 <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mb-2">{guideName}</h3>
-                <p className="text-zinc-900 text-sm mb-6 max-w-md mx-auto">
+                <p className="text-zinc-900 text-sm font-semibold mb-6 max-w-md mx-auto">
                     Unlock full access to this guide including frameworks, templates, and actionable worksheets.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <button
                         onClick={() => setShowBundle(true)}
-                        className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm rounded-xl hover:opacity-90 transition-opacity"
+                        className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm font-semibold rounded-xl hover:opacity-90 transition-opacity"
                     >
                         Unlock for ${guidePrice} <ArrowRight className="w-4 h-4" />
                     </button>
                     <button
                         onClick={() => setShowBundle(true)}
-                        className="text-xs text-zinc-900 font-bold hover:text-zinc-900 transition-colors underline underline-offset-2"
+                        className="text-xs font-bold text-zinc-900 font-bold hover:text-zinc-900 transition-colors underline underline-offset-2"
                     >
                         Or bundle & save up to 60%
                     </button>
                 </div>
 
-                <div className="flex items-center justify-center gap-6 mt-6 text-xs font-medium text-zinc-950">
+                <div className="flex items-center justify-center gap-6 mt-6 text-xs font-bold font-medium text-zinc-950">
                     <span>✓ Instant access</span>
                     <span>✓ PDF download</span>
                     <span>✓ Future updates</span>

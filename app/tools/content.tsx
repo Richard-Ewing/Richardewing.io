@@ -64,11 +64,11 @@ const tools = [
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; glow: 'cyan' | 'danger' | 'gold' | 'cobalt' }> = {
-    red: { bg: 'bg-red-500/10', text: 'text-red-800 font-semibold', border: 'border-red-500/30', glow: 'danger' },
-    yellow: { bg: 'bg-yellow-500/10', text: 'text-yellow-800 font-semibold', border: 'border-yellow-500/30', glow: 'gold' },
-    cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-800 font-semibold', border: 'border-cyan-500/30', glow: 'cyan' },
-    purple: { bg: 'bg-purple-500/10', text: 'text-purple-800 font-semibold', border: 'border-purple-500/30', glow: 'cobalt' },
-    emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-800 font-semibold', border: 'border-emerald-500/30', glow: 'cyan' },
+    red: { bg: 'bg-red-500/10', text: 'text-red-900 font-extrabold font-semibold', border: 'border-red-500/30', glow: 'danger' },
+    yellow: { bg: 'bg-yellow-500/10', text: 'text-yellow-900 font-extrabold font-semibold', border: 'border-yellow-500/30', glow: 'gold' },
+    cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-900 font-extrabold font-semibold', border: 'border-cyan-500/30', glow: 'cyan' },
+    purple: { bg: 'bg-purple-500/10', text: 'text-purple-900 font-extrabold font-semibold', border: 'border-purple-500/30', glow: 'cobalt' },
+    emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-900 font-extrabold font-semibold', border: 'border-emerald-500/30', glow: 'cyan' },
 };
 
 export default function ToolsPage() {
@@ -77,7 +77,7 @@ export default function ToolsPage() {
             {/* Hero */}
             <ScrollReveal>
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-800 font-semibold text-xs font-mono uppercase tracking-widest mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-900 font-extrabold font-semibold text-xs font-bold font-mono uppercase tracking-widest mb-6">
                         <Star size={12} />
                         Free Diagnostic Tools
                     </div>
@@ -103,25 +103,25 @@ export default function ToolsPage() {
                                         <div className={`p-3 rounded-xl ${colors.bg}`}>
                                             <tool.icon className={`w-6 h-6 ${colors.text}`} />
                                         </div>
-                                        <span className={`font-mono text-xs ${colors.text} uppercase tracking-widest`}>
+                                        <span className={`font-mono text-xs font-bold ${colors.text} uppercase tracking-widest`}>
                                             {tool.acronym}
                                         </span>
                                     </div>
 
-                                    <h2 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-cyan-800 font-semibold transition-colors">
+                                    <h2 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">
                                         {tool.name}
                                     </h2>
                                     <p className={`text-sm font-semibold ${colors.text} mb-3`}>
                                         {tool.tagline}
                                     </p>
-                                    <p className="text-zinc-900 text-sm leading-relaxed mb-4">
+                                    <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">
                                         {tool.description}
                                     </p>
 
                                     {/* Metrics Preview */}
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {tool.metrics.map((metric, j) => (
-                                            <span key={j} className="px-2 py-1 bg-zinc-100 rounded text-xs font-medium font-mono text-zinc-800 uppercase">
+                                            <span key={j} className="px-2 py-1 bg-zinc-100 rounded text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase">
                                                 {metric}
                                             </span>
                                         ))}
@@ -140,7 +140,7 @@ export default function ToolsPage() {
             {/* Trust Section */}
             <ScrollReveal delay={400}>
                 <div className="text-center border-t border-zinc-400 pt-12">
-                    <p className="text-xs text-zinc-900 font-bold mb-4 uppercase tracking-widest">Trusted by product leaders at</p>
+                    <p className="text-xs font-bold text-zinc-900 font-bold mb-4 uppercase tracking-widest">Trusted by product leaders at</p>
                     <div className="flex items-center justify-center gap-8 text-zinc-950 font-mono text-sm">
                         <span>Stripe</span>
                         <span>Figma</span>

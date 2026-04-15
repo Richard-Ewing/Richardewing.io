@@ -62,7 +62,7 @@ export default function MethodologyPage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-4">Methodology</div>
+                        <div className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest mb-4">Methodology</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             How R&D Audits{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-rose-400">Work</span>
@@ -76,24 +76,24 @@ export default function MethodologyPage() {
                         {phases.map((p, i) => (
                             <div key={i} className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl font-bold text-cyan-800 font-semibold">{p.phase}</div>
+                                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl font-bold text-cyan-900 font-extrabold font-semibold">{p.phase}</div>
                                     <div className="flex-1">
                                         <h2 className="text-xl font-grotesk font-bold text-zinc-900">{p.title}</h2>
-                                        <span className="text-xs font-mono text-zinc-800 uppercase tracking-widest">{p.duration}</span>
+                                        <span className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest">{p.duration}</span>
                                     </div>
                                     <span className="text-3xl">{p.icon}</span>
                                 </div>
                                 <p className="text-zinc-900 mb-4">{p.description}</p>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <h3 className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Activities</h3>
+                                        <h3 className="text-sm font-semibold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Activities</h3>
                                         <ul className="space-y-1">
-                                            {p.activities.map((a, j) => <li key={j} className="text-sm text-zinc-950 flex items-start gap-2"><span className="text-cyan-500">→</span>{a}</li>)}
+                                            {p.activities.map((a, j) => <li key={j} className="text-sm font-semibold text-zinc-950 flex items-start gap-2"><span className="text-cyan-500">→</span>{a}</li>)}
                                         </ul>
                                     </div>
                                     <div>
-                                        <h3 className="text-sm font-mono text-emerald-500 uppercase tracking-widest mb-2">Deliverable</h3>
-                                        <p className="text-sm text-zinc-900 font-medium">{p.output}</p>
+                                        <h3 className="text-sm font-semibold font-mono text-emerald-500 uppercase tracking-widest mb-2">Deliverable</h3>
+                                        <p className="text-sm font-semibold text-zinc-900 font-medium">{p.output}</p>
                                     </div>
                                 </div>
                             </div>

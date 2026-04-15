@@ -19,13 +19,13 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
 
             {/* Header Content */}
             <div className="relative z-10 p-10 md:p-14 text-center border-b border-zinc-400 bg-zinc-50">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-600 font-mono text-xs uppercase tracking-widest mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-900 font-extrabold font-mono text-xs font-bold uppercase tracking-widest mb-6">
                     <ShieldCheck className="w-4 h-4" /> End of Free Sequence
                 </div>
                 <h2 className="text-3xl md:text-5xl font-grotesk font-bold text-zinc-900 mb-6">
                     Unlock <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-400 to-purple-500">Execution Fidelity</span>.
                 </h2>
-                <p className="text-lg text-zinc-800 max-w-2xl mx-auto mb-10">
+                <p className="text-lg text-zinc-950 font-bold max-w-2xl mx-auto mb-10">
                     You've seen the theory. The Vault contains the exact board-ready financial models, autonomous AI orchestration codes, and executive action playbooks that drive 8-figure valuation impacts.
                 </p>
 
@@ -35,10 +35,10 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                         <div className="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-[40px] pointer-events-none" />
                         <div className="relative z-10">
                             <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-5 border border-purple-500/30">
-                                <BarChart3 className="w-6 h-6 text-purple-600" />
+                                <BarChart3 className="w-6 h-6 text-purple-900 font-extrabold" />
                             </div>
                             <h4 className="text-zinc-900 font-bold font-grotesk text-lg mb-2">Executive Dashboards</h4>
-                            <p className="text-zinc-800 text-sm leading-relaxed">Generate deterministic, board-ready financial artifacts to justify CAPEX workflows immediately to your CFO.</p>
+                            <p className="text-zinc-950 font-bold text-sm font-semibold leading-relaxed">Generate deterministic, board-ready financial artifacts to justify CAPEX workflows immediately to your CFO.</p>
                         </div>
                     </div>
                     
@@ -47,10 +47,10 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                         <div className="absolute -top-10 -right-10 w-32 h-32 bg-cyan-500/20 rounded-full blur-[40px] pointer-events-none" />
                         <div className="relative z-10">
                             <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-5 border border-cyan-500/30">
-                                <Database className="w-6 h-6 text-cyan-600" />
+                                <Database className="w-6 h-6 text-cyan-900 font-extrabold" />
                             </div>
                             <h4 className="text-zinc-900 font-bold font-grotesk text-lg mb-2">Defensible Economics</h4>
-                            <p className="text-zinc-800 text-sm leading-relaxed">Replace heuristic guesswork with hard mathematical frameworks for build-vs-buy and SLA penalty negotiations.</p>
+                            <p className="text-zinc-950 font-bold text-sm font-semibold leading-relaxed">Replace heuristic guesswork with hard mathematical frameworks for build-vs-buy and SLA penalty negotiations.</p>
                         </div>
                     </div>
                     
@@ -59,10 +59,10 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                         <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-[40px] pointer-events-none" />
                         <div className="relative z-10">
                             <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-5 border border-emerald-500/30">
-                                <Zap className="w-6 h-6 text-emerald-600" />
+                                <Zap className="w-6 h-6 text-emerald-900 font-extrabold" />
                             </div>
                             <h4 className="text-zinc-900 font-bold font-grotesk text-lg mb-2">3-Step Playbooks</h4>
-                            <p className="text-zinc-800 text-sm leading-relaxed">Actionable remediation templates attached to every module to neutralize friction and drive instant deployment velocity.</p>
+                            <p className="text-zinc-950 font-bold text-sm font-semibold leading-relaxed">Actionable remediation templates attached to every module to neutralize friction and drive instant deployment velocity.</p>
                         </div>
                     </div>
                 </div>
@@ -75,11 +75,11 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                 
                 <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-600 font-mono text-xs font-medium uppercase tracking-widest mb-6">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-900 font-extrabold font-mono text-xs font-bold font-medium uppercase tracking-widest mb-6">
                             <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" /> Highly Classified Assets
                         </div>
                         <h3 className="text-3xl font-bold font-grotesk text-zinc-900">Engineering Intelligence Awaiting Extraction</h3>
-                        <p className="text-zinc-950 text-sm mt-3 max-w-xl mx-auto">No generic advice. No filler. Just uncompromising architectural truths and unit economic calculators.</p>
+                        <p className="text-zinc-950 text-sm font-semibold mt-3 max-w-xl mx-auto">No generic advice. No filler. Just uncompromising architectural truths and unit economic calculators.</p>
                     </div>
 
                     <div className="relative w-full aspect-[21/9] flex items-center justify-center -mt-10 perspective-[1000px] select-none pointer-events-none">
@@ -93,7 +93,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                     <Lock className="w-8 h-8 text-rose-500" />
                                 </div>
                                 <h4 className="text-2xl font-bold text-zinc-900 mb-4 relative z-10 tracking-tight">Vault Terminal Locked</h4>
-                                <p className="text-xs text-zinc-900 font-bold font-mono uppercase tracking-widest leading-relaxed relative z-10 bg-white/50 p-4 rounded-xl border border-zinc-400">
+                                <p className="text-xs font-bold text-zinc-900 font-bold font-mono uppercase tracking-widest leading-relaxed relative z-10 bg-white/50 p-4 rounded-xl border border-zinc-400">
                                     Awaiting authorization clearance. Unlock the module to decrypt architectural playbooks, P&L models, and deterministic diagnostic utilities.
                                 </p>
                             </div>
@@ -106,8 +106,8 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50" />
                                 <div className="flex items-center justify-between mb-6">
                                     <div className="flex items-center gap-2">
-                                        <Activity className="w-5 h-5 text-cyan-600" />
-                                        <div className="text-xs font-mono uppercase text-cyan-600 font-bold">Telemetry Stream</div>
+                                        <Activity className="w-5 h-5 text-cyan-900 font-extrabold" />
+                                        <div className="text-xs font-bold font-mono uppercase text-cyan-900 font-extrabold">Telemetry Stream</div>
                                     </div>
                                     <div className="flex gap-1">
                                         <div className="w-2 h-2 rounded-full bg-zinc-700" />
@@ -144,10 +144,10 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                             <div className="absolute right-[5%] top-[25%] w-[35%] h-[60%] bg-white border border-purple-500/20 rounded-2xl p-6 transform rotate-y-12 -rotate-z-3 shadow-2xl overflow-hidden backdrop-blur-md">
                                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
                                 <div className="flex items-center gap-3 mb-6 border-b border-zinc-400 pb-4">
-                                    <Network className="w-5 h-5 text-purple-600" />
-                                    <div className="text-xs font-mono uppercase text-zinc-800 tracking-widest">Inference Architecture</div>
+                                    <Network className="w-5 h-5 text-purple-900 font-extrabold" />
+                                    <div className="text-xs font-bold font-mono uppercase text-zinc-950 font-bold tracking-widest">Inference Architecture</div>
                                 </div>
-                                <div className="font-mono text-xs font-medium text-purple-900 font-bold space-y-2">
+                                <div className="font-mono text-xs font-bold font-medium text-purple-900 font-bold space-y-2">
                                     <div className="flex gap-4">
                                         <span className="text-zinc-950">01</span>
                                         <span className="text-emerald-600/50">import</span> <span>{'{ orchestrator }'}</span> <span className="text-emerald-600/50">from</span> <span className="text-amber-400/50">'@exogram/core'</span>;
@@ -180,7 +180,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                     </div>
                                 </div>
                                 <div className="absolute bottom-6 right-6 w-16 h-16 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center">
-                                    <Cpu className="w-8 h-8 text-purple-600" />
+                                    <Cpu className="w-8 h-8 text-purple-900 font-extrabold" />
                                 </div>
                             </div>
                             
@@ -188,7 +188,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                             <div className="absolute left-[30%] top-[5%] w-[40%] h-[20%] bg-zinc-50 border border-emerald-500/20 rounded-xl p-4 transform -translate-z-10 shadow-2xl flex items-center justify-between">
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                                        <LayoutTemplate className="w-5 h-5 text-emerald-600" />
+                                        <LayoutTemplate className="w-5 h-5 text-emerald-900 font-extrabold" />
                                     </div>
                                     <div>
                                         <div className="w-24 h-2 bg-white/20 rounded-full mb-2" />
@@ -196,7 +196,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                     </div>
                                 </div>
                                 <div className="w-16 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
-                                    <div className="text-[8px] text-emerald-600 font-mono uppercase font-bold tracking-widest">+ 340%</div>
+                                    <div className="text-[8px] text-emerald-900 font-extrabold font-mono uppercase font-bold tracking-widest">+ 340%</div>
                                 </div>
                             </div>
 
@@ -209,7 +209,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
             <div className="relative p-10 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <h3 className="text-xl font-bold font-grotesk text-zinc-900 mb-6 border-b border-zinc-400 pb-4 flex items-center gap-3">
-                        <FileText className="w-5 h-5 text-cyan-600" /> Module Syllabus
+                        <FileText className="w-5 h-5 text-cyan-900 font-extrabold" /> Module Syllabus
                     </h3>
                     
                     {lessons && lessons.length > 0 ? (
@@ -221,17 +221,17 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                             {idx % 2 === 0 ? <PlayCircle className="w-5 h-5 text-cyan-900 font-bold" /> : <Database className="w-5 h-5 text-purple-900 font-bold" />}
                                         </div>
                                         <div>
-                                            <h4 className="text-zinc-900 font-bold mb-1 group-hover/lock:text-cyan-600 transition-colors flex items-center gap-2">
+                                            <h4 className="text-zinc-900 font-bold mb-1 group-hover/lock:text-cyan-900 font-extrabold transition-colors flex items-center gap-2">
                                                 Lesson {idx + 1}: {lesson.title}
                                             </h4>
-                                            <p className="text-zinc-950 text-sm line-clamp-2 max-w-2xl">{lesson.content}</p>
+                                            <p className="text-zinc-950 text-sm font-semibold line-clamp-2 max-w-2xl">{lesson.content}</p>
                                         </div>
                                     </div>
                                     
                                     <div className="flex items-center gap-6 shrink-0 md:pl-6 md:border-l border-zinc-400">
                                         <div className="flex flex-col items-center gap-1 opacity-60">
                                             <Clock className="w-4 h-4 text-zinc-950" />
-                                            <span className="text-xs font-medium font-mono text-zinc-900">{15 + (idx * 5)} MIN</span>
+                                            <span className="text-xs font-bold font-medium font-mono text-zinc-900">{15 + (idx * 5)} MIN</span>
                                         </div>
                                         <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
                                             <Lock className="w-4 h-4 text-zinc-900" />
@@ -245,8 +245,8 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                         </div>
                     ) : (
                         <div className="bg-white/80 border border-zinc-400 rounded-2xl p-10 text-center">
-                            <Lock className="w-8 h-8 text-zinc-800 mx-auto mb-4" />
-                            <p className="text-zinc-950 font-mono text-sm uppercase">Curriculum data locked behind perimeter.</p>
+                            <Lock className="w-8 h-8 text-zinc-950 font-bold mx-auto mb-4" />
+                            <p className="text-zinc-950 font-mono text-sm font-semibold uppercase">Curriculum data locked behind perimeter.</p>
                         </div>
                     )}
                 </div>
@@ -256,8 +256,8 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                 
                 <div className="absolute inset-x-0 bottom-12 flex items-center justify-center z-20 pointer-events-none">
                     <div className="bg-cyan-50 backdrop-blur-xl border border-cyan-200 rounded-full px-6 py-3 flex items-center gap-3 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
-                        <ShieldCheck className="w-5 h-5 text-cyan-600" />
-                        <span className="text-cyan-600 font-mono uppercase tracking-widest text-sm font-bold shadow-cyan-400 drop-shadow-md">Encrypted Vault Asset</span>
+                        <ShieldCheck className="w-5 h-5 text-cyan-900 font-extrabold" />
+                        <span className="text-cyan-900 font-extrabold font-mono uppercase tracking-widest text-sm font-semibold font-bold shadow-cyan-400 drop-shadow-md">Encrypted Vault Asset</span>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@ const renderAIResponse = (text: string) => {
             const bulletContent = line.trim().replace(/^[•-]\s*/, '');
             return (
                 <div key={i} className="flex items-start gap-2 mb-2">
-                    <span className="text-cyan-800 font-semibold mt-0.5 shrink-0">•</span>
+                    <span className="text-cyan-900 font-extrabold font-semibold mt-0.5 shrink-0">•</span>
                     <span dangerouslySetInnerHTML={{ __html: bulletContent.replace(boldRegex, '<strong class="text-zinc-950 font-bold">$1</strong>') }} />
                 </div>
             );
@@ -88,14 +88,14 @@ const AIExpandCard = ({
             <div className="flex items-start gap-4">
                 <div className="text-3xl">{icon}</div>
                 <div className="flex-1">
-                    <div className={`font-mono text-xs font-medium ${labelColor} uppercase tracking-widest mb-1`}>{label}</div>
+                    <div className={`font-mono text-xs font-bold font-medium ${labelColor} uppercase tracking-widest mb-1`}>{label}</div>
                     <h3 className="text-zinc-950 font-bold text-lg mb-2">{title}</h3>
-                    <p className="text-zinc-900 text-sm leading-relaxed mb-3">{description}</p>
+                    <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-3">{description}</p>
 
                     <button
                         onClick={askAI}
                         disabled={loading}
-                        className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-800 font-semibold hover:text-zinc-900 transition group"
+                        className="flex items-center gap-2 text-xs font-bold font-mono uppercase tracking-widest text-cyan-900 font-extrabold font-semibold hover:text-zinc-900 transition group"
                     >
                         {loading ? (
                             <>
@@ -111,7 +111,7 @@ const AIExpandCard = ({
                     </button>
 
                     {expanded && aiResponse && (
-                        <div className="mt-4 pt-4 border-t border-zinc-400 text-sm text-zinc-950 leading-relaxed animate-fade-in-up">
+                        <div className="mt-4 pt-4 border-t border-zinc-400 text-sm font-semibold text-zinc-950 leading-relaxed animate-fade-in-up">
                             {renderAIResponse(aiResponse)}
                         </div>
                     )}
@@ -135,7 +135,7 @@ export default function PrincipalContent() {
 
                     {/* GEO: Entity Definition Block Schema integrated via wrapping but primarily for visual. Schema is in parent page. */}
                     <div className="relative" id="about-richard-ewing">
-                        <span className="font-mono text-cyan-800 font-semibold text-xs uppercase tracking-[0.3em] mb-6 block">The Principal</span>
+                        <span className="font-mono text-cyan-900 font-extrabold font-semibold text-xs font-bold uppercase tracking-[0.3em] mb-6 block">The Principal</span>
 
                         <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 items-start mb-8">
                             <div className="relative group shrink-0">
@@ -147,9 +147,9 @@ export default function PrincipalContent() {
                             </div>
                             <div>
                                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 mb-2">Richard Ewing</h1>
-                                <div className="font-mono text-sm text-zinc-900 font-medium uppercase tracking-widest mb-4">Product Economist</div>
+                                <div className="font-mono text-sm font-semibold text-zinc-900 font-medium uppercase tracking-widest mb-4">Product Economist</div>
                                 <p className="text-zinc-950 leading-relaxed text-base sm:text-lg">
-                                    Founder of <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-purple-800 font-semibold hover:text-purple-800 font-semibold transition">Exogram</a> and the executive who <span className="text-zinc-950 font-bold">turns bleeding product organizations into profit engines</span>.
+                                    Founder of <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-purple-900 font-extrabold font-semibold hover:text-purple-900 font-extrabold font-semibold transition">Exogram</a> and the executive who <span className="text-zinc-950 font-bold">turns bleeding product organizations into profit engines</span>.
                                     I do not manage backlogs. I manage P&Ls. I do not ship features. I ship ROI.
                                 </p>
                             </div>
@@ -158,28 +158,28 @@ export default function PrincipalContent() {
                         {/* Power Stats */}
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 border-t border-zinc-400 pt-8">
                             <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
-                                <div className="text-3xl sm:text-4xl font-bold text-cyan-800 font-semibold">
+                                <div className="text-3xl sm:text-4xl font-bold text-cyan-900 font-extrabold font-semibold">
                                     <NumberTicker value={25} prefix="$" suffix="M" />
                                 </div>
-                                <div className="text-xs font-medium sm:text-xs font-mono text-zinc-800 uppercase mt-1">ARR Scaled</div>
+                                <div className="text-xs font-bold font-medium sm:text-xs font-bold font-mono text-zinc-950 font-bold uppercase mt-1">ARR Scaled</div>
                             </div>
                             <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
                                 <div className="text-3xl sm:text-4xl font-bold text-zinc-900">
                                     <NumberTicker value={7} suffix="M+" />
                                 </div>
-                                <div className="text-xs font-medium sm:text-xs font-mono text-zinc-800 uppercase mt-1">Users Migrated</div>
+                                <div className="text-xs font-bold font-medium sm:text-xs font-bold font-mono text-zinc-950 font-bold uppercase mt-1">Users Migrated</div>
                             </div>
                             <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
                                 <div className="text-3xl sm:text-4xl font-bold text-cobalt">
                                     <NumberTicker value={5} prefix="$" suffix="M" />
                                 </div>
-                                <div className="text-xs font-medium sm:text-xs font-mono text-zinc-800 uppercase mt-1">Cost Reduced</div>
+                                <div className="text-xs font-bold font-medium sm:text-xs font-bold font-mono text-zinc-950 font-bold uppercase mt-1">Cost Reduced</div>
                             </div>
                             <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
                                 <div className="text-3xl sm:text-4xl font-bold text-gold">
                                     <NumberTicker value={200} suffix="%" />
                                 </div>
-                                <div className="text-xs font-medium sm:text-xs font-mono text-zinc-800 uppercase mt-1">Revenue Growth</div>
+                                <div className="text-xs font-bold font-medium sm:text-xs font-bold font-mono text-zinc-950 font-bold uppercase mt-1">Revenue Growth</div>
                             </div>
                         </div>
                     </div>
@@ -189,15 +189,15 @@ export default function PrincipalContent() {
             {/* Published In / Authority Badges */}
             <ScrollReveal delay={25}>
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8">
-                    <div className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-4 text-center">Published In & Featured By</div>
+                    <div className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest mb-4 text-center">Published In & Featured By</div>
                     <div className="flex flex-wrap justify-center gap-4">
                         {[
-                            { name: 'Built In', note: "Editor's Pick", href: 'https://builtin.com/authors/richard-ewing', color: 'text-cyan-800 font-semibold border-cyan-500/30 bg-cyan-500/5' },
-                            { name: 'Mind the Product', note: 'Featured Author', href: 'https://www.mindtheproduct.com/profile/richard-ewing', color: 'text-purple-800 font-semibold border-purple-500/30 bg-purple-500/5' },
-                            { name: 'HackerNoon', note: 'Contributing Author', href: 'https://hackernoon.com/u/richardewing', color: 'text-emerald-800 font-semibold border-emerald-500/30 bg-emerald-500/5' },
+                            { name: 'Built In', note: "Editor's Pick", href: 'https://builtin.com/authors/richard-ewing', color: 'text-cyan-900 font-extrabold font-semibold border-cyan-500/30 bg-cyan-500/5' },
+                            { name: 'Mind the Product', note: 'Featured Author', href: 'https://www.mindtheproduct.com/profile/richard-ewing', color: 'text-purple-900 font-extrabold font-semibold border-purple-500/30 bg-purple-500/5' },
+                            { name: 'HackerNoon', note: 'Contributing Author', href: 'https://hackernoon.com/u/richardewing', color: 'text-emerald-900 font-extrabold font-semibold border-emerald-500/30 bg-emerald-500/5' },
                             { name: 'Medium', note: 'Author', href: 'https://medium.com/@richardewing', color: 'text-zinc-950 border-zinc-500 bg-white/5' },
                             { name: 'Amazon', note: 'Published Author', href: 'https://www.amazon.com/author/richardewing', color: 'text-amber-400 border-amber-500/30 bg-amber-500/5' },
-                            { name: 'AWS Startups', note: 'Showcase Company', href: 'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5', color: 'text-orange-800 font-semibold border-orange-500/30 bg-orange-500/5' },
+                            { name: 'AWS Startups', note: 'Showcase Company', href: 'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5', color: 'text-orange-900 font-extrabold font-semibold border-orange-500/30 bg-orange-500/5' },
                         ].map(pub => (
                             <a
                                 key={pub.name}
@@ -207,7 +207,7 @@ export default function PrincipalContent() {
                                 className={`inline-flex flex-col items-center px-5 py-3 rounded-xl border transition-all hover:scale-105 ${pub.color}`}
                             >
                                 <span className="font-bold text-sm">{pub.name}</span>
-                                <span className="text-xs font-medium font-mono uppercase tracking-wider opacity-60 mt-0.5">{pub.note}</span>
+                                <span className="text-xs font-bold font-medium font-mono uppercase tracking-wider opacity-60 mt-0.5">{pub.note}</span>
                             </a>
                         ))}
                     </div>
@@ -217,7 +217,7 @@ export default function PrincipalContent() {
             {/* The Thesis */}
             <ScrollReveal delay={50}>
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-cyan-500">
-                    <div className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-3">The Thesis</div>
+                    <div className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest mb-3">The Thesis</div>
                     <p className="text-2xl sm:text-3xl text-zinc-950 font-bold leading-tight mb-4">
                         "Innovation without Operation<br />is Hallucination."
                     </p>
@@ -233,14 +233,14 @@ export default function PrincipalContent() {
                 <div className="mb-8">
                     <h2 className="text-xl sm:text-2xl font-bold text-zinc-950 mb-6 flex items-center gap-3">
                         <span className="w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-cobalt" /> Domain Expertise
-                        <span className="ml-auto text-xs font-medium font-mono text-cyan-900 font-bold uppercase">✦ AI-Enhanced</span>
+                        <span className="ml-auto text-xs font-bold font-medium font-mono text-cyan-900 font-bold uppercase">✦ AI-Enhanced</span>
                     </h2>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <AIExpandCard
                             icon="🎯"
                             label="Capital Auditing"
-                            labelColor="text-cyan-800 font-semibold"
+                            labelColor="text-cyan-900 font-extrabold font-semibold"
                             title="AI Unit Economics & Capital Auditing"
                             description={<>Identifying and eliminating <span className="text-zinc-950 font-bold">AI hallucination debt</span>, zombie infrastructure, and structural margin collapse in B2B SaaS environments.</>}
                             glowColor="cyan"
@@ -270,7 +270,7 @@ export default function PrincipalContent() {
                         <AIExpandCard
                             icon="🔥"
                             label="Turnaround Operations"
-                            labelColor="text-red-800 font-semibold"
+                            labelColor="text-red-900 font-extrabold font-semibold"
                             title="Revenue Resurrection Specialist"
                             description={<>Inherited stagnant P&L, drove <span className="text-zinc-950 font-bold">200% YoY growth to $20M</span>. Scaled SaaS from $0 to $25M ARR. <span className="text-gold">$5M cost reduction</span>.</>}
                             glowColor="danger"
@@ -290,22 +290,22 @@ export default function PrincipalContent() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="p-5 border border-zinc-400 rounded-xl hover:border-cyan-500/30 transition group">
-                            <div className="font-mono text-xs text-zinc-900 font-bold uppercase mb-2">Framework 01</div>
-                            <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-cyan-800 font-semibold transition">APER™ Diagnostic</h3>
+                            <div className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase mb-2">Framework 01</div>
+                            <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-cyan-900 font-extrabold font-semibold transition">APER™ Diagnostic</h3>
                             <p className="text-zinc-950 text-sm">Actionable Product Economic Review. Forensic audit of engineering throughput vs. revenue impact.</p>
                         </div>
                         <div className="p-5 border border-zinc-400 rounded-xl hover:border-cobalt/30 transition group">
-                            <div className="font-mono text-xs text-cobalt uppercase mb-2">Framework 02</div>
+                            <div className="font-mono text-xs font-bold text-cobalt uppercase mb-2">Framework 02</div>
                             <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-cobalt transition">Q-PEP™ Protocol</h3>
                             <p className="text-zinc-950 text-sm">Qualitative-Profitability Efficiency Protocol. Surgery for unit-economic insolvency.</p>
                         </div>
                         <div className="p-5 border border-zinc-400 rounded-xl hover:border-red-500/30 transition group">
-                            <div className="font-mono text-xs text-zinc-900 font-bold uppercase mb-2">Framework 03</div>
-                            <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-red-800 font-semibold transition">Product Debt Index™</h3>
+                            <div className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase mb-2">Framework 03</div>
+                            <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-red-900 font-extrabold font-semibold transition">Product Debt Index™</h3>
                             <p className="text-zinc-950 text-sm">AI-powered forensic engine to quantify capital leakage in your backlog.</p>
                         </div>
                         <div className="p-5 border border-zinc-400 rounded-xl hover:border-gold/30 transition group">
-                            <div className="font-mono text-xs text-gold uppercase mb-2">Framework 04</div>
+                            <div className="font-mono text-xs font-bold text-gold uppercase mb-2">Framework 04</div>
                             <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-gold transition">The Product Economist™</h3>
                             <p className="text-zinc-950 text-sm">15+ years of methodology distilled into an executive playbook. <span className="italic">O'Reilly book in progress.</span></p>
                         </div>
@@ -321,14 +321,14 @@ export default function PrincipalContent() {
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="p-4 border border-zinc-400 rounded-xl hover:border-gold/30 transition group">
-                            <div className="font-mono text-xs text-gold uppercase mb-1">Master of Business Administration</div>
+                            <div className="font-mono text-xs font-bold text-gold uppercase mb-1">Master of Business Administration</div>
                             <div className="text-zinc-950 font-bold group-hover:text-gold transition">City University of Seattle</div>
-                            <div className="text-zinc-800 text-xs mt-1">Finance Concentration</div>
+                            <div className="text-zinc-950 font-bold text-xs font-bold mt-1">Finance Concentration</div>
                         </div>
                         <div className="p-4 border border-zinc-400 rounded-xl hover:border-cobalt/30 transition group">
-                            <div className="font-mono text-xs text-cobalt uppercase mb-1">Bachelor of Science</div>
+                            <div className="font-mono text-xs font-bold text-cobalt uppercase mb-1">Bachelor of Science</div>
                             <div className="text-zinc-950 font-bold group-hover:text-cobalt transition">Computer Science</div>
-                            <div className="text-zinc-800 text-xs mt-1">Technical Foundation</div>
+                            <div className="text-zinc-950 font-bold text-xs font-bold mt-1">Technical Foundation</div>
                         </div>
                     </div>
                 </div>
@@ -341,7 +341,7 @@ export default function PrincipalContent() {
                     <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
                         <Link
                             href="/advisory"
-                            className="inline-block bg-white text-black font-bold uppercase text-sm px-10 py-4 tracking-widest hover:bg-cyan-400 transition-colors"
+                            className="inline-block bg-white text-black font-bold uppercase text-sm font-semibold px-10 py-4 tracking-widest hover:bg-cyan-400 transition-colors"
                         >
                             View Intervention Protocols →
                         </Link>

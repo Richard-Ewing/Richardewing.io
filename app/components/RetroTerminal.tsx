@@ -70,8 +70,8 @@ AUTHOR
                 className="group flex items-center gap-3 px-5 py-3 bg-white/60 border border-green-500/30 rounded-lg hover:border-green-500/60 hover:bg-white/80 transition-all font-mono text-sm"
             >
                 <span className="text-green-500 opacity-70 group-hover:opacity-100 transition-opacity">&gt;_</span>
-                <span className="text-green-400 group-hover:text-green-800 font-bold transition-colors">Terminal Mode</span>
-                <span className="text-green-500/40 text-xs ml-2">Click to activate</span>
+                <span className="text-green-400 group-hover:text-green-900 font-extrabold transition-colors">Terminal Mode</span>
+                <span className="text-green-500/40 text-xs font-bold ml-2">Click to activate</span>
             </button>
         );
     }
@@ -84,9 +84,9 @@ AUTHOR
                     <div className="w-3 h-3 rounded-full bg-red-500/80" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                     <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                    <span className="ml-3 text-green-400/60 text-xs font-mono">richardewing.io — glossary terminal</span>
+                    <span className="ml-3 text-green-400/60 text-xs font-bold font-mono">richardewing.io — glossary terminal</span>
                 </div>
-                <button onClick={() => setIsOpen(false)} className="text-green-400/60 hover:text-green-400 text-xs font-mono transition-colors">
+                <button onClick={() => setIsOpen(false)} className="text-green-400/60 hover:text-green-400 text-xs font-bold font-mono transition-colors">
                     [× CLOSE]
                 </button>
             </div>
@@ -100,7 +100,7 @@ AUTHOR
             {/* Terminal content */}
             <div
                 ref={terminalRef}
-                className="bg-white/95 p-6 font-mono text-sm text-zinc-900 font-medium leading-relaxed max-h-[500px] overflow-y-auto whitespace-pre-wrap"
+                className="bg-white/95 p-6 font-mono text-sm font-semibold text-zinc-900 font-medium leading-relaxed max-h-[500px] overflow-y-auto whitespace-pre-wrap"
                 style={{
                     textShadow: '0 0 5px rgba(0,255,0,0.3)',
                 }}

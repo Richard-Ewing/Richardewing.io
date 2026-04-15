@@ -25,8 +25,8 @@ export default function PDIvsSonarQubePage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/compare" className="hover:text-cyan-800 font-semibold">Compare</Link><span>/</span><span className="text-cyan-800 font-semibold font-bold">PDI vs SonarQube</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/compare" className="hover:text-cyan-900 font-extrabold font-semibold">Compare</Link><span>/</span><span className="text-cyan-900 font-extrabold font-semibold font-bold">PDI vs SonarQube</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
@@ -42,17 +42,17 @@ export default function PDIvsSonarQubePage() {
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr className="border-b border-zinc-400">
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-800 uppercase tracking-widest">Dimension</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-cyan-800 font-semibold uppercase tracking-widest">PDI</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-900 uppercase tracking-widest">SonarQube</th>
+                                    <th className="text-left py-4 px-4 text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest">Dimension</th>
+                                    <th className="text-left py-4 px-4 text-xs font-bold font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest">PDI</th>
+                                    <th className="text-left py-4 px-4 text-xs font-bold font-mono text-zinc-900 uppercase tracking-widest">SonarQube</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
                                     <tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50">
-                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium font-bold">{row.dimension}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.pdi}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.sonar}</td>
+                                        <td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium font-bold">{row.dimension}</td>
+                                        <td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium">{row.pdi}</td>
+                                        <td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium">{row.sonar}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -77,7 +77,7 @@ export default function PDIvsSonarQubePage() {
                     {/* CTA */}
                     <div className="text-center py-12 border-t border-zinc-400">
                         <p className="text-zinc-900 mb-4">Need the full picture?</p>
-                        <Link href="/advisory" className="text-cyan-800 font-semibold hover:text-cyan-800 font-semibold font-bold uppercase tracking-widest text-sm">
+                        <Link href="/advisory" className="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
                             Book a $2,500 Insolvency Diagnostic →
                         </Link>
                     </div>

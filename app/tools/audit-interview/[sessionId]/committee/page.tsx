@@ -24,7 +24,7 @@ const RadarChart = ({ scores }: { scores: any[] }) => {
     });
 
     const entries = Object.entries(finalScores);
-    if (entries.length < 3) return <div className="text-zinc-700 text-xs">Insufficient data for geometry</div>;
+    if (entries.length < 3) return <div className="text-zinc-950 font-bold text-xs">Insufficient data for geometry</div>;
 
     const scale = (val: number) => 10 + (val / 3) * 80;
     const points = entries.map(([key, val], i) => {
@@ -88,7 +88,7 @@ export default function CommitteeDashboard() {
         fetchData();
     }, [sessionId, router]);
 
-    if (loading || !data) return <div className="p-10 text-center text-zinc-700 font-mono">Loading Committee Dossier...</div>;
+    if (loading || !data) return <div className="p-10 text-center text-zinc-950 font-bold font-mono">Loading Committee Dossier...</div>;
 
     const { session, analytics } = data;
 
@@ -101,18 +101,18 @@ export default function CommitteeDashboard() {
                         <div>
                             <div className="flex items-center gap-2 mb-4">
                                 <div className="bg-red-500/10 border border-red-500/20 px-3 py-1 rounded-full flex items-center gap-2">
-                                    <Lock size={12} className="text-red-800 font-semibold" />
-                                    <span className="font-mono text-xs font-medium text-red-800 font-semibold uppercase tracking-widest">Session Locked</span>
+                                    <Lock size={12} className="text-red-900 font-extrabold font-semibold" />
+                                    <span className="font-mono text-xs font-bold font-medium text-red-900 font-extrabold font-semibold uppercase tracking-widest">Session Locked</span>
                                 </div>
-                                <span className="font-mono text-zinc-800 text-xs font-medium uppercase tracking-widest">{session.session_id}</span>
+                                <span className="font-mono text-zinc-950 font-bold text-xs font-bold font-medium uppercase tracking-widest">{session.session_id}</span>
                             </div>
                             <h1 className="text-3xl sm:text-5xl font-bold text-zinc-950 tracking-tight mb-2">Committee Dashboard</h1>
-                            <p className="text-zinc-600 text-sm">
+                            <p className="text-zinc-950 font-bold text-sm">
                                 Hiring Decision for <span className="text-zinc-950 font-bold">{session.role.toUpperCase()}</span> Candidate
                             </p>
                         </div>
                         <div className="text-right hidden sm:block">
-                            <div className="text-xs font-medium font-mono text-zinc-700 uppercase tracking-widest mb-1">Interviewer</div>
+                            <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-1">Interviewer</div>
                             <div className="text-zinc-950 font-mono bg-zinc-100 px-3 py-1 rounded-lg border border-zinc-400">{session.interviewer_id}</div>
                         </div>
                     </div>
@@ -123,13 +123,13 @@ export default function CommitteeDashboard() {
                 {/* Left: Verdict */}
                 <ScrollReveal delay={100}>
                     <GlowCard className="p-8 h-full flex flex-col items-center justify-center text-center" glowColor={analytics.verdict.includes('Strong') ? 'emerald' : 'danger'}>
-                        <div className="text-xs font-mono text-zinc-700 uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
-                        <div className={`text-5xl lg:text-6xl font-bold tracking-tighter mb-6 ${analytics.verdict.includes('Hire') && !analytics.verdict.includes('No') ? 'text-emerald-800 font-semibold' : 'text-red-500'
+                        <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
+                        <div className={`text-5xl lg:text-6xl font-bold tracking-tighter mb-6 ${analytics.verdict.includes('Hire') && !analytics.verdict.includes('No') ? 'text-emerald-900 font-extrabold font-semibold' : 'text-red-500'
                             }`}>
                             {analytics.verdict}
                         </div>
                         <div className="border-t border-zinc-400 pt-6 w-full">
-                            <p className="text-zinc-600 text-sm italic leading-relaxed">
+                            <p className="text-zinc-950 font-bold text-sm font-semibold italic leading-relaxed">
                                 "{analytics.rationale}"
                             </p>
                         </div>
@@ -139,7 +139,7 @@ export default function CommitteeDashboard() {
                 {/* Center: Radar */}
                 <ScrollReveal delay={200}>
                     <div className="bg-zinc-100 border border-zinc-400 rounded-2xl p-6 flex flex-col items-center justify-center h-full relative">
-                        <span className="absolute top-4 left-4 text-xs font-medium font-mono text-zinc-700 uppercase tracking-widest">Attribute Geometry</span>
+                        <span className="absolute top-4 left-4 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">Attribute Geometry</span>
                         <div className="w-64 h-64">
                             <RadarChart scores={analytics.scores} />
                         </div>
@@ -149,15 +149,15 @@ export default function CommitteeDashboard() {
                 {/* Right: Scores List */}
                 <ScrollReveal delay={300}>
                     <div className="bg-zinc-100 border border-zinc-400 rounded-2xl p-6 h-full overflow-y-auto max-h-[400px]">
-                        <span className="text-xs font-medium font-mono text-zinc-700 uppercase tracking-widest block mb-4">Score Audit</span>
+                        <span className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest block mb-4">Score Audit</span>
                         <div className="space-y-4">
                             {analytics.scores.map((s: any, i: number) => (
                                 <div key={i} className="border-b border-zinc-400 last:border-0 pb-4 last:pb-0">
                                     <div className="flex justify-between items-start mb-1">
-                                        <span className="text-xs text-zinc-900 font-bold font-bold uppercase">{s.dimension.replace(/_/g, ' ')}</span>
-                                        <span className={`font-mono text-xs font-bold ${s.score > 2 ? 'text-emerald-800 font-semibold' : 'text-zinc-900'}`}>{s.score}/3</span>
+                                        <span className="text-xs font-bold text-zinc-900 font-bold uppercase">{s.dimension.replace(/_/g, ' ')}</span>
+                                        <span className={`font-mono text-xs font-bold ${s.score > 2 ? 'text-emerald-900 font-extrabold font-semibold' : 'text-zinc-900'}`}>{s.score}/3</span>
                                     </div>
-                                    <p className="text-xs font-medium text-zinc-700 italic">"{s.rationale}"</p>
+                                    <p className="text-xs font-bold font-medium text-zinc-950 font-bold italic">"{s.rationale}"</p>
                                 </div>
                             ))}
                         </div>
@@ -174,7 +174,7 @@ export default function CommitteeDashboard() {
                     </h3>
                     <div className="space-y-2">
                         {/* Assuming we log the questions shown - for now we just show the count or list from question bank if we tracked them specifically per session */}
-                        <div className="p-4 bg-zinc-100 rounded-lg text-sm text-zinc-900 font-medium font-mono">
+                        <div className="p-4 bg-zinc-100 rounded-lg text-sm font-semibold text-zinc-900 font-medium font-mono">
                             Transcript available in full dossier export.
                         </div>
                     </div>

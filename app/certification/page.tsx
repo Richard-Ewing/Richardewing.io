@@ -40,16 +40,16 @@ export default function CertificationPage() {
         <main className="pt-20">
             <div className="page-container">
                 <section className="section-lg text-center">
-                    <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Professional Certification</div>
+                    <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Professional Certification</div>
                     <h1 className="text-4xl md:text-6xl font-bold text-zinc-950 mb-6 font-grotesk">
                         Certified Product<br />
                         <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Economist.</span>
                     </h1>
-                    <p className="text-zinc-800 text-lg max-w-2xl mx-auto mb-4">
+                    <p className="text-zinc-950 font-bold text-lg max-w-2xl mx-auto mb-4">
                         The only professional credential in product economics.
                         Master the methodology. Earn the title.
                     </p>
-                    <p className="text-zinc-800 text-sm max-w-lg mx-auto mb-8">
+                    <p className="text-zinc-950 font-bold text-sm font-semibold max-w-lg mx-auto mb-8">
                         48 hours of instruction · 12 modules · Live capstone review · Credential valid for 2 years
                     </p>
 
@@ -68,7 +68,7 @@ export default function CertificationPage() {
                                 <div className="flex-1">
                                     <div className="flex items-center justify-between mb-1">
                                         <h3 className="text-lg font-bold text-zinc-900">{mod.title}</h3>
-                                        <span className="text-xs text-zinc-900 font-bold font-mono">{mod.hours}</span>
+                                        <span className="text-xs font-bold text-zinc-900 font-bold font-mono">{mod.hours}</span>
                                     </div>
                                     <p className="text-zinc-900 text-sm">{mod.desc}</p>
                                 </div>
@@ -101,13 +101,13 @@ export default function CertificationPage() {
 
                     <div className="card p-8 md:p-12 border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-transparent text-center">
                         <div className="text-3xl font-bold text-zinc-950 mb-2">$1,500</div>
-                        <p className="text-zinc-950 text-sm mb-6">Per certification · Payment plans available</p>
+                        <p className="text-zinc-950 text-sm font-semibold mb-6">Per certification · Payment plans available</p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a
                                 href="/api/buy/certification"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold uppercase tracking-widest text-sm rounded-xl transition-all"
+                                className="inline-flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all"
                             >
                                 Reserve Your Spot — $1,500 <ArrowRight className="w-4 h-4" />
                             </a>
@@ -115,12 +115,12 @@ export default function CertificationPage() {
                                 href="https://theproducteconomist.beehiiv.com/subscribe"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-6 py-3 border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"
+                                className="inline-flex items-center gap-2 px-6 py-3 border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all"
                             >
                                 Just Join Waitlist
                             </a>
                         </div>
-                        <p className="text-xs font-medium text-zinc-800 mt-4">Cohort 1 opens Q3 2026. Pay now to secure priority enrollment.</p>
+                        <p className="text-xs font-bold font-medium text-zinc-950 font-bold mt-4">Cohort 1 opens Q3 2026. Pay now to secure priority enrollment.</p>
                     </div>
                 </section>
 

@@ -41,8 +41,8 @@ export default function InsurTechPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/industries" className="hover:text-cyan-800 font-semibold">Industries</Link><span>/</span><span className="text-amber-400 font-bold">InsurTech</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/industries" className="hover:text-cyan-900 font-extrabold font-semibold">Industries</Link><span>/</span><span className="text-amber-400 font-bold">InsurTech</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Product Economics for{' '}
@@ -59,7 +59,7 @@ export default function InsurTechPage() {
                                     <div className="flex-1">
                                         <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-2">{c.title}</h2>
                                         <p className="text-zinc-900 mb-3">{c.description}</p>
-                                        <span className="text-xs font-mono text-amber-400 uppercase tracking-widest">{c.metric}</span>
+                                        <span className="text-xs font-bold font-mono text-amber-400 uppercase tracking-widest">{c.metric}</span>
                                     </div>
                                 </div>
                             </div>

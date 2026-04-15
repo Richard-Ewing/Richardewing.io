@@ -21,8 +21,8 @@ export default function HealthTechPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/industries" className="hover:text-cyan-800 font-semibold">Industries</Link><span>/</span><span className="text-blue-800 font-semibold font-bold">HealthTech</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/industries" className="hover:text-cyan-900 font-extrabold font-semibold">Industries</Link><span>/</span><span className="text-blue-900 font-extrabold font-semibold font-bold">HealthTech</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
@@ -46,10 +46,10 @@ export default function HealthTechPage() {
                     <div className="rounded-2xl border border-blue-500/30 bg-blue-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">How I Help HealthTech Companies</h2>
                         <ul className="space-y-3 text-zinc-950 mb-8">
-                            <li className="flex items-start gap-3"><span className="text-blue-800 font-semibold mt-1">→</span> <span>Quantify HIPAA-driven technical debt and compliance carry costs</span></li>
-                            <li className="flex items-start gap-3"><span className="text-blue-800 font-semibold mt-1">→</span> <span>Audit clinical AI models for regulatory defensibility (FDA SaMD)</span></li>
-                            <li className="flex items-start gap-3"><span className="text-blue-800 font-semibold mt-1">→</span> <span>Calculate the economic impact of interoperability mandates on engineering capacity</span></li>
-                            <li className="flex items-start gap-3"><span className="text-blue-800 font-semibold mt-1">→</span> <span>Design validation-friendly architecture that minimizes rework</span></li>
+                            <li className="flex items-start gap-3"><span className="text-blue-900 font-extrabold font-semibold mt-1">→</span> <span>Quantify HIPAA-driven technical debt and compliance carry costs</span></li>
+                            <li className="flex items-start gap-3"><span className="text-blue-900 font-extrabold font-semibold mt-1">→</span> <span>Audit clinical AI models for regulatory defensibility (FDA SaMD)</span></li>
+                            <li className="flex items-start gap-3"><span className="text-blue-900 font-extrabold font-semibold mt-1">→</span> <span>Calculate the economic impact of interoperability mandates on engineering capacity</span></li>
+                            <li className="flex items-start gap-3"><span className="text-blue-900 font-extrabold font-semibold mt-1">→</span> <span>Design validation-friendly architecture that minimizes rework</span></li>
                         </ul>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>

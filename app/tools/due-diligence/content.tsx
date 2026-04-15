@@ -38,7 +38,7 @@ const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: 
     <div className={`relative overflow-hidden rounded-2xl border border-zinc-400 bg-white/60 p-6 backdrop-blur-md ${className}`}>
         <div className="flex items-center gap-2 mb-4 text-zinc-900">
             {Icon && <Icon size={14} />}
-            <span className="text-xs font-medium font-mono uppercase tracking-widest">{title}</span>
+            <span className="text-xs font-bold font-medium font-mono uppercase tracking-widest">{title}</span>
         </div>
         {children}
     </div>
@@ -297,10 +297,10 @@ export default function DueDiligenceTool() {
     };
 
     const getRiskStatus = (score: number) => {
-        if (score >= 80) return { text: 'CRITICAL RISK', color: 'text-red-600', sub: 'Do not acquire without heavy impairment.' };
+        if (score >= 80) return { text: 'CRITICAL RISK', color: 'text-red-900 font-extrabold', sub: 'Do not acquire without heavy impairment.' };
         if (score >= 50) return { text: 'HIGH RISK', color: 'text-orange-500', sub: 'Significant tech debt. Mandate holdbacks.' };
-        if (score >= 30) return { text: 'MODERATE', color: 'text-yellow-800 font-semibold', sub: 'Standard integration friction expected.' };
-        return { text: 'CLEAN BILL OF HEALTH', color: 'text-emerald-800 font-semibold', sub: 'Strong engineering fundamentals.' };
+        if (score >= 30) return { text: 'MODERATE', color: 'text-yellow-900 font-extrabold font-semibold', sub: 'Standard integration friction expected.' };
+        return { text: 'CLEAN BILL OF HEALTH', color: 'text-emerald-900 font-extrabold font-semibold', sub: 'Strong engineering fundamentals.' };
     };
 
     const formatMoney = (num: number) => {
@@ -310,7 +310,7 @@ export default function DueDiligenceTool() {
     };
 
     return (
-        <div className="min-h-screen bg-white text-zinc-800 selection:bg-cyan-500/30 font-sans">
+        <div className="min-h-screen bg-white text-zinc-950 font-bold selection:bg-cyan-500/30 font-sans">
             <ToolCelebration show={!!results} toolName="Due Diligence Diagnostics" />
             
             {/* MONETIZATION ENGINE: PAYWALL MODAL ($999 TIER) */}
@@ -322,18 +322,18 @@ export default function DueDiligenceTool() {
                         
                         <div className="relative z-10">
                             <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mb-6 border border-red-500/20">
-                                <Lock className="w-5 h-5 text-red-800 font-semibold" />
+                                <Lock className="w-5 h-5 text-red-900 font-extrabold font-semibold" />
                             </div>
                             
                             <h3 className="text-3xl font-bold text-zinc-950 mb-2 font-grotesk tracking-tight">Enterprise Scanner Locked.</h3>
-                            <p className="text-zinc-900 text-sm mb-6 leading-relaxed">
+                            <p className="text-zinc-900 text-sm font-semibold mb-6 leading-relaxed">
                                 This is a professional-grade M&A execution tool. Full access requires the Private Equity Intelligence Tier. 
                             </p>
                             
                             <div className="bg-white/5 border border-zinc-400 rounded-xl p-4 mb-6">
-                                <div className="text-sm font-bold text-zinc-950 mb-2 text-center">Private Equity Pass</div>
-                                <div className="text-3xl font-bold text-cyan-800 font-semibold text-center mb-4">$999<span className="text-sm text-zinc-950 font-normal">/yr</span></div>
-                                <ul className="text-xs font-medium text-zinc-900 space-y-2 font-mono uppercase tracking-widest">
+                                <div className="text-sm font-semibold font-bold text-zinc-950 mb-2 text-center">Private Equity Pass</div>
+                                <div className="text-3xl font-bold text-cyan-900 font-extrabold font-semibold text-center mb-4">$999<span className="text-sm font-semibold text-zinc-950 font-normal">/yr</span></div>
+                                <ul className="text-xs font-bold font-medium text-zinc-900 space-y-2 font-mono uppercase tracking-widest">
                                     <li className="flex items-center gap-2">• Unlimited M&A PDF Exports</li>
                                     <li className="flex items-center gap-2">• Q-PEP Remediation Roadmaps</li>
                                     <li className="flex items-center gap-2">• CISO Dashboard Access</li>
@@ -341,12 +341,12 @@ export default function DueDiligenceTool() {
                             </div>
 
                             <div className="space-y-3">
-                                <a href="/api/buy/pe_intelligence_tier" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-xs rounded-xl transition-all shadow-lg">
+                                <a href="/api/buy/pe_intelligence_tier" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all shadow-lg">
                                     Upgrade to PE Tier
                                 </a>
                                 <button 
                                     onClick={() => setShowPaywall(false)} 
-                                    className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-900 font-bold uppercase tracking-widest text-xs rounded-xl transition-all"
+                                    className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-900 font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all"
                                 >
                                     Dismiss
                                 </button>
@@ -361,9 +361,9 @@ export default function DueDiligenceTool() {
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_#dc2626]" />
-                        <span className="font-bold tracking-tight text-lg">M&A DILIGENCE <span className="text-zinc-800 font-normal">| Enterprise Scanner</span></span>
+                        <span className="font-bold tracking-tight text-lg">M&A DILIGENCE <span className="text-zinc-950 font-bold font-normal">| Enterprise Scanner</span></span>
                     </div>
-                    <Link href="/advisory" className="flex items-center gap-2 text-xs font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest">
+                    <Link href="/advisory" className="flex items-center gap-2 text-xs font-bold font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest">
                         <ShieldAlert size={12} />
                         Request Deep Audit
                     </Link>
@@ -385,14 +385,14 @@ export default function DueDiligenceTool() {
 
                             {/* PERSONA SELECTOR */}
                             <div className="mb-8">
-                                <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-3">Firm Type</div>
+                                <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-3">Firm Type</div>
                                 <div className="flex flex-wrap gap-2">
                                     {PROFILES.map(p => (
                                         <button
                                             key={p.id}
                                             onClick={() => setProfile(p.id)}
                                             className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${profile === p.id
-                                                ? 'bg-red-500/10 border-red-500 text-red-800 font-semibold'
+                                                ? 'bg-red-500/10 border-red-500 text-red-900 font-extrabold font-semibold'
                                                 : 'bg-white/80 border-zinc-400 text-zinc-900 hover:border-white/30'
                                                 }`}
                                         >
@@ -411,28 +411,28 @@ export default function DueDiligenceTool() {
                                 {step === 1 && (
                                     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8 mt-2">
                                         <div>
-                                            <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Financial & Team Baseline</div>
+                                            <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-4">Financial & Team Baseline</div>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div>
-                                                    <label className="text-xs font-mono text-red-800 font-semibold uppercase tracking-widest mb-2 block">Target ARR</label>
+                                                    <label className="text-xs font-bold font-mono text-red-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">Target ARR</label>
                                                     <div className="relative">
                                                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
                                                         <input type="number" title="Target ARR" aria-label="Target ARR" value={arr} onChange={(e) => setArr(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 pl-7 text-zinc-950 font-mono focus:border-red-500 focus:outline-none" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <label className="text-xs font-mono text-red-800 font-semibold uppercase tracking-widest mb-2 block">Monthly Cloud Spend</label>
+                                                    <label className="text-xs font-bold font-mono text-red-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">Monthly Cloud Spend</label>
                                                     <div className="relative">
                                                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
                                                         <input type="number" title="Monthly Cloud Spend" aria-label="Monthly Cloud Spend" value={cloudSpend} onChange={(e) => setCloudSpend(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 pl-7 text-zinc-950 font-mono focus:border-red-500 focus:outline-none" />
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <label className="text-xs font-mono text-red-800 font-semibold uppercase tracking-widest mb-2 block">Total Engineering Headcount</label>
+                                                    <label className="text-xs font-bold font-mono text-red-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">Total Engineering Headcount</label>
                                                     <input type="number" title="Total Engineering Headcount" aria-label="Total Engineering Headcount" value={engineers} onChange={(e) => setEngineers(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-red-500 focus:outline-none" />
                                                 </div>
                                                 <div>
-                                                    <label className="text-xs font-mono text-red-800 font-semibold uppercase tracking-widest mb-2 block">Codebase Age (Years)</label>
+                                                    <label className="text-xs font-bold font-mono text-red-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">Codebase Age (Years)</label>
                                                     <input type="number" title="Codebase Age (Years)" aria-label="Codebase Age (Years)" value={codebaseAge} onChange={(e) => setCodebaseAge(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 text-zinc-950 font-mono focus:border-red-500 focus:outline-none" />
                                                 </div>
                                             </div>
@@ -444,28 +444,28 @@ export default function DueDiligenceTool() {
                                 {step === 2 && (
                                     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-8 mt-2">
                                         <div>
-                                            <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Architecture & Compliance</div>
+                                            <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-4">Architecture & Compliance</div>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 
                                                 {/* Checkboxes */}
-                                                <button onClick={() => setMonolith(!monolith)} className={`text-left p-4 rounded-xl border transition-all ${monolith ? 'bg-orange-500/10 border-orange-500/50 text-orange-800 font-semibold' : 'bg-white/50 border-zinc-400 text-zinc-800'}`}>
+                                                <button onClick={() => setMonolith(!monolith)} className={`text-left p-4 rounded-xl border transition-all ${monolith ? 'bg-orange-500/10 border-orange-500/50 text-orange-900 font-extrabold font-semibold' : 'bg-white/50 border-zinc-400 text-zinc-950 font-bold'}`}>
                                                     <div className="font-bold mb-1 flex items-center gap-2"><Code size={16}/> Monolithic Architecture</div>
-                                                    <div className="text-xs opacity-70">App is primarily a single large codebase rather than isolated services.</div>
+                                                    <div className="text-xs font-bold opacity-70">App is primarily a single large codebase rather than isolated services.</div>
                                                 </button>
                                                 
-                                                <button onClick={() => setHeavyAiDependency(!heavyAiDependency)} className={`text-left p-4 rounded-xl border transition-all ${heavyAiDependency ? 'bg-red-500/10 border-red-500/50 text-red-800 font-semibold' : 'bg-white/50 border-zinc-400 text-zinc-800'}`}>
+                                                <button onClick={() => setHeavyAiDependency(!heavyAiDependency)} className={`text-left p-4 rounded-xl border transition-all ${heavyAiDependency ? 'bg-red-500/10 border-red-500/50 text-red-900 font-extrabold font-semibold' : 'bg-white/50 border-zinc-400 text-zinc-950 font-bold'}`}>
                                                     <div className="font-bold mb-1 flex items-center gap-2"><BrainCircuit size={16}/> Heavy AI Dependency</div>
-                                                    <div className="text-xs opacity-70">Core product loops rely entirely on 3rd-party LLM APIs (OpenAI/Anthropic).</div>
+                                                    <div className="text-xs font-bold opacity-70">Core product loops rely entirely on 3rd-party LLM APIs (OpenAI/Anthropic).</div>
                                                 </button>
 
-                                                <button onClick={() => setHasCompliance(!hasCompliance)} className={`text-left p-4 rounded-xl border transition-all ${hasCompliance ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-800 font-semibold' : 'bg-white/50 border-zinc-400 text-zinc-800'}`}>
+                                                <button onClick={() => setHasCompliance(!hasCompliance)} className={`text-left p-4 rounded-xl border transition-all ${hasCompliance ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-900 font-extrabold font-semibold' : 'bg-white/50 border-zinc-400 text-zinc-950 font-bold'}`}>
                                                     <div className="font-bold mb-1 flex items-center gap-2"><ShieldAlert size={16}/> SOC2 / ISO Compliant</div>
-                                                    <div className="text-xs opacity-70">Firm has independently audited active compliance certificates.</div>
+                                                    <div className="text-xs font-bold opacity-70">Firm has independently audited active compliance certificates.</div>
                                                 </button>
 
-                                                <button onClick={() => setHasOffshore(!hasOffshore)} className={`text-left p-4 rounded-xl border transition-all ${hasOffshore ? 'bg-yellow-500/10 border-yellow-500/50 text-yellow-500' : 'bg-white/50 border-zinc-400 text-zinc-800'}`}>
+                                                <button onClick={() => setHasOffshore(!hasOffshore)} className={`text-left p-4 rounded-xl border transition-all ${hasOffshore ? 'bg-yellow-500/10 border-yellow-500/50 text-yellow-500' : 'bg-white/50 border-zinc-400 text-zinc-950 font-bold'}`}>
                                                     <div className="font-bold mb-1 flex items-center gap-2"><Users size={16}/> Offshore Engineering</div>
-                                                    <div className="text-xs opacity-70">Significant portion of engineering execution is outsourced or offshore.</div>
+                                                    <div className="text-xs font-bold opacity-70">Significant portion of engineering execution is outsourced or offshore.</div>
                                                 </button>
 
                                             </div>
@@ -490,13 +490,13 @@ export default function DueDiligenceTool() {
                                 <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-red-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                                     <div>
                                         <h2 className="text-xl font-bold text-zinc-950 mb-1">M&A Acquisition Diagnostic Complete</h2>
-                                        <p className="text-sm text-zinc-900 font-medium">Export this assessment to a verified Executive PDF for board review.</p>
+                                        <p className="text-sm font-semibold text-zinc-900 font-medium">Export this assessment to a verified Executive PDF for board review.</p>
                                     </div>
                                     <div className="mt-4 sm:mt-0">
                                         <button 
                                             onClick={handleSaveAndExport} 
                                             disabled={isSaving}
-                                            className="px-6 py-3 bg-white hover:bg-zinc-200 text-black font-bold uppercase tracking-widest text-xs rounded-xl transition-all shadow-lg flex items-center gap-2"
+                                            className="px-6 py-3 bg-white hover:bg-zinc-200 text-black font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all shadow-lg flex items-center gap-2"
                                         >
                                             {isSaving ? 'Exporting...' : 'Export Due Diligence PDF'}
                                         </button>
@@ -514,12 +514,12 @@ export default function DueDiligenceTool() {
                                     transition={{ duration: 0.6, ease: "easeOut" }}
                                     className="capsule-container border-red-900/40 rounded-2xl sm:rounded-[2rem] p-8 text-center mb-8"
                                 >
-                                    <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-8">TARGET RISK SCORE (1-100)</div>
+                                    <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-8">TARGET RISK SCORE (1-100)</div>
                                     <GaugeChart value={results.riskScore} />
                                     <div className={`mt-12 text-4xl font-bold tracking-tight ${getRiskStatus(results.riskScore).color}`}>
                                         {getRiskStatus(results.riskScore).text}
                                     </div>
-                                    <div className="mt-2 text-zinc-900 text-sm font-mono tracking-widest uppercase">
+                                    <div className="mt-2 text-zinc-900 text-sm font-semibold font-mono tracking-widest uppercase">
                                         {getRiskStatus(results.riskScore).sub}
                                     </div>
                                 </motion.div>
@@ -534,15 +534,15 @@ export default function DueDiligenceTool() {
                                 >
                                     <BentoCard title="Valuation Impairment Risk" icon={DollarSign} className="border-red-500/30">
                                         <div className="text-4xl font-bold text-red-500"><NumberTicker value={results.valuationImpairment} prefix="$" /></div>
-                                        <div className="text-sm font-medium text-zinc-950 mt-2 font-mono">Suggested Holdback Delta</div>
+                                        <div className="text-sm font-semibold font-medium text-zinc-950 mt-2 font-mono">Suggested Holdback Delta</div>
                                     </BentoCard>
                                     <BentoCard title="Tech Debt Recovery Cost" icon={Code} className="border-orange-500/20">
-                                        <div className="text-3xl font-bold text-orange-800 font-semibold"><NumberTicker value={results.techDebtRecoveryCost} prefix="$" /></div>
-                                        <div className="text-sm font-medium text-zinc-950 mt-2 font-mono">Immediate CapEx required post-close</div>
+                                        <div className="text-3xl font-bold text-orange-900 font-extrabold font-semibold"><NumberTicker value={results.techDebtRecoveryCost} prefix="$" /></div>
+                                        <div className="text-sm font-semibold font-medium text-zinc-950 mt-2 font-mono">Immediate CapEx required post-close</div>
                                     </BentoCard>
                                     <BentoCard title="Annual Cloud Waste" icon={Activity} className="border-zinc-500/20">
                                         <div className="text-3xl font-bold text-zinc-900"><NumberTicker value={results.annualInfraWaste} prefix="$" /></div>
-                                        <div className="text-sm font-medium text-zinc-950 mt-2 font-mono">Inefficient OPEX identifiable</div>
+                                        <div className="text-sm font-semibold font-medium text-zinc-950 mt-2 font-mono">Inefficient OPEX identifiable</div>
                                     </BentoCard>
                                 </motion.div>
 
@@ -559,7 +559,7 @@ export default function DueDiligenceTool() {
                                                 {results.redFlags.map((flag, i) => (
                                                     <li key={i} className="flex items-start gap-3">
                                                         <div className="mt-1 w-1.5 h-1.5 rounded-full bg-red-500 flex-shrink-0" />
-                                                        <span className="text-red-800 font-bold font-semibold">{flag}</span>
+                                                        <span className="text-red-900 font-extrabold font-semibold">{flag}</span>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -579,18 +579,18 @@ export default function DueDiligenceTool() {
                                             {results.threatVectors.map((tv, i) => (
                                                 <div key={i} className="flex gap-4 items-center">
                                                     <div className="w-12 h-12 bg-white/50 border border-zinc-400 rounded-xl flex items-center justify-center flex-shrink-0">
-                                                        <tv.icon size={20} className="text-zinc-800"/>
+                                                        <tv.icon size={20} className="text-zinc-950 font-bold"/>
                                                     </div>
                                                     <div className="flex-1">
                                                         <div className="flex justify-between mb-1">
                                                             <div className="font-bold text-zinc-900">{tv.name}</div>
-                                                            <div className="text-xs font-mono text-zinc-900">{tv.severity}% Severity</div>
+                                                            <div className="text-xs font-bold font-mono text-zinc-900">{tv.severity}% Severity</div>
                                                         </div>
                                                         <div className="h-2 w-full bg-zinc-200 rounded-full overflow-hidden mb-1">
                                                             <style>{`#tv-progress-${tv.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i} { width: ${tv.severity}%; }`}</style>
                                                             <div id={`tv-progress-${tv.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i}`} className={`h-full ${tv.color}`} />
                                                         </div>
-                                                        <div className="text-xs text-zinc-900 font-bold">{tv.details}</div>
+                                                        <div className="text-xs font-bold text-zinc-900 font-bold">{tv.details}</div>
                                                     </div>
                                                 </div>
                                             ))}
@@ -607,7 +607,7 @@ export default function DueDiligenceTool() {
                                 >
                                     <div className="bg-zinc-50 border border-zinc-400 rounded-2xl p-6 md:p-8 mt-8 relative overflow-hidden">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 via-orange-500 to-cyan-500"></div>
-                                        <h4 className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">Post-Acquisition Integration Gantt Chart</h4>
+                                        <h4 className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">Post-Acquisition Integration Gantt Chart</h4>
                                         
                                         <div className="space-y-6 md:space-y-8">
                                             {results.qpepRoadmap.map((plan: any, i: number) => (
@@ -616,7 +616,7 @@ export default function DueDiligenceTool() {
                                                     <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)] z-10"></div>
                                                     
                                                     <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                        <div className="bg-white/5 px-3 py-1 rounded-md text-xs font-medium uppercase font-mono tracking-widest text-zinc-900 shrink-0 inline-block w-fit">
+                                                        <div className="bg-white/5 px-3 py-1 rounded-md text-xs font-bold font-medium uppercase font-mono tracking-widest text-zinc-900 shrink-0 inline-block w-fit">
                                                             Month {plan.month}
                                                         </div>
                                                         <div className="font-bold text-zinc-950 text-base leading-tight md:leading-normal">{plan.focus}</div>
@@ -627,20 +627,20 @@ export default function DueDiligenceTool() {
                                                             const widths = ["w-full", "w-[90%]", "w-[95%]"];
                                                             const width = widths[j % widths.length];
                                                             const colorClasses = [
-                                                                "from-red-500/20 to-orange-500/20 border-orange-500/50 text-orange-800 font-bold",
-                                                                "from-orange-500/20 to-yellow-500/20 border-yellow-500/50 text-yellow-800 font-bold",
-                                                                "from-blue-500/20 to-cyan-500/20 border-cyan-500/50 text-cyan-700"
+                                                                "from-red-500/20 to-orange-500/20 border-orange-500/50 text-orange-900 font-extrabold",
+                                                                "from-orange-500/20 to-yellow-500/20 border-yellow-500/50 text-yellow-900 font-extrabold",
+                                                                "from-blue-500/20 to-cyan-500/20 border-cyan-500/50 text-cyan-900 font-extrabold"
                                                             ];
                                                             const color = colorClasses[i % colorClasses.length];
                                                             
                                                             return (
                                                                 <div key={j} className={`${width} bg-gradient-to-r ${color} border-l-2 p-3 rounded-r-md min-h-[70px] flex flex-col justify-center transition-all hover:brightness-125 hover:translate-x-1 duration-300 shadow-sm relative overflow-hidden group`}>
                                                                     {plan.month === 1 && (
-                                                                        <div className="absolute top-0 right-0 bg-red-500/20 text-red-800 font-semibold text-[8px] font-mono px-2 py-0.5 rounded-bl-md uppercase tracking-widest border-b border-l border-red-500/30 group-hover:bg-red-500/40 transition-colors">
+                                                                        <div className="absolute top-0 right-0 bg-red-500/20 text-red-900 font-extrabold font-semibold text-[8px] font-mono px-2 py-0.5 rounded-bl-md uppercase tracking-widest border-b border-l border-red-500/30 group-hover:bg-red-500/40 transition-colors">
                                                                             Critical Path Dependency
                                                                         </div>
                                                                     )}
-                                                                    <span className={`text-xs leading-relaxed relative z-10 ${plan.month === 1 ? 'mt-2' : ''}`}>{action}</span>
+                                                                    <span className={`text-xs font-bold leading-relaxed relative z-10 ${plan.month === 1 ? 'mt-2' : ''}`}>{action}</span>
                                                                 </div>
                                                             );
                                                         })}
@@ -661,13 +661,13 @@ export default function DueDiligenceTool() {
                                 >
                                     <div className="capsule-container rounded-2xl p-6 sm:p-8 mt-8 border border-zinc-400 bg-zinc-50">
                                         <div className="flex items-center gap-2 mb-4">
-                                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-bold font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                         </div>
                                         <h3 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-2">
                                             <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                                             3-Step Board Remediation Playbook
                                         </h3>
-                                        <p className="text-zinc-900 text-sm mb-8">Execute this operational surgery immediately to neutralize the ${formatMoney(results.valuationImpairment)} valuation impairment.</p>
+                                        <p className="text-zinc-900 text-sm font-semibold mb-8">Execute this operational surgery immediately to neutralize the ${formatMoney(results.valuationImpairment)} valuation impairment.</p>
 
                                         <div className="space-y-4">
                                             {/* Step 1 */}
@@ -678,12 +678,12 @@ export default function DueDiligenceTool() {
                                                 </div>
                                                 <div className="relative z-10 w-full">
                                                     <h4 className="text-zinc-950 font-bold mb-2">Hostile Valuation Holdback</h4>
-                                                    <p className="text-zinc-900 text-sm leading-relaxed mb-4">The target's technical entropy poses an existential threat to post-close EBITDA. Do not acquire these liabilities at face value.</p>
+                                                    <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">The target's technical entropy poses an existential threat to post-close EBITDA. Do not acquire these liabilities at face value.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                        <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                        <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-sm font-medium text-zinc-950">Contractually isolate the exact ${formatMoney(results.valuationImpairment)} impairment value into an escrow hold-back account, contingent upon the target proving architectural viability post-migration.</p>
+                                                        <p className="text-sm font-semibold font-medium text-zinc-950">Contractually isolate the exact ${formatMoney(results.valuationImpairment)} impairment value into an escrow hold-back account, contingent upon the target proving architectural viability post-migration.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -696,12 +696,12 @@ export default function DueDiligenceTool() {
                                                 </div>
                                                 <div className="relative z-10 w-full">
                                                     <h4 className="text-zinc-950 font-bold mb-2">Workforce Rightsizing & Neutralization</h4>
-                                                    <p className="text-zinc-900 text-sm leading-relaxed mb-4">ARR per head is deeply misaligned with modern SaaS benchmarks. The engineering org is heavily bloated creating gross margin drag.</p>
+                                                    <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">ARR per head is deeply misaligned with modern SaaS benchmarks. The engineering org is heavily bloated creating gross margin drag.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                        <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                        <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-sm font-medium text-zinc-950">Implement aggressive up-or-out performance tracking on Day 1. Terminate the lowest 20% of legacy contributors immediately and backfill capacity with AI-augmented workflows.</p>
+                                                        <p className="text-sm font-semibold font-medium text-zinc-950">Implement aggressive up-or-out performance tracking on Day 1. Terminate the lowest 20% of legacy contributors immediately and backfill capacity with AI-augmented workflows.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -710,16 +710,16 @@ export default function DueDiligenceTool() {
                                             <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                                 <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
-                                                    <span className="text-cyan-800 font-semibold font-bold font-mono">03</span>
+                                                    <span className="text-cyan-900 font-extrabold font-semibold font-bold font-mono">03</span>
                                                 </div>
                                                 <div className="relative z-10 w-full">
                                                     <h4 className="text-zinc-950 font-bold mb-2">Immediate EBITDA Leakage Stoppage</h4>
-                                                    <p className="text-zinc-900 text-sm leading-relaxed mb-4">You are acquiring ${formatMoney(results.annualInfraWaste)}/yr in structural cloud infrastructure waste that should be dropping to the bottom line.</p>
+                                                    <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">You are acquiring ${formatMoney(results.annualInfraWaste)}/yr in structural cloud infrastructure waste that should be dropping to the bottom line.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                        <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-800 font-semibold uppercase tracking-widest font-bold">
+                                                        <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-sm font-medium text-zinc-950">Mandate immediate AWS/GCP instance rightsizing and aggressive reserved instance purchasing. Halt all new cloud provisioning without explicit PE/Board VP-level approval.</p>
+                                                        <p className="text-sm font-semibold font-medium text-zinc-950">Mandate immediate AWS/GCP instance rightsizing and aggressive reserved instance purchasing. Halt all new cloud provisioning without explicit PE/Board VP-level approval.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -741,7 +741,7 @@ export default function DueDiligenceTool() {
                                     />
                                     
                                     <div className="flex justify-center mt-8 mb-8">
-                                        <button onClick={() => { setResults(null); setStep(1); }} className="text-zinc-950 font-mono text-xs tracking-widest hover:text-zinc-900 uppercase transition-colors">
+                                        <button onClick={() => { setResults(null); setStep(1); }} className="text-zinc-950 font-mono text-xs font-bold tracking-widest hover:text-zinc-900 uppercase transition-colors">
                                             ← Run New Due Diligence
                                         </button>
                                     </div>

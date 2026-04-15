@@ -17,15 +17,15 @@ const sections = [
 ];
 
 const colorMap: Record<string, string> = { emerald: 'border-emerald-500/30 bg-emerald-500/5', cyan: 'border-cyan-500/30 bg-cyan-500/5', amber: 'border-amber-500/30 bg-amber-500/5', rose: 'border-rose-500/30 bg-rose-500/5' };
-const textMap: Record<string, string> = { emerald: 'text-emerald-800 font-semibold', cyan: 'text-cyan-800 font-semibold', amber: 'text-amber-400', rose: 'text-rose-400' };
+const textMap: Record<string, string> = { emerald: 'text-emerald-900 font-extrabold font-semibold', cyan: 'text-cyan-900 font-extrabold font-semibold', amber: 'text-amber-400', rose: 'text-rose-400' };
 
 export default function CleanTechPage() {
     return (
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/industries" className="hover:text-cyan-800 font-semibold">Industries</Link><span>/</span><span className="text-emerald-800 font-semibold font-bold">CleanTech</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/industries" className="hover:text-cyan-900 font-extrabold font-semibold">Industries</Link><span>/</span><span className="text-emerald-900 font-extrabold font-semibold font-bold">CleanTech</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         CleanTech{' '}
@@ -38,7 +38,7 @@ export default function CleanTechPage() {
                             <div key={i} className={`rounded-2xl border p-8 ${colorMap[s.color]}`}>
                                 <h2 className={`text-2xl font-grotesk font-bold mb-3 ${textMap[s.color]}`}>{s.title}</h2>
                                 <p className="text-zinc-900 mb-4">{s.description}</p>
-                                <span className="text-xs font-mono text-zinc-800 uppercase tracking-widest">{s.stats}</span>
+                                <span className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest">{s.stats}</span>
                             </div>
                         ))}
                     </div>

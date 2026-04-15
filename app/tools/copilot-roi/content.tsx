@@ -22,8 +22,8 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                 
                 return (
                     <div key={i} className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 relative group">
-                        <div className="w-full sm:w-36 text-xs font-mono text-zinc-950 sm:text-right hidden sm:block leading-tight">{item.name}</div>
-                        <div className="w-full sm:hidden text-xs font-medium font-mono text-zinc-900 uppercase tracking-widest">{item.name}</div>
+                        <div className="w-full sm:w-36 text-xs font-bold font-mono text-zinc-950 sm:text-right hidden sm:block leading-tight">{item.name}</div>
+                        <div className="w-full sm:hidden text-xs font-bold font-medium font-mono text-zinc-900 uppercase tracking-widest">{item.name}</div>
                         
                         <div className="flex-1 w-full h-10 bg-zinc-50 border border-zinc-400 rounded-lg overflow-hidden relative">
                             <motion.div 
@@ -60,9 +60,9 @@ const RiskSlider = ({ label, value, onChange, description, min = 0, max = 100, s
     return (
         <div className="space-y-3 p-4 bg-white/60 rounded-xl border border-zinc-400 hover:border-cyan-500/20 transition-colors group">
             <div className="flex justify-between items-center">
-                <span className="text-base text-zinc-950 font-bold group-hover:text-cyan-800 font-semibold transition-colors">{label}</span>
+                <span className="text-base text-zinc-950 font-bold group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">{label}</span>
                 <div className={`flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-100 border border-zinc-400`}>
-                    <span className="text-xs font-mono text-zinc-950 font-bold">{value}{suffix}</span>
+                    <span className="text-xs font-bold font-mono text-zinc-950 font-bold">{value}{suffix}</span>
                 </div>
             </div>
             <div className="relative pt-2 pb-1">
@@ -82,7 +82,7 @@ const RiskSlider = ({ label, value, onChange, description, min = 0, max = 100, s
                     className="relative w-full h-1 bg-transparent appearance-none cursor-pointer z-10 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-[0_0_10px_rgba(34,211,238,0.5)]"
                 />
             </div>
-            <p className="text-sm font-medium text-zinc-950 leading-relaxed pt-1">{description}</p>
+            <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed pt-1">{description}</p>
         </div>
     );
 };
@@ -204,11 +204,11 @@ export default function CopilotROITool() {
                 {/* --- HEADER --- */}
                 <div className="mb-12">
                     <div className="flex flex-wrap items-center gap-3 mb-6">
-                        <div className="px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-800 font-semibold text-xs font-mono tracking-widest uppercase flex items-center gap-2">
+                        <div className="px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold text-xs font-bold font-mono tracking-widest uppercase flex items-center gap-2">
                             <Bot className="w-3 h-3" />
                             AI Enterprise Economics
                         </div>
-                        <div className="px-2 py-1 rounded bg-white/5 text-zinc-900 text-xs font-medium font-mono tracking-widest uppercase border border-zinc-400">
+                        <div className="px-2 py-1 rounded bg-white/5 text-zinc-900 text-xs font-bold font-medium font-mono tracking-widest uppercase border border-zinc-400">
                             Unit Cost Forecaster
                         </div>
                     </div>
@@ -235,7 +235,7 @@ export default function CopilotROITool() {
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                                 
                                 <h3 className="text-zinc-950 font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-400 pb-4">
-                                    <Building2 className="w-5 h-5 text-cyan-800 font-semibold" />
+                                    <Building2 className="w-5 h-5 text-cyan-900 font-extrabold font-semibold" />
                                     Engineering Baseline
                                 </h3>
 
@@ -300,7 +300,7 @@ export default function CopilotROITool() {
                             
                             <div className="p-5 rounded-2xl bg-fuchsia-500/5 items-start flex gap-3 border border-fuchsia-500/20">
                                 <Code className="w-5 h-5 text-zinc-950 font-semibolduchsia-400 mt-1 flex-shrink-0" />
-                                <div className="text-xs text-zinc-900 font-bold">
+                                <div className="text-xs font-bold text-zinc-900 font-bold">
                                     <strong className="text-zinc-950">The Subprime Code Crisis:</strong> Vibe coding generates massive volumes of syntactically correct but architecturally flawed code. This calculator mathematically prices the downstream cost of unwinding that code.
                                 </div>
                             </div>
@@ -316,7 +316,7 @@ export default function CopilotROITool() {
                                 
                                 <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 border-b border-zinc-400 pb-6">
                                     <div>
-                                        <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Net Financial Position</div>
+                                        <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Net Financial Position</div>
                                         <div className="flex items-end gap-4">
                                             <h2 className={`text-5xl lg:text-7xl font-bold tracking-tighter ${isNegativeReturn ? 'text-red-500' : 'text-emerald-500'}`}>
                                                 {isNegativeReturn ? '-' : '+'}${Math.abs(netROAI_Dollar / 1000).toFixed(0)}k
@@ -326,12 +326,12 @@ export default function CopilotROITool() {
                                     </div>
                                     <div className="mt-4 md:mt-0 flex gap-2 w-full md:w-auto">
                                         <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-400 px-4 py-2 rounded-xl">
-                                            <div className="text-xs font-medium uppercase font-mono text-zinc-950 mb-1">Gross Expected Lift</div>
-                                            <div className="text-lg font-bold text-emerald-800 font-semibold">${(grossProductivityLiftDollar / 1000).toFixed(0)}k</div>
+                                            <div className="text-xs font-bold font-medium uppercase font-mono text-zinc-950 mb-1">Gross Expected Lift</div>
+                                            <div className="text-lg font-bold text-emerald-900 font-extrabold font-semibold">${(grossProductivityLiftDollar / 1000).toFixed(0)}k</div>
                                         </div>
                                         <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-400 px-4 py-2 rounded-xl">
-                                            <div className="text-xs font-medium uppercase font-mono text-zinc-950 mb-1">Total Drag Penalties</div>
-                                            <div className="text-lg font-bold text-red-800 font-semibold">-${((annualLicenseCost + vibeDebtDragDollar + reviewBottleneckDragDollar) / 1000).toFixed(0)}k</div>
+                                            <div className="text-xs font-bold font-medium uppercase font-mono text-zinc-950 mb-1">Total Drag Penalties</div>
+                                            <div className="text-lg font-bold text-red-900 font-extrabold font-semibold">-${((annualLicenseCost + vibeDebtDragDollar + reviewBottleneckDragDollar) / 1000).toFixed(0)}k</div>
                                         </div>
                                     </div>
                                 </div>
@@ -353,8 +353,8 @@ export default function CopilotROITool() {
                                                 <Skull className="w-5 h-5 text-red-500" />
                                             </div>
                                             <div>
-                                                <h4 className="text-red-800 font-semibold font-bold mb-1">Terminal Insolvency Risk</h4>
-                                                <p className="text-sm text-zinc-900 font-medium">AI tool licensing combined with downstream review hours is displacing over 10% of total engineering capacity. Stop feature development and audit code review processes immediately.</p>
+                                                <h4 className="text-red-900 font-extrabold font-semibold font-bold mb-1">Terminal Insolvency Risk</h4>
+                                                <p className="text-sm font-semibold text-zinc-900 font-medium">AI tool licensing combined with downstream review hours is displacing over 10% of total engineering capacity. Stop feature development and audit code review processes immediately.</p>
                                             </div>
                                         </motion.div>
                                     )}
@@ -372,10 +372,10 @@ export default function CopilotROITool() {
                                             <button
                                                 key={p.id}
                                                 onClick={() => setActivePersona(p.id)}
-                                                className={`flex-1 min-w-[120px] px-4 py-5 flex items-center justify-center gap-2 text-sm font-medium transition-all border-b-2 font-mono uppercase tracking-wider ${
+                                                className={`flex-1 min-w-[120px] px-4 py-5 flex items-center justify-center gap-2 text-sm font-semibold font-medium transition-all border-b-2 font-mono uppercase tracking-wider ${
                                                     isActive 
-                                                        ? 'border-cyan-500 text-cyan-800 font-semibold bg-cyan-500/5' 
-                                                        : 'border-transparent text-zinc-800 hover:text-zinc-950 hover:bg-white/5'
+                                                        ? 'border-cyan-500 text-cyan-900 font-extrabold font-semibold bg-cyan-500/5' 
+                                                        : 'border-transparent text-zinc-950 font-bold hover:text-zinc-950 hover:bg-white/5'
                                                 }`}
                                             >
                                                 <Icon size={16} />
@@ -393,7 +393,7 @@ export default function CopilotROITool() {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <div className="inline-flex px-3 py-1 bg-white/5 border border-zinc-400 rounded tracking-widest text-xs font-medium text-zinc-900 font-mono mb-4 uppercase">
+                                        <div className="inline-flex px-3 py-1 bg-white/5 border border-zinc-400 rounded tracking-widest text-xs font-bold font-medium text-zinc-900 font-mono mb-4 uppercase">
                                             {readout.title}
                                         </div>
 
@@ -409,12 +409,12 @@ export default function CopilotROITool() {
                                         </div>
 
                                         <div className={`p-4 rounded-xl border flex items-center gap-3 ${
-                                            isNegativeReturn ? 'bg-red-500/10 border-red-500/30 text-red-800 font-semibold' : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-800 font-semibold'
+                                            isNegativeReturn ? 'bg-red-500/10 border-red-500/30 text-red-900 font-extrabold font-semibold' : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-900 font-extrabold font-semibold'
                                         }`}>
                                             <div className={`p-2 rounded-full ${isNegativeReturn ? 'bg-red-500/20' : 'bg-emerald-500/20'}`}>
                                                 <ShieldAlert className="w-4 h-4" />
                                             </div>
-                                            <span className="font-mono text-sm font-bold tracking-widest">{readout.alertText}</span>
+                                            <span className="font-mono text-sm font-semibold font-bold tracking-widest">{readout.alertText}</span>
                                         </div>
                                     </motion.div>
                                 </div>
@@ -427,7 +427,7 @@ export default function CopilotROITool() {
                                             fileName={`copilot-roi-audit-${activePersona.toLowerCase()}.pdf`}
                                         />
                                     </div>
-                                    <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">Confidential Engine</div>
+                                    <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">Confidential Engine</div>
                                 </div>
                             </div>
 

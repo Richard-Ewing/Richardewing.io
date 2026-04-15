@@ -22,7 +22,7 @@ export default function HomeContent() {
 
             {/* Hero Section */}
             <section className="flex-1 flex flex-col justify-center max-w-5xl mx-auto relative z-10 py-12 sm:py-20 px-4 sm:px-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-50 border border-cyan-200 rounded-full text-cyan-600 text-xs font-mono uppercase tracking-widest mb-8 w-fit animate-pulse">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-50 border border-cyan-200 rounded-full text-cyan-900 font-extrabold text-xs font-bold font-mono uppercase tracking-widest mb-8 w-fit animate-pulse">
                     <span className="w-2 h-2 bg-cyan-400 rounded-full" />
                     Now Accepting Q1 2026 Engagements
                 </div>
@@ -36,37 +36,37 @@ export default function HomeContent() {
                     <span className="text-zinc-950 text-xl sm:text-2xl font-grotesk">I find the leaks in </span>
                     <WordRotate
                         words={["AI they don't understand.", "Features nobody uses.", "Headcount without ROI.", "Zombie Infrastructure."]}
-                        className="text-xl sm:text-2xl font-grotesk font-extrabold text-cyan-600"
+                        className="text-xl sm:text-2xl font-grotesk font-extrabold text-cyan-900 font-extrabold"
                         duration={3000}
                     />
                 </div>
 
-                <p className="text-lg sm:text-xl text-zinc-800 max-w-2xl leading-relaxed mb-12 font-sans">
+                <p className="text-lg sm:text-xl text-zinc-950 font-bold max-w-2xl leading-relaxed mb-12 font-sans">
                     I'm <span className="text-zinc-900 font-bold">Richard Ewing</span>, a Product Economist.
                     I run forensic audits that find the capital leaks inside your AI investments—then I help you plug them.
-                    <span className="text-cyan-600"> No consulting theater. Just hard numbers.</span>
+                    <span className="text-cyan-900 font-extrabold"> No consulting theater. Just hard numbers.</span>
                 </p>
 
                 {/* Path Selector (Replaces Standard Buttons) */}
                 <div className="mb-16">
-                    <h3 className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-6">Choose Your Path</h3>
+                    <h3 className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-6">Choose Your Path</h3>
                     <PathSelector />
                 </div>
 
                 {/* Authority Stats Bar */}
                 <StatsBar
                     stats={[
-                        { value: <><NumberTicker value={25} prefix="$" suffix="M" className="text-cyan-600 font-bold" /></>, label: "ARR Scaled" },
-                        { value: <><NumberTicker value={15} suffix="+" className="text-cyan-600 font-bold" /></>, label: "Years Exp." },
-                        { value: <><NumberTicker value={7} suffix="M+" className="text-cyan-600 font-bold" /></>, label: "Users Impacted" },
-                        { value: <span className="text-gold"><NumberTicker value={100} suffix="%" className="text-cyan-600 font-bold" /></span>, label: "Independence" }
+                        { value: <><NumberTicker value={25} prefix="$" suffix="M" className="text-cyan-900 font-extrabold" /></>, label: "ARR Scaled" },
+                        { value: <><NumberTicker value={15} suffix="+" className="text-cyan-900 font-extrabold" /></>, label: "Years Exp." },
+                        { value: <><NumberTicker value={7} suffix="M+" className="text-cyan-900 font-extrabold" /></>, label: "Users Impacted" },
+                        { value: <span className="text-gold"><NumberTicker value={100} suffix="%" className="text-cyan-900 font-extrabold" /></span>, label: "Independence" }
                     ]}
                     className="mb-8"
                 />
 
                 {/* Social Proof */}
                 <div className="pt-8">
-                    <p className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-4">Authority Established In</p>
+                    <p className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest mb-4">Authority Established In</p>
                     <div className="flex flex-wrap items-center gap-6 opacity-60 hover:opacity-100 transition-opacity">
                         <span className="text-lg font-bold text-zinc-900">CIO</span>
                         <span className="text-lg font-bold text-zinc-900">Built In</span>
@@ -116,9 +116,9 @@ export default function HomeContent() {
                         { name: "APER", desc: "Audit Probability", href: "/tools/aper" }
                     ].map((tool) => (
                         <Link key={tool.name} href={tool.href} className="group block p-6 rounded-xl border border-zinc-400 bg-white hover:border-cyan-400 hover:bg-zinc-50 transition-all">
-                            <div className="text-2xl font-bold text-zinc-900 mb-2 font-grotesk group-hover:text-cyan-600">{tool.name}</div>
-                            <div className="text-sm text-zinc-900 font-medium uppercase tracking-wider">{tool.desc}</div>
-                            <div className="mt-4 text-cyan-500 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">Launch Tool →</div>
+                            <div className="text-2xl font-bold text-zinc-900 mb-2 font-grotesk group-hover:text-cyan-900 font-extrabold">{tool.name}</div>
+                            <div className="text-sm font-semibold text-zinc-900 font-medium uppercase tracking-wider">{tool.desc}</div>
+                            <div className="mt-4 text-cyan-500 text-sm font-semibold font-bold opacity-0 group-hover:opacity-100 transition-opacity">Launch Tool →</div>
                         </Link>
                     ))}
                 </div>
@@ -132,12 +132,12 @@ export default function HomeContent() {
                             <span className="w-12 h-1 bg-purple-500"></span>
                             The Exogram
                         </h2>
-                        <h3 className="text-xl font-mono text-purple-600 mb-4 uppercase tracking-widest">Active Development</h3>
-                        <p className="text-zinc-800 text-lg leading-relaxed mb-8">
+                        <h3 className="text-xl font-mono text-purple-900 font-extrabold mb-4 uppercase tracking-widest">Active Development</h3>
+                        <p className="text-zinc-950 font-bold text-lg leading-relaxed mb-8">
                             I don't just advise. I build. <strong className="text-zinc-900">Exogram</strong> is my active research into AI memory systems and long-context reasoning.
                             It is the engine that powers my own agency.
                         </p>
-                        <Link href="/exogram" className="inline-flex items-center gap-2 text-purple-600 font-bold uppercase tracking-widest hover:text-purple-800 font-semibold transition-colors">
+                        <Link href="/exogram" className="inline-flex items-center gap-2 text-purple-900 font-extrabold uppercase tracking-widest hover:text-purple-900 font-extrabold font-semibold transition-colors">
                             View Project Status <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
@@ -145,12 +145,12 @@ export default function HomeContent() {
                         <GlowCard className="p-8 h-full bg-purple-50 border-purple-200" glowColor="purple">
                             <div className="flex justify-between items-start mb-6">
                                 <div className="text-2xl font-bold text-zinc-900 font-grotesk">Exogram</div>
-                                <div className="px-3 py-1 bg-green-50 text-green-600 text-xs font-medium font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
+                                <div className="px-3 py-1 bg-green-50 text-green-900 font-extrabold text-xs font-bold font-medium font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
                                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                                     Online
                                 </div>
                             </div>
-                            <div className="space-y-4 font-mono text-sm text-zinc-950">
+                            <div className="space-y-4 font-mono text-sm font-semibold text-zinc-950">
                                 <div className="flex justify-between border-b border-zinc-400 pb-2">
                                     <span>System Load</span>
                                     <span className="text-zinc-900">42%</span>
@@ -180,13 +180,13 @@ export default function HomeContent() {
                     <div className="space-y-6">
                         <div className="space-y-2">
                             <h3 className="text-xl font-bold text-zinc-900">What is an R&D audit?</h3>
-                            <p className="text-zinc-800 leading-relaxed">
+                            <p className="text-zinc-950 font-bold leading-relaxed">
                                 An R&D audit is a forensic review of engineering spend that surfaces hidden capital risks — technical debt, maintenance costs reported as innovation, and AI economics that aren't being tracked. Unlike consulting, an audit doesn't optimize; it verifies what's actually true.
                             </p>
                         </div>
                         <div className="space-y-2">
                             <h3 className="text-xl font-bold text-zinc-900">How much does an R&D audit cost?</h3>
-                            <p className="text-zinc-800 leading-relaxed">
+                            <p className="text-zinc-950 font-bold leading-relaxed">
                                 Richard Ewing offers R&D audits starting at $2,500 for a 60-minute diagnostic with written report, up to $7,500 for a full 2-3 week forensic review. A 30-minute gut-check call is available for $450.
                             </p>
                         </div>
@@ -194,13 +194,13 @@ export default function HomeContent() {
                     <div className="space-y-6">
                         <div className="space-y-2">
                             <h3 className="text-xl font-bold text-zinc-900">What's the difference between consulting and auditing?</h3>
-                            <p className="text-zinc-800 leading-relaxed">
+                            <p className="text-zinc-950 font-bold leading-relaxed">
                                 Consulting asks "how can we improve?" Auditing asks "what's actually true?" Consultants optimize. Auditors verify. An R&D audit surfaces the facts — the real maintenance ratio, the true technical debt liability, the actual AI unit economics — without assuming the current approach is correct.
                             </p>
                         </div>
                         <div className="space-y-2">
                             <h3 className="text-xl font-bold text-zinc-900">What is a Product Economist?</h3>
-                            <p className="text-zinc-800 leading-relaxed">
+                            <p className="text-zinc-950 font-bold leading-relaxed">
                                 A Product Economist treats product decisions as economic decisions. Rather than measuring success in story points or velocity, a Product Economist measures R&D ROI, capital efficiency, and the dollar value of technical debt. I coined the term to describe the gap between engineering metrics and financial reality.
                             </p>
                         </div>
@@ -225,11 +225,11 @@ export default function HomeContent() {
                         <div key={tier.name} className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-xl border border-zinc-400 bg-white hover:bg-zinc-50 transition-colors">
                             <div className="text-center sm:text-left mb-4 sm:mb-0">
                                 <div className="text-xl font-bold text-zinc-900 font-grotesk">{tier.name}</div>
-                                <div className="text-sm text-zinc-900 font-medium">{tier.desc}</div>
+                                <div className="text-sm font-semibold text-zinc-900 font-medium">{tier.desc}</div>
                             </div>
                             <div className="flex items-center gap-6">
-                                <div className="text-xl font-mono text-cyan-600">{tier.price}</div>
-                                <Link href="/advisory" className="text-sm font-bold text-zinc-900 uppercase tracking-wider hover:text-cyan-600 transition-colors">Book Now</Link>
+                                <div className="text-xl font-mono text-cyan-900 font-extrabold">{tier.price}</div>
+                                <Link href="/advisory" className="text-sm font-semibold font-bold text-zinc-900 uppercase tracking-wider hover:text-cyan-900 font-extrabold transition-colors">Book Now</Link>
                             </div>
                         </div>
                     ))}
@@ -240,7 +240,7 @@ export default function HomeContent() {
             <ScrollReveal delay={300} className="max-w-4xl relative z-10 py-20 border-t border-zinc-400 mt-8">
                 <div className="bg-gradient-to-br from-white to-zinc-50 p-8 sm:p-12 rounded-2xl border border-zinc-400 text-center">
                     <h3 className="text-2xl sm:text-3xl font-grotesk font-bold text-zinc-900 mb-4">Join the Executive Briefing</h3>
-                    <p className="text-zinc-800 mb-8 max-w-lg mx-auto">
+                    <p className="text-zinc-950 font-bold mb-8 max-w-lg mx-auto">
                         No fluff. Just weekly analysis of why products fail and how to fix them.
                         Join 2,500+ board members and product leaders.
                     </p>

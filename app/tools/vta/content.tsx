@@ -17,7 +17,7 @@ import { VaultUpsell, RecommendedTrack } from '../../components/VaultUpsell';
 const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: React.ReactNode; title: string; icon?: React.ComponentType<{ size?: number; className?: string }>; className?: string }) => (
     <div className={`relative overflow-hidden rounded-2xl border border-zinc-400 bg-white/5 p-6 ${className}`}>
         <div className="flex items-center gap-2 mb-4">
-            {Icon && <Icon size={20} className="text-blue-800 font-semibold" />}
+            {Icon && <Icon size={20} className="text-blue-900 font-extrabold font-semibold" />}
             <h3 className="font-semibold text-zinc-900">{title}</h3>
         </div>
         {children}
@@ -52,7 +52,7 @@ export default function VTATool() {
     };
 
     return (
-        <div className="min-h-screen bg-white text-zinc-800 font-sans selection:bg-blue-500/30">
+        <div className="min-h-screen bg-white text-zinc-950 font-bold font-sans selection:bg-blue-500/30">
             <div className="relative">
                 {/* Background glow */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -65,7 +65,7 @@ export default function VTATool() {
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-950 mb-6 tracking-tight">
                                 Volatility Tax Auditor <span className="text-blue-500">(VTA)</span>
                             </h1>
-                            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+                            <p className="text-xl text-zinc-950 font-bold mb-8 leading-relaxed">
                                 Identify the hidden labor cost "tax" destroying your AI margins. Calculate the exact cost of human-in-the-loop verification required to mitigate AI response drift.
                             </p>
                         </div>
@@ -79,8 +79,8 @@ export default function VTATool() {
                                 <h2 className="text-2xl font-bold text-zinc-950 mb-6">Execution Variables</h2>
                                 <div className="space-y-6 relative z-10">
                                     <div>
-                                        <label className="block text-sm font-medium text-zinc-800 mb-2">Monthly Target Inferences</label>
-                                        <p className="text-xs text-zinc-900 font-bold mb-3">Total queries hitting your AI service</p>
+                                        <label className="block text-sm font-semibold font-medium text-zinc-950 font-bold mb-2">Monthly Target Inferences</label>
+                                        <p className="text-xs font-bold text-zinc-900 font-bold mb-3">Total queries hitting your AI service</p>
                                         <input
                                             type="range"
                                             min="1000"
@@ -92,12 +92,12 @@ export default function VTATool() {
                                             onChange={(e) => setMonthlyInferences(Number(e.target.value))}
                                             className="w-full accent-blue-500 bg-white/10 h-2 rounded-lg appearance-none cursor-pointer"
                                         />
-                                        <div className="text-right text-blue-800 font-semibold font-mono mt-2">{monthlyInferences.toLocaleString()} interactions</div>
+                                        <div className="text-right text-blue-900 font-extrabold font-semibold font-mono mt-2">{monthlyInferences.toLocaleString()} interactions</div>
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-zinc-800 mb-2">AI Response Drift Rate (%)</label>
-                                        <p className="text-xs text-zinc-900 font-bold mb-3">Percentage of outputs requiring human review</p>
+                                        <label className="block text-sm font-semibold font-medium text-zinc-950 font-bold mb-2">AI Response Drift Rate (%)</label>
+                                        <p className="text-xs font-bold text-zinc-900 font-bold mb-3">Percentage of outputs requiring human review</p>
                                         <input
                                             type="range"
                                             min="1"
@@ -109,12 +109,12 @@ export default function VTATool() {
                                             onChange={(e) => setDriftRate(Number(e.target.value))}
                                             className="w-full accent-red-500 bg-white/10 h-2 rounded-lg appearance-none cursor-pointer"
                                         />
-                                        <div className="text-right text-red-800 font-semibold font-mono mt-2">{driftRate}% drift</div>
+                                        <div className="text-right text-red-900 font-extrabold font-semibold font-mono mt-2">{driftRate}% drift</div>
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-zinc-800 mb-2">Verification Time (Minutes)</label>
-                                        <p className="text-xs text-zinc-900 font-bold mb-3">Time taken by a human to audit one flagged output</p>
+                                        <label className="block text-sm font-semibold font-medium text-zinc-950 font-bold mb-2">Verification Time (Minutes)</label>
+                                        <p className="text-xs font-bold text-zinc-900 font-bold mb-3">Time taken by a human to audit one flagged output</p>
                                         <input
                                             type="number"
                                             value={verificationTime}
@@ -126,8 +126,8 @@ export default function VTATool() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-zinc-800 mb-2">Verifier Labor Base ($/Hour)</label>
-                                        <p className="text-xs text-zinc-900 font-bold mb-3">Fully burdened hourly rate of your engineering/audit staff</p>
+                                        <label className="block text-sm font-semibold font-medium text-zinc-950 font-bold mb-2">Verifier Labor Base ($/Hour)</label>
+                                        <p className="text-xs font-bold text-zinc-900 font-bold mb-3">Fully burdened hourly rate of your engineering/audit staff</p>
                                         <input
                                             type="number"
                                             value={hourlyRate}
@@ -164,10 +164,10 @@ export default function VTATool() {
                             {!showResults ? (
                                 <div className="h-full min-h-[400px] border border-zinc-400 bg-white/5 rounded-2xl flex flex-col items-center justify-center p-8 text-center relative overflow-hidden backdrop-blur-xl">
                                     <div className="w-24 h-24 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
-                                        <FileSearch size={40} className="text-blue-800 font-semibold" />
+                                        <FileSearch size={40} className="text-blue-900 font-extrabold font-semibold" />
                                     </div>
                                     <h3 className="text-2xl font-bold text-zinc-950 mb-4">Awaiting Audit Execution</h3>
-                                    <p className="text-slate-600 max-w-sm">Configure your operational assumptions on the left to reveal the true cost of your AI implementation.</p>
+                                    <p className="text-zinc-950 font-bold max-w-sm">Configure your operational assumptions on the left to reveal the true cost of your AI implementation.</p>
                                 </div>
                             ) : (
                                 <ToolGate
@@ -180,7 +180,7 @@ export default function VTATool() {
 
                                         <div className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-zinc-400 mb-6">
                                             <div className="flex items-center gap-2 text-zinc-950 font-medium">
-                                                <FileSearch size={20} className="text-blue-800 font-semibold" />
+                                                <FileSearch size={20} className="text-blue-900 font-extrabold font-semibold" />
                                                 Behavioral Audit Report
                                             </div>
                                             <ExportToPDFButton
@@ -191,19 +191,19 @@ export default function VTATool() {
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <GlowCard className="p-6">
-                                                <div className="text-sm text-zinc-900 font-medium mb-1">Annual Volatility Tax</div>
-                                                <div className="text-4xl font-bold text-red-800 font-semibold mb-2 font-mono">
+                                                <div className="text-sm font-semibold text-zinc-900 font-medium mb-1">Annual Volatility Tax</div>
+                                                <div className="text-4xl font-bold text-red-900 font-extrabold font-semibold mb-2 font-mono">
                                                     $<NumberTicker value={annualTax} />
                                                 </div>
-                                                <p className="text-xs text-zinc-900 font-bold/80">Pure human labor validation cost.</p>
+                                                <p className="text-xs font-bold text-zinc-900 font-bold/80">Pure human labor validation cost.</p>
                                             </GlowCard>
 
                                             <GlowCard className="p-6">
-                                                <div className="text-sm text-zinc-900 font-medium mb-1">Engineering Hours Burned</div>
+                                                <div className="text-sm font-semibold text-zinc-900 font-medium mb-1">Engineering Hours Burned</div>
                                                 <div className="text-4xl font-bold text-zinc-950 mb-2 font-mono">
                                                     <NumberTicker value={hoursLostAnnual} />
                                                 </div>
-                                                <p className="text-xs text-zinc-900 font-bold">Hours lost yearly to output auditing.</p>
+                                                <p className="text-xs font-bold text-zinc-900 font-bold">Hours lost yearly to output auditing.</p>
                                             </GlowCard>
                                         </div>
 
@@ -211,17 +211,17 @@ export default function VTATool() {
                                             <div className="space-y-6">
                                                 <div className="grid grid-cols-2 gap-4 text-sm">
                                                     <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-400">
-                                                        <span className="text-slate-600 block mb-1">Effective Cost Per Interaction</span>
+                                                        <span className="text-zinc-950 font-bold block mb-1">Effective Cost Per Interaction</span>
                                                         <span className="text-xl text-zinc-950 font-mono">${effectiveCostPerInference.toFixed(2)}</span>
                                                     </div>
                                                     <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-400">
-                                                        <span className="text-slate-600 block mb-1">Monthly Flagged Reviews</span>
+                                                        <span className="text-zinc-950 font-bold block mb-1">Monthly Flagged Reviews</span>
                                                         <span className="text-xl text-zinc-950 font-mono">{monthlyReviews.toLocaleString()}</span>
                                                     </div>
                                                 </div>
                                                 <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-lg">
-                                                    <h4 className="text-red-800 font-semibold font-semibold mb-2">Executive Summary</h4>
-                                                    <p className="text-red-800 font-bold text-sm leading-relaxed">
+                                                    <h4 className="text-red-900 font-extrabold font-semibold mb-2">Executive Summary</h4>
+                                                    <p className="text-red-900 font-extrabold text-sm font-semibold leading-relaxed">
                                                         Your AI is functionally a "Negative Carry" asset. While the raw API cost might be fractions of a cent per token, your true cost is <strong>${(effectiveCostPerInference).toFixed(2)}</strong> per inference due to the {driftRate}% drift anomaly rate. Unless you implement an "Execution Layer" to enforce deterministic bounding, this feature will chronically bleed EBITDA as you scale.
                                                     </p>
                                                 </div>

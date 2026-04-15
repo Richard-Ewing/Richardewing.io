@@ -40,7 +40,7 @@ const Navigation = () => {
                             </div>
                             <div>
                                 <div className="font-semibold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors">Richard Ewing</div>
-                                <div className="text-xs text-zinc-900 font-bold">Product Economist</div>
+                                <div className="text-xs font-bold text-zinc-900 font-bold">Product Economist</div>
                             </div>
                         </Link>
 
@@ -48,7 +48,7 @@ const Navigation = () => {
                         <div className="hidden md:flex items-center gap-6 lg:gap-8">
 
                             {/* Start Here / Member Dashboard — the golden path for visitors */}
-                            <Link href={isSignedIn ? "/vault" : "/doctrine"} className="text-emerald-600 hover:text-emerald-500 transition-colors relative group font-semibold">
+                            <Link href={isSignedIn ? "/vault" : "/doctrine"} className="text-emerald-900 font-extrabold hover:text-emerald-500 transition-colors relative group font-semibold">
                                 ✦ {isSignedIn ? "Member Dashboard" : "Start Here"}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
@@ -79,7 +79,7 @@ const Navigation = () => {
                                     <p className="text-[10.5px] text-indigo-900 font-bold font-mono tracking-widest uppercase">Board-Level Telemetry Hub</p>
                                 </Link>
                                 
-                                <div className="px-5 py-2 text-xs font-medium font-bold tracking-widest text-[var(--accent-purple)] uppercase mt-2">Flagship Engines</div>
+                                <div className="px-5 py-2 text-xs font-bold font-medium font-bold tracking-widest text-[var(--accent-purple)] uppercase mt-2">Flagship Engines</div>
                                 <DropdownItem href="/benchmark/ai-capital-2026" description="FTE & CapEx/OpEx Threshold Data">2026 AI Capital Benchmark</DropdownItem>
                                 <DropdownItem href="/tools/copilot-roi" description="Calculate Net Revenue Retention">Copilot ROI Forecaster</DropdownItem>
                                 <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">Tech Debt Forecaster (PDI)</DropdownItem>
@@ -89,8 +89,8 @@ const Navigation = () => {
                                 
                                 <div className="mt-2 p-2 relative z-10 w-full bg-zinc-50 pb-3">
                                     <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-zinc-400 hover:border-zinc-500 bg-white hover:bg-zinc-50 rounded-lg py-2.5 mx-3 transition-colors">
-                                        <span className="text-xs font-semibold text-zinc-950">Explore All Diagnostics</span>
-                                        <span className="text-xs text-zinc-900 font-bold">→</span>
+                                        <span className="text-xs font-bold text-zinc-950">Explore All Diagnostics</span>
+                                        <span className="text-xs font-bold text-zinc-900 font-bold">→</span>
                                     </Link>
                                 </div>
                             </Dropdown>
@@ -195,10 +195,10 @@ const DropdownItem = ({ href, children, description }: { href: string, children:
     return (
         <Link
             href={href}
-            className="block px-4 py-3 text-sm text-zinc-900 font-medium hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
+            className="block px-4 py-3 text-sm font-semibold text-zinc-900 font-medium hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
         >
             <span className="block">{children}</span>
-            {description && <span className="block text-xs font-medium text-zinc-900 mt-0.5">{description}</span>}
+            {description && <span className="block text-xs font-bold font-medium text-zinc-900 mt-0.5">{description}</span>}
         </Link>
     );
 };
@@ -237,7 +237,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     {/* Learn Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-cyan-600 uppercase tracking-widest pl-2">Curriculum & Library</h3>
+                        <h3 className="text-xs font-bold text-cyan-900 font-extrabold uppercase tracking-widest pl-2">Curriculum & Library</h3>
                         <MobileLink href="/articles" onClick={onClose}>Published Articles</MobileLink>
                         <MobileLink href="/vault/curriculum/tracks" onClick={onClose}>Complete Curriculum</MobileLink>
                         <MobileLink href="/glossary" onClick={onClose}>Glossary (420+ Terms)</MobileLink>
@@ -247,13 +247,13 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     {/* Careers Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-emerald-600 uppercase tracking-widest pl-2 mt-4 mb-2">Careers & Transitions</h3>
+                        <h3 className="text-xs font-bold text-emerald-900 font-extrabold uppercase tracking-widest pl-2 mt-4 mb-2">Careers & Transitions</h3>
                         <MobileLink href="/careers" onClick={onClose}>Career Pathfinder Hub</MobileLink>
                     </div>
 
                     {/* Tools Section */}
                     <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-violet-600 uppercase tracking-widest pl-2 mb-4">Enterprise Diagnostics</h3>
+                        <h3 className="text-xs font-bold text-violet-900 font-extrabold uppercase tracking-widest pl-2 mb-4">Enterprise Diagnostics</h3>
                         
                         <Link
                             href="/tools/board-room"
@@ -264,10 +264,10 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                                 <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
                                 <span>Executive Board Room</span>
                             </div>
-                            <span className="text-xs font-medium text-indigo-900 font-bold font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
+                            <span className="text-xs font-bold font-medium text-indigo-900 font-bold font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
                         </Link>
 
-                        <MobileLink href="/benchmark/ai-capital-2026" onClick={onClose} className="font-bold text-cyan-600">2026 AI Capital Benchmark</MobileLink>
+                        <MobileLink href="/benchmark/ai-capital-2026" onClick={onClose} className="font-bold text-cyan-900 font-extrabold">2026 AI Capital Benchmark</MobileLink>
                         <MobileLink href="/tools/copilot-roi" onClick={onClose}>Copilot ROI Forecaster</MobileLink>
                         <MobileLink href="/tools/pdi" onClick={onClose}>Tech Debt Forecaster (PDI)</MobileLink>
                         <MobileLink href="/tools/aueb" onClick={onClose}>AI Margin Calculator (AUEB)</MobileLink>
@@ -309,7 +309,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <Link 
                             href="/vault"
                             onClick={onClose}
-                            className="block w-full bg-cyan-50 border border-cyan-200 text-cyan-700 text-center font-bold py-4 rounded-xl text-lg hover:bg-cyan-100 transition-colors"
+                            className="block w-full bg-cyan-50 border border-cyan-200 text-cyan-900 font-extrabold text-center font-bold py-4 rounded-xl text-lg hover:bg-cyan-100 transition-colors"
                         >
                             ACCESS VAULT
                         </Link>
@@ -354,19 +354,19 @@ const UserDropdown = () => {
 
     return (
         <Dropdown label={
-            <div className="w-8 h-8 rounded-full bg-violet-600 text-zinc-950 font-semibold flex items-center justify-center font-bold text-sm border border-violet-400/50 hover:border-violet-400 transition-colors shadow-[0_0_10px_rgba(139,92,246,0.3)]">
+            <div className="w-8 h-8 rounded-full bg-violet-600 text-zinc-950 font-semibold flex items-center justify-center font-bold text-sm font-semibold border border-violet-400/50 hover:border-violet-400 transition-colors shadow-[0_0_10px_rgba(139,92,246,0.3)]">
                 {initials}
             </div>
         }>
             <div className="px-4 py-3 border-b border-zinc-400 mb-2">
-                <p className="text-sm font-medium text-zinc-900">{user.fullName || 'User'}</p>
-                <p className="text-xs text-zinc-950 truncate">{user.primaryEmailAddress?.emailAddress}</p>
+                <p className="text-sm font-semibold font-medium text-zinc-900">{user.fullName || 'User'}</p>
+                <p className="text-xs font-bold text-zinc-950 truncate">{user.primaryEmailAddress?.emailAddress}</p>
             </div>
             <DropdownItem href="/vault" description="Your intelligence dashboard">My Vault</DropdownItem>
             <DropdownItem href="/system" description="All enterprise tools">Tools Library</DropdownItem>
             <button 
                 onClick={() => signOut()} 
-                className="w-full text-left block px-4 py-3 text-sm text-zinc-900 font-medium hover:text-red-600 hover:bg-zinc-50 transition-colors mt-2 border-t border-zinc-400"
+                className="w-full text-left block px-4 py-3 text-sm font-semibold text-zinc-900 font-medium hover:text-red-900 font-extrabold hover:bg-zinc-50 transition-colors mt-2 border-t border-zinc-400"
             >
                 Sign Out
             </button>

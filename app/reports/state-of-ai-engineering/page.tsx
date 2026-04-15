@@ -20,13 +20,13 @@ export default function StateOfAIEngineering() {
             <Meteors count={20} />
 
             <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 sm:py-32">
-                <Link href="/" className="inline-flex items-center text-sm font-mono text-zinc-800 hover:text-zinc-900 transition-colors mb-12 uppercase tracking-widest">
+                <Link href="/" className="inline-flex items-center text-sm font-semibold font-mono text-zinc-950 font-bold hover:text-zinc-900 transition-colors mb-12 uppercase tracking-widest">
                     <ChevronRight size={14} className="mr-1 rotate-180" /> Back to Base
                 </Link>
 
                 {/* Hero Section */}
                 <div className="space-y-6 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-800 font-semibold text-xs font-mono uppercase tracking-widest">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-900 font-extrabold font-semibold text-xs font-bold font-mono uppercase tracking-widest">
                         <LockKeyhole size={14} /> Intelligence Suite V3 / Gated Asset
                     </div>
                     <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-white to-zinc-500 leading-tight">
@@ -46,9 +46,9 @@ export default function StateOfAIEngineering() {
                         <div className="relative z-10 flex flex-col gap-6">
                             <div className="space-y-2">
                                 <h3 className="text-2xl font-bold text-zinc-950 flex items-center gap-2">
-                                   <BookOpen className="text-purple-800 font-semibold" size={24} /> Unlock The Playbook
+                                   <BookOpen className="text-purple-900 font-extrabold font-semibold" size={24} /> Unlock The Playbook
                                 </h3>
-                                <p className="text-sm text-zinc-900 font-medium">
+                                <p className="text-sm font-semibold text-zinc-900 font-medium">
                                     Enter your executive email to instantly unlock the 40-page report and map your dashboard telemetry.
                                 </p>
                             </div>
@@ -60,34 +60,34 @@ export default function StateOfAIEngineering() {
                     {/* What's Inside */}
                     <div className="space-y-8 pl-4">
                         <div>
-                            <h4 className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-4">What's Inside?</h4>
+                            <h4 className="text-sm font-semibold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-4">What's Inside?</h4>
                             <ul className="space-y-4">
                                 <li className="flex items-start gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-cyan-500/10 text-cyan-800 font-semibold flex items-center justify-center flex-shrink-0 mt-0.5 border border-cyan-500/20">1</div>
+                                    <div className="w-6 h-6 rounded-full bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold flex items-center justify-center flex-shrink-0 mt-0.5 border border-cyan-500/20">1</div>
                                     <div>
-                                        <p className="text-zinc-800 font-medium">The SLM vs API Deficit</p>
-                                        <p className="text-xs text-zinc-950 mt-1">Why wrapping OpenAI is a tactical advantage but a strategic liability long-term.</p>
+                                        <p className="text-zinc-950 font-bold font-medium">The SLM vs API Deficit</p>
+                                        <p className="text-xs font-bold text-zinc-950 mt-1">Why wrapping OpenAI is a tactical advantage but a strategic liability long-term.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-purple-500/10 text-purple-800 font-semibold flex items-center justify-center flex-shrink-0 mt-0.5 border border-purple-500/20">2</div>
+                                    <div className="w-6 h-6 rounded-full bg-purple-500/10 text-purple-900 font-extrabold font-semibold flex items-center justify-center flex-shrink-0 mt-0.5 border border-purple-500/20">2</div>
                                     <div>
-                                        <p className="text-zinc-800 font-medium">FTE Displacement Timelines</p>
-                                        <p className="text-xs text-zinc-950 mt-1">Exact mathematics on replacing Junior devs with Copilot vs RAG architecture.</p>
+                                        <p className="text-zinc-950 font-bold font-medium">FTE Displacement Timelines</p>
+                                        <p className="text-xs font-bold text-zinc-950 mt-1">Exact mathematics on replacing Junior devs with Copilot vs RAG architecture.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <div className="w-6 h-6 rounded-full bg-rose-500/10 text-rose-400 flex items-center justify-center flex-shrink-0 mt-0.5 border border-rose-500/20"><ShieldAlert size={12} /></div>
                                     <div>
-                                        <p className="text-zinc-800 font-medium">Hostile Valuation Protection</p>
-                                        <p className="text-xs text-zinc-950 mt-1">How PE firms use your unoptimized token spend to gut your EBITDA during M&amp;A.</p>
+                                        <p className="text-zinc-950 font-bold font-medium">Hostile Valuation Protection</p>
+                                        <p className="text-xs font-bold text-zinc-950 mt-1">How PE firms use your unoptimized token spend to gut your EBITDA during M&amp;A.</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         
                         <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-400">
-                            <p className="text-xs text-zinc-950 font-mono italic">
+                            <p className="text-xs font-bold text-zinc-950 font-mono italic">
                                 "This is the document I wish my CTO read before we burned $4M trying to build an internal Claude wrapper." 
                                 <br/><span className="text-zinc-950 mt-2 block">— Director of R&D, Series C Fintech</span>
                             </p>

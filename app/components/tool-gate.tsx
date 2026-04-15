@@ -153,7 +153,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                     <p className="text-zinc-900 text-lg mb-8 max-w-md mx-auto">
                         You have exceeded the maximum number of free generic diagnostic scans. To continue evaluating systems via {toolName}, please join the Vault.
                     </p>
-                    <a href="/vault/join" className="block w-full py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm rounded-xl transition-all shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:shadow-[0_0_30px_rgba(225,29,72,0.6)]">
+                    <a href="/vault/join" className="block w-full py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:shadow-[0_0_30px_rgba(225,29,72,0.6)]">
                         Upgrade & Unlock Vault →
                     </a>
                 </motion.div>
@@ -174,7 +174,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                 className="max-w-xl w-full text-center z-10"
             >
                 <div className="w-16 h-16 bg-white/5 border border-zinc-400 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
-                    <Lock className="w-8 h-8 text-cyan-800 font-semibold" />
+                    <Lock className="w-8 h-8 text-cyan-900 font-extrabold font-semibold" />
                 </div>
 
                 <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tighter">
@@ -206,7 +206,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                                 prefix="Email"
                                 field="email"
                                 errors={state.errors}
-                                className="absolute -bottom-6 left-0 text-xs text-zinc-900 font-bold"
+                                className="absolute -bottom-6 left-0 text-xs font-bold text-zinc-900 font-bold"
                             />
                         </div>
 
@@ -215,7 +215,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                             <motion.div
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="flex items-center gap-2 p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-800 font-semibold text-sm"
+                                className="flex items-center gap-2 p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-900 font-extrabold font-semibold text-sm"
                             >
                                 <AlertCircle className="w-4 h-4 flex-shrink-0" />
                                 <span>{validationError}</span>
@@ -225,7 +225,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                         <button
                             type="submit"
                             disabled={state.submitting || isValidating}
-                            className="mt-2 w-full py-4 bg-white hover:bg-cyan-400 text-black font-bold uppercase tracking-widest text-sm rounded-xl transition-all flex items-center justify-center gap-2 group disabled:opacity-70"
+                            className="mt-2 w-full py-4 bg-white hover:bg-cyan-400 text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-2 group disabled:opacity-70"
                         >
                             {(state.submitting || isValidating) ? (
                                 <Loader2 className="w-5 h-5 animate-spin" />
@@ -237,7 +237,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                         </button>
                     </form>
 
-                    <p className="text-xs font-medium text-zinc-950 font-mono mt-6 uppercase tracking-widest">
+                    <p className="text-xs font-bold font-medium text-zinc-950 font-mono mt-6 uppercase tracking-widest">
                         Zero spam. Just high-leverage insights for product leaders.
                     </p>
                 </div>

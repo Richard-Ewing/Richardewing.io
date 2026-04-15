@@ -26,7 +26,7 @@ export function CopyButton({ textToCopy }: { textToCopy: string }) {
             }`}
         >
             {copied ? <CheckCircle className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
-            <span className="text-sm font-bold uppercase tracking-widest hidden sm:inline">
+            <span className="text-sm font-semibold font-bold uppercase tracking-widest hidden sm:inline">
                 {copied ? 'Copied' : 'Copy'}
             </span>
         </button>

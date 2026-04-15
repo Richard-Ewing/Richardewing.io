@@ -24,7 +24,7 @@ export default function CopilotROIvsGitClearPage() {
         <main className="pt-20 bg-white min-h-screen">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
                         <Link href="/compare" className="hover:text-zinc-950 font-semibolduchsia-400">Compare</Link><span>/</span><span className="text-zinc-950 font-semibolduchsia-400 font-bold">Copilot ROI vs GitClear</span>
                     </div>
 
@@ -41,17 +41,17 @@ export default function CopilotROIvsGitClearPage() {
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr className="border-b border-zinc-400">
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-800 uppercase tracking-widest">Dimension</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-950 font-semibolduchsia-400 uppercase tracking-widest">Richard Ewing (Copilot ROI)</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-900 uppercase tracking-widest">GitClear</th>
+                                    <th className="text-left py-4 px-4 text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest">Dimension</th>
+                                    <th className="text-left py-4 px-4 text-xs font-bold font-mono text-zinc-950 font-semibolduchsia-400 uppercase tracking-widest">Richard Ewing (Copilot ROI)</th>
+                                    <th className="text-left py-4 px-4 text-xs font-bold font-mono text-zinc-900 uppercase tracking-widest">GitClear</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
                                     <tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50">
-                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium font-bold">{row.dimension}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.exogram}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.gitclear}</td>
+                                        <td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium font-bold">{row.dimension}</td>
+                                        <td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium">{row.exogram}</td>
+                                        <td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium">{row.gitclear}</td>
                                     </tr>
                                 ))}
                             </tbody>

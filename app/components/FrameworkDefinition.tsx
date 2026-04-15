@@ -49,7 +49,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
 
                 {/* Breadcrumb */}
                 <div className="py-8">
-                    <a href="/articles" className="text-zinc-800 hover:text-zinc-900 text-sm font-mono transition-colors">
+                    <a href="/articles" className="text-zinc-950 font-bold hover:text-zinc-900 text-sm font-semibold font-mono transition-colors">
                         ← Back to Canonical Hub
                     </a>
                 </div>
@@ -57,7 +57,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {/* Header */}
                 <section className="section-sm">
                     <div className="max-w-3xl">
-                        <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">
+                        <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">
                             Framework Definition
                         </div>
                         <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6 font-grotesk leading-tight">
@@ -72,7 +72,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {/* Definition */}
                 <section className="section-sm">
                     <div className="max-w-3xl">
-                        <h2 className="text-lg font-semibold text-cyan-800 font-semibold mb-4 font-grotesk">Definition</h2>
+                        <h2 className="text-lg font-semibold text-cyan-900 font-extrabold font-semibold mb-4 font-grotesk">Definition</h2>
                         <div className="p-6 bg-white/5 border-l-4 border-cyan-400 rounded-r-lg">
                             <p className="text-xl text-zinc-950 leading-relaxed font-serif italic">
                                 {framework.definition}
@@ -84,8 +84,8 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {/* Why It Matters */}
                 <section className="section-sm">
                     <div className="max-w-3xl">
-                        <h2 className="text-lg font-semibold text-purple-800 font-semibold mb-4 font-grotesk">Why It Matters</h2>
-                        <p className="text-zinc-800 leading-relaxed text-lg">
+                        <h2 className="text-lg font-semibold text-purple-900 font-extrabold font-semibold mb-4 font-grotesk">Why It Matters</h2>
+                        <p className="text-zinc-950 font-bold leading-relaxed text-lg">
                             {framework.whyItMatters}
                         </p>
                     </div>
@@ -115,10 +115,10 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                         <ul className="space-y-4">
                             {framework.relatedArticles.map((article, i) => (
                                 <li key={i} className="group">
-                                    <a href={article.url} className="text-lg text-zinc-950 group-hover:text-purple-800 font-semibold transition-colors font-semibold block mb-1">
+                                    <a href={article.url} className="text-lg text-zinc-950 group-hover:text-purple-900 font-extrabold font-semibold transition-colors font-semibold block mb-1">
                                         "{article.title}"
                                     </a>
-                                    <span className="text-zinc-950 text-sm font-mono"> — {article.publication}, {article.date}</span>
+                                    <span className="text-zinc-950 text-sm font-semibold font-mono"> — {article.publication}, {article.date}</span>
                                 </li>
                             ))}
                         </ul>
@@ -129,11 +129,11 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {framework.relatedTool && (
                     <section className="section my-8">
                         <div className="max-w-3xl card-featured border-purple-500/50 p-8">
-                            <h2 className="text-lg font-semibold text-purple-800 font-semibold mb-2 font-grotesk">Calculate Yours</h2>
-                            <p className="text-zinc-800 mb-6">Use the interactive tool to calculate your {framework.name}.</p>
+                            <h2 className="text-lg font-semibold text-purple-900 font-extrabold font-semibold mb-2 font-grotesk">Calculate Yours</h2>
+                            <p className="text-zinc-950 font-bold mb-6">Use the interactive tool to calculate your {framework.name}.</p>
                             <a
                                 href={framework.relatedTool.url}
-                                className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 transition-colors"
+                                className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 transition-colors"
                             >
                                 Use the {framework.relatedTool.name} →
                             </a>
@@ -146,8 +146,8 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                     <div className="max-w-3xl">
                         <h2 className="text-sm font-semibold text-zinc-950 mb-4 font-mono uppercase tracking-widest">Citation</h2>
                         <div className="card bg-white/50 p-6 border-zinc-400">
-                            <p className="text-zinc-950 text-xs mb-4 uppercase">To cite this definition:</p>
-                            <p className="text-zinc-800 font-mono text-sm break-all">
+                            <p className="text-zinc-950 text-xs font-bold mb-4 uppercase">To cite this definition:</p>
+                            <p className="text-zinc-950 font-bold font-mono text-sm font-semibold break-all">
                                 Ewing, R. (2026). "{framework.name}." richardewing.io.<br />
                                 https://www.richardewing.io/articles/frameworks/{framework.slug}
                             </p>

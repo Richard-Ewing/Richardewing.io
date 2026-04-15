@@ -21,20 +21,20 @@ export default function Error({
                     ⚠️
                 </div>
                 <h2 className="text-xl font-bold mb-2">Protocol Malfunction</h2>
-                <p className="text-zinc-700 text-sm mb-6">
+                <p className="text-zinc-950 font-bold text-sm font-semibold mb-6">
                     A critical error occurred while rendering the scenario artifact.<br />
                     Details: {error.message || 'Unknown Error'}
                 </p>
                 <div className="flex gap-4 justify-center">
                     <button
                         onClick={() => reset()}
-                        className="bg-[#238636] hover:bg-[#2ea043] text-zinc-950 px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold transition-colors"
+                        className="bg-[#238636] hover:bg-[#2ea043] text-zinc-950 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest font-bold transition-colors"
                     >
                         Try Again
                     </button>
                     <button
                         onClick={() => window.location.href = '/tools/audit-interview'}
-                        className="bg-[#30363d] hover:bg-[#3c444d] text-zinc-950 px-4 py-2 rounded-lg text-xs uppercase tracking-widest font-bold transition-colors"
+                        className="bg-[#30363d] hover:bg-[#3c444d] text-zinc-950 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest font-bold transition-colors"
                     >
                         Abort
                     </button>

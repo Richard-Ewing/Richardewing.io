@@ -53,8 +53,8 @@ export default function HackerNoonRecapPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/articles" className="hover:text-cyan-800 font-semibold">Articles</Link><span>/</span><span className="text-orange-800 font-semibold font-bold">HackerNoon</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/articles" className="hover:text-cyan-900 font-extrabold font-semibold">Articles</Link><span>/</span><span className="text-orange-900 font-extrabold font-semibold font-bold">HackerNoon</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Published on{' '}
@@ -63,7 +63,7 @@ export default function HackerNoonRecapPage() {
                     <p className="text-lg text-zinc-900 mb-4 max-w-2xl">
                         Richard Ewing&apos;s articles on HackerNoon — the leading platform for developer-focused content, covering AI agent economics, open-source sustainability, and technical debt strategy for startups.
                     </p>
-                    <p className="text-sm text-zinc-950 mb-12">HackerNoon reaches 4M+ developers and technical decision-makers monthly.</p>
+                    <p className="text-sm font-semibold text-zinc-950 mb-12">HackerNoon reaches 4M+ developers and technical decision-makers monthly.</p>
 
                     <div className="space-y-6 mb-16">
                         {articles.map((article, i) => (
@@ -75,7 +75,7 @@ export default function HackerNoonRecapPage() {
                                         <p className="text-zinc-900 mb-4">{article.description}</p>
                                         <div className="flex flex-wrap gap-2">
                                             {article.topics.map(topic => (
-                                                <span key={topic} className="px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-xs text-zinc-900 font-bold font-mono">{topic}</span>
+                                                <span key={topic} className="px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-xs font-bold text-zinc-900 font-bold font-mono">{topic}</span>
                                             ))}
                                         </div>
                                     </div>
@@ -89,16 +89,16 @@ export default function HackerNoonRecapPage() {
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
                                 {['agentic-workflow', 'ai-cogs', 'technical-debt', 'vc-due-diligence', 'dependency-debt'].map(slug => (
-                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
+                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm font-semibold text-zinc-900 font-medium hover:text-cyan-900 font-extrabold font-semibold transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>
                         </div>
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Tools</h2>
                             <div className="space-y-2">
-                                <Link href="/tools/pdi" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ Product Debt Index (PDI)</Link>
-                                <Link href="/tools/aueb" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ AUEB Calculator</Link>
-                                <Link href="/tools/scoring" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ AI Scoring Engine</Link>
+                                <Link href="/tools/pdi" className="block text-sm font-semibold text-zinc-900 font-medium hover:text-cyan-900 font-extrabold font-semibold transition-colors">→ Product Debt Index (PDI)</Link>
+                                <Link href="/tools/aueb" className="block text-sm font-semibold text-zinc-900 font-medium hover:text-cyan-900 font-extrabold font-semibold transition-colors">→ AUEB Calculator</Link>
+                                <Link href="/tools/scoring" className="block text-sm font-semibold text-zinc-900 font-medium hover:text-cyan-900 font-extrabold font-semibold transition-colors">→ AI Scoring Engine</Link>
                             </div>
                         </div>
                     </div>

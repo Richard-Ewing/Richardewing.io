@@ -18,15 +18,15 @@ const BriefCard = ({ number, title, subtitle, href, isNew, date }: BriefCardProp
     <a href={href} className="block group h-full">
         <div className="card h-full p-6 hover:border-purple-500/50 transition-all relative overflow-hidden">
             {isNew && (
-                <div className="absolute top-0 right-0 bg-purple-500/20 text-purple-800 font-semibold px-3 py-1 text-xs font-medium font-bold uppercase tracking-widest rounded-bl-lg border-l border-b border-purple-500/30">
+                <div className="absolute top-0 right-0 bg-purple-500/20 text-purple-900 font-extrabold font-semibold px-3 py-1 text-xs font-bold font-medium font-bold uppercase tracking-widest rounded-bl-lg border-l border-b border-purple-500/30">
                     New
                 </div>
             )}
-            <div className="text-xs text-zinc-950 mb-3 font-mono uppercase tracking-widest">{number} · {date}</div>
-            <h3 className="font-semibold text-lg text-zinc-950 mb-2 group-hover:text-purple-800 font-semibold transition-colors font-grotesk">
+            <div className="text-xs font-bold text-zinc-950 mb-3 font-mono uppercase tracking-widest">{number} · {date}</div>
+            <h3 className="font-semibold text-lg text-zinc-950 mb-2 group-hover:text-purple-900 font-extrabold font-semibold transition-colors font-grotesk">
                 {title}
             </h3>
-            <p className="text-zinc-800 text-sm leading-relaxed">
+            <p className="text-zinc-950 font-bold text-sm font-semibold leading-relaxed">
                 {subtitle}
             </p>
         </div>
@@ -51,20 +51,20 @@ export default function BriefingsPage() {
             <div className="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
 
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-gray-600 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
                 <span>Signal</span><span>/</span><span className="text-zinc-950 font-bold">Briefings</span>
             </div>
 
             <ScrollReveal>
                 <div className="mb-12">
-                    <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">
+                    <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">
                         Monthly Newsletter
                     </div>
                     <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6 font-grotesk">
                         Executive<br />
-                        <span className="text-purple-800 font-semibold">Briefings.</span>
+                        <span className="text-purple-900 font-extrabold font-semibold">Briefings.</span>
                     </h1>
-                    <p className="text-zinc-800 text-lg mb-8 max-w-2xl">
+                    <p className="text-zinc-950 font-bold text-lg mb-8 max-w-2xl">
                         Dense, actionable intelligence for leaders who don't have time for
                         "thought leadership." <span className="text-zinc-900">Read time: 5-10 minutes each.</span>
                     </p>
@@ -73,7 +73,7 @@ export default function BriefingsPage() {
                         href="https://theproducteconomist.beehiiv.com/subscribe"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 transition-colors shadow-lg shadow-purple-900/20"
+                        className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 transition-colors shadow-lg shadow-purple-900/20"
                     >
                         Subscribe on Beehiiv →
                     </a>
@@ -96,17 +96,17 @@ export default function BriefingsPage() {
                     <div className="card-featured p-8 md:p-10 border-purple-500/50 hover:border-purple-500/80 transition-all">
                         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                             <div>
-                                <div className="text-xs text-zinc-900 font-bold uppercase mb-2 font-mono">Interactive Tool</div>
+                                <div className="text-xs font-bold text-zinc-900 font-bold uppercase mb-2 font-mono">Interactive Tool</div>
                                 <h3 className="text-2xl font-bold text-zinc-950 mb-2 font-grotesk">
                                     AI Unit Economics Benchmark™
                                 </h3>
-                                <p className="text-zinc-800 text-sm max-w-md">
+                                <p className="text-zinc-950 font-bold text-sm font-semibold max-w-md">
                                     Calculate if your AI features will scale or collapse before you write a single line of code.
                                 </p>
                             </div>
                             <Link
                                 href="/tools/aueb"
-                                className="px-6 py-3 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 transition-colors whitespace-nowrap"
+                                className="px-6 py-3 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 transition-colors whitespace-nowrap"
                             >
                                 Launch Tool →
                             </Link>
@@ -125,14 +125,14 @@ export default function BriefingsPage() {
             {/* Archive link */}
             <ScrollReveal delay={300}>
                 <div className="text-center pb-20">
-                    <p className="text-zinc-950 text-sm mb-4">
+                    <p className="text-zinc-950 text-sm font-semibold mb-4">
                         Full archive on Beehiiv:
                     </p>
                     <a
                         href="https://theproducteconomist.beehiiv.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-purple-800 font-semibold hover:text-purple-800 font-semibold transition-colors border-b border-purple-500/30 hover:border-purple-400"
+                        className="text-purple-900 font-extrabold font-semibold hover:text-purple-900 font-extrabold font-semibold transition-colors border-b border-purple-500/30 hover:border-purple-400"
                     >
                         theproducteconomist.beehiiv.com →
                     </a>

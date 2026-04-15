@@ -24,7 +24,7 @@ export default function TestimonialsPage() {
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-amber-500 uppercase tracking-widest mb-4">Testimonials</div>
+                        <div className="text-xs font-bold font-mono text-amber-500 uppercase tracking-widest mb-4">Testimonials</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             What Clients{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Say</span>
@@ -41,11 +41,11 @@ export default function TestimonialsPage() {
                                     <span className="text-2xl">{t.icon}</span>
                                     <div>
                                         <div className="text-zinc-950 font-bold text-sm">{t.name}</div>
-                                        <div className="text-xs text-zinc-900 font-bold">{t.company}</div>
+                                        <div className="text-xs font-bold text-zinc-900 font-bold">{t.company}</div>
                                     </div>
-                                    <span className="ml-auto px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-zinc-900 font-bold font-mono">{t.role}</span>
+                                    <span className="ml-auto px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-bold text-zinc-900 font-bold font-mono">{t.role}</span>
                                 </div>
-                                <blockquote className="text-zinc-950 text-sm leading-relaxed italic">&ldquo;{t.quote}&rdquo;</blockquote>
+                                <blockquote className="text-zinc-950 text-sm font-semibold leading-relaxed italic">&ldquo;{t.quote}&rdquo;</blockquote>
                             </div>
                         ))}
                     </div>
@@ -53,19 +53,19 @@ export default function TestimonialsPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-16">
                         <div className="rounded-xl border border-zinc-400 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">100+</div>
-                            <div className="text-xs text-zinc-950 mt-1">Audits Completed</div>
+                            <div className="text-xs font-bold text-zinc-950 mt-1">Audits Completed</div>
                         </div>
                         <div className="rounded-xl border border-zinc-400 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">$50M+</div>
-                            <div className="text-xs text-zinc-950 mt-1">Client Savings Identified</div>
+                            <div className="text-xs font-bold text-zinc-950 mt-1">Client Savings Identified</div>
                         </div>
                         <div className="rounded-xl border border-zinc-400 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">14</div>
-                            <div className="text-xs text-zinc-950 mt-1">Industries Served</div>
+                            <div className="text-xs font-bold text-zinc-950 mt-1">Industries Served</div>
                         </div>
                         <div className="rounded-xl border border-zinc-400 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400">4.9/5</div>
-                            <div className="text-xs text-zinc-950 mt-1">Client Satisfaction</div>
+                            <div className="text-xs font-bold text-zinc-950 mt-1">Client Satisfaction</div>
                         </div>
                     </div>
 

@@ -41,7 +41,7 @@ const colorMap: Record<string, string> = {
     emerald: 'border-emerald-500/30 bg-emerald-500/5',
     amber: 'border-amber-500/30 bg-amber-500/5',
 };
-const textMap: Record<string, string> = { cyan: 'text-cyan-800 font-semibold', emerald: 'text-emerald-800 font-semibold', amber: 'text-amber-400' };
+const textMap: Record<string, string> = { cyan: 'text-cyan-900 font-extrabold font-semibold', emerald: 'text-emerald-900 font-extrabold font-semibold', amber: 'text-amber-400' };
 
 export default function ROIPage() {
     return (
@@ -49,7 +49,7 @@ export default function ROIPage() {
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-4">ROI Calculator</div>
+                        <div className="text-xs font-bold font-mono text-emerald-500 uppercase tracking-widest mb-4">ROI Calculator</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             What&apos;s Your{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Engineering Waste?</span>
@@ -76,7 +76,7 @@ export default function ROIPage() {
                                         <div className="flex justify-between"><span className="text-zinc-950 text-sm">Total R&D Spend</span><span className="text-zinc-950 font-mono">${(totalRD / 1000000).toFixed(1)}M</span></div>
                                         <div className="border-t border-zinc-400 pt-4"></div>
                                         <div className="flex justify-between"><span className="text-zinc-950 text-sm">Innovation Tax (before)</span><span className="text-rose-400 font-mono">{s.innovationTaxBefore}%</span></div>
-                                        <div className="flex justify-between"><span className="text-zinc-950 text-sm">Innovation Tax (after)</span><span className="text-emerald-800 font-semibold font-mono">{s.innovationTaxAfter}%</span></div>
+                                        <div className="flex justify-between"><span className="text-zinc-950 text-sm">Innovation Tax (after)</span><span className="text-emerald-900 font-extrabold font-semibold font-mono">{s.innovationTaxAfter}%</span></div>
                                         <div className="border-t border-zinc-400 pt-4"></div>
                                         <div className="flex justify-between"><span className="text-zinc-950 text-sm">Annual Savings</span><span className={`font-mono font-bold text-lg ${textMap[s.color]}`}>${(savings / 1000000).toFixed(1)}M</span></div>
                                         <div className="flex justify-between"><span className="text-zinc-950 text-sm">ROI on Audit</span><span className={`font-mono font-bold ${textMap[s.color]}`}>{roi}%</span></div>
@@ -92,17 +92,17 @@ export default function ROIPage() {
                             <div className="text-center">
                                 <div className="text-3xl mb-3">📊</div>
                                 <h3 className="text-zinc-950 font-bold mb-2">Measure Innovation Tax</h3>
-                                <p className="text-sm text-zinc-900 font-medium">Quantify % of engineering spent on maintenance vs. new feature work</p>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium">Quantify % of engineering spent on maintenance vs. new feature work</p>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl mb-3">🎯</div>
                                 <h3 className="text-zinc-950 font-bold mb-2">Identify Waste</h3>
-                                <p className="text-sm text-zinc-900 font-medium">Pinpoint specific debt sources: rework, incidents, manual processes</p>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium">Pinpoint specific debt sources: rework, incidents, manual processes</p>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl mb-3">💰</div>
                                 <h3 className="text-zinc-950 font-bold mb-2">Remediation Plan</h3>
-                                <p className="text-sm text-zinc-900 font-medium">Prioritized playbook to reclaim engineering capacity, measured in dollars</p>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium">Prioritized playbook to reclaim engineering capacity, measured in dollars</p>
                             </div>
                         </div>
                     </div>

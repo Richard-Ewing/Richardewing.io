@@ -76,26 +76,26 @@ export default async function ArticlePage({ params }: Props) {
             />
 
             {/* Breadcrumb */}
-            <div className="mb-8 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-8 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
                 <Link href="/articles" className="hover:text-zinc-900 transition-colors">Canonical Hub</Link>
                 <span>/</span>
-                <span className="text-cyan-800 font-semibold font-bold truncate">{article.title}</span>
+                <span className="text-cyan-900 font-extrabold font-semibold font-bold truncate">{article.title}</span>
             </div>
 
             {/* Header */}
             <header className="mb-12 border-b border-zinc-400 pb-12">
                 <div className="flex items-center gap-4 mb-6">
-                    <span className="px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-800 font-semibold text-xs font-mono uppercase tracking-widest">
+                    <span className="px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold text-xs font-bold font-mono uppercase tracking-widest">
                         {article.source}
                     </span>
-                    <span className="text-zinc-700 text-xs font-mono uppercase tracking-widest">
+                    <span className="text-zinc-950 font-bold text-xs font-bold font-mono uppercase tracking-widest">
                         {article.readTime}
                     </span>
                 </div>
                 <h1 className="text-3xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6 leading-tight">
                     {article.title}
                 </h1>
-                <p className="text-xl text-zinc-600 leading-relaxed font-serif italic">
+                <p className="text-xl text-zinc-950 font-bold leading-relaxed font-serif italic">
                     {article.description}
                 </p>
             </header>
@@ -104,7 +104,7 @@ export default async function ArticlePage({ params }: Props) {
             <div className="prose prose-zinc prose-lg max-w-none">
                 <div className="p-8 bg-white/5 border border-zinc-400 rounded-2xl mb-12">
                     <h3 className="text-xl font-bold text-zinc-950 mb-4 font-grotesk">Full Text Available in Archive</h3>
-                    <p className="text-zinc-600 text-sm mb-6">
+                    <p className="text-zinc-950 font-bold text-sm font-semibold mb-6">
                         This article was originally published on <strong>{article.source}</strong>.
                         You can read the full text in its original format or view the local archival copy.
                     </p>
@@ -112,12 +112,12 @@ export default async function ArticlePage({ params }: Props) {
                         {article.legacyUrl && (
                             <a
                                 href={article.legacyUrl}
-                                className="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-xs rounded-lg transition-colors"
+                                className="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-xs font-bold rounded-lg transition-colors"
                             >
                                 Read Archival Copy
                             </a>
                         )}
-                        <Link href="/briefings" className="px-6 py-3 border border-white/20 hover:border-zinc-4000 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-lg transition-colors">
+                        <Link href="/briefings" className="px-6 py-3 border border-white/20 hover:border-zinc-4000 text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold rounded-lg transition-colors">
                             View All Briefings
                         </Link>
                     </div>
@@ -130,7 +130,7 @@ export default async function ArticlePage({ params }: Props) {
             </div>
 
             <div className="mt-20 pt-12 border-t border-zinc-400">
-                <Link href="/articles" className="text-zinc-700 hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-mono uppercase tracking-widest">
+                <Link href="/articles" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-semibold font-mono uppercase tracking-widest">
                     ← Back to Canonical Hub
                 </Link>
             </div>

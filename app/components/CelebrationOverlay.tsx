@@ -240,10 +240,10 @@ export default function CelebrationOverlay({
                 {/* Progress streak indicator */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-zinc-400">
                     <span className="text-amber-400">🔥</span>
-                    <span className="text-sm text-zinc-950 font-mono">Keep the momentum going</span>
+                    <span className="text-sm font-semibold text-zinc-950 font-mono">Keep the momentum going</span>
                 </div>
 
-                <p className="text-xs text-zinc-900 font-bold mt-6">Click anywhere to continue</p>
+                <p className="text-xs font-bold text-zinc-900 font-bold mt-6">Click anywhere to continue</p>
             </div>
 
             <style jsx>{`

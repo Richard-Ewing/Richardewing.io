@@ -148,7 +148,7 @@ const colorMap: Record<string, string> = {
     green: 'border-green-500/20 hover:border-green-500/50',
     purple: 'border-purple-500/20 hover:border-purple-500/50',
 };
-const textMap: Record<string, string> = { emerald: 'text-emerald-800 font-semibold', blue: 'text-blue-800 font-semibold', orange: 'text-orange-800 font-semibold', violet: 'text-violet-400', sky: 'text-sky-400', pink: 'text-pink-400', amber: 'text-amber-400', red: 'text-red-800 font-semibold', lime: 'text-lime-400', yellow: 'text-yellow-800 font-semibold', indigo: 'text-indigo-800 font-semibold', fuchsia: 'text-zinc-950 font-semibolduchsia-400', teal: 'text-teal-400', green: 'text-green-400', purple: 'text-purple-800 font-semibold' };
+const textMap: Record<string, string> = { emerald: 'text-emerald-900 font-extrabold font-semibold', blue: 'text-blue-900 font-extrabold font-semibold', orange: 'text-orange-900 font-extrabold font-semibold', violet: 'text-violet-400', sky: 'text-sky-400', pink: 'text-pink-400', amber: 'text-amber-400', red: 'text-red-900 font-extrabold font-semibold', lime: 'text-lime-400', yellow: 'text-yellow-900 font-extrabold font-semibold', indigo: 'text-indigo-900 font-extrabold font-semibold', fuchsia: 'text-zinc-950 font-semibolduchsia-400', teal: 'text-teal-400', green: 'text-green-400', purple: 'text-purple-900 font-extrabold font-semibold' };
 
 export default function IndustriesPage() {
     return (
@@ -169,10 +169,10 @@ export default function IndustriesPage() {
                                     <div className="flex items-start gap-4">
                                         <div className="text-3xl">{v.icon}</div>
                                         <div>
-                                            <div className={`text-xs font-mono uppercase tracking-widest mb-1 ${textMap[v.color]}`}>{v.subtitle}</div>
+                                            <div className={`text-xs font-bold font-mono uppercase tracking-widest mb-1 ${textMap[v.color]}`}>{v.subtitle}</div>
                                             <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-3">{v.title}</h2>
                                             <p className="text-zinc-900 mb-4">{v.description}</p>
-                                            <span className={`text-sm font-bold uppercase tracking-widest ${textMap[v.color]}`}>Learn More →</span>
+                                            <span className={`text-sm font-semibold font-bold uppercase tracking-widest ${textMap[v.color]}`}>Learn More →</span>
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +182,7 @@ export default function IndustriesPage() {
 
                     <div className="text-center py-12 border-t border-zinc-400">
                         <p className="text-zinc-900 mb-4">Don&apos;t see your industry?</p>
-                        <Link href="/advisory" className="text-cyan-800 font-semibold hover:text-cyan-800 font-semibold font-bold uppercase tracking-widest text-sm">
+                        <Link href="/advisory" className="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
                             Book a Custom Assessment →
                         </Link>
                     </div>

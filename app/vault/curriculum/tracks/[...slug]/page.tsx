@@ -36,24 +36,24 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
             <StructuredData data={generateCourseSchema(mod.title, mod.description, 'Richard Ewing', `https://www.richardewing.io/curriculum/tracks/${fullSlug}`)} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/curriculum/tracks" className="hover:text-cyan-800 font-semibold">Tracks</Link>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/curriculum/tracks" className="hover:text-cyan-900 font-extrabold font-semibold">Tracks</Link>
                         <span>/</span>
-                        <span className="hover:text-cyan-800 font-semibold">{mod.trackName}</span>
+                        <span className="hover:text-cyan-900 font-extrabold font-semibold">{mod.trackName}</span>
                         <span>/</span>
-                        <span className="text-cyan-600 font-bold">{mod.moduleId}</span>
+                        <span className="text-cyan-900 font-extrabold">{mod.moduleId}</span>
                     </div>
 
                     <div className="mb-10">
-                        <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-3">{mod.trackName}</div>
+                        <div className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest mb-3">{mod.trackName}</div>
                         <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-900 mb-4">
                             {mod.moduleId}:{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">{mod.title}</span>
                         </h1>
-                        <p className="text-lg text-zinc-800 max-w-2xl">{mod.description}</p>
+                        <p className="text-lg text-zinc-950 font-bold max-w-2xl">{mod.description}</p>
                         <div className="flex items-center gap-4 mt-4">
-                            <span className="px-3 py-1 rounded-full text-xs font-mono bg-cyan-50 text-cyan-700 border border-cyan-200">{mod.lessons.length} Lessons</span>
-                            <span className="px-3 py-1 rounded-full text-xs font-mono bg-emerald-50 text-emerald-700 border border-emerald-200">~45 min</span>
+                            <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-cyan-50 text-cyan-900 font-extrabold border border-cyan-200">{mod.lessons.length} Lessons</span>
+                            <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-emerald-50 text-emerald-900 font-extrabold border border-emerald-200">~45 min</span>
                         </div>
                     </div>
 
@@ -61,7 +61,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                         <h2 className="text-lg font-grotesk font-bold text-zinc-900 mb-4">🎯 What You&apos;ll Learn</h2>
                         <ul className="space-y-2 text-zinc-900">
                             {mod.takeaways.map((t, i) => (
-                                <li key={i} className="flex items-start gap-2"><span className="text-cyan-600 mt-1">✓</span> {t}</li>
+                                <li key={i} className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold mt-1">✓</span> {t}</li>
                             ))}
                         </ul>
                     </div>
@@ -83,7 +83,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                             <ModuleStepper parsedContent={aiContent}>
                                 {mod.embeddedTool && (
                                     <div className="border border-cyan-500/20 bg-zinc-50 rounded-3xl p-6 lg:p-12 mb-8 relative overflow-hidden">
-                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-800 font-semibold border-b border-l border-cyan-500/20 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
+                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold border-b border-l border-cyan-500/20 text-xs font-bold font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
                                         <ToolEmbed toolId={mod.embeddedTool} />
                                     </div>
                                 )}
@@ -94,7 +94,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                 <div className="prose prose-zinc max-w-none ai-content" dangerouslySetInnerHTML={{ __html: aiContent as string }} />
                                 {mod.embeddedTool && (
                                     <div className="border border-cyan-500/20 bg-zinc-50 rounded-3xl p-6 lg:p-12 mt-12 mb-8 relative overflow-hidden">
-                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-800 font-semibold border-b border-l border-cyan-500/20 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
+                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold border-b border-l border-cyan-500/20 text-xs font-bold font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
                                         <ToolEmbed toolId={mod.embeddedTool} />
                                     </div>
                                 )}
@@ -114,12 +114,12 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                             <div className="space-y-4 mb-6">
                                                 {Array.isArray(lesson.content) ? (
                                                     lesson.content.map((block, bIdx) => (
-                                                        <p key={bIdx} className="text-zinc-800 leading-relaxed text-[15px]">
+                                                        <p key={bIdx} className="text-zinc-950 font-bold leading-relaxed text-[15px]">
                                                             <SemanticText text={block} />
                                                         </p>
                                                     ))
                                                 ) : (
-                                                    <p className="text-zinc-800 leading-relaxed text-[15px]">
+                                                    <p className="text-zinc-950 font-bold leading-relaxed text-[15px]">
                                                         <SemanticText text={lesson.content} />
                                                     </p>
                                                 )}
@@ -130,9 +130,9 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                                     {lesson.details.map((d, j) => (
                                                         <div key={j} className="rounded-xl bg-zinc-50 border border-zinc-400 p-5 relative overflow-hidden group">
                                                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-cyan-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                                                            <div className="text-sm font-bold text-zinc-900 mb-1">{d.metric}</div>
-                                                            <p className="text-xs text-zinc-900 font-bold mb-2">{d.description}</p>
-                                                            <div className="text-xs font-medium font-mono text-cyan-500 uppercase tracking-widest">{d.benchmark}</div>
+                                                            <div className="text-sm font-semibold font-bold text-zinc-900 mb-1">{d.metric}</div>
+                                                            <p className="text-xs font-bold text-zinc-900 font-bold mb-2">{d.description}</p>
+                                                            <div className="text-xs font-bold font-medium font-mono text-cyan-500 uppercase tracking-widest">{d.benchmark}</div>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -140,8 +140,8 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
 
                                             {lesson.exercise && (
                                                 <div className="rounded-xl bg-emerald-500/5 border border-emerald-500/20 p-5 mt-8">
-                                                    <div className="text-xs font-mono text-emerald-600 uppercase tracking-widest mb-2">📝 Exercise</div>
-                                                    <p className="text-sm text-zinc-900 font-medium">{lesson.exercise}</p>
+                                                    <div className="text-xs font-bold font-mono text-emerald-900 font-extrabold uppercase tracking-widest mb-2">📝 Exercise</div>
+                                                    <p className="text-sm font-semibold text-zinc-900 font-medium">{lesson.exercise}</p>
                                                 </div>
                                             )}
 
@@ -157,7 +157,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                 ))}
                                 {mod.embeddedTool && (
                                     <div className="border border-cyan-500/20 bg-zinc-50 rounded-3xl p-6 lg:p-12 mb-8 relative overflow-hidden">
-                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-800 font-semibold border-b border-l border-cyan-500/20 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
+                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold border-b border-l border-cyan-500/20 text-xs font-bold font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
                                         <ToolEmbed toolId={mod.embeddedTool} />
                                     </div>
                                 )}
@@ -176,9 +176,9 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                     const href = article.externalUrl || article.legacyUrl || `/blog/${article.slug}`;
                                     return (
                                         <Link key={slug} href={href} className="block p-5 rounded-xl border border-zinc-400 bg-zinc-50 hover:bg-cyan-50 hover:border-cyan-300 transition-all group">
-                                            <div className="text-xs font-medium font-mono text-zinc-700 uppercase tracking-widest mb-2 group-hover:text-cyan-600">{article.source}</div>
-                                            <h3 className="text-zinc-900 font-bold mb-2 group-hover:text-cyan-700 transition-colors">{article.title}</h3>
-                                            <p className="text-zinc-800 text-sm line-clamp-2">{article.description}</p>
+                                            <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2 group-hover:text-cyan-900 font-extrabold">{article.source}</div>
+                                            <h3 className="text-zinc-900 font-bold mb-2 group-hover:text-cyan-900 font-extrabold transition-colors">{article.title}</h3>
+                                            <p className="text-zinc-950 font-bold text-sm font-semibold line-clamp-2">{article.description}</p>
                                         </Link>
                                     )
                                 })}

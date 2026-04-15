@@ -38,7 +38,7 @@ export default function ForInvestorsPage() {
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-4">For Private Equity & Venture Capital</div>
+                        <div className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest mb-4">For Private Equity & Venture Capital</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             Quantify R&D Risk<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Before You Invest</span>
@@ -58,7 +58,7 @@ export default function ForInvestorsPage() {
                                 <span className="text-3xl mb-4 block">{uc.icon}</span>
                                 <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">{uc.title}</h2>
                                 <p className="text-zinc-900 mb-4">{uc.description}</p>
-                                <span className="text-xs font-mono text-cyan-800 font-semibold uppercase tracking-widest">{uc.stats}</span>
+                                <span className="text-xs font-bold font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest">{uc.stats}</span>
                             </div>
                         ))}
                     </div>
@@ -69,10 +69,10 @@ export default function ForInvestorsPage() {
                             {metrics.map((m, i) => (
                                 <Link key={i} href={m.link} className="flex items-center justify-between p-5 rounded-xl border border-zinc-400 hover:border-cyan-500/30 transition-colors group">
                                     <div>
-                                        <div className="text-zinc-950 font-bold group-hover:text-cyan-800 font-semibold transition-colors">{m.name}</div>
-                                        <div className="text-sm text-zinc-900 font-medium">{m.description}</div>
+                                        <div className="text-zinc-950 font-bold group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">{m.name}</div>
+                                        <div className="text-sm font-semibold text-zinc-900 font-medium">{m.description}</div>
                                     </div>
-                                    <span className="text-zinc-800 group-hover:text-cyan-800 font-semibold transition-colors">→</span>
+                                    <span className="text-zinc-950 font-bold group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">→</span>
                                 </Link>
                             ))}
                         </div>

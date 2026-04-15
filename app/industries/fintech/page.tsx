@@ -21,8 +21,8 @@ export default function FinTechPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/industries" className="hover:text-cyan-800 font-semibold">Industries</Link><span>/</span><span className="text-emerald-800 font-semibold font-bold">FinTech</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/industries" className="hover:text-cyan-900 font-extrabold font-semibold">Industries</Link><span>/</span><span className="text-emerald-900 font-extrabold font-semibold font-bold">FinTech</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
@@ -46,10 +46,10 @@ export default function FinTechPage() {
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">How I Help FinTech Companies</h2>
                         <ul className="space-y-3 text-zinc-950 mb-8">
-                            <li className="flex items-start gap-3"><span className="text-emerald-800 font-semibold mt-1">→</span> <span>Quantify regulatory debt in dollar terms (not just compliance checkboxes)</span></li>
-                            <li className="flex items-start gap-3"><span className="text-emerald-800 font-semibold mt-1">→</span> <span>Calculate Technical Insolvency Date factoring compliance overhead</span></li>
-                            <li className="flex items-start gap-3"><span className="text-emerald-800 font-semibold mt-1">→</span> <span>Audit AI model governance for regulatory defensibility</span></li>
-                            <li className="flex items-start gap-3"><span className="text-emerald-800 font-semibold mt-1">→</span> <span>Evaluate build-vs-buy for core banking modernization</span></li>
+                            <li className="flex items-start gap-3"><span className="text-emerald-900 font-extrabold font-semibold mt-1">→</span> <span>Quantify regulatory debt in dollar terms (not just compliance checkboxes)</span></li>
+                            <li className="flex items-start gap-3"><span className="text-emerald-900 font-extrabold font-semibold mt-1">→</span> <span>Calculate Technical Insolvency Date factoring compliance overhead</span></li>
+                            <li className="flex items-start gap-3"><span className="text-emerald-900 font-extrabold font-semibold mt-1">→</span> <span>Audit AI model governance for regulatory defensibility</span></li>
+                            <li className="flex items-start gap-3"><span className="text-emerald-900 font-extrabold font-semibold mt-1">→</span> <span>Evaluate build-vs-buy for core banking modernization</span></li>
                         </ul>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>

@@ -50,17 +50,17 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                 <div className="flex-shrink-0 text-3xl sm:text-4xl mt-1">{track.icon}</div>
                 <div className="flex-grow pr-4">
                     <div className="flex items-center gap-3 mb-2">
-                        <div className="text-xs font-medium sm:text-xs font-mono text-zinc-800 uppercase tracking-widest">{track.subtitle}</div>
+                        <div className="text-xs font-bold font-medium sm:text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest">{track.subtitle}</div>
                         {completionCount > 0 && (
                             <div className="flex items-center gap-2">
-                                <span className="text-xs font-medium font-mono text-emerald-600 uppercase tracking-widest border border-emerald-200 px-2 py-0.5 rounded-full bg-emerald-50">
+                                <span className="text-xs font-bold font-medium font-mono text-emerald-900 font-extrabold uppercase tracking-widest border border-emerald-200 px-2 py-0.5 rounded-full bg-emerald-50">
                                     {completionCount}/{track.modules.length} Done
                                 </span>
                             </div>
                         )}
                     </div>
                     <h2 className={`text-xl sm:text-2xl font-grotesk font-bold ${textMap[track.color]} transition-colors`}>{track.title}</h2>
-                    <p className={`text-sm sm:text-base text-zinc-950 mt-2 line-clamp-2 sm:line-clamp-none ${isOpen ? '' : 'hidden sm:block'}`}>
+                    <p className={`text-sm font-semibold sm:text-base text-zinc-950 mt-2 line-clamp-2 sm:line-clamp-none ${isOpen ? '' : 'hidden sm:block'}`}>
                         {track.description}
                     </p>
                     {completionCount > 0 && !isOpen && (
@@ -98,15 +98,15 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                             return (
                                 <Link key={j} href={m.href} className={`flex items-center justify-between p-4 rounded-xl border transition-colors group ${isDone ? 'bg-emerald-50 border-emerald-200 hover:border-emerald-300' : 'bg-white border-zinc-400 hover:border-zinc-500 shadow-sm'}`}>
                                     <div className="pr-4 flex items-center gap-3">
-                                        <div className="flex-shrink-0 text-zinc-900 font-bold text-sm w-6">
-                                            {isDone ? <span className="text-emerald-600">✓</span> : <span className="text-zinc-800">{j + 1}.</span>}
+                                        <div className="flex-shrink-0 text-zinc-900 font-bold text-sm font-semibold w-6">
+                                            {isDone ? <span className="text-emerald-900 font-extrabold">✓</span> : <span className="text-zinc-950 font-bold">{j + 1}.</span>}
                                         </div>
                                         <div>
-                                            <div className={`font-bold text-sm transition-colors ${isDone ? 'text-zinc-800 group-hover:text-emerald-600' : 'text-zinc-900 group-hover:text-purple-700'}`}>{m.name}</div>
-                                            <div className="text-xs text-zinc-950 mt-1">{m.topics}</div>
+                                            <div className={`font-bold text-sm font-semibold transition-colors ${isDone ? 'text-zinc-950 font-bold group-hover:text-emerald-900 font-extrabold' : 'text-zinc-900 group-hover:text-purple-900 font-extrabold'}`}>{m.name}</div>
+                                            <div className="text-xs font-bold text-zinc-950 mt-1">{m.topics}</div>
                                         </div>
                                     </div>
-                                    <span className={`flex-shrink-0 px-3 py-1 rounded-full text-xs font-mono border whitespace-nowrap ${isDone ? 'bg-zinc-100 text-emerald-600 border-emerald-200' : 'bg-emerald-50 text-emerald-600 border-emerald-200'}`}>
+                                    <span className={`flex-shrink-0 px-3 py-1 rounded-full text-xs font-bold font-mono border whitespace-nowrap ${isDone ? 'bg-zinc-100 text-emerald-900 font-extrabold border-emerald-200' : 'bg-emerald-50 text-emerald-900 font-extrabold border-emerald-200'}`}>
                                         {isDone ? 'Review ↺' : 'Start →'}
                                     </span>
                                 </Link>
@@ -117,10 +117,10 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-zinc-50 rounded-xl p-6 border border-zinc-400">
                         {track.glossaryTerms && track.glossaryTerms.length > 0 && (
                             <div>
-                                <h3 className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-3">Related Glossary</h3>
+                                <h3 className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-3">Related Glossary</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {track.glossaryTerms.map((t: string) => (
-                                        <Link key={t} href={`/glossary/${t}`} className="px-2 py-1 rounded-md bg-white text-xs text-zinc-900 font-bold hover:text-zinc-900 transition-colors border border-zinc-400 hover:border-zinc-500">
+                                        <Link key={t} href={`/glossary/${t}`} className="px-2 py-1 rounded-md bg-white text-xs font-bold text-zinc-900 font-bold hover:text-zinc-900 transition-colors border border-zinc-400 hover:border-zinc-500">
                                             {t.replace(/-/g, ' ')}
                                         </Link>
                                     ))}
@@ -129,7 +129,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                         )}
                         {track.tools && track.tools.length > 0 && (
                             <div>
-                                <h3 className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-3">Tools & Assets</h3>
+                                <h3 className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-3">Tools & Assets</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {track.tools.map((t: any) => (
                                         <Link key={t.href} href={t.href} className={`px-3 py-1 rounded-md text-xs font-bold ${textMap[track.color]} bg-white border border-zinc-400 hover:border-current transition-colors`}>
@@ -148,16 +148,16 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                     <span className="text-3xl">🏆</span>
                                 </div>
                                 <div className="flex-grow">
-                                    <h3 className="text-xl font-grotesk font-bold text-emerald-700 mb-2">Track Mastered</h3>
-                                    <p className="text-sm text-zinc-950">
+                                    <h3 className="text-xl font-grotesk font-bold text-emerald-900 font-extrabold mb-2">Track Mastered</h3>
+                                    <p className="text-sm font-semibold text-zinc-950">
                                         You have successfully completed every module in this architecture. To help you implement these exact systems in your organization, you've unlocked a complimentary 30-minute implementation audit with Richard Ewing, or you can roll this out to your engineering managers with a Team License.
                                     </p>
                                 </div>
                                 <div className="flex flex-col gap-3 flex-shrink-0 w-full sm:w-auto">
-                                    <Link href="/advisory" className="px-6 py-3 rounded-lg bg-emerald-600 text-zinc-950 font-semibold font-bold text-sm text-center hover:bg-emerald-500 transition-colors whitespace-nowrap shadow-md">
+                                    <Link href="/advisory" className="px-6 py-3 rounded-lg bg-emerald-600 text-zinc-950 font-semibold font-bold text-sm font-semibold text-center hover:bg-emerald-500 transition-colors whitespace-nowrap shadow-md">
                                         Claim Advisory Audit →
                                     </Link>
-                                    <a href="/api/buy/enterprise/enterprise_curriculum_license" className="px-6 py-3 rounded-lg bg-white border border-zinc-400 text-zinc-950 font-bold text-sm text-center hover:bg-zinc-50 transition-colors whitespace-nowrap">
+                                    <a href="/api/buy/enterprise/enterprise_curriculum_license" className="px-6 py-3 rounded-lg bg-white border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold text-center hover:bg-zinc-50 transition-colors whitespace-nowrap">
                                         Add Enterprise Team License
                                     </a>
                                 </div>

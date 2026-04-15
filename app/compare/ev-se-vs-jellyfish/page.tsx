@@ -24,8 +24,8 @@ export default function EVSEvsJellyfishPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/compare" className="hover:text-cyan-800 font-semibold">Compare</Link><span>/</span><span className="text-cyan-800 font-semibold font-bold">EV-SE vs Jellyfish</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/compare" className="hover:text-cyan-900 font-extrabold font-semibold">Compare</Link><span>/</span><span className="text-cyan-900 font-extrabold font-semibold font-bold">EV-SE vs Jellyfish</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         EV-SE <span className="text-zinc-900">vs</span>{' '}
@@ -36,8 +36,8 @@ export default function EVSEvsJellyfishPage() {
                     </p>
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full border-collapse">
-                            <thead><tr className="border-b border-zinc-400"><th className="text-left py-4 px-4 text-xs font-mono text-zinc-800 uppercase tracking-widest">Dimension</th><th className="text-left py-4 px-4 text-xs font-mono text-teal-400 uppercase tracking-widest">EV-SE</th><th className="text-left py-4 px-4 text-xs font-mono text-zinc-900 uppercase tracking-widest">Jellyfish</th></tr></thead>
-                            <tbody>{rows.map((row, i) => (<tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50"><td className="py-4 px-4 text-sm text-zinc-900 font-medium font-bold">{row.dimension}</td><td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.evse}</td><td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.jelly}</td></tr>))}</tbody>
+                            <thead><tr className="border-b border-zinc-400"><th className="text-left py-4 px-4 text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest">Dimension</th><th className="text-left py-4 px-4 text-xs font-bold font-mono text-teal-400 uppercase tracking-widest">EV-SE</th><th className="text-left py-4 px-4 text-xs font-bold font-mono text-zinc-900 uppercase tracking-widest">Jellyfish</th></tr></thead>
+                            <tbody>{rows.map((row, i) => (<tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50"><td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium font-bold">{row.dimension}</td><td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium">{row.evse}</td><td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium">{row.jelly}</td></tr>))}</tbody>
                         </table>
                     </div>
                     <div className="rounded-2xl border border-teal-500/30 bg-teal-500/5 p-8 mb-16">

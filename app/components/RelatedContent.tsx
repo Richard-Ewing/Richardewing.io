@@ -50,10 +50,10 @@ export default function RelatedContent({ currentSlug, type, count = 3 }: Related
                         href={`/${item.type}s/${item.slug}`}
                         className="group p-5 rounded-xl border border-zinc-400 bg-white hover:bg-white/5 transition-all"
                     >
-                        <span className="text-xs font-medium font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">
+                        <span className="text-xs font-bold font-medium font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">
                             {item.type}
                         </span>
-                        <h3 className="text-sm font-bold text-zinc-950 leading-snug group-hover:text-cyan-800 font-semibold transition-colors">
+                        <h3 className="text-sm font-semibold font-bold text-zinc-950 leading-snug group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">
                             {item.title}
                         </h3>
                     </Link>

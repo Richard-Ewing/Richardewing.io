@@ -89,17 +89,17 @@ export const PublishedProfiles = () => {
                             </div>
                             <div className="flex-1">
                                 <div className="flex items-center justify-between mb-1">
-                                    <h3 className="font-semibold text-zinc-950 group-hover:text-purple-800 font-semibold transition-colors">
+                                    <h3 className="font-semibold text-zinc-950 group-hover:text-purple-900 font-extrabold font-semibold transition-colors">
                                         {profile.publication}
                                     </h3>
                                     {profile.featured && (
-                                        <span className="text-xs font-medium uppercase tracking-wider text-purple-800 font-semibold border border-purple-500/30 px-2 py-0.5 rounded-full">Featured</span>
+                                        <span className="text-xs font-bold font-medium uppercase tracking-wider text-purple-900 font-extrabold font-semibold border border-purple-500/30 px-2 py-0.5 rounded-full">Featured</span>
                                     )}
                                 </div>
-                                <p className="text-xs text-zinc-900 font-bold mb-2 font-mono uppercase tracking-wide">{profile.role}</p>
-                                <p className="text-zinc-800 text-sm mb-2">{profile.description}</p>
+                                <p className="text-xs font-bold text-zinc-900 font-bold mb-2 font-mono uppercase tracking-wide">{profile.role}</p>
+                                <p className="text-zinc-950 font-bold text-sm font-semibold mb-2">{profile.description}</p>
                                 {profile.articleCount && (
-                                    <p className="text-zinc-950 text-xs mt-1 font-mono">
+                                    <p className="text-zinc-950 text-xs font-bold mt-1 font-mono">
                                         {profile.articleCount} articles
                                     </p>
                                 )}

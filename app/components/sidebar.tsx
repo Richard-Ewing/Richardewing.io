@@ -9,7 +9,7 @@ const NavItem = ({ href, children, isActive = false, onClick }: { href: string; 
     <Link
         href={href}
         onClick={onClick}
-        className={`block text-sm py-2 px-4 border-l-2 transition-all ${isActive
+        className={`block text-sm font-semibold py-2 px-4 border-l-2 transition-all ${isActive
             ? 'text-zinc-900 border-purple-500 bg-purple-50'
             : 'text-zinc-950 border-transparent hover:text-zinc-900 hover:border-zinc-500'
             }`}
@@ -45,7 +45,7 @@ export function Sidebar() {
             ]
         },
         {
-            label: 'Free Tools', labelClass: 'text-cyan-600', items: [
+            label: 'Free Tools', labelClass: 'text-cyan-900 font-extrabold', items: [
                 { href: '/tools', label: 'All Tools →' },
                 { href: '/tools/pdi', label: 'Product Debt Audit', highlight: true },
                 { href: '/tools/audit-interview', label: 'Audit Interview' },
@@ -73,12 +73,12 @@ export function Sidebar() {
                     </div>
                     <div>
                         <div className="text-zinc-900 font-bold text-sm">RICHARD EWING</div>
-                        <div className="text-zinc-950 text-xs font-medium font-mono tracking-widest">PRODUCT ECONOMIST</div>
+                        <div className="text-zinc-950 text-xs font-bold font-medium font-mono tracking-widest">PRODUCT ECONOMIST</div>
                     </div>
                 </Link>
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="p-2 text-zinc-900 hover:text-purple-600 transition"
+                    className="p-2 text-zinc-900 hover:text-purple-900 font-extrabold transition"
                     aria-label="Toggle menu"
                 >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,7 +116,7 @@ export function Sidebar() {
                             <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" width={80} height={80} className="object-cover" priority />
                         </div>
                         <h3 className="text-zinc-900 font-bold tracking-tight text-lg">RICHARD EWING</h3>
-                        <span className="font-mono text-xs text-zinc-950 tracking-widest block mt-1">PRODUCT ECONOMIST</span>
+                        <span className="font-mono text-xs font-bold text-zinc-950 tracking-widest block mt-1">PRODUCT ECONOMIST</span>
                     </Link>
                 </div>
 
@@ -124,7 +124,7 @@ export function Sidebar() {
                 <nav className="space-y-6 flex-1">
                     {navItems.map((section) => (
                         <div key={section.label}>
-                            <div className={`text-xs font-medium font-mono uppercase mb-2 ml-4 tracking-widest ${section.labelClass || 'text-zinc-950'}`}>
+                            <div className={`text-xs font-bold font-medium font-mono uppercase mb-2 ml-4 tracking-widest ${section.labelClass || 'text-zinc-950'}`}>
                                 {section.label}
                             </div>
                             <div className="space-y-1">
@@ -144,7 +144,7 @@ export function Sidebar() {
                 </nav>
 
                 {/* Footer */}
-                <div className="font-mono text-xs font-medium text-zinc-800 mt-8">&copy; 2026 Richard Ewing</div>
+                <div className="font-mono text-xs font-bold font-medium text-zinc-950 font-bold mt-8">&copy; 2026 Richard Ewing</div>
             </aside>
 
             {/* Mobile Spacer */}

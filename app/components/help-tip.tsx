@@ -18,13 +18,13 @@ export function HelpTip({ children, tip }: HelpTipProps) {
                 onMouseEnter={() => setShow(true)}
                 onMouseLeave={() => setShow(false)}
                 onClick={() => setShow(!show)}
-                className="text-zinc-800 hover:text-cyan-800 font-semibold transition-colors cursor-help"
+                className="text-zinc-950 font-bold hover:text-cyan-900 font-extrabold font-semibold transition-colors cursor-help"
                 aria-label="More info"
             >
                 <HelpCircle size={12} />
             </button>
             {show && (
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-zinc-50 border border-zinc-400 rounded-lg text-xs text-zinc-950 max-w-[200px] text-center whitespace-normal shadow-xl z-50">
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-zinc-50 border border-zinc-400 rounded-lg text-xs font-bold text-zinc-950 max-w-[200px] text-center whitespace-normal shadow-xl z-50">
                     {tip}
                     <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-zinc-900" />
                 </div>
@@ -52,7 +52,7 @@ export function Definition({ term, definition, children }: DefinitionProps) {
                 {term}
             </button>
             {expanded && (
-                <div className="absolute left-0 top-full mt-1 p-3 bg-zinc-50 border border-zinc-400 rounded-lg text-xs text-zinc-950 max-w-[250px] shadow-xl z-50">
+                <div className="absolute left-0 top-full mt-1 p-3 bg-zinc-50 border border-zinc-400 rounded-lg text-xs font-bold text-zinc-950 max-w-[250px] shadow-xl z-50">
                     <div className="font-semibold text-zinc-950 mb-1">{term}</div>
                     <div>{definition}</div>
                     {children}

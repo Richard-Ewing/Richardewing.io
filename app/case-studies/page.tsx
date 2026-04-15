@@ -43,7 +43,7 @@ const caseStudies = [
 ];
 
 const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', violet: 'border-violet-500/30 bg-violet-500/5' };
-const textMap: Record<string, string> = { cyan: 'text-cyan-800 font-semibold', emerald: 'text-emerald-800 font-semibold', violet: 'text-violet-400' };
+const textMap: Record<string, string> = { cyan: 'text-cyan-900 font-extrabold font-semibold', emerald: 'text-emerald-900 font-extrabold font-semibold', violet: 'text-violet-400' };
 const gradMap: Record<string, string> = { cyan: 'from-cyan-500 to-blue-500', emerald: 'from-emerald-500 to-teal-500', violet: 'from-violet-500 to-purple-500' };
 
 export default function CaseStudiesPage() {
@@ -60,7 +60,7 @@ export default function CaseStudiesPage() {
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-rose-500 uppercase tracking-widest mb-4">Case Studies</div>
+                        <div className="text-xs font-bold font-mono text-rose-500 uppercase tracking-widest mb-4">Case Studies</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             Measurable{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-violet-400">Impact</span>
@@ -77,41 +77,41 @@ export default function CaseStudiesPage() {
                                     <span className="text-4xl">{cs.icon}</span>
                                     <div>
                                         <h2 className={`text-2xl font-grotesk font-bold ${textMap[cs.color]}`}>{cs.title}</h2>
-                                        <div className="text-sm text-zinc-950 font-mono uppercase tracking-widest">{cs.subtitle}</div>
+                                        <div className="text-sm font-semibold text-zinc-950 font-mono uppercase tracking-widest">{cs.subtitle}</div>
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                                     <div className="rounded-xl bg-zinc-100 p-4 text-center">
                                         <div className={`text-2xl font-bold ${textMap[cs.color]}`}>{cs.metrics.saved}</div>
-                                        <div className="text-xs text-zinc-900 font-bold">Saved</div>
+                                        <div className="text-xs font-bold text-zinc-900 font-bold">Saved</div>
                                     </div>
                                     <div className="rounded-xl bg-zinc-100 p-4 text-center">
                                         <div className={`text-2xl font-bold ${textMap[cs.color]}`}>{cs.metrics.innovationTax || cs.metrics.margin}</div>
-                                        <div className="text-xs text-zinc-900 font-bold">{cs.metrics.innovationTax ? 'Innovation Tax' : 'Gross Margin'}</div>
+                                        <div className="text-xs font-bold text-zinc-900 font-bold">{cs.metrics.innovationTax ? 'Innovation Tax' : 'Gross Margin'}</div>
                                     </div>
                                     <div className="rounded-xl bg-zinc-100 p-4 text-center">
                                         <div className={`text-2xl font-bold ${textMap[cs.color]}`}>{cs.metrics.timeline}</div>
-                                        <div className="text-xs text-zinc-900 font-bold">Timeline</div>
+                                        <div className="text-xs font-bold text-zinc-900 font-bold">Timeline</div>
                                     </div>
                                 </div>
 
                                 <div className="mb-6">
-                                    <h3 className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Situation</h3>
+                                    <h3 className="text-sm font-semibold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2">Situation</h3>
                                     <p className="text-zinc-900">{cs.situation}</p>
                                 </div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
-                                        <h3 className="text-sm font-mono text-rose-400 uppercase tracking-widest mb-3">Findings</h3>
+                                        <h3 className="text-sm font-semibold font-mono text-rose-400 uppercase tracking-widest mb-3">Findings</h3>
                                         <ul className="space-y-2">
-                                            {cs.findings.map((f, j) => <li key={j} className="text-sm text-zinc-900 font-medium flex items-start gap-2"><span className="text-rose-400 mt-0.5">⚠</span>{f}</li>)}
+                                            {cs.findings.map((f, j) => <li key={j} className="text-sm font-semibold text-zinc-900 font-medium flex items-start gap-2"><span className="text-rose-400 mt-0.5">⚠</span>{f}</li>)}
                                         </ul>
                                     </div>
                                     <div>
-                                        <h3 className="text-sm font-mono text-emerald-800 font-semibold uppercase tracking-widest mb-3">Impact</h3>
+                                        <h3 className="text-sm font-semibold font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest mb-3">Impact</h3>
                                         <ul className="space-y-2">
-                                            {cs.impact.map((im, j) => <li key={j} className="text-sm text-zinc-900 font-medium flex items-start gap-2"><span className="text-emerald-800 font-semibold mt-0.5">✓</span>{im}</li>)}
+                                            {cs.impact.map((im, j) => <li key={j} className="text-sm font-semibold text-zinc-900 font-medium flex items-start gap-2"><span className="text-emerald-900 font-extrabold font-semibold mt-0.5">✓</span>{im}</li>)}
                                         </ul>
                                     </div>
                                 </div>

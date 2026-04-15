@@ -47,10 +47,10 @@ export default function AperFaqPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/tools" className="hover:text-cyan-800 font-semibold">Tools</Link><span>/</span>
-                        <Link href="/tools/aper" className="hover:text-cyan-800 font-semibold">APER</Link><span>/</span>
-                        <span className="text-cyan-800 font-semibold font-bold">FAQ</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/tools" className="hover:text-cyan-900 font-extrabold font-semibold">Tools</Link><span>/</span>
+                        <Link href="/tools/aper" className="hover:text-cyan-900 font-extrabold font-semibold">APER</Link><span>/</span>
+                        <span className="text-cyan-900 font-extrabold font-semibold font-bold">FAQ</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         APER{' '}<span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-400">FAQ</span>

@@ -30,8 +30,8 @@ export function PersonaSwitcher<T extends string = DefaultPersona>({
                     <button
                         key={p.id}
                         onClick={() => onChange(p.id)}
-                        className={`flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-xl text-xs font-medium sm:text-xs font-mono uppercase tracking-widest transition-all flex-1 justify-center whitespace-nowrap
-                            ${isActive ? 'bg-zinc-200 text-zinc-950 font-bold border border-zinc-400 shadow-[0_0_15px_rgba(255,255,255,0.05)]' : 'text-zinc-800 hover:text-zinc-950 hover:bg-white/5 border border-transparent'}`}
+                        className={`flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-xl text-xs font-bold font-medium sm:text-xs font-bold font-mono uppercase tracking-widest transition-all flex-1 justify-center whitespace-nowrap
+                            ${isActive ? 'bg-zinc-200 text-zinc-950 font-bold border border-zinc-400 shadow-[0_0_15px_rgba(255,255,255,0.05)]' : 'text-zinc-950 font-bold hover:text-zinc-950 hover:bg-white/5 border border-transparent'}`}
                     >
                         <Icon size={14} className={isActive ? 'text-amber-400' : ''} />
                         <span className="hidden sm:inline">{p.label}</span>

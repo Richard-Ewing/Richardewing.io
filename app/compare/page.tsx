@@ -82,12 +82,12 @@ export default function ComparePage() {
                     <div className="space-y-6">
                         {comparisons.map((c) => {
                             const colorMap: Record<string, { border: string, hover: string, text: string }> = {
-                                cyan: { border: 'border-cyan-500/20', hover: 'hover:border-cyan-500/50', text: 'text-cyan-800 font-semibold' },
-                                purple: { border: 'border-purple-500/20', hover: 'hover:border-purple-500/50', text: 'text-purple-800 font-semibold' },
-                                orange: { border: 'border-orange-500/20', hover: 'hover:border-orange-500/50', text: 'text-orange-800 font-semibold' },
-                                emerald: { border: 'border-emerald-500/20', hover: 'hover:border-emerald-500/50', text: 'text-emerald-800 font-semibold' },
+                                cyan: { border: 'border-cyan-500/20', hover: 'hover:border-cyan-500/50', text: 'text-cyan-900 font-extrabold font-semibold' },
+                                purple: { border: 'border-purple-500/20', hover: 'hover:border-purple-500/50', text: 'text-purple-900 font-extrabold font-semibold' },
+                                orange: { border: 'border-orange-500/20', hover: 'hover:border-orange-500/50', text: 'text-orange-900 font-extrabold font-semibold' },
+                                emerald: { border: 'border-emerald-500/20', hover: 'hover:border-emerald-500/50', text: 'text-emerald-900 font-extrabold font-semibold' },
                                 rose: { border: 'border-rose-500/20', hover: 'hover:border-rose-500/50', text: 'text-rose-400' },
-                                indigo: { border: 'border-indigo-500/20', hover: 'hover:border-indigo-500/50', text: 'text-indigo-800 font-semibold' },
+                                indigo: { border: 'border-indigo-500/20', hover: 'hover:border-indigo-500/50', text: 'text-indigo-900 font-extrabold font-semibold' },
                                 fuchsia: { border: 'border-fuchsia-500/20', hover: 'hover:border-fuchsia-500/50', text: 'text-zinc-950 font-semibolduchsia-400' },
                                 amber: { border: 'border-amber-500/20', hover: 'hover:border-amber-500/50', text: 'text-amber-400' }
                             };
@@ -96,10 +96,10 @@ export default function ComparePage() {
                             return (
                                 <Link key={c.href} href={c.href} className="group block">
                                     <div className={`rounded-2xl border ${theme.border} ${theme.hover} p-8 transition-all hover:bg-zinc-50`}>
-                                        <div className={`text-xs font-mono uppercase tracking-widest mb-2 ${theme.text}`}>{c.subtitle}</div>
+                                        <div className={`text-xs font-bold font-mono uppercase tracking-widest mb-2 ${theme.text}`}>{c.subtitle}</div>
                                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-3 group-hover:text-zinc-900">{c.title}</h2>
                                         <p className="text-zinc-900 mb-4">{c.description}</p>
-                                        <span className={`text-sm font-bold uppercase tracking-widest ${theme.text}`}>Read Comparison →</span>
+                                        <span className={`text-sm font-semibold font-bold uppercase tracking-widest ${theme.text}`}>Read Comparison →</span>
                                     </div>
                                 </Link>
                             );
@@ -108,7 +108,7 @@ export default function ComparePage() {
 
                     <div className="text-center py-16 border-t border-zinc-400 mt-16">
                         <p className="text-zinc-900 mb-4">Try all tools free</p>
-                        <Link href="/tools" className="text-cyan-800 font-semibold hover:text-cyan-800 font-semibold font-bold uppercase tracking-widest text-sm">
+                        <Link href="/tools" className="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
                             View All Diagnostic Tools →
                         </Link>
                     </div>

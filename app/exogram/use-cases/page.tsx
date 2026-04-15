@@ -56,14 +56,14 @@ export default function ExogramUseCasesPage() {
     return (
         <main className="pt-24 pb-20">
             <div className="page-container max-w-5xl mx-auto">
-                <div className="text-xs text-zinc-950 mb-8">
+                <div className="text-xs font-bold text-zinc-950 mb-8">
                     <Link href="/exogram" className="hover:text-zinc-900 transition-colors">Exogram</Link>
                     <span className="mx-2">→</span>
-                    <span className="text-zinc-800">Use Cases</span>
+                    <span className="text-zinc-950 font-bold">Use Cases</span>
                 </div>
 
                 <section className="text-center mb-16">
-                    <p className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-4">Industry Applications</p>
+                    <p className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-4">Industry Applications</p>
                     <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Use <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Cases.</span>
                     </h1>
@@ -79,26 +79,26 @@ export default function ExogramUseCasesPage() {
                             <div className="flex items-start gap-4 mb-6">
                                 <span className="text-4xl">{uc.icon}</span>
                                 <div>
-                                    <span className="text-xs font-medium font-mono text-purple-800 font-semibold uppercase tracking-widest">{uc.industry}</span>
+                                    <span className="text-xs font-bold font-medium font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest">{uc.industry}</span>
                                     <h2 className="text-2xl font-grotesk font-bold text-zinc-900">{uc.title}</h2>
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div>
-                                    <h3 className="text-xs font-mono text-red-800 font-semibold uppercase tracking-widest mb-3">Problem</h3>
-                                    <p className="text-sm text-zinc-900 font-medium leading-relaxed">{uc.problem}</p>
+                                    <h3 className="text-xs font-bold font-mono text-red-900 font-extrabold font-semibold uppercase tracking-widest mb-3">Problem</h3>
+                                    <p className="text-sm font-semibold text-zinc-900 font-medium leading-relaxed">{uc.problem}</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-xs font-mono text-emerald-800 font-semibold uppercase tracking-widest mb-3">Solution</h3>
-                                    <p className="text-sm text-zinc-900 font-medium leading-relaxed">{uc.solution}</p>
+                                    <h3 className="text-xs font-bold font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest mb-3">Solution</h3>
+                                    <p className="text-sm font-semibold text-zinc-900 font-medium leading-relaxed">{uc.solution}</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-xs font-mono text-cyan-800 font-semibold uppercase tracking-widest mb-3">Impact</h3>
-                                    <p className="text-sm text-zinc-950 font-semibold mb-3">{uc.impact}</p>
+                                    <h3 className="text-xs font-bold font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest mb-3">Impact</h3>
+                                    <p className="text-sm font-semibold text-zinc-950 font-semibold mb-3">{uc.impact}</p>
                                     <div className="flex flex-wrap gap-1.5">
                                         {uc.regulations.map(r => (
-                                            <span key={r} className="text-xs font-medium font-mono text-zinc-950 px-2 py-0.5 rounded border border-zinc-400 bg-zinc-50">{r}</span>
+                                            <span key={r} className="text-xs font-bold font-medium font-mono text-zinc-950 px-2 py-0.5 rounded border border-zinc-400 bg-zinc-50">{r}</span>
                                         ))}
                                     </div>
                                 </div>

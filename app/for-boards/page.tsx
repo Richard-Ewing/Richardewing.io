@@ -31,7 +31,7 @@ export default function ForBoardsPage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="text-xs font-mono text-amber-500 uppercase tracking-widest mb-4">For Board Members & Directors</div>
+                        <div className="text-xs font-bold font-mono text-amber-500 uppercase tracking-widest mb-4">For Board Members & Directors</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             Your CTO Speaks Engineering.<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">You Need Financial Language.</span>
@@ -49,7 +49,7 @@ export default function ForBoardsPage() {
                                 <div key={i} className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-6">
                                     <h3 className="text-lg font-bold text-zinc-950 mb-2">&ldquo;{q.question}&rdquo;</h3>
                                     <p className="text-zinc-900 mb-3">{q.answer}</p>
-                                    <Link href={q.link} className="text-xs font-mono text-amber-400 hover:text-amber-800 font-bold uppercase tracking-widest">
+                                    <Link href={q.link} className="text-xs font-bold font-mono text-amber-400 hover:text-amber-800 font-bold uppercase tracking-widest">
                                         Measure with {q.metric} →
                                     </Link>
                                 </div>
@@ -60,15 +60,15 @@ export default function ForBoardsPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">$$$</div>
-                            <div className="text-sm text-zinc-900 font-medium">Debt quantified in dollars, not story points</div>
+                            <div className="text-sm font-semibold text-zinc-900 font-medium">Debt quantified in dollars, not story points</div>
                         </div>
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">Q1-Q4</div>
-                            <div className="text-sm text-zinc-900 font-medium">Quarterly reporting cadence for fiduciary oversight</div>
+                            <div className="text-sm font-semibold text-zinc-900 font-medium">Quarterly reporting cadence for fiduciary oversight</div>
                         </div>
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">1 Page</div>
-                            <div className="text-sm text-zinc-900 font-medium">Executive summary, not 50-page engineering reports</div>
+                            <div className="text-sm font-semibold text-zinc-900 font-medium">Executive summary, not 50-page engineering reports</div>
                         </div>
                     </div>
 

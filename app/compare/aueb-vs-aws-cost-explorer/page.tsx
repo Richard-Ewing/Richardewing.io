@@ -25,8 +25,8 @@ export default function AUEBvsAWSPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/compare" className="hover:text-cyan-800 font-semibold">Compare</Link><span>/</span><span className="text-orange-800 font-semibold font-bold">AUEB vs AWS Cost Explorer</span>
+                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                        <Link href="/compare" className="hover:text-cyan-900 font-extrabold font-semibold">Compare</Link><span>/</span><span className="text-orange-900 font-extrabold font-semibold font-bold">AUEB vs AWS Cost Explorer</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
@@ -41,17 +41,17 @@ export default function AUEBvsAWSPage() {
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr className="border-b border-zinc-400">
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-800 uppercase tracking-widest">Dimension</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-orange-800 font-semibold uppercase tracking-widest">AUEB</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-900 uppercase tracking-widest">AWS Cost Explorer</th>
+                                    <th className="text-left py-4 px-4 text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest">Dimension</th>
+                                    <th className="text-left py-4 px-4 text-xs font-bold font-mono text-orange-900 font-extrabold font-semibold uppercase tracking-widest">AUEB</th>
+                                    <th className="text-left py-4 px-4 text-xs font-bold font-mono text-zinc-900 uppercase tracking-widest">AWS Cost Explorer</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
                                     <tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50">
-                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium font-bold">{row.dimension}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.aueb}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.aws}</td>
+                                        <td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium font-bold">{row.dimension}</td>
+                                        <td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium">{row.aueb}</td>
+                                        <td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium">{row.aws}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -73,7 +73,7 @@ export default function AUEBvsAWSPage() {
 
                     <div className="text-center py-12 border-t border-zinc-400">
                         <p className="text-zinc-900 mb-4">Need AI economics advisory?</p>
-                        <Link href="/advisory" className="text-orange-800 font-semibold hover:text-orange-800 font-semibold font-bold uppercase tracking-widest text-sm">
+                        <Link href="/advisory" className="text-orange-900 font-extrabold font-semibold hover:text-orange-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
                             Book a $2,500 AI Economics Diagnostic →
                         </Link>
                     </div>

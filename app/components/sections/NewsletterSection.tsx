@@ -63,14 +63,14 @@ const NewsletterSection = () => {
                     <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#7c3aed_1px,transparent_1px)] [background-size:20px_20px]" />
 
                     <div className="relative z-10">
-                        <span className="text-[var(--accent-purple)] font-bold tracking-widest text-sm uppercase mb-4 block">Executive Briefings</span>
+                        <span className="text-[var(--accent-purple)] font-bold tracking-widest text-sm font-semibold uppercase mb-4 block">Executive Briefings</span>
 
                         <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">The Product Economist Newsletter</h2>
 
                         {state.succeeded ? (
                             <div className="py-4">
                                 <div className="w-16 h-16 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                    <CheckCircle className="w-8 h-8 text-emerald-600" />
+                                    <CheckCircle className="w-8 h-8 text-emerald-900 font-extrabold" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-zinc-900 mb-2">Redirecting to Checklist ✓</h3>
                                 <p className="text-zinc-900">Loading your R&D Audit Checklist...</p>
@@ -101,19 +101,19 @@ const NewsletterSection = () => {
                                 </form>
 
                                 {validationError && (
-                                    <div className="max-w-md mx-auto mt-3 flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-lg text-red-600 text-xs">
+                                    <div className="max-w-md mx-auto mt-3 flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-lg text-red-900 font-extrabold text-xs">
                                         <AlertCircle className="w-3 h-3" /><span>{validationError}</span>
                                     </div>
                                 )}
                             </>
                         )}
 
-                        <p className="mt-8 text-sm text-zinc-900 font-medium">
+                        <p className="mt-8 text-sm font-semibold text-zinc-900 font-medium">
                             Monthly. No fluff. 2,000+ executives read before they decide.
                         </p>
 
                         <div className="mt-6 border-t border-zinc-400 pt-6">
-                            <Link href="/tools" className="text-xs text-zinc-900 font-bold hover:text-zinc-900 uppercase tracking-widest transition-colors flex items-center justify-center gap-2 group">
+                            <Link href="/tools" className="text-xs font-bold text-zinc-900 font-bold hover:text-zinc-900 uppercase tracking-widest transition-colors flex items-center justify-center gap-2 group">
                                 Or try my free tools
                                 <span className="group-hover:translate-x-1 transition-transform">→</span>
                             </Link>

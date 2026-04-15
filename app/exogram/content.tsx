@@ -15,8 +15,8 @@ export default function ExogramPage() {
 
             {/* Header */}
             <div className="mb-12">
-                <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                    <span>Intelligence</span><span>/</span><span className="text-purple-800 font-semibold font-bold">Exogram</span>
+                <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                    <span>Intelligence</span><span>/</span><span className="text-purple-900 font-extrabold font-semibold font-bold">Exogram</span>
                 </div>
                 <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 tracking-tight mb-4">
                     Active <span className="text-purple-500">Projects.</span>
@@ -40,12 +40,12 @@ export default function ExogramPage() {
                                     <div>
                                         <div className="flex items-center gap-3 mb-2">
                                             <h2 className="text-2xl font-bold text-zinc-950 font-grotesk">Exogram</h2>
-                                            <div className="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-medium font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
+                                            <div className="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold font-medium font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                                                 Online
                                             </div>
                                         </div>
-                                        <p className="text-zinc-950 text-sm font-mono uppercase tracking-widest">Autonomous Research Agent</p>
+                                        <p className="text-zinc-950 text-sm font-semibold font-mono uppercase tracking-widest">Autonomous Research Agent</p>
                                     </div>
                                     <Cpu className="w-8 h-8 text-purple-500" />
                                 </div>
@@ -53,25 +53,25 @@ export default function ExogramPage() {
                                 {/* Metrics Grid */}
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
                                     <div className="p-4 bg-white/5 rounded-lg border border-zinc-400">
-                                        <div className="text-xs text-zinc-950 font-mono uppercase mb-1">Context Window</div>
+                                        <div className="text-xs font-bold text-zinc-950 font-mono uppercase mb-1">Context Window</div>
                                         <div className="text-xl font-bold text-zinc-950 font-grotesk"><NumberTicker value={200} suffix="k" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400" /></div>
                                     </div>
                                     <div className="p-4 bg-white/5 rounded-lg border border-zinc-400">
-                                        <div className="text-xs text-zinc-950 font-mono uppercase mb-1">Memory Nodes</div>
+                                        <div className="text-xs font-bold text-zinc-950 font-mono uppercase mb-1">Memory Nodes</div>
                                         <div className="text-xl font-bold text-zinc-950 font-grotesk"><NumberTicker value={14205} className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400" /></div>
                                     </div>
                                     <div className="p-4 bg-white/5 rounded-lg border border-zinc-400">
-                                        <div className="text-xs text-zinc-950 font-mono uppercase mb-1">Daily Inops</div>
+                                        <div className="text-xs font-bold text-zinc-950 font-mono uppercase mb-1">Daily Inops</div>
                                         <div className="text-xl font-bold text-zinc-950 font-grotesk"><NumberTicker value={140} className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400" /></div>
                                     </div>
                                     <div className="p-4 bg-white/5 rounded-lg border border-zinc-400">
-                                        <div className="text-xs text-zinc-950 font-mono uppercase mb-1">Uptime</div>
+                                        <div className="text-xs font-bold text-zinc-950 font-mono uppercase mb-1">Uptime</div>
                                         <div className="text-xl font-bold text-green-400 font-grotesk">99.9%</div>
                                     </div>
                                 </div>
 
                                 {/* Terminal Output / Log */}
-                                <div className="bg-white border border-zinc-400 rounded-lg p-4 font-mono text-xs h-40 overflow-hidden relative">
+                                <div className="bg-white border border-zinc-400 rounded-lg p-4 font-mono text-xs font-bold h-40 overflow-hidden relative">
                                     <div className="absolute top-2 right-2 flex gap-1">
                                         <div className="w-2 h-2 rounded-full bg-red-500/20"></div>
                                         <div className="w-2 h-2 rounded-full bg-yellow-500/20"></div>
@@ -96,24 +96,24 @@ export default function ExogramPage() {
                 <div className="space-y-6">
                     <ScrollReveal delay={200}>
                         <div className="p-6 rounded-xl border border-zinc-400 bg-white/5">
-                            <h3 className="text-sm font-bold text-zinc-950 font-grotesk uppercase tracking-widest mb-4 flex items-center gap-2">
+                            <h3 className="text-sm font-semibold font-bold text-zinc-950 font-grotesk uppercase tracking-widest mb-4 flex items-center gap-2">
                                 <Shield className="w-4 h-4 text-gold" /> System Status
                             </h3>
                             <div className="space-y-4">
                                 <div className="flex justify-between items-center text-sm">
-                                    <span className="text-zinc-800">API Gateway</span>
+                                    <span className="text-zinc-950 font-bold">API Gateway</span>
                                     <span className="text-green-400">Operational</span>
                                 </div>
                                 <div className="flex justify-between items-center text-sm">
-                                    <span className="text-zinc-800">Vector DB</span>
+                                    <span className="text-zinc-950 font-bold">Vector DB</span>
                                     <span className="text-green-400">Operational</span>
                                 </div>
                                 <div className="flex justify-between items-center text-sm">
-                                    <span className="text-zinc-800">Inference</span>
-                                    <span className="text-yellow-800 font-semibold">High Load</span>
+                                    <span className="text-zinc-950 font-bold">Inference</span>
+                                    <span className="text-yellow-900 font-extrabold font-semibold">High Load</span>
                                 </div>
                                 <div className="flex justify-between items-center text-sm">
-                                    <span className="text-zinc-800">Storage</span>
+                                    <span className="text-zinc-950 font-bold">Storage</span>
                                     <span className="text-green-400">Operational</span>
                                 </div>
                             </div>
@@ -122,25 +122,25 @@ export default function ExogramPage() {
 
                     <ScrollReveal delay={300}>
                         <div className="p-6 rounded-xl border border-zinc-400 bg-white/5">
-                            <h3 className="text-sm font-bold text-zinc-950 font-grotesk uppercase tracking-widest mb-6">Recent Deployments</h3>
+                            <h3 className="text-sm font-semibold font-bold text-zinc-950 font-grotesk uppercase tracking-widest mb-6">Recent Deployments</h3>
                             <div className="relative border-l border-zinc-400 ml-2 space-y-8">
                                 <div className="pl-6 relative">
                                     <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-purple-500 ring-4 ring-black" />
-                                    <div className="text-xs text-zinc-900 font-bold font-mono mb-1">Today, 09:42 AM</div>
+                                    <div className="text-xs font-bold text-zinc-900 font-bold font-mono mb-1">Today, 09:42 AM</div>
                                     <div className="text-zinc-950 font-bold text-sm">Exogram v1.0.4</div>
-                                    <p className="text-xs text-zinc-950 mt-1">Improved context retrieval algorithms and semantic index.</p>
+                                    <p className="text-xs font-bold text-zinc-950 mt-1">Improved context retrieval algorithms and semantic index.</p>
                                 </div>
                                 <div className="pl-6 relative">
                                     <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-cyan-500 ring-4 ring-black" />
-                                    <div className="text-xs text-zinc-900 font-bold font-mono mb-1">Yesterday</div>
+                                    <div className="text-xs font-bold text-zinc-900 font-bold font-mono mb-1">Yesterday</div>
                                     <div className="text-zinc-950 font-bold text-sm">System UI Update</div>
-                                    <p className="text-xs text-zinc-950 mt-1">Deployed High Contrast theme and new stats components.</p>
+                                    <p className="text-xs font-bold text-zinc-950 mt-1">Deployed High Contrast theme and new stats components.</p>
                                 </div>
                                 <div className="pl-6 relative">
                                     <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-zinc-700 ring-4 ring-black" />
-                                    <div className="text-xs text-zinc-950 font-mono mb-1">2 days ago</div>
+                                    <div className="text-xs font-bold text-zinc-950 font-mono mb-1">2 days ago</div>
                                     <div className="text-zinc-950 font-bold text-sm">Security Patch</div>
-                                    <p className="text-xs text-zinc-950 mt-1">Routine dependency updates.</p>
+                                    <p className="text-xs font-bold text-zinc-950 mt-1">Routine dependency updates.</p>
                                 </div>
                             </div>
                         </div>

@@ -15,7 +15,7 @@ export default function CheckoutPending() {
                 </p>
                 <Link 
                     href="/vault/curriculum/tracks"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white/5 border border-zinc-400 text-zinc-950 font-bold hover:bg-white/10 hover:border-violet-500/30 transition-all font-mono tracking-widest text-sm uppercase"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white/5 border border-zinc-400 text-zinc-950 font-bold hover:bg-white/10 hover:border-violet-500/30 transition-all font-mono tracking-widest text-sm font-semibold uppercase"
                 >
                     ← Return to Curriculum
                 </Link>

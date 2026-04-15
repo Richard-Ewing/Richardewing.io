@@ -14,7 +14,7 @@ export default function AdvisoryContent() {
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
                 <span>Intervention</span><span>/</span><span className="text-crimson font-bold">Advisory</span>
             </div>
 
@@ -27,10 +27,10 @@ export default function AdvisoryContent() {
                         {/* Urgency Badge */}
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-crimson rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-crimson uppercase tracking-widest">Limited Availability • Q1 2026</span>
+                            <span className="font-mono text-xs font-bold text-crimson uppercase tracking-widest">Limited Availability • Q1 2026</span>
                         </div>
 
-                        <span className="font-mono text-zinc-950 text-xs uppercase tracking-[0.3em] mb-4 block">Access Levels</span>
+                        <span className="font-mono text-zinc-950 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Access Levels</span>
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-grotesk font-bold text-zinc-950 tracking-tight leading-tight mb-4">
                             Intervention<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Protocols.</span>
@@ -42,16 +42,16 @@ export default function AdvisoryContent() {
                         {/* Stats */}
                         <div className="grid grid-cols-3 gap-4 pt-6 border-t border-zinc-400">
                             <div className="text-center">
-                                <div className="text-2xl sm:text-3xl font-bold text-cyan-800 font-semibold tabular-nums"><NumberTicker value={200} suffix="%" /></div>
-                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase">Avg Revenue Lift</div>
+                                <div className="text-2xl sm:text-3xl font-bold text-cyan-900 font-extrabold font-semibold tabular-nums"><NumberTicker value={200} suffix="%" /></div>
+                                <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase">Avg Revenue Lift</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-2xl sm:text-3xl font-bold text-zinc-950 tabular-nums"><NumberTicker value={14} /></div>
-                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase">Days to Diagnosis</div>
+                                <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase">Days to Diagnosis</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-2xl sm:text-3xl font-bold text-gold tabular-nums"><NumberTicker value={9} suffix="x" /></div>
-                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase">Avg ROI</div>
+                                <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase">Avg ROI</div>
                             </div>
                         </div>
                     </div>
@@ -66,34 +66,34 @@ export default function AdvisoryContent() {
                     <GlowCard className="p-6 sm:p-8" glowColor="cyan">
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
                             <h3 className="text-xl font-bold text-zinc-950 font-grotesk">Diagnostic Call</h3>
-                            <span className="text-2xl font-bold text-cyan-800 font-semibold font-mono">$450</span>
+                            <span className="text-2xl font-bold text-cyan-900 font-extrabold font-semibold font-mono">$450</span>
                         </div>
-                        <p className="text-zinc-900 text-sm leading-relaxed mb-6 border-b border-zinc-400 pb-4">
+                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-6 border-b border-zinc-400 pb-4">
                             30-Minute Rapid Assessment. You describe the situation, I tell you if it's on fire. No pitch, just triage.
                         </p>
-                        <a href="/api/buy/gut_check" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-800 font-semibold font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
+                        <a href="/api/buy/gut_check" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-900 font-extrabold font-semibold font-bold uppercase text-xs font-bold py-3 rounded hover:bg-cyan-500/20 transition-all">
                             Book Diagnostic
                         </a>
                     </GlowCard>
 
                     {/* Level 2: Insolvency Diagnostic */}
                     <GlowCard className="p-6 sm:p-8 relative overflow-hidden" glowColor="red">
-                        <div className="absolute top-0 right-0 bg-red-600 text-zinc-950 font-semibold px-3 py-1 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">
+                        <div className="absolute top-0 right-0 bg-red-600 text-zinc-950 font-semibold px-3 py-1 text-xs font-bold font-medium font-mono uppercase tracking-widest rounded-bl-lg">
                             Most Critical
                         </div>
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
                             <h3 className="text-xl font-bold text-zinc-950 font-grotesk">Insolvency Diagnostic</h3>
                             <span className="text-2xl font-bold text-red-500 font-mono">$2,500</span>
                         </div>
-                        <p className="text-zinc-900 text-sm leading-relaxed mb-6 border-b border-zinc-400 pb-4">
+                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-6 border-b border-zinc-400 pb-4">
                             60-minute deep dive. Includes written Risk Exposure Report detailing red/yellow/green flags across 5 failure modes.
                         </p>
-                        <a href="/api/buy/insolvency_diagnostic" className="block w-full text-center bg-red-600 text-zinc-950 font-semibold font-bold uppercase text-xs py-3 rounded hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                        <a href="/api/buy/insolvency_diagnostic" className="block w-full text-center bg-red-600 text-zinc-950 font-semibold font-bold uppercase text-xs font-bold py-3 rounded hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)]">
                             Schedule Deep Dive
                         </a>
                         <div className="mt-4 pt-3 border-t border-zinc-400 text-center">
-                            <span className="text-zinc-950 text-xs font-medium uppercase tracking-wide block mb-1">Not ready for deep dive?</span>
-                            <a href="/api/buy/gut_check" className="text-xs text-zinc-900 font-bold hover:text-zinc-900 transition-colors underline decoration-dotted">
+                            <span className="text-zinc-950 text-xs font-bold font-medium uppercase tracking-wide block mb-1">Not ready for deep dive?</span>
+                            <a href="/api/buy/gut_check" className="text-xs font-bold text-zinc-900 font-bold hover:text-zinc-900 transition-colors underline decoration-dotted">
                                 Start with a 30-min Gut-Check ($450) →
                             </a>
                         </div>
@@ -105,10 +105,10 @@ export default function AdvisoryContent() {
                             <h3 className="text-xl font-bold text-zinc-950 font-grotesk">R&D Capital Audit</h3>
                             <span className="text-2xl font-bold text-zinc-950 font-mono">$7,500</span>
                         </div>
-                        <p className="text-zinc-900 text-sm leading-relaxed mb-6 border-b border-zinc-400 pb-4">
+                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-6 border-b border-zinc-400 pb-4">
                             Full forensic review of engineering spend vs. ROI. 2-3 week engagement delivering a complete Audit Package and Turnaround Plan.
                         </p>
-                        <a href="/api/buy/full_audit" className="block w-full text-center bg-white/5 border border-zinc-400 text-zinc-950 font-bold uppercase text-xs py-3 rounded hover:bg-white/10 transition-all">
+                        <a href="/api/buy/full_audit" className="block w-full text-center bg-white/5 border border-zinc-400 text-zinc-950 font-bold uppercase text-xs font-bold py-3 rounded hover:bg-white/10 transition-all">
                             Commission Audit
                         </a>
                     </GlowCard>
@@ -117,12 +117,12 @@ export default function AdvisoryContent() {
                     <GlowCard className="p-6 sm:p-8" glowColor="cyan">
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
                             <h3 className="text-xl font-bold text-zinc-950 font-grotesk">AI Cost Governance</h3>
-                            <span className="text-2xl font-bold text-cyan-800 font-semibold font-mono">$5,000</span>
+                            <span className="text-2xl font-bold text-cyan-900 font-extrabold font-semibold font-mono">$5,000</span>
                         </div>
-                        <p className="text-zinc-900 text-sm leading-relaxed mb-6 border-b border-zinc-400 pb-4">
+                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-6 border-b border-zinc-400 pb-4">
                             Dedicated AI economics analysis. Unit economics model, collapse point calculation, and margin protection framework.
                         </p>
-                        <a href="/api/buy/ai_cost_governance" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-800 font-semibold font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
+                        <a href="/api/buy/ai_cost_governance" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-900 font-extrabold font-semibold font-bold uppercase text-xs font-bold py-3 rounded hover:bg-cyan-500/20 transition-all">
                             Secure Governance
                         </a>
                     </GlowCard>
@@ -131,14 +131,14 @@ export default function AdvisoryContent() {
                     <GlowCard className="p-6 sm:p-8" glowColor="gold">
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
                             <h3 className="text-xl font-bold text-zinc-950 font-grotesk">Independent Oversight</h3>
-                            <span className="text-2xl font-bold text-gold font-mono">$5,000<span className="text-sm text-zinc-900 font-medium">/mo</span></span>
+                            <span className="text-2xl font-bold text-gold font-mono">$5,000<span className="text-sm font-semibold text-zinc-900 font-medium">/mo</span></span>
                         </div>
-                        <p className="text-zinc-900 text-sm leading-relaxed mb-6 border-b border-zinc-400 pb-4">
+                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-6 border-b border-zinc-400 pb-4">
                             Board-level economic sanity checks. Asynchronous access for critical buy/build/kill decisions. Minimum 3-month commitment.
                             <br /><br />
                             <span className="text-gold/80 italic text-xs">Engagements are scoped against measurable capital outcomes.</span>
                         </p>
-                        <a href="/api/buy/retainer" className="block w-full text-center bg-gold/10 border border-gold/20 text-gold font-bold uppercase text-xs py-3 rounded hover:bg-gold/20 transition-all">
+                        <a href="/api/buy/retainer" className="block w-full text-center bg-gold/10 border border-gold/20 text-gold font-bold uppercase text-xs font-bold py-3 rounded hover:bg-gold/20 transition-all">
                             Initialize Retainer
                         </a>
                     </GlowCard>
@@ -153,7 +153,7 @@ export default function AdvisoryContent() {
                         <div itemScope itemType="https://schema.org/Question">
                             <h3 itemProp="name" className="text-lg font-bold text-zinc-950 mb-2">How much does an R&D audit cost?</h3>
                             <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
-                                <p itemProp="text" className="text-zinc-900 text-sm leading-relaxed">
+                                <p itemProp="text" className="text-zinc-900 text-sm font-semibold leading-relaxed">
                                     Richard Ewing offers R&D audits starting at <span className="text-zinc-950 font-bold">$2,500</span> for a 60-minute diagnostic with written report, up to <span className="text-zinc-950 font-bold">$7,500</span> for a full 2-3 week forensic review. A 30-minute gut-check call is available for $450.
                                 </p>
                             </div>
@@ -161,7 +161,7 @@ export default function AdvisoryContent() {
                         <div itemScope itemType="https://schema.org/Question">
                             <h3 itemProp="name" className="text-lg font-bold text-zinc-950 mb-2">What is the difference between consulting and auditing?</h3>
                             <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
-                                <p itemProp="text" className="text-zinc-900 text-sm leading-relaxed">
+                                <p itemProp="text" className="text-zinc-900 text-sm font-semibold leading-relaxed">
                                     Consulting asks "how can we improve?" Auditing asks "what's actually true?" Consultants optimize. Auditors verify. An R&D audit surfaces the facts — the real maintenance ratio, the true technical debt liability, the actual AI unit economics — without assuming the current approach is correct.
                                 </p>
                             </div>
@@ -169,13 +169,13 @@ export default function AdvisoryContent() {
                         <div itemScope itemType="https://schema.org/Question">
                             <h3 itemProp="name" className="text-lg font-bold text-zinc-950 mb-2">How should I prepare before an engagement?</h3>
                             <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
-                                <p itemProp="text" className="text-zinc-900 text-sm leading-relaxed">
+                                <p itemProp="text" className="text-zinc-900 text-sm font-semibold leading-relaxed">
                                     Take the free{' '}
-                                    <a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations" target="_blank" rel="noopener noreferrer" className="text-cyan-800 font-semibold hover:text-zinc-900 transition-colors underline decoration-dotted">AI Fluency</a>{' '}
+                                    <a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations" target="_blank" rel="noopener noreferrer" className="text-cyan-900 font-extrabold font-semibold hover:text-zinc-900 transition-colors underline decoration-dotted">AI Fluency</a>{' '}
                                     and{' '}
-                                    <a href="https://anthropic.skilljar.com/claude-101" target="_blank" rel="noopener noreferrer" className="text-cyan-800 font-semibold hover:text-zinc-900 transition-colors underline decoration-dotted">Claude 101</a>{' '}
+                                    <a href="https://anthropic.skilljar.com/claude-101" target="_blank" rel="noopener noreferrer" className="text-cyan-900 font-extrabold font-semibold hover:text-zinc-900 transition-colors underline decoration-dotted">Claude 101</a>{' '}
                                     courses from Anthropic Academy. They establish the AI governance vocabulary we&apos;ll use during the audit. View{' '}
-                                    <a href="/resources/ai-courses" className="text-cyan-800 font-semibold hover:text-zinc-900 transition-colors underline decoration-dotted">all 15 curated courses</a>.
+                                    <a href="/resources/ai-courses" className="text-cyan-900 font-extrabold font-semibold hover:text-zinc-900 transition-colors underline decoration-dotted">all 15 curated courses</a>.
                                 </p>
                             </div>
                         </div>
@@ -188,15 +188,15 @@ export default function AdvisoryContent() {
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-6 border-l-4 border-cyan-500">
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                         <div>
-                            <div className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-2">Not Ready for Paid?</div>
+                            <div className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest mb-2">Not Ready for Paid?</div>
                             <h3 className="text-xl font-bold text-zinc-950 font-grotesk">Run a Free Self-Diagnostic</h3>
-                            <p className="text-zinc-900 text-sm mt-2">(Newsletter + Tools)</p>
+                            <p className="text-zinc-900 text-sm font-semibold mt-2">(Newsletter + Tools)</p>
                         </div>
                         <div className="flex gap-4">
-                            <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-cyan-400 transition-colors">
+                            <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs font-bold rounded hover:bg-cyan-400 transition-colors">
                                 Subscribe Free
                             </a>
-                            <Link href="/tools" className="px-6 py-3 bg-transparent border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-colors">
+                            <Link href="/tools" className="px-6 py-3 bg-transparent border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold rounded hover:bg-white/10 transition-colors">
                                 Access Tools
                             </Link>
                         </div>
@@ -216,19 +216,19 @@ export default function AdvisoryContent() {
                                 For Series B+ companies requiring sustained intervention. I serve as a fractional CPO or Independent Board Director to oversee the implementation of capital efficiency protocols and AI governance.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                                <a href="mailto:richardewing@exogram.ai?subject=Board%20Inquiry" className="inline-flex items-center justify-center px-8 py-4 bg-gold text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-white transition-all">
+                                <a href="mailto:richardewing@exogram.ai?subject=Board%20Inquiry" className="inline-flex items-center justify-center px-8 py-4 bg-gold text-black font-bold uppercase tracking-widest text-xs font-bold rounded hover:bg-white transition-all">
                                     Request Board Bio
                                 </a>
-                                <Link href="/manifesto" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-all">
+                                <Link href="/manifesto" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold rounded hover:bg-white/10 transition-all">
                                     Read Operating Principles
                                 </Link>
                             </div>
                         </div>
                         <div className="w-full md:w-1/3">
                             <GlowCard className="p-6 bg-white/50" glowColor="gold">
-                                <div className="text-xs font-mono text-gold uppercase tracking-widest mb-2">Capacity</div>
+                                <div className="text-xs font-bold font-mono text-gold uppercase tracking-widest mb-2">Capacity</div>
                                 <div className="text-3xl font-bold text-zinc-950 font-grotesk mb-1">1 Slot</div>
-                                <div className="text-sm text-zinc-950 mb-4">Remaining for Q1 2026</div>
+                                <div className="text-sm font-semibold text-zinc-950 mb-4">Remaining for Q1 2026</div>
                                 <div className="w-full h-1 bg-zinc-200 rounded-full overflow-hidden">
                                     <div className="w-2/3 h-full bg-gold rounded-full" />
                                 </div>

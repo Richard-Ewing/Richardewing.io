@@ -23,14 +23,14 @@ const ExogramSection = () => {
                             </div>
                             <div>
                                 <h3 className="text-2xl font-bold text-zinc-900 mb-1">Exogram</h3>
-                                <p className="text-purple-600 text-sm">The Verification Infrastructure for AI</p>
+                                <p className="text-purple-900 font-extrabold text-sm">The Verification Infrastructure for AI</p>
                             </div>
                         </div>
 
                         {/* Tagline */}
-                        <p className="text-xl md:text-2xl text-zinc-800 leading-relaxed max-w-2xl">
+                        <p className="text-xl md:text-2xl text-zinc-950 font-bold leading-relaxed max-w-2xl">
                             AI doesn't fail because it can't reason.<br />
-                            <span className="text-purple-600">It fails because it doesn't know what's true.</span>
+                            <span className="text-purple-900 font-extrabold">It fails because it doesn't know what's true.</span>
                         </p>
 
                         {/* Description */}
@@ -49,15 +49,15 @@ const ExogramSection = () => {
                                 <div className="text-left flex flex-col justify-center h-full">
                                     <p className="text-zinc-900 font-semibold leading-none mb-1">Founded by Richard Ewing</p>
                                     <div className="flex items-center gap-2">
-                                        <p className="text-zinc-950 text-xs leading-none">Product Economist</p>
-                                        <span className="text-emerald-600 text-xs font-medium uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-50 rounded border border-emerald-200 leading-none flex items-center h-4">Live</span>
+                                        <p className="text-zinc-950 text-xs font-bold leading-none">Product Economist</p>
+                                        <span className="text-emerald-900 font-extrabold text-xs font-bold font-medium uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-50 rounded border border-emerald-200 leading-none flex items-center h-4">Live</span>
                                     </div>
                                 </div>
                             </div>
 
                             {/* CTAs - Left Aligned on Desktop to kiss the center line */}
                             <div className="flex items-center justify-center md:justify-start h-12">
-                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 transition-colors shadow-md h-10">
+                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 transition-colors shadow-md h-10">
                                     Visit Exogram.ai →
                                 </a>
                             </div>
