@@ -6,8 +6,6 @@ import { ShieldAlert, DollarSign, Lock, Activity, Users, Target, Code, Database,
 import Link from 'next/link';
 import ToolCelebration from '../../components/ToolCelebration';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
-import jsPDF from 'jspdf';
-import { toPng } from 'html-to-image';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import styles from './styles.module.css';
 
@@ -138,21 +136,23 @@ export default function DueDiligenceTool() {
             const element = document.getElementById('dd-pdf-export-zone');
             if (!element) return;
 
-            // Enforce snapshot size and strictly disable running transitions
+            const { toPng } = await import('html-to-image');
+            const jsPDFModule = await import('jspdf');
+            const jsPDF = jsPDFModule.default || jsPDFModule.jsPDF;
+
+            // ── Phase 1: Prepare DOM for capture ──────────────────────
             const originalWidth = element.style.width;
             const originalMaxWidth = element.style.maxWidth;
             const originalTransform = element.style.transform;
             element.style.width = '1024px';
             element.style.maxWidth = '1024px';
             
-            // Disable animations temporarily to prevent Recharts SVG rendering bugs & Framer Motion mid-transition scaling bugs
             const animatedElements = element.querySelectorAll('*');
             animatedElements.forEach(el => {
                 const node = el as HTMLElement;
                 if (node.style) {
                     node.style.setProperty('transition', 'none', 'important');
                     node.style.setProperty('animation', 'none', 'important');
-                    
                     if (node.classList.contains('opacity-0') || node.classList.contains('translate-y-8') || node.classList.contains('translate-y-30')) {
                         node.setAttribute('data-pdf-opacity', node.style.opacity || '');
                         node.setAttribute('data-pdf-transform', node.style.transform || '');
@@ -162,7 +162,6 @@ export default function DueDiligenceTool() {
                 }
             });
 
-            // Uncloak scrollable lists BEFORE page break math ensures expanded heights are accurately measured
             const scrollContainers = element.querySelectorAll('.overflow-y-auto, .overflow-auto, .max-h-64, .max-h-96');
             scrollContainers.forEach(el => {
                 const node = el as HTMLElement;
@@ -172,57 +171,69 @@ export default function DueDiligenceTool() {
                 node.style.setProperty('max-height', 'none', 'important');
             });
 
-            // PAGE BREAK SYNCHRONIZATION LOGIC
-            // BIG FIX: We only target DIRECT CHILDREN of the export wrapper to prevent grid blowout.
-            const A4_HEIGHT_IN_PX = 1024 * (297 / 210);
-            const blocks = Array.from(element.children);
+            await new Promise(resolve => setTimeout(resolve, 100));
+
+            // ── Phase 2: Compute optimal slice points ─────────────────
+            const containerRect = element.getBoundingClientRect();
+            const totalHeight = element.scrollHeight;
+            const PAGE_WIDTH = 1024;
+            const A4_RATIO = 297 / 210;
+            const PAGE_HEIGHT = Math.floor(PAGE_WIDTH * A4_RATIO);
+
+            const allElements = element.querySelectorAll('div, section, table, ul, ol, h1, h2, h3, h4, p, article, header, footer');
+            const bottomEdges: number[] = [];
             
-            blocks.forEach((node) => {
-                const el = node as HTMLElement;
-                const style = window.getComputedStyle(el);
-                if (style.position === 'absolute' || style.position === 'fixed') return;
-                
-                const targetRect = element.getBoundingClientRect();
-                const rect = el.getBoundingClientRect();
-                const relativeTop = rect.top - targetRect.top;
-                const height = rect.height;
-
-                if (height === 0 || height > (A4_HEIGHT_IN_PX * 0.75)) return;
-
-                const startPage = Math.floor(relativeTop / A4_HEIGHT_IN_PX);
-                const endPage = Math.floor((relativeTop + height) / A4_HEIGHT_IN_PX);
-
-                const absolutePageBottom = (startPage + 1) * A4_HEIGHT_IN_PX;
-                const distanceFromBottom = absolutePageBottom - (relativeTop + height);
-
-                if (startPage !== endPage || distanceFromBottom < 200) {
-                    const nextPageStartPx = absolutePageBottom;
-                    const pushAmount = nextPageStartPx - relativeTop + 80;
-                    
-                    const currentPadding = parseFloat(style.paddingTop) || 0;
-                    el.setAttribute('data-pdf-padding-top', el.style.paddingTop);
-                    el.style.setProperty('padding-top', `${currentPadding + pushAmount}px`, 'important');
+            allElements.forEach(el => {
+                const node = el as HTMLElement;
+                const style = window.getComputedStyle(node);
+                if (style.display === 'none' || style.position === 'fixed') return;
+                const rect = node.getBoundingClientRect();
+                const bottom = Math.round(rect.bottom - containerRect.top);
+                if (bottom > 0 && bottom < totalHeight) {
+                    bottomEdges.push(bottom);
                 }
             });
 
+            const uniqueEdges = [...new Set(bottomEdges)].sort((a, b) => a - b);
+            const slicePoints: number[] = [0];
+            let pageIndex = 1;
+            
+            while (pageIndex * PAGE_HEIGHT < totalHeight) {
+                const idealCut = pageIndex * PAGE_HEIGHT;
+                const minCut = idealCut - PAGE_HEIGHT * 0.35;
+                let bestCut = idealCut;
+                let bestDistance = Infinity;
+                
+                for (const edge of uniqueEdges) {
+                    if (edge >= minCut && edge <= idealCut) {
+                        const distance = idealCut - edge;
+                        if (distance < bestDistance) {
+                            bestDistance = distance;
+                            bestCut = edge;
+                        }
+                    }
+                }
+                slicePoints.push(bestCut);
+                pageIndex++;
+            }
+            slicePoints.push(totalHeight);
+
             await new Promise(resolve => setTimeout(resolve, 600));
 
+            // ── Phase 3: Capture full image ───────────────────────────
             const dataUrl = await toPng(element, { 
                 quality: 1.0, 
                 backgroundColor: '#ffffff', 
                 pixelRatio: 2,
                 style: { transform: 'none' },
                 filter: (node: HTMLElement) => {
-                    if (node?.hasAttribute && node.hasAttribute('data-html2canvas-ignore')) {
-                        return false;
-                    }
-                    if (node?.classList?.contains('export-ignore')) {
-                        return false;
-                    }
+                    if (node?.hasAttribute && node.hasAttribute('data-html2canvas-ignore')) return false;
+                    if (node?.classList?.contains('export-ignore')) return false;
                     return true;
                 }
             });
 
+            // ── Phase 4: Restore DOM ──────────────────────────────────
             element.style.width = originalWidth;
             element.style.maxWidth = originalMaxWidth;
             element.style.transform = originalTransform;
@@ -240,14 +251,6 @@ export default function DueDiligenceTool() {
                     }
                 }
             });
-            blocks.forEach((node) => {
-                const el = node as HTMLElement;
-                const originalPaddingTop = el.getAttribute('data-pdf-padding-top');
-                if (originalPaddingTop !== null) {
-                    el.style.paddingTop = originalPaddingTop;
-                    el.removeAttribute('data-pdf-padding-top');
-                }
-            });
             scrollContainers.forEach(node => {
                 const el = node as HTMLElement;
                 el.style.overflow = el.getAttribute('data-pdf-overflow') || '';
@@ -256,8 +259,50 @@ export default function DueDiligenceTool() {
                 el.removeAttribute('data-pdf-max-height');
             });
 
-            const pdf = new jsPDF({ orientation: 'p', unit: 'px', format: [element.offsetWidth, element.offsetHeight] });
-            pdf.addImage(dataUrl, 'PNG', 0, 0, element.offsetWidth, element.offsetHeight);
+            // ── Phase 5: Slice image into pages ───────────────────────
+            const img = new Image();
+            img.src = dataUrl;
+            await new Promise<void>((resolve, reject) => {
+                img.onload = () => resolve();
+                img.onerror = reject;
+            });
+
+            const imgNaturalWidth = img.naturalWidth;
+            const imgNaturalHeight = img.naturalHeight;
+            const scaleY = imgNaturalHeight / totalHeight;
+
+            const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+            const pdfPageWidthMM = pdf.internal.pageSize.getWidth();
+
+            for (let i = 0; i < slicePoints.length - 1; i++) {
+                if (i > 0) pdf.addPage();
+
+                const sliceTop = slicePoints[i];
+                const sliceBottom = slicePoints[i + 1];
+                const sliceHeightPx = sliceBottom - sliceTop;
+
+                const cropCanvas = document.createElement('canvas');
+                cropCanvas.width = imgNaturalWidth;
+                cropCanvas.height = Math.round(sliceHeightPx * scaleY);
+                const ctx = cropCanvas.getContext('2d')!;
+                
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, cropCanvas.width, cropCanvas.height);
+                
+                ctx.drawImage(
+                    img,
+                    0, Math.round(sliceTop * scaleY),
+                    imgNaturalWidth, Math.round(sliceHeightPx * scaleY),
+                    0, 0,
+                    imgNaturalWidth, Math.round(sliceHeightPx * scaleY)
+                );
+
+                const sliceDataUrl = cropCanvas.toDataURL('image/png');
+                const actualSliceHeightMM = (sliceHeightPx * pdfPageWidthMM) / PAGE_WIDTH;
+                
+                pdf.addImage(sliceDataUrl, 'PNG', 0, 0, pdfPageWidthMM, actualSliceHeightMM);
+            }
+
             pdf.save(`Engineering_Due_Diligence_${profile}.pdf`);
         } catch (error: any) {
             console.error(error);

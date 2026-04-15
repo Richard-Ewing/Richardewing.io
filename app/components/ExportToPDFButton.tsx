@@ -20,12 +20,6 @@ export function ExportToPDFButton({
     const { openSignIn } = useClerk();
 
     const handleExport = async () => {
-        // [TEMP MOCK FOR DEBUG] Enforce Authentication Paygate for PDF Export
-        // if (!isSignedIn) {
-        //     openSignIn();
-        //     return;
-        // }
-
         setIsExporting(true);
         try {
             if (onBeforeExport) {
@@ -36,29 +30,25 @@ export function ExportToPDFButton({
                 }
             }
 
-            // Dynamically import heavy PDF engines only on click to prevent Next.js SSR crashes
             const htmlToImage = await import('html-to-image');
             const jsPDFModule = await import('jspdf');
-            
             const jsPDF = jsPDFModule.default || jsPDFModule.jsPDF;
 
             const element = document.getElementById(targetId);
             if (!element) throw new Error(`Element with id ${targetId} not found`);
 
-            // 1) Force the element to Desktop Width to guarantee A4 aspect ratio
+            // ── Phase 1: Prepare the DOM for capture ──────────────────────
             const originalWidth = element.style.width;
             const originalMaxWidth = element.style.maxWidth;
             const originalTransform = element.style.transform;
             
-            // Disable animations temporarily and force un-scrolled elements to be fully visible and in correct positions
+            // Disable all animations and force visibility
             const animatedElements = element.querySelectorAll('*');
             animatedElements.forEach(el => {
                 const node = el as HTMLElement;
                 if (node.style) {
                     node.style.setProperty('transition', 'none', 'important');
                     node.style.setProperty('animation', 'none', 'important');
-                    
-                    // Defeat scroll-reveal hiding logic for blocks outside viewport
                     if (node.classList.contains('opacity-0') || node.classList.contains('translate-y-8')) {
                         node.setAttribute('data-pdf-opacity', node.style.opacity || '');
                         node.setAttribute('data-pdf-transform', node.style.transform || '');
@@ -71,9 +61,7 @@ export function ExportToPDFButton({
             element.style.width = '1024px';
             element.style.maxWidth = '1024px';
             
-            // SCROLL-TRUNCATION FIX:
-            // Any container with max-height and overflow will physically truncate the PDF capture.
-            // We must temporarily uncloak them to their full absolute height BEFORE calculating page breaks.
+            // Expand all scrollable containers to full height
             const scrollContainers = element.querySelectorAll('.overflow-y-auto, .overflow-auto, .max-h-64, .max-h-96');
             scrollContainers.forEach(el => {
                 const node = el as HTMLElement;
@@ -83,67 +71,82 @@ export function ExportToPDFButton({
                 node.style.setProperty('max-height', 'none', 'important');
             });
             
-            // Allow exact DOM reflow so we can calculate pixel heights
-            await new Promise(resolve => setTimeout(resolve, 50));
+            // Wait for reflow
+            await new Promise(resolve => setTimeout(resolve, 100));
 
-            // PAGE BREAK SYNCHRONIZATION LOGIC
-            const A4_HEIGHT_IN_PX = 1024 * (297 / 210); // ~1448.23px
-            const blocks = Array.from(element.children);
+            // ── Phase 2: Compute optimal slice points ─────────────────────
+            // Walk ALL descendant elements (not just direct children) to find
+            // every gap between blocks. Then for each page boundary, pick the
+            // gap closest to (but before) the boundary to slice at.
+            const containerRect = element.getBoundingClientRect();
+            const totalHeight = element.scrollHeight;
+            const PAGE_WIDTH = 1024;
+            const A4_RATIO = 297 / 210; // ~1.4143
+            const PAGE_HEIGHT = Math.floor(PAGE_WIDTH * A4_RATIO); // ~1448px
+
+            // Collect bottom edges of all block-level descendants
+            const allElements = element.querySelectorAll('div, section, table, ul, ol, h1, h2, h3, h4, p, article, header, footer, main, aside, nav, figure, blockquote, li');
+            const bottomEdges: number[] = [];
             
-            blocks.forEach((node) => {
-                const el = node as HTMLElement;
-                const style = window.getComputedStyle(el);
-                if (style.position === 'absolute' || style.position === 'fixed') return;
-                
-                const targetRect = element.getBoundingClientRect(); 
-                const rect = el.getBoundingClientRect();
-                const relativeTop = rect.top - targetRect.top;
-                const height = rect.height;
-
-                if (height === 0 || height > (A4_HEIGHT_IN_PX * 0.75)) return;
-
-                const startPage = Math.floor(relativeTop / A4_HEIGHT_IN_PX);
-                const endPage = Math.floor((relativeTop + height) / A4_HEIGHT_IN_PX);
-                
-                // Account for extreme canvas drift (+- 200px cumulative rounding error in 150% Windows scaling text wraps).
-                const absolutePageBottom = (startPage + 1) * A4_HEIGHT_IN_PX;
-                const distanceFromBottom = absolutePageBottom - (relativeTop + height);
-
-                // If element is within 200px of the boundary margin, forcefully push it.
-                if (startPage !== endPage || distanceFromBottom < 200) {
-                    const nextPageStartPx = absolutePageBottom;
-                    const pushAmount = nextPageStartPx - relativeTop + 80; // 80px visual headroom on the new page
-                    
-                    // Critical Fix: Use paddingTop instead of marginTop. Margins collapse in block layout, completely sabotaging the math offset.
-                    const currentPadding = parseFloat(style.paddingTop) || 0;
-                    el.setAttribute('data-pdf-padding-top', el.style.paddingTop);
-                    el.style.setProperty('padding-top', `${currentPadding + pushAmount}px`, 'important');
+            allElements.forEach(el => {
+                const node = el as HTMLElement;
+                const style = window.getComputedStyle(node);
+                if (style.display === 'none' || style.position === 'fixed') return;
+                const rect = node.getBoundingClientRect();
+                const bottom = Math.round(rect.bottom - containerRect.top);
+                if (bottom > 0 && bottom < totalHeight) {
+                    bottomEdges.push(bottom);
                 }
             });
 
-            // Recharts renders dynamically via ResizeObserver. If we don't wait long enough here, charts disappear.
+            // Deduplicate and sort
+            const uniqueEdges = [...new Set(bottomEdges)].sort((a, b) => a - b);
+
+            // For each page boundary, find the best slice point
+            const slicePoints: number[] = [0]; // Start of first page
+            let pageIndex = 1;
+            
+            while (pageIndex * PAGE_HEIGHT < totalHeight) {
+                const idealCut = pageIndex * PAGE_HEIGHT;
+                
+                // Search for the nearest element bottom edge that's ABOVE the ideal cut
+                // but within a reasonable range (don't go more than 35% back)
+                const minCut = idealCut - PAGE_HEIGHT * 0.35;
+                
+                let bestCut = idealCut; // fallback: hard cut
+                let bestDistance = Infinity;
+                
+                for (const edge of uniqueEdges) {
+                    if (edge >= minCut && edge <= idealCut) {
+                        const distance = idealCut - edge;
+                        if (distance < bestDistance) {
+                            bestDistance = distance;
+                            bestCut = edge;
+                        }
+                    }
+                }
+                
+                slicePoints.push(bestCut);
+                pageIndex++;
+            }
+            slicePoints.push(totalHeight); // End of last page
+
+            // Wait for Recharts / SVG rendering
             await new Promise(resolve => setTimeout(resolve, 600));
 
-            // 2) Snapshot the rigid DOM layer into a binary Canvas via html-to-image
-            // html-to-image handles oklch and lab colors perfectly because it uses native SVG rendering
+            // ── Phase 3: Capture the full container as one image ──────────
             const imgData = await htmlToImage.toPng(element, {
                 pixelRatio: 2,
                 backgroundColor: '#ffffff',
-                style: {
-                    transform: 'none',
-                },
+                style: { transform: 'none' },
                 filter: (node: HTMLElement) => {
-                    if (node?.hasAttribute && node.hasAttribute('data-html2canvas-ignore')) {
-                        return false;
-                    }
-                    if (node?.classList?.contains('export-ignore')) {
-                        return false;
-                    }
+                    if (node?.hasAttribute && node.hasAttribute('data-html2canvas-ignore')) return false;
+                    if (node?.classList?.contains('export-ignore')) return false;
                     return true;
                 }
             });
 
-            // 5) Restore original DOM styles completely invisibly
+            // ── Phase 4: Restore DOM ──────────────────────────────────────
             element.style.width = originalWidth;
             element.style.maxWidth = originalMaxWidth;
             element.style.transform = originalTransform;
@@ -161,14 +164,6 @@ export function ExportToPDFButton({
                     }
                 }
             });
-            blocks.forEach((node) => {
-                const el = node as HTMLElement;
-                const originalPaddingTop = el.getAttribute('data-pdf-padding-top');
-                if (originalPaddingTop !== null) {
-                    el.style.paddingTop = originalPaddingTop;
-                    el.removeAttribute('data-pdf-padding-top');
-                }
-            });
             scrollContainers.forEach(node => {
                 const el = node as HTMLElement;
                 el.style.overflow = el.getAttribute('data-pdf-overflow') || '';
@@ -176,27 +171,60 @@ export function ExportToPDFButton({
                 el.removeAttribute('data-pdf-overflow');
                 el.removeAttribute('data-pdf-max-height');
             });
-            // 4) Convert Canvas to jsPDF standard format
-            const pdf = new jsPDF({
-                orientation: 'portrait',
-                unit: 'mm',
-                format: 'a4'
+
+            // ── Phase 5: Slice image and build multi-page PDF ─────────────
+            // Load the captured image into a canvas so we can crop regions
+            const img = new Image();
+            img.src = imgData;
+            await new Promise<void>((resolve, reject) => {
+                img.onload = () => resolve();
+                img.onerror = reject;
             });
 
-            const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = (element.offsetHeight * pdfWidth) / element.offsetWidth;
-            let heightLeft = pdfHeight;
-            let position = 0;
-            const pageHeight = pdf.internal.pageSize.getHeight();
+            const pixelRatio = 2;
+            const imgNaturalWidth = img.naturalWidth;
+            const imgNaturalHeight = img.naturalHeight;
+            const scaleX = imgNaturalWidth / PAGE_WIDTH;
+            const scaleY = imgNaturalHeight / totalHeight;
 
-            pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, pdfHeight);
-            heightLeft -= pageHeight;
+            const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+            const pdfPageWidthMM = pdf.internal.pageSize.getWidth();
+            const pdfPageHeightMM = pdf.internal.pageSize.getHeight();
 
-            while (heightLeft >= 0) {
-                position = heightLeft - pdfHeight;
-                pdf.addPage();
-                pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, pdfHeight);
-                heightLeft -= pageHeight;
+            for (let i = 0; i < slicePoints.length - 1; i++) {
+                if (i > 0) pdf.addPage();
+
+                const sliceTop = slicePoints[i];
+                const sliceBottom = slicePoints[i + 1];
+                const sliceHeightPx = sliceBottom - sliceTop;
+
+                // Crop this slice from the full image
+                const cropCanvas = document.createElement('canvas');
+                cropCanvas.width = imgNaturalWidth;
+                cropCanvas.height = Math.round(sliceHeightPx * scaleY);
+                const ctx = cropCanvas.getContext('2d')!;
+                
+                // Fill white background first
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, cropCanvas.width, cropCanvas.height);
+                
+                // Draw the relevant slice
+                ctx.drawImage(
+                    img,
+                    0, Math.round(sliceTop * scaleY),           // source x, y
+                    imgNaturalWidth, Math.round(sliceHeightPx * scaleY), // source w, h
+                    0, 0,                                        // dest x, y
+                    imgNaturalWidth, Math.round(sliceHeightPx * scaleY)  // dest w, h
+                );
+
+                const sliceDataUrl = cropCanvas.toDataURL('image/png');
+                
+                // Calculate height in mm, maintaining aspect ratio
+                const sliceHeightMM = (sliceHeightPx / PAGE_WIDTH) * pdfPageWidthMM * A4_RATIO / A4_RATIO;
+                const actualSliceHeightMM = (sliceHeightPx * pdfPageWidthMM) / PAGE_WIDTH;
+                
+                // Place at top of page
+                pdf.addImage(sliceDataUrl, 'PNG', 0, 0, pdfPageWidthMM, actualSliceHeightMM);
             }
 
             pdf.save(fileName);
