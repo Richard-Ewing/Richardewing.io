@@ -50,13 +50,13 @@ export function ExportToPDFButton({
             const originalMaxWidth = element.style.maxWidth;
             const originalTransform = element.style.transform;
             
-            // Disable animations temporarily to prevent Recharts SVG rendering bugs
-            const animatedElements = element.querySelectorAll('.recharts-surface, .recharts-layer');
+            // Disable animations temporarily to prevent Recharts SVG rendering bugs & Framer Motion mid-transition scaling bugs
+            const animatedElements = element.querySelectorAll('*');
             animatedElements.forEach(el => {
                 const node = el as HTMLElement;
                 if (node.style) {
-                    node.style.transition = 'none';
-                    node.style.animation = 'none';
+                    node.style.setProperty('transition', 'none', 'important');
+                    node.style.setProperty('animation', 'none', 'important');
                 }
             });
 
@@ -72,6 +72,15 @@ export function ExportToPDFButton({
                 backgroundColor: '#ffffff',
                 style: {
                     transform: 'none',
+                },
+                filter: (node: HTMLElement) => {
+                    if (node?.hasAttribute && node.hasAttribute('data-html2canvas-ignore')) {
+                        return false;
+                    }
+                    if (node?.classList?.contains('export-ignore')) {
+                        return false;
+                    }
+                    return true;
                 }
             });
 
@@ -82,8 +91,8 @@ export function ExportToPDFButton({
             animatedElements.forEach(el => {
                 const node = el as HTMLElement;
                 if (node.style) {
-                    node.style.transition = '';
-                    node.style.animation = '';
+                    node.style.removeProperty('transition');
+                    node.style.removeProperty('animation');
                 }
             });
             // 4) Convert Canvas to jsPDF standard format
@@ -123,7 +132,8 @@ export function ExportToPDFButton({
         <button
             onClick={handleExport}
             disabled={isExporting}
-            className={`flex items-center justify-center gap-2 px-6 py-3 bg-cobalt hover:bg-cobalt/80 text-zinc-950 font-mono text-sm font-semibold uppercase tracking-widest rounded-lg transition-all disabled:opacity-50 disabled:cursor-wait shadow-[0_0_15px_rgba(45,112,253,0.3)] hover:shadow-[0_0_25px_rgba(45,112,253,0.5)] ${className}`}
+            data-html2canvas-ignore="true"
+            className={`export-ignore flex items-center justify-center gap-2 px-6 py-3 bg-cobalt hover:bg-cobalt/80 text-zinc-950 font-mono text-sm font-semibold uppercase tracking-widest rounded-lg transition-all disabled:opacity-50 disabled:cursor-wait shadow-[0_0_15px_rgba(45,112,253,0.3)] hover:shadow-[0_0_25px_rgba(45,112,253,0.5)] ${className}`}
         >
             {isExporting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Download className="w-5 h-5" />}
             {isExporting ? 'Synthesizing PDF...' : 'Export to PDF'}
