@@ -9,7 +9,7 @@ const ResponseSchema = z.object({
         month: z.number(),
         focus: z.string(),
         action_items: z.array(z.string()),
-    })).length(3),
+    })).min(1).max(5),
 });
 
 const SYSTEM_PROMPT = `
