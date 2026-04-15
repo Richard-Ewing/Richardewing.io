@@ -162,6 +162,16 @@ export default function DueDiligenceTool() {
                 }
             });
 
+            // Uncloak scrollable lists BEFORE page break math ensures expanded heights are accurately measured
+            const scrollContainers = element.querySelectorAll('.overflow-y-auto, .overflow-auto, .max-h-64, .max-h-96');
+            scrollContainers.forEach(el => {
+                const node = el as HTMLElement;
+                node.setAttribute('data-pdf-overflow', node.style.overflow);
+                node.setAttribute('data-pdf-max-height', node.style.maxHeight);
+                node.style.setProperty('overflow', 'visible', 'important');
+                node.style.setProperty('max-height', 'none', 'important');
+            });
+
             // PAGE BREAK SYNCHRONIZATION LOGIC
             // BIG FIX: We only target DIRECT CHILDREN of the export wrapper to prevent grid blowout.
             const A4_HEIGHT_IN_PX = 1024 * (297 / 210);
@@ -193,16 +203,6 @@ export default function DueDiligenceTool() {
                     el.setAttribute('data-pdf-margin-top', el.style.marginTop);
                     el.style.marginTop = `${currentMargin + pushAmount}px`;
                 }
-            });
-
-            // Uncloak scrollable lists
-            const scrollContainers = element.querySelectorAll('.overflow-y-auto, .overflow-auto, .max-h-64, .max-h-96');
-            scrollContainers.forEach(el => {
-                const node = el as HTMLElement;
-                node.setAttribute('data-pdf-overflow', node.style.overflow);
-                node.setAttribute('data-pdf-max-height', node.style.maxHeight);
-                node.style.setProperty('overflow', 'visible', 'important');
-                node.style.setProperty('max-height', 'none', 'important');
             });
 
             await new Promise(resolve => setTimeout(resolve, 600));

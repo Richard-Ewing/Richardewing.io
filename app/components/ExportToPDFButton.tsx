@@ -71,6 +71,18 @@ export function ExportToPDFButton({
             element.style.width = '1024px';
             element.style.maxWidth = '1024px';
             
+            // SCROLL-TRUNCATION FIX:
+            // Any container with max-height and overflow will physically truncate the PDF capture.
+            // We must temporarily uncloak them to their full absolute height BEFORE calculating page breaks.
+            const scrollContainers = element.querySelectorAll('.overflow-y-auto, .overflow-auto, .max-h-64, .max-h-96');
+            scrollContainers.forEach(el => {
+                const node = el as HTMLElement;
+                node.setAttribute('data-pdf-overflow', node.style.overflow);
+                node.setAttribute('data-pdf-max-height', node.style.maxHeight);
+                node.style.setProperty('overflow', 'visible', 'important');
+                node.style.setProperty('max-height', 'none', 'important');
+            });
+            
             // Allow exact DOM reflow so we can calculate pixel heights
             await new Promise(resolve => setTimeout(resolve, 50));
 
@@ -105,18 +117,6 @@ export function ExportToPDFButton({
                     el.setAttribute('data-pdf-margin-top', el.style.marginTop);
                     el.style.marginTop = `${currentMargin + pushAmount}px`;
                 }
-            });
-
-            // SCROLL-TRUNCATION FIX:
-            // Any container with max-height and overflow will physically truncate the PDF capture.
-            // We must temporarily uncloak them to their full absolute height.
-            const scrollContainers = element.querySelectorAll('.overflow-y-auto, .overflow-auto, .max-h-64, .max-h-96');
-            scrollContainers.forEach(el => {
-                const node = el as HTMLElement;
-                node.setAttribute('data-pdf-overflow', node.style.overflow);
-                node.setAttribute('data-pdf-max-height', node.style.maxHeight);
-                node.style.setProperty('overflow', 'visible', 'important');
-                node.style.setProperty('max-height', 'none', 'important');
             });
 
             // Recharts renders dynamically via ResizeObserver. If we don't wait long enough here, charts disappear.
