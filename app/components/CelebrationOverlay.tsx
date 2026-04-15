@@ -243,7 +243,7 @@ export default function CelebrationOverlay({
                     <span className="text-sm text-zinc-950 font-mono">Keep the momentum going</span>
                 </div>
 
-                <p className="text-xs text-zinc-800 mt-6">Click anywhere to continue</p>
+                <p className="text-xs text-zinc-900 font-bold mt-6">Click anywhere to continue</p>
             </div>
 
             <style jsx>{`

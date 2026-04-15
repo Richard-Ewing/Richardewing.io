@@ -138,19 +138,19 @@ export default function ChecklistPage() {
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
                         <div className="card p-4 text-center">
                             <div className="text-2xl font-grotesk font-bold text-zinc-900">{totalQuestions}</div>
-                            <div className="text-xs text-zinc-900">Questions</div>
+                            <div className="text-xs text-zinc-900 font-bold">Questions</div>
                         </div>
                         <div className="card p-4 text-center">
                             <div className="text-2xl font-grotesk font-bold text-zinc-900">{domains.length}</div>
-                            <div className="text-xs text-zinc-900">Domains</div>
+                            <div className="text-xs text-zinc-900 font-bold">Domains</div>
                         </div>
                         <div className="card p-4 text-center">
                             <div className="text-2xl font-grotesk font-bold text-zinc-900">{totalQuestions}</div>
-                            <div className="text-xs text-zinc-900">Scoring Rubrics</div>
+                            <div className="text-xs text-zinc-900 font-bold">Scoring Rubrics</div>
                         </div>
                         <div className="card p-4 text-center">
                             <div className="text-2xl font-grotesk font-bold text-zinc-900">{totalQuestions}</div>
-                            <div className="text-xs text-zinc-900">Action Items</div>
+                            <div className="text-xs text-zinc-900 font-bold">Action Items</div>
                         </div>
                     </div>
 
@@ -160,15 +160,15 @@ export default function ChecklistPage() {
                         <div className="grid sm:grid-cols-3 gap-6">
                             <div>
                                 <div className="text-sm font-bold text-cyan-400 mb-2">Step 1: Self-Assessment</div>
-                                <p className="text-xs text-zinc-900">Score each question using the traffic-light rubric. Be honest — this is for your benefit, not anyone else&apos;s.</p>
+                                <p className="text-xs text-zinc-900 font-bold">Score each question using the traffic-light rubric. Be honest — this is for your benefit, not anyone else&apos;s.</p>
                             </div>
                             <div>
                                 <div className="text-sm font-bold text-amber-400 mb-2">Step 2: Prioritize</div>
-                                <p className="text-xs text-zinc-900">Count your red scores. These are your highest-impact remediation opportunities. Start with the domain with the most red.</p>
+                                <p className="text-xs text-zinc-900 font-bold">Count your red scores. These are your highest-impact remediation opportunities. Start with the domain with the most red.</p>
                             </div>
                             <div>
                                 <div className="text-sm font-bold text-emerald-400 mb-2">Step 3: Execute</div>
-                                <p className="text-xs text-zinc-900">Use the action items for each question. Tackle 2-3 red items per quarter. Track progress with the free tools below.</p>
+                                <p className="text-xs text-zinc-900 font-bold">Use the action items for each question. Tackle 2-3 red items per quarter. Track progress with the free tools below.</p>
                             </div>
                         </div>
                     </div>
@@ -200,7 +200,7 @@ export default function ChecklistPage() {
                                             <h2 className="text-2xl font-grotesk font-bold text-zinc-900">
                                                 Domain {di + 1}: {domain.title}
                                             </h2>
-                                            <p className="text-xs text-zinc-900">{domain.description}</p>
+                                            <p className="text-xs text-zinc-900 font-bold">{domain.description}</p>
                                         </div>
                                     </div>
                                     <div className="space-y-4 mt-6">
@@ -218,7 +218,7 @@ export default function ChecklistPage() {
                                                         <div className="flex flex-col sm:flex-row gap-3">
                                                             <div className="flex-1 rounded-lg bg-emerald-500/5 border border-emerald-500/10 p-3">
                                                                 <div className="text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest mb-1">🎯 Action</div>
-                                                                <p className="text-xs text-zinc-800">{item.action}</p>
+                                                                <p className="text-xs text-zinc-900 font-bold">{item.action}</p>
                                                             </div>
                                                             <div className="sm:w-48 rounded-lg bg-zinc-50 border border-zinc-400 p-3">
                                                                 <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Scoring</div>
@@ -249,7 +249,7 @@ export default function ChecklistPage() {
                                         <div className="mt-8 p-5 rounded-xl border border-amber-500/20 bg-amber-500/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                                             <div>
                                                 <div className="text-sm font-bold text-zinc-950 mb-1">Scored red on 3+ questions so far?</div>
-                                                <p className="text-xs text-zinc-800">A 30-minute Gut-Check call identifies whether you have a real problem — or just technical anxiety.</p>
+                                                <p className="text-xs text-zinc-900 font-bold">A 30-minute Gut-Check call identifies whether you have a real problem — or just technical anxiety.</p>
                                             </div>
                                             <a href="/api/buy/gut_check" className="shrink-0 px-5 py-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-widest hover:bg-amber-500/20 transition-all">
                                                 Gut-Check — $450 →
@@ -260,9 +260,9 @@ export default function ChecklistPage() {
                                         <div className="mt-8 p-5 rounded-xl border border-red-500/20 bg-red-500/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                                             <div>
                                                 <div className="text-sm font-bold text-zinc-950 mb-1">Multiple red scores across domains?</div>
-                                                <p className="text-xs text-zinc-800">The Insolvency Diagnostic quantifies your exposure and delivers a written Risk Report with prioritized remediation.</p>
+                                                <p className="text-xs text-zinc-900 font-bold">The Insolvency Diagnostic quantifies your exposure and delivers a written Risk Report with prioritized remediation.</p>
                                             </div>
-                                            <a href="/api/buy/insolvency_diagnostic" className="shrink-0 px-5 py-2.5 rounded-lg bg-red-600 text-white text-xs font-bold uppercase tracking-widest hover:bg-red-500 transition-all">
+                                            <a href="/api/buy/insolvency_diagnostic" className="shrink-0 px-5 py-2.5 rounded-lg bg-red-600 text-zinc-950 font-semibold text-xs font-bold uppercase tracking-widest hover:bg-red-500 transition-all">
                                                 Full Diagnostic — $2,500 →
                                             </a>
                                         </div>

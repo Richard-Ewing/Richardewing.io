@@ -63,7 +63,7 @@ export default function ProtocolInitialization() {
                     {/* STATUS BADGE */}
                     <div className="flex items-center gap-2 mb-6">
                         <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                        <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest">PROTOCOL V3 | SYSTEM OPERATIONAL</span>
+                        <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">PROTOCOL V3 | SYSTEM OPERATIONAL</span>
                     </div>
 
                     {/* HEADLINE */}

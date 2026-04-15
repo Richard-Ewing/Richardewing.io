@@ -166,14 +166,14 @@ export default function AIRoiTimelineContent() {
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-colors duration-500"></div>
                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-2 flex items-center gap-2">Implementation CapEx</div>
                                 <div className="text-3xl sm:text-4xl font-black text-rose-400 break-words">${implementationCost.toLocaleString()}</div>
-                                <div className="text-xs text-zinc-800 mt-2 font-mono">Initial setup & training cost</div>
+                                <div className="text-xs text-zinc-900 font-bold mt-2 font-mono">Initial setup & training cost</div>
                             </div>
                             
                             <div className="p-6 bg-zinc-50 border border-zinc-400 rounded-2xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/5 rounded-full blur-2xl group-hover:bg-green-500/10 transition-colors duration-500"></div>
                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-2 flex items-center gap-2">Annual Net Savings</div>
                                 <div className="text-3xl sm:text-4xl font-black text-green-400 break-words">${netAnnualSavings.toLocaleString()}</div>
-                                <div className="text-xs text-zinc-800 mt-2 font-mono">Displacing {displacedEngineers} FTEs</div>
+                                <div className="text-xs text-zinc-900 font-bold mt-2 font-mono">Displacing {displacedEngineers} FTEs</div>
                             </div>
 
                             <div className="p-6 bg-purple-900/20 border border-purple-500/30 rounded-2xl relative overflow-hidden group">
@@ -182,7 +182,7 @@ export default function AIRoiTimelineContent() {
                                 <div className="text-3xl sm:text-4xl font-black text-zinc-900">
                                     {breakEvenMonths < 0 ? 'Never' : `${breakEvenMonths.toFixed(1)} Months`}
                                 </div>
-                                <div className="text-xs text-purple-300/50 mt-2 font-mono">Until CapEx is recovered</div>
+                                <div className="text-xs text-zinc-900 font-bold/50 mt-2 font-mono">Until CapEx is recovered</div>
                             </div>
                         </div>
 

@@ -48,7 +48,7 @@ export default function StickyBottomCTA() {
                     <div className="flex items-center gap-2 flex-shrink-0">
                         <Link
                             href="/advisory"
-                            className="px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-xs font-bold uppercase tracking-wider rounded-lg hover:opacity-90 transition-opacity flex items-center gap-1 whitespace-nowrap"
+                            className="px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-500 text-zinc-950 font-semibold text-xs font-bold uppercase tracking-wider rounded-lg hover:opacity-90 transition-opacity flex items-center gap-1 whitespace-nowrap"
                         >
                             Book Call <ArrowRight className="w-3 h-3" />
                         </Link>

@@ -153,7 +153,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                     <p className="text-zinc-900 text-lg mb-8 max-w-md mx-auto">
                         You have exceeded the maximum number of free generic diagnostic scans. To continue evaluating systems via {toolName}, please join the Vault.
                     </p>
-                    <a href="/vault/join" className="block w-full py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold uppercase tracking-widest text-sm rounded-xl transition-all shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:shadow-[0_0_30px_rgba(225,29,72,0.6)]">
+                    <a href="/vault/join" className="block w-full py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm rounded-xl transition-all shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:shadow-[0_0_30px_rgba(225,29,72,0.6)]">
                         Upgrade & Unlock Vault →
                     </a>
                 </motion.div>
@@ -206,7 +206,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                                 prefix="Email"
                                 field="email"
                                 errors={state.errors}
-                                className="absolute -bottom-6 left-0 text-xs text-red-500"
+                                className="absolute -bottom-6 left-0 text-xs text-zinc-900 font-bold"
                             />
                         </div>
 

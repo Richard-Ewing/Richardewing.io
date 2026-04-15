@@ -690,7 +690,7 @@ export default function AUEBTool() {
                                         </div>
                                         <div className="flex flex-col sm:flex-row gap-4 mt-8">
                                             <button onClick={() => setStep(2)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 rounded-xl transition-all">← Back</button>
-                                            <button onClick={() => setShowGate(true)} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2">
+                                            <button onClick={() => setShowGate(true)} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2">
                                                 {loading ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Calculating Collapse Point...</> : 'Calculate My Collapse Point →'}
                                             </button>
                                         </div>
@@ -718,7 +718,7 @@ export default function AUEBTool() {
                                             <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                         </div>
                                         <h2 className="text-xl font-bold text-zinc-950 mb-1">Board-Ready Deliverable Generated</h2>
-                                        <p className="text-sm text-zinc-800">Export this assessment to a verified Executive PDF.</p>
+                                        <p className="text-sm text-zinc-900 font-medium">Export this assessment to a verified Executive PDF.</p>
                                     </div>
                                     <ExportToPDFButton 
                                         targetId="aueb-pdf-export-zone" 
@@ -882,13 +882,13 @@ export default function AUEBTool() {
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
                                                     <div className="text-sm font-medium text-zinc-950 mb-2">Insolvency Point</div>
                                                     <div className="text-3xl font-bold text-red-500">Month {results.monthsToCollapse}</div>
-                                                    <div className="text-xs text-red-400/60 mt-2 mt-auto">Point where scaling users destroys company margins completely.</div>
+                                                    <div className="text-xs text-zinc-900 font-bold/60 mt-2 mt-auto">Point where scaling users destroys company margins completely.</div>
                                                 </div>
                                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
                                                     <div className="text-sm font-medium text-zinc-950 mb-2">Current Gross Margin</div>
                                                     <div className="text-3xl font-bold text-orange-400">{results.grossMargin.toFixed(0)}%</div>
-                                                    <div className="text-xs text-orange-400/60 mt-2 mt-auto">Falling below benchmark limits venture capital scaling viability.</div>
+                                                    <div className="text-xs text-zinc-900 font-bold/60 mt-2 mt-auto">Falling below benchmark limits venture capital scaling viability.</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -925,7 +925,7 @@ export default function AUEBTool() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                                 >
-                                    <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-8 border border-zinc-400">
+                                    <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-8 border border-zinc-400">
                                         <div className="flex items-center gap-3 mb-6">
                                             <div className={`w-3 h-3 rounded-full animate-pulse ${results.grossMargin < 50 ? 'bg-red-500' : 'bg-cyan-400'}`} />
                                             <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">Executive Summary</span>
@@ -988,7 +988,7 @@ export default function AUEBTool() {
                                     transition={{ duration: 0.6, delay: 0.6 }}
                                     className="text-center pt-8"
                                 >
-                                    <p className="text-xs text-zinc-800 mb-3">Trusted by product leaders at</p>
+                                    <p className="text-xs text-zinc-900 font-bold mb-3">Trusted by product leaders at</p>
                                     <div className="flex flex-wrap items-center justify-center gap-8 text-zinc-800 font-mono text-xs">
                                         <span>Stripe</span>
                                         <span>Figma</span>
@@ -1024,7 +1024,7 @@ export default function AUEBTool() {
                                                 </p>
                                             </div>
 
-                                            <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">Execution Gantt Chart (90-Day Burn Down)</h4>
+                                            <h4 className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">Execution Gantt Chart (90-Day Burn Down)</h4>
                                             
                                             <div className="space-y-6 md:space-y-8">
                                                 {results.qpep_roadmap.map((plan: any, i: number) => (

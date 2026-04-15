@@ -212,7 +212,7 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
     if (items.length === 0) return null;
 
     return (
-        <section className="mt-8 bg-gradient-to-br from-zinc-50/80 via-zinc-900/40 to-transparent border border-zinc-400 rounded-3xl p-6 sm:p-8">
+        <section className="mt-8 bg-gradient-to-br from-zinc-50/80 via-zinc-100 to-transparent border border-zinc-400 rounded-3xl p-6 sm:p-8">
             {/* Header */}
             <div className="flex items-center gap-3 mb-2">
                 <div className="w-2 h-2 bg-cobalt rounded-full animate-pulse shadow-[0_0_10px_rgba(45,112,253,0.6)]" />
@@ -238,7 +238,7 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
                                 )}
                             </div>
                             <h4 className="text-sm font-bold text-zinc-950 mb-2">{item.title}</h4>
-                            <p className="text-xs text-zinc-900 leading-relaxed">{item.prescription}</p>
+                            <p className="text-xs text-zinc-900 font-bold leading-relaxed">{item.prescription}</p>
                         </div>
                     );
                 })}

@@ -58,7 +58,7 @@ export default function CompareAPERJellyfishPage() {
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 text-center">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Calculate Your APER — Free</h2>
                         <p className="text-zinc-950 mb-6">Find out how your revenue-per-engineer compares to industry benchmarks in 5 minutes.</p>
-                        <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold hover:opacity-90 transition-opacity">Calculate APER →</Link>
+                        <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Calculate APER →</Link>
                     </div>
                 </div>
             </div>

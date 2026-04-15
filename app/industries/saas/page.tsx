@@ -52,7 +52,7 @@ export default function SaaSPage() {
                             <li className="flex items-start gap-3"><span className="text-violet-400 mt-1">→</span> <span>Prepare R&amp;D economics for due diligence and board presentations</span></li>
                         </ul>
                         <div className="flex flex-wrap gap-4">
-                            <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-600 text-white font-bold hover:opacity-90">Free PDI Assessment →</Link>
+                            <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>
                             <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     </div>

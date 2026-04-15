@@ -115,7 +115,7 @@ export default function SystemPromptsPage() {
                 <p className="text-zinc-900 mb-8 max-w-xl mx-auto">
                     Prompts give you frameworks. Audits give you board-ready financial models. If your R&D margin is collapsing, book a diagnostic.
                 </p>
-                <Link href="/advisory" className="inline-flex px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-all">
+                <Link href="/advisory" className="inline-flex px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 text-zinc-950 font-semibold font-bold rounded-lg hover:opacity-90 transition-all">
                     Book R&D Capital Audit →
                 </Link>
             </div>

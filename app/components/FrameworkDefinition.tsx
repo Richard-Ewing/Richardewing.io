@@ -57,7 +57,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {/* Header */}
                 <section className="section-sm">
                     <div className="max-w-3xl">
-                        <div className="text-xs text-purple-400 uppercase tracking-wide mb-4 font-mono">
+                        <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">
                             Framework Definition
                         </div>
                         <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6 font-grotesk leading-tight">
@@ -133,7 +133,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                             <p className="text-zinc-800 mb-6">Use the interactive tool to calculate your {framework.name}.</p>
                             <a
                                 href={framework.relatedTool.url}
-                                className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors"
+                                className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 transition-colors"
                             >
                                 Use the {framework.relatedTool.name} →
                             </a>

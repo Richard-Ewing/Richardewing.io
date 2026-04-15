@@ -125,7 +125,7 @@ export default function ExogramArchitecturePage() {
                                     <h3 className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Capabilities</h3>
                                     <ul className="space-y-2">
                                         {layer.features.map(f => (
-                                            <li key={f} className="flex items-start gap-2 text-sm text-zinc-800">
+                                            <li key={f} className="flex items-start gap-2 text-sm text-zinc-900 font-medium">
                                                 <span className={layer.arrowClass}>→</span>
                                                 {f}
                                             </li>
@@ -137,7 +137,7 @@ export default function ExogramArchitecturePage() {
                                     <div className="space-y-3">
                                         {layer.metrics.map(m => (
                                             <div key={m.label} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.03] border border-zinc-400">
-                                                <span className="text-xs text-zinc-900">{m.label}</span>
+                                                <span className="text-xs text-zinc-900 font-bold">{m.label}</span>
                                                 <span className="text-sm font-mono text-zinc-900">{m.value}</span>
                                             </div>
                                         ))}
@@ -165,14 +165,14 @@ export default function ExogramArchitecturePage() {
                             <div key={m.method} className="p-6 rounded-xl bg-white/[0.03] border border-zinc-400">
                                 <span className="text-xs font-medium font-mono text-purple-400 uppercase tracking-widest">{m.badge}</span>
                                 <h3 className="text-zinc-950 font-bold mt-2 mb-2">{m.method}</h3>
-                                <p className="text-xs text-zinc-900">{m.desc}</p>
+                                <p className="text-xs text-zinc-900 font-bold">{m.desc}</p>
                             </div>
                         ))}
                     </div>
                 </section>
 
                 <div className="flex justify-center gap-4">
-                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
+                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-zinc-950 font-semibold font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
                         Visit Exogram.ai →
                     </a>
                     <Link href="/exogram/use-cases" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">

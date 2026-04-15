@@ -126,13 +126,13 @@ export default function ExogramPage() {
                             <div className="relative border-l border-zinc-400 ml-2 space-y-8">
                                 <div className="pl-6 relative">
                                     <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-purple-500 ring-4 ring-black" />
-                                    <div className="text-xs text-purple-400 font-mono mb-1">Today, 09:42 AM</div>
+                                    <div className="text-xs text-zinc-900 font-bold font-mono mb-1">Today, 09:42 AM</div>
                                     <div className="text-zinc-950 font-bold text-sm">Exogram v1.0.4</div>
                                     <p className="text-xs text-zinc-950 mt-1">Improved context retrieval algorithms and semantic index.</p>
                                 </div>
                                 <div className="pl-6 relative">
                                     <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-cyan-500 ring-4 ring-black" />
-                                    <div className="text-xs text-cyan-400 font-mono mb-1">Yesterday</div>
+                                    <div className="text-xs text-zinc-900 font-bold font-mono mb-1">Yesterday</div>
                                     <div className="text-zinc-950 font-bold text-sm">System UI Update</div>
                                     <p className="text-xs text-zinc-950 mt-1">Deployed High Contrast theme and new stats components.</p>
                                 </div>

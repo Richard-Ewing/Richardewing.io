@@ -43,7 +43,7 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
                 <div className="text-center py-8">
                     <div className="text-5xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400 mb-2">{pct}%</div>
                     <div className="text-lg text-zinc-950 mb-2">{score} / {quiz.length} correct</div>
-                    <div className="text-sm text-zinc-900">
+                    <div className="text-sm text-zinc-900 font-medium">
                         {pct >= 80 ? '🎉 Excellent! You have a strong understanding.' : pct >= 50 ? '👍 Good start! Review the sections above to strengthen your knowledge.' : '📚 Keep learning! Review the definition and how-to-apply sections above.'}
                     </div>
                 </div>
@@ -82,12 +82,12 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
             {showExplanation && (
                 <div className="mb-6 p-4 rounded-xl bg-zinc-50 border border-zinc-400">
                     <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest mb-2">Explanation</div>
-                    <p className="text-sm text-zinc-800">{q.explanation}</p>
+                    <p className="text-sm text-zinc-900 font-medium">{q.explanation}</p>
                 </div>
             )}
 
             {selected !== null && (
-                <button onClick={handleNext} className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-white font-bold hover:opacity-90 transition-opacity text-sm">
+                <button onClick={handleNext} className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity text-sm">
                     {currentQ + 1 >= quiz.length ? 'See Results' : 'Next Question →'}
                 </button>
             )}

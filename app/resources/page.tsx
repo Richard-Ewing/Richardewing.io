@@ -144,7 +144,7 @@ export default function ResourcesPage() {
                         <h2 className="text-2xl font-bold text-zinc-950 mb-4">Need personalized guidance?</h2>
                         <p className="text-zinc-800 mb-6">Our advisory services provide hands-on support tailored to your organization.</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/pricing" className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
+                            <Link href="/pricing" className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-zinc-950 font-semibold font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
                                 View Pricing →
                             </Link>
                             <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">

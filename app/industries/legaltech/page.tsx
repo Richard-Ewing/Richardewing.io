@@ -46,7 +46,7 @@ export default function LegalTechPage() {
                     <div className="rounded-2xl border border-violet-500/30 bg-violet-500/5 p-8 text-center">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">LegalTech R&D Audit</h2>
                         <p className="text-zinc-950 mb-6">Quantify your document processing AI costs, compliance data debt, and security infrastructure burden.</p>
-                        <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-white font-bold hover:opacity-90 transition-opacity">Book LegalTech Audit →</Link>
+                        <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book LegalTech Audit →</Link>
                     </div>
                 </div>
             </div>

@@ -154,7 +154,7 @@ export default function CommitteeDashboard() {
                             {analytics.scores.map((s: any, i: number) => (
                                 <div key={i} className="border-b border-zinc-400 last:border-0 pb-4 last:pb-0">
                                     <div className="flex justify-between items-start mb-1">
-                                        <span className="text-xs text-zinc-700 font-bold uppercase">{s.dimension.replace(/_/g, ' ')}</span>
+                                        <span className="text-xs text-zinc-900 font-bold font-bold uppercase">{s.dimension.replace(/_/g, ' ')}</span>
                                         <span className={`font-mono text-xs font-bold ${s.score > 2 ? 'text-emerald-400' : 'text-zinc-900'}`}>{s.score}/3</span>
                                     </div>
                                     <p className="text-xs font-medium text-zinc-700 italic">"{s.rationale}"</p>
@@ -174,7 +174,7 @@ export default function CommitteeDashboard() {
                     </h3>
                     <div className="space-y-2">
                         {/* Assuming we log the questions shown - for now we just show the count or list from question bank if we tracked them specifically per session */}
-                        <div className="p-4 bg-zinc-100 rounded-lg text-sm text-zinc-600 font-mono">
+                        <div className="p-4 bg-zinc-100 rounded-lg text-sm text-zinc-900 font-medium font-mono">
                             Transcript available in full dossier export.
                         </div>
                     </div>

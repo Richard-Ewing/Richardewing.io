@@ -107,7 +107,7 @@ export default function FTEContent() {
                     <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-400">
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-purple-400 uppercase tracking-widest">Autonomous Labor Deflection</span>
+                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">Autonomous Labor Deflection</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -137,7 +137,7 @@ export default function FTEContent() {
                                         <div className="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold font-mono text-sm border border-cyan-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Current Support Overhead</h3>
-                                            <p className="text-sm text-zinc-900">How large is your human routing layer?</p>
+                                            <p className="text-sm text-zinc-900 font-medium">How large is your human routing layer?</p>
                                         </div>
                                     </div>
 
@@ -180,7 +180,7 @@ export default function FTEContent() {
                                         <div className="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold font-mono text-sm border border-purple-500/30">2</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Agentic Deflection Ratio</h3>
-                                            <p className="text-sm text-zinc-900">How many tickets can a strict deterministic LLM handle autonomously?</p>
+                                            <p className="text-sm text-zinc-900 font-medium">How many tickets can a strict deterministic LLM handle autonomously?</p>
                                         </div>
                                     </div>
 
@@ -231,7 +231,7 @@ export default function FTEContent() {
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">EBITDA Expansion Forecast</h2>
-                            <p className="text-sm text-zinc-800">Your Agentic workflow savings have been modeled.</p>
+                            <p className="text-sm text-zinc-900 font-medium">Your Agentic workflow savings have been modeled.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="fte-pdf-export-zone" fileName={`FTE_Displacement_${persona}.pdf`} />
@@ -253,7 +253,7 @@ export default function FTEContent() {
                                                 <UserMinus size={12}/> {results.headcountReduction} FTEs Reallocated
                                             </span>
                                         </div>
-                                        <p className="text-sm text-zinc-900 mt-4 leading-relaxed">
+                                        <p className="text-sm text-zinc-900 font-medium mt-4 leading-relaxed">
                                             By automating {automationTarget}% of {ticketsMonthly.toLocaleString()} monthly incidents, you transition {formatMoney(results.annualHumanSavings)} of variable human payroll into {formatMoney(results.annualAgentComputeCost)} of fixed, infinitely scalable compute cost.
                                         </p>
                                     </div>
@@ -300,7 +300,7 @@ export default function FTEContent() {
                         </ScrollReveal>
 
                         <ScrollReveal delay={150}>
-                             <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400 mb-8">
+                             <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <Zap size={16} className="text-cyan-400" />
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">The Path to Automation</span>

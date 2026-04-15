@@ -67,7 +67,7 @@ export default function AperFaqPage() {
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try the APER Calculator</h2>
                         <p className="text-zinc-950 mb-6">Benchmark your engineering efficiency in under 5 minutes. No account required.</p>
-                        <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-white font-bold hover:opacity-90 transition-opacity">Launch APER Calculator &rarr;</Link>
+                        <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Launch APER Calculator &rarr;</Link>
                     </div>
                 </div>
             </div>

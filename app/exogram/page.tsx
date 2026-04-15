@@ -47,7 +47,7 @@ export default function ExogramPage() {
                                 </div>
                             </div>
                             <div className="flex justify-center md:justify-start w-full">
-                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="relative overflow-hidden inline-flex items-center justify-between px-5 h-[52px] w-[260px] rounded-xl bg-purple-600/10 text-white hover:bg-purple-600/20 transition-all group border border-transparent">
+                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="relative overflow-hidden inline-flex items-center justify-between px-5 h-[52px] w-[260px] rounded-xl bg-purple-600/10 text-zinc-950 font-semibold hover:bg-purple-600/20 transition-all group border border-transparent">
                                     <span className="font-semibold text-sm z-10">Visit Exogram.ai</span>
                                     <span className="group-hover:translate-x-1 transition-transform z-10">→</span>
                                     <BorderBeam size={60} duration={4} delay={2} borderWidth={1.5} colorFrom="#A855F7" colorTo="#00D4FF" />
@@ -148,12 +148,12 @@ export default function ExogramPage() {
                                         <h3 className="text-zinc-950 font-bold">{layer.name}</h3>
                                         <span className={layer.badgeClass}>{layer.metric}</span>
                                     </div>
-                                    <p className="text-sm text-zinc-900 leading-relaxed">{layer.desc}</p>
+                                    <p className="text-sm text-zinc-900 font-medium leading-relaxed">{layer.desc}</p>
                                 </div>
                             ))}
                         </div>
                         <div className="text-center mt-8">
-                            <Link href="/exogram/architecture" className="text-sm text-purple-400 hover:text-purple-300 transition-colors">
+                            <Link href="/exogram/architecture" className="text-sm text-zinc-900 font-medium hover:text-purple-300 transition-colors">
                                 Deep dive into the architecture →
                             </Link>
                         </div>
@@ -182,7 +182,7 @@ export default function ExogramPage() {
                             ))}
                         </div>
                         <div className="mt-8">
-                            <Link href="/exogram/use-cases" className="text-sm text-purple-400 hover:text-purple-300 transition-colors">
+                            <Link href="/exogram/use-cases" className="text-sm text-zinc-900 font-medium hover:text-purple-300 transition-colors">
                                 See all use cases →
                             </Link>
                         </div>
@@ -197,17 +197,17 @@ export default function ExogramPage() {
                             <Link href="/exogram/architecture" className="group p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5 hover:border-cyan-500/40 transition-all">
                                 <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">Deep Dive</span>
                                 <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-cyan-300 transition-colors">Architecture</h3>
-                                <p className="text-sm text-zinc-800">4 verification layers, performance specs, and integration methods.</p>
+                                <p className="text-sm text-zinc-900 font-medium">4 verification layers, performance specs, and integration methods.</p>
                             </Link>
                             <Link href="/exogram/use-cases" className="group p-6 rounded-xl border border-purple-500/20 bg-purple-500/5 hover:border-purple-500/40 transition-all">
                                 <span className="text-xs font-mono text-purple-400 uppercase tracking-widest">Industry</span>
                                 <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-purple-300 transition-colors">Use Cases</h3>
-                                <p className="text-sm text-zinc-800">Healthcare, fintech, legal, and enterprise AI verification.</p>
+                                <p className="text-sm text-zinc-900 font-medium">Healthcare, fintech, legal, and enterprise AI verification.</p>
                             </Link>
                             <Link href="/exogram/roadmap" className="group p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5 hover:border-emerald-500/40 transition-all">
                                 <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">Direction</span>
                                 <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-emerald-300 transition-colors">Roadmap</h3>
-                                <p className="text-sm text-zinc-800">What&apos;s shipped, in progress, and planned for Q2-Q4 2026.</p>
+                                <p className="text-sm text-zinc-900 font-medium">What&apos;s shipped, in progress, and planned for Q2-Q4 2026.</p>
                             </Link>
                         </div>
                     </div>
@@ -234,7 +234,7 @@ export default function ExogramPage() {
                                     </div>
                                 </div>
                                 <div className="flex items-center justify-center md:justify-start h-12">
-                                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] h-10">
+                                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] h-10">
                                         Visit Exogram.ai →
                                     </a>
                                 </div>

@@ -52,7 +52,7 @@ export default function EdTechPage() {
                             <li className="flex items-start gap-3"><span className="text-pink-400 mt-1">→</span> <span>Model unit economics for freemium-to-institutional conversion funnels</span></li>
                         </ul>
                         <div className="flex flex-wrap gap-4">
-                            <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-rose-600 text-white font-bold hover:opacity-90">Free PDI Assessment →</Link>
+                            <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-rose-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>
                             <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     </div>

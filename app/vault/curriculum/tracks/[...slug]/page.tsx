@@ -131,7 +131,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                                         <div key={j} className="rounded-xl bg-zinc-50 border border-zinc-400 p-5 relative overflow-hidden group">
                                                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-cyan-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                                                             <div className="text-sm font-bold text-zinc-900 mb-1">{d.metric}</div>
-                                                            <p className="text-xs text-zinc-700 mb-2">{d.description}</p>
+                                                            <p className="text-xs text-zinc-900 font-bold mb-2">{d.description}</p>
                                                             <div className="text-xs font-medium font-mono text-cyan-500 uppercase tracking-widest">{d.benchmark}</div>
                                                         </div>
                                                     ))}
@@ -141,7 +141,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                             {lesson.exercise && (
                                                 <div className="rounded-xl bg-emerald-500/5 border border-emerald-500/20 p-5 mt-8">
                                                     <div className="text-xs font-mono text-emerald-600 uppercase tracking-widest mb-2">📝 Exercise</div>
-                                                    <p className="text-sm text-zinc-900">{lesson.exercise}</p>
+                                                    <p className="text-sm text-zinc-900 font-medium">{lesson.exercise}</p>
                                                 </div>
                                             )}
 

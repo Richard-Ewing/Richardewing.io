@@ -63,7 +63,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                             {/* Per-Track */}
                             <div className="border-2 border-violet-400 bg-violet-50 rounded-xl p-5 relative">
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-violet-600 text-white text-xs font-medium font-bold uppercase tracking-widest rounded-full">Most Popular</div>
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-violet-600 text-zinc-950 font-semibold text-xs font-medium font-bold uppercase tracking-widest rounded-full">Most Popular</div>
                                 <div className="text-3xl font-bold text-zinc-900 mb-1">$149</div>
                                 <div className="text-xs text-zinc-950 mb-4">This Track · Lifetime</div>
                                 <CheckoutButton 

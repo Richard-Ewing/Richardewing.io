@@ -35,7 +35,7 @@ export default function ShareButtons({ url, title, description }: ShareButtonsPr
 
     return (
         <div className="flex items-center gap-2">
-            <span className="text-xs text-zinc-800 font-mono uppercase tracking-wider">Share:</span>
+            <span className="text-xs text-zinc-900 font-bold font-mono uppercase tracking-wider">Share:</span>
             <a
                 href={linkedInShareUrl}
                 target="_blank"

@@ -37,13 +37,13 @@ export default function APERvsLinearBPage() {
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full border-collapse">
                             <thead><tr className="border-b border-zinc-400"><th className="text-left py-4 px-4 text-xs font-mono text-zinc-800 uppercase tracking-widest">Dimension</th><th className="text-left py-4 px-4 text-xs font-mono text-violet-400 uppercase tracking-widest">APER</th><th className="text-left py-4 px-4 text-xs font-mono text-zinc-900 uppercase tracking-widest">LinearB</th></tr></thead>
-                            <tbody>{rows.map((row, i) => (<tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50"><td className="py-4 px-4 text-sm text-zinc-900 font-bold">{row.dimension}</td><td className="py-4 px-4 text-sm text-zinc-900">{row.aper}</td><td className="py-4 px-4 text-sm text-zinc-800">{row.lb}</td></tr>))}</tbody>
+                            <tbody>{rows.map((row, i) => (<tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50"><td className="py-4 px-4 text-sm text-zinc-900 font-medium font-bold">{row.dimension}</td><td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.aper}</td><td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.lb}</td></tr>))}</tbody>
                         </table>
                     </div>
                     <div className="rounded-2xl border border-violet-500/30 bg-violet-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-950 mb-6"><strong>Metrics without judgment is measurement without meaning.</strong> LinearB tells you engineers are moving fast. APER tells you they are moving in a direction that creates economic value. Use both — but APER for the decisions that matter.</p>
-                        <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-600 text-white font-bold hover:opacity-90 transition-opacity">Try the Free APER Assessment →</Link>
+                        <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Try the Free APER Assessment →</Link>
                     </div>
                 </div>
             </div>

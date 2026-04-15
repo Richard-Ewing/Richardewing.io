@@ -137,7 +137,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     </div>
                                     <div className="pt-2">
                                         <div className="text-xs font-medium text-zinc-700 font-mono tracking-widest uppercase mb-2">The Monetization Gap</div>
-                                        <div className="text-sm text-zinc-700 italic border-l-2 border-cyan-500/30 pl-3 leading-relaxed">"{pathData.marketEconomics.gap}"</div>
+                                        <div className="text-sm text-zinc-900 font-medium italic border-l-2 border-cyan-500/30 pl-3 leading-relaxed">"{pathData.marketEconomics.gap}"</div>
                                     </div>
                                 </div>
                                 <div className="mt-8 pt-4 border-t border-cyan-500/10">
@@ -158,7 +158,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     {pathData.primaryMetrics.map((metric: any, i: number) => (
                                         <div key={i} className="border-l-2 border-zinc-400 pl-4 hover:border-white/30 transition-colors">
                                             <div className={`text-${pathData.color}-300 font-bold mb-2 text-sm`}>{metric.name}</div>
-                                            <div className="text-xs text-zinc-600 font-light leading-relaxed">{metric.description}</div>
+                                            <div className="text-xs text-zinc-900 font-bold font-light leading-relaxed">{metric.description}</div>
                                         </div>
                                     ))}
                                 </div>
@@ -189,7 +189,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                 <CalendarDays className={`text-${pathData.color}-400`} size={28} />
                                 Execution Protocol
                             </h2>
-                            <p className="text-xs text-zinc-700 mb-8 font-mono tracking-widest uppercase">The First 90 Days on the job</p>
+                            <p className="text-xs text-zinc-900 font-bold mb-8 font-mono tracking-widest uppercase">The First 90 Days on the job</p>
                             
                             <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
                                 
@@ -253,7 +253,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                             <div className="flex-shrink-0 mt-1.5 p-1 rounded-full bg-red-500/10">
                                                 <XCircle className="text-red-500/70" size={12} />
                                             </div>
-                                            <p className="text-sm text-zinc-700 font-light leading-relaxed">{pattern}</p>
+                                            <p className="text-sm text-zinc-900 font-medium font-light leading-relaxed">{pattern}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -280,7 +280,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                                 <span className={`text-sm font-bold text-${pathData.color}-400`}>{term.title}</span>
                                                 <ArrowRight size={14} className="text-zinc-800 group-hover:text-zinc-900 transition-colors" />
                                             </div>
-                                            <p className="text-xs text-zinc-600 line-clamp-2 mt-2 leading-relaxed">{term.definition}</p>
+                                            <p className="text-xs text-zinc-900 font-bold line-clamp-2 mt-2 leading-relaxed">{term.definition}</p>
                                         </div>
                                     </Link>
                                 ))}

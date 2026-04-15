@@ -122,7 +122,7 @@ export default function AgentRouterContent() {
                     <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-400">
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-blue-400 uppercase tracking-widest">Multi-Agent FinOps Forecaster</span>
+                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">Multi-Agent FinOps Forecaster</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -177,7 +177,7 @@ export default function AgentRouterContent() {
                                     <h4 className={`font-bold font-mono uppercase tracking-widest flex items-center gap-2 mb-1 ${useEdgeRouter ? 'text-blue-400' : 'text-zinc-900'}`}>
                                         <ShieldCheck size={18} /> Enable Private SLM Semantic Router
                                     </h4>
-                                    <p className="text-xs text-zinc-800">Deploy a 8B-parameter local model at the edge to natively solve or reject 60% of requests at zero API cost.</p>
+                                    <p className="text-xs text-zinc-900 font-bold">Deploy a 8B-parameter local model at the edge to natively solve or reject 60% of requests at zero API cost.</p>
                                 </div>
                                 <div className={`w-12 h-6 rounded-full p-1 transition-colors ${useEdgeRouter ? 'bg-blue-500' : 'bg-zinc-800'}`}>
                                     <div className={`w-4 h-4 rounded-full bg-white transition-transform ${useEdgeRouter ? 'translate-x-6' : 'translate-x-0'}`} />
@@ -212,7 +212,7 @@ export default function AgentRouterContent() {
                                 <span className="bg-blue-500/20 text-blue-400 border border-blue-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Architecture Economics Validated</h2>
-                            <p className="text-sm text-zinc-800">Compounding token burn mapped across {agentHops} sequential hops.</p>
+                            <p className="text-sm text-zinc-900 font-medium">Compounding token burn mapped across {agentHops} sequential hops.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="router-pdf-export-zone" fileName={`Agentic_Topology_Audit.pdf`} />
@@ -247,7 +247,7 @@ export default function AgentRouterContent() {
                                             </div>
                                         )}
                                         
-                                        <p className="text-sm text-zinc-900 mt-6 leading-relaxed">
+                                        <p className="text-sm text-zinc-900 font-medium mt-6 leading-relaxed">
                                             Executing <strong className="text-zinc-900">{results.grossMonthlyRequests.toLocaleString()} monthly base triggers</strong> through a {agentHops}-hop agentic chain yields a geometric explosion of Input Tokens, mapping to exactly <strong className="text-zinc-900">{(results.totalTokens / 1000000000).toFixed(2)} Billion Total Tokens</strong> consumed per month.
                                         </p>
                                      </div>
@@ -256,11 +256,11 @@ export default function AgentRouterContent() {
                                             <div className="bg-white/50 p-6 rounded-2xl border border-green-500/20 space-y-4 h-full">
                                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Unit Margin Collapse Matrix</div>
                                                 <div className="flex justify-between items-center pb-2 border-b border-zinc-400">
-                                                    <span className="text-sm text-zinc-800">Annualized API Run Rate</span>
+                                                    <span className="text-sm text-zinc-900 font-medium">Annualized API Run Rate</span>
                                                     <span className="text-sm font-mono text-red-400">${(results.monthlyCost * 12).toLocaleString()}</span>
                                                 </div>
                                                 <div className="flex justify-between items-center pb-2 border-b border-zinc-400">
-                                                    <span className="text-sm text-zinc-800">Average API Cost / System Trigger</span>
+                                                    <span className="text-sm text-zinc-900 font-medium">Average API Cost / System Trigger</span>
                                                     <span className="text-sm font-mono text-amber-400">${(results.monthlyCost / results.grossMonthlyRequests).toFixed(4)}</span>
                                                 </div>
                                                 <p className="text-sm font-medium text-zinc-950 font-mono mt-2 pt-2">Variable token pricing destroys gross margins when tied to fixed-fee SaaS tiers.</p>
@@ -271,19 +271,19 @@ export default function AgentRouterContent() {
                                                  <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3 mb-3">Workflow Topology Exhaust</div>
                                                  
                                                  <div className="flex justify-between items-center pb-3 border-b border-zinc-400 mb-3">
-                                                     <span className="text-sm text-zinc-800">Total System Triggers</span>
+                                                     <span className="text-sm text-zinc-900 font-medium">Total System Triggers</span>
                                                      <span className="text-sm font-mono text-blue-400">{results.grossMonthlyRequests.toLocaleString()}</span>
                                                  </div>
                                                  
                                                  {useEdgeRouter && (
                                                      <div className="flex justify-between items-center pb-3 border-b border-zinc-400 mb-3">
-                                                         <span className="text-sm text-zinc-800">SLM Edge Deflections (0 Cost)</span>
+                                                         <span className="text-sm text-zinc-900 font-medium">SLM Edge Deflections (0 Cost)</span>
                                                          <span className="text-sm font-mono text-emerald-400">+{(results.grossMonthlyRequests - results.frontierRequests).toLocaleString()}</span>
                                                      </div>
                                                  )}
 
                                                  <div className="flex justify-between items-center pb-3 border-b border-zinc-400 mb-3">
-                                                     <span className="text-sm text-zinc-800">Frontier API Payloads</span>
+                                                     <span className="text-sm text-zinc-900 font-medium">Frontier API Payloads</span>
                                                      <span className="text-sm font-mono text-indigo-400">{results.frontierRequests.toLocaleString()}</span>
                                                  </div>
 
@@ -306,11 +306,11 @@ export default function AgentRouterContent() {
                                             <div className="bg-white/50 p-6 rounded-2xl border border-amber-500/20 space-y-4 h-full">
                                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Vendor Lock-In Dependency</div>
                                                 <div className="flex justify-between items-center pb-2">
-                                                    <span className="text-sm text-zinc-800">SaaS Provider Dependency</span>
+                                                    <span className="text-sm text-zinc-900 font-medium">SaaS Provider Dependency</span>
                                                     <span className="text-sm font-mono text-amber-400 text-right">Critical</span>
                                                 </div>
                                                 <div className="flex justify-between items-center pt-2 border-t border-zinc-400">
-                                                    <span className="text-sm text-zinc-800">Risk of Unilateral Price Bumps</span>
+                                                    <span className="text-sm text-zinc-900 font-medium">Risk of Unilateral Price Bumps</span>
                                                     <span className="text-sm font-mono text-rose-400 text-right">Extremely High</span>
                                                 </div>
                                             </div>
@@ -381,7 +381,7 @@ export default function AgentRouterContent() {
                                             <div className="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center border border-amber-500/30 text-amber-400 font-bold shrink-0">429</div>
                                             <div>
                                                 <div className="text-zinc-950 font-semibold">Tier-5 Threshold Violation</div>
-                                                <div className="text-xs text-zinc-800">With {(results.totalTokens / 1000000000).toFixed(2)}B tokens flooding OpenAI/Anthropic, you hit global org-level rate limits (HTTP 429), taking down parallel engineering squads.</div>
+                                                <div className="text-xs text-zinc-900 font-bold">With {(results.totalTokens / 1000000000).toFixed(2)}B tokens flooding OpenAI/Anthropic, you hit global org-level rate limits (HTTP 429), taking down parallel engineering squads.</div>
                                             </div>
                                         </div>
                                     </div>

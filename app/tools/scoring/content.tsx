@@ -223,7 +223,7 @@ export default function AuditInterview() {
                         {/* Status Badge */}
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest">Product Economist | Audit Suite</span>
+                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">Product Economist | Audit Suite</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -259,7 +259,7 @@ export default function AuditInterview() {
                                         </div>
                                         <div>
                                             <h3 className="text-lg font-bold text-zinc-900">{dim.label}</h3>
-                                            <p className="text-sm text-zinc-900">{dim.desc}</p>
+                                            <p className="text-sm text-zinc-900 font-medium">{dim.desc}</p>
                                         </div>
                                     </div>
 
@@ -326,7 +326,7 @@ export default function AuditInterview() {
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Interview Dashboard</h2>
-                            <p className="text-sm text-zinc-800">Session Complete • Protocol {role.toUpperCase()}-092</p>
+                            <p className="text-sm text-zinc-900 font-medium">Session Complete • Protocol {role.toUpperCase()}-092</p>
                         </div>
                         <div className="mt-4 sm:mt-0 flex gap-4">
                             <button onClick={() => setOutcome(null)} className="px-4 py-2 border border-zinc-400 rounded-lg text-xs font-mono uppercase hover:bg-white/5 transition flex items-center gap-2">
@@ -366,7 +366,7 @@ export default function AuditInterview() {
                                     <div key={dim.id} className="flex justify-between items-center">
                                         <div className="flex items-center gap-2">
                                             <dim.icon size={14} className="text-zinc-800" />
-                                            <span className="text-sm text-zinc-900">{dim.label}</span>
+                                            <span className="text-sm text-zinc-900 font-medium">{dim.label}</span>
                                         </div>
                                         <div className={`text-sm font-mono font-bold ${scores[dim.id as keyof Scores] === 3 ? 'text-emerald-400' :
                                             scores[dim.id as keyof Scores] === 0 ? 'text-red-500' : 'text-zinc-900'

@@ -25,7 +25,7 @@ const CMAP: Record<string, { bg: string, text: string, border: string, shadow: s
     orange: { bg: 'bg-orange-500/5', text: 'text-orange-400', border: 'border-orange-500/20', shadow: 'shadow-[0_0_15px_rgba(249,115,22,0.15)]', hoverBg: 'hover:bg-orange-500/20', bg10: 'bg-orange-500/10' },
     indigo: { bg: 'bg-indigo-500/5', text: 'text-indigo-400', border: 'border-indigo-500/20', shadow: 'shadow-[0_0_15px_rgba(99,102,241,0.15)]', hoverBg: 'hover:bg-indigo-500/20', bg10: 'bg-indigo-500/10' },
     slate: { bg: 'bg-slate-500/5', text: 'text-slate-600', border: 'border-slate-500/20', shadow: 'shadow-[0_0_15px_rgba(100,116,139,0.15)]', hoverBg: 'hover:bg-slate-500/20', bg10: 'bg-slate-500/10' },
-    fuchsia: { bg: 'bg-fuchsia-500/5', text: 'text-fuchsia-400', border: 'border-fuchsia-500/20', shadow: 'shadow-[0_0_15px_rgba(217,70,239,0.15)]', hoverBg: 'hover:bg-fuchsia-500/20', bg10: 'bg-fuchsia-500/10' },
+    fuchsia: { bg: 'bg-fuchsia-500/5', text: 'text-zinc-950 font-semibolduchsia-400', border: 'border-fuchsia-500/20', shadow: 'shadow-[0_0_15px_rgba(217,70,239,0.15)]', hoverBg: 'hover:bg-fuchsia-500/20', bg10: 'bg-fuchsia-500/10' },
     yellow: { bg: 'bg-yellow-500/5', text: 'text-yellow-400', border: 'border-yellow-500/20', shadow: 'shadow-[0_0_15px_rgba(234,179,8,0.15)]', hoverBg: 'hover:bg-yellow-500/20', bg10: 'bg-yellow-500/10' },
     teal: { bg: 'bg-teal-500/5', text: 'text-teal-400', border: 'border-teal-500/20', shadow: 'shadow-[0_0_15px_rgba(20,184,166,0.15)]', hoverBg: 'hover:bg-teal-500/20', bg10: 'bg-teal-500/10' },
     rose: { bg: 'bg-rose-500/5', text: 'text-rose-400', border: 'border-rose-500/20', shadow: 'shadow-[0_0_15px_rgba(244,63,94,0.15)]', hoverBg: 'hover:bg-rose-500/20', bg10: 'bg-rose-500/10' },
@@ -145,7 +145,7 @@ export default function DeepCareersHub() {
                                     <Activity className="text-zinc-800" size={24} />
                                 </div>
                                 <h3 className="text-xl font-bold text-zinc-950 mb-3">Discovery</h3>
-                                <p className="text-sm text-zinc-900 mb-8 leading-relaxed">Assimilate the dialect of Engineering Economics. Required reading before stepping into any VP or Director-level scenario.</p>
+                                <p className="text-sm text-zinc-900 font-medium mb-8 leading-relaxed">Assimilate the dialect of Engineering Economics. Required reading before stepping into any VP or Director-level scenario.</p>
                                 
                                 <ul className="space-y-4 mb-8">
                                     <li>
@@ -153,7 +153,7 @@ export default function DeepCareersHub() {
                                             <div className="mt-1 bg-zinc-200 rounded p-1"><ArrowRight size={12} className="text-zinc-950 group-hover/item:text-zinc-950 transition-colors" /></div>
                                             <div>
                                                 <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">The Lexicon (420+ Terms)</div>
-                                                <div className="text-xs text-zinc-900">Master the exact vernacular used by CFOs.</div>
+                                                <div className="text-xs text-zinc-900 font-bold">Master the exact vernacular used by CFOs.</div>
                                             </div>
                                         </Link>
                                     </li>
@@ -162,7 +162,7 @@ export default function DeepCareersHub() {
                                             <div className="mt-1 bg-zinc-200 rounded p-1"><ArrowRight size={12} className="text-zinc-950 group-hover/item:text-zinc-950 transition-colors" /></div>
                                             <div>
                                                 <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">Core Articles</div>
-                                                <div className="text-xs text-zinc-900">100+ deep-dive economic essays.</div>
+                                                <div className="text-xs text-zinc-900 font-bold">100+ deep-dive economic essays.</div>
                                             </div>
                                         </Link>
                                     </li>
@@ -177,7 +177,7 @@ export default function DeepCareersHub() {
                                 color={["#10b981", "#3b82f6", "#8b5cf6"]}
                             >
                                 <div className="absolute top-0 right-8 transform -translate-y-1/2 z-30">
-                                    <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-xs font-medium font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]">100,000x Value</div>
+                                    <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold text-xs font-medium font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]">100,000x Value</div>
                                 </div>
                                 <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6 border border-indigo-500/30">
                                     <Diamond className="text-indigo-400" size={24} />
@@ -191,7 +191,7 @@ export default function DeepCareersHub() {
                                             <div className="mt-1 bg-indigo-500/20 rounded p-1 border border-indigo-500/30"><CheckCircle size={12} className="text-indigo-400" /></div>
                                             <div>
                                                 <div className="text-sm font-bold text-zinc-900">Full Curriculum Access</div>
-                                                <div className="text-xs text-zinc-800">30 tracks covering Agentic scaling, PDI, Serverless GPUs, and M&A Auditing.</div>
+                                                <div className="text-xs text-zinc-900 font-bold">30 tracks covering Agentic scaling, PDI, Serverless GPUs, and M&A Auditing.</div>
                                             </div>
                                         </Link>
                                     </li>
@@ -200,7 +200,7 @@ export default function DeepCareersHub() {
                                             <div className="mt-1 bg-indigo-500/20 rounded p-1 border border-indigo-500/30"><CheckCircle size={12} className="text-indigo-400" /></div>
                                             <div>
                                                 <div className="text-sm font-bold text-zinc-900">Execution Playbooks</div>
-                                                <div className="text-xs text-zinc-800">Step-by-step PDF runbooks for complex migrations.</div>
+                                                <div className="text-xs text-zinc-900 font-bold">Step-by-step PDF runbooks for complex migrations.</div>
                                             </div>
                                         </div>
                                     </li>
@@ -224,7 +224,7 @@ export default function DeepCareersHub() {
                                     <ShieldAlert className="text-[var(--accent-crimson)]" size={24} />
                                 </div>
                                 <h3 className="text-xl font-bold text-zinc-950 mb-3">Assessment</h3>
-                                <p className="text-sm text-zinc-900 mb-8 leading-relaxed">Once you understand the math, you must prove judgment. Prove your fiduciary responsibility before touching multi-million dollar R&D budgets.</p>
+                                <p className="text-sm text-zinc-900 font-medium mb-8 leading-relaxed">Once you understand the math, you must prove judgment. Prove your fiduciary responsibility before touching multi-million dollar R&D budgets.</p>
                                 
                                 <ul className="space-y-4 mb-8">
                                     <li>
@@ -232,7 +232,7 @@ export default function DeepCareersHub() {
                                             <div className="mt-1 bg-red-50/30 rounded p-1 border border-red-500/20"><ArrowRight size={12} className="text-[var(--accent-crimson)] group-hover/item:translate-x-1 transition-transform" /></div>
                                             <div>
                                                 <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">The Audit Interview Protocol</div>
-                                                <div className="text-xs text-zinc-900">Test Non-Deterministic Agentic Governance logic.</div>
+                                                <div className="text-xs text-zinc-900 font-bold">Test Non-Deterministic Agentic Governance logic.</div>
                                             </div>
                                         </Link>
                                     </li>
@@ -241,7 +241,7 @@ export default function DeepCareersHub() {
                                             <div className="mt-1 bg-red-50/30 rounded p-1 border border-red-500/20"><ArrowRight size={12} className="text-[var(--accent-crimson)] group-hover/item:translate-x-1 transition-transform" /></div>
                                             <div>
                                                 <div className="text-sm font-bold text-zinc-950 group-hover/item:text-zinc-900">Executive Board Room</div>
-                                                <div className="text-xs text-zinc-900">Run actual capital diagnostics.</div>
+                                                <div className="text-xs text-zinc-900 font-bold">Run actual capital diagnostics.</div>
                                             </div>
                                         </Link>
                                     </li>

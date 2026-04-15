@@ -41,9 +41,9 @@ export default function TestimonialsPage() {
                                     <span className="text-2xl">{t.icon}</span>
                                     <div>
                                         <div className="text-zinc-950 font-bold text-sm">{t.name}</div>
-                                        <div className="text-xs text-zinc-900">{t.company}</div>
+                                        <div className="text-xs text-zinc-900 font-bold">{t.company}</div>
                                     </div>
-                                    <span className="ml-auto px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-400 font-mono">{t.role}</span>
+                                    <span className="ml-auto px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-zinc-900 font-bold font-mono">{t.role}</span>
                                 </div>
                                 <blockquote className="text-zinc-950 text-sm leading-relaxed italic">&ldquo;{t.quote}&rdquo;</blockquote>
                             </div>
@@ -72,7 +72,7 @@ export default function TestimonialsPage() {
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Join 100+ Companies</h2>
                         <p className="text-zinc-900 mb-8 max-w-xl mx-auto">See why PE firms, boards, and CTOs trust R&D Capital Audits for their most important technology investment decisions.</p>
-                        <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Book Your Audit →</Link>
+                        <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Book Your Audit →</Link>
                     </div>
                 </div>
             </div>

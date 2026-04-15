@@ -333,7 +333,7 @@ export default function APERTool() {
                                                 <div className="w-8 h-8 rounded-full bg-yellow-500/20 text-yellow-400 flex items-center justify-center font-bold font-mono text-sm border border-yellow-500/30">1</div>
                                                 <div>
                                                     <h3 className="text-xl font-bold text-zinc-900">Core Metrics</h3>
-                                                    <p className="text-sm text-zinc-900">Define the top-line scale of engineering vs revenue.</p>
+                                                    <p className="text-sm text-zinc-900 font-medium">Define the top-line scale of engineering vs revenue.</p>
                                                 </div>
                                             </div>
 
@@ -371,7 +371,7 @@ export default function APERTool() {
                                                 <div className="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold font-mono text-sm border border-orange-500/30">2</div>
                                                 <div>
                                                     <h3 className="text-xl font-bold text-zinc-900">Team Composition</h3>
-                                                    <p className="text-sm text-zinc-900">Break down how roles are distributed across headcount.</p>
+                                                    <p className="text-sm text-zinc-900 font-medium">Break down how roles are distributed across headcount.</p>
                                                 </div>
                                             </div>
 
@@ -412,7 +412,7 @@ export default function APERTool() {
                                                 <div className="w-8 h-8 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-bold font-mono text-sm border border-red-500/30">3</div>
                                                 <div>
                                                     <h3 className="text-xl font-bold text-zinc-900">Health Metrics</h3>
-                                                    <p className="text-sm text-zinc-900">Measure stability, retention, and friction.</p>
+                                                    <p className="text-sm text-zinc-900 font-medium">Measure stability, retention, and friction.</p>
                                                 </div>
                                             </div>
 
@@ -485,7 +485,7 @@ export default function APERTool() {
                                             <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                         </div>
                                         <h2 className="text-xl font-bold text-zinc-950 mb-1">Board-Ready Deliverable Generated</h2>
-                                        <p className="text-sm text-zinc-800">Export this assessment to a verified Executive PDF.</p>
+                                        <p className="text-sm text-zinc-900 font-medium">Export this assessment to a verified Executive PDF.</p>
                                     </div>
                                     <ExportToPDFButton targetId="aper-pdf-export-zone" fileName={`APER_Assessment_${persona}.pdf`} />
                                 </div>
@@ -587,13 +587,13 @@ export default function APERTool() {
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
                                                     <div className="text-sm font-medium text-zinc-950 mb-2">Unrealized Revenue (Hemorrhage)</div>
                                                     <div className="text-3xl font-bold text-red-500">{formatMoney(results.revenueGap)}/yr</div>
-                                                    <div className="text-xs text-red-400/60 mt-2 mt-auto">ARR missing due to sub-optimal APER.</div>
+                                                    <div className="text-xs text-zinc-900 font-bold/60 mt-2 mt-auto">ARR missing due to sub-optimal APER.</div>
                                                 </div>
                                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
                                                     <div className="text-sm font-medium text-zinc-950 mb-2">Valuation Collapse Probability</div>
                                                     <div className="text-3xl font-bold text-orange-400">{formatMoney(results.valuationGap)}</div>
-                                                    <div className="text-xs text-orange-400/60 mt-2 mt-auto">Lost Enterprise Value (assuming {results.valuationMultiple}x multiple). Down-round highly probable.</div>
+                                                    <div className="text-xs text-zinc-900 font-bold/60 mt-2 mt-auto">Lost Enterprise Value (assuming {results.valuationMultiple}x multiple). Down-round highly probable.</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -651,7 +651,7 @@ export default function APERTool() {
                                 >
                                     <BentoCard title="Industry Benchmarks" icon={TrendingUp}>
                                         <div className="text-center mb-4">
-                                            <div className="text-sm text-zinc-900">How you compare to industry standards</div>
+                                            <div className="text-sm text-zinc-900 font-medium">How you compare to industry standards</div>
                                         </div>
                                         <div className="h-64 w-full mt-4">
                                             <ResponsiveContainer width="100%" height="100%">
@@ -681,7 +681,7 @@ export default function APERTool() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
                                 >
-                                    <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-8 border border-zinc-400">
+                                    <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-8 border border-zinc-400">
                                         <div className="flex items-center gap-3 mb-6">
                                             <div className={`w-3 h-3 rounded-full animate-pulse ${results.aper < 400000 ? 'bg-orange-500' : 'bg-cyan-400'}`} />
                                             <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">Executive Summary</span>
@@ -736,7 +736,7 @@ export default function APERTool() {
                                     transition={{ duration: 0.6, delay: 0.5 }}
                                     className="text-center pt-8"
                                 >
-                                    <p className="text-xs text-zinc-800 mb-3">Trusted by product leaders at</p>
+                                    <p className="text-xs text-zinc-900 font-bold mb-3">Trusted by product leaders at</p>
                                     <div className="flex flex-wrap items-center justify-center gap-8 text-zinc-800 font-mono text-xs">
                                         <span>Stripe</span>
                                         <span>Figma</span>

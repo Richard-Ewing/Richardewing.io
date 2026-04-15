@@ -67,7 +67,7 @@ export default function AuditInterviewFaqPage() {
                     <div className="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try the Audit Interview</h2>
                         <p className="text-zinc-950 mb-6">Test your engineering judgment with our AI-powered assessment. Free to try.</p>
-                        <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-pink-500 text-white font-bold hover:opacity-90 transition-opacity">Start Audit Interview &rarr;</Link>
+                        <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-pink-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Start Audit Interview &rarr;</Link>
                     </div>
                 </div>
             </div>

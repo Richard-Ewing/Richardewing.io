@@ -19,7 +19,7 @@ const PricingPreview = () => {
                     {/* Free Tier - Dual Action */}
                     <div className="card text-center flex flex-col justify-between h-full">
                         <div>
-                            <div className="text-xs text-zinc-800 uppercase tracking-wide mb-2">Free</div>
+                            <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-2">Free</div>
                             <div className="text-2xl font-bold text-zinc-900 mb-2">$0</div>
                             <p className="text-zinc-950 text-sm mb-4">Newsletter + Tools</p>
                         </div>
@@ -36,10 +36,10 @@ const PricingPreview = () => {
                     {/* Start Here - Featured */}
                     <ShineBorder className="card-featured text-center p-0" color={["#A855F7", "#00D4FF"]}>
                         <div className="p-6">
-                            <div className="text-xs text-purple-600 uppercase tracking-wide mb-2">★ Start Here</div>
+                            <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-2">★ Start Here</div>
                             <div className="text-2xl font-bold text-zinc-900 mb-2">$2,500</div>
                             <p className="text-zinc-950 text-sm mb-4">Insolvency Diagnostic</p>
-                            <a href="/api/buy/insolvency_diagnostic" className="block bg-purple-600 text-white rounded px-4 py-2 text-sm hover:bg-purple-500 mb-3">Book Now</a>
+                            <a href="/api/buy/insolvency_diagnostic" className="block bg-purple-600 text-zinc-950 font-semibold rounded px-4 py-2 text-sm hover:bg-purple-500 mb-3">Book Now</a>
                             <div className="border-t border-purple-200 pt-2 mt-2">
                                 <p className="text-xs font-medium text-purple-500 mb-1">Not ready for full diagnostic?</p>
                                 <a href="/api/buy/gut_check" className="text-zinc-950 text-xs hover:text-zinc-900 block underline decoration-dotted">
@@ -51,7 +51,7 @@ const PricingPreview = () => {
 
                     {/* Audit */}
                     <div className="card text-center">
-                        <div className="text-xs text-zinc-800 uppercase tracking-wide mb-2">Audit</div>
+                        <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-2">Audit</div>
                         <div className="text-2xl font-bold text-zinc-900 mb-2">$7,500</div>
                         <p className="text-zinc-950 text-sm mb-4">R&D Capital Audit</p>
                         <a href="/api/buy/full_audit" className="text-cyan-600 text-sm hover:underline">Book Audit →</a>
@@ -59,7 +59,7 @@ const PricingPreview = () => {
 
                     {/* Enterprise */}
                     <div className="card text-center">
-                        <div className="text-xs text-zinc-800 uppercase tracking-wide mb-2">Enterprise</div>
+                        <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-2">Enterprise</div>
                         <div className="text-2xl font-bold text-zinc-900 mb-2">$5K/mo</div>
                         <p className="text-zinc-950 text-sm mb-4">Independent Oversight</p>
                         <a href="/api/buy/retainer" className="text-cyan-600 text-sm hover:underline mb-2 block">Subscribe →</a>

@@ -137,7 +137,7 @@ export default function CareerPathingContent() {
                                         className="text-left p-6 rounded-2xl border border-zinc-400 bg-white/5 hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all group"
                                     >
                                         <div className="font-bold text-lg text-zinc-800 group-hover:text-zinc-900 mb-2">{opt.label}</div>
-                                        <div className="text-xs text-zinc-800 uppercase tracking-widest font-mono">{opt.desc}</div>
+                                        <div className="text-xs text-zinc-900 font-bold uppercase tracking-widest font-mono">{opt.desc}</div>
                                     </button>
                                 ))}
                             </div>
@@ -170,7 +170,7 @@ export default function CareerPathingContent() {
                                     >
                                         <div>
                                             <div className="font-bold text-lg text-zinc-800 group-hover:text-zinc-900 mb-2">{opt.label}</div>
-                                            <div className="text-sm text-zinc-900">{opt.desc}</div>
+                                            <div className="text-sm text-zinc-900 font-medium">{opt.desc}</div>
                                         </div>
                                         <ChevronRight className="w-6 h-6 text-zinc-800 group-hover:text-cyan-400" />
                                     </button>

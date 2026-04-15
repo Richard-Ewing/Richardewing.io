@@ -79,7 +79,7 @@ export default function PdiFaqPage() {
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try the PDI Calculator</h2>
                         <p className="text-zinc-950 mb-6">Get your Product Debt Index score in under 5 minutes. No account required.</p>
-                        <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:opacity-90 transition-opacity">
+                        <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">
                             Launch PDI Calculator &rarr;
                         </Link>
                     </div>

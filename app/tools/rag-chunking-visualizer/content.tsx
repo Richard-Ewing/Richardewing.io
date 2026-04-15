@@ -123,7 +123,7 @@ export default function RagChunkingContent() {
                     <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-400">
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-indigo-400 uppercase tracking-widest">Semantic Splitting Simulator</span>
+                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">Semantic Splitting Simulator</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -209,7 +209,7 @@ export default function RagChunkingContent() {
                                 <span className="bg-indigo-500/20 text-indigo-400 border border-indigo-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Vector Topology Mapped</h2>
-                            <p className="text-sm text-zinc-800">Heuristic breakdown of Context Loss vectors across {results.chunks.length} dimensional slices.</p>
+                            <p className="text-sm text-zinc-900 font-medium">Heuristic breakdown of Context Loss vectors across {results.chunks.length} dimensional slices.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="chunk-pdf-export-zone" fileName={`RAG_Chunking_Strategy.pdf`} />
@@ -235,18 +235,18 @@ export default function RagChunkingContent() {
                                                         <TriangleAlert size={12}/> {results.brokenWords} SEVERED CONTEXT BOUNDARIES
                                                     </span>
                                                 </div>
-                                                <p className="text-sm text-zinc-900 mt-4 leading-relaxed">
+                                                <p className="text-sm text-zinc-900 font-medium mt-4 leading-relaxed">
                                                     Each severed semantic boundary creates isolated tokens that the LLM model cannot accurately interpret, forcing it to hallucinate responses. At an enterprise scale, these misinterpretations manifest as an estimated <strong className="text-zinc-900">${results.codn.toLocaleString()} in support rework and brand liability.</strong>
                                                 </p>
                                             </div>
                                             <div className="flex-1 bg-white/50 p-6 rounded-2xl border border-zinc-400 space-y-4">
                                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3 mb-3">Database Load Topology</div>
                                                 <div className="flex justify-between items-center pb-2 border-b border-zinc-400">
-                                                    <span className="text-sm text-zinc-800">Total Vectors (Rows)</span>
+                                                    <span className="text-sm text-zinc-900 font-medium">Total Vectors (Rows)</span>
                                                     <span className="text-sm font-mono text-indigo-400">{results.chunks.length}</span>
                                                 </div>
                                                 <div className="flex justify-between items-center pb-2 border-b border-zinc-400">
-                                                    <span className="text-sm text-zinc-800">Storage API Run Rate</span>
+                                                    <span className="text-sm text-zinc-900 font-medium">Storage API Run Rate</span>
                                                     <span className="text-sm font-mono text-rose-400">Inefficient</span>
                                                 </div>
                                                 <p className="text-sm font-medium text-zinc-950 font-mono mt-2 italic">Vector databases charge per dimensional float. Storing raw noise directly inflates monthly active spend.</p>
@@ -261,18 +261,18 @@ export default function RagChunkingContent() {
                                                 <div className={`text-6xl sm:text-7xl font-bold tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r ${results.efficiencyScore < 50 ? 'from-rose-500 to-red-600' : 'from-indigo-400 to-cyan-400'}`}>
                                                     {results.efficiencyScore}%
                                                 </div>
-                                                <p className="text-sm text-zinc-900 mt-4 leading-relaxed">
+                                                <p className="text-sm text-zinc-900 font-medium mt-4 leading-relaxed">
                                                     The current sliding window parameters result in {results.brokenWords} hard word-shears, obliterating meaning.
                                                 </p>
                                             </div>
                                             <div className="bg-white/50 p-6 rounded-2xl border border-zinc-400 space-y-4 h-full flex flex-col justify-center">
                                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3 mb-3">Ingest Pipeline Stats</div>
                                                 <div className="flex justify-between items-center pb-2">
-                                                    <span className="text-sm text-zinc-800">Pipeline Input</span>
+                                                    <span className="text-sm text-zinc-900 font-medium">Pipeline Input</span>
                                                     <span className="text-sm font-mono text-indigo-400">{rawText.length} Chars</span>
                                                 </div>
                                                 <div className="flex justify-between items-center pb-2">
-                                                    <span className="text-sm text-zinc-800">Overlap Redundancy</span>
+                                                    <span className="text-sm text-zinc-900 font-medium">Overlap Redundancy</span>
                                                     <span className="text-sm font-mono text-cyan-400">{overlap} Chars</span>
                                                 </div>
                                                 <div className="flex justify-between items-center border-t border-zinc-400 pt-3">
@@ -289,11 +289,11 @@ export default function RagChunkingContent() {
                                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Data Integrity Defect Pipeline</div>
                                                 <div className="space-y-4">
                                                     <div className="flex justify-between items-center border-b border-zinc-400 pb-2">
-                                                        <span className="text-sm text-zinc-800">Authorization Context Loss</span>
+                                                        <span className="text-sm text-zinc-900 font-medium">Authorization Context Loss</span>
                                                         <span className="text-xs font-mono text-rose-400 shrink-0">CRITICAL RISK</span>
                                                     </div>
                                                     <div className="flex justify-between items-center border-b border-zinc-400 pb-2">
-                                                        <span className="text-sm text-zinc-800">Access Control Bypass</span>
+                                                        <span className="text-sm text-zinc-900 font-medium">Access Control Bypass</span>
                                                         <span className="text-xs font-mono text-amber-400 shrink-0">ELEVATED</span>
                                                     </div>
                                                 </div>
@@ -307,7 +307,7 @@ export default function RagChunkingContent() {
                                             <div className="flex-1 bg-white/50 p-6 rounded-2xl border border-amber-500/20 space-y-4">
                                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Contractual Interpretation Shearing</div>
                                                 <div className="flex justify-between items-center pb-2">
-                                                    <span className="text-sm text-zinc-800">Legal Negation Loss Rate</span>
+                                                    <span className="text-sm text-zinc-900 font-medium">Legal Negation Loss Rate</span>
                                                     <span className="text-sm font-mono text-rose-400 font-bold">{Math.min(100, results.brokenWords * 3)}%</span>
                                                 </div>
                                                 <p className="text-sm font-medium text-zinc-950 font-mono mt-2 leading-relaxed">

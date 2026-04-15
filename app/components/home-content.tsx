@@ -66,7 +66,7 @@ export default function HomeContent() {
 
                 {/* Social Proof */}
                 <div className="pt-8">
-                    <p className="font-mono text-xs text-zinc-800 uppercase tracking-widest mb-4">Authority Established In</p>
+                    <p className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-4">Authority Established In</p>
                     <div className="flex flex-wrap items-center gap-6 opacity-60 hover:opacity-100 transition-opacity">
                         <span className="text-lg font-bold text-zinc-900">CIO</span>
                         <span className="text-lg font-bold text-zinc-900">Built In</span>
@@ -117,7 +117,7 @@ export default function HomeContent() {
                     ].map((tool) => (
                         <Link key={tool.name} href={tool.href} className="group block p-6 rounded-xl border border-zinc-400 bg-white hover:border-cyan-400 hover:bg-zinc-50 transition-all">
                             <div className="text-2xl font-bold text-zinc-900 mb-2 font-grotesk group-hover:text-cyan-600">{tool.name}</div>
-                            <div className="text-sm text-zinc-800 uppercase tracking-wider">{tool.desc}</div>
+                            <div className="text-sm text-zinc-900 font-medium uppercase tracking-wider">{tool.desc}</div>
                             <div className="mt-4 text-cyan-500 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">Launch Tool →</div>
                         </Link>
                     ))}
@@ -225,7 +225,7 @@ export default function HomeContent() {
                         <div key={tier.name} className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-xl border border-zinc-400 bg-white hover:bg-zinc-50 transition-colors">
                             <div className="text-center sm:text-left mb-4 sm:mb-0">
                                 <div className="text-xl font-bold text-zinc-900 font-grotesk">{tier.name}</div>
-                                <div className="text-sm text-zinc-900">{tier.desc}</div>
+                                <div className="text-sm text-zinc-900 font-medium">{tier.desc}</div>
                             </div>
                             <div className="flex items-center gap-6">
                                 <div className="text-xl font-mono text-cyan-600">{tier.price}</div>

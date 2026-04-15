@@ -50,9 +50,9 @@ export default function AuditInterviewVsLeetCodePage() {
                             <tbody>
                                 {rows.map((row, i) => (
                                     <tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50">
-                                        <td className="py-4 px-4 text-sm text-zinc-900 font-bold">{row.dimension}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-900">{row.audit}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-800">{row.leet}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium font-bold">{row.dimension}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.audit}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.leet}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -68,7 +68,7 @@ export default function AuditInterviewVsLeetCodePage() {
                         <p className="text-zinc-900 mb-8">
                             The Audit Interview tests the four dimensions that matter: <strong>Verification</strong> (catching AI errors), <strong>Architecture</strong> (system design judgment), <strong>Economics</strong> (cost awareness), and <strong>Leadership</strong> (decision-making under ambiguity).
                         </p>
-                        <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold hover:opacity-90 transition-opacity">
+                        <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">
                             Try the Free Audit Interview →
                         </Link>
                     </div>

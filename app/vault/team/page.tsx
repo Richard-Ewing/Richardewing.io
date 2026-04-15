@@ -62,7 +62,7 @@ export default async function TeamAdminPage() {
                     {/* INVITE CODE WIDGET */}
                     <div className="card p-8 border-amber-500/30 bg-gradient-to-br from-amber-500/[0.05] to-transparent">
                         <h2 className="text-sm font-bold text-zinc-950 uppercase tracking-widest mb-2">Your Team Invite Code</h2>
-                        <p className="text-xs text-zinc-900 mb-6">Colleagues will enter this code inside their Vault to claim a seat.</p>
+                        <p className="text-xs text-zinc-900 font-bold mb-6">Colleagues will enter this code inside their Vault to claim a seat.</p>
                         
                         <div className="flex items-center gap-3">
                             <code className="flex-1 block p-4 bg-white border border-amber-500/30 rounded-xl text-amber-400 font-mono text-lg font-bold text-center">
@@ -77,7 +77,7 @@ export default async function TeamAdminPage() {
                         <div className="flex justify-between items-end mb-6">
                             <div>
                                 <h2 className="text-sm font-bold text-zinc-950 uppercase tracking-widest mb-1">Seating Capacity</h2>
-                                <p className="text-xs text-zinc-900">Total available invites</p>
+                                <p className="text-xs text-zinc-900 font-bold">Total available invites</p>
                             </div>
                             <div className="text-right">
                                 <span className={`text-3xl font-bold font-mono ${isAtCapacity ? 'text-red-400' : 'text-cyan-400'}`}>
@@ -97,7 +97,7 @@ export default async function TeamAdminPage() {
                         </div>
                         
                         {isAtCapacity ? (
-                            <p className="text-xs text-red-400 font-bold">Limit Reached. No further invites can be claimed.</p>
+                            <p className="text-xs text-zinc-900 font-bold font-bold">Limit Reached. No further invites can be claimed.</p>
                         ) : (
                             <p className="text-xs font-medium text-cyan-400 uppercase tracking-widest font-bold">{availableChildSeats - seatsUsed} Seats Remaining</p>
                         )}
@@ -126,14 +126,14 @@ export default async function TeamAdminPage() {
                                         <tr key={idx} className="border-b border-zinc-900/50 hover:bg-white/40 transition-colors">
                                             <td className="p-4 flex items-center gap-3 text-zinc-950 font-medium">
                                                 <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                                                    <span className="text-xs text-cyan-400 font-bold">{member.email.charAt(0).toUpperCase()}</span>
+                                                    <span className="text-xs text-zinc-900 font-bold font-bold">{member.email.charAt(0).toUpperCase()}</span>
                                                 </div>
                                                 {member.email}
                                             </td>
                                             <td className="p-4 hidden sm:table-cell text-xs text-zinc-950 font-mono">
                                                 {member.user_id.substring(0, 14)}...
                                             </td>
-                                            <td className="p-4 text-right text-xs text-zinc-800">
+                                            <td className="p-4 text-right text-xs text-zinc-900 font-bold">
                                                 {new Date(member.joined_at).toLocaleDateString()}
                                             </td>
                                         </tr>

@@ -40,7 +40,7 @@ export default function CertificationPage() {
         <main className="pt-20">
             <div className="page-container">
                 <section className="section-lg text-center">
-                    <div className="text-xs text-amber-400 uppercase tracking-wide mb-4 font-mono">Professional Certification</div>
+                    <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Professional Certification</div>
                     <h1 className="text-4xl md:text-6xl font-bold text-zinc-950 mb-6 font-grotesk">
                         Certified Product<br />
                         <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Economist.</span>
@@ -68,7 +68,7 @@ export default function CertificationPage() {
                                 <div className="flex-1">
                                     <div className="flex items-center justify-between mb-1">
                                         <h3 className="text-lg font-bold text-zinc-900">{mod.title}</h3>
-                                        <span className="text-xs text-zinc-800 font-mono">{mod.hours}</span>
+                                        <span className="text-xs text-zinc-900 font-bold font-mono">{mod.hours}</span>
                                     </div>
                                     <p className="text-zinc-900 text-sm">{mod.desc}</p>
                                 </div>

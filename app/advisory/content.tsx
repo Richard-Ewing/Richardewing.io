@@ -78,7 +78,7 @@ export default function AdvisoryContent() {
 
                     {/* Level 2: Insolvency Diagnostic */}
                     <GlowCard className="p-6 sm:p-8 relative overflow-hidden" glowColor="red">
-                        <div className="absolute top-0 right-0 bg-red-600 text-white px-3 py-1 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">
+                        <div className="absolute top-0 right-0 bg-red-600 text-zinc-950 font-semibold px-3 py-1 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">
                             Most Critical
                         </div>
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
@@ -88,12 +88,12 @@ export default function AdvisoryContent() {
                         <p className="text-zinc-900 text-sm leading-relaxed mb-6 border-b border-zinc-400 pb-4">
                             60-minute deep dive. Includes written Risk Exposure Report detailing red/yellow/green flags across 5 failure modes.
                         </p>
-                        <a href="/api/buy/insolvency_diagnostic" className="block w-full text-center bg-red-600 text-white font-bold uppercase text-xs py-3 rounded hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                        <a href="/api/buy/insolvency_diagnostic" className="block w-full text-center bg-red-600 text-zinc-950 font-semibold font-bold uppercase text-xs py-3 rounded hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)]">
                             Schedule Deep Dive
                         </a>
                         <div className="mt-4 pt-3 border-t border-zinc-400 text-center">
                             <span className="text-zinc-950 text-xs font-medium uppercase tracking-wide block mb-1">Not ready for deep dive?</span>
-                            <a href="/api/buy/gut_check" className="text-xs text-red-400 hover:text-zinc-900 transition-colors underline decoration-dotted">
+                            <a href="/api/buy/gut_check" className="text-xs text-zinc-900 font-bold hover:text-zinc-900 transition-colors underline decoration-dotted">
                                 Start with a 30-min Gut-Check ($450) →
                             </a>
                         </div>
@@ -131,7 +131,7 @@ export default function AdvisoryContent() {
                     <GlowCard className="p-6 sm:p-8" glowColor="gold">
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
                             <h3 className="text-xl font-bold text-zinc-950 font-grotesk">Independent Oversight</h3>
-                            <span className="text-2xl font-bold text-gold font-mono">$5,000<span className="text-sm text-zinc-900">/mo</span></span>
+                            <span className="text-2xl font-bold text-gold font-mono">$5,000<span className="text-sm text-zinc-900 font-medium">/mo</span></span>
                         </div>
                         <p className="text-zinc-900 text-sm leading-relaxed mb-6 border-b border-zinc-400 pb-4">
                             Board-level economic sanity checks. Asynchronous access for critical buy/build/kill decisions. Minimum 3-month commitment.
@@ -188,7 +188,7 @@ export default function AdvisoryContent() {
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-6 border-l-4 border-cyan-500">
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                         <div>
-                            <div className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-2">Not Ready for Paid?</div>
+                            <div className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-2">Not Ready for Paid?</div>
                             <h3 className="text-xl font-bold text-zinc-950 font-grotesk">Run a Free Self-Diagnostic</h3>
                             <p className="text-zinc-900 text-sm mt-2">(Newsletter + Tools)</p>
                         </div>

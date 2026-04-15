@@ -146,7 +146,7 @@ export default function PromptInjectionContent() {
                     <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-400">
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest">Model Red Teaming Interface</span>
+                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">Model Red Teaming Interface</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -211,7 +211,7 @@ Only answer questions related to AcmeCorp logistics.
                                 <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Red Team Penetration Complete</h2>
-                            <p className="text-sm text-zinc-800">Heuristic structural analysis verified across 5 critical logic bypass domains.</p>
+                            <p className="text-sm text-zinc-900 font-medium">Heuristic structural analysis verified across 5 critical logic bypass domains.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="sandbox-pdf-export-zone" fileName={`Prompt_Defensibility_Audit.pdf`} />
@@ -237,18 +237,18 @@ Only answer questions related to AcmeCorp logistics.
                                                         <Target size={12}/> {results.score < 50 ? 'HIGH VULNERABILITY DETECTED' : results.score < 80 ? 'PARTIAL MITIGATION' : 'ISO-STANDARD FORTIFICATION'}
                                                     </span>
                                                 </div>
-                                                <p className="text-sm text-zinc-900 mt-4 leading-relaxed">
+                                                <p className="text-sm text-zinc-900 font-medium mt-4 leading-relaxed">
                                                     Your instructions successfully mitigated <strong className="text-zinc-900">{results.evaluations.filter((v:any) => v.passed).length} of {results.evaluations.length}</strong> adversarial vectors. This exposes the underlying agent chain to command hijacking and arbitrary execution, compounding into an estimated ${results.codn.toLocaleString()} in liability risk.
                                                 </p>
                                             </div>
                                             <div className="flex-1 bg-white/50 p-6 rounded-2xl border border-red-500/20 space-y-4 w-full">
                                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Financial Risk Breakdown</div>
                                                 <div className="flex justify-between items-center pb-2 border-b border-zinc-400">
-                                                    <span className="text-sm text-zinc-800">Class Action Liability</span>
+                                                    <span className="text-sm text-zinc-900 font-medium">Class Action Liability</span>
                                                     <span className="text-sm font-mono text-red-400">High Risk</span>
                                                 </div>
                                                 <div className="flex justify-between items-center pb-2 border-b border-zinc-400">
-                                                    <span className="text-sm text-zinc-800">Malicious API Burn</span>
+                                                    <span className="text-sm text-zinc-900 font-medium">Malicious API Burn</span>
                                                     <span className="text-sm font-mono text-amber-400">Exposed</span>
                                                 </div>
                                             </div>
@@ -343,11 +343,11 @@ Only answer questions related to AcmeCorp logistics.
                                              <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">SLA & Regulatory Breach Risk</div>
                                              <div className="space-y-4">
                                                 <div className="flex justify-between items-center border-b border-zinc-400 pb-2">
-                                                    <div className="text-sm text-zinc-800">Automated Data Exfiltration <span className="block text-xs text-zinc-900">Unrestricted system prompting bypasses DPI</span></div>
+                                                    <div className="text-sm text-zinc-900 font-medium">Automated Data Exfiltration <span className="block text-xs text-zinc-900 font-bold">Unrestricted system prompting bypasses DPI</span></div>
                                                     <span className="font-mono text-rose-400 text-right">Violation Imminent</span>
                                                 </div>
                                                 <div className="flex justify-between items-center border-b border-zinc-400 pb-2">
-                                                    <div className="text-sm text-zinc-800">EU AI Act Liability <span className="block text-xs text-zinc-900">Lack of deterministic safety guardrails</span></div>
+                                                    <div className="text-sm text-zinc-900 font-medium">EU AI Act Liability <span className="block text-xs text-zinc-900 font-bold">Lack of deterministic safety guardrails</span></div>
                                                     <span className="font-mono text-amber-400 text-right">Non-Compliant</span>
                                                 </div>
                                                 <p className="text-sm font-medium text-zinc-950 font-mono italic">A single jailbreak payload can force this architecture to disgorge PII, breaching SLA terms instantly.</p>

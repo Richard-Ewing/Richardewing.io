@@ -29,7 +29,7 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="text-xs text-zinc-800 uppercase tracking-wide mb-4 font-mono">Intervention</h4>
+                        <h4 className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Intervention</h4>
                         <ul className="space-y-2 text-sm font-grotesk">
                             <li><Link href="/start-here" className="text-cyan-600 hover:text-zinc-900 transition-colors font-bold">→ Start Here</Link></li>
                             <li><Link href="/advisory" className="text-zinc-800 hover:text-zinc-900 transition-colors">Advisory Services</Link></li>
@@ -46,7 +46,7 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="text-xs text-zinc-800 uppercase tracking-wide mb-4 font-mono">Intelligence</h4>
+                        <h4 className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Intelligence</h4>
                         <ul className="space-y-2 text-sm font-grotesk">
                             <li><Link href="/doctrine" className="text-zinc-800 hover:text-zinc-900 transition-colors">Doctrine</Link></li>
                             <li><Link href="/articles" className="text-zinc-800 hover:text-zinc-900 transition-colors">Canonical Hub</Link></li>
@@ -59,7 +59,7 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="text-xs text-cyan-600 uppercase tracking-wide mb-4 font-mono">Free Tools</h4>
+                        <h4 className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Free Tools</h4>
                         <ul className="space-y-2 text-sm font-grotesk">
                             <li><Link href="/tools/pdi" className="text-zinc-800 hover:text-zinc-900 transition-colors">Product Debt Index</Link></li>
                             <li><Link href="/tools/aueb" className="text-zinc-800 hover:text-zinc-900 transition-colors">AI Unit Economics</Link></li>
@@ -75,7 +75,7 @@ export function Footer() {
 
                     {/* Stay Current */}
                     <div className="col-span-2 lg:col-span-1">
-                        <h4 className="text-xs text-purple-600 uppercase tracking-wide mb-4 font-mono">Stay Current</h4>
+                        <h4 className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Stay Current</h4>
                         <p className="text-zinc-950 text-sm mb-4">
                             Monthly analysis of why products fail economically.
                         </p>
@@ -86,7 +86,7 @@ export function Footer() {
 
                 {/* As Seen In */}
                 <div className="py-8 border-y border-zinc-400 mb-8">
-                    <p className="text-xs text-zinc-800 uppercase tracking-widest text-center mb-6 font-mono">
+                    <p className="text-xs text-zinc-900 font-bold uppercase tracking-widest text-center mb-6 font-mono">
                         Published In
                     </p>
                     <div className="flex items-center justify-center gap-8 flex-wrap">
@@ -106,7 +106,7 @@ export function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-900">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-900 font-medium">
                     <p>© 2026 Richard Ewing. All rights reserved.</p>
                     <div className="flex items-center gap-6">
                         <Link href="/legal" className="hover:text-zinc-900 transition-colors">Legal & Privacy</Link>

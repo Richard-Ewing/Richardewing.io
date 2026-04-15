@@ -80,7 +80,7 @@ export default function VTATool() {
                                 <div className="space-y-6 relative z-10">
                                     <div>
                                         <label className="block text-sm font-medium text-zinc-800 mb-2">Monthly Target Inferences</label>
-                                        <p className="text-xs text-slate-700 mb-3">Total queries hitting your AI service</p>
+                                        <p className="text-xs text-zinc-900 font-bold mb-3">Total queries hitting your AI service</p>
                                         <input
                                             type="range"
                                             min="1000"
@@ -97,7 +97,7 @@ export default function VTATool() {
 
                                     <div>
                                         <label className="block text-sm font-medium text-zinc-800 mb-2">AI Response Drift Rate (%)</label>
-                                        <p className="text-xs text-slate-700 mb-3">Percentage of outputs requiring human review</p>
+                                        <p className="text-xs text-zinc-900 font-bold mb-3">Percentage of outputs requiring human review</p>
                                         <input
                                             type="range"
                                             min="1"
@@ -114,7 +114,7 @@ export default function VTATool() {
 
                                     <div>
                                         <label className="block text-sm font-medium text-zinc-800 mb-2">Verification Time (Minutes)</label>
-                                        <p className="text-xs text-slate-700 mb-3">Time taken by a human to audit one flagged output</p>
+                                        <p className="text-xs text-zinc-900 font-bold mb-3">Time taken by a human to audit one flagged output</p>
                                         <input
                                             type="number"
                                             value={verificationTime}
@@ -127,7 +127,7 @@ export default function VTATool() {
 
                                     <div>
                                         <label className="block text-sm font-medium text-zinc-800 mb-2">Verifier Labor Base ($/Hour)</label>
-                                        <p className="text-xs text-slate-700 mb-3">Fully burdened hourly rate of your engineering/audit staff</p>
+                                        <p className="text-xs text-zinc-900 font-bold mb-3">Fully burdened hourly rate of your engineering/audit staff</p>
                                         <input
                                             type="number"
                                             value={hourlyRate}
@@ -141,7 +141,7 @@ export default function VTATool() {
                                     <button
                                         onClick={handleCalculate}
                                         disabled={isUnlocking}
-                                        className="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white rounded-xl font-medium transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] flex items-center justify-center gap-2"
+                                        className="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-zinc-950 font-semibold rounded-xl font-medium transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] flex items-center justify-center gap-2"
                                     >
                                         {isUnlocking ? (
                                             <>
@@ -191,19 +191,19 @@ export default function VTATool() {
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <GlowCard className="p-6">
-                                                <div className="text-sm text-slate-600 mb-1">Annual Volatility Tax</div>
+                                                <div className="text-sm text-zinc-900 font-medium mb-1">Annual Volatility Tax</div>
                                                 <div className="text-4xl font-bold text-red-400 mb-2 font-mono">
                                                     $<NumberTicker value={annualTax} />
                                                 </div>
-                                                <p className="text-xs text-red-400/80">Pure human labor validation cost.</p>
+                                                <p className="text-xs text-zinc-900 font-bold/80">Pure human labor validation cost.</p>
                                             </GlowCard>
 
                                             <GlowCard className="p-6">
-                                                <div className="text-sm text-slate-600 mb-1">Engineering Hours Burned</div>
+                                                <div className="text-sm text-zinc-900 font-medium mb-1">Engineering Hours Burned</div>
                                                 <div className="text-4xl font-bold text-zinc-950 mb-2 font-mono">
                                                     <NumberTicker value={hoursLostAnnual} />
                                                 </div>
-                                                <p className="text-xs text-slate-700">Hours lost yearly to output auditing.</p>
+                                                <p className="text-xs text-zinc-900 font-bold">Hours lost yearly to output auditing.</p>
                                             </GlowCard>
                                         </div>
 

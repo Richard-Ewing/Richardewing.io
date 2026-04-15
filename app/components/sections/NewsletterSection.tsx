@@ -94,7 +94,7 @@ const NewsletterSection = () => {
                                     <button
                                         type="submit"
                                         disabled={state.submitting || isValidating}
-                                        className="px-8 py-4 rounded-lg bg-purple-700 text-white font-bold hover:bg-purple-600 transition-colors whitespace-nowrap disabled:opacity-70 flex items-center justify-center gap-2"
+                                        className="px-8 py-4 rounded-lg bg-purple-700 text-zinc-950 font-semibold font-bold hover:bg-purple-600 transition-colors whitespace-nowrap disabled:opacity-70 flex items-center justify-center gap-2"
                                     >
                                         {(state.submitting || isValidating) ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Get Checklist <ArrowRight className="w-3 h-3" /></>}
                                     </button>
@@ -108,12 +108,12 @@ const NewsletterSection = () => {
                             </>
                         )}
 
-                        <p className="mt-8 text-sm text-zinc-900">
+                        <p className="mt-8 text-sm text-zinc-900 font-medium">
                             Monthly. No fluff. 2,000+ executives read before they decide.
                         </p>
 
                         <div className="mt-6 border-t border-zinc-400 pt-6">
-                            <Link href="/tools" className="text-xs text-zinc-800 hover:text-zinc-900 uppercase tracking-widest transition-colors flex items-center justify-center gap-2 group">
+                            <Link href="/tools" className="text-xs text-zinc-900 font-bold hover:text-zinc-900 uppercase tracking-widest transition-colors flex items-center justify-center gap-2 group">
                                 Or try my free tools
                                 <span className="group-hover:translate-x-1 transition-transform">→</span>
                             </Link>

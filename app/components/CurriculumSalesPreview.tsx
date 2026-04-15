@@ -93,7 +93,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                     <Lock className="w-8 h-8 text-rose-500" />
                                 </div>
                                 <h4 className="text-2xl font-bold text-zinc-900 mb-4 relative z-10 tracking-tight">Vault Terminal Locked</h4>
-                                <p className="text-xs text-zinc-800 font-mono uppercase tracking-widest leading-relaxed relative z-10 bg-white/50 p-4 rounded-xl border border-zinc-400">
+                                <p className="text-xs text-zinc-900 font-bold font-mono uppercase tracking-widest leading-relaxed relative z-10 bg-white/50 p-4 rounded-xl border border-zinc-400">
                                     Awaiting authorization clearance. Unlock the module to decrypt architectural playbooks, P&L models, and deterministic diagnostic utilities.
                                 </p>
                             </div>

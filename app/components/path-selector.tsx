@@ -73,7 +73,7 @@ export function PathSelector() {
 
                         <div>
                             <h3 className="text-lg font-bold text-zinc-950 font-grotesk mb-1">{path.label}</h3>
-                            <p className="text-xs text-zinc-900 font-mono leading-relaxed">{path.description}</p>
+                            <p className="text-xs text-zinc-900 font-bold font-mono leading-relaxed">{path.description}</p>
                         </div>
                     </div>
                 </Link>

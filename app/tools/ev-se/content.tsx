@@ -318,7 +318,7 @@ export default function EVSETool() {
                         {/* Status Badge */}
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-purple-400 uppercase tracking-widest">EV-SE | Valuation Scenario Engine</span>
+                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">EV-SE | Valuation Scenario Engine</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -540,7 +540,7 @@ export default function EVSETool() {
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Valuation Waterfall Generated</h2>
-                            <p className="text-sm text-zinc-800">Export this assessment to a verified Executive PDF.</p>
+                            <p className="text-sm text-zinc-900 font-medium">Export this assessment to a verified Executive PDF.</p>
                         </div>
                         <ExportToPDFButton targetId="ev-se-pdf-export-zone" fileName={`EV-SE_Valuation_${persona}.pdf`} />
                     </div>
@@ -593,19 +593,19 @@ export default function EVSETool() {
                             <GlowCard className="p-6" glowColor="cyan">
                                 <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Potential Value</div>
                                 <div className="text-3xl sm:text-4xl font-bold text-cyan-400">${(results.perfectValue / 1000000).toFixed(0)}M</div>
-                                <p className="text-xs text-cyan-400/60 mt-2">At perfect execution.</p>
+                                <p className="text-xs text-zinc-900 font-bold/60 mt-2">At perfect execution.</p>
                             </GlowCard>
 
                             <GlowCard className="p-6" glowColor="cyan">
                                 <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Risk-Adjusted Value</div>
                                 <div className="text-3xl sm:text-4xl font-bold text-purple-400">${(results.riskedValue / 1000000).toFixed(0)}M</div>
-                                <p className="text-xs text-purple-400/60 mt-2">What investors will pay.</p>
+                                <p className="text-xs text-zinc-900 font-bold/60 mt-2">What investors will pay.</p>
                             </GlowCard>
 
                             <GlowCard className="p-6" glowColor="danger">
                                 <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Biggest Risk Factor</div>
                                 <div className="text-2xl sm:text-3xl font-bold text-orange-400">{results.biggestRiskFactor}</div>
-                                <p className="text-xs text-orange-400/60 mt-2">Costing {formatMoney(results.biggestRiskCost)}.</p>
+                                <p className="text-xs text-zinc-900 font-bold/60 mt-2">Costing {formatMoney(results.biggestRiskCost)}.</p>
                             </GlowCard>
                         </div>
                     </ScrollReveal>
@@ -623,13 +623,13 @@ export default function EVSETool() {
                                         <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
                                         <div className="text-sm font-medium text-zinc-950 mb-2">Deal Collapse Probability</div>
                                         <div className="text-3xl font-bold text-red-500">{results.diligenceWalkProbability.toFixed(0)}%</div>
-                                        <div className="text-xs text-red-400/60 mt-2 mt-auto">Likelihood of acquirer walking away during Tech Due Diligence.</div>
+                                        <div className="text-xs text-zinc-900 font-bold/60 mt-2 mt-auto">Likelihood of acquirer walking away during Tech Due Diligence.</div>
                                     </div>
                                     <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                         <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
                                         <div className="text-sm font-medium text-zinc-950 mb-2">Valuation Discount Penalty</div>
                                         <div className="text-3xl font-bold text-orange-400">{formatMoney(results.wealthGap)}</div>
-                                        <div className="text-xs text-orange-400/60 mt-2 mt-auto">If the deal does close, this is the haircut applied by the Private Equity committee.</div>
+                                        <div className="text-xs text-zinc-900 font-bold/60 mt-2 mt-auto">If the deal does close, this is the haircut applied by the Private Equity committee.</div>
                                     </div>
                                 </div>
                             </div>
@@ -645,7 +645,7 @@ export default function EVSETool() {
                             </GlowCard>
 
                             {/* EXECUTIVE SUMMARY + EMAIL */}
-                            <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400">
+                            <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400">
                                 <div className="flex items-center gap-2 mb-4">
                                     <div className={`w-3 h-3 rounded-full animate-pulse ${results.adjustedConfidence < 60 ? 'bg-red-500' : 'bg-purple-400'}`} />
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">Scenario Summary</span>
@@ -690,7 +690,7 @@ export default function EVSETool() {
                             </h3>
                             <div className="bg-zinc-50 border border-zinc-400 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 via-pink-500 to-red-500"></div>
-                                <h4 className="font-mono text-xs text-purple-400 uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">90-Day Execution Gantt Chart: {results.biggestRiskFactor}</h4>
+                                <h4 className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">90-Day Execution Gantt Chart: {results.biggestRiskFactor}</h4>
                                 
                                 <div className="space-y-6 md:space-y-8">
                                     {results.qpep_roadmap.map((plan, i) => (
@@ -819,7 +819,7 @@ export default function EVSETool() {
                     {/* Social Proof */}
                     <ScrollReveal delay={250}>
                         <div className="text-center pt-8">
-                            <p className="text-xs text-zinc-800 mb-3">Trusted by product leaders at</p>
+                            <p className="text-xs text-zinc-900 font-bold mb-3">Trusted by product leaders at</p>
                             <div className="flex items-center justify-center gap-8 text-zinc-800 font-mono text-xs">
                                 <span>Stripe</span>
                                 <span>Figma</span>
@@ -855,7 +855,7 @@ export default function EVSETool() {
                             <li className="flex gap-2"><span className="text-red-500">→</span> <strong>Key Person Risk:</strong> -20% Valuation Impact</li>
                             <li className="flex gap-2"><span className="text-red-500">→</span> <strong>Tech Debt:</strong> -10% Valuation Impact</li>
                         </ul>
-                        <p className="mt-4 text-xs text-zinc-900">This tool forces you to confront these discounts upfront.</p>
+                        <p className="mt-4 text-xs text-zinc-900 font-bold">This tool forces you to confront these discounts upfront.</p>
                     </div>
                     <div>
                         <h3 className="text-2xl font-bold text-yellow-400 mb-4">Defending the Downside</h3>

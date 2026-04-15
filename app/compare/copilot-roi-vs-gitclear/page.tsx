@@ -25,7 +25,7 @@ export default function CopilotROIvsGitClearPage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/compare" className="hover:text-fuchsia-400">Compare</Link><span>/</span><span className="text-fuchsia-400 font-bold">Copilot ROI vs GitClear</span>
+                        <Link href="/compare" className="hover:text-zinc-950 font-semibolduchsia-400">Compare</Link><span>/</span><span className="text-zinc-950 font-semibolduchsia-400 font-bold">Copilot ROI vs GitClear</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
@@ -42,16 +42,16 @@ export default function CopilotROIvsGitClearPage() {
                             <thead>
                                 <tr className="border-b border-zinc-400">
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-800 uppercase tracking-widest">Dimension</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-fuchsia-400 uppercase tracking-widest">Richard Ewing (Copilot ROI)</th>
+                                    <th className="text-left py-4 px-4 text-xs font-mono text-zinc-950 font-semibolduchsia-400 uppercase tracking-widest">Richard Ewing (Copilot ROI)</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-900 uppercase tracking-widest">GitClear</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {rows.map((row, i) => (
                                     <tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50">
-                                        <td className="py-4 px-4 text-sm text-zinc-900 font-bold">{row.dimension}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-900">{row.exogram}</td>
-                                        <td className="py-4 px-4 text-sm text-zinc-800">{row.gitclear}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium font-bold">{row.dimension}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.exogram}</td>
+                                        <td className="py-4 px-4 text-sm text-zinc-900 font-medium">{row.gitclear}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -68,7 +68,7 @@ export default function CopilotROIvsGitClearPage() {
                         <p className="text-zinc-900 mb-8">
                             If you want to track developer commits, use GitClear. If you are a CFO trying to figure out why R&D spending is up but feature delivery is stalled, use the Copilot ROI Tool.
                         </p>
-                        <Link href="/tools/copilot-roi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white font-bold hover:shadow-[0_0_20px_rgba(217,70,239,0.3)] transition-all">
+                        <Link href="/tools/copilot-roi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-zinc-950 font-semibold font-bold hover:shadow-[0_0_20px_rgba(217,70,239,0.3)] transition-all">
                             Try the Free Copilot ROI Forecaster →
                         </Link>
                     </div>
@@ -76,7 +76,7 @@ export default function CopilotROIvsGitClearPage() {
                     {/* CTA */}
                     <div className="text-center py-12 border-t border-zinc-400">
                         <p className="text-zinc-900 mb-4">Want the board-level readout on your AI investment?</p>
-                        <Link href="/advisory" className="text-fuchsia-400 hover:text-fuchsia-300 font-bold uppercase tracking-widest text-sm">
+                        <Link href="/advisory" className="text-zinc-950 font-semibolduchsia-400 hover:text-zinc-950 font-semibolduchsia-300 font-bold uppercase tracking-widest text-sm">
                             Book an R&D Capital Audit →
                         </Link>
                     </div>

@@ -52,7 +52,7 @@ export default function GovTechPage() {
                             <li className="flex items-start gap-3"><span className="text-sky-400 mt-1">→</span> <span>Design phased modernization plans that minimize citizen-facing risk</span></li>
                         </ul>
                         <div className="flex flex-wrap gap-4">
-                            <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-bold hover:opacity-90">Free PDI Assessment →</Link>
+                            <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-sky-500 to-indigo-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>
                             <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     </div>

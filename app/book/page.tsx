@@ -38,7 +38,7 @@ export default function BookPage() {
                     />
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-6 text-xs text-zinc-800 font-mono uppercase tracking-widest">
+                <div className="flex flex-wrap justify-center gap-6 text-xs text-zinc-900 font-bold font-mono uppercase tracking-widest">
                     <span>Technical Debt Valuation</span>
                     <span>•</span>
                     <span>AI Unit Economics</span>

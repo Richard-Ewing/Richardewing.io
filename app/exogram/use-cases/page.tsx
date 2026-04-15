@@ -87,11 +87,11 @@ export default function ExogramUseCasesPage() {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div>
                                     <h3 className="text-xs font-mono text-red-400 uppercase tracking-widest mb-3">Problem</h3>
-                                    <p className="text-sm text-zinc-900 leading-relaxed">{uc.problem}</p>
+                                    <p className="text-sm text-zinc-900 font-medium leading-relaxed">{uc.problem}</p>
                                 </div>
                                 <div>
                                     <h3 className="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-3">Solution</h3>
-                                    <p className="text-sm text-zinc-900 leading-relaxed">{uc.solution}</p>
+                                    <p className="text-sm text-zinc-900 font-medium leading-relaxed">{uc.solution}</p>
                                 </div>
                                 <div>
                                     <h3 className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3">Impact</h3>
@@ -112,7 +112,7 @@ export default function ExogramUseCasesPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Your Industry Not Listed?</h2>
                         <p className="text-zinc-900 mb-6 max-w-lg mx-auto">Exogram&apos;s verification layers are industry-agnostic. If your AI system produces outputs that need to be trusted, Exogram can verify them.</p>
                         <div className="flex justify-center gap-4">
-                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
+                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-zinc-950 font-semibold font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
                                 Visit Exogram.ai →
                             </a>
                             <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">

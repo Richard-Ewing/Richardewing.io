@@ -239,7 +239,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <div className="flex items-center justify-between mb-3">
                         <div className="text-xs font-mono text-cyan-500 uppercase tracking-widest">{term.category}</div>
                         <div className="flex items-center gap-3">
-                            <span className="text-xs text-zinc-700 font-mono">{readingTime} min read</span>
+                            <span className="text-xs text-zinc-900 font-bold font-mono">{readingTime} min read</span>
                             <ShareButtons url={`/glossary/${slug}`} title={`What is ${term.title}?`} />
                         </div>
                     </div>
@@ -277,7 +277,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                             <div key={i} className="rounded-xl border border-zinc-400 bg-zinc-50 p-5 text-center">
                                 <div className="text-3xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">{m.value}</div>
                                 <div className="text-sm font-bold text-zinc-950 mt-2">{m.label}</div>
-                                <div className="text-xs text-zinc-700 mt-1">{m.description}</div>
+                                <div className="text-xs text-zinc-900 font-bold mt-1">{m.description}</div>
                             </div>
                         ))}
                     </div>
@@ -387,7 +387,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                         { }
                                         <div className={`h-full rounded-full bg-gradient-to-r ${barColor} transition-all`} style={{ width: `${pct}%` }} />
                                     </div>
-                                    <div className="text-xs text-zinc-900">{level.description}</div>
+                                    <div className="text-xs text-zinc-900 font-bold">{level.description}</div>
                                 </div>
                             </div>
                             );
@@ -432,7 +432,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         </div>
                     </div>
                     <div className="p-6">
-                        <div className="bg-zinc-50 rounded-xl p-6 font-mono text-sm text-zinc-600 whitespace-pre-line border border-zinc-400 overflow-x-auto">
+                        <div className="bg-zinc-50 rounded-xl p-6 font-mono text-sm text-zinc-900 font-medium whitespace-pre-line border border-zinc-400 overflow-x-auto">
                             {diagram}
                         </div>
                     </div>
@@ -450,8 +450,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                                     </div>
                                     <div className="flex-1">
                                         <div className="text-sm font-bold text-zinc-950 mb-1">{m.mistake}</div>
-                                        <div className="text-xs text-red-400/80 mb-2">⚠️ Consequence: {m.consequence}</div>
-                                        <div className="text-xs text-emerald-400/80">✅ Fix: {m.fix}</div>
+                                        <div className="text-xs text-zinc-900 font-bold/80 mb-2">⚠️ Consequence: {m.consequence}</div>
+                                        <div className="text-xs text-zinc-900 font-bold/80">✅ Fix: {m.fix}</div>
                                     </div>
                                 </div>
                             </div>
@@ -470,7 +470,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 </div>
                                 <div>
                                     <div className="text-sm font-bold text-zinc-900">{bp.practice}</div>
-                                    <div className="text-xs text-zinc-700 mt-1">Impact: {bp.impact}</div>
+                                    <div className="text-xs text-zinc-900 font-bold mt-1">Impact: {bp.impact}</div>
                                 </div>
                             </div>
                         ))}
@@ -531,7 +531,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                     {spokes.map((s, i) => (
                                         <Link key={i} href={s.url} className="block group">
                                             <div className="text-sm font-bold text-zinc-700 group-hover:text-cyan-400 transition-colors mb-1">{s.title}</div>
-                                            <div className="text-xs text-zinc-700 line-clamp-2">{s.description}</div>
+                                            <div className="text-xs text-zinc-900 font-bold line-clamp-2">{s.description}</div>
                                         </Link>
                                     ))}
                                 </div>
@@ -577,7 +577,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 <div className="flex-1 flex flex-col relative z-10">
                                     <div className="text-xs font-medium font-mono text-amber-400 uppercase tracking-widest mb-1">{premiumTool.tag}</div>
                                     <div className="text-base font-bold text-zinc-950 mb-2 leading-tight">{premiumTool.name}</div>
-                                    <div className="text-xs text-zinc-600 mb-6 flex-1">{premiumTool.description}</div>
+                                    <div className="text-xs text-zinc-900 font-bold mb-6 flex-1">{premiumTool.description}</div>
                                     
                                     <Link 
                                         href={premiumTool.url} 
@@ -613,7 +613,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                     {spokes.slice(0, 2).map((s, i) => (
                                         <Link key={i} href={s.url} className="block group">
                                             <div className="text-sm font-bold text-zinc-700 group-hover:text-cyan-400 transition-colors mb-1">{s.title}</div>
-                                            <div className="text-xs text-zinc-700 line-clamp-2">{s.description}</div>
+                                            <div className="text-xs text-zinc-900 font-bold line-clamp-2">{s.description}</div>
                                         </Link>
                                     ))}
                                 </div>
@@ -621,7 +621,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                             <div className="card p-6 border-zinc-400 flex flex-col items-center justify-center text-center bg-zinc-50">
                                 <div className="text-3xl mb-3">🎓</div>
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">Master Technical Execution</h3>
-                                <p className="text-sm text-zinc-600 mb-6">Learn how top-quartile engineering organizations systematically manage {term.title.toLowerCase()}.</p>
+                                <p className="text-sm text-zinc-900 font-medium mb-6">Learn how top-quartile engineering organizations systematically manage {term.title.toLowerCase()}.</p>
                                 <Link href="/curriculum" className="w-full max-w-[200px] text-center py-2.5 px-4 bg-white/5 hover:bg-white/10 border border-zinc-400 text-zinc-950 font-bold text-sm rounded-lg transition-colors">
                                     Explore Curriculum
                                 </Link>
@@ -659,7 +659,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                         <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-400 transition-colors">{r.title}</div>
                                         <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mt-1">{r.type}</div>
                                     </div>
-                                    <span className="text-xs text-cyan-500">→</span>
+                                    <span className="text-xs text-zinc-900 font-bold">→</span>
                                 </a>
                             ))}
                         </div>
@@ -688,7 +688,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         <div className="flex flex-wrap gap-3">
                             {relatedTermObjects.map(rt => rt && (
                                 <Link key={rt.slug} href={`/glossary/${rt.slug}`}
-                                    className="px-4 py-2 bg-white/5 border border-zinc-400 rounded-full text-sm text-zinc-700 hover:border-cyan-500/50 hover:text-cyan-400 transition-all">
+                                    className="px-4 py-2 bg-white/5 border border-zinc-400 rounded-full text-sm text-zinc-900 font-medium hover:border-cyan-500/50 hover:text-cyan-400 transition-all">
                                     {rt.title}
                                 </Link>
                             ))}
@@ -701,7 +701,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 <section className="card p-8 border-cobalt/30 bg-gradient-to-br from-cobalt/10 to-transparent">
                     <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-2">Need Expert Help?</h2>
                     <p className="text-zinc-600 mb-4">Richard Ewing is a Product Economist and AI Capital Auditor. He helps companies translate technical complexity into financial clarity.</p>
-                    <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">
+                    <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-zinc-950 font-semibold text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">
                         Book Advisory Call →
                     </Link>
                 </section>

@@ -22,7 +22,7 @@ export const categoryColors: Record<string, string> = {
     'Startup Economics': 'text-pink-400 bg-pink-500/10 border-pink-500/20',
     'Cloud Economics': 'text-sky-400 bg-sky-500/10 border-sky-500/20',
     'DevOps': 'text-orange-400 bg-orange-500/10 border-orange-500/20',
-    'Product Management': 'text-fuchsia-400 bg-fuchsia-500/10 border-fuchsia-500/20',
+    'Product Management': 'text-zinc-950 font-semibolduchsia-400 bg-fuchsia-500/10 border-fuchsia-500/20',
     'Security': 'text-rose-400 bg-rose-500/10 border-rose-500/20',
     'Data Engineering': 'text-teal-400 bg-teal-500/10 border-teal-500/20',
     'M&A': 'text-lime-400 bg-lime-500/10 border-lime-500/20',

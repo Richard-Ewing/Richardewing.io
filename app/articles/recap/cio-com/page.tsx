@@ -77,7 +77,7 @@ export default function CIORecapPage() {
                                         <p className="text-zinc-900 mb-4">{article.description}</p>
                                         <div className="flex flex-wrap gap-2">
                                             {article.topics.map(topic => (
-                                                <span key={topic} className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs text-cyan-400 font-mono">{topic}</span>
+                                                <span key={topic} className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs text-zinc-900 font-bold font-mono">{topic}</span>
                                             ))}
                                         </div>
                                     </div>
@@ -91,16 +91,16 @@ export default function CIORecapPage() {
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
                                 {['technical-debt', 'innovation-tax', 'ai-cogs', 'dora-metrics', 'cost-of-predictivity'].map(slug => (
-                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
+                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>
                         </div>
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Tools</h2>
                             <div className="space-y-2">
-                                <Link href="/tools/pdi" className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ Product Debt Index (PDI)</Link>
-                                <Link href="/tools/aper" className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ APER Calculator</Link>
-                                <Link href="/tools/aueb" className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ AUEB Calculator</Link>
+                                <Link href="/tools/pdi" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ Product Debt Index (PDI)</Link>
+                                <Link href="/tools/aper" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ APER Calculator</Link>
+                                <Link href="/tools/aueb" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ AUEB Calculator</Link>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@ export default function CIORecapPage() {
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Work With Richard</h2>
                         <p className="text-zinc-950 mb-6">The frameworks published on CIO.com are available as proprietary advisory engagements. R&amp;D Capital Audits translate technical complexity into board-ready financial clarity.</p>
-                        <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
+                        <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
                     </div>
                 </div>
             </div>

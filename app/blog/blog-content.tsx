@@ -85,7 +85,7 @@ export default function BlogContent() {
                 {/* Results count */}
                 {(search || selectedCategory) && (
                     <div className="text-center mb-8">
-                        <p className="text-xs text-zinc-900">
+                        <p className="text-xs text-zinc-900 font-bold">
                             {filtered.length} article{filtered.length !== 1 ? 's' : ''} found
                             {selectedCategory && <span> in <span className="text-zinc-900">{selectedCategory}</span></span>}
                             {search && <span> matching &quot;<span className="text-zinc-900">{search}</span>&quot;</span>}
@@ -106,10 +106,10 @@ export default function BlogContent() {
                                         <span className="text-xs font-medium text-zinc-950">{article.readTime} read</span>
                                     </div>
                                     <h3 className="text-xl font-grotesk font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors mb-3">{article.title}</h3>
-                                    <p className="text-sm text-zinc-900 leading-relaxed mb-4">{article.excerpt}</p>
+                                    <p className="text-sm text-zinc-900 font-medium leading-relaxed mb-4">{article.excerpt}</p>
                                     <div className="flex items-center justify-between">
                                         <span className="text-xs text-zinc-950">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                                        <span className="text-xs text-cyan-400 group-hover:text-cyan-300">Read →</span>
+                                        <span className="text-xs text-zinc-900 font-bold group-hover:text-cyan-300">Read →</span>
                                     </div>
                                 </Link>
                             ))}
@@ -181,8 +181,8 @@ export default function BlogContent() {
                             <span className="text-xs font-mono text-purple-400 uppercase tracking-widest">Tier 1 Publications</span>
                         </div>
                         <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-2">Looking for my published articles?</h3>
-                        <p className="text-sm text-zinc-900 mb-4">These blog posts expand on ideas from my articles in CIO.com, Built In, Mind the Product, and HackerNoon.</p>
-                        <Link href="/articles" className="text-sm text-purple-400 hover:text-purple-300 transition-colors">
+                        <p className="text-sm text-zinc-900 font-medium mb-4">These blog posts expand on ideas from my articles in CIO.com, Built In, Mind the Product, and HackerNoon.</p>
+                        <Link href="/articles" className="text-sm text-zinc-900 font-medium hover:text-purple-300 transition-colors">
                             View all published articles →
                         </Link>
                     </div>
@@ -196,7 +196,7 @@ export default function BlogContent() {
                             One email per week with the engineering economics analysis nobody else is doing. Join 2,000+ executives and engineering leaders.
                         </p>
                         <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
-                            className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-violet-600 text-white font-bold text-sm hover:opacity-90 transition-opacity">
+                            className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-violet-600 text-zinc-950 font-semibold font-bold text-sm hover:opacity-90 transition-opacity">
                             Subscribe Free →
                         </a>
                     </div>

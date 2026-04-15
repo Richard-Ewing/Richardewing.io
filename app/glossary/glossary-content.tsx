@@ -110,7 +110,7 @@ export default function GlossaryContent() {
                 <div className="flex flex-col sm:flex-row justify-center gap-4 px-6">
                     <Link
                         href="/tools/pdi"
-                        className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-xl text-white font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-opacity shadow-md"
+                        className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-xl text-zinc-950 font-semibold font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-opacity shadow-md"
                     >
                         Run Free PDI Assessment
                     </Link>

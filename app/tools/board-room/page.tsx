@@ -111,28 +111,28 @@ export default function BoardRoom() {
                             <BorderBeam size={100} duration={8} delay={0} colorFrom="#f43f5e" colorTo="#be123c" />
                             <div className="text-xs font-medium font-mono text-rose-500 uppercase tracking-widest mb-4">Total Enterprise Value at Risk</div>
                             <div className="text-4xl font-black text-zinc-900">{totalWealthGap > 0 ? formatCurrency(totalWealthGap) : 'TBD'}</div>
-                            <div className="mt-4 text-xs text-rose-400/70 font-mono tracking-widest">Aggregate across all erosion models.</div>
+                            <div className="mt-4 text-xs text-zinc-900 font-bold/70 font-mono tracking-widest">Aggregate across all erosion models.</div>
                         </GlowCard>
                         
                         <GlowCard className="p-6 bg-cyan-50 border border-cyan-200 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={10} delay={2} colorFrom="#06b6d4" colorTo="#0284c7" />
                             <div className="text-xs font-medium font-mono text-cyan-500 uppercase tracking-widest mb-4">Total Cloud/Infra Arbitrage</div>
                             <div className="text-4xl font-black text-zinc-900">{totalCloudSavings > 0 ? formatCurrency(totalCloudSavings) : 'TBD'}</div>
-                            <div className="mt-4 text-xs text-cyan-400/70 font-mono tracking-widest">OpEx capture ready for execution.</div>
+                            <div className="mt-4 text-xs text-zinc-900 font-bold/70 font-mono tracking-widest">OpEx capture ready for execution.</div>
                         </GlowCard>
 
                         <GlowCard className="p-6 bg-emerald-50 border border-emerald-200 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={9} delay={4} colorFrom="#10b981" colorTo="#047857" />
                             <div className="text-xs font-medium font-mono text-emerald-500 uppercase tracking-widest mb-4">AI Unit Economics (Margin)</div>
                             <div className="text-4xl font-black text-zinc-900">{marginCollapseRisk ? `${marginCollapseRisk.toFixed(1)}%` : 'TBD'}</div>
-                            <div className="mt-4 text-xs text-emerald-400/70 font-mono tracking-widest">Projected gross margin post-AI scale.</div>
+                            <div className="mt-4 text-xs text-zinc-900 font-bold/70 font-mono tracking-widest">Projected gross margin post-AI scale.</div>
                         </GlowCard>
 
                         <GlowCard className="p-6 bg-purple-50 border border-purple-200 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={12} delay={6} colorFrom="#a855f7" colorTo="#7e22ce" />
                             <div className="text-xs font-medium font-mono text-purple-500 uppercase tracking-widest mb-4">Telemetry Snapshots</div>
                             <div className="text-4xl font-black text-zinc-900">{totalRuns}</div>
-                            <div className="mt-4 text-xs text-purple-400/70 font-mono tracking-widest">Diagnostic data points processed.</div>
+                            <div className="mt-4 text-xs text-zinc-900 font-bold/70 font-mono tracking-widest">Diagnostic data points processed.</div>
                         </GlowCard>
                     </div>
                 </ScrollReveal>
@@ -165,7 +165,7 @@ export default function BoardRoom() {
                                                 <Zap className="text-blue-400" size={12} />
                                                 <span className="text-xs font-medium uppercase tracking-widest text-blue-400 font-bold">Execution Ready</span>
                                             </div>
-                                            <p className="text-xs text-blue-600 font-mono">Remediation timeline auto-generated from diagnostic payload.</p>
+                                            <p className="text-xs text-zinc-900 font-bold font-mono">Remediation timeline auto-generated from diagnostic payload.</p>
                                         </div>
                                     )}
                                     <div className="mt-4 flex justify-end">
@@ -214,7 +214,7 @@ export default function BoardRoom() {
                                                 <Zap className="text-emerald-400" size={12} />
                                                 <span className="text-xs font-medium uppercase tracking-widest text-emerald-400 font-bold">Execution Ready</span>
                                             </div>
-                                            <p className="text-xs text-emerald-600 font-mono">Margin defense timeline auto-generated from diagnostic payload.</p>
+                                            <p className="text-xs text-zinc-900 font-bold font-mono">Margin defense timeline auto-generated from diagnostic payload.</p>
                                         </div>
                                     )}
                                     <div className="mt-4 flex justify-end">

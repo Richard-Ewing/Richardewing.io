@@ -92,17 +92,17 @@ export default function ROIPage() {
                             <div className="text-center">
                                 <div className="text-3xl mb-3">📊</div>
                                 <h3 className="text-zinc-950 font-bold mb-2">Measure Innovation Tax</h3>
-                                <p className="text-sm text-zinc-900">Quantify % of engineering spent on maintenance vs. new feature work</p>
+                                <p className="text-sm text-zinc-900 font-medium">Quantify % of engineering spent on maintenance vs. new feature work</p>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl mb-3">🎯</div>
                                 <h3 className="text-zinc-950 font-bold mb-2">Identify Waste</h3>
-                                <p className="text-sm text-zinc-900">Pinpoint specific debt sources: rework, incidents, manual processes</p>
+                                <p className="text-sm text-zinc-900 font-medium">Pinpoint specific debt sources: rework, incidents, manual processes</p>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl mb-3">💰</div>
                                 <h3 className="text-zinc-950 font-bold mb-2">Remediation Plan</h3>
-                                <p className="text-sm text-zinc-900">Prioritized playbook to reclaim engineering capacity, measured in dollars</p>
+                                <p className="text-sm text-zinc-900 font-medium">Prioritized playbook to reclaim engineering capacity, measured in dollars</p>
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@ export default function ROIPage() {
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Get Your Custom ROI Analysis</h2>
                         <p className="text-zinc-900 mb-8 max-w-xl mx-auto">These are illustrative scenarios. A real R&D Capital Audit produces company-specific numbers based on your actual metrics, team structure, and technology stack.</p>
-                        <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Request Custom ROI Analysis →</Link>
+                        <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Request Custom ROI Analysis →</Link>
                     </div>
                 </div>
             </div>

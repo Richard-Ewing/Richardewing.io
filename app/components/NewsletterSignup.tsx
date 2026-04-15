@@ -10,7 +10,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
                 <a
                     href={beehiivUrl}
                     target="_blank"
-                    className="px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-500 transition-colors font-grotesk"
+                    className="px-4 py-2 rounded-lg bg-purple-600 text-zinc-950 font-semibold text-sm font-semibold hover:bg-purple-500 transition-colors font-grotesk"
                 >
                     Subscribe on Beehiiv →
                 </a>
@@ -21,7 +21,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
     if (variant === 'full') {
         return (
             <div className="card p-8 text-center border-purple-500/30 bg-purple-900/10">
-                <div className="text-xs text-purple-400 uppercase tracking-wide mb-4 font-mono">
+                <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">
                     Monthly Newsletter
                 </div>
                 <h3 className="text-2xl font-bold text-zinc-950 mb-4 font-grotesk">
@@ -34,7 +34,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
                 <a
                     href={beehiivUrl}
                     target="_blank"
-                    className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 mb-4 transition-colors font-grotesk"
+                    className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 mb-4 transition-colors font-grotesk"
                 >
                     Subscribe on Beehiiv →
                 </a>
@@ -57,7 +57,7 @@ export const NewsletterSignup = ({ variant = 'default' }: { variant?: 'default' 
             <a
                 href={beehiivUrl}
                 target="_blank"
-                className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors font-grotesk"
+                className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 transition-colors font-grotesk"
             >
                 Subscribe on Beehiiv →
             </a>

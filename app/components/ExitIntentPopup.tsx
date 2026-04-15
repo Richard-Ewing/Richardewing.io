@@ -103,13 +103,13 @@ export default function ExitIntentPopup() {
 
                         {/* What You Get */}
                         <div className="bg-white/[0.03] border border-zinc-400 rounded-xl p-4 mb-5 space-y-2">
-                            <div className="flex items-start gap-2 text-xs text-zinc-900">
+                            <div className="flex items-start gap-2 text-xs text-zinc-900 font-bold">
                                 <span className="text-emerald-400 mt-0.5">✓</span> Traffic-light scoring rubrics for every question
                             </div>
-                            <div className="flex items-start gap-2 text-xs text-zinc-900">
+                            <div className="flex items-start gap-2 text-xs text-zinc-900 font-bold">
                                 <span className="text-emerald-400 mt-0.5">✓</span> Actionable remediation steps — not just diagnosis
                             </div>
-                            <div className="flex items-start gap-2 text-xs text-zinc-900">
+                            <div className="flex items-start gap-2 text-xs text-zinc-900 font-bold">
                                 <span className="text-emerald-400 mt-0.5">✓</span> Benchmark thresholds so you know where you stand
                             </div>
                         </div>
@@ -127,7 +127,7 @@ export default function ExitIntentPopup() {
                                 placeholder="name@company.com" required disabled={state.submitting || isValidating}
                                 className="w-full px-4 py-3 bg-white/50 border border-zinc-400 rounded-xl text-zinc-950 placeholder:text-zinc-900 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all font-mono text-sm"
                             />
-                            <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-red-500" />
+                            <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-zinc-900 font-bold" />
 
                             {validationError && (
                                 <div className="flex items-center gap-2 p-2 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-xs">
@@ -137,7 +137,7 @@ export default function ExitIntentPopup() {
 
                             <button
                                 type="submit" disabled={state.submitting || isValidating}
-                                className="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold uppercase tracking-widest text-xs rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70"
+                                className="w-full py-3 bg-purple-600 hover:bg-purple-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-xs rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70"
                             >
                                 {(state.submitting || isValidating) ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Get Free Checklist <ArrowRight className="w-3 h-3" /></>}
                             </button>

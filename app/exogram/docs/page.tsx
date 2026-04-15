@@ -21,7 +21,7 @@ export default function ExogramDocsIndex() {
                     <a key={doc.slug} href={`/exogram/docs/${doc.slug}`} className="block p-6 rounded-xl border border-zinc-400 bg-white/5 hover:bg-white/10 hover:border-purple-500/30 transition-all group">
                         <span className="text-xs font-medium font-mono text-purple-400 uppercase tracking-widest">{doc.category}</span>
                         <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-purple-300 transition-colors">{doc.title}</h3>
-                        <p className="text-sm text-zinc-800">{doc.description}</p>
+                        <p className="text-sm text-zinc-900 font-medium">{doc.description}</p>
                     </a>
                 ))}
             </div>

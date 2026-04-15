@@ -10,7 +10,7 @@ export default function DoctrinePage() {
                 {/* Hero */}
                 <section className="section-lg">
                     <div className="max-w-3xl">
-                        <div className="text-xs text-cyan-400 uppercase tracking-wide mb-4">The Doctrine</div>
+                        <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4">The Doctrine</div>
                         <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6">
                             Sovereignty in<br />
                             <span className="text-cyan-400">Product Economics.</span>
@@ -27,7 +27,7 @@ export default function DoctrinePage() {
                     <div className="grid-2 max-w-4xl">
 
                         <div className="card">
-                            <div className="text-xs text-purple-400 mb-3">01</div>
+                            <div className="text-xs text-zinc-900 font-bold mb-3">01</div>
                             <h3 className="text-lg font-semibold text-zinc-950 mb-3">Capital Allocation {'>'} Agile Theater</h3>
                             <p className="text-zinc-800 text-sm">
                                 We do not measure success by velocity, story points, or features shipped.
@@ -36,7 +36,7 @@ export default function DoctrinePage() {
                         </div>
 
                         <div className="card">
-                            <div className="text-xs text-cyan-400 mb-3">02</div>
+                            <div className="text-xs text-zinc-900 font-bold mb-3">02</div>
                             <h3 className="text-lg font-semibold text-zinc-950 mb-3">The Truth is in the P&L</h3>
                             <p className="text-zinc-800 text-sm">
                                 Users lie. NPS lies. Roadmaps lie. The <span className="text-zinc-900">Profit & Loss statement</span> tells
@@ -45,7 +45,7 @@ export default function DoctrinePage() {
                         </div>
 
                         <div className="card">
-                            <div className="text-xs text-purple-400 mb-3">03</div>
+                            <div className="text-xs text-zinc-900 font-bold mb-3">03</div>
                             <h3 className="text-lg font-semibold text-zinc-950 mb-3">Kill Zombies Ruthlessly</h3>
                             <p className="text-zinc-800 text-sm">
                                 A "Zombie Feature" is code that requires maintenance but generates zero incremental value.
@@ -54,7 +54,7 @@ export default function DoctrinePage() {
                         </div>
 
                         <div className="card">
-                            <div className="text-xs text-cyan-400 mb-3">04</div>
+                            <div className="text-xs text-zinc-900 font-bold mb-3">04</div>
                             <h3 className="text-lg font-semibold text-zinc-950 mb-3">Sovereignty Over Dependency</h3>
                             <p className="text-zinc-800 text-sm">
                                 Do not build your house on rental land. <span className="text-zinc-900">Own your core IP.</span>
@@ -113,25 +113,25 @@ export default function DoctrinePage() {
                         <div className="grid-2">
 
                             <div className="card">
-                                <div className="text-xs text-purple-400 uppercase tracking-wide mb-2">Expert Contributor</div>
+                                <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-2">Expert Contributor</div>
                                 <h3 className="font-semibold text-zinc-950 mb-1">Built In</h3>
                                 <p className="text-zinc-950 text-sm">Monthly columnist. Jan 2026 article featured in Editor's Newsletter.</p>
                             </div>
 
                             <div className="card">
-                                <div className="text-xs text-cyan-400 uppercase tracking-wide mb-2">Contributor</div>
+                                <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-2">Contributor</div>
                                 <h3 className="font-semibold text-zinc-950 mb-1">Mind the Product</h3>
                                 <p className="text-zinc-950 text-sm">Feb 2026 article. Newsletter feature.</p>
                             </div>
 
                             <div className="card">
-                                <div className="text-xs text-purple-400 uppercase tracking-wide mb-2">Expert Contributor</div>
+                                <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-2">Expert Contributor</div>
                                 <h3 className="font-semibold text-zinc-950 mb-1">Foundry (CIO.com)</h3>
                                 <p className="text-zinc-950 text-sm">Monthly columnist for enterprise technology network.</p>
                             </div>
 
                             <div className="card">
-                                <div className="text-xs text-cyan-400 uppercase tracking-wide mb-2">Published</div>
+                                <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-2">Published</div>
                                 <h3 className="font-semibold text-zinc-950 mb-1">HackerNoon</h3>
                                 <p className="text-zinc-950 text-sm">4M+ monthly readers.</p>
                             </div>
@@ -143,7 +143,7 @@ export default function DoctrinePage() {
                 {/* CTA */}
                 <section className="section-sm text-center">
                     <p className="text-zinc-800 mb-6">Apply these principles to your organization.</p>
-                    <a href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500">
+                    <a href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500">
                         Book an Intervention →
                     </a>
                 </section>

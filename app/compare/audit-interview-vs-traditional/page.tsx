@@ -60,7 +60,7 @@ export default function CompareAuditVsTraditionalPage() {
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try the Audit Interview</h2>
                         <p className="text-zinc-950 mb-6">Free, AI-powered engineering assessment. Get scored across 5 levels with instant committee review.</p>
-                        <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:opacity-90 transition-opacity">Start Free Assessment →</Link>
+                        <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Start Free Assessment →</Link>
                     </div>
                 </div>
             </div>

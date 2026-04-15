@@ -100,7 +100,7 @@ AUTHOR
             {/* Terminal content */}
             <div
                 ref={terminalRef}
-                className="bg-white/95 p-6 font-mono text-sm text-green-400 leading-relaxed max-h-[500px] overflow-y-auto whitespace-pre-wrap"
+                className="bg-white/95 p-6 font-mono text-sm text-zinc-900 font-medium leading-relaxed max-h-[500px] overflow-y-auto whitespace-pre-wrap"
                 style={{
                     textShadow: '0 0 5px rgba(0,255,0,0.3)',
                 }}

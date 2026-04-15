@@ -96,7 +96,7 @@ export const PublishedProfiles = () => {
                                         <span className="text-xs font-medium uppercase tracking-wider text-purple-400 border border-purple-500/30 px-2 py-0.5 rounded-full">Featured</span>
                                     )}
                                 </div>
-                                <p className="text-xs text-cyan-400 mb-2 font-mono uppercase tracking-wide">{profile.role}</p>
+                                <p className="text-xs text-zinc-900 font-bold mb-2 font-mono uppercase tracking-wide">{profile.role}</p>
                                 <p className="text-zinc-800 text-sm mb-2">{profile.description}</p>
                                 {profile.articleCount && (
                                     <p className="text-zinc-950 text-xs mt-1 font-mono">

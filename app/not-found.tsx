@@ -31,7 +31,7 @@ export default function NotFound() {
                                 <p className="text-[11px] text-zinc-900">Book a session</p>
                             </Link>
                         </div>
-                        <Link href="/" className="text-sm text-cyan-400 hover:underline">
+                        <Link href="/" className="text-sm text-zinc-900 font-medium hover:underline">
                             ← Back to Home
                         </Link>
                     </div>

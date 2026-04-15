@@ -57,7 +57,7 @@ export default function BriefingsPage() {
 
             <ScrollReveal>
                 <div className="mb-12">
-                    <div className="text-xs text-purple-400 uppercase tracking-wide mb-4 font-mono">
+                    <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">
                         Monthly Newsletter
                     </div>
                     <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6 font-grotesk">
@@ -73,7 +73,7 @@ export default function BriefingsPage() {
                         href="https://theproducteconomist.beehiiv.com/subscribe"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors shadow-lg shadow-purple-900/20"
+                        className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 transition-colors shadow-lg shadow-purple-900/20"
                     >
                         Subscribe on Beehiiv →
                     </a>
@@ -96,7 +96,7 @@ export default function BriefingsPage() {
                     <div className="card-featured p-8 md:p-10 border-purple-500/50 hover:border-purple-500/80 transition-all">
                         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                             <div>
-                                <div className="text-xs text-purple-400 uppercase mb-2 font-mono">Interactive Tool</div>
+                                <div className="text-xs text-zinc-900 font-bold uppercase mb-2 font-mono">Interactive Tool</div>
                                 <h3 className="text-2xl font-bold text-zinc-950 mb-2 font-grotesk">
                                     AI Unit Economics Benchmark™
                                 </h3>
@@ -106,7 +106,7 @@ export default function BriefingsPage() {
                             </div>
                             <Link
                                 href="/tools/aueb"
-                                className="px-6 py-3 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors whitespace-nowrap"
+                                className="px-6 py-3 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 transition-colors whitespace-nowrap"
                             >
                                 Launch Tool →
                             </Link>

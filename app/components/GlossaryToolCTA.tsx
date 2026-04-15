@@ -47,14 +47,14 @@ export default function GlossaryToolCTA({ slug, category, termTitle }: GlossaryT
             <div className="flex items-start gap-4">
                 <span className="text-3xl flex-shrink-0">{tool.emoji}</span>
                 <div className="flex-1">
-                    <p className="text-xs text-purple-400 font-mono uppercase tracking-wider mb-1">Free Tool</p>
+                    <p className="text-xs text-zinc-900 font-bold font-mono uppercase tracking-wider mb-1">Free Tool</p>
                     <h4 className="text-lg font-bold text-zinc-950 mb-1">{tool.cta}</h4>
                     <p className="text-zinc-900 text-sm mb-4">
                         Use the free {tool.name} diagnostic to put numbers behind your {termTitle.toLowerCase()} challenges.
                     </p>
                     <Link
                         href={tool.url}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-cyan-500 text-zinc-950 font-semibold text-sm font-bold rounded-lg hover:opacity-90 transition-opacity"
                     >
                         Try {tool.name} Free →
                     </Link>

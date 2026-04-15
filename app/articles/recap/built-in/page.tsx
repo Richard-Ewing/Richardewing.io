@@ -75,7 +75,7 @@ export default function BuiltInRecapPage() {
                                         <p className="text-zinc-900 mb-4">{article.description}</p>
                                         <div className="flex flex-wrap gap-2">
                                             {article.topics.map(topic => (
-                                                <span key={topic} className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-400 font-mono">{topic}</span>
+                                                <span key={topic} className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs text-zinc-900 font-bold font-mono">{topic}</span>
                                             ))}
                                         </div>
                                     </div>
@@ -89,16 +89,16 @@ export default function BuiltInRecapPage() {
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
                                 {['aper', 'engineering-productivity', 'maintenance-load', 'feature-velocity', 'cost-per-hire'].map(slug => (
-                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
+                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>
                         </div>
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Tools</h2>
                             <div className="space-y-2">
-                                <Link href="/tools/aper" className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ APER Calculator</Link>
-                                <Link href="/tools/ev-se" className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ EV-SE Calculator</Link>
-                                <Link href="/tools/audit-interview" className="block text-sm text-zinc-900 hover:text-cyan-400 transition-colors">→ Audit Interview</Link>
+                                <Link href="/tools/aper" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ APER Calculator</Link>
+                                <Link href="/tools/ev-se" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ EV-SE Calculator</Link>
+                                <Link href="/tools/audit-interview" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ Audit Interview</Link>
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@ export default function BuiltInRecapPage() {
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Work With Richard</h2>
                         <p className="text-zinc-950 mb-6">Scale your engineering organization with evidence-based economics. R&amp;D Capital Audits quantify engineering investment returns for boards and investors.</p>
-                        <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
+                        <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
                     </div>
                 </div>
             </div>

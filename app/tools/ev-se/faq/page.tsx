@@ -67,7 +67,7 @@ export default function EvSeFaqPage() {
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try the EV/SE Calculator</h2>
                         <p className="text-zinc-950 mb-6">Benchmark your engineering team valuation in under 5 minutes. No account required.</p>
-                        <Link href="/tools/ev-se" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold hover:opacity-90 transition-opacity">Launch EV/SE Calculator &rarr;</Link>
+                        <Link href="/tools/ev-se" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Launch EV/SE Calculator &rarr;</Link>
                     </div>
                 </div>
             </div>

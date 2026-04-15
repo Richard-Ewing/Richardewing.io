@@ -36,7 +36,7 @@ export default function ReportUnlocker() {
             <div className="animate-in fade-in zoom-in duration-500 p-6 rounded-xl bg-green-500/10 border border-green-500/30 flex flex-col items-center justify-center text-center space-y-3">
                 <CheckCircle2 className="w-12 h-12 text-green-400" />
                 <h4 className="text-xl font-bold text-zinc-900">Access Granted</h4>
-                <p className="text-sm text-green-200">
+                <p className="text-sm text-zinc-900 font-medium">
                     Securing your telemetry packet... Transferring to Command Center.
                 </p>
             </div>

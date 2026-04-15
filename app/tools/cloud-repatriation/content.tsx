@@ -179,7 +179,7 @@ export default function CloudContent() {
                     <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-400">
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-rose-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-rose-400 uppercase tracking-widest">The "Basecamp Index" Arbitrage</span>
+                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">The "Basecamp Index" Arbitrage</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -209,7 +209,7 @@ export default function CloudContent() {
                                         <div className="w-8 h-8 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold font-mono text-sm border border-rose-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">The AWS/GCP Bleed</h3>
-                                            <p className="text-sm text-zinc-900">What is your monthly run-rate?</p>
+                                            <p className="text-sm text-zinc-900 font-medium">What is your monthly run-rate?</p>
                                         </div>
                                     </div>
 
@@ -233,7 +233,7 @@ export default function CloudContent() {
                                         <div className="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold font-mono text-sm border border-orange-500/30">2</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Invoice Allocation</h3>
-                                            <p className="text-sm text-zinc-900">Different services carry different margins. Approximate the split.</p>
+                                            <p className="text-sm text-zinc-900 font-medium">Different services carry different margins. Approximate the split.</p>
                                         </div>
                                     </div>
 
@@ -296,7 +296,7 @@ export default function CloudContent() {
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">FinOps Arbitrage Model Complete</h2>
-                            <p className="text-sm text-zinc-800">Your repatriation economics clearly establish a mandate to exit the cloud.</p>
+                            <p className="text-sm text-zinc-900 font-medium">Your repatriation economics clearly establish a mandate to exit the cloud.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="cloud-pdf-export-zone" fileName={`Cloud_Repatriation_${persona}.pdf`} />
@@ -318,7 +318,7 @@ export default function CloudContent() {
                                                 <TrendingUpIcon /> {formatMoney(results.evCreation)} Enterprise Value Created
                                             </span>
                                         </div>
-                                        <p className="text-sm text-zinc-900 mt-4 leading-relaxed">
+                                        <p className="text-sm text-zinc-900 font-medium mt-4 leading-relaxed">
                                             By shifting your static $ {(results.awsTotal/1000).toFixed(0)}k/mo AWS baseline to a high-density bare metal server cluster, you shrink your infrastructure OpEx by roughly {((results.monthlySavings / results.awsTotal)*100).toFixed(0)}%.
                                         </p>
                                     </div>

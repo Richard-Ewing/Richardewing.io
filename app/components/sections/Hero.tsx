@@ -41,19 +41,19 @@ const Hero = () => {
                     <Link href="/advisory" className="card text-left hover:border-purple-300 group block">
                         <div className="text-2xl mb-3">📊</div>
                         <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-purple-600">Get an Audit</h3>
-                        <p className="text-sm text-zinc-900">Diagnose my R&D economics</p>
+                        <p className="text-sm text-zinc-900 font-medium">Diagnose my R&D economics</p>
                     </Link>
 
                     <Link href="/doctrine" className="card text-left hover:border-indigo-300 group block">
                         <div className="text-2xl mb-3">📖</div>
                         <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-indigo-600">Learn the Framework</h3>
-                        <p className="text-sm text-zinc-900">Read the doctrine</p>
+                        <p className="text-sm text-zinc-900 font-medium">Read the doctrine</p>
                     </Link>
 
                     <Link href="/exogram" className="card text-left hover:border-purple-300 group block">
                         <div className="text-2xl mb-3">🔧</div>
                         <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-purple-600">See What I Build</h3>
-                        <p className="text-sm text-zinc-900">Explore Exogram</p>
+                        <p className="text-sm text-zinc-900 font-medium">Explore Exogram</p>
                     </Link>
 
                 </div>

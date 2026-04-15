@@ -144,7 +144,7 @@ export default function PricingPage() {
                                 rel={tier.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                                 className={`block text-center py-3 px-6 rounded-lg font-semibold text-sm transition-all ${
                                     tier.highlight
-                                        ? 'bg-gradient-to-r from-cyan-500 to-cobalt text-white hover:opacity-90 shadow-lg'
+                                        ? 'bg-gradient-to-r from-cyan-500 to-cobalt text-zinc-950 font-semibold hover:opacity-90 shadow-lg'
                                         : 'bg-white/5 border border-zinc-400 text-zinc-950 hover:bg-white/10 hover:border-zinc-500'
                                 }`}
                             >
@@ -196,7 +196,7 @@ export default function PricingPage() {
                     <div className="card p-10 border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 max-w-2xl mx-auto">
                         <h2 className="text-2xl font-bold text-zinc-950 mb-4">Ready to quantify your engineering ROI?</h2>
                         <p className="text-zinc-800 mb-6">Book a free introductory call. No commitment — let&apos;s discuss your situation.</p>
-                        <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-white font-bold rounded-lg hover:opacity-90 transition-opacity shadow-lg">
+                        <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-zinc-950 font-semibold font-bold rounded-lg hover:opacity-90 transition-opacity shadow-lg">
                             Book Introductory Call →
                         </Link>
                     </div>

@@ -147,7 +147,7 @@ export default function PrincipalContent() {
                             </div>
                             <div>
                                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 mb-2">Richard Ewing</h1>
-                                <div className="font-mono text-sm text-cyan-400 uppercase tracking-widest mb-4">Product Economist</div>
+                                <div className="font-mono text-sm text-zinc-900 font-medium uppercase tracking-widest mb-4">Product Economist</div>
                                 <p className="text-zinc-950 leading-relaxed text-base sm:text-lg">
                                     Founder of <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition">Exogram</a> and the executive who <span className="text-zinc-950 font-bold">turns bleeding product organizations into profit engines</span>.
                                     I do not manage backlogs. I manage P&Ls. I do not ship features. I ship ROI.
@@ -189,7 +189,7 @@ export default function PrincipalContent() {
             {/* Published In / Authority Badges */}
             <ScrollReveal delay={25}>
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8">
-                    <div className="font-mono text-xs text-zinc-800 uppercase tracking-widest mb-4 text-center">Published In & Featured By</div>
+                    <div className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-4 text-center">Published In & Featured By</div>
                     <div className="flex flex-wrap justify-center gap-4">
                         {[
                             { name: 'Built In', note: "Editor's Pick", href: 'https://builtin.com/authors/richard-ewing', color: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/5' },
@@ -217,7 +217,7 @@ export default function PrincipalContent() {
             {/* The Thesis */}
             <ScrollReveal delay={50}>
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-cyan-500">
-                    <div className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-3">The Thesis</div>
+                    <div className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-3">The Thesis</div>
                     <p className="text-2xl sm:text-3xl text-zinc-950 font-bold leading-tight mb-4">
                         "Innovation without Operation<br />is Hallucination."
                     </p>
@@ -290,7 +290,7 @@ export default function PrincipalContent() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="p-5 border border-zinc-400 rounded-xl hover:border-cyan-500/30 transition group">
-                            <div className="font-mono text-xs text-cyan-400 uppercase mb-2">Framework 01</div>
+                            <div className="font-mono text-xs text-zinc-900 font-bold uppercase mb-2">Framework 01</div>
                             <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-cyan-400 transition">APER™ Diagnostic</h3>
                             <p className="text-zinc-950 text-sm">Actionable Product Economic Review. Forensic audit of engineering throughput vs. revenue impact.</p>
                         </div>
@@ -300,7 +300,7 @@ export default function PrincipalContent() {
                             <p className="text-zinc-950 text-sm">Qualitative-Profitability Efficiency Protocol. Surgery for unit-economic insolvency.</p>
                         </div>
                         <div className="p-5 border border-zinc-400 rounded-xl hover:border-red-500/30 transition group">
-                            <div className="font-mono text-xs text-red-400 uppercase mb-2">Framework 03</div>
+                            <div className="font-mono text-xs text-zinc-900 font-bold uppercase mb-2">Framework 03</div>
                             <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-red-400 transition">Product Debt Index™</h3>
                             <p className="text-zinc-950 text-sm">AI-powered forensic engine to quantify capital leakage in your backlog.</p>
                         </div>

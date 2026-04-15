@@ -369,7 +369,7 @@ export default function PDITool() {
                         {/* Status Badge */}
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-red-400 uppercase tracking-widest">PDI 2.0 | AI Forensic Engine</span>
+                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">PDI 2.0 | AI Forensic Engine</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -410,7 +410,7 @@ export default function PDITool() {
                                         <div className="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold font-mono text-sm border border-cyan-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Organizational Scale</h3>
-                                            <p className="text-sm text-zinc-900">Define the size and cost of your engineering machine.</p>
+                                            <p className="text-sm text-zinc-900 font-medium">Define the size and cost of your engineering machine.</p>
                                         </div>
                                     </div>
 
@@ -468,7 +468,7 @@ export default function PDITool() {
                                         <div className="w-8 h-8 rounded-full bg-violet-500/20 text-violet-400 flex items-center justify-center font-bold font-mono text-sm border border-violet-500/30">2</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">R&D Cadence</h3>
-                                            <p className="text-sm text-zinc-900">How you plan and measure velocity.</p>
+                                            <p className="text-sm text-zinc-900 font-medium">How you plan and measure velocity.</p>
                                         </div>
                                     </div>
 
@@ -510,7 +510,7 @@ export default function PDITool() {
                                         <div className="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold font-mono text-sm border border-red-500/30">3</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Backlog Evidence</h3>
-                                            <p className="text-sm text-zinc-900">Paste your recent Jira tickets, PRs, or tasks.</p>
+                                            <p className="text-sm text-zinc-900 font-medium">Paste your recent Jira tickets, PRs, or tasks.</p>
                                         </div>
                                     </div>
 
@@ -528,7 +528,7 @@ Add enterprise SSO tier
 Optimize dashboard database query
 Migrate from Heroku to AWS"
                                         />
-                                        <p className="text-xs text-zinc-800 mt-2 font-mono">Our LLM classifier will categorize these into Growth, Retention, or Maintenance to calculate your capital leakage.</p>
+                                        <p className="text-xs text-zinc-900 font-bold mt-2 font-mono">Our LLM classifier will categorize these into Growth, Retention, or Maintenance to calculate your capital leakage.</p>
                                     </div>
 
                                     <div className="flex gap-4">
@@ -576,7 +576,7 @@ Migrate from Heroku to AWS"
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">PDI Diagnostic Complete</h2>
-                            <p className="text-sm text-zinc-800">Export this assessment to a verified Executive PDF for board review.</p>
+                            <p className="text-sm text-zinc-900 font-medium">Export this assessment to a verified Executive PDF for board review.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="pdi-pdf-export-zone" fileName={`PDI_Diagnostic_${persona}.pdf`} />
@@ -635,19 +635,19 @@ Migrate from Heroku to AWS"
                             <GlowCard className="p-6" glowColor="danger">
                                 <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Annual Waste</div>
                                 <div className="text-3xl sm:text-4xl font-bold text-red-500">${(results.financials.waste / 1000000).toFixed(2)}M</div>
-                                <p className="text-xs text-red-400/60 mt-2">Capital deployed to zero-ROI tasks.</p>
+                                <p className="text-xs text-zinc-900 font-bold/60 mt-2">Capital deployed to zero-ROI tasks.</p>
                             </GlowCard>
 
                             <GlowCard className="p-6" glowColor="cyan">
                                 <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Growth Focus</div>
                                 <div className="text-3xl sm:text-4xl font-bold text-cyan-400">{results.metrics.growth}%</div>
-                                <p className="text-xs text-cyan-400/60 mt-2">New feature development.</p>
+                                <p className="text-xs text-zinc-900 font-bold/60 mt-2">New feature development.</p>
                             </GlowCard>
 
                             <GlowCard className="p-6" glowColor="cyan">
                                 <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Retention Work</div>
                                 <div className="text-3xl sm:text-4xl font-bold text-purple-400">{results.metrics.retention}%</div>
-                                <p className="text-xs text-purple-400/60 mt-2">Customer satisfaction & churn prevention.</p>
+                                <p className="text-xs text-zinc-900 font-bold/60 mt-2">Customer satisfaction & churn prevention.</p>
                             </GlowCard>
                         </div>
                     </ScrollReveal>
@@ -691,13 +691,13 @@ Migrate from Heroku to AWS"
                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
                                     <div className="text-sm font-medium text-zinc-950 mb-2">Annual Maintenance Burden</div>
                                     <div className="text-3xl font-bold text-red-500">{formatMoney(results.financials.waste)}</div>
-                                    <div className="text-xs text-red-400/60 mt-2 mt-auto">Cost of servicing status-quo tech debt (Interest).</div>
+                                    <div className="text-xs text-zinc-900 font-bold/60 mt-2 mt-auto">Cost of servicing status-quo tech debt (Interest).</div>
                                 </div>
                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
                                     <div className="text-sm font-medium text-zinc-950 mb-2">Generative AI Rewrite Protocol</div>
                                     <div className="text-3xl font-bold text-cyan-400">{formatMoney(results.financials.rewriteCost)}</div>
-                                    <div className="text-xs text-cyan-400/60 mt-2 mt-auto">Cost to burn down and rebuild via Agentic orchestration (Principal).</div>
+                                    <div className="text-xs text-zinc-900 font-bold/60 mt-2 mt-auto">Cost to burn down and rebuild via Agentic orchestration (Principal).</div>
                                 </div>
                             </div>
                             
@@ -734,14 +734,14 @@ Migrate from Heroku to AWS"
                                     ]} />
                                 </div>
                                 <div className="flex justify-center gap-6 mt-6">
-                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-cyan-400" /><span className="text-xs text-zinc-800">Growth</span></div>
-                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-purple-500" /><span className="text-xs text-zinc-800">Retention</span></div>
-                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-red-600" /><span className="text-xs text-zinc-800">Maintenance</span></div>
+                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-cyan-400" /><span className="text-xs text-zinc-900 font-bold">Growth</span></div>
+                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-purple-500" /><span className="text-xs text-zinc-900 font-bold">Retention</span></div>
+                                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded bg-red-600" /><span className="text-xs text-zinc-900 font-bold">Maintenance</span></div>
                                 </div>
                             </GlowCard>
 
                             {/* EXECUTIVE SUMMARY + EMAIL */}
-                            <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400">
+                            <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400">
                                 <div className="flex items-center gap-2 mb-4">
                                     <div className={`w-3 h-3 rounded-full animate-pulse ${results.score < 50 ? 'bg-red-500' : 'bg-cyan-400'}`} />
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">Executive Summary</span>
@@ -792,7 +792,7 @@ Migrate from Heroku to AWS"
                                                 {item.category}
                                             </span>
                                             <div className="flex-1">
-                                                <p className="text-sm text-zinc-900">{item.ticket}</p>
+                                                <p className="text-sm text-zinc-900 font-medium">{item.ticket}</p>
                                                 <p className="text-sm font-medium text-zinc-950 mt-1">{item.reasoning}</p>
                                             </div>
                                         </div>
@@ -811,7 +811,7 @@ Migrate from Heroku to AWS"
                             </h3>
                             <div className="bg-zinc-50 border border-zinc-400 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 via-orange-500 to-cyan-500"></div>
-                                <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">Execution Gantt Chart (90-Day Burn Down)</h4>
+                                <h4 className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">Execution Gantt Chart (90-Day Burn Down)</h4>
                                 
                                 <div className="space-y-6 md:space-y-8">
                                     {results.qpep_roadmap.map((plan, i) => (
@@ -944,7 +944,7 @@ Migrate from Heroku to AWS"
                     {/* Social Proof */}
                     <ScrollReveal delay={300}>
                         <div className="text-center pt-8 pb-4">
-                            <p className="text-xs text-zinc-800 mb-3">Trusted by product leaders at</p>
+                            <p className="text-xs text-zinc-900 font-bold mb-3">Trusted by product leaders at</p>
                             <div className="flex items-center justify-center gap-8 text-zinc-800 font-mono text-xs">
                                 <span>Stripe</span>
                                 <span>Figma</span>

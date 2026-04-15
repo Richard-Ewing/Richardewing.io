@@ -130,7 +130,7 @@ export default function SLMTool() {
                     <div className="capsule-container rounded-2xl sm:rounded-[2rem] p-6 sm:p-10 mb-8 border border-zinc-400">
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs text-emerald-400 uppercase tracking-widest">AI Unit Economics | Build vs Buy</span>
+                            <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">AI Unit Economics | Build vs Buy</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
@@ -160,7 +160,7 @@ export default function SLMTool() {
                                         <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold font-mono text-sm border border-blue-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Inference Volume</h3>
-                                            <p className="text-sm text-zinc-900">How heavy is your generative payload?</p>
+                                            <p className="text-sm text-zinc-900 font-medium">How heavy is your generative payload?</p>
                                         </div>
                                     </div>
 
@@ -200,7 +200,7 @@ export default function SLMTool() {
                                         <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono text-sm border border-emerald-500/30">2</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Vendor & Target Hardware</h3>
-                                            <p className="text-sm text-zinc-900">Choose your API dependency and local hardware alternative.</p>
+                                            <p className="text-sm text-zinc-900 font-medium">Choose your API dependency and local hardware alternative.</p>
                                         </div>
                                     </div>
 
@@ -249,7 +249,7 @@ export default function SLMTool() {
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Inference Arbitrage Results Signed</h2>
-                            <p className="text-sm text-zinc-800">Your AI unit economics have been quantified.</p>
+                            <p className="text-sm text-zinc-900 font-medium">Your AI unit economics have been quantified.</p>
                         </div>
                         <div className="mt-4 sm:mt-0">
                             <ExportToPDFButton targetId="slm-pdf-export-zone" fileName={`SLM_Arbitrage_${persona}.pdf`} />
@@ -278,13 +278,13 @@ export default function SLMTool() {
                                                 <>
                                                     <div className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-1">Projected Annual Savings</div>
                                                     <div className="text-5xl font-bold text-emerald-400 font-mono mb-2">+{formatMoney(results.annualSavings)}</div>
-                                                    <p className="text-xs text-zinc-800">By migrating to {results.hardwareName}, you break even on hardware and maintenance in <strong className="text-zinc-900">{results.breakevenDays} days</strong> of operation.</p>
+                                                    <p className="text-xs text-zinc-900 font-bold">By migrating to {results.hardwareName}, you break even on hardware and maintenance in <strong className="text-zinc-900">{results.breakevenDays} days</strong> of operation.</p>
                                                 </>
                                             ) : (
                                                 <>
                                                     <div className="text-xs font-mono text-red-500 uppercase tracking-widest mb-1">Local Hosting Premium</div>
                                                     <div className="text-5xl font-bold text-red-400 font-mono mb-2">-{formatMoney(Math.abs(results.annualSavings))}</div>
-                                                    <p className="text-xs text-zinc-800">You do not have the token volume to justify {results.hardwareName} and a local MLOps team overhead.</p>
+                                                    <p className="text-xs text-zinc-900 font-bold">You do not have the token volume to justify {results.hardwareName} and a local MLOps team overhead.</p>
                                                 </>
                                             )}
                                         </div>
@@ -316,7 +316,7 @@ export default function SLMTool() {
                         </ScrollReveal>
 
                         <ScrollReveal delay={150}>
-                             <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400 mb-8">
+                             <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <Zap size={16} className="text-yellow-400" />
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">The "Why" For Private AI</span>

@@ -40,7 +40,7 @@ const Navigation = () => {
                             </div>
                             <div>
                                 <div className="font-semibold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors">Richard Ewing</div>
-                                <div className="text-xs text-zinc-900">Product Economist</div>
+                                <div className="text-xs text-zinc-900 font-bold">Product Economist</div>
                             </div>
                         </Link>
 
@@ -90,7 +90,7 @@ const Navigation = () => {
                                 <div className="mt-2 p-2 relative z-10 w-full bg-zinc-50 pb-3">
                                     <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-zinc-400 hover:border-zinc-500 bg-white hover:bg-zinc-50 rounded-lg py-2.5 mx-3 transition-colors">
                                         <span className="text-xs font-semibold text-zinc-950">Explore All Diagnostics</span>
-                                        <span className="text-xs text-zinc-900">→</span>
+                                        <span className="text-xs text-zinc-900 font-bold">→</span>
                                     </Link>
                                 </div>
                             </Dropdown>
@@ -109,7 +109,7 @@ const Navigation = () => {
                             {/* Primary CTA */}
                             <Link
                                 href="/advisory"
-                                className="bg-[var(--accent-crimson)] px-5 py-2.5 rounded-lg font-semibold text-white hover:bg-opacity-90 transition-all shadow-[0_0_15px_rgba(255,68,68,0.3)] hover:shadow-[0_0_25px_rgba(255,68,68,0.5)] transform hover:-translate-y-0.5"
+                                className="bg-[var(--accent-crimson)] px-5 py-2.5 rounded-lg font-semibold text-zinc-950 font-semibold hover:bg-opacity-90 transition-all shadow-[0_0_15px_rgba(255,68,68,0.3)] hover:shadow-[0_0_25px_rgba(255,68,68,0.5)] transform hover:-translate-y-0.5"
                             >
                                 Book Audit →
                             </Link>
@@ -195,7 +195,7 @@ const DropdownItem = ({ href, children, description }: { href: string, children:
     return (
         <Link
             href={href}
-            className="block px-4 py-3 text-sm text-zinc-900 hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
+            className="block px-4 py-3 text-sm text-zinc-900 font-medium hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
         >
             <span className="block">{children}</span>
             {description && <span className="block text-xs font-medium text-zinc-900 mt-0.5">{description}</span>}
@@ -228,7 +228,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                     <Link
                         href="/doctrine"
                         onClick={onClose}
-                        className="block w-full bg-gradient-to-r from-emerald-600 to-cyan-600 text-white text-center font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity"
+                        className="block w-full bg-gradient-to-r from-emerald-600 to-cyan-600 text-zinc-950 font-semibold text-center font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity"
                     >
                         ✦ START HERE
                     </Link>
@@ -292,7 +292,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                     <Link
                         href="/advisory"
                         onClick={onClose}
-                        className="block w-full bg-[var(--accent-crimson)] text-white text-center font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity mb-4"
+                        className="block w-full bg-[var(--accent-crimson)] text-zinc-950 font-semibold text-center font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity mb-4"
                     >
                         BOOK AN AUDIT
                     </Link>
@@ -354,7 +354,7 @@ const UserDropdown = () => {
 
     return (
         <Dropdown label={
-            <div className="w-8 h-8 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold text-sm border border-violet-400/50 hover:border-violet-400 transition-colors shadow-[0_0_10px_rgba(139,92,246,0.3)]">
+            <div className="w-8 h-8 rounded-full bg-violet-600 text-zinc-950 font-semibold flex items-center justify-center font-bold text-sm border border-violet-400/50 hover:border-violet-400 transition-colors shadow-[0_0_10px_rgba(139,92,246,0.3)]">
                 {initials}
             </div>
         }>
@@ -366,7 +366,7 @@ const UserDropdown = () => {
             <DropdownItem href="/system" description="All enterprise tools">Tools Library</DropdownItem>
             <button 
                 onClick={() => signOut()} 
-                className="w-full text-left block px-4 py-3 text-sm text-red-500 hover:text-red-600 hover:bg-zinc-50 transition-colors mt-2 border-t border-zinc-400"
+                className="w-full text-left block px-4 py-3 text-sm text-zinc-900 font-medium hover:text-red-600 hover:bg-zinc-50 transition-colors mt-2 border-t border-zinc-400"
             >
                 Sign Out
             </button>

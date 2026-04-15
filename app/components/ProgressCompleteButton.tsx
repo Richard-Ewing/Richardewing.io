@@ -90,7 +90,7 @@ export default function ProgressCompleteButton({ moduleId, nextHref }: { moduleI
             ) : (
                 <button
                     onClick={handleComplete}
-                    className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-bold hover:opacity-90 transition-all overflow-hidden"
+                    className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-all overflow-hidden"
                 >
                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
                     <span className="relative z-10 flex items-center gap-2">

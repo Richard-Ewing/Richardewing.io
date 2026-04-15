@@ -87,7 +87,7 @@ export default function WorkshopsPage() {
         <main className="pt-20">
             <div className="page-container">
                 <section className="section-lg text-center">
-                    <div className="text-xs text-rose-400 uppercase tracking-wide mb-4 font-mono">Speaking & Training</div>
+                    <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Speaking & Training</div>
                     <h1 className="text-4xl md:text-6xl font-bold text-zinc-950 mb-6 font-grotesk">
                         Workshops &<br />
                         <span className="bg-gradient-to-r from-rose-400 to-purple-400 bg-clip-text text-transparent">Speaking.</span>
@@ -111,7 +111,7 @@ export default function WorkshopsPage() {
                             <div key={i} className="card p-6 md:p-8 hover:border-rose-500/30 transition-colors">
                                 <div className="flex items-start justify-between gap-4 mb-4">
                                     <h3 className="text-xl font-bold text-zinc-900">{k.title}</h3>
-                                    <span className="text-xs text-zinc-800 font-mono whitespace-nowrap flex items-center gap-1">
+                                    <span className="text-xs text-zinc-900 font-bold font-mono whitespace-nowrap flex items-center gap-1">
                                         <Clock className="w-3 h-3" /> {k.duration}
                                     </span>
                                 </div>
@@ -145,11 +145,11 @@ export default function WorkshopsPage() {
                                 <p className="text-zinc-900 text-sm mb-4 flex-1">{w.desc}</p>
                                 <div className="flex items-center justify-between pt-4 border-t border-zinc-400 mb-4">
                                     <span className="text-xl font-bold text-zinc-900">{w.price}</span>
-                                    <span className="text-xs text-zinc-900">+ travel</span>
+                                    <span className="text-xs text-zinc-900 font-bold">+ travel</span>
                                 </div>
                                 <a
                                     href={`/api/buy/${w.productId}`}
-                                    className="block text-center py-3 rounded-lg bg-gradient-to-r from-rose-500 to-purple-500 text-white font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-opacity"
+                                    className="block text-center py-3 rounded-lg bg-gradient-to-r from-rose-500 to-purple-500 text-zinc-950 font-semibold font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-opacity"
                                 >
                                     Book Workshop →
                                 </a>
@@ -169,7 +169,7 @@ export default function WorkshopsPage() {
                         <div className="flex flex-col sm:flex-row gap-3 justify-center">
                             <a
                                 href="/api/buy/keynote_speaking"
-                                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-rose-500 hover:bg-rose-400 text-white font-bold uppercase tracking-widest text-sm rounded-xl transition-all"
+                                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-rose-500 hover:bg-rose-400 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm rounded-xl transition-all"
                             >
                                 Book Keynote — $5,000 <ArrowRight className="w-4 h-4" />
                             </a>

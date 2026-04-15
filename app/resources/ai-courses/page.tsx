@@ -224,7 +224,7 @@ export default function AiCoursesPage() {
                     ].map((stat) => (
                         <div key={stat.label} className="text-center p-4 rounded-xl bg-white/5 border border-zinc-400">
                             <div className="text-2xl font-bold text-zinc-950 font-mono">{stat.value}</div>
-                            <div className="text-xs text-zinc-800 uppercase tracking-widest mt-1">{stat.label}</div>
+                            <div className="text-xs text-zinc-900 font-bold uppercase tracking-widest mt-1">{stat.label}</div>
                         </div>
                     ))}
                 </section>
@@ -254,7 +254,7 @@ export default function AiCoursesPage() {
                                 <span className="text-3xl">{track.icon}</span>
                                 <div>
                                     <h2 className="text-2xl font-bold text-zinc-950 font-grotesk">{track.label}</h2>
-                                    <p className="text-sm text-zinc-800">{track.description}</p>
+                                    <p className="text-sm text-zinc-900 font-medium">{track.description}</p>
                                 </div>
                                 <span className="ml-auto text-xs font-mono text-zinc-950">{track.courses.length} resources</span>
                             </div>
@@ -279,7 +279,7 @@ export default function AiCoursesPage() {
                                             <div className="flex items-center gap-2 mb-3">
                                                 <span className="text-xs font-medium font-mono text-zinc-800 px-2 py-0.5 rounded-full border border-zinc-400 bg-zinc-50">{course.provider}</span>
                                             </div>
-                                            <p className="text-sm text-zinc-900 mb-4 leading-relaxed">{course.description}</p>
+                                            <p className="text-sm text-zinc-900 font-medium mb-4 leading-relaxed">{course.description}</p>
                                             <div className={`text-xs ${track.textColor} font-mono leading-relaxed border-t border-zinc-400 pt-3`}>
                                                 <span className="font-bold uppercase tracking-widest">Richard&apos;s Take:</span>{' '}
                                                 <span className="text-zinc-800">{course.editorial}</span>
@@ -298,7 +298,7 @@ export default function AiCoursesPage() {
                         <span className="text-3xl">📖</span>
                         <div>
                             <h2 className="text-2xl font-bold text-zinc-950 font-grotesk">Recommended Reading</h2>
-                            <p className="text-sm text-zinc-800">Books that shaped my thinking on AI economics and strategy.</p>
+                            <p className="text-sm text-zinc-900 font-medium">Books that shaped my thinking on AI economics and strategy.</p>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -307,7 +307,7 @@ export default function AiCoursesPage() {
                                 className="group block p-6 rounded-xl bg-white/[0.03] border border-zinc-400 hover:border-zinc-500 hover:bg-white/[0.06] transition-all">
                                 <h3 className="text-base font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors font-grotesk mb-1">{book.title}</h3>
                                 <p className="text-xs text-zinc-950 mb-3">{book.author}</p>
-                                <p className="text-sm text-zinc-900 leading-relaxed">{book.description}</p>
+                                <p className="text-sm text-zinc-900 font-medium leading-relaxed">{book.description}</p>
                             </a>
                         ))}
                     </div>
@@ -319,7 +319,7 @@ export default function AiCoursesPage() {
                         <span className="text-3xl">🔧</span>
                         <div>
                             <h2 className="text-2xl font-bold text-zinc-950 font-grotesk">AI Cost & Monitoring Tools</h2>
-                            <p className="text-sm text-zinc-800">Open-source tools for managing AI costs, monitoring usage, and optimizing performance.</p>
+                            <p className="text-sm text-zinc-900 font-medium">Open-source tools for managing AI costs, monitoring usage, and optimizing performance.</p>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -340,14 +340,14 @@ export default function AiCoursesPage() {
                 {/* Newsletter Capture */}
                 <section className="mt-16 max-w-2xl mx-auto">
                     <div className="card p-8 text-center border-purple-500/30 bg-purple-900/10">
-                        <div className="text-xs text-purple-400 uppercase tracking-wide mb-4 font-mono">AI Course Companion</div>
+                        <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">AI Course Companion</div>
                         <h3 className="text-2xl font-bold text-zinc-950 mb-4 font-grotesk">Get Richard&apos;s AI Course Notes</h3>
                         <p className="text-zinc-900 mb-6 max-w-md mx-auto">
                             Which sections to skip. What to focus on. How each course maps to real capital decisions.
                             <br /><span className="text-zinc-900">One email. No spam.</span>
                         </p>
                         <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
-                            className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-500 mb-4 transition-colors font-grotesk">
+                            className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold font-semibold hover:bg-purple-500 mb-4 transition-colors font-grotesk">
                             Subscribe for Course Notes →
                         </a>
                         <p className="text-zinc-950 text-sm">Join 2,000+ executives. Monthly briefings + course companion notes.</p>
@@ -365,7 +365,7 @@ export default function AiCoursesPage() {
                             Knowing how to build with AI is necessary. Knowing whether you <em>should</em> build — and at what cost — is what separates winners from margin casualties.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="/api/buy/practitioner_certification" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
+                            <a href="/api/buy/practitioner_certification" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-zinc-950 font-semibold font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
                                 Unlock AI Practitioner Pass ($249) →
                             </a>
                             <Link href="/tools/aueb" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">

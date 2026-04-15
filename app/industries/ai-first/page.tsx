@@ -52,7 +52,7 @@ export default function AIFirstPage() {
                             <li className="flex items-start gap-3"><span className="text-orange-400 mt-1">→</span> <span>Audit model dependency risk and create multi-provider strategies</span></li>
                         </ul>
                         <div className="flex flex-wrap gap-4">
-                            <Link href="/tools/aueb" className="px-6 py-3 rounded-lg bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold hover:opacity-90">Free AUEB Calculator →</Link>
+                            <Link href="/tools/aueb" className="px-6 py-3 rounded-lg bg-gradient-to-r from-orange-500 to-red-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free AUEB Calculator →</Link>
                             <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     </div>

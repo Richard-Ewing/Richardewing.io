@@ -341,7 +341,7 @@ export default function DueDiligenceTool() {
                             </div>
 
                             <div className="space-y-3">
-                                <a href="/api/buy/pe_intelligence_tier" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold uppercase tracking-widest text-xs rounded-xl transition-all shadow-lg">
+                                <a href="/api/buy/pe_intelligence_tier" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-xs rounded-xl transition-all shadow-lg">
                                     Upgrade to PE Tier
                                 </a>
                                 <button 
@@ -473,7 +473,7 @@ export default function DueDiligenceTool() {
                                         
                                         <div className="flex flex-col sm:flex-row gap-4 mt-8">
                                             <button onClick={() => setStep(1)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 rounded-xl transition-all">← Back</button>
-                                            <button onClick={() => calculate()} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2">
+                                            <button onClick={() => calculate()} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2">
                                                 {loading ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Analyzing Target...</> : 'Generate Threat Matrix →'}
                                             </button>
                                         </div>
@@ -490,7 +490,7 @@ export default function DueDiligenceTool() {
                                 <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-red-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                                     <div>
                                         <h2 className="text-xl font-bold text-zinc-950 mb-1">M&A Acquisition Diagnostic Complete</h2>
-                                        <p className="text-sm text-zinc-800">Export this assessment to a verified Executive PDF for board review.</p>
+                                        <p className="text-sm text-zinc-900 font-medium">Export this assessment to a verified Executive PDF for board review.</p>
                                     </div>
                                     <div className="mt-4 sm:mt-0">
                                         <button 
@@ -590,7 +590,7 @@ export default function DueDiligenceTool() {
                                                             <style>{`#tv-progress-${tv.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i} { width: ${tv.severity}%; }`}</style>
                                                             <div id={`tv-progress-${tv.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i}`} className={`h-full ${tv.color}`} />
                                                         </div>
-                                                        <div className="text-xs text-zinc-800">{tv.details}</div>
+                                                        <div className="text-xs text-zinc-900 font-bold">{tv.details}</div>
                                                     </div>
                                                 </div>
                                             ))}
@@ -607,7 +607,7 @@ export default function DueDiligenceTool() {
                                 >
                                     <div className="bg-zinc-50 border border-zinc-400 rounded-2xl p-6 md:p-8 mt-8 relative overflow-hidden">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 via-orange-500 to-cyan-500"></div>
-                                        <h4 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">Post-Acquisition Integration Gantt Chart</h4>
+                                        <h4 className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">Post-Acquisition Integration Gantt Chart</h4>
                                         
                                         <div className="space-y-6 md:space-y-8">
                                             {results.qpepRoadmap.map((plan: any, i: number) => (

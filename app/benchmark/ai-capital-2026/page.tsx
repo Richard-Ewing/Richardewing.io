@@ -63,19 +63,19 @@ export default function AICapitalBenchmark() {
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><Zap size={64}/></div>
                             <p className="text-sm text-zinc-950 font-mono mb-2 uppercase">Avg API OpEx / Mo</p>
                             <p className="text-4xl font-bold text-zinc-900">$41,500</p>
-                            <p className="text-xs text-rose-400 mt-2 flex items-center gap-1"><TrendingDown size={12}/> +14% QoQ Growth</p>
+                            <p className="text-xs text-zinc-900 font-bold mt-2 flex items-center gap-1"><TrendingDown size={12}/> +14% QoQ Growth</p>
                         </div>
                         <div className="p-6 bg-white border border-zinc-400 rounded-xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><Scale size={64}/></div>
                             <p className="text-sm text-zinc-950 font-mono mb-2 uppercase">The Crossover Point</p>
                             <p className="text-4xl font-bold text-zinc-900">4.2M</p>
-                            <p className="text-xs text-cyan-400 mt-2">Tokens/Day triggering SLM CapEx advantage.</p>
+                            <p className="text-xs text-zinc-900 font-bold mt-2">Tokens/Day triggering SLM CapEx advantage.</p>
                         </div>
                         <div className="p-6 bg-white border border-zinc-400 rounded-xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><BarChart3 size={64}/></div>
                             <p className="text-sm text-zinc-950 font-mono mb-2 uppercase">Acquisition Penalty</p>
                             <p className="text-4xl font-bold text-zinc-900">-2.4x</p>
-                            <p className="text-xs text-rose-400 mt-2 flex items-center gap-1">EBITDA multiple compression if wrapper-only.</p>
+                            <p className="text-xs text-zinc-900 font-bold mt-2 flex items-center gap-1">EBITDA multiple compression if wrapper-only.</p>
                         </div>
                     </div>
 

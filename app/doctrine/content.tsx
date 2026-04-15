@@ -125,7 +125,7 @@ export default function DoctrineContent() {
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-cobalt transition">Built In</div>
-                                <p className="text-xs text-zinc-900 leading-relaxed">
+                                <p className="text-xs text-zinc-900 font-bold leading-relaxed">
                                     Monthly columnist. Jan 2026 article featured in <span className="text-zinc-900">Editor's Newsletter</span>.
                                 </p>
                             </GlowCard>
@@ -138,7 +138,7 @@ export default function DoctrineContent() {
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-cyan-400 transition">Mind the Product</div>
-                                <p className="text-xs text-zinc-900 leading-relaxed">
+                                <p className="text-xs text-zinc-900 font-bold leading-relaxed">
                                     Feb 2026 article. Newsletter feature.
                                 </p>
                             </GlowCard>
@@ -151,7 +151,7 @@ export default function DoctrineContent() {
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-gold transition">Foundry (CIO.com)</div>
-                                <p className="text-xs text-zinc-900 leading-relaxed">
+                                <p className="text-xs text-zinc-900 font-bold leading-relaxed">
                                     Monthly columnist for enterprise technology network.
                                 </p>
                             </GlowCard>
@@ -164,7 +164,7 @@ export default function DoctrineContent() {
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-emerald-400 transition">HackerNoon</div>
-                                <p className="text-xs text-zinc-900 leading-relaxed">
+                                <p className="text-xs text-zinc-900 font-bold leading-relaxed">
                                     4M+ monthly readers.
                                 </p>
                             </GlowCard>
@@ -176,13 +176,13 @@ export default function DoctrineContent() {
                         <div className="p-5 border border-zinc-400 rounded-xl bg-cobalt/5 hover:border-cobalt/30 transition">
                             <div className="text-xs font-medium font-mono text-cobalt uppercase tracking-widest mb-2">Innovation Award</div>
                             <div className="text-lg font-bold text-zinc-950 mb-1">Digital Transformation Excellence</div>
-                            <p className="text-xs text-zinc-900">7.7M user migration. Zero downtime.</p>
+                            <p className="text-xs text-zinc-900 font-bold">7.7M user migration. Zero downtime.</p>
                         </div>
 
                         <div className="p-5 border border-zinc-400 rounded-xl bg-emerald-500/5 hover:border-emerald-500/30 transition">
                             <div className="text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest mb-2">Governor's Award</div>
                             <div className="text-lg font-bold text-zinc-950 mb-1">The Extra Mile Award</div>
-                            <p className="text-xs text-zinc-900">Washington State. Gov. Jay Inslee.</p>
+                            <p className="text-xs text-zinc-900 font-bold">Washington State. Gov. Jay Inslee.</p>
                         </div>
                     </div>
                 </div>

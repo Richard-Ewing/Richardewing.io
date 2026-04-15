@@ -93,7 +93,7 @@ export default function MethodologyPage() {
                                     </div>
                                     <div>
                                         <h3 className="text-sm font-mono text-emerald-500 uppercase tracking-widest mb-2">Deliverable</h3>
-                                        <p className="text-sm text-zinc-800">{p.output}</p>
+                                        <p className="text-sm text-zinc-900 font-medium">{p.output}</p>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@ export default function MethodologyPage() {
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Start Your Audit</h2>
                         <p className="text-zinc-900 mb-8 max-w-xl mx-auto">Board-ready results in 4 weeks. Dollar-denominated. Actionable. No 50-page technical reports that nobody reads.</p>
-                        <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-lg font-bold hover:opacity-90 transition-opacity">Book R&D Capital Audit →</Link>
+                        <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Book R&D Capital Audit →</Link>
                     </div>
                 </div>
             </div>

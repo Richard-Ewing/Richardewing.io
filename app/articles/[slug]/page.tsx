@@ -112,7 +112,7 @@ export default async function ArticlePage({ params }: Props) {
                         {article.legacyUrl && (
                             <a
                                 href={article.legacyUrl}
-                                className="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold uppercase tracking-widest text-xs rounded-lg transition-colors"
+                                className="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-xs rounded-lg transition-colors"
                             >
                                 Read Archival Copy
                             </a>

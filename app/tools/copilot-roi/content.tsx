@@ -269,7 +269,7 @@ export default function CopilotROITool() {
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                                 
                                 <h3 className="text-zinc-950 font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-400 pb-4">
-                                    <AlertTriangle className="w-5 h-5 text-fuchsia-400" />
+                                    <AlertTriangle className="w-5 h-5 text-zinc-950 font-semibolduchsia-400" />
                                     Execution Drag
                                 </h3>
 
@@ -299,8 +299,8 @@ export default function CopilotROITool() {
                             </div>
                             
                             <div className="p-5 rounded-2xl bg-fuchsia-500/5 items-start flex gap-3 border border-fuchsia-500/20">
-                                <Code className="w-5 h-5 text-fuchsia-400 mt-1 flex-shrink-0" />
-                                <div className="text-xs text-zinc-800">
+                                <Code className="w-5 h-5 text-zinc-950 font-semibolduchsia-400 mt-1 flex-shrink-0" />
+                                <div className="text-xs text-zinc-900 font-bold">
                                     <strong className="text-zinc-950">The Subprime Code Crisis:</strong> Vibe coding generates massive volumes of syntactically correct but architecturally flawed code. This calculator mathematically prices the downstream cost of unwinding that code.
                                 </div>
                             </div>
@@ -354,7 +354,7 @@ export default function CopilotROITool() {
                                             </div>
                                             <div>
                                                 <h4 className="text-red-400 font-bold mb-1">Terminal Insolvency Risk</h4>
-                                                <p className="text-sm text-red-600">AI tool licensing combined with downstream review hours is displacing over 10% of total engineering capacity. Stop feature development and audit code review processes immediately.</p>
+                                                <p className="text-sm text-zinc-900 font-medium">AI tool licensing combined with downstream review hours is displacing over 10% of total engineering capacity. Stop feature development and audit code review processes immediately.</p>
                                             </div>
                                         </motion.div>
                                     )}

@@ -88,7 +88,7 @@ export default function ComparePage() {
                                 emerald: { border: 'border-emerald-500/20', hover: 'hover:border-emerald-500/50', text: 'text-emerald-400' },
                                 rose: { border: 'border-rose-500/20', hover: 'hover:border-rose-500/50', text: 'text-rose-400' },
                                 indigo: { border: 'border-indigo-500/20', hover: 'hover:border-indigo-500/50', text: 'text-indigo-400' },
-                                fuchsia: { border: 'border-fuchsia-500/20', hover: 'hover:border-fuchsia-500/50', text: 'text-fuchsia-400' },
+                                fuchsia: { border: 'border-fuchsia-500/20', hover: 'hover:border-fuchsia-500/50', text: 'text-zinc-950 font-semibolduchsia-400' },
                                 amber: { border: 'border-amber-500/20', hover: 'hover:border-amber-500/50', text: 'text-amber-400' }
                             };
                             const theme = colorMap[c.color] || colorMap.cyan;

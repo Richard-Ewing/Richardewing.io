@@ -24,7 +24,7 @@ export default function BenchmarkPage() {
         <main className="pt-20">
             <div className="page-container">
                 <section className="section-lg text-center">
-                    <div className="text-xs text-emerald-400 uppercase tracking-wide mb-4 font-mono">Free Download</div>
+                    <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Free Download</div>
                     <h1 className="text-4xl md:text-6xl font-bold text-zinc-950 mb-6 font-grotesk">
                         State of Product Debt<br />
                         <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">2026 Report.</span>
@@ -110,7 +110,7 @@ export default function BenchmarkPage() {
                         <Link href="/tools/pdi" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-bold text-sm rounded-lg hover:bg-white/10 transition-all">
                             Run Free PDI Calculator
                         </Link>
-                        <Link href="/advisory" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-sm rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">
+                        <Link href="/advisory" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-zinc-950 font-semibold font-bold text-sm rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">
                             Book Diagnostic Call <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>

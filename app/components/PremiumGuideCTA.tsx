@@ -28,13 +28,13 @@ export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCT
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <button
                         onClick={() => setShowBundle(true)}
-                        className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-sm rounded-xl hover:opacity-90 transition-opacity"
+                        className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm rounded-xl hover:opacity-90 transition-opacity"
                     >
                         Unlock for ${guidePrice} <ArrowRight className="w-4 h-4" />
                     </button>
                     <button
                         onClick={() => setShowBundle(true)}
-                        className="text-xs text-violet-400 hover:text-zinc-900 transition-colors underline underline-offset-2"
+                        className="text-xs text-zinc-900 font-bold hover:text-zinc-900 transition-colors underline underline-offset-2"
                     >
                         Or bundle & save up to 60%
                     </button>

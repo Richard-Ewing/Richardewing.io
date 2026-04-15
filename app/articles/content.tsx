@@ -80,7 +80,7 @@ export default function ArticlesPage() {
             {/* Featured Article */}
             <ScrollReveal delay={100}>
                 <div className="mb-20">
-                    <h3 className="font-mono text-xs text-purple-400 uppercase tracking-widest mb-4">Featured</h3>
+                    <h3 className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-4">Featured</h3>
                     <div className="card-featured p-8 md:p-12 relative overflow-hidden group">
                         <div className="absolute top-0 right-0 bg-purple-500/20 text-purple-300 px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-bl-xl border-l border-b border-purple-500/30">
                             Editor's Pick
@@ -128,7 +128,7 @@ export default function ArticlesPage() {
                                     <h3 className="text-xl font-bold text-zinc-950 mb-3 group-hover:text-cyan-400 transition-colors font-grotesk">
                                         {fw.name}
                                     </h3>
-                                    <p className="text-sm text-zinc-900 mb-6 flex-grow line-clamp-3">
+                                    <p className="text-sm text-zinc-900 font-medium mb-6 flex-grow line-clamp-3">
                                         {fw.definition}
                                     </p>
                                     <div className="text-xs font-bold uppercase tracking-widest text-cyan-500 group-hover:text-cyan-300 flex items-center gap-2">
@@ -183,7 +183,7 @@ export default function ArticlesPage() {
                             {selectedPublication ? `Articles in ${selectedPublication}` : 'Recent Articles'}
                         </h2>
                         {selectedPublication && (
-                            <button onClick={() => setSelectedPublication(null)} className="text-xs text-red-400 hover:text-red-300 uppercase tracking-widest font-bold">
+                            <button onClick={() => setSelectedPublication(null)} className="text-xs text-zinc-900 font-bold hover:text-red-300 uppercase tracking-widest font-bold">
                                 Clear Filter ✕
                             </button>
                         )}
@@ -208,7 +208,7 @@ export default function ArticlesPage() {
                                                 <div className="flex items-center gap-2">
                                                     <span className="font-mono text-xs font-medium text-zinc-900 uppercase tracking-widest border border-zinc-400 px-2 py-0.5 rounded-full">{article.source}</span>
                                                 </div>
-                                                <span className="font-mono text-xs text-zinc-800 uppercase tracking-widest">{article.date}</span>
+                                                <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">{article.date}</span>
                                             </div>
                                             <h3 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-cyan-400 transition-colors font-grotesk">{article.title}</h3>
                                             <p className="text-zinc-950 text-sm leading-relaxed mb-4 line-clamp-2">{article.description}</p>

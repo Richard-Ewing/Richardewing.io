@@ -120,7 +120,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                 <h3 className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-3">Related Glossary</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {track.glossaryTerms.map((t: string) => (
-                                        <Link key={t} href={`/glossary/${t}`} className="px-2 py-1 rounded-md bg-white text-xs text-zinc-900 hover:text-zinc-900 transition-colors border border-zinc-400 hover:border-zinc-500">
+                                        <Link key={t} href={`/glossary/${t}`} className="px-2 py-1 rounded-md bg-white text-xs text-zinc-900 font-bold hover:text-zinc-900 transition-colors border border-zinc-400 hover:border-zinc-500">
                                             {t.replace(/-/g, ' ')}
                                         </Link>
                                     ))}
@@ -154,7 +154,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                     </p>
                                 </div>
                                 <div className="flex flex-col gap-3 flex-shrink-0 w-full sm:w-auto">
-                                    <Link href="/advisory" className="px-6 py-3 rounded-lg bg-emerald-600 text-white font-bold text-sm text-center hover:bg-emerald-500 transition-colors whitespace-nowrap shadow-md">
+                                    <Link href="/advisory" className="px-6 py-3 rounded-lg bg-emerald-600 text-zinc-950 font-semibold font-bold text-sm text-center hover:bg-emerald-500 transition-colors whitespace-nowrap shadow-md">
                                         Claim Advisory Audit →
                                     </Link>
                                     <a href="/api/buy/enterprise/enterprise_curriculum_license" className="px-6 py-3 rounded-lg bg-white border border-zinc-400 text-zinc-950 font-bold text-sm text-center hover:bg-zinc-50 transition-colors whitespace-nowrap">

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     openGraph: { title: 'The Product Economics Academy', description: 'Master the business of building across eighteen authority tracks.', url: 'https://www.richardewing.io/vault/curriculum/tracks', type: 'website' },
 };
 const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5', teal: 'border-teal-500/30 bg-teal-500/5', lime: 'border-lime-500/30 bg-lime-500/5', fuchsia: 'border-fuchsia-500/30 bg-fuchsia-500/5', blue: 'border-blue-500/30 bg-blue-500/5' };
-const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400', amber: 'text-amber-400', orange: 'text-orange-400', pink: 'text-pink-400', red: 'text-red-400', sky: 'text-sky-400', indigo: 'text-indigo-400', rose: 'text-rose-400', teal: 'text-teal-400', lime: 'text-lime-400', fuchsia: 'text-fuchsia-400', blue: 'text-blue-400' };
+const textMap: Record<string, string> = { cyan: 'text-cyan-400', violet: 'text-violet-400', emerald: 'text-emerald-400', amber: 'text-amber-400', orange: 'text-orange-400', pink: 'text-pink-400', red: 'text-red-400', sky: 'text-sky-400', indigo: 'text-indigo-400', rose: 'text-rose-400', teal: 'text-teal-400', lime: 'text-lime-400', fuchsia: 'text-zinc-950 font-semibolduchsia-400', blue: 'text-blue-400' };
 
 export default async function CurriculumTracksPage() {
     const { userId } = await auth();
@@ -84,7 +84,7 @@ export default async function CurriculumTracksPage() {
                                             Enterprise Advisory
                                         </div>
                                         <h3 className="text-2xl font-bold text-zinc-900 mb-3">Need organizational implementation?</h3>
-                                        <p className="text-sm text-zinc-800 leading-relaxed mb-4">
+                                        <p className="text-sm text-zinc-900 font-medium leading-relaxed mb-4">
                                             The curriculum gives your team the frameworks. Advisory ensures they deploy them. I integrate these economic models directly into your SDLC through executive-level coaching and bi-weekly ops alignment.
                                         </p>
                                         <div className="text-xs font-mono font-bold text-purple-600 hover:text-purple-500 transition-colors">
@@ -160,7 +160,7 @@ export default async function CurriculumTracksPage() {
                                 <h2 className="text-sm font-mono text-indigo-500 uppercase tracking-widest font-bold">Executive & Board Economics</h2>
                                 <div className="h-px bg-zinc-300 flex-grow"></div>
                             </div>
-                            <p className="text-sm text-zinc-800 mb-8 text-center italic">Board reporting, EBITDA translation, M&A leadership, and technical debt at the balance sheet level — curated for senior leaders and aspiring C-suite.</p>
+                            <p className="text-sm text-zinc-900 font-medium mb-8 text-center italic">Board reporting, EBITDA translation, M&A leadership, and technical debt at the balance sheet level — curated for senior leaders and aspiring C-suite.</p>
                             <div className="space-y-6">
                                 {/* Track 4: Capstone & Applied Practice */}
                                 {tracks[3] && <TrackAccordion key="exec-capstone" track={tracks[3]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
@@ -194,7 +194,7 @@ export default async function CurriculumTracksPage() {
                                 Every module teaches you to connect work to business outcomes. $149 per track. $999 for everything. Lifetime access.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-                                <Link href="/advisory" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-purple-700 text-white hover:bg-purple-600 transition-colors shadow-lg">
+                                <Link href="/advisory" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-purple-700 text-zinc-950 font-semibold hover:bg-purple-600 transition-colors shadow-lg">
                                     Explore Advisory
                                 </Link>
                                 <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-white border border-zinc-400 text-zinc-950 hover:text-zinc-900 hover:border-zinc-500 transition-colors shadow-sm">

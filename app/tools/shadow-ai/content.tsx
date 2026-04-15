@@ -225,7 +225,7 @@ export default function ShadowContent() {
                                         <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono text-sm border border-amber-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Log Extrapolation</h3>
-                                            <p className="text-sm text-zinc-900">Paste an internal Slack log or Developer PR communication.</p>
+                                            <p className="text-sm text-zinc-900 font-medium">Paste an internal Slack log or Developer PR communication.</p>
                                         </div>
                                     </div>
 
@@ -328,7 +328,7 @@ export default function ShadowContent() {
                                 <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Liability Assessment Complete</h2>
-                            <p className="text-sm text-zinc-800">
+                            <p className="text-sm text-zinc-900 font-medium">
                                 {results.type === 'AUDIT' ? 'Deterministic detection via cryptographic / regex parsing.' : 'Forensic extrapolation of unmonitored intellectual property egress.'}
                             </p>
                         </div>
@@ -352,7 +352,7 @@ export default function ShadowContent() {
                                                 <ShieldAlert size={12}/> {results.riskTier} RISK: {results.piiViolations} PROBABLE PII BREACHES / MO
                                             </span>
                                         </div>
-                                        <p className="text-sm text-zinc-900 mt-4 leading-relaxed">
+                                        <p className="text-sm text-zinc-900 font-medium mt-4 leading-relaxed">
                                             {results.type === 'AUDIT' ? (
                                                 <>Based on local CSV analysis of {results.recordsScanned} records, we flag <strong className="text-zinc-900">{results.foundEvents} unsanctioned tool accesses</strong> directly leaking corporate IP.</>
                                             ) : (
@@ -393,15 +393,15 @@ export default function ShadowContent() {
                                                         <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Compliance Perimeter Heatmap</div>
                                                         <div className="space-y-3 pt-2">
                                                             <div className="flex justify-between items-center bg-rose-500/10 p-2 rounded">
-                                                                <span className="text-sm text-rose-400 font-bold">PII Exfiltration</span>
+                                                                <span className="text-sm text-zinc-900 font-medium font-bold">PII Exfiltration</span>
                                                                 <span className="text-xs font-mono text-rose-400">{results.piiViolations} hits</span>
                                                             </div>
                                                             <div className="flex justify-between items-center bg-amber-500/10 p-2 rounded">
-                                                                <span className="text-sm text-amber-400 font-bold">API Key Exposure</span>
+                                                                <span className="text-sm text-zinc-900 font-medium font-bold">API Key Exposure</span>
                                                                 <span className="text-xs font-mono text-amber-400">High Risk</span>
                                                             </div>
                                                             <div className="flex justify-between items-center bg-emerald-500/10 p-2 rounded">
-                                                                <span className="text-sm text-emerald-400 font-bold">Sanctioned Inference</span>
+                                                                <span className="text-sm text-zinc-900 font-medium font-bold">Sanctioned Inference</span>
                                                                 <span className="text-xs font-mono text-emerald-400">0 hits</span>
                                                             </div>
                                                         </div>
@@ -420,11 +420,11 @@ export default function ShadowContent() {
                                                     <div className="bg-white/50 p-6 rounded-2xl border border-blue-500/20 space-y-4">
                                                         <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Algorithmic Contamination Log</div>
                                                         <div className="flex justify-between items-center pb-2">
-                                                            <span className="text-sm text-zinc-800">AI-Generated Code Leakage</span>
+                                                            <span className="text-sm text-zinc-900 font-medium">AI-Generated Code Leakage</span>
                                                             <span className="text-sm font-mono text-blue-400 text-right">{results.hasCodeLeak ? "Detected" : "None Detected"}</span>
                                                         </div>
                                                         <div className="flex justify-between items-center border-b border-zinc-400 pb-3">
-                                                            <span className="text-sm text-zinc-800">Payload Integrity</span>
+                                                            <span className="text-sm text-zinc-900 font-medium">Payload Integrity</span>
                                                             <span className="text-sm font-mono text-rose-400 text-right">Compromised</span>
                                                         </div>
                                                         <p className="text-sm font-medium text-zinc-950 font-mono mt-2 pt-2 border-t border-zinc-400">Codebase is currently ingesting untrusted public LLM tokens without validation.</p>
@@ -434,8 +434,8 @@ export default function ShadowContent() {
                                                     <div className="bg-white/50 p-6 rounded-2xl border border-amber-500/20 space-y-4">
                                                          <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">SLA & Copyright Exposure</div>
                                                          <div className="space-y-2">
-                                                            <div className="text-sm text-amber-400">Potential GDPR Fines: <span className="font-bold">Active Exposure</span></div>
-                                                            <div className="text-sm text-rose-400">IP Ownership Voided: <span className="font-bold">High Risk</span></div>
+                                                            <div className="text-sm text-zinc-900 font-medium">Potential GDPR Fines: <span className="font-bold">Active Exposure</span></div>
+                                                            <div className="text-sm text-zinc-900 font-medium">IP Ownership Voided: <span className="font-bold">High Risk</span></div>
                                                          </div>
                                                     </div>
                                                 )}
@@ -500,14 +500,14 @@ export default function ShadowContent() {
                                             <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/30 text-blue-400 font-bold shrink-0">IP</div>
                                             <div>
                                                 <div className="text-zinc-950 font-semibold">Proprietary Source Code</div>
-                                                <div className="text-xs text-zinc-800">Foundational models may train on your core algorithms if submitted via consumer endpoints.</div>
+                                                <div className="text-xs text-zinc-900 font-bold">Foundational models may train on your core algorithms if submitted via consumer endpoints.</div>
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/30 text-emerald-400 font-bold shrink-0">DB</div>
                                             <div>
                                                 <div className="text-zinc-950 font-semibold">Database Schema Leakage</div>
-                                                <div className="text-xs text-zinc-800">Engineers pasting SQL contexts expose your internal system architecture to zero-day vectors.</div>
+                                                <div className="text-xs text-zinc-900 font-bold">Engineers pasting SQL contexts expose your internal system architecture to zero-day vectors.</div>
                                             </div>
                                         </div>
                                     </div>
@@ -567,7 +567,7 @@ export default function ShadowContent() {
 
                         {/* Action Footer */}
                         <ScrollReveal delay={250}>
-                             <div className="bg-gradient-to-br from-zinc-50 via-zinc-900/80 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400 mb-8">
+                             <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
                                     <ShieldOff size={16} className="text-amber-400" />
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">The Enterprise Mandate</span>

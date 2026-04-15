@@ -103,12 +103,12 @@ export default function ExogramRoadmapPage() {
                                 <div className={phase.sectionClass}>
                                     <div className="flex items-center gap-3 mb-4">
                                         <span className={phase.badgeClass}>{phase.label}</span>
-                                        <span className="text-xs text-zinc-800 font-mono">{phase.quarter}</span>
+                                        <span className="text-xs text-zinc-900 font-bold font-mono">{phase.quarter}</span>
                                     </div>
                                     <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">{phase.title}</h2>
                                     <ul className="space-y-2">
                                         {phase.items.map(item => (
-                                            <li key={item} className="flex items-start gap-2 text-sm text-zinc-800">
+                                            <li key={item} className="flex items-start gap-2 text-sm text-zinc-900 font-medium">
                                                 <span className={phase.status === 'complete' ? 'text-emerald-400 mt-0.5' : 'text-zinc-950 mt-0.5'}>{phase.status === 'complete' ? '✓' : '→'}</span>
                                                 {item}
                                             </li>
@@ -125,7 +125,7 @@ export default function ExogramRoadmapPage() {
                         <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">Shape the Roadmap</h3>
                         <p className="text-zinc-900 text-sm mb-6">Exogram&apos;s roadmap is shaped by real enterprise needs. If you&apos;re deploying AI at scale, your requirements drive our priorities.</p>
                         <div className="flex justify-center gap-4">
-                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
+                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-zinc-950 font-semibold font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
                                 Visit Exogram.ai →
                             </a>
                             <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">

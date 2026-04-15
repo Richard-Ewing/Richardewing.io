@@ -11,7 +11,7 @@ export default function ToolsContent() {
 
         {/* Hero */}
         <section className="section-lg text-center">
-          <div className="text-xs text-cyan-400 uppercase tracking-wide mb-4">Free Diagnostic Tools</div>
+          <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4">Free Diagnostic Tools</div>
           <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6">
             Boardroom-Ready Insights<br />
             <span className="text-cyan-400">in 60 Seconds</span>
@@ -77,9 +77,9 @@ export default function ToolsContent() {
                   <Link href="/tools/fte-displacement" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-400 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#a855f7", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-fuchsia-400">Agentic FTE Displacement Matrix</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-zinc-950 font-semibolduchsia-400">Agentic FTE Displacement Matrix</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Calculate EBITDA expansion of replacing human Tier-1 support with autonomous LLM agents.</p>
-                        <span className="text-fuchsia-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                        <span className="text-zinc-950 font-semibolduchsia-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -87,9 +87,9 @@ export default function ToolsContent() {
                   <Link href="/tools/cloud-repatriation" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-400 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#a855f7", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-fuchsia-400">Cloud Repatriation Engine</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-zinc-950 font-semibolduchsia-400">Cloud Repatriation Engine</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Calculate the exact EBITDA recapture of moving off AWS to sovereign bare-metal architecture.</p>
-                        <span className="text-fuchsia-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                        <span className="text-zinc-950 font-semibolduchsia-400 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -97,9 +97,9 @@ export default function ToolsContent() {
                   <Link href="/tools/agent-router" className="group block md:col-span-2">
                     <ShineBorder className="h-full bg-white border border-zinc-400 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#a855f7", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-fuchsia-400">Agentic Token Simulator</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-zinc-950 font-semibolduchsia-400">Agentic Token Simulator</h3>
                         <p className="text-zinc-800 text-sm mb-4 flex-grow">Calculate the compound token decay and GPU execution costs of multi-agent LLM reasoning workflows.</p>
-                        <span className="text-fuchsia-400 text-xs font-bold uppercase tracking-wider">Run FinOps Simulation →</span>
+                        <span className="text-zinc-950 font-semibolduchsia-400 text-xs font-bold uppercase tracking-wider">Run FinOps Simulation →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -203,7 +203,7 @@ export default function ToolsContent() {
         <section className="section">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
-              <div className="text-xs text-purple-400 uppercase tracking-wide mb-2">Free Training</div>
+              <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-2">Free Training</div>
               <h2 className="text-2xl md:text-3xl font-bold text-zinc-950 mb-3">
                 Level Up Your <span className="text-purple-400">AI Skills</span>
               </h2>
@@ -231,7 +231,7 @@ export default function ToolsContent() {
               ))}
             </div>
             <div className="text-center mt-4">
-              <Link href="/resources/ai-courses" className="text-xs text-zinc-800 hover:text-zinc-900 transition-colors uppercase tracking-widest">
+              <Link href="/resources/ai-courses" className="text-xs text-zinc-900 font-bold hover:text-zinc-900 transition-colors uppercase tracking-widest">
                 View all 15 curated courses →
               </Link>
             </div>
@@ -247,7 +247,7 @@ export default function ToolsContent() {
             Your tools diagnosed the disease. Now choose your cure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-cyan-600/90 text-white font-bold tracking-widest uppercase hover:bg-cyan-500 transition-colors">
+            <a href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-cyan-600/90 text-zinc-950 font-semibold font-bold tracking-widest uppercase hover:bg-cyan-500 transition-colors">
               Book a $2,500 Insolvency Diagnostic →
             </a>
             <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg border border-zinc-500 text-zinc-950 font-bold tracking-widest uppercase hover:bg-white/5 transition-colors">

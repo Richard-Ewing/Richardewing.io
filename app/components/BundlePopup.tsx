@@ -94,7 +94,7 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                         disabled={false}
                         className="w-full flex items-center justify-between p-4 rounded-xl border border-cyan-500/30 bg-cyan-500/5 hover:border-cyan-500/50 transition-all group text-left relative"
                     >
-                        <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full bg-cyan-500 text-xs font-medium font-bold text-white uppercase tracking-widest flex items-center gap-1">
+                        <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full bg-cyan-500 text-xs font-medium font-bold text-zinc-950 font-semibold uppercase tracking-widest flex items-center gap-1">
                             <Sparkles className="w-3 h-3" /> Ultimate Value
                         </div>
                         <div>

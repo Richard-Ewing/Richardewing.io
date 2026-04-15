@@ -57,7 +57,7 @@ export default function SystemPage() {
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">PDI 2.0 Engine</h3>
                             <p className="text-zinc-950 text-sm mb-4">Product Debt Index. Forensic audit of your backlog to quantify capital leakage.</p>
                             <ShineBorder borderColor="rgba(220, 38, 38, 0.6)" duration={2}>
-                                <Link href="/tools/pdi" className="block w-full text-center bg-red-600 text-white font-bold text-xs uppercase tracking-widest py-3 hover:bg-red-500 transition">
+                                <Link href="/tools/pdi" className="block w-full text-center bg-red-600 text-zinc-950 font-semibold font-bold text-xs uppercase tracking-widest py-3 hover:bg-red-500 transition">
                                     Launch PDI →
                                 </Link>
                             </ShineBorder>
@@ -85,7 +85,7 @@ export default function SystemPage() {
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">AUEB Engine</h3>
                             <p className="text-zinc-950 text-sm mb-4">AI Unit Economics Benchmark. Calculate your margin collapse point with model arbitrage analysis.</p>
                             <ShineBorder borderColor="rgba(139, 92, 246, 0.6)" duration={2}>
-                                <Link href="/tools/aueb" className="block w-full text-center bg-violet-600 text-white font-bold text-xs uppercase tracking-widest py-3 hover:bg-violet-500 transition">
+                                <Link href="/tools/aueb" className="block w-full text-center bg-violet-600 text-zinc-950 font-semibold font-bold text-xs uppercase tracking-widest py-3 hover:bg-violet-500 transition">
                                     Launch AUEB →
                                 </Link>
                             </ShineBorder>
@@ -99,7 +99,7 @@ export default function SystemPage() {
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">Audit Interview</h3>
                             <p className="text-zinc-950 text-sm mb-4">Quantify candidate judgment. Move beyond code syntax to measure capital stewardship and architectural reasoning.</p>
                             <ShineBorder borderColor="rgba(16, 185, 129, 0.6)" duration={2}>
-                                <Link href="/tools/audit-interview" className="block w-full text-center bg-emerald-600 text-white font-bold text-xs uppercase tracking-widest py-3 hover:bg-emerald-500 transition">
+                                <Link href="/tools/audit-interview" className="block w-full text-center bg-emerald-600 text-zinc-950 font-semibold font-bold text-xs uppercase tracking-widest py-3 hover:bg-emerald-500 transition">
                                     Launch Audit Interview →
                                 </Link>
                             </ShineBorder>
@@ -113,7 +113,7 @@ export default function SystemPage() {
                                 <div>
                                     <div className="flex items-center gap-2 mb-2">
                                         <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse shadow-[0_0_10px_#eab308]" />
-                                        <span className="font-mono text-xs text-yellow-400 uppercase tracking-widest">Interactive Tool</span>
+                                        <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">Interactive Tool</span>
                                     </div>
                                     <h3 className="text-xl font-bold text-zinc-950 mb-1">APER™ Diagnostic</h3>
                                     <p className="text-zinc-900 text-sm">The &quot;Revenue Per Engineer&quot; efficiency engine. Detect overstaffing and coordination overhead instantly.</p>
