@@ -100,9 +100,9 @@ export default function PdfExportButton({
               const nextPageStartPx = absolutePageBottom;
               const pushAmount = nextPageStartPx - relativeTop + 40;
               
-              const currentMargin = parseFloat(style.marginTop) || 0;
-              el.setAttribute('data-pdf-margin-top', el.style.marginTop);
-              el.style.marginTop = `${currentMargin + pushAmount}px`;
+              const currentPadding = parseFloat(style.paddingTop) || 0;
+              el.setAttribute('data-pdf-padding-top', el.style.paddingTop);
+              el.style.setProperty('padding-top', `${currentPadding + pushAmount}px`, 'important');
           }
       });
 
@@ -141,9 +141,10 @@ export default function PdfExportButton({
       });
       blocks.forEach(node => {
           const el = node as HTMLElement;
-          if (el.hasAttribute('data-pdf-margin-top')) {
-              el.style.marginTop = el.getAttribute('data-pdf-margin-top') || '';
-              el.removeAttribute('data-pdf-margin-top');
+          const originalPaddingTop = el.getAttribute('data-pdf-padding-top');
+          if (originalPaddingTop !== null) {
+              el.style.paddingTop = originalPaddingTop;
+              el.removeAttribute('data-pdf-padding-top');
           }
       });
       scrollContainers.forEach(node => {
