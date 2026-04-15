@@ -230,7 +230,7 @@ export default function CloudContent() {
                             {step === 2 && (
                                 <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
                                     <div className="flex items-center gap-3 border-b border-zinc-400 pb-4">
-                                        <div className="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold font-mono text-sm border border-orange-500/30">2</div>
+                                        <div className="w-8 h-8 rounded-full bg-orange-500/20 text-orange-800 font-semibold flex items-center justify-center font-bold font-mono text-sm border border-orange-500/30">2</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Invoice Allocation</h3>
                                             <p className="text-sm text-zinc-900 font-medium">Different services carry different margins. Approximate the split.</p>
@@ -240,7 +240,7 @@ export default function CloudContent() {
                                     <div className="space-y-6">
                                         <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-400 relative group">
                                             <div className="flex justify-between items-end mb-4">
-                                                <label className="text-xs font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2"><Server size={12}/> Compute (EC2, ECS, EKS)</label>
+                                                <label className="text-xs font-mono text-cyan-800 font-semibold uppercase tracking-widest flex items-center gap-2"><Server size={12}/> Compute (EC2, ECS, EKS)</label>
                                                 <div className="text-xl font-bold text-zinc-950 font-mono">{computeP}%</div>
                                             </div>
                                             <input title="Compute" type="range" min="10" max="80" step="5" value={computeP} onChange={e => handleSliderChange('compute', parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-cyan-500" />
@@ -314,7 +314,7 @@ export default function CloudContent() {
                                             +{formatMoney(results.annualSavings)} <span className="text-2xl text-zinc-900">/ yr</span>
                                         </div>
                                         <div className="mt-6">
-                                            <span className="px-3 py-1.5 rounded-full bg-emerald-900/30 text-emerald-400 border border-emerald-900/50 text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2">
+                                            <span className="px-3 py-1.5 rounded-full bg-emerald-900/30 text-emerald-800 font-semibold border border-emerald-900/50 text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2">
                                                 <TrendingUpIcon /> {formatMoney(results.evCreation)} Enterprise Value Created
                                             </span>
                                         </div>
@@ -326,11 +326,11 @@ export default function CloudContent() {
                                         <div className="bg-white/50 p-6 rounded-2xl border border-zinc-400 space-y-4">
                                             <div className="flex justify-between items-center border-b border-zinc-400 pb-3">
                                                 <span className="text-xs font-mono text-zinc-800 uppercase">Legacy AWS Invoice</span>
-                                                <span className="text-lg font-mono text-red-400">{formatMoney(results.awsTotal)}/mo</span>
+                                                <span className="text-lg font-mono text-red-800 font-semibold">{formatMoney(results.awsTotal)}/mo</span>
                                             </div>
                                             <div className="flex justify-between items-center border-b border-zinc-400 pb-3">
                                                 <span className="text-xs font-mono text-zinc-800 uppercase">Private DC + Devops</span>
-                                                <span className="text-lg font-mono text-emerald-400">{formatMoney(results.bmTotal)}/mo</span>
+                                                <span className="text-lg font-mono text-emerald-800 font-semibold">{formatMoney(results.bmTotal)}/mo</span>
                                             </div>
                                             <div className="flex justify-between items-center pb-1">
                                                 <span className="text-xs font-mono text-amber-500 uppercase tracking-widest font-bold">Migration Payback</span>
@@ -347,20 +347,20 @@ export default function CloudContent() {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                                 <div className="bg-zinc-50 border border-zinc-400 rounded-xl p-5 relative overflow-hidden group">
                                     <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-3">Compute Abstraction Tax</div>
-                                    <div className="flex justify-between text-xs font-mono mb-1"><span className="text-red-400">AWS (c5/m5)</span><span className="text-emerald-400">Bare Metal (Dual Epyc)</span></div>
-                                    <div className="flex justify-between font-bold mb-4 tracking-tighter"><span className="text-red-400 text-2xl">{formatMoney(results.awsStats.compute)}</span><span className="text-emerald-400 text-2xl">{formatMoney(results.bmStats.compute)}</span></div>
+                                    <div className="flex justify-between text-xs font-mono mb-1"><span className="text-red-800 font-semibold">AWS (c5/m5)</span><span className="text-emerald-800 font-semibold">Bare Metal (Dual Epyc)</span></div>
+                                    <div className="flex justify-between font-bold mb-4 tracking-tighter"><span className="text-red-800 font-semibold text-2xl">{formatMoney(results.awsStats.compute)}</span><span className="text-emerald-800 font-semibold text-2xl">{formatMoney(results.bmStats.compute)}</span></div>
                                 </div>
                                 
                                 <div className="bg-zinc-50 border border-zinc-400 rounded-xl p-5 relative overflow-hidden group">
                                     <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-3">Managed DB Tax (RDS/Aurora)</div>
-                                    <div className="flex justify-between text-xs font-mono mb-1"><span className="text-red-400">AWS</span><span className="text-emerald-400">Dedicated NVMe</span></div>
-                                    <div className="flex justify-between font-bold mb-4 tracking-tighter"><span className="text-red-400 text-2xl">{formatMoney(results.awsStats.db)}</span><span className="text-emerald-400 text-2xl">{formatMoney(results.bmStats.db)}</span></div>
+                                    <div className="flex justify-between text-xs font-mono mb-1"><span className="text-red-800 font-semibold">AWS</span><span className="text-emerald-800 font-semibold">Dedicated NVMe</span></div>
+                                    <div className="flex justify-between font-bold mb-4 tracking-tighter"><span className="text-red-800 font-semibold text-2xl">{formatMoney(results.awsStats.db)}</span><span className="text-emerald-800 font-semibold text-2xl">{formatMoney(results.bmStats.db)}</span></div>
                                 </div>
 
                                 <div className="bg-zinc-50 border border-zinc-400 rounded-xl p-5 relative overflow-hidden group">
                                     <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-3">Data Transfer (Egress Cartel)</div>
-                                    <div className="flex justify-between text-xs font-mono mb-1"><span className="text-red-400">AWS ($0.09/GB)</span><span className="text-emerald-400">Unmetered 10G</span></div>
-                                    <div className="flex justify-between font-bold mb-4 tracking-tighter"><span className="text-red-400 text-2xl">{formatMoney(results.awsStats.egress)}</span><span className="text-emerald-400 text-2xl">{formatMoney(results.bmStats.egress)}</span></div>
+                                    <div className="flex justify-between text-xs font-mono mb-1"><span className="text-red-800 font-semibold">AWS ($0.09/GB)</span><span className="text-emerald-800 font-semibold">Unmetered 10G</span></div>
+                                    <div className="flex justify-between font-bold mb-4 tracking-tighter"><span className="text-red-800 font-semibold text-2xl">{formatMoney(results.awsStats.egress)}</span><span className="text-emerald-800 font-semibold text-2xl">{formatMoney(results.bmStats.egress)}</span></div>
                                 </div>
                             </div>
                         </ScrollReveal>
@@ -463,13 +463,13 @@ export default function CloudContent() {
                                     <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                         <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
-                                            <span className="text-cyan-400 font-bold font-mono">03</span>
+                                            <span className="text-cyan-800 font-semibold font-bold font-mono">03</span>
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-zinc-950 font-bold mb-2">Eliminate the Egress Cartel Monopoly</h4>
                                             <p className="text-zinc-900 text-sm leading-relaxed mb-4">AWS charges $0.09/GB for data egress—an artificial monopoly markup. A 10G unmetered drop in a private rack costs less than $1,000/mo statically.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-800 font-semibold uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
                                                 <p className="text-sm font-medium text-zinc-950">Move all high-bandwidth bandwidth egress paths (video, streaming, heavy API JSON payloads) behind Cloudflare to nullify AWS egress, then route directly from the new bare metal unmetered pipeline.</p>

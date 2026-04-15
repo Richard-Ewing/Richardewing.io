@@ -72,7 +72,7 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
                             <button key={idx} onClick={() => handleSelect(idx)} disabled={selected !== null}
                                 className={`w-full text-left p-4 rounded-xl border transition-colors ${cls} ${selected === null ? 'cursor-pointer' : 'cursor-default'}`}>
                                 <span className="text-xs font-mono text-zinc-800 mr-3">{String.fromCharCode(65 + idx)}</span>
-                                <span className={`text-sm ${selected !== null && idx === q.answer ? 'text-emerald-400' : 'text-zinc-900'}`}>{opt}</span>
+                                <span className={`text-sm ${selected !== null && idx === q.answer ? 'text-emerald-800 font-semibold' : 'text-zinc-900'}`}>{opt}</span>
                             </button>
                         );
                     })}

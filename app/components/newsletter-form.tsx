@@ -59,8 +59,8 @@ export function NewsletterForm({
     if (state.succeeded) {
         return (
             <div className={`p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-center ${className}`}>
-                <CheckCircle className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-                <h3 className="text-emerald-400 font-bold text-sm uppercase tracking-widest">Signal Received</h3>
+                <CheckCircle className="w-8 h-8 text-emerald-800 font-semibold mx-auto mb-2" />
+                <h3 className="text-emerald-800 font-semibold font-bold text-sm uppercase tracking-widest">Signal Received</h3>
                 <p className="text-zinc-900 text-xs mt-1">You've been added to the protocol.</p>
             </div>
         );

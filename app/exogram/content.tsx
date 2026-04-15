@@ -16,7 +16,7 @@ export default function ExogramPage() {
             {/* Header */}
             <div className="mb-12">
                 <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                    <span>Intelligence</span><span>/</span><span className="text-purple-400 font-bold">Exogram</span>
+                    <span>Intelligence</span><span>/</span><span className="text-purple-800 font-semibold font-bold">Exogram</span>
                 </div>
                 <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 tracking-tight mb-4">
                     Active <span className="text-purple-500">Projects.</span>
@@ -110,7 +110,7 @@ export default function ExogramPage() {
                                 </div>
                                 <div className="flex justify-between items-center text-sm">
                                     <span className="text-zinc-800">Inference</span>
-                                    <span className="text-yellow-400">High Load</span>
+                                    <span className="text-yellow-800 font-semibold">High Load</span>
                                 </div>
                                 <div className="flex justify-between items-center text-sm">
                                     <span className="text-zinc-800">Storage</span>

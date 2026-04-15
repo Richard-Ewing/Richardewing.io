@@ -39,7 +39,7 @@ export default function ModuleStepper({ parsedContent, hasAccess = true, childre
         return (
             <div className="mb-12">
                 <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest flex items-center gap-2">
+                    <span className="text-xs font-medium font-mono text-cyan-800 font-semibold uppercase tracking-widest flex items-center gap-2">
                         <BookOpen className="w-3 h-3" />
                         {currentStep === 0 ? 'Syllabus Introduction' : `Lesson ${currentStep} of ${totalSteps - 1}`}
                     </span>

@@ -16,7 +16,7 @@ export default function DoctrineContent() {
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent pointer-events-none" />
 
                     <div className="relative">
-                        <span className="font-mono text-emerald-400 text-xs uppercase tracking-widest mb-4 block">The Doctrine</span>
+                        <span className="font-mono text-emerald-800 font-semibold text-xs uppercase tracking-widest mb-4 block">The Doctrine</span>
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 mb-6 leading-tight">
                             Sovereignty in <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Product Economics.</span>
@@ -33,7 +33,7 @@ export default function DoctrineContent() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
                     <GlowCard className="p-6 sm:p-8" glowColor="cyan">
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-bold">01</div>
+                            <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-800 font-semibold font-bold">01</div>
                             <h3 className="text-zinc-950 font-bold text-lg sm:text-xl">Capital Allocation &gt; Agile Theater</h3>
                         </div>
                         <p className="text-zinc-900 text-sm leading-relaxed">
@@ -53,7 +53,7 @@ export default function DoctrineContent() {
 
                     <GlowCard className="p-6 sm:p-8" glowColor="danger">
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 font-bold">03</div>
+                            <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-800 font-semibold font-bold">03</div>
                             <h3 className="text-zinc-950 font-bold text-lg sm:text-xl">Kill Zombies Ruthlessly</h3>
                         </div>
                         <p className="text-zinc-900 text-sm leading-relaxed">
@@ -102,7 +102,7 @@ export default function DoctrineContent() {
                         <p className="text-xl sm:text-2xl text-zinc-950 font-serif mb-4">
                             "Technical debt isn't a cleanup problem. It's a balance sheet liability."
                         </p>
-                        <cite className="text-sm font-mono text-cyan-400 not-italic uppercase tracking-widest">— Richard Ewing, Product Economist</cite>
+                        <cite className="text-sm font-mono text-cyan-800 font-semibold not-italic uppercase tracking-widest">— Richard Ewing, Product Economist</cite>
                     </div>
                 </div>
             </ScrollReveal>
@@ -134,10 +134,10 @@ export default function DoctrineContent() {
                         <a href="https://www.mindtheproduct.com" target="_blank" rel="noopener noreferrer" className="group">
                             <GlowCard className="p-5 h-full" glowColor="cyan">
                                 <div className="flex items-start justify-between mb-2">
-                                    <div className="text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest">Contributor</div>
+                                    <div className="text-xs font-medium font-mono text-cyan-800 font-semibold uppercase tracking-widest">Contributor</div>
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
-                                <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-cyan-400 transition">Mind the Product</div>
+                                <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-cyan-800 font-semibold transition">Mind the Product</div>
                                 <p className="text-xs text-zinc-900 font-bold leading-relaxed">
                                     Feb 2026 article. Newsletter feature.
                                 </p>
@@ -160,10 +160,10 @@ export default function DoctrineContent() {
                         <a href="https://hackernoon.com/u/richardewing1" target="_blank" rel="noopener noreferrer" className="group">
                             <GlowCard className="p-5 h-full" glowColor="cyan">
                                 <div className="flex items-start justify-between mb-2">
-                                    <div className="text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest">Published</div>
+                                    <div className="text-xs font-medium font-mono text-emerald-800 font-semibold uppercase tracking-widest">Published</div>
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
-                                <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-emerald-400 transition">HackerNoon</div>
+                                <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-emerald-800 font-semibold transition">HackerNoon</div>
                                 <p className="text-xs text-zinc-900 font-bold leading-relaxed">
                                     4M+ monthly readers.
                                 </p>
@@ -180,7 +180,7 @@ export default function DoctrineContent() {
                         </div>
 
                         <div className="p-5 border border-zinc-400 rounded-xl bg-emerald-500/5 hover:border-emerald-500/30 transition">
-                            <div className="text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest mb-2">Governor's Award</div>
+                            <div className="text-xs font-medium font-mono text-emerald-800 font-semibold uppercase tracking-widest mb-2">Governor's Award</div>
                             <div className="text-lg font-bold text-zinc-950 mb-1">The Extra Mile Award</div>
                             <p className="text-xs text-zinc-900 font-bold">Washington State. Gov. Jay Inslee.</p>
                         </div>

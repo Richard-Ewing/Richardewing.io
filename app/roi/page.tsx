@@ -41,7 +41,7 @@ const colorMap: Record<string, string> = {
     emerald: 'border-emerald-500/30 bg-emerald-500/5',
     amber: 'border-amber-500/30 bg-amber-500/5',
 };
-const textMap: Record<string, string> = { cyan: 'text-cyan-400', emerald: 'text-emerald-400', amber: 'text-amber-400' };
+const textMap: Record<string, string> = { cyan: 'text-cyan-800 font-semibold', emerald: 'text-emerald-800 font-semibold', amber: 'text-amber-400' };
 
 export default function ROIPage() {
     return (
@@ -76,7 +76,7 @@ export default function ROIPage() {
                                         <div className="flex justify-between"><span className="text-zinc-950 text-sm">Total R&D Spend</span><span className="text-zinc-950 font-mono">${(totalRD / 1000000).toFixed(1)}M</span></div>
                                         <div className="border-t border-zinc-400 pt-4"></div>
                                         <div className="flex justify-between"><span className="text-zinc-950 text-sm">Innovation Tax (before)</span><span className="text-rose-400 font-mono">{s.innovationTaxBefore}%</span></div>
-                                        <div className="flex justify-between"><span className="text-zinc-950 text-sm">Innovation Tax (after)</span><span className="text-emerald-400 font-mono">{s.innovationTaxAfter}%</span></div>
+                                        <div className="flex justify-between"><span className="text-zinc-950 text-sm">Innovation Tax (after)</span><span className="text-emerald-800 font-semibold font-mono">{s.innovationTaxAfter}%</span></div>
                                         <div className="border-t border-zinc-400 pt-4"></div>
                                         <div className="flex justify-between"><span className="text-zinc-950 text-sm">Annual Savings</span><span className={`font-mono font-bold text-lg ${textMap[s.color]}`}>${(savings / 1000000).toFixed(1)}M</span></div>
                                         <div className="flex justify-between"><span className="text-zinc-950 text-sm">ROI on Audit</span><span className={`font-mono font-bold ${textMap[s.color]}`}>{roi}%</span></div>

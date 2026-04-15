@@ -36,7 +36,7 @@ export default function BlogContent() {
                 <section className="text-center mb-12 relative">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
                     <div className="relative">
-                        <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-4">The Product Economist</p>
+                        <p className="text-xs font-mono text-cyan-800 font-semibold uppercase tracking-widest mb-4">The Product Economist</p>
                         <h1 className="text-4xl md:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             Engineering Economics <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Blog.</span>
                         </h1>
@@ -66,7 +66,7 @@ export default function BlogContent() {
                     <div className="flex flex-wrap gap-2 justify-center">
                         <button
                             onClick={() => setSelectedCategory(null)}
-                            className={`text-xs font-medium font-mono px-2.5 py-1 rounded-full border transition-colors ${!selectedCategory ? 'text-cyan-400 bg-cyan-500/20 border-cyan-500/40' : 'text-zinc-950 bg-zinc-500/5 border-zinc-500/20 hover:text-zinc-900'}`}
+                            className={`text-xs font-medium font-mono px-2.5 py-1 rounded-full border transition-colors ${!selectedCategory ? 'text-cyan-800 font-semibold bg-cyan-500/20 border-cyan-500/40' : 'text-zinc-950 bg-zinc-500/5 border-zinc-500/20 hover:text-zinc-900'}`}
                         >
                             All ({allArticles.length})
                         </button>
@@ -74,7 +74,7 @@ export default function BlogContent() {
                             <button
                                 key={cat.name}
                                 onClick={() => setSelectedCategory(selectedCategory === cat.name ? null : cat.name)}
-                                className={`text-xs font-medium font-mono px-2.5 py-1 rounded-full border transition-colors ${selectedCategory === cat.name ? 'text-cyan-400 bg-cyan-500/20 border-cyan-500/40' : categoryColors[cat.name] || 'text-zinc-900 bg-zinc-500/10 border-zinc-500/20'} hover:opacity-80`}
+                                className={`text-xs font-medium font-mono px-2.5 py-1 rounded-full border transition-colors ${selectedCategory === cat.name ? 'text-cyan-800 font-semibold bg-cyan-500/20 border-cyan-500/40' : categoryColors[cat.name] || 'text-zinc-900 bg-zinc-500/10 border-zinc-500/20'} hover:opacity-80`}
                             >
                                 {cat.name} ({cat.count})
                             </button>
@@ -105,11 +105,11 @@ export default function BlogContent() {
                                         <span className={`text-xs font-medium font-mono uppercase tracking-widest px-2 py-1 rounded-full border ${categoryColors[article.category]}`}>{article.category}</span>
                                         <span className="text-xs font-medium text-zinc-950">{article.readTime} read</span>
                                     </div>
-                                    <h3 className="text-xl font-grotesk font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors mb-3">{article.title}</h3>
+                                    <h3 className="text-xl font-grotesk font-bold text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors mb-3">{article.title}</h3>
                                     <p className="text-sm text-zinc-900 font-medium leading-relaxed mb-4">{article.excerpt}</p>
                                     <div className="flex items-center justify-between">
                                         <span className="text-xs text-zinc-950">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                                        <span className="text-xs text-zinc-900 font-bold group-hover:text-cyan-300">Read →</span>
+                                        <span className="text-xs text-zinc-900 font-bold group-hover:text-cyan-800 font-semibold">Read →</span>
                                     </div>
                                 </Link>
                             ))}
@@ -125,7 +125,7 @@ export default function BlogContent() {
                     {regular.length === 0 && filtered.length === 0 ? (
                         <div className="text-center py-20 border border-dashed border-zinc-400 rounded-2xl">
                             <p className="text-zinc-950 mb-4">No articles match your search.</p>
-                            <button onClick={() => { setSearch(''); setSelectedCategory(null); }} className="text-cyan-400 hover:underline text-sm">Clear filters</button>
+                            <button onClick={() => { setSearch(''); setSelectedCategory(null); }} className="text-cyan-800 font-semibold hover:underline text-sm">Clear filters</button>
                         </div>
                     ) : (
                         <div className="space-y-4">
@@ -142,7 +142,7 @@ export default function BlogContent() {
                                                     <span className={`text-xs font-medium font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border ${categoryColors[cat.name] || 'text-zinc-900 bg-zinc-500/10 border-zinc-500/20'}`}>
                                                         {cat.name}
                                                     </span>
-                                                    <span className="text-sm font-bold text-zinc-950 group-hover/accordion:text-cyan-300 transition-colors flex-1">{cat.name} Library</span>
+                                                    <span className="text-sm font-bold text-zinc-950 group-hover/accordion:text-cyan-800 font-semibold transition-colors flex-1">{cat.name} Library</span>
                                                 </div>
                                                 <div className="flex items-center gap-4 text-zinc-900">
                                                     <span className="text-xs">{catArticles.length} {catArticles.length === 1 ? 'Article' : 'Articles'}</span>
@@ -160,10 +160,10 @@ export default function BlogContent() {
                                                                 <span className="text-xs font-medium text-zinc-900">·</span>
                                                                 <span className="text-xs font-medium font-mono text-zinc-900">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                                                             </div>
-                                                            <h3 className="text-base font-grotesk font-bold text-zinc-800 group-hover:text-cyan-300 transition-colors mb-1">{article.title}</h3>
+                                                            <h3 className="text-base font-grotesk font-bold text-zinc-800 group-hover:text-cyan-800 font-semibold transition-colors mb-1">{article.title}</h3>
                                                             <p className="text-sm text-zinc-950 leading-relaxed line-clamp-2">{article.excerpt}</p>
                                                         </div>
-                                                        <span className="text-zinc-950 group-hover:text-cyan-400 transition-colors mt-2 shrink-0">→</span>
+                                                        <span className="text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors mt-2 shrink-0">→</span>
                                                     </Link>
                                                 ))}
                                             </div>
@@ -178,11 +178,11 @@ export default function BlogContent() {
                 <section className="mt-16 max-w-5xl mx-auto">
                     <div className="p-8 rounded-2xl border border-zinc-400 bg-white/[0.03]">
                         <div className="flex items-center gap-4 mb-4">
-                            <span className="text-xs font-mono text-purple-400 uppercase tracking-widest">Tier 1 Publications</span>
+                            <span className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest">Tier 1 Publications</span>
                         </div>
                         <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-2">Looking for my published articles?</h3>
                         <p className="text-sm text-zinc-900 font-medium mb-4">These blog posts expand on ideas from my articles in CIO.com, Built In, Mind the Product, and HackerNoon.</p>
-                        <Link href="/articles" className="text-sm text-zinc-900 font-medium hover:text-purple-300 transition-colors">
+                        <Link href="/articles" className="text-sm text-zinc-900 font-medium hover:text-purple-800 font-semibold transition-colors">
                             View all published articles →
                         </Link>
                     </div>

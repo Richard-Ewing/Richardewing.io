@@ -52,7 +52,7 @@ const UrgencyIcon = ({ urgency }: { urgency: string }) => {
         case 'success':
             return <CheckCircle className="w-5 h-5 text-emerald-500" />;
         default:
-            return <TrendingDown className="w-5 h-5 text-cyan-400" />;
+            return <TrendingDown className="w-5 h-5 text-cyan-800 font-semibold" />;
     }
 };
 

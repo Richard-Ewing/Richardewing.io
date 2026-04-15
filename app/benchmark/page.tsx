@@ -43,7 +43,7 @@ export default function BenchmarkPage() {
                             { stat: '18 mo', label: 'average time to Technical Insolvency Date when debt goes unmeasured', icon: TrendingDown },
                         ].map((item, i) => (
                             <div key={i} className="card p-6 text-center">
-                                <item.icon className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
+                                <item.icon className="w-8 h-8 text-emerald-800 font-semibold mx-auto mb-3" />
                                 <div className="text-3xl font-bold text-zinc-950 mb-2">{item.stat}</div>
                                 <p className="text-zinc-900 text-sm">{item.label}</p>
                             </div>
@@ -64,14 +64,14 @@ export default function BenchmarkPage() {
                                         'Recommendations for each debt severity level',
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-2 text-zinc-950 text-sm">
-                                            <CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                                            <CheckCircle className="w-4 h-4 text-emerald-800 font-semibold mt-0.5 flex-shrink-0" />
                                             {item}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                             <div className="bg-white/80 border border-zinc-400 rounded-2xl p-8 text-center">
-                                <Download className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
+                                <Download className="w-12 h-12 text-emerald-800 font-semibold mx-auto mb-4" />
                                 <h3 className="text-xl font-bold text-zinc-950 mb-2">Download Free Report</h3>
                                 <p className="text-zinc-950 text-sm mb-6">Enter your email to receive the full PDF report.</p>
                                 <a
@@ -89,7 +89,7 @@ export default function BenchmarkPage() {
                 </section>
 
                 <section className="section max-w-4xl mx-auto text-center mt-12 mb-16 border-t border-zinc-400 pt-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-6">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-800 font-semibold text-xs font-mono uppercase tracking-widest mb-6">
                         Open Data Report
                     </div>
                     <h2 className="text-3xl font-bold text-zinc-950 mb-4 font-grotesk">The 2026 AI Capital Engineering Index</h2>

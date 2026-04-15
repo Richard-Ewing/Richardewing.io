@@ -83,9 +83,9 @@ export default function ProtocolInitialization() {
                         <GlowCard className="p-8 h-full flex flex-col justify-between group cursor-default" glowColor="cyan">
                             <div>
                                 <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform duration-500">
-                                    <Cpu className="text-emerald-400" size={24} />
+                                    <Cpu className="text-emerald-800 font-semibold" size={24} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-zinc-950 mb-2 group-hover:text-emerald-400 transition-colors">Engineering</h3>
+                                <h3 className="text-2xl font-bold text-zinc-950 mb-2 group-hover:text-emerald-800 font-semibold transition-colors">Engineering</h3>
                                 <p className="text-zinc-900 text-sm leading-relaxed mb-6">
                                     <strong>For Senior+ Engineers & Architects.</strong><br /><br />
                                     Evaluates ability to <strong>review AI-generated code</strong>, assess scale, and balance <strong>Capital Efficiency</strong> vs. <strong>Maintenance Liability</strong>.
@@ -93,7 +93,7 @@ export default function ProtocolInitialization() {
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {['AUDIT', 'SCALE', 'COST'].map(tag => (
-                                        <span key={tag} className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded text-xs font-medium font-mono text-emerald-400">
+                                        <span key={tag} className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded text-xs font-medium font-mono text-emerald-800 font-semibold">
                                             {tag}
                                         </span>
                                     ))}
@@ -117,9 +117,9 @@ export default function ProtocolInitialization() {
                         <GlowCard className="p-8 h-full flex flex-col justify-between group cursor-default" glowColor="purple">
                             <div>
                                 <div className="w-12 h-12 bg-indigo-500/10 rounded-xl flex items-center justify-center mb-6 border border-indigo-500/20 group-hover:scale-110 transition-transform duration-500">
-                                    <Target className="text-indigo-400" size={24} />
+                                    <Target className="text-indigo-800 font-semibold" size={24} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-zinc-950 mb-2 group-hover:text-indigo-400 transition-colors">Product Management</h3>
+                                <h3 className="text-2xl font-bold text-zinc-950 mb-2 group-hover:text-indigo-800 font-semibold transition-colors">Product Management</h3>
                                 <p className="text-zinc-900 text-sm leading-relaxed mb-6">
                                     <strong>For PMs, Group PMs, and Directors.</strong><br /><br />
                                     Assess ability to leverage <strong>AI-Assisted Engineering</strong>. Focus on <strong>Unit Economics</strong> and <strong>Strategic Governance</strong>, not rote memorization.
@@ -127,7 +127,7 @@ export default function ProtocolInitialization() {
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {['STRATEGY', 'ECONOMICS', 'LEVERAGE'].map(tag => (
-                                        <span key={tag} className="px-2 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded text-xs font-medium font-mono text-indigo-400">
+                                        <span key={tag} className="px-2 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded text-xs font-medium font-mono text-indigo-800 font-semibold">
                                             {tag}
                                         </span>
                                     ))}
@@ -165,7 +165,7 @@ export default function ProtocolInitialization() {
                                     We must stop testing for <strong className="text-zinc-900">Construction</strong> (writing code/product specs) and start testing for <strong className="text-zinc-900">Verification</strong> (auditing outcomes).
                                     <br /><br />
                                     Engineering is now about reviewing AI-generated code for scale and solvency. Product Management is no longer about rote product sense, but leveraging AI-assisted engineering to drive value.
-                                    The Fiduciary Protocol™ measures the only three signals that remain scarce: <span className="text-emerald-400 border-b border-emerald-500/50">Skepticism</span>, <span className="text-emerald-400 border-b border-emerald-500/50">System Thinking</span>, and <span className="text-emerald-400 border-b border-emerald-500/50">Capital Stewardship</span>.
+                                    The Fiduciary Protocol™ measures the only three signals that remain scarce: <span className="text-emerald-800 font-semibold border-b border-emerald-500/50">Skepticism</span>, <span className="text-emerald-800 font-semibold border-b border-emerald-500/50">System Thinking</span>, and <span className="text-emerald-800 font-semibold border-b border-emerald-500/50">Capital Stewardship</span>.
                                 </p>
                             </div>
                         </div>
@@ -219,7 +219,7 @@ export default function ProtocolInitialization() {
                                         { l: 'L6', d: 'Distinguished / VP', s: 'Visionary Scope. Can they align strategy with solvency?' },
                                     ].map((row, i) => (
                                         <tr key={i} className="hover:bg-white/5 transition-colors group">
-                                            <td className="py-4 px-6 font-bold text-zinc-950 group-hover:text-emerald-400 transition-colors">{row.l}</td>
+                                            <td className="py-4 px-6 font-bold text-zinc-950 group-hover:text-emerald-800 font-semibold transition-colors">{row.l}</td>
                                             <td className="py-4 px-6 text-zinc-900">{row.d}</td>
                                             <td className="py-4 px-6 text-zinc-800">{row.s}</td>
                                         </tr>

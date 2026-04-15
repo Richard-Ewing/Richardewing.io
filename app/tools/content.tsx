@@ -64,11 +64,11 @@ const tools = [
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; glow: 'cyan' | 'danger' | 'gold' | 'cobalt' }> = {
-    red: { bg: 'bg-red-500/10', text: 'text-red-400', border: 'border-red-500/30', glow: 'danger' },
-    yellow: { bg: 'bg-yellow-500/10', text: 'text-yellow-400', border: 'border-yellow-500/30', glow: 'gold' },
-    cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-400', border: 'border-cyan-500/30', glow: 'cyan' },
-    purple: { bg: 'bg-purple-500/10', text: 'text-purple-400', border: 'border-purple-500/30', glow: 'cobalt' },
-    emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-400', border: 'border-emerald-500/30', glow: 'cyan' },
+    red: { bg: 'bg-red-500/10', text: 'text-red-800 font-semibold', border: 'border-red-500/30', glow: 'danger' },
+    yellow: { bg: 'bg-yellow-500/10', text: 'text-yellow-800 font-semibold', border: 'border-yellow-500/30', glow: 'gold' },
+    cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-800 font-semibold', border: 'border-cyan-500/30', glow: 'cyan' },
+    purple: { bg: 'bg-purple-500/10', text: 'text-purple-800 font-semibold', border: 'border-purple-500/30', glow: 'cobalt' },
+    emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-800 font-semibold', border: 'border-emerald-500/30', glow: 'cyan' },
 };
 
 export default function ToolsPage() {
@@ -77,7 +77,7 @@ export default function ToolsPage() {
             {/* Hero */}
             <ScrollReveal>
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-mono uppercase tracking-widest mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-800 font-semibold text-xs font-mono uppercase tracking-widest mb-6">
                         <Star size={12} />
                         Free Diagnostic Tools
                     </div>
@@ -108,7 +108,7 @@ export default function ToolsPage() {
                                         </span>
                                     </div>
 
-                                    <h2 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-cyan-400 transition-colors">
+                                    <h2 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-cyan-800 font-semibold transition-colors">
                                         {tool.name}
                                     </h2>
                                     <p className={`text-sm font-semibold ${colors.text} mb-3`}>

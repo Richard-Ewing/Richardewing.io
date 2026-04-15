@@ -37,7 +37,7 @@ export default function ExogramSidebar() {
                     <div>
                         <Link 
                             href="/exogram/docs" 
-                            className={`text-sm font-semibold transition-colors ${pathname === '/exogram/docs' ? 'text-purple-400' : 'text-zinc-950 hover:text-zinc-900'}`}
+                            className={`text-sm font-semibold transition-colors ${pathname === '/exogram/docs' ? 'text-purple-800 font-semibold' : 'text-zinc-950 hover:text-zinc-900'}`}
                             onClick={() => setIsOpen(false)}
                         >
                             Documentation Home
@@ -57,7 +57,7 @@ export default function ExogramSidebar() {
                                                 href={`/exogram/docs/${doc.slug}`}
                                                 className={`block text-sm transition-colors border-l-2 pl-3 py-1 ${
                                                     isActive 
-                                                        ? 'border-purple-500 text-purple-400 font-medium bg-purple-500/5' 
+                                                        ? 'border-purple-500 text-purple-800 font-semibold font-medium bg-purple-500/5' 
                                                         : 'border-zinc-400 text-zinc-900 hover:text-zinc-800 hover:border-zinc-500'
                                                 }`}
                                                 onClick={() => setIsOpen(false)}

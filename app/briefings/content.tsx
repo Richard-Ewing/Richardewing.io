@@ -18,12 +18,12 @@ const BriefCard = ({ number, title, subtitle, href, isNew, date }: BriefCardProp
     <a href={href} className="block group h-full">
         <div className="card h-full p-6 hover:border-purple-500/50 transition-all relative overflow-hidden">
             {isNew && (
-                <div className="absolute top-0 right-0 bg-purple-500/20 text-purple-300 px-3 py-1 text-xs font-medium font-bold uppercase tracking-widest rounded-bl-lg border-l border-b border-purple-500/30">
+                <div className="absolute top-0 right-0 bg-purple-500/20 text-purple-800 font-semibold px-3 py-1 text-xs font-medium font-bold uppercase tracking-widest rounded-bl-lg border-l border-b border-purple-500/30">
                     New
                 </div>
             )}
             <div className="text-xs text-zinc-950 mb-3 font-mono uppercase tracking-widest">{number} · {date}</div>
-            <h3 className="font-semibold text-lg text-zinc-950 mb-2 group-hover:text-purple-400 transition-colors font-grotesk">
+            <h3 className="font-semibold text-lg text-zinc-950 mb-2 group-hover:text-purple-800 font-semibold transition-colors font-grotesk">
                 {title}
             </h3>
             <p className="text-zinc-800 text-sm leading-relaxed">
@@ -62,7 +62,7 @@ export default function BriefingsPage() {
                     </div>
                     <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6 font-grotesk">
                         Executive<br />
-                        <span className="text-purple-400">Briefings.</span>
+                        <span className="text-purple-800 font-semibold">Briefings.</span>
                     </h1>
                     <p className="text-zinc-800 text-lg mb-8 max-w-2xl">
                         Dense, actionable intelligence for leaders who don't have time for
@@ -132,7 +132,7 @@ export default function BriefingsPage() {
                         href="https://theproducteconomist.beehiiv.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-purple-400 hover:text-purple-300 transition-colors border-b border-purple-500/30 hover:border-purple-400"
+                        className="text-purple-800 font-semibold hover:text-purple-800 font-semibold transition-colors border-b border-purple-500/30 hover:border-purple-400"
                     >
                         theproducteconomist.beehiiv.com →
                     </a>

@@ -82,12 +82,12 @@ export default function ComparePage() {
                     <div className="space-y-6">
                         {comparisons.map((c) => {
                             const colorMap: Record<string, { border: string, hover: string, text: string }> = {
-                                cyan: { border: 'border-cyan-500/20', hover: 'hover:border-cyan-500/50', text: 'text-cyan-400' },
-                                purple: { border: 'border-purple-500/20', hover: 'hover:border-purple-500/50', text: 'text-purple-400' },
-                                orange: { border: 'border-orange-500/20', hover: 'hover:border-orange-500/50', text: 'text-orange-400' },
-                                emerald: { border: 'border-emerald-500/20', hover: 'hover:border-emerald-500/50', text: 'text-emerald-400' },
+                                cyan: { border: 'border-cyan-500/20', hover: 'hover:border-cyan-500/50', text: 'text-cyan-800 font-semibold' },
+                                purple: { border: 'border-purple-500/20', hover: 'hover:border-purple-500/50', text: 'text-purple-800 font-semibold' },
+                                orange: { border: 'border-orange-500/20', hover: 'hover:border-orange-500/50', text: 'text-orange-800 font-semibold' },
+                                emerald: { border: 'border-emerald-500/20', hover: 'hover:border-emerald-500/50', text: 'text-emerald-800 font-semibold' },
                                 rose: { border: 'border-rose-500/20', hover: 'hover:border-rose-500/50', text: 'text-rose-400' },
-                                indigo: { border: 'border-indigo-500/20', hover: 'hover:border-indigo-500/50', text: 'text-indigo-400' },
+                                indigo: { border: 'border-indigo-500/20', hover: 'hover:border-indigo-500/50', text: 'text-indigo-800 font-semibold' },
                                 fuchsia: { border: 'border-fuchsia-500/20', hover: 'hover:border-fuchsia-500/50', text: 'text-zinc-950 font-semibolduchsia-400' },
                                 amber: { border: 'border-amber-500/20', hover: 'hover:border-amber-500/50', text: 'text-amber-400' }
                             };
@@ -108,7 +108,7 @@ export default function ComparePage() {
 
                     <div className="text-center py-16 border-t border-zinc-400 mt-16">
                         <p className="text-zinc-900 mb-4">Try all tools free</p>
-                        <Link href="/tools" className="text-cyan-400 hover:text-cyan-300 font-bold uppercase tracking-widest text-sm">
+                        <Link href="/tools" className="text-cyan-800 font-semibold hover:text-cyan-800 font-semibold font-bold uppercase tracking-widest text-sm">
                             View All Diagnostic Tools →
                         </Link>
                     </div>

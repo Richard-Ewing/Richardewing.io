@@ -24,7 +24,7 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
     const headerBorderColor = isCritical ? 'border-red-500/20' : 'border-emerald-500/20';
     const iconColor = isCritical ? 'text-red-500' : 'text-emerald-500';
     const cardHoverColor = isCritical ? 'hover:border-red-500/30' : 'hover:border-emerald-500/30';
-    const trackIdColor = isCritical ? 'text-red-400' : 'text-emerald-400';
+    const trackIdColor = isCritical ? 'text-red-800 font-semibold' : 'text-emerald-800 font-semibold';
     
     // Copy modifications depending on the tool's calculated score
     const headline = isCritical ? "The Architecture is Failing. Deploy the Fix." : "Accelerate Your Market Lead.";

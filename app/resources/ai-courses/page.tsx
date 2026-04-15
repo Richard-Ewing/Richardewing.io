@@ -33,7 +33,7 @@ const tracks = [
         color: 'cyan',
         borderColor: 'border-cyan-500/30',
         bgColor: 'bg-cyan-500/10',
-        textColor: 'text-cyan-400',
+        textColor: 'text-cyan-800 font-semibold',
         description: 'Build AI fluency for strategic decision-making. No coding required.',
         courses: [
             { name: 'Claude 101', url: 'https://anthropic.skilljar.com/claude-101', provider: 'Anthropic', description: 'Learn how to use Claude for everyday work tasks and explore resources for advanced learning.', editorial: 'Start here. Every technology leader should understand what Claude can and cannot do before making procurement or build decisions.' },
@@ -52,7 +52,7 @@ const tracks = [
         color: 'purple',
         borderColor: 'border-purple-500/30',
         bgColor: 'bg-purple-500/10',
-        textColor: 'text-purple-400',
+        textColor: 'text-purple-800 font-semibold',
         description: 'Integrate AI into your development workflow. Ship AI-powered features.',
         courses: [
             { name: 'AI Practitioner Certification Pass', url: '/api/buy/practitioner_certification', provider: 'Richard Ewing', description: 'Complete practitioner access to all AI economics, systems mapping, and model arbitrage curriculum modules.', editorial: 'If you are shipping AI features, you must understand their unit economics before deployment. My flagship course designed specifically for engineers.' },
@@ -72,7 +72,7 @@ const tracks = [
         color: 'emerald',
         borderColor: 'border-emerald-500/30',
         bgColor: 'bg-emerald-500/10',
-        textColor: 'text-emerald-400',
+        textColor: 'text-emerald-800 font-semibold',
         description: 'Design production AI systems. MCP, cloud integrations, RAG, and infrastructure.',
         courses: [
             { name: 'Introduction to Model Context Protocol', url: 'https://anthropic.skilljar.com/introduction-to-model-context-protocol', provider: 'Anthropic', description: 'Build MCP servers and clients from scratch. Master tools, resources, and prompts.', editorial: 'MCP is the emerging standard for AI-to-tool communication. Exogram uses MCP. This is the foundation course.' },
@@ -109,7 +109,7 @@ const tracks = [
         color: 'blue',
         borderColor: 'border-blue-500/30',
         bgColor: 'bg-blue-500/10',
-        textColor: 'text-blue-400',
+        textColor: 'text-blue-800 font-semibold',
         description: 'AI product strategy, user research with AI, and feature economics.',
         courses: [
             { name: 'AI Practitioner Certification Pass', url: '/api/buy/practitioner_certification', provider: 'Richard Ewing', description: 'Complete practitioner access to all AI economics, systems mapping, and model arbitrage curriculum modules.', editorial: 'My 12-hour certification course showing PMs exactly how to calculate and defend AI feature profitability.' },
@@ -126,7 +126,7 @@ const tracks = [
         color: 'orange',
         borderColor: 'border-orange-500/30',
         bgColor: 'bg-orange-500/10',
-        textColor: 'text-orange-400',
+        textColor: 'text-orange-800 font-semibold',
         description: 'AI safety, red teaming, compliance, and responsible AI deployment.',
         courses: [
             { name: 'Red Teaming LLM Applications', url: 'https://www.deeplearning.ai/short-courses/red-teaming-llm-applications/', provider: 'DeepLearning.AI', description: 'Learn to identify vulnerabilities in LLM applications through systematic red teaming.', editorial: 'Essential before any production AI deployment. The cost of a security incident far exceeds the cost of red teaming.' },
@@ -200,7 +200,7 @@ export default function AiCoursesPage() {
                 <section className="text-center mb-16 relative">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
                     <div className="relative">
-                        <p className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-4">Curated by Richard Ewing</p>
+                        <p className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-4">Curated by Richard Ewing</p>
                         <h1 className="text-4xl md:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             The AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Learning Hub.</span>
                         </h1>
@@ -305,7 +305,7 @@ export default function AiCoursesPage() {
                         {recommendedReading.map(book => (
                             <a key={book.title} href={book.url} target="_blank" rel="noopener noreferrer"
                                 className="group block p-6 rounded-xl bg-white/[0.03] border border-zinc-400 hover:border-zinc-500 hover:bg-white/[0.06] transition-all">
-                                <h3 className="text-base font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors font-grotesk mb-1">{book.title}</h3>
+                                <h3 className="text-base font-bold text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors font-grotesk mb-1">{book.title}</h3>
                                 <p className="text-xs text-zinc-950 mb-3">{book.author}</p>
                                 <p className="text-sm text-zinc-900 font-medium leading-relaxed">{book.description}</p>
                             </a>
@@ -327,10 +327,10 @@ export default function AiCoursesPage() {
                             <a key={tool.name} href={tool.url} target="_blank" rel="noopener noreferrer"
                                 className="group block p-5 rounded-xl bg-white/[0.03] border border-zinc-400 hover:border-emerald-500/30 hover:bg-white/[0.06] transition-all">
                                 <div className="flex items-center justify-between mb-2">
-                                    <h3 className="text-sm font-bold text-zinc-950 group-hover:text-emerald-300 transition-colors font-grotesk">{tool.name}</h3>
+                                    <h3 className="text-sm font-bold text-zinc-950 group-hover:text-emerald-800 font-semibold transition-colors font-grotesk">{tool.name}</h3>
                                     <span className="text-zinc-950 group-hover:text-zinc-900 transition-colors">↗</span>
                                 </div>
-                                <span className="text-xs font-medium font-mono text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/20 bg-emerald-500/10">{tool.category}</span>
+                                <span className="text-xs font-medium font-mono text-emerald-800 font-semibold px-2 py-0.5 rounded-full border border-emerald-500/20 bg-emerald-500/10">{tool.category}</span>
                                 <p className="text-xs text-zinc-950 leading-relaxed mt-2">{tool.description}</p>
                             </a>
                         ))}
@@ -357,9 +357,9 @@ export default function AiCoursesPage() {
                 {/* Cross-sell CTA */}
                 <section className="mt-12 max-w-3xl mx-auto">
                     <div className="card p-10 border-purple-500/20 bg-gradient-to-br from-purple-500/5 via-transparent to-cyan-500/5 text-center">
-                        <p className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-4">After the Courses</p>
+                        <p className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-4">After the Courses</p>
                         <h2 className="text-2xl md:text-3xl font-bold text-zinc-950 mb-4 font-grotesk">
-                            Courses teach you AI. <span className="text-cyan-400">I teach you the economics.</span>
+                            Courses teach you AI. <span className="text-cyan-800 font-semibold">I teach you the economics.</span>
                         </h2>
                         <p className="text-zinc-900 mb-8 max-w-xl mx-auto">
                             Knowing how to build with AI is necessary. Knowing whether you <em>should</em> build — and at what cost — is what separates winners from margin casualties.

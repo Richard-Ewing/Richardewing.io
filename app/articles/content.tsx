@@ -53,7 +53,7 @@ export default function ArticlesPage() {
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                <span>Knowledge</span><span>/</span><span className="text-cyan-400 font-bold">Canonical Hub</span>
+                <span>Knowledge</span><span>/</span><span className="text-cyan-800 font-semibold font-bold">Canonical Hub</span>
             </div>
 
             <ScrollReveal>
@@ -69,7 +69,7 @@ export default function ArticlesPage() {
                     {/* Quick Links */}
                     <div className="flex flex-wrap gap-4 mt-8">
                         {['Frameworks', 'Publications'].map(link => (
-                            <a href={`#${link.toLowerCase()}`} key={link} className="text-xs font-bold uppercase tracking-widest text-zinc-800 hover:text-cyan-400 transition-colors">
+                            <a href={`#${link.toLowerCase()}`} key={link} className="text-xs font-bold uppercase tracking-widest text-zinc-800 hover:text-cyan-800 font-semibold transition-colors">
                                 [{link}]
                             </a>
                         ))}
@@ -82,7 +82,7 @@ export default function ArticlesPage() {
                 <div className="mb-20">
                     <h3 className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-4">Featured</h3>
                     <div className="card-featured p-8 md:p-12 relative overflow-hidden group">
-                        <div className="absolute top-0 right-0 bg-purple-500/20 text-purple-300 px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-bl-xl border-l border-b border-purple-500/30">
+                        <div className="absolute top-0 right-0 bg-purple-500/20 text-purple-800 font-semibold px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-bl-xl border-l border-b border-purple-500/30">
                             Editor's Pick
                         </div>
 
@@ -93,7 +93,7 @@ export default function ArticlesPage() {
                                 <span>{featuredArticle.date}</span>
                             </div>
 
-                            <h2 className="text-3xl md:text-4xl font-bold text-zinc-950 mb-4 font-grotesk group-hover:text-purple-400 transition-colors">
+                            <h2 className="text-3xl md:text-4xl font-bold text-zinc-950 mb-4 font-grotesk group-hover:text-purple-800 font-semibold transition-colors">
                                 {featuredArticle.title}
                             </h2>
 
@@ -101,7 +101,7 @@ export default function ArticlesPage() {
                                 {featuredArticle.description}
                             </p>
 
-                            <a href={featuredArticle.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-purple-400 font-bold uppercase tracking-widest text-xs hover:text-zinc-900 transition-colors">
+                            <a href={featuredArticle.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-purple-800 font-semibold font-bold uppercase tracking-widest text-xs hover:text-zinc-900 transition-colors">
                                 Read Article <span className="text-lg">→</span>
                             </a>
                         </div>
@@ -125,13 +125,13 @@ export default function ArticlesPage() {
                                 className="group block h-full"
                             >
                                 <div className="card h-full p-6 hover:border-cyan-500/50 transition-all flex flex-col">
-                                    <h3 className="text-xl font-bold text-zinc-950 mb-3 group-hover:text-cyan-400 transition-colors font-grotesk">
+                                    <h3 className="text-xl font-bold text-zinc-950 mb-3 group-hover:text-cyan-800 font-semibold transition-colors font-grotesk">
                                         {fw.name}
                                     </h3>
                                     <p className="text-sm text-zinc-900 font-medium mb-6 flex-grow line-clamp-3">
                                         {fw.definition}
                                     </p>
-                                    <div className="text-xs font-bold uppercase tracking-widest text-cyan-500 group-hover:text-cyan-300 flex items-center gap-2">
+                                    <div className="text-xs font-bold uppercase tracking-widest text-cyan-500 group-hover:text-cyan-800 font-semibold flex items-center gap-2">
                                         Definition <span className="opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1">→</span>
                                     </div>
                                 </div>
@@ -166,7 +166,7 @@ export default function ArticlesPage() {
                                         className={`h-6 w-auto object-contain transition-all mx-auto ${selectedPublication === pub.name ? 'opacity-100' : 'opacity-50 group-hover:opacity-100'}`}
                                     />
                                 </div>
-                                <div className={`text-xs font-mono uppercase tracking-widest transition-colors w-full text-center ${selectedPublication === pub.name ? 'text-cyan-400' : 'text-zinc-950 group-hover:text-zinc-800'}`}>
+                                <div className={`text-xs font-mono uppercase tracking-widest transition-colors w-full text-center ${selectedPublication === pub.name ? 'text-cyan-800 font-semibold' : 'text-zinc-950 group-hover:text-zinc-800'}`}>
                                     {selectedPublication === pub.name ? 'Viewing' : 'Filter'}
                                 </div>
                             </button>
@@ -183,7 +183,7 @@ export default function ArticlesPage() {
                             {selectedPublication ? `Articles in ${selectedPublication}` : 'Recent Articles'}
                         </h2>
                         {selectedPublication && (
-                            <button onClick={() => setSelectedPublication(null)} className="text-xs text-zinc-900 font-bold hover:text-red-300 uppercase tracking-widest font-bold">
+                            <button onClick={() => setSelectedPublication(null)} className="text-xs text-zinc-900 font-bold hover:text-red-800 font-semibold uppercase tracking-widest font-bold">
                                 Clear Filter ✕
                             </button>
                         )}
@@ -210,7 +210,7 @@ export default function ArticlesPage() {
                                                 </div>
                                                 <span className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest">{article.date}</span>
                                             </div>
-                                            <h3 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-cyan-400 transition-colors font-grotesk">{article.title}</h3>
+                                            <h3 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-cyan-800 font-semibold transition-colors font-grotesk">{article.title}</h3>
                                             <p className="text-zinc-950 text-sm leading-relaxed mb-4 line-clamp-2">{article.description}</p>
                                         </div>
                                         <div className="text-xs font-bold uppercase tracking-widest text-zinc-950 group-hover:text-zinc-900 transition-colors">
@@ -224,7 +224,7 @@ export default function ArticlesPage() {
                     ) : (
                         <div className="text-center py-20 border border-dashed border-zinc-400 rounded-2xl">
                             <p className="text-zinc-900">No articles found for this filter.</p>
-                            <button onClick={() => setSelectedPublication(null)} className="mt-4 text-cyan-400 hover:text-cyan-300 text-sm">Clear Filters</button>
+                            <button onClick={() => setSelectedPublication(null)} className="mt-4 text-cyan-800 font-semibold hover:text-cyan-800 font-semibold text-sm">Clear Filters</button>
                         </div>
                     )}
 

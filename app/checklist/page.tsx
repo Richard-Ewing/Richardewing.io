@@ -103,10 +103,10 @@ const domains = [
 ];
 
 const colorClasses: Record<string, { border: string; bg: string; text: string; icon: string }> = {
-    cyan: { border: 'border-cyan-500/20', bg: 'bg-cyan-500/5', text: 'text-cyan-400', icon: 'bg-cyan-500/10' },
-    red: { border: 'border-red-500/20', bg: 'bg-red-500/5', text: 'text-red-400', icon: 'bg-red-500/10' },
+    cyan: { border: 'border-cyan-500/20', bg: 'bg-cyan-500/5', text: 'text-cyan-800 font-semibold', icon: 'bg-cyan-500/10' },
+    red: { border: 'border-red-500/20', bg: 'bg-red-500/5', text: 'text-red-800 font-semibold', icon: 'bg-red-500/10' },
     violet: { border: 'border-violet-500/20', bg: 'bg-violet-500/5', text: 'text-violet-400', icon: 'bg-violet-500/10' },
-    emerald: { border: 'border-emerald-500/20', bg: 'bg-emerald-500/5', text: 'text-emerald-400', icon: 'bg-emerald-500/10' },
+    emerald: { border: 'border-emerald-500/20', bg: 'bg-emerald-500/5', text: 'text-emerald-800 font-semibold', icon: 'bg-emerald-500/10' },
     amber: { border: 'border-amber-500/20', bg: 'bg-amber-500/5', text: 'text-amber-400', icon: 'bg-amber-500/10' },
     purple: { border: 'border-violet-500/20', bg: 'bg-violet-500/5', text: 'text-violet-400', icon: 'bg-violet-500/10' },
 };
@@ -121,7 +121,7 @@ export default function ChecklistPage() {
                     {/* Success Message */}
                     <div className="mb-10 p-6 rounded-2xl bg-emerald-500/5 border border-emerald-500/20 text-center">
                         <div className="text-4xl mb-3">✓</div>
-                        <h2 className="text-2xl font-bold text-emerald-400 mb-2">You&apos;re In — Full Checklist Below</h2>
+                        <h2 className="text-2xl font-bold text-emerald-800 font-semibold mb-2">You&apos;re In — Full Checklist Below</h2>
                         <p className="text-zinc-800">You&apos;ve been added to The Product Economist briefing. Here&apos;s the complete diagnostic framework.</p>
                     </div>
 
@@ -159,7 +159,7 @@ export default function ChecklistPage() {
                         <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">📖 How to Use This Checklist</h2>
                         <div className="grid sm:grid-cols-3 gap-6">
                             <div>
-                                <div className="text-sm font-bold text-cyan-400 mb-2">Step 1: Self-Assessment</div>
+                                <div className="text-sm font-bold text-cyan-800 font-semibold mb-2">Step 1: Self-Assessment</div>
                                 <p className="text-xs text-zinc-900 font-bold">Score each question using the traffic-light rubric. Be honest — this is for your benefit, not anyone else&apos;s.</p>
                             </div>
                             <div>
@@ -167,7 +167,7 @@ export default function ChecklistPage() {
                                 <p className="text-xs text-zinc-900 font-bold">Count your red scores. These are your highest-impact remediation opportunities. Start with the domain with the most red.</p>
                             </div>
                             <div>
-                                <div className="text-sm font-bold text-emerald-400 mb-2">Step 3: Execute</div>
+                                <div className="text-sm font-bold text-emerald-800 font-semibold mb-2">Step 3: Execute</div>
                                 <p className="text-xs text-zinc-900 font-bold">Use the action items for each question. Tackle 2-3 red items per quarter. Track progress with the free tools below.</p>
                             </div>
                         </div>
@@ -217,7 +217,7 @@ export default function ChecklistPage() {
                                                         </p>
                                                         <div className="flex flex-col sm:flex-row gap-3">
                                                             <div className="flex-1 rounded-lg bg-emerald-500/5 border border-emerald-500/10 p-3">
-                                                                <div className="text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest mb-1">🎯 Action</div>
+                                                                <div className="text-xs font-medium font-mono text-emerald-800 font-semibold uppercase tracking-widest mb-1">🎯 Action</div>
                                                                 <p className="text-xs text-zinc-900 font-bold">{item.action}</p>
                                                             </div>
                                                             <div className="sm:w-48 rounded-lg bg-zinc-50 border border-zinc-400 p-3">
@@ -308,7 +308,7 @@ export default function ChecklistPage() {
                             <a href="/api/buy/strategy_session" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                                 Book Strategy Session →
                             </a>
-                            <a href="/api/buy/full_audit" className="px-8 py-4 border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
+                            <a href="/api/buy/full_audit" className="px-8 py-4 border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-800 font-semibold transition-all">
                                 Full R&amp;D Audit ($7,500) →
                             </a>
                         </div>

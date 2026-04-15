@@ -240,7 +240,7 @@ export default function AuditInterview() {
                                     key={r}
                                     onClick={() => setRole(r as Role)}
                                     className={`px-4 py-2 rounded-lg border uppercase font-mono text-xs tracking-widest transition-all ${role === r
-                                        ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400'
+                                        ? 'bg-emerald-500/10 border-emerald-500 text-emerald-800 font-semibold'
                                         : 'bg-white/80 border-zinc-400 text-zinc-800 hover:border-white/30'
                                         }`}
                                 >
@@ -342,7 +342,7 @@ export default function AuditInterview() {
                             {/* Left Col: Verdict Card */}
                             <GlowCard className="p-8 flex flex-col items-center justify-center text-center h-full" glowColor={outcome.total > 7 ? "emerald" : "danger"}>
                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
-                                <div className={`text-6xl sm:text-7xl font-bold tracking-tighter mb-4 ${outcome.total > 7 ? 'text-emerald-400' : 'text-red-500'}`}>
+                                <div className={`text-6xl sm:text-7xl font-bold tracking-tighter mb-4 ${outcome.total > 7 ? 'text-emerald-800 font-semibold' : 'text-red-500'}`}>
                                     {outcome.verdict}
                                 </div>
                                 <div className="flex items-center gap-3 text-sm font-mono border-t border-zinc-400 pt-4 mt-4 w-full justify-center">
@@ -368,7 +368,7 @@ export default function AuditInterview() {
                                             <dim.icon size={14} className="text-zinc-800" />
                                             <span className="text-sm text-zinc-900 font-medium">{dim.label}</span>
                                         </div>
-                                        <div className={`text-sm font-mono font-bold ${scores[dim.id as keyof Scores] === 3 ? 'text-emerald-400' :
+                                        <div className={`text-sm font-mono font-bold ${scores[dim.id as keyof Scores] === 3 ? 'text-emerald-800 font-semibold' :
                                             scores[dim.id as keyof Scores] === 0 ? 'text-red-500' : 'text-zinc-900'
                                             }`}>
                                             {scores[dim.id as keyof Scores]}/3

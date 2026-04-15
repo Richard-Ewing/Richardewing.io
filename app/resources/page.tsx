@@ -127,10 +127,10 @@ export default function ResourcesPage() {
                                         className="flex items-center justify-between p-4 rounded-lg bg-white/5 border border-zinc-400 hover:border-cyan-500/30 hover:bg-cyan-500/5 transition-all group"
                                     >
                                         <div>
-                                            <div className="font-semibold text-zinc-950 group-hover:text-cyan-400 transition-colors text-sm">{item.name}</div>
+                                            <div className="font-semibold text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors text-sm">{item.name}</div>
                                             <div className="text-xs text-zinc-950 mt-0.5">{item.description}</div>
                                         </div>
-                                        <span className="text-gray-600 group-hover:text-cyan-400 transition-colors ml-2">→</span>
+                                        <span className="text-gray-600 group-hover:text-cyan-800 font-semibold transition-colors ml-2">→</span>
                                     </Link>
                                 ))}
                             </div>

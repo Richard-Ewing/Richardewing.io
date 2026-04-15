@@ -101,8 +101,8 @@ export default function CommitteeDashboard() {
                         <div>
                             <div className="flex items-center gap-2 mb-4">
                                 <div className="bg-red-500/10 border border-red-500/20 px-3 py-1 rounded-full flex items-center gap-2">
-                                    <Lock size={12} className="text-red-400" />
-                                    <span className="font-mono text-xs font-medium text-red-400 uppercase tracking-widest">Session Locked</span>
+                                    <Lock size={12} className="text-red-800 font-semibold" />
+                                    <span className="font-mono text-xs font-medium text-red-800 font-semibold uppercase tracking-widest">Session Locked</span>
                                 </div>
                                 <span className="font-mono text-zinc-800 text-xs font-medium uppercase tracking-widest">{session.session_id}</span>
                             </div>
@@ -124,7 +124,7 @@ export default function CommitteeDashboard() {
                 <ScrollReveal delay={100}>
                     <GlowCard className="p-8 h-full flex flex-col items-center justify-center text-center" glowColor={analytics.verdict.includes('Strong') ? 'emerald' : 'danger'}>
                         <div className="text-xs font-mono text-zinc-700 uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
-                        <div className={`text-5xl lg:text-6xl font-bold tracking-tighter mb-6 ${analytics.verdict.includes('Hire') && !analytics.verdict.includes('No') ? 'text-emerald-400' : 'text-red-500'
+                        <div className={`text-5xl lg:text-6xl font-bold tracking-tighter mb-6 ${analytics.verdict.includes('Hire') && !analytics.verdict.includes('No') ? 'text-emerald-800 font-semibold' : 'text-red-500'
                             }`}>
                             {analytics.verdict}
                         </div>
@@ -155,7 +155,7 @@ export default function CommitteeDashboard() {
                                 <div key={i} className="border-b border-zinc-400 last:border-0 pb-4 last:pb-0">
                                     <div className="flex justify-between items-start mb-1">
                                         <span className="text-xs text-zinc-900 font-bold font-bold uppercase">{s.dimension.replace(/_/g, ' ')}</span>
-                                        <span className={`font-mono text-xs font-bold ${s.score > 2 ? 'text-emerald-400' : 'text-zinc-900'}`}>{s.score}/3</span>
+                                        <span className={`font-mono text-xs font-bold ${s.score > 2 ? 'text-emerald-800 font-semibold' : 'text-zinc-900'}`}>{s.score}/3</span>
                                     </div>
                                     <p className="text-xs font-medium text-zinc-700 italic">"{s.rationale}"</p>
                                 </div>

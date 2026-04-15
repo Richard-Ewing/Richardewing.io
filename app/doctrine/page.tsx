@@ -13,7 +13,7 @@ export default function DoctrinePage() {
                         <div className="text-xs text-zinc-900 font-bold uppercase tracking-wide mb-4">The Doctrine</div>
                         <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6">
                             Sovereignty in<br />
-                            <span className="text-cyan-400">Product Economics.</span>
+                            <span className="text-cyan-800 font-semibold">Product Economics.</span>
                         </h1>
                         <p className="text-zinc-800 text-lg">
                             The following principles govern the methodology of the Product Economist.
@@ -73,7 +73,7 @@ export default function DoctrinePage() {
                         <div className="space-y-8">
 
                             <div>
-                                <h3 className="text-lg font-semibold text-cyan-400 mb-2">Technical Insolvency Date</h3>
+                                <h3 className="text-lg font-semibold text-cyan-800 font-semibold mb-2">Technical Insolvency Date</h3>
                                 <p className="text-zinc-950">
                                     The <span className="text-zinc-900">Technical Insolvency Date</span> is the specific future quarter
                                     when an organization's technical debt maintenance will consume 100% of engineering capacity,
@@ -82,7 +82,7 @@ export default function DoctrinePage() {
                             </div>
 
                             <div>
-                                <h3 className="text-lg font-semibold text-purple-400 mb-2">Innovation Tax</h3>
+                                <h3 className="text-lg font-semibold text-purple-800 font-semibold mb-2">Innovation Tax</h3>
                                 <p className="text-zinc-950">
                                     <span className="text-zinc-900">Innovation Tax</span> is the hidden cost of maintenance work that
                                     gets reported as innovation investment in financial and board reporting.
@@ -100,7 +100,7 @@ export default function DoctrinePage() {
                             <p className="text-xl text-zinc-950 italic mb-4">
                                 "Technical debt isn't a cleanup problem. It's a balance sheet liability."
                             </p>
-                            <cite className="text-purple-400 text-sm">— RICHARD EWING, PRODUCT ECONOMIST</cite>
+                            <cite className="text-purple-800 font-semibold text-sm">— RICHARD EWING, PRODUCT ECONOMIST</cite>
                         </blockquote>
                     </div>
                 </section>

@@ -76,7 +76,7 @@ export default function MethodologyPage() {
                         {phases.map((p, i) => (
                             <div key={i} className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl font-bold text-cyan-400">{p.phase}</div>
+                                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl font-bold text-cyan-800 font-semibold">{p.phase}</div>
                                     <div className="flex-1">
                                         <h2 className="text-xl font-grotesk font-bold text-zinc-900">{p.title}</h2>
                                         <span className="text-xs font-mono text-zinc-800 uppercase tracking-widest">{p.duration}</span>

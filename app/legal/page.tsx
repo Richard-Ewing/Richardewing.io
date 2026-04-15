@@ -49,7 +49,7 @@ export default function LegalPage() {
                                 </p>
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
                                     <GlowCard className="p-4" glowColor="cyan">
-                                        <div className="text-cyan-400 text-lg mb-2">🔒</div>
+                                        <div className="text-cyan-800 font-semibold text-lg mb-2">🔒</div>
                                         <div className="text-zinc-950 font-bold text-sm mb-1">Secure Storage</div>
                                         <div className="text-zinc-950 text-xs">Email addresses stored securely, never shared</div>
                                     </GlowCard>
@@ -135,7 +135,7 @@ export default function LegalPage() {
                                 </p>
                                 <a
                                     href="mailto:richardewing@exogram.ai"
-                                    className="inline-flex items-center gap-2 text-cyan-400 hover:text-zinc-900 transition font-mono text-sm"
+                                    className="inline-flex items-center gap-2 text-cyan-800 font-semibold hover:text-zinc-900 transition font-mono text-sm"
                                 >
                                     <span className="w-2 h-2 bg-cyan-400 rounded-full" />
                                     richardewing@exogram.ai

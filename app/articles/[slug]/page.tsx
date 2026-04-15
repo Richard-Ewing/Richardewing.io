@@ -79,13 +79,13 @@ export default async function ArticlePage({ params }: Props) {
             <div className="mb-8 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/articles" className="hover:text-zinc-900 transition-colors">Canonical Hub</Link>
                 <span>/</span>
-                <span className="text-cyan-400 font-bold truncate">{article.title}</span>
+                <span className="text-cyan-800 font-semibold font-bold truncate">{article.title}</span>
             </div>
 
             {/* Header */}
             <header className="mb-12 border-b border-zinc-400 pb-12">
                 <div className="flex items-center gap-4 mb-6">
-                    <span className="px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono uppercase tracking-widest">
+                    <span className="px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-800 font-semibold text-xs font-mono uppercase tracking-widest">
                         {article.source}
                     </span>
                     <span className="text-zinc-700 text-xs font-mono uppercase tracking-widest">

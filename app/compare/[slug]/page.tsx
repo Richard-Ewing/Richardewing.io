@@ -50,7 +50,7 @@ export default async function PseoComparePage({ params }: { params: Promise<{ sl
         <main className="pt-20 pb-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <Link href="/compare" className="text-cyan-400 font-mono text-sm uppercase tracking-widest hover:text-cyan-300 mb-8 inline-block">
+                    <Link href="/compare" className="text-cyan-800 font-semibold font-mono text-sm uppercase tracking-widest hover:text-cyan-800 font-semibold mb-8 inline-block">
                         ← Back to Comparisons
                     </Link>
 
@@ -68,9 +68,9 @@ export default async function PseoComparePage({ params }: { params: Promise<{ sl
                         </div>
                         <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8 relative overflow-hidden">
                             <div className="absolute top-0 right-0 p-4 opacity-10">
-                                <span className="text-6xl text-cyan-400">✧</span>
+                                <span className="text-6xl text-cyan-800 font-semibold">✧</span>
                             </div>
-                            <h2 className="text-xl font-bold font-grotesk text-cyan-400 mb-4 uppercase tracking-widest">Our Audit Matrix Focus</h2>
+                            <h2 className="text-xl font-bold font-grotesk text-cyan-800 font-semibold mb-4 uppercase tracking-widest">Our Audit Matrix Focus</h2>
                             <p className="text-zinc-900 leading-relaxed font-medium">{item.ourAdvantage}</p>
                         </div>
                     </div>

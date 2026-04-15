@@ -71,7 +71,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                     prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
                     prose-p:text-zinc-600 prose-p:leading-relaxed prose-p:text-base
                     prose-strong:text-zinc-900
-                    prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline
+                    prose-a:text-cyan-800 font-semibold prose-a:no-underline hover:prose-a:underline
                     prose-li:text-zinc-600
                     prose-table:text-sm
                     prose-th:text-zinc-700 prose-th:border-zinc-700 prose-th:px-4 prose-th:py-2
@@ -100,7 +100,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                             {related.map(r => (
                                 <Link key={r.slug} href={`/blog/${r.slug}`}
                                     className="group p-5 rounded-xl border border-zinc-400 bg-zinc-50 hover:border-white/15 transition-all">
-                                    <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors mb-2">{r.title}</h3>
+                                    <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors mb-2">{r.title}</h3>
                                     <p className="text-xs text-zinc-900 font-bold line-clamp-2">{r.excerpt}</p>
                                     <span className="text-xs font-medium text-zinc-800 mt-2 block">{r.readTime}</span>
                                 </Link>
@@ -111,10 +111,10 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
 
                 {/* Cross-link to Published Articles */}
                 <div className="mb-12 p-6 rounded-xl border border-purple-500/20 bg-purple-500/5">
-                    <p className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2">Published Work</p>
+                    <p className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2">Published Work</p>
                     <p className="text-sm text-zinc-900 font-medium">
                         This article expands on ideas from my published work in <strong className="text-zinc-900">CIO.com</strong>, <strong className="text-zinc-900">Built In</strong>, <strong className="text-zinc-900">Mind the Product</strong>, and <strong className="text-zinc-900">HackerNoon</strong>.{' '}
-                        <Link href="/articles" className="text-purple-400 hover:underline">View published articles →</Link>
+                        <Link href="/articles" className="text-purple-800 font-semibold hover:underline">View published articles →</Link>
                     </p>
                 </div>
 

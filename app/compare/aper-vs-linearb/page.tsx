@@ -25,7 +25,7 @@ export default function APERvsLinearBPage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-violet-400 font-bold">APER vs LinearB</span>
+                        <Link href="/compare" className="hover:text-cyan-800 font-semibold">Compare</Link><span>/</span><span className="text-violet-400 font-bold">APER vs LinearB</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         APER <span className="text-zinc-900">vs</span>{' '}

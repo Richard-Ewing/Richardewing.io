@@ -56,7 +56,7 @@ export default function CIORecapPage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/articles" className="hover:text-cyan-400">Articles</Link><span>/</span><span className="text-cyan-400 font-bold">CIO.com</span>
+                        <Link href="/articles" className="hover:text-cyan-800 font-semibold">Articles</Link><span>/</span><span className="text-cyan-800 font-semibold font-bold">CIO.com</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Published on{' '}
@@ -91,16 +91,16 @@ export default function CIORecapPage() {
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
                                 {['technical-debt', 'innovation-tax', 'ai-cogs', 'dora-metrics', 'cost-of-predictivity'].map(slug => (
-                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
+                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>
                         </div>
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Tools</h2>
                             <div className="space-y-2">
-                                <Link href="/tools/pdi" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ Product Debt Index (PDI)</Link>
-                                <Link href="/tools/aper" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ APER Calculator</Link>
-                                <Link href="/tools/aueb" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ AUEB Calculator</Link>
+                                <Link href="/tools/pdi" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ Product Debt Index (PDI)</Link>
+                                <Link href="/tools/aper" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ APER Calculator</Link>
+                                <Link href="/tools/aueb" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ AUEB Calculator</Link>
                             </div>
                         </div>
                     </div>

@@ -145,7 +145,7 @@ export default function SLMTool() {
                             <div className="flex flex-wrap gap-2">
                                 {PERSONAS.map(p => (
                                     <button key={p.id} onClick={() => setPersona(p.id)}
-                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400' : 'bg-white/80 border-zinc-400 text-zinc-900 hover:border-white/30'}`}
+                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id ? 'bg-emerald-500/10 border-emerald-500 text-emerald-800 font-semibold' : 'bg-white/80 border-zinc-400 text-zinc-900 hover:border-white/30'}`}
                                     >
                                         <p.icon size={14} /> {p.label}
                                     </button>
@@ -157,7 +157,7 @@ export default function SLMTool() {
                             {step === 1 && (
                                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
                                     <div className="flex items-center gap-3 border-b border-zinc-400 pb-4">
-                                        <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold font-mono text-sm border border-blue-500/30">1</div>
+                                        <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-800 font-semibold flex items-center justify-center font-bold font-mono text-sm border border-blue-500/30">1</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Inference Volume</h3>
                                             <p className="text-sm text-zinc-900 font-medium">How heavy is your generative payload?</p>
@@ -167,7 +167,7 @@ export default function SLMTool() {
                                     <div className="space-y-8">
                                         <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-400 relative group">
                                             <div className="flex justify-between items-end mb-4">
-                                                <label className="text-xs font-mono text-blue-400 uppercase tracking-widest flex items-center gap-2">
+                                                <label className="text-xs font-mono text-blue-800 font-semibold uppercase tracking-widest flex items-center gap-2">
                                                     Generative Workflows / Day
                                                     <span className="w-4 h-4 rounded-full bg-zinc-200 text-zinc-900 flex items-center justify-center text-xs font-medium cursor-help" title="How many times users trigger an LLM (chat, summarization, workflow automation)">?</span>
                                                 </label>
@@ -178,7 +178,7 @@ export default function SLMTool() {
 
                                         <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-400 relative group">
                                             <div className="flex justify-between items-end mb-4">
-                                                <label className="text-xs font-mono text-indigo-400 uppercase tracking-widest flex items-center gap-2">
+                                                <label className="text-xs font-mono text-indigo-800 font-semibold uppercase tracking-widest flex items-center gap-2">
                                                     Average Tokens / Workflow
                                                     <span className="w-4 h-4 rounded-full bg-zinc-200 text-zinc-900 flex items-center justify-center text-xs font-medium cursor-help" title="RAG payload: User prompt + DB Context + LLM Output. 1000 tokens ≈ 750 words.">?</span>
                                                 </label>
@@ -197,7 +197,7 @@ export default function SLMTool() {
                             {step === 2 && (
                                 <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
                                     <div className="flex items-center gap-3 border-b border-zinc-400 pb-4">
-                                        <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono text-sm border border-emerald-500/30">2</div>
+                                        <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-800 font-semibold flex items-center justify-center font-bold font-mono text-sm border border-emerald-500/30">2</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-zinc-900">Vendor & Target Hardware</h3>
                                             <p className="text-sm text-zinc-900 font-medium">Choose your API dependency and local hardware alternative.</p>
@@ -277,13 +277,13 @@ export default function SLMTool() {
                                             {results.isSelfHostCheaper ? (
                                                 <>
                                                     <div className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-1">Projected Annual Savings</div>
-                                                    <div className="text-5xl font-bold text-emerald-400 font-mono mb-2">+{formatMoney(results.annualSavings)}</div>
+                                                    <div className="text-5xl font-bold text-emerald-800 font-semibold font-mono mb-2">+{formatMoney(results.annualSavings)}</div>
                                                     <p className="text-xs text-zinc-900 font-bold">By migrating to {results.hardwareName}, you break even on hardware and maintenance in <strong className="text-zinc-900">{results.breakevenDays} days</strong> of operation.</p>
                                                 </>
                                             ) : (
                                                 <>
                                                     <div className="text-xs font-mono text-red-500 uppercase tracking-widest mb-1">Local Hosting Premium</div>
-                                                    <div className="text-5xl font-bold text-red-400 font-mono mb-2">-{formatMoney(Math.abs(results.annualSavings))}</div>
+                                                    <div className="text-5xl font-bold text-red-800 font-semibold font-mono mb-2">-{formatMoney(Math.abs(results.annualSavings))}</div>
                                                     <p className="text-xs text-zinc-900 font-bold">You do not have the token volume to justify {results.hardwareName} and a local MLOps team overhead.</p>
                                                 </>
                                             )}
@@ -297,13 +297,13 @@ export default function SLMTool() {
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                                 <GlowCard className="p-6" glowColor="blue">
                                     <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">API Run Rate</div>
-                                    <div className="text-3xl font-bold text-blue-400">{formatMoney(results.apiCost)}<span className="text-sm font-normal text-zinc-900">/mo</span></div>
+                                    <div className="text-3xl font-bold text-blue-800 font-semibold">{formatMoney(results.apiCost)}<span className="text-sm font-normal text-zinc-900">/mo</span></div>
                                     <p className="text-xs font-medium text-zinc-950 mt-2 line-clamp-2">Paid to LLM vendor directly via metered billing.</p>
                                 </GlowCard>
 
                                 <GlowCard className="p-6" glowColor="emerald">
                                     <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Total Local Cost</div>
-                                    <div className="text-3xl font-bold text-emerald-400">{formatMoney(results.localCost)}<span className="text-sm font-normal text-zinc-900">/mo</span></div>
+                                    <div className="text-3xl font-bold text-emerald-800 font-semibold">{formatMoney(results.localCost)}<span className="text-sm font-normal text-zinc-900">/mo</span></div>
                                     <p className="text-xs font-medium text-zinc-950 mt-2 line-clamp-2">{results.hardwareName} + Devops baseline overhead.</p>
                                 </GlowCard>
 
@@ -318,7 +318,7 @@ export default function SLMTool() {
                         <ScrollReveal delay={150}>
                              <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-6 border border-zinc-400 mb-8">
                                 <div className="flex items-center gap-2 mb-4">
-                                    <Zap size={16} className="text-yellow-400" />
+                                    <Zap size={16} className="text-yellow-800 font-semibold" />
                                     <span className="text-xs font-mono uppercase tracking-widest text-zinc-900">The "Why" For Private AI</span>
                                 </div>
                                 <p className="text-zinc-950 text-sm leading-relaxed mb-4">
@@ -377,13 +377,13 @@ export default function SLMTool() {
                                     <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-emerald-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
                                         <div className="bg-emerald-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-emerald-500/20">
-                                            <span className="text-emerald-400 font-bold font-mono">03</span>
+                                            <span className="text-emerald-800 font-semibold font-bold font-mono">03</span>
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-zinc-950 font-bold mb-2">Stand Up a Sovereign Validation Enclave</h4>
                                             <p className="text-zinc-900 text-sm leading-relaxed mb-4">Data sovereignty isn't just about privacy—it's an M&A prerequisite. Moving to an SLM (Llama 3 8B) on your VPC completely insulates your proprietary vectors from SaaS telemetry.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest font-bold">
+                                                <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-800 font-semibold uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
                                                 <p className="text-sm font-medium text-zinc-950">Stand up a local bare-metal node running vLLM. Shadow-route 10% of API traffic to the SLM to prove deterministic latency and output parity before the board review.</p>

@@ -22,7 +22,7 @@ export default function CybersecurityPage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/industries" className="hover:text-cyan-400">Industries</Link><span>/</span><span className="text-red-400 font-bold">Cybersecurity</span>
+                        <Link href="/industries" className="hover:text-cyan-800 font-semibold">Industries</Link><span>/</span><span className="text-red-800 font-semibold font-bold">Cybersecurity</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Product Economics for{' '}
@@ -43,9 +43,9 @@ export default function CybersecurityPage() {
                     <div className="rounded-2xl border border-red-500/30 bg-red-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">How I Help Cybersecurity Companies</h2>
                         <ul className="space-y-3 text-zinc-950 mb-8">
-                            <li className="flex items-start gap-3"><span className="text-red-400 mt-1">→</span> <span>Quantify security debt in breach risk dollars, not just vulnerability counts</span></li>
-                            <li className="flex items-start gap-3"><span className="text-red-400 mt-1">→</span> <span>Model AI detection feature economics — false positive cost vs detection value</span></li>
-                            <li className="flex items-start gap-3"><span className="text-red-400 mt-1">→</span> <span>Calculate compliance engineering overhead across multiple framework certifications</span></li>
+                            <li className="flex items-start gap-3"><span className="text-red-800 font-semibold mt-1">→</span> <span>Quantify security debt in breach risk dollars, not just vulnerability counts</span></li>
+                            <li className="flex items-start gap-3"><span className="text-red-800 font-semibold mt-1">→</span> <span>Model AI detection feature economics — false positive cost vs detection value</span></li>
+                            <li className="flex items-start gap-3"><span className="text-red-800 font-semibold mt-1">→</span> <span>Calculate compliance engineering overhead across multiple framework certifications</span></li>
                         </ul>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-red-500 to-orange-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>

@@ -15,18 +15,18 @@ const ICON_MAP: Record<string, any> = {
 };
 
 const CMAP: Record<string, { bg: string, text: string, border: string, shadow: string, hoverBg: string, bg10: string }> = {
-    cyan: { bg: 'bg-cyan-500/5', text: 'text-cyan-400', border: 'border-cyan-500/20', shadow: 'shadow-[0_0_15px_rgba(6,182,212,0.15)]', hoverBg: 'hover:bg-cyan-500/20', bg10: 'bg-cyan-500/10' },
-    purple: { bg: 'bg-purple-500/5', text: 'text-purple-400', border: 'border-purple-500/20', shadow: 'shadow-[0_0_15px_rgba(168,85,247,0.15)]', hoverBg: 'hover:bg-purple-500/20', bg10: 'bg-purple-500/10' },
-    emerald: { bg: 'bg-emerald-500/5', text: 'text-emerald-400', border: 'border-emerald-500/20', shadow: 'shadow-[0_0_15px_rgba(16,185,129,0.15)]', hoverBg: 'hover:bg-emerald-500/20', bg10: 'bg-emerald-500/10' },
+    cyan: { bg: 'bg-cyan-500/5', text: 'text-cyan-800 font-semibold', border: 'border-cyan-500/20', shadow: 'shadow-[0_0_15px_rgba(6,182,212,0.15)]', hoverBg: 'hover:bg-cyan-500/20', bg10: 'bg-cyan-500/10' },
+    purple: { bg: 'bg-purple-500/5', text: 'text-purple-800 font-semibold', border: 'border-purple-500/20', shadow: 'shadow-[0_0_15px_rgba(168,85,247,0.15)]', hoverBg: 'hover:bg-purple-500/20', bg10: 'bg-purple-500/10' },
+    emerald: { bg: 'bg-emerald-500/5', text: 'text-emerald-800 font-semibold', border: 'border-emerald-500/20', shadow: 'shadow-[0_0_15px_rgba(16,185,129,0.15)]', hoverBg: 'hover:bg-emerald-500/20', bg10: 'bg-emerald-500/10' },
     red: { bg: 'bg-red-500/5', text: 'text-red-500', border: 'border-red-500/20', shadow: 'shadow-[0_0_15px_rgba(239,68,68,0.15)]', hoverBg: 'hover:bg-red-500/20', bg10: 'bg-red-500/10' },
-    blue: { bg: 'bg-blue-500/5', text: 'text-blue-400', border: 'border-blue-500/20', shadow: 'shadow-[0_0_15px_rgba(59,130,246,0.15)]', hoverBg: 'hover:bg-blue-500/20', bg10: 'bg-blue-500/10' },
+    blue: { bg: 'bg-blue-500/5', text: 'text-blue-800 font-semibold', border: 'border-blue-500/20', shadow: 'shadow-[0_0_15px_rgba(59,130,246,0.15)]', hoverBg: 'hover:bg-blue-500/20', bg10: 'bg-blue-500/10' },
     pink: { bg: 'bg-pink-500/5', text: 'text-pink-400', border: 'border-pink-500/20', shadow: 'shadow-[0_0_15px_rgba(236,72,153,0.15)]', hoverBg: 'hover:bg-pink-500/20', bg10: 'bg-pink-500/10' },
     amber: { bg: 'bg-amber-500/5', text: 'text-amber-400', border: 'border-amber-500/20', shadow: 'shadow-[0_0_15px_rgba(245,158,11,0.15)]', hoverBg: 'hover:bg-amber-500/20', bg10: 'bg-amber-500/10' },
-    orange: { bg: 'bg-orange-500/5', text: 'text-orange-400', border: 'border-orange-500/20', shadow: 'shadow-[0_0_15px_rgba(249,115,22,0.15)]', hoverBg: 'hover:bg-orange-500/20', bg10: 'bg-orange-500/10' },
-    indigo: { bg: 'bg-indigo-500/5', text: 'text-indigo-400', border: 'border-indigo-500/20', shadow: 'shadow-[0_0_15px_rgba(99,102,241,0.15)]', hoverBg: 'hover:bg-indigo-500/20', bg10: 'bg-indigo-500/10' },
+    orange: { bg: 'bg-orange-500/5', text: 'text-orange-800 font-semibold', border: 'border-orange-500/20', shadow: 'shadow-[0_0_15px_rgba(249,115,22,0.15)]', hoverBg: 'hover:bg-orange-500/20', bg10: 'bg-orange-500/10' },
+    indigo: { bg: 'bg-indigo-500/5', text: 'text-indigo-800 font-semibold', border: 'border-indigo-500/20', shadow: 'shadow-[0_0_15px_rgba(99,102,241,0.15)]', hoverBg: 'hover:bg-indigo-500/20', bg10: 'bg-indigo-500/10' },
     slate: { bg: 'bg-slate-500/5', text: 'text-slate-600', border: 'border-slate-500/20', shadow: 'shadow-[0_0_15px_rgba(100,116,139,0.15)]', hoverBg: 'hover:bg-slate-500/20', bg10: 'bg-slate-500/10' },
     fuchsia: { bg: 'bg-fuchsia-500/5', text: 'text-zinc-950 font-semibolduchsia-400', border: 'border-fuchsia-500/20', shadow: 'shadow-[0_0_15px_rgba(217,70,239,0.15)]', hoverBg: 'hover:bg-fuchsia-500/20', bg10: 'bg-fuchsia-500/10' },
-    yellow: { bg: 'bg-yellow-500/5', text: 'text-yellow-400', border: 'border-yellow-500/20', shadow: 'shadow-[0_0_15px_rgba(234,179,8,0.15)]', hoverBg: 'hover:bg-yellow-500/20', bg10: 'bg-yellow-500/10' },
+    yellow: { bg: 'bg-yellow-500/5', text: 'text-yellow-800 font-semibold', border: 'border-yellow-500/20', shadow: 'shadow-[0_0_15px_rgba(234,179,8,0.15)]', hoverBg: 'hover:bg-yellow-500/20', bg10: 'bg-yellow-500/10' },
     teal: { bg: 'bg-teal-500/5', text: 'text-teal-400', border: 'border-teal-500/20', shadow: 'shadow-[0_0_15px_rgba(20,184,166,0.15)]', hoverBg: 'hover:bg-teal-500/20', bg10: 'bg-teal-500/10' },
     rose: { bg: 'bg-rose-500/5', text: 'text-rose-400', border: 'border-rose-500/20', shadow: 'shadow-[0_0_15px_rgba(244,63,94,0.15)]', hoverBg: 'hover:bg-rose-500/20', bg10: 'bg-rose-500/10' },
 };
@@ -50,7 +50,7 @@ export default function DeepCareersHub() {
                     <div className="flex flex-wrap items-center gap-3 mb-8">
                         <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_#10b981]"></div>
-                            <span className="font-mono text-xs font-medium text-emerald-400 uppercase tracking-widest font-bold">THE 2026 PARADIGM</span>
+                            <span className="font-mono text-xs font-medium text-emerald-800 font-semibold uppercase tracking-widest font-bold">THE 2026 PARADIGM</span>
                         </div>
                         <span className="text-zinc-950 text-xs font-mono uppercase tracking-widest hidden sm:inline-block">/</span>
                         <span className="text-zinc-900 text-xs font-mono uppercase tracking-widest hidden sm:inline-block">Abandon the feature factory. Govern the agents.</span>
@@ -180,7 +180,7 @@ export default function DeepCareersHub() {
                                     <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold text-xs font-medium font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]">100,000x Value</div>
                                 </div>
                                 <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6 border border-indigo-500/30">
-                                    <Diamond className="text-indigo-400" size={24} />
+                                    <Diamond className="text-indigo-800 font-semibold" size={24} />
                                 </div>
                                 <h3 className="text-xl font-bold text-zinc-950 mb-3">The Vault</h3>
                                 <p className="text-sm text-zinc-950 mb-8 leading-relaxed font-medium">Over 400+ specific economic frameworks, AI sizing calculators, and board-ready deliverables. The fastest route to promotion.</p>
@@ -188,7 +188,7 @@ export default function DeepCareersHub() {
                                 <ul className="space-y-4 mb-8">
                                     <li>
                                         <Link href="/vault/curriculum/tracks" className="group/item flex items-start gap-3">
-                                            <div className="mt-1 bg-indigo-500/20 rounded p-1 border border-indigo-500/30"><CheckCircle size={12} className="text-indigo-400" /></div>
+                                            <div className="mt-1 bg-indigo-500/20 rounded p-1 border border-indigo-500/30"><CheckCircle size={12} className="text-indigo-800 font-semibold" /></div>
                                             <div>
                                                 <div className="text-sm font-bold text-zinc-900">Full Curriculum Access</div>
                                                 <div className="text-xs text-zinc-900 font-bold">30 tracks covering Agentic scaling, PDI, Serverless GPUs, and M&A Auditing.</div>
@@ -197,7 +197,7 @@ export default function DeepCareersHub() {
                                     </li>
                                     <li>
                                         <div className="group/item flex items-start gap-3 opacity-90">
-                                            <div className="mt-1 bg-indigo-500/20 rounded p-1 border border-indigo-500/30"><CheckCircle size={12} className="text-indigo-400" /></div>
+                                            <div className="mt-1 bg-indigo-500/20 rounded p-1 border border-indigo-500/30"><CheckCircle size={12} className="text-indigo-800 font-semibold" /></div>
                                             <div>
                                                 <div className="text-sm font-bold text-zinc-900">Execution Playbooks</div>
                                                 <div className="text-xs text-zinc-900 font-bold">Step-by-step PDF runbooks for complex migrations.</div>

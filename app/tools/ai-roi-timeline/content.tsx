@@ -82,7 +82,7 @@ export default function AIRoiTimelineContent() {
                             <div className="bg-zinc-100 p-6 rounded-2xl border border-zinc-400 space-y-8">
                                 <div>
                                     <div className="flex justify-between items-end mb-4">
-                                        <label htmlFor="engineers-range" className="text-xs font-mono text-purple-400 uppercase tracking-widest flex items-center gap-2"><Users size={12}/> Headcount</label>
+                                        <label htmlFor="engineers-range" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest flex items-center gap-2"><Users size={12}/> Headcount</label>
                                         <div className="text-2xl font-bold font-mono">{engineers} FTEs</div>
                                     </div>
                                     <input id="engineers-range" title="Engineers" aria-label="Engineers count" type="range" min="10" max="500" step="5" value={engineers} onChange={(e) => setEngineers(parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-purple-500" />
@@ -113,7 +113,7 @@ export default function AIRoiTimelineContent() {
                                         >
                                             <div className="flex justify-between items-center">
                                                 <div className="font-bold text-zinc-900">{data.name}</div>
-                                                <div className="text-xs font-mono text-purple-400">{(data.gain * 100)}% Gain</div>
+                                                <div className="text-xs font-mono text-purple-800 font-semibold">{(data.gain * 100)}% Gain</div>
                                             </div>
                                             <div className="grid grid-cols-2 gap-4 mt-3 text-xs text-zinc-950 font-mono">
                                                 <div>CapEx: ${(data.capEx/1000).toFixed(0)}k</div>
@@ -178,7 +178,7 @@ export default function AIRoiTimelineContent() {
 
                             <div className="p-6 bg-purple-900/20 border border-purple-500/30 rounded-2xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-colors duration-500"></div>
-                                <div className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2 flex items-center gap-2">Break-Even Horizon</div>
+                                <div className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 flex items-center gap-2">Break-Even Horizon</div>
                                 <div className="text-3xl sm:text-4xl font-black text-zinc-900">
                                     {breakEvenMonths < 0 ? 'Never' : `${breakEvenMonths.toFixed(1)} Months`}
                                 </div>
@@ -277,13 +277,13 @@ export default function AIRoiTimelineContent() {
                                         <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                             <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
-                                                <span className="text-cyan-400 font-bold font-mono">03</span>
+                                                <span className="text-cyan-800 font-semibold font-bold font-mono">03</span>
                                             </div>
                                             <div className="relative z-10 w-full">
                                                 <h4 className="text-zinc-950 font-bold mb-2">Schedule the Audit Clawback</h4>
                                                 <p className="text-zinc-900 text-sm leading-relaxed mb-4">CapEx investments without structured post-mortems are effectively donations to engineering R&D. Accountability must be verified at precisely {breakEvenMonths.toFixed(1)} months.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                    <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                    <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-800 font-semibold uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
                                                     <p className="text-sm font-medium text-zinc-950">Insert a calendar hold for a 30-minute executive review on the exact breakeven date. If the net position is not positive, the owning VP must submit a detailed remediation plan.</p>

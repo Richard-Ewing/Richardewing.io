@@ -31,16 +31,16 @@ export default function CurriculumQuiz({ quiz }: { quiz: Quiz }) {
                     if (hasSubmitted) {
                         if (isCorrectOption) {
                             bgClass = "bg-emerald-500/10 border-emerald-500/30";
-                            textClass = "text-emerald-400 font-medium";
-                            icon = <CheckCircle2 className="w-4 h-4 text-emerald-400" />;
+                            textClass = "text-emerald-800 font-semibold font-medium";
+                            icon = <CheckCircle2 className="w-4 h-4 text-emerald-800 font-semibold" />;
                         } else if (isSelected) {
                             bgClass = "bg-red-500/10 border-red-500/30";
-                            textClass = "text-red-400 font-medium";
-                            icon = <XCircle className="w-4 h-4 text-red-400" />;
+                            textClass = "text-red-800 font-semibold font-medium";
+                            icon = <XCircle className="w-4 h-4 text-red-800 font-semibold" />;
                         }
                     } else if (isSelected) {
                         bgClass = "bg-cyan-500/10 border-cyan-500/50";
-                        textClass = "text-cyan-400 font-medium";
+                        textClass = "text-cyan-800 font-semibold font-medium";
                     }
 
                     return (
@@ -71,10 +71,10 @@ export default function CurriculumQuiz({ quiz }: { quiz: Quiz }) {
             ) : (
                 <div className={`p-4 rounded-lg border flex items-start gap-3 ${isCorrect ? 'bg-emerald-500/10 border-emerald-500/20' : 'bg-red-500/10 border-red-500/20'}`}>
                     <div className="shrink-0 mt-0.5">
-                        {isCorrect ? <CheckCircle2 className="w-5 h-5 text-emerald-400" /> : <XCircle className="w-5 h-5 text-red-400" />}
+                        {isCorrect ? <CheckCircle2 className="w-5 h-5 text-emerald-800 font-semibold" /> : <XCircle className="w-5 h-5 text-red-800 font-semibold" />}
                     </div>
                     <div>
-                        <div className={`text-sm font-bold mb-1 ${isCorrect ? 'text-emerald-400' : 'text-red-400'}`}>
+                        <div className={`text-sm font-bold mb-1 ${isCorrect ? 'text-emerald-800 font-semibold' : 'text-red-800 font-semibold'}`}>
                             {isCorrect ? 'Correct!' : 'Incorrect.'}
                         </div>
                         <p className="text-zinc-950 text-sm leading-relaxed">{quiz.explanation}</p>

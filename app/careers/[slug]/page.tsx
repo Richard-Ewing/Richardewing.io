@@ -94,7 +94,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
             </div>
 
             <ScrollReveal>
-                <div className={`capsule-container rounded-2xl sm:rounded-[2.5rem] p-8 sm:p-14 mb-16 overflow-hidden relative border border-zinc-400 bg-gradient-to-br from-zinc-50 via-[#0f1115] to-zinc-100`}>
+                <div className={`capsule-container rounded-2xl sm:rounded-[2.5rem] p-8 sm:p-14 mb-16 overflow-hidden relative border border-zinc-400 bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-100`}>
                     <div className={`absolute top-[-20%] right-[-10%] p-64 bg-${pathData.color}-500/10 blur-[120px] pointer-events-none rounded-full`} />
                     <div className="absolute bottom-[-20%] left-[-10%] p-48 bg-zinc-500/5 blur-[120px] pointer-events-none rounded-full" />
                     
@@ -120,10 +120,10 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
 
                     <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-6 relative z-10">
                         {pathData.marketEconomics && (
-                            <div className="md:col-span-5 bg-gradient-to-br from-white to-[#0a0c10] border border-cyan-500/20 rounded-2xl p-6 md:p-8 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.1)] relative overflow-hidden group">
+                            <div className="md:col-span-5 bg-gradient-to-br from-white to-zinc-50 border border-cyan-500/20 rounded-2xl p-6 md:p-8 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.1)] relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 p-32 bg-cyan-500/5 blur-[80px] pointer-events-none rounded-full group-hover:bg-cyan-500/10 transition-colors" />
                                 <div className="flex items-center gap-3 mb-6 border-b border-zinc-400 pb-4 relative z-10">
-                                    <DollarSign className="text-cyan-400 flex-shrink-0" size={20} />
+                                    <DollarSign className="text-cyan-800 font-semibold flex-shrink-0" size={20} />
                                     <h3 className="text-xs sm:text-sm font-mono uppercase tracking-widest text-zinc-950 font-bold">2026 Market Economics</h3>
                                 </div>
                                 <div className="space-y-6 relative z-10">
@@ -133,7 +133,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <div className="h-px bg-cyan-500/30 flex-grow" />
-                                        <div className="text-xs font-bold text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded border border-cyan-500/20 tracking-widest">{pathData.marketEconomics.growth}</div>
+                                        <div className="text-xs font-bold text-cyan-800 font-semibold bg-cyan-500/10 px-2 py-1 rounded border border-cyan-500/20 tracking-widest">{pathData.marketEconomics.growth}</div>
                                     </div>
                                     <div className="pt-2">
                                         <div className="text-xs font-medium text-zinc-700 font-mono tracking-widest uppercase mb-2">The Monetization Gap</div>
@@ -141,7 +141,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     </div>
                                 </div>
                                 <div className="mt-8 pt-4 border-t border-cyan-500/10">
-                                    <p className="text-[9px] text-cyan-500/60 font-mono uppercase tracking-widest leading-relaxed">
+                                    <p className="text-[9px] text-cyan-900 font-bold font-mono uppercase tracking-widest leading-relaxed">
                                         *Base compensation figures represent aggregate On-Target Earnings (OTE) extrapolated for Tier-1 technology hubs (SF, NYC, London). Actual bandwidths fluctuate based on geographic latency and discrete remote equity negotiations.
                                     </p>
                                 </div>
@@ -223,10 +223,10 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                             </div>
                             
                             <div className="mt-12 bg-white border border-cyan-500/30 rounded-2xl p-8 hover:bg-white/5 transition-all text-center">
-                                <PhoneCall className="mx-auto text-cyan-400 mb-4" size={24} />
+                                <PhoneCall className="mx-auto text-cyan-800 font-semibold mb-4" size={24} />
                                 <h4 className="text-zinc-950 font-bold mb-2">Need a tailored 90-Day Architecture?</h4>
                                 <p className="text-zinc-600 text-sm mb-6 max-w-sm mx-auto">Book a 1-on-1 strategy audit to map this protocol directly to your unique enterprise constraints.</p>
-                                <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500/10 border border-cyan-500/50 text-cyan-400 text-xs font-mono font-bold tracking-widest uppercase rounded-lg hover:bg-cyan-500 hover:text-zinc-900 transition-all">
+                                <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500/10 border border-cyan-500/50 text-cyan-800 font-semibold text-xs font-mono font-bold tracking-widest uppercase rounded-lg hover:bg-cyan-500 hover:text-zinc-900 transition-all">
                                     Book Strategy Audit <ArrowRight size={14} />
                                 </Link>
                             </div>
@@ -243,7 +243,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     <XCircle className="text-red-500 flex-shrink-0" size={24} />
                                     Interview Diagnostics
                                 </h3>
-                                <p className="text-xs font-medium text-red-400/80 mb-8 font-mono tracking-widest uppercase border-b border-red-500/10 pb-4">
+                                <p className="text-xs font-medium text-red-900 font-bold mb-8 font-mono tracking-widest uppercase border-b border-red-500/10 pb-4">
                                     How to fail the executive interview
                                 </p>
                                 
@@ -251,14 +251,14 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                     {pathData.interviewAntiPatterns.map((pattern: string, idx: number) => (
                                         <div key={idx} className="flex gap-4 items-start">
                                             <div className="flex-shrink-0 mt-1.5 p-1 rounded-full bg-red-500/10">
-                                                <XCircle className="text-red-500/70" size={12} />
+                                                <XCircle className="text-red-900 font-bold" size={12} />
                                             </div>
                                             <p className="text-sm text-zinc-900 font-medium font-light leading-relaxed">{pattern}</p>
                                         </div>
                                     ))}
                                 </div>
 
-                                <Link href="/tools/audit-interview" className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-medium font-bold font-mono tracking-widest uppercase hover:bg-red-500 hover:text-zinc-900 transition-all shadow-[0_0_15px_rgba(239,68,68,0.1)] hover:shadow-[0_0_20px_rgba(239,68,68,0.3)]">
+                                <Link href="/tools/audit-interview" className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-800 font-semibold text-xs font-medium font-bold font-mono tracking-widest uppercase hover:bg-red-500 hover:text-zinc-900 transition-all shadow-[0_0_15px_rgba(239,68,68,0.1)] hover:shadow-[0_0_20px_rgba(239,68,68,0.3)]">
                                     Launch Diagnostic Protocol <ArrowRight size={14} />
                                 </Link>
                             </div>
@@ -294,7 +294,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                 <div className="mb-24 mt-12 bg-white/50 border border-zinc-400 p-8 sm:p-12 rounded-[2.5rem]">
                     <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-12 border-b border-zinc-400 pb-8">
                         <div className="w-16 h-16 rounded-2xl bg-white/5 border border-zinc-400 flex items-center justify-center flex-shrink-0">
-                            <Diamond className="text-indigo-400" size={32} />
+                            <Diamond className="text-indigo-800 font-semibold" size={32} />
                         </div>
                         <div>
                             <h2 className="text-3xl font-bold text-zinc-950 tracking-tight mb-2">Curriculum Extraction Matrix</h2>
@@ -310,7 +310,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                 <div className="inline-block px-2 py-1 mb-4 rounded text-[9px] font-mono font-bold text-zinc-700 uppercase tracking-widest bg-white/5 border border-zinc-400 self-start group-hover:text-zinc-900 transition-colors">
                                     {track.subtitle}
                                 </div>
-                                <h3 className="text-xl font-bold text-zinc-950 mb-3 group-hover:text-cyan-300 transition-colors">{track.title}</h3>
+                                <h3 className="text-xl font-bold text-zinc-950 mb-3 group-hover:text-cyan-800 font-semibold transition-colors">{track.title}</h3>
                                 <p className="text-zinc-600 text-sm leading-relaxed mb-8 flex-grow">
                                     {track.description}
                                 </p>
@@ -354,7 +354,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                     color={["#10b981", "#3b82f6", "#8b5cf6"]}
                 >
                     <div className="w-16 h-16 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-8 border border-indigo-500/30 shadow-[0_0_30px_rgba(99,102,241,0.2)]">
-                        <LockKeyhole className="text-indigo-400" size={32} />
+                        <LockKeyhole className="text-indigo-800 font-semibold" size={32} />
                     </div>
                     <h2 className="text-4xl md:text-5xl font-black text-zinc-950 mb-6 tracking-tighter">Enter The Vault</h2>
                     <p className="text-lg text-zinc-700 max-w-2xl mx-auto mb-10 leading-relaxed font-light">

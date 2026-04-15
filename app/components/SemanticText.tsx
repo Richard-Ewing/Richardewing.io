@@ -34,7 +34,7 @@ export default function SemanticText({ text }: { text: string }) {
                 
                 return [
                     ...parseText(before, newUsed),
-                    <Link key={`${meta.id}-${match.index}`} href={`/glossary/terms/${meta.id}`} className="text-cyan-400/90 font-medium hover:text-cyan-300 border-b border-cyan-500/30 hover:border-cyan-400 transition-colors">
+                    <Link key={`${meta.id}-${match.index}`} href={`/glossary/terms/${meta.id}`} className="text-cyan-400/90 font-medium hover:text-cyan-800 font-semibold border-b border-cyan-500/30 hover:border-cyan-400 transition-colors">
                         {matchedText}
                     </Link>,
                     ...parseText(after, newUsed)

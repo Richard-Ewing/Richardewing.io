@@ -37,9 +37,9 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/curriculum/tracks" className="hover:text-cyan-400">Tracks</Link>
+                        <Link href="/curriculum/tracks" className="hover:text-cyan-800 font-semibold">Tracks</Link>
                         <span>/</span>
-                        <span className="hover:text-cyan-400">{mod.trackName}</span>
+                        <span className="hover:text-cyan-800 font-semibold">{mod.trackName}</span>
                         <span>/</span>
                         <span className="text-cyan-600 font-bold">{mod.moduleId}</span>
                     </div>
@@ -83,7 +83,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                             <ModuleStepper parsedContent={aiContent}>
                                 {mod.embeddedTool && (
                                     <div className="border border-cyan-500/20 bg-zinc-50 rounded-3xl p-6 lg:p-12 mb-8 relative overflow-hidden">
-                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-400 border-b border-l border-cyan-500/20 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
+                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-800 font-semibold border-b border-l border-cyan-500/20 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
                                         <ToolEmbed toolId={mod.embeddedTool} />
                                     </div>
                                 )}
@@ -94,7 +94,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                 <div className="prose prose-zinc max-w-none ai-content" dangerouslySetInnerHTML={{ __html: aiContent as string }} />
                                 {mod.embeddedTool && (
                                     <div className="border border-cyan-500/20 bg-zinc-50 rounded-3xl p-6 lg:p-12 mt-12 mb-8 relative overflow-hidden">
-                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-400 border-b border-l border-cyan-500/20 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
+                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-800 font-semibold border-b border-l border-cyan-500/20 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
                                         <ToolEmbed toolId={mod.embeddedTool} />
                                     </div>
                                 )}
@@ -157,7 +157,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                 ))}
                                 {mod.embeddedTool && (
                                     <div className="border border-cyan-500/20 bg-zinc-50 rounded-3xl p-6 lg:p-12 mb-8 relative overflow-hidden">
-                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-400 border-b border-l border-cyan-500/20 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
+                                        <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-800 font-semibold border-b border-l border-cyan-500/20 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
                                         <ToolEmbed toolId={mod.embeddedTool} />
                                     </div>
                                 )}

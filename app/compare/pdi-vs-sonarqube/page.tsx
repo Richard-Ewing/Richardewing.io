@@ -26,7 +26,7 @@ export default function PDIvsSonarQubePage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-cyan-400 font-bold">PDI vs SonarQube</span>
+                        <Link href="/compare" className="hover:text-cyan-800 font-semibold">Compare</Link><span>/</span><span className="text-cyan-800 font-semibold font-bold">PDI vs SonarQube</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
@@ -43,7 +43,7 @@ export default function PDIvsSonarQubePage() {
                             <thead>
                                 <tr className="border-b border-zinc-400">
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-800 uppercase tracking-widest">Dimension</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-cyan-400 uppercase tracking-widest">PDI</th>
+                                    <th className="text-left py-4 px-4 text-xs font-mono text-cyan-800 font-semibold uppercase tracking-widest">PDI</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-900 uppercase tracking-widest">SonarQube</th>
                                 </tr>
                             </thead>
@@ -77,7 +77,7 @@ export default function PDIvsSonarQubePage() {
                     {/* CTA */}
                     <div className="text-center py-12 border-t border-zinc-400">
                         <p className="text-zinc-900 mb-4">Need the full picture?</p>
-                        <Link href="/advisory" className="text-cyan-400 hover:text-cyan-300 font-bold uppercase tracking-widest text-sm">
+                        <Link href="/advisory" className="text-cyan-800 font-semibold hover:text-cyan-800 font-semibold font-bold uppercase tracking-widest text-sm">
                             Book a $2,500 Insolvency Diagnostic →
                         </Link>
                     </div>

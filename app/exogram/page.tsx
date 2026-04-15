@@ -24,7 +24,7 @@ export default function ExogramPage() {
                         </div>
 
                         <BlurIn word="Exogram" className="text-4xl md:text-5xl font-bold text-zinc-950 mb-4" />
-                        <p className="text-xl text-purple-400 mb-4">
+                        <p className="text-xl text-purple-800 font-semibold mb-4">
                             The Verification Infrastructure for AI
                         </p>
                         <p className="text-zinc-900 max-w-2xl mx-auto mb-8">
@@ -63,7 +63,7 @@ export default function ExogramPage() {
                         <h2 className="text-2xl font-bold text-zinc-950 mb-8 text-center">The Problem</h2>
                         <p className="text-xl text-center text-zinc-800 mb-12">
                             AI didn&apos;t fail because it&apos;s not smart enough.<br />
-                            <span className="text-purple-400">It failed because it doesn&apos;t know what it&apos;s allowed to be wrong about.</span>
+                            <span className="text-purple-800 font-semibold">It failed because it doesn&apos;t know what it&apos;s allowed to be wrong about.</span>
                         </p>
                         <div className="grid-2">
                             <div className="card">
@@ -109,9 +109,9 @@ export default function ExogramPage() {
                                 <span className="text-zinc-950 ml-4">→ OpenAI, Anthropic, etc.</span>
                             </div>
                             <div className="px-6 py-4 rounded-lg bg-purple-600/20 border-2 border-purple-500 text-left">
-                                <span className="text-purple-400 text-sm">Layer 3</span>
+                                <span className="text-purple-800 font-semibold text-sm">Layer 3</span>
                                 <span className="text-zinc-950 ml-4 font-bold">VERIFICATION</span>
-                                <span className="text-purple-400 ml-4">→ EXOGRAM</span>
+                                <span className="text-purple-800 font-semibold ml-4">→ EXOGRAM</span>
                             </div>
                             <div className="px-6 py-4 rounded-lg bg-white/5 border border-zinc-400 text-left">
                                 <span className="text-zinc-950 text-sm">Layer 4</span>
@@ -138,10 +138,10 @@ export default function ExogramPage() {
                         <p className="text-zinc-900 text-center mb-12 max-w-xl mx-auto">Four independent verification layers. Adopt incrementally. Each one reduces AI risk measurably.</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {[
-                                { name: 'Schema Integrity Engine', desc: 'Validates every AI output against structural contracts. Catches hallucinated fields, missing data, and type mismatches in <5ms.', metric: '<5ms validation', cardClass: 'p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5', badgeClass: 'text-xs font-medium font-mono text-cyan-400 px-2 py-0.5 rounded border border-cyan-500/30' },
-                                { name: 'Boundary Control Protocol', desc: 'Enforces operational scope for AI agents using the EAAP protocol. Prevents unauthorized actions and scope creep.', metric: 'EAAP v1.0', cardClass: 'p-6 rounded-xl border border-purple-500/20 bg-purple-500/5', badgeClass: 'text-xs font-medium font-mono text-purple-400 px-2 py-0.5 rounded border border-purple-500/30' },
-                                { name: 'Threat Prevention Layer', desc: 'Detects prompt injections, data exfiltration, PII leaks, and adversarial inputs with 99.2% accuracy.', metric: '99.2% detection', cardClass: 'p-6 rounded-xl border border-red-500/20 bg-red-500/5', badgeClass: 'text-xs font-medium font-mono text-red-400 px-2 py-0.5 rounded border border-red-500/30' },
-                                { name: 'Memory Integrity System', desc: 'Cryptographic verification of AI memory. Prevents memory hallucinations and maintains cross-session consistency.', metric: 'Encrypted', cardClass: 'p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5', badgeClass: 'text-xs font-medium font-mono text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30' },
+                                { name: 'Schema Integrity Engine', desc: 'Validates every AI output against structural contracts. Catches hallucinated fields, missing data, and type mismatches in <5ms.', metric: '<5ms validation', cardClass: 'p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5', badgeClass: 'text-xs font-medium font-mono text-cyan-800 font-semibold px-2 py-0.5 rounded border border-cyan-500/30' },
+                                { name: 'Boundary Control Protocol', desc: 'Enforces operational scope for AI agents using the EAAP protocol. Prevents unauthorized actions and scope creep.', metric: 'EAAP v1.0', cardClass: 'p-6 rounded-xl border border-purple-500/20 bg-purple-500/5', badgeClass: 'text-xs font-medium font-mono text-purple-800 font-semibold px-2 py-0.5 rounded border border-purple-500/30' },
+                                { name: 'Threat Prevention Layer', desc: 'Detects prompt injections, data exfiltration, PII leaks, and adversarial inputs with 99.2% accuracy.', metric: '99.2% detection', cardClass: 'p-6 rounded-xl border border-red-500/20 bg-red-500/5', badgeClass: 'text-xs font-medium font-mono text-red-800 font-semibold px-2 py-0.5 rounded border border-red-500/30' },
+                                { name: 'Memory Integrity System', desc: 'Cryptographic verification of AI memory. Prevents memory hallucinations and maintains cross-session consistency.', metric: 'Encrypted', cardClass: 'p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5', badgeClass: 'text-xs font-medium font-mono text-emerald-800 font-semibold px-2 py-0.5 rounded border border-emerald-500/30' },
                             ].map(layer => (
                                 <div key={layer.name} className={layer.cardClass}>
                                     <div className="flex items-center justify-between mb-3">
@@ -153,7 +153,7 @@ export default function ExogramPage() {
                             ))}
                         </div>
                         <div className="text-center mt-8">
-                            <Link href="/exogram/architecture" className="text-sm text-zinc-900 font-medium hover:text-purple-300 transition-colors">
+                            <Link href="/exogram/architecture" className="text-sm text-zinc-900 font-medium hover:text-purple-800 font-semibold transition-colors">
                                 Deep dive into the architecture →
                             </Link>
                         </div>
@@ -177,12 +177,12 @@ export default function ExogramPage() {
                                 <div key={uc.label} className="p-5 rounded-xl bg-white/[0.03] border border-zinc-400 text-center">
                                     <span className="text-3xl block mb-2">{uc.icon}</span>
                                     <p className="text-sm text-zinc-950 font-semibold mb-1">{uc.label}</p>
-                                    <p className="text-[11px] text-purple-400 font-mono">{uc.stat}</p>
+                                    <p className="text-[11px] text-purple-800 font-semibold font-mono">{uc.stat}</p>
                                 </div>
                             ))}
                         </div>
                         <div className="mt-8">
-                            <Link href="/exogram/use-cases" className="text-sm text-zinc-900 font-medium hover:text-purple-300 transition-colors">
+                            <Link href="/exogram/use-cases" className="text-sm text-zinc-900 font-medium hover:text-purple-800 font-semibold transition-colors">
                                 See all use cases →
                             </Link>
                         </div>
@@ -195,18 +195,18 @@ export default function ExogramPage() {
                         <h2 className="text-2xl font-bold text-zinc-950 mb-8 text-center">Explore Exogram</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <Link href="/exogram/architecture" className="group p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5 hover:border-cyan-500/40 transition-all">
-                                <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">Deep Dive</span>
-                                <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-cyan-300 transition-colors">Architecture</h3>
+                                <span className="text-xs font-mono text-cyan-800 font-semibold uppercase tracking-widest">Deep Dive</span>
+                                <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-cyan-800 font-semibold transition-colors">Architecture</h3>
                                 <p className="text-sm text-zinc-900 font-medium">4 verification layers, performance specs, and integration methods.</p>
                             </Link>
                             <Link href="/exogram/use-cases" className="group p-6 rounded-xl border border-purple-500/20 bg-purple-500/5 hover:border-purple-500/40 transition-all">
-                                <span className="text-xs font-mono text-purple-400 uppercase tracking-widest">Industry</span>
-                                <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-purple-300 transition-colors">Use Cases</h3>
+                                <span className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest">Industry</span>
+                                <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-purple-800 font-semibold transition-colors">Use Cases</h3>
                                 <p className="text-sm text-zinc-900 font-medium">Healthcare, fintech, legal, and enterprise AI verification.</p>
                             </Link>
                             <Link href="/exogram/roadmap" className="group p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5 hover:border-emerald-500/40 transition-all">
-                                <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">Direction</span>
-                                <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-emerald-300 transition-colors">Roadmap</h3>
+                                <span className="text-xs font-mono text-emerald-800 font-semibold uppercase tracking-widest">Direction</span>
+                                <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-emerald-800 font-semibold transition-colors">Roadmap</h3>
                                 <p className="text-sm text-zinc-900 font-medium">What&apos;s shipped, in progress, and planned for Q2-Q4 2026.</p>
                             </Link>
                         </div>
@@ -219,7 +219,7 @@ export default function ExogramPage() {
                         <div className="card p-10 flex flex-col items-center text-center space-y-8">
                             <p className="text-xl md:text-2xl text-zinc-950 leading-relaxed max-w-2xl">
                                 &quot;I write about why AI systems fail economically through my Product Economist work.<br />
-                                <span className="text-purple-400">Exogram is what I&apos;m building to fix it.&quot;</span>
+                                <span className="text-purple-800 font-semibold">Exogram is what I&apos;m building to fix it.&quot;</span>
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full border-t border-zinc-400 pt-8 mt-4 items-center">
                                 <div className="flex items-center justify-center md:justify-end gap-4 h-12">

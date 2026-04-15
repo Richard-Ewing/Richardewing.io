@@ -43,7 +43,7 @@ export default function LicensingPage() {
                             { icon: BarChart3, title: 'Fractional CTOs', desc: 'Give your clients a professional-grade diagnostic suite. Position yourself as the expert with data to back it up.' },
                         ].map((item, i) => (
                             <div key={i} className="card p-6">
-                                <item.icon className="w-8 h-8 text-purple-400 mb-4" />
+                                <item.icon className="w-8 h-8 text-purple-800 font-semibold mb-4" />
                                 <h3 className="text-lg font-bold text-zinc-950 mb-2">{item.title}</h3>
                                 <p className="text-zinc-900 text-sm">{item.desc}</p>
                             </div>
@@ -64,7 +64,7 @@ export default function LicensingPage() {
                                 'Usage analytics dashboard',
                             ].map((item, i) => (
                                 <div key={i} className="flex items-start gap-2 text-zinc-950 text-sm">
-                                    <CheckCircle className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
+                                    <CheckCircle className="w-4 h-4 text-purple-800 font-semibold mt-0.5 flex-shrink-0" />
                                     {item}
                                 </div>
                             ))}
@@ -75,7 +75,7 @@ export default function LicensingPage() {
                                 <div className="text-xs text-zinc-900 font-bold uppercase mb-2 font-mono">Standard</div>
                                 <div className="text-3xl font-bold text-zinc-950 mb-1">$1,500<span className="text-lg text-zinc-900">/mo</span></div>
                                 <p className="text-zinc-950 text-sm mb-4">3 tools, 1 team seat, quarterly updates</p>
-                                <a href="/api/buy/white_label" className="block w-full py-3 text-center rounded-lg border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 font-bold text-sm transition-all">
+                                <a href="/api/buy/white_label" className="block w-full py-3 text-center rounded-lg border border-purple-500/30 text-purple-800 font-semibold hover:bg-purple-500/10 font-bold text-sm transition-all">
                                     Start Standard License →
                                 </a>
                             </div>
@@ -94,7 +94,7 @@ export default function LicensingPage() {
                 <section className="section max-w-4xl mx-auto text-center">
                     <p className="text-zinc-950 text-sm">
                         Not sure if licensing is the right fit?{' '}
-                        <Link href="/advisory" className="text-purple-400 hover:text-zinc-900 transition-colors">Book a 30-min call</Link> to discuss.
+                        <Link href="/advisory" className="text-purple-800 font-semibold hover:text-zinc-900 transition-colors">Book a 30-min call</Link> to discuss.
                     </p>
                 </section>
             </div>

@@ -60,7 +60,7 @@ const RiskSlider = ({ label, value, onChange, description, min = 0, max = 100, s
     return (
         <div className="space-y-3 p-4 bg-white/60 rounded-xl border border-zinc-400 hover:border-cyan-500/20 transition-colors group">
             <div className="flex justify-between items-center">
-                <span className="text-base text-zinc-950 font-bold group-hover:text-cyan-400 transition-colors">{label}</span>
+                <span className="text-base text-zinc-950 font-bold group-hover:text-cyan-800 font-semibold transition-colors">{label}</span>
                 <div className={`flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-100 border border-zinc-400`}>
                     <span className="text-xs font-mono text-zinc-950 font-bold">{value}{suffix}</span>
                 </div>
@@ -204,7 +204,7 @@ export default function CopilotROITool() {
                 {/* --- HEADER --- */}
                 <div className="mb-12">
                     <div className="flex flex-wrap items-center gap-3 mb-6">
-                        <div className="px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono tracking-widest uppercase flex items-center gap-2">
+                        <div className="px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-800 font-semibold text-xs font-mono tracking-widest uppercase flex items-center gap-2">
                             <Bot className="w-3 h-3" />
                             AI Enterprise Economics
                         </div>
@@ -235,7 +235,7 @@ export default function CopilotROITool() {
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                                 
                                 <h3 className="text-zinc-950 font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-400 pb-4">
-                                    <Building2 className="w-5 h-5 text-cyan-400" />
+                                    <Building2 className="w-5 h-5 text-cyan-800 font-semibold" />
                                     Engineering Baseline
                                 </h3>
 
@@ -327,11 +327,11 @@ export default function CopilotROITool() {
                                     <div className="mt-4 md:mt-0 flex gap-2 w-full md:w-auto">
                                         <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-400 px-4 py-2 rounded-xl">
                                             <div className="text-xs font-medium uppercase font-mono text-zinc-950 mb-1">Gross Expected Lift</div>
-                                            <div className="text-lg font-bold text-emerald-400">${(grossProductivityLiftDollar / 1000).toFixed(0)}k</div>
+                                            <div className="text-lg font-bold text-emerald-800 font-semibold">${(grossProductivityLiftDollar / 1000).toFixed(0)}k</div>
                                         </div>
                                         <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-400 px-4 py-2 rounded-xl">
                                             <div className="text-xs font-medium uppercase font-mono text-zinc-950 mb-1">Total Drag Penalties</div>
-                                            <div className="text-lg font-bold text-red-400">-${((annualLicenseCost + vibeDebtDragDollar + reviewBottleneckDragDollar) / 1000).toFixed(0)}k</div>
+                                            <div className="text-lg font-bold text-red-800 font-semibold">-${((annualLicenseCost + vibeDebtDragDollar + reviewBottleneckDragDollar) / 1000).toFixed(0)}k</div>
                                         </div>
                                     </div>
                                 </div>
@@ -353,7 +353,7 @@ export default function CopilotROITool() {
                                                 <Skull className="w-5 h-5 text-red-500" />
                                             </div>
                                             <div>
-                                                <h4 className="text-red-400 font-bold mb-1">Terminal Insolvency Risk</h4>
+                                                <h4 className="text-red-800 font-semibold font-bold mb-1">Terminal Insolvency Risk</h4>
                                                 <p className="text-sm text-zinc-900 font-medium">AI tool licensing combined with downstream review hours is displacing over 10% of total engineering capacity. Stop feature development and audit code review processes immediately.</p>
                                             </div>
                                         </motion.div>
@@ -374,7 +374,7 @@ export default function CopilotROITool() {
                                                 onClick={() => setActivePersona(p.id)}
                                                 className={`flex-1 min-w-[120px] px-4 py-5 flex items-center justify-center gap-2 text-sm font-medium transition-all border-b-2 font-mono uppercase tracking-wider ${
                                                     isActive 
-                                                        ? 'border-cyan-500 text-cyan-400 bg-cyan-500/5' 
+                                                        ? 'border-cyan-500 text-cyan-800 font-semibold bg-cyan-500/5' 
                                                         : 'border-transparent text-zinc-800 hover:text-zinc-950 hover:bg-white/5'
                                                 }`}
                                             >
@@ -409,7 +409,7 @@ export default function CopilotROITool() {
                                         </div>
 
                                         <div className={`p-4 rounded-xl border flex items-center gap-3 ${
-                                            isNegativeReturn ? 'bg-red-500/10 border-red-500/30 text-red-400' : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+                                            isNegativeReturn ? 'bg-red-500/10 border-red-500/30 text-red-800 font-semibold' : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-800 font-semibold'
                                         }`}>
                                             <div className={`p-2 rounded-full ${isNegativeReturn ? 'bg-red-500/20' : 'bg-emerald-500/20'}`}>
                                                 <ShieldAlert className="w-4 h-4" />

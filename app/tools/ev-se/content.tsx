@@ -51,10 +51,10 @@ const RiskSlider = ({ label, value, onChange, description }: {
     description: string;
 }) => {
     const getRiskLabel = (v: number) => {
-        if (v <= 15) return { emoji: '✓', text: 'Low', color: 'text-emerald-400' };
-        if (v <= 35) return { emoji: '◐', text: 'Moderate', color: 'text-yellow-400' };
-        if (v <= 60) return { emoji: '⚠', text: 'High', color: 'text-orange-400' };
-        return { emoji: '⛔', text: 'Critical', color: 'text-red-400' };
+        if (v <= 15) return { emoji: '✓', text: 'Low', color: 'text-emerald-800 font-semibold' };
+        if (v <= 35) return { emoji: '◐', text: 'Moderate', color: 'text-yellow-800 font-semibold' };
+        if (v <= 60) return { emoji: '⚠', text: 'High', color: 'text-orange-800 font-semibold' };
+        return { emoji: '⛔', text: 'Critical', color: 'text-red-800 font-semibold' };
     };
     const risk = getRiskLabel(value);
 
@@ -338,7 +338,7 @@ export default function EVSETool() {
                                         key={p.id}
                                         onClick={() => setPersona(p.id)}
                                         className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${persona === p.id
-                                            ? 'bg-purple-500/10 border-purple-500 text-purple-400'
+                                            ? 'bg-purple-500/10 border-purple-500 text-purple-800 font-semibold'
                                             : 'bg-white/80 border-zinc-400 text-zinc-900 hover:border-white/30'
                                             }`}
                                     >
@@ -362,7 +362,7 @@ export default function EVSETool() {
                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Valuation Inputs</div>
                                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
                                     <div>
-                                        <label htmlFor="arr" className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2 block">ARR</label>
+                                        <label htmlFor="arr" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">ARR</label>
                                         <div className="relative">
                                             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
                                             <input
@@ -375,7 +375,7 @@ export default function EVSETool() {
                                         </div>
                                     </div>
                                     <div>
-                                        <label htmlFor="multiple" className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2 block">Target Multiple</label>
+                                        <label htmlFor="multiple" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">Target Multiple</label>
                                         <div className="relative">
                                             <input
                                                 id="multiple"
@@ -388,7 +388,7 @@ export default function EVSETool() {
                                         </div>
                                     </div>
                                     <div>
-                                        <label htmlFor="stage" className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2 block">Stage</label>
+                                        <label htmlFor="stage" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">Stage</label>
                                         <select
                                             id="stage"
                                             value={stage}
@@ -403,7 +403,7 @@ export default function EVSETool() {
                                         </select>
                                     </div>
                                     <div>
-                                        <label htmlFor="confidence" className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2 block">Base Confidence</label>
+                                        <label htmlFor="confidence" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">Base Confidence</label>
                                         <div className="relative">
                                             <input
                                                 id="confidence"
@@ -428,7 +428,7 @@ export default function EVSETool() {
                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Funding Context</div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label htmlFor="target" className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2 block">Target Raise</label>
+                                        <label htmlFor="target" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">Target Raise</label>
                                         <div className="relative">
                                             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
                                             <input
@@ -441,7 +441,7 @@ export default function EVSETool() {
                                         </div>
                                     </div>
                                     <div>
-                                        <label htmlFor="timeline" className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-2 block">Raise Timeline</label>
+                                        <label htmlFor="timeline" className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-2 block">Raise Timeline</label>
                                         <select
                                             id="timeline"
                                             value={raiseTimeline}
@@ -559,7 +559,7 @@ export default function EVSETool() {
                                         $<NumberTicker value={results.wealthGap / 1000000} />M
                                     </div>
                                     <div className="mt-4">
-                                        <span className={`px-3 py-1.5 rounded-full ${results.adjustedConfidence < 60 ? 'bg-red-50/30 text-red-400 border border-red-900/50' : 'bg-purple-900/30 text-purple-400 border border-purple-900/50'} text-xs font-bold uppercase tracking-widest`}>
+                                        <span className={`px-3 py-1.5 rounded-full ${results.adjustedConfidence < 60 ? 'bg-red-50/30 text-red-800 font-semibold border border-red-900/50' : 'bg-purple-900/30 text-purple-800 font-semibold border border-purple-900/50'} text-xs font-bold uppercase tracking-widest`}>
                                             {results.adjustedConfidence.toFixed(0)}% Execution Confidence
                                         </span>
                                     </div>
@@ -567,7 +567,7 @@ export default function EVSETool() {
                                 <div>
                                     <p className="text-lg sm:text-xl text-zinc-950 leading-relaxed">
                                         Your execution risk is destroying <span className="text-red-500 font-bold">${(results.wealthGap / 1000000).toFixed(1)}M</span> in potential enterprise value.
-                                        At perfect execution, you'd be worth <span className="text-cyan-400 font-bold">${(results.perfectValue / 1000000).toFixed(0)}M</span>.
+                                        At perfect execution, you'd be worth <span className="text-cyan-800 font-semibold font-bold">${(results.perfectValue / 1000000).toFixed(0)}M</span>.
                                     </p>
                                 </div>
                             </div>
@@ -583,7 +583,7 @@ export default function EVSETool() {
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">{getPersonaInsight(results).headline}</h3>
                             <p className="text-zinc-900 leading-relaxed mb-3">{getPersonaInsight(results).detail}</p>
-                            <p className="text-purple-400 font-semibold">{getPersonaInsight(results).action}</p>
+                            <p className="text-purple-800 font-semibold font-semibold">{getPersonaInsight(results).action}</p>
                         </div>
                     </ScrollReveal>
 
@@ -592,19 +592,19 @@ export default function EVSETool() {
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                             <GlowCard className="p-6" glowColor="cyan">
                                 <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Potential Value</div>
-                                <div className="text-3xl sm:text-4xl font-bold text-cyan-400">${(results.perfectValue / 1000000).toFixed(0)}M</div>
+                                <div className="text-3xl sm:text-4xl font-bold text-cyan-800 font-semibold">${(results.perfectValue / 1000000).toFixed(0)}M</div>
                                 <p className="text-xs text-zinc-900 font-bold/60 mt-2">At perfect execution.</p>
                             </GlowCard>
 
                             <GlowCard className="p-6" glowColor="cyan">
                                 <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Risk-Adjusted Value</div>
-                                <div className="text-3xl sm:text-4xl font-bold text-purple-400">${(results.riskedValue / 1000000).toFixed(0)}M</div>
+                                <div className="text-3xl sm:text-4xl font-bold text-purple-800 font-semibold">${(results.riskedValue / 1000000).toFixed(0)}M</div>
                                 <p className="text-xs text-zinc-900 font-bold/60 mt-2">What investors will pay.</p>
                             </GlowCard>
 
                             <GlowCard className="p-6" glowColor="danger">
                                 <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Biggest Risk Factor</div>
-                                <div className="text-2xl sm:text-3xl font-bold text-orange-400">{results.biggestRiskFactor}</div>
+                                <div className="text-2xl sm:text-3xl font-bold text-orange-800 font-semibold">{results.biggestRiskFactor}</div>
                                 <p className="text-xs text-zinc-900 font-bold/60 mt-2">Costing {formatMoney(results.biggestRiskCost)}.</p>
                             </GlowCard>
                         </div>
@@ -628,7 +628,7 @@ export default function EVSETool() {
                                     <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                         <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
                                         <div className="text-sm font-medium text-zinc-950 mb-2">Valuation Discount Penalty</div>
-                                        <div className="text-3xl font-bold text-orange-400">{formatMoney(results.wealthGap)}</div>
+                                        <div className="text-3xl font-bold text-orange-800 font-semibold">{formatMoney(results.wealthGap)}</div>
                                         <div className="text-xs text-zinc-900 font-bold/60 mt-2 mt-auto">If the deal does close, this is the haircut applied by the Private Equity committee.</div>
                                     </div>
                                 </div>
@@ -654,15 +654,15 @@ export default function EVSETool() {
                                 <div className="space-y-3 text-sm mb-6">
                                     <div className="flex justify-between items-center p-2 rounded bg-emerald-500/10">
                                         <span className="text-zinc-800">Best Case</span>
-                                        <span className="text-emerald-400 font-mono font-bold">{formatMoney(results.scenarios.best)}</span>
+                                        <span className="text-emerald-800 font-semibold font-mono font-bold">{formatMoney(results.scenarios.best)}</span>
                                     </div>
                                     <div className="flex justify-between items-center p-2 rounded bg-purple-500/10">
                                         <span className="text-zinc-800">Expected Case</span>
-                                        <span className="text-purple-400 font-mono font-bold">{formatMoney(results.scenarios.expected)}</span>
+                                        <span className="text-purple-800 font-semibold font-mono font-bold">{formatMoney(results.scenarios.expected)}</span>
                                     </div>
                                     <div className="flex justify-between items-center p-2 rounded bg-red-500/10">
                                         <span className="text-zinc-800">Worst Case</span>
-                                        <span className="text-red-400 font-mono font-bold">{formatMoney(results.scenarios.worst)}</span>
+                                        <span className="text-red-800 font-semibold font-mono font-bold">{formatMoney(results.scenarios.worst)}</span>
                                     </div>
                                 </div>
 
@@ -782,13 +782,13 @@ export default function EVSETool() {
                                 <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                     <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
-                                        <span className="text-cyan-400 font-bold font-mono">03</span>
+                                        <span className="text-cyan-800 font-semibold font-bold font-mono">03</span>
                                     </div>
                                     <div className="relative z-10 w-full">
                                         <h4 className="text-zinc-950 font-bold mb-2">Hard-Lock the Product Roadmap</h4>
                                         <p className="text-zinc-900 text-sm leading-relaxed mb-4">Scope creep is compounding your execution risk. Investors penalize teams that lack the discipline to say no to transient sales requests.</p>
                                         <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                            <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                            <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-800 font-semibold uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
                                             <p className="text-sm font-medium text-zinc-950">Institute a 90-day feature freeze on all uncommitted requests. Reallocate 40% of sprint capacity strictly to technical debt reduction and infrastructure hardening.</p>
@@ -858,7 +858,7 @@ export default function EVSETool() {
                         <p className="mt-4 text-xs text-zinc-900 font-bold">This tool forces you to confront these discounts upfront.</p>
                     </div>
                     <div>
-                        <h3 className="text-2xl font-bold text-yellow-400 mb-4">Defending the Downside</h3>
+                        <h3 className="text-2xl font-bold text-yellow-800 font-semibold mb-4">Defending the Downside</h3>
                         <p className="text-zinc-900 text-sm leading-relaxed">
                             The most valuable thing a Product Leader can do is not &quot;ideation&quot;—it is <strong>Risk Adjustment</strong>. By using this calculator to model &quot;Worst Case,&quot; &quot;Base Case,&quot; and &quot;Blue Sky,&quot; you transform your roadmap from a lottery ticket into a bankable bond. This is how you defend your budget in a downturn.
                         </p>

@@ -55,12 +55,12 @@ export default function IntelligenceDashboard() {
 
     const getToolColor = (toolId: string) => {
         switch (toolId) {
-            case 'APER': return 'text-cyan-400 bg-cyan-400/10 border-cyan-400/20';
-            case 'AUEB': return 'text-red-400 bg-red-400/10 border-red-400/20';
-            case 'EV-SE': return 'text-purple-400 bg-purple-400/10 border-purple-400/20';
+            case 'APER': return 'text-cyan-800 font-semibold bg-cyan-400/10 border-cyan-400/20';
+            case 'AUEB': return 'text-red-800 font-semibold bg-red-400/10 border-red-400/20';
+            case 'EV-SE': return 'text-purple-800 font-semibold bg-purple-400/10 border-purple-400/20';
             case 'PDI': return 'text-rose-400 bg-rose-400/10 border-rose-400/20';
             case 'DUE-DILIGENCE': return 'text-amber-400 bg-amber-400/10 border-amber-400/20';
-            case 'CLOUD-REPAT': return 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20';
+            case 'CLOUD-REPAT': return 'text-emerald-800 font-semibold bg-emerald-400/10 border-emerald-400/20';
             default: return 'text-zinc-950 bg-white/10 border-zinc-500';
         }
     };
@@ -146,7 +146,7 @@ export default function IntelligenceDashboard() {
             <nav className="border-b border-zinc-400 bg-white/80 backdrop-blur-2xl sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <Activity className="text-cyan-400" size={18} />
+                        <Activity className="text-cyan-800 font-semibold" size={18} />
                         <span className="font-bold tracking-tight text-lg text-zinc-900">C-Suite Command Center <span className="text-zinc-800 font-normal">| Strategic Diagnostics</span></span>
                     </div>
                     <Link href="/system" className="text-xs font-medium font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-zinc-400">
@@ -162,9 +162,9 @@ export default function IntelligenceDashboard() {
                     <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
-                                <ShieldAlert size={20} className="text-red-400" />
+                                <ShieldAlert size={20} className="text-red-800 font-semibold" />
                             </div>
-                            <span className="text-xs font-medium font-mono text-red-400 bg-red-500/10 px-2 py-1 rounded-full border border-red-500/20 tracking-widest uppercase">Systemic Risk</span>
+                            <span className="text-xs font-medium font-mono text-red-800 font-semibold bg-red-500/10 px-2 py-1 rounded-full border border-red-500/20 tracking-widest uppercase">Systemic Risk</span>
                         </div>
                         <div className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Identified Valuation Gap</div>
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">
@@ -177,9 +177,9 @@ export default function IntelligenceDashboard() {
                     <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                                <TrendingUp size={20} className="text-emerald-400" />
+                                <TrendingUp size={20} className="text-emerald-800 font-semibold" />
                             </div>
-                            <span className="text-xs font-medium font-mono text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/20 tracking-widest uppercase">Health Metric</span>
+                            <span className="text-xs font-medium font-mono text-emerald-800 font-semibold bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/20 tracking-widest uppercase">Health Metric</span>
                         </div>
                         <div className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Eng Pipeline Confidence</div>
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">
@@ -192,9 +192,9 @@ export default function IntelligenceDashboard() {
                     <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-                                <Database size={20} className="text-cyan-400" />
+                                <Database size={20} className="text-cyan-800 font-semibold" />
                             </div>
-                            <span className="text-xs font-medium font-mono text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded-full border border-cyan-500/20 tracking-widest uppercase">Coverage</span>
+                            <span className="text-xs font-medium font-mono text-cyan-800 font-semibold bg-cyan-500/10 px-2 py-1 rounded-full border border-cyan-500/20 tracking-widest uppercase">Coverage</span>
                         </div>
                         <div className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Diagnostic Tools Run</div>
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">
@@ -207,7 +207,7 @@ export default function IntelligenceDashboard() {
 
                 <div className="mb-8 flex items-center justify-between border-b border-zinc-400 pb-4">
                     <h2 className="text-2xl font-bold font-grotesk text-zinc-950 flex items-center gap-3">
-                        <History className="text-cyan-400" /> Execution Ledger
+                        <History className="text-cyan-800 font-semibold" /> Execution Ledger
                     </h2>
                     <span className="text-xs font-mono text-zinc-950 tracking-widest uppercase">{runs.length} Snapshots Stored</span>
                 </div>

@@ -20,7 +20,7 @@ const renderAIResponse = (text: string) => {
             const bulletContent = line.trim().replace(/^[•-]\s*/, '');
             return (
                 <div key={i} className="flex items-start gap-2 mb-2">
-                    <span className="text-cyan-400 mt-0.5 shrink-0">•</span>
+                    <span className="text-cyan-800 font-semibold mt-0.5 shrink-0">•</span>
                     <span dangerouslySetInnerHTML={{ __html: bulletContent.replace(boldRegex, '<strong class="text-zinc-950 font-bold">$1</strong>') }} />
                 </div>
             );
@@ -95,7 +95,7 @@ const AIExpandCard = ({
                     <button
                         onClick={askAI}
                         disabled={loading}
-                        className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-400 hover:text-zinc-900 transition group"
+                        className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-800 font-semibold hover:text-zinc-900 transition group"
                     >
                         {loading ? (
                             <>
@@ -135,7 +135,7 @@ export default function PrincipalContent() {
 
                     {/* GEO: Entity Definition Block Schema integrated via wrapping but primarily for visual. Schema is in parent page. */}
                     <div className="relative" id="about-richard-ewing">
-                        <span className="font-mono text-cyan-400 text-xs uppercase tracking-[0.3em] mb-6 block">The Principal</span>
+                        <span className="font-mono text-cyan-800 font-semibold text-xs uppercase tracking-[0.3em] mb-6 block">The Principal</span>
 
                         <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 items-start mb-8">
                             <div className="relative group shrink-0">
@@ -149,7 +149,7 @@ export default function PrincipalContent() {
                                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 mb-2">Richard Ewing</h1>
                                 <div className="font-mono text-sm text-zinc-900 font-medium uppercase tracking-widest mb-4">Product Economist</div>
                                 <p className="text-zinc-950 leading-relaxed text-base sm:text-lg">
-                                    Founder of <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition">Exogram</a> and the executive who <span className="text-zinc-950 font-bold">turns bleeding product organizations into profit engines</span>.
+                                    Founder of <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-purple-800 font-semibold hover:text-purple-800 font-semibold transition">Exogram</a> and the executive who <span className="text-zinc-950 font-bold">turns bleeding product organizations into profit engines</span>.
                                     I do not manage backlogs. I manage P&Ls. I do not ship features. I ship ROI.
                                 </p>
                             </div>
@@ -158,7 +158,7 @@ export default function PrincipalContent() {
                         {/* Power Stats */}
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 border-t border-zinc-400 pt-8">
                             <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
-                                <div className="text-3xl sm:text-4xl font-bold text-cyan-400">
+                                <div className="text-3xl sm:text-4xl font-bold text-cyan-800 font-semibold">
                                     <NumberTicker value={25} prefix="$" suffix="M" />
                                 </div>
                                 <div className="text-xs font-medium sm:text-xs font-mono text-zinc-800 uppercase mt-1">ARR Scaled</div>
@@ -192,12 +192,12 @@ export default function PrincipalContent() {
                     <div className="font-mono text-xs text-zinc-900 font-bold uppercase tracking-widest mb-4 text-center">Published In & Featured By</div>
                     <div className="flex flex-wrap justify-center gap-4">
                         {[
-                            { name: 'Built In', note: "Editor's Pick", href: 'https://builtin.com/authors/richard-ewing', color: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/5' },
-                            { name: 'Mind the Product', note: 'Featured Author', href: 'https://www.mindtheproduct.com/profile/richard-ewing', color: 'text-purple-400 border-purple-500/30 bg-purple-500/5' },
-                            { name: 'HackerNoon', note: 'Contributing Author', href: 'https://hackernoon.com/u/richardewing', color: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/5' },
+                            { name: 'Built In', note: "Editor's Pick", href: 'https://builtin.com/authors/richard-ewing', color: 'text-cyan-800 font-semibold border-cyan-500/30 bg-cyan-500/5' },
+                            { name: 'Mind the Product', note: 'Featured Author', href: 'https://www.mindtheproduct.com/profile/richard-ewing', color: 'text-purple-800 font-semibold border-purple-500/30 bg-purple-500/5' },
+                            { name: 'HackerNoon', note: 'Contributing Author', href: 'https://hackernoon.com/u/richardewing', color: 'text-emerald-800 font-semibold border-emerald-500/30 bg-emerald-500/5' },
                             { name: 'Medium', note: 'Author', href: 'https://medium.com/@richardewing', color: 'text-zinc-950 border-zinc-500 bg-white/5' },
                             { name: 'Amazon', note: 'Published Author', href: 'https://www.amazon.com/author/richardewing', color: 'text-amber-400 border-amber-500/30 bg-amber-500/5' },
-                            { name: 'AWS Startups', note: 'Showcase Company', href: 'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5', color: 'text-orange-400 border-orange-500/30 bg-orange-500/5' },
+                            { name: 'AWS Startups', note: 'Showcase Company', href: 'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5', color: 'text-orange-800 font-semibold border-orange-500/30 bg-orange-500/5' },
                         ].map(pub => (
                             <a
                                 key={pub.name}
@@ -233,14 +233,14 @@ export default function PrincipalContent() {
                 <div className="mb-8">
                     <h2 className="text-xl sm:text-2xl font-bold text-zinc-950 mb-6 flex items-center gap-3">
                         <span className="w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-cobalt" /> Domain Expertise
-                        <span className="ml-auto text-xs font-medium font-mono text-cyan-400/50 uppercase">✦ AI-Enhanced</span>
+                        <span className="ml-auto text-xs font-medium font-mono text-cyan-900 font-bold uppercase">✦ AI-Enhanced</span>
                     </h2>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <AIExpandCard
                             icon="🎯"
                             label="Capital Auditing"
-                            labelColor="text-cyan-400"
+                            labelColor="text-cyan-800 font-semibold"
                             title="AI Unit Economics & Capital Auditing"
                             description={<>Identifying and eliminating <span className="text-zinc-950 font-bold">AI hallucination debt</span>, zombie infrastructure, and structural margin collapse in B2B SaaS environments.</>}
                             glowColor="cyan"
@@ -270,7 +270,7 @@ export default function PrincipalContent() {
                         <AIExpandCard
                             icon="🔥"
                             label="Turnaround Operations"
-                            labelColor="text-red-400"
+                            labelColor="text-red-800 font-semibold"
                             title="Revenue Resurrection Specialist"
                             description={<>Inherited stagnant P&L, drove <span className="text-zinc-950 font-bold">200% YoY growth to $20M</span>. Scaled SaaS from $0 to $25M ARR. <span className="text-gold">$5M cost reduction</span>.</>}
                             glowColor="danger"
@@ -291,7 +291,7 @@ export default function PrincipalContent() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="p-5 border border-zinc-400 rounded-xl hover:border-cyan-500/30 transition group">
                             <div className="font-mono text-xs text-zinc-900 font-bold uppercase mb-2">Framework 01</div>
-                            <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-cyan-400 transition">APER™ Diagnostic</h3>
+                            <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-cyan-800 font-semibold transition">APER™ Diagnostic</h3>
                             <p className="text-zinc-950 text-sm">Actionable Product Economic Review. Forensic audit of engineering throughput vs. revenue impact.</p>
                         </div>
                         <div className="p-5 border border-zinc-400 rounded-xl hover:border-cobalt/30 transition group">
@@ -301,7 +301,7 @@ export default function PrincipalContent() {
                         </div>
                         <div className="p-5 border border-zinc-400 rounded-xl hover:border-red-500/30 transition group">
                             <div className="font-mono text-xs text-zinc-900 font-bold uppercase mb-2">Framework 03</div>
-                            <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-red-400 transition">Product Debt Index™</h3>
+                            <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-red-800 font-semibold transition">Product Debt Index™</h3>
                             <p className="text-zinc-950 text-sm">AI-powered forensic engine to quantify capital leakage in your backlog.</p>
                         </div>
                         <div className="p-5 border border-zinc-400 rounded-xl hover:border-gold/30 transition group">

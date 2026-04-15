@@ -137,7 +137,7 @@ export default function HomeContent() {
                             I don't just advise. I build. <strong className="text-zinc-900">Exogram</strong> is my active research into AI memory systems and long-context reasoning.
                             It is the engine that powers my own agency.
                         </p>
-                        <Link href="/exogram" className="inline-flex items-center gap-2 text-purple-600 font-bold uppercase tracking-widest hover:text-purple-300 transition-colors">
+                        <Link href="/exogram" className="inline-flex items-center gap-2 text-purple-600 font-bold uppercase tracking-widest hover:text-purple-800 font-semibold transition-colors">
                             View Project Status <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>

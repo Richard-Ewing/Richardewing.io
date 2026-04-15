@@ -59,8 +59,8 @@ export default function ModuleCompleteButton({ nextHref, moduleTitle }: ModuleCo
                             </button>
                         ) : (
                             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
-                                <span className="text-emerald-400 text-lg">✓</span>
-                                <span className="text-sm font-bold text-emerald-400">Completed</span>
+                                <span className="text-emerald-800 font-semibold text-lg">✓</span>
+                                <span className="text-sm font-bold text-emerald-800 font-semibold">Completed</span>
                             </div>
                         )}
                         {nextHref && (

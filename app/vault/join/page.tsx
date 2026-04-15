@@ -90,7 +90,7 @@ export default function JoinTeamPage() {
 
                         {status === 'error' && (
                             <div className="mb-6 p-4 rounded-xl border border-red-500/30 bg-red-500/10 flex items-start gap-3">
-                                <AlertCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
+                                <AlertCircle className="w-5 h-5 text-red-800 font-semibold shrink-0 mt-0.5" />
                                 <div className="text-sm text-zinc-900 font-medium">{errorMessage}</div>
                             </div>
                         )}

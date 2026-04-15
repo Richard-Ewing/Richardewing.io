@@ -13,7 +13,7 @@ export default function PDFDownloadCTA({ toolName, score }: PDFDownloadCTAProps)
         <div className="mt-8 p-6 bg-gradient-to-r from-emerald-500/5 to-cyan-500/5 border border-emerald-500/20 rounded-2xl">
             <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-emerald-500/10 border border-emerald-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <FileDown className="w-6 h-6 text-emerald-400" />
+                    <FileDown className="w-6 h-6 text-emerald-800 font-semibold" />
                 </div>
                 <div className="flex-1">
                     <h4 className="text-lg font-bold text-zinc-950 mb-1">Get the Board-Ready PDF</h4>

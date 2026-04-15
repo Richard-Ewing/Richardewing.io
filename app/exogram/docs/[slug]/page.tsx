@@ -27,7 +27,7 @@ export default async function ExogramDocPage({ params }: { params: Promise<{ slu
 
     return (
         <article className="prose prose-zinc prose-purple max-w-none">
-            <span className="text-xs font-medium font-mono text-purple-400 uppercase tracking-widest">
+            <span className="text-xs font-medium font-mono text-purple-800 font-semibold uppercase tracking-widest">
                 {doc.category}
             </span>
             <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mt-2 mb-6">
@@ -72,7 +72,7 @@ export default async function ExogramDocPage({ params }: { params: Promise<{ slu
             
             <div className="mt-20 pt-8 border-t border-zinc-400 flex justify-between items-center text-sm">
                 <span className="text-zinc-700 font-mono">EAAP Protocol v1.0</span>
-                <span className="text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">Verified Architecture</span>
+                <span className="text-purple-800 font-semibold bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">Verified Architecture</span>
             </div>
         </article>
     );

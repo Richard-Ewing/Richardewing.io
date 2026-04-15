@@ -41,7 +41,7 @@ const partnerTypes = [
 ];
 
 const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', violet: 'border-violet-500/30 bg-violet-500/5', amber: 'border-amber-500/30 bg-amber-500/5' };
-const textMap: Record<string, string> = { cyan: 'text-cyan-400', emerald: 'text-emerald-400', violet: 'text-violet-400', amber: 'text-amber-400' };
+const textMap: Record<string, string> = { cyan: 'text-cyan-800 font-semibold', emerald: 'text-emerald-800 font-semibold', violet: 'text-violet-400', amber: 'text-amber-400' };
 
 export default function PartnershipsPage() {
     return (
@@ -90,7 +90,7 @@ export default function PartnershipsPage() {
                             </div>
                             <div className="rounded-xl border border-cyan-500/30 bg-cyan-500/5 p-6 relative flex flex-col">
                                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-cyan-600 text-zinc-950 font-semibold text-xs font-medium font-bold uppercase tracking-widest rounded-full">Most Popular</div>
-                                <h3 className="text-lg font-bold text-cyan-400 mb-2">Licensed Partner</h3>
+                                <h3 className="text-lg font-bold text-cyan-800 font-semibold mb-2">Licensed Partner</h3>
                                 <p className="text-sm text-zinc-950 mb-4 flex-1">White-label frameworks for your consulting practice. Includes training and co-branded case studies.</p>
                                 <div className="text-2xl font-bold text-zinc-950 mb-1">$2,500<span className="text-lg text-zinc-900">/mo</span></div>
                                 <div className="text-xs text-zinc-900 font-bold mb-4">Annual license + quarterly training</div>
@@ -99,11 +99,11 @@ export default function PartnershipsPage() {
                                 </a>
                             </div>
                             <div className="rounded-xl border border-emerald-500/30 p-6 flex flex-col">
-                                <h3 className="text-lg font-bold text-emerald-400 mb-2">Strategic Partner</h3>
+                                <h3 className="text-lg font-bold text-emerald-800 font-semibold mb-2">Strategic Partner</h3>
                                 <p className="text-sm text-zinc-950 mb-4 flex-1">Deep integration. Co-branded. Joint go-to-market. Custom SLA.</p>
                                 <div className="text-2xl font-bold text-zinc-950 mb-1">Custom</div>
                                 <div className="text-xs text-zinc-900 font-bold mb-4">Custom partnership agreement</div>
-                                <a href="mailto:richardewing@exogram.ai?subject=Strategic%20Partnership%20Inquiry" className="block text-center py-3 rounded-lg border border-emerald-500/30 text-emerald-400 font-bold text-xs uppercase tracking-widest hover:bg-emerald-500/10 transition-all">
+                                <a href="mailto:richardewing@exogram.ai?subject=Strategic%20Partnership%20Inquiry" className="block text-center py-3 rounded-lg border border-emerald-500/30 text-emerald-800 font-semibold font-bold text-xs uppercase tracking-widest hover:bg-emerald-500/10 transition-all">
                                     Schedule Discussion →
                                 </a>
                             </div>

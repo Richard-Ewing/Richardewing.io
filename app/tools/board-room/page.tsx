@@ -148,7 +148,7 @@ export default function BoardRoom() {
                                 <Cpu className="text-blue-500 h-8 w-8" />
                                 <div>
                                     <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Engineering Protocol</h3>
-                                    <p className="text-xs font-mono text-blue-400 uppercase tracking-widest">CTO / Platform Architecture</p>
+                                    <p className="text-xs font-mono text-blue-800 font-semibold uppercase tracking-widest">CTO / Platform Architecture</p>
                                 </div>
                             </div>
 
@@ -162,14 +162,14 @@ export default function BoardRoom() {
                                     {(latestTools['pdi']?.output_metrics?.qpep_roadmap || latestTools['PDI']?.output_metrics?.qpep_roadmap) && (
                                         <div className="mt-4 mb-2 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg">
                                             <div className="flex items-center gap-2 mb-1">
-                                                <Zap className="text-blue-400" size={12} />
-                                                <span className="text-xs font-medium uppercase tracking-widest text-blue-400 font-bold">Execution Ready</span>
+                                                <Zap className="text-blue-800 font-semibold" size={12} />
+                                                <span className="text-xs font-medium uppercase tracking-widest text-blue-800 font-semibold font-bold">Execution Ready</span>
                                             </div>
                                             <p className="text-xs text-zinc-900 font-bold font-mono">Remediation timeline auto-generated from diagnostic payload.</p>
                                         </div>
                                     )}
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/pdi" className="text-xs font-medium uppercase tracking-widest text-blue-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Execute PDI Modeler <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/pdi" className="text-xs font-medium uppercase tracking-widest text-blue-800 font-semibold hover:text-zinc-900 flex items-center gap-1 transition-colors">Execute PDI Modeler <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
 
@@ -180,7 +180,7 @@ export default function BoardRoom() {
                                     </div>
                                     <p className="text-sm font-medium text-zinc-950 leading-relaxed font-mono">The CapEx being permanently vaporized by slow deployment cycles and untracked sprint spillage.</p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/ev-se" className="text-xs font-medium uppercase tracking-widest text-purple-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Run Valuation Erosion <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/ev-se" className="text-xs font-medium uppercase tracking-widest text-purple-800 font-semibold hover:text-zinc-900 flex items-center gap-1 transition-colors">Run Valuation Erosion <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@ export default function BoardRoom() {
                                 <Activity className="text-emerald-500 h-8 w-8" />
                                 <div>
                                     <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Finance / Economics</h3>
-                                    <p className="text-xs font-mono text-emerald-400 uppercase tracking-widest">CFO / FinOps Desk</p>
+                                    <p className="text-xs font-mono text-emerald-800 font-semibold uppercase tracking-widest">CFO / FinOps Desk</p>
                                 </div>
                             </div>
 
@@ -211,14 +211,14 @@ export default function BoardRoom() {
                                     {(latestTools['AUEB']?.output_metrics?.qpep_roadmap || latestTools['aueb']?.output_metrics?.qpep_roadmap) && (
                                         <div className="mt-4 mb-2 p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
                                             <div className="flex items-center gap-2 mb-1">
-                                                <Zap className="text-emerald-400" size={12} />
-                                                <span className="text-xs font-medium uppercase tracking-widest text-emerald-400 font-bold">Execution Ready</span>
+                                                <Zap className="text-emerald-800 font-semibold" size={12} />
+                                                <span className="text-xs font-medium uppercase tracking-widest text-emerald-800 font-semibold font-bold">Execution Ready</span>
                                             </div>
                                             <p className="text-xs text-zinc-900 font-bold font-mono">Margin defense timeline auto-generated from diagnostic payload.</p>
                                         </div>
                                     )}
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/aueb" className="text-xs font-medium uppercase tracking-widest text-emerald-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Calculate Margin <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/aueb" className="text-xs font-medium uppercase tracking-widest text-emerald-800 font-semibold hover:text-zinc-900 flex items-center gap-1 transition-colors">Calculate Margin <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
 
@@ -229,7 +229,7 @@ export default function BoardRoom() {
                                     </div>
                                     <p className="text-sm font-medium text-zinc-950 leading-relaxed font-mono">OpEx available to recapture via private cloud repatriation vs AWS Basecamp index.</p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/cloud-repatriation" className="text-xs font-medium uppercase tracking-widest text-cyan-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Arbitrage Analysis <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/cloud-repatriation" className="text-xs font-medium uppercase tracking-widest text-cyan-800 font-semibold hover:text-zinc-900 flex items-center gap-1 transition-colors">Arbitrage Analysis <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
 

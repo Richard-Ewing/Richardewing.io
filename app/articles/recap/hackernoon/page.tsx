@@ -54,7 +54,7 @@ export default function HackerNoonRecapPage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/articles" className="hover:text-cyan-400">Articles</Link><span>/</span><span className="text-orange-400 font-bold">HackerNoon</span>
+                        <Link href="/articles" className="hover:text-cyan-800 font-semibold">Articles</Link><span>/</span><span className="text-orange-800 font-semibold font-bold">HackerNoon</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Published on{' '}
@@ -89,16 +89,16 @@ export default function HackerNoonRecapPage() {
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
                                 {['agentic-workflow', 'ai-cogs', 'technical-debt', 'vc-due-diligence', 'dependency-debt'].map(slug => (
-                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
+                                    <Link key={slug} href={`/glossary/${slug}`} className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>
                         </div>
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Tools</h2>
                             <div className="space-y-2">
-                                <Link href="/tools/pdi" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ Product Debt Index (PDI)</Link>
-                                <Link href="/tools/aueb" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ AUEB Calculator</Link>
-                                <Link href="/tools/scoring" className="block text-sm text-zinc-900 font-medium hover:text-cyan-400 transition-colors">→ AI Scoring Engine</Link>
+                                <Link href="/tools/pdi" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ Product Debt Index (PDI)</Link>
+                                <Link href="/tools/aueb" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ AUEB Calculator</Link>
+                                <Link href="/tools/scoring" className="block text-sm text-zinc-900 font-medium hover:text-cyan-800 font-semibold transition-colors">→ AI Scoring Engine</Link>
                             </div>
                         </div>
                     </div>

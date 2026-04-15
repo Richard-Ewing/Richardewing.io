@@ -26,7 +26,7 @@ export default function ComparePDIWaydevPage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-cyan-400 font-bold">PDI vs Waydev</span>
+                        <Link href="/compare" className="hover:text-cyan-800 font-semibold">Compare</Link><span>/</span><span className="text-cyan-800 font-semibold font-bold">PDI vs Waydev</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Product Debt Index vs{' '}
@@ -41,16 +41,16 @@ export default function ComparePDIWaydevPage() {
                             <thead>
                                 <tr className="border-b border-zinc-400">
                                     <th className="text-left py-4 px-4 text-zinc-950 font-mono uppercase tracking-widest text-xs">Dimension</th>
-                                    <th className="text-left py-4 px-4 text-cyan-400 font-mono uppercase tracking-widest text-xs">PDI</th>
-                                    <th className="text-left py-4 px-4 text-emerald-400 font-mono uppercase tracking-widest text-xs">Waydev</th>
+                                    <th className="text-left py-4 px-4 text-cyan-800 font-semibold font-mono uppercase tracking-widest text-xs">PDI</th>
+                                    <th className="text-left py-4 px-4 text-emerald-800 font-semibold font-mono uppercase tracking-widest text-xs">Waydev</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {dimensions.map((d, i) => (
                                     <tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50 transition-colors">
                                         <td className="py-4 px-4 text-zinc-950 font-medium">{d.dimension}</td>
-                                        <td className={`py-4 px-4 ${d.winner === 'pdi' ? 'text-cyan-400' : 'text-zinc-900'}`}>{d.pdi}</td>
-                                        <td className={`py-4 px-4 ${d.winner === 'waydev' ? 'text-emerald-400' : 'text-zinc-900'}`}>{d.waydev}</td>
+                                        <td className={`py-4 px-4 ${d.winner === 'pdi' ? 'text-cyan-800 font-semibold' : 'text-zinc-900'}`}>{d.pdi}</td>
+                                        <td className={`py-4 px-4 ${d.winner === 'waydev' ? 'text-emerald-800 font-semibold' : 'text-zinc-900'}`}>{d.waydev}</td>
                                     </tr>
                                 ))}
                             </tbody>

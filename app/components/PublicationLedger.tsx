@@ -104,11 +104,11 @@ export default function PublicationLedger() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {publications.map((pub) => (
             <div key={pub.platform} className="card p-6 border-zinc-400">
-            <h3 className="text-xl font-bold text-cyan-400 mb-6 font-grotesk pb-2 border-b border-zinc-400">{pub.platform}</h3>
+            <h3 className="text-xl font-bold text-cyan-800 font-semibold mb-6 font-grotesk pb-2 border-b border-zinc-400">{pub.platform}</h3>
             <ul className="space-y-6">
                 {pub.articles.map((article) => (
                 <li key={article.title} className="group">
-                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="block text-zinc-950 hover:text-cyan-400 font-bold transition-colors font-grotesk leading-tight">
+                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="block text-zinc-950 hover:text-cyan-800 font-semibold font-bold transition-colors font-grotesk leading-tight">
                     {article.title}
                     </a>
                     <p className="text-zinc-950 mt-2 text-sm leading-relaxed">{article.thesis}</p>

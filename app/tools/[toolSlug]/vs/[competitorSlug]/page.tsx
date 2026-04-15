@@ -96,7 +96,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                 </Link>
 
                 <div className="text-center mb-24">
-                     <div className="inline-block bg-red-500/10 border border-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest mb-6">
+                     <div className="inline-block bg-red-500/10 border border-red-500/20 text-red-800 font-semibold px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest mb-6">
                         Architectural Comparison Analysis
                      </div>
                      <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-6 leading-tight">
@@ -125,7 +125,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                                   <p className="text-zinc-700 leading-relaxed">{competitor.theirFocus}</p>
                               </div>
                               <div className="bg-red-500/5 border border-red-500/10 p-6 rounded-xl">
-                                  <h3 className="text-xs font-mono text-red-400 uppercase tracking-widest mb-2 flex items-center gap-2"><Target size={14}/> The Critical Failure</h3>
+                                  <h3 className="text-xs font-mono text-red-800 font-semibold uppercase tracking-widest mb-2 flex items-center gap-2"><Target size={14}/> The Critical Failure</h3>
                                   <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                       {dynamicFailure}
                                   </p>
@@ -140,7 +140,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                               <ShieldCheck size={120} />
                           </div>
                           <div className="mb-8 relative z-10">
-                             <div className="text-xs font-mono text-indigo-400 uppercase tracking-widest mb-2">The Deterministic Standard</div>
+                             <div className="text-xs font-mono text-indigo-800 font-semibold uppercase tracking-widest mb-2">The Deterministic Standard</div>
                              <h2 className="text-3xl font-bold text-zinc-950 mb-2">{tool.toolName}</h2>
                           </div>
                           <div className="space-y-6 relative z-10">
@@ -149,7 +149,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                                   <p className="text-zinc-700 leading-relaxed font-medium">{competitor.ourAdvantage}</p>
                               </div>
                               <div className="bg-indigo-500/10 border border-indigo-500/20 p-6 rounded-xl">
-                                  <h3 className="text-xs font-mono text-indigo-400 uppercase tracking-widest mb-2 flex items-center gap-2"><Zap size={14}/> Board-Level Valuation</h3>
+                                  <h3 className="text-xs font-mono text-indigo-800 font-semibold uppercase tracking-widest mb-2 flex items-center gap-2"><Zap size={14}/> Board-Level Valuation</h3>
                                   <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                       Every <strong>{tool.toolName}</strong> computation terminates in an Executive Briefing PDF. We bypass generalized metrics to give you a deterministic, Board-ready artifact that maps directly to our Sovereign Enterprise Curriculum, explicitly training your teams to eradicate the exact vulnerability locally.
                                   </p>
@@ -170,7 +170,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                                 <tr className="bg-white/5 border-b border-zinc-400">
                                     <th className="p-6 text-sm font-bold text-zinc-700 uppercase tracking-widest w-1/2">Capability</th>
                                     <th className="p-6 text-sm font-bold text-zinc-700 uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{competitor.name}</th>
-                                    <th className="p-6 text-sm font-bold text-indigo-400 uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{tool.toolName}</th>
+                                    <th className="p-6 text-sm font-bold text-indigo-800 font-semibold uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{tool.toolName}</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-zinc-200">

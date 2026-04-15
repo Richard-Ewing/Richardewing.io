@@ -63,7 +63,7 @@ export default function ExogramUseCasesPage() {
                 </div>
 
                 <section className="text-center mb-16">
-                    <p className="text-xs font-mono text-purple-400 uppercase tracking-widest mb-4">Industry Applications</p>
+                    <p className="text-xs font-mono text-purple-800 font-semibold uppercase tracking-widest mb-4">Industry Applications</p>
                     <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         Use <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Cases.</span>
                     </h1>
@@ -79,22 +79,22 @@ export default function ExogramUseCasesPage() {
                             <div className="flex items-start gap-4 mb-6">
                                 <span className="text-4xl">{uc.icon}</span>
                                 <div>
-                                    <span className="text-xs font-medium font-mono text-purple-400 uppercase tracking-widest">{uc.industry}</span>
+                                    <span className="text-xs font-medium font-mono text-purple-800 font-semibold uppercase tracking-widest">{uc.industry}</span>
                                     <h2 className="text-2xl font-grotesk font-bold text-zinc-900">{uc.title}</h2>
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div>
-                                    <h3 className="text-xs font-mono text-red-400 uppercase tracking-widest mb-3">Problem</h3>
+                                    <h3 className="text-xs font-mono text-red-800 font-semibold uppercase tracking-widest mb-3">Problem</h3>
                                     <p className="text-sm text-zinc-900 font-medium leading-relaxed">{uc.problem}</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-3">Solution</h3>
+                                    <h3 className="text-xs font-mono text-emerald-800 font-semibold uppercase tracking-widest mb-3">Solution</h3>
                                     <p className="text-sm text-zinc-900 font-medium leading-relaxed">{uc.solution}</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-3">Impact</h3>
+                                    <h3 className="text-xs font-mono text-cyan-800 font-semibold uppercase tracking-widest mb-3">Impact</h3>
                                     <p className="text-sm text-zinc-950 font-semibold mb-3">{uc.impact}</p>
                                     <div className="flex flex-wrap gap-1.5">
                                         {uc.regulations.map(r => (

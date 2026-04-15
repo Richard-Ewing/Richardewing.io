@@ -80,7 +80,7 @@ export default async function TeamAdminPage() {
                                 <p className="text-xs text-zinc-900 font-bold">Total available invites</p>
                             </div>
                             <div className="text-right">
-                                <span className={`text-3xl font-bold font-mono ${isAtCapacity ? 'text-red-400' : 'text-cyan-400'}`}>
+                                <span className={`text-3xl font-bold font-mono ${isAtCapacity ? 'text-red-800 font-semibold' : 'text-cyan-800 font-semibold'}`}>
                                     {seatsUsed}
                                 </span>
                                 <span className="text-zinc-950 text-lg"> / {availableChildSeats}</span>
@@ -99,7 +99,7 @@ export default async function TeamAdminPage() {
                         {isAtCapacity ? (
                             <p className="text-xs text-zinc-900 font-bold font-bold">Limit Reached. No further invites can be claimed.</p>
                         ) : (
-                            <p className="text-xs font-medium text-cyan-400 uppercase tracking-widest font-bold">{availableChildSeats - seatsUsed} Seats Remaining</p>
+                            <p className="text-xs font-medium text-cyan-800 font-semibold uppercase tracking-widest font-bold">{availableChildSeats - seatsUsed} Seats Remaining</p>
                         )}
                     </div>
                 </div>

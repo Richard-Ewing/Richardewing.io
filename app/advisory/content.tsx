@@ -42,7 +42,7 @@ export default function AdvisoryContent() {
                         {/* Stats */}
                         <div className="grid grid-cols-3 gap-4 pt-6 border-t border-zinc-400">
                             <div className="text-center">
-                                <div className="text-2xl sm:text-3xl font-bold text-cyan-400 tabular-nums"><NumberTicker value={200} suffix="%" /></div>
+                                <div className="text-2xl sm:text-3xl font-bold text-cyan-800 font-semibold tabular-nums"><NumberTicker value={200} suffix="%" /></div>
                                 <div className="text-xs font-medium font-mono text-zinc-800 uppercase">Avg Revenue Lift</div>
                             </div>
                             <div className="text-center">
@@ -66,12 +66,12 @@ export default function AdvisoryContent() {
                     <GlowCard className="p-6 sm:p-8" glowColor="cyan">
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
                             <h3 className="text-xl font-bold text-zinc-950 font-grotesk">Diagnostic Call</h3>
-                            <span className="text-2xl font-bold text-cyan-400 font-mono">$450</span>
+                            <span className="text-2xl font-bold text-cyan-800 font-semibold font-mono">$450</span>
                         </div>
                         <p className="text-zinc-900 text-sm leading-relaxed mb-6 border-b border-zinc-400 pb-4">
                             30-Minute Rapid Assessment. You describe the situation, I tell you if it's on fire. No pitch, just triage.
                         </p>
-                        <a href="/api/buy/gut_check" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
+                        <a href="/api/buy/gut_check" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-800 font-semibold font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
                             Book Diagnostic
                         </a>
                     </GlowCard>
@@ -117,12 +117,12 @@ export default function AdvisoryContent() {
                     <GlowCard className="p-6 sm:p-8" glowColor="cyan">
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
                             <h3 className="text-xl font-bold text-zinc-950 font-grotesk">AI Cost Governance</h3>
-                            <span className="text-2xl font-bold text-cyan-400 font-mono">$5,000</span>
+                            <span className="text-2xl font-bold text-cyan-800 font-semibold font-mono">$5,000</span>
                         </div>
                         <p className="text-zinc-900 text-sm leading-relaxed mb-6 border-b border-zinc-400 pb-4">
                             Dedicated AI economics analysis. Unit economics model, collapse point calculation, and margin protection framework.
                         </p>
-                        <a href="/api/buy/ai_cost_governance" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
+                        <a href="/api/buy/ai_cost_governance" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/20 text-cyan-800 font-semibold font-bold uppercase text-xs py-3 rounded hover:bg-cyan-500/20 transition-all">
                             Secure Governance
                         </a>
                     </GlowCard>
@@ -171,11 +171,11 @@ export default function AdvisoryContent() {
                             <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                                 <p itemProp="text" className="text-zinc-900 text-sm leading-relaxed">
                                     Take the free{' '}
-                                    <a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-zinc-900 transition-colors underline decoration-dotted">AI Fluency</a>{' '}
+                                    <a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations" target="_blank" rel="noopener noreferrer" className="text-cyan-800 font-semibold hover:text-zinc-900 transition-colors underline decoration-dotted">AI Fluency</a>{' '}
                                     and{' '}
-                                    <a href="https://anthropic.skilljar.com/claude-101" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-zinc-900 transition-colors underline decoration-dotted">Claude 101</a>{' '}
+                                    <a href="https://anthropic.skilljar.com/claude-101" target="_blank" rel="noopener noreferrer" className="text-cyan-800 font-semibold hover:text-zinc-900 transition-colors underline decoration-dotted">Claude 101</a>{' '}
                                     courses from Anthropic Academy. They establish the AI governance vocabulary we&apos;ll use during the audit. View{' '}
-                                    <a href="/resources/ai-courses" className="text-cyan-400 hover:text-zinc-900 transition-colors underline decoration-dotted">all 15 curated courses</a>.
+                                    <a href="/resources/ai-courses" className="text-cyan-800 font-semibold hover:text-zinc-900 transition-colors underline decoration-dotted">all 15 curated courses</a>.
                                 </p>
                             </div>
                         </div>

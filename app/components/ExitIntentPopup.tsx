@@ -85,7 +85,7 @@ export default function ExitIntentPopup() {
                 {state.succeeded ? (
                     <div className="text-center py-4">
                         <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <Gift className="w-8 h-8 text-emerald-400" />
+                            <Gift className="w-8 h-8 text-emerald-800 font-semibold" />
                         </div>
                         <h3 className="text-2xl font-bold text-zinc-950 mb-2">Redirecting to Checklist ✓</h3>
                         <p className="text-zinc-800">Loading your R&D Audit Checklist...</p>
@@ -93,7 +93,7 @@ export default function ExitIntentPopup() {
                 ) : (
                     <>
                         <div className="w-14 h-14 bg-purple-500/10 border border-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                            <Gift className="w-7 h-7 text-purple-400" />
+                            <Gift className="w-7 h-7 text-purple-800 font-semibold" />
                         </div>
 
                         <h3 className="text-2xl font-bold text-zinc-950 text-center mb-2">Wait — Free R&D Audit Checklist</h3>
@@ -104,13 +104,13 @@ export default function ExitIntentPopup() {
                         {/* What You Get */}
                         <div className="bg-white/[0.03] border border-zinc-400 rounded-xl p-4 mb-5 space-y-2">
                             <div className="flex items-start gap-2 text-xs text-zinc-900 font-bold">
-                                <span className="text-emerald-400 mt-0.5">✓</span> Traffic-light scoring rubrics for every question
+                                <span className="text-emerald-800 font-semibold mt-0.5">✓</span> Traffic-light scoring rubrics for every question
                             </div>
                             <div className="flex items-start gap-2 text-xs text-zinc-900 font-bold">
-                                <span className="text-emerald-400 mt-0.5">✓</span> Actionable remediation steps — not just diagnosis
+                                <span className="text-emerald-800 font-semibold mt-0.5">✓</span> Actionable remediation steps — not just diagnosis
                             </div>
                             <div className="flex items-start gap-2 text-xs text-zinc-900 font-bold">
-                                <span className="text-emerald-400 mt-0.5">✓</span> Benchmark thresholds so you know where you stand
+                                <span className="text-emerald-800 font-semibold mt-0.5">✓</span> Benchmark thresholds so you know where you stand
                             </div>
                         </div>
 
@@ -130,7 +130,7 @@ export default function ExitIntentPopup() {
                             <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-zinc-900 font-bold" />
 
                             {validationError && (
-                                <div className="flex items-center gap-2 p-2 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-xs">
+                                <div className="flex items-center gap-2 p-2 bg-red-500/10 border border-red-500/20 rounded-lg text-red-800 font-semibold text-xs">
                                     <AlertCircle className="w-3 h-3" /><span>{validationError}</span>
                                 </div>
                             )}
@@ -145,7 +145,7 @@ export default function ExitIntentPopup() {
 
                         <div className="flex items-center justify-between mt-4 pt-3 border-t border-zinc-400">
                             <p className="text-xs font-medium text-zinc-950">Zero spam · Used by 2,000+ executives</p>
-                            <a href="/tools" className="text-xs font-medium text-zinc-800 hover:text-cyan-400 transition-colors">
+                            <a href="/tools" className="text-xs font-medium text-zinc-800 hover:text-cyan-800 font-semibold transition-colors">
                                 Or try free tools →
                             </a>
                         </div>

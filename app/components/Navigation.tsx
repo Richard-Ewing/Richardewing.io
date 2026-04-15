@@ -76,7 +76,7 @@ const Navigation = () => {
                                         <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
                                         <span className="text-zinc-900 text-base">Executive Board Room</span>
                                     </div>
-                                    <p className="text-[10.5px] text-indigo-500/70 font-mono tracking-widest uppercase">Board-Level Telemetry Hub</p>
+                                    <p className="text-[10.5px] text-indigo-900 font-bold font-mono tracking-widest uppercase">Board-Level Telemetry Hub</p>
                                 </Link>
                                 
                                 <div className="px-5 py-2 text-xs font-medium font-bold tracking-widest text-[var(--accent-purple)] uppercase mt-2">Flagship Engines</div>
@@ -264,7 +264,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                                 <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
                                 <span>Executive Board Room</span>
                             </div>
-                            <span className="text-xs font-medium text-indigo-500/70 font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
+                            <span className="text-xs font-medium text-indigo-900 font-bold font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
                         </Link>
 
                         <MobileLink href="/benchmark/ai-capital-2026" onClick={onClose} className="font-bold text-cyan-600">2026 AI Capital Benchmark</MobileLink>

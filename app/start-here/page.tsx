@@ -61,9 +61,9 @@ const steps = [
 ];
 
 const colorMap: Record<string, { border: string; bg: string; text: string; dot: string; primaryBg: string }> = {
-    cyan: { border: 'border-cyan-500/30', bg: 'bg-cyan-500/5', text: 'text-cyan-400', dot: 'bg-cyan-400', primaryBg: 'bg-gradient-to-r from-cyan-500 to-blue-600' },
-    purple: { border: 'border-purple-500/30', bg: 'bg-purple-500/5', text: 'text-purple-400', dot: 'bg-purple-400', primaryBg: 'bg-gradient-to-r from-purple-500 to-pink-600' },
-    emerald: { border: 'border-emerald-500/30', bg: 'bg-emerald-500/5', text: 'text-emerald-400', dot: 'bg-emerald-400', primaryBg: 'bg-gradient-to-r from-emerald-500 to-teal-600' },
+    cyan: { border: 'border-cyan-500/30', bg: 'bg-cyan-500/5', text: 'text-cyan-800 font-semibold', dot: 'bg-cyan-400', primaryBg: 'bg-gradient-to-r from-cyan-500 to-blue-600' },
+    purple: { border: 'border-purple-500/30', bg: 'bg-purple-500/5', text: 'text-purple-800 font-semibold', dot: 'bg-purple-400', primaryBg: 'bg-gradient-to-r from-purple-500 to-pink-600' },
+    emerald: { border: 'border-emerald-500/30', bg: 'bg-emerald-500/5', text: 'text-emerald-800 font-semibold', dot: 'bg-emerald-400', primaryBg: 'bg-gradient-to-r from-emerald-500 to-teal-600' },
 };
 
 export default function StartHerePage() {
@@ -74,7 +74,7 @@ export default function StartHerePage() {
                     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
                     <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <span>Guide</span><span>/</span><span className="text-cyan-400 font-bold">Start Here</span>
+                        <span>Guide</span><span>/</span><span className="text-cyan-800 font-semibold font-bold">Start Here</span>
                     </div>
 
                     <div className="mb-16 border-b border-zinc-400 pb-12">
@@ -132,7 +132,7 @@ export default function StartHerePage() {
                         <p className="text-zinc-900 mb-6 max-w-xl mx-auto">
                             Richard Ewing is a Product Economist and AI Capital Auditor.
                             He has scaled B2B SaaS to $25M ARR and is the founder of{' '}
-                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline">Exogram</a>, verification infrastructure for AI.
+                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-cyan-800 font-semibold hover:text-cyan-800 font-semibold underline">Exogram</a>, verification infrastructure for AI.
                             Published in CIO.com, Built In, Mind the Product, and HackerNoon.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">

@@ -73,9 +73,9 @@ export default function SystemPromptsPage() {
     return (
         <div className="max-w-5xl mx-auto px-6 py-12">
             <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                <Link href="/" className="hover:text-cyan-400">Home</Link>
+                <Link href="/" className="hover:text-cyan-800 font-semibold">Home</Link>
                 <span>/</span>
-                <span className="text-cyan-400 font-bold">System Prompts</span>
+                <span className="text-cyan-800 font-semibold font-bold">System Prompts</span>
             </div>
 
             <div className="mb-12 border-b border-zinc-400 pb-12">
@@ -91,7 +91,7 @@ export default function SystemPromptsPage() {
                 {prompts.map((p, idx) => (
                     <div key={p.id} className="card p-8 border-zinc-400">
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-bold text-cyan-400">
+                            <div className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-bold text-cyan-800 font-semibold">
                                 For {p.audience}
                             </div>
                             <h2 className="text-2xl font-grotesk font-bold text-zinc-900">{p.title}</h2>

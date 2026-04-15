@@ -32,7 +32,7 @@ export default function AICapitalBenchmark() {
 
                 {/* Hero Headers */}
                 <div className="space-y-6 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono uppercase tracking-widest shadow-[0_0_15px_-3px_rgba(6,182,212,0.4)]">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-800 font-semibold text-xs font-mono uppercase tracking-widest shadow-[0_0_15px_-3px_rgba(6,182,212,0.4)]">
                         <Globe size={14} /> Open Data Benchmark
                     </div>
                     <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-zinc-900 leading-tight">
@@ -43,7 +43,7 @@ export default function AICapitalBenchmark() {
                         An irrefutable empirical analysis of LLM operating costs, architectural latency, workforce displacement mathematics, and the true threshold where renting AI APIs becomes a hostile M&A liability. 
                     </p>
                     <div className="flex gap-4 items-center">
-                        <p className="text-sm font-mono text-cyan-400/80 border border-cyan-500/20 px-3 py-1 bg-cyan-50/30 rounded-md">
+                        <p className="text-sm font-mono text-cyan-900 font-bold border border-cyan-500/20 px-3 py-1 bg-cyan-50/30 rounded-md">
                             Computed: Q2 2026
                         </p>
                         <p className="text-sm font-mono text-zinc-950 border border-zinc-400 px-3 py-1 rounded-md">
@@ -55,7 +55,7 @@ export default function AICapitalBenchmark() {
                 {/* Hard Data Hub 1: LLM Economics */}
                 <div className="mt-20">
                     <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <Cpu className="text-cyan-400" /> 01. The CapEx vs OpEx Threshold
+                        <Cpu className="text-cyan-800 font-semibold" /> 01. The CapEx vs OpEx Threshold
                     </h2>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -97,7 +97,7 @@ export default function AICapitalBenchmark() {
                         <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
                             <div className="md:col-span-3">
                                 <h3 className="text-2xl font-bold text-zinc-900 flex items-center gap-2 mb-2">
-                                    <ShieldAlert className="text-cyan-400" /> Are You Bleeding CapEx?
+                                    <ShieldAlert className="text-cyan-800 font-semibold" /> Are You Bleeding CapEx?
                                 </h3>
                                 <p className="text-zinc-800">
                                     Stop guessing if your LLM infrastructure is financially toxic. Our Exogram Auditors plug directly into your GitHub / AWS stacks to map your true capability debt in 72 hours.
@@ -115,7 +115,7 @@ export default function AICapitalBenchmark() {
                 {/* Hard Data Hub 2: FTE Displacement */}
                 <div className="mt-24">
                     <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <TrendingDown className="text-cyan-400" /> 02. The FTE Displacement Index
+                        <TrendingDown className="text-cyan-800 font-semibold" /> 02. The FTE Displacement Index
                     </h2>
                     
                     <div className="bg-white border border-zinc-400 rounded-xl p-8 mb-8 overflow-x-auto">
@@ -132,31 +132,31 @@ export default function AICapitalBenchmark() {
                                 <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">L1/L2 Frontend Engineer</td>
                                     <td className="py-4 pr-6 text-zinc-900">14%</td>
-                                    <td className="py-4 pr-6 text-cyan-400 font-bold">78%</td>
+                                    <td className="py-4 pr-6 text-cyan-800 font-semibold font-bold">78%</td>
                                     <td className="py-4 text-right">Native v0 / Agentic UI Generation</td>
                                 </tr>
                                 <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">QA / SDET Analyst</td>
                                     <td className="py-4 pr-6 text-zinc-900">22%</td>
-                                    <td className="py-4 pr-6 text-cyan-400 font-bold">91%</td>
+                                    <td className="py-4 pr-6 text-cyan-800 font-semibold font-bold">91%</td>
                                     <td className="py-4 text-right">Agentic E2E Testing Pipelines</td>
                                 </tr>
                                 <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">Data Analyst (SQL)</td>
                                     <td className="py-4 pr-6 text-zinc-900">18%</td>
-                                    <td className="py-4 pr-6 text-cyan-400 font-bold">65%</td>
+                                    <td className="py-4 pr-6 text-cyan-800 font-semibold font-bold">65%</td>
                                     <td className="py-4 text-right">Text-to-SQL RAG Systems</td>
                                 </tr>
                                 <tr className="border-b border-zinc-400/50">
                                     <td className="py-4 pr-6 font-medium">DevOps (K8s Maintenance)</td>
                                     <td className="py-4 pr-6 text-zinc-900">8%</td>
-                                    <td className="py-4 pr-6 text-cyan-400 font-bold">45%</td>
+                                    <td className="py-4 pr-6 text-cyan-800 font-semibold font-bold">45%</td>
                                     <td className="py-4 text-right">Terraform Drift Auto-Remediation</td>
                                 </tr>
                                 <tr>
                                     <td className="py-4 pr-6 font-medium">Architect / Principal</td>
                                     <td className="py-4 pr-6 text-zinc-900">2%</td>
-                                    <td className="py-4 pr-6 text-cyan-400 font-bold">12%</td>
+                                    <td className="py-4 pr-6 text-cyan-800 font-semibold font-bold">12%</td>
                                     <td className="py-4 text-right text-zinc-900">Not Displaced (Augmented 3x)</td>
                                 </tr>
                             </tbody>
@@ -179,7 +179,7 @@ export default function AICapitalBenchmark() {
                 {/* Hard Data Hub 3: Architectural Latency */}
                 <div className="mt-24">
                     <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <Activity className="text-cyan-400" /> 03. Architectural Latency vs ACV
+                        <Activity className="text-cyan-800 font-semibold" /> 03. Architectural Latency vs ACV
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -208,7 +208,7 @@ export default function AICapitalBenchmark() {
                 {/* Hard Data Hub 4: The Vector DB Consolidation */}
                 <div className="mt-24">
                     <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <Database className="text-cyan-400" /> 04. The Vector Component Collapse
+                        <Database className="text-cyan-800 font-semibold" /> 04. The Vector Component Collapse
                     </h2>
                     
                     <div className="bg-white border border-zinc-400 rounded-xl p-8 mb-8">

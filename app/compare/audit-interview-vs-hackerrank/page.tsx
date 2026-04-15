@@ -26,7 +26,7 @@ export default function AuditInterviewVsHackerRankPage() {
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                        <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-emerald-400 font-bold">Audit Interview vs HackerRank</span>
+                        <Link href="/compare" className="hover:text-cyan-800 font-semibold">Compare</Link><span>/</span><span className="text-emerald-800 font-semibold font-bold">Audit Interview vs HackerRank</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
@@ -42,7 +42,7 @@ export default function AuditInterviewVsHackerRankPage() {
                             <thead>
                                 <tr className="border-b border-zinc-400">
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-800 uppercase tracking-widest">Dimension</th>
-                                    <th className="text-left py-4 px-4 text-xs font-mono text-emerald-400 uppercase tracking-widest">Audit Interview</th>
+                                    <th className="text-left py-4 px-4 text-xs font-mono text-emerald-800 font-semibold uppercase tracking-widest">Audit Interview</th>
                                     <th className="text-left py-4 px-4 text-xs font-mono text-zinc-900 uppercase tracking-widest">HackerRank</th>
                                 </tr>
                             </thead>

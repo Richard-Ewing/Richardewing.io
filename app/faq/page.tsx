@@ -61,7 +61,7 @@ export default function FaqPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
             <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
-                <span>Help</span><span>/</span><span className="text-cyan-400 font-bold">FAQ</span>
+                <span>Help</span><span>/</span><span className="text-cyan-800 font-semibold font-bold">FAQ</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
@@ -80,7 +80,7 @@ export default function FaqPage() {
                             <details key={faq.q} className="card p-6 group cursor-pointer">
                                 <summary className="text-zinc-950 font-bold cursor-pointer list-none flex items-center justify-between">
                                     <span>{faq.q}</span>
-                                    <span className="text-cyan-400 text-xl font-mono group-open:rotate-45 transition-transform">+</span>
+                                    <span className="text-cyan-800 font-semibold text-xl font-mono group-open:rotate-45 transition-transform">+</span>
                                 </summary>
                                 <p className="text-zinc-900 mt-4 leading-relaxed">{faq.a}</p>
                             </details>

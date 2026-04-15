@@ -18,7 +18,7 @@ export function HelpTip({ children, tip }: HelpTipProps) {
                 onMouseEnter={() => setShow(true)}
                 onMouseLeave={() => setShow(false)}
                 onClick={() => setShow(!show)}
-                className="text-zinc-800 hover:text-cyan-400 transition-colors cursor-help"
+                className="text-zinc-800 hover:text-cyan-800 font-semibold transition-colors cursor-help"
                 aria-label="More info"
             >
                 <HelpCircle size={12} />

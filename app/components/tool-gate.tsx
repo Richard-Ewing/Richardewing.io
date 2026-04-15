@@ -174,7 +174,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                 className="max-w-xl w-full text-center z-10"
             >
                 <div className="w-16 h-16 bg-white/5 border border-zinc-400 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
-                    <Lock className="w-8 h-8 text-cyan-400" />
+                    <Lock className="w-8 h-8 text-cyan-800 font-semibold" />
                 </div>
 
                 <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tighter">
@@ -215,7 +215,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                             <motion.div
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="flex items-center gap-2 p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm"
+                                className="flex items-center gap-2 p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-800 font-semibold text-sm"
                             >
                                 <AlertCircle className="w-4 h-4 flex-shrink-0" />
                                 <span>{validationError}</span>

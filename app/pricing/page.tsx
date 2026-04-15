@@ -114,7 +114,7 @@ export default function PricingPage() {
                                     <span className={`px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full ${
                                         tier.badge === 'Most Popular'
                                             ? 'bg-cyan-500 text-black'
-                                            : 'bg-purple-500/20 text-purple-400 border border-purple-500/30'
+                                            : 'bg-purple-500/20 text-purple-800 font-semibold border border-purple-500/30'
                                     }`}>
                                         {tier.badge}
                                     </span>
@@ -163,15 +163,15 @@ export default function PricingPage() {
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-cyan-400 mb-2">20-40%</div>
+                                <div className="text-3xl font-bold text-cyan-800 font-semibold mb-2">20-40%</div>
                                 <div className="text-sm text-zinc-950">Engineering spend reallocation identified</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-emerald-400 mb-2">90 days</div>
+                                <div className="text-3xl font-bold text-emerald-800 font-semibold mb-2">90 days</div>
                                 <div className="text-sm text-zinc-950">To measurable DORA metric improvement</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-purple-400 mb-2">10-50x</div>
+                                <div className="text-3xl font-bold text-purple-800 font-semibold mb-2">10-50x</div>
                                 <div className="text-sm text-zinc-950">Typical ROI on Diagnostic investment</div>
                             </div>
                         </div>

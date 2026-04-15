@@ -147,7 +147,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                     <Network className="w-5 h-5 text-purple-600" />
                                     <div className="text-xs font-mono uppercase text-zinc-800 tracking-widest">Inference Architecture</div>
                                 </div>
-                                <div className="font-mono text-xs font-medium text-purple-300/50 space-y-2">
+                                <div className="font-mono text-xs font-medium text-purple-900 font-bold space-y-2">
                                     <div className="flex gap-4">
                                         <span className="text-zinc-950">01</span>
                                         <span className="text-emerald-600/50">import</span> <span>{'{ orchestrator }'}</span> <span className="text-emerald-600/50">from</span> <span className="text-amber-400/50">'@exogram/core'</span>;
@@ -218,7 +218,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                 <div key={idx} className="bg-zinc-50 border border-zinc-400 rounded-2xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 group/lock hover:bg-white/[0.04] transition-colors relative overflow-hidden">
                                     <div className="flex items-start gap-4">
                                         <div className="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-400 flex items-center justify-center shrink-0">
-                                            {idx % 2 === 0 ? <PlayCircle className="w-5 h-5 text-cyan-500/50" /> : <Database className="w-5 h-5 text-purple-500/50" />}
+                                            {idx % 2 === 0 ? <PlayCircle className="w-5 h-5 text-cyan-900 font-bold" /> : <Database className="w-5 h-5 text-purple-900 font-bold" />}
                                         </div>
                                         <div>
                                             <h4 className="text-zinc-900 font-bold mb-1 group-hover/lock:text-cyan-600 transition-colors flex items-center gap-2">

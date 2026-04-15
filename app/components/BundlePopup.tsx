@@ -79,12 +79,12 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                         className="w-full flex items-center justify-between p-4 rounded-xl border border-zinc-400 bg-zinc-50 hover:border-zinc-500 transition-all group text-left"
                     >
                         <div>
-                            <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors">This Guide Only</div>
+                            <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors">This Guide Only</div>
                             <div className="text-xs text-zinc-950 mt-0.5">Instant access to this guide</div>
                         </div>
                         <div className="flex items-center gap-2">
                             <span className="text-xl font-bold text-zinc-900">${PREMIUM_GUIDES.find(g => g.slug === currentGuide)?.price || 29}</span>
-                            <ArrowRight className="w-4 h-4 text-zinc-950 group-hover:text-cyan-400 transition-colors" />
+                            <ArrowRight className="w-4 h-4 text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors" />
                         </div>
                     </button>
 
@@ -98,11 +98,11 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                             <Sparkles className="w-3 h-3" /> Ultimate Value
                         </div>
                         <div>
-                            <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors">All 13 Premium Guides</div>
+                            <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 font-semibold transition-colors">All 13 Premium Guides</div>
                             <div className="text-xs text-zinc-950 mt-0.5">Complete 2026 premium library · Save over $500</div>
                             <div className="flex flex-wrap gap-1 mt-2">
                                 {PREMIUM_GUIDES.slice(0, 5).map(g => (
-                                    <span key={g.id} className="text-xs font-medium px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">{g.name}</span>
+                                    <span key={g.id} className="text-xs font-medium px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-800 font-semibold border border-cyan-500/20">{g.name}</span>
                                 ))}
                                 <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-white/5 text-zinc-800">+8 more</span>
                             </div>

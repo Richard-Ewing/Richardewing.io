@@ -26,10 +26,10 @@ interface QPEPRemediationProps {
 
 function getUrgencyColor(urgency: string) {
     switch (urgency) {
-        case 'CRITICAL': return { bg: 'bg-red-500/10', border: 'border-red-500/30', text: 'text-red-400', dot: 'bg-red-500' };
-        case 'HIGH': return { bg: 'bg-orange-500/10', border: 'border-orange-500/30', text: 'text-orange-400', dot: 'bg-orange-500' };
-        case 'MODERATE': return { bg: 'bg-yellow-500/10', border: 'border-yellow-500/30', text: 'text-yellow-400', dot: 'bg-yellow-500' };
-        default: return { bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', text: 'text-emerald-400', dot: 'bg-emerald-500' };
+        case 'CRITICAL': return { bg: 'bg-red-500/10', border: 'border-red-500/30', text: 'text-red-800 font-semibold', dot: 'bg-red-500' };
+        case 'HIGH': return { bg: 'bg-orange-500/10', border: 'border-orange-500/30', text: 'text-orange-800 font-semibold', dot: 'bg-orange-500' };
+        case 'MODERATE': return { bg: 'bg-yellow-500/10', border: 'border-yellow-500/30', text: 'text-yellow-800 font-semibold', dot: 'bg-yellow-500' };
+        default: return { bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', text: 'text-emerald-800 font-semibold', dot: 'bg-emerald-500' };
     }
 }
 
