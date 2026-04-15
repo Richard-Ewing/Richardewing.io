@@ -33,29 +33,26 @@ export default function PdfExportButton({
       // Temporarily add a class or tweak styles if needed before canvas
       // For instance, forcing white background so transparent dark mode doesn't look bad
       const originalBg = targetEl.style.backgroundColor;
-      targetEl.style.backgroundColor = 'var(--background, #0a0a0a)';
+      targetEl.style.backgroundColor = 'var(--background, #ffffff)';
 
       // Use a custom scale to improve PDF sharpness from canvas
-      const h2cModule = await import('html2canvas');
+      const htmlToImage = await import('html-to-image');
       const jsPDFModule = await import('jspdf');
 
-      const html2canvas = h2cModule.default || h2cModule;
       const jsPDFFactory = jsPDFModule.default || jsPDFModule.jsPDF;
 
-      const canvas = await html2canvas(targetEl, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: '#0a0a0a' // Assuming the site uses a dark theme
+      const imgData = await htmlToImage.toPng(targetEl, {
+        pixelRatio: 2,
+        backgroundColor: '#ffffff',
+        style: { transform: 'none' }
       });
 
       targetEl.style.backgroundColor = originalBg;
-
-      const imgData = canvas.toDataURL('image/png');
       
       // Calculate aspect ratio
       const imgWidth = 210; // A4 width in mm
       const pageHeight = 297; // A4 height in mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      const imgHeight = (targetEl.offsetHeight * imgWidth) / targetEl.offsetWidth;
       
       let heightLeft = imgHeight;
       const pdf = new jsPDFFactory('p', 'mm', 'a4');

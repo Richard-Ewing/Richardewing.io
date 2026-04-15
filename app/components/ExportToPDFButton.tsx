@@ -69,7 +69,7 @@ export function ExportToPDFButton({
             // html-to-image handles oklch and lab colors perfectly because it uses native SVG rendering
             const imgData = await htmlToImage.toPng(element, {
                 pixelRatio: 2,
-                backgroundColor: '#0a0a0b',
+                backgroundColor: '#ffffff',
                 style: {
                     transform: 'none',
                 }
