@@ -141,15 +141,24 @@ export default function DueDiligenceTool() {
             // Enforce snapshot size and strictly disable running transitions
             const originalWidth = element.style.width;
             const originalMaxWidth = element.style.maxWidth;
+            const originalTransform = element.style.transform;
             element.style.width = '1024px';
             element.style.maxWidth = '1024px';
             
+            // Disable animations temporarily to prevent Recharts SVG rendering bugs & Framer Motion mid-transition scaling bugs
             const animatedElements = element.querySelectorAll('*');
-            animatedElements.forEach((el: Element) => {
+            animatedElements.forEach(el => {
                 const node = el as HTMLElement;
                 if (node.style) {
                     node.style.setProperty('transition', 'none', 'important');
                     node.style.setProperty('animation', 'none', 'important');
+                    
+                    if (node.classList.contains('opacity-0') || node.classList.contains('translate-y-8') || node.classList.contains('translate-y-30')) {
+                        node.setAttribute('data-pdf-opacity', node.style.opacity || '');
+                        node.setAttribute('data-pdf-transform', node.style.transform || '');
+                        node.style.setProperty('opacity', '1', 'important');
+                        node.style.setProperty('transform', 'none', 'important');
+                    }
                 }
             });
 
@@ -213,11 +222,19 @@ export default function DueDiligenceTool() {
 
             element.style.width = originalWidth;
             element.style.maxWidth = originalMaxWidth;
-            animatedElements.forEach((el: Element) => {
+            element.style.transform = originalTransform;
+            
+            animatedElements.forEach(el => {
                 const node = el as HTMLElement;
                 if (node.style) {
                     node.style.removeProperty('transition');
                     node.style.removeProperty('animation');
+                    if (node.hasAttribute('data-pdf-opacity')) {
+                        node.style.opacity = node.getAttribute('data-pdf-opacity') || '';
+                        node.style.transform = node.getAttribute('data-pdf-transform') || '';
+                        node.removeAttribute('data-pdf-opacity');
+                        node.removeAttribute('data-pdf-transform');
+                    }
                 }
             });
             blocks.forEach(node => {

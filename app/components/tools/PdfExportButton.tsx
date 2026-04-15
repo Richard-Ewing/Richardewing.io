@@ -44,6 +44,7 @@ export default function PdfExportButton({
       // Disable animations temporarily to prevent Recharts SVG rendering bugs & Framer Motion mid-transition scaling bugs
       const originalWidth = targetEl.style.width;
       const originalMaxWidth = targetEl.style.maxWidth;
+      const originalTransform = targetEl.style.transform;
       targetEl.style.width = '1024px';
       targetEl.style.maxWidth = '1024px';
       
