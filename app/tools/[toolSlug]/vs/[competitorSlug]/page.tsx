@@ -201,10 +201,10 @@ export default async function CombatComparisonPage({ params }: { params: Promise
 
                 <div className="text-center max-w-2xl mx-auto">
                     <h3 className="text-2xl font-bold mb-6">Stop playing with calculators. Calculate your liability.</h3>
-                    <ShineBorder borderColor="rgba(99, 102, 241, 0.6)" duration={2}>
+                    <ShineBorder className="w-full sm:w-auto p-1 rounded-2xl bg-zinc-950/20" borderColor="rgba(6,182,212, 0.4)" duration={3}>
                         <Link 
                             href={`/tools/${tool.toolSlug}`}
-                            className="w-full sm:w-auto px-8 py-5 bg-white text-black font-bold uppercase tracking-widest hover:bg-indigo-500 hover:text-zinc-900 transition-all flex items-center justify-center gap-3"
+                            className="w-full sm:w-auto px-10 py-5 bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 rounded-xl shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_40px_rgba(6,182,212,0.6)]"
                         >
                             <Zap size={18}/> RUN THE EXECUTIVE AUDIT NOW
                         </Link>

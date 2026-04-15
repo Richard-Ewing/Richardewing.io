@@ -223,7 +223,6 @@ export default function CopilotROITool() {
                 </div>
 
                 <ToolGate toolSlug="copilot-roi" toolName="Copilot ROI Forecaster">
-                    
                     {/* --- MAIN DASHBOARD LAYOUT --- */}
                     <div className="grid lg:grid-cols-12 gap-8 relative mt-16">
                         

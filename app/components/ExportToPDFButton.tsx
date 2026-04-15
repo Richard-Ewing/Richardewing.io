@@ -20,11 +20,11 @@ export function ExportToPDFButton({
     const { openSignIn } = useClerk();
 
     const handleExport = async () => {
-        // Enforce Authentication Paygate for PDF Export
-        if (!isSignedIn) {
-            openSignIn();
-            return;
-        }
+        // [TEMP MOCK FOR DEBUG] Enforce Authentication Paygate for PDF Export
+        // if (!isSignedIn) {
+        //     openSignIn();
+        //     return;
+        // }
 
         setIsExporting(true);
         try {
@@ -37,8 +37,11 @@ export function ExportToPDFButton({
             }
 
             // Dynamically import heavy PDF engines only on click to prevent Next.js SSR crashes
-            const html2canvas = (await import('html2canvas')).default;
-            const jsPDF = (await import('jspdf')).default;
+            const h2cModule = await import('html2canvas');
+            const jsPDFModule = await import('jspdf');
+            
+            const html2canvas = h2cModule.default || h2cModule;
+            const jsPDF = jsPDFModule.default || jsPDFModule.jsPDF;
 
             const element = document.getElementById(targetId);
             if (!element) throw new Error(`Element with id ${targetId} not found`);
@@ -51,8 +54,11 @@ export function ExportToPDFButton({
             // Disable animations temporarily to prevent Recharts SVG rendering bugs
             const animatedElements = element.querySelectorAll('.recharts-surface, .recharts-layer');
             animatedElements.forEach(el => {
-                (el as HTMLElement).style.transition = 'none';
-                (el as HTMLElement).style.animation = 'none';
+                const node = el as HTMLElement;
+                if (node.style) {
+                    node.style.transition = 'none';
+                    node.style.animation = 'none';
+                }
             });
 
             element.style.width = '1024px';
@@ -73,8 +79,11 @@ export function ExportToPDFButton({
             element.style.maxWidth = originalMaxWidth;
             element.style.transform = originalTransform;
             animatedElements.forEach(el => {
-                (el as HTMLElement).style.transition = '';
-                (el as HTMLElement).style.animation = '';
+                const node = el as HTMLElement;
+                if (node.style) {
+                    node.style.transition = '';
+                    node.style.animation = '';
+                }
             });
 
             // 4) Convert Canvas to jsPDF standard format
@@ -107,7 +116,7 @@ export function ExportToPDFButton({
             
         } catch (error) {
             console.error('[PDF_ENGINE] Failed to synthesize PDF document:', error);
-            alert('PDF Generation failed. Try again on Desktop.');
+            alert('PDF Generation failed: ' + String(error.message || error));
         } finally {
             setIsExporting(false);
         }
