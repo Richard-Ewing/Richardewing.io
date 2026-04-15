@@ -105,13 +105,14 @@ export function ExportToPDFButton({
                 const startPage = Math.floor(relativeTop / A4_HEIGHT_IN_PX);
                 const endPage = Math.floor((relativeTop + height) / A4_HEIGHT_IN_PX);
                 
-                // Account for 5% canvas drift. If the bottom of the block is within 70px of the boundary, push it to the next page.
+                // Account for extreme canvas drift (+- 200px cumulative rounding error in 150% Windows scaling text wraps).
                 const absolutePageBottom = (startPage + 1) * A4_HEIGHT_IN_PX;
                 const distanceFromBottom = absolutePageBottom - (relativeTop + height);
 
-                if (startPage !== endPage || distanceFromBottom < 75) {
+                // If element is within 200px of the boundary margin, forcefully push it.
+                if (startPage !== endPage || distanceFromBottom < 200) {
                     const nextPageStartPx = absolutePageBottom;
-                    const pushAmount = nextPageStartPx - relativeTop + 40; 
+                    const pushAmount = nextPageStartPx - relativeTop + 80; // 80px visual headroom on the new page
                     
                     // Critical Fix: Use paddingTop instead of marginTop. Margins collapse in block layout, completely sabotaging the math offset.
                     const currentPadding = parseFloat(style.paddingTop) || 0;

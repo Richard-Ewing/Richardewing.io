@@ -96,9 +96,10 @@ export default function PdfExportButton({
           const absolutePageBottom = (startPage + 1) * A4_HEIGHT_IN_PX;
           const distanceFromBottom = absolutePageBottom - (relativeTop + height);
 
-          if (startPage !== endPage || distanceFromBottom < 75) {
+          // Massive 200px buffer to intercept Windows fractional scaling cumulative layout drift
+          if (startPage !== endPage || distanceFromBottom < 200) {
               const nextPageStartPx = absolutePageBottom;
-              const pushAmount = nextPageStartPx - relativeTop + 40;
+              const pushAmount = nextPageStartPx - relativeTop + 80;
               
               const currentPadding = parseFloat(style.paddingTop) || 0;
               el.setAttribute('data-pdf-padding-top', el.style.paddingTop);
