@@ -225,7 +225,7 @@ export default function ToolsContent() {
                   className={`group block p-5 rounded-xl bg-white/[0.03] border border-${course.color === 'cyan' ? 'cyan' : 'purple'}-500/20 hover:bg-white/[0.06] transition-all text-center`}
                 >
                   <h3 className={`font-bold text-zinc-950 mb-1 group-hover:text-${course.color === 'cyan' ? 'cyan' : 'purple'}-400 transition-colors`}>{course.name}</h3>
-                  <p className="text-xs text-zinc-900">{course.desc}</p>
+                  <p className="text-sm font-medium text-zinc-950">{course.desc}</p>
                   <span className={`text-${course.color === 'cyan' ? 'cyan' : 'purple'}-400 text-xs mt-2 inline-block`}>Free Course ↗</span>
                 </a>
               ))}

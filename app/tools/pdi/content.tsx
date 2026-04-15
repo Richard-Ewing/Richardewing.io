@@ -658,20 +658,20 @@ Migrate from Heroku to AWS"
                             <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest mb-4">Debt Dynamics</div>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                 <div className="bg-zinc-100 rounded-xl p-4">
-                                    <div className="text-xs text-zinc-950 mb-1">Waste per Sprint</div>
+                                    <div className="text-sm font-medium text-zinc-950 mb-1">Waste per Sprint</div>
                                     <div className="text-xl font-bold text-red-400">{formatMoney(results.financials.wastePerSprint)}</div>
                                 </div>
                                 <div className="bg-zinc-100 rounded-xl p-4">
-                                    <div className="text-xs text-zinc-950 mb-1">Debt Velocity</div>
+                                    <div className="text-sm font-medium text-zinc-950 mb-1">Debt Velocity</div>
                                     <div className="text-xl font-bold text-orange-400">{results.debtVelocity} tickets/sprint</div>
                                 </div>
                                 <div className="bg-zinc-100 rounded-xl p-4">
-                                    <div className="text-xs text-zinc-950 mb-1">Clear Backlog In</div>
+                                    <div className="text-sm font-medium text-zinc-950 mb-1">Clear Backlog In</div>
                                     <div className="text-xl font-bold text-yellow-400">{results.burnDownWeeks} weeks</div>
                                     <div className="text-xs font-medium text-zinc-950">if dedicated</div>
                                 </div>
                                 <div className="bg-zinc-100 rounded-xl p-4">
-                                    <div className="text-xs text-zinc-950 mb-1">Debt Reduction ROI</div>
+                                    <div className="text-sm font-medium text-zinc-950 mb-1">Debt Reduction ROI</div>
                                     <div className="text-xl font-bold text-emerald-400">{results.financials.debtReductionROI.toFixed(1)}x</div>
                                     <div className="text-xs font-medium text-zinc-950">per sprint invested</div>
                                 </div>
@@ -689,13 +689,13 @@ Migrate from Heroku to AWS"
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
-                                    <div className="text-xs text-zinc-950 mb-2">Annual Maintenance Burden</div>
+                                    <div className="text-sm font-medium text-zinc-950 mb-2">Annual Maintenance Burden</div>
                                     <div className="text-3xl font-bold text-red-500">{formatMoney(results.financials.waste)}</div>
                                     <div className="text-xs text-red-400/60 mt-2 mt-auto">Cost of servicing status-quo tech debt (Interest).</div>
                                 </div>
                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
-                                    <div className="text-xs text-zinc-950 mb-2">Generative AI Rewrite Protocol</div>
+                                    <div className="text-sm font-medium text-zinc-950 mb-2">Generative AI Rewrite Protocol</div>
                                     <div className="text-3xl font-bold text-cyan-400">{formatMoney(results.financials.rewriteCost)}</div>
                                     <div className="text-xs text-cyan-400/60 mt-2 mt-auto">Cost to burn down and rebuild via Agentic orchestration (Principal).</div>
                                 </div>
@@ -710,7 +710,7 @@ Migrate from Heroku to AWS"
                                         <div className={`font-bold ${results.financials.isTechnicalDefault ? 'text-red-400' : 'text-emerald-400'}`}>
                                             {results.financials.isTechnicalDefault ? 'CRITICAL: Technical Default Threshold Exceeded' : 'Viable: System Solvency Maintained'}
                                         </div>
-                                        <div className="text-xs text-zinc-900 mt-1">
+                                        <div className="text-sm font-medium text-zinc-950 mt-1">
                                             {results.financials.isTechnicalDefault 
                                                 ? `The interest payment (maintenance) is now ${results.financials.defaultRatio.toFixed(1)}x greater than the principal (rebuild cost). You are in Technical Default. It is mathematically cheaper to burn the codebase down and rewrite it.` 
                                                 : `Your maintenance burden is tracking below the cost of a full rewrite. Implement aggressive debt rotation now before crossing the default horizon.`}
@@ -793,7 +793,7 @@ Migrate from Heroku to AWS"
                                             </span>
                                             <div className="flex-1">
                                                 <p className="text-sm text-zinc-900">{item.ticket}</p>
-                                                <p className="text-xs text-zinc-950 mt-1">{item.reasoning}</p>
+                                                <p className="text-sm font-medium text-zinc-950 mt-1">{item.reasoning}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -878,7 +878,7 @@ Migrate from Heroku to AWS"
                                             <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-xs text-zinc-900">Enforce the &quot;Win Locker&quot; pattern: Zero PR approvals on quarantined domains until debt ratio decreases by 15%.</p>
+                                            <p className="text-sm font-medium text-zinc-950">Enforce the &quot;Win Locker&quot; pattern: Zero PR approvals on quarantined domains until debt ratio decreases by 15%.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -896,7 +896,7 @@ Migrate from Heroku to AWS"
                                             <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-xs text-zinc-900">Set Jira sprint templates to automatically lock 20% of engineering points to &quot;Structural Neutralization&quot; before any feature work is scheduled.</p>
+                                            <p className="text-sm font-medium text-zinc-950">Set Jira sprint templates to automatically lock 20% of engineering points to &quot;Structural Neutralization&quot; before any feature work is scheduled.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -914,7 +914,7 @@ Migrate from Heroku to AWS"
                                             <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-xs text-zinc-900">Route all maintenance spikes over $50k OpEx equivalent through formal CFO approval workflows using the PDI metric as the justification vehicle.</p>
+                                            <p className="text-sm font-medium text-zinc-950">Route all maintenance spikes over $50k OpEx equivalent through formal CFO approval workflows using the PDI metric as the justification vehicle.</p>
                                         </div>
                                     </div>
                                 </div>

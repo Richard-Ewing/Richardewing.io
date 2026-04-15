@@ -350,7 +350,7 @@ export default function SLMTool() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Mandate an abstraction layer implementation (LiteLLM, Langfuse). Disconnect core business logic from single-provider SDKs within 14 days to enable instant token arbitrage.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Mandate an abstraction layer implementation (LiteLLM, Langfuse). Disconnect core business logic from single-provider SDKs within 14 days to enable instant token arbitrage.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -368,7 +368,7 @@ export default function SLMTool() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Deploy a vector similarity cache (Redis / Pinecone) in front of all generative endpoints. Target a 30% hit rate reduction on outbound network requests by end of quarter.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Deploy a vector similarity cache (Redis / Pinecone) in front of all generative endpoints. Target a 30% hit rate reduction on outbound network requests by end of quarter.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -386,7 +386,7 @@ export default function SLMTool() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Stand up a local bare-metal node running vLLM. Shadow-route 10% of API traffic to the SLM to prove deterministic latency and output parity before the board review.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Stand up a local bare-metal node running vLLM. Shadow-route 10% of API traffic to the SLM to prove deterministic latency and output parity before the board review.</p>
                                             </div>
                                         </div>
                                     </div>

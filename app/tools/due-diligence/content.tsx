@@ -534,15 +534,15 @@ export default function DueDiligenceTool() {
                                 >
                                     <BentoCard title="Valuation Impairment Risk" icon={DollarSign} className="border-red-500/30">
                                         <div className="text-4xl font-bold text-red-500"><NumberTicker value={results.valuationImpairment} prefix="$" /></div>
-                                        <div className="text-xs text-zinc-950 mt-2 font-mono">Suggested Holdback Delta</div>
+                                        <div className="text-sm font-medium text-zinc-950 mt-2 font-mono">Suggested Holdback Delta</div>
                                     </BentoCard>
                                     <BentoCard title="Tech Debt Recovery Cost" icon={Code} className="border-orange-500/20">
                                         <div className="text-3xl font-bold text-orange-400"><NumberTicker value={results.techDebtRecoveryCost} prefix="$" /></div>
-                                        <div className="text-xs text-zinc-950 mt-2 font-mono">Immediate CapEx required post-close</div>
+                                        <div className="text-sm font-medium text-zinc-950 mt-2 font-mono">Immediate CapEx required post-close</div>
                                     </BentoCard>
                                     <BentoCard title="Annual Cloud Waste" icon={Activity} className="border-zinc-500/20">
                                         <div className="text-3xl font-bold text-zinc-900"><NumberTicker value={results.annualInfraWaste} prefix="$" /></div>
-                                        <div className="text-xs text-zinc-950 mt-2 font-mono">Inefficient OPEX identifiable</div>
+                                        <div className="text-sm font-medium text-zinc-950 mt-2 font-mono">Inefficient OPEX identifiable</div>
                                     </BentoCard>
                                 </motion.div>
 
@@ -683,7 +683,7 @@ export default function DueDiligenceTool() {
                                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-xs text-zinc-900">Contractually isolate the exact ${formatMoney(results.valuationImpairment)} impairment value into an escrow hold-back account, contingent upon the target proving architectural viability post-migration.</p>
+                                                        <p className="text-sm font-medium text-zinc-950">Contractually isolate the exact ${formatMoney(results.valuationImpairment)} impairment value into an escrow hold-back account, contingent upon the target proving architectural viability post-migration.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -701,7 +701,7 @@ export default function DueDiligenceTool() {
                                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-xs text-zinc-900">Implement aggressive up-or-out performance tracking on Day 1. Terminate the lowest 20% of legacy contributors immediately and backfill capacity with AI-augmented workflows.</p>
+                                                        <p className="text-sm font-medium text-zinc-950">Implement aggressive up-or-out performance tracking on Day 1. Terminate the lowest 20% of legacy contributors immediately and backfill capacity with AI-augmented workflows.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -719,7 +719,7 @@ export default function DueDiligenceTool() {
                                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-xs text-zinc-900">Mandate immediate AWS/GCP instance rightsizing and aggressive reserved instance purchasing. Halt all new cloud provisioning without explicit PE/Board VP-level approval.</p>
+                                                        <p className="text-sm font-medium text-zinc-950">Mandate immediate AWS/GCP instance rightsizing and aggressive reserved instance purchasing. Halt all new cloud provisioning without explicit PE/Board VP-level approval.</p>
                                                     </div>
                                                 </div>
                                             </div>

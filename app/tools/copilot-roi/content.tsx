@@ -60,7 +60,7 @@ const RiskSlider = ({ label, value, onChange, description, min = 0, max = 100, s
     return (
         <div className="space-y-3 p-4 bg-white/60 rounded-xl border border-zinc-400 hover:border-cyan-500/20 transition-colors group">
             <div className="flex justify-between items-center">
-                <span className="text-sm text-zinc-950 font-medium group-hover:text-cyan-400 transition-colors">{label}</span>
+                <span className="text-base text-zinc-950 font-bold group-hover:text-cyan-400 transition-colors">{label}</span>
                 <div className={`flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-100 border border-zinc-400`}>
                     <span className="text-xs font-mono text-zinc-950 font-bold">{value}{suffix}</span>
                 </div>
@@ -82,7 +82,7 @@ const RiskSlider = ({ label, value, onChange, description, min = 0, max = 100, s
                     className="relative w-full h-1 bg-transparent appearance-none cursor-pointer z-10 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-[0_0_10px_rgba(34,211,238,0.5)]"
                 />
             </div>
-            <p className="text-[11px] text-zinc-950 leading-relaxed pt-1">{description}</p>
+            <p className="text-sm font-medium text-zinc-950 leading-relaxed pt-1">{description}</p>
         </div>
     );
 };

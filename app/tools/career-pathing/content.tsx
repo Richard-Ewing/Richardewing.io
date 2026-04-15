@@ -286,7 +286,7 @@ export default function CareerPathingContent() {
                                                     <div className="w-6 h-6 rounded-full bg-white/5 border border-zinc-400 flex items-center justify-center font-mono text-xs font-medium text-zinc-900 flex-shrink-0 mt-1">{idx+1}</div>
                                                     <div>
                                                         <div className="font-bold text-zinc-950 text-sm mb-1">{t.id}: {t.name}</div>
-                                                        <div className="text-xs text-zinc-900">{t.desc}</div>
+                                                        <div className="text-sm font-medium text-zinc-950">{t.desc}</div>
                                                     </div>
                                                 </div>
                                             ))}
@@ -296,7 +296,7 @@ export default function CareerPathingContent() {
                                     <GlowCard className="bg-white/80 border border-zinc-400 rounded-2xl p-6 relative overflow-hidden">
                                         <h4 className="text-xs font-medium font-mono text-cyan-400 bg-cyan-500/10 px-2 py-1 inline-block rounded border border-cyan-500/20 uppercase tracking-widest mb-4">Phase 2: Live Intervention</h4>
                                         <h3 className="font-bold text-zinc-950 text-lg mb-2">{getRecommendation().tool.name}</h3>
-                                        <p className="text-xs text-zinc-900 mb-6">{getRecommendation().tool.desc}</p>
+                                        <p className="text-sm font-medium text-zinc-950 mb-6">{getRecommendation().tool.desc}</p>
                                         <Link href={getRecommendation().tool.url} className="text-xs font-mono font-bold text-zinc-950 hover:text-cyan-400 transition-colors uppercase tracking-widest flex items-center gap-2">
                                             Execute Tool <ChevronRight size={14} />
                                         </Link>
@@ -326,7 +326,7 @@ export default function CareerPathingContent() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Run the PDI Audit on your current sprint backlog. Map exactly how much cloud run-rate your features are consuming vs. saving. Pitch the delta to your Engineering Manager.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Run the PDI Audit on your current sprint backlog. Map exactly how much cloud run-rate your features are consuming vs. saving. Pitch the delta to your Engineering Manager.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -344,7 +344,7 @@ export default function CareerPathingContent() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Format your next async update as an "Executive Action Memo". Lead with the exact EBITDA impact, list the key person risks, and request approval for a specific architectural pivot.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Format your next async update as an "Executive Action Memo". Lead with the exact EBITDA impact, list the key person risks, and request approval for a specific architectural pivot.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -362,7 +362,7 @@ export default function CareerPathingContent() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Deploy a Langfuse telemetry stack over a local Llama 3 8B model to automate unit test generation for your team. Present the hours saved in your 1-on-1.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Deploy a Langfuse telemetry stack over a local Llama 3 8B model to automate unit test generation for your team. Present the hours saved in your 1-on-1.</p>
                                             </div>
                                         </div>
                                     </div>

@@ -249,7 +249,7 @@ export default function RagChunkingContent() {
                                                     <span className="text-sm text-zinc-800">Storage API Run Rate</span>
                                                     <span className="text-sm font-mono text-rose-400">Inefficient</span>
                                                 </div>
-                                                <p className="text-xs text-zinc-950 font-mono mt-2 italic">Vector databases charge per dimensional float. Storing raw noise directly inflates monthly active spend.</p>
+                                                <p className="text-sm font-medium text-zinc-950 font-mono mt-2 italic">Vector databases charge per dimensional float. Storing raw noise directly inflates monthly active spend.</p>
                                             </div>
                                         </div>
                                     )}
@@ -297,7 +297,7 @@ export default function RagChunkingContent() {
                                                         <span className="text-xs font-mono text-amber-400 shrink-0">ELEVATED</span>
                                                     </div>
                                                 </div>
-                                                <p className="text-xs text-zinc-950 font-mono mt-2">When user permissions/access tags are physically chunked into a different embedded matrix than the sensitive data itself, RBAC fails.</p>
+                                                <p className="text-sm font-medium text-zinc-950 font-mono mt-2">When user permissions/access tags are physically chunked into a different embedded matrix than the sensitive data itself, RBAC fails.</p>
                                             </div>
                                         </div>
                                     )}
@@ -310,7 +310,7 @@ export default function RagChunkingContent() {
                                                     <span className="text-sm text-zinc-800">Legal Negation Loss Rate</span>
                                                     <span className="text-sm font-mono text-rose-400 font-bold">{Math.min(100, results.brokenWords * 3)}%</span>
                                                 </div>
-                                                <p className="text-xs text-zinc-950 font-mono mt-2 leading-relaxed">
+                                                <p className="text-sm font-medium text-zinc-950 font-mono mt-2 leading-relaxed">
                                                     Legal liability soars when the embedding model physically separates sentences like "We are NOT" and "liable for financial damages." into two different chunks. If the LLM retrieves only the second chunk via cosine similarity, the AI issues legally binding falsehoods on behalf of the company.
                                                 </p>
                                             </div>
@@ -422,7 +422,7 @@ export default function RagChunkingContent() {
                                     <div className="space-y-4">
                                         <div>
                                             <div className="flex justify-between mb-1"><span className="text-zinc-800">Inefficiency Premium</span><span className="text-rose-400 font-mono font-bold">+${Math.round(results.chunks.length * 14.5).toLocaleString()}/yr</span></div>
-                                            <p className="text-xs text-zinc-950 mt-2">Bad chunking necessitates upgrading from cheap s1 (storage optimized) pods to expensive p2 (performance optimized) pods to handle the sheer volume of fragmented, overlapping semantic arrays.</p>
+                                            <p className="text-sm font-medium text-zinc-950 mt-2">Bad chunking necessitates upgrading from cheap s1 (storage optimized) pods to expensive p2 (performance optimized) pods to handle the sheer volume of fragmented, overlapping semantic arrays.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -433,7 +433,7 @@ export default function RagChunkingContent() {
                                             <div className="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-500/30 text-cyan-400 font-bold shrink-0">API</div>
                                             <div>
                                                 <div className="text-zinc-950 font-semibold flex justify-between">Retrieval Token Tax <span className="text-rose-400 font-mono text-xs">+{((overlap / chunkSize)*100).toFixed(0)}% Opex</span></div>
-                                                <div className="text-xs text-zinc-900 mt-1">Every RAG pipeline query pulls these redundant tokens into the context window, multiplying your per-token prompt costs geometrically.</div>
+                                                <div className="text-sm font-medium text-zinc-950 mt-1">Every RAG pipeline query pulls these redundant tokens into the context window, multiplying your per-token prompt costs geometrically.</div>
                                             </div>
                                         </div>
                                     </div>
@@ -461,7 +461,7 @@ export default function RagChunkingContent() {
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-indigo-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">Validate the exact encoding dictionary (e.g. text-embedding-3-small) to prevent mid-token shearing.</p>
+                                         <p className="text-sm font-medium text-zinc-950">Validate the exact encoding dictionary (e.g. text-embedding-3-small) to prevent mid-token shearing.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-cyan-500">
@@ -473,7 +473,7 @@ export default function RagChunkingContent() {
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">Force semantic ideas to stay geometrically bound together in vector space.</p>
+                                         <p className="text-sm font-medium text-zinc-950">Force semantic ideas to stay geometrically bound together in vector space.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
@@ -485,7 +485,7 @@ export default function RagChunkingContent() {
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">Configure your chunk overlap to be exactly 15-20% of your total chunk byte size.</p>
+                                         <p className="text-sm font-medium text-zinc-950">Configure your chunk overlap to be exactly 15-20% of your total chunk byte size.</p>
                                      </div>
                                 </div>
                             </div>

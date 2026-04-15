@@ -61,7 +61,7 @@ const RiskSlider = ({ label, value, onChange, description }: {
     return (
         <div className="space-y-3 p-4 bg-white/80 rounded-xl border border-zinc-400">
             <div className="flex justify-between items-center">
-                <span className="text-sm text-zinc-950 font-medium">{label}</span>
+                <span className="text-base text-zinc-950 font-bold">{label}</span>
                 <div className={`flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-100 ${risk.color}`}>
                     <span>{risk.emoji}</span>
                     <span className="text-xs font-mono">{value}% {risk.text}</span>
@@ -87,7 +87,7 @@ const RiskSlider = ({ label, value, onChange, description }: {
                 <span>Low Risk</span>
                 <span>High Risk</span>
             </div>
-            <p className="text-xs text-zinc-900">{description}</p>
+            <p className="text-sm font-medium text-zinc-950">{description}</p>
         </div>
     );
 };
@@ -621,13 +621,13 @@ export default function EVSETool() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                         <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
-                                        <div className="text-xs text-zinc-950 mb-2">Deal Collapse Probability</div>
+                                        <div className="text-sm font-medium text-zinc-950 mb-2">Deal Collapse Probability</div>
                                         <div className="text-3xl font-bold text-red-500">{results.diligenceWalkProbability.toFixed(0)}%</div>
                                         <div className="text-xs text-red-400/60 mt-2 mt-auto">Likelihood of acquirer walking away during Tech Due Diligence.</div>
                                     </div>
                                     <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                         <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
-                                        <div className="text-xs text-zinc-950 mb-2">Valuation Discount Penalty</div>
+                                        <div className="text-sm font-medium text-zinc-950 mb-2">Valuation Discount Penalty</div>
                                         <div className="text-3xl font-bold text-orange-400">{formatMoney(results.wealthGap)}</div>
                                         <div className="text-xs text-orange-400/60 mt-2 mt-auto">If the deal does close, this is the haircut applied by the Private Equity committee.</div>
                                     </div>
@@ -755,7 +755,7 @@ export default function EVSETool() {
                                             <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-xs text-zinc-900">Implement deterministic DORA metric tracking across all squads. Any team failing to deploy to production at least twice weekly must halt feature development and resolve CI/CD bottlenecks.</p>
+                                            <p className="text-sm font-medium text-zinc-950">Implement deterministic DORA metric tracking across all squads. Any team failing to deploy to production at least twice weekly must halt feature development and resolve CI/CD bottlenecks.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -773,7 +773,7 @@ export default function EVSETool() {
                                             <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-xs text-zinc-900">Mandate immediate architecture shadowing. Pair your most critical engineers with mid-level ICs for 30 days to force knowledge transfer and distribute systemic risk.</p>
+                                            <p className="text-sm font-medium text-zinc-950">Mandate immediate architecture shadowing. Pair your most critical engineers with mid-level ICs for 30 days to force knowledge transfer and distribute systemic risk.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -791,7 +791,7 @@ export default function EVSETool() {
                                             <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
-                                            <p className="text-xs text-zinc-900">Institute a 90-day feature freeze on all uncommitted requests. Reallocate 40% of sprint capacity strictly to technical debt reduction and infrastructure hardening.</p>
+                                            <p className="text-sm font-medium text-zinc-950">Institute a 90-day feature freeze on all uncommitted requests. Reallocate 40% of sprint capacity strictly to technical debt reduction and infrastructure hardening.</p>
                                         </div>
                                     </div>
                                 </div>

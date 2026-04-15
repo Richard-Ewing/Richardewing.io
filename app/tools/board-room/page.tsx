@@ -158,7 +158,7 @@ export default function BoardRoom() {
                                         <span className="text-sm font-bold text-zinc-900">Product Debt Index (PDI)</span>
                                         <span className="text-xl font-black text-zinc-900">{averagePDI}</span>
                                     </div>
-                                    <p className="text-xs text-zinc-950 leading-relaxed font-mono">Current average code entropy spanning all active domains. Determines engineering velocity decay.</p>
+                                    <p className="text-sm font-medium text-zinc-950 leading-relaxed font-mono">Current average code entropy spanning all active domains. Determines engineering velocity decay.</p>
                                     {(latestTools['pdi']?.output_metrics?.qpep_roadmap || latestTools['PDI']?.output_metrics?.qpep_roadmap) && (
                                         <div className="mt-4 mb-2 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg">
                                             <div className="flex items-center gap-2 mb-1">
@@ -178,7 +178,7 @@ export default function BoardRoom() {
                                         <span className="text-sm font-bold text-zinc-900">Engineering Velocity Erosion</span>
                                         <span className="text-xl font-black text-zinc-900">{latestTools['EV-SE'] ? formatCurrency(latestTools['EV-SE'].output_metrics?.wealthGap || 0) : 'Pending'}</span>
                                     </div>
-                                    <p className="text-xs text-zinc-950 leading-relaxed font-mono">The CapEx being permanently vaporized by slow deployment cycles and untracked sprint spillage.</p>
+                                    <p className="text-sm font-medium text-zinc-950 leading-relaxed font-mono">The CapEx being permanently vaporized by slow deployment cycles and untracked sprint spillage.</p>
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/ev-se" className="text-xs font-medium uppercase tracking-widest text-purple-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Run Valuation Erosion <ArrowRight size={12} /></Link>
                                     </div>
@@ -207,7 +207,7 @@ export default function BoardRoom() {
                                             {latestTools['AUEB'] ? `${(latestTools['AUEB'].output_metrics?.grossMargin || 0).toFixed(1)}%` : 'Pending'}
                                         </span>
                                     </div>
-                                    <p className="text-xs text-zinc-950 leading-relaxed font-mono">Tracks the collapse of software margins triggered by unbounded LLM API costs.</p>
+                                    <p className="text-sm font-medium text-zinc-950 leading-relaxed font-mono">Tracks the collapse of software margins triggered by unbounded LLM API costs.</p>
                                     {(latestTools['AUEB']?.output_metrics?.qpep_roadmap || latestTools['aueb']?.output_metrics?.qpep_roadmap) && (
                                         <div className="mt-4 mb-2 p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
                                             <div className="flex items-center gap-2 mb-1">
@@ -227,7 +227,7 @@ export default function BoardRoom() {
                                         <span className="text-sm font-bold text-zinc-900">Cloud FinOps Arbitrage</span>
                                         <span className="text-xl font-black text-zinc-900">{latestTools['CLOUD-REPAT'] ? formatCurrency(latestTools['CLOUD-REPAT'].output_metrics?.annualSavings || 0) : 'Pending'}</span>
                                     </div>
-                                    <p className="text-xs text-zinc-950 leading-relaxed font-mono">OpEx available to recapture via private cloud repatriation vs AWS Basecamp index.</p>
+                                    <p className="text-sm font-medium text-zinc-950 leading-relaxed font-mono">OpEx available to recapture via private cloud repatriation vs AWS Basecamp index.</p>
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/cloud-repatriation" className="text-xs font-medium uppercase tracking-widest text-cyan-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Arbitrage Analysis <ArrowRight size={12} /></Link>
                                     </div>
@@ -240,7 +240,7 @@ export default function BoardRoom() {
                                             {latestTools['copilot-roi'] ? `${(latestTools['copilot-roi'].output_metrics?.netRevenueRetention || 0).toFixed(0)}%` : 'Pending'}
                                         </span>
                                     </div>
-                                    <p className="text-xs text-zinc-950 leading-relaxed font-mono">True profitability of AI tools factoring in downstream Vibe Coding Debt and Review Bottlenecks.</p>
+                                    <p className="text-sm font-medium text-zinc-950 leading-relaxed font-mono">True profitability of AI tools factoring in downstream Vibe Coding Debt and Review Bottlenecks.</p>
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/copilot-roi" className="text-xs font-medium uppercase tracking-widest text-rose-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Model AI Economics <ArrowRight size={12} /></Link>
                                     </div>
@@ -269,7 +269,7 @@ export default function BoardRoom() {
                                             {latestTools['ai-roi-timeline'] ? `${(latestTools['ai-roi-timeline'].output_metrics?.breakEvenMonths || 0).toFixed(1)} Months` : 'Pending'}
                                         </span>
                                     </div>
-                                    <p className="text-xs text-zinc-950 leading-relaxed font-mono">Displaced FTE equivalent tracked against AI architecture implementation costs.</p>
+                                    <p className="text-sm font-medium text-zinc-950 leading-relaxed font-mono">Displaced FTE equivalent tracked against AI architecture implementation costs.</p>
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/ai-roi-timeline" className="text-xs font-medium uppercase tracking-widest text-amber-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Audit Break-Even <ArrowRight size={12} /></Link>
                                     </div>
@@ -298,7 +298,7 @@ export default function BoardRoom() {
                                             {latestTools['DUE-DILIGENCE'] ? `${(latestTools['DUE-DILIGENCE'].output_metrics?.adjustedConfidence || 0).toFixed(0)}%` : 'Pending'}
                                         </span>
                                     </div>
-                                    <p className="text-xs text-zinc-950 leading-relaxed font-mono">Overall technical health and survivability score for inbound acquisition targets.</p>
+                                    <p className="text-sm font-medium text-zinc-950 leading-relaxed font-mono">Overall technical health and survivability score for inbound acquisition targets.</p>
                                     <div className="mt-4 flex justify-end">
                                         <Link href="/tools/due-diligence" className="text-xs font-medium uppercase tracking-widest text-zinc-950 hover:text-zinc-900 flex items-center gap-1 transition-colors">Run External Diligence <ArrowRight size={12} /></Link>
                                     </div>
@@ -327,14 +327,14 @@ export default function BoardRoom() {
                                             {totalWealthGap > 0 ? 'High Exposure' : 'Pending Audit'}
                                         </span>
                                     </div>
-                                    <p className="text-xs text-zinc-950 leading-relaxed font-mono">Financial tax triggered by synthetic data decay forcing continuous model retraining capital expenditure.</p>
+                                    <p className="text-sm font-medium text-zinc-950 leading-relaxed font-mono">Financial tax triggered by synthetic data decay forcing continuous model retraining capital expenditure.</p>
                                     
                                     <div className="mt-4 p-3 bg-rose-500/10 border border-rose-500/20 rounded-lg">
                                         <div className="text-xs font-medium uppercase tracking-widest text-rose-400 font-bold mb-1 flex items-center gap-2">
                                             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
                                             Active Threat Briefing
                                         </div>
-                                        <Link href="/blog/model-collapse-financial-modeling" className="text-xs text-zinc-950 hover:text-rose-300 transition-colors block leading-tight">
+                                        <Link href="/blog/model-collapse-financial-modeling" className="text-sm font-medium text-zinc-950 hover:text-rose-300 transition-colors block leading-tight">
                                            Read the CIO.com framework on mitigating this depreciation schedule.
                                         </Link>
                                     </div>

@@ -575,7 +575,7 @@ const nextConfig: NextConfig = {
       },
       // Pattern 2: /articles/:slug → /articles (auto-generated article links that don't exist)
       {
-        source: '/articles/:slug*',
+        source: '/articles/:slug+',
         destination: '/articles',
         permanent: true,
       },

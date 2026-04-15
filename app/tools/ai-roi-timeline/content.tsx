@@ -250,7 +250,7 @@ export default function AIRoiTimelineContent() {
                                                     <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-xs text-zinc-900">Mandate an immediate requisition freeze in the affected department. Any backfill requests for the {displacedEngineers} displaced roles must require direct Board/CFO approval.</p>
+                                                    <p className="text-sm font-medium text-zinc-950">Mandate an immediate requisition freeze in the affected department. Any backfill requests for the {displacedEngineers} displaced roles must require direct Board/CFO approval.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -268,7 +268,7 @@ export default function AIRoiTimelineContent() {
                                                     <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-xs text-zinc-900">Establish a dedicated FinOps tracking tag specifically for this deployment. Route API tokens through a rigid gateway proxy (e.g. Cloudflare AI Gateway) with hard-capped daily spend limits.</p>
+                                                    <p className="text-sm font-medium text-zinc-950">Establish a dedicated FinOps tracking tag specifically for this deployment. Route API tokens through a rigid gateway proxy (e.g. Cloudflare AI Gateway) with hard-capped daily spend limits.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -286,7 +286,7 @@ export default function AIRoiTimelineContent() {
                                                     <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-xs text-zinc-900">Insert a calendar hold for a 30-minute executive review on the exact breakeven date. If the net position is not positive, the owning VP must submit a detailed remediation plan.</p>
+                                                    <p className="text-sm font-medium text-zinc-950">Insert a calendar hold for a 30-minute executive review on the exact breakeven date. If the net position is not positive, the owning VP must submit a detailed remediation plan.</p>
                                                 </div>
                                             </div>
                                         </div>

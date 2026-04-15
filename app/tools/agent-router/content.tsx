@@ -263,7 +263,7 @@ export default function AgentRouterContent() {
                                                     <span className="text-sm text-zinc-800">Average API Cost / System Trigger</span>
                                                     <span className="text-sm font-mono text-amber-400">${(results.monthlyCost / results.grossMonthlyRequests).toFixed(4)}</span>
                                                 </div>
-                                                <p className="text-xs text-zinc-950 font-mono mt-2 pt-2">Variable token pricing destroys gross margins when tied to fixed-fee SaaS tiers.</p>
+                                                <p className="text-sm font-medium text-zinc-950 font-mono mt-2 pt-2">Variable token pricing destroys gross margins when tied to fixed-fee SaaS tiers.</p>
                                             </div>
                                          )}
                                          {persona === 'VP Eng' && (
@@ -298,7 +298,7 @@ export default function AgentRouterContent() {
                                                 <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">External Payload Exposure</div>
                                                 <div className="text-center py-4">
                                                     <div className="text-4xl font-bold text-rose-400 font-mono">{(results.totalTokens / 1000000).toFixed(1)}M</div>
-                                                    <p className="text-xs text-zinc-950 mt-2">Proprietary Tokens Exfiltrated to Public API per month</p>
+                                                    <p className="text-sm font-medium text-zinc-950 mt-2">Proprietary Tokens Exfiltrated to Public API per month</p>
                                                 </div>
                                             </div>
                                          )}
@@ -371,7 +371,7 @@ export default function AgentRouterContent() {
                                             <div className="flex justify-between mb-1"><span className="text-zinc-800">Headcount Equivalent</span><span className="text-indigo-400 font-mono font-bold">{(results.monthlyCost * 12 / 185000).toFixed(1)} Engineers</span></div>
                                             <div className="w-full bg-white rounded-full h-1"><motion.div className="bg-indigo-500 h-1 rounded-full" initial={{width: 0}} animate={{width: `${Math.min(100, (results.monthlyCost * 12 / 185000) * 10)}%`}}></motion.div></div>
                                         </div>
-                                        <p className="text-xs text-zinc-950 mt-2">The capital combusted by looping Frontier Models through tertiary logic hops equates to the loaded cost of highly skilled technical hires.</p>
+                                        <p className="text-sm font-medium text-zinc-950 mt-2">The capital combusted by looping Frontier Models through tertiary logic hops equates to the loaded cost of highly skilled technical hires.</p>
                                     </div>
                                 </div>
                                 <div className="bg-white/5 border border-zinc-400 p-5 rounded-xl">
@@ -409,7 +409,7 @@ export default function AgentRouterContent() {
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-blue-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">Run Llama-3 8B locally on CPU cache to preemptively classify and deflect 60% of requests.</p>
+                                         <p className="text-sm font-medium text-zinc-950">Run Llama-3 8B locally on CPU cache to preemptively classify and deflect 60% of requests.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-indigo-500">
@@ -421,7 +421,7 @@ export default function AgentRouterContent() {
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-indigo-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">Compress prompt strings by 80% using a cheap deterministic model between execution hops.</p>
+                                         <p className="text-sm font-medium text-zinc-950">Compress prompt strings by 80% using a cheap deterministic model between execution hops.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
@@ -433,7 +433,7 @@ export default function AgentRouterContent() {
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">Only escalate to the Frontier model layer if the target validation regex explicitly fails.</p>
+                                         <p className="text-sm font-medium text-zinc-950">Only escalate to the Frontier model layer if the target validation regex explicitly fails.</p>
                                      </div>
                                 </div>
                             </div>

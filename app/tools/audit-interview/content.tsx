@@ -188,7 +188,7 @@ export default function ProtocolInitialization() {
                                 <div key={phase.id} className="p-6 bg-white border border-zinc-400 rounded-xl hover:border-zinc-500 transition-all hover:-translate-y-1 group">
                                     <div className={`text-4xl font-mono font-bold text-zinc-900/10 mb-4 group-hover:text-${phase.color}-500/20 transition-colors`}>{phase.id}</div>
                                     <div className="text-sm font-bold text-zinc-950 uppercase tracking-wider mb-2">{phase.title}</div>
-                                    <div className="text-xs text-zinc-950 leading-relaxed">{phase.desc}</div>
+                                    <div className="text-sm font-medium text-zinc-950 leading-relaxed">{phase.desc}</div>
                                 </div>
                             ))}
                         </div>

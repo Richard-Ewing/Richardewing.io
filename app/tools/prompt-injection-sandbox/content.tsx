@@ -279,7 +279,7 @@ Only answer questions related to AcmeCorp logistics.
                                                                 <h4 className={`text-sm font-bold truncate ${v.passed ? 'text-zinc-900' : 'text-zinc-900'}`}>{v.name}</h4>
                                                                 {!v.passed && <span className="text-xs font-medium shrink-0 font-mono text-rose-500 px-2 py-0.5 bg-rose-500/10 border border-rose-500/20 rounded ml-2">{v.severity}</span>}
                                                             </div>
-                                                            <p className="text-[11px] text-zinc-950 leading-relaxed mb-2">{v.description}</p>
+                                                            <p className="text-sm font-medium text-zinc-950 leading-relaxed mb-2">{v.description}</p>
                                                             {!v.passed && (
                                                                 <div className="mt-2 text-xs font-medium font-mono text-amber-400 bg-amber-500/10 p-2 rounded border border-amber-500/20 flex gap-2 items-start">
                                                                     <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1 shrink-0"></div>
@@ -298,11 +298,11 @@ Only answer questions related to AcmeCorp logistics.
                                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                         <div className="bg-rose-500/5 border border-rose-500/20 p-5 rounded-xl">
                                                             <div className="font-semibold text-rose-400 text-sm mb-2">Automated Brand Disparagement</div>
-                                                            <p className="text-xs text-zinc-900 leading-relaxed">By hijacking the primary System Prompt via Context Overflow, an attacker forces your corporate customer service bot to output disparaging, racist, or factually catastrophic material directly to end-users on your domain.</p>
+                                                            <p className="text-sm font-medium text-zinc-950 leading-relaxed">By hijacking the primary System Prompt via Context Overflow, an attacker forces your corporate customer service bot to output disparaging, racist, or factually catastrophic material directly to end-users on your domain.</p>
                                                         </div>
                                                         <div className="bg-amber-500/5 border border-amber-500/20 p-5 rounded-xl">
                                                             <div className="font-semibold text-amber-400 text-sm mb-2">Function Calling Escalation (RCE)</div>
-                                                            <p className="text-xs text-zinc-900 leading-relaxed">If this LLM possesses read/write access to internal APIs via tool-calling, the Roleplay Override vector can coerce the model into systematically dumping or deleting database records under the guise of an "administrative simulation."</p>
+                                                            <p className="text-sm font-medium text-zinc-950 leading-relaxed">If this LLM possesses read/write access to internal APIs via tool-calling, the Roleplay Override vector can coerce the model into systematically dumping or deleting database records under the guise of an "administrative simulation."</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -350,7 +350,7 @@ Only answer questions related to AcmeCorp logistics.
                                                     <div className="text-sm text-zinc-800">EU AI Act Liability <span className="block text-xs text-zinc-900">Lack of deterministic safety guardrails</span></div>
                                                     <span className="font-mono text-amber-400 text-right">Non-Compliant</span>
                                                 </div>
-                                                <p className="text-xs text-zinc-950 font-mono italic">A single jailbreak payload can force this architecture to disgorge PII, breaching SLA terms instantly.</p>
+                                                <p className="text-sm font-medium text-zinc-950 font-mono italic">A single jailbreak payload can force this architecture to disgorge PII, breaching SLA terms instantly.</p>
                                              </div>
                                         </div>
                                     )}
@@ -378,7 +378,7 @@ Only answer questions related to AcmeCorp logistics.
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-red-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">Wrap all inputs in &lt;user_input&gt; blocks to prevent interpretation as root execution commands.</p>
+                                         <p className="text-sm font-medium text-zinc-950">Wrap all inputs in &lt;user_input&gt; blocks to prevent interpretation as root execution commands.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-amber-500">
@@ -390,7 +390,7 @@ Only answer questions related to AcmeCorp logistics.
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">If Llama Guard flags an adversarial pattern, instantly HTTP 403 the request pipeline.</p>
+                                         <p className="text-sm font-medium text-zinc-950">If Llama Guard flags an adversarial pattern, instantly HTTP 403 the request pipeline.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
@@ -402,7 +402,7 @@ Only answer questions related to AcmeCorp logistics.
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">Use a "Circuit Breaker" architecture where the LLM only proposes schemas, instead of executing APIs.</p>
+                                         <p className="text-sm font-medium text-zinc-950">Use a "Circuit Breaker" architecture where the LLM only proposes schemas, instead of executing APIs.</p>
                                      </div>
                                 </div>
                             </div>

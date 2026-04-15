@@ -192,7 +192,7 @@ export default function FTEContent() {
                                             <div className="text-2xl font-bold text-zinc-950 font-mono">{automationTarget}%</div>
                                         </div>
                                         <input title="Automation" type="range" min="10" max="85" step="5" value={automationTarget} onChange={e => setAutomationTarget(parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-rose-500" />
-                                        <div className="text-xs text-zinc-950 mt-4 leading-relaxed tracking-wide">
+                                        <div className="text-sm font-medium text-zinc-950 mt-4 leading-relaxed tracking-wide">
                                             At {automationTarget}%, you are attempting to fully clear <strong className="text-zinc-900">{Math.round(ticketsMonthly * (automationTarget/100)).toLocaleString()} tickets/mo</strong> without human intervention.
                                         </div>
                                     </div>
@@ -334,7 +334,7 @@ export default function FTEContent() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Instruct Procurement and vendor management to freeze all Tier-1 support outsourcing renewals currently in the pipeline. Place vendors on month-to-month contracts.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Instruct Procurement and vendor management to freeze all Tier-1 support outsourcing renewals currently in the pipeline. Place vendors on month-to-month contracts.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -352,7 +352,7 @@ export default function FTEContent() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Implement an intent classification router (e.g., Llama 3 8B) in front of Zendesk/Intercom. Auto-close Top 5 known issues instantly with RAG documentation before allocating an agent.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Implement an intent classification router (e.g., Llama 3 8B) in front of Zendesk/Intercom. Auto-close Top 5 known issues instantly with RAG documentation before allocating an agent.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -370,7 +370,7 @@ export default function FTEContent() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Transition remaining Tier-3 support personnel into "AI Automation Engineers." Task them explicitly with updating knowledge vectors to prevent human escalation of newly closed loop cases.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Transition remaining Tier-3 support personnel into "AI Automation Engineers." Task them explicitly with updating knowledge vectors to prevent human escalation of newly closed loop cases.</p>
                                             </div>
                                         </div>
                                     </div>

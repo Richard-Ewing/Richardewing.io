@@ -378,7 +378,7 @@ export default function APERTool() {
                                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                                 {Object.entries(teamBreakdown).map(([key, val]) => (
                                                     <div key={key}>
-                                                        <label className="text-xs text-zinc-900 mb-1 block capitalize">{key}</label>
+                                                        <label className="text-sm font-medium text-zinc-950 mb-1 block capitalize">{key}</label>
                                                         <div className="relative">
                                                             <input
                                                                 type="number"
@@ -585,13 +585,13 @@ export default function APERTool() {
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
-                                                    <div className="text-xs text-zinc-950 mb-2">Unrealized Revenue (Hemorrhage)</div>
+                                                    <div className="text-sm font-medium text-zinc-950 mb-2">Unrealized Revenue (Hemorrhage)</div>
                                                     <div className="text-3xl font-bold text-red-500">{formatMoney(results.revenueGap)}/yr</div>
                                                     <div className="text-xs text-red-400/60 mt-2 mt-auto">ARR missing due to sub-optimal APER.</div>
                                                 </div>
                                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
-                                                    <div className="text-xs text-zinc-950 mb-2">Valuation Collapse Probability</div>
+                                                    <div className="text-sm font-medium text-zinc-950 mb-2">Valuation Collapse Probability</div>
                                                     <div className="text-3xl font-bold text-orange-400">{formatMoney(results.valuationGap)}</div>
                                                     <div className="text-xs text-orange-400/60 mt-2 mt-auto">Lost Enterprise Value (assuming {results.valuationMultiple}x multiple). Down-round highly probable.</div>
                                                 </div>
@@ -619,22 +619,22 @@ export default function APERTool() {
                                         </div>
                                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                             <div className="bg-zinc-100 rounded-xl p-4">
-                                                <div className="text-xs text-zinc-950 mb-1">Productivity Index</div>
+                                                <div className="text-sm font-medium text-zinc-950 mb-1">Productivity Index</div>
                                                 <div className="text-2xl font-bold text-emerald-400">{results.productivityIndex}/100</div>
                                                 <div className="text-xs font-medium text-zinc-800 mt-1">APER + tenure + stability</div>
                                             </div>
                                             <div className="bg-zinc-100 rounded-xl p-4">
-                                                <div className="text-xs text-zinc-950 mb-1">New Hire Ramp Cost</div>
+                                                <div className="text-sm font-medium text-zinc-950 mb-1">New Hire Ramp Cost</div>
                                                 <div className="text-2xl font-bold text-yellow-400">{formatMoney(results.newHireRampCost)}</div>
                                                 <div className="text-xs font-medium text-zinc-800 mt-1">3-month productivity loss</div>
                                             </div>
                                             <div className="bg-zinc-100 rounded-xl p-4">
-                                                <div className="text-xs text-zinc-950 mb-1">Gap to Elite APER</div>
+                                                <div className="text-sm font-medium text-zinc-950 mb-1">Gap to Elite APER</div>
                                                 <div className="text-2xl font-bold text-cyan-400">{results.revenueGap > 0 ? formatMoney(results.revenueGap) : '✓ Elite'}</div>
                                                 <div className="text-xs font-medium text-zinc-800 mt-1">ARR needed for $600K/eng</div>
                                             </div>
                                             <div className="bg-zinc-100 rounded-xl p-4">
-                                                <div className="text-xs text-zinc-950 mb-1">Leverage Ratio</div>
+                                                <div className="text-sm font-medium text-zinc-950 mb-1">Leverage Ratio</div>
                                                 <div className="text-2xl font-bold text-purple-400">{results.leverageRatio.toFixed(1)}x</div>
                                                 <div className="text-xs font-medium text-zinc-800 mt-1">Revenue per $ eng spend</div>
                                             </div>
@@ -768,7 +768,7 @@ export default function APERTool() {
                                                     <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-xs text-zinc-900">Enact a 90-day hiring freeze for all non-IC roles. Direct saved CapEx back into developer tooling.</p>
+                                                    <p className="text-sm font-medium text-zinc-950">Enact a 90-day hiring freeze for all non-IC roles. Direct saved CapEx back into developer tooling.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -786,7 +786,7 @@ export default function APERTool() {
                                                     <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-xs text-zinc-900">Mandate strict API contracts between distinct product domains. Decouple release cycles entirely.</p>
+                                                    <p className="text-sm font-medium text-zinc-950">Mandate strict API contracts between distinct product domains. Decouple release cycles entirely.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -804,7 +804,7 @@ export default function APERTool() {
                                                     <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
-                                                    <p className="text-xs text-zinc-900">Configure LLM-based CI/CD steps that auto-generate basic test coverage for every PR merged.</p>
+                                                    <p className="text-sm font-medium text-zinc-950">Configure LLM-based CI/CD steps that auto-generate basic test coverage for every PR merged.</p>
                                                 </div>
                                             </div>
                                         </div>

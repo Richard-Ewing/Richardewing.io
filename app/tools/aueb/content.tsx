@@ -624,7 +624,7 @@ export default function AUEBTool() {
                                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                                 {features.map((f, i) => (
                                                     <div key={i}>
-                                                        <label className="text-xs text-zinc-900 mb-1 block">{f.name}</label>
+                                                        <label className="text-sm font-medium text-zinc-950 mb-1 block">{f.name}</label>
                                                         <div className="relative">
                                                             <input
                                                                 type="number"
@@ -803,17 +803,17 @@ export default function AUEBTool() {
                                             <div className="bg-zinc-100 rounded-xl p-4">
                                                 <div className="text-xs font-mono text-red-400 uppercase tracking-widest mb-1">LLM Costs</div>
                                                 <div className="text-2xl font-bold text-red-500">{formatMoney(results.llmCost)}/mo</div>
-                                                <div className="text-xs text-zinc-950 mt-1">{((results.llmCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                                <div className="text-sm font-medium text-zinc-950 mt-1">{((results.llmCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
                                             </div>
                                             <div className="bg-zinc-100 rounded-xl p-4">
                                                 <div className="text-xs font-mono text-orange-400 uppercase tracking-widest mb-1">Third-Party APIs</div>
                                                 <div className="text-2xl font-bold text-orange-500">{formatMoney(results.apiCost)}/mo</div>
-                                                <div className="text-xs text-zinc-950 mt-1">{((results.apiCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                                <div className="text-sm font-medium text-zinc-950 mt-1">{((results.apiCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
                                             </div>
                                             <div className="bg-zinc-100 rounded-xl p-4">
                                                 <div className="text-xs font-mono text-yellow-400 uppercase tracking-widest mb-1">Hosting & Compute</div>
                                                 <div className="text-2xl font-bold text-yellow-500">{formatMoney(results.hostingCost)}/mo</div>
-                                                <div className="text-xs text-zinc-950 mt-1">{((results.hostingCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
+                                                <div className="text-sm font-medium text-zinc-950 mt-1">{((results.hostingCost / results.totalInfraCost) * 100).toFixed(0)}% of infra</div>
                                             </div>
                                         </div>
                                         <div className="h-4 bg-zinc-200 rounded-full overflow-hidden flex">
@@ -880,13 +880,13 @@ export default function AUEBTool() {
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
-                                                    <div className="text-xs text-zinc-950 mb-2">Insolvency Point</div>
+                                                    <div className="text-sm font-medium text-zinc-950 mb-2">Insolvency Point</div>
                                                     <div className="text-3xl font-bold text-red-500">Month {results.monthsToCollapse}</div>
                                                     <div className="text-xs text-red-400/60 mt-2 mt-auto">Point where scaling users destroys company margins completely.</div>
                                                 </div>
                                                 <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
-                                                    <div className="text-xs text-zinc-950 mb-2">Current Gross Margin</div>
+                                                    <div className="text-sm font-medium text-zinc-950 mb-2">Current Gross Margin</div>
                                                     <div className="text-3xl font-bold text-orange-400">{results.grossMargin.toFixed(0)}%</div>
                                                     <div className="text-xs text-orange-400/60 mt-2 mt-auto">Falling below benchmark limits venture capital scaling viability.</div>
                                                 </div>
@@ -1096,7 +1096,7 @@ export default function AUEBTool() {
                                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-xs text-zinc-900">Implement a Redis-backed Vector database layer to intercept and cache semantically similar prompts. Instantly deflect 30-40% of queries away from paid API endpoints.</p>
+                                                        <p className="text-sm font-medium text-zinc-950">Implement a Redis-backed Vector database layer to intercept and cache semantically similar prompts. Instantly deflect 30-40% of queries away from paid API endpoints.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1114,7 +1114,7 @@ export default function AUEBTool() {
                                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-xs text-zinc-900">Deploy a fast, cheap intent classifier (e.g., Llama 3 8B) to triage incoming requests. Route basic summarization tasks to low-cost models, reserving frontier capabilities exclusively for high-reasoning tasks.</p>
+                                                        <p className="text-sm font-medium text-zinc-950">Deploy a fast, cheap intent classifier (e.g., Llama 3 8B) to triage incoming requests. Route basic summarization tasks to low-cost models, reserving frontier capabilities exclusively for high-reasoning tasks.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1132,7 +1132,7 @@ export default function AUEBTool() {
                                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
-                                                        <p className="text-xs text-zinc-900">Enforce strict rate limits on base-tier accounts. Force users hitting the P90 percentile of compute consumption into high-margin enterprise tiers to offset their infrastructure drain.</p>
+                                                        <p className="text-sm font-medium text-zinc-950">Enforce strict rate limits on base-tier accounts. Force users hitting the P90 percentile of compute consumption into high-margin enterprise tiers to offset their infrastructure drain.</p>
                                                     </div>
                                                 </div>
                                             </div>

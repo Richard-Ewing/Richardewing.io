@@ -436,7 +436,7 @@ export default function CloudContent() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Lease 2 high-density dual-EPYC chassis from Deft/Equinix. Install Proxmox/K3s. Adjust CI/CD to deploy images to the new bare-metal IP block simultaneously (shadow traffic).</p>
+                                                <p className="text-sm font-medium text-zinc-950">Lease 2 high-density dual-EPYC chassis from Deft/Equinix. Install Proxmox/K3s. Adjust CI/CD to deploy images to the new bare-metal IP block simultaneously (shadow traffic).</p>
                                             </div>
                                         </div>
                                     </div>
@@ -454,7 +454,7 @@ export default function CloudContent() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Initiate logical replication from AWS to your private Postgres NVMe cluster. Pause writes, failover DNS caching layer, and sever the AWS connection entirely.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Initiate logical replication from AWS to your private Postgres NVMe cluster. Pause writes, failover DNS caching layer, and sever the AWS connection entirely.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -472,7 +472,7 @@ export default function CloudContent() {
                                                 <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Move all high-bandwidth bandwidth egress paths (video, streaming, heavy API JSON payloads) behind Cloudflare to nullify AWS egress, then route directly from the new bare metal unmetered pipeline.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Move all high-bandwidth bandwidth egress paths (video, streaming, heavy API JSON payloads) behind Cloudflare to nullify AWS egress, then route directly from the new bare metal unmetered pipeline.</p>
                                             </div>
                                         </div>
                                     </div>

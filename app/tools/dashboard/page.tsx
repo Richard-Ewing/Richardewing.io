@@ -115,7 +115,7 @@ export default function IntelligenceDashboard() {
                         <span className={`px-3 py-1 text-xs font-medium font-mono font-bold uppercase tracking-widest rounded-md border ${getToolColor(run.tool_id)}`}>
                             {run.tool_id}
                         </span>
-                        <span className="text-xs text-zinc-950 font-mono flex items-center gap-1">
+                        <span className="text-sm font-medium text-zinc-950 font-mono flex items-center gap-1">
                             <Calendar size={12} /> {date}
                         </span>
                     </div>
@@ -170,7 +170,7 @@ export default function IntelligenceDashboard() {
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">
                             $ <NumberTicker value={totalValuationGap} />
                         </div>
-                        <p className="text-xs text-zinc-900 mt-4 leading-relaxed">Aggregated enterprise value theoretically at risk due to technical debt, margin drag, and inefficient APER.</p>
+                        <p className="text-sm font-medium text-zinc-950 mt-4 leading-relaxed">Aggregated enterprise value theoretically at risk due to technical debt, margin drag, and inefficient APER.</p>
                         <BorderBeam duration={12} delay={0} size={250} />
                     </GlowCard>
 
@@ -185,7 +185,7 @@ export default function IntelligenceDashboard() {
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">
                             <NumberTicker value={finalConfidence} /> %
                         </div>
-                        <p className="text-xs text-zinc-900 mt-4 leading-relaxed">Aggregate confidence score across all executed technical benchmarks and organizational health metrics.</p>
+                        <p className="text-sm font-medium text-zinc-950 mt-4 leading-relaxed">Aggregate confidence score across all executed technical benchmarks and organizational health metrics.</p>
                         <BorderBeam duration={8} delay={3} size={250} />
                     </GlowCard>
 
@@ -200,7 +200,7 @@ export default function IntelligenceDashboard() {
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">
                             <NumberTicker value={uniqueToolsRun} /> <span className="text-xl text-zinc-950">/ {totalToolsAvailable}</span>
                         </div>
-                        <p className="text-xs text-zinc-900 mt-4 leading-relaxed">You have executed {uniqueToolsRun} out of {totalToolsAvailable} core intelligence protocols to map your organization.</p>
+                        <p className="text-sm font-medium text-zinc-950 mt-4 leading-relaxed">You have executed {uniqueToolsRun} out of {totalToolsAvailable} core intelligence protocols to map your organization.</p>
                         <BorderBeam duration={10} delay={6} size={250} />
                     </GlowCard>
                 </div>

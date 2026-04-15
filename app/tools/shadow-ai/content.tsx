@@ -412,7 +412,7 @@ export default function ShadowContent() {
                                                         <div className="text-xs font-mono text-zinc-800 uppercase tracking-widest border-b border-zinc-400 pb-3">Unlicensed SaaS Spend Waste</div>
                                                         <div className="text-center py-4">
                                                             <div className="text-4xl font-bold text-green-400 font-mono">${(results.shadowSpend || results.knownSpend || 14500).toLocaleString()}</div>
-                                                            <p className="text-xs text-zinc-950 mt-2">Annualized Unregulated Corporate Credit Card Expense</p>
+                                                            <p className="text-sm font-medium text-zinc-950 mt-2">Annualized Unregulated Corporate Credit Card Expense</p>
                                                         </div>
                                                     </div>
                                                 )}
@@ -427,7 +427,7 @@ export default function ShadowContent() {
                                                             <span className="text-sm text-zinc-800">Payload Integrity</span>
                                                             <span className="text-sm font-mono text-rose-400 text-right">Compromised</span>
                                                         </div>
-                                                        <p className="text-xs text-zinc-950 font-mono mt-2 pt-2 border-t border-zinc-400">Codebase is currently ingesting untrusted public LLM tokens without validation.</p>
+                                                        <p className="text-sm font-medium text-zinc-950 font-mono mt-2 pt-2 border-t border-zinc-400">Codebase is currently ingesting untrusted public LLM tokens without validation.</p>
                                                     </div>
                                                 )}
                                                 {persona === 'Legal' && (
@@ -490,7 +490,7 @@ export default function ShadowContent() {
                                             <div className="flex justify-between mb-1"><span className="text-zinc-800">Class Action Risk Factor</span><span className="text-amber-400 font-mono font-bold">CRITICAL</span></div>
                                             <div className="w-full bg-white rounded-full h-1"><div className="bg-amber-500 h-1 rounded-full w-[90%]"></div></div>
                                         </div>
-                                        <p className="text-xs text-zinc-950 mt-2">LLM retention of PII constitutes an unrecoverable breach under "Right to be Forgotten" mandates.</p>
+                                        <p className="text-sm font-medium text-zinc-950 mt-2">LLM retention of PII constitutes an unrecoverable breach under "Right to be Forgotten" mandates.</p>
                                     </div>
                                 </div>
                                 <div className="bg-white/5 border border-zinc-400 p-5 rounded-xl">
@@ -535,7 +535,7 @@ export default function ShadowContent() {
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">Update Zscaler rules to explicitly blackhole all DNS requests to chatgpt.com, claude.ai, and other consumer APIs.</p>
+                                         <p className="text-sm font-medium text-zinc-950">Update Zscaler rules to explicitly blackhole all DNS requests to chatgpt.com, claude.ai, and other consumer APIs.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-amber-500">
@@ -547,7 +547,7 @@ export default function ShadowContent() {
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">Provision Azure OpenAI or AWS Bedrock endpoints entirely inside your private VPC.</p>
+                                         <p className="text-sm font-medium text-zinc-950">Provision Azure OpenAI or AWS Bedrock endpoints entirely inside your private VPC.</p>
                                      </div>
                                 </div>
                                 <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
@@ -559,7 +559,7 @@ export default function ShadowContent() {
                                          <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
-                                         <p className="text-xs text-zinc-900">Deploy LobeHub or LibreChat internally, pointing to your private VPC Enclave.</p>
+                                         <p className="text-sm font-medium text-zinc-950">Deploy LobeHub or LibreChat internally, pointing to your private VPC Enclave.</p>
                                      </div>
                                 </div>
                             </div>

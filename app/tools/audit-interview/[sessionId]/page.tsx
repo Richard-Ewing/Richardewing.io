@@ -445,7 +445,7 @@ export default function SessionCommandCenter() {
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Issue an immediate "Strong No Hire" disposition to TA. Mandate that all future resumes must pre-filter for specific deterministic systems experience before initial technical screens.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Issue an immediate "Strong No Hire" disposition to TA. Mandate that all future resumes must pre-filter for specific deterministic systems experience before initial technical screens.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -464,7 +464,7 @@ export default function SessionCommandCenter() {
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Replace the current technical interview loop with standardized, scenario-based architecture design questions focused strictly on margin, risk, and structural determinism.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Replace the current technical interview loop with standardized, scenario-based architecture design questions focused strictly on margin, risk, and structural determinism.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -483,7 +483,7 @@ export default function SessionCommandCenter() {
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 
                                                     Execution Directive
                                                 </div>
-                                                <p className="text-xs text-zinc-900">Conduct an immediate, unannounced code/architecture review on your most critical internal project. Fire any internal leaders exhibiting the judgment flaws seen in this interview.</p>
+                                                <p className="text-sm font-medium text-zinc-950">Conduct an immediate, unannounced code/architecture review on your most critical internal project. Fire any internal leaders exhibiting the judgment flaws seen in this interview.</p>
                                             </div>
                                         </div>
                                     </div>

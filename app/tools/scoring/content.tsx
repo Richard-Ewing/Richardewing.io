@@ -376,7 +376,7 @@ export default function AuditInterview() {
                                     </div>
                                 ))}
                                 <div className="border-t border-zinc-400 pt-4 mt-4">
-                                    <p className="text-xs text-zinc-900 leading-relaxed italic">
+                                    <p className="text-sm font-medium text-zinc-950 leading-relaxed italic">
                                         "{outcome.rationale}"
                                     </p>
                                 </div>
