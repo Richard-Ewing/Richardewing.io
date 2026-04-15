@@ -164,7 +164,7 @@ export default function DueDiligenceTool() {
 
             // PAGE BREAK SYNCHRONIZATION LOGIC
             // BIG FIX: We only target DIRECT CHILDREN of the export wrapper to prevent grid blowout.
-            const A4_HEIGHT_IN_PX = 1024 * (297 / 210); // ~1448.23px
+            const A4_HEIGHT_IN_PX = 1024 * (297 / 210);
             const blocks = Array.from(element.children);
             
             blocks.forEach((node) => {
@@ -172,18 +172,21 @@ export default function DueDiligenceTool() {
                 const style = window.getComputedStyle(el);
                 if (style.position === 'absolute' || style.position === 'fixed') return;
                 
-                const targetRect = element.getBoundingClientRect(); 
+                const targetRect = element.getBoundingClientRect();
                 const rect = el.getBoundingClientRect();
                 const relativeTop = rect.top - targetRect.top;
                 const height = rect.height;
 
-                if (height === 0 || height > (A4_HEIGHT_IN_PX * 0.8)) return;
+                if (height === 0 || height > (A4_HEIGHT_IN_PX * 0.75)) return;
 
                 const startPage = Math.floor(relativeTop / A4_HEIGHT_IN_PX);
                 const endPage = Math.floor((relativeTop + height) / A4_HEIGHT_IN_PX);
 
-                if (startPage !== endPage) {
-                    const nextPageStartPx = (startPage + 1) * A4_HEIGHT_IN_PX;
+                const absolutePageBottom = (startPage + 1) * A4_HEIGHT_IN_PX;
+                const distanceFromBottom = absolutePageBottom - (relativeTop + height);
+
+                if (startPage !== endPage || distanceFromBottom < 75) {
+                    const nextPageStartPx = absolutePageBottom;
                     const pushAmount = nextPageStartPx - relativeTop + 40;
                     
                     const currentMargin = parseFloat(style.marginTop) || 0;

@@ -75,9 +75,6 @@ export function ExportToPDFButton({
             await new Promise(resolve => setTimeout(resolve, 50));
 
             // PAGE BREAK SYNCHRONIZATION LOGIC
-            // Ensure no visual blocks are violently sliced horizontally.
-            // BIG FIX: We only target DIRECT CHILDREN of the export wrapper. 
-            // Targeting nested grid components directly caused extreme CSS distortion.
             const A4_HEIGHT_IN_PX = 1024 * (297 / 210); // ~1448.23px
             const blocks = Array.from(element.children);
             
@@ -86,19 +83,22 @@ export function ExportToPDFButton({
                 const style = window.getComputedStyle(el);
                 if (style.position === 'absolute' || style.position === 'fixed') return;
                 
-                const targetRect = element.getBoundingClientRect(); // update root per iteration handles shifting
+                const targetRect = element.getBoundingClientRect(); 
                 const rect = el.getBoundingClientRect();
                 const relativeTop = rect.top - targetRect.top;
                 const height = rect.height;
 
-                // Ignore extremely tall blocks that are impossible to paginate cleanly.
-                if (height === 0 || height > (A4_HEIGHT_IN_PX * 0.8)) return;
+                if (height === 0 || height > (A4_HEIGHT_IN_PX * 0.75)) return;
 
                 const startPage = Math.floor(relativeTop / A4_HEIGHT_IN_PX);
                 const endPage = Math.floor((relativeTop + height) / A4_HEIGHT_IN_PX);
+                
+                // Account for 5% canvas drift. If the bottom of the block is within 70px of the boundary, push it to the next page.
+                const absolutePageBottom = (startPage + 1) * A4_HEIGHT_IN_PX;
+                const distanceFromBottom = absolutePageBottom - (relativeTop + height);
 
-                if (startPage !== endPage) {
-                    const nextPageStartPx = (startPage + 1) * A4_HEIGHT_IN_PX;
+                if (startPage !== endPage || distanceFromBottom < 75) {
+                    const nextPageStartPx = absolutePageBottom;
                     const pushAmount = nextPageStartPx - relativeTop + 40; // 40px buffer margin
                     
                     const currentMargin = parseFloat(style.marginTop) || 0;
