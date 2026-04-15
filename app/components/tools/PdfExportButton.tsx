@@ -57,8 +57,9 @@ export default function PdfExportButton({
       });
 
       // PAGE BREAK SYNCHRONIZATION LOGIC
+      // BIG FIX: We only target DIRECT CHILDREN of the export wrapper to prevent grid blowout.
       const A4_HEIGHT_IN_PX = 1024 * (297 / 210); // ~1448.23px
-      const blocks = targetEl.querySelectorAll('.rounded-3xl, .rounded-2xl, .rounded-xl, .capsule-container, .border');
+      const blocks = Array.from(targetEl.children);
       
       blocks.forEach((node) => {
           const el = node as HTMLElement;
@@ -85,7 +86,17 @@ export default function PdfExportButton({
           }
       });
 
-      await new Promise(resolve => setTimeout(resolve, 150));
+      // Uncloak scrollable lists
+      const scrollContainers = targetEl.querySelectorAll('.overflow-y-auto, .overflow-auto, .max-h-64, .max-h-96');
+      scrollContainers.forEach(el => {
+          const node = el as HTMLElement;
+          node.setAttribute('data-pdf-overflow', node.style.overflow);
+          node.setAttribute('data-pdf-max-height', node.style.maxHeight);
+          node.style.setProperty('overflow', 'visible', 'important');
+          node.style.setProperty('max-height', 'none', 'important');
+      });
+
+      await new Promise(resolve => setTimeout(resolve, 600));
 
       const imgData = await htmlToImage.toPng(targetEl, {
         pixelRatio: 2,
@@ -117,6 +128,13 @@ export default function PdfExportButton({
               el.style.marginTop = el.getAttribute('data-pdf-margin-top') || '';
               el.removeAttribute('data-pdf-margin-top');
           }
+      });
+      scrollContainers.forEach(node => {
+          const el = node as HTMLElement;
+          el.style.overflow = el.getAttribute('data-pdf-overflow') || '';
+          el.style.maxHeight = el.getAttribute('data-pdf-max-height') || '';
+          el.removeAttribute('data-pdf-overflow');
+          el.removeAttribute('data-pdf-max-height');
       });
 
       targetEl.style.backgroundColor = originalBg;

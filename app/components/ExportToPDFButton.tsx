@@ -67,9 +67,11 @@ export function ExportToPDFButton({
             await new Promise(resolve => setTimeout(resolve, 50));
 
             // PAGE BREAK SYNCHRONIZATION LOGIC
-            // Ensure no visual blocks are violently sliced horizontally during PDF chunking.
+            // Ensure no visual blocks are violently sliced horizontally.
+            // BIG FIX: We only target DIRECT CHILDREN of the export wrapper. 
+            // Targeting nested grid components directly caused extreme CSS distortion.
             const A4_HEIGHT_IN_PX = 1024 * (297 / 210); // ~1448.23px
-            const blocks = element.querySelectorAll('.rounded-3xl, .rounded-2xl, .rounded-xl, .capsule-container, .border');
+            const blocks = Array.from(element.children);
             
             blocks.forEach((node) => {
                 const el = node as HTMLElement;
@@ -81,7 +83,7 @@ export function ExportToPDFButton({
                 const relativeTop = rect.top - targetRect.top;
                 const height = rect.height;
 
-                // Ignore elements that fill most of a page anyway, they are impossible to push cleanly.
+                // Ignore extremely tall blocks that are impossible to paginate cleanly.
                 if (height === 0 || height > (A4_HEIGHT_IN_PX * 0.8)) return;
 
                 const startPage = Math.floor(relativeTop / A4_HEIGHT_IN_PX);
@@ -89,8 +91,7 @@ export function ExportToPDFButton({
 
                 if (startPage !== endPage) {
                     const nextPageStartPx = (startPage + 1) * A4_HEIGHT_IN_PX;
-                    // Push the element past the break line, plus a 40px clean margin to prevent visual splicing
-                    const pushAmount = nextPageStartPx - relativeTop + 40;
+                    const pushAmount = nextPageStartPx - relativeTop + 40; // 40px buffer margin
                     
                     const currentMargin = parseFloat(style.marginTop) || 0;
                     el.setAttribute('data-pdf-margin-top', el.style.marginTop);
@@ -98,8 +99,20 @@ export function ExportToPDFButton({
                 }
             });
 
-            // Slight delay to allow browser to complete final reflow logic 
-            await new Promise(resolve => setTimeout(resolve, 150));
+            // SCROLL-TRUNCATION FIX:
+            // Any container with max-height and overflow will physically truncate the PDF capture.
+            // We must temporarily uncloak them to their full absolute height.
+            const scrollContainers = element.querySelectorAll('.overflow-y-auto, .overflow-auto, .max-h-64, .max-h-96');
+            scrollContainers.forEach(el => {
+                const node = el as HTMLElement;
+                node.setAttribute('data-pdf-overflow', node.style.overflow);
+                node.setAttribute('data-pdf-max-height', node.style.maxHeight);
+                node.style.setProperty('overflow', 'visible', 'important');
+                node.style.setProperty('max-height', 'none', 'important');
+            });
+
+            // Recharts renders dynamically via ResizeObserver. If we don't wait long enough here, charts disappear.
+            await new Promise(resolve => setTimeout(resolve, 600));
 
             // 2) Snapshot the rigid DOM layer into a binary Canvas via html-to-image
             // html-to-image handles oklch and lab colors perfectly because it uses native SVG rendering
@@ -137,6 +150,13 @@ export function ExportToPDFButton({
                     el.style.marginTop = el.getAttribute('data-pdf-margin-top') || '';
                     el.removeAttribute('data-pdf-margin-top');
                 }
+            });
+            scrollContainers.forEach(node => {
+                const el = node as HTMLElement;
+                el.style.overflow = el.getAttribute('data-pdf-overflow') || '';
+                el.style.maxHeight = el.getAttribute('data-pdf-max-height') || '';
+                el.removeAttribute('data-pdf-overflow');
+                el.removeAttribute('data-pdf-max-height');
             });
             // 4) Convert Canvas to jsPDF standard format
             const pdf = new jsPDF({
