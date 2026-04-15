@@ -356,7 +356,7 @@ export default function RagChunkingContent() {
 
                         {/* VECTOR REDUNDANCY MAP */}
                         <ScrollReveal delay={200}>
-                            <div className="bg-white border border-zinc-400 rounded-2xl p-6 mt-8 mb-8 shadow-2xl relative overflow-hidden">
+                            <div className="bg-white border border-zinc-400 rounded-2xl p-6 mt-8 mb-8 shadow-2xl relative overflow-hidden shrink-0">
                                 <h3 className="text-xs font-bold font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest border-b border-zinc-400 pb-3 mb-6 flex justify-between">
                                     <span>Vector Index Bloat Visualization</span>
                                     <span className="text-rose-400">{((overlap / chunkSize) * 100).toFixed(1)}% Storage Redundancy</span>
@@ -452,7 +452,7 @@ export default function RagChunkingContent() {
                             </div>
                             
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-indigo-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-indigo-500 shrink-0">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-indigo-500/10 transition-colors"></div>
                                      <div className="text-indigo-900 font-extrabold font-semibold font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-indigo-500/10 w-8 h-8 rounded flex items-center justify-center border border-indigo-500/20">01</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Sync Embedding Models</h4>
@@ -464,7 +464,7 @@ export default function RagChunkingContent() {
                                          <p className="text-sm font-semibold font-medium text-zinc-950">Validate the exact encoding dictionary (e.g. text-embedding-3-small) to prevent mid-token shearing.</p>
                                      </div>
                                 </div>
-                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-cyan-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-cyan-500 shrink-0">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                      <div className="text-cyan-900 font-extrabold font-semibold font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-cyan-500/10 w-8 h-8 rounded flex items-center justify-center border border-cyan-500/20">02</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Recursive Splitting</h4>
@@ -476,7 +476,7 @@ export default function RagChunkingContent() {
                                          <p className="text-sm font-semibold font-medium text-zinc-950">Force semantic ideas to stay geometrically bound together in vector space.</p>
                                      </div>
                                 </div>
-                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500 shrink-0">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
                                      <div className="text-emerald-900 font-extrabold font-semibold font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Window Expansion</h4>

@@ -142,7 +142,7 @@ export default function BoardRoom() {
                     
                     {/* ENGINEERING (CTO) */}
                     <ScrollReveal delay={100}>
-                        <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-blue-500/30 transition-colors">
+                        <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-blue-500/30 transition-colors shrink-0">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-blue-500/10 transition-colors duration-1000"></div>
                             <div className="flex items-center gap-3 mb-8">
                                 <Cpu className="text-blue-500 h-8 w-8" />
@@ -189,7 +189,7 @@ export default function BoardRoom() {
 
                     {/* FINANCE (CFO) */}
                     <ScrollReveal delay={200}>
-                        <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+                        <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-emerald-500/30 transition-colors shrink-0">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors duration-1000"></div>
                             <div className="flex items-center gap-3 mb-8">
                                 <Activity className="text-emerald-500 h-8 w-8" />
@@ -251,7 +251,7 @@ export default function BoardRoom() {
 
                     {/* PEOPLE / TALENT (CHRO) */}
                     <ScrollReveal delay={300}>
-                        <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-amber-500/30 transition-colors">
+                        <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-amber-500/30 transition-colors shrink-0">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-amber-500/10 transition-colors duration-1000"></div>
                             <div className="flex items-center gap-3 mb-8">
                                 <Users className="text-amber-500 h-8 w-8" />
@@ -280,7 +280,7 @@ export default function BoardRoom() {
 
                     {/* EXTERNAL (PE / M&A) */}
                      <ScrollReveal delay={400}>
-                        <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-zinc-500/50 transition-colors h-full">
+                        <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-zinc-500/50 transition-colors h-full shrink-0">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-zinc-500/10 transition-colors duration-1000"></div>
                             <div className="flex items-center gap-3 mb-8">
                                 <Briefcase className="text-zinc-950 h-8 w-8" />
@@ -309,7 +309,7 @@ export default function BoardRoom() {
 
                     {/* AI STRATEGY & RISK (CAIO/CRO) */}
                     <ScrollReveal delay={500}>
-                        <div className="bg-white/60 border border-rose-500/10 rounded-3xl p-8 relative overflow-hidden group hover:border-rose-500/30 transition-colors h-full">
+                        <div className="bg-white/60 border border-rose-500/10 rounded-3xl p-8 relative overflow-hidden group hover:border-rose-500/30 transition-colors h-full shrink-0">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-rose-500/10 transition-colors duration-1000"></div>
                             <div className="flex items-center gap-3 mb-8">
                                 <AlertTriangle className="text-rose-500 h-8 w-8" />

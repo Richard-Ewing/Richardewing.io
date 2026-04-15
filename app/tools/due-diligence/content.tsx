@@ -359,7 +359,7 @@ export default function DueDiligenceTool() {
             {/* MONETIZATION ENGINE: PAYWALL MODAL ($999 TIER) */}
             {showPaywall && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-white/80 backdrop-blur-sm" data-html2canvas-ignore>
-                    <div className="bg-white border border-zinc-400 rounded-3xl max-w-md w-full p-8 relative shadow-2xl overflow-hidden scale-100 animate-in zoom-in-95 duration-200">
+                    <div className="bg-white border border-zinc-400 rounded-3xl max-w-md w-full p-8 relative shadow-2xl overflow-hidden scale-100 animate-in zoom-in-95 duration-200 shrink-0">
                         <div className="absolute top-0 right-0 w-48 h-48 bg-red-500/20 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
                         <div className="absolute bottom-0 left-0 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
                         
@@ -446,7 +446,7 @@ export default function DueDiligenceTool() {
                                 </div>
                             </div>
 
-                            <div className="bg-white/40 p-8 rounded-3xl border border-zinc-400 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden">
+                            <div className="bg-white/40 p-8 rounded-3xl border border-zinc-400 backdrop-blur-sm shadow-2xl space-y-8 relative overflow-hidden shrink-0">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-zinc-200">
                                     <div className={`h-full bg-red-600 transition-all duration-500 ${step === 1 ? 'w-1/3' : step === 2 ? 'w-2/3' : 'w-full'}`} />
                                 </div>
@@ -647,7 +647,7 @@ export default function DueDiligenceTool() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
                                 >
-                                    <div className="bg-zinc-50 border border-zinc-400 rounded-2xl p-6 md:p-8 mt-8 relative overflow-hidden">
+                                    <div className="bg-zinc-50 border border-zinc-400 rounded-2xl p-6 md:p-8 mt-8 relative overflow-hidden shrink-0">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 via-orange-500 to-cyan-500"></div>
                                         <h4 className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">Post-Acquisition Integration Gantt Chart</h4>
                                         
@@ -713,7 +713,7 @@ export default function DueDiligenceTool() {
 
                                         <div className="space-y-4">
                                             {/* Step 1 */}
-                                            <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                            <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                                 <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                                 <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
                                                     <span className="text-rose-400 font-bold font-mono">01</span>
@@ -731,7 +731,7 @@ export default function DueDiligenceTool() {
                                             </div>
 
                                             {/* Step 2 */}
-                                            <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                            <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                                 <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                                 <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
                                                     <span className="text-amber-400 font-bold font-mono">02</span>
@@ -749,7 +749,7 @@ export default function DueDiligenceTool() {
                                             </div>
 
                                             {/* Step 3 */}
-                                            <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                            <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                                 <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
                                                     <span className="text-cyan-900 font-extrabold font-semibold font-bold font-mono">03</span>

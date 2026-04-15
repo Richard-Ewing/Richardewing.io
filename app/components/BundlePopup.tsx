@@ -53,7 +53,7 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
             <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
             <div
-                className="relative w-full max-w-lg rounded-2xl border border-zinc-400 bg-white shadow-2xl shadow-violet-500/10 overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+                className="relative w-full max-w-lg rounded-2xl border border-zinc-400 bg-white shadow-2xl shadow-violet-500/10 overflow-hidden animate-in fade-in zoom-in-95 duration-200 shrink-0"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Header */}

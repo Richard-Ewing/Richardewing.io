@@ -10,7 +10,7 @@ interface CurriculumSalesPreviewProps {
 
 export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSalesPreviewProps) {
     return (
-        <div className="mt-16 relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-white shadow-[0_0_50px_rgba(6,182,212,0.1)]">
+        <div className="mt-16 relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-white shadow-[0_0_50px_rgba(6,182,212,0.1)] shrink-0">
             {/* Background Glows */}
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -86,7 +86,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                         
                         {/* Center Encrypted Modal over the glass panes */}
                         <div className="absolute inset-0 z-30 flex items-center justify-center backdrop-blur-[2px]">
-                            <div className="bg-white/80 p-10 rounded-3xl border border-rose-500/30 shadow-[0_0_100px_rgba(0,0,0,0.8),inset_0_0_30px_rgba(244,63,94,0.1)] text-center max-w-md backdrop-blur-3xl transform scale-110 relative overflow-hidden">
+                            <div className="bg-white/80 p-10 rounded-3xl border border-rose-500/30 shadow-[0_0_100px_rgba(0,0,0,0.8),inset_0_0_30px_rgba(244,63,94,0.1)] text-center max-w-md backdrop-blur-3xl transform scale-110 relative overflow-hidden shrink-0">
                                 <BorderBeam size={300} duration={8} delay={0} colorFrom="#f43f5e" colorTo="#3b82f6" borderWidth={2} />
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/20 blur-[50px]" />
                                 <div className="w-20 h-20 rounded-full bg-rose-50 border border-rose-500/30 flex items-center justify-center mx-auto mb-6 shadow-inner relative z-10">
@@ -102,7 +102,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                         {/* Faux Premium UI Elements Floating in 3D Space */}
                         <div className="absolute w-full h-full transform-style-3d opacity-20">
                             {/* Left Data Pane */}
-                            <div className="absolute left-[5%] top-[15%] w-[35%] h-[60%] bg-zinc-50 border border-zinc-400 rounded-2xl p-6 transform -rotate-y-12 rotate-z-3 shadow-2xl overflow-hidden backdrop-blur-md">
+                            <div className="absolute left-[5%] top-[15%] w-[35%] h-[60%] bg-zinc-50 border border-zinc-400 rounded-2xl p-6 transform -rotate-y-12 rotate-z-3 shadow-2xl overflow-hidden backdrop-blur-md shrink-0">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50" />
                                 <div className="flex items-center justify-between mb-6">
                                     <div className="flex items-center gap-2">
@@ -141,7 +141,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                             </div>
 
                             {/* Right Code/Architecture Pane */}
-                            <div className="absolute right-[5%] top-[25%] w-[35%] h-[60%] bg-white border border-purple-500/20 rounded-2xl p-6 transform rotate-y-12 -rotate-z-3 shadow-2xl overflow-hidden backdrop-blur-md">
+                            <div className="absolute right-[5%] top-[25%] w-[35%] h-[60%] bg-white border border-purple-500/20 rounded-2xl p-6 transform rotate-y-12 -rotate-z-3 shadow-2xl overflow-hidden backdrop-blur-md shrink-0">
                                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
                                 <div className="flex items-center gap-3 mb-6 border-b border-zinc-400 pb-4">
                                     <Network className="w-5 h-5 text-purple-900 font-extrabold" />
@@ -215,7 +215,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                     {lessons && lessons.length > 0 ? (
                         <div className="space-y-4">
                             {lessons.map((lesson, idx) => (
-                                <div key={idx} className="bg-zinc-50 border border-zinc-400 rounded-2xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 group/lock hover:bg-white/[0.04] transition-colors relative overflow-hidden">
+                                <div key={idx} className="bg-zinc-50 border border-zinc-400 rounded-2xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 group/lock hover:bg-white/[0.04] transition-colors relative overflow-hidden shrink-0">
                                     <div className="flex items-start gap-4">
                                         <div className="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-400 flex items-center justify-center shrink-0">
                                             {idx % 2 === 0 ? <PlayCircle className="w-5 h-5 text-cyan-900 font-bold" /> : <Database className="w-5 h-5 text-purple-900 font-bold" />}

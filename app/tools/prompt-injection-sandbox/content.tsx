@@ -369,7 +369,7 @@ Only answer questions related to AcmeCorp logistics.
                             </div>
                             
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-red-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-red-500 shrink-0">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-red-500/10 transition-colors"></div>
                                      <div className="text-red-900 font-extrabold font-semibold font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-red-500/10 w-8 h-8 rounded flex items-center justify-center border border-red-500/20">01</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Deterministic Delimiters</h4>
@@ -381,7 +381,7 @@ Only answer questions related to AcmeCorp logistics.
                                          <p className="text-sm font-semibold font-medium text-zinc-950">Wrap all inputs in &lt;user_input&gt; blocks to prevent interpretation as root execution commands.</p>
                                      </div>
                                 </div>
-                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-amber-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-amber-500 shrink-0">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                      <div className="text-amber-400 font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-amber-500/10 w-8 h-8 rounded flex items-center justify-center border border-amber-500/20">02</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Classifier Firewalls</h4>
@@ -393,7 +393,7 @@ Only answer questions related to AcmeCorp logistics.
                                          <p className="text-sm font-semibold font-medium text-zinc-950">If Llama Guard flags an adversarial pattern, instantly HTTP 403 the request pipeline.</p>
                                      </div>
                                 </div>
-                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500 shrink-0">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
                                      <div className="text-emerald-900 font-extrabold font-semibold font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Tool Execution Isolation</h4>

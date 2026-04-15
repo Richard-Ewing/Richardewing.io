@@ -372,7 +372,7 @@ export default function SessionCommandCenter() {
 
 
                     {/* VERDICT BOX */}
-                    <div className="text-center py-16 border border-[#30363d] bg-white rounded-2xl relative overflow-hidden">
+                    <div className="text-center py-16 border border-[#30363d] bg-white rounded-2xl relative overflow-hidden shrink-0">
                         <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${isHire ? 'emerald-500' : 'red-500'} to-transparent opacity-50`}></div>
 
                         <div className={`inline-block px-4 py-1 rounded-full border ${statusBorder} ${statusBg} ${statusColor} text-[10px] font-mono uppercase tracking-widest mb-8`}>

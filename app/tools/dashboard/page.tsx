@@ -106,7 +106,7 @@ export default function IntelligenceDashboard() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 key={run.id} 
-                className="bg-white/60 border border-zinc-400 hover:border-zinc-500 transition-all p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group"
+                className="bg-white/60 border border-zinc-400 hover:border-zinc-500 transition-all p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group shrink-0"
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 
@@ -159,7 +159,7 @@ export default function IntelligenceDashboard() {
 
                 {/* Executive Summary Row */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                    <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group">
+                    <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group shrink-0">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
                                 <ShieldAlert size={20} className="text-red-900 font-extrabold font-semibold" />
@@ -174,7 +174,7 @@ export default function IntelligenceDashboard() {
                         <BorderBeam duration={12} delay={0} size={250} />
                     </GlowCard>
 
-                    <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group">
+                    <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group shrink-0">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
                                 <TrendingUp size={20} className="text-emerald-900 font-extrabold font-semibold" />
@@ -189,7 +189,7 @@ export default function IntelligenceDashboard() {
                         <BorderBeam duration={8} delay={3} size={250} />
                     </GlowCard>
 
-                    <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group">
+                    <GlowCard className="p-8 bg-zinc-50 border border-zinc-400 rounded-3xl relative overflow-hidden group shrink-0">
                         <div className="flex justify-between items-start mb-6">
                             <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
                                 <Database size={20} className="text-cyan-900 font-extrabold font-semibold" />

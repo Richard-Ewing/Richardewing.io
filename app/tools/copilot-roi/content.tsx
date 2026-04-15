@@ -29,7 +29,7 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                             <motion.div 
                                 initial={{ width: 0 }} 
                                 animate={{ width: `${widthPercent}%` }} 
-                                className={`absolute top-0 bottom-0 ${isNegative ? 'right-0 rounded-l-lg origin-right' : 'left-0 rounded-r-lg origin-left'} transition-all duration-1000 ease-out flex items-center ${isNegative ? 'justify-start pl-4' : 'justify-end pr-4'}`}
+                                className={`absolute top-0 bottom-0 left-0 rounded-r-lg origin-left transition-all duration-1000 ease-out flex items-center justify-end pr-4`}
                                 style={{ backgroundColor: item.color }}
                             >
                                 <span className={`text-[11px] font-mono font-bold text-black drop-shadow-md`}>
@@ -230,7 +230,7 @@ export default function CopilotROITool() {
                         <div className="lg:col-span-4 space-y-6">
                             
                             {/* Control Block 1: Baseline */}
-                            <div className="bg-white/50 border border-zinc-400 rounded-3xl p-6 lg:p-8 relative overflow-hidden backdrop-blur-xl group hover:border-cyan-500/30 transition-colors">
+                            <div className="bg-white/50 border border-zinc-400 rounded-3xl p-6 lg:p-8 relative overflow-hidden backdrop-blur-xl group hover:border-cyan-500/30 transition-colors shrink-0">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                                 
                                 <h3 className="text-zinc-950 font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-400 pb-4">
@@ -264,7 +264,7 @@ export default function CopilotROITool() {
                             </div>
 
                             {/* Control Block 2: Penalties */}
-                            <div className="bg-white/50 border border-zinc-400 rounded-3xl p-6 lg:p-8 relative overflow-hidden backdrop-blur-xl group hover:border-fuchsia-500/30 transition-colors">
+                            <div className="bg-white/50 border border-zinc-400 rounded-3xl p-6 lg:p-8 relative overflow-hidden backdrop-blur-xl group hover:border-fuchsia-500/30 transition-colors shrink-0">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
                                 
                                 <h3 className="text-zinc-950 font-grotesk font-bold text-xl mb-6 flex items-center gap-2 border-b border-zinc-400 pb-4">
@@ -310,7 +310,7 @@ export default function CopilotROITool() {
                         <div className="lg:col-span-8 flex flex-col gap-6" id="pdf-export-target">
                             
                             {/* Main Math Block */}
-                            <div className="bg-white border border-zinc-400 rounded-3xl p-6 lg:p-10 relative overflow-hidden shadow-2xl">
+                            <div className="bg-white border border-zinc-400 rounded-3xl p-6 lg:p-10 relative overflow-hidden shadow-2xl shrink-0">
                                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-fuchsia-500/5"></div>
                                 
                                 <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 border-b border-zinc-400 pb-6">
@@ -361,7 +361,7 @@ export default function CopilotROITool() {
                             </div>
 
                             {/* Persona Intelligence Block */}
-                            <div className="bg-white/50 border border-zinc-400 rounded-3xl relative overflow-hidden backdrop-blur-xl flex flex-col h-full">
+                            <div className="bg-white/50 border border-zinc-400 rounded-3xl relative overflow-hidden backdrop-blur-xl flex flex-col h-full shrink-0">
                                 {/* Persona Tabs */}
                                 <div className="flex overflow-x-auto border-b border-zinc-400 scrollbar-hide">
                                     {PERSONAS.map((p) => {

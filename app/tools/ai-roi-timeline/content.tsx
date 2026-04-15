@@ -162,14 +162,14 @@ export default function AIRoiTimelineContent() {
                         <div id="ai-roi-pdf-export-zone">
                          {/* Executive Summary */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div className="p-6 bg-zinc-50 border border-zinc-400 rounded-2xl relative overflow-hidden group">
+                            <div className="p-6 bg-zinc-50 border border-zinc-400 rounded-2xl relative overflow-hidden group shrink-0">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-colors duration-500"></div>
                                 <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2 flex items-center gap-2">Implementation CapEx</div>
                                 <div className="text-3xl sm:text-4xl font-black text-rose-400 break-words">${implementationCost.toLocaleString()}</div>
                                 <div className="text-xs font-bold text-zinc-900 font-bold mt-2 font-mono">Initial setup & training cost</div>
                             </div>
                             
-                            <div className="p-6 bg-zinc-50 border border-zinc-400 rounded-2xl relative overflow-hidden group">
+                            <div className="p-6 bg-zinc-50 border border-zinc-400 rounded-2xl relative overflow-hidden group shrink-0">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/5 rounded-full blur-2xl group-hover:bg-green-500/10 transition-colors duration-500"></div>
                                 <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2 flex items-center gap-2">Annual Net Savings</div>
                                 <div className="text-3xl sm:text-4xl font-black text-green-400 break-words">${netAnnualSavings.toLocaleString()}</div>
@@ -233,7 +233,7 @@ export default function AIRoiTimelineContent() {
 
                                     <div className="space-y-4">
                                         {/* Step 1 */}
-                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                             <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
                                                 <span className="text-rose-400 font-bold font-mono">01</span>
@@ -251,7 +251,7 @@ export default function AIRoiTimelineContent() {
                                         </div>
 
                                         {/* Step 2 */}
-                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                             <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
                                                 <span className="text-amber-400 font-bold font-mono">02</span>
@@ -269,7 +269,7 @@ export default function AIRoiTimelineContent() {
                                         </div>
 
                                         {/* Step 3 */}
-                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                             <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
                                                 <span className="text-cyan-900 font-extrabold font-semibold font-bold font-mono">03</span>

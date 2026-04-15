@@ -322,7 +322,7 @@ export default function AgentRouterContent() {
 
                         {/* WATERFALL CHART */}
                         <ScrollReveal delay={100}>
-                            <div className="bg-white border border-zinc-400 rounded-2xl p-6 mb-8 shadow-2xl overflow-hidden relative">
+                            <div className="bg-white border border-zinc-400 rounded-2xl p-6 mb-8 shadow-2xl overflow-hidden relative shrink-0">
                                 <h3 className="text-xs font-bold font-mono text-blue-900 font-extrabold font-semibold uppercase tracking-widest border-b border-zinc-400/80 pb-3 mb-6">Agentic Token Compounding (Per System Trigger)</h3>
                                 <div className="space-y-4">
                                     {Array.from({ length: agentHops }).map((_, i) => {
@@ -400,7 +400,7 @@ export default function AgentRouterContent() {
                             </div>
                             
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-blue-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-blue-500 shrink-0">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-blue-500/10 transition-colors"></div>
                                      <div className="text-blue-900 font-extrabold font-semibold font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-blue-500/10 w-8 h-8 rounded flex items-center justify-center border border-blue-500/20">01</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Deploy Semantic Router</h4>
@@ -412,7 +412,7 @@ export default function AgentRouterContent() {
                                          <p className="text-sm font-semibold font-medium text-zinc-950">Run Llama-3 8B locally on CPU cache to preemptively classify and deflect 60% of requests.</p>
                                      </div>
                                 </div>
-                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-indigo-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-indigo-500 shrink-0">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-indigo-500/10 transition-colors"></div>
                                      <div className="text-indigo-900 font-extrabold font-semibold font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-indigo-500/10 w-8 h-8 rounded flex items-center justify-center border border-indigo-500/20">02</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Contextual Pruning</h4>
@@ -424,7 +424,7 @@ export default function AgentRouterContent() {
                                          <p className="text-sm font-semibold font-medium text-zinc-950">Compress prompt strings by 80% using a cheap deterministic model between execution hops.</p>
                                      </div>
                                 </div>
-                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500">
+                                <div className="bg-white/80 border border-zinc-400 p-6 rounded-xl relative overflow-hidden group hover:bg-zinc-100 transition-colors border-l-2 border-l-emerald-500 shrink-0">
                                      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
                                      <div className="text-emerald-900 font-extrabold font-semibold font-mono text-xs font-bold mb-3 uppercase tracking-widest bg-emerald-500/10 w-8 h-8 rounded flex items-center justify-center border border-emerald-500/20">03</div>
                                      <h4 className="text-zinc-950 font-bold mb-2">Cascade Routing</h4>

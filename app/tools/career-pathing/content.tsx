@@ -118,7 +118,7 @@ export default function CareerPathingContent() {
                         <motion.div 
                             key="step-1"
                             initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}
-                            className="bg-zinc-50 border border-zinc-400 rounded-3xl p-8 lg:p-12 relative overflow-hidden"
+                            className="bg-zinc-50 border border-zinc-400 rounded-3xl p-8 lg:p-12 relative overflow-hidden shrink-0"
                         >
                             <BorderBeam size={200} duration={12} delay={0} />
                             <div className="text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold mb-2 uppercase tracking-widest px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 inline-block rounded-full">Diagnostic 1/3</div>
@@ -149,7 +149,7 @@ export default function CareerPathingContent() {
                         <motion.div 
                             key="step-2"
                             initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}
-                            className="bg-zinc-50 border border-zinc-400 rounded-3xl p-8 lg:p-12 relative overflow-hidden"
+                            className="bg-zinc-50 border border-zinc-400 rounded-3xl p-8 lg:p-12 relative overflow-hidden shrink-0"
                         >
                             <BorderBeam size={200} duration={12} delay={0} />
                             <div className="text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold mb-2 uppercase tracking-widest px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 inline-block rounded-full">Diagnostic 2/3</div>
@@ -184,7 +184,7 @@ export default function CareerPathingContent() {
                         <motion.div 
                             key="step-3"
                             initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}
-                            className="bg-zinc-50 border border-zinc-400 rounded-3xl p-8 lg:p-12 relative overflow-hidden"
+                            className="bg-zinc-50 border border-zinc-400 rounded-3xl p-8 lg:p-12 relative overflow-hidden shrink-0"
                         >
                             <BorderBeam size={200} duration={12} delay={0} />
                             <div className="text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold mb-2 uppercase tracking-widest px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 inline-block rounded-full">Diagnostic 3/3</div>
@@ -261,7 +261,7 @@ export default function CareerPathingContent() {
                                     <div className="flex flex-wrap items-center gap-4">
                                         <Link 
                                             href={getRecommendation().ctaLink}
-                                            className="px-8 py-4 rounded-xl relative bg-white overflow-hidden group border border-white hover:border-zinc-500 transition-all font-bold text-black text-sm font-semibold uppercase tracking-widest"
+                                            className="px-8 py-4 rounded-xl relative bg-white overflow-hidden group border border-white hover:border-zinc-500 transition-all font-bold text-black text-sm font-semibold uppercase tracking-widest shrink-0"
                                         >
                                             <span className="relative z-10 flex items-center gap-3">
                                                 Unlock Vault Curriculum <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -278,7 +278,7 @@ export default function CareerPathingContent() {
                                 </div>
 
                                 <div className="flex-1 space-y-6">
-                                    <GlowCard className="bg-white/80 border border-zinc-400 rounded-2xl p-6 relative overflow-hidden h-full">
+                                    <GlowCard className="bg-white/80 border border-zinc-400 rounded-2xl p-6 relative overflow-hidden h-full shrink-0">
                                         <h4 className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-6 border-b border-zinc-400 pb-4">Phase 1: Your Sequenced Curriculum</h4>
                                         <div className="space-y-4">
                                             {getRecommendation().tracks.map((t, idx) => (
@@ -293,7 +293,7 @@ export default function CareerPathingContent() {
                                         </div>
                                     </GlowCard>
 
-                                    <GlowCard className="bg-white/80 border border-zinc-400 rounded-2xl p-6 relative overflow-hidden">
+                                    <GlowCard className="bg-white/80 border border-zinc-400 rounded-2xl p-6 relative overflow-hidden shrink-0">
                                         <h4 className="text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold bg-cyan-500/10 px-2 py-1 inline-block rounded border border-cyan-500/20 uppercase tracking-widest mb-4">Phase 2: Live Intervention</h4>
                                         <h3 className="font-bold text-zinc-950 text-lg mb-2">{getRecommendation().tool.name}</h3>
                                         <p className="text-sm font-semibold font-medium text-zinc-950 mb-6">{getRecommendation().tool.desc}</p>
@@ -314,7 +314,7 @@ export default function CareerPathingContent() {
 
                                 <div className="space-y-4">
                                     {/* Step 1 */}
-                                    <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                    <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                         <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
                                             <span className="text-rose-400 font-bold font-mono">01</span>
@@ -332,7 +332,7 @@ export default function CareerPathingContent() {
                                     </div>
 
                                     {/* Step 2 */}
-                                    <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                    <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                         <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
                                             <span className="text-amber-400 font-bold font-mono">02</span>
@@ -350,7 +350,7 @@ export default function CareerPathingContent() {
                                     </div>
 
                                     {/* Step 3 */}
-                                    <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                    <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                         <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
                                             <span className="text-cyan-900 font-extrabold font-semibold font-bold font-mono">03</span>

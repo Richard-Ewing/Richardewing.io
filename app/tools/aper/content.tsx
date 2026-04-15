@@ -583,13 +583,13 @@ export default function APERTool() {
                                                 <div className="text-xs font-bold font-mono uppercase tracking-widest text-zinc-900">Corporate Solvency Matrix (CapEx Hemorrhage Horizon)</div>
                                             </div>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
+                                                <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden shrink-0">
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Skull className="w-16 h-16 text-zinc-900" /></div>
                                                     <div className="text-sm font-semibold font-medium text-zinc-950 mb-2">Unrealized Revenue (Hemorrhage)</div>
                                                     <div className="text-3xl font-bold text-red-500">{formatMoney(results.revenueGap)}/yr</div>
                                                     <div className="text-xs font-bold text-zinc-900 font-bold/60 mt-2 mt-auto">ARR missing due to sub-optimal APER.</div>
                                                 </div>
-                                                <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden">
+                                                <div className="bg-zinc-50 rounded-xl p-5 border border-zinc-400 relative overflow-hidden shrink-0">
                                                     <div className="absolute top-0 right-0 p-3 opacity-10"><Building2 className="w-16 h-16 text-zinc-900" /></div>
                                                     <div className="text-sm font-semibold font-medium text-zinc-950 mb-2">Valuation Collapse Probability</div>
                                                     <div className="text-3xl font-bold text-orange-900 font-extrabold font-semibold">{formatMoney(results.valuationGap)}</div>
@@ -756,7 +756,7 @@ export default function APERTool() {
 
                                     <div className="space-y-4">
                                         {/* Step 1 */}
-                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-rose-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-rose-500/10 transition-colors"></div>
                                             <div className="bg-rose-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-rose-500/20">
                                                 <span className="text-rose-400 font-bold font-mono">01</span>
@@ -774,7 +774,7 @@ export default function APERTool() {
                                         </div>
 
                                         {/* Step 2 */}
-                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-amber-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
                                             <div className="bg-amber-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-amber-500/20">
                                                 <span className="text-amber-400 font-bold font-mono">02</span>
@@ -792,7 +792,7 @@ export default function APERTool() {
                                         </div>
 
                                         {/* Step 3 */}
-                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors">
+                                        <div className="bg-white/80 border border-zinc-400 rounded-xl p-5 flex flex-col sm:flex-row gap-5 items-start border-l-2 border-l-cyan-500 relative overflow-hidden group hover:bg-zinc-100 transition-colors shrink-0">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
                                             <div className="bg-cyan-500/10 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 border border-cyan-500/20">
                                                 <span className="text-cyan-900 font-extrabold font-semibold font-bold font-mono">03</span>

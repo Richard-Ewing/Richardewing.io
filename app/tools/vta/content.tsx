@@ -74,7 +74,7 @@ export default function VTATool() {
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16" id="vta-calculator">
                         {/* INPUT PANEL */}
                         <div className="lg:col-span-5 space-y-6">
-                            <div className="bg-white/5 border border-zinc-400 rounded-2xl p-6 relative overflow-hidden backdrop-blur-xl">
+                            <div className="bg-white/5 border border-zinc-400 rounded-2xl p-6 relative overflow-hidden backdrop-blur-xl shrink-0">
                                 <BorderBeam className="opacity-20" size={300} duration={12} delay={0} />
                                 <h2 className="text-2xl font-bold text-zinc-950 mb-6">Execution Variables</h2>
                                 <div className="space-y-6 relative z-10">
@@ -162,7 +162,7 @@ export default function VTATool() {
                         {/* RESULTS PANEL */}
                         <div className="lg:col-span-7">
                             {!showResults ? (
-                                <div className="h-full min-h-[400px] border border-zinc-400 bg-white/5 rounded-2xl flex flex-col items-center justify-center p-8 text-center relative overflow-hidden backdrop-blur-xl">
+                                <div className="h-full min-h-[400px] border border-zinc-400 bg-white/5 rounded-2xl flex flex-col items-center justify-center p-8 text-center relative overflow-hidden backdrop-blur-xl shrink-0">
                                     <div className="w-24 h-24 bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
                                         <FileSearch size={40} className="text-blue-900 font-extrabold font-semibold" />
                                     </div>

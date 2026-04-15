@@ -179,7 +179,7 @@ const Dropdown = ({ label, children }: { label: React.ReactNode, children: React
                         transition={{ duration: 0.2 }}
                         className="absolute top-full left-0 w-64 pt-2"
                     >
-                        <div className="bg-white border border-zinc-400 rounded-xl overflow-hidden shadow-xl">
+                        <div className="bg-white border border-zinc-400 rounded-xl overflow-hidden shadow-xl shrink-0">
                             <div className="py-2">
                                 {children}
                             </div>

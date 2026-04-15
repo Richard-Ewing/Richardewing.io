@@ -57,7 +57,7 @@ const NewsletterSection = () => {
         <section ref={ref} className={`py-24 px-6 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <div className="max-w-4xl mx-auto">
 
-                <div className="p-12 rounded-3xl bg-white border border-zinc-400 text-center relative overflow-hidden shadow-lg">
+                <div className="p-12 rounded-3xl bg-white border border-zinc-400 text-center relative overflow-hidden shadow-lg shrink-0">
 
                     {/* Background pattern */}
                     <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#7c3aed_1px,transparent_1px)] [background-size:20px_20px]" />

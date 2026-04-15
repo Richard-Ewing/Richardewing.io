@@ -352,7 +352,7 @@ export default function AuditInterview() {
                             </GlowCard>
 
                             {/* Middle Col: Radar Chart */}
-                            <div className="bg-white/80 border border-zinc-400 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden">
+                            <div className="bg-white/80 border border-zinc-400 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden shrink-0">
                                 <span className="absolute top-4 left-4 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">Attribute Geometry</span>
                                 <div className="w-64 h-64">
                                     <RadarChart scores={scores} />

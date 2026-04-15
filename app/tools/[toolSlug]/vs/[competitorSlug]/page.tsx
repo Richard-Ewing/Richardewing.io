@@ -164,7 +164,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                         <h3 className="text-3xl font-bold mb-3">Head-To-Head Architecture</h3>
                         <p className="text-zinc-900">Why {competitor.name} fails in the boardroom.</p>
                     </div>
-                    <div className="bg-white border border-zinc-400 rounded-2xl overflow-hidden">
+                    <div className="bg-white border border-zinc-400 rounded-2xl overflow-hidden shrink-0">
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-white/5 border-b border-zinc-400">
