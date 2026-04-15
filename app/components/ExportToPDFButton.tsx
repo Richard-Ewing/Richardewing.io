@@ -62,7 +62,43 @@ export function ExportToPDFButton({
 
             element.style.width = '1024px';
             element.style.maxWidth = '1024px';
-            // Slight delay to allow browser to reflow layout to 1024px
+            
+            // Allow exact DOM reflow so we can calculate pixel heights
+            await new Promise(resolve => setTimeout(resolve, 50));
+
+            // PAGE BREAK SYNCHRONIZATION LOGIC
+            // Ensure no visual blocks are violently sliced horizontally during PDF chunking.
+            const A4_HEIGHT_IN_PX = 1024 * (297 / 210); // ~1448.23px
+            const blocks = element.querySelectorAll('.rounded-3xl, .rounded-2xl, .rounded-xl, .capsule-container, .border');
+            
+            blocks.forEach((node) => {
+                const el = node as HTMLElement;
+                const style = window.getComputedStyle(el);
+                if (style.position === 'absolute' || style.position === 'fixed') return;
+                
+                const targetRect = element.getBoundingClientRect(); // update root per iteration handles shifting
+                const rect = el.getBoundingClientRect();
+                const relativeTop = rect.top - targetRect.top;
+                const height = rect.height;
+
+                // Ignore elements that fill most of a page anyway, they are impossible to push cleanly.
+                if (height === 0 || height > (A4_HEIGHT_IN_PX * 0.8)) return;
+
+                const startPage = Math.floor(relativeTop / A4_HEIGHT_IN_PX);
+                const endPage = Math.floor((relativeTop + height) / A4_HEIGHT_IN_PX);
+
+                if (startPage !== endPage) {
+                    const nextPageStartPx = (startPage + 1) * A4_HEIGHT_IN_PX;
+                    // Push the element past the break line, plus a 40px clean margin to prevent visual splicing
+                    const pushAmount = nextPageStartPx - relativeTop + 40;
+                    
+                    const currentMargin = parseFloat(style.marginTop) || 0;
+                    el.setAttribute('data-pdf-margin-top', el.style.marginTop);
+                    el.style.marginTop = `${currentMargin + pushAmount}px`;
+                }
+            });
+
+            // Slight delay to allow browser to complete final reflow logic 
             await new Promise(resolve => setTimeout(resolve, 150));
 
             // 2) Snapshot the rigid DOM layer into a binary Canvas via html-to-image
@@ -93,6 +129,13 @@ export function ExportToPDFButton({
                 if (node.style) {
                     node.style.removeProperty('transition');
                     node.style.removeProperty('animation');
+                }
+            });
+            blocks.forEach(node => {
+                const el = node as HTMLElement;
+                if (el.hasAttribute('data-pdf-margin-top')) {
+                    el.style.marginTop = el.getAttribute('data-pdf-margin-top') || '';
+                    el.removeAttribute('data-pdf-margin-top');
                 }
             });
             // 4) Convert Canvas to jsPDF standard format

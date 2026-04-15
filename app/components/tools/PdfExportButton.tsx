@@ -56,6 +56,35 @@ export default function PdfExportButton({
           }
       });
 
+      // PAGE BREAK SYNCHRONIZATION LOGIC
+      const A4_HEIGHT_IN_PX = 1024 * (297 / 210); // ~1448.23px
+      const blocks = targetEl.querySelectorAll('.rounded-3xl, .rounded-2xl, .rounded-xl, .capsule-container, .border');
+      
+      blocks.forEach((node) => {
+          const el = node as HTMLElement;
+          const style = window.getComputedStyle(el);
+          if (style.position === 'absolute' || style.position === 'fixed') return;
+          
+          const targetRect = targetEl.getBoundingClientRect(); 
+          const rect = el.getBoundingClientRect();
+          const relativeTop = rect.top - targetRect.top;
+          const height = rect.height;
+
+          if (height === 0 || height > (A4_HEIGHT_IN_PX * 0.8)) return;
+
+          const startPage = Math.floor(relativeTop / A4_HEIGHT_IN_PX);
+          const endPage = Math.floor((relativeTop + height) / A4_HEIGHT_IN_PX);
+
+          if (startPage !== endPage) {
+              const nextPageStartPx = (startPage + 1) * A4_HEIGHT_IN_PX;
+              const pushAmount = nextPageStartPx - relativeTop + 40;
+              
+              const currentMargin = parseFloat(style.marginTop) || 0;
+              el.setAttribute('data-pdf-margin-top', el.style.marginTop);
+              el.style.marginTop = `${currentMargin + pushAmount}px`;
+          }
+      });
+
       await new Promise(resolve => setTimeout(resolve, 150));
 
       const imgData = await htmlToImage.toPng(targetEl, {
@@ -80,6 +109,13 @@ export default function PdfExportButton({
           if (node.style) {
               node.style.removeProperty('transition');
               node.style.removeProperty('animation');
+          }
+      });
+      blocks.forEach(node => {
+          const el = node as HTMLElement;
+          if (el.hasAttribute('data-pdf-margin-top')) {
+              el.style.marginTop = el.getAttribute('data-pdf-margin-top') || '';
+              el.removeAttribute('data-pdf-margin-top');
           }
       });
 
