@@ -114,7 +114,7 @@ export function ExportToPDFButton({
 
             pdf.save(fileName);
             
-        } catch (error) {
+        } catch (error: any) {
             console.error('[PDF_ENGINE] Failed to synthesize PDF document:', error);
             alert('PDF Generation failed: ' + String(error.message || error));
         } finally {
