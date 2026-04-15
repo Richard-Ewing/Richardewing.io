@@ -84,23 +84,57 @@ export function ExportToPDFButton({
             const A4_RATIO = 297 / 210; // ~1.4143
             const PAGE_HEIGHT = Math.floor(PAGE_WIDTH * A4_RATIO); // ~1448px
 
-            // Collect bottom edges of all block-level descendants
-            const allElements = element.querySelectorAll('div, section, table, ul, ol, h1, h2, h3, h4, p, article, header, footer, main, aside, nav, figure, blockquote, li');
-            const bottomEdges: number[] = [];
+            // Collect gap intervals between block-level sections.
+            // A "gap" is the vertical space between one element's bottom edge
+            // and the next sibling element's top edge. We cut in these gaps
+            // to avoid slicing through any visible card or section.
+            interface GapInfo { y: number; size: number; depth: number; }
+            const gaps: GapInfo[] = [];
+
+            // Walk containers and find gaps between their direct children
+            const walkForGaps = (container: HTMLElement, depth: number) => {
+                const children = Array.from(container.children) as HTMLElement[];
+                for (let i = 0; i < children.length - 1; i++) {
+                    const current = children[i];
+                    const next = children[i + 1];
+                    const curStyle = window.getComputedStyle(current);
+                    const nextStyle = window.getComputedStyle(next);
+                    if (curStyle.display === 'none' || nextStyle.display === 'none') continue;
+                    if (curStyle.position === 'fixed' || nextStyle.position === 'fixed') continue;
+                    
+                    const curRect = current.getBoundingClientRect();
+                    const nextRect = next.getBoundingClientRect();
+                    const gapTop = Math.round(curRect.bottom - containerRect.top);
+                    const gapBottom = Math.round(nextRect.top - containerRect.top);
+                    const gapSize = gapBottom - gapTop;
+                    
+                    if (gapTop > 0 && gapTop < totalHeight && gapSize >= 0) {
+                        // Cut point is the middle of the gap
+                        gaps.push({ y: gapTop + Math.max(0, gapSize / 2), size: gapSize, depth });
+                    }
+                }
+                // Recurse into children to find inner gaps (lower priority = higher depth)
+                children.forEach(child => {
+                    if (child.children.length > 1) {
+                        walkForGaps(child, depth + 1);
+                    }
+                });
+            };
             
-            allElements.forEach(el => {
-                const node = el as HTMLElement;
-                const style = window.getComputedStyle(node);
-                if (style.display === 'none' || style.position === 'fixed') return;
-                const rect = node.getBoundingClientRect();
+            walkForGaps(element, 0);
+
+            // Also add bottom edges of direct children as fallback cut points
+            const directChildren = Array.from(element.children) as HTMLElement[];
+            directChildren.forEach(child => {
+                const rect = child.getBoundingClientRect();
                 const bottom = Math.round(rect.bottom - containerRect.top);
                 if (bottom > 0 && bottom < totalHeight) {
-                    bottomEdges.push(bottom);
+                    gaps.push({ y: bottom, size: 8, depth: 0 }); // Direct child boundaries are high priority
                 }
             });
 
-            // Deduplicate and sort
-            const uniqueEdges = [...new Set(bottomEdges)].sort((a, b) => a - b);
+            // Sort by position
+            gaps.sort((a, b) => a.y - b.y);
 
             // For each page boundary, find the best slice point
             const slicePoints: number[] = [0]; // Start of first page
@@ -109,19 +143,23 @@ export function ExportToPDFButton({
             while (pageIndex * PAGE_HEIGHT < totalHeight) {
                 const idealCut = pageIndex * PAGE_HEIGHT;
                 
-                // Search for the nearest element bottom edge that's ABOVE the ideal cut
-                // but within a reasonable range (don't go more than 35% back)
-                const minCut = idealCut - PAGE_HEIGHT * 0.35;
+                // Search window: don't go more than 25% back from the ideal cut
+                const minCut = idealCut - PAGE_HEIGHT * 0.25;
                 
-                let bestCut = idealCut; // fallback: hard cut
-                let bestDistance = Infinity;
+                let bestCut = idealCut; // fallback: hard cut at exact boundary
+                let bestScore = -Infinity;
                 
-                for (const edge of uniqueEdges) {
-                    if (edge >= minCut && edge <= idealCut) {
-                        const distance = idealCut - edge;
-                        if (distance < bestDistance) {
-                            bestDistance = distance;
-                            bestCut = edge;
+                for (const gap of gaps) {
+                    if (gap.y >= minCut && gap.y <= idealCut) {
+                        // Score: prefer gaps that are close to idealCut AND shallow depth AND large gap size
+                        const proximityScore = 1 - ((idealCut - gap.y) / (PAGE_HEIGHT * 0.25)); // 0..1, higher = closer to boundary
+                        const depthScore = 1 / (1 + gap.depth); // 1 for depth 0, 0.5 for depth 1, etc.
+                        const gapScore = Math.min(gap.size / 24, 1); // Normalize gap size, cap at 24px
+                        
+                        const score = (proximityScore * 0.5) + (depthScore * 0.35) + (gapScore * 0.15);
+                        if (score > bestScore) {
+                            bestScore = score;
+                            bestCut = gap.y;
                         }
                     }
                 }

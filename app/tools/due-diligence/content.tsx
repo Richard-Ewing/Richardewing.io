@@ -180,36 +180,68 @@ export default function DueDiligenceTool() {
             const A4_RATIO = 297 / 210;
             const PAGE_HEIGHT = Math.floor(PAGE_WIDTH * A4_RATIO);
 
-            const allElements = element.querySelectorAll('div, section, table, ul, ol, h1, h2, h3, h4, p, article, header, footer');
-            const bottomEdges: number[] = [];
+            interface GapInfo { y: number; size: number; depth: number; }
+            const gaps: GapInfo[] = [];
+
+            const walkForGaps = (container: HTMLElement, depth: number) => {
+                const children = Array.from(container.children) as HTMLElement[];
+                for (let i = 0; i < children.length - 1; i++) {
+                    const current = children[i];
+                    const next = children[i + 1];
+                    const curStyle = window.getComputedStyle(current);
+                    const nextStyle = window.getComputedStyle(next);
+                    if (curStyle.display === 'none' || nextStyle.display === 'none') continue;
+                    if (curStyle.position === 'fixed' || nextStyle.position === 'fixed') continue;
+                    
+                    const curRect = current.getBoundingClientRect();
+                    const nextRect = next.getBoundingClientRect();
+                    const gapTop = Math.round(curRect.bottom - containerRect.top);
+                    const gapBottom = Math.round(nextRect.top - containerRect.top);
+                    const gapSize = gapBottom - gapTop;
+                    
+                    if (gapTop > 0 && gapTop < totalHeight && gapSize >= 0) {
+                        gaps.push({ y: gapTop + Math.max(0, gapSize / 2), size: gapSize, depth });
+                    }
+                }
+                children.forEach(child => {
+                    if (child.children.length > 1) {
+                        walkForGaps(child, depth + 1);
+                    }
+                });
+            };
             
-            allElements.forEach(el => {
-                const node = el as HTMLElement;
-                const style = window.getComputedStyle(node);
-                if (style.display === 'none' || style.position === 'fixed') return;
-                const rect = node.getBoundingClientRect();
+            walkForGaps(element, 0);
+
+            const directChildren = Array.from(element.children) as HTMLElement[];
+            directChildren.forEach(child => {
+                const rect = child.getBoundingClientRect();
                 const bottom = Math.round(rect.bottom - containerRect.top);
                 if (bottom > 0 && bottom < totalHeight) {
-                    bottomEdges.push(bottom);
+                    gaps.push({ y: bottom, size: 8, depth: 0 });
                 }
             });
 
-            const uniqueEdges = [...new Set(bottomEdges)].sort((a, b) => a - b);
+            gaps.sort((a, b) => a.y - b.y);
+
             const slicePoints: number[] = [0];
             let pageIndex = 1;
             
             while (pageIndex * PAGE_HEIGHT < totalHeight) {
                 const idealCut = pageIndex * PAGE_HEIGHT;
-                const minCut = idealCut - PAGE_HEIGHT * 0.35;
+                const minCut = idealCut - PAGE_HEIGHT * 0.25;
                 let bestCut = idealCut;
-                let bestDistance = Infinity;
+                let bestScore = -Infinity;
                 
-                for (const edge of uniqueEdges) {
-                    if (edge >= minCut && edge <= idealCut) {
-                        const distance = idealCut - edge;
-                        if (distance < bestDistance) {
-                            bestDistance = distance;
-                            bestCut = edge;
+                for (const gap of gaps) {
+                    if (gap.y >= minCut && gap.y <= idealCut) {
+                        const proximityScore = 1 - ((idealCut - gap.y) / (PAGE_HEIGHT * 0.25));
+                        const depthScore = 1 / (1 + gap.depth);
+                        const gapScore = Math.min(gap.size / 24, 1);
+                        
+                        const score = (proximityScore * 0.5) + (depthScore * 0.35) + (gapScore * 0.15);
+                        if (score > bestScore) {
+                            bestScore = score;
+                            bestCut = gap.y;
                         }
                     }
                 }
