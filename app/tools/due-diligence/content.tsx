@@ -559,7 +559,7 @@ export default function DueDiligenceTool() {
                                                 {results.redFlags.map((flag, i) => (
                                                     <li key={i} className="flex items-start gap-3">
                                                         <div className="mt-1 w-1.5 h-1.5 rounded-full bg-red-500 flex-shrink-0" />
-                                                        <span className="text-red-200 font-semibold">{flag}</span>
+                                                        <span className="text-red-800 font-bold font-semibold">{flag}</span>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -627,8 +627,8 @@ export default function DueDiligenceTool() {
                                                             const widths = ["w-full", "w-[90%]", "w-[95%]"];
                                                             const width = widths[j % widths.length];
                                                             const colorClasses = [
-                                                                "from-red-500/20 to-orange-500/20 border-orange-500/50 text-orange-200",
-                                                                "from-orange-500/20 to-yellow-500/20 border-yellow-500/50 text-yellow-200",
+                                                                "from-red-500/20 to-orange-500/20 border-orange-500/50 text-orange-800 font-bold",
+                                                                "from-orange-500/20 to-yellow-500/20 border-yellow-500/50 text-yellow-800 font-bold",
                                                                 "from-blue-500/20 to-cyan-500/20 border-cyan-500/50 text-cyan-700"
                                                             ];
                                                             const color = colorClasses[i % colorClasses.length];

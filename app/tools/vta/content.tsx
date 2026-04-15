@@ -221,7 +221,7 @@ export default function VTATool() {
                                                 </div>
                                                 <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-lg">
                                                     <h4 className="text-red-800 font-semibold font-semibold mb-2">Executive Summary</h4>
-                                                    <p className="text-red-200/80 text-sm leading-relaxed">
+                                                    <p className="text-red-800 font-bold text-sm leading-relaxed">
                                                         Your AI is functionally a "Negative Carry" asset. While the raw API cost might be fractions of a cent per token, your true cost is <strong>${(effectiveCostPerInference).toFixed(2)}</strong> per inference due to the {driftRate}% drift anomaly rate. Unless you implement an "Execution Layer" to enforce deterministic bounding, this feature will chronically bleed EBITDA as you scale.
                                                     </p>
                                                 </div>

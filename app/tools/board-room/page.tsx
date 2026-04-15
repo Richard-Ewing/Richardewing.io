@@ -334,7 +334,7 @@ export default function BoardRoom() {
                                             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
                                             Active Threat Briefing
                                         </div>
-                                        <Link href="/blog/model-collapse-financial-modeling" className="text-sm font-medium text-zinc-950 hover:text-rose-300 transition-colors block leading-tight">
+                                        <Link href="/blog/model-collapse-financial-modeling" className="text-sm font-medium text-zinc-950 hover:text-rose-800 font-bold transition-colors block leading-tight">
                                            Read the CIO.com framework on mitigating this depreciation schedule.
                                         </Link>
                                     </div>

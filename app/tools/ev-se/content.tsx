@@ -711,8 +711,8 @@ export default function EVSETool() {
                                                     const width = widths[j % widths.length];
                                                     const colorClasses = [
                                                         "from-purple-500/20 to-pink-500/20 border-purple-500/50 text-purple-700",
-                                                        "from-pink-500/20 to-rose-500/20 border-pink-500/50 text-pink-200",
-                                                        "from-rose-500/20 to-red-500/20 border-rose-500/50 text-red-200"
+                                                        "from-pink-500/20 to-rose-500/20 border-pink-500/50 text-pink-800 font-bold",
+                                                        "from-rose-500/20 to-red-500/20 border-rose-500/50 text-red-800 font-bold"
                                                     ];
                                                     const color = colorClasses[i % colorClasses.length];
                                                     

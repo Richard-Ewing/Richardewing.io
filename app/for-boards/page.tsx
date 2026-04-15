@@ -49,7 +49,7 @@ export default function ForBoardsPage() {
                                 <div key={i} className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-6">
                                     <h3 className="text-lg font-bold text-zinc-950 mb-2">&ldquo;{q.question}&rdquo;</h3>
                                     <p className="text-zinc-900 mb-3">{q.answer}</p>
-                                    <Link href={q.link} className="text-xs font-mono text-amber-400 hover:text-amber-300 uppercase tracking-widest">
+                                    <Link href={q.link} className="text-xs font-mono text-amber-400 hover:text-amber-800 font-bold uppercase tracking-widest">
                                         Measure with {q.metric} →
                                     </Link>
                                 </div>

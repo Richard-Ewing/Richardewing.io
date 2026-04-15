@@ -99,7 +99,7 @@ export default function RagChunkingContent() {
         return (
             <>
                 <span>{uniqueText}</span>
-                <span className="bg-yellow-500/30 border border-yellow-500/50 text-yellow-200 px-0.5 rounded" title="This section duplicates into the next chunk window">
+                <span className="bg-yellow-500/30 border border-yellow-500/50 text-yellow-800 font-bold px-0.5 rounded" title="This section duplicates into the next chunk window">
                     {overlapText}
                 </span>
             </>

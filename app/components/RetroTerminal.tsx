@@ -70,7 +70,7 @@ AUTHOR
                 className="group flex items-center gap-3 px-5 py-3 bg-white/60 border border-green-500/30 rounded-lg hover:border-green-500/60 hover:bg-white/80 transition-all font-mono text-sm"
             >
                 <span className="text-green-500 opacity-70 group-hover:opacity-100 transition-opacity">&gt;_</span>
-                <span className="text-green-400 group-hover:text-green-300 transition-colors">Terminal Mode</span>
+                <span className="text-green-400 group-hover:text-green-800 font-bold transition-colors">Terminal Mode</span>
                 <span className="text-green-500/40 text-xs ml-2">Click to activate</span>
             </button>
         );

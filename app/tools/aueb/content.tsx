@@ -1048,7 +1048,7 @@ export default function AUEBTool() {
                                                                 const colorClasses = [
                                                                     "from-cyan-500/20 to-blue-500/20 border-cyan-500/50 text-cyan-700",
                                                                     "from-blue-500/20 to-indigo-500/20 border-blue-500/50 text-blue-700",
-                                                                    "from-indigo-500/20 to-violet-500/20 border-indigo-500/50 text-indigo-200"
+                                                                    "from-indigo-500/20 to-violet-500/20 border-indigo-500/50 text-indigo-800 font-bold"
                                                                 ];
                                                                 const color = colorClasses[i % colorClasses.length];
                                                                 

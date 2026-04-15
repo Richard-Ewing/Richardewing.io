@@ -833,8 +833,8 @@ Migrate from Heroku to AWS"
                                                     const width = widths[j % widths.length];
                                                     // Progressive colors down the months
                                                     const colorClasses = [
-                                                        "from-red-500/20 to-orange-500/20 border-orange-500/50 text-orange-200",
-                                                        "from-orange-500/20 to-yellow-500/20 border-yellow-500/50 text-yellow-200",
+                                                        "from-red-500/20 to-orange-500/20 border-orange-500/50 text-orange-800 font-bold",
+                                                        "from-orange-500/20 to-yellow-500/20 border-yellow-500/50 text-yellow-800 font-bold",
                                                         "from-blue-500/20 to-cyan-500/20 border-cyan-500/50 text-cyan-700"
                                                     ];
                                                     const color = colorClasses[i % colorClasses.length];

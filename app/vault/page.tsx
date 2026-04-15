@@ -293,7 +293,7 @@ export default async function VaultPage() {
                                                 <span className="px-3 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-medium uppercase font-bold tracking-widest rounded-full">Admin</span>
                                             </div>
                                             <p className="text-sm text-zinc-900 font-medium mb-4">Manage your B2B enterprise license, view your team member seating ledger, and copy your invite URL.</p>
-                                            <Link href="/vault/team" className="inline-flex items-center text-xs font-bold text-amber-400 uppercase tracking-widest hover:text-amber-300">
+                                            <Link href="/vault/team" className="inline-flex items-center text-xs font-bold text-amber-400 uppercase tracking-widest hover:text-amber-800 font-bold">
                                                 Open Admin Dashboard <ChevronRight className="w-3 h-3 ml-1" />
                                             </Link>
                                         </div>

@@ -380,7 +380,7 @@ export default function CloudContent() {
                                             <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.5)] z-10"></div>
                                             
                                             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                <div className={`px-3 py-1 rounded-md text-xs font-medium uppercase font-mono tracking-widest shrink-0 inline-block w-fit ${plan.month === 1 ? 'bg-rose-500/20 text-rose-300 border border-rose-500/50 font-bold' : 'bg-white/5 text-zinc-800'}`}>
+                                                <div className={`px-3 py-1 rounded-md text-xs font-medium uppercase font-mono tracking-widest shrink-0 inline-block w-fit ${plan.month === 1 ? 'bg-rose-500/20 text-rose-800 font-bold border border-rose-500/50 font-bold' : 'bg-white/5 text-zinc-800'}`}>
                                                     Month {plan.month} {plan.month === 1 && '— CRITICAL DEPENDENCY'}
                                                 </div>
                                                 <div className="font-bold text-zinc-950 text-base">
