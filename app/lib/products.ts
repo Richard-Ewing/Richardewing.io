@@ -31,7 +31,7 @@ export const PRODUCTS: Record<string, Product> = {
         description: 'Unlimited access to all diagnostic tools (PDI, AUEB, APER, EV-SE). Generate unlimited board-ready reports.',
         price: 19900, // $199.00
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/TODO_PASTE_YOUR_199_STRIPE_LINK_HERE', // <-- USER LOG INTO STRIPE AND PASTE LINK HERE
+        paymentLink: 'https://buy.stripe.com/9B6aEQ1My3jceW9b8c2B20D',
     },
     // --- CURRICULUM ---
     single_track: {
