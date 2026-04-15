@@ -145,7 +145,7 @@ export default function HomeContent() {
                         <GlowCard className="p-8 h-full bg-purple-50 border-purple-200" glowColor="purple">
                             <div className="flex justify-between items-start mb-6">
                                 <div className="text-2xl font-bold text-zinc-900 font-grotesk">Exogram</div>
-                                <div className="px-3 py-1 bg-green-50 text-green-600 text-[10px] font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
+                                <div className="px-3 py-1 bg-green-50 text-green-600 text-xs font-medium font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
                                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                                     Online
                                 </div>

@@ -24,7 +24,7 @@ export default function CopilotROIvsGitClearPage() {
         <main className="pt-20 bg-white min-h-screen">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/compare" className="hover:text-fuchsia-400">Compare</Link><span>/</span><span className="text-fuchsia-400 font-bold">Copilot ROI vs GitClear</span>
                     </div>
 

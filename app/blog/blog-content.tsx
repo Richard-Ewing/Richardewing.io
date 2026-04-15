@@ -66,7 +66,7 @@ export default function BlogContent() {
                     <div className="flex flex-wrap gap-2 justify-center">
                         <button
                             onClick={() => setSelectedCategory(null)}
-                            className={`text-[10px] font-mono px-2.5 py-1 rounded-full border transition-colors ${!selectedCategory ? 'text-cyan-400 bg-cyan-500/20 border-cyan-500/40' : 'text-zinc-950 bg-zinc-500/5 border-zinc-500/20 hover:text-zinc-900'}`}
+                            className={`text-xs font-medium font-mono px-2.5 py-1 rounded-full border transition-colors ${!selectedCategory ? 'text-cyan-400 bg-cyan-500/20 border-cyan-500/40' : 'text-zinc-950 bg-zinc-500/5 border-zinc-500/20 hover:text-zinc-900'}`}
                         >
                             All ({allArticles.length})
                         </button>
@@ -74,7 +74,7 @@ export default function BlogContent() {
                             <button
                                 key={cat.name}
                                 onClick={() => setSelectedCategory(selectedCategory === cat.name ? null : cat.name)}
-                                className={`text-[10px] font-mono px-2.5 py-1 rounded-full border transition-colors ${selectedCategory === cat.name ? 'text-cyan-400 bg-cyan-500/20 border-cyan-500/40' : categoryColors[cat.name] || 'text-zinc-900 bg-zinc-500/10 border-zinc-500/20'} hover:opacity-80`}
+                                className={`text-xs font-medium font-mono px-2.5 py-1 rounded-full border transition-colors ${selectedCategory === cat.name ? 'text-cyan-400 bg-cyan-500/20 border-cyan-500/40' : categoryColors[cat.name] || 'text-zinc-900 bg-zinc-500/10 border-zinc-500/20'} hover:opacity-80`}
                             >
                                 {cat.name} ({cat.count})
                             </button>
@@ -102,8 +102,8 @@ export default function BlogContent() {
                                 <Link key={article.slug} href={`/blog/${article.slug}`}
                                     className="group block rounded-2xl border border-zinc-400 bg-white/[0.03] p-8 hover:border-cyan-500/30 hover:bg-white/[0.05] transition-all">
                                     <div className="flex items-center gap-3 mb-4">
-                                        <span className={`text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded-full border ${categoryColors[article.category]}`}>{article.category}</span>
-                                        <span className="text-[10px] text-zinc-950">{article.readTime} read</span>
+                                        <span className={`text-xs font-medium font-mono uppercase tracking-widest px-2 py-1 rounded-full border ${categoryColors[article.category]}`}>{article.category}</span>
+                                        <span className="text-xs font-medium text-zinc-950">{article.readTime} read</span>
                                     </div>
                                     <h3 className="text-xl font-grotesk font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors mb-3">{article.title}</h3>
                                     <p className="text-sm text-zinc-900 leading-relaxed mb-4">{article.excerpt}</p>
@@ -139,7 +139,7 @@ export default function BlogContent() {
                                         <details key={cat.name} className="group/accordion rounded-xl border border-zinc-400 bg-zinc-50 overflow-hidden" open={!!search || !!selectedCategory}>
                                             <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/[0.04] transition-colors select-none marker:content-none [&::-webkit-details-marker]:hidden">
                                                 <div className="flex items-center gap-4">
-                                                    <span className={`text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border ${categoryColors[cat.name] || 'text-zinc-900 bg-zinc-500/10 border-zinc-500/20'}`}>
+                                                    <span className={`text-xs font-medium font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border ${categoryColors[cat.name] || 'text-zinc-900 bg-zinc-500/10 border-zinc-500/20'}`}>
                                                         {cat.name}
                                                     </span>
                                                     <span className="text-sm font-bold text-zinc-950 group-hover/accordion:text-cyan-300 transition-colors flex-1">{cat.name} Library</span>
@@ -156,9 +156,9 @@ export default function BlogContent() {
                                                         className="group flex items-start gap-4 sm:gap-6 p-4 rounded-xl border border-transparent hover:border-zinc-400 hover:bg-white/[0.03] transition-all">
                                                         <div className="flex-1">
                                                             <div className="flex items-center gap-3 mb-1.5">
-                                                                <span className="text-[10px] font-mono text-zinc-900">{article.readTime}</span>
-                                                                <span className="text-[10px] text-zinc-900">·</span>
-                                                                <span className="text-[10px] font-mono text-zinc-900">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                                                                <span className="text-xs font-medium font-mono text-zinc-900">{article.readTime}</span>
+                                                                <span className="text-xs font-medium text-zinc-900">·</span>
+                                                                <span className="text-xs font-medium font-mono text-zinc-900">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                                                             </div>
                                                             <h3 className="text-base font-grotesk font-bold text-zinc-800 group-hover:text-cyan-300 transition-colors mb-1">{article.title}</h3>
                                                             <p className="text-sm text-zinc-950 leading-relaxed line-clamp-2">{article.excerpt}</p>

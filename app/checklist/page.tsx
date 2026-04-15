@@ -217,11 +217,11 @@ export default function ChecklistPage() {
                                                         </p>
                                                         <div className="flex flex-col sm:flex-row gap-3">
                                                             <div className="flex-1 rounded-lg bg-emerald-500/5 border border-emerald-500/10 p-3">
-                                                                <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1">🎯 Action</div>
+                                                                <div className="text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest mb-1">🎯 Action</div>
                                                                 <p className="text-xs text-zinc-800">{item.action}</p>
                                                             </div>
                                                             <div className="sm:w-48 rounded-lg bg-zinc-50 border border-zinc-400 p-3">
-                                                                <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-2">Scoring</div>
+                                                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Scoring</div>
                                                                 <div className="space-y-1">
                                                                     <div className="flex items-center gap-2 text-xs">
                                                                         <div className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
@@ -280,22 +280,22 @@ export default function ChecklistPage() {
                             <Link href="/tools/pdi" className="card p-4 hover:border-cyan-500/30 transition-all">
                                 <div className="text-lg mb-1">📊</div>
                                 <div className="text-sm font-bold text-zinc-900">PDI Calculator</div>
-                                <div className="text-[10px] text-zinc-900">Technical Debt Score</div>
+                                <div className="text-xs font-medium text-zinc-900">Technical Debt Score</div>
                             </Link>
                             <Link href="/tools/aper" className="card p-4 hover:border-cyan-500/30 transition-all">
                                 <div className="text-lg mb-1">⚡</div>
                                 <div className="text-sm font-bold text-zinc-900">APER Calculator</div>
-                                <div className="text-[10px] text-zinc-900">Revenue Per Engineer</div>
+                                <div className="text-xs font-medium text-zinc-900">Revenue Per Engineer</div>
                             </Link>
                             <Link href="/tools/aueb" className="card p-4 hover:border-cyan-500/30 transition-all">
                                 <div className="text-lg mb-1">💰</div>
                                 <div className="text-sm font-bold text-zinc-900">AUEB Calculator</div>
-                                <div className="text-[10px] text-zinc-900">AI Unit Economics</div>
+                                <div className="text-xs font-medium text-zinc-900">AI Unit Economics</div>
                             </Link>
                             <Link href="/tools/ev-se" className="card p-4 hover:border-cyan-500/30 transition-all">
                                 <div className="text-lg mb-1">🧮</div>
                                 <div className="text-sm font-bold text-zinc-900">EV-SE Calculator</div>
-                                <div className="text-[10px] text-zinc-900">Engineering Valuation</div>
+                                <div className="text-xs font-medium text-zinc-900">Engineering Valuation</div>
                             </Link>
                         </div>
                     </div>
@@ -308,7 +308,7 @@ export default function ChecklistPage() {
                             <a href="/api/buy/strategy_session" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                                 Book Strategy Session →
                             </a>
-                            <a href="/api/buy/full_audit" className="px-8 py-4 border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
+                            <a href="/api/buy/full_audit" className="px-8 py-4 border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all">
                                 Full R&amp;D Audit ($7,500) →
                             </a>
                         </div>

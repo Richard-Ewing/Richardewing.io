@@ -15,7 +15,7 @@ export default function ExogramPage() {
 
             {/* Header */}
             <div className="mb-12">
-                <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+                <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                     <span>Intelligence</span><span>/</span><span className="text-purple-400 font-bold">Exogram</span>
                 </div>
                 <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 tracking-tight mb-4">
@@ -40,7 +40,7 @@ export default function ExogramPage() {
                                     <div>
                                         <div className="flex items-center gap-3 mb-2">
                                             <h2 className="text-2xl font-bold text-zinc-950 font-grotesk">Exogram</h2>
-                                            <div className="px-3 py-1 bg-green-500/20 text-green-400 text-[10px] font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
+                                            <div className="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-medium font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
                                                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                                                 Online
                                             </div>

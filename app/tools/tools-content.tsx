@@ -250,7 +250,7 @@ export default function ToolsContent() {
             <a href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-cyan-600/90 text-white font-bold tracking-widest uppercase hover:bg-cyan-500 transition-colors">
               Book a $2,500 Insolvency Diagnostic →
             </a>
-            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg border border-zinc-300 text-zinc-950 font-bold tracking-widest uppercase hover:bg-white/5 transition-colors">
+            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg border border-zinc-500 text-zinc-950 font-bold tracking-widest uppercase hover:bg-white/5 transition-colors">
               Deploy Deterministic AI Flow →
             </a>
           </div>

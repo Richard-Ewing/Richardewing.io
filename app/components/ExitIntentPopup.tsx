@@ -117,7 +117,7 @@ export default function ExitIntentPopup() {
                         {/* Domain Preview */}
                         <div className="flex flex-wrap gap-1.5 mb-5 justify-center">
                             {['⚡ Velocity', '🏗️ Tech Debt', '🤖 AI Economics', '💰 Revenue', '👥 People', '📊 Strategic'].map((d, i) => (
-                                <span key={i} className="text-[10px] px-2 py-1 rounded-full bg-white/5 border border-zinc-400 text-zinc-900 font-mono">{d}</span>
+                                <span key={i} className="text-xs font-medium px-2 py-1 rounded-full bg-white/5 border border-zinc-400 text-zinc-900 font-mono">{d}</span>
                             ))}
                         </div>
 
@@ -144,8 +144,8 @@ export default function ExitIntentPopup() {
                         </form>
 
                         <div className="flex items-center justify-between mt-4 pt-3 border-t border-zinc-400">
-                            <p className="text-[10px] text-zinc-950">Zero spam · Used by 2,000+ executives</p>
-                            <a href="/tools" className="text-[10px] text-zinc-800 hover:text-cyan-400 transition-colors">
+                            <p className="text-xs font-medium text-zinc-950">Zero spam · Used by 2,000+ executives</p>
+                            <a href="/tools" className="text-xs font-medium text-zinc-800 hover:text-cyan-400 transition-colors">
                                 Or try free tools →
                             </a>
                         </div>

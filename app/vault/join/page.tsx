@@ -117,7 +117,7 @@ export default function JoinTeamPage() {
                             </button>
                         )}
                         
-                        <div className="mt-6 flex items-center justify-center gap-2 text-[10px] text-zinc-800 font-mono uppercase tracking-widest">
+                        <div className="mt-6 flex items-center justify-center gap-2 text-xs font-medium text-zinc-800 font-mono uppercase tracking-widest">
                             <ShieldCheck className="w-3 h-3" /> Encrypted Code Verification
                         </div>
                     </form>

@@ -21,7 +21,7 @@ export default function LogisticsPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/industries" className="hover:text-cyan-400">Industries</Link><span>/</span><span className="text-lime-400 font-bold">Logistics</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
@@ -49,7 +49,7 @@ export default function LogisticsPage() {
                         </ul>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/tools/aueb" className="px-6 py-3 rounded-lg bg-gradient-to-r from-lime-500 to-green-600 text-white font-bold hover:opacity-90">Free AUEB Calculator →</Link>
-                            <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-300 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
+                            <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     </div>
                 </div>

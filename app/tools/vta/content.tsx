@@ -65,7 +65,7 @@ export default function VTATool() {
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-950 mb-6 tracking-tight">
                                 Volatility Tax Auditor <span className="text-blue-500">(VTA)</span>
                             </h1>
-                            <p className="text-xl text-slate-400 mb-8 leading-relaxed">
+                            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
                                 Identify the hidden labor cost "tax" destroying your AI margins. Calculate the exact cost of human-in-the-loop verification required to mitigate AI response drift.
                             </p>
                         </div>
@@ -80,7 +80,7 @@ export default function VTATool() {
                                 <div className="space-y-6 relative z-10">
                                     <div>
                                         <label className="block text-sm font-medium text-zinc-800 mb-2">Monthly Target Inferences</label>
-                                        <p className="text-xs text-slate-500 mb-3">Total queries hitting your AI service</p>
+                                        <p className="text-xs text-slate-700 mb-3">Total queries hitting your AI service</p>
                                         <input
                                             type="range"
                                             min="1000"
@@ -97,7 +97,7 @@ export default function VTATool() {
 
                                     <div>
                                         <label className="block text-sm font-medium text-zinc-800 mb-2">AI Response Drift Rate (%)</label>
-                                        <p className="text-xs text-slate-500 mb-3">Percentage of outputs requiring human review</p>
+                                        <p className="text-xs text-slate-700 mb-3">Percentage of outputs requiring human review</p>
                                         <input
                                             type="range"
                                             min="1"
@@ -114,7 +114,7 @@ export default function VTATool() {
 
                                     <div>
                                         <label className="block text-sm font-medium text-zinc-800 mb-2">Verification Time (Minutes)</label>
-                                        <p className="text-xs text-slate-500 mb-3">Time taken by a human to audit one flagged output</p>
+                                        <p className="text-xs text-slate-700 mb-3">Time taken by a human to audit one flagged output</p>
                                         <input
                                             type="number"
                                             value={verificationTime}
@@ -127,7 +127,7 @@ export default function VTATool() {
 
                                     <div>
                                         <label className="block text-sm font-medium text-zinc-800 mb-2">Verifier Labor Base ($/Hour)</label>
-                                        <p className="text-xs text-slate-500 mb-3">Fully burdened hourly rate of your engineering/audit staff</p>
+                                        <p className="text-xs text-slate-700 mb-3">Fully burdened hourly rate of your engineering/audit staff</p>
                                         <input
                                             type="number"
                                             value={hourlyRate}
@@ -167,7 +167,7 @@ export default function VTATool() {
                                         <FileSearch size={40} className="text-blue-400" />
                                     </div>
                                     <h3 className="text-2xl font-bold text-zinc-950 mb-4">Awaiting Audit Execution</h3>
-                                    <p className="text-slate-400 max-w-sm">Configure your operational assumptions on the left to reveal the true cost of your AI implementation.</p>
+                                    <p className="text-slate-600 max-w-sm">Configure your operational assumptions on the left to reveal the true cost of your AI implementation.</p>
                                 </div>
                             ) : (
                                 <ToolGate
@@ -191,7 +191,7 @@ export default function VTATool() {
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <GlowCard className="p-6">
-                                                <div className="text-sm text-slate-400 mb-1">Annual Volatility Tax</div>
+                                                <div className="text-sm text-slate-600 mb-1">Annual Volatility Tax</div>
                                                 <div className="text-4xl font-bold text-red-400 mb-2 font-mono">
                                                     $<NumberTicker value={annualTax} />
                                                 </div>
@@ -199,11 +199,11 @@ export default function VTATool() {
                                             </GlowCard>
 
                                             <GlowCard className="p-6">
-                                                <div className="text-sm text-slate-400 mb-1">Engineering Hours Burned</div>
+                                                <div className="text-sm text-slate-600 mb-1">Engineering Hours Burned</div>
                                                 <div className="text-4xl font-bold text-zinc-950 mb-2 font-mono">
                                                     <NumberTicker value={hoursLostAnnual} />
                                                 </div>
-                                                <p className="text-xs text-slate-500">Hours lost yearly to output auditing.</p>
+                                                <p className="text-xs text-slate-700">Hours lost yearly to output auditing.</p>
                                             </GlowCard>
                                         </div>
 
@@ -211,11 +211,11 @@ export default function VTATool() {
                                             <div className="space-y-6">
                                                 <div className="grid grid-cols-2 gap-4 text-sm">
                                                     <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-400">
-                                                        <span className="text-slate-400 block mb-1">Effective Cost Per Interaction</span>
+                                                        <span className="text-slate-600 block mb-1">Effective Cost Per Interaction</span>
                                                         <span className="text-xl text-zinc-950 font-mono">${effectiveCostPerInference.toFixed(2)}</span>
                                                     </div>
                                                     <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-400">
-                                                        <span className="text-slate-400 block mb-1">Monthly Flagged Reviews</span>
+                                                        <span className="text-slate-600 block mb-1">Monthly Flagged Reviews</span>
                                                         <span className="text-xl text-zinc-950 font-mono">{monthlyReviews.toLocaleString()}</span>
                                                     </div>
                                                 </div>

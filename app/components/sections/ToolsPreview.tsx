@@ -44,7 +44,7 @@ const ToolsPreview = () => {
                         <p className="text-zinc-950 text-sm">Test hiring judgment</p>
                     </Link>
 
-                    <Link href="/tools" className="card border-dashed hover:border-zinc-300 group block">
+                    <Link href="/tools" className="card border-dashed hover:border-zinc-500 group block">
                         <div className="text-xs text-zinc-800 uppercase tracking-wide mb-2">ALL TOOLS</div>
                         <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-zinc-900">View All Tools →</h3>
                         <p className="text-zinc-950 text-sm">See the complete toolkit</p>

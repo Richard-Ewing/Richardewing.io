@@ -72,7 +72,7 @@ export default function ReportUnlocker() {
                     </>
                 )}
             </button>
-            <p className="text-[10px] text-zinc-800 font-mono text-center">
+            <p className="text-xs font-medium text-zinc-800 font-mono text-center">
                 By unlocking, you agree to receive high-leverage architectural intelligence. No spam. Ever.
             </p>
         </form>

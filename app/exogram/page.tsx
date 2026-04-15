@@ -39,10 +39,10 @@ export default function ExogramPage() {
                                     <Image src="/assets/headshot.jpg" alt="Richard Ewing" width={32} height={32} className="rounded-full object-cover grayscale opacity-80" />
                                     <div className="text-left flex-1">
                                         <p className="text-zinc-950 font-semibold text-xs leading-tight">Founded by Richard Ewing</p>
-                                        <p className="text-zinc-950 text-[10px] leading-tight">Product Economist</p>
+                                        <p className="text-zinc-950 text-xs font-medium leading-tight">Product Economist</p>
                                     </div>
                                     <div className="pl-3 border-l border-zinc-400 h-6 flex items-center">
-                                        <span className="text-green-500 text-[10px] font-mono tracking-wider">LIVE</span>
+                                        <span className="text-green-500 text-xs font-medium font-mono tracking-wider">LIVE</span>
                                     </div>
                                 </div>
                             </div>
@@ -138,10 +138,10 @@ export default function ExogramPage() {
                         <p className="text-zinc-900 text-center mb-12 max-w-xl mx-auto">Four independent verification layers. Adopt incrementally. Each one reduces AI risk measurably.</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {[
-                                { name: 'Schema Integrity Engine', desc: 'Validates every AI output against structural contracts. Catches hallucinated fields, missing data, and type mismatches in <5ms.', metric: '<5ms validation', cardClass: 'p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5', badgeClass: 'text-[10px] font-mono text-cyan-400 px-2 py-0.5 rounded border border-cyan-500/30' },
-                                { name: 'Boundary Control Protocol', desc: 'Enforces operational scope for AI agents using the EAAP protocol. Prevents unauthorized actions and scope creep.', metric: 'EAAP v1.0', cardClass: 'p-6 rounded-xl border border-purple-500/20 bg-purple-500/5', badgeClass: 'text-[10px] font-mono text-purple-400 px-2 py-0.5 rounded border border-purple-500/30' },
-                                { name: 'Threat Prevention Layer', desc: 'Detects prompt injections, data exfiltration, PII leaks, and adversarial inputs with 99.2% accuracy.', metric: '99.2% detection', cardClass: 'p-6 rounded-xl border border-red-500/20 bg-red-500/5', badgeClass: 'text-[10px] font-mono text-red-400 px-2 py-0.5 rounded border border-red-500/30' },
-                                { name: 'Memory Integrity System', desc: 'Cryptographic verification of AI memory. Prevents memory hallucinations and maintains cross-session consistency.', metric: 'Encrypted', cardClass: 'p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5', badgeClass: 'text-[10px] font-mono text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30' },
+                                { name: 'Schema Integrity Engine', desc: 'Validates every AI output against structural contracts. Catches hallucinated fields, missing data, and type mismatches in <5ms.', metric: '<5ms validation', cardClass: 'p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5', badgeClass: 'text-xs font-medium font-mono text-cyan-400 px-2 py-0.5 rounded border border-cyan-500/30' },
+                                { name: 'Boundary Control Protocol', desc: 'Enforces operational scope for AI agents using the EAAP protocol. Prevents unauthorized actions and scope creep.', metric: 'EAAP v1.0', cardClass: 'p-6 rounded-xl border border-purple-500/20 bg-purple-500/5', badgeClass: 'text-xs font-medium font-mono text-purple-400 px-2 py-0.5 rounded border border-purple-500/30' },
+                                { name: 'Threat Prevention Layer', desc: 'Detects prompt injections, data exfiltration, PII leaks, and adversarial inputs with 99.2% accuracy.', metric: '99.2% detection', cardClass: 'p-6 rounded-xl border border-red-500/20 bg-red-500/5', badgeClass: 'text-xs font-medium font-mono text-red-400 px-2 py-0.5 rounded border border-red-500/30' },
+                                { name: 'Memory Integrity System', desc: 'Cryptographic verification of AI memory. Prevents memory hallucinations and maintains cross-session consistency.', metric: 'Encrypted', cardClass: 'p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5', badgeClass: 'text-xs font-medium font-mono text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30' },
                             ].map(layer => (
                                 <div key={layer.name} className={layer.cardClass}>
                                     <div className="flex items-center justify-between mb-3">
@@ -229,7 +229,7 @@ export default function ExogramPage() {
                                         <p className="text-zinc-950 font-semibold leading-none mb-1">Founded by Richard Ewing</p>
                                         <div className="flex items-center gap-2">
                                             <p className="text-zinc-800 text-xs leading-none">Product Economist</p>
-                                            <span className="text-emerald-500 text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-500/10 rounded border border-emerald-500/20 leading-none flex items-center h-4">Live</span>
+                                            <span className="text-emerald-500 text-xs font-medium uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-500/10 rounded border border-emerald-500/20 leading-none flex items-center h-4">Live</span>
                                         </div>
                                     </div>
                                 </div>

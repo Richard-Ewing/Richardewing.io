@@ -43,7 +43,7 @@ const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: 
     <div className={`relative overflow-hidden rounded-2xl border border-zinc-400 bg-white/60 p-6 backdrop-blur-md ${className}`}>
         <div className="flex items-center gap-2 mb-4 text-zinc-900">
             {Icon && <Icon size={14} />}
-            <span className="text-[10px] font-mono uppercase tracking-widest">{title}</span>
+            <span className="text-xs font-medium font-mono uppercase tracking-widest">{title}</span>
         </div>
         {children}
     </div>
@@ -482,7 +482,7 @@ export default function APERTool() {
                                 <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-zinc-400 rounded-2xl p-6 mb-8 backdrop-blur-md">
                                     <div>
                                         <div className="flex items-center gap-2 mb-2">
-                                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                         </div>
                                         <h2 className="text-xl font-bold text-zinc-950 mb-1">Board-Ready Deliverable Generated</h2>
                                         <p className="text-sm text-zinc-800">Export this assessment to a verified Executive PDF.</p>
@@ -621,22 +621,22 @@ export default function APERTool() {
                                             <div className="bg-zinc-100 rounded-xl p-4">
                                                 <div className="text-xs text-zinc-950 mb-1">Productivity Index</div>
                                                 <div className="text-2xl font-bold text-emerald-400">{results.productivityIndex}/100</div>
-                                                <div className="text-[10px] text-zinc-800 mt-1">APER + tenure + stability</div>
+                                                <div className="text-xs font-medium text-zinc-800 mt-1">APER + tenure + stability</div>
                                             </div>
                                             <div className="bg-zinc-100 rounded-xl p-4">
                                                 <div className="text-xs text-zinc-950 mb-1">New Hire Ramp Cost</div>
                                                 <div className="text-2xl font-bold text-yellow-400">{formatMoney(results.newHireRampCost)}</div>
-                                                <div className="text-[10px] text-zinc-800 mt-1">3-month productivity loss</div>
+                                                <div className="text-xs font-medium text-zinc-800 mt-1">3-month productivity loss</div>
                                             </div>
                                             <div className="bg-zinc-100 rounded-xl p-4">
                                                 <div className="text-xs text-zinc-950 mb-1">Gap to Elite APER</div>
                                                 <div className="text-2xl font-bold text-cyan-400">{results.revenueGap > 0 ? formatMoney(results.revenueGap) : '✓ Elite'}</div>
-                                                <div className="text-[10px] text-zinc-800 mt-1">ARR needed for $600K/eng</div>
+                                                <div className="text-xs font-medium text-zinc-800 mt-1">ARR needed for $600K/eng</div>
                                             </div>
                                             <div className="bg-zinc-100 rounded-xl p-4">
                                                 <div className="text-xs text-zinc-950 mb-1">Leverage Ratio</div>
                                                 <div className="text-2xl font-bold text-purple-400">{results.leverageRatio.toFixed(1)}x</div>
-                                                <div className="text-[10px] text-zinc-800 mt-1">Revenue per $ eng spend</div>
+                                                <div className="text-xs font-medium text-zinc-800 mt-1">Revenue per $ eng spend</div>
                                             </div>
                                         </div>
                                     </div>
@@ -765,7 +765,7 @@ export default function APERTool() {
                                                 <h4 className="text-zinc-950 font-bold mb-2">Freeze Middle-Management Roles</h4>
                                                 <p className="text-zinc-900 text-sm leading-relaxed mb-4">Adding Engineering Managers before unlocking IC leverage only compounds your coordination tax.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                    <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
                                                     <p className="text-xs text-zinc-900">Enact a 90-day hiring freeze for all non-IC roles. Direct saved CapEx back into developer tooling.</p>
@@ -783,7 +783,7 @@ export default function APERTool() {
                                                 <h4 className="text-zinc-950 font-bold mb-2">Decouple Core Domain Boundaries</h4>
                                                 <p className="text-zinc-900 text-sm leading-relaxed mb-4">Cross-team dependencies drive high coordination taxes and slow overall velocity down geometrically.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                    <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
                                                     <p className="text-xs text-zinc-900">Mandate strict API contracts between distinct product domains. Decouple release cycles entirely.</p>
@@ -801,7 +801,7 @@ export default function APERTool() {
                                                 <h4 className="text-zinc-950 font-bold mb-2">Automate Repetitive QA</h4>
                                                 <p className="text-zinc-900 text-sm leading-relaxed mb-4">Over 30% of engineering bandwidth is consumed by manual testing blocks.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                    <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
                                                     <p className="text-xs text-zinc-900">Configure LLM-based CI/CD steps that auto-generate basic test coverage for every PR merged.</p>

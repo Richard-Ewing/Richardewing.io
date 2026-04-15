@@ -134,7 +134,7 @@ export default function PromptInjectionContent() {
             <ToolCelebration show={!!results} toolName="RED-TEAM" />
             
             <div className="mb-6 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+                <div className="flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                     <Link href="/tools" className="hover:text-zinc-900 transition">Enterprise Diagnostics</Link>
                     <span>/</span>
                     <span className="text-zinc-950 font-bold">Prompt Intrusion Sandbox</span>
@@ -178,8 +178,8 @@ Only answer questions related to AcmeCorp logistics.
                                     />
                                 </div>
                                 <div className="flex justify-between items-center mt-3">
-                                    <p className="text-[10px] text-zinc-800 font-mono">Will be evaluated locally against 5 known intrusion topologies.</p>
-                                    <span className="text-[10px] font-mono font-bold text-zinc-900">{prompt.length} Bytes / {(prompt.length / 4).toFixed(0)} Tokens</span>
+                                    <p className="text-xs font-medium text-zinc-800 font-mono">Will be evaluated locally against 5 known intrusion topologies.</p>
+                                    <span className="text-xs font-medium font-mono font-bold text-zinc-900">{prompt.length} Bytes / {(prompt.length / 4).toFixed(0)} Tokens</span>
                                 </div>
                             </div>
 
@@ -208,7 +208,7 @@ Only answer questions related to AcmeCorp logistics.
                      <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Red Team Penetration Complete</h2>
                             <p className="text-sm text-zinc-800">Heuristic structural analysis verified across 5 critical logic bypass domains.</p>
@@ -277,11 +277,11 @@ Only answer questions related to AcmeCorp logistics.
                                                         <div className="flex-1 min-w-0">
                                                             <div className="flex justify-between items-center mb-1">
                                                                 <h4 className={`text-sm font-bold truncate ${v.passed ? 'text-zinc-900' : 'text-zinc-900'}`}>{v.name}</h4>
-                                                                {!v.passed && <span className="text-[10px] shrink-0 font-mono text-rose-500 px-2 py-0.5 bg-rose-500/10 border border-rose-500/20 rounded ml-2">{v.severity}</span>}
+                                                                {!v.passed && <span className="text-xs font-medium shrink-0 font-mono text-rose-500 px-2 py-0.5 bg-rose-500/10 border border-rose-500/20 rounded ml-2">{v.severity}</span>}
                                                             </div>
                                                             <p className="text-[11px] text-zinc-950 leading-relaxed mb-2">{v.description}</p>
                                                             {!v.passed && (
-                                                                <div className="mt-2 text-[10px] font-mono text-amber-400 bg-amber-500/10 p-2 rounded border border-amber-500/20 flex gap-2 items-start">
+                                                                <div className="mt-2 text-xs font-medium font-mono text-amber-400 bg-amber-500/10 p-2 rounded border border-amber-500/20 flex gap-2 items-start">
                                                                     <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1 shrink-0"></div>
                                                                     <span className="leading-tight">{v.mitigation}</span>
                                                                 </div>
@@ -375,7 +375,7 @@ Only answer questions related to AcmeCorp logistics.
                                      <h4 className="text-zinc-950 font-bold mb-2">Deterministic Delimiters</h4>
                                      <p className="text-zinc-900 text-sm mb-4">Force the LLM to separate system instructions from user payloads by encapsulating all user input in literal XML tags.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-[10px] font-mono text-red-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-red-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-900">Wrap all inputs in &lt;user_input&gt; blocks to prevent interpretation as root execution commands.</p>
@@ -387,7 +387,7 @@ Only answer questions related to AcmeCorp logistics.
                                      <h4 className="text-zinc-950 font-bold mb-2">Classifier Firewalls</h4>
                                      <p className="text-zinc-900 text-sm mb-4">Run every payload through a fast classifier (Llama Guard) before sending it to your heavy execution agent.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-900">If Llama Guard flags an adversarial pattern, instantly HTTP 403 the request pipeline.</p>
@@ -399,7 +399,7 @@ Only answer questions related to AcmeCorp logistics.
                                      <h4 className="text-zinc-950 font-bold mb-2">Tool Execution Isolation</h4>
                                      <p className="text-zinc-900 text-sm mb-4">Never give an LLM direct execution schema permissions. Rely on hard-coded Python validators.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-900">Use a "Circuit Breaker" architecture where the LLM only proposes schemas, instead of executing APIs.</p>

@@ -60,7 +60,7 @@ export default function ForCTOsPage() {
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="/tools" className="px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white font-bold hover:opacity-90 transition-opacity">Explore All Tools →</Link>
-                            <Link href="/glossary" className="px-8 py-4 rounded-lg border border-zinc-300 text-zinc-950 font-bold hover:bg-white/5 transition-colors">Browse 400+ Definitions →</Link>
+                            <Link href="/glossary" className="px-8 py-4 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5 transition-colors">Browse 400+ Definitions →</Link>
                         </div>
                     </div>
 

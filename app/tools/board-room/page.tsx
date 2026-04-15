@@ -90,7 +90,7 @@ export default function BoardRoom() {
                     </div>
                     <div className="flex gap-4">
                         <ExportToPDFButton targetId="board-room-matrix" fileName={`Enterprise_Threat_Matrix.pdf`} />
-                        <Link href="/system" className="text-[10px] font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-zinc-400">
+                        <Link href="/system" className="text-xs font-medium font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-zinc-400">
                             Close Session
                         </Link>
                     </div>
@@ -109,28 +109,28 @@ export default function BoardRoom() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <GlowCard className="p-6 bg-rose-50 border border-rose-200 rounded-2xl relative overflow-hidden group">
                             <BorderBeam size={100} duration={8} delay={0} colorFrom="#f43f5e" colorTo="#be123c" />
-                            <div className="text-[10px] font-mono text-rose-500 uppercase tracking-widest mb-4">Total Enterprise Value at Risk</div>
+                            <div className="text-xs font-medium font-mono text-rose-500 uppercase tracking-widest mb-4">Total Enterprise Value at Risk</div>
                             <div className="text-4xl font-black text-zinc-900">{totalWealthGap > 0 ? formatCurrency(totalWealthGap) : 'TBD'}</div>
                             <div className="mt-4 text-xs text-rose-400/70 font-mono tracking-widest">Aggregate across all erosion models.</div>
                         </GlowCard>
                         
                         <GlowCard className="p-6 bg-cyan-50 border border-cyan-200 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={10} delay={2} colorFrom="#06b6d4" colorTo="#0284c7" />
-                            <div className="text-[10px] font-mono text-cyan-500 uppercase tracking-widest mb-4">Total Cloud/Infra Arbitrage</div>
+                            <div className="text-xs font-medium font-mono text-cyan-500 uppercase tracking-widest mb-4">Total Cloud/Infra Arbitrage</div>
                             <div className="text-4xl font-black text-zinc-900">{totalCloudSavings > 0 ? formatCurrency(totalCloudSavings) : 'TBD'}</div>
                             <div className="mt-4 text-xs text-cyan-400/70 font-mono tracking-widest">OpEx capture ready for execution.</div>
                         </GlowCard>
 
                         <GlowCard className="p-6 bg-emerald-50 border border-emerald-200 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={9} delay={4} colorFrom="#10b981" colorTo="#047857" />
-                            <div className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest mb-4">AI Unit Economics (Margin)</div>
+                            <div className="text-xs font-medium font-mono text-emerald-500 uppercase tracking-widest mb-4">AI Unit Economics (Margin)</div>
                             <div className="text-4xl font-black text-zinc-900">{marginCollapseRisk ? `${marginCollapseRisk.toFixed(1)}%` : 'TBD'}</div>
                             <div className="mt-4 text-xs text-emerald-400/70 font-mono tracking-widest">Projected gross margin post-AI scale.</div>
                         </GlowCard>
 
                         <GlowCard className="p-6 bg-purple-50 border border-purple-200 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={12} delay={6} colorFrom="#a855f7" colorTo="#7e22ce" />
-                            <div className="text-[10px] font-mono text-purple-500 uppercase tracking-widest mb-4">Telemetry Snapshots</div>
+                            <div className="text-xs font-medium font-mono text-purple-500 uppercase tracking-widest mb-4">Telemetry Snapshots</div>
                             <div className="text-4xl font-black text-zinc-900">{totalRuns}</div>
                             <div className="mt-4 text-xs text-purple-400/70 font-mono tracking-widest">Diagnostic data points processed.</div>
                         </GlowCard>
@@ -163,13 +163,13 @@ export default function BoardRoom() {
                                         <div className="mt-4 mb-2 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg">
                                             <div className="flex items-center gap-2 mb-1">
                                                 <Zap className="text-blue-400" size={12} />
-                                                <span className="text-[10px] uppercase tracking-widest text-blue-400 font-bold">Execution Ready</span>
+                                                <span className="text-xs font-medium uppercase tracking-widest text-blue-400 font-bold">Execution Ready</span>
                                             </div>
                                             <p className="text-xs text-blue-600 font-mono">Remediation timeline auto-generated from diagnostic payload.</p>
                                         </div>
                                     )}
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/pdi" className="text-[10px] uppercase tracking-widest text-blue-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Execute PDI Modeler <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/pdi" className="text-xs font-medium uppercase tracking-widest text-blue-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Execute PDI Modeler <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
 
@@ -180,7 +180,7 @@ export default function BoardRoom() {
                                     </div>
                                     <p className="text-xs text-zinc-950 leading-relaxed font-mono">The CapEx being permanently vaporized by slow deployment cycles and untracked sprint spillage.</p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/ev-se" className="text-[10px] uppercase tracking-widest text-purple-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Run Valuation Erosion <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/ev-se" className="text-xs font-medium uppercase tracking-widest text-purple-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Run Valuation Erosion <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
                             </div>
@@ -212,13 +212,13 @@ export default function BoardRoom() {
                                         <div className="mt-4 mb-2 p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
                                             <div className="flex items-center gap-2 mb-1">
                                                 <Zap className="text-emerald-400" size={12} />
-                                                <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">Execution Ready</span>
+                                                <span className="text-xs font-medium uppercase tracking-widest text-emerald-400 font-bold">Execution Ready</span>
                                             </div>
                                             <p className="text-xs text-emerald-600 font-mono">Margin defense timeline auto-generated from diagnostic payload.</p>
                                         </div>
                                     )}
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/aueb" className="text-[10px] uppercase tracking-widest text-emerald-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Calculate Margin <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/aueb" className="text-xs font-medium uppercase tracking-widest text-emerald-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Calculate Margin <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
 
@@ -229,7 +229,7 @@ export default function BoardRoom() {
                                     </div>
                                     <p className="text-xs text-zinc-950 leading-relaxed font-mono">OpEx available to recapture via private cloud repatriation vs AWS Basecamp index.</p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/cloud-repatriation" className="text-[10px] uppercase tracking-widest text-cyan-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Arbitrage Analysis <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/cloud-repatriation" className="text-xs font-medium uppercase tracking-widest text-cyan-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Arbitrage Analysis <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
 
@@ -242,7 +242,7 @@ export default function BoardRoom() {
                                     </div>
                                     <p className="text-xs text-zinc-950 leading-relaxed font-mono">True profitability of AI tools factoring in downstream Vibe Coding Debt and Review Bottlenecks.</p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/copilot-roi" className="text-[10px] uppercase tracking-widest text-rose-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Model AI Economics <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/copilot-roi" className="text-xs font-medium uppercase tracking-widest text-rose-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Model AI Economics <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +271,7 @@ export default function BoardRoom() {
                                     </div>
                                     <p className="text-xs text-zinc-950 leading-relaxed font-mono">Displaced FTE equivalent tracked against AI architecture implementation costs.</p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/ai-roi-timeline" className="text-[10px] uppercase tracking-widest text-amber-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Audit Break-Even <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/ai-roi-timeline" className="text-xs font-medium uppercase tracking-widest text-amber-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Audit Break-Even <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
                             </div>
@@ -300,7 +300,7 @@ export default function BoardRoom() {
                                     </div>
                                     <p className="text-xs text-zinc-950 leading-relaxed font-mono">Overall technical health and survivability score for inbound acquisition targets.</p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/due-diligence" className="text-[10px] uppercase tracking-widest text-zinc-950 hover:text-zinc-900 flex items-center gap-1 transition-colors">Run External Diligence <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/due-diligence" className="text-xs font-medium uppercase tracking-widest text-zinc-950 hover:text-zinc-900 flex items-center gap-1 transition-colors">Run External Diligence <ArrowRight size={12} /></Link>
                                     </div>
                                 </div>
                             </div>
@@ -330,7 +330,7 @@ export default function BoardRoom() {
                                     <p className="text-xs text-zinc-950 leading-relaxed font-mono">Financial tax triggered by synthetic data decay forcing continuous model retraining capital expenditure.</p>
                                     
                                     <div className="mt-4 p-3 bg-rose-500/10 border border-rose-500/20 rounded-lg">
-                                        <div className="text-[10px] uppercase tracking-widest text-rose-400 font-bold mb-1 flex items-center gap-2">
+                                        <div className="text-xs font-medium uppercase tracking-widest text-rose-400 font-bold mb-1 flex items-center gap-2">
                                             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
                                             Active Threat Briefing
                                         </div>

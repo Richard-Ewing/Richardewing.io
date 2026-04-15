@@ -42,7 +42,7 @@ export default async function CurriculumTracksPage() {
                     {/* Enterprise Executive HERO */}
                     <div className="text-center mb-16 relative">
                         <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-purple-500/5 to-transparent pointer-events-none -z-10" />
-                        <div className="text-[10px] font-mono text-purple-600 uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
+                        <div className="text-xs font-medium font-mono text-purple-600 uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse"></span>
                             Product Economics Academy
                         </div>
@@ -56,19 +56,19 @@ export default async function CurriculumTracksPage() {
                         <div className="flex items-center justify-center gap-8 mt-6">
                             <div className="text-center">
                                 <div className="text-2xl font-grotesk font-bold text-zinc-900">23</div>
-                                <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-950 mt-1">Authority Tracks</div>
+                                <div className="text-xs font-medium font-mono uppercase tracking-widest text-zinc-950 mt-1">Authority Tracks</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-2xl font-grotesk font-bold text-zinc-900">293</div>
-                                <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-950 mt-1">Deep Modules</div>
+                                <div className="text-xs font-medium font-mono uppercase tracking-widest text-zinc-950 mt-1">Deep Modules</div>
                             </div>
                             <div className="text-center bg-purple-50 px-4 py-2 rounded-lg border border-purple-200">
                                 <div className="text-xl font-mono font-bold text-purple-700">$149</div>
-                                <div className="text-[10px] font-mono uppercase tracking-widest text-purple-500 mt-1">Per Track</div>
+                                <div className="text-xs font-medium font-mono uppercase tracking-widest text-purple-500 mt-1">Per Track</div>
                             </div>
                             <div className="text-center bg-indigo-50 px-4 py-2 rounded-lg border border-indigo-200">
                                 <div className="text-xl font-mono font-bold text-indigo-700">$999</div>
-                                <div className="text-[10px] font-mono uppercase tracking-widest text-indigo-500 mt-1">All 23 Tracks</div>
+                                <div className="text-xs font-medium font-mono uppercase tracking-widest text-indigo-500 mt-1">All 23 Tracks</div>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ export default async function CurriculumTracksPage() {
                                 <BorderBeam size={200} duration={12} delay={9} borderWidth={1.5} colorFrom="#7c3aed" colorTo="#ec4899" />
                                 <div className="p-8 relative z-10 flex flex-col md:flex-row items-center gap-8">
                                     <div className="flex-1">
-                                        <div className="text-[10px] font-mono text-purple-600 uppercase tracking-widest mb-2 font-bold flex items-center gap-2">
+                                        <div className="text-xs font-medium font-mono text-purple-600 uppercase tracking-widest mb-2 font-bold flex items-center gap-2">
                                             Enterprise Advisory
                                         </div>
                                         <h3 className="text-2xl font-bold text-zinc-900 mb-3">Need organizational implementation?</h3>
@@ -93,7 +93,7 @@ export default async function CurriculumTracksPage() {
                                     </div>
                                     <div className="md:w-64 w-full h-full flex flex-col items-center justify-center bg-purple-50 rounded-xl border border-purple-100 p-6">
                                         <div className="text-3xl font-mono text-zinc-900 mb-1">Advisory</div>
-                                        <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest text-center">Strategic Partnership</div>
+                                        <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest text-center">Strategic Partnership</div>
                                     </div>
                                 </div>
                             </ShineBorder>
@@ -197,7 +197,7 @@ export default async function CurriculumTracksPage() {
                                 <Link href="/advisory" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-purple-700 text-white hover:bg-purple-600 transition-colors shadow-lg">
                                     Explore Advisory
                                 </Link>
-                                <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-white border border-zinc-400 text-zinc-950 hover:text-zinc-900 hover:border-zinc-300 transition-colors shadow-sm">
+                                <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-white border border-zinc-400 text-zinc-950 hover:text-zinc-900 hover:border-zinc-500 transition-colors shadow-sm">
                                     Unlock $999 Full Curriculum
                                 </Link>
                             </div>

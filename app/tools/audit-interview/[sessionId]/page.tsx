@@ -292,9 +292,9 @@ export default function SessionCommandCenter() {
 
         if (scenario.chart_type === 'code_snippet') {
             return (
-                <div className="w-full bg-white border border-[#30363d] rounded-lg overflow-hidden font-mono text-xs sm:text-sm relative group">
+                <div className="w-full bg-white border border-[#30363d] rounded-lg overflow-hidden font-mono text-xs sm:text-sm relative group shadow-sm">
                     <div className="flex items-center px-4 py-2 border-b border-[#30363d] bg-[#161b22]">
-                        <div className="ml-4 text-zinc-700 text-[10px] uppercase tracking-widest">legacy_code_v1.py</div>
+                        <div className="ml-4 text-slate-300 text-xs font-semibold uppercase tracking-widest">legacy_code_v1.py</div>
                     </div>
                     <pre className="p-4 overflow-x-auto text-zinc-900">
                         <code>{scenario.code || scenario.chart_data?.code}</code>
@@ -308,7 +308,7 @@ export default function SessionCommandCenter() {
             return (
                 <div className="w-full overflow-hidden border border-zinc-400 rounded-xl">
                     <table className="w-full text-sm text-left font-mono">
-                        <thead className="bg-[#161b22] text-zinc-700 text-[10px] uppercase tracking-widest">
+                        <thead className="bg-[#161b22] text-slate-300 text-xs font-semibold uppercase tracking-widest">
                             <tr>
                                 <th className="px-4 py-3 font-medium">Initiative</th>
                                 <th className="px-4 py-3 font-medium">Type</th>
@@ -391,12 +391,12 @@ export default function SessionCommandCenter() {
                     {/* DIMENSIONS */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="bg-[#161b22] border border-[#30363d] p-6 rounded-xl">
-                            <h3 className="text-zinc-700 text-xs uppercase tracking-widest mb-4">Phase Breakdown</h3>
+                            <h3 className="text-slate-300 text-xs uppercase tracking-widest mb-4">Phase Breakdown</h3>
                             <div className="space-y-4">
                                 {analytics.scores.map((s: any, i: number) => (
-                                    <div key={i} className="flex justify-between items-center border-b border-zinc-400 pb-2 last:border-0">
-                                        <span className="text-sm font-mono text-zinc-900">{s.phase}</span>
-                                        <span className={`text-xs font-bold ${s.score >= 5 ? 'text-emerald-400' : 'text-zinc-800'} bg-white/5 px-2 py-1 rounded`}>
+                                    <div key={i} className="flex justify-between items-center border-b border-zinc-600 pb-2 last:border-0">
+                                        <span className="text-sm font-mono text-slate-200">{s.phase}</span>
+                                        <span className={`text-xs font-bold ${s.score >= 5 ? 'text-emerald-400' : 'text-slate-300'} bg-white/5 px-2 py-1 rounded`}>
                                             L{s.score}
                                         </span>
                                     </div>
@@ -405,8 +405,8 @@ export default function SessionCommandCenter() {
                         </div>
 
                         <div className="bg-[#161b22] border border-[#30363d] p-6 rounded-xl">
-                            <h3 className="text-zinc-700 text-xs uppercase tracking-widest mb-4">Judgment Signal</h3>
-                            <p className="text-sm text-zinc-600 leading-relaxed italic">
+                            <h3 className="text-slate-300 text-xs uppercase tracking-widest mb-4">Judgment Signal</h3>
+                            <p className="text-sm text-slate-300 leading-relaxed italic">
                                 "{analytics.rationale}"
                             </p>
                             <div className="mt-4 pt-4 border-t border-zinc-400">
@@ -598,9 +598,9 @@ export default function SessionCommandCenter() {
                             {scenario && (
                                 <div className="space-y-6">
                                     {scenario.chart_type === 'code_snippet' && (
-                                        <div className="w-full bg-white border border-[#30363d] rounded-lg overflow-hidden font-mono text-xs sm:text-sm relative group">
+                                        <div className="w-full bg-white border border-[#30363d] rounded-lg overflow-hidden font-mono text-xs sm:text-sm relative group shadow-sm">
                                             <div className="flex items-center px-4 py-2 border-b border-[#30363d] bg-[#161b22]">
-                                                <div className="text-zinc-700 text-[10px] uppercase tracking-widest">src/processor.py</div>
+                                                <div className="text-slate-300 text-xs font-semibold uppercase tracking-widest">src/processor.py</div>
                                             </div>
                                             <pre className="p-4 overflow-x-auto text-zinc-900">
                                                 <code>{scenario.code}</code>
@@ -611,14 +611,14 @@ export default function SessionCommandCenter() {
                                     {scenario.chart_type === 'dashboard' && scenario.chart_data && (
                                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                                             {scenario.chart_data.metrics.map((m: any, i: number) => (
-                                                <div key={i} className="bg-[#161b22] border border-zinc-400 p-4 rounded-lg">
-                                                    <div className="text-[10px] text-zinc-500 uppercase tracking-widest mb-1">{m.label}</div>
+                                                <div key={i} className="bg-[#161b22] border border-slate-500 p-4 rounded-lg shadow-lg">
+                                                    <div className="text-xs font-semibold text-slate-300 uppercase tracking-widest mb-1">{m.label}</div>
                                                     <div className={`text-xl font-mono font-bold ${m.trend === 'up' && m.label.includes('Cost') ? 'text-red-500' :
-                                                        m.trend === 'down' && m.label.includes('Margin') ? 'text-red-500' : 'text-zinc-900'
+                                                        m.trend === 'down' && m.label.includes('Margin') ? 'text-red-500' : 'text-slate-100'
                                                         }`}>
                                                         {m.value}
                                                     </div>
-                                                    <div className="text-[10px] text-zinc-800 mt-1">{m.context}</div>
+                                                    <div className="text-xs font-semibold text-slate-400 mt-1">{m.context}</div>
                                                 </div>
                                             ))}
                                             <div className="col-span-full mt-2 text-center text-xs text-zinc-700 font-mono bg-white/5 p-2 rounded">

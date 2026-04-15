@@ -109,7 +109,7 @@ export default function AIRoiTimelineContent() {
                                         <div 
                                             key={key} 
                                             onClick={() => setAiStrategy(key as any)}
-                                            className={`p-4 rounded-xl border cursor-pointer transition-all ${isActive ? 'bg-purple-500/10 border-purple-500/50' : 'bg-white border-zinc-400 hover:border-zinc-300'}`}
+                                            className={`p-4 rounded-xl border cursor-pointer transition-all ${isActive ? 'bg-purple-500/10 border-purple-500/50' : 'bg-white border-zinc-400 hover:border-zinc-500'}`}
                                         >
                                             <div className="flex justify-between items-center">
                                                 <div className="font-bold text-zinc-900">{data.name}</div>
@@ -147,7 +147,7 @@ export default function AIRoiTimelineContent() {
                             <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-purple-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                                 <div>
                                     <div className="flex items-center gap-2 mb-2">
-                                        <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                        <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                     </div>
                                     <h2 className="text-xl font-bold text-zinc-950 mb-1">Timeline Dashboard</h2>
                                 </div>
@@ -211,7 +211,7 @@ export default function AIRoiTimelineContent() {
                                                     #zero-line-${month} { left: ${zeroPoint}%; }
                                                     #bar-graph-${month} { width: ${barWidth}%; left: ${isProfitable ? zeroPoint : zeroPoint - barWidth}%; }
                                                 `}</style>
-                                                <div id={`zero-line-${month}`} className={`absolute top-0 bottom-0 border-l border-zinc-300 z-10`} />
+                                                <div id={`zero-line-${month}`} className={`absolute top-0 bottom-0 border-l border-zinc-500 z-10`} />
                                                 
                                                 {/* The Bar */}
                                                 <div 
@@ -247,7 +247,7 @@ export default function AIRoiTimelineContent() {
                                                 <h4 className="text-zinc-950 font-bold mb-2">Hard-Lock the Headcount Freeze</h4>
                                                 <p className="text-zinc-900 text-sm leading-relaxed mb-4">The ${netAnnualSavings.toLocaleString()} annual savings model depends entirely on strict capacity displacement. Phantom hiring will destroy the break-even math.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                    <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
                                                     <p className="text-xs text-zinc-900">Mandate an immediate requisition freeze in the affected department. Any backfill requests for the {displacedEngineers} displaced roles must require direct Board/CFO approval.</p>
@@ -265,7 +265,7 @@ export default function AIRoiTimelineContent() {
                                                 <h4 className="text-zinc-950 font-bold mb-2">Quarantine the Implementation CapEx</h4>
                                                 <p className="text-zinc-900 text-sm leading-relaxed mb-4">Without strict vendor and compute isolation, the initial ${implementationCost.toLocaleString()} investment will silently inflate through unmonitored API inference charges.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                    <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
                                                     <p className="text-xs text-zinc-900">Establish a dedicated FinOps tracking tag specifically for this deployment. Route API tokens through a rigid gateway proxy (e.g. Cloudflare AI Gateway) with hard-capped daily spend limits.</p>
@@ -283,7 +283,7 @@ export default function AIRoiTimelineContent() {
                                                 <h4 className="text-zinc-950 font-bold mb-2">Schedule the Audit Clawback</h4>
                                                 <p className="text-zinc-900 text-sm leading-relaxed mb-4">CapEx investments without structured post-mortems are effectively donations to engineering R&D. Accountability must be verified at precisely {breakEvenMonths.toFixed(1)} months.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                    <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                    <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
                                                     </div>
                                                     <p className="text-xs text-zinc-900">Insert a calendar hold for a 30-minute executive review on the exact breakeven date. If the net position is not positive, the owning VP must submit a detailed remediation plan.</p>

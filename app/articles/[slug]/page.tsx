@@ -76,7 +76,7 @@ export default async function ArticlePage({ params }: Props) {
             />
 
             {/* Breadcrumb */}
-            <div className="mb-8 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-8 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/articles" className="hover:text-zinc-900 transition-colors">Canonical Hub</Link>
                 <span>/</span>
                 <span className="text-cyan-400 font-bold truncate">{article.title}</span>
@@ -130,7 +130,7 @@ export default async function ArticlePage({ params }: Props) {
             </div>
 
             <div className="mt-20 pt-12 border-t border-zinc-400">
-                <Link href="/articles" className="text-zinc-500 hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-mono uppercase tracking-widest">
+                <Link href="/articles" className="text-zinc-700 hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-mono uppercase tracking-widest">
                     ← Back to Canonical Hub
                 </Link>
             </div>

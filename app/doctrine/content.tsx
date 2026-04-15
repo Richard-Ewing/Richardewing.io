@@ -121,7 +121,7 @@ export default function DoctrineContent() {
                         <a href="https://builtin.com/authors/richard-ewing" target="_blank" rel="noopener noreferrer" className="group">
                             <GlowCard className="p-5 h-full" glowColor="cobalt">
                                 <div className="flex items-start justify-between mb-2">
-                                    <div className="text-[10px] font-mono text-cobalt uppercase tracking-widest">Expert Contributor</div>
+                                    <div className="text-xs font-medium font-mono text-cobalt uppercase tracking-widest">Expert Contributor</div>
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-cobalt transition">Built In</div>
@@ -134,7 +134,7 @@ export default function DoctrineContent() {
                         <a href="https://www.mindtheproduct.com" target="_blank" rel="noopener noreferrer" className="group">
                             <GlowCard className="p-5 h-full" glowColor="cyan">
                                 <div className="flex items-start justify-between mb-2">
-                                    <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest">Contributor</div>
+                                    <div className="text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest">Contributor</div>
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-cyan-400 transition">Mind the Product</div>
@@ -147,7 +147,7 @@ export default function DoctrineContent() {
                         <a href="https://www.cio.com" target="_blank" rel="noopener noreferrer" className="group">
                             <GlowCard className="p-5 h-full" glowColor="gold">
                                 <div className="flex items-start justify-between mb-2">
-                                    <div className="text-[10px] font-mono text-gold uppercase tracking-widest">Expert Contributor</div>
+                                    <div className="text-xs font-medium font-mono text-gold uppercase tracking-widest">Expert Contributor</div>
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-gold transition">Foundry (CIO.com)</div>
@@ -160,7 +160,7 @@ export default function DoctrineContent() {
                         <a href="https://hackernoon.com/u/richardewing1" target="_blank" rel="noopener noreferrer" className="group">
                             <GlowCard className="p-5 h-full" glowColor="cyan">
                                 <div className="flex items-start justify-between mb-2">
-                                    <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest">Published</div>
+                                    <div className="text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest">Published</div>
                                     <span className="text-zinc-800 group-hover:text-zinc-900 transition">→</span>
                                 </div>
                                 <div className="text-lg font-bold text-zinc-950 mb-1 group-hover:text-emerald-400 transition">HackerNoon</div>
@@ -174,13 +174,13 @@ export default function DoctrineContent() {
                     {/* Awards */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="p-5 border border-zinc-400 rounded-xl bg-cobalt/5 hover:border-cobalt/30 transition">
-                            <div className="text-[10px] font-mono text-cobalt uppercase tracking-widest mb-2">Innovation Award</div>
+                            <div className="text-xs font-medium font-mono text-cobalt uppercase tracking-widest mb-2">Innovation Award</div>
                             <div className="text-lg font-bold text-zinc-950 mb-1">Digital Transformation Excellence</div>
                             <p className="text-xs text-zinc-900">7.7M user migration. Zero downtime.</p>
                         </div>
 
                         <div className="p-5 border border-zinc-400 rounded-xl bg-emerald-500/5 hover:border-emerald-500/30 transition">
-                            <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-2">Governor's Award</div>
+                            <div className="text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest mb-2">Governor's Award</div>
                             <div className="text-lg font-bold text-zinc-950 mb-1">The Extra Mile Award</div>
                             <p className="text-xs text-zinc-900">Washington State. Gov. Jay Inslee.</p>
                         </div>
@@ -204,10 +204,10 @@ export default function DoctrineContent() {
                     <div className="mt-8 pt-6 border-t border-zinc-400">
                         <p className="text-zinc-950 text-xs uppercase tracking-widest mb-4">Not Ready for intervention?</p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-zinc-300 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-zinc-900">
+                            <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-zinc-500 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-zinc-900">
                                 Subscribe Free
                             </a>
-                            <Link href="/tools" className="px-6 py-3 border border-zinc-300 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-zinc-900">
+                            <Link href="/tools" className="px-6 py-3 border border-zinc-500 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-zinc-900">
                                 Try Free Tools
                             </Link>
                         </div>

@@ -226,7 +226,7 @@ export default async function GlossaryTermPage({ params }: Props) {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
 
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/glossary" className="hover:text-cyan-400">Glossary</Link>
                 <span>/</span>
                 <span className="text-cyan-400 font-bold">{term.title}</span>
@@ -381,7 +381,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 <div className="flex-1">
                                     <div className="flex items-center justify-between mb-1">
                                         <div className="text-sm font-bold text-zinc-900">{level.level}</div>
-                                        <div className="text-[10px] font-mono text-zinc-950">{pct}%</div>
+                                        <div className="text-xs font-medium font-mono text-zinc-950">{pct}%</div>
                                     </div>
                                     <div className="w-full h-1.5 rounded-full bg-white/5 mb-1.5">
                                         { }
@@ -428,7 +428,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         </div>
                         <div>
                             <h2 className="text-lg font-grotesk font-bold text-zinc-900">How It Works</h2>
-                            <p className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest">Visual Framework Diagram</p>
+                            <p className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">Visual Framework Diagram</p>
                         </div>
                     </div>
                     <div className="p-6">
@@ -545,9 +545,9 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 <div className="space-y-4 flex-1">
                                     {curriculumTracks.map((c, i) => (
                                         <Link key={i} href={c.url} className="block group">
-                                            <div className="text-[10px] font-mono text-violet-400 uppercase tracking-widest mb-1">{c.track}</div>
+                                            <div className="text-xs font-medium font-mono text-violet-400 uppercase tracking-widest mb-1">{c.track}</div>
                                             <div className="text-sm font-bold text-zinc-700 group-hover:text-violet-400 transition-colors mb-1">{c.title}</div>
-                                            <div className="inline-flex items-center justify-center px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-zinc-950 mt-1">Premium Track</div>
+                                            <div className="inline-flex items-center justify-center px-2 py-0.5 rounded text-xs font-medium font-bold bg-white/10 text-zinc-950 mt-1">Premium Track</div>
                                         </Link>
                                     ))}
                                 </div>
@@ -561,7 +561,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 <div className="space-y-4 flex-1">
                                     {executiveGuides.map((g, i) => (
                                         <Link key={i} href={g.url} className="block group">
-                                            <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1">{g.type}</div>
+                                            <div className="text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest mb-1">{g.type}</div>
                                             <div className="text-sm font-bold text-zinc-700 group-hover:text-emerald-400 transition-colors">{g.title}</div>
                                         </Link>
                                     ))}
@@ -575,7 +575,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                     <span className="text-amber-400">{premiumTool.icon}</span> Flagship Advisory
                                 </h3>
                                 <div className="flex-1 flex flex-col relative z-10">
-                                    <div className="text-[10px] font-mono text-amber-400 uppercase tracking-widest mb-1">{premiumTool.tag}</div>
+                                    <div className="text-xs font-medium font-mono text-amber-400 uppercase tracking-widest mb-1">{premiumTool.tag}</div>
                                     <div className="text-base font-bold text-zinc-950 mb-2 leading-tight">{premiumTool.name}</div>
                                     <div className="text-xs text-zinc-600 mb-6 flex-1">{premiumTool.description}</div>
                                     
@@ -585,7 +585,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                     >
                                         Deploy Tool
                                     </Link>
-                                    <div className="text-center mt-2 text-[10px] font-mono text-zinc-500 uppercase tracking-wide">
+                                    <div className="text-center mt-2 text-xs font-medium font-mono text-zinc-700 uppercase tracking-wide">
                                         {premiumTool.price}
                                     </div>
                                 </div>
@@ -657,7 +657,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl bg-zinc-50 border border-zinc-400 hover:border-cyan-500/30 transition-colors group">
                                     <div>
                                         <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-400 transition-colors">{r.title}</div>
-                                        <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mt-1">{r.type}</div>
+                                        <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mt-1">{r.type}</div>
                                     </div>
                                     <span className="text-xs text-cyan-500">→</span>
                                 </a>

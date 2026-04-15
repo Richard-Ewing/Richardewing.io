@@ -52,7 +52,7 @@ export default function ArticlesPage() {
             {/* Background FX */}
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <span>Knowledge</span><span>/</span><span className="text-cyan-400 font-bold">Canonical Hub</span>
             </div>
 
@@ -206,7 +206,7 @@ export default function ArticlesPage() {
                                         <div>
                                             <div className="flex justify-between items-center mb-4">
                                                 <div className="flex items-center gap-2">
-                                                    <span className="font-mono text-[10px] text-zinc-900 uppercase tracking-widest border border-zinc-400 px-2 py-0.5 rounded-full">{article.source}</span>
+                                                    <span className="font-mono text-xs font-medium text-zinc-900 uppercase tracking-widest border border-zinc-400 px-2 py-0.5 rounded-full">{article.source}</span>
                                                 </div>
                                                 <span className="font-mono text-xs text-zinc-800 uppercase tracking-widest">{article.date}</span>
                                             </div>

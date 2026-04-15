@@ -145,7 +145,7 @@ export default function PricingPage() {
                                 className={`block text-center py-3 px-6 rounded-lg font-semibold text-sm transition-all ${
                                     tier.highlight
                                         ? 'bg-gradient-to-r from-cyan-500 to-cobalt text-white hover:opacity-90 shadow-lg'
-                                        : 'bg-white/5 border border-zinc-400 text-zinc-950 hover:bg-white/10 hover:border-zinc-300'
+                                        : 'bg-white/5 border border-zinc-400 text-zinc-950 hover:bg-white/10 hover:border-zinc-500'
                                 }`}
                             >
                                 {tier.cta} →

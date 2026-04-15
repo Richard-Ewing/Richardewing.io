@@ -88,7 +88,7 @@ const AIExpandCard = ({
             <div className="flex items-start gap-4">
                 <div className="text-3xl">{icon}</div>
                 <div className="flex-1">
-                    <div className={`font-mono text-[10px] ${labelColor} uppercase tracking-widest mb-1`}>{label}</div>
+                    <div className={`font-mono text-xs font-medium ${labelColor} uppercase tracking-widest mb-1`}>{label}</div>
                     <h3 className="text-zinc-950 font-bold text-lg mb-2">{title}</h3>
                     <p className="text-zinc-900 text-sm leading-relaxed mb-3">{description}</p>
 
@@ -141,7 +141,7 @@ export default function PrincipalContent() {
                             <div className="relative group shrink-0">
                                 {/* Animated glow ring */}
                                 <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-cobalt to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-500 animate-pulse" />
-                                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-zinc-200 border-2 border-zinc-300 overflow-hidden relative">
+                                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-zinc-200 border-2 border-zinc-500 overflow-hidden relative">
                                     <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" fill className="object-cover grayscale group-hover:grayscale-0 transition duration-500" />
                                 </div>
                             </div>
@@ -161,25 +161,25 @@ export default function PrincipalContent() {
                                 <div className="text-3xl sm:text-4xl font-bold text-cyan-400">
                                     <NumberTicker value={25} prefix="$" suffix="M" />
                                 </div>
-                                <div className="text-[10px] sm:text-xs font-mono text-zinc-800 uppercase mt-1">ARR Scaled</div>
+                                <div className="text-xs font-medium sm:text-xs font-mono text-zinc-800 uppercase mt-1">ARR Scaled</div>
                             </div>
                             <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
                                 <div className="text-3xl sm:text-4xl font-bold text-zinc-900">
                                     <NumberTicker value={7} suffix="M+" />
                                 </div>
-                                <div className="text-[10px] sm:text-xs font-mono text-zinc-800 uppercase mt-1">Users Migrated</div>
+                                <div className="text-xs font-medium sm:text-xs font-mono text-zinc-800 uppercase mt-1">Users Migrated</div>
                             </div>
                             <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
                                 <div className="text-3xl sm:text-4xl font-bold text-cobalt">
                                     <NumberTicker value={5} prefix="$" suffix="M" />
                                 </div>
-                                <div className="text-[10px] sm:text-xs font-mono text-zinc-800 uppercase mt-1">Cost Reduced</div>
+                                <div className="text-xs font-medium sm:text-xs font-mono text-zinc-800 uppercase mt-1">Cost Reduced</div>
                             </div>
                             <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
                                 <div className="text-3xl sm:text-4xl font-bold text-gold">
                                     <NumberTicker value={200} suffix="%" />
                                 </div>
-                                <div className="text-[10px] sm:text-xs font-mono text-zinc-800 uppercase mt-1">Revenue Growth</div>
+                                <div className="text-xs font-medium sm:text-xs font-mono text-zinc-800 uppercase mt-1">Revenue Growth</div>
                             </div>
                         </div>
                     </div>
@@ -195,7 +195,7 @@ export default function PrincipalContent() {
                             { name: 'Built In', note: "Editor's Pick", href: 'https://builtin.com/authors/richard-ewing', color: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/5' },
                             { name: 'Mind the Product', note: 'Featured Author', href: 'https://www.mindtheproduct.com/profile/richard-ewing', color: 'text-purple-400 border-purple-500/30 bg-purple-500/5' },
                             { name: 'HackerNoon', note: 'Contributing Author', href: 'https://hackernoon.com/u/richardewing', color: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/5' },
-                            { name: 'Medium', note: 'Author', href: 'https://medium.com/@richardewing', color: 'text-zinc-950 border-zinc-300 bg-white/5' },
+                            { name: 'Medium', note: 'Author', href: 'https://medium.com/@richardewing', color: 'text-zinc-950 border-zinc-500 bg-white/5' },
                             { name: 'Amazon', note: 'Published Author', href: 'https://www.amazon.com/author/richardewing', color: 'text-amber-400 border-amber-500/30 bg-amber-500/5' },
                             { name: 'AWS Startups', note: 'Showcase Company', href: 'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5', color: 'text-orange-400 border-orange-500/30 bg-orange-500/5' },
                         ].map(pub => (
@@ -207,7 +207,7 @@ export default function PrincipalContent() {
                                 className={`inline-flex flex-col items-center px-5 py-3 rounded-xl border transition-all hover:scale-105 ${pub.color}`}
                             >
                                 <span className="font-bold text-sm">{pub.name}</span>
-                                <span className="text-[10px] font-mono uppercase tracking-wider opacity-60 mt-0.5">{pub.note}</span>
+                                <span className="text-xs font-medium font-mono uppercase tracking-wider opacity-60 mt-0.5">{pub.note}</span>
                             </a>
                         ))}
                     </div>
@@ -233,7 +233,7 @@ export default function PrincipalContent() {
                 <div className="mb-8">
                     <h2 className="text-xl sm:text-2xl font-bold text-zinc-950 mb-6 flex items-center gap-3">
                         <span className="w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-cobalt" /> Domain Expertise
-                        <span className="ml-auto text-[10px] font-mono text-cyan-400/50 uppercase">✦ AI-Enhanced</span>
+                        <span className="ml-auto text-xs font-medium font-mono text-cyan-400/50 uppercase">✦ AI-Enhanced</span>
                     </h2>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

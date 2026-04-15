@@ -60,7 +60,7 @@ export default function FaqPage() {
         <div className="max-w-4xl w-full relative z-10 mx-auto">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <span>Help</span><span>/</span><span className="text-cyan-400 font-bold">FAQ</span>
             </div>
 
@@ -97,7 +97,7 @@ export default function FaqPage() {
                     <Link href="/advisory" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-cyan-400 transition-colors">
                         Book a Call →
                     </Link>
-                    <Link href="/tools" className="px-8 py-4 border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 transition-all">
+                    <Link href="/tools" className="px-8 py-4 border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-xl hover:border-cyan-500 transition-all">
                         Explore Free Tools →
                     </Link>
                 </div>

@@ -96,7 +96,7 @@ export default function FTEContent() {
     return (
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!results} toolName="FTE-DISPLACEMENT" />
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-zinc-950 font-bold">FTE Displacement Matrix</span>
@@ -160,7 +160,7 @@ export default function FTEContent() {
                                                 <div className="text-2xl font-bold text-zinc-950 font-mono">${(fullyLoadedSalary/1000).toFixed(1)}k</div>
                                             </div>
                                             <input title="Salary" type="range" min="15000" max="120000" step="1000" value={fullyLoadedSalary} onChange={e => setFullyLoadedSalary(parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-indigo-500" />
-                                            <div className="flex justify-between text-[10px] text-zinc-950 mt-2 font-mono">
+                                            <div className="flex justify-between text-xs font-medium text-zinc-950 mt-2 font-mono">
                                                 <span>Offshore ($15k)</span>
                                                 <span>Nearshore ($35k)</span>
                                                 <span>US Onshore ($80k+)</span>
@@ -228,7 +228,7 @@ export default function FTEContent() {
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-purple-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">EBITDA Expansion Forecast</h2>
                             <p className="text-sm text-zinc-800">Your Agentic workflow savings have been modeled.</p>
@@ -280,21 +280,21 @@ export default function FTEContent() {
                         <ScrollReveal delay={100}>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                                 <GlowCard className="p-6" glowColor="red">
-                                    <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-2">Eliminated Payroll</div>
+                                    <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Eliminated Payroll</div>
                                     <div className="text-3xl font-bold text-red-400">-{formatMoney(results.annualHumanSavings)}<span className="text-sm font-normal text-zinc-900">/yr</span></div>
-                                    <p className="text-[10px] text-zinc-950 mt-2 line-clamp-2">Variable human overhead completely removed from P&L.</p>
+                                    <p className="text-xs font-medium text-zinc-950 mt-2 line-clamp-2">Variable human overhead completely removed from P&L.</p>
                                 </GlowCard>
 
                                 <GlowCard className="p-6" glowColor="cyan">
-                                    <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-2">Agent Compute Cost</div>
+                                    <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Agent Compute Cost</div>
                                     <div className="text-3xl font-bold text-cyan-400">+{formatMoney(results.annualAgentComputeCost)}<span className="text-sm font-normal text-zinc-900">/yr</span></div>
-                                    <p className="text-[10px] text-zinc-950 mt-2 line-clamp-2">New fixed LLM inference cost logic.</p>
+                                    <p className="text-xs font-medium text-zinc-950 mt-2 line-clamp-2">New fixed LLM inference cost logic.</p>
                                 </GlowCard>
 
                                 <GlowCard className="p-6" glowColor="emerald">
-                                    <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-2">Year 1 Net Impact</div>
+                                    <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Year 1 Net Impact</div>
                                     <div className="text-3xl font-bold text-emerald-400">{formatMoney(results.netYear1Savings)}<span className="text-sm font-normal text-zinc-900"> EBITDA</span></div>
-                                    <p className="text-[10px] text-zinc-950 mt-2 line-clamp-2">Includes immediate {formatMoney(results.implementationCost)} CapEx implementation write-off.</p>
+                                    <p className="text-xs font-medium text-zinc-950 mt-2 line-clamp-2">Includes immediate {formatMoney(results.implementationCost)} CapEx implementation write-off.</p>
                                 </GlowCard>
                             </div>
                         </ScrollReveal>
@@ -331,7 +331,7 @@ export default function FTEContent() {
                                             <h4 className="text-zinc-950 font-bold mb-2">Halt BPO Contract Renewals</h4>
                                             <p className="text-zinc-900 text-sm leading-relaxed mb-4">You are currently subsidizing inefficient human labor for deterministic classification and triage tasks. End this immediately.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
                                                 <p className="text-xs text-zinc-900">Instruct Procurement and vendor management to freeze all Tier-1 support outsourcing renewals currently in the pipeline. Place vendors on month-to-month contracts.</p>
@@ -349,7 +349,7 @@ export default function FTEContent() {
                                             <h4 className="text-zinc-950 font-bold mb-2">Deploy Semantic Triage Layer</h4>
                                             <p className="text-zinc-900 text-sm leading-relaxed mb-4">You cannot rip-and-replace support. You must intercept incoming volume before it enters the human queue.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
                                                 <p className="text-xs text-zinc-900">Implement an intent classification router (e.g., Llama 3 8B) in front of Zendesk/Intercom. Auto-close Top 5 known issues instantly with RAG documentation before allocating an agent.</p>
@@ -367,7 +367,7 @@ export default function FTEContent() {
                                             <h4 className="text-zinc-950 font-bold mb-2">Upskill Top 10% Retained Staff</h4>
                                             <p className="text-zinc-900 text-sm leading-relaxed mb-4">As deterministic volume falls, unresolved tickets will spike in complexity. You need engineers, not agents.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
                                                 <p className="text-xs text-zinc-900">Transition remaining Tier-3 support personnel into "AI Automation Engineers." Task them explicitly with updating knowledge vectors to prevent human escalation of newly closed loop cases.</p>

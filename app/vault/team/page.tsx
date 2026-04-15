@@ -47,7 +47,7 @@ export default async function TeamAdminPage() {
                 <div className="mb-12">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 mb-6">
                         <Users className="w-4 h-4 text-amber-500" />
-                        <span className="text-[10px] font-mono text-amber-500 uppercase tracking-widest">Enterprise Administration</span>
+                        <span className="text-xs font-medium font-mono text-amber-500 uppercase tracking-widest">Enterprise Administration</span>
                     </div>
                     
                     <h1 className="text-4xl font-grotesk font-bold text-zinc-950 mb-4">
@@ -99,7 +99,7 @@ export default async function TeamAdminPage() {
                         {isAtCapacity ? (
                             <p className="text-xs text-red-400 font-bold">Limit Reached. No further invites can be claimed.</p>
                         ) : (
-                            <p className="text-[10px] text-cyan-400 uppercase tracking-widest font-bold">{availableChildSeats - seatsUsed} Seats Remaining</p>
+                            <p className="text-xs font-medium text-cyan-400 uppercase tracking-widest font-bold">{availableChildSeats - seatsUsed} Seats Remaining</p>
                         )}
                     </div>
                 </div>
@@ -115,7 +115,7 @@ export default async function TeamAdminPage() {
                         <div className="card overflow-hidden border-zinc-400">
                             <table className="w-full text-left border-collapse">
                                 <thead>
-                                    <tr className="bg-white/80 border-b border-zinc-400 text-[10px] uppercase tracking-widest text-zinc-900">
+                                    <tr className="bg-white/80 border-b border-zinc-400 text-xs font-medium uppercase tracking-widest text-zinc-900">
                                         <th className="p-4 font-bold">Email Address</th>
                                         <th className="p-4 font-bold hidden sm:table-cell">User ID</th>
                                         <th className="p-4 font-bold text-right">Date Claimed</th>

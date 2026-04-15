@@ -40,7 +40,7 @@ const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: 
     <div className={`relative overflow-hidden rounded-2xl border border-zinc-400 bg-white/60 p-6 backdrop-blur-md ${className}`}>
         <div className="flex items-center gap-2 mb-4 text-zinc-900">
             {Icon && <Icon size={14} />}
-            <span className="text-[10px] font-mono uppercase tracking-widest">{title}</span>
+            <span className="text-xs font-medium font-mono uppercase tracking-widest">{title}</span>
         </div>
         {children}
     </div>
@@ -662,7 +662,7 @@ export default function AUEBTool() {
                                                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-900">$</span>
                                                         <input id="hosting" type="number" step="0.01" value={hostingCostPerUser} onChange={(e) => setHostingCostPerUser(e.target.value)} className="w-full bg-white/50 border border-zinc-400 rounded-xl px-4 py-3 pl-7 text-zinc-950 font-mono focus:border-cyan-500 focus:outline-none" />
                                                     </div>
-                                                    <p className="text-[10px] text-zinc-800 mt-1">AWS/GCP/Vercel per user allocation</p>
+                                                    <p className="text-xs font-medium text-zinc-800 mt-1">AWS/GCP/Vercel per user allocation</p>
                                                 </div>
                                                 <div>
                                                     <label className="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2 block">Third-Party APIs</label>
@@ -715,7 +715,7 @@ export default function AUEBTool() {
                                 <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-zinc-400 rounded-2xl p-6 mb-8 backdrop-blur-md">
                                     <div>
                                         <div className="flex items-center gap-2 mb-2">
-                                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                         </div>
                                         <h2 className="text-xl font-bold text-zinc-950 mb-1">Board-Ready Deliverable Generated</h2>
                                         <p className="text-sm text-zinc-800">Export this assessment to a verified Executive PDF.</p>
@@ -1033,7 +1033,7 @@ export default function AUEBTool() {
                                                         <div className={`absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] z-10 ${i === 0 ? 'bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.8)] animate-pulse' : 'bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)]'}`}></div>
                                                         
                                                         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                            <div className={`px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest shrink-0 inline-block w-fit ${i === 0 ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'bg-white/5 text-zinc-800'}`}>
+                                                            <div className={`px-3 py-1 rounded-md text-xs font-medium uppercase font-mono tracking-widest shrink-0 inline-block w-fit ${i === 0 ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30' : 'bg-white/5 text-zinc-800'}`}>
                                                                 Month {plan.month} {i === 0 && ' - CRITICAL'}
                                                             </div>
                                                             <div className="font-bold text-zinc-950 text-base leading-tight md:leading-normal">{plan.focus}</div>
@@ -1093,7 +1093,7 @@ export default function AUEBTool() {
                                                     <h4 className="text-zinc-950 font-bold mb-2">Deploy Semantic Caching Architecture</h4>
                                                     <p className="text-zinc-900 text-sm leading-relaxed mb-4">You are paying frontier-model token prices over and over for duplicate queries. Stop treating repetitive intent as novel computation.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                        <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
                                                         <p className="text-xs text-zinc-900">Implement a Redis-backed Vector database layer to intercept and cache semantically similar prompts. Instantly deflect 30-40% of queries away from paid API endpoints.</p>
@@ -1111,7 +1111,7 @@ export default function AUEBTool() {
                                                     <h4 className="text-zinc-950 font-bold mb-2">Build a Sovereign Intent Router</h4>
                                                     <p className="text-zinc-900 text-sm leading-relaxed mb-4">You are using GPT-4-class intelligence to run simple extraction tasks. This is like using a supercomputer to operate a calculator.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                        <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
                                                         <p className="text-xs text-zinc-900">Deploy a fast, cheap intent classifier (e.g., Llama 3 8B) to triage incoming requests. Route basic summarization tasks to low-cost models, reserving frontier capabilities exclusively for high-reasoning tasks.</p>
@@ -1129,7 +1129,7 @@ export default function AUEBTool() {
                                                     <h4 className="text-zinc-950 font-bold mb-2">Productize Token Limitations</h4>
                                                     <p className="text-zinc-900 text-sm leading-relaxed mb-4">Unlimited queries uncap your liability. Generative AI fundamentally reintroduces COGS into SaaS, and your pricing tiers must reflect that.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                        <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
                                                         <p className="text-xs text-zinc-900">Enforce strict rate limits on base-tier accounts. Force users hitting the P90 percentile of compute consumption into high-margin enterprise tiers to offset their infrastructure drain.</p>

@@ -76,7 +76,7 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                     <button
                         onClick={() => handleCheckout(PREMIUM_GUIDES.find(g => g.slug === currentGuide)?.id || 'premium_guide_29')}
                         disabled={false}
-                        className="w-full flex items-center justify-between p-4 rounded-xl border border-zinc-400 bg-zinc-50 hover:border-zinc-300 transition-all group text-left"
+                        className="w-full flex items-center justify-between p-4 rounded-xl border border-zinc-400 bg-zinc-50 hover:border-zinc-500 transition-all group text-left"
                     >
                         <div>
                             <div className="text-sm font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors">This Guide Only</div>
@@ -94,7 +94,7 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                         disabled={false}
                         className="w-full flex items-center justify-between p-4 rounded-xl border border-cyan-500/30 bg-cyan-500/5 hover:border-cyan-500/50 transition-all group text-left relative"
                     >
-                        <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full bg-cyan-500 text-[10px] font-bold text-white uppercase tracking-widest flex items-center gap-1">
+                        <div className="absolute -top-2.5 left-4 px-2 py-0.5 rounded-full bg-cyan-500 text-xs font-medium font-bold text-white uppercase tracking-widest flex items-center gap-1">
                             <Sparkles className="w-3 h-3" /> Ultimate Value
                         </div>
                         <div>
@@ -102,21 +102,21 @@ export default function BundlePopup({ isOpen, onClose, currentGuide }: BundlePop
                             <div className="text-xs text-zinc-950 mt-0.5">Complete 2026 premium library · Save over $500</div>
                             <div className="flex flex-wrap gap-1 mt-2">
                                 {PREMIUM_GUIDES.slice(0, 5).map(g => (
-                                    <span key={g.id} className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">{g.name}</span>
+                                    <span key={g.id} className="text-xs font-medium px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">{g.name}</span>
                                 ))}
-                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-zinc-800">+8 more</span>
+                                <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-white/5 text-zinc-800">+8 more</span>
                             </div>
                         </div>
                         <div className="flex flex-col items-end">
                             <span className="text-xl font-bold text-zinc-900">$399</span>
-                            <span className="text-[10px] text-zinc-950 line-through">$1,027</span>
+                            <span className="text-xs font-medium text-zinc-950 line-through">$1,027</span>
                         </div>
                     </button>
                 </div>
 
                 {/* Footer */}
                 <div className="px-6 pb-6">
-                    <p className="text-[10px] text-zinc-800 text-center">
+                    <p className="text-xs font-medium text-zinc-800 text-center">
                         Secure checkout powered by Stripe · Instant PDF access after purchase
                     </p>
                 </div>

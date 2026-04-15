@@ -120,7 +120,7 @@ export default function CertificationPage() {
                                 Just Join Waitlist
                             </a>
                         </div>
-                        <p className="text-[10px] text-zinc-800 mt-4">Cohort 1 opens Q3 2026. Pay now to secure priority enrollment.</p>
+                        <p className="text-xs font-medium text-zinc-800 mt-4">Cohort 1 opens Q3 2026. Pay now to secure priority enrollment.</p>
                     </div>
                 </section>
 

@@ -168,7 +168,7 @@ export default function CloudContent() {
     return (
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!results} toolName="CLOUD-ARBITRAGE" />
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-zinc-950 font-bold">Cloud Repatriation</span>
@@ -293,7 +293,7 @@ export default function CloudContent() {
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-rose-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">FinOps Arbitrage Model Complete</h2>
                             <p className="text-sm text-zinc-800">Your repatriation economics clearly establish a mandate to exit the cloud.</p>
@@ -346,19 +346,19 @@ export default function CloudContent() {
                             <h3 className="text-zinc-950 font-bold font-grotesk text-xl mb-4 text-center mt-10 border-t border-zinc-400 pt-10">Capital Inefficiency Heatmap</h3>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                                 <div className="bg-zinc-50 border border-zinc-400 rounded-xl p-5 relative overflow-hidden group">
-                                    <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-3">Compute Abstraction Tax</div>
+                                    <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-3">Compute Abstraction Tax</div>
                                     <div className="flex justify-between text-xs font-mono mb-1"><span className="text-red-400">AWS (c5/m5)</span><span className="text-emerald-400">Bare Metal (Dual Epyc)</span></div>
                                     <div className="flex justify-between font-bold mb-4 tracking-tighter"><span className="text-red-400 text-2xl">{formatMoney(results.awsStats.compute)}</span><span className="text-emerald-400 text-2xl">{formatMoney(results.bmStats.compute)}</span></div>
                                 </div>
                                 
                                 <div className="bg-zinc-50 border border-zinc-400 rounded-xl p-5 relative overflow-hidden group">
-                                    <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-3">Managed DB Tax (RDS/Aurora)</div>
+                                    <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-3">Managed DB Tax (RDS/Aurora)</div>
                                     <div className="flex justify-between text-xs font-mono mb-1"><span className="text-red-400">AWS</span><span className="text-emerald-400">Dedicated NVMe</span></div>
                                     <div className="flex justify-between font-bold mb-4 tracking-tighter"><span className="text-red-400 text-2xl">{formatMoney(results.awsStats.db)}</span><span className="text-emerald-400 text-2xl">{formatMoney(results.bmStats.db)}</span></div>
                                 </div>
 
                                 <div className="bg-zinc-50 border border-zinc-400 rounded-xl p-5 relative overflow-hidden group">
-                                    <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-3">Data Transfer (Egress Cartel)</div>
+                                    <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-3">Data Transfer (Egress Cartel)</div>
                                     <div className="flex justify-between text-xs font-mono mb-1"><span className="text-red-400">AWS ($0.09/GB)</span><span className="text-emerald-400">Unmetered 10G</span></div>
                                     <div className="flex justify-between font-bold mb-4 tracking-tighter"><span className="text-red-400 text-2xl">{formatMoney(results.awsStats.egress)}</span><span className="text-emerald-400 text-2xl">{formatMoney(results.bmStats.egress)}</span></div>
                                 </div>
@@ -380,7 +380,7 @@ export default function CloudContent() {
                                             <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.5)] z-10"></div>
                                             
                                             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                <div className={`px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest shrink-0 inline-block w-fit ${plan.month === 1 ? 'bg-rose-500/20 text-rose-300 border border-rose-500/50 font-bold' : 'bg-white/5 text-zinc-800'}`}>
+                                                <div className={`px-3 py-1 rounded-md text-xs font-medium uppercase font-mono tracking-widest shrink-0 inline-block w-fit ${plan.month === 1 ? 'bg-rose-500/20 text-rose-300 border border-rose-500/50 font-bold' : 'bg-white/5 text-zinc-800'}`}>
                                                     Month {plan.month} {plan.month === 1 && '— CRITICAL DEPENDENCY'}
                                                 </div>
                                                 <div className="font-bold text-zinc-950 text-base">
@@ -433,7 +433,7 @@ export default function CloudContent() {
                                             <h4 className="text-zinc-950 font-bold mb-2">Decouple Stateless Compute (Lift & Shift)</h4>
                                             <p className="text-zinc-900 text-sm leading-relaxed mb-4">Stateless compute is the easiest abstraction layer to migrate. AWS EC2 operates at an ~85% gross margin that you are paying directly.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
                                                 <p className="text-xs text-zinc-900">Lease 2 high-density dual-EPYC chassis from Deft/Equinix. Install Proxmox/K3s. Adjust CI/CD to deploy images to the new bare-metal IP block simultaneously (shadow traffic).</p>
@@ -451,7 +451,7 @@ export default function CloudContent() {
                                             <h4 className="text-zinc-950 font-bold mb-2">Neutralize the Managed Database Tax</h4>
                                             <p className="text-zinc-900 text-sm leading-relaxed mb-4">You are paying a massive premium for AWS Aurora/RDS wrappers. Databases are simply optimized blocks on disks. An NVMe bare metal cluster yields 15x IOPS for 1/8th the price.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
                                                 <p className="text-xs text-zinc-900">Initiate logical replication from AWS to your private Postgres NVMe cluster. Pause writes, failover DNS caching layer, and sever the AWS connection entirely.</p>
@@ -469,7 +469,7 @@ export default function CloudContent() {
                                             <h4 className="text-zinc-950 font-bold mb-2">Eliminate the Egress Cartel Monopoly</h4>
                                             <p className="text-zinc-900 text-sm leading-relaxed mb-4">AWS charges $0.09/GB for data egress—an artificial monopoly markup. A 10G unmetered drop in a private rack costs less than $1,000/mo statically.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
                                                 <p className="text-xs text-zinc-900">Move all high-bandwidth bandwidth egress paths (video, streaming, heavy API JSON payloads) behind Cloudflare to nullify AWS egress, then route directly from the new bare metal unmetered pipeline.</p>

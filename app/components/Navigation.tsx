@@ -79,7 +79,7 @@ const Navigation = () => {
                                     <p className="text-[10.5px] text-indigo-500/70 font-mono tracking-widest uppercase">Board-Level Telemetry Hub</p>
                                 </Link>
                                 
-                                <div className="px-5 py-2 text-[10px] font-bold tracking-widest text-[var(--accent-purple)] uppercase mt-2">Flagship Engines</div>
+                                <div className="px-5 py-2 text-xs font-medium font-bold tracking-widest text-[var(--accent-purple)] uppercase mt-2">Flagship Engines</div>
                                 <DropdownItem href="/benchmark/ai-capital-2026" description="FTE & CapEx/OpEx Threshold Data">2026 AI Capital Benchmark</DropdownItem>
                                 <DropdownItem href="/tools/copilot-roi" description="Calculate Net Revenue Retention">Copilot ROI Forecaster</DropdownItem>
                                 <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">Tech Debt Forecaster (PDI)</DropdownItem>
@@ -88,7 +88,7 @@ const Navigation = () => {
                                 <DropdownItem href="/tools/ai-roi-timeline" description="Hardware vs API investment horizons">AI CapEx Break-Even</DropdownItem>
                                 
                                 <div className="mt-2 p-2 relative z-10 w-full bg-zinc-50 pb-3">
-                                    <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-zinc-400 hover:border-zinc-300 bg-white hover:bg-zinc-50 rounded-lg py-2.5 mx-3 transition-colors">
+                                    <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-zinc-400 hover:border-zinc-500 bg-white hover:bg-zinc-50 rounded-lg py-2.5 mx-3 transition-colors">
                                         <span className="text-xs font-semibold text-zinc-950">Explore All Diagnostics</span>
                                         <span className="text-xs text-zinc-900">→</span>
                                     </Link>
@@ -198,7 +198,7 @@ const DropdownItem = ({ href, children, description }: { href: string, children:
             className="block px-4 py-3 text-sm text-zinc-900 hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
         >
             <span className="block">{children}</span>
-            {description && <span className="block text-[10px] text-zinc-900 mt-0.5">{description}</span>}
+            {description && <span className="block text-xs font-medium text-zinc-900 mt-0.5">{description}</span>}
         </Link>
     );
 };
@@ -264,7 +264,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                                 <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
                                 <span>Executive Board Room</span>
                             </div>
-                            <span className="text-[10px] text-indigo-500/70 font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
+                            <span className="text-xs font-medium text-indigo-500/70 font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
                         </Link>
 
                         <MobileLink href="/benchmark/ai-capital-2026" onClick={onClose} className="font-bold text-cyan-600">2026 AI Capital Benchmark</MobileLink>

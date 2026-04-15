@@ -15,7 +15,7 @@ export default function ActionChecklist({ items }: { items: string[] }) {
 
     return (
         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-6 mt-8 relative overflow-hidden">
-            <div className="absolute top-0 right-0 px-4 py-1 bg-amber-500/10 text-amber-400 border-b border-l border-amber-500/20 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg flex items-center gap-1">
+            <div className="absolute top-0 right-0 px-4 py-1 bg-amber-500/10 text-amber-400 border-b border-l border-amber-500/20 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg flex items-center gap-1">
                 <Rocket className="w-3 h-3" />
                 Execution Checklist
             </div>

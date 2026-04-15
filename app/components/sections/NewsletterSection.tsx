@@ -87,7 +87,7 @@ const NewsletterSection = () => {
                                         value={email}
                                         onChange={(e) => { setEmail(e.target.value); setValidationError(''); }}
                                         placeholder="Enter your email"
-                                        className="flex-grow px-6 py-4 rounded-lg bg-zinc-50 border border-zinc-300 text-zinc-900 focus:outline-none focus:border-purple-500 transition-colors"
+                                        className="flex-grow px-6 py-4 rounded-lg bg-zinc-50 border border-zinc-500 text-zinc-900 focus:outline-none focus:border-purple-500 transition-colors"
                                         required
                                         disabled={state.submitting || isValidating}
                                     />

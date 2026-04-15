@@ -277,7 +277,7 @@ export default function AiCoursesPage() {
                                                 <span className="text-zinc-800 group-hover:text-zinc-900 transition-colors shrink-0 mt-1">{isInternal ? '→' : '↗'}</span>
                                             </div>
                                             <div className="flex items-center gap-2 mb-3">
-                                                <span className="text-[10px] font-mono text-zinc-800 px-2 py-0.5 rounded-full border border-zinc-400 bg-zinc-50">{course.provider}</span>
+                                                <span className="text-xs font-medium font-mono text-zinc-800 px-2 py-0.5 rounded-full border border-zinc-400 bg-zinc-50">{course.provider}</span>
                                             </div>
                                             <p className="text-sm text-zinc-900 mb-4 leading-relaxed">{course.description}</p>
                                             <div className={`text-xs ${track.textColor} font-mono leading-relaxed border-t border-zinc-400 pt-3`}>
@@ -304,7 +304,7 @@ export default function AiCoursesPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {recommendedReading.map(book => (
                             <a key={book.title} href={book.url} target="_blank" rel="noopener noreferrer"
-                                className="group block p-6 rounded-xl bg-white/[0.03] border border-zinc-400 hover:border-zinc-300 hover:bg-white/[0.06] transition-all">
+                                className="group block p-6 rounded-xl bg-white/[0.03] border border-zinc-400 hover:border-zinc-500 hover:bg-white/[0.06] transition-all">
                                 <h3 className="text-base font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors font-grotesk mb-1">{book.title}</h3>
                                 <p className="text-xs text-zinc-950 mb-3">{book.author}</p>
                                 <p className="text-sm text-zinc-900 leading-relaxed">{book.description}</p>
@@ -330,7 +330,7 @@ export default function AiCoursesPage() {
                                     <h3 className="text-sm font-bold text-zinc-950 group-hover:text-emerald-300 transition-colors font-grotesk">{tool.name}</h3>
                                     <span className="text-zinc-950 group-hover:text-zinc-900 transition-colors">↗</span>
                                 </div>
-                                <span className="text-[10px] font-mono text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/20 bg-emerald-500/10">{tool.category}</span>
+                                <span className="text-xs font-medium font-mono text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/20 bg-emerald-500/10">{tool.category}</span>
                                 <p className="text-xs text-zinc-950 leading-relaxed mt-2">{tool.description}</p>
                             </a>
                         ))}

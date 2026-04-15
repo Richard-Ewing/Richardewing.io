@@ -10,7 +10,7 @@ export default function LegalPage() {
             <div className="max-w-4xl mx-auto w-full relative z-10">
                 <div className="absolute bottom-0 left-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-white/5 rounded-full blur-[100px] pointer-events-none" />
 
-                <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+                <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                     <Link href="/" className="hover:text-zinc-900 transition-colors">Home</Link>
                     <span>/</span>
                     <span className="text-zinc-800">Signal</span>
@@ -77,30 +77,30 @@ export default function LegalPage() {
                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                     <div className="p-3 border border-zinc-400 rounded-lg text-center hover:border-cyan-500/30 transition">
                                         <div className="text-zinc-950 font-bold text-sm">APER™</div>
-                                        <div className="text-zinc-800 text-[10px]">Team Efficiency Diagnostic</div>
+                                        <div className="text-zinc-800 text-xs font-medium">Team Efficiency Diagnostic</div>
                                     </div>
                                     <div className="p-3 border border-zinc-400 rounded-lg text-center hover:border-red-500/30 transition">
                                         <div className="text-zinc-950 font-bold text-sm">AUEB™</div>
-                                        <div className="text-zinc-800 text-[10px]">AI Unit Economics Benchmark</div>
+                                        <div className="text-zinc-800 text-xs font-medium">AI Unit Economics Benchmark</div>
                                     </div>
                                     <div className="p-3 border border-zinc-400 rounded-lg text-center hover:border-emerald-500/30 transition">
                                         <div className="text-zinc-950 font-bold text-sm">PDI™</div>
-                                        <div className="text-zinc-800 text-[10px]">Product Debt Index</div>
+                                        <div className="text-zinc-800 text-xs font-medium">Product Debt Index</div>
                                     </div>
                                     <div className="p-3 border border-zinc-400 rounded-lg text-center hover:border-purple-500/30 transition">
                                         <div className="text-zinc-950 font-bold text-sm">EV-SE™</div>
-                                        <div className="text-zinc-800 text-[10px]">Valuation Scenario Engine</div>
+                                        <div className="text-zinc-800 text-xs font-medium">Valuation Scenario Engine</div>
                                     </div>
                                     <div className="p-3 border border-zinc-400 rounded-lg text-center hover:border-cobalt/30 transition">
                                         <div className="text-zinc-950 font-bold text-sm">Q-PEP™</div>
-                                        <div className="text-zinc-800 text-[10px]">Quarterly Protocol</div>
+                                        <div className="text-zinc-800 text-xs font-medium">Quarterly Protocol</div>
                                     </div>
                                     <div className="p-3 border border-zinc-400 rounded-lg text-center hover:border-gold/30 transition">
-                                        <div className="text-zinc-800 text-[10px]">Methodology & Brand</div>
+                                        <div className="text-zinc-800 text-xs font-medium">Methodology & Brand</div>
                                     </div>
                                     <div className="p-3 border border-zinc-400 rounded-lg text-center hover:border-emerald-500/30 transition">
                                         <div className="text-zinc-950 font-bold text-sm">AUDIT™</div>
-                                        <div className="text-zinc-800 text-[10px]">Audit Interview Protocol</div>
+                                        <div className="text-zinc-800 text-xs font-medium">Audit Interview Protocol</div>
                                     </div>
                                 </div>
                                 <p className="text-zinc-950 text-xs mt-4">

@@ -40,7 +40,7 @@ export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCT
                     </button>
                 </div>
 
-                <div className="flex items-center justify-center gap-6 mt-6 text-[10px] text-zinc-950">
+                <div className="flex items-center justify-center gap-6 mt-6 text-xs font-medium text-zinc-950">
                     <span>✓ Instant access</span>
                     <span>✓ PDF download</span>
                     <span>✓ Future updates</span>

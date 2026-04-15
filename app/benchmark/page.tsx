@@ -82,7 +82,7 @@ export default function BenchmarkPage() {
                                 >
                                     Get Free Report →
                                 </a>
-                                <p className="text-[10px] text-zinc-800 mt-4">Delivered via The Product Economist newsletter. Zero spam.</p>
+                                <p className="text-xs font-medium text-zinc-800 mt-4">Delivered via The Product Economist newsletter. Zero spam.</p>
                             </div>
                         </div>
                     </div>

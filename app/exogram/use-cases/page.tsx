@@ -79,7 +79,7 @@ export default function ExogramUseCasesPage() {
                             <div className="flex items-start gap-4 mb-6">
                                 <span className="text-4xl">{uc.icon}</span>
                                 <div>
-                                    <span className="text-[10px] font-mono text-purple-400 uppercase tracking-widest">{uc.industry}</span>
+                                    <span className="text-xs font-medium font-mono text-purple-400 uppercase tracking-widest">{uc.industry}</span>
                                     <h2 className="text-2xl font-grotesk font-bold text-zinc-900">{uc.title}</h2>
                                 </div>
                             </div>
@@ -98,7 +98,7 @@ export default function ExogramUseCasesPage() {
                                     <p className="text-sm text-zinc-950 font-semibold mb-3">{uc.impact}</p>
                                     <div className="flex flex-wrap gap-1.5">
                                         {uc.regulations.map(r => (
-                                            <span key={r} className="text-[10px] font-mono text-zinc-950 px-2 py-0.5 rounded border border-zinc-400 bg-zinc-50">{r}</span>
+                                            <span key={r} className="text-xs font-medium font-mono text-zinc-950 px-2 py-0.5 rounded border border-zinc-400 bg-zinc-50">{r}</span>
                                         ))}
                                     </div>
                                 </div>

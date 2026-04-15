@@ -75,7 +75,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                 
                 <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-600 font-mono text-[10px] uppercase tracking-widest mb-6">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-600 font-mono text-xs font-medium uppercase tracking-widest mb-6">
                             <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" /> Highly Classified Assets
                         </div>
                         <h3 className="text-3xl font-bold font-grotesk text-zinc-900">Engineering Intelligence Awaiting Extraction</h3>
@@ -147,7 +147,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                     <Network className="w-5 h-5 text-purple-600" />
                                     <div className="text-xs font-mono uppercase text-zinc-800 tracking-widest">Inference Architecture</div>
                                 </div>
-                                <div className="font-mono text-[10px] text-purple-300/50 space-y-2">
+                                <div className="font-mono text-xs font-medium text-purple-300/50 space-y-2">
                                     <div className="flex gap-4">
                                         <span className="text-zinc-950">01</span>
                                         <span className="text-emerald-600/50">import</span> <span>{'{ orchestrator }'}</span> <span className="text-emerald-600/50">from</span> <span className="text-amber-400/50">'@exogram/core'</span>;
@@ -231,7 +231,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                     <div className="flex items-center gap-6 shrink-0 md:pl-6 md:border-l border-zinc-400">
                                         <div className="flex flex-col items-center gap-1 opacity-60">
                                             <Clock className="w-4 h-4 text-zinc-950" />
-                                            <span className="text-[10px] font-mono text-zinc-900">{15 + (idx * 5)} MIN</span>
+                                            <span className="text-xs font-medium font-mono text-zinc-900">{15 + (idx * 5)} MIN</span>
                                         </div>
                                         <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
                                             <Lock className="w-4 h-4 text-zinc-900" />

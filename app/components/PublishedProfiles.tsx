@@ -93,7 +93,7 @@ export const PublishedProfiles = () => {
                                         {profile.publication}
                                     </h3>
                                     {profile.featured && (
-                                        <span className="text-[10px] uppercase tracking-wider text-purple-400 border border-purple-500/30 px-2 py-0.5 rounded-full">Featured</span>
+                                        <span className="text-xs font-medium uppercase tracking-wider text-purple-400 border border-purple-500/30 px-2 py-0.5 rounded-full">Featured</span>
                                     )}
                                 </div>
                                 <p className="text-xs text-cyan-400 mb-2 font-mono uppercase tracking-wide">{profile.role}</p>

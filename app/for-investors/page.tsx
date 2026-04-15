@@ -48,7 +48,7 @@ export default function ForInvestorsPage() {
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="/advisory" className="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-white font-bold hover:opacity-90 transition-opacity">Request Due Diligence Proposal →</Link>
-                            <Link href="/tools/pdi" className="px-8 py-4 rounded-lg border border-zinc-300 text-zinc-950 font-bold hover:bg-white/5 transition-colors">Try PDI Calculator Free →</Link>
+                            <Link href="/tools/pdi" className="px-8 py-4 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5 transition-colors">Try PDI Calculator Free →</Link>
                         </div>
                     </div>
 

@@ -175,7 +175,7 @@ export default function WorkshopsPage() {
                             </a>
                             <a
                                 href="mailto:richardewing@exogram.ai?subject=Speaking%20Engagement%20Inquiry"
-                                className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-sm rounded-xl hover:bg-white/5 transition-all"
+                                className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-sm rounded-xl hover:bg-white/5 transition-all"
                             >
                                 Custom Inquiry →
                             </a>

@@ -18,7 +18,7 @@ const BriefCard = ({ number, title, subtitle, href, isNew, date }: BriefCardProp
     <a href={href} className="block group h-full">
         <div className="card h-full p-6 hover:border-purple-500/50 transition-all relative overflow-hidden">
             {isNew && (
-                <div className="absolute top-0 right-0 bg-purple-500/20 text-purple-300 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-bl-lg border-l border-b border-purple-500/30">
+                <div className="absolute top-0 right-0 bg-purple-500/20 text-purple-300 px-3 py-1 text-xs font-medium font-bold uppercase tracking-widest rounded-bl-lg border-l border-b border-purple-500/30">
                     New
                 </div>
             )}
@@ -51,7 +51,7 @@ export default function BriefingsPage() {
             <div className="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
 
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-gray-600 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-gray-600 uppercase tracking-widest">
                 <span>Signal</span><span>/</span><span className="text-zinc-950 font-bold">Briefings</span>
             </div>
 

@@ -121,7 +121,7 @@ export default function ToolsPage() {
                                     {/* Metrics Preview */}
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {tool.metrics.map((metric, j) => (
-                                            <span key={j} className="px-2 py-1 bg-zinc-100 rounded text-[10px] font-mono text-zinc-800 uppercase">
+                                            <span key={j} className="px-2 py-1 bg-zinc-100 rounded text-xs font-medium font-mono text-zinc-800 uppercase">
                                                 {metric}
                                             </span>
                                         ))}

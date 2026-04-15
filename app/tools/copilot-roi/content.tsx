@@ -23,7 +23,7 @@ const WaterfallChart = ({ data }: { data: { name: string; value: number; color: 
                 return (
                     <div key={i} className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 relative group">
                         <div className="w-full sm:w-36 text-xs font-mono text-zinc-950 sm:text-right hidden sm:block leading-tight">{item.name}</div>
-                        <div className="w-full sm:hidden text-[10px] font-mono text-zinc-900 uppercase tracking-widest">{item.name}</div>
+                        <div className="w-full sm:hidden text-xs font-medium font-mono text-zinc-900 uppercase tracking-widest">{item.name}</div>
                         
                         <div className="flex-1 w-full h-10 bg-zinc-50 border border-zinc-400 rounded-lg overflow-hidden relative">
                             <motion.div 
@@ -208,7 +208,7 @@ export default function CopilotROITool() {
                             <Bot className="w-3 h-3" />
                             AI Enterprise Economics
                         </div>
-                        <div className="px-2 py-1 rounded bg-white/5 text-zinc-900 text-[10px] font-mono tracking-widest uppercase border border-zinc-400">
+                        <div className="px-2 py-1 rounded bg-white/5 text-zinc-900 text-xs font-medium font-mono tracking-widest uppercase border border-zinc-400">
                             Unit Cost Forecaster
                         </div>
                     </div>
@@ -316,7 +316,7 @@ export default function CopilotROITool() {
                                 
                                 <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 border-b border-zinc-400 pb-6">
                                     <div>
-                                        <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-2">Net Financial Position</div>
+                                        <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Net Financial Position</div>
                                         <div className="flex items-end gap-4">
                                             <h2 className={`text-5xl lg:text-7xl font-bold tracking-tighter ${isNegativeReturn ? 'text-red-500' : 'text-emerald-500'}`}>
                                                 {isNegativeReturn ? '-' : '+'}${Math.abs(netROAI_Dollar / 1000).toFixed(0)}k
@@ -326,11 +326,11 @@ export default function CopilotROITool() {
                                     </div>
                                     <div className="mt-4 md:mt-0 flex gap-2 w-full md:w-auto">
                                         <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-400 px-4 py-2 rounded-xl">
-                                            <div className="text-[10px] uppercase font-mono text-zinc-950 mb-1">Gross Expected Lift</div>
+                                            <div className="text-xs font-medium uppercase font-mono text-zinc-950 mb-1">Gross Expected Lift</div>
                                             <div className="text-lg font-bold text-emerald-400">${(grossProductivityLiftDollar / 1000).toFixed(0)}k</div>
                                         </div>
                                         <div className="flex-1 md:flex-none text-center bg-white/50 border border-zinc-400 px-4 py-2 rounded-xl">
-                                            <div className="text-[10px] uppercase font-mono text-zinc-950 mb-1">Total Drag Penalties</div>
+                                            <div className="text-xs font-medium uppercase font-mono text-zinc-950 mb-1">Total Drag Penalties</div>
                                             <div className="text-lg font-bold text-red-400">-${((annualLicenseCost + vibeDebtDragDollar + reviewBottleneckDragDollar) / 1000).toFixed(0)}k</div>
                                         </div>
                                     </div>
@@ -393,7 +393,7 @@ export default function CopilotROITool() {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <div className="inline-flex px-3 py-1 bg-white/5 border border-zinc-400 rounded tracking-widest text-[10px] text-zinc-900 font-mono mb-4 uppercase">
+                                        <div className="inline-flex px-3 py-1 bg-white/5 border border-zinc-400 rounded tracking-widest text-xs font-medium text-zinc-900 font-mono mb-4 uppercase">
                                             {readout.title}
                                         </div>
 
@@ -427,7 +427,7 @@ export default function CopilotROITool() {
                                             fileName={`copilot-roi-audit-${activePersona.toLowerCase()}.pdf`}
                                         />
                                     </div>
-                                    <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest">Confidential Engine</div>
+                                    <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">Confidential Engine</div>
                                 </div>
                             </div>
 

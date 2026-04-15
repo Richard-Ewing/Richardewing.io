@@ -110,7 +110,7 @@ export default function AgentRouterContent() {
             <ToolCelebration show={!!results} toolName="AGENT-ROUTER" />
             
             <div className="mb-6 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+                <div className="flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                     <Link href="/tools" className="hover:text-zinc-900 transition">Enterprise Diagnostics</Link>
                     <span>/</span>
                     <span className="text-zinc-950 font-bold">FinOps Router Emulator</span>
@@ -148,7 +148,7 @@ export default function AgentRouterContent() {
                                     <div className="text-2xl font-bold text-zinc-950 font-mono">{baseInputTokens.toLocaleString()}</div>
                                 </div>
                                 <input title="Init Payload (Tokens)" type="range" min="500" max="15000" step="100" value={baseInputTokens} onChange={e => setBaseInputTokens(parseInt(e.target.value))} className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-indigo-500" />
-                                <div className="text-[10px] text-zinc-800 font-mono mt-2">Combined System Prompt + RAG + User Input</div>
+                                <div className="text-xs font-medium text-zinc-800 font-mono mt-2">Combined System Prompt + RAG + User Input</div>
                             </div>
 
                             <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-400">
@@ -209,7 +209,7 @@ export default function AgentRouterContent() {
                      <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-blue-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-blue-500/20 text-blue-400 border border-blue-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                <span className="bg-blue-500/20 text-blue-400 border border-blue-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Architecture Economics Validated</h2>
                             <p className="text-sm text-zinc-800">Compounding token burn mapped across {agentHops} sequential hops.</p>
@@ -339,7 +339,7 @@ export default function AgentRouterContent() {
                                                 <div className="absolute left-4 font-mono text-zinc-950 font-bold text-sm">
                                                     Hop {i+1}: <span className="text-zinc-900 ml-1">{i === 0 ? 'Triage / Planner' : i === 1 ? 'Researcher / Search' : i === 2 ? 'Code Editor' : i === 3 ? 'Verifier / Critic' : 'Auto-Healer'}</span>
                                                 </div>
-                                                <div className="absolute right-4 font-mono text-[10px] text-zinc-950 group-hover:text-zinc-900 transition-colors">
+                                                <div className="absolute right-4 font-mono text-xs font-medium text-zinc-950 group-hover:text-zinc-900 transition-colors">
                                                     +{hopTokens.toLocaleString()} t
                                                 </div>
                                             </motion.div>
@@ -406,7 +406,7 @@ export default function AgentRouterContent() {
                                      <h4 className="text-zinc-950 font-bold mb-2">Deploy Semantic Router</h4>
                                      <p className="text-zinc-900 text-sm mb-4">Route all incoming payloads through a local, CPU-bound classifying model to drop or cache baseline queries before they hit paid APIs.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-[10px] font-mono text-blue-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-blue-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-900">Run Llama-3 8B locally on CPU cache to preemptively classify and deflect 60% of requests.</p>
@@ -418,7 +418,7 @@ export default function AgentRouterContent() {
                                      <h4 className="text-zinc-950 font-bold mb-2">Contextual Pruning</h4>
                                      <p className="text-zinc-900 text-sm mb-4">Agent hops intrinsically copy-paste the last agent's output. Force a summarization layer between hops.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-indigo-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-900">Compress prompt strings by 80% using a cheap deterministic model between execution hops.</p>
@@ -430,7 +430,7 @@ export default function AgentRouterContent() {
                                      <h4 className="text-zinc-950 font-bold mb-2">Cascade Routing</h4>
                                      <p className="text-zinc-900 text-sm mb-4">Never hardcode GPT-4o. Configure the router to attempt Claude Haiku or GPT-4o-Mini first.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-900">Only escalate to the Frontier model layer if the target validation regex explicitly fails.</p>

@@ -25,7 +25,7 @@ export default function AuditInterviewVsHackerRankPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/compare" className="hover:text-cyan-400">Compare</Link><span>/</span><span className="text-emerald-400 font-bold">Audit Interview vs HackerRank</span>
                     </div>
 

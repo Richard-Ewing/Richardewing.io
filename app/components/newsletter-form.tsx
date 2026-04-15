@@ -88,7 +88,7 @@ export function NewsletterForm({
                     prefix="Email"
                     field="email"
                     errors={state.errors}
-                    className="absolute -bottom-5 left-0 text-[10px] text-red-500"
+                    className="absolute -bottom-5 left-0 text-xs font-medium text-red-500"
                 />
             </div>
 

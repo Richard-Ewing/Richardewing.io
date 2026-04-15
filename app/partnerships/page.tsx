@@ -84,12 +84,12 @@ export default function PartnershipsPage() {
                                 <p className="text-sm text-zinc-950 mb-4 flex-1">Refer clients for R&D audits. Earn referral fees on closed deals.</p>
                                 <div className="text-2xl font-bold text-zinc-950 mb-1">Free</div>
                                 <div className="text-xs text-zinc-800 mb-4">Revenue share on referred deals</div>
-                                <a href="mailto:richardewing@exogram.ai?subject=Referral%20Partner%20Application" className="block text-center py-3 rounded-lg border border-zinc-300 text-zinc-950 font-bold text-xs uppercase tracking-widest hover:bg-white/5 transition-all">
+                                <a href="mailto:richardewing@exogram.ai?subject=Referral%20Partner%20Application" className="block text-center py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold text-xs uppercase tracking-widest hover:bg-white/5 transition-all">
                                     Apply →
                                 </a>
                             </div>
                             <div className="rounded-xl border border-cyan-500/30 bg-cyan-500/5 p-6 relative flex flex-col">
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-cyan-600 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">Most Popular</div>
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-cyan-600 text-white text-xs font-medium font-bold uppercase tracking-widest rounded-full">Most Popular</div>
                                 <h3 className="text-lg font-bold text-cyan-400 mb-2">Licensed Partner</h3>
                                 <p className="text-sm text-zinc-950 mb-4 flex-1">White-label frameworks for your consulting practice. Includes training and co-branded case studies.</p>
                                 <div className="text-2xl font-bold text-zinc-950 mb-1">$2,500<span className="text-lg text-zinc-900">/mo</span></div>

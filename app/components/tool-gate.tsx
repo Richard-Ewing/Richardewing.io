@@ -237,7 +237,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                         </button>
                     </form>
 
-                    <p className="text-[10px] text-zinc-950 font-mono mt-6 uppercase tracking-widest">
+                    <p className="text-xs font-medium text-zinc-950 font-mono mt-6 uppercase tracking-widest">
                         Zero spam. Just high-leverage insights for product leaders.
                     </p>
                 </div>

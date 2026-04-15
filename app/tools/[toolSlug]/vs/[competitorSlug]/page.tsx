@@ -91,7 +91,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
             <Navigation />
             
             <main className="max-w-5xl mx-auto px-4 pt-32 mb-32 relative z-10">
-                <Link href={`/tools/${tool.toolSlug}`} className="inline-flex items-center gap-2 text-zinc-500 hover:text-zinc-900 font-mono text-xs uppercase tracking-widest transition-colors mb-12">
+                <Link href={`/tools/${tool.toolSlug}`} className="inline-flex items-center gap-2 text-zinc-700 hover:text-zinc-900 font-mono text-xs uppercase tracking-widest transition-colors mb-12">
                     <ArrowLeft size={14} /> Back to Diagnostic App
                 </Link>
 
@@ -116,7 +116,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                               <Target size={120} />
                           </div>
                           <div className="mb-8">
-                             <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">The Legacy Approach</div>
+                             <div className="text-xs font-mono text-zinc-700 uppercase tracking-widest mb-2">The Legacy Approach</div>
                              <h2 className="text-3xl font-bold text-zinc-950 mb-2">{competitor.name}</h2>
                           </div>
                           <div className="space-y-6">
@@ -169,7 +169,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                             <thead>
                                 <tr className="bg-white/5 border-b border-zinc-400">
                                     <th className="p-6 text-sm font-bold text-zinc-700 uppercase tracking-widest w-1/2">Capability</th>
-                                    <th className="p-6 text-sm font-bold text-zinc-500 uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{competitor.name}</th>
+                                    <th className="p-6 text-sm font-bold text-zinc-700 uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{competitor.name}</th>
                                     <th className="p-6 text-sm font-bold text-indigo-400 uppercase tracking-widest w-1/4 text-center border-l border-zinc-400">{tool.toolName}</th>
                                 </tr>
                             </thead>

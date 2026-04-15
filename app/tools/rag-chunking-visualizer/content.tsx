@@ -111,7 +111,7 @@ export default function RagChunkingContent() {
             <ToolCelebration show={!!results} toolName="CHUNK-VIS" />
             
             <div className="mb-6 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+                <div className="flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                     <Link href="/tools" className="hover:text-zinc-900 transition">Enterprise Diagnostics</Link>
                     <span>/</span>
                     <span className="text-zinc-950 font-bold">RAG Architecture Visualizer</span>
@@ -145,7 +145,7 @@ export default function RagChunkingContent() {
                                         className="w-full h-48 bg-white border border-zinc-400 rounded-xl p-6 font-mono text-xs text-zinc-950 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 transition-all placeholder:text-zinc-950 resize-none shadow-inner"
                                         placeholder="Paste paragraphs, code blocks, or unstructured legal text here to observe how the sliding window tears it apart..."
                                     />
-                                    <div className="text-right mt-2 text-[10px] text-zinc-950 font-mono">Payload: {rawText.length} Characters</div>
+                                    <div className="text-right mt-2 text-xs font-medium text-zinc-950 font-mono">Payload: {rawText.length} Characters</div>
                                 </div>
                             </div>
                             
@@ -162,7 +162,7 @@ export default function RagChunkingContent() {
                                     onChange={e => setChunkSize(parseInt(e.target.value))}
                                     className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-indigo-500" 
                                 />
-                                <p className="text-[10px] mt-3 font-mono text-zinc-950 leading-relaxed">The absolute length limit of each matrix sent to the embedding model.</p>
+                                <p className="text-xs font-medium mt-3 font-mono text-zinc-950 leading-relaxed">The absolute length limit of each matrix sent to the embedding model.</p>
                             </div>
 
                             <div className="p-6 bg-zinc-50 rounded-xl border border-zinc-400">
@@ -178,7 +178,7 @@ export default function RagChunkingContent() {
                                     onChange={e => setOverlap(parseInt(e.target.value))}
                                     className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-cyan-500" 
                                 />
-                                <p className="text-[10px] mt-3 font-mono text-zinc-950 leading-relaxed">Prevents semantic destruction by dragging context across boundaries.</p>
+                                <p className="text-xs font-medium mt-3 font-mono text-zinc-950 leading-relaxed">Prevents semantic destruction by dragging context across boundaries.</p>
                             </div>
                         </div>
 
@@ -206,7 +206,7 @@ export default function RagChunkingContent() {
                      <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-indigo-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-indigo-500/20 text-indigo-400 border border-indigo-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                <span className="bg-indigo-500/20 text-indigo-400 border border-indigo-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Vector Topology Mapped</h2>
                             <p className="text-sm text-zinc-800">Heuristic breakdown of Context Loss vectors across {results.chunks.length} dimensional slices.</p>
@@ -334,12 +334,12 @@ export default function RagChunkingContent() {
                                 {results.chunks.map((chunk, index) => (
                                     <div key={chunk.id} className="relative group transition-all duration-300">
                                          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-indigo-500 to-cyan-500 rounded-l-xl opacity-50 group-hover:opacity-100 z-10 transition-opacity"></div>
-                                         <div className="bg-white border border-zinc-400 hover:border-zinc-300 rounded-xl p-6 pl-8 transition-colors">
+                                         <div className="bg-white border border-zinc-400 hover:border-zinc-500 rounded-xl p-6 pl-8 transition-colors">
                                               <div className="flex justify-between items-center mb-3">
                                                   <div className="text-xs font-mono uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">
                                                       Vector Index [{index}]
                                                   </div>
-                                                  <div className="text-[10px] text-zinc-800 font-mono">Chars: {chunk.start} → {chunk.end}</div>
+                                                  <div className="text-xs font-medium text-zinc-800 font-mono">Chars: {chunk.start} → {chunk.end}</div>
                                               </div>
                                               <p className="text-sm font-mono text-zinc-950 leading-relaxed whitespace-pre-wrap">
                                                   {renderVisuallyHighlightedOverlap(chunk, index, index === results.chunks.length - 1)}
@@ -363,8 +363,8 @@ export default function RagChunkingContent() {
                                 </h3>
                                 
                                 <div className="relative h-48 w-full border-b border-l border-zinc-400/80 p-4">
-                                    <div className="absolute -left-6 top-1/2 -rotate-90 text-[10px] font-mono text-zinc-800 tracking-widest uppercase">Vector Storage Space</div>
-                                    <div className="absolute bottom-1 right-1/2 translate-x-1/2 text-[10px] font-mono text-zinc-800 tracking-widest uppercase mb-[-20px]">Timeline of Document Chunks</div>
+                                    <div className="absolute -left-6 top-1/2 -rotate-90 text-xs font-medium font-mono text-zinc-800 tracking-widest uppercase">Vector Storage Space</div>
+                                    <div className="absolute bottom-1 right-1/2 translate-x-1/2 text-xs font-medium font-mono text-zinc-800 tracking-widest uppercase mb-[-20px]">Timeline of Document Chunks</div>
                                     
                                     <div className="w-full h-full relative flex items-end">
                                         {results.chunks.map((chunk: any, i: number) => {
@@ -393,7 +393,7 @@ export default function RagChunkingContent() {
                                                         ></motion.div>
                                                     )}
                                                     <div className="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <span className="text-[10px] font-mono bg-white border border-zinc-400 px-1 py-0.5 rounded text-zinc-900">{chunk.end - chunk.start}c</span>
+                                                        <span className="text-xs font-medium font-mono bg-white border border-zinc-400 px-1 py-0.5 rounded text-zinc-900">{chunk.end - chunk.start}c</span>
                                                     </div>
                                                 </motion.div>
                                             );
@@ -458,7 +458,7 @@ export default function RagChunkingContent() {
                                      <h4 className="text-zinc-950 font-bold mb-2">Sync Embedding Models</h4>
                                      <p className="text-zinc-900 text-sm mb-4">Never use string-length chunking. Always chunk using the exact Byte Pair Encoding (tiktoken) of your target embedding model.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-[10px] font-mono text-indigo-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-indigo-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-900">Validate the exact encoding dictionary (e.g. text-embedding-3-small) to prevent mid-token shearing.</p>
@@ -470,7 +470,7 @@ export default function RagChunkingContent() {
                                      <h4 className="text-zinc-950 font-bold mb-2">Recursive Splitting</h4>
                                      <p className="text-zinc-900 text-sm mb-4">Upgrade your ingest pipeline to use Recursive Splitting (paragraphs, then sentences, then cascading down to words).</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-900">Force semantic ideas to stay geometrically bound together in vector space.</p>
@@ -482,7 +482,7 @@ export default function RagChunkingContent() {
                                      <h4 className="text-zinc-950 font-bold mb-2">Window Expansion</h4>
                                      <p className="text-zinc-900 text-sm mb-4">Provide enough surrounding context for the LLM to understand referential pronouns (it, they, he) in isolated queries.</p>
                                      <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2 relative z-10">
-                                         <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
+                                         <div className="flex items-center gap-2 text-xs font-medium font-mono text-emerald-400 uppercase tracking-widest font-bold">
                                              <Zap size={10} /> Execution Directive
                                          </div>
                                          <p className="text-xs text-zinc-900">Configure your chunk overlap to be exactly 15-20% of your total chunk byte size.</p>

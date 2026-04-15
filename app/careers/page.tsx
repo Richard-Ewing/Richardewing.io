@@ -24,7 +24,7 @@ const CMAP: Record<string, { bg: string, text: string, border: string, shadow: s
     amber: { bg: 'bg-amber-500/5', text: 'text-amber-400', border: 'border-amber-500/20', shadow: 'shadow-[0_0_15px_rgba(245,158,11,0.15)]', hoverBg: 'hover:bg-amber-500/20', bg10: 'bg-amber-500/10' },
     orange: { bg: 'bg-orange-500/5', text: 'text-orange-400', border: 'border-orange-500/20', shadow: 'shadow-[0_0_15px_rgba(249,115,22,0.15)]', hoverBg: 'hover:bg-orange-500/20', bg10: 'bg-orange-500/10' },
     indigo: { bg: 'bg-indigo-500/5', text: 'text-indigo-400', border: 'border-indigo-500/20', shadow: 'shadow-[0_0_15px_rgba(99,102,241,0.15)]', hoverBg: 'hover:bg-indigo-500/20', bg10: 'bg-indigo-500/10' },
-    slate: { bg: 'bg-slate-500/5', text: 'text-slate-400', border: 'border-slate-500/20', shadow: 'shadow-[0_0_15px_rgba(100,116,139,0.15)]', hoverBg: 'hover:bg-slate-500/20', bg10: 'bg-slate-500/10' },
+    slate: { bg: 'bg-slate-500/5', text: 'text-slate-600', border: 'border-slate-500/20', shadow: 'shadow-[0_0_15px_rgba(100,116,139,0.15)]', hoverBg: 'hover:bg-slate-500/20', bg10: 'bg-slate-500/10' },
     fuchsia: { bg: 'bg-fuchsia-500/5', text: 'text-fuchsia-400', border: 'border-fuchsia-500/20', shadow: 'shadow-[0_0_15px_rgba(217,70,239,0.15)]', hoverBg: 'hover:bg-fuchsia-500/20', bg10: 'bg-fuchsia-500/10' },
     yellow: { bg: 'bg-yellow-500/5', text: 'text-yellow-400', border: 'border-yellow-500/20', shadow: 'shadow-[0_0_15px_rgba(234,179,8,0.15)]', hoverBg: 'hover:bg-yellow-500/20', bg10: 'bg-yellow-500/10' },
     teal: { bg: 'bg-teal-500/5', text: 'text-teal-400', border: 'border-teal-500/20', shadow: 'shadow-[0_0_15px_rgba(20,184,166,0.15)]', hoverBg: 'hover:bg-teal-500/20', bg10: 'bg-teal-500/10' },
@@ -35,7 +35,7 @@ export default function DeepCareersHub() {
     return (
         <div className="max-w-7xl w-full relative z-10 mx-auto px-4 pb-24">
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest pt-8">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest pt-8">
                 <Link href="/" className="hover:text-zinc-900 transition">Home</Link>
                 <span>/</span>
                 <span className="text-zinc-950 font-bold">2026 Career Pathfinder</span>
@@ -50,7 +50,7 @@ export default function DeepCareersHub() {
                     <div className="flex flex-wrap items-center gap-3 mb-8">
                         <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_#10b981]"></div>
-                            <span className="font-mono text-[10px] text-emerald-400 uppercase tracking-widest font-bold">THE 2026 PARADIGM</span>
+                            <span className="font-mono text-xs font-medium text-emerald-400 uppercase tracking-widest font-bold">THE 2026 PARADIGM</span>
                         </div>
                         <span className="text-zinc-950 text-xs font-mono uppercase tracking-widest hidden sm:inline-block">/</span>
                         <span className="text-zinc-900 text-xs font-mono uppercase tracking-widest hidden sm:inline-block">Abandon the feature factory. Govern the agents.</span>
@@ -110,7 +110,7 @@ export default function DeepCareersHub() {
                                             </p>
 
                                             <div className="mt-auto relative z-10 pt-4">
-                                                <Link href={`/careers/${path.slug}`} className={`flex items-center justify-center gap-2 w-full py-3 rounded-lg ${colors.bg10} ${colors.hoverBg} ${colors.text} font-bold tracking-widest uppercase text-[10px] transition-colors border ${colors.border}`}>
+                                                <Link href={`/careers/${path.slug}`} className={`flex items-center justify-center gap-2 w-full py-3 rounded-lg ${colors.bg10} ${colors.hoverBg} ${colors.text} font-bold tracking-widest uppercase text-xs font-medium transition-colors border ${colors.border}`}>
                                                     Explore Strategy
                                                     <ArrowRight size={14} />
                                                 </Link>
@@ -139,7 +139,7 @@ export default function DeepCareersHub() {
                         <div className="relative group">
                             <div className="h-full bg-white border border-zinc-400 rounded-2xl p-8 hover:border-zinc-500/50 transition-all shadow-xl">
                                 <div className="absolute top-0 right-8 transform -translate-y-1/2">
-                                    <div className="bg-zinc-200 text-zinc-950 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-zinc-400">Free Access</div>
+                                    <div className="bg-zinc-200 text-zinc-950 text-xs font-medium font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-zinc-400">Free Access</div>
                                 </div>
                                 <div className="w-12 h-12 rounded-xl bg-zinc-100 flex items-center justify-center mb-6">
                                     <Activity className="text-zinc-800" size={24} />
@@ -177,7 +177,7 @@ export default function DeepCareersHub() {
                                 color={["#10b981", "#3b82f6", "#8b5cf6"]}
                             >
                                 <div className="absolute top-0 right-8 transform -translate-y-1/2 z-30">
-                                    <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]">100,000x Value</div>
+                                    <div className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-xs font-medium font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]">100,000x Value</div>
                                 </div>
                                 <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6 border border-indigo-500/30">
                                     <Diamond className="text-indigo-400" size={24} />
@@ -218,7 +218,7 @@ export default function DeepCareersHub() {
                         <div className="relative group">
                             <div className="h-full bg-white border border-zinc-400 rounded-2xl p-8 hover:border-[var(--accent-crimson)]/50 transition-all shadow-xl">
                                 <div className="absolute top-0 right-8 transform -translate-y-1/2">
-                                    <div className="bg-[var(--bg-primary)] text-[var(--accent-crimson)] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-[var(--accent-crimson)] shadow-[0_0_10px_rgba(255,68,68,0.2)]">Final Validation</div>
+                                    <div className="bg-[var(--bg-primary)] text-[var(--accent-crimson)] text-xs font-medium font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-[var(--accent-crimson)] shadow-[0_0_10px_rgba(255,68,68,0.2)]">Final Validation</div>
                                 </div>
                                 <div className="w-12 h-12 rounded-xl bg-red-50/30 flex items-center justify-center mb-6 border border-red-500/20">
                                     <ShieldAlert className="text-[var(--accent-crimson)]" size={24} />

@@ -15,7 +15,7 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                         </div>
                         <div className="hidden sm:block">
                             <div className="text-xs font-bold text-zinc-900">Product Economics Academy</div>
-                            <div className="text-[10px] text-zinc-900">23 tracks • 293 modules • Lifetime access</div>
+                            <div className="text-xs font-medium text-zinc-900">23 tracks • 293 modules • Lifetime access</div>
                         </div>
                     </div>
                     <div className="flex items-center gap-3">

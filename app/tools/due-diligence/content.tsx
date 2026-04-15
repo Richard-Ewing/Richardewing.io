@@ -38,7 +38,7 @@ const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: 
     <div className={`relative overflow-hidden rounded-2xl border border-zinc-400 bg-white/60 p-6 backdrop-blur-md ${className}`}>
         <div className="flex items-center gap-2 mb-4 text-zinc-900">
             {Icon && <Icon size={14} />}
-            <span className="text-[10px] font-mono uppercase tracking-widest">{title}</span>
+            <span className="text-xs font-medium font-mono uppercase tracking-widest">{title}</span>
         </div>
         {children}
     </div>
@@ -333,7 +333,7 @@ export default function DueDiligenceTool() {
                             <div className="bg-white/5 border border-zinc-400 rounded-xl p-4 mb-6">
                                 <div className="text-sm font-bold text-zinc-950 mb-2 text-center">Private Equity Pass</div>
                                 <div className="text-3xl font-bold text-cyan-400 text-center mb-4">$999<span className="text-sm text-zinc-950 font-normal">/yr</span></div>
-                                <ul className="text-[10px] text-zinc-900 space-y-2 font-mono uppercase tracking-widest">
+                                <ul className="text-xs font-medium text-zinc-900 space-y-2 font-mono uppercase tracking-widest">
                                     <li className="flex items-center gap-2">• Unlimited M&A PDF Exports</li>
                                     <li className="flex items-center gap-2">• Q-PEP Remediation Roadmaps</li>
                                     <li className="flex items-center gap-2">• CISO Dashboard Access</li>
@@ -616,7 +616,7 @@ export default function DueDiligenceTool() {
                                                     <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)] z-10"></div>
                                                     
                                                     <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                        <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-900 shrink-0 inline-block w-fit">
+                                                        <div className="bg-white/5 px-3 py-1 rounded-md text-xs font-medium uppercase font-mono tracking-widest text-zinc-900 shrink-0 inline-block w-fit">
                                                             Month {plan.month}
                                                         </div>
                                                         <div className="font-bold text-zinc-950 text-base leading-tight md:leading-normal">{plan.focus}</div>
@@ -661,7 +661,7 @@ export default function DueDiligenceTool() {
                                 >
                                     <div className="capsule-container rounded-2xl p-6 sm:p-8 mt-8 border border-zinc-400 bg-zinc-50">
                                         <div className="flex items-center gap-2 mb-4">
-                                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                            <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                         </div>
                                         <h3 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-2">
                                             <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
@@ -680,7 +680,7 @@ export default function DueDiligenceTool() {
                                                     <h4 className="text-zinc-950 font-bold mb-2">Hostile Valuation Holdback</h4>
                                                     <p className="text-zinc-900 text-sm leading-relaxed mb-4">The target's technical entropy poses an existential threat to post-close EBITDA. Do not acquire these liabilities at face value.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                                        <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
                                                         <p className="text-xs text-zinc-900">Contractually isolate the exact ${formatMoney(results.valuationImpairment)} impairment value into an escrow hold-back account, contingent upon the target proving architectural viability post-migration.</p>
@@ -698,7 +698,7 @@ export default function DueDiligenceTool() {
                                                     <h4 className="text-zinc-950 font-bold mb-2">Workforce Rightsizing & Neutralization</h4>
                                                     <p className="text-zinc-900 text-sm leading-relaxed mb-4">ARR per head is deeply misaligned with modern SaaS benchmarks. The engineering org is heavily bloated creating gross margin drag.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                                        <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
                                                         <p className="text-xs text-zinc-900">Implement aggressive up-or-out performance tracking on Day 1. Terminate the lowest 20% of legacy contributors immediately and backfill capacity with AI-augmented workflows.</p>
@@ -716,7 +716,7 @@ export default function DueDiligenceTool() {
                                                     <h4 className="text-zinc-950 font-bold mb-2">Immediate EBITDA Leakage Stoppage</h4>
                                                     <p className="text-zinc-900 text-sm leading-relaxed mb-4">You are acquiring ${formatMoney(results.annualInfraWaste)}/yr in structural cloud infrastructure waste that should be dropping to the bottom line.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                                        <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                                        <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive
                                                         </div>
                                                         <p className="text-xs text-zinc-900">Mandate immediate AWS/GCP instance rightsizing and aggressive reserved instance purchasing. Halt all new cloud provisioning without explicit PE/Board VP-level approval.</p>

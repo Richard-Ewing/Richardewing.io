@@ -210,7 +210,7 @@ export default function AuditInterview() {
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!outcome} toolName="AUDIT INTERVIEW" />
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-zinc-950 font-bold">Audit Interview</span>
@@ -280,7 +280,7 @@ export default function AuditInterview() {
                                                     </button>
                                                 ))}
                                             </div>
-                                            <div className="text-center text-[10px] text-zinc-900 font-mono uppercase mt-1">
+                                            <div className="text-center text-xs font-medium text-zinc-900 font-mono uppercase mt-1">
                                                 {SCORE_LABELS[scores[dim.id as keyof Scores]]}
                                             </div>
                                         </div>
@@ -323,7 +323,7 @@ export default function AuditInterview() {
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-emerald-500/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Interview Dashboard</h2>
                             <p className="text-sm text-zinc-800">Session Complete • Protocol {role.toUpperCase()}-092</p>
@@ -353,7 +353,7 @@ export default function AuditInterview() {
 
                             {/* Middle Col: Radar Chart */}
                             <div className="bg-white/80 border border-zinc-400 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden">
-                                <span className="absolute top-4 left-4 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">Attribute Geometry</span>
+                                <span className="absolute top-4 left-4 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">Attribute Geometry</span>
                                 <div className="w-64 h-64">
                                     <RadarChart scores={scores} />
                                 </div>
@@ -361,7 +361,7 @@ export default function AuditInterview() {
 
                             {/* Right Col: Breakdown List */}
                             <div className="bg-white/80 border border-zinc-400 rounded-2xl p-6 space-y-4">
-                                <span className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest block mb-4">Dimension Audit</span>
+                                <span className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest block mb-4">Dimension Audit</span>
                                 {DIMENSIONS.map(dim => (
                                     <div key={dim.id} className="flex justify-between items-center">
                                         <div className="flex items-center gap-2">
@@ -406,8 +406,8 @@ export default function AuditInterview() {
                             ) : (
                                 <div className="prose prose-zinc prose-lg max-w-none bg-zinc-100 p-8 rounded-xl border-l-4 border-emerald-500">
                                     <div className="flex justify-between items-start mb-4">
-                                        <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest">Confidential // Internal Only</span>
-                                        <button onClick={() => navigator.clipboard.writeText(memo)} className="text-[10px] font-mono text-zinc-800 hover:text-zinc-900 uppercase">Copy</button>
+                                        <span className="text-xs font-medium font-mono text-emerald-500 uppercase tracking-widest">Confidential // Internal Only</span>
+                                        <button onClick={() => navigator.clipboard.writeText(memo)} className="text-xs font-medium font-mono text-zinc-800 hover:text-zinc-900 uppercase">Copy</button>
                                     </div>
                                     <p className="text-zinc-800 leading-loose whitespace-pre-wrap font-serif">
                                         {memo}

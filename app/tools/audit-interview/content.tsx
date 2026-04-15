@@ -51,7 +51,7 @@ export default function ProtocolInitialization() {
         <div className="max-w-6xl w-full relative z-10 mx-auto px-4 pb-24">
 
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-zinc-950 font-bold">Fiduciary Protocol</span>
@@ -93,7 +93,7 @@ export default function ProtocolInitialization() {
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {['AUDIT', 'SCALE', 'COST'].map(tag => (
-                                        <span key={tag} className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded text-[10px] font-mono text-emerald-400">
+                                        <span key={tag} className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded text-xs font-medium font-mono text-emerald-400">
                                             {tag}
                                         </span>
                                     ))}
@@ -127,7 +127,7 @@ export default function ProtocolInitialization() {
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {['STRATEGY', 'ECONOMICS', 'LEVERAGE'].map(tag => (
-                                        <span key={tag} className="px-2 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded text-[10px] font-mono text-indigo-400">
+                                        <span key={tag} className="px-2 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded text-xs font-medium font-mono text-indigo-400">
                                             {tag}
                                         </span>
                                     ))}
@@ -185,7 +185,7 @@ export default function ProtocolInitialization() {
                                 { id: '02', title: 'The Audit', desc: 'Verify AI logic for "Memory Bombs" and hidden debt.', color: 'cyan' },
                                 { id: '03', title: 'The Defense', desc: 'Prioritize one fix and explicitly defer the rest.', color: 'indigo' },
                             ].map((phase) => (
-                                <div key={phase.id} className="p-6 bg-white border border-zinc-400 rounded-xl hover:border-zinc-300 transition-all hover:-translate-y-1 group">
+                                <div key={phase.id} className="p-6 bg-white border border-zinc-400 rounded-xl hover:border-zinc-500 transition-all hover:-translate-y-1 group">
                                     <div className={`text-4xl font-mono font-bold text-zinc-900/10 mb-4 group-hover:text-${phase.color}-500/20 transition-colors`}>{phase.id}</div>
                                     <div className="text-sm font-bold text-zinc-950 uppercase tracking-wider mb-2">{phase.title}</div>
                                     <div className="text-xs text-zinc-950 leading-relaxed">{phase.desc}</div>

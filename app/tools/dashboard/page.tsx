@@ -39,7 +39,7 @@ export default function IntelligenceDashboard() {
             });
     }, [isLoaded, user]);
 
-    if (!isLoaded) return <div className="min-h-screen bg-white flex items-center justify-center"><div className="w-8 h-8 border-2 border-zinc-300 border-t-white rounded-full animate-spin" /></div>;
+    if (!isLoaded) return <div className="min-h-screen bg-white flex items-center justify-center"><div className="w-8 h-8 border-2 border-zinc-500 border-t-white rounded-full animate-spin" /></div>;
 
     if (!user) {
         return (
@@ -61,7 +61,7 @@ export default function IntelligenceDashboard() {
             case 'PDI': return 'text-rose-400 bg-rose-400/10 border-rose-400/20';
             case 'DUE-DILIGENCE': return 'text-amber-400 bg-amber-400/10 border-amber-400/20';
             case 'CLOUD-REPAT': return 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20';
-            default: return 'text-zinc-950 bg-white/10 border-zinc-300';
+            default: return 'text-zinc-950 bg-white/10 border-zinc-500';
         }
     };
 
@@ -106,13 +106,13 @@ export default function IntelligenceDashboard() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 key={run.id} 
-                className="bg-white/60 border border-zinc-400 hover:border-zinc-300 transition-all p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group"
+                className="bg-white/60 border border-zinc-400 hover:border-zinc-500 transition-all p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group"
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 
                 <div className="relative z-10 w-full md:w-auto">
                     <div className="flex items-center justify-between md:justify-start gap-4 mb-4">
-                        <span className={`px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-widest rounded-md border ${getToolColor(run.tool_id)}`}>
+                        <span className={`px-3 py-1 text-xs font-medium font-mono font-bold uppercase tracking-widest rounded-md border ${getToolColor(run.tool_id)}`}>
                             {run.tool_id}
                         </span>
                         <span className="text-xs text-zinc-950 font-mono flex items-center gap-1">
@@ -121,12 +121,12 @@ export default function IntelligenceDashboard() {
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-12">
                         <div>
-                            <div className="text-[10px] text-zinc-950 font-mono uppercase tracking-widest mb-1">{primaryMetric.label}</div>
+                            <div className="text-xs font-medium text-zinc-950 font-mono uppercase tracking-widest mb-1">{primaryMetric.label}</div>
                             <div className="text-2xl font-bold text-zinc-900">{primaryMetric.value}</div>
                         </div>
                         <div className="hidden sm:block w-px h-10 bg-white/10" />
                         <div>
-                            <div className="text-[10px] text-zinc-950 font-mono uppercase tracking-widest mb-1">{secondaryMetric.label}</div>
+                            <div className="text-xs font-medium text-zinc-950 font-mono uppercase tracking-widest mb-1">{secondaryMetric.label}</div>
                             <div className="text-xl font-medium text-zinc-900">{secondaryMetric.value}</div>
                         </div>
                     </div>
@@ -149,7 +149,7 @@ export default function IntelligenceDashboard() {
                         <Activity className="text-cyan-400" size={18} />
                         <span className="font-bold tracking-tight text-lg text-zinc-900">C-Suite Command Center <span className="text-zinc-800 font-normal">| Strategic Diagnostics</span></span>
                     </div>
-                    <Link href="/system" className="text-[10px] font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-zinc-400">
+                    <Link href="/system" className="text-xs font-medium font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-zinc-400">
                         Exit to Hub
                     </Link>
                 </div>
@@ -164,7 +164,7 @@ export default function IntelligenceDashboard() {
                             <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
                                 <ShieldAlert size={20} className="text-red-400" />
                             </div>
-                            <span className="text-[10px] font-mono text-red-400 bg-red-500/10 px-2 py-1 rounded-full border border-red-500/20 tracking-widest uppercase">Systemic Risk</span>
+                            <span className="text-xs font-medium font-mono text-red-400 bg-red-500/10 px-2 py-1 rounded-full border border-red-500/20 tracking-widest uppercase">Systemic Risk</span>
                         </div>
                         <div className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Identified Valuation Gap</div>
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">
@@ -179,7 +179,7 @@ export default function IntelligenceDashboard() {
                             <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
                                 <TrendingUp size={20} className="text-emerald-400" />
                             </div>
-                            <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/20 tracking-widest uppercase">Health Metric</span>
+                            <span className="text-xs font-medium font-mono text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/20 tracking-widest uppercase">Health Metric</span>
                         </div>
                         <div className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Eng Pipeline Confidence</div>
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">
@@ -194,7 +194,7 @@ export default function IntelligenceDashboard() {
                             <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
                                 <Database size={20} className="text-cyan-400" />
                             </div>
-                            <span className="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded-full border border-cyan-500/20 tracking-widest uppercase">Coverage</span>
+                            <span className="text-xs font-medium font-mono text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded-full border border-cyan-500/20 tracking-widest uppercase">Coverage</span>
                         </div>
                         <div className="text-sm font-mono text-zinc-800 uppercase tracking-widest mb-2">Diagnostic Tools Run</div>
                         <div className="text-4xl font-bold font-grotesk text-zinc-950 flex items-baseline gap-1">

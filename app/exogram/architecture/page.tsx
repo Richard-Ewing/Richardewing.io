@@ -163,7 +163,7 @@ export default function ExogramArchitecturePage() {
                             { method: 'Python SDK', desc: 'pip install exogram — type-safe client with async support', badge: 'Coming Soon' },
                         ].map(m => (
                             <div key={m.method} className="p-6 rounded-xl bg-white/[0.03] border border-zinc-400">
-                                <span className="text-[10px] font-mono text-purple-400 uppercase tracking-widest">{m.badge}</span>
+                                <span className="text-xs font-medium font-mono text-purple-400 uppercase tracking-widest">{m.badge}</span>
                                 <h3 className="text-zinc-950 font-bold mt-2 mb-2">{m.method}</h3>
                                 <p className="text-xs text-zinc-900">{m.desc}</p>
                             </div>

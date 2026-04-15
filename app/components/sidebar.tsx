@@ -11,7 +11,7 @@ const NavItem = ({ href, children, isActive = false, onClick }: { href: string; 
         onClick={onClick}
         className={`block text-sm py-2 px-4 border-l-2 transition-all ${isActive
             ? 'text-zinc-900 border-purple-500 bg-purple-50'
-            : 'text-zinc-950 border-transparent hover:text-zinc-900 hover:border-zinc-300'
+            : 'text-zinc-950 border-transparent hover:text-zinc-900 hover:border-zinc-500'
             }`}
     >
         {children}
@@ -73,7 +73,7 @@ export function Sidebar() {
                     </div>
                     <div>
                         <div className="text-zinc-900 font-bold text-sm">RICHARD EWING</div>
-                        <div className="text-zinc-950 text-[10px] font-mono tracking-widest">PRODUCT ECONOMIST</div>
+                        <div className="text-zinc-950 text-xs font-medium font-mono tracking-widest">PRODUCT ECONOMIST</div>
                     </div>
                 </Link>
                 <button
@@ -112,7 +112,7 @@ export function Sidebar() {
                 {/* Desktop Header */}
                 <div className="hidden lg:block mb-8">
                     <Link href="/" className="block">
-                        <div className="w-20 h-20 rounded-full border-2 border-zinc-300 mb-4 overflow-hidden grayscale hover:grayscale-0 transition duration-500">
+                        <div className="w-20 h-20 rounded-full border-2 border-zinc-500 mb-4 overflow-hidden grayscale hover:grayscale-0 transition duration-500">
                             <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" width={80} height={80} className="object-cover" priority />
                         </div>
                         <h3 className="text-zinc-900 font-bold tracking-tight text-lg">RICHARD EWING</h3>
@@ -124,7 +124,7 @@ export function Sidebar() {
                 <nav className="space-y-6 flex-1">
                     {navItems.map((section) => (
                         <div key={section.label}>
-                            <div className={`text-[10px] font-mono uppercase mb-2 ml-4 tracking-widest ${section.labelClass || 'text-zinc-950'}`}>
+                            <div className={`text-xs font-medium font-mono uppercase mb-2 ml-4 tracking-widest ${section.labelClass || 'text-zinc-950'}`}>
                                 {section.label}
                             </div>
                             <div className="space-y-1">
@@ -144,7 +144,7 @@ export function Sidebar() {
                 </nav>
 
                 {/* Footer */}
-                <div className="font-mono text-[10px] text-zinc-800 mt-8">&copy; 2026 Richard Ewing</div>
+                <div className="font-mono text-xs font-medium text-zinc-800 mt-8">&copy; 2026 Richard Ewing</div>
             </aside>
 
             {/* Mobile Spacer */}

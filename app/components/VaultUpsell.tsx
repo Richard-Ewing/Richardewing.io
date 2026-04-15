@@ -49,9 +49,9 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
                 </div>
                 {/* Value Anchor Frame */}
                 <div className="bg-white/50 border border-zinc-400 rounded-xl p-4 shrink-0 text-center w-full sm:w-auto">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-950 mb-1">Consulting Equivalent Value</div>
+                    <div className="text-xs font-medium font-mono uppercase tracking-widest text-zinc-950 mb-1">Consulting Equivalent Value</div>
                     <div className={`text-xl font-bold text-zinc-950 line-through decoration-2 mb-1 ${isCritical ? 'decoration-red-500/50' : 'decoration-emerald-500/50'}`}>$15,000+</div>
-                    <div className="text-[10px] font-mono text-cyan-500">Vault Access: $1,495</div>
+                    <div className="text-xs font-medium font-mono text-cyan-500">Vault Access: $1,495</div>
                 </div>
             </div>
 
@@ -77,7 +77,7 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
                 >
                     <Lock className="w-5 h-5" /> Unlock Full Enterprise Framework Now
                 </a>
-                <p className="text-[10px] font-mono text-zinc-800 mt-4 uppercase tracking-widest">Instant access to all 29 tracks • 290+ technical modules</p>
+                <p className="text-xs font-medium font-mono text-zinc-800 mt-4 uppercase tracking-widest">Instant access to all 29 tracks • 290+ technical modules</p>
             </div>
         </div>
     );

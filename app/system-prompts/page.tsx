@@ -72,7 +72,7 @@ Here are the details on the feature we are killing:
 export default function SystemPromptsPage() {
     return (
         <div className="max-w-5xl mx-auto px-6 py-12">
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/" className="hover:text-cyan-400">Home</Link>
                 <span>/</span>
                 <span className="text-cyan-400 font-bold">System Prompts</span>

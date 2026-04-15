@@ -15,7 +15,7 @@ export default function SystemPage() {
             {/* Background FX */}
             <div className="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <span>Intelligence</span><span>/</span><span className="text-zinc-950 font-bold">System</span>
             </div>
 
@@ -38,7 +38,7 @@ export default function SystemPage() {
                         <GlowCard className="p-6 sm:col-span-2" glowColor="zinc">
                             <div className="flex items-center gap-2 mb-3">
                                 <Database className="w-4 h-4 text-zinc-800" />
-                                <span className="font-mono text-[10px] text-zinc-900 uppercase tracking-widest">Board-Level Intelligence</span>
+                                <span className="font-mono text-xs font-medium text-zinc-900 uppercase tracking-widest">Board-Level Intelligence</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">Executive Board Room</h3>
                             <p className="text-zinc-950 text-sm mb-4">Secure repository for your historical execution snapshots. Track margin erosion, valuation destruction, and operational drift across quarters in a unified C-Suite dashboard.</p>
@@ -52,7 +52,7 @@ export default function SystemPage() {
                         <GlowCard className="p-6" glowColor="danger">
                             <div className="flex items-center gap-2 mb-3">
                                 <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                                <span className="font-mono text-[10px] text-red-400 uppercase tracking-widest">AI-Powered</span>
+                                <span className="font-mono text-xs font-medium text-red-400 uppercase tracking-widest">AI-Powered</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">PDI 2.0 Engine</h3>
                             <p className="text-zinc-950 text-sm mb-4">Product Debt Index. Forensic audit of your backlog to quantify capital leakage.</p>
@@ -66,7 +66,7 @@ export default function SystemPage() {
                         <GlowCard className="p-6" glowColor="cyan">
                             <div className="flex items-center gap-2 mb-3">
                                 <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_#22d3ee]" />
-                                <span className="font-mono text-[10px] text-cyan-400 uppercase tracking-widest">Valuation</span>
+                                <span className="font-mono text-xs font-medium text-cyan-400 uppercase tracking-widest">Valuation</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">EV-SE Engine</h3>
                             <p className="text-zinc-950 text-sm mb-4">Enterprise Value Scenario Engine. Quantify how execution risk destroys valuation.</p>
@@ -80,7 +80,7 @@ export default function SystemPage() {
                         <GlowCard className="p-6 sm:col-span-2" glowColor="cobalt">
                             <div className="flex items-center gap-2 mb-3">
                                 <div className="w-2 h-2 bg-violet-500 rounded-full animate-pulse shadow-[0_0_10px_#8b5cf6]" />
-                                <span className="font-mono text-[10px] text-violet-400 uppercase tracking-widest">Unit Economics</span>
+                                <span className="font-mono text-xs font-medium text-violet-400 uppercase tracking-widest">Unit Economics</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">AUEB Engine</h3>
                             <p className="text-zinc-950 text-sm mb-4">AI Unit Economics Benchmark. Calculate your margin collapse point with model arbitrage analysis.</p>
@@ -94,7 +94,7 @@ export default function SystemPage() {
                         <GlowCard className="p-6 sm:col-span-2" glowColor="emerald">
                             <div className="flex items-center gap-2 mb-3">
                                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_#10b981]" />
-                                <span className="font-mono text-[10px] text-emerald-400 uppercase tracking-widest">Human Capital Audit</span>
+                                <span className="font-mono text-xs font-medium text-emerald-400 uppercase tracking-widest">Human Capital Audit</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">Audit Interview</h3>
                             <p className="text-zinc-950 text-sm mb-4">Quantify candidate judgment. Move beyond code syntax to measure capital stewardship and architectural reasoning.</p>

@@ -27,7 +27,7 @@ export default function GlossaryContent() {
         <div className="max-w-6xl w-full relative z-10 mx-auto">
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <span>Knowledge</span><span>/</span><span className="text-cyan-600 font-bold">Glossary</span>
             </div>
 
@@ -85,7 +85,7 @@ export default function GlossaryContent() {
                                                         <p className="text-xs text-zinc-950 line-clamp-2 leading-relaxed">
                                                             {term.definition.slice(0, 160)}...
                                                         </p>
-                                                        <div className="mt-3 text-[10px] font-bold uppercase tracking-widest text-zinc-950 group-hover:text-cyan-600 transition-colors">
+                                                        <div className="mt-3 text-xs font-medium font-bold uppercase tracking-widest text-zinc-950 group-hover:text-cyan-600 transition-colors">
                                                             Read Definition →
                                                         </div>
                                                     </div>
@@ -116,7 +116,7 @@ export default function GlossaryContent() {
                     </Link>
                     <Link
                         href="/advisory"
-                        className="px-8 py-4 bg-white border border-zinc-300 rounded-xl text-zinc-950 font-bold uppercase tracking-widest text-xs hover:bg-zinc-50 transition-colors"
+                        className="px-8 py-4 bg-white border border-zinc-500 rounded-xl text-zinc-950 font-bold uppercase tracking-widest text-xs hover:bg-zinc-50 transition-colors"
                     >
                         Book Advisory Session →
                     </Link>

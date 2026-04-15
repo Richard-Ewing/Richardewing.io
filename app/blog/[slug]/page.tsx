@@ -95,14 +95,14 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                 {/* Related Articles */}
                 {related.length > 0 && (
                     <section className="mb-12">
-                        <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-6">More in {article.category}</h2>
+                        <h2 className="text-xs font-mono text-zinc-700 uppercase tracking-widest mb-6">More in {article.category}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             {related.map(r => (
                                 <Link key={r.slug} href={`/blog/${r.slug}`}
                                     className="group p-5 rounded-xl border border-zinc-400 bg-zinc-50 hover:border-white/15 transition-all">
                                     <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-300 transition-colors mb-2">{r.title}</h3>
                                     <p className="text-xs text-zinc-700 line-clamp-2">{r.excerpt}</p>
-                                    <span className="text-[10px] text-zinc-800 mt-2 block">{r.readTime}</span>
+                                    <span className="text-xs font-medium text-zinc-800 mt-2 block">{r.readTime}</span>
                                 </Link>
                             ))}
                         </div>

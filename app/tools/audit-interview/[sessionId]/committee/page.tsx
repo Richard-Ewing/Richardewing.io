@@ -102,9 +102,9 @@ export default function CommitteeDashboard() {
                             <div className="flex items-center gap-2 mb-4">
                                 <div className="bg-red-500/10 border border-red-500/20 px-3 py-1 rounded-full flex items-center gap-2">
                                     <Lock size={12} className="text-red-400" />
-                                    <span className="font-mono text-[10px] text-red-400 uppercase tracking-widest">Session Locked</span>
+                                    <span className="font-mono text-xs font-medium text-red-400 uppercase tracking-widest">Session Locked</span>
                                 </div>
-                                <span className="font-mono text-zinc-800 text-[10px] uppercase tracking-widest">{session.session_id}</span>
+                                <span className="font-mono text-zinc-800 text-xs font-medium uppercase tracking-widest">{session.session_id}</span>
                             </div>
                             <h1 className="text-3xl sm:text-5xl font-bold text-zinc-950 tracking-tight mb-2">Committee Dashboard</h1>
                             <p className="text-zinc-600 text-sm">
@@ -112,7 +112,7 @@ export default function CommitteeDashboard() {
                             </p>
                         </div>
                         <div className="text-right hidden sm:block">
-                            <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Interviewer</div>
+                            <div className="text-xs font-medium font-mono text-zinc-700 uppercase tracking-widest mb-1">Interviewer</div>
                             <div className="text-zinc-950 font-mono bg-zinc-100 px-3 py-1 rounded-lg border border-zinc-400">{session.interviewer_id}</div>
                         </div>
                     </div>
@@ -123,7 +123,7 @@ export default function CommitteeDashboard() {
                 {/* Left: Verdict */}
                 <ScrollReveal delay={100}>
                     <GlowCard className="p-8 h-full flex flex-col items-center justify-center text-center" glowColor={analytics.verdict.includes('Strong') ? 'emerald' : 'danger'}>
-                        <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
+                        <div className="text-xs font-mono text-zinc-700 uppercase tracking-widest mb-4">Capital Allocation Verdict</div>
                         <div className={`text-5xl lg:text-6xl font-bold tracking-tighter mb-6 ${analytics.verdict.includes('Hire') && !analytics.verdict.includes('No') ? 'text-emerald-400' : 'text-red-500'
                             }`}>
                             {analytics.verdict}
@@ -139,7 +139,7 @@ export default function CommitteeDashboard() {
                 {/* Center: Radar */}
                 <ScrollReveal delay={200}>
                     <div className="bg-zinc-100 border border-zinc-400 rounded-2xl p-6 flex flex-col items-center justify-center h-full relative">
-                        <span className="absolute top-4 left-4 text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Attribute Geometry</span>
+                        <span className="absolute top-4 left-4 text-xs font-medium font-mono text-zinc-700 uppercase tracking-widest">Attribute Geometry</span>
                         <div className="w-64 h-64">
                             <RadarChart scores={analytics.scores} />
                         </div>
@@ -149,7 +149,7 @@ export default function CommitteeDashboard() {
                 {/* Right: Scores List */}
                 <ScrollReveal delay={300}>
                     <div className="bg-zinc-100 border border-zinc-400 rounded-2xl p-6 h-full overflow-y-auto max-h-[400px]">
-                        <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-4">Score Audit</span>
+                        <span className="text-xs font-medium font-mono text-zinc-700 uppercase tracking-widest block mb-4">Score Audit</span>
                         <div className="space-y-4">
                             {analytics.scores.map((s: any, i: number) => (
                                 <div key={i} className="border-b border-zinc-400 last:border-0 pb-4 last:pb-0">
@@ -157,7 +157,7 @@ export default function CommitteeDashboard() {
                                         <span className="text-xs text-zinc-700 font-bold uppercase">{s.dimension.replace(/_/g, ' ')}</span>
                                         <span className={`font-mono text-xs font-bold ${s.score > 2 ? 'text-emerald-400' : 'text-zinc-900'}`}>{s.score}/3</span>
                                     </div>
-                                    <p className="text-[10px] text-zinc-700 italic">"{s.rationale}"</p>
+                                    <p className="text-xs font-medium text-zinc-700 italic">"{s.rationale}"</p>
                                 </div>
                             ))}
                         </div>

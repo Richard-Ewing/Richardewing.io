@@ -21,7 +21,7 @@ export default function SaaSPage() {
         <main className="pt-20">
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                         <Link href="/industries" className="hover:text-cyan-400">Industries</Link><span>/</span><span className="text-violet-400 font-bold">SaaS &amp; B2B</span>
                     </div>
 
@@ -53,7 +53,7 @@ export default function SaaSPage() {
                         </ul>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-600 text-white font-bold hover:opacity-90">Free PDI Assessment →</Link>
-                            <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-300 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
+                            <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     </div>
                 </div>

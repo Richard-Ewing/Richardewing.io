@@ -14,7 +14,7 @@ export default function AdvisoryContent() {
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <span>Intervention</span><span>/</span><span className="text-crimson font-bold">Advisory</span>
             </div>
 
@@ -43,15 +43,15 @@ export default function AdvisoryContent() {
                         <div className="grid grid-cols-3 gap-4 pt-6 border-t border-zinc-400">
                             <div className="text-center">
                                 <div className="text-2xl sm:text-3xl font-bold text-cyan-400 tabular-nums"><NumberTicker value={200} suffix="%" /></div>
-                                <div className="text-[10px] font-mono text-zinc-800 uppercase">Avg Revenue Lift</div>
+                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase">Avg Revenue Lift</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-2xl sm:text-3xl font-bold text-zinc-950 tabular-nums"><NumberTicker value={14} /></div>
-                                <div className="text-[10px] font-mono text-zinc-800 uppercase">Days to Diagnosis</div>
+                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase">Days to Diagnosis</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-2xl sm:text-3xl font-bold text-gold tabular-nums"><NumberTicker value={9} suffix="x" /></div>
-                                <div className="text-[10px] font-mono text-zinc-800 uppercase">Avg ROI</div>
+                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase">Avg ROI</div>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ export default function AdvisoryContent() {
 
                     {/* Level 2: Insolvency Diagnostic */}
                     <GlowCard className="p-6 sm:p-8 relative overflow-hidden" glowColor="red">
-                        <div className="absolute top-0 right-0 bg-red-600 text-white px-3 py-1 text-[10px] font-mono uppercase tracking-widest rounded-bl-lg">
+                        <div className="absolute top-0 right-0 bg-red-600 text-white px-3 py-1 text-xs font-medium font-mono uppercase tracking-widest rounded-bl-lg">
                             Most Critical
                         </div>
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-4">
@@ -92,7 +92,7 @@ export default function AdvisoryContent() {
                             Schedule Deep Dive
                         </a>
                         <div className="mt-4 pt-3 border-t border-zinc-400 text-center">
-                            <span className="text-zinc-950 text-[10px] uppercase tracking-wide block mb-1">Not ready for deep dive?</span>
+                            <span className="text-zinc-950 text-xs font-medium uppercase tracking-wide block mb-1">Not ready for deep dive?</span>
                             <a href="/api/buy/gut_check" className="text-xs text-red-400 hover:text-zinc-900 transition-colors underline decoration-dotted">
                                 Start with a 30-min Gut-Check ($450) →
                             </a>
@@ -147,7 +147,7 @@ export default function AdvisoryContent() {
 
             {/* AEO: FAQ Section */}
             <ScrollReveal delay={150}>
-                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-zinc-300">
+                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-zinc-500">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">Common Questions <span className="text-zinc-950 text-lg font-normal">Answered</span></h2>
                     <div className="space-y-6">
                         <div itemScope itemType="https://schema.org/Question">
@@ -196,7 +196,7 @@ export default function AdvisoryContent() {
                             <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-cyan-400 transition-colors">
                                 Subscribe Free
                             </a>
-                            <Link href="/tools" className="px-6 py-3 bg-transparent border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-colors">
+                            <Link href="/tools" className="px-6 py-3 bg-transparent border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-colors">
                                 Access Tools
                             </Link>
                         </div>
@@ -219,7 +219,7 @@ export default function AdvisoryContent() {
                                 <a href="mailto:richardewing@exogram.ai?subject=Board%20Inquiry" className="inline-flex items-center justify-center px-8 py-4 bg-gold text-black font-bold uppercase tracking-widest text-xs rounded hover:bg-white transition-all">
                                     Request Board Bio
                                 </a>
-                                <Link href="/manifesto" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-all">
+                                <Link href="/manifesto" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded hover:bg-white/10 transition-all">
                                     Read Operating Principles
                                 </Link>
                             </div>

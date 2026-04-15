@@ -83,7 +83,7 @@ const RiskSlider = ({ label, value, onChange, description }: {
                     className={`relative w-full h-2 bg-transparent rounded-lg appearance-none cursor-pointer z-10 ${styles.riskSlider}`}
                 />
             </div>
-            <div className="flex justify-between text-[10px] text-zinc-950">
+            <div className="flex justify-between text-xs font-medium text-zinc-950">
                 <span>Low Risk</span>
                 <span>High Risk</span>
             </div>
@@ -305,7 +305,7 @@ export default function EVSETool() {
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!results} toolName="EV-SE" />
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                 <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
                 <span>/</span>
                 <span className="text-zinc-950 font-bold">EV-SE Engine</span>
@@ -537,7 +537,7 @@ export default function EVSETool() {
                     <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-zinc-400 rounded-2xl p-6 mb-8 backdrop-blur-md">
                         <div>
                             <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-[10px] font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
+                                <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                             </div>
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Valuation Waterfall Generated</h2>
                             <p className="text-sm text-zinc-800">Export this assessment to a verified Executive PDF.</p>
@@ -579,7 +579,7 @@ export default function EVSETool() {
                         <div className="capsule-container rounded-2xl p-6 mb-6 border-l-4 border-purple-500">
                             <div className="flex items-center gap-2 mb-3 text-zinc-900">
                                 <Target size={14} />
-                                <span className="text-[10px] font-mono uppercase tracking-widest">Insight for {persona}</span>
+                                <span className="text-xs font-medium font-mono uppercase tracking-widest">Insight for {persona}</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">{getPersonaInsight(results).headline}</h3>
                             <p className="text-zinc-900 leading-relaxed mb-3">{getPersonaInsight(results).detail}</p>
@@ -591,19 +591,19 @@ export default function EVSETool() {
                     <ScrollReveal delay={100}>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                             <GlowCard className="p-6" glowColor="cyan">
-                                <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-2">Potential Value</div>
+                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Potential Value</div>
                                 <div className="text-3xl sm:text-4xl font-bold text-cyan-400">${(results.perfectValue / 1000000).toFixed(0)}M</div>
                                 <p className="text-xs text-cyan-400/60 mt-2">At perfect execution.</p>
                             </GlowCard>
 
                             <GlowCard className="p-6" glowColor="cyan">
-                                <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-2">Risk-Adjusted Value</div>
+                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Risk-Adjusted Value</div>
                                 <div className="text-3xl sm:text-4xl font-bold text-purple-400">${(results.riskedValue / 1000000).toFixed(0)}M</div>
                                 <p className="text-xs text-purple-400/60 mt-2">What investors will pay.</p>
                             </GlowCard>
 
                             <GlowCard className="p-6" glowColor="danger">
-                                <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-2">Biggest Risk Factor</div>
+                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Biggest Risk Factor</div>
                                 <div className="text-2xl sm:text-3xl font-bold text-orange-400">{results.biggestRiskFactor}</div>
                                 <p className="text-xs text-orange-400/60 mt-2">Costing {formatMoney(results.biggestRiskCost)}.</p>
                             </GlowCard>
@@ -640,7 +640,7 @@ export default function EVSETool() {
                     <ScrollReveal delay={150}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <GlowCard className="p-6" glowColor="cyan">
-                                <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest mb-2">Valuation Waterfall</div>
+                                <div className="text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest mb-2">Valuation Waterfall</div>
                                 <WaterfallChart data={waterfallData} />
                             </GlowCard>
 
@@ -699,7 +699,7 @@ export default function EVSETool() {
                                             <div className="absolute left-[-0.3rem] md:left-[-1.3rem] top-2 w-3 h-3 rounded-full border-2 border-[#0f1115] bg-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.5)] z-10"></div>
                                             
                                             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                                                <div className="bg-white/5 px-3 py-1 rounded-md text-[10px] uppercase font-mono tracking-widest text-zinc-900 shrink-0 inline-block w-fit">
+                                                <div className="bg-white/5 px-3 py-1 rounded-md text-xs font-medium uppercase font-mono tracking-widest text-zinc-900 shrink-0 inline-block w-fit">
                                                     Month {plan.month}
                                                 </div>
                                                 <div className="font-bold text-zinc-950 text-base leading-tight md:leading-normal">{plan.focus}</div>
@@ -752,7 +752,7 @@ export default function EVSETool() {
                                         <h4 className="text-zinc-950 font-bold mb-2">Audit Lead-Time to Deployment</h4>
                                         <p className="text-zinc-900 text-sm leading-relaxed mb-4">Your current velocity is destroying enterprise value. Software engineering organizations with opaque delivery pipelines suffer massive valuation haircuts in due diligence.</p>
                                         <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                            <div className="flex items-center gap-2 text-[10px] font-mono text-rose-400 uppercase tracking-widest font-bold">
+                                            <div className="flex items-center gap-2 text-xs font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
                                             <p className="text-xs text-zinc-900">Implement deterministic DORA metric tracking across all squads. Any team failing to deploy to production at least twice weekly must halt feature development and resolve CI/CD bottlenecks.</p>
@@ -770,7 +770,7 @@ export default function EVSETool() {
                                         <h4 className="text-zinc-950 font-bold mb-2">Neutralize Key-Person Dependencies</h4>
                                         <p className="text-zinc-900 text-sm leading-relaxed mb-4">A single point of failure in your talent pool is a terminal risk to potential acquirers. If your lead architect leaves, does your roadmap halt?</p>
                                         <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                            <div className="flex items-center gap-2 text-[10px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                                            <div className="flex items-center gap-2 text-xs font-medium font-mono text-amber-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
                                             <p className="text-xs text-zinc-900">Mandate immediate architecture shadowing. Pair your most critical engineers with mid-level ICs for 30 days to force knowledge transfer and distribute systemic risk.</p>
@@ -788,7 +788,7 @@ export default function EVSETool() {
                                         <h4 className="text-zinc-950 font-bold mb-2">Hard-Lock the Product Roadmap</h4>
                                         <p className="text-zinc-900 text-sm leading-relaxed mb-4">Scope creep is compounding your execution risk. Investors penalize teams that lack the discipline to say no to transient sales requests.</p>
                                         <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
-                                            <div className="flex items-center gap-2 text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold">
+                                            <div className="flex items-center gap-2 text-xs font-medium font-mono text-cyan-400 uppercase tracking-widest font-bold">
                                                 <Zap size={10} /> Execution Directive
                                             </div>
                                             <p className="text-xs text-zinc-900">Institute a 90-day feature freeze on all uncommitted requests. Reallocate 40% of sprint capacity strictly to technical debt reduction and infrastructure hardening.</p>

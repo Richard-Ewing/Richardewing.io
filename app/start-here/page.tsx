@@ -73,7 +73,7 @@ export default function StartHerePage() {
                 <div className="max-w-4xl w-full relative z-10 mx-auto">
                     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
-                    <div className="mb-6 flex items-center gap-2 text-[10px] font-mono text-zinc-800 uppercase tracking-widest">
+                    <div className="mb-6 flex items-center gap-2 text-xs font-medium font-mono text-zinc-800 uppercase tracking-widest">
                         <span>Guide</span><span>/</span><span className="text-cyan-400 font-bold">Start Here</span>
                     </div>
 
@@ -138,13 +138,13 @@ export default function StartHerePage() {
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link
                                 href="/principal"
-                                className="px-6 py-3 border border-zinc-300 rounded-lg text-zinc-950 text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
+                                className="px-6 py-3 border border-zinc-500 rounded-lg text-zinc-950 text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
                             >
                                 About Richard →
                             </Link>
                             <Link
                                 href="/profiles"
-                                className="px-6 py-3 border border-zinc-300 rounded-lg text-zinc-950 text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
+                                className="px-6 py-3 border border-zinc-500 rounded-lg text-zinc-950 text-sm font-bold uppercase tracking-widest hover:border-white/40 transition-colors"
                             >
                                 Published Work →
                             </Link>
