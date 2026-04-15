@@ -25,6 +25,14 @@ export const PRODUCTS: Record<string, Product> = {
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/4gMbIU4YK9HAeW9eko2B20A', // Dynamically Generated Live Link
     },
+    // --- DIAGNOSTIC TOOLS ---
+    tools_library_unlock: {
+        name: 'Diagnostic Tools Library Unlock',
+        description: 'Unlimited access to all diagnostic tools (PDI, AUEB, APER, EV-SE). Generate unlimited board-ready reports.',
+        price: 19900, // $199.00
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/TODO_PASTE_YOUR_199_STRIPE_LINK_HERE', // <-- USER LOG INTO STRIPE AND PASTE LINK HERE
+    },
     // --- CURRICULUM ---
     single_track: {
         name: 'Single Curriculum Track',

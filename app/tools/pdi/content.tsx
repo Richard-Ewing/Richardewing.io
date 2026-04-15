@@ -1007,7 +1007,7 @@ Migrate from Heroku to AWS"
                             
                             <div className="space-y-3">
                                 <a 
-                                    href="/api/buy/full_curriculum" 
+                                    href="/api/buy/tools_library_unlock" 
                                     onClick={() => setShowPaywall(false)}
                                     className="flex items-center justify-center w-full py-4 bg-cyan-500 text-black font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:scale-[1.02]"
                                 >
