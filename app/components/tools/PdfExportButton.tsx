@@ -41,10 +41,46 @@ export default function PdfExportButton({
 
       const jsPDFFactory = jsPDFModule.default || jsPDFModule.jsPDF;
 
+      // Disable animations temporarily to prevent Recharts SVG rendering bugs & Framer Motion mid-transition scaling bugs
+      const originalWidth = targetEl.style.width;
+      const originalMaxWidth = targetEl.style.maxWidth;
+      targetEl.style.width = '1024px';
+      targetEl.style.maxWidth = '1024px';
+      
+      const animatedElements = targetEl.querySelectorAll('*');
+      animatedElements.forEach((el: Element) => {
+          const node = el as HTMLElement;
+          if (node.style) {
+              node.style.setProperty('transition', 'none', 'important');
+              node.style.setProperty('animation', 'none', 'important');
+          }
+      });
+
+      await new Promise(resolve => setTimeout(resolve, 150));
+
       const imgData = await htmlToImage.toPng(targetEl, {
         pixelRatio: 2,
         backgroundColor: '#ffffff',
-        style: { transform: 'none' }
+        style: { transform: 'none' },
+        filter: (node: HTMLElement) => {
+            if (node?.hasAttribute && node.hasAttribute('data-html2canvas-ignore')) {
+                return false;
+            }
+            if (node?.classList?.contains('export-ignore')) {
+                return false;
+            }
+            return true;
+        }
+      });
+
+      targetEl.style.width = originalWidth;
+      targetEl.style.maxWidth = originalMaxWidth;
+      animatedElements.forEach((el: Element) => {
+          const node = el as HTMLElement;
+          if (node.style) {
+              node.style.removeProperty('transition');
+              node.style.removeProperty('animation');
+          }
       });
 
       targetEl.style.backgroundColor = originalBg;

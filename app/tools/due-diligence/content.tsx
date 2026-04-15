@@ -137,7 +137,50 @@ export default function DueDiligenceTool() {
 
             const element = document.getElementById('dd-pdf-export-zone');
             if (!element) return;
-            const dataUrl = await toPng(element, { quality: 1.0, backgroundColor: '#ffffff', pixelRatio: 2 });
+
+            // Enforce snapshot size and strictly disable running transitions
+            const originalWidth = element.style.width;
+            const originalMaxWidth = element.style.maxWidth;
+            element.style.width = '1024px';
+            element.style.maxWidth = '1024px';
+            
+            const animatedElements = element.querySelectorAll('*');
+            animatedElements.forEach((el: Element) => {
+                const node = el as HTMLElement;
+                if (node.style) {
+                    node.style.setProperty('transition', 'none', 'important');
+                    node.style.setProperty('animation', 'none', 'important');
+                }
+            });
+
+            await new Promise(resolve => setTimeout(resolve, 150));
+
+            const dataUrl = await toPng(element, { 
+                quality: 1.0, 
+                backgroundColor: '#ffffff', 
+                pixelRatio: 2,
+                style: { transform: 'none' },
+                filter: (node: HTMLElement) => {
+                    if (node?.hasAttribute && node.hasAttribute('data-html2canvas-ignore')) {
+                        return false;
+                    }
+                    if (node?.classList?.contains('export-ignore')) {
+                        return false;
+                    }
+                    return true;
+                }
+            });
+
+            element.style.width = originalWidth;
+            element.style.maxWidth = originalMaxWidth;
+            animatedElements.forEach((el: Element) => {
+                const node = el as HTMLElement;
+                if (node.style) {
+                    node.style.removeProperty('transition');
+                    node.style.removeProperty('animation');
+                }
+            });
+
             const pdf = new jsPDF({ orientation: 'p', unit: 'px', format: [element.offsetWidth, element.offsetHeight] });
             pdf.addImage(dataUrl, 'PNG', 0, 0, element.offsetWidth, element.offsetHeight);
             pdf.save(`Engineering_Due_Diligence_${profile}.pdf`);
