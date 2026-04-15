@@ -587,8 +587,7 @@ export default function DueDiligenceTool() {
                                                             <div className="text-xs font-bold font-mono text-zinc-900">{tv.severity}% Severity</div>
                                                         </div>
                                                         <div className="h-2 w-full bg-zinc-200 rounded-full overflow-hidden mb-1">
-                                                            <style>{`#tv-progress-${tv.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i} { width: ${tv.severity}%; }`}</style>
-                                                            <div id={`tv-progress-${tv.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i}`} className={`h-full ${tv.color}`} />
+                                                            <div id={`tv-progress-${tv.name.replace(/[^a-zA-Z0-9-]/g, '-')}-${i}`} className={`h-full ${tv.color}`} style={{ width: `${tv.severity}%` }} />
                                                         </div>
                                                         <div className="text-xs font-bold text-zinc-900 font-bold">{tv.details}</div>
                                                     </div>

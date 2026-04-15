@@ -69,8 +69,11 @@ const RiskSlider = ({ label, value, onChange, description }: {
             </div>
             <div className="relative">
                 <div className="absolute inset-0 h-2 rounded-lg bg-gradient-to-r from-emerald-500/30 via-yellow-500/30 to-red-500/30" />
-                { }
-                <style>{`#slider-${label.replace(/[^a-zA-Z0-9-]/g, '-')} { background: linear-gradient(to right, #22c55e ${value}%, transparent ${value}%); }`}</style>
+                <div 
+                    id={`slider-${label.replace(/[^a-zA-Z0-9-]/g, '-')}`} 
+                    className="absolute top-0 w-full h-2 rounded-lg pointer-events-none opacity-20"
+                    style={{ background: `linear-gradient(to right, #22c55e ${value}%, transparent ${value}%)` }}
+                />
                 <input
                     id={`slider-${label.replace(/[^a-zA-Z0-9-]/g, '-')}`}
                     type="range"

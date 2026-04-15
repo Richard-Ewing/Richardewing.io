@@ -259,10 +259,8 @@ export default function CloudContent() {
                                                 <label className="text-xs font-bold font-mono text-rose-500 uppercase tracking-widest flex items-center gap-2"><Activity size={12}/> Network Egress/Bandwidth</label>
                                                 <div className="text-xl font-bold text-zinc-950 font-mono">{egressP}%</div>
                                             </div>
-                                            { }
                                             <div className="w-full bg-zinc-200 h-2 rounded mt-2 overflow-hidden relative">
-                                                <style>{`#egress-progress { width: ${egressP}%; }`}</style>
-                                                <div id="egress-progress" className="bg-rose-500 h-full transition-all duration-500" />
+                                                <div id="egress-progress" className="absolute top-0 bottom-0 left-0 bg-red-400/50 rounded-full border-r border-red-400" style={{ width: `${egressP}%` }}></div>
                                             </div>
                                         </div>
                                     </div>

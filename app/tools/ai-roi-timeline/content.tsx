@@ -205,18 +205,13 @@ export default function AIRoiTimelineContent() {
                                         <div key={month} className="grid grid-cols-12 items-center gap-4 group">
                                             <div className="col-span-2 text-xs font-bold font-mono text-zinc-900">Month {month}</div>
                                             <div className="col-span-8 bg-white h-4 rounded-full relative overflow-hidden border border-zinc-400">
-                                                {/* Zero Line Marker */}
-                                                { }
-                                                <style>{`
-                                                    #zero-line-${month} { left: ${zeroPoint}%; }
-                                                    #bar-graph-${month} { width: ${barWidth}%; left: ${isProfitable ? zeroPoint : zeroPoint - barWidth}%; }
-                                                `}</style>
-                                                <div id={`zero-line-${month}`} className={`absolute top-0 bottom-0 border-l border-zinc-500 z-10`} />
+                                                <div id={`zero-line-${month}`} className={`absolute top-0 bottom-0 border-l border-zinc-500 z-10`} style={{ left: `${zeroPoint}%` }} />
                                                 
                                                 {/* The Bar */}
                                                 <div 
                                                     id={`bar-graph-${month}`}
                                                     className={`absolute top-0 bottom-0 rounded-full ${isProfitable ? 'bg-green-500/50 group-hover:bg-green-400' : 'bg-rose-500/50 group-hover:bg-rose-400'} transition-colors`}
+                                                    style={{ width: `${barWidth}%`, left: `${isProfitable ? zeroPoint : zeroPoint - barWidth}%` }}
                                                 />
                                             </div>
                                             <div className={`col-span-2 text-right font-mono text-xs font-bold ${isProfitable ? 'text-green-400' : 'text-rose-400'}`}>

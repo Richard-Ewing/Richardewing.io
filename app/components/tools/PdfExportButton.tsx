@@ -36,6 +36,12 @@ export default function PdfExportButton({
       targetEl.style.backgroundColor = 'var(--background, #0a0a0a)';
 
       // Use a custom scale to improve PDF sharpness from canvas
+      const h2cModule = await import('html2canvas');
+      const jsPDFModule = await import('jspdf');
+
+      const html2canvas = h2cModule.default || h2cModule;
+      const jsPDFFactory = jsPDFModule.default || jsPDFModule.jsPDF;
+
       const canvas = await html2canvas(targetEl, {
         scale: 2,
         useCORS: true,
@@ -52,7 +58,7 @@ export default function PdfExportButton({
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
       
       let heightLeft = imgHeight;
-      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdf = new jsPDFFactory('p', 'mm', 'a4');
       
       let position = 0;
       
@@ -68,9 +74,9 @@ export default function PdfExportButton({
       }
 
       pdf.save(filename);
-    } catch (err) {
+    } catch (err: any) {
       console.error('Failed to generate PDF:', err);
-      alert('There was an issue generating the PDF. Please try again.');
+      alert('There was an issue generating the PDF. Please try again: ' + String(err.message || err));
     } finally {
       setIsExporting(false);
     }

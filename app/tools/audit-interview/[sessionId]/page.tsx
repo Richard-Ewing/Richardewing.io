@@ -536,12 +536,8 @@ export default function SessionCommandCenter() {
                     <div className={`text-5xl font-mono font-bold tracking-tighter tabular-nums transition-colors duration-500 ${timeLeft < 60 ? 'text-red-500 animate-pulse' : 'text-zinc-900'}`}>
                         {formatTime(timeLeft)}
                     </div>
-                    <div className="h-1 w-full bg-zinc-100 mt-4 rounded-full overflow-hidden">
-                        <style>{`#time-progress { width: ${(timeLeft / 1200) * 100}%; }`}</style>
-                        <div
-                            id="time-progress"
-                            className={`h-full transition-all duration-1000 ${timeLeft < 60 ? 'bg-red-500' : 'bg-zinc-500'}`}
-                        ></div>
+                    <div className="h-1 w-full bg-zinc-100 mt-4 rounded-full overflow-hidden relative">
+                        <div id="time-progress" className={`absolute top-0 bottom-0 left-0 ${timeLeft < 300 ? 'bg-red-500/20 border-r-2 border-red-500' : 'bg-emerald-500/20 border-r-2 border-emerald-500'}`} style={{ width: `${(timeLeft / 1200) * 100}%` }}></div>
                     </div>
                 </div>
 
