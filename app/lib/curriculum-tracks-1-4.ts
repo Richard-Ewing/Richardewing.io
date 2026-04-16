@@ -208,6 +208,26 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 ], 'Create a 100-day post-close plan to inject Agentic AI into a legacy B2B SaaS platform.')
             ]
         ],
+        ['3-16', 'The Innovation Tax Audit', 'Are your software assets still generating value, or are they just burning resources? A guide to auditing your portfolio and killing zombie features.', 
+            ['Identify Zombie Assets', 'Apply the Rule of Two', 'Execute the Scream Test', 'Establish Sunset Committees'],
+            [
+                l('Lesson 1: Diagnosing Zombie Assets', 'Every codebase harbors Zombie Assets—features that are technically alive but functionally dead. They consume compute resources, inflate test suites, and distract engineering attention, yet they deliver zero marginal value to the customer.', [
+                    d('The Rule of Two', 'Look for features that have not been touched by a user in two months or updated by a developer in two years. If a feature hits both markers, it is a prime candidate for the morgue.', 'Audit your codebase with these metrics'),
+                    d('Silent Drain', 'The hidden maintenance cost of code that never errors but never adds value.', 'Calculated in wasted infrastructure compute and engineering support'),
+                    d('Risk Aversion', 'The psychological trap where removing features seems riskier than leaving them alone.', 'Combat through data-driven usage metrics')
+                ], 'Identify three features in your primary application that likely meet the Rule of Two and propose them for a sunset review.'),
+                l('Lesson 2: Executing the Scream Test', 'Once identified, how do you kill Zombie Assets safely? The cheapest way is the Scream Test: turn the feature off in staging, then production, and see if anyone complains. Most of the time, there will be silence.', [
+                    d('Safe Shutoff', 'Disabling the code path without deleting the code repository—initially.', 'Use feature flags for easy reversal'),
+                    d('Monitoring for Noise', 'Tracking customer support tickets and user behavior post-shutdown.', 'Establish a defined monitoring window (e.g., 2 weeks)'),
+                    d('Final Deletion', 'If the Scream Test passes with silence, completely remove the code and its dependencies.', 'Claim the engineering velocity reward')
+                ], 'Design a Scream Test for one low-usage feature. Draft the communication to support teams to handle potential (but unlikely) complaints.'),
+                l('Lesson 3: Governing Asset Retirement', 'Real innovation doesn\'t just come from writing new code. It comes from having the courage to delete the code that no longer serves you. This requires structured governance.', [
+                    d('Sunset Committees', 'An operational body with one explicit KPI: code retirement.', 'Meeting quarterly to review usage and mandate sunsets'),
+                    d('Depersonalizing Deletion', 'Removing the emotional weight of deprecation from the original creators.', 'Treating retirement as routine maintenance, not a referendum on past work'),
+                    d('Reclaiming Capital', 'Translating the deletion of a Zombie Asset back into the engineering P&L.', 'Quantifying the recovered velocity')
+                ], 'Draft a charter for a new Sunset Committee, outlining its objective to reclaim 5% of engineering capacity through systematic code retirement.')
+            ]
+        ],
     ];
 
     invMods.forEach(([id, title, desc, takeaways, lessons], i) => {

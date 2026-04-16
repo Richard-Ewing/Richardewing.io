@@ -1,5 +1,14 @@
 export const articles = [
     {
+        slug: "innovation-tax-audit-rd-opex",
+        title: "The innovation tax audit: Is your R&D actually just OpEx?",
+        description: "Discover how to audit your software portfolio for Zombie Assets and why a Sunset Committee is better than just funding new features.",
+        date: "Apr 2026",
+        readTime: "10 min read",
+        source: "CIO.com",
+        externalUrl: "https://www.cio.com/article/4158459/the-innovation-tax-audit-is-your-rd-actually-just-opex.html"
+    },
+    {
         slug: "make-ai-projects-profitable",
         title: "Most AI Projects Just Burn Cash. Here's How to Make Them Profitable.",
         description: "An expert analysis on AI unit economics, the 'Evergreen Ratio', and calculating the AI Volatility Tax to stop bleeding cash on inferencing.",

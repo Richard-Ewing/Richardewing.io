@@ -193,7 +193,7 @@ export default function ArticlesPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {displayedArticles.map((article, i) => {
                                 const isExternal = article.externalUrl?.startsWith('http');
-                                const href = article.externalUrl || `/blog/${article.slug}`;
+                                const href = article.externalUrl || article.legacyUrl || `/blog/${article.slug}`;
                                 return (
                                 <Link
                                     key={article.slug}

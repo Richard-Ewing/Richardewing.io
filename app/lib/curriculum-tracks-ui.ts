@@ -73,6 +73,7 @@ export const tracks = [
             { id: '3-13', name: '3.13 DevOps Maturity Assessment', topics: 'CI/CD Pipeline ROI, Observability Investment, Incident Costs', href: '/vault/curriculum/tracks/rd-capital-management/3-13' },
             { id: '3-14', name: '3.14 Technical Debt Communication', topics: 'CFO Translation, Board Presentations, Investor Due Diligence', href: '/vault/curriculum/tracks/rd-capital-management/3-14' },
             { id: '3-15', name: '3.15 R&D Capital Synthesis', topics: 'Complete Framework, Quarterly Cadence, Investment Culture', href: '/vault/curriculum/tracks/rd-capital-management/3-15' },
+            { id: '3-16', name: '3.16 The Innovation Tax Audit', topics: 'Zombie Assets, Sunset Committees, Rule of Two', href: '/vault/curriculum/tracks/rd-capital-management/3-16' },
         ],
         color: 'emerald',
         icon: '💎',

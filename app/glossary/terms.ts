@@ -671,6 +671,51 @@ In 2026, Model Collapse has created a massive premium on verified, purely human 
         ],
         relatedTerms: ['model-collapse', 'cost-of-predictivity', 'prompt-injection'],
         relatedTools: [{ name: 'Volatility Tax Auditor (VTA)', url: '/tools/vta' }],
+    },
+    {
+        slug: 'zombie-assets',
+        title: 'Zombie Assets',
+        category: 'Technical Debt & Code Quality',
+        definition: 'Software features or components that are technically alive (running in production, consuming resources) but functionally dead (delivering zero marginal value to customers). They consume compute resources, inflate test suites, and distract engineering attention without producing ROI.',
+        whyItMatters: 'Zombie assets silently drain engineering capacity. When neglected, they continuously increase the maintenance burden, pushing an organization faster toward its Technical Insolvency Date where 100% of capacity is spent on maintenance.',
+        faqs: [
+            { question: 'How do you identify a Zombie Asset?', answer: 'Apply the Rule of Two: identify features that have not been touched by a user in two months or updated by a developer in two years.' }
+        ],
+        relatedTerms: ['technical-debt', 'innovation-tax', 'scream-test', 'sunset-committee', 'rule-of-two'],
+        relatedTools: [{ name: 'Product Debt Index (PDI)', url: '/tools/pdi' }],
+    },
+    {
+        slug: 'rule-of-two',
+        title: 'Rule of Two',
+        category: 'Richard Ewing Frameworks',
+        definition: 'An auditing heuristic used to identify Zombie Assets in a software portfolio. The rule states: look for features that have not been touched by a user in two months or updated by a developer in two years. If a feature hits both markers, it is a prime candidate for deprecation.',
+        whyItMatters: 'It provides a clear, objective criteria for identifying features that should be killed, bypassing the emotional attachment creators might have to their past work.',
+        faqs: [
+            { question: 'What is the Rule of Two?', answer: 'A simple metric to find dead features: no user activity in 2 months, no developer updates in 2 years.' }
+        ],
+        relatedTerms: ['zombie-assets', 'scream-test', 'kill-switch-protocol']
+    },
+    {
+        slug: 'sunset-committee',
+        title: 'Sunset Committee',
+        category: 'Leadership & Governance',
+        definition: 'An operational governing body within an engineering organization that has one explicit KPI: code retirement and asset destruction. They formalize the deprecation of legacy systems and zombie assets.',
+        whyItMatters: 'Removing code takes courage and carries risk. By formalizing asset destruction through a Sunset Committee, organizations remove the emotional weight of deprecation from the original creators and place it within a structured governance framework.',
+        faqs: [
+            { question: 'What does a Sunset Committee do?', answer: 'They are tasked specifically with identifying and safely deprecating features and systems that no longer provide value.' }
+        ],
+        relatedTerms: ['zombie-assets', 'technical-insolvency-date', 'kill-switch-protocol']
+    },
+    {
+        slug: 'scream-test',
+        title: 'Scream Test',
+        category: 'Agile & Delivery',
+        definition: 'A crude but effective method for testing whether a presumed Zombie Asset is actually being used. The feature or service is temporarily turned off (first in staging, then production). If no one "screams" (complains about it being missing), the asset is permanently removed.',
+        whyItMatters: 'It is often the cheapest and fastest way to prove a feature has no value, especially when analytics or tracking data is missing or unreliable for legacy systems.',
+        faqs: [
+            { question: 'When should you use the Scream Test?', answer: 'When you strongly suspect a feature is dead but lack the telemetry to prove it with 100% certainty. Alert support teams before turning it off.' }
+        ],
+        relatedTerms: ['zombie-assets', 'kill-switch-protocol']
     }
 ];
 
