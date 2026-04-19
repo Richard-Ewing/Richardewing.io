@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Richard Ewing HackerNoon Articles — Developer-Focused Architecture',
+    title: 'HackerNoon Articles: Developer Economics & AI',
     description: 'Explore HackerNoon articles by Richard Ewing on AI agent economics, open-source sustainability, and technical debt strategy for scaling engineering teams.',
     keywords: ['Richard Ewing HackerNoon', 'developer economics', 'open source sustainability', 'AI agent architecture', 'product economist HackerNoon'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/hackernoon' },

@@ -11,7 +11,7 @@ import { BorderBeam } from '@/app/components/magicui/border-beam';
 
 export const metadata: Metadata = {
     title: 'The Product Economics Academy — 18 Authority Tracks',
-    description: 'Eighteen high-fidelity curriculum tracks for mastering product economics, AI financial modeling, leadership, career capital, M&A integration, and executive governance — built by a Product Economist with published authority in CIO.com and Built In.',
+    description: 'Eighteen high-fidelity curriculum tracks covering product economics, AI financial modeling, leadership, M&A integration, and executive governance.',
     keywords: ['product economics academy', 'product economics curriculum', 'AI economics training', 'R&D capital management', 'technical debt quantification', 'engineering leadership course', 'cloud finops', 'AI pricing strategy', 'career economics', 'CTO training', 'M&A integration', 'vendor economics', 'developer experience', 'remote team economics', 'ai agent economics', 'leadership training'],
     alternates: { canonical: 'https://www.richardewing.io/vault/curriculum/tracks' },
     openGraph: { title: 'The Product Economics Academy', description: 'Master the business of building across eighteen authority tracks.', url: 'https://www.richardewing.io/vault/curriculum/tracks', type: 'website' },

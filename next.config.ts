@@ -119,6 +119,13 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
+      // ═══════════════════ LEGACY TRACKING PREFIX REDIRECTS ═══════════════════
+      // Handles N-prefixed curriculum IDs reported in GSC "Crawled - currently not indexed"
+      {
+        source: '/vault/curriculum/tracks/:category/N:id',
+        destination: '/vault/curriculum/tracks/:category/:id',
+        permanent: true,
+      },
       // ═══════════════════ 2026 CURRICULUM RESTRUCTURING — KILLED TRACKS ═══════════════════
       // Classic disciplines killed
       {
@@ -550,6 +557,9 @@ const nextConfig: NextConfig = {
         'ai-dspm',
         'ai-response-drift',
         'ai-volatility-tax',
+        'burn-multiple',
+        'code-review',
+        'design-system',
         'evergreen-ratio',
         'execution-layer',
         'fractional-cto',
@@ -557,6 +567,7 @@ const nextConfig: NextConfig = {
         'monolith-to-microservices',
         'north-star-metric',
         'rice-framework',
+        'serverless',
         'sovereign-ai-substrate',
         'system-2-reasoning-tokens',
         'thermodynamic-compute-cost',
@@ -597,12 +608,7 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
-      // Pattern 6: /blog/:slug → /articles (old blog URLs)
-      {
-        source: '/blog/:slug*',
-        destination: '/articles',
-        permanent: true,
-      },
+      // Pattern 6: /blog/:slug (REMOVED - Blog is active again)
       // Pattern 7: /tools/cloud-finops-calculator → /tools (deleted tool)
       {
         source: '/tools/cloud-finops-calculator',
