@@ -238,6 +238,45 @@ export default function ToolsContent() {
           </div>
         </section>
 
+        {/* Competitive Intelligence & Comparisons */}
+        <section className="section bg-white/[0.02] border border-zinc-200/20 rounded-[2rem] p-8 md:p-12 my-16">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-zinc-950 mb-3">
+              Competitive Intelligence & Architecture Comparisons
+            </h2>
+            <p className="text-zinc-900 font-semibold mb-8 max-w-2xl mx-auto">
+              See why enterprise leaders choose deterministic governance over traditional telemetry and consultancy models.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="space-y-3">
+              <h3 className="font-bold text-zinc-950 border-b border-zinc-200/50 pb-2 mb-4">Security & Observability</h3>
+              <Link href="/tools/shadow-ai/vs/wiz" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">Shadow AI vs. Wiz.io</Link>
+              <Link href="/tools/shadow-ai/vs/cyberhaven" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">Shadow AI vs. Cyberhaven</Link>
+              <Link href="/tools/prompt-injection-sandbox/vs/promptfoo" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">Prompt Sandbox vs. Promptfoo</Link>
+              <Link href="/tools/prompt-injection-sandbox/vs/lakera-guard" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">Prompt Sandbox vs. Lakera Guard</Link>
+              <Link href="/tools/agent-router/vs/datadog-llm" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">Agent Router vs. Datadog LLM</Link>
+            </div>
+            <div className="space-y-3">
+              <h3 className="font-bold text-zinc-950 border-b border-zinc-200/50 pb-2 mb-4">Financial FinOps & Economics</h3>
+              <Link href="/tools/aueb/vs/aws-cost-explorer" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">AUEB vs. AWS Cost Explorer</Link>
+              <Link href="/tools/slm-vs-api/vs/openai-enterprise" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">SLM vs API vs. OpenAI Enterprise</Link>
+              <Link href="/tools/cloud-repatriation/vs/azure-tco" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">Cloud Repatriation vs. Azure TCO</Link>
+              <Link href="/tools/ev-se/vs/mckinsey-ai-index" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">Valuation Engine vs. McKinsey AI</Link>
+              <Link href="/tools/ai-roi-timeline/vs/forrester-tei" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">AI ROI Timeline vs. Forrester TEI</Link>
+              <Link href="/tools/aper/vs/langsmith-evals" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">APER vs. LangSmith Evals</Link>
+            </div>
+            <div className="space-y-3">
+              <h3 className="font-bold text-zinc-950 border-b border-zinc-200/50 pb-2 mb-4">Strategy & Architecture</h3>
+              <Link href="/tools/due-diligence/vs/gartner-magic-quadrant" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">Due Diligence vs. Gartner</Link>
+              <Link href="/tools/due-diligence/vs/g2-crowd" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">Due Diligence vs. G2 Reviews</Link>
+              <Link href="/tools/audit-interview/vs/big-4-consulting" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">Audit Interview vs. Big 4 Consulting</Link>
+              <Link href="/tools/fte-displacement/vs/workday-planning" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">FTE Simulator vs. Workday</Link>
+              <Link href="/tools/rag-chunking-visualizer/vs/ragxplorer" className="block text-sm font-semibold text-zinc-900 hover:text-cyan-900 transition-colors">RAG Visualizer vs. RAGxplorer</Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="section-sm text-center">
           <p className="text-zinc-950 font-bold mb-3">
