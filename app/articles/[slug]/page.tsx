@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { articles } from '../../lib/data';
 import { articleSchemaTemplate } from '../../lib/schemas';
+import ArticleUpsell from '../../components/ArticleUpsell';
 
 interface Props {
     params: Promise<{
@@ -128,6 +129,22 @@ export default async function ArticlePage({ params }: Props) {
                     <div className="opacity-75" dangerouslySetInnerHTML={{ __html: article.content }} />
                 )}
             </div>
+
+            {/* Contextual Upsell Engine */}
+            <ArticleUpsell 
+                productId={
+                    resolvedParams.slug.includes('rd') || resolvedParams.slug.includes('innov') ? 'module_rd_capital' :
+                    resolvedParams.slug.includes('ai') || resolvedParams.slug.includes('model') ? 'module_ai_economics' :
+                    resolvedParams.slug.includes('debt') || resolvedParams.slug.includes('dora') ? 'module_engineering' :
+                    'premium_guide_99'
+                }
+                headline={
+                    resolvedParams.slug.includes('ai') ? 'Secure Your AI Profitability.' :
+                    resolvedParams.slug.includes('debt') ? 'Refactor your technical debt permanently.' :
+                    'Ready to execute this architecture?'
+                }
+                description="Download the exact execution models, deployment checklists, and financial breakdown frameworks used by tier-1 engineering organizations."
+            />
 
             <div className="mt-20 pt-12 border-t border-zinc-400">
                 <Link href="/articles" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-semibold font-mono uppercase tracking-widest">

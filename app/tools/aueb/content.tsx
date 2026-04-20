@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
+import ToolPayGate from '../../components/ToolPayGate';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
 import { VaultUpsell } from '../../components/VaultUpsell';
@@ -792,6 +793,7 @@ export default function AUEBTool() {
                                 </motion.div>
 
                                 {/* COST FORENSICS */}
+                                <ToolPayGate toolName="AI Unit Economics Benchmark">
                                 <motion.div
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1143,6 +1145,7 @@ export default function AUEBTool() {
 
                                 {/* Q-PEP Remediation Block — captured into PDF */}
                                 <QPEPRemediation toolId="AUEB" metrics={results!} />
+                                </ToolPayGate>
 
                                 </div>
                                 {/* -------- PDF CAPTURE ZONE END -------- */}

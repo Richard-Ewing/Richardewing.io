@@ -56,6 +56,7 @@ const Navigation = () => {
                                 <DropdownItem href="/articles" description="Syndicated work in CIO, Built In, etc">Published Articles</DropdownItem>
                                 <DropdownItem href="/vault/curriculum/tracks" description="400+ modules and playbooks">Complete Curriculum</DropdownItem>
                                 <DropdownItem href="/glossary" description="500+ engineering economics terms">Glossary</DropdownItem>
+                                <DropdownItem href="/answers" description="Persona-specific knowledge matrix">Answers Hub</DropdownItem>
                                 <DropdownItem href="/blog" description="105 articles on engineering economics">Blog</DropdownItem>
                                 <DropdownItem href="/resources/ai-courses" description="Free AI & engineering courses">AI Courses</DropdownItem>
                             </Dropdown>
@@ -241,6 +242,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/articles" onClick={onClose}>Published Articles</MobileLink>
                         <MobileLink href="/vault/curriculum/tracks" onClick={onClose}>Complete Curriculum</MobileLink>
                         <MobileLink href="/glossary" onClick={onClose}>Glossary (420+ Terms)</MobileLink>
+                        <MobileLink href="/answers" onClick={onClose}>Answer Hub (Matrix)</MobileLink>
                         <MobileLink href="/blog" onClick={onClose}>Blog (105 Articles)</MobileLink>
                         <MobileLink href="/resources/ai-courses" onClick={onClose}>AI Courses (Free)</MobileLink>
                     </div>

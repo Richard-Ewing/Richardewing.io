@@ -7,6 +7,7 @@ import { TrendingUp, TrendingDown, AlertTriangle, DollarSign, Lock, Zap, Users, 
 import Link from 'next/link';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
+import ToolPayGate from '../../components/ToolPayGate';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
@@ -570,6 +571,7 @@ export default function APERTool() {
                                 </motion.div>
 
                                 {/* CapEx Hemorrhage Horizon Matrix */}
+                                <ToolPayGate toolName="APER Efficiency Diagnostic">
                                 {results.valuationGap > 0 && (
                                     <motion.div
                                         initial={{ opacity: 0, y: 30 }}
@@ -813,6 +815,7 @@ export default function APERTool() {
                                 </div>
 
                                 </div>
+                                </ToolPayGate>
 
                                 {/* -------- PDF CAPTURE ZONE END -------- */}
 
