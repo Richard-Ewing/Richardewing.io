@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { articles } from '../../lib/data';
 import { articleSchemaTemplate } from '../../lib/schemas';
 import ArticleUpsell from '../../components/ArticleUpsell';
+import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
 
 interface Props {
     params: Promise<{
@@ -145,6 +146,8 @@ export default async function ArticlePage({ params }: Props) {
                 }
                 description="Download the exact execution models, deployment checklists, and financial breakdown frameworks used by tier-1 engineering organizations."
             />
+
+            <ProgrammaticAnswersRelated seed={resolvedParams.slug} />
 
             <div className="mt-20 pt-12 border-t border-zinc-400">
                 <Link href="/articles" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-semibold font-mono uppercase tracking-widest">

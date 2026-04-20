@@ -5,6 +5,7 @@ import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { motion } from 'framer-motion';
 import ToolCelebration from '../../components/ToolCelebration';
 import Link from 'next/link';
+import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
@@ -1003,6 +1004,8 @@ Migrate from Heroku to AWS"
                     </div>
                 </div>
             </div>
+
+            <ProgrammaticAnswersRelated seed="pdi-tool" maxCount={2} />
 
             {/* MONETIZATION ENGINE: PAYWALL MODAL */}
             {showPaywall && (

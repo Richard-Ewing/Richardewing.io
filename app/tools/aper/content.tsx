@@ -14,6 +14,7 @@ import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import ShineBorder from '../../components/magicui/shine-border';
 import { PersonaSwitcher } from '../../components/PersonaSwitcher';
+import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
 
 // --- MAGIC UI COMPONENTS ---
 
@@ -852,6 +853,8 @@ export default function APERTool() {
                     </div>
                 </div>
             </div>
+            
+            <ProgrammaticAnswersRelated seed="aper-tool" maxCount={2} />
         </div>
     );
 }

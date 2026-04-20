@@ -2,6 +2,7 @@ import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { clerkClient } from '@clerk/nextjs/server';
+import { supabaseAdmin } from '@/lib/supabase';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_dummy_key_for_build_passing');
 
@@ -95,6 +96,41 @@ export async function POST(req: Request) {
                             unlocked_items: updatedUnlocked
                         }
                     });
+
+                    // Auto-Queue Curriculum in Vault
+                    if (specificItemId) {
+                        let startModule = null;
+                        
+                        if (specificItemId === 'module_engineering') startModule = '1-1';
+                        else if (specificItemId === 'module_ai_economics') startModule = '2-1';
+                        else if (specificItemId === 'module_rd_capital') startModule = '3-1';
+                        else if (specificItemId === 'full_curriculum') startModule = '1-1';
+                        else if (specificItemId.startsWith('module_track_')) {
+                            const trackNum = specificItemId.replace('module_track_', '');
+                            startModule = `${trackNum}-1`;
+                        } else if (specificItemId.startsWith('module_')) {
+                            const trackNum = specificItemId.replace('module_', '');
+                            if (!isNaN(Number(trackNum))) startModule = `${trackNum}-1`;
+                        }
+
+                        if (startModule) {
+                            try {
+                                await supabaseAdmin.from('user_content_progress').upsert({
+                                    user_id: userId,
+                                    content_id: startModule,
+                                    content_type: 'module',
+                                    progress_percentage: 0,
+                                    is_completed: false,
+                                    last_accessed: new Date().toISOString()
+                                }, {
+                                    onConflict: 'user_id,content_id'
+                                });
+                                console.log(`Auto-queued module ${startModule} for user ${userId} in Vault.`);
+                            } catch (error) {
+                                console.error('Failed to auto-queue curriculum progress in Supabase:', error);
+                            }
+                        }
+                    }
                 }
                 console.log(`Successfully provisioned access for Clerk User: ${userId} (Quantity: ${quantity}, Item: ${specificItemId || 'None'})`);
             } catch (error) {

@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import data from '@/app/lib/pseo-matrix.json';
+import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
 
 // Cache pages globally for 7 days (604,800 seconds) to prevent bot hammering
 export const revalidate = 604800;
@@ -98,6 +99,8 @@ export default async function PseoComparePage({ params }: { params: Promise<{ sl
                             </Link>
                         </div>
                     </div>
+
+                    <ProgrammaticAnswersRelated seed={slug} maxCount={2} />
 
                 </div>
             </div>

@@ -8,6 +8,7 @@ import GlossaryToolCTA from '../../components/GlossaryToolCTA';
 import ShareButtons from '../../components/ShareButtons';
 import RetroTerminal from '../../components/RetroTerminal';
 import GlossaryQuiz from '../../components/GlossaryQuiz';
+import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -705,6 +706,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                         Book Advisory Call →
                     </Link>
                 </section>
+
+                <ProgrammaticAnswersRelated seed={slug} maxCount={2} />
 
                 <RelatedContent currentSlug={slug} type="guide" />
             </article>

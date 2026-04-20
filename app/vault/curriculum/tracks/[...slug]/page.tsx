@@ -29,6 +29,7 @@ import ToolEmbed from '@/app/components/client/ToolEmbed';
 import SemanticText from '@/app/components/SemanticText';
 
 import StructuredData, { generateCourseSchema } from '@/app/components/seo/StructuredData';
+import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
 
 function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod: CurriculumModule, hasAccess: boolean, showPreview: boolean, aiContent?: any, fullSlug: string }) {
     return (
@@ -165,6 +166,8 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                             </>
                         )}
                     </PayGate>
+
+                    <ProgrammaticAnswersRelated seed={mod.moduleId} maxCount={2} />
 
                     {mod.relatedArticles && mod.relatedArticles.length > 0 && (
                         <div className="mt-16 border-t border-cyan-500/10 pt-12">
