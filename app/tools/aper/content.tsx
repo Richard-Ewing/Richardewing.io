@@ -813,12 +813,10 @@ export default function APERTool() {
 
                                     </div>
                                 </div>
-
-                                </div>
                                 </ToolPayGate>
 
                                 {/* -------- PDF CAPTURE ZONE END -------- */}
-
+                                </div>
                             </motion.div>
                         </>
                     )}

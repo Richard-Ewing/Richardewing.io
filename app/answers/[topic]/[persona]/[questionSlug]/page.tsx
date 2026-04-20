@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { SPOKE_MATRIX, Persona, getAllSpokeRoutes } from '../../../lib/spoke-data';
-import ArticleUpsell from '../../../components/ArticleUpsell';
+import { SPOKE_MATRIX, Persona, getAllSpokeRoutes } from '../../../../lib/spoke-data';
+import ArticleUpsell from '../../../../components/ArticleUpsell';
 
 interface Props {
     params: Promise<{
