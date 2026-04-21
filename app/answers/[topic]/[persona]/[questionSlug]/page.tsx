@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: `${query.questionHeadline} | ${p.persona.replace('-', ' ').toUpperCase()} Guide`,
         description: `Executive breakdown and financial execution models for: ${query.questionHeadline}`,
         alternates: {
-            canonical: `https://richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
+            canonical: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
         }
     };
 }

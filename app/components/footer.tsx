@@ -33,6 +33,9 @@ export function Footer() {
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
                             <li><Link href="/start-here" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors font-bold">→ Start Here</Link></li>
                             <li><Link href="/advisory" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Advisory Services</Link></li>
+                            <li><Link href="/advisory/licensing" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">IP Licensing</Link></li>
+                            <li><Link href="/workshops" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Corporate Workshops</Link></li>
+                            <li><Link href="/certification" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">C-Suite Certification</Link></li>
                             <li><Link href="/methodology" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Methodology</Link></li>
                             <li><Link href="/pricing" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Pricing</Link></li>
                             <li><Link href="/case-studies" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Case Studies</Link></li>
@@ -49,12 +52,15 @@ export function Footer() {
                         <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Intelligence</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
                             <li><Link href="/doctrine" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Doctrine</Link></li>
+                            <li><Link href="/answers" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors font-bold">Programmatic Answer Hub</Link></li>
+                            <li><Link href="/reports/state-of-ai-engineering" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">State of AI Report</Link></li>
+                            <li><Link href="/system-prompts" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">System Prompts</Link></li>
                             <li><Link href="/articles" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Canonical Hub</Link></li>
                             <li><Link href="/glossary" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Glossary (400+)</Link></li>
                             <li><Link href="/curriculum/tracks" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Complete Curriculum</Link></li>
                             <li><Link href="/guides" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Strategic Guides</Link></li>
                             <li><Link href="/blog" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Engineering Blog</Link></li>
-                            <li><Link href="/compare" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Tool Comparisons</Link></li>
+                            <li><Link href="/compare" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Tool Comparisons Matrix</Link></li>
                         </ul>
                     </div>
 

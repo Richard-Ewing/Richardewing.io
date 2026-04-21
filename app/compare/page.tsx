@@ -67,6 +67,8 @@ const comparisons = [
     },
 ];
 
+import pseoMatrix from '../lib/pseo-matrix.json';
+
 export default function ComparePage() {
     return (
         <main className="pt-20">
@@ -104,6 +106,25 @@ export default function ComparePage() {
                                 </Link>
                             );
                         })}
+                    </div>
+
+                    {/* Programmatic SEO Directory (Resolves Ahrefs Orphan Errors) */}
+                    <div className="mt-20 pt-16 border-t border-zinc-400">
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-8">
+                            Complete Comparison Directory
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {pseoMatrix.map((page) => (
+                                <Link 
+                                    key={page.slug} 
+                                    href={`/compare/${page.slug}`}
+                                    className="text-sm font-bold text-zinc-900 hover:text-cyan-900 transition-colors bg-white/50 border border-zinc-400/50 rounded-lg p-3 hover:bg-white truncate block"
+                                    title={page.title}
+                                >
+                                    {page.toolA} vs {page.toolB}
+                                </Link>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="text-center py-16 border-t border-zinc-400 mt-16">
