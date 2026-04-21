@@ -38,6 +38,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         description: `Executive breakdown and financial execution models for: ${query.questionHeadline}`,
         alternates: {
             canonical: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
+        },
+        openGraph: {
+            title: `${query.questionHeadline} | ${p.persona.replace('-', ' ').toUpperCase()} Guide`,
+            description: `Executive breakdown and financial execution models for: ${query.questionHeadline}`,
+            url: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
+            type: 'article',
         }
     };
 }

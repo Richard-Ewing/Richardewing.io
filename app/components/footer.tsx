@@ -57,8 +57,8 @@ export function Footer() {
                             <li><Link href="/system-prompts" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">System Prompts</Link></li>
                             <li><Link href="/articles" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Canonical Hub</Link></li>
                             <li><Link href="/glossary" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Glossary (400+)</Link></li>
-                            <li><Link href="/curriculum/tracks" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Complete Curriculum</Link></li>
-                            <li><Link href="/guides" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Strategic Guides</Link></li>
+                            <li><Link href="/vault/curriculum/tracks" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Complete Curriculum</Link></li>
+                            <li><Link href="/vault/curriculum/tracks" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Strategic Guides</Link></li>
                             <li><Link href="/blog" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Engineering Blog</Link></li>
                             <li><Link href="/compare" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Tool Comparisons Matrix</Link></li>
                         </ul>

@@ -41,6 +41,12 @@ export async function generateMetadata(
         alternates: {
             canonical: `https://www.richardewing.io/tools/${tool.toolSlug}/vs/${competitor.slug}`,
         },
+        openGraph: {
+            title: `${tool.toolName} vs. ${competitor.name} (2026 Comparison)`,
+            description: `Why enterprise leaders choose deterministic architecture over ${competitor.name}. Calculate literal Cost of Doing Nothing (CODN) and Board-Level Liability.`,
+            url: `https://www.richardewing.io/tools/${tool.toolSlug}/vs/${competitor.slug}`,
+            type: 'article',
+        }
     };
 }
 

@@ -13,6 +13,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: `${mod.moduleId}: ${mod.title} | Curriculum | Richard Ewing`,
         description: mod.description,
         alternates: { canonical: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}` },
+        openGraph: {
+            title: `${mod.moduleId}: ${mod.title} | Curriculum | Richard Ewing`,
+            description: mod.description,
+            url: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}`,
+            type: 'article',
+        }
     };
 }
 

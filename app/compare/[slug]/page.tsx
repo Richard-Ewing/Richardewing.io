@@ -35,6 +35,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: item.title,
         description: item.metaDescription,
         alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },
+        openGraph: {
+            title: item.title,
+            description: item.metaDescription,
+            url: `https://www.richardewing.io/compare/${slug}`,
+            type: 'article',
+        }
     };
 }
 
