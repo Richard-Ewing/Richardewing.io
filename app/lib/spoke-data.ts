@@ -116,6 +116,68 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     `,
                     recommendedProductId: 'module_engineering',
                     upsellHeadline: 'Calculate Your Exact Architectural Break-Even Model.'
+                },
+                {
+                    questionSlug: 'dependency-hell',
+                    questionHeadline: 'What is Dependency Hell and how much does it cost in enterprise software?',
+                    answerHtml: `
+                        <p><strong>Dependency Hell</strong> occurs when an application's required libraries, microservices, or external packages form a brittle, deeply nested web of conflicting versions. In enterprise environments, this isn't just an annoyance for developers—it's a critical bottleneck that actively drains capitalized engineering hours (CapEx).</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Compounding Cost of Hell</h3>
+                        <p>When an engineer attempts to update a single security patch but is blocked because three other internal services rely on the deprecated version, delivery halts. Instead of shipping features, highly paid engineers spend days forcibly resolving transitive dependency conflicts.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">🔥</span> Dependency Cost Calculator
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                                    <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Update Friction</div>
+                                    <div class="text-white text-sm font-medium">If a basic library bump takes > 4 hours, your architecture is in default.</div>
+                                </div>
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                                    <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Financial Drain</div>
+                                    <div class="text-white text-sm font-medium">15 engineers × 10 hrs/month resolving conflicts = $150k wasted runway.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Escape Route</h3>
+                        <p>Platform Engineers must enforce rigorous <strong>Semantic Versioning</strong> boundaries, mandate automated dependency mapping tools (like Dependabot), and physically decouple tightly-bound monoliths. You must present the resolution to executive leadership not as a "refactor", but as the elimination of a massive OpEx bleed.</p>
+                    `,
+                    recommendedProductId: 'module_engineering',
+                    upsellHeadline: 'Map the True Cost of Dependency Debt.'
+                },
+                {
+                    questionSlug: 'incident-management-cost',
+                    questionHeadline: 'How do you calculate the true cost of incident management and Sev-1 outages?',
+                    answerHtml: `
+                        <p>Incident Management is generally viewed as an unavoidable operational tax. However, when Platform Engineers fail to quantify the exact financial bleed of Sev-1 outages, they cannot secure the budget necessary for resiliency infrastructure.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Triple Revenue Burn</h3>
+                        <p>A major outage incurs costs across three devastating vectors:</p>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Direct ARR Loss:</strong> The immediate transactional revenue lost during downtime minutes.</li>
+                            <li><strong>Engineering Capital Burn:</strong> Dragging 40 engineers into a "War Room" incinerates thousands of dollars in hourly wages that should have been capitalized on feature development.</li>
+                            <li><strong>SLA Penalties:</strong> Enterprise contracts trigger massive financial clawbacks if uptime drops below 99.9%.</li>
+                        </ul>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-sm">⚠️</span> True Outage Equation
+                            </h4>
+                            <div class="bg-white p-6 rounded-xl border border-zinc-200 shadow-sm text-center">
+                                <div class="text-lg font-mono text-zinc-800 font-bold mb-4">
+                                    <span class="text-red-500">Lost Rev</span> + <span class="text-amber-500">(War Room Hrs × $100)</span> + <span class="text-orange-500">SLA Fines</span> = Total Cost
+                                </div>
+                                <p class="text-sm font-medium text-zinc-600 max-w-md mx-auto">
+                                    When requesting budget for SREs or Chaos Engineering tool chains, use this formula to prove you are buying an insurance policy with guaranteed immediate ROI.
+                                </p>
+                            </div>
+                        </div>
+                    `,
+                    recommendedProductId: 'module_engineering',
+                    upsellHeadline: 'Build Your Incident Cost ROI Model.'
                 }
             ],
             'cto-vp-engineering': [
@@ -190,6 +252,40 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     `,
                     recommendedProductId: 'module_engineering',
                     upsellHeadline: 'Download the Frictionless Engineering Economics Framework.'
+                },
+                {
+                    questionSlug: 'what-is-entropy-in-software-engineering',
+                    questionHeadline: 'What is software entropy and how do CTOs prevent codebase decay?',
+                    answerHtml: `
+                        <p><strong>Software Entropy</strong> is the natural law of decay applied to code. As a codebase is continuously modified to support new business capabilities, it inherently becomes more complex, disorganized, and fragile unless active energy (refactoring) is continuously applied to counteract it.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Thermodynamics of Legacy Code</h3>
+                        <p>Every time a developer takes a "shortcut" to meet a sprint deadline, they inject entropy into the system. If entropy is left unchecked, the codebase eventually crystallizes. At this point, the fear of breaking the monolithic architecture paralyzes the team, resulting in deployment cycles extending from days to weeks.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm">🧊</span> The Entropy Crystallization Phase
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center">
+                                <div class="bg-white/5 border border-white/10 rounded-lg p-3">
+                                    <span class="block text-white font-bold text-lg mb-1">State 1</span>
+                                    <span class="block text-xs text-emerald-400 font-mono">Agile & Fluid</span>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 rounded-lg p-3">
+                                    <span class="block text-white font-bold text-lg mb-1">State 2</span>
+                                    <span class="block text-xs text-yellow-400 font-mono">Tightly Coupled</span>
+                                </div>
+                                <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-3">
+                                    <span class="block text-white font-bold text-lg mb-1">State 3</span>
+                                    <span class="block text-xs text-red-400 font-mono">Crystallized (Dead)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mt-8 mb-4">Combating Decay</h3>
+                        <p>CTOs must mandate an explicit "Refactoring Tax" on every sprint. Dedicating 15-20% of engineering bandwidth purely to simplifying abstractions and deleting dead code acts as the kinetic energy required to reverse software entropy and preserve the system's velocity for future capabilities.</p>
+                    `,
+                    recommendedProductId: 'module_cto',
+                    upsellHeadline: 'Audit Your System Entropy Levels.'
                 }
             ]
         }
@@ -469,6 +565,110 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     `,
                     recommendedProductId: 'module_leadership',
                     upsellHeadline: 'Structure Your Engineering Tiers for Maximum ROI.'
+                },
+                {
+                    questionSlug: 'code-smell-engineering-manager',
+                    questionHeadline: 'What is a code smell, and why should an Engineering Manager care?',
+                    answerHtml: `
+                        <p>A "code smell" is not a crash or an outright bug; it is a surface-level symptom indicating a deeper architectural rot within the codebase. While junior developers view code smells as aesthetic annoyances, elite Engineering Managers view them as <strong>Leading Indicators of Margin Decay</strong>.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The P&L Impact of "Smelly" Code</h3>
+                        <p>When code exhibits severe smells—such as Massive God Classes, Deeply Nested Conditionals, or Duplicated Logic—it violently increases the <em>Cognitive Load</em> required to understand the system. High cognitive load directly increases the DORA "Lead Time for Changes." Features that should take 3 days begin taking 3 weeks simply because the codebase is too terrifying to navigate.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">🧮</span> The Manager's Translation
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                                    <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Developer Reality</div>
+                                    <div class="text-zinc-300 text-sm font-medium italic">"This file has 5,000 lines and no boundaries. I'm afraid to touch it."</div>
+                                </div>
+                                <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/30">
+                                    <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Manager Reality</div>
+                                    <div class="text-white text-sm font-medium font-bold">This is a massive organizational liability. If the sole author quits, development velocity drops to zero.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">Combating Architectural Rot</h3>
+                        <p>Engineering Managers must enforce rigorous linting and static analysis (e.g., SonarQube) in the CI pipeline to block code smells from entering main branches. You must weaponize tooling to protect the financial velocity of your team.</p>
+                    `,
+                    recommendedProductId: 'module_leadership',
+                    upsellHeadline: 'Deploy Elite Management Heuristics.'
+                },
+                {
+                    questionSlug: 'team-topologies-framework',
+                    questionHeadline: 'What is the Team Topologies framework, and how does it optimize delivery?',
+                    answerHtml: `
+                        <p>Conway's Law states that organizations design systems that mirror their communication structures. The <strong>Team Topologies</strong> framework directly weaponizes Conway’s Law by architecting human teams to ensure the resulting software architecture is flawlessly decoupled.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">Decoupling at the Human Layer</h3>
+                        <p>If you build a massive monolithic engineering department, they will build a massive, tightly coupled software monolith. Team Topologies mandates strict boundaries by explicitly defining interaction modes between teams. The core philosophy is protecting developer <em>Cognitive Capacity</em>.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm">🧩</span> Core Topologies
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center text-sm">
+                                <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+                                    <span class="block text-emerald-400 font-bold mb-1">Stream-Aligned</span>
+                                    <span class="text-zinc-400">Owns end-to-end product value. The revenue generators.</span>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+                                    <span class="block text-cyan-400 font-bold mb-1">Platform Team</span>
+                                    <span class="text-zinc-400">Builds internal tools to remove friction for Stream teams.</span>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+                                    <span class="block text-amber-400 font-bold mb-1">Enabling Team</span>
+                                    <span class="text-zinc-400">Specialized hit-squads that unblock massive technical hurdles.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The P&L Benefit</h3>
+                        <p>By enforcing "Platform as a Product" mindsets, Team Topologies eliminates cross-team coordination meetings. This drastically reduces the "Wait Time" blockages in your CI/CD pipeline, accelerating delivery velocity and maximizing your engineering capital expenditure (CapEx) ROI.</p>
+                    `,
+                    recommendedProductId: 'module_leadership',
+                    upsellHeadline: 'Restructure Your Engineering Cadence.'
+                },
+                {
+                    questionSlug: 'dx-engineering-metrics',
+                    questionHeadline: 'What are DX (Developer Experience) metrics and how do they tie to revenue?',
+                    answerHtml: `
+                        <p>Developer Experience (DX) metrics are frequently dismissed by CFOs as "HR happiness surveys." This is a profound misunderstanding. DX metrics are the hardest leading indicators of impending systemic architectural collapse and developer churn.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">DX is Capital Efficiency</h3>
+                        <p>If your local development environment takes 45 minutes to compile and boot up, every single engineer is burning 45 minutes of elite salary every morning. If a deploy fails 30% of the time due to flaky tests, your engineers are losing faith in the tooling and slowing down their commit frequency to avoid the pain of CI failures.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-rose-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center text-sm">📉</span> The Friction Tax
+                            </h4>
+                            <div class="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm">
+                                <ul class="text-sm font-medium text-zinc-600 space-y-3 list-none">
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-rose-500 mt-0.5">⚠️</span>
+                                        <span><strong>Build Times > 10m:</strong> Breaks deep-work focus state, destroying productivity for hours.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-rose-500 mt-0.5">⚠️</span>
+                                        <span><strong>Flaky E2E Tests:</strong> Erodes trust, forcing manual QA back into the pipeline.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-rose-500 mt-0.5">⚠️</span>
+                                        <span><strong>Poor Documentation:</strong> Inflates onboarding time from 2 weeks to 3 months.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">Defending DX Budget</h3>
+                        <p>When asking for budget to improve DX, tie it explicitly to developer retention and payroll leverage. "We are spending $5M a year on engineering payroll. By investing $150k in a dedicated DX internal tooling squad, we will reduce build times by 50%, immediately returning $400k worth of previously idle developer capacity."</p>
+                    `,
+                    recommendedProductId: 'module_leadership',
+                    upsellHeadline: 'Optimize Your Developer Leverage.'
                 }
             ],
             'founder-ceo': [
@@ -617,6 +817,71 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     `,
                     recommendedProductId: 'module_security',
                     upsellHeadline: 'Audit Your Security and Compliance Economics.'
+                },
+                {
+                    questionSlug: 'integration-risk',
+                    questionHeadline: 'What is integration risk in software M&A and how does it destroy value?',
+                    answerHtml: `
+                        <p>During Mergers & Acquisitions (M&A), CFOs and Private Equity sponsors meticulously audit the financial P&L, but routinely miscalculate <strong>Integration Risk</strong>—the devastating capital expenditure required to physically fuse two disparate software architectures together.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Illusion of "Synergy"</h3>
+                        <p>Financial models often project immediate operational synergies by combining two product suites. However, if the acquired company utilizes a fundamentally different technology stack (e.g., modern Kubernetes microservices vs legacy on-premise monolithic servers), achieving that synergy requires a massive, unbudgeted data migration and architectural rewrite.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">⚠️</span> M&A Integration Warning Signs
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                                    <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Identity Silos</div>
+                                    <div class="text-white text-sm font-medium">If customer auth pipelines differ, Single Sign-On (SSO) integration will consume 6+ months of engineering.</div>
+                                </div>
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                                    <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Data Model Gravity</div>
+                                    <div class="text-white text-sm font-medium">Migrating a relational SQL database to a distributed NoSQL cluster usually triggers massive data-loss risks.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">Pricing the Diligence</h3>
+                        <p>Never sign an acquisition without a Technical Due Diligence report that specifically prices the <em>Post-Closing Integration CapEx</em>. If fusing the platforms requires 18 months of dedicated developer time, that engineering payroll must be forcibly subtracted from the acquisition enterprise valuation.</p>
+                    `,
+                    recommendedProductId: 'module_financials',
+                    upsellHeadline: 'Calculate M&A Technical Due Diligence.'
+                }
+            ],
+            'founder-ceo': [
+                {
+                    questionSlug: 'burn-rate-runway',
+                    questionHeadline: 'Burn Rate & Runway: How do founders miscalculate engineering cash burn?',
+                    answerHtml: `
+                        <p>Founders frequently obsess over top-line Annual Recurring Revenue (ARR) growth while completely mismanaging the single fastest vector of capital hemorrhaging: <strong>Engineering Burn Rate</strong>.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Fully-Loaded Fiction</h3>
+                        <p>When calculating monthly burn, novice founders often simply add up base salaries. This is catastrophic. The <em>Fully-Loaded Engineering Run Rate</em> must include base salary, equity compensation (which dilutes cap-table value), employer taxes, healthcare benefits, and the massive SaaS/Cloud infrastructure footprint required to keep that developer productive.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">🔥</span> True Cost of an Engineer
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-70">
+                                    <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Base Salary</div>
+                                    <div class="text-white text-lg font-bold pb-2 border-b border-white/10">$180,000 / yr</div>
+                                </div>
+                                <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/30">
+                                    <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Fully Loaded Burn</div>
+                                    <div class="text-white text-lg font-bold pb-2 border-b border-red-500/20">$250,000 / yr</div>
+                                    <div class="text-zinc-400 text-xs mt-2">+ Taxes, SaaS Seats, AWS Dev Env, Equity</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Runway Cliff</h3>
+                        <p>If you have 10 engineers, your true burn is $2.5M annually, not $1.8M. Over-hiring engineering talent before achieving strict Product-Market Fit (PMF) is the primary reason post-Seed startups drive straight off the runway cliff. You must treat every engineering hire as a massive, illiquid capital expenditure that permanently raises your break-even horizon.</p>
+                    `,
+                    recommendedProductId: 'module_financials',
+                    upsellHeadline: 'Calculate Your True Engineering Burn Velocity.'
                 }
             ]
         }
