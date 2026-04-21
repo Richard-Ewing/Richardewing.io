@@ -307,7 +307,7 @@ export default async function VaultPage() {
                                         <p className="text-sm font-semibold text-zinc-900 font-medium mb-6 max-w-md mx-auto">
                                             Unlock the curriculum, premium playbooks, or advisory resources to see them beautifully organized here.
                                         </p>
-                                        <Link href="/curriculum/tracks" className="inline-flex items-center justify-center px-6 py-2 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-cyan-400 transition-colors">
+                                        <Link href="/vault/curriculum/tracks" className="inline-flex items-center justify-center px-6 py-2 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-cyan-400 transition-colors">
                                             Browse Library
                                         </Link>
                                     </div>

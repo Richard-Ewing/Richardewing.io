@@ -39,7 +39,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
 
-    const blogPages: MetadataRoute.Sitemap = getSortedArticles().map(article => ({
+    const blogPages: MetadataRoute.Sitemap = getSortedArticles()
+        .filter(article => !article.canonicalUrl || article.canonicalUrl === `${baseUrl}/blog/${article.slug}`)
+        .map(article => ({
         url: `${baseUrl}/blog/${article.slug}`,
         lastModified: new Date(article.date),
         changeFrequency: 'monthly' as const,

@@ -441,8 +441,8 @@ export function autoCurriculum(category: string, title: string, slug: string): {
 // NEW: Auto-generated Executive Guides
 export function autoGuides(category: string, title: string, slug: string): { title: string; url: string; type: string }[] {
     return [
-        { title: `Private Equity Due Diligence Checklist for ${title}`, url: `/guides/pe-due-diligence`, type: 'Executive Brief' },
-        { title: `The ${category.split(' & ')[0]} Investment Thesis (2026-2028)`, url: `/guides/cto-investment-thesis`, type: 'Market Report' }
+        { title: `Private Equity Due Diligence Checklist for ${title}`, url: `/vault/curriculum/tracks`, type: 'Executive Brief' },
+        { title: `The ${category.split(' & ')[0]} Investment Thesis (2026-2028)`, url: `/vault/curriculum/tracks`, type: 'Market Report' }
     ];
 }
 

@@ -34,6 +34,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/about',
+        destination: '/principal',
+        permanent: true,
+      },
+      {
         source: '/q-pep-product-economics-protocol',
         destination: '/system',
         permanent: true,
@@ -585,11 +590,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // Pattern 2: /articles/:slug → /articles (auto-generated article links that don't exist)
-      {
-        source: '/articles/:slug+',
-        destination: '/articles',
-        permanent: true,
-      },
+      // Removed because it catches /articles/frameworks/... and causes valid pages to return 308
       // Pattern 3: /curriculum/digital-transformation/:slug → /vault/curriculum/tracks
       {
         source: '/curriculum/digital-transformation/:slug*',

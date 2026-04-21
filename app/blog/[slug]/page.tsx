@@ -129,7 +129,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                             <p className="text-sm font-semibold text-zinc-900 font-medium mb-3">The Product Economist — Quantifying engineering economics for technology leaders, PE firms, and boards.</p>
                             <div className="flex flex-wrap gap-3">
                                 <Link href="/advisory" className="text-xs font-bold text-zinc-900 font-bold hover:underline">Book Advisory →</Link>
-                                <Link href="/curriculum/tracks" className="text-xs font-bold text-zinc-900 font-bold hover:underline">Curriculum →</Link>
+                                <Link href="/vault/curriculum/tracks" className="text-xs font-bold text-zinc-900 font-bold hover:underline">Curriculum →</Link>
                                 <Link href="/tools/pdi" className="text-xs font-bold text-zinc-900 font-bold hover:underline">Free Tools →</Link>
                             </div>
                         </div>

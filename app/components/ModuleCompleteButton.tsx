@@ -76,7 +76,7 @@ export default function ModuleCompleteButton({ nextHref, moduleTitle }: ModuleCo
             </div>
 
             <div className="mt-4 flex items-center justify-between">
-                <Link href="/curriculum/tracks" className="text-sm font-semibold text-zinc-900 font-medium hover:text-zinc-900 transition-colors">← Back to Tracks</Link>
+                <Link href="/vault/curriculum/tracks" className="text-sm font-semibold text-zinc-900 font-medium hover:text-zinc-900 transition-colors">← Back to Tracks</Link>
             </div>
         </>
     );
