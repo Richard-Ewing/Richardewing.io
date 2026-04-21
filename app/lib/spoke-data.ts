@@ -417,6 +417,48 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     `,
                     recommendedProductId: 'module_ai_economics',
                     upsellHeadline: 'Stop AI API Burn. Calculate Your True Costs.'
+                },
+                {
+                    questionSlug: 'agent-drift-taxonomy',
+                    questionHeadline: 'What is the taxonomy of Agent Drift in LLM orchestration?',
+                    answerHtml: `
+                        <p>As enterprise engineering teams deploy autonomous AI Agents (systems capable of executing multi-step workflows across external tools), a new systemic failure state has emerged: <strong>Agent Drift</strong>. Agent Drift occurs when an LLM slowly deviates from its initial directive during an extended multi-step orchestration loop, resulting in mathematically unpredictable, often catastrophic, end-states.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Taxonomy of Drift</h3>
+                        <p>Founders must understand the taxonomy of these failures before authorizing autonomous systems access to production APIs or databases. There are three primary classifications of Agent Drift in modern LLM architectures:</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-sm">🤖</span> Drift Failure Modes
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-xs font-mono font-bold text-fuchsia-400 uppercase tracking-widest mb-1">1. Context Eviction</div>
+                                    <div class="text-white text-sm font-medium">The agent processes so many intermediate tool-calls that the original "Prime Directive" is pushed out of the context window. The agent forgets *why* it is working.</div>
+                                </div>
+                                <div class="bg-fuchsia-500/10 p-4 rounded-xl border border-fuchsia-500/30">
+                                    <div class="text-xs font-mono font-bold text-fuchsia-400 uppercase tracking-widest mb-1">2. Hallucinated APIs</div>
+                                    <div class="text-white text-sm font-medium">When confronted with unexpected JSON schemas from external tools, the agent hallucinates parameters or methods that do not exist, triggering cascade failures.</div>
+                                </div>
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-xs font-mono font-bold text-fuchsia-400 uppercase tracking-widest mb-1">3. Cyclic Loops</div>
+                                    <div class="text-white text-sm font-medium">The agent calls an API, receives an error, tries to self-correct by calling the exact same API with the exact same payload, burning infinite tokens without human intervention.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
+                        <p>A fast-growing FinTech startup deployed a LangChain-based "Autonomous Due Diligence Agent" to scrape competitor pricing tiers and update an internal HubSpot CRM database. During a routine weekend run, a competitor updated their website with an aggressive Cloudflare captcha. Encountering the unexpected HTML, the Agent suffered <em>Cyclic Loop Drift</em>. It requested the URL 45,000 times, attempting to parse the captcha as JSON. Because the engineer failed to put a "Max Iteration Hook" in the ReAct loop, the Agent burned $16,000 in OpenAI tokens fighting a Captcha for 48 hours before the CEO forced a manual kill-switch.</p>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Day 1-30:</strong> Enforce strict Max-Step Constraints. If you are using ReAct or Plan-and-Execute loops, hardcode an execution cap (e.g., maximum 10 loops). If the agent cannot solve it in 10 steps, gracefully degrade to a human-in-the-loop escalation.</li>
+                            <li><strong>Day 31-60:</strong> Implement "Context Anchoring." Programmatically inject the Prime Directive (the original goal) into the system prompt recursively at every 5th iteration loop to prevent Context Eviction.</li>
+                            <li><strong>Day 61-90:</strong> Build a simulated evaluation environment. Before deploying an agent to production CRM or DB tools, force it to run through a gauntlet of 50 edge-case "Drift Scenarios" (broken APIs, unexpected 404s, massive JSON payloads) to monitor its resiliency.</li>
+                        </ul>
+                    `,
+                    recommendedProductId: 'module_ai_economics',
+                    upsellHeadline: 'Audit Your Autonomous AI Agents for Drift.'
                 }
             ],
             'product-manager': [
@@ -482,6 +524,44 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 }
             ],
             'platform-engineer': [
+                {
+                    questionSlug: 'anthropic-ai-architect-path',
+                    questionHeadline: 'What is the Anthropic AI Architect Path and is it free?',
+                    answerHtml: `
+                        <p>The role of an "AI Architect" is rapidly superseding the traditional "Cloud Architect." The <strong>Anthropic AI Architect Path</strong> refers to the emerging operational frameworks necessary to natively orchestrate Claude's suite of models (Sonnet, Opus, Haiku) inside enterprise software environments without creating systemic architectural debt. The base intelligence and APIs are strictly pay-per-use, but the <em>architectural methodology</em> itself is an open, free paradigm shift.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Anthropic Architecture Distinctive</h3>
+                        <p>Unlike standard LLM orchestration, an Anthropic-centric architecture explicitly optimizes for extreme Context Windows (up to 200,000 tokens) and complex tool-use (function calling) with mathematical precision. Platform engineers must build specific telemetry to handle massive prompt caching and payload streaming to avoid astronomical latency.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-sm">⚛️</span> The Architect Stack
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Prompt Caching CapEx</div>
+                                    <div class="text-white text-sm font-medium">Architects must configure explicit caching layers to drop Claude-3.5-Sonnet context injection costs by up to 90%.</div>
+                                </div>
+                                <div class="bg-orange-500/10 p-4 rounded-xl border border-orange-500/30">
+                                    <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Stateful Memory</div>
+                                    <div class="text-white text-sm font-medium">Unlike simple chatbots, an architecture must pipe user graph data via vector retrieval into the system prompt securely.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
+                        <p>A B2B analytics company was spending $40,000 a month on GPT-4 turbo calls attempting to process huge chunks of PDF compliance data. Their latency averaged 18 seconds per request, killing user retention. Their Platform Engineer architected a native Anthropic routing path utilizing Claude-3.5-Haiku for blazing-fast triage and extraction, and Claude-3-Opus strictly for final synthesis. By utilizing Anthropic's prompt caching for the core documentation, latency fell to 2.8 seconds and the monthly API OpEx dropped to $11,000.</p>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Day 1-30:</strong> Ditch LangChain for core logic. Build a native, strongly typed integration directly against the Anthropic SDK. Wrappers add unnecessary abstraction and point-of-failure volatility to highly structured Claude tool calls.</li>
+                            <li><strong>Day 31-60:</strong> Implement "System Prompt Distillation." Force Claude-3.5-Sonnet to dynamically rewrite and optimize your massive 10,000-token system instructions into a deterministic XML syntax format. Anthropic models natively index XML far faster than Markdown.</li>
+                            <li><strong>Day 61-90:</strong> Implement prompt caching telemetry. You must build observability dashboards that track the cache hit-rate percentage. If your cache rate is below 70%, your architectural boundaries are flawed.</li>
+                        </ul>
+                    `,
+                    recommendedProductId: 'module_engineering',
+                    upsellHeadline: 'Master Enterprise AI Architecture.'
+                },
                 {
                     questionSlug: 'what-is-mlops-infrastructure-cost',
                     questionHeadline: 'What is MLOps and how do you calculate the infrastructure cost of Machine Learning Operations?',
@@ -581,6 +661,44 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         topicName: 'Engineering Leadership & Measurement',
         personas: {
             'cto-vp-engineering': [
+                {
+                    questionSlug: 'where-does-the-term-staff-engineer-come-from',
+                    questionHeadline: 'Where does the term Staff Engineer come from and what do they actually do?',
+                    answerHtml: `
+                        <p>The term <strong>"Staff Engineer"</strong> originates from mid-20th century corporate and military organizational structures, distinguishing between "Line" roles (those directly executing the primary mission) and "Staff" roles (highly specialized advisors who architect the systems and strategy for the Line to execute). In modern software engineering, it represents the critical juncture where a Senior Engineer transitions from solving discrete technical problems to solving massive, ambiguous organizational problems.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Dual Career Track</h3>
+                        <p>Historically, if an engineer wanted a promotion past "Senior," they were forced into Engineering Management. This resulted in a catastrophic operational drain: companies consistently promoted their most elite programmers away from the codebase and turned them into mediocre middle managers doing 1v1s and Jira administration. The "Staff Engineer" track was formalized by top-tier tech companies to correct this, allowing true "10x architects" to achieve Director-level compensation and influence without managing direct reports.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-sm">🛤️</span> The Executive Track Divergence
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest mb-1">Engineering Manager</div>
+                                    <div class="text-white text-sm font-medium">Owns the *people* and the *delivery schedule*. Optimizes team throughput, removes blockers, and manages payroll budgets.</div>
+                                </div>
+                                <div class="bg-cyan-500/10 p-4 rounded-xl border border-cyan-500/30">
+                                    <div class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest mb-1">Staff Engineer</div>
+                                    <div class="text-white text-sm font-medium">Owns the *architecture* and the *technical vision*. Optimizes system boundaries, dictates stack choices, and navigates cross-team dependencies.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Work of a Staff Engineer</h3>
+                        <p>Unlike a Senior Engineer who takes a well-scoped ticket and writes code, a Staff Engineer operates in absolute ambiguity. Their primary output is often not code, but <strong>Consensus and Alignment</strong>. They write technical Request for Comments (RFCs), prototype massive systemic refactors to prove viability, and dictate the infrastructure standards that 40+ other engineers will follow. They act as force multipliers.</p>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Day 1-30:</strong> Formally bifurcate your HR leveling charts into an "IC Track" (Individual Contributor) and an "M Track" (Management). Ensure the Staff Engineer band maps perfectly to the Engineering Manager band in base salary and equity.</li>
+                            <li><strong>Day 31-60:</strong> Institute the "Sponsor" model. If a Senior Engineer wants promotion to Staff, mandate they lead a cross-functional technical initiative across at least 3 distinct engineering squads, proving their ability to herd cats without formal authority.</li>
+                            <li><strong>Day 61-90:</strong> Build the "Architecture Guild." Pull your newly minted Staff Engineers into a formal weekly council. Their explicit job is to review major infrastructure PRs and enforce universal engineering standards across the entire org pipeline.</li>
+                        </ul>
+                    `,
+                    recommendedProductId: 'module_engineering',
+                    upsellHeadline: 'Build Your High-Performance Engineering Culture.'
+                },
                 {
                     questionSlug: 'measuring-developer-productivity-space-dora',
                     questionHeadline: 'How to measure developer productivity without using lines of code (SPACE vs DORA)?',
@@ -884,6 +1002,44 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         personas: {
             'cfo-investor': [
                 {
+                    questionSlug: 'data-debt-formal-definition',
+                    questionHeadline: 'What is the formal definition of Data Debt and how does it drain EBITDA?',
+                    answerHtml: `
+                        <p><strong>Data Debt</strong> is the accumulated financial liability that occurs when an enterprise acquires, stores, and pipelines data without rigid ontological governance or immediate monetization pathways. For CFOs, Data Debt is far more insidious than Software Technical Debt because cloud storage costs (S3, Snowflake, BigQuery) compound perpetually, attacking EBITDA every single month.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Data Hoarding Fallacy</h3>
+                        <p>During the "Big Data" era, organizations were taught to "store everything; analyze it later." This heuristic is financially catastrophic in the modern cloud landscape. A massive, unstructured data lake that cannot be queried efficiently by business intelligence tools is not an asset; it is a liability. You are paying premium cloud egress and storage fees for "dark data" that provides absolutely zero top-line revenue lift.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm">📉</span> Data Debt Financial Drag
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-70">
+                                    <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Compute Sprawl</div>
+                                    <div class="text-white text-sm font-medium">Poorly partitioned Snowflake data warehouses require massive compute queries, draining OpEx.</div>
+                                </div>
+                                <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/30">
+                                    <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Compliance Liability</div>
+                                    <div class="text-white text-sm font-medium">Storing unclassified PII (Personally Identifiable Information) vastly increases SEC/GDPR fine exposure profiles.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
+                        <p>A B2B logistics firm running on Google BigQuery noticed their monthly data warehouse bill had grown by 600% over two years to $180,000/month, yet their actual business velocity remained flat. An audit revealed that 80% of their compute costs were driven by 5 dashboards used by the marketing team analyzing unstructured, legacy 2018 web-traffic logs that were never formally deprecated. By introducing rigid Data Retention Lifecycles and archiving the cold data to Glacier storage, the CFO immediately recaptured $1.2M in annual EBITDA.</p>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Day 1-30:</strong> Enforce FinOps Visibility. Mandate that every single data pipeline or ETL job running in production is explicitly tagged to a specific business unit's P&L. If no unit claims it, turn it off.</li>
+                            <li><strong>Day 31-60:</strong> Institute Data Retention Hard Limits. Unless explicitly required for compliance (e.g., SOC2, HIPAA), mandate that all raw telemetry/event data is aggressively compressed and moved to cold storage (e.g., AWS Glacier) after 90 days.</li>
+                            <li><strong>Day 61-90:</strong> Implement Data Contracts. Before engineering pipes new third-party data into the primary warehouse, require a signed "Data Contract" proving exactly how that data will linearly increase ARR.</li>
+                        </ul>
+                    `,
+                    recommendedProductId: 'module_investor',
+                    upsellHeadline: 'Audit Your Cloud Data Debt & EBITDA Drag.'
+                },
+                {
                     questionSlug: 'value-software-technical-debt-m-a',
                     questionHeadline: 'How to value software technical debt during M&A due diligence?',
                     answerHtml: `
@@ -1151,6 +1307,82 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     `,
                     recommendedProductId: 'module_product_mgmt',
                     upsellHeadline: 'Adopt the Definitive Product Economics Framework.'
+                },
+                {
+                    questionSlug: 'product-economics',
+                    questionHeadline: 'What is Product Economics and how does it drive SaaS valuation?',
+                    answerHtml: `
+                        <p><strong>Product Economics</strong> is the strict mathematical discipline of treating every feature, sprint, and engineering initiative as an independent Profit & Loss (P&L) center. Software companies fail when they view "The Product" purely as user-experience architecture while ignoring the infrastructural extraction cost underlying it.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Marginal Cost of a Feature</h3>
+                        <p>In traditional manufacturing, COGS (Cost of Goods Sold) is easy to track. In SaaS, COGS is invisible. When a Product Manager ships a new "Real-Time AI Dashboard," they rarely calculate the variable AWS egress and compute costs triggered every time a user loads the page. If a feature costs $0.15 in cloud resources per engagement but is bundled into a flat $50/mo subscription tier utilized 400 times a month, that single feature natively destroys the unit economics of the customer.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">💵</span> The Feature P&L Equation
+                            </h4>
+                            <div class="bg-emerald-500/10 rounded p-4 border border-emerald-500/20 text-center">
+                                <div class="text-xs font-bold font-mono text-emerald-400 uppercase tracking-widest mb-1">Feature Profitability</div>
+                                <div class="text-lg font-bold text-white">Feature Lift (ARR) > (Dev CapEx / 36mo) + (Monthly Infra OpEx)</div>
+                                <div class="text-sm font-medium text-emerald-200/70 mt-2 max-w-sm mx-auto">Never approve a product ticket until this equation is mathematically satisfied.</div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
+                        <p>A B2B marketing SaaS heavily promoted their new embedded "Generative AI Copywriter" tool to their user base. Use skyrocketed. Within two months, their gross margins plummeted from 85% to 54%. The Product Economics audit revealed that the OpenAI inference calls were costing them an average of $22 per user/month, while those users were only paying $29/mo for the entire platform suite. Because the PM didn't understand Product Economics, they gave away hard-compute API calls on a basic flat-tier SaaS model, nearly bankrupting the division.</p>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Day 1-30:</strong> Instrument Feature-Level Cloud Telemetry. Tag your AWS/GCP resources logically so that infrastructure bills are specifically assigned to product domains (e.g., Search, Auth, Dashboard).</li>
+                            <li><strong>Day 31-60:</strong> Institute "FinOps Product Reviews." Mandate that Product Managers present the projected infrastructure costs of a feature before engineering writing a single line of code.</li>
+                            <li><strong>Day 61-90:</strong> Implement Usage-Based Tiering. For mathematically expensive features (AI inference, massive database queries, video encoding), instantly rip them out of the flat-rate SaaS tiers and move them to isolated "Credits" or "Usage-Based Payments."</li>
+                        </ul>
+                    `,
+                    recommendedProductId: 'module_product_mgmt',
+                    upsellHeadline: 'Train Your PMs into Product Economists.'
+                },
+                {
+                    questionSlug: 'plg-flywheel',
+                    questionHeadline: 'How to scale a Product-Led Growth (PLG) Flywheel without burning through CAC?',
+                    answerHtml: `
+                        <p>The <strong>Product-Led Growth (PLG) Flywheel</strong> is the SaaS holy grail: designing a product so inherently viral and frictionless that the software sells itself without a bloated enterprise sales team. However, misunderstanding the unit economics of a "freemium" user acquisition loop leads directly to massive cash burn.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Leaky Flywheel</h3>
+                        <p>Founders often assume that dropping a paywall creates a PLG motion. It does not. If your Time-To-Value (TTV) is greater than 15 minutes, or if your product requires a 45-minute onboarding tutorial to understand, your PLG flywheel is permanently jammed. You will pay massive Customer Acquisition Costs (CAC) to drive traffic to your free tier, only to watch 90% of them churn silently because the UX is too dense.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-sm">⚙️</span> The 3 Pillars of PLG
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm text-center">
+                                    <div class="text-xs font-mono font-bold text-blue-500 uppercase tracking-widest mb-1">1. Frictionless TTV</div>
+                                    <div class="text-sm text-zinc-600">The user must hit the "Aha!" moment within 3 minutes of rendering the DOM.</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm text-center">
+                                    <div class="text-xs font-mono font-bold text-purple-500 uppercase tracking-widest mb-1">2. Viral Loops</div>
+                                    <div class="text-sm text-zinc-600">Core features must intrinsically require inviting teammates to unlock full value.</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm text-center">
+                                    <div class="text-xs font-mono font-bold text-emerald-500 uppercase tracking-widest mb-1">3. Shadow IT</div>
+                                    <div class="text-sm text-zinc-600">Enterprises are penetrated bottom-up. Individual ICs swipe credit cards first.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The CapEx Trap of Free Tiers</h3>
+                        <p>The most dangerous element of a PLG Flywheel is the infrastructure cost of the freemium cohort. If one million users sign up for your free tier, you must financially support their database rows, bandwidth, and API calls. If your conversion rate from "Free" to "Paid" is a dismal 1%, the 99% of freeloaders will literally bankrupt your cloud infrastructure budget. The Free Tier must be heavily constrained by expensive computational actions.</p>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Day 1-30:</strong> Deploy strict Cloud Quotas. Programmatically limit the CPU or compute-heavy actions available to Free-tier accounts to mathematically cap your downside infrastructure risk.</li>
+                            <li><strong>Day 31-60:</strong> Eliminate Sales blockers. Allow any user to bypass the "Talk to Sales" button and instantly upgrade to a self-serve Team Tier using a credit card. Eliminate friction completely.</li>
+                            <li><strong>Day 61-90:</strong> Build the "Multiplayer" hook. Rearchitect your core feature so that its utility multiplies when other users in the same corporate domain join the workspace (e.g., Figma, Notion, Slack).</li>
+                        </ul>
+                    `,
+                    recommendedProductId: 'module_product_mgmt',
+                    upsellHeadline: 'Audit Your Product-Led Growth Unit Economics.'
                 },
                 {
                     questionSlug: 'product-debt-destroys-nrr',
