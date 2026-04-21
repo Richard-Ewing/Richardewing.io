@@ -119,7 +119,7 @@ export default async function AnswerPage({ params }: Props) {
                 <div className="mb-6 mb-8 text-sm font-mono text-zinc-500 font-bold uppercase tracking-widest border-b border-zinc-300 pb-2">
                     Explore Corporate Diagnostics
                 </div>
-                <ProgrammaticAnswersRelated currentTopic={topicData.topicSlug} />
+                <ProgrammaticAnswersRelated seed={topicData.topicSlug} />
             </div>
 
             <div className="mt-20 pt-12 border-t border-zinc-400">
