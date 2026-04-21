@@ -125,6 +125,12 @@ export const PRODUCTS: Record<string, Product> = {
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
+    module_financials: {
+        name: 'C-Suite Financials & M&A Diligence — Track Access',
+        description: 'Lifetime access to the C-Suite Financials & M&A Diligence track.',
+        price: 14900, mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
+    },
     module_data: {
         name: 'Data & Analytics Economics — Single Module',
         description: 'Lifetime access to one Data & Analytics Economics module (Track 8).',

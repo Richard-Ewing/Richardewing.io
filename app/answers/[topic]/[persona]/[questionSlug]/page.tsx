@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { SPOKE_MATRIX, Persona, getAllSpokeRoutes } from '../../../../lib/spoke-data';
 import ArticleUpsell from '../../../../components/ArticleUpsell';
+import ProgrammaticAnswersRelated from '../../../../components/ProgrammaticAnswersRelated';
 
 interface Props {
     params: Promise<{
@@ -112,6 +113,14 @@ export default async function AnswerPage({ params }: Props) {
                 headline={query.upsellHeadline}
                 description="Download the exact execution models, deployment checklists, and financial breakdown frameworks associated with this architecture methodology."
             />
+
+            {/* Hub & Spoke Matrix Routing Node */}
+            <div className="mt-16 bg-white/50 border border-zinc-300 rounded-2xl p-6 md:p-8">
+                <div className="mb-6 mb-8 text-sm font-mono text-zinc-500 font-bold uppercase tracking-widest border-b border-zinc-300 pb-2">
+                    Explore Corporate Diagnostics
+                </div>
+                <ProgrammaticAnswersRelated currentTopic={topicData.topicSlug} />
+            </div>
 
             <div className="mt-20 pt-12 border-t border-zinc-400">
                 <Link href="/answers" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-semibold font-mono uppercase tracking-widest">
