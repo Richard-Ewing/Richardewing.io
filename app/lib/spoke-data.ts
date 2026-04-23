@@ -1431,7 +1431,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
             <li><strong>Contract-Driven Development:</strong> Use strict API contracts (like Swagger/OpenAPI). If both teams build to the exact contract, integration risk drops exponentially.</li>
             <li><strong>Buffer the Integration Phase:</strong> When estimating timelines, allocate at least 30% of the total project schedule specifically to integration, testing, and stabilization.</li>
         </ul>`,
-                    recommendedProductId: 'module_product',
+                    recommendedProductId: 'module_product_mgmt',
                     upsellHeadline: 'De-risk enterprise product delivery.'
                 },
                 {
