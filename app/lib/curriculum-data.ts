@@ -109,6 +109,8 @@ populateTracks19to23(modules);
 
 
 import { tracks } from './curriculum-tracks-ui';
+import { SPOKE_MATRIX } from './spoke-data';
+
 export function getModule(slug: string): CurriculumModule | undefined {
     let mod = modules[slug];
 
@@ -129,6 +131,40 @@ export function getModule(slug: string): CurriculumModule | undefined {
         if (mod.moduleId === '6-1') mod.embeddedTool = 'aper';
     }
     
+    // Inject Programmatic SEO related articles dynamically based on topic mapping
+    if (mod && (!mod.relatedArticles || mod.relatedArticles.length === 0)) {
+        mod.relatedArticles = mod.relatedArticles || [];
+        
+        // Topic to Module mapping logic
+        const targetModules: Record<string, string[]> = {
+            'engineering-architecture': ['N9-1', '14-1', '11-4'], // Tech Debt, Cloud FinOps, Build vs Buy
+            'ai-product-strategy': ['N8-1', 'N8-4', '1-1'], // Pricing Strategy, Product Economics
+            'engineering-leadership': ['N14-1', 'N13-1', 'N12-1'], // Leadership, Exec Economics, Career Capital
+            'c-suite-financials': ['N10-1', 'N10-3', '1-2'], // Due Diligence, Financials
+            'product-management-economics': ['6-1', 'N8-2', 'N11-1'] // PM Economics, Build vs Buy
+        };
+
+        SPOKE_MATRIX.forEach(topic => {
+            const relevantMods = targetModules[topic.topicSlug] || [];
+            if (relevantMods.includes(mod!.moduleId)) {
+                Object.keys(topic.personas).forEach(persona => {
+                    const questions = (topic.personas as any)[persona];
+                    if (questions) {
+                        questions.forEach((q: any) => {
+                            const articleUrl = `/answers/${topic.topicSlug}/${persona}/${q.questionSlug}`;
+                            if (!mod!.relatedArticles!.includes(articleUrl)) {
+                                mod!.relatedArticles!.push(articleUrl);
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        
+        // Limit to top 5 most relevant to avoid overcrowding the UI
+        mod.relatedArticles = mod.relatedArticles.slice(0, 5);
+    }
+
     return mod;
 }
 

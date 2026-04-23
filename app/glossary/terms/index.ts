@@ -44,6 +44,7 @@ import { seventeenthPassTerms } from './seventeenth-pass';
 import { eighteenthPassTerms } from './eighteenth-pass';
 import { nineteenthPassTerms } from './nineteenth-pass';
 import { semanticExpansion2026 } from './2026-expansion';
+import { programmaticSeoTerms } from './programmatic-seo';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -104,6 +105,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...nineteenthPassTerms,
     // 2026 Semantic Expansion
     ...semanticExpansion2026,
+    // Programmatic SEO Expansion
+    ...programmaticSeoTerms,
 ];
 
 export const allGlossaryCategories = [

@@ -31,14 +31,37 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'dependency-hell',
                     questionHeadline: 'How do you define and escape dependency hell in enterprise architecture?',
                     answerHtml: `<p>Dependency hell occurs when software packages rely on specific, mutually exclusive, or deeply nested versions of other software packages, creating an unresolvable gridlock that prevents updates or deployments.</p>
-        <h3 class="text-xl font-bold mt-8 mb-4">The Architectural Root Cause</h3>
-        <p>Dependency hell is almost always a symptom of <strong>tight coupling</strong> and a lack of boundary enforcement. When microservices share common libraries instead of communicating via versioned APIs, or when monoliths import hundreds of external un-pinned packages, you create a fragile ecosystem where one upgrade breaks ten other things.</p>
-        <h3 class="text-xl font-bold mt-8 mb-4">The Escape Route</h3>
-        <ul class="list-disc pl-6 space-y-2 mb-6">
-            <li><strong>Containerization:</strong> Use Docker to isolate application environments so dependencies do not bleed across system boundaries.</li>
-            <li><strong>Strict Semantic Versioning:</strong> Enforce strict adherence to SemVer. Never blindly use <code>latest</code> tags in production builds.</li>
-            <li><strong>Decoupling via APIs:</strong> Replace shared binary dependencies with shared API contracts. A service should depend on an interface, not a specific library version.</li>
-        </ul>`,
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Architectural Root Cause</h3>
+                        <p>Dependency hell is almost always a symptom of <strong>tight coupling</strong> and a lack of boundary enforcement. When microservices share common libraries instead of communicating via versioned APIs, or when monoliths import hundreds of external un-pinned packages, you create a fragile ecosystem where one upgrade breaks ten other things.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-red-100 text-red-700 flex items-center justify-center text-sm">🧨</span> The Blast Radius Metric
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                                    <div class="text-xs font-mono font-bold text-red-500 uppercase tracking-widest mb-2">Coupling Factor</div>
+                                    <div class="text-2xl font-bold text-zinc-900 mb-1">N² Connections</div>
+                                    <div class="text-sm font-medium text-zinc-500">Exponential risk scaling with every new internal library added.</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                                    <div class="text-xs font-mono font-bold text-emerald-500 uppercase tracking-widest mb-2">Resolution</div>
+                                    <div class="text-2xl font-bold text-zinc-900 mb-1">API Gateways</div>
+                                    <div class="text-sm font-medium text-zinc-500">Abstracting internal library versions behind strict HTTP/gRPC contracts.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Escape Route</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Containerization:</strong> Use Docker to isolate application environments so dependencies do not bleed across system boundaries.</li>
+                            <li><strong>Strict Semantic Versioning:</strong> Enforce strict adherence to SemVer. Never blindly use <code>latest</code> tags in production builds.</li>
+                            <li><strong>Decoupling via APIs:</strong> Replace shared binary dependencies with shared API contracts. A service should depend on an interface, not a specific library version.</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Translation</h3>
+                        <p>If your teams spend 30% of their sprints "bumping versions" and resolving merge conflicts rather than shipping features, you have a structural dependency issue. Investing CapEx into decoupling via API contracts will immediately reclaim that lost velocity.</p>`,
                     recommendedProductId: 'module_engineering',
                     upsellHeadline: 'Build resilient platform architectures.'
                 },
@@ -398,17 +421,46 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
             'founder-ceo': [
                 {
                     questionSlug: 'calculating-roai',
-                    questionHeadline: 'How do you calculate the true ROAI (Return on AI) for enterprise deployments?',
-                    answerHtml: `<p>Return on AI (ROAI) is notoriously difficult to calculate because executives often focus on the shiny capabilities of Large Language Models (LLMs) rather than the rigid unit economics of inference costs and data pipeline maintenance.</p>
-        <h3 class="text-xl font-bold mt-8 mb-4">The ROAI Equation</h3>
-        <p>A positive ROAI requires the value of the automated workflow to strictly exceed the CapEx of model training/integration plus the ongoing OpEx of token inference and hallucination remediation.</p>
-        <ul class="list-disc pl-6 space-y-2 mb-6">
-            <li><strong>Value Creation (The Numerator):</strong> Are you replacing human labor (cost reduction), increasing throughput (revenue expansion), or creating a net-new product capability that drives expansion ARR?</li>
-            <li><strong>Inference Costs (The Denominator):</strong> If your AI agent uses GPT-4o and requires complex multi-step reasoning (RAG, agentic loops) for every user interaction, your API costs scale linearly with usage. If the margin gained per task is $0.50 but the inference cost is $0.60, you have a negative gross margin product.</li>
-        </ul>
-        <h3 class="text-xl font-bold mt-8 mb-4">The Hidden Cost of AI</h3>
-        <p>Do not forget the "Data Debt" tax. AI models require clean, structured, and vectorized data. Most enterprises spend 80% of their AI budget simply cleaning their legacy databases so the LLM doesn't hallucinate. If you don't factor in data pipeline engineering, your ROAI calculation is a fantasy.</p>`,
-                    recommendedProductId: 'module_ai',
+                    questionHeadline: 'How do you calculate the financial Return on AI Investment (ROAI)?',
+                    answerHtml: `<p>ROAI (Return on AI Investment) is the critical financial metric for evaluating generative models, autonomous agents, and RAG pipelines. Unlike traditional software ROI, which is deterministic, ROAI must account for probabilistic outcomes, hallucination costs, and inference burn rates.</p>
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Token Economics Trap</h3>
+                        <p>Many enterprises build a prototype using GPT-4 that works brilliantly in a demo. They fail to realize that running that model on 10,000 customer tickets a day will cost $80,000/month in API inference fees. Furthermore, if the model hallucinates on 5% of those tickets, the manual human remediation cost (or brand damage) often vastly exceeds the cost savings of the automation itself.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-sm">🧠</span> The Predictivity Cost Curve
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-xl border-l-4 border-l-indigo-500 shadow-sm">
+                                    <h5 class="font-bold text-zinc-900">Positive ROAI Zone</h5>
+                                    <ul class="text-sm font-medium text-zinc-600 space-y-1 list-disc pl-4 mt-2">
+                                        <li>High human wage offset (e.g., legal review).</li>
+                                        <li>Low cost of hallucination.</li>
+                                        <li>Small model (Llama-3 8B) running on-premise.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border-l-4 border-l-red-500 shadow-sm">
+                                    <h5 class="font-bold text-zinc-900">Negative ROAI Zone</h5>
+                                    <ul class="text-sm font-medium text-zinc-600 space-y-1 list-disc pl-4 mt-2">
+                                        <li>Low human wage offset (e.g., data entry).</li>
+                                        <li>Catastrophic cost of hallucination (e.g., medical dosage).</li>
+                                        <li>Heavy frontier model (GPT-4) API usage.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The ROAI Calculation Formula</h3>
+                        <p><code>ROAI = (Human Wage Savings + Net New Revenue) - (Inference Cost + Human Remediation Cost + Model Fine-Tuning CapEx)</code></p>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Inference Cost:</strong> The direct token fees or GPU cloud compute costs.</li>
+                            <li><strong>Human Remediation Cost:</strong> The time spent by engineers or subject matter experts verifying and correcting model outputs.</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Translation</h3>
+                        <p>Do not deploy AI for AI's sake. If a deterministic Python script or a SQL query can solve the problem with 100% accuracy for $0 in inference costs, building an LLM agent to do it is financial negligence. Reserve heavy AI models strictly for high-variance, unstructured data problems where the human wage offset justifies the inference burn.</p>`,
+                    recommendedProductId: 'module_ai_economics',
                     upsellHeadline: 'Master AI product unit economics.'
                 },
                 {
@@ -710,17 +762,41 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
             'cto-vp-engineering': [
                 {
                     questionSlug: 'code-smell-engineering-manager',
-                    questionHeadline: 'What are the biggest organizational code smells for an Engineering Manager?',
-                    answerHtml: `<p>A "code smell" in software indicates a deeper architectural problem. An "organizational smell" indicates a deeper leadership or cultural rot within an engineering team. Engineering Managers must be hyper-vigilant in detecting these early.</p>
-        <h3 class="text-xl font-bold mt-8 mb-4">The Top 3 Organizational Smells</h3>
-        <ul class="list-disc pl-6 space-y-2 mb-6">
-            <li><strong>The Hero Culture:</strong> If you rely on one "10x engineer" working weekends to save every release, you do not have a robust process. You have a single point of failure. This inevitably leads to burnout and massive key-person risk.</li>
-            <li><strong>The Silent Standup:</strong> When daily standups become rote status updates ("Yesterday I did X, today I'll do Y") with zero requests for help or blockers raised, it indicates a lack of psychological safety or deep silos where engineers don't understand each other's work.</li>
-            <li><strong>The QA Crutch:</strong> If developers routinely merge sloppy code because "QA will catch it," your culture lacks ownership. Quality must be shifted left; developers must own the operational success of their code.</li>
-        </ul>
-        <p>If you detect these smells, you must stop optimizing for feature delivery and start optimizing for team health and process engineering.</p>`,
+                    questionHeadline: 'How should an engineering manager translate code smells into organizational risk metrics?',
+                    answerHtml: `<p>A "Code Smell" is a surface indication that usually corresponds to a deeper problem in the system. For an Engineering Manager, these aren't just technical issues—they are organizational symptoms indicating process failures, misaligned incentives, or severe skill gaps.</p>
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Cultural Translation of Code Smells</h3>
+                        <p>When an engineer writes a 5,000-line "God Class," it doesn't just mean they don't understand object-oriented programming. It usually means the team lacks architectural oversight, code reviews are being rubber-stamped to meet artificial deadlines, or the feature requirements were changed 10 times during the sprint.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-sm">🕵️</span> The Cultural Debt Index
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                                    <div class="text-xs font-mono font-bold text-amber-500 uppercase tracking-widest mb-2">Technical Smell</div>
+                                    <div class="text-lg font-bold text-zinc-900 mb-1">Duplicated Code</div>
+                                    <div class="text-sm font-medium text-zinc-500">Copy-pasting logic across multiple files.</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                                    <div class="text-xs font-mono font-bold text-indigo-500 uppercase tracking-widest mb-2">Cultural Root Cause</div>
+                                    <div class="text-lg font-bold text-zinc-900 mb-1">Siloed Teams</div>
+                                    <div class="text-sm font-medium text-zinc-500">Engineers do not talk to each other; lack of shared component libraries.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">Managerial Remediation</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Enforce Rigorous Code Reviews:</strong> PRs (Pull Requests) cannot be approved by the author. Require at least one senior engineer review.</li>
+                            <li><strong>Abstract Complexity:</strong> Invest in a central Platform Engineering team to build paved roads and shared libraries.</li>
+                            <li><strong>Change the Incentives:</strong> Stop promoting engineers who ship features fast but leave a mess. Reward those who delete code and simplify architectures.</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Translation</h3>
+                        <p>Code smells are leading indicators of future outages and velocity collapse. If your managers are ignoring them to hit quarterly product targets, they are stealing from next year's budget to pay for today's bonuses.</p>`,
                     recommendedProductId: 'module_leadership',
-                    upsellHeadline: 'Scale high-performing engineering cultures.'
+                    upsellHeadline: 'Align engineering incentives with clean architecture.'
                 },
                 {
                     questionSlug: 'where-does-the-term-staff-engineer-come-from',
