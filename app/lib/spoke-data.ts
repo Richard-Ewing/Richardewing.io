@@ -28,6 +28,21 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         personas: {
             'platform-engineer': [
                 {
+                    questionSlug: 'dependency-hell',
+                    questionHeadline: 'How do you define and escape dependency hell in enterprise architecture?',
+                    answerHtml: `<p>Dependency hell occurs when software packages rely on specific, mutually exclusive, or deeply nested versions of other software packages, creating an unresolvable gridlock that prevents updates or deployments.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Architectural Root Cause</h3>
+        <p>Dependency hell is almost always a symptom of <strong>tight coupling</strong> and a lack of boundary enforcement. When microservices share common libraries instead of communicating via versioned APIs, or when monoliths import hundreds of external un-pinned packages, you create a fragile ecosystem where one upgrade breaks ten other things.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Escape Route</h3>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Containerization:</strong> Use Docker to isolate application environments so dependencies do not bleed across system boundaries.</li>
+            <li><strong>Strict Semantic Versioning:</strong> Enforce strict adherence to SemVer. Never blindly use <code>latest</code> tags in production builds.</li>
+            <li><strong>Decoupling via APIs:</strong> Replace shared binary dependencies with shared API contracts. A service should depend on an interface, not a specific library version.</li>
+        </ul>`,
+                    recommendedProductId: 'module_engineering',
+                    upsellHeadline: 'Build resilient platform architectures.'
+                },
+                {
                     questionSlug: 'roi-of-monolith-to-microservices',
                     questionHeadline: 'How to calculate the financial ROI of migrating from a monolith to microservices?',
                     answerHtml: `
@@ -223,6 +238,23 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
             ],
             'cto-vp-engineering': [
                 {
+                    questionSlug: 'software-entropy',
+                    questionHeadline: 'What is entropy in software engineering and how do you measure it?',
+                    answerHtml: `<p>Software entropy refers to the gradual degradation of a system's structure, architecture, and maintainability over time. As new features are bolted on, quick fixes are applied, and original developers leave, the system trends toward chaos.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Business Cost of Entropy</h3>
+        <p>Entropy directly destroys <strong>Developer Velocity</strong>. If a feature that took 2 days to build in Year 1 now takes 3 weeks to build in Year 4, your system has high entropy. The financial cost is the wasted payroll spent navigating spaghetti code rather than delivering value.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">How to Measure It</h3>
+        <p>You cannot measure entropy directly, but you can track its symptoms using DORA metrics and Code Quality tools:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Lead Time for Changes:</strong> Is it steadily increasing year-over-year?</li>
+            <li><strong>Change Failure Rate:</strong> Are regressions becoming more frequent because the codebase is brittle?</li>
+            <li><strong>Cyclomatic Complexity:</strong> Use static analysis tools (like SonarQube) to track the rising complexity of critical paths.</li>
+        </ul>
+        <p>The only way to reverse software entropy is through dedicated refactoring sprints—paying down the technical debt before it bankrupts the team's velocity.</p>`,
+                    recommendedProductId: 'module_engineering',
+                    upsellHeadline: 'Master Engineering Velocity & Architecture.'
+                },
+                {
                     questionSlug: 'cost-of-legacy-code-vs-rewrite',
                     questionHeadline: 'What is the true cost of maintaining legacy code vs rewriting from scratch?',
                     answerHtml: `
@@ -364,6 +396,21 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         topicName: 'AI Product Strategy & Unit Economics',
         personas: {
             'founder-ceo': [
+                {
+                    questionSlug: 'calculating-roai',
+                    questionHeadline: 'How do you calculate the true ROAI (Return on AI) for enterprise deployments?',
+                    answerHtml: `<p>Return on AI (ROAI) is notoriously difficult to calculate because executives often focus on the shiny capabilities of Large Language Models (LLMs) rather than the rigid unit economics of inference costs and data pipeline maintenance.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">The ROAI Equation</h3>
+        <p>A positive ROAI requires the value of the automated workflow to strictly exceed the CapEx of model training/integration plus the ongoing OpEx of token inference and hallucination remediation.</p>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Value Creation (The Numerator):</strong> Are you replacing human labor (cost reduction), increasing throughput (revenue expansion), or creating a net-new product capability that drives expansion ARR?</li>
+            <li><strong>Inference Costs (The Denominator):</strong> If your AI agent uses GPT-4o and requires complex multi-step reasoning (RAG, agentic loops) for every user interaction, your API costs scale linearly with usage. If the margin gained per task is $0.50 but the inference cost is $0.60, you have a negative gross margin product.</li>
+        </ul>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Hidden Cost of AI</h3>
+        <p>Do not forget the "Data Debt" tax. AI models require clean, structured, and vectorized data. Most enterprises spend 80% of their AI budget simply cleaning their legacy databases so the LLM doesn't hallucinate. If you don't factor in data pipeline engineering, your ROAI calculation is a fantasy.</p>`,
+                    recommendedProductId: 'module_ai',
+                    upsellHeadline: 'Master AI product unit economics.'
+                },
                 {
                     questionSlug: 'fine-tune-open-source-vs-openai-api',
                     questionHeadline: 'Build vs Buy: Should we fine-tune an open-source LLM or use OpenAI APIs?',
@@ -661,6 +708,20 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         topicName: 'Engineering Leadership & Measurement',
         personas: {
             'cto-vp-engineering': [
+                {
+                    questionSlug: 'code-smell-engineering-manager',
+                    questionHeadline: 'What are the biggest organizational code smells for an Engineering Manager?',
+                    answerHtml: `<p>A "code smell" in software indicates a deeper architectural problem. An "organizational smell" indicates a deeper leadership or cultural rot within an engineering team. Engineering Managers must be hyper-vigilant in detecting these early.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Top 3 Organizational Smells</h3>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>The Hero Culture:</strong> If you rely on one "10x engineer" working weekends to save every release, you do not have a robust process. You have a single point of failure. This inevitably leads to burnout and massive key-person risk.</li>
+            <li><strong>The Silent Standup:</strong> When daily standups become rote status updates ("Yesterday I did X, today I'll do Y") with zero requests for help or blockers raised, it indicates a lack of psychological safety or deep silos where engineers don't understand each other's work.</li>
+            <li><strong>The QA Crutch:</strong> If developers routinely merge sloppy code because "QA will catch it," your culture lacks ownership. Quality must be shifted left; developers must own the operational success of their code.</li>
+        </ul>
+        <p>If you detect these smells, you must stop optimizing for feature delivery and start optimizing for team health and process engineering.</p>`,
+                    recommendedProductId: 'module_leadership',
+                    upsellHeadline: 'Scale high-performing engineering cultures.'
+                },
                 {
                     questionSlug: 'where-does-the-term-staff-engineer-come-from',
                     questionHeadline: 'Where does the term Staff Engineer come from and what do they actually do?',
@@ -1002,6 +1063,22 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         personas: {
             'cfo-investor': [
                 {
+                    questionSlug: 'incident-management-cost',
+                    questionHeadline: 'How do you calculate the true financial cost of incident management?',
+                    answerHtml: `<p>Most CFOs dramatically underestimate the cost of software incidents (outages or sev-1 bugs) because they only calculate the direct lost revenue during the downtime. The true cost of incident management is a compound equation involving lost wages, opportunity cost, and brand degradation.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">The True Cost Formula</h3>
+        <p>A severe incident triggers a massive, hidden organizational response. You must calculate:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Direct Revenue Loss:</strong> (Annual Revenue / 525,600 minutes) * Minutes of Downtime.</li>
+            <li><strong>Engineering Incident Response:</strong> The hourly rate of the 10-20 engineers pulled into the "war room" to triage and fix the issue.</li>
+            <li><strong>The Post-Mortem Tax:</strong> The hours spent writing the RCA (Root Cause Analysis), meeting with executives, and deploying the preventative fix.</li>
+            <li><strong>The Opportunity Cost:</strong> The features that were <em>not</em> built because the engineering team was busy fighting fires and stabilizing the system.</li>
+        </ul>
+        <p>When you fully burden an incident, a 2-hour outage for a mid-market SaaS company rarely costs $10,000—it often exceeds $150,000 in diverted organizational energy.</p>`,
+                    recommendedProductId: 'module_financials',
+                    upsellHeadline: 'Master technical financial modeling.'
+                },
+                {
                     questionSlug: 'data-debt-formal-definition',
                     questionHeadline: 'What is the formal definition of Data Debt and how does it drain EBITDA?',
                     answerHtml: `
@@ -1266,6 +1343,21 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         topicName: 'Product Management Economics',
         personas: {
             'product-manager': [
+                {
+                    questionSlug: 'integration-risk',
+                    questionHeadline: 'How do you quantify integration risk in product delivery?',
+                    answerHtml: `<p>Integration risk is the probability that independent software components, third-party APIs, or cross-functional team deliverables will fail to work together when combined, causing catastrophic timeline delays and budget overruns.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">Why Integration is the Silent Killer</h3>
+        <p>Most Product Managers track the progress of individual features (Component A is 90% done, Component B is 80% done). But the most complex, unpredictable work happens when Component A tries to talk to Component B. If you leave integration to the very end of the project (the "Big Bang" integration), you are guaranteeing failure.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">Mitigating Integration Risk</h3>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Shift-Left Integration:</strong> Force teams to integrate mock APIs or skeleton components in Week 1, not Week 10. Prove the communication layer works before building the logic.</li>
+            <li><strong>Contract-Driven Development:</strong> Use strict API contracts (like Swagger/OpenAPI). If both teams build to the exact contract, integration risk drops exponentially.</li>
+            <li><strong>Buffer the Integration Phase:</strong> When estimating timelines, allocate at least 30% of the total project schedule specifically to integration, testing, and stabilization.</li>
+        </ul>`,
+                    recommendedProductId: 'module_product',
+                    upsellHeadline: 'De-risk enterprise product delivery.'
+                },
                 {
                     questionSlug: 'prioritize-tech-debt-vs-features',
                     questionHeadline: 'How to prioritize technical debt vs new product features on the roadmap?',
