@@ -12,43 +12,60 @@ export default function ArticleUpsell({ productId, headline, description }: Arti
     const product = PRODUCTS[productId];
     if (!product) return null;
 
-    const displayHeadline = headline || `Master this architecture.`;
-    const displayDescription = description || `Download the complete ${product.name} with actionable execution models, deployment checklists, and financial breakdown frameworks used by tier-1 engineering organizations.`;
+    const displayHeadline = headline || `Not ready for the full curriculum?`;
+    const displayDescription = description || `Start with the free Executive Diagnostic Toolkit. Includes the R&D Audit Checklist, AI Unit Economics Matrix, and M&A Technical Diligence Cheatsheet.`;
 
     const isGuide = productId.includes('guide');
-    const label = isGuide ? `Download Guide — $${product.price / 100}` : `Unlock Track — $${product.price / 100}`;
+    const label = isGuide ? `Buy Guide — $${product.price / 100}` : `Buy Track — $${product.price / 100}`;
     const icon = isGuide ? 'file' : 'lock';
+    const beehiivUrl = 'https://theproducteconomist.beehiiv.com/subscribe';
 
     return (
         <div className="my-16 relative">
-            {/* Background design */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-violet-100 to-indigo-50 rounded-2xl transform rotate-1 scale-105 -z-10" />
-            
-            <div className="bg-white border-2 border-violet-200 rounded-2xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-violet-400/20 to-fuchsia-400/20 blur-3xl rounded-full transform translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-                
-                <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
-                    {/* Left: Copy */}
-                    <div className="flex-1 space-y-4">
+            <div className="bg-zinc-50 border-2 border-zinc-200 rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-tr from-violet-100 to-indigo-50/50 -z-10" />
+
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 divide-y md:divide-y-0 md:divide-x divide-zinc-200">
+                    {/* Left: Free Lead Magnet */}
+                    <div className="space-y-5 md:pr-8">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-100 text-violet-900 font-mono text-xs font-bold uppercase tracking-widest">
-                            <BookOpen className="w-3.5 h-3.5" /> Contextual Playbook
+                            <BookOpen className="w-3.5 h-3.5" /> Free Toolkit
                         </div>
-                        <h3 className="text-2xl sm:text-3xl font-grotesk font-bold text-zinc-950">
+                        <h3 className="text-2xl font-grotesk font-bold text-zinc-950 leading-tight">
                             {displayHeadline}
                         </h3>
-                        <p className="text-zinc-700 font-medium leading-relaxed">
+                        <p className="text-zinc-700 text-sm font-medium leading-relaxed">
                             {displayDescription}
                         </p>
+                        
+                        <form action={beehiivUrl} method="GET" target="_blank" className="flex items-center gap-2 mt-4">
+                            <input 
+                                type="email" 
+                                name="email" 
+                                placeholder="name@company.com" 
+                                required
+                                className="w-full px-4 py-2 bg-white border border-zinc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 font-medium text-sm text-zinc-900 placeholder:text-zinc-400"
+                            />
+                            <button 
+                                type="submit"
+                                className="px-4 py-2 rounded-lg bg-zinc-950 text-white font-bold hover:bg-violet-600 transition-all text-sm whitespace-nowrap"
+                            >
+                                Get PDF
+                            </button>
+                        </form>
                     </div>
 
-                    {/* Right: Checkout */}
-                    <div className="w-full md:w-80 flex-shrink-0 bg-zinc-50 border border-zinc-200 rounded-xl p-6 text-center">
-                        <div className="text-sm font-bold text-zinc-600 uppercase tracking-widest mb-1">
-                            {isGuide ? 'Premium Guide' : 'Curriculum Track'}
+                    {/* Right: Paid Curriculum */}
+                    <div className="md:pl-8 pt-8 md:pt-0 flex flex-col justify-center space-y-4">
+                        <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest flex items-center gap-2 mb-1">
+                            <ShieldCheck className="w-4 h-4 text-emerald-500" /> Premium Option
                         </div>
-                        <div className="text-zinc-950 font-bold text-xl mb-4">
+                        <div className="text-zinc-950 font-bold text-xl font-grotesk">
                             {product.name}
                         </div>
+                        <p className="text-zinc-600 text-sm font-medium leading-relaxed mb-2">
+                            Download the complete {isGuide ? 'guide' : 'track'} with actionable execution models, deployment checklists, and financial breakdown frameworks.
+                        </p>
                         
                         <CheckoutButton
                             productId={productId}
@@ -56,10 +73,6 @@ export default function ArticleUpsell({ productId, headline, description }: Arti
                             icon={icon}
                             variant="primary"
                         />
-                        
-                        <div className="mt-4 flex items-center justify-center gap-1 text-[10px] text-zinc-500 font-mono uppercase tracking-widest font-bold">
-                            <ShieldCheck className="w-3 h-3 text-emerald-500" /> Secure Checkout · Instant Delivery
-                        </div>
                     </div>
                 </div>
             </div>

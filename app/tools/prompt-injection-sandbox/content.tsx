@@ -13,6 +13,7 @@ import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { ShieldCheck, Crosshair, AlertTriangle, ArrowRight, ShieldAlert, Cpu, Lock, Zap, Target, Shield, CheckCircle2, Copy } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
+import { ToolGateCTA } from '../../components/ToolGateCTA';
 
 type AttackVector = {
     id: string;
@@ -417,6 +418,10 @@ Only answer questions related to AcmeCorp logistics.
                                     { id: 'Module 28-4', title: 'Human-in-the-Loop Safeguards', desc: 'Architect hardware-based circuit breakers for payload execution.' }
                                 ]} 
                             />
+
+                            <div className="mt-12">
+                                <ToolGateCTA toolName="Prompt Intrusion Vulnerability" />
+                            </div>
 
                             <div className="flex justify-center flex-wrap gap-6 mt-8" data-html2canvas-ignore>
                                 <button onClick={() => setResults(null)} className="text-zinc-950 font-mono tracking-widest text-xs font-bold hover:text-zinc-900 uppercase transition-colors">← Run New Simulation</button>

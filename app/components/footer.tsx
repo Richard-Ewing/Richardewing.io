@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { NewsletterSignup } from './NewsletterSignup';
+import { LeadMagnetCTA } from './LeadMagnetCTA';
 import Image from 'next/image';
 
 export function Footer() {
@@ -81,11 +81,11 @@ export function Footer() {
 
                     {/* Stay Current */}
                     <div className="col-span-2 lg:col-span-1">
-                        <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Stay Current</h4>
+                        <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Toolkit</h4>
                         <p className="text-zinc-950 text-sm font-semibold mb-4">
-                            Monthly analysis of why products fail economically.
+                            Get the Executive Diagnostic Toolkit and monthly analysis.
                         </p>
-                        <NewsletterSignup variant="compact" />
+                        <LeadMagnetCTA variant="compact" />
                     </div>
 
                 </div>

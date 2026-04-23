@@ -12,6 +12,7 @@ import ToolPayGate from '../../components/ToolPayGate';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
 import { VaultUpsell } from '../../components/VaultUpsell';
+import { ToolGateCTA } from '../../components/ToolGateCTA';
 import progressStyles from '../../styles/progress.module.css';
 
 const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
@@ -1155,6 +1156,11 @@ export default function AUEBTool() {
                     )}
                 </AnimatePresence>
             </main>
+
+            {/* MONETIZATION & LEAD CAPTURE */}
+            <div className="max-w-4xl mx-auto px-6">
+                <ToolGateCTA toolName="AI Unit Economics Matrix" />
+            </div>
 
             {/* AUTHORITY CONTENT: AUEB */}
             <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">

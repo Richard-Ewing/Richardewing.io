@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
 import { articles, frameworks } from '../lib/data';
-import { NewsletterSignup } from '../components/NewsletterSignup';
+import { LeadMagnetCTA } from '../components/LeadMagnetCTA';
 import PublicationLedger from '../components/PublicationLedger';
 
 export default function ArticlesPage() {
@@ -241,7 +241,7 @@ export default function ArticlesPage() {
             {/* Newsletter CTA */}
             <ScrollReveal delay={500}>
                 <div className="mb-20">
-                    <NewsletterSignup variant="full" />
+                    <LeadMagnetCTA variant="full" />
                 </div>
             </ScrollReveal>
 

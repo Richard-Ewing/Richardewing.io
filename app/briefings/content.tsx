@@ -1,9 +1,9 @@
-﻿'use client';
+'use client';
 
 import Link from 'next/link';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
-import { NewsletterSignup } from '../components/NewsletterSignup';
+import { LeadMagnetCTA } from '../components/LeadMagnetCTA';
 
 interface BriefCardProps {
     number: string;
@@ -118,7 +118,7 @@ export default function BriefingsPage() {
             {/* Subscribe CTA */}
             <ScrollReveal delay={200}>
                 <div className="mb-12 max-w-2xl mx-auto text-center">
-                    <NewsletterSignup variant="full" />
+                    <LeadMagnetCTA variant="full" />
                 </div>
             </ScrollReveal>
 

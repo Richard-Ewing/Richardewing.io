@@ -13,6 +13,7 @@ import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, TrendingDown, AlertTriangle, Lock, Zap, Skull, Building2 } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
+import { ToolGateCTA } from '../../components/ToolGateCTA';
 import ToolGate from '../../components/tool-gate';
 import { VaultUpsell, RecommendedTrack } from '../../components/VaultUpsell';
 
@@ -1004,6 +1005,9 @@ Migrate from Heroku to AWS"
                     </div>
                 </div>
             </div>
+
+            {/* MONETIZATION & LEAD CAPTURE: ToolGateCTA */}
+            <ToolGateCTA toolName="Product Debt Index" />
 
             <ProgrammaticAnswersRelated seed="pdi-tool" maxCount={2} />
 
