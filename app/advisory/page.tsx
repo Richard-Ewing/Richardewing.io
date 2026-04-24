@@ -32,42 +32,62 @@ export default function AdvisoryPage() {
                 </section>
 
                 {/* 4-Tier Executive Funnel */}
-                <section className="section relative z-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-
-                        {/* TIER 0: Toolkit Download */}
-                        <div className="card bg-zinc-100 border border-zinc-400 relative overflow-hidden group">
-                            <div className="p-8 h-full flex flex-col">
-                                <div>
-                                    <div className="text-xs font-bold font-mono text-zinc-500 uppercase tracking-widest mb-4">Initial Assessment</div>
-                                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">Diagnostic Toolkit</h3>
-                                    <div className="text-4xl font-mono text-zinc-950 mb-6">Free</div>
-                                    <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-8 min-h-[120px]">
-                                        Not ready for a paid engagement? Download the exact frameworks and scorecards I use to evaluate technical debt, AI unit economics, and M&A integration risks.
-                                    </p>
-                                    <ul className="space-y-4 mb-8 text-sm font-semibold text-zinc-900 font-medium">
-                                        <li className="flex items-start gap-3"><span className="text-zinc-500 mt-1 font-mono text-xs font-bold font-medium">01</span> The Innovation Tax Audit</li>
-                                        <li className="flex items-start gap-3"><span className="text-zinc-500 mt-1 font-mono text-xs font-bold font-medium">02</span> AI Economics Matrix</li>
-                                        <li className="flex items-start gap-3"><span className="text-zinc-500 mt-1 font-mono text-xs font-bold font-medium">03</span> M&A Diligence Cheatsheet</li>
-                                        <li className="flex items-start gap-3"><span className="text-zinc-500 mt-1 font-mono text-xs font-bold font-medium">04</span> Board-Ready PDF Formats</li>
-                                    </ul>
+                {/* Free Diagnostic Toolkit Banner */}
+                <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 mt-8">
+                    <div className="bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl relative">
+                        {/* Abstract Background for dark theme */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 to-transparent pointer-events-none" />
+                        <div className="absolute -top-24 -right-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+                        
+                        <div className="flex flex-col md:flex-row p-8 md:p-12 gap-10 items-center relative z-10">
+                            {/* Left Side: Content */}
+                            <div className="flex-1 space-y-6">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-mono text-xs font-bold uppercase tracking-widest border border-emerald-500/20">
+                                    Initial Assessment
                                 </div>
-                                <div className="mt-auto">
-                                    <form action="https://theproducteconomist.beehiiv.com/subscribe" method="GET" target="_blank" className="space-y-3">
+                                <h3 className="text-3xl md:text-4xl font-bold font-grotesk text-white">
+                                    The Executive Diagnostic Toolkit
+                                </h3>
+                                <p className="text-zinc-400 font-medium leading-relaxed max-w-xl text-lg">
+                                    Not ready for a paid engagement? Download the exact frameworks and scorecards I use to evaluate technical debt, AI unit economics, and M&A integration risks. Includes three board-ready PDF presentations.
+                                </p>
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-semibold text-zinc-300">
+                                    <li className="flex items-center gap-3"><span className="text-emerald-500 font-mono text-xs font-bold">01</span> The Innovation Tax Audit</li>
+                                    <li className="flex items-center gap-3"><span className="text-emerald-500 font-mono text-xs font-bold">02</span> AI Economics Matrix</li>
+                                    <li className="flex items-center gap-3"><span className="text-emerald-500 font-mono text-xs font-bold">03</span> M&A Diligence Cheatsheet</li>
+                                    <li className="flex items-center gap-3"><span className="text-emerald-500 font-mono text-xs font-bold">04</span> Board-Ready PDF Formats</li>
+                                </ul>
+                            </div>
+                            
+                            {/* Right Side: Capture */}
+                            <div className="w-full md:w-80 flex-shrink-0 bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-md">
+                                <div className="text-center mb-6">
+                                    <div className="text-2xl font-mono text-white mb-1">Free Download</div>
+                                    <div className="text-xs text-zinc-400 font-medium">Instantly sent to your inbox.</div>
+                                </div>
+                                <form action="https://theproducteconomist.beehiiv.com/subscribe" method="GET" target="_blank" className="space-y-4">
+                                    <input type="hidden" name="redirect" value="https://www.richardewing.io/toolkit-success" />
+                                    <div>
                                         <input 
                                             type="email" 
                                             name="email" 
-                                            placeholder="Enter your email..." 
+                                            placeholder="name@company.com" 
                                             required
-                                            className="w-full px-4 py-3 bg-white border border-zinc-300 rounded focus:outline-none focus:ring-2 focus:ring-zinc-500 text-sm font-semibold text-zinc-950 placeholder:text-zinc-400"
+                                            className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all font-medium placeholder:text-zinc-500"
                                         />
-                                        <button type="submit" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-zinc-950 text-white font-semibold hover:bg-emerald-600 transition-all uppercase">
-                                            Download Toolkit
-                                        </button>
-                                    </form>
-                                </div>
+                                    </div>
+                                    <button type="submit" className="flex items-center justify-center w-full py-3.5 text-xs font-bold font-mono tracking-widest rounded-lg bg-emerald-500 text-zinc-950 hover:bg-emerald-400 transition-all uppercase shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                                        Get The Toolkit
+                                    </button>
+                                </form>
                             </div>
                         </div>
+                    </div>
+                </section>
+
+                {/* 3-Tier Executive Funnel */}
+                <section className="section relative z-10 pt-0">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                         {/* TIER 1: Technical Due Diligence */}
                         <div className="card bg-zinc-100 border border-zinc-400 relative overflow-hidden group">
