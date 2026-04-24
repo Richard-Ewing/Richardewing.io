@@ -31,72 +31,118 @@ export default function AdvisoryPage() {
                     </div>
                 </section>
 
-                {/* 3-Tier Executive Funnel */}
+                {/* 4-Tier Executive Funnel */}
                 <section className="section relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+
+                        {/* TIER 0: Toolkit Download */}
+                        <div className="card bg-zinc-100 border border-zinc-400 relative overflow-hidden group">
+                            <div className="p-8 h-full flex flex-col">
+                                <div>
+                                    <div className="text-xs font-bold font-mono text-zinc-500 uppercase tracking-widest mb-4">Initial Assessment</div>
+                                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">Diagnostic Toolkit</h3>
+                                    <div className="text-4xl font-mono text-zinc-950 mb-6">Free</div>
+                                    <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-8 min-h-[120px]">
+                                        Not ready for a paid engagement? Download the exact frameworks and scorecards I use to evaluate technical debt, AI unit economics, and M&A integration risks.
+                                    </p>
+                                    <ul className="space-y-4 mb-8 text-sm font-semibold text-zinc-900 font-medium">
+                                        <li className="flex items-start gap-3"><span className="text-zinc-500 mt-1 font-mono text-xs font-bold font-medium">01</span> The Innovation Tax Audit</li>
+                                        <li className="flex items-start gap-3"><span className="text-zinc-500 mt-1 font-mono text-xs font-bold font-medium">02</span> AI Economics Matrix</li>
+                                        <li className="flex items-start gap-3"><span className="text-zinc-500 mt-1 font-mono text-xs font-bold font-medium">03</span> M&A Diligence Cheatsheet</li>
+                                        <li className="flex items-start gap-3"><span className="text-zinc-500 mt-1 font-mono text-xs font-bold font-medium">04</span> Board-Ready PDF Formats</li>
+                                    </ul>
+                                </div>
+                                <div className="mt-auto">
+                                    <form action="https://theproducteconomist.beehiiv.com/subscribe" method="GET" target="_blank" className="space-y-3">
+                                        <input 
+                                            type="email" 
+                                            name="email" 
+                                            placeholder="Enter your email..." 
+                                            required
+                                            className="w-full px-4 py-3 bg-white border border-zinc-300 rounded focus:outline-none focus:ring-2 focus:ring-zinc-500 text-sm font-semibold text-zinc-950 placeholder:text-zinc-400"
+                                        />
+                                        <button type="submit" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-zinc-950 text-white font-semibold hover:bg-emerald-600 transition-all uppercase">
+                                            Download Toolkit
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
 
                         {/* TIER 1: Technical Due Diligence */}
                         <div className="card bg-zinc-100 border border-zinc-400 relative overflow-hidden group">
-                            <div className="p-8">
-                                <div className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest mb-4">Tier 1: Private Equity</div>
-                                <h3 className="text-2xl font-bold text-zinc-950 mb-2">Technical Due Diligence</h3>
-                                <div className="text-4xl font-mono text-zinc-950 mb-6">$15,000<span className="text-sm font-semibold text-zinc-950"> / deal</span></div>
-                                <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-8 min-h-[120px]">
-                                    Intensive 2-week forensic code and architecture audit. Determine the exact technical debt and blast radiuses before you sign the term sheet to acquire a SaaS company.
-                                </p>
-                                <ul className="space-y-4 mb-8 text-sm font-semibold text-zinc-900 font-medium">
-                                    <li className="flex items-start gap-3"><span className="text-cyan-500 mt-1 font-mono text-xs font-bold font-medium">01</span> PDI (Product Debt Index) Analysis</li>
-                                    <li className="flex items-start gap-3"><span className="text-cyan-500 mt-1 font-mono text-xs font-bold font-medium">02</span> Security & Shadow AI Audit</li>
-                                    <li className="flex items-start gap-3"><span className="text-cyan-500 mt-1 font-mono text-xs font-bold font-medium">03</span> Cloud Arbitration Risk Model</li>
-                                    <li className="flex items-start gap-3"><span className="text-cyan-500 mt-1 font-mono text-xs font-bold font-medium">04</span> Board-ready Investment Thesis</li>
-                                </ul>
-                                <a href="mailto:richard@richardewing.io?subject=Inquiry: Technical Due Diligence" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold border border-cyan-500/20 hover:bg-cyan-500/20 transition-all uppercase">
-                                    Inquire Availability
-                                </a>
+                            <div className="p-8 h-full flex flex-col">
+                                <div>
+                                    <div className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest mb-4">Tier 1: Private Equity</div>
+                                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">Technical Due Diligence</h3>
+                                    <div className="text-4xl font-mono text-zinc-950 mb-6">$15,000<span className="text-sm font-semibold text-zinc-950"> / deal</span></div>
+                                    <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-8 min-h-[120px]">
+                                        Intensive 2-week forensic code and architecture audit. Determine the exact technical debt and blast radiuses before you sign the term sheet to acquire a SaaS company.
+                                    </p>
+                                    <ul className="space-y-4 mb-8 text-sm font-semibold text-zinc-900 font-medium">
+                                        <li className="flex items-start gap-3"><span className="text-cyan-500 mt-1 font-mono text-xs font-bold font-medium">01</span> PDI (Product Debt Index) Analysis</li>
+                                        <li className="flex items-start gap-3"><span className="text-cyan-500 mt-1 font-mono text-xs font-bold font-medium">02</span> Security & Shadow AI Audit</li>
+                                        <li className="flex items-start gap-3"><span className="text-cyan-500 mt-1 font-mono text-xs font-bold font-medium">03</span> Cloud Arbitration Risk Model</li>
+                                        <li className="flex items-start gap-3"><span className="text-cyan-500 mt-1 font-mono text-xs font-bold font-medium">04</span> Board-ready Investment Thesis</li>
+                                    </ul>
+                                </div>
+                                <div className="mt-auto">
+                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: Technical Due Diligence" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold border border-cyan-500/20 hover:bg-cyan-500/20 transition-all uppercase">
+                                        Inquire Availability
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
                         {/* TIER 2: Fractional AI SecOps */}
-                        <ShineBorder className="card-featured relative p-0 overflow-hidden bg-white" color={["#10b981", "#34d399"]}>
+                        <ShineBorder className="card-featured relative p-0 overflow-hidden bg-white flex flex-col h-full" color={["#10b981", "#34d399"]}>
                             <BorderBeam size={300} duration={12} delay={9} borderWidth={2} colorFrom="#10b981" colorTo="#3b82f6" />
-                            <div className="p-8 relative z-10 bg-gradient-to-b from-emerald-900/10 to-transparent">
-                                <div className="absolute top-0 right-0 px-3 py-1 bg-emerald-500/20 text-emerald-900 font-extrabold font-semibold text-xs font-bold font-medium font-bold tracking-widest font-mono border-b border-l border-emerald-500/20 rounded-bl-lg">TOP TIER</div>
-                                <div className="text-xs font-bold font-mono text-emerald-500 uppercase tracking-widest mb-4">Tier 2: Mid-Market Execution</div>
-                                <h3 className="text-2xl font-bold text-zinc-950 mb-2">AI & SecOps Taskforce</h3>
-                                <div className="text-4xl font-mono text-zinc-950 mb-6">$10,000<span className="text-sm font-semibold text-zinc-900 font-medium"> / mo</span></div>
-                                <p className="text-zinc-950 text-sm font-semibold leading-relaxed mb-8 min-h-[120px]">
-                                    A 90-day sprint engagement to rip out standard OpenAI endpoints and securely implement sovereign, localized SLMs inside your VPC. Kill the API tax and ensure SOC2 data sovereignty.
-                                </p>
-                                <ul className="space-y-4 mb-8 text-sm font-semibold text-zinc-950">
-                                    <li className="flex items-start gap-3"><span className="text-emerald-500 mt-1 font-mono text-xs font-bold font-medium">01</span> SLM Hardware Repatriation</li>
-                                    <li className="flex items-start gap-3"><span className="text-emerald-500 mt-1 font-mono text-xs font-bold font-medium">02</span> RAG Pipeline Optimization</li>
-                                    <li className="flex items-start gap-3"><span className="text-emerald-500 mt-1 font-mono text-xs font-bold font-medium">03</span> Agentic Workflow Automation</li>
-                                    <li className="flex items-start gap-3"><span className="text-emerald-500 mt-1 font-mono text-xs font-bold font-medium">04</span> Prompt Injection Threat Modeling</li>
-                                </ul>
-                                <a href="mailto:richard@richardewing.io?subject=Inquiry: AI Taskforce" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-emerald-600 text-zinc-950 font-semibold hover:bg-emerald-500 transition-all uppercase shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-                                    Secure Taskforce Lead
-                                </a>
+                            <div className="p-8 relative z-10 bg-gradient-to-b from-emerald-900/10 to-transparent flex flex-col h-full">
+                                <div>
+                                    <div className="absolute top-0 right-0 px-3 py-1 bg-emerald-500/20 text-emerald-900 font-extrabold font-semibold text-xs font-bold font-medium font-bold tracking-widest font-mono border-b border-l border-emerald-500/20 rounded-bl-lg">TOP TIER</div>
+                                    <div className="text-xs font-bold font-mono text-emerald-500 uppercase tracking-widest mb-4">Tier 2: Mid-Market Execution</div>
+                                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">AI & SecOps Taskforce</h3>
+                                    <div className="text-4xl font-mono text-zinc-950 mb-6">$10,000<span className="text-sm font-semibold text-zinc-900 font-medium"> / mo</span></div>
+                                    <p className="text-zinc-950 text-sm font-semibold leading-relaxed mb-8 min-h-[120px]">
+                                        A 90-day sprint engagement to rip out standard OpenAI endpoints and securely implement sovereign, localized SLMs inside your VPC. Kill the API tax and ensure SOC2 data sovereignty.
+                                    </p>
+                                    <ul className="space-y-4 mb-8 text-sm font-semibold text-zinc-950">
+                                        <li className="flex items-start gap-3"><span className="text-emerald-500 mt-1 font-mono text-xs font-bold font-medium">01</span> SLM Hardware Repatriation</li>
+                                        <li className="flex items-start gap-3"><span className="text-emerald-500 mt-1 font-mono text-xs font-bold font-medium">02</span> RAG Pipeline Optimization</li>
+                                        <li className="flex items-start gap-3"><span className="text-emerald-500 mt-1 font-mono text-xs font-bold font-medium">03</span> Agentic Workflow Automation</li>
+                                        <li className="flex items-start gap-3"><span className="text-emerald-500 mt-1 font-mono text-xs font-bold font-medium">04</span> Prompt Injection Threat Modeling</li>
+                                    </ul>
+                                </div>
+                                <div className="mt-auto">
+                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: AI Taskforce" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-emerald-600 text-zinc-950 font-semibold hover:bg-emerald-500 transition-all uppercase shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                                        Secure Taskforce Lead
+                                    </a>
+                                </div>
                             </div>
                         </ShineBorder>
 
                         {/* TIER 3: Curriculum Retainer */}
                         <div className="card bg-zinc-100 border border-zinc-400 relative overflow-hidden group">
-                            <div className="p-8">
-                                <div className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-4">Tier 3: Enterprise Scale</div>
-                                <h3 className="text-2xl font-bold text-zinc-950 mb-2">Methodology Steering</h3>
-                                <div className="text-4xl font-mono text-zinc-950 mb-6">$5,000<span className="text-sm font-semibold text-zinc-950"> / mo</span></div>
-                                <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-8 min-h-[120px]">
-                                    For VPEs who purchased the 57-Track Vault Pass. Placed on retainer, I run the steering committee to deploy specific tracks directly onto your engineering floor to ensure massive adoption.
-                                </p>
-                                <ul className="space-y-4 mb-8 text-sm font-semibold text-zinc-900 font-medium">
-                                    <li className="flex items-start gap-3"><span className="text-purple-500 mt-1 font-mono text-xs font-bold font-medium">01</span> Bi-weekly VPE Strategy Ops</li>
-                                    <li className="flex items-start gap-3"><span className="text-purple-500 mt-1 font-mono text-xs font-bold font-medium">02</span> Middle-Management Alignment</li>
-                                    <li className="flex items-start gap-3"><span className="text-purple-500 mt-1 font-mono text-xs font-bold font-medium">03</span> B2B SaaS Economics Integration</li>
-                                    <li className="flex items-start gap-3"><span className="text-purple-500 mt-1 font-mono text-xs font-bold font-medium">04</span> Async Architecture Reviews</li>
-                                </ul>
-                                <a href="mailto:richard@richardewing.io?subject=Inquiry: Methodology Steering" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-purple-500/10 text-purple-900 font-extrabold font-semibold border border-purple-500/20 hover:bg-purple-500/20 transition-all uppercase">
-                                    Request Retainer
-                                </a>
+                            <div className="p-8 h-full flex flex-col">
+                                <div>
+                                    <div className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-4">Tier 3: Enterprise Scale</div>
+                                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">Methodology Steering</h3>
+                                    <div className="text-4xl font-mono text-zinc-950 mb-6">$5,000<span className="text-sm font-semibold text-zinc-950"> / mo</span></div>
+                                    <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-8 min-h-[120px]">
+                                        For VPEs who purchased the 57-Track Vault Pass. Placed on retainer, I run the steering committee to deploy specific tracks directly onto your engineering floor to ensure massive adoption.
+                                    </p>
+                                    <ul className="space-y-4 mb-8 text-sm font-semibold text-zinc-900 font-medium">
+                                        <li className="flex items-start gap-3"><span className="text-purple-500 mt-1 font-mono text-xs font-bold font-medium">01</span> Bi-weekly VPE Strategy Ops</li>
+                                        <li className="flex items-start gap-3"><span className="text-purple-500 mt-1 font-mono text-xs font-bold font-medium">02</span> Middle-Management Alignment</li>
+                                        <li className="flex items-start gap-3"><span className="text-purple-500 mt-1 font-mono text-xs font-bold font-medium">03</span> B2B SaaS Economics Integration</li>
+                                        <li className="flex items-start gap-3"><span className="text-purple-500 mt-1 font-mono text-xs font-bold font-medium">04</span> Async Architecture Reviews</li>
+                                    </ul>
+                                </div>
+                                <div className="mt-auto">
+                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: Methodology Steering" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-purple-500/10 text-purple-900 font-extrabold font-semibold border border-purple-500/20 hover:bg-purple-500/20 transition-all uppercase">
+                                        Request Retainer
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
