@@ -257,6 +257,26 @@ const nextConfig: NextConfig = {
         destination: '/tools',
         permanent: true,
       },
+      // ═══════════════════ EXOGRAM 404 REMEDIATION ═══════════════════
+      ...[
+        'hiddenlayer-vs-robust-intelligence',
+        'crewai-vs-tabnine',
+        'weaviate-vs-milvus',
+        'robust-intelligence-vs-claude-desktop',
+        'aws-bedrock-agents-vs-humanloop',
+        'crewai-vs-nemo-guardrails',
+        'llama-vs-ping-identity',
+        'mem0-vs-huggingface-hub',
+        'mulesoft-vs-amazon-q',
+        'patronus-ai-vs-chatdev',
+        'langchain-vs-scale-ai',
+        'mem0-vs-humanloop',
+        'exogram-vs-cloudflare-ai-gateway'
+      ].map(slug => ({
+        source: `/compare/${slug}`,
+        destination: '/compare',
+        permanent: true as const,
+      })),
     ];
   },
 };
