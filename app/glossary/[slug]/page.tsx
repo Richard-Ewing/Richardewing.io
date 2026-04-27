@@ -20,8 +20,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const term = glossaryTerms.find(t => t.slug === slug);
     if (!term) return {};
+    const ogTitle = `What is ${term.title}? | Richard Ewing`;
+    const safeOgTitle = ogTitle.substring(0, 55) + (ogTitle.length > 55 ? '...' : '');
+
     return {
-        title: `What is ${term.title}? | Richard Ewing`,
+        title: safeOgTitle,
         description: term.definition.slice(0, 155).replace(/\n/g, ' ') + '...',
         keywords: [
             term.title.toLowerCase(), `what is ${term.title.toLowerCase()}`,
@@ -32,11 +35,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ],
         alternates: { canonical: `https://www.richardewing.io/glossary/${slug}` },
         openGraph: {
-            title: `What is ${term.title}? | Richard Ewing`,
+            title: safeOgTitle,
             description: term.definition.slice(0, 155).replace(/\n/g, ' '),
             url: `https://www.richardewing.io/glossary/${slug}`,
+            siteName: 'Richard Ewing',
             type: 'article',
+            images: [
+                {
+                    url: 'https://www.richardewing.io/og-image-home.png',
+                    width: 1200,
+                    height: 630,
+                    alt: safeOgTitle,
+                }
+            ],
         },
+        twitter: {
+            card: 'summary_large_image',
+            title: safeOgTitle,
+            description: term.definition.slice(0, 155).replace(/\n/g, ' '),
+            images: ['https://www.richardewing.io/og-image-home.png'],
+        }
     };
 }
 

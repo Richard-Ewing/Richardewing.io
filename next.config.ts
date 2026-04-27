@@ -4,6 +4,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/vault/curriculum/tracks/:trackId(\\d+)/:moduleId',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/cloud-finops/14-:id',
+        destination: '/vault/curriculum/tracks/cloud-finops/7-:id',
+        permanent: true,
+      },
+      {
         source: '/index.html',
         destination: '/',
         permanent: true,

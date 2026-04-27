@@ -1,10 +1,10 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
-export const tracks14Modules: Record<string, CurriculumModule> = {};
+export const tracks7Modules: Record<string, CurriculumModule> = {};
 
-const t14 = 'Track 14 — Cloud FinOps & Infrastructure';
+const t14 = 'Track 7 — Cloud FinOps & Infrastructure';
 
-tracks14Modules['cloud-finops/14-1'] = m('14-1', 'Internal Developer Platform ROI', 'Calculate the economics of golden paths, self-service infrastructure, and platform team sizing.', t14, 
+tracks7Modules['cloud-finops/7-1'] = m('7-1', 'Internal Developer Platform ROI', 'Calculate the economics of golden paths, self-service infrastructure, and platform team sizing.', t14, 
     ['Calculate IDP deployment velocity', 'Measure the Platform Tax', 'Optimize GitOps provisioning'], [
         l('Quantifying Golden Paths', 
             [
@@ -25,10 +25,10 @@ tracks14Modules['cloud-finops/14-1'] = m('14-1', 'Internal Developer Platform RO
                 explanation: 'A product engineer writing Dockerfiles is a misallocation of capital. Platform engineering centralizes infrastructure complexity into a self-service portal, maximizing the output of the product teams.'
             }
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-2', 'pdi', 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-2', 'pdi', 'live'
 );
 
-tracks14Modules['cloud-finops/14-2'] = m('14-2', 'Cloud Cost Allocation Strategy', 'The economics of strict cost attribution, multi-tenant tagging architecture, and generating Showback Dashboards to align engineering with finance.', t14, 
+tracks7Modules['cloud-finops/7-2'] = m('7-2', 'Cloud Cost Allocation Strategy', 'The economics of strict cost attribution, multi-tenant tagging architecture, and generating Showback Dashboards to align engineering with finance.', t14, 
     ['Eliminate untagged cloud spend', 'Generate real-time cost transparency', 'Calculate per-feature margins'], [
         l('Cost Empathy for Engineers', 
             [
@@ -43,10 +43,10 @@ tracks14Modules['cloud-finops/14-2'] = m('14-2', 'Cloud Cost Allocation Strategy
             'Audit the untagged footprint in the staging environment.',
             ['Open AWS Cost Explorer.', 'Filter by Tag: `Environment=Staging` and group by `Untagged`.', 'Calculate the monthly bleed caused simply by developers forgetting to assign ownership metadata.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-3', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-3', undefined, 'live'
 );
 
-tracks14Modules['cloud-finops/14-3'] = m('14-3', 'Reserved Instances & Savings Plans', 'The complex calculus of cloud commitment: comparing 1-year vs 3-year RI lock-in, Savings Plans elasticity, and calculating break-even limits.', t14, 
+tracks7Modules['cloud-finops/7-3'] = m('7-3', 'Reserved Instances & Savings Plans', 'The complex calculus of cloud commitment: comparing 1-year vs 3-year RI lock-in, Savings Plans elasticity, and calculating break-even limits.', t14, 
     ['Execute Compute Savings Plan arithmetic', 'Determine the opportunity cost of multi-year lock-in', 'Maximize Spot instance coverage'], [
         l('The Arithmetic of Cloud Commitment', 
             [
@@ -58,13 +58,13 @@ tracks14Modules['cloud-finops/14-3'] = m('14-3', 'Reserved Instances & Savings P
                 d('On-Demand Coverage Ratio', 'The percentage of baseline compute running without any discount applied.', 'Target: < 20%'),
                 d('Commitment Wastage Penalty', 'The sunk cost of RIs purchased that are no longer being utilized by active resources.', 'Risk metric for the CFO')
             ],
-            'Execute a 14-day Compute Savings footprint analysis.',
+            'Execute a 7-day Compute Savings footprint analysis.',
             ['Retrieve the baseline compute metric (the lowest CPU utilization point over the past two weeks).', 'Commit 80% of that baseline entirely to a 1-Year Savings Plan immediately to slash the monthly bill safely.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-4', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-4', undefined, 'live'
 );
 
-tracks14Modules['cloud-finops/14-4'] = m('14-4', 'Kubernetes Cost Management', 'Right-sizing K8s pods, combating cluster sprawl, and allocating costs in dense multi-tenant container architectures.', t14, 
+tracks7Modules['cloud-finops/7-4'] = m('7-4', 'Kubernetes Cost Management', 'Right-sizing K8s pods, combating cluster sprawl, and allocating costs in dense multi-tenant container architectures.', t14, 
     ['Model namespace allocation costs', 'Prevent Pod resource hoarding', 'Optimize Cluster Auto-scaler economics'], [
         l('The Fallacy of Free Containers', 
             [
@@ -79,10 +79,10 @@ tracks14Modules['cloud-finops/14-4'] = m('14-4', 'Kubernetes Cost Management', '
             'Implement aggressive Pod limits across staging environments.',
             ['Use a tool like Goldilocks to profile your staging cluster.', 'Analyze the delta between what developers requested and what they actually used.', 'Refactor the Helm charts to establish hard multi-tenant resource quotas.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-5', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-5', undefined, 'live'
 );
 
-tracks14Modules['cloud-finops/14-5'] = m('14-5', 'FinOps & Cloud Margin Engineering', 'Aggressive cloud cost reduction, the economic liability of "ClickOps", and eliminating zombie infrastructure.', t14, 
+tracks7Modules['cloud-finops/7-5'] = m('7-5', 'FinOps & Cloud Margin Engineering', 'Aggressive cloud cost reduction, the economic liability of "ClickOps", and eliminating zombie infrastructure.', t14, 
     ['Calculate Zombie Server Opex', 'Execute the GitOps migration', 'Optimize data transfer architectures'], [
         l('The Liability of ClickOps', 
             [
@@ -97,10 +97,10 @@ tracks14Modules['cloud-finops/14-5'] = m('14-5', 'FinOps & Cloud Margin Engineer
             'Execute a 24-hour Cloud Waste Hunt.',
             ['Open AWS Cost Explorer or GCP Billing.', 'Filter for "Unattached EBS Volumes" and "Idle Elastic IPs".', 'Delete them immediately and calculate the annualized savings.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-6', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-6', undefined, 'live'
 );
 
-tracks14Modules['cloud-finops/14-6'] = m('14-6', 'Multi-Cloud Arbitrage & Negotiation', 'Evaluating the negotiation leverage of multi-cloud capability, avoiding the "Lowest Common Denominator" trap, and Egress data economics.', t14, 
+tracks7Modules['cloud-finops/7-6'] = m('7-6', 'Multi-Cloud Arbitrage & Negotiation', 'Evaluating the negotiation leverage of multi-cloud capability, avoiding the "Lowest Common Denominator" trap, and Egress data economics.', t14, 
     ['Determine the true cost of Multi-Cloud translation', 'Leverage Enterprise Commitment Discounts', 'Map API lock-in vectors'], [
         l('The Multi-Cloud Mirage', 
             [
@@ -115,10 +115,10 @@ tracks14Modules['cloud-finops/14-6'] = m('14-6', 'Multi-Cloud Arbitrage & Negoti
             'Re-evaluate your multi-cloud initiative.',
             ['Calculate the engineering hours spent managing the exact same caching layer on Azure vs AWS.', 'Convert those hours into a dollar amount.', 'Ask if negotiating a single-vendor Volume Discount would yield higher net savings.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-7', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-7', undefined, 'live'
 );
 
-tracks14Modules['cloud-finops/14-7'] = m('14-7', 'Cloud Migration ROI', 'The financial reality of moving on-prem data centers to the cloud: Lift & Shift vs. Cloud-Native Refactoring.', t14, 
+tracks7Modules['cloud-finops/7-7'] = m('7-7', 'Cloud Migration ROI', 'The financial reality of moving on-prem data centers to the cloud: Lift & Shift vs. Cloud-Native Refactoring.', t14, 
     ['Model CapEx to OpEx conversions', 'Calculate dual-running migration taxes', 'Measure immediate value delivery limits'], [
         l('The Lift and Shift Trap', 
             [
@@ -133,10 +133,10 @@ tracks14Modules['cloud-finops/14-7'] = m('14-7', 'Cloud Migration ROI', 'The fin
             'Audit the architecture of the last 3 applications migrated to AWS.',
             ['Check if they dynamically scale down during non-business hours (nights/weekends).', 'If they remain provisioned continuously, the migration failed its FinOps objective.', 'Schedule a re-platforming architecture review.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-8', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-8', undefined, 'live'
 );
 
-tracks14Modules['cloud-finops/14-8'] = m('14-8', 'Data Transfer & Egress Economics', 'The invisible tax of moving data. Modeling CDN economics, cross-region bandwidth costs, and edge routing.', t14, 
+tracks7Modules['cloud-finops/7-8'] = m('7-8', 'Data Transfer & Egress Economics', 'The invisible tax of moving data. Modeling CDN economics, cross-region bandwidth costs, and edge routing.', t14, 
     ['Map inter-availability zone bandwidth penalties', 'Calculate Content Delivery Network (CDN) offload ROI', 'Design localized data routing'], [
         l('The Friction of Data in Motion', 
             [
@@ -151,10 +151,10 @@ tracks14Modules['cloud-finops/14-8'] = m('14-8', 'Data Transfer & Egress Economi
             'Implement an aggressive Egress trace on your primary API.',
             ['Isolate the endpoint returning the largest JSON payloads.', 'Verify that it is utilizing `gzip` or `brotli` compression.', 'Ensure the Cloudfront/Cloudflare caching headers are explicitly set to maximum TTL limits.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-9', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-9', undefined, 'live'
 );
 
-tracks14Modules['cloud-finops/14-9'] = m('14-9', 'Observability & MTTR Economics', 'The prohibitive cost of blind deployments and the ROI of distributed tracing vs log ingestion bills.', t14, 
+tracks7Modules['cloud-finops/7-9'] = m('7-9', 'Observability & MTTR Economics', 'The prohibitive cost of blind deployments and the ROI of distributed tracing vs log ingestion bills.', t14, 
     ['Model MTTR cost vectors', 'Calculate tracing payload overhead', 'Determine log ingestion ROI'], [
         l('The Math of the Blind Outage', 
             [
@@ -169,10 +169,10 @@ tracks14Modules['cloud-finops/14-9'] = m('14-9', 'Observability & MTTR Economics
             'Implement aggressive Log Sampling to control Datadog/Honeycomb Opex.',
             ['Identify the service generating the highest volume of `INFO` logs.', 'Configure the logger to drop 90% of `INFO` logs explicitly, but keep 100% of `ERROR` logs.', 'Verify that tracing spans still correctly link the errors to the user request.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-10', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-10', undefined, 'live'
 );
 
-tracks14Modules['cloud-finops/14-10'] = m('14-10', 'FinOps Team & Governance Synthesis', 'Integrating executive dashboards, cost allocation methodologies, and establishing the unified FinOps culture across engineering.', t14, 
+tracks7Modules['cloud-finops/7-10'] = m('7-10', 'FinOps Team & Governance Synthesis', 'Integrating executive dashboards, cost allocation methodologies, and establishing the unified FinOps culture across engineering.', t14, 
     ['Unveil the cloud optimization dashboard', 'Adopt shifting left on cost', 'Forecast quarterly cloud trajectory'], [
         l('The FinOps Cultural Shift', 
             [
@@ -187,11 +187,11 @@ tracks14Modules['cloud-finops/14-10'] = m('14-10', 'FinOps Team & Governance Syn
             'Establish the Unit-Cost baseline for your primary product.',
             ['Take last month\'s total AWS/Azure bill.', 'Divide it by the number of active monthly users or major transactions.', 'Present this exact "Dollar per User" metric to the engineering team as their primary architectural target to reduce.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-11', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-11', undefined, 'live'
 );
 
 // Advanced AI Finops
-tracks14Modules['cloud-finops/14-11'] = m('14-11', 'AI FinOps Specialization', 'Mapping LLM API costs to feature margins, the depreciation of GPU clusters, and orchestrating RAG pipelines for cost efficiency.', t14, 
+tracks7Modules['cloud-finops/7-11'] = m('7-11', 'AI FinOps Specialization', 'Mapping LLM API costs to feature margins, the depreciation of GPU clusters, and orchestrating RAG pipelines for cost efficiency.', t14, 
     ['Calculate token allocation per user', 'Optimize GPU Cluster depreciation models', 'Triage RAG margin bleed'], [
         l('Token Tracing and Margin Compression', 
             [
@@ -206,10 +206,10 @@ tracks14Modules['cloud-finops/14-11'] = m('14-11', 'AI FinOps Specialization', '
             'Implement a cross-model cost mitigation proxy.',
             ['Use an abstraction layer like LiteLLM.', 'Configure a fallback: if Anthropic API fails, route to OpenAI. More importantly, configure routing based on query complexity to slash average token costs.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-12', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-12', undefined, 'live'
 );
 
-tracks14Modules['cloud-finops/14-12'] = m('14-12', 'Cloud Repatriation Calculus', 'The Basecamp migration strategy. Analyzing when moving workloads to bare-metal racks is financially superior to hyperscalers.', t14, 
+tracks7Modules['cloud-finops/7-12'] = m('7-12', 'Cloud Repatriation Calculus', 'The Basecamp migration strategy. Analyzing when moving workloads to bare-metal racks is financially superior to hyperscalers.', t14, 
     ['Execute the Repatriation Break-Even math', 'Calculate Egress elimination savings', 'Model the data center hardware depreciation timeline'], [
         l('The Apex of the Cloud Curve', 
             [
@@ -224,10 +224,10 @@ tracks14Modules['cloud-finops/14-12'] = m('14-12', 'Cloud Repatriation Calculus'
             'Execute a Cloud Repatriation audit on your most stable system.',
             ['Identify the microservice with the highest data egress volume but the most consistent, predictable CPU curve over the last 6 months.', 'Calculate the cost of renting a dedicated bare-metal server in a neutral facility (like Equinix) vs the current cloud bill.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-13', 'cloud-repatriation', 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-13', 'cloud-repatriation', 'live'
 );
 
-tracks14Modules['cloud-finops/14-13'] = m('14-13', 'Serverless GPU Brokering', 'Navigating the spot market for inference, navigating providers like Runpod and Modal, and optimizing cold-start tolerances for AI models.', t14, 
+tracks7Modules['cloud-finops/7-13'] = m('7-13', 'Serverless GPU Brokering', 'Navigating the spot market for inference, navigating providers like Runpod and Modal, and optimizing cold-start tolerances for AI models.', t14, 
     ['Capitalize on GPU aggregate routing', 'Quantify inference scale-to-zero limits', 'Optimize VRAM swapping overhead'], [
         l('The Liquid Market of Intelligence Compute', 
             [
@@ -242,10 +242,10 @@ tracks14Modules['cloud-finops/14-13'] = m('14-13', 'Serverless GPU Brokering', '
             'Implement a cold-start mitigation for your inference engine.',
             ['Deploy a serverless GPU architecture on Modal or Replicate.', 'Force an active keep-alive ping to hold the model in VRAM during peak traffic hours, allowing idle shutdown only after hours.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-14', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-14', undefined, 'live'
 );
 
-tracks14Modules['cloud-finops/14-14'] = m('14-14', 'Data Security Posture Management (DSPM)', 'The intersection of FinOps and Security: discovering shadow data, managing S3 sprawl, and quantifying the liability of forgotten buckets.', t14, 
+tracks7Modules['cloud-finops/7-14'] = m('7-14', 'Data Security Posture Management (DSPM)', 'The intersection of FinOps and Security: discovering shadow data, managing S3 sprawl, and quantifying the liability of forgotten buckets.', t14, 
     ['Perform autonomous anomaly scanning over cloud storage', 'Calculate shadow data liability profiles', 'Implement IAM minimal permissions automatically'], [
         l('The Cost of the Forgotten Object', 
             [
@@ -260,10 +260,10 @@ tracks14Modules['cloud-finops/14-14'] = m('14-14', 'Data Security Posture Manage
             'Audit your internal S3 lifecycle policies.',
             ['Identify the three largest cloud storage buckets holding staging/test data.', 'Configure an automated Lifecycle Hook to migrate all objects older than 30 days to Glacier/Cold Storage, and delete anything older than 90 days automatically.']
         )
-    ], '/vault/curriculum/tracks/cloud-finops/14-15', undefined, 'live'
+    ], '/vault/curriculum/tracks/cloud-finops/7-15', undefined, 'live'
 );
 
-tracks14Modules['cloud-finops/14-15'] = m('14-15', 'Continuous Architecture Modernization', 'The operational cadence of avoiding the rewrite. Establishing refactoring rhythms, deprecation schedules, and avoiding the sunk-cost fallacy.', t14, 
+tracks7Modules['cloud-finops/7-15'] = m('7-15', 'Continuous Architecture Modernization', 'The operational cadence of avoiding the rewrite. Establishing refactoring rhythms, deprecation schedules, and avoiding the sunk-cost fallacy.', t14, 
     ['Map the migration pipeline throughput', 'Measure the ROI of deprecating major systems', 'Defeat the sunk-cost narrative'], [
         l('Defeating the 5-Year Overhaul', 
             [

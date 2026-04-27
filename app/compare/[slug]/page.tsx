@@ -32,14 +32,29 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 
     return {
-        title: item.title,
+        title: item.title.substring(0, 55) + (item.title.length > 55 ? '...' : ''),
         description: item.metaDescription,
         alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },
         openGraph: {
-            title: item.title,
+            title: item.title.substring(0, 55) + (item.title.length > 55 ? '...' : ''),
             description: item.metaDescription,
             url: `https://www.richardewing.io/compare/${slug}`,
+            siteName: 'Richard Ewing',
             type: 'article',
+            images: [
+                {
+                    url: 'https://www.richardewing.io/og-image-home.png',
+                    width: 1200,
+                    height: 630,
+                    alt: item.title,
+                }
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: item.title.substring(0, 55) + (item.title.length > 55 ? '...' : ''),
+            description: item.metaDescription,
+            images: ['https://www.richardewing.io/og-image-home.png'],
         }
     };
 }

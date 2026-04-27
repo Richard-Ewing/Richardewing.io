@@ -3,6 +3,7 @@ import { exogramDocs } from '@/lib/exogram-docs';
 import { glossaryTerms } from './glossary/terms';
 import { frameworks } from '@/lib/data';
 import { tracks } from '@/app/lib/curriculum-tracks-ui';
+import { getAllModuleSlugs } from '@/app/lib/curriculum-data';
 import { getSortedArticles } from '@/app/lib/blog-data';
 import { COMBAT_SEO_MATRIX } from '@/app/lib/combat-seo';
 import { CAREER_PATHS } from '@/app/lib/career-paths';
@@ -423,11 +424,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
         // Methodology + Social Proof
         {
-            url: `${baseUrl}/methodology`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
             url: `${baseUrl}/testimonials`,
             changeFrequency: 'monthly',
             priority: 0.7,
@@ -461,11 +457,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
 
         // Curriculum Module Pages (Vault Protected Previews)
-        ...tracks.flatMap(t => t.modules.map(mod => ({
-            url: `${baseUrl}${mod.href}`,
+        ...getAllModuleSlugs().map(slug => ({
+            url: `${baseUrl}/vault/curriculum/tracks/${slug}`,
             changeFrequency: 'monthly' as const,
             priority: 0.6,
-        }))),
+        })),
         // --- DYNAMICALLY INJECTED EXOGRAM DOCS ---
         // NOTE: /comparisons/* and /guides/* removed from sitemap — they all 308→ /vault/curriculum/tracks
 

@@ -58,8 +58,12 @@ import { tracks11Modules } from './curriculum-tracks-11';
 Object.assign(modules, tracks11Modules);
 
 // Track 7 (old Track 14): Cloud FinOps & AI Cost Management
-import { tracks14Modules } from './curriculum-tracks-14';
-Object.assign(modules, tracks14Modules);
+import { tracks7Modules } from './curriculum-tracks-14';
+Object.assign(modules, tracks7Modules);
+
+// Track 12: Executive Engineering Leadership & Mentorship
+import { leadershipModules } from './curriculum-tracks-leadership';
+Object.assign(modules, leadershipModules);
 
 // ═══════════════════ NEW 2026 TRACKS ═══════════════════
 // Track 8: AI Pricing Strategy & Monetization Economics

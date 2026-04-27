@@ -33,17 +33,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const query = queries.find(q => q.questionSlug === p.questionSlug);
     if (!query) return {};
 
+    const ogTitle = `${query.questionHeadline} | ${p.persona.replace('-', ' ').toUpperCase()} Guide`;
+    const safeOgTitle = ogTitle.substring(0, 55) + (ogTitle.length > 55 ? '...' : '');
+
     return {
-        title: `${query.questionHeadline} | ${p.persona.replace('-', ' ').toUpperCase()} Guide`,
+        title: safeOgTitle,
         description: `Executive breakdown and financial execution models for: ${query.questionHeadline}`,
         alternates: {
             canonical: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
         },
         openGraph: {
-            title: `${query.questionHeadline} | ${p.persona.replace('-', ' ').toUpperCase()} Guide`,
+            title: safeOgTitle,
             description: `Executive breakdown and financial execution models for: ${query.questionHeadline}`,
             url: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
+            siteName: 'Richard Ewing',
             type: 'article',
+            images: [
+                {
+                    url: 'https://www.richardewing.io/og-image-home.png',
+                    width: 1200,
+                    height: 630,
+                    alt: safeOgTitle,
+                }
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: safeOgTitle,
+            description: `Executive breakdown and financial execution models for: ${query.questionHeadline}`,
+            images: ['https://www.richardewing.io/og-image-home.png'],
         }
     };
 }
