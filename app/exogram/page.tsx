@@ -57,10 +57,10 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
-                {/* The Ten-Year Thesis */}
+                {/* The Exogram Thesis */}
                 <section className="section bg-zinc-100">
                     <div className="max-w-4xl mx-auto">
-                        <div className="font-mono text-xs font-bold text-cyan-900 font-extrabold font-semibold uppercase tracking-[0.2em] mb-4 text-center">The Ten-Year Thesis</div>
+                        <div className="font-mono text-xs font-bold text-cyan-900 font-extrabold font-semibold uppercase tracking-[0.2em] mb-4 text-center">The Exogram Thesis</div>
                         <h2 className="text-3xl font-bold text-zinc-950 mb-8 text-center">The Deterministic Control Plane for the AGI Era</h2>
                         <div className="text-zinc-900 text-lg leading-relaxed space-y-6 max-w-3xl mx-auto px-6 sm:px-8 border-l-4 border-purple-500 py-2">
                             <p>
@@ -70,7 +70,7 @@ export default function ExogramPage() {
                                 Standard large language models are nothing more than stochastic text predictors. They guess the next word. They do not possess memory, they do not retain context, they cannot infer meaning, and most importantly, they have zero capacity for accountability.
                             </p>
                             <p>
-                                You cannot build an autonomous AI being on a foundation that hallucinates and forgets. As we move from basic chat wrappers to autonomous systems taking actions in the real world over the next decade, admissibility and accountability become existential requirements.
+                                You cannot build an autonomous AI being on a foundation that hallucinates and forgets. As we move from basic chat wrappers to autonomous systems taking actions in the real world, admissibility and accountability become existential requirements.
                             </p>
                             <p className="text-xl text-zinc-950 font-bold border-t border-b border-zinc-300 py-4 my-6">
                                 <span className="text-purple-900 font-extrabold font-semibold">Exogram AI is built for this future.</span> We are the deterministic control plane for the AGI era.
@@ -79,7 +79,7 @@ export default function ExogramPage() {
                                 We capture immediate market value today by providing Layers 1 and 2. We fix the baseline LLM flaws by injecting persistent memory and structured inference. This makes today&apos;s AI actually usable.
                             </p>
                             <p>
-                                But our ten-year trajectory relies on Layers 3 and 4. These are the strict admissibility, accountability, and cryptographic guardrails. When AI transitions from software tools to autonomous entities operating within enterprise and government infrastructure, they will require an immutable trust ledger to verify every action. <span className="font-bold text-zinc-950">Exogram is that ledger. We are building the regulatory and operational baseline that makes AGI safe to deploy.</span>
+                                But true autonomy relies on Layers 3 and 4. These are the strict admissibility, accountability, and cryptographic guardrails. When AI transitions from software tools to autonomous entities operating within enterprise and government infrastructure, they will require an immutable trust ledger to verify every action. <span className="font-bold text-zinc-950">Exogram is that ledger. We are building the regulatory and operational baseline that makes AGI safe to deploy.</span>
                             </p>
                         </div>
                     </div>
