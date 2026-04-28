@@ -57,10 +57,10 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
-                {/* The Exogram Thesis */}
+                {/* Exogram */}
                 <section className="section bg-zinc-100">
                     <div className="max-w-4xl mx-auto">
-                        <div className="font-mono text-xs font-bold text-cyan-900 font-extrabold font-semibold uppercase tracking-[0.2em] mb-4 text-center">The Exogram Thesis</div>
+                        <div className="font-mono text-xs font-bold text-cyan-900 font-extrabold font-semibold uppercase tracking-[0.2em] mb-4 text-center">Exogram</div>
                         <h2 className="text-3xl font-bold text-zinc-950 mb-8 text-center">The Deterministic Control Plane for the AGI Era</h2>
                         <div className="text-zinc-900 text-lg leading-relaxed space-y-6 max-w-3xl mx-auto px-6 sm:px-8 border-l-4 border-purple-500 py-2">
                             <p>
