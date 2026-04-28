@@ -234,6 +234,24 @@ export default function PrincipalContent() {
                 </div>
             </ScrollReveal>
 
+            {/* The Fundamental Flaw */}
+            <ScrollReveal delay={75}>
+                <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-cobalt">
+                    <div className="font-mono text-xs font-bold text-cobalt uppercase tracking-widest mb-3">The Fundamental Flaw</div>
+                    <p className="text-2xl sm:text-3xl text-zinc-950 font-bold leading-tight mb-4">
+                        "You cannot build an autonomous AI being on a foundation that hallucinates and forgets."
+                    </p>
+                    <div className="text-zinc-900 text-base leading-relaxed space-y-4">
+                        <p>
+                            Everyone is trying to build AGI on top of stochastic text predictors. As we move from basic chat wrappers to autonomous systems taking actions in the real world over the next decade, <span className="font-bold text-zinc-950">admissibility and accountability become existential requirements.</span>
+                        </p>
+                        <p>
+                            I founded <span className="text-zinc-950 font-bold">Exogram AI</span> to be the deterministic control plane for the AGI era. We capture immediate value today by injecting persistent memory and structured inference (Layers 1 and 2). We enforce strict cryptographic guardrails (Layers 3 and 4) to act as the regulatory and operational baseline that makes AGI safe to deploy.
+                        </p>
+                    </div>
+                </div>
+            </ScrollReveal>
+
             {/* Domain Expertise with AI Expand */}
             <ScrollReveal delay={100}>
                 <div className="mb-8">
