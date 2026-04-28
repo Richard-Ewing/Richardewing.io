@@ -11,7 +11,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
 
     // ═══════════════════ TRACK 19: AI Agent Architecture & Economics ═══════════════════
 
-    modules['ai-agent-architecture/N19-1'] = m('N19-1', 'What Is an AI Agent? Economic Primitives', 'Understand the fundamental economics of AI agents — from simple tool-calling bots to fully autonomous systems.', 'AI Agent Architecture & Economics', [
+    modules['ai-agent-architecture/19-1'] = m('19-1', 'What Is an AI Agent? Economic Primitives', 'Understand the fundamental economics of AI agents — from simple tool-calling bots to fully autonomous systems.', 'AI Agent Architecture & Economics', [
         'Distinguish agents from chatbots using economic criteria',
         'Calculate cost-per-action for agent operations',
         'Map the autonomy spectrum to cost and risk profiles',
@@ -75,20 +75,20 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
 
     // Modules 19-2 through 19-15 (stubs with content structure)
     const track19Modules = [
-        { id: 'N19-2', title: 'Agent Architecture Patterns & Costs', next: 'N19-3' },
-        { id: 'N19-3', title: 'Tool-Use & Function Calling Economics', next: 'N19-4' },
-        { id: 'N19-4', title: 'Memory & Context Management Costs', next: 'N19-5' },
-        { id: 'N19-5', title: 'Multi-Agent Orchestration Economics', next: 'N19-6' },
-        { id: 'N19-6', title: 'Agent Inference Cost Optimization', next: 'N19-7' },
-        { id: 'N19-7', title: 'Agent Reliability & Error Economics', next: 'N19-8' },
-        { id: 'N19-8', title: 'Agent Observability & Monitoring', next: 'N19-9' },
-        { id: 'N19-9', title: 'Agent Infrastructure at Scale', next: 'N19-10' },
-        { id: 'N19-10', title: 'Agent Security & Sandboxing Economics', next: 'N19-11' },
-        { id: 'N19-11', title: 'Agent Testing & Evaluation Frameworks', next: 'N19-12' },
-        { id: 'N19-12', title: 'Agent Marketplace & Monetization', next: 'N19-13' },
-        { id: 'N19-13', title: 'Autonomous Agent Risk Management', next: 'N19-14' },
-        { id: 'N19-14', title: 'Agent Build vs Buy: The Complete TCO', next: 'N19-15' },
-        { id: 'N19-15', title: 'Agent Architecture Synthesis & Board Presentation', next: undefined },
+        { id: '19-2', title: 'Agent Architecture Patterns & Costs', next: '19-3' },
+        { id: '19-3', title: 'Tool-Use & Function Calling Economics', next: '19-4' },
+        { id: '19-4', title: 'Memory & Context Management Costs', next: '19-5' },
+        { id: '19-5', title: 'Multi-Agent Orchestration Economics', next: '19-6' },
+        { id: '19-6', title: 'Agent Inference Cost Optimization', next: '19-7' },
+        { id: '19-7', title: 'Agent Reliability & Error Economics', next: '19-8' },
+        { id: '19-8', title: 'Agent Observability & Monitoring', next: '19-9' },
+        { id: '19-9', title: 'Agent Infrastructure at Scale', next: '19-10' },
+        { id: '19-10', title: 'Agent Security & Sandboxing Economics', next: '19-11' },
+        { id: '19-11', title: 'Agent Testing & Evaluation Frameworks', next: '19-12' },
+        { id: '19-12', title: 'Agent Marketplace & Monetization', next: '19-13' },
+        { id: '19-13', title: 'Autonomous Agent Risk Management', next: '19-14' },
+        { id: '19-14', title: 'Agent Build vs Buy: The Complete TCO', next: '19-15' },
+        { id: '19-15', title: 'Agent Architecture Synthesis & Board Presentation', next: undefined },
     ];
     for (const mod of track19Modules) {
         modules[`ai-agent-architecture/${mod.id}`] = m(mod.id, mod.title, `Deep-dive into ${mod.title.toLowerCase()} — quantifying costs, benchmarking performance, and building executive-ready frameworks.`, 'AI Agent Architecture & Economics', [
@@ -107,7 +107,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
 
     // ═══════════════════ TRACK 20: Agentic Process Automation Economics ═══════════════════
 
-    modules['agentic-automation/N20-1'] = m('N20-1', 'From RPA to Agentic Automation', 'The leap from robotic process automation to intelligent agent automation — and why it changes every ROI calculation.', 'Agentic Process Automation Economics', [
+    modules['agentic-automation/20-1'] = m('20-1', 'From RPA to Agentic Automation', 'The leap from robotic process automation to intelligent agent automation — and why it changes every ROI calculation.', 'Agentic Process Automation Economics', [
         'Understand why RPA hit its ceiling at $15B market cap',
         'Calculate the intelligence premium of agentic automation',
         'Identify the first 5 processes to automate with agents',
@@ -134,20 +134,20 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
     ], '/vault/curriculum/tracks/agentic-automation/N20-2');
 
     const track20Modules = [
-        { id: 'N20-2', title: 'Process Discovery for Agent Automation' },
-        { id: 'N20-3', title: 'FTE Displacement Economics' },
-        { id: 'N20-4', title: 'Customer Support Agent Economics' },
-        { id: 'N20-5', title: 'DevOps & SRE Agent Automation' },
-        { id: 'N20-6', title: 'Sales & Revenue Agent Economics' },
-        { id: 'N20-7', title: 'Finance & Compliance Agent Automation' },
-        { id: 'N20-8', title: 'Code Generation & Review Agents' },
-        { id: 'N20-9', title: 'Agent Orchestration Platforms' },
-        { id: 'N20-10', title: 'Change Management for Agent Adoption' },
-        { id: 'N20-11', title: 'Agent Performance SLAs & Contracts' },
-        { id: 'N20-12', title: 'Agent Failure Modes & Recovery' },
-        { id: 'N20-13', title: 'Measuring Agent ROI at Scale' },
-        { id: 'N20-14', title: 'Competitive Strategy with Agent Automation' },
-        { id: 'N20-15', title: 'Agentic Automation Synthesis' },
+        { id: '20-2', title: 'Process Discovery for Agent Automation' },
+        { id: '20-3', title: 'FTE Displacement Economics' },
+        { id: '20-4', title: 'Customer Support Agent Economics' },
+        { id: '20-5', title: 'DevOps & SRE Agent Automation' },
+        { id: '20-6', title: 'Sales & Revenue Agent Economics' },
+        { id: '20-7', title: 'Finance & Compliance Agent Automation' },
+        { id: '20-8', title: 'Code Generation & Review Agents' },
+        { id: '20-9', title: 'Agent Orchestration Platforms' },
+        { id: '20-10', title: 'Change Management for Agent Adoption' },
+        { id: '20-11', title: 'Agent Performance SLAs & Contracts' },
+        { id: '20-12', title: 'Agent Failure Modes & Recovery' },
+        { id: '20-13', title: 'Measuring Agent ROI at Scale' },
+        { id: '20-14', title: 'Competitive Strategy with Agent Automation' },
+        { id: '20-15', title: 'Agentic Automation Synthesis' },
     ];
     for (let i = 0; i < track20Modules.length; i++) {
         const mod = track20Modules[i];
@@ -168,7 +168,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
 
     // ═══════════════════ TRACK 21: AI Agent Governance & Trust Infrastructure ═══════════════════
 
-    modules['agent-governance/N21-1'] = m('N21-1', 'The Trust Problem in Autonomous AI', 'AI doesn\'t fail because it can\'t reason. It fails because it doesn\'t know what\'s true. This module establishes the governance foundation.', 'AI Agent Governance & Trust Infrastructure', [
+    modules['agent-governance/21-1'] = m('21-1', 'The Trust Problem in Autonomous AI', 'AI doesn\'t fail because it can\'t reason. It fails because it doesn\'t know what\'s true. This module establishes the governance foundation.', 'AI Agent Governance & Trust Infrastructure', [
         'Understand why traditional software governance fails for agents',
         'Map the verification vs validation distinction to agent economics',
         'Learn from Exogram\'s truth layer architecture',
@@ -195,20 +195,20 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
     ], '/vault/curriculum/tracks/agent-governance/N21-2');
 
     const track21Modules = [
-        { id: 'N21-2', title: 'Agent Permission & Access Control Economics' },
-        { id: 'N21-3', title: 'Agent Audit & Compliance Frameworks' },
-        { id: 'N21-4', title: 'Hallucination Detection & Verification Economics' },
-        { id: 'N21-5', title: 'Agent Output Verification Infrastructure' },
-        { id: 'N21-6', title: 'Data Provenance & Lineage for Agents' },
-        { id: 'N21-7', title: 'Prompt Injection & Security Economics' },
-        { id: 'N21-8', title: 'Multi-Stakeholder Agent Governance' },
-        { id: 'N21-9', title: 'Agent Ethics & Bias Economics' },
-        { id: 'N21-10', title: 'Insurance & Liability for AI Agents' },
-        { id: 'N21-11', title: 'Agent Versioning & Rollback Economics' },
-        { id: 'N21-12', title: 'Enterprise Agent Policy Engines' },
-        { id: 'N21-13', title: 'Agent Incident Response & Forensics' },
-        { id: 'N21-14', title: 'Building an Agent Center of Excellence' },
-        { id: 'N21-15', title: 'Agent Governance Synthesis & Board Strategy' },
+        { id: '21-2', title: 'Agent Permission & Access Control Economics' },
+        { id: '21-3', title: 'Agent Audit & Compliance Frameworks' },
+        { id: '21-4', title: 'Hallucination Detection & Verification Economics' },
+        { id: '21-5', title: 'Agent Output Verification Infrastructure' },
+        { id: '21-6', title: 'Data Provenance & Lineage for Agents' },
+        { id: '21-7', title: 'Prompt Injection & Security Economics' },
+        { id: '21-8', title: 'Multi-Stakeholder Agent Governance' },
+        { id: '21-9', title: 'Agent Ethics & Bias Economics' },
+        { id: '21-10', title: 'Insurance & Liability for AI Agents' },
+        { id: '21-11', title: 'Agent Versioning & Rollback Economics' },
+        { id: '21-12', title: 'Enterprise Agent Policy Engines' },
+        { id: '21-13', title: 'Agent Incident Response & Forensics' },
+        { id: '21-14', title: 'Building an Agent Center of Excellence' },
+        { id: '21-15', title: 'Agent Governance Synthesis & Board Strategy' },
     ];
     for (let i = 0; i < track21Modules.length; i++) {
         const mod = track21Modules[i];
@@ -229,7 +229,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
 
     // ═══════════════════ TRACK 22: Strategic Leadership Economics ═══════════════════
 
-    modules['strategic-leadership/N22-1'] = m('N22-1', 'The Leadership Multiplier Effect', 'Your job is no longer to produce output. It\'s to multiply the output of everyone around you. This module teaches the economics of that shift.', 'Strategic Leadership Economics', [
+    modules['strategic-leadership/22-1'] = m('22-1', 'The Leadership Multiplier Effect', 'Your job is no longer to produce output. It\'s to multiply the output of everyone around you. This module teaches the economics of that shift.', 'Strategic Leadership Economics', [
         'Understand why IC metrics don\'t translate to leadership value',
         'Calculate your leadership multiplier effect',
         'Map the value creation shift from direct to indirect contribution',
@@ -261,20 +261,20 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
     ], '/vault/curriculum/tracks/strategic-leadership/N22-2');
 
     const track22Modules = [
-        { id: 'N22-2', title: 'From Technical Expert to Strategic Leader' },
-        { id: 'N22-3', title: 'Building & Leading High-Performance Teams' },
-        { id: 'N22-4', title: 'The Economics of Trust & Delegation' },
-        { id: 'N22-5', title: 'Strategic Communication & Influence' },
-        { id: 'N22-6', title: 'Coaching & Development Economics' },
-        { id: 'N22-7', title: 'Conflict Resolution & Alignment Economics' },
-        { id: 'N22-8', title: 'Change Leadership Economics' },
-        { id: 'N22-9', title: 'Culture as Capital Asset' },
-        { id: 'N22-10', title: 'Decision Architecture for Leaders' },
-        { id: 'N22-11', title: 'Leading Remote & Distributed Organizations' },
-        { id: 'N22-12', title: 'Innovation Leadership Economics' },
-        { id: 'N22-13', title: 'Crisis Leadership & Resilience' },
-        { id: 'N22-14', title: 'Ethical Leadership & Governance' },
-        { id: 'N22-15', title: 'Leadership Capital Synthesis' },
+        { id: '22-2', title: 'From Technical Expert to Strategic Leader' },
+        { id: '22-3', title: 'Building & Leading High-Performance Teams' },
+        { id: '22-4', title: 'The Economics of Trust & Delegation' },
+        { id: '22-5', title: 'Strategic Communication & Influence' },
+        { id: '22-6', title: 'Coaching & Development Economics' },
+        { id: '22-7', title: 'Conflict Resolution & Alignment Economics' },
+        { id: '22-8', title: 'Change Leadership Economics' },
+        { id: '22-9', title: 'Culture as Capital Asset' },
+        { id: '22-10', title: 'Decision Architecture for Leaders' },
+        { id: '22-11', title: 'Leading Remote & Distributed Organizations' },
+        { id: '22-12', title: 'Innovation Leadership Economics' },
+        { id: '22-13', title: 'Crisis Leadership & Resilience' },
+        { id: '22-14', title: 'Ethical Leadership & Governance' },
+        { id: '22-15', title: 'Leadership Capital Synthesis' },
     ];
     for (let i = 0; i < track22Modules.length; i++) {
         const mod = track22Modules[i];
@@ -295,7 +295,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
 
     // ═══════════════════ TRACK 23: Executive Presence & Board Leadership ═══════════════════
 
-    modules['executive-presence/N23-1'] = m('N23-1', 'Executive Presence as Economic Asset', 'Executive presence isn\'t charisma — it\'s credibility capital. This module teaches you to build and deploy it as a measurable asset.', 'Executive Presence & Board Leadership', [
+    modules['executive-presence/23-1'] = m('23-1', 'Executive Presence as Economic Asset', 'Executive presence isn\'t charisma — it\'s credibility capital. This module teaches you to build and deploy it as a measurable asset.', 'Executive Presence & Board Leadership', [
         'Understand executive presence as an economic, not personality, trait',
         'Calculate the credibility premium in negotiations and decisions',
         'Map the components of presence to measurable business outcomes',
@@ -322,20 +322,20 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
     ], '/vault/curriculum/tracks/executive-presence/N23-2');
 
     const track23Modules = [
-        { id: 'N23-2', title: 'Board Communication Mastery' },
-        { id: 'N23-3', title: 'P&L Ownership for Technical Leaders' },
-        { id: 'N23-4', title: 'Investor Relations for CTOs' },
-        { id: 'N23-5', title: 'Strategic Planning & OKR Economics' },
-        { id: 'N23-6', title: 'Cross-Functional Executive Alignment' },
-        { id: 'N23-7', title: 'Executive Negotiation & Deal Economics' },
-        { id: 'N23-8', title: 'Organizational Restructuring Economics' },
-        { id: 'N23-9', title: 'Executive Coaching & Peer Networks' },
-        { id: 'N23-10', title: 'Public Speaking & Thought Leadership' },
-        { id: 'N23-11', title: 'AI Strategy at the Board Level' },
-        { id: 'N23-12', title: 'Succession Planning Economics' },
-        { id: 'N23-13', title: 'Board Governance & Fiduciary Economics' },
-        { id: 'N23-14', title: 'Global Leadership & Scale' },
-        { id: 'N23-15', title: 'Executive Leadership Synthesis' },
+        { id: '23-2', title: 'Board Communication Mastery' },
+        { id: '23-3', title: 'P&L Ownership for Technical Leaders' },
+        { id: '23-4', title: 'Investor Relations for CTOs' },
+        { id: '23-5', title: 'Strategic Planning & OKR Economics' },
+        { id: '23-6', title: 'Cross-Functional Executive Alignment' },
+        { id: '23-7', title: 'Executive Negotiation & Deal Economics' },
+        { id: '23-8', title: 'Organizational Restructuring Economics' },
+        { id: '23-9', title: 'Executive Coaching & Peer Networks' },
+        { id: '23-10', title: 'Public Speaking & Thought Leadership' },
+        { id: '23-11', title: 'AI Strategy at the Board Level' },
+        { id: '23-12', title: 'Succession Planning Economics' },
+        { id: '23-13', title: 'Board Governance & Fiduciary Economics' },
+        { id: '23-14', title: 'Global Leadership & Scale' },
+        { id: '23-15', title: 'Executive Leadership Synthesis' },
     ];
     for (let i = 0; i < track23Modules.length; i++) {
         const mod = track23Modules[i];

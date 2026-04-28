@@ -5,7 +5,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
     // ═══════════════════ TRACK 8: AI Pricing Strategy & Monetization Economics ═══════════════════
     const t8 = 'Track 8 — AI Pricing Strategy';
     const t8Mods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['N8-1', 'AI Pricing Model Taxonomy', 'The four pricing architectures for AI products — and why picking the wrong one costs you 40% of potential revenue.',
+        ['8-1', 'AI Pricing Model Taxonomy', 'The four pricing architectures for AI products — and why picking the wrong one costs you 40% of potential revenue.',
             ['Map the 4 AI pricing models', 'Calculate margin exposure per model', 'Match pricing to unit economics', 'Avoid the flat-rate death trap'],
             [
                 l('Lesson 1: The Four AI Pricing Architectures', 'Every AI product falls into one of four pricing models: Seat-Based (the legacy SaaS default), Usage-Based (pay per token/API call), Outcome-Based (pay per result), or Hybrid (seat + overage). Each has a different margin profile. In 2026, 37% of AI companies are actively changing their pricing model because the one they chose at launch is bleeding them dry.', [
@@ -25,7 +25,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Draft a 90-day pricing migration plan for transitioning from seat-based to usage-based pricing without losing more than 5% of your customer base.')
             ]
         ],
-        ['N8-2', 'Token-Based Pricing Architecture', 'Build the metering, billing, and rate-limiting infrastructure to charge per AI interaction.',
+        ['8-2', 'Token-Based Pricing Architecture', 'Build the metering, billing, and rate-limiting infrastructure to charge per AI interaction.',
             ['Design credit systems', 'Build metering infrastructure', 'Implement rate limiting economics', 'Calculate credit-to-cost alignment'],
             [
                 l('Lesson 1: Credit System Design', 'Credits are the universal currency of AI pricing. 1 credit = 1 AI interaction (or 1,000 tokens, or 1 document processed). The key is setting the credit-to-cost ratio: if each credit costs you $0.003 in inference and you charge $0.01, your gross margin is 70%. But if a complex query consumes 5 credits worth of compute, your margin on that query drops to 30%.', [
@@ -45,7 +45,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Design a 3-tier rate limiting strategy for your AI product that protects margins while maintaining enterprise SLA commitments.')
             ]
         ],
-        ['N8-3', 'The Flat-Rate AI Death Trap', 'Why "unlimited AI at $29/month" is the fastest path to bankruptcy — and what to do instead.',
+        ['8-3', 'The Flat-Rate AI Death Trap', 'Why "unlimited AI at $29/month" is the fastest path to bankruptcy — and what to do instead.',
             ['Model margin collapse scenarios', 'Calculate the insolvency point', 'Design usage caps that retain customers', 'Build the case for pricing changes'],
             [
                 l('Lesson 1: The Margin Collapse Curve', 'At $29/month with unlimited AI, your first 1,000 customers are profitable. At 10,000 customers with 5x average usage growth, you are bleeding $200K/month in inference costs. The margin collapse curve is exponential, not linear, because power users train themselves to extract maximum value from unlimited plans.', [
@@ -65,7 +65,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Build a board-ready presentation showing your margin collapse trajectory and the ROI of a pricing change.')
             ]
         ],
-        ['N8-4', 'Outcome-Based Pricing Models', 'Charge for the result, not the request. The future of AI monetization.',
+        ['8-4', 'Outcome-Based Pricing Models', 'Charge for the result, not the request. The future of AI monetization.',
             ['Define measurable outcomes', 'Calculate success probability', 'Build pricing around ROI guarantees', 'Design risk-sharing structures'],
             [
                 l('Lesson 1: Defining Measurable Outcomes', 'Outcome-based pricing requires a clear, measurable, non-disputable success metric. "We resolved a support ticket" = measurable. "We improved your workflow" = disputable. The precision of your outcome definition determines whether you can command a premium or face constant billing disputes.', [
@@ -85,7 +85,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Draft a risk-sharing pricing contract for your AI product including SLA guarantees, penalty structures, and gain-sharing terms.')
             ]
         ],
-        ['N8-5', 'AI Freemium Economics', 'The economics of free AI tiers: converting usage into revenue without bankrupting the infrastructure.',
+        ['8-5', 'AI Freemium Economics', 'The economics of free AI tiers: converting usage into revenue without bankrupting the infrastructure.',
             ['Calculate free tier COGS', 'Design conversion triggers', 'Build usage-to-upgrade funnels', 'Optimize CAC through product-led growth'],
             [
                 l('Lesson 1: The Free Tier COGS Problem', 'Every free user costs you real money in AI inference. If your free tier allows 10 AI queries/day and each costs $0.004, a free user costs $1.20/month. At 100K free users, you\'re burning $120K/month in inference with zero revenue. The free tier must be a calculated investment, not a default.', [
@@ -114,7 +114,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
     // ═══════════════════ TRACK 9: Technical Debt as Financial Liability ═══════════════════
     const t9 = 'Track 9 — Technical Debt as Financial Liability';
     const t9Mods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['N9-1', 'Technical Debt on the Balance Sheet', 'Why technical debt meets the accounting definition of a financial liability — and how to report it as one.',
+        ['9-1', 'Technical Debt on the Balance Sheet', 'Why technical debt meets the accounting definition of a financial liability — and how to report it as one.',
             ['Define debt as liability', 'Map debt to GAAP categories', 'Quantify carrying costs', 'Present to CFOs in their language'],
             [
                 l('Lesson 1: The Liability Definition', 'Under GAAP, a liability is "a present obligation arising from past events, the settlement of which is expected to result in an outflow of resources." Technical debt is exactly that: past architectural shortcuts that now require engineering resources (capital) to resolve. It meets every criterion of a financial liability.', [
@@ -134,7 +134,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Draft a one-page CFO memo for your largest technical debt item using the unfunded liability framing. Include payback period and ROI.')
             ]
         ],
-        ['N9-2', 'Quantifying Debt in Dollar Terms', 'The PDI methodology applied: putting an exact dollar value on every line of debt.',
+        ['9-2', 'Quantifying Debt in Dollar Terms', 'The PDI methodology applied: putting an exact dollar value on every line of debt.',
             ['Apply PDI to real codebases', 'Calculate maintenance load', 'Model interest rate curves', 'Build debt inventories'],
             [
                 l('Lesson 1: The PDI Methodology', 'The Product Debt Index (PDI) = (Cost of Delay × Dependency Graph Depth) / Automated Coverage %. A PDI > 100 means systemic collapse risk. But PDI must be translated into dollars: multiply the PDI score by the average monthly cost of a blocked feature to get the dollar-equivalent exposure.', [
@@ -154,7 +154,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Create a debt inventory for your top 10 technical debt items with remediation cost, carrying cost, and priority scores.')
             ]
         ],
-        ['N9-3', 'Technical Insolvency Date', 'The day your maintenance costs exceed your capacity to ship new value — calculate when it arrives.',
+        ['9-3', 'Technical Insolvency Date', 'The day your maintenance costs exceed your capacity to ship new value — calculate when it arrives.',
             ['Define insolvency criteria', 'Calculate the crossover date', 'Identify leading indicators', 'Build intervention triggers'],
             [
                 l('Lesson 1: The Insolvency Equation', 'Technical insolvency occurs when maintenance_hours > (total_engineering_hours - minimum_viable_feature_output). At this point, the team cannot ship any new revenue-generating features because 100% of capacity is consumed by keeping existing systems alive. The company is technically insolvent — producing zero new economic value.', [
@@ -174,7 +174,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Define your organization\'s intervention triggers with specific thresholds, actions, and escalation paths.')
             ]
         ],
-        ['N9-4', 'Debt Impact on EBITDA', 'Translating technical debt directly into EBITDA margin drag for financial stakeholders.',
+        ['9-4', 'Debt Impact on EBITDA', 'Translating technical debt directly into EBITDA margin drag for financial stakeholders.',
             ['Connect maintenance to margin', 'Model EBITDA impact', 'Build remediation business cases', 'Present to PE and board'],
             [
                 l('Lesson 1: The Maintenance-to-Margin Connection', 'R&D is the largest cost line in most technology companies (25-35% of revenue). If 40% of R&D is consumed by maintenance, that\'s 10-14% of total revenue spent maintaining old code. Reducing maintenance from 40% to 20% of R&D frees 5-7% of revenue — which flows directly to EBITDA.', [
@@ -194,7 +194,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Build a full business case for your largest technical debt remediation project with NPV, payback period, and opportunity cost.')
             ]
         ],
-        ['N9-5', 'PE Due Diligence: Tech Debt Assessment', 'How private equity and corporate acquirers evaluate technical debt risk before signing the LOI.',
+        ['9-5', 'PE Due Diligence: Tech Debt Assessment', 'How private equity and corporate acquirers evaluate technical debt risk before signing the LOI.',
             ['Run pre-LOI scans', 'Identify deal breakers', 'Calculate debt-adjusted valuations', 'Structure remediation holdbacks'],
             [
                 l('Lesson 1: The Pre-LOI Technical Scan', 'Before the Letter of Intent, sophisticated PE buyers run a rapid technical assessment: 48-72 hours, focused on three things — deployment frequency (velocity proxy), production incident rate (stability proxy), and maintenance load percentage (debt proxy). These three numbers tell the story.', [
@@ -223,7 +223,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
     // ═══════════════════ TRACK 10: AI Due Diligence ═══════════════════
     const t10 = 'Track 10 — AI Due Diligence';
     const t10Mods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['N10-1', 'AI Company Valuation Frameworks', 'Why AI companies trade at different multiples — and how to separate hype from economic value.',
+        ['10-1', 'AI Company Valuation Frameworks', 'Why AI companies trade at different multiples — and how to separate hype from economic value.',
             ['Apply AI-specific valuation methods', 'Assess revenue quality', 'Calculate AI gross margins', 'Identify wrapper vs foundation value'],
             [
                 l('Lesson 1: Revenue Quality Assessment', 'Not all AI revenue is equal. API wrapper revenue (reselling OpenAI with a UI) is worth 3-5x. Proprietary model revenue (custom-trained models on unique data) is worth 8-15x. The difference: defensibility. If OpenAI launches a feature that obsoletes your wrapper, your revenue evaporates overnight.', [
@@ -243,7 +243,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Evaluate an AI company\'s moat across all three dimensions. Score each 1-5 and calculate total defensibility.')
             ]
         ],
-        ['N10-2', 'AI Model Asset Valuation', 'How to value proprietary models, training data, and ML infrastructure as enterprise assets.',
+        ['10-2', 'AI Model Asset Valuation', 'How to value proprietary models, training data, and ML infrastructure as enterprise assets.',
             ['Value training data', 'Assess model uniqueness', 'Calculate training cost basis', 'Evaluate model depreciation'],
             [
                 l('Lesson 1: Training Data Valuation', 'The AI company\'s most valuable asset isn\'t the model — it\'s the data. If a company has spent 3 years collecting, cleaning, and annotating 10M domain-specific examples, that dataset has a replacement cost (what would it cost to recreate from scratch?) and a strategic value (what competitive advantage does it provide?).', [
@@ -263,7 +263,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Assess the maturity of an AI company\'s ML infrastructure and estimate its replacement cost as an independent asset.')
             ]
         ],
-        ['N10-3', 'AI Infrastructure Audit', 'Evaluating GPU contracts, cloud commitments, and inference cost trajectories under diligence.',
+        ['10-3', 'AI Infrastructure Audit', 'Evaluating GPU contracts, cloud commitments, and inference cost trajectories under diligence.',
             ['Audit GPU economics', 'Evaluate cloud commitments', 'Project inference cost trajectories', 'Identify optimization opportunities'],
             [
                 l('Lesson 1: GPU Contract Analysis', 'AI companies sign long-term GPU commitments ($1-10M+ annually). These contracts create fixed-cost obligations that must be evaluated like any other lease. Key questions: What\'s the commitment term? Can it be scaled down? What happens if GPU prices drop 50% (which they will)?', [
@@ -292,7 +292,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
     // ═══════════════════ TRACK 11: Build vs Buy for AI ═══════════════════
     const t11 = 'Track 11 — Economics of Build vs Buy';
     const t11Mods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['N11-1', 'The Build vs Buy Decision Framework', 'The definitive framework for deciding when to build AI in-house vs buying from vendors.',
+        ['11-1', 'The Build vs Buy Decision Framework', 'The definitive framework for deciding when to build AI in-house vs buying from vendors.',
             ['Apply the differentiation test', 'Calculate true TCO', 'Assess vendor lock-in costs', 'Build the decision matrix'],
             [
                 l('Lesson 1: The Core vs Context Test', 'If AI is a core differentiator in your product (the reason customers choose you), build it. If it\'s context (a feature that enhances but doesn\'t define your product), buy it. Most companies get this wrong because they confuse "interesting engineering" with "strategic differentiation."', [
@@ -312,7 +312,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Map all your AI capabilities onto the 2×2 decision matrix. Share with your CTO and CPO for alignment.')
             ]
         ],
-        ['N11-2', 'API Provider Economics', 'The complete economic comparison of OpenAI, Anthropic, Google, and open-source alternatives.',
+        ['11-2', 'API Provider Economics', 'The complete economic comparison of OpenAI, Anthropic, Google, and open-source alternatives.',
             ['Compare provider pricing', 'Negotiate volume discounts', 'Evaluate SLA differences', 'Plan multi-provider strategy'],
             [
                 l('Lesson 1: Provider Cost Comparison', 'In Q2 2026, the AI API market has fragmented: OpenAI (GPT-4o at $5/$15 per 1M tokens), Anthropic (Claude 4 Sonnet at $3/$15), Google (Gemini 2.5 Pro at $1.25/$5), and open-weight alternatives (Llama 4 at $0 inference cost + hosting). The cheapest option for your use case depends on query complexity, quality requirements, and volume.', [
@@ -332,7 +332,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Design a multi-provider AI architecture diagram showing the abstraction layer, routing logic, and failover paths.')
             ]
         ],
-        ['N11-3', 'Self-Hosting Economics', 'When running your own models makes economic sense — and when it doesn\'t.',
+        ['11-3', 'Self-Hosting Economics', 'When running your own models makes economic sense — and when it doesn\'t.',
             ['Calculate self-hosting TCO', 'Evaluate break-even horizons', 'Assess operational complexity', 'Plan the migration path'],
             [
                 l('Lesson 1: Self-Hosting TCO', 'Self-hosting an open-weight model (Llama, Mistral) eliminates per-token API costs but introduces: GPU server costs ($2-8K/month for inference-grade hardware), DevOps engineering (1-2 FTEs to manage the infrastructure), monitoring and observability, model updates and retraining, and security/compliance overhead. The break-even is typically 6-12 months for high-volume workloads.', [
@@ -361,7 +361,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
     // ═══════════════════ TRACK 12: Career Capital Economics ═══════════════════
     const t12 = 'Track 12 — Career Capital Economics';
     const t12Mods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['N12-1', 'Your Revenue-Per-Engineer Contribution', 'Stop measuring yourself in story points. Start measuring yourself in dollars.',
+        ['12-1', 'Your Revenue-Per-Engineer Contribution', 'Stop measuring yourself in story points. Start measuring yourself in dollars.',
             ['Calculate your APER contribution', 'Attribute business value to technical work', 'Build impact dossiers', 'Quantify your multiplier effect'],
             [
                 l('Lesson 1: Beyond Story Points', 'Story points measure effort, not impact. Two engineers can both complete 20 story points per sprint, but one refactored the checkout flow and increased conversion by 2% ($200K/year in revenue), while the other fixed CSS bugs. Same velocity, wildly different economic value. Your career is measured in the latter, not the former.', [
@@ -381,7 +381,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Calculate your multiplier effect: how many engineer-hours do your tools, docs, or mentoring save per month? Convert to dollars.')
             ]
         ],
-        ['N12-2', 'Compensation Economics', 'Why you\'re probably undervaluing yourself — and the mathematical proof.',
+        ['12-2', 'Compensation Economics', 'Why you\'re probably undervaluing yourself — and the mathematical proof.',
             ['Analyze your total compensation', 'Evaluate equity correctly', 'Understand pay band economics', 'Calculate your market value gap'],
             [
                 l('Lesson 1: Total Compensation Decomposition', 'Your compensation is not your salary. Total comp = Base Salary + Bonus (target and actual) + Equity (RSUs/options at fair value) + Benefits (healthcare, 401k match) + Perks (education budget, WFH stipend). Most engineers only negotiate base salary, leaving 30-50% of their compensation unoptimized.', [
@@ -401,7 +401,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Calculate the after-tax value of your equity grants. If you have options, calculate them at the current 409A valuation, not the last round price.')
             ]
         ],
-        ['N12-3', 'The Business Case for Promotion', 'Most promotion cases fail because they describe effort, not impact. Build the irrefutable economic case.',
+        ['12-3', 'The Business Case for Promotion', 'Most promotion cases fail because they describe effort, not impact. Build the irrefutable economic case.',
             ['Structure economic arguments', 'Quantify your business impact', 'Present in P&L language', 'Anticipate and counter objections'],
             [
                 l('Lesson 1: The Effort Trap', '"I worked really hard this year" is not a promotion case. "I reduced infrastructure costs by $300K while maintaining 99.99% uptime" is. The promotion committee cares about business outcomes, not personal sacrifice. Every line of your promotion packet must connect to revenue, margin, risk reduction, or strategic positioning.', [
@@ -430,7 +430,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
     // ═══════════════════ TRACK 13: Engineering-to-Executive Economics ═══════════════════
     const t13 = 'Track 13 — Engineering-to-Executive';
     const t13Mods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['N13-1', 'The Language of the Boardroom', 'The economic vocabulary that separates technical managers from true executives.',
+        ['13-1', 'The Language of the Boardroom', 'The economic vocabulary that separates technical managers from true executives.',
             ['Translate technical metrics to EBITDA', 'Master margin frameworks', 'Present risk in financial terms', 'Build executive vocabulary'],
             [
                 l('Lesson 1: EBITDA Translation', 'When you say "we reduced p99 latency by 300ms," the board hears noise. When you say "we eliminated $2M in annual churn risk by reducing timeout errors that were causing 0.5% of transactions to fail," the board hears value. Every technical metric has an EBITDA translation. Learn it.', [
@@ -450,7 +450,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Identify the top 3 technical risks. Quantify each using the Revenue Exposure × Probability framework. Present as a board-ready risk register.')
             ]
         ],
-        ['N13-2', 'Budget Ownership & R&D Stewardship', 'The difference between spending a budget and stewarding capital.',
+        ['13-2', 'Budget Ownership & R&D Stewardship', 'The difference between spending a budget and stewarding capital.',
             ['Own the R&D budget', 'Model headcount economics', 'Practice zero-based budgeting', 'Present CapEx vs OpEx strategies'],
             [
                 l('Lesson 1: R&D Budget Anatomy', 'The R&D budget has four major buckets: People (salaries, benefits, contractors — typically 70-80%), Infrastructure (cloud, tools, licenses — typically 10-15%), Programs (training, conferences, equipment — typically 5%), and Contingency (unplanned work, incidents — typically 5-10%). Understanding these ratios is the minimum bar for executive leadership.', [
@@ -470,7 +470,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Review your R&D expenses. Identify which costs could be capitalized or qualify for R&D tax credits. Estimate the P&L impact.')
             ]
         ],
-        ['N13-3', 'Board Reporting for Technical Leaders', 'How to present engineering to the board — so they fund your roadmap instead of cutting your budget.',
+        ['13-3', 'Board Reporting for Technical Leaders', 'How to present engineering to the board — so they fund your roadmap instead of cutting your budget.',
             ['Design the 4-quadrant board slide', 'Build KPI dashboards', 'Write investment proposals', 'Handle hostile board questions'],
             [
                 l('Lesson 1: The 4-Quadrant Board Slide', 'One slide per quarter. Four quadrants: (1) Velocity & Delivery — what shipped and the business impact. (2) Quality & Risk — uptime, incidents, security posture. (3) Investment & Efficiency — R&D spend, APER trend, cloud cost trend. (4) Forward Look — next quarter\'s investments and expected returns.', [
@@ -499,7 +499,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
     // ═══════════════════ TRACK 14: The Economics of Leadership ═══════════════════
     const t14 = 'Track 14 — Economics of Leadership';
     const t14Mods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['N14-1', 'Leadership vs Management: The Economic Distinction', 'Leadership is a skill, not a rank. The promotion gap is a trillion-dollar problem. Here\'s the math.',
+        ['14-1', 'Leadership vs Management: The Economic Distinction', 'Leadership is a skill, not a rank. The promotion gap is a trillion-dollar problem. Here\'s the math.',
             ['Distinguish leadership from management', 'Calculate the promotion gap cost', 'Identify the training void', 'Build the case for leadership development'],
             [
                 l('Lesson 1: The Promotion Gap', 'Companies spend $15-30K training a junior engineer to do their job. They provide tutorials, mentors, pair programming, code reviews, ramp plans. Then when that engineer becomes excellent at their job, they\'re promoted to manage other engineers — a completely different job. Training budget for the new job? Zero. This is the Promotion Gap, and it creates managers, not leaders.', [
@@ -519,7 +519,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Rate yourself on the 7 core leadership skills. Identify your weakest skill and create a 30-day practice plan.')
             ]
         ],
-        ['N14-2', 'The Peter Principle: The Cost of Promoting to Incompetence', 'When being great at job A earns you job B — which no one teaches you.',
+        ['14-2', 'The Peter Principle: The Cost of Promoting to Incompetence', 'When being great at job A earns you job B — which no one teaches you.',
             ['Identify Peter Principle victims', 'Calculate the organizational cost', 'Design promotion readiness frameworks', 'Build pre-promotion training paths'],
             [
                 l('Lesson 1: Recognizing the Peter Principle', 'The Peter Principle: every person rises to their level of incompetence. Your best engineer becomes your worst manager — not because they\'re bad, but because leading people is a different skill set than writing code. The signs: a new manager who still writes code instead of coaching, who makes all technical decisions instead of delegating, who measures team success by their own output instead of the team\'s growth.', [
@@ -539,7 +539,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Design a 6-month Pre-Promotion Readiness Program for your next potential manager. Include all three trials with success criteria.')
             ]
         ],
-        ['N14-3', 'The Economics of Psychological Safety', 'Why teams that feel safe dramatically outperform teams that don\'t — and the math that proves it.',
+        ['14-3', 'The Economics of Psychological Safety', 'Why teams that feel safe dramatically outperform teams that don\'t — and the math that proves it.',
             ['Quantify the innovation premium', 'Calculate the fear tax', 'Apply Google Project Aristotle findings', 'Build measurement frameworks'],
             [
                 l('Lesson 1: The Innovation Premium', 'Google\'s Project Aristotle studied 180+ teams and found that psychological safety was the single strongest predictor of team performance. Teams where people feel safe to take risks, ask questions, and admit mistakes outperform unsafe teams by 30-50% on innovation metrics. This is the Innovation Premium: the economic value of an environment where people speak up.', [
@@ -559,7 +559,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Conduct a Reaction Audit: how did you respond the last 3 times someone brought you bad news or disagreed with you? Grade yourself honestly.')
             ]
         ],
-        ['N14-4', 'Attrition Economics: The Cost of Losing Your Best People', 'Why the smartest investment in engineering isn\'t hiring — it\'s retention.',
+        ['14-4', 'Attrition Economics: The Cost of Losing Your Best People', 'Why the smartest investment in engineering isn\'t hiring — it\'s retention.',
             ['Calculate true replacement costs', 'Identify attrition warning signals', 'Build retention economics models', 'Design stay interviews'],
             [
                 l('Lesson 1: True Replacement Cost', 'Replacing an engineer costs 6-9 months of their salary when you include: recruiting costs ($15-30K), interview time (40-80 hours of engineering time), onboarding (3 months at 25% productivity), knowledge transfer (3-6 months to reach full context), team disruption (morale and coordination tax for 2-3 months). For a senior engineer earning $200K, the true replacement cost is $150-180K.', [
@@ -579,7 +579,7 @@ export function populateNewTracks8to14(modules: Record<string, CurriculumModule>
                 ], 'Schedule stay interviews with every person on your team this month. Document the themes. Identify 3 actionable improvements.')
             ]
         ],
-        ['N14-5', 'Servant Leadership ROI', 'The economics of removing obstacles instead of assigning tasks.',
+        ['14-5', 'Servant Leadership ROI', 'The economics of removing obstacles instead of assigning tasks.',
             ['Quantify unblocking value', 'Calculate enablement ROI', 'Build trust as capital', 'Measure leader effectiveness by team output'],
             [
                 l('Lesson 1: Unblocking as Value Creation', 'A manager assigns tasks. A servant leader removes obstacles. If your team is blocked for 2 hours/day waiting for approvals, dependencies, or decisions, and you eliminate those blockers, you\'ve just added 2 hours of productive capacity per person per day. For a 10-person team, that\'s 100 engineering hours per week — worth $40K/month in recaptured productivity.', [

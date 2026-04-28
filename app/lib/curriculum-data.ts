@@ -111,9 +111,41 @@ populateTracks19to23(modules);
 // - curriculum-tracks-18.ts through curriculum-tracks-29.ts (all killed)
 // - curriculum-guides-comparisons.ts (killed)
 
-
 import { tracks } from './curriculum-tracks-ui';
 import { SPOKE_MATRIX } from './spoke-data';
+
+// ═══════════════════ AUTO-GENERATE STUBS FOR UI ═══════════════════
+// Any module defined in the UI but missing deep content is auto-generated as a stub
+// This prevents 404s for unwritten modules while keeping them in the sitemap and UI
+tracks.forEach(track => {
+    track.modules.forEach(uiMod => {
+        if (!uiMod.href) return;
+        const slugStr = uiMod.href.replace('/vault/curriculum/tracks/', '');
+        
+        // If not already in registry, create a stub
+        if (!modules[slugStr]) {
+            // Also check if it exists under a different key but same ID
+            const existing = Object.values(modules).find(m => m.moduleId === uiMod.id);
+            if (!existing) {
+                const cleanName = uiMod.name.replace(/^\d+\.\d+\s+/, '');
+                modules[slugStr] = m(
+                    uiMod.id,
+                    cleanName,
+                    'This curriculum module is currently in active development. Register for early access.',
+                    track.title,
+                    ['Coming soon', 'In development', 'Register for updates'],
+                    [],
+                    undefined,
+                    undefined,
+                    'waitlist'
+                );
+            } else {
+                // Point the UI slug to the existing module to fix prefix mismatches
+                modules[slugStr] = existing;
+            }
+        }
+    });
+});
 
 export function getModule(slug: string): CurriculumModule | undefined {
     let mod = modules[slug];
@@ -141,11 +173,11 @@ export function getModule(slug: string): CurriculumModule | undefined {
         
         // Topic to Module mapping logic
         const targetModules: Record<string, string[]> = {
-            'engineering-architecture': ['N9-1', '14-1', '11-4'], // Tech Debt, Cloud FinOps, Build vs Buy
-            'ai-product-strategy': ['N8-1', 'N8-4', '1-1'], // Pricing Strategy, Product Economics
-            'engineering-leadership': ['N14-1', 'N13-1', 'N12-1'], // Leadership, Exec Economics, Career Capital
-            'c-suite-financials': ['N10-1', 'N10-3', '1-2'], // Due Diligence, Financials
-            'product-management-economics': ['6-1', 'N8-2', 'N11-1'] // PM Economics, Build vs Buy
+            'engineering-architecture': ['9-1', '14-1', '11-4'], // Tech Debt, Cloud FinOps, Build vs Buy
+            'ai-product-strategy': ['8-1', '8-4', '1-1'], // Pricing Strategy, Product Economics
+            'engineering-leadership': ['14-1', '13-1', '12-1'], // Leadership, Exec Economics, Career Capital
+            'c-suite-financials': ['10-1', '10-3', '1-2'], // Due Diligence, Financials
+            'product-management-economics': ['6-1', '8-2', '11-1'] // PM Economics, Build vs Buy
         };
 
         SPOKE_MATRIX.forEach(topic => {

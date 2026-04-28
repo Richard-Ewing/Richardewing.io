@@ -5,7 +5,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
     // ═══════════════════ TRACK 15: Remote & Distributed Team Economics ═══════════════════
     const t15 = 'Track 15 — Remote & Distributed Teams';
     const t15Mods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['N15-1', 'Remote vs Office: Total Cost Analysis', 'The real math on remote work economics — not the headline, the balance sheet.',
+        ['15-1', 'Remote vs Office: Total Cost Analysis', 'The real math on remote work economics — not the headline, the balance sheet.',
             ['Calculate office TCO', 'Model remote infrastructure costs', 'Compare net savings', 'Present the business case'],
             [
                 l('Lesson 1: Office TCO Decomposition', 'Office costs extend far beyond rent. Total office cost per employee = Lease cost per sqft × sqft per employee + Utilities + Insurance + Furniture/equipment + IT infrastructure + Reception/facilities staff + Cleaning + Commute subsidies + Office snacks/perks. In a major tech hub, this totals $15-25K per employee per year.', [
@@ -25,7 +25,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Build the net savings business case for your organization. Include direct savings, remote costs, and productivity adjustments.')
             ]
         ],
-        ['N15-2', 'Geographic Compensation Arbitrage', 'The economics of location-adjusted pay — and why it\'s more complex than it seems.',
+        ['15-2', 'Geographic Compensation Arbitrage', 'The economics of location-adjusted pay — and why it\'s more complex than it seems.',
             ['Design location-based pay bands', 'Calculate arbitrage savings', 'Manage equity implications', 'Avoid the talent quality trap'],
             [
                 l('Lesson 1: Location-Based Pay Band Design', 'SF pay for an engineer: $200K. Same engineer in Austin: $160K. Same engineer in Lisbon: $80K. The arbitrage is real — but so are the trade-offs. Location-based pay saves 20-50% on compensation but introduces: pay equity concerns, retention risk (engineers in lower tiers feel undervalued), and talent quality variance.', [
@@ -45,7 +45,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Audit your remote compensation against local market data. Are you paying top-of-market for each tier? Where\'s the attrition risk?')
             ]
         ],
-        ['N15-3', 'The Meeting Cost Calculator', 'Every meeting has a real cost. Here\'s the formula — and the business case for fewer, better meetings.',
+        ['15-3', 'The Meeting Cost Calculator', 'Every meeting has a real cost. Here\'s the formula — and the business case for fewer, better meetings.',
             ['Calculate per-meeting costs', 'Optimize meeting economics', 'Design async alternatives', 'Build meeting-light culture'],
             [
                 l('Lesson 1: The Per-Minute Meeting Cost', 'Meeting cost = (Sum of attendee hourly rates) × duration in hours. A 1-hour meeting with 8 engineers at $100/hr loaded rate = $800. A company with 200 engineers averaging 15 hours/week in meetings burns $15.6M/year in meeting time. Cutting meetings by 30% = $4.7M in recaptured productivity.', [
@@ -65,7 +65,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Implement the async-first rules for one team for 2 weeks. Measure: meeting hours before vs after, and output during both periods.')
             ]
         ],
-        ['N15-4', 'Async Communication ROI', 'Written communication isn\'t just convenient — it\'s a compounding organizational asset.',
+        ['15-4', 'Async Communication ROI', 'Written communication isn\'t just convenient — it\'s a compounding organizational asset.',
             ['Calculate writing ROI', 'Build documentation-first culture', 'Design async decision processes', 'Measure communication efficiency'],
             [
                 l('Lesson 1: The Written Communication Premium', 'Written communication has a unique property: it scales without cost. A well-written RFC is read once by 20 people instead of being explained in 10 separate meetings. A clear decision document prevents 50 "what did we decide?" conversations. Written communication is the only form of communication that compounds.', [
@@ -85,7 +85,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Measure your team\'s communication efficiency metrics for 1 month. Identify the biggest bottleneck.')
             ]
         ],
-        ['N15-5', 'Remote Onboarding Economics', 'The 90-day ramp curve is steeper remote — here\'s how to flatten it economically.',
+        ['15-5', 'Remote Onboarding Economics', 'The 90-day ramp curve is steeper remote — here\'s how to flatten it economically.',
             ['Optimize remote onboarding', 'Reduce time-to-productivity', 'Build self-service ramp tools', 'Measure onboarding ROI'],
             [
                 l('Lesson 1: The Remote Ramp Curve', 'Remote onboarding takes 20-30% longer than in-office because new hires lose the ambient learning of sitting near the team. In-office: 3 months to full productivity. Remote: 4-5 months. At $200K/year, that extra month of ramp time costs $12K per hire in lost productivity.', [
@@ -105,7 +105,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Audit your onboarding: how many hours until first commit? How many questions asked? Design the zero-ask onboarding path.')
             ]
         ],
-        ['N15-6', 'Distributed Team Productivity Measurement', 'How to measure remote team output without surveillance — using economics, not monitoring.',
+        ['15-6', 'Distributed Team Productivity Measurement', 'How to measure remote team output without surveillance — using economics, not monitoring.',
             ['Design output-based metrics', 'Build trust-based measurement', 'Avoid surveillance traps', 'Present productivity data'],
             [
                 l('Lesson 1: Output vs Hours', 'Measuring remote work by hours logged is measuring the wrong thing. The economic measure: what business value did the team produce? Track: features shipped (with revenue attribution), customer issues resolved (with satisfaction score), infrastructure improvements (with cost/reliability impact). Hours measure presence, not productivity.', [
@@ -125,7 +125,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Define clear deliverable expectations for each team member for the next sprint. Measure only deliverable completion, not hours.')
             ]
         ],
-        ['N15-7', 'Remote Attrition Premium', 'Remote workers leave 15-20% more often than office workers — unless you invest in belonging.',
+        ['15-7', 'Remote Attrition Premium', 'Remote workers leave 15-20% more often than office workers — unless you invest in belonging.',
             ['Identify remote attrition drivers', 'Calculate the belonging tax', 'Design retention interventions', 'Measure engagement remotely'],
             [
                 l('Lesson 1: The Isolation Cost', 'Remote workers report 67% more loneliness than office workers. Lonely workers are 2x more likely to leave within 12 months. The isolation cost = remote attrition premium × replacement cost. If remote attrition is 5% higher than office and replacement costs $150K per person, 100 remote employees generate $750K in excess attrition costs.', [
@@ -145,7 +145,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Implement bi-weekly pulse surveys and voluntary contribution tracking. Analyze the data after 8 weeks.')
             ]
         ],
-        ['N15-8', 'Cross-Timezone Coordination Costs', 'Every timezone you add costs money. Here\'s the math — and the architecture to minimize it.',
+        ['15-8', 'Cross-Timezone Coordination Costs', 'Every timezone you add costs money. Here\'s the math — and the architecture to minimize it.',
             ['Calculate overlap hour costs', 'Design handoff protocols', 'Build follow-the-sun models', 'Optimize timezone distribution'],
             [
                 l('Lesson 1: The Overlap Hour Premium', 'Synchronous collaboration requires overlap hours — the hours when all team members are awake and working simultaneously. Each additional timezone reduces overlap: 2 timezones (8 hours overlap), 3 timezones (4-6 hours), 4+ timezones (2-4 hours). Reduced overlap increases decision latency, handoff errors, and coordination costs.', [
@@ -165,7 +165,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Redesign your team topology to minimize cross-timezone critical-path dependencies. Calculate the coordination savings.')
             ]
         ],
-        ['N15-9', 'Remote Security & Compliance Economics', 'Every home office is an endpoint your security team doesn\'t control — and the cost is measurable.',
+        ['15-9', 'Remote Security & Compliance Economics', 'Every home office is an endpoint your security team doesn\'t control — and the cost is measurable.',
             ['Calculate endpoint risk costs', 'Design remote security architectures', 'Manage compliance across jurisdictions', 'Build security-first remote policies'],
             [
                 l('Lesson 1: Endpoint Risk Analysis', 'In-office, you control the network, the devices, and the physical environment. Remote, you control none of these. Each remote endpoint adds risk: unsecured home WiFi, personal devices accessing corporate data, household members with physical access. The cost: higher incident probability × higher incident impact.', [
@@ -185,7 +185,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Design a zero-trust remote security architecture. Estimate the per-employee cost and compare to the risk reduction.')
             ]
         ],
-        ['N15-10', 'Hybrid Economics: The Worst of Both Worlds?', 'Why hybrid is often more expensive than fully remote — and how to make it work if you must.',
+        ['15-10', 'Hybrid Economics: The Worst of Both Worlds?', 'Why hybrid is often more expensive than fully remote — and how to make it work if you must.',
             ['Calculate hybrid TCO', 'Identify hybrid-specific costs', 'Design equitable hybrid policies', 'Decide: hybrid vs fully remote'],
             [
                 l('Lesson 1: The Hybrid Cost Trap', 'Hybrid sounds like the best of both worlds but is often the worst: you pay for office space (for days when 40% of seats are empty), remote infrastructure (for the days people are home), AND the coordination premium of managing both. Total hybrid cost is often 10-20% higher than fully remote.', [
@@ -214,7 +214,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
     // ═══════════════════ TRACK 16: M&A Technical Integration Economics ═══════════════════
     const t16 = 'Track 16 — M&A Technical Integration';
     const t16Mods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['N16-1', 'Pre-Acquisition Technical Assessment', 'The engineering leader\'s guide to evaluating whether a target is worth acquiring — before the LOI.',
+        ['16-1', 'Pre-Acquisition Technical Assessment', 'The engineering leader\'s guide to evaluating whether a target is worth acquiring — before the LOI.',
             ['Evaluate tech stack compatibility', 'Estimate integration costs', 'Identify deal-breakers', 'Build technical DD checklists'],
             [
                 l('Lesson 1: Tech Stack Compatibility Matrix', 'Build a compatibility matrix: your stack vs target stack. For each layer (frontend, backend, data, infrastructure, ML), score compatibility: Compatible (same or similar tech), Translatable (different but mappable), Incompatible (requires full rebuild). Each "incompatible" layer adds $200K-1M in integration costs.', [
@@ -234,7 +234,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Run the 5 deal-breaker checks on a target company. Document findings with severity and remediation cost estimates.')
             ]
         ],
-        ['N16-2', 'Platform Merge Economics', 'Running two platforms is expensive. Merging them is expensive. Here\'s how to calculate which path costs more.',
+        ['16-2', 'Platform Merge Economics', 'Running two platforms is expensive. Merging them is expensive. Here\'s how to calculate which path costs more.',
             ['Calculate dual-stack costs', 'Model merge timelines', 'Project consolidation savings', 'Design the merge roadmap'],
             [
                 l('Lesson 1: The Dual-Stack Tax', 'Running two platforms simultaneously costs: 2× infrastructure, 2× on-call teams, 2× security patching, 2× feature development for parity. The dual-stack tax is typically 40-60% of a single-stack infrastructure cost — sustained until consolidation is complete. At $1M/year per platform, the dual-stack period costs $1.4-1.6M/year.', [
@@ -254,7 +254,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Project the 3-year ROI of consolidating your dual platforms. Present with breakeven timeline.')
             ]
         ],
-        ['N16-3', 'Team Integration Without Attrition', 'The human side of mergers — because the talent you acquired is the asset you paid for.',
+        ['16-3', 'Team Integration Without Attrition', 'The human side of mergers — because the talent you acquired is the asset you paid for.',
             ['Design cultural integration plans', 'Structure retention packages', 'Preserve team identity', 'Manage survivor anxiety'],
             [
                 l('Lesson 1: The Cultural Integration Playbook', 'Culture clash is the #1 reason tech acquisitions fail. The acquired team has different values, different processes, and different definitions of "good." Force-assimilating them into your culture destroys the thing you bought. Instead: identify the best of both cultures and design the merged culture intentionally.', [
@@ -274,7 +274,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Draft the Day 1 communication for a hypothetical acquisition. Address both the acquired and acquiring team\'s concerns.')
             ]
         ],
-        ['N16-4', 'Data & API Consolidation', 'Merging data systems is where integration projects go to die — unless you plan precisely.',
+        ['16-4', 'Data & API Consolidation', 'Merging data systems is where integration projects go to die — unless you plan precisely.',
             ['Map data schemas', 'Design API bridges', 'Plan customer migration waves', 'Validate data integrity'],
             [
                 l('Lesson 1: Schema Mapping & Data Migration', 'Before a single row of data moves, you need a complete schema mapping: every table, every field, every relationship in both systems mapped to the target schema. The mapping reveals: compatible fields (direct copy), translatable fields (transformation needed), and orphan fields (data that doesn\'t map). Each translation adds cost and error risk.', [
@@ -294,7 +294,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Design a 5-wave customer migration plan. Define the wave composition, timeline, support level, and rollback process.')
             ]
         ],
-        ['N16-5', 'Synergy Realization Tracking', 'The board approved the deal based on projected synergies. Now you have to deliver them — and prove it.',
+        ['16-5', 'Synergy Realization Tracking', 'The board approved the deal based on projected synergies. Now you have to deliver them — and prove it.',
             ['Track cost synergies', 'Measure revenue synergies', 'Report to the board', 'Manage synergy shortfalls'],
             [
                 l('Lesson 1: Cost Synergy Tracking', 'Cost synergies are concrete and measurable: eliminated duplicate systems, reduced headcount redundancy, consolidated vendor contracts. Track each synergy line item: projected savings, actual savings to date, and remaining runway. If projected savings were $5M over 3 years, show progress quarterly.', [
@@ -314,7 +314,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Create a quarterly board synergy report template. Fill in actuals for the current period.')
             ]
         ],
-        ['N16-6', 'Post-Merger Architecture Decisions', 'Choosing what tech to keep from each side — without letting ego drive the decision.',
+        ['16-6', 'Post-Merger Architecture Decisions', 'Choosing what tech to keep from each side — without letting ego drive the decision.',
             ['Evaluate both architectures objectively', 'Design the target architecture', 'Manage the transition', 'Handle political resistance'],
             [
                 l('Lesson 1: Objective Architecture Evaluation', 'When merging two tech stacks, the default is "we keep ours." This is wrong. Evaluate both stacks against objective criteria: scalability, maintainability, operational cost, team expertise, and extensibility. The target architecture should take the best components from each side.', [
@@ -334,7 +334,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Design the Architecture Review Board for your merger: composition, decision process, and political safeguards.')
             ]
         ],
-        ['N16-7', 'Integration Governance & Reporting', 'The project management economics of running a complex integration without coming off the rails.',
+        ['16-7', 'Integration Governance & Reporting', 'The project management economics of running a complex integration without coming off the rails.',
             ['Design integration governance', 'Build reporting dashboards', 'Manage executive expectations', 'Handle scope creep'],
             [
                 l('Lesson 1: Integration PMO Design', 'A dedicated Integration PMO (Project Management Office) costs $300-500K/year but prevents $2-5M in integration failures. The PMO owns: the master integration plan, cross-team dependency tracking, risk register, budget tracking, and board reporting. Without a PMO, integration work disappears into BAU (business as usual) and never gets the focused attention it needs.', [
@@ -354,7 +354,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Define the integration scope boundary for your current or planned merger. Create the "pass/fail" test for scope additions.')
             ]
         ],
-        ['N16-8', 'Customer Impact Management', 'Your customers didn\'t choose to be merged. Minimize their pain — or lose them.',
+        ['16-8', 'Customer Impact Management', 'Your customers didn\'t choose to be merged. Minimize their pain — or lose them.',
             ['Design customer communication', 'Plan feature parity SLAs', 'Prevent churn during integration', 'Measure customer sentiment'],
             [
                 l('Lesson 1: Customer Communication Strategy', 'Customers hear about acquisitions and immediately worry: "Will my product change? Will prices go up? Will support get worse?" Address these proactively within 7 days of announcement. The message: "Nothing changes for you in the short term. Here\'s our commitment timeline. Here\'s how to reach us."', [
@@ -374,7 +374,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Design a churn prevention plan for the first 12 months post-merger: outreach, pricing commitments, and competitive monitoring.')
             ]
         ],
-        ['N16-9', 'Multi-Acquisition Portfolio Management', 'When you do it once, it\'s a project. When you do it repeatedly, it needs a playbook.',
+        ['16-9', 'Multi-Acquisition Portfolio Management', 'When you do it once, it\'s a project. When you do it repeatedly, it needs a playbook.',
             ['Build repeatable playbooks', 'Design platform-first strategy', 'Measure integration velocity', 'Scale M&A as growth strategy'],
             [
                 l('Lesson 1: The Repeatable Integration Playbook', 'Companies that acquire frequently (2+ per year) need a standardized playbook: (1) Pre-close technical checklist, (2) Day 1-30 protection protocol, (3) Day 31-90 integration planning, (4) Day 91-180 execution, (5) Day 181-365 optimization. The playbook reduces integration time by 40% on the second acquisition and 60% by the fourth.', [
@@ -394,7 +394,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Measure your historical integration velocity. Set a target for the next acquisition. Design improvements to hit the target.')
             ]
         ],
-        ['N16-10', 'Integration Post-Mortem & ROI Report', 'The honest assessment: did the acquisition create or destroy value?',
+        ['16-10', 'Integration Post-Mortem & ROI Report', 'The honest assessment: did the acquisition create or destroy value?',
             ['Build honest post-mortems', 'Calculate actual ROI', 'Compare to projections', 'Present to the board'],
             [
                 l('Lesson 1: The Honest Value Assessment', 'At the 18-month mark, calculate: Total acquisition cost (purchase price + integration costs + retention bonuses + opportunity cost) vs Total value created (revenue synergies + cost synergies + strategic value). Most acquirers never do this calculation because the answer is uncomfortable. But not knowing is worse.', [
@@ -427,7 +427,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
 
     const t17 = 'Track 17 — Developer Experience Economics';
     const t17Mods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['N17-1', 'Developer Productivity as Economic Output', 'DORA metrics aren\'t engineering vanity — they\'re economic indicators. Here\'s how to present them to the CFO.',
+        ['17-1', 'Developer Productivity as Economic Output', 'DORA metrics aren\'t engineering vanity — they\'re economic indicators. Here\'s how to present them to the CFO.',
             ['Connect DORA to revenue', 'Measure flow state economics', 'Calculate interruption costs', 'Build productivity dashboards'],
             [
                 l('Lesson 1: DORA Metrics as Financial Indicators', 'The four DORA metrics — Deployment Frequency, Lead Time for Changes, Change Failure Rate, and Time to Restore — are economic indicators disguised as engineering metrics. High deployment frequency = faster time-to-revenue. Low change failure rate = lower incident cost. Time to restore = revenue protection speed.', [
@@ -447,7 +447,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Build your developer productivity dashboard with DORA metrics, focus time, and dollar-value translations.')
             ]
         ],
-        ['N17-2', 'Tooling Investment ROI', 'Every engineering tool has a cost and a return. Here\'s how to calculate whether your tooling budget is investing or wasting.',
+        ['17-2', 'Tooling Investment ROI', 'Every engineering tool has a cost and a return. Here\'s how to calculate whether your tooling budget is investing or wasting.',
             ['Audit current tool spend', 'Calculate per-tool ROI', 'Prioritize tool investments', 'Present tool budget to leadership'],
             [
                 l('Lesson 1: Tool Spend Audit', 'Most engineering organizations have 15-30 SaaS tools that engineers actively use. Total monthly cost: $200-500/engineer/month in tooling. But 20-30% of those tools are duplicative, underused, or abandoned. The audit: list every tool, its monthly cost, its active user count, and the alternative.', [
@@ -467,7 +467,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Present your tool budget using the category framework. Lead with ROI, not cost. Get approval for one high-impact tool.')
             ]
         ],
-        ['N17-3', 'Onboarding Speed as Revenue Driver', 'Every day a new hire isn\'t productive is a day your investment isn\'t earning a return.',
+        ['17-3', 'Onboarding Speed as Revenue Driver', 'Every day a new hire isn\'t productive is a day your investment isn\'t earning a return.',
             ['Measure time-to-first-commit', 'Optimize ramp curves', 'Build self-service environments', 'Calculate onboarding ROI'],
             [
                 l('Lesson 1: Time-to-First-Commit as DX Metric', 'Time-to-First-Commit (TTFC) measures how quickly a new hire can contribute code to the codebase. Elite DX: <2 hours. Good: <1 day. Average: 2-5 days. Poor: >1 week. Every hour of TTFC above 4 hours represents a DX failure that will compound over every future hire.', [
@@ -495,7 +495,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
 
     const t18 = 'Track 18 — Vendor & Contract Economics';
     const t18Mods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['N18-1', 'SaaS Sprawl Cost Analysis', 'The average engineering org wastes 25-30% of its SaaS budget on duplicate, unused, or forgotten tools.',
+        ['18-1', 'SaaS Sprawl Cost Analysis', 'The average engineering org wastes 25-30% of its SaaS budget on duplicate, unused, or forgotten tools.',
             ['Audit SaaS spend', 'Identify shadow IT', 'Calculate waste percentage', 'Build consolidation roadmaps'],
             [
                 l('Lesson 1: The SaaS Sprawl Problem', 'The average enterprise has 130+ SaaS applications. 25-30% of licenses are unused or underutilized. Engineering teams are the worst offenders: individual contributors buy tools on corporate cards without approval, resulting in 3-5 overlapping tools per category. Total waste: typically $1-3K per engineer per year.', [
@@ -515,7 +515,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Build a SaaS rationalization roadmap with quick wins, consolidation targets, and renegotiation opportunities. Present total savings.')
             ]
         ],
-        ['N18-2', 'Vendor Consolidation ROI', 'Fewer vendors means lower costs, less management overhead, and better negotiating leverage.',
+        ['18-2', 'Vendor Consolidation ROI', 'Fewer vendors means lower costs, less management overhead, and better negotiating leverage.',
             ['Evaluate platform vs best-of-breed', 'Calculate consolidation savings', 'Manage migration risks', 'Negotiate from strength'],
             [
                 l('Lesson 1: Platform vs Best-of-Breed Decision', 'The eternal debate: one platform that does everything adequately vs. best-of-breed tools for each function. Platforms reduce integration costs and management overhead but limit flexibility. Best-of-breed provides superior functionality but multiplies vendor relationships and integration complexity.', [
@@ -535,7 +535,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Design a phased migration plan for consolidating from 3 overlapping tools to 1. Include champion identification and data migration verification.')
             ]
         ],
-        ['N18-3', 'Contract Negotiation Economics', 'You\'re leaving 20-40% on the table in every vendor negotiation — here\'s how to take it back.',
+        ['18-3', 'Contract Negotiation Economics', 'You\'re leaving 20-40% on the table in every vendor negotiation — here\'s how to take it back.',
             ['Build negotiation leverage', 'Time negotiations strategically', 'Structure win-win deals', 'Manage multi-year commitments'],
             [
                 l('Lesson 1: Leverage Engineering', 'Negotiating leverage comes from three sources: (1) Competitive alternatives (you can credibly switch), (2) Volume (you spend enough for them to care), (3) Timing (they need to close the deal more than you need to sign it). Maximize all three before sitting at the negotiating table.', [
