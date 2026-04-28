@@ -149,8 +149,9 @@ export default function PrincipalContent() {
                                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 mb-2">Richard Ewing</h1>
                                 <div className="font-mono text-sm font-semibold text-zinc-900 font-medium uppercase tracking-widest mb-4">Product Economist</div>
                                 <p className="text-zinc-950 leading-relaxed text-base sm:text-lg">
-                                    Founder of <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-purple-900 font-extrabold font-semibold hover:text-purple-900 font-extrabold font-semibold transition">Exogram</a> and the executive who <span className="text-zinc-950 font-bold">turns bleeding product organizations into profit engines</span>.
-                                    I do not manage backlogs. I manage P&Ls. I do not ship features. I ship ROI.
+                                    I help companies understand software, product, and AI decisions through the lens of <span className="text-zinc-950 font-bold">enterprise economics</span>. 
+                                    <br/><br/>
+                                    I do not manage backlogs. I manage P&Ls. I sit at the exact intersection of CPO thinking, CFO rigor, and CTO reality.
                                 </p>
                             </div>
                         </div>
@@ -217,14 +218,19 @@ export default function PrincipalContent() {
             {/* The Thesis */}
             <ScrollReveal delay={50}>
                 <div className="capsule-container rounded-2xl p-6 sm:p-8 mb-8 border-l-4 border-cyan-500">
-                    <div className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest mb-3">The Thesis</div>
+                    <div className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest mb-3">The Translation Layer</div>
                     <p className="text-2xl sm:text-3xl text-zinc-950 font-bold leading-tight mb-4">
-                        "Innovation without Operation<br />is Hallucination."
+                        "Most executives have two disconnected languages: Tech and Finance."
                     </p>
-                    <p className="text-zinc-900 text-base leading-relaxed">
-                        Engineering speaks velocity. The C-Suite speaks P&L. When these languages fail to connect,
-                        you get features that don't sell and roadmaps that don't ship. <span className="text-zinc-950 font-semibold">I am the translation layer.</span>
-                    </p>
+                    <div className="text-zinc-900 text-base leading-relaxed space-y-4">
+                        <p>
+                            <span className="font-bold text-zinc-950">The Tech Language:</span> velocity, backlog, debt, sprints, architecture.<br/>
+                            <span className="font-bold text-zinc-950">The Finance Language:</span> ROI, EBITDA, cash flow, payback, risk.
+                        </p>
+                        <p>
+                            Few people translate cleanly between them. <span className="text-zinc-950 font-bold">That translation layer is where real influence lives.</span> I build the category where product management meets corporate finance and technical reality. My frameworks aren't theoretical—they are <span className="italic">financial wrappers around technical problems.</span>
+                        </p>
+                    </div>
                 </div>
             </ScrollReveal>
 
