@@ -139,6 +139,26 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 ], 'Determine whether your next AI feature requires RAG, Fine-tuning, or both. Provide the architectural justification.')
             ]
         ],
+        ['2-17', 'Shadow AI & Data Extrusion', 'Preventing uncontrolled employee access to unauthorized LLMs and stopping IP leakage.', 
+            ['Define Shadow AI', 'Establish Corporate GenAI Walls', 'Audit network endpoints', 'Create defensible AI policies'],
+            [
+                l('Lesson 1: The Shadow AI Threat', 'Shadow AI is the unauthorized use of generative AI tools by employees to perform company work. It is Shadow IT on steroids. When engineers paste proprietary code into public models, or analysts upload financial spreadsheets to unsecured chat interfaces, you suffer immediate, irreversible Intellectual Property extrusion.', [
+                    d('IP Extrusion', 'The permanent loss of proprietary data to public model training sets.', 'Action: Immediate blocklist of unauthorized endpoints'),
+                    d('Copyright Contamination', 'Pasting AI-generated code from public tools into your repos.', 'Creates massive legal liabilities in M&A'),
+                    d('Compliance Breach', 'Violating GDPR or HIPAA through unsecured AI prompts.', 'Fines can reach millions')
+                ], 'Perform an audit of employee AI tool usage. How many unauthorized generative AI interfaces are being accessed daily?'),
+                l('Lesson 2: The Corporate GenAI Wall', 'You cannot stop employees from wanting to use AI to work faster. You must provide a secure, governed alternative. Establishing a "Corporate GenAI Wall" means deploying internal, enterprise-secured LLM interfaces that guarantee zero-retention policies.', [
+                    d('Zero-Retention Contracts', 'Enterprise agreements that explicitly forbid model training on your data.', 'Mandatory for all AI vendors'),
+                    d('Internal AI Portals', 'Providing secure chat interfaces that route to governed APIs.', 'Neutralizes the urge to use public tools'),
+                    d('Endpoint DLP Integration', 'Updating Data Loss Prevention (DLP) tools to flag LLM traffic.', 'Action: Block pasting of sensitive data types')
+                ], 'Design the architecture for an internal AI portal. What models will it use, and how will it ensure zero retention?'),
+                l('Lesson 3: Governing the Adoption Curve', 'Transitioning from Shadow AI to Governed AI requires cultural engineering. You must prove to employees that the secure internal tools are just as capable as the public tools they were using illicitly.', [
+                    d('Adoption Metrics', 'Tracking the usage of internal governed AI tools vs. blocked attempts to external tools.', 'Target: > 90% internal adoption'),
+                    d('Amnesty Programs', 'Allowing employees to report their Shadow AI usage without penalty.', 'Crucial for discovering hidden workflows'),
+                    d('Continuous Monitoring', 'Regularly scanning the network for new, unauthorized AI endpoints.', 'The AI landscape changes weekly')
+                ], 'Draft a company-wide communication announcing an Amnesty Program for Shadow AI usage and introducing the new Governed AI portal.')
+            ]
+        ],
     ];
 
     pmMods.forEach(([id, title, desc, takeaways, lessons], i) => {
@@ -226,6 +246,46 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                     d('Depersonalizing Deletion', 'Removing the emotional weight of deprecation from the original creators.', 'Treating retirement as routine maintenance, not a referendum on past work'),
                     d('Reclaiming Capital', 'Translating the deletion of a Zombie Asset back into the engineering P&L.', 'Quantifying the recovered velocity')
                 ], 'Draft a charter for a new Sunset Committee, outlining its objective to reclaim 5% of engineering capacity through systematic code retirement.')
+            ]
+        ],
+        ['3-17', 'Managing Shadow AI Risk', 'Defending enterprise IP against the existential threat of unauthorized generative AI usage.', 
+            ['Quantify IP Extrusion Risk', 'Audit network perimeters', 'Enforce DLP policies', 'Deploy Sovereign Substrates'],
+            [
+                l('Lesson 1: The Executive View of Shadow AI', 'Shadow IT was about uncontrolled SaaS spend. Shadow AI is about uncontrolled IP loss. When your product team uses an unsecured public LLM to brainstorm next year’s roadmap, your intellectual property has left the building. Boards must understand this is an existential, not just operational, risk.', [
+                    d('The Training Set Vulnerability', 'Your proprietary data becoming part of a public model\'s knowledge base.', 'Competitors can literally query your secrets'),
+                    d('Regulatory Exposure', 'Unsanctioned AI usage violating data residency laws.', 'Immediate compliance failure'),
+                    d('The Speed-Security Tradeoff', 'Balancing the need for AI velocity with the need for data protection.', 'Requires executive mandate')
+                ], 'Brief the board on the specific IP risks posed by Shadow AI within your organization. Quantify the potential loss in valuation if core IP is leaked.'),
+                l('Lesson 2: Defensible Network Architectures', 'Combating Shadow AI requires a hardened network perimeter. You must deploy advanced Data Loss Prevention (DLP) to monitor and block sensitive data flowing to known AI endpoints, while simultaneously routing traffic to secured, internal API endpoints.', [
+                    d('Endpoint Scanning', 'Identifying and categorizing all AI-related traffic leaving the corporate network.', 'Action: Deploy Shadow AI Scanners'),
+                    d('Corporate GenAI Walls', 'Establishing explicit, governed pathways for AI usage.', 'Zero-retention enterprise agreements only'),
+                    d('Sovereign Substrates', 'Running Small Language Models (SLMs) entirely within your VPC.', 'The ultimate defense against data extrusion')
+                ], 'Develop a technical remediation plan to block the top 10 most commonly used unauthorized AI tools while standing up a Sovereign Substrate alternative.'),
+                l('Lesson 3: Creating a Culture of Governed AI', 'Technology alone cannot stop Shadow AI. If the internal, governed tools are inferior to the public ones, employees will find workarounds. Executives must champion the adoption of secure AI tools and penalize the use of unauthorized ones.', [
+                    d('Amnesty and Education', 'Discovering existing Shadow AI workflows through non-punitive reporting.', 'Convert shadow workflows to governed ones'),
+                    d('The Golden Dataset', 'Providing employees with high-quality, sanitized internal data for AI use.', 'Increases the value of internal tools'),
+                    d('Ongoing Audit Cadence', 'Regularly reviewing AI usage policies and network traffic.', 'Shadow AI is a moving target')
+                ], 'Draft a comprehensive "Acceptable AI Use Policy" that clearly delineates governed tools from prohibited tools and outlines the consequences of IP extrusion.')
+            ]
+        ],
+        ['3-18', 'Technical Debt vs Technical Insolvency', 'Understanding the critical threshold where maintenance costs terminalize your engineering capability.', 
+            ['Differentiate Debt from Insolvency', 'Identify the Event Horizon', 'Calculate the PDI limit', 'Communicate collapse to the Board'],
+            [
+                l('Lesson 1: The Gradual Decay of Technical Debt', 'Technical debt is a normal, healthy part of software development. It represents the deliberate choice to optimize for speed over perfection. Like financial debt, it allows you to leverage future capacity to capture immediate market share. But it must be serviced.', [
+                    d('Linear Cost Accumulation', 'The steady increase in maintenance time as codebases grow.', 'Expected and manageable'),
+                    d('Interest Payments', 'The time spent refactoring and updating dependencies.', 'Required to prevent compounding'),
+                    d('The Velocity Drag', 'The slight, noticeable slowing of feature delivery.', 'The primary symptom of unmanaged debt')
+                ], 'Audit your backlog. What percentage of current tickets represent "interest payments" on past technical debt?'),
+                l('Lesson 2: The Event Horizon: Technical Insolvency', 'Technical Insolvency is not just "a lot of debt." It is a terminal state. It occurs when the maintenance load consumes 100% of engineering capacity, reducing feature velocity to zero. The company can no longer innovate; it can only struggle to survive.', [
+                    d('The Non-Linear Collapse', 'The point where adding new engineers actually slows development down further.', 'Brooks\' Law in action'),
+                    d('The PDI Threshold', 'When the Product Debt Index indicates that any change carries an unacceptable risk of catastrophic failure.', 'PDI > 100'),
+                    d('The Market Penalty', 'Competitors with clean architectures out-ship you 10 to 1.', 'Results in rapid loss of market share')
+                ], 'Calculate your current distance from Technical Insolvency. At current rates of debt accumulation, when will maintenance consume 100% of capacity?'),
+                l('Lesson 3: Board Communication and Remediation', 'You cannot explain Technical Insolvency to a board using engineering terms. You must explain it as a collapse of the R&D asset. Remediation requires drastic action: feature freezes, massive capital expenditure on refactoring, or complete platform replacement.', [
+                    d('The Asset Write-Down', 'Explaining that the codebase is no longer an asset, but a liability.', 'Frame in terms of lost EBITDA'),
+                    d('The Capital Injection Request', 'Securing budget specifically for remediation, not new features.', 'Requires a hard ROI calculation'),
+                    d('The Turnaround Strategy', 'Deploying the Strangler Fig pattern to systematically replace insolvent systems.', 'The only viable path back to solvency')
+                ], 'Draft a presentation to the Board of Directors explaining that a core system is nearing Technical Insolvency and requesting a 6-month feature freeze to remediate.')
             ]
         ],
     ];

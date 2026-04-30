@@ -80,4 +80,14 @@ export const trendingTermsBatch3: GlossaryTerm[] = [
         relatedTerms: ['dora-metrics', 'change-failure-rate', 'platform-engineering', 'incident-management'],
         faqs: [{ question: 'What is an error budget?', answer: 'An error budget is the acceptable amount of unreliability over a time period, derived from the SLO. If your SLO is 99.9% availability monthly, your error budget is 43.8 minutes of downtime. When the budget is exhausted, teams shift from feature work to reliability work.' }],
     },
+    {
+        title: 'Shadow AI',
+        slug: 'shadow-ai', tier: 'pillar',
+        definition: `Shadow AI refers to the unsanctioned, unmonitored use of artificial intelligence tools by employees within an enterprise. Unlike "Shadow IT" (which typically involves unauthorized SaaS subscriptions), Shadow AI involves employees pasting proprietary code, customer data, financial projections, or legal contracts into public LLMs like ChatGPT, Claude, or Gemini to "work faster."\n\nShadow AI introduces severe, irreversible risks. When sensitive corporate data is fed into a public model, it may become part of the model's training set, effectively destroying intellectual property protections, breaching NDAs, and violating compliance frameworks (GDPR, SOC 2, HIPAA).\n\nBecause Shadow AI occurs at the individual employee level, it bypasses enterprise security controls. It is a data extrusion event masquerading as a productivity hack.`,
+        whyItMatters: 'Shadow IT costs money. Shadow AI costs you your intellectual property and legal defensibility. It is currently the fastest-growing attack vector for data loss in the modern enterprise.',
+        howToMeasure: 'Deploy DLP (Data Loss Prevention) scanners that monitor for corporate IP strings hitting known LLM API endpoints or web interfaces. Track the volume of blocked requests over time.',
+        category: 'AI Governance & Verification',
+        relatedTerms: ['ai-governance', 'prompt-injection', 'ai-hallucination', 'zero-trust'],
+        faqs: [{ question: 'What is the difference between Shadow AI and Shadow IT?', answer: 'Shadow IT is an unauthorized software subscription (which costs money). Shadow AI is unauthorized data extrusion into public models (which destroys IP and breaches NDAs).' }],
+    },
 ];
