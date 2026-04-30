@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { getModule, getAllModuleSlugs, type CurriculumModule } from '@/lib/curriculum-data';
 
 // generateStaticParams removed to allow dynamic auth() rendering at request time
@@ -206,7 +206,7 @@ import path from 'path';
 export default async function DynamicModulePage({ params }: { params: Promise<{ slug: string[] }> }) {
     const { slug } = await params;
     const mod = getModule(slug.join('/'));
-    if (!mod) notFound();
+    if (!mod) redirect('/vault/curriculum/tracks');
     
     // Auth check for Stripe Access
     const { userId, sessionClaims } = await auth();

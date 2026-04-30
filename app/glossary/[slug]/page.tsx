@@ -641,7 +641,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 <div className="text-3xl mb-3">🎓</div>
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">Master Technical Execution</h3>
                                 <p className="text-sm font-semibold text-zinc-900 font-medium mb-6">Learn how top-quartile engineering organizations systematically manage {term.title.toLowerCase()}.</p>
-                                <Link href="/curriculum" className="w-full max-w-[200px] text-center py-2.5 px-4 bg-white/5 hover:bg-white/10 border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold rounded-lg transition-colors">
+                                <Link href="/vault/curriculum" className="w-full max-w-[200px] text-center py-2.5 px-4 bg-white/5 hover:bg-white/10 border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold rounded-lg transition-colors">
                                     Explore Curriculum
                                 </Link>
                             </div>

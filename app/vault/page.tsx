@@ -269,7 +269,7 @@ export default async function VaultPage() {
                                         <div className="text-2xl mb-3">📘</div>
                                         <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">Premium Curriculum</h3>
                                         <p className="text-sm font-semibold text-zinc-900 font-medium mb-4">Full access to engineering economics playbooks and teardowns.</p>
-                                        <Link href="/curriculum" className="inline-flex items-center text-xs font-bold text-cyan-900 font-extrabold font-semibold uppercase tracking-widest">
+                                        <Link href="/vault/curriculum" className="inline-flex items-center text-xs font-bold text-cyan-900 font-extrabold font-semibold uppercase tracking-widest">
                                             Access Curriculum <ChevronRight className="w-3 h-3 ml-1" />
                                         </Link>
                                     </div>

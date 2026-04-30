@@ -267,6 +267,37 @@ const nextConfig: NextConfig = {
         destination: '/tools',
         permanent: true,
       },
+      // ═══════════════════ GSC 404 REMEDIATION ═══════════════════
+      {
+        source: '/exogram/docs/:slug*',
+        destination: '/exogram',
+        permanent: true,
+      },
+      {
+        source: '/industries/:slug*',
+        destination: '/system',
+        permanent: true,
+      },
+      {
+        source: '/glossary/email-marketing-automation',
+        destination: '/glossary',
+        permanent: true,
+      },
+      {
+        source: '/glossary/artificial-intelligence',
+        destination: '/glossary',
+        permanent: true,
+      },
+      {
+        source: '/glossary/design-system',
+        destination: '/glossary',
+        permanent: true,
+      },
+      {
+        source: '/glossary/rice-framework',
+        destination: '/glossary',
+        permanent: true,
+      },
       // ═══════════════════ EXOGRAM 404 REMEDIATION ═══════════════════
       ...[
         'hiddenlayer-vs-robust-intelligence',
