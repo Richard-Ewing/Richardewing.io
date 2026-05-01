@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Technical Debt vs Technical Insolvency — Gradual Decay vs Terminal Collapse',
+    title: 'Technical Debt vs Technical Insolvency — Gradual Decay vs...',
     description: 'Technical debt is a maintenance burden. Technical insolvency is when that burden consumes 100% of engineering capacity. Learn how to calculate the insolvency date.',
     keywords: ['technical debt', 'technical insolvency', 'technical insolvency date', 'technical debt vs technical insolvency', 'innovation tax', 'engineering capacity'],
     alternates: { canonical: 'https://www.richardewing.io/compare/technical-debt-vs-technical-insolvency' },

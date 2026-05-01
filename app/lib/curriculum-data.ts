@@ -197,8 +197,30 @@ export function getModule(slug: string): CurriculumModule | undefined {
             }
         });
         
-        // Limit to top 5 most relevant to avoid overcrowding the UI
+        // Limit to top 5 most relevant answers to avoid overcrowding the UI
         mod.relatedArticles = mod.relatedArticles.slice(0, 5);
+
+        // Explicitly inject migrated Enterprise Frameworks (Beehiiv Articles) into core curriculum
+        const frameworkArticles: Record<string, string[]> = {
+            'the-subprime-code-crisis': ['9-1', '9-2', '9-3'],
+            'the-innovation-tax-audit': ['9-1', '14-1'],
+            'generative-ai-margin-squeeze-saas-cogs': ['11-1', '14-3'],
+            'autonomous-ai-agent-deterministic-control-plane': ['19-1', '19-2', '21-1'],
+            'b2b-saas-coordination-tax-saas-engineering-margins': ['6-1', '14-1'],
+            'the-product-p-l-test-why-your-ai-feature-is-bleeding-cash': ['1-1', '11-4'],
+            'what-a-product-economist-actually-does': ['6-1', '13-1']
+        };
+
+        Object.entries(frameworkArticles).forEach(([articleSlug, moduleIds]) => {
+            if (moduleIds.includes(mod!.moduleId)) {
+                // Ensure array exists and push to the TOP of the related articles list so it is highly visible
+                mod!.relatedArticles = mod!.relatedArticles || [];
+                const articleUrl = `/blog/${articleSlug}`;
+                if (!mod!.relatedArticles.includes(articleUrl)) {
+                    mod!.relatedArticles.unshift(articleUrl);
+                }
+            }
+        });
     }
 
     return mod;

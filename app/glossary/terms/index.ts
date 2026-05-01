@@ -34,6 +34,7 @@ import { orphanFixTerms } from './orphan-fix-batch';
 import { trendingTerms2026 } from './trending-2026';
 import { trendingTermsBatch2 } from './trending-2026-batch2';
 import { trendingTermsBatch3 } from './trending-2026-batch3';
+import { trendingTermsBatch4 } from './trending-2026-batch4';
 import { highVolumeTerms } from './high-volume';
 import { aiToolsTerms } from './ai-tools';
 import { moreTerms } from './more-terms';
@@ -85,6 +86,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...trendingTermsBatch2,
     // Trending batch 3
     ...trendingTermsBatch3,
+    // Trending batch 4 (Beehiiv specific terms)
+    ...trendingTermsBatch4,
     // High-volume search terms
     ...highVolumeTerms,
     // AI tools & frameworks

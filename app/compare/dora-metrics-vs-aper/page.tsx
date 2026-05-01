@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'DORA Metrics vs APER — Operational Velocity vs Economic Yield',
+    title: 'DORA Metrics vs APER — Operational Velocity vs Economic Y...',
     description: 'DORA Metrics measure how fast engineers push code. APER (Annualized Productivity-to-Engineering Ratio) measures how much economic value that code generates.',
     keywords: ['dora metrics', 'aper', 'revenue per engineer', 'engineering productivity', 'dora metrics vs aper', 'engineering metrics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/dora-metrics-vs-aper' },
