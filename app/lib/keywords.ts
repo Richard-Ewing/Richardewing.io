@@ -669,13 +669,14 @@ export const TRENDING_FUTURE = [
 // CATEGORY 17: Richard Ewing's Branded & Proprietary Terms
 // ---------------------------------------------------------------------------
 export const BRANDED = [
-    'Richard Ewing', 'who is Richard Ewing', 'Richard Ewing product economist',
+    'Richard Ewing', 'who is Richard Ewing', 'Richard Ewing AI economist',
     'Richard Ewing AI auditor', 'Richard Ewing Exogram', 'Richard Ewing consultant',
     'Richard Ewing CIO.com', 'Richard Ewing Built In', 'Richard Ewing Foundry',
     'Richard Ewing technology advisor', 'Richard Ewing board advisor',
     'Richard Ewing fractional CTO', 'Richard Ewing engineering audit',
     'Richard Ewing AI cost', 'Richard Ewing SaaS', 'Richard Ewing startup',
     'product economist', 'The Product Economist', 'product economist framework',
+    'AI economist', 'The AI Economist', 'AI economist framework', 'AI economics',
     'product economist methodology', 'product economist tools',
     'Exogram', 'Exogram AI', 'exogram.ai', 'Exogram verification',
     'Exogram admissibility', 'Exogram hallucination prevention',
@@ -691,6 +692,8 @@ export const BRANDED = [
     'EAAP', 'Exogram Action Admissibility Protocol',
     'product economics doctrine', 'doctrine of product economics',
     'R&D Capital Audit', 'AI Capital Audit', 'engineering capital audit',
+    'The Turing Tax', 'Synthetic COGS', 'Power User Liability',
+    'Deterministic Control Layer', 'Compute Reseller Trap',
 ];
 
 // ---------------------------------------------------------------------------

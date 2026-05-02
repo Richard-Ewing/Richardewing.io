@@ -248,18 +248,6 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
-      // Pattern 4: /curriculum/ai-economics/:slug → /vault/curriculum/tracks
-      {
-        source: '/curriculum/ai-economics/:slug*',
-        destination: '/vault/curriculum/tracks',
-        permanent: true,
-      },
-      // Pattern 5: /curriculum/engineering-economics/:slug → /vault/curriculum/tracks
-      {
-        source: '/curriculum/engineering-economics/:slug*',
-        destination: '/vault/curriculum/tracks',
-        permanent: true,
-      },
       // Pattern 6: /blog/:slug (REMOVED - Blog is active again)
       // Pattern 7: /tools/cloud-finops-calculator → /tools (deleted tool)
       {

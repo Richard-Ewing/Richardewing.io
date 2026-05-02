@@ -97,6 +97,11 @@ populateTracks15to18(modules);
 import { populateTracks19to23 } from './curriculum-tracks-new-19-23';
 populateTracks19to23(modules);
 
+// ═══════════════════ NEW TRACK 24 ═══════════════════
+// Track 24: AI Economics & Margin Engineering
+import { populateTrack24 } from './curriculum-tracks-new-24';
+populateTrack24(modules);
+
 // ═══════════════════ LEGACY TRACK CONTENT (kept on disk for future restoration) ═══════════════════
 // The following files exist on disk but are NOT imported into the active registry:
 // - curriculum-tracks-5-6.ts (Track 5 DevOps — killed; Track 6 PM — kept above)

@@ -19,7 +19,7 @@ export default function Home() {
               '@id': 'https://www.richardewing.io/#website',
               'url': 'https://www.richardewing.io/',
               'name': 'Richard Ewing | Intelligence Suite',
-              'description': 'Product Economist and AI Capital Auditor. Founder of Exogram.',
+              'description': 'AI Economist and AI Capital Auditor. Founder of Exogram.',
             },
             {
               '@type': 'Organization',

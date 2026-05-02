@@ -28,10 +28,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.richardewing.io'),
   title: {
-    default: 'Richard Ewing — Product Economist & AI Auditor',
+    default: 'Richard Ewing — AI Economist & AI Auditor',
     template: '%s | Richard Ewing'
   },
-  description: 'Product Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram. Free tools, frameworks, and advisory services.',
+  description: 'AI Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram. Free tools, frameworks, and advisory services.',
   keywords: homepageKeywords,
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
 
   // Open Graph
   openGraph: {
-    title: 'Richard Ewing — Product Economist & AI Auditor',
-    description: 'Product Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram.',
+    title: 'Richard Ewing — AI Economist & AI Auditor',
+    description: 'AI Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram.',
     siteName: 'Richard Ewing',
     type: 'website',
     locale: 'en_US',
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'Richard Ewing — Product Economist & AI Auditor',
-    description: 'Product Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram.',
+    title: 'Richard Ewing — AI Economist & AI Auditor',
+    description: 'AI Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram.',
     images: ['https://www.richardewing.io/og-image-home.png'],
   },
 
@@ -113,7 +113,7 @@ export default function RootLayout({
             '@type': 'WebSite',
             name: 'Richard Ewing',
             url: 'https://www.richardewing.io',
-            description: 'Product Economist & AI Capital Auditor. R&D capital audit, technical debt diagnostics, AI unit economics.',
+            description: 'AI Economist & AI Capital Auditor. R&D capital audit, technical debt diagnostics, AI unit economics.',
             potentialAction: {
               '@type': 'SearchAction',
               target: 'https://www.richardewing.io/glossary?q={search_term_string}',
@@ -148,12 +148,12 @@ export default function RootLayout({
             name: 'Richard Ewing Advisory',
             url: 'https://www.richardewing.io',
             logo: 'https://www.richardewing.io/assets/headshot.jpg',
-            description: 'Product Economics advisory firm specializing in R&D capital audits, technical debt diagnostics, and AI unit economics.',
+            description: 'AI Economics advisory firm specializing in R&D capital audits, technical debt diagnostics, and AI unit economics.',
             founder: {
               '@type': 'Person',
               '@id': 'https://www.richardewing.io/#person',
               name: 'Richard Ewing',
-              jobTitle: 'Product Economist',
+              jobTitle: 'AI Economist',
               url: 'https://www.richardewing.io/principal',
             },
             sameAs: [
