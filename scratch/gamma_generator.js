@@ -7,54 +7,54 @@ const BASE_URL = 'https://public-api.gamma.app/v1.0';
 
 const docs = [
     {
-        name: '1_The_Innovation_Tax_Audit.pdf',
-        inputText: `Topic: The Innovation Tax and Technical Insolvency.
+        name: '1_AI_Margin_Engineering_Audit.pdf',
+        inputText: `Topic: The AI Margin Engineering Audit and Technical Insolvency.
         
 Context: This is an executive briefing for CFOs and CTOs based on Richard Ewing's publications in CIO.com and BuiltIn. 
 Content to include:
-- The 68% Problem: 68% of engineering spend goes to maintenance, not innovation.
-- The concept of "Zombie Assets": features that cost money to maintain but provide no value.
-- The Technical Insolvency Date: the point where maintenance consumes 100% of engineering capacity.
-- The consequences of technical debt on enterprise valuation and attrition.
+- The End of Zero Marginal Cost Software: How generative AI introduces variable-cost "Synthetic COGS" that destroy SaaS gross margins.
+- The Turing Tax: Why companies overpay for generalized LLMs (like GPT-4) when deterministic execution or SLMs would suffice.
+- The Technical Insolvency Date: the point where maintenance and API compute costs consume 100% of engineering capacity.
+- The consequences of uncontrolled inference costs on enterprise valuation.
 
 CRITICAL INSTRUCTIONS FOR GENERATION:
 - Create a highly professional, board-ready presentation.
 - Use a premium, corporate aesthetic. 
-- Withhold the actual mathematical formula for calculating the "Product Debt Index (PDI)". 
-- Instead of giving away the formula, create a cliffhanger: Tell the reader that calculating their exact PDI and Insolvency Date requires a custom architectural audit, and direct them to book a "Diagnostic Strategy Session" at richardewing.io.`
+- Withhold the actual mathematical formula for calculating the "AI Unit Economics Benchmark (AUEB)". 
+- Instead of giving away the formula, create a cliffhanger: Tell the reader that calculating their exact exposure requires a custom architectural audit, and direct them to book a "Diagnostic Strategy Session" with Richard Ewing, AI Economist, at richardewing.io.`
     },
     {
-        name: '2_AI_Unit_Economics_Matrix.pdf',
-        inputText: `Topic: AI Unit Economics and Model Collapse.
+        name: '2_Deterministic_Control_Architecture.pdf',
+        inputText: `Topic: Deterministic Control Layers and Escaping the Compute Reseller Trap.
         
-Context: This is an executive briefing based on Richard Ewing's publications in Hackernoon and MindTheProduct.
+Context: This is an executive briefing based on Richard Ewing's "AI Economist" frameworks.
 Content to include:
-- ROAI (Return on AI Investment) vs ROI. Why CFOs are killing AI pilots in 2026.
-- The Margin Disintegration Problem: How per-token API costs destroy standard SaaS gross margins.
+- Power User Liability: In an AI-native world, success can bankrupt you if usage is not capped or routed correctly.
+- The Compute Reseller Trap: Why simply wrapping an OpenAI API offers zero defensibility and terrible margins.
+- The Deterministic Control Layer: The immutable governance architecture (Semantic Caching, Intent Routing, Admissibility Guardrails) required to protect margins.
 - The 10x Rule: An AI feature must generate 10x its inference cost in value.
-- Model Collapse: Why AI is a depreciating CapEx asset that requires continuous human data funding.
 
 CRITICAL INSTRUCTIONS FOR GENERATION:
 - Create a highly professional, board-ready presentation.
 - Use a premium, corporate aesthetic.
 - Withhold the exact "Model Routing Algorithms" and "Semantic Caching Architectures" that solve this problem.
-- Instead, create a cliffhanger: Tell the reader that implementing Tiered Model Routing to save 75% on inference costs requires proprietary economic modeling, and direct them to book an "AI Economics Review" at richardewing.io.`
+- Instead, create a cliffhanger: Tell the reader that implementing Tiered Model Routing to save 75% on inference costs requires proprietary economic modeling, and direct them to enroll in Track 24 at richardewing.io.`
     },
     {
-        name: '3_MA_Technical_Diligence.pdf',
-        inputText: `Topic: Private Equity M&A Technical Due Diligence.
+        name: '3_Private_Equity_AI_Diligence.pdf',
+        inputText: `Topic: Private Equity M&A Due Diligence in the AI Era.
         
-Context: An executive cheatsheet for Private Equity partners and CFOs assessing software acquisitions.
+Context: An executive cheatsheet for Private Equity partners and CFOs assessing AI and software acquisitions.
 Content to include:
-- The Reality of M&A Synergy: Why software integrations fail due to hidden architectural incompatibilities.
-- The "Big Three" Deal Breakers: Identity Silos, Data Model Gravity, and Compliance CapEx Shock.
-- Why PE firms lose millions when due diligence stops at revenue metrics and ignores engineering health.
+- The Reality of AI Synergy: Why AI acquisitions fail due to hidden architectural incompatibilities and massive Synthetic COGS.
+- The "Big Three" Deal Breakers: Probabilistic Hallucination Risk, Data Model Gravity, and Compliance CapEx Shock.
+- Why PE firms lose millions when due diligence stops at revenue metrics and ignores the underlying inference unit economics.
 
 CRITICAL INSTRUCTIONS FOR GENERATION:
 - Create a highly professional, board-ready presentation.
 - Use a premium, corporate aesthetic.
-- Withhold the specific "Technical Debt Discount Formula" used to adjust the Enterprise Purchase Price.
-- Instead, create a cliffhanger: Tell the reader that accurately valuing technical debt to negotiate a lower purchase multiple requires an expert "R&D Audit", and direct them to contact Richard Ewing at richardewing.io for their next acquisition.`
+- Withhold the specific "Technical Debt Discount Formula" used to adjust the Enterprise Purchase Price based on AI liabilities.
+- Instead, create a cliffhanger: Tell the reader that accurately valuing AI technical debt to negotiate a lower purchase multiple requires an expert "R&D Capital Audit", and direct them to contact Richard Ewing, AI Economist, at richardewing.io for their next acquisition.`
     }
 ];
 

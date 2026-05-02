@@ -36,7 +36,7 @@ export default function ToolkitSuccessPage() {
                         </div>
                         
                         <p className="text-zinc-600 mb-8 font-medium leading-relaxed">
-                            This ZIP file contains the R&D Audit Checklist, the AI Unit Economics (AUEB) Matrix template, and the M&A Technical Diligence Cheatsheet in high-resolution PDF format.
+                            This ZIP file contains the AI Margin Engineering Audit, the Deterministic Control Architecture matrix, and the Private Equity AI Diligence cheatsheet in high-resolution PDF format.
                         </p>
 
                         {/* Replace with actual zip file or PDF path when ready */}
