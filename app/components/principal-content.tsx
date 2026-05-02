@@ -149,7 +149,7 @@ export default function PrincipalContent() {
                                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 mb-2">Richard Ewing</h1>
                                 <div className="font-mono text-sm font-semibold text-zinc-900 font-medium uppercase tracking-widest mb-4">Product Economist</div>
                                 <p className="text-zinc-950 leading-relaxed text-base sm:text-lg">
-                                    I help companies understand software, product, and AI decisions through the lens of <span className="text-zinc-950 font-bold">enterprise economics</span>. 
+                                    I operate as <span className="text-zinc-950 font-bold">The Product Economist</span>. The AI Economist is how I apply that system to AI.
                                     <br/><br/>
                                     I do not manage backlogs. I manage P&Ls. I sit at the exact intersection of CPO thinking, CFO rigor, and CTO reality.
                                 </p>

@@ -65,6 +65,7 @@ export default function BriefingsPage() {
                         <span className="text-purple-900 font-extrabold font-semibold">Briefings.</span>
                     </h1>
                     <p className="text-zinc-950 font-bold text-lg mb-8 max-w-2xl">
+                        <strong>The AI Economist</strong> — Product Economics applied to AI.<br/><br/>
                         Dense, actionable intelligence for leaders who don't have time for
                         "thought leadership." <span className="text-zinc-900">Read time: 5-10 minutes each.</span>
                     </p>

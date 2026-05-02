@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.richardewing.io'),
   title: {
-    default: 'Richard Ewing — Product Economist | AI Economics Domain',
+    default: 'Richard Ewing — Product Economist | AI Economist',
     template: '%s | Richard Ewing'
   },
   description: 'The Product Economist framework applied to AI. I audit R&D spend, diagnose AI unit economics, and surface capital risks. Founder of Exogram. Free tools, frameworks, and advisory services.',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
   // Open Graph
   openGraph: {
-    title: 'Richard Ewing — Product Economist | AI Economics Domain',
+    title: 'Richard Ewing — Product Economist | AI Economist',
     description: 'The Product Economist framework applied to AI. I audit R&D spend, diagnose AI unit economics, and surface capital risks. Founder of Exogram.',
     siteName: 'Richard Ewing',
     type: 'website',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'Richard Ewing — Product Economist | AI Economics Domain',
+    title: 'Richard Ewing — Product Economist | AI Economist',
     description: 'The Product Economist framework applied to AI. I audit R&D spend, diagnose AI unit economics, and surface capital risks. Founder of Exogram.',
     images: ['https://www.richardewing.io/og-image-home.png'],
   },
