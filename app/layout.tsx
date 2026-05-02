@@ -28,10 +28,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.richardewing.io'),
   title: {
-    default: 'Richard Ewing — AI Economist & AI Auditor',
+    default: 'Richard Ewing — Product Economist & AI Economist',
     template: '%s | Richard Ewing'
   },
-  description: 'AI Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram. Free tools, frameworks, and advisory services.',
+  description: 'Product Economist, AI Economist & Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram. Free tools, frameworks, and advisory services.',
   keywords: homepageKeywords,
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
 
   // Open Graph
   openGraph: {
-    title: 'Richard Ewing — AI Economist & AI Auditor',
-    description: 'AI Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram.',
+    title: 'Richard Ewing — Product Economist & AI Economist',
+    description: 'Product Economist, AI Economist & Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram.',
     siteName: 'Richard Ewing',
     type: 'website',
     locale: 'en_US',
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'Richard Ewing — AI Economist & AI Auditor',
-    description: 'AI Economist & AI Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram.',
+    title: 'Richard Ewing — Product Economist & AI Economist',
+    description: 'Product Economist, AI Economist & Capital Auditor. I audit R&D spend and surface capital risks. Founder of Exogram.',
     images: ['https://www.richardewing.io/og-image-home.png'],
   },
 
