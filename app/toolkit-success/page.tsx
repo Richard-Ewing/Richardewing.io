@@ -36,7 +36,7 @@ export default function ToolkitSuccessPage() {
                         </div>
                         
                         <p className="text-zinc-600 mb-8 font-medium leading-relaxed">
-                            This ZIP file contains the AI Margin Engineering Audit, the Deterministic Control Architecture matrix, and the Private Equity AI Diligence cheatsheet in high-resolution PDF format.
+                            This ZIP file contains five executive resources in high-resolution PDF format: the AI Margin Engineering Audit, the Deterministic Control Architecture matrix, the Private Equity AI Diligence cheatsheet, The Margin Collapse Postmortem, and the guide to Building an Internal AI Economics Practice.
                         </p>
 
                         {/* Replace with actual zip file or PDF path when ready */}

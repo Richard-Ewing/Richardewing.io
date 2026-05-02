@@ -86,7 +86,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                 <div className="my-12 p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5 text-center">
                     <p className="text-zinc-950 font-semibold mb-2">Like this analysis?</p>
                     <p className="text-sm font-semibold text-zinc-900 font-medium mb-4">Get the weekly engineering economics briefing — one email, every Monday.</p>
-                    <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
+                    <a href="https://theaieconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
                         className="inline-block px-6 py-2.5 rounded-lg bg-gradient-to-r from-cyan-600 to-violet-600 text-zinc-950 font-semibold font-bold text-sm font-semibold hover:opacity-90 transition-opacity">
                         Subscribe Free →
                     </a>

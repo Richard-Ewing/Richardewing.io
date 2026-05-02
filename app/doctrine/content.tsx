@@ -204,7 +204,7 @@ export default function DoctrineContent() {
                     <div className="mt-8 pt-6 border-t border-zinc-400">
                         <p className="text-zinc-950 text-xs font-bold uppercase tracking-widest mb-4">Not Ready for intervention?</p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-zinc-500 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-zinc-900">
+                            <a href="https://theaieconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-zinc-500 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-zinc-900">
                                 Subscribe Free
                             </a>
                             <Link href="/tools" className="px-6 py-3 border border-zinc-500 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-zinc-900">

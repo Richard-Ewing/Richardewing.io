@@ -195,7 +195,7 @@ export default function BlogContent() {
                         <p className="text-zinc-900 text-sm font-semibold mb-6 max-w-md mx-auto">
                             One email per week with the engineering economics analysis nobody else is doing. Join 2,000+ executives and engineering leaders.
                         </p>
-                        <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
+                        <a href="https://theaieconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
                             className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-violet-600 text-zinc-950 font-semibold font-bold text-sm font-semibold hover:opacity-90 transition-opacity">
                             Subscribe Free →
                         </a>

@@ -1,4 +1,4 @@
-﻿
+
 const profiles = [
     {
         publication: 'CIO.com',
@@ -43,8 +43,8 @@ const profiles = [
     {
         publication: 'Beehiiv',
         role: 'Publisher',
-        description: 'The Product Economist — Executive Briefings.',
-        url: 'https://theproducteconomist.beehiiv.com',
+        description: 'The Product Economist � Executive Briefings.',
+        url: 'https://theaieconomist.beehiiv.com',
         logo: '/logos/beehiiv-logo.svg',
         width: 80,
         articleCount: null,

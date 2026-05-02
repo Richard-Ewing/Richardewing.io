@@ -1,4 +1,4 @@
-ï»¿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { GraduationCap, BookOpen, Award, Users, ArrowRight, CheckCircle } from 'lucide-react';
 
@@ -50,12 +50,12 @@ export default function CertificationPage() {
                         Master the methodology. Earn the title.
                     </p>
                     <p className="text-zinc-950 font-bold text-sm font-semibold max-w-lg mx-auto mb-8">
-                        48 hours of instruction Â· 12 modules Â· Live capstone review Â· Credential valid for 2 years
+                        48 hours of instruction · 12 modules · Live capstone review · Credential valid for 2 years
                     </p>
 
                     <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-amber-500/10 border border-amber-500/20">
                         <Award className="w-5 h-5 text-amber-400" />
-                        <span className="text-amber-400 font-bold text-sm">Cohort 1: Q3 2026 â€” Waitlist Open</span>
+                        <span className="text-amber-400 font-bold text-sm">Cohort 1: Q3 2026 — Waitlist Open</span>
                     </div>
                 </section>
 
@@ -101,7 +101,7 @@ export default function CertificationPage() {
 
                     <div className="card p-8 md:p-12 border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-transparent text-center">
                         <div className="text-3xl font-bold text-zinc-950 mb-2">$1,500</div>
-                        <p className="text-zinc-950 text-sm font-semibold mb-6">Per certification Â· Payment plans available</p>
+                        <p className="text-zinc-950 text-sm font-semibold mb-6">Per certification · Payment plans available</p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a
                                 href="/api/buy/certification"
@@ -109,10 +109,10 @@ export default function CertificationPage() {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all"
                             >
-                                Reserve Your Spot â€” $1,500 <ArrowRight className="w-4 h-4" />
+                                Reserve Your Spot — $1,500 <ArrowRight className="w-4 h-4" />
                             </a>
                             <a
-                                href="https://theproducteconomist.beehiiv.com/subscribe"
+                                href="https://theaieconomist.beehiiv.com/subscribe"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-6 py-3 border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all"

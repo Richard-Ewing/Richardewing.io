@@ -70,7 +70,7 @@ export default function BriefingsPage() {
                     </p>
 
                     <a
-                        href="https://theproducteconomist.beehiiv.com/subscribe"
+                        href="https://theaieconomist.beehiiv.com/subscribe"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 transition-colors shadow-lg shadow-purple-900/20"
@@ -129,12 +129,12 @@ export default function BriefingsPage() {
                         Full archive on Beehiiv:
                     </p>
                     <a
-                        href="https://theproducteconomist.beehiiv.com"
+                        href="https://theaieconomist.beehiiv.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-purple-900 font-extrabold font-semibold hover:text-purple-900 font-extrabold font-semibold transition-colors border-b border-purple-500/30 hover:border-purple-400"
                     >
-                        theproducteconomist.beehiiv.com →
+                        theaieconomist.beehiiv.com →
                     </a>
                 </div>
             </ScrollReveal>

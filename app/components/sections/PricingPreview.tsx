@@ -24,7 +24,7 @@ const PricingPreview = () => {
                             <p className="text-zinc-950 text-sm font-semibold mb-4">Newsletter + Tools</p>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-50 border border-cyan-200 text-cyan-900 font-extrabold uppercase text-xs font-bold py-2 rounded hover:bg-cyan-100 transition-all">
+                            <a href="https://theaieconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-cyan-50 border border-cyan-200 text-cyan-900 font-extrabold uppercase text-xs font-bold py-2 rounded hover:bg-cyan-100 transition-all">
                                 Subscribe Free
                             </a>
                             <Link href="/tools" className="block w-full text-center bg-zinc-50 border border-zinc-400 text-zinc-950 font-bold uppercase text-xs font-bold py-2 rounded hover:bg-zinc-100 transition-all">

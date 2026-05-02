@@ -8,7 +8,7 @@ interface ToolGateCTAProps {
 }
 
 export function ToolGateCTA({ toolName }: ToolGateCTAProps) {
-    const beehiivUrl = 'https://theproducteconomist.beehiiv.com/subscribe';
+    const beehiivUrl = 'https://theaieconomist.beehiiv.com/subscribe';
 
     return (
         <div className="relative mt-20 mb-10 overflow-hidden rounded-2xl border-2 border-emerald-200 bg-white shadow-xl p-8 sm:p-10">

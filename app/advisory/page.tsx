@@ -65,7 +65,7 @@ export default function AdvisoryPage() {
                                     <div className="text-2xl font-mono text-white mb-1">Free Download</div>
                                     <div className="text-xs text-zinc-400 font-medium">Instantly sent to your inbox.</div>
                                 </div>
-                                <form action="https://theproducteconomist.beehiiv.com/subscribe" method="GET" target="_blank" className="space-y-4">
+                                <form action="https://theaieconomist.beehiiv.com/subscribe" method="GET" target="_blank" className="space-y-4">
                                     <input type="hidden" name="redirect" value="https://www.richardewing.io/toolkit-success" />
                                     <div>
                                         <input 

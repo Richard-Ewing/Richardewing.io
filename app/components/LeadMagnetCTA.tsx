@@ -8,7 +8,7 @@ interface LeadMagnetCTAProps {
 }
 
 export function LeadMagnetCTA({ variant = 'full' }: LeadMagnetCTAProps) {
-    const beehiivUrl = 'https://theproducteconomist.beehiiv.com/subscribe';
+    const beehiivUrl = 'https://theaieconomist.beehiiv.com/subscribe';
 
     if (variant === 'compact') {
         return (

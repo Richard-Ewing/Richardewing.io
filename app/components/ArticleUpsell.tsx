@@ -18,7 +18,7 @@ export default function ArticleUpsell({ productId, headline, description }: Arti
     const isGuide = productId.includes('guide');
     const label = isGuide ? `Buy Guide — $${product.price / 100}` : `Buy Track — $${product.price / 100}`;
     const icon = isGuide ? 'file' : 'lock';
-    const beehiivUrl = 'https://theproducteconomist.beehiiv.com/subscribe';
+    const beehiivUrl = 'https://theaieconomist.beehiiv.com/subscribe';
 
     return (
         <div className="my-16 relative">

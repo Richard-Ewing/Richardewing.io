@@ -346,7 +346,7 @@ export default function AiCoursesPage() {
                             Which sections to skip. What to focus on. How each course maps to real capital decisions.
                             <br /><span className="text-zinc-900">One email. No spam.</span>
                         </p>
-                        <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
+                        <a href="https://theaieconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
                             className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 mb-4 transition-colors font-grotesk">
                             Subscribe for Course Notes →
                         </a>

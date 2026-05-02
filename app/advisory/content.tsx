@@ -193,7 +193,7 @@ export default function AdvisoryContent() {
                             <p className="text-zinc-900 text-sm font-semibold mt-2">(Newsletter + Tools)</p>
                         </div>
                         <div className="flex gap-4">
-                            <a href="https://theproducteconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs font-bold rounded hover:bg-cyan-400 transition-colors">
+                            <a href="https://theaieconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs font-bold rounded hover:bg-cyan-400 transition-colors">
                                 Subscribe Free
                             </a>
                             <Link href="/tools" className="px-6 py-3 bg-transparent border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold rounded hover:bg-white/10 transition-colors">

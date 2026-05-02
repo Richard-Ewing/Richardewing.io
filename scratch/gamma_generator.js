@@ -55,6 +55,36 @@ CRITICAL INSTRUCTIONS FOR GENERATION:
 - Use a premium, corporate aesthetic.
 - Withhold the specific "Technical Debt Discount Formula" used to adjust the Enterprise Purchase Price based on AI liabilities.
 - Instead, create a cliffhanger: Tell the reader that accurately valuing AI technical debt to negotiate a lower purchase multiple requires an expert "R&D Capital Audit", and direct them to contact Richard Ewing, AI Economist, at richardewing.io for their next acquisition.`
+    },
+    {
+        name: '4_The_Margin_Collapse_Postmortem.pdf',
+        inputText: `Topic: The Margin Collapse Postmortem: A Lived Experience.
+        
+Context: A real-world case study and autopsy of a B2B SaaS company that integrated a generalized LLM and watched their gross margins collapse from 85% to 40% in six months.
+Content to include:
+- WHAT happened: The company celebrated record engagement, but power users bankrupt them by triggering thousands of un-cached, $0.05 API calls daily.
+- WHY it happened: They treated AI as a zero-marginal-cost software feature instead of a variable-cost supply chain. They paid the "Turing Tax" for every simple query.
+- HOW to fix it: The emergency intervention protocol. How to sever the API bleed using a Deterministic Control Layer and semantic caching.
+
+CRITICAL INSTRUCTIONS FOR GENERATION:
+- Create a highly professional, board-ready presentation.
+- Use a premium, corporate aesthetic. Tone should be forensic, analytical, and grounded in lived experience.
+- End with a call to action: "Don't become the next postmortem. Let Richard Ewing audit your AI infrastructure before your board asks why margins are collapsing."`
+    },
+    {
+        name: '5_Building_an_AI_Economics_Practice.pdf',
+        inputText: `Topic: Building an Internal AI Economics Practice.
+        
+Context: A practical "what, why, and how" guide for CTOs and engineering leaders to establish a culture of AI Economics inside their organization.
+Content to include:
+- WHAT is an AI Economics Practice: A discipline that treats software engineering as an economic system, bridging the gap between the CFO and the architecture team.
+- WHY you need one: Because without it, you will fall into the Compute Reseller Trap and suffer from infinite Power User Liability.
+- HOW to start: Step 1: Calculate your AUEB (AI Unit Economics Benchmark). Step 2: Identify your Turing Tax. Step 3: Implement the Evergreen Ratio for all new AI feature proposals.
+
+CRITICAL INSTRUCTIONS FOR GENERATION:
+- Create a highly professional, board-ready presentation.
+- Use a premium, corporate aesthetic. Tone should be instructional and authoritative.
+- End with a call to action: "The fastest way to establish this discipline is to learn from the founder of the framework. Enroll in Track 24: AI Economics & Margin Engineering at richardewing.io."`
     }
 ];
 

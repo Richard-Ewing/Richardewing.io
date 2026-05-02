@@ -75,7 +75,7 @@ export default function BenchmarkPage() {
                                 <h3 className="text-xl font-bold text-zinc-950 mb-2">Download Free Report</h3>
                                 <p className="text-zinc-950 text-sm font-semibold mb-6">Enter your email to receive the full PDF report.</p>
                                 <a
-                                    href="https://theproducteconomist.beehiiv.com/subscribe"
+                                    href="https://theaieconomist.beehiiv.com/subscribe"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all"
