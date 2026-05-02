@@ -41,8 +41,8 @@ export default function ToolkitSuccessPage() {
 
                         {/* Replace with actual zip file or PDF path when ready */}
                         <a 
-                            href="/Executive_Diagnostic_Toolkit.zip" 
-                            download="Executive_Diagnostic_Toolkit.zip"
+                            href="/Executive_Diagnostic_Toolkit_v2.zip" 
+                            download="Executive_Diagnostic_Toolkit_v2.zip"
                             className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-violet-600 text-white font-bold text-lg hover:bg-violet-700 transition-all font-grotesk"
                         >
                             <Download className="w-6 h-6" /> Download Toolkit (.zip)
