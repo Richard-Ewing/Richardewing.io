@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary',
         title: 'Published Profiles | Richard Ewing',
-        description: 'Expert contributor at CIO.com, Built In, Mind the Product. Product Economist & AI Capital Auditor.',
+        description: 'Expert contributor at CIO.com, Built In, Mind the Product. Product Economist (AI Economics Domain).',
     },
 };
 

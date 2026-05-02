@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Richard Ewing — Product Economist & AI Capital Auditor',
-        description: 'Founder of Exogram. I audit R&D spend and surface the capital risks your metrics don\'t show.',
+        title: 'Richard Ewing — Product Economist (AI Economics Domain)',
+        description: 'Founder of Exogram. The Product Economist specializing in AI unit economics and R&D capital audits.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };
@@ -28,8 +28,8 @@ const personSchema = {
     "@type": "Person",
     "@id": "https://www.richardewing.io/#person",
     "name": "Richard Ewing",
-    "jobTitle": ["Product Economist", "AI Capital Auditor"],
-    "description": "Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram, the verification infrastructure for AI.",
+    "jobTitle": "Product Economist",
+    "description": "Product Economist specializing in AI economics. Identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram.",
     "url": "https://www.richardewing.io",
     "image": "https://www.richardewing.io/assets/images/headshot.jpg",
     "sameAs": [

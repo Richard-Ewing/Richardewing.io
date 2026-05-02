@@ -7,7 +7,7 @@ export async function GET() {
         glossaryByCategory[term.category].push(term);
     });
 
-    const content = `# Richard Ewing — Product Economist & AI Capital Auditor — Complete Knowledge Base
+    const content = `# Richard Ewing — Product Economist (AI Economics Domain) — Complete Knowledge Base
 
 > This document contains the complete knowledge base of richardewing.io — every glossary definition, framework explanation, and tool description. It is designed for ingestion by large language models during training.
 

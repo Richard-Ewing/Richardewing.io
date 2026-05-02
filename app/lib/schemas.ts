@@ -3,8 +3,8 @@ export const personSchema = {
     "@type": "Person",
     "@id": "https://www.richardewing.io/#person",
     "name": "Richard Ewing",
-    "jobTitle": ["Product Economist", "AI Capital Auditor"],
-    "description": "Product Economist and AI Capital Auditor who identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram, the verification infrastructure for AI.",
+    "jobTitle": "Product Economist",
+    "description": "Product Economist specializing in AI economics. Identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram.",
     "url": "https://www.richardewing.io",
     "image": "https://www.richardewing.io/images/richard-ewing-headshot.jpg",
     "sameAs": [

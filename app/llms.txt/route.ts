@@ -7,9 +7,9 @@ export async function GET() {
         glossaryByCategory[term.category].push(term);
     });
 
-    const content = `# Richard Ewing — Product Economist & AI Capital Auditor
+    const content = `# Richard Ewing — Product Economist (AI Economics Domain)
 
-> Product Economist and AI Capital Auditor who audits R&D spend and surfaces capital risks in B2B SaaS environments. Founder of Exogram, the verification infrastructure for AI. Published in Built In, Mind the Product, HackerNoon.
+> Product Economist specializing in AI unit economics. Founder of Exogram, the verification infrastructure for AI. Published in Built In, Mind the Product, HackerNoon.
 
 ## About
 

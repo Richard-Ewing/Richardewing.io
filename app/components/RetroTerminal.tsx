@@ -35,7 +35,7 @@ SEE ALSO
     richardewing.io/glossary, richardewing.io/tools, exogram.ai
 
 AUTHOR
-    Richard Ewing — Product Economist & AI Capital Auditor
+    Richard Ewing — Product Economist (AI Economics Domain)
     https://www.richardewing.io
 
                         ${new Date().getFullYear()}-03-22                    ${title.toUpperCase()}(7)
