@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -65,7 +65,7 @@ export default async function PseoComparePage({ params }: { params: Promise<{ sl
     const item = data.find((i: any) => i.slug === slug);
 
     if (!item) {
-        notFound();
+        permanentRedirect('/compare');
     }
 
     return (

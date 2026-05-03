@@ -1,5 +1,5 @@
 import { Metadata, ResolvingMetadata } from 'next';
-import { notFound } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 import { COMBAT_SEO_MATRIX } from '../../../../lib/combat-seo';
 import Link from 'next/link';
 import { ArrowLeft, Target, ShieldCheck, Zap } from 'lucide-react';
@@ -55,7 +55,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
     const match = getMatch(resolvedParams.toolSlug, resolvedParams.competitorSlug);
 
     if (!match) {
-        notFound();
+        permanentRedirect('/tools');
     }
 
     const { tool, competitor } = match;

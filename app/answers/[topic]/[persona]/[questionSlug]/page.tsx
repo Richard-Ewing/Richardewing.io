@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 import Link from 'next/link';
 import { SPOKE_MATRIX, Persona, getAllSpokeRoutes } from '../../../../lib/spoke-data';
 import ArticleUpsell from '../../../../components/ArticleUpsell';
@@ -70,13 +70,13 @@ export default async function AnswerPage({ params }: Props) {
     const p = await params;
     
     const topicData = SPOKE_MATRIX.find(t => t.topicSlug === p.topic);
-    if (!topicData) return notFound();
+    if (!topicData) return permanentRedirect('/answers');
 
     const queries = topicData.personas[p.persona as Persona];
-    if (!queries) return notFound();
+    if (!queries) return permanentRedirect('/answers');
 
     const query = queries.find(q => q.questionSlug === p.questionSlug);
-    if (!query) return notFound();
+    if (!query) return permanentRedirect('/answers');
 
     // Generate FAQ Schema JSON-LD
     const jsonLd = {

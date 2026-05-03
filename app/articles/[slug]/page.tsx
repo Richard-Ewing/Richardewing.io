@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 import { articles } from '../../lib/data';
 import { articleSchemaTemplate } from '../../lib/schemas';
 import ArticleUpsell from '../../components/ArticleUpsell';
@@ -58,7 +58,7 @@ export default async function ArticlePage({ params }: Props) {
     const article = articles.find((a) => a.slug === resolvedParams.slug);
 
     if (!article) {
-        return notFound();
+        return permanentRedirect('/articles');
     }
 
     // JSON-LD

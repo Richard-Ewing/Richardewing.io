@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 import { allArticles, getSortedArticles } from '@/lib/blog-data';
 import { categoryColors } from '@/lib/blog-types';
 
@@ -37,7 +37,7 @@ function getRelatedArticles(currentSlug: string, category: string, count: number
 export default async function BlogArticlePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const article = allArticles[slug];
-    if (!article) notFound();
+    if (!article) permanentRedirect('/blog');
 
     const catColor = categoryColors[article.category] || 'text-zinc-950 font-bold bg-zinc-500/10 border-zinc-500/20';
     const related = getRelatedArticles(slug, article.category);

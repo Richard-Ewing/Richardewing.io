@@ -1,5 +1,5 @@
 import React from 'react';
-import { notFound } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 import { CAREER_PATHS } from '../../lib/career-paths';
 import { tracks } from '../../lib/curriculum-tracks-ui';
 import { glossaryTerms } from '../../glossary/terms';
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function CareerPathPage({ params }: { params: Promise<{ slug: string }> }) {
     const resolvedParams = await params;
     const pathData = CAREER_PATHS.find((p) => p.slug === resolvedParams.slug) as any;
-    if (!pathData) return notFound();
+    if (!pathData) return permanentRedirect('/careers');
 
     const Icon = iconMap[pathData.iconName] || Cpu;
 
