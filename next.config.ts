@@ -255,6 +255,12 @@ const nextConfig: NextConfig = {
         destination: '/tools',
         permanent: true,
       },
+      // ═══════════════════ LEGACY TOOLS REDIRECTS ═══════════════════
+      {
+        source: '/tools/unit-economics',
+        destination: '/tools/aueb',
+        permanent: true,
+      },
       // ═══════════════════ GSC 404 REMEDIATION ═══════════════════
       {
         source: '/exogram/docs/:slug*',
