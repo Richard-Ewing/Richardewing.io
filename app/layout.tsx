@@ -10,7 +10,6 @@ import StickyBottomCTA from './components/StickyBottomCTA';
 import SocialProofTicker from './components/SocialProofTicker';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { ClerkProvider } from '@clerk/nextjs';
-import { dark } from '@clerk/themes';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk' });
@@ -175,24 +174,23 @@ export default function RootLayout({
 
         <ClerkProvider 
           appearance={{ 
-            baseTheme: dark, 
             variables: { 
-              colorPrimary: '#06b6d4', 
-              colorBackground: '#0A0A12', 
-              colorText: '#ffffff', 
-              colorInputBackground: '#18181b', // Strict hex code locks dark mode
-              colorInputText: '#ffffff',
-              colorDanger: '#dc2626'
+              colorPrimary: '#0891B2', 
+              colorBackground: '#FFFFFF', 
+              colorText: '#1A1A1A', 
+              colorInputBackground: '#FFFFFF',
+              colorInputText: '#1A1A1A',
+              colorDanger: '#DC2626'
             },
             elements: {
-              card: 'border border-zinc-400 shadow-2xl bg-white',
-              formFieldLabel: 'text-zinc-900 font-sans',
-              socialButtonsBlockButton: 'bg-white/5 border-zinc-400 text-zinc-950 hover:bg-white/10 transition-all font-sans',
+              card: 'border border-zinc-200 shadow-xl bg-white rounded-2xl',
+              formFieldLabel: 'text-zinc-900 font-sans font-bold',
+              socialButtonsBlockButton: 'bg-zinc-50 border-zinc-200 text-zinc-900 hover:bg-zinc-100 transition-all font-sans font-bold',
               formButtonPrimary: 'font-bold tracking-widest uppercase hover:opacity-90 transition-opacity',
-              headerTitle: 'font-sans font-bold',
-              headerSubtitle: 'font-sans text-zinc-900',
-              dividerLine: 'bg-white/10',
-              dividerText: 'text-zinc-900'
+              headerTitle: 'font-sans font-bold text-zinc-900 text-2xl',
+              headerSubtitle: 'font-sans text-zinc-600',
+              dividerLine: 'bg-zinc-200',
+              dividerText: 'text-zinc-500 font-mono text-xs uppercase tracking-widest'
             }
           }}
         >
