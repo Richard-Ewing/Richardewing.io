@@ -13,16 +13,19 @@ const Hero = () => {
                 {/* Eyebrow pill */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-200 mb-6">
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <span className="text-sm font-semibold text-zinc-950">Independent R&D Oversight</span>
+                    <span className="text-sm font-semibold text-zinc-950">Board-Level AI Governance & R&D Oversight</span>
                 </div>
 
                 <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6 leading-tight flex flex-col items-center">
-                    <span>I audit engineering spend and</span>
-                    <span className="flex flex-wrap justify-center gap-x-3">
-                        show the capital risks your
+                    <span>I cure the CTO Agent Delusion.</span>
+                    <span className="flex flex-wrap justify-center gap-x-3 mt-2 text-3xl md:text-4xl lg:text-5xl">
+                        I build deterministic systems to
+                    </span>
+                    <span className="flex flex-wrap justify-center gap-x-3 text-3xl md:text-4xl lg:text-5xl">
+                        protect your margins from
                         <WordRotate
                             className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 font-extrabold"
-                            words={["metrics don't show.", "board won't see.", "CFO can't find.", "team won't tell you."]}
+                            words={["AI feature bloat.", "probabilistic code.", "the Turing tax.", "vibe-coding debt."]}
                         />
                     </span>
                 </div>

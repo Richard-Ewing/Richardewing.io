@@ -55,11 +55,11 @@ export default async function CurriculumTracksPage() {
                         
                         <div className="flex items-center justify-center gap-8 mt-6">
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-zinc-900">23</div>
+                                <div className="text-2xl font-grotesk font-bold text-zinc-900">25</div>
                                 <div className="text-xs font-bold font-medium font-mono uppercase tracking-widest text-zinc-950 mt-1">Authority Tracks</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-grotesk font-bold text-zinc-900">293</div>
+                                <div className="text-2xl font-grotesk font-bold text-zinc-900">303</div>
                                 <div className="text-xs font-bold font-medium font-mono uppercase tracking-widest text-zinc-950 mt-1">Deep Modules</div>
                             </div>
                             <div className="text-center bg-purple-50 px-4 py-2 rounded-lg border border-purple-200">
@@ -130,6 +130,9 @@ export default async function CurriculumTracksPage() {
                                 {tracks.slice(18, 21).map((track, i) => (
                                     <TrackAccordion key={`agent-${i}`} track={track} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />
                                 ))}
+                                {/* AI Economics & Probabilistic Eng Tracks 24, 25 */}
+                                {tracks[23] && <TrackAccordion key="ai-economics" track={tracks[23]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
+                                {tracks[24] && <TrackAccordion key="probabilistic-eng" track={tracks[24]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
                             </div>
                         </div>
 
@@ -150,6 +153,8 @@ export default async function CurriculumTracksPage() {
                                 {tracks[16] && <TrackAccordion key="career-dx" track={tracks[16]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
                                 {/* Strategic Leadership Track 22 */}
                                 {tracks[21] && <TrackAccordion key="career-leadership" track={tracks[21]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
+                                {/* Startup Economics Track 26 */}
+                                {tracks[25] && <TrackAccordion key="startup-economics" track={tracks[25]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
                             </div>
                         </div>
 
@@ -176,6 +181,8 @@ export default async function CurriculumTracksPage() {
                                 {tracks[17] && <TrackAccordion key="exec-vendor" track={tracks[17]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
                                 {/* Track 23: Executive Presence & Board Leadership */}
                                 {tracks[22] && <TrackAccordion key="exec-presence" track={tracks[22]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
+                                {/* Track 27: Boardroom AI Governance */}
+                                {tracks[26] && <TrackAccordion key="exec-boardroom-ai" track={tracks[26]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
                             </div>
                         </div>
                     </CurriculumDirectoryGrid>

@@ -760,6 +760,72 @@ In 2026, Model Collapse has created a massive premium on verified, purely human 
             { question: 'How is AI FinOps different from Cloud FinOps?', answer: 'Cloud FinOps optimizes uptime and capacity. AI FinOps optimizes token efficiency, context window utilization, and semantic cache hit rates.' }
         ],
         relatedTerms: ['cost-of-predictivity', 'saas-valuation', 'burn-rate']
+    },
+    {
+        slug: 'codebase-intimacy',
+        title: 'Codebase Intimacy',
+        category: 'Engineering Management',
+        definition: 'The deep, contextual, often undocumented understanding that an engineer develops by physically writing, refactoring, and debugging a specific repository over time. It is the intuitive knowledge of why certain architectural trade-offs were made and how edge cases cascade through the system.',
+        whyItMatters: 'With the rise of AI code generation ("Vibe Coding"), developers are outsourcing the actual writing of code to LLMs. While this spikes short-term velocity, it destroys Codebase Intimacy. When a Sev-1 outage occurs in AI-generated code six months later, the Mean Time To Recovery (MTTR) skyrockets because no human understands the system\'s execution paths.',
+        faqs: [
+            { question: 'Why is Codebase Intimacy important?', answer: 'It is the primary defense against catastrophic system failure. A developer who understands the codebase intuitively can fix a critical bug in 10 minutes; a developer who relied on AI to build it might take days to decipher the AI\'s logic.' }
+        ],
+        relatedTerms: ['probabilistic-tech-debt', 'vibe-coding', 'audit-interview']
+    },
+    {
+        slug: 'cto-agent-delusion',
+        title: 'CTO Agent Delusion',
+        category: 'Leadership & Governance',
+        definition: 'A dangerous executive cognitive bias that assumes probabilistic autonomous AI agents can act as 1:1 replacements for deterministic engineering and QA teams, driven by a fundamental misunderstanding of the difference between syntax generation and system architecture.',
+        whyItMatters: 'CTOs suffering from this delusion optimize entirely for headcount reduction and short-term velocity, completely ignoring the massive accumulation of Probabilistic Tech Debt. They replace human Systems Governors with unmonitored AI agents, leading inevitably to systemic crystallization—where the codebase becomes so complex and undocumented that humans can no longer maintain it.',
+        faqs: [
+            { question: 'What causes the CTO Agent Delusion?', answer: 'It stems from confusing a localized capability (an AI can write a script) with a systemic capability (an AI can architect, deploy, and maintain a secure enterprise monolith).' }
+        ],
+        relatedTerms: ['agentic-process-automation', 'probabilistic-tech-debt', 'technical-insolvency-date']
+    },
+    {
+        slug: 'probabilistic-tech-debt',
+        title: 'Probabilistic Tech Debt',
+        category: 'Technical Debt & Code Quality',
+        definition: 'A new category of technical debt generated exclusively by LLMs and AI Copilots. Unlike traditional tech debt (which is usually the result of human shortcuts or outdated frameworks), probabilistic tech debt occurs when AI generates code that technically functions but lacks architectural rigor, security foresight, or edge-case handling.',
+        whyItMatters: 'Probabilistic tech debt is insidious because it often passes initial unit tests. It acts like a Trojan horse, entering the main branch seamlessly but failing catastrophically under specific production loads. It requires a shift from traditional PR reviews to rigorous Audit Interviews to detect.',
+        faqs: [
+            { question: 'How is Probabilistic Tech Debt different from normal Technical Debt?', answer: 'Normal tech debt is deterministic—humans made a conscious trade-off. Probabilistic tech debt is hallucinated—the AI generated an anti-pattern without anyone realizing it until it breaks in production.' }
+        ],
+        relatedTerms: ['codebase-intimacy', 'vibe-coding', 'technical-debt', 'cost-of-predictivity']
+    },
+    {
+        slug: 'ai-production-gap',
+        title: 'AI Production Gap',
+        category: 'AI & Machine Learning',
+        definition: 'The massive financial and technical chasm between a cheap, successful AI prototype (built for demonstrating potential) and a prohibitively expensive production deployment (built for enterprise scale).',
+        whyItMatters: 'Executives frequently fund AI initiatives based on the negligible cost of a pilot. The Production Gap occurs when vector database scaling, inference token costs, and necessary prompt redundancy escalate the production budget by 10x-50x, destroying the anticipated ROI.',
+        faqs: [
+            { question: 'How do you avoid the AI Production Gap?', answer: 'Require engineering to model the Total Compute Cost (TCC) for production scale before writing the first line of code for the pilot.' }
+        ],
+        relatedTerms: ['total-compute-cost', 'soft-roi-liability', 'ai-cloud-finops']
+    },
+    {
+        slug: 'total-compute-cost',
+        title: 'Total Compute Cost (TCC)',
+        category: 'Finance & Strategy',
+        definition: 'A comprehensive, holistic metric for evaluating AI infrastructure expenditure. Unlike simple API pricing, TCC accounts for prompt token usage, semantic caching infrastructure, vector storage, and continuous model drift correction.',
+        whyItMatters: 'If you only look at vendor API pricing, AI looks cheap. TCC forces the engineering organization to expose the hidden architectural costs of running probabilistic systems, allowing the Board and CFO to make accurate margin calculations.',
+        faqs: [
+            { question: 'Why does TCC matter for SaaS pricing?', answer: 'Without calculating TCC, you cannot accurately define your Cost of Goods Sold (COGS), leading to AI features that accidentally burn cash.' }
+        ],
+        relatedTerms: ['ai-production-gap', 'burn-rate', 'saas-valuation']
+    },
+    {
+        slug: 'soft-roi-liability',
+        title: 'Soft ROI Liability',
+        category: 'Finance & Strategy',
+        definition: 'The strategic risk incurred when an organization capitalizes expensive software investments based purely on theoretical "developer productivity" metrics, rather than hard P&L improvements.',
+        whyItMatters: 'Boards are rejecting "Soft ROI." If an AI tool saves your engineering team 30% of their time, but you do not reduce headcount or increase shipping velocity, that 30% time savings is a financial liability, not an asset.',
+        faqs: [
+            { question: 'How do you convert Soft ROI to Hard ROI?', answer: 'By explicitly mapping productivity gains to deferred hiring, reduced cloud spend, or accelerated revenue generation.' }
+        ],
+        relatedTerms: ['total-compute-cost', 'cto-agent-delusion', 'burn-multiple']
     }
 ];
 

@@ -21,7 +21,7 @@ export default function AdvisoryPage() {
                     <BlurIn word="Beyond Architecture." className="text-5xl md:text-7xl font-bold font-grotesk tracking-tighter text-zinc-950 mb-6" />
                     <p className="text-zinc-950 font-bold text-lg sm:text-xl max-w-3xl mx-auto mb-6 leading-relaxed">
                         The Curriculum provides the blueprints. Advisory provides the execution. 
-                        I run specialized taskforces to secure Board-level outcomes: repatriating cloud costs, implementing sovereign AI architectures, and forensically auditing startups for Private Equity acquisition.
+                        I run specialized taskforces to cure the CTO Agent Delusion—bridging the AI Production Gap and translating engineering reality into Hard ROI for the Boardroom.
                     </p>
 
                     <div className="inline-flex items-center gap-6 px-8 py-3 rounded-full bg-white/5 border border-zinc-400 text-xs font-bold font-mono font-bold tracking-widest text-zinc-950 font-bold">
