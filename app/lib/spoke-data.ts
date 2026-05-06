@@ -28,6 +28,74 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         personas: {
             'platform-engineer': [
                 {
+                    questionSlug: 'multi-agent-orchestration-coordination',
+                    questionHeadline: 'We\'re hitting the limits of "one agent + tools." The next problem is coordination?',
+                    answerHtml: `
+                        <p>When engineers first build AI agents, they typically rely on a single LLM running a ReAct (Reasoning and Acting) loop with access to multiple tools. This "God Agent" architecture collapses in production. As you add more tools, the context window bloats, reasoning degrades, and the single agent inevitably suffers from tool-selection paralysis or infinite loops.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Shift to Multi-Agent Orchestration</h3>
+                        <p>To scale agentic automation, Platform Engineers must transition from monolithic agents to <strong>Multi-Agent Orchestration</strong>. Instead of one massive model doing everything, you deploy a swarm of specialized, heavily constrained micro-agents coordinated by a deterministic router.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm">🤖</span> Agentic Architecture Patterns
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-[10px] font-mono text-red-400 uppercase tracking-widest mb-1">Legacy: The God Agent</div>
+                                    <div class="text-white text-lg font-bold mb-1">Single ReAct Loop</div>
+                                    <div class="text-xs text-zinc-400">High latency, brittle reasoning, high token cost.</div>
+                                </div>
+                                <div class="bg-blue-500/10 p-4 rounded-xl border border-blue-500/30">
+                                    <div class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-1">Modern: Supervisor Pattern</div>
+                                    <div class="text-white text-lg font-bold mb-1">Graph-Based Routing</div>
+                                    <div class="text-xs text-zinc-400">A fast, cheap router (Haiku) delegates tasks to specialized workers (Opus).</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Remediation Strategy</h3>
+                        <p>Implement a framework like LangGraph or AutoGen to build a <em>Supervisor Pattern</em>. The Supervisor agent receives the user query and does zero synthesis. Its only job is routing. It passes the task to the "SQL Extraction Agent" or the "Formatting Agent," collecting their outputs and returning the final result. This enforces strict separation of concerns, drops token costs, and makes debugging individual agent failures trivial.</p>
+                    `,
+                    recommendedProductId: 'module_engineering',
+                    upsellHeadline: 'Master Multi-Agent Architectures.'
+                },
+                {
+                    questionSlug: 'mcp-model-context-protocol-importance',
+                    questionHeadline: 'Why MCP (Model Context Protocol) matters if you want to build real AI Agents?',
+                    answerHtml: `
+                        <p>Before MCP, connecting an AI agent to an enterprise data source (like Snowflake, Jira, or a local filesystem) required writing custom integration code, managing proprietary API keys, and manually formatting the context window. This resulted in brittle, unscalable spaghetti code that broke every time an API endpoint changed.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Universal Standard for Tool Use</h3>
+                        <p>The <strong>Model Context Protocol (MCP)</strong> is an open-source standard created by Anthropic that standardizes how AI models consume data and execute tools. It acts as a universal plug-and-play adapter. Instead of teaching an agent how to talk to 50 different APIs, you simply point the agent to an MCP Server. The server handles all the underlying complexity, authentication, and schema formatting.</p>
+
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">🔌</span> The MCP Advantage
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-white text-lg font-bold mb-1">Zero Integration Code</div>
+                                    <div class="text-xs text-zinc-400">Agents instantly understand standard MCP tool schemas.</div>
+                                </div>
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-white text-lg font-bold mb-1">Local & Remote</div>
+                                    <div class="text-xs text-zinc-400">Works seamlessly across local dev environments and cloud VPCs.</div>
+                                </div>
+                                <div class="bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/30">
+                                    <div class="text-white text-lg font-bold mb-1">Model Agnostic</div>
+                                    <div class="text-xs text-zinc-400">Switch from Claude to GPT-4 without rewriting tool definitions.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Implementation Mandate</h3>
+                        <p>Platform Engineers must immediately halt building custom API integrations for LLMs. Mandate that all internal enterprise data sources (databases, wikis, CRMs) are exposed exclusively via MCP Servers. This drastically reduces technical debt and ensures your agentic infrastructure remains model-agnostic and future-proof.</p>
+                    `,
+                    recommendedProductId: 'module_engineering',
+                    upsellHeadline: 'Deploy Enterprise MCP Servers.'
+                },
+                {
                     questionSlug: 'dependency-hell',
                     questionHeadline: 'How do you define and escape dependency hell in enterprise architecture?',
                     answerHtml: `<p>Dependency hell occurs when software packages rely on specific, mutually exclusive, or deeply nested versions of other software packages, creating an unresolvable gridlock that prevents updates or deployments.</p>
@@ -261,6 +329,51 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
             ],
             'cto-vp-engineering': [
                 {
+                    questionSlug: 'cost-of-tech-debt-vs-technical-spec',
+                    questionHeadline: 'Cost of tech debt vs professional technical spec: is there a framework for this?',
+                    answerHtml: `
+                        <p>When engineering teams skip the Technical Specification phase to "move fast," they are executing a high-interest payday loan against their future enterprise valuation. The cost of technical debt accrued from rushing to code is consistently and mathematically disproportionate to the time saved by skipping the architecture design phase.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 1:10:100 Rule of Architecture</h3>
+                        <p>The core framework for evaluating this trade-off is the <strong>Defect Cost Multiplier</strong>. The financial cost of discovering and fixing an architectural flaw scales exponentially based on the phase of the Software Development Life Cycle (SDLC) in which it is found.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">📉</span> The Debt-to-Spec Leverage Equation
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1">Design Phase (Spec)</div>
+                                    <div class="text-white text-2xl font-bold mb-1">1x Cost</div>
+                                    <div class="text-xs text-zinc-400">Erasing a whiteboard diagram costs $0.</div>
+                                </div>
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-[10px] font-mono text-amber-400 uppercase tracking-widest mb-1">Implementation Phase</div>
+                                    <div class="text-white text-2xl font-bold mb-1">10x Cost</div>
+                                    <div class="text-xs text-zinc-400">Refactoring 5,000 lines of bad code wastes days.</div>
+                                </div>
+                                <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/30">
+                                    <div class="text-[10px] font-mono text-red-400 uppercase tracking-widest mb-1">Production Phase</div>
+                                    <div class="text-white text-2xl font-bold mb-1">100x Cost</div>
+                                    <div class="text-xs text-zinc-400">A data breach or outage burns actual revenue and runway.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
+                        <p>A Series B SaaS company skipped writing a formal technical spec for their new billing engine to hit a Q3 deadline. They hardcoded standard USD currency logic deep into the monolith. In Q4, they signed a massive European enterprise client requiring multi-currency (EUR/GBP) support. Because there was no architectural spec enforcing currency abstraction, adding EUR required an 8-week "full rewrite" of the billing module, delaying the enterprise launch and costing $120,000 in idle developer wages. A 3-day technical spec phase would have caught the currency inflexibility on a whiteboard for $3,000.</p>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Day 1-30:</strong> Mandate a strict PRD (Product Requirements Document) to Technical Spec pipeline. No engineer writes a single line of code until the Lead Engineer produces a 2-page Markdown spec detailing data models, API boundaries, and failure states.</li>
+                            <li><strong>Day 31-60:</strong> Institute the "Spec Review Board." Have a secondary senior engineer intentionally try to poke holes in the proposed spec's scalability before it is approved for implementation.</li>
+                            <li><strong>Day 61-90:</strong> Track "Rework Rate". Measure how many Jira tickets are explicitly created to fix architectural flaws in features shipped in the last 30 days. This metric proves the ROI of the spec phase.</li>
+                        </ul>
+                    `,
+                    recommendedProductId: 'module_cto',
+                    upsellHeadline: 'Download the Architecture ROI Calculator.'
+                },
+                {
                     questionSlug: 'software-entropy',
                     questionHeadline: 'What is entropy in software engineering and how do you measure it?',
                     answerHtml: `<p>Software entropy refers to the gradual degradation of a system's structure, architecture, and maintainability over time. As new features are bolted on, quick fixes are applied, and original developers leave, the system trends toward chaos.</p>
@@ -420,6 +533,52 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         personas: {
             'founder-ceo': [
                 {
+                    questionSlug: 'build-vs-rent-ai-infrastructure',
+                    questionHeadline: 'How much AI infra do large companies need to own instead of consuming from the big players?',
+                    answerHtml: `
+                        <p>The "Build vs. Rent" decision for AI infrastructure is the single most consequential financial lever an enterprise CEO will pull this decade. The default strategy of infinitely renting foundational intelligence (via OpenAI or Anthropic APIs) fundamentally breaks traditional SaaS economics, replacing high fixed-margin software with a variable-cost commodity tollbooth.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Build vs. Rent Margin Tipping Point</h3>
+                        <p>Renting APIs (OpEx) optimizes for <em>Speed to Market</em> and requires zero upfront capital. However, as your product scales, your inference costs scale perfectly linearly with your revenue. Owning infrastructure (CapEx)—such as buying NVIDIA GPUs and fine-tuning open-source models like Llama-3—requires massive upfront capital but flattens your ongoing inference costs, allowing Gross Margins to actually expand as volume grows.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">⚖️</span> The Infrastructure Ownership Heuristic
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-white/5 p-5 rounded-xl border-l-4 border-l-blue-500 shadow-sm">
+                                    <h5 class="font-bold text-white mb-2">Rent (OpEx) When:</h5>
+                                    <ul class="text-sm font-medium text-zinc-400 space-y-1 list-disc pl-4">
+                                        <li>You are pre-Product Market Fit.</li>
+                                        <li>Query volume is unpredictable and highly volatile.</li>
+                                        <li>Total Monthly API bill &lt; $25,000.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white/5 p-5 rounded-xl border-l-4 border-l-emerald-500 shadow-sm">
+                                    <h5 class="font-bold text-white mb-2">Build (CapEx) When:</h5>
+                                    <ul class="text-sm font-medium text-zinc-400 space-y-1 list-disc pl-4">
+                                        <li>Queries are highly specialized (e.g., medical syntax).</li>
+                                        <li>Volume is massive, predictable, and 24/7.</li>
+                                        <li>OpenAI bill &gt; 15% of total SaaS revenue.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
+                        <p>A B2B legal review platform reached $5M ARR using GPT-4 exclusively. Their user engagement skyrocketed, but their API bill hit $180,000/month, driving their gross margins down to 32%. They were structurally unprofitable at scale. The CEO authorized a $400,000 CapEx investment to lease a private AWS GPU cluster and fine-tune an open-source 8B model specifically for legal syntax. While the upfront cost was terrifying, their monthly inference OpEx dropped to a flat $25,000. Their margins rebounded to 78%, and the CapEx investment paid for itself in exactly 2.5 months.</p>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Day 1-30:</strong> Instrument granular telemetry to calculate the exact API cost per specific feature. Identify the "whale" feature that consumes 80% of your inference budget.</li>
+                            <li><strong>Day 31-60:</strong> Begin "data exhaust" capture. Quietly save 100,000 of the highest-quality outputs generated by GPT-4 for that specific feature into a structured dataset.</li>
+                            <li><strong>Day 61-90:</strong> Execute the hybrid transition. Fine-tune a free, small open-source model using that dataset. Route 80% of routine traffic to your owned infrastructure, while dynamically falling back to GPT-4 only for edge cases.</li>
+                        </ul>
+                    `,
+                    recommendedProductId: 'module_ai_economics',
+                    upsellHeadline: 'Calculate your precise CapEx tipping point.'
+                },
+                {
                     questionSlug: 'calculating-roai',
                     questionHeadline: 'How do you calculate the financial Return on AI Investment (ROAI)?',
                     answerHtml: `<p>ROAI (Return on AI Investment) is the critical financial metric for evaluating generative models, autonomous agents, and RAG pipelines. Unlike traditional software ROI, which is deterministic, ROAI must account for probabilistic outcomes, hallucination costs, and inference burn rates.</p>
@@ -562,6 +721,85 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
             ],
             'product-manager': [
                 {
+                    questionSlug: 'agentic-ai-vs-rule-based-automation',
+                    questionHeadline: 'In the era of Agentic AI, is rule-based automation extinct?',
+                    answerHtml: `
+                        <p>A common mistake Product Managers make is assuming Agentic AI (LLMs autonomously planning and executing actions) completely replaces deterministic rule-based automation (like Zapier, Make, or standard CI/CD scripts). They do not replace each other; they serve entirely opposite ends of the latency and reliability spectrum.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Deterministic vs. Probabilistic Divide</h3>
+                        <p>Rule-based automation is <strong>deterministic</strong>. If A happens, do B. It executes in milliseconds, costs fractions of a cent, and succeeds 99.999% of the time. However, it completely breaks if the input deviates even slightly from the expected format.</p>
+                        <p>Agentic AI is <strong>probabilistic</strong>. It can handle massive ambiguity, parse messy inputs, and dynamically alter its plan if an API fails. However, it takes seconds to execute, costs significantly more, and carries the inherent risk of hallucination.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-sm">⚖️</span> The Automation Hybrid Model
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Rule-Based Automation</div>
+                                    <div class="text-white text-sm font-bold mb-1">High Reliability, Zero Ambiguity</div>
+                                    <div class="text-xs text-zinc-400">Use for moving data between APIs, sending transactional emails, or triggering webhooks.</div>
+                                </div>
+                                <div class="bg-purple-500/10 p-4 rounded-xl border border-purple-500/30">
+                                    <div class="text-[10px] font-mono text-purple-400 uppercase tracking-widest mb-1">Agentic Automation</div>
+                                    <div class="text-white text-sm font-bold mb-1">High Ambiguity, Complex Reasoning</div>
+                                    <div class="text-xs text-zinc-400">Use for categorizing angry support tickets, drafting custom replies, or extracting unstructured PDF data.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Hybrid Remediation Strategy</h3>
+                        <p>Do not rip out your deterministic pipelines. The most robust architectures use <strong>Agentic Wrappers around Deterministic Cores</strong>. Use an LLM agent strictly to ingest messy human input, structure it into pristine JSON, and then hand that JSON off to a highly reliable, rule-based Zapier workflow for execution. This minimizes LLM API costs while maximizing system reliability.</p>
+                    `,
+                    recommendedProductId: 'module_ai_enterprise',
+                    upsellHeadline: 'Design Hybrid Agentic Workflows.'
+                },
+                {
+                    questionSlug: 'retrieval-vs-behavioral-synthesis',
+                    questionHeadline: 'Why does a RAG model that retrieves perfectly still fail to replicate human voice and behavior?',
+                    answerHtml: `
+                        <p>A foundational error Product Managers make is conflating <strong>Semantic Retrieval</strong> with <strong>Behavioral Synthesis</strong>. When you dump 100 pages of a user's past writing into an LLM's context window, the model successfully retrieves the <em>facts</em>, but it inherently averages out the <em>tone</em> to match its RLHF (Reinforcement Learning from Human Feedback) training base—defaulting to a generic, corporate "AI voice."</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Context Flattening Effect</h3>
+                        <p>LLMs are trained to be helpful, harmless, and generic. If you provide a highly aggressive, uniquely formatted sales email in the context window and ask the model to "reply like this," the model's base safety alignment will often override the aggressive tone, "flattening" the output into polite boilerplate. RAG solves for data access, it does not solve for personality.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-sm">🎭</span> The Behavioral Override Stack
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Step 1: Raw Data</div>
+                                    <div class="text-white text-sm font-bold mb-1">Vector RAG</div>
+                                    <div class="text-xs text-zinc-500">Injects facts and history.</div>
+                                </div>
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Step 2: Few-Shot</div>
+                                    <div class="text-white text-sm font-bold mb-1">Negative Examples</div>
+                                    <div class="text-xs text-zinc-500">Explicitly showing what *not* to do.</div>
+                                </div>
+                                <div class="bg-fuchsia-500/10 p-4 rounded-xl border border-fuchsia-500/30">
+                                    <div class="text-[10px] font-mono text-fuchsia-400 uppercase tracking-widest mb-1">Step 3: Persona Spec</div>
+                                    <div class="text-white text-sm font-bold mb-1">Structural Rules</div>
+                                    <div class="text-xs text-zinc-500">Enforcing syntax, length, and cadence constraints.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
+                        <p>A ghostwriting SaaS platform attempted to clone executive voices by simply feeding an LLM the executive's past 50 LinkedIn posts. The outputs sounded like a robot summarizing a resume. They rebuilt the pipeline: they used another LLM to explicitly extract a "Style Matrix" (e.g., "Uses short sentences. Never uses emojis. Starts paragraphs with verbs."). By injecting this explicit rule-based Style Matrix into the system prompt alongside the RAG data, the model was forced to comply with the behavioral constraints, increasing human-pass rates from 12% to 84%.</p>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Day 1-30:</strong> Extract the Style Matrix. Before generating output, run a pre-processing prompt that analyzes the user's data and extracts 5 explicit formatting rules (e.g., vocabulary grade level, paragraph length, punctuation quirks).</li>
+                            <li><strong>Day 31-60:</strong> Implement Negative Few-Shot Prompting. LLMs learn faster from what they are told *not* to do. Explicitly ban words like "delve", "testament", and "tapestry" in the system prompt.</li>
+                            <li><strong>Day 61-90:</strong> If prompt engineering fails to override the RLHF flattening, you must advance to PEFT (Parameter-Efficient Fine-Tuning). Use LoRA to fine-tune a small model exclusively on the user's stylistic data to permanently bake the behavioral cadence into the model weights.</li>
+                        </ul>
+                    `,
+                    recommendedProductId: 'module_ai_enterprise',
+                    upsellHeadline: 'Master Enterprise AI Product Economics.'
+                },
+                {
                     questionSlug: 'unit-economics-for-rag-architecture',
                     questionHeadline: 'How to measure unit economics for a RAG (Retrieval-Augmented Generation) application?',
                     answerHtml: `
@@ -623,6 +861,49 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 }
             ],
             'platform-engineer': [
+                {
+                    questionSlug: 'rag-vs-massive-context-window',
+                    questionHeadline: 'With 1M+ token context windows, is RAG actually worth it when I can just load whole books?',
+                    answerHtml: `
+                        <p>With models like Gemini 1.5 Pro handling 2 million tokens and Claude 3.5 Sonnet handling 200k, the instinct to abandon complex vector databases (RAG) and simply dump the entire corporate hard drive into the prompt is strong. However, this brute-force approach ignores the fundamental <strong>Unit Economics of Inference</strong>, replacing architectural complexity with sheer financial brute force.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Math of Context Injection</h3>
+                        <p>API pricing is purely token-based. If you load a 116,000-page EPUB library (roughly 1.5 million tokens) into the context window of a frontier model, you are paying for those 1.5 million tokens <em>on every single user query</em>. A single question could cost upwards of $15.00 in input tokens alone. If 1,000 users ask a question, you burn $15,000 in a day.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-sm">💰</span> Retrieval vs. Injection Economy
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Traditional RAG</div>
+                                    <div class="text-white text-lg font-bold mb-1">~3,000 Tokens Injected</div>
+                                    <div class="text-emerald-400 font-mono text-sm">$0.009 per query</div>
+                                </div>
+                                <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/30">
+                                    <div class="text-[10px] font-mono text-red-400 uppercase tracking-widest mb-1">Massive Context Load</div>
+                                    <div class="text-white text-lg font-bold mb-1">1,500,000 Tokens Injected</div>
+                                    <div class="text-red-400 font-mono text-sm">$15.00 per query</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Prompt Caching Loophole</h3>
+                        <p>There is exactly one architectural exception where massive context injection becomes financially viable: <strong>Prompt Caching</strong>. Providers like Anthropic and Google now allow you to cache a massive document (like a 200k codebase or a dense PDF). You pay the heavy injection cost exactly once, and subsequent queries against that cached document receive a 50% to 90% discount.</p>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
+                        <p>A legal tech firm abandoned their Pinecone RAG database and started feeding entire 500-page case files directly into Claude 3 Opus. Their latency spiked to 25 seconds per query, and their API bill 10x'd in a week. Their Platform Engineer intervened, switching to Anthropic's Prompt Caching API. By keeping the case files hot in the cache for 5 minutes, the latency dropped to 3 seconds, and the cost collapsed by 85%. They achieved RAG-less architecture, but strictly managed the OpEx via caching telemetry.</p>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Day 1-30:</strong> Measure your "Static vs Dynamic" data ratio. If the massive data you are querying is static (like a fixed rulebook), RAG is obsolete. Use Prompt Caching. If the data is dynamic and constantly updating, you must retain a Vector DB RAG architecture.</li>
+                            <li><strong>Day 31-60:</strong> Implement Cache Telemetry. Build a dashboard tracking your "Cache Hit Rate." If your hit rate is below 70%, your massive context strategy is actively hemorrhaging capital.</li>
+                            <li><strong>Day 61-90:</strong> Build a Hybrid Router. Send simple, factual questions to a cheap RAG/Vector pipeline. Reserve the massive context window exclusively for complex "Synthesis" questions requiring cross-document reasoning.</li>
+                        </ul>
+                    `,
+                    recommendedProductId: 'module_engineering',
+                    upsellHeadline: 'Architect Your Technical Economics.'
+                },
                 {
                     questionSlug: 'anthropic-ai-architect-path',
                     questionHeadline: 'What is the Anthropic AI Architect Path and is it free?',
@@ -1138,6 +1419,49 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         topicName: 'C-Suite Financials & M&A Diligence',
         personas: {
             'cfo-investor': [
+                {
+                    questionSlug: 'cloud-finops-vs-ai-optimization',
+                    questionHeadline: 'Why Cloud Resource Optimization Alone Doesn\'t Fix AI Cloud Costs?',
+                    answerHtml: `
+                        <p>Traditional Cloud FinOps focuses on right-sizing EC2 instances, purchasing Reserved Instances (RIs), and deleting unused S3 buckets. When CFOs attempt to apply these exact same strategies to Generative AI infrastructure, they fail completely. Generative AI costs are not driven by idle infrastructure; they are driven by <strong>Token Economics</strong> and <strong>Model Utilization Rates</strong>.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The AI FinOps Paradigm Shift</h3>
+                        <p>In traditional cloud computing, you pay for time (uptime). In API-driven AI, you pay for intellect (tokens). Optimizing an AWS bill does nothing to stop an inefficient RAG architecture from stuffing 50,000 irrelevant tokens into a Claude 3 Opus prompt 10,000 times a day.</p>
+                        
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm">💰</span> Traditional FinOps vs. AI FinOps
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
+                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Traditional Cloud FinOps</div>
+                                    <ul class="text-xs text-zinc-300 space-y-1 list-disc pl-4 mt-2">
+                                        <li>Right-sizing VMs</li>
+                                        <li>Spot Instance Bidding</li>
+                                        <li>Storage Tiering</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-amber-500/10 p-4 rounded-xl border border-amber-500/30">
+                                    <div class="text-[10px] font-mono text-amber-400 uppercase tracking-widest mb-1">AI Cloud FinOps</div>
+                                    <ul class="text-xs text-zinc-300 space-y-1 list-disc pl-4 mt-2">
+                                        <li>Prompt Caching Hit Rates</li>
+                                        <li>Vector Database Truncation</li>
+                                        <li>Model Routing (Haiku vs Opus)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>Day 1-30:</strong> Instrument Token Telemetry. You must be able to attribute OpenAI/Anthropic API costs down to the specific product feature and user tenant.</li>
+                            <li><strong>Day 31-60:</strong> Implement Semantic Caching. Stop paying frontier models to answer identical questions. Put a Redis cache in front of your LLM so repeat queries cost $0.</li>
+                            <li><strong>Day 61-90:</strong> Build a Dynamic Model Router. Never use an expensive reasoning model (GPT-4) for a task a cheap extraction model (Llama-3 8B) can handle perfectly. Route queries algorithmically based on complexity.</li>
+                        </ul>
+                    `,
+                    recommendedProductId: 'module_financials',
+                    upsellHeadline: 'Audit Your AI Infrastructure Costs.'
+                },
                 {
                     questionSlug: 'incident-management-cost',
                     questionHeadline: 'How do you calculate the true financial cost of incident management?',

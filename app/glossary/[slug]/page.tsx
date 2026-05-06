@@ -119,7 +119,7 @@ function autoHowToApply(category: string, title: string): string {
 export default async function GlossaryTermPage({ params }: Props) {
     const { slug } = await params;
     const term = glossaryTerms.find(t => t.slug === slug);
-    if (!term) permanentRedirect('/glossary');
+    if (!term) notFound();
 
     const relatedTermObjects = term.relatedTerms
         .map(r => glossaryTerms.find(t => t.slug === r))

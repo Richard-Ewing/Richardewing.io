@@ -716,6 +716,50 @@ In 2026, Model Collapse has created a massive premium on verified, purely human 
             { question: 'When should you use the Scream Test?', answer: 'When you strongly suspect a feature is dead but lack the telemetry to prove it with 100% certainty. Alert support teams before turning it off.' }
         ],
         relatedTerms: ['zombie-assets', 'kill-switch-protocol']
+    },
+    {
+        slug: 'mcp-model-context-protocol',
+        title: 'Model Context Protocol (MCP)',
+        category: 'Architecture Patterns',
+        definition: 'An open-source standard introduced by Anthropic that standardizes how AI agents communicate with external tools and data sources. It functions as a universal plug-and-play adapter, eliminating the need for custom-built API integrations for every new tool.',
+        whyItMatters: 'Before MCP, connecting an AI agent to an enterprise database required writing fragile, proprietary integration code. MCP establishes a secure, model-agnostic contract. Platform Engineers can build an MCP server once, and any compliant LLM (Claude, GPT-4, Gemini) can instantly securely query it. It is the architectural foundation for scalable Agentic Workflows.',
+        faqs: [
+            { question: 'Why use MCP over custom APIs?', answer: 'MCP is model-agnostic and provides standardized schemas for authentication, context windows, and tool execution, reducing technical debt.' }
+        ],
+        relatedTerms: ['agentic-workflow', 'multi-agent-orchestration', 'technical-debt']
+    },
+    {
+        slug: 'multi-agent-orchestration',
+        title: 'Multi-Agent Orchestration',
+        category: 'Architecture Patterns',
+        definition: 'The architectural pattern of coordinating multiple, highly constrained AI agents (often overseen by a router or supervisor agent) rather than relying on a single monolithic "God Agent" to execute complex workflows.',
+        whyItMatters: 'Single agents operating in massive ReAct loops suffer from context bloat and hallucination entropy. Multi-Agent Orchestration enforces separation of concerns—one agent writes SQL, another formats the report, while a supervisor agent routes tasks. This dramatically reduces token costs (Cost of Predictivity) and increases reliability.',
+        faqs: [
+            { question: 'What is the supervisor pattern?', answer: 'A Multi-Agent Orchestration pattern where a fast, cheap routing model delegates specialized tasks to more capable worker models.' }
+        ],
+        relatedTerms: ['agentic-process-automation', 'hallucination-entropy', 'cost-of-predictivity']
+    },
+    {
+        slug: 'probabilistic-automation',
+        title: 'Probabilistic Automation',
+        category: 'AI & Machine Learning',
+        definition: 'Workflows driven by LLMs that introduce variance into execution. Unlike deterministic automation (where inputs strictly define outputs), probabilistic automation interprets ambiguous inputs and dynamically plans execution paths.',
+        whyItMatters: 'While powerful, probabilistic systems are slower, more expensive, and less reliable than rule-based systems. Product leaders must design Hybrid Architectures—using probabilistic agents to structure messy data, then handing that structured data to highly reliable deterministic pipelines (like Zapier or CI/CD).',
+        faqs: [
+            { question: 'Does Agentic AI replace rule-based automation?', answer: 'No. The most robust enterprise systems use probabilistic agents as "translators" that feed into rigid deterministic automation layers.' }
+        ],
+        relatedTerms: ['agentic-process-automation', 'ai-hallucination', 'vibe-coding']
+    },
+    {
+        slug: 'ai-cloud-finops',
+        title: 'AI Cloud FinOps',
+        category: 'Cloud & Infrastructure',
+        definition: 'The financial operations discipline specifically adapted for the token economics of Generative AI. It moves beyond traditional VM right-sizing to optimize prompt caching, model routing, and vector database utilization.',
+        whyItMatters: 'Traditional FinOps focuses on idle infrastructure time. AI FinOps focuses on active token usage. Without AI Cloud FinOps, inefficient architectures (like naive RAG loops) will exponentially drive up API costs and destroy SaaS gross margins.',
+        faqs: [
+            { question: 'How is AI FinOps different from Cloud FinOps?', answer: 'Cloud FinOps optimizes uptime and capacity. AI FinOps optimizes token efficiency, context window utilization, and semantic cache hit rates.' }
+        ],
+        relatedTerms: ['cost-of-predictivity', 'saas-valuation', 'burn-rate']
     }
 ];
 

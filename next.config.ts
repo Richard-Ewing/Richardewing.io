@@ -99,21 +99,44 @@ const nextConfig: NextConfig = {
         destination: '/robots.txt',
         permanent: true,
       },
+      // ═══════════════════ LEGACY TRACKING PREFIX REDIRECTS ═══════════════════
+      // Handles N-prefixed curriculum IDs reported in GSC "Crawled - currently not indexed"
+      {
+        source: '/curriculum/tracks/:category/N:id',
+        destination: '/vault/curriculum/tracks/:category/:id',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/:category/N:id',
+        destination: '/vault/curriculum/tracks/:category/:id',
+        permanent: true,
+      },
       // ═══════════════════ LMS MIGRATION ═══════════════════
+      {
+        source: '/curriculum/tracks/cloud-finops/14-:id',
+        destination: '/vault/curriculum/tracks/cloud-finops/7-:id',
+        permanent: true,
+      },
       {
         source: '/curriculum/tracks/:path*',
         destination: '/vault/curriculum/tracks/:path*',
         permanent: true,
       },
-      // ═══════════════════ DEPRECATED TRACK REDIRECTS ═══════════════════
-      // NOTE: Tracks 23-27 were previously redirected to named slugs (agentic-automation, sovereign-ai, etc.)
-      // but those slugs were also killed. They now fall through to the generic numeric ID redirects below.
-      // Deprecated Old Numbers & Slugs
-      // ═══════════════════ LEGACY TRACKING PREFIX REDIRECTS ═══════════════════
-      // Handles N-prefixed curriculum IDs reported in GSC "Crawled - currently not indexed"
       {
-        source: '/vault/curriculum/tracks/:category/N:id',
-        destination: '/vault/curriculum/tracks/:category/:id',
+        source: '/vault/curriculum',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      // ═══════════════════ DEPRECATED TRACK REDIRECTS ═══════════════════
+      // Deprecated Old Numbers & Slugs
+      {
+        source: '/curriculum/tracks/:trackId(\\d+)/:moduleId',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/vault/curriculum/tracks/:trackId(\\d+)/:moduleId',
+        destination: '/vault/curriculum/tracks',
         permanent: true,
       },
       // ═══════════════════ 2026 CURRICULUM RESTRUCTURING — KILLED TRACKS ═══════════════════
@@ -207,31 +230,6 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
-      // ═══════════════════ REMOVED GLOSSARY TERMS ═══════════════════
-      // Redirect deleted glossary slugs to the glossary index
-      ...[
-        'ai-dspm',
-        'ai-response-drift',
-        'ai-volatility-tax',
-        'burn-multiple',
-        'code-review',
-        'design-system',
-        'evergreen-ratio',
-        'execution-layer',
-        'fractional-cto',
-        'kano-model',
-        'monolith-to-microservices',
-        'north-star-metric',
-        'rice-framework',
-        'serverless',
-        'sovereign-ai-substrate',
-        'system-2-reasoning-tokens',
-        'thermodynamic-compute-cost',
-      ].map(slug => ({
-        source: `/glossary/${slug}`,
-        destination: '/glossary',
-        permanent: true as const,
-      })),
       // ═══════════════════ AHREFS 404 REMEDIATION (282 URLs) ═══════════════════
       // These wildcard rules eliminate ALL 404 patterns identified in the Ahrefs crawl.
       // Pattern 1: /glossary/terms/:slug → /glossary/:slug (lesson inline links use wrong path)
@@ -270,26 +268,6 @@ const nextConfig: NextConfig = {
       {
         source: '/industries/:slug*',
         destination: '/system',
-        permanent: true,
-      },
-      {
-        source: '/glossary/email-marketing-automation',
-        destination: '/glossary',
-        permanent: true,
-      },
-      {
-        source: '/glossary/artificial-intelligence',
-        destination: '/glossary',
-        permanent: true,
-      },
-      {
-        source: '/glossary/design-system',
-        destination: '/glossary',
-        permanent: true,
-      },
-      {
-        source: '/glossary/rice-framework',
-        destination: '/glossary',
         permanent: true,
       },
       // ═══════════════════ EXOGRAM 404 REMEDIATION ═══════════════════
