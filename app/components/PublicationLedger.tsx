@@ -32,7 +32,8 @@ const publications = [
       {
         title: "In the Vibe Coding Era, What Does a Software Engineer Even Do?",
         url: "https://builtin.com/articles/vibe-coding-era-software-engineering-role", 
-        thesis: "An expert analysis of the changing nature of software development work and the 4 Laws of Probabilistic Software Development."
+        thesis: "An expert analysis of the changing nature of software development work and the 4 Laws of Probabilistic Software Development.",
+        editorsPick: true
       },
       {
         title: "AI Agents Won't Crash the Economy. Bad Governance Might.",
@@ -45,24 +46,22 @@ const publications = [
         thesis: "Advocates for deleting zombie features to reclaim engineering capacity and improve R&D capital efficiency."
       },
       {
-        title: "When AI Writes the Code, What Are Employers Hiring For?",
+        title: "When AI Writes the Code, What Skills Are Employers Hiring For?",
         url: "https://builtin.com/articles/audit-interview-scorecard", 
-        thesis: "An expert discussion of how to conduct better software engineering interviews in the age of AI using the 4 Dimensions of Engineering Judgment scorecard."
+        thesis: "An expert discussion of how to conduct better software engineering interviews in the age of AI using the 4 Dimensions of Engineering Judgment scorecard.",
+        editorsPick: true
       },
       {
-        title: "Reimagining the Coding Interview",
+        title: "Is Anthropic’s ‘Cheating’ Scandal the End of the Coding Interview?",
         url: "https://builtin.com/articles/reimagining-coding-interview", 
-        thesis: "AI can generate code. The scarce skill is catching what AI gets wrong. This article introduces the Audit Interview."
+        thesis: "AI can generate code. The scarce skill is catching what AI gets wrong. This article introduces the Audit Interview.",
+        editorsPick: true
       },
       {
-        title: "The AI Product Business Test",
-        url: "https://builtin.com/articles/ai-product-business-test", 
-        thesis: "Analyzes AI unit economics and the necessity of margin-aware product design."
-      },
-      {
-        title: "I Built an Incredible AI Product That Nobody Wanted. Here's Why.",
+        title: "I Built an Incredible AI Product That Nobody Wanted. Here’s Why.",
         url: "https://builtin.com/editors-picks?i=08d8cc66-3dd4-4057-8e19-d79a11e32f55&utm_campaign=content_newsletter&utm_medium=email&utm_source=ses", 
-        thesis: "A forensic breakdown of product-market fit failures in the AI space. Featured in Built In Editor's Picks."
+        thesis: "A forensic breakdown of product-market fit failures in the AI space.",
+        editorsPick: true
       }
     ]
   },
@@ -112,8 +111,13 @@ export default function PublicationLedger() {
                     {article.title}
                     </a>
                     <p className="text-zinc-950 mt-2 text-sm font-semibold leading-relaxed">{article.thesis}</p>
-                    <div className="mt-3 flex flex-wrap gap-2">
+                    <div className="mt-3 flex flex-wrap gap-2 items-center">
                         <span className="font-mono text-[9px] text-zinc-900 uppercase tracking-widest border border-zinc-400 px-2 py-0.5 rounded-full">Source: {pub.platform}</span>
+                        {article.editorsPick && (
+                          <span className="font-mono text-[9px] text-amber-700 bg-amber-50 uppercase tracking-widest border border-amber-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+                            <span>🏆</span> Editor&apos;s Pick
+                          </span>
+                        )}
                     </div>
                 </li>
                 ))}

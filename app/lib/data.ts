@@ -93,7 +93,8 @@ export const articles = [
         date: "Mar 2026",
         readTime: "9 min read",
         source: "Built In",
-        externalUrl: "https://builtin.com/articles/vibe-coding-era-software-engineering-role"
+        externalUrl: "https://builtin.com/articles/vibe-coding-era-software-engineering-role",
+        editorsPick: true
     },
     {
         slug: "agentic-ai-scientific-economic-analysis",
@@ -115,12 +116,13 @@ export const articles = [
     },
     {
         slug: "audit-interview-scorecard",
-        title: "When AI Writes the Code, What Are Employers Hiring For?",
+        title: "When AI Writes the Code, What Skills Are Employers Hiring For?",
         description: "An expert discussion of how to conduct better software engineering interviews in the age of AI. Introduces the 4 Dimensions of Engineering Judgment scorecard.",
         date: "Feb 2026",
         readTime: "7 min read",
         source: "Built In",
-        externalUrl: "https://builtin.com/articles/audit-interview-scorecard"
+        externalUrl: "https://builtin.com/articles/audit-interview-scorecard",
+        editorsPick: true
     },
     {
         slug: "financial-metrics-scorecard",
@@ -133,12 +135,13 @@ export const articles = [
     },
     {
         slug: "reimagining-coding-interview",
-        title: "Reimagining the Coding Interview",
+        title: "Is Anthropic’s ‘Cheating’ Scandal the End of the Coding Interview?",
         description: "AI can generate code. The scarce skill is catching what AI gets wrong. This article introduces the Audit Interview.",
         date: "Feb 2026",
         readTime: "6 min read",
         source: "Built In",
-        externalUrl: "https://builtin.com/articles/reimagining-coding-interview"
+        externalUrl: "https://builtin.com/articles/reimagining-coding-interview",
+        editorsPick: true
     },
     {
         slug: "shipping-faster-wont-get-you-promoted",
@@ -151,12 +154,13 @@ export const articles = [
     },
     {
         slug: "ai-product-business-test",
-        title: "The AI Product Business Test",
+        title: "I Built an Incredible AI Product That Nobody Wanted. Here’s Why.",
         description: "Validating AI unit economics before writing code. (Editor's Pick)",
         date: "Jan 2026",
         readTime: "6 min read",
         source: "Built In",
-        externalUrl: "https://builtin.com/articles/ai-product-business-test"
+        externalUrl: "https://builtin.com/articles/ai-product-business-test",
+        editorsPick: true
     },
     {
         slug: "technical-insolvency-date",
