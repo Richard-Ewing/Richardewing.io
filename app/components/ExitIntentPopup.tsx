@@ -63,10 +63,10 @@ export default function ExitIntentPopup() {
         formData.append('source', 'Exit Intent Popup');
         handleFormspreeSubmit(formData);
         try {
-            fetch('/api/beehiiv', {
+            await fetch('/api/beehiiv', {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, source: 'Exit Intent Popup' }),
-            }).catch(() => {});
+            });
         } catch {}
     };
 

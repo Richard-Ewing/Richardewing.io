@@ -121,14 +121,12 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
         formData.append('source', `${toolName} Gate`);
         handleFormspreeSubmit(formData);
 
-        // Step 3: Fire-and-forget to Beehiiv (Beehiiv handles dedup automatically)
+        // Step 3: Await Beehiiv to guarantee the request leaves the browser before the component unmounts
         try {
-            fetch('/api/beehiiv', {
+            await fetch('/api/beehiiv', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, source: `${toolName} Gate` }),
-            }).catch(() => {
-                // Non-blocking — Beehiiv failure doesn't affect user experience
             });
         } catch {
             // Ignore Beehiiv errors
