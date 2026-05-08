@@ -1,3 +1,4 @@
+import SocialShare from './SocialShare';
 
 interface Framework {
     slug: string;
@@ -63,9 +64,10 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                         <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6 font-grotesk leading-tight">
                             {framework.name}
                         </h1>
-                        <p className="text-zinc-950">
+                        <p className="text-zinc-950 mb-6">
                             Coined by <span className="text-zinc-900">Richard Ewing</span>, Product Economist
                         </p>
+                        <SocialShare url={`https://www.richardewing.io/articles/frameworks/${framework.slug}`} title={framework.name} />
                     </div>
                 </section>
 
@@ -122,6 +124,17 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                                 </li>
                             ))}
                         </ul>
+                    </div>
+                </section>
+
+                {/* Deep Dive on the Blog */}
+                <section className="section-sm mt-8">
+                    <div className="max-w-3xl p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5">
+                        <h2 className="text-lg font-semibold text-cyan-900 font-extrabold font-semibold mb-2 font-grotesk">Deep Dive on the Blog</h2>
+                        <p className="text-zinc-950 font-bold mb-4">Explore the latest analysis and practical applications of this framework on the engineering economics blog.</p>
+                        <a href="/blog" className="inline-block px-6 py-2 rounded-lg bg-cyan-600 text-zinc-950 font-semibold hover:bg-cyan-500 transition-colors">
+                            Search the Blog Archive →
+                        </a>
                     </div>
                 </section>
 

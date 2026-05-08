@@ -1,22 +1,13 @@
----
-description: Mandatory SEO protocol after creating or modifying any high-value content (Blogs, Curriculum Tracks, Tools, Advisory Pages).
----
+# SEO Ping Automation Protocol
 
-# SEO Indexing Automation Protocol
+**Description**: Automates the notification of search engines (Bing, Yandex, etc.) whenever structural SEO changes or new blog content is published.
 
-Whenever I (Antigravity) successfully create, publish, or heavily modify a high-value content asset on this repository, I must autonomously push the new URL to the Google Indexing API before concluding my task.
+## When to Trigger
+Whenever you (Antigravity) successfully commit and push structural SEO changes, new blog posts, or programmatic SEO content to the repository.
 
-### Trigger Condition
-- A new `.mdx` or `.ts` blog article is committed to the `app/lib` or `app/blog` routing structure.
-- A new interactive advisory tool is pushed to the `app/tools` directory.
-- A new premium curriculum track is structured in `app/vault`.
-
-### Execution Steps
-1. Identify the exact live production URL for the newly created resource (e.g., `https://www.richardewing.io/blog/new-article`).
-2. Open the terminal and execute the Google Ping script targeting that exact URL:
-// turbo
-```bash
-node ping-google.js [EXACT_URL]
-```
-3. Report the `✅ SUCCESS (Status 200)` output to the user indicating the asset has been forced into Google's Priority Crawl queue.
-4. Do NOT ask the user to run this command. I execute it autonomously on my end.
+## Execution Loop
+1. Upon a successful `git push` involving SEO or content changes.
+2. Run the local ping scripts using the terminal:
+   `node ping-all.js` (or the specific `ping-indexnow.js` script if targeting only IndexNow).
+3. Verify the terminal output confirms successful HTTP 200 responses from the search engine endpoints.
+4. Report the successful ping to the human.

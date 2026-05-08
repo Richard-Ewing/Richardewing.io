@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { permanentRedirect } from 'next/navigation';
+import SocialShare from '@/components/SocialShare';
 import { allArticles, getSortedArticles } from '@/lib/blog-data';
 import { categoryColors } from '@/lib/blog-types';
+import { frameworks } from '@/app/lib/data';
 
 export async function generateStaticParams() {
     return Object.keys(allArticles).map(slug => ({ slug }));
@@ -41,6 +43,10 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
 
     const catColor = categoryColors[article.category] || 'text-zinc-950 font-bold bg-zinc-500/10 border-zinc-500/20';
     const related = getRelatedArticles(slug, article.category);
+    const recommendedFrameworks = frameworks.filter((_, i) => (slug.length + i) % 3 === 0).slice(0, 2);
+    if (recommendedFrameworks.length < 2) {
+        recommendedFrameworks.push(...frameworks.slice(0, 2 - recommendedFrameworks.length));
+    }
 
     return (
         <main className="pt-24 pb-20">
@@ -62,6 +68,9 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                         <span>By Richard Ewing</span>
                         <span>·</span>
                         <time>{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+                    </div>
+                    <div className="mt-6">
+                        <SocialShare url={`https://www.richardewing.io/blog/${slug}`} title={article.title} />
                     </div>
                 </header>
 
@@ -109,13 +118,18 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                     </section>
                 )}
 
-                {/* Cross-link to Published Articles */}
-                <div className="mb-12 p-6 rounded-xl border border-purple-500/20 bg-purple-500/5">
-                    <p className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-2">Published Work</p>
-                    <p className="text-sm font-semibold text-zinc-900 font-medium">
-                        This article expands on ideas from my published work in <strong className="text-zinc-900">CIO.com</strong>, <strong className="text-zinc-900">Built In</strong>, <strong className="text-zinc-900">Mind the Product</strong>, and <strong className="text-zinc-900">HackerNoon</strong>.{' '}
-                        <Link href="/articles" className="text-purple-900 font-extrabold font-semibold hover:underline">View published articles →</Link>
-                    </p>
+                {/* Cross-link to Published Articles & Frameworks */}
+                <div className="mb-12">
+                    <h2 className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-6">Canonical Frameworks</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {recommendedFrameworks.map(fw => (
+                            <Link key={fw.slug} href={`/articles/frameworks/${fw.slug}`} className="p-6 rounded-xl border border-purple-500/20 bg-purple-500/5 hover:border-purple-500/40 transition-colors group">
+                                <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2 group-hover:text-purple-900 font-extrabold font-semibold transition-colors">{fw.name}</h3>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium line-clamp-2">{fw.definition}</p>
+                                <span className="text-xs font-bold font-medium text-purple-900 font-extrabold font-semibold mt-4 block">Read Definition →</span>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Author Box */}

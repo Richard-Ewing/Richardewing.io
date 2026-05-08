@@ -12,6 +12,7 @@ import PublicationLedger from '../components/PublicationLedger';
 export default function ArticlesPage() {
     // Filter state
     const [selectedPublication, setSelectedPublication] = useState<string | null>(null);
+    const [showAll, setShowAll] = useState(false);
 
     // Filtered articles logic
     const displayedArticles = selectedPublication
@@ -23,7 +24,7 @@ export default function ArticlesPage() {
             if (selectedPublication === 'HackerNoon' && article.source === 'HackerNoon') return true;
             return false;
         })
-        : articles.slice(0, 4); // Show recent 4 by default if no filter
+        : (showAll ? articles : articles.slice(0, 4));
 
     const featuredArticle = {
         title: "The AI Product Business Test",
@@ -228,9 +229,9 @@ export default function ArticlesPage() {
                         </div>
                     )}
 
-                    {!selectedPublication && (
+                    {!selectedPublication && !showAll && articles.length > 4 && (
                         <div className="mt-8 text-center">
-                            <button className="px-6 py-3 border border-zinc-400 rounded-lg text-sm font-semibold font-bold uppercase tracking-widest text-zinc-900 hover:text-zinc-900 hover:border-white/30 transition-all">
+                            <button onClick={() => setShowAll(true)} className="px-6 py-3 border border-zinc-400 rounded-lg text-sm font-semibold font-bold uppercase tracking-widest text-zinc-900 hover:text-zinc-900 hover:border-white/30 transition-all cursor-pointer">
                                 View Full Archive
                             </button>
                         </div>
