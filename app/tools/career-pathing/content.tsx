@@ -34,7 +34,7 @@ export default function CareerPathingContent() {
         if (answers.q2 === 'ai') {
             return {
                 title: "You are attempting an AI Architecture Pivot.",
-                diagnosis: "The market is punishing pure Web2 coders and rewarding domain experts who can integrate sovereign LLMs securely. You do not need to simply learn PyTorch. You need to learn AI Product Economics, agentic inference orchestration, and how to quantify AI ROI to your CFO.",
+                diagnosis: "The market is punishing pure Web2 coders and rewarding domain experts who can integrate sovereign LLMs securely. You do not need to simply learn PyTorch. You need to learn AI AI Economics, agentic inference orchestration, and how to quantify AI ROI to your CFO.",
                 tracks: [
                     { id: 'Track 11', name: 'AI Operations & Economics', desc: 'Master SLM vs LLM costs and inference infrastructure.' },
                     { id: 'Track 2', name: 'AI Engineering ROI', desc: 'Quantify exactly how AI will replace legacy OpEx.' },

@@ -28,7 +28,7 @@ export default function AuditInterviewLayout({ children }: { children: React.Rea
                         creator: {
                             '@type': 'Person',
                             name: 'Richard Ewing',
-                            jobTitle: 'Product Economist',
+                            jobTitle: 'AI Economist',
                             url: 'https://www.richardewing.io',
                         },
                     }),

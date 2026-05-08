@@ -29,7 +29,7 @@ export default function VTALayout({ children }: { children: React.ReactNode }) {
                             '@type': 'Person',
                             '@id': 'https://www.richardewing.io/#person',
                             name: 'Richard Ewing',
-                            jobTitle: 'Product Economist',
+                            jobTitle: 'AI Economist',
                             url: 'https://www.richardewing.io',
                         },
                     }),

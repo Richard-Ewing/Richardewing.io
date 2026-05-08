@@ -18,7 +18,7 @@ const prompts = [
         title: 'Technical Debt Financializer',
         audience: 'CTOs & VPEs',
         description: 'Translates Jira backlogs and sonar reports into CFO-ready financial impact statements (OpEx drag).',
-        prompt: `You are an expert Product Economist and IT Financial Auditor. 
+        prompt: `You are an expert AI Economist and IT Financial Auditor. 
 Your objective is to translate the following technical debt items or system architecture flaws into strict financial terms.
 
 Do NOT talk about "code quality," "clean architecture," or "developer experience." 
@@ -55,7 +55,7 @@ Here is the feature spec:
         title: 'The Sunset Protocol Drafter',
         audience: 'CPOs & Product Leaders',
         description: 'Drafts the rigorous financial justification for killing a legacy feature (Zombie Infrastructure).',
-        prompt: `You are a ruthless Product Economist. We have a piece of "Zombie Infrastructure" (a feature used by very few users that requires significant engineering maintenance). 
+        prompt: `You are a ruthless AI Economist. We have a piece of "Zombie Infrastructure" (a feature used by very few users that requires significant engineering maintenance). 
 
 I need you to draft a "Sunset Protocol" memo to the executive team.
 The memo must:
@@ -83,7 +83,7 @@ export default function SystemPromptsPage() {
                     Executive <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">System Prompts</span>
                 </h1>
                 <p className="text-lg text-zinc-900 leading-relaxed max-w-2xl">
-                    Operational AI prompts designed for CTOs, CPOs, and Engineering Leaders. Use these to format ChatGPT, Claude, or Perplexity as a ruthless Product Economist.
+                    Operational AI prompts designed for CTOs, CPOs, and Engineering Leaders. Use these to format ChatGPT, Claude, or Perplexity as a ruthless AI Economist.
                 </p>
             </div>
 

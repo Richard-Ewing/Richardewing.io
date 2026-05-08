@@ -178,7 +178,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     },
     'guides/product-economics': {
         moduleId: '15-5',
-        title: 'Product Economics & Unit Profitability',
+        title: 'AI Economics & Unit Profitability',
         trackName: 'Track 15 — Free Playbooks',
         description: 'Every feature has a P&L. Learn to calculate per-feature profitability and execute the Kill Switch Protocol on zombie features.',
         takeaways: [

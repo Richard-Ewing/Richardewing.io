@@ -79,7 +79,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
     // ═══════════════════ TRACK 2: PM / CPO ═══════════════════
     const t2 = 'Track 2 — Product Manager / CPO';
     const pmMods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['2-1', 'Product Unit Economics', 'Transition from backlog manager to Product Economist.', 
+        ['2-1', 'Product Unit Economics', 'Transition from backlog manager to AI Economist.', 
             ['Calculate Feature ROI', 'Perform the Feature Bloat Calculus', 'Stop building zombie features', 'Map adoption metrics'],
             [
                 l('Lesson 1: The Feature P&L', 'Every feature has its own Profit & Loss statement. If a feature costs $50,000 to build and $2,000/mo to maintain, but only 3% of users adopt it, you have negative ROI. Stop building 0-value features.', [

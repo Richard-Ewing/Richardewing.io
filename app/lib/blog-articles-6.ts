@@ -47,7 +47,7 @@ export const articlesBatch6: Record<string, ArticleData> = {
 
 <h3>Implementing the Scream Test</h3>
 <p>How do you safely deprecate features without causing a massive change-management panic? You implement the <strong>Scream Test</strong>.</p>
-<p>In a recent product economics audit, we identified the lowest-usage features contributing to the highest cloud infrastructure costs. Instead of formally deprecating them—which triggers endless meetings, customer communications, and sales objections—we simply toggled them off in the staging and shadow environments, and gracefully hid the UI elements in production for a subset of users.</p>
+<p>In a recent AI economics audit, we identified the lowest-usage features contributing to the highest cloud infrastructure costs. Instead of formally deprecating them—which triggers endless meetings, customer communications, and sales objections—we simply toggled them off in the staging and shadow environments, and gracefully hid the UI elements in production for a subset of users.</p>
 <p>Then, we waited for the phones to ring. They didn't.</p>
 <p>Over a 30-day period, out of tens of thousands of active users, exactly zero support tickets were filed regarding the missing tools. The Scream Test proved what the telemetry data already suggested: the features were completely dead. By quietly sunsetting them, we permanently eliminated the maintenance burden, reduced our AWS footprint, and improved the gross margin profile of the product without a single customer complaint.</p>
 
@@ -146,7 +146,7 @@ export const articlesBatch6: Record<string, ArticleData> = {
 <p>Every new engineer requires onboarding time, extensive code review time, sprint planning alignment, and architectural consensus. If you drop new engineers into a system that is already drowning in technical debt and brittle microservices, those engineers do not build new features. They spend 60% of their week just trying not to break things. They wait on cross-team dependencies. They navigate constantly shifting API contracts.</p>
 
 <h3>The APER Lie-Detector and Gross Margin Destruction</h3>
-<p>The Coordination Tax directly attacks your enterprise gross margins. If you double your headcount but your feature velocity only increases by 20%, you are actively bleeding cash. In a recent product economics audit, an executive team believed they had a solid engineering margin. But forensic analysis exposed a 16% Coordination Tax. That 16% was quietly burning $891,000 a year in lost productivity simply paying its elite technical talent to coordinate with each other in endless Slack channels and Jira boards.</p>
+<p>The Coordination Tax directly attacks your enterprise gross margins. If you double your headcount but your feature velocity only increases by 20%, you are actively bleeding cash. In a recent AI economics audit, an executive team believed they had a solid engineering margin. But forensic analysis exposed a 16% Coordination Tax. That 16% was quietly burning $891,000 a year in lost productivity simply paying its elite technical talent to coordinate with each other in endless Slack channels and Jira boards.</p>
 <p>The only metric that dictates SaaS survival is <strong>APER: Annual Recurring Revenue Per Engineer</strong>. Top-tier, highly efficient SaaS companies benchmark at $500K+ in APER. If your organization falls significantly below this baseline, you do not have a talent shortage. You have a governance failure.</p>
 
 <h3>The Cure is Subtraction, Not Addition</h3>
@@ -184,20 +184,20 @@ If the feature is just a thin, programmatic wrapper around the OpenAI or Anthrop
 <p>Finally, apply the Painkiller vs. Vitamin assessment. Does the AI entirely remove human labor from a workflow, or does it merely generate a mediocre draft that the user must spend ten minutes editing and correcting? If heavy human intervention is still required, you haven't eliminated the friction; you have just shifted it from creation to verification. Build AI that acts autonomously and decisively, bounded by deterministic controls, and watch your margins expand.</p>`
   },
   "what-a-product-economist-actually-does": {
-    title: "What a Product Economist Actually Does",
-    excerpt: "The modern tech ecosystem has a massive translation gap. Here is how the Product Economist bridges the divide between engineering and finance.",
+    title: "What a AI Economist Actually Does",
+    excerpt: "The modern tech ecosystem has a massive translation gap. Here is how the AI Economist bridges the divide between engineering and finance.",
     date: "2026-05-01",
     readTime: "7 min read",
     category: "Leadership",
-    content: `<h2>What a Product Economist Actually Does: Bridging the Divide</h2>
+    content: `<h2>What a AI Economist Actually Does: Bridging the Divide</h2>
 <p>The modern technology ecosystem suffers from a massive, structural translation gap. Engineering speaks in velocity metrics, story points, sprint capacity, and technical debt. Finance speaks in EBITDA, Gross Margins, Capital Expenditures (CapEx), Operating Expenses (OpEx), and Annual Recurring Revenue (ARR). And traditional Product Management is caught hopelessly in the middle, managing feature roadmaps instead of managing capital allocation.</p>
 <p>When the Chief Technology Officer says, "We need to pause feature development for six months to refactor the monolith," the Board of Directors hears, "We are going to stop delivering value to customers and burn cash for half a year."</p>
 
-<h3>The Role of the Product Economist</h3>
-<p>A Product Economist exists to bridge this divide. They exist to translate engineering reality into financial reality, and vice versa. They do not care about story points; they care deeply about the Cost of Delay. They do not care about the sheer number of lines of code pushed to a repository; they care about the CapEx vs. OpEx ratio of the R&D budget.</p>
+<h3>The Role of the AI Economist</h3>
+<p>A AI Economist exists to bridge this divide. They exist to translate engineering reality into financial reality, and vice versa. They do not care about story points; they care deeply about the Cost of Delay. They do not care about the sheer number of lines of code pushed to a repository; they care about the CapEx vs. OpEx ratio of the R&D budget.</p>
 <p>We view every single line of code as an investment that must yield a tangible financial return. If it does not generate revenue, reduce churn, or cut operational costs, it is a liability that must be eliminated.</p>
 
-<h3>Key Responsibilities of the Product Economist</h3>
+<h3>Key Responsibilities of the AI Economist</h3>
 <ul>
 <li><strong>Auditing Technical Debt:</strong> We do not treat technical debt as an engineering complaint; we translate legacy code maintenance into a direct, measurable tax on Gross Margins. We prove to the CFO that paying down debt is a high-ROI financial maneuver.</li>
 <li><strong>Implementing the Product Debt Index (PDI):</strong> We measure the exact threshold where an engineering team shifts from creating new, monetizable assets to simply servicing old liabilities. If an engineering team is spending 60% of their time on maintenance, the PDI is critical, and intervention is required.</li>
@@ -205,8 +205,8 @@ If the feature is just a thin, programmatic wrapper around the OpenAI or Anthrop
 </ul>
 
 <h3>The Translation Engine</h3>
-<p>A Product Economist acts as the ultimate translation engine. When the CTO demands a refactor, the Product Economist steps in and translates it for the board: "The monolithic architecture is currently costing us $2 million annually in Coordination Tax and lost developer productivity. A $500,000 CapEx investment in refactoring will eliminate this tax, yielding a 300% ROI within 18 months, while increasing our feature delivery speed by 40%."</p>
-<p>That is how you secure funding from skeptical investors. That is how you align a fractured organization. Ultimately, a Product Economist transforms the engineering department from a mysterious cost center into a mathematically verified, highly predictable engine of enterprise value.</p>`
+<p>A AI Economist acts as the ultimate translation engine. When the CTO demands a refactor, the AI Economist steps in and translates it for the board: "The monolithic architecture is currently costing us $2 million annually in Coordination Tax and lost developer productivity. A $500,000 CapEx investment in refactoring will eliminate this tax, yielding a 300% ROI within 18 months, while increasing our feature delivery speed by 40%."</p>
+<p>That is how you secure funding from skeptical investors. That is how you align a fractured organization. Ultimately, a AI Economist transforms the engineering department from a mysterious cost center into a mathematically verified, highly predictable engine of enterprise value.</p>`
   },
 "ai-economics-how-intelligent-systems-make-and-lose-money": {
     title: "AI Economics: How Intelligent Systems Make and Lose Money",

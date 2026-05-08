@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'FAQ — Richard Ewing | Product Economist',
-    description: 'Frequently asked questions about Product Economics, advisory services, Exogram, and the tools and frameworks created by Richard Ewing.',
-    keywords: ['product economist FAQ', 'richard ewing FAQ', 'advisory FAQ', 'exogram FAQ', 'technical debt FAQ'],
+    title: 'FAQ — Richard Ewing | AI Economist',
+    description: 'Frequently asked questions about AI Economics, advisory services, Exogram, and the tools and frameworks created by Richard Ewing.',
+    keywords: ['AI economist FAQ', 'richard ewing FAQ', 'advisory FAQ', 'exogram FAQ', 'technical debt FAQ'],
 };
 
 const faqs = [
     {
         category: 'Advisory Services',
         questions: [
-            { q: 'What does a Product Economist do?', a: 'A Product Economist treats product decisions as economic decisions. I audit R&D spend, surface capital risks, and identify hidden technical debt in B2B SaaS environments. I translate between engineering and the C-Suite — quantifying the financial impact of technical decisions.' },
+            { q: 'What does a AI Economist do?', a: 'A AI Economist treats product decisions as economic decisions. I audit R&D spend, surface capital risks, and identify hidden technical debt in B2B SaaS environments. I translate between engineering and the C-Suite — quantifying the financial impact of technical decisions.' },
             { q: 'How does the Diagnostic engagement work?', a: 'The $2,500 Diagnostic includes a PDI audit, AUEB assessment, APER diagnostic, a 1-hour strategy call, and a written executive summary. It typically takes 2-3 weeks and produces a quantified assessment of your engineering economics.' },
             { q: 'What is the difference between Fractional CTO and Board Advisor?', a: 'The Fractional CTO tier ($7,500/month) provides 10 hours/week of hands-on advisory: architecture reviews, team coaching, board prep. The Board Advisor tier ($15,000/month) provides portfolio-level oversight: M&A due diligence, multi-company benchmarking, and AI governance framework implementation.' },
             { q: 'Do you work with startups or only enterprises?', a: 'Both. Startups benefit from the Diagnostic to identify problems early. Growth-stage companies benefit from Fractional CTO support. Enterprise and PE/VC portfolios benefit from Board Advisory.' },
@@ -37,7 +37,7 @@ const faqs = [
     {
         category: 'Content & Glossary',
         questions: [
-            { q: 'Can I cite the glossary definitions?', a: 'Yes. The glossary is designed to be the canonical source for Product Economics terminology. Please attribute to richardewing.io.' },
+            { q: 'Can I cite the glossary definitions?', a: 'Yes. The glossary is designed to be the canonical source for AI Economics terminology. Please attribute to richardewing.io.' },
             { q: 'How are the frameworks different from the articles?', a: 'Frameworks are canonical definitions — permanent reference documents. Articles are time-stamped publications in external outlets (Built In, Mind the Product, CIO.com, HackerNoon). The frameworks are cited; the articles are promotional.' },
             { q: 'How do I get the R&D Audit Checklist?', a: 'Subscribe via any form on the site — exit intent popup, newsletter section, or tool gate. You\'ll be redirected immediately to the full 15-question checklist.' },
         ],

@@ -223,14 +223,14 @@ export default function AuditInterview() {
                         {/* Status Badge */}
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                            <span className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest">Product Economist | Audit Suite</span>
+                            <span className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest">AI Economist | Audit Suite</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
                             Audit <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Interview.</span>
                         </h1>
                         <p className="text-lg sm:text-xl text-zinc-900 mb-8">
-                            The "Product Economist" framework for technical auditing. Quantify judgment, capital risk, and leverage.
+                            The "AI Economist" framework for technical auditing. Quantify judgment, capital risk, and leverage.
                         </p>
 
                         {/* Role Selector */}

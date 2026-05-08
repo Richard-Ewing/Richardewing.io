@@ -1,5 +1,5 @@
 {
-  "syllabus": "<div class=\"font-sans antialiased bg-gray-950 text-white min-h-screen p-8 lg:p-12\">\n    <header class=\"mb-12 border-b border-cyan-700 pb-6\">\n        <h1 class=\"text-4xl lg:text-5xl font-extrabold text-cyan-400 mb-2\">AI Product Economics Playbook</h1>\n        <p class=\"text-xl lg:text-2xl font-semibold text-emerald-400\">Exclusive Executive &amp; Technical Leadership Guide</p>\n    </header>\n\n    \n</div>",
+  "syllabus": "<div class=\"font-sans antialiased bg-gray-950 text-white min-h-screen p-8 lg:p-12\">\n    <header class=\"mb-12 border-b border-cyan-700 pb-6\">\n        <h1 class=\"text-4xl lg:text-5xl font-extrabold text-cyan-400 mb-2\">AI AI Economics Playbook</h1>\n        <p class=\"text-xl lg:text-2xl font-semibold text-emerald-400\">Exclusive Executive &amp; Technical Leadership Guide</p>\n    </header>\n\n    \n</div>",
   "lessons": [
     {
       "title": "Part 1: Lesson 1: The Physics of AI Product Lifecycle",

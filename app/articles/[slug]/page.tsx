@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         description: article.description,
         keywords: [
             'Richard Ewing',
-            'product economist',
+            'AI economist',
             article.source.toLowerCase(),
             'engineering economics',
             'R&D capital',

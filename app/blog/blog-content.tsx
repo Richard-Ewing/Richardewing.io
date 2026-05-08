@@ -36,7 +36,7 @@ export default function BlogContent() {
                 <section className="text-center mb-12 relative">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
                     <div className="relative">
-                        <p className="text-xs font-bold font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest mb-4">The Product Economist</p>
+                        <p className="text-xs font-bold font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest mb-4">The AI Economist</p>
                         <h1 className="text-4xl md:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             Engineering Economics <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Blog.</span>
                         </h1>

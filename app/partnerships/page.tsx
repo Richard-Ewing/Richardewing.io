@@ -52,7 +52,7 @@ export default function PartnershipsPage() {
                         <div className="text-xs font-bold font-mono text-emerald-500 uppercase tracking-widest mb-4">Partnerships</div>
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
                             Grow With{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Product Economics</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">AI Economics</span>
                         </h1>
                         <p className="text-xl text-zinc-900 max-w-2xl mx-auto">
                             Embed R&D Capital Audits into your practice, platform, or portfolio. Our frameworks are designed for scale — from individual audits to enterprise-wide deployment.

@@ -19,10 +19,10 @@ export default function DoctrineContent() {
                         <span className="font-mono text-emerald-900 font-extrabold font-semibold text-xs font-bold uppercase tracking-widest mb-4 block">The Doctrine</span>
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 mb-6 leading-tight">
                             Sovereignty in <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Product Economics.</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">AI Economics.</span>
                         </h1>
                         <p className="text-lg sm:text-xl text-zinc-900 max-w-3xl leading-relaxed border-l-4 border-emerald-500 pl-6">
-                            The following principles govern the methodology of the Product Economist. They are not suggestions; they are the <span className="text-zinc-950 font-bold">immutable laws</span> of software solvency.
+                            The following principles govern the methodology of the AI Economist. They are not suggestions; they are the <span className="text-zinc-950 font-bold">immutable laws</span> of software solvency.
                         </p>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ export default function DoctrineContent() {
                         <p className="text-xl sm:text-2xl text-zinc-950 font-serif mb-4">
                             "Technical debt isn't a cleanup problem. It's a balance sheet liability."
                         </p>
-                        <cite className="text-sm font-semibold font-mono text-cyan-900 font-extrabold font-semibold not-italic uppercase tracking-widest">— Richard Ewing, Product Economist</cite>
+                        <cite className="text-sm font-semibold font-mono text-cyan-900 font-extrabold font-semibold not-italic uppercase tracking-widest">— Richard Ewing, AI Economist</cite>
                     </div>
                 </div>
             </ScrollReveal>

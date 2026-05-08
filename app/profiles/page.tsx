@@ -8,7 +8,7 @@ export const metadata: Metadata = {
         'Richard Ewing publications',
         'CIO.com contributor',
         'Built In author',
-        'product economist articles',
+        'AI economist articles',
         'Mind the Product',
         'HackerNoon',
         'AI unit economics articles',
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'Published Profiles & Media | Richard Ewing',
-        description: 'Expert contributor at CIO.com, Built In, Mind the Product, and HackerNoon. Read Richard Ewing\'s published work on product economics and AI strategy.',
+        description: 'Expert contributor at CIO.com, Built In, Mind the Product, and HackerNoon. Read Richard Ewing\'s published work on AI economics and AI strategy.',
         url: 'https://www.richardewing.io/profiles',
         type: 'website',
     },
     twitter: {
         card: 'summary',
         title: 'Published Profiles | Richard Ewing',
-        description: 'Expert contributor at CIO.com, Built In, Mind the Product. Product Economist (AI Economics Domain).',
+        description: 'Expert contributor at CIO.com, Built In, Mind the Product. AI Economist (AI Economics Domain).',
     },
 };
 

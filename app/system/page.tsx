@@ -29,7 +29,7 @@ export default function SystemPage() {
                             Algorithmic <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-zinc-600">Solvency.</span>
                         </h1>
                         <p className="text-lg sm:text-xl text-zinc-900 max-w-2xl leading-relaxed">
-                            Most product organizations are black boxes of capital consumption. The Product Economist uses proprietary frameworks to force <span className="text-zinc-950 font-bold">financial transparency</span>.
+                            Most product organizations are black boxes of capital consumption. The AI Economist uses proprietary frameworks to force <span className="text-zinc-950 font-bold">financial transparency</span>.
                         </p>
                     </header>
 

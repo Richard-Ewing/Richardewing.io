@@ -2,11 +2,11 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'InsurTech — Product Economics for Insurance Technology',
+    title: 'InsurTech — AI Economics for Insurance Technology',
     description: 'Technical debt economics for InsurTech companies: legacy system modernization, regulatory compliance debt, AI underwriting costs, and actuarial model ma...',
-    keywords: ['insurtech technical debt', 'insurance technology economics', 'legacy insurance systems', 'AI underwriting cost', 'insurtech product economics'],
+    keywords: ['insurtech technical debt', 'insurance technology economics', 'legacy insurance systems', 'AI underwriting cost', 'insurtech AI economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/insurtech' },
-    openGraph: { title: 'InsurTech Product Economics', description: 'The hidden engineering costs destroying InsurTech margins.', url: 'https://www.richardewing.io/industries/insurtech', type: 'article' },
+    openGraph: { title: 'InsurTech AI Economics', description: 'The hidden engineering costs destroying InsurTech margins.', url: 'https://www.richardewing.io/industries/insurtech', type: 'article' },
 };
 
 const challenges = [
@@ -45,7 +45,7 @@ export default function InsurTechPage() {
                         <Link href="/industries" className="hover:text-cyan-900 font-extrabold font-semibold">Industries</Link><span>/</span><span className="text-amber-400 font-bold">InsurTech</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Product Economics for{' '}
+                        AI Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">InsurTech</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">

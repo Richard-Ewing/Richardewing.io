@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for FinTech — R&D Audit & AI Governance',
+    title: 'AI Economics for FinTech — R&D Audit & AI Governance',
     description: 'Product economics advisory for FinTech companies. Technical debt assessment for regulated financial services, AI governance for banking, and compliance ...',
-    keywords: ['fintech technical debt', 'fintech CTO advisor', 'banking AI governance', 'financial services engineering audit', 'fintech product economics', 'regulated software debt'],
+    keywords: ['fintech technical debt', 'fintech CTO advisor', 'banking AI governance', 'financial services engineering audit', 'fintech AI economics', 'regulated software debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/fintech' },
-    openGraph: { title: 'Product Economics for FinTech', description: 'R&D audit and AI governance for regulated financial services.', url: 'https://www.richardewing.io/industries/fintech', type: 'website' },
+    openGraph: { title: 'AI Economics for FinTech', description: 'R&D audit and AI governance for regulated financial services.', url: 'https://www.richardewing.io/industries/fintech', type: 'website' },
 };
 
 const challenges = [
@@ -26,7 +26,7 @@ export default function FinTechPage() {
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Product Economics for{' '}
+                        AI Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">FinTech</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">

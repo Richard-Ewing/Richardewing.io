@@ -5,6 +5,7 @@ import { articlesBatch3 } from './blog-articles-3';
 import { articlesBatch4 } from './blog-articles-4';
 import { articlesBatch5 } from './blog-articles-5';
 import { articlesBatch6 } from './blog-articles-6';
+import { articlesBatch7 } from './blog-articles-7';
 
 // Merge all article batches into a single lookup
 export const allArticles: Record<string, ArticleData> = {
@@ -14,6 +15,7 @@ export const allArticles: Record<string, ArticleData> = {
     ...articlesBatch4,
     ...articlesBatch5,
     ...articlesBatch6,
+    ...articlesBatch7,
 };
 
 // Get sorted article list (newest first)

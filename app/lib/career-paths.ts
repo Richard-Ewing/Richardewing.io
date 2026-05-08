@@ -31,7 +31,7 @@ export const CAREER_PATHS: CareerPath[] = [
     // --- Product & Economics ---
     {
         slug: 'ai-product-economist',
-        title: 'AI Product Economist',
+        title: 'AI AI Economist',
         manifestoTitle: 'The Visionary Fiduciary',
         label: 'The Visionary',
         iconName: 'Target',
@@ -39,14 +39,14 @@ export const CAREER_PATHS: CareerPath[] = [
         domain: 'Product & Economics',
         description: 'Stop prioritizing features by "vibe." Evaluate the exact API token-cost-to-revenue ratio for generative features and govern the product roadmap as a fiduciary asset.',
         manifesto: [
-            'Product Managers who write user stories for simple CRUD apps are being rendered obsolete by code-generation LLMs. To survive the 2026 transition, PMs must evolve into Product Economists.',
-            'The AI Product Economist models the financial viability of AI features at the atomic inference level. If a feature costs $0.02 in API calls but only generates $0.01 in user value, you are shipping negative margins at scale.',
+            'Product Managers who write user stories for simple CRUD apps are being rendered obsolete by code-generation LLMs. To survive the 2026 transition, PMs must evolve into AI Economists.',
+            'The AI AI Economist models the financial viability of AI features at the atomic inference level. If a feature costs $0.02 in API calls but only generates $0.01 in user value, you are shipping negative margins at scale.',
             'Your job is to understand the AI Unit Economics Benchmark (AUEB), determine whether to use expensive frontier APIs vs. cheap edge SLMs, and validate that AI product expansion aligns with Enterprise Valuation.'
         ],
         glossaryTerms: ['ai-cogs', 'innovation-tax', 'cost-of-delay', 'technical-insolvency-date', 'ai-assisted-development', 'dora-metrics'],
         curriculumKeywords: ['finops', 'pricing', 'economics', 'roi', 'cogs'],
-        seoMeta: 'Transition to an AI Product Economist. Master AI Unit Economics, inference cost modeling, and govern the generative product roadmap as a fiduciary asset.',
-        seoKeywords: ['AI Product Economist', 'AI PM', 'AI product management', 'AI unit economics', 'LLM feature pricing', 'API tracking', 'AUEB'],
+        seoMeta: 'Transition to an AI AI Economist. Master AI Unit Economics, inference cost modeling, and govern the generative product roadmap as a fiduciary asset.',
+        seoKeywords: ['AI AI Economist', 'AI PM', 'AI product management', 'AI unit economics', 'LLM feature pricing', 'API tracking', 'AUEB'],
         primaryMetrics: [
             { name: "AUEB Ratio", description: "AI Unit Economics Benchmark: AI COGS relative to Monthly Recurring Revenue." },
             { name: "Cost of Predictivity", description: "The margin penalty paid to ensure determinism over hallucination." },

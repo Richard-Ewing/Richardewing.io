@@ -96,7 +96,7 @@ export const allSeoLinks: SeoLink[] = [
     { slug: "pe-portfolio-optimization", title: "PE Portfolio Tech Optimization \u2014 Value Creation for Operating Partners", type: "guide" },
     { slug: "platform-engineering-economics", title: "Platform Engineering Economics \u2014 Internal Developer Platforms", type: "guide" },
     { slug: "post-quantum-migration", title: "Post-Quantum Cryptography (PQC) Migration", type: "guide" },
-    { slug: "product-economics", title: "Product Economics Playbook — Unit Economics, Feature P&L & Kill Switch Protocol", type: "guide" },
+    { slug: "product-economics", title: "AI Economics Playbook — Unit Economics, Feature P&L & Kill Switch Protocol", type: "guide" },
     { slug: "remote-engineering-economics", title: "Remote Engineering Team Economics \u2014 Distributed Teams Done Right", type: "guide" },
     { slug: "saas-metrics", title: "SaaS Metrics Masterclass — From ARR to Engineering ROI", type: "guide" },
     { slug: "spatial-computing-economics", title: "Spatial Computing Economics", type: "guide" },

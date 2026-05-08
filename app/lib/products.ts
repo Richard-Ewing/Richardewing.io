@@ -49,8 +49,8 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_ai_economics: {
-        name: 'AI Product Economics — Track Access',
-        description: 'Lifetime access to the AI Product Economics track (Track 2). All 16 modules, lessons, and assessments.',
+        name: 'AI AI Economics — Track Access',
+        description: 'Lifetime access to the AI AI Economics track (Track 2). All 16 modules, lessons, and assessments.',
         price: 14900, // $149.00
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/14A9AMaj44ng01f5NS2B20q',
@@ -218,7 +218,7 @@ export const PRODUCTS: Record<string, Product> = {
     },
     strategy_session: {
         name: '1-on-1 Strategy Session',
-        description: '60-minute live strategy session with Richard Ewing, Product Economist.',
+        description: '60-minute live strategy session with Richard Ewing, AI Economist.',
         price: 50000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/dRm6oAbn8bPIdS5gsw2B20j',
@@ -281,8 +281,8 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x', 
     },
     certification: {
-        name: 'Product Economist Certification (CPE)',
-        description: 'Professional certification in product economics methodology. 12 modules, 48 hours, exam + curriculum access + digital certificate.',
+        name: 'AI Economist Certification (CPE)',
+        description: 'Professional certification in AI economics methodology. 12 modules, 48 hours, exam + curriculum access + digital certificate.',
         price: 150000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/aFa28k1My2f8g0ddgk2B20d',

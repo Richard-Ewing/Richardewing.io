@@ -42,7 +42,7 @@ export async function POST(req: Request) {
         const prompt = `
 System: You are a high-agency executive advisor.
 
-Act as 'The Product Economist'. Write a hiring defense memo for a ${role} candidate.
+Act as 'The AI Economist'. Write a hiring defense memo for a ${role} candidate.
 
 SCORES (0-3 scale):
 - Verification Depth: ${scores.verification_depth}

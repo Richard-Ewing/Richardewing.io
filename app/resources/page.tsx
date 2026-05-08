@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Resources Hub | Richard Ewing — Product Economist',
+    title: 'Resources Hub | Richard Ewing — AI Economist',
     description: 'Access premium free tools, the massive 2026 enterprise glossary, comprehensive curriculum tracks, deep-dive articles, and strategic frameworks for techn...',
     keywords: ['technology resources', 'CTO tools', 'engineering metrics', 'product management resources', 'Richard Ewing tools', 'free SaaS tools'],
     alternates: { canonical: 'https://www.richardewing.io/resources' },
@@ -57,12 +57,12 @@ const resourceSections = [
     },
     {
         title: 'Articles & Publications',
-        description: 'Published insights on product economics, AI, and engineering leadership.',
+        description: 'Published insights on AI economics, AI, and engineering leadership.',
         icon: '📝',
         items: [
             { name: 'All Articles', description: 'Published in Built In, Mind the Product, CIO.com', href: '/articles' },
-            { name: 'Product Economist Doctrine', description: 'The 4-principle framework for engineering capital allocation', href: '/doctrine' },
-            { name: 'Manifesto', description: 'Philosophy behind the Product Economist approach', href: '/manifesto' },
+            { name: 'AI Economist Doctrine', description: 'The 4-principle framework for engineering capital allocation', href: '/doctrine' },
+            { name: 'Manifesto', description: 'Philosophy behind the AI Economist approach', href: '/manifesto' },
             { name: 'Executive Briefings', description: 'Weekly intelligence for technology leaders', href: '/briefings' },
             { name: 'R&D Audit Checklist', description: 'The 15 questions from every $7,500 engagement', href: '/checklist' },
             { name: 'FAQ', description: 'Common questions about advisory, tools, and Exogram', href: '/faq' },

@@ -1,4 +1,9 @@
 import { allGlossaryTerms } from './terms/index';
+export * from './terms/sixteenth-pass';
+export * from './terms/saas-metrics';
+export * from './terms/trending-2026-batch2';
+export * from './terms/ai-economist';
+export * from './terms/margin-engineering';
 export type { GlossaryTerm } from './types';
 import type { GlossaryTerm } from './types';
 
@@ -588,17 +593,17 @@ The 4 Dimensions of Engineering Judgment scored: Verification (finding bugs), Pr
     },
     {
         slug: 'product-economist',
-        title: 'Product Economist',
+        title: 'AI Economist',
         category: 'Richard Ewing Frameworks',
-        definition: `A Product Economist is a role and methodology coined by Richard Ewing that treats product decisions as economic decisions. Instead of measuring velocity, story points, or features shipped, a Product Economist measures Return on Invested Capital (ROIC), Cost of Goods Sold (COGS) efficiency, and technical debt in dollar terms.
+        definition: `A AI Economist is a role and methodology coined by Richard Ewing that treats product decisions as economic decisions. Instead of measuring velocity, story points, or features shipped, a AI Economist measures Return on Invested Capital (ROIC), Cost of Goods Sold (COGS) efficiency, and technical debt in dollar terms.
 
-The Product Economist methodology recognizes that engineering is capital allocation, not just feature delivery. Every sprint is an investment decision. Every feature has ongoing maintenance costs. Every architecture choice has financial implications.
+The AI Economist methodology recognizes that engineering is capital allocation, not just feature delivery. Every sprint is an investment decision. Every feature has ongoing maintenance costs. Every architecture choice has financial implications.
 
-The Product Economist Doctrine holds four principles: Capital Allocation > Agile Theater, The Truth is in the P&L, Kill Zombies Ruthlessly, and Sovereignty Over Dependency.`,
-        whyItMatters: `Traditional product management focuses on velocity and features. Product Economics focuses on financial returns. In an era of belt-tightening and AI cost pressures, the economic lens is essential for survival.`,
+The AI Economist Doctrine holds four principles: Capital Allocation > Agile Theater, The Truth is in the P&L, Kill Zombies Ruthlessly, and Sovereignty Over Dependency.`,
+        whyItMatters: `Traditional product management focuses on velocity and features. AI Economics focuses on financial returns. In an era of belt-tightening and AI cost pressures, the economic lens is essential for survival.`,
         faqs: [
-            { question: 'What is a Product Economist?', answer: 'A Product Economist treats every product decision as an economic decision, measuring ROIC, COGS efficiency, and technical debt in dollar terms rather than story points or velocity.' },
-            { question: 'Who coined the term Product Economist?', answer: 'Richard Ewing coined the term and methodology. He is published in CIO.com, Built In, and Mind the Product on product economics topics.' }
+            { question: 'What is a AI Economist?', answer: 'A AI Economist treats every product decision as an economic decision, measuring ROIC, COGS efficiency, and technical debt in dollar terms rather than story points or velocity.' },
+            { question: 'Who coined the term AI Economist?', answer: 'Richard Ewing coined the term and methodology. He is published in CIO.com, Built In, and Mind the Product on AI economics topics.' }
         ],
         relatedTerms: ['technical-insolvency-date', 'innovation-tax', 'cost-of-predictivity', 'feature-bloat-calculus'],
         relatedTools: [{ name: 'Product Debt Index (PDI)', url: '/tools/pdi' }, { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }, { name: 'Enterprise Value Scenario Engine (EV-SE)', url: '/tools/ev-se' }, { name: 'Revenue Per Engineer (APER)', url: '/tools/aper' }],

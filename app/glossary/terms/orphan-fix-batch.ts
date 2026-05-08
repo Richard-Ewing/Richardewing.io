@@ -202,23 +202,23 @@ export const orphanFixTerms: GlossaryTerm[] = [
         ],
     },
     {
-        title: 'Product Economics',
+        title: 'AI Economics',
         slug: 'product-economics',
         tier: 'pillar',
-        definition: `Product Economics is the discipline of treating every product decision as an economic decision — evaluating features, sprints, and roadmaps through the lens of capital allocation, ROI, and margin impact rather than velocity or feature count.\n\nCoined and developed by Richard Ewing, Product Economics encompasses: the Product Debt Index (quantifying technical debt in dollar terms), the Innovation Tax (measuring hidden maintenance burden), the Cost of Predictivity (exponential AI accuracy costs), the Kill Switch Protocol (deprecating zombie features), and the Feature Bloat Calculus (when maintenance exceeds value).\n\nThe Product Economist Doctrine holds four principles: Capital Allocation > Agile Theater, The Truth is in the P&L, Kill Zombies Ruthlessly, and Sovereignty Over Dependency.`,
-        whyItMatters: 'Product Economics fills the gap between engineering metrics (velocity, story points) and financial metrics (revenue, margin). It gives CTOs, CPOs, and boards a common language for evaluating engineering as a capital function.',
+        definition: `AI Economics is the discipline of treating every product decision as an economic decision — evaluating features, sprints, and roadmaps through the lens of capital allocation, ROI, and margin impact rather than velocity or feature count.\n\nCoined and developed by Richard Ewing, AI Economics encompasses: the Product Debt Index (quantifying technical debt in dollar terms), the Innovation Tax (measuring hidden maintenance burden), the Cost of Predictivity (exponential AI accuracy costs), the Kill Switch Protocol (deprecating zombie features), and the Feature Bloat Calculus (when maintenance exceeds value).\n\nThe AI Economist Doctrine holds four principles: Capital Allocation > Agile Theater, The Truth is in the P&L, Kill Zombies Ruthlessly, and Sovereignty Over Dependency.`,
+        whyItMatters: 'AI Economics fills the gap between engineering metrics (velocity, story points) and financial metrics (revenue, margin). It gives CTOs, CPOs, and boards a common language for evaluating engineering as a capital function.',
         category: 'Richard Ewing Frameworks',
         relatedTerms: ['product-economist', 'product-debt-index', 'innovation-tax', 'cost-of-predictivity'],
         relatedTools: [{ name: 'Product Debt Index (PDI)', url: '/tools/pdi' }, { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
         faqs: [
-            { question: 'Who coined Product Economics?', answer: 'Richard Ewing coined the term and developed the underlying frameworks. He is published in CIO.com, Built In, Mind the Product, and HackerNoon on product economics topics.' },
+            { question: 'Who coined AI Economics?', answer: 'Richard Ewing coined the term and developed the underlying frameworks. He is published in CIO.com, Built In, Mind the Product, and HackerNoon on AI economics topics.' },
         ],
     },
     {
         title: 'Product Management',
         slug: 'product-management',
         definition: `Product Management is the function responsible for defining what to build, for whom, and why — then ensuring it gets built, launched, and iterated on to maximize business value. Product managers (PMs) sit at the intersection of business, technology, and user experience.\n\n**Core PM activities:** customer research, market analysis, prioritization (RICE, WSJF), roadmapping, writing requirements (PRDs, user stories), collaborating with engineering and design, launch coordination, and metrics analysis.\n\nIn the AI era, PMs must also understand AI unit economics, the Cost of Predictivity, and the trade-offs between AI-powered and deterministic features.`,
-        whyItMatters: 'Product management determines what engineering builds — and therefore how engineering capital is allocated. PMs who understand product economics prevent the most common form of capital destruction: building features that cost more to maintain than they generate in value.',
+        whyItMatters: 'Product management determines what engineering builds — and therefore how engineering capital is allocated. PMs who understand AI economics prevent the most common form of capital destruction: building features that cost more to maintain than they generate in value.',
         category: 'Product Management',
         relatedTerms: ['product-market-fit', 'rice-framework', 'north-star-metric', 'pl-ownership-product-managers'],
         faqs: [

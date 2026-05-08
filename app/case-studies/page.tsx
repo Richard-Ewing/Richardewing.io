@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: 'Case Studies — R&D Capital Audit Results & Impact',
     description: 'Real-world R&D Capital Audit case studies showing measurable impact: technical debt reduction, engineering velocity improvement, AI cost optimization, a...',
-    keywords: ['R&D audit case studies', 'technical debt results', 'engineering audit ROI', 'PE due diligence case study', 'product economist case studies'],
+    keywords: ['R&D audit case studies', 'technical debt results', 'engineering audit ROI', 'PE due diligence case study', 'AI economist case studies'],
     alternates: { canonical: 'https://www.richardewing.io/case-studies' },
     openGraph: { title: 'Case Studies — R&D Capital Audit Results', description: 'Measurable impact from R&D Capital Audits.', url: 'https://www.richardewing.io/case-studies', type: 'website' },
 };

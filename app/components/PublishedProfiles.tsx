@@ -43,7 +43,7 @@ const profiles = [
     {
         publication: 'Beehiiv',
         role: 'Publisher',
-        description: 'The Product Economist  Executive Briefings.',
+        description: 'The AI Economist  Executive Briefings.',
         url: 'https://theaieconomist.beehiiv.com',
         logo: '/logos/beehiiv-logo.svg',
         width: 80,

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     keywords: [
         'technology glossary', 'technical debt definition', 'AI glossary', 'SaaS metrics glossary',
         'engineering management terms', 'product management glossary', 'CTO glossary',
-        'product economist glossary', 'AI unit economics', 'technical insolvency',
+        'AI economist glossary', 'AI unit economics', 'technical insolvency',
         'DORA metrics', 'site reliability engineering', 'DevOps glossary',
         'FinOps glossary', 'startup finance terms', 'engineering productivity metrics',
         'Richard Ewing glossary', 'LLM glossary', 'AI governance definitions',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Technology & AI Glossary — 400+ Definitions',
-        description: 'The most comprehensive technology leadership glossary. By Richard Ewing, Product Economist.',
+        description: 'The most comprehensive technology leadership glossary. By Richard Ewing, AI Economist.',
     },
 };
 

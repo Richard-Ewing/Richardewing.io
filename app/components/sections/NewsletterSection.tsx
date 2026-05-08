@@ -65,7 +65,7 @@ const NewsletterSection = () => {
                     <div className="relative z-10">
                         <span className="text-[var(--accent-purple)] font-bold tracking-widest text-sm font-semibold uppercase mb-4 block">Executive Briefings</span>
 
-                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">The Product Economist Newsletter</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">The AI Economist Newsletter</h2>
 
                         {state.succeeded ? (
                             <div className="py-4">

@@ -13,10 +13,10 @@ export default function DoctrinePage() {
                         <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4">The Doctrine</div>
                         <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6">
                             Sovereignty in<br />
-                            <span className="text-cyan-900 font-extrabold font-semibold">Product Economics.</span>
+                            <span className="text-cyan-900 font-extrabold font-semibold">AI Economics.</span>
                         </h1>
                         <p className="text-zinc-950 font-bold text-lg">
-                            The following principles govern the methodology of the Product Economist.
+                            The following principles govern the methodology of the AI Economist.
                             They are not suggestions; they are the <span className="text-zinc-900">immutable laws</span> of software solvency.
                         </p>
                     </div>

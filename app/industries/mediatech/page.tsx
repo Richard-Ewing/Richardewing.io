@@ -2,11 +2,11 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'MediaTech Product Economics — Media & Entertainment Techn...',
+    title: 'MediaTech AI Economics — Media & Entertainment Techn...',
     description: 'Product economics for MediaTech: content delivery at scale, streaming infrastructure debt, DRM/rights management systems, and AI-powered content recomme...',
     keywords: ['mediatech technical debt', 'streaming technology', 'content delivery infrastructure', 'media technology economics', 'CDN engineering debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/mediatech' },
-    openGraph: { title: 'MediaTech Product Economics', description: 'R&D capital challenges in media and entertainment technology.', url: 'https://www.richardewing.io/industries/mediatech', type: 'article' },
+    openGraph: { title: 'MediaTech AI Economics', description: 'R&D capital challenges in media and entertainment technology.', url: 'https://www.richardewing.io/industries/mediatech', type: 'article' },
 };
 
 const sections = [
@@ -29,7 +29,7 @@ export default function MediaTechPage() {
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         MediaTech{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">Product Economics</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">AI Economics</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">Media and entertainment technology faces unique R&D economics: massive content delivery infrastructure, AI recommendation systems, complex rights management, and ad tech integration debt.</p>
 

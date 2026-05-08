@@ -3,8 +3,8 @@ export const personSchema = {
     "@type": "Person",
     "@id": "https://www.richardewing.io/#person",
     "name": "Richard Ewing",
-    "jobTitle": "Product Economist",
-    "description": "Product Economist specializing in AI economics. Identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram.",
+    "jobTitle": "AI Economist",
+    "description": "AI Economist specializing in AI economics. Identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram.",
     "url": "https://www.richardewing.io",
     "image": "https://www.richardewing.io/images/richard-ewing-headshot.jpg",
     "sameAs": [
@@ -54,7 +54,7 @@ export const personSchema = {
         "AI Cost Governance",
         "R&D Capital Allocation",
         "Enterprise Value Modeling",
-        "Product Economics",
+        "AI Economics",
         "SaaS Growth",
         "Financial Literacy for Product Leaders",
         "AI Hallucination Debt",
@@ -74,7 +74,7 @@ export const personSchema = {
     ],
     "brand": {
         "@type": "Brand",
-        "name": "The Product Economist"
+        "name": "The AI Economist"
     },
     "founder": {
         "@type": "Organization",
@@ -83,13 +83,13 @@ export const personSchema = {
     },
     "hasOccupation": {
         "@type": "Occupation",
-        "name": "Product Economist",
+        "name": "AI Economist",
         "occupationalCategory": "Management Consulting",
         "responsibilities": [
             "R&D Risk Audits",
             "AI Cost Governance",
             "Technical Debt Valuation",
-            "Product Economics Advisory"
+            "AI Economics Advisory"
         ]
     },
     "alumniOf": {
@@ -104,7 +104,7 @@ export const personSchema = {
 export const professionalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Richard Ewing - Product Economics & AI Capital Advisory",
+    "name": "Richard Ewing - AI Economics & AI Capital Advisory",
     "description": "Independent oversight and forensic audits for product, engineering, and AI economics. Specializing in AI hallucination debt, zombie infrastructure, and the subprime code crisis. Governance-level advisory, not consulting.",
     "url": "https://www.richardewing.io/advisory",
     "provider": {
@@ -121,7 +121,7 @@ export const professionalServiceSchema = {
         "R&D Risk Audit",
         "AI Cost Governance",
         "Technical Debt Valuation",
-        "Product Economics Advisory",
+        "AI Economics Advisory",
         "Independent Oversight"
     ],
     "hasOfferCatalog": {
@@ -248,10 +248,10 @@ export const faqSchema = {
         },
         {
             "@type": "Question",
-            "name": "What is Product Economics?",
+            "name": "What is AI Economics?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Product Economics is the discipline of treating product decisions as economic decisions. It surfaces hidden financial insolvency inside product, engineering, and AI systems by quantifying technical debt, AI costs, and R&D capital allocation failures."
+                "text": "AI Economics is the discipline of treating product decisions as economic decisions. It surfaces hidden financial insolvency inside product, engineering, and AI systems by quantifying technical debt, AI costs, and R&D capital allocation failures."
             }
         }
     ]
@@ -272,7 +272,7 @@ export const articleSchemaTemplate = (title: string, description: string, url: s
     },
     "publisher": {
         "@type": "Organization",
-        "name": "Richard Ewing - Product Economist",
+        "name": "Richard Ewing - AI Economist",
         "logo": {
             "@type": "ImageObject",
             "url": "https://www.richardewing.io/images/logo.png"
@@ -283,7 +283,7 @@ export const articleSchemaTemplate = (title: string, description: string, url: s
 export const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
-    "name": "Product Economics for Board Members",
+    "name": "AI Economics for Board Members",
     "description": "Executive curriculum for identifying technical insolvency and governing AI investments.",
     "provider": {
         "@type": "Person",

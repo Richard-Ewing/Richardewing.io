@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for E-Commerce — Platform Debt & AI Per...',
+    title: 'AI Economics for E-Commerce — Platform Debt & AI Per...',
     description: 'Product economics advisory for e-commerce companies. Platform technical debt, AI recommendation economics, checkout optimization, and peak traffic engin...',
     keywords: ['ecommerce technical debt', 'ecommerce platform engineering', 'AI recommendation cost', 'checkout optimization', 'ecommerce CTO advisor', 'peak traffic scaling'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ecommerce' },
-    openGraph: { title: 'Product Economics for E-Commerce', description: 'Platform debt, AI personalization economics, and peak traffic scaling for e-commerce.', url: 'https://www.richardewing.io/industries/ecommerce', type: 'website' },
+    openGraph: { title: 'AI Economics for E-Commerce', description: 'Platform debt, AI personalization economics, and peak traffic scaling for e-commerce.', url: 'https://www.richardewing.io/industries/ecommerce', type: 'website' },
 };
 
 const challenges = [
@@ -26,7 +26,7 @@ export default function EcommercePage() {
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Product Economics for{' '}
+                        AI Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-400">E-Commerce</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">

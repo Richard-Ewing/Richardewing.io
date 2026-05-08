@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: 'License proprietary R&D diagnostic tools (PDI, AUEB, EV-SE, APER) under your brand. For consulting firms, PE teams, and advisory practices.',
     keywords: [
         'white label saas tools', 'consulting firm diagnostic tools', 'PE due diligence tools',
-        'technical debt calculator licensing', 'engineering audit tools', 'product economics tools',
+        'technical debt calculator licensing', 'engineering audit tools', 'AI economics tools',
         'management consulting tools', 'due diligence technology assessment', 'fractional cto tools',
     ],
     alternates: { canonical: 'https://www.richardewing.io/advisory/licensing' },

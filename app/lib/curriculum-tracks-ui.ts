@@ -27,7 +27,7 @@ export const tracks = [
         tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }, { name: 'APER Calculator', href: '/tools/aper' }],
     },
     {
-        title: 'AI Product Economics',
+        title: 'AI AI Economics',
         subtitle: 'Track 2 — AI-First (Flagship)',
         description: 'Your most differentiated track. AI unit economics, inference costs, margin collapse — maps directly to CIO.com and Built In articles. AI cost management is the #1 FinOps priority in 2026.',
         modules: [
@@ -128,7 +128,7 @@ export const tracks = [
             { id: '6-12', name: '5.12 Technical Product Management', topics: 'TPM Economics, API Monetization, Dev Tool Pricing', href: '/vault/curriculum/tracks/product-economics/6-12' },
             { id: '6-13', name: '5.13 Product Roadmap Economics', topics: 'Opportunity Cost of Roadmaps, Pivot Costs, Feature Debt', href: '/vault/curriculum/tracks/product-economics/6-13' },
             { id: '6-14', name: '5.14 Product-Finance Partnership', topics: 'PM Scorecards, Revenue Attribution, Unit Economics Reporting', href: '/vault/curriculum/tracks/product-economics/6-14' },
-            { id: '6-15', name: '5.15 Product Economics Synthesis', topics: 'Complete Product Economic Model, Portfolio View, Board Report', href: '/vault/curriculum/tracks/product-economics/6-15' },
+            { id: '6-15', name: '5.15 AI Economics Synthesis', topics: 'Complete Product Economic Model, Portfolio View, Board Report', href: '/vault/curriculum/tracks/product-economics/6-15' },
         ],
         color: 'pink',
         icon: '📱',
@@ -617,5 +617,21 @@ export const tracks = [
         icon: '🏛️',
         glossaryTerms: ['total-compute-cost', 'ai-production-gap', 'soft-roi-liability', 'burn-multiple'],
         tools: [{ name: 'AUEB Calculator', href: '/tools/aueb' }, { name: 'PDI Calculator', href: '/tools/pdi' }],
+    },
+    {
+        title: 'The AI Economist Masterclass',
+        subtitle: 'Track 28 — NEW',
+        description: 'The definitive curriculum for transitioning from traditional product management to rigorous AI capital allocation. Master the financial modeling of generative AI, govern rogue AI implementations, and engineer SaaS margins.',
+        modules: [
+            { id: '28-1', name: '28.1 The Core Philosophy', topics: 'Capital Allocation, EBITDA Protection, The End of Agile Velocity', href: '/vault/curriculum/tracks/ai-economist/28-1' },
+            { id: '28-2', name: '28.2 Quantifying AI Value', topics: 'Synthetic COGS, AUEB Methodology, Margin Collapse Thresholds', href: '/vault/curriculum/tracks/ai-economist/28-2' },
+            { id: '28-3', name: '28.3 The Shadow AI Audit', topics: 'Rogue API Keys, Data Exfiltration Risk, Deterministic Control Plane', href: '/vault/curriculum/tracks/ai-economist/28-3' },
+            { id: '28-4', name: '28.4 Margin Engineering', topics: 'Variable Cost Software, Semantic Routing, The Evergreen Ratio', href: '/vault/curriculum/tracks/ai-economist/28-4' },
+            { id: '28-5', name: '28.5 The Boardroom Presentation', topics: 'Executive Translation, Innovation Tax, Securing the AI Mandate', href: '/vault/curriculum/tracks/ai-economist/28-5' },
+        ],
+        color: 'rose',
+        icon: '💎',
+        glossaryTerms: ['ai-economist', 'margin-engineering', 'synthetic-cogs', 'shadow-ai', 'the-turing-tax'],
+        tools: [{ name: 'AUEB Calculator', href: '/tools/aueb' }, { name: 'Shadow AI Scanner', href: '/tools/shadow-ai' }],
     },
 ];

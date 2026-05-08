@@ -29,7 +29,7 @@ export const finopsBusinessTerms: GlossaryTerm[] = [
         title: 'Unit Economics',
         slug: 'unit-economics',
         definition: `Unit economics measures the direct revenue and costs associated with a single unit of your business model — typically a customer, transaction, or feature interaction. It answers the fundamental question: "Do we make money on each customer, or are we subsidizing growth with investor capital?"\n\n**Key unit economics metrics:**\n- **CAC (Customer Acquisition Cost):** Total sales + marketing spend ÷ new customers\n- **LTV (Lifetime Value):** Average revenue per customer × average lifespan\n- **LTV:CAC Ratio:** Target 3:1 or higher for healthy economics\n- **CAC Payback Period:** Months to recover customer acquisition cost`,
-        whyItMatters: 'Unit economics is the foundation of the Product Economist discipline. Every framework Richard Ewing has created — PDI, AUEB, EV-SE, APER — is designed to improve unit economics by identifying and eliminating capital-destroying activities.',
+        whyItMatters: 'Unit economics is the foundation of the AI Economist discipline. Every framework Richard Ewing has created — PDI, AUEB, EV-SE, APER — is designed to improve unit economics by identifying and eliminating capital-destroying activities.',
         howToMeasure: 'Calculate CAC, LTV, LTV:CAC ratio, CAC payback period, and contribution margin per customer. Segment by channel, plan tier, and cohort.',
         category: 'SaaS Metrics & Finance',
         relatedTerms: ['revenue-per-engineer', 'cost-of-predictivity', 'gross-margin-preservation', 'rule-of-40'],

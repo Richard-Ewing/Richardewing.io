@@ -2,11 +2,11 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'PropTech Product Economics — Real Estate Technology Debt ...',
+    title: 'PropTech AI Economics — Real Estate Technology Debt ...',
     description: 'Product economics for PropTech: property data integration debt, MLS system legacy debt, AI valuation model economics, and smart building IoT infrastruct...',
     keywords: ['proptech technical debt', 'real estate technology', 'MLS integration', 'property valuation AI', 'proptech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/proptech' },
-    openGraph: { title: 'PropTech Product Economics', description: 'R&D capital challenges in real estate technology.', url: 'https://www.richardewing.io/industries/proptech', type: 'article' },
+    openGraph: { title: 'PropTech AI Economics', description: 'R&D capital challenges in real estate technology.', url: 'https://www.richardewing.io/industries/proptech', type: 'article' },
 };
 
 const sections = [
@@ -29,7 +29,7 @@ export default function PropTechPage() {
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         PropTech{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Product Economics</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">AI Economics</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">Real estate technology carries unique R&D challenges: massive data integration surfaces, legacy MLS systems, AI valuation accuracy requirements, and IoT infrastructure debt.</p>
 

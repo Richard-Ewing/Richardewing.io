@@ -10,11 +10,11 @@ import BlurIn from '@/app/components/magicui/blur-in';
 import { BorderBeam } from '@/app/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'The Product Economics Academy — 18 Authority Tracks',
-    description: 'Eighteen high-fidelity curriculum tracks covering product economics, AI financial modeling, leadership, M&A integration, and executive governance.',
-    keywords: ['product economics academy', 'product economics curriculum', 'AI economics training', 'R&D capital management', 'technical debt quantification', 'engineering leadership course', 'cloud finops', 'AI pricing strategy', 'career economics', 'CTO training', 'M&A integration', 'vendor economics', 'developer experience', 'remote team economics', 'ai agent economics', 'leadership training'],
+    title: 'The AI Economics Academy — 18 Authority Tracks',
+    description: 'Eighteen high-fidelity curriculum tracks covering AI economics, AI financial modeling, leadership, M&A integration, and executive governance.',
+    keywords: ['AI economics academy', 'AI economics curriculum', 'AI economics training', 'R&D capital management', 'technical debt quantification', 'engineering leadership course', 'cloud finops', 'AI pricing strategy', 'career economics', 'CTO training', 'M&A integration', 'vendor economics', 'developer experience', 'remote team economics', 'ai agent economics', 'leadership training'],
     alternates: { canonical: 'https://www.richardewing.io/vault/curriculum/tracks' },
-    openGraph: { title: 'The Product Economics Academy', description: 'Master the business of building across eighteen authority tracks.', url: 'https://www.richardewing.io/vault/curriculum/tracks', type: 'website' },
+    openGraph: { title: 'The AI Economics Academy', description: 'Master the business of building across eighteen authority tracks.', url: 'https://www.richardewing.io/vault/curriculum/tracks', type: 'website' },
 };
 const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5', teal: 'border-teal-500/30 bg-teal-500/5', lime: 'border-lime-500/30 bg-lime-500/5', fuchsia: 'border-fuchsia-500/30 bg-fuchsia-500/5', blue: 'border-blue-500/30 bg-blue-500/5' };
 const textMap: Record<string, string> = { cyan: 'text-cyan-900 font-extrabold font-semibold', violet: 'text-violet-400', emerald: 'text-emerald-900 font-extrabold font-semibold', amber: 'text-amber-400', orange: 'text-orange-900 font-extrabold font-semibold', pink: 'text-pink-400', red: 'text-red-900 font-extrabold font-semibold', sky: 'text-sky-400', indigo: 'text-indigo-900 font-extrabold font-semibold', rose: 'text-rose-400', teal: 'text-teal-400', lime: 'text-lime-400', fuchsia: 'text-zinc-950 font-semibolduchsia-400', blue: 'text-blue-900 font-extrabold font-semibold' };
@@ -44,13 +44,13 @@ export default async function CurriculumTracksPage() {
                         <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-purple-500/5 to-transparent pointer-events-none -z-10" />
                         <div className="text-xs font-bold font-medium font-mono text-purple-900 font-extrabold uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse"></span>
-                            Product Economics Academy
+                            AI Economics Academy
                         </div>
-                        <BlurIn word="The Product Economics" className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-900 mb-1" />
+                        <BlurIn word="The AI Economics" className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-900 mb-1" />
                         <BlurIn word="Academy." className="text-4xl sm:text-6xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-6" />
                         
                         <p className="text-lg text-zinc-950 font-bold max-w-2xl mx-auto mb-8 leading-relaxed">
-                            These aren&apos;t courses. These are 23 deep-authority curriculum tracks built from published frameworks in CIO.com and Built In — spanning product economics, AI agents, leadership, career capital, M&A integration, and executive governance.
+                            These aren&apos;t courses. These are 23 deep-authority curriculum tracks built from published frameworks in CIO.com and Built In — spanning AI economics, AI agents, leadership, career capital, M&A integration, and executive governance.
                         </p>
                         
                         <div className="flex items-center justify-center gap-8 mt-6">

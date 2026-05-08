@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for Logistics & Supply Chain — Real-Tim...',
+    title: 'AI Economics for Logistics & Supply Chain — Real-Tim...',
     description: 'Product economics advisory for logistics and supply chain tech. Real-time tracking system debt, IoT infrastructure costs, demand forecasting AI, and int...',
     keywords: ['logistics technical debt', 'supply chain technology', 'logistics AI cost', 'IoT infrastructure debt', 'logistics CTO advisor'],
     alternates: { canonical: 'https://www.richardewing.io/industries/logistics' },
-    openGraph: { title: 'Product Economics for Logistics', description: 'Real-time systems, IoT scale, and AI forecasting create unique engineering economics.', url: 'https://www.richardewing.io/industries/logistics', type: 'website' },
+    openGraph: { title: 'AI Economics for Logistics', description: 'Real-time systems, IoT scale, and AI forecasting create unique engineering economics.', url: 'https://www.richardewing.io/industries/logistics', type: 'website' },
 };
 
 const challenges = [
@@ -25,7 +25,7 @@ export default function LogisticsPage() {
                         <Link href="/industries" className="hover:text-cyan-900 font-extrabold font-semibold">Industries</Link><span>/</span><span className="text-lime-400 font-bold">Logistics</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Product Economics for{' '}
+                        AI Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-green-400">Logistics &amp; Supply Chain</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">

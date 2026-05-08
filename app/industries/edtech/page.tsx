@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for EdTech — Learning Platform Debt & A...',
+    title: 'AI Economics for EdTech — Learning Platform Debt & A...',
     description: 'Product economics advisory for EdTech companies. Learning platform technical debt, AI tutor governance, content delivery costs, and accessibility compli...',
     keywords: ['edtech technical debt', 'learning platform engineering', 'AI tutor governance', 'edtech CTO advisor', 'FERPA compliance', 'educational AI'],
     alternates: { canonical: 'https://www.richardewing.io/industries/edtech' },
-    openGraph: { title: 'Product Economics for EdTech', description: 'Learning platform debt, AI tutor governance, and accessibility compliance for education technology.', url: 'https://www.richardewing.io/industries/edtech', type: 'website' },
+    openGraph: { title: 'AI Economics for EdTech', description: 'Learning platform debt, AI tutor governance, and accessibility compliance for education technology.', url: 'https://www.richardewing.io/industries/edtech', type: 'website' },
 };
 
 const challenges = [
@@ -26,7 +26,7 @@ export default function EdTechPage() {
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Product Economics for{' '}
+                        AI Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-rose-400">EdTech</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">

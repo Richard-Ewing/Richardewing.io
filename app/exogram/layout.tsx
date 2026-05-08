@@ -45,7 +45,7 @@ export default function ExogramLayout({
                             '@type': 'Person',
                             '@id': 'https://www.richardewing.io/#person',
                             name: 'Richard Ewing',
-                            jobTitle: 'Product Economist',
+                            jobTitle: 'AI Economist',
                             url: 'https://www.richardewing.io',
                         },
                         foundingDate: '2025',

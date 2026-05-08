@@ -49,7 +49,7 @@ export default function ManifestoPage() {
                                     We are not just builders anymore. We are Architects of Capital.
                                 </p>
                                 <p className="text-zinc-900 text-sm font-semibold sm:text-base">
-                                    We must learn to speak the language of the P&L, or we will be relegated to the children's table while the CFO makes the real roadmap decisions. The Product Economist exists to bridge this gap—to give technical leaders the financial fluency they need to command the room.
+                                    We must learn to speak the language of the P&L, or we will be relegated to the children's table while the CFO makes the real roadmap decisions. The AI Economist exists to bridge this gap—to give technical leaders the financial fluency they need to command the room.
                                 </p>
                             </div>
 
@@ -66,7 +66,7 @@ export default function ManifestoPage() {
                                 </div>
                                 <div className="text-center sm:text-left">
                                     <div className="font-serif text-zinc-950 text-xl sm:text-2xl italic mb-1">Richard Ewing</div>
-                                    <div className="font-mono text-xs font-bold text-gold tracking-widest uppercase">The Product Economist</div>
+                                    <div className="font-mono text-xs font-bold text-gold tracking-widest uppercase">The AI Economist</div>
                                 </div>
                             </div>
                         </article>

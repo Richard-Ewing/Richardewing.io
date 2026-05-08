@@ -2,19 +2,19 @@ import type { Metadata } from 'next';
 import { doctrineKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Product Economics Doctrine — Frameworks for R&D Capital A...',
+    title: 'AI Economics Doctrine — Frameworks for R&D Capital A...',
     description: 'The immutable laws of software solvency. Capital allocation over agile theater. Technical Insolvency Date. Innovation Tax. Kill Switch Protocol. Feature...',
     keywords: doctrineKeywords,
     alternates: { canonical: 'https://www.richardewing.io/doctrine' },
     openGraph: {
-        title: 'Product Economics Doctrine | Richard Ewing',
+        title: 'AI Economics Doctrine | Richard Ewing',
         description: 'Frameworks for R&D capital allocation: Technical Insolvency Date, Innovation Tax, Kill Switch Protocol, Feature Bloat Calculus.',
         url: 'https://www.richardewing.io/doctrine',
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Product Economics Doctrine | Richard Ewing',
+        title: 'AI Economics Doctrine | Richard Ewing',
         description: 'Capital allocation over agile theater. The immutable laws of software solvency.',
     },
 };

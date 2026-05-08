@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: 'Richard Ewing CIO.com Articles — Executive Technology Lea...',
     description: 'Read Richard Ewing\'s published articles on CIO.com covering R&D capital efficiency, technical debt economics, AI adoption strategies, and engineering l...',
-    keywords: ['Richard Ewing CIO.com', 'CIO articles technical debt', 'R&D capital efficiency CIO', 'CTO thought leadership', 'product economist CIO.com'],
+    keywords: ['Richard Ewing CIO.com', 'CIO articles technical debt', 'R&D capital efficiency CIO', 'CTO thought leadership', 'AI economist CIO.com'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/cio-com' },
     openGraph: { title: 'Richard Ewing on CIO.com', description: 'Published articles on R&D capital efficiency, technical debt economics, and AI adoption for CIOs.', url: 'https://www.richardewing.io/articles/recap/cio-com', type: 'article' },
 };

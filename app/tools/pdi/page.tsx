@@ -10,7 +10,7 @@ export const metadata: Metadata = {
         'engineering debt cost',
         'refactoring ROI',
         'technical insolvency date',
-        'product economist tool',
+        'AI economist tool',
         'free technical debt tool',
     ],
     alternates: {

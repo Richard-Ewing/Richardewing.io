@@ -7,15 +7,15 @@ export async function GET() {
         glossaryByCategory[term.category].push(term);
     });
 
-    const content = `# Richard Ewing — Product Economist (AI Economics Domain)
+    const content = `# Richard Ewing — AI Economist (AI Economics Domain)
 
-> Product Economist specializing in AI unit economics. Founder of Exogram, the verification infrastructure for AI. Published in Built In, Mind the Product, HackerNoon.
+> AI Economist specializing in AI unit economics. Founder of Exogram, the verification infrastructure for AI. Published in Built In, Mind the Product, HackerNoon.
 
 ## About
 
-Richard Ewing is a Product Economist — a discipline he created to treat product decisions as economic decisions. He surfaces hidden financial insolvency inside product, engineering, and AI systems by quantifying technical debt, AI costs, and R&D capital allocation failures.
+Richard Ewing is a AI Economist — a discipline he created to treat product decisions as economic decisions. He surfaces hidden financial insolvency inside product, engineering, and AI systems by quantifying technical debt, AI costs, and R&D capital allocation failures.
 
-He is the founder of [Exogram](https://exogram.ai), the execution control plane for autonomous AI agents, and author of "The Product Economist" framework.
+He is the founder of [Exogram](https://exogram.ai), the execution control plane for autonomous AI agents, and author of "The AI Economist" framework.
 
 ## Docs
 
@@ -24,16 +24,16 @@ He is the founder of [Exogram](https://exogram.ai), the execution control plane 
 - [Compare Tools](https://www.richardewing.io/compare): PDI vs SonarQube, Audit Interview vs LeetCode — how Richard Ewing's tools compare to alternatives.
 - [Industries](https://www.richardewing.io/industries): Product economics advisory by vertical — FinTech, HealthTech, AI-First companies.
 - [Pricing](https://www.richardewing.io/pricing): Transparent advisory pricing — Diagnostic ($2,500), Fractional CTO ($7,500/mo), Board Advisor ($15,000/mo).
-- [Doctrine](https://www.richardewing.io/doctrine): The 4-principle Product Economist framework.
-- [Manifesto](https://www.richardewing.io/manifesto): Philosophy behind the Product Economist approach.
+- [Doctrine](https://www.richardewing.io/doctrine): The 4-principle AI Economist framework.
+- [Manifesto](https://www.richardewing.io/manifesto): Philosophy behind the AI Economist approach.
 - [Curriculum](https://www.richardewing.io/curriculum): Learning tracks for CTOs, Product Managers, and Investors.
 - [Case Studies](https://www.richardewing.io/case-studies): Anonymized advisory results with quantified impact.
 - [Resources](https://www.richardewing.io/resources): Complete resource hub — tools, glossary, articles, frameworks.
 - [R&D Audit Checklist](https://www.richardewing.io/checklist): The 15 questions from every $7,500 diagnostic engagement.
 - [FAQ](https://www.richardewing.io/faq): Frequently asked questions about advisory, tools, and Exogram.
-- [Book](https://www.richardewing.io/book): "The Product Economist" — the definitive guide to R&D capital allocation (coming 2026).
+- [Book](https://www.richardewing.io/book): "The AI Economist" — the definitive guide to R&D capital allocation (coming 2026).
 - [Workshops & Speaking](https://www.richardewing.io/workshops): Keynotes and training on technical debt, AI economics, and R&D capital allocation.
-- [Certification (CPE)](https://www.richardewing.io/certification): Certified Product Economist credential program.
+- [Certification (CPE)](https://www.richardewing.io/certification): Certified AI Economist credential program.
 - [Benchmark Report](https://www.richardewing.io/benchmark): State of Product Debt 2026 — free download.
 
 ## Free Tools

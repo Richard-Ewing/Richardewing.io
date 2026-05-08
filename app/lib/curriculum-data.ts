@@ -46,7 +46,7 @@ export const modules: Record<string, CurriculumModule> = {};
 
 // ═══════════════════ CORE AUTHORITY TRACKS ═══════════════════
 
-// Track 1-4: Engineering Economics, AI Product Economics, R&D Capital, Capstone
+// Track 1-4: Engineering Economics, AI AI Economics, R&D Capital, Capstone
 populateTracks1To4(modules);
 
 // Track 5 (old Track 6): Product Management Economics
@@ -101,6 +101,11 @@ populateTracks19to23(modules);
 // Track 24: AI Economics & Margin Engineering
 import { populateTrack24 } from './curriculum-tracks-new-24';
 populateTrack24(modules);
+
+// ═══════════════════ NEW TRACK 28 ═══════════════════
+// Track 28: The AI Economist Masterclass
+import { populateTrack28 } from './curriculum-tracks-new-28';
+populateTrack28(modules);
 
 // ═══════════════════ LEGACY TRACK CONTENT (kept on disk for future restoration) ═══════════════════
 // The following files exist on disk but are NOT imported into the active registry:
@@ -179,7 +184,7 @@ export function getModule(slug: string): CurriculumModule | undefined {
         // Topic to Module mapping logic
         const targetModules: Record<string, string[]> = {
             'engineering-architecture': ['9-1', '14-1', '11-4'], // Tech Debt, Cloud FinOps, Build vs Buy
-            'ai-product-strategy': ['8-1', '8-4', '1-1'], // Pricing Strategy, Product Economics
+            'ai-product-strategy': ['8-1', '8-4', '1-1'], // Pricing Strategy, AI Economics
             'engineering-leadership': ['14-1', '13-1', '12-1'], // Leadership, Exec Economics, Career Capital
             'c-suite-financials': ['10-1', '10-3', '1-2'], // Due Diligence, Financials
             'product-management-economics': ['6-1', '8-2', '11-1'] // PM Economics, Build vs Buy

@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for Cybersecurity — Security Debt & AI ...',
+    title: 'AI Economics for Cybersecurity — Security Debt & AI ...',
     description: 'Product economics advisory for cybersecurity companies. Security debt accumulation, AI threat detection costs, compliance-driven engineering, and detect...',
     keywords: ['cybersecurity technical debt', 'security debt', 'AI threat detection cost', 'cybersecurity CTO advisor', 'security engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/cybersecurity' },
-    openGraph: { title: 'Product Economics for Cybersecurity', description: 'Security debt compounds faster than any other form of technical debt.', url: 'https://www.richardewing.io/industries/cybersecurity', type: 'website' },
+    openGraph: { title: 'AI Economics for Cybersecurity', description: 'Security debt compounds faster than any other form of technical debt.', url: 'https://www.richardewing.io/industries/cybersecurity', type: 'website' },
 };
 
 const challenges = [
@@ -25,7 +25,7 @@ export default function CybersecurityPage() {
                         <Link href="/industries" className="hover:text-cyan-900 font-extrabold font-semibold">Industries</Link><span>/</span><span className="text-red-900 font-extrabold font-semibold font-bold">Cybersecurity</span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Product Economics for{' '}
+                        AI Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">Cybersecurity</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">

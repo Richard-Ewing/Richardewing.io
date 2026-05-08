@@ -39,7 +39,7 @@ export default function ExogramPage() {
                                     <Image src="/assets/headshot.jpg" alt="Richard Ewing" width={32} height={32} className="rounded-full object-cover grayscale opacity-80" />
                                     <div className="text-left flex-1">
                                         <p className="text-zinc-950 font-semibold text-xs font-bold leading-tight">Founded by Richard Ewing</p>
-                                        <p className="text-zinc-950 text-xs font-bold font-medium leading-tight">Product Economist</p>
+                                        <p className="text-zinc-950 text-xs font-bold font-medium leading-tight">AI Economist</p>
                                     </div>
                                     <div className="pl-3 border-l border-zinc-400 h-6 flex items-center">
                                         <span className="text-green-500 text-xs font-bold font-medium font-mono tracking-wider">LIVE</span>
@@ -246,7 +246,7 @@ export default function ExogramPage() {
                     <div className="max-w-3xl mx-auto">
                         <div className="card p-10 flex flex-col items-center text-center space-y-8">
                             <p className="text-xl md:text-2xl text-zinc-950 leading-relaxed max-w-2xl">
-                                &quot;I write about why AI systems fail economically through my Product Economist work.<br />
+                                &quot;I write about why AI systems fail economically through my AI Economist work.<br />
                                 <span className="text-purple-900 font-extrabold font-semibold">Exogram is what I&apos;m building to fix it.&quot;</span>
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full border-t border-zinc-400 pt-8 mt-4 items-center">
@@ -256,7 +256,7 @@ export default function ExogramPage() {
                                     <div className="text-left flex flex-col justify-center h-full">
                                         <p className="text-zinc-950 font-semibold leading-none mb-1">Founded by Richard Ewing</p>
                                         <div className="flex items-center gap-2">
-                                            <p className="text-zinc-950 font-bold text-xs font-bold leading-none">Product Economist</p>
+                                            <p className="text-zinc-950 font-bold text-xs font-bold leading-none">AI Economist</p>
                                             <span className="text-emerald-500 text-xs font-bold font-medium uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-500/10 rounded border border-emerald-500/20 leading-none flex items-center h-4">Live</span>
                                         </div>
                                     </div>

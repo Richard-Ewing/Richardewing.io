@@ -12,7 +12,7 @@ export default function PDILayout({ children }: { children: React.ReactNode }) {
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
                         url: 'https://www.richardewing.io/tools/pdi',
-                        description: 'Forensic technical debt calculator. Quantify the financial cost of legacy code, refactoring vs. features, and engineering insolvency. A proprietary financial calculator authored by Richard Ewing, Product Economist.',
+                        description: 'Forensic technical debt calculator. Quantify the financial cost of legacy code, refactoring vs. features, and engineering insolvency. A proprietary financial calculator authored by Richard Ewing, AI Economist.',
                         featureList: [
                             'Technical Debt Dollar Quantification',
                             'Engineering Insolvency Horizon Calculation',
@@ -28,7 +28,7 @@ export default function PDILayout({ children }: { children: React.ReactNode }) {
                             '@type': 'Person',
                             '@id': 'https://www.richardewing.io/#person',
                             name: 'Richard Ewing',
-                            jobTitle: 'Product Economist',
+                            jobTitle: 'AI Economist',
                             url: 'https://www.richardewing.io',
                         },
                     }),

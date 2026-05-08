@@ -10,7 +10,7 @@ export const metadata: Metadata = {
         'technical debt calculator',
         'R&D capitalization audit',
         'zombie assets calculator',
-        'product economist tool',
+        'AI economist tool',
     ],
     alternates: {
         canonical: 'https://www.richardewing.io/tools/innovation-tax-calculator',

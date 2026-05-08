@@ -77,7 +77,7 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                     {headline || 'Want a Board-Ready Analysis?'}
                 </h3>
                 <p className="text-zinc-900 mb-6">
-                    Get a personalized deep-dive with actionable recommendations from a Product Economist.
+                    Get a personalized deep-dive with actionable recommendations from a AI Economist.
                 </p>
 
                 <NewsletterForm
@@ -98,7 +98,7 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
             {/* Primary CTA */}
             <div className="text-center space-y-6">
                 <div className="inline-flex flex-col items-center">
-                    <p className="text-zinc-950 text-sm font-semibold mb-4">Ready to fix this? Talk to a Product Economist.</p>
+                    <p className="text-zinc-950 text-sm font-semibold mb-4">Ready to fix this? Talk to a AI Economist.</p>
                     <Link
                         href="/advisory"
                         className={`group relative inline-flex items-center gap-3 px-10 py-4 font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all transform hover:scale-105 ${contextCTA.urgency === 'critical'
@@ -180,7 +180,7 @@ export function SEOContent({ title, description, howItWorks, whyItMatters, formu
             </div>
 
             <div className="text-xs font-bold text-zinc-950 pt-4 border-t border-zinc-400">
-                © 2026 Richard Ewing. Product Economist. All frameworks and methodologies are proprietary.
+                © 2026 Richard Ewing. AI Economist. All frameworks and methodologies are proprietary.
             </div>
         </section>
     );

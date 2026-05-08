@@ -105,7 +105,7 @@ export const highVolumeTerms: GlossaryTerm[] = [
         whyItMatters: 'Generative AI is the most disruptive technology shift since cloud computing. It changes who can create what, how fast, and at what cost. But it also introduces new forms of technical debt — AI Hallucination Debt, Model Drift, and Orchestration Debt.',
         category: 'AI & Machine Learning',
         relatedTerms: ['large-language-model', 'ai-hallucination', 'vibe-coding', 'ai-cogs'],
-        faqs: [{ question: 'Is generative AI just a buzzword?', answer: 'No — generative AI represents a genuine paradigm shift. It changes the cost structure of content creation from high fixed cost (hire humans) to variable cost (pay per generation). This has massive implications for product economics.' }],
+        faqs: [{ question: 'Is generative AI just a buzzword?', answer: 'No — generative AI represents a genuine paradigm shift. It changes the cost structure of content creation from high fixed cost (hire humans) to variable cost (pay per generation). This has massive implications for AI economics.' }],
     },
     {
         title: 'Microservices Architecture',
@@ -130,7 +130,7 @@ export const highVolumeTerms: GlossaryTerm[] = [
         slug: 'technical-debt-definition',
         tier: 'pillar',
         definition: `Technical Debt is the accumulated cost of expedient engineering decisions that create future maintenance burden. Coined by Ward Cunningham in 1992, the debt metaphor describes how choosing quick solutions over optimal ones generates "interest payments" in the form of increased maintenance work.\n\n**Types of technical debt:**\n- **Deliberate debt:** Conscious shortcuts taken under deadline pressure\n- **Accidental debt:** Debt accumulated through lack of knowledge or changing requirements\n- **Bit rot:** Debt that accumulates simply from aging code and evolving ecosystems\n- **Design debt:** Architectural decisions that made sense originally but no longer scale\n- **AI-generated debt:** Code produced by LLMs without full understanding of system context\n\n**The economic model:**\n- Technical debt accrues "interest" — ongoing maintenance cost\n- Interest compounds as the codebase grows\n- The "principal" is the cost to refactor/replace\n- The Technical Insolvency Date is when interest consumes 100% of engineering capacity\n\nRichard Ewing's contribution: treating technical debt as an economic phenomenon measurable in dollars and quarters, not just a code quality concern.`,
-        whyItMatters: 'Technical debt is the central concept in product economics. It is the mechanism by which engineering decisions become financial consequences. Understanding debt economics — not just debt existence — is what separates good engineering leaders from great ones.',
+        whyItMatters: 'Technical debt is the central concept in AI economics. It is the mechanism by which engineering decisions become financial consequences. Understanding debt economics — not just debt existence — is what separates good engineering leaders from great ones.',
         howToMeasure: 'Use the Product Debt Index (PDI) calculator at richardewing.io/tools/pdi to quantify your debt in dollars and calculate your Technical Insolvency Date.',
         category: 'Technical Debt & Code Quality',
         relatedTerms: ['technical-insolvency-date', 'innovation-tax', 'product-debt-index', 'technical-debt-ratio'],

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
         'what is technical debt', 'what is AI hallucination', 'what is DORA metrics',
         'technology terms', 'startup glossary', 'software engineering terms',
         'product management terms', 'AI terms explained', 'SaaS metrics explained',
-        'Richard Ewing', 'Product Economist',
+        'Richard Ewing', 'AI Economist',
     ],
     alternates: { canonical: 'https://www.richardewing.io/glossary' },
     openGraph: {

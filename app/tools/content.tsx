@@ -59,7 +59,7 @@ const tools = [
         color: 'emerald',
         icon: Brain,
         metrics: ['Hiring Verdict', 'Capital Risk', 'Executive Memo'],
-        seoKeywords: 'hiring audit engine, engineering interview rubric, product economist',
+        seoKeywords: 'hiring audit engine, engineering interview rubric, AI economist',
     },
 ];
 

@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: 'Industries — FinTech, HealthTech, AI-First | Product Econ...',
     description: 'Product economics advisory by industry vertical. Specialized R&D audit, technical debt assessment, and AI governance for FinTech, HealthTech, and AI-fir...',
-    keywords: ['industry advisory', 'fintech CTO advisor', 'healthtech engineering audit', 'AI company economics', 'vertical product economics'],
+    keywords: ['industry advisory', 'fintech CTO advisor', 'healthtech engineering audit', 'AI company economics', 'vertical AI economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries' },
 };
 

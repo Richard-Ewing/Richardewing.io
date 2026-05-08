@@ -147,9 +147,9 @@ export default function PrincipalContent() {
                             </div>
                             <div>
                                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 mb-2">Richard Ewing</h1>
-                                <div className="font-mono text-sm font-semibold text-zinc-900 font-medium uppercase tracking-widest mb-4">Product Economist</div>
+                                <div className="font-mono text-sm font-semibold text-zinc-900 font-medium uppercase tracking-widest mb-4">AI Economist</div>
                                 <p className="text-zinc-950 leading-relaxed text-base sm:text-lg">
-                                    I operate as <span className="text-zinc-950 font-bold">The Product Economist</span>. The AI Economist is how I apply that system to AI.
+                                    I operate as <span className="text-zinc-950 font-bold">The AI Economist</span>. The AI Economist is how I apply that system to AI.
                                     <br/><br/>
                                     I do not manage backlogs. I manage P&Ls. I sit at the exact intersection of CPO thinking, CFO rigor, and CTO reality.
                                 </p>
@@ -330,7 +330,7 @@ export default function PrincipalContent() {
                         </div>
                         <div className="p-5 border border-zinc-400 rounded-xl hover:border-gold/30 transition group">
                             <div className="font-mono text-xs font-bold text-gold uppercase mb-2">Framework 04</div>
-                            <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-gold transition">The Product Economist™</h3>
+                            <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-gold transition">The AI Economist™</h3>
                             <p className="text-zinc-950 text-sm">15+ years of methodology distilled into an executive playbook. <span className="italic">O'Reilly book in progress.</span></p>
                         </div>
                     </div>
@@ -361,7 +361,7 @@ export default function PrincipalContent() {
             {/* CTA */}
             <ScrollReveal delay={250}>
                 <div className="text-center py-8 border-t border-zinc-400">
-                    <p className="text-zinc-900 mb-4">Ready to work with a Product Economist?</p>
+                    <p className="text-zinc-900 mb-4">Ready to work with a AI Economist?</p>
                     <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
                         <Link
                             href="/advisory"

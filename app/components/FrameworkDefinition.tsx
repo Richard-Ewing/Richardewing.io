@@ -27,13 +27,13 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
         "description": framework.definition,
         "inDefinedTermSet": {
             "@type": "DefinedTermSet",
-            "name": "Product Economist Framework",
+            "name": "AI Economist Framework",
             "url": "https://www.richardewing.io/articles/frameworks"
         },
         "creator": {
             "@type": "Person",
             "name": "Richard Ewing",
-            "jobTitle": "Product Economist",
+            "jobTitle": "AI Economist",
             "url": "https://www.richardewing.io"
         },
         "url": `https://www.richardewing.io/articles/frameworks/${framework.slug}`
@@ -65,7 +65,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                             {framework.name}
                         </h1>
                         <p className="text-zinc-950 mb-6">
-                            Coined by <span className="text-zinc-900">Richard Ewing</span>, Product Economist
+                            Coined by <span className="text-zinc-900">Richard Ewing</span>, AI Economist
                         </p>
                         <SocialShare url={`https://www.richardewing.io/articles/frameworks/${framework.slug}`} title={framework.name} />
                     </div>

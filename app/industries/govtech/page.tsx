@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for GovTech & Public Sector — Complianc...',
+    title: 'AI Economics for GovTech & Public Sector — Complianc...',
     description: 'Product economics advisory for GovTech and public sector technology. Legacy system modernization, FedRAMP compliance costs, AI procurement governance, a...',
     keywords: ['govtech technical debt', 'government technology modernization', 'fedramp compliance engineering', 'public sector AI governance', 'govtech cto advisor', 'legacy government systems'],
     alternates: { canonical: 'https://www.richardewing.io/industries/govtech' },
-    openGraph: { title: 'Product Economics for GovTech', description: 'Legacy mainframes, FedRAMP compliance, and AI procurement — GovTech has unique engineering economics.', url: 'https://www.richardewing.io/industries/govtech', type: 'website' },
+    openGraph: { title: 'AI Economics for GovTech', description: 'Legacy mainframes, FedRAMP compliance, and AI procurement — GovTech has unique engineering economics.', url: 'https://www.richardewing.io/industries/govtech', type: 'website' },
 };
 
 const challenges = [
@@ -26,7 +26,7 @@ export default function GovTechPage() {
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Product Economics for{' '}
+                        AI Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">GovTech &amp; Public Sector</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">

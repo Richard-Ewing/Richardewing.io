@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for SaaS & B2B — Debt-to-ARR, COGS, Mar...',
+    title: 'AI Economics for SaaS & B2B — Debt-to-ARR, COGS, Mar...',
     description: 'Product economics advisory for SaaS and B2B companies. Technical debt impact on ARR growth, COGS optimization, gross margin defense, and R&D capital all...',
-    keywords: ['saas technical debt', 'b2b product economics', 'saas gross margin', 'cogs optimization saas', 'technical debt arr impact', 'saas cto advisor'],
+    keywords: ['saas technical debt', 'b2b AI economics', 'saas gross margin', 'cogs optimization saas', 'technical debt arr impact', 'saas cto advisor'],
     alternates: { canonical: 'https://www.richardewing.io/industries/saas' },
-    openGraph: { title: 'Product Economics for SaaS & B2B', description: 'Why your technical debt is destroying your ARR multiple.', url: 'https://www.richardewing.io/industries/saas', type: 'website' },
+    openGraph: { title: 'AI Economics for SaaS & B2B', description: 'Why your technical debt is destroying your ARR multiple.', url: 'https://www.richardewing.io/industries/saas', type: 'website' },
 };
 
 const challenges = [
@@ -26,7 +26,7 @@ export default function SaaSPage() {
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Product Economics for{' '}
+                        AI Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">SaaS &amp; B2B</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">

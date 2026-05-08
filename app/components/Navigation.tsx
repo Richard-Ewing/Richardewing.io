@@ -40,7 +40,7 @@ const Navigation = () => {
                             </div>
                             <div>
                                 <div className="font-semibold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors">Richard Ewing</div>
-                                <div className="text-xs font-bold text-zinc-900 font-bold">Product Economist</div>
+                                <div className="text-xs font-bold text-zinc-900 font-bold">AI Economist</div>
                             </div>
                         </Link>
 
@@ -64,7 +64,7 @@ const Navigation = () => {
                             <Dropdown label="Careers & Transitions">
                                 <DropdownItem href="/careers" description="The Career Pathfinder Hub">Career Compass</DropdownItem>
                                 <DropdownItem href="/careers/vp-engineering-economics" description="The Metric Fiduciary">VP of Engineering Economics</DropdownItem>
-                                <DropdownItem href="/careers/ai-product-economist" description="The Value Extractor">AI Product Economist</DropdownItem>
+                                <DropdownItem href="/careers/ai-product-economist" description="The Value Extractor">AI AI Economist</DropdownItem>
                                 <DropdownItem href="/careers/platform-edge-engineer" description="The Scaler">Platform Engineer</DropdownItem>
                             </Dropdown>
 

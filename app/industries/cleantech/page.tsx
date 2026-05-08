@@ -2,11 +2,11 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'CleanTech Product Economics — Clean Energy & Climate Tech...',
+    title: 'CleanTech AI Economics — Clean Energy & Climate Tech...',
     description: 'Product economics for CleanTech: energy grid integration debt, carbon accounting data challenges, IoT sensor networks, and regulatory compliance across ...',
-    keywords: ['cleantech technical debt', 'clean energy technology', 'carbon accounting systems', 'climate tech engineering', 'cleantech product economics'],
+    keywords: ['cleantech technical debt', 'clean energy technology', 'carbon accounting systems', 'climate tech engineering', 'cleantech AI economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/cleantech' },
-    openGraph: { title: 'CleanTech Product Economics', description: 'R&D capital challenges in clean energy technology.', url: 'https://www.richardewing.io/industries/cleantech', type: 'article' },
+    openGraph: { title: 'CleanTech AI Economics', description: 'R&D capital challenges in clean energy technology.', url: 'https://www.richardewing.io/industries/cleantech', type: 'article' },
 };
 
 const sections = [
@@ -29,7 +29,7 @@ export default function CleanTechPage() {
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         CleanTech{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Product Economics</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">AI Economics</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">Clean energy and climate technology face R&D challenges shaped by legacy grid infrastructure, complex emissions accounting, evolving regulations, and massive IoT deployments.</p>
 

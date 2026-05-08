@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Start Here — Your Guide to Product Economics | Richard Ewing',
-    description: 'New to product economics? Start here. Free diagnostic tools, 400+ glossary terms, learning tracks, and advisory services — a guided path from diagnosis ...',
+    title: 'Start Here — Your Guide to AI Economics | Richard Ewing',
+    description: 'New to AI economics? Start here. Free diagnostic tools, 400+ glossary terms, learning tracks, and advisory services — a guided path from diagnosis ...',
     keywords: [
-        'product economics start', 'technical debt guide', 'CTO resources',
+        'AI economics start', 'technical debt guide', 'CTO resources',
         'engineering economics introduction', 'Richard Ewing start here',
         'free engineering diagnostic', 'product debt assessment',
     ],
     alternates: { canonical: 'https://www.richardewing.io/start-here' },
     openGraph: {
-        title: 'Start Here — Your Guide to Product Economics',
+        title: 'Start Here — Your Guide to AI Economics',
         description: 'New here? Start with a free diagnostic, explore 400+ terms, and take the first step toward R&D capital efficiency.',
         url: 'https://www.richardewing.io/start-here',
         type: 'website',
@@ -40,7 +40,7 @@ const steps = [
         links: [
             { label: 'Glossary (400+ Terms)', href: '/glossary', primary: true },
             { label: 'Curriculum', href: '/curriculum' },
-            { label: 'Product Economist Doctrine', href: '/doctrine' },
+            { label: 'AI Economist Doctrine', href: '/doctrine' },
             { label: 'Articles & Frameworks', href: '/articles' },
         ],
         color: 'purple',
@@ -130,7 +130,7 @@ export default function StartHerePage() {
                     <div className="text-center py-16 border-t border-zinc-400">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Who Built This?</h2>
                         <p className="text-zinc-900 mb-6 max-w-xl mx-auto">
-                            Richard Ewing is a Product Economist and AI Capital Auditor.
+                            Richard Ewing is a AI Economist and AI Capital Auditor.
                             He has scaled B2B SaaS to $25M ARR and is the founder of{' '}
                             <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold underline">Exogram</a>, verification infrastructure for AI.
                             Published in CIO.com, Built In, Mind the Product, and HackerNoon.

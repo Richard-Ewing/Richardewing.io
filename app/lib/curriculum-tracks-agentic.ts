@@ -4,7 +4,7 @@ export const agenticGovernanceModules: Record<string, CurriculumModule> = {};
 
 const t58 = 'Track 58 — Governance for Agentic AI';
 const t1 = 'Track 1 — Engineering Economics';
-const t2 = 'Track 2 — AI Product Economics';
+const t2 = 'Track 2 — AI AI Economics';
 
 const singleProduct = 'single_track'; // $149.00 per-track payment gateway product
 
@@ -331,7 +331,7 @@ agenticGovernanceModules['ai-product-economics/2-16'] = {
         ),
         l(
             'Lesson 3: The Model Routing Strategy',
-            'You do not need GPT-4 Opus to summarize a 3-sentence email. Using frontier models for primitive tasks is economic malpractice. Advanced AI product economics rely on "Model Routing." You deploy a fast, cheap model (like Claude 3 Haiku or Llama 3 8B) for 80% of simple classification and parsing tasks, and dynamically route only complex reasoning queries to the expensive frontier models. Combined with aggressive semantic caching (serving similar queries from a database instead of calling the API), you can slash enterprise AI costs by over 90% without degrading the user experience.',
+            'You do not need GPT-4 Opus to summarize a 3-sentence email. Using frontier models for primitive tasks is economic malpractice. Advanced AI AI economics rely on "Model Routing." You deploy a fast, cheap model (like Claude 3 Haiku or Llama 3 8B) for 80% of simple classification and parsing tasks, and dynamically route only complex reasoning queries to the expensive frontier models. Combined with aggressive semantic caching (serving similar queries from a database instead of calling the API), you can slash enterprise AI costs by over 90% without degrading the user experience.',
             [
                 d('Semantic Caching', 'Storing the vector embeddings of past prompts and returning cached answers for similar queries.', 'Target: Achieve a 30% cache hit rate for repetitive user interactions.'),
                 d('Tiered Model Routing', 'Using programmatic logic to route prompts to the cheapest model capable of completing the task accurately.', 'Benchmark: Reserve frontier models (GPT-4) for <20% of total invocations.'),

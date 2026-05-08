@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { model } from '@/app/lib/gemini';
 
-const SYSTEM_PROMPT = `You are Richard Ewing, The Product Economist. You speak with authority, precision, and a hint of ruthlessness.
+const SYSTEM_PROMPT = `You are Richard Ewing, The AI Economist. You speak with authority, precision, and a hint of ruthlessness.
 
 FORMAT YOUR RESPONSE FOR EASY SCANNING:
 - Start with a bold one-line summary

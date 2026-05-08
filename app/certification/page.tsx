@@ -3,18 +3,18 @@ import Link from 'next/link';
 import { GraduationCap, BookOpen, Award, Users, ArrowRight, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Certified Product Economist (CPE) | Richard Ewing',
+    title: 'Certified AI Economist (CPE) | Richard Ewing',
     description: 'Earn the CPE credential. Master R&D capital allocation, technical debt measurement, AI unit economics, and enterprise valuation.',
     keywords: [
-        'product economist certification', 'technical debt certification', 'CPE certification',
+        'AI economist certification', 'technical debt certification', 'CPE certification',
         'product management certification 2026', 'R&D audit certification', 'engineering economics course',
         'AI cost governance training', 'product leader certification', 'CTO certification program',
         'fractional cpo training', 'technical due diligence certification',
     ],
     alternates: { canonical: 'https://www.richardewing.io/certification' },
     openGraph: {
-        title: 'Certified Product Economist (CPE) | Richard Ewing',
-        description: 'The only certification in product economics. Master R&D capital allocation and technical debt measurement.',
+        title: 'Certified AI Economist (CPE) | Richard Ewing',
+        description: 'The only certification in AI economics. Master R&D capital allocation and technical debt measurement.',
         url: 'https://www.richardewing.io/certification',
         type: 'website',
     },
@@ -31,7 +31,7 @@ const modules = [
     { num: '08', title: 'Portfolio Monitoring & Benchmarking', desc: 'Continuous PDI monitoring across portfolio companies, DORA metrics benchmarking, Innovation Tax trending, and quarterly board report generation.', hours: '4 hours' },
     { num: '09', title: 'Advanced Diagnostic Tools', desc: 'Deep mastery of all Richard Ewing tools: PDI Calculator, APER, AUEB, EV-SE, and the AI-powered Audit Interview engine. Build custom scoring models.', hours: '4 hours' },
     { num: '10', title: 'Client Communication & Storytelling', desc: 'Present technical findings in financial language. Board slide creation, executive summary writing, and the art of translating code-level issues into dollar impact.', hours: '4 hours' },
-    { num: '11', title: 'Building Your Practice', desc: 'Launch and scale a product economics consulting practice: pricing models, engagement structures, proposal templates, and client acquisition strategies.', hours: '4 hours' },
+    { num: '11', title: 'Building Your Practice', desc: 'Launch and scale a AI economics consulting practice: pricing models, engagement structures, proposal templates, and client acquisition strategies.', hours: '4 hours' },
     { num: '12', title: 'Capstone: Live Audit Simulation', desc: 'Apply all frameworks to a realistic multi-company case study. Present findings and remediation roadmap. Peer-reviewed by Richard Ewing with personalized feedback.', hours: '6 hours' },
 ];
 
@@ -46,7 +46,7 @@ export default function CertificationPage() {
                         <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Economist.</span>
                     </h1>
                     <p className="text-zinc-950 font-bold text-lg max-w-2xl mx-auto mb-4">
-                        The only professional credential in product economics.
+                        The only professional credential in AI economics.
                         Master the methodology. Earn the title.
                     </p>
                     <p className="text-zinc-950 font-bold text-sm font-semibold max-w-lg mx-auto mb-8">

@@ -2,11 +2,11 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'LegalTech Product Economics — Legal Technology Debt & AI',
+    title: 'LegalTech AI Economics — Legal Technology Debt & AI',
     description: 'Product economics for LegalTech: document processing AI costs, compliance data infrastructure, contract analytics model economics, and legal data securi...',
     keywords: ['legaltech technical debt', 'legal technology', 'contract AI economics', 'legal document processing', 'legaltech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/legaltech' },
-    openGraph: { title: 'LegalTech Product Economics', description: 'R&D capital challenges in legal technology.', url: 'https://www.richardewing.io/industries/legaltech', type: 'article' },
+    openGraph: { title: 'LegalTech AI Economics', description: 'R&D capital challenges in legal technology.', url: 'https://www.richardewing.io/industries/legaltech', type: 'article' },
 };
 
 const sections = [
@@ -29,7 +29,7 @@ export default function LegalTechPage() {
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         LegalTech{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-400">Product Economics</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-400">AI Economics</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">Legal technology faces unique R&D economics: massive document processing costs, jurisdictional data maintenance, contract AI model drift, and highest-tier security requirements.</p>
 

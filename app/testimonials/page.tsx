@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: 'Testimonials — What Clients Say About R&D Capital Audits',
     description: 'Explore verified client testimonials and profound social proof for R&D Capital Audits. See exactly what Fortune 500 CIOs, CTOs, Private Equity partners,...',
-    keywords: ['R&D audit testimonials', 'technical debt audit reviews', 'product economist testimonials', 'Richard Ewing reviews'],
+    keywords: ['R&D audit testimonials', 'technical debt audit reviews', 'AI economist testimonials', 'Richard Ewing reviews'],
     alternates: { canonical: 'https://www.richardewing.io/testimonials' },
     openGraph: { title: 'Testimonials — What Clients Say', description: 'Client testimonials for R&D Capital Audits.', url: 'https://www.richardewing.io/testimonials', type: 'website' },
 };

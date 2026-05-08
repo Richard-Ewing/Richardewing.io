@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     keywords: [
         'technical debt benchmark', 'engineering productivity benchmark 2026', 'product debt report',
         'state of technical debt', 'R&D efficiency report', 'AI cost benchmark', 'engineering metrics report',
-        'technical debt statistics', 'software maintenance costs 2026', 'product economist report',
+        'technical debt statistics', 'software maintenance costs 2026', 'AI economist report',
     ],
     alternates: { canonical: 'https://www.richardewing.io/benchmark' },
     openGraph: {
@@ -82,7 +82,7 @@ export default function BenchmarkPage() {
                                 >
                                     Get Free Report →
                                 </a>
-                                <p className="text-xs font-bold font-medium text-zinc-950 font-bold mt-4">Delivered via The Product Economist newsletter. Zero spam.</p>
+                                <p className="text-xs font-bold font-medium text-zinc-950 font-bold mt-4">Delivered via The AI Economist newsletter. Zero spam.</p>
                             </div>
                         </div>
                     </div>

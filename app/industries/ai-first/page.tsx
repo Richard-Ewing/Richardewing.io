@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for AI-First Companies — Margin Defense...',
+    title: 'AI Economics for AI-First Companies — Margin Defense...',
     description: 'Product economics advisory for AI-first companies. AI unit economics modeling, margin erosion prevention, model dependency analysis, and Exogram integra...',
-    keywords: ['AI company technical debt', 'AI margin erosion', 'LLM cost optimization', 'AI-first product economics', 'AI governance advisory', 'LLM unit economics', 'exogram integration'],
+    keywords: ['AI company technical debt', 'AI margin erosion', 'LLM cost optimization', 'AI-first AI economics', 'AI governance advisory', 'LLM unit economics', 'exogram integration'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ai-first' },
-    openGraph: { title: 'Product Economics for AI-First Companies', description: 'Margin defense, cost modelinng, and AI governance for companies building on LLMs.', url: 'https://www.richardewing.io/industries/ai-first', type: 'website' },
+    openGraph: { title: 'AI Economics for AI-First Companies', description: 'Margin defense, cost modelinng, and AI governance for companies building on LLMs.', url: 'https://www.richardewing.io/industries/ai-first', type: 'website' },
 };
 
 const challenges = [
@@ -26,7 +26,7 @@ export default function AIFirstPage() {
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Product Economics for{' '}
+                        AI Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">AI-First Companies</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">

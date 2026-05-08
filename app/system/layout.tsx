@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'The Operating System | Algorithmic Solvency Tools',
-    description: 'The Product Economist operating system. AI-powered diagnostic tools for technical debt quantification, AI unit economics, enterprise valuation, and engi...',
+    description: 'The AI Economist operating system. AI-powered diagnostic tools for technical debt quantification, AI unit economics, enterprise valuation, and engi...',
     keywords: [
-        'product economist tools',
+        'AI economist tools',
         'algorithmic solvency',
         'technical debt calculator',
         'AI unit economics',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'The Operating System | Algorithmic Solvency',
-        description: 'AI-powered diagnostic tools from the Product Economist. Force financial transparency in your product organization.',
+        description: 'AI-powered diagnostic tools from the AI Economist. Force financial transparency in your product organization.',
         url: 'https://www.richardewing.io/system',
         type: 'website',
     },

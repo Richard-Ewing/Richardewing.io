@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: 'The Complete R&D Audit Checklist — 75 Questions Across 6 ...',
     description: 'The complete R&D audit checklist used in $7,500 engagements. 75 questions across 6 domains with scoring rubrics, action items, and remediation framework...',
-    keywords: ['R&D audit checklist', 'engineering audit', 'technical due diligence checklist', 'CTO checklist', 'technology assessment', 'product economist'],
+    keywords: ['R&D audit checklist', 'engineering audit', 'technical due diligence checklist', 'CTO checklist', 'technology assessment', 'AI economist'],
     alternates: { canonical: 'https://www.richardewing.io/checklist' },
     openGraph: {
         title: 'The Complete R&D Audit Checklist — 75 Questions',
@@ -122,7 +122,7 @@ export default function ChecklistPage() {
                     <div className="mb-10 p-6 rounded-2xl bg-emerald-500/5 border border-emerald-500/20 text-center">
                         <div className="text-4xl mb-3">✓</div>
                         <h2 className="text-2xl font-bold text-emerald-900 font-extrabold font-semibold mb-2">You&apos;re In — Full Checklist Below</h2>
-                        <p className="text-zinc-950 font-bold">You&apos;ve been added to The Product Economist briefing. Here&apos;s the complete diagnostic framework.</p>
+                        <p className="text-zinc-950 font-bold">You&apos;ve been added to The AI Economist briefing. Here&apos;s the complete diagnostic framework.</p>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">

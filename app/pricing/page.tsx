@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Advisory Pricing | Richard Ewing — Product Economist',
+    title: 'Advisory Pricing | Richard Ewing — AI Economist',
     description: 'Transparent pricing for technology advisory, fractional CTO, and board-level AI governance services. From diagnostic audits to ongoing advisory.',
-    keywords: ['advisory pricing', 'fractional CTO cost', 'technology advisory', 'CTO advisory pricing', 'Richard Ewing pricing', 'product economist'],
+    keywords: ['advisory pricing', 'fractional CTO cost', 'technology advisory', 'CTO advisory pricing', 'Richard Ewing pricing', 'AI economist'],
     alternates: { canonical: 'https://www.richardewing.io/pricing' },
     openGraph: { title: 'Advisory Pricing | Richard Ewing', description: 'Transparent pricing for technology advisory services.', url: 'https://www.richardewing.io/pricing', type: 'website' },
 };

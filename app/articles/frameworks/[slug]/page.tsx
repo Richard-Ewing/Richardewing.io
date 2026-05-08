@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         description: framework.definition.replace(/\n/g, ' ').slice(0, 155) + '...',
         keywords: [
             framework.name.toLowerCase(), `${framework.name.toLowerCase()} framework`,
-            `what is ${framework.name.toLowerCase()}`, 'Richard Ewing', 'Product Economist',
+            `what is ${framework.name.toLowerCase()}`, 'Richard Ewing', 'AI Economist',
             'technical debt', 'engineering economics', 'R&D capital allocation',
             'product management framework', 'engineering leadership',
         ],

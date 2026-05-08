@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     title: 'Forensic Engineering Articles & Research | Richard Ewing',
     description: 'Deep dives into R&D capital efficiency, technical debt valuation, AI unit economics, and engineering economics. Published in CIO.com, Built In, Mind the...',
     keywords: [
-        'product economist articles',
+        'AI economist articles',
         'R&D capital efficiency',
         'technical debt valuation articles',
         'AI unit economics research',

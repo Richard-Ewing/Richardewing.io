@@ -14,7 +14,7 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                             <BookOpen className="w-4 h-4 text-violet-900 font-extrabold" />
                         </div>
                         <div className="hidden sm:block">
-                            <div className="text-xs font-bold text-zinc-900">Product Economics Academy</div>
+                            <div className="text-xs font-bold text-zinc-900">AI Economics Academy</div>
                             <div className="text-xs font-bold font-medium text-zinc-900">23 tracks • 293 modules • Lifetime access</div>
                         </div>
                     </div>

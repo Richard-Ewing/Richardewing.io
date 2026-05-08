@@ -42,7 +42,7 @@ export default function HomeContent() {
                 </div>
 
                 <p className="text-lg sm:text-xl text-zinc-950 font-bold max-w-2xl leading-relaxed mb-12 font-sans">
-                    I'm <span className="text-zinc-900 font-bold">Richard Ewing</span>, a Product Economist.
+                    I'm <span className="text-zinc-900 font-bold">Richard Ewing</span>, a AI Economist.
                     I run forensic audits that find the capital leaks inside your AI investments—then I help you plug them.
                     <span className="text-cyan-900 font-extrabold"> No consulting theater. Just hard numbers.</span>
                 </p>
@@ -199,9 +199,9 @@ export default function HomeContent() {
                             </p>
                         </div>
                         <div className="space-y-2">
-                            <h3 className="text-xl font-bold text-zinc-900">What is a Product Economist?</h3>
+                            <h3 className="text-xl font-bold text-zinc-900">What is a AI Economist?</h3>
                             <p className="text-zinc-950 font-bold leading-relaxed">
-                                A Product Economist treats product decisions as economic decisions. Rather than measuring success in story points or velocity, a Product Economist measures R&D ROI, capital efficiency, and the dollar value of technical debt. I coined the term to describe the gap between engineering metrics and financial reality.
+                                A AI Economist treats product decisions as economic decisions. Rather than measuring success in story points or velocity, a AI Economist measures R&D ROI, capital efficiency, and the dollar value of technical debt. I coined the term to describe the gap between engineering metrics and financial reality.
                             </p>
                         </div>
                     </div>

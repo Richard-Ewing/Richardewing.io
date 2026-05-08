@@ -49,7 +49,7 @@ const ExogramSection = () => {
                                 <div className="text-left flex flex-col justify-center h-full">
                                     <p className="text-zinc-900 font-semibold leading-none mb-1">Founded by Richard Ewing</p>
                                     <div className="flex items-center gap-2">
-                                        <p className="text-zinc-950 text-xs font-bold leading-none">Product Economist</p>
+                                        <p className="text-zinc-950 text-xs font-bold leading-none">AI Economist</p>
                                         <span className="text-emerald-900 font-extrabold text-xs font-bold font-medium uppercase font-mono tracking-wider px-1.5 py-0.5 bg-emerald-50 rounded border border-emerald-200 leading-none flex items-center h-4">Live</span>
                                     </div>
                                 </div>

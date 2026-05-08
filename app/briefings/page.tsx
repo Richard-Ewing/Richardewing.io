@@ -10,7 +10,7 @@ export const metadata: Metadata = {
         'engineering economics',
         'AI strategy briefings',
         'technical insolvency',
-        'product economist newsletter',
+        'AI economist newsletter',
         'R&D capital intelligence',
         'AI volatility tax',
     ],

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         'LLM Cost Calculator',
         'Generative AI margins',
         'AI Pricing Strategy',
-        'Product Economics Template'
+        'AI Economics Template'
     ],
     alternates: {
         canonical: 'https://www.richardewing.io/tools/ai-unit-economics-audit',

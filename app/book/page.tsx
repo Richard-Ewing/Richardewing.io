@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { NewsletterForm } from '../components/newsletter-form';
 
 export const metadata: Metadata = {
-    title: 'The Product Economist — Book | Richard Ewing',
-    description: 'The definitive guide to R&D capital allocation and technical debt valuation. By Richard Ewing, Product Economist and Founder of Exogram.',
-    keywords: ['product economist book', 'technical debt book', 'R&D capital allocation', 'engineering economics', 'Richard Ewing book'],
+    title: 'The AI Economist — Book | Richard Ewing',
+    description: 'The definitive guide to R&D capital allocation and technical debt valuation. By Richard Ewing, AI Economist and Founder of Exogram.',
+    keywords: ['AI economist book', 'technical debt book', 'R&D capital allocation', 'engineering economics', 'Richard Ewing book'],
     alternates: { canonical: 'https://www.richardewing.io/book' },
     openGraph: {
-        title: 'The Product Economist — Book | Richard Ewing',
+        title: 'The AI Economist — Book | Richard Ewing',
         description: 'The definitive guide to R&D capital allocation and technical debt valuation.',
         url: 'https://www.richardewing.io/book',
         type: 'website',
@@ -19,7 +19,7 @@ export default function BookPage() {
         <div className="min-h-screen flex items-center justify-center px-6">
             <div className="text-center max-w-2xl">
                 <div className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-4">Coming 2026</div>
-                <h1 className="text-5xl md:text-7xl font-bold text-zinc-950 mb-6 font-grotesk">The Product Economist</h1>
+                <h1 className="text-5xl md:text-7xl font-bold text-zinc-950 mb-6 font-grotesk">The AI Economist</h1>
                 <p className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-8 font-bold">
                     The Definitive Guide to R&D Capital Allocation
                 </p>

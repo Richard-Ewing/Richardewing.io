@@ -943,7 +943,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         </ul>
                     `,
                     recommendedProductId: 'module_ai_enterprise',
-                    upsellHeadline: 'Master Enterprise AI Product Economics.'
+                    upsellHeadline: 'Master Enterprise AI AI Economics.'
                 },
                 {
                     questionSlug: 'unit-economics-for-rag-architecture',
@@ -1003,7 +1003,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p>To establish profitable unit economics, you must cap the <em>Cost Per Query</em> at a strict mathematical fraction of the user's Monthly Recurring Revenue (MRR). If a user pays $20/month for your SaaS product, and a full RAG pipeline averages exactly $0.05 per interaction, your product mathematically becomes a cash incinerator at 400 queries per month. Product Managers must aggressively cache common retrievals and utilize cheaper routing models (like GPT-3.5) for generic synthesis to maintain a viable Evergreen Ratio.</p>
                     `,
                     recommendedProductId: 'module_ai_enterprise',
-                    upsellHeadline: 'Master Enterprise AI Product Economics.'
+                    upsellHeadline: 'Master Enterprise AI AI Economics.'
                 }
             ],
             'platform-engineer': [
@@ -1968,13 +1968,13 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p>Prioritization becomes simple math. If paying down the debt (CapEx) costs $50,000 in engineering time today, but it saves $120,000/year in continuous operational friction (OpEx), the ROI is exceptional. Product Managers must allocate 15-20% of every sprint explicitly for high-yield technical debt reduction. By treating tech debt resolution as a high-margin "feature" that accelerates future velocity, you keep the product roadmap continuously profitable.</p>
                     `,
                     recommendedProductId: 'module_product_mgmt',
-                    upsellHeadline: 'Adopt the Definitive Product Economics Framework.'
+                    upsellHeadline: 'Adopt the Definitive AI Economics Framework.'
                 },
                 {
                     questionSlug: 'product-economics',
-                    questionHeadline: 'What is Product Economics and how does it drive SaaS valuation?',
+                    questionHeadline: 'What is AI Economics and how does it drive SaaS valuation?',
                     answerHtml: `
-                        <p><strong>Product Economics</strong> is the strict mathematical discipline of treating every feature, sprint, and engineering initiative as an independent Profit & Loss (P&L) center. Software companies fail when they view "The Product" purely as user-experience architecture while ignoring the infrastructural extraction cost underlying it.</p>
+                        <p><strong>AI Economics</strong> is the strict mathematical discipline of treating every feature, sprint, and engineering initiative as an independent Profit & Loss (P&L) center. Software companies fail when they view "The Product" purely as user-experience architecture while ignoring the infrastructural extraction cost underlying it.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Marginal Cost of a Feature</h3>
                         <p>In traditional manufacturing, COGS (Cost of Goods Sold) is easy to track. In SaaS, COGS is invisible. When a Product Manager ships a new "Real-Time AI Dashboard," they rarely calculate the variable AWS egress and compute costs triggered every time a user loads the page. If a feature costs $0.15 in cloud resources per engagement but is bundled into a flat $50/mo subscription tier utilized 400 times a month, that single feature natively destroys the unit economics of the customer.</p>
@@ -1991,7 +1991,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         </div>
 
                         <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
-                        <p>A B2B marketing SaaS heavily promoted their new embedded "Generative AI Copywriter" tool to their user base. Use skyrocketed. Within two months, their gross margins plummeted from 85% to 54%. The Product Economics audit revealed that the OpenAI inference calls were costing them an average of $22 per user/month, while those users were only paying $29/mo for the entire platform suite. Because the PM didn't understand Product Economics, they gave away hard-compute API calls on a basic flat-tier SaaS model, nearly bankrupting the division.</p>
+                        <p>A B2B marketing SaaS heavily promoted their new embedded "Generative AI Copywriter" tool to their user base. Use skyrocketed. Within two months, their gross margins plummeted from 85% to 54%. The AI Economics audit revealed that the OpenAI inference calls were costing them an average of $22 per user/month, while those users were only paying $29/mo for the entire platform suite. Because the PM didn't understand AI Economics, they gave away hard-compute API calls on a basic flat-tier SaaS model, nearly bankrupting the division.</p>
 
                         <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
                         <ul class="list-disc pl-6 space-y-2 mb-6">
@@ -2001,7 +2001,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         </ul>
                     `,
                     recommendedProductId: 'module_product_mgmt',
-                    upsellHeadline: 'Train Your PMs into Product Economists.'
+                    upsellHeadline: 'Train Your PMs into AI Economists.'
                 },
                 {
                     questionSlug: 'plg-flywheel',
@@ -2150,7 +2150,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p>Only when PMs internalize both the top-line revenue projection and the bottom-line infrastructural extraction do you possess an economically viable product team.</p>
                     `,
                     recommendedProductId: 'module_pm',
-                    upsellHeadline: 'Convert Your PMs into Product Economists.'
+                    upsellHeadline: 'Convert Your PMs into AI Economists.'
                 }
             ]
         }

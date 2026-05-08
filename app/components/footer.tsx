@@ -20,7 +20,7 @@ export function Footer() {
                             </div>
                             <div>
                                 <div className="font-semibold text-zinc-900 font-grotesk">Richard Ewing</div>
-                                <div className="text-xs font-bold text-zinc-950 font-mono">Product Economist</div>
+                                <div className="text-xs font-bold text-zinc-950 font-mono">AI Economist</div>
                             </div>
                         </div>
                         <p className="text-zinc-950 text-sm">

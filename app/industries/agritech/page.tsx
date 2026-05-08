@@ -2,11 +2,11 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AgriTech Product Economics — Agriculture Technology Debt ...',
+    title: 'AgriTech AI Economics — Agriculture Technology Debt ...',
     description: 'Product economics for AgriTech: precision agriculture AI costs, IoT sensor infrastructure debt, satellite imagery processing economics, and supply chain...',
     keywords: ['agritech technical debt', 'agriculture technology', 'precision farming AI', 'IoT agriculture', 'agritech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/agritech' },
-    openGraph: { title: 'AgriTech Product Economics', description: 'R&D capital challenges in agriculture technology.', url: 'https://www.richardewing.io/industries/agritech', type: 'article' },
+    openGraph: { title: 'AgriTech AI Economics', description: 'R&D capital challenges in agriculture technology.', url: 'https://www.richardewing.io/industries/agritech', type: 'article' },
 };
 
 const sections = [
@@ -29,7 +29,7 @@ export default function AgriTechPage() {
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
                         AgriTech{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-lime-400">Product Economics</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-lime-400">AI Economics</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">Agriculture technology faces R&D challenges unlike any other vertical: extreme model drift tied to growing seasons, IoT at massive scale in remote locations, and complex multi-stakeholder supply chains.</p>
 

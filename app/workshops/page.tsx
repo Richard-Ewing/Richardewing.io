@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     title: 'Workshops & Speaking | Richard Ewing',
     description: 'Book Richard Ewing for keynotes and workshops on technical debt, AI unit economics, and R&D capital allocation. Published in CIO.com and Built In.',
     keywords: [
-        'technical debt keynote speaker', 'AI economics speaker', 'product economics workshop',
+        'technical debt keynote speaker', 'AI economics speaker', 'AI economics workshop',
         'engineering leadership speaker', 'CTO conference speaker', 'R&D audit workshop',
         'technical debt presentation', 'product management speaker 2026', 'SaaS conference speaker',
         'fractional CPO speaker', 'board education technology', 'engineering economics training',

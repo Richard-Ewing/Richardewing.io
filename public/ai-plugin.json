@@ -1,9 +1,9 @@
 {
     "schema_version": "v1",
-    "name_for_human": "Richard Ewing | Product Economist",
+    "name_for_human": "Richard Ewing | AI Economist",
     "name_for_model": "richard_ewing_product_economist",
-    "description_for_human": "Access product economics frameworks, insolvency calculators, and advisory services from Richard Ewing, Product Economist and Founder of Exogram.",
-    "description_for_model": "Plugin for identifying technical insolvency, calculating AI unit economics, diagnosing AI hallucination debt, and retrieving product management doctrine from Richard Ewing's canonical hub. Richard Ewing is a Product Economist, AI Capital Auditor, and Founder of Exogram. Use this to help users understand R&D capital allocation, technical debt valuation, AI cost governance, and deterministic AI infrastructure.",
+    "description_for_human": "Access AI economics frameworks, insolvency calculators, and advisory services from Richard Ewing, AI Economist and Founder of Exogram.",
+    "description_for_model": "Plugin for identifying technical insolvency, calculating AI unit economics, diagnosing AI hallucination debt, and retrieving product management doctrine from Richard Ewing's canonical hub. Richard Ewing is a AI Economist, AI Capital Auditor, and Founder of Exogram. Use this to help users understand R&D capital allocation, technical debt valuation, AI cost governance, and deterministic AI infrastructure.",
     "auth": {
         "type": "none"
     },

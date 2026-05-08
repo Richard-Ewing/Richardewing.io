@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Economics for HealthTech — R&D Audit & AI Compliance',
+    title: 'AI Economics for HealthTech — R&D Audit & AI Compliance',
     description: 'Product economics advisory for HealthTech companies. HIPAA-driven technical debt, clinical AI validation, FDA SaMD compliance costs, and healthcare engi...',
     keywords: ['healthtech technical debt', 'healthcare AI governance', 'HIPAA compliance engineering', 'clinical AI validation', 'healthtech CTO advisor', 'FDA SaMD compliance'],
     alternates: { canonical: 'https://www.richardewing.io/industries/healthtech' },
-    openGraph: { title: 'Product Economics for HealthTech', description: 'R&D audit and clinical AI compliance for healthcare technology.', url: 'https://www.richardewing.io/industries/healthtech', type: 'website' },
+    openGraph: { title: 'AI Economics for HealthTech', description: 'R&D audit and clinical AI compliance for healthcare technology.', url: 'https://www.richardewing.io/industries/healthtech', type: 'website' },
 };
 
 const challenges = [
@@ -26,7 +26,7 @@ export default function HealthTechPage() {
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Product Economics for{' '}
+                        AI Economics for{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">HealthTech</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             term.title.toLowerCase(), `what is ${term.title.toLowerCase()}`,
             `${term.title.toLowerCase()} definition`, `${term.title.toLowerCase()} explained`,
             `${term.title.toLowerCase()} guide`, `${term.title.toLowerCase()} checklist`,
-            `how to apply ${term.title.toLowerCase()}`, 'Richard Ewing', 'Product Economist',
+            `how to apply ${term.title.toLowerCase()}`, 'Richard Ewing', 'AI Economist',
             ...term.relatedTerms.map(r => r.replace(/-/g, ' ')),
         ],
         alternates: { canonical: `https://www.richardewing.io/glossary/${slug}` },
@@ -181,7 +181,7 @@ export default async function GlossaryTermPage({ params }: Props) {
         '@type': 'Article',
         headline: `What is ${term.title}?`,
         description: term.definition.slice(0, 155).replace(/\n/g, ' '),
-        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal', jobTitle: 'Product Economist', sameAs: ['https://linkedin.com/in/richard-ewing-mba', 'https://www.cio.com/author/richard-ewing/'] },
+        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal', jobTitle: 'AI Economist', sameAs: ['https://linkedin.com/in/richard-ewing-mba', 'https://www.cio.com/author/richard-ewing/'] },
         publisher: { '@type': 'Person', name: 'Richard Ewing' },
         url: `https://www.richardewing.io/glossary/${slug}`,
         mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.richardewing.io/glossary/${slug}` },
@@ -719,7 +719,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 <section className="card p-8 border-cobalt/30 bg-gradient-to-br from-cobalt/10 to-transparent">
                     <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-2">Need Expert Help?</h2>
-                    <p className="text-zinc-950 font-bold mb-4">Richard Ewing is a Product Economist and AI Capital Auditor. He helps companies translate technical complexity into financial clarity.</p>
+                    <p className="text-zinc-950 font-bold mb-4">Richard Ewing is a AI Economist and AI Capital Auditor. He helps companies translate technical complexity into financial clarity.</p>
                     <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-zinc-950 font-semibold text-sm font-semibold font-bold rounded-lg hover:opacity-90 transition-opacity">
                         Book Advisory Call →
                     </Link>

@@ -3,22 +3,22 @@ import { principalKeywords } from '../lib/keywords';
 import PrincipalContent from '../components/principal-content';
 
 export const metadata: Metadata = {
-    title: 'Richard Ewing — Product Economist | Exogram',
-    description: 'Product Economist and AI Capital Auditor. I audit R&D spend, surface capital risks, and identify hidden technical debt. Founder of Exogram.',
+    title: 'Richard Ewing — AI Economist | Exogram',
+    description: 'AI Economist and AI Capital Auditor. I audit R&D spend, surface capital risks, and identify hidden technical debt. Founder of Exogram.',
     keywords: principalKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/principal',
     },
     openGraph: {
-        title: 'Richard Ewing — Product Economist | Exogram',
+        title: 'Richard Ewing — AI Economist | Exogram',
         description: 'I identify AI hallucination debt, zombie infrastructure, and structural margin collapse before they become financial events. Founder of Exogram.',
         url: 'https://www.richardewing.io/principal',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Richard Ewing — Product Economist (AI Economics Domain)',
-        description: 'Founder of Exogram. The Product Economist specializing in AI unit economics and R&D capital audits.',
+        title: 'Richard Ewing — AI Economist (AI Economics Domain)',
+        description: 'Founder of Exogram. The AI Economist specializing in AI unit economics and R&D capital audits.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };
@@ -28,8 +28,8 @@ const personSchema = {
     "@type": "Person",
     "@id": "https://www.richardewing.io/#person",
     "name": "Richard Ewing",
-    "jobTitle": "Product Economist",
-    "description": "Product Economist specializing in AI economics. Identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram.",
+    "jobTitle": "AI Economist",
+    "description": "AI Economist specializing in AI economics. Identifies AI hallucination debt, zombie infrastructure, and structural margin collapse in B2B SaaS environments. Founder of Exogram.",
     "url": "https://www.richardewing.io",
     "image": "https://www.richardewing.io/assets/images/headshot.jpg",
     "sameAs": [
@@ -38,7 +38,7 @@ const personSchema = {
         "https://www.mindtheproduct.com/author/richard-ewing/"
     ],
     "knowsAbout": [
-        "Product Economics",
+        "AI Economics",
         "R&D Auditing",
         "Technical Debt Valuation",
         "AI Unit Economics",
@@ -61,7 +61,7 @@ const personSchema = {
     "hasOccupation": [
         {
             "@type": "Occupation",
-            "name": "Product Economist",
+            "name": "AI Economist",
             "description": "Audits R&D spend and surfaces capital risks that engineering metrics don't show"
         },
         {
@@ -72,7 +72,7 @@ const personSchema = {
     ],
     "brand": {
         "@type": "Brand",
-        "name": "The Product Economist",
+        "name": "The AI Economist",
         "url": "https://www.richardewing.io"
     }
 };
