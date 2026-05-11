@@ -74,7 +74,7 @@ export function Footer() {
                             <li><Link href="/tools/ev-se" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Evergreen Ratio</Link></li>
                             <li><Link href="/checklist" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">R&D Audit Checklist</Link></li>
                             <li><Link href="/compare" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Tool Comparisons (10)</Link></li>
-                            <li><Link href="/industries" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Industries (14)</Link></li>
+                            <li><Link href="/system" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Industries (14)</Link></li>
                             <li><Link href="/faq" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">FAQ</Link></li>
                         </ul>
                     </div>

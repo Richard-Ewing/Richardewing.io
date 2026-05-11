@@ -205,7 +205,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/curriculum`,
+            url: `${baseUrl}/vault/curriculum/tracks`,
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -295,59 +295,59 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
         // Industry verticals
         {
-            url: `${baseUrl}/industries`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/industries/fintech`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/industries/healthtech`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/industries/ai-first`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/industries/saas`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/industries/govtech`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/industries/edtech`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/industries/ecommerce`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/industries/cybersecurity`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/industries/logistics`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
 
         // Guides / Content Hubs
         {
-            url: `${baseUrl}/industries/insurtech`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -400,19 +400,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
         // Additional Industry Verticals
         {
-            url: `${baseUrl}/industries/proptech`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/industries/legaltech`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.7,
         },
 
         // More Industry + Comparison
         {
-            url: `${baseUrl}/industries/agritech`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.7,
         },
@@ -441,12 +441,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
         // More Verticals + Comparisons (Pass 20)
         {
-            url: `${baseUrl}/industries/cleantech`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/industries/mediatech`,
+            url: `${baseUrl}/system`,
             changeFrequency: 'monthly',
             priority: 0.7,
         },

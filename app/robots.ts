@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
                 userAgent: '*',
                 crawlDelay: 10,
                 allow: '/',
-                disallow: ['/api/', '/_next/', '/admin/'],
+                disallow: ['/_next/', '/admin/'],
             },
             // AI Crawlers - Explicit Permissions
             {

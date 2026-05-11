@@ -1,8 +1,46 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        source: '/api/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+        ],
+      },
+      {
+        source: '/.well-known/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
+      // ═══════════════════ GSC "Crawled - currently not indexed" Explicit Fixes ═══════════════════
+      { source: '/compare/mysql-vs-astro', destination: '/compare', permanent: true },
+      { source: '/vault/curriculum/tracks/strategic-leadership/N22-5', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/industries/cleantech', destination: '/system', permanent: true },
+      { source: '/glossary/email-marketing-automation', destination: '/glossary', permanent: true },
+      { source: '/exogram/docs/state-hashing', destination: '/exogram', permanent: true },
+      { source: '/vault/curriculum/tracks/model-routing/25-3', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/vault/curriculum/tracks/25/25-9', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/vault/curriculum/tracks/engineering-culture/22-1', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/vault/curriculum/tracks/fractional-engineering/50-1', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/vault/curriculum/tracks/govtech-economics/54-2', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/vault/curriculum/tracks/system-design/20-3', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/vault/curriculum/tracks/fintech-economics/52-6', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/glossary/serverless', destination: '/glossary', permanent: true },
+      { source: '/glossary/artificial-intelligence', destination: '/glossary', permanent: true },
+      { source: '/industries/cybersecurity', destination: '/system', permanent: true },
+      { source: '/glossary/design-system', destination: '/glossary', permanent: true },
+      { source: '/glossary/rice-framework', destination: '/glossary', permanent: true },
+      { source: '/canonical/financial-conways-law.html', destination: '/briefings', permanent: true },
+      { source: '/canonical/governance-of-subtraction.html', destination: '/briefings', permanent: true },
+      { source: '/canonical/kill-switch.html', destination: '/briefings', permanent: true },
+
       {
         source: '/vault/curriculum/tracks/:trackId(\\d+)/:moduleId',
         destination: '/vault/curriculum/tracks',
@@ -210,6 +248,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // Wildcard Fallbacks
+      {
+        source: '/compare/:slug*',
+        destination: '/compare',
+        permanent: true,
+      },
       {
         source: '/guides/:slug*',
         destination: '/vault/curriculum/tracks',
