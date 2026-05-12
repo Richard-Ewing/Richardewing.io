@@ -85,36 +85,125 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
-                {/* The Problem */}
-                <section className="section">
-                    <div className="max-w-4xl mx-auto">
-                        <h2 className="text-2xl font-bold text-zinc-950 mb-8 text-center">The Problem</h2>
-                        <p className="text-xl text-center text-zinc-950 font-bold mb-12">
-                            AI didn&apos;t fail because it&apos;s not smart enough.<br />
-                            <span className="text-purple-900 font-extrabold font-semibold">It failed because it doesn&apos;t know what it&apos;s allowed to be wrong about.</span>
-                        </p>
-                        <div className="grid-2">
-                            <div className="card">
-                                <h3 className="font-semibold text-zinc-950 mb-4">Modern AI Systems:</h3>
-                                <ul className="space-y-2 text-zinc-950 font-bold text-sm">
-                                    <li>• Generate fluent language without knowing truth</li>
-                                    <li>• Forget prior decisions and context</li>
-                                    <li>• Blend facts with confident confabulations</li>
-                                    <li>• &quot;Remember&quot; errors as confidently as truth</li>
-                                    <li>• Operate without operational boundaries</li>
-                                    <li>• Process adversarial inputs without detection</li>
-                                </ul>
+                {/* Why I Built Exogram */}
+                <section className="section bg-white border-y border-zinc-200 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-purple-500"></div>
+                    <div className="max-w-3xl mx-auto px-4 md:px-0">
+                        <h2 className="text-3xl font-bold text-zinc-950 mb-4">Why I Built Exogram</h2>
+                        <p className="text-zinc-600 mb-12 uppercase tracking-widest text-xs font-bold font-mono">A Note from the Founder</p>
+                        
+                        <div className="prose prose-lg prose-zinc max-w-none text-zinc-800 space-y-8 font-medium">
+                            <div>
+                                <p className="text-xl text-zinc-950 font-semibold mb-6">
+                                    I did not build Exogram because I wanted to launch another AI product. <br/>
+                                    <span className="text-purple-900">I built it because I kept colliding with the same systemic failures while trying to use AI systems to build real software.</span>
+                                </p>
+                                <p>
+                                    At first, I was deeply optimistic about agent-based development environments and autonomous coding systems. Like many developers and operators, I immediately saw the promise: faster iteration, accelerated engineering, AI-assisted workflows, and autonomous execution.
+                                </p>
+                                <p>
+                                    I started heavily using tools like Cursor and later moved deeper into increasingly autonomous AI workflows and agentic systems. At first, the experience felt almost magical. The systems could scaffold code, reason through problems, generate architecture suggestions, repair bugs, and move through development tasks at a pace that felt fundamentally different from traditional software tooling.
+                                </p>
                             </div>
-                            <div className="card">
-                                <h3 className="font-semibold text-zinc-950 mb-4">The Business Impact:</h3>
-                                <ul className="space-y-2 text-zinc-950 font-bold text-sm">
-                                    <li>• Hallucinations become policy decisions</li>
-                                    <li>• Guesses become financial commitments</li>
-                                    <li>• Memory corruption becomes liability</li>
-                                    <li>• Trust becomes impossible at enterprise scale</li>
-                                    <li>• Compliance violations accumulate silently</li>
-                                    <li>• AI costs spiral without governance</li>
+
+                            <div className="pl-6 border-l-4 border-red-500 bg-red-50/50 p-6 rounded-r-xl my-10 shadow-sm">
+                                <h3 className="text-xl font-bold text-red-950 mb-4">But after the novelty wore off, another pattern started emerging. The systems were unstable.</h3>
+                                <p className="mb-4 text-red-950 font-semibold">Not unstable in a theoretical sense. Operationally unstable. The models would:</p>
+                                <ul className="space-y-2 mb-6 text-sm font-semibold text-red-900 font-mono">
+                                    <li>• lose context mid-workflow</li>
+                                    <li>• forget previous architectural decisions</li>
+                                    <li>• recreate bugs they had already fixed</li>
+                                    <li>• generate contradictory implementations</li>
+                                    <li>• drift away from original instructions</li>
+                                    <li>• loop recursively through the same repair cycles</li>
+                                    <li>• introduce new errors while &quot;fixing&quot; old ones</li>
                                 </ul>
+                                <p className="font-semibold text-red-950">
+                                    And every one of those failures had a real cost attached to it: more tokens, more compute, more debugging, more wasted engineering time, and more operational uncertainty.
+                                </p>
+                            </div>
+
+                            <div>
+                                <p>
+                                    I started realizing I was not just dealing with hallucinations. <span className="font-bold text-zinc-950">I was dealing with probabilistic systems being treated as reliable execution infrastructure.</span>
+                                </p>
+                                <p>
+                                    That distinction completely changed how I viewed the industry. The problem was not that the AI occasionally produced incorrect text. The problem was that autonomous systems were increasingly being trusted with operational authority despite having no deterministic governance structure underneath them.
+                                </p>
+                                <p>
+                                    Then the industry rapidly accelerated into AI agents. That was the moment the problem stopped looking like a tooling inconvenience and started looking like a serious infrastructure failure.
+                                </p>
+                            </div>
+
+                            <div className="bg-zinc-950 text-zinc-100 p-8 rounded-2xl shadow-xl my-10 relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/20 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                                <h3 className="text-xl font-bold text-white mb-4">These systems were no longer confined to chat interfaces.</h3>
+                                <p className="text-zinc-300 mb-6 leading-relaxed">Now they were modifying production code, executing workflows, invoking APIs, interacting with enterprise systems, touching databases, and performing autonomous operations. And yet almost the entire ecosystem was still operating without meaningful runtime governance.</p>
+                                
+                                <p className="text-zinc-300 mb-6 leading-relaxed">The dominant industry answer became &quot;guardrails.&quot; But the more I studied the problem, the more obvious it became that most so-called guardrails were still fundamentally probabilistic systems supervising other probabilistic systems.</p>
+                                
+                                <p className="text-xl text-cyan-400 font-bold border-l-2 border-cyan-400 pl-4 py-1 tracking-tight">
+                                    That is not deterministic governance.<br/>That is stacked uncertainty.
+                                </p>
+                            </div>
+
+                            <div>
+                                <p>
+                                    The industry was attempting to scale autonomous execution without building admissibility infrastructure first. That realization became the foundation for Exogram.
+                                </p>
+                                <div className="bg-zinc-50 border border-zinc-200 p-6 rounded-xl my-8">
+                                    <p className="text-lg font-semibold text-zinc-950 mb-4">
+                                        I stopped thinking about the problem as:
+                                    </p>
+                                    <p className="text-lg italic text-zinc-600 mb-6 pl-4 border-l-2 border-zinc-300">
+                                        &quot;How do we make AI smarter?&quot;
+                                    </p>
+                                    <p className="text-lg font-semibold text-zinc-950 mb-4">
+                                        And started thinking about it as:
+                                    </p>
+                                    <p className="text-lg font-bold text-purple-900 pl-4 border-l-2 border-purple-500">
+                                        &quot;How do we determine whether autonomous execution should be allowed at all?&quot;
+                                    </p>
+                                </div>
+                                <p>
+                                    That is a completely different problem. Exogram was built to sit directly between AI inference and operational execution. Not as another assistant. Not as another wrapper. Not as another orchestration layer.
+                                </p>
+                                <p className="font-bold text-zinc-950 text-xl mt-6">
+                                    But as runtime governance infrastructure.
+                                </p>
+                                <p className="mt-4 leading-relaxed">
+                                    A deterministic operational control layer capable of evaluating whether autonomous actions are admissible before they are allowed to interact with enterprise infrastructure. That means runtime policy evaluation, bounded execution, operational boundary enforcement, contextual state verification, immutable auditability, permit or deny execution controls, and deterministic governance before runtime actions occur.
+                                </p>
+                            </div>
+
+                            <div className="p-8 bg-purple-50 border border-purple-200 rounded-xl my-10 shadow-sm relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 blur-2xl rounded-full"></div>
+                                <p className="font-bold text-purple-950 text-xl mb-6 relative z-10">
+                                    The goal was never to eliminate intelligence. The goal was to constrain probabilistic execution within deterministic operational boundaries.
+                                </p>
+                                <p className="text-purple-900 mb-6 leading-relaxed relative z-10">
+                                    Because once AI systems begin operating autonomously inside enterprise environments, the conversation changes entirely. Hallucinations are no longer just inconvenient outputs. They become infrastructure risk, security risk, financial risk, compliance risk, and operational risk.
+                                </p>
+                                <p className="text-purple-900 font-bold tracking-wide uppercase text-sm relative z-10">
+                                    That is the gap Exogram was built to address.
+                                </p>
+                            </div>
+
+                            <div>
+                                <p>
+                                    And I believe this problem becomes exponentially more important as the industry moves deeper into autonomous agents, multi-agent systems, AI-operated workflows, and machine-driven enterprise execution.
+                                </p>
+                                <p>
+                                    Most companies today are still focused on making autonomous systems more capable. Far fewer are asking whether those systems should be trusted with execution authority in the first place. I believe that eventually becomes one of the defining infrastructure questions of enterprise AI.
+                                </p>
+                                <div className="mt-12 pt-8 border-t border-zinc-200">
+                                    <p className="text-xl font-bold text-zinc-950 mb-6 leading-relaxed">
+                                        Because enterprises do not actually need more probabilistic systems operating with unchecked authority. They need governed execution, deterministic operational control, and bounded autonomy.
+                                    </p>
+                                    <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500">
+                                        That is why I built Exogram.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
