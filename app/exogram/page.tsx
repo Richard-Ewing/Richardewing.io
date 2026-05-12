@@ -57,6 +57,28 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
+                {/* Ecosystem Presence */}
+                <section className="py-10 border-b border-zinc-200 bg-white">
+                    <div className="max-w-4xl mx-auto text-center px-4">
+                        <p className="text-[11px] font-bold font-mono text-zinc-400 uppercase tracking-[0.2em] mb-6">Ecosystem Presence</p>
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-700">
+                            <a href="https://www.producthunt.com/products/exogram-ai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-exogram-ai" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity block">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img alt="Exogram.ai - The zero-trust verification layer for enterprise AI | Product Hunt" width="220" height="48" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1142627&theme=light" className="w-[220px] h-auto" />
+                            </a>
+                            <a href="https://theresanaiforthat.com/ai/exogram/" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity block">
+                                <div className="flex items-center gap-3 px-5 py-2.5 rounded-lg border border-zinc-300 bg-zinc-50 hover:bg-zinc-100 transition-colors h-[48px]">
+                                    <span className="text-xl opacity-80">🤖</span>
+                                    <div className="text-left flex flex-col justify-center">
+                                        <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest leading-none mb-1">Featured On</span>
+                                        <span className="text-sm font-bold text-zinc-900 leading-none">There&apos;s An AI For That</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Exogram */}
                 <section className="section bg-zinc-100">
                     <div className="max-w-4xl mx-auto">
