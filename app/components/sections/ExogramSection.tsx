@@ -16,16 +16,16 @@ const ExogramSection = () => {
                     <div className="card-featured p-10 flex flex-col items-center text-center space-y-8">
 
                         {/* Header with logo */}
-                        <div className="flex flex-col items-center gap-4">
+                        <Link href="/exogram" className="flex flex-col items-center gap-4 group hover:scale-105 transition-transform duration-300">
                             <div className="w-16 h-16 flex items-center justify-center relative">
                                 { }
                                 <Image src="/images/exogram/logo-main.png" alt="Exogram Logo" fill className="object-contain" sizes="64px" />
                             </div>
                             <div>
-                                <h3 className="text-2xl font-bold text-zinc-900 mb-1">Exogram</h3>
+                                <h3 className="text-2xl font-bold text-zinc-900 mb-1 group-hover:text-purple-900 font-extrabold transition-colors">Exogram</h3>
                                 <p className="text-purple-900 font-extrabold text-sm">The Verification Infrastructure for AI</p>
                             </div>
-                        </div>
+                        </Link>
 
                         {/* Tagline */}
                         <p className="text-xl md:text-2xl text-zinc-950 font-bold leading-relaxed max-w-2xl">
@@ -35,7 +35,7 @@ const ExogramSection = () => {
 
                         {/* Description */}
                         <p className="text-zinc-950 max-w-xl">
-                            Exogram is the missing trust layer between AI models and applications —
+                            <Link href="/exogram" className="font-bold text-purple-900 font-extrabold hover:underline">Exogram</Link> is the missing trust layer between AI models and applications —
                             maintaining context, meaning, and truth so AI systems can be relied upon.
                         </p>
 

@@ -101,6 +101,11 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all group-hover:w-full" />
                             </Link>
 
+                            <Link href="/exogram" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Exogram
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            </Link>
+
                             <Dropdown label="Advisory">
                                 <DropdownItem href="/advisory" description="Enterprise taskforces & forensics">Executive Advisory</DropdownItem>
                                 <DropdownItem href="/case-studies" description="Platform telemetry & outcomes">Case Studies</DropdownItem>
@@ -280,6 +285,12 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                             <span className="text-sm font-semibold text-zinc-900">Explore All 12+ Diagnostics →</span>
                         </Link>
                     </div>
+
+                    <div className="w-full h-px bg-zinc-200 my-4" />
+                    
+                    <MobileLink href="/exogram" onClick={onClose} className="font-bold text-purple-900 font-extrabold uppercase tracking-widest text-center border border-purple-200 bg-purple-50">Exogram Infrastructure</MobileLink>
+                    
+                    <div className="w-full h-px bg-zinc-200 my-4" />
 
                     {/* Advisory Section */}
                     <div className="space-y-3">

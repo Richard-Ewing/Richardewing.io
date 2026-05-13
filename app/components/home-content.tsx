@@ -134,7 +134,7 @@ export default function HomeContent() {
                         </h2>
                         <h3 className="text-xl font-mono text-purple-900 font-extrabold mb-4 uppercase tracking-widest">Active Development</h3>
                         <p className="text-zinc-950 font-bold text-lg leading-relaxed mb-8">
-                            I don't just advise. I build. <strong className="text-zinc-900">Exogram</strong> is my active research into AI memory systems and long-context reasoning.
+                            I don't just advise. I build. <Link href="/exogram" className="font-bold text-purple-900 font-extrabold hover:text-purple-500 transition-colors">Exogram</Link> is my active research into AI memory systems and long-context reasoning.
                             It is the engine that powers my own agency.
                         </p>
                         <Link href="/exogram" className="inline-flex items-center gap-2 text-purple-900 font-extrabold uppercase tracking-widest hover:text-purple-900 font-extrabold font-semibold transition-colors">
@@ -144,7 +144,7 @@ export default function HomeContent() {
                     <div className="flex-1 w-full">
                         <GlowCard className="p-8 h-full bg-purple-50 border-purple-200" glowColor="purple">
                             <div className="flex justify-between items-start mb-6">
-                                <div className="text-2xl font-bold text-zinc-900 font-grotesk">Exogram</div>
+                                <Link href="/exogram" className="text-2xl font-bold text-zinc-900 font-grotesk hover:text-purple-900 font-extrabold transition-colors">Exogram</Link>
                                 <div className="px-3 py-1 bg-green-50 text-green-900 font-extrabold text-xs font-bold font-medium font-mono uppercase tracking-widest rounded-full flex items-center gap-2">
                                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                                     Online
