@@ -279,18 +279,15 @@ export default function ToolsContent() {
 
         {/* CTA */}
         <section className="section-sm text-center">
-          <p className="text-zinc-950 font-bold mb-3">
-            If the results concern you, the diagnosis is only the first step.
+          <p className="text-zinc-950 font-bold mb-3 text-lg">
+            "Observability without enforcement is governance theater."
           </p>
           <p className="text-zinc-950 text-sm font-semibold mb-8 max-w-xl mx-auto">
-            Your tools diagnosed the disease. Now choose your cure.
+            Diagnostic insights are irrelevant without a deterministic interception layer. To remediate the risks identified, you must implement Admissibility-Native architecture.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-cyan-600/90 text-zinc-950 font-semibold font-bold tracking-widest uppercase hover:bg-cyan-500 transition-colors">
-              Book a $2,500 Insolvency Diagnostic →
-            </a>
-            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg border border-zinc-500 text-zinc-950 font-bold tracking-widest uppercase hover:bg-white/5 transition-colors">
-              Deploy Deterministic AI Flow →
+            <a href="https://exogram.ai/analyze" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg bg-red-600 text-white font-semibold font-bold tracking-widest uppercase hover:bg-red-700 transition-colors">
+              Initialize Exogram Simulation →
             </a>
           </div>
         </section>

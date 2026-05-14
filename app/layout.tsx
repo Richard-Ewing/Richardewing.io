@@ -10,6 +10,7 @@ import StickyBottomCTA from './components/StickyBottomCTA';
 import SocialProofTicker from './components/SocialProofTicker';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { ClerkProvider } from '@clerk/nextjs';
+import { PHProvider } from '@/lib/telemetry/posthog';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk' });
@@ -172,44 +173,46 @@ export default function RootLayout({
           }) }}
         />
 
-        <ClerkProvider 
-          appearance={{ 
-            variables: { 
-              colorPrimary: '#0891B2', 
-              colorBackground: '#FFFFFF', 
-              colorText: '#1A1A1A', 
-              colorInputBackground: '#FFFFFF',
-              colorInputText: '#1A1A1A',
-              colorDanger: '#DC2626'
-            },
-            elements: {
-              card: 'border border-zinc-200 shadow-xl bg-white rounded-2xl',
-              formFieldLabel: 'text-zinc-900 font-sans font-bold',
-              socialButtonsBlockButton: 'bg-zinc-50 border-zinc-200 text-zinc-900 hover:bg-zinc-100 transition-all font-sans font-bold',
-              formButtonPrimary: 'font-bold tracking-widest uppercase hover:opacity-90 transition-opacity',
-              headerTitle: 'font-sans font-bold text-zinc-900 text-2xl',
-              headerSubtitle: 'font-sans text-zinc-600',
-              dividerLine: 'bg-zinc-200',
-              dividerText: 'text-zinc-500 font-mono text-xs uppercase tracking-widest'
-            }
-          }}
-        >
-        <Navigation />
+        <PHProvider>
+          <ClerkProvider 
+            appearance={{ 
+              variables: { 
+                colorPrimary: '#0891B2', 
+                colorBackground: '#FFFFFF', 
+                colorText: '#1A1A1A', 
+                colorInputBackground: '#FFFFFF',
+                colorInputText: '#1A1A1A',
+                colorDanger: '#DC2626'
+              },
+              elements: {
+                card: 'border border-zinc-200 shadow-xl bg-white rounded-2xl',
+                formFieldLabel: 'text-zinc-900 font-sans font-bold',
+                socialButtonsBlockButton: 'bg-zinc-50 border-zinc-200 text-zinc-900 hover:bg-zinc-100 transition-all font-sans font-bold',
+                formButtonPrimary: 'font-bold tracking-widest uppercase hover:opacity-90 transition-opacity',
+                headerTitle: 'font-sans font-bold text-zinc-900 text-2xl',
+                headerSubtitle: 'font-sans text-zinc-600',
+                dividerLine: 'bg-zinc-200',
+                dividerText: 'text-zinc-500 font-mono text-xs uppercase tracking-widest'
+              }
+            }}
+          >
+          <Navigation />
 
-        {/* Main content with top padding for fixed nav */}
-        <main className="flex-grow pt-24 relative">
-          {children}
-        </main>
+          {/* Main content with top padding for fixed nav */}
+          <main className="flex-grow pt-24 relative">
+            {children}
+          </main>
 
-        <Footer />
-        <ExitIntentPopup />
-        <StickyBottomCTA />
-        <SocialProofTicker />
+          <Footer />
+          <ExitIntentPopup />
+          <StickyBottomCTA />
+          <SocialProofTicker />
 
-        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
-        )}
-        </ClerkProvider>
+          {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+          )}
+          </ClerkProvider>
+        </PHProvider>
       </body>
     </html>
   );

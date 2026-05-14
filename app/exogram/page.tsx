@@ -6,6 +6,7 @@ import Image from 'next/image';
 import BlurIn from '@/components/magicui/blur-in';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import Meteors from '@/components/magicui/meteors';
+import { InteractiveExogramSim } from '../components/visualizations/InteractiveExogramSim';
 
 export default function ExogramPage() {
     return (
@@ -104,6 +105,17 @@ export default function ExogramPage() {
                                 But true autonomy relies on Layers 3 and 4. These are the strict admissibility, accountability, and cryptographic guardrails. When AI transitions from software tools to autonomous entities operating within enterprise and government infrastructure, they will require an immutable trust ledger to verify every action. <span className="font-bold text-zinc-950">Exogram is that ledger. We are building the regulatory and operational baseline that makes AGI safe to deploy.</span>
                             </p>
                         </div>
+                    </div>
+                </section>
+
+                {/* Exogram Simulation Layer */}
+                <section className="section bg-zinc-950 py-16 relative overflow-hidden border-y border-zinc-800">
+                    <div className="max-w-5xl mx-auto px-4 md:px-0">
+                        <div className="text-center mb-10">
+                            <h2 className="text-2xl font-bold text-white mb-2">Admissibility in Action</h2>
+                            <p className="text-zinc-400 font-medium">Intercepting probabilistic execution before it reaches production environments.</p>
+                        </div>
+                        <InteractiveExogramSim />
                     </div>
                 </section>
 

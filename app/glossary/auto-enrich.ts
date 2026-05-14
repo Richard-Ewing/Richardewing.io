@@ -494,3 +494,41 @@ export function autoWhoUsesIt(category: string, title: string): string {
     return context[category] || `**Technology Executives (CTO/CIO)** leverage ${title} to align their technical strategy with overriding business constraints and board expectations.\n\n**Staff Engineers & Architects** rely on this framework to implement scalable, predictable patterns throughout their domains.`;
 }
 
+// NEW: Auto-generated Diagnostic & Exogram Bridge mapping
+export function autoBridge(category: string, title: string): { diagnosticName: string; frameworkSlug: string; frameworkName: string; frameworkDescription: string; exogramRisk: string; exogramDescription: string } | null {
+    if (category.includes('AI') || category.includes('Machine Learning')) {
+        return {
+            diagnosticName: 'AI Unit Economics Benchmark',
+            frameworkSlug: 'synthetic-cogs',
+            frameworkName: 'Synthetic COGS',
+            frameworkDescription: `Understanding ${title} is critical to mastering Synthetic COGS. Generative AI fundamentally reintroduces variable cost of goods sold into software. If you don't track the compute cost per query, your margins will collapse as you scale.`,
+            exogramRisk: 'Margin Collapse',
+            exogramDescription: `Stop subsidizing LLM providers with your VC funding. Exogram enforces dynamic cost routing and intent classification, ensuring high-compute models are only triggered when the ROI justifies the inference cost.`
+        };
+    }
+    
+    if (category.includes('Technical Debt') || category.includes('Code Quality') || category.includes('Engineering Management') || category.includes('Architecture')) {
+        return {
+            diagnosticName: 'Product Debt Index',
+            frameworkSlug: 'technical-insolvency',
+            frameworkName: 'Technical Insolvency',
+            frameworkDescription: `${title} directly impacts your Technical Insolvency Date. When technical debt maintenance consumes 100% of your engineering capacity, your ability to ship new features drops to zero.`,
+            exogramRisk: 'Governance Drift',
+            exogramDescription: `Legacy systems degrade autonomously. Exogram acts as an immutable enforcement layer, physically preventing regressions and halting builds that violate architectural governance.`
+        };
+    }
+
+    if (category.includes('Product') || category.includes('Leadership') || category.includes('SaaS') || category.includes('Cloud')) {
+        return {
+            diagnosticName: 'Annualized Productivity',
+            frameworkSlug: 'innovation-tax',
+            frameworkName: 'Innovation Tax',
+            frameworkDescription: `Failing to govern ${title} leads directly to a high Innovation Tax. This is the hidden percentage of your R&D budget spent on maintenance masquerading as feature development.`,
+            exogramRisk: 'Execution Variance',
+            exogramDescription: `Strategic intent rarely survives contact with the codebase. Exogram bridges the gap between executive directives and code implementation, ensuring your strategic architecture is enforced at compile time.`
+        };
+    }
+    
+    return null;
+}
+

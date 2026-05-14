@@ -13,6 +13,7 @@ interface NewsletterFormProps {
     className?: string;
     extraData?: Record<string, string | number | undefined>;
     redirectTo?: string;
+    onSuccess?: () => void;
 }
 
 export function NewsletterForm({
@@ -21,7 +22,8 @@ export function NewsletterForm({
     buttonText = "Get Updates",
     className = "",
     extraData,
-    redirectTo = "/checklist"
+    redirectTo = "/checklist",
+    onSuccess
 }: NewsletterFormProps) {
     const [state, handleSubmit] = useForm(id);
     const lastSubmittedEmailRef = useRef<string>('');
@@ -41,13 +43,17 @@ export function NewsletterForm({
                 body: JSON.stringify({ email, source }),
             }).catch(() => {});
 
+            if (onSuccess) {
+                onSuccess();
+            }
+
             // Redirect after brief success flash
             if (redirectTo) {
                 const timer = setTimeout(() => router.push(redirectTo), 1500);
                 return () => clearTimeout(timer);
             }
         }
-    }, [state.succeeded, extraData?.tool, redirectTo, router]);
+    }, [state.succeeded, extraData?.tool, redirectTo, router, onSuccess]);
 
     // Wrap handleSubmit to capture the email before submission
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {

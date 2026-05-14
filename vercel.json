@@ -1,0 +1,16 @@
+{
+  "crons": [
+    {
+      "path": "/api/intelligence/digest?cadence=weekly",
+      "schedule": "0 8 * * 1" 
+    },
+    {
+      "path": "/api/intelligence/digest?cadence=monthly",
+      "schedule": "0 8 1 * *" 
+    },
+    {
+      "path": "/api/intelligence/digest?cadence=quarterly",
+      "schedule": "0 8 1 1,4,7,10 *" 
+    }
+  ]
+}

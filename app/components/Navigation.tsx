@@ -48,57 +48,24 @@ const Navigation = () => {
                         <div className="hidden md:flex items-center gap-6 lg:gap-8">
 
                             {/* Start Here / Member Dashboard — the golden path for visitors */}
-                            <Link href={isSignedIn ? "/vault" : "/doctrine"} className="text-emerald-900 font-extrabold hover:text-emerald-500 transition-colors relative group font-semibold">
+                            <Link href={isSignedIn ? "/vault" : "/start-here"} className="text-emerald-900 font-extrabold hover:text-emerald-500 transition-colors relative group font-semibold">
                                 ✦ {isSignedIn ? "Member Dashboard" : "Start Here"}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
-                            <Dropdown label="Library & Docs">
-                                <DropdownItem href="/articles" description="Syndicated work in CIO, Built In, etc">Published Articles</DropdownItem>
-                                <DropdownItem href="/vault/curriculum/tracks" description="400+ modules and playbooks">Complete Curriculum</DropdownItem>
-                                <DropdownItem href="/glossary" description="500+ engineering economics terms">Glossary</DropdownItem>
-                                <DropdownItem href="/answers" description="Persona-specific knowledge matrix">Answers Hub</DropdownItem>
-                                <DropdownItem href="/blog" description="105 articles on engineering economics">Blog</DropdownItem>
-                                <DropdownItem href="/resources/ai-courses" description="Free AI & engineering courses">AI Courses</DropdownItem>
-                            </Dropdown>
 
-                            <Dropdown label="Careers & Transitions">
-                                <DropdownItem href="/careers" description="The Career Pathfinder Hub">Career Compass</DropdownItem>
-                                <DropdownItem href="/careers/vp-engineering-economics" description="The Metric Fiduciary">VP of Engineering Economics</DropdownItem>
-                                <DropdownItem href="/careers/ai-product-economist" description="The Value Extractor">AI AI Economist</DropdownItem>
-                                <DropdownItem href="/careers/platform-edge-engineer" description="The Scaler">Platform Engineer</DropdownItem>
-                            </Dropdown>
+                            <Link href="/tools" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Diagnostics
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            </Link>
 
-                            <Dropdown label="Enterprise Diagnostics">
-                                <Link
-                                    href="/tools/board-room"
-                                    className="block p-5 bg-gradient-to-br from-indigo-50 to-white border-b border-indigo-100 hover:from-indigo-100 transition-all font-semibold"
-                                >
-                                    <div className="flex items-center gap-3 mb-1">
-                                        <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
-                                        <span className="text-zinc-900 text-base">Executive Board Room</span>
-                                    </div>
-                                    <p className="text-[10.5px] text-indigo-900 font-bold font-mono tracking-widest uppercase">Board-Level Telemetry Hub</p>
-                                </Link>
-                                
-                                <div className="px-5 py-2 text-xs font-bold font-medium font-bold tracking-widest text-[var(--accent-purple)] uppercase mt-2">Flagship Engines</div>
-                                <DropdownItem href="/benchmark/ai-capital-2026" description="FTE & CapEx/OpEx Threshold Data">2026 AI Capital Benchmark</DropdownItem>
-                                <DropdownItem href="/tools/copilot-roi" description="Calculate Net Revenue Retention">Copilot ROI Forecaster</DropdownItem>
-                                <DropdownItem href="/tools/pdi" description="Calculate your Technical Insolvency Date">Tech Debt Forecaster (PDI)</DropdownItem>
-                                <DropdownItem href="/tools/aueb" description="Model AI unit margin collapse">AI Margin Calculator (AUEB)</DropdownItem>
-                                <DropdownItem href="/compare" description="LLM capability & cost matrix">Model Comparison Matrix</DropdownItem>
-                                <DropdownItem href="/tools/ai-roi-timeline" description="Hardware vs API investment horizons">AI CapEx Break-Even</DropdownItem>
-                                
-                                <div className="mt-2 p-2 relative z-10 w-full bg-zinc-50 pb-3">
-                                    <Link href="/tools" className="block text-center flex items-center justify-center gap-2 border border-zinc-400 hover:border-zinc-500 bg-white hover:bg-zinc-50 rounded-lg py-2.5 mx-3 transition-colors">
-                                        <span className="text-xs font-bold text-zinc-950">Explore All Diagnostics</span>
-                                        <span className="text-xs font-bold text-zinc-900 font-bold">→</span>
-                                    </Link>
-                                </div>
-                            </Dropdown>
-                            
-                            <Link href="/tools/audit-interview" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Audit Interview
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all group-hover:w-full" />
+                            <Link href="/frameworks" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Frameworks
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            </Link>
+
+                            <Link href="/glossary" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Glossary
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
                             <Link href="/exogram" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
@@ -106,11 +73,10 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
-                            <Dropdown label="Advisory">
-                                <DropdownItem href="/advisory" description="Enterprise taskforces & forensics">Executive Advisory</DropdownItem>
-                                <DropdownItem href="/case-studies" description="Platform telemetry & outcomes">Case Studies</DropdownItem>
-                                <DropdownItem href="/principal" description="About Richard Ewing">The Principal</DropdownItem>
-                            </Dropdown>
+                            <Link href="/advisory" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Advisory
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            </Link>
 
                             {/* Primary CTA */}
                             <Link
@@ -241,66 +207,15 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     <div className="w-full h-px bg-zinc-200" />
 
-                    {/* Learn Section */}
-                    <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-cyan-900 font-extrabold uppercase tracking-widest pl-2">Curriculum & Library</h3>
-                        <MobileLink href="/articles" onClick={onClose}>Published Articles</MobileLink>
-                        <MobileLink href="/vault/curriculum/tracks" onClick={onClose}>Complete Curriculum</MobileLink>
-                        <MobileLink href="/glossary" onClick={onClose}>Glossary (420+ Terms)</MobileLink>
-                        <MobileLink href="/answers" onClick={onClose}>Answer Hub (Matrix)</MobileLink>
-                        <MobileLink href="/blog" onClick={onClose}>Blog (105 Articles)</MobileLink>
-                        <MobileLink href="/resources/ai-courses" onClick={onClose}>AI Courses (Free)</MobileLink>
-                    </div>
-
-                    {/* Careers Section */}
-                    <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-emerald-900 font-extrabold uppercase tracking-widest pl-2 mt-4 mb-2">Careers & Transitions</h3>
-                        <MobileLink href="/careers" onClick={onClose}>Career Pathfinder Hub</MobileLink>
-                    </div>
-
-                    {/* Tools Section */}
-                    <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-violet-900 font-extrabold uppercase tracking-widest pl-2 mb-4">Enterprise Diagnostics</h3>
-                        
-                        <Link
-                            href="/tools/board-room"
-                            onClick={onClose}
-                            className={`block px-5 py-4 rounded-xl bg-gradient-to-r from-indigo-50 to-white border border-indigo-100 text-zinc-900 hover:from-indigo-100 transition-colors font-semibold shadow-sm mb-6`}
-                        >
-                            <div className="flex items-center gap-3 mb-1">
-                                <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_10px_#6366f1]" />
-                                <span>Executive Board Room</span>
-                            </div>
-                            <span className="text-xs font-bold font-medium text-indigo-900 font-bold font-mono tracking-widest uppercase block mt-1">Board-Level Telemetry Hub</span>
-                        </Link>
-
-                        <MobileLink href="/benchmark/ai-capital-2026" onClick={onClose} className="font-bold text-cyan-900 font-extrabold">2026 AI Capital Benchmark</MobileLink>
-                        <MobileLink href="/tools/copilot-roi" onClick={onClose}>Copilot ROI Forecaster</MobileLink>
-                        <MobileLink href="/tools/pdi" onClick={onClose}>Tech Debt Forecaster (PDI)</MobileLink>
-                        <MobileLink href="/tools/aueb" onClick={onClose}>AI Margin Calculator (AUEB)</MobileLink>
-                        <MobileLink href="/compare" onClick={onClose}>Model Comparison Matrix</MobileLink>
-                        <MobileLink href="/tools/ai-roi-timeline" onClick={onClose}>AI CapEx Break-Even</MobileLink>
-                        
-                        <Link href="/tools" onClick={onClose} className="block mt-4 text-center border border-zinc-400 bg-white rounded-lg py-3 hover:bg-zinc-50 transition-colors">
-                            <span className="text-sm font-semibold text-zinc-900">Explore All 12+ Diagnostics →</span>
-                        </Link>
+                    <div className="space-y-4">
+                        <MobileLink href="/tools" onClick={onClose} className="text-lg font-bold">Diagnostics</MobileLink>
+                        <MobileLink href="/frameworks" onClick={onClose} className="text-lg font-bold">Frameworks</MobileLink>
+                        <MobileLink href="/glossary" onClick={onClose} className="text-lg font-bold">Glossary</MobileLink>
+                        <MobileLink href="/exogram" onClick={onClose} className="text-lg font-bold">Exogram</MobileLink>
+                        <MobileLink href="/advisory" onClick={onClose} className="text-lg font-bold">Advisory</MobileLink>
                     </div>
 
                     <div className="w-full h-px bg-zinc-200 my-4" />
-                    
-                    <MobileLink href="/exogram" onClick={onClose} className="font-bold text-purple-900 font-extrabold uppercase tracking-widest text-center border border-purple-200 bg-purple-50">Exogram Infrastructure</MobileLink>
-                    
-                    <div className="w-full h-px bg-zinc-200 my-4" />
-
-                    {/* Advisory Section */}
-                    <div className="space-y-3">
-                        <h3 className="text-xs font-bold text-amber-600 uppercase tracking-widest pl-2">Advisory</h3>
-                        <MobileLink href="/advisory" onClick={onClose}>Executive Advisory</MobileLink>
-                        <MobileLink href="/case-studies" onClick={onClose}>Case Studies</MobileLink>
-                        <MobileLink href="/principal" onClick={onClose}>The Principal</MobileLink>
-                    </div>
-
-                    <div className="w-full h-px bg-zinc-200" />
 
                     <Link
                         href="/advisory"

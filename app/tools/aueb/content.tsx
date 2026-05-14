@@ -14,6 +14,17 @@ import { QPEPRemediation } from '../../components/QPEPRemediation';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { ToolGateCTA } from '../../components/ToolGateCTA';
 import progressStyles from '../../styles/progress.module.css';
+import { trackDiagnosticEvent } from '@/lib/telemetry/events';
+import { saveDiagnosticSession, loadDiagnosticSession } from '@/lib/storage/session';
+import { ExecutiveSummary } from '@/components/reports/ExecutiveSummary';
+import { ExogramRecommendations } from '@/components/reports/ExogramRecommendations';
+import { BenchmarkComparison } from '@/components/reports/BenchmarkComparison';
+import { DiagnosticProgression } from '@/components/reports/DiagnosticProgression';
+import { LongitudinalHistory } from '@/components/reports/LongitudinalHistory';
+import { DiagnosticBridge } from '../../components/DiagnosticBridge';
+import { calculateAuebScore, AuebScoreMetrics, FeatureData, ApiCost, ModelData } from '@/lib/diagnostics/auebScoring';
+import { getAuebPersonaInsight } from '@/lib/diagnostics/auebInterpretations';
+import { Persona, formatMoney } from '@/lib/diagnostics/interpretations';
 
 const NumberTicker = ({ value, prefix = '', suffix = '' }: { value: number; prefix?: string; suffix?: string }) => {
     const [display, setDisplay] = useState(0);
@@ -82,68 +93,7 @@ const GaugeChart = ({ value }: { value: number }) => {
     );
 };
 
-// --- PERSONA TYPES ---
-type Persona = 'Founder' | 'CPO' | 'VP Eng' | 'CFO';
-
-const PERSONAS: { id: Persona; label: string; icon: React.ComponentType<{ size?: number }> }[] = [
-    { id: 'Founder', label: 'Founder/CEO', icon: Target },
-    { id: 'CPO', label: 'CPO/Product', icon: Users },
-    { id: 'VP Eng', label: 'VP Engineering', icon: Cpu },
-    { id: 'CFO', label: 'CFO/Finance', icon: DollarSign },
-];
-
-// --- MAIN APPLICATION ---
-
-interface ModelData {
-    model: string;
-    cost: number;
-    margin: number;
-    costPerUser: number;
-}
-
-interface GrowthData {
-    month: string;
-    revenue: number;
-    cost: number;
-}
-
-interface FeatureData {
-    name: string;
-    queriesPercent: number;
-}
-
-interface ApiCost {
-    name: string;
-    costPerUser: number;
-    enabled: boolean;
-}
-
-interface Results {
-    grossMargin: number;
-    monthlyRevenue: number;
-    monthlyCost: number;
-    monthlyProfit: number;
-    profitPerUser: number;
-    costPerUser: number;
-    insolvencyPoint: number;
-    models: ModelData[];
-    growthData: GrowthData[];
-    price: number;
-    queries: number;
-    users: number;
-    monthsToCollapse: number;
-    featureBreakdown: { name: string; cost: number; margin: number }[];
-    // Enhanced cost breakdown
-    llmCost: number;
-    apiCost: number;
-    hostingCost: number;
-    totalInfraCost: number;
-    qpep_roadmap?: Array<{
-        month: number;
-        focus: string;
-        action_items: string[];
-    }>;
-}
+// Types are now imported
 
 export default function AUEBTool() {
     // Persona State
@@ -179,9 +129,15 @@ export default function AUEBTool() {
         { name: 'AWS S3 Storage', costPerUser: 0.20, enabled: true },
     ]);
 
-    const [results, setResults] = useState<Results | null>(null);
+    const [results, setResults] = useState<AuebScoreMetrics | null>(null);
     const [loading, setLoading] = useState(false);
     const [showGate, setShowGate] = useState(false);
+
+    useEffect(() => {
+        trackDiagnosticEvent('diagnostic_started', 'aueb');
+        const saved = loadDiagnosticSession('aueb');
+        if (saved) setResults(saved);
+    }, []);
 
 
 
@@ -240,103 +196,25 @@ export default function AUEBTool() {
             const usersNum = parseFloat(users) || 0;
             const growthRateNum = parseFloat(growthRate) || 15;
             const hostingNum = parseFloat(hostingCostPerUser) || 0;
-
             const premiumNum = parseFloat(premiumCharge) || 0;
-            const effectiveRevenuePerUser = monetizationStrategy === 'premium' ? priceNum + premiumNum : priceNum;
 
-            // Apply caching discount to LLM costs
-            const effectiveLlmCost = cachingEnabled ? costNum * 0.6 : costNum;
-            const llmCostPerUser = queriesNum * effectiveLlmCost;
-
-            // Calculate third-party API costs
-            const apiCostPerUser = thirdPartyApis
-                .filter(api => api.enabled)
-                .reduce((sum, api) => sum + api.costPerUser, 0);
-
-            // Total cost per user
-            const totalCostPerUser = llmCostPerUser + apiCostPerUser + hostingNum;
-
-            const grossMargin = ((effectiveRevenuePerUser - totalCostPerUser) / effectiveRevenuePerUser) * 100;
-            const profitPerUser = effectiveRevenuePerUser - totalCostPerUser;
-
-            const monthlyRevenue = effectiveRevenuePerUser * usersNum;
-            const llmCost = llmCostPerUser * usersNum;
-            const apiCost = apiCostPerUser * usersNum;
-            const hostingCost = hostingNum * usersNum;
-            const totalInfraCost = llmCost + apiCost + hostingCost;
-            const monthlyProfit = monthlyRevenue - totalInfraCost;
-            const insolvencyPoint = Math.floor(priceNum / effectiveLlmCost);
-
-            // Calculate months to margin collapse (when cost > revenue)
-            let monthsToCollapse = 0;
-            if (grossMargin < 100) {
-                for (let i = 1; i <= 36; i++) {
-                    const projectedUsers = usersNum * Math.pow(1 + (growthRateNum / 100), i);
-                    const projectedCost = projectedUsers * totalCostPerUser;
-                    const projectedRevenue = projectedUsers * effectiveRevenuePerUser;
-                    if (projectedCost > projectedRevenue * 0.5) { // Cost > 50% of revenue
-                        monthsToCollapse = i;
-                        break;
-                    }
-                }
-            }
-
-            const models: ModelData[] = [
-                { model: 'GPT-4', cost: 0.03 },
-                { model: 'GPT-4o', cost: 0.015 },
-                { model: 'GPT-4o-mini', cost: 0.001 },
-                { model: 'Claude Sonnet', cost: 0.015 },
-                { model: 'Claude Haiku', cost: 0.0008 },
-                { model: 'Llama 3 (70B)', cost: 0.0005 },
-            ].map(m => ({
-                ...m,
-                margin: ((effectiveRevenuePerUser - (queriesNum * m.cost) - apiCostPerUser - hostingNum) / effectiveRevenuePerUser) * 100,
-                costPerUser: queriesNum * m.cost
-            })).sort((a, b) => b.margin - a.margin);
-
-            const growthData: GrowthData[] = Array.from({ length: 12 }, (_, i) => {
-                const month = i + 1;
-                const monthUsers = usersNum * Math.pow(1 + (growthRateNum / 100), i);
-                return {
-                    month: `M${month}`,
-                    revenue: (monthUsers * effectiveRevenuePerUser) / 1000,
-                    cost: (monthUsers * totalCostPerUser) / 1000,
-                };
+            const metrics = calculateAuebScore({
+                price: priceNum,
+                queries: queriesNum,
+                costPerQuery: costNum,
+                users: usersNum,
+                growthRate: growthRateNum,
+                hostingCostPerUser: hostingNum,
+                premiumCharge: premiumNum,
+                monetizationStrategy,
+                cachingEnabled,
+                features,
+                thirdPartyApis
             });
 
-            // Feature breakdown
-            const featureBreakdown = features.map(f => ({
-                name: f.name,
-                cost: (f.queriesPercent / 100) * llmCost,
-                margin: 100 - ((f.queriesPercent / 100) * (100 - grossMargin))
-            }));
-
-            const qpep_roadmap = [];
-            if (grossMargin < 50) {
-                qpep_roadmap.push({ month: 1, focus: "Hemorrhage Control & Semantic Caching", action_items: ["Audit 'Chat' & 'Search' payload bloat", "Deploy Redis Semantic Caching", "Rate-limit high-frequency API endpoints"] });
-                qpep_roadmap.push({ month: 2, focus: "SLM Orchestration & Evaluation", action_items: ["Evaluate open-weight SLMs (e.g. Llama 3) for routine queries", "Build intent-classifier routing layer", "Shadow-test SLM responses vs current OpenAI baselines"] });
-                qpep_roadmap.push({ month: 3, focus: "Production Migration", action_items: ["Route 40% of low-complexity traffic to sovereign SLMs", "Decommission redundant vector search infrastructure", "Stabilize gross margin > 70%"] });
-            } else if (!cachingEnabled) {
-                qpep_roadmap.push({ month: 1, focus: "Immediate Margin Capture", action_items: ["Deploy vector caching layer (Redis or similar)", "Identify duplicate high-token queries", "Establish baseline token budgets per user"] });
-                qpep_roadmap.push({ month: 2, focus: "Mid-Term Cost Deflection", action_items: ["Evaluate intent routing for simpler models", "Transition 'Summary' features to cheaper tiers", "Monitor API egress taxation"] });
-                qpep_roadmap.push({ month: 3, focus: "Sustainable Modeling", action_items: ["Shift to provisioned throughput vs on-demand", "Lock in Enterprise commits for API services", "Target 85%+ margin"] });
-            } else {
-                qpep_roadmap.push({ month: 1, focus: "Growth Infrastructure", action_items: ["Monitor auto-scaling cloud costs against MAU growth", "Stress-test database read/write limits", "Establish automated FinOps alerts"] });
-                qpep_roadmap.push({ month: 2, focus: "Model Arbitrage & Fine-tuning", action_items: ["Fine-tune custom Llama models on proprietary datasets", "Reduce reliance on general-purpose frontier models", "A/B test fine-tuned SLM vs GPT-4"] });
-                qpep_roadmap.push({ month: 3, focus: "Market Dominance", action_items: ["Reinvest margin into R&D / feature expansion", "Explore multi-modal AI offerings", "Maintain strict unit economic discipline"] });
-            }
-
-            const payload = {
-                grossMargin, monthlyRevenue, monthlyCost: totalInfraCost, monthlyProfit, profitPerUser,
-                costPerUser: totalCostPerUser, insolvencyPoint, models, growthData,
-                price: priceNum, queries: queriesNum, users: usersNum,
-                monthsToCollapse: monthsToCollapse || 36,
-                featureBreakdown,
-                llmCost, apiCost, hostingCost, totalInfraCost,
-                qpep_roadmap
-            };
-
-            setResults(payload);
+            setResults(metrics);
+            saveDiagnosticSession('aueb', metrics);
+            trackDiagnosticEvent('diagnostic_completed', 'aueb', { score: metrics.grossMargin, waste: metrics.monthlyCost });
             setLoading(false);
 
             // Silently persist to Supabase for longitudinal tracking
@@ -344,101 +222,18 @@ export default function AUEBTool() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    tool_id: 'AUEB',
+                    tool_id: 'aueb',
                     run_data: { 
                         price: priceNum, queries: queriesNum, costPerQuery: costNum, users: usersNum, 
                         growthRate: growthRateNum, cachingEnabled, features, hostingCostPerUser: hostingNum, thirdPartyApis, monetizationStrategy, premiumCharge: premiumNum 
                     },
-                    output_metrics: payload
+                    output_metrics: metrics
                 })
             }).catch(console.error);
         }, 800);
     };
 
-    const formatMoney = (num: number) => {
-        if (num >= 1000000) return '$' + (num / 1000000).toFixed(1) + 'M';
-        if (num >= 1000) return '$' + (num / 1000).toFixed(0) + 'K';
-        return '$' + num.toFixed(2);
-    };
-
-    const getMarginStatus = (margin: number) => {
-        if (margin >= 70) return { text: 'SUSTAINABLE', color: 'text-emerald-900 font-extrabold font-semibold' };
-        if (margin >= 50) return { text: 'VIABLE BUT TIGHT', color: 'text-yellow-900 font-extrabold font-semibold' };
-        if (margin >= 30) return { text: 'RISK ZONE', color: 'text-orange-500' };
-        return { text: 'INSOLVENT', color: 'text-red-900 font-extrabold' };
-    };
-
-    // Persona-specific insights
-    const getPersonaInsight = (results: Results): { headline: string; detail: string; action: string } => {
-        const margin = results.grossMargin;
-        const collapse = results.monthsToCollapse;
-        const monthlyCost = results.monthlyCost;
-
-        switch (persona) {
-            case 'Founder':
-                if (margin < 30) return {
-                    headline: '⚠️ You are scaling into bankruptcy.',
-                    detail: `At ${formatMoney(monthlyCost)}/month in AI costs, your next funding round will be a down round. Investors will see this in due diligence.`,
-                    action: 'Book an emergency margin audit before your next board meeting.'
-                };
-                if (margin < 50) return {
-                    headline: 'Your runway is shorter than you think.',
-                    detail: `AI costs will consume 50%+ of revenue in ${collapse} months at current growth. This will force a pricing conversation you\'re not ready for.`,
-                    action: 'Model the impact on your next raise. Book a strategy call.'
-                };
-                return {
-                    headline: 'Your unit economics are investor-ready.',
-                    detail: `${margin.toFixed(0)}% gross margin gives you pricing power and runway. You can afford to grow aggressively.`,
-                    action: 'Optimize further to maximize valuation multiple.'
-                };
-
-            case 'CPO':
-                const worstFeature = results.featureBreakdown.sort((a, b) => a.margin - b.margin)[0];
-                if (margin < 50) return {
-                    headline: `Feature "${worstFeature?.name || 'AI'}" is your margin killer.`,
-                    detail: `This feature consumes ${((worstFeature?.cost || 0) / monthlyCost * 100).toFixed(0)}% of AI costs. Either re-architect or remove it.`,
-                    action: 'Get a feature P&L analysis to identify the real ROI.'
-                };
-                return {
-                    headline: 'Your AI features are economically viable.',
-                    detail: `All features are contributing positively to margin. Focus on expansion, not optimization.`,
-                    action: 'Model new AI feature economics before building.'
-                };
-
-            case 'VP Eng':
-                const bestModel = results.models[0];
-                const currentMargin = results.grossMargin;
-                const potentialMargin = bestModel?.margin || currentMargin;
-                const savings = (potentialMargin - currentMargin) / 100 * results.monthlyRevenue;
-
-                if (savings > 1000) return {
-                    headline: `Switching to ${bestModel?.model} saves ${formatMoney(savings)}/month.`,
-                    detail: `Your current model choice is costing you ${formatMoney(savings * 12)}/year in lost margin. This is a quick win.`,
-                    action: 'Get a model migration roadmap with quality benchmarks.'
-                };
-                return {
-                    headline: 'Your model selection is near-optimal.',
-                    detail: `Potential savings from model switching are minimal. Focus on caching and query optimization.`,
-                    action: 'Schedule an architecture review for further gains.'
-                };
-
-            case 'CFO':
-                const aiCacRatio = monthlyCost / (results.monthlyRevenue / results.users);
-                if (margin < 50) return {
-                    headline: `AI CAC is ${(aiCacRatio * 100).toFixed(0)}% of ARPU.`,
-                    detail: `For every $1 of revenue, you're spending ${(aiCacRatio).toFixed(2)} on AI infrastructure. Industry benchmark is < 20%.`,
-                    action: 'Model the impact on LTV:CAC and payback period.'
-                };
-                return {
-                    headline: 'AI unit economics are within benchmarks.',
-                    detail: `AI costs at ${(100 - margin).toFixed(0)}% of revenue is acceptable for this stage. Monitor monthly.`,
-                    action: 'Set up automated margin tracking and alerts.'
-                };
-
-            default:
-                return { headline: '', detail: '', action: '' };
-        }
-    };
+    // Persona-specific insights imported from interpretations
 
 
 
@@ -514,7 +309,12 @@ export default function AUEBTool() {
                             <div className="mb-8">
                                 <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-3">I am a...</div>
                                 <div className="flex flex-wrap gap-2">
-                                    {PERSONAS.map(p => (
+                                    {[
+                                        { id: 'Founder', label: 'Founder/CEO', icon: Target },
+                                        { id: 'CPO', label: 'CPO/Product', icon: Users },
+                                        { id: 'VP Eng', label: 'VP Engineering', icon: Cpu },
+                                        { id: 'CFO', label: 'CFO/Finance', icon: DollarSign },
+                                    ].map((p: any) => (
                                         <button
                                             key={p.id}
                                             onClick={() => setPersona(p.id)}
@@ -742,8 +542,8 @@ export default function AUEBTool() {
                                 >
                                     <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-8">GROSS MARGIN HEALTH</div>
                                     <GaugeChart value={results.grossMargin} />
-                                    <div className={`mt-12 text-4xl font-bold tracking-tight ${getMarginStatus(results.grossMargin).color}`}>
-                                        {getMarginStatus(results.grossMargin).text}
+                                    <div className={`mt-12 text-4xl font-bold tracking-tight ${results.grossMargin >= 70 ? 'text-emerald-900 font-extrabold font-semibold' : results.grossMargin >= 50 ? 'text-yellow-900 font-extrabold font-semibold' : results.grossMargin >= 30 ? 'text-orange-500' : 'text-red-900 font-extrabold'}`}>
+                                        {results.grossMargin >= 70 ? 'SUSTAINABLE' : results.grossMargin >= 50 ? 'VIABLE BUT TIGHT' : results.grossMargin >= 30 ? 'RISK ZONE' : 'INSOLVENT'}
                                     </div>
                                     {results.grossMargin < 30 && (
                                         <div className="mt-6 text-red-900 font-extrabold font-semibold text-sm font-semibold max-w-xl mx-auto bg-red-50/30 p-4 rounded-lg border border-red-900/50">
@@ -761,9 +561,9 @@ export default function AUEBTool() {
                                 >
                                     <BentoCard title={`Insight for ${persona}`} icon={Target} className="border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent">
                                         <div className="space-y-4">
-                                            <h3 className="text-2xl font-bold text-zinc-900">{getPersonaInsight(results).headline}</h3>
-                                            <p className="text-zinc-900 leading-relaxed">{getPersonaInsight(results).detail}</p>
-                                            <p className="text-cyan-900 font-extrabold font-semibold">{getPersonaInsight(results).action}</p>
+                                            <h3 className="text-2xl font-bold text-zinc-900">{getAuebPersonaInsight(persona, results).headline}</h3>
+                                            <p className="text-zinc-900 leading-relaxed">{getAuebPersonaInsight(persona, results).detail}</p>
+                                            <p className="text-cyan-900 font-extrabold font-semibold">{getAuebPersonaInsight(persona, results).action}</p>
                                         </div>
                                     </BentoCard>
                                 </motion.div>
@@ -792,6 +592,39 @@ export default function AUEBTool() {
                                         <div className="text-zinc-950 text-xs font-bold mt-2">At {growthRate}% monthly growth</div>
                                     </BentoCard>
                                 </motion.div>
+
+                                {/* EXECUTIVE SUMMARY & EXOGRAM INTEGRATION */}
+                                <div className="mt-8 mb-8 space-y-8">
+                                    <ExecutiveSummary 
+                                        tool="AI Unit Economics Benchmark" 
+                                        persona={persona} 
+                                        isAtRisk={results.grossMargin < 50}
+                                        extraData={{ margin: results.grossMargin }}
+                                        freeChildren={
+                                            <>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-rose-900 font-extrabold font-semibold mt-1">•</span>
+                                                    <span>Gross margin of <strong className="text-zinc-900">{results.grossMargin.toFixed(0)}%</strong> is {results.grossMargin >= 70 ? 'healthy' : 'at risk'}.</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-rose-900 font-extrabold font-semibold mt-1">•</span>
+                                                    <span>Insolvency point: <strong className="text-zinc-900">{results.insolvencyPoint} queries/user</strong> before margin collapse.</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-rose-900 font-extrabold font-semibold mt-1">•</span>
+                                                    <span>Months to 50% COGS: <strong className="text-zinc-900">{results.monthsToCollapse} months</strong>.</span>
+                                                </li>
+                                            </>
+                                        }
+                                        gatedChildren={
+                                            <div className="space-y-6">
+                                                <BenchmarkComparison tool="aueb" userScore={results.grossMargin} />
+                                                <LongitudinalHistory tool="aueb" scoreKey="grossMargin" />
+                                                <ExogramRecommendations score={results.grossMargin} maintenance={results.monthlyRevenue > 0 ? (results.monthlyCost / results.monthlyRevenue * 100) : 100} />
+                                            </div>
+                                        }
+                                    />
+                                </div>
 
                                 {/* COST FORENSICS */}
                                 <ToolPayGate toolName="AI Unit Economics Benchmark">
@@ -971,6 +804,8 @@ export default function AUEBTool() {
                                     transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
                                     className="pt-8"
                                 >
+                                    <DiagnosticProgression currentTool="aueb" score={results.grossMargin} />
+
                                     <VaultUpsell 
                                         urgencyLevel={results.grossMargin < 50 ? 'critical' : 'growth'}
                                         recommendedTracks={[
@@ -1162,27 +997,16 @@ export default function AUEBTool() {
                 <ToolGateCTA toolName="AI Unit Economics Matrix" />
             </div>
 
-            {/* AUTHORITY CONTENT: AUEB */}
-            <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
-                <div className="prose prose-zinc prose-lg max-w-none">
-                    <h2 className="text-4xl font-bold text-zinc-950 mb-8">The Linear Cost Trap of Generative AI</h2>
-                    <p className="text-zinc-900 leading-relaxed">
-                        For 20 years, SaaS enjoyed <strong>Zero Marginal Cost</strong>. Once you wrote the code, the millionth user cost you nothing. Generative AI breaks this physics. It reintroduces <strong>COGS</strong> (Cost of Goods Sold) into software. Every query has a compute cost. Every prompt burns cash.
-                    </p>
-                    <p className="text-zinc-900 leading-relaxed">
-                        The <strong>AI Unit Economics Benchmark (AUEB)</strong> is designed to detect the &quot;Insolvency Horizon.&quot; Many AI startups are essentially Ponzi schemes where Series A capital is used to subsidize OpenAI&apos;s server bills. If your Gross Margin is below 60%, you are not building a software company—you are building a reselling agency with bad margins.
-                    </p>
-                </div>
-
-                <div className="border-l-4 border-red-600 pl-8">
-                    <h3 className="text-2xl font-bold text-zinc-950 mb-4">The &quot;Token Tax&quot;</h3>
-                    <p className="text-zinc-900 text-lg">
-                        Stop asking &quot;What can AI do?&quot; and start asking &quot;What does the query cost?&quot;
-                    </p>
-                    <p className="text-zinc-950 mt-4 text-sm">
-                        If a user pays you $20/month, and they run 500 queries at $0.03/query (GPT-4), your cost is $15. Your margin is $5 (25%). After server costs and stripe fees, you are losing money on every customer. This calculator exposes that math instantly.
-                    </p>
-                </div>
+            {/* BRIDGE: DIAGNOSTIC -> FRAMEWORK & EXOGRAM */}
+            <div className="max-w-4xl mx-auto px-6">
+                <DiagnosticBridge 
+                    diagnosticName="AI Unit Economics Benchmark"
+                    frameworkSlug="synthetic-cogs"
+                    frameworkName="Synthetic COGS"
+                    frameworkDescription="The AUEB exposes your Synthetic COGS. Generative AI fundamentally reintroduces variable cost of goods sold into software. If you don't track the compute cost per query, your margins will collapse as you scale."
+                    exogramRisk="Margin Collapse"
+                    exogramDescription="Stop subsidizing LLM providers with your VC funding. Exogram enforces dynamic cost routing and intent classification, ensuring high-compute models are only triggered when the ROI justifies the inference cost."
+                />
             </div>
         </div>
     );

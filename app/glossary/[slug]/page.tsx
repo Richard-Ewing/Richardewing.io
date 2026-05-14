@@ -2,8 +2,9 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '../terms';
-import { autoKeyMetrics, autoMaturityLevels, autoComparisons, autoQuiz, autoDiagram, autoCommonMistakes, autoBestPractices, autoIndustryBenchmarks, autoSpokes, autoCurriculum, autoGuides, autoPremiumTool, autoWhereIsItUsed, autoWhoUsesIt } from '../auto-enrich';
+import { autoKeyMetrics, autoMaturityLevels, autoComparisons, autoQuiz, autoDiagram, autoCommonMistakes, autoBestPractices, autoIndustryBenchmarks, autoSpokes, autoCurriculum, autoGuides, autoPremiumTool, autoWhereIsItUsed, autoWhoUsesIt, autoBridge } from '../auto-enrich';
 import RelatedContent from '../../components/RelatedContent';
+import { DiagnosticBridge } from '../../components/DiagnosticBridge';
 import GlossaryToolCTA from '../../components/GlossaryToolCTA';
 import ShareButtons from '../../components/ShareButtons';
 import RetroTerminal from '../../components/RetroTerminal';
@@ -165,6 +166,7 @@ export default async function GlossaryTermPage({ params }: Props) {
     const curriculumTracks = autoCurriculum(term.category, term.title, slug);
     const executiveGuides = autoGuides(term.category, term.title, slug);
     const premiumTool = autoPremiumTool(term.category, term.title, slug);
+    const diagnosticBridgeProps = autoBridge(term.category, term.title);
 
     const faqSchema = {
         '@context': 'https://schema.org',
@@ -713,6 +715,10 @@ export default async function GlossaryTermPage({ params }: Props) {
                             ))}
                         </div>
                     </section>
+                )}
+
+                {diagnosticBridgeProps && (
+                    <DiagnosticBridge {...diagnosticBridgeProps} />
                 )}
 
                 <GlossaryToolCTA slug={slug} category={term.category} termTitle={term.title} />

@@ -1,6 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { calculateProductDebtScore, PDIScoreMetrics } from '@/lib/diagnostics/scoring';
+import { getPersonaInsight, Persona, formatMoney } from '@/lib/diagnostics/interpretations';
+import { getRecommendedTracks } from '@/lib/diagnostics/recommendations';
+import { saveDiagnosticSession, loadDiagnosticSession } from '@/lib/storage/session';
+import { trackDiagnosticEvent } from '@/lib/telemetry/events';
+import { ExecutiveSummary } from '@/components/reports/ExecutiveSummary';
+import { ExogramRecommendations } from '@/components/reports/ExogramRecommendations';
+import { BenchmarkComparison } from '@/components/reports/BenchmarkComparison';
+import { DiagnosticProgression } from '@/components/reports/DiagnosticProgression';
+import { LongitudinalHistory } from '@/components/reports/LongitudinalHistory';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { motion } from 'framer-motion';
 import ToolCelebration from '../../components/ToolCelebration';
@@ -16,6 +26,7 @@ import { NewsletterForm } from '../../components/newsletter-form';
 import { ToolGateCTA } from '../../components/ToolGateCTA';
 import ToolGate from '../../components/tool-gate';
 import { VaultUpsell, RecommendedTrack } from '../../components/VaultUpsell';
+import { DiagnosticBridge } from '../../components/DiagnosticBridge';
 
 // Simple Pie Chart component (no external dependency)
 const PieChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
@@ -81,8 +92,6 @@ const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: 
 );
 
 // --- PERSONA TYPES ---
-type Persona = 'Founder' | 'CPO' | 'VP Eng' | 'CFO';
-
 const PERSONAS: { id: Persona; label: string; icon: React.ComponentType<{ size?: number }> }[] = [
     { id: 'Founder', label: 'Founder/CEO', icon: Target },
     { id: 'CPO', label: 'CPO/Product', icon: Users },
@@ -90,60 +99,18 @@ const PERSONAS: { id: Persona; label: string; icon: React.ComponentType<{ size?:
     { id: 'CFO', label: 'CFO/Finance', icon: DollarSign },
 ];
 
-interface Results {
-    score: number;
-    metrics: {
-        growth: number;
-        retention: number;
-        maintenance: number;
-    };
-    financials: {
-        waste: number;
-        rewriteCost: number;
-        isTechnicalDefault: boolean;
-        defaultRatio: number;
-        wastePerSprint: number;
-        debtReductionROI: number;
-    };
+interface Results extends PDIScoreMetrics {
     categorized?: Array<{
         ticket: string;
         category: string;
         reasoning: string;
     }>;
-    debtVelocity: number; // tickets per sprint going to debt
-    burnDownWeeks: number; // estimated weeks to clear if dedicated
-    ticketCount: number;
     qpep_roadmap?: Array<{
         month: number;
         focus: string;
         action_items: string[];
     }>;
 }
-
-const getRecommendedTracks = (score: number, growth: number, debtVelocity: number): RecommendedTrack[] => {
-    if (score < 50) {
-        return [
-            { id: 'Track 16', title: 'Technical Debt Forgiveness Protocols', desc: 'Stop bleeding capital. A framework to enforce 70/20/10 capacity allocation and isolate sprawling system collapse.' },
-            { id: 'Track 20', title: 'System Design Economics', desc: 'Refactor enterprise architecture based strictly on Cost of Goods Sold (COGS) rather than vanity engineering metrics.' }
-        ];
-    }
-    if (growth < 30) {
-        return [
-            { id: 'Track 28', title: 'Agentic Process Automation (APA)', desc: 'Augment a starved engineering bench with Multi-Agent execution to drive massive product execution via specialized proxy workers.' },
-            { id: 'Track 07', title: 'Generative Coding Economics', desc: 'Deploy localized SLM Copilots securely to bypass human developer bottlenecks and scale feature velocity instantly.' }
-        ];
-    }
-    if (debtVelocity > 5) {
-        return [
-            { id: 'Track 23', title: 'Neural-Symbolic AI & System 2 Reasoning', desc: 'Your error velocity is catastrophic. Enforce deterministic policy logic architectures to prevent algorithmic structural damage.' },
-            { id: 'Track 14', title: 'Semantic CI/CD Pipeline Moats', desc: 'Prevent future insolvency by implementing strict automated, AI-driven QA regression gating prior to integration merges.' }
-        ];
-    }
-    return [
-        { id: 'Track 29', title: 'AI Supply Chain & GPU FinOps', desc: 'Optimize your stable baseline by enforcing strict token-level API accounting and forecasting massive cloud scale costs.' },
-        { id: 'Track 10', title: 'Sovereign Edge Implementation', desc: 'Prepare your stable architecture for fully disconnected, localized private deployments (M1/Edge TPU inference limits).' }
-    ];
-};
 
 export default function PDITool() {
     // Persona State
@@ -169,6 +136,11 @@ export default function PDITool() {
 
     // Email capture
 
+    useEffect(() => {
+        trackDiagnosticEvent('diagnostic_started', 'pdi');
+        const saved = loadDiagnosticSession('pdi');
+        if (saved) setResults(saved);
+    }, []);
 
     const analyze = async () => {
         setLoading(true);
@@ -188,56 +160,27 @@ export default function PDITool() {
             const growth = data.categories.growth;
             const retention = data.categories.retention;
 
-            // PDI Score = 100 - Maintenance %
-            const score = Math.round(100 - ((maint / total) * 100));
-
-            // Enhanced calculations
-            const teamNum = teamSize || 1;
-            const salaryNum = salary || 0;
-            const sprintWeeks = parseInt(sprintLength) || 2;
-            const sprintsPerYear = 52 / sprintWeeks;
-            const waste = teamNum * salaryNum * (maint / total);
-            const rewriteCost = (teamNum * salaryNum) * 0.4; // Extrapolating 5-month rewrite effort utilizing Agentic tools
-            const isTechnicalDefault = waste > rewriteCost;
-            const defaultRatio = waste / rewriteCost;
-
-            const wastePerSprint = waste / sprintsPerYear;
-            const debtTickets = maint;
-            const ticketsPerSprint = total / sprintsPerYear;
-            
-            // Factor in velocity decay from poor CI/CD telemetry
-            const prPenalty = 1 + (Number(prCycleHours) / 48); // Penalty threshold baseline 48h
-            const deployPenalty = 1 + (Number(deployFreqDays) / 7); // Penalty threshold baseline 7d
-            const velocityMultiplier = (prPenalty + deployPenalty) / 2;
-            
-            const debtVelocity = Math.round(((maint / total) * ticketsPerSprint) * velocityMultiplier);
-            // If we dedicated the team to debt reduction, how long to clear?
-            const burnDownWeeks = Math.ceil(maint / (teamNum * 0.5)); // ~0.5 tickets per engineer per sprint
-            // ROI: cost of 1 sprint of dedicated debt reduction vs annual savings
-            const sprintCost = (teamNum * salaryNum) / sprintsPerYear;
-            const debtReductionROI = waste / sprintCost;
-
-            setResults({
-                score,
-                metrics: {
-                    growth: Math.round((growth / total) * 100),
-                    retention: Math.round((retention / total) * 100),
-                    maintenance: Math.round((maint / total) * 100),
-                },
-                financials: {
-                    waste,
-                    rewriteCost,
-                    isTechnicalDefault,
-                    defaultRatio,
-                    wastePerSprint,
-                    debtReductionROI,
-                },
-                categorized: data.categorized,
-                debtVelocity,
-                burnDownWeeks,
-                ticketCount: total,
-                qpep_roadmap: data.qpep_roadmap,
+            const scoreMetrics = calculateProductDebtScore({
+                teamSize,
+                salary,
+                sprintLength: parseInt(sprintLength) || 2,
+                prCycleHours: Number(prCycleHours) || 48,
+                deployFreqDays: Number(deployFreqDays) || 7,
+                maintenanceTickets: maint,
+                growthTickets: growth,
+                retentionTickets: retention,
+                totalTickets: total
             });
+
+            const newResults = {
+                ...scoreMetrics,
+                categorized: data.categorized,
+                qpep_roadmap: data.qpep_roadmap,
+            };
+
+            setResults(newResults);
+            saveDiagnosticSession('pdi', newResults);
+            trackDiagnosticEvent('diagnostic_completed', 'pdi', { score: scoreMetrics.score, waste: scoreMetrics.financials.waste });
 
             // Silently persist to Supabase for longitudinal tracking (Data Moat telemetry)
             fetch('/api/tools/runs', {
@@ -247,15 +190,11 @@ export default function PDITool() {
                     tool_id: 'pdi',
                     run_data: { teamSize, salary, sprintLength, prCycleHours, deployFreqDays },
                     output_metrics: {
-                        score,
-                        financial_waste: waste,
-                        metrics: { 
-                            growth: Math.round((growth / total) * 100), 
-                            retention: Math.round((retention / total) * 100), 
-                            maintenance: Math.round((maint / total) * 100) 
-                        },
-                        debtVelocity,
-                        burnDownWeeks,
+                        score: scoreMetrics.score,
+                        financial_waste: scoreMetrics.financials.waste,
+                        metrics: scoreMetrics.metrics,
+                        debtVelocity: scoreMetrics.debtVelocity,
+                        burnDownWeeks: scoreMetrics.burnDownWeeks,
                         ticketCount: total,
                         qpep_roadmap: data.qpep_roadmap
                     }
@@ -269,73 +208,7 @@ export default function PDITool() {
         finally { setLoading(false); }
     };
 
-    const formatMoney = (num: number) => {
-        if (num >= 1000000) return '$' + (num / 1000000).toFixed(1) + 'M';
-        if (num >= 1000) return '$' + (num / 1000).toFixed(0) + 'K';
-        return '$' + num.toFixed(0);
-    };
-
-    // Persona-specific insights
-    const getPersonaInsight = (results: Results): { headline: string; detail: string; action: string } => {
-        const score = results.score;
-        const waste = results.financials.waste;
-        const maintenance = results.metrics.maintenance;
-
-        switch (persona) {
-            case 'Founder':
-                if (score < 50) return {
-                    headline: `⚠️ You're burning ${formatMoney(waste)}/year on janitorial work.`,
-                    detail: `With ${maintenance}% of capacity in maintenance, you're paying senior engineer salaries for junior-level work. This is capital leakage that affects your runway and valuation.`,
-                    action: 'Schedule a product rationalization session before your next funding round.'
-                };
-                return {
-                    headline: 'Your roadmap is investor-ready.',
-                    detail: `${results.metrics.growth}% growth focus signals healthy capital allocation. Your engineering spend is creating enterprise value.`,
-                    action: 'Document this as proof of operational discipline for investors.'
-                };
-
-            case 'CPO':
-                if (score < 60) return {
-                    headline: `Your roadmap credibility is at ${score}%.`,
-                    detail: `When ${maintenance}% of engineering is in maintenance mode, your feature commitments become unreliable. The board sees this as execution risk.`,
-                    action: 'Map the debt hotspots and create a burn-down plan.'
-                };
-                return {
-                    headline: 'Your roadmap is execution-ready.',
-                    detail: `With ${results.metrics.growth}% growth allocation, you have the capacity to hit your commitments.`,
-                    action: 'Focus on protecting this allocation from scope creep.'
-                };
-
-            case 'VP Eng':
-                const seniorHours = waste / (salary / 2080); // Approximate hours wasted
-                if (score < 50) return {
-                    headline: `${Math.round(seniorHours).toLocaleString()} hours/year of senior IC time is wasted.`,
-                    detail: `Your team is doing ${maintenance}% maintenance work. This is the #1 cause of senior engineer attrition—they didn't sign up to be janitors.`,
-                    action: 'Identify the debt clusters and make a case for dedicated reduction sprints.'
-                };
-                return {
-                    headline: 'Your team is in high-leverage mode.',
-                    detail: `At ${score}% efficiency, your engineers are working on value-creating activities. Protect this.`,
-                    action: 'Maintain discipline on new feature scope to prevent regression.'
-                };
-
-            case 'CFO':
-                const roi = (100 - maintenance) / 100;
-                if (score < 50) return {
-                    headline: `Engineering ROI: ${(roi * 100).toFixed(0)} cents per dollar.`,
-                    detail: `For every $1 spent on engineering, ${(maintenance).toFixed(0)} cents is going to maintenance with no return. Annual waste: ${formatMoney(waste)}.`,
-                    action: 'Model the impact of a debt reduction investment vs. continued drag.'
-                };
-                return {
-                    headline: `Engineering ROI: ${(roi * 100).toFixed(0)} cents per dollar.`,
-                    detail: `This is within healthy bounds for a growth-stage company. Continue monitoring quarterly.`,
-                    action: 'Set up quarterly PDI tracking as a financial KPI.'
-                };
-
-            default:
-                return { headline: '', detail: '', action: '' };
-        }
-    };
+    // Centralized methods are now imported.
 
     const handleSaveToVault = async (): Promise<boolean> => {
         if (!results) return false;
@@ -635,17 +508,37 @@ Migrate from Heroku to AWS"
                         </div>
                     </ScrollReveal>
 
-                    {/* PERSONA-SPECIFIC INSIGHT */}
+                    {/* EXECUTIVE SUMMARY & EXOGRAM INTEGRATION */}
                     <ScrollReveal delay={50}>
-                        <div className="capsule-container rounded-2xl p-6 mb-6 border-l-4 border-red-500">
-                            <div className="flex items-center gap-2 mb-3 text-zinc-900">
-                                <Target size={14} />
-                                <span className="text-xs font-bold font-medium font-mono uppercase tracking-widest">Insight for {persona}</span>
-                            </div>
-                            <h3 className="text-xl font-bold text-zinc-950 mb-2">{getPersonaInsight(results).headline}</h3>
-                            <p className="text-zinc-900 leading-relaxed mb-3">{getPersonaInsight(results).detail}</p>
-                            <p className="text-cyan-900 font-extrabold font-semibold">{getPersonaInsight(results).action}</p>
-                        </div>
+                        <ExecutiveSummary 
+                            tool="Product Debt Index" 
+                            persona={persona} 
+                            isAtRisk={results.score < 50}
+                            extraData={{ score: results.score }}
+                            freeChildren={
+                                <>
+                                    <li className="flex items-start gap-2">
+                                        <span className="text-red-900 font-extrabold font-semibold mt-0.5">•</span>
+                                        <span>Score of <strong className="text-zinc-900">{results.score}</strong> means {100 - results.score}% of capacity is non-value-creating.</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="text-red-900 font-extrabold font-semibold mt-0.5">•</span>
+                                        <span>Annual maintenance waste: <strong className="text-red-900 font-extrabold font-semibold">{formatMoney(results.financials.waste)}</strong>.</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="text-cyan-900 font-extrabold font-semibold mt-0.5">•</span>
+                                        <span>Growth allocation: <strong className="text-cyan-900 font-extrabold font-semibold">{results.metrics.growth}%</strong> of backlog.</span>
+                                    </li>
+                                </>
+                            }
+                            gatedChildren={
+                                <div className="space-y-6">
+                                    <BenchmarkComparison tool="pdi" userScore={results.score} />
+                                    <LongitudinalHistory tool="pdi" scoreKey="score" />
+                                    <ExogramRecommendations score={results.score} maintenance={results.metrics.maintenance} />
+                                </div>
+                            }
+                        />
                     </ScrollReveal>
 
                     {/* Metrics Grid */}
@@ -941,6 +834,8 @@ Migrate from Heroku to AWS"
                         </div>
                     </ScrollReveal>
 
+                    <DiagnosticProgression currentTool="pdi" score={results.score} />
+
                     {/* VAULT MONETIZATION UPSELL INJECTION */}
                     <VaultUpsell 
                         recommendedTracks={getRecommendedTracks(results.score, results.metrics.growth, results.debtVelocity)} 
@@ -978,32 +873,16 @@ Migrate from Heroku to AWS"
             )
             }
 
-            {/* AUTHORITY CONTENT: PDI */}
-            <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
-                <div className="prose prose-zinc prose-lg max-w-none">
-                    <h2 className="text-4xl font-bold text-zinc-950 mb-8">Why Standard Technical Debt Calculators Fail</h2>
-                    <p className="text-zinc-900 leading-relaxed">
-                        Most engineering metrics are vanity signals. Counting &quot;cyclomatic complexity&quot; or &quot;TODO comments&quot; does not tell a CFO whether to approve a budget. The <strong>Product Debt Index™ (PDI)</strong> is different. It is a forensic accounting tool that converts &quot;bad code&quot; into &quot;wasted salary dollars.&quot;
-                    </p>
-                    <p className="text-zinc-900 leading-relaxed">
-                        When your PDI drops below 50, you have crossed the <strong>Insolvency Threshold</strong>. You are no longer a software company; you are a digital nursing home. You are paying senior engineer salaries to change bedpans (maintenance) instead of building skyscrapers (growth).
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div>
-                        <h3 className="text-2xl font-bold text-cyan-900 font-extrabold font-semibold mb-4">The &quot;Compound Interest&quot; of Bad Code</h3>
-                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed">
-                            Technical debt is financial debt with variable interest rates. A &quot;quick hack&quot; to ship a feature for Q3 earnings is a loan taken out against Q4 velocity. If you do not pay down the principal (refactoring), the interest payments (maintenance work) will eventually consume 100% of your available capacity. This calculator quantifies that interest payment in real-time.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 className="text-2xl font-bold text-red-500 mb-4">CapEx vs. OpEx Trap</h3>
-                        <p className="text-zinc-900 text-sm font-semibold leading-relaxed">
-                            Private Equity firms love this metric. They use it to detect if an engineering team is capitalizing expenses (claiming maintenance work as &quot;R&amp;D&quot;) to inflate EBITDA. The PDI exposes the truth: are you building assets, or just servicing liabilities?
-                        </p>
-                    </div>
-                </div>
+            {/* BRIDGE: DIAGNOSTIC -> FRAMEWORK & EXOGRAM */}
+            <div className="max-w-4xl mx-auto px-6">
+                <DiagnosticBridge 
+                    diagnosticName="Product Debt Index"
+                    frameworkSlug="technical-insolvency-date"
+                    frameworkName="Technical Insolvency Date"
+                    frameworkDescription="The PDI measures your velocity towards Technical Insolvency—the quarter when maintenance costs consume 100% of engineering capacity and feature development drops to zero."
+                    exogramRisk="Execution Variance"
+                    exogramDescription="Stop relying on subjective engineering estimates. Exogram forces runtime observability, catching architectural drift before it turns into unmanageable technical debt."
+                />
             </div>
 
             {/* MONETIZATION & LEAD CAPTURE: ToolGateCTA */}

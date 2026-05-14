@@ -15,6 +15,17 @@ import { VaultUpsell } from '../../components/VaultUpsell';
 import ShineBorder from '../../components/magicui/shine-border';
 import { PersonaSwitcher } from '../../components/PersonaSwitcher';
 import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
+import { trackDiagnosticEvent } from '@/lib/telemetry/events';
+import { saveDiagnosticSession, loadDiagnosticSession } from '@/lib/storage/session';
+import { ExecutiveSummary } from '@/components/reports/ExecutiveSummary';
+import { ExogramRecommendations } from '@/components/reports/ExogramRecommendations';
+import { BenchmarkComparison } from '@/components/reports/BenchmarkComparison';
+import { DiagnosticProgression } from '@/components/reports/DiagnosticProgression';
+import { LongitudinalHistory } from '@/components/reports/LongitudinalHistory';
+import { DiagnosticBridge } from '../../components/DiagnosticBridge';
+import { calculateAperScore, AperScoreMetrics, TeamBreakdown } from '@/lib/diagnostics/aperScoring';
+import { getAperPersonaInsight } from '@/lib/diagnostics/aperInterpretations';
+import { Persona, formatMoney } from '@/lib/diagnostics/interpretations';
 
 // --- MAGIC UI COMPONENTS ---
 
@@ -52,51 +63,7 @@ const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: 
 );
 
 // --- PERSONA TYPES ---
-type Persona = 'Founder' | 'CPO' | 'VP Eng' | 'CFO';
-
-const PERSONAS: { id: Persona; label: string; icon: React.ComponentType<{ size?: number }> }[] = [
-    { id: 'Founder', label: 'Founder/CEO', icon: Target },
-    { id: 'CPO', label: 'CPO/Product', icon: Users },
-    { id: 'VP Eng', label: 'VP Engineering', icon: Cpu },
-    { id: 'CFO', label: 'CFO/Finance', icon: DollarSign },
-];
-
-// --- MAIN APPLICATION ---
-
-interface BenchmarkData {
-    name: string;
-    value: number;
-    color: string;
-}
-
-interface TeamBreakdown {
-    frontend: number;
-    backend: number;
-    infra: number;
-    data: number;
-}
-
-interface Results {
-    aper: number;
-    engineeringMargin: number;
-    multiplier: number;
-    benchmarks: BenchmarkData[];
-    totalEngCost: number;
-    engineers: number;
-    costPerEng: number;
-    coordinationTax: number;
-    optimalHeadcount: number;
-    overheadCost: number;
-    teamBreakdown: TeamBreakdown;
-    // Enhanced metrics
-    productivityIndex: number; // 0-100 score
-    newHireRampCost: number; // Cost of onboarding a new hire
-    teamHealthScore: number; // Overall team health 0-100
-    revenueGap: number; // ARR needed to reach elite APER
-    leverageRatio: number; // Revenue per $ of eng spend
-    valuationGap: number; // Lost enterprise value due to APER inefficiency
-    valuationMultiple: number; // Multiple used for valuation impact
-}
+// Types are now imported.
 
 export default function APERTool() {
     // Persona State
@@ -121,16 +88,15 @@ export default function APERTool() {
     const [hiringVelocity, setHiringVelocity] = useState('8');
     const [remotePercent, setRemotePercent] = useState('60');
 
-    const [results, setResults] = useState<Results | null>(null);
+    const [results, setResults] = useState<AperScoreMetrics | null>(null);
     const [loading, setLoading] = useState(false);
     const [showGate, setShowGate] = useState(false);
 
-
-    const formatMoney = (num: number) => {
-        if (num >= 1000000) return '$' + (num / 1000000).toFixed(1) + 'M';
-        if (num >= 1000) return '$' + (num / 1000).toFixed(0) + 'K';
-        return '$' + num.toFixed(0);
-    };
+    useEffect(() => {
+        trackDiagnosticEvent('diagnostic_started', 'aper');
+        const saved = loadDiagnosticSession('aper');
+        if (saved) setResults(saved);
+    }, []);
 
     const calculate = () => {
         setLoading(true);
@@ -141,67 +107,19 @@ export default function APERTool() {
             const tenureNum = parseFloat(avgTenure) || 12;
             const hiringNum = parseFloat(hiringVelocity) || 0;
 
-            const aper = arrNum / engNum;
-            const totalEngCost = engNum * costNum;
-            const engineeringMargin = ((arrNum - totalEngCost) / arrNum) * 100;
-            const multiplier = arrNum / totalEngCost;
+            const metrics = calculateAperScore({
+                arr: arrNum,
+                engineers: engNum,
+                costPerEng: costNum,
+                avgTenure: tenureNum,
+                hiringVelocity: hiringNum,
+                remotePercent: parseFloat(remotePercent) || 0,
+                teamBreakdown
+            });
 
-            // Coordination tax: increases with team size and decreases with tenure
-            const baseCoordinationTax = 15; // 15% baseline
-            const sizeMultiplier = Math.log2(engNum) / 4; // Logarithmic scaling
-            const tenureDiscount = Math.min(tenureNum / 36, 0.5); // Max 50% discount for 3+ year tenure
-            const coordinationTax = baseCoordinationTax * (1 + sizeMultiplier) * (1 - tenureDiscount);
-
-            // Overhead cost calculation
-            const overheadCost = totalEngCost * (coordinationTax / 100);
-
-            // Optimal headcount based on ARR benchmarks
-            const optimalAper = 500000; // Target $500K/engineer
-            const optimalHeadcount = Math.floor(arrNum / optimalAper);
-
-            // Enhanced metrics
-            // Productivity Index: weighted score based on APER, tenure, and team composition
-            const aperScore = Math.min(aper / 600000 * 40, 40); // Max 40 points
-            const tenureScore = Math.min(tenureNum / 24 * 30, 30); // Max 30 points for 2+ years
-            const stabilityScore = Math.max(0, 30 - (hiringNum / engNum * 100)); // Lower hiring velocity = higher score
-            const productivityIndex = Math.round(aperScore + tenureScore + stabilityScore);
-
-            // New hire ramp cost: 3 months to productivity + opportunity cost
-            const rampMonths = 3;
-            const newHireRampCost = (costNum / 12 * rampMonths) + (aper / 12 * rampMonths * 0.5); // Salary + 50% lost productivity
-
-            // Team health score
-            const balanceScore = 100 - Math.abs(50 - (teamBreakdown.frontend + teamBreakdown.backend)) * 2; // Penalty for imbalance
-            const infrastructureBonus = teamBreakdown.infra >= 15 ? 10 : 0; // Bonus for proper infra investment
-            const teamHealthScore = Math.round((productivityIndex * 0.6) + (balanceScore * 0.3) + (infrastructureBonus * 0.1));
-
-            // Revenue gap to reach elite status
-            const eliteAper = 600000;
-            const targetAper = 500000;
-            const revenueGap = Math.max(0, (targetAper * engNum) - arrNum);
-            
-            // Valuation impact (CapEx Hemorrhage)
-            const valuationMultiple = 10;
-            const valuationGap = revenueGap * valuationMultiple;
-
-            // Leverage ratio
-            const leverageRatio = arrNum / totalEngCost;
-
-            const benchmarks: BenchmarkData[] = [
-                { name: 'Your Company', value: aper, color: aper >= 600000 ? '#22d3ee' : aper >= 400000 ? '#facc15' : aper >= 200000 ? '#f97316' : '#dc2626' },
-                { name: 'Elite SaaS', value: 650000, color: '#22d3ee' },
-                { name: 'Good SaaS', value: 450000, color: '#facc15' },
-                { name: 'Danger Zone', value: 200000, color: '#dc2626' },
-            ];
-
-            const payload = {
-                aper, engineeringMargin, multiplier, benchmarks, totalEngCost,
-                engineers: engNum, costPerEng: costNum, coordinationTax,
-                optimalHeadcount, overheadCost, teamBreakdown,
-                productivityIndex, newHireRampCost, teamHealthScore, revenueGap, leverageRatio, valuationGap, valuationMultiple
-            };
-
-            setResults(payload);
+            setResults(metrics);
+            saveDiagnosticSession('aper', metrics);
+            trackDiagnosticEvent('diagnostic_completed', 'aper', { score: metrics.aper, waste: metrics.overheadCost });
             setLoading(false);
 
             // Silently persist to Supabase for longitudinal tracking
@@ -209,9 +127,9 @@ export default function APERTool() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    tool_id: 'APER',
+                    tool_id: 'aper',
                     run_data: { arr: arrNum, engineers: engNum, costPerEng: costNum, avgTenure: tenureNum, hiringVelocity: hiringNum, teamBreakdown },
-                    output_metrics: payload
+                    output_metrics: metrics
                 })
             }).catch(console.error);
 
@@ -225,62 +143,7 @@ export default function APERTool() {
         return { label: 'CRITICAL', color: 'text-red-900 font-extrabold', desc: 'Immediate action required. Consider a RIF.' };
     };
 
-    // Persona-specific insights
-    const getPersonaInsight = (results: Results): { headline: string; detail: string; action: string } => {
-        const aper = results.aper;
-        const headcountDelta = results.engineers - results.optimalHeadcount;
-        const coordinationCost = results.overheadCost;
-
-        switch (persona) {
-            case 'Founder':
-                if (aper < 300000) return {
-                    headline: `⚠️ You need ${headcountDelta} fewer engineers.`,
-                    detail: `At ${formatMoney(aper)}/engineer, you need ${Math.round(headcountDelta * 100 / results.engineers)}% ARR growth before your next hire makes financial sense. Your next raise will be dilutive.`,
-                    action: 'Book a workforce optimization session before your next board meeting.'
-                };
-                if (aper < 500000) return {
-                    headline: `Your next hire costs more than you think.`,
-                    detail: `Each new engineer at your current APER requires ${formatMoney(500000)} in incremental ARR to break even. Do you have that growth?`,
-                    action: 'Model the true cost of headcount before expanding.'
-                };
-                return {
-                    headline: 'You have hiring runway.',
-                    detail: `At ${formatMoney(aper)}/engineer, you can add ${results.optimalHeadcount - results.engineers} more engineers while maintaining elite efficiency.`,
-                    action: 'Scale confidently. Focus on quality over speed.'
-                };
-
-            case 'CPO':
-                const coordinationTime = results.coordinationTax * 40 / 100; // Hours per week per engineer
-                return {
-                    headline: `Each engineer loses ${coordinationTime.toFixed(1)} hrs/week to coordination.`,
-                    detail: `That's ${Math.round(coordinationTime * results.engineers * 52)} hours/year of IC time consumed by meetings and context switching. Your velocity is ~${Math.round(100 - results.coordinationTax)}% of theoretical max.`,
-                    action: 'Map your meeting load and kill the non-essential ones.'
-                };
-
-            case 'VP Eng':
-                if (headcountDelta > 3) return {
-                    headline: `You're ${headcountDelta} engineers over optimal capacity.`,
-                    detail: `Brooks's Law is real: more engineers ≠ more output. Each marginal hire is adding ${formatMoney(coordinationCost / results.engineers)}/year in coordination overhead.`,
-                    action: 'Consider team topology optimization before RIF.'
-                };
-                return {
-                    headline: `Your team is efficiently sized.`,
-                    detail: `At ${results.engineers} engineers, your coordination tax of ${results.coordinationTax.toFixed(0)}% is within acceptable bounds.`,
-                    action: 'Focus on reducing per-engineer overhead through tooling.'
-                };
-
-            case 'CFO':
-                const engineeringRoi = results.multiplier;
-                return {
-                    headline: `Engineering ROI: ${engineeringRoi.toFixed(1)}x.`,
-                    detail: `For every $1 spent on engineering, you generate $${engineeringRoi.toFixed(2)} in revenue. ${engineeringRoi < 3 ? 'This is below the 3x benchmark for healthy SaaS.' : 'This is a healthy return on engineering investment.'}`,
-                    action: `${engineeringRoi < 3 ? 'Model headcount scenarios for budget planning.' : 'Maintain discipline as you scale.'}`
-                };
-
-            default:
-                return { headline: '', detail: '', action: '' };
-        }
-    };
+    // Persona-specific insights are now imported
 
 
 
@@ -319,11 +182,16 @@ export default function APERTool() {
                                 {/* PERSONA SELECTOR */}
                                 <div className="mb-8 max-w-2xl mx-auto">
                                     <div className="text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest mb-3 text-center">I am a...</div>
-                                    <PersonaSwitcher 
-                                        activePersona={persona} 
-                                        onChange={setPersona} 
-                                        personas={PERSONAS}
-                                    />
+                                        <PersonaSwitcher 
+                                            activePersona={persona} 
+                                            onChange={setPersona} 
+                                            personas={[
+                                                { id: 'Founder', label: 'Founder/CEO', icon: Target },
+                                                { id: 'CPO', label: 'CPO/Product', icon: Users },
+                                                { id: 'VP Eng', label: 'VP Engineering', icon: Cpu },
+                                                { id: 'CFO', label: 'CFO/Finance', icon: DollarSign },
+                                            ]}
+                                        />
                                 </div>
 
                                 <div className="bg-white/40 p-8 rounded-3xl border border-zinc-400 backdrop-blur-sm shadow-2xl space-y-8">
@@ -522,9 +390,9 @@ export default function APERTool() {
                                 >
                                     <BentoCard title={`Insight for ${persona}`} icon={Target} className="border-yellow-500/20 bg-gradient-to-br from-yellow-500/5 to-transparent">
                                         <div className="space-y-4">
-                                            <h3 className="text-2xl font-bold text-zinc-900">{getPersonaInsight(results).headline}</h3>
-                                            <p className="text-zinc-900 leading-relaxed">{getPersonaInsight(results).detail}</p>
-                                            <p className="text-yellow-900 font-extrabold font-semibold">{getPersonaInsight(results).action}</p>
+                                            <h3 className="text-2xl font-bold text-zinc-900">{getAperPersonaInsight(persona, results).headline}</h3>
+                                            <p className="text-zinc-900 leading-relaxed">{getAperPersonaInsight(persona, results).detail}</p>
+                                            <p className="text-yellow-900 font-extrabold font-semibold">{getAperPersonaInsight(persona, results).action}</p>
                                         </div>
                                     </BentoCard>
                                 </motion.div>
@@ -667,7 +535,7 @@ export default function APERTool() {
                                                         formatter={(val) => val !== undefined ? formatMoney(Number(val)) : ''}
                                                     />
                                                     <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={32}>
-                                                        {results.benchmarks.map((entry: BenchmarkData, index: number) => (
+                                                        {results.benchmarks.map((entry, index: number) => (
                                                             <Cell key={`cell-${index}`} fill={entry.color} />
                                                         ))}
                                                     </Bar>
@@ -684,16 +552,14 @@ export default function APERTool() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
                                 >
-                                    <div className="bg-gradient-to-br from-zinc-50 via-zinc-100 to-zinc-50/60 rounded-2xl p-8 border border-zinc-400">
-                                        <div className="flex items-center gap-3 mb-6">
-                                            <div className={`w-3 h-3 rounded-full animate-pulse ${results.aper < 400000 ? 'bg-orange-500' : 'bg-cyan-400'}`} />
-                                            <span className="text-xs font-bold font-mono uppercase tracking-widest text-zinc-900">Executive Summary</span>
-                                        </div>
-
-                                        <div className="grid md:grid-cols-2 gap-8">
-                                            <div>
-                                                <h3 className="text-xl font-bold text-zinc-950 mb-4">📊 Board-Ready Insights</h3>
-                                                <ul className="space-y-3 text-zinc-950 font-bold">
+                                    <div className="mt-8 space-y-8">
+                                        <ExecutiveSummary 
+                                            tool="APER Efficiency Diagnostic" 
+                                            persona={persona} 
+                                            isAtRisk={results.aper < 400000}
+                                            extraData={{ aper: results.aper }}
+                                            freeChildren={
+                                                <>
                                                     <li className="flex items-start gap-2">
                                                         <span className="text-yellow-900 font-extrabold font-semibold mt-1">•</span>
                                                         <span>APER of <strong className="text-zinc-900">{formatMoney(results.aper)}</strong>/engineer is {results.aper >= 500000 ? 'above' : 'below'} the $500K SaaS benchmark.</span>
@@ -706,11 +572,20 @@ export default function APERTool() {
                                                         <span className="text-yellow-900 font-extrabold font-semibold mt-1">•</span>
                                                         <span>Optimal headcount is <strong className="text-zinc-900">{results.optimalHeadcount}</strong> engineers. You are {results.engineers > results.optimalHeadcount ? <strong className="text-orange-900 font-extrabold font-semibold">{results.engineers - results.optimalHeadcount} over</strong> : <strong className="text-cyan-900 font-extrabold font-semibold">{results.optimalHeadcount - results.engineers} under</strong>} optimal.</span>
                                                     </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                                </>
+                                            }
+                                            gatedChildren={
+                                                <div className="space-y-6">
+                                                    <BenchmarkComparison tool="aper" userScore={results.aper} />
+                                                    <LongitudinalHistory tool="aper" scoreKey="aper" />
+                                                    <ExogramRecommendations score={results.aper < 400000 ? 40 : 80} maintenance={results.coordinationTax} />
+                                                </div>
+                                            }
+                                        />
                                     </div>
                                 </motion.div>
+
+                                <DiagnosticProgression currentTool="aper" score={results.aper} />
 
                                 <VaultUpsell 
                                     urgencyLevel={results.aper < 400000 ? 'critical' : 'growth'}
@@ -824,34 +699,16 @@ export default function APERTool() {
                 </AnimatePresence>
             </main>
 
-            {/* AUTHORITY CONTENT: APER */}
-            <div className="max-w-4xl mx-auto mt-32 mb-24 space-y-16 px-6">
-                <div className="prose prose-zinc prose-lg max-w-none">
-                    <h2 className="text-4xl font-bold text-zinc-950 mb-8">The Most Dangerous Number in SaaS</h2>
-                    <p className="text-zinc-900 leading-relaxed">
-                        <strong>Revenue Per Employee (RPE)</strong> is the ultimate truth serum. In High-Leverage SaaS (the &quot;Elite&quot; zone), one engineer generates over $600k in ARR. In Low-Leverage SaaS (the &quot;Danger&quot; zone), one engineer generates less than $200k.
-                    </p>
-                    <p className="text-zinc-900 leading-relaxed">
-                        The <strong>APER™ Diagnostic</strong> (Algorithmic Product Engineering Ratio) strips away the excuses. It ignores &quot;story points completed&quot; and &quot;lines of code written.&quot; It asks one question: <em>Is this organization converting human intelligence into capital efficiently?</em>
-                    </p>
-                </div>
-
-                <div className="bg-gradient-to-r from-zinc-50 to-zinc-100 p-8 rounded-xl border border-cyan-500/20">
-                    <h3 className="text-2xl font-bold text-cyan-900 font-extrabold font-semibold mb-4">The Coordination Tax</h3>
-                    <p className="text-zinc-950 mb-6">
-                        Why does adding engineers often slow you down? <strong>Brooks&apos; Law.</strong>
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
-                        <div>
-                            <h4 className="font-bold text-zinc-950 mb-2">Small Team (Elite)</h4>
-                            <p className="text-zinc-900">Communication is implicit. Decisions are instant. Architecture is unified. High APER.</p>
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-zinc-950 mb-2">Large Team (Bloated)</h4>
-                            <p className="text-zinc-900">Communication is scheduled. Decisions require committees. Architecture is fragmented. Low APER.</p>
-                        </div>
-                    </div>
-                </div>
+            {/* BRIDGE: DIAGNOSTIC -> FRAMEWORK & EXOGRAM */}
+            <div className="max-w-4xl mx-auto px-6">
+                <DiagnosticBridge 
+                    diagnosticName="Algorithmic Product Engineering Ratio"
+                    frameworkSlug="innovation-tax"
+                    frameworkName="The Innovation Tax"
+                    frameworkDescription="The APER highlights the Innovation Tax at scale. When headcount expands but velocity drops, you are paying a coordination tax that masquerades as R&D investment."
+                    exogramRisk="Organizational Entropy"
+                    exogramDescription="Stop throwing engineers at architectural problems. Exogram enforces structural boundaries so you can scale leverage without scaling headcount."
+                />
             </div>
             
             <ProgrammaticAnswersRelated seed="aper-tool" maxCount={2} />

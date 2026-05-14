@@ -9,9 +9,24 @@ import { COMBAT_SEO_MATRIX } from '@/app/lib/combat-seo';
 import { CAREER_PATHS } from '@/app/lib/career-paths';
 import pseoMatrixData from '@/app/lib/pseo-matrix.json';
 import { getAllSpokeRoutes } from '@/app/lib/spoke-data';
+import { challenges } from './challenges/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.richardewing.io';
+
+    const challengePages: MetadataRoute.Sitemap = [
+        {
+            url: `${baseUrl}/challenges`,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        ...challenges.map(c => ({
+            url: `${baseUrl}/challenges/${c.slug}`,
+            changeFrequency: 'monthly' as const,
+            priority: 0.8,
+        }))
+    ];
+
 
     const combatPages: MetadataRoute.Sitemap = COMBAT_SEO_MATRIX.flatMap(t => 
         t.competitors.map(c => ({
@@ -70,6 +85,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     return [
+        ...challengePages,
         ...careerPages,
         ...combatPages,
         ...glossaryPages,

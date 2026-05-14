@@ -782,20 +782,20 @@ In 2026, Model Collapse has created a massive premium on verified, purely human 
         title: 'CTO Agent Delusion',
         category: 'Leadership & Governance',
         definition: 'A dangerous executive cognitive bias that assumes probabilistic autonomous AI agents can act as 1:1 replacements for deterministic engineering and QA teams, driven by a fundamental misunderstanding of the difference between syntax generation and system architecture.',
-        whyItMatters: 'CTOs suffering from this delusion optimize entirely for headcount reduction and short-term velocity, completely ignoring the massive accumulation of Probabilistic Tech Debt. They replace human Systems Governors with unmonitored AI agents, leading inevitably to systemic crystallization—where the codebase becomes so complex and undocumented that humans can no longer maintain it.',
+        whyItMatters: 'CTOs suffering from this delusion optimize entirely for headcount reduction and short-term velocity, completely ignoring the massive accumulation of Hallucination Debt. They replace human Systems Governors with unmonitored AI agents, leading inevitably to systemic crystallization—where the codebase becomes so complex and undocumented that humans can no longer maintain it.',
         faqs: [
             { question: 'What causes the CTO Agent Delusion?', answer: 'It stems from confusing a localized capability (an AI can write a script) with a systemic capability (an AI can architect, deploy, and maintain a secure enterprise monolith).' }
         ],
-        relatedTerms: ['agentic-process-automation', 'probabilistic-tech-debt', 'technical-insolvency-date']
+        relatedTerms: ['agentic-process-automation', 'hallucination-debt', 'technical-insolvency-date']
     },
     {
-        slug: 'probabilistic-tech-debt',
-        title: 'Probabilistic Tech Debt',
+        slug: 'hallucination-debt',
+        title: 'Hallucination Debt',
         category: 'Technical Debt & Code Quality',
-        definition: 'A new category of technical debt generated exclusively by LLMs and AI Copilots. Unlike traditional tech debt (which is usually the result of human shortcuts or outdated frameworks), probabilistic tech debt occurs when AI generates code that technically functions but lacks architectural rigor, security foresight, or edge-case handling.',
-        whyItMatters: 'Probabilistic tech debt is insidious because it often passes initial unit tests. It acts like a Trojan horse, entering the main branch seamlessly but failing catastrophically under specific production loads. It requires a shift from traditional PR reviews to rigorous Audit Interviews to detect.',
+        definition: 'A new category of technical debt generated exclusively by LLMs and AI Copilots. Unlike traditional tech debt (which is usually the result of human shortcuts or outdated frameworks), hallucination debt occurs when AI generates code that technically functions but lacks architectural rigor, security foresight, or edge-case handling.',
+        whyItMatters: 'Hallucination debt is insidious because it often passes initial unit tests. It acts like a Trojan horse, entering the main branch seamlessly but failing catastrophically under specific production loads. It requires a shift from traditional PR reviews to rigorous Audit Interviews to detect.',
         faqs: [
-            { question: 'How is Probabilistic Tech Debt different from normal Technical Debt?', answer: 'Normal tech debt is deterministic—humans made a conscious trade-off. Probabilistic tech debt is hallucinated—the AI generated an anti-pattern without anyone realizing it until it breaks in production.' }
+            { question: 'How is Hallucination Debt different from normal Technical Debt?', answer: 'Normal tech debt is deterministic—humans made a conscious trade-off. Hallucination debt is hallucinated—the AI generated an anti-pattern without anyone realizing it until it breaks in production.' }
         ],
         relatedTerms: ['codebase-intimacy', 'vibe-coding', 'technical-debt', 'cost-of-predictivity']
     },

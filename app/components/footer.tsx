@@ -29,53 +29,30 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Intervention</h4>
+                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Operations</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
-                            <li><Link href="/start-here" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors font-bold">→ Start Here</Link></li>
-                            <li><Link href="/advisory" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Advisory Services</Link></li>
-                            <li><Link href="/advisory/licensing" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">IP Licensing</Link></li>
-                            <li><Link href="/workshops" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Corporate Workshops</Link></li>
-                            <li><Link href="/certification" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">C-Suite Certification</Link></li>
-                            <li><Link href="/system" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Methodology</Link></li>
-                            <li><Link href="/pricing" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Pricing</Link></li>
-                            <li><Link href="/case-studies" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Case Studies</Link></li>
-                            <li><Link href="/testimonials" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Testimonials</Link></li>
-                            <li><Link href="/partnerships" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Partnerships</Link></li>
-                            <li><Link href="/for-investors" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">For Investors</Link></li>
-                            <li><Link href="/for-boards" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">For Boards</Link></li>
-                            <li><Link href="/for-ctos" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">For CTOs</Link></li>
-                            <li><Link href="/roi" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">ROI Calculator</Link></li>
+                            <li><Link href="/tools" className="text-zinc-950 hover:text-zinc-900 transition-colors">Diagnostics</Link></li>
+                            <li><Link href="/frameworks" className="text-zinc-950 hover:text-zinc-900 transition-colors">Frameworks</Link></li>
+                            <li><Link href="/glossary" className="text-zinc-950 hover:text-zinc-900 transition-colors">Glossary</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Intelligence</h4>
+                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Enforcement</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
-                            <li><Link href="/doctrine" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Doctrine</Link></li>
-                            <li><Link href="/answers" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors font-bold">Programmatic Answer Hub</Link></li>
-                            <li><Link href="/reports/state-of-ai-engineering" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">State of AI Report</Link></li>
-                            <li><Link href="/system-prompts" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">System Prompts</Link></li>
-                            <li><Link href="/articles" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Canonical Hub</Link></li>
-                            <li><Link href="/glossary" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Glossary (400+)</Link></li>
-                            <li><Link href="/vault/curriculum/tracks" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Complete Curriculum</Link></li>
-                            <li><Link href="/vault/curriculum/tracks" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Strategic Guides</Link></li>
-                            <li><Link href="/blog" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Engineering Blog</Link></li>
-                            <li><Link href="/compare" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Tool Comparisons Matrix</Link></li>
+                            <li><Link href="/start-here" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors">Start Here</Link></li>
+                            <li><Link href="/exogram" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">Exogram Platform</Link></li>
+                            <li><Link href="/challenges/runtime-governance" className="text-zinc-950 hover:text-zinc-900 transition-colors">Runtime Governance</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Free Tools</h4>
+                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Advisory</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
-                            <li><Link href="/tools/pdi" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Product Debt Index</Link></li>
-                            <li><Link href="/tools/aueb" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">AI Unit Economics</Link></li>
-                            <li><Link href="/tools/audit-interview" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Audit Interview</Link></li>
-                            <li><Link href="/tools/aper" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">APER Diagnostic</Link></li>
-                            <li><Link href="/tools/ev-se" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Evergreen Ratio</Link></li>
-                            <li><Link href="/checklist" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">R&D Audit Checklist</Link></li>
-                            <li><Link href="/compare" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Tool Comparisons (10)</Link></li>
-                            <li><Link href="/system" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">Industries (14)</Link></li>
-                            <li><Link href="/faq" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors">FAQ</Link></li>
+                            <li><Link href="/advisory" className="text-zinc-950 hover:text-zinc-900 transition-colors">Executive Advisory</Link></li>
+                            <li><Link href="/case-studies" className="text-zinc-950 hover:text-zinc-900 transition-colors">Case Studies</Link></li>
+                            <li><Link href="/principal" className="text-zinc-950 hover:text-zinc-900 transition-colors">The Principal</Link></li>
+                            <li><Link href="/advisory" className="text-[var(--accent-crimson)] font-bold hover:opacity-80 transition-colors">Book an Audit</Link></li>
                         </ul>
                     </div>
 
