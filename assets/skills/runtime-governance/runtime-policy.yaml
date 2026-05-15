@@ -1,0 +1,29 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: RuntimeGovernancePolicy
+metadata:
+  name: core-execution-boundaries
+  description: "Deterministic runtime execution bounds for agentic operations."
+spec:
+  # Commands that trigger immediate session termination
+  blocked_commands:
+    - "rm -rf"
+    - "drop table"
+    - "chmod 777"
+    - "curl * | bash"
+    
+  # Directories where write access is mathematically denied
+  write_protected_paths:
+    - "/etc"
+    - "/var/lib/postgresql"
+    - "./.env.production"
+    - "./src/governance" # Agents cannot modify their own constraints
+    
+  # Required confidence thresholds for execution
+  admissibility_thresholds:
+    min_confidence_score: 0.85
+    require_human_approval_on_fail: true
+    
+  # Escalation triggers
+  circuit_breakers:
+    max_blocked_attempts: 2 # If agent tries to bypass blocks 2 times, terminate.
+    trigger_action: ISOLATE_AND_ROLLBACK

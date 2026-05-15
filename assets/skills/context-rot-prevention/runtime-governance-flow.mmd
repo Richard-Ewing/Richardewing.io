@@ -1,0 +1,25 @@
+sequenceDiagram
+    participant LLM as Agent Orchestrator
+    participant Gate as Execution Gate Middleware
+    participant Repo as Deterministic Repository
+    participant Handler as Rollback Handler
+
+    LLM->>Gate: Propose Code Execution (Patch)
+    Gate->>Gate: Check Admissibility Pipeline
+    
+    alt is patching previous patch (Context Rot)
+        Gate-->>LLM: Throw Exception (Action Blocked)
+        Gate->>Gate: Increment Failure Counter
+        
+        alt Failure Counter > Threshold
+            Gate->>Handler: Trigger Governance Halt
+            Handler->>Repo: Execute Hard Reset
+            Handler->>Repo: git clean -fd
+            Handler-->>LLM: Terminate Session (Semantic Reset Required)
+        end
+    else is admissible
+        Gate->>Repo: Allow Execution
+        Repo-->>Gate: Execution Success
+        Gate->>Gate: Reset Failure Counter
+        Gate-->>LLM: Proceed to next step
+    end

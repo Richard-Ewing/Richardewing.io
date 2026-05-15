@@ -1,0 +1,6 @@
+Session_ID,Agent_Model,Task_Complexity,Input_Tokens,Output_Tokens,Retry_Count,API_Cost_USD,Human_Verification_Minutes,Human_Labor_Rate_USD,Total_Verification_Cost_USD,Total_Synthetic_COGS_USD,Manual_Engineering_Estimate_USD,Net_Margin_Impact
+S-1001,Claude-3.5-Sonnet,Low,12000,450,0,0.04,2,150,5.00,5.04,25.00,19.96
+S-1002,Claude-3.5-Sonnet,High,150000,12000,14,0.63,45,150,112.50,113.13,75.00,-38.13
+S-1003,Claude-3.5-Sonnet,Medium,45000,3000,2,0.18,10,150,25.00,25.18,50.00,24.82
+S-1004,Claude-3.5-Sonnet,High,250000,18000,22,1.02,60,150,150.00,151.02,100.00,-51.02
+S-1005,GPT-4o,Low,8000,300,0,0.06,1,150,2.50,2.56,15.00,12.44

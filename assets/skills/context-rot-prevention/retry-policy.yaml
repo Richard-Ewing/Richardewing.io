@@ -1,0 +1,21 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: RetryCircuitBreaker
+metadata:
+  name: execution-retry-limits
+  description: "Circuit breaker to prevent retry inflation and exploding synthetic COGS."
+spec:
+  limits:
+    max_consecutive_failures: 3
+    max_lint_retries: 2
+    max_test_retries: 3
+    
+  backoff:
+    type: exponential
+    base_ms: 1000
+    max_ms: 10000
+
+  escalation:
+    action: TRIGGER_ROLLBACK
+    notify_human: true
+    log_level: CRITICAL
+    reason: "Agent entered recursive patching loop. Execution halted to prevent repository drift."

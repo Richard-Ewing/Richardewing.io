@@ -1,0 +1,31 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: MCPToolGovernancePolicy
+metadata:
+  name: strict-tool-isolation
+  description: "Enterprise policy for Model Context Protocol execution gating."
+spec:
+  # Tools the agent is cryptographically forbidden from discovering or calling
+  blacklisted_tools:
+    - "run_command" # Terminal execution must be strictly managed
+    - "delete_file"
+    - "drop_database"
+
+  # Rate limiting to prevent accidental DDoS from orchestration loops
+  rate_limits:
+    global_requests_per_minute: 10
+    database_query_per_minute: 2
+    
+  # Strict boundaries on file access via tools
+  file_access_boundaries:
+    allowed_directories:
+      - "/src/components"
+      - "/src/utils"
+    denied_directories:
+      - "/.env"
+      - "/config/secrets"
+      - "/.aws"
+
+  # Payload inspection rules
+  payload_validation:
+    require_json_schema_match: true
+    block_shell_injection_patterns: true

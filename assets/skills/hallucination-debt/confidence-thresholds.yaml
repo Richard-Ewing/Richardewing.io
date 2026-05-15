@@ -1,0 +1,21 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: ConfidenceThresholdPolicy
+metadata:
+  name: probabilistic-variance-limits
+  description: "Defines the strict numerical boundaries between admissible execution and hallucination debt."
+spec:
+  # Score required to bypass human review entirely (Fully Autonomous)
+  auto_execute_threshold: 0.98
+  
+  # Score required to allow a human to even look at the PR
+  human_review_threshold: 0.85
+  
+  # Action to take if score is between 0.85 and 0.98
+  on_marginal_confidence:
+    action: REQUIRE_EXPLICIT_APPROVAL
+    require_unit_tests: true
+    
+  # Action to take if score falls below 0.85
+  on_low_confidence:
+    action: AUTONOMOUS_RETRY
+    prompt_injection: "Your previous output violated architectural constraints. Review the deterministic repo-map and try again."

@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant LLM as Agent Orchestrator
+    participant Middleware as Tool Access Middleware
+    participant Policy as MCP Governance Policy
+    participant Server as MCP Server (Local FS, DB)
+
+    LLM->>Middleware: Execute tool_call: read_file(path: "/.env")
+    
+    Middleware->>Policy: Check tool authorization
+    Policy-->>Middleware: Authorized
+    
+    Middleware->>Policy: Inspect payload (path: "/.env")
+    Policy-->>Middleware: DENIED (Path Blacklisted)
+    
+    Middleware-->>LLM: Throw Exception (Security Violation)
+    Note over Middleware,LLM: Request physically blocked before reaching server.
+
+    LLM->>Middleware: Execute tool_call: read_file(path: "/src/utils.ts")
+    Middleware->>Policy: Inspect payload (path: "/src/utils.ts")
+    Policy-->>Middleware: Allowed
+    
+    Middleware->>Server: Forward execution request
+    Server-->>Middleware: Return file contents
+    Middleware-->>LLM: Pass contents to context window

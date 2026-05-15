@@ -1,0 +1,21 @@
+graph TD
+    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
+    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
+    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
+    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+
+    A[Agent Session Starts] ::: neutral --> B[Repo Map Ingestion] ::: governance
+    B --> C{Task Complexity} ::: neutral
+    C -->|High > 4 cycles| D[Context Starts Drifting] ::: danger
+    C -->|Low < 4 cycles| E[Task Completed Successfully] ::: success
+    
+    D --> F[Recursive Patching Begins] ::: danger
+    F --> G[Retry Inflation Curve] ::: danger
+    
+    G --> H{Bounded Cognition Gate} ::: governance
+    
+    H -->|Threshold Exceeded| I[Halt Execution] ::: success
+    H -->|No Governance| J[Repository Corruption] ::: danger
+    
+    I --> K[Semantic Reset Playbook] ::: governance
+    K --> A

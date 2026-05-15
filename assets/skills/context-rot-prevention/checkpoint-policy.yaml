@@ -1,0 +1,25 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: ContextCheckpointPolicy
+metadata:
+  name: strict-semantic-checkpoint
+  description: "Mandatory execution halts to prevent unbounded cognitive drift during agentic sessions."
+spec:
+  triggers:
+    max_execution_cycles: 4
+    max_token_delta: 25000
+    file_modification_threshold: 3
+    test_failure_streak: 2
+  
+  enforcement:
+    action: HALT_AND_DUMP
+    requires_human_ack: false
+    automatic_reset: true
+
+  checkpoint_data:
+    - current_diff
+    - failing_tests
+    - active_file_paths
+    
+  hooks:
+    on_halt:
+      - "npx ts-node src/scripts/governance/semantic-reset.ts --mode hard"

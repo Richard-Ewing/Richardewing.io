@@ -1,0 +1,23 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: VerificationBurdenPolicy
+metadata:
+  name: human-review-containment
+  description: "Protects human engineering hours by rejecting agent outputs that lack deterministic proof."
+spec:
+  # Do not allow humans to review code unless these conditions are met
+  prerequisites_for_human_review:
+    must_compile: true
+    must_pass_lint: true
+    unit_test_coverage_min: 80
+    hallucination_score_min: 0.85
+  
+  # Action if agent fails to meet prerequisites
+  on_rejection:
+    action: AUTONOMOUS_RETRY
+    max_retries: 3
+    failure_escalation: TRIGGER_ROLLBACK # Prevent retry inflation
+    
+  # Cost tracking
+  telemetry:
+    track_verification_time: true
+    alert_threshold_minutes: 15 # If a human spends > 15m reviewing an agent PR, flag as Hallucination Debt
