@@ -39,14 +39,14 @@ export default function ChallengesIndexPage() {
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 group-hover:text-cyan-900 transition-colors">
                                 {challenge.title}
                             </h2>
-                            <ArrowRight className="w-5 h-5 text-zinc-400 group-hover:text-cyan-500 transition-colors" />
+                            <ArrowRight className="w-5 h-5 text-zinc-900 font-medium group-hover:text-cyan-500 transition-colors" />
                         </div>
-                        <p className="text-sm text-zinc-900 font-bold leading-relaxed flex-1 mb-6">
+                        <p className="text-sm text-zinc-900 font-medium font-bold leading-relaxed flex-1 mb-6">
                             {challenge.description}
                         </p>
                         
                         <div className="pt-4 border-t border-zinc-300">
-                            <div className="flex items-center gap-2 text-xs font-mono font-bold text-zinc-500 mb-2">
+                            <div className="flex items-center gap-2 text-xs font-mono font-bold text-zinc-800 mb-2">
                                 <span>Remediation Path</span>
                             </div>
                             <div className="flex flex-wrap gap-2">

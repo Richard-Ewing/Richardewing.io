@@ -44,11 +44,11 @@ export default function ArticleUpsell({ productId, headline, description }: Arti
                                 name="email" 
                                 placeholder="name@company.com" 
                                 required
-                                className="w-full px-4 py-2 bg-white border border-zinc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 font-medium text-sm text-zinc-900 placeholder:text-zinc-400"
+                                className="w-full px-4 py-2 bg-white border border-zinc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 font-medium text-sm text-zinc-900 font-medium placeholder:text-zinc-900 font-medium"
                             />
                             <button 
                                 type="submit"
-                                className="px-4 py-2 rounded-lg bg-zinc-950 text-white font-bold hover:bg-violet-600 transition-all text-sm whitespace-nowrap"
+                                className="px-4 py-2 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-semibold font-bold hover:bg-violet-600 transition-all text-sm whitespace-nowrap"
                             >
                                 Get PDF
                             </button>
@@ -57,7 +57,7 @@ export default function ArticleUpsell({ productId, headline, description }: Arti
 
                     {/* Right: Paid Curriculum */}
                     <div className="md:pl-8 pt-8 md:pt-0 flex flex-col justify-center space-y-4">
-                        <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest flex items-center gap-2 mb-1">
+                        <div className="text-xs font-bold text-zinc-800 uppercase tracking-widest flex items-center gap-2 mb-1">
                             <ShieldCheck className="w-4 h-4 text-emerald-500" /> Premium Option
                         </div>
                         <div className="text-zinc-950 font-bold text-xl font-grotesk">

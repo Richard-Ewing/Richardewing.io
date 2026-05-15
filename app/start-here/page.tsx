@@ -70,11 +70,11 @@ const steps = [
 ];
 
 const colorMap: Record<string, { border: string; bg: string; text: string; dot: string; primaryBg: string }> = {
-    red: { border: 'border-red-500/30', bg: 'bg-red-500/5', text: 'text-red-900 font-extrabold', dot: 'bg-red-400', primaryBg: 'bg-gradient-to-r from-red-500 to-orange-600 text-white' },
-    cyan: { border: 'border-cyan-500/30', bg: 'bg-cyan-500/5', text: 'text-cyan-900 font-extrabold', dot: 'bg-cyan-400', primaryBg: 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white' },
-    purple: { border: 'border-purple-500/30', bg: 'bg-purple-500/5', text: 'text-purple-900 font-extrabold', dot: 'bg-purple-400', primaryBg: 'bg-gradient-to-r from-purple-500 to-pink-600 text-white' },
-    emerald: { border: 'border-emerald-500/30', bg: 'bg-emerald-500/5', text: 'text-emerald-900 font-extrabold', dot: 'bg-emerald-400', primaryBg: 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white' },
-    zinc: { border: 'border-zinc-500/30', bg: 'bg-zinc-500/5', text: 'text-zinc-900 font-extrabold', dot: 'bg-zinc-400', primaryBg: 'bg-gradient-to-r from-zinc-700 to-zinc-900 text-white' },
+    red: { border: 'border-red-500/30', bg: 'bg-red-500/5', text: 'text-red-900 font-extrabold', dot: 'bg-red-400', primaryBg: 'bg-gradient-to-r from-red-500 to-orange-600 text-zinc-950 font-semibold' },
+    cyan: { border: 'border-cyan-500/30', bg: 'bg-cyan-500/5', text: 'text-cyan-900 font-extrabold', dot: 'bg-cyan-400', primaryBg: 'bg-gradient-to-r from-cyan-500 to-blue-600 text-zinc-950 font-semibold' },
+    purple: { border: 'border-purple-500/30', bg: 'bg-purple-500/5', text: 'text-purple-900 font-extrabold', dot: 'bg-purple-400', primaryBg: 'bg-gradient-to-r from-purple-500 to-pink-600 text-zinc-950 font-semibold' },
+    emerald: { border: 'border-emerald-500/30', bg: 'bg-emerald-500/5', text: 'text-emerald-900 font-extrabold', dot: 'bg-emerald-400', primaryBg: 'bg-gradient-to-r from-emerald-500 to-teal-600 text-zinc-950 font-semibold' },
+    zinc: { border: 'border-zinc-500/30', bg: 'bg-zinc-500/5', text: 'text-zinc-900 font-extrabold', dot: 'bg-zinc-400', primaryBg: 'bg-gradient-to-r from-zinc-700 to-zinc-50 text-zinc-950 font-semibold' },
 };
 
 export default function StartHerePage() {

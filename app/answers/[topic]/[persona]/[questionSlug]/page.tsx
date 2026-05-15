@@ -104,7 +104,7 @@ export default async function AnswerPage({ params }: Props) {
             <div className="mb-8 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest flex-wrap">
                 <Link href="/answers" className="hover:text-zinc-900 transition-colors">Answer Hub</Link>
                 <span>/</span>
-                <span className="text-zinc-500">{topicData.topicName}</span>
+                <span className="text-zinc-800">{topicData.topicName}</span>
                 <span>/</span>
                 <span className="text-cyan-900 bg-cyan-500/10 border border-cyan-500/20 px-2 py-0.5 rounded truncate">
                     For {p.persona.replace('-', ' ')}
@@ -140,7 +140,7 @@ export default async function AnswerPage({ params }: Props) {
 
             {/* Hub & Spoke Matrix Routing Node */}
             <div className="mt-16 bg-white/50 border border-zinc-300 rounded-2xl p-6 md:p-8">
-                <div className="mb-6 mb-8 text-sm font-mono text-zinc-500 font-bold uppercase tracking-widest border-b border-zinc-300 pb-2">
+                <div className="mb-6 mb-8 text-sm font-mono text-zinc-800 font-bold uppercase tracking-widest border-b border-zinc-300 pb-2">
                     Explore Corporate Diagnostics
                 </div>
                 <ProgrammaticAnswersRelated seed={topicData.topicSlug} />

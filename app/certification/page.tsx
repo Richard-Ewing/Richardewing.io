@@ -66,8 +66,8 @@ export default function CertificationPage() {
                 </div>
 
                 <div className="mt-16 text-center">
-                    <p className="text-zinc-500 mb-6">Require formal validation for your enterprise infrastructure?</p>
-                    <Link href="/tools/dashboard" className="px-8 py-4 bg-zinc-900 text-white font-bold rounded-xl hover:bg-zinc-800 transition-colors inline-block">
+                    <p className="text-zinc-800 mb-6">Require formal validation for your enterprise infrastructure?</p>
+                    <Link href="/tools/dashboard" className="px-8 py-4 bg-zinc-50 border border-zinc-200 text-zinc-950 font-semibold font-bold rounded-xl hover:bg-zinc-800 transition-colors inline-block">
                         Initiate Certification Audit
                     </Link>
                 </div>

@@ -24,9 +24,9 @@ export function ExogramRecommendations({ score, maintenance }: ExogramRecommenda
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 {mappings.map((m, i) => (
                     <div key={i} className="bg-white rounded-lg p-3 border border-purple-100 shadow-sm">
-                        <div className="text-xs font-bold text-zinc-500 mb-1">Risk Identified</div>
+                        <div className="text-xs font-bold text-zinc-800 mb-1">Risk Identified</div>
                         <div className="text-sm font-bold text-red-900 mb-2">{m.risk}</div>
-                        <div className="text-xs font-bold text-zinc-500 mb-1">Required Enforcement</div>
+                        <div className="text-xs font-bold text-zinc-800 mb-1">Required Enforcement</div>
                         <div className="text-sm font-bold text-purple-900 flex items-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
                             {m.capability}

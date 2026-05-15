@@ -96,6 +96,11 @@ files.forEach(file => {
     content = content.replace(/text-gray-400/g, 'text-gray-900 font-medium');
     content = content.replace(/text-neutral-400/g, 'text-neutral-900 font-medium');
 
+    // Specific Cyan Accent Handling (Crucial for visibility on light bg)
+    content = content.replace(/text-cyan-400/g, 'text-cyan-900');
+    content = content.replace(/text-cyan-300/g, 'text-cyan-800');
+    content = content.replace(/border-zinc-800/g, 'border-zinc-200');
+
     if (content !== originalContent) {
         fs.writeFileSync(file, content, 'utf8');
         modifiedFiles++;

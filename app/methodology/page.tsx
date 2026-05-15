@@ -11,7 +11,7 @@ export default function MethodologyPage() {
                         <span className="p-2 bg-purple-100 text-purple-700 rounded-lg">
                             <BookOpen className="w-5 h-5" />
                         </span>
-                        <span className="text-sm font-bold font-mono uppercase tracking-widest text-zinc-500">Official Documentation</span>
+                        <span className="text-sm font-bold font-mono uppercase tracking-widest text-zinc-800">Official Documentation</span>
                     </div>
                     <h1 className="text-4xl font-grotesk font-bold text-zinc-900 mb-4">Governance Standardization Methodology</h1>
                     <p className="text-lg text-zinc-600 font-medium">
@@ -31,7 +31,7 @@ export default function MethodologyPage() {
                             The definitive scale for measuring **Technical Insolvency Risk**. PDI quantifies the architectural entanglement caused by probabilistic models embedded directly into critical control flows without a deterministic interception layer (Exogram).
                         </p>
                         <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-200">
-                            <h3 className="text-sm font-bold font-mono uppercase tracking-widest text-zinc-500 mb-3">PDI Scale Definitions</h3>
+                            <h3 className="text-sm font-bold font-mono uppercase tracking-widest text-zinc-800 mb-3">PDI Scale Definitions</h3>
                             <ul className="space-y-3 font-mono text-sm">
                                 <li className="flex gap-4"><span className="font-bold text-emerald-600 w-16">0-20</span><span className="text-zinc-700">Deterministically Governed. Complete runtime isolation.</span></li>
                                 <li className="flex gap-4"><span className="font-bold text-amber-600 w-16">21-50</span><span className="text-zinc-700">Accumulating Hallucination Debt. Partial validation gaps.</span></li>
@@ -50,7 +50,7 @@ export default function MethodologyPage() {
                             The standard measure for **Synthetic COGS**. AUEB evaluates gross margin compression caused by unoptimized inference routing, redundant token generation, and the cost of maintaining vast probabilistic guardrails.
                         </p>
                         <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-200">
-                            <p className="font-mono text-sm text-zinc-700">
+                            <p className="font-mono text-sm text-zinc-900 font-medium">
                                 Target Top-Quartile SaaS Baseline: &lt; 8% of COGS attributed to unoptimized inference.
                             </p>
                         </div>

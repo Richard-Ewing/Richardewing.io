@@ -52,9 +52,9 @@ export default function FrameworksPage() {
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-                <div className="bg-zinc-950 p-8 md:p-12 rounded-2xl text-white mb-20 border border-zinc-800">
-                    <h2 className="text-2xl font-bold font-grotesk mb-4 text-cyan-400">Implement The Frameworks</h2>
-                    <p className="text-zinc-300 max-w-2xl mb-8 leading-relaxed">
+                <div className="bg-white border border-zinc-200 p-8 md:p-12 rounded-2xl text-zinc-950 font-semibold mb-20 border border-zinc-200">
+                    <h2 className="text-2xl font-bold font-grotesk mb-4 text-cyan-900">Implement The Frameworks</h2>
+                    <p className="text-zinc-800 max-w-2xl mb-8 leading-relaxed">
                         These frameworks are the theoretical foundation. To operationalize them within your own enterprise architecture, access our suite of diagnostic tools.
                     </p>
                     <Link 

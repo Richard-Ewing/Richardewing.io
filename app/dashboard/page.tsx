@@ -49,7 +49,7 @@ export default function ExecutiveDashboard() {
                             <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
                                 <LayoutDashboard className="w-5 h-5 text-cyan-700" />
                             </div>
-                            <span className="text-sm font-mono text-zinc-500 uppercase tracking-widest font-bold">Enterprise Operating Console</span>
+                            <span className="text-sm font-mono text-zinc-800 uppercase tracking-widest font-bold">Enterprise Operating Console</span>
                         </div>
                         <h1 className="text-4xl font-grotesk font-bold text-zinc-900">Governance Command Center</h1>
                     </div>
@@ -58,7 +58,7 @@ export default function ExecutiveDashboard() {
                             <button className="px-4 py-2 bg-white border border-zinc-300 rounded-lg text-sm font-bold text-zinc-700 hover:bg-zinc-50 flex items-center gap-2">
                                 <Settings className="w-4 h-4" /> Preferences
                             </button>
-                            <Link href="/tools" className="px-4 py-2 bg-zinc-900 text-white rounded-lg text-sm font-bold hover:bg-zinc-800 flex items-center gap-2">
+                            <Link href="/tools" className="px-4 py-2 bg-zinc-50 border border-zinc-200 text-zinc-950 font-semibold rounded-lg text-sm font-bold hover:bg-zinc-800 flex items-center gap-2">
                                 <Activity className="w-4 h-4" /> New Assessment
                             </Link>
                         </div>
@@ -67,12 +67,12 @@ export default function ExecutiveDashboard() {
 
                 {!hasData ? (
                     <div className="text-center py-20 bg-white rounded-2xl border border-zinc-200 shadow-sm">
-                        <Activity className="w-12 h-12 text-zinc-300 mx-auto mb-4" />
+                        <Activity className="w-12 h-12 text-zinc-800 mx-auto mb-4" />
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-900 mb-2">No Diagnostic Intelligence Found</h2>
-                        <p className="text-zinc-500 mb-8 max-w-md mx-auto">
+                        <p className="text-zinc-800 mb-8 max-w-md mx-auto">
                             Complete your first governance assessment to establish a baseline and generate your enterprise command center.
                         </p>
-                        <Link href="/start-here" className="inline-flex px-6 py-3 bg-cyan-600 text-white font-bold rounded-lg hover:bg-cyan-700 transition-colors">
+                        <Link href="/start-here" className="inline-flex px-6 py-3 bg-cyan-600 text-zinc-950 font-semibold font-bold rounded-lg hover:bg-cyan-700 transition-colors">
                             Initialize Governance Baseline
                         </Link>
                     </div>

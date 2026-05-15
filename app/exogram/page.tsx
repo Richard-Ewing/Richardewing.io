@@ -61,7 +61,7 @@ export default function ExogramPage() {
                 {/* Ecosystem Presence */}
                 <section className="py-10 border-b border-zinc-200 bg-white">
                     <div className="max-w-4xl mx-auto text-center px-4">
-                        <p className="text-[11px] font-bold font-mono text-zinc-400 uppercase tracking-[0.2em] mb-6">Ecosystem Presence</p>
+                        <p className="text-[11px] font-bold font-mono text-zinc-900 font-medium uppercase tracking-[0.2em] mb-6">Ecosystem Presence</p>
                         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-700">
                             <a href="https://www.producthunt.com/products/exogram-ai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-exogram-ai" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity block">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -71,7 +71,7 @@ export default function ExogramPage() {
                                 <div className="flex items-center gap-3 px-5 py-2.5 rounded-lg border border-zinc-300 bg-zinc-50 hover:bg-zinc-100 transition-colors h-[48px]">
                                     <span className="text-xl opacity-80">🤖</span>
                                     <div className="text-left flex flex-col justify-center">
-                                        <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest leading-none mb-1">Featured On</span>
+                                        <span className="text-[9px] font-bold text-zinc-800 uppercase tracking-widest leading-none mb-1">Featured On</span>
                                         <span className="text-sm font-bold text-zinc-900 leading-none">There&apos;s An AI For That</span>
                                     </div>
                                 </div>
@@ -109,11 +109,11 @@ export default function ExogramPage() {
                 </section>
 
                 {/* Exogram Simulation Layer */}
-                <section className="section bg-zinc-950 py-16 relative overflow-hidden border-y border-zinc-800">
+                <section className="section bg-white border border-zinc-200 py-16 relative overflow-hidden border-y border-zinc-200">
                     <div className="max-w-5xl mx-auto px-4 md:px-0">
                         <div className="text-center mb-10">
-                            <h2 className="text-2xl font-bold text-white mb-2">Admissibility in Action</h2>
-                            <p className="text-zinc-400 font-medium">Intercepting probabilistic execution before it reaches production environments.</p>
+                            <h2 className="text-2xl font-bold text-zinc-950 font-semibold mb-2">Admissibility in Action</h2>
+                            <p className="text-zinc-900 font-medium font-medium">Intercepting probabilistic execution before it reaches production environments.</p>
                         </div>
                         <InteractiveExogramSim />
                     </div>
@@ -169,14 +169,14 @@ export default function ExogramPage() {
                                 </p>
                             </div>
 
-                            <div className="bg-zinc-950 text-zinc-100 p-8 rounded-2xl shadow-xl my-10 relative overflow-hidden">
+                            <div className="bg-white border border-zinc-200 text-zinc-900 font-medium p-8 rounded-2xl shadow-xl my-10 relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/20 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3"></div>
-                                <h3 className="text-xl font-bold text-white mb-4">These systems were no longer confined to chat interfaces.</h3>
-                                <p className="text-zinc-300 mb-6 leading-relaxed">Now they were modifying production code, executing workflows, invoking APIs, interacting with enterprise systems, touching databases, and performing autonomous operations. And yet almost the entire ecosystem was still operating without meaningful runtime governance.</p>
+                                <h3 className="text-xl font-bold text-zinc-950 font-semibold mb-4">These systems were no longer confined to chat interfaces.</h3>
+                                <p className="text-zinc-800 mb-6 leading-relaxed">Now they were modifying production code, executing workflows, invoking APIs, interacting with enterprise systems, touching databases, and performing autonomous operations. And yet almost the entire ecosystem was still operating without meaningful runtime governance.</p>
                                 
-                                <p className="text-zinc-300 mb-6 leading-relaxed">The dominant industry answer became &quot;guardrails.&quot; But the more I studied the problem, the more obvious it became that most so-called guardrails were still fundamentally probabilistic systems supervising other probabilistic systems.</p>
+                                <p className="text-zinc-800 mb-6 leading-relaxed">The dominant industry answer became &quot;guardrails.&quot; But the more I studied the problem, the more obvious it became that most so-called guardrails were still fundamentally probabilistic systems supervising other probabilistic systems.</p>
                                 
-                                <p className="text-xl text-cyan-400 font-bold border-l-2 border-cyan-400 pl-4 py-1 tracking-tight">
+                                <p className="text-xl text-cyan-900 font-bold border-l-2 border-cyan-400 pl-4 py-1 tracking-tight">
                                     That is not deterministic governance.<br/>That is stacked uncertainty.
                                 </p>
                             </div>

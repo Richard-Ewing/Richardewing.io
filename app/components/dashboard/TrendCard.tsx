@@ -21,12 +21,12 @@ export function TrendCard({ title, metric, delta, isHigherBetter = true, descrip
 
     const trendColor = isFavorable ? 'text-emerald-600' : 'text-red-600';
     const trendBg = isFavorable ? 'bg-emerald-50 border-emerald-100' : 'bg-red-50 border-red-100';
-    const neutralBg = 'bg-zinc-50 border-zinc-200 text-zinc-500';
+    const neutralBg = 'bg-zinc-50 border-zinc-200 text-zinc-800';
 
     return (
         <div className="p-5 rounded-xl border border-zinc-200 bg-white h-full flex flex-col justify-between">
             <div>
-                <h3 className="text-sm font-mono font-bold uppercase tracking-widest text-zinc-500 mb-1">{title}</h3>
+                <h3 className="text-sm font-mono font-bold uppercase tracking-widest text-zinc-800 mb-1">{title}</h3>
                 <div className="flex items-end gap-3 mb-3">
                     <span className="text-3xl font-grotesk font-bold text-zinc-900">{metric}</span>
                     
@@ -36,7 +36,7 @@ export function TrendCard({ title, metric, delta, isHigherBetter = true, descrip
                     </div>
                 </div>
             </div>
-            <p className="text-xs text-zinc-500 font-medium">
+            <p className="text-xs text-zinc-900 font-bold font-medium">
                 {description}
             </p>
         </div>

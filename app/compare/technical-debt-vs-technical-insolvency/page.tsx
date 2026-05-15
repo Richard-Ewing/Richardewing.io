@@ -42,7 +42,7 @@ export default function TechDebtVsInsolvencyPage() {
                     <div className="rounded-2xl border border-red-500/30 bg-red-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-950 mb-6"><strong>Technical debt is abstract; Technical Insolvency is a calendar date.</strong> If your team spends 45% of its time on maintenance, and that grows by 3% each quarter, you will hit 100% in 18 quarters. That specific date is your <Link href="/glossary/technical-insolvency-date" className="text-red-600 font-bold hover:underline">Technical Insolvency Date (TID)</Link>. Presenting a concrete date to your Board is the only way to secure the budget needed to refactor legacy code.</p>
-                        <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-red-600 to-rose-600 text-white font-semibold font-bold hover:opacity-90 transition-opacity uppercase tracking-widest text-sm">Calculate Your Insolvency Date →</Link>
+                        <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-red-600 to-rose-600 text-zinc-950 font-semibold font-semibold font-bold hover:opacity-90 transition-opacity uppercase tracking-widest text-sm">Calculate Your Insolvency Date →</Link>
                     </div>
                 </div>
             </div>

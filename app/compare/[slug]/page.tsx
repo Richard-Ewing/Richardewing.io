@@ -84,7 +84,7 @@ export default async function PseoComparePage({ params }: { params: Promise<{ sl
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                        <div className="rounded-2xl border border-zinc-800 bg-white/[0.01] p-8">
+                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.01] p-8">
                             <h2 className="text-xl font-bold font-grotesk text-rose-400 mb-4 uppercase tracking-widest">{item.toolB} Focus</h2>
                             <p className="text-zinc-950 font-bold leading-relaxed">{item.theirFocus}</p>
                         </div>

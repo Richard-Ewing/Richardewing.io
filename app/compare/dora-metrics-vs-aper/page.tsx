@@ -42,7 +42,7 @@ export default function DoraVsAperPage() {
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-950 mb-6"><strong>DORA Metrics measure output. APER measures outcomes.</strong> When an engineering team achieves "Elite" DORA status but the company\'s valuation remains flat, there is a disconnect between operational velocity and economic yield. To bridge the gap, engineering leaders must learn to translate DORA improvements directly into APER financial gains.</p>
-                        <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold font-bold hover:opacity-90 transition-opacity uppercase tracking-widest text-sm">Calculate Your APER Score →</Link>
+                        <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 text-zinc-950 font-semibold font-semibold font-bold hover:opacity-90 transition-opacity uppercase tracking-widest text-sm">Calculate Your APER Score →</Link>
                     </div>
                 </div>
             </div>

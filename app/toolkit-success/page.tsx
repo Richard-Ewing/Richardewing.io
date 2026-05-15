@@ -43,11 +43,11 @@ export default function ToolkitSuccessPage() {
                         <a 
                             href="/Executive_Diagnostic_Toolkit_v2.zip" 
                             download="Executive_Diagnostic_Toolkit_v2.zip"
-                            className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-violet-600 text-white font-bold text-lg hover:bg-violet-700 transition-all font-grotesk"
+                            className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-violet-600 text-zinc-950 font-semibold font-bold text-lg hover:bg-violet-700 transition-all font-grotesk"
                         >
                             <Download className="w-6 h-6" /> Download Toolkit (.zip)
                         </a>
-                        <p className="text-center text-sm text-zinc-400 mt-4 font-mono uppercase tracking-widest font-bold">
+                        <p className="text-center text-sm text-zinc-900 font-medium mt-4 font-mono uppercase tracking-widest font-bold">
                             File Size: 4.2 MB
                         </p>
                     </div>

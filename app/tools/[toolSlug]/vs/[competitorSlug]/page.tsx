@@ -107,7 +107,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                      </div>
                      <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-6 leading-tight">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">{tool.toolName}</span> <br/>
-                        <span className="text-zinc-950 font-bold text-3xl sm:text-5xl border-t border-b border-zinc-800 py-2 inline-block my-4 w-32 lowercase font-serif italic">vs</span><br/>
+                        <span className="text-zinc-950 font-bold text-3xl sm:text-5xl border-t border-b border-zinc-200 py-2 inline-block my-4 w-32 lowercase font-serif italic">vs</span><br/>
                         {competitor.name}
                      </h1>
                      <p className="text-xl text-zinc-950 font-bold max-w-3xl mx-auto leading-relaxed">
@@ -207,7 +207,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
 
                 <div className="text-center max-w-2xl mx-auto">
                     <h3 className="text-2xl font-bold mb-6">Stop playing with calculators. Calculate your liability.</h3>
-                    <ShineBorder className="w-full sm:w-auto p-1 rounded-2xl bg-zinc-950/20" borderColor="rgba(6,182,212, 0.4)" duration={3}>
+                    <ShineBorder className="w-full sm:w-auto p-1 rounded-2xl bg-white border border-zinc-200/20" borderColor="rgba(6,182,212, 0.4)" duration={3}>
                         <Link 
                             href={`/tools/${tool.toolSlug}`}
                             className="w-full sm:w-auto px-10 py-5 bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 rounded-xl shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_40px_rgba(6,182,212,0.6)]"

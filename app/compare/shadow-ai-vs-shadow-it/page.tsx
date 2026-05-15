@@ -40,9 +40,9 @@ export default function ShadowAIvsShadowITPage() {
                             <tbody>{rows.map((row, i) => (<tr key={i} className="border-b border-zinc-400 hover:bg-zinc-50"><td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium font-bold">{row.dimension}</td><td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium">{row.ai}</td><td className="py-4 px-4 text-sm font-semibold text-zinc-900 font-medium">{row.it}</td></tr>))}</tbody>
                         </table>
                     </div>
-                    <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-8 mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">The Verdict</h2>
-                        <p className="text-zinc-300 mb-6"><strong>Shadow IT is an operational inefficiency. Shadow AI is an existential threat.</strong> When an employee uses an unapproved project management tool, you lose $15 a month. When an employee pastes a confidential merger agreement into ChatGPT to summarize it, you have irrevocably breached NDA and forfeited your intellectual property into a public training dataset.</p>
+                    <div className="rounded-2xl border border-zinc-200 bg-white border border-zinc-200 p-8 mb-16">
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 font-semibold mb-4">The Verdict</h2>
+                        <p className="text-zinc-800 mb-6"><strong>Shadow IT is an operational inefficiency. Shadow AI is an existential threat.</strong> When an employee uses an unapproved project management tool, you lose $15 a month. When an employee pastes a confidential merger agreement into ChatGPT to summarize it, you have irrevocably breached NDA and forfeited your intellectual property into a public training dataset.</p>
                         <Link href="/glossary/shadow-ai" className="inline-block px-8 py-4 rounded-lg bg-white text-black font-semibold font-bold hover:bg-zinc-200 transition-colors uppercase tracking-widest text-sm">Read the Shadow AI Definition →</Link>
                     </div>
                 </div>

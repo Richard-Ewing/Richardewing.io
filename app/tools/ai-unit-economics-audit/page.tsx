@@ -60,7 +60,7 @@ export default function AIUnitEconomicsAuditPage() {
                                 <TrendingDown size={20} />
                             </div>
                             <h3 className="text-lg font-bold text-zinc-950 mb-2">Technical Insolvency</h3>
-                            <p className="text-sm text-zinc-900 leading-relaxed">
+                            <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                 Pinpoint the exact day in the billing cycle where the cost of a user's API compute exceeds their monthly subscription value.
                             </p>
                         </div>
@@ -69,7 +69,7 @@ export default function AIUnitEconomicsAuditPage() {
                                 <Calculator size={20} />
                             </div>
                             <h3 className="text-lg font-bold text-zinc-950 mb-2">Token Liability</h3>
-                            <p className="text-sm text-zinc-900 leading-relaxed">
+                            <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                 Calculate the true cost per query, factoring in input tokens, output tokens, and hidden vector database retrieval costs.
                             </p>
                         </div>
@@ -78,7 +78,7 @@ export default function AIUnitEconomicsAuditPage() {
                                 <DollarSign size={20} />
                             </div>
                             <h3 className="text-lg font-bold text-zinc-950 mb-2">Break-Even Velocity</h3>
-                            <p className="text-sm text-zinc-900 leading-relaxed">
+                            <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                 Determine the maximum number of actions a power user can take before they force your unit economics upside down.
                             </p>
                         </div>
@@ -100,7 +100,7 @@ export default function AIUnitEconomicsAuditPage() {
                             <ShineBorder className="w-full sm:w-auto p-1 rounded-xl bg-white" borderColor="#ef4444" duration={3}>
                                 <a 
                                     href="/downloads/ai-unit-economics-audit.xlsx" 
-                                    className="flex items-center justify-center gap-3 px-8 py-4 bg-zinc-950 hover:bg-zinc-800 text-white font-black uppercase tracking-widest rounded-lg transition-all"
+                                    className="flex items-center justify-center gap-3 px-8 py-4 bg-white border border-zinc-200 hover:bg-zinc-800 text-zinc-950 font-semibold font-black uppercase tracking-widest rounded-lg transition-all"
                                 >
                                     <Download size={18} />
                                     Download Audit Matrix
@@ -108,7 +108,7 @@ export default function AIUnitEconomicsAuditPage() {
                             </ShineBorder>
                         </div>
                         
-                        <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mt-6 relative z-10">
+                        <p className="text-xs text-zinc-900 font-bold font-mono uppercase tracking-widest mt-6 relative z-10">
                             Secure Excel File (.xlsx) • No Macros • Board-Ready
                         </p>
                     </div>
@@ -117,7 +117,7 @@ export default function AIUnitEconomicsAuditPage() {
                 <ScrollReveal delay={150}>
                     <div className="mt-20 border-t border-zinc-400 pt-12 text-center">
                         <h3 className="text-lg font-bold text-zinc-950 mb-4">Need help fixing the gaps it uncovers?</h3>
-                        <p className="text-sm text-zinc-900 mb-6">Read the full system breakdown on how to restructure your architecture for profitability.</p>
+                        <p className="text-sm text-zinc-900 font-medium mb-6">Read the full system breakdown on how to restructure your architecture for profitability.</p>
                         <a 
                             href="https://newsletter.richardewing.io/p/technical-insolvency-date" 
                             target="_blank" 

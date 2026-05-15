@@ -50,7 +50,7 @@ export function DiagnosticProgression({ currentTool, score }: DiagnosticProgress
                                         </span>
                                     )}
                                 </div>
-                                <p className="text-sm text-zinc-600 leading-relaxed">
+                                <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                     {rec.description}
                                 </p>
                             </div>

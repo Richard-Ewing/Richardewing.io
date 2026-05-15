@@ -40,7 +40,7 @@ export default function ToolPayGate({ toolName, hasAccess = false, children }: T
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-left">
                             {/* Diagnostic Tools Unlock */}
                             <div className="border-2 border-cyan-500 bg-cyan-50 rounded-xl p-5 relative transition-transform hover:-translate-y-1">
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-cyan-600 text-white font-medium text-[10px] uppercase tracking-widest rounded-full whitespace-nowrap">
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-cyan-600 text-zinc-950 font-semibold font-medium text-[10px] uppercase tracking-widest rounded-full whitespace-nowrap">
                                     Instant Access
                                 </div>
                                 <div className="text-3xl font-bold text-zinc-900 mb-1">$199</div>
@@ -66,7 +66,7 @@ export default function ToolPayGate({ toolName, hasAccess = false, children }: T
                             </div>
                         </div>
 
-                        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest">
+                        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 text-xs font-mono font-medium text-zinc-800 uppercase tracking-widest">
                             <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3 text-emerald-500" /> Secure Checkout</span>
                             <span className="flex items-center gap-1"><Zap className="w-3 h-3" /> Instant PDF Generation</span>
                         </div>

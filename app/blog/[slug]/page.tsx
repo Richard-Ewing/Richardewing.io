@@ -84,9 +84,9 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                     prose-li:text-zinc-950 font-bold
                     prose-table:text-sm
                     prose-th:text-zinc-950 font-bold prose-th:border-zinc-700 prose-th:px-4 prose-th:py-2
-                    prose-td:text-zinc-950 font-bold prose-td:border-zinc-800 prose-td:px-4 prose-td:py-2
+                    prose-td:text-zinc-950 font-bold prose-td:border-zinc-200 prose-td:px-4 prose-td:py-2
                     prose-code:text-violet-400 prose-code:bg-violet-500/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-                    prose-hr:border-zinc-800
+                    prose-hr:border-zinc-200
                 ">
                     <div dangerouslySetInnerHTML={{ __html: article.content }} />
                 </article>

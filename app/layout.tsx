@@ -192,7 +192,7 @@ export default function RootLayout({
                 headerTitle: 'font-sans font-bold text-zinc-900 text-2xl',
                 headerSubtitle: 'font-sans text-zinc-600',
                 dividerLine: 'bg-zinc-200',
-                dividerText: 'text-zinc-500 font-mono text-xs uppercase tracking-widest'
+                dividerText: 'text-zinc-800 font-mono text-xs uppercase tracking-widest'
               }
             }}
           >

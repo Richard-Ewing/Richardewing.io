@@ -20,7 +20,7 @@ export function LeadMagnetCTA({ variant = 'full' }: LeadMagnetCTAProps) {
                 <form action={beehiivUrl} method="GET" target="_blank" className="flex items-center gap-2 w-full sm:w-auto">
                     <button
                         type="submit"
-                        className="w-full sm:w-auto px-5 py-2 rounded-lg bg-zinc-950 text-white font-semibold text-sm hover:bg-zinc-800 transition-colors font-grotesk flex items-center justify-center gap-2 whitespace-nowrap"
+                        className="w-full sm:w-auto px-5 py-2 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-semibold font-semibold text-sm hover:bg-zinc-800 transition-colors font-grotesk flex items-center justify-center gap-2 whitespace-nowrap"
                     >
                         <Download className="w-4 h-4" /> Download Free
                     </button>
@@ -70,7 +70,7 @@ export function LeadMagnetCTA({ variant = 'full' }: LeadMagnetCTAProps) {
                 <div className="w-full md:w-96 flex-shrink-0 bg-white border border-zinc-200 rounded-xl p-6 sm:p-8 shadow-sm relative">
                     <div className="text-center mb-6">
                         <div className="text-zinc-950 font-bold text-xl mb-2 font-grotesk">Where should we send it?</div>
-                        <p className="text-sm text-zinc-500 font-medium">Join 2,000+ executives receiving <strong>The AI Economist</strong> — AI Economics applied to AI.</p>
+                        <p className="text-sm text-zinc-900 font-medium font-medium">Join 2,000+ executives receiving <strong>The AI Economist</strong> — AI Economics applied to AI.</p>
                     </div>
 
                     <form action={beehiivUrl} method="GET" target="_blank" className="space-y-4">
@@ -80,17 +80,17 @@ export function LeadMagnetCTA({ variant = 'full' }: LeadMagnetCTAProps) {
                                 name="email" 
                                 placeholder="name@company.com" 
                                 required
-                                className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all font-medium text-zinc-900 placeholder:text-zinc-400"
+                                className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all font-medium text-zinc-900 placeholder:text-zinc-900 font-medium"
                             />
                         </div>
                         <button 
                             type="submit"
-                            className="w-full py-3.5 rounded-lg bg-zinc-950 text-white font-bold hover:bg-violet-600 hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group font-grotesk text-lg"
+                            className="w-full py-3.5 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-semibold font-bold hover:bg-violet-600 hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group font-grotesk text-lg"
                         >
                             <Download className="w-5 h-5" />
                             Download Toolkit
                         </button>
-                        <p className="text-center text-xs text-zinc-400 font-medium mt-4">
+                        <p className="text-center text-xs text-zinc-900 font-bold font-medium mt-4">
                             100% free. Unsubscribe anytime.
                         </p>
                     </form>

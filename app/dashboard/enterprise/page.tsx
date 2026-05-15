@@ -29,18 +29,18 @@ export default function EnterpriseDashboard() {
                             <span className="p-2 bg-purple-100 text-purple-700 rounded-lg">
                                 <Building className="w-5 h-5" />
                             </span>
-                            <span className="text-sm font-bold font-mono uppercase tracking-widest text-zinc-500">Enterprise Observability</span>
+                            <span className="text-sm font-bold font-mono uppercase tracking-widest text-zinc-800">Enterprise Observability</span>
                         </div>
                         <h1 className="text-4xl font-grotesk font-bold text-zinc-900">{orgData.name}</h1>
                         <p className="text-zinc-600 mt-2 font-medium">Cross-departmental governance and hallucination debt tracking.</p>
                     </div>
                     <div className="flex gap-4">
                         <div className="text-right">
-                            <p className="text-xs font-bold font-mono uppercase tracking-widest text-zinc-500 mb-1">Org Avg PDI</p>
+                            <p className="text-xs font-bold font-mono uppercase tracking-widest text-zinc-800 mb-1">Org Avg PDI</p>
                             <p className="text-3xl font-grotesk font-bold text-zinc-900">{orgData.overallPdi}</p>
                         </div>
                         <div className="text-right">
-                            <p className="text-xs font-bold font-mono uppercase tracking-widest text-zinc-500 mb-1">Org Avg AUEB</p>
+                            <p className="text-xs font-bold font-mono uppercase tracking-widest text-zinc-800 mb-1">Org Avg AUEB</p>
                             <p className="text-3xl font-grotesk font-bold text-zinc-900">{orgData.overallAueb}%</p>
                         </div>
                     </div>
@@ -67,11 +67,11 @@ export default function EnterpriseDashboard() {
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="border-b border-zinc-200 bg-zinc-50/50">
-                                    <th className="p-4 text-xs font-bold font-mono uppercase tracking-widest text-zinc-500">Department</th>
-                                    <th className="p-4 text-xs font-bold font-mono uppercase tracking-widest text-zinc-500">Product Debt (PDI)</th>
-                                    <th className="p-4 text-xs font-bold font-mono uppercase tracking-widest text-zinc-500">Gross Margin (AUEB)</th>
-                                    <th className="p-4 text-xs font-bold font-mono uppercase tracking-widest text-zinc-500">90-Day Trend</th>
-                                    <th className="p-4 text-xs font-bold font-mono uppercase tracking-widest text-zinc-500">Posture</th>
+                                    <th className="p-4 text-xs font-bold font-mono uppercase tracking-widest text-zinc-800">Department</th>
+                                    <th className="p-4 text-xs font-bold font-mono uppercase tracking-widest text-zinc-800">Product Debt (PDI)</th>
+                                    <th className="p-4 text-xs font-bold font-mono uppercase tracking-widest text-zinc-800">Gross Margin (AUEB)</th>
+                                    <th className="p-4 text-xs font-bold font-mono uppercase tracking-widest text-zinc-800">90-Day Trend</th>
+                                    <th className="p-4 text-xs font-bold font-mono uppercase tracking-widest text-zinc-800">Posture</th>
                                 </tr>
                             </thead>
                             <tbody>

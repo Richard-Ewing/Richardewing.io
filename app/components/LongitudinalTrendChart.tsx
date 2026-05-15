@@ -15,7 +15,7 @@ export function LongitudinalTrendChart({ history, title, description, isHigherBe
     if (!history || history.length < 2) {
         return (
             <div className="w-full h-48 border border-zinc-200 border-dashed rounded-xl flex items-center justify-center bg-zinc-50">
-                <p className="text-zinc-500 font-medium text-sm text-center px-4">
+                <p className="text-zinc-800 font-medium text-sm text-center px-4">
                     Not enough historical data to generate trend intelligence. <br/> Complete another assessment to establish a baseline.
                 </p>
             </div>
@@ -32,7 +32,7 @@ export function LongitudinalTrendChart({ history, title, description, isHigherBe
         <div className="w-full p-6 border border-zinc-300 rounded-xl bg-white shadow-sm">
             <div className="mb-6">
                 <h3 className="text-lg font-grotesk font-bold text-zinc-900">{title}</h3>
-                {description && <p className="text-sm text-zinc-500 mt-1">{description}</p>}
+                {description && <p className="text-sm text-zinc-900 font-medium mt-1">{description}</p>}
             </div>
             
             <div className="h-64 w-full">

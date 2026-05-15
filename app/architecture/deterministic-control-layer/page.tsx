@@ -60,7 +60,7 @@ export default function DeterministicControlLayerPage() {
                                 <Route size={20} />
                             </div>
                             <h3 className="text-lg font-bold text-zinc-950 mb-2">The Triage Gate</h3>
-                            <p className="text-sm text-zinc-900 leading-relaxed">
+                            <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                 Never send user prompts directly to an LLM. Route requests through a cheap NLP classifier first. Keep 80% of traffic off expensive generative compute.
                             </p>
                         </div>
@@ -69,7 +69,7 @@ export default function DeterministicControlLayerPage() {
                                 <ShieldCheck size={20} />
                             </div>
                             <h3 className="text-lg font-bold text-zinc-950 mb-2">The Guardrail Layer</h3>
-                            <p className="text-sm text-zinc-900 leading-relaxed">
+                            <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                 Define the absolute boundaries of your system using standard code, not prompts. Prevent hallucinations before generation even begins.
                             </p>
                         </div>
@@ -78,7 +78,7 @@ export default function DeterministicControlLayerPage() {
                                 <FileCode2 size={20} />
                             </div>
                             <h3 className="text-lg font-bold text-zinc-950 mb-2">Narrow Generation</h3>
-                            <p className="text-sm text-zinc-900 leading-relaxed">
+                            <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                 Only activate the expensive LLM for specific extraction or reasoning tasks. Pass strictly limited context windows to cap your Synthetic COGS.
                             </p>
                         </div>
@@ -100,7 +100,7 @@ export default function DeterministicControlLayerPage() {
                             <ShineBorder className="w-full sm:w-auto p-1 rounded-xl bg-white" borderColor="#10b981" duration={3}>
                                 <a 
                                     href="/downloads/deterministic-control-layer-board.pdf" 
-                                    className="flex items-center justify-center gap-3 px-8 py-4 bg-zinc-950 hover:bg-zinc-800 text-white font-black uppercase tracking-widest rounded-lg transition-all"
+                                    className="flex items-center justify-center gap-3 px-8 py-4 bg-white border border-zinc-200 hover:bg-zinc-800 text-zinc-950 font-semibold font-black uppercase tracking-widest rounded-lg transition-all"
                                 >
                                     <Download size={18} />
                                     Download Miro Board
@@ -108,7 +108,7 @@ export default function DeterministicControlLayerPage() {
                             </ShineBorder>
                         </div>
                         
-                        <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mt-6 relative z-10">
+                        <p className="text-xs text-zinc-900 font-bold font-mono uppercase tracking-widest mt-6 relative z-10">
                             High-Res PDF Export • Engineering-Ready
                         </p>
                     </div>
@@ -117,7 +117,7 @@ export default function DeterministicControlLayerPage() {
                 <ScrollReveal delay={150}>
                     <div className="mt-20 border-t border-zinc-400 pt-12 text-center">
                         <h3 className="text-lg font-bold text-zinc-950 mb-4">Want the full deployment guide?</h3>
-                        <p className="text-sm text-zinc-900 mb-6">Read the complete breakdown on how to calculate and cap your Synthetic COGS.</p>
+                        <p className="text-sm text-zinc-900 font-medium mb-6">Read the complete breakdown on how to calculate and cap your Synthetic COGS.</p>
                         <a 
                             href="https://newsletter.richardewing.io/p/capping-synthetic-cogs" 
                             target="_blank" 

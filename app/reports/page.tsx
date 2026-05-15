@@ -75,7 +75,7 @@ export default function ReportsPage() {
                             
                             <div className="flex-1">
                                 <div className="flex items-center gap-3 mb-2">
-                                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-500">{report.date}</span>
+                                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-800">{report.date}</span>
                                     {report.isGated && (
                                         <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded">
                                             <Lock className="w-3 h-3" /> Client Only
@@ -90,8 +90,8 @@ export default function ReportsPage() {
                                 <button 
                                     className={`w-full md:w-auto px-6 py-3 rounded-lg font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2 transition-colors ${
                                         report.isGated 
-                                        ? 'bg-zinc-100 text-zinc-400 cursor-not-allowed border border-zinc-200' 
-                                        : 'bg-zinc-900 text-white hover:bg-zinc-800'
+                                        ? 'bg-zinc-100 text-zinc-900 font-medium cursor-not-allowed border border-zinc-200' 
+                                        : 'bg-zinc-50 border border-zinc-200 text-zinc-950 font-semibold hover:bg-zinc-800'
                                     }`}
                                     disabled={report.isGated}
                                 >

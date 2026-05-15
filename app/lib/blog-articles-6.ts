@@ -267,7 +267,7 @@ If the feature is just a thin, programmatic wrapper around the OpenAI or Anthrop
 <p>Finally, utilize <strong>Asynchronous Inference</strong>. Many AI-driven tasks do not need to be instantaneous. If a user asks for a complex report, do not force them to wait in a synchronous HTTP connection while an LLM hallucinates for thirty seconds. Queue the request, run the inference in a background worker, and notify the user when the result is ready. This allows you to manage compute spikes, utilize cheaper, burstable infrastructure, and provide a more stable experience while simultaneously protecting your gross margins.</p>
 <p>The transition from "AI-Enabled" to "AI-Profitable" is the defining challenge for this generation of software leaders. It requires moving past the excitement of the technology itself and embracing the rigid, often unglamorous disciplines of financial engineering, architectural governance, and system-wide unit economic awareness. The companies that succeed will not just build the best features; they will build the most robust economic engines.</p>
 
-<hr className="my-12 border-zinc-200 dark:border-zinc-800" />
+<hr className="my-12 border-zinc-200 dark:border-zinc-200" />
 
 <h3>Next Steps for Engineering Leaders</h3>
 <p>If you are currently evaluating your AI infrastructure or preparing for a board-level review of your R&D margins, you must move from theory to deterministic execution. Here is how you can operationalize these frameworks today:</p>

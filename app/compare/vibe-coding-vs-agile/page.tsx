@@ -43,7 +43,7 @@ export default function VibeCodingVsAgilePage() {
                     <div className="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-950 mb-6"><strong>Vibe Coding is a prototyping tool, not a production methodology.</strong> When teams mistake AI-generated functional prototypes for production-ready code, they bypass Agile's structural guardrails. The result is <Link href="/blog/what-is-vibe-coding" className="text-rose-500 font-bold hover:underline">Vibe Coding Debt</Link>—a liability that will eventually bankrupt the team's engineering capacity.</p>
-                        <Link href="/tools/innovation-tax-calculator" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-orange-500 text-white font-semibold font-bold hover:opacity-90 transition-opacity uppercase tracking-widest text-sm">Calculate Your Vibe Coding Debt →</Link>
+                        <Link href="/tools/innovation-tax-calculator" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-orange-500 text-zinc-950 font-semibold font-semibold font-bold hover:opacity-90 transition-opacity uppercase tracking-widest text-sm">Calculate Your Vibe Coding Debt →</Link>
                     </div>
                 </div>
             </div>

@@ -36,20 +36,20 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Shift to Multi-Agent Orchestration</h3>
                         <p>To scale agentic automation, Platform Engineers must transition from monolithic agents to <strong>Multi-Agent Orchestration</strong>. Instead of one massive model doing everything, you deploy a swarm of specialized, heavily constrained micro-agents coordinated by a deterministic router.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm">🤖</span> Agentic Architecture Patterns
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
                                     <div class="text-[10px] font-mono text-red-400 uppercase tracking-widest mb-1">Legacy: The God Agent</div>
-                                    <div class="text-white text-lg font-bold mb-1">Single ReAct Loop</div>
-                                    <div class="text-xs text-zinc-400">High latency, brittle reasoning, high token cost.</div>
+                                    <div class="text-zinc-950 font-semibold text-lg font-bold mb-1">Single ReAct Loop</div>
+                                    <div class="text-xs text-zinc-900 font-bold">High latency, brittle reasoning, high token cost.</div>
                                 </div>
                                 <div class="bg-blue-500/10 p-4 rounded-xl border border-blue-500/30">
                                     <div class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-1">Modern: Supervisor Pattern</div>
-                                    <div class="text-white text-lg font-bold mb-1">Graph-Based Routing</div>
-                                    <div class="text-xs text-zinc-400">A fast, cheap router (Haiku) delegates tasks to specialized workers (Opus).</div>
+                                    <div class="text-zinc-950 font-semibold text-lg font-bold mb-1">Graph-Based Routing</div>
+                                    <div class="text-xs text-zinc-900 font-bold">A fast, cheap router (Haiku) delegates tasks to specialized workers (Opus).</div>
                                 </div>
                             </div>
                         </div>
@@ -69,22 +69,22 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Universal Standard for Tool Use</h3>
                         <p>The <strong>Model Context Protocol (MCP)</strong> is an open-source standard created by Anthropic that standardizes how AI models consume data and execute tools. It acts as a universal plug-and-play adapter. Instead of teaching an agent how to talk to 50 different APIs, you simply point the agent to an MCP Server. The server handles all the underlying complexity, authentication, and schema formatting.</p>
 
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">🔌</span> The MCP Advantage
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-white text-lg font-bold mb-1">Zero Integration Code</div>
-                                    <div class="text-xs text-zinc-400">Agents instantly understand standard MCP tool schemas.</div>
+                                    <div class="text-zinc-950 font-semibold text-lg font-bold mb-1">Zero Integration Code</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Agents instantly understand standard MCP tool schemas.</div>
                                 </div>
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-white text-lg font-bold mb-1">Local & Remote</div>
-                                    <div class="text-xs text-zinc-400">Works seamlessly across local dev environments and cloud VPCs.</div>
+                                    <div class="text-zinc-950 font-semibold text-lg font-bold mb-1">Local & Remote</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Works seamlessly across local dev environments and cloud VPCs.</div>
                                 </div>
                                 <div class="bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/30">
-                                    <div class="text-white text-lg font-bold mb-1">Model Agnostic</div>
-                                    <div class="text-xs text-zinc-400">Switch from Claude to GPT-4 without rewriting tool definitions.</div>
+                                    <div class="text-zinc-950 font-semibold text-lg font-bold mb-1">Model Agnostic</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Switch from Claude to GPT-4 without rewriting tool definitions.</div>
                                 </div>
                             </div>
                         </div>
@@ -111,12 +111,12 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
                                     <div class="text-xs font-mono font-bold text-red-500 uppercase tracking-widest mb-2">Coupling Factor</div>
                                     <div class="text-2xl font-bold text-zinc-900 mb-1">N² Connections</div>
-                                    <div class="text-sm font-medium text-zinc-500">Exponential risk scaling with every new internal library added.</div>
+                                    <div class="text-sm font-medium text-zinc-800">Exponential risk scaling with every new internal library added.</div>
                                 </div>
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
                                     <div class="text-xs font-mono font-bold text-emerald-500 uppercase tracking-widest mb-2">Resolution</div>
                                     <div class="text-2xl font-bold text-zinc-900 mb-1">API Gateways</div>
-                                    <div class="text-sm font-medium text-zinc-500">Abstracting internal library versions behind strict HTTP/gRPC contracts.</div>
+                                    <div class="text-sm font-medium text-zinc-800">Abstracting internal library versions behind strict HTTP/gRPC contracts.</div>
                                 </div>
                             </div>
                         </div>
@@ -159,17 +159,17 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
                                     <div class="text-xs font-mono font-bold text-red-500 uppercase tracking-widest mb-2">Coordination Tax</div>
                                     <div class="text-2xl font-bold text-zinc-900 mb-1">$1.5M</div>
-                                    <div class="text-sm font-medium text-zinc-500">Annual wasted wages from monolith CI/CD blockages.</div>
+                                    <div class="text-sm font-medium text-zinc-800">Annual wasted wages from monolith CI/CD blockages.</div>
                                 </div>
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
                                     <div class="text-xs font-mono font-bold text-blue-500 uppercase tracking-widest mb-2">Kubernetes CapEx</div>
                                     <div class="text-2xl font-bold text-zinc-900 mb-1">$450K</div>
-                                    <div class="text-sm font-medium text-zinc-500">Migration CapEx & SRE Hiring Cost.</div>
+                                    <div class="text-sm font-medium text-zinc-800">Migration CapEx & SRE Hiring Cost.</div>
                                 </div>
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
                                     <div class="text-xs font-mono font-bold text-emerald-500 uppercase tracking-widest mb-2">ROI Horizon</div>
                                     <div class="text-2xl font-bold text-zinc-900 mb-1">11 Months</div>
-                                    <div class="text-sm font-medium text-zinc-500">Time to structural profitability.</div>
+                                    <div class="text-sm font-medium text-zinc-800">Time to structural profitability.</div>
                                 </div>
                             </div>
                         </div>
@@ -252,18 +252,18 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Compounding Cost of Hell</h3>
                         <p>When an engineer attempts to update a single security patch but is blocked because three other internal services rely on the deprecated version, delivery stops. Instead of shipping features, highly paid engineers spend days forcibly resolving transitive dependency conflicts.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">🔥</span> Dependency Cost Calculator
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10">
                                     <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Update Friction</div>
-                                    <div class="text-white text-sm font-medium">If a basic library bump takes > 4 hours, your architecture is in default.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">If a basic library bump takes > 4 hours, your architecture is in default.</div>
                                 </div>
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10">
                                     <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Financial Drain</div>
-                                    <div class="text-white text-sm font-medium">15 engineers × 10 hrs/month resolving conflicts = $150k wasted runway.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">15 engineers × 10 hrs/month resolving conflicts = $150k wasted runway.</div>
                                 </div>
                             </div>
                         </div>
@@ -337,20 +337,20 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Fragility of Probabilistic Code</h3>
                         <p>AI agents are highly proficient at generating raw text (code) that passes localized tests. However, they lack "Codebase Intimacy"—the deep, contextual understanding of your system's edge cases, deployment pipelines, and business logic constraints. When you replace engineers with agents, you are replacing deterministic problem solvers with a probabilistic text generator.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-sm">⚠️</span> The CTO Agent Delusion
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Expectation</div>
-                                    <div class="text-white text-sm font-bold mb-1">Infinite Developer Velocity</div>
-                                    <div class="text-xs text-zinc-400">Agents build, test, and deploy features 24/7 with zero payroll overhead.</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest mb-1">Expectation</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">Infinite Developer Velocity</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Agents build, test, and deploy features 24/7 with zero payroll overhead.</div>
                                 </div>
                                 <div class="bg-orange-500/10 p-4 rounded-xl border border-orange-500/30">
                                     <div class="text-[10px] font-mono text-orange-400 uppercase tracking-widest mb-1">Reality</div>
-                                    <div class="text-white text-sm font-bold mb-1">Systemic Crystallization</div>
-                                    <div class="text-xs text-zinc-400">Agents generate massive amounts of unmaintainable spaghetti code that no human understands, permanently halting future development.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">Systemic Crystallization</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Agents generate massive amounts of unmaintainable spaghetti code that no human understands, permanently halting future development.</div>
                                 </div>
                             </div>
                         </div>
@@ -370,20 +370,20 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Loss of Codebase Intimacy</h3>
                         <p>When developers offload the actual writing of code to an LLM, they lose intimacy with the repository. They no longer understand *why* a function was structured a certain way, only that the LLM said it worked. When a Sev-1 outage occurs in that code three months later, the Mean Time To Recovery (MTTR) skyrockets because no human actively understands the execution path.</p>
 
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-sm">🔍</span> The Code Audit Matrix
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-900 flex items-center justify-center text-sm">🔍</span> The Code Audit Matrix
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">The Problem</div>
-                                    <div class="text-white text-sm font-bold mb-1">Probabilistic Tech Debt</div>
-                                    <div class="text-xs text-zinc-400">Code that works today but lacks the architectural rigor to survive tomorrow's edge cases.</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest mb-1">The Problem</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">Probabilistic Tech Debt</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Code that works today but lacks the architectural rigor to survive tomorrow's edge cases.</div>
                                 </div>
                                 <div class="bg-cyan-500/10 p-4 rounded-xl border border-cyan-500/30">
-                                    <div class="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-1">The Solution</div>
-                                    <div class="text-white text-sm font-bold mb-1">The Audit Interview</div>
-                                    <div class="text-xs text-zinc-400">Shift from evaluating engineers on writing code to evaluating them on catching AI errors.</div>
+                                    <div class="text-[10px] font-mono text-cyan-900 uppercase tracking-widest mb-1">The Solution</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">The Audit Interview</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Shift from evaluating engineers on writing code to evaluating them on catching AI errors.</div>
                                 </div>
                             </div>
                         </div>
@@ -403,20 +403,20 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The 4 Dimensions of Engineering Judgment</h3>
                         <p>In the "Vibe Coding" era, the scarce skill is no longer generation; it is <strong>Verification</strong>. You must shift your hiring process from evaluating syntax generation to evaluating engineering judgment. This is done through the "Audit Interview."</p>
 
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm">🧠</span> The Audit Scorecard
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Dimension 1</div>
-                                    <div class="text-white text-sm font-bold mb-1">Security & Edge Cases</div>
-                                    <div class="text-xs text-zinc-400">Can they spot the SQL injection vulnerability the AI hallucinated?</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest mb-1">Dimension 1</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">Security & Edge Cases</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Can they spot the SQL injection vulnerability the AI hallucinated?</div>
                                 </div>
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Dimension 2</div>
-                                    <div class="text-white text-sm font-bold mb-1">Architectural Fit</div>
-                                    <div class="text-xs text-zinc-400">Does this AI solution scale with the rest of our monolith?</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest mb-1">Dimension 2</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">Architectural Fit</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Does this AI solution scale with the rest of our monolith?</div>
                                 </div>
                             </div>
                         </div>
@@ -436,25 +436,25 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The 1:10:100 Rule of Architecture</h3>
                         <p>The core framework for evaluating this trade-off is the <strong>Defect Cost Multiplier</strong>. The financial cost of discovering and fixing an architectural flaw scales exponentially based on the phase of the Software Development Life Cycle (SDLC) in which it is found.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">📉</span> The Debt-to-Spec Leverage Equation
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
                                     <div class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1">Design Phase (Spec)</div>
-                                    <div class="text-white text-2xl font-bold mb-1">1x Cost</div>
-                                    <div class="text-xs text-zinc-400">Erasing a whiteboard diagram costs $0.</div>
+                                    <div class="text-zinc-950 font-semibold text-2xl font-bold mb-1">1x Cost</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Erasing a whiteboard diagram costs $0.</div>
                                 </div>
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
                                     <div class="text-[10px] font-mono text-amber-400 uppercase tracking-widest mb-1">Implementation Phase</div>
-                                    <div class="text-white text-2xl font-bold mb-1">10x Cost</div>
-                                    <div class="text-xs text-zinc-400">Refactoring 5,000 lines of bad code wastes days.</div>
+                                    <div class="text-zinc-950 font-semibold text-2xl font-bold mb-1">10x Cost</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Refactoring 5,000 lines of bad code wastes days.</div>
                                 </div>
                                 <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/30">
                                     <div class="text-[10px] font-mono text-red-400 uppercase tracking-widest mb-1">Production Phase</div>
-                                    <div class="text-white text-2xl font-bold mb-1">100x Cost</div>
-                                    <div class="text-xs text-zinc-400">A data breach or outage burns actual revenue and runway.</div>
+                                    <div class="text-zinc-950 font-semibold text-2xl font-bold mb-1">100x Cost</div>
+                                    <div class="text-xs text-zinc-900 font-bold">A data breach or outage burns actual revenue and runway.</div>
                                 </div>
                             </div>
                         </div>
@@ -544,20 +544,20 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p>Without blast radius containment, a single failed module deployments cascades and takes down the entire monolith. To get budget for cell-based architecture, you must quantify the historical damage of this architectural flaw.</p>
                         <p>Calculate your <strong>Downtime Revenue Burn Rate</strong>: <em>(Annual Recurring Revenue / 525,600) = Revenue Per Minute</em>. Next, combine this with your <em>Developer Idle Burn Rate</em>: If a cascading outage pulls 60 engineers off feature work for 6 hours into a Sev-1 war room, calculate those lost wages.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-50 border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">🔥</span> Sev-1 Incident Cost Calculator
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10">
                                     <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Downtime Burn</div>
-                                    <div class="text-white text-lg font-bold">ARR / 525,600 × Mins</div>
-                                    <div class="text-xs text-zinc-400 mt-1">Lost transactional velocity.</div>
+                                    <div class="text-zinc-950 font-semibold text-lg font-bold">ARR / 525,600 × Mins</div>
+                                    <div class="text-xs text-zinc-900 font-bold mt-1">Lost transactional velocity.</div>
                                 </div>
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10">
                                     <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Developer Idle Rate</div>
-                                    <div class="text-white text-lg font-bold">(Payroll / 2,080) × Eng × Hrs</div>
-                                    <div class="text-xs text-zinc-400 mt-1">Lost capitalized engineering hours.</div>
+                                    <div class="text-zinc-950 font-semibold text-lg font-bold">(Payroll / 2,080) × Eng × Hrs</div>
+                                    <div class="text-xs text-zinc-900 font-bold mt-1">Lost capitalized engineering hours.</div>
                                 </div>
                             </div>
                         </div>
@@ -587,22 +587,22 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Thermodynamics of Legacy Code</h3>
                         <p>Every time a developer takes a "shortcut" to meet a sprint deadline, they inject entropy into the system. If entropy is left unchecked, the codebase eventually crystallizes. At this point, the fear of breaking the monolithic architecture paralyzes the team, resulting in deployment cycles extending from days to weeks.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-50 border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm">🧊</span> The Entropy Crystallization Phase
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center">
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-3">
-                                    <span class="block text-white font-bold text-lg mb-1">State 1</span>
-                                    <span class="block text-xs text-emerald-400 font-mono">Agile & Fluid</span>
+                                    <span class="block text-zinc-950 font-semibold font-bold text-lg mb-1">State 1</span>
+                                    <span class="block text-xs text-zinc-900 font-bold font-mono">Agile & Fluid</span>
                                 </div>
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-3">
-                                    <span class="block text-white font-bold text-lg mb-1">State 2</span>
-                                    <span class="block text-xs text-yellow-400 font-mono">Tightly Coupled</span>
+                                    <span class="block text-zinc-950 font-semibold font-bold text-lg mb-1">State 2</span>
+                                    <span class="block text-xs text-zinc-900 font-bold font-mono">Tightly Coupled</span>
                                 </div>
                                 <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-3">
-                                    <span class="block text-white font-bold text-lg mb-1">State 3</span>
-                                    <span class="block text-xs text-red-400 font-mono">Crystallized (Dead)</span>
+                                    <span class="block text-zinc-950 font-semibold font-bold text-lg mb-1">State 3</span>
+                                    <span class="block text-xs text-zinc-900 font-bold font-mono">Crystallized (Dead)</span>
                                 </div>
                             </div>
                         </div>
@@ -654,20 +654,20 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Gross Margin Collapse</h3>
                         <p>Traditional SaaS features cost pennies to execute. AI features cost dollars. If you charge a user $20/month for a subscription, but they use an AI feature that burns $30/month in OpenAI API tokens, your gross margin is negative. The more successful your product is, the faster you go bankrupt.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">📉</span> The Feature Factory Trap
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Traditional SaaS</div>
-                                    <div class="text-white text-sm font-bold mb-1">Fixed Cost, Infinite Margin</div>
-                                    <div class="text-xs text-zinc-400">Serving 10,000 DB queries costs essentially $0.</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest mb-1">Traditional SaaS</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">Fixed Cost, Infinite Margin</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Serving 10,000 DB queries costs essentially $0.</div>
                                 </div>
                                 <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/30">
                                     <div class="text-[10px] font-mono text-red-400 uppercase tracking-widest mb-1">AI SaaS</div>
-                                    <div class="text-white text-sm font-bold mb-1">Variable Cost, Margin Collapse</div>
-                                    <div class="text-xs text-zinc-400">Serving 10,000 GPT-4 queries scales linearly with usage.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">Variable Cost, Margin Collapse</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Serving 10,000 GPT-4 queries scales linearly with usage.</div>
                                 </div>
                             </div>
                         </div>
@@ -687,22 +687,22 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Build vs. Rent Margin Tipping Point</h3>
                         <p>Renting APIs (OpEx) optimizes for <em>Speed to Market</em> and requires zero upfront capital. However, as your product scales, your inference costs scale perfectly linearly with your revenue. Owning infrastructure (CapEx)—such as buying NVIDIA GPUs and fine-tuning open-source models like Llama-3—requires massive upfront capital but flattens your ongoing inference costs, allowing Gross Margins to actually expand as volume grows.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">⚖️</span> The Infrastructure Ownership Heuristic
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="bg-white/5 p-5 rounded-xl border-l-4 border-l-blue-500 shadow-sm">
-                                    <h5 class="font-bold text-white mb-2">Rent (OpEx) When:</h5>
-                                    <ul class="text-sm font-medium text-zinc-400 space-y-1 list-disc pl-4">
+                                    <h5 class="font-bold text-zinc-950 font-semibold mb-2">Rent (OpEx) When:</h5>
+                                    <ul class="text-sm font-medium text-zinc-900 font-medium space-y-1 list-disc pl-4">
                                         <li>You are pre-Product Market Fit.</li>
                                         <li>Query volume is unpredictable and highly volatile.</li>
                                         <li>Total Monthly API bill &lt; $25,000.</li>
                                     </ul>
                                 </div>
                                 <div class="bg-white/5 p-5 rounded-xl border-l-4 border-l-emerald-500 shadow-sm">
-                                    <h5 class="font-bold text-white mb-2">Build (CapEx) When:</h5>
-                                    <ul class="text-sm font-medium text-zinc-400 space-y-1 list-disc pl-4">
+                                    <h5 class="font-bold text-zinc-950 font-semibold mb-2">Build (CapEx) When:</h5>
+                                    <ul class="text-sm font-medium text-zinc-900 font-medium space-y-1 list-disc pl-4">
                                         <li>Queries are highly specialized (e.g., medical syntax).</li>
                                         <li>Volume is massive, predictable, and 24/7.</li>
                                         <li>OpenAI bill &gt; 15% of total SaaS revenue.</li>
@@ -831,22 +831,22 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Taxonomy of Drift</h3>
                         <p>Founders must understand the taxonomy of these failures before authorizing autonomous systems access to production APIs or databases. There are three primary classifications of Agent Drift in modern LLM architectures:</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-full bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-sm">🤖</span> Drift Failure Modes
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-fuchsia-500/20 text-zinc-950 font-semibolduchsia-400 flex items-center justify-center text-sm">🤖</span> Drift Failure Modes
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-xs font-mono font-bold text-fuchsia-400 uppercase tracking-widest mb-1">1. Context Eviction</div>
-                                    <div class="text-white text-sm font-medium">The agent processes so many intermediate tool-calls that the original "Prime Directive" is pushed out of the context window. The agent forgets *why* it is working.</div>
+                                    <div class="text-xs font-mono font-bold text-zinc-950 font-semibolduchsia-400 uppercase tracking-widest mb-1">1. Context Eviction</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">The agent processes so many intermediate tool-calls that the original "Prime Directive" is pushed out of the context window. The agent forgets *why* it is working.</div>
                                 </div>
                                 <div class="bg-fuchsia-500/10 p-4 rounded-xl border border-fuchsia-500/30">
-                                    <div class="text-xs font-mono font-bold text-fuchsia-400 uppercase tracking-widest mb-1">2. Hallucinated APIs</div>
-                                    <div class="text-white text-sm font-medium">When confronted with unexpected JSON schemas from external tools, the agent hallucinates parameters or methods that do not exist, triggering cascade failures.</div>
+                                    <div class="text-xs font-mono font-bold text-zinc-950 font-semibolduchsia-400 uppercase tracking-widest mb-1">2. Hallucinated APIs</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">When confronted with unexpected JSON schemas from external tools, the agent hallucinates parameters or methods that do not exist, triggering cascade failures.</div>
                                 </div>
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-xs font-mono font-bold text-fuchsia-400 uppercase tracking-widest mb-1">3. Cyclic Loops</div>
-                                    <div class="text-white text-sm font-medium">The agent calls an API, receives an error, tries to self-correct by calling the exact same API with the exact same payload, burning infinite tokens without human intervention.</div>
+                                    <div class="text-xs font-mono font-bold text-zinc-950 font-semibolduchsia-400 uppercase tracking-widest mb-1">3. Cyclic Loops</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">The agent calls an API, receives an error, tries to self-correct by calling the exact same API with the exact same payload, burning infinite tokens without human intervention.</div>
                                 </div>
                             </div>
                         </div>
@@ -876,20 +876,20 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p>Rule-based automation is <strong>deterministic</strong>. If A happens, do B. It executes in milliseconds, costs fractions of a cent, and succeeds 99.999% of the time. However, it completely breaks if the input deviates even slightly from the expected format.</p>
                         <p>Agentic AI is <strong>probabilistic</strong>. It can handle massive ambiguity, parse messy inputs, and dynamically alter its plan if an API fails. However, it takes seconds to execute, costs significantly more, and carries the inherent risk of hallucination.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-sm">⚖️</span> The Automation Hybrid Model
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Rule-Based Automation</div>
-                                    <div class="text-white text-sm font-bold mb-1">High Reliability, Zero Ambiguity</div>
-                                    <div class="text-xs text-zinc-400">Use for moving data between APIs, sending transactional emails, or triggering webhooks.</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest mb-1">Rule-Based Automation</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">High Reliability, Zero Ambiguity</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Use for moving data between APIs, sending transactional emails, or triggering webhooks.</div>
                                 </div>
                                 <div class="bg-purple-500/10 p-4 rounded-xl border border-purple-500/30">
                                     <div class="text-[10px] font-mono text-purple-400 uppercase tracking-widest mb-1">Agentic Automation</div>
-                                    <div class="text-white text-sm font-bold mb-1">High Ambiguity, Complex Reasoning</div>
-                                    <div class="text-xs text-zinc-400">Use for categorizing angry support tickets, drafting custom replies, or extracting unstructured PDF data.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">High Ambiguity, Complex Reasoning</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Use for categorizing angry support tickets, drafting custom replies, or extracting unstructured PDF data.</div>
                                 </div>
                             </div>
                         </div>
@@ -909,25 +909,25 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Context Flattening Effect</h3>
                         <p>LLMs are trained to be helpful, harmless, and generic. If you provide a highly aggressive, uniquely formatted sales email in the context window and ask the model to "reply like this," the model's base safety alignment will often override the aggressive tone, "flattening" the output into polite boilerplate. RAG solves for data access, it does not solve for personality.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-full bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-sm">🎭</span> The Behavioral Override Stack
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-fuchsia-500/20 text-zinc-950 font-semibolduchsia-400 flex items-center justify-center text-sm">🎭</span> The Behavioral Override Stack
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Step 1: Raw Data</div>
-                                    <div class="text-white text-sm font-bold mb-1">Vector RAG</div>
-                                    <div class="text-xs text-zinc-500">Injects facts and history.</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest mb-1">Step 1: Raw Data</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">Vector RAG</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Injects facts and history.</div>
                                 </div>
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Step 2: Few-Shot</div>
-                                    <div class="text-white text-sm font-bold mb-1">Negative Examples</div>
-                                    <div class="text-xs text-zinc-500">Explicitly showing what *not* to do.</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest mb-1">Step 2: Few-Shot</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">Negative Examples</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Explicitly showing what *not* to do.</div>
                                 </div>
                                 <div class="bg-fuchsia-500/10 p-4 rounded-xl border border-fuchsia-500/30">
-                                    <div class="text-[10px] font-mono text-fuchsia-400 uppercase tracking-widest mb-1">Step 3: Persona Spec</div>
-                                    <div class="text-white text-sm font-bold mb-1">Structural Rules</div>
-                                    <div class="text-xs text-zinc-500">Enforcing syntax, length, and cadence constraints.</div>
+                                    <div class="text-[10px] font-mono text-zinc-950 font-semibolduchsia-400 uppercase tracking-widest mb-1">Step 3: Persona Spec</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-bold mb-1">Structural Rules</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Enforcing syntax, length, and cadence constraints.</div>
                                 </div>
                             </div>
                         </div>
@@ -960,25 +960,25 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                             <li><strong>Guardrail Latency:</strong> Output evaluation models used to detect hallucinations add secondary inference costs to the final interaction.</li>
                         </ul>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-sm">📡</span> Total Cost Per Query (TCPQ) Pipeline
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-900 flex items-center justify-center text-sm">📡</span> Total Cost Per Query (TCPQ) Pipeline
                             </h4>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-center text-white">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-center text-zinc-950 font-semibold">
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-3">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block mb-1">Embedding</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest block mb-1">Embedding</div>
                                     <div class="font-bold text-sm">$0.002</div>
                                 </div>
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-3">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block mb-1">Vector Search</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest block mb-1">Vector Search</div>
                                     <div class="font-bold text-sm">$0.001</div>
                                 </div>
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-3">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block mb-1">LLM Synthesis</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest block mb-1">LLM Synthesis</div>
                                     <div class="font-bold text-sm">$0.040</div>
                                 </div>
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-3">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block mb-1">Guardrail Eval</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest block mb-1">Guardrail Eval</div>
                                     <div class="font-bold text-sm">$0.005</div>
                                 </div>
                             </div>
@@ -1016,19 +1016,19 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Math of Context Injection</h3>
                         <p>API pricing is purely token-based. If you load a 116,000-page EPUB library (roughly 1.5 million tokens) into the context window of a frontier model, you are paying for those 1.5 million tokens <em>on every single user query</em>. A single question could cost upwards of $15.00 in input tokens alone. If 1,000 users ask a question, you burn $15,000 in a day.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-sm">💰</span> Retrieval vs. Injection Economy
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Traditional RAG</div>
-                                    <div class="text-white text-lg font-bold mb-1">~3,000 Tokens Injected</div>
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest mb-1">Traditional RAG</div>
+                                    <div class="text-zinc-950 font-semibold text-lg font-bold mb-1">~3,000 Tokens Injected</div>
                                     <div class="text-emerald-400 font-mono text-sm">$0.009 per query</div>
                                 </div>
                                 <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/30">
                                     <div class="text-[10px] font-mono text-red-400 uppercase tracking-widest mb-1">Massive Context Load</div>
-                                    <div class="text-white text-lg font-bold mb-1">1,500,000 Tokens Injected</div>
+                                    <div class="text-zinc-950 font-semibold text-lg font-bold mb-1">1,500,000 Tokens Injected</div>
                                     <div class="text-red-400 font-mono text-sm">$15.00 per query</div>
                                 </div>
                             </div>
@@ -1059,18 +1059,18 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Anthropic Architecture Distinctive</h3>
                         <p>Unlike standard LLM orchestration, an Anthropic-centric architecture explicitly optimizes for extreme Context Windows (up to 200,000 tokens) and complex tool-use (function calling) with mathematical precision. Platform engineers must build specific telemetry to handle massive prompt caching and payload streaming to avoid astronomical latency.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-sm">⚛️</span> The Architect Stack
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
                                     <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Prompt Caching CapEx</div>
-                                    <div class="text-white text-sm font-medium">Architects must configure explicit caching layers to drop Claude-3.5-Sonnet context injection costs by up to 90%.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">Architects must configure explicit caching layers to drop Claude-3.5-Sonnet context injection costs by up to 90%.</div>
                                 </div>
                                 <div class="bg-orange-500/10 p-4 rounded-xl border border-orange-500/30">
                                     <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Stateful Memory</div>
-                                    <div class="text-white text-sm font-medium">Unlike simple chatbots, an architecture must pipe user graph data via vector retrieval into the system prompt securely.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">Unlike simple chatbots, an architecture must pipe user graph data via vector retrieval into the system prompt securely.</div>
                                 </div>
                             </div>
                         </div>
@@ -1149,13 +1149,13 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Vendor Lock-In Reality</h3>
                         <p>Purchasing pre-canned, domain-specific instruction datasets often requires spending upwards of $50,000 for a one-time static snapshot. However, this dataset is legally encumbered and static; as your specific product domain evolves, the purchased dataset decays entirely.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-50 border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm">💡</span> Synthesis ROI Equation
                             </h4>
                             <div class="bg-white/5 p-6 rounded-xl border border-white/10 text-center">
-                                <h5 class="text-white font-bold mb-2">The Arbitrage Leverage Play</h5>
-                                <p class="text-sm text-zinc-400 mb-4 px-4">Pay top-tier prices (GPT-4o) locally for a short 48-hour burn cycle to generate 100k highly specific QA embeddings. Fine-tune a free 8B local model. Shift 80% of customer inference traffic to the local model indefinitely.</p>
+                                <h5 class="text-zinc-950 font-semibold font-bold mb-2">The Arbitrage Leverage Play</h5>
+                                <p class="text-sm text-zinc-900 font-medium mb-4 px-4">Pay top-tier prices (GPT-4o) locally for a short 48-hour burn cycle to generate 100k highly specific QA embeddings. Fine-tune a free 8B local model. Shift 80% of customer inference traffic to the local model indefinitely.</p>
                                 <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest">
                                     Breakeven Often < 3 Weeks
                                 </span>
@@ -1203,12 +1203,12 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
                                     <div class="text-xs font-mono font-bold text-amber-500 uppercase tracking-widest mb-2">Technical Smell</div>
                                     <div class="text-lg font-bold text-zinc-900 mb-1">Duplicated Code</div>
-                                    <div class="text-sm font-medium text-zinc-500">Copy-pasting logic across multiple files.</div>
+                                    <div class="text-sm font-medium text-zinc-800">Copy-pasting logic across multiple files.</div>
                                 </div>
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
                                     <div class="text-xs font-mono font-bold text-indigo-500 uppercase tracking-widest mb-2">Cultural Root Cause</div>
                                     <div class="text-lg font-bold text-zinc-900 mb-1">Siloed Teams</div>
-                                    <div class="text-sm font-medium text-zinc-500">Engineers do not talk to each other; lack of shared component libraries.</div>
+                                    <div class="text-sm font-medium text-zinc-800">Engineers do not talk to each other; lack of shared component libraries.</div>
                                 </div>
                             </div>
                         </div>
@@ -1234,18 +1234,18 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Dual Career Track</h3>
                         <p>Historically, if an engineer wanted a promotion past "Senior," they were forced into Engineering Management. This resulted in a catastrophic operational drain: companies consistently promoted their most elite programmers away from the codebase and turned them into mediocre middle managers doing 1v1s and Jira administration. The "Staff Engineer" track was formalized by top-tier tech companies to correct this, allowing true "10x architects" to achieve Director-level compensation and influence without managing direct reports.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-sm">🛤️</span> The Executive Track Divergence
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
+                                <span class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-900 flex items-center justify-center text-sm">🛤️</span> The Executive Track Divergence
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest mb-1">Engineering Manager</div>
-                                    <div class="text-white text-sm font-medium">Owns the *people* and the *delivery schedule*. Optimizes team throughput, removes blockers, and manages payroll budgets.</div>
+                                    <div class="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest mb-1">Engineering Manager</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">Owns the *people* and the *delivery schedule*. Optimizes team throughput, removes blockers, and manages payroll budgets.</div>
                                 </div>
                                 <div class="bg-cyan-500/10 p-4 rounded-xl border border-cyan-500/30">
-                                    <div class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest mb-1">Staff Engineer</div>
-                                    <div class="text-white text-sm font-medium">Owns the *architecture* and the *technical vision*. Optimizes system boundaries, dictates stack choices, and navigates cross-team dependencies.</div>
+                                    <div class="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest mb-1">Staff Engineer</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">Owns the *architecture* and the *technical vision*. Optimizes system boundaries, dictates stack choices, and navigates cross-team dependencies.</div>
                                 </div>
                             </div>
                         </div>
@@ -1344,7 +1344,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                                         <tr class="border-b border-zinc-100">
                                             <td class="py-3 px-4 bg-white">L4 / Mid</td>
                                             <td class="py-3 px-4">Senior Engineer</td>
-                                            <td class="py-3 px-4 text-zinc-400 italic">N/A</td>
+                                            <td class="py-3 px-4 text-zinc-900 font-medium italic">N/A</td>
                                         </tr>
                                         <tr class="border-b border-zinc-100 bg-zinc-50/50">
                                             <td class="py-3 px-4 bg-white">L5 / Senior</td>
@@ -1386,18 +1386,18 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The P&L Impact of "Smelly" Code</h3>
                         <p>When code exhibits severe smells—such as Massive God Classes, Deeply Nested Conditionals, or Duplicated Logic—it violently increases the <em>Cognitive Load</em> required to understand the system. High cognitive load directly increases the DORA "Lead Time for Changes." Features that should take 3 days begin taking 3 weeks simply because the codebase is too terrifying to navigate.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-zinc-50 border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">🧮</span> The Manager's Translation
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10">
                                     <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Developer Reality</div>
-                                    <div class="text-zinc-300 text-sm font-medium italic">"This file has 5,000 lines and no boundaries. I'm afraid to touch it."</div>
+                                    <div class="text-zinc-800 text-sm font-medium italic">"This file has 5,000 lines and no boundaries. I'm afraid to touch it."</div>
                                 </div>
                                 <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/30">
                                     <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Manager Reality</div>
-                                    <div class="text-white text-sm font-medium font-bold">This is a massive organizational liability. If the sole author quits, development velocity drops to zero.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium font-bold">This is a massive organizational liability. If the sole author quits, development velocity drops to zero.</div>
                                 </div>
                             </div>
                         </div>
@@ -1427,22 +1427,22 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">Decoupling at the Human Layer</h3>
                         <p>If you build a massive monolithic engineering department, they will build a massive, tightly coupled software monolith. Team Topologies mandates strict boundaries by explicitly defining interaction modes between teams. The core philosophy is protecting developer <em>Cognitive Capacity</em>.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm">🧩</span> Core Topologies
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center text-sm">
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-4">
                                     <span class="block text-emerald-400 font-bold mb-1">Stream-Aligned</span>
-                                    <span class="text-zinc-400">Owns end-to-end product value. The revenue generators.</span>
+                                    <span class="text-zinc-900 font-medium">Owns end-to-end product value. The revenue generators.</span>
                                 </div>
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                                    <span class="block text-cyan-400 font-bold mb-1">Platform Team</span>
-                                    <span class="text-zinc-400">Builds internal tools to remove friction for Stream teams.</span>
+                                    <span class="block text-cyan-900 font-bold mb-1">Platform Team</span>
+                                    <span class="text-zinc-900 font-medium">Builds internal tools to remove friction for Stream teams.</span>
                                 </div>
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-4">
                                     <span class="block text-amber-400 font-bold mb-1">Enabling Team</span>
-                                    <span class="text-zinc-400">Specialized hit-squads that unblock massive technical hurdles.</span>
+                                    <span class="text-zinc-900 font-medium">Specialized hit-squads that unblock massive technical hurdles.</span>
                                 </div>
                             </div>
                         </div>
@@ -1522,18 +1522,18 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The CTO: The Visionary Architect</h3>
                         <p>A CTO is fundamentally an outward-facing visionary. Their mandate is to lock in the 36-month technical strategy, identify massive technological shifts (like generative AI adoption), evaluate M&A technical targets, and ensure the architectural foundation of the product can survive future scale. They are usually highly academic, deeply immersed in the code, and often terrible at human management and sprint planning.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm">⚔️</span> The Executive Dichotomy
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-5">
-                                    <div class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest mb-2 border-b border-white/10 pb-2">The CTO (External)</div>
-                                    <div class="text-sm font-medium text-zinc-300">Evangelizes architecture, runs M&A technical diligence, leads forward-looking 36-month R&D, identifies paradigm shifts.</div>
+                                    <div class="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest mb-2 border-b border-white/10 pb-2">The CTO (External)</div>
+                                    <div class="text-sm font-medium text-zinc-800">Evangelizes architecture, runs M&A technical diligence, leads forward-looking 36-month R&D, identifies paradigm shifts.</div>
                                 </div>
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-5">
                                     <div class="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest mb-2 border-b border-white/10 pb-2">The VP of Eng (Internal)</div>
-                                    <div class="text-sm font-medium text-zinc-300">Owns delivery speed, P&L engineering budgets, DORA metrics, rigorous hiring loops, and resolves execution friction.</div>
+                                    <div class="text-sm font-medium text-zinc-800">Owns delivery speed, P&L engineering budgets, DORA metrics, rigorous hiring loops, and resolves execution friction.</div>
                                 </div>
                             </div>
                         </div>
@@ -1598,14 +1598,14 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The AI FinOps Paradigm Shift</h3>
                         <p>In traditional cloud computing, you pay for time (uptime). In API-driven AI, you pay for intellect (tokens). Optimizing an AWS bill does nothing to stop an inefficient RAG architecture from stuffing 50,000 irrelevant tokens into a Claude 3 Opus prompt 10,000 times a day.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm">💰</span> Traditional FinOps vs. AI FinOps
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
-                                    <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1">Traditional Cloud FinOps</div>
-                                    <ul class="text-xs text-zinc-300 space-y-1 list-disc pl-4 mt-2">
+                                    <div class="text-[10px] font-mono text-zinc-900 font-medium uppercase tracking-widest mb-1">Traditional Cloud FinOps</div>
+                                    <ul class="text-xs text-zinc-900 font-bold space-y-1 list-disc pl-4 mt-2">
                                         <li>Right-sizing VMs</li>
                                         <li>Spot Instance Bidding</li>
                                         <li>Storage Tiering</li>
@@ -1613,7 +1613,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                                 </div>
                                 <div class="bg-amber-500/10 p-4 rounded-xl border border-amber-500/30">
                                     <div class="text-[10px] font-mono text-amber-400 uppercase tracking-widest mb-1">AI Cloud FinOps</div>
-                                    <ul class="text-xs text-zinc-300 space-y-1 list-disc pl-4 mt-2">
+                                    <ul class="text-xs text-zinc-900 font-bold space-y-1 list-disc pl-4 mt-2">
                                         <li>Prompt Caching Hit Rates</li>
                                         <li>Vector Database Truncation</li>
                                         <li>Model Routing (Haiku vs Opus)</li>
@@ -1657,18 +1657,18 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Data Hoarding Fallacy</h3>
                         <p>During the "Big Data" era, organizations were taught to "store everything; analyze it later." This heuristic is financially catastrophic in the modern cloud landscape. A massive, unstructured data lake that cannot be queried efficiently by business intelligence tools is not an asset; it is a liability. You are paying premium cloud egress and storage fees for "dark data" that provides absolutely zero top-line revenue lift.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm">📉</span> Data Debt Financial Drag
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-70">
                                     <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Compute Sprawl</div>
-                                    <div class="text-white text-sm font-medium">Poorly partitioned Snowflake data warehouses require massive compute queries, draining OpEx.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">Poorly partitioned Snowflake data warehouses require massive compute queries, draining OpEx.</div>
                                 </div>
                                 <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/30">
                                     <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Compliance Liability</div>
-                                    <div class="text-white text-sm font-medium">Storing unclassified PII (Personally Identifiable Information) vastly increases SEC/GDPR fine exposure profiles.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">Storing unclassified PII (Personally Identifiable Information) vastly increases SEC/GDPR fine exposure profiles.</div>
                                 </div>
                             </div>
                         </div>
@@ -1740,23 +1740,23 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                             <li><strong>Post-Implementation Stage (Expensed):</strong> Routine maintenance, bug fixing, and training. Once the feature hits production, the capitalization window slams shut.</li>
                         </ul>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm">📈</span> The ASC 350-40 Optimization Wall
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center">
                                 <div class="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
                                     <span class="block text-[10px] font-mono text-red-400 uppercase tracking-widest mb-1">Phase 1: Concept</span>
-                                    <span class="block text-white font-bold">100% Expensed (OpEx)</span>
+                                    <span class="block text-zinc-950 font-semibold font-bold">100% Expensed (OpEx)</span>
                                 </div>
                                 <div class="bg-emerald-500/20 p-4 rounded-lg border border-emerald-500/40 transform scale-105 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                                     <span class="block text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1">Phase 2: Build</span>
-                                    <span class="block text-white font-bold text-lg">Fully Capitalized (CapEx)</span>
-                                    <span class="block text-xs text-emerald-200/50 mt-1">Boosts EBITDA directly</span>
+                                    <span class="block text-zinc-950 font-semibold font-bold text-lg">Fully Capitalized (CapEx)</span>
+                                    <span class="block text-xs text-zinc-900 font-bold/50 mt-1">Boosts EBITDA directly</span>
                                 </div>
                                 <div class="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
                                     <span class="block text-[10px] font-mono text-red-400 uppercase tracking-widest mb-1">Phase 3: Production</span>
-                                    <span class="block text-white font-bold">100% Expensed (OpEx)</span>
+                                    <span class="block text-zinc-950 font-semibold font-bold">100% Expensed (OpEx)</span>
                                 </div>
                             </div>
                         </div>
@@ -1800,7 +1800,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                                 <div class="bg-red-50 text-red-800 font-bold p-3 rounded-lg border border-red-200 font-mono">
                                     New ARR > (New Stack Infra Costs + 2x SRE Headcount) × 1.3
                                 </div>
-                                <span class="block text-xs font-medium text-zinc-500 mt-2">Never launch into a sovereign region until the pipeline physically validates this equation.</span>
+                                <span class="block text-xs font-medium text-zinc-800 mt-2">Never launch into a sovereign region until the pipeline physically validates this equation.</span>
                             </div>
                         </div>
 
@@ -1829,18 +1829,18 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Illusion of "Synergy"</h3>
                         <p>Financial models often project immediate operational synergies by combining two product suites. However, if the acquired company utilizes a fundamentally different technology stack (e.g., modern Kubernetes microservices vs legacy on-premise monolithic servers), achieving that synergy requires a massive, unbudgeted data migration and architectural rewrite.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">⚠️</span> M&A Integration Warning Signs
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10">
                                     <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Identity Silos</div>
-                                    <div class="text-white text-sm font-medium">If customer auth pipelines differ, Single Sign-On (SSO) integration will consume 6+ months of engineering.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">If customer auth pipelines differ, Single Sign-On (SSO) integration will consume 6+ months of engineering.</div>
                                 </div>
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10">
                                     <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Data Model Gravity</div>
-                                    <div class="text-white text-sm font-medium">Migrating a relational SQL database to a distributed NoSQL cluster usually triggers massive data-loss risks.</div>
+                                    <div class="text-zinc-950 font-semibold text-sm font-medium">Migrating a relational SQL database to a distributed NoSQL cluster usually triggers massive data-loss risks.</div>
                                 </div>
                             </div>
                         </div>
@@ -1872,19 +1872,19 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Fully-Loaded Fiction</h3>
                         <p>When calculating monthly burn, novice founders often simply add up base salaries. This is catastrophic. The <em>Fully-Loaded Engineering Run Rate</em> must include base salary, equity compensation (which dilutes cap-table value), employer taxes, healthcare benefits, and the massive SaaS/Cloud infrastructure footprint required to keep that developer productive.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">🔥</span> True Cost of an Engineer
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-70">
                                     <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Base Salary</div>
-                                    <div class="text-white text-lg font-bold pb-2 border-b border-white/10">$180,000 / yr</div>
+                                    <div class="text-zinc-950 font-semibold text-lg font-bold pb-2 border-b border-white/10">$180,000 / yr</div>
                                 </div>
                                 <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/30">
                                     <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Fully Loaded Burn</div>
-                                    <div class="text-white text-lg font-bold pb-2 border-b border-red-500/20">$250,000 / yr</div>
-                                    <div class="text-zinc-400 text-xs mt-2">+ Taxes, SaaS Seats, AWS Dev Env, Equity</div>
+                                    <div class="text-zinc-950 font-semibold text-lg font-bold pb-2 border-b border-red-500/20">$250,000 / yr</div>
+                                    <div class="text-zinc-900 font-medium text-xs mt-2">+ Taxes, SaaS Seats, AWS Dev Env, Equity</div>
                                 </div>
                             </div>
                         </div>
@@ -1938,18 +1938,18 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p>Technical debt only matters when it actively impedes progress. To prioritize it on the roadmap, you must calculate its <em>Interest Rate</em>: How many hours does the engineering team lose every single sprint explicitly fighting this specific legacy component?</p>
                         <p>If an outdated billing API requires 15 hours of manual engineering intervention every week, you are paying a massive interest rate on that debt. Convert those lost 15 hours into a dollar amount using the team's hourly fully-loaded salary.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm">💡</span> Executive ROI Translation
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-60">
                                     <span class="block text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-2 border-b border-white/10 pb-2">How Engineers Pitch It</span>
-                                    <span class="text-white text-sm">"The billing API is v1 REST and uses terrible anti-patterns. We need 2 sprints to rewrite it." (Denied)</span>
+                                    <span class="text-zinc-950 font-semibold text-sm">"The billing API is v1 REST and uses terrible anti-patterns. We need 2 sprints to rewrite it." (Denied)</span>
                                 </div>
                                 <div class="bg-amber-500/10 p-4 rounded-xl border border-amber-500/30">
                                     <span class="block text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest mb-2 border-b border-amber-500/20 pb-2">How PMs Must Pitch It</span>
-                                    <span class="text-white text-sm">"The corrupted billing API burns $15k per sprint in manual developer fixes. A 2-sprint $30k rewrite yields a 90-day cash break-even." (Approved)</span>
+                                    <span class="text-zinc-950 font-semibold text-sm">"The corrupted billing API burns $15k per sprint in manual developer fixes. A 2-sprint $30k rewrite yields a 90-day cash break-even." (Approved)</span>
                                 </div>
                             </div>
                         </div>
@@ -1979,13 +1979,13 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Marginal Cost of a Feature</h3>
                         <p>In traditional manufacturing, COGS (Cost of Goods Sold) is easy to track. In SaaS, COGS is invisible. When a Product Manager ships a new "Real-Time AI Dashboard," they rarely calculate the variable AWS egress and compute costs triggered every time a user loads the page. If a feature costs $0.15 in cloud resources per engagement but is bundled into a flat $50/mo subscription tier utilized 400 times a month, that single feature natively destroys the unit economics of the customer.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">💵</span> The Feature P&L Equation
                             </h4>
                             <div class="bg-emerald-500/10 rounded p-4 border border-emerald-500/20 text-center">
                                 <div class="text-xs font-bold font-mono text-emerald-400 uppercase tracking-widest mb-1">Feature Profitability</div>
-                                <div class="text-lg font-bold text-white">Feature Lift (ARR) > (Dev CapEx / 36mo) + (Monthly Infra OpEx)</div>
+                                <div class="text-lg font-bold text-zinc-950 font-semibold">Feature Lift (ARR) > (Dev CapEx / 36mo) + (Monthly Infra OpEx)</div>
                                 <div class="text-sm font-medium text-emerald-200/70 mt-2 max-w-sm mx-auto">Never approve a product ticket until this equation is mathematically satisfied.</div>
                             </div>
                         </div>
@@ -2020,15 +2020,15 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm text-center">
                                     <div class="text-xs font-mono font-bold text-blue-500 uppercase tracking-widest mb-1">1. Frictionless TTV</div>
-                                    <div class="text-sm text-zinc-600">The user must hit the "Aha!" moment within 3 minutes of rendering the DOM.</div>
+                                    <div class="text-sm text-zinc-900 font-medium">The user must hit the "Aha!" moment within 3 minutes of rendering the DOM.</div>
                                 </div>
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm text-center">
                                     <div class="text-xs font-mono font-bold text-purple-500 uppercase tracking-widest mb-1">2. Viral Loops</div>
-                                    <div class="text-sm text-zinc-600">Core features must intrinsically require inviting teammates to unlock full value.</div>
+                                    <div class="text-sm text-zinc-900 font-medium">Core features must intrinsically require inviting teammates to unlock full value.</div>
                                 </div>
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm text-center">
                                     <div class="text-xs font-mono font-bold text-emerald-500 uppercase tracking-widest mb-1">3. Shadow IT</div>
-                                    <div class="text-sm text-zinc-600">Enterprises are penetrated bottom-up. Individual ICs swipe credit cards first.</div>
+                                    <div class="text-sm text-zinc-900 font-medium">Enterprises are penetrated bottom-up. Individual ICs swipe credit cards first.</div>
                                 </div>
                             </div>
                         </div>
@@ -2063,15 +2063,15 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                             <div class="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm">
                                 <ul class="text-sm font-medium text-zinc-700 space-y-3">
                                     <li class="flex justify-between items-center border-b pb-2">
-                                        <span class="text-zinc-500">1. Sales-Led Feature Dev</span>
+                                        <span class="text-zinc-800">1. Sales-Led Feature Dev</span>
                                         <span class="font-bold text-zinc-900">→</label>
                                     </li>
                                     <li class="flex justify-between items-center border-b pb-2">
-                                        <span class="text-zinc-500">2. UI/UX Cognitive Overload</span>
+                                        <span class="text-zinc-800">2. UI/UX Cognitive Overload</span>
                                         <span class="font-bold text-amber-500">→</label>
                                     </li>
                                     <li class="flex justify-between items-center border-b pb-2">
-                                        <span class="text-zinc-500">3. Failed User Onboarding</span>
+                                        <span class="text-zinc-800">3. Failed User Onboarding</span>
                                         <span class="font-bold text-orange-500">→</label>
                                     </li>
                                     <li class="flex justify-between items-center">
@@ -2108,12 +2108,12 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The Mini-CEO Fallacy</h3>
                         <p>Saying a PM is the "CEO of the Product" is a lie unless they are tasked with the economic consequences of their roadmap. When a PM demands an AI feature, they must be held strictly accountable for the ballooning OpenAI inference bills (COGS) required to operate that feature in production.</p>
                         
-                        <div class="my-10 p-8 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-white mb-6 flex items-center gap-2">
+                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
+                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
                                 <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">💰</span> Financial PM Checklist
                             </h4>
                             <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-                                <ul class="text-sm font-medium text-zinc-300 space-y-3 list-none">
+                                <ul class="text-sm font-medium text-zinc-800 space-y-3 list-none">
                                     <li class="flex items-start gap-3">
                                         <span class="text-emerald-400 mt-0.5">✓</span>
                                         <span><strong>CapEx Approval:</strong> "This feature costs $140,000 in dev salaries."</span>

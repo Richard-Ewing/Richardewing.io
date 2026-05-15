@@ -286,7 +286,7 @@ export default function ToolsContent() {
             Diagnostic insights are irrelevant without a deterministic interception layer. To remediate the risks identified, you must implement Admissibility-Native architecture.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://exogram.ai/analyze" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg bg-red-600 text-white font-semibold font-bold tracking-widest uppercase hover:bg-red-700 transition-colors">
+            <a href="https://exogram.ai/analyze" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg bg-red-600 text-zinc-950 font-semibold font-semibold font-bold tracking-widest uppercase hover:bg-red-700 transition-colors">
               Initialize Exogram Simulation →
             </a>
           </div>

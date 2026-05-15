@@ -31,7 +31,7 @@ export function ToolGateCTA({ toolName }: ToolGateCTAProps) {
                         Don't just take screenshots. Download the official <strong>{toolName} Executive Report Template</strong> (PDF), complete with calculation methodologies and board-ready talking points.
                     </p>
                     
-                    <div className="flex items-center gap-2 text-xs font-bold font-mono text-zinc-500 uppercase tracking-widest pt-2">
+                    <div className="flex items-center gap-2 text-xs font-bold font-mono text-zinc-800 uppercase tracking-widest pt-2">
                         <ShieldCheck className="w-4 h-4 text-emerald-600" /> Includes the master Diagnostic Toolkit
                     </div>
                 </div>
@@ -46,12 +46,12 @@ export function ToolGateCTA({ toolName }: ToolGateCTAProps) {
                                 name="email" 
                                 placeholder="name@company.com" 
                                 required
-                                className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all font-medium text-zinc-900 placeholder:text-zinc-400"
+                                className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all font-medium text-zinc-900 placeholder:text-zinc-900 font-medium"
                             />
                         </div>
                         <button 
                             type="submit"
-                            className="w-full py-3 rounded-lg bg-zinc-950 text-white font-bold hover:bg-emerald-600 hover:shadow-lg transition-all flex items-center justify-center gap-2 font-grotesk text-sm"
+                            className="w-full py-3 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-semibold font-bold hover:bg-emerald-600 hover:shadow-lg transition-all flex items-center justify-center gap-2 font-grotesk text-sm"
                         >
                             <FileDown className="w-4 h-4" />
                             Download PDF Report

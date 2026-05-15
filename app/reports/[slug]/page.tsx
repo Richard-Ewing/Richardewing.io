@@ -25,7 +25,7 @@ export default async function ReportDetailPage({ params }: { params: { slug: str
         <main className="pt-24 pb-20 bg-white min-h-screen">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between mb-8">
-                    <Link href="/reports" className="inline-flex items-center gap-2 text-zinc-500 hover:text-zinc-900 font-medium transition-colors">
+                    <Link href="/reports" className="inline-flex items-center gap-2 text-zinc-800 hover:text-zinc-900 font-medium transition-colors">
                         <ArrowLeft className="w-4 h-4" /> Back to Intelligence Library
                     </Link>
                     <ExportToPDFButton 
@@ -41,7 +41,7 @@ export default async function ReportDetailPage({ params }: { params: { slug: str
                             <span className="p-2 bg-purple-100 text-purple-700 rounded-lg">
                                 <BarChart2 className="w-5 h-5" />
                             </span>
-                            <span className="text-sm font-bold font-mono uppercase tracking-widest text-zinc-500">Official Benchmark Report</span>
+                            <span className="text-sm font-bold font-mono uppercase tracking-widest text-zinc-800">Official Benchmark Report</span>
                         </div>
                         <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-900 mb-6 capitalize">{slug.replace(/-/g, ' ')}</h1>
                         <p className="text-xl text-zinc-600">
@@ -63,7 +63,7 @@ export default async function ReportDetailPage({ params }: { params: { slug: str
                             <p className="text-red-800 mt-2">
                                 To remediate the risks identified in this index, organizations must deploy a deterministic interception layer.
                             </p>
-                            <Link href="/exogram" className="inline-block mt-4 text-sm font-bold bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors">
+                            <Link href="/exogram" className="inline-block mt-4 text-sm font-bold bg-red-600 text-zinc-950 font-semibold px-6 py-3 rounded-lg hover:bg-red-700 transition-colors">
                                 Initialize Exogram Simulation
                             </Link>
                         </div>

@@ -27,11 +27,11 @@ export function BenchmarkCard({ title, yourScore, industryAverage, topQuartile, 
                 </span>
             </div>
             
-            <p className="text-sm text-zinc-500 mb-6 font-medium leading-relaxed">{description}</p>
+            <p className="text-sm text-zinc-900 font-medium mb-6 font-medium leading-relaxed">{description}</p>
             
             <div className="space-y-4">
                 <div>
-                    <div className="flex justify-between text-xs font-bold text-zinc-500 mb-1">
+                    <div className="flex justify-between text-xs font-bold text-zinc-800 mb-1">
                         <span>Your Assessment</span>
                         <span className="text-zinc-900">{yourScore}</span>
                     </div>
@@ -41,7 +41,7 @@ export function BenchmarkCard({ title, yourScore, industryAverage, topQuartile, 
                 </div>
 
                 <div>
-                    <div className="flex justify-between text-xs font-bold text-zinc-500 mb-1">
+                    <div className="flex justify-between text-xs font-bold text-zinc-800 mb-1">
                         <span>Industry Average</span>
                         <span>{industryAverage}</span>
                     </div>
@@ -51,7 +51,7 @@ export function BenchmarkCard({ title, yourScore, industryAverage, topQuartile, 
                 </div>
 
                 <div>
-                    <div className="flex justify-between text-xs font-bold text-zinc-500 mb-1">
+                    <div className="flex justify-between text-xs font-bold text-zinc-800 mb-1">
                         <span>Top Quartile</span>
                         <span>{topQuartile}</span>
                     </div>

@@ -40,13 +40,13 @@ export function BenchmarkComparison({ tool, userScore, industry = 'Default' }: B
             
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
-                    <div className="text-sm text-zinc-600 mb-1">Your Score</div>
+                    <div className="text-sm text-zinc-900 font-medium mb-1">Your Score</div>
                     <div className="text-3xl font-bold text-zinc-900">{formatValue(userScore)}</div>
                 </div>
                 
                 <div className="flex flex-col items-center justify-center">
                     {delta === 0 ? (
-                        <div className="flex flex-col items-center text-zinc-500">
+                        <div className="flex flex-col items-center text-zinc-800">
                             <Minus className="w-6 h-6 mb-1" />
                             <span className="text-xs font-bold uppercase tracking-widest">Average</span>
                         </div>
@@ -64,12 +64,12 @@ export function BenchmarkComparison({ tool, userScore, industry = 'Default' }: B
                 </div>
 
                 <div className="text-right">
-                    <div className="text-sm text-zinc-600 mb-1">Industry Avg</div>
+                    <div className="text-sm text-zinc-900 font-medium mb-1">Industry Avg</div>
                     <div className="text-3xl font-bold text-zinc-900">{formatValue(benchmark.industryAverage)}</div>
                 </div>
             </div>
             
-            <p className="mt-4 text-sm text-zinc-600 italic">
+            <p className="mt-4 text-sm text-zinc-900 font-medium italic">
                 Organizations in your category average a score of {formatValue(benchmark.industryAverage)}. Your organization scored {formatValue(userScore)}.
             </p>
         </div>

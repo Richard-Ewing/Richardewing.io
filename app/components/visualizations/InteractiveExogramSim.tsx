@@ -40,15 +40,15 @@ export function InteractiveExogramSim() {
     };
 
     return (
-        <div className="w-full bg-zinc-950 rounded-2xl border border-zinc-800 overflow-hidden font-mono shadow-xl">
+        <div className="w-full bg-white border border-zinc-200 rounded-2xl border border-zinc-200 overflow-hidden font-mono shadow-xl">
             {/* Header */}
-            <div className="bg-zinc-900 border-b border-zinc-800 px-4 py-3 flex items-center justify-between">
+            <div className="bg-zinc-50 border border-zinc-200 border-b border-zinc-200 px-4 py-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50"></div>
                     <div className="w-3 h-3 rounded-full bg-amber-500/20 border border-amber-500/50"></div>
                     <div className="w-3 h-3 rounded-full bg-emerald-500/20 border border-emerald-500/50"></div>
                 </div>
-                <div className="text-xs text-zinc-500 font-bold tracking-widest uppercase flex items-center gap-2">
+                <div className="text-xs text-zinc-900 font-bold font-bold tracking-widest uppercase flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-cyan-500" />
                     Exogram Runtime Simulator
                 </div>
@@ -56,18 +56,18 @@ export function InteractiveExogramSim() {
 
             <div className="flex flex-col md:flex-row">
                 {/* Inputs Panel */}
-                <div className="w-full md:w-1/2 p-6 border-b md:border-b-0 md:border-r border-zinc-800 bg-zinc-900/50">
-                    <h4 className="text-xs text-zinc-500 font-bold uppercase tracking-widest mb-4">Select Probabilistic Input</h4>
+                <div className="w-full md:w-1/2 p-6 border-b md:border-b-0 md:border-r border-zinc-200 bg-zinc-50 border border-zinc-200/50">
+                    <h4 className="text-xs text-zinc-900 font-bold font-bold uppercase tracking-widest mb-4">Select Probabilistic Input</h4>
                     <div className="space-y-3">
                         {mockPrompts.map((p, idx) => (
                             <button 
                                 key={p.id}
                                 onClick={() => runSimulation(idx)}
                                 disabled={isSimulating}
-                                className={`w-full text-left p-4 rounded-xl border transition-all ${activePrompt === idx && isSimulating ? 'border-cyan-500 bg-cyan-950/20' : 'border-zinc-800 bg-zinc-900 hover:border-zinc-700 hover:bg-zinc-800/80'} ${isSimulating ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                                className={`w-full text-left p-4 rounded-xl border transition-all ${activePrompt === idx && isSimulating ? 'border-cyan-500 bg-cyan-950/20' : 'border-zinc-200 bg-zinc-50 border border-zinc-200 hover:border-zinc-700 hover:bg-zinc-800/80'} ${isSimulating ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                             >
                                 <div className="flex items-start justify-between">
-                                    <p className="text-sm text-zinc-300 leading-relaxed pr-4">"{p.text}"</p>
+                                    <p className="text-sm text-zinc-900 font-medium leading-relaxed pr-4">"{p.text}"</p>
                                     <Play className="w-4 h-4 text-zinc-600 shrink-0 mt-0.5" />
                                 </div>
                             </button>
@@ -76,8 +76,8 @@ export function InteractiveExogramSim() {
                 </div>
 
                 {/* Exogram Console */}
-                <div className="w-full md:w-1/2 p-6 bg-black relative">
-                    <h4 className="text-xs text-zinc-500 font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+                <div className="w-full md:w-1/2 p-6 bg-zinc-50 border border-zinc-300 relative">
+                    <h4 className="text-xs text-zinc-900 font-bold font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
                         <Terminal className="w-4 h-4" />
                         Verification Console
                     </h4>
@@ -89,7 +89,7 @@ export function InteractiveExogramSim() {
                             logs.map((log, i) => {
                                 const isPass = log.includes('[PASS]');
                                 const isBlock = log.includes('[BLOCK]');
-                                let color = 'text-zinc-400';
+                                let color = 'text-zinc-900 font-medium';
                                 if (isPass) color = 'text-emerald-400';
                                 if (isBlock) color = 'text-red-400 font-bold';
 
@@ -110,7 +110,7 @@ export function InteractiveExogramSim() {
                     {!isSimulating && logs.length > 0 && (
                         <button 
                             onClick={() => { setLogs([]); setActivePrompt(0); }}
-                            className="absolute bottom-6 right-6 p-2 bg-zinc-900 rounded-lg border border-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center gap-2 text-xs font-bold uppercase tracking-widest"
+                            className="absolute bottom-6 right-6 p-2 bg-zinc-50 border border-zinc-200 rounded-lg border border-zinc-200 text-zinc-900 font-medium hover:text-zinc-950 font-semibold transition-colors flex items-center gap-2 text-xs font-bold uppercase tracking-widest"
                         >
                             <RotateCcw className="w-4 h-4" /> Reset
                         </button>

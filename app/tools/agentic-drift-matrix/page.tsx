@@ -60,7 +60,7 @@ export default function AgenticDriftMatrixPage() {
                                 <BrainCircuit size={20} />
                             </div>
                             <h3 className="text-lg font-bold text-zinc-950 mb-2">Constraint Forgetting</h3>
-                            <p className="text-sm text-zinc-900 leading-relaxed">
+                            <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                 Identify the exact step in the workflow where the agent forgets the original system prompt and begins to hallucinate its own rules.
                             </p>
                         </div>
@@ -69,7 +69,7 @@ export default function AgenticDriftMatrixPage() {
                                 <Database size={20} />
                             </div>
                             <h3 className="text-lg font-bold text-zinc-950 mb-2">State Management</h3>
-                            <p className="text-sm text-zinc-900 leading-relaxed">
+                            <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                 Stop relying on the LLM's context window for state. Learn how to map deterministic external memory to prevent decay.
                             </p>
                         </div>
@@ -78,7 +78,7 @@ export default function AgenticDriftMatrixPage() {
                                 <Layers size={20} />
                             </div>
                             <h3 className="text-lg font-bold text-zinc-950 mb-2">Compute Waste</h3>
-                            <p className="text-sm text-zinc-900 leading-relaxed">
+                            <p className="text-sm text-zinc-900 font-medium leading-relaxed">
                                 You are paying for a massive context window while receiving degraded accuracy. Map the threshold where your compute ROI goes negative.
                             </p>
                         </div>
@@ -100,7 +100,7 @@ export default function AgenticDriftMatrixPage() {
                             <ShineBorder className="w-full sm:w-auto p-1 rounded-xl bg-white" borderColor="#6366f1" duration={3}>
                                 <a 
                                     href="/downloads/agentic-drift-matrix.xlsx" 
-                                    className="flex items-center justify-center gap-3 px-8 py-4 bg-zinc-950 hover:bg-zinc-800 text-white font-black uppercase tracking-widest rounded-lg transition-all"
+                                    className="flex items-center justify-center gap-3 px-8 py-4 bg-white border border-zinc-200 hover:bg-zinc-800 text-zinc-950 font-semibold font-black uppercase tracking-widest rounded-lg transition-all"
                                 >
                                     <Download size={18} />
                                     Download Matrix
@@ -108,7 +108,7 @@ export default function AgenticDriftMatrixPage() {
                             </ShineBorder>
                         </div>
                         
-                        <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mt-6 relative z-10">
+                        <p className="text-xs text-zinc-900 font-bold font-mono uppercase tracking-widest mt-6 relative z-10">
                             Secure Excel File (.xlsx) • No Macros • Engineering-Ready
                         </p>
                     </div>
@@ -117,7 +117,7 @@ export default function AgenticDriftMatrixPage() {
                 <ScrollReveal delay={150}>
                     <div className="mt-20 border-t border-zinc-400 pt-12 text-center">
                         <h3 className="text-lg font-bold text-zinc-950 mb-4">Ready to stop the decay permanently?</h3>
-                        <p className="text-sm text-zinc-900 mb-6">See the architecture I use to enforce deterministic state management.</p>
+                        <p className="text-sm text-zinc-900 font-medium mb-6">See the architecture I use to enforce deterministic state management.</p>
                         <a 
                             href="https://newsletter.richardewing.io/p/fixing-agentic-drift" 
                             target="_blank" 

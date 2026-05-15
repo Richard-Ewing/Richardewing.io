@@ -34,7 +34,7 @@ export default function AdvisoryPage() {
                 {/* 4-Tier Executive Funnel */}
                 {/* Free Diagnostic Toolkit Banner */}
                 <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 mt-8">
-                    <div className="bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl relative">
+                    <div className="bg-white border border-zinc-200 border border-zinc-200 rounded-2xl overflow-hidden shadow-2xl relative">
                         {/* Abstract Background for dark theme */}
                         <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 to-transparent pointer-events-none" />
                         <div className="absolute -top-24 -right-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -45,13 +45,13 @@ export default function AdvisoryPage() {
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-mono text-xs font-bold uppercase tracking-widest border border-emerald-500/20">
                                     Initial Assessment
                                 </div>
-                                <h3 className="text-3xl md:text-4xl font-bold font-grotesk text-white">
+                                <h3 className="text-3xl md:text-4xl font-bold font-grotesk text-zinc-950 font-semibold">
                                     The Executive Diagnostic Toolkit
                                 </h3>
-                                <p className="text-zinc-400 font-medium leading-relaxed max-w-xl text-lg">
+                                <p className="text-zinc-900 font-medium font-medium leading-relaxed max-w-xl text-lg">
                                     Not ready for a paid engagement? Download the exact frameworks and scorecards I use to evaluate technical debt, AI unit economics, and M&A integration risks. Includes three board-ready PDF presentations.
                                 </p>
-                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-semibold text-zinc-300">
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-semibold text-zinc-800">
                                     <li className="flex items-center gap-3"><span className="text-emerald-500 font-mono text-xs font-bold">01</span> The Innovation Tax Audit</li>
                                     <li className="flex items-center gap-3"><span className="text-emerald-500 font-mono text-xs font-bold">02</span> AI Economics Matrix</li>
                                     <li className="flex items-center gap-3"><span className="text-emerald-500 font-mono text-xs font-bold">03</span> M&A Diligence Cheatsheet</li>
@@ -62,8 +62,8 @@ export default function AdvisoryPage() {
                             {/* Right Side: Capture */}
                             <div className="w-full md:w-80 flex-shrink-0 bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-md">
                                 <div className="text-center mb-6">
-                                    <div className="text-2xl font-mono text-white mb-1">Free Download</div>
-                                    <div className="text-xs text-zinc-400 font-medium">Instantly sent to your inbox.</div>
+                                    <div className="text-2xl font-mono text-zinc-950 font-semibold mb-1">Free Download</div>
+                                    <div className="text-xs text-zinc-900 font-bold font-medium">Instantly sent to your inbox.</div>
                                 </div>
                                 <form action="https://theaieconomist.beehiiv.com/subscribe" method="GET" target="_blank" className="space-y-4">
                                     <input type="hidden" name="redirect" value="https://www.richardewing.io/toolkit-success" />
@@ -73,7 +73,7 @@ export default function AdvisoryPage() {
                                             name="email" 
                                             placeholder="name@company.com" 
                                             required
-                                            className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all font-medium placeholder:text-zinc-500"
+                                            className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 border border-zinc-700 text-zinc-950 font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all font-medium placeholder:text-zinc-800"
                                         />
                                     </div>
                                     <button type="submit" className="flex items-center justify-center w-full py-3.5 text-xs font-bold font-mono tracking-widest rounded-lg bg-emerald-500 text-zinc-950 hover:bg-emerald-400 transition-all uppercase shadow-[0_0_20px_rgba(16,185,129,0.2)]">

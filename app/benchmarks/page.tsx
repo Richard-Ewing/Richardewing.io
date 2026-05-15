@@ -58,13 +58,13 @@ export default function BenchmarksPage() {
 
                 {/* Filters */}
                 <div className="mb-8 flex items-center gap-4">
-                    <span className="text-sm font-bold text-zinc-500 uppercase tracking-widest font-mono">Industry Segment:</span>
+                    <span className="text-sm font-bold text-zinc-800 uppercase tracking-widest font-mono">Industry Segment:</span>
                     <div className="flex gap-2">
                         {['SaaS', 'Healthcare'].map(ind => (
                             <button 
                                 key={ind}
                                 onClick={() => setSelectedIndustry(ind)}
-                                className={`px-4 py-2 rounded-lg text-sm font-bold transition-colors ${selectedIndustry === ind ? 'bg-zinc-900 text-white' : 'bg-white border border-zinc-200 text-zinc-600 hover:bg-zinc-50'}`}
+                                className={`px-4 py-2 rounded-lg text-sm font-bold transition-colors ${selectedIndustry === ind ? 'bg-zinc-50 border border-zinc-200 text-zinc-950 font-semibold' : 'bg-white border border-zinc-200 text-zinc-600 hover:bg-zinc-50'}`}
                             >
                                 {ind}
                             </button>
@@ -80,12 +80,12 @@ export default function BenchmarksPage() {
                                 <h2 className="text-2xl font-grotesk font-bold text-zinc-900">
                                     {b.diagnostic_id === 'pdi' ? 'Product Debt Index' : 'AI Unit Economics'}
                                 </h2>
-                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 bg-zinc-100 px-2 py-1 rounded">n={b.sample_size}</span>
+                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-900 font-medium bg-zinc-100 px-2 py-1 rounded">n={b.sample_size}</span>
                             </div>
 
                             <div className="space-y-6">
                                 <div>
-                                    <div className="flex justify-between text-sm font-bold text-zinc-500 mb-2">
+                                    <div className="flex justify-between text-sm font-bold text-zinc-800 mb-2">
                                         <span>Top Quartile (Elite)</span>
                                         <span className="text-emerald-600">{b.diagnostic_id === 'aueb' ? `${b.top_quartile}%` : b.top_quartile}</span>
                                     </div>
@@ -95,7 +95,7 @@ export default function BenchmarksPage() {
                                 </div>
 
                                 <div>
-                                    <div className="flex justify-between text-sm font-bold text-zinc-500 mb-2">
+                                    <div className="flex justify-between text-sm font-bold text-zinc-800 mb-2">
                                         <span>Industry Median</span>
                                         <span className="text-zinc-900">{b.diagnostic_id === 'aueb' ? `${b.median}%` : b.median}</span>
                                     </div>
@@ -105,7 +105,7 @@ export default function BenchmarksPage() {
                                 </div>
 
                                 <div>
-                                    <div className="flex justify-between text-sm font-bold text-zinc-500 mb-2">
+                                    <div className="flex justify-between text-sm font-bold text-zinc-800 mb-2">
                                         <span>Bottom Quartile (High Risk)</span>
                                         <span className="text-red-600">{b.diagnostic_id === 'aueb' ? `${b.bottom_quartile}%` : b.bottom_quartile}</span>
                                     </div>
