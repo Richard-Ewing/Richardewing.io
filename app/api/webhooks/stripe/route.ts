@@ -83,17 +83,32 @@ export async function POST(req: Request) {
                         publicMetadata: metadataPayload
                     });
                 } else {
-                    // One-off purchase handling (Guides/Diagnostics/Modules)
+                    // One-off purchase handling (Guides/Diagnostics/Modules/Skills)
                     const userObj = await client.users.getUser(userId);
-                    const existingUnlocked = (userObj.publicMetadata.unlocked_items as string[]) || [];
-                    const updatedUnlocked = specificItemId && !existingUnlocked.includes(specificItemId)
-                        ? [...existingUnlocked, specificItemId]
-                        : existingUnlocked;
+                    const existingUnlockedItems = (userObj.publicMetadata.unlocked_items as string[]) || [];
+                    const existingUnlockedAssets = (userObj.publicMetadata.unlocked_assets as string[]) || [];
+                    
+                    let updatedUnlockedItems = [...existingUnlockedItems];
+                    let updatedUnlockedAssets = [...existingUnlockedAssets];
+
+                    if (specificItemId) {
+                        if (specificItemId.startsWith('skill_')) {
+                            const assetSlug = specificItemId.replace('skill_', '');
+                            if (!existingUnlockedAssets.includes(assetSlug)) {
+                                updatedUnlockedAssets.push(assetSlug);
+                            }
+                        } else {
+                            if (!existingUnlockedItems.includes(specificItemId)) {
+                                updatedUnlockedItems.push(specificItemId);
+                            }
+                        }
+                    }
 
                     await client.users.updateUserMetadata(userId, {
                         publicMetadata: {
                             has_premium_guide_access: true,
-                            unlocked_items: updatedUnlocked
+                            unlocked_items: updatedUnlockedItems,
+                            unlocked_assets: updatedUnlockedAssets
                         }
                     });
 

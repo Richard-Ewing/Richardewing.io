@@ -281,6 +281,14 @@ export default async function VaultPage() {
                                             Open Tools <ChevronRight className="w-3 h-3 ml-1" />
                                         </Link>
                                     </div>
+                                    <div className="card p-6 border-emerald-500/20 bg-emerald-500/[0.02] hover:bg-emerald-500/[0.05] transition-colors group sm:col-span-2">
+                                        <div className="text-2xl mb-3">📦</div>
+                                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-600 transition-colors">Governance Infrastructure</h3>
+                                        <p className="text-sm font-semibold text-zinc-900 font-medium mb-4">Download your licensed operational middleware, YAML policies, and governance playbooks.</p>
+                                        <Link href="/vault/assets" className="inline-flex items-center text-xs font-bold text-emerald-600 uppercase tracking-widest">
+                                            Access Asset Provisioning Layer <ChevronRight className="w-3 h-3 ml-1" />
+                                        </Link>
+                                    </div>
                                     
                                     {/* ENTERPRISE B2B ADMIN PANEL */}
                                     {user.publicMetadata?.is_team_admin === true && (
