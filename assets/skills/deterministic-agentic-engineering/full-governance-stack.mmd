@@ -1,0 +1,39 @@
+graph TD
+    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
+    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
+    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
+    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+
+    subgraph "Level 4: Human Executive (Policy Control)"
+        A[Define YAML Policies] ::: neutral
+    end
+
+    subgraph "Level 3: Governance Orchestrator (The Kernel)"
+        B[Task Routing] ::: governance
+        C[Context Checkpoints] ::: governance
+    end
+
+    subgraph "Level 2: The 14 Exogram Engines (Mathematical Enforcement)"
+        D[Cost Containment] ::: governance
+        E[Context Compression] ::: governance
+        F[Repo Divergence] ::: governance
+        G[Verification Routing] ::: governance
+        H[Runtime Permissions] ::: governance
+    end
+
+    subgraph "Level 1: Deterministic Runtime (Sandbox)"
+        I[Limited Tool Access] ::: neutral
+        J[Bounded Memory] ::: neutral
+    end
+
+    subgraph "Level 0: Probabilistic Generator (Zero Trust)"
+        K[LLM Client] ::: danger
+    end
+
+    A -->|Configures| D & E & F & G & H
+    B --> I
+    I --> K
+    K --> J
+    J --> H --> G --> F --> E --> D
+    D -->|Admissible Output| C
+    C -->|Deterministic Deployment| L[Production] ::: success

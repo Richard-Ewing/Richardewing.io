@@ -1,0 +1,22 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: RetryInflationPolicy
+metadata:
+  name: strict-cost-containment
+  description: "Mathematical bounds on agentic retries and USD spend per session."
+spec:
+  # Hard economic ceilings
+  economic_limits:
+    max_usd_per_session: 2.50
+    max_usd_per_day: 50.00
+    alert_threshold_usd: 1.50
+    
+  # Logic loop limits
+  retry_boundaries:
+    max_consecutive_test_failures: 4
+    max_lint_retries: 2
+    
+  # Action upon breach
+  on_inflation_detected:
+    action: KILL_SESSION
+    trigger_rollback: true
+    notify_finance: true

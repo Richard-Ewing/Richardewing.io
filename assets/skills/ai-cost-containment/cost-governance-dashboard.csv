@@ -1,0 +1,6 @@
+Task_ID,Complexity_Tier,Model_Used,Budget_USD,Actual_Cost_USD,Margin_Delta_USD,Circuit_Breaker_Status
+T-9001,LOW_COMPLEXITY,gpt-4o-mini,0.50,0.04,+0.46,OK
+T-9002,MEDIUM_COMPLEXITY,claude-3-5-sonnet,2.50,0.85,+1.65,OK
+T-9003,MEDIUM_COMPLEXITY,claude-3-5-sonnet,2.50,2.50,0.00,TRIPPED
+T-9004,HIGH_COMPLEXITY,gpt-4o,10.00,1.12,+8.88,OK
+T-9005,LOW_COMPLEXITY,gpt-4o-mini,0.50,0.50,0.00,TRIPPED

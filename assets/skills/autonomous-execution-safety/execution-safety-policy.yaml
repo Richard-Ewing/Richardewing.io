@@ -1,0 +1,32 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: AutonomousSafetyPolicy
+metadata:
+  name: terminal-containment-matrix
+  description: "Strict whitelist of allowed autonomous terminal commands."
+spec:
+  # Whitelisted execution prefixes
+  allowed_commands:
+    - "npm run lint"
+    - "npm run build"
+    - "npm test"
+    - "git status"
+    - "git diff"
+    - "git add"
+    
+  # Mathematically forbidden prefixes (Hard Kill)
+  forbidden_commands:
+    - "rm -rf"
+    - "npm publish"
+    - "git push --force"
+    - "chmod"
+    - "chown"
+    - "curl"
+    - "wget"
+    - "sudo"
+    
+  # File system boundaries
+  protected_paths:
+    - ".env"
+    - ".env.local"
+    - "node_modules/"
+    - ".git/"

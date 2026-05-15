@@ -1,0 +1,28 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: ToolPermissionPolicy
+metadata:
+  name: granular-mcp-access-control
+  description: "Declarative ACL for agent tool capabilities and payload constraints."
+spec:
+  # Define valid tool scopes
+  scopes:
+    FILE_SYSTEM:
+      allowed_tools: ["read_file", "write_file", "list_dir"]
+      constraints:
+        blocked_paths: ["/.env", "/secrets/", "/node_modules/", "/.git/"]
+        
+    DATABASE:
+      allowed_tools: ["execute_sql"]
+      constraints:
+        allow_destructive: false  # Blocks DROP, DELETE, TRUNCATE
+        max_rows_returned: 1000
+        
+    INFRASTRUCTURE:
+      allowed_tools: ["aws_deploy", "terraform_apply"]
+      constraints:
+        require_human_auth_token: true # Requires secondary sign-off
+
+  # Action upon violation
+  on_violation:
+    action: SEVER_TOOL_ACCESS
+    log_level: FATAL

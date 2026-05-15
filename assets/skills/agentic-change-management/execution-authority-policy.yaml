@@ -1,0 +1,28 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: ExecutionAuthorityPolicy
+metadata:
+  name: zero-trust-mutation-matrix
+  description: "Defines the exact authority levels an agent possesses over infrastructure."
+spec:
+  # Risk Tier Definitions
+  risk_tiers:
+    LOW:
+      allowed_mutations:
+        - "CSS/Styling updates"
+        - "Markdown/Documentation edits"
+        - "Unit test generation"
+      approval_required: NONE # Fully autonomous
+      
+    HIGH:
+      allowed_mutations:
+        - "API Route logic changes"
+        - "Component state modifications"
+        - "Package version bumps"
+      approval_required: PEER_REVIEW # Standard PR process
+      
+    CRITICAL:
+      allowed_mutations:
+        - "Database schema migrations"
+        - "Terraform/Infrastructure changes"
+        - "Middleware/Governance policy edits"
+      approval_required: EXECUTIVE_SIGNOFF # Hard cryptographic block

@@ -1,0 +1,6 @@
+Session_ID,Task_Name,Initial_Input_Tokens,Retries,Total_Input_Tokens,Total_Output_Tokens,Session_Cost_USD,Budget_Ceiling_USD,Circuit_Breaker_Tripped
+S-2041,Update Header CSS,4500,0,4500,120,0.02,2.50,FALSE
+S-2042,Implement OAuth,12000,2,36000,4500,0.18,5.00,FALSE
+S-2043,Refactor Database Schema,45000,14,675000,42000,2.65,2.50,TRUE
+S-2044,Fix Hydration Error,18000,6,126000,8000,0.50,2.50,FALSE
+S-2045,Migrate to Next 15,150000,22,3450000,125000,12.22,5.00,TRUE

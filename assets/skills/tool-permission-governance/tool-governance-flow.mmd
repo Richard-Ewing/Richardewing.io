@@ -1,0 +1,23 @@
+graph TD
+    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
+    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
+    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
+    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+
+    A[Task Manifest Created] ::: neutral --> B[Tool Scope Engine] ::: governance
+    B -->|Provisions Specific Tools| C[Agent Session Starts] ::: neutral
+    
+    C --> D[Agent Generates Tool Call Payload] ::: neutral
+    
+    D --> E{Capability Validator} ::: governance
+    
+    E -->|Check File Path| F{Path is Blocked?} ::: neutral
+    F -->|Yes| G[Halt: Privilege Escalation Attempt] ::: danger
+    
+    E -->|Check SQL Query| H{Query is Destructive?} ::: neutral
+    H -->|Yes| G
+    
+    F -->|No| I[Execute Tool Call via MCP] ::: success
+    H -->|No| I
+    
+    G --> J[Tool Chain Escalation Playbook] ::: governance

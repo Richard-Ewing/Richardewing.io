@@ -1,0 +1,20 @@
+graph TD
+    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
+    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
+    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
+    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+
+    A[Agent Generates Code] ::: neutral --> B{Verification Router} ::: governance
+    
+    B -->|Tests Fail| C[Autonomous QA Loop] ::: governance
+    C --> D{Max Loops Reached?} ::: neutral
+    D -->|Yes| E[Halt: Context Rot Detected] ::: danger
+    D -->|No| A
+    
+    B -->|Tests Pass| F[Hallucination Scorer] ::: governance
+    F -->|Variance > Threshold| C
+    F -->|Variance < Threshold| G[Escalate to Human] ::: success
+    
+    G --> H{Reviewer Escalation} ::: governance
+    H -->|Architectural| I[Principal Engineer Sign-off] ::: success
+    H -->|UI Only| J[Standard Peer Review] ::: neutral

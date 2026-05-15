@@ -1,0 +1,21 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: VerificationThresholdPolicy
+metadata:
+  name: autonomous-admissibility-gates
+  description: "Strict thresholds an agent must pass before pinging a human."
+spec:
+  # Hard gates that block PR submission
+  hard_gates:
+    build_passes: true
+    lint_passes: true
+    type_check_passes: true
+  
+  # Quantitative thresholds
+  metrics:
+    minimum_test_coverage_percent: 85
+    maximum_cyclomatic_complexity_added: 10
+    
+  # Actions
+  on_failure:
+    action: AUTONOMOUS_CORRECTION_LOOP
+    max_loops: 3

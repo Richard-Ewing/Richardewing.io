@@ -1,0 +1,31 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: AICostContainmentPolicy
+metadata:
+  name: dynamic-margin-protection
+  description: "Declarative budgets mapping task complexity to maximum allowable USD spend."
+spec:
+  # Base Limits
+  global_limits:
+    max_usd_per_day: 150.00
+    alert_channel: "#engineering-finance"
+
+  # Tiered Task Budgets
+  task_budgets:
+    LOW_COMPLEXITY:
+      description: "Simple UI changes, text edits"
+      budget_usd: 0.50
+      allowed_models: ["gpt-4o-mini", "claude-3-haiku"]
+      
+    MEDIUM_COMPLEXITY:
+      description: "Component logic, state management"
+      budget_usd: 2.50
+      allowed_models: ["claude-3-5-sonnet", "gpt-4o"]
+      
+    HIGH_COMPLEXITY:
+      description: "Architecture design, multi-file refactors"
+      budget_usd: 10.00
+      allowed_models: ["claude-3-5-sonnet", "gpt-4o"]
+
+  on_budget_breach:
+    action: SEVER_API_CONNECTION
+    trigger_rollback: true

@@ -1,0 +1,23 @@
+graph TD
+    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
+    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
+    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
+    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+
+    A[Agent Session Initiated] ::: neutral --> B{Repository Validator} ::: governance
+    
+    B -->|HEAD is Stale| C[Halt: Desynchronization] ::: danger
+    B -->|Map Not Ingested| D[Halt: Blind Execution] ::: danger
+    
+    B -->|State Verified| E[Agent Executes Task] ::: neutral
+    
+    E --> F{Repo Divergence Detector} ::: governance
+    
+    F -->|Forbidden Patterns Found| G[Reject PR: Architectural Drift] ::: danger
+    G --> H[Autonomous Correction Loop] ::: governance
+    H --> E
+    
+    F -->|AST is Clean| I[Branch Integrity Policy Check] ::: governance
+    
+    I -->|Protected Branch| J[Halt: Mutation Containment] ::: danger
+    I -->|Valid Feature Branch| K[Approve for Human Review] ::: success

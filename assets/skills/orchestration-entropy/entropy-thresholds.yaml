@@ -1,0 +1,26 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: OrchestrationEntropyPolicy
+metadata:
+  name: multi-agent-containment
+  description: "Mathematical constraints preventing runaway agentic workflows."
+spec:
+  # Structural Boundaries
+  structural_limits:
+    max_chain_depth: 5 # Maximum number of sequential agent handoffs
+    max_concurrent_agents: 3 # Maximum agents operating in parallel
+    
+  # Semantic Drift Thresholds
+  payload_validation:
+    require_schema_match_on_handoff: true
+    max_variance_score: 0.15 # Allowable drift from the original user prompt
+    
+  # Temporal Limits (Dead-man switches)
+  temporal_containment:
+    max_workflow_duration_minutes: 15
+    max_idle_time_seconds: 60
+    
+  # Action upon breach
+  on_entropy_breach:
+    action: SEVER_WORKFLOW
+    trigger_rollback: true
+    notify_human: true

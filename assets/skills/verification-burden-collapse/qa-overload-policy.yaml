@@ -1,0 +1,18 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: QAOverloadPolicy
+metadata:
+  name: human-verification-containment
+  description: "Mathematically limits the amount of synthetic code pushed to human reviewers."
+spec:
+  # Maximum allowed lines of code per agentic PR
+  max_lines_per_pr: 250
+  
+  # Action if agent exceeds PR size
+  on_size_breach:
+    action: REJECT_AND_SPLIT
+    reason: "Agent payload exceeds maximum human cognitive load for verification."
+
+  # Rate limiting PR submissions per agent
+  rate_limits:
+    max_prs_per_hour: 2
+    max_prs_per_day: 8

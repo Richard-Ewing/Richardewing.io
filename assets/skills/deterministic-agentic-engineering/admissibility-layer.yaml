@@ -1,0 +1,27 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: GlobalAdmissibilityLayer
+metadata:
+  name: canonical-governance-os
+  description: "The global convergence of all 14 subsystem policies into a single deterministic gate."
+spec:
+  # The 5 Core Pillars of Admissibility
+  evaluation_gates:
+    financial:
+      policy_ref: "token-budget-policy.yaml"
+      must_pass: true
+    security:
+      policy_ref: "permission-boundary-policy.yaml"
+      must_pass: true
+    structural:
+      policy_ref: "branch-integrity-policy.yaml"
+      must_pass: true
+    cognitive:
+      policy_ref: "memory-priority-policy.yaml"
+      must_pass: true
+    verification:
+      policy_ref: "qa-overload-policy.yaml"
+      must_pass: true
+
+  # Global Runtime Behavior
+  runtime_mode: DETERMINISTIC_STRICT
+  allow_autonomous_bypasses: false

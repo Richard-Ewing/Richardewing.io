@@ -1,0 +1,24 @@
+graph TD
+    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
+    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
+    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
+    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+
+    A[LLM Generates Probabilistic Output] ::: neutral --> B{Execution Certainty Engine} ::: governance
+    
+    B --> C{Cost Containment} ::: governance
+    C -->|Breached| D[Reject: Economic Margin] ::: danger
+    
+    C -->|Passed| E{Runtime Permission} ::: governance
+    E -->|Breached| F[Reject: Security Policy] ::: danger
+    
+    E -->|Passed| G{Repo Divergence} ::: governance
+    G -->|Breached| H[Reject: Architectural Drift] ::: danger
+    
+    G -->|Passed| I{Verification Threshold} ::: governance
+    I -->|Breached| J[Reject: QA Overload] ::: danger
+    
+    I -->|Passed| K[Output is Admissible] ::: success
+    
+    K --> L[Change Approval Engine] ::: governance
+    L --> M[Deterministic Execution] ::: success

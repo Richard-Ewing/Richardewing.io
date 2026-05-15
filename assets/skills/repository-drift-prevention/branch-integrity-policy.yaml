@@ -1,0 +1,28 @@
+apiVersion: governance.exogram.ai/v1alpha1
+kind: BranchIntegrityPolicy
+metadata:
+  name: structural-mutation-containment
+  description: "Strict boundaries defining which branches an agent may mutate."
+spec:
+  # Global Branch Rules
+  protected_branches:
+    - "main"
+    - "master"
+    - "production"
+  
+  # Action if agent attempts direct push to protected branch
+  on_protected_push_attempt:
+    action: HARD_REJECT
+    message: "Direct commits to production branches by non-human actors are mathematically forbidden."
+
+  # Feature Branch Conventions
+  required_branch_prefixes:
+    - "agent/feat/"
+    - "agent/fix/"
+    - "agent/chore/"
+
+  # Merge Admissibility
+  merge_requirements:
+    require_human_approval: true
+    require_passing_ci: true
+    require_clean_rebase: true
