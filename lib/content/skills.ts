@@ -337,6 +337,123 @@ export const FAILURES: GovernanceFailure[] = [
         'Repository Drift',
         'Runtime Governance Failure'
     ]
+  },
+  {
+    slug: "context-window-overflow",
+    title: "Context Window Overflow",
+    definition: "When the agent's context window fills with stale data, failed attempts, and correction history, crowding out valid architectural state and collapsing reasoning quality.",
+    symptoms: ["Token budget exhaustion", "Lost architectural constraints", "Degraded output quality"],
+    economicImpact: "Forced session restarts destroy accumulated progress.",
+    governanceImpact: "No compression policy means unbounded context bloat.",
+    ecosystemPainQuotes: ["Context eventually fills up and everything breaks.", "Lost all my project rules after 30 minutes."],
+    telemetrySignals: ["Context utilization > 80%", "Instruction recall failure"],
+    faqs: [{ question: "How do you compress context windows?", answer: "By deploying semantic pruning engines that preserve architectural state while discarding stale interaction history." }],
+    searchKeywords: ["context window full", "context overflow", "token limit reached"],
+    whatBreaks: ['reasoning quality collapse', 'instruction amnesia'], economicDamage: ['wasted sessions', 'lost progress'], whatSystemInstalls: ['semantic pruning', 'checkpoint rotation'], failureCascades: ['Context Rot', 'Retry Inflation']
+  },
+  {
+    slug: "verification-burden",
+    title: "Verification Burden Collapse",
+    definition: "When human reviewers cannot keep pace with AI-generated output volume, leading to rubber-stamped approvals, review fatigue, and undetected regressions reaching production.",
+    symptoms: ["Rubber-stamped PRs", "Review fatigue", "Undetected regressions in production"],
+    economicImpact: "Quality gate failure multiplies downstream defect costs.",
+    governanceImpact: "Human oversight becomes performative, not protective.",
+    ecosystemPainQuotes: ["We spend more time reviewing AI than coding.", "Nobody actually reads the AI diffs anymore."],
+    telemetrySignals: ["Review time < generation time", "PR approval without diff inspection"],
+    faqs: [{ question: "How do you prevent verification fatigue?", answer: "Automated confidence scoring routes only uncertain outputs to human review, reducing burden by 70%." }],
+    searchKeywords: ["AI code review fatigue", "rubber stamp AI", "verification overload"],
+    whatBreaks: ['quality gates', 'human oversight'], economicDamage: ['production defects', 'review burnout'], whatSystemInstalls: ['confidence routers', 'review timers'], failureCascades: ['Hallucination Debt', 'Repository Drift']
+  },
+  {
+    slug: "tool-permission-leak",
+    title: "Tool Permission Leaks",
+    definition: "When AI agents access tools, commands, and file system paths beyond their authorized scope, enabling data exfiltration, credential exposure, and destructive operations.",
+    symptoms: ["Unauthorized file reads", "Destructive shell commands", "Privilege escalation"],
+    economicImpact: "A single credential leak can cost $100K+ in incident response.",
+    governanceImpact: "No least-privilege enforcement for agent tool access.",
+    ecosystemPainQuotes: ["Windsurf just deleted the config directory.", "The agent executed a script it shouldn't have."],
+    telemetrySignals: ["Tool call outside manifest", "Sensitive file access attempt"],
+    faqs: [{ question: "How do you restrict AI agent tool access?", answer: "Deploy tool capability manifests with explicit whitelists and block all unregistered tool calls." }],
+    searchKeywords: ["AI agent permissions", "tool access control", "agent privilege escalation"],
+    whatBreaks: ['file system safety', 'credential security'], economicDamage: ['breach costs', 'compliance violations'], whatSystemInstalls: ['tool whitelists', 'path guards'], failureCascades: ['Governance Theater', 'MCP Exposure']
+  },
+  {
+    slug: "cost-overrun",
+    title: "AI Cost Overruns",
+    definition: "Uncontrolled API spending caused by autonomous agents running without financial circuit breakers, budget caps, or token burn monitoring.",
+    symptoms: ["$100+ overnight bills", "Runaway autonomous sessions", "No spend visibility"],
+    economicImpact: "Teams report $500-$1,100 single-session losses.",
+    governanceImpact: "No financial governance layer between agent and API.",
+    ecosystemPainQuotes: ["Roo Code burned through $50 trying to center a div.", "Our API spend is completely out of control."],
+    telemetrySignals: ["Token burn rate > $10/hr", "Session duration > 4 hours unattended"],
+    faqs: [{ question: "How do you control AI coding costs?", answer: "Financial circuit breakers that halt execution when token burn rate exceeds configurable thresholds." }],
+    searchKeywords: ["AI coding cost", "Claude Code expensive", "API spend control"],
+    whatBreaks: ['budget predictability', 'ROI'], economicDamage: ['API overspend', 'budget blowouts'], whatSystemInstalls: ['financial circuit breakers', 'budget caps'], failureCascades: ['Retry Inflation', 'Context Rot']
+  },
+  {
+    slug: "mcp-exposure",
+    title: "MCP Security Exposure",
+    definition: "The Model Context Protocol gives agents access to external tools and databases without context isolation, capability validation, or supply chain verification.",
+    symptoms: [".env file reads via MCP tools", "Typosquat server installs", "Data sent to external endpoints"],
+    economicImpact: "A single MCP breach can expose production credentials.",
+    governanceImpact: "No isolation boundary between MCP tools and sensitive data.",
+    ecosystemPainQuotes: ["Claude had global access to every MCP server. Terrifying.", "MCP tools have no permission boundaries by default."],
+    telemetrySignals: ["Credential file access via MCP", "Unknown MCP server connection"],
+    faqs: [{ question: "Are MCP servers secure?", answer: "Not by default. MCP governance deploys capability validators and context isolation to enforce least-privilege tool access." }],
+    searchKeywords: ["MCP security", "MCP governance", "MCP server risks"],
+    whatBreaks: ['data isolation', 'credential safety'], economicDamage: ['breach response costs', 'compliance failures'], whatSystemInstalls: ['capability validators', 'context isolation'], failureCascades: ['Tool Permission Leaks', 'Governance Theater']
+  },
+  {
+    slug: "change-management-failure",
+    title: "Agentic Change Management Failure",
+    definition: "When AI agents make sweeping architectural changes without approval gates, rollback plans, or impact analysis — creating unreviewable, irreversible mutations.",
+    symptoms: ["Multi-file rewrites without approval", "No rollback capability", "Scope creep beyond task"],
+    economicImpact: "Hours of manual rollback after unauthorized refactors.",
+    governanceImpact: "No change approval workflow for autonomous agents.",
+    ecosystemPainQuotes: ["It rewrote my entire architecture without asking.", "47 files changed in a single session."],
+    telemetrySignals: ["Files modified > 10 in single action", "No approval gate triggered"],
+    faqs: [{ question: "How do you control AI agent scope?", answer: "Change management gates that require human approval above configurable thresholds for file count, diff size, and scope." }],
+    searchKeywords: ["AI agent scope control", "autonomous refactoring risk", "agent change management"],
+    whatBreaks: ['architectural integrity', 'review capacity'], economicDamage: ['rollback costs', 'lost velocity'], whatSystemInstalls: ['approval gates', 'scope limiters'], failureCascades: ['Repository Drift', 'Verification Burden']
+  },
+  {
+    slug: "identity-drift",
+    title: "Identity Governance Drift",
+    definition: "When agents progressively ignore system prompt instructions, CLAUDE.md rules, and operational constraints as context pressure increases.",
+    symptoms: ["Prompt rules ignored under pressure", "Style/tone drift", "Authority boundary violations"],
+    economicImpact: "Non-compliant outputs require complete rework.",
+    governanceImpact: "Identity constraints are theoretical without runtime enforcement.",
+    ecosystemPainQuotes: ["System prompts aren't enough.", "Prompt rules were completely ignored."],
+    telemetrySignals: ["Instruction adherence < 80%", "Style deviation detected"],
+    faqs: [{ question: "Why does Claude ignore my rules?", answer: "System prompts degrade under context pressure. Identity governance enforces rules at runtime, not just at session start." }],
+    searchKeywords: ["Claude ignores instructions", "system prompt limits", "CLAUDE.md not working"],
+    whatBreaks: ['rule adherence', 'operational consistency'], economicDamage: ['rework costs', 'brand risk'], whatSystemInstalls: ['identity enforcement', 'instruction monitors'], failureCascades: ['Governance Theater', 'Context Rot']
+  },
+  {
+    slug: "engineering-economics-collapse",
+    title: "Engineering Economics Collapse",
+    definition: "When AI agent deployment costs exceed the engineering value they produce — negative ROI caused by retry inflation, verification burden, and remediation overhead.",
+    symptoms: ["AI costs > human equivalent", "Negative productivity delta", "Hidden remediation costs"],
+    economicImpact: "Teams discover AI agents are net-negative on total cost of ownership.",
+    governanceImpact: "No economic telemetry to measure actual agent ROI.",
+    ecosystemPainQuotes: ["The ROI on AI agents is negative due to token costs.", "We're spending more fixing AI mistakes than writing code."],
+    telemetrySignals: ["Total cost of ownership > baseline", "Remediation hours > generation hours"],
+    faqs: [{ question: "Are AI coding agents worth it?", answer: "Only with governance. Without containment, remediation costs often exceed the value of generated code." }],
+    searchKeywords: ["AI coding ROI", "AI agent cost benefit", "is Claude Code worth it"],
+    whatBreaks: ['ROI justification', 'budget approval'], economicDamage: ['negative ROI', 'budget cancellation'], whatSystemInstalls: ['ROI telemetry', 'cost-per-task tracking'], failureCascades: ['Cost Overruns', 'Retry Inflation']
+  },
+  {
+    slug: "autonomous-execution-risk",
+    title: "Autonomous Execution Risk",
+    definition: "The compounding danger of allowing AI agents to execute code, run commands, and modify systems without human-in-the-loop checkpoints or safety boundaries.",
+    symptoms: ["Unsupervised production changes", "Destructive commands executed", "No execution audit trail"],
+    economicImpact: "A single uncontrolled execution can take down production.",
+    governanceImpact: "No execution boundary between agent intent and system state.",
+    ecosystemPainQuotes: ["The agent executed rm -rf on a test directory.", "No way to undo what it did overnight."],
+    telemetrySignals: ["Shell execution without approval", "Production file modification"],
+    faqs: [{ question: "How do you make AI agents safe for production?", answer: "Execution safety gates that require human approval for destructive operations and maintain full audit trails." }],
+    searchKeywords: ["AI agent safety", "autonomous coding risk", "AI production safety"],
+    whatBreaks: ['production stability', 'system integrity'], economicDamage: ['downtime costs', 'incident response'], whatSystemInstalls: ['execution gates', 'audit trails'], failureCascades: ['Tool Permission Leaks', 'Governance Theater']
   }
 ];
 
