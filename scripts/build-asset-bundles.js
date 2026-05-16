@@ -17,6 +17,13 @@ dirs.forEach(slug => {
   const sourceFolder = path.join(skillsDir, slug);
   const destZip = path.join(outputDir, `${slug}.zip`);
   
+  // Copy universal GETTING-STARTED.md into each skill folder
+  const gettingStartedSrc = path.join(skillsDir, 'GETTING-STARTED.md');
+  const gettingStartedDest = path.join(sourceFolder, 'GETTING-STARTED.md');
+  if (fs.existsSync(gettingStartedSrc) && !fs.existsSync(gettingStartedDest)) {
+    fs.copyFileSync(gettingStartedSrc, gettingStartedDest);
+  }
+  
   if (fs.existsSync(destZip)) {
     fs.unlinkSync(destZip); // Remove if exists
   }
