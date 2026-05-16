@@ -1,11 +1,25 @@
-# Deterministic Policy Bound for tool-permission-governance
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# Tool Permission Governance Policy
+version: "1.1.0"
+runtime_layer: "Tool Governance"
+domain: "Capability Boundary"
+
+least_privilege:
+  scope_tools_to_task: true
+  block_escalation: true
+  revoke_unused_permissions: true
+
+capability_matrix:
+  file_read:
+    allowed_paths: ["src/**", "lib/**", "test/**"]
+    blocked_paths: [".env*", "*.key", "config/prod*"]
+  file_write:
+    allowed_paths: ["src/**", "test/**"]
+    blocked_paths: ["config/**", ".env*", "package.json"]
+  shell_execute:
+    allowed: ["npm test", "npm run lint", "npm run build"]
+    blocked: ["rm", "curl", "wget", "ssh"]
+
+data_protection:
+  redact_secrets: true
+  block_credential_access: true
+  audit_sensitive_reads: true

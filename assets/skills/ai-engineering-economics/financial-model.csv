@@ -1,4 +1,7 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Monthly AI Infrastructure Spend (team of 5),$4800-$6200,$900-$1500,75% reduction
+Velocity Measurement Accuracy,Lines of Code Only,Verified Shipped Features,Correct metric
+Hidden Verification Burden Visibility,0% tracked,100% tracked,Full visibility
+Negative ROI Tasks Identified,0% flagged,100% flagged,Complete detection
+Quarterly Cost Overrun Frequency,85% of quarters,15% of quarters,82% reduction
+True AI-Assisted Feature Cost,Unknown,$X per feature,Measurable

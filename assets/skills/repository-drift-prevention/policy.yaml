@@ -1,11 +1,25 @@
-# Deterministic Policy Bound for repository-drift-prevention
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# Repository Drift Prevention Policy
+version: "1.0.5"
+runtime_layer: "Environment Governance"
+domain: "Codebase Integrity"
+
+scope_enforcement:
+  lock_to_requested_files: true
+  max_files_modifiable: "scoped_only"
+  block_unscoped_mutations: true
+
+import_validation:
+  check_package_json: true
+  check_node_modules: true
+  block_phantom_imports: true
+  block_phantom_packages: true
+
+diff_limits:
+  max_lines_without_review: 200
+  max_files_per_operation: 5
+  alert_on_unexpected_diff_size: true
+
+deletion_protection:
+  require_approval_for_deletion: true
+  block_config_deletion: true
+  block_env_deletion: true

@@ -1,11 +1,36 @@
-# Deterministic Policy Bound for ai-engineering-economics
-version: "1.0"
+# AI Engineering Economics Policy
+version: "1.0.0"
+runtime_layer: "Environment Governance"
+domain: "Strategic Economic Analysis"
+
 governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+  enforcement_level: "advisory"
+  halt_on_failure: false
+
+cost_tracking:
+  enabled: true
+  granularity: "per_task"
+  include_verification_hours: true
+  include_remediation_hours: true
+
+roi_thresholds:
+  minimum_positive_roi: 1.0  # AI must be at least break-even
+  flag_negative_roi_tasks: true
+  quarterly_review: true
+
+synthetic_cogs:
+  track_token_costs: true
+  track_verification_burden: true
+  track_retry_inflation: true
+  track_remediation_costs: true
+  track_context_rot_waste: true
+
+reporting:
+  frequency: "weekly"
+  dashboard: true
+  executive_summary: "quarterly"
+  
+alerts:
+  negative_roi_sprint: "immediate"
+  cost_increase_30_percent: "daily"
+  margin_compression: "weekly"

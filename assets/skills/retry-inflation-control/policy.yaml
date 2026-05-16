@@ -1,11 +1,24 @@
-# Deterministic Policy Bound for retry-inflation-control
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# Retry Inflation Control Policy
+version: "1.2.0"
+runtime_layer: "Skill Governance"
+domain: "Economic Containment"
+
+retry_limits:
+  max_retries_per_error: 5
+  max_identical_error_recurrence: 3
+  max_total_retries_per_task: 10
+
+financial_circuit_breakers:
+  max_usd_per_task: 25
+  max_usd_per_hour: 12
+  halt_on_budget_exceeded: true
+  
+error_fingerprinting:
+  enabled: true
+  match_threshold: 0.95
+  context_wipe_on_recurrence: true
+
+escalation:
+  on_recursive_loop: "immediate"
+  on_budget_exceeded: "immediate"
+  on_5th_retry: "queued"

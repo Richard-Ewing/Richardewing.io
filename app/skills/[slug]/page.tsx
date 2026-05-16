@@ -60,6 +60,11 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
                                 <span className="px-2 py-1 rounded text-[10px] font-bold font-mono uppercase tracking-widest bg-zinc-100 text-[#4A4A4A] border border-[rgba(0,0,0,0.05)]">
                                     {skill.category}
                                 </span>
+                                {skill.runtimeLayer && (
+                                    <span className="px-2 py-1 rounded text-[10px] font-bold font-mono uppercase tracking-widest bg-violet-50 text-violet-700 border border-violet-200">
+                                        {skill.runtimeLayer}
+                                    </span>
+                                )}
                                 <span className="px-2 py-1 rounded text-[10px] font-bold font-mono uppercase tracking-widest bg-cyan-50 text-cyan-900 border border-cyan-100">
                                     {skill.version}
                                 </span>

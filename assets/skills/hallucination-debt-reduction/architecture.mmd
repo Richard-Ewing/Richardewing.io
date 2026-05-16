@@ -1,6 +1,9 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent Code Output"] --> B{"Admissibility Engine"}
+    B -- "Imports Valid" --> C{"Confidence Scoring"}
+    C -- "Score >= 0.85" --> D["Route to Review Queue"]
+    C -- "Score < 0.85" --> E["Auto-Reject + Feedback"]
+    B -- "Phantom Imports" --> F["BLOCK: Dependency Audit"]
+    D --> G["Human Review"]
+    G -- "Approved" --> H["Merge"]
+    G -- "Rejected" --> I["Return to Agent with Feedback"]

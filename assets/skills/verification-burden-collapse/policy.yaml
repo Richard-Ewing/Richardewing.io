@@ -1,11 +1,26 @@
-# Deterministic Policy Bound for verification-burden-collapse
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# Verification Burden Collapse Policy
+version: "1.0.0"
+runtime_layer: "Skill Governance"
+domain: "Review Containment"
+
+confidence_routing:
+  auto_approve_threshold: 0.95
+  standard_review_threshold: 0.85
+  deep_review_threshold: 0.75
+  auto_reject_threshold: 0.75
+
+review_capacity:
+  max_prs_per_reviewer_per_day: 8
+  throttle_ai_generation_at: 8
+  alert_on_rubber_stamp_risk: true
+  min_review_duration_minutes: 5
+
+quality_gates:
+  require_test_coverage: true
+  require_ast_validation: true
+  require_import_resolution: true
+
+burnout_prevention:
+  max_review_hours_per_day: 4
+  alert_at_hours: 3
+  mandatory_break_at_hours: 5

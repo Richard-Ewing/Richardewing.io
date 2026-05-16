@@ -1,11 +1,35 @@
-# Deterministic Policy Bound for autonomous-execution-safety
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# Autonomous Execution Safety Policy
+version: "2.1.0"
+runtime_layer: "Identity Governance"
+domain: "Authority Containment"
+
+command_whitelist:
+  safe_commands:
+    - "cat"
+    - "ls"
+    - "pwd"
+    - "echo"
+    - "grep"
+    - "find"
+  restricted_commands:
+    - "npm install"
+    - "npm run"
+    - "git push"
+    - "git merge"
+  blocked_commands:
+    - "rm -rf"
+    - "DROP"
+    - "DELETE FROM"
+    - "FORMAT"
+    - "curl"
+    - "wget"
+
+package_installation:
+  require_human_approval: true
+  block_unvetted_packages: true
+  audit_postinstall_scripts: true
+
+authority_boundaries:
+  max_file_mutations_per_task: 10
+  block_infrastructure_modifications: true
+  block_production_access: true

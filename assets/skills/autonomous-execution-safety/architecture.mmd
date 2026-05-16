@@ -1,6 +1,14 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent Shell Command"] --> B["Command Whitelist Engine"]
+    B --> C{"Classification"}
+    C -- "Safe (read, ls, cat)" --> D["Execute"]
+    C -- "Restricted (npm, git)" --> E{"Permission Check"}
+    E -- "Approved" --> D
+    E -- "Not Approved" --> F["BLOCK + Human Approval"]
+    C -- "Dangerous (rm, DROP)" --> G["IMMEDIATE BLOCK"]
+    G --> H["Security Alert"]
+    C -- "Unknown" --> I["Sandbox Execution"]
+    I --> J{"Side Effect Check"}
+    J -- "No Side Effects" --> K["Allow + Log"]
+    J -- "Side Effects" --> F
+    D --> L["Audit Log Entry"]

@@ -1,11 +1,24 @@
-# Deterministic Policy Bound for orchestration-entropy
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# Orchestration Entropy Policy
+version: "1.0.0"
+runtime_layer: "Skill Governance"
+domain: "Multi-Agent Containment"
+
+turn_limits:
+  max_turns_per_workflow: 50
+  warning_at_turns: 20
+
+agreement_loop_detection:
+  max_consecutive_agreements_without_tools: 10
+  require_tool_invocation_every_n_turns: 5
+
+delegation_limits:
+  max_delegation_depth: 5
+  block_recursive_delegation: true
+  
+sub_agent_limits:
+  max_concurrent_sub_agents: 3
+  max_total_sub_agents: 5
+  
+checkpointing:
+  save_state_every_n_turns: 5
+  rollback_on_entropy_halt: true

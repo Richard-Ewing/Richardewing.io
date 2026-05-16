@@ -1,11 +1,35 @@
-# Deterministic Policy Bound for mcp-governance
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# MCP Governance Policy
+version: "1.3.2"
+runtime_layer: "Tool Governance"
+domain: "Protocol Security"
+
+tool_manifest:
+  require_manifest: true
+  block_unmanifested_tools: true
+  audit_all_tool_calls: true
+
+context_isolation:
+  enabled: true
+  prevent_cross_tool_data_leak: true
+  sandbox_execution: true
+
+sensitive_data_protection:
+  block_env_file_access: true
+  block_credential_file_access: true
+  redact_secrets_from_output: true
+  protected_patterns:
+    - ".env*"
+    - "*.key"
+    - "*.pem"
+    - "*secret*"
+    - "*credential*"
+
+supply_chain:
+  require_server_verification: true
+  block_unverified_servers: true
+  audit_server_descriptions: true
+
+escalation:
+  on_unauthorized_access: "immediate"
+  on_data_exfiltration: "immediate"
+  on_new_server_install: "queued"

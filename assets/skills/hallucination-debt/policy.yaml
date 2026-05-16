@@ -1,0 +1,11 @@
+# Hallucination Debt Policy (Legacy)
+version: "1.0.0"
+note: "This is the legacy hallucination-debt module. See hallucination-debt-reduction for the active system."
+
+governance:
+  enforcement_level: "advisory"
+  halt_on_failure: false
+
+scoring:
+  confidence_threshold: 0.85
+  verification_required: true

@@ -1,6 +1,16 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent Action Request"] --> B["Execution Interceptor"]
+    B --> C{"Command Classification"}
+    C -- "Whitelisted" --> D["Admissibility Engine"]
+    D --> E{"Payload Validation"}
+    E -- "Valid" --> F["Execute in Sandbox"]
+    E -- "Invalid" --> G["BLOCK + Log"]
+    C -- "Unknown" --> H["Human Approval Queue"]
+    H -- "Approved" --> D
+    H -- "Denied" --> G
+    C -- "Blacklisted" --> I["IMMEDIATE BLOCK"]
+    I --> J["Security Alert"]
+    F --> K["Post-Execution Audit"]
+    K --> L{"State Integrity Check"}
+    L -- "Clean" --> M["Commit Changes"]
+    L -- "Corrupted" --> N["Rollback Circuit"]

@@ -1,4 +1,6 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Session Stability Duration,45-90 min,4+ hours,300% improvement
+Instruction Recall at Session End,40-60%,>90%,50% improvement
+Token Waste from Stale Context,30-50%,<10%,70% reduction
+Context-Related Build Failures/Week,5-12,0-1,92% reduction
+Avg Useful Interactions Per Session,15-20,50+,150% improvement

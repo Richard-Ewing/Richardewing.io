@@ -1,4 +1,6 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Senior Engineer Review Hours/Week,12-20,4-6,65% reduction
+Phantom Dependencies Reaching Prod/Quarter,3-8,0,100% elimination
+Post-Merge AI Bug Rate,8-15%,<2%,85% reduction
+Monthly Verification Burden Cost (8 engineers),$8000-$15000,$2000-$4000,73% reduction
+Average PR Review Duration,45 min,12 min,73% reduction

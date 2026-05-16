@@ -1,11 +1,33 @@
-# Deterministic Policy Bound for agentic-change-management
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# Agentic Change Management Policy
+version: "1.0.0"
+runtime_layer: "Identity Governance"
+domain: "CAB Approval Architecture"
+
+risk_classification:
+  low_risk:
+    - "documentation updates"
+    - "comment changes"
+    - "test additions"
+  medium_risk:
+    - "feature code changes"
+    - "dependency updates"
+    - "configuration changes"
+  high_risk:
+    - "database migrations"
+    - "API contract changes"
+    - "authentication changes"
+  critical_risk:
+    - "production deployments"
+    - "infrastructure changes"
+    - "security configuration"
+
+approval_requirements:
+  low_risk: "auto_approve_with_log"
+  medium_risk: "peer_review"
+  high_risk: "cab_approval"
+  critical_risk: "cto_plus_security"
+
+audit_trail:
+  log_all_changes: true
+  require_change_justification: true
+  retention_days: 365

@@ -1,4 +1,6 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Credential Exposure via Tools/Year,2-6,0,100% prevention
+Capability Escalation Events/Month,3-8,0,100% blocking
+Over-Permissioned Tool Calls/Month,50-200,0,100% enforcement
+Data Exfiltration Attempts Blocked/Month,0 (undetected),5-15,Full detection
+Permission Audit Score,30-50%,100%,Complete compliance

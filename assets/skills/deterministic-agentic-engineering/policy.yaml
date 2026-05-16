@@ -1,11 +1,33 @@
-# Deterministic Policy Bound for deterministic-agentic-engineering
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# Deterministic Agentic Engineering Policy — Master System
+version: "3.0.0"
+runtime_layer: "Identity Governance"
+domain: "Master Runtime Architecture"
+
+exogram_runtime:
+  identity_layer: "loaded"
+  skill_layer: "resolved"
+  tool_layer: "authorized"
+  environment_layer: "snapshot"
+  compilation: "immutable"
+
+governance_mode: "zero_trust"
+enforcement: "deterministic_middleware"
+prompt_reliance: "none"
+
+runtime_compilation:
+  assemble_identity: true
+  resolve_skill: true
+  authorize_tools: true
+  load_environment_slice: true
+  compile_immutable_payload: true
+  constrained_execution: true
+  validate_output: true
+  mutate_state_on_success: true
+
+global_circuit_breakers:
+  max_usd_per_task: 50
+  max_retries: 5
+  max_session_duration_minutes: 120
+  halt_on_governance_bypass: true
+  halt_on_recursive_loop: true
+  halt_on_authority_breach: true

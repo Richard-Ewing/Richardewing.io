@@ -1,11 +1,30 @@
-# Deterministic Policy Bound for context-rot-prevention
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# Context Rot Prevention Policy
+version: "1.2.0"
+runtime_layer: "Skill Governance"
+domain: "Bounded Cognition"
+
+context_limits:
+  max_window_utilization: 0.75
+  warning_threshold: 0.65
+  critical_threshold: 0.85
+  
+session_governance:
+  max_duration_minutes: 90
+  checkpoint_interval_minutes: 30
+  mandatory_reset_at_utilization: 0.85
+
+patch_chain_limits:
+  max_consecutive_patches_same_file: 3
+  max_total_patches_per_session: 15
+  halt_on_recursive_patch: true
+
+token_budget:
+  max_usd_per_task: 25
+  max_usd_per_session: 50
+  alert_at_percent: 80
+
+human_escalation:
+  on_patch_chain_exceeded: true
+  on_context_critical: true
+  on_token_budget_exceeded: true
+  channels: ["slack", "email"]

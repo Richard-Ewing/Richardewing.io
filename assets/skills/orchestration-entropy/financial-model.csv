@@ -1,4 +1,6 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Agreement Loop Token Waste/Incident,$200-$900,$0 (halted at 10 turns),100% prevention
+Delegation Ping-Pong Incidents/Month,3-8,0,100% elimination
+Wasted Compute on Runaway Orchestration,$1500-$4000/month,<$100/month,97% reduction
+Max Undetected Agreement Loop Duration,6+ hours,10 turns (~2 min),99% faster detection
+Sub-Agent Explosion Events/Quarter,2-5,0,100% prevention

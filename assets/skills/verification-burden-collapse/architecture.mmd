@@ -1,6 +1,16 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["AI Code Output"] --> B["Verification Router"]
+    B --> C{"Confidence Scoring"}
+    C -- ">= 0.95" --> D["Fast-Track Queue"]
+    C -- "0.85-0.95" --> E["Standard Review"]
+    C -- "0.75-0.85" --> F["Deep Review Required"]
+    C -- "< 0.75" --> G["Auto-Reject"]
+    G --> H["Structured Feedback to Agent"]
+    D --> I["Lightweight Human Check"]
+    E --> J["Standard Human Review"]
+    F --> K["Senior Engineer Review"]
+    I --> L{"Approved?"}
+    J --> L
+    K --> L
+    L -- "Yes" --> M["Merge"]
+    L -- "No" --> H

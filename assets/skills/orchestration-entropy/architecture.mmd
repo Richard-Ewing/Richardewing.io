@@ -1,6 +1,14 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent Message"] --> B["Orchestrator Governor"]
+    B --> C{"Turn Counter"}
+    C -- "< max turns" --> D{"Tool Invocation Check"}
+    D -- "Tools Used" --> E["Allow + Checkpoint State"]
+    D -- "No Tools" --> F{"Agreement Counter"}
+    F -- "< 10 consecutive" --> G["Allow with Warning"]
+    F -- ">= 10" --> H["HALT: Agreement Loop"]
+    C -- ">= max turns" --> I["HALT: Workflow Timeout"]
+    B --> J{"Delegation Depth Check"}
+    J -- "< max depth" --> K["Allow Delegation"]
+    J -- ">= max depth" --> L["BLOCK: Force Execution"]
+    H --> M["Human Escalation"]
+    I --> M

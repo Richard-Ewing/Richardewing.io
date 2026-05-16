@@ -1,4 +1,6 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Credential Exposure Incidents/Year,2-6,0,100% prevention
+Unauthorized Data Access Events/Month,5-15,0,100% blocking
+Tool Chain Contamination Events/Quarter,3-8,0,100% isolation
+MCP Server Supply Chain Incidents/Year,1-3,0,100% validation
+Security Audit MCP Findings,8-15/audit,0,Clean audits

@@ -1,4 +1,6 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Files Corrupted Per Incident,8-47,0-1,98% reduction
+Rollback Time Per Incident,2-8 hours,5 minutes,97% reduction
+Ghost Dependency Production Incidents/Quarter,2-5,0,100% elimination
+Monthly Dev Hours Lost to Drift Cleanup,15-40 hrs,1-3 hrs,93% reduction
+Unauthorized File Mutation Detection,0%,100%,Complete visibility

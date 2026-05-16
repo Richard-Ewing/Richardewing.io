@@ -1,11 +1,35 @@
-# Deterministic Policy Bound for hallucination-debt-reduction
-version: "1.0"
+# Hallucination Debt Reduction Policy
+version: "1.1.4"
+runtime_layer: "Skill Governance"
+domain: "Output Verification"
+
 governance:
   enforcement_level: "strict"
   halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+
+confidence_thresholds:
+  auto_approve: 0.95
+  human_review: 0.85
+  auto_reject: 0.75
+  block_merge: 0.60
+
+import_validation:
+  check_package_json: true
+  check_node_modules: true
+  block_phantom_imports: true
+  allow_type_only_imports: false
+
+output_scoring:
+  max_hallucination_density: 2  # per 100 LOC
+  max_unresolvable_imports: 0
+  require_test_coverage: true
+
+human_escalation:
+  enabled: true
+  channels: ["slack", "email"]
+  on_phantom_dependency: "immediate"
+  on_low_confidence: "queued"
+
+circuit_breakers:
+  max_rejections_before_halt: 3
+  max_review_time_minutes: 30

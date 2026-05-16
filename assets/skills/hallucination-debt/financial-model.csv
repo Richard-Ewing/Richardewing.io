@@ -1,0 +1,5 @@
+Metric,Baseline,Target
+Hallucination Rate,15-25%,<5%
+Verification Time per PR,45 min,12 min
+Phantom Dependencies per Sprint,3-8,0
+Senior Engineer Review Burden,70% of time,25% of time

@@ -1,11 +1,44 @@
-# Deterministic Policy Bound for runtime-governance
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# Runtime Governance Policy
+version: "2.0.1"
+runtime_layer: "Tool Governance"
+domain: "Execution Containment"
+
+command_classification:
+  whitelisted:
+    - "cat"
+    - "ls"
+    - "pwd"
+    - "echo"
+    - "grep"
+    - "find"
+    - "head"
+    - "tail"
+    - "wc"
+  restricted:
+    - "npm"
+    - "npx"
+    - "git"
+    - "node"
+    - "python"
+  blacklisted:
+    - "rm -rf"
+    - "DROP TABLE"
+    - "FORMAT"
+    - "curl"  
+    - "wget"
+    - "ssh"
+    - "scp"
+    
+file_protection:
+  protected_patterns:
+    - ".env*"
+    - "*.key"
+    - "*.pem"
+    - "config/production*"
+    - "docker-compose.prod*"
+  max_files_per_operation: 5
+
+human_escalation:
+  on_blacklisted_command: "immediate"
+  on_protected_file_access: "immediate"
+  on_restricted_command: "queued"

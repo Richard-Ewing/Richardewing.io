@@ -1,6 +1,18 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent Trigger"] --> B["EXOGRAM RUNTIME COMPILER"]
+    B --> C["Load Identity Layer"]
+    B --> D["Resolve Skill Layer"]
+    B --> E["Authorize Tool Layer"]
+    B --> F["Load Environment Slice"]
+    C --> G["Assemble Runtime Context"]
+    D --> G
+    E --> G
+    F --> G
+    G --> H["Compile Immutable Payload"]
+    H --> I["Constrained LLM Execution"]
+    I --> J{"Output Validation"}
+    J -- "Admissible" --> K["State Mutation"]
+    J -- "Inadmissible" --> L["Reject + Feedback"]
+    K --> M["Update Memory"]
+    K --> N["Update Environment"]
+    K --> O["Audit Log"]

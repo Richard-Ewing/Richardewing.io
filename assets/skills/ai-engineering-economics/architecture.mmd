@@ -1,6 +1,13 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["AI Task Request"] --> B{"Cost Estimation Engine"}
+    B --> C["Estimate Token Cost"]
+    B --> D["Estimate Human Equivalent"]
+    C --> E{"ROI Comparison"}
+    D --> E
+    E -- "AI Cheaper" --> F["Approve for Agent"]
+    E -- "Human Cheaper" --> G["Route to Human"]
+    E -- "Marginal" --> H["Manager Decision"]
+    F --> I["Track Actual Cost"]
+    I --> J{"Post-Task Audit"}
+    J -- "Within Budget" --> K["Log Success"]
+    J -- "Over Budget" --> L["Alert + Adjust Model"]

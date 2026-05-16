@@ -1,6 +1,15 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent File Write"] --> B["Repository Validator"]
+    B --> C{"Scope Check"}
+    C -- "In Scope" --> D{"Import Resolution"}
+    D -- "All Valid" --> E["Allow Write"]
+    D -- "Ghost Import" --> F["BLOCK: Phantom Dependency"]
+    C -- "Out of Scope" --> G{"Override Check"}
+    G -- "Has Approval" --> D
+    G -- "No Approval" --> H["BLOCK: Scope Violation"]
+    E --> I["Post-Write Audit"]
+    I --> J{"Diff Size Check"}
+    J -- "< 200 lines" --> K["Auto-Commit"]
+    J -- ">= 200 lines" --> L["Human Review Required"]
+    F --> M["Dependency Audit Alert"]
+    H --> N["Escalation Alert"]

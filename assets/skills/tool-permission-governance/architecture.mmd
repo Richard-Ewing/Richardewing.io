@@ -1,6 +1,12 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent Tool Request"] --> B["Scope Engine"]
+    B --> C{"Task Manifest Check"}
+    C -- "Tool in Manifest" --> D{"Permission Level Check"}
+    D -- "Sufficient" --> E["Execute Tool"]
+    D -- "Escalation Needed" --> F["BLOCK: Capability Escalation"]
+    C -- "Tool NOT in Manifest" --> G["BLOCK: Unauthorized Tool"]
+    E --> H{"Output Sensitivity Check"}
+    H -- "Non-sensitive" --> I["Return Result"]
+    H -- "Contains Secrets" --> J["REDACT + Alert"]
+    F --> K["Security Alert"]
+    G --> K

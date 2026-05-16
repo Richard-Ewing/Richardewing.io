@@ -1,6 +1,17 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["New Interaction"] --> B["Context Monitor"]
+    B --> C{"Usage Level"}
+    C -- "< 50%" --> D["Normal Operation"]
+    C -- "50-65%" --> E["Begin Passive Pruning"]
+    E --> F["Remove Stale Turns"]
+    F --> D
+    C -- "65-85%" --> G["Active Checkpoint Rotation"]
+    G --> H["Preserve Current Architecture State"]
+    H --> I["Compress Historical Interactions"]
+    I --> J["Rebuild Priority Context"]
+    J --> D
+    C -- "> 85%" --> K["Emergency Compression"]
+    K --> L["Extract Only Critical State"]
+    L --> M["Full History Purge"]
+    M --> N["Reload from Checkpoint"]
+    N --> D

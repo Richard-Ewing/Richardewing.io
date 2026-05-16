@@ -1,0 +1,7 @@
+graph TD
+    A["Agent Output"] --> B{"Hallucination Scoring Engine"}
+    B -- "Score > 0.9" --> C["Low Debt: Accept"]
+    B -- "Score 0.7-0.9" --> D["Medium Debt: Flag for Review"]
+    B -- "Score < 0.7" --> E["High Debt: Reject"]
+    E --> F["Return Feedback to Agent"]
+    D --> G["Human Verification Queue"]

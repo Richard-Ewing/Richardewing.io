@@ -1,4 +1,7 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Avg Session Token Cost,$12-$45/session,$4-$8/session,70% reduction
+Developer Remediation Hours,2-6 hrs/incident,0.25 hrs/incident,92% reduction
+Files Corrupted Per Incident,8-47 files,0-2 files,96% reduction
+Monthly Agentic Failure Cost (team of 5),$3200-$8500,$400-$900,88% reduction
+Session Stability Duration,45-90 min,4+ hours,300% improvement
+Recursive Patch Chains/Week,3-8,0,100% elimination

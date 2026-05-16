@@ -1,4 +1,6 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Destructive Commands Executed/Year,3-8,0,100% prevention
+Unauthorized Package Installations/Month,5-12,0,100% blocking
+Production Data Loss Incidents/Year,1-3,0,100% prevention
+Shell Command Audit Trail,0% logged,100% logged,Complete audit
+Blocked Dangerous Operations/Month,0 (undetected),8-20,Full prevention

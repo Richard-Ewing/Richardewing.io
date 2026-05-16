@@ -1,6 +1,16 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent Request"] --> B["Context Health Monitor"]
+    B --> C{"Window Usage Check"}
+    C -- "< 65%" --> D["Execute Normally"]
+    C -- "65-85%" --> E["Checkpoint Rotation"]
+    E --> F["Prune Stale Context"]
+    F --> D
+    C -- "> 85%" --> G["CRITICAL: Semantic Reset"]
+    G --> H["Preserve Architecture State"]
+    H --> I["Purge Interaction History"]
+    I --> J["Reload Core Context"]
+    J --> D
+    D --> K["Post-Flight Audit"]
+    K --> L{"Patch Chain Check"}
+    L -- "< 3 patches" --> M["Continue"]
+    L -- ">= 3 patches" --> N["HALT + Human Escalation"]

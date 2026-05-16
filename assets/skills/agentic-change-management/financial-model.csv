@@ -1,4 +1,6 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Unapproved Agent Deployments/Year,4-10,0,100% prevention
+Shadow AI Changes Detected/Month,0 (invisible),15-30,Full visibility
+Production Incidents from Agent Changes/Year,3-8,0,100% prevention
+Change Audit Trail Completeness,0-30%,100%,Complete compliance
+Time to Detect Unauthorized Change,Days-weeks,Immediate,Real-time

@@ -1,6 +1,13 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent Retry Attempt"] --> B["Retry Burn Engine"]
+    B --> C{"Budget Check"}
+    C -- "Within Budget" --> D{"Error Fingerprint Check"}
+    D -- "New Error" --> E["Allow Retry"]
+    E --> F["Decrement Budget"]
+    D -- "Same Error" --> G{"Recurrence Count"}
+    G -- "< 3" --> H["Context Wipe + Fresh Retry"]
+    G -- ">= 3" --> I["HALT: Recursive Loop"]
+    I --> J["Human Escalation"]
+    C -- "Budget Exceeded" --> K["FINANCIAL CIRCUIT BREAKER"]
+    K --> L["Kill Process"]
+    L --> M["Audit Log"]

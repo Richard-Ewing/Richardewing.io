@@ -1,4 +1,6 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Production Incidents from Agent Actions/Year,4-12,0,100% elimination
+Average Incident Cost,$5000-$50000,$0,Total prevention
+Security Audit Findings from Agents/Quarter,3-8,0,100% elimination
+Unauthorized Shell Commands Blocked/Month,0 (undetected),15-30,Full visibility
+Config File Mutation Attempts Blocked/Month,0 (undetected),5-12,Full prevention

@@ -1,6 +1,15 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent Task Start"] --> B["Cost Containment Engine"]
+    B --> C["Initialize Budget"]
+    C --> D["Track Token Consumption"]
+    D --> E{"Budget Check"}
+    E -- "< 50% budget" --> F["Continue"]
+    E -- "50-80% budget" --> G["Warning: Approaching Limit"]
+    G --> F
+    E -- "80-100% budget" --> H["Alert: Near Limit"]
+    H --> I{"Human Override?"}
+    I -- "Yes" --> J["Extend Budget"]
+    I -- "No" --> K["Prepare to Halt"]
+    E -- "> 100% budget" --> L["FINANCIAL CIRCUIT BREAKER"]
+    L --> M["Kill Agent Process"]
+    M --> N["Audit Log + Cost Report"]

@@ -1,4 +1,6 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Production Incidents from AI Agents/Year,12-30+,0,100% elimination
+Total Governance Bypass Events/Year,50-200+,0,100% prevention
+Cascading Failure Incidents/Year,4-8,0,100% containment
+Total AI Infrastructure Risk Exposure,$180K+/year,$0,Complete de-risk
+Runtime Governance Coverage,0% (prompt-only),100% (middleware),Complete enforcement

@@ -1,11 +1,27 @@
-# Deterministic Policy Bound for context-window-compression
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# Context Window Compression Policy
+version: "1.2.0"
+runtime_layer: "Environment Governance"
+domain: "Token Economy"
+
+compression_levels:
+  passive_pruning:
+    trigger_at_utilization: 0.50
+    remove: "old_interaction_history"
+  active_rotation:
+    trigger_at_utilization: 0.65
+    preserve: "architecture_state"
+    compress: "historical_interactions"
+  emergency_compression:
+    trigger_at_utilization: 0.85
+    extract: "critical_state_only"
+    purge: "full_history"
+
+session_limits:
+  max_useful_interactions: 50
+  checkpoint_every_n_interactions: 10
+  mandatory_reset_at_utilization: 0.90
+
+instruction_recall:
+  minimum_recall_accuracy: 0.90
+  test_recall_every_n_interactions: 5
+  force_rotation_on_amnesia: true

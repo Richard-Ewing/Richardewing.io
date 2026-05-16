@@ -1,6 +1,13 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent Tool Call"] --> B["MCP Gateway"]
+    B --> C{"Capability Manifest Check"}
+    C -- "In Manifest" --> D{"Context Isolation Check"}
+    D -- "Isolated" --> E["Execute in Sandbox"]
+    D -- "Leaks Context" --> F["BLOCK: Context Leak"]
+    C -- "Not in Manifest" --> G["BLOCK: Unauthorized Tool"]
+    E --> H{"Output Validation"}
+    H -- "Clean" --> I["Return Result"]
+    H -- "Sensitive Data" --> J["BLOCK: Data Exfiltration"]
+    G --> K["Security Alert"]
+    F --> K
+    J --> K

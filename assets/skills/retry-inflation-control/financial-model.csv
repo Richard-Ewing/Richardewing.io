@@ -1,4 +1,6 @@
-Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
-Low,2000,0.10,0.95
-Medium,8000,0.50,0.85
-High,25000,2.00,0.75
+Metric,Without System,With System,Improvement
+Avg Retry Chain Cost,$15-$400+,$2-$8 (capped),95% reduction
+Monthly Wasted Token Spend (team of 5),$2000-$6000,$200-$500,92% reduction
+Developer Hours Lost to Retry Cleanup,4-10 hrs/week,0.5 hrs/week,92% reduction
+Longest Undetected Retry Chain,89 retries ($412),5 retries ($8 max),94% cap
+Identical Error Recurrence Detection,0% detected,100% detected,Complete

@@ -1,11 +1,26 @@
-# Deterministic Policy Bound for ai-cost-containment
-version: "1.0"
-governance:
-  enforcement_level: "strict"
-  halt_on_failure: true
-  human_escalation:
-    enabled: true
-    threshold: 0.85
-  circuit_breakers:
-    max_retries: 3
-    token_budget: 15000
+# AI Cost Containment Policy
+version: "1.5.0"
+runtime_layer: "Environment Governance"
+domain: "Financial Circuit Breaking"
+
+budgets:
+  max_usd_per_task: 25
+  max_usd_per_session: 50
+  max_usd_per_developer_per_day: 100
+  max_usd_per_team_per_month: 1500
+
+circuit_breakers:
+  halt_at_budget_percent: 100
+  warn_at_budget_percent: 80
+  alert_at_budget_percent: 50
+
+unattended_limits:
+  max_unattended_minutes: 30
+  max_unattended_spend: 15
+  require_human_checkin: true
+
+tracking:
+  granularity: "per_task"
+  include_retry_waste: true
+  include_context_rot_waste: true
+  dashboard_refresh_seconds: 60

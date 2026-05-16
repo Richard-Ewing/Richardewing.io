@@ -1,6 +1,19 @@
 graph TD
-    A[Agent Action] --> B{Governance Middleware}
-    B -- Passes Policy --> C[Execute Command]
-    B -- Fails Policy --> D[Halt & Escalate]
-    D --> E[Human Verification]
-    D --> F[Rollback State]
+    A["Agent Change Request"] --> B["Change Approval Engine"]
+    B --> C{"Risk Assessment"}
+    C -- "Low Risk" --> D["Auto-Approve with Log"]
+    C -- "Medium Risk" --> E["Peer Review Required"]
+    C -- "High Risk" --> F["CAB Approval Required"]
+    C -- "Critical" --> G["CTO + Security Review"]
+    D --> H["Execute Change"]
+    E --> I{"Reviewer Approval"}
+    F --> J{"CAB Approval"}
+    G --> K{"Executive Approval"}
+    I -- "Approved" --> H
+    J -- "Approved" --> H
+    K -- "Approved" --> H
+    I -- "Denied" --> L["BLOCK + Feedback"]
+    J -- "Denied" --> L
+    K -- "Denied" --> L
+    H --> M["Post-Change Validation"]
+    M --> N["Audit Trail Entry"]
