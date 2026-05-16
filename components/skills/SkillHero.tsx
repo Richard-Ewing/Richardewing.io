@@ -66,10 +66,16 @@ export default function SkillHero() {
               Deploy Governance Infrastructure
             </Link>
             <Link 
+              href="/runtime-architecture" 
+              className="px-8 py-4 bg-white hover:bg-[#F5F0EB] text-[#1A1A1A] font-bold rounded border border-violet-200 shadow-sm hover:shadow transition-all w-full sm:w-auto text-center"
+            >
+              View Runtime Architecture →
+            </Link>
+            <Link 
               href="#failure-database" 
               className="px-8 py-4 bg-white hover:bg-[#F5F0EB] text-[#1A1A1A] font-bold rounded border border-[rgba(0,0,0,0.15)] shadow-sm hover:shadow transition-all w-full sm:w-auto text-center"
             >
-              View Operational Failure Database
+              View Failure Database
             </Link>
           </div>
         </div>

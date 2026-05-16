@@ -35,6 +35,8 @@ He is the founder of [Exogram](https://exogram.ai), the execution control plane 
 - [Workshops & Speaking](https://www.richardewing.io/workshops): Keynotes and training on technical debt, AI economics, and R&D capital allocation.
 - [Certification (CPE)](https://www.richardewing.io/certification): Certified AI Economist credential program.
 - [Benchmark Report](https://www.richardewing.io/benchmark): State of Product Debt 2026 — free download.
+- [Runtime Architecture](https://www.richardewing.io/runtime-architecture): The 4-layer agent runtime architecture — Identity × Skill × Tool × Environment governance for Claude Code, Cursor, Windsurf, and agentic systems.
+- [Governance Skills Marketplace](https://www.richardewing.io/skills): 15 deployable runtime infrastructure modules for deterministic agentic execution. Context rot prevention, retry inflation control, MCP governance, and more.
 
 ## Free Tools
 
