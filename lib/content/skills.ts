@@ -39,6 +39,7 @@ export interface GovernanceSkill {
   whatSystemInstalls?: string[];
   failureCascades?: string[];
   ctaText?: string;
+  runtimeLayer?: 'Identity Governance' | 'Skill Governance' | 'Tool Governance' | 'Environment Governance';
 }
 
 export const FAILURES: GovernanceFailure[] = [
@@ -408,7 +409,8 @@ export const SKILLS: GovernanceSkill[] = [
       'Repository Drift',
       'Runtime Governance Failure'
     ],
-      ctaText: "Install Claude Context Rot Containment"
+      ctaText: "Install Claude Context Rot Containment",
+      runtimeLayer: "Skill Governance"
 },
   {
     slug: "runtime-governance",
@@ -473,7 +475,8 @@ export const SKILLS: GovernanceSkill[] = [
       'Repository Drift',
       'Architectural Collapse'
     ],
-      ctaText: "Deploy Claude Runtime Governance"
+      ctaText: "Deploy Claude Runtime Governance",
+      runtimeLayer: "Tool Governance"
 },
   {
     slug: "hallucination-debt-reduction",
@@ -535,7 +538,8 @@ export const SKILLS: GovernanceSkill[] = [
       'Margin Collapse',
       'Orchestration Entropy'
     ],
-      ctaText: "Deploy Hallucination Containment"
+      ctaText: "Deploy Hallucination Containment",
+      runtimeLayer: "Skill Governance"
 },
   {
     slug: "ai-engineering-economics",
@@ -595,7 +599,8 @@ export const SKILLS: GovernanceSkill[] = [
       'Synthetic COGS Expansion',
       'Margin Collapse'
     ],
-      ctaText: "Deploy Economic Governance"
+      ctaText: "Deploy Economic Governance",
+      runtimeLayer: "Environment Governance"
 },
   {
     slug: "mcp-governance",
@@ -654,7 +659,8 @@ export const SKILLS: GovernanceSkill[] = [
       'Compliance Violation',
       'Runtime Governance Failure'
     ],
-      ctaText: "Deploy Claude Protocol Governance"
+      ctaText: "Deploy Claude Protocol Governance",
+      runtimeLayer: "Tool Governance"
 },
   {
     slug: "verification-burden-collapse",
@@ -715,7 +721,8 @@ export const SKILLS: GovernanceSkill[] = [
               "Hallucinated Execution",
               "Repository Drift"
             ],
-      ctaText: "Deploy Claude QA Overload Prevention"
+      ctaText: "Deploy Claude QA Overload Prevention",
+      runtimeLayer: "Skill Governance"
 },
   {
     slug: "repository-drift-prevention",
@@ -777,7 +784,8 @@ export const SKILLS: GovernanceSkill[] = [
               "Merge Instability",
               "Verification Collapse"
             ],
-      ctaText: "Deploy Cursor Codebase Governance"
+      ctaText: "Deploy Cursor Codebase Governance",
+      runtimeLayer: "Environment Governance"
 },
   {
     slug: "agentic-change-management",
@@ -836,7 +844,8 @@ export const SKILLS: GovernanceSkill[] = [
       'Governance Bypass',
       'Production Incident'
     ],
-      ctaText: "Deploy Cryptographic CAB Approvals"
+      ctaText: "Deploy Cryptographic CAB Approvals",
+      runtimeLayer: "Identity Governance"
 },
   {
     slug: "context-window-compression",
@@ -896,7 +905,8 @@ export const SKILLS: GovernanceSkill[] = [
               "Retry Inflation",
               "Agent Deadlock"
             ],
-      ctaText: "Deploy Claude Context Compression"
+      ctaText: "Deploy Claude Context Compression",
+      runtimeLayer: "Environment Governance"
 },
   {
     slug: "autonomous-execution-safety",
@@ -956,7 +966,8 @@ export const SKILLS: GovernanceSkill[] = [
               "Infrastructure Corruption",
               "Production Incident"
             ],
-      ctaText: "Deploy Claude Execution Guardrails"
+      ctaText: "Deploy Claude Execution Guardrails",
+      runtimeLayer: "Identity Governance"
 },
   {
     slug: "tool-permission-governance",
@@ -1013,7 +1024,8 @@ export const SKILLS: GovernanceSkill[] = [
               "Data Exfiltration",
               "Compliance Violation"
             ],
-      ctaText: "Deploy Tool Permission Governance"
+      ctaText: "Deploy Tool Permission Governance",
+      runtimeLayer: "Tool Governance"
 },
   {
     slug: "ai-cost-containment",
@@ -1074,7 +1086,8 @@ export const SKILLS: GovernanceSkill[] = [
               "Budget Overruns",
               "Economic Governance Failure"
             ],
-      ctaText: "Deploy AI Token Budget Controls"
+      ctaText: "Deploy AI Token Budget Controls",
+      runtimeLayer: "Environment Governance"
 },
   {
     slug: "orchestration-entropy",
@@ -1136,7 +1149,8 @@ export const SKILLS: GovernanceSkill[] = [
               "Runaway Execution Chains",
               "Runtime Governance Failure"
             ],
-      ctaText: "Deploy Multi-Agent Orchestration Constraints"
+      ctaText: "Deploy Multi-Agent Orchestration Constraints",
+      runtimeLayer: "Skill Governance"
 },
   {
     slug: "retry-inflation-control",
@@ -1198,7 +1212,8 @@ export const SKILLS: GovernanceSkill[] = [
               "Context Window Collapse",
               "Runtime Stability Failure"
             ],
-      ctaText: "Install Claude Retry Inflation Controls"
+      ctaText: "Install Claude Retry Inflation Controls",
+      runtimeLayer: "Skill Governance"
 },
   {
     slug: "deterministic-agentic-engineering",
@@ -1260,7 +1275,8 @@ export const SKILLS: GovernanceSkill[] = [
               "Total Systems Failure",
               "Enterprise Rollback"
             ],
-      ctaText: "Deploy the Exogram Control Plane"
+      ctaText: "Deploy the Exogram Control Plane",
+      runtimeLayer: "Identity Governance"
 }
 ];
 

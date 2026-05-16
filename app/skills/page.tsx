@@ -10,11 +10,11 @@ import EcosystemPainSignals from '@/components/skills/EcosystemPainSignals';
 import ExogramBridge from '@/components/skills/ExogramBridge';
 
 export const metadata: Metadata = {
-  title: 'Operational Governance Systems | Richard Ewing',
-  description: 'Deployable operational remediation systems for runtime governance, hallucination debt, context rot, orchestration entropy, repository drift, and deterministic AI execution.',
+  title: 'Deterministic Runtime Infrastructure for Claude Code | Richard Ewing',
+  description: 'Deployable runtime governance modules for Claude Code, Cursor, Windsurf, and agentic engineering. Identity, Skill, Tool, and Environment governance layers for deterministic AI execution.',
   openGraph: {
-    title: 'Operational Governance Systems',
-    description: 'Deployable operational remediation systems for runtime governance, hallucination debt, context rot, orchestration entropy, repository drift, and deterministic AI execution.',
+    title: 'Deterministic Runtime Infrastructure for Claude Code & Agentic Engineering',
+    description: 'Deployable runtime governance modules across 4 architectural layers: Identity, Skill, Tool, and Environment governance for deterministic AI execution.',
     url: 'https://richardewing.io/skills',
   },
   alternates: {
@@ -51,11 +51,11 @@ export default function SkillsPage() {
         <section id="governance-systems" className="section-lg border-t border-[rgba(0,0,0,0.08)]">
           <div className="section-header text-center max-w-3xl mx-auto">
             <div className="inline-block px-4 py-1.5 mb-4 rounded-full border border-rose-200 bg-rose-50 text-rose-700 font-mono text-sm tracking-widest font-bold uppercase">
-              Deployable Infrastructure
+              Deterministic Runtime Infrastructure
             </div>
-            <h2>Operational governance systems for Claude Code and deterministic agentic engineering.</h2>
+            <h2>Runtime governance modules for Claude Code, Cursor, Windsurf, and agentic engineering systems.</h2>
             <p className="text-lg mt-4">
-              15 deployable governance systems for containing real-world agentic failure. Install runtime interception, bounded cognition, and rollback containment directly into your architecture.
+              15 deployable runtime infrastructure modules across 4 architectural layers — Identity, Skill, Tool, and Environment governance. Install deterministic containment directly into your agentic workflow.
             </p>
           </div>
           
@@ -68,6 +68,7 @@ export default function SkillsPage() {
                 category={skill.category}
                 price={skill.price}
                 checkoutUrl={skill.checkoutUrl}
+                runtimeLayer={skill.runtimeLayer}
                 whatBreaks={skill.whatBreaks}
                 ecosystemPainQuotes={skill.ecosystemPainQuotes}
                 whatSystemInstalls={skill.whatSystemInstalls}

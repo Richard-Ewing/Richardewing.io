@@ -7,6 +7,7 @@ interface GovernanceSystemCardProps {
   category: string;
   price: number;
   checkoutUrl: string;
+  runtimeLayer?: string;
   whatBreaks?: string[];
   ecosystemPainQuotes?: string[];
   whatSystemInstalls?: string[];
@@ -20,6 +21,7 @@ export default function GovernanceSystemCard({
   category,
   price,
   checkoutUrl,
+  runtimeLayer,
   whatBreaks = [],
   ecosystemPainQuotes = [],
   whatSystemInstalls = [],
@@ -33,9 +35,16 @@ export default function GovernanceSystemCard({
       
       <div className="mb-6 pt-2">
         <div className="flex justify-between items-start mb-3">
-          <span className="inline-block px-2 py-1 bg-[#F5F0EB] text-[#3A3A3A] text-xs font-mono font-bold rounded border border-[rgba(0,0,0,0.08)] uppercase tracking-wider">
-            {category}
-          </span>
+          <div className="flex flex-col gap-1">
+            <span className="inline-block px-2 py-1 bg-[#F5F0EB] text-[#3A3A3A] text-xs font-mono font-bold rounded border border-[rgba(0,0,0,0.08)] uppercase tracking-wider">
+              {category}
+            </span>
+            {runtimeLayer && (
+              <span className="inline-block px-2 py-0.5 bg-violet-50 text-violet-700 text-[10px] font-mono font-bold rounded border border-violet-200 uppercase tracking-wider">
+                {runtimeLayer}
+              </span>
+            )}
+          </div>
           <span className="text-[#1A1A1A] font-bold text-xl">${price}</span>
         </div>
         
