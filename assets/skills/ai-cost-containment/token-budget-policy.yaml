@@ -1,31 +1,37 @@
+# =====================================================================
+# TOKEN BUDGET POLICY
+# Framework: AI Cost Containment
+# Purpose: Define absolute financial limits per tenant and per model.
+# =====================================================================
+
 apiVersion: governance.exogram.ai/v1alpha1
-kind: AICostContainmentPolicy
+kind: CostPolicy
 metadata:
-  name: dynamic-margin-protection
-  description: "Declarative budgets mapping task complexity to maximum allowable USD spend."
+  name: global-margin-protection
+  target_systems:
+    - client-facing-ai-features
+    - background-enrichment-agents
 spec:
-  # Base Limits
-  global_limits:
-    max_usd_per_day: 150.00
-    alert_channel: "#engineering-finance"
+  pricing_tiers:
+    "gpt-4o":
+      input_usd_per_1k: 0.005
+      output_usd_per_1k: 0.015
+    "claude-3-opus-20240229":
+      input_usd_per_1k: 0.015
+      output_usd_per_1k: 0.075
+    "claude-3-haiku-20240307":
+      input_usd_per_1k: 0.00025
+      output_usd_per_1k: 0.00125
 
-  # Tiered Task Budgets
-  task_budgets:
-    LOW_COMPLEXITY:
-      description: "Simple UI changes, text edits"
-      budget_usd: 0.50
-      allowed_models: ["gpt-4o-mini", "claude-3-haiku"]
-      
-    MEDIUM_COMPLEXITY:
-      description: "Component logic, state management"
-      budget_usd: 2.50
-      allowed_models: ["claude-3-5-sonnet", "gpt-4o"]
-      
-    HIGH_COMPLEXITY:
-      description: "Architecture design, multi-file refactors"
-      budget_usd: 10.00
-      allowed_models: ["claude-3-5-sonnet", "gpt-4o"]
+  limits:
+    # How much AI spend we tolerate per tenant per month before cutting them off.
+    # E.g., if they pay us $100/mo, we cap their AI compute at $20/mo to guarantee 80% gross margin.
+    max_usd_per_tenant_monthly: 20.00
+    
+    # Maximum cost allowed for a single API call.
+    # Prevents "context window attacks" where a user pastes an entire book to drain your API budget.
+    max_usd_per_feature_call: 0.15
 
-  on_budget_breach:
-    action: SEVER_API_CONNECTION
-    trigger_rollback: true
+  # HARD_HALT: Throw an error, denying service.
+  # DEGRADE: Automatically switch the request to a cheaper model (e.g., Haiku)
+  action_on_breach: "HARD_HALT"

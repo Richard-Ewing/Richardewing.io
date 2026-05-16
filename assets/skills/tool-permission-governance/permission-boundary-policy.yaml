@@ -1,28 +1,51 @@
-apiVersion: governance.exogram.ai/v1alpha1
-kind: ToolPermissionPolicy
-metadata:
-  name: granular-mcp-access-control
-  description: "Declarative ACL for agent tool capabilities and payload constraints."
-spec:
-  # Define valid tool scopes
-  scopes:
-    FILE_SYSTEM:
-      allowed_tools: ["read_file", "write_file", "list_dir"]
-      constraints:
-        blocked_paths: ["/.env", "/secrets/", "/node_modules/", "/.git/"]
-        
-    DATABASE:
-      allowed_tools: ["execute_sql"]
-      constraints:
-        allow_destructive: false  # Blocks DROP, DELETE, TRUNCATE
-        max_rows_returned: 1000
-        
-    INFRASTRUCTURE:
-      allowed_tools: ["aws_deploy", "terraform_apply"]
-      constraints:
-        require_human_auth_token: true # Requires secondary sign-off
+# =====================================================================
+# PERMISSION BOUNDARY POLICY
+# Framework: Tool Permission Governance
+# Purpose: Define explicit Role-Based Access Control (RBAC) for autonomous agents
+# to prevent Capability Escalation and blast-radius contamination.
+# =====================================================================
 
-  # Action upon violation
-  on_violation:
-    action: SEVER_TOOL_ACCESS
-    log_level: FATAL
+apiVersion: governance.exogram.ai/v1alpha1
+kind: RBACPolicy
+metadata:
+  name: dynamic-mcp-scope
+  target_systems:
+    - mcp-server-routing
+    - direct-function-calling
+spec:
+  # Tools that are banned at the network layer for ALL autonomous agents,
+  # regardless of their role. Humans must perform these manually.
+  global_restrictions:
+    - execute_bash_sudo
+    - db_drop_table
+    - aws_terminate_instance
+    - stripe_issue_refund
+
+  roles:
+    role_orchestrator:
+      allowed_tools:
+        - delegate_task
+        - read_workspace_summary
+        - notify_human
+      forbidden_tools:
+        - write_file
+        - execute_bash
+    
+    role_frontend_coder:
+      allowed_tools:
+        - read_file
+        - write_file
+        - search_codebase
+        - run_linter
+      forbidden_tools:
+        - execute_bash
+        - db_query
+        
+    role_test_engineer:
+      allowed_tools:
+        - read_file
+        - run_unit_tests
+        - generate_coverage_report
+      forbidden_tools:
+        - write_file
+        - execute_bash

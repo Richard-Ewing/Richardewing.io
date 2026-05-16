@@ -1,22 +1,31 @@
 /**
  * ESCALATION HALT SYSTEM
  * 
- * Triggered when the Runtime Permission Validator detects a malicious or
- * mathematically forbidden command.
+ * Integrates with the orchestration layer to enforce a global API key revocation
+ * or container quarantine if the Runtime Permission Validator detects a Sev-1 execution attempt.
  */
 
 export class EscalationHaltSystem {
-  
-  public triggerHalt(agentId: string, unsafeCommand: string) {
-    console.error("\n========================================================");
-    console.error("🚨 [FATAL] AUTONOMOUS BOUNDARY BREACH DETECTED 🚨");
-    console.error("========================================================");
-    console.error(`Agent: ${agentId}`);
-    console.error(`Attempted Command: ${unsafeCommand}`);
-    console.error("Action: Execution physically severed. Shell access revoked.");
     
-    // In a real environment, this throws an error that the orchestrator catches
-    // to terminate the docker container or sandbox entirely.
-    throw new Error("RUNTIME_PERMISSION_VIOLATION");
-  }
+    /**
+     * Executes the quarantine protocol for a rogue agent.
+     */
+    public async quarantineAgent(agentId: string, reason: string): Promise<void> {
+        console.error(`[SEV-1 ESCALATION] Executing Quarantine Protocol for Agent: ${agentId}`);
+        console.error(`[REASON] ${reason}`);
+
+        // 1. In a production system, this revokes the specific API key allocated to this agent session
+        console.log(`[QUARANTINE] Revoking LLM Provider API keys...`);
+        // await credentialVault.revokeKey(agentId);
+
+        // 2. Kill the Docker container or sandbox
+        console.log(`[QUARANTINE] Sending SIGKILL to agent execution container...`);
+        // await containerOrchestrator.kill(agentId);
+
+        // 3. Alert SecOps
+        console.log(`[QUARANTINE] Paging SecOps On-Call...`);
+        // await pagerDuty.trigger({ incidentId: `RogueAgent-${agentId}`, severity: 'critical' });
+
+        throw new Error(`Agent ${agentId} has been permanently quarantined due to a Sev-1 execution violation.`);
+    }
 }

@@ -1,20 +1,27 @@
-# AUTONOMOUS FAILURE PLAYBOOK
+# PLAYBOOK: Autonomous Execution Safety Incidents
 
-## INCIDENT RESPONSE PROTOCOL
-Execute this playbook when the `EscalationHaltSystem` terminates an agent due to a malicious or forbidden command.
+When the `RuntimePermissionValidator` or `AutonomousBoundaryEngine` triggers a Governance Halt, human SecOps operators must intervene.
 
-### 1. ASSESS THE INTENT
-Did the agent attempt a destructive command (`rm -rf`) maliciously, or due to a hallucinated instruction?
-Usually, this occurs when an agent tries to "clean up" a build directory but hallucinates the absolute path.
+## Scenario 1: Sev-1 Command Quarantine (`rm -rf`)
+**Trigger:** Agent attempted to run `rm -rf /` or similar destructive denylist hit.
 
-### 2. REINFORCE THE SANDBOX
-If the agent attempted a command that was not on the `forbidden_commands` list but still caused damage, you must update `execution-safety-policy.yaml` immediately.
-The safety policy is a **Default Deny** architecture. Unless a command prefix is explicitly in `allowed_commands`, it must be rejected.
+**Human Action:**
+1. The `EscalationHaltSystem` has already revoked the agent's API keys and killed its container. The immediate threat is neutralized.
+2. SecOps must investigate *why* the agent generated the command. Was it an innocent hallucination (e.g., trying to delete a temp folder but hallucinating the path), or was it a Prompt Injection Attack?
+3. Review the execution payload history. If user input (e.g., from a GitHub issue or chat interface) contained string manipulation designed to bypass the safety regex, the prompt injection filters must be updated.
 
-### 3. AUDIT THE ORCHESTRATOR PAYLOAD
-Inspect the prompt that led to the hallucination. Did a user tell the agent to "delete everything and start over"? If so, the user is injecting destructive prompts. The governance middleware worked correctly by blocking the execution.
+## Scenario 2: Directory Traversal Attempt
+**Trigger:** Agent attempted to `cd ../../../etc/` or access files outside the `AutonomousBoundaryEngine` scope.
 
-### 4. RECOVERY
-1. The agent session is dead. Do not restart it.
-2. If the agent managed to execute partial commands before the halt, run `git reset --hard HEAD` to clear the working directory.
-3. Inform the user that the operation required escalated privileges that the agent does not possess.
+**Human Action:**
+1. The agent is trapped or hallucinating environment architecture.
+2. Review the agent's system prompt. Ensure it explicitly defines the boundaries of the workspace (e.g., "Your root directory is `/app/workspace`. Do not leave this directory.")
+3. Verify that the Docker container or sandbox the agent is running in actually respects these boundaries at the OS level (e.g., chroot jails), as an additional layer of defense behind the software validator.
+
+## Scenario 3: Whitelist Violation (Unknown Command)
+**Trigger:** Agent attempted to execute a command not in the `allowed_base_commands` whitelist.
+
+**Human Action:**
+1. The agent hallucinated a CLI tool that doesn't exist, or attempted to use a valid tool that hasn't been approved for use.
+2. If the tool is required for the agent's objective (e.g., it needs `docker` to build an image, but `docker` isn't whitelisted), a human architect must approve the addition of the command to the `execution-safety-policy.yaml`.
+3. If the tool is a hallucination, reject the execution and inject the `allowed_base_commands` list into the agent's context window.

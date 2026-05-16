@@ -14,6 +14,10 @@ export interface GlossaryTerm {
     howToMeasure?: string;
     faqs: { question: string; answer: string }[];
     relatedTerms: string[];
+    relatedSkills?: string[];
+    relatedFailures?: string[];
+    relatedDiagnostics?: string[];
+    relatedControls?: string[];
     relatedTools?: { name: string; url: string }[];
     relatedArticles?: { title: string; url: string }[];
     tier?: 'pillar' | 'standard' | 'basic';

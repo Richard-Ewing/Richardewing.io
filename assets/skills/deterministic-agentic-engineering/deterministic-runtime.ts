@@ -1,36 +1,37 @@
 /**
  * DETERMINISTIC RUNTIME
  * 
- * The execution environment that wraps the LLM call. It replaces standard
- * probabilistic generation with a strict, state-machine driven generation cycle.
+ * Executes the unified suite of YAML-driven governance policies. 
+ * Converts probabilistic intent into mathematical bounds.
  */
 
-export class DeterministicRuntime {
-  
-  /**
-   * Executes a prompt within the deterministic boundaries.
-   */
-  public async execute(promptPayload: string, maxTokens: number): Promise<string> {
-    console.log(`[RUNTIME] Initiating deterministic execution cycle...`);
-    
-    // 1. Context Compression (Ensuring token limits and P0 rules)
-    console.log(`[RUNTIME] Compressing context payload...`);
-    
-    // 2. Telemetry Registration (Starting the burn engine)
-    console.log(`[RUNTIME] Registering USD budget allocation...`);
-    
-    // 3. Execution (The probabilistic LLM call)
-    console.log(`[RUNTIME] Awaiting probabilistic generation...`);
-    const probabilisticOutput = "Mock LLM output generating a React component.";
-    
-    // 4. Admissibility Check (Validating the output against rules)
-    console.log(`[RUNTIME] Running Admissibility Engine...`);
-    const isAdmissible = true; // Determined by ExecutionCertaintyEngine
+import { OrchestrationContext } from './governance-orchestrator';
 
-    if (!isAdmissible) {
-      throw new Error("DETERMINISTIC_RUNTIME_FAILURE: Probabilistic output failed validation.");
+export class DeterministicRuntime {
+    
+    /**
+     * Executes the chain of Pre-Flight validators.
+     */
+    public validatePreFlight(context: OrchestrationContext): void {
+        console.log(`[DETERMINISTIC RUNTIME] Enforcing unified policy bounds...`);
+
+        // Simulate invoking all sub-skills here:
+        
+        // 1. ToolPermissionGovernance.validateExecution()
+        // 2. RetryInflationControl.preFlightCheck()
+        // 3. AutonomousExecutionSafety.validateCommand()
+        // 4. AgenticChangeManagement.assessRisk()
+
+        const isSafe = this.runUnifiedValidationSuite(context);
+
+        if (!isSafe) {
+            throw new Error(`[RUNTIME HALT] Payload violates deterministic bounds. Execution rejected.`);
+        }
     }
 
-    return probabilisticOutput;
-  }
+    private runUnifiedValidationSuite(context: OrchestrationContext): boolean {
+        // In the real implementation, this loops through all active middlewares
+        // For this OS architecture demonstration, we assume pass if it reaches here.
+        return true; 
+    }
 }

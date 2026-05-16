@@ -5,6 +5,7 @@ import SocialShare from '@/components/SocialShare';
 import { allArticles, getSortedArticles } from '@/lib/blog-data';
 import { categoryColors } from '@/lib/blog-types';
 import { frameworks } from '@/app/lib/data';
+import GovernancePathways from '@/components/semantic/GovernancePathways';
 
 export async function generateStaticParams() {
     return Object.keys(allArticles).map(slug => ({ slug }));
@@ -132,8 +133,18 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                     </div>
                 </div>
 
+                {/* --- THE SEMANTIC GATEWAY (HUB AND SPOKE) --- */}
+                {article.relatedFailures || article.relatedSkills || article.relatedDiagnostics ? (
+                    <GovernancePathways 
+                        relatedFailures={article.relatedFailures}
+                        relatedSkills={article.relatedSkills}
+                        relatedDiagnostics={article.relatedDiagnostics}
+                        exogramMapping={article.relatedControls?.[0]} 
+                    />
+                ) : null}
+
                 {/* Author Box */}
-                <div className="p-8 rounded-2xl border border-zinc-400 bg-white/[0.03]">
+                <div className="mt-12 p-8 rounded-2xl border border-zinc-400 bg-white/[0.03]">
                     <div className="flex items-start gap-6">
                         <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-zinc-400 flex items-center justify-center shrink-0">
                             <span className="text-2xl">📊</span>

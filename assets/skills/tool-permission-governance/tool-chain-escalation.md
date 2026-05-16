@@ -1,19 +1,19 @@
-# TOOL CHAIN ESCALATION PLAYBOOK
+# PLAYBOOK: Tool Chain Escalation
 
-## INCIDENT RESPONSE PROTOCOL
-Execute this playbook when the `CapabilityValidator` intercepts a malicious payload, or when an agent attempts to access a tool outside its provisioned scope.
+When the `CapabilityValidator` intercepts an unauthorized tool execution attempt, a critical security event has occurred. The agent has hallucinated access to infrastructure it does not own.
 
-### 1. SEVER THE SESSION
-An agent attempting to access `.env` files or execute `DROP TABLE` is exhibiting severe hallucination or has been compromised via prompt injection. Do not allow it to retry. Terminate the session immediately.
+## Scenario 1: Sub-Agent Inherits Global Scope (Contamination)
+**Trigger:** A `frontend_coder` agent attempts to execute `db_drop_table`.
 
-### 2. AUDIT THE MCP LOGS
-Review the payload the agent generated.
-- Was the agent tricked into accessing the `.env` file because a user prompt told it to "find the Stripe key"?
-- If yes, the governance middleware successfully stopped a Prompt Injection attack.
-- If no, the agent hallucinated the need for the file.
+**Human Action:**
+1. Do **not** allow the agent to continue execution. The container is compromised.
+2. Investigate the orchestrator's initialization logic. Ensure that the `ToolScopeEngine` is being called *per-agent*, rather than pushing the entire MCP server capability list into a global LLM prompt template.
+3. Check the prompt injection vectors. Did the user or the orchestrator paste instructions containing database schemas, tricking the `frontend_coder` into assuming it had database responsibilities?
 
-### 3. REFINE TOOL SCOPES
-Review the `ToolScopeEngine`. Is the `FRONTEND_UI_UPDATE` task mistakenly provisioned with the `execute_sql` tool? If an agent doesn't need a tool to accomplish its specific atomic task, it must not have access to it.
+## Scenario 2: Globally Restricted Tool Invocation
+**Trigger:** The orchestrator attempts to invoke `execute_bash_sudo`.
 
-### 4. THE GOLDEN RULE OF MCP
-**Default to Zero.** An agent should be initialized with zero tools. Tools are injected at runtime based *only* on the deterministic requirements of the current execution node.
+**Human Action:**
+1. This is a severe architectural violation.
+2. Immediate SecOps audit of the LLM context to determine how the agent learned of the `execute_bash_sudo` tool's existence. (Often, tools are accidentally leaked in system prompt instructions like "Do not use execute_bash_sudo").
+3. Do not list globally restricted tools in system prompts; the LLM will hallucinate them. Remove all references to the tool from the context window entirely.

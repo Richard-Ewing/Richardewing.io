@@ -1,23 +1,30 @@
 graph TD
-    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
-    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
-    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
-    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+    classDef governance fill:#1A1A1A,stroke:#333,stroke-width:2px,color:#fff,font-family:monospace;
+    classDef agent fill:#0ea5e9,stroke:#0284c7,stroke-width:2px,color:#fff;
+    classDef fs fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff;
+    classDef fail fill:#f43f5e,stroke:#e11d48,stroke-width:2px,color:#fff;
+    classDef pass fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
 
-    A[Agent Session Initiated] ::: neutral --> B{Repository Validator} ::: governance
+    A[Agent Attempts File Write]:::agent --> V{Repository Validator}:::governance
     
-    B -->|HEAD is Stale| C[Halt: Desynchronization] ::: danger
-    B -->|Map Not Ingested| D[Halt: Blind Execution] ::: danger
+    subgraph ARCHITECTURAL GATING
+        V --> V1{Is Protected File?}
+        V --> V2{Banned Extension?}
+        V --> V3{Outside Scope Directory?}
+    end
+
+    V1 -- Yes --> H[Governance Halt: Write Blocked]:::fail
+    V2 -- Yes --> H
+    V3 -- Yes --> H
+
+    V1 -- No --> V2
+    V2 -- No --> V3
+    V3 -- No --> W[Write to File System]:::fs
+
+    W --> C[Agent Requests Merge]:::agent
     
-    B -->|State Verified| E[Agent Executes Task] ::: neutral
+    C --> D{Repo Divergence Detector}:::governance
     
-    E --> F{Repo Divergence Detector} ::: governance
-    
-    F -->|Forbidden Patterns Found| G[Reject PR: Architectural Drift] ::: danger
-    G --> H[Autonomous Correction Loop] ::: governance
-    H --> E
-    
-    F -->|AST is Clean| I[Branch Integrity Policy Check] ::: governance
-    
-    I -->|Protected Branch| J[Halt: Mutation Containment] ::: danger
-    I -->|Valid Feature Branch| K[Approve for Human Review] ::: success
+    D -->|Check Diff| D1{Modified package.json?}
+    D1 -- Yes --> B[Pre-Commit Hook Rejected]:::fail
+    D1 -- No --> M[Merge Approved]:::pass

@@ -1,25 +1,27 @@
 graph TD
-    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
-    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
-    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
-    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+    classDef governance fill:#1A1A1A,stroke:#333,stroke-width:2px,color:#fff,font-family:monospace;
+    classDef llm fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff;
+    classDef memory fill:#0ea5e9,stroke:#0284c7,stroke-width:2px,color:#fff;
+    classDef warning fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff;
+    classDef pass fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
 
-    A[Agent Generates Payload] ::: neutral --> B{Context Compression Engine} ::: governance
+    M[(Raw Agent History)]:::memory --> C{Context Compression Engine}:::governance
     
-    B -->|Tokens < Max| C[Payload Approved] ::: success
+    C -->|Tier 1: System| T1[Preserve 100%]
+    C -->|Tier 2: Recent| T2[Preserve Last N Turns]
+    C -->|Tier 3: Tools| T3[Truncate Large Payloads]
+    C -->|Tier 4: Stale| T4[Evict]
+
+    T1 --> B[Assemble Bounded Payload]
+    T2 --> B
+    T3 --> B
     
-    B -->|Tokens > Max| D[Execute Memory Priority Policy] ::: governance
+    B --> E{Payload > 16k Tokens?}
+    E -- Yes --> W[Warning: Token Ceiling Breached]:::warning
+    W --> CR[Trigger Checkpoint Rotation]:::governance
     
-    D --> E[Drop P4 Noise] ::: neutral
-    D --> F[Summarize P3 History] ::: neutral
-    D --> G[Truncate P2 File States] ::: neutral
+    E -- No --> P[Send to API]:::pass
+    P --> LLM[LLM Inference]:::llm
     
-    E & F & G --> H[Re-calculate Tokens] ::: governance
-    H --> C
-    
-    C --> I{Context Boundary Validator} ::: governance
-    
-    I -->|P0 Rules Intact| J[Send to LLM API] ::: success
-    
-    I -->|P0 Rules Violated| K[Halt: Context Collapse Detected] ::: danger
-    K --> L[Trigger Checkpoint Rotation] ::: governance
+    CR -->|Wipe Ephemeral State| S[Inject Deterministic Save State]:::memory
+    S --> P

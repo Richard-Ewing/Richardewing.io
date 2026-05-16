@@ -1,24 +1,33 @@
 graph TD
-    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
-    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
-    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
-    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+    classDef os fill:#1A1A1A,stroke:#333,stroke-width:3px,color:#fff,font-family:monospace;
+    classDef yaml fill:#6366f1,stroke:#4338ca,stroke-width:2px,color:#fff;
+    classDef fail fill:#f43f5e,stroke:#e11d48,stroke-width:2px,color:#fff;
+    classDef pass fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
 
-    A[LLM Generates Probabilistic Output] ::: neutral --> B{Execution Certainty Engine} ::: governance
+    P[Agent Payload Proposal] --> OS{Deterministic OS Admissibility Gate}:::os
     
-    B --> C{Cost Containment} ::: governance
-    C -->|Breached| D[Reject: Economic Margin] ::: danger
+    subgraph POLICY EVALUATION
+        OS --> Y1[(Tool Permissions YAML)]:::yaml
+        OS --> Y2[(Financial Budgets YAML)]:::yaml
+        OS --> Y3[(Architectural Boundaries YAML)]:::yaml
+        OS --> Y4[(Execution Safety YAML)]:::yaml
+    end
     
-    C -->|Passed| E{Runtime Permission} ::: governance
-    E -->|Breached| F[Reject: Security Policy] ::: danger
+    Y1 --> E1{Valid?}
+    Y2 --> E2{Valid?}
+    Y3 --> E3{Valid?}
+    Y4 --> E4{Valid?}
     
-    E -->|Passed| G{Repo Divergence} ::: governance
-    G -->|Breached| H[Reject: Architectural Drift] ::: danger
+    E1 -- No --> H[Governance Halt: Payload Destroyed]:::fail
+    E2 -- No --> H
+    E3 -- No --> H
+    E4 -- No --> H
     
-    G -->|Passed| I{Verification Threshold} ::: governance
-    I -->|Breached| J[Reject: QA Overload] ::: danger
+    E1 -- Yes --> C
+    E2 -- Yes --> C
+    E3 -- Yes --> C
+    E4 -- Yes --> C
     
-    I -->|Passed| K[Output is Admissible] ::: success
-    
-    K --> L[Change Approval Engine] ::: governance
-    L --> M[Deterministic Execution] ::: success
+    C{Execution Certainty Engine}:::os
+    C -->|Dry Run Fails| H
+    C -->|Dry Run Passes| A[Payload Admitted for Execution]:::pass

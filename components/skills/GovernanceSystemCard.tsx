@@ -2,33 +2,27 @@ import React from 'react';
 import Link from 'next/link';
 
 interface GovernanceSystemCardProps {
+  slug: string;
   title: string;
   category: string;
-  failureSolved: string;
-  description: string;
-  difficulty: string;
-  assetCount: number;
-  runtimeRelevance: string;
-  enterpriseRelevance: string;
-  exogramMapping: string;
   price: number;
   checkoutUrl: string;
-  assetsList: string[];
+  whatBreaks?: string[];
+  ecosystemPainQuotes?: string[];
+  whatSystemInstalls?: string[];
+  exogramMapping: string;
 }
 
 export default function GovernanceSystemCard({
+  slug,
   title,
   category,
-  failureSolved,
-  description,
-  difficulty,
-  assetCount,
-  runtimeRelevance,
-  enterpriseRelevance,
-  exogramMapping,
   price,
   checkoutUrl,
-  assetsList
+  whatBreaks = [],
+  ecosystemPainQuotes = [],
+  whatSystemInstalls = [],
+  exogramMapping
 }: GovernanceSystemCardProps) {
   return (
     <div className="card flex flex-col h-full bg-[#FFFFFF] border border-[rgba(0,0,0,0.1)] shadow-sm hover:shadow-lg transition-all relative overflow-hidden group">
@@ -43,61 +37,65 @@ export default function GovernanceSystemCard({
           <span className="text-[#1A1A1A] font-bold text-xl">${price}</span>
         </div>
         
-        <h3 className="text-2xl font-bold text-[#1A1A1A] mb-3">{title}</h3>
-        <p className="text-[#4A4A4A] text-sm leading-relaxed mb-4 pb-4 border-b border-[rgba(0,0,0,0.08)]">
-          {description}
-        </p>
+        <Link href={`/skills/${slug}`} className="block group-hover:text-cyan-700 transition-colors">
+            <h3 className="text-2xl font-bold text-[#1A1A1A] mb-3">{title}</h3>
+        </Link>
       </div>
 
-      <div className="flex-grow space-y-4 mb-6">
-        <div className="grid grid-cols-2 gap-3 text-sm">
-          <div>
-            <span className="block text-xs font-bold text-[#6B6B6B] uppercase tracking-wider mb-1">Failure Solved</span>
-            <span className="text-[#1A1A1A] font-medium">{failureSolved}</span>
-          </div>
-          <div>
-            <span className="block text-xs font-bold text-[#6B6B6B] uppercase tracking-wider mb-1">Difficulty</span>
-            <span className="text-[#1A1A1A] font-medium">{difficulty}</span>
-          </div>
-          <div>
-            <span className="block text-xs font-bold text-[#6B6B6B] uppercase tracking-wider mb-1">Runtime Relevance</span>
-            <span className="text-[#1A1A1A] font-medium">{runtimeRelevance}</span>
-          </div>
-          <div>
-            <span className="block text-xs font-bold text-[#6B6B6B] uppercase tracking-wider mb-1">Enterprise Relevance</span>
-            <span className="text-[#1A1A1A] font-medium">{enterpriseRelevance}</span>
-          </div>
+      <div className="flex-grow space-y-6 mb-6">
+        
+        {/* FAILURE */}
+        <div>
+          <span className="block text-xs font-bold text-rose-700 uppercase tracking-widest mb-2 border-b border-rose-100 pb-1">
+            Failure: What Breaks
+          </span>
+          <ul className="space-y-1">
+            {whatBreaks.slice(0, 3).map((item, idx) => (
+              <li key={idx} className="flex items-start text-sm text-[#1A1A1A] font-semibold">
+                <span className="text-rose-500 mr-2 mt-0.5">•</span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="bg-[#F5F0EB] rounded p-3 border border-[rgba(0,0,0,0.05)]">
-          <span className="block text-xs font-bold text-[#6B6B6B] uppercase tracking-wider mb-2">
-            Includes ({assetCount} Assets)
+        {/* SIGNALS */}
+        <div>
+          <span className="block text-xs font-bold text-violet-700 uppercase tracking-widest mb-2 border-b border-violet-100 pb-1">
+            Signals: What Engineers Observe
           </span>
-          <ul className="grid grid-cols-2 gap-x-2 gap-y-1">
-            {assetsList.map((asset, idx) => (
-              <li key={idx} className="flex items-center text-xs text-[#3A3A3A] font-mono">
-                <span className="text-[#0891B2] mr-1.5 font-bold">-</span>
+          <ul className="space-y-2">
+            {ecosystemPainQuotes.slice(0, 2).map((item, idx) => (
+              <li key={idx} className="flex items-start text-sm text-zinc-600 italic font-medium">
+                "{item}"
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* CONTAINMENT */}
+        <div className="bg-[#F5F0EB] rounded p-4 border border-[rgba(0,0,0,0.05)]">
+          <span className="block text-xs font-bold text-cyan-800 uppercase tracking-widest mb-2">
+            Containment: What System Installs
+          </span>
+          <ul className="grid grid-cols-1 gap-y-1">
+            {whatSystemInstalls.slice(0, 4).map((asset, idx) => (
+              <li key={idx} className="flex items-center text-xs text-[#1A1A1A] font-mono font-bold">
+                <span className="text-[#0891B2] mr-1.5">+</span>
                 {asset}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="pt-2">
-          <span className="block text-xs font-bold text-[#6B6B6B] uppercase tracking-wider mb-1">Exogram Mapping</span>
-          <div className="flex items-center text-sm font-mono text-[#1A1A1A] bg-[rgba(124,58,237,0.03)] border border-[rgba(124,58,237,0.15)] rounded px-2 py-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#7C3AED] mr-2"></span>
-            {exogramMapping}
-          </div>
-        </div>
       </div>
 
       <div className="mt-auto pt-4 border-t border-[rgba(0,0,0,0.08)]">
         <Link 
-          href={checkoutUrl}
+          href={`/skills/${slug}`}
           className="block w-full py-3 bg-[#1A1A1A] hover:bg-[#3A3A3A] text-white font-bold rounded text-center transition-colors shadow-sm"
         >
-          Deploy Governance Kit
+          Deploy Governance System
         </Link>
       </div>
     </div>

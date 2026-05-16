@@ -1,18 +1,36 @@
-apiVersion: governance.exogram.ai/v1alpha1
-kind: QAOverloadPolicy
-metadata:
-  name: human-verification-containment
-  description: "Mathematically limits the amount of synthetic code pushed to human reviewers."
-spec:
-  # Maximum allowed lines of code per agentic PR
-  max_lines_per_pr: 250
-  
-  # Action if agent exceeds PR size
-  on_size_breach:
-    action: REJECT_AND_SPLIT
-    reason: "Agent payload exceeds maximum human cognitive load for verification."
+# =====================================================================
+# QA OVERLOAD POLICY
+# Framework: Verification Burden Collapse
+# Purpose: Define the hard admissibility thresholds for agent outputs.
+# =====================================================================
 
-  # Rate limiting PR submissions per agent
-  rate_limits:
-    max_prs_per_hour: 2
-    max_prs_per_day: 8
+apiVersion: governance.exogram.ai/v1alpha1
+kind: AdmissibilityPolicy
+metadata:
+  name: qa-overload-prevention
+  target_systems:
+    - code-generation-agents
+    - autonomous-refactoring
+spec:
+  # The mathematical bounds an agent must pass before pinging a human
+  admissibility_thresholds:
+    # Maximum lines of code allowed in a single agentic PR
+    # Over-editing exponentially increases human review fatigue.
+    max_diff_lines: 400
+    
+    # The agent must autonomously write and pass tests for its code
+    minimum_test_coverage: 85
+    
+    # Maximum allowable linter warnings before rejection
+    max_lint_errors: 0
+    
+    # Scope drift prevention: The agent can only touch these directories
+    allowed_directories:
+      - "src/components/"
+      - "src/lib/"
+      - "tests/"
+
+  escalation:
+    # How many times the agent is allowed to try to fix its own code
+    # before a Governance Halt is triggered to prevent compute burn.
+    max_autonomous_retries: 3

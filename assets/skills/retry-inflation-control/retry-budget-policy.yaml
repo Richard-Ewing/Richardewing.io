@@ -1,22 +1,29 @@
+# =====================================================================
+# RETRY BUDGET POLICY
+# Framework: Retry Inflation Control
+# Purpose: Define absolute financial and compute circuit breakers
+# to halt infinite patching loops.
+# =====================================================================
+
 apiVersion: governance.exogram.ai/v1alpha1
-kind: RetryInflationPolicy
+kind: BudgetPolicy
 metadata:
-  name: strict-cost-containment
-  description: "Mathematical bounds on agentic retries and USD spend per session."
+  name: global-retry-limits
+  target_systems:
+    - autonomous-coding-agents
+    - ci-cd-remediation-agents
 spec:
-  # Hard economic ceilings
-  economic_limits:
-    max_usd_per_session: 2.50
-    max_usd_per_day: 50.00
-    alert_threshold_usd: 1.50
+  budgets:
+    # Maximum API spend allowed for a single task objective
+    max_usd_per_task: 2.50
     
-  # Logic loop limits
-  retry_boundaries:
-    max_consecutive_test_failures: 4
-    max_lint_retries: 2
+    # Maximum consecutive errors an agent can hit before giving up
+    max_consecutive_errors: 4
     
-  # Action upon breach
-  on_inflation_detected:
-    action: KILL_SESSION
-    trigger_rollback: true
-    notify_finance: true
+    # Absolute cap on total retries across the lifetime of the task
+    max_total_retries: 10
+
+  circuit_breaker:
+    # If the agent receives the exact same stderr/stdout string this many times,
+    # it is stuck in a loop and must be halted instantly.
+    halt_on_identical_error_count: 3

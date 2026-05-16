@@ -1,20 +1,31 @@
 graph TD
-    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
-    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
-    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
-    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+    classDef governance fill:#1A1A1A,stroke:#333,stroke-width:2px,color:#fff,font-family:monospace;
+    classDef agent fill:#0ea5e9,stroke:#0284c7,stroke-width:2px,color:#fff;
+    classDef human fill:#e11d48,stroke:#be123c,stroke-width:2px,color:#fff;
+    classDef pass fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
+    classDef fail fill:#f43f5e,stroke:#e11d48,stroke-width:2px,color:#fff;
 
-    A[Agent Generates Code] ::: neutral --> B{Verification Router} ::: governance
+    A[Autonomous Agent Generation]:::agent --> B{Admissibility Middleware}
     
-    B -->|Tests Fail| C[Autonomous QA Loop] ::: governance
-    C --> D{Max Loops Reached?} ::: neutral
-    D -->|Yes| E[Halt: Context Rot Detected] ::: danger
-    D -->|No| A
-    
-    B -->|Tests Pass| F[Hallucination Scorer] ::: governance
-    F -->|Variance > Threshold| C
-    F -->|Variance < Threshold| G[Escalate to Human] ::: success
-    
-    G --> H{Reviewer Escalation} ::: governance
-    H -->|Architectural| I[Principal Engineer Sign-off] ::: success
-    H -->|UI Only| J[Standard Peer Review] ::: neutral
+    subgraph ZERO-TRUST GATING LAYER
+        B --> C{Diff > 400 Lines?}
+        B --> D{Coverage < 85%?}
+        B --> E{Scope Drift?}
+    end
+
+    C -- Yes --> R[Reject & Retry]:::fail
+    D -- Yes --> R
+    E -- Yes --> R
+
+    R --> F{Retries > 3?}
+    F -- No --> A
+    F -- Yes --> G[Governance Halt: Trigger Escalation]:::governance
+
+    C -- No --> V[Payload Verified]:::pass
+    D -- No --> V
+    E -- No --> V
+
+    V --> H{Escalation Matrix}
+    H -- Low Risk --> I[Auto-Merge]
+    H -- Medium Risk --> J[Ping Code Owner]:::human
+    H -- High Risk --> K[Ping Staff Architect]:::human

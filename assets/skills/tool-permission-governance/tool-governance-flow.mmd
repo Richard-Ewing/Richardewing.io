@@ -1,23 +1,30 @@
 graph TD
-    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
-    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
-    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
-    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+    classDef governance fill:#1A1A1A,stroke:#333,stroke-width:2px,color:#fff,font-family:monospace;
+    classDef orchestrator fill:#6366f1,stroke:#4338ca,stroke-width:2px,color:#fff;
+    classDef agent fill:#0ea5e9,stroke:#0284c7,stroke-width:2px,color:#fff;
+    classDef llm fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff;
+    classDef fail fill:#f43f5e,stroke:#e11d48,stroke-width:2px,color:#fff;
+    classDef pass fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
 
-    A[Task Manifest Created] ::: neutral --> B[Tool Scope Engine] ::: governance
-    B -->|Provisions Specific Tools| C[Agent Session Starts] ::: neutral
+    O[Master Orchestrator]:::orchestrator -->|Spawns Agent| S{Tool Scope Engine}:::governance
     
-    C --> D[Agent Generates Tool Call Payload] ::: neutral
+    S -->|Fetch Policy| P[(permission-boundary-policy.yaml)]
+    S -->|Inject Allowed Tools| LLM[LLM Context Window]:::llm
     
-    D --> E{Capability Validator} ::: governance
+    LLM -->|Generates Tool Call| A[Agent Attempt]:::agent
     
-    E -->|Check File Path| F{Path is Blocked?} ::: neutral
-    F -->|Yes| G[Halt: Privilege Escalation Attempt] ::: danger
+    A --> C{Capability Validator}:::governance
     
-    E -->|Check SQL Query| H{Query is Destructive?} ::: neutral
-    H -->|Yes| G
+    subgraph CRYPTOGRAPHIC EXECUTION GATE
+        C --> C1{Globally Restricted?}
+        C --> C2{In Role Allowlist?}
+        C --> C3{In Role Denylist?}
+    end
     
-    F -->|No| I[Execute Tool Call via MCP] ::: success
-    H -->|No| I
+    C1 -- Yes --> H[Governance Halt: Security Breach]:::fail
+    C2 -- No --> H
+    C3 -- Yes --> H
     
-    G --> J[Tool Chain Escalation Playbook] ::: governance
+    C1 -- No --> C2
+    C2 -- Yes --> C3
+    C3 -- No --> E[Execute Tool]:::pass

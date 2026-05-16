@@ -1,6 +1,8 @@
+import { SKILLS, FAILURES } from '../content/skills';
+
 export interface SemanticNode {
     id: string;
-    type: 'Glossary' | 'Diagnostic' | 'Framework' | 'ExogramRisk';
+    type: 'Glossary' | 'Diagnostic' | 'Framework' | 'ExogramRisk' | 'Skill' | 'Failure' | 'Report' | 'Control';
     name: string;
     relatedNodeIds: string[];
 }
@@ -29,11 +31,46 @@ export const ontologyGraph: SemanticNode[] = [
     { id: 'risk_semantic', type: 'ExogramRisk', name: 'Semantic Drift', relatedNodeIds: ['diag_vta', 'fw_entropy', 'glossary_llm'] },
 
     // --- High-Value Glossary Nodes ---
-    { id: 'glossary_governance', type: 'Glossary', name: 'AI Governance', relatedNodeIds: ['risk_drift', 'diag_pdi'] },
-    { id: 'glossary_economics', type: 'Glossary', name: 'Unit Economics', relatedNodeIds: ['risk_margin', 'diag_aueb'] },
-    { id: 'glossary_agents', type: 'Glossary', name: 'Autonomous Agents', relatedNodeIds: ['risk_variance', 'diag_aper'] },
-    { id: 'glossary_llm', type: 'Glossary', name: 'Large Language Models', relatedNodeIds: ['risk_semantic', 'diag_vta'] },
+    { id: 'glossary_governance', type: 'Glossary', name: 'AI Governance', relatedNodeIds: ['risk_drift', 'diag_pdi', 'skill_runtime-governance', 'failure_governance-theater'] },
+    { id: 'glossary_economics', type: 'Glossary', name: 'Unit Economics', relatedNodeIds: ['risk_margin', 'diag_aueb', 'skill_ai-engineering-economics'] },
+    { id: 'glossary_agents', type: 'Glossary', name: 'Autonomous Agents', relatedNodeIds: ['risk_variance', 'diag_aper', 'failure_orchestration-entropy', 'skill_deterministic-agentic-engineering'] },
+    { id: 'glossary_llm', type: 'Glossary', name: 'Large Language Models', relatedNodeIds: ['risk_semantic', 'diag_vta', 'failure_context-rot', 'skill_context-rot-prevention'] },
+    
+    // Dynamically generated nodes from content definitions
+    ...FAILURES.map(f => ({
+        id: `failure_${f.slug}`,
+        type: 'Failure' as const,
+        name: f.title,
+        relatedNodeIds: [] // Will be mapped dynamically below or manually injected
+    })),
+    ...SKILLS.map(s => ({
+        id: `skill_${s.slug}`,
+        type: 'Skill' as const,
+        name: s.title,
+        relatedNodeIds: [] // Will be mapped dynamically below
+    }))
 ];
+
+// --- Automatic Cross-Wiring for Skills & Failures ---
+// To maintain a truly dense graph, we auto-link Skills to the Failures they solve.
+ontologyGraph.forEach(node => {
+    if (node.type === 'Skill') {
+        const skillSlug = node.id.replace('skill_', '');
+        const skillDef = SKILLS.find(s => s.slug === skillSlug);
+        if (skillDef) {
+            // Find failure by matching title to failureSolved (basic heuristic)
+            const matchedFailure = FAILURES.find(f => skillDef.failureSolved.includes(f.title) || f.title.includes(skillDef.failureSolved));
+            if (matchedFailure) {
+                node.relatedNodeIds.push(`failure_${matchedFailure.slug}`);
+                // Reciprocally link the failure back to this skill
+                const failureNode = ontologyGraph.find(n => n.id === `failure_${matchedFailure.slug}`);
+                if (failureNode && !failureNode.relatedNodeIds.includes(node.id)) {
+                    failureNode.relatedNodeIds.push(node.id);
+                }
+            }
+        }
+    }
+});
 
 /**
  * Retrieves a semantic cluster based on a central node ID.

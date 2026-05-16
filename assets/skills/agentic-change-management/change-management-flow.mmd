@@ -1,23 +1,26 @@
 graph TD
-    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
-    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
-    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
-    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+    classDef governance fill:#1A1A1A,stroke:#333,stroke-width:2px,color:#fff,font-family:monospace;
+    classDef agent fill:#0ea5e9,stroke:#0284c7,stroke-width:2px,color:#fff;
+    classDef cab fill:#e11d48,stroke:#be123c,stroke-width:2px,color:#fff;
+    classDef fail fill:#f43f5e,stroke:#e11d48,stroke-width:2px,color:#fff;
+    classDef pass fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
 
-    A[Agent Proposes Mutation] ::: neutral --> B{Mutation Risk Detector} ::: governance
+    A[Agent Attempts Infrastructure Mutation]:::agent --> R{Mutation Risk Detector}:::governance
     
-    B -->|Calculates Blast Radius| C{Change Approval Engine} ::: governance
+    R -->|Scan Payload| R1{High Risk?}
+    R -->|Scan Payload| R2{Medium Risk?}
     
-    C -->|LOW Risk Tier| D[Autonomous Execution] ::: success
+    R1 -- Yes --> C{Change Approval Engine}:::governance
+    R2 -- Yes --> C
     
-    C -->|HIGH Risk Tier| E[Route to Pull Request] ::: neutral
-    E --> F[Human Peer Review] ::: governance
+    R1 -- No --> R2
+    R2 -- No --> E[Auto-Approve Execution]:::pass
     
-    C -->|CRITICAL Risk Tier| G[Halt Execution & Pause Session] ::: danger
-    G --> H[Route to SRE/Executive] ::: governance
-    H --> I{Cryptographic Sign-off?} ::: neutral
+    C -->|Halt Container| P[Ping Authority via Exogram API]:::cab
     
-    I -->|Approved| J[Inject Override Token] ::: success
-    J --> D
+    P --> H{Human Authority Review}:::cab
     
-    I -->|Rejected| K[Session Terminated & Rolled Back] ::: danger
+    H -- Reject --> X[Governance Halt: Mutation Denied]:::fail
+    H -- Approve --> S[Sign Cryptographic Token]:::pass
+    
+    S --> E

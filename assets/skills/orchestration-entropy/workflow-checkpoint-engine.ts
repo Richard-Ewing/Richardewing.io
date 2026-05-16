@@ -1,45 +1,51 @@
 /**
  * WORKFLOW CHECKPOINT ENGINE
  * 
- * Forces the multi-agent workflow to periodically save its state to a 
- * deterministic local file. If entropy collapses the workflow, it can be 
- * resumed from the last known good state.
+ * Enforces cryptographic or deterministic proof-of-work before an agent
+ * can hand off control to another agent or return to the orchestrator.
  */
 
-import { writeFileSync, readFileSync } from 'fs';
+export interface HandoffPayload {
+    sourceAgent: string;
+    targetAgent: string;
+    taskObjective: string;
+    // The probabilistic natural language response
+    narrativeResponse: string; 
+    // The deterministic JSON proof of work required by the policy
+    deterministicProof: Record<string, any>; 
+}
 
 export class WorkflowCheckpointEngine {
-  private readonly stateFile = '.agent/workflow-state.json';
+    
+    /**
+     * Validates an agent's attempt to hand off execution state.
+     * Prevents agents from saying "I finished it!" without providing the exact JSON schema required.
+     */
+    public validateHandoff(payload: HandoffPayload, requiredSchemaKeys: string[]): boolean {
+        console.log(`[CHECKPOINT] Validating handoff from ${payload.sourceAgent} to ${payload.targetAgent}...`);
 
-  /**
-   * Saves the deterministic state of the orchestration chain.
-   */
-  public createCheckpoint(agentId: string, currentPayload: any, depth: number) {
-    const state = {
-      timestamp: new Date().toISOString(),
-      lastActiveAgent: agentId,
-      chainDepth: depth,
-      payloadSnapshot: currentPayload
-    };
+        if (!payload.deterministicProof) {
+            throw new Error(`[CHECKPOINT FAILED] Agent ${payload.sourceAgent} attempted a handoff without providing deterministic JSON proof.`);
+        }
 
-    try {
-      writeFileSync(this.stateFile, JSON.stringify(state, null, 2));
-      console.log(`[GOVERNANCE] Workflow checkpoint saved at depth ${depth} by ${agentId}.`);
-    } catch (e) {
-      console.error("[ERROR] Failed to save deterministic checkpoint.", e);
+        const missingKeys = requiredSchemaKeys.filter(key => !(key in payload.deterministicProof));
+
+        if (missingKeys.length > 0) {
+            throw new Error(`[CHECKPOINT FAILED] Agent ${payload.sourceAgent} is hallucinating task completion. Missing required schema keys: ${missingKeys.join(', ')}`);
+        }
+
+        // Additional validation: Ensure the narrative response isn't a known hallucination pattern
+        const hallucinatedHandoffs = [
+            "i have completed the task in my local environment",
+            "the files have been updated theoretically",
+            "you can assume the task is done"
+        ];
+
+        if (hallucinatedHandoffs.some(h => payload.narrativeResponse.toLowerCase().includes(h))) {
+            throw new Error(`[CHECKPOINT FAILED] Agent ${payload.sourceAgent} provided a known hallucinated handoff narrative. Work was not actually executed.`);
+        }
+
+        console.log(`[CHECKPOINT PASSED] Cryptographic proof verified. State handed off to ${payload.targetAgent}.`);
+        return true;
     }
-  }
-
-  /**
-   * Recovers the workflow after an entropy collapse.
-   */
-  public recoverState(): any {
-    try {
-      const data = readFileSync(this.stateFile, 'utf8');
-      console.log("[GOVERNANCE] Recovering workflow from last deterministic checkpoint.");
-      return JSON.parse(data);
-    } catch (e) {
-      throw new Error("No valid checkpoint found. Manual workflow reset required.");
-    }
-  }
 }

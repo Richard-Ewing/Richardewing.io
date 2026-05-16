@@ -1,36 +1,51 @@
 /**
- * REPOSITORY DIVERGENCE DETECTOR
+ * REPO DIVERGENCE DETECTOR
  * 
- * Scans agent-generated AST or diff payloads to detect anti-patterns
- * that violate established architectural norms.
+ * Post-execution analysis tool (runs in CI or Pre-Commit).
+ * Mathematically checks the git diff to ensure no ghost dependencies or banned 
+ * structural changes occurred, bridging the gap between runtime validation and commit.
  */
 
+import { execSync } from 'child_process';
+import { readFileSync } from 'fs';
+
 export class RepoDivergenceDetector {
-  private readonly forbiddenPatterns = [
-    { pattern: "import axios", reason: "Repository uses native fetch api." },
-    { pattern: "useState", reason: "Component is marked as server-only." },
-    { pattern: "console.log", reason: "Must use internal telemetry logger." }
-  ];
+    
+    /**
+     * Analyzes the current git diff against the base branch.
+     * Throws an error if unauthorized architectural changes are detected.
+     */
+    public detectDivergence(baseBranch: string = 'main'): boolean {
+        console.log(`[DIVERGENCE DETECTOR] Analyzing diff against ${baseBranch}...`);
 
-  /**
-   * Scans proposed code for architectural drift.
-   */
-  public detectDrift(proposedCode: string, isServerComponent: boolean): string[] {
-    const violations: string[] = [];
+        try {
+            // Get list of changed files
+            const diffOutput = execSync(`git diff --name-only ${baseBranch}`).toString();
+            const changedFiles = diffOutput.split('\n').filter(Boolean);
 
-    for (const rule of this.forbiddenPatterns) {
-      if (proposedCode.includes(rule.pattern)) {
-        if (rule.pattern === "useState" && !isServerComponent) {
-          continue; // Allowed in client components
+            this.checkPackageJsonDrift(changedFiles, baseBranch);
+            
+            console.log(`[DIVERGENCE DETECTOR] Repository structure verified. No architectural drift detected.`);
+            return true;
+
+        } catch (error: any) {
+            console.error(`[CRITICAL DRIFT DETECTED] ${error.message}`);
+            // In a pre-commit hook, this exits with code 1 to block the commit
+            process.exit(1);
         }
-        violations.push(`Pattern '${rule.pattern}' forbidden: ${rule.reason}`);
-      }
     }
 
-    if (violations.length > 0) {
-      console.warn(`[ARCHITECTURAL DRIFT DETECTED] ${violations.length} violations found.`);
+    /**
+     * Ensures the agent did not hallucinate "ghost dependencies" by modifying package.json
+     * without explicit human approval.
+     */
+    private checkPackageJsonDrift(changedFiles: string[], baseBranch: string): void {
+        const packageJsonModified = changedFiles.some(file => file.endsWith('package.json'));
+        
+        if (packageJsonModified) {
+            // In a strict governance environment, autonomous agents are NOT allowed to modify dependencies.
+            // If they need a dependency, they must halt and request human execution.
+            throw new Error(`Agent mutated package.json. Ghost dependencies are strictly prohibited. You must manually verify the dependency tree.`);
+        }
     }
-
-    return violations;
-  }
 }

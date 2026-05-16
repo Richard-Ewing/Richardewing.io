@@ -1,39 +1,24 @@
 graph TD
-    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
-    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
-    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
-    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+    classDef os fill:#1A1A1A,stroke:#333,stroke-width:3px,color:#fff,font-family:monospace;
+    classDef module fill:#334155,stroke:#475569,stroke-width:2px,color:#fff;
+    classDef agent fill:#0ea5e9,stroke:#0284c7,stroke-width:2px,color:#fff;
+    classDef execute fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
 
-    subgraph "Level 4: Human Executive (Policy Control)"
-        A[Define YAML Policies] ::: neutral
+    A[Untrusted Agent Payload]:::agent --> O{Governance Orchestrator}:::os
+    
+    subgraph DETERMINISTIC RUNTIME OS
+        O --> M1[AI Cost Containment]:::module
+        M1 --> M2[Context Compression]:::module
+        M2 --> M3[Tool Permission Governance]:::module
+        M3 --> M4[Repository Drift Prevention]:::module
+        M4 --> M5[Execution Safety Sandboxing]:::module
+        M5 --> M6[Agentic Change Management]:::module
+        M6 --> M7[Verification Burden Collapse]:::module
+        M7 --> M8[Orchestration Entropy]:::module
+        M8 --> M9[Retry Inflation Control]:::module
     end
-
-    subgraph "Level 3: Governance Orchestrator (The Kernel)"
-        B[Task Routing] ::: governance
-        C[Context Checkpoints] ::: governance
-    end
-
-    subgraph "Level 2: The 14 Exogram Engines (Mathematical Enforcement)"
-        D[Cost Containment] ::: governance
-        E[Context Compression] ::: governance
-        F[Repo Divergence] ::: governance
-        G[Verification Routing] ::: governance
-        H[Runtime Permissions] ::: governance
-    end
-
-    subgraph "Level 1: Deterministic Runtime (Sandbox)"
-        I[Limited Tool Access] ::: neutral
-        J[Bounded Memory] ::: neutral
-    end
-
-    subgraph "Level 0: Probabilistic Generator (Zero Trust)"
-        K[LLM Client] ::: danger
-    end
-
-    A -->|Configures| D & E & F & G & H
-    B --> I
-    I --> K
-    K --> J
-    J --> H --> G --> F --> E --> D
-    D -->|Admissible Output| C
-    C -->|Deterministic Deployment| L[Production] ::: success
+    
+    M9 --> C{Execution Certainty Engine}:::os
+    
+    C -->|Dry Run Fails| R[OS Halt: Payload Rejected]
+    C -->|Mathmatic Proof Passes| E[Deterministic Execution]:::execute

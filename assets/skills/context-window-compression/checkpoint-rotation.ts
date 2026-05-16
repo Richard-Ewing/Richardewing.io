@@ -1,29 +1,44 @@
 /**
  * CHECKPOINT ROTATION
  * 
- * Instead of truncating the context completely, this engine summarizes
- * stale conversation (P3) into a dense, compressed string to maintain
- * continuity without burning tokens.
+ * Enforces a Hard Semantic Reset. Wipes the ephemeral chat history and replaces it 
+ * with a deterministic "save state" to permanently cure context window rot.
  */
 
+export interface ExecutionState {
+    objective: string;
+    completedSubTasks: string[];
+    currentWorkingFiles: string[];
+    criticalLearnings: string[];
+}
+
 export class CheckpointRotation {
-  
-  /**
-   * Compresses an array of old conversation turns into a single string.
-   * In a live environment, this might call a cheap, fast model (e.g., Claude Haiku)
-   * to generate the summary.
-   */
-  public generateDenseSummary(staleMessages: any[]): string {
-    if (staleMessages.length === 0) return "";
-
-    console.log(`[GOVERNANCE] Rotating ${staleMessages.length} stale messages into a dense checkpoint summary.`);
     
-    // Simulated summary logic
-    const actionsTaken = staleMessages
-      .filter(m => m.role === 'assistant')
-      .map(m => "Attempted fix")
-      .length;
+    /**
+     * Generates a deterministic summary of the current execution state.
+     * This string replaces the entire previous conversation history.
+     */
+    public generateCheckpointState(state: ExecutionState): string {
+        console.log(`[CHECKPOINT ROTATION] Generating semantic save state...`);
+        
+        return `
+[SYSTEM CHECKPOINT RESTORED]
+You are resuming a long-horizon task. Your previous ephemeral memory has been wiped to prevent semantic decay.
+Here is your exact deterministic state:
 
-    return `[COMPRESSED HISTORY]: Agent previously made ${actionsTaken} attempts to resolve the issue. Prior approaches failed. Agent must attempt a new strategy.`;
-  }
+OBJECTIVE:
+${state.objective}
+
+COMPLETED MILESTONES:
+${state.completedSubTasks.map(t => `- [x] ${t}`).join('\n')}
+
+CURRENT WORKING FILES:
+${state.currentWorkingFiles.map(f => `- ${f}`).join('\n')}
+
+CRITICAL LEARNINGS FROM PREVIOUS TURNS:
+${state.criticalLearnings.map(l => `! ${l}`).join('\n')}
+
+INSTRUCTION: Proceed with the next logical step based strictly on this state.
+        `.trim();
+    }
 }

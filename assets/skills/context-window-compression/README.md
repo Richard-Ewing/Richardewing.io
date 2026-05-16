@@ -2,34 +2,60 @@
 
 ## 1. EXECUTIVE COMPRESSION
 
-**Problem:** Modern LLMs boast massive context windows (128k to 1M+ tokens), leading developers to lazily dump entire repositories into the prompt. However, as the context window fills, the model's instruction-following fidelity degrades exponentially.
-**Consequence:** *Context Saturation Collapse*. The agent "forgets" the core constraints defined in the system prompt. It hallucinates variables, ignores formatting rules, and begins writing code that contradicts the architectural documentation it was just fed.
-**Remediation:** Implement Bounded Cognition. Do not rely on the LLM's raw context capacity. Use a Context Compression Engine to strictly throttle the token flow, prioritizing recent execution state and deterministic architectural rules while aggressively truncating stale conversational history.
+**Problem:** LLMs suffer from "Context Window Rot." Over long sessions, the context window fills with old assumptions, failed execution loops, and stale logic. As the window approaches capacity, the model's probabilistic reasoning degrades exponentially. The agent forgets core instructions, begins "patching its own patches," and token burn explodes.
+
+**Consequence:** An agent that was brilliant in Turn 1 becomes a liability in Turn 15. The orchestrator pays maximum token pricing (because the window is full) to receive minimum reasoning quality.
+
+**Remediation:** Implement a **Bounded Cognition Engine**. Context windows must be ruthlessly compressed, prioritized, and checkpointed. Semantic decay must be pruned before it poisons the runtime logic.
+
+---
 
 ## 2. FAILURE TAXONOMY
 
-### Symptoms
-- The agent correctly follows a rule for the first 5 prompts, but blatantly violates it on the 6th prompt.
-- The agent apologizes for an error, but then outputs the exact same error again (because the true constraint has fallen out of its attention mechanism).
-- API latency spikes to 45+ seconds per request as the orchestrator passes 100k tokens of dead conversation history back and forth.
+### Observable Symptoms
+- **Stale Context Poisoning**: The agent writes code based on an architectural assumption that was proven false 10 turns ago.
+- **Lost Instructions**: The agent suddenly starts writing Python even though the system prompt mandated TypeScript. The system prompt was pushed out of the model's active attention mechanism by context bloat.
+- **Inference Margin Collapse**: The cost per execution turn spirals out of control as the agent drags 100,000 tokens of dead conversation along with it.
 
 ### Root Causes
-- **Lazy Context Management:** Blindly appending `message.push(new_message)` without a truncation strategy.
-- **Priority Inversion:** Allowing noisy execution logs (e.g., massive stack traces) to push critical system instructions out of the model's active attention span.
+- **Append-Only Memory**: Simply appending every agent response and tool output to an ever-growing array until the API throws a context length error.
+- **Lack of Semantic Truncation**: Failing to realize that an error stack trace from Turn 2 is completely irrelevant to the objective in Turn 20.
 
 ### Economic Impact
-- **Margin Decay:** You are paying per-token. Sending 100k tokens of stale context on every single API call mathematically destroys the unit economics of the feature being built.
+- **Token Inflation**: Paying $0.15 per turn for dead context, turning a cheap bug fix into a massive compute expenditure.
+- **Execution Unreliability**: The inability to run long-horizon tasks because the agent fundamentally decays over time.
 
-## 3. IMPLEMENTATION ARCHITECTURE
+---
+
+## 3. TELEMETRY SIGNALS
+
+Monitor your orchestration dashboards for the following critical indicators:
+- **`context_utilization_percent`**: If > 80%, reasoning quality is actively degrading.
+- **`stale_memory_references`**: The agent mentions a file or variable that hasn't been relevant in > 5 turns.
+- **`system_prompt_attention_loss`**: The agent violates a hard constraint defined in the system prompt.
+
+---
+
+## 4. GOVERNANCE ARCHITECTURE
 
 This system relies on three core operational mechanisms:
-1. **The Context Compression Engine (`context-compression-engine.ts`)**: Middleware that intercepts the prompt array before it hits the API, forcefully truncating low-priority tokens to maintain a strict cognitive bound (e.g., 8k tokens max).
-2. **Memory Priority Policy (`memory-priority-policy.yaml`)**: The ruleset defining what stays and what goes. (e.g., System Prompt = P0, Current File = P1, 10-turn-old conversation = P4).
-3. **Checkpoint Rotation (`checkpoint-rotation.ts`)**: A system that summarizes stale conversation history into a dense, compressed string, rather than passing raw dialogue.
 
-## 4. EXOGRAM BRIDGE
+1. **Memory Priority Policy (`memory-priority-policy.yaml`)**: Defines the strict tiering of context (e.g., Tier 1: System Prompts, Tier 3: Past Tool Outputs) and exactly how they should be compressed.
+2. **Context Compression Engine (`context-compression-engine.ts`)**: Middleware that intercepts the prompt array before it hits the LLM, mathematically truncating, summarizing, or discarding low-priority context to stay under a strict token ceiling.
+3. **Checkpoint Rotation (`checkpoint-rotation.ts`)**: Mechanism that creates a deterministic "save state" of the execution and wipes the ephemeral context clean.
 
-Frameworks identify instability. Playbooks describe what to do.
+---
+
+## 5. DEPLOYMENT INSTRUCTIONS
+
+1. **Configure Tiers**: Define your token ceilings in `memory-priority-policy.yaml`.
+2. **Deploy Middleware**: Wrap your LangChain `ChatPromptTemplate` or raw API payload construction with the `context-compression-engine.ts`.
+3. **Enable Checkpointing**: Force your orchestrator to call `checkpoint-rotation.ts` every N turns to execute a Hard Semantic Reset.
+
+---
+
+## 6. EXOGRAM MAPPING
+
 **Exogram enforces deterministic runtime governance.**
 
-By piping all orchestrator traffic through Exogram's Context Compression Engine, the LLM is forced into a state of "Bounded Cognition." It is only permitted to "see" the exact tokens required to execute the immediate next step, guaranteeing maximum instruction adherence and minimizing API costs.
+Exogram provides the **Cognitive Load Dashboard**. It visualizes the exact token payload of every agent turn broken down by priority tier. If an agent enters "Context Rot," Exogram allows security teams to manually trigger a Checkpoint Rotation, instantly purging the poisoned context and restoring the agent to a deterministic baseline.

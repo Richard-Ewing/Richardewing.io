@@ -1,128 +1,121 @@
-import { permanentRedirect } from 'next/navigation';
-
+import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowRight, Activity, ShieldAlert } from 'lucide-react';
 
-import data from '@/app/lib/pseo-matrix.json';
-import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
+// Hardcoded comparisons for scaffold purposes.
+// In reality, this would be an array in lib/content/comparisons.ts
+const COMPARISONS = [
+    {
+        slug: 'deterministic-vs-probabilistic-engineering',
+        title: 'Deterministic vs Probabilistic Engineering',
+        description: 'Why relying on system prompts fails, and why runtime governance is required for production AI.',
+        keywords: ['deterministic vs probabilistic', 'system prompt limits', 'AI reliability']
+    },
+    {
+        slug: 'claude-code-vs-cursor-governance',
+        title: 'Claude Code vs Cursor Governance',
+        description: 'Comparing the enterprise governance controls of leading AI coding environments.',
+        keywords: ['Claude Code governance', 'Cursor enterprise', 'AI editor safety']
+    },
+    {
+        slug: 'runtime-gating-vs-prompt-engineering',
+        title: 'Runtime Gating vs Prompt Engineering',
+        description: 'Why you cannot prompt an agent into safety, and why execution middleware is the only defensible moat.',
+        keywords: ['prompt engineering failure', 'runtime gating', 'AI safety middleware']
+    }
+];
 
-// Cache pages globally for 7 days (604,800 seconds) to prevent bot hammering
-export const revalidate = 604800;
-
-// Pre-read the matrix synchronously so ISR can generate paths
-function getMatrixData() {
-    return data || [];
-}
-
-// Generate static params for the ones that exist. For future ones, fallback to ISR
 export async function generateStaticParams() {
-    const data = getMatrixData();
-    return data.map((item: any) => ({
-        slug: item.slug,
-    }));
+    return COMPARISONS.map(c => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
-    const data = getMatrixData();
-    const item = data.find((i: any) => i.slug === slug);
-
-    if (!item) {
-        return { title: 'Comparison Not Found' };
-    }
+    const comparison = COMPARISONS.find(c => c.slug === slug);
+    if (!comparison) return {};
 
     return {
-        title: item.title.substring(0, 55) + (item.title.length > 55 ? '...' : ''),
-        description: item.metaDescription,
-        alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },
-        openGraph: {
-            title: item.title.substring(0, 55) + (item.title.length > 55 ? '...' : ''),
-            description: item.metaDescription,
-            url: `https://www.richardewing.io/compare/${slug}`,
-            siteName: 'Richard Ewing',
-            type: 'article',
-            images: [
-                {
-                    url: 'https://www.richardewing.io/og-image-home.png',
-                    width: 1200,
-                    height: 630,
-                    alt: item.title,
-                }
-            ],
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title: item.title.substring(0, 55) + (item.title.length > 55 ? '...' : ''),
-            description: item.metaDescription,
-            images: ['https://www.richardewing.io/og-image-home.png'],
-        }
+        title: `${comparison.title} | Enterprise Comparison`,
+        description: comparison.description,
     };
 }
 
-export default async function PseoComparePage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ComparisonPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const data = getMatrixData();
-    const item = data.find((i: any) => i.slug === slug);
+    const comparison = COMPARISONS.find(c => c.slug === slug);
 
-    if (!item) {
-        permanentRedirect('/compare');
-    }
+    if (!comparison) return <div className="p-20 text-center">Comparison Not Found.</div>;
 
     return (
-        <main className="pt-20 pb-20">
-            <div className="page-container">
-                <div className="max-w-4xl mx-auto">
-                    <Link href="/compare" className="text-cyan-900 font-extrabold font-semibold font-mono text-sm font-semibold uppercase tracking-widest hover:text-cyan-900 font-extrabold font-semibold mb-8 inline-block">
-                        ← Back to Comparisons
-                    </Link>
+        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <div className="page-container max-w-4xl mx-auto">
+                <div className="mb-8 flex items-center gap-2 text-xs font-bold font-mono text-zinc-950 uppercase tracking-widest">
+                    <Link href="/frameworks" className="hover:text-amber-900 transition-colors">Governance Frameworks</Link>
+                    <span>/</span>
+                    <span className="text-amber-900">Comparisons</span>
+                </div>
 
+                <div className="text-center mb-16">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 text-amber-700 mb-6">
+                        <span className="text-2xl">⚖️</span>
+                    </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        {item.toolA} <span className="text-zinc-950 font-bold text-3xl mx-2">vs</span> <span className="text-rose-400">{item.toolB}</span>
+                        {comparison.title}
                     </h1>
-                    <p className="text-xl text-zinc-950 font-bold mb-12 border-l-2 border-cyan-500 pl-4 py-2">
-                        {item.title}
+                    <p className="text-xl text-zinc-700 max-w-2xl mx-auto font-medium">
+                        {comparison.description}
                     </p>
+                </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                        <div className="rounded-2xl border border-zinc-200 bg-white/[0.01] p-8">
-                            <h2 className="text-xl font-bold font-grotesk text-rose-400 mb-4 uppercase tracking-widest">{item.toolB} Focus</h2>
-                            <p className="text-zinc-950 font-bold leading-relaxed">{item.theirFocus}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <div className="p-8 bg-rose-50 border border-rose-500/20 rounded-2xl relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-4 opacity-10">
+                            <ShieldAlert className="w-24 h-24 text-rose-900" />
                         </div>
-                        <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 p-4 opacity-10">
-                                <span className="text-6xl text-cyan-900 font-extrabold font-semibold">✧</span>
-                            </div>
-                            <h2 className="text-xl font-bold font-grotesk text-cyan-900 font-extrabold font-semibold mb-4 uppercase tracking-widest">Our Audit Matrix Focus</h2>
-                            <p className="text-zinc-900 leading-relaxed font-medium">{item.ourAdvantage}</p>
-                        </div>
+                        <h3 className="text-sm font-bold font-mono text-rose-950 uppercase tracking-widest mb-4">Probabilistic Approach</h3>
+                        <p className="text-zinc-800 font-semibold mb-4">Relying on LLM adherence to instructions. High variance. Requires human verification loops.</p>
+                        <ul className="space-y-3">
+                            <li className="flex items-start gap-2 text-sm font-semibold text-rose-950">
+                                <span className="text-rose-600 mt-0.5">•</span> Governance Theater
+                            </li>
+                            <li className="flex items-start gap-2 text-sm font-semibold text-rose-950">
+                                <span className="text-rose-600 mt-0.5">•</span> Verification Overload
+                            </li>
+                            <li className="flex items-start gap-2 text-sm font-semibold text-rose-950">
+                                <span className="text-rose-600 mt-0.5">•</span> Execution Drift
+                            </li>
+                        </ul>
                     </div>
 
-                    <div className="prose prose-zinc prose-lg max-w-none mb-16">
-                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-6">The Technical Breakdown</h2>
-                        {item.technicalDistinction.split('\n\n').map((paragraph: string, index: number) => (
-                            <p key={index} className="text-zinc-950 font-bold leading-relaxed mb-6">{paragraph}</p>
-                        ))}
-                    </div>
-
-                    {/* Exogram Traffic Trap / Lead Capture */}
-                    <div className="rounded-3xl border border-zinc-400 bg-white p-8 md:p-12 text-center relative overflow-hidden mt-20">
-                        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/10 to-transparent opacity-50"></div>
-                        <h3 className="text-2xl md:text-3xl font-grotesk font-bold text-zinc-950 mb-4 relative z-10">
-                            Stop Guessing Your AI / Architectural Risk
-                        </h3>
-                        <p className="text-zinc-950 font-bold mb-8 max-w-2xl mx-auto relative z-10">
-                            Don't base your technical architecture on generic feature comparisons. 
-                            Use the <strong>Exogram Diagnostic Engine</strong> to calculate the precise EBITDA and Technical Debt liability of your architecture.
-                        </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-                            <Link href="/tools" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-widest border border-cyan-400 rounded-full transition-all hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]">
-                                Audit Your Architecture Lab
-                            </Link>
+                    <div className="p-8 bg-cyan-50 border border-cyan-500/20 rounded-2xl relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-4 opacity-10">
+                            <Activity className="w-24 h-24 text-cyan-900" />
                         </div>
+                        <h3 className="text-sm font-bold font-mono text-cyan-950 uppercase tracking-widest mb-4">Deterministic Approach</h3>
+                        <p className="text-zinc-800 font-semibold mb-4">Enforcing limits via runtime code middleware. Zero variance. Stops bad actions at the gate.</p>
+                        <ul className="space-y-3">
+                            <li className="flex items-start gap-2 text-sm font-semibold text-cyan-950">
+                                <span className="text-cyan-600 mt-0.5">•</span> Admissibility Pipelines
+                            </li>
+                            <li className="flex items-start gap-2 text-sm font-semibold text-cyan-950">
+                                <span className="text-cyan-600 mt-0.5">•</span> Cryptographic Containment
+                            </li>
+                            <li className="flex items-start gap-2 text-sm font-semibold text-cyan-950">
+                                <span className="text-cyan-600 mt-0.5">•</span> Zero-Trust Execution
+                            </li>
+                        </ul>
                     </div>
+                </div>
 
-                    <ProgrammaticAnswersRelated seed={slug} maxCount={2} />
+                <div className="sr-only" aria-hidden="true">
+                    Keywords: {comparison.keywords.join(', ')}
+                </div>
 
+                <div className="mt-12 text-center">
+                    <Link href="/skills" className="px-6 py-3 bg-zinc-950 text-white font-bold rounded hover:bg-zinc-800 transition-colors inline-flex items-center gap-2">
+                        View Governance Infrastructure <ArrowRight className="w-4 h-4" />
+                    </Link>
                 </div>
             </div>
         </main>

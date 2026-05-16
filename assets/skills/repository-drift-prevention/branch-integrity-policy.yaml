@@ -1,28 +1,46 @@
+# =====================================================================
+# BRANCH INTEGRITY POLICY
+# Framework: Repository Drift Prevention
+# Purpose: Define explicit file-system boundaries for agent execution
+# to prevent architectural drift and ghost dependencies.
+# =====================================================================
+
 apiVersion: governance.exogram.ai/v1alpha1
-kind: BranchIntegrityPolicy
+kind: ArchitecturalPolicy
 metadata:
-  name: structural-mutation-containment
-  description: "Strict boundaries defining which branches an agent may mutate."
+  name: strict-drift-prevention
+  target_systems:
+    - autonomous-feature-development
+    - refactoring-agents
 spec:
-  # Global Branch Rules
-  protected_branches:
-    - "main"
-    - "master"
-    - "production"
-  
-  # Action if agent attempts direct push to protected branch
-  on_protected_push_attempt:
-    action: HARD_REJECT
-    message: "Direct commits to production branches by non-human actors are mathematically forbidden."
+  enforcement_mode: "STRICT"
 
-  # Feature Branch Conventions
-  required_branch_prefixes:
-    - "agent/feat/"
-    - "agent/fix/"
-    - "agent/chore/"
-
-  # Merge Admissibility
-  merge_requirements:
-    require_human_approval: true
-    require_passing_ci: true
-    require_clean_rebase: true
+  authorized_scopes:
+    # Example Scope: The agent is tasked with building frontend UI only
+    frontend_component_task:
+      allowed_directories:
+        - "src/components/"
+        - "src/styles/"
+      banned_extensions:
+        - ".yml"
+        - ".yaml"
+        - ".json"
+        - ".sh"
+      protected_files:
+        - "package.json"
+        - "next.config.ts"
+        - "tailwind.config.ts"
+        
+    # Example Scope: The agent is tasked with fixing a backend bug
+    backend_api_fix:
+      allowed_directories:
+        - "src/api/"
+        - "src/lib/utils/"
+      banned_extensions:
+        - ".tsx"
+        - ".jsx"
+        - ".css"
+      protected_files:
+        - "package.json"
+        - "prisma/schema.prisma"
+        - ".env.example"

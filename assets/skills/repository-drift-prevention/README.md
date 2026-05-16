@@ -2,34 +2,59 @@
 
 ## 1. EXECUTIVE COMPRESSION
 
-**Problem:** Agentic engineering happens asynchronously and at high velocity. Without strict state validation, agents will apply patches to outdated repository states, silently override human commits, or hallucinate entirely new architectural paradigms that diverge from the master branch.
-**Consequence:** *Repository Drift*. The codebase degrades into a disjointed collection of localized fixes that do not adhere to global abstractions. Code reviews become impossible because the underlying architectural intent has been lost.
-**Remediation:** Implement deterministic Repository Validation. Agents must be forced to read a structural repo-map before execution, and their outputs must be diffed against the current `HEAD` state to prevent concurrent mutation conflicts.
+**Problem:** Probabilistic AI agents lack deterministic structural awareness. Without hard boundaries, an agent tasked with fixing a UI component may "hallucinate" an architectural refactor, silently changing database schemas, utility functions, or core configuration files. This creates *Repository Drift*—a structural divergence between the agent's internal representation of the code and the actual deterministic repository state.
+
+**Consequence:** The codebase fragments. The agent breaks unrelated features, reinvents existing utilities instead of importing them, and creates a massive technical debt burden that takes days for human architects to untangle. 
+
+**Remediation:** Implement **Continuous Divergence Detection and Deterministic Alignment Protocols**. Agents must be programmatically restricted from mutating files outside their explicit execution scope, and the repository state must be mathematically validated before and after every execution turn.
+
+---
 
 ## 2. FAILURE TAXONOMY
 
-### Symptoms
-- An agent rewrites an entire authentication flow just to fix a typo in a login button.
-- An agent pushes code using an old library version because its training data cut-off predated a recent major upgrade.
-- Merge conflicts skyrocket because agents are working off stale context windows.
+### Observable Symptoms
+- **Scope Drift**: An agent assigned to edit `frontend/components/Button.tsx` submits a PR that also deletes lines in `backend/auth/middleware.ts`.
+- **Reinvented Wheels**: The agent writes a new 50-line utility function for data formatting because it was unaware of the existing `lib/formatters.ts`.
+- **Ghost Dependencies**: The agent imports libraries that are not in `package.json`, causing CI/CD pipeline failures.
 
 ### Root Causes
-- **Blind Execution:** Allowing agents to write code without explicitly forcing them to read the current project architecture.
-- **Missing Divergence Detection:** Failing to compare the agent's proposed AST (Abstract Syntax Tree) with the repository's established AST patterns.
+- **Unbounded Write Access**: Granting an agent `write_file` access globally across the entire workspace.
+- **Context Blindness**: The agent cannot see the full repository structure, so it assumes missing files must be created from scratch.
 
 ### Economic Impact
-- **Architectural Bankruptcy:** The codebase becomes so fragmented and inconsistent that it must be entirely rewritten. The synthetic COGS savings are wiped out by the massive cost of a human-led refactor.
+- **Architectural Corruption**: Unchecked drift eventually requires a full human rewrite of the affected modules, wasting both the original compute cost and the human recovery time.
 
-## 3. IMPLEMENTATION ARCHITECTURE
+---
+
+## 3. TELEMETRY SIGNALS
+
+Monitor your orchestration dashboards for the following critical indicators:
+- **`files_mutated_outside_scope`**: Any value > 0 means the agent is drifting and must be halted.
+- **`new_file_creation_rate`**: High rates of autonomous file creation usually indicate the agent is reinventing existing logic rather than modifying it.
+- **`ci_dependency_failures`**: Tracks how often the agent hallucinates imports.
+
+---
+
+## 4. GOVERNANCE ARCHITECTURE
 
 This system relies on three core operational mechanisms:
-1. **The Repository Validator (`repository-validator.ts`)**: Middleware that forces the agent to acknowledge the current architectural state before it is granted write access.
-2. **Branch Integrity Policy (`branch-integrity-policy.yaml`)**: Strict rules dictating which directories an agent is allowed to mutate based on the current branch constraints.
-3. **Repo Divergence Detector (`repo-divergence-detector.ts`)**: Logic that scans agent-generated PRs for structural anti-patterns (e.g., using `axios` when the repo uses `fetch`).
 
-## 4. EXOGRAM BRIDGE
+1. **Branch Integrity Policy (`branch-integrity-policy.yaml`)**: Defines the exact regex file paths the agent is allowed to mutate for a given task.
+2. **Repository Validator (`repository-validator.ts`)**: Middleware that intercepts `write_file` commands and verifies the target path against the Integrity Policy.
+3. **Repo Divergence Detector (`repo-divergence-detector.ts`)**: Post-execution analysis that mathematically checks the git diff to ensure no ghost dependencies or banned structural changes occurred.
 
-Frameworks identify instability. Playbooks describe what to do.
+---
+
+## 5. DEPLOYMENT INSTRUCTIONS
+
+1. **Configure Policies**: Define the execution scope in `branch-integrity-policy.yaml`.
+2. **Deploy Middleware**: Wrap the agent's file system tools (e.g., `write_file`, `delete_file`, `git_commit`) with `repository-validator.ts`.
+3. **Continuous Detection**: Run `repo-divergence-detector.ts` as a pre-commit hook or as the first step in your CI pipeline to catch drift before it enters the `main` branch.
+
+---
+
+## 6. EXOGRAM MAPPING
+
 **Exogram enforces deterministic runtime governance.**
 
-By deploying Exogram's divergence detectors, architectural drift is physically blocked. Exogram rejects PRs that introduce unapproved libraries or bypass global state managers, forcing the agent to adhere to your established engineering doctrine.
+Exogram provides real-time visualizations of the **Agentic Blast Radius**. If `repository-validator.ts` detects an agent attempting to mutate a file outside its authorized zone, Exogram drops the network connection to the LLM and instantly forces a hard Git reset, protecting the repository architecture.

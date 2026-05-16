@@ -1,23 +1,19 @@
 graph TD
-    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
-    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
-    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
-    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+    classDef governance fill:#1A1A1A,stroke:#333,stroke-width:2px,color:#fff,font-family:monospace;
+    classDef system fill:#0ea5e9,stroke:#0284c7,stroke-width:2px,color:#fff;
+    classDef llm fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff;
+    classDef fail fill:#f43f5e,stroke:#e11d48,stroke-width:2px,color:#fff;
+    classDef pass fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
 
-    A[Task Manifest Created] ::: neutral --> B{Margin Threshold Validator} ::: governance
+    U[User Invokes AI Feature]:::system --> M{Margin Threshold Validator}:::governance
     
-    B -->|Inference Est > Max ROI| C[Halt: Negative Feature Margin] ::: danger
+    M -->|Margin Negative| D[Degrade to Cheap Model or Deny]:::fail
+    M -->|Margin Positive| C{Cost Containment Engine}:::governance
+
+    C -->|Calculate Max Call Cost| C1{Cost > $0.15?}
     
-    B -->|Inference Est < Max ROI| D[Agent Session Starts] ::: success
-    
-    D --> E[LLM Inference Turn] ::: neutral
-    
-    E --> F{Cost Containment Engine} ::: governance
-    
-    F -->|Calculate Token USD Burn| G{Total Spend > Budget Ceiling?} ::: neutral
-    
-    G -->|Yes| H[Halt: Economic Circuit Breaker Tripped] ::: danger
-    H --> I[Sever API Connection] ::: danger
-    
-    G -->|No| J[Continue Execution] ::: success
-    J --> E
+    C1 -- Yes --> H[Financial Halt: Context Too Large]:::fail
+    C1 -- No --> L[Execute LLM API Call]:::llm
+
+    L --> R[Record Actual Token Spend]:::system
+    R --> S[Update Tenant Ledger]:::system

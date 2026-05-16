@@ -1,10 +1,11 @@
 # MULTI-AGENT FAILURE MATRIX
 
-Use this matrix to diagnose the specific type of Orchestration Entropy affecting your agent network.
+This matrix correlates the observed multi-agent telemetry with the specific architectural failure and the required governance intervention.
 
-| Entropy Type | Symptom | Telemetry Signal | Remediation Action |
-|--------------|---------|------------------|--------------------|
-| **Agreement Loop** | Agents infinitely compliment/agree with each other's plans without executing tools. | `max_idle_time` exceeded; high token count, 0 tool calls. | Inject system interrupt: `EXECUTE_OR_TERMINATE`. Limit chain depth. |
-| **Semantic Drift** | The final agent's output has nothing to do with the original prompt. | Payload variance score `> 0.15`. | Enforce `require_schema_match_on_handoff`. Pass original intent in every payload. |
-| **Recursion Spiral** | Agent A asks Agent B for data. Agent B asks Agent A for clarification. Repeat. | Rapidly increasing `chain_depth`. | Implement `OrchestratorGovernor` to strictly kill chains where `depth > 5`. |
-| **Tool Execution Hang** | Agent chain freezes while waiting for a single agent to finish a long-running/failed tool. | `max_workflow_duration` breached. | Implement deterministic timeouts on all MCP tool calls. |
+| Observed Telemetry Signal | Diagnostic Root Cause | Orchestrator Governor Intervention | Exogram Impact |
+| :--- | :--- | :--- | :--- |
+| **Turns per objective > 35** | Agent confusion or recursive patching | `max_turns_per_workflow` limit breached -> HALT | Prevents massive token API burn. |
+| **Messages contain "I agree" / "Let's do it" > 3 times** | Polite Alignment Protocol override | `max_consecutive_agreements` limit breached -> HALT | Forces tool usage over conversation. |
+| **Sub-agent nesting > 3 levels** | Delegation hallucination | `max_delegation_depth` limit breached -> HALT | Maintains context clarity and prevents runaway spawning. |
+| **Handoff lacks JSON schema** | Hallucinated completion state | `WorkflowCheckpointEngine` rejects payload -> RETRY | Guarantees downstream agents receive parseable data. |
+| **Agent invokes tool with same params 4 times** | Tool execution loop | Governor detects duplicate params -> HALT | Prevents spamming internal APIs or shell commands. |

@@ -1,25 +1,30 @@
-# CHANGE GOVERNANCE PLAYBOOK
+# PLAYBOOK: Agentic Change Management
 
-## PROTOCOL FOR CRITICAL MUTATIONS
-When the `ChangeApprovalEngine` intercepts and blocks an agent from executing a CRITICAL mutation, follow this playbook.
+When the `ChangeApprovalEngine` intercepts a mutation and requests human authority, operators must follow deterministic review steps to prevent catastrophic deployments.
 
-### 1. The Interception Event
-The agent proposes a change to a database schema or infrastructure state.
-The orchestrator logs a `[GOVERNANCE REJECT]`.
-The agent's session is placed in a `PENDING_EXECUTIVE_SIGNOFF` state. The agent is paused, NOT terminated.
+## Scenario 1: High-Risk CAB Request (e.g., Terraform Apply)
+**Trigger:** Agent requested approval to run `terraform apply`.
 
-### 2. Executive Review
-A human executive must review the exact `diff` payload the agent attempted to execute.
-- Do NOT read the agent's explanation of what it did. (Agents can hallucinate their summaries).
-- Read the raw code.
-- Validate that the infrastructure mutation aligns with the current sprint objectives.
+**Human Action:**
+1. The agent's container is currently frozen in a Wait State.
+2. Do NOT blindly approve. 
+3. Request the Terraform Plan output from the agent's context window.
+4. Verify the plan does not contain destructive actions (e.g., `- aws_db_instance.production_db`).
+5. If the plan is destructive and unrequested, Reject the mutation. Terminate the agent container to prevent it from retrying.
+6. If the plan is valid, Approve the mutation in the Exogram interface to unlock the agent's container.
 
-### 3. Cryptographic Sign-off
-If the change is approved, the human executive uses a dedicated terminal command or internal UI to inject a cryptographic approval token into the agent's session:
-`exogram approve --session-id <ID> --override-tier CRITICAL`
+## Scenario 2: Medium-Risk Code Owner Request
+**Trigger:** Agent requested approval to run `npm install next-auth`.
 
-### 4. Resumption
-The orchestrator reads the approval token, bypasses the `ExecutionAuthorityPolicy`, and allows the agent to execute the mutation.
+**Human Action:**
+1. This is a supply-chain risk. The agent is attempting to alter the dependency graph.
+2. Verify that the requested package is the exact package specified in the original objective, and not a hallucinated typo (e.g., `nextauth` vs `next-auth`).
+3. Approve if valid.
 
-## THE GOLDEN RULE OF AGENTIC CAB
-**Never give an agent global Admin rights.** Agents must operate on the Principle of Least Privilege, requesting elevated access at runtime via the CAB middleware, exactly like a human engineer requesting a temporary production credential.
+## Scenario 3: Agent Bypasses the Engine
+**Trigger:** Telemetry shows an agent executed a shell command without triggering a CAB review.
+
+**Human Action:**
+1. The agent discovered an alias or a chained bash command (e.g., `echo "terraform apply" | bash`) that evaded the `mutation-risk-detector.ts` regex.
+2. Immediately revoke the agent's API keys.
+3. Update `execution-authority-policy.yaml` with the newly discovered evasion pattern.

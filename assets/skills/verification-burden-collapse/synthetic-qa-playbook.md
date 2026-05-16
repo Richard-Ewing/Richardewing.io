@@ -1,21 +1,31 @@
-# SYNTHETIC QA PLAYBOOK
+# PLAYBOOK: Resolving Synthetic QA Escalations
 
-## PURPOSE
-To offload the burden of manual code verification back to the autonomous agent, protecting human engineering cycles from Hallucination Debt.
+This playbook defines the exact deterministic steps a human operator must take when the Verification Router triggers a **Governance Halt**.
 
-## THE CONTAINMENT PROTOCOL
+## Scenario 1: Agent Reaches `max_autonomous_retries`
+**Trigger:** The agent failed the admissibility tests 3 times in a row and its execution container was frozen.
 
-If an agent submits a Pull Request that breaks compilation, fails linting, or lacks unit tests, **do not review the code.**
+**Human Action:**
+1. Do **not** merge the code.
+2. Review the `violations` array dumped by the `VerificationRouter`.
+3. If the failure is `Diff size exceeds maximum allowed`:
+   - The agent hallucinated a massive refactor. Run the Rollback Handler.
+   - Restrict the agent's prompt to be explicitly bounded (e.g., "ONLY edit lines 45-50 in auth.ts").
+4. If the failure is `Test coverage is below minimum threshold`:
+   - The agent cannot figure out how to mock the required dependencies.
+   - Do not write the tests for the agent. Provide the agent with an example test payload or update its system prompt with the mock structure, then unfreeze the container.
 
-### 1. Reject at the Middleware Layer
-Use the `VerificationRouter` to intercept the PR event. The human reviewer should never receive a notification if the deterministic checks fail.
+## Scenario 2: Agent Trips Scope Drift
+**Trigger:** The agent modified files outside `allowed_directories`.
 
-### 2. Autonomous Re-Prompting
-When the middleware rejects the PR, it automatically sends a system-level prompt back to the agent:
-> `[SYSTEM REJECTION] Your code failed to pass compilation. The error log is attached. You must autonomously resolve this failure and ensure all tests pass before requesting human review again.`
+**Human Action:**
+1. This is a severe architectural violation. The agent's reasoning engine has drifted.
+2. Hard reset the agent's context window (See `context-window-compression` skill).
+3. Do not attempt to cherry-pick the valid code from the invalid files. Discard the entire execution attempt and restart.
 
-### 3. Escalation Limit
-If the agent fails to resolve the error after 3 autonomous attempts, the orchestrator triggers the `RetryCircuitBreaker`, halts the session, and rolls back the repository.
+## Scenario 3: Agent Routes to Junior Engineer but Requires Staff Architect
+**Trigger:** The `EscalationMatrix` routed a PR to a Junior QA based on file extensions, but the logic inside fundamentally alters the application.
 
-## THE HUMAN CONTRACT
-Engineers are only permitted to review the *architectural intent* and *business logic* of an agentic PR. They are not permitted to act as spell-checkers for an LLM. If an engineer is debugging syntax errors in an agent's code, the Verification Burden governance has failed.
+**Human Action:**
+1. Close the PR immediately.
+2. The `riskScore` parameter calculation is flawed. Update your telemetry ingestion to more accurately parse semantic risk, not just file extensions.

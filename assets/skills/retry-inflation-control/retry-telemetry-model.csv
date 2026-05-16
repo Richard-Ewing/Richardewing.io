@@ -1,6 +1,9 @@
-Session_ID,Task_Name,Initial_Input_Tokens,Retries,Total_Input_Tokens,Total_Output_Tokens,Session_Cost_USD,Budget_Ceiling_USD,Circuit_Breaker_Tripped
-S-2041,Update Header CSS,4500,0,4500,120,0.02,2.50,FALSE
-S-2042,Implement OAuth,12000,2,36000,4500,0.18,5.00,FALSE
-S-2043,Refactor Database Schema,45000,14,675000,42000,2.65,2.50,TRUE
-S-2044,Fix Hydration Error,18000,6,126000,8000,0.50,2.50,FALSE
-S-2045,Migrate to Next 15,150000,22,3450000,125000,12.22,5.00,TRUE
+Metric,Unbounded_Orchestrator,Retry_Burn_Engine,Delta
+Avg_Retries_Per_Task,15.2,2.1,-13.1
+Token_Burn_Per_Task_USD,0.85,0.12,-0.73
+Tasks_Caught_in_Infinite_Loops_per_100,8,0,-8
+Cost_of_Failed_Tasks_USD,6.80,0.00,-6.80
+Total_API_Spend_Monthly_USD,8500.00,1200.00,-7300.00
+Human_Intervention_Rate_%,2,15,+13
+Task_Completion_Rate_%,85,92,+7
+Average_Task_Latency_Seconds,450,120,-330

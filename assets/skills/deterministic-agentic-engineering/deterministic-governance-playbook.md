@@ -1,17 +1,22 @@
-# DETERMINISTIC GOVERNANCE PLAYBOOK
+# PLAYBOOK: Deterministic Governance Operations
 
-## HOW TO OPERATE EXOGRAM
+When you deploy the Deterministic Agentic Engineering OS, you shift the engineering culture from reviewing *agent outputs* to reviewing *governance boundaries*.
 
-### 1. Shift from Coding to Policy
-You are no longer an engineer writing React components or SQL queries. You are an Executive Governor writing YAML policies. If an agent fails to build a feature, do not fix the feature. Fix the governance policy that allowed the agent to fail.
+## 1. Initial Deployment Phase
+**Goal:** Deploy agents into a Zero-Trust state without halting existing human workflows.
+1. Deploy all middlewares in `AUDIT` mode (`enforcement_mode: AUDIT` across all YAML policies).
+2. Allow agents to run in parallel to humans.
+3. Observe the Exogram dashboards. You will see thousands of "Would Have Halted" events as agents hallucinate and drift.
+4. Tune the YAML policies based on actual execution telemetry.
 
-### 2. The Feedback Loop of Inevitability
-When an incident occurs (e.g., an agent hallucinates a variable):
-1. **Identify the missing constraint.** Why didn't the Admissibility Layer catch it?
-2. **Write the middleware.** Create a deterministic check (AST parser, regex, test suite) that physically prevents that specific hallucination from ever reaching production again.
-3. **Deploy the policy.** Add the new constraint to `admissibility-layer.yaml`.
+## 2. Hardening Phase
+**Goal:** Achieve Execution Certainty.
+1. Switch `enforcement_mode` to `STRICT` for the most critical modules first: `ai-cost-containment` and `autonomous-execution-safety`.
+2. As agents adapt to the hard constraints, enable `STRICT` mode for `tool-permission-governance` and `repository-drift-prevention`.
+3. Agent success rates will plummet initially as their hallucinations are physically blocked. This is expected. Update agent system prompts to explicitly document the new rigid boundaries they must follow.
 
-By continually repeating this loop, the "sandbox" surrounding the LLM becomes perfectly molded to your codebase. Failure becomes mathematically impossible. Success becomes inevitable.
-
-### 3. Trust the Math, Not the Model
-Anthropic will release Claude 4. OpenAI will release GPT-5. The models will get smarter, but they will still be probabilistic. Exogram abstracts the model layer away entirely. We do not care what model is generating the text, because the mathematical constraints of the Governance Orchestrator will always determine what actually gets executed.
+## 3. Operations Phase
+**Goal:** Zero-Human touch for standard workloads.
+1. The OS is now fully operational. Agents run entirely autonomously.
+2. Humans only intervene when the Exogram Control Plane pages them via the `GovernanceOrchestrator` (e.g., a CAB approval for a terraform apply, or a Sev-1 quarantine event).
+3. If an agent fails a task, engineers do not rewrite the agent's code. They update the underlying YAML policy or the specific skill middleware to prevent the failure class structurally.

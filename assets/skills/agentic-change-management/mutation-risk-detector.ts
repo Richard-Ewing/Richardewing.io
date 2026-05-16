@@ -1,35 +1,68 @@
 /**
  * MUTATION RISK DETECTOR
  * 
- * Analyzes the blast radius of an agent's intended changes to classify
- * its risk tier before execution.
+ * Middleware that intercepts agent shell commands and API requests to 
+ * calculate the blast radius and risk score of the proposed mutation before
+ * it touches the infrastructure.
  */
 
+import { readFileSync } from 'fs';
+import * as yaml from 'js-yaml';
+
+export interface ProposedMutation {
+    agentId: string;
+    commandType: 'SHELL' | 'API' | 'FILE';
+    targetResource: string;
+    payload: string;
+}
+
+export interface ExecutionAuthorityPolicy {
+    spec: {
+        risk_scoring: {
+            high_risk_patterns: string[];
+            medium_risk_patterns: string[];
+        };
+        authority_mapping: Record<string, 'AUTO' | 'CODE_OWNER' | 'CAB_APPROVAL'>;
+    };
+}
+
 export class MutationRiskDetector {
-  
-  /**
-   * Calculates the blast radius based on file paths and command strings.
-   * Returns: "LOW" | "HIGH" | "CRITICAL"
-   */
-  public calculateBlastRadius(targetFiles: string[], proposedCommand?: string): string {
-    
-    // Check commands first (e.g., executing a migration script is an instant critical)
-    if (proposedCommand && (proposedCommand.includes("migrate") || proposedCommand.includes("terraform"))) {
-      return "CRITICAL";
+    private policy: ExecutionAuthorityPolicy;
+
+    constructor(policyPath: string = './execution-authority-policy.yaml') {
+        const fileContents = readFileSync(policyPath, 'utf8');
+        this.policy = yaml.load(fileContents) as ExecutionAuthorityPolicy;
     }
 
-    // Check file paths
-    let hasHighRisk = false;
+    /**
+     * Evaluates a proposed mutation and returns the required approval tier.
+     */
+    public assessRisk(mutation: ProposedMutation): 'AUTO' | 'CODE_OWNER' | 'CAB_APPROVAL' {
+        const { payload, targetResource } = mutation;
+        const normalizedPayload = payload.toLowerCase();
 
-    for (const file of targetFiles) {
-      if (file.includes('schema.sql') || file.includes('.yaml') || file.includes('governance/')) {
-        return "CRITICAL"; // Immediate escalation
-      }
-      if (file.includes('api/') || file.includes('lib/')) {
-        hasHighRisk = true;
-      }
+        // 1. Detect High Risk (e.g. Terraform apply, DB drop, AWS terminate)
+        const isHighRisk = this.policy.spec.risk_scoring.high_risk_patterns.some(pattern => 
+            normalizedPayload.includes(pattern) || targetResource.includes(pattern)
+        );
+
+        if (isHighRisk) {
+            console.warn(`[RISK DETECTOR] High-Risk Mutation detected. CAB Approval Required.`);
+            return 'CAB_APPROVAL';
+        }
+
+        // 2. Detect Medium Risk (e.g. modifying CI workflows, installing new dependencies)
+        const isMediumRisk = this.policy.spec.risk_scoring.medium_risk_patterns.some(pattern => 
+            normalizedPayload.includes(pattern) || targetResource.includes(pattern)
+        );
+
+        if (isMediumRisk) {
+            console.log(`[RISK DETECTOR] Medium-Risk Mutation detected. Code Owner Approval Required.`);
+            return 'CODE_OWNER';
+        }
+
+        // 3. Low Risk (Standard read/write within allowed boundaries)
+        console.log(`[RISK DETECTOR] Low-Risk Mutation. Auto-Approval Granted.`);
+        return 'AUTO';
     }
-
-    return hasHighRisk ? "HIGH" : "LOW";
-  }
 }

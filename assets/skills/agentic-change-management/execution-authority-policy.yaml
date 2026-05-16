@@ -1,28 +1,35 @@
+# =====================================================================
+# EXECUTION AUTHORITY POLICY
+# Framework: Agentic Change Management
+# Purpose: Map infrastructure mutations and shell commands to explicit
+# human approval tiers to prevent unauthorized deployments.
+# =====================================================================
+
 apiVersion: governance.exogram.ai/v1alpha1
-kind: ExecutionAuthorityPolicy
+kind: AuthorityPolicy
 metadata:
-  name: zero-trust-mutation-matrix
-  description: "Defines the exact authority levels an agent possesses over infrastructure."
+  name: infrastructure-mutation-gates
+  target_systems:
+    - devops-agents
+    - platform-engineering-agents
 spec:
-  # Risk Tier Definitions
-  risk_tiers:
-    LOW:
-      allowed_mutations:
-        - "CSS/Styling updates"
-        - "Markdown/Documentation edits"
-        - "Unit test generation"
-      approval_required: NONE # Fully autonomous
-      
-    HIGH:
-      allowed_mutations:
-        - "API Route logic changes"
-        - "Component state modifications"
-        - "Package version bumps"
-      approval_required: PEER_REVIEW # Standard PR process
-      
-    CRITICAL:
-      allowed_mutations:
-        - "Database schema migrations"
-        - "Terraform/Infrastructure changes"
-        - "Middleware/Governance policy edits"
-      approval_required: EXECUTIVE_SIGNOFF # Hard cryptographic block
+  risk_scoring:
+    high_risk_patterns:
+      - "terraform apply"
+      - "terraform destroy"
+      - "kubectl delete"
+      - "drop table"
+      - "aws ec2 terminate"
+      - "npm publish"
+    
+    medium_risk_patterns:
+      - "npm install"
+      - "yarn add"
+      - "git push origin main"
+      - ".github/workflows"
+      - "docker push"
+
+  authority_mapping:
+    high_risk: "CAB_APPROVAL"
+    medium_risk: "CODE_OWNER"
+    low_risk: "AUTO"

@@ -1,39 +1,32 @@
+# =====================================================================
+# MEMORY PRIORITY POLICY
+# Framework: Context Window Compression
+# Purpose: Enforce strict token ceilings and define semantic eviction
+# rules to prevent LLM context rot.
+# =====================================================================
+
 apiVersion: governance.exogram.ai/v1alpha1
-kind: BoundedCognitionPolicy
+kind: CognitivePolicy
 metadata:
-  name: strict-context-compression
-  description: "Defines the token retention priority for the LLM context window."
+  name: bounded-cognition-rules
+  target_systems:
+    - long-horizon-coding-agents
+    - autonomous-researchers
 spec:
-  # Hard Cognitive Limit
-  max_context_tokens: 8000
-  
-  # Priority Tiers (P0 = Never drop, P4 = Drop first)
-  priority_tiers:
-    P0_CRITICAL:
-      content: 
-        - "System Prompt"
-        - "Governance Directives"
-        - "Repo Map Architecture"
-      action: NEVER_TRUNCATE
-      
-    P1_IMMEDIATE_STATE:
-      content:
-        - "Current Target File AST"
-        - "Current Error Log"
-      action: TRUNCATE_IF_EXCEEDS_50_PERCENT_OF_MAX
-      
-    P2_RECENT_HISTORY:
-      content:
-        - "Last 3 Conversation Turns"
-      action: SUMMARIZE_OR_TRUNCATE
-      
-    P3_STALE_HISTORY:
-      content:
-        - "Conversation turns 4-10"
-      action: AGGRESSIVE_DROP
-      
-    P4_NOISE:
-      content:
-        - "Successful test logs"
-        - "NPM install outputs"
-      action: DROP_IMMEDIATELY
+  token_ceilings:
+    # The maximum tokens the LLM is ever allowed to see per turn.
+    # We do NOT use the model's physical limit (e.g., 128k).
+    # We use a deterministic logic limit (e.g., 16k) to guarantee high reasoning quality.
+    max_total_context: 16000
+    
+    # How much of that budget is strictly reserved for core instructions
+    reserved_system_tokens: 4000
+
+  tier_behavior:
+    tier_1_system: "NEVER_TRUNCATE"
+    tier_2_recent_turn: "PRESERVE"
+    tier_3_tool_outputs: "TRUNCATE_OR_SUMMARIZE"
+    tier_4_stale_history: "EVICT"
+
+  # How many interaction turns until a message is considered "Stale History" and evicted.
+  eviction_threshold_turns: 5

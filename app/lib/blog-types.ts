@@ -10,6 +10,10 @@ export interface ArticleData {
     featured?: boolean;
     content: string;
     canonicalUrl?: string;
+    relatedFailures?: string[];
+    relatedSkills?: string[];
+    relatedDiagnostics?: string[];
+    relatedControls?: string[];
 }
 
 export const categoryColors: Record<string, string> = {

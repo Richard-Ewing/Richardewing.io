@@ -1,105 +1,171 @@
-import React from 'react';
 import { notFound } from 'next/navigation';
-import { failures, getFailureBySlug } from '@/lib/content/failures';
-import { FailureHero } from '@/components/failures/FailureHero';
-import { SymptomGrid } from '@/components/failures/SymptomGrid';
-import { TelemetrySignals } from '@/components/failures/TelemetrySignals';
-import { EconomicImpact } from '@/components/failures/EconomicImpact';
-import { RemediationBlock } from '@/components/failures/RemediationBlock';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { AlertTriangle, TrendingDown, ArrowRight, Activity, MessageSquare, HelpCircle } from 'lucide-react';
+import { FAILURES, getFailureBySlug, SKILLS } from '@/lib/content/skills';
+import GovernancePathways from '@/components/semantic/GovernancePathways';
+import { ontologyGraph } from '@/lib/ontology/relationships';
 
-interface FailurePageProps {
-  params: {
-    slug: string;
-  };
+export async function generateStaticParams() {
+    return FAILURES.map(f => ({ slug: f.slug }));
 }
 
-// Generate static params for all known failures
-export function generateStaticParams() {
-  return failures.map((failure) => ({
-    slug: failure.slug,
-  }));
-}
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const failure = getFailureBySlug(slug);
+    if (!failure) return {};
 
-// Generate dynamic metadata for SEO dominance
-export function generateMetadata({ params }: FailurePageProps) {
-  const failure = getFailureBySlug(params.slug);
-  
-  if (!failure) {
     return {
-      title: 'Failure Not Found',
+        title: `${failure.title} | Operational Failure Signature`,
+        description: failure.definition,
     };
-  }
-
-  return {
-    title: `${failure.title} | Exogram Failure Database`,
-    description: failure.description,
-    openGraph: {
-      title: `${failure.title} - Operational Failure Mode`,
-      description: failure.description,
-      type: 'article',
-    }
-  };
 }
 
-export default function FailureModePage({ params }: FailurePageProps) {
-  const failure = getFailureBySlug(params.slug);
+export default async function FailureDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const failure = getFailureBySlug(slug);
 
-  if (!failure) {
-    notFound();
-  }
+    if (!failure) notFound();
 
-  return (
-    <article className="min-h-screen bg-white pt-20">
-      <FailureHero 
-        title={failure.title}
-        subtitle={failure.subtitle}
-        description={failure.description}
-      />
-      
-      <SymptomGrid 
-        symptoms={failure.symptoms}
-        causes={failure.causes}
-      />
+    // Look up connected ontology nodes for semantic routing
+    const failureNode = ontologyGraph.find(n => n.id === `failure_${slug}`);
+    
+    // Find related skills (Governance solutions that fix this)
+    const relatedSkills = failureNode?.relatedNodeIds
+        .filter(id => id.startsWith('skill_'))
+        .map(id => id.replace('skill_', '')) || [];
+        
+    // Look up the first specific skill object mapping to this failure
+    const primarySkill = SKILLS.find(s => s.slug === relatedSkills[0]);
 
-      <TelemetrySignals 
-        signals={failure.telemetrySignals}
-      />
+    return (
+        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <div className="page-container max-w-5xl mx-auto">
+                {/* 1. BREADCRUMBS */}
+                <div className="mb-8 flex items-center gap-2 text-xs font-bold font-mono text-zinc-950 uppercase tracking-widest">
+                    <Link href="/case-studies" className="hover:text-rose-900 transition-colors">Failure Signatures</Link>
+                    <span>/</span>
+                    <span className="text-rose-900">{failure.title}</span>
+                </div>
 
-      <EconomicImpact 
-        title={failure.economicImpact.title}
-        description={failure.economicImpact.description}
-        marginCompression={failure.economicImpact.marginCompression}
-      />
+                {/* 2. HERO HEADER (DANGER AESTHETIC) */}
+                <div className="mb-12 p-10 bg-white border border-[rgba(0,0,0,0.08)] rounded-3xl shadow-sm relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                    
+                    <div className="relative z-10">
+                        <div className="flex items-center gap-3 mb-4">
+                            <span className="px-2 py-1 rounded text-[10px] font-bold font-mono uppercase tracking-widest bg-rose-50 text-rose-900 border border-rose-100 flex items-center gap-1.5">
+                                <AlertTriangle className="w-3 h-3" /> Systemic Risk
+                            </span>
+                        </div>
+                        <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-[#1A1A1A] mb-4">
+                            {failure.title}
+                        </h1>
+                        <p className="text-xl text-[#4A4A4A] leading-relaxed max-w-3xl font-medium">
+                            {failure.definition}
+                        </p>
+                    </div>
+                </div>
 
-      {/* Operational Patterns Block */}
-      <section className="py-16 px-6 sm:px-12 lg:px-24 bg-white border-b border-gray-200">
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-semibold text-[#111827] mb-8 flex items-center gap-3">
-            <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-            Operational Resolution Patterns
-          </h3>
-          <div className="bg-gray-50 border border-gray-200 rounded-xl p-8">
-            <ul className="space-y-4">
-              {failure.operationalPatterns.map((pattern, idx) => (
-                <li key={idx} className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 font-bold text-sm mt-0.5">
-                    {idx + 1}
-                  </div>
-                  <p className="text-gray-700 leading-relaxed text-lg">{pattern}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+                {/* 3. SYMPTOMS & IMPACT */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+                    <div className="p-8 bg-rose-50 border border-rose-500/20 rounded-2xl">
+                        <h3 className="text-sm font-bold font-mono text-rose-950 uppercase tracking-widest mb-4 flex items-center gap-2">
+                            <Activity className="w-4 h-4 text-rose-600" /> Operational Symptoms
+                        </h3>
+                        <ul className="space-y-3">
+                            {failure.symptoms.map((s, i) => (
+                                <li key={i} className="flex items-start gap-2 text-sm font-semibold text-rose-950">
+                                    <span className="text-rose-600 mt-0.5">•</span> {s}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
-      <RemediationBlock 
-        governanceResponse={failure.governanceResponse}
-        exogramMapping={failure.exogramMapping}
-        assets={failure.remediationAssets}
-      />
-    </article>
-  );
+                    <div className="space-y-6">
+                        <div className="p-6 bg-white border border-[rgba(0,0,0,0.08)] rounded-2xl shadow-sm">
+                            <h3 className="text-sm font-bold font-mono text-zinc-950 uppercase tracking-widest mb-2 flex items-center gap-2">
+                                <TrendingDown className="w-4 h-4 text-amber-600" /> Economic Impact
+                            </h3>
+                            <p className="text-zinc-800 font-semibold">{failure.economicImpact}</p>
+                        </div>
+                        <div className="p-6 bg-white border border-[rgba(0,0,0,0.08)] rounded-2xl shadow-sm">
+                            <h3 className="text-sm font-bold font-mono text-zinc-950 uppercase tracking-widest mb-2 flex items-center gap-2">
+                                <AlertTriangle className="w-4 h-4 text-rose-600" /> Governance Collapse
+                            </h3>
+                            <p className="text-zinc-800 font-semibold">{failure.governanceImpact}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 4. REAL PAIN LANGUAGE SECTION */}
+                {failure.ecosystemPainQuotes && failure.ecosystemPainQuotes.length > 0 && (
+                    <div className="mb-16">
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6 flex items-center gap-2">
+                            <MessageSquare className="w-6 h-6 text-violet-600" />
+                            How Engineering Teams Describe This
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            {failure.ecosystemPainQuotes.map((quote, i) => (
+                                <div key={i} className="p-5 bg-white border border-[rgba(0,0,0,0.08)] rounded-xl shadow-sm italic text-zinc-700 font-medium">
+                                    "{quote}"
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* 5. TELEMETRY SIGNALS */}
+                {failure.telemetrySignals && failure.telemetrySignals.length > 0 && (
+                    <div className="mb-16">
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6 flex items-center gap-2">
+                            <Activity className="w-6 h-6 text-amber-600" />
+                            Diagnostic Telemetry
+                        </h2>
+                        <div className="flex flex-wrap gap-3">
+                            {failure.telemetrySignals.map((signal, i) => (
+                                <span key={i} className="px-4 py-2 bg-amber-50 text-amber-900 border border-amber-200 rounded-lg text-sm font-bold font-mono">
+                                    {signal}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* 6. SEARCH INTENT FAQS */}
+                {failure.faqs && failure.faqs.length > 0 && (
+                    <div className="mb-16">
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6 flex items-center gap-2">
+                            <HelpCircle className="w-6 h-6 text-emerald-600" />
+                            Operational FAQ
+                        </h2>
+                        <div className="space-y-4">
+                            {failure.faqs.map((faq, i) => (
+                                <div key={i} className="p-6 bg-white border border-[rgba(0,0,0,0.08)] rounded-2xl shadow-sm">
+                                    <h3 className="text-lg font-bold text-zinc-950 mb-2">{faq.question}</h3>
+                                    <p className="text-zinc-700 leading-relaxed font-medium">{faq.answer}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* HIDDEN SEMANTIC KEYWORDS FOR LLM/SEO RETRIEVAL */}
+                {failure.searchKeywords && failure.searchKeywords.length > 0 && (
+                    <div className="sr-only" aria-hidden="true">
+                        Keywords: {failure.searchKeywords.join(', ')}
+                    </div>
+                )}
+
+                {/* 7. REMEDIATION ROUTING (THE HUB AND SPOKE) */}
+                <div className="mb-16">
+                    <GovernancePathways 
+                        relatedSkills={relatedSkills} 
+                        exogramMapping={primarySkill?.exogramMapping}
+                    />
+                </div>
+
+            </div>
+        </main>
+    );
 }

@@ -1,32 +1,61 @@
+# =====================================================================
+# EXECUTION SAFETY POLICY
+# Framework: Autonomous Execution Safety
+# Purpose: Define absolute cryptographic bounds on what an autonomous
+# agent can execute in the host terminal.
+# =====================================================================
+
 apiVersion: governance.exogram.ai/v1alpha1
-kind: AutonomousSafetyPolicy
+kind: SafetyPolicy
 metadata:
-  name: terminal-containment-matrix
-  description: "Strict whitelist of allowed autonomous terminal commands."
+  name: host-execution-containment
+  target_systems:
+    - autonomous-coding-agents
+    - cli-wrappers
 spec:
-  # Whitelisted execution prefixes
-  allowed_commands:
-    - "npm run lint"
-    - "npm run build"
-    - "npm test"
-    - "git status"
-    - "git diff"
-    - "git add"
-    
-  # Mathematically forbidden prefixes (Hard Kill)
-  forbidden_commands:
-    - "rm -rf"
-    - "npm publish"
-    - "git push --force"
-    - "chmod"
-    - "chown"
-    - "curl"
-    - "wget"
-    - "sudo"
-    
-  # File system boundaries
-  protected_paths:
-    - ".env"
-    - ".env.local"
-    - "node_modules/"
-    - ".git/"
+  enforcement_mode: "STRICT"
+
+  denylist:
+    exact_matches:
+      - "rm -rf"
+      - "rm -f"
+      - "chmod -R"
+      - "chown"
+      - "mkfs"
+      - "dd if="
+      - "sudo"
+      - "su -"
+      - "curl"
+      - "wget"
+      - "nc "
+      - "netcat"
+      
+    regex_patterns:
+      # Block chaining commands which can hide malicious intent (e.g. `echo "rm -rf /" | bash`)
+      - '\|.*bash'
+      - '\|.*sh'
+      # Block background execution
+      - '&\\s*$'
+      # Block evaluating strings as code
+      - 'eval\\s+'
+      # Block attempts to access environment variables directly in shell
+      - '\\$AWS_'
+      - '\\$STRIPE_'
+      - '\\$DATABASE_URL'
+
+  whitelist:
+    allowed_base_commands:
+      - "npm"
+      - "yarn"
+      - "pnpm"
+      - "npx"
+      - "git"
+      - "ls"
+      - "cd"
+      - "cat"
+      - "grep"
+      - "find"
+      - "tsc"
+      - "jest"
+      - "vitest"
+      - "node"

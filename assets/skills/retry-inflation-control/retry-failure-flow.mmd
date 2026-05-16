@@ -1,23 +1,31 @@
 graph TD
-    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
-    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
-    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
-    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+    classDef governance fill:#1A1A1A,stroke:#333,stroke-width:2px,color:#fff,font-family:monospace;
+    classDef agent fill:#0ea5e9,stroke:#0284c7,stroke-width:2px,color:#fff;
+    classDef test fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff;
+    classDef fail fill:#f43f5e,stroke:#e11d48,stroke-width:2px,color:#fff;
+    classDef pass fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
 
-    A[Agent Generates Code] ::: neutral --> B[Token Burn Logged] ::: governance
+    A[Agent Generates Code]:::agent --> T{Test Execution}:::test
+    T -- Pass --> S[Proceed]:::pass
+    T -- Fail --> E[Extract stderr]
+
+    E --> G{Retry Burn Engine}:::governance
     
-    B --> C{Retry Burn Engine} ::: governance
-    C -->|Session Cost > Budget| D[Halt: Economic Breach] ::: danger
-    
-    C -->|Session Cost < Budget| E{Code Execution} ::: neutral
-    
-    E -->|Success| F[Task Complete] ::: success
-    
-    E -->|Failure| G{Recursive Loop Detector} ::: governance
-    
-    G -->|Identical Patch Detected| H[Inject Pattern Interrupt] ::: governance
-    H --> A
-    
-    G -->|New Patch Proposed| A
-    
-    D --> I[Cost Containment Playbook] ::: governance
+    subgraph FINANCIAL & COMPUTE BREAKERS
+        G --> C1{USD > $2.50?}
+        G --> C2{Retries > 10?}
+        G --> C3{Same Error x 3?}
+        G --> C4{Semantic Loop?}
+    end
+
+    C1 -- Yes --> H[Financial Halt]:::fail
+    C2 -- Yes --> H2[Compute Halt]:::fail
+    C3 -- Yes --> H3[Infinite Loop Halt]:::fail
+    C4 -- Yes --> H4[Thrashing Halt]:::fail
+
+    C1 -- No --> C2
+    C2 -- No --> C3
+    C3 -- No --> C4
+    C4 -- No --> R[Permit Retry]:::pass
+
+    R --> A

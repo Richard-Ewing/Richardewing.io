@@ -1,5 +1,9 @@
-Agent_ID,Lines_Generated,Human_Review_Minutes,Reviewer_Hourly_Rate,Cost_of_Verification_USD,Agent_API_Cost_USD,Net_Feature_Value_USD,Status
-Agent-Alpha,450,65,150,162.50,1.25,-63.75,Negative_ROI
-Agent-Beta,120,5,150,12.50,0.40,87.10,Positive_ROI
-Agent-Alpha,300,45,150,112.50,0.90,-13.40,Negative_ROI
-Agent-Gamma,85,2,150,5.00,0.15,94.85,Positive_ROI
+Metric,Pre_Governance,Post_Governance,Delta
+Average_Agent_PRs_Per_Week,150,150,0
+Review_Time_Per_PR_Minutes,45,5,-40
+Total_Weekly_Review_Hours,112.5,12.5,-100
+Senior_Engineer_Hourly_Rate,150,150,0
+Weekly_Synthetic_QA_Cost,16875,1875,-15000
+Annual_Synthetic_QA_Cost,877500,97500,-780000
+Agentic_Admissibility_Rejections,0,85,+85
+Autonomous_Test_Generations,10,120,+110

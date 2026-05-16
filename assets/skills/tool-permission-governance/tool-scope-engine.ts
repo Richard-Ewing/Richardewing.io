@@ -1,40 +1,80 @@
 /**
  * TOOL SCOPE ENGINE
  * 
- * Provisions tools dynamically based on the task manifest. Prevents 
- * initializing an agent with global access to all enterprise MCP servers.
+ * Middleware that dynamically provisions a subset of tools into the LLM's context window
+ * based on the agent's assigned role and the specific objective. Prevents Global Tool Exposure.
  */
 
+import { readFileSync } from 'fs';
+import * as yaml from 'js-yaml';
+
+export interface ToolDefinition {
+    name: string;
+    description: string;
+    schema: any;
+    execute: (params: any) => Promise<any>;
+}
+
+export interface PermissionBoundaryPolicy {
+    spec: {
+        roles: Record<string, {
+            allowed_tools: string[];
+            forbidden_tools: string[];
+        }>;
+        global_restrictions: string[];
+    };
+}
+
 export class ToolScopeEngine {
-  
-  // Simulated available enterprise tools
-  private readonly allEnterpriseTools = [
-    "read_file", "write_file", "git_commit", "execute_sql", 
-    "query_jira", "aws_deploy", "stripe_refund"
-  ];
+    private policy: PermissionBoundaryPolicy;
+    private allAvailableTools: Map<string, ToolDefinition> = new Map();
 
-  /**
-   * Reads a task definition and returns only the mathematically required tools.
-   */
-  public provisionToolsForTask(taskType: string): string[] {
-    const provisionedTools: string[] = [];
-
-    switch (taskType) {
-      case "FRONTEND_UI_UPDATE":
-        provisionedTools.push("read_file", "write_file", "git_commit");
-        break;
-      case "DATA_ANALYSIS_REPORT":
-        provisionedTools.push("execute_sql", "read_file"); // No write access
-        break;
-      case "PROJECT_MANAGEMENT_SYNC":
-        provisionedTools.push("query_jira");
-        break;
-      default:
-        console.warn(`[GOVERNANCE] Unknown task type: ${taskType}. Provisioning ZERO tools by default.`);
-        return [];
+    constructor(policyPath: string = './permission-boundary-policy.yaml') {
+        const fileContents = readFileSync(policyPath, 'utf8');
+        this.policy = yaml.load(fileContents) as PermissionBoundaryPolicy;
     }
 
-    console.log(`[GOVERNANCE] Provisioned tools for ${taskType}: ${provisionedTools.join(", ")}`);
-    return provisionedTools;
-  }
+    /**
+     * Registers a tool into the global registry.
+     */
+    public registerTool(tool: ToolDefinition): void {
+        this.allAvailableTools.set(tool.name, tool);
+    }
+
+    /**
+     * Provisions the specific tools an agent is permitted to see and use.
+     * @returns An array of ToolDefinitions to inject into the LLM context.
+     */
+    public provisionAgentScope(agentRole: string): ToolDefinition[] {
+        const roleConfig = this.policy.spec.roles[agentRole];
+        
+        if (!roleConfig) {
+            console.warn(`[WARNING] Agent Role '${agentRole}' not found in policy. Defaulting to Zero-Trust (No Tools).`);
+            return [];
+        }
+
+        const scopedTools: ToolDefinition[] = [];
+
+        for (const toolName of roleConfig.allowed_tools) {
+            // Enforce Global Restrictions (e.g. drop-database is globally banned in prod)
+            if (this.policy.spec.global_restrictions.includes(toolName)) {
+                console.error(`[SECURITY] Cannot provision ${toolName} to ${agentRole}. Tool is globally restricted.`);
+                continue;
+            }
+
+            // Enforce explicit role restrictions
+            if (roleConfig.forbidden_tools && roleConfig.forbidden_tools.includes(toolName)) {
+                console.error(`[SECURITY] Cannot provision ${toolName} to ${agentRole}. Explicitly forbidden.`);
+                continue;
+            }
+
+            const tool = this.allAvailableTools.get(toolName);
+            if (tool) {
+                scopedTools.push(tool);
+            }
+        }
+
+        console.log(`[SCOPE PROVISIONED] Agent '${agentRole}' granted access to ${scopedTools.length} tools: ${scopedTools.map(t => t.name).join(', ')}`);
+        return scopedTools;
+    }
 }

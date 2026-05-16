@@ -1,16 +1,20 @@
-# INFERENCE COST PLAYBOOK
+# PLAYBOOK: Inference Cost Containment
 
-## INCIDENT RESPONSE PROTOCOL
-Execute this playbook when the `CostContainmentEngine` severs an API connection due to a budget breach.
+When the `CostContainmentEngine` or `MarginThresholdValidator` triggers a Governance Halt or Degrade action, human operators must review the tenant's architecture to prevent churn.
 
-### 1. SEVER AND ISOLATE
-The agent session has hit its USD ceiling. Do not increase the budget and click "retry". This is the sunk cost fallacy applied to agentic engineering. The agent has proven it cannot solve the problem efficiently.
+## Scenario 1: Tenant Reaches Margin Threshold
+**Trigger:** `MarginThresholdValidator` downgraded the tenant's requests from `gpt-4o` to `claude-3-haiku` because their AI COGS reached 20% of their subscription revenue.
 
-### 2. AUDIT THE BURN
-Check the `cost-governance-dashboard.csv` to identify the token leak.
-- **High Input Tokens, Low Output:** The context window is too large. The agent is repeatedly reading a massive repo map or 50 irrelevant files. *Fix: Implement Context Compression or narrow the task scope.*
-- **High Output Tokens, High Input Tokens:** The agent is stuck in an infinite retry loop, generating massive patches that fail validation over and over. *Fix: Check the Test logs. Why is the code failing?*
+**Human Action:**
+1. The tenant is receiving a degraded experience. This is a churn risk.
+2. Review the tenant's token usage. Are they submitting massive context windows (e.g., pasting raw PDFs into the feature)?
+3. If yes, implement **Context Window Compression** on the backend to silently truncate their inputs before inference.
+4. If the usage is legitimate, the tenant requires an Enterprise pricing tier. Trigger an upsell alert to Sales.
 
-### 3. THE "FALLBACK TO MINI" STRATEGY
-If a task is repeatedly hitting the `MEDIUM_COMPLEXITY` budget of $2.50 using `claude-3-5-sonnet`, do not upgrade the budget. Instead, break the task into three smaller tasks and run them using `gpt-4o-mini`. 
-Smaller, more atomic tasks executed on cheaper models yield higher deterministic reliability than massive, complex tasks executed on expensive models.
+## Scenario 2: Single Call Cost Halt
+**Trigger:** A single LLM request exceeded the `$0.15` max limit defined in `token-budget-policy.yaml`.
+
+**Human Action:**
+1. The feature attempted to send an illegally large payload (Context Window Attack) or the developer accidentally configured `max_tokens` to an unbounded number.
+2. Review the specific `featureId` that triggered the error.
+3. Hardcode a `max_tokens` bound in the API payload for that feature to guarantee it cannot request an infinite completion.

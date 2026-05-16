@@ -1,7 +1,8 @@
-import { notFound, permanentRedirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '../terms';
+import GovernancePathways from '@/components/semantic/GovernancePathways';
 import { autoKeyMetrics, autoMaturityLevels, autoComparisons, autoQuiz, autoDiagram, autoCommonMistakes, autoBestPractices, autoIndustryBenchmarks, autoSpokes, autoCurriculum, autoGuides, autoPremiumTool, autoWhereIsItUsed, autoWhoUsesIt, autoBridge } from '../auto-enrich';
 import RelatedContent from '../../components/RelatedContent';
 import { DiagnosticBridge } from '../../components/DiagnosticBridge';
@@ -405,7 +406,6 @@ export default async function GlossaryTermPage({ params }: Props) {
                                         <div className="text-xs font-bold font-medium font-mono text-zinc-950">{pct}%</div>
                                     </div>
                                     <div className="w-full h-1.5 rounded-full bg-white/5 mb-1.5">
-                                        { }
                                         <div className={`h-full rounded-full bg-gradient-to-r ${barColor} transition-all`} style={{ width: `${pct}%` }} />
                                     </div>
                                     <div className="text-xs font-bold text-zinc-900 font-bold">{level.description}</div>

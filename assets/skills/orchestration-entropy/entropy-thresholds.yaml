@@ -1,26 +1,33 @@
+# =====================================================================
+# ENTROPY THRESHOLDS POLICY
+# Framework: Orchestration Entropy Governance
+# Purpose: Define the absolute cryptographic limits on multi-agent interactions
+# to prevent runaway compute burn and infinite loops.
+# =====================================================================
+
 apiVersion: governance.exogram.ai/v1alpha1
-kind: OrchestrationEntropyPolicy
+kind: EntropyPolicy
 metadata:
-  name: multi-agent-containment
-  description: "Mathematical constraints preventing runaway agentic workflows."
+  name: multi-agent-entropy-bounds
+  target_systems:
+    - langgraph-orchestrator
+    - crewai-squads
+    - autogen-conversations
 spec:
-  # Structural Boundaries
-  structural_limits:
-    max_chain_depth: 5 # Maximum number of sequential agent handoffs
-    max_concurrent_agents: 3 # Maximum agents operating in parallel
+  limits:
+    # Maximum total conversational turns allowed per workflow execution
+    # Prevents $1000 API bills from runaway chains.
+    max_turns_per_workflow: 35
     
-  # Semantic Drift Thresholds
-  payload_validation:
-    require_schema_match_on_handoff: true
-    max_variance_score: 0.15 # Allowable drift from the original user prompt
+    # How deep sub-agents can recursively delegate tasks.
+    # E.g. Manager -> Coder -> Reviewer -> Sub-Reviewer (Depth 4)
+    max_delegation_depth: 3
     
-  # Temporal Limits (Dead-man switches)
-  temporal_containment:
-    max_workflow_duration_minutes: 15
-    max_idle_time_seconds: 60
-    
-  # Action upon breach
-  on_entropy_breach:
-    action: SEVER_WORKFLOW
-    trigger_rollback: true
-    notify_human: true
+    # How many times agents can message each other without invoking a tool.
+    # Stops the "I agree, great plan, let's do it" loop.
+    max_consecutive_agreements: 3
+
+  escalation:
+    # If entropy is breached, do we hard crash or pause for human intervention?
+    action_on_breach: "PAUSE_AND_ALERT"
+    alert_channel: "pagerduty:governance"

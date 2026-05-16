@@ -1,27 +1,32 @@
-apiVersion: governance.exogram.ai/v1alpha1
-kind: GlobalAdmissibilityLayer
-metadata:
-  name: canonical-governance-os
-  description: "The global convergence of all 14 subsystem policies into a single deterministic gate."
-spec:
-  # The 5 Core Pillars of Admissibility
-  evaluation_gates:
-    financial:
-      policy_ref: "token-budget-policy.yaml"
-      must_pass: true
-    security:
-      policy_ref: "permission-boundary-policy.yaml"
-      must_pass: true
-    structural:
-      policy_ref: "branch-integrity-policy.yaml"
-      must_pass: true
-    cognitive:
-      policy_ref: "memory-priority-policy.yaml"
-      must_pass: true
-    verification:
-      policy_ref: "qa-overload-policy.yaml"
-      must_pass: true
+# =====================================================================
+# ADMISSIBILITY LAYER POLICY
+# Framework: Deterministic Agentic Engineering
+# Purpose: Define the global flags for the entire OS.
+# =====================================================================
 
-  # Global Runtime Behavior
-  runtime_mode: DETERMINISTIC_STRICT
-  allow_autonomous_bypasses: false
+apiVersion: governance.exogram.ai/v1alpha1
+kind: OperatingSystemPolicy
+metadata:
+  name: global-admissibility-engine
+  target_systems:
+    - all-enterprise-agent-frameworks
+spec:
+  # Global OS feature flags. Turning these off bypasses the governance stack.
+  # NEVER turn these off in production.
+  active_modules:
+    verification_burden_collapse: true
+    orchestration_entropy: true
+    retry_inflation_control: true
+    ai_cost_containment: true
+    tool_permission_governance: true
+    repository_drift_prevention: true
+    context_window_compression: true
+    agentic_change_management: true
+    autonomous_execution_safety: true
+
+  # The ultimate fail-safe. If the orchestration wrapper crashes, 
+  # do we default to allowing execution or blocking it?
+  failure_mode: "FAIL_CLOSED"
+  
+  # Global alert channel for any module that throws a Governance Halt
+  governance_pager: "pagerduty:agentic_soc_center"

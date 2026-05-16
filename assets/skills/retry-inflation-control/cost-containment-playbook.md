@@ -1,18 +1,30 @@
-# COST CONTAINMENT PLAYBOOK
+# PLAYBOOK: Retry Inflation Incident Response
 
-## PROTOCOL FOR BUDGET BREACHES
-When an agent session triggers the `RETRY_INFLATION_CIRCUIT_BREAKER`, follow this strict operational protocol to diagnose the financial leak.
+When the `RetryBurnEngine` triggers a Governance Halt, human operators must intervene to prevent total state loss and token burn.
 
-### Step 1: Secure the Environment
-Ensure the orchestration thread is completely severed. An agent caught in a recursive loop can burn hundreds of dollars in minutes if the circuit breaker fails. 
+## Scenario 1: Financial Circuit Breaker Tripped
+**Trigger:** Agent task exceeded `$2.50` API spend.
 
-### Step 2: Audit the Token Burn
-Review the `retry-telemetry-model.csv`.
-- Was the burn caused by a massive context window (e.g., passing the entire Next.js `/app` directory into the prompt)?
-- Or was the burn caused by high frequency (e.g., passing a small file 50 times in a row)?
+**Human Action:**
+1. Do not increase the budget limit.
+2. Review the context window dump. The agent is likely processing a massive file (e.g., a 4000-line minified JSON or raw data dump) on every execution turn.
+3. Exclude the massive file from the agent's context (`.agentignore` or explicit context rules).
+4. Restart the objective with a compressed context window.
 
-### Step 3: Implement Context Compression
-If the burn was caused by a massive context window, the task must be broken down. Do not ask an agent to "Refactor the UI." Ask the agent to "Update the color variable in `Button.tsx`." Smaller context windows equal lower baseline costs and faster deterministic validation.
+## Scenario 2: Identical Error Loop
+**Trigger:** Agent received the exact same error 3 times in a row.
 
-### Step 4: Adjust the YAML Policy
-If the task inherently requires a high token count (e.g., processing a large architectural document) and the agent was successful but tripped the breaker prematurely, update the `max_usd_per_session` in `retry-budget-policy.yaml` for that specific task class.
+**Human Action:**
+1. The agent's proposed fix is failing compilation, but the agent cannot "see" the actual root cause (e.g., a missing environment variable or an out-of-scope dependency).
+2. Manually fix the dependency issue in the local environment.
+3. Run the test suite manually to ensure the environment is clean.
+4. Provide the agent with the exact terminal output of the passing test, and instruct it to proceed.
+
+## Scenario 3: Thrashing Halt (Semantic Loop)
+**Trigger:** The `RecursiveLoopDetector` caught the agent reverting its own code or editing the same block repeatedly.
+
+**Human Action:**
+1. The agent has lost the logical thread of the architecture.
+2. Execute a **Hard Semantic Reset**.
+3. Revert the repository to the commit exactly prior to the agent's first execution attempt for this task.
+4. Rewrite the prompt to break the logic down into smaller, strictly sequential steps. "Do X, verify X. Then do Y."

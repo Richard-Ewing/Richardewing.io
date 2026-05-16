@@ -1,21 +1,26 @@
 graph TD
-    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
-    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
-    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
-    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+    classDef governance fill:#1A1A1A,stroke:#333,stroke-width:2px,color:#fff,font-family:monospace;
+    classDef orchestrator fill:#6366f1,stroke:#4338ca,stroke-width:2px,color:#fff;
+    classDef agent fill:#0ea5e9,stroke:#0284c7,stroke-width:2px,color:#fff;
+    classDef fail fill:#f43f5e,stroke:#e11d48,stroke-width:2px,color:#fff;
+    classDef pass fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
 
-    A[Agent A Initiates Handoff] ::: neutral --> B{Orchestrator Governor} ::: governance
+    O[Master Orchestrator]:::orchestrator -->|Delegates| G{Orchestrator Governor}:::governance
     
-    B -->|Check Chain Depth| C{Depth > 5?} ::: neutral
-    C -->|Yes| D[Halt: Recursion Spiral] ::: danger
-    
-    C -->|No| E{Agent Chain Validator} ::: governance
-    E -->|Check Payload Variance| F{Drift > 0.15?} ::: neutral
-    
-    F -->|Yes| G[Halt: Semantic Drift] ::: danger
-    
-    F -->|No| H[Save Workflow Checkpoint] ::: governance
-    H --> I[Execute Agent B] ::: success
-    
-    D --> J[Orchestration Reset Playbook] ::: governance
-    G --> J
+    G -->|Validate Turn Limit| T{Turns > 35?}
+    T -- Yes --> H[Governance Halt: Token Burn Prevented]:::fail
+    T -- No --> A1[Agent A: Coder]:::agent
+
+    A1 -->|Delegates| G
+    G -->|Validate Depth| D{Depth > 3?}
+    D -- Yes --> H
+    D -- No --> A2[Agent B: Reviewer]:::agent
+
+    A2 -->|Replies to A1| G
+    G -->|Validate Agreement| C{Agreement Streak > 3?}
+    C -- Yes --> H
+    C -- No --> A1
+
+    A1 -->|Handoff Payload| W{Workflow Checkpoint}:::governance
+    W -->|Missing JSON Proof| M[Reject: Hallucinated Handoff]:::fail
+    W -->|Valid JSON Proof| P[Return State to Orchestrator]:::pass

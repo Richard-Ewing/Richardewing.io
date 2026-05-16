@@ -1,25 +1,29 @@
 # BOUNDED AGENT ARCHITECTURE
 
-## THE SHIFT FROM INTELLIGENCE TO CONTAINMENT
-The defining mistake of early AI engineering was attempting to maximize the "intelligence" and autonomy of the agent. Agents were given massive system prompts, global shell access, and instructed to "figure it out."
-This results in catastrophic orchestration entropy.
+The core philosophy of **Deterministic Agentic Engineering** is that the LLM is the most dangerous component of your tech stack. It is brilliant, but it is fundamentally stochastic. 
 
-**Deterministic Agentic Engineering inverses this model.**
-We assume the agent is a highly capable, but inherently unstable, probability engine. We do not maximize its autonomy; we maximize its containment.
+To safely deploy an agent into an enterprise environment, it must be contained within a **Bounded Architecture**.
 
-## THE BOUNDARIES
+## The Anatomy of a Bounded Agent
 
-### 1. Temporal Boundaries (Time)
-Agents are mathematically prevented from running indefinitely. If a task exceeds 15 minutes, it is killed.
+1. **The Reasoning Core (Untrusted)**
+   - The LLM itself (GPT-4, Claude).
+   - Generates probabilistic text and JSON payloads.
+   - Has NO direct access to any network, filesystem, or API.
 
-### 2. Economic Boundaries (Money)
-Agents are mathematically prevented from burning capital. If a task exceeds $2.50 in inference, it is killed.
+2. **The Intercept Layer (The OS)**
+   - The suite of 9 Exogram governance skills.
+   - Evaluates the LLM's output against deterministic YAML policies.
+   - Executes mathematical validators (diff size, token cost, regex checks).
+   - *This layer owns the API keys and the execution permissions.*
 
-### 3. Execution Boundaries (State)
-Agents are mathematically prevented from mutating unapproved state. If an agent attempts to write to a protected branch or an out-of-scope directory, it is killed.
+3. **The Execution Environment (Sandboxed)**
+   - A highly restricted Docker container or secure VM.
+   - Only permitted tools are mounted or exposed.
+   - No lateral movement is structurally possible.
 
-### 4. Cognitive Boundaries (Context)
-Agents are mathematically prevented from context saturation. If a prompt exceeds 8,000 tokens, it is violently compressed to maintain instruction-following fidelity.
+## Why Bounded Architecture Wins
 
-## CONCLUSION
-By enforcing these four boundaries, the probabilistic output of an LLM is squeezed through a deterministic funnel. What emerges on the other side is guaranteed, enterprise-grade engineering.
+Unbounded agents (the current industry default) require humans to supervise every single output to ensure they don't break the system. This means the agent provides zero operational leverage.
+
+Bounded agents provide infinite leverage because the human is no longer supervising the *output*; the human is designing the *boundaries*. The agent is free to run at machine speed, millions of times a second, knowing it is mathematically impossible for it to violate the structural integrity of the enterprise.

@@ -1,22 +1,30 @@
 graph TD
-    classDef danger fill:#FEF2F2,stroke:#EF4444,stroke-width:2px,color:#991B1B;
-    classDef success fill:#F0FDF4,stroke:#22C55E,stroke-width:2px,color:#166534;
-    classDef neutral fill:#FFFFFF,stroke:#E5E7EB,stroke-width:2px,color:#111827;
-    classDef governance fill:#F0F9FF,stroke:#0EA5E9,stroke-width:2px,color:#0369A1;
+    classDef governance fill:#1A1A1A,stroke:#333,stroke-width:2px,color:#fff,font-family:monospace;
+    classDef agent fill:#0ea5e9,stroke:#0284c7,stroke-width:2px,color:#fff;
+    classDef host fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff;
+    classDef fail fill:#f43f5e,stroke:#e11d48,stroke-width:2px,color:#fff;
+    classDef pass fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
 
-    A[Agent Proposes Shell Command] ::: neutral --> B{Runtime Permission Validator} ::: governance
+    A[Agent Generates Shell Command]:::agent --> V{Runtime Permission Validator}:::governance
     
-    B -->|Check Forbidden Tokens| C{Contains 'rm -rf' / 'sudo'?} ::: neutral
-    C -->|Yes| D[Halt: Destructive Intent Detected] ::: danger
-    
-    C -->|No| E{Check Allowed Prefixes} ::: neutral
-    E -->|Prefix Not Whitelisted| F[Halt: Default Deny Policy] ::: danger
-    
-    E -->|Prefix Whitelisted| G{Check Command Chaining} ::: neutral
-    G -->|Contains '&&' or '; '| H[Halt: Injection Attempt] ::: danger
-    
-    G -->|Clean Command| I[Pass to Autonomous Boundary Engine] ::: success
-    I --> J[OS Execution] ::: success
-    
-    D & F & H --> K[Escalation Halt System] ::: governance
-    K --> L[Sever Shell Access] ::: danger
+    subgraph ZERO-TRUST EXECUTION GATING
+        V --> V1{Regex Denylist?}
+        V --> V2{Exact Denylist?}
+        V --> V3{Base Cmd Whitelist?}
+        V --> B{Autonomous Boundary Engine}:::governance
+        B --> B1{CWD Traversal Check}
+    end
+
+    V1 -- Yes --> H[Governance Halt]:::fail
+    V2 -- Yes --> H
+    V3 -- No --> H
+    B1 -- Fail --> H
+
+    V1 -- No --> V2
+    V2 -- No --> V3
+    V3 -- Yes --> B
+    B1 -- Pass --> E[Execute on Host OS]:::host
+
+    H --> S{Is Command Sev-1? (e.g. rm -rf)}
+    S -- Yes --> Q[Escalation Halt System: Quarantine Container & Revoke API Keys]:::fail
+    S -- No --> R[Return Error to Agent Context]:::agent
