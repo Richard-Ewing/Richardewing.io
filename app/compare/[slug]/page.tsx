@@ -7,22 +7,28 @@ import { ArrowRight, Activity, ShieldAlert } from 'lucide-react';
 // In reality, this would be an array in lib/content/comparisons.ts
 const COMPARISONS = [
     {
-        slug: 'deterministic-vs-probabilistic-engineering',
-        title: 'Deterministic vs Probabilistic Engineering',
-        description: 'Why relying on system prompts fails, and why runtime governance is required for production AI.',
-        keywords: ['deterministic vs probabilistic', 'system prompt limits', 'AI reliability']
-    },
-    {
         slug: 'claude-code-vs-cursor-governance',
         title: 'Claude Code vs Cursor Governance',
-        description: 'Comparing the enterprise governance controls of leading AI coding environments.',
-        keywords: ['Claude Code governance', 'Cursor enterprise', 'AI editor safety']
+        description: 'Comparing the enterprise governance controls of leading AI coding environments. Discover why deterministic runtime gating outperforms probabilistic prompt boundaries.',
+        keywords: ['Claude Code vs Cursor governance', 'Claude Code governance', 'Cursor enterprise', 'AI editor safety']
     },
     {
-        slug: 'runtime-gating-vs-prompt-engineering',
-        title: 'Runtime Gating vs Prompt Engineering',
-        description: 'Why you cannot prompt an agent into safety, and why execution middleware is the only defensible moat.',
-        keywords: ['prompt engineering failure', 'runtime gating', 'AI safety middleware']
+        slug: 'claude-code-retry-loop-prevention',
+        title: 'Claude Code Retry Loop Prevention',
+        description: 'How to deploy retry burn engines and stop Claude Code from caught in recursive patch loops that burn API compute.',
+        keywords: ['Claude Code retry loop prevention', 'Claude Code patch loop', 'recursive retry loops']
+    },
+    {
+        slug: 'claude-context-rot-mitigation',
+        title: 'Claude Context Rot Mitigation',
+        description: 'Prevent Claude from forgetting core architecture in long sessions by deploying bounded cognition engines and semantic reset checkpoints.',
+        keywords: ['Claude context rot mitigation', 'Claude forgets context', 'Claude loses the plot']
+    },
+    {
+        slug: 'cursor-repository-drift-prevention',
+        title: 'Cursor Repository Drift Prevention',
+        description: 'Stop Cursor from rewriting unrelated files and creating ghost dependencies. Implement deterministic repository alignment protocols.',
+        keywords: ['Cursor repository drift prevention', 'Cursor rewrites unrelated files', 'Cursor ghost dependencies']
     }
 ];
 

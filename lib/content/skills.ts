@@ -38,6 +38,7 @@ export interface GovernanceSkill {
   economicDamage?: string[];
   whatSystemInstalls?: string[];
   failureCascades?: string[];
+  ctaText?: string;
 }
 
 export const FAILURES: GovernanceFailure[] = [
@@ -341,7 +342,7 @@ export const FAILURES: GovernanceFailure[] = [
 export const SKILLS: GovernanceSkill[] = [
   {
     slug: "context-rot-prevention",
-    title: "Context Rot Prevention",
+    title: "Claude Context Rot Prevention System",
     category: "Cognitive Governance",
     failureSolved: "Context Rot & Semantic Contamination",
     description: "Prevents semantic contamination, recursive patching, retry inflation, and repository drift in long-horizon Claude sessions.",
@@ -355,11 +356,11 @@ export const SKILLS: GovernanceSkill[] = [
     assetsList: ["Governance manifests", "Rollback systems", "Runtime middleware", "Checkpoint architecture", "Reset workflows"],
     version: "v1.2.0",
     ecosystemPainQuotes: [
-      'Claude starts patching its own patches.',
-      'The session gets worse every hour.',
-      'The retry loops never stop.',
-      'Eventually the whole repo becomes unstable.'
-    ],
+              "Claude starts patching its own patches.",
+              "The session gets worse every hour.",
+              "The retry loops never stop.",
+              "Eventually the whole repo becomes unstable."
+            ],
     telemetrySignals: [
       'recursive patch chains',
       'retry inflation',
@@ -399,10 +400,11 @@ export const SKILLS: GovernanceSkill[] = [
       'Repository Drift',
       'Runtime Governance Failure'
     ],
-  },
+      ctaText: "Install Claude Context Rot Containment"
+},
   {
     slug: "runtime-governance",
-    title: "Runtime Governance",
+    title: "Runtime Governance for Claude Code",
     category: "Execution Governance",
     failureSolved: "Unsafe Agent Execution",
     description: "Enforce execution gating, admissibility pipelines, rollback containment, and runtime interception to stop unsafe agentic actions before they execute.",
@@ -456,10 +458,11 @@ export const SKILLS: GovernanceSkill[] = [
       'Repository Drift',
       'Architectural Collapse'
     ],
-  },
+      ctaText: "Deploy Claude Runtime Governance"
+},
   {
     slug: "hallucination-debt-reduction",
-    title: "Hallucination Debt Reduction",
+    title: "Hallucination Debt Reduction for Agents",
     category: "Output Governance",
     failureSolved: "Probabilistic Output Variance",
     description: "Mitigate the verification burden, retry inflation curves, and synthetic QA growth by structurally eliminating probabilistic assumptions in agentic workflows.",
@@ -509,10 +512,11 @@ export const SKILLS: GovernanceSkill[] = [
       'Margin Collapse',
       'Orchestration Entropy'
     ],
-  },
+      ctaText: "Deploy Hallucination Containment"
+},
   {
     slug: "ai-engineering-economics",
-    title: "AI Engineering Economics",
+    title: "AI Engineering Economics Models",
     category: "Economic Governance",
     failureSolved: "Synthetic COGS Expansion",
     description: "Map and optimize synthetic COGS, orchestration cost curves, and governance drag expansion. Align your agentic strategy with deterministic economic reality.",
@@ -561,10 +565,11 @@ export const SKILLS: GovernanceSkill[] = [
       'Synthetic COGS Expansion',
       'Margin Collapse'
     ],
-  },
+      ctaText: "Deploy Economic Governance"
+},
   {
     slug: "mcp-governance",
-    title: "MCP Governance",
+    title: "MCP Governance for Claude Code",
     category: "Integration Governance",
     failureSolved: "Unconstrained Server Execution",
     description: "Establish enterprise-grade access and runtime limits for Model Context Protocol systems to prevent unconstrained server execution and data exfiltration.",
@@ -612,10 +617,11 @@ export const SKILLS: GovernanceSkill[] = [
       'Compliance Violation',
       'Runtime Governance Failure'
     ],
-  },
+      ctaText: "Deploy Claude Protocol Governance"
+},
   {
     slug: "verification-burden-collapse",
-    title: "Verification Burden Collapse",
+    title: "Claude Verification Burden Collapse Governance System",
     category: "Output Governance",
     failureSolved: "Verification Overload",
     description: "Zero-trust validation pipelines for autonomous outputs.",
@@ -629,45 +635,47 @@ export const SKILLS: GovernanceSkill[] = [
     assetsList: ["verification-routing.ts", "reviewer-escalation.ts", "QA threshold policies"],
     version: "v1.0.0",
     ecosystemPainQuotes: [
-      'AI code still requires humans.',
-      'Humans are the bottleneck.',
-      'Review fatigue.'
-    ],
+              "review fatigue",
+              "AI code still needs humans",
+              "synthetic QA overload"
+            ],
     telemetrySignals: [
-      'Escalating verification time',
-      'PR review overload'
-    ],
+              "Escalating verification time",
+              "PR review overload",
+              "Synthetic QA growth"
+            ],
     faqs: [
         { question: "Why does AI engineering increase human workloads?", answer: "Because of 'Verification Burden Collapse'. The speed of code generation outpaces the human capacity for deterministic code review." }
     ],
     searchKeywords: ["verification burden", "review fatigue", "synthetic qa", "verification overload"],
     whatBreaks: [
-      'Verification bottlenecks',
-      'Manual code review overload',
-      'Human-in-the-loop exhaustion'
-    ],
+              "Manual code review overload",
+              "Human-in-the-loop exhaustion",
+              "Verification bottlenecks"
+            ],
     economicDamage: [
-      'Synthetic QA overload',
-      'Engineering review fatigue',
-      'Merge instability'
-    ],
+              "Synthetic QA overload",
+              "Engineering review fatigue",
+              "Merge instability"
+            ],
     whatSystemInstalls: [
-      'verification-routing middleware',
-      'reviewer-escalation matrices',
-      'zero-trust validation pipelines',
-      'QA threshold policies',
-      'TypeScript middleware'
-    ],
+              "verification-routing middleware",
+              "reviewer-escalation matrices",
+              "zero-trust validation pipelines",
+              "QA threshold policies",
+              "TypeScript middleware"
+            ],
     failureCascades: [
-      'Verification Overload',
-      'Review Shortcut Decisions',
-      'Hallucinated Execution',
-      'Repository Drift'
-    ],
-  },
+              "Verification Overload",
+              "Review Shortcut Decisions",
+              "Hallucinated Execution",
+              "Repository Drift"
+            ],
+      ctaText: "Deploy Claude QA Overload Prevention"
+},
   {
     slug: "repository-drift-prevention",
-    title: "Repository Drift Prevention",
+    title: "Cursor Repository Drift Prevention",
     category: "Cognitive Governance",
     failureSolved: "Codebase Divergence",
     description: "Continuous divergence detection and deterministic alignment protocols.",
@@ -681,45 +689,48 @@ export const SKILLS: GovernanceSkill[] = [
     assetsList: ["repository validators", "divergence detectors", "branch integrity policies"],
     version: "v1.0.5",
     ecosystemPainQuotes: [
-      'It rewrote my architecture.',
-      'Changing unrelated files.',
-      'Project scope drift.'
-    ],
+              "ghost dependencies",
+              "hallucinated architecture",
+              "rewriting unrelated files"
+            ],
     telemetrySignals: [
-      'Repository divergence',
-      'Dependency drift'
-    ],
+              "Repository divergence",
+              "Dependency drift",
+              "Unauthorized architecture mutation"
+            ],
     faqs: [
         { question: "How do you stop agents from rewriting unrelated files?", answer: "Implement Repository Drift Prevention policies that bound the execution scope and track architectural divergence." }
     ],
     searchKeywords: ["repository drift", "codebase divergence", "architectural corruption"],
     whatBreaks: [
-      'Codebase divergence',
-      'Architectural corruption',
-      'Dependency drift'
-    ],
+              "Codebase divergence",
+              "Architectural corruption",
+              "Dependency drift",
+              "Ghost dependencies"
+            ],
     economicDamage: [
-      'Architectural entropy',
-      'Merge conflict explosion',
-      'CI/CD pipeline failures'
-    ],
+              "Architectural entropy",
+              "Merge conflict explosion",
+              "CI/CD pipeline failures"
+            ],
     whatSystemInstalls: [
-      'repository validators',
-      'divergence detectors',
-      'branch integrity policies',
-      'deterministic alignment protocols',
-      'YAML governance manifests'
-    ],
+              "repository validators",
+              "divergence detectors",
+              "branch integrity policies",
+              "deterministic alignment protocols",
+              "YAML governance manifests"
+            ],
     failureCascades: [
-      'Repository Drift',
-      'Architectural Corruption',
-      'Merge Instability',
-      'Verification Collapse'
-    ],
-  },
+              "Repository Drift",
+              "Architectural Corruption",
+              "Merge Instability",
+              "Verification Collapse"
+            ],
+      ctaText: "Deploy Cursor Codebase Governance"
+},
   {
     slug: "agentic-change-management",
-    title: "Agentic Change Management",
+    title: "Agentic Infrastructure Change Management",
     category: "Integration Governance",
     failureSolved: "Uncontrolled Changes",
     description: "Cryptographic CAB approvals for autonomous infrastructure mutations.",
@@ -767,10 +778,11 @@ export const SKILLS: GovernanceSkill[] = [
       'Governance Bypass',
       'Production Incident'
     ],
-  },
+      ctaText: "Deploy Cryptographic CAB Approvals"
+},
   {
     slug: "context-window-compression",
-    title: "Context Window Compression",
+    title: "Claude Context Window Compression",
     category: "Economic Governance",
     failureSolved: "Token Exhaustion",
     description: "Semantic prioritization and truncation for LLM token economy.",
@@ -784,44 +796,46 @@ export const SKILLS: GovernanceSkill[] = [
     assetsList: ["compression engines", "checkpoint rotation", "memory priority systems"],
     version: "v1.2.0",
     ecosystemPainQuotes: [
-      'Context window rot.',
-      'Stale context poisoning.',
-      'Token limits exceeded.'
-    ],
+              "Claude loses the plot",
+              "session degradation",
+              "context poisoning"
+            ],
     telemetrySignals: [
-      'Memory overload',
-      'Irrelevant token accumulation'
-    ],
+              "Memory overload",
+              "Irrelevant token accumulation",
+              "Context fragmentation"
+            ],
     faqs: [
         { question: "How do you prevent context poisoning?", answer: "By using Context Window Compression to aggressively truncate irrelevant tokens and maintain semantic clarity." }
     ],
     searchKeywords: ["context window compression", "context window rot", "stale context poisoning"],
     whatBreaks: [
-      'Token exhaustion',
-      'Memory overload',
-      'Irrelevant token accumulation'
-    ],
+              "Token exhaustion",
+              "Memory overload",
+              "Irrelevant token accumulation"
+            ],
     economicDamage: [
-      'API spend inflation',
-      'Inference cost explosion',
-      'Wasted compute cycles'
-    ],
+              "API spend inflation",
+              "Inference cost explosion",
+              "Wasted compute cycles"
+            ],
     whatSystemInstalls: [
-      'compression engines',
-      'checkpoint rotation middleware',
-      'memory priority systems',
-      'token economy policies'
-    ],
+              "compression engines",
+              "checkpoint rotation middleware",
+              "memory priority systems",
+              "token economy policies"
+            ],
     failureCascades: [
-      'Token Exhaustion',
-      'Context Rot',
-      'Retry Inflation',
-      'Agent Deadlock'
-    ],
-  },
+              "Token Exhaustion",
+              "Context Rot",
+              "Retry Inflation",
+              "Agent Deadlock"
+            ],
+      ctaText: "Deploy Claude Context Compression"
+},
   {
     slug: "autonomous-execution-safety",
-    title: "Autonomous Execution Safety",
+    title: "Claude Autonomous Execution Safety",
     category: "Execution Governance",
     failureSolved: "Unsafe Bash Commands",
     description: "Shell command whitelisting and blast-radius containment.",
@@ -835,45 +849,46 @@ export const SKILLS: GovernanceSkill[] = [
     assetsList: ["runtime permission validators", "execution halt systems", "safety boundaries"],
     version: "v2.1.0",
     ecosystemPainQuotes: [
-        "Unsafe shell execution.",
-        "rm -rf class failures."
-    ],
-    telemetrySignals: ["Uncontrolled deployments", "Autonomous infra corruption"],
+              "unsafe shell execution",
+              "rogue commands",
+              "agent exceeded authority"
+            ],
+    telemetrySignals: [
+              "Uncontrolled deployments",
+              "Autonomous infra corruption",
+              "Unsafe context commands"
+            ],
     faqs: [
         { question: "How do you make autonomous execution safe?", answer: "With Execution Gating Layers that intercept and validate shell commands against a deterministic whitelist." }
     ],
     searchKeywords: ["autonomous execution safety", "unsafe bash commands", "blast-radius containment"],
     whatBreaks: [
-        'hallucinated execution',
-        'unauthorized mutations',
-        'unsafe shell execution',
-        'recursive execution drift'
-    ],
+              "Unsafe shell execution",
+              "Rogue commands",
+              "Agent exceeding authority boundaries"
+            ],
     economicDamage: [
-        'synthetic QA overload',
-        'engineering review fatigue',
-        'API spend inflation',
-        'merge instability',
-        'architectural entropy'
-    ],
+              "Production downtime",
+              "Infrastructure corruption costs",
+              "Security incident penalties"
+            ],
     whatSystemInstalls: [
-        'execution interceptors',
-        'admissibility middleware',
-        'rollback circuits',
-        'runtime permission enforcement',
-        'policy-as-code gating'
-    ],
+              "runtime permission validators",
+              "execution halt systems",
+              "safety boundaries",
+              "command whitelisting middleware"
+            ],
     failureCascades: [
-        'Context Rot',
-        'Retry Inflation',
-        'Verification Collapse',
-        'Repository Drift',
-        'Runtime Governance Failure'
-    ]
-  },
+              "Unsafe Bash Execution",
+              "Rogue Authority",
+              "Infrastructure Corruption",
+              "Production Incident"
+            ],
+      ctaText: "Deploy Claude Execution Guardrails"
+},
   {
     slug: "tool-permission-governance",
-    title: "Tool Permission Governance",
+    title: "Agent Tool Permission Governance",
     category: "Integration Governance",
     failureSolved: "Broad Tool Access",
     description: "Dynamic MCP tool provisioning based on rigorous task manifests.",
@@ -887,45 +902,43 @@ export const SKILLS: GovernanceSkill[] = [
     assetsList: ["scope engines", "capability validators", "permission boundaries"],
     version: "v1.1.0",
     ecosystemPainQuotes: [
-        "Over-permissioned agents.",
-        "Capability escalation."
-    ],
-    telemetrySignals: ["Unrestricted MCP access", "Tool-chain contamination"],
+              "Over-permissioned agents.",
+              "Capability escalation."
+            ],
+    telemetrySignals: [
+              "Unrestricted MCP access",
+              "Tool-chain contamination"
+            ],
     faqs: [
         { question: "How do you manage agent tool permissions?", answer: "By deploying Tool Permission Governance which provisions capabilities dynamically based on approved manifests." }
     ],
     searchKeywords: ["tool permission governance", "mcp access", "capability escalation"],
     whatBreaks: [
-        'hallucinated execution',
-        'unauthorized mutations',
-        'unsafe shell execution',
-        'recursive execution drift'
-    ],
+              "Broad Tool Access",
+              "Unrestricted MCP access",
+              "Tool-chain contamination"
+            ],
     economicDamage: [
-        'synthetic QA overload',
-        'engineering review fatigue',
-        'API spend inflation',
-        'merge instability',
-        'architectural entropy'
-    ],
+              "Security incident penalties",
+              "Data leakage costs"
+            ],
     whatSystemInstalls: [
-        'execution interceptors',
-        'admissibility middleware',
-        'rollback circuits',
-        'runtime permission enforcement',
-        'policy-as-code gating'
-    ],
+              "scope engines",
+              "capability validators",
+              "permission boundaries",
+              "MCP tool access matrices"
+            ],
     failureCascades: [
-        'Context Rot',
-        'Retry Inflation',
-        'Verification Collapse',
-        'Repository Drift',
-        'Runtime Governance Failure'
-    ]
-  },
+              "Capability Escalation",
+              "Unrestricted Tool Access",
+              "Data Exfiltration",
+              "Compliance Violation"
+            ],
+      ctaText: "Deploy Tool Permission Governance"
+},
   {
     slug: "ai-cost-containment",
-    title: "AI Cost Containment",
+    title: "AI Agent Cost Containment",
     category: "Economic Governance",
     failureSolved: "Budget Overruns",
     description: "Real-time USD burn tracking with financial circuit breakers.",
@@ -939,42 +952,44 @@ export const SKILLS: GovernanceSkill[] = [
     assetsList: ["token budget systems", "cost containment engines", "margin validators"],
     version: "v1.5.0",
     ecosystemPainQuotes: [
-        "Runaway token costs.",
-        "AI gross margin erosion."
-    ],
-    telemetrySignals: ["Uncontrolled inference spend", "Hidden operational burn"],
+              "AI spend explosion",
+              "token burn",
+              "margin collapse",
+              "runaway API costs"
+            ],
+    telemetrySignals: [
+              "Uncontrolled inference spend",
+              "Hidden operational burn",
+              "Token inflation"
+            ],
     faqs: [
         { question: "How do you stop runaway token costs?", answer: "Use AI Cost Containment circuit breakers that halt agent execution when token budgets exceed defined thresholds." }
     ],
     searchKeywords: ["ai cost containment", "budget overruns", "token burn", "ai gross margin"],
     whatBreaks: [
-        'hallucinated execution',
-        'unauthorized mutations',
-        'unsafe shell execution',
-        'recursive execution drift'
-    ],
+              "Budget Overruns",
+              "Uncontrolled inference spend",
+              "Runaway API costs"
+            ],
     economicDamage: [
-        'synthetic QA overload',
-        'engineering review fatigue',
-        'API spend inflation',
-        'merge instability',
-        'architectural entropy'
-    ],
+              "AI spend explosion",
+              "Margin collapse",
+              "EBITDA compression"
+            ],
     whatSystemInstalls: [
-        'execution interceptors',
-        'admissibility middleware',
-        'rollback circuits',
-        'runtime permission enforcement',
-        'policy-as-code gating'
-    ],
+              "token budget systems",
+              "cost containment engines",
+              "margin validators",
+              "financial circuit breakers"
+            ],
     failureCascades: [
-        'Context Rot',
-        'Retry Inflation',
-        'Verification Collapse',
-        'Repository Drift',
-        'Runtime Governance Failure'
-    ]
-  },
+              "Token Burn Explosion",
+              "Margin Collapse",
+              "Budget Overruns",
+              "Economic Governance Failure"
+            ],
+      ctaText: "Deploy AI Token Budget Controls"
+},
   {
     slug: "orchestration-entropy",
     title: "Orchestration Entropy Governance",
@@ -991,46 +1006,48 @@ export const SKILLS: GovernanceSkill[] = [
     assetsList: ["orchestrator-governor.ts", "chain validators", "entropy thresholds"],
     version: "v1.0.0",
     ecosystemPainQuotes: [
-        "Multi-agent chaos.",
-        "Recursive delegation.",
-        "Infinite agreement loops."
-    ],
-    telemetrySignals: ["Agent loops", "Uncontrolled sub-agents", "Runaway chains"],
+              "agents arguing with themselves",
+              "recursive delegation",
+              "multi-agent chaos",
+              "infinite agreement loops"
+            ],
+    telemetrySignals: [
+              "Agent loops",
+              "Uncontrolled sub-agents",
+              "Runaway chains",
+              "Recursive delegation"
+            ],
     faqs: [
         { question: "How do you stop multi-agent chaos?", answer: "By enforcing Orchestration Entropy Governance to bound sub-agent delegation and enforce workflow checkpoints." }
     ],
     searchKeywords: ["orchestration entropy", "multi-agent chaos", "recursive delegation", "agent loops"],
     whatBreaks: [
-        'hallucinated execution',
-        'unauthorized mutations',
-        'unsafe shell execution',
-        'recursive execution drift'
-    ],
+              "Multi-agent chaos",
+              "Runaway execution chains",
+              "Uncontrolled recursive delegation"
+            ],
     economicDamage: [
-        'synthetic QA overload',
-        'engineering review fatigue',
-        'API spend inflation',
-        'merge instability',
-        'architectural entropy'
-    ],
+              "Compute burns on runaway agent processes",
+              "API spend inflation",
+              "Orchestration system crash"
+            ],
     whatSystemInstalls: [
-        'execution interceptors',
-        'admissibility middleware',
-        'rollback circuits',
-        'runtime permission enforcement',
-        'policy-as-code gating'
-    ],
+              "orchestrator-governor.ts",
+              "chain validators",
+              "entropy thresholds",
+              "workflow checkpointing middleware"
+            ],
     failureCascades: [
-        'Context Rot',
-        'Retry Inflation',
-        'Verification Collapse',
-        'Repository Drift',
-        'Runtime Governance Failure'
-    ]
-  },
+              "Orchestration Entropy",
+              "Multi-Agent Deadlock",
+              "Runaway Execution Chains",
+              "Runtime Governance Failure"
+            ],
+      ctaText: "Deploy Multi-Agent Orchestration Constraints"
+},
   {
     slug: "retry-inflation-control",
-    title: "Retry Inflation Control",
+    title: "Claude Retry Inflation Controls",
     category: "Economic Governance",
     failureSolved: "Retry Hell",
     description: "Stop recursive retry loops from destroying margins and execution stability.",
@@ -1044,46 +1061,47 @@ export const SKILLS: GovernanceSkill[] = [
     assetsList: ["retry-burn-engine.ts", "recursive loop detection", "retry budget governance"],
     version: "v1.2.0",
     ecosystemPainQuotes: [
-        "Claude keeps retrying broken fixes.",
-        "Infinite patch loops.",
-        "Recursive retries."
-    ],
-    telemetrySignals: ["Token burn explosions", "Recursive execution loops", "Retry-driven latency collapse"],
+              "retry hell",
+              "token burn",
+              "recursive retries",
+              "infinite patch loops"
+            ],
+    telemetrySignals: [
+              "Token burn explosions",
+              "Recursive execution loops",
+              "Retry-driven latency collapse"
+            ],
     faqs: [
         { question: "How do you stop recursive retry loops?", answer: "By capping retry logic through a Retry Burn Engine that limits token exhaustion and alerts human operators." }
     ],
     searchKeywords: ["retry inflation", "retry hell", "infinite patch loops", "recursive failure spirals"],
     whatBreaks: [
-        'hallucinated execution',
-        'unauthorized mutations',
-        'unsafe shell execution',
-        'recursive execution drift'
-    ],
+              "Recursive retry spirals",
+              "Infinite patch loops",
+              "Context exhaustion"
+            ],
     economicDamage: [
-        'synthetic QA overload',
-        'engineering review fatigue',
-        'API spend inflation',
-        'merge instability',
-        'architectural entropy'
-    ],
+              "Runaway token burn",
+              "API spend inflation",
+              "Inference cost explosion"
+            ],
     whatSystemInstalls: [
-        'execution interceptors',
-        'admissibility middleware',
-        'rollback circuits',
-        'runtime permission enforcement',
-        'policy-as-code gating'
-    ],
+              "retry-burn-engine.ts",
+              "recursive loop detection",
+              "retry budget governance",
+              "execution halt policies"
+            ],
     failureCascades: [
-        'Context Rot',
-        'Retry Inflation',
-        'Verification Collapse',
-        'Repository Drift',
-        'Runtime Governance Failure'
-    ]
-  },
+              "Retry Inflation",
+              "Token Burn Explosion",
+              "Context Window Collapse",
+              "Runtime Stability Failure"
+            ],
+      ctaText: "Install Claude Retry Inflation Controls"
+},
   {
     slug: "deterministic-agentic-engineering",
-    title: "Deterministic Agentic Engineering",
+    title: "Deterministic Agentic Engineering for Claude",
     category: "Execution Governance",
     failureSolved: "Total Systems Failure",
     description: "The unified flagship Orchestrator and Admissibility Engine.",
@@ -1097,43 +1115,45 @@ export const SKILLS: GovernanceSkill[] = [
     assetsList: ["governance orchestrator", "deterministic runtime", "admissibility layers", "execution certainty systems"],
     version: "v3.0.0",
     ecosystemPainQuotes: [
-        "Probabilistic engineering doesn't scale.",
-        "Uncontrolled autonomy.",
-        "Execution variance."
-    ],
-    telemetrySignals: ["Governance fragmentation", "Runtime instability"],
+              "probabilistic engineering failure",
+              "runtime instability",
+              "ungoverned orchestration",
+              "hallucinated execution"
+            ],
+    telemetrySignals: [
+              "Governance fragmentation",
+              "Runtime instability",
+              "Probabilistic output variance"
+            ],
     faqs: [
         { question: "What is Deterministic Agentic Engineering?", answer: "It is the foundational methodology of enforcing runtime control systems to bound probabilistic LLMs into predictable enterprise operations." }
     ],
     searchKeywords: ["deterministic agentic engineering", "probabilistic engineering", "execution certainty", "exogram control plane"],
     whatBreaks: [
-        'hallucinated execution',
-        'unauthorized mutations',
-        'unsafe shell execution',
-        'recursive execution drift'
-    ],
+              "Probabilistic engineering failure",
+              "Ungoverned orchestration",
+              "Total Systems Failure"
+            ],
     economicDamage: [
-        'synthetic QA overload',
-        'engineering review fatigue',
-        'API spend inflation',
-        'merge instability',
-        'architectural entropy'
-    ],
+              "Unquantifiable enterprise liability",
+              "Systemic operational risk",
+              "Complete agentic deployment failure"
+            ],
     whatSystemInstalls: [
-        'execution interceptors',
-        'admissibility middleware',
-        'rollback circuits',
-        'runtime permission enforcement',
-        'policy-as-code gating'
-    ],
+              "governance orchestrator",
+              "deterministic runtime",
+              "admissibility layers",
+              "execution certainty systems",
+              "complete policy-as-code hub"
+            ],
     failureCascades: [
-        'Context Rot',
-        'Retry Inflation',
-        'Verification Collapse',
-        'Repository Drift',
-        'Runtime Governance Failure'
-    ]
-  }
+              "Probabilistic Variance",
+              "Ungoverned Orchestration",
+              "Total Systems Failure",
+              "Enterprise Rollback"
+            ],
+      ctaText: "Deploy the Exogram Control Plane"
+}
 ];
 
 export function getSkillBySlug(slug: string): GovernanceSkill | undefined {

@@ -23,6 +23,9 @@ export default function SkillHero() {
           <h1 className="mb-6 text-[#1A1A1A]">
             Operational Governance Infrastructure for <span className="gradient-text">Deterministic Agentic Engineering</span>
           </h1>
+          <p className="text-xl text-[#4A4A4A] max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+            Deploy runtime governance systems for Claude Code, Cursor, Cline, Windsurf, Google Antigravity, and agentic engineering workflows.
+          </p>
           
           <div className="mb-10 max-w-3xl mx-auto text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-6 text-center uppercase tracking-tight">

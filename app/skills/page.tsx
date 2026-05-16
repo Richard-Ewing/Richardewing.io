@@ -53,8 +53,8 @@ export default function SkillsPage() {
             <div className="inline-block px-4 py-1.5 mb-4 rounded-full border border-rose-200 bg-rose-50 text-rose-700 font-mono text-sm tracking-widest font-bold uppercase">
               Deployable Infrastructure
             </div>
-            <h2>Operational Governance Systems</h2>
-            <p className="text-lg">
+            <h2>Operational governance systems for Claude Code and deterministic agentic engineering.</h2>
+            <p className="text-lg mt-4">
               15 deployable governance systems for containing real-world agentic failure. Install runtime interception, bounded cognition, and rollback containment directly into your architecture.
             </p>
           </div>
@@ -72,6 +72,7 @@ export default function SkillsPage() {
                 ecosystemPainQuotes={skill.ecosystemPainQuotes}
                 whatSystemInstalls={skill.whatSystemInstalls}
                 exogramMapping={skill.exogramMapping}
+                ctaText={skill.ctaText}
               />
             ))}
           </div>

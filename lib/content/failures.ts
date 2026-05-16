@@ -245,6 +245,186 @@ export const failures: FailureMode[] = [
     remediationAssets: [
       { title: 'Runtime Governance Toolkit ($99)', url: '/skills' }
     ]
+  },
+  {
+    id: 'why-claude-loses-context',
+    slug: 'why-claude-loses-context',
+    title: 'Why Claude Loses Context',
+    subtitle: 'Session Degradation & Context Poisoning',
+    description: 'Claude loses context because its semantic window fills with stale assumptions, previous errors, and recursive patches. It "loses the plot" when not constrained by a bounded cognition engine.',
+    symptoms: [
+      'Claude forgets core instructions after hour three.',
+      'The session degrades into "I apologize for the confusion".',
+      'Context poisoning causes unrelated code to break.'
+    ],
+    causes: [
+      'Unbounded context accumulation.',
+      'Lack of semantic reset checkpoints.',
+      'Failing to truncate historical dialogue.'
+    ],
+    telemetrySignals: [
+      { metric: 'Token Velocity', value: 'High', interpretation: 'Context window is saturated with historical attempts.' },
+      { metric: 'Reasoning Quality', value: 'Degraded', interpretation: 'Agent has lost the architectural plot.' }
+    ],
+    operationalPatterns: [
+      'Execute a hard repository reset.',
+      'Clear the agent context window.',
+      'Load only the specific file and immediate dependencies.'
+    ],
+    economicImpact: {
+      title: 'Token Burn Explosion',
+      description: 'Massive inference cost for zero engineering output.',
+      marginCompression: '+250% Token Spends'
+    },
+    governanceResponse: 'Deploy Bounded Cognition Middleware to rotate and compress context windows dynamically.',
+    exogramMapping: 'Bounded Cognition Engine',
+    remediationAssets: [
+      { title: 'Claude Context Rot Containment ($99)', url: '/skills/context-rot-prevention' }
+    ]
+  },
+  {
+    id: 'why-claude-rewrites-unrelated-files',
+    slug: 'why-claude-rewrites-unrelated-files',
+    title: 'Why Claude Rewrites Unrelated Files',
+    subtitle: 'Ghost Dependencies & Architectural Drift',
+    description: 'Claude rewrites unrelated files due to "over-editing" hallucination. It infers ghost dependencies and mutates the repository outside of its authorized scope.',
+    symptoms: [
+      'Ghost dependencies appear in package.json.',
+      'Claude modifies CSS files when fixing backend logic.',
+      'Unrelated tests break after a minor patch.'
+    ],
+    causes: [
+      'Lack of execution boundaries.',
+      'Probabilistic mapping of dependencies.',
+      'No repository drift prevention checks.'
+    ],
+    telemetrySignals: [
+      { metric: 'AST Variance', value: 'High', interpretation: 'Modifying files outside requested scope.' },
+      { metric: 'File Touch Count', value: '> 3', interpretation: 'Unnecessary file mutations detected.' }
+    ],
+    operationalPatterns: [
+      'Block writes to unrequested paths.',
+      'Require explicit scope declaration before execution.',
+      'Use AST divergence tracking.'
+    ],
+    economicImpact: {
+      title: 'Architectural Technical Debt',
+      description: 'Creates merge conflict explosions and pipeline failures.',
+      marginCompression: 'Long-term Enterprise Value Degradation'
+    },
+    governanceResponse: 'Implement Cursor Repository Drift Prevention to lock execution strictly to requested files.',
+    exogramMapping: 'Execution Gating Layer',
+    remediationAssets: [
+      { title: 'Cursor Codebase Governance ($99)', url: '/skills/repository-drift-prevention' }
+    ]
+  },
+  {
+    id: 'why-claude-patch-loops-happen',
+    slug: 'why-claude-patch-loops-happen',
+    title: 'Why Claude Patch Loops Happen',
+    subtitle: 'Recursive Retries & Token Burn',
+    description: 'Claude enters patch loops because it attempts to fix syntax errors without clearing its context of the broken state. It literally "starts patching its own patches" infinitely.',
+    symptoms: [
+      'The agent retries the exact same fix 5 times.',
+      'Claude says "I understand now" but generates the same bug.',
+      'Token costs spike drastically for a single feature.'
+    ],
+    causes: [
+      'No hard retry budget.',
+      'Context window saturated with the error state.',
+      'No circuit breaker middleware.'
+    ],
+    telemetrySignals: [
+      { metric: 'Retry Count', value: '> 3 per task', interpretation: 'Agent caught in a recursive patch loop.' },
+      { metric: 'Error Consistency', value: 'High', interpretation: 'Agent is generating the same error repeatedly.' }
+    ],
+    operationalPatterns: [
+      'Implement a hard stop after 3 failed retries.',
+      'Require human intervention.',
+      'Wipe context before attempting again.'
+    ],
+    economicImpact: {
+      title: 'Runaway Token Costs',
+      description: 'API spend inflates massively due to infinite retries.',
+      marginCompression: '-22% Effective Margins'
+    },
+    governanceResponse: 'Deploy Claude Retry Inflation Controls to mathematically limit retry execution.',
+    exogramMapping: 'Retry Circuit Breaker',
+    remediationAssets: [
+      { title: 'Claude Retry Inflation Controls ($99)', url: '/skills/retry-inflation-control' }
+    ]
+  },
+  {
+    id: 'why-cursor-spirals',
+    slug: 'why-cursor-spirals',
+    title: 'Why Cursor Spirals',
+    subtitle: 'Uncontrolled Execution & Context Collapse',
+    description: 'Cursor spirals when the agent loses deterministic alignment with the codebase architecture and starts generating hallucinated implementations that break downstream logic.',
+    symptoms: [
+      'Cursor rewrites entire functions incorrectly.',
+      'It ignores established patterns for the framework.',
+      'The codebase becomes progressively more unstable.'
+    ],
+    causes: [
+      'Unbounded prompt engineering instead of runtime gating.',
+      'Lack of admissibility validation.',
+      'Assuming probabilistic models will adhere to repo patterns natively.'
+    ],
+    telemetrySignals: [
+      { metric: 'Pattern Violations', value: 'Spiking', interpretation: 'Agent bypassing established abstractions.' },
+      { metric: 'Human Revert Rate', value: 'High', interpretation: 'Engineers are reverting Cursor changes.' }
+    ],
+    operationalPatterns: [
+      'Enforce zero-trust validation pipelines.',
+      'Validate PRs automatically against architecture rules.',
+      'Halt execution upon pattern violation.'
+    ],
+    economicImpact: {
+      title: 'Verification Burden Overload',
+      description: 'Senior engineers waste time debugging Cursor spirals.',
+      marginCompression: '+41% Verification Burden'
+    },
+    governanceResponse: 'Deploy Claude Verification Burden Collapse Governance to intercept and block bad patches.',
+    exogramMapping: 'Admissibility Engine',
+    remediationAssets: [
+      { title: 'Deploy Claude QA Overload Prevention ($99)', url: '/skills/verification-burden-collapse' }
+    ]
+  },
+  {
+    id: 'why-agentic-systems-fail-in-production',
+    slug: 'why-agentic-systems-fail-in-production',
+    title: 'Why Agentic Systems Fail in Production',
+    subtitle: 'Governance Theater & Probabilistic Variance',
+    description: 'Agentic systems fail in production because organizations rely on prompt engineering (Governance Theater) instead of hardcoded deterministic runtime middleware. You cannot prompt an agent into safety.',
+    symptoms: [
+      'Agents exceed their authority boundaries.',
+      'Agents execute unsafe bash commands.',
+      'Multi-agent systems deadlock in infinite agreement loops.'
+    ],
+    causes: [
+      'Lack of a deterministic Exogram Control Plane.',
+      'Relying on LLM "instructions" for security.',
+      'No cryptographic CAB approval systems.'
+    ],
+    telemetrySignals: [
+      { metric: 'Runtime Instability', value: 'Critical', interpretation: 'Total systems failure.' },
+      { metric: 'Governance Bypass', value: 'Detected', interpretation: 'Agent ignored system prompts.' }
+    ],
+    operationalPatterns: [
+      'Replace system prompts with TS middleware.',
+      'Deploy strict Execution Gating Layers.',
+      'Require cryptographic sign-offs for production writes.'
+    ],
+    economicImpact: {
+      title: 'Unquantifiable Enterprise Liability',
+      description: 'Complete operational collapse and security vulnerabilities.',
+      marginCompression: 'Catastrophic Risk'
+    },
+    governanceResponse: 'Deploy Deterministic Agentic Engineering to establish a mathematically sound control plane.',
+    exogramMapping: 'Exogram Control Plane',
+    remediationAssets: [
+      { title: 'Deploy the Exogram Control Plane ($299)', url: '/skills/deterministic-agentic-engineering' }
+    ]
   }
 ];
 

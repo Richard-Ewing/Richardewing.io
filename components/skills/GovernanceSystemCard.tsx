@@ -11,6 +11,7 @@ interface GovernanceSystemCardProps {
   ecosystemPainQuotes?: string[];
   whatSystemInstalls?: string[];
   exogramMapping: string;
+  ctaText?: string;
 }
 
 export default function GovernanceSystemCard({
@@ -22,7 +23,8 @@ export default function GovernanceSystemCard({
   whatBreaks = [],
   ecosystemPainQuotes = [],
   whatSystemInstalls = [],
-  exogramMapping
+  exogramMapping,
+  ctaText
 }: GovernanceSystemCardProps) {
   return (
     <div className="card flex flex-col h-full bg-[#FFFFFF] border border-[rgba(0,0,0,0.1)] shadow-sm hover:shadow-lg transition-all relative overflow-hidden group">
@@ -95,7 +97,7 @@ export default function GovernanceSystemCard({
           href={`/skills/${slug}`}
           className="block w-full py-3 bg-[#1A1A1A] hover:bg-[#3A3A3A] text-white font-bold rounded text-center transition-colors shadow-sm"
         >
-          Deploy Governance System
+          {ctaText || 'Deploy Governance System'}
         </Link>
       </div>
     </div>

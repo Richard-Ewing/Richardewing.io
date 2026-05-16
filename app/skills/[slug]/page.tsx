@@ -71,6 +71,22 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
                                 {skill.description}
                             </p>
                             
+                            <div className="bg-[#F5F0EB] border border-violet-100 rounded-lg p-4 mb-6">
+                                <span className="block text-xs font-bold font-mono text-violet-700 uppercase tracking-widest mb-2 border-b border-violet-100 pb-1">
+                                    Designed for:
+                                </span>
+                                <ul className="flex flex-wrap gap-2 text-sm font-semibold text-[#1A1A1A]">
+                                    <li className="bg-white px-2 py-1 rounded border border-[rgba(0,0,0,0.05)] shadow-sm">Claude Code</li>
+                                    <li className="bg-white px-2 py-1 rounded border border-[rgba(0,0,0,0.05)] shadow-sm">Cursor</li>
+                                    <li className="bg-white px-2 py-1 rounded border border-[rgba(0,0,0,0.05)] shadow-sm">Windsurf</li>
+                                    <li className="bg-white px-2 py-1 rounded border border-[rgba(0,0,0,0.05)] shadow-sm">Cline</li>
+                                    <li className="bg-white px-2 py-1 rounded border border-[rgba(0,0,0,0.05)] shadow-sm">Roo Code</li>
+                                    <li className="bg-white px-2 py-1 rounded border border-[rgba(0,0,0,0.05)] shadow-sm">OpenAI Codex workflows</li>
+                                    <li className="bg-white px-2 py-1 rounded border border-[rgba(0,0,0,0.05)] shadow-sm">Google Antigravity</li>
+                                    <li className="bg-white px-2 py-1 rounded border border-[rgba(0,0,0,0.05)] shadow-sm">agentic engineering pipelines</li>
+                                </ul>
+                            </div>
+                            
                             <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-zinc-600">
                                 <div className="flex items-center gap-1.5 bg-[#F5F0EB] px-3 py-1.5 rounded-lg border border-[rgba(0,0,0,0.05)]">
                                     <Target className="w-4 h-4 text-rose-600" />
@@ -92,7 +108,7 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
                                     href={skill.checkoutUrl}
                                     className="block w-full py-3 px-4 bg-white text-[#1A1A1A] text-center font-bold rounded hover:bg-zinc-100 transition-colors shadow-sm"
                                 >
-                                    Deploy Infrastructure
+                                    {skill.ctaText || 'Deploy Infrastructure'}
                                 </a>
                                 <div className="text-[10px] text-zinc-400 font-bold font-mono text-center mt-3 uppercase tracking-widest bg-zinc-800/50 py-2 rounded border border-zinc-700 leading-relaxed">
                                     You are buying deployable governance infrastructure<br/>not AI education.
