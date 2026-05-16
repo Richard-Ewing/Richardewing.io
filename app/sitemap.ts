@@ -241,14 +241,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/resources/ai-courses`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/case-studies`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
+            url: `${baseUrl}/case-studies/runtime-incidents`,
+            changeFrequency: 'weekly',
+            priority: 0.9,
         },
 
         // Lead magnets & help
