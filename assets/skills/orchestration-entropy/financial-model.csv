@@ -1,0 +1,4 @@
+Task Complexity,Expected Tokens,Max Budget USD,Escalation Threshold
+Low,2000,0.10,0.95
+Medium,8000,0.50,0.85
+High,25000,2.00,0.75

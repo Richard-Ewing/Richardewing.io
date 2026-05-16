@@ -1,0 +1,6 @@
+graph TD
+    A[Agent Action] --> B{Governance Middleware}
+    B -- Passes Policy --> C[Execute Command]
+    B -- Fails Policy --> D[Halt & Escalate]
+    D --> E[Human Verification]
+    D --> F[Rollback State]

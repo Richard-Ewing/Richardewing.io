@@ -1,0 +1,11 @@
+# Deterministic Policy Bound for hallucination-debt-reduction
+version: "1.0"
+governance:
+  enforcement_level: "strict"
+  halt_on_failure: true
+  human_escalation:
+    enabled: true
+    threshold: 0.85
+  circuit_breakers:
+    max_retries: 3
+    token_budget: 15000

@@ -352,7 +352,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Critical",
     exogramMapping: "Bounded Cognition Engine",
     price: 99,
-    checkoutUrl: "https://buy.stripe.com/6oUaEQ0Iu1b4cO1b8c2B20E",
+    checkoutUrl: "https://buy.stripe.com/cNieV6fDo1b401f6RW2B20J",
     assetsList: ["Governance manifests", "Rollback systems", "Runtime middleware", "Checkpoint architecture", "Reset workflows"],
     version: "v1.2.0",
     ecosystemPainQuotes: [
@@ -368,10 +368,18 @@ export const SKILLS: GovernanceSkill[] = [
       'stale context contamination'
     ],
     faqs: [
-        { question: "Why does Claude get worse over long sessions?", answer: "Because of 'Context Rot'. As the context window fills with failed attempts, old code, and corrected logic, the model's probabilistic reasoning degrades." },
-        { question: "How do you prevent context poisoning?", answer: "By implementing deterministic checkpoints and bounded cognition engines to wipe stale context and reload the canonical state." }
-    ],
-    searchKeywords: ["context rot", "context poisoning", "session degradation", "minimal context carnage", "patching its own patches"],
+              { question: "Why does Claude Code lose context after long sessions?", answer: "Unbounded context accumulation traps Claude in a recursive loop where previous mistakes pollute its future reasoning." },
+              { question: "How do you stop context rot?", answer: "By deploying bounded cognition middleware and enforcing semantic reset checkpoints before context degradation triggers failure cascades." }
+            ],
+    searchKeywords: [
+              "Claude Code context rot",
+              "Claude loses context",
+              "session degradation",
+              "Claude context memory limits",
+              "Claude long session failure",
+              "context poisoning",
+              "Claude recursive bugs"
+            ],
     whatBreaks: [
       'Semantic degradation over time',
       'Unbounded inference drift',
@@ -414,24 +422,31 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Mandatory",
     exogramMapping: "Execution Gating Layer",
     price: 99,
-    checkoutUrl: "https://buy.stripe.com/9B6cMY2QC4ng29na482B20F",
+    checkoutUrl: "https://buy.stripe.com/6oUbIUbn84ng3dr3FK2B20T",
     assetsList: ["Execution middleware", "Admissibility pipelines", "Runtime interception schemas", "Rollback handlers", "Policy-as-code YAMLs", "Audit log templates"],
     version: "v2.0.1",
     ecosystemPainQuotes: [
-      'Claude ran the wrong command.',
-      "It touched files it shouldn't.",
-      'The rollback failed.',
-      'The agent exceeded its authority.'
-    ],
+              "Windsurf just deleted the config directory.",
+              "The agent executed a script it shouldn't have.",
+              "Prompt rules were completely ignored."
+            ],
     telemetrySignals: [
       'Unauthorized file mutation',
       'Execution interception rates',
       'Rollback triggers'
     ],
     faqs: [
-        { question: "How do you stop hallucinated execution?", answer: "Through Admissibility Pipelines that cryptographically verify payloads before they reach the runtime." }
-    ],
-    searchKeywords: ["runtime governance", "unsafe shell execution", "admissibility enforcement", "production drift", "deterministic execution"],
+              { question: "Can I use prompt engineering to stop an AI agent?", answer: "No. Prompt engineering is probabilistic Governance Theater. Only deterministic runtime middleware can guarantee containment." },
+              { question: "What breaks when you don't have runtime governance?", answer: "Agents will eventually exceed their operational boundaries, execute unsafe infrastructure commands, and rewrite protected directories." }
+            ],
+    searchKeywords: [
+              "Windsurf runtime governance",
+              "AI coding agent safety",
+              "Windsurf execution containment",
+              "preventing unsafe bash commands",
+              "deterministic execution",
+              "agentic runtime failure"
+            ],
     whatBreaks: [
       'hallucinated execution',
       'unauthorized mutations',
@@ -472,23 +487,31 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "High",
     exogramMapping: "Admissibility Validation",
     price: 99,
-    checkoutUrl: "https://buy.stripe.com/4gM8wI9f04ng8xLb8c2B20G",
+    checkoutUrl: "https://buy.stripe.com/cNibIU9f04ng7tH9042B20K",
     assetsList: ["Validation checks", "Deterministic constraints", "QA automation flows", "Output templates"],
     version: "v1.1.4",
     ecosystemPainQuotes: [
-      'We spend more time reviewing AI than coding.',
-      'Humans are the bottleneck now.',
-      'Phantom dependencies keep appearing.'
-    ],
+              "Cline hallucinates modules that don't exist.",
+              "I spend more time fixing the AI's mistakes than coding.",
+              "The verification burden is crushing."
+            ],
     telemetrySignals: [
       'QA overhead spikes',
       'Synthetic COGS expansion',
       'Verification time'
     ],
     faqs: [
-        { question: "Why do AI agents rewrite unrelated files?", answer: "Because of 'over-editing'—a symptom of hallucination debt where the model lacks deterministic boundaries on its scope." }
-    ],
-    searchKeywords: ["hallucination debt", "phantom dependencies", "fake APIs", "over-editing"],
+              { question: "Why does Cline hallucinate dependencies?", answer: "Without admissibility pipelines, Cline probabilistically guesses module names instead of reading the deterministic package.json state." },
+              { question: "How do we reduce verification burden?", answer: "By deploying confidence thresholds that block human review of unverified, high-variance agentic code." }
+            ],
+    searchKeywords: [
+              "hallucination debt",
+              "fake AI code",
+              "verification overload",
+              "Cline hallucination",
+              "phantom dependencies",
+              "AI coding fatigue"
+            ],
     whatBreaks: [
       'Probabilistic output variance',
       'Phantom dependencies',
@@ -526,23 +549,30 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Strategic",
     exogramMapping: "Telemetry Ingestion",
     price: 99,
-    checkoutUrl: "https://buy.stripe.com/9B63coezk1b415j4JO2B20H",
+    checkoutUrl: "https://buy.stripe.com/5kQ4gsfDo4ng5lz7W02B20U",
     assetsList: ["COGS calculators", "Cost curve models", "ROI templates", "Optimization checklists"],
     version: "v1.0.0",
     ecosystemPainQuotes: [
-      'Exploding inference costs.',
-      'Hidden verification labor.',
-      'Runaway API costs.'
-    ],
+              "Roo Code burned through $50 trying to center a div.",
+              "Our API spend is completely out of control.",
+              "The ROI on AI agents is negative due to token costs."
+            ],
     telemetrySignals: [
       'Token inflation',
       'Inference margin collapse',
       'API burn rates'
     ],
     faqs: [
-        { question: "Why are AI coding agents burning tokens?", answer: "Because without Economic Governance, agents enter retry loops and context bloat, leading to exponential token consumption for linear value." }
-    ],
-    searchKeywords: ["synthetic cogs", "ai margin collapse", "token burn", "inference costs"],
+              { question: "Why are my API bills so high from AI coding agents?", answer: "Agents lack economic consciousness. Without margin validators, they will burn infinite tokens attempting to solve trivial syntax errors." },
+              { question: "How do you contain Roo Code token costs?", answer: "By establishing hard session budgets and cost containment middleware that physically severs API access when breached." }
+            ],
+    searchKeywords: [
+              "AI agent token burn",
+              "Roo Code costs",
+              "AI API spend inflation",
+              "agentic execution cost",
+              "inference budget overruns"
+            ],
     whatBreaks: [
       'Margin collapse on AI features',
       'Uncapped inference spend',
@@ -579,7 +609,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Mandatory",
     exogramMapping: "Protocol Governance",
     price: 99,
-    checkoutUrl: "https://buy.stripe.com/eVq28k3UGg5Y8xLfos2B20I",
+    checkoutUrl: "https://buy.stripe.com/3cIcMY1My8DwdS59042B20V",
     assetsList: ["Access matrices", "Server limits YAML", "Data exfiltration blocks", "Protocol audit tools", "Integration middleware"],
     version: "v1.3.2",
     ecosystemPainQuotes: [
@@ -592,9 +622,16 @@ export const SKILLS: GovernanceSkill[] = [
       'Unsafe context sharing'
     ],
     faqs: [
-        { question: "How do you secure MCP toolchains?", answer: "With Protocol Governance middleware that explicitly scopes execution boundaries and isolates context." }
-    ],
-    searchKeywords: ["mcp governance", "model context protocol", "data exfiltration", "tool chain contamination"],
+              { question: "Is it safe to give Claude global MCP access?", answer: "Absolutely not. Unconstrained MCP access allows an agent to read sensitive environment variables or arbitrarily execute queries outside its mandate." },
+              { question: "How do you permission MCP tools?", answer: "Through context isolation and capability validators that limit tool access to the exact scope of the assigned task." }
+            ],
+    searchKeywords: [
+              "MCP governance",
+              "Claude Model Context Protocol safety",
+              "MCP server limits",
+              "Claude tool chain recursion",
+              "MCP data exfiltration"
+            ],
     whatBreaks: [
       'Unconstrained server execution',
       'Data exfiltration risks',
@@ -631,7 +668,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "High",
     exogramMapping: "Admissibility Validation",
     price: 99,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/bJeaEQ9f0dXQ9BPb8c2B20W",
     assetsList: ["verification-routing.ts", "reviewer-escalation.ts", "QA threshold policies"],
     version: "v1.0.0",
     ecosystemPainQuotes: [
@@ -645,9 +682,16 @@ export const SKILLS: GovernanceSkill[] = [
               "Synthetic QA growth"
             ],
     faqs: [
-        { question: "Why does AI engineering increase human workloads?", answer: "Because of 'Verification Burden Collapse'. The speed of code generation outpaces the human capacity for deterministic code review." }
-    ],
-    searchKeywords: ["verification burden", "review fatigue", "synthetic qa", "verification overload"],
+              { question: "Why are senior engineers overwhelmed by AI pull requests?", answer: "Because generated code velocity outpaces human review capacity, shifting the burden from writing code to debugging probabilistic AI output." },
+              { question: "How do we stop verification collapse?", answer: "By installing verification-routing middleware that mathematically scores code and rejects low-confidence patches before humans see them." }
+            ],
+    searchKeywords: [
+              "QA overload",
+              "synthetic QA fatigue",
+              "reviewing AI PRs",
+              "agent PR fatigue",
+              "AI code review bottleneck"
+            ],
     whatBreaks: [
               "Manual code review overload",
               "Human-in-the-loop exhaustion",
@@ -685,7 +729,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Critical",
     exogramMapping: "Execution Gating Layer",
     price: 99,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/aFa4gs9f0g5YeW9eko2B20M",
     assetsList: ["repository validators", "divergence detectors", "branch integrity policies"],
     version: "v1.0.5",
     ecosystemPainQuotes: [
@@ -699,9 +743,16 @@ export const SKILLS: GovernanceSkill[] = [
               "Unauthorized architecture mutation"
             ],
     faqs: [
-        { question: "How do you stop agents from rewriting unrelated files?", answer: "Implement Repository Drift Prevention policies that bound the execution scope and track architectural divergence." }
-    ],
-    searchKeywords: ["repository drift", "codebase divergence", "architectural corruption"],
+              { question: "Why does Cursor rewrite files I didn't ask it to touch?", answer: "Cursor relies on probabilistic search and often suffers from 'over-editing' hallucination. It infers ghost dependencies and mutates unrelated architectural paths." },
+              { question: "How can I lock Cursor to a specific boundary?", answer: "By enforcing deterministic alignment protocols and branch integrity policies that cryptographically reject unauthorized file mutations." }
+            ],
+    searchKeywords: [
+              "Cursor repository drift",
+              "Cursor rewriting unrelated files",
+              "Cursor architectural drift",
+              "Ghost dependencies",
+              "Cursor codebase divergence"
+            ],
     whatBreaks: [
               "Codebase divergence",
               "Architectural corruption",
@@ -740,7 +791,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Mandatory",
     exogramMapping: "Execution Gating Layer",
     price: 99,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/00w28k1Myg5Y8xL1xC2B20S",
     assetsList: ["change approval engines", "authority policies", "risk detectors"],
     version: "v1.0.0",
     ecosystemPainQuotes: [
@@ -753,9 +804,16 @@ export const SKILLS: GovernanceSkill[] = [
       'Unapproved architectural changes'
     ],
     faqs: [
-        { question: "How do you manage CAB approvals for agents?", answer: "Via Agentic Change Management systems that force cryptographic approvals before runtime mutation." }
-    ],
-    searchKeywords: ["agentic change management", "autonomous mutation", "cab approvals"],
+              { question: "Should agents be allowed to merge code directly to production?", answer: "Never. Without cryptographic Change Advisory Board (CAB) approvals, agentic mutations represent an unquantifiable enterprise liability." },
+              { question: "How do you integrate agents into ITIL change management?", answer: "By enforcing human escalation paths and cryptographic state validation before any agentic output is considered admissible for deployment." }
+            ],
+    searchKeywords: [
+              "cryptographic CAB approvals",
+              "agentic pull request review",
+              "AI change management",
+              "human escalation paths",
+              "production AI changes"
+            ],
     whatBreaks: [
       'Unauthorized infrastructure mutation',
       'Governance bypass',
@@ -792,7 +850,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Strategic",
     exogramMapping: "Bounded Cognition Engine",
     price: 99,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/cNicMY9f0bPI6pDfos2B20N",
     assetsList: ["compression engines", "checkpoint rotation", "memory priority systems"],
     version: "v1.2.0",
     ecosystemPainQuotes: [
@@ -806,9 +864,16 @@ export const SKILLS: GovernanceSkill[] = [
               "Context fragmentation"
             ],
     faqs: [
-        { question: "How do you prevent context poisoning?", answer: "By using Context Window Compression to aggressively truncate irrelevant tokens and maintain semantic clarity." }
-    ],
-    searchKeywords: ["context window compression", "context window rot", "stale context poisoning"],
+              { question: "How long can a Claude coding session last?", answer: "Without compression engines, session stability collapses after ~15 complex interactions due to accumulated context poisoning." },
+              { question: "What is context window compression?", answer: "Dynamic middleware that rotates out stale interaction history and prioritizes current architectural state to maintain deterministic focus." }
+            ],
+    searchKeywords: [
+              "long-session instability",
+              "Claude context memory",
+              "AI coding agent session length",
+              "compressing Claude context",
+              "checkpoint rotation middleware"
+            ],
     whatBreaks: [
               "Token exhaustion",
               "Memory overload",
@@ -845,7 +910,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Mandatory",
     exogramMapping: "Execution Gating Layer",
     price: 99,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/14A8wIaj4g5Y7tH5NS2B20O",
     assetsList: ["runtime permission validators", "execution halt systems", "safety boundaries"],
     version: "v2.1.0",
     ecosystemPainQuotes: [
@@ -859,9 +924,16 @@ export const SKILLS: GovernanceSkill[] = [
               "Unsafe context commands"
             ],
     faqs: [
-        { question: "How do you make autonomous execution safe?", answer: "With Execution Gating Layers that intercept and validate shell commands against a deterministic whitelist." }
-    ],
-    searchKeywords: ["autonomous execution safety", "unsafe bash commands", "blast-radius containment"],
+              { question: "Can Claude Code accidentally delete my database?", answer: "Yes. If given unconstrained shell access, an AI agent can hallucinate catastrophic commands. System prompts cannot prevent this." },
+              { question: "How do you secure autonomous execution?", answer: "With deterministic command whitelisting middleware and execution halt systems that mathematically block unapproved shell operations." }
+            ],
+    searchKeywords: [
+              "rogue bash commands",
+              "AI autonomous execution risk",
+              "agentic infrastructure corruption",
+              "preventing AI rm -rf",
+              "Claude bash permissions"
+            ],
     whatBreaks: [
               "Unsafe shell execution",
               "Rogue commands",
@@ -898,7 +970,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Mandatory",
     exogramMapping: "Protocol Governance",
     price: 99,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/6oUeV6crcg5YaFTccg2B20P",
     assetsList: ["scope engines", "capability validators", "permission boundaries"],
     version: "v1.1.0",
     ecosystemPainQuotes: [
@@ -910,9 +982,16 @@ export const SKILLS: GovernanceSkill[] = [
               "Tool-chain contamination"
             ],
     faqs: [
-        { question: "How do you manage agent tool permissions?", answer: "By deploying Tool Permission Governance which provisions capabilities dynamically based on approved manifests." }
-    ],
-    searchKeywords: ["tool permission governance", "mcp access", "capability escalation"],
+              { question: "What is capability escalation?", answer: "When an agent leverages a benign tool (like file read) to gain access to unauthorized resources (like an .env file containing AWS keys)." },
+              { question: "How do you lock down agent tools?", answer: "With scope engines that enforce strict permission boundaries mapped directly to the agent's deterministic task payload." }
+            ],
+    searchKeywords: [
+              "agent capability escalation",
+              "over-permissioned AI",
+              "tool-chain contamination",
+              "unrestricted MCP access",
+              "data exfiltration risk AI"
+            ],
     whatBreaks: [
               "Broad Tool Access",
               "Unrestricted MCP access",
@@ -948,7 +1027,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Critical",
     exogramMapping: "Telemetry Ingestion",
     price: 99,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/7sYbIU0Iu9HAbJX1xC2B20Q",
     assetsList: ["token budget systems", "cost containment engines", "margin validators"],
     version: "v1.5.0",
     ecosystemPainQuotes: [
@@ -963,9 +1042,16 @@ export const SKILLS: GovernanceSkill[] = [
               "Token inflation"
             ],
     faqs: [
-        { question: "How do you stop runaway token costs?", answer: "Use AI Cost Containment circuit breakers that halt agent execution when token budgets exceed defined thresholds." }
-    ],
-    searchKeywords: ["ai cost containment", "budget overruns", "token burn", "ai gross margin"],
+              { question: "How do I predict the cost of an autonomous task?", answer: "You cannot predict probabilistic cost. You must enforce deterministic cost ceilings using financial circuit breakers." },
+              { question: "What causes margin collapse in agentic workflows?", answer: "When the API inference token burn to generate a feature exceeds the human labor cost equivalent of writing it from scratch." }
+            ],
+    searchKeywords: [
+              "hidden operational AI burn",
+              "token inflation",
+              "runaway API costs",
+              "agent margin collapse",
+              "OpenAI Codex cost controls"
+            ],
     whatBreaks: [
               "Budget Overruns",
               "Uncontrolled inference spend",
@@ -1002,7 +1088,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Mandatory",
     exogramMapping: "Execution Gating Layer",
     price: 99,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/cNibIUbn8f1U15jgsw2B20X",
     assetsList: ["orchestrator-governor.ts", "chain validators", "entropy thresholds"],
     version: "v1.0.0",
     ecosystemPainQuotes: [
@@ -1018,9 +1104,16 @@ export const SKILLS: GovernanceSkill[] = [
               "Recursive delegation"
             ],
     faqs: [
-        { question: "How do you stop multi-agent chaos?", answer: "By enforcing Orchestration Entropy Governance to bound sub-agent delegation and enforce workflow checkpoints." }
-    ],
-    searchKeywords: ["orchestration entropy", "multi-agent chaos", "recursive delegation", "agent loops"],
+              { question: "Why do my AI agents get stuck arguing with each other?", answer: "Because probabilistic networks lack deterministic state. They enter infinite agreement loops or recursive delegation chains without a central orchestrator." },
+              { question: "How do you enforce multi-agent orchestration?", answer: "With entropy thresholds and a deterministic governor that caps delegation depth and enforces execution checkpoints." }
+            ],
+    searchKeywords: [
+              "multi-agent chaos",
+              "agents arguing with themselves",
+              "recursive delegation",
+              "agent infinite loops",
+              "orchestrator lost state"
+            ],
     whatBreaks: [
               "Multi-agent chaos",
               "Runaway execution chains",
@@ -1057,7 +1150,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Mandatory",
     exogramMapping: "Execution Gating Layer",
     price: 99,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/7sY3co8aWbPI29nccg2B20L",
     assetsList: ["retry-burn-engine.ts", "recursive loop detection", "retry budget governance"],
     version: "v1.2.0",
     ecosystemPainQuotes: [
@@ -1072,9 +1165,17 @@ export const SKILLS: GovernanceSkill[] = [
               "Retry-driven latency collapse"
             ],
     faqs: [
-        { question: "How do you stop recursive retry loops?", answer: "By capping retry logic through a Retry Burn Engine that limits token exhaustion and alerts human operators." }
-    ],
-    searchKeywords: ["retry inflation", "retry hell", "infinite patch loops", "recursive failure spirals"],
+              { question: "Why does Claude keep retrying the exact same broken fix?", answer: "Because the error state saturates the context window, causing the model to probabilistically generate the exact same hallucinated solution repeatedly." },
+              { question: "How do you break a retry loop?", answer: "By deploying a retry budget circuit breaker that halts execution and wipes the semantic context before trying again." }
+            ],
+    searchKeywords: [
+              "Claude retry loop",
+              "Claude keeps retrying broken logic",
+              "token burn spiral",
+              "retry hell",
+              "recursive patch loops",
+              "AI infinite retry"
+            ],
     whatBreaks: [
               "Recursive retry spirals",
               "Infinite patch loops",
@@ -1111,7 +1212,7 @@ export const SKILLS: GovernanceSkill[] = [
     enterpriseRelevance: "Mandatory",
     exogramMapping: "Exogram Control Plane",
     price: 299,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/7sY9AMbn80705lz5NS2B20R",
     assetsList: ["governance orchestrator", "deterministic runtime", "admissibility layers", "execution certainty systems"],
     version: "v3.0.0",
     ecosystemPainQuotes: [
@@ -1126,9 +1227,16 @@ export const SKILLS: GovernanceSkill[] = [
               "Probabilistic output variance"
             ],
     faqs: [
-        { question: "What is Deterministic Agentic Engineering?", answer: "It is the foundational methodology of enforcing runtime control systems to bound probabilistic LLMs into predictable enterprise operations." }
-    ],
-    searchKeywords: ["deterministic agentic engineering", "probabilistic engineering", "execution certainty", "exogram control plane"],
+              { question: "What is deterministic agentic engineering?", answer: "The architectural practice of surrounding probabilistic AI models with hardcoded, zero-variance governance middleware to guarantee runtime safety." },
+              { question: "Why is prompt engineering dead?", answer: "Because relying on text instructions for enterprise infrastructure security is catastrophic. Only code can govern code." }
+            ],
+    searchKeywords: [
+              "Exogram Control Plane",
+              "deterministic AI engineering",
+              "probabilistic engineering failure",
+              "runtime instability",
+              "ungoverned orchestration"
+            ],
     whatBreaks: [
               "Probabilistic engineering failure",
               "Ungoverned orchestration",
