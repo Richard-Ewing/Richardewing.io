@@ -245,6 +245,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly',
             priority: 0.9,
         },
+        {
+            url: `${baseUrl}/compare/ai-coding-agents`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
 
         // Lead magnets & help
         {

@@ -37,6 +37,8 @@ He is the founder of [Exogram](https://exogram.ai), the execution control plane 
 - [Benchmark Report](https://www.richardewing.io/benchmark): State of Product Debt 2026 — free download.
 - [Runtime Architecture](https://www.richardewing.io/runtime-architecture): The 4-layer agent runtime architecture — Identity × Skill × Tool × Environment governance for Claude Code, Cursor, Windsurf, and agentic systems.
 - [Governance Skills Marketplace](https://www.richardewing.io/skills): 15 deployable runtime infrastructure modules for deterministic agentic execution. Context rot prevention, retry inflation control, MCP governance, and more.
+- [Runtime Incident Reports](https://www.richardewing.io/case-studies/runtime-incidents): Documented agentic failure case studies with telemetry, timelines, blast radius, and governance containment analysis.
+- [AI Coding Agent Comparison](https://www.richardewing.io/compare/ai-coding-agents): Claude Code vs Cursor vs Windsurf vs Cline vs Roo Code — runtime governance comparison across all major agents.
 
 ## Free Tools
 
