@@ -446,4 +446,20 @@ export const PRODUCTS: Record<string, Product> = {
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/5kQ5kw62O9HAeW90ty2B20C',
     },
+
+    // --- AI INTEGRATION SYSTEM ---
+    ai_integration_starter: {
+        name: 'AI Integration System — Starter',
+        description: 'Core AI Integration System: AI Readiness Audit Template, 30+ prompts for Claude & ChatGPT, Business Process Scoring Matrix, Strategic Roadmap Generator, 30-Day Kickstart Plan, ROI Calculator. Modules 1-6.',
+        price: 99700, // $997.00
+        mode: 'payment',
+        paymentLink: '', // TODO: Create Stripe Payment Link for $997 one-time
+    },
+    ai_integration_complete: {
+        name: 'AI Integration System — Complete',
+        description: 'Full AI Integration System: All 10 modules, 50+ prompts, AI Tool Selection Guide, Quarterly Review Framework, 100-point Implementation Checklist, priority email support. Lifetime access.',
+        price: 199700, // $1,997.00
+        mode: 'payment',
+        paymentLink: '', // TODO: Create Stripe Payment Link for $1,997 one-time
+    },
 };

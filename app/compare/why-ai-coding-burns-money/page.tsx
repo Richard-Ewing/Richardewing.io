@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { DollarSign, AlertTriangle, Shield, TrendingDown } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Why AI Coding Burns Money | AI Agent Cost Overruns Explained | Richard Ewing',
-    description: 'Why AI coding agents cause $100-$1,100 single-session token burns. Retry inflation, context window waste, orchestration loops, and unattended execution explained with governance solutions.',
-    keywords: ['AI coding cost', 'Claude Code expensive', 'AI agent cost overrun', 'Cursor token cost', 'AI coding burns money', 'API token waste', 'AI agent budget', 'retry inflation cost'],
+    title: 'Why AI Coding Burns Money | Surprise Bills & Token Waste Fix | Richard Ewing',
+    description: 'Why AI coding agents cause surprise bills of $100-$1,100 in token burns. Retry inflation, context waste, vibe coding maintenance nightmares, and ungoverned execution explained with cost governance solutions.',
+    keywords: ['AI coding cost', 'Claude Code expensive', 'AI agent cost overrun', 'AI coding surprise bill', 'Cursor token cost', 'AI coding burns money', 'API token waste', 'AI agent budget', 'retry inflation cost', 'vibe coding maintenance nightmare', 'AI generated code abandonware'],
     openGraph: {
         title: 'Why AI Coding Burns Money — Token Cost Analysis',
         description: 'The hidden economics of AI coding agents: retry inflation, context waste, and how governance contains costs.',
@@ -108,8 +108,10 @@ export default function WhyAICodingBurnsMoneyPage() {
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
                         {[
+                            { q: 'I got a surprise bill from my AI coding tool. Why?', a: 'Surprise bills happen because AI coding agents have no default financial circuit breakers. Without governance, a doom loop or retry storm can consume $100-$1,100 in tokens overnight with no human notification. Cost governance adds per-task ($25) and per-session ($50) caps that halt execution before your bill explodes.' },
                             { q: 'How much does a typical AI coding session cost?', a: 'A governed session costs $8-$40. An ungoverned session with retry inflation can cost $100-$1,100. The difference is whether financial circuit breakers are in place.' },
                             { q: 'Can I just set a budget in the API?', a: 'API-level budget limits stop ALL execution, including productive work. Governance-level limits are task-aware — they halt only when the cost-per-task ratio indicates waste, not productive computation.' },
+                            { q: 'Is vibe coding creating a maintenance nightmare?', a: 'Yes. AI-generated codebases accumulate technical debt 3-5x faster than human-written code because agents optimize for local fixes, not architectural coherence. Without governance, vibe coding produces black box codebases that become abandonware — too fragile to modify, too expensive to maintain.' },
                             { q: 'What about Claude Max/Pro subscriptions?', a: 'Subscription plans cap your bill but not your waste. You still burn through rate limits on retries and context waste. Governance prevents the waste itself, making every token productive.' },
                         ].map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">

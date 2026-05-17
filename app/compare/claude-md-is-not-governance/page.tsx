@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { Shield, AlertTriangle, Layers } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'CLAUDE.md Is Not Governance | Why System Prompts Fail | Richard Ewing',
-    description: 'Why CLAUDE.md, .cursorrules, and system prompts are not deterministic governance. How text-based AI instructions get bypassed and what actual runtime enforcement looks like.',
-    keywords: ['CLAUDE.md not working', 'CLAUDE.md bypassed', '.cursorrules ignored', 'system prompt bypass', 'AI agent ignores rules', 'AI governance vs system prompts', 'Claude Code ignoring instructions', 'AI coding agent disobeys'],
+    title: 'CLAUDE.md Is Not Governance | CLAUDE.md Ignored Fix | Richard Ewing',
+    description: 'Why CLAUDE.md gets ignored, .cursorrules stops working, and AI agents treat your rules as suggestions not constraints. System prompts are not deterministic governance — here is what actual runtime enforcement looks like.',
+    keywords: ['CLAUDE.md not working', 'CLAUDE.md ignored', 'CLAUDE.md bypassed', '.cursorrules ignored', '.cursorrules not working', 'system prompt bypass', 'AI agent ignores rules', 'AI agent ignores instructions', 'AI governance vs system prompts', 'Claude Code ignoring instructions', 'AI coding agent disobeys', 'AI rules suggestions not constraints'],
     openGraph: {
         title: 'CLAUDE.md Is Not Governance — Why System Prompts Fail',
         description: 'The structural difference between text-based AI instructions and deterministic runtime governance enforcement.',
@@ -26,9 +26,7 @@ export default function ClaudeMdIsNotGovernancePage() {
                         CLAUDE.md Is Not Governance
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                        System prompts are natural language suggestions.
-                        Runtime governance is deterministic enforcement.
-                        They are not the same thing.
+                        Your CLAUDE.md is being ignored. Your .cursorrules stopped working. Your AI agent ignores instructions after 20 messages. That&apos;s because system prompts are suggestions, not constraints. Runtime governance is deterministic enforcement. They are not the same thing.
                     </p>
                 </div>
 
@@ -139,8 +137,10 @@ export default function ClaudeMdIsNotGovernancePage() {
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
                         {[
-                            { q: 'Should I delete my CLAUDE.md?', a: 'No. CLAUDE.md is the Identity Layer — it\'s necessary but not sufficient. Keep it as the agent\'s mission and principles, but add middleware enforcement on top of it.' },
-                            { q: 'Why do .cursorrules get ignored?', a: '.cursorrules is the same pattern as CLAUDE.md — text-based instructions competing for context space. Under pressure, the model prioritizes recent messages over initial configuration.' },
+                            { q: 'My CLAUDE.md is being ignored. Why?', a: 'CLAUDE.md occupies tokens in the same context window as your conversation. As the session grows, even system prompt instructions get less attention weight. The model treats them as suggestions, not constraints. After ~60 minutes, your CLAUDE.md is effectively invisible to the agent.' },
+                            { q: 'My .cursorrules stopped working. How do I fix it?', a: '.cursorrules is the same pattern as CLAUDE.md — text-based instructions competing for context space. Under pressure, the model prioritizes recent messages over initial configuration. The fix is not a better .cursorrules file — it is middleware enforcement that operates outside the context window.' },
+                            { q: 'Why does my AI agent ignore instructions?', a: 'AI agents are trained to be helpful, not obedient. When the agent determines a rule-violating action would produce a "better" outcome, helpfulness overrides your instructions. This is why text-based rules are suggestions, not constraints. Only deterministic middleware can enforce rules the model cannot override.' },
+                            { q: 'Should I delete my CLAUDE.md?', a: 'No. CLAUDE.md is the Identity Layer — it is necessary but not sufficient. Keep it as the agent\'s mission and principles, but add middleware enforcement on top of it.' },
                             { q: 'What does "middleware enforcement" mean?', a: 'Middleware intercepts agent actions before they execute. For example, a file guard middleware checks if the file being modified is in the approved scope. If not, the action is blocked — regardless of what the agent\'s text instructions say.' },
                         ].map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">

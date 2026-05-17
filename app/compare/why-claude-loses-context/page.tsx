@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { AlertTriangle, Shield, Clock, Brain } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Why Claude Loses Context | Claude Code Context Rot Explained | Richard Ewing',
-    description: 'Technical explanation of why Claude Code gets worse over long sessions. Context window saturation, instruction amnesia, and recursive patch loops explained with governance solutions.',
-    keywords: ['Claude Code losing context', 'Claude Code getting worse', 'Claude context rot', 'Claude Code context window', 'why Claude forgets instructions', 'Claude Code quality degrades', 'Claude Code long sessions'],
+    title: 'Why Claude Loses Context | Context Loss & Session Amnesia Fix | Richard Ewing',
+    description: 'Technical explanation of why Claude Code gets worse over long sessions. Context loss, session amnesia, context bleeding, context decay, and recursive patch loops explained with governance solutions.',
+    keywords: ['Claude Code losing context', 'Claude Code context loss', 'Claude Code session amnesia', 'Claude context rot', 'Claude context bleeding', 'Claude context drowning', 'Claude context decay', 'why Claude forgets instructions', 'Claude contradicts itself', 'Claude loses track', 'Claude Code getting worse', 'Claude Code context window', 'Claude Code long sessions'],
     openGraph: {
         title: 'Why Claude Loses Context — The Technical Explanation',
         description: 'Why Claude Code degrades over long sessions and the runtime governance infrastructure that prevents it.',
@@ -26,14 +26,14 @@ export default function WhyClaudeLosesContextPage() {
                         Why Claude Code Loses Context
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                        It&apos;s not a bug. It&apos;s an architectural constraint. And it&apos;s solvable.
+                        Context loss, session amnesia, context bleeding — it&apos;s not a bug. It&apos;s an architectural constraint called context decay. And it&apos;s solvable.
                     </p>
                 </div>
 
                 <article className="prose-custom">
                     {/* Section 1 */}
                     <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-8 mb-8 shadow-sm">
-                        <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-4">The Core Problem</h2>
+                        <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-4">The Core Problem: Context Loss & Session Amnesia</h2>
                         <p className="text-[#4A4A4A] leading-relaxed mb-4">
                             Claude Code operates within a <strong>200K token context window</strong>. Every message, every file read, every error, every retry — it all accumulates in that window. There is no automatic garbage collection.
                         </p>
@@ -47,7 +47,7 @@ export default function WhyClaudeLosesContextPage() {
                             <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-rose-500 mt-1 flex-shrink-0" /> <span>Stale conversation turns no longer relevant to the task</span></li>
                         </ul>
                         <p className="text-[#4A4A4A] leading-relaxed mt-4">
-                            As the context fills, the <strong>original instructions get pushed further away</strong> from the model&apos;s attention. By hour 2, Claude literally cannot &quot;see&quot; what you told it at the beginning.
+                            As the context fills, the <strong>original instructions get pushed further away</strong> from the model&apos;s attention. By hour 2, Claude literally cannot &quot;see&quot; what you told it at the beginning. This is why it loses track of your architecture, contradicts itself on design decisions, and exhibits what developers call &quot;context drowning&quot; — the agent is submerged in noise and can no longer surface the signal.
                         </p>
                     </div>
 
@@ -118,8 +118,9 @@ export default function WhyClaudeLosesContextPage() {
                         <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                         <div className="space-y-3">
                             {[
-                                { q: 'Does this happen with all AI coding agents?', a: 'Yes. Context degradation affects Claude Code, Cursor, Windsurf, Cline, and every agent that operates within a finite context window. The rate varies by model, but the pattern is universal.' },
-                                { q: 'Can I just start a new session?', a: 'Starting a new session resets context but loses all accumulated understanding of your codebase. The real solution is checkpoint rotation — preserving architectural state while pruning conversation history.' },
+                                { q: 'Why does Claude lose context and get session amnesia?', a: 'Claude operates within a finite context window. As conversations grow, original instructions get pushed out of the attention window — causing context loss, session amnesia, and context bleeding between tasks. The agent loses track of architecture decisions and starts contradicting itself.' },
+                                { q: 'Does this happen with all AI coding agents?', a: 'Yes. Context decay affects Claude Code, Cursor, Windsurf, Cline, and every agent that operates within a finite context window. The rate varies by model, but the pattern — context drowning, instruction drift, and eventual session amnesia — is universal.' },
+                                { q: 'Can I just start a new session?', a: 'Starting a new session resets context but loses all accumulated understanding of your codebase. The real solution is checkpoint rotation — preserving architectural state while pruning conversation history to prevent context window bankruptcy.' },
                                 { q: 'How much does context rot actually cost?', a: 'In documented incidents, context rot has caused 6+ hours of rework, 23 corrupted files, and $340+ in wasted tokens in a single session. Across a team, this compounds into $100K+ annually.' },
                             ].map((faq, i) => (
                                 <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">

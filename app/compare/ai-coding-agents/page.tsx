@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { ShieldCheck, AlertTriangle, Check, X, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Claude Code vs Cursor vs Windsurf | Runtime Governance Comparison | Richard Ewing',
-    description: 'How Claude Code, Cursor, Windsurf, Cline, and Roo Code compare for agentic safety, governance, and deterministic execution. What each tool gets right — and where runtime infrastructure is missing.',
-    keywords: ['Claude Code vs Cursor', 'Cursor vs Windsurf', 'Claude Code vs Windsurf', 'AI coding agent comparison', 'Claude Code governance', 'Cursor governance', 'Windsurf safety', 'Cline vs Roo Code', 'best AI coding agent', 'agentic safety comparison', 'deterministic vs probabilistic coding'],
+    title: 'Claude Code vs Cursor vs Windsurf 2026 | Pricing, Problems & Governance Comparison | Richard Ewing',
+    description: 'Compare Claude Code, Cursor, Windsurf, GitHub Copilot, Cline, and Tabnine: real pricing, user complaints from G2 and Reddit, governance gaps, and what runtime infrastructure is missing. Plus enterprise guardrails comparison.',
+    keywords: ['Claude Code vs Cursor', 'Cursor vs Windsurf', 'Claude Code vs Windsurf', 'GitHub Copilot vs Cursor', 'AI coding agent comparison', 'AI coding agent pricing 2026', 'best AI coding agent 2026', 'Cursor problems', 'Copilot problems', 'Windsurf problems', 'AI coding agent complaints', 'Claude Code governance', 'Cursor governance', 'Windsurf safety', 'Cline vs Roo Code', 'deterministic vs probabilistic coding', 'AI agent runtime governance comparison', 'Tabnine vs Copilot'],
     openGraph: {
-        title: 'Claude Code vs Cursor vs Windsurf — Runtime Governance Comparison',
-        description: 'Feature-by-feature comparison of agentic safety, governance infrastructure, and runtime controls.',
+        title: 'Claude Code vs Cursor vs Windsurf 2026 — Pricing, Problems & Governance',
+        description: 'Real pricing, user complaints, and governance gap analysis for every major AI coding agent.',
     },
     alternates: { canonical: 'https://richardewing.io/compare/ai-coding-agents' },
 };
@@ -134,6 +134,70 @@ export default function AgentComparisonPage() {
                     </div>
                 </div>
 
+                {/* Pricing Comparison */}
+                <div className="mb-12">
+                    <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mb-6">Enterprise Pricing Comparison (2026)</h2>
+                    <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] overflow-x-auto">
+                        <table className="w-full text-sm">
+                            <thead>
+                                <tr className="border-b border-zinc-100">
+                                    <th className="text-left p-3 text-xs uppercase font-bold text-zinc-700">Tool</th>
+                                    <th className="p-3 text-center text-xs uppercase font-bold text-zinc-700">Enterprise Price</th>
+                                    <th className="p-3 text-center text-xs uppercase font-bold text-zinc-700">Annual / User</th>
+                                    <th className="p-3 text-center text-xs uppercase font-bold text-rose-600">Top Complaint</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {[
+                                    { tool: 'GitHub Copilot', price: '$60/user/mo', annual: '$720', complaint: 'Model carousel regressions' },
+                                    { tool: 'Cursor', price: '$40-60/user/mo', annual: '$480-720', complaint: 'Credit anxiety, file rewriting' },
+                                    { tool: 'Windsurf', price: '$60/user/mo', annual: '$720', complaint: 'Pricing rug pull, credit burn' },
+                                    { tool: 'Tabnine', price: '$39-59/user/mo', annual: '$468-708', complaint: 'Poor code quality' },
+                                    { tool: 'Claude Code', price: '$200/mo (Max)', annual: '$2,400', complaint: 'Context rot, usage limits' },
+                                ].map(row => (
+                                    <tr key={row.tool} className="border-b border-zinc-50 hover:bg-zinc-50 transition-colors">
+                                        <td className="p-3 font-bold text-[#1A1A1A]">{row.tool}</td>
+                                        <td className="p-3 text-center text-[#3A3A3A]">{row.price}</td>
+                                        <td className="p-3 text-center font-mono text-rose-600">{row.annual}</td>
+                                        <td className="p-3 text-center text-xs text-[#4A4A4A]">{row.complaint}</td>
+                                    </tr>
+                                ))}
+                                <tr className="bg-emerald-50">
+                                    <td className="p-3 font-bold text-emerald-800">Governance Module</td>
+                                    <td className="p-3 text-center font-bold text-emerald-700">$99 one-time</td>
+                                    <td className="p-3 text-center font-mono font-bold text-emerald-700">$99 total</td>
+                                    <td className="p-3 text-center text-xs text-emerald-600">Deploys in 15 minutes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p className="text-xs text-zinc-500 mt-2">Prices based on publicly available data as of May 2026. Enterprise tiers include mandatory platform fees where applicable.</p>
+                </div>
+
+                {/* Top User Complaints */}
+                <div className="mb-12">
+                    <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mb-6">Top User Complaints (From G2, Reddit, Trustpilot)</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {[
+                            { tool: 'GitHub Copilot', complaints: ['Model carousel regressions', 'PR ads trust violation', 'Aggressive rate limiting', 'Speculative code suggestions', 'Surprise billing'], href: '/compare/github-copilot-problems', color: 'border-rose-200 bg-rose-50' },
+                            { tool: 'Cursor', complaints: ['Credit anxiety & overages', 'File rewriting without permission', '.cursorrules ignored', 'Crashes on large codebases', 'Black box code generation'], href: '/compare/cursor-problems', color: 'border-purple-200 bg-purple-50' },
+                            { tool: 'Windsurf', complaints: ['Pricing rug pull', 'Silent credit burn', 'Failed requests charge credits', 'Acquisition uncertainty', 'Hallucinations & context loss'], href: '/compare/windsurf-problems', color: 'border-cyan-200 bg-cyan-50' },
+                        ].map(card => (
+                            <Link key={card.tool} href={card.href} className={`rounded-2xl border p-5 ${card.color} hover:shadow-md transition-shadow block`}>
+                                <h3 className="font-grotesk font-bold text-[#1A1A1A] mb-3">{card.tool}</h3>
+                                <ul className="space-y-1">
+                                    {card.complaints.map((c, i) => (
+                                        <li key={i} className="text-xs text-[#4A4A4A] flex items-start gap-1.5">
+                                            <AlertTriangle size={10} className="text-rose-400 mt-0.5 flex-shrink-0" /> {c}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <span className="block mt-3 text-xs font-bold text-violet-700">Read full analysis →</span>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
                 {/* FAQ */}
                 <div className="mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
@@ -141,6 +205,7 @@ export default function AgentComparisonPage() {
                         {[
                             { q: 'Which AI coding agent is safest?', a: 'None of them ship with runtime governance infrastructure by default. Claude Code has the most mature permission model (command approval prompts), but it lacks context rot prevention, retry inflation control, and financial circuit breakers. All agents require external governance deployment.' },
                             { q: 'Can I use governance skills with any agent?', a: 'Yes. The 15 governance modules on this site are designed for Claude Code, Cursor, Windsurf, Cline, Roo Code, Codex, Copilot, Gemini Code Assist, Amazon Q Developer, Devin, OpenHands, and SWE-Agent. Each includes a CLAUDE.md manifest, YAML policies, TypeScript middleware, and reusable bash tools.' },
+                            { q: 'How does $99 one-time compare to $60/user/month?', a: 'A single governance module at $99 costs less than one month of Copilot Enterprise or Windsurf Enterprise — and it is a permanent deployment, not a recurring subscription. For a 10-person team on Copilot Enterprise, you would spend $7,200/year on the tool alone with zero governance. The full 15-module governance suite costs $1,485 total, one-time.' },
                             { q: 'What is runtime governance?', a: 'Runtime governance is the enforcement layer between the AI agent and your codebase. It intercepts agent actions, validates them against policy manifests, and halts execution when governance boundaries are violated. It prevents context rot, retry inflation, repository drift, and financial overruns.' },
                             { q: 'Why does Claude Code get worse after an hour?', a: 'Context rot. As the context window fills with stale assumptions, failed attempts, and correction history, the signal-to-noise ratio degrades until the agent is reasoning against its own historical errors. The Context Rot Prevention System deploys bounded cognition middleware to enforce checkpoint rotation before degradation occurs.' },
                         ].map(faq => (
@@ -152,10 +217,32 @@ export default function AgentComparisonPage() {
                     </div>
                 </div>
 
+                {/* Hub Links */}
+                <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-6 mb-12 shadow-sm">
+                    <h2 className="text-sm font-mono font-bold text-zinc-500 uppercase tracking-widest mb-4">Deep-Dive Analyses</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                        {[
+                            { title: 'GitHub Copilot Problems 2026', href: '/compare/github-copilot-problems' },
+                            { title: 'Cursor Problems 2026', href: '/compare/cursor-problems' },
+                            { title: 'Windsurf Problems 2026', href: '/compare/windsurf-problems' },
+                            { title: 'AI Guardrails Platform Comparison', href: '/compare/ai-guardrails-platforms' },
+                            { title: 'Why Claude Loses Context', href: '/compare/why-claude-loses-context' },
+                            { title: 'Why Retry Loops Happen', href: '/compare/why-retry-loops-happen' },
+                            { title: 'Why Cursor Rewrites Files', href: '/compare/why-cursor-rewrites-files' },
+                            { title: 'Why AI Coding Burns Money', href: '/compare/why-ai-coding-burns-money' },
+                            { title: 'Why MCP Is Dangerous', href: '/compare/why-mcp-is-dangerous' },
+                        ].map(link => (
+                            <Link key={link.href} href={link.href} className="flex items-center gap-2 p-3 bg-zinc-50 rounded-lg hover:bg-violet-50 transition-colors text-sm font-bold text-[#1A1A1A]">
+                                <ArrowRight size={14} className="text-violet-600" /> {link.title}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
                 {/* CTA */}
                 <div className="p-10 bg-[#1A1A1A] rounded-2xl text-white text-center">
                     <h2 className="text-2xl font-grotesk font-bold mb-4">Deploy the governance layer these tools are missing.</h2>
-                    <p className="text-zinc-400 mb-6">15 runtime infrastructure modules. Works with every agent.</p>
+                    <p className="text-zinc-400 mb-6">15 runtime infrastructure modules. Works with every agent. $99 each, one-time.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link href="/skills" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors">
                             View All 15 Modules →
@@ -167,7 +254,7 @@ export default function AgentComparisonPage() {
                 </div>
 
                 <div className="sr-only" aria-hidden="true">
-                    Claude Code vs Cursor 2026, Cursor vs Windsurf comparison, Claude Code vs Windsurf, best AI coding agent 2026, AI coding agent safety, Claude Code governance, Cursor governance, Windsurf runtime, Cline vs Roo Code, deterministic vs probabilistic coding agents, agentic safety comparison, AI agent runtime control
+                    Claude Code vs Cursor 2026, Cursor vs Windsurf comparison, Claude Code vs Windsurf, GitHub Copilot vs Cursor 2026, best AI coding agent 2026, AI coding agent safety, Claude Code governance, Cursor governance, Windsurf runtime, Cline vs Roo Code, deterministic vs probabilistic coding agents, agentic safety comparison, AI agent runtime control, Copilot problems 2026, Cursor problems 2026, Windsurf problems 2026, AI coding agent pricing comparison, Tabnine review, AI guardrails pricing
                 </div>
             </div>
         </main>

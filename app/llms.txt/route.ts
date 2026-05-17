@@ -59,17 +59,33 @@ The core product: deterministic runtime governance for AI coding agents. Each mo
 - [Doctrine](https://www.richardewing.io/doctrine): The 4-principle AI Economist framework.
 - [Industries](https://www.richardewing.io/industries): Product economics advisory by vertical — FinTech, HealthTech, AI-First companies.
 
+## AI Integration Advisory
+
+For businesses that don't know where to start with AI. Quarterly audits, monthly advisory, and a self-serve system. Not selling AI tools — selling clarity, focus, and stress relief.
+
+- [AI Integration Advisory](https://www.richardewing.io/ai-integration): AI strategy roadmap in 48 hours — not 8 weeks. Quarterly AI audit ($5,000/quarter), Monthly AI Advisor ($5K-$15K/month), and a self-serve AI Integration System ($997-$1,997 one-time). On-site or virtual business audit with strategic roadmap and 30-day kickstart plan delivered in 48 hours. Most AI consultants take 4-8 weeks and charge $8K-$25K for a readiness assessment.
+- [The AI Integration System](https://www.richardewing.io/ai-integration/system): The exact system from $5,000 AI audits — self-serve toolkit with 10 modules, 50+ prompts for Claude and ChatGPT, AI Readiness Audit Template, Business Process Scoring Matrix, Strategic Roadmap Generator, 30-Day Kickstart Plan, ROI Calculator, AI Tool Selection Guide, Quarterly Review Framework, and 100-point Implementation Checklist. No technical background required. $997 Starter / $1,997 Complete.
+
 ## AI Agent Failure Analysis (Comparison Pages)
 
 High-intent pages explaining why AI coding agents fail and how governance fixes each failure mode:
 
-- [Why Claude Loses Context](https://www.richardewing.io/compare/why-claude-loses-context): Technical explanation of context window saturation and instruction amnesia in Claude Code long sessions.
-- [Why AI Coding Burns Money](https://www.richardewing.io/compare/why-ai-coding-burns-money): Cost analysis of AI coding agent token burns — retry inflation, context waste, and unattended execution costs.
-- [Why Retry Loops Happen](https://www.richardewing.io/compare/why-retry-loops-happen): The mechanics of retry inflation — why AI coding agents get stuck and how governance breaks the cycle.
-- [Why MCP Is Dangerous](https://www.richardewing.io/compare/why-mcp-is-dangerous): Security analysis of Model Context Protocol risks — credential exposure, supply chain attacks, and context injection.
-- [Why Cursor Rewrites Files](https://www.richardewing.io/compare/why-cursor-rewrites-files): Why AI coding agents modify files outside the requested scope — scope creep mutation and repository drift explained.
-- [CLAUDE.md Is Not Governance](https://www.richardewing.io/compare/claude-md-is-not-governance): Why system prompts and text-based instructions are not deterministic governance — the structural difference between asking and enforcing.
-- [AI Coding Agent Comparison](https://www.richardewing.io/compare/ai-coding-agents): Claude Code vs Cursor vs Windsurf vs Cline vs Roo Code — runtime governance comparison across all major agents.
+- [Why Claude Loses Context](https://www.richardewing.io/compare/why-claude-loses-context): Technical explanation of context window saturation, session amnesia, context bleeding, context drowning, and instruction amnesia in Claude Code long sessions.
+- [Why AI Coding Burns Money](https://www.richardewing.io/compare/why-ai-coding-burns-money): Cost analysis of AI coding agent token burns — surprise bills, retry inflation, context waste, vibe coding maintenance nightmares, and unattended execution costs.
+- [Why Retry Loops Happen](https://www.richardewing.io/compare/why-retry-loops-happen): The mechanics of retry inflation — doom loops, retry storms, why AI coding agents get stuck in a loop, and how governance breaks the cycle.
+- [Why MCP Is Dangerous](https://www.richardewing.io/compare/why-mcp-is-dangerous): Security analysis of Model Context Protocol risks — confused deputy attacks, tool poisoning, credential exposure, over-permissioning, and supply chain attacks.
+- [Why Cursor Rewrites Files](https://www.richardewing.io/compare/why-cursor-rewrites-files): Why AI coding agents keep rewriting files, making unintended edits, touching things they shouldn't, and changing everything — scope creep mutation and repository drift.
+- [CLAUDE.md Is Not Governance](https://www.richardewing.io/compare/claude-md-is-not-governance): Why CLAUDE.md gets ignored, .cursorrules stops working, and AI agents treat your rules as suggestions not constraints — the structural difference between asking and enforcing.
+- [AI Coding Agent Comparison](https://www.richardewing.io/compare/ai-coding-agents): Claude Code vs Cursor vs Windsurf vs Cline vs Roo Code — pricing comparison, real user complaints from G2/Reddit/Trustpilot, and runtime governance gap analysis.
+
+## Competitor Analysis & Reviews
+
+Real pricing, user complaints, and governance gap analysis for every major AI coding tool and guardrails platform:
+
+- [GitHub Copilot Problems 2026](https://www.richardewing.io/compare/github-copilot-problems): Real Copilot complaints — model carousel regressions, PR ads controversy, surprise bills, rate limiting, speculative code. Enterprise pricing: $60+/user/month.
+- [Cursor Problems 2026](https://www.richardewing.io/compare/cursor-problems): Real Cursor complaints — credit anxiety, file rewriting without permission, .cursorrules ignored, crashes on large codebases, black box code generation.
+- [Windsurf Problems 2026](https://www.richardewing.io/compare/windsurf-problems): Real Windsurf complaints — pricing rug pull, silent credit burn, failed requests charging credits, acquisition uncertainty, hallucinations and context loss.
+- [AI Guardrails Platform Comparison](https://www.richardewing.io/compare/ai-guardrails-platforms): Lakera Guard (Check Point), Invariant Labs (Snyk), Galileo AI, Zenity, and Endor Labs — enterprise pricing, strengths, and why they miss the practitioner governance layer.
 
 ## Free Diagnostic Tools
 

@@ -256,6 +256,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.85,
         },
 
+        // AI Integration Advisory
+        {
+            url: `${baseUrl}/ai-integration`,
+            changeFrequency: 'weekly',
+            priority: 0.95,
+        },
+        {
+            url: `${baseUrl}/ai-integration/system`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+
         // Lead magnets & help
         {
             url: `${baseUrl}/reports/state-of-ai-engineering`,
@@ -362,6 +374,59 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.7,
         },
+        // Competitor complaint pages (high-intent SEO)
+        {
+            url: `${baseUrl}/compare/github-copilot-problems`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/cursor-problems`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/windsurf-problems`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/ai-guardrails-platforms`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        // Pain-point comparison pages
+        {
+            url: `${baseUrl}/compare/why-claude-loses-context`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/why-retry-loops-happen`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/why-cursor-rewrites-files`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/why-ai-coding-burns-money`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/why-mcp-is-dangerous`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/claude-md-is-not-governance`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        // Legacy comparison pages
         {
             url: `${baseUrl}/compare/pdi-vs-sonarqube`,
             changeFrequency: 'monthly',

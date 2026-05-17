@@ -621,12 +621,17 @@ export const SKILLS: GovernanceSkill[] = [
       'Verification time'
     ],
     faqs: [
-              { question: "Why does Cline hallucinate dependencies?", answer: "Without admissibility pipelines, Cline probabilistically guesses module names instead of reading the deterministic package.json state." },
+              { question: "Why does Cline hallucinate dependencies?", answer: "Without admissibility pipelines, Cline probabilistically guesses module names instead of reading the deterministic package.json state. This creates fake dependencies and nonexistent packages in your codebase." },
+              { question: "What is slopsquatting?", answer: "Slopsquatting is when attackers register npm/PyPI package names that AI agents frequently hallucinate — turning a made up API reference or nonexistent package into a real supply chain attack vector." },
               { question: "How do we reduce verification burden?", answer: "By deploying confidence thresholds that block human review of unverified, high-variance agentic code." }
             ],
     searchKeywords: [
               "hallucination debt",
               "fake AI code",
+              "fake dependency",
+              "nonexistent package",
+              "made up API",
+              "slopsquatting",
               "verification overload",
               "Cline hallucination",
               "phantom dependencies",
@@ -813,7 +818,9 @@ export const SKILLS: GovernanceSkill[] = [
               "synthetic QA fatigue",
               "reviewing AI PRs",
               "agent PR fatigue",
-              "AI code review bottleneck"
+              "AI code review bottleneck",
+              "black box codebase",
+              "AI maintenance nightmare"
             ],
     whatBreaks: [
               "Manual code review overload",
@@ -875,7 +882,9 @@ export const SKILLS: GovernanceSkill[] = [
               "Cursor rewriting unrelated files",
               "Cursor architectural drift",
               "Ghost dependencies",
-              "Cursor codebase divergence"
+              "Cursor codebase divergence",
+              "AI touched something it shouldn't",
+              "AI refactoring code I didn't ask"
             ],
     whatBreaks: [
               "Codebase divergence",
@@ -1051,15 +1060,20 @@ export const SKILLS: GovernanceSkill[] = [
               "Unsafe context commands"
             ],
     faqs: [
-              { question: "Can Claude Code accidentally delete my database?", answer: "Yes. If given unconstrained shell access, an AI agent can hallucinate catastrophic commands. System prompts cannot prevent this." },
-              { question: "How do you secure autonomous execution?", answer: "With deterministic command whitelisting middleware and execution halt systems that mathematically block unapproved shell operations." }
+              { question: "Can Claude Code accidentally delete my files or destroy my project?", answer: "Yes. Without governance, an AI agent with unconstrained shell access can delete critical files, wipe database migrations, or run destructive commands. Documented incidents include agents that destroyed project structures, broke everything with a single refactor, and required full git reverts to recover." },
+              { question: "How do you secure autonomous execution?", answer: "With deterministic command whitelisting middleware and execution halt systems that mathematically block unapproved shell operations. The agent simply cannot execute destructive commands regardless of its reasoning." }
             ],
     searchKeywords: [
               "rogue bash commands",
               "AI autonomous execution risk",
               "agentic infrastructure corruption",
               "preventing AI rm -rf",
-              "Claude bash permissions"
+              "Claude bash permissions",
+              "AI agent deleted files",
+              "AI agent destroyed project",
+              "AI agent broke everything",
+              "AI agent wiped database",
+              "had to revert AI changes"
             ],
     whatBreaks: [
               "Unsafe shell execution",
@@ -1118,7 +1132,9 @@ export const SKILLS: GovernanceSkill[] = [
               "over-permissioned AI",
               "tool-chain contamination",
               "unrestricted MCP access",
-              "data exfiltration risk AI"
+              "data exfiltration risk AI",
+              "AI action boundary",
+              "AI action boundary enforcement"
             ],
     whatBreaks: [
               "Broad Tool Access",

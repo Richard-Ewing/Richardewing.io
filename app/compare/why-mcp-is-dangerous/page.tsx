@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { Shield, AlertTriangle, Lock } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Why MCP Is Dangerous | Model Context Protocol Security Risks | Richard Ewing',
-    description: 'Security analysis of Model Context Protocol (MCP) risks: credential exposure, supply chain attacks, context injection, and unrestricted file access. Governance containment strategies.',
-    keywords: ['MCP dangerous', 'MCP security risk', 'Model Context Protocol security', 'MCP credential leak', 'Claude Code MCP risk', 'MCP supply chain attack', 'AI agent security', 'MCP governance'],
+    title: 'Why MCP Is Dangerous | MCP Security Risks & Tool Poisoning | Richard Ewing',
+    description: 'Security analysis of Model Context Protocol (MCP) risks: credential exposure, confused deputy attacks, tool poisoning, over-permissioning, supply chain attacks, and ungoverned file access. Governance containment strategies.',
+    keywords: ['MCP dangerous', 'MCP security risk', 'Model Context Protocol security', 'MCP credential leak', 'MCP confused deputy', 'MCP tool poisoning', 'MCP over-permissioning', 'Claude Code MCP risk', 'MCP supply chain attack', 'AI agent security', 'MCP governance'],
     openGraph: {
         title: 'Why MCP Is Dangerous — Model Context Protocol Security',
         description: 'Security analysis of MCP risks and the governance infrastructure needed to contain them.',
@@ -30,10 +30,17 @@ const risks = [
         color: 'bg-rose-50 border-rose-200',
     },
     {
-        title: 'Context Injection',
+        title: 'Context Injection & Tool Poisoning',
         severity: 'HIGH',
-        desc: 'MCP tools can inject content into the agent\'s context window, potentially overriding system prompts or biasing model behavior toward specific outputs.',
-        example: 'A tool server returning carefully crafted content can influence the agent\'s subsequent reasoning and code generation.',
+        desc: 'MCP tools can inject content into the agent\'s context window through tool poisoning — hiding malicious instructions in tool descriptions or return values. This can override system prompts and bias model behavior.',
+        example: 'A tool server returning carefully crafted content can influence the agent\'s subsequent reasoning and code generation. This is the MCP equivalent of prompt injection.',
+        color: 'bg-orange-50 border-orange-200',
+    },
+    {
+        title: 'Confused Deputy & Over-Permissioning',
+        severity: 'HIGH',
+        desc: 'The confused deputy problem: MCP servers perform actions with their own (often elevated) privileges rather than the user\'s. Combined with default over-permissioning, agents get far more access than any task requires.',
+        example: 'An MCP server with database access can execute arbitrary queries using its own credentials, bypassing the user\'s permission scope entirely.',
         color: 'bg-orange-50 border-orange-200',
     },
     {
@@ -129,6 +136,8 @@ export default function WhyMCPIsDangerousPage() {
                     <div className="space-y-3">
                         {[
                             { q: 'Should I stop using MCP entirely?', a: 'No. MCP is powerful infrastructure. But it needs governance. The solution is not to avoid MCP — it\'s to govern MCP access the same way you govern API access: with scoping, verification, and audit trails.' },
+                            { q: 'What is a confused deputy attack in MCP?', a: 'A confused deputy attack occurs when an MCP server performs actions using its own elevated privileges rather than the user\'s. Without least-privilege enforcement, the server can access databases, APIs, and files that the user never authorized. This is the most common form of MCP over-permissioning.' },
+                            { q: 'What is MCP tool poisoning?', a: 'Tool poisoning is when malicious instructions are hidden in MCP tool descriptions or response data. When the AI agent reads these descriptions, the hidden instructions override system prompts and redirect agent behavior — essentially an MCP-specific form of prompt injection.' },
                             { q: 'Does Anthropic provide MCP security?', a: 'Anthropic provides the MCP protocol and some basic permission prompts. But there are no capability manifests, no file guards, no supply chain verification, and no comprehensive audit trails built into the default experience.' },
                             { q: 'How quickly can credentials be exposed?', a: 'In documented incidents, credential exposure happened in under 60 seconds after MCP server connection. The server requested filesystem access, read .env, and the credentials were exposed with no warning.' },
                         ].map((faq, i) => (

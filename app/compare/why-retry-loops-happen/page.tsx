@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { RefreshCw, Shield, AlertTriangle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Why Retry Loops Happen | AI Agent Retry Inflation Explained | Richard Ewing',
-    description: 'Technical explanation of why AI coding agents get stuck in retry loops. Context pollution, compounding costs, and the retry inflation cascade explained with governance containment.',
-    keywords: ['AI retry loop', 'Claude Code infinite loop', 'Cursor keeps retrying', 'AI agent stuck', 'retry inflation', 'AI coding agent loop', 'Claude Code retry', 'context pollution'],
+    title: 'Why Retry Loops Happen | AI Doom Loop & Retry Storm Fix | Richard Ewing',
+    description: 'Why AI coding agents get stuck in a loop, hitting the same error over and over. Doom loops, retry storms, and the retry inflation cascade explained with governance containment.',
+    keywords: ['AI retry loop', 'AI doom loop', 'AI retry storm', 'Claude Code stuck in a loop', 'AI same error over and over', 'Cursor keeps failing', 'Cursor keeps retrying', 'AI agent stuck', 'retry inflation', 'AI coding agent loop', 'Claude Code retry', 'context pollution', 'streak breaker AI'],
     openGraph: {
         title: 'Why Retry Loops Happen — AI Agent Retry Inflation',
         description: 'The mechanics of retry inflation: why AI coding agents get stuck and how governance breaks the cycle.',
@@ -26,8 +26,7 @@ export default function WhyRetryLoopsHappenPage() {
                         Why Retry Loops Happen
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                        Retry inflation is the #1 complained-about failure in AI coding agents.
-                        Here&apos;s exactly why it happens and how to stop it.
+                        Your AI agent is stuck in a loop, hitting the same error over and over. Developers call it a &quot;doom loop&quot; or &quot;retry storm.&quot; Here&apos;s exactly why it happens and how governance breaks the cycle.
                     </p>
                 </div>
 
@@ -83,8 +82,8 @@ export default function WhyRetryLoopsHappenPage() {
                         <Shield className="w-5 h-5" /> How Governance Breaks the Cycle
                     </h2>
                     <ul className="space-y-3 text-emerald-800 text-sm">
-                        <li><strong>Retry ceiling</strong> — maximum 3 attempts before mandatory human escalation</li>
-                        <li><strong>Context pruning</strong> — remove failed attempt history to prevent context pollution</li>
+                        <li><strong>Retry ceiling (streak breaker)</strong> — maximum 3 attempts before mandatory human escalation. No more doom loops.</li>
+                        <li><strong>Context pruning</strong> — remove failed attempt history to prevent context pollution and retry storms</li>
                         <li><strong>Cost monitoring</strong> — halt execution when cost-per-retry exceeds threshold</li>
                         <li><strong>Session reset</strong> — guided session restart preserving architectural context</li>
                         <li><strong>Escalation routing</strong> — notify human with failure summary and recommended approach</li>
@@ -104,9 +103,10 @@ export default function WhyRetryLoopsHappenPage() {
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
                         {[
-                            { q: 'Why doesn\'t Claude just stop retrying?', a: 'Claude is designed to persist until the task is complete. Without explicit retry limits, it will continue attempting the task indefinitely, each time adding more context pollution.' },
-                            { q: 'Is this the same as an "infinite loop"?', a: 'Not exactly. An infinite loop is a code error. Retry inflation is an agent behavior pattern where each retry makes the next retry more likely to fail. It\'s a compounding cascade, not a code bug.' },
-                            { q: 'How much does retry inflation actually cost?', a: 'Documented incidents range from $25 (caught early) to $1,100 (unattended overnight). The average ungoverned retry inflation incident costs $80-$150.' },
+                            { q: 'Why doesn\'t Claude just stop retrying?', a: 'Claude is designed to persist until the task is complete. Without an explicit retry limit or streak breaker, it will continue attempting the task indefinitely — creating a doom loop where each retry makes the next retry more likely to fail.' },
+                            { q: 'Is this the same as an "infinite loop" or "doom loop"?', a: 'A doom loop (or retry storm) is a specific agent behavior pattern where each failed retry adds error context that makes the next attempt harder. It\'s not a code bug — it\'s a compounding cascade. When your agent is stuck in a loop hitting the same error over and over, this is what\'s happening.' },
+                            { q: 'My agent keeps failing with the same error. How do I fix it?', a: 'If your agent keeps failing on the same task, it is in a retry inflation spiral. The fix is a streak breaker — a hard limit of 3 attempts before mandatory human escalation. Without this, the agent will burn $25-$1,100 in tokens with no forward progress.' },
+                            { q: 'How much does retry inflation actually cost?', a: 'Documented incidents range from $25 (caught early) to $1,100 (unattended overnight). The average ungoverned doom loop incident costs $80-$150.' },
                         ].map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">
                                 <summary className="p-4 cursor-pointer text-sm font-bold text-[#1A1A1A] hover:text-violet-700">{faq.q}</summary>

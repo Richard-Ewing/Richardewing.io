@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { Code2, Shield, AlertTriangle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Why Cursor Rewrites Files | AI Agent Scope Creep Explained | Richard Ewing',
-    description: 'Why Cursor, Windsurf, and AI coding agents modify files you didn\'t ask them to touch. Repository drift, scope creep mutation, and uncontained file access explained with governance solutions.',
-    keywords: ['Cursor rewrites files', 'Cursor modifying wrong files', 'AI agent scope creep', 'Cursor file changes', 'Windsurf file access', 'AI coding agent file mutation', 'repository drift', 'AI agent changing my code'],
+    title: 'Why Cursor Rewrites Files | AI Rewriting Files You Didn\'t Ask | Richard Ewing',
+    description: 'Why Cursor, Windsurf, and AI coding agents keep rewriting files, making unintended edits, and changing everything when you asked for one fix. Repository drift, scope creep, and governance solutions.',
+    keywords: ['Cursor rewrites files', 'Cursor rewriting files', 'Cursor modifying wrong files', 'AI agent scope creep', 'AI unintended edits', 'AI changing everything', 'AI touched something it shouldn\'t', 'AI refactoring code I didn\'t ask', 'Windsurf file access', 'AI coding agent file mutation', 'repository drift', 'AI agent changing my code'],
     openGraph: {
         title: 'Why Cursor Rewrites Files — AI Agent Scope Creep Explained',
         description: 'The mechanics of repository drift and scope creep mutation in AI coding agents.',
@@ -26,8 +26,7 @@ export default function WhyCursorRewritesFilesPage() {
                         Why Cursor Rewrites Your Files
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                        You asked it to fix one function. It refactored 47 files.
-                        This is not a bug — it&apos;s an architectural constraint called scope creep mutation.
+                        You asked it to fix one function. It started rewriting files across the entire project, making unintended edits, and changing everything. It touched something it shouldn&apos;t have and now your auth middleware is broken. This is scope creep mutation — and it&apos;s solvable.
                     </p>
                 </div>
 
@@ -101,8 +100,10 @@ export default function WhyCursorRewritesFilesPage() {
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
                         {[
-                            { q: 'Can\'t I just tell it not to modify other files?', a: 'You can, but text-based instructions are routinely bypassed under context pressure. The agent\'s "helpful" optimization instinct overrides explicit scope restrictions when it determines a broader change would be "better." Only middleware enforcement prevents this.' },
+                            { q: 'Can\'t I just tell it not to modify other files?', a: 'You can, but text-based instructions are routinely bypassed under context pressure. The agent\'s "helpful" optimization instinct overrides explicit scope restrictions when it determines a broader change would be "better." It will keep rewriting files and refactoring code you didn\'t ask it to touch. Only middleware enforcement prevents this.' },
+                            { q: 'My AI keeps changing everything — how do I stop unintended edits?', a: 'Unintended edits happen because AI agents have no default file scope boundary. Every file in your repository is fair game. Governance adds file scope declarations, directory guards, and mutation limits (default: 5 files per task) so the agent cannot touch something it shouldn\'t.' },
                             { q: 'How many files can an agent modify in one session?', a: 'Without governance, there is no limit. Documented incidents show 23-94 files modified in a single task. With governance, the default limit is 5 files per task with human approval required for more.' },
+                            { q: 'I had to revert after AI changes broke my project. How do I prevent this?', a: 'Governance includes git-based automatic rollback for unauthorized modifications and change review gates that pause execution when file count exceeds threshold. You should never have to manually revert AI changes again.' },
                             { q: 'Is this the same as "repository drift"?', a: 'Scope creep is a single-task problem. Repository drift is the cumulative effect: after many ungoverned sessions, your repository diverges significantly from its intended architecture. Both require governance to prevent.' },
                         ].map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">
