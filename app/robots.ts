@@ -3,39 +3,20 @@ import { MetadataRoute } from 'next';
 export default function robots(): MetadataRoute.Robots {
     return {
         rules: [
+            // Default: Allow all search engines
             {
                 userAgent: '*',
-                crawlDelay: 10,
                 allow: '/',
                 disallow: ['/_next/', '/admin/', '/api/'],
             },
-            // AI Crawlers - Explicit Permissions
+
+            // === SEARCH ENGINE CRAWLERS ===
             {
-                userAgent: 'GPTBot',
+                userAgent: 'Googlebot',
                 allow: '/',
             },
             {
-                userAgent: 'ChatGPT-User',
-                allow: '/',
-            },
-            {
-                userAgent: 'Claude-Web',
-                allow: '/',
-            },
-            {
-                userAgent: 'Anthropic-AI',
-                allow: '/',
-            },
-            {
-                userAgent: 'Google-Extended',
-                allow: '/',
-            },
-            {
-                userAgent: 'CCBot',
-                allow: '/',
-            },
-            {
-                userAgent: 'PerplexityBot',
+                userAgent: 'GoogleOther',
                 allow: '/',
             },
             {
@@ -43,26 +24,85 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
             },
             {
-                userAgent: 'meta-externalagent',
-                allow: '/',
-            },
-            {
-                userAgent: 'Bytespider',
-                allow: '/',
-            },
-            {
                 userAgent: 'Applebot',
                 allow: '/',
             },
             {
-                userAgent: 'Amazonbot',
+                userAgent: 'YandexBot',
+                allow: '/',
+            },
+
+            // === AI SEARCH & RETRIEVAL BOTS (Critical for AI search visibility) ===
+            {
+                userAgent: 'OAI-SearchBot',
+                allow: '/',
+            },
+            {
+                userAgent: 'ChatGPT-User',
+                allow: '/',
+            },
+            {
+                userAgent: 'Claude-SearchBot',
+                allow: '/',
+            },
+            {
+                userAgent: 'Claude-User',
+                allow: '/',
+            },
+            {
+                userAgent: 'PerplexityBot',
+                allow: '/',
+            },
+            {
+                userAgent: 'Perplexity-User',
+                allow: '/',
+            },
+
+            // === AI TRAINING CRAWLERS (Allowed — we WANT retrieval presence) ===
+            {
+                userAgent: 'GPTBot',
+                allow: '/',
+            },
+            {
+                userAgent: 'ClaudeBot',
+                allow: '/',
+            },
+            {
+                userAgent: 'Google-Extended',
+                allow: '/',
+            },
+            {
+                userAgent: 'Google-CloudVertexBot',
+                allow: '/',
+            },
+            {
+                userAgent: 'CCBot',
                 allow: '/',
             },
             {
                 userAgent: 'cohere-ai',
                 allow: '/',
             },
+            {
+                userAgent: 'Amazonbot',
+                allow: '/',
+            },
+
+            // === SOCIAL & PLATFORM CRAWLERS ===
+            {
+                userAgent: 'meta-externalagent',
+                allow: '/',
+            },
+            {
+                userAgent: 'facebookexternalhit',
+                allow: '/',
+            },
+            {
+                userAgent: 'Bytespider',
+                allow: '/',
+            },
         ],
         sitemap: 'https://www.richardewing.io/sitemap.xml',
+        host: 'https://www.richardewing.io',
     };
 }

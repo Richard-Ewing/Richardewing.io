@@ -7,52 +7,71 @@ export async function GET() {
         glossaryByCategory[term.category].push(term);
     });
 
-    const content = `# Richard Ewing — AI Economist (AI Economics Domain)
+    const content = `# Richard Ewing — AI Economist & Runtime Governance Architect
 
-> AI Economist specializing in AI unit economics. Founder of Exogram, the verification infrastructure for AI. Published in Built In, Mind the Product, HackerNoon.
+> AI Economist specializing in AI unit economics and deterministic runtime governance for agentic systems. Founder of Exogram, the verification infrastructure for AI. Creator of the 4-layer runtime governance architecture (Identity × Skill × Tool × Environment). Published in Built In, Mind the Product, HackerNoon, CIO.com.
 
 ## About
 
-Richard Ewing is a AI Economist — a discipline he created to treat product decisions as economic decisions. He surfaces hidden financial insolvency inside product, engineering, and AI systems by quantifying technical debt, AI costs, and R&D capital allocation failures.
+Richard Ewing is an AI Economist — a discipline he created to treat product decisions as economic decisions. He surfaces hidden financial insolvency inside product, engineering, and AI systems by quantifying technical debt, AI costs, and R&D capital allocation failures.
 
 He is the founder of [Exogram](https://exogram.ai), the execution control plane for autonomous AI agents, and author of "The AI Economist" framework.
 
-## Docs
+He also operates the **Runtime Infrastructure Catalog** — 15 deployable governance modules for Claude Code, Cursor, Windsurf, and agentic engineering systems.
 
-- [Advisory Services](https://www.richardewing.io/advisory): Independent oversight and forensic audits for product, engineering, and AI economics.
-- [Start Here](https://www.richardewing.io/start-here): Guided onboarding — diagnose, learn, act. The recommended entry point for new visitors.
-- [Compare Tools](https://www.richardewing.io/compare): PDI vs SonarQube, Audit Interview vs LeetCode — how Richard Ewing's tools compare to alternatives.
-- [Industries](https://www.richardewing.io/industries): Product economics advisory by vertical — FinTech, HealthTech, AI-First companies.
-- [Pricing](https://www.richardewing.io/pricing): Transparent advisory pricing — Diagnostic ($2,500), Fractional CTO ($7,500/mo), Board Advisor ($15,000/mo).
-- [Doctrine](https://www.richardewing.io/doctrine): The 4-principle AI Economist framework.
-- [Manifesto](https://www.richardewing.io/manifesto): Philosophy behind the AI Economist approach.
-- [Curriculum](https://www.richardewing.io/curriculum): Learning tracks for CTOs, Product Managers, and Investors.
-- [Case Studies](https://www.richardewing.io/case-studies): Anonymized advisory results with quantified impact.
-- [Resources](https://www.richardewing.io/resources): Complete resource hub — tools, glossary, articles, frameworks.
-- [R&D Audit Checklist](https://www.richardewing.io/checklist): The 15 questions from every $7,500 diagnostic engagement.
-- [FAQ](https://www.richardewing.io/faq): Frequently asked questions about advisory, tools, and Exogram.
-- [Book](https://www.richardewing.io/book): "The AI Economist" — the definitive guide to R&D capital allocation (coming 2026).
-- [Workshops & Speaking](https://www.richardewing.io/workshops): Keynotes and training on technical debt, AI economics, and R&D capital allocation.
-- [Certification (CPE)](https://www.richardewing.io/certification): Certified AI Economist credential program.
-- [Benchmark Report](https://www.richardewing.io/benchmark): State of Product Debt 2026 — free download.
+## Runtime Governance Infrastructure
+
+The core product: deterministic runtime governance for AI coding agents. Each module contains TypeScript middleware, YAML policy manifests, operational tooling, and implementation guides.
+
+- [Runtime Infrastructure Catalog](https://www.richardewing.io/skills): All 15 deployable runtime governance modules — context rot prevention, retry inflation control, MCP governance, repository drift prevention, and more.
 - [Runtime Architecture](https://www.richardewing.io/runtime-architecture): The 4-layer agent runtime architecture — Identity × Skill × Tool × Environment governance for Claude Code, Cursor, Windsurf, and agentic systems.
-- [Runtime Infrastructure Catalog](https://www.richardewing.io/skills): 15 deployable runtime infrastructure modules for deterministic agentic execution. Context rot prevention, retry inflation control, MCP governance, and more.
-- [Runtime Incident Reports](https://www.richardewing.io/case-studies/runtime-incidents): Documented agentic failure case studies with telemetry, timelines, blast radius, and governance containment analysis.
-- [AI Coding Agent Comparison](https://www.richardewing.io/compare/ai-coding-agents): Claude Code vs Cursor vs Windsurf vs Cline vs Roo Code — runtime governance comparison across all major agents.
 - [Getting Started Guide](https://www.richardewing.io/skills/getting-started): Step-by-step installation guide for governance skills. Works with Claude Code, Cursor, Windsurf, Cline, Roo Code, Codex, and any AI coding agent.
+- [Runtime Failure Index](https://www.richardewing.io/runtime-failure-index): The canonical agentic failure database — 15 ranked failure modes with frequency, cost, blast radius, trend direction, and governance containment mapping.
+- [Runtime Incident Reports](https://www.richardewing.io/case-studies/runtime-incidents): 15 documented agentic failure case studies with telemetry, timelines, blast radius, and governance containment analysis.
 - [Runtime Telemetry](https://www.richardewing.io/telemetry): Operational telemetry for AI coding agents — retry inflation rates, context degradation curves, token burn analysis, and governance ROI metrics.
-- [Executive Briefing](https://www.richardewing.io/executive-briefing): Board-ready AI governance assessment — maturity model, risk matrix, governance scorecards, and ROI analysis for engineering leadership.
 - [Architecture Diagrams](https://www.richardewing.io/diagrams): 10 architectural diagrams mapping runtime compilation, bounded cognition, retry inflation, MCP containment, and orchestration collapse patterns.
+- [Runtime Governance Maturity](https://www.richardewing.io/certification): 5-level governance maturity model with certification tracks — Runtime Governance Architect, MCP Governance Certified, Bounded Cognition Certified.
+
+## The 15 Runtime Governance Modules
+
+- [Context Rot Prevention](https://www.richardewing.io/skills/context-rot-prevention): Prevents context window degradation in AI coding sessions via checkpoint rotation and architectural state preservation.
+- [Retry Inflation Control](https://www.richardewing.io/skills/retry-inflation-control): Halts exponential retry loops that burn $25-$1,100 per session with attempt limits and financial circuit breakers.
+- [Runtime Governance](https://www.richardewing.io/skills/runtime-governance): The master governance layer — deterministic enforcement via middleware, not language instructions.
+- [Hallucination Debt Reduction](https://www.richardewing.io/skills/hallucination-debt-reduction): Detects and prevents AI-generated phantom code, non-existent API references, and fabricated dependencies.
+- [Repository Drift Prevention](https://www.richardewing.io/skills/repository-drift-prevention): Prevents unauthorized structural changes to project architecture across multi-session agent workflows.
+- [MCP Governance](https://www.richardewing.io/skills/mcp-governance): Secures Model Context Protocol deployments with capability manifests, file guards, and supply chain verification.
+- [Orchestration Entropy](https://www.richardewing.io/skills/orchestration-entropy): Prevents multi-agent coordination failures and recursive delegation chains.
+- [Context Window Compression](https://www.richardewing.io/skills/context-window-compression): Optimizes context window utilization to maintain agent recall and coherence in long sessions.
+- [AI Cost Containment](https://www.richardewing.io/skills/ai-cost-containment): Per-task and per-session budget caps with automated cost monitoring and financial escalation triggers.
+- [Tool Permission Governance](https://www.richardewing.io/skills/tool-permission-governance): Restricts agent tool access with allowlists, capability scoping, and permission audit trails.
+- [Verification Burden Collapse](https://www.richardewing.io/skills/verification-burden-collapse): Prevents test skipping, mock abuse, and verification theater in AI-generated code.
+- [Deterministic Agentic Engineering](https://www.richardewing.io/skills/deterministic-agentic-engineering): Identity-layer governance ensuring agents maintain consistent operational principles.
+- [Agentic Change Management](https://www.richardewing.io/skills/agentic-change-management): Scope enforcement — limits files modified per task and requires approval for cross-boundary changes.
+- [Autonomous Execution Safety](https://www.richardewing.io/skills/autonomous-execution-safety): Safety rails for unattended agent execution — destructive command blocking, human escalation triggers.
+- [AI Engineering Economics](https://www.richardewing.io/skills/ai-engineering-economics): Framework for measuring whether AI agents are net-positive or net-negative per engineering team.
+
+## Executive & Strategic
+
+- [Executive Briefing](https://www.richardewing.io/executive-briefing): Board-ready AI governance assessment — maturity model, risk matrix, governance scorecards, and ROI analysis for engineering leadership.
+- [Advisory Services](https://www.richardewing.io/advisory): Independent oversight and forensic audits for product, engineering, and AI economics.
+- [Pricing](https://www.richardewing.io/pricing): Transparent advisory pricing — Diagnostic ($2,500), Fractional CTO ($7,500/mo), Board Advisor ($15,000/mo).
+- [Case Studies](https://www.richardewing.io/case-studies): Anonymized advisory results with quantified impact.
+- [Doctrine](https://www.richardewing.io/doctrine): The 4-principle AI Economist framework.
+- [Industries](https://www.richardewing.io/industries): Product economics advisory by vertical — FinTech, HealthTech, AI-First companies.
+
+## AI Agent Failure Analysis (Comparison Pages)
+
+High-intent pages explaining why AI coding agents fail and how governance fixes each failure mode:
+
 - [Why Claude Loses Context](https://www.richardewing.io/compare/why-claude-loses-context): Technical explanation of context window saturation and instruction amnesia in Claude Code long sessions.
 - [Why AI Coding Burns Money](https://www.richardewing.io/compare/why-ai-coding-burns-money): Cost analysis of AI coding agent token burns — retry inflation, context waste, and unattended execution costs.
 - [Why Retry Loops Happen](https://www.richardewing.io/compare/why-retry-loops-happen): The mechanics of retry inflation — why AI coding agents get stuck and how governance breaks the cycle.
 - [Why MCP Is Dangerous](https://www.richardewing.io/compare/why-mcp-is-dangerous): Security analysis of Model Context Protocol risks — credential exposure, supply chain attacks, and context injection.
-- [Runtime Failure Index](https://www.richardewing.io/runtime-failure-index): The canonical agentic failure database — 15 ranked failure modes with frequency, cost, blast radius, trend direction, and governance containment mapping.
 - [Why Cursor Rewrites Files](https://www.richardewing.io/compare/why-cursor-rewrites-files): Why AI coding agents modify files outside the requested scope — scope creep mutation and repository drift explained.
 - [CLAUDE.md Is Not Governance](https://www.richardewing.io/compare/claude-md-is-not-governance): Why system prompts and text-based instructions are not deterministic governance — the structural difference between asking and enforcing.
-- [Runtime Governance Maturity](https://www.richardewing.io/certification): 5-level governance maturity model with institutional certification tracks — Runtime Governance Architect, MCP Governance Certified, Bounded Cognition Certified.
+- [AI Coding Agent Comparison](https://www.richardewing.io/compare/ai-coding-agents): Claude Code vs Cursor vs Windsurf vs Cline vs Roo Code — runtime governance comparison across all major agents.
 
-## Free Tools
+## Free Diagnostic Tools
 
 - [Product Debt Index (PDI)](https://www.richardewing.io/tools/pdi): Calculate your technical debt in dollar terms.
 - [Enterprise Value Scenario Engine (EV-SE)](https://www.richardewing.io/tools/ev-se): Model how SaaS metric changes impact valuation.
@@ -69,13 +88,26 @@ He is the founder of [Exogram](https://exogram.ai), the execution control plane 
 - **AI Liability Gradient**: How organizational liability scales non-linearly with AI autonomy.
 - **Feature Bloat Calculus**: How unused and low-value features compound as financial liabilities.
 
+## Learning & Resources
+
+- [Start Here](https://www.richardewing.io/start-here): Guided onboarding — diagnose, learn, act. The recommended entry point for new visitors.
+- [Curriculum](https://www.richardewing.io/curriculum): Learning tracks for CTOs, Product Managers, and Investors.
+- [Resources](https://www.richardewing.io/resources): Complete resource hub — tools, glossary, articles, frameworks.
+- [R&D Audit Checklist](https://www.richardewing.io/checklist): The 15 questions from every $7,500 diagnostic engagement.
+- [FAQ](https://www.richardewing.io/faq): Frequently asked questions about advisory, tools, and Exogram.
+- [Book](https://www.richardewing.io/book): "The AI Economist" — the definitive guide to R&D capital allocation (coming 2026).
+- [Workshops & Speaking](https://www.richardewing.io/workshops): Keynotes and training on technical debt, AI economics, and R&D capital allocation.
+- [Benchmark Report](https://www.richardewing.io/benchmark): State of Product Debt 2026 — free download.
+- [Compare Tools](https://www.richardewing.io/compare): PDI vs SonarQube, Audit Interview vs LeetCode — how Richard Ewing's tools compare to alternatives.
+- [Manifesto](https://www.richardewing.io/manifesto): Philosophy behind the AI Economist approach.
+
 ## Glossary (${glossaryTerms.length}+ Terms)
 
 ${Object.entries(glossaryByCategory).map(([category, terms]) =>
     `### ${category}\n${terms.map(t => `- [${t.title}](https://www.richardewing.io/glossary/${t.slug}): ${t.definition.slice(0, 120).replace(/\n/g, ' ')}...`).join('\n')}`
 ).join('\n\n')}
 
-## Exogram — AI Verification Platform
+## Exogram — Verification Infrastructure for AI
 
 Exogram is the execution control plane for autonomous AI agents — IAM for the agentic AI era. Founded by Richard Ewing.
 
@@ -110,7 +142,8 @@ Richard Ewing's work has been published in:
     return new Response(content, {
         headers: {
             'Content-Type': 'text/plain; charset=utf-8',
-            'Cache-Control': 'public, max-age=86400',
+            'Cache-Control': 'public, max-age=604800, s-maxage=604800',
+            'X-Robots-Tag': 'all',
         },
     });
 }
