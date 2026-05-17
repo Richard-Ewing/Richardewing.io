@@ -453,13 +453,13 @@ export const PRODUCTS: Record<string, Product> = {
         description: 'Core AI Integration System: AI Readiness Audit Template, 30+ prompts for Claude & ChatGPT, Business Process Scoring Matrix, Strategic Roadmap Generator, 30-Day Kickstart Plan, ROI Calculator. Modules 1-6.',
         price: 99700, // $997.00
         mode: 'payment',
-        paymentLink: '', // TODO: Create Stripe Payment Link for $997 one-time
+        paymentLink: 'https://buy.stripe.com/eVq7sEbn8aLE9BPb8c2B20Y',
     },
     ai_integration_complete: {
         name: 'AI Integration System — Complete',
         description: 'Full AI Integration System: All 10 modules, 50+ prompts, AI Tool Selection Guide, Quarterly Review Framework, 100-point Implementation Checklist, priority email support. Lifetime access.',
         price: 199700, // $1,997.00
         mode: 'payment',
-        paymentLink: '', // TODO: Create Stripe Payment Link for $1,997 one-time
+        paymentLink: 'https://buy.stripe.com/5kQfZabn87zs5lz0ty2B20Z',
     },
 };
