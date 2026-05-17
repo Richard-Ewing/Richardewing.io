@@ -197,6 +197,16 @@ export default function AdvisoryPage() {
                     </div>
                 </section>
 
+                {/* AI Integration Cross-Sell */}
+                <section className="section-lg">
+                    <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center">
+                        <div className="text-xs font-mono font-bold text-emerald-700 uppercase tracking-widest mb-3">New Offering</div>
+                        <h3 className="text-2xl font-bold font-grotesk text-zinc-900 mb-3">Don't Know Where to Start with AI?</h3>
+                        <p className="text-zinc-700 max-w-2xl mx-auto mb-6">Not every company needs a $50M+ enterprise advisory engagement. If you're a business owner who needs an AI roadmap — prioritized by bottom-line impact — delivered in 48 hours, not 8 weeks:</p>
+                        <Link href="/ai-integration" className="inline-block px-8 py-4 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors">View AI Integration Advisory →</Link>
+                    </div>
+                </section>
+
             </div>
         </main>
     );

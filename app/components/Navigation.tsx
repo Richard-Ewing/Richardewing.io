@@ -78,6 +78,11 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
+                            <Link href="/ai-integration" className="text-emerald-800 hover:text-emerald-600 transition-colors relative group font-semibold">
+                                AI Integration
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
+                            </Link>
+
                             {/* Primary CTA */}
                             <Link
                                 href="/advisory"
@@ -213,6 +218,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/glossary" onClick={onClose} className="text-lg font-bold">Glossary</MobileLink>
                         <MobileLink href="/exogram" onClick={onClose} className="text-lg font-bold">Exogram</MobileLink>
                         <MobileLink href="/advisory" onClick={onClose} className="text-lg font-bold">Advisory</MobileLink>
+                        <MobileLink href="/ai-integration" onClick={onClose} className="text-lg font-bold text-emerald-800">AI Integration</MobileLink>
                     </div>
 
                     <div className="w-full h-px bg-zinc-200 my-4" />

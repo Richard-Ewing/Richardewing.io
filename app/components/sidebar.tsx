@@ -35,6 +35,7 @@ export function Sidebar() {
         {
             label: 'Intervention', labelClass: 'text-danger', items: [
                 { href: '/advisory', label: '03. ADVISORY', highlight: true },
+                { href: '/ai-integration', label: '04. AI INTEGRATION', highlight: true },
             ]
         },
         {

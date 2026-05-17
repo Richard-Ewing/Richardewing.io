@@ -50,6 +50,7 @@ export function Footer() {
                         <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Advisory</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
                             <li><Link href="/advisory" className="text-zinc-950 hover:text-zinc-900 transition-colors">Executive Advisory</Link></li>
+                            <li><Link href="/ai-integration" className="text-emerald-800 font-bold hover:text-emerald-600 transition-colors">AI Integration</Link></li>
                             <li><Link href="/case-studies" className="text-zinc-950 hover:text-zinc-900 transition-colors">Case Studies</Link></li>
                             <li><Link href="/principal" className="text-zinc-950 hover:text-zinc-900 transition-colors">The Principal</Link></li>
                             <li><Link href="/advisory" className="text-[var(--accent-crimson)] font-bold hover:opacity-80 transition-colors">Book an Audit</Link></li>
