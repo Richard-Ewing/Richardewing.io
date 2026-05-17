@@ -537,6 +537,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.9,
         },
+        {
+            url: `${baseUrl}/runtime-failure-index`,
+            changeFrequency: 'weekly',
+            priority: 0.95,
+        },
+        {
+            url: `${baseUrl}/compare/why-cursor-rewrites-files`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/claude-md-is-not-governance`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
         // Legal
         {
             url: `${baseUrl}/legal`,

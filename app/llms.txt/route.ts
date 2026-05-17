@@ -47,6 +47,10 @@ He is the founder of [Exogram](https://exogram.ai), the execution control plane 
 - [Why AI Coding Burns Money](https://www.richardewing.io/compare/why-ai-coding-burns-money): Cost analysis of AI coding agent token burns — retry inflation, context waste, and unattended execution costs.
 - [Why Retry Loops Happen](https://www.richardewing.io/compare/why-retry-loops-happen): The mechanics of retry inflation — why AI coding agents get stuck and how governance breaks the cycle.
 - [Why MCP Is Dangerous](https://www.richardewing.io/compare/why-mcp-is-dangerous): Security analysis of Model Context Protocol risks — credential exposure, supply chain attacks, and context injection.
+- [Runtime Failure Index](https://www.richardewing.io/runtime-failure-index): The canonical agentic failure database — 15 ranked failure modes with frequency, cost, blast radius, trend direction, and governance containment mapping.
+- [Why Cursor Rewrites Files](https://www.richardewing.io/compare/why-cursor-rewrites-files): Why AI coding agents modify files outside the requested scope — scope creep mutation and repository drift explained.
+- [CLAUDE.md Is Not Governance](https://www.richardewing.io/compare/claude-md-is-not-governance): Why system prompts and text-based instructions are not deterministic governance — the structural difference between asking and enforcing.
+- [Runtime Governance Maturity](https://www.richardewing.io/certification): 5-level governance maturity model with institutional certification tracks — Runtime Governance Architect, MCP Governance Certified, Bounded Cognition Certified.
 
 ## Free Tools
 

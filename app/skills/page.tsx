@@ -94,7 +94,52 @@ export default function SkillsPage() {
           <ExogramBridge />
         </section>
 
-        {/* 7. FAILURE DATABASE CTA */}
+        {/* 7. INSTITUTIONAL CROSS-LINKS — Hub & Spoke */}
+        <section className="section-lg border-t border-[rgba(0,0,0,0.08)]">
+          <div className="section-header text-center max-w-3xl mx-auto">
+            <div className="inline-block px-4 py-1.5 mb-4 rounded-full border border-violet-200 bg-violet-50 text-violet-700 font-mono text-sm tracking-widest font-bold uppercase">
+              Infrastructure Resources
+            </div>
+            <h2>Operational Intelligence for Governance Deployment</h2>
+            <p className="text-lg mt-4">
+              Architecture diagrams, failure databases, governance telemetry, executive briefings, and maturity assessments — everything you need to deploy, measure, and communicate governance impact.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+            <Link href="/runtime-failure-index" className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] p-6 shadow-sm hover:border-rose-200 hover:shadow-md transition-all group">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-rose-600">Failure Intelligence</span>
+              <h3 className="text-lg font-bold text-[#1A1A1A] mt-2 group-hover:text-rose-700 transition-colors">Runtime Failure Index →</h3>
+              <p className="text-sm text-[#4A4A4A] mt-2">15 ranked failure modes with frequency, cost, blast radius, and governance containment mapping.</p>
+            </Link>
+            <Link href="/telemetry" className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] p-6 shadow-sm hover:border-emerald-200 hover:shadow-md transition-all group">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-600">Operational Data</span>
+              <h3 className="text-lg font-bold text-[#1A1A1A] mt-2 group-hover:text-emerald-700 transition-colors">Runtime Telemetry →</h3>
+              <p className="text-sm text-[#4A4A4A] mt-2">Governance impact metrics, retry curves, context degradation timelines, and cost comparison data.</p>
+            </Link>
+            <Link href="/diagrams" className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] p-6 shadow-sm hover:border-blue-200 hover:shadow-md transition-all group">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600">Architecture</span>
+              <h3 className="text-lg font-bold text-[#1A1A1A] mt-2 group-hover:text-blue-700 transition-colors">Diagram Library →</h3>
+              <p className="text-sm text-[#4A4A4A] mt-2">10 architectural diagrams: compilation pipelines, orchestration patterns, and containment models.</p>
+            </Link>
+            <Link href="/case-studies/runtime-incidents" className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] p-6 shadow-sm hover:border-amber-200 hover:shadow-md transition-all group">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-amber-600">Evidence</span>
+              <h3 className="text-lg font-bold text-[#1A1A1A] mt-2 group-hover:text-amber-700 transition-colors">15 Incident Reports →</h3>
+              <p className="text-sm text-[#4A4A4A] mt-2">Documented production failures with telemetry, blast radius, root cause, and governance containment.</p>
+            </Link>
+            <Link href="/executive-briefing" className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] p-6 shadow-sm hover:border-violet-200 hover:shadow-md transition-all group">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-violet-600">Executive</span>
+              <h3 className="text-lg font-bold text-[#1A1A1A] mt-2 group-hover:text-violet-700 transition-colors">Board-Ready Briefing →</h3>
+              <p className="text-sm text-[#4A4A4A] mt-2">Maturity model, risk matrix, governance scorecards, and ROI analysis for engineering leadership.</p>
+            </Link>
+            <Link href="/certification" className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] p-6 shadow-sm hover:border-cyan-200 hover:shadow-md transition-all group">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-600">Maturity</span>
+              <h3 className="text-lg font-bold text-[#1A1A1A] mt-2 group-hover:text-cyan-700 transition-colors">Governance Maturity →</h3>
+              <p className="text-sm text-[#4A4A4A] mt-2">5-level maturity model with certification tracks for governance practitioners and architects.</p>
+            </Link>
+          </div>
+        </section>
+
+        {/* 8. FAILURE DATABASE CTA */}
         <section id="failure-database" className="section-lg mt-12 text-center">
           <div className="max-w-3xl mx-auto bg-white border border-[rgba(0,0,0,0.1)] rounded-xl p-10 shadow-sm">
             <h2 className="text-3xl font-bold text-[#1A1A1A] mb-4">Explore the Operational Failure Database</h2>
