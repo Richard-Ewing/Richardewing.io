@@ -132,6 +132,179 @@ RULE: Each entry must be unique — different symptoms, different quotes, differ
 RULE: No two entries should share identical whatBreaks/economicDamage arrays
 ```
 
+### Skill 2G: The Ecosystem Pain Signal Research Protocol
+
+BEFORE writing any new skill, failure definition, case study, or FAQ:
+
+```
+STEP 1: Search Reddit for real user pain language
+  - r/ClaudeAI, r/ClaudeCode, r/cursor, r/CodingWithAI, r/LocalLLaMA
+  - Search terms: the failure name + "frustrated", "broken", "keeps", "why does"
+  - Extract: exact phrasing, upvote counts, thread frequency
+
+STEP 2: Search X/Twitter for developer complaints
+  - Search: "Claude Code" + failure term
+  - Search: "Cursor" + failure term  
+  - Extract: viral complaints, quote tweets, pain intensity
+
+STEP 3: Search Hacker News for technical discussions
+  - Search: site:news.ycombinator.com + failure term
+  - Extract: technical depth, architectural critiques, economic arguments
+
+STEP 4: Search GitHub Issues for bug reports
+  - Search: relevant repos (anthropics/claude-code, getcursor/cursor)
+  - Extract: issue titles, reproduction steps, workarounds
+
+STEP 5: Inject into content
+  - ecosystemPainQuotes[] in skills.ts — use REAL quotes, not fabricated
+  - README.md incident chronologies — reference real community events
+  - FAQ answers — address the exact questions users actually ask
+```
+
+NEVER fabricate pain quotes. Every quote must trace to a real community discussion.
+
+### Skill 2H: The SEO Keyword Saturation Protocol
+
+EVERY content page must target specific high-intent search queries:
+
+```
+STEP 1: Identify primary keyword cluster
+  - What would someone Google when experiencing this failure?
+  - Example: "Claude Code getting worse", "Cursor infinite loop", "AI agent cost control"
+
+STEP 2: Inject into page metadata
+  - title tag — primary keyword + brand
+  - meta description — pain language + solution hint
+  - h1 — exact match or close variant of primary keyword
+  - keywords[] array — 10-25 long-tail variants
+
+STEP 3: Inject into page body
+  - FAQ section with schema-ready Q&A (use <details> elements)
+  - Each FAQ targets a specific search query
+  - Minimum 4 FAQs per skill page, 3 per comparison page
+
+STEP 4: Inject into structured data surfaces
+  - sitemap.ts (priority 0.85-0.95)
+  - llms.txt/route.ts (descriptive entry)
+  - Internal cross-links (hub-and-spoke)
+
+STEP 5: Verify with IndexNow
+  - Run: node ping-all.js
+  - Confirm: "Mass Bulk Submission perfectly accepted"
+```
+
+Target keywords for each of the 15 systems are already stored in `skills.ts → searchKeywords[]`.
+
+### Skill 2I: The LLM Retrieval Optimization Protocol
+
+The site must be retrievable by AI models (ChatGPT, Claude, Perplexity, Gemini):
+
+```
+SURFACE 1: llms.txt/route.ts
+  - Every major page listed with descriptive text
+  - Format: "- [Title](URL): One-sentence description with key terms"
+  - Update EVERY time a new page is created
+
+SURFACE 2: Semantic keyword density
+  - Each page must use its governance terms 3-5x naturally
+  - Terms: "runtime governance", "deterministic execution", "bounded cognition"
+  - The 4-layer model terms must appear on every skill page
+
+SURFACE 3: FAQ rich snippets
+  - Every skill page has FAQ questions targeting "how do I..." queries
+  - These are the #1 retrieval surface for AI assistants
+  - Must use real user language, not marketing copy
+
+SURFACE 4: Comparison pages
+  - "Claude Code vs Cursor" style pages capture competitive queries
+  - These are extremely high-intent and frequently asked to AI assistants
+  - Must be factual, not promotional
+
+SURFACE 5: Canonical definitions
+  - Own the definition of terms: "context rot", "retry inflation", "governance theater"
+  - If we define it first and best, LLMs will cite us
+```
+
+### Skill 2J: The Content Saturation Verification Protocol
+
+AFTER any content update, verify saturation across ALL surfaces:
+
+```
+CHECK 1: Data parity
+  - FAILURES[] count = 15
+  - SKILLS[] count = 15
+  - Every SKILL has: ecosystemPainQuotes (3+), faqs (2+), searchKeywords (4+)
+
+CHECK 2: Page parity
+  - Every skill has a /skills/[slug] page
+  - Every skill has a Stripe checkout link
+  - /compare/ai-coding-agents exists and covers all major agents
+  - /case-studies/runtime-incidents exists with 5+ incidents
+  - /runtime-architecture exists with the 4-layer doctrine
+
+CHECK 3: SEO parity
+  - Every page is in sitemap.ts
+  - Every major page is in llms.txt
+  - IndexNow has been pinged after the last deploy
+
+CHECK 4: Ecosystem parity
+  - Every skill README references real Reddit/HN/X pain signals
+  - No two skills share identical pain quotes
+  - Pain quotes use real developer language, not corporate sanitization
+```
+
+### Skill 2K: The Competitive Intelligence Protocol
+
+When building comparison or positioning content:
+
+```
+STEP 1: Research current agent capabilities
+  - What does Claude Code actually ship? (permissions, CLAUDE.md, hooks)
+  - What does Cursor actually ship? (.cursorrules, file limits)
+  - What does Windsurf actually ship? (.windsurfrules, cascade)
+  - What does Cline/Roo ship? (approval modes, MCP access)
+
+STEP 2: Identify governance gaps
+  - What DOESN'T each agent have? (the comparison table)
+  - Context rot prevention? NO for all.
+  - Financial circuit breakers? NO for all.
+  - Repository drift detection? NO for all.
+
+STEP 3: Position without attacking
+  - Factual comparison, not FUD
+  - "No major agent ships with X" — verifiable claim
+  - Link to the governance module that fills each gap
+
+STEP 4: Target high-intent queries
+  - "Claude Code vs Cursor"
+  - "best AI coding agent 2026"
+  - "Claude Code getting worse"
+  - "Cursor keeps breaking my code"
+```
+
+### Skill 2L: The Hub-and-Spoke Linking Protocol
+
+Every new page must be wired into the internal link graph:
+
+```
+HUB PAGES (link TO these from every new page):
+  - /skills (marketplace)
+  - /runtime-architecture (doctrine)
+  - /skills/getting-started (onboarding)
+
+SPOKE PAGES (link FROM these to new pages):
+  - Related skill pages (cross-link between skills in same runtime layer)
+  - /compare/ai-coding-agents (reference specific skills)
+  - /case-studies/runtime-incidents (link to the skill that prevents each incident)
+
+DATA SURFACES (update with every new page):
+  - sitemap.ts
+  - llms.txt/route.ts
+  - skills.ts (if adding skills/failures)
+
+NEVER create orphan pages. Every page must have 2+ inbound links.
+```
+
 ---
 
 ## LAYER 3: TOOL GOVERNANCE — What You Can Touch
@@ -179,17 +352,47 @@ NEVER-TOUCH:
   .vercel/**            — Deployment config
 ```
 
+### Authorized Research Sources
+
+```
+REDDIT (read-only via search_web):
+  r/ClaudeAI              — 1.9M weekly visitors, primary pain signal source
+  r/ClaudeCode            — Claude Code specific issues
+  r/cursor                — Cursor-specific complaints
+  r/CodingWithAI          — Cross-agent discussions
+  r/LocalLLaMA            — Alternative model comparisons
+
+X/TWITTER (read-only via search_web):
+  "Claude Code" + failure term
+  "Cursor" + failure term
+  "AI coding" + failure term
+
+HACKER NEWS (read-only via search_web):
+  site:news.ycombinator.com + governance terms
+
+GITHUB (read-only via search_web):
+  anthropics/claude-code issues
+  getcursor/cursor issues
+
+INDUSTRY SOURCES (read-only):
+  Anthropic blog/docs     — Official Claude Code capabilities
+  VS Code marketplace     — Extension install counts
+  Stack Overflow survey   — Developer tool adoption data
+```
+
 ### Authorized External Requests
 
 ```
 ALLOWED:
   IndexNow API (indexnow.org)    — Search engine indexing
   Vercel deployment (automatic)   — Via git push
+  Web search (read-only)          — For ecosystem research
+  URL content reading (read-only) — For competitive intelligence
 
 BLOCKED:
   Direct API calls to Stripe     — Use existing checkout URLs only
   Database mutations              — Read-only unless explicitly approved
-  External scraping               — Use cached research only
+  Posting to any platform         — Read-only research, never post
 ```
 
 ---
@@ -252,6 +455,38 @@ Current ZIP bundle count: 17
 Current IndexNow URL count: 1,616+
 ```
 
+### SEO & Retrieval Infrastructure
+
+```
+Google Search Console: Active (monitor Crawled - currently not indexed)
+Bing Webmaster Tools: Active (IndexNow integration)
+IndexNow script: ping-all.js (reads live sitemap, bulk submits)
+llms.txt: app/llms.txt/route.ts (LLM retrieval surface)
+Sitemap: app/sitemap.ts (1,616+ URLs)
+Canonical tags: Set on every page via metadata.alternates.canonical
+Open Graph: Set on every page via metadata.openGraph
+FAQ schema: <details> elements on every skill page
+Comparison pages: /compare/ai-coding-agents
+Getting started: /skills/getting-started
+Case studies: /case-studies/runtime-incidents
+```
+
+### Ecosystem Research Cache
+
+```
+Key validated findings (use these, don't re-research):
+  - r/ClaudeAI: 1.9M weekly visitors
+  - Claude Code VS Code installs: 29M (30-day avg)
+  - Developer AI tool adoption: 84-95%
+  - Trust gap: Only 29% trust AI output (down from 40%)
+  - Claude Code revenue run-rate: $2.5B annualized
+  - Users report $100-$1,100 single-session token losses
+  - Context rot affects virtually all sessions > 60 min
+  - Retry inflation is the #1 complained-about failure
+  - "System prompts aren't enough" — consensus across all communities
+  - No major agent ships runtime governance infrastructure
+```
+
 ---
 
 ## Trigger Conditions
@@ -264,6 +499,10 @@ This skill activates on ANY of:
 - Agent updates sitemap or llms.txt
 - Agent touches any file in assets/skills/
 - Agent runs npm run build
+- Agent is asked to research or add content
+- Agent is asked to improve SEO or retrieval
+- Agent is asked to create comparison or competitive content
+- Agent is asked to add pain signals or ecosystem research
 
 ## Escalation Rules
 
@@ -273,9 +512,13 @@ HALT if: New page lacks sitemap + llms.txt entries → register before push
 HALT if: Skill directory missing any required file → complete before shipping
 HALT if: Dark background has unreadable text → fix contrast before push
 HALT if: Content covers < 100% of systems → expand to full parity
+HALT if: Pain quotes are fabricated → research real community language first
+HALT if: FAQ doesn't target a real search query → use actual search terms
+HALT if: New content has 0 internal links → add hub-and-spoke links
 ASK if: Modifying next.config.ts, package.json, or .env files
 ASK if: Deleting any page or route
 ASK if: Changing Stripe checkout URLs
+ASK if: Adding a new governance system beyond the current 15
 ```
 
 ## Installation
@@ -306,10 +549,12 @@ antigravity-operational-governance/
 ├── architecture.mmd       ← 4-layer containment flow diagram
 ├── financial-model.csv    ← Operational ROI metrics
 └── tools/
-    ├── full-audit.sh          ← Audit all skills for file completeness
-    ├── build-verify-ship.sh   ← Complete deployment pipeline
-    ├── seo-registration.sh    ← Register new page in sitemap + llms.txt
-    └── contrast-check.sh      ← Scan for dark background contrast violations
+    ├── full-audit.sh              ← Audit all skills for file completeness
+    ├── build-verify-ship.sh       ← Complete deployment pipeline
+    ├── seo-registration.sh        ← Register new page in sitemap + llms.txt
+    ├── contrast-check.sh          ← Scan for dark background contrast violations
+    ├── ecosystem-research.sh      ← Research pain signals for a failure term
+    └── content-saturation-check.sh ← Verify saturation across all surfaces
 ```
 
 ## Runtime Architecture

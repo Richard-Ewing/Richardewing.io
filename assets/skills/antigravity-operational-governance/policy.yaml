@@ -67,6 +67,84 @@ skill_governance:
     minimum_systems: 15
     no_duplicate_arrays: true
 
+  ecosystem_research:
+    required_before: ["new_skill", "new_failure", "new_case_study", "new_faq"]
+    sources:
+      reddit:
+        subreddits: ["r/ClaudeAI", "r/ClaudeCode", "r/cursor", "r/CodingWithAI", "r/LocalLLaMA"]
+        search_pattern: "{failure_term} + frustrated|broken|keeps|why does"
+        extract: ["exact_phrasing", "upvote_counts", "thread_frequency"]
+      twitter:
+        search_pattern: "\"Claude Code\" OR \"Cursor\" + {failure_term}"
+        extract: ["viral_complaints", "pain_intensity"]
+      hacker_news:
+        search_pattern: "site:news.ycombinator.com + {failure_term}"
+        extract: ["technical_depth", "architectural_critiques"]
+      github:
+        repos: ["anthropics/claude-code", "getcursor/cursor"]
+        extract: ["issue_titles", "reproduction_steps", "workarounds"]
+    injection_targets:
+      - "lib/content/skills.ts → ecosystemPainQuotes[]"
+      - "assets/skills/[slug]/README.md → incident chronology"
+      - "app/skills/[slug] → FAQ section"
+    rules:
+      no_fabricated_quotes: true
+      minimum_sources_per_skill: 2
+      minimum_quotes_per_skill: 3
+      no_duplicate_quotes_across_skills: true
+
+  seo_keyword_saturation:
+    required_per_page:
+      title_tag: "primary keyword + brand"
+      meta_description: "pain language + solution hint"
+      h1: "exact match or close variant"
+      keywords_array: "10-25 long-tail variants"
+      faq_minimum: 4
+    structured_data:
+      sitemap_priority_range: [0.85, 0.95]
+      llms_txt_required: true
+      canonical_required: true
+      open_graph_required: true
+    keyword_sources:
+      - "skills.ts → searchKeywords[]"
+      - "Reddit thread titles"
+      - "Google autocomplete"
+      - "GitHub issue titles"
+
+  llm_retrieval:
+    surfaces:
+      - name: "llms.txt"
+        file: "app/llms.txt/route.ts"
+        update_trigger: "every new page"
+      - name: "FAQ rich snippets"
+        requirement: "every skill page, targeting how-do-I queries"
+      - name: "comparison pages"
+        requirement: "factual agent comparisons for competitive queries"
+      - name: "canonical definitions"
+        requirement: "own definition of context rot, retry inflation, governance theater"
+    keyword_density:
+      terms_per_page: 3-5
+      terms: ["runtime governance", "deterministic execution", "bounded cognition"]
+
+  competitive_intelligence:
+    agents_to_track: ["Claude Code", "Cursor", "Windsurf", "Cline", "Roo Code", "Codex"]
+    research_targets: ["shipped features", "governance gaps", "pricing changes"]
+    positioning_rules:
+      factual_only: true
+      no_fud: true
+      link_to_solution: true
+    high_intent_queries:
+      - "Claude Code vs Cursor"
+      - "best AI coding agent 2026"
+      - "Claude Code getting worse"
+      - "Cursor keeps breaking my code"
+
+  hub_and_spoke:
+    hub_pages: ["/skills", "/runtime-architecture", "/skills/getting-started"]
+    minimum_inbound_links: 2
+    data_surfaces_to_update: ["sitemap.ts", "llms.txt/route.ts", "skills.ts"]
+    no_orphan_pages: true
+
 tool_governance:
   authorized_commands:
     build: "npm run build"
@@ -74,6 +152,8 @@ tool_governance:
     index: "node ping-all.js"
     bundle: "node scripts/build-asset-bundles.js"
     audit: "PowerShell Get-ChildItem audits"
+    research: "search_web (read-only)"
+    read_url: "read_url_content (read-only)"
   
   restricted_commands:
     require_approval:
@@ -101,6 +181,16 @@ tool_governance:
       - "node_modules/**"
       - ".vercel/**"
 
+  research_sources:
+    read_only:
+      - "reddit.com (r/ClaudeAI, r/ClaudeCode, r/cursor, r/CodingWithAI)"
+      - "x.com (search only, never post)"
+      - "news.ycombinator.com"
+      - "github.com issues (anthropics, getcursor)"
+      - "docs.anthropic.com"
+      - "marketplace.visualstudio.com"
+    never_post: true
+
 environment_governance:
   current_state:
     page_count: "852+"
@@ -115,6 +205,28 @@ environment_governance:
     sitemap: "app/sitemap.ts"
     llms_txt: "app/llms.txt/route.ts"
   
+  seo_infrastructure:
+    google_search_console: "active"
+    bing_webmaster_tools: "active"
+    indexnow_script: "ping-all.js"
+    canonical_tags: "set on every page"
+    open_graph: "set on every page"
+    faq_schema: "details elements on skill pages"
+    comparison_pages: "/compare/ai-coding-agents"
+    case_studies: "/case-studies/runtime-incidents"
+
+  ecosystem_research_cache:
+    claude_ai_subreddit_weekly_visitors: "1.9M"
+    claude_code_vscode_installs: "29M (30-day avg)"
+    developer_ai_adoption: "84-95%"
+    ai_output_trust_rate: "29% (down from 40%)"
+    claude_code_revenue_run_rate: "$2.5B annualized"
+    single_session_token_losses: "$100-$1,100"
+    context_rot_prevalence: "virtually all sessions > 60 min"
+    top_complaint: "retry inflation"
+    consensus_finding: "system prompts aren't enough"
+    governance_gap: "no major agent ships runtime governance"
+
   financial_constraints:
     build_cost: "$0 (static generation)"
     hosting: "Vercel free tier"
@@ -128,8 +240,13 @@ escalation_rules:
     - "Skill directory missing required files"
     - "Dark background with unreadable text"
     - "Content covers < 100% of systems"
+    - "Pain quotes are fabricated (not from real sources)"
+    - "FAQ doesn't target a real search query"
+    - "New content has 0 internal links (orphan page)"
   ask_conditions:
     - "Modifying next.config.ts"
     - "Modifying package.json"
     - "Deleting any page or route"
     - "Changing Stripe URLs"
+    - "Adding a new governance system beyond current 15"
+

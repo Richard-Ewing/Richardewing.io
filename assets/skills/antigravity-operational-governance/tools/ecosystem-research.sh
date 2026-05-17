@@ -1,0 +1,58 @@
+#!/bin/bash
+# ecosystem-research.sh — Research ecosystem pain signals for a given failure term
+# Part of: Antigravity Operational Governance Skill
+# Usage: bash tools/ecosystem-research.sh "context rot"
+
+TERM="${1}"
+
+if [ -z "$TERM" ]; then
+    echo "Usage: bash tools/ecosystem-research.sh \"failure term\""
+    echo "Example: bash tools/ecosystem-research.sh \"context rot\""
+    exit 1
+fi
+
+echo "============================================"
+echo "ECOSYSTEM PAIN SIGNAL RESEARCH: $TERM"
+echo "============================================"
+echo ""
+
+echo "--- REQUIRED RESEARCH STEPS ---"
+echo ""
+echo "STEP 1: Reddit Search"
+echo "  Search r/ClaudeAI for: \"$TERM\""
+echo "  Search r/ClaudeCode for: \"$TERM\""
+echo "  Search r/cursor for: \"$TERM\""
+echo "  Search r/CodingWithAI for: \"$TERM\""
+echo "  Extract: exact phrasing, upvote counts, thread frequency"
+echo ""
+echo "STEP 2: X/Twitter Search"
+echo "  Search: \"Claude Code\" \"$TERM\""
+echo "  Search: \"Cursor\" \"$TERM\""
+echo "  Extract: viral complaints, pain intensity"
+echo ""
+echo "STEP 3: Hacker News Search"
+echo "  Search: site:news.ycombinator.com \"$TERM\""
+echo "  Extract: technical depth, architectural critiques"
+echo ""
+echo "STEP 4: GitHub Issues Search"
+echo "  Search: anthropics/claude-code issues \"$TERM\""
+echo "  Search: getcursor/cursor issues \"$TERM\""
+echo "  Extract: issue titles, reproduction steps"
+echo ""
+echo "--- INJECTION TARGETS ---"
+echo ""
+echo "After research, inject findings into:"
+echo "  1. lib/content/skills.ts → ecosystemPainQuotes[]"
+echo "  2. assets/skills/[slug]/README.md → incident chronology"
+echo "  3. assets/skills/[slug]/CLAUDE.md → FAQ answers"
+echo "  4. app/skills/[slug]/page.tsx → FAQ section"
+echo ""
+echo "--- VALIDATION ---"
+echo ""
+echo "Before shipping:"
+echo "  ✗ Are the quotes real? (not fabricated)"
+echo "  ✗ Are they from different sources? (not all Reddit)"
+echo "  ✗ Do they use developer language? (not corporate sanitization)"
+echo "  ✗ Are they unique across skills? (no duplicates)"
+echo ""
+echo "============================================"
