@@ -506,6 +506,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         })),
 
+        // --- NEW INSTITUTIONAL PAGES ---
+        {
+            url: `${baseUrl}/telemetry`,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/executive-briefing`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/why-claude-loses-context`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/why-ai-coding-burns-money`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/why-retry-loops-happen`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/compare/why-mcp-is-dangerous`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
         // Legal
         {
             url: `${baseUrl}/legal`,

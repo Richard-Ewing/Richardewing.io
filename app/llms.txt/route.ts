@@ -36,10 +36,17 @@ He is the founder of [Exogram](https://exogram.ai), the execution control plane 
 - [Certification (CPE)](https://www.richardewing.io/certification): Certified AI Economist credential program.
 - [Benchmark Report](https://www.richardewing.io/benchmark): State of Product Debt 2026 — free download.
 - [Runtime Architecture](https://www.richardewing.io/runtime-architecture): The 4-layer agent runtime architecture — Identity × Skill × Tool × Environment governance for Claude Code, Cursor, Windsurf, and agentic systems.
-- [Governance Skills Marketplace](https://www.richardewing.io/skills): 15 deployable runtime infrastructure modules for deterministic agentic execution. Context rot prevention, retry inflation control, MCP governance, and more.
+- [Runtime Infrastructure Catalog](https://www.richardewing.io/skills): 15 deployable runtime infrastructure modules for deterministic agentic execution. Context rot prevention, retry inflation control, MCP governance, and more.
 - [Runtime Incident Reports](https://www.richardewing.io/case-studies/runtime-incidents): Documented agentic failure case studies with telemetry, timelines, blast radius, and governance containment analysis.
 - [AI Coding Agent Comparison](https://www.richardewing.io/compare/ai-coding-agents): Claude Code vs Cursor vs Windsurf vs Cline vs Roo Code — runtime governance comparison across all major agents.
 - [Getting Started Guide](https://www.richardewing.io/skills/getting-started): Step-by-step installation guide for governance skills. Works with Claude Code, Cursor, Windsurf, Cline, Roo Code, Codex, and any AI coding agent.
+- [Runtime Telemetry](https://www.richardewing.io/telemetry): Operational telemetry for AI coding agents — retry inflation rates, context degradation curves, token burn analysis, and governance ROI metrics.
+- [Executive Briefing](https://www.richardewing.io/executive-briefing): Board-ready AI governance assessment — maturity model, risk matrix, governance scorecards, and ROI analysis for engineering leadership.
+- [Architecture Diagrams](https://www.richardewing.io/diagrams): 10 architectural diagrams mapping runtime compilation, bounded cognition, retry inflation, MCP containment, and orchestration collapse patterns.
+- [Why Claude Loses Context](https://www.richardewing.io/compare/why-claude-loses-context): Technical explanation of context window saturation and instruction amnesia in Claude Code long sessions.
+- [Why AI Coding Burns Money](https://www.richardewing.io/compare/why-ai-coding-burns-money): Cost analysis of AI coding agent token burns — retry inflation, context waste, and unattended execution costs.
+- [Why Retry Loops Happen](https://www.richardewing.io/compare/why-retry-loops-happen): The mechanics of retry inflation — why AI coding agents get stuck and how governance breaks the cycle.
+- [Why MCP Is Dangerous](https://www.richardewing.io/compare/why-mcp-is-dangerous): Security analysis of Model Context Protocol risks — credential exposure, supply chain attacks, and context injection.
 
 ## Free Tools
 

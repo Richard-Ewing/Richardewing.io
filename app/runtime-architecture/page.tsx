@@ -288,7 +288,7 @@ export default function RuntimeArchitecturePage() {
                 {/* BACK LINK */}
                 <div className="text-center">
                     <Link href="/skills" className="inline-flex items-center text-sm font-semibold text-zinc-600 hover:text-zinc-950 transition-colors font-bold uppercase tracking-widest">
-                        ← Return to Marketplace
+                        ← Return to Infrastructure Catalog
                     </Link>
                 </div>
             </div>

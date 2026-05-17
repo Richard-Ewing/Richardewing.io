@@ -318,7 +318,7 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
 
                 <div className="mt-12 text-center">
                     <Link href="/skills" className="inline-flex items-center text-sm font-semibold text-zinc-600 hover:text-zinc-950 transition-colors font-bold uppercase tracking-widest">
-                        ← Return to Marketplace
+                        ← Return to Infrastructure Catalog
                     </Link>
                 </div>
             </div>

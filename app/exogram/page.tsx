@@ -119,6 +119,82 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
+                {/* Runtime Compiler Pipeline — makes Exogram tangible */}
+                <section className="section bg-[#F5F0EB]">
+                    <div className="max-w-4xl mx-auto px-4 md:px-0">
+                        <div className="text-center mb-10">
+                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-purple-700 mb-2 block">How It Works</span>
+                            <h2 className="text-3xl font-bold text-zinc-950 mb-4">The Runtime Compilation Pipeline</h2>
+                            <p className="text-zinc-700 max-w-2xl mx-auto">
+                                Exogram compiles Identity + Skill + Tool + Environment constraints into a deterministic execution payload.
+                                This is how philosophical governance becomes operational enforcement.
+                            </p>
+                        </div>
+                        <div className="space-y-4 max-w-xl mx-auto">
+                            {[
+                                { step: '1', label: 'Trigger Detection', desc: 'Agent receives task. Exogram intercepts before execution begins.', layer: 'Identity', color: 'border-cyan-200 bg-cyan-50' },
+                                { step: '2', label: 'Skill Resolution', desc: 'Maps the task to governance skills. Loads applicable YAML policies.', layer: 'Skill', color: 'border-purple-200 bg-purple-50' },
+                                { step: '3', label: 'Tool Authorization', desc: 'Validates tool permissions. Blocks destructive commands. Scopes file access.', layer: 'Tool', color: 'border-red-200 bg-red-50' },
+                                { step: '4', label: 'Context Assembly', desc: 'Checks context utilization, prunes stale data, preserves architectural state.', layer: 'Environment', color: 'border-emerald-200 bg-emerald-50' },
+                                { step: '5', label: 'Runtime Compilation', desc: 'Compiles constraints into execution payload with budget caps, retry limits, and scope boundaries.', layer: 'Runtime', color: 'border-amber-200 bg-amber-50' },
+                                { step: '6', label: 'Constrained Execution', desc: 'Agent executes within governance boundaries. Every mutation logged. Violations halted.', layer: 'Execution', color: 'border-zinc-200 bg-white' },
+                            ].map((s) => (
+                                <div key={s.step} className={`rounded-xl border ${s.color} p-5 flex items-start gap-4`}>
+                                    <span className="w-8 h-8 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-sm font-bold text-zinc-900 flex-shrink-0">{s.step}</span>
+                                    <div>
+                                        <div className="flex items-center gap-2 mb-1">
+                                            <h3 className="text-sm font-bold text-zinc-950">{s.label}</h3>
+                                            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-500 px-2 py-0.5 bg-white rounded border border-zinc-200">{s.layer}</span>
+                                        </div>
+                                        <p className="text-sm text-zinc-700">{s.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Before/After — makes Exogram feel deployable */}
+                <section className="section bg-white border-y border-zinc-200">
+                    <div className="max-w-4xl mx-auto px-4 md:px-0">
+                        <div className="text-center mb-10">
+                            <h2 className="text-3xl font-bold text-zinc-950 mb-4">Before vs After Exogram</h2>
+                            <p className="text-zinc-700">The operational difference between ungoverned and governed agentic execution.</p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="rounded-xl border border-rose-200 bg-rose-50 p-6">
+                                <h3 className="text-lg font-bold text-rose-800 mb-4">Without Exogram</h3>
+                                <ul className="space-y-3 text-sm text-rose-900">
+                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> System prompts bypassed in 3 messages</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> Context rots after 60 minutes</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> Retry loops burn $100-$1,100</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> MCP servers access .env files</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> No audit trail for agent actions</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> Agents modify files outside scope</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> No financial circuit breakers</li>
+                                </ul>
+                            </div>
+                            <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6">
+                                <h3 className="text-lg font-bold text-emerald-800 mb-4">With Exogram</h3>
+                                <ul className="space-y-3 text-sm text-emerald-900">
+                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Rules enforced via middleware, not language</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Checkpoint rotation maintains 95%+ recall</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Retry halted at attempt 3 ($25 cap)</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> File guards block sensitive path access</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Every action logged with rollback</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Scope enforcement blocks creep</li>
+                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Per-task and per-session budget caps</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="mt-8 text-center">
+                            <Link href="/skills" className="px-8 py-4 bg-zinc-950 text-white font-bold rounded hover:bg-zinc-800 transition-colors inline-block">
+                                Deploy Runtime Governance Modules →
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Why I Built Exogram */}
                 <section className="section bg-white border-y border-zinc-200 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-purple-500"></div>
