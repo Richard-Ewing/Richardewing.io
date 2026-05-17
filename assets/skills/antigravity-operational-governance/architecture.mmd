@@ -1,0 +1,49 @@
+graph TD
+    A[Agent Action Received] --> B{Layer 1: Identity Check}
+    B -->|Pass| C{Layer 2: Skill Check}
+    B -->|Fail| H[HALT: Identity Violation]
+    
+    C -->|Pass| D{Layer 3: Tool Check}
+    C -->|Fail| I[HALT: Skill Violation]
+    
+    D -->|Pass| E{Layer 4: Environment Check}
+    D -->|Fail| J[HALT: Tool Violation]
+    
+    E -->|Pass| F[Execute Action]
+    E -->|Fail| K[HALT: Environment Violation]
+    
+    F --> G{Post-Action Verification}
+    G -->|Build passes| L[Register SEO]
+    G -->|Build fails| M[HALT: Fix Before Commit]
+    
+    L --> N[sitemap.ts]
+    L --> O[llms.txt]
+    L --> P[IndexNow ping]
+    
+    N --> Q[Git Commit + Push]
+    O --> Q
+    P --> Q
+    
+    Q --> R[Triple Check]
+    R -->|All pass| S[Report Complete]
+    R -->|Any fail| T[Fix and Re-verify]
+
+    subgraph "Identity Layer"
+        B
+        H
+    end
+    
+    subgraph "Skill Layer"
+        C
+        I
+    end
+    
+    subgraph "Tool Layer"
+        D
+        J
+    end
+    
+    subgraph "Environment Layer"
+        E
+        K
+    end

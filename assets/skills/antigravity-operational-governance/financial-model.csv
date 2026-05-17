@@ -1,0 +1,10 @@
+metric,without_governance,with_governance,savings_percent,notes
+rework_hours_per_session,4.0,0.5,87.5%,Contrast fixes and parity gaps eliminated
+sessions_to_fix_contrast,3.0,0.0,100%,Caught on first pass by Skill 2E
+broken_production_deploys,2.0,0.0,100%,Build-verify-ship pipeline prevents
+pages_invisible_to_seo,5.0,0.0,100%,Mandatory triple registration
+duplicate_content_incidents,1.0,0.0,100%,Uniqueness verification in audit
+partial_parity_incidents,4.0,0.0,100%,Content expansion protocol enforces full coverage
+avg_verification_time_min,45.0,10.0,77.8%,Programmatic triple-check vs manual
+total_session_efficiency,60%,95%,58.3%,Measured by work shipped vs work reworked
+estimated_annual_hours_saved,96.0,12.0,87.5%,Based on 2 sessions per week

@@ -1,0 +1,135 @@
+# Antigravity Operational Governance Policy
+version: "1.0.0"
+runtime_layer: "ALL (Identity + Skill + Tool + Environment)"
+domain: "Meta-Governance — Operational Discipline"
+
+identity_governance:
+  mission: "Institutional-grade governance infrastructure provider"
+  positioning: "Deterministic Runtime Governance, not AI education"
+  language_rules:
+    use: ["runtime containment", "governance infrastructure", "deterministic execution", "bounded cognition"]
+    avoid: ["AI tips", "prompt tricks", "AI hacks", "coding assistant", "AI tutorial"]
+  authority_boundaries:
+    never_delete_pages: true
+    never_modify_stripe_links: true
+    never_change_architecture_model: true
+    never_use_placeholders: true
+
+skill_governance:
+  build_pipeline:
+    sequence: ["code_change", "npm_run_build", "verify_zero_errors", "git_commit_push", "indexnow_ping"]
+    halt_on_build_error: true
+    halt_on_missing_registration: true
+
+  seo_registration:
+    required_for_every_new_page: true
+    registrations:
+      - target: "app/sitemap.ts"
+        format: "url entry with priority"
+      - target: "app/llms.txt/route.ts"
+        format: "markdown link with description"
+      - target: "IndexNow ping"
+        command: "node ping-all.js"
+
+  triple_check:
+    enabled: true
+    checks:
+      - type: "file_completeness"
+        method: "Test-Path audit"
+      - type: "build_passes"
+        method: "npm run build"
+      - type: "data_integrity"
+        method: "no duplicates, no stubs"
+
+  asset_parity:
+    required_files:
+      - "CLAUDE.md"
+      - "GETTING-STARTED.md"
+      - "README.md"
+      - "policy.yaml"
+      - "middleware.ts"
+      - "architecture.mmd"
+      - "financial-model.csv"
+    required_tools_minimum: 4
+    uniqueness_check: true
+
+  contrast_enforcement:
+    min_text_contrast: "WCAG AA (4.5:1)"
+    forbidden_patterns:
+      - "text-gray-300 on bg-[#1A1A1A]"
+      - "text-gray-400 on bg-[#1A1A1A]"
+      - "text-[#6B6B6B] on bg-[#1A1A1A]"
+    allowed_dark_sections: ["CTA boxes only (bg-[#1A1A1A] with text-white)"]
+    body_text_range: ["#1A1A1A", "#4A4A4A"]
+
+  content_expansion:
+    require_full_parity: true
+    minimum_systems: 15
+    no_duplicate_arrays: true
+
+tool_governance:
+  authorized_commands:
+    build: "npm run build"
+    deploy: "git add . && git commit && git push"
+    index: "node ping-all.js"
+    bundle: "node scripts/build-asset-bundles.js"
+    audit: "PowerShell Get-ChildItem audits"
+  
+  restricted_commands:
+    require_approval:
+      - "npm install"
+      - "rm -rf"
+      - "any database mutation"
+      - "next.config.ts modification"
+
+  file_permissions:
+    write_allowed:
+      - "app/**/*.tsx"
+      - "components/**/*.tsx"
+      - "lib/content/*.ts"
+      - "assets/skills/**/*"
+      - "public/downloads/*"
+      - "app/sitemap.ts"
+      - "app/llms.txt/route.ts"
+    write_restricted:
+      - "next.config.ts"
+      - "package.json"
+      - ".env*"
+      - "middleware.ts (root)"
+    never_touch:
+      - ".git/**"
+      - "node_modules/**"
+      - ".vercel/**"
+
+environment_governance:
+  current_state:
+    page_count: "852+"
+    skill_count: 15
+    failure_count: 15
+    bundle_count: 17
+    indexnow_urls: "1616+"
+    stripe_links: 15
+  
+  data_sources:
+    skills_data: "lib/content/skills.ts"
+    sitemap: "app/sitemap.ts"
+    llms_txt: "app/llms.txt/route.ts"
+  
+  financial_constraints:
+    build_cost: "$0 (static generation)"
+    hosting: "Vercel free tier"
+    indexnow: "Free"
+    stripe_modification: "BLOCKED"
+
+escalation_rules:
+  halt_conditions:
+    - "Build produces errors"
+    - "New page lacks sitemap + llms.txt"
+    - "Skill directory missing required files"
+    - "Dark background with unreadable text"
+    - "Content covers < 100% of systems"
+  ask_conditions:
+    - "Modifying next.config.ts"
+    - "Modifying package.json"
+    - "Deleting any page or route"
+    - "Changing Stripe URLs"
