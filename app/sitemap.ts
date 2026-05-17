@@ -308,74 +308,84 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.8,
         },
-        {
-            url: `${baseUrl}/compare/pdi-vs-codeclimate`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/compare/aper-vs-linearb`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
 
-        // Industry verticals
+        // --- HIGH-VALUE HUB PAGES ---
         {
-            url: `${baseUrl}/system`,
+            url: `${baseUrl}/skills`,
+            changeFrequency: 'weekly',
+            priority: 0.95,
+        },
+        {
+            url: `${baseUrl}/diagrams`,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/industries`,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/blog`,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/curriculum`,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/case-studies`,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/checklist`,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/faq`,
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/system`,
+            url: `${baseUrl}/start-here`,
             changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
+            priority: 0.9,
         },
 
-        // Guides / Content Hubs
+        // Comparison pages hub
         {
-            url: `${baseUrl}/system`,
+            url: `${baseUrl}/compare`,
             changeFrequency: 'monthly',
             priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/compare/pdi-vs-sonarqube`,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/compare/audit-interview-vs-leetcode`,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/compare/aueb-vs-aws-cost-explorer`,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/compare/audit-interview-vs-hackerrank`,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/compare/ev-se-vs-jellyfish`,
+            changeFrequency: 'monthly',
+            priority: 0.8,
         },
 
         // Blog Recap Pages
@@ -424,30 +434,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
 
-        // Additional Industry Verticals
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-
-        // More Industry + Comparison
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/compare/pdi-vs-waydev`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-
         // Methodology + Social Proof
         {
             url: `${baseUrl}/testimonials`,
@@ -459,20 +445,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.7,
         },
-        {
-            url: `${baseUrl}/vault/curriculum/tracks`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
 
-        // More Verticals + Comparisons (Pass 20)
+        // Additional Comparisons
         {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/system`,
+            url: `${baseUrl}/compare/pdi-vs-waydev`,
             changeFrequency: 'monthly',
             priority: 0.7,
         },

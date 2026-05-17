@@ -70,7 +70,18 @@ export const personSchema = {
         "Action Admissibility",
         "Fractional CTO Advisory",
         "PE/VC Technical Due Diligence",
-        "Platform Engineering Strategy"
+        "Platform Engineering Strategy",
+        "Runtime Governance",
+        "Context Rot Prevention",
+        "Retry Inflation Control",
+        "MCP Governance",
+        "Bounded Cognition",
+        "Repository Drift Prevention",
+        "Orchestration Entropy",
+        "Agentic Change Management",
+        "AI Coding Agent Governance",
+        "Runtime Failure Analysis",
+        "4-Layer Governance Architecture"
     ],
     "brand": {
         "@type": "Brand",
