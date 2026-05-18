@@ -28,7 +28,8 @@ export async function GET(
     const moduleId = searchParams.get('moduleId');
     
     // Support dual-referencing for granular module purchases
-    const referenceId = moduleId ? `${userId}::module_${moduleId}` : userId;
+    // Format: userId::productId or userId::module_X for legacy module purchases
+    const referenceId = moduleId ? `${userId}::module_${moduleId}` : `${userId}::${productId}`;
     stripeUrl.searchParams.append('client_reference_id', referenceId);
 
     return NextResponse.redirect(stripeUrl);
