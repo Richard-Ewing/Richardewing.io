@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ShieldCheck, Server, Key, AlertTriangle, ArrowRight, Zap, Target, MessageSquare, Activity, HelpCircle } from 'lucide-react';
@@ -26,7 +26,7 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
     const { slug } = await params;
     const skill = getSkillBySlug(slug);
 
-    if (!skill) notFound();
+    if (!skill) permanentRedirect('/skills');
 
     // Look up connected ontology nodes for semantic routing
     const skillNode = ontologyGraph.find(n => n.id === `skill_${slug}`);

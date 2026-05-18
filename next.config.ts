@@ -247,32 +247,7 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks/comparisons/17-5',
         permanent: true,
       },
-      // Wildcard Fallbacks
-      {
-        source: '/compare/:slug*',
-        destination: '/compare',
-        permanent: true,
-      },
-      {
-        source: '/guides/:slug*',
-        destination: '/vault/curriculum/tracks',
-        permanent: true,
-      },
-      {
-        source: '/guides',
-        destination: '/vault/curriculum/tracks',
-        permanent: true,
-      },
-      {
-        source: '/comparisons/:slug*',
-        destination: '/vault/curriculum/tracks',
-        permanent: true,
-      },
-      {
-        source: '/comparisons',
-        destination: '/vault/curriculum/tracks',
-        permanent: true,
-      },
+      // Wildcard Fallbacks removed due to redirect loops. Handled by [...]catchAll and notFound() replacement.
       // ═══════════════════ AHREFS 404 REMEDIATION (282 URLs) ═══════════════════
       // These wildcard rules eliminate ALL 404 patterns identified in the Ahrefs crawl.
       // Pattern 1: /glossary/terms/:slug → /glossary/:slug (lesson inline links use wrong path)

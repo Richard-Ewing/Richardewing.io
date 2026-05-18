@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, TrendingDown, ArrowRight, Activity, MessageSquare, HelpCircle } from 'lucide-react';
@@ -25,7 +25,7 @@ export default async function FailureDetailPage({ params }: { params: Promise<{ 
     const { slug } = await params;
     const failure = getFailureBySlug(slug);
 
-    if (!failure) notFound();
+    if (!failure) permanentRedirect('/failures');
 
     // Look up connected ontology nodes for semantic routing
     const failureNode = ontologyGraph.find(n => n.id === `failure_${slug}`);

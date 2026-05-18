@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Lock, BarChart2 } from 'lucide-react';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { ExportToPDFButton } from '@/components/ExportToPDFButton';
 
 export default async function ReportDetailPage({ params }: { params: { slug: string } }) {
@@ -18,7 +18,7 @@ export default async function ReportDetailPage({ params }: { params: { slug: str
     ].includes(slug);
 
     if (!isValidReport) {
-        notFound();
+        permanentRedirect('/reports');
     }
 
     return (

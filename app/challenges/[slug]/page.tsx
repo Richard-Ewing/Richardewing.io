@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { challenges } from '../data';
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ChallengePage({ params }: Props) {
     const { slug } = await params;
     const challenge = challenges.find(c => c.slug === slug);
-    if (!challenge) notFound();
+    if (!challenge) permanentRedirect('/challenges');
 
     return (
         <div className="max-w-4xl w-full relative z-10 mx-auto">
