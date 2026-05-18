@@ -108,7 +108,7 @@ export default function AIIntegrationPage() {
                                     </li>
                                 ))}
                             </ul>
-                            <a href="mailto:richard@richardewing.io?subject=AI Integration: Quarterly Audit" className="block text-center py-3 bg-[#1A1A1A] text-white font-bold rounded-lg text-sm hover:bg-zinc-800 transition-colors">Book Your Audit →</a>
+                            <a href="/advisory" className="block text-center py-3 bg-[#1A1A1A] text-white font-bold rounded-lg text-sm hover:bg-zinc-800 transition-colors">Book Your Audit →</a>
                         </div>
 
                         {/* Tier 2: Monthly Advisor (Featured) */}
@@ -130,7 +130,7 @@ export default function AIIntegrationPage() {
                                     </li>
                                 ))}
                             </ul>
-                            <a href="mailto:richard@richardewing.io?subject=AI Integration: Monthly Advisor" className="block text-center py-3 bg-emerald-600 text-white font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Start the Conversation →</a>
+                            <a href="/advisory" className="block text-center py-3 bg-emerald-600 text-white font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Start the Conversation →</a>
                         </div>
 
                         {/* Tier 3: The System */}
@@ -254,7 +254,7 @@ export default function AIIntegrationPage() {
                     <h2 className="text-2xl font-grotesk font-bold mb-3">Ready to Stop Guessing?</h2>
                     <p className="text-emerald-100 mb-6 max-w-xl mx-auto">One conversation. Ten priorities. A 30-day plan. You'll know exactly what to do with AI by the end of the first session.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="mailto:richard@richardewing.io?subject=AI Integration: Let's Talk" className="px-8 py-4 bg-white text-emerald-800 font-bold rounded-lg hover:bg-emerald-50 transition-colors">Book Your First Audit →</a>
+                        <a href="/advisory" className="px-8 py-4 bg-white text-emerald-800 font-bold rounded-lg hover:bg-emerald-50 transition-colors">Book Your First Audit →</a>
                         <Link href="/ai-integration/system" className="px-8 py-4 text-white font-bold rounded-lg border border-white/30 hover:border-white/60 transition-colors">View the DIY System →</Link>
                     </div>
                 </div>
