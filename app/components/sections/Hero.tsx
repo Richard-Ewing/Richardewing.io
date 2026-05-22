@@ -17,7 +17,7 @@ const Hero = () => {
                 </div>
 
                 {/* Main Headline — Financial framing */}
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6 leading-tight flex flex-col items-center">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6 leading-tight flex flex-col items-center">
                     <span>Stop Paying the</span>
                     <span className="flex flex-wrap justify-center gap-x-3 mt-1">
                         <WordRotate
@@ -25,7 +25,7 @@ const Hero = () => {
                             words={["AI Innovation Tax.", "Hallucination Debt.", "Retry Inflation Cost.", "Margin Collapse Fee."]}
                         />
                     </span>
-                </div>
+                </h1>
 
                 {/* Subheadline — operational specificity */}
                 <p className="text-xl md:text-2xl text-zinc-900 mb-4 max-w-3xl mx-auto leading-relaxed font-medium">
