@@ -3,36 +3,46 @@
 import Link from 'next/link';
 import WordRotate from '@/components/magicui/word-rotate';
 import { AsSeenIn } from '@/components/AsSeenIn';
-import { ArrowRight, Shield, TrendingDown, Search } from 'lucide-react';
+import { ArrowRight, Shield, AlertTriangle, Search } from 'lucide-react';
 
 const Hero = () => {
     return (
         <section className="min-h-[75vh] flex items-center justify-center py-16">
             <div className="page-container text-center">
 
-                {/* Eyebrow pill — stat-driven urgency */}
+                {/* Eyebrow pill — operational authority */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 border border-rose-200 mb-6">
                     <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-                    <span className="text-sm font-semibold text-zinc-950">80% of Enterprise AI Projects Fail (RAND) — Yours Doesn't Have To</span>
+                    <span className="text-sm font-semibold text-zinc-950">Published in Built In · CIO.com · HackerNoon · Mind the Product</span>
                 </div>
 
-                {/* Main Headline — Financial framing */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6 leading-tight flex flex-col items-center">
-                    <span>Stop Paying the</span>
-                    <span className="flex flex-wrap justify-center gap-x-3 mt-1">
-                        <WordRotate
-                            className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-500 to-purple-600 font-extrabold"
-                            words={["AI Innovation Tax.", "Hallucination Debt.", "Retry Inflation Cost.", "Margin Collapse Fee."]}
-                        />
+                {/* H1 — Static dominant thesis */}
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 mb-4 leading-tight max-w-4xl mx-auto">
+                    Most AI Failures Are Not Model Failures.{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-500 to-purple-600">
+                        They Are Operational Failures.
                     </span>
                 </h1>
 
-                {/* Subheadline — operational specificity */}
-                <p className="text-xl md:text-2xl text-zinc-900 mb-4 max-w-3xl mx-auto leading-relaxed font-medium">
-                    Transform volatile AI models into predictable, enterprise-grade assets.
-                </p>
-                <p className="text-lg text-zinc-800 mb-8 max-w-2xl mx-auto">
-                    I audit R&D capital, diagnose AI unit economics, and build the deterministic verification infrastructure that eliminates execution variance before it hits your P&L.
+                {/* Constrained pain rotator — subordinated beneath thesis */}
+                <div className="flex justify-center items-center gap-2 mb-4 text-lg md:text-xl text-zinc-700 font-medium">
+                    <AlertTriangle className="w-4 h-4 text-rose-500 flex-shrink-0" />
+                    <WordRotate
+                        className="text-zinc-900 font-bold"
+                        words={[
+                            "Context rot degrades every session.",
+                            "Retry inflation burns budget overnight.",
+                            "Repository drift rewrites production code.",
+                            "Verification collapse ships hallucinations.",
+                            "Cascading permissions breach containment.",
+                        ]}
+                    />
+                </div>
+
+                {/* Operational specificity subheadline */}
+                <p className="text-lg text-zinc-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    I audit R&D capital, diagnose AI unit economics, and build the deterministic
+                    governance infrastructure that turns volatile AI into predictable enterprise assets.
                 </p>
 
                 {/* Dual CTA */}
@@ -53,7 +63,7 @@ const Hero = () => {
                 {/* As Seen In */}
                 <AsSeenIn />
 
-                {/* 3-Step Engine — DIAGNOSE → UNDERSTAND → ENFORCE */}
+                {/* 3-Step Engine — DIAGNOSE → CONTAIN → ENFORCE */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
 
                     <Link href="/tools/pdi" className="card text-left hover:border-rose-300 group block relative overflow-hidden">
@@ -75,12 +85,12 @@ const Hero = () => {
                         <div className="pt-4">
                             <div className="flex items-center gap-3 mb-3">
                                 <div className="w-10 h-10 rounded-lg bg-violet-50 border border-violet-200 flex items-center justify-center">
-                                    <TrendingDown className="w-5 h-5 text-violet-600" />
+                                    <AlertTriangle className="w-5 h-5 text-violet-600" />
                                 </div>
                                 <div className="text-xs font-bold text-violet-600 uppercase tracking-widest font-mono">Step 02</div>
                             </div>
-                            <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-violet-700 text-lg transition-colors">Understand</h3>
-                            <p className="text-sm font-medium text-zinc-800">Map the exact failure modes destroying your margins. Real incidents with root cause analysis.</p>
+                            <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-violet-700 text-lg transition-colors">Contain</h3>
+                            <p className="text-sm font-medium text-zinc-800">Map the failure modes destroying your margins. Context rot, retry inflation, verification collapse — with root cause analysis.</p>
                         </div>
                     </Link>
 
@@ -94,7 +104,7 @@ const Hero = () => {
                                 <div className="text-xs font-bold text-purple-600 uppercase tracking-widest font-mono">Step 03</div>
                             </div>
                             <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-purple-700 text-lg transition-colors">Enforce</h3>
-                            <p className="text-sm font-medium text-zinc-800">Deploy deterministic verification infrastructure. Exogram — the trust layer AI has been missing.</p>
+                            <p className="text-sm font-medium text-zinc-800">Deploy deterministic verification infrastructure. Once agents gain execution authority, runtime governance becomes mandatory.</p>
                         </div>
                     </Link>
 

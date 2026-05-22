@@ -48,6 +48,7 @@ import { semanticExpansion2026 } from './2026-expansion';
 import { programmaticSeoTerms } from './programmatic-seo';
 import { aiEconomist } from './ai-economist';
 import { marginEngineering } from './margin-engineering';
+import { articleDerivedMay2026Terms } from './article-derived-may2026';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -114,6 +115,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...programmaticSeoTerms,
     aiEconomist,
     marginEngineering,
+    // Article-derived May 2026 (BuiltIn + CIO.com)
+    ...articleDerivedMay2026Terms,
 ];
 
 export const allGlossaryCategories = [
