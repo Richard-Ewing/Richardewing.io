@@ -2,10 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, Shield, Clock, Brain } from 'lucide-react';
+import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'Why Claude Loses Context | Context Loss & Session Amnesia Fix | Richard Ewing',
-    description: 'Technical explanation of why Claude Code gets worse over long sessions. Context loss, session amnesia, context bleeding, context decay, and recursive patch loops explained with governance solutions.',
+    title: 'Why Claude Gets Worse Over Time | Context Rot',
+    description: 'Claude Code forgets instructions mid-session. The engineering reason and the deterministic fix that prevents context rot in long sessions.',
     keywords: ['Claude Code losing context', 'Claude Code context loss', 'Claude Code session amnesia', 'Claude context rot', 'Claude context bleeding', 'Claude context drowning', 'Claude context decay', 'why Claude forgets instructions', 'Claude contradicts itself', 'Claude loses track', 'Claude Code getting worse', 'Claude Code context window', 'Claude Code long sessions'],
     openGraph: {
         title: 'Why Claude Loses Context — The Technical Explanation',
@@ -133,7 +134,10 @@ export default function WhyClaudeLosesContextPage() {
                 </article>
 
                 <div className="mt-8 text-center">
-                    <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">← Return to Infrastructure Catalog</Link>
+                    <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">
+                <ExogramBridge />
+
+                ← Return to Infrastructure Catalog</Link>
                 </div>
             </div>
         </main>

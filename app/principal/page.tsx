@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { principalKeywords } from '../lib/keywords';
 import PrincipalContent from '../components/principal-content';
+import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 
 export const metadata: Metadata = {
     title: 'Richard Ewing — AI Economist | Exogram',
@@ -85,7 +86,17 @@ export default function PrincipalPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
             />
             <main className="pt-24 pb-20 flex justify-center">
-                <PrincipalContent />
+                <div>
+                    <ExecutiveSummaryBox
+                        whatBreaks="R&D capital reported as innovation when 73% funds maintenance"
+                        whatItCosts="$1.2M+ annually in misallocated engineering spend"
+                        whatCausesIt="No financial translation layer between engineering and the board"
+                        whatFixesIt={{ label: 'R&D Capital Audit', href: '/advisory' }}
+                        ctaLabel="Book an Audit"
+                        ctaHref="/advisory"
+                    />
+                    <PrincipalContent />
+                </div>
             </main>
         </>
     );

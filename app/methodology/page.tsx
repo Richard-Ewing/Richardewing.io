@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { BookOpen, Network, BarChart } from 'lucide-react';
+import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 
 export default function MethodologyPage() {
     return (
@@ -18,6 +19,13 @@ export default function MethodologyPage() {
                         The canonical definitions, scales, and mathematical frameworks defining the global baseline for AI operational maturity.
                     </p>
                 </header>
+
+                <ExecutiveSummaryBox
+                    whatBreaks="AI features that cost more per-request than they earn"
+                    whatItCosts="80% of AI projects fail to deliver business value (RAND)"
+                    whatCausesIt="No unit economics framework applied to AI compute costs"
+                    whatFixesIt={{ label: 'AI Unit Economics Calculator', href: '/tools/aueb' }}
+                />
 
                 <div className="space-y-12">
                     

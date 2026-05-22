@@ -1,6 +1,7 @@
-﻿"use client";
+"use client";
 
 import React from 'react';
+import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 
 
 export default function DoctrinePage() {
@@ -22,6 +23,13 @@ export default function DoctrinePage() {
                         </p>
                     </div>
                 </section>
+
+                <ExecutiveSummaryBox
+                    whatBreaks="AI systems that cannot prove what is true"
+                    whatItCosts="95% of GenAI pilots fail to reach production (MIT)"
+                    whatCausesIt="No verification infrastructure between model output and action"
+                    whatFixesIt={{ label: 'See the Verification Architecture', href: '/exogram/architecture' }}
+                />
 
                 {/* Principles - 2x2 */}
                 <section className="section">

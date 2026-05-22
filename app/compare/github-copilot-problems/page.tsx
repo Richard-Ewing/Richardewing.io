@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, Shield, DollarSign, Star, ArrowRight } from 'lucide-react';
+import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
     title: 'GitHub Copilot Problems 2026 | Why Developers Are Leaving Copilot | Richard Ewing',
@@ -205,6 +206,9 @@ export default function GitHubCopilotProblemsPage() {
                         ))}
                     </div>
                 </div>
+
+                
+                <ExogramBridge />
 
                 <div className="text-center">
                     <Link href="/compare" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">← Return to Comparisons</Link>

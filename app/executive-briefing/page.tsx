@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { Shield, AlertTriangle, TrendingUp, DollarSign, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Executive Briefing | AI Governance for Engineering Leadership | Richard Ewing',
-    description: 'Board-ready AI governance briefing: maturity model, risk matrix, governance scorecards, and ROI analysis for engineering leaders deploying AI coding agents at scale.',
+    title: 'Executive AI Briefing | Board-Ready Intelligence',
+    description: 'Monthly intelligence on AI governance, engineering economics, and operational risk. Written for executives who buy outcomes.',
     keywords: ['AI governance executive briefing', 'AI risk matrix', 'AI governance maturity model', 'AI coding agent ROI', 'engineering leadership AI governance', 'CTO AI governance', 'board AI risk', 'AI governance scorecard'],
     openGraph: {
         title: 'Executive Briefing — AI Governance for Engineering Leadership',

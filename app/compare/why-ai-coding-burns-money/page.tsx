@@ -2,10 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DollarSign, AlertTriangle, Shield, TrendingDown } from 'lucide-react';
+import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'Why AI Coding Burns Money | Surprise Bills & Token Waste Fix | Richard Ewing',
-    description: 'Why AI coding agents cause surprise bills of $100-$1,100 in token burns. Retry inflation, context waste, vibe coding maintenance nightmares, and ungoverned execution explained with cost governance solutions.',
+    title: 'Why AI Coding Agents Burn Your Budget',
+    description: 'Enterprise AI coding tools cost 10-50x more in production than prototypes. The variable compute economics your CFO needs to see.',
     keywords: ['AI coding cost', 'Claude Code expensive', 'AI agent cost overrun', 'AI coding surprise bill', 'Cursor token cost', 'AI coding burns money', 'API token waste', 'AI agent budget', 'retry inflation cost', 'vibe coding maintenance nightmare', 'AI generated code abandonware'],
     openGraph: {
         title: 'Why AI Coding Burns Money — Token Cost Analysis',
@@ -123,7 +124,10 @@ export default function WhyAICodingBurnsMoneyPage() {
                 </div>
 
                 <div className="text-center">
-                    <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">← Return to Infrastructure Catalog</Link>
+                    <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">
+                <ExogramBridge />
+
+                ← Return to Infrastructure Catalog</Link>
                 </div>
             </div>
         </main>

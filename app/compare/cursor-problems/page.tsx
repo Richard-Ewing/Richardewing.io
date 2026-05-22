@@ -2,10 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, Shield, DollarSign, ArrowRight } from 'lucide-react';
+import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'Cursor Problems 2026 | Why Developers Are Frustrated With Cursor | Richard Ewing',
-    description: 'Real Cursor AI complaints from G2, Reddit, and developer forums: credit anxiety, file rewriting, .cursorrules ignored, crashes on large codebases, and black box code. What runtime governance fixes.',
+    title: 'Cursor Problems 2026: Why It Rewrites Your Files',
+    description: 'Real user complaints about Cursor: file rewrites, credit anxiety, .cursorrules ignored. The governance fixes that stop the chaos.',
     keywords: ['Cursor problems', 'Cursor problems 2026', 'Cursor AI complaints', 'Cursor credits expensive', 'Cursor rewriting files', 'Cursor alternative', 'Cursor crashes', 'Cursor ignores rules', '.cursorrules not working Cursor', 'Cursor AI review', 'Cursor vs governance', 'left Cursor', 'switched from Cursor'],
     openGraph: {
         title: 'Cursor Problems 2026 — Real User Complaints & Governance Solutions',
@@ -205,6 +206,9 @@ export default function CursorProblemsPage() {
                         ))}
                     </div>
                 </div>
+
+                
+                <ExogramBridge />
 
                 <div className="text-center">
                     <Link href="/compare" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">← Return to Comparisons</Link>

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ShieldCheck, Cpu, Wrench, Globe, Layers, ArrowRight, Zap, Target, AlertTriangle } from 'lucide-react';
+import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 
 export const metadata: Metadata = {
     title: 'Runtime Architecture for Agentic Systems | The 4-Layer Agent Formula | Richard Ewing',
@@ -96,6 +97,13 @@ export default function RuntimeArchitecturePage() {
                         Designed for Claude Code • Cursor • Windsurf • Cline • Roo Code • Codex • Antigravity
                     </p>
                 </div>
+
+                <ExecutiveSummaryBox
+                    whatBreaks="AI agents with 78% excessive permissions and zero verification"
+                    whatItCosts="Full data exfiltration via prompt injection (CVE-2025-32711)"
+                    whatCausesIt="Probabilistic outputs treated as deterministic inputs"
+                    whatFixesIt={{ label: 'Exogram Trust Layer', href: '/exogram' }}
+                />
 
                 {/* THE FORMULA */}
                 <div className="mb-20 p-8 bg-[#1A1A1A] rounded-2xl text-white shadow-xl">

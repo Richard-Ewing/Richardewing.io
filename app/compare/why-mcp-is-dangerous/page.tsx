@@ -2,10 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Shield, AlertTriangle, Lock } from 'lucide-react';
+import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'Why MCP Is Dangerous | MCP Security Risks & Tool Poisoning | Richard Ewing',
-    description: 'Security analysis of Model Context Protocol (MCP) risks: credential exposure, confused deputy attacks, tool poisoning, over-permissioning, supply chain attacks, and ungoverned file access. Governance containment strategies.',
+    title: 'Why MCP Is a Security Risk | Agent Governance',
+    description: 'Model Context Protocol gives AI agents broad system access. 78% are over-privileged. The containment architecture that stops breaches.',
     keywords: ['MCP dangerous', 'MCP security risk', 'Model Context Protocol security', 'MCP credential leak', 'MCP confused deputy', 'MCP tool poisoning', 'MCP over-permissioning', 'Claude Code MCP risk', 'MCP supply chain attack', 'AI agent security', 'MCP governance'],
     openGraph: {
         title: 'Why MCP Is Dangerous — Model Context Protocol Security',
@@ -150,7 +151,10 @@ export default function WhyMCPIsDangerousPage() {
                 </div>
 
                 <div className="text-center">
-                    <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">← Return to Infrastructure Catalog</Link>
+                    <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">
+                <ExogramBridge />
+
+                ← Return to Infrastructure Catalog</Link>
                 </div>
             </div>
         </main>

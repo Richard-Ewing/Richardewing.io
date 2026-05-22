@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { AlertTriangle, TrendingUp, DollarSign, Shield, BarChart3 } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Runtime Failure Index | Agentic Failure Database & Risk Rankings | Richard Ewing',
-    description: 'The canonical runtime failure index for AI coding agents. Ranked by frequency, cost, and blast radius. Context rot, retry inflation, MCP leaks, orchestration collapse, and 15+ documented failure modes.',
+    title: 'AI Runtime Failure Database | Incident Analysis',
+    description: 'Real enterprise AI failures: context rot, retry inflation, hallucination cascades. Each with root cause analysis and governance fix.',
     keywords: ['AI agent failures', 'Claude Code failure modes', 'runtime failure index', 'agentic failure database', 'AI coding agent risks', 'context rot frequency', 'retry inflation cost', 'MCP security breach', 'AI governance failure taxonomy', 'most common AI coding failures'],
     openGraph: {
         title: 'Runtime Failure Index — The Canonical Agentic Failure Database',

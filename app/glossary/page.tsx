@@ -3,8 +3,8 @@ import GlossaryContent from './glossary-content';
 import { glossaryTerms } from './terms';
 
 export const metadata: Metadata = {
-    title: 'Technology & AI Glossary — 400+ Definitions | Richard Ewing',
-    description: 'The most comprehensive technology leadership glossary. 400+ definitions covering technical debt, AI economics, SaaS metrics, engineering management, pro...',
+    title: 'Enterprise AI Glossary | 430+ Terms Defined',
+    description: 'Master the lexicon of AI governance. Clear executive definitions for hallucination debt, technical insolvency, retry inflation, and 427 more terms.',
     keywords: [
         'technology glossary', 'technical debt definition', 'AI glossary', 'SaaS metrics glossary',
         'engineering management terms', 'product management glossary', 'CTO glossary',
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     ],
     alternates: { canonical: 'https://www.richardewing.io/glossary' },
     openGraph: {
-        title: 'Technology & AI Glossary — 400+ Definitions | Richard Ewing',
-        description: 'The most comprehensive technology leadership glossary. 400+ definitions on technical debt, AI economics, SaaS metrics, and engineering management.',
+        title: 'Enterprise AI Glossary | 430+ Terms Defined',
+        description: 'Master the lexicon of AI governance. Clear executive definitions for hallucination debt, technical insolvency, retry inflation, and 427 more terms.',
         url: 'https://www.richardewing.io/glossary',
         type: 'website',
     },

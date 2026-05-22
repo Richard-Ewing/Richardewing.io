@@ -2,10 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RefreshCw, Shield, AlertTriangle } from 'lucide-react';
+import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'Why Retry Loops Happen | AI Doom Loop & Retry Storm Fix | Richard Ewing',
-    description: 'Why AI coding agents get stuck in a loop, hitting the same error over and over. Doom loops, retry storms, and the retry inflation cascade explained with governance containment.',
+    title: 'Why AI Retry Loops Burn Thousands Overnight',
+    description: 'Your AI agent retried 47 times. Each retry costs tokens. How retry inflation silently destroys your API budget and the governance fix.',
     keywords: ['AI retry loop', 'AI doom loop', 'AI retry storm', 'Claude Code stuck in a loop', 'AI same error over and over', 'Cursor keeps failing', 'Cursor keeps retrying', 'AI agent stuck', 'retry inflation', 'AI coding agent loop', 'Claude Code retry', 'context pollution', 'streak breaker AI'],
     openGraph: {
         title: 'Why Retry Loops Happen — AI Agent Retry Inflation',
@@ -117,7 +118,10 @@ export default function WhyRetryLoopsHappenPage() {
                 </div>
 
                 <div className="text-center">
-                    <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">← Return to Infrastructure Catalog</Link>
+                    <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">
+                <ExogramBridge />
+
+                ← Return to Infrastructure Catalog</Link>
                 </div>
             </div>
         </main>

@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import { exogramKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Exogram — Verification Infrastructure for AI | Founded by...',
-    description: 'The missing trust layer between AI models and applications. Exogram prevents hallucination propagation with admissibility control planes and state-hashi...',
+    title: 'Exogram | Deterministic Verification for AI',
+    description: 'AI does not fail because it cannot reason. It fails because it does not know what is true. Exogram is the missing verification trust layer.',
     keywords: exogramKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/exogram',
     },
     openGraph: {
-        title: 'Exogram — The Verification Infrastructure for AI',
-        description: 'LLMs generate language. Exogram maintains reality. The missing trust layer between models and applications.',
+        title: 'Exogram | Deterministic Verification for AI',
+        description: 'AI does not fail because it cannot reason. It fails because it does not know what is true. Exogram is the missing verification trust layer.',
         url: 'https://www.richardewing.io/exogram',
         type: 'website',
     },

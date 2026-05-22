@@ -2,10 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Code2, Shield, AlertTriangle } from 'lucide-react';
+import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'Why Cursor Rewrites Files | AI Rewriting Files You Didn\'t Ask | Richard Ewing',
-    description: 'Why Cursor, Windsurf, and AI coding agents keep rewriting files, making unintended edits, and changing everything when you asked for one fix. Repository drift, scope creep, and governance solutions.',
+    title: 'Why Cursor Rewrites Unrelated Files | Fix',
+    description: 'Cursor modified files you did not ask it to touch. This is repository drift and here is the governance architecture that prevents it.',
     keywords: ['Cursor rewrites files', 'Cursor rewriting files', 'Cursor modifying wrong files', 'AI agent scope creep', 'AI unintended edits', 'AI changing everything', 'AI touched something it shouldn\'t', 'AI refactoring code I didn\'t ask', 'Windsurf file access', 'AI coding agent file mutation', 'repository drift', 'AI agent changing my code'],
     openGraph: {
         title: 'Why Cursor Rewrites Files — AI Agent Scope Creep Explained',
@@ -113,6 +114,8 @@ export default function WhyCursorRewritesFilesPage() {
                         ))}
                     </div>
                 </div>
+
+                <ExogramBridge />
 
                 <div className="text-center">
                     <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">← Return to Infrastructure Catalog</Link>
