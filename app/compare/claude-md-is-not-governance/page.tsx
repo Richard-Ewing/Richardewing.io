@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'CLAUDE.md Is Not Governance — Why System Prompts Fail',
         description: 'The structural difference between text-based AI instructions and deterministic runtime governance enforcement.',
     },
-    alternates: { canonical: 'https://richardewing.io/compare/claude-md-is-not-governance' },
+    alternates: { canonical: 'https://www.richardewing.io/compare/claude-md-is-not-governance' },
 };
 
 export default function ClaudeMdIsNotGovernancePage() {

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'AI Integration Advisory — 48-Hour Roadmap, Not 8-Week PowerPoint',
         description: 'Most AI consultants take 4-8 weeks to deliver a strategy deck. We deliver a prioritized roadmap with a 30-day action plan in 48 hours.',
     },
-    alternates: { canonical: 'https://richardewing.io/ai-integration' },
+    alternates: { canonical: 'https://www.richardewing.io/ai-integration' },
 };
 
 const painPoints = [

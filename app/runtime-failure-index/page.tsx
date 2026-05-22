@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Runtime Failure Index — The Canonical Agentic Failure Database',
         description: 'Ranked failure modes for AI coding agents: frequency, cost, blast radius, and governance containment mapping.',
     },
-    alternates: { canonical: 'https://richardewing.io/runtime-failure-index' },
+    alternates: { canonical: 'https://www.richardewing.io/runtime-failure-index' },
 };
 
 const failureIndex = [

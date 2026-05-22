@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Your AI Agent Needs a Kill Switch',
+        description: 'The common approach to AI agent security is based on guardrails that amount to guesses. A real security program needs rigid rules, not probabilistic predictions.',
+        topics: ['AI Security', 'Kill Switch Protocol', 'Deterministic Control', 'Agentic AI'],
+        icon: '🛡️',
+    },
+    {
         title: 'Revenue Per Engineer: The Metric Your Board Should Track',
         description: 'Why APER (Annualized Productive Engineering Revenue) is the missing link between engineering investment and business results. How top companies measure ...',
         topics: ['APER', 'Engineering Productivity', 'Revenue Per Engineer', 'Board Metrics'],
@@ -62,7 +68,7 @@ export default function BuiltInRecapPage() {
                     </h1>
                     <p className="text-lg text-zinc-900 mb-4 max-w-2xl">
                         Richard Ewing&apos;s articles on Built In — the leading platform for startup and tech company culture, covering engineering team economics, developer productivity, and scaling strategies.
-                    </p>
+                     </p>
                     <p className="text-sm font-semibold text-zinc-950 mb-12">Built In reaches 3M+ tech professionals monthly across 8 metro markets.</p>
 
                     <div className="space-y-6 mb-16">
@@ -88,7 +94,17 @@ export default function BuiltInRecapPage() {
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
-                                {['aper', 'engineering-productivity', 'maintenance-load', 'feature-velocity', 'cost-per-hire'].map(slug => (
+                                {[
+                                    'deterministic-execution-control',
+                                    'admissibility-allowlist',
+                                    'state-integrity-check',
+                                    'cryptographic-audit-ledger',
+                                    'aper',
+                                    'engineering-productivity',
+                                    'maintenance-load',
+                                    'feature-velocity',
+                                    'cost-per-hire'
+                                ].map(slug => (
                                     <Link key={slug} href={`/glossary/${slug}`} className="block text-sm font-semibold text-zinc-900 font-medium hover:text-cyan-900 font-extrabold font-semibold transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>

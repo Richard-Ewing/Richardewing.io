@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Why Retry Loops Happen — AI Agent Retry Inflation',
         description: 'The mechanics of retry inflation: why AI coding agents get stuck and how governance breaks the cycle.',
     },
-    alternates: { canonical: 'https://richardewing.io/compare/why-retry-loops-happen' },
+    alternates: { canonical: 'https://www.richardewing.io/compare/why-retry-loops-happen' },
 };
 
 export default function WhyRetryLoopsHappenPage() {

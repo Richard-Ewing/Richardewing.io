@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Why Claude Loses Context — The Technical Explanation',
         description: 'Why Claude Code degrades over long sessions and the runtime governance infrastructure that prevents it.',
     },
-    alternates: { canonical: 'https://richardewing.io/compare/why-claude-loses-context' },
+    alternates: { canonical: 'https://www.richardewing.io/compare/why-claude-loses-context' },
 };
 
 export default function WhyClaudeLosesContextPage() {

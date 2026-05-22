@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Cursor Problems 2026 — Real User Complaints & Governance Solutions',
         description: 'Why developers are frustrated with Cursor and what runtime governance actually fixes.',
     },
-    alternates: { canonical: 'https://richardewing.io/compare/cursor-problems' },
+    alternates: { canonical: 'https://www.richardewing.io/compare/cursor-problems' },
 };
 
 const complaints = [

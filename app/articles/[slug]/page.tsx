@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             'R&D capital',
         ],
         alternates: {
-            canonical: article.externalUrl || `https://richardewing.io/articles/${article.slug}`,
+            canonical: article.externalUrl || `https://www.richardewing.io/articles/${article.slug}`,
         },
         openGraph: {
             title: article.title,
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             type: 'article',
             publishedTime: article.date,
             authors: ['Richard Ewing'],
-            url: `https://richardewing.io/articles/${article.slug}`,
+            url: `https://www.richardewing.io/articles/${article.slug}`,
         },
         twitter: {
             card: 'summary',
@@ -65,7 +65,7 @@ export default async function ArticlePage({ params }: Props) {
     const jsonLd = articleSchemaTemplate(
         article.title,
         article.description,
-        `https://richardewing.io/articles/${article.slug}`,
+        `https://www.richardewing.io/articles/${article.slug}`,
         article.date
     );
 

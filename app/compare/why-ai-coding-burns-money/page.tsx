@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Why AI Coding Burns Money — Token Cost Analysis',
         description: 'The hidden economics of AI coding agents: retry inflation, context waste, and how governance contains costs.',
     },
-    alternates: { canonical: 'https://richardewing.io/compare/why-ai-coding-burns-money' },
+    alternates: { canonical: 'https://www.richardewing.io/compare/why-ai-coding-burns-money' },
 };
 
 const costBreakdown = [

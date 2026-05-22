@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Why MCP Is Dangerous — Model Context Protocol Security',
         description: 'Security analysis of MCP risks and the governance infrastructure needed to contain them.',
     },
-    alternates: { canonical: 'https://richardewing.io/compare/why-mcp-is-dangerous' },
+    alternates: { canonical: 'https://www.richardewing.io/compare/why-mcp-is-dangerous' },
 };
 
 const risks = [

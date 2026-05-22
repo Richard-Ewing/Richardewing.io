@@ -1,5 +1,23 @@
 export const articles = [
     {
+        slug: "ai-agent-kill-switch",
+        title: "Your AI Agent Needs a Kill Switch",
+        description: "Current AI agent security is based on guardrails, which boil down to a guess. A working security program must be based on objective rules.",
+        date: "May 2026",
+        readTime: "6 min read",
+        source: "Built In",
+        externalUrl: "https://builtin.com/articles/ai-agent-kill-switch"
+    },
+    {
+        slug: "claude-api-bill-blowup-costs",
+        title: "Your Claude API bill is higher than your revenue: Why simple Python tasks are blowing up AI costs",
+        description: "Using top-tier AI for simple tasks is draining corporate budgets. If you don't match the tool to the job, your most popular feature will become your costliest.",
+        date: "May 2026",
+        readTime: "6 min read",
+        source: "CIO.com",
+        externalUrl: "https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html"
+    },
+    {
         slug: "innovation-tax-audit-rd-opex",
         title: "The innovation tax audit: Is your R&D actually just OpEx?",
         description: "Discover how to audit your software portfolio for Zombie Assets and why a Sunset Committee is better than just funding new features.",

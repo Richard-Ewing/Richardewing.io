@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'The 4-Layer Agent Runtime Architecture',
         description: 'Identity × Skill × Tool × Environment — the canonical runtime model for deterministic agentic execution.',
-        url: 'https://richardewing.io/runtime-architecture',
+        url: 'https://www.richardewing.io/runtime-architecture',
     },
     alternates: {
-        canonical: 'https://richardewing.io/runtime-architecture',
+        canonical: 'https://www.richardewing.io/runtime-architecture',
     }
 };
 

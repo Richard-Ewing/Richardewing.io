@@ -10,7 +10,7 @@ export const metadata: Metadata = {
         title: 'Runtime Architecture Diagrams — Governance Visual Library',
         description: '10 architectural diagrams mapping the failure modes and governance containment patterns for AI coding agents.',
     },
-    alternates: { canonical: 'https://richardewing.io/diagrams' },
+    alternates: { canonical: 'https://www.richardewing.io/diagrams' },
 };
 
 const diagrams = [

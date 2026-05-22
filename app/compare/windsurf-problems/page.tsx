@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Windsurf Problems 2026 — Real User Complaints & Governance Solutions',
         description: 'Why developers left Windsurf and what runtime governance actually fixes.',
     },
-    alternates: { canonical: 'https://richardewing.io/compare/windsurf-problems' },
+    alternates: { canonical: 'https://www.richardewing.io/compare/windsurf-problems' },
 };
 
 const complaints = [

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Why Cursor Rewrites Files — AI Agent Scope Creep Explained',
         description: 'The mechanics of repository drift and scope creep mutation in AI coding agents.',
     },
-    alternates: { canonical: 'https://richardewing.io/compare/why-cursor-rewrites-files' },
+    alternates: { canonical: 'https://www.richardewing.io/compare/why-cursor-rewrites-files' },
 };
 
 export default function WhyCursorRewritesFilesPage() {

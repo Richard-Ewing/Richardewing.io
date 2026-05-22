@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'The AI Integration System — Self-Serve AI Playbook for Business',
         description: '50+ prompts, templates, scoring matrices, and step-by-step guides. The exact system from $5,000 audits. Most consultants charge $8K-$25K.',
     },
-    alternates: { canonical: 'https://richardewing.io/ai-integration/system' },
+    alternates: { canonical: 'https://www.richardewing.io/ai-integration/system' },
 };
 
 const modules = [

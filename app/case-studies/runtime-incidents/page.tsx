@@ -10,7 +10,7 @@ export const metadata: Metadata = {
         title: 'Runtime Incident Reports — Real Agentic Failures',
         description: 'Documented runtime incidents with telemetry, timelines, blast radius, and governance containment analysis.',
     },
-    alternates: { canonical: 'https://richardewing.io/case-studies/runtime-incidents' },
+    alternates: { canonical: 'https://www.richardewing.io/case-studies/runtime-incidents' },
 };
 
 const incidents = [

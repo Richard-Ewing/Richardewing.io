@@ -99,37 +99,34 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'dependency-hell',
                     questionHeadline: 'How do you define and escape dependency hell in enterprise architecture?',
                     answerHtml: `<p>Dependency hell occurs when software packages rely on specific, mutually exclusive, or deeply nested versions of other software packages, creating an unresolvable gridlock that prevents updates or deployments.</p>
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Architectural Root Cause</h3>
-                        <p>Dependency hell is almost always a symptom of <strong>tight coupling</strong> and a lack of boundary enforcement. When microservices share common libraries instead of communicating via versioned APIs, or when monoliths import hundreds of external un-pinned packages, you create a fragile ecosystem where one upgrade breaks ten other things.</p>
-                        
-                        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-full bg-red-100 text-red-700 flex items-center justify-center text-sm">🧨</span> The Blast Radius Metric
-                            </h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
-                                    <div class="text-xs font-mono font-bold text-red-500 uppercase tracking-widest mb-2">Coupling Factor</div>
-                                    <div class="text-2xl font-bold text-zinc-900 mb-1">N² Connections</div>
-                                    <div class="text-sm font-medium text-zinc-800">Exponential risk scaling with every new internal library added.</div>
-                                </div>
-                                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
-                                    <div class="text-xs font-mono font-bold text-emerald-500 uppercase tracking-widest mb-2">Resolution</div>
-                                    <div class="text-2xl font-bold text-zinc-900 mb-1">API Gateways</div>
-                                    <div class="text-sm font-medium text-zinc-800">Abstracting internal library versions behind strict HTTP/gRPC contracts.</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Escape Route</h3>
-                        <ul class="list-disc pl-6 space-y-2 mb-6">
-                            <li><strong>Containerization:</strong> Use Docker to isolate application environments so dependencies do not bleed across system boundaries.</li>
-                            <li><strong>Strict Semantic Versioning:</strong> Enforce strict adherence to SemVer. Never blindly use <code>latest</code> tags in production builds.</li>
-                            <li><strong>Decoupling via APIs:</strong> Replace shared binary dependencies with shared API contracts. A service should depend on an interface, not a specific library version.</li>
-                        </ul>
-                        
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Translation</h3>
-                        <p>If your teams spend 30% of their sprints "bumping versions" and resolving merge conflicts rather than shipping features, you have a structural dependency issue. Investing CapEx into decoupling via API contracts will immediately reclaim that lost velocity.</p>`,
+        <h3 class="text-xl font-bold mt-8 mb-4">The Architectural Root Cause</h3>
+        <p>Dependency hell is almost always a symptom of <strong>tight coupling</strong> and a lack of boundary enforcement. When microservices share common libraries instead of communicating via versioned APIs, or when monoliths import hundreds of external un-pinned packages, you create a fragile ecosystem where one upgrade breaks ten other things.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Escape Route</h3>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Containerization:</strong> Use Docker to isolate application environments so dependencies do not bleed across system boundaries.</li>
+            <li><strong>Strict Semantic Versioning:</strong> Enforce strict adherence to SemVer. Never blindly use <code>latest</code> tags in production builds.</li>
+            <li><strong>Decoupling via APIs:</strong> Replace shared binary dependencies with shared API contracts. A service should depend on an interface, not a specific library version.</li>
+        </ul>
+        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 rounded-full bg-red-100 text-red-700 flex items-center justify-center text-sm">🧨</span> The Blast Radius Metric
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                    <div class="text-xs font-mono font-bold text-red-500 uppercase tracking-widest mb-2">Coupling Factor</div>
+                    <div class="text-2xl font-bold text-zinc-900 mb-1">N² Connections</div>
+                    <div class="text-sm font-medium text-zinc-500">Exponential risk scaling with every new internal library added.</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                    <div class="text-xs font-mono font-bold text-emerald-500 uppercase tracking-widest mb-2">Resolution</div>
+                    <div class="text-2xl font-bold text-zinc-900 mb-1">API Gateways</div>
+                    <div class="text-sm font-medium text-zinc-500">Abstracting internal library versions behind strict HTTP/gRPC contracts.</div>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Translation</h3>
+        <p>If your teams spend 30% of their sprints "bumping versions" and resolving merge conflicts rather than shipping features, you have a structural dependency issue. Investing CapEx into decoupling via API contracts will immediately reclaim that lost velocity.</p>`,
                     recommendedProductId: 'module_engineering',
                     upsellHeadline: 'Build resilient platform architectures.'
                 },
@@ -286,45 +283,43 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 },
                 {
                     questionSlug: 'incident-management-cost',
-                    questionHeadline: 'How do you calculate the true cost of incident management and Sev-1 outages?',
-                    answerHtml: `
-                        <p>Incident Management is generally viewed by the C-Suite as an unavoidable operational tax. However, when Platform Engineers fail to quantify the exact financial bleed of Sev-1 outages, they cannot secure the budget necessary for dedicated resiliency infrastructure, turning random downtime into systemic financial hemorrhage.</p>
-                        
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Triple Revenue Burn</h3>
-                        <p>A major outage incurs costs across three devastating vectors:</p>
-                        <ul class="list-disc pl-6 space-y-2 mb-6">
-                            <li><strong>Direct ARR Loss:</strong> The immediate transactional revenue lost during downtime minutes (particularly brutal for e-commerce or fintech).</li>
-                            <li><strong>Engineering Capital Burn:</strong> Dragging 40 elite engineers into a "War Room" incinerates thousands of dollars in hourly wages that should have been capitalized on new feature development (CapEx).</li>
-                            <li><strong>SLA Penalties:</strong> Enterprise contracts trigger massive financial clawbacks if uptime drops below target availability numbers (99.9%).</li>
-                        </ul>
-                        
-                        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-sm">⚠️</span> True Outage Equation
-                            </h4>
-                            <div class="bg-white p-6 rounded-xl border border-zinc-200 shadow-sm text-center">
-                                <div class="text-lg font-mono text-zinc-800 font-bold mb-4">
-                                    <span class="text-red-500">Lost Rev</span> + <span class="text-amber-500">(War Room Hrs × $100)</span> + <span class="text-orange-500">SLA Fines</span> = Total Cost
-                                </div>
-                                <p class="text-sm font-medium text-zinc-600 max-w-md mx-auto">
-                                    When requesting budget for SREs or Chaos Engineering tool chains, use this formula to prove you are buying an insurance policy with a guaranteed mathematical ROI.
-                                </p>
-                            </div>
-                        </div>
-
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
-                        <p>A prominent payment gateway suffered a rolling 4-hour Sev-1 outage due to a corrupted database migration. The "direct" lost revenue was calculating at $140,000. However, the subsequent required "War Room" engaged 80 engineers over an entire weekend, halting two major feature launches. When calculating the idle wages, the overtime pay, and the SLA clawbacks invoked by angry merchants, the actual true cost of the 4-hour outage exceeded $1.2M.</p>
-
-                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
-                        <ul class="list-disc pl-6 space-y-2 mb-6">
-                            <li><strong>Day 1-30:</strong> Instrument comprehensive observability (e.g., Datadog, Honeycomb) to drastically reduce MTTR (Mean Time To Recovery) by identifying exact failure coordinates instantly.</li>
-                            <li><strong>Day 31-60:</strong> Implement architectural "Circuit Breakers" to prevent localized component failures from cascading into massive monolithic systemic crashes.</li>
-                            <li><strong>Day 61-90:</strong> Formalize Blameless Post-Mortems, ensuring every single outage results in an automated guardrail rather than just a written apology.</li>
-                        </ul>
-                    `,
-                    recommendedProductId: 'module_engineering',
-                    upsellHeadline: 'Build Your Incident Cost ROI Model.'
+                    questionHeadline: 'How do you accurately measure the true financial cost of a Sev-1 incident?',
+                    answerHtml: `<p>Incident Management is often viewed purely as an operational function (PagerDuty alerts, war rooms, post-mortems). However, at the C-suite level, incidents are unbudgeted financial liabilities that actively destroy enterprise valuation through SLA penalties, churn, and diverted R&D capital.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Hidden OpEx Drain</h3>
+        <p>The cost of downtime isn't just lost transactions during the outage window. It is the cost of context switching. When a Sev-1 incident occurs, you are pulling 10 highly paid engineers off feature development. After the incident, the subsequent post-mortem and remediation sprint completely derails the roadmap.</p>
+        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-rose-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center text-sm">💸</span> The True Cost Formula
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                    <div class="text-xs font-mono font-bold text-rose-500 uppercase tracking-widest mb-2">Direct Cost</div>
+                    <div class="text-xl font-bold text-zinc-900 mb-1">Lost Revenue</div>
+                    <div class="text-sm font-medium text-zinc-500">Transactions halted + SLA SLA credit payouts.</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                    <div class="text-xs font-mono font-bold text-amber-500 uppercase tracking-widest mb-2">Indirect Cost</div>
+                    <div class="text-xl font-bold text-zinc-900 mb-1">Wasted Wages</div>
+                    <div class="text-sm font-medium text-zinc-500">Hourly rate of engineers pulled into the war room.</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                    <div class="text-xs font-mono font-bold text-violet-500 uppercase tracking-widest mb-2">Opportunity Cost</div>
+                    <div class="text-xl font-bold text-zinc-900 mb-1">Delayed Features</div>
+                    <div class="text-sm font-medium text-zinc-500">Lost market capture from delayed roadmap delivery.</div>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-xl font-bold mt-8 mb-4">Strategic Mitigation</h3>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Error Budgets:</strong> Implement strict SRE error budgets. If a service depletes its budget, it is barred from shipping new features until reliability is restored.</li>
+            <li><strong>Automated Rollbacks:</strong> Invest in CI/CD infrastructure that automatically rolls back deployments if error rates spike, preventing Sev-1s from requiring human intervention.</li>
+            <li><strong>Chaos Engineering:</strong> Intentionally break things during business hours to train your team and validate resilient failovers.</li>
+        </ul>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
+        <p>A major SaaS provider was experiencing $2M/year in SLA credit payouts. By investing $500k in a dedicated SRE team to build automated failovers and enforcing strict error budgets, they reduced Sev-1 incidents by 80%, yielding a 3x ROI in year one while simultaneously accelerating feature velocity.</p>`,
+                    recommendedProductId: 'module_financials',
+                    upsellHeadline: 'Stop bleeding capitalized OpEx.'
                 }
             ],
             'cto-vp-engineering': [
@@ -474,20 +469,40 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 },
                 {
                     questionSlug: 'software-entropy',
-                    questionHeadline: 'What is entropy in software engineering and how do you measure it?',
-                    answerHtml: `<p>Software entropy refers to the gradual degradation of a system's structure, architecture, and maintainability over time. As new features are bolted on, quick fixes are applied, and original developers leave, the system trends toward chaos.</p>
-        <h3 class="text-xl font-bold mt-8 mb-4">The Business Cost of Entropy</h3>
-        <p>Entropy directly destroys <strong>Developer Velocity</strong>. If a feature that took 2 days to build in Year 1 now takes 3 weeks to build in Year 4, your system has high entropy. The financial cost is the wasted payroll spent navigating spaghetti code rather than delivering value.</p>
-        <h3 class="text-xl font-bold mt-8 mb-4">How to Measure It</h3>
-        <p>You cannot measure entropy directly, but you can track its symptoms using DORA metrics and Code Quality tools:</p>
+                    questionHeadline: 'What is software entropy and how do you calculate its financial drag on an engineering team?',
+                    answerHtml: `<p>Software entropy, derived from the second law of thermodynamics, dictates that any software system will naturally degrade in quality, become more complex, and harder to maintain over time unless active energy (refactoring) is injected to stabilize it.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Mechanics of Degradation</h3>
+        <p>Entropy accelerates through <strong>feature stacking</strong>. When sales demands new features, engineering often bolts them onto the side of the existing architecture without taking the time to redesign the core abstractions. Over years, this creates a "Big Ball of Mud" architecture where no single engineer understands the entire system.</p>
+        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center text-sm">📉</span> Technical Bankruptcy Timeline
+            </h4>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="bg-white p-4 rounded-xl border-l-4 border-l-yellow-400 shadow-sm">
+                    <h5 class="font-bold text-zinc-900">Year 1-2: Rapid Iteration</h5>
+                    <p class="text-sm text-zinc-600 mt-1">High velocity. Corners cut are acceptable for market capture.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border-l-4 border-l-orange-400 shadow-sm">
+                    <h5 class="font-bold text-zinc-900">Year 3-4: The Friction Zone</h5>
+                    <p class="text-sm text-zinc-600 mt-1">Velocity drops 40%. Engineers complain about the codebase. QA cycles extend.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border-l-4 border-l-red-500 shadow-sm">
+                    <h5 class="font-bold text-zinc-900">Year 5+: Technical Bankruptcy</h5>
+                    <p class="text-sm text-zinc-600 mt-1">Velocity approaches zero. High engineering churn. Complete rewrite proposed.</p>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Refactoring Plan</h3>
         <ul class="list-disc pl-6 space-y-2 mb-6">
-            <li><strong>Lead Time for Changes:</strong> Is it steadily increasing year-over-year?</li>
-            <li><strong>Change Failure Rate:</strong> Are regressions becoming more frequent because the codebase is brittle?</li>
-            <li><strong>Cyclomatic Complexity:</strong> Use static analysis tools (like SonarQube) to track the rising complexity of critical paths.</li>
+            <li><strong>Audit & Quarantine:</strong> Isolate the most entropic modules using cyclomatic complexity scanners.</li>
+            <li><strong>Establish the 20% Rule:</strong> Mandate that 20% of every sprint is dedicated strictly to technical debt paydown and architectural refactoring.</li>
+            <li><strong>Halt Feature Development:</strong> If defect rates exceed velocity rates, trigger a total feature freeze until stability is restored.</li>
         </ul>
-        <p>The only way to reverse software entropy is through dedicated refactoring sprints—paying down the technical debt before it bankrupts the team's velocity.</p>`,
+        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Translation</h3>
+        <p>Entropy is a financial liability. Refusal to allocate engineering capacity to system maintenance acts as a compounding tax on your R&D budget, eventually leading to a complete halt in product innovation.</p>`,
                     recommendedProductId: 'module_engineering',
-                    upsellHeadline: 'Master Engineering Velocity & Architecture.'
+                    upsellHeadline: 'Reclaim engineering velocity.'
                 },
                 {
                     questionSlug: 'cost-of-legacy-code-vs-rewrite',
@@ -728,45 +743,42 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'calculating-roai',
                     questionHeadline: 'How do you calculate the financial Return on AI Investment (ROAI)?',
                     answerHtml: `<p>ROAI (Return on AI Investment) is the critical financial metric for evaluating generative models, autonomous agents, and RAG pipelines. Unlike traditional software ROI, which is deterministic, ROAI must account for probabilistic outcomes, hallucination costs, and inference burn rates.</p>
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Token Economics Trap</h3>
-                        <p>Many enterprises build a prototype using GPT-4 that works brilliantly in a demo. They fail to realize that running that model on 10,000 customer tickets a day will cost $80,000/month in API inference fees. Furthermore, if the model hallucinates on 5% of those tickets, the manual human remediation cost (or brand damage) often vastly exceeds the cost savings of the automation itself.</p>
-                        
-                        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-sm">🧠</span> The Predictivity Cost Curve
-                            </h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white p-4 rounded-xl border-l-4 border-l-indigo-500 shadow-sm">
-                                    <h5 class="font-bold text-zinc-900">Positive ROAI Zone</h5>
-                                    <ul class="text-sm font-medium text-zinc-600 space-y-1 list-disc pl-4 mt-2">
-                                        <li>High human wage offset (e.g., legal review).</li>
-                                        <li>Low cost of hallucination.</li>
-                                        <li>Small model (Llama-3 8B) running on-premise.</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-white p-4 rounded-xl border-l-4 border-l-red-500 shadow-sm">
-                                    <h5 class="font-bold text-zinc-900">Negative ROAI Zone</h5>
-                                    <ul class="text-sm font-medium text-zinc-600 space-y-1 list-disc pl-4 mt-2">
-                                        <li>Low human wage offset (e.g., data entry).</li>
-                                        <li>Catastrophic cost of hallucination (e.g., medical dosage).</li>
-                                        <li>Heavy frontier model (GPT-4) API usage.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="text-xl font-bold mt-8 mb-4">The ROAI Calculation Formula</h3>
-                        <p><code>ROAI = (Human Wage Savings + Net New Revenue) - (Inference Cost + Human Remediation Cost + Model Fine-Tuning CapEx)</code></p>
-                        <ul class="list-disc pl-6 space-y-2 mb-6">
-                            <li><strong>Inference Cost:</strong> The direct token fees or GPU cloud compute costs.</li>
-                            <li><strong>Human Remediation Cost:</strong> The time spent by engineers or subject matter experts verifying and correcting model outputs.</li>
-                        </ul>
-                        
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Translation</h3>
-                        <p>Do not deploy AI for AI's sake. If a deterministic Python script or a SQL query can solve the problem with 100% accuracy for $0 in inference costs, building an LLM agent to do it is financial negligence. Reserve heavy AI models strictly for high-variance, unstructured data problems where the human wage offset justifies the inference burn.</p>`,
+        <h3 class="text-xl font-bold mt-8 mb-4">The Token Economics Trap</h3>
+        <p>Many enterprises build a prototype using GPT-4 that works brilliantly in a demo. They fail to realize that running that model on 10,000 customer tickets a day will cost $80,000/month in API inference fees. Furthermore, if the model hallucinates on 5% of those tickets, the manual human remediation cost (or brand damage) often vastly exceeds the cost savings of the automation itself.</p>
+        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-sm">🧠</span> The Predictivity Cost Curve
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-xl border-l-4 border-l-indigo-500 shadow-sm">
+                    <h5 class="font-bold text-zinc-900">Positive ROAI Zone</h5>
+                    <ul class="text-sm font-medium text-zinc-600 space-y-1 list-disc pl-4 mt-2">
+                        <li>High human wage offset (e.g., legal review).</li>
+                        <li>Low cost of hallucination.</li>
+                        <li>Small model (Llama-3 8B) running on-premise.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-4 rounded-xl border-l-4 border-l-red-500 shadow-sm">
+                    <h5 class="font-bold text-zinc-900">Negative ROAI Zone</h5>
+                    <ul class="text-sm font-medium text-zinc-600 space-y-1 list-disc pl-4 mt-2">
+                        <li>Low human wage offset (e.g., data entry).</li>
+                        <li>Catastrophic cost of hallucination (e.g., medical dosage).</li>
+                        <li>Heavy frontier model (GPT-4) API usage.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-xl font-bold mt-8 mb-4">The ROAI Calculation Formula</h3>
+        <p><code>ROAI = (Human Wage Savings + Net New Revenue) - (Inference Cost + Human Remediation Cost + Model Fine-Tuning CapEx)</code></p>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Inference Cost:</strong> The direct token fees or GPU cloud compute costs.</li>
+            <li><strong>Human Remediation Cost:</strong> The time spent by engineers or subject matter experts verifying and correcting model outputs.</li>
+        </ul>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Translation</h3>
+        <p>Do not deploy AI for AI's sake. If a deterministic Python script or a SQL query can solve the problem with 100% accuracy for $0 in inference costs, building an LLM agent to do it is financial negligence. Reserve heavy AI models strictly for high-variance, unstructured data problems where the human wage offset justifies the inference burn.</p>`,
                     recommendedProductId: 'module_ai_economics',
-                    upsellHeadline: 'Master AI product unit economics.'
+                    upsellHeadline: 'Master AI unit economics.'
                 },
                 {
                     questionSlug: 'fine-tune-open-source-vs-openai-api',
@@ -1191,37 +1203,34 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'code-smell-engineering-manager',
                     questionHeadline: 'How should an engineering manager translate code smells into organizational risk metrics?',
                     answerHtml: `<p>A "Code Smell" is a surface indication that usually corresponds to a deeper problem in the system. For an Engineering Manager, these aren't just technical issues—they are organizational symptoms indicating process failures, misaligned incentives, or severe skill gaps.</p>
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Cultural Translation of Code Smells</h3>
-                        <p>When an engineer writes a 5,000-line "God Class," it doesn't just mean they don't understand object-oriented programming. It usually means the team lacks architectural oversight, code reviews are being rubber-stamped to meet artificial deadlines, or the feature requirements were changed 10 times during the sprint.</p>
-                        
-                        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-sm">🕵️</span> The Cultural Debt Index
-                            </h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
-                                    <div class="text-xs font-mono font-bold text-amber-500 uppercase tracking-widest mb-2">Technical Smell</div>
-                                    <div class="text-lg font-bold text-zinc-900 mb-1">Duplicated Code</div>
-                                    <div class="text-sm font-medium text-zinc-800">Copy-pasting logic across multiple files.</div>
-                                </div>
-                                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
-                                    <div class="text-xs font-mono font-bold text-indigo-500 uppercase tracking-widest mb-2">Cultural Root Cause</div>
-                                    <div class="text-lg font-bold text-zinc-900 mb-1">Siloed Teams</div>
-                                    <div class="text-sm font-medium text-zinc-800">Engineers do not talk to each other; lack of shared component libraries.</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="text-xl font-bold mt-8 mb-4">Managerial Remediation</h3>
-                        <ul class="list-disc pl-6 space-y-2 mb-6">
-                            <li><strong>Enforce Rigorous Code Reviews:</strong> PRs (Pull Requests) cannot be approved by the author. Require at least one senior engineer review.</li>
-                            <li><strong>Abstract Complexity:</strong> Invest in a central Platform Engineering team to build paved roads and shared libraries.</li>
-                            <li><strong>Change the Incentives:</strong> Stop promoting engineers who ship features fast but leave a mess. Reward those who delete code and simplify architectures.</li>
-                        </ul>
-                        
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Translation</h3>
-                        <p>Code smells are leading indicators of future outages and velocity collapse. If your managers are ignoring them to hit quarterly product targets, they are stealing from next year's budget to pay for today's bonuses.</p>`,
+        <h3 class="text-xl font-bold mt-8 mb-4">The Cultural Translation of Code Smells</h3>
+        <p>When an engineer writes a 5,000-line "God Class," it doesn't just mean they don't understand object-oriented programming. It usually means the team lacks architectural oversight, code reviews are being rubber-stamped to meet artificial deadlines, or the feature requirements were changed 10 times during the sprint.</p>
+        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-sm">🕵️</span> The Cultural Debt Index
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                    <div class="text-xs font-mono font-bold text-amber-500 uppercase tracking-widest mb-2">Technical Smell</div>
+                    <div class="text-lg font-bold text-zinc-900 mb-1">Duplicated Code</div>
+                    <div class="text-sm font-medium text-zinc-500">Copy-pasting logic across multiple files.</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                    <div class="text-xs font-mono font-bold text-indigo-500 uppercase tracking-widest mb-2">Cultural Root Cause</div>
+                    <div class="text-lg font-bold text-zinc-900 mb-1">Siloed Teams</div>
+                    <div class="text-sm font-medium text-zinc-500">Engineers do not talk to each other; lack of shared component libraries.</div>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-xl font-bold mt-8 mb-4">Managerial Remediation</h3>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Enforce Rigorous Code Reviews:</strong> PRs (Pull Requests) cannot be approved by the author. Require at least one senior engineer review.</li>
+            <li><strong>Abstract Complexity:</strong> Invest in a central Platform Engineering team to build paved roads and shared libraries.</li>
+            <li><strong>Change the Incentives:</strong> Stop promoting engineers who ship features fast but leave a mess. Reward those who delete code and simplify architectures.</li>
+        </ul>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Translation</h3>
+        <p>Code smells are leading indicators of future outages and velocity collapse. If your managers are ignoring them to hit quarterly product targets, they are stealing from next year's budget to pay for today's bonuses.</p>`,
                     recommendedProductId: 'module_leadership',
                     upsellHeadline: 'Align engineering incentives with clean architecture.'
                 },
@@ -1822,44 +1831,50 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 },
                 {
                     questionSlug: 'integration-risk',
-                    questionHeadline: 'What is integration risk in software M&A and how does it destroy value?',
-                    answerHtml: `
-                        <p>During Mergers & Acquisitions (M&A), CFOs and Private Equity sponsors meticulously audit the financial P&L, but routinely miscalculate <strong>Integration Risk</strong>—the devastating capital expenditure required to physically fuse two disparate software architectures together.</p>
-                        
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Illusion of "Synergy"</h3>
-                        <p>Financial models often project immediate operational synergies by combining two product suites. However, if the acquired company utilizes a fundamentally different technology stack (e.g., modern Kubernetes microservices vs legacy on-premise monolithic servers), achieving that synergy requires a massive, unbudgeted data migration and architectural rewrite.</p>
-                        
-                        <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
-                            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">⚠️</span> M&A Integration Warning Signs
-                            </h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                                    <div class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-1">Identity Silos</div>
-                                    <div class="text-zinc-950 font-semibold text-sm font-medium">If customer auth pipelines differ, Single Sign-On (SSO) integration will consume 6+ months of engineering.</div>
-                                </div>
-                                <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                                    <div class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest mb-1">Data Model Gravity</div>
-                                    <div class="text-zinc-950 font-semibold text-sm font-medium">Migrating a relational SQL database to a distributed NoSQL cluster usually triggers massive data-loss risks.</div>
-                                </div>
-                            </div>
+                    questionHeadline: 'How do you mitigate external integration risk before launching a new product?',
+                    answerHtml: `<p>Integration Risk is the probability that a product feature or entire application will fail—not because its internal logic is flawed, but because it cannot successfully communicate with external systems, legacy databases, or third-party APIs.</p>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Late-Stage Discovery Tax</h3>
+        <p>Most product managers scope the UI and internal business logic extensively, but leave "API integration" as a black box for the final sprint. This is catastrophic. Finding out in week 11 of a 12-week project that a critical third-party API rate-limits you, or doesn't return the necessary payload, means the entire feature is scrapped and the CapEx is wasted.</p>
+        <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+            <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-sm">⏱️</span> Shift-Left Integration Timeline
+            </h4>
+            <div class="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm">
+                <div class="flex flex-col space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold">1</div>
+                        <div>
+                            <h5 class="font-bold text-zinc-900">Sprint 0: API Proving</h5>
+                            <p class="text-sm text-zinc-600">Before writing a line of product code, engineers must write a script to prove the external API can actually support the use case.</p>
                         </div>
-
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
-                        <p>A major CRM provider acquired a bespoke marketing automation tool, projecting cost synergies within Year 1. During due diligence, they missed that the acquired platform's core multi-tenant structure explicitly hardcoded client schemas into the database logic. Integrating the tool into the parent company's universal auth pipeline required tearing the core down to the studs. The integration took 2.5 years, cost $8M in unmodeled engineering OpEx, and delayed the actual product synergy so badly that 40% of the acquired customer base churned before the integration launched.</p>
-
-                        <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
-                        <ul class="list-disc pl-6 space-y-2 mb-6">
-                            <li><strong>Pre-M&A Phase:</strong> Embed a fractional CTO into the financial due diligence team explicitly to map the targeted company's technical debt and data architecture against your own.</li>
-                            <li><strong>Day 1-30 (Post-Merger):</strong> Do not force a massive code migration. Institute API-led connectivity to create a "Facade" so customers experience a unified interface, while backend models remain temporarily siloed.</li>
-                            <li><strong>Day 31-90:</strong> Standardize identity and authentication (SSO) globally as your absolute first, non-negotiable architectural priority. Nothing moves forward until Auth is unified.</li>
-                        </ul>
-
-                        <h3 class="text-xl font-bold mt-8 mb-4">Pricing the Diligence</h3>
-                        <p>Never sign an acquisition without a Technical Due Diligence report that specifically prices the <em>Post-Closing Integration CapEx</em>. If fusing the platforms requires 18 months of dedicated developer time, that engineering payroll must be forcibly subtracted from the acquisition enterprise valuation.</p>
-                    `,
-                    recommendedProductId: 'module_financials',
-                    upsellHeadline: 'Calculate M&A Technical Due Diligence.'
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold">2</div>
+                        <div>
+                            <h5 class="font-bold text-zinc-900">Sprint 1: Mocking Contracts</h5>
+                            <p class="text-sm text-zinc-600">Establish strict schema contracts. Frontend builds against mocks while Backend builds the actual adapters.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</div>
+                        <div>
+                            <h5 class="font-bold text-zinc-900">Sprint 2+: Core Logic</h5>
+                            <p class="text-sm text-zinc-600">Proceed with building the application logic now that integration risk is effectively zero.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-xl font-bold mt-8 mb-4">De-Risking Strategies</h3>
+        <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>The Anti-Corruption Layer:</strong> Build an abstraction layer between your clean modern code and the messy legacy system you are integrating with.</li>
+            <li><strong>Circuit Breakers:</strong> Ensure your product degrades gracefully if the third-party integration goes offline, rather than crashing the entire application.</li>
+        </ul>
+        <h3 class="text-xl font-bold mt-8 mb-4">The Executive Translation</h3>
+        <p>Treat external integrations as volatile dependencies. By forcing your engineering teams to "prove the integration" in Sprint 0, you eliminate the risk of spending millions on a product that structurally cannot launch.</p>`,
+                    recommendedProductId: 'module_product_mgmt',
+                    upsellHeadline: 'De-risk enterprise product delivery.'
                 }
             ],
             'founder-ceo': [

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'GitHub Copilot Problems 2026 — Real User Complaints & Governance Solutions',
         description: 'Why developers are leaving Copilot and what runtime governance actually fixes.',
     },
-    alternates: { canonical: 'https://richardewing.io/compare/github-copilot-problems' },
+    alternates: { canonical: 'https://www.richardewing.io/compare/github-copilot-problems' },
 };
 
 const complaints = [

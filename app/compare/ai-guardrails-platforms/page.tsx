@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'AI Guardrails Platform Comparison 2026 — Enterprise vs Practitioner Governance',
         description: 'Why enterprise guardrails miss the practitioner layer and how $99 governance modules fill the gap.',
     },
-    alternates: { canonical: 'https://richardewing.io/compare/ai-guardrails-platforms' },
+    alternates: { canonical: 'https://www.richardewing.io/compare/ai-guardrails-platforms' },
 };
 
 const platforms = [

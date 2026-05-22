@@ -18,8 +18,8 @@ export default function Home() {
               '@type': 'WebSite',
               '@id': 'https://www.richardewing.io/#website',
               'url': 'https://www.richardewing.io/',
-              'name': 'Richard Ewing | Intelligence Suite',
-              'description': 'AI Economist and AI Capital Auditor. Founder of Exogram.',
+              'name': 'Richard Ewing | AI Economist — R&D Capital Audits & AI Governance',
+              'description': '80% of AI projects fail. I audit R&D capital, diagnose AI unit economics, and build deterministic verification infrastructure.',
             },
             {
               '@type': 'Organization',

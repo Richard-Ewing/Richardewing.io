@@ -1,62 +1,101 @@
 "use client";
 
 import Link from 'next/link';
-import NumberTicker from '@/components/magicui/number-ticker';
 import WordRotate from '@/components/magicui/word-rotate';
 import { AsSeenIn } from '@/components/AsSeenIn';
+import { ArrowRight, Shield, TrendingDown, Search } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="min-h-[70vh] flex items-center justify-center py-12">
+        <section className="min-h-[75vh] flex items-center justify-center py-16">
             <div className="page-container text-center">
 
-                {/* Eyebrow pill */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-200 mb-6">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <span className="text-sm font-semibold text-zinc-950">Board-Level AI Governance & R&D Oversight</span>
+                {/* Eyebrow pill — stat-driven urgency */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 border border-rose-200 mb-6">
+                    <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+                    <span className="text-sm font-semibold text-zinc-950">80% of Enterprise AI Projects Fail (RAND) — Yours Doesn't Have To</span>
                 </div>
 
+                {/* Main Headline — Financial framing */}
                 <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6 leading-tight flex flex-col items-center">
-                    <span>I cure the CTO Agent Delusion.</span>
-                    <span className="flex flex-wrap justify-center gap-x-3 mt-2 text-3xl md:text-4xl lg:text-5xl">
-                        I build deterministic systems to
-                    </span>
-                    <span className="flex flex-wrap justify-center gap-x-3 text-3xl md:text-4xl lg:text-5xl">
-                        protect your margins from
+                    <span>Stop Paying the</span>
+                    <span className="flex flex-wrap justify-center gap-x-3 mt-1">
                         <WordRotate
-                            className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 font-extrabold"
-                            words={["AI feature bloat.", "probabilistic code.", "the Turing tax.", "vibe-coding debt."]}
+                            className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-500 to-purple-600 font-extrabold"
+                            words={["AI Innovation Tax.", "Hallucination Debt.", "Retry Inflation Cost.", "Margin Collapse Fee."]}
                         />
                     </span>
                 </div>
 
+                {/* Subheadline — operational specificity */}
+                <p className="text-xl md:text-2xl text-zinc-900 mb-4 max-w-3xl mx-auto leading-relaxed font-medium">
+                    Transform volatile AI models into predictable, enterprise-grade assets.
+                </p>
+                <p className="text-lg text-zinc-800 mb-8 max-w-2xl mx-auto">
+                    I audit R&D capital, diagnose AI unit economics, and build the deterministic verification infrastructure that eliminates execution variance before it hits your P&L.
+                </p>
+
+                {/* Dual CTA */}
+                <div className="flex flex-wrap justify-center gap-4 mb-10">
+                    <Link href="/tools/pdi" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-rose-500/20">
+                        Run a Free Diagnosis <ArrowRight className="w-5 h-5" />
+                    </Link>
+                    <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-zinc-400 text-zinc-950 font-bold text-lg hover:border-violet-400 hover:bg-violet-50/30 transition-all">
+                        Book a Strategic Advisory Call
+                    </Link>
+                </div>
+
                 {/* Credibility line */}
-                <p className="text-zinc-950 mb-6 text-lg">
-                    Richard Ewing, The AI Economist · Operator of The AI Economist · Founder of <a href="/exogram" className="text-purple-900 font-extrabold hover:text-purple-500 transition">Exogram</a>
+                <p className="text-zinc-800 mb-6 text-sm font-semibold">
+                    Richard Ewing, The AI Economist · Founder of <a href="/exogram" className="text-purple-900 font-extrabold hover:text-purple-500 transition">Exogram</a> · Used in $7,500+ R&D Capital Audits
                 </p>
 
                 {/* As Seen In */}
                 <AsSeenIn />
 
-                {/* Path selector - 3 cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
+                {/* 3-Step Engine — DIAGNOSE → UNDERSTAND → ENFORCE */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
 
-                    <Link href="/advisory" className="card text-left hover:border-purple-300 group block">
-                        <div className="text-2xl mb-3">📊</div>
-                        <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-purple-900 font-extrabold">Get an Audit</h3>
-                        <p className="text-sm font-semibold text-zinc-900 font-medium">Diagnose my R&D economics</p>
+                    <Link href="/tools/pdi" className="card text-left hover:border-rose-300 group block relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-rose-400 to-rose-500"></div>
+                        <div className="pt-4">
+                            <div className="flex items-center gap-3 mb-3">
+                                <div className="w-10 h-10 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center">
+                                    <Search className="w-5 h-5 text-rose-600" />
+                                </div>
+                                <div className="text-xs font-bold text-rose-600 uppercase tracking-widest font-mono">Step 01</div>
+                            </div>
+                            <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-rose-700 text-lg transition-colors">Diagnose</h3>
+                            <p className="text-sm font-medium text-zinc-800">Quantify your hidden technical debt in dollar terms. Calculate your Technical Insolvency Date.</p>
+                        </div>
                     </Link>
 
-                    <Link href="/doctrine" className="card text-left hover:border-indigo-300 group block">
-                        <div className="text-2xl mb-3">📖</div>
-                        <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-indigo-900 font-extrabold">Learn the Framework</h3>
-                        <p className="text-sm font-semibold text-zinc-900 font-medium">Read the doctrine</p>
+                    <Link href="/runtime-failure-index" className="card text-left hover:border-violet-300 group block relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-400 to-violet-500"></div>
+                        <div className="pt-4">
+                            <div className="flex items-center gap-3 mb-3">
+                                <div className="w-10 h-10 rounded-lg bg-violet-50 border border-violet-200 flex items-center justify-center">
+                                    <TrendingDown className="w-5 h-5 text-violet-600" />
+                                </div>
+                                <div className="text-xs font-bold text-violet-600 uppercase tracking-widest font-mono">Step 02</div>
+                            </div>
+                            <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-violet-700 text-lg transition-colors">Understand</h3>
+                            <p className="text-sm font-medium text-zinc-800">Map the exact failure modes destroying your margins. Real incidents with root cause analysis.</p>
+                        </div>
                     </Link>
 
-                    <Link href="/exogram" className="card text-left hover:border-purple-300 group block">
-                        <div className="text-2xl mb-3">🔧</div>
-                        <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-purple-900 font-extrabold">See What I Build</h3>
-                        <p className="text-sm font-semibold text-zinc-900 font-medium">Explore Exogram</p>
+                    <Link href="/exogram" className="card text-left hover:border-purple-300 group block relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-purple-600"></div>
+                        <div className="pt-4">
+                            <div className="flex items-center gap-3 mb-3">
+                                <div className="w-10 h-10 rounded-lg bg-purple-50 border border-purple-200 flex items-center justify-center">
+                                    <Shield className="w-5 h-5 text-purple-600" />
+                                </div>
+                                <div className="text-xs font-bold text-purple-600 uppercase tracking-widest font-mono">Step 03</div>
+                            </div>
+                            <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-purple-700 text-lg transition-colors">Enforce</h3>
+                            <p className="text-sm font-medium text-zinc-800">Deploy deterministic verification infrastructure. Exogram — the trust layer AI has been missing.</p>
+                        </div>
                     </Link>
 
                 </div>

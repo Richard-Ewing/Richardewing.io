@@ -10,7 +10,7 @@ export const metadata: Metadata = {
         title: 'Getting Started — Deploy Governance Skills in 10 Minutes',
         description: 'Step-by-step installation guide for Claude Code, Cursor, Windsurf, and all major AI coding agents.',
     },
-    alternates: { canonical: 'https://richardewing.io/skills/getting-started' },
+    alternates: { canonical: 'https://www.richardewing.io/skills/getting-started' },
 };
 
 const steps = [

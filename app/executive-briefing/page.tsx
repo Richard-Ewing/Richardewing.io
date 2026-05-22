@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Executive Briefing — AI Governance for Engineering Leadership',
         description: 'Board-ready governance assessment: maturity model, risk matrix, and ROI analysis for AI coding agent deployment.',
     },
-    alternates: { canonical: 'https://richardewing.io/executive-briefing' },
+    alternates: { canonical: 'https://www.richardewing.io/executive-briefing' },
 };
 
 const maturityLevels = [

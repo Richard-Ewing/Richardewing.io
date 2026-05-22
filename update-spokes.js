@@ -248,11 +248,11 @@ updates.forEach(u => {
         
         // Construct the new block
         const newBlock = [
-            \`                    questionSlug: '\${u.slug}',\`,
-            \`                    questionHeadline: '\${u.headline}',\`,
-            \`                    answerHtml: \\\`\${u.newAnswer}\\\`,\`,
-            \`                    recommendedProductId: '\${u.productId}',\`,
-            \`                    upsellHeadline: '\${u.upsellHeadline}'\`
+            `                    questionSlug: '${u.slug}',`,
+            `                    questionHeadline: '${u.headline}',`,
+            `                    answerHtml: \`${u.newAnswer}\`,`,
+            `                    recommendedProductId: '${u.productId}',`,
+            `                    upsellHeadline: '${u.upsellHeadline}'`
         ];
         
         // Replace
@@ -260,5 +260,5 @@ updates.forEach(u => {
     }
 });
 
-fs.writeFileSync('app/lib/spoke-data.ts', lines.join('\\n'));
+fs.writeFileSync('app/lib/spoke-data.ts', lines.join('\n'));
 console.log("Updated spoke-data.ts successfully");

@@ -84,6 +84,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
     }));
 
+    const industrySlugs = [
+        'fintech',
+        'healthtech',
+        'ai-first',
+        'saas',
+        'govtech',
+        'edtech',
+        'ecommerce',
+        'cybersecurity',
+        'logistics',
+        'insurtech',
+        'proptech',
+        'legaltech',
+        'agritech',
+        'cleantech',
+        'mediatech'
+    ];
+
+    const industrySubPages: MetadataRoute.Sitemap = industrySlugs.map(slug => ({
+        url: `${baseUrl}/industries/${slug}`,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }));
+
     return [
         ...challengePages,
         ...careerPages,
@@ -92,6 +116,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...frameworkPages,
         ...blogPages,
         ...answerPages,
+        ...industrySubPages,
         
         // Core Pages
         {

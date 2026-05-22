@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Runtime Telemetry — Agentic Governance Metrics',
         description: 'Operational telemetry showing why AI coding agents fail and how runtime governance contains costs.',
     },
-    alternates: { canonical: 'https://richardewing.io/telemetry' },
+    alternates: { canonical: 'https://www.richardewing.io/telemetry' },
 };
 
 const costData = [

@@ -1,0 +1,25 @@
+name: ping_indexnow
+description: Execute mass telemetry ping to IndexNow/Bing after SEO mutations.
+
+permissions:
+  - execute_node_script
+  - network_egress
+
+requires_verification: false
+
+input_schema:
+  script_path: string (default: ping-all.js)
+
+output_schema:
+  status_code: number
+  success_count: number
+
+rollback_supported: false
+
+rate_limits:
+  executions_per_minute: 2
+
+failure_modes:
+  - syntax_error_in_script
+  - api_rate_limit_exceeded
+  - script_not_found

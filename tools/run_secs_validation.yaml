@@ -1,0 +1,25 @@
+name: run_secs_validation
+description: Enforce SECS deterministic policy-as-code locally to prevent probabilistic drift.
+
+permissions:
+  - execute_node_script
+  - read_environment
+
+requires_verification: true
+
+input_schema:
+  target_file: string
+  template_type: string
+
+output_schema:
+  validation_passed: boolean
+  violations: array
+
+rollback_supported: false
+
+rate_limits:
+  executions_per_minute: 10
+
+failure_modes:
+  - typescript_compile_failure
+  - policy_violation_halt

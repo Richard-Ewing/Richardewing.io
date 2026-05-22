@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'Your Claude API bill is higher than your revenue: Why simple Python tasks are blowing up AI costs',
+        description: 'Using top-tier AI for simple tasks is draining corporate budgets. If you don\'t match the tool to the job, your most popular feature will become your costliest.',
+        topics: ['Variable Compute Cost', 'Excess Capability', 'FinOps', 'AI Economics'],
+        icon: '💸',
+    },
+    {
         title: 'The Hidden Cost of Technical Debt: Why CIOs Must Act Now',
         description: 'How technical debt silently erodes R&D capital efficiency and what CIOs can do about it. Introduces the Innovation Tax framework for quantifying the cos...',
         topics: ['Technical Debt', 'Innovation Tax', 'R&D Capital Efficiency', 'Engineering Economics'],
@@ -90,7 +96,17 @@ export default function CIORecapPage() {
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-8">
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">Related Glossary Terms</h2>
                             <div className="space-y-2">
-                                {['technical-debt', 'innovation-tax', 'ai-cogs', 'dora-metrics', 'cost-of-predictivity'].map(slug => (
+                                {[
+                                    'variable-compute-cost',
+                                    'excess-capability',
+                                    'hardware-deflation-illusion',
+                                    'feature-level-finops',
+                                    'technical-debt',
+                                    'innovation-tax',
+                                    'ai-cogs',
+                                    'dora-metrics',
+                                    'cost-of-predictivity'
+                                ].map(slug => (
                                     <Link key={slug} href={`/glossary/${slug}`} className="block text-sm font-semibold text-zinc-900 font-medium hover:text-cyan-900 font-extrabold font-semibold transition-colors">→ {slug.replace(/-/g, ' ')}</Link>
                                 ))}
                             </div>

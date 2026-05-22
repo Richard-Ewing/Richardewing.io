@@ -10,7 +10,7 @@ export const metadata: Metadata = {
         title: 'Claude Code vs Cursor vs Windsurf 2026 — Pricing, Problems & Governance',
         description: 'Real pricing, user complaints, and governance gap analysis for every major AI coding agent.',
     },
-    alternates: { canonical: 'https://richardewing.io/compare/ai-coding-agents' },
+    alternates: { canonical: 'https://www.richardewing.io/compare/ai-coding-agents' },
 };
 
 const agents = [

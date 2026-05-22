@@ -28,10 +28,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.richardewing.io'),
   title: {
-    default: 'Richard Ewing — AI Economist | AI Economist',
+    default: 'Richard Ewing — AI Economist | R&D Capital Audits & AI Governance',
     template: '%s | Richard Ewing'
   },
-  description: 'The AI Economist framework applied to AI. I audit R&D spend, diagnose AI unit economics, and surface capital risks. Founder of Exogram. Free tools, frameworks, and advisory services.',
+  description: '80% of AI projects fail. I audit R&D capital, diagnose AI unit economics, and build deterministic verification infrastructure. Free tools, frameworks, and enterprise advisory.',
   keywords: homepageKeywords,
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
 
   // Open Graph
   openGraph: {
-    title: 'Richard Ewing — AI Economist | AI Economist',
-    description: 'The AI Economist framework applied to AI. I audit R&D spend, diagnose AI unit economics, and surface capital risks. Founder of Exogram.',
+    title: 'Richard Ewing — AI Economist | R&D Capital Audits & AI Governance',
+    description: '80% of AI projects fail. I audit R&D capital, diagnose AI unit economics, and build deterministic verification infrastructure that protects your margins.',
     siteName: 'Richard Ewing',
     type: 'website',
     locale: 'en_US',
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'Richard Ewing — AI Economist | AI Economist',
-    description: 'The AI Economist framework applied to AI. I audit R&D spend, diagnose AI unit economics, and surface capital risks. Founder of Exogram.',
+    title: 'Richard Ewing — AI Economist | R&D Capital Audits & AI Governance',
+    description: '80% of AI projects fail. I audit R&D capital, diagnose AI unit economics, and build deterministic verification infrastructure that protects your margins.',
     images: ['https://www.richardewing.io/og-image-home.png'],
   },
 

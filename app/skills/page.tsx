@@ -15,10 +15,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Deterministic Runtime Infrastructure for Claude Code & Agentic Engineering',
     description: 'Deployable runtime governance modules across 4 architectural layers: Identity, Skill, Tool, and Environment governance for deterministic AI execution.',
-    url: 'https://richardewing.io/skills',
+    url: 'https://www.richardewing.io/skills',
   },
   alternates: {
-    canonical: 'https://richardewing.io/skills',
+    canonical: 'https://www.richardewing.io/skills',
   }
 };
 

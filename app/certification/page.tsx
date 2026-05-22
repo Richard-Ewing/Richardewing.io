@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: 'Runtime Governance Maturity — Certification & Assessment',
         description: 'Institutional credentials for deterministic agentic engineering. 5-level maturity model with certification tracks.',
     },
-    alternates: { canonical: 'https://richardewing.io/certification' },
+    alternates: { canonical: 'https://www.richardewing.io/certification' },
 };
 
 const maturityLevels = [
