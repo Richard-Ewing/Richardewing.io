@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://www.richardewing.io/curriculum' },
     title: 'Executive Curriculum | Richard Ewing',
     description: 'Institutional onboarding tracks for CTO Governance, AI Cost Containment, and Deterministic Engineering.',
 };

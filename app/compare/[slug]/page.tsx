@@ -44,6 +44,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${comparison.title} | Enterprise Comparison`,
         description: comparison.description,
+        alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },
+        openGraph: {
+            title: `${comparison.title} | Enterprise Comparison`,
+            description: comparison.description,
+            url: `https://www.richardewing.io/compare/${slug}`,
+            siteName: 'Richard Ewing',
+            type: 'article',
+        },
     };
 }
 

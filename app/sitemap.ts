@@ -14,616 +14,163 @@ import { challenges } from './challenges/data';
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.richardewing.io';
 
-    const challengePages: MetadataRoute.Sitemap = [
-        {
-            url: `${baseUrl}/challenges`,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        ...challenges.map(c => ({
-            url: `${baseUrl}/challenges/${c.slug}`,
-            changeFrequency: 'monthly' as const,
-            priority: 0.8,
-        }))
+    // --- DEDUPLICATED SITEMAP ---
+    // All URLs are collected into a Map to prevent duplicates.
+    // If the same URL appears twice, the later entry overwrites the earlier one.
+    const entries = new Map<string, MetadataRoute.Sitemap[number]>();
+
+    function add(url: string, changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'], priority: number) {
+        entries.set(url, { url, changeFrequency, priority });
+    }
+
+    // === CORE PAGES ===
+    add(`${baseUrl}/`, 'weekly', 1.0);
+    add(`${baseUrl}/advisory`, 'monthly', 0.9);
+    add(`${baseUrl}/advisory/licensing`, 'monthly', 0.6);
+    add(`${baseUrl}/doctrine`, 'monthly', 0.8);
+    add(`${baseUrl}/runtime-architecture`, 'weekly', 0.95);
+    add(`${baseUrl}/tools`, 'monthly', 0.8);
+    add(`${baseUrl}/system-prompts`, 'monthly', 0.9);
+    add(`${baseUrl}/principal`, 'monthly', 0.8);
+    add(`${baseUrl}/manifesto`, 'yearly', 0.6);
+    add(`${baseUrl}/book`, 'monthly', 0.5);
+    add(`${baseUrl}/profiles`, 'monthly', 0.5);
+    add(`${baseUrl}/system`, 'monthly', 0.5);
+    add(`${baseUrl}/pricing`, 'monthly', 0.8);
+    add(`${baseUrl}/legal`, 'yearly', 0.3);
+    add(`${baseUrl}/methodology`, 'monthly', 0.8);
+
+    // === TOOL PAGES ===
+    add(`${baseUrl}/tools/pdi`, 'monthly', 0.7);
+    add(`${baseUrl}/tools/ev-se`, 'monthly', 0.7);
+    add(`${baseUrl}/tools/aueb`, 'monthly', 0.7);
+    add(`${baseUrl}/tools/aper`, 'monthly', 0.7);
+    add(`${baseUrl}/tools/audit-interview`, 'monthly', 0.7);
+    add(`${baseUrl}/tools/scoring`, 'monthly', 0.5);
+    add(`${baseUrl}/tools/ai-roi-timeline`, 'monthly', 0.9);
+
+    // === CONTENT PAGES ===
+    add(`${baseUrl}/articles`, 'weekly', 0.8);
+    add(`${baseUrl}/briefings`, 'monthly', 0.7);
+    add(`${baseUrl}/exogram`, 'monthly', 0.8);
+    add(`${baseUrl}/blog`, 'weekly', 0.9);
+    add(`${baseUrl}/resources`, 'weekly', 0.8);
+
+    // === AUDIENCE FUNNEL ===
+    add(`${baseUrl}/for-investors`, 'monthly', 0.9);
+    add(`${baseUrl}/for-boards`, 'monthly', 0.9);
+    add(`${baseUrl}/for-ctos`, 'monthly', 0.9);
+    add(`${baseUrl}/roi`, 'monthly', 0.8);
+
+    // === HUB PAGES ===
+    add(`${baseUrl}/skills`, 'weekly', 0.95);
+    add(`${baseUrl}/diagrams`, 'monthly', 0.9);
+    add(`${baseUrl}/industries`, 'monthly', 0.8);
+    add(`${baseUrl}/curriculum`, 'monthly', 0.8);
+    add(`${baseUrl}/case-studies`, 'monthly', 0.8);
+    add(`${baseUrl}/compare`, 'monthly', 0.7);
+    add(`${baseUrl}/answers`, 'monthly', 0.8);
+    add(`${baseUrl}/failures`, 'monthly', 0.9);
+
+    // === INSTITUTIONAL ===
+    add(`${baseUrl}/telemetry`, 'weekly', 0.9);
+    add(`${baseUrl}/executive-briefing`, 'monthly', 0.9);
+    add(`${baseUrl}/runtime-failure-index`, 'weekly', 0.95);
+    add(`${baseUrl}/certification`, 'monthly', 0.7);
+    add(`${baseUrl}/benchmark`, 'monthly', 0.7);
+    add(`${baseUrl}/workshops`, 'monthly', 0.7);
+
+    // === LEAD MAGNETS ===
+    add(`${baseUrl}/checklist`, 'monthly', 0.8);
+    add(`${baseUrl}/faq`, 'monthly', 0.7);
+    add(`${baseUrl}/start-here`, 'monthly', 0.9);
+    add(`${baseUrl}/reports/state-of-ai-engineering`, 'monthly', 0.9);
+    add(`${baseUrl}/testimonials`, 'monthly', 0.7);
+    add(`${baseUrl}/partnerships`, 'monthly', 0.7);
+
+    // === AI INTEGRATION ===
+    add(`${baseUrl}/ai-integration`, 'weekly', 0.95);
+    add(`${baseUrl}/ai-integration/system`, 'monthly', 0.9);
+    add(`${baseUrl}/case-studies/runtime-incidents`, 'weekly', 0.9);
+    add(`${baseUrl}/skills/getting-started`, 'monthly', 0.85);
+    add(`${baseUrl}/architecture/deterministic-control-layer`, 'monthly', 0.8);
+    add(`${baseUrl}/benchmark/ai-capital-2026`, 'monthly', 0.7);
+
+    // === ARTICLE RECAPS ===
+    add(`${baseUrl}/articles/recap/cio-com`, 'monthly', 0.7);
+    add(`${baseUrl}/articles/recap/built-in`, 'monthly', 0.7);
+    add(`${baseUrl}/articles/recap/hackernoon`, 'monthly', 0.7);
+
+    // === VAULT CURRICULUM ===
+    add(`${baseUrl}/vault/curriculum/tracks`, 'monthly', 0.7);
+
+    // === COMPARE PAGES (static) ===
+    const comparePages = [
+        'ai-coding-agents', 'ai-guardrails-platforms',
+        'github-copilot-problems', 'cursor-problems', 'windsurf-problems',
+        'why-claude-loses-context', 'why-retry-loops-happen', 'why-cursor-rewrites-files',
+        'why-ai-coding-burns-money', 'why-mcp-is-dangerous', 'claude-md-is-not-governance',
+        'pdi-vs-sonarqube', 'pdi-vs-codeclimate', 'pdi-vs-waydev',
+        'audit-interview-vs-leetcode', 'audit-interview-vs-hackerrank', 'audit-interview-vs-traditional',
+        'aueb-vs-aws-cost-explorer', 'ev-se-vs-jellyfish', 'aper-vs-jellyfish', 'aper-vs-linearb',
+        'copilot-roi-vs-gitclear', 'dora-metrics-vs-aper',
+        'shadow-ai-vs-shadow-it', 'technical-debt-vs-technical-insolvency', 'vibe-coding-vs-agile',
     ];
+    comparePages.forEach(slug => add(`${baseUrl}/compare/${slug}`, 'monthly', 0.8));
 
+    // === DYNAMICALLY GENERATED PAGES ===
 
-    const combatPages: MetadataRoute.Sitemap = COMBAT_SEO_MATRIX.flatMap(t => 
-        t.competitors.map(c => ({
-            url: `${baseUrl}/tools/${t.toolSlug}/vs/${c.slug}`,
-            changeFrequency: 'weekly' as const,
-            priority: 0.9,
-        }))
+    // Challenges
+    challenges.forEach(c => add(`${baseUrl}/challenges/${c.slug}`, 'monthly', 0.8));
+
+    // Combat SEO (tool vs competitor)
+    COMBAT_SEO_MATRIX.forEach(t =>
+        t.competitors.forEach(c =>
+            add(`${baseUrl}/tools/${t.toolSlug}/vs/${c.slug}`, 'weekly', 0.9)
+        )
     );
 
-    const glossaryPages: MetadataRoute.Sitemap = [
-        {
-            url: `${baseUrl}/glossary`,
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        ...glossaryTerms.map(term => ({
-            url: `${baseUrl}/glossary/${term.slug}`,
-            changeFrequency: 'monthly' as const,
-            priority: 0.6,
-        })),
-    ];
+    // Glossary
+    glossaryTerms.forEach(term => add(`${baseUrl}/glossary/${term.slug}`, 'monthly', 0.6));
 
-    const frameworkPages: MetadataRoute.Sitemap = frameworks.map(f => ({
-        url: `${baseUrl}/articles/frameworks/${f.slug}`,
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-    }));
+    // Frameworks
+    frameworks.forEach(f => add(`${baseUrl}/articles/frameworks/${f.slug}`, 'monthly', 0.7));
 
-
-    const blogPages: MetadataRoute.Sitemap = getSortedArticles()
+    // Blog (excluding syndicated content with external canonicals)
+    getSortedArticles()
         .filter(article => !article.canonicalUrl || article.canonicalUrl === `${baseUrl}/blog/${article.slug}`)
-        .map(article => ({
-        url: `${baseUrl}/blog/${article.slug}`,
-        lastModified: new Date(article.date),
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-    }));
+        .forEach(article => add(`${baseUrl}/blog/${article.slug}`, 'monthly', 0.8));
 
-    const careerPages: MetadataRoute.Sitemap = [
-        {
-            url: `${baseUrl}/careers`,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        ...CAREER_PATHS.map(path => ({
-            url: `${baseUrl}/careers/${path.slug}`,
-            changeFrequency: 'monthly' as const,
-            priority: 0.8,
-        }))
-    ];
+    // Careers
+    CAREER_PATHS.forEach(path => add(`${baseUrl}/careers/${path.slug}`, 'monthly', 0.8));
 
-    const answerPages: MetadataRoute.Sitemap = getAllSpokeRoutes().map(r => ({
-        url: `${baseUrl}/answers/${r.topic}/${r.persona}/${r.questionSlug}`,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-    }));
+    // Answers (hub & spoke)
+    getAllSpokeRoutes().forEach(r =>
+        add(`${baseUrl}/answers/${r.topic}/${r.persona}/${r.questionSlug}`, 'monthly', 0.6)
+    );
 
+    // Industries
     const industrySlugs = [
-        'fintech',
-        'healthtech',
-        'ai-first',
-        'saas',
-        'govtech',
-        'edtech',
-        'ecommerce',
-        'cybersecurity',
-        'logistics',
-        'insurtech',
-        'proptech',
-        'legaltech',
-        'agritech',
-        'cleantech',
-        'mediatech'
+        'fintech', 'healthtech', 'ai-first', 'saas', 'govtech', 'edtech',
+        'ecommerce', 'cybersecurity', 'logistics', 'insurtech', 'proptech',
+        'legaltech', 'agritech', 'cleantech', 'mediatech'
     ];
+    industrySlugs.forEach(slug => add(`${baseUrl}/industries/${slug}`, 'monthly', 0.7));
 
-    const industrySubPages: MetadataRoute.Sitemap = industrySlugs.map(slug => ({
-        url: `${baseUrl}/industries/${slug}`,
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-    }));
+    // Vault Curriculum Modules
+    getAllModuleSlugs().forEach(slug =>
+        add(`${baseUrl}/vault/curriculum/tracks/${slug}`, 'monthly', 0.6)
+    );
 
-    return [
-        ...challengePages,
-        ...careerPages,
-        ...combatPages,
-        ...glossaryPages,
-        ...frameworkPages,
-        ...blogPages,
-        ...answerPages,
-        ...industrySubPages,
-        
-        // Core Pages
-        {
-            url: `${baseUrl}/`,
-            changeFrequency: 'weekly',
-            priority: 1.0,
-        },
-        {
-            url: `${baseUrl}/system-prompts`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/advisory`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/advisory/licensing`,
-            changeFrequency: 'monthly',
-            priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/doctrine`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/runtime-architecture`,
-            changeFrequency: 'weekly',
-            priority: 0.95,
-        },
-        {
-            url: `${baseUrl}/tools`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        
-        // Tool Pages
-        {
-            url: `${baseUrl}/tools/ai-roi-timeline`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/tools/pdi`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/tools/ev-se`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/tools/aueb`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/tools/aper`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/tools/audit-interview`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/tools/scoring`,
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
+    // Exogram Docs
+    exogramDocs.forEach(doc => add(`${baseUrl}/exogram/docs/${doc.slug}`, 'monthly', 0.8));
 
-        // Content Pages
-        {
-            url: `${baseUrl}/articles`,
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/briefings`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/exogram`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/manifesto`,
-            changeFrequency: 'yearly',
-            priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/principal`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/book`,
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/profiles`,
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/system`,
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
+    // pSEO Matrix (compare pages) — only add if not already a static compare page
+    (pseoMatrixData || []).forEach((item: any) => {
+        if (!comparePages.includes(item.slug)) {
+            add(`${baseUrl}/compare/${item.slug}`, 'weekly', 0.8);
+        }
+    });
 
-        // Monetization Pages
-        {
-            url: `${baseUrl}/benchmark`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/certification`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/workshops`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/vault/curriculum/tracks`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/pricing`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/resources`,
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/case-studies/runtime-incidents`,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/ai-coding-agents`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/skills/getting-started`,
-            changeFrequency: 'monthly',
-            priority: 0.85,
-        },
-
-        // AI Integration Advisory
-        {
-            url: `${baseUrl}/ai-integration`,
-            changeFrequency: 'weekly',
-            priority: 0.95,
-        },
-        {
-            url: `${baseUrl}/ai-integration/system`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-
-        // Lead magnets & help
-        {
-            url: `${baseUrl}/reports/state-of-ai-engineering`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/checklist`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/faq`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/start-here`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        // Comparison pages
-        {
-            url: `${baseUrl}/compare`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/compare/pdi-vs-sonarqube`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/compare/audit-interview-vs-leetcode`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/compare/aueb-vs-aws-cost-explorer`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/compare/audit-interview-vs-hackerrank`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/compare/ev-se-vs-jellyfish`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-
-        // --- HIGH-VALUE HUB PAGES ---
-        {
-            url: `${baseUrl}/skills`,
-            changeFrequency: 'weekly',
-            priority: 0.95,
-        },
-        {
-            url: `${baseUrl}/diagrams`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/industries`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/blog`,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/curriculum`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/case-studies`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/checklist`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/faq`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/start-here`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-
-        // Comparison pages hub
-        {
-            url: `${baseUrl}/compare`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        // Competitor complaint pages (high-intent SEO)
-        {
-            url: `${baseUrl}/compare/github-copilot-problems`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/cursor-problems`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/windsurf-problems`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/ai-guardrails-platforms`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        // Pain-point comparison pages
-        {
-            url: `${baseUrl}/compare/why-claude-loses-context`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/why-retry-loops-happen`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/why-cursor-rewrites-files`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/why-ai-coding-burns-money`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/why-mcp-is-dangerous`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/claude-md-is-not-governance`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        // Legacy comparison pages
-        {
-            url: `${baseUrl}/compare/pdi-vs-sonarqube`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/compare/audit-interview-vs-leetcode`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/compare/aueb-vs-aws-cost-explorer`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/compare/audit-interview-vs-hackerrank`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/compare/ev-se-vs-jellyfish`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-
-        // Blog Recap Pages
-        {
-            url: `${baseUrl}/articles/recap/cio-com`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/articles/recap/built-in`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/articles/recap/hackernoon`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-
-        // Additional Comparison Pages
-        {
-            url: `${baseUrl}/compare/audit-interview-vs-traditional`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-
-        // Audience Funnel Pages
-        {
-            url: `${baseUrl}/for-investors`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/for-boards`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/for-ctos`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/roi`,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-
-        // Methodology + Social Proof
-        {
-            url: `${baseUrl}/testimonials`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/partnerships`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-
-        // Additional Comparisons
-        {
-            url: `${baseUrl}/compare/pdi-vs-waydev`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/compare/aper-vs-jellyfish`,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-
-        // Curriculum Module Pages (Vault Protected Previews)
-        ...getAllModuleSlugs().map(slug => ({
-            url: `${baseUrl}/vault/curriculum/tracks/${slug}`,
-            changeFrequency: 'monthly' as const,
-            priority: 0.6,
-        })),
-        // --- DYNAMICALLY INJECTED EXOGRAM DOCS ---
-        // NOTE: /comparisons/* and /guides/* removed from sitemap — they all 308→ /vault/curriculum/tracks
-
-        ...exogramDocs.map(doc => ({
-            url: `${baseUrl}/exogram/docs/${doc.slug}`,
-            changeFrequency: 'monthly' as const,
-            priority: 0.8,
-        })),
-
-
-
-        // --- PROGRAMMATIC SEO (pSEO) MATRIX ---
-        ...(pseoMatrixData || []).map((item: any) => ({
-            url: `${baseUrl}/compare/${item.slug}`,
-            changeFrequency: 'weekly' as const,
-            priority: 0.8,
-        })),
-
-        // --- NEW INSTITUTIONAL PAGES ---
-        {
-            url: `${baseUrl}/telemetry`,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/executive-briefing`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/why-claude-loses-context`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/why-ai-coding-burns-money`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/why-retry-loops-happen`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/why-mcp-is-dangerous`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/runtime-failure-index`,
-            changeFrequency: 'weekly',
-            priority: 0.95,
-        },
-        {
-            url: `${baseUrl}/compare/why-cursor-rewrites-files`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/compare/claude-md-is-not-governance`,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        // Legal
-        {
-            url: `${baseUrl}/legal`,
-            changeFrequency: 'yearly',
-            priority: 0.3,
-        },
-    ];
+    return Array.from(entries.values());
 }
-

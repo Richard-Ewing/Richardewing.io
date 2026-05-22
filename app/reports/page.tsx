@@ -43,6 +43,7 @@ const staticReports = [
     }
 ];
 
+
 export default function ReportsPage() {
     // In a live environment, we would use a Server Component or SWR to fetch reports directly from DB.
     // For now, we simulate dynamic injection.

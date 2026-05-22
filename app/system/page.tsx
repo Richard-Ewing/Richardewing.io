@@ -9,6 +9,7 @@ import ShineBorder from '../components/magicui/shine-border';
 
 
 
+
 export default function SystemPage() {
     return (
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4 sm:px-6 lg:px-8 mt-12 pb-24">

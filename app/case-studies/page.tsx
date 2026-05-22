@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://www.richardewing.io/case-studies' },
     title: 'Case Studies & Failure Analyses | Richard Ewing',
     description: 'Operational realism density: how and why production AI systems collapse, and the governance frameworks that prevent them.',
 };

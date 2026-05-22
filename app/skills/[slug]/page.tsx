@@ -18,7 +18,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     return {
         title: `${skill.title} | Governance System`,
-        description: skill.description,
+        description: skill.description.slice(0, 155).replace(/\n/g, ' ') + '...',
+        alternates: { canonical: `https://www.richardewing.io/skills/${slug}` },
+        openGraph: {
+            title: `${skill.title} | Governance System`,
+            description: skill.description.slice(0, 155).replace(/\n/g, ' '),
+            url: `https://www.richardewing.io/skills/${slug}`,
+            siteName: 'Richard Ewing',
+            type: 'article',
+        },
     };
 }
 

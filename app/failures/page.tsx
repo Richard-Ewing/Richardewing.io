@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { failures } from '@/lib/content/failures';
 
 export const metadata = {
+    alternates: { canonical: 'https://www.richardewing.io/failures' },
   title: 'Operational Failure Database | RichardEwing.io',
   description: 'The definitive SRE database for agentic engineering failures, context rot, hallucination debt, and repository drift.',
 };

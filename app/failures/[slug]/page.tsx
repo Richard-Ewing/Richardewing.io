@@ -17,7 +17,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     return {
         title: `${failure.title} | Operational Failure Signature`,
-        description: failure.definition,
+        description: failure.definition.slice(0, 155).replace(/\n/g, ' ') + '...',
+        alternates: { canonical: `https://www.richardewing.io/failures/${slug}` },
+        openGraph: {
+            title: `${failure.title} | Operational Failure Signature`,
+            description: failure.definition.slice(0, 155).replace(/\n/g, ' '),
+            url: `https://www.richardewing.io/failures/${slug}`,
+            siteName: 'Richard Ewing',
+            type: 'article',
+        },
     };
 }
 

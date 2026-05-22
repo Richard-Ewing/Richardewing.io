@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://www.richardewing.io/system-prompts' },
     title: 'Executive AI System Prompts | Richard Ewing',
     description: 'Copy-pasteable system prompts and operational frameworks for CTOs, Engineering Leaders, and Product Managers to audit technical debt and R&D capital.',
     openGraph: {

@@ -4,6 +4,7 @@ import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
 import Link from 'next/link';
 
+
 export default function LegalPage() {
     return (
         <main className="pt-24 pb-24 px-6 min-h-screen">

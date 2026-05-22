@@ -34,6 +34,7 @@ const mockBenchmarks = [
     }
 ];
 
+
 export default function BenchmarksPage() {
     const [selectedIndustry, setSelectedIndustry] = useState('SaaS');
 

@@ -6,6 +6,7 @@ import ShineBorder from '@/components/magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import Link from 'next/link';
 
+
 export default function AdvisoryPage() {
     return (
         <main className="pt-20">

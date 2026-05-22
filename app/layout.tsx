@@ -36,11 +36,16 @@ export const metadata: Metadata = {
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
   publisher: 'Richard Ewing',
+  // Canonical
+  alternates: {
+    canonical: 'https://www.richardewing.io',
+  },
 
   // Open Graph
   openGraph: {
     title: 'Richard Ewing — AI Economist | R&D Capital Audits & AI Governance',
     description: '80% of AI projects fail. I audit R&D capital, diagnose AI unit economics, and build deterministic verification infrastructure that protects your margins.',
+    url: 'https://www.richardewing.io',
     siteName: 'Richard Ewing',
     type: 'website',
     locale: 'en_US',

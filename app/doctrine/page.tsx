@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+
 export default function DoctrinePage() {
     return (
         <main className="pt-20">

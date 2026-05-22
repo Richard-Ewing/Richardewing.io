@@ -6,6 +6,7 @@ import Link from 'next/link';
 import ReportUnlocker from './unlocker';
 
 export const metadata = {
+    alternates: { canonical: 'https://www.richardewing.io/reports/state-of-ai-engineering' },
     title: 'The State of AI Engineering 2026',
     description: 'The definitive executive playbook on FTE displacement, CapEx vs OpEx of LLMs, and surviving the capability chasm.',
 };

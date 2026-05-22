@@ -31,6 +31,7 @@ const CMAP: Record<string, { bg: string, text: string, border: string, shadow: s
     rose: { bg: 'bg-rose-500/5', text: 'text-rose-400', border: 'border-rose-500/20', shadow: 'shadow-[0_0_15px_rgba(244,63,94,0.15)]', hoverBg: 'hover:bg-rose-500/20', bg10: 'bg-rose-500/10' },
 };
 
+
 export default function DeepCareersHub() {
     return (
         <div className="max-w-7xl w-full relative z-10 mx-auto px-4 pb-24">

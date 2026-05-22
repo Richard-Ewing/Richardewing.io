@@ -2,6 +2,7 @@ import { exogramDocs } from '@/lib/exogram-docs';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://www.richardewing.io/exogram/docs' },
     title: 'Exogram Developer Documentation',
     description: 'Explore the technical architecture, protocols, and APIs that power Exograms deterministic AI validation layer.',
 };

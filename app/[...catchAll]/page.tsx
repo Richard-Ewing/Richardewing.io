@@ -1,11 +1,14 @@
-import { permanentRedirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 
 export default function CatchAllRoute() {
-    // This file acts as the ultimate Sitewide 404 safety net.
-    // If a request reaches this file, it means it didn't match ANY known 
-    // static file or dynamic directory in the entire Next.js application.
-    
-    // Instead of serving a 404 Not Found page (which damages SEO and creates errors in GSC),
-    // we issue an instant 308 Permanent Redirect to the home page.
-    permanentRedirect('/');
+    // Return a proper 404 for unknown routes.
+    // Previously this was a 308 redirect to '/' which caused:
+    // - Ahrefs: "Page has redirected JavaScript" (1,547 entries)
+    // - Ahrefs: "3XX redirect in sitemap"  
+    // - Ahrefs: "Canonical points to redirect"
+    // - Google: Confusion about which page is authoritative
+    //
+    // A proper 404 is SEO-correct: it tells crawlers this page
+    // doesn't exist, so they stop wasting crawl budget on it.
+    notFound();
 }

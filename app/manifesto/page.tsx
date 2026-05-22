@@ -5,6 +5,7 @@ import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import ShineBorder from '../components/magicui/shine-border';
 import Link from 'next/link';
 
+
 export default function ManifestoPage() {
     return (
         <div className="max-w-4xl w-full mx-auto relative z-10">

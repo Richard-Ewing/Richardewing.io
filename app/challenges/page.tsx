@@ -4,6 +4,7 @@ import { challenges } from './data';
 import { ShieldAlert, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
+    alternates: { canonical: 'https://www.richardewing.io/challenges' },
     title: 'Enterprise Challenges | Operational Intelligence',
     description: 'Programmatic solutions for specific governance drifts and enterprise AI failures identified in our diagnostic tools.',
 };

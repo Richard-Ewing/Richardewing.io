@@ -8,6 +8,7 @@ import { BorderBeam } from '@/components/magicui/border-beam';
 import Meteors from '@/components/magicui/meteors';
 import { InteractiveExogramSim } from '../components/visualizations/InteractiveExogramSim';
 
+
 export default function ExogramPage() {
     return (
         <main className="pt-20">
