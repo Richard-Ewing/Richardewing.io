@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, AlertTriangle, DollarSign, TrendingDown, Shield, Brain, Gauge, Clock, Calculator, Users } from 'lucide-react';
+import ProofRail from '../components/ProofRail';
+import RuntimeEscalationSimulator from '../components/RuntimeEscalationSimulator';
 
 export const metadata: Metadata = {
     title: 'Diagnose Your AI & Engineering Risk | Free Tools',
@@ -164,6 +166,18 @@ export default function DiagnosePage() {
                             );
                         })}
                     </div>
+
+                </div>
+            </div>
+
+            {/* Proof bar */}
+            <ProofRail />
+
+            {/* Escalation simulator — feel the operational danger */}
+            <RuntimeEscalationSimulator />
+
+            <div className="page-container">
+                <div className="max-w-5xl mx-auto">
 
                     {/* Escalation */}
                     <div className="rounded-2xl bg-zinc-950 p-8 md:p-12 text-center mb-16">

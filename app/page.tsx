@@ -4,6 +4,7 @@ import ProofRail from './components/ProofRail';
 import ClientOutcomes from './components/sections/ClientOutcomes';
 import FourHorsemen from './components/sections/FourHorsemen';
 import ToolsPreview from './components/sections/ToolsPreview';
+import RuntimeEscalationSimulator from './components/RuntimeEscalationSimulator';
 import ExogramSection from './components/sections/ExogramSection';
 import PricingPreview from './components/sections/PricingPreview';
 import NewsletterSection from './components/sections/NewsletterSection';
@@ -43,7 +44,9 @@ export default function Home() {
       <ClientOutcomes />
       {/* Layer 3: Why enterprise AI fails — operational specificity */}
       <FourHorsemen />
-      {/* Layer 4: Frameworks & Diagnostics */}
+      {/* Layer 4: FEEL the escalation — operational inevitability simulator */}
+      <RuntimeEscalationSimulator />
+      {/* Layer 5: Frameworks & Diagnostics */}
       <ToolsPreview />
       {/* Layer 5: Exogram — the enforcement infrastructure */}
       <ExogramSection />

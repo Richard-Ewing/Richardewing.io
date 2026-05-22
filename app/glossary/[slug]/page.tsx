@@ -10,6 +10,7 @@ import GlossaryToolCTA from '../../components/GlossaryToolCTA';
 import ShareButtons from '../../components/ShareButtons';
 import RetroTerminal from '../../components/RetroTerminal';
 import GlossaryQuiz from '../../components/GlossaryQuiz';
+import GlossaryMesh from '../../components/GlossaryMesh';
 import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -701,6 +702,15 @@ export default async function GlossaryTermPage({ params }: Props) {
                         </div>
                     </section>
                 )}
+
+                {/* Ontology Mesh — cross-links to compare, failures, tools, articles */}
+                <GlossaryMesh
+                    termSlug={slug}
+                    termTitle={term.title}
+                    termCategory={term.category}
+                    relatedArticles={term.relatedArticles}
+                    relatedFailures={term.relatedFailures}
+                />
 
                 {/* Related Terms */}
                 {relatedTermObjects.length > 0 && (
