@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     default: 'Richard Ewing — AI Economist | R&D Capital Audits & AI Governance',
     template: '%s | Richard Ewing'
   },
-  description: '80% of AI projects fail. I audit R&D capital, diagnose AI unit economics, and build deterministic verification infrastructure. Free tools, frameworks, and enterprise advisory.',
+  description: 'Most AI failures are not model failures. They are operational failures. I audit R&D capital, diagnose AI unit economics, and build deterministic governance infrastructure. Free tools, frameworks, and enterprise advisory.',
   keywords: homepageKeywords,
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   // Open Graph
   openGraph: {
     title: 'Richard Ewing — AI Economist | R&D Capital Audits & AI Governance',
-    description: '80% of AI projects fail. I audit R&D capital, diagnose AI unit economics, and build deterministic verification infrastructure that protects your margins.',
+    description: 'Most AI failures are not model failures. They are operational failures. I audit R&D capital, diagnose AI unit economics, and build deterministic governance infrastructure that protects your margins.',
     url: 'https://www.richardewing.io',
     siteName: 'Richard Ewing',
     type: 'website',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Richard Ewing — AI Economist | R&D Capital Audits & AI Governance',
-    description: '80% of AI projects fail. I audit R&D capital, diagnose AI unit economics, and build deterministic verification infrastructure that protects your margins.',
+    description: 'Most AI failures are not model failures. They are operational failures. I audit R&D capital, diagnose AI unit economics, and build deterministic governance infrastructure that protects your margins.',
     images: ['https://www.richardewing.io/og-image-home.png'],
   },
 

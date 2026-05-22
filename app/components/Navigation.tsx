@@ -53,7 +53,7 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/tools" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                            <Link href="/diagnose" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
                                 Diagnostics
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
@@ -213,7 +213,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                     <div className="w-full h-px bg-zinc-200" />
 
                     <div className="space-y-4">
-                        <MobileLink href="/tools" onClick={onClose} className="text-lg font-bold">Diagnostics</MobileLink>
+                        <MobileLink href="/diagnose" onClick={onClose} className="text-lg font-bold">Diagnostics</MobileLink>
                         <MobileLink href="/frameworks" onClick={onClose} className="text-lg font-bold">Frameworks</MobileLink>
                         <MobileLink href="/glossary" onClick={onClose} className="text-lg font-bold">Glossary</MobileLink>
                         <MobileLink href="/exogram" onClick={onClose} className="text-lg font-bold">Exogram</MobileLink>

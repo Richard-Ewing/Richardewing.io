@@ -9,7 +9,7 @@ const ExogramSection = () => {
             <div className="page-container">
 
                 <div className="section-header">
-                    <h2>What I'm Building</h2>
+                    <h2>The Enforcement Layer</h2>
                 </div>
 
                 <div className="max-w-3xl mx-auto">

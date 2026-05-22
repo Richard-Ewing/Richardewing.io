@@ -1,5 +1,6 @@
 import Hero from './components/sections/Hero';
 import NarrativeCompression from './components/sections/NarrativeCompression';
+import ProofRail from './components/ProofRail';
 import ClientOutcomes from './components/sections/ClientOutcomes';
 import FourHorsemen from './components/sections/FourHorsemen';
 import ToolsPreview from './components/sections/ToolsPreview';
@@ -36,6 +37,8 @@ export default function Home() {
       <Hero />
       {/* 15-second comprehension layer — What Breaks → Costs → Why → Fix → Engine */}
       <NarrativeCompression />
+      {/* Persistent proof-of-authority bar */}
+      <ProofRail />
       {/* Layer 2: Proof of outcomes */}
       <ClientOutcomes />
       {/* Layer 3: Why enterprise AI fails — operational specificity */}
