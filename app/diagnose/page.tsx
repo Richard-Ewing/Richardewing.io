@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, AlertTriangle, DollarSign, TrendingDown, Shield, Brain, Gauge, Clock, Calculator, Users } from 'lucide-react';
 import ProofRail from '../components/ProofRail';
 import RuntimeEscalationSimulator from '../components/RuntimeEscalationSimulator';
+import GovernanceMaturityAssessment from '../components/GovernanceMaturityAssessment';
 
 export const metadata: Metadata = {
     title: 'Diagnose Your AI & Engineering Risk | Free Tools',
@@ -175,6 +176,9 @@ export default function DiagnosePage() {
 
             {/* Escalation simulator — feel the operational danger */}
             <RuntimeEscalationSimulator />
+
+            {/* Governance Maturity Assessment — intermediate trust artifact */}
+            <GovernanceMaturityAssessment />
 
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">

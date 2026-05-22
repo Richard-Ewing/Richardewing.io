@@ -5,6 +5,7 @@ import ClientOutcomes from './components/sections/ClientOutcomes';
 import FourHorsemen from './components/sections/FourHorsemen';
 import ToolsPreview from './components/sections/ToolsPreview';
 import RuntimeEscalationSimulator from './components/RuntimeEscalationSimulator';
+import GovernanceDashboard from './components/GovernanceDashboard';
 import ExogramSection from './components/sections/ExogramSection';
 import PricingPreview from './components/sections/PricingPreview';
 import NewsletterSection from './components/sections/NewsletterSection';
@@ -48,7 +49,9 @@ export default function Home() {
       <RuntimeEscalationSimulator />
       {/* Layer 5: Frameworks & Diagnostics */}
       <ToolsPreview />
-      {/* Layer 5: Exogram — the enforcement infrastructure */}
+      {/* Layer 6: SHOW the governance control plane — visible runtime mechanics */}
+      <GovernanceDashboard />
+      {/* Layer 7: Exogram — the enforcement infrastructure */}
       <ExogramSection />
       {/* Layer 6: Advisory escalation */}
       <PricingPreview />

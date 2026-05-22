@@ -30,5 +30,25 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return <PDITool />;
+    const howToSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: 'How to Calculate Your Technical Insolvency Date',
+        description: 'Use the Product Debt Index (PDI) to determine when maintenance load will exceed engineering capacity.',
+        totalTime: 'PT4M',
+        tool: { '@type': 'HowToTool', name: 'PDI Calculator' },
+        step: [
+            { '@type': 'HowToStep', position: 1, name: 'Enter team size', text: 'Input your total engineering headcount and average fully-loaded cost per engineer.' },
+            { '@type': 'HowToStep', position: 2, name: 'Estimate maintenance allocation', text: 'Estimate the percentage of engineering time currently spent on maintenance vs. new features.' },
+            { '@type': 'HowToStep', position: 3, name: 'Set growth parameters', text: 'Define your expected maintenance growth rate and hiring capacity.' },
+            { '@type': 'HowToStep', position: 4, name: 'Calculate insolvency date', text: 'The calculator projects your Technical Insolvency Date — the quarter when maintenance consumes 100% of capacity.' },
+        ],
+    };
+
+    return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+            <PDITool />
+        </>
+    );
 }

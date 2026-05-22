@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import GovernanceDashboard from '../../components/GovernanceDashboard';
 
 export const metadata: Metadata = {
     title: 'Exogram Architecture — AI Verification Infrastructure | D...',
@@ -152,6 +153,9 @@ export default function ExogramArchitecturePage() {
                         </section>
                     ))}
                 </div>
+
+                {/* Live governance visualization — what this looks like in operation */}
+                <GovernanceDashboard />
 
                 <section className="text-center mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Integration</h2>
