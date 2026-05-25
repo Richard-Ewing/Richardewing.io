@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import AUEBTool from './content';
 
 export const metadata: Metadata = {
-    title: 'AUEB | AI Feature Collapse Point Calculator | Free',
-    description: 'Calculate the exact usage volume where your AI feature starts destroying margin. The same tool used in $7,500 R&D Capital Audits. Free.',
+    title: 'Is Your AI Feature Burning Cash? | AI Cost Collapse Calculator | Free',
+    description: 'Every AI API call costs money. At what usage volume does your AI feature start destroying margin? Calculate your collapse point before the CFO finds it. Free tool from $7,500 audits.',
     keywords: [
         'AI unit economics',
         'LLM cost calculator',

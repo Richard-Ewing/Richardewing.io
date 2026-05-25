@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import RagChunkingContent from './content';
 
 export const metadata: Metadata = {
-    title: 'RAG Chunking Visualizer | Optimize Embeddings',
-    description: 'Visually optimize RAG vector embeddings and analyze semantic chunking boundaries. Improve retrieval accuracy and reduce hallucination rates.',
+    title: 'Why Is Your RAG Returning Wrong Answers? | Chunking Visualizer',
+    description: 'Bad chunking is the #1 reason RAG pipelines hallucinate. Visualize how your text splits into vector embeddings and optimize chunk boundaries before they poison your retrieval.',
     keywords: [
         'RAG chunking strategy',
         'Semantic search visualizer',

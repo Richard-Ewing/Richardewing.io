@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'E-Commerce AI Economics | Platform Debt Advisory',
+    title: 'Platform Complexity Is Crushing Your eCommerce Margins | AI Audit',
     description: 'E-commerce platform debt audits: recommendation engine costs, checkout optimization AI, and the economics of scaling personalization.',
     keywords: ['ecommerce technical debt', 'ecommerce platform engineering', 'AI recommendation cost', 'checkout optimization', 'ecommerce CTO advisor', 'peak traffic scaling'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ecommerce' },

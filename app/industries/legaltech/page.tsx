@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'LegalTech AI Economics | Legal Tech Debt & Audit',
+    title: 'AI Contract Review Costs Are Destroying LegalTech Margins | Audit',
     description: 'LegalTech R&D audits: document processing AI costs, multi-jurisdiction compliance data, contract analytics drift, and legal data security.',
     keywords: ['legaltech technical debt', 'legal technology', 'contract AI economics', 'legal document processing', 'legaltech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/legaltech' },

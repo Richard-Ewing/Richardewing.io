@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'InsurTech AI Economics | Insurance Tech Audit',
+    title: 'Actuarial AI Is Burning Cash Faster Than Claims | InsurTech Audit',
     description: 'InsurTech R&D audits: legacy core system modernization, AI underwriting unit costs, state regulatory compliance debt, and claims system economics.',
     keywords: ['insurtech technical debt', 'insurance technology economics', 'legacy insurance systems', 'AI underwriting cost', 'insurtech AI economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/insurtech' },

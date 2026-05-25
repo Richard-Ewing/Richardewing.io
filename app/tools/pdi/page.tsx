@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import PDITool from './content';
 
 export const metadata: Metadata = {
-    title: 'Product Debt Index | Insolvency Date Calculator',
-    description: 'When will maintenance exceed engineering capacity? Calculate your Technical Insolvency Date before it arrives. Free boardroom-ready diagnostic.',
+    title: 'When Will Tech Debt Kill Your Velocity? | Free Insolvency Calculator',
+    description: 'Your engineers are spending 60% of their time on maintenance instead of features. Calculate the exact quarter your tech debt becomes unrecoverable — and what it costs you per month. Free tool from $7,500 R&D audits.',
     keywords: [
         'product debt index',
         'technical debt calculator',

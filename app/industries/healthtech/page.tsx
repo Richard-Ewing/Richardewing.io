@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'HealthTech AI Economics | R&D Audit & Compliance',
+    title: 'HIPAA Compliance Is Eating Your HealthTech Budget | AI Economics Audit',
     description: 'HealthTech R&D audits: HIPAA compliance costs, clinical AI validation expenses, EHR integration debt, and FDA submission economics.',
     keywords: ['healthtech technical debt', 'healthcare AI governance', 'HIPAA compliance engineering', 'clinical AI validation', 'healthtech CTO advisor', 'FDA SaMD compliance'],
     alternates: { canonical: 'https://www.richardewing.io/industries/healthtech' },

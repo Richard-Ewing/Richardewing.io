@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import EVSETool from './content';
 
 export const metadata: Metadata = {
-    title: 'EV/SE Valuation Engine | Execution Risk Calculator',
-    description: 'Quantify the Certainty Premium. Model how execution risk, churn, and scope creep destroy SaaS enterprise value before your next raise.',
+    title: 'What Is Your SaaS Actually Worth? | Execution Risk Valuation Calculator',
+    description: 'Stop guessing your SaaS valuation. Model how churn, tech debt, and execution risk destroy your enterprise value multiple — and what to fix first. Used by PE firms in due diligence.',
     keywords: [
         'enterprise value calculator',
         'SaaS valuation tool',

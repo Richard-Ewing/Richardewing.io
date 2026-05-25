@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Logistics AI Economics | Supply Chain Debt Audit',
+    title: 'Route Optimization Debt Is Eating Logistics Margins | AI Audit',
     description: 'Logistics R&D audits: real-time tracking latency debt, IoT sensor infrastructure costs, and AI demand forecasting optimization strategies.',
     keywords: ['logistics technical debt', 'supply chain technology', 'logistics AI cost', 'IoT infrastructure debt', 'logistics CTO advisor'],
     alternates: { canonical: 'https://www.richardewing.io/industries/logistics' },

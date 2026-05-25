@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import PromptInjectionContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Prompt Injection Sandbox | Red Team Your AI | Ewing',
-    description: 'Test your system prompts against modern jailbreaks, Base64 encodings, and roleplay bypasses. Find vulnerabilities before attackers do.',
+    title: 'Can Your AI Be Jailbroken? | Prompt Injection Red Team Sandbox',
+    description: 'Test your AI system prompts against real-world jailbreaks, Base64 encoding attacks, and roleplay bypasses. Find vulnerabilities before attackers do. Free red-teaming tool.',
     keywords: [
         'Prompt Injection Scanner',
         'LLM Red Teaming',

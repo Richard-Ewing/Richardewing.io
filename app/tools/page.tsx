@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ToolsContent from './tools-content';
 
 export const metadata: Metadata = {
-    title: 'Free AI & R&D Diagnostic Tools | Richard Ewing',
-    description: 'Free boardroom-ready tools from $7,500 audits: Technical Insolvency Date, AI unit economics, APER ratio, and 15 more calculators.',
+    title: 'Free Tools to Find Where Your Engineering Budget Is Leaking | Richard Ewing',
+    description: 'The same diagnostic tools used in $7,500 R&D Capital Audits — free. Calculate your tech debt insolvency date, AI cost collapse point, and revenue per engineer benchmark.',
     keywords: [
         'technical debt calculator', 'product debt index', 'free engineering tools',
         'AI unit economics calculator', 'SaaS valuation tool', 'revenue per engineer calculator',

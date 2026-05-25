@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ShadowContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Shadow AI Scanner | SOC2 Exposure Calculator',
-    description: 'Calculate your enterprise blast radius from unauthorized AI usage. Map prompt injection risk, IP leakage exposure, and SOC2 audit gaps.',
+    title: 'Are Employees Leaking Data to ChatGPT? | Shadow AI Risk Scanner',
+    description: '73% of employees use unauthorized AI tools at work. Calculate your SOC2 exposure, data leak blast radius, and compliance liability from Shadow AI usage before auditors find it.',
     keywords: [
         'Shadow AI risk calculator',
         'LLM data leakage tool',

@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import AuditInterviewLanding from './content';
 
 export const metadata: Metadata = {
-    title: 'Audit Interview | Test Engineering Judgment Free',
-    description: 'The hiring protocol for the AI age. Test verification over generation skills. AI-scored across 5 levels with instant committee review. Free.',
+    title: 'Does This Engineer Actually Think, or Just Code? | Judgment Test',
+    description: 'LeetCode tests syntax. This tests judgment. The Audit Interview evaluates whether engineers can verify, reason architecturally, and make tradeoff decisions — not just write code.',
     alternates: {
         canonical: 'https://www.richardewing.io/tools/audit-interview',
     },

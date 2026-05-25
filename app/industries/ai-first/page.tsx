@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'AI-First Company Economics | Gross Margin Defense',
+    title: 'Your AI-First Company Has AI-Last Unit Economics | Margin Defense',
     description: 'AI-native companies face unique margin pressure: inference COGS that scale with users. How to defend gross margins before Series B.',
     keywords: ['AI company technical debt', 'AI margin erosion', 'LLM cost optimization', 'AI-first AI economics', 'AI governance advisory', 'LLM unit economics', 'exogram integration'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ai-first' },

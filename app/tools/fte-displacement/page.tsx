@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import FTEContent from './content';
 
 export const metadata: Metadata = {
-    title: 'FTE Displacement Matrix | AI vs Human Cost Model',
-    description: 'Calculate the EBITDA expansion of replacing Tier-1 functions with autonomous LLM agents. Model displacement timelines by department.',
+    title: 'Should You Replace That Role With AI? | FTE Displacement Calculator',
+    description: 'Calculate the true EBITDA impact of replacing human roles with AI agents. Model error rates, retraining costs, and the breakeven point. Not every role should be automated.',
     keywords: [
         'AI agent ROI calculator',
         'Customer support automation cost',

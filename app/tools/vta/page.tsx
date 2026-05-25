@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import VTATool from './content';
 
 export const metadata: Metadata = {
-    title: 'Volatility Tax Auditor | AI Verification Cost Tool',
-    description: 'Audit your AI Volatility Tax: the hidden human-in-the-loop verification cost every time you deploy a generative AI feature to production.',
+    title: 'How Much Does AI Hallucination Verification Actually Cost? | Free Calculator',
+    description: `Every AI output needs a human to verify it. That hidden verification cost — the Volatility Tax — can consume 30-60% of your AI savings. Calculate exactly how much you're losing.`,
     keywords: [
         'AI Volatility Tax',
         'human-in-the-loop cost',

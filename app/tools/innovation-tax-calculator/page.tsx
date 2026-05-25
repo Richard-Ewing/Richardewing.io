@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import PDITool from '../pdi/content';
 
 export const metadata: Metadata = {
-    title: 'Innovation Tax Calculator | Find Hidden R&D Waste',
-    description: 'How much of your R&D budget is OpEx disguised as innovation? This forensic calculator reveals the true Innovation Tax on your engineering spend.',
+    title: 'How Much of Your R&D Budget Is Wasted on Maintenance? | Innovation Tax Calculator',
+    description: `Most companies label maintenance work as "innovation." This calculator reveals the real split — how much of your engineering budget is disguised OpEx vs. genuine new product development.`,
     keywords: [
         'innovation tax calculator',
         'innovation tax',

@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import DueDiligenceTool from './content';
 
 export const metadata: Metadata = {
-    title: 'M&A Due Diligence Scanner | PE & VC Tool | Ewing',
-    description: 'Scan acquisition targets for hidden technical debt, AI dependency risks, and engineering insolvency. Built for private equity due diligence.',
+    title: 'Is This Acquisition Full of Hidden Tech Debt? | M&A Due Diligence Scanner',
+    description: 'Before you sign the term sheet: scan for hidden technical debt, AI dependency risks, and inflated engineering metrics. The same diligence protocol used in $15K PE deal evaluations.',
     keywords: [
         'engineering due diligence',
         'technical due diligence',

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'SaaS AI Economics | COGS & ARR Growth Optimization',
+    title: 'Your SaaS Maintenance Burden Is Destroying Margins | R&D Economics',
     description: 'SaaS R&D audits: AI feature COGS that erode gross margins, ARR growth vs technical debt tradeoffs, and infrastructure cost optimization.',
     keywords: ['saas technical debt', 'b2b AI economics', 'saas gross margin', 'cogs optimization saas', 'technical debt arr impact', 'saas cto advisor'],
     alternates: { canonical: 'https://www.richardewing.io/industries/saas' },

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'PropTech AI Economics | Real Estate Tech Audits',
+    title: 'MLS Integration Debt Is Killing PropTech ROI | AI Audit',
     description: 'PropTech R&D audits: MLS data integration costs, automated valuation model margins, IoT building management debt, and property AI economics.',
     keywords: ['proptech technical debt', 'real estate technology', 'MLS integration', 'property valuation AI', 'proptech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/proptech' },

@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import CloudContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Cloud Repatriation Calculator | EBITDA Recapture',
-    description: 'Calculate the exact EBITDA recapture of repatriating from AWS to bare-metal. Model the breakeven point for cloud exit economics.',
+    title: 'Is AWS Eating Your EBITDA? | Cloud Repatriation Savings Calculator',
+    description: 'Your AWS bill grows 20% per year. Calculate the exact EBITDA you recapture by moving workloads off-cloud. Model the breakeven point for bare-metal vs. renting.',
     keywords: [
         'Cloud repatriation calculator',
         'AWS vs Bare Metal',

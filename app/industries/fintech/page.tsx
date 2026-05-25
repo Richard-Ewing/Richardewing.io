@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'FinTech AI Economics | R&D Audit & AI Governance',
+    title: 'Why Your FinTech R&D Is Bleeding Capital | AI Economics Audit',
     description: 'FinTech-specific audits: AI underwriting costs, regulatory compliance debt, fraud detection model drift, and payment system modernization.',
     keywords: ['fintech technical debt', 'fintech CTO advisor', 'banking AI governance', 'financial services engineering audit', 'fintech AI economics', 'regulated software debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/fintech' },

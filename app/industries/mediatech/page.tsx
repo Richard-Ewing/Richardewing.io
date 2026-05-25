@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'MediaTech AI Economics | Streaming Debt Audits',
+    title: 'Content Pipeline Debt Is Destroying MediaTech Margins | AI Audit',
     description: 'MediaTech R&D audits: CDN delivery costs, AI recommendation engine economics, DRM system debt, and ad tech integration overhead.',
     keywords: ['mediatech technical debt', 'streaming technology', 'content delivery infrastructure', 'media technology economics', 'CDN engineering debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/mediatech' },

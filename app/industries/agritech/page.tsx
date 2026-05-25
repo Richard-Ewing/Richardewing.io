@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'AgriTech AI Economics & R&D Audit | Richard Ewing',
+    title: 'IoT Data Debt Is Burying Your AgriTech Budget | Economics Audit',
     description: 'AgriTech-specific R&D audits: IoT sensor economics, precision agriculture AI costs, and legacy irrigation system modernization strategies.',
     keywords: ['agritech technical debt', 'agriculture technology', 'precision farming AI', 'IoT agriculture', 'agritech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/agritech' },

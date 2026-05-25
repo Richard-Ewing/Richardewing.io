@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Cybersecurity AI Economics | Security Debt Audit',
+    title: 'Security Tech Debt Is Your Biggest Vulnerability | Cybersecurity Audit',
     description: 'Quantify your security debt: threat detection AI costs, compliance overhead, and the hidden economics of cybersecurity engineering teams.',
     keywords: ['cybersecurity technical debt', 'security debt', 'AI threat detection cost', 'cybersecurity CTO advisor', 'security engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/cybersecurity' },

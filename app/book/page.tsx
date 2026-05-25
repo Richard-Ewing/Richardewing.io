@@ -3,7 +3,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { NewsletterForm } from '../components/newsletter-form';
 
 export const metadata: Metadata = {
-    title: 'The AI Economist Book | Coming 2026 | Richard Ewing',
+    title: 'Stop Losing Money on AI | The AI Economist Book | 2026',
     description: 'The definitive book on AI economics: why 73% of AI projects destroy margins, and the frameworks to prevent it. Pre-order now.',
     keywords: ['AI economist book', 'technical debt book', 'R&D capital allocation', 'engineering economics', 'Richard Ewing book'],
     alternates: { canonical: 'https://www.richardewing.io/book' },

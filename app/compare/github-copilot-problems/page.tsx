@@ -6,7 +6,7 @@ import ExogramBridge from '@/components/ExogramBridge';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'GitHub Copilot Problems & Fixes 2026 | Ewing',
+    title: 'GitHub Copilot Is Costing You More Than /Month | Hidden Costs 2026',
     description: 'GitHub Copilot generates code 55% faster but increases review burden 3x. The hidden costs, IP risks, and governance controls for enterprise.',
     keywords: ['GitHub Copilot problems', 'GitHub Copilot problems 2026', 'GitHub Copilot not worth it', 'GitHub Copilot complaints', 'GitHub Copilot alternative', 'Copilot waste of money', 'Copilot cancelled', 'Copilot downgraded', 'Copilot rate limiting', 'Copilot PR ads', 'Copilot model carousel', 'GitHub Copilot Enterprise review', 'GitHub Copilot vs governance'],
     openGraph: {

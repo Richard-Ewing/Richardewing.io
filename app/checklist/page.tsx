@@ -4,7 +4,7 @@ import ChecklistPageContent from './checklist-content';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/checklist' },
-    title: 'AI Governance Checklist | 12 Audit Questions Free',
+    title: '12 Questions to Expose AI Governance Gaps | Free Audit Checklist',
     description: 'The 12 diagnostic questions from $7,500 R&D audits, free. Score your AI governance maturity and find hidden cost leaks in under 10 minutes.',
     openGraph: {
         title: 'AI Governance Checklist | 12 Questions from $7,500 Audits',

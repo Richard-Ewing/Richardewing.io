@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import APERTool from './content';
 
 export const metadata: Metadata = {
-    title: 'APER Calculator | Revenue Per Engineer Benchmark',
-    description: 'Benchmark Revenue Per Engineer against Stripe, Figma, and Linear. Detect organizational bloat before it destroys R&D capital efficiency.',
+    title: 'Are You Overstaffed or Underperforming? | Revenue Per Engineer Benchmark',
+    description: 'Stripe generates $1.4M per engineer. Where does your team rank? Benchmark your R&D efficiency against elite SaaS companies and find the organizational bloat killing your margins.',
     keywords: [
         'revenue per engineer',
         'engineering efficiency calculator',

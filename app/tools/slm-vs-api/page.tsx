@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import SLMTool from './content';
 
 export const metadata: Metadata = {
-    title: 'SLM vs API Calculator | Build or Buy AI | Ewing',
-    description: 'Calculate the breakeven: renting OpenAI API tokens vs owning local H100s for SLMs. Stop paying the LLM tax when on-premise is cheaper.',
+    title: 'Should You Self-Host AI or Keep Paying OpenAI? | Build vs Buy Calculator',
+    description: 'Your OpenAI bill is $50K/month and climbing. At what volume does self-hosting on H100s become cheaper? Calculate the exact breakeven between renting API tokens and owning inference.',
     keywords: [
         'SLM vs LLM',
         'OpenAI API cost calculator',

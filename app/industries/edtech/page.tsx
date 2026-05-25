@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'EdTech AI Economics | Learning Platform Audits',
+    title: 'EdTech AI Costs Are Outpacing Revenue | Learning Platform Audit',
     description: 'EdTech R&D audits: AI tutor governance costs, content delivery optimization, LMS technical debt, and adaptive learning model economics.',
     keywords: ['edtech technical debt', 'learning platform engineering', 'AI tutor governance', 'edtech CTO advisor', 'FERPA compliance', 'educational AI'],
     alternates: { canonical: 'https://www.richardewing.io/industries/edtech' },
