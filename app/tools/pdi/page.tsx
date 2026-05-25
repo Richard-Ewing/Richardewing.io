@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import PDITool from './content';
 
 export const metadata: Metadata = {
-    title: 'Product Debt Index | Calculate Insolvency Date',
-    description: 'When will maintenance load exceed engineering capacity? Calculate your Technical Insolvency Date before it arrives. Free diagnostic tool.',
+    title: 'Product Debt Index | Insolvency Date Calculator',
+    description: 'When will maintenance exceed engineering capacity? Calculate your Technical Insolvency Date before it arrives. Free boardroom-ready diagnostic.',
     keywords: [
         'product debt index',
         'technical debt calculator',

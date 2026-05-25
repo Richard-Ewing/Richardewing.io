@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'For Board Members | AI Risk & R&D Oversight',
-    description: 'Your engineering team reports innovation while 60% of R&D pays for maintenance. The audit framework that reveals the truth.',
+    title: 'For Board Members | AI Risk & R&D Oversight Tools',
+    description: 'Board-level AI risk dashboards and R&D capital oversight tools. Translate engineering complexity into fiduciary-grade reporting.',
     keywords: ['board technology oversight', 'R&D capital board reporting', 'technical debt for boards', 'CTO board presentation', 'engineering metrics for directors'],
     alternates: { canonical: 'https://www.richardewing.io/for-boards' },
     openGraph: { title: 'For Board Members — R&D Capital Visibility', description: 'Board-ready engineering reports in financial language.', url: 'https://www.richardewing.io/for-boards', type: 'website' },

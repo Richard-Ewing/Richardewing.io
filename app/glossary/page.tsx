@@ -3,8 +3,8 @@ import GlossaryContent from './glossary-content';
 import { glossaryTerms } from './terms';
 
 export const metadata: Metadata = {
-    title: 'Enterprise AI Glossary | 430+ Terms Defined',
-    description: 'Master the lexicon of AI governance. Clear executive definitions for hallucination debt, technical insolvency, retry inflation, and 427 more terms.',
+    title: 'AI & Engineering Glossary | 430+ Terms | Ewing',
+    description: 'The most comprehensive AI economics glossary: 430+ terms covering technical debt, AI governance, R&D capital, and engineering metrics.',
     keywords: [
         'technology glossary', 'technical debt definition', 'AI glossary', 'SaaS metrics glossary',
         'engineering management terms', 'product management glossary', 'CTO glossary',

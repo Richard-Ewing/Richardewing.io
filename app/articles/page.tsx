@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import ArticlesPage from './content';
 
 export const metadata: Metadata = {
-    title: 'Forensic Engineering Articles & Research | Richard Ewing',
-    description: 'Deep dives into R&D capital efficiency, technical debt valuation, AI unit economics, and engineering economics. Published in CIO.com, Built In, Mind the...',
+    title: 'Published Articles on AI Economics | Richard Ewing',
+    description: 'Read expert analysis on AI unit economics, R&D capital efficiency, and engineering team optimization. Published on CIO.com, Built In, and HackerNoon.',
     keywords: [
         'AI economist articles',
         'R&D capital efficiency',

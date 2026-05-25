@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { exogramKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Exogram | Deterministic Verification for AI',
-    description: 'AI does not fail because it cannot reason. It fails because it does not know what is true. Exogram is the missing verification trust layer.',
+    title: 'Exogram | Deterministic AI Verification Engine',
+    description: 'The verification layer that stops AI agents from hallucinating, drifting, and overspending. Deterministic controls for probabilistic systems.',
     keywords: exogramKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/exogram',
@@ -40,7 +40,7 @@ export default function ExogramLayout({
                             'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5',
                             'https://www.linkedin.com/company/exogram-ai/'
                         ],
-                        description: 'Verification infrastructure for AI. The missing trust layer between models and applications. Prevents hallucination propagation with deterministic contr...',
+                        description: 'Verification infrastructure for AI. The missing trust layer between models and applications. Prevents hallucination propagation with deterministic controls.',
                         founder: {
                             '@type': 'Person',
                             '@id': 'https://www.richardewing.io/#person',

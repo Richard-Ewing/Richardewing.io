@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import ShadowContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Shadow AI SOC2 Exposure Matrix | Richard Ewing',
-    description: 'Calculate your enterprise blast radius for unauthorized shadow AI usage, Prompt Injection, and IP Leakage.',
+    title: 'Shadow AI Scanner | SOC2 Exposure Calculator',
+    description: 'Calculate your enterprise blast radius from unauthorized AI usage. Map prompt injection risk, IP leakage exposure, and SOC2 audit gaps.',
     keywords: [
         'Shadow AI risk calculator',
         'LLM data leakage tool',

@@ -2,8 +2,8 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Audit Interview Tool FAQ | Richard Ewing',
-    description: 'Frequently asked questions about the Audit Interview tool — AI-powered technical assessment for engineering candidates that tests judgment, not just syn...',
+    title: 'Audit Interview FAQ | Hiring Protocol | Ewing',
+    description: 'How the Audit Interview tests senior engineering judgment instead of memorized syntax. Methodology, scoring rubric, and assessment tracks.',
     keywords: ['audit interview tool', 'AI technical interview', 'engineering assessment', 'judgment-based interview'],
     alternates: { canonical: 'https://www.richardewing.io/tools/audit-interview/faq' },
     openGraph: { title: 'Audit Interview FAQ', description: 'AI-powered engineering assessment that tests judgment.', url: 'https://www.richardewing.io/tools/audit-interview/faq', type: 'article' },

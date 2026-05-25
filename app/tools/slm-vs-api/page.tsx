@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import SLMTool from './content';
 
 export const metadata: Metadata = {
-    title: 'SLM vs API: Build or Buy AI Calculator | Richard Ewing',
-    description: 'Calculate the exact breakeven point between renting OpenAI API tokens vs purchasing local H100s for Small Language Models (SLMs). Stop paying the LLM tax.',
+    title: 'SLM vs API Calculator | Build or Buy AI | Ewing',
+    description: 'Calculate the breakeven: renting OpenAI API tokens vs owning local H100s for SLMs. Stop paying the LLM tax when on-premise is cheaper.',
     keywords: [
         'SLM vs LLM',
         'OpenAI API cost calculator',

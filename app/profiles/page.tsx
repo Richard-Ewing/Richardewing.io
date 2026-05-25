@@ -2,8 +2,8 @@ import { PublishedProfiles } from '@/components/PublishedProfiles';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Published Profiles & Media Mentions | Richard Ewing',
-    description: 'A comprehensive collection of Richard Ewing\'s publications and features across CIO.com, Built In, Mind the Product, and HackerNoon regarding AI unit economics.',
+    title: 'Media & Publications | Richard Ewing AI Economist',
+    description: 'Published profiles across CIO.com, Built In, Mind the Product, and HackerNoon. Richard Ewing on AI unit economics and R&D capital strategy.',
     keywords: [
         'Richard Ewing publications',
         'CIO.com contributor',

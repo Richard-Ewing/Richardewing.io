@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import PDITool from '../pdi/content';
 
 export const metadata: Metadata = {
-    title: 'Innovation Tax Calculator | Richard Ewing',
-    description: 'Calculate your Innovation Tax and quantify how much of your R&D budget is actually OpEx disguised as innovation. Free forensic tool based on the Product Debt Index.',
+    title: 'Innovation Tax Calculator | Find Hidden R&D Waste',
+    description: 'How much of your R&D budget is OpEx disguised as innovation? This forensic calculator reveals the true Innovation Tax on your engineering spend.',
     keywords: [
         'innovation tax calculator',
         'innovation tax',

@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Economics for EdTech — Learning Platform Debt & A...',
-    description: 'Product economics advisory for EdTech companies. Learning platform technical debt, AI tutor governance, content delivery costs, and accessibility compli...',
+    title: 'EdTech AI Economics | Learning Platform Audits',
+    description: 'EdTech R&D audits: AI tutor governance costs, content delivery optimization, LMS technical debt, and adaptive learning model economics.',
     keywords: ['edtech technical debt', 'learning platform engineering', 'AI tutor governance', 'edtech CTO advisor', 'FERPA compliance', 'educational AI'],
     alternates: { canonical: 'https://www.richardewing.io/industries/edtech' },
     openGraph: { title: 'AI Economics for EdTech', description: 'Learning platform debt, AI tutor governance, and accessibility compliance for education technology.', url: 'https://www.richardewing.io/industries/edtech', type: 'website' },
 };
 
 const challenges = [
-    { icon: '📚', title: 'Content Delivery Debt', description: 'Video streaming, interactive content, and real-time collaboration create infrastructure costs that scale non-linearly with user growth. Peak usage durin...' },
-    { icon: '🤖', title: 'AI Tutor Governance', description: 'AI tutors must be pedagogically sound, age-appropriate, and bias-free. Unlike enterprise AI, errors in educational AI directly impact learning outcomes ...' },
-    { icon: '♿', title: 'Accessibility Requirements', description: 'ADA, Section 508, WCAG 2.1 AA compliance creates significant engineering overhead. EdTech products must be accessible to all learners, including those w...' },
-    { icon: '🔐', title: 'FERPA & COPPA', description: 'Student data privacy laws (FERPA for higher ed, COPPA for K-12) create strict data handling requirements. Non-compliance can result in loss of instituti...' },
+    { icon: '📚', title: 'Content Delivery Debt', description: 'Video streaming and real-time collaboration create infrastructure costs that scale non-linearly with student growth.' },
+    { icon: '🤖', title: 'AI Tutor Governance', description: 'AI tutors must be pedagogically sound and bias-free. Errors in educational AI directly impact student learning outcomes.' },
+    { icon: '♿', title: 'Accessibility Requirements', description: 'ADA and WCAG compliance create significant engineering overhead. EdTech products must support all learners and adaptive devices.' },
+    { icon: '🔐', title: 'FERPA & COPPA', description: 'Student data privacy laws (FERPA, COPPA) create strict data handling requirements. Non-compliance risks institutional access.' },
 ];
 
 export default function EdTechPage() {

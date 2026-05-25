@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { AlertTriangle, DollarSign, Clock, Shield, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Runtime Incident Reports | Real Agentic Failure Case Studies | Richard Ewing',
-    description: 'Documented runtime incidents from Claude Code, Cursor, Windsurf, and agentic engineering systems. Real failures, real costs, real containment.',
+    title: 'AI Runtime Incident Case Studies | Richard Ewing',
+    description: 'Real-world AI failures analyzed: cost breakdowns, root causes, and the governance controls that would have prevented each incident.',
     keywords: ['Claude Code failures', 'agentic runtime incidents', 'AI coding agent failures', 'context rot incident', 'retry inflation cost', 'MCP security breach', 'Cursor file corruption', 'AI agent cost overrun'],
     openGraph: {
         title: 'Runtime Incident Reports — Real Agentic Failures',

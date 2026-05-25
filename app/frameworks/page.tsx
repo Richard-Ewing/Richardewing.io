@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import FrameworksPage from './content';
 
 export const metadata: Metadata = {
-    title: 'Operational Frameworks & Diagnostics | Richard Ewing',
-    description: 'Enterprise governance frameworks for AI integration. Technical Insolvency, Innovation Tax, Cost of Predictivity, and Synthetic COGS.',
+    title: 'AI Diagnostic Frameworks | Free Downloads | Ewing',
+    description: 'Operational frameworks for AI economics: Innovation Tax, Technical Insolvency Date, APER ratio, and 16 more diagnostic models. Free access.',
     keywords: [
         'AI governance frameworks',
         'technical debt frameworks',

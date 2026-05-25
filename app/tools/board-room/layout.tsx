@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'C-Suite Board Room | Executive Dashboards',
-    description: 'Real-time cross-departmental diagnostic dashboard. Aggregate your Product Debt Index, AI Unit Economics, and valuation erosion into a single pane of glass.',
+    title: 'C-Suite Board Room | Executive AI Dashboards',
+    description: 'Cross-departmental diagnostic dashboard: Product Debt Index, AI Unit Economics, and valuation erosion aggregated into one executive view.',
     keywords: ['C-Suite Board Room', 'Executive Dashboard', 'CTO Dashboard', 'CFO FinOps Dashboard', 'Enterprise Valuation Metrics'],
     openGraph: {
         title: 'C-Suite Board Room | Executive Dashboards',

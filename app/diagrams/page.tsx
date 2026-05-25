@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Runtime Architecture Diagrams | Governance Visual Library | Richard Ewing',
-    description: 'Visual architecture library for agentic runtime governance. Mermaid diagrams mapping runtime compilation, bounded cognition, retry inflation, MCP containment, and orchestration collapse patterns.',
+    title: 'AI Governance Architecture Diagrams | Free | Ewing',
+    description: 'Visual architecture diagrams: deterministic control layers, agentic governance flows, and AI cost structure maps. Free to download.',
     keywords: ['runtime architecture diagrams', 'AI agent governance diagrams', 'bounded cognition diagram', 'retry inflation flow', 'MCP containment architecture', 'orchestration collapse pattern'],
     openGraph: {
         title: 'Runtime Architecture Diagrams — Governance Visual Library',

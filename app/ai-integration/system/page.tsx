@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { Package, CheckCircle, ArrowRight, BookOpen, FileText, Brain, Target, Calculator, ClipboardList, MessageSquare, BarChart3, Settings, Layers, Zap, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Integration System | Step-by-Step AI Playbook for Business | Richard Ewing',
-    description: 'The exact system from $5,000 AI audits — now available as a self-serve toolkit. 50+ prompts, templates, scoring matrices, and step-by-step guides for implementing AI in your business. No technical background needed. Most AI consultants charge $8K-$25K for a readiness assessment. Get the same system for $997-$1,997.',
+    title: 'AI Integration System Details | Richard Ewing',
+    description: 'Full breakdown of the AI Integration System: modules, pricing tiers, and deployment options for enterprise AI governance.',
     keywords: ['AI integration system', 'AI playbook for business', 'AI implementation guide', 'how to implement AI step by step', 'AI for small business guide', 'AI strategy template', 'AI readiness template', 'AI roadmap template', 'AI prompts for business', 'AI ROI calculator', 'AI tool selection guide', 'AI adoption playbook', 'DIY AI strategy', 'AI integration toolkit'],
     openGraph: {
         title: 'The AI Integration System — Self-Serve AI Playbook for Business',

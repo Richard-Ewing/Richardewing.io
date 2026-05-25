@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Economics for E-Commerce — Platform Debt & AI Per...',
-    description: 'Product economics advisory for e-commerce companies. Platform technical debt, AI recommendation economics, checkout optimization, and peak traffic engin...',
+    title: 'E-Commerce AI Economics | Platform Debt Advisory',
+    description: 'E-commerce platform debt audits: recommendation engine costs, checkout optimization AI, and the economics of scaling personalization.',
     keywords: ['ecommerce technical debt', 'ecommerce platform engineering', 'AI recommendation cost', 'checkout optimization', 'ecommerce CTO advisor', 'peak traffic scaling'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ecommerce' },
     openGraph: { title: 'AI Economics for E-Commerce', description: 'Platform debt, AI personalization economics, and peak traffic scaling for e-commerce.', url: 'https://www.richardewing.io/industries/ecommerce', type: 'website' },
 };
 
 const challenges = [
-    { icon: '🛒', title: 'Platform Complexity', description: 'Catalog management, inventory sync, payment processing, shipping integrations, and marketplace APIs create layered integration debt that compounds with ...' },
-    { icon: '🎯', title: 'AI Personalization Cost', description: 'Recommendation engines, dynamic pricing, and personalized search all cost money per interaction. At scale, AI personalization COGS can exceed the margin...' },
-    { icon: '📈', title: 'Peak Traffic Debt', description: 'Black Friday, Prime Day, and flash sales require 10-100x capacity that sits idle 364 days a year. Over-provisioning wastes money; under-provisioning los...' },
+    { icon: '🛒', title: 'Platform Complexity', description: 'Catalog management, inventory sync, payment, and shipping APIs create integration debt that compounds with custom plugins.' },
+    { icon: '🎯', title: 'AI Personalization Cost', description: 'Dynamic pricing and personalized search cost money per interaction. At scale, AI personalization COGS can erode margins.' },
+    { icon: '📈', title: 'Peak Traffic Debt', description: 'Peak events require 10-100x capacity that sits idle. Over-provisioning wastes budget; under-provisioning loses customer revenue.' },
     { icon: '💳', title: 'Payment & Fraud', description: 'Payment compliance (PCI-DSS), multi-currency support, and fraud detection create security-driven technical debt with direct financial consequences.' },
 ];
 

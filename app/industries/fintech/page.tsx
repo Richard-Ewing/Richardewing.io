@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Economics for FinTech — R&D Audit & AI Governance',
-    description: 'Product economics advisory for FinTech companies. Technical debt assessment for regulated financial services, AI governance for banking, and compliance ...',
+    title: 'FinTech AI Economics | R&D Audit & AI Governance',
+    description: 'FinTech-specific audits: AI underwriting costs, regulatory compliance debt, fraud detection model drift, and payment system modernization.',
     keywords: ['fintech technical debt', 'fintech CTO advisor', 'banking AI governance', 'financial services engineering audit', 'fintech AI economics', 'regulated software debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/fintech' },
     openGraph: { title: 'AI Economics for FinTech', description: 'R&D audit and AI governance for regulated financial services.', url: 'https://www.richardewing.io/industries/fintech', type: 'website' },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const challenges = [
     { icon: '⚖️', title: 'Regulatory Debt', description: 'SOX, PCI-DSS, GDPR, and state regulations create compliance-driven technical debt that compounds faster than any other industry.' },
     { icon: '🔒', title: 'Security Overhead', description: 'Financial data requires encryption, access controls, and audit trails that add 30-50% to every feature cost. This must be factored into unit economics.' },
-    { icon: '🤖', title: 'AI Governance Gap', description: 'AI in lending, fraud detection, and insurance creates regulatory liability. Models must be explainable, auditable, and bias-tested — or face enforcement...' },
+    { icon: '🤖', title: 'AI Governance Gap', description: 'AI in lending and fraud detection creates regulatory liability. Models must be explainable, auditable, and bias-tested.' },
     { icon: '📊', title: 'Legacy Systems', description: 'Core banking systems built on COBOL, mainframes, and monoliths create the highest technical debt loads in any industry. Migration risk is existential.' },
 ];
 

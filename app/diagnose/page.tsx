@@ -6,8 +6,8 @@ import RuntimeEscalationSimulator from '../components/RuntimeEscalationSimulator
 import GovernanceMaturityAssessment from '../components/GovernanceMaturityAssessment';
 
 export const metadata: Metadata = {
-    title: 'Diagnose Your AI & Engineering Risk | Free Tools',
-    description: 'Free diagnostic tools used in $7,500 R&D Capital Audits. Calculate your Technical Insolvency Date, AI cost collapse point, and governance maturity in minutes.',
+    title: 'Free AI & Engineering Diagnostics | Richard Ewing',
+    description: 'Run free diagnostics on your AI costs, engineering efficiency, and technical debt exposure. The same tools used in $7,500 R&D capital audits.',
     alternates: { canonical: 'https://www.richardewing.io/diagnose' },
     openGraph: {
         title: 'Diagnose Your AI & Engineering Risk',

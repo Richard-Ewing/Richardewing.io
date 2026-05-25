@@ -3,8 +3,8 @@ import AuditInterview from './content';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/tools/scoring' },
-    title: 'Audit Scoring Dashboard | Richard Ewing',
-    description: 'Manual entry dashboard for the Audit Interview protocol. Calculate candidate verdicts and generate defense memos.',
+    title: 'Audit Scoring Dashboard | Candidate Verdicts',
+    description: 'Score engineering candidates using the Audit Interview protocol. Calculate verdicts, generate defense memos, and compare across hiring panels.',
 };
 
 export default function Page() {

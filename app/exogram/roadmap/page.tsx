@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Exogram Roadmap — AI Verification Infrastructure Roadmap',
-    description: 'The Exogram product roadmap: what we\'ve built, what we\'re building, and where AI verification is headed.',
+    title: 'Exogram Product Roadmap 2026 | AI Verification',
+    description: 'What we are building next: expanded verification protocols, enterprise integrations, and the infrastructure roadmap for deterministic AI control.',
     alternates: { canonical: 'https://www.richardewing.io/exogram/roadmap' },
 };
 

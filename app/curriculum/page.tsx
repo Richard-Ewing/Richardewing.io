@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/curriculum' },
-    title: 'Executive Curriculum | Richard Ewing',
-    description: 'Institutional onboarding tracks for CTO Governance, AI Cost Containment, and Deterministic Engineering.',
+    title: 'Executive AI Curriculum | 18 Tracks | Richard Ewing',
+    description: 'Master AI economics through 18 structured tracks: financial modeling, governance, M&A diligence, and executive strategy. Self-paced learning.',
 };
 
 export default function CurriculumPage() {

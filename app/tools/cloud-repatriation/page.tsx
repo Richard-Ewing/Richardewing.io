@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import CloudContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Cloud Repatriation FinOps Engine | Richard Ewing',
-    description: 'Calculate the exact EBITDA recapture of pulling your architecture off AWS and repatriating to bare-metal servers.',
+    title: 'Cloud Repatriation Calculator | EBITDA Recapture',
+    description: 'Calculate the exact EBITDA recapture of repatriating from AWS to bare-metal. Model the breakeven point for cloud exit economics.',
     keywords: [
         'Cloud repatriation calculator',
         'AWS vs Bare Metal',

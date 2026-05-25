@@ -10,8 +10,8 @@ import BlurIn from '@/app/components/magicui/blur-in';
 import { BorderBeam } from '@/app/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'The AI Economics Academy — 18 Authority Tracks',
-    description: 'Eighteen high-fidelity curriculum tracks covering AI economics, AI financial modeling, leadership, M&A integration, and executive governance.',
+    title: 'AI Economics Academy | 18 Authority Tracks | Ewing',
+    description: 'Eighteen curriculum tracks covering AI economics, financial modeling, leadership strategy, M&A integration, and executive governance mastery.',
     keywords: ['AI economics academy', 'AI economics curriculum', 'AI economics training', 'R&D capital management', 'technical debt quantification', 'engineering leadership course', 'cloud finops', 'AI pricing strategy', 'career economics', 'CTO training', 'M&A integration', 'vendor economics', 'developer experience', 'remote team economics', 'ai agent economics', 'leadership training'],
     alternates: { canonical: 'https://www.richardewing.io/vault/curriculum/tracks' },
     openGraph: { title: 'The AI Economics Academy', description: 'Master the business of building across eighteen authority tracks.', url: 'https://www.richardewing.io/vault/curriculum/tracks', type: 'website' },

@@ -5,7 +5,7 @@ import { Shield, AlertTriangle, TrendingUp, DollarSign, CheckCircle } from 'luci
 
 export const metadata: Metadata = {
     title: 'Executive AI Briefing | Board-Ready Intelligence',
-    description: 'Monthly intelligence on AI governance, engineering economics, and operational risk. Written for executives who buy outcomes.',
+    description: 'One-page AI economics briefings designed for board presentations. Translate technical debt and AI costs into language executives act on.',
     keywords: ['AI governance executive briefing', 'AI risk matrix', 'AI governance maturity model', 'AI coding agent ROI', 'engineering leadership AI governance', 'CTO AI governance', 'board AI risk', 'AI governance scorecard'],
     openGraph: {
         title: 'Executive Briefing — AI Governance for Engineering Leadership',

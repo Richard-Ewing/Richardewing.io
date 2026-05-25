@@ -2,18 +2,18 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'CleanTech AI Economics — Clean Energy & Climate Tech...',
-    description: 'Product economics for CleanTech: energy grid integration debt, carbon accounting data challenges, IoT sensor networks, and regulatory compliance across ...',
+    title: 'CleanTech AI Economics & R&D Audits | Richard Ewing',
+    description: 'CleanTech R&D capital audits: renewable energy AI optimization costs, carbon tracking system debt, and regulatory compliance economics.',
     keywords: ['cleantech technical debt', 'clean energy technology', 'carbon accounting systems', 'climate tech engineering', 'cleantech AI economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/cleantech' },
     openGraph: { title: 'CleanTech AI Economics', description: 'R&D capital challenges in clean energy technology.', url: 'https://www.richardewing.io/industries/cleantech', type: 'article' },
 };
 
 const sections = [
-    { title: 'Energy Grid Integration Debt', description: 'Connecting to utility grids means integrating with infrastructure built in the 1970s-1990s. Each ISO/RTO (Independent System Operator) has different API...', stats: '7 major ISOs × different APIs = massive integration surface', color: 'emerald' },
-    { title: 'Carbon Accounting Data Complexity', description: 'GHG Protocol scopes (1, 2, 3) require tracking emissions across entire supply chains. Scope 3 alone can involve hundreds of suppliers, each with differe...', stats: 'Scope 3: 70-90% of total emissions, hardest to measure', color: 'cyan' },
-    { title: 'Regulatory Compliance Across Jurisdictions', description: 'Climate regulations vary by country, state, and municipality. EU taxonomy, SEC climate disclosure rules, California\'s SB 253 — each creates compliance ...', stats: 'New climate regulations: 50+ per year globally', color: 'amber' },
-    { title: 'IoT & Sensor Network Debt', description: 'Solar farms, wind turbines, and EV charging networks deploy thousands of IoT devices across vast geographic areas. Remote device management, connectivit...', stats: '10,000+ devices across remote locations', color: 'rose' },
+    { title: 'Energy Grid Integration Debt', description: 'Connecting to utility grids means integrating with legacy infrastructure built in the 1970s-1990s across multiple different API interfaces.', stats: '7 major ISOs × different APIs = massive integration surface', color: 'emerald' },
+    { title: 'Carbon Accounting Data Complexity', description: 'GHG Protocol scopes require tracking emissions across supply chains. Scope 3 involves hundreds of suppliers with different data formats.', stats: 'Scope 3: 70-90% of total emissions, hardest to measure', color: 'cyan' },
+    { title: 'Regulatory Compliance Across Jurisdictions', description: 'Climate regulations vary by country, state, and municipality. EU taxonomy, SEC rules, and state mandates create complex compliance debt.', stats: 'New climate regulations: 50+ per year globally', color: 'amber' },
+    { title: 'IoT & Sensor Network Debt', description: 'Renewable energy projects deploy thousands of IoT devices. Remote device management, connectivity issues, and hardware failure create tech debt.', stats: '10,000+ devices across remote locations', color: 'rose' },
 ];
 
 const colorMap: Record<string, string> = { emerald: 'border-emerald-500/30 bg-emerald-500/5', cyan: 'border-cyan-500/30 bg-cyan-500/5', amber: 'border-amber-500/30 bg-amber-500/5', rose: 'border-rose-500/30 bg-rose-500/5' };

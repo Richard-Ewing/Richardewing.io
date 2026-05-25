@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     default: 'Richard Ewing — AI Economist | R&D Capital Audits & AI Governance',
     template: '%s | Richard Ewing'
   },
-  description: 'Most AI failures are not model failures. They are operational failures. I audit R&D capital, diagnose AI unit economics, and build deterministic governance infrastructure. Free tools, frameworks, and enterprise advisory.',
+  description: 'The AI Economist: R&D capital audits, AI unit economics, and technical debt quantification for enterprises. Free diagnostic tools and frameworks.',
   keywords: homepageKeywords,
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
   // Open Graph
   openGraph: {
-    title: 'Richard Ewing — AI Economist | R&D Capital Audits & AI Governance',
+    title: 'Richard Ewing | R&D Capital Audits & AI Governance',
     description: 'Most AI failures are not model failures. They are operational failures. I audit R&D capital, diagnose AI unit economics, and build deterministic governance infrastructure that protects your margins.',
     url: 'https://www.richardewing.io',
     siteName: 'Richard Ewing',

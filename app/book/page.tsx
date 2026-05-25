@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { NewsletterForm } from '../components/newsletter-form';
 
 export const metadata: Metadata = {
-    title: 'The AI Economist — Book | Richard Ewing',
-    description: 'The definitive guide to R&D capital allocation and technical debt valuation. By Richard Ewing, AI Economist and Founder of Exogram.',
+    title: 'The AI Economist Book | Coming 2026 | Richard Ewing',
+    description: 'The definitive book on AI economics: why 73% of AI projects destroy margins, and the frameworks to prevent it. Pre-order now.',
     keywords: ['AI economist book', 'technical debt book', 'R&D capital allocation', 'engineering economics', 'Richard Ewing book'],
     alternates: { canonical: 'https://www.richardewing.io/book' },
     openGraph: {

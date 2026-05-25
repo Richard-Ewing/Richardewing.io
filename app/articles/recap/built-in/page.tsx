@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Built In Articles: Engineering Team Economics',
-    description: 'Read Richard Ewing\'s built-in insights on developer productivity, calculating engineering ROI, and managing the total cost of hiring for tech startups.',
+    title: 'Built In Articles | Engineering Economics by Ewing',
+    description: 'Richard Ewing on Built In: developer productivity metrics, engineering ROI calculation, and the true cost of scaling tech teams.',
     keywords: ['Richard Ewing Built In', 'engineering economics articles', 'scaling engineering teams', 'developer productivity', 'AI economist Built In'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/built-in' },
     openGraph: { title: 'Richard Ewing on Built In', description: 'Published articles on engineering team economics and developer productivity.', url: 'https://www.richardewing.io/articles/recap/built-in', type: 'article' },
@@ -18,19 +18,19 @@ const articles = [
     },
     {
         title: 'Revenue Per Engineer: The Metric Your Board Should Track',
-        description: 'Why APER (Annualized Productive Engineering Revenue) is the missing link between engineering investment and business results. How top companies measure ...',
+        description: 'Why APER is the missing link between engineering investment and business results. How top companies measure engineering productivity.',
         topics: ['APER', 'Engineering Productivity', 'Revenue Per Engineer', 'Board Metrics'],
         icon: '📈',
     },
     {
         title: 'The True Cost of a Bad Hire in Engineering',
-        description: 'Quantifying the total cost of a mis-hire in engineering: salary, onboarding, ramp time, team disruption, and the technical debt they leave behind. The h...',
+        description: 'Quantifying the total cost of a mis-hire in engineering: salary, onboarding, ramp time, team disruption, and the technical debt they leave behind.',
         topics: ['Cost Per Hire', 'Engineering ROI', 'Team Scaling', 'Hiring Economics'],
         icon: '👥',
     },
     {
         title: 'Why Your Engineering Team Is Slower Than You Think',
-        description: 'The maintenance load trap: how invisible infrastructure work consumes 40-80% of engineering capacity without anyone noticing. How to measure and reclaim...',
+        description: 'The maintenance load trap: how invisible infrastructure work consumes 40-80% of engineering capacity. How to measure and reclaim wasted velocity.',
         topics: ['Maintenance Load', 'Feature Velocity', 'Engineering Capacity', 'Invisible Work'],
         icon: '⚡',
     },

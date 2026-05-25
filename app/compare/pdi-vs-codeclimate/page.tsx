@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'PDI vs CodeClimate — Economic Debt vs Code Metrics',
-    description: 'Product Debt Index (PDI) vs CodeClimate comparison. CodeClimate measures code quality metrics. PDI measures the economic impact of technical debt in dol...',
+    title: 'PDI vs CodeClimate | Economic Debt vs Code Metrics',
+    description: 'CodeClimate grades code quality. PDI calculates your Technical Insolvency Date in dollars. See why financial framing changes executive behavior.',
     keywords: ['codeclimate alternative', 'technical debt measurement', 'pdi vs codeclimate', 'economic technical debt', 'code quality vs economics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/pdi-vs-codeclimate' },
     openGraph: { title: 'PDI vs CodeClimate — Economics vs Code Quality', description: 'Code quality metrics tell you the symptoms. PDI tells you the prognosis.', url: 'https://www.richardewing.io/compare/pdi-vs-codeclimate', type: 'article' },

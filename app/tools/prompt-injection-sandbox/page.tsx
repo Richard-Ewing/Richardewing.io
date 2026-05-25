@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import PromptInjectionContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Prompt Injection Sandbox | Red Team Tooling | Richard Ewing',
-    description: 'Test your system prompts against modern jailbreaks, Base64 encodings, and roleplay bypass heuristics inside a safe sandbox.',
+    title: 'Prompt Injection Sandbox | Red Team Your AI | Ewing',
+    description: 'Test your system prompts against modern jailbreaks, Base64 encodings, and roleplay bypasses. Find vulnerabilities before attackers do.',
     keywords: [
         'Prompt Injection Scanner',
         'LLM Red Teaming',

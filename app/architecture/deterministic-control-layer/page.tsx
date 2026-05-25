@@ -6,8 +6,8 @@ import ShineBorder from '@/components/magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'Deterministic Control Layer Architecture | Richard Ewing',
-    description: 'Stop substituting cheap human labor with expensive generative compute. Download the high-res Miro architecture board for separating reasoning from routing.',
+    title: 'Deterministic Control Layer | AI Architecture',
+    description: 'Why probabilistic AI needs deterministic boundaries. The 4-layer architecture that prevents AI agent drift, hallucination, and cost overruns.',
     keywords: [
         'Deterministic Control Layer',
         'Synthetic COGS',

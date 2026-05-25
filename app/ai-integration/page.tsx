@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { Brain, TrendingUp, Shield, Clock, CheckCircle, ArrowRight, AlertTriangle, DollarSign, Zap, Target, Calendar, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Integration Advisory | 48-Hour AI Roadmap | Richard Ewing',
-    description: 'AI strategy roadmap in 48 hours — not 8 weeks. Quarterly AI audits ($5,000), monthly AI advisory ($5K-$15K), and a self-serve AI Integration System. Most consultants deliver a PowerPoint in 4-8 weeks. We deliver a prioritized roadmap with a 30-day action plan in 48 hours.',
+    title: 'AI Integration System | Enterprise Governance Kit',
+    description: 'The complete AI governance operating system: 18 diagnostic tools, audit frameworks, and executive playbooks in one deployable package.',
     keywords: ['AI integration consulting', 'AI for small business', 'AI for my business', 'how to implement AI', 'AI strategy consulting', 'AI roadmap for business', 'AI consultant small business', 'AI readiness assessment', 'where to start with AI', 'AI advisor', 'fractional AI officer', 'AI audit for business', 'AI implementation help', 'overwhelmed by AI', 'falling behind on AI', 'AI anxiety business', 'don\'t know where to start with AI', 'AI maturity assessment', 'AI integration help', 'do I need AI for my business', 'which AI tools should I use', 'AI project failed', 'wasted money on AI', 'AI consulting too slow', 'AI consultant just PowerPoint', 'AI consulting not worth it', 'AI consulting too expensive', 'fast AI strategy', 'AI roadmap 48 hours'],
     openGraph: {
         title: 'AI Integration Advisory — 48-Hour Roadmap, Not 8-Week PowerPoint',

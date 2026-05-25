@@ -4,8 +4,8 @@ import PrincipalContent from '../components/principal-content';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 
 export const metadata: Metadata = {
-    title: 'Richard Ewing — AI Economist | Exogram',
-    description: 'AI Economist and AI Capital Auditor. I audit R&D spend, surface capital risks, and identify hidden technical debt. Founder of Exogram.',
+    title: 'Richard Ewing | AI Economist & Exogram Founder',
+    description: 'Richard Ewing: The AI Economist. Published in CIO.com and Built In. Creator of R&D capital audit methodology and 18 diagnostic tools.',
     keywords: principalKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/principal',

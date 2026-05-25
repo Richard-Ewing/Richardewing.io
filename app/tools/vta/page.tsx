@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import VTATool from './content';
 
 export const metadata: Metadata = {
-    title: 'Volatility Tax Auditor | Calculate Hidden AI Verification...',
-    description: 'Calculate your AI Volatility Tax - the hidden human-in-the-loop verification cost required when deploying generative AI features that suffer from respon...',
+    title: 'Volatility Tax Auditor | AI Verification Cost Tool',
+    description: 'Audit your AI Volatility Tax: the hidden human-in-the-loop verification cost every time you deploy a generative AI feature to production.',
     keywords: [
         'AI Volatility Tax',
         'human-in-the-loop cost',

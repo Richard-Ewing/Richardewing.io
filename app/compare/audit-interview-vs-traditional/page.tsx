@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Audit Interview vs Traditional Interview — Why Behavioral...',
-    description: 'Compare Richard Ewing\'s AI-powered Audit Interview with traditional behavioral and technical interviews. See why standardized, bias-reduced assessments...',
+    title: 'Audit Interview vs Traditional Hiring | Ewing',
+    description: 'Traditional interviews cost $2K per loop and vary by interviewer mood. The Audit Interview is standardized, AI-scored, and legally defensible.',
     keywords: ['audit interview vs traditional interview', 'AI hiring assessment', 'engineering interview comparison', 'bias-free interviewing', 'structured interview'],
     alternates: { canonical: 'https://www.richardewing.io/compare/audit-interview-vs-traditional' },
     openGraph: { title: 'Audit Interview vs Traditional Interview', description: 'Why AI-standardized assessments outperform gut-feel hiring.', url: 'https://www.richardewing.io/compare/audit-interview-vs-traditional', type: 'article' },

@@ -3,6 +3,15 @@ import Link from 'next/link';
 import { BookOpen, Network, BarChart } from 'lucide-react';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Audit Methodology | How R&D Audits Work | Ewing',
+    description: 'The 4-phase R&D capital audit methodology: discovery, diagnostics, quantification, and executive presentation. How $7,500 audits deliver ROI.',
+    alternates: { canonical: 'https://www.richardewing.io/methodology' },
+};
+
+
 export default function MethodologyPage() {
     return (
         <div className="min-h-screen bg-zinc-50 pt-24 pb-20">

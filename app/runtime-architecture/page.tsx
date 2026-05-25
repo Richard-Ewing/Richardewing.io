@@ -4,8 +4,8 @@ import { ShieldCheck, Cpu, Wrench, Globe, Layers, ArrowRight, Zap, Target, Alert
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 
 export const metadata: Metadata = {
-    title: 'Runtime Architecture for Agentic Systems | The 4-Layer Agent Formula | Richard Ewing',
-    description: 'The canonical runtime architecture for Claude Code, Cursor, Windsurf, and agentic engineering. Identity × Skill × Tool × Environment governance layers compiled into deterministic execution.',
+    title: 'Agentic Runtime Architecture | 4-Layer Formula',
+    description: 'The 4-layer agentic runtime: input validation, execution boundaries, output verification, and cost circuit breakers. Stop AI agent chaos.',
     keywords: [
         'agent runtime architecture', 'Claude Code runtime', 'agentic runtime infrastructure',
         'runtime cognition architecture', 'constrained execution', 'bounded cognition',

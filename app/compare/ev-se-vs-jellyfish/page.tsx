@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'EV-SE vs Jellyfish — Evergreen Economics vs Dashboard Met...',
-    description: 'Evergreen Sustainability Engine (EV-SE) vs Jellyfish comparison. EV-SE models long-term engineering sustainability economics. Jellyfish tracks engineeri...',
+    title: 'EV/SE vs Jellyfish | Valuation vs Activity Data',
+    description: 'Jellyfish tracks engineering activity. EV/SE quantifies how execution risk destroys enterprise value. One reports, the other prevents losses.',
     keywords: ['jellyfish alternative', 'engineering metrics tool', 'evergreen ratio', 'engineering sustainability', 'engineering economics vs metrics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/ev-se-vs-jellyfish' },
     openGraph: { title: 'EV-SE vs Jellyfish — Economics vs Metrics', description: 'Jellyfish tracks what engineers did. EV-SE tells you if it matters economically.', url: 'https://www.richardewing.io/compare/ev-se-vs-jellyfish', type: 'article' },

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { BookOpen, Terminal, FolderOpen, Settings, Wrench, Shield, Layers, CheckCircle, ArrowRight, AlertTriangle, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Getting Started — How to Install & Use Governance Skills | Richard Ewing',
-    description: 'Step-by-step guide to installing and deploying governance skills for Claude Code, Cursor, Windsurf, Cline, and other AI coding agents. No prior experience required.',
+    title: 'Governance Skills Setup Guide | Install in 5 Min',
+    description: 'Step-by-step installation guide for AI governance skills. Deploy runtime controls for Claude Code in under 5 minutes. Free and open source.',
     keywords: ['how to use Claude skills', 'install Claude Code skills', 'CLAUDE.md tutorial', 'Cursor rules setup', 'AI coding agent governance', 'deploy runtime governance'],
     openGraph: {
         title: 'Getting Started — Deploy Governance Skills in 10 Minutes',

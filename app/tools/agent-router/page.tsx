@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import AgentRouterContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Agentic Flow Token Simulator | AI Fleet Economics',
-    description: 'Calculate the compound token decay and GPU execution costs of multi-agent LLM workflows. Visualize the financial necessity of SLM Edge Routers.',
+    title: 'AI Agent Token Simulator | Fleet Cost Calculator',
+    description: 'Calculate compound token decay and GPU costs of multi-agent LLM workflows. See why SLM Edge Routers save 60-80% on agentic infrastructure.',
     keywords: [
         'Agentic Workflow Simulator',
         'LLM Token Burn Rate Calculator',

@@ -6,8 +6,8 @@ import { Download, ShieldCheck, Database, ChevronRight, Lock } from 'lucide-reac
 import { SKILLS } from '@/lib/content/skills';
 
 export const metadata = {
-    title: 'Governance Assets | Client Vault',
-    description: 'Secure access to your purchased governance systems.',
+    title: 'Governance Assets | Client Vault | Richard Ewing',
+    description: 'Access your purchased governance systems, audit frameworks, and diagnostic tool licenses. Secure download portal for advisory clients.',
 };
 
 export default async function AssetsPage() {

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'HackerNoon Articles: Developer Economics & AI',
-    description: 'Explore HackerNoon articles by Richard Ewing on AI agent economics, open-source sustainability, and technical debt strategy for scaling engineering teams.',
+    title: 'HackerNoon Articles | AI Economics by Richard Ewing',
+    description: 'Richard Ewing on HackerNoon: deep dives into AI agent economics, prompt engineering costs, and the hidden expenses of generative AI adoption.',
     keywords: ['Richard Ewing HackerNoon', 'developer economics', 'open source sustainability', 'AI agent architecture', 'AI economist HackerNoon'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/hackernoon' },
     openGraph: { title: 'Richard Ewing on HackerNoon', description: 'Published articles on developer economics, AI agents, and technical debt for startups.', url: 'https://www.richardewing.io/articles/recap/hackernoon', type: 'article' },
@@ -12,19 +12,19 @@ export const metadata: Metadata = {
 const articles = [
     {
         title: 'The Economics of AI Agents: What Nobody Tells You About Cost',
-        description: 'Breaking down the real cost of running AI agents in production: token economics, orchestration overhead, and the 5-50x cost multiplier of agentic workfl...',
+        description: 'Breaking down the real cost of running AI agents in production: token economics, orchestration overhead, and the 5-50x cost multiplier of agentic systems.',
         topics: ['AI Agents', 'Token Economics', 'Agentic Workflow', 'AI COGS'],
         icon: '🤖',
     },
     {
-        title: 'Open Source Is Not Free: The Hidden Costs of OSS Dependen...',
-        description: 'The true total cost of open-source dependencies: security vulnerability monitoring, license compliance, upgrade maintenance, and the risk of abandoned p...',
+        title: 'Open Source Is Not Free: Hidden OSS Dependency Costs',
+        description: 'The true total cost of open-source dependencies: security vulnerability monitoring, license compliance, upgrade maintenance, and risk mitigation.',
         topics: ['Open Source', 'Dependency Debt', 'Supply Chain Security', 'License Compliance'],
         icon: '📦',
     },
     {
-        title: 'Technical Debt for Startups: When to Ignore It and When t...',
-        description: 'A stage-appropriate guide to technical debt management. Pre-PMF: ignore most of it. Post-PMF: classify and prioritize. Pre-Series B: quantify in dollars...',
+        title: 'Technical Debt for Startups: When to Ignore and When to Fix',
+        description: 'A stage-appropriate guide to technical debt management. Pre-PMF: ignore it. Post-PMF: classify and prioritize. Pre-Series B: quantify in dollars.',
         topics: ['Technical Debt', 'Startup Strategy', 'Series Funding', 'VC Due Diligence'],
         icon: '🚀',
     },

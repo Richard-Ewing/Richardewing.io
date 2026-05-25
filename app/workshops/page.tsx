@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { Mic, Users, Lightbulb, Clock, ArrowRight, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Workshops & Speaking | Richard Ewing',
-    description: 'Book Richard Ewing for keynotes and workshops on technical debt, AI unit economics, and R&D capital allocation. Published in CIO.com and Built In.',
+    title: 'Workshops & Speaking | Book Richard Ewing',
+    description: 'Book Richard Ewing for keynotes on technical debt, AI economics, and R&D capital allocation. Published in CIO.com and Built In.',
     keywords: [
         'technical debt keynote speaker', 'AI economics speaker', 'AI economics workshop',
         'engineering leadership speaker', 'CTO conference speaker', 'R&D audit workshop',
@@ -32,7 +32,7 @@ const keynotes = [
         ],
     },
     {
-        title: 'AI Unit Economics for CFOs: When Your AI Feature Costs Mo...',
+        title: 'AI Unit Economics for CFOs: When AI Costs More Than it Makes',
         audience: 'CFOs, Finance leaders, AI/ML leaders, Product leaders',
         duration: '45 min keynote',
         highlights: [
@@ -43,7 +43,7 @@ const keynotes = [
         ],
     },
     {
-        title: 'The Subprime Code Crisis: Why Your Next Acquisition Targe...',
+        title: 'The Subprime Code Crisis: Why Your Next Acquisition Target is Architecturally Bankrupt',
         audience: 'PE/VC investors, M&A teams, Board directors, Due diligence teams',
         duration: '30-45 min keynote',
         highlights: [

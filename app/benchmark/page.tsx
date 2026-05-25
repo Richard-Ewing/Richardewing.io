@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { BarChart3, Download, TrendingDown, ArrowRight, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Product Debt Benchmark 2026 | Richard Ewing',
-    description: 'Download the free State of Product Debt 2026 report. Data from 500+ engineering orgs on technical debt, AI costs, and R&D efficiency.',
+    title: 'AI Engineering Benchmarks | Industry Data 2026',
+    description: 'Benchmark your AI economics against 500+ enterprises. Compare LLM costs, FTE displacement rates, and R&D capital efficiency metrics.',
     keywords: [
         'technical debt benchmark', 'engineering productivity benchmark 2026', 'product debt report',
         'state of technical debt', 'R&D efficiency report', 'AI cost benchmark', 'engineering metrics report',

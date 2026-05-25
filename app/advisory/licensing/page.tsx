@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { Building2, Shield, BarChart3, ArrowRight, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'White-Label Tool Licensing | Richard Ewing',
-    description: 'License proprietary R&D diagnostic tools (PDI, AUEB, EV-SE, APER) under your brand. For consulting firms, PE teams, and advisory practices.',
+    title: 'AI Integration System Licensing | Richard Ewing',
+    description: 'License the AI Integration System for your enterprise. White-label governance frameworks, diagnostic tools, and audit protocols.',
     keywords: [
         'white label saas tools', 'consulting firm diagnostic tools', 'PE due diligence tools',
         'technical debt calculator licensing', 'engineering audit tools', 'AI economics tools',

@@ -1,9 +1,9 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'InsurTech — AI Economics for Insurance Technology',
-    description: 'Technical debt economics for InsurTech companies: legacy system modernization, regulatory compliance debt, AI underwriting costs, and actuarial model ma...',
+    title: 'InsurTech AI Economics | Insurance Tech Audit',
+    description: 'InsurTech R&D audits: legacy core system modernization, AI underwriting unit costs, state regulatory compliance debt, and claims system economics.',
     keywords: ['insurtech technical debt', 'insurance technology economics', 'legacy insurance systems', 'AI underwriting cost', 'insurtech AI economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/insurtech' },
     openGraph: { title: 'InsurTech AI Economics', description: 'The hidden engineering costs destroying InsurTech margins.', url: 'https://www.richardewing.io/industries/insurtech', type: 'article' },
@@ -12,25 +12,25 @@ export const metadata: Metadata = {
 const challenges = [
     {
         title: 'Legacy Core System Debt',
-        description: 'Most insurers run on 30-40 year old COBOL/mainframe policy administration systems. Modernization costs $50M-$500M+ and takes 3-7 years. The maintenance ...',
+        description: 'Most insurers run on legacy policy systems. Modernization is expensive, and maintenance of COBOL monoliths consumes most IT budget.',
         icon: '🏛️',
         metric: '75% of IT budget on legacy maintenance',
     },
     {
         title: 'Regulatory Compliance Overhead',
-        description: 'Insurance operates under state-by-state regulation (50+ jurisdictions in the US alone). Every product change requires filing review. Compliance debt acc...',
+        description: 'Insurance operates under state regulations. Every product change requires filing review, which accumulates compliance debt.',
         icon: '⚖️',
         metric: '$2M-$10M/yr compliance engineering cost',
     },
     {
         title: 'AI Underwriting Economics',
-        description: 'AI-powered underwriting promises speed and accuracy but introduces variable costs: model inference, data enrichment APIs, and continuous model retrainin...',
+        description: 'AI-powered underwriting introduces variable compute costs: inference, data enrichment APIs, and model retraining cycles.',
         icon: '🤖',
         metric: '$0.50-$5.00 per AI underwriting decision',
     },
     {
         title: 'Claims Processing Debt',
-        description: 'Claims systems accumulate the worst technical debt: every edge case becomes a hardcoded exception. Over time, claims adjudication logic becomes a labyri...',
+        description: 'Claims systems accumulate complex technical debt as edge cases become hardcoded exceptions, creating audit and maintenance risks.',
         icon: '📋',
         metric: '40-60% of claims code is undocumented business rules',
     },

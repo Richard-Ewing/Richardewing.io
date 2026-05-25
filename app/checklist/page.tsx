@@ -3,8 +3,8 @@ import ChecklistPageContent from './checklist-content';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/checklist' },
-    title: 'AI Governance Checklist | 12 Questions from $7,500 Audits',
-    description: 'The exact 12 questions asked in $7,500 R&D Capital Audits. Score your AI governance maturity. Free diagnostic from Richard Ewing, AI Economist.',
+    title: 'AI Governance Checklist | 12 Audit Questions Free',
+    description: 'The 12 diagnostic questions from $7,500 R&D audits, free. Score your AI governance maturity and find hidden cost leaks in under 10 minutes.',
     openGraph: {
         title: 'AI Governance Checklist | 12 Questions from $7,500 Audits',
         description: 'The exact 12 questions asked in $7,500 R&D Capital Audits. Score your AI governance maturity.',

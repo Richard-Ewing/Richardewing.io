@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Audit Interview vs HackerRank — Judgment vs Puzzles',
-    description: 'Audit Interview Protocol vs HackerRank comparison. HackerRank tests algorithmic puzzles. The Audit Interview tests real-world engineering judgment — ver...',
+    title: 'Audit Interview vs HackerRank | Judgment vs Speed',
+    description: 'HackerRank tests speed on algorithmic puzzles. The Audit Interview tests senior engineering judgment. Which predicts real-world performance?',
     keywords: ['hackerrank alternative', 'technical assessment alternative', 'engineering judgment test', 'audit interview vs hackerrank', 'hiring for AI age', 'beyond hackerrank'],
     alternates: { canonical: 'https://www.richardewing.io/compare/audit-interview-vs-hackerrank' },
     openGraph: { title: 'Audit Interview vs HackerRank — Judgment vs Puzzles', description: 'When AI can pass HackerRank tests, what are you actually measuring?', url: 'https://www.richardewing.io/compare/audit-interview-vs-hackerrank', type: 'article' },

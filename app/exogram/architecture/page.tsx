@@ -3,8 +3,8 @@ import Link from 'next/link';
 import GovernanceDashboard from '../../components/GovernanceDashboard';
 
 export const metadata: Metadata = {
-    title: 'Exogram Architecture — AI Verification Infrastructure | D...',
-    description: 'Deep dive into Exogram\'s verification architecture: Schema Integrity Engine, Boundary Control Protocol, Threat Prevention Layer, and the MCP integratio...',
+    title: 'Exogram Architecture | AI Threat Gating Design',
+    description: 'Deep dive into the 4-layer verification architecture: input validation, execution boundaries, output verification, and cost circuit breakers.',
     alternates: { canonical: 'https://www.richardewing.io/exogram/architecture' },
 };
 
@@ -12,7 +12,7 @@ const layers = [
     {
         name: 'Schema Integrity Engine',
         tag: 'Layer 1',
-        description: 'Validates that every AI output conforms to predefined structural contracts. Catches hallucinated fields, missing required data, and type mismatches befo...',
+        description: 'Validates that every AI output conforms to predefined structural contracts. Catches hallucinated fields and type mismatches before they reach clients.',
         sectionClass: 'rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-8',
         badgeClass: 'text-xs font-bold font-mono text-cyan-900 font-extrabold font-semibold px-2 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10',
         arrowClass: 'text-cyan-900 font-extrabold font-semibold mt-0.5',
@@ -72,7 +72,7 @@ const layers = [
     {
         name: 'Memory Integrity System',
         tag: 'Layer 4',
-        description: 'Ensures AI systems maintain consistent, verified memory across sessions. Prevents "memory hallucinations" where AI systems fabricate or corrupt stored c...',
+        description: 'Ensures AI systems maintain consistent, verified memory across sessions. Prevents memory hallucinations and corruption of stored state.',
         sectionClass: 'rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-8',
         badgeClass: 'text-xs font-bold font-mono text-emerald-900 font-extrabold font-semibold px-2 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10',
         arrowClass: 'text-emerald-900 font-extrabold font-semibold mt-0.5',

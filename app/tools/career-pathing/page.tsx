@@ -3,8 +3,8 @@ import Layout from '../layout';
 import Content from './content';
 
 export const metadata: Metadata = {
-    title: 'Layoff Recovery & Career Pathing Funnel | Richard Ewing',
-    description: 'A 3-step diagnostic funnel to identify your exact career bottleneck and generate a personalized curriculum roadmap to level up your engineering trajectory.',
+    title: 'Career Pathing Funnel | Layoff Recovery Tool | Ewing',
+    description: 'A 3-step diagnostic to identify your exact career bottleneck and generate a personalized curriculum roadmap for engineering career recovery.',
     alternates: { canonical: 'https://www.richardewing.io/tools/career-pathing' }
 };
 

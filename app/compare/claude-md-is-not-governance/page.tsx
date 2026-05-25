@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { Shield, AlertTriangle, Layers } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'CLAUDE.md Is Not Governance | CLAUDE.md Ignored Fix | Richard Ewing',
-    description: 'Why CLAUDE.md gets ignored, .cursorrules stops working, and AI agents treat your rules as suggestions not constraints. System prompts are not deterministic governance — here is what actual runtime enforcement looks like.',
+    title: 'CLAUDE.md Is Not Governance | Why Agents Ignore It',
+    description: 'Markdown files are suggestions, not enforcement. Why CLAUDE.md fails as governance and what deterministic controls actually prevent AI drift.',
     keywords: ['CLAUDE.md not working', 'CLAUDE.md ignored', 'CLAUDE.md bypassed', '.cursorrules ignored', '.cursorrules not working', 'system prompt bypass', 'AI agent ignores rules', 'AI agent ignores instructions', 'AI governance vs system prompts', 'Claude Code ignoring instructions', 'AI coding agent disobeys', 'AI rules suggestions not constraints'],
     openGraph: {
         title: 'CLAUDE.md Is Not Governance — Why System Prompts Fail',

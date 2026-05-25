@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'FAQ — Richard Ewing | AI Economist',
-    description: 'Frequently asked questions about AI Economics, advisory services, Exogram, and the tools and frameworks created by Richard Ewing.',
+    title: 'FAQ | AI Economist Richard Ewing | Common Questions',
+    description: 'Answers to the most common questions about R&D capital audits, AI unit economics, technical debt quantification, and advisory engagements.',
     keywords: ['AI economist FAQ', 'richard ewing FAQ', 'advisory FAQ', 'exogram FAQ', 'technical debt FAQ'],
 };
 

@@ -5,8 +5,8 @@ import { DollarSign, AlertTriangle, Shield, TrendingDown } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'Why AI Coding Agents Burn Your Budget',
-    description: 'Enterprise AI coding tools cost 10-50x more in production than prototypes. The variable compute economics your CFO needs to see.',
+    title: 'Why AI Coding Burns Money | Hidden Cost Analysis',
+    description: 'Enterprise AI coding tools cost 10-50x more in production than prototypes. The variable compute economics your CFO needs to see before renewal.',
     keywords: ['AI coding cost', 'Claude Code expensive', 'AI agent cost overrun', 'AI coding surprise bill', 'Cursor token cost', 'AI coding burns money', 'API token waste', 'AI agent budget', 'retry inflation cost', 'vibe coding maintenance nightmare', 'AI generated code abandonware'],
     openGraph: {
         title: 'Why AI Coding Burns Money — Token Cost Analysis',

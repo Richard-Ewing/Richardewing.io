@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import CopilotROITool from './content';
 
 export const metadata: Metadata = {
-    title: 'Copilot ROI Forecaster | AI Coding Economics Calculator',
-    description: 'Calculate the true ROAI of AI coding assistants. Model how generative AI velocity increases are degraded by code review bottlenecks and Vibe Coding Debt.',
+    title: 'Copilot ROI Forecaster | AI Coding Cost Calculator',
+    description: 'Calculate the true ROAI of AI coding tools. Model how velocity gains are degraded by code review bottlenecks and Vibe Coding Debt.',
     keywords: [
         'GitHub Copilot ROI',
         'Cursor ROI calculator',

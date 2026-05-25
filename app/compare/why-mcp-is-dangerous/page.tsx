@@ -6,7 +6,7 @@ import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
     title: 'Why MCP Is a Security Risk | Agent Governance',
-    description: 'Model Context Protocol gives AI agents broad system access. 78% are over-privileged. The containment architecture that stops breaches.',
+    description: 'Model Context Protocol gives AI agents unrestricted tool access. The security implications, attack vectors, and governance controls you need.',
     keywords: ['MCP dangerous', 'MCP security risk', 'Model Context Protocol security', 'MCP credential leak', 'MCP confused deputy', 'MCP tool poisoning', 'MCP over-permissioning', 'Claude Code MCP risk', 'MCP supply chain attack', 'AI agent security', 'MCP governance'],
     openGraph: {
         title: 'Why MCP Is Dangerous — Model Context Protocol Security',

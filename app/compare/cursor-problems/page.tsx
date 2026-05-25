@@ -5,8 +5,8 @@ import { AlertTriangle, Shield, DollarSign, ArrowRight } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'Cursor Problems 2026: Why It Rewrites Your Files',
-    description: 'Real user complaints about Cursor: file rewrites, credit anxiety, .cursorrules ignored. The governance fixes that stop the chaos.',
+    title: 'Cursor Problems 2026 | Why It Rewrites Your Files',
+    description: 'Cursor rewrites unrelated files, loses context mid-session, and creates technical debt. The known failure modes and governance fixes.',
     keywords: ['Cursor problems', 'Cursor problems 2026', 'Cursor AI complaints', 'Cursor credits expensive', 'Cursor rewriting files', 'Cursor alternative', 'Cursor crashes', 'Cursor ignores rules', '.cursorrules not working Cursor', 'Cursor AI review', 'Cursor vs governance', 'left Cursor', 'switched from Cursor'],
     openGraph: {
         title: 'Cursor Problems 2026 — Real User Complaints & Governance Solutions',

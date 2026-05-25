@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Resources Hub | Richard Ewing — AI Economist',
-    description: 'Access premium free tools, the massive 2026 enterprise glossary, comprehensive curriculum tracks, deep-dive articles, and strategic frameworks for techn...',
+    title: 'Resources Hub | Free AI Economics Tools | Ewing',
+    description: 'Free resources: diagnostic frameworks, executive templates, research reports, and curated AI economics learning paths. All open access.',
     keywords: ['technology resources', 'CTO tools', 'engineering metrics', 'product management resources', 'Richard Ewing tools', 'free SaaS tools'],
     alternates: { canonical: 'https://www.richardewing.io/resources' },
-    openGraph: { title: 'Resources Hub | Richard Ewing', description: 'Access premium free tools, the massive 2026 enterprise glossary, comprehensive curriculum tracks, deep-dive articles, and strategic frameworks for techn...', url: 'https://www.richardewing.io/resources', type: 'website' },
+    openGraph: { title: 'Resources Hub | Richard Ewing', description: 'Access free tools, a 2026 tech glossary, curriculum tracks, deep-dive articles, and strategic frameworks for engineering economics.', url: 'https://www.richardewing.io/resources', type: 'website' },
 };
 
 const resourceSections = [

@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Shadow AI vs Shadow IT — Untracked Liability vs Subscript...',
-    description: 'Why Shadow AI is exponentially more dangerous than Shadow IT. Shadow IT is an unapproved software subscription. Shadow AI is unapproved data extrusion and hallucinations.',
+    title: 'Shadow AI vs Shadow IT | IP Liability vs SaaS Waste',
+    description: 'Shadow IT wastes subscription dollars. Shadow AI leaks proprietary IP into third-party models. One costs money, the other costs everything.',
     keywords: ['shadow ai', 'shadow it', 'shadow ai vs shadow it', 'ai governance', 'enterprise ai security', 'generative ai risks'],
     alternates: { canonical: 'https://www.richardewing.io/compare/shadow-ai-vs-shadow-it' },
-    openGraph: { title: 'Shadow AI vs Shadow IT — Untracked Liability vs Subscript...', description: 'Shadow IT costs money. Shadow AI costs you your intellectual property and legal defensibility. See the financial breakdown.', url: 'https://www.richardewing.io/compare/shadow-ai-vs-shadow-it', type: 'article' },
+    openGraph: { title: 'Shadow AI vs Shadow IT: IP Liability vs Subscription Waste', description: 'Shadow IT costs money. Shadow AI costs you your intellectual property and legal defensibility. See the financial breakdown.', url: 'https://www.richardewing.io/compare/shadow-ai-vs-shadow-it', type: 'article' },
 };
 
 const rows = [

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { advisoryKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'AI Consulting Services & Implementation Strategy | Richard Ewing',
-    description: 'Specialized AI consulting for enterprise and SMBs. We solve Pilot Purgatory, Shadow AI data leaks, and provide 48-hour AI implementation roadmaps. Stop wasting money on PowerPoint decks.',
+    title: 'AI Advisory & R&D Capital Audits | Richard Ewing',
+    description: 'Enterprise AI advisory: R&D capital audits, technical debt quantification, and AI unit economics. Engagements start at $7,500.',
     keywords: [...advisoryKeywords, 'AI consulting services', 'AI implementation strategy', 'Pilot extraction', 'Shadow AI audit', 'enterprise AI governance', 'AI for SMBs', 'AI project rescue'],
     alternates: {
         canonical: 'https://www.richardewing.io/advisory',

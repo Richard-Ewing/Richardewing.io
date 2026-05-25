@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Audit Interview vs LeetCode — Judgment vs Speed',
-    description: 'Audit Interview Protocol vs LeetCode comparison. LeetCode tests code generation speed. The Audit Interview tests engineering judgment — the skill AI can...',
+    title: 'Audit Interview vs LeetCode | Judgment vs Puzzles',
+    description: 'LeetCode rewards memorized patterns. The Audit Interview measures the judgment skills that actually matter in production engineering.',
     keywords: ['leetcode alternative', 'coding interview alternative', 'audit interview vs leetcode', 'engineering judgment assessment', 'hiring for AI age', 'beyond leetcode', 'audit interview protocol'],
     alternates: { canonical: 'https://www.richardewing.io/compare/audit-interview-vs-leetcode' },
     openGraph: { title: 'Audit Interview vs LeetCode — Judgment vs Speed', description: 'AI writes code. The scarce skill is catching what AI gets wrong. The Audit Interview tests that.', url: 'https://www.richardewing.io/compare/audit-interview-vs-leetcode', type: 'article' },

@@ -5,8 +5,8 @@ import { AlertTriangle, Shield, DollarSign, ArrowRight } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'Windsurf Problems 2026 | Why Developers Left Windsurf | Richard Ewing',
-    description: 'Real Windsurf complaints from G2, Reddit, and developer forums: pricing rug pull, credit burn, failed requests charging credits, acquisition uncertainty, hallucinations, and context loss. Governance solutions.',
+    title: 'Windsurf Problems & Fixes 2026 | Richard Ewing',
+    description: 'Windsurf editor loses project context, creates duplicate code, and lacks governance controls. The known issues and enterprise alternatives.',
     keywords: ['Windsurf problems', 'Windsurf problems 2026', 'Windsurf AI complaints', 'Windsurf pricing', 'Windsurf credit burn', 'Windsurf alternative', 'Windsurf rug pull', 'left Windsurf', 'switched from Windsurf', 'Windsurf credits expensive', 'Windsurf hallucinations', 'Windsurf Cascade problems'],
     openGraph: {
         title: 'Windsurf Problems 2026 — Real User Complaints & Governance Solutions',

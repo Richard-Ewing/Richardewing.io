@@ -2,18 +2,18 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AgriTech AI Economics — Agriculture Technology Debt ...',
-    description: 'Product economics for AgriTech: precision agriculture AI costs, IoT sensor infrastructure debt, satellite imagery processing economics, and supply chain...',
+    title: 'AgriTech AI Economics & R&D Audit | Richard Ewing',
+    description: 'AgriTech-specific R&D audits: IoT sensor economics, precision agriculture AI costs, and legacy irrigation system modernization strategies.',
     keywords: ['agritech technical debt', 'agriculture technology', 'precision farming AI', 'IoT agriculture', 'agritech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/agritech' },
     openGraph: { title: 'AgriTech AI Economics', description: 'R&D capital challenges in agriculture technology.', url: 'https://www.richardewing.io/industries/agritech', type: 'article' },
 };
 
 const sections = [
-    { title: 'Precision Agriculture AI Economics', description: 'Computer vision models for crop disease detection, yield prediction, and weed identification require massive training datasets specific to crops, region...', stats: 'Training data: millions of labeled field images per crop type', color: 'emerald' },
-    { title: 'IoT Sensor Infrastructure Debt', description: 'Thousands of field sensors (soil moisture, weather, nutrient levels) deployed across vast areas with intermittent connectivity. Firmware updates, batter...', stats: 'Device lifespan: 2-5 years, replacement cycles are constant', color: 'amber' },
-    { title: 'Satellite Imagery Processing', description: 'Processing multi-spectral satellite imagery (Sentinel, Planet Labs) for crop monitoring requires significant compute. Imagery pipelines process terabyte...', stats: 'Storage + compute: $10K-$50K per customer per season', color: 'cyan' },
-    { title: 'Supply Chain Traceability', description: 'Farm-to-fork traceability requirements (EU regulations, Whole Foods policies) demand complex data integration across producers, distributors, retailers....', stats: 'Average supply chain: 5-8 integration points', color: 'rose' },
+    { title: 'Precision Agriculture AI Economics', description: 'Computer vision models for crop disease detection, yield prediction, and weed identification require massive regional training datasets.', stats: 'Training data: millions of labeled field images per crop type', color: 'emerald' },
+    { title: 'IoT Sensor Infrastructure Debt', description: 'Thousands of soil and weather sensors deployed across vast areas require firmware updates, battery changes, and remote troubleshooting.', stats: 'Device lifespan: 2-5 years, replacement cycles are constant', color: 'amber' },
+    { title: 'Satellite Imagery Processing', description: 'Processing multi-spectral satellite imagery for crop monitoring requires significant compute, storage, and imagery pipeline maintenance.', stats: 'Storage + compute: $10K-$50K per customer per season', color: 'cyan' },
+    { title: 'Supply Chain Traceability', description: 'Farm-to-fork traceability demands complex data integration across producers, distributors, and retailers to comply with global regulations.', stats: 'Average supply chain: 5-8 integration points', color: 'rose' },
 ];
 
 const colorMap: Record<string, string> = { emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', cyan: 'border-cyan-500/30 bg-cyan-500/5', rose: 'border-rose-500/30 bg-rose-500/5' };

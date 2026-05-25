@@ -2,8 +2,8 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Unit Economics Benchmark (AUEB) FAQ | Richard Ewing',
-    description: 'Frequently asked questions about the AI Unit Economics Benchmark (AUEB) — how to measure AI feature profitability, inference costs, and model ROI.',
+    title: 'AUEB FAQ | AI Unit Economics Benchmark | Ewing',
+    description: 'How to measure AI feature profitability, inference costs, and model ROI using the AI Unit Economics Benchmark. Methodology and FAQ.',
     keywords: ['AI unit economics', 'AUEB calculator', 'AI cost analysis', 'inference cost benchmark', 'AI ROI'],
     alternates: { canonical: 'https://www.richardewing.io/tools/aueb/faq' },
     openGraph: { title: 'AUEB FAQ', description: 'How to measure AI feature profitability with AUEB.', url: 'https://www.richardewing.io/tools/aueb/faq', type: 'article' },

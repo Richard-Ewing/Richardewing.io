@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Start Here — Your Guide to AI Economics | Richard Ewing',
-    description: 'A guided, 5-step operational framework from identifying hidden AI risk to runtime enforcement via Exogram.',
+    title: 'Start Here | Your Guide to AI Economics | Ewing',
+    description: 'New to AI economics? Start here. A guided path through R&D capital audits, diagnostic tools, and the frameworks that save enterprises millions.',
     alternates: { canonical: 'https://www.richardewing.io/start-here' },
     openGraph: {
         title: 'Start Here — Your Guide to AI Economics',

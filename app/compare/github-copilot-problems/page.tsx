@@ -5,8 +5,8 @@ import { AlertTriangle, Shield, DollarSign, Star, ArrowRight } from 'lucide-reac
 import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'GitHub Copilot Problems 2026 | Why Developers Are Leaving Copilot | Richard Ewing',
-    description: 'Real GitHub Copilot complaints from G2, Reddit, and Trustpilot: model carousel regressions, PR ads controversy, surprise bills, rate limiting, and speculative code suggestions. What governance actually fixes.',
+    title: 'GitHub Copilot Problems & Fixes 2026 | Ewing',
+    description: 'GitHub Copilot generates code 55% faster but increases review burden 3x. The hidden costs, IP risks, and governance controls for enterprise.',
     keywords: ['GitHub Copilot problems', 'GitHub Copilot problems 2026', 'GitHub Copilot not worth it', 'GitHub Copilot complaints', 'GitHub Copilot alternative', 'Copilot waste of money', 'Copilot cancelled', 'Copilot downgraded', 'Copilot rate limiting', 'Copilot PR ads', 'Copilot model carousel', 'GitHub Copilot Enterprise review', 'GitHub Copilot vs governance'],
     openGraph: {
         title: 'GitHub Copilot Problems 2026 — Real User Complaints & Governance Solutions',

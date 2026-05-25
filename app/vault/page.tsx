@@ -8,8 +8,8 @@ import VaultProgressFlywheel from '@/components/VaultProgressFlywheel';
 import progressStyles from '../styles/progress.module.css';
 
 export const metadata = {
-    title: 'Client Vault',
-    description: 'Secure access to your premium advisory assets and tools.',
+    title: 'Client Vault | Premium Advisory Assets | Ewing',
+    description: 'Secure access to your premium advisory assets: governance systems, diagnostic tools, executive templates, and curriculum tracks.',
 };
 
 export default async function VaultPage() {

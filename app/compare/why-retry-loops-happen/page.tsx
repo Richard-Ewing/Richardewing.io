@@ -5,8 +5,8 @@ import { RefreshCw, Shield, AlertTriangle } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'Why AI Retry Loops Burn Thousands Overnight',
-    description: 'Your AI agent retried 47 times. Each retry costs tokens. How retry inflation silently destroys your API budget and the governance fix.',
+    title: 'Why AI Retry Loops Cost Thousands | Fix & Prevent',
+    description: 'Your AI agent retried 47 times overnight. Each retry costs tokens. How retry inflation silently destroys API budgets and the governance fix.',
     keywords: ['AI retry loop', 'AI doom loop', 'AI retry storm', 'Claude Code stuck in a loop', 'AI same error over and over', 'Cursor keeps failing', 'Cursor keeps retrying', 'AI agent stuck', 'retry inflation', 'AI coding agent loop', 'Claude Code retry', 'context pollution', 'streak breaker AI'],
     openGraph: {
         title: 'Why Retry Loops Happen — AI Agent Retry Inflation',

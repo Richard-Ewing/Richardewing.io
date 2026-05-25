@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import APERTool from './content';
 
 export const metadata: Metadata = {
-    title: 'APER Efficiency Diagnostic | Revenue Per Engineer Calculator',
-    description: 'Calculate your Revenue Per Engineer and benchmark against Stripe ($3.2M), Figma ($2.8M), and Linear ($2.1M). Detect organizational bloat. Free diagnosti...',
+    title: 'APER Calculator | Revenue Per Engineer Benchmark',
+    description: 'Benchmark Revenue Per Engineer against Stripe, Figma, and Linear. Detect organizational bloat before it destroys R&D capital efficiency.',
     keywords: [
         'revenue per engineer',
         'engineering efficiency calculator',

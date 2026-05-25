@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Glossary of Technology, AI & Product Terms | Richard Ewing',
-    description: 'Comprehensive glossary of 50+ technology terms. Technical debt, AI, SaaS metrics, product management frameworks, engineering management, and leadership ...',
+    description: 'Comprehensive glossary of 50+ technology and AI terms: Technical debt, AI, SaaS metrics, and engineering management.',
     keywords: [
         'technology glossary', 'AI glossary', 'SaaS glossary', 'engineering glossary',
         'product management glossary', 'technical debt definition', 'what is ARR',

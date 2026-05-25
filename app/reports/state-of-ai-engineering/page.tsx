@@ -7,8 +7,8 @@ import ReportUnlocker from './unlocker';
 
 export const metadata = {
     alternates: { canonical: 'https://www.richardewing.io/reports/state-of-ai-engineering' },
-    title: 'The State of AI Engineering 2026',
-    description: 'The definitive executive playbook on FTE displacement, CapEx vs OpEx of LLMs, and surviving the capability chasm.',
+    title: 'State of AI Engineering 2026 | Richard Ewing Report',
+    description: 'The definitive executive playbook: FTE displacement data, CapEx vs OpEx of LLMs, and strategies for surviving the AI capability chasm.',
 };
 
 export default function StateOfAIEngineering() {

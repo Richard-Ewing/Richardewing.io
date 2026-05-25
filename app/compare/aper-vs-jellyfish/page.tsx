@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'APER vs Jellyfish — Engineering Metrics Comparison',
-    description: 'Compare APER (Annual Productivity to Engineering Ratio) with Jellyfish for engineering metrics. See how revenue-per-engineer economics differs from engi...',
+    title: 'APER vs Jellyfish | Engineering Metrics Compared',
+    description: 'APER measures economic output per engineer. Jellyfish tracks activity. See why revenue-per-engineer beats time-tracking for engineering leaders.',
     keywords: ['APER vs Jellyfish', 'engineering metrics comparison', 'Jellyfish alternative', 'revenue per engineer', 'engineering productivity metrics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/aper-vs-jellyfish' },
     openGraph: { title: 'APER vs Jellyfish — Engineering Metrics', description: 'Revenue-per-engineer economics vs. engineering management.', url: 'https://www.richardewing.io/compare/aper-vs-jellyfish', type: 'article' },

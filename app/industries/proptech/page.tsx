@@ -2,18 +2,18 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'PropTech AI Economics — Real Estate Technology Debt ...',
-    description: 'Product economics for PropTech: property data integration debt, MLS system legacy debt, AI valuation model economics, and smart building IoT infrastruct...',
+    title: 'PropTech AI Economics | Real Estate Tech Audits',
+    description: 'PropTech R&D audits: MLS data integration costs, automated valuation model margins, IoT building management debt, and property AI economics.',
     keywords: ['proptech technical debt', 'real estate technology', 'MLS integration', 'property valuation AI', 'proptech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/proptech' },
     openGraph: { title: 'PropTech AI Economics', description: 'R&D capital challenges in real estate technology.', url: 'https://www.richardewing.io/industries/proptech', type: 'article' },
 };
 
 const sections = [
-    { title: 'Property Data Integration Debt', description: 'MLS feeds, county records, tax databases — each with different formats, update frequencies, and data quality. PropTech companies maintain dozens of inte...', stats: 'Average PropTech: 15-30 data source integrations', color: 'amber' },
-    { title: 'Valuation Model Economics', description: 'AVM (Automated Valuation Models) and Zestimate-style predictions require massive training data, continuous retraining, and accuracy monitoring. Model dr...', stats: 'Model retraining: $50K-$200K per cycle', color: 'cyan' },
-    { title: 'Legacy MLS Infrastructure', description: 'The real estate industry runs on MLS systems built in the 1990s-2000s. RETS/RESO standards provide some standardization but legacy integration debt is e...', stats: 'RETS → RESO Web API migration: 6-12 months', color: 'rose' },
-    { title: 'Smart Building IoT Debt', description: 'Commercial PropTech manages thousands of IoT sensors (HVAC, lighting, occupancy). The IoT infrastructure creates unique technical debt: firmware updates...', stats: '10,000+ devices = massive IoT debt surface', color: 'emerald' },
+    { title: 'Property Data Integration Debt', description: 'MLS feeds and tax records use different formats and update frequencies, requiring dozens of custom data pipelines.', stats: 'Average PropTech: 15-30 data source integrations', color: 'amber' },
+    { title: 'Valuation Model Economics', description: 'Automated Valuation Models (AVM) require continuous retraining, data enrichment, and model drift auditing at scale.', stats: 'Model retraining: $50K-$200K per cycle', color: 'cyan' },
+    { title: 'Legacy MLS Infrastructure', description: 'The real estate industry relies on legacy MLS systems. Migration from RETS to RESO APIs is complex and high-maintenance.', stats: 'RETS → RESO Web API migration: 6-12 months', color: 'rose' },
+    { title: 'Smart Building IoT Debt', description: 'Commercial PropTech manages thousands of IoT sensors. This creates unique firmware, security, and hardware debt.', stats: '10,000+ devices = massive IoT debt surface', color: 'emerald' },
 ];
 
 const colorMap: Record<string, string> = { amber: 'border-amber-500/30 bg-amber-500/5', cyan: 'border-cyan-500/30 bg-cyan-500/5', rose: 'border-rose-500/30 bg-rose-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5' };

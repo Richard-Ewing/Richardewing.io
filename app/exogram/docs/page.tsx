@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/exogram/docs' },
-    title: 'Exogram Developer Documentation',
-    description: 'Explore the technical architecture, protocols, and APIs that power Exograms deterministic AI validation layer.',
+    title: 'Exogram Docs | API & Integration Guide | Ewing',
+    description: 'Technical documentation for Exogram: APIs, protocols, and integration patterns for deploying deterministic AI validation in your stack.',
 };
 
 export default function ExogramDocsIndex() {

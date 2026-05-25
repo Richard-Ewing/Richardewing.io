@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Economics for Cybersecurity — Security Debt & AI ...',
-    description: 'Product economics advisory for cybersecurity companies. Security debt accumulation, AI threat detection costs, compliance-driven engineering, and detect...',
+    title: 'Cybersecurity AI Economics | Security Debt Audit',
+    description: 'Quantify your security debt: threat detection AI costs, compliance overhead, and the hidden economics of cybersecurity engineering teams.',
     keywords: ['cybersecurity technical debt', 'security debt', 'AI threat detection cost', 'cybersecurity CTO advisor', 'security engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/cybersecurity' },
     openGraph: { title: 'AI Economics for Cybersecurity', description: 'Security debt compounds faster than any other form of technical debt.', url: 'https://www.richardewing.io/industries/cybersecurity', type: 'website' },
 };
 
 const challenges = [
-    { icon: '🛡️', title: 'Security Debt Accumulation', description: 'Every unpatched vulnerability, every deferred security review, and every shortcut in authentication creates security debt that accumulates interest in t...' },
-    { icon: '🤖', title: 'AI Detection COGS', description: 'AI-powered threat detection processes millions of events per second. Each inference costs money. False positive rates determine whether AI detection is ...' },
-    { icon: '⚡', title: 'Zero-Day Response Economics', description: 'When a zero-day is disclosed, the economic clock starts ticking. Every hour unpatched is measured in risk exposure. Engineering velocity on security pat...' },
-    { icon: '📋', title: 'Compliance Overhead', description: 'SOC 2, ISO 27001, PCI DSS, CMMC, and FedRAMP create layered compliance requirements. Each framework adds engineering overhead that compounds with every ...' },
+    { icon: '🛡️', title: 'Security Debt Accumulation', description: 'Deferred security patches, deferred reviews, and authentication shortcuts create security debt that increases exposure risks.' },
+    { icon: '🤖', title: 'AI Detection COGS', description: 'Threat detection processes millions of events. Inference is costly, and false positives determine if AI is margin-viable.' },
+    { icon: '⚡', title: 'Zero-Day Response Economics', description: 'When a zero-day is disclosed, every hour unpatched increases exposure. Velocity on security patches must override sprint plans.' },
+    { icon: '📋', title: 'Compliance Overhead', description: 'SOC 2, ISO 27001, PCI DSS, CMMC, and FedRAMP create layered compliance requirements that add compounding engineering overhead.' },
 ];
 
 export default function CybersecurityPage() {

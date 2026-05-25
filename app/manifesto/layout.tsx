@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'The AI Economist Manifesto | Innovation Without Solv...',
-    description: 'The era of the "Happy Builder" is over. A manifesto on capital sovereignty for product leaders. By Richard Ewing, AI Economist and Founder of Exogram.',
+    title: 'The AI Economist Manifesto | Richard Ewing',
+    description: 'Innovation without solvency is philanthropy. A manifesto on capital sovereignty for product leaders navigating the AI era. By Richard Ewing.',
     keywords: [
         'AI economist manifesto',
         'innovation without solvency',

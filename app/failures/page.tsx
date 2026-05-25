@@ -4,8 +4,8 @@ import { failures } from '@/lib/content/failures';
 
 export const metadata = {
     alternates: { canonical: 'https://www.richardewing.io/failures' },
-  title: 'Operational Failure Database | RichardEwing.io',
-  description: 'The definitive SRE database for agentic engineering failures, context rot, hallucination debt, and repository drift.',
+  title: 'AI Failure Database | 15+ Incident Analyses | Ewing',
+  description: 'Documented AI failures with cost analysis and root causes: hallucination debt, retry inflation, context rot, and agentic drift incidents.',
 };
 
 export default function FailuresIndexPage() {

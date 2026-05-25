@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Economics for GovTech & Public Sector — Complianc...',
-    description: 'Product economics advisory for GovTech and public sector technology. Legacy system modernization, FedRAMP compliance costs, AI procurement governance, a...',
+    title: 'GovTech AI Economics | Legacy Modernization Audit',
+    description: 'Public sector AI economics: FedRAMP compliance costs, legacy mainframe replacement strategies, and AI procurement governance frameworks.',
     keywords: ['govtech technical debt', 'government technology modernization', 'fedramp compliance engineering', 'public sector AI governance', 'govtech cto advisor', 'legacy government systems'],
     alternates: { canonical: 'https://www.richardewing.io/industries/govtech' },
     openGraph: { title: 'AI Economics for GovTech', description: 'Legacy mainframes, FedRAMP compliance, and AI procurement — GovTech has unique engineering economics.', url: 'https://www.richardewing.io/industries/govtech', type: 'website' },
 };
 
 const challenges = [
-    { icon: '🏛️', title: 'Legacy Mainframe Systems', description: 'Government systems built on COBOL and mainframes in the 1970s-90s carry the highest technical debt loads in existence. Modernization is multi-year and h...' },
+    { icon: '🏛️', title: 'Legacy Mainframe Systems', description: 'Government mainframes built on COBOL carry the highest technical debt loads. Modernization is complex and high-risk.' },
     { icon: '🛡️', title: 'FedRAMP & FISMA', description: 'Federal security requirements (FedRAMP, FISMA, CMMC) create compliance-driven engineering costs that are 2-5x higher than commercial equivalents.' },
     { icon: '🤖', title: 'AI Procurement & Ethics', description: 'Government AI deployments face strict procurement rules, algorithmic bias scrutiny, and transparency requirements that commercial AI rarely encounters.' },
     { icon: '👥', title: 'Citizen-Facing Reliability', description: 'Systems that process benefits, taxes, and permits cannot fail. Downtime has real human consequences, making availability requirements extraordinarily high.' },

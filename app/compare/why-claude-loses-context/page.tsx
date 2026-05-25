@@ -5,8 +5,8 @@ import { AlertTriangle, Shield, Clock, Brain } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
 
 export const metadata: Metadata = {
-    title: 'Why Claude Gets Worse Over Time | Context Rot',
-    description: 'Claude Code forgets instructions mid-session. The engineering reason and the deterministic fix that prevents context rot in long sessions.',
+    title: 'Why Claude Loses Context | Context Rot Explained',
+    description: 'Claude degrades over long sessions as context windows fill with stale tokens. The technical cause, the economic cost, and the governance fix.',
     keywords: ['Claude Code losing context', 'Claude Code context loss', 'Claude Code session amnesia', 'Claude context rot', 'Claude context bleeding', 'Claude context drowning', 'Claude context decay', 'why Claude forgets instructions', 'Claude contradicts itself', 'Claude loses track', 'Claude Code getting worse', 'Claude Code context window', 'Claude Code long sessions'],
     openGraph: {
         title: 'Why Claude Loses Context — The Technical Explanation',

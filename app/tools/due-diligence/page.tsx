@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import DueDiligenceTool from './content';
 
 export const metadata: Metadata = {
-    title: 'M&A Engineering Due Diligence Scanner | Private Equity Tool',
-    description: 'Instantly scan acquisition targets for critical technical debt, AI dependency risks, and engineering insolvency. Exclusive $999 due diligence diagnostic...',
+    title: 'M&A Due Diligence Scanner | PE & VC Tool | Ewing',
+    description: 'Scan acquisition targets for hidden technical debt, AI dependency risks, and engineering insolvency. Built for private equity due diligence.',
     keywords: [
         'engineering due diligence',
         'technical due diligence',

@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { Shield, CheckCircle, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Runtime Governance Maturity | Certification & Assessment | Richard Ewing',
-    description: 'Assess your AI governance maturity across 5 levels. Runtime Governance Architect, MCP Governance Certified, Bounded Cognition Certified — institutional credentials for agentic engineering.',
+    title: 'AI Governance Certification | Prove Your Expertise',
+    description: 'Earn the AI Governance Maturity certification. Demonstrate mastery of AI economics, risk frameworks, and enterprise audit methodology.',
     keywords: ['AI governance certification', 'runtime governance maturity', 'AI governance assessment', 'agentic engineering certification', 'MCP governance certified', 'AI governance training', 'runtime maturity model'],
     openGraph: {
         title: 'Runtime Governance Maturity — Certification & Assessment',

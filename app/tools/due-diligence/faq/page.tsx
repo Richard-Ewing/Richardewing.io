@@ -2,8 +2,8 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Technical Due Diligence FAQ | Richard Ewing',
-    description: 'Frequently asked questions about Technical Due Diligence, M&A audits, and AI architecture validation for investors and operators.',
+    title: 'Technical Due Diligence FAQ | M&A Audit Guide',
+    description: 'FAQ on technical due diligence for M&A: what we scan, how risks are quantified, and how PE/VC firms use results to negotiate valuations.',
     keywords: ['technical due diligence', 'M&A audit', 'AI architecture validation', 'CTO due diligence', 'technical audit'],
     alternates: { canonical: 'https://www.richardewing.io/tools/due-diligence/faq' },
     openGraph: { title: 'Technical Due Diligence FAQ', description: 'Frequently asked questions about Technical Due Diligence.', url: 'https://www.richardewing.io/tools/due-diligence/faq', type: 'article' },

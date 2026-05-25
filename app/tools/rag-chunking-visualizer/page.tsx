@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import RagChunkingContent from './content';
 
 export const metadata: Metadata = {
-    title: 'RAG Chunking Visualizer | Semantic Optimization',
-    description: 'Visually optimize your Retrieval-Augmented Generation (RAG) vector embeddings. See exactly where semantic context breaks under different chunk sizes and...',
+    title: 'RAG Chunking Visualizer | Optimize Embeddings',
+    description: 'Visually optimize RAG vector embeddings and analyze semantic chunking boundaries. Improve retrieval accuracy and reduce hallucination rates.',
     keywords: [
         'RAG chunking strategy',
         'Semantic search visualizer',

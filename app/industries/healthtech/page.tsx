@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Economics for HealthTech — R&D Audit & AI Compliance',
-    description: 'Product economics advisory for HealthTech companies. HIPAA-driven technical debt, clinical AI validation, FDA SaMD compliance costs, and healthcare engi...',
+    title: 'HealthTech AI Economics | R&D Audit & Compliance',
+    description: 'HealthTech R&D audits: HIPAA compliance costs, clinical AI validation expenses, EHR integration debt, and FDA submission economics.',
     keywords: ['healthtech technical debt', 'healthcare AI governance', 'HIPAA compliance engineering', 'clinical AI validation', 'healthtech CTO advisor', 'FDA SaMD compliance'],
     alternates: { canonical: 'https://www.richardewing.io/industries/healthtech' },
     openGraph: { title: 'AI Economics for HealthTech', description: 'R&D audit and clinical AI compliance for healthcare technology.', url: 'https://www.richardewing.io/industries/healthtech', type: 'website' },
 };
 
 const challenges = [
-    { icon: '🏥', title: 'HIPAA Debt', description: 'HIPAA compliance creates technical debt through encryption requirements, access logging, BAA management, and PHI handling. Non-compliance carries $1.5M+...' },
+    { icon: '🏥', title: 'HIPAA Debt', description: 'HIPAA compliance requires strict encryption, access logs, BAA management, and secure PHI handling to avoid regulatory fines.' },
     { icon: '🧬', title: 'Clinical AI Validation', description: 'AI/ML models used in clinical decision support require FDA oversight (SaMD), algorithmic validation, and ongoing performance monitoring.' },
     { icon: '🔐', title: 'Interoperability Mandates', description: 'HL7 FHIR, TEFCA, and CMS interoperability rules require API standards that add engineering complexity and compliance burden.' },
-    { icon: '⏱️', title: 'Slow Validation Cycles', description: 'Clinical validation timelines (months to years) make technical debt uniquely dangerous — you can\'t iterate fast when deployment requires regulatory cle...' },
+    { icon: '⏱️', title: 'Slow Validation Cycles', description: 'Clinical validation timelines make technical debt dangerous. Fast iteration is blocked by regulatory clearance requirements.' },
 ];
 
 export default function HealthTechPage() {

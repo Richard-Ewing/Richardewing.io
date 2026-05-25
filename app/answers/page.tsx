@@ -4,8 +4,8 @@ import { SPOKE_MATRIX, Persona } from '../lib/spoke-data';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/answers' },
-    title: 'The Knowledge Base | Answers by Persona',
-    description: 'A comprehensive matrix of engineering economics and AI profitability answers tailored for Founders, CFOs, VPs of Engineering, and Private Equity.',
+    title: 'AI & Engineering Economics Q&A | Richard Ewing',
+    description: 'Expert answers on AI economics, technical debt, engineering productivity, and R&D capital allocation. Searchable knowledge base.',
 };
 
 export default function AnswersHubPage() {

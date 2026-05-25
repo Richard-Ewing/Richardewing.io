@@ -5,7 +5,7 @@ import { AlertTriangle, TrendingUp, DollarSign, Shield, BarChart3 } from 'lucide
 
 export const metadata: Metadata = {
     title: 'AI Runtime Failure Database | Incident Analysis',
-    description: 'Real enterprise AI failures: context rot, retry inflation, hallucination cascades. Each with root cause analysis and governance fix.',
+    description: 'Searchable database of AI runtime failures: hallucination events, retry inflation, context rot incidents, and their economic impact analysis.',
     keywords: ['AI agent failures', 'Claude Code failure modes', 'runtime failure index', 'agentic failure database', 'AI coding agent risks', 'context rot frequency', 'retry inflation cost', 'MCP security breach', 'AI governance failure taxonomy', 'most common AI coding failures'],
     openGraph: {
         title: 'Runtime Failure Index — The Canonical Agentic Failure Database',

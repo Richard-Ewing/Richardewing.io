@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Vibe Coding vs Agile — Debt Acceleration vs Planned Itera...',
-    description: 'Vibe Coding vs Agile. Why generative AI\'s rapid prototyping phase creates hidden "Vibe Coding Debt" that Agile methodologies fail to measure.',
+    title: 'Vibe Coding vs Agile | Why AI Debt Beats Sprints',
+    description: 'Vibe coding generates 10x faster but accumulates 50x the technical debt. Why the Agile playbook fails when AI writes most of your code.',
     keywords: ['vibe coding', 'agile development', 'generative ai debt', 'vibe coding vs agile', 'engineering velocity', 'shadow ai'],
     alternates: { canonical: 'https://www.richardewing.io/compare/vibe-coding-vs-agile' },
-    openGraph: { title: 'Vibe Coding vs Agile — Debt Acceleration vs Planned Itera...', description: 'Vibe Coding feels fast, but it generates hidden technical debt that breaks Agile sprint planning.', url: 'https://www.richardewing.io/compare/vibe-coding-vs-agile', type: 'article' },
+    openGraph: { title: 'Vibe Coding vs Agile: Debt Acceleration vs Iteration', description: 'Vibe Coding feels fast, but it generates hidden technical debt that breaks Agile sprint planning.', url: 'https://www.richardewing.io/compare/vibe-coding-vs-agile', type: 'article' },
 };
 
 const rows = [

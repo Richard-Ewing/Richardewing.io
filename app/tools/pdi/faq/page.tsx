@@ -2,8 +2,8 @@
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Product Debt Index (PDI) FAQ | Richard Ewing',
-    description: 'Frequently asked questions about the Product Debt Index (PDI) — how it works, how to interpret scores, and how it compares to other technical debt frame...',
+    title: 'Product Debt Index FAQ | How PDI Works | Ewing',
+    description: 'How PDI quantifies technical debt in dollar terms, calculates insolvency dates, and translates engineering risk into executive-grade metrics.',
     keywords: ['product debt index', 'PDI calculator', 'technical debt measurement', 'PDI vs DORA', 'PDI score meaning'],
     alternates: { canonical: 'https://www.richardewing.io/tools/pdi/faq' },
     openGraph: { title: 'Product Debt Index (PDI) FAQ', description: 'Everything you need to know about the PDI framework.', url: 'https://www.richardewing.io/tools/pdi/faq', type: 'article' },

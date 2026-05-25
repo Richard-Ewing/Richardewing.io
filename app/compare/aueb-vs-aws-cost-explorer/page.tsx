@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AUEB vs AWS Cost Explorer — AI Economics vs Cloud Billing',
-    description: 'AI Unit Economics Benchmark (AUEB) vs AWS Cost Explorer comparison. AUEB models AI feature profitability per interaction. AWS Cost Explorer tracks cloud...',
+    title: 'AUEB vs AWS Cost Explorer | AI Economics vs Cloud',
+    description: 'AWS Cost Explorer shows cloud bills. AUEB calculates when your AI feature destroys margin. One tracks spend, the other predicts collapse.',
     keywords: ['aws cost explorer alternative', 'ai cost calculator', 'aueb vs aws', 'ai unit economics', 'llm cost optimization', 'ai feature profitability'],
     alternates: { canonical: 'https://www.richardewing.io/compare/aueb-vs-aws-cost-explorer' },
     openGraph: { title: 'AUEB vs AWS Cost Explorer — AI Economics vs Cloud Billing', description: 'Cloud spend ≠ AI economics. AUEB tells you if your AI features will ever be profitable.', url: 'https://www.richardewing.io/compare/aueb-vs-aws-cost-explorer', type: 'article' },

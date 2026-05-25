@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { Shield, AlertTriangle, DollarSign, ArrowRight, Lock, Check, X } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Guardrails Platforms Comparison 2026 | Lakera vs Galileo vs Invariant | Richard Ewing',
-    description: 'Compare AI guardrails and governance platforms: Lakera Guard (Check Point), Invariant Labs (Snyk), Galileo AI, Zenity, Endor Labs, and GuardionAI. Enterprise pricing, real reviews, and why practitioner-facing governance is missing.',
+    title: 'AI Guardrails: Lakera vs Galileo | Richard Ewing',
+    description: 'Compare AI guardrail platforms head-to-head. Which stops hallucinations, prompt injection, and data leakage without killing inference speed?',
     keywords: ['AI guardrails comparison', 'Lakera Guard review', 'Galileo AI pricing', 'Invariant Labs review', 'AI governance platform', 'best AI guardrails 2026', 'Lakera vs Galileo', 'AI agent security platform', 'AI guardrails pricing', 'NeMo Guardrails alternative', 'Zenity AI review', 'Endor Labs AI review', 'AI coding governance', 'runtime governance vs guardrails'],
     openGraph: {
         title: 'AI Guardrails Platform Comparison 2026 — Enterprise vs Practitioner Governance',

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Richard Ewing CIO.com Articles — Executive Technology Lea...',
-    description: 'Read Richard Ewing\'s published articles on CIO.com covering R&D capital efficiency, technical debt economics, AI adoption strategies, and engineering l...',
+    title: 'CIO.com Articles on R&D Capital | Richard Ewing',
+    description: 'Published on CIO.com: R&D capital efficiency strategies, technical debt economics, and AI adoption ROI frameworks for enterprise leaders.',
     keywords: ['Richard Ewing CIO.com', 'CIO articles technical debt', 'R&D capital efficiency CIO', 'CTO thought leadership', 'AI economist CIO.com'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/cio-com' },
     openGraph: { title: 'Richard Ewing on CIO.com', description: 'Published articles on R&D capital efficiency, technical debt economics, and AI adoption for CIOs.', url: 'https://www.richardewing.io/articles/recap/cio-com', type: 'article' },
@@ -18,13 +18,13 @@ const articles = [
     },
     {
         title: 'The Hidden Cost of Technical Debt: Why CIOs Must Act Now',
-        description: 'How technical debt silently erodes R&D capital efficiency and what CIOs can do about it. Introduces the Innovation Tax framework for quantifying the cos...',
+        description: 'How technical debt silently erodes R&D capital efficiency and what CIOs can do about it. Introduces the Innovation Tax framework.',
         topics: ['Technical Debt', 'Innovation Tax', 'R&D Capital Efficiency', 'Engineering Economics'],
         icon: '💰',
     },
     {
         title: 'AI Adoption Without the AI Tax: A Framework for CIOs',
-        description: 'A practical framework for evaluating AI feature economics before committing engineering resources. Covers AI COGS, Cost of Predictivity, and margin pres...',
+        description: 'A practical framework for evaluating AI feature economics before committing engineering resources. Covers AI COGS, Cost of Predictivity, and gross margin.',
         topics: ['AI COGS', 'Cost of Predictivity', 'AI Unit Economics', 'Gross Margin'],
         icon: '🤖',
     },

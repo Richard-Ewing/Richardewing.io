@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { ShieldCheck, AlertTriangle, Check, X, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Claude Code vs Cursor vs Windsurf 2026 | Pricing, Problems & Governance Comparison | Richard Ewing',
-    description: 'Compare Claude Code, Cursor, Windsurf, GitHub Copilot, Cline, and Tabnine: real pricing, user complaints from G2 and Reddit, governance gaps, and what runtime infrastructure is missing. Plus enterprise guardrails comparison.',
+    title: 'Claude Code vs Cursor vs Windsurf 2026 | Ewing',
+    description: 'Unbiased comparison of AI coding agents: Claude Code, Cursor, and Windsurf. Economics, failure modes, and which one destroys the least code.',
     keywords: ['Claude Code vs Cursor', 'Cursor vs Windsurf', 'Claude Code vs Windsurf', 'GitHub Copilot vs Cursor', 'AI coding agent comparison', 'AI coding agent pricing 2026', 'best AI coding agent 2026', 'Cursor problems', 'Copilot problems', 'Windsurf problems', 'AI coding agent complaints', 'Claude Code governance', 'Cursor governance', 'Windsurf safety', 'Cline vs Roo Code', 'deterministic vs probabilistic coding', 'AI agent runtime governance comparison', 'Tabnine vs Copilot'],
     openGraph: {
         title: 'Claude Code vs Cursor vs Windsurf 2026 — Pricing, Problems & Governance',

@@ -1,19 +1,19 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'MediaTech AI Economics — Media & Entertainment Techn...',
-    description: 'Product economics for MediaTech: content delivery at scale, streaming infrastructure debt, DRM/rights management systems, and AI-powered content recomme...',
+    title: 'MediaTech AI Economics | Streaming Debt Audits',
+    description: 'MediaTech R&D audits: CDN delivery costs, AI recommendation engine economics, DRM system debt, and ad tech integration overhead.',
     keywords: ['mediatech technical debt', 'streaming technology', 'content delivery infrastructure', 'media technology economics', 'CDN engineering debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/mediatech' },
     openGraph: { title: 'MediaTech AI Economics', description: 'R&D capital challenges in media and entertainment technology.', url: 'https://www.richardewing.io/industries/mediatech', type: 'article' },
 };
 
 const sections = [
-    { title: 'Streaming Infrastructure Debt', description: 'Delivering video at scale (4K, HDR, multi-device) requires massive CDN infrastructure, adaptive bitrate encoding pipelines, and real-time quality monito...', stats: 'CDN cost per user: $3-8/month at scale', color: 'violet' },
-    { title: 'Content Recommendation AI', description: 'Recommendation engines are the core value proposition of streaming platforms. Training on billions of viewing events, handling cold-start problems for n...', stats: 'Recommendation quality = 80%+ of engagement', color: 'cyan' },
-    { title: 'DRM & Rights Management', description: 'Digital Rights Management across territories, windows, and platforms creates complex licensing data infrastructure. Content rights change constantly — n...', stats: 'Rights data: thousands of rules per title per territory', color: 'amber' },
-    { title: 'Ad Tech Integration Debt', description: 'Ad-supported streaming (FAST, AVOD) requires real-time bidding integration, ad insertion, frequency capping, and yield optimization. Each ad partner is ...', stats: '20-50 ad partner integrations per platform', color: 'rose' },
+    { title: 'Streaming Infrastructure Debt', description: 'Delivering high-definition video at scale requires massive CDN infrastructure and adaptive bitrate encoding pipelines.', stats: 'CDN cost per user: $3-8/month at scale', color: 'violet' },
+    { title: 'Content Recommendation AI', description: 'Recommendation engines require continuous training on viewing events, driving up database and model training costs.', stats: 'Recommendation quality = 80%+ of engagement', color: 'cyan' },
+    { title: 'DRM & Rights Management', description: 'DRM across territories and platforms requires complex licensing database rules that change with content windows.', stats: 'Rights data: thousands of rules per title per territory', color: 'amber' },
+    { title: 'Ad Tech Integration Debt', description: 'Ad-supported streaming requires real-time bidding, dynamic ad insertion, and custom third-party tracking integrations.', stats: '20-50 ad partner integrations per platform', color: 'rose' },
 ];
 
 const colorMap: Record<string, string> = { violet: 'border-violet-500/30 bg-violet-500/5', cyan: 'border-cyan-500/30 bg-cyan-500/5', amber: 'border-amber-500/30 bg-amber-500/5', rose: 'border-rose-500/30 bg-rose-500/5' };

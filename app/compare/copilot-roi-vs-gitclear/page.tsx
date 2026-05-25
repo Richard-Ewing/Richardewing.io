@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Copilot ROI vs GitClear — EBITDA Drag vs LOC Generation',
-    description: 'Copilot ROI Forecaster vs GitClear comparison. Exogram measures the hidden EBITDA tax of AI-generated Vibe Coding Debt. GitClear measures code output vo...',
+    title: 'Copilot ROI vs GitClear | EBITDA vs LOC Metrics',
+    description: 'GitClear counts lines of code. Copilot ROI Forecaster calculates the actual EBITDA drag of AI-assisted code review bottlenecks.',
     keywords: ['gitclear alternative', 'jellyfish alternative', 'ai coding roi', 'vibe coding debt', 'copilot roi calculator', 'engineering intelligence vs economic impact'],
     alternates: { canonical: 'https://www.richardewing.io/compare/copilot-roi-vs-gitclear' },
     openGraph: { title: 'Copilot ROI vs GitClear — EBITDA vs LOC Generation', description: 'Why measuring code line output volume is a fatal metric for generative AI tools.', url: 'https://www.richardewing.io/compare/copilot-roi-vs-gitclear', type: 'article' },

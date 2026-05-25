@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Compare — PDI vs SonarQube, Audit Interview vs LeetCode',
-    description: 'How Richard Ewing\'s diagnostic tools compare to mainstream alternatives. Product Debt Index vs SonarQube. Audit Interview Protocol vs LeetCode. Differe...',
+    title: 'Tool Comparisons | PDI vs SonarQube & More | Ewing',
+    description: 'Side-by-side comparisons of R&D diagnostic tools vs mainstream alternatives. See why economic metrics outperform vanity code quality scores.',
     keywords: ['tool comparison', 'sonarqube alternative', 'leetcode alternative', 'product debt index', 'audit interview protocol'],
     alternates: { canonical: 'https://www.richardewing.io/compare' },
 };

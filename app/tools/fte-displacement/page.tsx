@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import FTEContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Agentic FTE Displacement Matrix | Richard Ewing',
-    description: 'Calculate the exact EBITDA expansion of replacing human Tier-1 support with autonomous LLM agents.',
+    title: 'FTE Displacement Matrix | AI vs Human Cost Model',
+    description: 'Calculate the EBITDA expansion of replacing Tier-1 functions with autonomous LLM agents. Model displacement timelines by department.',
     keywords: [
         'AI agent ROI calculator',
         'Customer support automation cost',

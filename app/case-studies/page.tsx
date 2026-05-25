@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/case-studies' },
-    title: 'Case Studies & Failure Analyses | Richard Ewing',
-    description: 'Operational realism density: how and why production AI systems collapse, and the governance frameworks that prevent them.',
+    title: 'AI Economics Case Studies | Real Results | Ewing',
+    description: 'How enterprises saved millions using R&D capital audits, technical debt quantification, and AI unit economics diagnostics. Real client outcomes.',
 };
 
 export default function CaseStudiesPage() {
