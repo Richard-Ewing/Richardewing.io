@@ -1,4 +1,5 @@
 import { PublishedProfiles } from '@/components/PublishedProfiles';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -35,7 +36,9 @@ export default function ProfilesPage() {
         <main className="pt-20">
             <div className="page-container">
                 <PublishedProfiles />
-            </div>
+            
+                    <AdvisoryCTA variant="educational" />
+                </div>
         </main>
     );
 }

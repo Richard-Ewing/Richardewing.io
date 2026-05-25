@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { BookOpen, Terminal, FolderOpen, Settings, Wrench, Shield, Layers, CheckCircle, ArrowRight, AlertTriangle, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -237,7 +238,9 @@ export default function GettingStartedPage() {
                         </Link>
                     </div>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="educational" />
+                </div>
         </main>
     );
 }

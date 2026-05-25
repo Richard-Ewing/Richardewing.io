@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { failures } from '@/lib/content/failures';
 
 export const metadata = {

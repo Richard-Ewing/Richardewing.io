@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { supabaseAdmin } from '../../lib/supabase';
 import { Activity, BarChart2, ShieldAlert } from 'lucide-react';
 
@@ -119,7 +120,9 @@ export default function BenchmarksPage() {
                     ))}
                 </div>
 
-            </div>
+            
+                    <AdvisoryCTA variant="tool-result" />
+                </div>
         </main>
     );
 }

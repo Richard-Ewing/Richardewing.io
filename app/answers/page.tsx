@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { SPOKE_MATRIX, Persona } from '../lib/spoke-data';
 
 export const metadata: Metadata = {

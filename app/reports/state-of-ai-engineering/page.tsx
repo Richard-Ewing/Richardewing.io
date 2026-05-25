@@ -3,6 +3,7 @@ import { ShieldAlert, BookOpen, ChevronRight, LockKeyhole } from 'lucide-react';
 import { BorderBeam } from '@/app/components/magicui/border-beam';
 import Meteors from '@/app/components/magicui/meteors';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ReportUnlocker from './unlocker';
 
 export const metadata = {

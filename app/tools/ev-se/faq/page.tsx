@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'EV/SE Calculator FAQ | Valuation Methodology | Ewing',
@@ -70,7 +71,9 @@ export default function EvSeFaqPage() {
                         <Link href="/tools/ev-se" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Launch EV/SE Calculator &rarr;</Link>
                     </div>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="tool-result" />
+                </div>
         </main>
     );
 }

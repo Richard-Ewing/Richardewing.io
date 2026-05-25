@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { permanentRedirect } from 'next/navigation';
 import SocialShare from '@/components/SocialShare';
 import { allArticles, getSortedArticles } from '@/lib/blog-data';
@@ -164,7 +165,9 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                 <div className="mt-12">
                     <Link href="/blog" className="text-sm font-semibold text-zinc-900 font-medium hover:underline">← Back to Blog</Link>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="educational" />
+                </div>
         </main>
     );
 }

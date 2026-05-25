@@ -1,8 +1,30 @@
 import React from 'react';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { ArrowLeft, Lock, BarChart2 } from 'lucide-react';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { ExportToPDFButton } from '@/components/ExportToPDFButton';
+import type { Metadata } from 'next';
+
+const reportMeta: Record<string, { title: string; description: string }> = {
+    'ai-governance-maturity-index': { title: 'AI Governance Maturity Index | Enterprise Benchmark Report', description: 'Percentile distributions and operational risks for AI governance maturity across SaaS and Healthcare sectors. Board-ready data from live telemetry.' },
+    'product-debt-report': { title: 'Product Debt Report | R&D Capital Analysis', description: 'Aggregated product debt benchmarks from enterprise telemetry. Quantify your technical debt in dollar terms vs. industry percentiles.' },
+    'hallucination-debt-index': { title: 'Hallucination Debt Index | AI Output Liability Benchmark', description: 'Track accumulated liability from unverified AI outputs in production. Percentile data from live enterprise AI deployments.' },
+    'runtime-governance-benchmark': { title: 'Runtime Governance Benchmark | AI Agent Control Report', description: 'Operational risk benchmarks for AI agent governance. Deterministic control layer metrics across enterprise deployments.' },
+    'ai-margin-compression-report': { title: 'AI Margin Compression Report | COGS & Profitability Analysis', description: 'How AI inference costs compress gross margins. Enterprise benchmarks for AI feature economics and cost attribution.' },
+};
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const { slug } = params;
+    const meta = reportMeta[slug];
+    if (!meta) return { title: 'Report | Richard Ewing', description: 'Enterprise benchmark report from live AI telemetry.' };
+    return {
+        title: meta.title,
+        description: meta.description,
+        alternates: { canonical: `https://www.richardewing.io/reports/${slug}` },
+        openGraph: { title: meta.title, description: meta.description, url: `https://www.richardewing.io/reports/${slug}`, type: 'article' },
+    };
+}
 
 export default async function ReportDetailPage({ params }: { params: { slug: string } }) {
     const { slug } = params;
@@ -74,7 +96,9 @@ export default async function ReportDetailPage({ params }: { params: { slug: str
                         </p>
                     </div>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="compare" />
+                </div>
         </main>
     );
 }

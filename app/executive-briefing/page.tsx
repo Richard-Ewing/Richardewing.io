@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { Shield, AlertTriangle, TrendingUp, DollarSign, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -210,7 +211,9 @@ export default function ExecutiveBriefingPage() {
                         ← Return to Infrastructure Catalog
                     </Link>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="industry" />
+                </div>
         </main>
     );
 }

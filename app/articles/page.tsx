@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ArticlesPage from './content';
 
 export const metadata: Metadata = {
@@ -36,7 +37,9 @@ export default function Page() {
         <main className="pt-20">
             <div className="page-container">
                 <ArticlesPage />
-            </div>
+            
+                    <AdvisoryCTA variant="educational" />
+                </div>
         </main>
     );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { NewsletterForm } from '../components/newsletter-form';
 
 export const metadata: Metadata = {

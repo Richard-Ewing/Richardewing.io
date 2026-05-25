@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { FileText, Download, Lock } from 'lucide-react';
 import { supabaseAdmin } from '../../lib/supabase';
 
@@ -105,7 +106,9 @@ export default function ReportsPage() {
                     ))}
                 </div>
 
-            </div>
+            
+                    <AdvisoryCTA variant="compare" />
+                </div>
         </main>
     );
 }

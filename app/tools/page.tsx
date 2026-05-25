@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ToolsContent from './tools-content';
 
 export const metadata: Metadata = {

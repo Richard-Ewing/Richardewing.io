@@ -1,4 +1,5 @@
 import { getExogramDoc, exogramDocs } from '@/lib/exogram-docs';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 

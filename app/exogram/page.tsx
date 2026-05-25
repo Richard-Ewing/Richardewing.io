@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import Image from 'next/image';
 import BlurIn from '@/components/magicui/blur-in';
 import { BorderBeam } from '@/components/magicui/border-beam';
@@ -471,7 +472,9 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
-            </div>
+            
+                    <AdvisoryCTA variant="industry" />
+                </div>
         </main>
     );
 }

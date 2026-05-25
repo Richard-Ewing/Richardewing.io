@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'APER Calculator FAQ | How It Works | Richard Ewing',
@@ -70,7 +71,9 @@ export default function AperFaqPage() {
                         <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Launch APER Calculator &rarr;</Link>
                     </div>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="tool-result" />
+                </div>
         </main>
     );
 }

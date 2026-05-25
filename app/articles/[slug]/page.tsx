@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { permanentRedirect } from 'next/navigation';
 import { articles } from '../../lib/data';
 import { articleSchemaTemplate } from '../../lib/schemas';

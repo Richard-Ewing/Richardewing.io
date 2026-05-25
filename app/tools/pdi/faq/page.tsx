@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Product Debt Index FAQ | How PDI Works | Ewing',
@@ -84,7 +85,9 @@ export default function PdiFaqPage() {
                         </Link>
                     </div>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="tool-result" />
+                </div>
         </main>
     );
 }

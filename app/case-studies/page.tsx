@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/case-studies' },
@@ -31,7 +32,9 @@ export default function CaseStudiesPage() {
                         View Remediation Infrastructure
                     </Link>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="compare" />
+                </div>
         </main>
     );
 }

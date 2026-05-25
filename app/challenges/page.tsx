@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { challenges } from './data';
 import { ShieldAlert, ArrowRight } from 'lucide-react';
 

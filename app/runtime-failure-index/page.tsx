@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { AlertTriangle, TrendingUp, DollarSign, Shield, BarChart3 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -243,7 +244,9 @@ export default function RuntimeFailureIndexPage() {
                 <div className="mt-8 text-center">
                     <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">← Return to Infrastructure Catalog</Link>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="compare" />
+                </div>
         </main>
     );
 }

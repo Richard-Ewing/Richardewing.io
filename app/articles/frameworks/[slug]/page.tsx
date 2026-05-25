@@ -1,4 +1,5 @@
 import { frameworks } from '@/lib/data';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { Metadata } from 'next';
 import FrameworkDefinition from '@/components/FrameworkDefinition';
 
@@ -76,6 +77,9 @@ export default async function Page({ params }: Props) {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <FrameworkDefinition framework={framework} />
+            <div className="page-container max-w-4xl mx-auto">
+                <AdvisoryCTA variant="educational" />
+            </div>
         </>
     );
 }

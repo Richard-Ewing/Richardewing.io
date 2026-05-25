@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 import SkillHero from '@/components/skills/SkillHero';
 import FailureCard from '@/components/skills/FailureCard';

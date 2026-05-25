@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import GovernanceDashboard from '../../components/GovernanceDashboard';
 
 export const metadata: Metadata = {
@@ -183,7 +184,9 @@ export default function ExogramArchitecturePage() {
                         View Use Cases →
                     </Link>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="industry" />
+                </div>
         </main>
     );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'AI Governance Architecture Diagrams | Free | Ewing',
@@ -339,7 +340,9 @@ export default function DiagramsPage() {
                         ← Return to Infrastructure Catalog
                     </Link>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="educational" />
+                </div>
         </main>
     );
 }

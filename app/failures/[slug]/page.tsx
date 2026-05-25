@@ -1,6 +1,7 @@
 import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { AlertTriangle, TrendingDown, ArrowRight, Activity, MessageSquare, HelpCircle } from 'lucide-react';
 import { FAILURES, getFailureBySlug, SKILLS } from '@/lib/content/skills';
 import GovernancePathways from '@/components/semantic/GovernancePathways';
@@ -173,7 +174,9 @@ export default async function FailureDetailPage({ params }: { params: Promise<{ 
                     />
                 </div>
 
-            </div>
+            
+                    <AdvisoryCTA variant="compare" />
+                </div>
         </main>
     );
 }

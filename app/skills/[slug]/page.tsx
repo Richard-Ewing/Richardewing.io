@@ -1,6 +1,7 @@
 import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { ShieldCheck, Server, Key, AlertTriangle, ArrowRight, Zap, Target, MessageSquare, Activity, HelpCircle } from 'lucide-react';
 import { SKILLS, getSkillBySlug, FAILURES } from '@/lib/content/skills';
 import GovernancePathways from '@/components/semantic/GovernancePathways';
@@ -329,7 +330,9 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
                         ← Return to Infrastructure Catalog
                     </Link>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="educational" />
+                </div>
         </main>
     );
 }

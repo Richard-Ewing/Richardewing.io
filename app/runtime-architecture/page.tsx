@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { ShieldCheck, Cpu, Wrench, Globe, Layers, ArrowRight, Zap, Target, AlertTriangle } from 'lucide-react';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 
@@ -299,7 +300,9 @@ export default function RuntimeArchitecturePage() {
                         ← Return to Infrastructure Catalog
                     </Link>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="compare" />
+                </div>
         </main>
     );
 }

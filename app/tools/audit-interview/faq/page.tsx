@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Audit Interview FAQ | Hiring Protocol | Ewing',
@@ -70,7 +71,9 @@ export default function AuditInterviewFaqPage() {
                         <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-pink-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Start Audit Interview &rarr;</Link>
                     </div>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="tool-result" />
+                </div>
         </main>
     );
 }

@@ -1,6 +1,7 @@
 import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { challenges } from '../data';
 import { DiagnosticBridge } from '../../components/DiagnosticBridge';
 

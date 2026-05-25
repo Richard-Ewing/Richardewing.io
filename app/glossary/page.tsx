@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import GlossaryContent from './glossary-content';
 import { glossaryTerms } from './terms';
 
@@ -50,6 +51,9 @@ export default function GlossaryPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
             <GlossaryContent />
+            <div className="page-container max-w-4xl mx-auto">
+                <AdvisoryCTA variant="educational" />
+            </div>
         </>
     );
 }

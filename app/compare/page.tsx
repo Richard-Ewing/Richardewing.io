@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Tool Comparisons | PDI vs SonarQube & More | Ewing',
@@ -134,7 +135,9 @@ export default function ComparePage() {
                         </Link>
                     </div>
                 </div>
-            </div>
+            
+                    <AdvisoryCTA variant="compare" />
+                </div>
         </main>
     );
 }

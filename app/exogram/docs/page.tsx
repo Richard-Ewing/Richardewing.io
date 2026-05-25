@@ -1,4 +1,5 @@
 import { exogramDocs } from '@/lib/exogram-docs';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
