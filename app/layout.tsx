@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.richardewing.io'),
   title: {
-    default: 'Richard Ewing — AI Economist | R&D Capital Audits & AI Governance',
+    default: 'Richard Ewing | AI Economist & R&D Capital Audits',
     template: '%s | Richard Ewing'
   },
   description: 'The AI Economist: R&D capital audits, AI unit economics, and technical debt quantification for enterprises. Free diagnostic tools and frameworks.',

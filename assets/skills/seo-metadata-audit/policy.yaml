@@ -1,0 +1,114 @@
+apiVersion: governance/v1
+kind: RuntimePolicy
+metadata:
+  name: seo-metadata-audit
+  version: "1.0.0"
+  description: "Automated SEO metadata auditing and CTR optimization for Next.js"
+  author: "Richard Ewing Advisory"
+  layer: "environment"
+
+spec:
+  triggers:
+    - event: "file_created"
+      pattern: "app/**/page.tsx"
+      action: "check_metadata_exists"
+
+    - event: "file_modified"
+      pattern: "app/**/page.tsx"
+      contains: "export const metadata"
+      action: "validate_metadata_limits"
+
+    - event: "pre_commit"
+      action: "run_full_audit"
+
+    - event: "manual"
+      keywords: ["audit SEO", "check metadata", "optimize titles", "GSC issues"]
+      action: "run_full_audit"
+
+  rules:
+    - name: "title_character_limit"
+      level: "hard_block"
+      check: "title.length <= 60"
+      message: "Title exceeds 60 characters — Google will truncate in SERPs"
+
+    - name: "description_character_limit"
+      level: "hard_block"
+      check: "description.length <= 155"
+      message: "Description exceeds 155 characters — Google will truncate in SERPs"
+
+    - name: "no_truncation"
+      level: "hard_block"
+      check: "!title.endsWith('...') && !description.endsWith('...')"
+      message: "Metadata contains truncated ellipsis — fix before committing"
+
+    - name: "brand_separator"
+      level: "warning"
+      check: "title.match(/[|—:\\-]/)"
+      message: "Title lacks a brand separator (| — : -) — reduces SERP brand visibility"
+
+    - name: "power_words"
+      level: "recommendation"
+      check: "title.match(/free|stop|save|avoid|unlock|hidden|why|how|calculate|exact/i)"
+      message: "Title lacks CTR power words — consider adding for click-through improvement"
+
+    - name: "outcome_focused_description"
+      level: "recommendation"
+      check: "!description.match(/^(This page|Learn about|Information about)/i)"
+      message: "Description uses passive voice — rewrite to be outcome-focused"
+
+    - name: "metadata_exists"
+      level: "hard_block"
+      check: "hasMetadataExport || hasLayoutMetadata"
+      exempt_paths:
+        - "dashboard/**"
+        - "checkout-pending/**"
+        - "sign-in/**"
+        - "sign-up/**"
+      message: "Public page missing metadata — add title and description"
+
+  actions:
+    - level: "hard_block"
+      when: "any hard_block rule fails"
+      do: "block_commit_and_fix"
+
+    - level: "warning"
+      when: "any warning rule fails"
+      do: "log_warning_and_suggest"
+
+    - level: "recommendation"
+      when: "any recommendation rule fails"
+      do: "add_to_optimization_queue"
+
+  post_deploy:
+    sequence:
+      - "run_indexnow_ping"
+      - "verify_sitemap_accessible"
+    indexnow_script: "ping-all.js"
+    indexnow_cost: "Free"
+
+  seo_limits:
+    title_max: 60
+    title_safe: 55
+    description_max: 155
+    description_safe: 150
+    h1_recommended: 70
+    url_slug_recommended: 75
+
+  tools:
+    audit: "tools/seo-audit.js"
+    fix_limits: "tools/seo-fix-limits.js"
+    verify: "tools/seo-verify.js"
+    ping: "tools/seo-ping.js"
+
+  integrations:
+    google_search_console: "manual — user provides issues"
+    bing_webmaster_tools: "automated — IndexNow via ping-all.js"
+    vercel: "automated — deploys on git push"
+    nextjs_sitemap: "automated — app/sitemap.ts"
+
+  metrics:
+    manual_audit_time: "8 hours"
+    automated_audit_time: "15 minutes"
+    average_ctr_improvement: "15-40%"
+    impression_growth_timeline: "2-4x over 4-8 weeks"
+    current_indexnow_urls: "1541+"

@@ -1,0 +1,45 @@
+graph TB
+    subgraph Triggers
+        A[New page.tsx created]
+        B[Metadata modified]
+        C[Pre-commit hook]
+        D[Manual audit request]
+        E[GSC issues provided]
+    end
+
+    subgraph Audit Engine
+        F[Extract all metadata]
+        G[Score against rules]
+        H{Any HARD BLOCK?}
+    end
+
+    subgraph Actions
+        I[Block commit + Fix]
+        J[Log warnings + Suggest]
+        K[Add to optimization queue]
+        L[Build verification]
+    end
+
+    subgraph Deploy
+        M[git commit + push]
+        N[Vercel auto-deploy]
+        O[IndexNow bulk ping]
+        P[Google sitemap crawl]
+    end
+
+    A --> F
+    B --> F
+    C --> F
+    D --> F
+    E --> F
+    F --> G
+    G --> H
+    H -->|Yes| I
+    H -->|No| J
+    J --> K
+    I --> F
+    K --> L
+    L --> M
+    M --> N
+    N --> O
+    N --> P
