@@ -1,5 +1,14 @@
+import type { Metadata } from 'next';
 import Link from "next/link";
 import { Lock } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: 'Securing Your Advisory Session | Richard Ewing',
+    description: 'Your transaction is pending secure verification. Connect with your advisor to finalize your R&D capital audit or diagnostic call.',
+    alternates: {
+        canonical: 'https://www.richardewing.io/checkout-pending',
+    },
+};
 
 export default function CheckoutPending() {
     return (
