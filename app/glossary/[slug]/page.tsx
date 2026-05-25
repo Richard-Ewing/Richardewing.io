@@ -733,12 +733,27 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 <GlossaryToolCTA slug={slug} category={term.category} termTitle={term.title} />
 
-                <section className="card p-8 border-cobalt/30 bg-gradient-to-br from-cobalt/10 to-transparent">
-                    <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-2">Need Expert Help?</h2>
-                    <p className="text-zinc-950 font-bold mb-4">Richard Ewing is a AI Economist and AI Capital Auditor. He helps companies translate technical complexity into financial clarity.</p>
-                    <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-zinc-950 font-semibold text-sm font-semibold font-bold rounded-lg hover:opacity-90 transition-opacity">
-                        Book Advisory Call →
-                    </Link>
+                <section className="card p-8 border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.03] to-violet-500/[0.03] rounded-2xl">
+                    <div className="flex flex-col sm:flex-row gap-6 items-start">
+                        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-zinc-400 flex items-center justify-center shrink-0">
+                            <span className="text-xl">📊</span>
+                        </div>
+                        <div className="flex-1">
+                            <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-1">Expert Definition by Richard Ewing</h2>
+                            <p className="text-xs font-bold font-mono text-cyan-600 uppercase tracking-widest mb-3">AI Economist & R&D Capital Auditor</p>
+                            <p className="text-sm font-semibold text-zinc-950 mb-4 leading-relaxed">
+                                Richard Ewing is the creator of the AI Economics framework and founder of Exogram. His research on R&D capital audits, technical insolvency, and software economics is featured across Tier 1 publications including <strong>CIO.com</strong>, <strong>Built In</strong> (Editor's Pick), and <strong>HackerNoon</strong>.
+                            </p>
+                            <div className="flex flex-wrap gap-4 items-center">
+                                <Link href="/advisory" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-violet-600 text-zinc-950 font-semibold font-bold text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity">
+                                    Book Advisory Call →
+                                </Link>
+                                <Link href="/principal" className="text-xs font-bold text-zinc-900 font-bold hover:underline font-mono uppercase tracking-wider">
+                                    About Richard Ewing →
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <ProgrammaticAnswersRelated seed={slug} maxCount={2} />
