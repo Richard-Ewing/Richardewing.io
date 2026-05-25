@@ -171,3 +171,25 @@ CREATE TABLE IF NOT EXISTS public.external_telemetry_events (
 
 ALTER TABLE public.external_telemetry_events ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Service Role Only" ON public.external_telemetry_events FOR ALL USING (false);
+
+-- -----------------------------------------------------------------------------
+-- AI INTEGRATION ADVISOR SCHEMAS
+-- -----------------------------------------------------------------------------
+
+-- AI Advisor Consultation Sessions
+CREATE TABLE IF NOT EXISTS public.ai_advisor_sessions (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'in_progress', -- 'in_progress', 'completed', 'abandoned'
+    current_phase INTEGER DEFAULT 1,
+    business_profile JSONB DEFAULT '{}'::jsonb,
+    conversation_history JSONB DEFAULT '[]'::jsonb,
+    generated_plan JSONB DEFAULT NULL,
+    exogram_facts TEXT[] DEFAULT '{}', -- IDs of facts stored in Exogram Vault
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL
+);
+
+ALTER TABLE public.ai_advisor_sessions ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Service Role Only" ON public.ai_advisor_sessions FOR ALL USING (false);
+CREATE INDEX IF NOT EXISTS idx_ai_advisor_user ON public.ai_advisor_sessions(user_id);

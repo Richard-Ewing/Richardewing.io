@@ -1,0 +1,108 @@
+import React from 'react';
+import type { Metadata } from 'next';
+import { redirect } from 'next/navigation';
+import { currentUser } from '@clerk/nextjs/server';
+import Link from 'next/link';
+import { Brain, Shield, Lock } from 'lucide-react';
+import AdvisorChat from '@/components/AdvisorChat';
+
+export const metadata: Metadata = {
+    title: 'AI Integration Advisor | Personalized AI Roadmap for Your Business',
+    description: 'Answer 5 questions about your business and get a personalized, actionable AI integration roadmap in minutes. Powered by Exogram AI governance and Google Gemini.',
+    keywords: ['AI integration advisor', 'AI business consultant', 'AI roadmap generator', 'personalized AI plan', 'AI for my business', 'AI strategy tool', 'AI integration tool', 'business AI audit', 'AI consulting tool'],
+    openGraph: {
+        title: 'AI Integration Advisor — Your Personalized AI Roadmap in Minutes',
+        description: 'Stop guessing about AI. Our AI-powered advisor walks you through 5 phases and generates a custom integration roadmap with specific tools, ROI estimates, and a step-by-step plan.',
+    },
+    alternates: { canonical: 'https://www.richardewing.io/ai-integration/advisor' },
+};
+
+export default async function AdvisorPage() {
+    const user = await currentUser();
+
+    if (!user) {
+        redirect('/sign-in?redirect_url=/ai-integration/advisor');
+    }
+
+    // Check for access: has_ai_advisor_access OR has_yearly_subscription OR has_premium_guide_access
+    const hasAccess =
+        user.publicMetadata?.has_ai_advisor_access === true ||
+        user.publicMetadata?.has_yearly_subscription === true;
+
+    if (!hasAccess) {
+        return (
+            <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+                <div className="max-w-2xl mx-auto px-6 text-center">
+                    {/* Paywall */}
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-violet-200 bg-violet-50 text-violet-700 font-mono text-sm tracking-widest font-bold uppercase">
+                        <Lock size={14} /> Premium Tool
+                    </div>
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-[#1A1A1A] mb-6 leading-tight">
+                        AI Integration Advisor
+                    </h1>
+                    <p className="text-lg text-[#4A4A4A] mb-8 max-w-lg mx-auto">
+                        Get a personalized, AI-generated roadmap for integrating AI into your business. 5 questions. Actionable plan. Specific tool recommendations. ROI estimates. Downloadable PDF.
+                    </p>
+
+                    <div className="bg-white rounded-2xl border border-zinc-200 p-8 shadow-sm mb-8">
+                        <div className="flex items-center justify-center gap-2 mb-4">
+                            <Brain className="w-6 h-6 text-cyan-600" />
+                            <h2 className="text-xl font-bold text-[#1A1A1A]">What You Get</h2>
+                        </div>
+                        <ul className="text-left space-y-3 mb-6 max-w-sm mx-auto">
+                            {[
+                                'AI-powered business analysis',
+                                'Personalized AI integration roadmap',
+                                'Specific tool recommendations with pricing',
+                                'ROI estimates for each action item',
+                                '30-day implementation plan',
+                                'Downloadable PDF report',
+                                'Unlimited consultations per month',
+                                'Powered by Exogram AI Governance',
+                            ].map((item, i) => (
+                                <li key={i} className="flex items-center gap-2 text-sm text-[#3A3A3A]">
+                                    <Shield size={14} className="text-emerald-500 flex-shrink-0" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                        <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$149<span className="text-sm font-normal text-zinc-500">/month</span></div>
+                        <p className="text-xs text-zinc-500 mb-6">Cancel anytime. Unlimited AI consultations.</p>
+                        <a
+                            href="/api/buy/ai_advisor_monthly"
+                            className="block w-full max-w-xs mx-auto text-center py-4 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_30px_rgba(6,182,212,0.2)]"
+                        >
+                            Subscribe Now →
+                        </a>
+                    </div>
+
+                    <p className="text-xs text-zinc-500">
+                        Already have access?{' '}
+                        <Link href="/vault" className="text-cyan-700 hover:underline">Check your vault</Link>
+                    </p>
+                </div>
+            </main>
+        );
+    }
+
+    // Authenticated + Subscribed — show the advisor
+    return (
+        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <div className="max-w-5xl mx-auto px-6">
+                <div className="text-center mb-8">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-cyan-200 bg-cyan-50 text-cyan-700 font-mono text-xs tracking-widest font-bold uppercase">
+                        <Brain size={12} /> AI Integration Advisor
+                    </div>
+                    <h1 className="text-3xl sm:text-4xl font-grotesk font-bold text-[#1A1A1A] mb-2">
+                        Let&apos;s Build Your AI Roadmap
+                    </h1>
+                    <p className="text-sm text-[#6A6A6A] max-w-lg mx-auto">
+                        Answer a few questions about your business and I&apos;ll generate a personalized AI integration plan with specific tools, ROI estimates, and a step-by-step implementation timeline.
+                    </p>
+                </div>
+
+                <AdvisorChat />
+            </div>
+        </main>
+    );
+}

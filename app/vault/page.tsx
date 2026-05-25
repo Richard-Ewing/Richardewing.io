@@ -281,6 +281,14 @@ export default async function VaultPage() {
                                             Open Tools <ChevronRight className="w-3 h-3 ml-1" />
                                         </Link>
                                     </div>
+                                    <div className="card p-6 border-cyan-500/20 bg-cyan-500/[0.02] hover:bg-cyan-500/[0.05] transition-colors group">
+                                        <div className="text-2xl mb-3">🤖</div>
+                                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-600 transition-colors">AI Integration Advisor</h3>
+                                        <p className="text-sm font-semibold text-zinc-900 font-medium mb-4">Get a personalized AI integration roadmap for your business in minutes.</p>
+                                        <Link href="/ai-integration/advisor" className="inline-flex items-center text-xs font-bold text-cyan-600 uppercase tracking-widest">
+                                            Start Consultation <ChevronRight className="w-3 h-3 ml-1" />
+                                        </Link>
+                                    </div>
                                     <div className="card p-6 border-emerald-500/20 bg-emerald-500/[0.02] hover:bg-emerald-500/[0.05] transition-colors group sm:col-span-2">
                                         <div className="text-2xl mb-3">📦</div>
                                         <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-600 transition-colors">Governance Infrastructure</h3>

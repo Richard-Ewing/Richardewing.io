@@ -54,6 +54,26 @@ export default function AIIntegrationPage() {
                     </div>
                 </div>
 
+                {/* AI Advisor Tool CTA */}
+                <div className="mb-16 bg-gradient-to-br from-cyan-50 to-emerald-50 rounded-2xl border border-cyan-200 p-8 text-center shadow-sm relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
+                    <div className="relative z-10">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full border border-cyan-300 bg-white text-cyan-700 font-mono text-xs tracking-widest font-bold uppercase">
+                            <Zap size={10} /> New: AI-Powered Tool
+                        </div>
+                        <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mb-2">Try Our AI Integration Advisor</h2>
+                        <p className="text-sm text-[#4A4A4A] max-w-lg mx-auto mb-6">
+                            Answer 5 questions about your business and get a personalized AI integration roadmap in minutes — complete with specific tool recommendations, ROI estimates, and a step-by-step implementation plan. Downloadable as a PDF.
+                        </p>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                            <Link href="/ai-integration/advisor" className="px-8 py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                                Start Your AI Roadmap →
+                            </Link>
+                            <span className="text-xs text-zinc-500 font-mono">$149/month · Unlimited Consultations</span>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Pain Gallery */}
                 <div className="mb-16">
                     <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] text-center mb-8">Sound Familiar?</h2>

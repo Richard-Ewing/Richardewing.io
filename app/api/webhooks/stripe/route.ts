@@ -79,6 +79,19 @@ export async function POST(req: Request) {
                         console.log(`Enterprise B2B License activated: ${quantity} seats granted to ${userId}`);
                     }
 
+                    // AI Integration Advisor subscription detection
+                    // Check line items for the AI Advisor product
+                    try {
+                        for (const item of lineItems.data) {
+                            if (item.price?.id === 'price_1Tb3mK5swlCTzLiT4XldPWsv' || item.description?.toLowerCase().includes('ai integration advisor')) {
+                                metadataPayload.has_ai_advisor_access = true;
+                                console.log(`AI Advisor access granted to ${userId}`);
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Failed to check AI Advisor line items', e);
+                    }
+
                     await client.users.updateUserMetadata(userId, {
                         publicMetadata: metadataPayload
                     });
@@ -168,6 +181,7 @@ export async function POST(req: Request) {
                 await client.users.updateUserMetadata(clerkUserId, {
                     publicMetadata: {
                         has_yearly_subscription: false,
+                        has_ai_advisor_access: false,
                         subscription_status: 'canceled'
                     }
                 });
