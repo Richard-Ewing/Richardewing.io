@@ -16,11 +16,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const challenge = challenges.find(c => c.slug === slug);
     if (!challenge) return {};
 
-    const ogTitle = `Solving ${challenge.title} | Enterprise Governance`;
+    const ogTitle = `Stop ${challenge.title} Wasting R&D Capital | Governance`;
     
     return {
         title: ogTitle,
-        description: challenge.description,
+        description: `${challenge.description.slice(0, 110)} Spot margin leaks and engineering execution risks.`,
         alternates: { canonical: `https://www.richardewing.io/challenges/${slug}` },
         openGraph: {
             title: ogTitle,

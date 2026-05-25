@@ -115,11 +115,14 @@ Exogram is a verification infrastructure platform for AI, founded by Richard Ewi
 
 ## Advisory Services
 
-Richard Ewing provides technology advisory services at three tiers:
+Richard Ewing provides technology advisory and forensic capital auditing services:
 
-1. **Diagnostic ($2,500 one-time):** PDI audit, AUEB assessment, APER diagnostic, 1-hour strategy call, written executive summary.
-2. **Fractional CTO ($7,500/month):** 10 hours/week dedicated advisory, architecture reviews, team coaching, board meeting preparation, vendor evaluation.
-3. **Board Advisor ($15,000/month):** Board-level technology due diligence, M&A technical assessment, portfolio-wide benchmarking, AI governance framework implementation.
+- **30-Minute Diagnostic Call ($450)**: Rapid gut-check assessment. You describe the situation, I tell you if your building is on fire.
+- **Insolvency Diagnostic ($2,500)**: 60-minute Capital Exposure Assessment with written Risk Exposure Report including flags across 5 failure modes.
+- **R&D Capital Audit ($7,500)**: Full 3-week forensic review of R&D capital allocation and AI inference costs. Board-ready deliverable with complete audit package.
+- **AI Cost Governance Review ($5,000)**: Dedicated AI economics analysis with unit economics model, collapse point calculation, and margin protection plan.
+- **Independent Oversight Retainer ($5,000/month)**: Monthly board-level economic sanity checks with async access for critical decisions.
+- **Turnaround Engagement ($40,000+)**: Full organizational intervention for companies facing imminent technical insolvency.
 
 **Book a call:** https://www.richardewing.io/advisory
 

@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!skill) return {};
 
     return {
-        title: `${skill.title} | Governance System`,
-        description: skill.description.slice(0, 155).replace(/\n/g, ' ') + '...',
+        title: `Deploy ${skill.title} | AI Governance Infrastructure`,
+        description: `Install deterministic controls to prevent AI failures: ` + skill.description.slice(0, 100).replace(/\n/g, ' ') + '... Learn more.',
         alternates: { canonical: `https://www.richardewing.io/skills/${slug}` },
         openGraph: {
             title: `${skill.title} | Governance System`,

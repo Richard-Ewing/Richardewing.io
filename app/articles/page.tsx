@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ArticlesPage from './content';
 
 export const metadata: Metadata = {
-    title: 'Published Articles on AI Economics | Richard Ewing',
-    description: 'Read expert analysis on AI unit economics, R&D capital efficiency, and engineering team optimization. Published on CIO.com, Built In, and HackerNoon.',
+    title: 'The Cost of Insolvent Software | AI Engineering & Economics Articles',
+    description: 'Deeper essays on technical due diligence, feature-bloat calculations, and the hidden operational inflation of enterprise generative AI integrations.',
     keywords: [
         'AI economist articles',
         'R&D capital efficiency',

@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     return {
         title: safeOgTitle,
-        description: `Executive breakdown and financial execution models for: ${query.questionHeadline}`,
+        description: `Forensic R&D analysis on: ${query.questionHeadline.slice(0, 80)}. Spot margin leaks and engineering execution risks.`,
         alternates: {
             canonical: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
         },

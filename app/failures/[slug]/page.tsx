@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!failure) return {};
 
     return {
-        title: `${failure.title} | Operational Failure Signature`,
-        description: failure.definition.slice(0, 155).replace(/\n/g, ' ') + '...',
+        title: `${failure.title} Risk & Margin Loss | Failure Signature`,
+        description: `How to detect and neutralize ${failure.title}: ` + failure.definition.slice(0, 100).replace(/\n/g, ' ') + '... Read the diagnostics.',
         alternates: { canonical: `https://www.richardewing.io/failures/${slug}` },
         openGraph: {
             title: `${failure.title} | Operational Failure Signature`,

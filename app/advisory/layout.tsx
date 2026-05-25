@@ -24,34 +24,34 @@ export const metadata: Metadata = {
 const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'AI Consulting & Implementation Services',
+    name: 'AI Capital Audits & Runtime Governance',
     provider: {
         '@type': 'LocalBusiness',
         name: 'Richard Ewing Advisory',
         url: 'https://www.richardewing.io'
     },
-    description: 'Expert AI consulting services focusing on AI pilot extraction, Shadow AI governance, and rapid 48-hour implementation roadmaps for businesses.',
+    description: 'Forensic audits and deterministic runtime controls to rescue failed AI pilots, stop Shadow AI leaks, and prevent R&D capital waste.',
     offers: [
         {
             '@type': 'Offer',
-            name: 'Quarterly AI Audit & Roadmap',
-            price: '5000',
+            name: 'Insolvency Diagnostic & R&D Capital Audit',
+            price: '2500',
             priceCurrency: 'USD',
-            description: 'A 48-hour turnaround AI strategy roadmap for businesses who do not know where to start.'
+            description: 'Identify where your R&D budget is leaking, calculate your Technical Insolvency Date, and stop compute waste.'
         },
         {
             '@type': 'Offer',
             name: 'Pilot Extraction & Productionalization',
             price: '10000',
             priceCurrency: 'USD',
-            description: 'Rescue failed AI pilots and deploy them to production with proper MLOps and runtime governance.'
+            description: 'Rescue failed AI pilots from production loops, secure context limits, and establish deterministic execution boundaries.'
         },
         {
             '@type': 'Offer',
             name: 'Shadow AI Governance Audit',
             price: '10000',
             priceCurrency: 'USD',
-            description: 'Identify employee IP leaks into unauthorized LLMs and deploy localized, secure SLM architectures.'
+            description: 'Audit and block unauthorized Shadow AI tools, halt intellectual property exfiltration, and secure compliance boundaries.'
         }
     ]
 };

@@ -5,8 +5,8 @@ import { SPOKE_MATRIX, Persona } from '../lib/spoke-data';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/answers' },
-    title: 'AI & Engineering Economics Q&A | Richard Ewing',
-    description: 'Expert answers on AI economics, technical debt, engineering productivity, and R&D capital allocation. Searchable knowledge base.',
+    title: 'Answers to Enterprise AI Costs & Governance Questions | Q&A Hub',
+    description: 'Instant answers to high-priority C-Suite questions regarding R&D efficiency, model routing optimization, and vector database economics.',
 };
 
 export default function AnswersHubPage() {

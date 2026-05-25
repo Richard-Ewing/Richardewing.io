@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Hero from './components/sections/Hero';
 import NarrativeCompression from './components/sections/NarrativeCompression';
 import ProofRail from './components/ProofRail';
@@ -9,6 +10,14 @@ import GovernanceDashboard from './components/GovernanceDashboard';
 import ExogramSection from './components/sections/ExogramSection';
 import PricingPreview from './components/sections/PricingPreview';
 import NewsletterSection from './components/sections/NewsletterSection';
+
+export const metadata: Metadata = {
+  title: 'Stop Funding Failed AI Pilots & R&D Waste | Richard Ewing',
+  description: 'Most enterprise AI integrations fail at the operational level, not the model level. I audit R&D capital, locate silent cash leaks, and install deterministic margins.',
+  alternates: {
+    canonical: 'https://www.richardewing.io',
+  },
+};
 
 export default function Home() {
   return (
