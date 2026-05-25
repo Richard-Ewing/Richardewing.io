@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Audit Interview vs Traditional Hiring | Ewing',
@@ -61,7 +62,9 @@ export default function CompareAuditVsTraditionalPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try the Audit Interview</h2>
                         <p className="text-zinc-950 mb-6">Free, AI-powered engineering assessment. Get scored across 5 levels with instant committee review.</p>
                         <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Start Free Assessment →</Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

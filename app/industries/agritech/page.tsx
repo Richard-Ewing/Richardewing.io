@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'AgriTech AI Economics & R&D Audit | Richard Ewing',
@@ -47,7 +48,9 @@ export default function AgriTechPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">AgriTech R&D Audit</h2>
                         <p className="text-zinc-950 mb-6">Quantify your precision agriculture AI costs, IoT infrastructure debt, and satellite processing economics.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-lime-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book AgriTech Audit →</Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="industry" />
+</div>
                 </div>
             </div>
         </main>

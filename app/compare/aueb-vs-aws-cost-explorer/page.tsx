@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'AUEB vs AWS Cost Explorer | AI Economics vs Cloud',
@@ -76,7 +77,9 @@ export default function AUEBvsAWSPage() {
                         <Link href="/advisory" className="text-orange-900 font-extrabold font-semibold hover:text-orange-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
                             Book a $2,500 AI Economics Diagnostic →
                         </Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

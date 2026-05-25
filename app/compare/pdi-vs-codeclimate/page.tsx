@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'PDI vs CodeClimate | Economic Debt vs Code Metrics',
@@ -44,7 +45,9 @@ export default function PDIvsCodeClimatePage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-950 mb-6"><strong>CodeClimate measures the symptoms. PDI measures the prognosis.</strong> Code quality grades are useful for engineers. But when your CFO asks "how much is technical debt costing us?", you need PDI's dollar-denominated, quarter-dated answer.</p>
                         <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-pink-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Try the Free PDI Calculator →</Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

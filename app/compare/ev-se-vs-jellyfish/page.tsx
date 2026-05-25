@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'EV/SE vs Jellyfish | Valuation vs Activity Data',
@@ -44,7 +45,9 @@ export default function EVSEvsJellyfishPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-950 mb-6"><strong>Use both — for different purposes.</strong> Jellyfish shows engineering activity. EV-SE evaluates whether that activity creates lasting value. Tracking without economic analysis is measurement without meaning.</p>
                         <Link href="/tools/ev-se" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Try the Free EV-SE Calculator →</Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

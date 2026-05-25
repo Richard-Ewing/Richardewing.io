@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'LegalTech AI Economics | Legal Tech Debt & Audit',
@@ -47,7 +48,9 @@ export default function LegalTechPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">LegalTech R&D Audit</h2>
                         <p className="text-zinc-950 mb-6">Quantify your document processing AI costs, compliance data debt, and security infrastructure burden.</p>
                         <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book LegalTech Audit →</Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="industry" />
+</div>
                 </div>
             </div>
         </main>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Shadow AI vs Shadow IT | IP Liability vs SaaS Waste',
@@ -44,7 +45,9 @@ export default function ShadowAIvsShadowITPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 font-semibold mb-4">The Verdict</h2>
                         <p className="text-zinc-800 mb-6"><strong>Shadow IT is an operational inefficiency. Shadow AI is an existential threat.</strong> When an employee uses an unapproved project management tool, you lose $15 a month. When an employee pastes a confidential merger agreement into ChatGPT to summarize it, you have irrevocably breached NDA and forfeited your intellectual property into a public training dataset.</p>
                         <Link href="/glossary/shadow-ai" className="inline-block px-8 py-4 rounded-lg bg-white text-black font-semibold font-bold hover:bg-zinc-200 transition-colors uppercase tracking-widest text-sm">Read the Shadow AI Definition →</Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

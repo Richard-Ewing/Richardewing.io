@@ -36,6 +36,7 @@ import SemanticText from '@/app/components/SemanticText';
 
 import StructuredData, { generateCourseSchema } from '@/app/components/seo/StructuredData';
 import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod: CurriculumModule, hasAccess: boolean, showPreview: boolean, aiContent?: any, fullSlug: string }) {
     return (
@@ -194,6 +195,8 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                             </div>
                         </div>
                     )}
+
+                    <AdvisoryCTA variant="educational" termTitle={mod.title} />
                 </div>
             </div>
         </main>

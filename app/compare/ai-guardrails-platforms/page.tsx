@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { Shield, AlertTriangle, DollarSign, ArrowRight, Lock, Check, X } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -238,7 +239,9 @@ export default function AIGuardrailsPlatformsPage() {
                             </Link>
                         ))}
                     </div>
-                </div>
+                
+                    <AdvisoryCTA variant="compare" />
+</div>
 
                 <div className="text-center">
                     <Link href="/compare" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">← Return to Comparisons</Link>

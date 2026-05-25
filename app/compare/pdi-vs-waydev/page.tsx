@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'PDI vs Waydev | Economic Intelligence Comparison',
@@ -61,7 +62,9 @@ export default function ComparePDIWaydevPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try PDI — Free</h2>
                         <p className="text-zinc-950 mb-6">Calculate your Product Debt Index and Technical Insolvency Date in 10 minutes. No git integration required.</p>
                         <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Calculate Your PDI →</Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

@@ -1,11 +1,12 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/curriculum' },
-    title: 'Executive AI Curriculum | 18 Tracks | Richard Ewing',
-    description: 'Master AI economics through 18 structured tracks: financial modeling, governance, M&A diligence, and executive strategy. Self-paced learning.',
+    title: 'Executive AI Curriculum | 25 Tracks, 303 Modules | Richard Ewing',
+    description: 'Master AI economics through 25 structured authority tracks: financial modeling, governance, M&A diligence, agent economics, and executive strategy. $149/track or $999 all-access.',
 };
 
 export default function CurriculumPage() {
@@ -16,21 +17,58 @@ export default function CurriculumPage() {
                     <span className="text-2xl">🎓</span>
                 </div>
                 <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                    Governance Curriculum Tracks
+                    The AI Economics Academy
                 </h1>
                 <p className="text-lg text-zinc-700 max-w-2xl mx-auto mb-12">
-                    Institutional onboarding and certification tracks for engineering leadership transitioning to deterministic AI governance.
+                    25 authority curriculum tracks built from published frameworks in CIO.com and Built In — spanning AI economics, AI agents, leadership, career capital, M&A integration, and executive governance.
                 </p>
 
-                <div className="p-12 border border-[rgba(0,0,0,0.08)] rounded-2xl bg-white shadow-sm">
-                    <h2 className="text-2xl font-bold text-zinc-950 mb-4">Under Construction</h2>
-                    <p className="text-zinc-600 mb-8">
-                        The structured learning tracks for CTOs, Lead Engineers, and AI Economists are currently being deployed.
-                    </p>
-                    <Link href="/skills" className="px-6 py-3 bg-zinc-950 text-white font-bold rounded hover:bg-zinc-800 transition-colors">
-                        Explore Governance Systems Meanwhile
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+                    <div className="p-6 bg-white rounded-2xl border border-zinc-200 shadow-sm text-center">
+                        <div className="text-3xl font-grotesk font-bold text-zinc-950">25</div>
+                        <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mt-1">Authority Tracks</div>
+                    </div>
+                    <div className="p-6 bg-white rounded-2xl border border-zinc-200 shadow-sm text-center">
+                        <div className="text-3xl font-grotesk font-bold text-zinc-950">303</div>
+                        <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mt-1">Deep Modules</div>
+                    </div>
+                    <div className="p-6 bg-purple-50 rounded-2xl border border-purple-200 shadow-sm text-center">
+                        <div className="text-3xl font-grotesk font-bold text-purple-700">$149</div>
+                        <div className="text-xs font-mono font-bold text-purple-500 uppercase tracking-widest mt-1">Per Track</div>
+                    </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                    <Link
+                        href="/vault/curriculum/tracks"
+                        className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl hover:opacity-90 transition-opacity shadow-lg"
+                    >
+                        Browse All 25 Tracks →
+                    </Link>
+                    <Link
+                        href="/vault"
+                        className="px-8 py-4 bg-white border border-zinc-300 text-zinc-800 font-bold rounded-xl hover:border-zinc-400 transition-colors"
+                    >
+                        Unlock Full Academy — $999
                     </Link>
                 </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16 text-left">
+                    {[
+                        { title: 'Engineering Economics Foundations', tracks: '4 tracks', desc: 'R&D capital allocation, unit economics, financial modeling' },
+                        { title: 'AI, Cloud & Agent Economics', tracks: '10 tracks', desc: 'AI inference costs, cloud FinOps, agent governance, model arbitrage' },
+                        { title: 'Career Capital & Leadership', tracks: '7 tracks', desc: 'CTO training, engineering-to-executive, remote teams, DX economics' },
+                        { title: 'Executive & Board Economics', tracks: '8 tracks', desc: 'Board reporting, M&A integration, vendor economics, AI governance' },
+                    ].map((cat, i) => (
+                        <div key={i} className="p-6 bg-white rounded-2xl border border-zinc-200 shadow-sm">
+                            <div className="text-xs font-mono font-bold text-purple-500 uppercase tracking-widest mb-2">{cat.tracks}</div>
+                            <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">{cat.title}</h3>
+                            <p className="text-sm text-zinc-600">{cat.desc}</p>
+                        </div>
+                    ))}
+                </div>
+
+                <AdvisoryCTA variant="educational" />
             </div>
         </main>
     );

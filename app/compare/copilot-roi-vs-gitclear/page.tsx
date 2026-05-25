@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Copilot ROI vs GitClear | EBITDA vs LOC Metrics',
@@ -79,7 +80,9 @@ export default function CopilotROIvsGitClearPage() {
                         <Link href="/advisory" className="text-zinc-950 font-semibolduchsia-400 hover:text-zinc-950 font-semibolduchsia-300 font-bold uppercase tracking-widest text-sm">
                             Book an R&D Capital Audit →
                         </Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

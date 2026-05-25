@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Technical Debt vs Insolvency | Decay vs Bankruptcy',
@@ -43,7 +44,9 @@ export default function TechDebtVsInsolvencyPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-950 mb-6"><strong>Technical debt is abstract; Technical Insolvency is a calendar date.</strong> If your team spends 45% of its time on maintenance, and that grows by 3% each quarter, you will hit 100% in 18 quarters. That specific date is your <Link href="/glossary/technical-insolvency-date" className="text-red-600 font-bold hover:underline">Technical Insolvency Date (TID)</Link>. Presenting a concrete date to your Board is the only way to secure the budget needed to refactor legacy code.</p>
                         <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-red-600 to-rose-600 text-zinc-950 font-semibold font-semibold font-bold hover:opacity-90 transition-opacity uppercase tracking-widest text-sm">Calculate Your Insolvency Date →</Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

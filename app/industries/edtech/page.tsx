@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'EdTech AI Economics | Learning Platform Audits',
@@ -55,7 +56,9 @@ export default function EdTechPage() {
                             <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-rose-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>
                             <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
-                    </div>
+                    
+                    <AdvisoryCTA variant="industry" />
+</div>
                 </div>
             </div>
         </main>

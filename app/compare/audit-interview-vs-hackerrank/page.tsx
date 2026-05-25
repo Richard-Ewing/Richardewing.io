@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Audit Interview vs HackerRank | Judgment vs Speed',
@@ -66,7 +67,9 @@ export default function AuditInterviewVsHackerRankPage() {
                         <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">
                             Try the Free Audit Interview →
                         </Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

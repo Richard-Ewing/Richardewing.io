@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Audit Interview vs LeetCode | Judgment vs Puzzles',
@@ -79,7 +80,9 @@ export default function AuditInterviewVsLeetCodePage() {
                         <Link href="/advisory" className="text-purple-900 font-extrabold font-semibold hover:text-purple-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
                             Book Advisory Consultation →
                         </Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

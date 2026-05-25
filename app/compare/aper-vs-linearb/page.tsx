@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'APER vs LinearB | Judgment vs Activity Metrics',
@@ -44,7 +45,9 @@ export default function APERvsLinearBPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-950 mb-6"><strong>Metrics without judgment is measurement without meaning.</strong> LinearB tells you engineers are moving fast. APER tells you they are moving in a direction that creates economic value. Use both — but APER for the decisions that matter.</p>
                         <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Try the Free APER Assessment →</Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'PDI vs SonarQube | Economic Debt vs Quality Scans',
@@ -80,7 +81,9 @@ export default function PDIvsSonarQubePage() {
                         <Link href="/advisory" className="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
                             Book a $2,500 Insolvency Diagnostic →
                         </Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

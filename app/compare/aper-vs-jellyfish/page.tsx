@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'APER vs Jellyfish | Engineering Metrics Compared',
@@ -59,7 +60,9 @@ export default function CompareAPERJellyfishPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Calculate Your APER — Free</h2>
                         <p className="text-zinc-950 mb-6">Find out how your revenue-per-engineer compares to industry benchmarks in 5 minutes.</p>
                         <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Calculate APER →</Link>
-                    </div>
+                    
+                    <AdvisoryCTA variant="compare" />
+</div>
                 </div>
             </div>
         </main>

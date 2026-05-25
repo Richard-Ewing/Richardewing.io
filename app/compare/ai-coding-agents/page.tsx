@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { ShieldCheck, AlertTriangle, Check, X, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -251,7 +252,9 @@ export default function AgentComparisonPage() {
                             Read the Architecture
                         </Link>
                     </div>
-                </div>
+                
+                    <AdvisoryCTA variant="compare" />
+</div>
 
                 <div className="sr-only" aria-hidden="true">
                     Claude Code vs Cursor 2026, Cursor vs Windsurf comparison, Claude Code vs Windsurf, GitHub Copilot vs Cursor 2026, best AI coding agent 2026, AI coding agent safety, Claude Code governance, Cursor governance, Windsurf runtime, Cline vs Roo Code, deterministic vs probabilistic coding agents, agentic safety comparison, AI agent runtime control, Copilot problems 2026, Cursor problems 2026, Windsurf problems 2026, AI coding agent pricing comparison, Tabnine review, AI guardrails pricing
