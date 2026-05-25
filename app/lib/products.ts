@@ -451,10 +451,18 @@ export const PRODUCTS: Record<string, Product> = {
     ai_advisor_monthly: {
         name: 'AI Integration Advisor — Monthly',
         description: 'Unlimited AI-powered business consultations. Interactive advisor generates personalized AI integration roadmaps for your business. Powered by Exogram AI Governance + Google Gemini.',
-        price: 14900,
+        price: 24900,
         mode: 'subscription',
         interval: 'month',
-        paymentLink: 'https://buy.stripe.com/7sYfZa3UGbPIaFTb8c2B210',
+        paymentLink: 'https://buy.stripe.com/3cIaEQezkbPIeW9fos2B211',
+    },
+    ai_advisor_yearly: {
+        name: 'AI Integration Advisor — Annual',
+        description: 'Unlimited AI-powered business consultations. Save 33% with annual billing. Interactive advisor generates personalized AI integration roadmaps for your business.',
+        price: 199700,
+        mode: 'subscription',
+        interval: 'year',
+        paymentLink: 'https://buy.stripe.com/fZu00caj43jceW9b8c2B212',
     },
 
     // --- AI INTEGRATION SYSTEM ---

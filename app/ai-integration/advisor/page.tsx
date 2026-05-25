@@ -49,7 +49,7 @@ export default async function AdvisorPage() {
                             <Brain className="w-6 h-6 text-cyan-600" />
                             <h2 className="text-xl font-bold text-[#1A1A1A]">What You Get</h2>
                         </div>
-                        <ul className="text-left space-y-3 mb-6 max-w-sm mx-auto">
+                        <ul className="text-left space-y-3 mb-8 max-w-sm mx-auto">
                             {[
                                 'AI-powered business analysis',
                                 'Personalized AI integration roadmap',
@@ -57,7 +57,7 @@ export default async function AdvisorPage() {
                                 'ROI estimates for each action item',
                                 '30-day implementation plan',
                                 'Downloadable PDF report',
-                                'Unlimited consultations per month',
+                                'Unlimited consultations',
                                 'Powered by Exogram AI Governance',
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-2 text-sm text-[#3A3A3A]">
@@ -66,14 +66,36 @@ export default async function AdvisorPage() {
                                 </li>
                             ))}
                         </ul>
-                        <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$149<span className="text-sm font-normal text-zinc-500">/month</span></div>
-                        <p className="text-xs text-zinc-500 mb-6">Cancel anytime. Unlimited AI consultations.</p>
-                        <a
-                            href="/api/buy/ai_advisor_monthly"
-                            className="block w-full max-w-xs mx-auto text-center py-4 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_30px_rgba(6,182,212,0.2)]"
-                        >
-                            Subscribe Now →
-                        </a>
+
+                        {/* Pricing Cards */}
+                        <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto">
+                            {/* Monthly */}
+                            <div className="rounded-xl border border-zinc-200 p-5 text-center">
+                                <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Monthly</div>
+                                <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$249<span className="text-sm font-normal text-zinc-500">/mo</span></div>
+                                <p className="text-[10px] text-zinc-400 mb-4">Cancel anytime</p>
+                                <a
+                                    href="/api/buy/ai_advisor_monthly"
+                                    className="block w-full text-center py-3 border-2 border-cyan-600 text-cyan-700 font-bold rounded-xl text-sm hover:bg-cyan-50 transition-colors"
+                                >
+                                    Start Monthly →
+                                </a>
+                            </div>
+
+                            {/* Annual — Best Value */}
+                            <div className="rounded-xl border-2 border-cyan-500 p-5 text-center relative bg-cyan-50/30">
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-cyan-600 text-white text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Save 33%</div>
+                                <div className="text-xs font-mono text-cyan-700 uppercase tracking-widest mb-2">Annual</div>
+                                <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$1,997<span className="text-sm font-normal text-zinc-500">/yr</span></div>
+                                <p className="text-[10px] text-zinc-400 mb-4">$166/mo · Billed annually</p>
+                                <a
+                                    href="/api/buy/ai_advisor_yearly"
+                                    className="block w-full text-center py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.15)]"
+                                >
+                                    Start Annual →
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
                     <p className="text-xs text-zinc-500">

@@ -83,7 +83,7 @@ export async function POST(req: Request) {
                     // Check line items for the AI Advisor product
                     try {
                         for (const item of lineItems.data) {
-                            if (item.price?.id === 'price_1Tb3mK5swlCTzLiT4XldPWsv' || item.description?.toLowerCase().includes('ai integration advisor')) {
+                            if (item.price?.id === 'price_1Tb4CF5swlCTzLiTNiK2Tsoh' || item.price?.id === 'price_1Tb4CF5swlCTzLiTwEzkPBTO' || item.description?.toLowerCase().includes('ai integration advisor')) {
                                 metadataPayload.has_ai_advisor_access = true;
                                 console.log(`AI Advisor access granted to ${userId}`);
                             }

@@ -69,7 +69,7 @@ export default function AIIntegrationPage() {
                             <Link href="/ai-integration/advisor" className="px-8 py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.2)]">
                                 Start Your AI Roadmap →
                             </Link>
-                            <span className="text-xs text-zinc-500 font-mono">$149/month · Unlimited Consultations</span>
+                            <span className="text-xs text-zinc-500 font-mono">$249/month · Unlimited Consultations</span>
                         </div>
                     </div>
                 </div>
