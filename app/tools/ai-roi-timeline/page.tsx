@@ -4,8 +4,8 @@ import AIRoiTimelineContent from './content';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/tools/ai-roi-timeline' },
-    title: 'AI ROI Timeline | FTE Break-Even Calculator | Ewing',
-    description: 'Calculate exactly when your AI investments break even vs human resource costs. Model displacement timelines across engineering functions.',
+    title: 'When Will Your AI Investment Actually Break Even? | ROI Timeline',
+    description: 'Stop burning cash on vague productivity promises. Calculate the exact quarter your AI features break even against human labor costs and model retraining taxes.',
 };
 
 export default function AIRoiTimelinePage() {

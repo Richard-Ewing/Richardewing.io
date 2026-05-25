@@ -7,8 +7,8 @@ import ShineBorder from '@/components/magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'Agentic Drift Matrix | When AI Agents Fail | Ewing',
-    description: 'Measure the exact conversation turn where your AI agents degrade. Stop paying for massive context windows that destroy accuracy after turn 12.',
+    title: 'Stop AI Swarms From Hallucinating After Turn 12 | Agentic Drift Matrix',
+    description: 'AI agents lose coherence over time. Download the diagnostic matrix to measure the exact conversation turn where your LLM context window degrades.',
     keywords: [
         'Agentic Drift',
         'AI Reliability',

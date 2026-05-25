@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { exogramKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Exogram | Deterministic AI Verification Engine',
-    description: 'The verification layer that stops AI agents from hallucinating, drifting, and overspending. Deterministic controls for probabilistic systems.',
+    title: 'Stop AI Agents from Hallucinating and Overspending | Exogram Engine',
+    description: 'Probabilistic AI models drift, hallucinate, and exhaust API budgets. Exogram provides the deterministic verification layer to enforce safety and cost controls.',
     keywords: exogramKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/exogram',

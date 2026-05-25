@@ -157,6 +157,17 @@ const nextConfig: NextConfig = {
         destination: '/robots.txt',
         permanent: true,
       },
+      // Git/GitHub redirects pointing to profile
+      {
+        source: '/git',
+        destination: 'https://github.com/Richard-Ewing',
+        permanent: true,
+      },
+      {
+        source: '/github',
+        destination: 'https://github.com/Richard-Ewing',
+        permanent: true,
+      },
       // ═══════════════════ LEGACY TRACKING PREFIX REDIRECTS ═══════════════════
       // Handles N-prefixed curriculum IDs reported in GSC "Crawled - currently not indexed"
       {

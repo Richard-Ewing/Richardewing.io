@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { doctrineKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'AI Economics Doctrine | Laws of Software Solvency',
-    description: 'The operating principles of AI economics: why innovation without solvency is philanthropy, and the laws that govern R&D capital efficiency.',
+    title: 'Why Your R&D Budget Is Disappearing | AI Economics Doctrine',
+    description: 'Agile theater is killing your runway. Read the core principles of AI economics, why software solvency matters, and how to stop funding zombie features.',
     keywords: doctrineKeywords,
     alternates: { canonical: 'https://www.richardewing.io/doctrine' },
     openGraph: {

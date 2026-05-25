@@ -7,8 +7,8 @@ import ShineBorder from '@/components/magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'AI Unit Economics Audit | Free Template | Ewing',
-    description: 'Calculate your Technical Insolvency Date. Stop pricing AI like SaaS. Map your generative compute exposure before the next billing cycle.',
+    title: 'Stop Pricing AI Like SaaS or Burn Margins | Unit Economics Audit',
+    description: 'Variable token usage eats margins. Calculate your exact Technical Insolvency Date — when API costs exceed subscription pricing. Download free XLSX matrix.',
     keywords: [
         'AI Unit Economics',
         'Technical Insolvency Date',

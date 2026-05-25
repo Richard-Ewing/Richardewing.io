@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import AgentRouterContent from './content';
 
 export const metadata: Metadata = {
-    title: 'AI Agent Token Simulator | Fleet Cost Calculator',
-    description: 'Calculate compound token decay and GPU costs of multi-agent LLM workflows. See why SLM Edge Routers save 60-80% on agentic infrastructure.',
+    title: 'Multi-Agent Token Burn Calculator | Prevent Cloud Bankruptcy',
+    description: 'Brute-forcing GPT-4 across an enterprise swarm leads to immediate token bankruptcy. Calculate compound token decay and model the break-even for edge routing.',
     keywords: [
         'Agentic Workflow Simulator',
         'LLM Token Burn Rate Calculator',
