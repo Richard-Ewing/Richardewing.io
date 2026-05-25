@@ -7,14 +7,35 @@ import { Brain, Shield, Lock } from 'lucide-react';
 import AdvisorChat from '@/components/AdvisorChat';
 
 export const metadata: Metadata = {
-    title: 'AI Integration Advisor | Personalized AI Roadmap for Your Business',
-    description: 'Answer 5 questions about your business and get a personalized, actionable AI integration roadmap in minutes. Powered by Exogram AI governance and Google Gemini.',
-    keywords: ['AI integration advisor', 'AI business consultant', 'AI roadmap generator', 'personalized AI plan', 'AI for my business', 'AI strategy tool', 'AI integration tool', 'business AI audit', 'AI consulting tool'],
+    title: 'AI Integration Advisor | How to Integrate AI Into Your Business — Free Roadmap Tool',
+    description: 'Not sure how to integrate AI into your business? Our AI-powered advisor asks 5 questions about your company and generates a personalized AI integration roadmap in minutes — with specific tool recommendations, ROI estimates, costs, and a 30-day action plan. No consultants. No guesswork. Download your custom PDF report instantly.',
+    keywords: [
+        'how to integrate AI into my business', 'AI for small business', 'AI for my business',
+        'AI integration plan', 'AI readiness assessment', 'AI business consultant',
+        'AI roadmap generator', 'AI strategy tool', 'AI consulting tool',
+        'AI tools for business', 'AI implementation plan', 'AI adoption strategy',
+        'personalized AI plan', 'AI integration advisor', 'AI audit tool',
+        'AI readiness tool', 'business AI assessment', 'AI ROI calculator',
+        'AI tool recommendations', 'AI for companies', 'how to use AI in business',
+        'AI business roadmap', 'AI integration checklist', 'AI cost estimator',
+        'small business AI tools', 'AI automation for business', 'AI strategy for startups',
+        'AI integration consultant', 'AI transformation plan', 'enterprise AI roadmap',
+    ],
     openGraph: {
         title: 'AI Integration Advisor — Your Personalized AI Roadmap in Minutes',
-        description: 'Stop guessing about AI. Our AI-powered advisor walks you through 5 phases and generates a custom integration roadmap with specific tools, ROI estimates, and a step-by-step plan.',
+        description: 'Stop guessing about AI. Answer 5 questions about your business and get a custom AI integration roadmap with specific tools, ROI estimates, and a step-by-step implementation plan. Download as PDF.',
+        type: 'website',
+        url: 'https://www.richardewing.io/ai-integration/advisor',
+        siteName: 'Richard Ewing — AI Economist',
+        images: [{ url: 'https://www.richardewing.io/og-image-home.png', width: 1200, height: 630 }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'AI Integration Advisor — Personalized AI Roadmap for Your Business',
+        description: 'Answer 5 questions. Get a custom AI integration plan with specific tools, ROI estimates, and a 30-day action plan. No consultants required.',
     },
     alternates: { canonical: 'https://www.richardewing.io/ai-integration/advisor' },
+    robots: { index: true, follow: true },
 };
 
 export default async function AdvisorPage() {
