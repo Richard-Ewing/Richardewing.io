@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Shield, AlertTriangle, Lock } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Why MCP Is a Security Risk | Agent Governance',
@@ -152,6 +153,8 @@ export default function WhyMCPIsDangerousPage() {
 
                 <div className="text-center">
                     <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">
+                <AdvisoryCTA variant="compare" />
+
                 <ExogramBridge />
 
                 ← Return to Infrastructure Catalog</Link>

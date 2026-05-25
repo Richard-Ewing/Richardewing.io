@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DollarSign, AlertTriangle, Shield, TrendingDown } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Why AI Coding Burns Money | Hidden Cost Analysis',
@@ -125,6 +126,8 @@ export default function WhyAICodingBurnsMoneyPage() {
 
                 <div className="text-center">
                     <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">
+                <AdvisoryCTA variant="compare" />
+
                 <ExogramBridge />
 
                 ← Return to Infrastructure Catalog</Link>

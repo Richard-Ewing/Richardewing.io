@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, Shield, Clock, Brain } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Why Claude Loses Context | Context Rot Explained',
@@ -135,6 +136,8 @@ export default function WhyClaudeLosesContextPage() {
 
                 <div className="mt-8 text-center">
                     <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">
+                <AdvisoryCTA variant="compare" />
+
                 <ExogramBridge />
 
                 ← Return to Infrastructure Catalog</Link>

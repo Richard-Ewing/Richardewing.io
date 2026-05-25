@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowRight, Activity, ShieldAlert } from 'lucide-react';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import pseoMatrixData from '@/app/lib/pseo-matrix.json';
 
 // Hardcoded comparisons for scaffold purposes.
@@ -203,11 +204,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
                     Keywords: {(comparison.keywords || []).join(', ')}
                 </div>
 
-                <div className="mt-12 text-center">
-                    <Link href="/skills" className="px-6 py-3 bg-zinc-950 text-white font-bold rounded hover:bg-zinc-800 transition-colors inline-flex items-center gap-2">
-                        View Governance Infrastructure <ArrowRight className="w-4 h-4" />
-                    </Link>
-                </div>
+                <AdvisoryCTA variant="compare" />
             </div>
         </main>
     );

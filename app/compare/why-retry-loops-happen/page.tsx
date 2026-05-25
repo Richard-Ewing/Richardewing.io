@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RefreshCw, Shield, AlertTriangle } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Why AI Retry Loops Cost Thousands | Fix & Prevent',
@@ -119,6 +120,8 @@ export default function WhyRetryLoopsHappenPage() {
 
                 <div className="text-center">
                     <Link href="/skills" className="text-sm font-bold text-zinc-600 hover:text-zinc-950 uppercase tracking-widest">
+                <AdvisoryCTA variant="compare" />
+
                 <ExogramBridge />
 
                 ← Return to Infrastructure Catalog</Link>

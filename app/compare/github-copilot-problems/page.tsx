@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, Shield, DollarSign, Star, ArrowRight } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'GitHub Copilot Problems & Fixes 2026 | Ewing',
@@ -208,6 +209,8 @@ export default function GitHubCopilotProblemsPage() {
                 </div>
 
                 
+                <AdvisoryCTA variant="compare" />
+
                 <ExogramBridge />
 
                 <div className="text-center">

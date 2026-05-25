@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, Shield, DollarSign, ArrowRight } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Windsurf Problems & Fixes 2026 | Richard Ewing',
@@ -208,6 +209,8 @@ export default function WindsurfProblemsPage() {
                 </div>
 
                 
+                <AdvisoryCTA variant="compare" />
+
                 <ExogramBridge />
 
                 <div className="text-center">

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Code2, Shield, AlertTriangle } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Why Cursor Rewrites Files | Root Cause & Fix',
@@ -114,6 +115,8 @@ export default function WhyCursorRewritesFilesPage() {
                         ))}
                     </div>
                 </div>
+
+                <AdvisoryCTA variant="compare" />
 
                 <ExogramBridge />
 

@@ -19,7 +19,20 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // ═══════════════════ GSC "Crawled - currently not indexed" Explicit Fixes ═══════════════════
+      // ═══════════════════ PAIN-FORWARD URL ALIASES ═══════════════════
+      // Searchable URLs that redirect to existing tool pages. Additive — doesn't change existing URLs.
+      { source: '/tools/technical-debt-calculator', destination: '/tools/pdi', permanent: true },
+      { source: '/tools/ai-cost-calculator', destination: '/tools/aueb', permanent: true },
+      { source: '/tools/revenue-per-engineer', destination: '/tools/aper', permanent: true },
+      { source: '/tools/saas-valuation-calculator', destination: '/tools/ev-se', permanent: true },
+      { source: '/tools/ai-verification-cost', destination: '/tools/vta', permanent: true },
+      { source: '/tools/ai-job-impact-calculator', destination: '/tools/fte-displacement', permanent: true },
+      { source: '/tools/self-host-vs-api', destination: '/tools/slm-vs-api', permanent: true },
+      { source: '/compare/technical-debt-calculator-vs-sonarqube', destination: '/compare/pdi-vs-sonarqube', permanent: true },
+      { source: '/compare/revenue-per-engineer-vs-jellyfish', destination: '/compare/aper-vs-jellyfish', permanent: true },
+      { source: '/compare/ai-cost-calculator-vs-aws', destination: '/compare/aueb-vs-aws-cost-explorer', permanent: true },
+      { source: '/compare/engineering-efficiency-vs-jellyfish', destination: '/compare/ev-se-vs-jellyfish', permanent: true },
+      { source: '/compare/engineering-metrics-vs-dora', destination: '/compare/dora-metrics-vs-aper', permanent: true },
       { source: '/compare/mysql-vs-astro', destination: '/compare', permanent: true },
       { source: '/vault/curriculum/tracks/strategic-leadership/N22-5', destination: '/vault/curriculum/tracks', permanent: true },
       { source: '/vault/curriculum/tracks/model-routing/25-3', destination: '/vault/curriculum/tracks', permanent: true },

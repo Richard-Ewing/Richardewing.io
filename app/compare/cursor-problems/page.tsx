@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, Shield, DollarSign, ArrowRight } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Cursor Problems 2026 | Why It Rewrites Your Files',
@@ -207,7 +208,8 @@ export default function CursorProblemsPage() {
                     </div>
                 </div>
 
-                
+                <AdvisoryCTA variant="compare" />
+
                 <ExogramBridge />
 
                 <div className="text-center">
