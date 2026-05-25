@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import AIRoiTimelineContent from './content';
 
 export const metadata: Metadata = {

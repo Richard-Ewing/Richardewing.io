@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { ShieldAlert, Crosshair, Cpu, Briefcase, Activity, AlertTriangle, Database, TrendingUp, Users, ArrowRight, Zap, DownloadCloud } from 'lucide-react';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
@@ -345,7 +346,11 @@ export default function BoardRoom() {
                     </ScrollReveal>
 
                 </div>
-            </main>
+            
+            <div className="page-container max-w-4xl mx-auto">
+                <AdvisoryCTA variant="tool-result" />
+            </div>
+        </main>
         </div>
     );
 }

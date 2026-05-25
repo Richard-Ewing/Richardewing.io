@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { ArrowLeft, Download, Calculator, TrendingDown, DollarSign } from 'lucide-react';
 import { ScrollReveal } from '@/components/magicui/scroll-reveal';
 import ShineBorder from '@/components/magicui/shine-border';
@@ -128,6 +129,10 @@ export default function AIUnitEconomicsAuditPage() {
                         </a>
                     </div>
                 </ScrollReveal>
+            </div>
+        
+            <div className="page-container max-w-4xl mx-auto">
+                <AdvisoryCTA variant="tool-result" />
             </div>
         </main>
     );

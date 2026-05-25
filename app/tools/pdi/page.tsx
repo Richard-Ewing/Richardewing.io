@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 import PDITool from './content';
 
 export const metadata: Metadata = {
@@ -49,6 +50,9 @@ export default function Page() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
             <PDITool />
+                    <div className="page-container max-w-4xl mx-auto">
+                <AdvisoryCTA variant="tool-result" />
+            </div>
         </>
     );
 }
