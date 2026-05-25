@@ -360,6 +360,6 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
     ];
 
     aiMods.forEach(([id, title, desc, takeaways, lessons], i) => {
-        modules[`ai-enterprise-architecture/${id}`] = m(id, title, desc, t4, takeaways, lessons, getNext('ai-enterprise-architecture', i, aiMods.length));
+        modules[`capstone/${id}`] = m(id, title, desc, t4, takeaways, lessons, getNext('capstone', i, aiMods.length));
     });
 }

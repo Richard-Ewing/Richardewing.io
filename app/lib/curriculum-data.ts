@@ -134,40 +134,24 @@ tracks.forEach(track => {
         
         // If not already in registry, create a stub
         if (!modules[slugStr]) {
-            // Also check if it exists under a different key but same ID
-            const existing = Object.values(modules).find(m => m.moduleId === uiMod.id);
-            if (!existing) {
-                const cleanName = uiMod.name.replace(/^\d+\.\d+\s+/, '');
-                modules[slugStr] = m(
-                    uiMod.id,
-                    cleanName,
-                    'This curriculum module is currently in active development. Register for early access.',
-                    track.title,
-                    ['Coming soon', 'In development', 'Register for updates'],
-                    [],
-                    undefined,
-                    undefined,
-                    'waitlist'
-                );
-            } else {
-                // Point the UI slug to the existing module to fix prefix mismatches
-                modules[slugStr] = existing;
-            }
+            const cleanName = uiMod.name.replace(/^\d+\.\d+\s+/, '');
+            modules[slugStr] = m(
+                uiMod.id,
+                cleanName,
+                'This curriculum module is currently in active development. Register for early access.',
+                track.title,
+                ['Coming soon', 'In development', 'Register for updates'],
+                [],
+                undefined,
+                undefined,
+                'waitlist'
+            );
         }
     });
 });
 
 export function getModule(slug: string): CurriculumModule | undefined {
     let mod = modules[slug];
-
-    // Robust fallback: If exact slug path fails due to prefix mismatches between UI and registry, find by unique moduleId
-    if (!mod) {
-        const idBase = slug.split('/').pop();
-        if (idBase) {
-            const fallbackMod = Object.values(modules).find(m => m.moduleId === idBase);
-            if (fallbackMod) mod = fallbackMod;
-        }
-    }
 
     // Dynamically inject tools into specific tracks for interactive learning
     if (mod) {

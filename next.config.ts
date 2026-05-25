@@ -164,11 +164,6 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
-      {
-        source: '/vault/curriculum/tracks/:trackId(\\d+)/:moduleId',
-        destination: '/vault/curriculum/tracks',
-        permanent: true,
-      },
       // ═══════════════════ 2026 CURRICULUM RESTRUCTURING — KILLED TRACKS ═══════════════════
       // Classic disciplines killed
       // Track 15 Free Playbooks

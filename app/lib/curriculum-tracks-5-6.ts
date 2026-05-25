@@ -2,72 +2,7 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks5and6Modules: Record<string, CurriculumModule> = {};
 
-const t5 = 'Track 5 — DevOps & Platform Economics';
 const t6 = 'Track 6 — AI Economics';
-
-// ═══════════════════ TRACK 5: DEVOPS ECONOMICS ═══════════════════
-
-tracks5and6Modules['devops-economics/5-1'] = m('5-1', 'CI/CD Pipeline Economics', 'Calculate the hard financial ROI of CI/CD investment, build time optimization, and deployment frequency.', t5, 
-    ['Calculate developer wait-time costs', 'Budget build infrastructure', 'Compute deployment frequency ROI'], [
-        l('The Anatomy of Pipeline Costs', 
-            [
-                'Every CI/CD pipeline contains both direct capital costs (compute, storage, SaaS licensing) and hidden operational costs (developer idle time, context-switching decay).',
-                'If a team of 40 engineers runs 5 builds a day, and each build takes 15 minutes, you are burning approximately 3,000 minutes (50 hours) of engineering time daily.',
-                'At a fully loaded engineering rate of $150/hour, that is a $7,500 daily tax—or $1.8M annually—just for waiting.'
-            ],
-            [
-                d('Idle Time Tax', 'Annual cost of engineers waiting for pipeline resolution.', '<$100K Annually for 50 Eng'),
-                d('Context Switch Degradation', 'Mathematical loss of flow-state efficiency per build failure.', '~20 mins per failure')
-            ],
-            'Audit your last 30 days of CI/CD telemetry. Calculate the total cumulative minutes spent waiting by all engineers.',
-            ['Install build-time telemetry (e.g., Datadog CI Visibility or Honeycomb).', 'Export the last 30 days of build durations.', 'Multiply total duration by your average engineering minute rate.'],
-            {
-                question: 'What is the most expensive component of an unoptimized CI/CD pipeline?',
-                options: ['Cloud compute billing', 'SaaS platform licensing', 'Storage for build artifacts', 'Engineer idle time and context switching'],
-                correctIndex: 3,
-                explanation: 'While cloud compute appears as a hard line-item, the invisible cost of highly-paid engineers waiting for builds completely dwarfs infrastructure costs.'
-            }
-        ),
-        l('Optimizing the Build Matrix', 
-            [
-                'Reducing build times from 15 minutes to 3 minutes does not just save 12 minutes—it preserves the engineer\'s flow state, eliminating the 20-minute context-switch penalty.',
-                'The most effective optimization vectors are aggressive build caching, artifact repository localization, and massive parallelization of testing suites.',
-                'However, parallelization introduces steep compute cost spikes. You must chart the intersection of compute costs vs human capital costs to find the optimization ceiling.'
-            ],
-            [
-                d('Parallelization Efficacy', 'Reduction in wall-clock time vs increase in compute cost.', 'Target: 80% reduction'),
-                d('Cache Hit Rate', 'Percentage of build artifacts served from cache vs recompiled.', '> 85% Hit Rate')
-            ],
-            'Implement a remote build cache (like Nx Cloud or Bazel Remote Cache) and measure the before/after delta in wall-clock time.',
-            ['Identify the heaviest permutation in your matrix.', 'Implement aggressive dependency caching.', 'Split the integration test suite into 8 parallel shards.', 'Calculate the new compute cost vs time saved.'],
-            {
-                question: 'When optimizing build times via parallelization, what is the primary economic trade-off?',
-                options: ['Increased latency vs decreased throughput', 'Exponential compute cost increases vs linear time savings', 'Higher storage costs vs lower network ingress', 'Increased deployment risk vs faster feedback'],
-                correctIndex: 1,
-                explanation: 'Parallelization reduces wall-clock time but increases total compute usage exponentially as you scale out instances, forcing a balance against human capital savings.'
-            }
-        ),
-        l('Deployment Frequency Revenue Impact',
-            [
-                'DORA metrics definitively map deployment frequency to organizational success, but the impact is tangibly financial: faster feature delivery accelerates revenue realization.',
-                'If a $2M ARR feature sits in a staging branch for two weeks awaiting a release train, that is a hard $76,000 opportunity cost.',
-                'Migrating from monthly mega-releases to continuous, on-demand deployments shifts capital realization to the left.'
-            ],
-            [
-                d('Release Train Delay', 'Average time a completed feature waits before deployment.', '< 4 Hours'),
-                d('Revenue Left-Shift', 'Amount of revenue realized early due to faster deployments.', '+5% EBITDA impact')
-            ],
-            'Calculate the opportunity cost of your last major feature release based on its staging wait time.',
-            ['Identify the PR merge date of a major feature.', 'Identify the actual production deployment date.', 'Calculate the pro-rated ARR value of the feature for the days it was delayed.'],
-            {
-                question: 'Why do monthly "release trains" destroy economic value?',
-                options: ['They cause massive merge conflicts', 'They require too many QA engineers', 'They delay the realization of feature revenue and trap invested capital', 'They increase cloud ingress costs'],
-                correctIndex: 2,
-                explanation: 'Release trains trap capital. A feature is an investment; until it is in production, it yields $0 return while the organization has already paid the development cost.'
-            }
-        )
-    ], '/vault/curriculum/tracks/devops-economics/5-2', undefined, 'live'
-);
 
 // ═══════════════════ TRACK 6: PRODUCT ECONOMICS ═══════════════════
 

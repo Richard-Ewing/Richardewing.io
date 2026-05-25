@@ -40,7 +40,7 @@ import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated'
 function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod: CurriculumModule, hasAccess: boolean, showPreview: boolean, aiContent?: any, fullSlug: string }) {
     return (
         <main className="pt-20">
-            <StructuredData data={generateCourseSchema(mod.title, mod.description, 'Richard Ewing', `https://www.richardewing.io/curriculum/tracks/${fullSlug}`)} />
+            <StructuredData data={generateCourseSchema(mod.title, mod.description, 'Richard Ewing', `https://www.richardewing.io/vault/curriculum/tracks/${fullSlug}`)} />
             <div className="page-container">
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
