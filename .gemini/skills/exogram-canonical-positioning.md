@@ -67,6 +67,23 @@ Instead of fragmented intelligence silos competing over temporary context window
 **Exogram Flow (Trusted, Continuous, Verifiable):**
 `Prompt → [Exogram State Injection] → Model → [Exogram Admissibility Gateway] → [Auditable Ledger Log] → Execution → Result`
 
+## Founder Narrative — "Why I Built Exogram"
+
+> I'm a product guy, not a machine learning engineer. I don't have a Stanford AI lab pedigree, and I didn't set out to build deep AI infrastructure. I built Exogram because I was trying to actually use AI to build real things, and the systems kept driving me absolutely crazy.
+
+Key narrative beats (use these in founder sections, interviews, about pages):
+
+1. **Origin:** "At first, the experience felt like magic. These frontier models are absolute miracles of cognition. They could scaffold projects and reason through complex logic at insane speeds. But the minute I tried to step back and give these agents real autonomy in my workflows, they lost their minds."
+2. **The Realization:** "I realized the entire industry is treating these unpredictable, probabilistic systems like they are reliable infrastructure. They are not. Reasoning is not infrastructure."
+3. **The Solution:** "Exogram is my solution to that nightmare. It sits right between the AI's brain and the actual execution controls. Instead of asking if the AI is smart enough to do a task, Exogram acts as a strict, deterministic bouncer that asks if the AI should be allowed to touch the controls at all."
+4. **The Blindspot:** "Everyone is racing to make AI smarter, faster, and more autonomous. The engineers are building brilliant brains, but almost nobody is building the safety net for when these systems actually start running our lives."
+5. **The Industry Failure:** "What the industry currently calls 'memory' is basically just chat history. That is fundamentally inadequate. Right now, the industry's idea of a guardrail is just using one unpredictable AI to babysit another unpredictable AI. That is stacked uncertainty."
+6. **The Core Problem:** "We are giving AI the keys to the car without building the brakes. We need a definitive, verifiable way to enforce operational boundaries before these systems cause real damage."
+7. **The Existential Concern:** "I am genuinely terrified that we are going to lose a shared sense of reality. AI is making it entirely too easy to generate infinite amounts of persuasive, synthetic garbage. If we do not build systems to verify what is real, what is a hallucination, and what is actually allowed to execute, the internet just becomes a massive noise machine."
+8. **The Vision:** "I want Exogram to become the absolute default layer of trust for the next era of AI. I want to build the SSL certificate for autonomous agents."
+9. **The SSL Analogy:** "When the early internet started handling real money and sensitive data, we had to invent new security protocols to make it safe for the real world. AI is at that exact same tipping point right now."
+10. **The Closing:** "I want to make autonomous intelligence persistent and verifiable so we can drive this technology as fast as possible without dying in the process."
+
 ## Open RFCs
 
 - **RFC-01: The Persistent Context Schema (EXO-STATE)** — Universal JSON schema for human-to-agent context injection across any orchestration layer.

@@ -261,6 +261,96 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
+                {/* Why I Built Exogram — Founder Narrative */}
+                <section className="section bg-white border-y border-zinc-200 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-purple-500"></div>
+                    <div className="max-w-3xl mx-auto px-4 md:px-0">
+                        <h2 className="text-3xl font-bold text-zinc-950 mb-4">Why I Built Exogram</h2>
+                        <p className="text-zinc-600 mb-12 uppercase tracking-widest text-xs font-bold font-mono">A Note from the Founder</p>
+                        
+                        <div className="prose prose-lg prose-zinc max-w-none text-zinc-800 space-y-8 font-medium">
+                            <div>
+                                <p className="text-xl text-zinc-950 font-semibold mb-6">
+                                    I&apos;m a product guy, not a machine learning engineer. I don&apos;t have a Stanford AI lab pedigree, and I didn&apos;t set out to build deep AI infrastructure. <br/>
+                                    <span className="text-purple-900">I built Exogram because I was trying to actually use AI to build real things, and the systems kept driving me absolutely crazy.</span>
+                                </p>
+                                <p>
+                                    At first, the experience felt like magic. These frontier models are absolute miracles of cognition. They could scaffold projects and reason through complex logic at insane speeds. But the minute I tried to step back and give these agents real autonomy in my workflows, they lost their minds.
+                                </p>
+                            </div>
+
+                            <div className="pl-6 border-l-4 border-red-500 bg-red-50/50 p-6 rounded-r-xl my-10 shadow-sm">
+                                <h3 className="text-xl font-bold text-red-950 mb-4">They would forget context, contradict themselves, recreate bugs they had just fixed, and hallucinate operational decisions.</h3>
+                                <p className="font-semibold text-red-950">
+                                    I realized the entire industry is treating these unpredictable, probabilistic systems like they are reliable infrastructure. They are not. <span className="text-red-800 font-bold">Reasoning is not infrastructure.</span>
+                                </p>
+                            </div>
+
+                            <div>
+                                <p>
+                                    Exogram is my solution to that nightmare. It sits right between the AI&apos;s brain and the actual execution controls. Exogram operates across four distinct layers: persistent context, dynamic governance, deterministic admissibility, and an auditable ledger.
+                                </p>
+                                <p className="font-bold text-zinc-950">
+                                    Instead of asking if the AI is smart enough to do a task, Exogram acts as a strict, deterministic bouncer that asks if the AI should be allowed to touch the controls at all.
+                                </p>
+                            </div>
+
+                            <div className="bg-white border border-zinc-200 text-zinc-900 font-medium p-8 rounded-2xl shadow-xl my-10 relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/20 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                                <h3 className="text-xl font-bold text-zinc-950 font-semibold mb-4">Everyone is racing to make AI smarter, faster, and more autonomous.</h3>
+                                <p className="text-zinc-800 mb-6 leading-relaxed">The engineers are building brilliant brains, but almost nobody is building the safety net for when these systems actually start running our lives.</p>
+                                
+                                <p className="text-zinc-800 mb-6 leading-relaxed">What the industry currently calls &quot;memory&quot; is basically just chat history. That is fundamentally inadequate. Autonomous execution requires an auditable ledger.</p>
+                                
+                                <p className="text-xl text-cyan-900 font-bold border-l-2 border-cyan-400 pl-4 py-1 tracking-tight">
+                                    Right now, the industry&apos;s idea of a guardrail is just using one unpredictable AI to babysit another unpredictable AI.<br/>That is stacked uncertainty.
+                                </p>
+                            </div>
+
+                            <div>
+                                <p>
+                                    That works fine if you are building a customer service chatbot. It is a total disaster if that AI is running enterprise software, financial systems, or real-world infrastructure.
+                                </p>
+                                <div className="bg-zinc-50 border border-zinc-200 p-6 rounded-xl my-8">
+                                    <p className="text-lg font-bold text-zinc-950 mb-4">
+                                        The biggest problem we face:
+                                    </p>
+                                    <p className="text-lg font-bold text-purple-900 pl-4 border-l-2 border-purple-500">
+                                        We are giving AI the keys to the car without building the brakes. We need a definitive, verifiable way to enforce operational boundaries before these systems cause real damage.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="p-8 bg-purple-50 border border-purple-200 rounded-xl my-10 shadow-sm relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 blur-2xl rounded-full"></div>
+                                <p className="font-bold text-purple-950 text-xl mb-6 relative z-10">
+                                    I am genuinely terrified that we are going to lose a shared sense of reality.
+                                </p>
+                                <p className="text-purple-900 mb-6 leading-relaxed relative z-10">
+                                    AI is making it entirely too easy to generate infinite amounts of persuasive, synthetic garbage. If we do not build systems to verify what is real, what is a hallucination, and what is actually allowed to execute, the internet just becomes a massive noise machine. When that bleeds over into how physical infrastructure and human institutions operate, things get very dangerous very quickly.
+                                </p>
+                                <p className="text-purple-900 font-bold tracking-wide uppercase text-sm relative z-10">
+                                    That is the gap Exogram was built to address.
+                                </p>
+                            </div>
+
+                            <div>
+                                <div className="mt-12 pt-8 border-t border-zinc-200">
+                                    <p className="text-xl font-bold text-zinc-950 mb-6 leading-relaxed">
+                                        I want Exogram to become the absolute default layer of trust for the next era of AI. I want to build the SSL certificate for autonomous agents.
+                                    </p>
+                                    <p className="mb-6 leading-relaxed">
+                                        When the early internet started handling real money and sensitive data, we had to invent new security protocols to make it safe for the real world. AI is at that exact same tipping point right now.
+                                    </p>
+                                    <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500">
+                                        I want to make autonomous intelligence persistent and verifiable so we can drive this technology as fast as possible without dying in the process.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Why This Matters Now */}
                 <section className="section bg-white border-y border-zinc-200 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-purple-500"></div>
