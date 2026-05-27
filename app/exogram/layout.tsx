@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { exogramKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Exogram — The SSL Certificate for Agentic Execution | Persistent AI Infrastructure',
-    description: 'Frontier models improve constantly but context continuity never does. Exogram is the persistent intelligence substrate that preserves memory, governance, and trust across autonomous AI systems.',
+    title: 'Exogram | Persistent Infrastructure for Autonomous AI',
+    description: 'Mission: To make autonomous intelligence persistent and verifiable. Exogram preserves operational continuity, governance, and trust across frontier models.',
     keywords: exogramKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/exogram',
