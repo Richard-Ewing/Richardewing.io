@@ -2,22 +2,22 @@ import type { Metadata } from 'next';
 import { exogramKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Stop AI Agents from Hallucinating and Overspending | Exogram Engine',
-    description: 'Probabilistic AI models drift, hallucinate, and exhaust API budgets. Exogram provides the deterministic verification layer to enforce safety and cost controls.',
+    title: 'Exogram — The SSL Certificate for Agentic Execution | Persistent AI Infrastructure',
+    description: 'Frontier models improve constantly but context continuity never does. Exogram is the persistent intelligence substrate that preserves memory, governance, and trust across autonomous AI systems.',
     keywords: exogramKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/exogram',
     },
     openGraph: {
-        title: 'Exogram | Deterministic Verification for AI',
-        description: 'AI does not fail because it cannot reason. It fails because it does not know what is true. Exogram is the missing verification trust layer.',
+        title: 'Exogram | Persistent Infrastructure for Autonomous Intelligence',
+        description: 'We are building the SSL certificate for agentic execution. Persistent context, dynamic governance, deterministic admissibility, and an auditable ledger — beneath the model layer.',
         url: 'https://www.richardewing.io/exogram',
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Exogram — Verification Infrastructure for AI',
-        description: 'Founded by Richard Ewing. The missing trust layer between AI models and applications.',
+        title: 'Exogram — Persistent Infrastructure for Autonomous Intelligence',
+        description: 'Founded by Richard Ewing. The persistent intelligence substrate that preserves operational continuity, governance, and trust across frontier models.',
     },
 };
 
@@ -40,7 +40,8 @@ export default function ExogramLayout({
                             'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5',
                             'https://www.linkedin.com/company/exogram-ai/'
                         ],
-                        description: 'Verification infrastructure for AI. The missing trust layer between models and applications. Prevents hallucination propagation with deterministic controls.',
+                        description: 'Persistent infrastructure for autonomous intelligence. The persistent intelligence substrate designed to sit beneath autonomous models — providing memory, continuity, governance, and verifiable execution state.',
+                        slogan: 'The SSL certificate for agentic execution.',
                         founder: {
                             '@type': 'Person',
                             '@id': 'https://www.richardewing.io/#person',
@@ -50,11 +51,12 @@ export default function ExogramLayout({
                         },
                         foundingDate: '2025',
                         knowsAbout: [
-                            'AI Verification',
-                            'Hallucination Prevention',
-                            'Deterministic AI Infrastructure',
-                            'State-Hashing Commit Enforcement',
-                            'Admissibility Control Planes',
+                            'Persistent AI Context Infrastructure',
+                            'Autonomous Intelligence Governance',
+                            'Deterministic Admissibility Gateways',
+                            'Auditable Execution Ledgers',
+                            'Agentic Execution Trust',
+                            'Cross-Model Operational Continuity',
                         ],
                     }),
                 }}

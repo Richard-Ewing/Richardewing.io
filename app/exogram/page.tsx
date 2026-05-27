@@ -28,10 +28,13 @@ export default function ExogramPage() {
 
                         <BlurIn word="Exogram" className="text-4xl md:text-5xl font-bold text-zinc-950 mb-4" />
                         <p className="text-xl text-purple-900 font-extrabold font-semibold mb-4">
-                            The Verification Infrastructure for AI
+                            Persistent Infrastructure for Autonomous Intelligence
                         </p>
-                        <p className="text-zinc-900 max-w-2xl mx-auto mb-8">
-                            AI systems generate language. Exogram maintains reality. A verification layer that sits between AI models and your application, ensuring every output is structurally valid, operationally safe, and auditably correct.
+                        <p className="text-zinc-900 max-w-2xl mx-auto mb-4">
+                            Frontier models are miracles of cognition. Exogram does not replace model intelligence. It preserves operational continuity, governance, and trust across it.
+                        </p>
+                        <p className="text-lg text-zinc-950 font-bold max-w-xl mx-auto mb-8">
+                            We are building the SSL certificate for agentic execution.
                         </p>
 
                         {/* Hero Actions */}
@@ -60,6 +63,16 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
+                {/* Mission Statement */}
+                <section className="py-12 border-b border-zinc-200 bg-white">
+                    <div className="max-w-3xl mx-auto text-center px-4">
+                        <p className="text-[11px] font-bold font-mono text-zinc-900 font-medium uppercase tracking-[0.2em] mb-6">The Mission</p>
+                        <p className="text-2xl md:text-3xl font-bold text-zinc-950 leading-relaxed">
+                            To make autonomous intelligence <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500">persistent and verifiable.</span>
+                        </p>
+                    </div>
+                </section>
+
                 {/* Ecosystem Presence */}
                 <section className="py-10 border-b border-zinc-200 bg-white">
                     <div className="max-w-4xl mx-auto text-center px-4">
@@ -82,30 +95,157 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
-                {/* Exogram */}
+                {/* The Core Insight */}
                 <section className="section bg-zinc-100">
                     <div className="max-w-4xl mx-auto">
-                        <div className="font-mono text-xs font-bold text-cyan-900 font-extrabold font-semibold uppercase tracking-[0.2em] mb-4 text-center">Exogram</div>
-                        <h2 className="text-3xl font-bold text-zinc-950 mb-8 text-center">The Deterministic Control Plane for the AGI Era</h2>
+                        <div className="font-mono text-xs font-bold text-cyan-900 font-extrabold font-semibold uppercase tracking-[0.2em] mb-4 text-center">The Core Insight</div>
+                        <h2 className="text-3xl font-bold text-zinc-950 mb-8 text-center">The Core Vulnerability</h2>
                         <div className="text-zinc-900 text-lg leading-relaxed space-y-6 max-w-3xl mx-auto px-6 sm:px-8 border-l-4 border-purple-500 py-2">
-                            <p>
-                                <span className="font-bold text-zinc-950">Everyone is trying to build autonomous agents, and eventually AGI, on top of a fundamentally broken architecture.</span>
+                            <p className="text-xl text-zinc-950 font-bold border-b border-zinc-300 pb-4 mb-6">
+                                The intelligence of the models improves constantly, but the continuity of the context never does.
                             </p>
                             <p>
-                                Standard large language models are nothing more than stochastic text predictors. They guess the next word. They do not possess memory, they do not retain context, they cannot infer meaning, and most importantly, they have zero capacity for accountability.
+                                We are entering a world where users live across multiple language models, autonomous agents, and execution environments. Yet every AI product still starts from zero.
                             </p>
                             <p>
-                                You cannot build an autonomous AI being on a foundation that hallucinates and forgets. As we move from basic chat wrappers to autonomous systems taking actions in the real world, admissibility and accountability become existential requirements.
-                            </p>
-                            <p className="text-xl text-zinc-950 font-bold border-t border-b border-zinc-300 py-4 my-6">
-                                <span className="text-purple-900 font-extrabold font-semibold">Exogram AI is built for this future.</span> We are the deterministic control plane for the AGI era.
+                                Today, operational context is trapped inside vendor silos. Every new tool or agent requires the user to repeatedly reconstruct their identity, goals, constraints, workflows, and operational boundaries. The user is forced to adapt themselves to the AI system because the systems are fundamentally incapable of adapting to persistent human context.
                             </p>
                             <p>
-                                We capture immediate market value today by providing Layers 1 and 2. We fix the baseline LLM flaws by injecting persistent memory and structured inference. This makes today&apos;s AI actually usable.
+                                The industry currently treats context as a user convenience. <span className="font-bold text-zinc-950">That is a critical miscalculation.</span> Models are incredible cognition engines, but reasoning is not infrastructure. As agents move from being passive chatbots to persistent, autonomous operators, passive memory ceases to be sufficient. It must become foundational, verifiable infrastructure.
                             </p>
                             <p>
-                                But true autonomy relies on Layers 3 and 4. These are the strict admissibility, accountability, and cryptographic guardrails. When AI transitions from software tools to autonomous entities operating within enterprise and government infrastructure, they will require an immutable trust ledger to verify every action. <span className="font-bold text-zinc-950">Exogram is that ledger. We are building the regulatory and operational baseline that makes AGI safe to deploy.</span>
+                                What the industry calls &quot;memory&quot; is fundamentally inadequate for autonomous systems. Autonomous execution requires an <span className="font-bold text-zinc-950">auditable ledger</span>. If a system forgets its constraints, loses its operational history, or drops its permission boundaries as it moves between environments, it stops being reliable infrastructure. It becomes an operational hazard.
                             </p>
+                            <p className="text-xl text-zinc-950 font-bold border-t border-zinc-300 pt-4 mt-6">
+                                Probabilistic systems cannot scale into the autonomous era safely without a deterministic, auditable record of state.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* The Four-Layer Substrate */}
+                <section className="section bg-white border-y border-zinc-200">
+                    <div className="max-w-4xl mx-auto px-4 md:px-0">
+                        <div className="text-center mb-10">
+                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-purple-700 mb-2 block">Architecture</span>
+                            <h2 className="text-3xl font-bold text-zinc-950 mb-4">The Four-Layer Substrate</h2>
+                            <p className="text-zinc-700 max-w-2xl mx-auto">
+                                Exogram is a comprehensive infrastructure stack designed to sit beneath the models and govern autonomous execution.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5">
+                                <div className="flex items-center justify-between mb-3">
+                                    <h3 className="text-zinc-950 font-bold">Layer I: Persistent Context</h3>
+                                    <span className="text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold px-2 py-0.5 rounded border border-cyan-500/30">State Graph</span>
+                                </div>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium leading-relaxed">
+                                    The foundational baseline that maintains identity, goals, and operational state across completely different models and platforms. Exogram unifies disconnected memory silos into a single, portable, and persistent state graph.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-xl border border-purple-500/20 bg-purple-500/5">
+                                <div className="flex items-center justify-between mb-3">
+                                    <h3 className="text-zinc-950 font-bold">Layer II: Dynamic Governance</h3>
+                                    <span className="text-xs font-bold font-medium font-mono text-purple-900 font-extrabold font-semibold px-2 py-0.5 rounded border border-purple-500/30">Policy Engine</span>
+                                </div>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium leading-relaxed">
+                                    The policy layer that defines the rigid operational boundaries, permission rules, and execution constraints for any given agent. Translates human intent into deterministic operational boundaries.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-xl border border-red-500/20 bg-red-500/5">
+                                <div className="flex items-center justify-between mb-3">
+                                    <h3 className="text-zinc-950 font-bold">Layer III: Deterministic Admissibility</h3>
+                                    <span className="text-xs font-bold font-medium font-mono text-red-900 font-extrabold font-semibold px-2 py-0.5 rounded border border-red-500/30">Execution Gateway</span>
+                                </div>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium leading-relaxed">
+                                    The runtime execution bouncer. Instead of asking if a probabilistic model <em>can</em> perform an action, this layer deterministically evaluates whether the execution <em>should</em> be allowed to occur at all, intercepting out-of-bounds actions before they hit your infrastructure.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5">
+                                <div className="flex items-center justify-between mb-3">
+                                    <h3 className="text-zinc-950 font-bold">Layer IV: The Auditable Ledger</h3>
+                                    <span className="text-xs font-bold font-medium font-mono text-emerald-900 font-extrabold font-semibold px-2 py-0.5 rounded border border-emerald-500/30">Memory v2</span>
+                                </div>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium leading-relaxed">
+                                    An append-only, verifiable history of every action, context shift, and governance decision. It provides execution traceability, transforming passive AI memory into enterprise-grade accountability.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* The Execution Loop */}
+                <section className="section bg-[#F5F0EB]">
+                    <div className="max-w-4xl mx-auto px-4 md:px-0">
+                        <div className="text-center mb-10">
+                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-purple-700 mb-2 block">Execution Interception</span>
+                            <h2 className="text-3xl font-bold text-zinc-950 mb-4">The Execution Loop</h2>
+                            <p className="text-zinc-700 max-w-2xl mx-auto">
+                                Exogram intercepts the standard AI execution loop to inject persistence and deterministic trust.
+                            </p>
+                        </div>
+                        <div className="space-y-6 max-w-2xl mx-auto">
+                            {/* Standard Flow */}
+                            <div className="rounded-xl border border-rose-200 bg-rose-50 p-6">
+                                <h3 className="text-sm font-bold text-rose-800 mb-3 uppercase tracking-widest font-mono">Standard Flow — High Risk, Zero Memory</h3>
+                                <div className="flex items-center gap-2 flex-wrap font-mono text-sm text-rose-900">
+                                    <span className="px-3 py-1.5 bg-white rounded border border-rose-200">Prompt</span>
+                                    <span>→</span>
+                                    <span className="px-3 py-1.5 bg-white rounded border border-rose-200">Model</span>
+                                    <span>→</span>
+                                    <span className="px-3 py-1.5 bg-white rounded border border-rose-200">Execution</span>
+                                    <span>→</span>
+                                    <span className="px-3 py-1.5 bg-white rounded border border-rose-200">Result</span>
+                                </div>
+                            </div>
+                            {/* Exogram Flow */}
+                            <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6">
+                                <h3 className="text-sm font-bold text-emerald-800 mb-3 uppercase tracking-widest font-mono">Exogram Flow — Trusted, Continuous, Verifiable</h3>
+                                <div className="flex items-center gap-2 flex-wrap font-mono text-sm text-emerald-900">
+                                    <span className="px-3 py-1.5 bg-white rounded border border-emerald-200">Prompt</span>
+                                    <span>→</span>
+                                    <span className="px-3 py-1.5 bg-purple-100 rounded border-2 border-purple-400 font-bold text-purple-900">State Injection</span>
+                                    <span>→</span>
+                                    <span className="px-3 py-1.5 bg-white rounded border border-emerald-200">Model</span>
+                                    <span>→</span>
+                                    <span className="px-3 py-1.5 bg-purple-100 rounded border-2 border-purple-400 font-bold text-purple-900">Admissibility Gateway</span>
+                                    <span>→</span>
+                                    <span className="px-3 py-1.5 bg-purple-100 rounded border-2 border-purple-400 font-bold text-purple-900">Ledger Log</span>
+                                    <span>→</span>
+                                    <span className="px-3 py-1.5 bg-white rounded border border-emerald-200">Execution</span>
+                                    <span>→</span>
+                                    <span className="px-3 py-1.5 bg-white rounded border border-emerald-200">Result</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Technical Schema — Admissibility Request */}
+                <section className="section bg-zinc-100">
+                    <div className="max-w-4xl mx-auto px-4 md:px-0">
+                        <div className="text-center mb-10">
+                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-purple-700 mb-2 block">Technical Preview</span>
+                            <h2 className="text-3xl font-bold text-zinc-950 mb-4">The Admissibility Request</h2>
+                            <p className="text-zinc-700 max-w-2xl mx-auto">
+                                When an agent attempts to execute an action, it must pass through the Exogram Admissibility Gateway.
+                            </p>
+                        </div>
+                        <div className="bg-white border border-zinc-300 rounded-xl p-6 font-mono text-xs leading-relaxed overflow-x-auto max-w-2xl mx-auto shadow-sm">
+                            <pre className="text-zinc-800 whitespace-pre-wrap">{`{
+  "execution_request": {
+    "agent_id": "agt_8f72c91a",
+    "target_system": "aws_production_db",
+    "action": "DROP_TABLE",
+    "context_hash": "a1b2c3d4e5f6...",
+    "exogram_admissibility": {
+      "policy_check": "FAILED",
+      "reason": "VIOLATES_DYNAMIC_GOVERNANCE_RULE_04:
+                NO_DESTRUCTIVE_ACTIONS_IN_PROD",
+      "action_permitted": false
+    }
+  }
+}`}</pre>
                         </div>
                     </div>
                 </section>
@@ -121,211 +261,104 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
-                {/* Runtime Compiler Pipeline — makes Exogram tangible */}
-                <section className="section bg-[#F5F0EB]">
-                    <div className="max-w-4xl mx-auto px-4 md:px-0">
-                        <div className="text-center mb-10">
-                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-purple-700 mb-2 block">How It Works</span>
-                            <h2 className="text-3xl font-bold text-zinc-950 mb-4">The Runtime Compilation Pipeline</h2>
-                            <p className="text-zinc-700 max-w-2xl mx-auto">
-                                Exogram compiles Identity + Skill + Tool + Environment constraints into a deterministic execution payload.
-                                This is how philosophical governance becomes operational enforcement.
-                            </p>
-                        </div>
-                        <div className="space-y-4 max-w-xl mx-auto">
-                            {[
-                                { step: '1', label: 'Trigger Detection', desc: 'Agent receives task. Exogram intercepts before execution begins.', layer: 'Identity', color: 'border-cyan-200 bg-cyan-50' },
-                                { step: '2', label: 'Skill Resolution', desc: 'Maps the task to governance skills. Loads applicable YAML policies.', layer: 'Skill', color: 'border-purple-200 bg-purple-50' },
-                                { step: '3', label: 'Tool Authorization', desc: 'Validates tool permissions. Blocks destructive commands. Scopes file access.', layer: 'Tool', color: 'border-red-200 bg-red-50' },
-                                { step: '4', label: 'Context Assembly', desc: 'Checks context utilization, prunes stale data, preserves architectural state.', layer: 'Environment', color: 'border-emerald-200 bg-emerald-50' },
-                                { step: '5', label: 'Runtime Compilation', desc: 'Compiles constraints into execution payload with budget caps, retry limits, and scope boundaries.', layer: 'Runtime', color: 'border-amber-200 bg-amber-50' },
-                                { step: '6', label: 'Constrained Execution', desc: 'Agent executes within governance boundaries. Every mutation logged. Violations halted.', layer: 'Execution', color: 'border-zinc-200 bg-white' },
-                            ].map((s) => (
-                                <div key={s.step} className={`rounded-xl border ${s.color} p-5 flex items-start gap-4`}>
-                                    <span className="w-8 h-8 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-sm font-bold text-zinc-900 flex-shrink-0">{s.step}</span>
-                                    <div>
-                                        <div className="flex items-center gap-2 mb-1">
-                                            <h3 className="text-sm font-bold text-zinc-950">{s.label}</h3>
-                                            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-500 px-2 py-0.5 bg-white rounded border border-zinc-200">{s.layer}</span>
-                                        </div>
-                                        <p className="text-sm text-zinc-700">{s.desc}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Before/After — makes Exogram feel deployable */}
-                <section className="section bg-white border-y border-zinc-200">
-                    <div className="max-w-4xl mx-auto px-4 md:px-0">
-                        <div className="text-center mb-10">
-                            <h2 className="text-3xl font-bold text-zinc-950 mb-4">Before vs After Exogram</h2>
-                            <p className="text-zinc-700">The operational difference between ungoverned and governed agentic execution.</p>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="rounded-xl border border-rose-200 bg-rose-50 p-6">
-                                <h3 className="text-lg font-bold text-rose-800 mb-4">Without Exogram</h3>
-                                <ul className="space-y-3 text-sm text-rose-900">
-                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> System prompts bypassed in 3 messages</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> Context rots after 60 minutes</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> Retry loops burn $100-$1,100</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> MCP servers access .env files</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> No audit trail for agent actions</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> Agents modify files outside scope</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✗</span> No financial circuit breakers</li>
-                                </ul>
-                            </div>
-                            <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6">
-                                <h3 className="text-lg font-bold text-emerald-800 mb-4">With Exogram</h3>
-                                <ul className="space-y-3 text-sm text-emerald-900">
-                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Rules enforced via middleware, not language</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Checkpoint rotation maintains 95%+ recall</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Retry halted at attempt 3 ($25 cap)</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> File guards block sensitive path access</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Every action logged with rollback</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Scope enforcement blocks creep</li>
-                                    <li className="flex items-start gap-2"><span className="font-mono">✓</span> Per-task and per-session budget caps</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="mt-8 text-center">
-                            <Link href="/skills" className="px-8 py-4 bg-zinc-950 text-white font-bold rounded hover:bg-zinc-800 transition-colors inline-block">
-                                Deploy Runtime Governance Modules →
-                            </Link>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Why I Built Exogram */}
+                {/* Why This Matters Now */}
                 <section className="section bg-white border-y border-zinc-200 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-purple-500"></div>
                     <div className="max-w-3xl mx-auto px-4 md:px-0">
-                        <h2 className="text-3xl font-bold text-zinc-950 mb-4">Why I Built Exogram</h2>
-                        <p className="text-zinc-600 mb-12 uppercase tracking-widest text-xs font-bold font-mono">A Note from the Founder</p>
+                        <h2 className="text-3xl font-bold text-zinc-950 mb-4">Why This Matters Now</h2>
+                        <p className="text-zinc-600 mb-12 uppercase tracking-widest text-xs font-bold font-mono">The Exogram Paradigm</p>
                         
                         <div className="prose prose-lg prose-zinc max-w-none text-zinc-800 space-y-8 font-medium">
                             <div>
                                 <p className="text-xl text-zinc-950 font-semibold mb-6">
-                                    I did not build Exogram because I wanted to launch another AI product. <br/>
-                                    <span className="text-purple-900">I built it because I kept colliding with the same systemic failures while trying to use AI systems to build real software.</span>
+                                    As frontier models proliferate and capability converges, the strategic value shifts increasingly toward <span className="text-purple-900">persistent operational infrastructure sitting beneath the model layer.</span>
                                 </p>
                                 <p>
-                                    At first, I was deeply optimistic about agent-based development environments and autonomous coding systems. Like many developers and operators, I immediately saw the promise: faster iteration, accelerated engineering, AI-assisted workflows, and autonomous execution.
-                                </p>
-                                <p>
-                                    I started heavily using tools like Cursor and later moved deeper into increasingly autonomous AI workflows and agentic systems. At first, the experience felt almost magical. The systems could scaffold code, reason through problems, generate architecture suggestions, repair bugs, and move through development tasks at a pace that felt fundamentally different from traditional software tooling.
+                                    We are giving autonomous intelligence the keys to the car without building the brakes. Today humans repeatedly adapt themselves to disconnected AI systems. Eventually, autonomous systems will adapt themselves to persistent, auditable human context.
                                 </p>
                             </div>
 
-                            <div className="pl-6 border-l-4 border-red-500 bg-red-50/50 p-6 rounded-r-xl my-10 shadow-sm">
-                                <h3 className="text-xl font-bold text-red-950 mb-4">But after the novelty wore off, another pattern started emerging. The systems were unstable.</h3>
-                                <p className="mb-4 text-red-950 font-semibold">Not unstable in a theoretical sense. Operationally unstable. The models would:</p>
-                                <ul className="space-y-2 mb-6 text-sm font-semibold text-red-900 font-mono">
-                                    <li>• lose context mid-workflow</li>
-                                    <li>• forget previous architectural decisions</li>
-                                    <li>• recreate bugs they had already fixed</li>
-                                    <li>• generate contradictory implementations</li>
-                                    <li>• drift away from original instructions</li>
-                                    <li>• loop recursively through the same repair cycles</li>
-                                    <li>• introduce new errors while &quot;fixing&quot; old ones</li>
+                            <div className="bg-zinc-50 border border-zinc-200 p-6 rounded-xl my-8">
+                                <p className="text-lg font-semibold text-zinc-950 mb-4">
+                                    The future requires a persistent intelligence substrate where:
+                                </p>
+                                <ul className="space-y-3 text-zinc-800">
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-purple-600 font-bold mt-0.5">→</span>
+                                        <span><strong>Context</strong> survives entirely independently of the underlying model</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-purple-600 font-bold mt-0.5">→</span>
+                                        <span><strong>Governance</strong> defines rigid operational boundaries for any given agent</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-purple-600 font-bold mt-0.5">→</span>
+                                        <span><strong>Identity</strong> persists across completely different models and platforms</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-purple-600 font-bold mt-0.5">→</span>
+                                        <span><strong>The Auditable Ledger</strong> provides enterprise-grade accountability for every action</span>
+                                    </li>
                                 </ul>
-                                <p className="font-semibold text-red-950">
-                                    And every one of those failures had a real cost attached to it: more tokens, more compute, more debugging, more wasted engineering time, and more operational uncertainty.
-                                </p>
-                            </div>
-
-                            <div>
-                                <p>
-                                    I started realizing I was not just dealing with hallucinations. <span className="font-bold text-zinc-950">I was dealing with probabilistic systems being treated as reliable execution infrastructure.</span>
-                                </p>
-                                <p>
-                                    That distinction completely changed how I viewed the industry. The problem was not that the AI occasionally produced incorrect text. The problem was that autonomous systems were increasingly being trusted with operational authority despite having no deterministic governance structure underneath them.
-                                </p>
-                                <p>
-                                    Then the industry rapidly accelerated into AI agents. That was the moment the problem stopped looking like a tooling inconvenience and started looking like a serious infrastructure failure.
-                                </p>
-                            </div>
-
-                            <div className="bg-white border border-zinc-200 text-zinc-900 font-medium p-8 rounded-2xl shadow-xl my-10 relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/20 blur-3xl rounded-full translate-x-1/3 -translate-y-1/3"></div>
-                                <h3 className="text-xl font-bold text-zinc-950 font-semibold mb-4">These systems were no longer confined to chat interfaces.</h3>
-                                <p className="text-zinc-800 mb-6 leading-relaxed">Now they were modifying production code, executing workflows, invoking APIs, interacting with enterprise systems, touching databases, and performing autonomous operations. And yet almost the entire ecosystem was still operating without meaningful runtime governance.</p>
-                                
-                                <p className="text-zinc-800 mb-6 leading-relaxed">The dominant industry answer became &quot;guardrails.&quot; But the more I studied the problem, the more obvious it became that most so-called guardrails were still fundamentally probabilistic systems supervising other probabilistic systems.</p>
-                                
-                                <p className="text-xl text-cyan-900 font-bold border-l-2 border-cyan-400 pl-4 py-1 tracking-tight">
-                                    That is not deterministic governance.<br/>That is stacked uncertainty.
-                                </p>
-                            </div>
-
-                            <div>
-                                <p>
-                                    The industry was attempting to scale autonomous execution without building admissibility infrastructure first. That realization became the foundation for Exogram.
-                                </p>
-                                <div className="bg-zinc-50 border border-zinc-200 p-6 rounded-xl my-8">
-                                    <p className="text-lg font-semibold text-zinc-950 mb-4">
-                                        I stopped thinking about the problem as:
-                                    </p>
-                                    <p className="text-lg italic text-zinc-600 mb-6 pl-4 border-l-2 border-zinc-300">
-                                        &quot;How do we make AI smarter?&quot;
-                                    </p>
-                                    <p className="text-lg font-semibold text-zinc-950 mb-4">
-                                        And started thinking about it as:
-                                    </p>
-                                    <p className="text-lg font-bold text-purple-900 pl-4 border-l-2 border-purple-500">
-                                        &quot;How do we determine whether autonomous execution should be allowed at all?&quot;
-                                    </p>
-                                </div>
-                                <p>
-                                    That is a completely different problem. Exogram was built to sit directly between AI inference and operational execution. Not as another assistant. Not as another wrapper. Not as another orchestration layer.
-                                </p>
-                                <p className="font-bold text-zinc-950 text-xl mt-6">
-                                    But as runtime governance infrastructure.
-                                </p>
-                                <p className="mt-4 leading-relaxed">
-                                    A deterministic operational control layer capable of evaluating whether autonomous actions are admissible before they are allowed to interact with enterprise infrastructure. That means runtime policy evaluation, bounded execution, operational boundary enforcement, contextual state verification, immutable auditability, permit or deny execution controls, and deterministic governance before runtime actions occur.
-                                </p>
                             </div>
 
                             <div className="p-8 bg-purple-50 border border-purple-200 rounded-xl my-10 shadow-sm relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 blur-2xl rounded-full"></div>
                                 <p className="font-bold text-purple-950 text-xl mb-6 relative z-10">
-                                    The goal was never to eliminate intelligence. The goal was to constrain probabilistic execution within deterministic operational boundaries.
-                                </p>
-                                <p className="text-purple-900 mb-6 leading-relaxed relative z-10">
-                                    Because once AI systems begin operating autonomously inside enterprise environments, the conversation changes entirely. Hallucinations are no longer just inconvenient outputs. They become infrastructure risk, security risk, financial risk, compliance risk, and operational risk.
+                                    Instead of fragmented intelligence silos competing over temporary context windows, autonomous systems gain persistent operational continuity across environments.
                                 </p>
                                 <p className="text-purple-900 font-bold tracking-wide uppercase text-sm relative z-10">
-                                    That is the gap Exogram was built to address.
+                                    Today humans repeatedly adapt themselves to disconnected AI systems. Eventually AI systems will adapt themselves to persistent, auditable human context.
                                 </p>
-                            </div>
-
-                            <div>
-                                <p>
-                                    And I believe this problem becomes exponentially more important as the industry moves deeper into autonomous agents, multi-agent systems, AI-operated workflows, and machine-driven enterprise execution.
-                                </p>
-                                <p>
-                                    Most companies today are still focused on making autonomous systems more capable. Far fewer are asking whether those systems should be trusted with execution authority in the first place. I believe that eventually becomes one of the defining infrastructure questions of enterprise AI.
-                                </p>
-                                <div className="mt-12 pt-8 border-t border-zinc-200">
-                                    <p className="text-xl font-bold text-zinc-950 mb-6 leading-relaxed">
-                                        Because enterprises do not actually need more probabilistic systems operating with unchecked authority. They need governed execution, deterministic operational control, and bounded autonomy.
-                                    </p>
-                                    <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500">
-                                        That is why I built Exogram.
-                                    </p>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* The Stack */}
-                <section className="section bg-zinc-100 pt-0">
+                {/* Open RFCs */}
+                <section className="section bg-zinc-100">
+                    <div className="max-w-4xl mx-auto px-4 md:px-0">
+                        <div className="text-center mb-10">
+                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-purple-700 mb-2 block">Building in Public</span>
+                            <h2 className="text-3xl font-bold text-zinc-950 mb-4">Open Requests for Comment</h2>
+                            <p className="text-zinc-700 max-w-2xl mx-auto">
+                                We are building an open standard. Below are the active RFCs regarding the Exogram Protocol.
+                            </p>
+                        </div>
+                        <div className="space-y-4 max-w-3xl mx-auto">
+                            <div className="rounded-xl border border-cyan-200 bg-cyan-50 p-6">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <span className="text-xs font-mono font-bold text-cyan-800 px-2 py-0.5 bg-white rounded border border-cyan-300">RFC-01</span>
+                                    <h3 className="text-sm font-bold text-zinc-950">The Persistent Context Schema (EXO-STATE)</h3>
+                                </div>
+                                <p className="text-sm text-zinc-700 mb-2"><strong>Goal:</strong> Define a universal JSON schema for human-to-agent context that can be injected into any orchestration layer, regardless of whether the model is OpenAI, Anthropic, or an open-source local model.</p>
+                                <p className="text-sm text-zinc-600"><strong>Core Challenge:</strong> Normalizing context injection so it consumes the minimal amount of tokens while maintaining 100% operational fidelity across environments.</p>
+                            </div>
+                            <div className="rounded-xl border border-purple-200 bg-purple-50 p-6">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <span className="text-xs font-mono font-bold text-purple-800 px-2 py-0.5 bg-white rounded border border-purple-300">RFC-02</span>
+                                    <h3 className="text-sm font-bold text-zinc-950">Deterministic Admissibility Gateway</h3>
+                                </div>
+                                <p className="text-sm text-zinc-700 mb-2"><strong>Goal:</strong> Establish an execution gateway that processes go/no-go decisions at sub-runtime latencies.</p>
+                                <p className="text-sm text-zinc-600"><strong>Core Challenge:</strong> If the admissibility check takes too long, autonomous loops break down. Probabilistic LLM-as-a-judge approaches are too slow and unreliable. This RFC proposes moving governance checks to deterministic policy engines — fast, binary rules — to safely gate API and tool calls natively.</p>
+                            </div>
+                            <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <span className="text-xs font-mono font-bold text-emerald-800 px-2 py-0.5 bg-white rounded border border-emerald-300">RFC-03</span>
+                                    <h3 className="text-sm font-bold text-zinc-950">The Auditable Ledger Format</h3>
+                                </div>
+                                <p className="text-sm text-zinc-700 mb-2"><strong>Goal:</strong> Create a verifiable, append-only standard for logging AI execution history.</p>
+                                <p className="text-sm text-zinc-600"><strong>Core Challenge:</strong> Standard AI logs just show input (prompt) and output (response). The Exogram ledger must capture <em>State Hash</em> + <em>Active Governance Policy</em> + <em>Attempted Action</em> + <em>Approval/Denial Code</em>. This RFC designs the exact data structure required for an enterprise compliance team to trace exactly <em>why</em> an agent took an action.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* The Stack — simplified position view */}
+                <section className="section bg-white border-y border-zinc-200 pt-0">
                     <div className="max-w-3xl mx-auto text-center">
                         <h2 className="text-2xl font-bold text-zinc-950 mb-8">The Stack</h2>
-                        <p className="text-xl text-zinc-950 font-bold mb-12">Exogram is the missing layer in the AI stack.</p>
+                        <p className="text-xl text-zinc-950 font-bold mb-12">Exogram is the persistent intelligence substrate beneath the model layer.</p>
                         <div className="space-y-4 max-w-md mx-auto">
                             <div className="px-6 py-4 rounded-lg bg-white/5 border border-zinc-400 text-left">
                                 <span className="text-zinc-950 text-sm">Layer 1</span>
@@ -339,7 +372,7 @@ export default function ExogramPage() {
                             </div>
                             <div className="px-6 py-4 rounded-lg bg-purple-600/20 border-2 border-purple-500 text-left">
                                 <span className="text-purple-900 font-extrabold font-semibold text-sm">Layer 3</span>
-                                <span className="text-zinc-950 ml-4 font-bold">VERIFICATION</span>
+                                <span className="text-zinc-950 ml-4 font-bold">PERSISTENCE & TRUST</span>
                                 <span className="text-purple-900 font-extrabold font-semibold ml-4">→ EXOGRAM</span>
                             </div>
                             <div className="px-6 py-4 rounded-lg bg-white/5 border border-zinc-400 text-left">
@@ -351,69 +384,8 @@ export default function ExogramPage() {
 
                         <div className="mt-16 mb-4">
                             <p className="text-xl md:text-2xl text-zinc-950 font-bold leading-relaxed max-w-3xl mx-auto">
-                                LLMs generate language. <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-bold">Exogram maintains reality.</span>
+                                Frontier models are miracles of cognition. <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-bold">Exogram preserves operational continuity, governance, and trust across them.</span>
                             </p>
-                            <p className="text-lg md:text-xl text-zinc-950 font-bold mt-4 leading-relaxed max-w-3xl mx-auto">
-                                Together, they enable intelligence that remembers, reasons, and can be trusted.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* 4-Layer Architecture Overview */}
-                <section className="section">
-                    <div className="max-w-4xl mx-auto">
-                        <h2 className="text-2xl font-bold text-zinc-950 mb-4 text-center">Verification Architecture</h2>
-                        <p className="text-zinc-900 text-center mb-12 max-w-xl mx-auto">Four independent verification layers. Adopt incrementally. Each one reduces AI risk measurably.</p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {[
-                                { name: 'Schema Integrity Engine', desc: 'Validates every AI output against structural contracts. Catches hallucinated fields, missing data, and type mismatches in <5ms.', metric: '<5ms validation', cardClass: 'p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5', badgeClass: 'text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold px-2 py-0.5 rounded border border-cyan-500/30' },
-                                { name: 'Boundary Control Protocol', desc: 'Enforces operational scope for AI agents using the EAAP protocol. Prevents unauthorized actions and scope creep.', metric: 'EAAP v1.0', cardClass: 'p-6 rounded-xl border border-purple-500/20 bg-purple-500/5', badgeClass: 'text-xs font-bold font-medium font-mono text-purple-900 font-extrabold font-semibold px-2 py-0.5 rounded border border-purple-500/30' },
-                                { name: 'Threat Prevention Layer', desc: 'Detects prompt injections, data exfiltration, PII leaks, and adversarial inputs with 99.2% accuracy.', metric: '99.2% detection', cardClass: 'p-6 rounded-xl border border-red-500/20 bg-red-500/5', badgeClass: 'text-xs font-bold font-medium font-mono text-red-900 font-extrabold font-semibold px-2 py-0.5 rounded border border-red-500/30' },
-                                { name: 'Memory Integrity System', desc: 'Cryptographic verification of AI memory. Prevents memory hallucinations and maintains cross-session consistency.', metric: 'Encrypted', cardClass: 'p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5', badgeClass: 'text-xs font-bold font-medium font-mono text-emerald-900 font-extrabold font-semibold px-2 py-0.5 rounded border border-emerald-500/30' },
-                            ].map(layer => (
-                                <div key={layer.name} className={layer.cardClass}>
-                                    <div className="flex items-center justify-between mb-3">
-                                        <h3 className="text-zinc-950 font-bold">{layer.name}</h3>
-                                        <span className={layer.badgeClass}>{layer.metric}</span>
-                                    </div>
-                                    <p className="text-sm font-semibold text-zinc-900 font-medium leading-relaxed">{layer.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="text-center mt-8">
-                            <Link href="/exogram/architecture" className="text-sm font-semibold text-zinc-900 font-medium hover:text-purple-900 font-extrabold font-semibold transition-colors">
-                                Deep dive into the architecture →
-                            </Link>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Industry Use Cases Preview */}
-                <section className="section bg-zinc-100">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h2 className="text-2xl font-bold text-zinc-950 mb-4">Built for Every Industry Deploying AI</h2>
-                        <p className="text-zinc-900 mb-10 max-w-xl mx-auto">Healthcare, finance, legal, and enterprise teams trust Exogram to verify AI outputs before they reach users.</p>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            {[
-                                { icon: '🏥', label: 'Healthcare', stat: '99.8% accuracy' },
-                                { icon: '🏦', label: 'Financial Services', stat: '100% audit trail' },
-                                { icon: '⚖️', label: 'Legal', stat: 'Zero hallucinated citations' },
-                                { icon: '🤖', label: 'AI Agents', stat: '100% action verification' },
-                                { icon: '🛒', label: 'E-Commerce', stat: '40% fewer tickets' },
-                                { icon: '📚', label: 'Education', stat: '98% factual accuracy' },
-                            ].map(uc => (
-                                <div key={uc.label} className="p-5 rounded-xl bg-white/[0.03] border border-zinc-400 text-center">
-                                    <span className="text-3xl block mb-2">{uc.icon}</span>
-                                    <p className="text-sm font-semibold text-zinc-950 font-semibold mb-1">{uc.label}</p>
-                                    <p className="text-[11px] text-purple-900 font-extrabold font-semibold font-mono">{uc.stat}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="mt-8">
-                            <Link href="/exogram/use-cases" className="text-sm font-semibold text-zinc-900 font-medium hover:text-purple-900 font-extrabold font-semibold transition-colors">
-                                See all use cases →
-                            </Link>
                         </div>
                     </div>
                 </section>
@@ -426,12 +398,12 @@ export default function ExogramPage() {
                             <Link href="/exogram/architecture" className="group p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5 hover:border-cyan-500/40 transition-all">
                                 <span className="text-xs font-bold font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest">Deep Dive</span>
                                 <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">Architecture</h3>
-                                <p className="text-sm font-semibold text-zinc-900 font-medium">4 verification layers, performance specs, and integration methods.</p>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium">4 substrate layers, execution schemas, and integration methods.</p>
                             </Link>
                             <Link href="/exogram/use-cases" className="group p-6 rounded-xl border border-purple-500/20 bg-purple-500/5 hover:border-purple-500/40 transition-all">
                                 <span className="text-xs font-bold font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest">Industry</span>
                                 <h3 className="text-xl font-bold text-zinc-950 mt-2 mb-2 group-hover:text-purple-900 font-extrabold font-semibold transition-colors">Use Cases</h3>
-                                <p className="text-sm font-semibold text-zinc-900 font-medium">Healthcare, fintech, legal, and enterprise AI verification.</p>
+                                <p className="text-sm font-semibold text-zinc-900 font-medium">Healthcare, fintech, legal, and enterprise autonomous AI governance.</p>
                             </Link>
                             <Link href="/exogram/roadmap" className="group p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5 hover:border-emerald-500/40 transition-all">
                                 <span className="text-xs font-bold font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest">Direction</span>
@@ -448,7 +420,7 @@ export default function ExogramPage() {
                         <div className="card p-10 flex flex-col items-center text-center space-y-8">
                             <p className="text-xl md:text-2xl text-zinc-950 leading-relaxed max-w-2xl">
                                 &quot;I write about why AI systems fail economically through my AI Economist work.<br />
-                                <span className="text-purple-900 font-extrabold font-semibold">Exogram is what I&apos;m building to fix it.&quot;</span>
+                                <span className="text-purple-900 font-extrabold font-semibold">Exogram is the persistent intelligence substrate I&apos;m building to fix it.&quot;</span>
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full border-t border-zinc-400 pt-8 mt-4 items-center">
                                 <div className="flex items-center justify-center md:justify-end gap-4 h-12">
