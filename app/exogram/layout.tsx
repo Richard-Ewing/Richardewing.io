@@ -48,6 +48,9 @@ export default function ExogramLayout({
                             name: 'Richard Ewing',
                             jobTitle: 'AI Economist',
                             url: 'https://www.richardewing.io',
+                            sameAs: [
+                                'https://www.linkedin.com/in/richard-ewing-mba/'
+                            ],
                         },
                         foundingDate: '2025',
                         knowsAbout: [
