@@ -27,6 +27,7 @@ import { ToolGateCTA } from '../../components/ToolGateCTA';
 import ToolGate from '../../components/tool-gate';
 import { VaultUpsell, RecommendedTrack } from '../../components/VaultUpsell';
 import { DiagnosticBridge } from '../../components/DiagnosticBridge';
+import AdvisoryCTA from '../../components/AdvisoryCTA';
 
 // Simple Pie Chart component (no external dependency)
 const PieChart = ({ data }: { data: { name: string; value: number; color: string }[] }) => {
@@ -536,6 +537,7 @@ Migrate from Heroku to AWS"
                                     <BenchmarkComparison tool="pdi" userScore={results.score} />
                                     <LongitudinalHistory tool="pdi" scoreKey="score" />
                                     <ExogramRecommendations score={results.score} maintenance={results.metrics.maintenance} />
+                                    <AdvisoryCTA variant="tool-result" />
                                 </div>
                             }
                         />

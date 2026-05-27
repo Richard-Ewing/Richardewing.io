@@ -59,6 +59,40 @@ export default function AUEBvsAWSPage() {
                         </table>
                     </div>
 
+                    <section className="mb-16 prose prose-zinc max-w-none">
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-6">Why AWS Cost Explorer Fails at AI Economics</h2>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div className="p-6 rounded-xl border border-zinc-200 bg-white/40">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-2">1. The Token Telemetry Gap</h3>
+                                <p className="text-sm text-zinc-900 leading-relaxed">
+                                    AWS Cost Explorer shows you aggregate billing for AWS Bedrock or EC2 instances. It has absolutely no awareness of token telemetry. It cannot associate individual model request/response payloads with customer IDs, feature names, or pricing tiers. Without AUEB to bridge this gap, you cannot identify which customers or features are driving your variable costs.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-xl border border-zinc-200 bg-white/40">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-2">2. Shared RAG Infrastructure Bloat</h3>
+                                <p className="text-sm text-zinc-900 leading-relaxed">
+                                    Retrieval-Augmented Generation (RAG) involves memory-resident vector databases (e.g., OpenSearch, Pinecone), document processing pipelines, embedding models, and caching layers. AWS groups these costs under broad categories like compute, storage, and networking. Only AUEB breaks down the multi-layered cost of RAG pipelines to compute the true marginal cost of an AI-generated answer.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="p-6 rounded-xl border border-zinc-200 bg-white/40">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-2">3. Prompt Cache Blending</h3>
+                                <p className="text-sm text-zinc-900 leading-relaxed">
+                                    Modern LLM APIs offer steep discounts (up to 80%) for prompt cache hits. AWS Cost Explorer reports the blended monthly total, making it impossible to determine if caching is working effectively across different feature releases. AUEB models dynamic cache allocation, letting you isolate cache efficiency from baseline query costs.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-xl border border-zinc-200 bg-white/40">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-2">4. Failure to Track Retry Loops</h3>
+                                <p className="text-sm text-zinc-900 leading-relaxed">
+                                    When an LLM call fails or returns malformed JSON, modern agentic systems automatically initiate retry loops. These loops consume tokens rapidly, compounding costs invisibly. AWS Cost Explorer sees only the final bill. AUEB explicitly factors in retry inflation, identifying code loops that are draining your margins.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
                     <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-950 mb-6">

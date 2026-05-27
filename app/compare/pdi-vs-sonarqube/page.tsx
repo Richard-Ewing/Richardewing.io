@@ -60,6 +60,40 @@ export default function PDIvsSonarQubePage() {
                         </table>
                     </div>
 
+                    <section className="mb-16 prose prose-zinc max-w-none">
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-6">Why SonarQube Misses the Risk of AI-Generated Code</h2>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div className="p-6 rounded-xl border border-zinc-200 bg-white/40">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-2">1. Static Rules vs. Probabilistic Failures</h3>
+                                <p className="text-sm text-zinc-900 leading-relaxed">
+                                    SonarQube uses deterministic rules to scan syntax patterns, naming conventions, and code duplication. However, AI-generated code (often written via vibe-coding) typically passes syntax checks but suffers from deep architectural logic flaws. PDI models the probability of runtime errors, context mismatches, and edge-case failures inherent to non-deterministic systems.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-xl border border-zinc-200 bg-white/40">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-2">2. The Hallucination Debt Blind Spot</h3>
+                                <p className="text-sm text-zinc-900 leading-relaxed">
+                                    SonarQube is blind to hallucination debt. An LLM-generated function might compile cleanly and contain no static "smells," yet fail under specific production workloads because it hallucinated API behaviors, error rates, or data structures. PDI evaluates your system's exposure to AI-generated risk, giving you a clear view of your software's integrity.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="p-6 rounded-xl border border-zinc-200 bg-white/40">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-2">3. Cost-of-Goods-Sold (COGS) Impact</h3>
+                                <p className="text-sm text-zinc-900 leading-relaxed">
+                                    SonarQube evaluates code quality as a developer aesthetic metric. It cannot measure how code complexity or library sprawl impacts your hosting bill or engineering maintenance capacity. PDI translates technical complexity directly into financial metrics, showing you the exact dollar cost of your debt on SaaS gross margins.
+                                </p>
+                            </div>
+                            <div className="p-6 rounded-xl border border-zinc-200 bg-white/40">
+                                <h3 className="text-xl font-bold text-zinc-950 mb-2">4. Codebase Intimacy Degradation</h3>
+                                <p className="text-sm text-zinc-900 leading-relaxed">
+                                    As developer teams rely more on AI copilots, their direct understanding of the codebase (codebase intimacy) degrades. SonarQube cannot measure this cognitive disconnect. PDI tracks developer sentiment and codebase familiarity, warning you when your team is no longer capable of refactoring the systems they supposedly own.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
                     {/* Verdict */}
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>

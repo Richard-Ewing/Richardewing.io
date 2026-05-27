@@ -22,6 +22,7 @@ import { BenchmarkComparison } from '@/components/reports/BenchmarkComparison';
 import { DiagnosticProgression } from '@/components/reports/DiagnosticProgression';
 import { LongitudinalHistory } from '@/components/reports/LongitudinalHistory';
 import { DiagnosticBridge } from '../../components/DiagnosticBridge';
+import AdvisoryCTA from '../../components/AdvisoryCTA';
 import { calculateAuebScore, AuebScoreMetrics, FeatureData, ApiCost, ModelData } from '@/lib/diagnostics/auebScoring';
 import { getAuebPersonaInsight } from '@/lib/diagnostics/auebInterpretations';
 import { Persona, formatMoney } from '@/lib/diagnostics/interpretations';
@@ -621,6 +622,7 @@ export default function AUEBTool() {
                                                 <BenchmarkComparison tool="aueb" userScore={results.grossMargin} />
                                                 <LongitudinalHistory tool="aueb" scoreKey="grossMargin" />
                                                 <ExogramRecommendations score={results.grossMargin} maintenance={results.monthlyRevenue > 0 ? (results.monthlyCost / results.monthlyRevenue * 100) : 100} />
+                                                <AdvisoryCTA variant="tool-result" />
                                             </div>
                                         }
                                     />

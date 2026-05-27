@@ -182,12 +182,53 @@ export const gapFillTerms: GlossaryTerm[] = [
     {
         title: 'AI COGS (Cost of Goods Sold)',
         slug: 'ai-cogs',
-        definition: `AI COGS is a framework coined by Richard Ewing for quantifying the variable cost of AI features as a component of Cost of Goods Sold. Unlike traditional software with near-zero marginal costs, AI features have significant per-unit costs that directly eat into gross margins.\n\n**AI COGS components:**\n- **Inference costs:** LLM API calls ($0.001-$0.10 per query)\n- **Embedding costs:** Vector generation for RAG systems\n- **Storage costs:** Vector database hosting\n- **Compute costs:** GPU/TPU for self-hosted models\n- **Data enrichment:** Third-party API calls for context\n- **Retraining costs:** Periodic model updates\n\n**Gross margin impact:** Traditional SaaS has 70-80% gross margins. AI-heavy products often see margins compress to 40-60% because AI COGS scale with usage. This is the core of the Cost of Predictivity problem.\n\nThe AUEB calculator at richardewing.io/tools/aueb helps companies calculate their AI COGS and find their margin collapse point.`,
-        whyItMatters: 'AI COGS are the hidden margin killer. SaaS companies adding AI features without modeling AI COGS are flying blind. Many discover their AI features are gross-margin negative after millions in investment.',
+        definition: `AI COGS (Cost of Goods Sold) is a financial-engineering framework coined by Richard Ewing for calculating and managing the variable, compute-intensive costs directly incurred in serving AI-enabled software features to active users. In traditional SaaS economics, software has a near-zero marginal cost of production: once a platform is built, serving an additional user incurs negligible infrastructure costs, resulting in highly attractive gross margins of 75% to 85%. AI features destroy this paradigm. Every query processed by a generative model requires active GPU computation, which scales linearly with usage. AI COGS formalizes these new cost centers—encompassing model inference API fees, embedding generation, vector database queries, context retrieval compute, semantic caching infrastructure, and model fine-tuning—to give finance and engineering teams a true representation of their gross margins.
+
+**The SaaS Margin Trap:**
+The SaaS Margin Trap is the rapid, often unexpected compression of gross margins that occurs when companies add unoptimized AI features to fixed-price subscription plans. Because LLM usage scales directly with user engagement, a highly engaged customer can easily consume more in model inference fees than they pay in their monthly subscription fee. For example, a customer paying $30 per month who makes 50 complex reasoning queries per day can generate over $45 in raw API costs, turning a historically high-margin customer into a cash-burning liability. Without isolating AI COGS from general cloud hosting, companies fly blind, celebrating high adoption metrics while silently driving their blended gross margins from 80% down to 40% or lower.
+
+**Vector Storage Overhead and Caching Leaks:**
+Beyond raw inference fees, AI COGS are heavily impacted by two architectural factors: vector storage overhead and caching failures. Large-scale Retrieval-Augmented Generation (RAG) systems require indexing millions of document chunks into vector databases (e.g., Pinecone, Qdrant). The memory-resident nature of vector indexes makes hosting these databases exceptionally expensive, adding a fixed monthly infrastructure overhead that must be amortized across the user base. Furthermore, many architectures suffer from "caching leaks," where minor changes in prompts (such as appending a timestamp or whitespace) bypass semantic caches, forcing the system to run expensive, redundant inference cycles. Optimizing these leaks and structuring vector indexing tiers are critical to preserving gross margins.
+
+**Model Inference Cost Cascade:**
+To manage AI COGS effectively, organizations must understand the cost distribution of a single user request. The diagram below illustrates how a query propagates through various compute layers, each accumulating variable cost:
+
+<pre class="font-mono bg-zinc-950 text-zinc-100 p-6 rounded-lg my-6 overflow-x-auto text-xs leading-normal border border-zinc-800">
+[ User Request Ingest ]
+         |
+         v
+[ Semantic Cache Check ] ----- (Hit: Cost $0.0001) -----> [ Return Cache ]
+         |
+      (Miss)
+         v
+[ RAG Vector DB Query ] --------------------------------> [ Storage Cost: $0.0050 ]
+         |
+         v
+[ Context Assembly & Prompt Token Generation ] ----------> [ Input Token Cost: $0.0100 ]
+         |
+         v
+[ LLM Inference & Output Generation ] -------------------> [ Output Token Cost: $0.0350 ]
+         |
+         v
+[ Guardrails & Validation Evaluation ] ------------------> [ Audit Cost: $0.0020 ]
+         |
+         v
+[ Total Variable Cost Per Request: $0.0521 ]
+</pre>
+
+**Preserving the Bottom Line:**
+Managing AI COGS is not purely an engineering challenge; it is a fundamental business strategy. Product Economists must model the unit economics of every feature before launch. Strategies like prompt amortization, model right-sizing, semantic caching, and usage gating (such as hard token caps per tier) are required to prevent gross margin erosion.
+
+Organizations looking to audit their AI cost structures can utilize the **AI Unit Economics Benchmark (AUEB)**. This diagnostic maps every component of your AI stack, identifies margin-negative features, and provides a clear remediation roadmap to return your SaaS margins back to the 80% tier.`,
+        whyItMatters: 'AI COGS are the silent margin killer of the AI era. Companies adding AI features without mapping these variable costs to their P&L risk building cash-burning products. By tracking AI COGS as a discrete financial metric, you can identify which features are economically viable and which are destroying SaaS enterprise value.',
         category: 'Richard Ewing Frameworks',
-        relatedTerms: ['cost-of-predictivity', 'unit-economics', 'large-language-model', 'rag-architecture'],
+        relatedTerms: ['cost-of-predictivity', 'unit-economics', 'large-language-model', 'rag-architecture', 'model-right-sizing', 'ai-cost-attribution'],
         relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
-        faqs: [{ question: 'How do you calculate AI COGS?', answer: 'Sum all per-query costs: LLM API fees + embedding costs + vector DB queries + data enrichment. Multiply by average queries per user per month. Compare to subscription price to find margin.' }],
+        faqs: [
+            { question: 'Should AI COGS be grouped with general hosting costs?', answer: 'No. AI COGS should be tracked as a separate line item within your Cost of Goods Sold. Grouping them with general hosting (like AWS EC2) hides the variable cost scaling of AI features, making it impossible to calculate true unit margins.' },
+            { question: 'What is the fastest way to reduce AI COGS?', answer: 'Implement semantic caching. Storing and serving previous LLM responses for semantically identical queries can reduce inference costs by 30-50% for high-volume, repetitive workloads.' },
+            { question: 'How do you charge users to offset AI COGS?', answer: 'Move away from flat-rate unlimited pricing toward hybrid models: token-based credit usage, usage-based overages, or reserving premium AI features for higher pricing tiers.' }
+        ],
     },
     {
         title: 'EAAP (Exogram Action Admissibility Protocol)',

@@ -12,6 +12,7 @@ import RetroTerminal from '../../components/RetroTerminal';
 import GlossaryQuiz from '../../components/GlossaryQuiz';
 import GlossaryMesh from '../../components/GlossaryMesh';
 import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
+import { NewsletterForm } from '../../components/newsletter-form';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -732,6 +733,27 @@ export default async function GlossaryTermPage({ params }: Props) {
                 )}
 
                 <GlossaryToolCTA slug={slug} category={term.category} termTitle={term.title} />
+
+                {/* Zero-friction Lead Magnet Conversion Card (Strategy B) */}
+                <section className="my-12 p-8 rounded-2xl border-2 border-violet-200 bg-[#F5F0EB]/60 backdrop-blur-sm shadow-md">
+                    <div className="flex flex-col md:flex-row gap-6 items-center">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500/10 to-rose-500/10 border border-violet-200 flex items-center justify-center shrink-0">
+                            <span className="text-2xl">📋</span>
+                        </div>
+                        <div className="flex-1 w-full">
+                            <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-1">Get the 12-Point Enterprise AI Governance Checklist</h3>
+                            <p className="text-sm text-zinc-900 font-medium mb-4 leading-relaxed">
+                                Unlock the exact diagnostic questions used in **$7,500 R&D Capital Audits** to isolate technical insolvency and prevent AI margin leakage.
+                            </p>
+                            <NewsletterForm 
+                                buttonText="Download Checklist" 
+                                placeholder="Enter your business email" 
+                                redirectTo="/checklist"
+                                extraData={{ tool: `glossary_${slug}` }}
+                            />
+                        </div>
+                    </div>
+                </section>
 
                 <section className="card p-8 border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.03] to-violet-500/[0.03] rounded-2xl">
                     <div className="flex flex-col sm:flex-row gap-6 items-start">

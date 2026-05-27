@@ -167,14 +167,53 @@ export const trendingTerms2026: GlossaryTerm[] = [
     {
         title: 'AI Cost Attribution',
         slug: 'ai-cost-attribution',
-        definition: `AI Cost Attribution is the practice of tracking and assigning the full cost of AI features to specific products, features, customers, or business units. Unlike traditional software (near-zero marginal cost), AI features have significant variable costs that must be attributed accurately for economic decision-making.\n\n**Costs to attribute:** LLM API fees, embedding generation, vector database queries, retrieval pipeline compute, post-processing, monitoring, error handling and retry costs, prompt engineering time, model fine-tuning, and human-in-the-loop review.\n\nWithout proper cost attribution, organizations cannot calculate AI unit economics, identify margin-negative features, or make informed build-vs-buy decisions.`,
-        whyItMatters: 'Most AI product failures are economic, not technical. Without cost attribution, teams build impressive AI features without knowing that each user interaction costs more than the revenue it generates.',
-        howToMeasure: 'Tag every AI API call with feature ID, customer ID, and model version. Aggregate costs by feature, customer, and time period. Compare to feature-level revenue.',
+        definition: `AI Cost Attribution is the technical and financial practice of tracking, tagging, and allocating the variable costs of artificial intelligence workloads—such as LLM token consumption, vector database operations, and GPU compute time—to specific users, features, organizational units, or tenant accounts. In traditional cloud FinOps, cost attribution focuses on static virtual machines and serverless execution times. In the AI era, however, costs are highly dynamic, probabilistic, and dependent on prompt length, model selection, cache performance, and retrieval-augmented generation (RAG) context windows. AI Cost Attribution provides the database telemetry and tracing infrastructure required to map every dollar spent on API calls and compute back to its exact business driver, enabling companies to calculate customer-level profitability and design sustainable pricing strategies.
+
+**Token Tagging and Request Tracing:**
+The foundation of a robust AI Cost Attribution model is token tagging. Every API request sent to an LLM provider or self-hosted model gateway must be tagged with metadata containing the customer ID, feature ID, session ID, and tenant identifier. This requires building or deploying an API proxy gateway (an Execution Control Plane) that intercepts all model traffic, extracts usage metrics (input tokens, output tokens, cached tokens, and latency), and writes these metrics to a high-speed telemetry database (e.g., ClickHouse, TimescaleDB). By joining this telemetry with financial rate sheets, the system can compute the exact cost of every single interaction in real-time, moving beyond coarse aggregate invoices to precise, granular cost attribution.
+
+**Multi-Tenant Cost Slicing:**
+In multi-tenant SaaS environments, multiple customers share the same underlying model endpoints, vector databases, and indexing pipelines. This shared infrastructure creates the "noisy neighbor cost problem," where a single customer's heavy usage spikes vector DB query costs and embedding generation fees for everyone. Multi-tenant cost slicing addresses this by dynamically allocating shared infrastructure costs. While direct model API calls are easily attributed via request tagging, shared resources like vector database hosting, document parsing, and continuous model fine-tuning must be allocated proportionally based on each tenant's query volume or data footprint, preventing hidden margin degradation.
+
+**Prompt Amortization and Cache Allocation:**
+A major complexity in AI Cost Attribution is how to handle cached prompts and RAG retrieval pipelines. If Customer A submits a query that requires loading 20,000 tokens of documentation into the context window, they pay the full input token price. If Customer B submits a similar query immediately after and hits the LLM provider's prompt cache (reducing input token cost by 80%), Customer B benefits from the cache that Customer A paid to populate. Prompt amortization and cache allocation solve this by normalizing cache savings. Advanced attribution engines treat caches as a shared pool: they aggregate the total cache savings across all tenants and distribute the discount proportionally, ensuring fair billing and preventing random fluctuations in customer invoices.
+
+**Telemetry Flow of AI Cost Attribution:**
+The diagram below illustrates how request metadata is extracted and processed to attribute compute costs to specific business entities:
+
+<pre class="font-mono bg-zinc-950 text-zinc-100 p-6 rounded-lg my-6 overflow-x-auto text-xs leading-normal border border-zinc-800">
+[ User Request (Tenant: ACME_CORP, Feature: SmartSummary) ]
+                         |
+                         v
+[ AI Gateway Proxy / telemetry middleware ]
+                         |
+      +------------------+------------------+
+      |                                     |
+      v                                     v
+[ LLM Provider API ]               [ Telemetry Log Queue ]
+- Processes request                - Captures: Tenant ID (ACME_CORP)
+- Returns: Tokens used             - Captures: Feature ID (SmartSummary)
+                                   - Captures: Raw Token Count (Input/Output)
+                                            |
+                                            v
+                                  [ FinOps Attribution Engine ]
+                                  - Joins telemetry with model pricing
+                                  - Calculates: Cost = $0.0342
+                                  - Writes to Customer P&L Database
+</pre>
+
+**Connecting Telemetry to P&L Economics:**
+Without accurate AI Cost Attribution, organizations are flying blind in their SaaS product management. Product managers cannot determine if their features are profitable, sales teams cannot customize enterprise contracts without risking losses, and engineering cannot prioritize optimization efforts.
+
+To establish this level of visibility, organizations can deploy the **AI Unit Economics Benchmark (AUEB)**. The AUEB diagnostic evaluates your current API gateway architecture, maps your telemetry gaps, and designs a comprehensive cost-attribution framework. This benchmark ensures you can trace every token, slice costs across multi-tenant cohorts, and protect your margins as you scale.`,
+        whyItMatters: 'Without cost attribution, you cannot calculate SaaS unit economics. You risk celebrating high user engagement for a feature that is silently draining your bank account. AI Cost Attribution changes this from a guessing game to an exact science, allowing PMs to gate or price features based on real-time token costs.',
         category: 'AI & Machine Learning',
-        relatedTerms: ['ai-unit-economics', 'cost-of-predictivity', 'gross-margin-preservation', 'evergreen-ratio'],
+        relatedTerms: ['ai-unit-economics', 'cost-of-predictivity', 'gross-margin-preservation', 'evergreen-ratio', 'model-right-sizing', 'ai-cogs'],
         relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
         faqs: [
-            { question: 'How do you implement AI cost attribution?', answer: 'Use API middleware that tags every inference request with metadata (feature, customer, model). Aggregate in a cost dashboard. The AUEB calculator at richardewing.io/tools/aueb helps model these economics.' },
+            { question: 'Is standard cloud cost tools sufficient for AI attribution?', answer: 'No. AWS Cost Explorer or Datadog can track overall server or API endpoint billing, but they cannot parse LLM payload metadata. They cannot tell you which tenant or which specific prompt caused a spike in token usage.' },
+            { question: 'How does prompt amortization work in practice?', answer: 'It calculates the average input token cost over a billing period, blending cached and uncached requests, and applies this flat rate to all customers. This prevents customers from complaining about volatile billing caused by cache misses.' },
+            { question: 'What is the performance overhead of tracking token usage?', answer: 'Minimal, if implemented asynchronously. The gateway should pass the LLM response to the user immediately, while writing the token usage metadata to a queue (like SQS or Kafka) for asynchronous database processing.' }
         ],
     },
 ];

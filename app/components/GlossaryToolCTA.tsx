@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 
 // Maps glossary term categories/slugs to relevant tools
 const toolMapping: Record<string, { name: string; url: string; cta: string; emoji: string }> = {
@@ -12,6 +12,12 @@ const toolMapping: Record<string, { name: string; url: string; cta: string; emoj
     'ai-cost-governance': { name: 'AI Unit Economics Benchmark', url: '/tools/aueb', cta: 'Calculate your AI cost per useful output', emoji: '🤖' },
     'llm-cost-optimization': { name: 'AI Unit Economics Benchmark', url: '/tools/aueb', cta: 'Benchmark your LLM costs', emoji: '🤖' },
     'ai-hallucination': { name: 'AI Unit Economics Benchmark', url: '/tools/aueb', cta: 'Calculate your AI accuracy cost curve', emoji: '🤖' },
+    'hallucination-debt': { name: 'AI Unit Economics Benchmark', url: '/tools/aueb', cta: 'Assess your AI accuracy cost structure', emoji: '🤖' },
+    'ai-cogs': { name: 'AI Unit Economics Benchmark', url: '/tools/aueb', cta: 'Find your AI gross margin collapse point', emoji: '🤖' },
+    'ai-cost-attribution': { name: 'AI Unit Economics Benchmark', url: '/tools/aueb', cta: 'Track your AI cost per customer interaction', emoji: '🤖' },
+    'model-right-sizing': { name: 'AI Unit Economics Benchmark', url: '/tools/aueb', cta: 'Model your right-sized LLM economics', emoji: '🤖' },
+    'vibe-coding': { name: 'Product Debt Index', url: '/tools/pdi', cta: 'Audit your AI-generated technical debt', emoji: '📊' },
+    'audit-interview-protocol': { name: 'Audit Interview', url: '/tools/audit-interview', cta: 'Deploy modern technical assessments', emoji: '🎯' },
     'saas-valuation': { name: 'Enterprise Value Scenario Engine', url: '/tools/ev-se', cta: 'Model your valuation scenarios', emoji: '💰' },
     'arr': { name: 'Enterprise Value Scenario Engine', url: '/tools/ev-se', cta: 'See how ARR changes impact valuation', emoji: '💰' },
     'revenue-per-engineer': { name: 'APER Diagnostic', url: '/tools/aper', cta: 'Benchmark your engineering efficiency', emoji: '👥' },
