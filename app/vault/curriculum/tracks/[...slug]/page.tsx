@@ -53,16 +53,29 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                     </div>
 
                     <div className="mb-10">
-                        <div className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest mb-3">{mod.trackName}</div>
-                        <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-900 mb-4">
-                            {mod.moduleId}:{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">{mod.title}</span>
-                        </h1>
-                        <p className="text-lg text-zinc-950 font-bold max-w-2xl">{mod.description}</p>
-                        <div className="flex items-center gap-4 mt-4">
-                            <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-cyan-50 text-cyan-900 font-extrabold border border-cyan-200">{mod.lessons.length} Lessons</span>
-                            <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-emerald-50 text-emerald-900 font-extrabold border border-emerald-200">~45 min</span>
-                        </div>
+                        {(() => {
+                            const trackNumber = parseInt(mod.moduleId.split('-')[0], 10);
+                            const supportsFramework = [2, 5, 6, 7, 8, 11, 24].includes(trackNumber)
+                                ? 'AI Unit Economics'
+                                : 'Production AI Governance';
+                            return (
+                                <>
+                                    <div className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest mb-3">
+                                        {mod.trackName}
+                                    </div>
+                                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-900 mb-4">
+                                        {mod.moduleId}:{' '}
+                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">{mod.title}</span>
+                                    </h1>
+                                    <p className="text-lg text-zinc-950 font-bold max-w-2xl">{mod.description}</p>
+                                    <div className="flex flex-wrap items-center gap-3 mt-4">
+                                        <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-cyan-50 text-cyan-900 font-extrabold border border-cyan-200">{mod.lessons.length} Lessons</span>
+                                        <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-emerald-50 text-emerald-900 font-extrabold border border-emerald-200">~45 min</span>
+                                        <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-purple-50 text-purple-900 font-extrabold border border-purple-200">Supports Framework: {supportsFramework}</span>
+                                    </div>
+                                </>
+                            );
+                        })()}
                     </div>
 
                     <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-8 mb-12">

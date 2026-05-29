@@ -19,6 +19,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: '/frameworks', destination: '/framework', permanent: true },
+      { source: '/principal', destination: '/about', permanent: true },
       // ═══════════════════ PAIN-FORWARD URL ALIASES ═══════════════════
       // Research-validated searchable URLs → existing tool pages.
       // VALIDATED: competitors exist for these exact terms (TechDebtCalculator.com, Red Eagle, etc.)

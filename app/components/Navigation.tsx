@@ -44,49 +44,54 @@ const Navigation = () => {
                             </div>
                         </Link>
 
-                        {/* Desktop Nav — Simplified: 3 dropdowns + Start Here */}
-                        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+                        {/* Desktop Nav — Reorganized for Framework and Research Integration */}
+                        <div className="hidden xl:flex items-center gap-5 lg:gap-6">
 
-                            {/* Start Here / Member Dashboard — the golden path for visitors */}
+                            {/* Start Here / Member Dashboard */}
                             <Link href={isSignedIn ? "/vault" : "/start-here"} className="text-emerald-900 font-extrabold hover:text-emerald-500 transition-colors relative group font-semibold">
                                 ✦ {isSignedIn ? "Member Dashboard" : "Start Here"}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/diagnose" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Diagnostics
+                            <Link href="/framework" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Framework
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/frameworks" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Frameworks
+                            <Link href="/research" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Research
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/glossary" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Glossary
+                            <Link href="/articles" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Articles
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/exogram" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                            <Link href="/tools" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Tools
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            </Link>
+
+                            <Link href="/curriculum" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Curriculum
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            </Link>
+
+                            <Link href="/exogram" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors relative group font-medium">
                                 Exogram
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/advisory" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Advisory
+                            <Link href="/about" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                About
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
-                            </Link>
-
-                            <Link href="/ai-integration" className="text-emerald-800 hover:text-emerald-600 transition-colors relative group font-semibold">
-                                AI Integration
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
 
                             {/* Primary CTA */}
                             <Link
                                 href="/advisory"
-                                className="bg-[var(--accent-crimson)] px-5 py-2.5 rounded-lg font-semibold text-zinc-950 font-semibold hover:bg-opacity-90 transition-all shadow-[0_0_15px_rgba(255,68,68,0.3)] hover:shadow-[0_0_25px_rgba(255,68,68,0.5)] transform hover:-translate-y-0.5"
+                                className="bg-[var(--accent-crimson)] px-4 py-2 rounded-lg font-semibold text-zinc-950 hover:bg-opacity-90 transition-all shadow-[0_0_15px_rgba(255,68,68,0.2)] hover:shadow-[0_0_20px_rgba(255,68,68,0.4)] transform hover:-translate-y-0.5 text-xs uppercase tracking-wider font-bold"
                             >
                                 Book Audit →
                             </Link>
@@ -203,22 +208,23 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
 
                     {/* Start Here - Hero CTA */}
                     <Link
-                        href="/doctrine"
+                        href={isSignedIn ? "/vault" : "/start-here"}
                         onClick={onClose}
                         className="block w-full bg-gradient-to-r from-emerald-600 to-cyan-600 text-zinc-950 font-semibold text-center font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity"
                     >
-                        ✦ START HERE
+                        ✦ {isSignedIn ? "ACCESS VAULT" : "START HERE"}
                     </Link>
 
                     <div className="w-full h-px bg-zinc-200" />
 
                     <div className="space-y-4">
-                        <MobileLink href="/diagnose" onClick={onClose} className="text-lg font-bold">Diagnostics</MobileLink>
-                        <MobileLink href="/frameworks" onClick={onClose} className="text-lg font-bold">Frameworks</MobileLink>
-                        <MobileLink href="/glossary" onClick={onClose} className="text-lg font-bold">Glossary</MobileLink>
-                        <MobileLink href="/exogram" onClick={onClose} className="text-lg font-bold">Exogram</MobileLink>
-                        <MobileLink href="/advisory" onClick={onClose} className="text-lg font-bold">Advisory</MobileLink>
-                        <MobileLink href="/ai-integration" onClick={onClose} className="text-lg font-bold text-emerald-800">AI Integration</MobileLink>
+                        <MobileLink href="/framework" onClick={onClose} className="text-lg font-bold">Framework</MobileLink>
+                        <MobileLink href="/research" onClick={onClose} className="text-lg font-bold">Research</MobileLink>
+                        <MobileLink href="/articles" onClick={onClose} className="text-lg font-bold">Articles</MobileLink>
+                        <MobileLink href="/tools" onClick={onClose} className="text-lg font-bold">Tools</MobileLink>
+                        <MobileLink href="/curriculum" onClick={onClose} className="text-lg font-bold">Curriculum</MobileLink>
+                        <MobileLink href="/exogram" onClick={onClose} className="text-lg font-bold text-purple-900 font-extrabold">Exogram</MobileLink>
+                        <MobileLink href="/about" onClick={onClose} className="text-lg font-bold">About</MobileLink>
                     </div>
 
                     <div className="w-full h-px bg-zinc-200 my-4" />

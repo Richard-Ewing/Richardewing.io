@@ -49,16 +49,29 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
             >
                 <div className="flex-shrink-0 text-3xl sm:text-4xl mt-1">{track.icon}</div>
                 <div className="flex-grow pr-4">
-                    <div className="flex items-center gap-3 mb-2">
-                        <div className="text-xs font-bold font-medium sm:text-xs font-bold font-mono text-zinc-950 font-bold uppercase tracking-widest">{track.subtitle}</div>
-                        {completionCount > 0 && (
-                            <div className="flex items-center gap-2">
-                                <span className="text-xs font-bold font-medium font-mono text-emerald-900 font-extrabold uppercase tracking-widest border border-emerald-200 px-2 py-0.5 rounded-full bg-emerald-50">
-                                    {completionCount}/{track.modules.length} Done
+                    {/* Framework Support Badge Calculation */}
+                    {(() => {
+                        const match = track.subtitle.match(/Track\s+(\d+)/i);
+                        const trackNumber = match ? parseInt(match[1], 10) : 1;
+                        const supportsFramework = [2, 5, 6, 7, 8, 11, 24].includes(trackNumber)
+                            ? 'AI Unit Economics'
+                            : 'Production AI Governance';
+                        return (
+                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                                <span className="text-[10px] font-mono font-bold text-zinc-500 uppercase tracking-wider bg-zinc-100 border border-zinc-200 px-2 py-0.5 rounded">
+                                    {track.subtitle}
                                 </span>
+                                <span className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded">
+                                    Supports Framework: {supportsFramework}
+                                </span>
+                                {completionCount > 0 && (
+                                    <span className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider border border-emerald-200 px-2 py-0.5 rounded bg-emerald-50">
+                                        {completionCount}/{track.modules.length} Done
+                                    </span>
+                                )}
                             </div>
-                        )}
-                    </div>
+                        );
+                    })()}
                     <h2 className={`text-xl sm:text-2xl font-grotesk font-bold ${textMap[track.color]} transition-colors`}>{track.title}</h2>
                     <p className={`text-sm font-semibold sm:text-base text-zinc-950 mt-2 line-clamp-2 sm:line-clamp-none ${isOpen ? '' : 'hidden sm:block'}`}>
                         {track.description}

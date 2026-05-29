@@ -9,6 +9,19 @@ export function Footer() {
         <footer className="border-t border-zinc-400 pt-16 pb-12 mt-20 bg-white/80">
             <div className="page-container">
 
+                {/* Production AI Governance Framework Hook */}
+                <div className="mb-12 pb-8 border-b border-zinc-300 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p className="text-zinc-900 font-medium text-sm">
+                        Part of the <span className="text-zinc-950 font-bold font-semibold">Production AI Governance Framework</span>.
+                    </p>
+                    <Link 
+                        href="/framework" 
+                        className="inline-flex items-center gap-1.5 text-cyan-900 font-extrabold hover:text-cyan-950 transition-colors text-sm font-semibold uppercase tracking-wider font-bold"
+                    >
+                        Explore the Framework <span className="text-lg">→</span>
+                    </Link>
+                </div>
+
                 {/* Main footer grid */}
                 <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
 
@@ -32,8 +45,8 @@ export function Footer() {
                         <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Operations</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
                             <li><Link href="/tools" className="text-zinc-950 hover:text-zinc-900 transition-colors">Diagnostics</Link></li>
-                            <li><Link href="/frameworks" className="text-zinc-950 hover:text-zinc-900 transition-colors">Frameworks</Link></li>
-                            <li><Link href="/glossary" className="text-zinc-950 hover:text-zinc-900 transition-colors">Glossary</Link></li>
+                            <li><Link href="/framework" className="text-zinc-950 hover:text-zinc-900 transition-colors">Framework</Link></li>
+                            <li><Link href="/research" className="text-zinc-950 hover:text-zinc-900 transition-colors">Research</Link></li>
                         </ul>
                     </div>
 
@@ -42,17 +55,16 @@ export function Footer() {
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
                             <li><Link href="/start-here" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors">Start Here</Link></li>
                             <li><Link href="/exogram" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">Exogram Platform</Link></li>
-                            <li><Link href="/challenges/runtime-governance" className="text-zinc-950 hover:text-zinc-900 transition-colors">Runtime Governance</Link></li>
+                            <li><Link href="/framework/runtime-governance" className="text-zinc-950 hover:text-zinc-900 transition-colors">Runtime Governance</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Advisory</h4>
+                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Advisory & Info</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
-                            <li><Link href="/advisory" className="text-zinc-950 hover:text-zinc-900 transition-colors">Executive Advisory</Link></li>
-                            <li><Link href="/ai-integration" className="text-emerald-800 font-bold hover:text-emerald-600 transition-colors">AI Integration</Link></li>
-                            <li><Link href="/case-studies" className="text-zinc-950 hover:text-zinc-900 transition-colors">Case Studies</Link></li>
-                            <li><Link href="/principal" className="text-zinc-950 hover:text-zinc-900 transition-colors">The Principal</Link></li>
+                            <li><Link href="/about" className="text-zinc-950 hover:text-zinc-900 transition-colors">About</Link></li>
+                            <li><Link href="/articles" className="text-zinc-950 hover:text-zinc-900 transition-colors">Articles</Link></li>
+                            <li><Link href="/curriculum" className="text-zinc-950 hover:text-zinc-900 transition-colors">Curriculum</Link></li>
                             <li><Link href="/advisory" className="text-[var(--accent-crimson)] font-bold hover:opacity-80 transition-colors">Book an Audit</Link></li>
                         </ul>
                     </div>

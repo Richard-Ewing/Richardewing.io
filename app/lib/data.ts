@@ -6,7 +6,60 @@ export const articles = [
         date: "May 2026",
         readTime: "6 min read",
         source: "Built In",
+        category: "Security",
         externalUrl: "https://builtin.com/articles/ai-agent-kill-switch"
+    },
+    {
+        slug: "redundant-ai-requests",
+        title: "Redundant AI Requests",
+        description: "How to audit and intercept duplicate model queries at the gateway before they double inferencing costs.",
+        date: "May 2026",
+        readTime: "5 min read",
+        source: "The Canon",
+        category: "Economics",
+        content: `
+            <p>Organizations scaling AI applications frequently notice their model billing cycles outpace user growth. The culprit is almost never rising pricing tiers—it is the unchecked propagation of redundant AI requests.</p>
+            <h3>Analyzing Redundant Retrieval Loops</h3>
+            <p>When multiple agentic loops operate within a single dashboard context, they repeatedly retrieve and compile identical database state. By applying <a href="/framework/economics" class="text-cyan-900 font-extrabold hover:font-bold border-b border-cyan-500/30 transition-all">AI Unit Economics</a> principles, teams can set up low-latency caching proxies to block identical inputs before they hit commercial APIs, saving up to 45% in model OpEx.</p>
+        `
+    },
+    {
+        slug: "anatomy-of-ai-agent-breach",
+        title: "Anatomy of an AI Agent Breach",
+        description: "A forensic post-mortem of how prompt injection escalates from a sandbox escape to an unauthorized database write.",
+        date: "May 2026",
+        readTime: "7 min read",
+        source: "The Canon",
+        category: "Security",
+        content: `
+            <p>We analyze the threat vectors of autonomous agent deployments, tracing how a malicious user input bypasses semantic validation filters to compromise downstream system tools.</p>
+            <h3>The Path of Evasion</h3>
+            <p>Without physical proxy limits or deterministic sandboxing, a roleplay prompt injection can trick an agent into executing destructive commands. Restructuring agent permissions around strict <a href="/framework/runtime-governance" class="text-cyan-900 font-extrabold hover:font-bold border-b border-cyan-500/30 transition-all">Runtime Governance</a> parameters isolates the model interface from execution-critical systems.</p>
+        `
+    },
+    {
+        slug: "three-gates",
+        title: "Three Gates",
+        description: "An operational security architecture enforcing schema integrity, token budgets, and output validation rules.",
+        date: "Apr 2026",
+        readTime: "6 min read",
+        source: "The Canon",
+        category: "Security",
+        content: `
+            <p>Traditional software uses strict data validations. GenAI deployments bypass these validations by feeding probabilistic strings directly to application logic. The Three Gates architecture restores deterministic validation.</p>
+            <h3>Structuring the Validation Proxy</h3>
+            <p>Gate 1 hashes input variables to scan for injections. Gate 2 enforces strict rate limits and token budgets per session. Gate 3 passes LLM output through a JSON schema validator, ensuring zero format drift before consumption.</p>
+        `
+    },
+    {
+        slug: "systems-governor",
+        title: "Systems Governor",
+        description: "Defining the new role of the Systems Governor: verifying probabilistic execution in deterministic environments.",
+        date: "Mar 2026",
+        readTime: "6 min read",
+        source: "Built In",
+        category: "Security",
+        externalUrl: "https://builtin.com/articles/vibe-coding-era-software-engineering-role"
     },
     {
         slug: "claude-api-bill-blowup-costs",
@@ -15,6 +68,7 @@ export const articles = [
         date: "May 2026",
         readTime: "6 min read",
         source: "CIO.com",
+        category: "Economics",
         externalUrl: "https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html"
     },
     {
@@ -24,6 +78,7 @@ export const articles = [
         date: "Apr 2026",
         readTime: "10 min read",
         source: "CIO.com",
+        category: "Economics",
         externalUrl: "https://www.cio.com/article/4158459/the-innovation-tax-audit-is-your-rd-actually-just-opex.html"
     },
     {
@@ -33,6 +88,7 @@ export const articles = [
         date: "Apr 2026",
         readTime: "8 min read",
         source: "Built In",
+        category: "Economics",
         externalUrl: "https://builtin.com/articles/make-ai-projects-profitable"
     },
     {
@@ -41,7 +97,8 @@ export const articles = [
         description: "Everyone is worried about AI ethics, but few are talking about AI economics. AI is not a deploy-and-forget asset. It is a depreciating one that requires continuous CapEx to maintain.",
         date: "Apr 2026",
         readTime: "11 min read",
-        source: "CIO.com"
+        source: "CIO.com",
+        category: "Economics"
     },
     {
         slug: "calculating-technical-debt-ebitda-impact-private-equity",
@@ -50,6 +107,7 @@ export const articles = [
         date: "Apr 2026",
         readTime: "8 min read",
         source: "The Canon",
+        category: "Governance",
         content: `
             <p>During technical due diligence, evaluating software architecture is standard practice. However, translating those architectural findings into financial models is where most Private Equity firms fail. When a target company's engineering team spends 45% of their time keeping legacy systems running, that isn't just an engineering inefficiency—it is a direct drag on EBITDA margins.</p>
             <h3>The Hidden Cost of Legacy Integration</h3>
@@ -64,6 +122,7 @@ export const articles = [
         date: "Apr 2026",
         readTime: "6 min read",
         source: "The Canon",
+        category: "Engineering",
         content: `
             <p>Engineering leaders frequently present DORA metrics (Deployment Frequency, Lead Time, Change Failure Rate, MTTR) to executive boards to justify refactoring budgets. The problem? Boards do not allocate capital based on "Deployment Frequency." They allocate capital based on Return on Invested Capital (ROIC) and risk mitigation.</p>
             <h3>The Financial Translation Layer</h3>
@@ -78,6 +137,7 @@ export const articles = [
         date: "Apr 2026",
         readTime: "9 min read",
         source: "The Canon",
+        category: "Governance",
         content: `
             <p>In the sprint to achieve Agentic AI breakthroughs and secure Series A funding, AI startups are writing code at unprecedented speeds, heavily assisted by LLM copilots. The result is "Vibe Coding Debt"—a rapid accumulation of undocumented, poorly architected probabilistic systems.</p>
             <h3>Governing the AI Codebase</h3>
@@ -93,6 +153,7 @@ export const articles = [
         date: "Mar 2026",
         readTime: "5 min read",
         source: "The Canon",
+        category: "Engineering",
         externalUrl: "/resources/ai-courses"
     },
     {
@@ -102,6 +163,7 @@ export const articles = [
         date: "Mar 2026",
         readTime: "8 min read",
         source: "CIO.com",
+        category: "Governance",
         externalUrl: "https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html"
     },
     {
@@ -111,6 +173,7 @@ export const articles = [
         date: "Mar 2026",
         readTime: "9 min read",
         source: "Built In",
+        category: "Engineering",
         externalUrl: "https://builtin.com/articles/vibe-coding-era-software-engineering-role",
         editorsPick: true
     },
@@ -121,6 +184,7 @@ export const articles = [
         date: "Mar 2026",
         readTime: "9 min read",
         source: "Built In",
+        category: "Governance",
         externalUrl: "https://builtin.com/articles/agentic-ai-scientific-economic-analysis"
     },
     {
@@ -130,6 +194,7 @@ export const articles = [
         date: "Feb 2026",
         readTime: "6 min read",
         source: "Built In",
+        category: "Engineering",
         externalUrl: "https://builtin.com/articles/innovation-requires-deleting-code"
     },
     {
@@ -139,6 +204,7 @@ export const articles = [
         date: "Feb 2026",
         readTime: "7 min read",
         source: "Built In",
+        category: "Engineering",
         externalUrl: "https://builtin.com/articles/audit-interview-scorecard",
         editorsPick: true
     },
@@ -149,6 +215,7 @@ export const articles = [
         date: "Feb 2026",
         readTime: "5 min read",
         source: "Mind the Product",
+        category: "Governance",
         externalUrl: "https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/"
     },
     {
@@ -158,6 +225,7 @@ export const articles = [
         date: "Feb 2026",
         readTime: "6 min read",
         source: "Built In",
+        category: "Engineering",
         externalUrl: "https://builtin.com/articles/reimagining-coding-interview",
         editorsPick: true
     },
@@ -168,6 +236,7 @@ export const articles = [
         date: "Feb 2026",
         readTime: "6 min read",
         source: "CIO.com",
+        category: "Engineering",
         externalUrl: "https://www.cio.com/article/4128139/hey-senior-pms-shipping-faster-wont-get-you-promoted.html"
     },
     {
@@ -177,6 +246,7 @@ export const articles = [
         date: "Jan 2026",
         readTime: "6 min read",
         source: "Built In",
+        category: "Economics",
         externalUrl: "https://builtin.com/articles/ai-product-business-test",
         editorsPick: true
     },
@@ -187,6 +257,7 @@ export const articles = [
         date: "Jan 2026",
         readTime: "4 min read",
         source: "The Canon",
+        category: "Engineering",
         legacyUrl: "/canonical/technical-insolvency.html",
         content: `
             <p>The Technical Insolvency Date (TID) is the theoretical point where a software organization's maintenance burden consumes 100% of its available engineering capacity.</p>
@@ -202,6 +273,7 @@ export const articles = [
         date: "Dec 2025",
         readTime: "6 min read",
         source: "CIO.com",
+        category: "Economics",
         legacyUrl: "/canonical/innovation-tax.html"
     },
     {
@@ -211,6 +283,7 @@ export const articles = [
         date: "Nov 2025",
         readTime: "5 min read",
         source: "Built In",
+        category: "Economics",
         legacyUrl: "/canonical/ai-margin-autopsy.html"
     },
     {
@@ -220,6 +293,7 @@ export const articles = [
         date: "Oct 2025",
         readTime: "4 min read",
         source: "Mind the Product",
+        category: "Engineering",
         legacyUrl: "/canonical/governance-of-subtraction.html"
     },
     {
@@ -229,6 +303,7 @@ export const articles = [
         date: "Sep 2025",
         readTime: "7 min read",
         source: "HackerNoon",
+        category: "Economics",
         externalUrl: "https://hackernoon.com/the-best-ai-product-i-ever-led-had-zero-customers"
     }
 ];

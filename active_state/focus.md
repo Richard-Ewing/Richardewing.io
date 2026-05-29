@@ -1,6 +1,7 @@
 # Active Focus
 
-- **Current Sub-System:** Technical SEO / Next.js Routing
-- **Active Task:** Resolving Google Search Console (GSC) Indexing Errors
-- **Context:** Remediating canonical mismatches, redirect chains/loops, crawled-not-indexed stubs, and broken/unmapped routes for high authority transmission.
-- **Expert Persona:** 0.01% Top-Tier Principal Next.js Architect & Enterprise SEO Specialist.
+- **Current Sub-System:** Core Architecture & Framework Mesh
+- **Active Task:** Reorganizing richardewing.io for Production AI Governance Framework
+- **Context:** Elevating the AI Governance framework as the site's primary semantic anchor. Creating /framework landing, subpages, reorganizing articles, curriculum, tools/diagnostics, global footer.
+- **Expert Persona:** 0.01% Top-Tier Chief Digital Strategy Officer & Principal Next.js Product Architect.
+
