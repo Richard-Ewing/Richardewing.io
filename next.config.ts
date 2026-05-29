@@ -168,6 +168,41 @@ const nextConfig: NextConfig = {
         destination: 'https://github.com/Richard-Ewing',
         permanent: true,
       },
+      // ═══════════════════ GSC 404 REMEDIATION ═══════════════════
+      // Redirect all old numeric tracks and modules directly to the vault curriculum in a single hop
+      {
+        source: '/vault/curriculum/tracks/:category(\\d+)/:slug*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/curriculum/tracks/:category(\\d+)/:slug*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      // Redirect all deprecated named tracks directly to /vault/curriculum/tracks to prevent redirect chains
+      {
+        source: '/vault/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering)/:slug*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering)/:slug*',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      // Guides fallback to prevent 404s on legacy guide pages
+      {
+        source: '/guides/:slug+',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+      {
+        source: '/guides',
+        destination: '/vault/curriculum/tracks',
+        permanent: true,
+      },
+
       // ═══════════════════ LEGACY TRACKING PREFIX REDIRECTS ═══════════════════
       // Handles N-prefixed curriculum IDs reported in GSC "Crawled - currently not indexed"
       {
@@ -303,8 +338,7 @@ const nextConfig: NextConfig = {
         destination: '/tools/aueb',
         permanent: true,
       },
-      // ═══════════════════ GSC 404 REMEDIATION ═══════════════════
-      // ═══════════════════ EXOGRAM 404 REMEDIATION ═══════════════════
+      // ═══════════════════ COMPARISONS 404 REMEDIATION ═══════════════════
       ...[
         'hiddenlayer-vs-robust-intelligence',
         'crewai-vs-tabnine',
@@ -318,7 +352,8 @@ const nextConfig: NextConfig = {
         'patronus-ai-vs-chatdev',
         'langchain-vs-scale-ai',
         'mem0-vs-humanloop',
-        'exogram-vs-cloudflare-ai-gateway'
+        'exogram-vs-cloudflare-ai-gateway',
+        'openai-vs-tailwindcss'
       ].map(slug => ({
         source: `/compare/${slug}`,
         destination: '/compare',

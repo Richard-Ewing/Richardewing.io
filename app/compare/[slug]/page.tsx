@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { ArrowRight, Activity, ShieldAlert } from 'lucide-react';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import pseoMatrixData from '@/app/lib/pseo-matrix.json';
@@ -103,7 +103,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
     const comparison = getComparison(slug);
 
     if (!comparison) {
-        notFound();
+        permanentRedirect('/compare');
     }
 
     return (
