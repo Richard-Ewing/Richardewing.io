@@ -87,9 +87,9 @@ const stages: Stage[] = [
         id: 4,
         name: 'Margin Collapse',
         icon: <DollarSign className="w-5 h-5" />,
-        color: 'text-red-600',
-        bgColor: 'bg-red-600',
-        borderColor: 'border-red-600/30',
+        color: 'text-red-500',
+        bgColor: 'bg-red-500',
+        borderColor: 'border-red-500/30',
         metrics: { tokens: '412,000', latency: '47s', confidence: '12%', costPerRequest: '$0.62' },
         description: 'Cost per operation exceeds revenue per user. Feature becomes a liability. 200x cost inflation from nominal.',
         trigger: 'No cost ceiling, no admissibility gate, no kill switch',
@@ -100,10 +100,10 @@ function MetricBar({ label, value, percentage, color }: { label: string; value: 
     return (
         <div className="space-y-1">
             <div className="flex justify-between items-baseline">
-                <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">{label}</span>
-                <span className="text-sm font-bold text-zinc-900 font-mono">{value}</span>
+                <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider">{label}</span>
+                <span className="text-sm font-bold text-zinc-100 font-mono">{value}</span>
             </div>
-            <div className="h-2 bg-zinc-100 rounded-full overflow-hidden">
+            <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
                 <div
                     className={`h-full rounded-full transition-all duration-700 ease-out ${color}`}
                     style={{ width: `${percentage}%` }}
@@ -164,7 +164,7 @@ export default function RuntimeEscalationSimulator() {
                     <span className="inline-block px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-mono uppercase tracking-wider mb-4">
                         Runtime Failure Simulation
                     </span>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-3">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
                         How a Single Governance Gap{' '}
                         <span className="text-rose-400">Destroys Margins</span>
                     </h2>
@@ -185,13 +185,13 @@ export default function RuntimeEscalationSimulator() {
                                     ? `${s.color} bg-white/10 border border-white/10`
                                     : i < activeStage
                                     ? `${s.color} opacity-60`
-                                    : 'text-zinc-600'
+                                    : 'text-zinc-400'
                             }`}
                         >
                             {s.icon}
                             <span className="hidden sm:inline">{s.name}</span>
                             {i < stages.length - 1 && (
-                                <ChevronRight className="w-4 h-4 text-zinc-600 ml-1" />
+                                <ChevronRight className="w-4 h-4 text-zinc-500 ml-1" />
                             )}
                         </button>
                     ))}
