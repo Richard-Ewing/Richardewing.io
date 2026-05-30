@@ -13,7 +13,7 @@ const Hero = () => {
                 {/* Eyebrow pill — operational authority */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 border border-rose-200 mb-6">
                     <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-                    <span className="text-sm font-semibold text-zinc-950">Published in Built In · CIO.com · HackerNoon · Mind the Product</span>
+                    <span className="text-sm font-semibold text-zinc-950">Production AI Governance Research Program</span>
                 </div>
 
                 {/* H1 — Static dominant thesis */}
@@ -41,8 +41,8 @@ const Hero = () => {
 
                 {/* Operational specificity subheadline */}
                 <p className="text-lg text-zinc-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-                    I audit R&D capital, diagnose AI unit economics, and build the deterministic
-                    governance infrastructure that turns volatile AI into predictable enterprise assets.
+                    I audit R&D capital, diagnose AI unit economics, and deploy the deterministic 
+                    governance frameworks that turn volatile models into predictable enterprise assets.
                 </p>
 
                 {/* Dual CTA */}
@@ -57,7 +57,7 @@ const Hero = () => {
 
                 {/* Credibility line */}
                 <p className="text-zinc-800 mb-6 text-sm font-semibold">
-                    Richard Ewing, The AI Economist · Founder of <a href="/exogram" className="text-purple-900 font-extrabold hover:text-purple-500 transition">Exogram</a> · Used in $7,500+ R&D Capital Audits
+                    Richard Ewing, AI Economist · Creator of the <Link href="/framework" className="text-indigo-900 font-extrabold hover:text-indigo-500 transition">Production AI Governance Framework</Link> · Founder of <a href="/exogram" className="text-purple-900 font-extrabold hover:text-purple-500 transition">Exogram</a>
                 </p>
 
                 {/* As Seen In */}

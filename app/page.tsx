@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Hero from './components/sections/Hero';
 import NarrativeCompression from './components/sections/NarrativeCompression';
+import EcosystemMap from './components/EcosystemMap';
 import ProofRail from './components/ProofRail';
 import ClientOutcomes from './components/sections/ClientOutcomes';
 import FourHorsemen from './components/sections/FourHorsemen';
@@ -48,6 +49,18 @@ export default function Home() {
       <Hero />
       {/* 15-second comprehension layer — What Breaks → Costs → Why → Fix → Engine */}
       <NarrativeCompression />
+      
+      {/* The Ecosystem Mesh — How All Work Connects */}
+      <section className="py-12 border-t border-b border-zinc-200 bg-[#FCFAF7]/40">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold font-grotesk text-zinc-950">How All My Work Connects</h2>
+            <p className="text-xs text-zinc-900 mt-1 max-w-lg mx-auto">Every article, calculator, curriculum course, and software proxy mapped to one research program.</p>
+          </div>
+          <EcosystemMap />
+        </div>
+      </section>
+
       {/* Persistent proof-of-authority bar */}
       <ProofRail />
       {/* Layer 2: Proof of outcomes */}
