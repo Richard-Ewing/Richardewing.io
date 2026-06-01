@@ -145,7 +145,7 @@ export default function ArticlesPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {getArticlesByCategory(selectedCategory).map((article, i) => {
                                     const isExternal = article.externalUrl?.startsWith('http');
-                                    const href = article.externalUrl || article.legacyUrl || `/blog/${article.slug}`;
+                                    const href = article.externalUrl || article.legacyUrl || `/articles/${article.slug}`;
                                     return (
                                         <Link key={article.slug} href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined} className="group block">
                                             <GlowCard className="p-6 h-full flex flex-col justify-between hover:bg-white/5 transition-colors border border-zinc-300" glowColor={i % 2 === 0 ? "cyan" : "purple"}>
@@ -185,7 +185,7 @@ export default function ArticlesPage() {
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {catArticles.map((article, i) => {
                                                 const isExternal = article.externalUrl?.startsWith('http');
-                                                const href = article.externalUrl || article.legacyUrl || `/blog/${article.slug}`;
+                                                const href = article.externalUrl || article.legacyUrl || `/articles/${article.slug}`;
                                                 return (
                                                     <Link key={article.slug} href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined} className="group block">
                                                         <GlowCard className="p-6 h-full flex flex-col justify-between hover:bg-white/5 transition-colors border border-zinc-300" glowColor={i % 2 === 0 ? "cyan" : "purple"}>

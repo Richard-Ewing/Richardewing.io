@@ -21,6 +21,8 @@ const nextConfig: NextConfig = {
     return [
       { source: '/frameworks', destination: '/framework', permanent: true },
       { source: '/principal', destination: '/about', permanent: true },
+      { source: '/vault/curriculum/tracks/product-economics/6-:id', destination: '/vault/curriculum/tracks/product-economics/5-:id', permanent: true },
+      { source: '/vault/curriculum/tracks/ai-operations/11-:id', destination: '/vault/curriculum/tracks/ai-operations/6-:id', permanent: true },
       // ═══════════════════ PAIN-FORWARD URL ALIASES ═══════════════════
       // Research-validated searchable URLs → existing tool pages.
       // VALIDATED: competitors exist for these exact terms (TechDebtCalculator.com, Red Eagle, etc.)
@@ -103,11 +105,7 @@ const nextConfig: NextConfig = {
         destination: '/principal',
         permanent: true,
       },
-      {
-        source: '/about',
-        destination: '/principal',
-        permanent: true,
-      },
+
       {
         source: '/q-pep-product-economics-protocol',
         destination: '/system',

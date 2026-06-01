@@ -157,8 +157,8 @@ export function getModule(slug: string): CurriculumModule | undefined {
     if (mod) {
         if (mod.moduleId === '14-12') mod.embeddedTool = 'cloud-repatriation';
         if (mod.moduleId === '11-4') mod.embeddedTool = 'vta';
-        if (mod.moduleId === '11-1' || mod.moduleId === '11-16') mod.embeddedTool = 'aueb';
-        if (mod.moduleId === '6-1') mod.embeddedTool = 'aper';
+        if (mod.moduleId === '11-1' || mod.moduleId === '11-16' || mod.moduleId === '6-1' || mod.moduleId === '6-16') mod.embeddedTool = 'aueb';
+        if (mod.moduleId === '5-1') mod.embeddedTool = 'aper';
     }
     
     // Inject Programmatic SEO related articles dynamically based on topic mapping
@@ -171,7 +171,7 @@ export function getModule(slug: string): CurriculumModule | undefined {
             'ai-product-strategy': ['8-1', '8-4', '1-1'], // Pricing Strategy, AI Economics
             'engineering-leadership': ['14-1', '13-1', '12-1'], // Leadership, Exec Economics, Career Capital
             'c-suite-financials': ['10-1', '10-3', '1-2'], // Due Diligence, Financials
-            'product-management-economics': ['6-1', '8-2', '11-1'] // PM Economics, Build vs Buy
+            'product-management-economics': ['5-1', '8-2', '11-1'] // PM Economics, Build vs Buy
         };
 
         SPOKE_MATRIX.forEach(topic => {
@@ -200,9 +200,9 @@ export function getModule(slug: string): CurriculumModule | undefined {
             'the-innovation-tax-audit': ['9-1', '14-1'],
             'generative-ai-margin-squeeze-saas-cogs': ['11-1', '14-3'],
             'autonomous-ai-agent-deterministic-control-plane': ['19-1', '19-2', '21-1'],
-            'b2b-saas-coordination-tax-saas-engineering-margins': ['6-1', '14-1'],
+            'b2b-saas-coordination-tax-saas-engineering-margins': ['5-1', '14-1'],
             'the-product-p-l-test-why-your-ai-feature-is-bleeding-cash': ['1-1', '11-4'],
-            'what-a-product-economist-actually-does': ['6-1', '13-1']
+            'what-a-product-economist-actually-does': ['5-1', '13-1']
         };
 
         Object.entries(frameworkArticles).forEach(([articleSlug, moduleIds]) => {

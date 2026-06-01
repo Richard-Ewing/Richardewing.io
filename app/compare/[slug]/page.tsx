@@ -7,6 +7,24 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import pseoMatrixData from '@/app/lib/pseo-matrix.json';
 
 // Hardcoded comparisons for scaffold purposes.
+const INDEXED_SLUGS = new Set([
+    // Hardcoded
+    'claude-code-vs-cursor-governance',
+    'claude-code-retry-loop-prevention',
+    'claude-context-rot-mitigation',
+    'cursor-repository-drift-prevention',
+    // Static comparePages from sitemap
+    'ai-coding-agents', 'ai-guardrails-platforms',
+    'github-copilot-problems', 'cursor-problems', 'windsurf-problems',
+    'why-claude-loses-context', 'why-retry-loops-happen', 'why-cursor-rewrites-files',
+    'why-ai-coding-burns-money', 'why-mcp-is-dangerous', 'claude-md-is-not-governance',
+    'pdi-vs-sonarqube', 'pdi-vs-codeclimate', 'pdi-vs-waydev',
+    'audit-interview-vs-leetcode', 'audit-interview-vs-hackerrank', 'audit-interview-vs-traditional',
+    'aueb-vs-aws-cost-explorer', 'ev-se-vs-jellyfish', 'aper-vs-jellyfish', 'aper-vs-linearb',
+    'copilot-roi-vs-gitclear', 'dora-metrics-vs-aper',
+    'shadow-ai-vs-shadow-it', 'technical-debt-vs-technical-insolvency', 'vibe-coding-vs-agile',
+]);
+
 const COMPARISONS = [
     {
         slug: 'claude-code-vs-cursor-governance',
@@ -84,10 +102,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const comparison = getComparison(slug);
     if (!comparison) return {};
 
+    const isIndexed = INDEXED_SLUGS.has(slug);
+
     return {
         title: `${comparison.title} | Enterprise Comparison`,
         description: comparison.description,
         alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },
+        robots: isIndexed ? undefined : { index: false, follow: true },
         openGraph: {
             title: `${comparison.title} | Enterprise Comparison`,
             description: comparison.description,

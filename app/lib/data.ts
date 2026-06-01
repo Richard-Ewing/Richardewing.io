@@ -1,4 +1,18 @@
-export const articles = [
+export interface Article {
+    slug: string;
+    title: string;
+    description: string;
+    date: string;
+    readTime: string;
+    source: string;
+    category: string;
+    externalUrl?: string;
+    legacyUrl?: string;
+    content?: string;
+    editorsPick?: boolean;
+}
+
+export const articles: Article[] = [
     {
         slug: "ai-agent-kill-switch",
         title: "Your AI Agent Needs a Kill Switch",
@@ -258,7 +272,7 @@ export const articles = [
         readTime: "4 min read",
         source: "The Canon",
         category: "Engineering",
-        legacyUrl: "/canonical/technical-insolvency.html",
+
         content: `
             <p>The Technical Insolvency Date (TID) is the theoretical point where a software organization's maintenance burden consumes 100% of its available engineering capacity.</p>
             <h3>The Mathematics of Stagnation</h3>
@@ -274,7 +288,7 @@ export const articles = [
         readTime: "6 min read",
         source: "CIO.com",
         category: "Economics",
-        legacyUrl: "/canonical/innovation-tax.html"
+
     },
     {
         slug: "cost-of-predictivity",
@@ -284,7 +298,7 @@ export const articles = [
         readTime: "5 min read",
         source: "Built In",
         category: "Economics",
-        legacyUrl: "/canonical/ai-margin-autopsy.html"
+
     },
     {
         slug: "feature-bloat-calculus",
@@ -294,7 +308,7 @@ export const articles = [
         readTime: "4 min read",
         source: "Mind the Product",
         category: "Engineering",
-        legacyUrl: "/canonical/governance-of-subtraction.html"
+
     },
     {
         slug: "best-ai-product-zero-customers",

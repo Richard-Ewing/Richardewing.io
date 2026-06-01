@@ -28,7 +28,13 @@ export const generateCourseSchema = (name: string, description: string, provider
         name: provider,
         sameAs: 'https://www.richardewing.io'
     },
-    url
+    url,
+    isAccessibleForFree: 'False',
+    hasPart: {
+        '@type': 'WebPageElement',
+        isAccessibleForFree: 'False',
+        cssSelector: '.ai-content'
+    }
 });
 
 export const generateSoftwareApplicationSchema = (name: string, description: string, url: string) => ({

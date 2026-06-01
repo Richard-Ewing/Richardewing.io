@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { exogramDocs } from '@/lib/exogram-docs';
 import { glossaryTerms } from './glossary/terms';
-import { frameworks } from '@/lib/data';
+import { frameworks, articles } from '@/lib/data';
 import { tracks } from '@/app/lib/curriculum-tracks-ui';
 import { getAllModuleSlugs } from '@/app/lib/curriculum-data';
 import { getSortedArticles } from '@/app/lib/blog-data';
@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/runtime-architecture`, 'weekly', 0.95);
     add(`${baseUrl}/tools`, 'monthly', 0.8);
     add(`${baseUrl}/system-prompts`, 'monthly', 0.9);
-    add(`${baseUrl}/principal`, 'monthly', 0.8);
+    add(`${baseUrl}/about`, 'monthly', 0.8);
     add(`${baseUrl}/manifesto`, 'yearly', 0.6);
     add(`${baseUrl}/book`, 'monthly', 0.5);
     add(`${baseUrl}/profiles`, 'monthly', 0.5);
@@ -104,8 +104,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // === VAULT CURRICULUM ===
     add(`${baseUrl}/vault/curriculum/tracks`, 'monthly', 0.7);
 
+    // === CANONICAL ARTICLES ===
+    articles
+        .filter(article => !article.externalUrl)
+        .forEach(article => add(`${baseUrl}/articles/${article.slug}`, 'monthly', 0.8));
+
     // === COMPARE PAGES (static) ===
     const comparePages = [
+        'claude-code-vs-cursor-governance', 'claude-code-retry-loop-prevention',
+        'claude-context-rot-mitigation', 'cursor-repository-drift-prevention',
         'ai-coding-agents', 'ai-guardrails-platforms',
         'github-copilot-problems', 'cursor-problems', 'windsurf-problems',
         'why-claude-loses-context', 'why-retry-loops-happen', 'why-cursor-rewrites-files',
@@ -165,12 +172,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Exogram Docs
     exogramDocs.forEach(doc => add(`${baseUrl}/exogram/docs/${doc.slug}`, 'monthly', 0.8));
 
-    // pSEO Matrix (compare pages) — only add if not already a static compare page
-    (pseoMatrixData || []).forEach((item: any) => {
-        if (!comparePages.includes(item.slug)) {
-            add(`${baseUrl}/compare/${item.slug}`, 'weekly', 0.8);
-        }
-    });
+
 
     return Array.from(entries.values());
 }

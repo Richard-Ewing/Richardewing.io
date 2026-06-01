@@ -101,7 +101,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                         status={mod.status}
                     >
                         {aiContent && typeof aiContent === 'object' ? (
-                            <ModuleStepper parsedContent={aiContent}>
+                            <ModuleStepper parsedContent={aiContent} hasAccess={hasAccess}>
                                 {mod.embeddedTool && (
                                     <div className="border border-cyan-500/20 bg-zinc-50 rounded-3xl p-6 lg:p-12 mb-8 relative overflow-hidden">
                                         <div className="absolute top-0 right-0 px-4 py-1 bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold border-b border-l border-cyan-500/20 text-xs font-bold font-medium font-mono uppercase tracking-widest rounded-bl-lg">Interactive Execution Module</div>
@@ -196,7 +196,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                 {mod.relatedArticles.map((slug) => {
                                     const article = articles.find(a => a.slug === slug);
                                     if (!article) return null;
-                                    const href = article.externalUrl || article.legacyUrl || `/blog/${article.slug}`;
+                                    const href = article.externalUrl || article.legacyUrl || `/articles/${article.slug}`;
                                     return (
                                         <Link key={slug} href={href} className="block p-5 rounded-xl border border-zinc-400 bg-zinc-50 hover:bg-cyan-50 hover:border-cyan-300 transition-all group">
                                             <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2 group-hover:text-cyan-900 font-extrabold">{article.source}</div>

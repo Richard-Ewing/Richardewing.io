@@ -2,9 +2,9 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks11Modules: Record<string, CurriculumModule> = {};
 
-const t11 = 'Track 11 — AI Operations & Governance';
+const t11 = 'AI Operations Economics & Cost Governance';
 
-tracks11Modules['ai-operations/11-1'] = m('11-1', 'AI Model Selection Economics', 'Compare foundation model costs (GPT-4, Claude, Gemini, Llama), inference pricing, and quality-cost tradeoffs.', t11, 
+tracks11Modules['ai-operations/6-1'] = m('6-1', 'AI Model Selection Economics', 'Compare foundation model costs (GPT-4, Claude, Gemini, Llama), inference pricing, and quality-cost tradeoffs.', t11, 
     ['Calculate token economics', 'Model quality vs cost ratios', 'Design multi-model routing architectures'], [
         l('Foundation Model Inference Math', 
             [
@@ -25,10 +25,10 @@ tracks11Modules['ai-operations/11-1'] = m('11-1', 'AI Model Selection Economics'
                 explanation: 'A 50x price differential exists between the smartest frontier models and fast/cheap models. Routing purely dictates your gross margin ceiling for GenAI features.'
             }
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-2', 'aueb', 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-2', 'aueb', 'live'
 );
 
-tracks11Modules['ai-operations/11-2'] = m('11-2', 'Prompt Engineering ROI', 'Evaluate the financial impact of centralized prompt libraries, rigorous testing costs, and prompt-as-code infrastructure on overall margin.', t11, 
+tracks11Modules['ai-operations/6-2'] = m('6-2', 'Prompt Engineering ROI', 'Evaluate the financial impact of centralized prompt libraries, rigorous testing costs, and prompt-as-code infrastructure on overall margin.', t11, 
     ['Calculate prompt-library cost-savings', 'Model the financial drag of fragile prompts', 'Build systemic version control for LLM instructions'], [
         l('The Fragility of Manual Prompting', 
             [
@@ -62,10 +62,10 @@ tracks11Modules['ai-operations/11-2'] = m('11-2', 'Prompt Engineering ROI', 'Eva
             'Calculate the cost of implementing a unified prompt registry layer vs. the current status quo of scattered string literals.',
             ['Count the number of unique LLM prompts currently live in production.', 'Estimate the number of prompt iterations requested by product teams each month.', 'Multiply by average developer cost to prove the ROI of a centralized registry.']
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-3', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-3', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-3'] = m('11-3', 'AI Testing & Evaluation Costs', 'Establish rigorous eval suites, benchmark design, and economic quality-gates for deterministic AI outputs.', t11, 
+tracks11Modules['ai-operations/6-3'] = m('6-3', 'AI Testing & Evaluation Costs', 'Establish rigorous eval suites, benchmark design, and economic quality-gates for deterministic AI outputs.', t11, 
     ['Quantify the cost-of-quality for probabilistic outputs', 'Design regression test suites for LLM changes', 'Establish acceptable hallucination thresholds based on business impact'], [
         l('The Evaluation Bottleneck', 
             [
@@ -96,7 +96,7 @@ tracks11Modules['ai-operations/11-3'] = m('11-3', 'AI Testing & Evaluation Costs
     ], '/vault/cur curriculum/tracks/ai-operations/11-4', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-4'] = m('11-4', 'Hallucination Cost Modeling', 'Analyze detection costs, tangible business impact of incorrect generation, and the financial necessity of guardrail investments.', t11, 
+tracks11Modules['ai-operations/6-4'] = m('6-4', 'Hallucination Cost Modeling', 'Analyze detection costs, tangible business impact of incorrect generation, and the financial necessity of guardrail investments.', t11, 
     ['Assign explicit dollar values to AI errors', 'Determine the financial break-even on guardrail latency', 'Audit the downstream blast radius of a confident hallucination'], [
         l('The Financial Blast Radius of False Confidence', 
             [
@@ -117,10 +117,10 @@ tracks11Modules['ai-operations/11-4'] = m('11-4', 'Hallucination Cost Modeling',
                 explanation: 'An LLM cannot reliably police its own output in real-time. A "Generator" model creates the text; a specialized "Validator" model analyzes it for policy violations before it reaches the user.'
             }
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-5', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-5', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-5'] = m('11-5', 'RAG Architecture Economics', 'Triage embedding costs, calculate vector DB pricing at scale, and execute ruthless chunking strategies to preserve margins.', t11, 
+tracks11Modules['ai-operations/6-5'] = m('6-5', 'RAG Architecture Economics', 'Triage embedding costs, calculate vector DB pricing at scale, and execute ruthless chunking strategies to preserve margins.', t11, 
     ['Execute a Total Cost of Ownership (TCO) model for RAG', 'Determine Vector DB pricing thresholds', 'Minimize LLM context-window exhaustion via semantic reranking'], [
         l('RAG is a Search Problem, Not an AI Problem', 
             [
@@ -141,10 +141,10 @@ tracks11Modules['ai-operations/11-5'] = m('11-5', 'RAG Architecture Economics', 
                 explanation: 'If a document chunk is too large, you pass unnecessary context. If you pass 10 large chunks, you pay for thousands of wasted tokens on every single user request. Margins collapse instantly.'
             }
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-6', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-6', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-6'] = m('11-6', 'AI Agent Orchestration Economics', 'Evaluate multi-agent swarms versus monolithic LLM loops, and model the exponential token expansion of autonomous execution.', t11, 
+tracks11Modules['ai-operations/6-6'] = m('6-6', 'AI Agent Orchestration Economics', 'Evaluate multi-agent swarms versus monolithic LLM loops, and model the exponential token expansion of autonomous execution.', t11, 
     ['Calculate autonomous token burn', 'Compare CrewAI vs AutoGen compute overhead', 'Implement infinite loop circuit breakers'], [
         l('The Context Window Re-Submission Tax', 
             [
@@ -159,10 +159,10 @@ tracks11Modules['ai-operations/11-6'] = m('11-6', 'AI Agent Orchestration Econom
             'Design an Agent orchestration wrapper with strict financial thresholds.',
             ['Inject a cost tracker middleware that intercepts every LLM call made by the agent.', 'Hardcode a `max_spend` variable per user session.', 'Gracefully exit and ask for human intervention when 80% of the budget is consumed.']
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-7', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-7', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-7'] = m('11-7', 'AI Compliance & Audit Infrastructure', 'The hidden CapEx of meeting EU AI Act constraints, generating transparency Model Cards, and maintaining AI Committees.', t11, 
+tracks11Modules['ai-operations/6-7'] = m('6-7', 'AI Compliance & Audit Infrastructure', 'The hidden CapEx of meeting EU AI Act constraints, generating transparency Model Cards, and maintaining AI Committees.', t11, 
     ['Quantify regulatory compliance overhead', 'Architect zero-touch compliance logging', 'Understand the EU AI Act liability risks'], [
         l('The Financial Burden of Explainability', 
             [
@@ -177,10 +177,10 @@ tracks11Modules['ai-operations/11-7'] = m('11-7', 'AI Compliance & Audit Infrast
             'Audit your existing AI systems against emerging regulatory frameworks.',
             ['Identify which of your GenAI features touch PII, healthcare records, or financial decision making.', 'Ensure you have an immutable logging system capturing both the user prompt and the exact deterministic model response for forensics.']
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-8', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-8', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-8'] = m('11-8', 'AI Vendor Comparison & TCO', 'Analyze the absolute economic differences between OpenAI, Anthropic, Google Gemini, and Open Source alternatives.', t11, 
+tracks11Modules['ai-operations/6-8'] = m('6-8', 'AI Vendor Comparison & TCO', 'Analyze the absolute economic differences between OpenAI, Anthropic, Google Gemini, and Open Source alternatives.', t11, 
     ['Execute comparative multi-vendor routing', 'Model API rate limits as availability risk', 'Quantify open-source hosting costs'], [
         l('Vendor Arbitrage and the 10x Differential', 
             [
@@ -195,10 +195,10 @@ tracks11Modules['ai-operations/11-8'] = m('11-8', 'AI Vendor Comparison & TCO', 
             'Implement a vendor-agnostic LLM gateway.',
             ['Deploy LiteLLM or an equivalent gateway proxy in your infrastructure.', 'Re-route 5% of non-critical traffic from your primary expensive provider to a cheaper secondary via the proxy.', 'Measure quality differential versus token savings.']
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-9', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-9', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-9'] = m('11-9', 'AI Team Building & Compensation', 'Market rates for ML Engineers, the myth of the "Prompt Engineer", and calculating training ROI.', t11, 
+tracks11Modules['ai-operations/6-9'] = m('6-9', 'AI Team Building & Compensation', 'Market rates for ML Engineers, the myth of the "Prompt Engineer", and calculating training ROI.', t11, 
     ['Differentiate AI Researchers from AI Applications Engineers', 'Assess market compensation structures', 'Calculate upskilling ROI vs net-new hiring'], [
         l('The Capital Misallocation in AI Hiring', 
             [
@@ -213,10 +213,10 @@ tracks11Modules['ai-operations/11-9'] = m('11-9', 'AI Team Building & Compensati
             'Assess your team\'s configuration and skill gaps.',
             ['Look at your open reqs for "AI Data Scientist".', 'Convert those reqs to "Full Stack Engineer (LLM Integration)".', 'Observe the immediate increase in applicant quality and the reduction in compensation demands.']
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-10', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-10', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-10'] = m('11-10', 'AI Operations Synthesis', 'Constructing the complete AI operational dashboard: managing inference, latency, and margin concurrently.', t11, 
+tracks11Modules['ai-operations/6-10'] = m('6-10', 'AI Operations Synthesis', 'Constructing the complete AI operational dashboard: managing inference, latency, and margin concurrently.', t11, 
     ['Unify token tracking and cloud billing', 'Design executive reporting dashboards', 'Forecast GPU hardware constraints'], [
         l('The CFO’s AI Dashboard', 
             [
@@ -231,11 +231,11 @@ tracks11Modules['ai-operations/11-10'] = m('11-10', 'AI Operations Synthesis', '
             'Instrument telemetry to track Per-Customer Unit Economics for GenAI.',
             ['Pass `{"customer_id": "X", "feature": "Y"}` in the `user` or metadata payload to the OpenAI/Anthropic API.', 'Extract these records daily.', 'Cross-reference them with Salesforce or Stripe billing data to identify power-users who might be unprofitable.']
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-11', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-11', undefined, 'live'
 );
 
 // Continuing dynamically generating up to 11-16 to ensure high-fidelity migration
-tracks11Modules['ai-operations/11-11'] = m('11-11', 'Graph RAG Implementation Economics', 'Why standard vector search fails at complex reasoning and how Knowledge Graphs (Neo4j) solve multi-hop query hallucination.', t11, 
+tracks11Modules['ai-operations/6-11'] = m('6-11', 'Graph RAG Implementation Economics', 'Why standard vector search fails at complex reasoning and how Knowledge Graphs (Neo4j) solve multi-hop query hallucination.', t11, 
     ['Compare Vector similarity vs Graph traversal', 'Calculate Ontology construction ROI', 'Minimize complex query hallucinations'], [
         l('The Failure of Cosine Similarity', 
             [
@@ -250,10 +250,10 @@ tracks11Modules['ai-operations/11-11'] = m('11-11', 'Graph RAG Implementation Ec
             'Execute a pilot integration of a dual retrieval system.',
             ['Route simple semantic queries ("What is our vacation policy?") to the cheap Vector DB.', 'Filter complex relational queries ("Which employees have taken vacation but missed their sales quota?") to the structural Graph DB.']
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-12', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-12', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-12'] = m('11-12', 'Multimodal Processing Pipelines', 'The economics of integrating Computer Vision, Audio Transcription (Whisper), and visual reasoning into text-based systems.', t11, 
+tracks11Modules['ai-operations/6-12'] = m('6-12', 'Multimodal Processing Pipelines', 'The economics of integrating Computer Vision, Audio Transcription (Whisper), and visual reasoning into text-based systems.', t11, 
     ['Quantify video ingestion compute costs', 'Model image-recognition API margins', 'Optimize transcription architecture'], [
         l('The Data Density Problem', 
             [
@@ -268,10 +268,10 @@ tracks11Modules['ai-operations/11-12'] = m('11-12', 'Multimodal Processing Pipel
             'Audit the input validation on any feature accepting images or documents.',
             ['Implement a pre-processor that compresses all user-uploaded images to 1024x1024 before hitting the Vision API.', 'Evaluate the exact cost reduction achieved over a month of traffic.', 'Verify that OCR/Extraction quality did not drop.']
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-13', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-13', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-13'] = m('11-13', 'AI Product Management', 'Managing probabilistic features requires abandoning deterministic roadmapping. Feature KPIs, A/B testing, and managing stakeholder expectations.', t11, 
+tracks11Modules['ai-operations/6-13'] = m('6-13', 'AI Product Management', 'Managing probabilistic features requires abandoning deterministic roadmapping. Feature KPIs, A/B testing, and managing stakeholder expectations.', t11, 
     ['Adopt continuous confidence grading', 'Navigate subjective QA processes', 'Set realistic executive expectations'], [
         l('The Uncertainty of the Timeline', 
             [
@@ -286,10 +286,10 @@ tracks11Modules['ai-operations/11-13'] = m('11-13', 'AI Product Management', 'Ma
             'Implement a public confidence score on your AI beta features.',
             ['Whenever the AI generates text, provide an interface (thumbs up/down) directly capturing user sentiment.', 'If the thumbs down rate exceeds 15%, halt the rollout. If the users tolerate the errors, redirect engineering towards a new feature instead of polishing the 15%.']
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-14', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-14', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-14'] = m('11-14', 'Shadow AI Discovery', 'How uncontrolled employee access to unauthorized LLMs accelerates IP leakage, and how to execute an enterprise "Shadow AI" sweep.', t11, 
+tracks11Modules['ai-operations/6-14'] = m('6-14', 'Shadow AI Discovery', 'How uncontrolled employee access to unauthorized LLMs accelerates IP leakage, and how to execute an enterprise "Shadow AI" sweep.', t11, 
     ['Audit network traffic for unauthorized API usage', 'Quantify proprietary IP leakage risk', 'Provide secure, managed "Golden Paths"'], [
         l('The Leaky Perimeter', 
             [
@@ -304,10 +304,10 @@ tracks11Modules['ai-operations/11-14'] = m('11-14', 'Shadow AI Discovery', 'How 
             'Execute a Shadow AI network discovery audit.',
             ['Work with IT to analyze DNS queries for OpenAI, Anthropic, Midjourney, and HuggingFace API endpoints from corporate devices.', 'Determine the scale of the leakage.', 'Procure an Enterprise license that explicitly opts out of data training.']
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-15', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-15', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-15'] = m('11-15', 'Prompt Injection Defense', 'The economic reality of adversarial attacks. Jailbreaking, data exfiltration through context windows, and isolating external variables.', t11, 
+tracks11Modules['ai-operations/6-15'] = m('6-15', 'Prompt Injection Defense', 'The economic reality of adversarial attacks. Jailbreaking, data exfiltration through context windows, and isolating external variables.', t11, 
     ['Map the threat vector of unverified inputs', 'Calculate the cost of multi-layer LLM defenses', 'Implement input sanitization architectures'], [
         l('The Unsolvable Security Boundary', 
             [
@@ -322,10 +322,10 @@ tracks11Modules['ai-operations/11-15'] = m('11-15', 'Prompt Injection Defense', 
             'Conduct a Red Teaming exercise on your primary AI interface.',
             ['Assign an engineer to act as an attacker.', 'Have them attempt to extract the secret system prompt, or force the AI to return a specific banned word, using indirect injection techniques.', 'If they succeed in under 15 minutes, your boundary is dangerously porous.']
         )
-    ], '/vault/curriculum/tracks/ai-operations/11-16', undefined, 'live'
+    ], '/vault/curriculum/tracks/ai-operations/6-16', undefined, 'live'
 );
 
-tracks11Modules['ai-operations/11-16'] = m('11-16', 'Model Collapse Financial Modeling', 'The financial decay of relying on scraping the internet once it is saturated with synthetic AI-generated text. The rising value of organic data.', t11, 
+tracks11Modules['ai-operations/6-16'] = m('6-16', 'Model Collapse Financial Modeling', 'The financial decay of relying on scraping the internet once it is saturated with synthetic AI-generated text. The rising value of organic data.', t11, 
     ['Quantify recursive training degradation', 'Calculate the rising CapEx of human-verified data lakes', 'Formulate a proprietary data moat strategy'], [
         l('The Rising Premium on Human Sourced Data', 
             [
